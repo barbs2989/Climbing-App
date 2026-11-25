@@ -295,14 +295,15 @@ for (const [flag, spec] of Object.entries(SWITCHES)) {
 
 /* ── rule 2: an outward-facing column rides every climber-object SELECT ──────────────────── */
 const CLIMBER_SELECTS = [
-  ["PARTNER_COLS", /const PARTNER_COLS = "([^"]+)"/],
-  ["the connections select", /\.from\("profiles"\)\.select\("id, name, username, avatar, location, ([^"]+)"\)/],
+  // PARTNER_COLS lives in lib/profileCols.js since 0434, beside the column-grant aliases it goes through.
+  ["PARTNER_COLS", /export const PARTNER_COLS = "([^"]+)"/, read("lib/profileCols.js")],
+  ["the connections select", /\.from\("profiles"\)\.select\(profileCols\("id,name,username,avatar,location,([^"]+)"/],
 ];
 // Columns whose value governs what OTHERS see, and which therefore have to travel with a climber.
 const OUTWARD = ["show_name", "resume_public"];
-for (const [name, re] of CLIMBER_SELECTS) {
-  const m = re.exec(db);
-  if (!m) dead("could not find " + name + " in lib/db.js — ANCHOR LOST, so rule 2 checked nothing");
+for (const [name, re, src] of CLIMBER_SELECTS) {
+  const m = re.exec(src || db);
+  if (!m) dead("could not find " + name + " in lib/db.js or lib/profileCols.js — ANCHOR LOST, so rule 2 checked nothing");
   for (const col of OUTWARD) {
     if (!m[1].includes(col)) {
       problems.push("`" + name + "` omits " + col + ". An omitted column arrives undefined, and for "
@@ -323,7 +324,9 @@ for (const [name, re] of CLIMBER_SELECTS) {
  * Logbook badge and the seed-route discipline read. A third entry point makes the count disagree
  * and has to be declared, which is the loud outcome. Your OWN résumé is out of scope (ClimbMatch's
  * `setResumeFor(meLive)`): you may always read your own. */
-const RESUME_ENTRIES = 2;
+// 3 since the one partner card (owner 2026-11-18): the example climbs chip and the REAL climber's climbs
+// chip (partner_counts, 0460) are two routes in lib/PartnerSearch.jsx, each gated on resumePublic!==false.
+const RESUME_ENTRIES = 3;
 // The partner card's stat tile moved with PartnerSearch into lib/ (lazy-loaded). Counting core
 // alone would read it as a route that vanished, and stop checking that it is gated.
 const resumeSrc = core;

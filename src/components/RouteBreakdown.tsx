@@ -1,13 +1,13 @@
-import { tx } from "../../lib/tapWords.js";
 import { useState, useEffect } from "react";
 import { breakdownRows } from "../../lib/breakdownRows.js";
 import { pitchAnchorSummary, pitchShortfall } from "../../lib/pitchAnchors.js";
 import { ROUTE_GAP, RSL as SL, C, SUB_LABEL } from "../../ClimbMatchCore.jsx";
 import EditIconButton from "./EditIconButton.tsx";
-import { BTN_SM } from "../../lib/buttonStyles.js";
+import { BTN_SM, SOLID_FILL } from "../../lib/buttonStyles.js";
 import { uLen } from "../../lib/uLen.js";
 import { clickable } from "../../lib/clickable";
 import Chevron from "./Chevron.tsx";
+import { FONT_MONO } from "../../lib/fonts.js";
 import { editBtnStyle, EditPencil } from "../../lib/areaChrome";
 import PitchConsensus from "./PitchConsensus.tsx";
 import CardHead from "./CardHead.tsx";
@@ -112,12 +112,14 @@ export default function RouteBreakdown({route,focus,onEdit,comments,commentsUnav
   const _undesc=(route.pitches as number)-pitchCount;
   const short=pitchShortfall(route,rows.length)?(" The route lists "+route.pitches+" pitches, so "+_undesc+(_undesc===1?" is":" are")+" not described here."):"";
   const intro=(pitchCount&&stageCount)
-    ?("The whole climb in order — "+rows.length+" sections, of which "+pitchCount+" are roped pitches and "+stageCount+" are travel or route-finding legs."+short)
+    ?(pitchCount+" roped pitch"+(pitchCount!==1?"es":"")+", "+stageCount+" travel leg"+(stageCount!==1?"s":"")+", in order."+short)
     :(pitchCount
       ?(pitchCount+" roped pitch"+(pitchCount!==1?"es":"")+", in route order."+short)
-      :("How the route goes, section by section — "+stageCount+" leg"+(stageCount!==1?"s":"")+". These are stages of travel and route-finding, not roped pitches."));
+      :(stageCount+" leg"+(stageCount!==1?"s":"")+", in order."));
   return <div id="route-breakdown" style={{marginBottom:ROUTE_GAP,scrollMarginTop:"80px"}}>
-    <SL action={<div style={{display:"flex",alignItems:"center",gap:8}}><span style={{fontSize:11.5,color:C.textMuted,whiteSpace:"nowrap"}}>{tx("Tap a row for detail")}</span>{onEdit?<EditIconButton onClick={onEdit} title="Edit the route breakdown"/>:null}</div>}>ROUTE BREAKDOWN</SL>
+    {/* No caption beside the pencil (owner, 2026-11-05: "Tap a row for detail ... cuts off the edit button on the phone"):
+        the heading, a nowrap caption and the pencil did not fit a phone's width, and it was the pencil that lost. */}
+    <SL action={onEdit?<EditIconButton onClick={onEdit} title="Edit the route breakdown"/>:null}>ROUTE BREAKDOWN</SL>
     <div style={{background:C.card,borderRadius:12,padding:"12px 14px",border:`1px solid ${C.border}`}}>
       <div style={{fontSize:11.5,color:C.textMuted,lineHeight:1.5,marginBottom:10}}>{intro}</div>
       {/* ASK THE CLIMBER WHO WAS THERE (owner note 2026-10-25, belay stations; multipitch audit proposal 2,
@@ -129,9 +131,9 @@ export default function RouteBreakdown({route,focus,onEdit,comments,commentsUnav
         return <div data-belay-ask="" style={{background:C.blueBg,border:"1px solid "+C.blueDim,borderRadius:10,padding:"10px 12px",marginBottom:10}}>
           <div style={{fontSize:12.5,fontWeight:700,color:C.onSolid,marginBottom:3}}>You've climbed this</div>
           <div style={{fontSize:12,color:C.onSolid,lineHeight:1.5,marginBottom:8}}>{_noBelay.length+(_noBelay.length===1?" pitch has":" pitches have")+" no belay station yet. Say where you belayed, and the next party will find it."}</div>
-          <button onClick={function(){onEdit(_noBelay[0]._i);}} style={{...BTN_SM,background:C.blueSolid,color:C.onSolid,border:"none"}}>Add belay stations</button>
+          <button onClick={function(){onEdit(_noBelay[0]._i);}} style={{...BTN_SM,...SOLID_FILL(C),color:C.onSolid,border:"none"}}>Add belay stations</button>
         </div>;})()}
-      {_anchors?<div data-pitch-anchors="" style={{fontSize:12,color:C.textSub,lineHeight:1.5,marginBottom:10,padding:"7px 9px",background:C.surface,borderRadius:8,border:"1px solid "+C.border}}><span style={{fontWeight:700,color:C.text}}>{"Anchors change by pitch: "}</span>{_anchors.map(function(x,i){return <span key={x[0]}>{i?" · ":""}<span style={{fontWeight:700,color:x[0]==="Bolted"?C.green:C.blue}}>{x[0]}</span>{" "+x[1]}</span>;})}</div>:null}
+      {_anchors?<div data-pitch-anchors="" style={{fontSize:12,color:C.textSub,lineHeight:1.5,marginBottom:10,padding:"2px 0 2px 10px",borderLeft:"2px solid "+C.border}}><span style={{fontWeight:700,color:C.text}}>{"Anchors change by pitch: "}</span>{_anchors.map(function(x,i){return <span key={x[0]}>{i?" · ":""}<span style={{fontWeight:700,color:x[0]==="Bolted"?C.green:C.blue}}>{x[0]}</span>{" "+x[1]}</span>;})}</div>:null}
       {rows.map(function(r,idx){
         const isOpen=open===r._i;
         const isPitch=r._kind==="pitch";
@@ -149,13 +151,12 @@ export default function RouteBreakdown({route,focus,onEdit,comments,commentsUnav
         const longTerrain=!isPitch&&!!r.grade&&(String(r.grade).length>18||String(r.grade).trim().split(/\s+/).length>3);
         /* A pitch's tiles drop an empty value the same way a leg's do: a row of "—" told the climber nothing, and PitchConsensus below already asks for what is missing. */
         const stageTiles=((isPitch?[["Length",r.lengthM!=null?uLen(r.lengthM):null,C.blue],["Bolts (this pitch)",r.bolts!=null?String(r.bolts):null,C.amber]]:[["Terrain",longTerrain?null:r.grade,C.amber],["Length",r.lengthM!=null?uLen(r.lengthM):null,C.blue],["Anchor / belay",r.anchor,C.blue]]) as [string,string|null|undefined,string][]).filter(t=>t[1]);
-        const accent=r.crux?C.amber:(isPitch?C.blue:C.border);
-        return <div key={r._i} data-kind={r._kind} data-label={isPitch?("P"+r._badge+(r._title?" "+r._title:"")):r._label} id={isPitch?("pitch-"+r._pIdx):undefined} style={{display:"flex",gap:10,marginBottom:last?0:9,scrollMarginTop:"80px"}}>
+        return <div key={r._i} data-kind={r._kind} data-label={isPitch?("P"+r._badge+(r._title?" "+r._title:"")):r._label} id={isPitch?("pitch-"+r._pIdx):undefined} style={{display:"flex",gap:10,scrollMarginTop:"80px"}}>
           <div style={{display:"flex",flexDirection:"column",alignItems:"center",flexShrink:0}}>
-            <div aria-hidden="true" style={{width:26,height:26,borderRadius:isPitch?7:13,background:r.crux?C.amberBg:(isPitch?C.blueBg:C.surface),border:"1px solid "+(r.crux?C.amber:(isPitch?C.blueDim:C.border)),display:"flex",alignItems:"center",justifyContent:"center",fontSize:isPitch?11.5:12,fontWeight:700,color:r.crux?C.amber:(isPitch?"#fff":C.textSub)}}>{isPitch?("P"+r._badge):r._seq}</div>
-            {last?null:<div style={{flex:1,width:2,background:C.border,marginTop:3,minHeight:14}}/>}
+            <div aria-hidden="true" data-rope-knot="" style={{minWidth:isPitch?32:24,height:24,boxSizing:"border-box",padding:isPitch?"0 5px":0,marginTop:10,borderRadius:12,background:r.crux?C.amberBg:C.card,border:"2px solid "+(r.crux?C.amber:(isPitch?C.brand:C.borderHi)),display:"flex",alignItems:"center",justifyContent:"center",fontFamily:FONT_MONO,fontSize:11,fontWeight:600,color:r.crux?C.amber:(isPitch?C.text:C.textSub)}}>{isPitch?("P"+r._badge):r._seq}</div>
+            {last?null:<div data-rope="" style={{flex:1,width:2,background:C.brand,minHeight:14,marginBottom:-10}}/>}
           </div>
-          <div style={{flex:1,minWidth:0,background:C.surface,border:"1px solid "+C.border,borderLeft:"3px solid "+accent,borderRadius:10}}>
+          <div style={{flex:1,minWidth:0,paddingBottom:last?0:9}}>
             <div {...(hasMore?clickable(function(){setOpen(isOpen?null:r._i);}):{})} aria-expanded={hasMore?isOpen:undefined} aria-label={hasMore?(isPitch?pitchRowName(r):stageRowName(r)):undefined} style={{padding:"9px 11px",minHeight:44,boxSizing:"border-box",display:"flex",flexDirection:"column",justifyContent:"center",cursor:hasMore?"pointer":"default"}}>
               {(isPitch&&r._title)?<div style={{fontSize:12.5,fontWeight:700,color:C.text,marginBottom:3,wordBreak:"break-word",overflowWrap:"anywhere"}}>{r._title}</div>:null}
               <div style={{display:"flex",justifyContent:"space-between",alignItems:"flex-start",gap:8,flexWrap:"wrap",marginBottom:(r._note&&!longTerrain)?5:0}}>
@@ -180,7 +181,7 @@ export default function RouteBreakdown({route,focus,onEdit,comments,commentsUnav
             </div>
             {isOpen?<div style={{padding:"0 11px 11px"}}>{onEdit?<button onClick={function(e){e.stopPropagation();onEdit(r._i);}} style={{...editBtnStyle(C),marginTop:8}}><EditPencil C={C}/>{isPitch?"Edit this pitch":"Edit this section"}</button>:null}
               {stageTiles.length?<div style={{marginTop:2,paddingTop:9,borderTop:"1px solid "+C.borderLight,display:"grid",gridTemplateColumns:isPitch?"repeat(2,1fr)":"repeat(3,1fr)",gap:7,marginBottom:isPitch?9:0}}>
-                {stageTiles.map(function(s){return <div key={s[0]} style={{background:C.card,borderRadius:8,padding:"7px 9px",textAlign:"center",minWidth:0}}><div style={{fontSize:13.5,fontWeight:700,color:s[2],overflowWrap:"anywhere"}}>{s[1]}</div><div style={{fontSize:11,color:C.textMuted,marginTop:2,lineHeight:1.3}}>{s[0]}</div></div>;})}
+                {stageTiles.map(function(s){return <div key={s[0]} style={{borderLeft:"1px solid "+C.border,padding:"2px 0 2px 10px",minWidth:0}}><div style={{fontSize:13.5,fontWeight:700,color:s[2],overflowWrap:"anywhere"}}>{s[1]}</div><div style={{fontSize:11,color:C.textMuted,marginTop:2,lineHeight:1.3}}>{s[0]}</div></div>;})}
               </div>:null}
               {isPitch?<><PitchConsensus p={r} onSuggestFix={onEdit?function(){onEdit(r._i);}:null}/><CardHead style={{marginBottom:8}}>Photos</CardHead><PitchPhotos items={photosOf(r)} onAdd={onAddPitchPhoto?function(fs){return onAddPitchPhoto(fs,r._n);}:null}/><PitchComments targetId={route.id+"_pitch_"+r._n} comments={comments} commentsUnavailable={commentsUnavailable} onAdd={onCommentAdd}/></>:<PitchComments title="Comments on this section" targetId={route.id+"_pitch_"+r._n} comments={comments} commentsUnavailable={commentsUnavailable} onAdd={onCommentAdd}/>}
             </div>:null}

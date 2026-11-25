@@ -30,7 +30,10 @@ export const HEAD_KEYS = {
   "CLIMATE & SEASON": "climate", "ASPECT & SUN": "aspect",
   "SEASONAL GUIDANCE": "seasonalGuidance", "CROWDS": "crowds", "CROWDS & SOLITUDE": "crowds",
   "PARTNER REQUIREMENTS": "partnerRequirements", "EMERGENCY & RESCUE": "emergency",
-  "TECHNICAL STATS": "grade", "ROUTE FACTS": "grade",
+  /* TECHNICAL STATS / ROUTE FACTS are NOT here (owner, 2026-11-11): those cards hold a dozen fields, and
+     the heading wore the GRADE's level, so a card of "Not on file yet" rows read "High · locked" on
+     every crag route. The grade's chip sits on the grade itself (TechStats), and the card's pencil
+     opens the editor at a field that is still open (firstEditable). */
   "CAMPING & BIVY": "bivy", "WAYPOINTS": "waypoints", "KEY WAYPOINTS": "waypoints",
   "CELL / SAT COVERAGE": "comms", "CELL COVERAGE": "comms",
   "ROUTE DESCRIPTION": "overview", "MY ITINERARY": "itinerary", "TRIP PLAN": "itinerary",
@@ -42,6 +45,8 @@ export function headKey(text) {
   const t = text.replace(/\s*[·—-]\s*\d.*$/, "").trim().toUpperCase().replace(/&AMP;/g, "&");
   return HEAD_KEYS[t] || null;
 }
+// firstEditable: which field a pencil covering several fields opens at (lib/firstEditable.js).
+export { firstEditable } from "./firstEditable.js";
 export const LEVEL_LABEL = { high: "High", medium: "Medium", low: "Low" };
 const LEVEL_HELP = {
   high: "High confidence — checked and locked. If it has changed, flag it.",
@@ -63,9 +68,3 @@ export function ConfChip({ level, label, onFlag, compact }) {
   </span>;
 }
 
-// One line under the route's first section explaining the three levels, shown once per page.
-export function ConfidenceLegend() {
-  return <div style={{ fontSize: 11, color: C.textMuted, lineHeight: 1.5, margin: "0 0 10px", padding: "7px 10px", background: C.surface, border: "1px solid " + C.border, borderRadius: 9 }}>
-    {"Every detail on this page carries a confidence level. "}<b style={{ color: C.green }}>High</b>{" is checked and locked — flag it if it has changed. "}<b style={{ color: C.amber }}>Medium</b>{" is on file and open to your edits. "}<b style={{ color: C.textSub }}>Low</b>{" is missing, inferred or flagged — your edit is most welcome there. ClimbMatch checks every edit before it goes on the page."}
-  </div>;
-}

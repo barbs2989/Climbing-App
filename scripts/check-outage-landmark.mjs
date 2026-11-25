@@ -89,7 +89,11 @@ try {
   // the region is that function's body, carved from the brace before its `return`.
   const lb = app.indexOf("function LogbookTab(");
   if (lb < 0) throw new Error("ANCHOR LOST: the Logbook tab (function LogbookTab)");
-  logbook = region(app, app.indexOf("\n  return ", lb), "the Logbook tab");
+  // The body's OWN brace (`…Props){`), not "the last brace before `return`": a hook call between the
+  // two (the page swipe, 2026-11-14) put its own `{` there and the region lifted 91 chars of it.
+  const lbBody = app.indexOf("Props){", lb);
+  if (lbBody < 0) throw new Error("ANCHOR LOST: LogbookTab's body brace (…Props){)");
+  logbook = region(app, lbBody + 6, "the Logbook tab");
   // `?<div`, not the bare test: the header's title ternary tests logbookTab==="lists" first.
   lists = region(app, 'logbookTab==="lists"?<div', "the Logbook's Areas sub-view");
 } catch (e) {

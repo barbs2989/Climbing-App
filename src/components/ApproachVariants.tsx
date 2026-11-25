@@ -115,7 +115,7 @@ export default function ApproachVariants({route,onEdit,onEditProse}: ApproachVar
           this column reaches a screen by server-rendering the page, and a collapsed paragraph is
           not in that markup. It is labelled only when a summary sits above it. */}
       {own&&prose?<div style={{marginTop:v.notes?9:0}}>
-        {v.notes?<div style={{display:"flex",alignItems:"center",justifyContent:"space-between",gap:8,marginBottom:4}}><div style={{fontSize:9.5,fontWeight:800,color:C.textMuted,textTransform:"uppercase",letterSpacing:0.5}}>Full description</div>{onEditProse?<EditIconButton onClick={onEditProse} title="Edit the full approach description"/>:null}</div>:null}
+        {v.notes?<div style={{display:"flex",alignItems:"center",justifyContent:"space-between",gap:8,marginBottom:4}}><div style={{fontSize:9.5,fontWeight:800,color:C.label,textTransform:"uppercase",letterSpacing:0.5}}>Full description</div>{onEditProse?<EditIconButton onClick={onEditProse} title="Edit the full approach description"/>:null}</div>:null}
         {splitParagraphs(prose).map((p,pi)=><p key={pi} style={{fontSize:13,color:C.textSub,lineHeight:1.7,margin:pi===0?"0 0 8px":"8px 0 0"}}>{p}</p>)}
       </div>:null}
       {v.baseFinding?<div style={{marginTop:7,background:C.greenBg,border:"1px solid "+C.greenDim,borderRadius:9,padding:"8px 10px"}}>

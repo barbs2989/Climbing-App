@@ -1,0 +1,294 @@
+{
+ "wa_the_brothers_traverse": {
+  "area": "wa_the_brothers",
+  "waypoints": [
+   {
+    "lat": 47.5997,
+    "lng": -123.1509,
+    "name": "Lena Lake Trailhead (FR-25, Hamma Hamma)",
+    "type": "Trailhead",
+    "directions": "From Hoodsport, drive north on US 101 about 14 miles and turn left onto Hamma Hamma River Road (FR 25) at milepost 318. Follow it about 7.5 paved miles to the Lena Lake Trailhead, where parking lines the road. A Northwest Forest Pass is required to park."
+   },
+   {
+    "lat": 47.619386,
+    "lng": -123.159505,
+    "elev": 1773,
+    "name": "Lena Lake",
+    "type": "Water"
+   },
+   {
+    "lat": 47.653725,
+    "lng": -123.14059,
+    "name": "The Brothers",
+    "type": "Summit",
+    "elevFt": 6868
+   }
+  ]
+ },
+ "wa_mount_olympus_west_ridge": {
+  "area": "wa_mount_olympus",
+  "waypoints": [
+   {
+    "lat": 47.8602,
+    "lng": -123.9345,
+    "elev": 578,
+    "name": "Hoh River Trailhead (Hoh Rain Forest Visitor Center)",
+    "note": "Hoh Rain Forest Visitor Center trailhead; shared start for multiple Mount Olympus routes.",
+    "type": "Trailhead",
+    "distMi": 0,
+    "directions": "From US 101 about 13 miles south of Forks, turn east on Upper Hoh Road and drive about 18 miles to the road end at the Hoh Rain Forest Visitor Center, about 578 ft. A park entrance pass is required, and overnight trips need an Olympic National Park wilderness permit booked in advance; the Hoh is a quota area."
+   },
+   {
+    "lat": 47.864394,
+    "lng": -123.921149,
+    "elev": 614,
+    "name": "Hoh River crossing",
+    "type": "Water",
+    "distMi": 0.8
+   },
+   {
+    "lat": 47.8789,
+    "lng": -123.7382,
+    "elev": 1000,
+    "name": "Lewis Meadows Camp, Hoh River trail",
+    "type": "Campsite",
+    "distMi": 9.8
+   },
+   {
+    "lat": 47.8575,
+    "lng": -123.6927,
+    "elev": 2600,
+    "name": "Elk Lake Camp, Hoh River trail",
+    "type": "Campsite",
+    "distMi": 13.7
+   },
+   {
+    "lat": 47.8323,
+    "lng": -123.6915,
+    "elev": 4300,
+    "name": "Glacier Meadows — the standard Blue Glacier base camp",
+    "type": "Campsite",
+    "distMi": 15.6
+   },
+   {
+    "lat": null,
+    "lng": null,
+    "elev": 7260,
+    "name": "West Ridge moat (gain ridge)",
+    "type": "Junction",
+    "distMi": null,
+    "elevFt": 7260,
+    "distFrom": "track",
+    "directions": "Cross the Blue Glacier to the southwest, keeping Crystal Pass, Five Fingers Ridge and the West Peak in view as references, to the moat at the ridge's lowest point near 7,260 ft. If you find yourself climbing toward Crystal Pass, you have drifted onto the standard route."
+   },
+   {
+    "lat": 47.801305,
+    "lng": -123.710855,
+    "elev": 7980,
+    "name": "Mount Olympus (West Peak)",
+    "type": "Summit",
+    "distMi": 20.8,
+    "elevFt": 7980,
+    "distFrom": "track",
+    "directions": "Cross the moat and climb about 600 ft of ridge in roughly seven pitches, never harder than 5.4, staying high but slightly south of the loose crest and using shallow gullies, to the base of the summit block, then climb the roughly 100-ft block to the top."
+   }
+  ]
+ },
+ "wa_mount_shuksan_north_face": {
+  "area": "wa_mount_shuksan_climbs",
+  "waypoints": [
+   {
+    "lat": 48.8589,
+    "lng": -121.6591,
+    "elev": 3573,
+    "name": "White Salmon Road (hairpin) TH",
+    "type": "Trailhead",
+    "distMi": 0,
+    "directions": "Park near the old White Salmon day-lodge site on SR 542 (White Salmon Road, Forest Road 3075), just before the Mount Baker Ski Area's White Salmon lodge. Walk around the gate and follow the old road about a mile to where it ends at an old clearcut. With good snow cover, drop northeast into the White Salmon Creek valley and follow it toward the glacier; without good cover, hold your elevation and contour around the clearcut instead, since the valley bottom turns to slide alder and devil's club once the snow is gone."
+   },
+   {
+    "lat": null,
+    "lng": null,
+    "elev": 5500,
+    "name": "North Face Base Camp",
+    "type": "Campsite",
+    "distMi": 5,
+    "directions": "Continue up the White Salmon valley toward the toe of the White Salmon Glacier, then climb to the shoulder at about 5,500 ft on the divide between the White Salmon Glacier and the Price cirque, where the ridge meets the face. Flat bivy ground and a view down onto Price Lake confirm you are there."
+   },
+   {
+    "lat": 48.83109,
+    "lng": -121.60294,
+    "elev": 9131,
+    "name": "Mount Shuksan Summit",
+    "type": "Summit",
+    "distMi": 8,
+    "directions": "Traverse left across the base through the lower glacier's crevasses, keeping climber's right of the main runnel to stay out from under icefall off the Hanging Glacier. Climb the face at about 45 degrees through a notch between rock outcrops near 6,900 ft, steepening to 50 degrees to top out on the shoulder near 8,400 ft. Traverse the plateau around the east side of the pyramid and finish up its central gully."
+   }
+  ]
+ },
+ "wa_sahale_mountain_r1": {
+  "area": "wa_sahale_mountain",
+  "waypoints": [
+   {
+    "lat": 48.48055,
+    "lng": -121.07979,
+    "elev": 3200,
+    "name": "Boston Basin Trailhead (Cascade River Road pullout)",
+    "note": "Unmarked pullout at mile ~22 of Cascade River Road opposite Johannesburg Mountain, room for 6-8 cars; self-issue wilderness permit and Northwest Forest Pass required.",
+    "type": "Trailhead",
+    "distMi": 0,
+    "directions": "The Boston Basin start is an unmarked climbers' pullout on Cascade River Road, about 21.7 miles from Marblemount at roughly 3,200-3,300 ft, sitting opposite Johannesburg Mountain. There is no trailhead sign of any kind, so watch your odometer rather than looking for signage — it is easy to drive straight past. The pullout holds six to eight cars and you need a Northwest Forest Pass to park. Camping in Boston Basin needs a North Cascades wilderness permit picked up in person at Marblemount, and the popular sites fill fast in the early-access lottery for peak summer weekends."
+   },
+   {
+    "lat": 48.494755,
+    "lng": -121.063487,
+    "elev": 5300,
+    "name": "Boston Basin low camp",
+    "note": "Designated moraine campsite with composting toilet at treeline; most parties continue higher for a shorter summit day.",
+    "type": "Campsite",
+    "distMi": 2.7,
+    "directions": "Keep climbing the steep, switchbacking climbers' path above the streams to treeline at about 5,300 ft, where the low camp sits on heather benches and moraine."
+   },
+   {
+    "lat": null,
+    "lng": null,
+    "elev": 6700,
+    "name": "Glacier rope-up point beneath Sharkfin Tower",
+    "note": "Where the boot path meets continuous snow on the Quien Sabe Glacier's lower-angle (north/left) side; rope up for crevasses here.",
+    "type": "Junction",
+    "distMi": 4,
+    "directions": "From high camp, stay on climber's left and walk moraine and slabs toward the left side of Sharkfin Tower to the toe of the Quien Sabe Glacier. Rope up where the boot path meets continuous snow, around 6,700 ft."
+   },
+   {
+    "lat": 48.489971153846156,
+    "lng": -121.04370653846154,
+    "elev": 7600,
+    "name": "Bergschrund crossing",
+    "note": "Narrow snow bridge crosses above and left of the bergschrund late-season; crevasses widen through August-September and the crossing point shifts year to year.",
+    "type": "Hazard",
+    "distMi": 4.6,
+    "directions": "Make a rising traverse under the cliffs below Sharkfin Tower onto the flatter part of the glacier, then pick a line up the steeper section between crevasses; the left-hand and more direct lines merge partway up. Cross near 7,600 ft on a snow bridge above and left of the bergschrund; the crossing point shifts from year to year."
+   },
+   {
+    "lat": 48.492543,
+    "lng": -121.037233,
+    "elev": 8200,
+    "name": "Boston-Sahale Col",
+    "note": "Top of the glacier traverse beneath the Sharkfin face; gains the col between Sahale and Boston Peak before the final scramble.",
+    "type": "Junction",
+    "distMi": 5,
+    "directions": "Climb the upper glacier to a second crossing near 8,100 ft, where large open crevasses flank the route late in the season. Later in summer the usual line goes right around the end of the bergschrund, then cuts back up and left to the Boston-Sahale col, the only low saddle at the top of the glacier."
+   },
+   {
+    "lat": 48.4911,
+    "lng": -121.03849,
+    "elev": 8680,
+    "name": "Sahale Mountain summit",
+    "note": "Short, exposed 3rd/4th-class scramble up the summit block from the col; the true summit block has fixed anchors used by many parties to rappel back to the col.",
+    "type": "Summit",
+    "distMi": 5.2,
+    "directions": "From the col, traverse right (south) across a short but exposed snow slope with a rocky step, crampons and axe on and well back from any cornice, to the base of the summit block. Finish with about 60-70 ft of very exposed, loose Class 3 with 4th-class moves to the summit."
+   }
+  ]
+ },
+ "wa_mount_baker_cockscomb_ridge": {
+  "area": "wa_mount_baker",
+  "waypoints": [
+   {
+    "lat": 48.80224,
+    "lng": -121.89567,
+    "elev": 3670,
+    "name": "Heliotrope Ridge Trailhead",
+    "type": "Trailhead",
+    "distMi": 0,
+    "directions": "From the Mount Baker Highway (SR 542) about a mile east of Glacier, turn onto Glacier Creek Road (FR 39) and follow it to its end at the Heliotrope Ridge trailhead for Trail 677, at about 3,700 ft."
+   },
+   {
+    "lat": 48.7893,
+    "lng": -121.86777,
+    "elev": 5900,
+    "name": "Hogsback Camp",
+    "type": "Campsite",
+    "distMi": 3,
+    "directions": "Follow Trail 677 through old growth, crossing Grouse, Kulshan and Heliotrope Creeks (lowest early in the day), to the signed fork at about 2 miles. Take the right-hand climbers' path up the crest of the Hogsback moraine to the camps near 6,000 ft beside the Coleman Glacier."
+   },
+   {
+    "lat": 48.815129,
+    "lng": -121.760114,
+    "elev": 6094,
+    "name": "Camp Kiser, Ptarmigan Ridge",
+    "type": "Campsite"
+   },
+   {
+    "lat": 48.79605,
+    "lng": -121.81755,
+    "elev": 7800,
+    "name": "Cockscomb Ridge base (east edge of the Roosevelt Glacier)",
+    "type": "Junction",
+    "distMi": null,
+    "directions": "Rope up and head east-northeast across the Coleman and then the Roosevelt Glacier, two to three hours through a crevasse field with thin snow bridges, then take low-to-moderate snow ramps to the foot of the ridge at about 7,500 to 7,800 ft on the east edge of the Roosevelt."
+   },
+   {
+    "lat": 48.78642,
+    "lng": -121.81378,
+    "elev": 9260,
+    "name": "Cockscomb Tower",
+    "type": "Hazard",
+    "distMi": null,
+    "directions": "Climb the lower ridge on moderate snow, passing a pinnacle on its right and keeping to snow over the poor rock. Get around the junky towers and bergschrunds on the left (east) on ramps through the icefall, including a long contour east near 9,000 ft around a schrund, to the foot of the 300 ft Cockscomb Tower."
+   },
+   {
+    "lat": 48.776797,
+    "lng": -121.814467,
+    "elev": 10781,
+    "name": "Mount Baker Summit",
+    "type": "Summit",
+    "distMi": null,
+    "directions": "Pass the tower on its left (east) side by steep snow; late in the season, when that snow is gone, drop onto the Park Glacier and climb its AI3 headwall instead. Regain the crest above the tower, follow it as it broadens into the summit plateau, and cross the plateau to Grant Peak."
+   }
+  ]
+ },
+ "wa_mount_baker_boulder_park_cleaver": {
+  "area": "wa_mount_baker",
+  "waypoints": [
+   {
+    "lat": 48.73525,
+    "lng": -121.71027,
+    "elev": 2700,
+    "name": "Boulder Ridge Trailhead (Trail #605, FR-1131)",
+    "type": "Trailhead",
+    "distMi": 0,
+    "directions": "From Sedro-Woolley, drive SR 20 east 16 miles to milepost 82 and turn left (north) on Baker Lake Road (FS 11). Continue about 18 miles; just past Boulder Creek Campground and the Boulder Creek bridge, turn left on FR-1130 for about 1 mile, then left on FR-1131 to its end at the Boulder Ridge Trailhead, around 2,700 ft. Boulder Ridge Trail #605 starts from the road's end. This is the lowest trailhead on the mountain, which is why the climb adds up to about 8,000 ft of cumulative gain — the biggest of any Baker route."
+   },
+   {
+    "lat": 48.776797,
+    "lng": -121.814467,
+    "elev": 10781,
+    "name": "Mount Baker Summit",
+    "type": "Summit",
+    "distMi": 8,
+    "directions": "Follow Boulder Ridge Trail #605 about 2 flat miles to the boggy clearing at the wilderness boundary, then the user path up steep heather and a Class 3 rock step to camp where the ridge meets snow. Rope up and cross the lower glacier northwest to the toe of the cleaver near 6,800 ft, follow the cleaver, mostly on its north side, to the large rock buttress near 9,300 ft, then take one of the finishes past the buttress onto the summit plateau and Grant Peak."
+   }
+  ]
+ },
+ "wa_godzilla": {
+  "area": "wa_dwarf_tossing_to_narrow_arrow",
+  "waypoints": null
+ },
+ "wa_davis_holland_route": {
+  "area": "wa_full_or_nearly_wall_routes",
+  "waypoints": null
+ },
+ "wa_japanese_gardens": {
+  "area": "wa_dwarf_tossing_to_narrow_arrow",
+  "waypoints": null
+ },
+ "wa_thin_fingers": {
+  "area": "wa_narrow_arrow_and_further_right",
+  "waypoints": null
+ },
+ "wa_iron_horse": {
+  "area": "wa_dwarf_tossing_to_narrow_arrow",
+  "waypoints": null
+ }
+}

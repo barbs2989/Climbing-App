@@ -232,9 +232,6 @@ const CHECKED = {
   eventForm: '"No climbs on this list yet." (SharedListView) sits after its `(!given&&q.isError)` branch ("Couldn’t load this list…") and the missing-list branch, so a failed read cannot reach it; ListsManager\'s empty copy sits after its error branch ("Couldn’t load your objectives…")',
   areaTreeOpen: "AreaTree is gated on `selArea`, which is written only on the SEED catalog path — dead in production (VITE_USE_DB=true renders DbAreaBrowser)",
   logPickOpen: "LogRoutePicker filters the seed ROUTES/MOUNTAINS module constants; no DB read to fail",
-  logCatchWith: 'the copy is "No climbs match." — a statement about the filter the user just typed, true during an outage',
-  giveVouchWith: 'same "No climbs match." filter copy',
-  quickLogFor: 'same "No climbs match." filter copy',
   eventInvite: "renders FullProfile; its vouches/objectives come from `climber.vouches` and `climber.objectiveIds`, which a DB-derived profile NEVER carries — empty always, not because of an outage",
   /* The Help FAQ answers "Can I see other people's recorded GPX tracks?" and has to say that
      almost none exist -- `communityTracks` is a SEED-ONLY field and `routes` has no track column
@@ -245,7 +242,7 @@ const CHECKED = {
   helpOpen: 'the Help FAQ\'s "almost no route carries one yet" is static prose about the CATALOG, not a read of the climber\'s own data -- communityTracks is seed-only and has no column, so no query stands behind the sentence',
   aboutOpen: 'renders no such copy of its own -- it sits beside <Help> at the same render site, so the 3000-char window attributes Help\'s FAQ to it; see helpOpen',
 
-  legal: "LegalView is static copy; the certifications/skills/events lines come from GuideDashboard, which is seed-backed (DEMO_FILLERS)",
+  legal: "LegalView is static copy",
 
   /* SharedListView (0199) reads ONE list through useSharedList and branches on the query itself, not
      on a named xUnavailable flag: q.isError renders "Couldn't load this list…", a null result (RLS
@@ -348,7 +345,7 @@ for (const r of ungated) {
 if (!ungated.length) console.log("  (none)");
 console.log("\nREAD THE ATTRIBUTION, NOT THE COUNT. Components are collected from a 3000-char");
 console.log("window after the render site, so an overlay rendered NEXT TO others picks up their");
-console.log("copy as well as its own -- `dashOpen` listing Inbox is that, not a finding. The rows");
+console.log("copy as well as its own -- one listing a neighbour's component is that, not a finding. The rows");
 console.log("with ONE followed component are the clean ones. The count is an upper bound.");
 /* Count the rows that ARE gated, not "everything minus the unexamined". The old arithmetic folded
    the CHECKED rows into the gated total, so it printed "16 gated" above a list of three — and the

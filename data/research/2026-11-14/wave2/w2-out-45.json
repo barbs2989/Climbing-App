@@ -1,0 +1,2879 @@
+{
+ "co_windom_peak_west_ridge": {
+  "area": "co_windom_peak",
+  "facts": [
+   {
+    "field": "gain_ft",
+    "value": 6000,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=wind1",
+      "retrieved_at": "2026-11-14",
+      "fact": "Elevation gain from Needleton trailhead listed as 6,000 ft (round-trip route stats)."
+     },
+     {
+      "url": "https://thenextsummit.org/colorado-14ers/hiking-windom-peak/",
+      "retrieved_at": "2026-11-14",
+      "fact": "From Needleton the climb is about 18 miles round trip with 6,000 feet of gain."
+     }
+    ]
+   },
+   {
+    "field": "gain_from_chicago_basin_ft",
+    "value": 3000,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=wind1",
+      "retrieved_at": "2026-11-14",
+      "fact": "Elevation gain from Chicago Basin listed as 3,000 ft."
+     },
+     {
+      "url": "https://thenextsummit.org/colorado-14ers/hiking-windom-peak/",
+      "retrieved_at": "2026-11-14",
+      "fact": "From a Chicago Basin camp: about 6 miles round trip and 3,000 feet of gain."
+     }
+    ]
+   },
+   {
+    "field": "dist_mi_roundtrip",
+    "value": 18,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=wind1",
+      "retrieved_at": "2026-11-14",
+      "fact": "Round-trip length from Needleton trailhead: 18 miles."
+     },
+     {
+      "url": "https://thenextsummit.org/colorado-14ers/hiking-windom-peak/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Round-trip distance 18 miles from Needleton."
+     }
+    ]
+   },
+   {
+    "field": "dist_mi_roundtrip_from_basin",
+    "value": 6,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=wind1",
+      "retrieved_at": "2026-11-14",
+      "fact": "Round-trip length from Chicago Basin: 6 miles."
+     },
+     {
+      "url": "https://thenextsummit.org/colorado-14ers/hiking-windom-peak/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Round trip from a Chicago Basin camp is about 6 miles."
+     }
+    ]
+   },
+   {
+    "field": "grade",
+    "value": "Easy Class 3",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=wind1",
+      "retrieved_at": "2026-11-14",
+      "fact": "Difficulty given as Easy Class 3."
+     },
+     {
+      "url": "https://thenextsummit.org/colorado-14ers/hiking-windom-peak/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Difficulty Easy Class 3 at the summit blocks; rest is rough Class 2 talus."
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Needleton (Durango & Silverton train stop)",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=wind1",
+      "retrieved_at": "2026-11-14",
+      "fact": "Trailhead is Needleton, reached by the Durango and Silverton Narrow Gauge Railroad."
+     },
+     {
+      "url": "https://thenextsummit.org/colorado-14ers/hiking-windom-peak/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Trailhead: Needleton, a Durango & Silverton train stop."
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "Ride the train about 2.5 h to Needleton, then hike about 6 miles to Chicago Basin",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=wind1",
+      "retrieved_at": "2026-11-14",
+      "fact": "Train ride to Needleton takes about 2.5 hours; from there a 6-mile hike reaches Chicago Basin."
+     },
+     {
+      "url": "https://thenextsummit.org/colorado-14ers/hiking-windom-peak/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Ride the train into the Weminuche and backpack about 6 miles to a base camp."
+     }
+    ]
+   },
+   {
+    "field": "high_point_ft",
+    "value": 14089,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=wind1",
+      "retrieved_at": "2026-11-14",
+      "fact": "Summit elevation listed as 14,089 ft."
+     }
+    ]
+   },
+   {
+    "field": "camp",
+    "value": "Chicago Basin dispersed sites, 10,800-11,100 ft",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=wind1",
+      "retrieved_at": "2026-11-14",
+      "fact": "Dispersed campsites in Chicago Basin lie between 10,800 and 11,100 feet."
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "Signed Twin Lakes junction near 11,200 ft; Twin Lakes at 12,500 ft",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=wind1",
+      "retrieved_at": "2026-11-14",
+      "fact": "Turn left at a signed Twin Lakes junction near 11,200 ft; Twin Lakes reached at 12,500 ft."
+     }
+    ]
+   },
+   {
+    "field": "trip_days",
+    "value": "2-3",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://thenextsummit.org/colorado-14ers/hiking-windom-peak/",
+      "retrieved_at": "2026-11-14",
+      "fact": "From Needleton the trip is usually spread over two or three days."
+     }
+    ]
+   },
+   {
+    "field": "permit",
+    "value": "Needleton train stop needs a phone reservation (capped at 40 people a day)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://summitborn.com/windom-peak-west-ridge-route-guide/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Needleton stop requires a phone reservation and is capped at 40 people per day; no wilderness permit found."
+     }
+    ]
+   },
+   {
+    "field": "season",
+    "value": "mid-July to mid-September",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://summitborn.com/windom-peak-west-ridge-route-guide/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Best season roughly mid-July through mid-September, within the train season (site judgment)."
+     }
+    ]
+   },
+   {
+    "field": "hazard",
+    "value": "Exposure, rockfall, route-finding and commitment all rated considerable",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=wind1",
+      "retrieved_at": "2026-11-14",
+      "fact": "Risk factors: exposure, rockfall, route-finding and commitment each rated Considerable."
+     }
+    ]
+   }
+  ],
+  "note": "Grade conflict: app has Class 2+, both sources say Easy Class 3. 14ers lists the Needleton trailhead at 11,100 ft (summitborn says ~8,200) - trailhead elevation not recorded. Summitborn repeats 14ers figures (cites 14ers) so not counted; thenextsummit matches 14ers exactly and may derive from it."
+ },
+ "co_long_s_peak_western_aspect_trough_the": {
+  "area": "co_long_s_peak_western_aspect",
+  "facts": [
+   {
+    "field": "length_ft",
+    "value": 2200,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105861528/the-trough",
+      "retrieved_at": "2026-11-14",
+      "fact": "Route type: Snow, Alpine, 2200 ft, Grade II."
+     },
+     {
+      "url": "https://stephabegg.com/trip-reports/colorado/longs-peak/longs-trough/",
+      "retrieved_at": "2026-11-14",
+      "fact": "The gully climbs about 2000 vertical feet to a high notch on the southwest ridge."
+     }
+    ]
+   },
+   {
+    "field": "alpine_grade",
+    "value": "II",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105861528/the-trough",
+      "retrieved_at": "2026-11-14",
+      "fact": "Listed as Grade II."
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Glacier Gorge Trailhead",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105861528/the-trough",
+      "retrieved_at": "2026-11-14",
+      "fact": "Start at the Glacier Gorge Junction trailhead, a mile below Bear Lake."
+     },
+     {
+      "url": "https://stephabegg.com/trip-reports/colorado/longs-peak/longs-trough/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Ascent via the Trough from Glacier Gorge Trailhead."
+     }
+    ]
+   },
+   {
+    "field": "gain_ft",
+    "value": 5000,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://stephabegg.com/trip-reports/colorado/longs-peak/longs-trough/",
+      "retrieved_at": "2026-11-14",
+      "fact": "From Glacier Gorge Trailhead the ascent is about 5000 feet of gain and loss (round-trip day)."
+     }
+    ]
+   },
+   {
+    "field": "dist_mi_roundtrip",
+    "value": 15,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://stephabegg.com/trip-reports/colorado/longs-peak/longs-trough/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Climbing Longs via the Trough from Glacier Gorge is almost a 15-mile day."
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "Black Lake is reached at about 5 miles",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105861528/the-trough",
+      "retrieved_at": "2026-11-14",
+      "fact": "Follow signs to cliff-ringed Black Lake at 5 miles."
+     }
+    ]
+   },
+   {
+    "field": "car_to_car_hours",
+    "value": "just under 10 (one party)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://stephabegg.com/trip-reports/colorado/longs-peak/longs-trough/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Author reports a car-to-car time just under 10 hours."
+     }
+    ]
+   },
+   {
+    "field": "hazard",
+    "value": "Short ice step near the base in spring",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://stephabegg.com/trip-reports/colorado/longs-peak/longs-trough/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Non-technical, though spring can bring a short ice step near the base."
+     }
+    ]
+   },
+   {
+    "field": "season",
+    "value": "Snow-filled winter and spring; holds snow until late summer",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://stephabegg.com/trip-reports/colorado/longs-peak/longs-trough/",
+      "retrieved_at": "2026-11-14",
+      "fact": "The Trough holds snow most of its length until late summer and is fully snow-filled in winter and spring."
+     }
+    ]
+   }
+  ],
+  "note": "MP length 2200 ft vs stephabegg ~2000 vertical ft: within 10%. MP FA field says only \"a long time ago\" - not recorded."
+ },
+ "co_mount_neva_juliet": {
+  "area": "co_mount_neva",
+  "facts": [
+   {
+    "field": "trailhead",
+    "value": "Fourth of July Trailhead",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.backcountryrecon.com/colorado/front-range/mt-neva/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Trailhead listed: 4th of July Trailhead."
+     },
+     {
+      "url": "https://coloradokeith.com/2014/06/18/redemption-on-mt-neva-juliet-couloir/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Drove the 4wd road to the 4th of July trailhead."
+     }
+    ]
+   },
+   {
+    "field": "closure",
+    "value": "4th of July Trailhead is summer-only, typically opening in July",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.backcountryrecon.com/colorado/front-range/mt-neva/",
+      "retrieved_at": "2026-11-14",
+      "fact": "4th of July Trailhead noted as summer only, typically opening in July."
+     }
+    ]
+   },
+   {
+    "field": "road",
+    "value": "Four-wheel-drive road to the trailhead",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://coloradokeith.com/2014/06/18/redemption-on-mt-neva-juliet-couloir/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Author turned onto the 4wd road leading to the 4th of July trailhead."
+     }
+    ]
+   },
+   {
+    "field": "aspect",
+    "value": "NE",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.backcountryrecon.com/colorado/front-range/mt-neva/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Juliet is described as a northeast-facing couloir."
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "Pass Lake Dorothy before the couloir",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://coloradokeith.com/2014/06/18/redemption-on-mt-neva-juliet-couloir/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Made good time up to Lake Dorothy, then put on crampons above the lake."
+     }
+    ]
+   },
+   {
+    "field": "angle",
+    "value": "35-40 degrees low, about 49 degrees at the steepest",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://coloradokeith.com/2014/06/18/redemption-on-mt-neva-juliet-couloir/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Slope was 35-40 degrees from the start; author measured about 49 degrees."
+     }
+    ]
+   },
+   {
+    "field": "hazard",
+    "value": "Popular line - watch for other parties above",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.backcountryrecon.com/colorado/front-range/mt-neva/",
+      "retrieved_at": "2026-11-14",
+      "fact": "A popular option, so watch for other people in the couloir."
+     }
+    ]
+   }
+  ],
+  "note": "No gain or distance figure found stated for this route. SummitPost 403."
+ },
+ "co_mount_toll_south_face": {
+  "area": "co_mount_toll",
+  "facts": [
+   {
+    "field": "high_point_ft",
+    "value": 12979,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://en.wikipedia.org/wiki/Mount_Toll",
+      "retrieved_at": "2026-11-14",
+      "fact": "Summit elevation 12,979 ft."
+     },
+     {
+      "url": "https://summitborn.com/mount-toll-blue-lake-route-guide/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Summit given as 12,989 ft (USGS)."
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Mitchell Lake Trailhead",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://summitborn.com/mount-toll-blue-lake-route-guide/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Trailhead is the Mitchell Lake Trailhead (Forest Service), about 10,500 ft."
+     }
+    ]
+   },
+   {
+    "field": "trailhead_elev_ft",
+    "value": 10500,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://summitborn.com/mount-toll-blue-lake-route-guide/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mitchell Lake Trailhead elevation about 10,500 ft."
+     }
+    ]
+   },
+   {
+    "field": "summer_grade",
+    "value": "Class 2 (south slopes)",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://en.wikipedia.org/wiki/Mount_Toll",
+      "retrieved_at": "2026-11-14",
+      "fact": "Easiest route: south slope, class 2."
+     },
+     {
+      "url": "https://summitborn.com/mount-toll-blue-lake-route-guide/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Class 2 talus and slabs by the easiest line; Class 3 on the crest."
+     }
+    ]
+   },
+   {
+    "field": "permit",
+    "value": "Brainard Lake timed-entry parking reservation in summer; no wilderness permit for day groups of 1-7",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://summitborn.com/mount-toll-blue-lake-route-guide/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Summer requires a Brainard Lake timed-entry parking reservation; day groups of 1-7 need no wilderness permit."
+     }
+    ]
+   },
+   {
+    "field": "season",
+    "value": "mid-July through September (summer route; snow below the saddle earlier)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://summitborn.com/mount-toll-blue-lake-route-guide/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Best season mid-July through September; snow lingers below the saddle earlier."
+     }
+    ]
+   }
+  ],
+  "note": "High point: Wikipedia 12,979 vs summitborn 12,989 (within tolerance). Summitborn gain 2,600-2,700 ft is labelled \"we estimate\" - not used. summer_grade is the summer scramble grade; app route is graded as snow."
+ },
+ "co_potosi_peak_north_couloir": {
+  "area": "co_potosi_peak",
+  "facts": [
+   {
+    "field": "high_point_ft",
+    "value": 13786,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://stuckintherockies.com/2015/04/potosi-peak/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Potosi Peak is 13,786 feet."
+     },
+     {
+      "url": "https://www.freeskier.com/potosi-peak-13786ft-how-to-ski-the-elusive-north-couloir",
+      "retrieved_at": "2026-11-14",
+      "fact": "Potosi Peak (13,786 feet)."
+     }
+    ]
+   },
+   {
+    "field": "length_ft",
+    "value": 1200,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://stuckintherockies.com/2015/04/potosi-peak/",
+      "retrieved_at": "2026-11-14",
+      "fact": "From the couloir base it was about 1200 vertical feet up to a small col."
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "Start high in Yankee Boy Basin on the south side and cross a saddle to the north side",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://stuckintherockies.com/2015/04/potosi-peak/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Start on the south side high in Yankee Boy Basin, go over a saddle to reach the couloir."
+     },
+     {
+      "url": "https://www.freeskier.com/potosi-peak-13786ft-how-to-ski-the-elusive-north-couloir",
+      "retrieved_at": "2026-11-14",
+      "fact": "Route begins from Yankee Boy Basin; the couloir is hidden from the basin."
+     }
+    ]
+   },
+   {
+    "field": "approach_step_2",
+    "value": "From the saddle drop about 500 ft north to the couloir base",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://stuckintherockies.com/2015/04/potosi-peak/",
+      "retrieved_at": "2026-11-14",
+      "fact": "From the saddle they went about 500 feet north to the base of the couloir."
+     }
+    ]
+   },
+   {
+    "field": "closure",
+    "value": "Camp Bird Road is gated in spring below Yankee Boy Basin",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://stuckintherockies.com/2015/04/potosi-peak/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Road was closed four miles below the Yankee Boy trailhead at a locked mine gate."
+     },
+     {
+      "url": "https://www.freeskier.com/potosi-peak-13786ft-how-to-ski-the-elusive-north-couloir",
+      "retrieved_at": "2026-11-14",
+      "fact": "Camp Bird Road has a gate closure at 9,200 ft until May 1."
+     }
+    ]
+   },
+   {
+    "field": "road",
+    "value": "After May 1, high-clearance 4WD needed to drive higher",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.freeskier.com/potosi-peak-13786ft-how-to-ski-the-elusive-north-couloir",
+      "retrieved_at": "2026-11-14",
+      "fact": "After the road opens May 1, drive as far as possible; high-clearance 4WD required."
+     }
+    ]
+   },
+   {
+    "field": "approach_step_3",
+    "value": "From the spring gate, 3.5 miles up the road to the Yankee Boy/Governor Basin junction",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.freeskier.com/potosi-peak-13786ft-how-to-ski-the-elusive-north-couloir",
+      "retrieved_at": "2026-11-14",
+      "fact": "From the closure it is a 3.5-mile walk to the Yankee Boy and Governor Basin junction past Revenue Mine."
+     }
+    ]
+   },
+   {
+    "field": "descent",
+    "value": "Retrace the route back over the saddle",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://stuckintherockies.com/2015/04/potosi-peak/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Return required retracing the route entirely."
+     }
+    ]
+   },
+   {
+    "field": "hazard",
+    "value": "Cornices at the saddle",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://stuckintherockies.com/2015/04/potosi-peak/",
+      "retrieved_at": "2026-11-14",
+      "fact": "At the saddle they slipped between a couple of cornices."
+     }
+    ]
+   }
+  ],
+  "note": "Couloir length: stuckintherockies ~1200 ft vs app 1100 ft. Spring gate walk: 4 mi (sitr) vs 3.5 mi (freeskier) - not within 10%, distance not locked."
+ },
+ "co_s6_pk_13_441_north_couloir": {
+  "area": "co_s6_pk_13_441",
+  "facts": [
+   {
+    "field": "trailhead",
+    "value": "Blue Lakes Trailhead",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.merelyafleshwound.com/mountaineering/san-juan-range/sneffels-range-west/s6-ski/",
+      "retrieved_at": "2026-11-14",
+      "fact": "S6 ski trip trailhead: Blue Lakes."
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "Follow the trail about two miles before leaving it",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.merelyafleshwound.com/mountaineering/san-juan-range/sneffels-range-west/s6-ski/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Followed the trail for two miles, then skinned to the base of the northeast face."
+     }
+    ]
+   }
+  ],
+  "note": "Merelyafleshwound gives 7.8 mi / 4,200 ft / 5.5 h for a NE-face ski line not identified as this couloir - not used. MP route 109088431 \"North Couloir\" is on Gilpin Peak - not used. SummitPost 403."
+ },
+ "co_s6_pk_13_441_northeast_couloir_directissimo": {
+  "area": "co_s6_pk_13_441",
+  "facts": [
+   {
+    "field": "trailhead",
+    "value": "Blue Lakes Trailhead",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.merelyafleshwound.com/mountaineering/san-juan-range/sneffels-range-west/s6-ski/",
+      "retrieved_at": "2026-11-14",
+      "fact": "S6 ski trip trailhead: Blue Lakes."
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "Follow the trail about two miles before leaving it",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.merelyafleshwound.com/mountaineering/san-juan-range/sneffels-range-west/s6-ski/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Followed the trail for two miles, then skinned to the base of the northeast face."
+     }
+    ]
+   }
+  ],
+  "note": "Line skied on the merelyafleshwound page is not identified as the Directissimo; its distance/gain not used. SummitPost 403."
+ },
+ "co_spiral_route": {
+  "area": "co_notchtop",
+  "facts": [
+   {
+    "field": "trailhead",
+    "value": "Bear Lake",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105750622/spiral-route",
+      "retrieved_at": "2026-11-14",
+      "fact": "Approach starts from Bear Lake; saddle reached at 2.8 miles."
+     },
+     {
+      "url": "https://fastestknowntime.com/route/notchtop-mountain-spiral-route-co",
+      "retrieved_at": "2026-11-14",
+      "fact": "Start from the Bear Lake parking lot and take the Flattop trail."
+     }
+    ]
+   },
+   {
+    "field": "alpine_grade",
+    "value": "II",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105750622/spiral-route",
+      "retrieved_at": "2026-11-14",
+      "fact": "Type: Trad, Alpine, Grade II."
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "Saddle between Joe Mills and Notchtop at 2.8 mi; small lake at the ridge base 0.7 mi past Lake Helene",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105750622/spiral-route",
+      "retrieved_at": "2026-11-14",
+      "fact": "Saddle at 2.8 miles from Bear Lake; small lake at the south ridge base 0.7 miles from Lake Helene."
+     }
+    ]
+   },
+   {
+    "field": "approach_step_2",
+    "value": "Flattop trail about a mile, then the Fern-Odessa Lake trail",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://fastestknowntime.com/route/notchtop-mountain-spiral-route-co",
+      "retrieved_at": "2026-11-14",
+      "fact": "About a mile up the Flattop trail, take the Fern-Odessa Lake trail junction."
+     }
+    ]
+   },
+   {
+    "field": "dist_mi_roundtrip",
+    "value": 8.3,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://fastestknowntime.com/route/notchtop-mountain-spiral-route-co",
+      "retrieved_at": "2026-11-14",
+      "fact": "FKT car-to-car route distance listed as 8.3 mi."
+     }
+    ]
+   },
+   {
+    "field": "gain_ft",
+    "value": 3000,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://jaredworkman.com/notchtop.htm",
+      "retrieved_at": "2026-11-14",
+      "fact": "Trip report header: about 10 miles and about 3000 ft elevation gain."
+     }
+    ]
+   },
+   {
+    "field": "hazard",
+    "value": "Descent gully holds 20-30 degree snow",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://jaredworkman.com/notchtop.htm",
+      "retrieved_at": "2026-11-14",
+      "fact": "Descent gully had a good stretch of 20-30 degree snow with steeper snow above."
+     }
+    ]
+   }
+  ],
+  "note": "Distance conflict: FKT 8.3 mi vs jaredworkman ~10 mi. MP FA unknown. andyintherockies.com did not load."
+ },
+ "co_sundance_mountain_north_face_couloir_of_sundance": {
+  "area": "co_sundance_mountain",
+  "facts": [
+   {
+    "field": "trailhead",
+    "value": "Trail Ridge Road (Rocky Mountain National Park)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://summitborn.com/sundance-mountain-mountain-guide/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Routes start from Trail Ridge Road across the tundra, Class 1-2."
+     }
+    ]
+   },
+   {
+    "field": "closure",
+    "value": "Trail Ridge Road is seasonal; access season late June through September",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://summitborn.com/sundance-mountain-mountain-guide/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Best season late June through September while Trail Ridge Road is open."
+     }
+    ]
+   },
+   {
+    "field": "land_manager",
+    "value": "Rocky Mountain National Park Wilderness",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://summitborn.com/sundance-mountain-mountain-guide/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Protected area: Rocky Mountain National Park Wilderness beside the Trail Ridge Road corridor."
+     }
+    ]
+   }
+  ],
+  "note": "backcountryrecon page covers Sundance NE couloirs (short, very steep, high avalanche danger) - may or may not be this line, not used. MP 109088431 is a Gilpin Peak route. SummitPost 403."
+ },
+ "co_torrey_s_peak_dead_dog_couloir": {
+  "area": "co_torrey_s_peak",
+  "facts": [
+   {
+    "field": "gain_ft",
+    "value": 3000,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=torr7",
+      "retrieved_at": "2026-11-14",
+      "fact": "Elevation gain 3,000 ft (round-trip route stats)."
+     }
+    ]
+   },
+   {
+    "field": "dist_mi_roundtrip",
+    "value": 6,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=torr7",
+      "retrieved_at": "2026-11-14",
+      "fact": "Round-trip length 6 mi."
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Grays Peak Trailhead",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=torr7",
+      "retrieved_at": "2026-11-14",
+      "fact": "Trailhead: Grays Peak, 11,280 feet."
+     }
+    ]
+   },
+   {
+    "field": "trailhead_elev_ft",
+    "value": 11280,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=torr7",
+      "retrieved_at": "2026-11-14",
+      "fact": "Grays Peak trailhead at 11,280 feet."
+     }
+    ]
+   },
+   {
+    "field": "high_point_ft",
+    "value": 14272,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=torr7",
+      "retrieved_at": "2026-11-14",
+      "fact": "Summit 14,272 feet."
+     },
+     {
+      "url": "https://www.alanarnette.com/co14ers/deaddogcouloir.php",
+      "retrieved_at": "2026-11-14",
+      "fact": "Torreys Peak given as 14,279 feet."
+     }
+    ]
+   },
+   {
+    "field": "grade",
+    "value": "Class 3, Steep Snow",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=torr7",
+      "retrieved_at": "2026-11-14",
+      "fact": "Difficulty Class 3; snow steepness Steep."
+     }
+    ]
+   },
+   {
+    "field": "alpine_grade",
+    "value": "II",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=torr7",
+      "retrieved_at": "2026-11-14",
+      "fact": "Rating D12 / R3 / II."
+     }
+    ]
+   },
+   {
+    "field": "length_ft",
+    "value": 1100,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.alanarnette.com/co14ers/deaddogcouloir.php",
+      "retrieved_at": "2026-11-14",
+      "fact": "A 1,100-foot snow climb in a narrow couloir."
+     }
+    ]
+   },
+   {
+    "field": "angle",
+    "value": "Mostly under 40 degrees; 45-50 near the top",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=torr7",
+      "retrieved_at": "2026-11-14",
+      "fact": "Most of the couloir is below 40 degrees; the top can reach 45 to 50 degrees."
+     }
+    ]
+   },
+   {
+    "field": "hazard",
+    "value": "Rockfall",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=torr7",
+      "retrieved_at": "2026-11-14",
+      "fact": "Rockfall risk rated Considerable."
+     },
+     {
+      "url": "https://www.alanarnette.com/co14ers/deaddogcouloir.php",
+      "retrieved_at": "2026-11-14",
+      "fact": "Narrow, rockfall-prone couloir."
+     }
+    ]
+   },
+   {
+    "field": "hazard_2",
+    "value": "Possible cornice at the top",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=torr7",
+      "retrieved_at": "2026-11-14",
+      "fact": "Depending on snow deposit you may meet a cornice at the top."
+     }
+    ]
+   },
+   {
+    "field": "hazard_3",
+    "value": "Early sun hit - start early",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=torr7",
+      "retrieved_at": "2026-11-14",
+      "fact": "Dead Dog gets an early sun hit, so start early."
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "Finish by climbing about 200 ft south to the summit",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=torr7",
+      "retrieved_at": "2026-11-14",
+      "fact": "Turn left (south) and climb the remaining 200 feet to the summit."
+     }
+    ]
+   },
+   {
+    "field": "road",
+    "value": "Bakerville exit 221 off I-70, about 4 miles to the trailhead",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.alanarnette.com/co14ers/deaddogcouloir.php",
+      "retrieved_at": "2026-11-14",
+      "fact": "Trailhead is about 4 miles off I-70 at exit 221, Bakerville."
+     }
+    ]
+   }
+  ],
+  "note": "alanarnette 9 mi RT / 3,500 ft includes a side trip to Grays Peak - not used for gain/distance."
+ },
+ "nh_ammonoosuc_ravine_west_side_monroe_brook_slide": {
+  "area": "nh_ammonoosuc_ravine_west_side",
+  "facts": [
+   {
+    "field": "length_ft",
+    "value": 1550,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/117527106/monroe-brook-slide",
+      "retrieved_at": "2026-11-14",
+      "fact": "Type: Snow, Alpine, 1550 ft."
+     }
+    ]
+   },
+   {
+    "field": "approach_note",
+    "value": "Ammonoosuc Ravine Trail has a relocated section that drops about 120 ft to cross Monroe Brook",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://mountainwandering.blogspot.com/2026/01/ammonoosuc-ravine-ramble.html",
+      "retrieved_at": "2026-11-14",
+      "fact": "The relocated trail section makes a 120-ft descent to cross Monroe Brook."
+     }
+    ]
+   }
+  ],
+  "note": "App approach text describes following the flat trail to a tributary; a 2026 report notes the trail was relocated in this area - approach text may need review. outmap.pro route page would not load."
+ },
+ "nh_huntington_ravine_winter_ice_diagonal_gully": {
+  "area": "nh_huntington_ravine_winter_ice",
+  "facts": [
+   {
+    "field": "length_ft",
+    "value": 1000,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106707853/diagonal-gully",
+      "retrieved_at": "2026-11-14",
+      "fact": "Type: Snow, Alpine, 1000 ft, Grade II."
+     }
+    ]
+   },
+   {
+    "field": "alpine_grade",
+    "value": "II",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106707853/diagonal-gully",
+      "retrieved_at": "2026-11-14",
+      "fact": "Listed as Grade II."
+     }
+    ]
+   },
+   {
+    "field": "hazard",
+    "value": "Ice cliff (about 30 ft) at the gully base",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106707853/diagonal-gully",
+      "retrieved_at": "2026-11-14",
+      "fact": "A steep 30-foot ice cliff guards the entrance; a slip would carry you over it."
+     },
+     {
+      "url": "https://www.famousinternetskiers.com/trip-reports/07-08/diagonal-gully-huntington-ravine/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Report describes an ice cliff at the bottom of the gully."
+     }
+    ]
+   },
+   {
+    "field": "aspect",
+    "value": "S",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.famousinternetskiers.com/trip-reports/07-08/diagonal-gully-huntington-ravine/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Gully described as south facing."
+     }
+    ]
+   },
+   {
+    "field": "descent",
+    "value": "Near the ice cliff, traverse skier's left and downclimb or rappel",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106707853/diagonal-gully",
+      "retrieved_at": "2026-11-14",
+      "fact": "Approaching the cliff from above, traverse to skier's left and downclimb or rappel."
+     }
+    ]
+   }
+  ],
+  "note": "MP FA unknown."
+ },
+ "nh_tuckerman_ravine_cathedral_gully": {
+  "area": "nh_tuckerman_ravine",
+  "facts": [
+   {
+    "field": "approach_dist_to_hermit_lake_mi",
+    "value": 2.4,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://en.wikipedia.org/wiki/Tuckerman_Ravine",
+      "retrieved_at": "2026-11-14",
+      "fact": "From the AMC visitor center at Pinkham Notch the lower Tuckerman Ravine Trail runs 2.4 miles toward the ravine."
+     },
+     {
+      "url": "https://www.fs.usda.gov/r09/whitemountain/recreation/hermit-lake-shelters",
+      "retrieved_at": "2026-11-14",
+      "fact": "Hermit Lake shelters sit 2.4 miles up the Tuckerman Ravine Trail from Pinkham Notch parking, half a mile below the ravine."
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Pinkham Notch (AMC Visitor Center, Route 16)",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://en.wikipedia.org/wiki/Tuckerman_Ravine",
+      "retrieved_at": "2026-11-14",
+      "fact": "Ravine is most easily reached from the AMC Visitor Center on Route 16 at Pinkham Notch."
+     },
+     {
+      "url": "https://www.fs.usda.gov/r09/whitemountain/recreation/hermit-lake-shelters",
+      "retrieved_at": "2026-11-14",
+      "fact": "Parking for Hermit Lake is at the AMC Pinkham Notch facility."
+     }
+    ]
+   },
+   {
+    "field": "camp",
+    "value": "Hermit Lake Shelters (permit bought at Pinkham Notch, no reservations)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.fs.usda.gov/r09/whitemountain/recreation/hermit-lake-shelters",
+      "retrieved_at": "2026-11-14",
+      "fact": "Hermit Lake shelters: camping permit purchased at Pinkham Notch Visitor Center; reservations not accepted; no overnight pets."
+     }
+    ]
+   },
+   {
+    "field": "length_ft",
+    "value": 1500,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/117329195/cathedral-gully",
+      "retrieved_at": "2026-11-14",
+      "fact": "Type: Snow, Alpine, 1500 ft, Grade III."
+     }
+    ]
+   },
+   {
+    "field": "alpine_grade",
+    "value": "III",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/117329195/cathedral-gully",
+      "retrieved_at": "2026-11-14",
+      "fact": "Listed as Grade III."
+     }
+    ]
+   }
+  ]
+ },
+ "nh_tuckerman_ravine_chute_the": {
+  "area": "nh_tuckerman_ravine",
+  "facts": [
+   {
+    "field": "approach_dist_to_hermit_lake_mi",
+    "value": 2.4,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://en.wikipedia.org/wiki/Tuckerman_Ravine",
+      "retrieved_at": "2026-11-14",
+      "fact": "From the AMC visitor center at Pinkham Notch the lower Tuckerman Ravine Trail runs 2.4 miles toward the ravine."
+     },
+     {
+      "url": "https://www.fs.usda.gov/r09/whitemountain/recreation/hermit-lake-shelters",
+      "retrieved_at": "2026-11-14",
+      "fact": "Hermit Lake shelters sit 2.4 miles up the Tuckerman Ravine Trail from Pinkham Notch parking, half a mile below the ravine."
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Pinkham Notch (AMC Visitor Center, Route 16)",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://en.wikipedia.org/wiki/Tuckerman_Ravine",
+      "retrieved_at": "2026-11-14",
+      "fact": "Ravine is most easily reached from the AMC Visitor Center on Route 16 at Pinkham Notch."
+     },
+     {
+      "url": "https://www.fs.usda.gov/r09/whitemountain/recreation/hermit-lake-shelters",
+      "retrieved_at": "2026-11-14",
+      "fact": "Parking for Hermit Lake is at the AMC Pinkham Notch facility."
+     }
+    ]
+   },
+   {
+    "field": "camp",
+    "value": "Hermit Lake Shelters (permit bought at Pinkham Notch, no reservations)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.fs.usda.gov/r09/whitemountain/recreation/hermit-lake-shelters",
+      "retrieved_at": "2026-11-14",
+      "fact": "Hermit Lake shelters: camping permit purchased at Pinkham Notch Visitor Center; reservations not accepted; no overnight pets."
+     }
+    ]
+   },
+   {
+    "field": "length_ft",
+    "value": 900,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/117296548/the-chute",
+      "retrieved_at": "2026-11-14",
+      "fact": "Type: Snow, Alpine, 900 ft, Grade II."
+     }
+    ]
+   },
+   {
+    "field": "alpine_grade",
+    "value": "II",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/117296548/the-chute",
+      "retrieved_at": "2026-11-14",
+      "fact": "Listed as Grade II."
+     }
+    ]
+   },
+   {
+    "field": "angle",
+    "value": "up to 50 degrees near the top",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/117296548/the-chute",
+      "retrieved_at": "2026-11-14",
+      "fact": "Steep snow reaching 50 degrees at the top."
+     }
+    ]
+   },
+   {
+    "field": "overview",
+    "value": "Drops between two large cliffs that narrow the run",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://en.wikipedia.org/wiki/Tuckerman_Ravine",
+      "retrieved_at": "2026-11-14",
+      "fact": "The Chute drops between two large cliffs that slowly narrow it."
+     }
+    ]
+   }
+  ]
+ },
+ "nh_tuckerman_ravine_lion_s_head_gully": {
+  "area": "nh_tuckerman_ravine",
+  "facts": [
+   {
+    "field": "approach_dist_to_hermit_lake_mi",
+    "value": 2.4,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://en.wikipedia.org/wiki/Tuckerman_Ravine",
+      "retrieved_at": "2026-11-14",
+      "fact": "From the AMC visitor center at Pinkham Notch the lower Tuckerman Ravine Trail runs 2.4 miles toward the ravine."
+     },
+     {
+      "url": "https://www.fs.usda.gov/r09/whitemountain/recreation/hermit-lake-shelters",
+      "retrieved_at": "2026-11-14",
+      "fact": "Hermit Lake shelters sit 2.4 miles up the Tuckerman Ravine Trail from Pinkham Notch parking, half a mile below the ravine."
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Pinkham Notch (AMC Visitor Center, Route 16)",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://en.wikipedia.org/wiki/Tuckerman_Ravine",
+      "retrieved_at": "2026-11-14",
+      "fact": "Ravine is most easily reached from the AMC Visitor Center on Route 16 at Pinkham Notch."
+     },
+     {
+      "url": "https://www.fs.usda.gov/r09/whitemountain/recreation/hermit-lake-shelters",
+      "retrieved_at": "2026-11-14",
+      "fact": "Parking for Hermit Lake is at the AMC Pinkham Notch facility."
+     }
+    ]
+   },
+   {
+    "field": "camp",
+    "value": "Hermit Lake Shelters (permit bought at Pinkham Notch, no reservations)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.fs.usda.gov/r09/whitemountain/recreation/hermit-lake-shelters",
+      "retrieved_at": "2026-11-14",
+      "fact": "Hermit Lake shelters: camping permit purchased at Pinkham Notch Visitor Center; reservations not accepted; no overnight pets."
+     }
+    ]
+   },
+   {
+    "field": "length_ft",
+    "value": 700,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/117329049/lions-head-gully",
+      "retrieved_at": "2026-11-14",
+      "fact": "Type: Snow, Alpine, 700 ft, Grade II."
+     }
+    ]
+   },
+   {
+    "field": "alpine_grade",
+    "value": "II",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/117329049/lions-head-gully",
+      "retrieved_at": "2026-11-14",
+      "fact": "Listed as Grade II."
+     }
+    ]
+   }
+  ]
+ },
+ "nh_tuckerman_ravine_lip_the": {
+  "area": "nh_tuckerman_ravine",
+  "facts": [
+   {
+    "field": "approach_dist_to_hermit_lake_mi",
+    "value": 2.4,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://en.wikipedia.org/wiki/Tuckerman_Ravine",
+      "retrieved_at": "2026-11-14",
+      "fact": "From the AMC visitor center at Pinkham Notch the lower Tuckerman Ravine Trail runs 2.4 miles toward the ravine."
+     },
+     {
+      "url": "https://www.fs.usda.gov/r09/whitemountain/recreation/hermit-lake-shelters",
+      "retrieved_at": "2026-11-14",
+      "fact": "Hermit Lake shelters sit 2.4 miles up the Tuckerman Ravine Trail from Pinkham Notch parking, half a mile below the ravine."
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Pinkham Notch (AMC Visitor Center, Route 16)",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://en.wikipedia.org/wiki/Tuckerman_Ravine",
+      "retrieved_at": "2026-11-14",
+      "fact": "Ravine is most easily reached from the AMC Visitor Center on Route 16 at Pinkham Notch."
+     },
+     {
+      "url": "https://www.fs.usda.gov/r09/whitemountain/recreation/hermit-lake-shelters",
+      "retrieved_at": "2026-11-14",
+      "fact": "Parking for Hermit Lake is at the AMC Pinkham Notch facility."
+     }
+    ]
+   },
+   {
+    "field": "camp",
+    "value": "Hermit Lake Shelters (permit bought at Pinkham Notch, no reservations)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.fs.usda.gov/r09/whitemountain/recreation/hermit-lake-shelters",
+      "retrieved_at": "2026-11-14",
+      "fact": "Hermit Lake shelters: camping permit purchased at Pinkham Notch Visitor Center; reservations not accepted; no overnight pets."
+     }
+    ]
+   },
+   {
+    "field": "length_ft",
+    "value": 900,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/117328760",
+      "retrieved_at": "2026-11-14",
+      "fact": "Type: Snow, Alpine, 900 ft, Grade II."
+     }
+    ]
+   },
+   {
+    "field": "alpine_grade",
+    "value": "II",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/117328760",
+      "retrieved_at": "2026-11-14",
+      "fact": "Listed as Grade II."
+     }
+    ]
+   },
+   {
+    "field": "angle",
+    "value": "averages 50-55 degrees",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://en.wikipedia.org/wiki/Tuckerman_Ravine",
+      "retrieved_at": "2026-11-14",
+      "fact": "The Lip is an open run averaging 50 to 55 degrees."
+     }
+    ]
+   }
+  ]
+ },
+ "nh_tuckerman_ravine_lobster_claw": {
+  "area": "nh_tuckerman_ravine",
+  "facts": [
+   {
+    "field": "approach_dist_to_hermit_lake_mi",
+    "value": 2.4,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://en.wikipedia.org/wiki/Tuckerman_Ravine",
+      "retrieved_at": "2026-11-14",
+      "fact": "From the AMC visitor center at Pinkham Notch the lower Tuckerman Ravine Trail runs 2.4 miles toward the ravine."
+     },
+     {
+      "url": "https://www.fs.usda.gov/r09/whitemountain/recreation/hermit-lake-shelters",
+      "retrieved_at": "2026-11-14",
+      "fact": "Hermit Lake shelters sit 2.4 miles up the Tuckerman Ravine Trail from Pinkham Notch parking, half a mile below the ravine."
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Pinkham Notch (AMC Visitor Center, Route 16)",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://en.wikipedia.org/wiki/Tuckerman_Ravine",
+      "retrieved_at": "2026-11-14",
+      "fact": "Ravine is most easily reached from the AMC Visitor Center on Route 16 at Pinkham Notch."
+     },
+     {
+      "url": "https://www.fs.usda.gov/r09/whitemountain/recreation/hermit-lake-shelters",
+      "retrieved_at": "2026-11-14",
+      "fact": "Parking for Hermit Lake is at the AMC Pinkham Notch facility."
+     }
+    ]
+   },
+   {
+    "field": "camp",
+    "value": "Hermit Lake Shelters (permit bought at Pinkham Notch, no reservations)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.fs.usda.gov/r09/whitemountain/recreation/hermit-lake-shelters",
+      "retrieved_at": "2026-11-14",
+      "fact": "Hermit Lake shelters: camping permit purchased at Pinkham Notch Visitor Center; reservations not accepted; no overnight pets."
+     }
+    ]
+   },
+   {
+    "field": "length_ft",
+    "value": 700,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/117328994",
+      "retrieved_at": "2026-11-14",
+      "fact": "Type: Snow, Alpine, 700 ft, Grade II."
+     }
+    ]
+   },
+   {
+    "field": "alpine_grade",
+    "value": "II",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/117328994",
+      "retrieved_at": "2026-11-14",
+      "fact": "Listed as Grade II."
+     }
+    ]
+   },
+   {
+    "field": "angle",
+    "value": "30-degree upper chute",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/117328994",
+      "retrieved_at": "2026-11-14",
+      "fact": "Climb the 30 degree chute to the Alpine Garden."
+     }
+    ]
+   },
+   {
+    "field": "overview",
+    "value": "Forked gully on the Lion Head (looker's right) side of the ravine",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://redlineguiding.com/2021/04/lobster-claw-climb/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Lobster Claw is a forked gully on the Lion Head side of Tuckerman Ravine, looker's right."
+     }
+    ]
+   },
+   {
+    "field": "descent",
+    "value": "Lion Head Winter Route",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://redlineguiding.com/2021/04/lobster-claw-climb/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Party descended by the Lion Head Winter Route."
+     }
+    ]
+   }
+  ]
+ },
+ "nh_tuckerman_ravine_right_gully": {
+  "area": "nh_tuckerman_ravine",
+  "facts": [
+   {
+    "field": "approach_dist_to_hermit_lake_mi",
+    "value": 2.4,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://en.wikipedia.org/wiki/Tuckerman_Ravine",
+      "retrieved_at": "2026-11-14",
+      "fact": "From the AMC visitor center at Pinkham Notch the lower Tuckerman Ravine Trail runs 2.4 miles toward the ravine."
+     },
+     {
+      "url": "https://www.fs.usda.gov/r09/whitemountain/recreation/hermit-lake-shelters",
+      "retrieved_at": "2026-11-14",
+      "fact": "Hermit Lake shelters sit 2.4 miles up the Tuckerman Ravine Trail from Pinkham Notch parking, half a mile below the ravine."
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Pinkham Notch (AMC Visitor Center, Route 16)",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://en.wikipedia.org/wiki/Tuckerman_Ravine",
+      "retrieved_at": "2026-11-14",
+      "fact": "Ravine is most easily reached from the AMC Visitor Center on Route 16 at Pinkham Notch."
+     },
+     {
+      "url": "https://www.fs.usda.gov/r09/whitemountain/recreation/hermit-lake-shelters",
+      "retrieved_at": "2026-11-14",
+      "fact": "Parking for Hermit Lake is at the AMC Pinkham Notch facility."
+     }
+    ]
+   },
+   {
+    "field": "camp",
+    "value": "Hermit Lake Shelters (permit bought at Pinkham Notch, no reservations)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.fs.usda.gov/r09/whitemountain/recreation/hermit-lake-shelters",
+      "retrieved_at": "2026-11-14",
+      "fact": "Hermit Lake shelters: camping permit purchased at Pinkham Notch Visitor Center; reservations not accepted; no overnight pets."
+     }
+    ]
+   },
+   {
+    "field": "length_ft",
+    "value": 700,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/117328944",
+      "retrieved_at": "2026-11-14",
+      "fact": "Type: Snow, Alpine, 700 ft, Grade II."
+     }
+    ]
+   },
+   {
+    "field": "alpine_grade",
+    "value": "II",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/117328944",
+      "retrieved_at": "2026-11-14",
+      "fact": "Listed as Grade II."
+     }
+    ]
+   },
+   {
+    "field": "angle",
+    "value": "averages about 40 degrees",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://en.wikipedia.org/wiki/Tuckerman_Ravine",
+      "retrieved_at": "2026-11-14",
+      "fact": "Right Gully, one of the easier runs, averages about 40 degrees."
+     }
+    ]
+   }
+  ]
+ },
+ "nh_tuckerman_ravine_stovepipe": {
+  "area": "nh_tuckerman_ravine",
+  "facts": [
+   {
+    "field": "approach_dist_to_hermit_lake_mi",
+    "value": 2.4,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://en.wikipedia.org/wiki/Tuckerman_Ravine",
+      "retrieved_at": "2026-11-14",
+      "fact": "From the AMC visitor center at Pinkham Notch the lower Tuckerman Ravine Trail runs 2.4 miles toward the ravine."
+     },
+     {
+      "url": "https://www.fs.usda.gov/r09/whitemountain/recreation/hermit-lake-shelters",
+      "retrieved_at": "2026-11-14",
+      "fact": "Hermit Lake shelters sit 2.4 miles up the Tuckerman Ravine Trail from Pinkham Notch parking, half a mile below the ravine."
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Pinkham Notch (AMC Visitor Center, Route 16)",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://en.wikipedia.org/wiki/Tuckerman_Ravine",
+      "retrieved_at": "2026-11-14",
+      "fact": "Ravine is most easily reached from the AMC Visitor Center on Route 16 at Pinkham Notch."
+     },
+     {
+      "url": "https://www.fs.usda.gov/r09/whitemountain/recreation/hermit-lake-shelters",
+      "retrieved_at": "2026-11-14",
+      "fact": "Parking for Hermit Lake is at the AMC Pinkham Notch facility."
+     }
+    ]
+   },
+   {
+    "field": "camp",
+    "value": "Hermit Lake Shelters (permit bought at Pinkham Notch, no reservations)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.fs.usda.gov/r09/whitemountain/recreation/hermit-lake-shelters",
+      "retrieved_at": "2026-11-14",
+      "fact": "Hermit Lake shelters: camping permit purchased at Pinkham Notch Visitor Center; reservations not accepted; no overnight pets."
+     }
+    ]
+   },
+   {
+    "field": "length_ft",
+    "value": 1500,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/117329146",
+      "retrieved_at": "2026-11-14",
+      "fact": "Type: Snow, Alpine, 1500 ft, Grade III."
+     }
+    ]
+   },
+   {
+    "field": "alpine_grade",
+    "value": "III",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/117329146",
+      "retrieved_at": "2026-11-14",
+      "fact": "Listed as Grade III."
+     }
+    ]
+   }
+  ],
+  "note": "MP gives Stovepipe the same 1500 ft / Grade III as Cathedral Gully (shared approach gully)."
+ },
+ "or_aneroid_lake_peaks_petes_point_north_ridge": {
+  "area": "or_aneroid_lake_peaks",
+  "facts": [
+   {
+    "field": "high_point_ft",
+    "value": 9675,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.oregonhikers.org/field_guide/Petes_Point",
+      "retrieved_at": "2026-11-14",
+      "fact": "Petes Point is 9,675 feet high."
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "Ascend the northern horn of the horseshoe from Tenderfoot Pass",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.oregonhikers.org/field_guide/Petes_Point",
+      "retrieved_at": "2026-11-14",
+      "fact": "Petes Point is easily climbed along its northern horn from Tenderfoot Pass."
+     }
+    ]
+   },
+   {
+    "field": "descent_alt",
+    "value": "Loop north along the ridge to Polaris Peak, drop to Polaris Pass and return on the Polaris Trail",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.oregonhikers.org/field_guide/Petes_Point",
+      "retrieved_at": "2026-11-14",
+      "fact": "A nontechnical loop runs north to Polaris Peak, down to Polaris Pass and back on the Polaris Trail."
+     }
+    ]
+   },
+   {
+    "field": "pass_elev_ft",
+    "value": 8500,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.oregonhikers.org/field_guide/Tenderfoot_Pass",
+      "retrieved_at": "2026-11-14",
+      "fact": "Tenderfoot Pass elevation listed as 8,500 ft."
+     }
+    ]
+   }
+  ],
+  "note": "Summit: oregonhikers 9,675 vs app 9,680. Tenderfoot Pass: oregonhikers 8,500 vs app ~8,540. SummitPost 403; only one publisher (oregonhikers) reached."
+ },
+ "or_broken_top_2_full_richardson": {
+  "area": "or_broken_top",
+  "facts": [
+   {
+    "field": "length_ft",
+    "value": 1000,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/120539893/full-richardson",
+      "retrieved_at": "2026-11-14",
+      "fact": "Type: Mixed, Ice, Snow, Alpine, 1000 ft."
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "Cliff Agocs and Brandon Seymore, April 7, 2016",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/120539893/full-richardson",
+      "retrieved_at": "2026-11-14",
+      "fact": "FA: Cliff Agocs and Brandon Seymore, April 7, 2016."
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "Two short WI2-ish steps low in the couloir",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/120539893/full-richardson",
+      "retrieved_at": "2026-11-14",
+      "fact": "Route starts with two WI2/3 steps, depending on conditions."
+     },
+     {
+      "url": "https://cascadeclimbers.com/forum/topic/103936-tr-broken-top-full-richardson-04052021/",
+      "retrieved_at": "2026-11-14",
+      "fact": "First step was easy WI2; the second WI2 step was short and easy."
+     }
+    ]
+   },
+   {
+    "field": "route_step_2",
+    "value": "About 300 ft of moderate snow above the steps",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/120539893/full-richardson",
+      "retrieved_at": "2026-11-14",
+      "fact": "Steps are followed by about 300 ft of moderate snow in the approach couloir."
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "Via the Todd Lake area and Ball Butte onto the Bend Glacier",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://cascadeclimbers.com/forum/topic/103936-tr-broken-top-full-richardson-04052021/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Approach went past the Todd Lake area, up to Ball Butte and onto the Bend Glacier."
+     }
+    ]
+   },
+   {
+    "field": "rack",
+    "value": "Pickets and ice screws for belays",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://cascadeclimbers.com/forum/topic/103936-tr-broken-top-full-richardson-04052021/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Belays built from a picket and an ice screw on the crux pitch."
+     }
+    ]
+   }
+  ]
+ },
+ "or_center_ridge": {
+  "area": "or_mt_jefferson",
+  "facts": [
+   {
+    "field": "high_point_ft",
+    "value": 10495,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://timberlinemtguides.com/trip/west-rib-mount-jefferson/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Guide page lists Mount Jefferson elevation as 10,495 ft."
+     },
+     {
+      "url": "https://mazamas.org/activity/instance/3972/detail/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mazamas Whitewater Glacier page lists elevation 10,497 ft."
+     }
+    ]
+   },
+   {
+    "field": "trip_days",
+    "value": "two days: day one to camp, day two summit",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://timberlinemtguides.com/trip/west-rib-mount-jefferson/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Day one approaches to a camp above treeline; day two leaves before sunrise for the summit."
+     }
+    ]
+   },
+   {
+    "field": "angle",
+    "value": "Steep snow up to 40 degrees plus alpine rock",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://timberlinemtguides.com/trip/west-rib-mount-jefferson/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Style: steep snow up to 40 degrees and alpine rock."
+     }
+    ]
+   },
+   {
+    "field": "permit_note",
+    "value": "Commercial (guided) permits limited to Mon-Thu, Memorial Day to Labor Day, in Mount Jefferson Wilderness",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://timberlinemtguides.com/trip/west-rib-mount-jefferson/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Guided climb only schedulable Monday-Thursday, Memorial Day to Labor Day, due to a commercial permit restriction."
+     }
+    ]
+   }
+  ],
+  "note": "No gain/distance stated by an opened page for the West Rib."
+ },
+ "or_east_side_2_wy_east": {
+  "area": "or_east_side_2",
+  "facts": [
+   {
+    "field": "trailhead",
+    "value": "Timberline Lodge",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://mazamas.org/activity/instance/13050/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Climb departs from Timberline Lodge."
+     },
+     {
+      "url": "https://www.whereiskylemiller.com/volcanoes-cascade-mountains/wyeast-route-mount-hood/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Route can be reached from Timberline or from Mount Hood Meadows."
+     }
+    ]
+   },
+   {
+    "field": "trailhead_alt",
+    "value": "Mount Hood Meadows",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.whereiskylemiller.com/volcanoes-cascade-mountains/wyeast-route-mount-hood/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Route can be accessed from Mount Hood Meadows as well as Timberline."
+     }
+    ]
+   },
+   {
+    "field": "car_to_car",
+    "value": "one day",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://mazamas.org/activity/instance/13050/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Planned as a one-day car-to-car climb."
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "Above the Palmer Snowfield, traverse the White River Glacier to the ridge",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://mazamas.org/activity/instance/13050/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Ascend above the Palmer Snowfield, cross the White River Glacier, then climb the ridge."
+     }
+    ]
+   },
+   {
+    "field": "descent",
+    "value": "Descend a standard south-side route",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://mazamas.org/activity/instance/13050/",
+      "retrieved_at": "2026-11-14",
+      "fact": "After the summit, descend one of the standard south routes."
+     }
+    ]
+   },
+   {
+    "field": "angle",
+    "value": "about 40 degrees on the Wy'East Face",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.whereiskylemiller.com/volcanoes-cascade-mountains/wyeast-route-mount-hood/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Author describes dropping onto the 40 degree Wy'East Face."
+     }
+    ]
+   }
+  ]
+ },
+ "or_gunsight_mountain_west_ridge": {
+  "area": "or_gunsight_mountain",
+  "facts": [
+   {
+    "field": "gain_ft",
+    "value": 1200,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://vanmarmot.org/2012/07/07/gunsight-mountain-eastern-oregon-07-jul-2012/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Loop trip described as 4.8 miles round trip with 1,200 feet of elevation gain."
+     }
+    ]
+   },
+   {
+    "field": "dist_mi_roundtrip",
+    "value": 4.8,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://vanmarmot.org/2012/07/07/gunsight-mountain-eastern-oregon-07-jul-2012/",
+      "retrieved_at": "2026-11-14",
+      "fact": "4.8 miles round trip."
+     }
+    ]
+   },
+   {
+    "field": "high_point_ft",
+    "value": 8342,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.oregonhikers.org/field_guide/Gunsight_Mountain",
+      "retrieved_at": "2026-11-14",
+      "fact": "Gunsight Mountain elevation 8,342 ft."
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Anthony Lake day-use area / Hoffer Lakes Trailhead",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://vanmarmot.org/2012/07/07/gunsight-mountain-eastern-oregon-07-jul-2012/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Parked at the Anthony Lake day-use area and walked to the Hoffer Lakes Trailhead."
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "From Lower Hoffer Lake climb the west ridge",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.oregonhikers.org/field_guide/Gunsight_Mountain",
+      "retrieved_at": "2026-11-14",
+      "fact": "Summit reached by a straightforward scramble along the west ridge from Lower Hoffer Lake."
+     },
+     {
+      "url": "https://vanmarmot.org/2012/07/07/gunsight-mountain-eastern-oregon-07-jul-2012/",
+      "retrieved_at": "2026-11-14",
+      "fact": "From the falls between the Hoffer Lakes they went east straight up the west ridge."
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "About 0.5 mile from the trailhead to Lower Hoffer Lake",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://vanmarmot.org/2012/07/07/gunsight-mountain-eastern-oregon-07-jul-2012/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Hiked about 0.5 miles up to the lower Hoffer Lake."
+     }
+    ]
+   },
+   {
+    "field": "descent",
+    "value": "To the Gunsight-Angell saddle, then east to the Elkhorn Crest Trail below Angell Pass, back past Black Lake",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://vanmarmot.org/2012/07/07/gunsight-mountain-eastern-oregon-07-jul-2012/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Descended to the saddle, then east to the Elkhorn Crest Trail below Angell Pass, returning past Black Lake."
+     }
+    ]
+   },
+   {
+    "field": "overview",
+    "value": "Ridge stays easy until about 200 ft below the summit",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://vanmarmot.org/2012/07/07/gunsight-mountain-eastern-oregon-07-jul-2012/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Ridge is not particularly steep until roughly 200 feet below the summit."
+     }
+    ]
+   }
+  ],
+  "note": "App says ~0.7 mi to the lakes; vanmarmot says 0.5 mi to Lower Hoffer Lake. Gain/distance are for a loop (matches app shape \"loop\")."
+ },
+ "or_krag_peak_southeast_ridge_from_crater_lake": {
+  "area": "or_krag_peak",
+  "facts": [
+   {
+    "field": "high_point_ft",
+    "value": 9079,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://en.wikipedia.org/wiki/Krag_Peak",
+      "retrieved_at": "2026-11-14",
+      "fact": "Krag Peak summit 9,079 ft; slightly lower northwest peak 9,048 ft."
+     }
+    ]
+   },
+   {
+    "field": "land_manager",
+    "value": "Eagle Cap Wilderness, Wallowa-Whitman National Forest",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://en.wikipedia.org/wiki/Krag_Peak",
+      "retrieved_at": "2026-11-14",
+      "fact": "Double summit lies in the Eagle Cap Wilderness on Wallowa-Whitman National Forest land."
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "Final scramble northwest up a rubbly slope",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.oregonhikers.org/field_guide/Krag_Peak",
+      "retrieved_at": "2026-11-14",
+      "fact": "From there it is a scramble northwest up a rubbly slope to the summit."
+     }
+    ]
+   }
+  ],
+  "note": "Summit elevation conflict: Wikipedia 9,079 (main), oregonhikers 9,048 (= NW summit per Wikipedia), app 9,092. No gain/distance stated for the Crater Lake route on pages opened."
+ },
+ "or_matterhorn_wallowas_east_ridge_from_ice_lake": {
+  "area": "or_matterhorn_wallowas",
+  "facts": [
+   {
+    "field": "gain_ft",
+    "value": 5300,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/ice-lake-matterhorn",
+      "retrieved_at": "2026-11-14",
+      "fact": "Matterhorn: 18 miles round trip, 5,300 feet of elevation gain."
+     },
+     {
+      "url": "https://mazamas.org/activity/594/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Elevation gain 5,200 ft."
+     }
+    ]
+   },
+   {
+    "field": "dist_mi_roundtrip",
+    "value": 18,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/ice-lake-matterhorn",
+      "retrieved_at": "2026-11-14",
+      "fact": "18 miles round trip."
+     },
+     {
+      "url": "https://mazamas.org/activity/594/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Distance round trip 19 miles."
+     }
+    ]
+   },
+   {
+    "field": "high_point_ft",
+    "value": 9826,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/ice-lake-matterhorn",
+      "retrieved_at": "2026-11-14",
+      "fact": "High point 9,826 ft."
+     },
+     {
+      "url": "https://mazamas.org/activity/594/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Elevation 9,826 ft."
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Wallowa Lake (Wallowa River) Trailhead",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/ice-lake-matterhorn",
+      "retrieved_at": "2026-11-14",
+      "fact": "Wallowa River Trailhead at road end in Wallowa Lake State Park."
+     },
+     {
+      "url": "https://mazamas.org/activity/594/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Trailhead: Wallowa Lake Trailhead."
+     }
+    ]
+   },
+   {
+    "field": "trailhead_elev_ft",
+    "value": 4640,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/ice-lake-matterhorn",
+      "retrieved_at": "2026-11-14",
+      "fact": "Wallowa River Trailhead at 4,640 ft."
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "2.7 mi on West Fork Wallowa Trail #1820, then 4.3 mi on Ice Lake Trail #1808 to Ice Lake",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/ice-lake-matterhorn",
+      "retrieved_at": "2026-11-14",
+      "fact": "Hike 2.7 miles on trail 1820, turn onto Ice Lake Trail 1808 for 4.3 miles to Ice Lake."
+     }
+    ]
+   },
+   {
+    "field": "camp",
+    "value": "Ice Lake (about 7,748 ft)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/ice-lake-matterhorn",
+      "retrieved_at": "2026-11-14",
+      "fact": "Campsites at Ice Lake, 7,748 ft."
+     }
+    ]
+   },
+   {
+    "field": "permit",
+    "value": "Northwest Forest Pass",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/ice-lake-matterhorn",
+      "retrieved_at": "2026-11-14",
+      "fact": "Parking permit required: Northwest Forest Pass."
+     }
+    ]
+   },
+   {
+    "field": "land_manager",
+    "value": "Wallowa-Whitman NF, Eagle Cap Wilderness, Eagle Cap Ranger District",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/ice-lake-matterhorn",
+      "retrieved_at": "2026-11-14",
+      "fact": "Land manager: Wallowa-Whitman National Forest, Eagle Cap Ranger District."
+     }
+    ]
+   },
+   {
+    "field": "season",
+    "value": "July-October",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/ice-lake-matterhorn",
+      "retrieved_at": "2026-11-14",
+      "fact": "Seasons: July, August, September, October."
+     }
+    ]
+   },
+   {
+    "field": "trip_days",
+    "value": "two or more days car to car",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://mazamas.org/activity/594/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Expected duration: car to car in two or more days."
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "Climbers path from the north shore of Ice Lake to the summit",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/ice-lake-matterhorn",
+      "retrieved_at": "2026-11-14",
+      "fact": "From Ice Lake follow the climbers boot path on the north shore to the summit."
+     }
+    ]
+   },
+   {
+    "field": "overview",
+    "value": "Pale Martin Bridge marble with dark Hurwal shale bands",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://mazamas.org/activity/594/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Peak is whitish Martin Bridge marble with bands of dark reddish Hurwal shale."
+     }
+    ]
+   }
+  ],
+  "note": "Gain/distance are round trip from Wallowa Lake. Mazamas also lists mileage 19.8 mi on the same page (vs its own 19 mi round trip)."
+ },
+ "or_middle_sister_southeast_ridge": {
+  "area": "or_middle_sister",
+  "facts": [
+   {
+    "field": "gain_ft",
+    "value": 5000,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://mazamas.org/activity/216/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Middle Sister SE Ridge: elevation gain 5,000 ft."
+     }
+    ]
+   },
+   {
+    "field": "high_point_ft",
+    "value": 10047,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://mazamas.org/activity/216/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Elevation 10,047 ft."
+     },
+     {
+      "url": "https://www.oregonhikers.org/field_guide/Middle_Sister",
+      "retrieved_at": "2026-11-14",
+      "fact": "Middle Sister elevation 10,047 ft."
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Pole Creek Trailhead",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://mazamas.org/activity/216/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Trailhead: Pole Creek."
+     },
+     {
+      "url": "https://www.oregonhikers.org/field_guide/Middle_Sister",
+      "retrieved_at": "2026-11-14",
+      "fact": "Most conveniently climbed from the Pole Creek Trailhead and Chambers Lakes."
+     }
+    ]
+   },
+   {
+    "field": "land_manager",
+    "value": "Deschutes National Forest, Sisters Ranger District",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://mazamas.org/activity/216/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Route lies in Deschutes National Forest, Sisters Ranger District."
+     }
+    ]
+   }
+  ],
+  "note": "Mountaineers middle-sister page describes the North Ridge, not used."
+ },
+ "or_mt_jefferson_southwest_ridge": {
+  "area": "or_mt_jefferson",
+  "facts": [
+   {
+    "field": "high_point_ft",
+    "value": 10495,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://timberlinemtguides.com/trip/west-rib-mount-jefferson/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Guide page lists Mount Jefferson elevation as 10,495 ft."
+     },
+     {
+      "url": "https://mazamas.org/activity/instance/3972/detail/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mazamas Whitewater Glacier page lists elevation 10,497 ft."
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "South on the PCT, then leave it and go cross-country up to the ridge",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/122900364/southwest-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "From the PCT continue south about 20 minutes; the rest of the ascent is off-trail."
+     },
+     {
+      "url": "https://cascadeclimbers.com/forum/topic/67683-tr-mt-jefferson-southwest-ridge-712009/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Headed south on the PCT, left it at 5100 ft and went cross-country."
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Pamelia Lake",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://cascadeclimbers.com/forum/topic/67683-tr-mt-jefferson-southwest-ridge-712009/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Hiked past Pamelia Lake to the Pacific Crest Trail."
+     }
+    ]
+   },
+   {
+    "field": "gain_to_red_saddle_ft",
+    "value": 7400,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/122900364/southwest-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "Approach to the Red Saddle is roughly 6 miles with 7,400 feet of gain."
+     }
+    ]
+   },
+   {
+    "field": "dist_to_red_saddle_mi",
+    "value": 6,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/122900364/southwest-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "Approach to the Red Saddle is roughly 6 miles."
+     }
+    ]
+   },
+   {
+    "field": "camp",
+    "value": "About 6,700 ft below the SW ridge",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://cascadeclimbers.com/forum/topic/67683-tr-mt-jefferson-southwest-ridge-712009/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Party camped at 6700 ft below the Southwest Ridge."
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "Ridge joins the South Ridge below the Red Saddle",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://cascadeclimbers.com/forum/topic/67683-tr-mt-jefferson-southwest-ridge-712009/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Scrambled scree and rock to meet the South Ridge just below the Red Saddle."
+     }
+    ]
+   }
+  ],
+  "note": "MP says the ridge merges with the South Ridge near 9600 ft; the 2009 TR left the ridge and traversed at ~8600 ft."
+ },
+ "or_mt_jefferson_whitewater_glacier": {
+  "area": "or_mt_jefferson",
+  "facts": [
+   {
+    "field": "high_point_ft",
+    "value": 10495,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://timberlinemtguides.com/trip/west-rib-mount-jefferson/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Guide page lists Mount Jefferson elevation as 10,495 ft."
+     },
+     {
+      "url": "https://mazamas.org/activity/instance/3972/detail/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mazamas Whitewater Glacier page lists elevation 10,497 ft."
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "Wand the glacier crossing to the Red Saddle",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://mazamas.org/activity/instance/3972/detail/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Leave wands on the way up to use on the way back."
+     },
+     {
+      "url": "https://santiamalpineclub.org/mountain/climbing/trip/report/03.07.28.jefferson.php",
+      "retrieved_at": "2026-11-14",
+      "fact": "Followed a boot and wand path across the Whitewater to the Red Saddle."
+     }
+    ]
+   },
+   {
+    "field": "camp",
+    "value": "Bays Lake (Jefferson Park)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://santiamalpineclub.org/mountain/climbing/trip/report/03.07.28.jefferson.php",
+      "retrieved_at": "2026-11-14",
+      "fact": "Author left camp at Bays Lake before climbing."
+     }
+    ]
+   },
+   {
+    "field": "permit",
+    "value": "Northwest Forest Pass; self-issue wilderness permit at the trailhead",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://mazamas.org/activity/instance/3972/detail/",
+      "retrieved_at": "2026-11-14",
+      "fact": "NW Forest Pass required; permits are self-issue at the trailhead."
+     }
+    ]
+   },
+   {
+    "field": "overview",
+    "value": "Crosses the largest glacier in Oregon; technically easier than Jeff Park Glacier",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://mazamas.org/activity/instance/3972/detail/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Route crosses the largest glacier in Oregon and is technically easier than the Jeff Park Glacier."
+     }
+    ]
+   }
+  ],
+  "note": "Mazamas gain 6,300 ft not used: that trip approached from South Breitenbush, not the Whitewater trailhead."
+ },
+ "or_north_side_cooper_spur": {
+  "area": "or_north_side",
+  "facts": [
+   {
+    "field": "gain_ft",
+    "value": 5300,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://mazamas.org/activity/instance/3472/detail/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mazamas Cooper Spur: elevation gain 5,300 ft."
+     }
+    ]
+   },
+   {
+    "field": "high_point_ft",
+    "value": 11242,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://mazamas.org/activity/instance/3472/detail/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Elevation 11,242 ft."
+     }
+    ]
+   },
+   {
+    "field": "alpine_grade",
+    "value": "III",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://mazamas.org/activity/instance/3472/detail/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Cooper Spur rated grade III, moderate-to-high angle snow."
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Tilly Jane Trailhead",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://timberlinemtguides.com/trip/cooper-spur/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Shuttle to the Tilly Jane Trailhead on the north side."
+     }
+    ]
+   },
+   {
+    "field": "approach_time",
+    "value": "4-5 hours to high camp near Tie-In Rock",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://timberlinemtguides.com/trip/cooper-spur/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Approach takes 4-5 hours of forest hiking to high camp near tie-in rock."
+     }
+    ]
+   },
+   {
+    "field": "car_to_car",
+    "value": "one day",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://mazamas.org/activity/instance/3472/detail/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Expected duration: car to car in one day."
+     }
+    ]
+   },
+   {
+    "field": "permit",
+    "value": "Climbing permit required above 9,500 ft in Mt. Hood NF (since Jan 1, 2024)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://mazamas.org/activity/instance/3472/detail/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Since January 1, 2024 all climbers above 9,500 ft in Mt. Hood NF must carry a permit."
+     }
+    ]
+   },
+   {
+    "field": "road",
+    "value": "Cloud Cap road can stay snowbound until late June; starting at Cooper Spur ski area adds about 2,000 ft",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://mazamas.org/activity/instance/3472/detail/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Check Cloud Cap road; big snow years may keep it closed until late June; starting at the ski area adds 2,000 feet."
+     }
+    ]
+   }
+  ],
+  "note": "High point: Mazamas 11,242 vs app 11,229."
+ }
+}

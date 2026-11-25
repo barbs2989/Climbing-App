@@ -1,0 +1,24 @@
+{
+ "area_id": "or_wallowa_mountains_traverses",
+ "routes": [
+  {
+   "route_id": "or_krag_peak_traverse",
+   "season": {"months": [7,8,9], "window": "Late Jul-Sep", "evidence": "Stored Jul-Oct; logged ascents Jun-Sep with 21 of 26 in Aug-Sep; SummitPost/Oregon Hikers logs show snow arriving Oct 11 (2003) and mid-August (2020). No formal guide window found, so the stored window is kept."},
+   "track": null,
+   "otherTracksConsidered": [
+    {"aid": "2017068", "verdict": "different", "why": "Logged SE Ridge, 2.3 km round trip near the Crater Lake side; not our west-rib loop from East Eagle"},
+    {"aid": "1744325", "verdict": "unsure", "why": "Starts at Summit Point trailhead, via Crater Lake and east basin to the SE ridge; not our west rib"},
+    {"aid": "2056135", "verdict": "unsure", "why": "Camped short of Crater Lake and went up near the ridge; no west rib described"}
+   ],
+   "pins": [],
+   "facts": []
+  }
+ ],
+ "missing": [
+  {"kind": "route", "peak": "Krag Peak", "name": "Southeast Ridge from Crater Lake", "alt_names": ["SE Ridge", "SE ridge direct"], "discipline": "scrambling", "grade": "Class 3", "face": "SE", "season": "Aug-Sep",
+   "overview": "From Crater Lake, work up the basin on the east side of the mountain onto the ridge, then follow the southeast ridge to the summit. Staying below the crest was reported easier than the ridgeline itself.",
+   "loggedAscents": 6, "aids": ["2017068", "1744325"],
+   "evidence": ["https://www.oregonhikers.org/field_guide/Krag_Peak - peak page", "https://www.oregonhikers.org/field_guide/Crater_Lake_via_Little_Kettle_Creek_Hike - Crater Lake access"]}
+ ],
+ "notes": "Peakbagger Krag Peak match is correct for our Krag Peak Traverse. The Hurwal Divide Traverse (already has track points) is not in this packet. No pins proposed."
+}

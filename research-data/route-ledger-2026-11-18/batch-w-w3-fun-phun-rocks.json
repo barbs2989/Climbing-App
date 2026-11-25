@@ -1,0 +1,457 @@
+{
+ "wa_arapilesian_dog": {
+  "area": "wa_f_phun_rock_main_wall_sunbug_slab",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/106513151/arapilesian-dog",
+    "https://www.mountainproject.com/area/113680690/phun-rock-main-wall-sunbug-slab",
+    "https://www.thecrag.com/en/climbing/united-states/north-cascade-mountains/area/14395357",
+    "https://www.mountaineers.org/conservation/advocacy/comment-letters/07-01-26-the-mountaineers-letter-to-okanogan-county-supporting-the-preservation-of-climbing-access-at-fun-rock.pdf",
+    "https://www.accessfund.org/latest-news/category/Acquisitions",
+    "https://www.accessfund.org/latest-news/news-and-events/news/icicle-canyon-climbing-area-protected-as-public-land"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "grade",
+    "value": "5.12a",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106513151/arapilesian-dog",
+      "fact": "5.12a YDS, Sport",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_arapilesian_dog",
+    "column": "pitches",
+    "from": 0,
+    "to": 1,
+    "why": "pitches 0 is invalid. One bolted sport line of 55 ft to a single anchor, so one pitch (count implied, not stated; not locked).",
+    "evidence": [
+     "https://www.mountainproject.com/route/106513151/arapilesian-dog"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_arapilesian_dog",
+    "column": "length_m",
+    "from": null,
+    "to": 17,
+    "why": "Mountain Project states 55 ft (17 m). Single source (theCrag's Main Wall & Sunbug Slab sector does not list this route); locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/106513151/arapilesian-dog"
+    ]
+   }
+  ],
+  "held": [
+   {
+    "table": "routes",
+    "id": "wa_arapilesian_dog",
+    "column": "bolts",
+    "from": null,
+    "to": 6,
+    "why": "HELD: two different counts. Mountain Project states 6 bolts (anchor and bolts carry fixed draws); the stored overview sentence says five bolts. No second publisher found. If the owner accepts 6, the overview's 'five bolts' should be corrected too.",
+    "evidence": [
+     "https://www.mountainproject.com/route/106513151/arapilesian-dog"
+    ]
+   }
+  ],
+  "disputed": [
+   "bolts: Mountain Project 6 vs the stored overview text 'five bolts'."
+  ],
+  "notes": "Filed correctly: Mountain Project lists it in Phun Rock Main Wall & Sunbug Slab (left end, overhanging orange and white streaked rock just left of the Sun Deck). theCrag's sector page does not list it. FA: Mountain Project credits Bryan Burdo (no year); one source only, so fa not proposed. Grade 5.12a from Mountain Project only (the only open source found; theCrag blocked after the sector page). Overview says 'five bolts', which conflicts with Mountain Project's 6 (held). Access not proposed (brief W: stays null; the land is probably Outward Bound private property with a pending Access Fund purchase of the lot and trails). Re-check 2026-11-23: no Access Fund post or other page found saying the sale has closed; the July 1, 2026 Mountaineers letter to Okanogan County still describes it as a proposed sale awaiting county approval of the parcel segregation."
+ },
+ "wa_plethora": {
+  "area": "wa_f_phun_rock_main_wall_sunbug_slab",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/107236436/plethora",
+    "https://www.mountainproject.com/area/113680690/phun-rock-main-wall-sunbug-slab",
+    "https://www.thecrag.com/en/climbing/united-states/north-cascade-mountains/area/14395357",
+    "https://www.mountaineers.org/conservation/advocacy/comment-letters/07-01-26-the-mountaineers-letter-to-okanogan-county-supporting-the-preservation-of-climbing-access-at-fun-rock.pdf",
+    "https://www.accessfund.org/latest-news/category/Acquisitions",
+    "https://www.accessfund.org/latest-news/news-and-events/news/icicle-canyon-climbing-area-protected-as-public-land"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "grade",
+    "value": "5.10b/c",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/107236436/plethora",
+      "fact": "5.10b/c YDS, Sport",
+      "retrieved_at": "2026-11-23"
+     },
+     {
+      "url": "https://www.thecrag.com/en/climbing/united-states/north-cascade-mountains/area/14395357",
+      "fact": "5.10c, Sport",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "Bryan Burdo",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/107236436/plethora",
+      "fact": "FA: Bryan Burdo",
+      "retrieved_at": "2026-11-23"
+     },
+     {
+      "url": "https://www.thecrag.com/en/climbing/united-states/north-cascade-mountains/area/14395357",
+      "fact": "FA: Bryan Burdo",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_plethora",
+    "column": "pitches",
+    "from": 0,
+    "to": 1,
+    "why": "pitches 0 is invalid. One bolted sport line of 90 ft to chain anchors, so one pitch (count implied, not stated; not locked).",
+    "evidence": [
+     "https://www.mountainproject.com/route/107236436/plethora"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_plethora",
+    "column": "length_m",
+    "from": null,
+    "to": 27,
+    "why": "Mountain Project states 90 ft (27 m). theCrag gives no length. Single source; locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/107236436/plethora"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_plethora",
+    "column": "bolts",
+    "from": null,
+    "to": 10,
+    "why": "Two publishers agree on 10 bolts: Mountain Project ('10 bolts' plus a separately mentioned belay bolt, not counted) and theCrag (10).",
+    "evidence": [
+     "https://www.mountainproject.com/route/107236436/plethora",
+     "https://www.thecrag.com/en/climbing/united-states/north-cascade-mountains/area/14395357"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_plethora",
+    "column": "anchor",
+    "from": null,
+    "to": "Chain anchor",
+    "why": "Mountain Project states chain anchors. House spelling 'Chain anchor' (stored on wa_zig_zag, wa_jiffy_pop, the Jam Sandwich sibling and others). Single source; locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/107236436/plethora"
+    ]
+   }
+  ],
+  "held": [],
+  "disputed": [],
+  "notes": "Grade: stored 5.10b/c; Mountain Project 5.10b/c, theCrag 5.10c; a slash grade agrees with either half, so locked as stored. FA caveat: theCrag may share data with Mountain Project; theCrag cites the Rock Climbing Washington guidebook for this crag, which suggests independence (same judgement as batch V). Filed correctly: middle of the rock, just left of Two Bolts or Not; Mountain Project says the Sunbug Slab section begins with this route. Access not proposed (brief W: stays null; the land is probably Outward Bound private property with a pending Access Fund purchase of the lot and trails). Re-check 2026-11-23: no Access Fund post or other page found saying the sale has closed; the July 1, 2026 Mountaineers letter to Okanogan County still describes it as a proposed sale awaiting county approval of the parcel segregation."
+ },
+ "wa_amorphous": {
+  "area": "wa_f_phun_rock_main_wall_sunbug_slab",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/113520417/amorphous",
+    "https://www.mountainproject.com/area/113680690/phun-rock-main-wall-sunbug-slab",
+    "https://www.thecrag.com/en/climbing/united-states/north-cascade-mountains/area/14395357",
+    "https://www.mountaineers.org/conservation/advocacy/comment-letters/07-01-26-the-mountaineers-letter-to-okanogan-county-supporting-the-preservation-of-climbing-access-at-fun-rock.pdf",
+    "https://www.accessfund.org/latest-news/category/Acquisitions",
+    "https://www.accessfund.org/latest-news/news-and-events/news/icicle-canyon-climbing-area-protected-as-public-land"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "grade",
+    "value": "5.10c",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/113520417/amorphous",
+      "fact": "5.10c YDS, Sport",
+      "retrieved_at": "2026-11-23"
+     },
+     {
+      "url": "https://www.thecrag.com/en/climbing/united-states/north-cascade-mountains/area/14395357",
+      "fact": "5.10c, Sport",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_amorphous",
+    "column": "pitches",
+    "from": 0,
+    "to": 1,
+    "why": "pitches 0 is invalid. One bolted sport line of about 80 ft to one anchor, so one pitch (count implied, not stated; not locked).",
+    "evidence": [
+     "https://www.mountainproject.com/route/113520417/amorphous"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_amorphous",
+    "column": "length_m",
+    "from": null,
+    "to": 24,
+    "why": "Two publishers agree: Mountain Project 80 ft (24 m), theCrag 79 ft.",
+    "evidence": [
+     "https://www.mountainproject.com/route/113520417/amorphous",
+     "https://www.thecrag.com/en/climbing/united-states/north-cascade-mountains/area/14395357"
+    ]
+   }
+  ],
+  "held": [],
+  "disputed": [],
+  "notes": "Bolts: theCrag lists 9; Mountain Project states no count. Not proposed (one non-MP source). FA: Mountain Project credits Bryan Burdo (stored); theCrag's row shows no FA for this route, so fa not locked. Anchor: Mountain Project mentions steel carabiners on the anchor (as of 2017), no anchor type, so not proposed. Shares its start with Gridlock (wa_gridlock) and breaks left high up; two distinct finishes, not a duplicate. Filed correctly in Main Wall & Sunbug Slab. Access not proposed (brief W: stays null; the land is probably Outward Bound private property with a pending Access Fund purchase of the lot and trails). Re-check 2026-11-23: no Access Fund post or other page found saying the sale has closed; the July 1, 2026 Mountaineers letter to Okanogan County still describes it as a proposed sale awaiting county approval of the parcel segregation."
+ },
+ "wa_pygmalion": {
+  "area": "wa_f_phun_rock_main_wall_sunbug_slab",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/108272032/pygmalion",
+    "https://www.mountainproject.com/area/113680690/phun-rock-main-wall-sunbug-slab",
+    "https://www.thecrag.com/en/climbing/united-states/north-cascade-mountains/area/14395357",
+    "https://www.mountaineers.org/conservation/advocacy/comment-letters/07-01-26-the-mountaineers-letter-to-okanogan-county-supporting-the-preservation-of-climbing-access-at-fun-rock.pdf",
+    "https://www.accessfund.org/latest-news/category/Acquisitions",
+    "https://www.accessfund.org/latest-news/news-and-events/news/icicle-canyon-climbing-area-protected-as-public-land"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "grade",
+    "value": "5.8",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/108272032/pygmalion",
+      "fact": "5.8 YDS, Sport",
+      "retrieved_at": "2026-11-23"
+     },
+     {
+      "url": "https://www.thecrag.com/en/climbing/united-states/north-cascade-mountains/area/14395357",
+      "fact": "5.8, Sport",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "Bryan Burdo",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/108272032/pygmalion",
+      "fact": "FA: Bryan Burdo",
+      "retrieved_at": "2026-11-23"
+     },
+     {
+      "url": "https://www.thecrag.com/en/climbing/united-states/north-cascade-mountains/area/14395357",
+      "fact": "FA: Bryan Burdo",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_pygmalion",
+    "column": "pitches",
+    "from": 0,
+    "to": 1,
+    "why": "pitches 0 is invalid. Three bolts to chains above the overhang: one length to one anchor, so one pitch (count implied, not stated; not locked).",
+    "evidence": [
+     "https://www.mountainproject.com/route/108272032/pygmalion"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_pygmalion",
+    "column": "bolts",
+    "from": null,
+    "to": 3,
+    "why": "Two publishers agree on 3 bolts: Mountain Project and theCrag.",
+    "evidence": [
+     "https://www.mountainproject.com/route/108272032/pygmalion",
+     "https://www.thecrag.com/en/climbing/united-states/north-cascade-mountains/area/14395357"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_pygmalion",
+    "column": "anchor",
+    "from": null,
+    "to": "Chain anchor",
+    "why": "Mountain Project states chains. House spelling 'Chain anchor'. Single source; locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/108272032/pygmalion"
+    ]
+   }
+  ],
+  "held": [],
+  "disputed": [],
+  "notes": "Length: no source states one; left null. Shares its start with Magic Limbo Cha-Cha (wa_f_phun_rock_main_wall_sunbug_slab_magic_limbo_cha_cha), then moves left onto the slab; not a duplicate. Filed correctly. Access not proposed (brief W: stays null; the land is probably Outward Bound private property with a pending Access Fund purchase of the lot and trails). Re-check 2026-11-23: no Access Fund post or other page found saying the sale has closed; the July 1, 2026 Mountaineers letter to Okanogan County still describes it as a proposed sale awaiting county approval of the parcel segregation."
+ },
+ "wa_gridlock": {
+  "area": "wa_f_phun_rock_main_wall_sunbug_slab",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/106469043/gridlock",
+    "https://www.mountainproject.com/area/113680690/phun-rock-main-wall-sunbug-slab",
+    "https://www.thecrag.com/en/climbing/united-states/north-cascade-mountains/area/14395357",
+    "https://www.mountaineers.org/conservation/advocacy/comment-letters/07-01-26-the-mountaineers-letter-to-okanogan-county-supporting-the-preservation-of-climbing-access-at-fun-rock.pdf",
+    "https://www.accessfund.org/latest-news/category/Acquisitions",
+    "https://www.accessfund.org/latest-news/news-and-events/news/icicle-canyon-climbing-area-protected-as-public-land"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "grade",
+    "value": "5.10b",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106469043/gridlock",
+      "fact": "5.10b YDS, Sport",
+      "retrieved_at": "2026-11-23"
+     },
+     {
+      "url": "https://www.thecrag.com/en/climbing/united-states/north-cascade-mountains/area/14395357",
+      "fact": "5.10b, Sport",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_gridlock",
+    "column": "pitches",
+    "from": 0,
+    "to": 1,
+    "why": "pitches 0 is invalid. One bolted sport line of 70 ft to an anchor, so one pitch (count implied, not stated; not locked).",
+    "evidence": [
+     "https://www.mountainproject.com/route/106469043/gridlock"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_gridlock",
+    "column": "length_m",
+    "from": null,
+    "to": 21,
+    "why": "Mountain Project states 70 ft (21 m). theCrag gives no length. Single source; locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/106469043/gridlock"
+    ]
+   }
+  ],
+  "held": [],
+  "disputed": [],
+  "notes": "Bolts: theCrag lists 8; Mountain Project states none (protection: quickdraws). Not proposed. FA: theCrag credits Bryan Burdo, Mountain Project says unknown; one source, so fa not proposed. Shares its start with Amorphous and finishes right; not a duplicate. Starts about 50 ft uphill of the trail sign board. Filed correctly in Main Wall & Sunbug Slab. Access not proposed (brief W: stays null; the land is probably Outward Bound private property with a pending Access Fund purchase of the lot and trails). Re-check 2026-11-23: no Access Fund post or other page found saying the sale has closed; the July 1, 2026 Mountaineers letter to Okanogan County still describes it as a proposed sale awaiting county approval of the parcel segregation."
+ },
+ "wa_steppenruf": {
+  "area": "wa_f_phun_rock_main_wall_sunbug_slab",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/106469056/steppenruf",
+    "https://www.mountainproject.com/area/113680690/phun-rock-main-wall-sunbug-slab",
+    "https://www.thecrag.com/en/climbing/united-states/north-cascade-mountains/area/14395357",
+    "https://www.mountaineers.org/conservation/advocacy/comment-letters/07-01-26-the-mountaineers-letter-to-okanogan-county-supporting-the-preservation-of-climbing-access-at-fun-rock.pdf",
+    "https://www.accessfund.org/latest-news/category/Acquisitions",
+    "https://www.accessfund.org/latest-news/news-and-events/news/icicle-canyon-climbing-area-protected-as-public-land"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "grade",
+    "value": "5.10b",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106469056/steppenruf",
+      "fact": "5.10b YDS, Sport",
+      "retrieved_at": "2026-11-23"
+     },
+     {
+      "url": "https://www.thecrag.com/en/climbing/united-states/north-cascade-mountains/area/14395357",
+      "fact": "5.10b, Sport",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_steppenruf",
+    "column": "pitches",
+    "from": 0,
+    "to": 1,
+    "why": "pitches 0 is invalid. Short bolted sport line (about 40-45 ft) to one anchor, so one pitch (count implied, not stated; not locked).",
+    "evidence": [
+     "https://www.mountainproject.com/route/106469056/steppenruf"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_steppenruf",
+    "column": "length_m",
+    "from": null,
+    "to": 14,
+    "why": "Two publishers agree within tolerance: Mountain Project 45 ft (14 m), theCrag 39 ft (12 m); Mountain Project's metric figure used.",
+    "evidence": [
+     "https://www.mountainproject.com/route/106469056/steppenruf",
+     "https://www.thecrag.com/en/climbing/united-states/north-cascade-mountains/area/14395357"
+    ]
+   }
+  ],
+  "held": [
+   {
+    "table": "routes",
+    "id": "wa_steppenruf",
+    "column": "bolts",
+    "from": null,
+    "to": 3,
+    "why": "HELD: theCrag lists 3 bolts; Mountain Project gives '3 QD's' (a clip count, not a bolt count). Clip-only evidence is held under the batch Q rule.",
+    "evidence": [
+     "https://www.mountainproject.com/route/106469056/steppenruf",
+     "https://www.thecrag.com/en/climbing/united-states/north-cascade-mountains/area/14395357"
+    ]
+   }
+  ],
+  "disputed": [],
+  "notes": "FA: theCrag credits Bryan Burdo, Mountain Project says unknown; one source, fa not proposed. Located left of a chimney, seen from the trail sign board. Filed correctly in Main Wall & Sunbug Slab. Access not proposed (brief W: stays null; the land is probably Outward Bound private property with a pending Access Fund purchase of the lot and trails). Re-check 2026-11-23: no Access Fund post or other page found saying the sale has closed; the July 1, 2026 Mountaineers letter to Okanogan County still describes it as a proposed sale awaiting county approval of the parcel segregation."
+ }
+}

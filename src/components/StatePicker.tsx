@@ -19,12 +19,14 @@ export interface StatePickerProps {
 export default function StatePicker({ onPick, C }: StatePickerProps) {
   const { data: countries, isLoading: lc, error: ec } = useCountries();
   const { data: states, isLoading, error } = useStates();
-  // null = the climber has not chosen yet. On the WEBSITE that opens on the United States (owner
-  // 2026-11-04: the tab opened on two country chips over "Choose a country above" — an empty page);
-  // a phone still asks. Clicking the chosen country still clears it (""), as before.
+  // null = the climber has not chosen yet. The tab OPENS ON THE UNITED STATES (owner 2026-11-04: the
+  // website's tab opened on two country chips over "Choose a country above" — an empty page; later
+  // that day, from the competitor review, the phone too: it opened on two empty selects, and every
+  // competitor opens on a list). Canada is one tap away in the select. Clicking the chosen country
+  // still clears it (""), as before.
   const [countryId, setCountryId] = useState<string | null>(null);
   const wide = useWideScreen();
-  const usId = wide && countries ? (countries.find(c => c.name === "United States") || { id: "" }).id : "";
+  const usId = countries ? (countries.find(c => c.name === "United States") || { id: "" }).id : "";
   // One country is not a choice, it is a dead tap — so skip the step until there are two.
   // The catalog ran on a single root for its whole life and would have shown a pointless
   // "pick a country" select the entire time.
@@ -71,7 +73,7 @@ export default function StatePicker({ onPick, C }: StatePickerProps) {
   const phoneCard: CSSProperties = { textAlign: "left", minWidth: 0, minHeight: 56, background: C.card, border: "1px solid " + C.border, borderRadius: 12, padding: "10px 12px", cursor: "pointer", color: C.text, fontFamily: "inherit" };
   const phoneCardName: CSSProperties = { fontSize: 14, fontWeight: 700, overflowWrap: "anywhere" };
   const phoneCardSub = { fontSize: 12, color: C.textMuted, marginTop: 2 };
-  const selStyle: CSSProperties = { width: "100%", WebkitAppearance: "none", appearance: "none", background: C.card, color: C.text, border: "1px solid " + C.border, borderRadius: 12, padding: "13px 34px 13px 13px", fontSize: 15, fontWeight: 600 };
+  const selStyle: CSSProperties = { width: "100%", WebkitAppearance: "none", appearance: "none", background: C.card, color: C.text, border: "1px solid " + C.field, borderRadius: 12, padding: "13px 34px 13px 13px", fontSize: 15, fontWeight: 600 };
   return (
     <div style={{ marginBottom: 14 }}>
       {only ? null : (
@@ -101,7 +103,6 @@ export default function StatePicker({ onPick, C }: StatePickerProps) {
         <option value="">{!country ? "Choose a country first" : isLoading ? `Loading ${noun}s…` : inCountry.length ? `Select a ${noun}…` : error ? `Couldn’t load ${noun}s` : `No ${noun}s found`}</option>
         {inCountry.map((s: StatePickerState) => <option key={s.id} value={s.id}>{s.name}</option>)}
       </select>
-      <div style={{ fontSize: 12, color: C.textMuted, marginTop: 9, lineHeight: 1.5 }}>Tap through to drill in to its crags and climbs. Open any area's route list to filter and search by type, grade, stars and more.</div>
       {/* THE SAME LIST AS CARDS under the selects (2026-10-24). On a phone this screen was two
           dropdowns over a screen of empty dark space; the website already lays the countries and
           regions out as cards, the way Mountain Project's directory does. Same data and same

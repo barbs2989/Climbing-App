@@ -1,0 +1,487 @@
+[
+ {
+  "id": "wa_sherpa_glacier",
+  "itinerary": {
+   "cal": "Best as a spring-to-early-summer snow climb (roughly April through June) while the glacier and couloir hold good snow and the bergschrund is filled in. Usually done in two days with a camp in the basin; an Enchantment Permit Area overnight permit is needed from May 15 to October 31, and very fit parties do it car to car.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Hike in to the Mountaineer Creek basin",
+     "objective": "Camp in the basin below the Sherpa Glacier",
+     "note": "Follow the Stuart Lake trail past the Colchuck junction, then leave it and work up the south fork of Mountaineer Creek (route-finding is tricky; expect boulder fields and creek crossings) to the flat basin at about 5,400 ft. Gain is derived from the trailhead (3,400 ft) and camp (5,400 ft) elevations.",
+     "gainFt": 2000,
+     "lossFt": 0,
+     "hours": 4,
+     "miles": 5.5,
+     "packLb": 40,
+     "schedule": []
+    },
+    {
+     "n": 2,
+     "title": "Climb the Sherpa Glacier and hike out",
+     "objective": "Summit Mount Stuart and return to the car",
+     "note": "Climb the Sherpa Glacier to the col at about 8,300-8,600 ft (the schrund is usually passed on climber's right in spring), then follow the southeast ridge to the summit. Descend the same glacier back to camp (best early season), pack up and walk out; gain and loss derived from camp (5,400 ft) to summit (9,415 ft) to trailhead (3,400 ft).",
+     "gainFt": 4000,
+     "lossFt": 6000,
+     "hours": 12,
+     "miles": 10.7,
+     "packLb": 18,
+     "schedule": []
+    }
+   ],
+   "totalNote": "The classic two-day plan: walk in to a camp in the Mountaineer Creek basin at about 5,400 ft, then climb the Sherpa Glacier to the summit and descend the same way before hiking out, roughly 6,000 ft and 16 miles round trip."
+  },
+  "sources": [
+   "https://wenatcheeoutdoors.org/2016/06/04/stuart-mt-via-sherpa-glacier/",
+   "https://wenatcheeoutdoors.org/?p=4153",
+   "https://www.turns-all-year.com/trip-reports/stuart-sherpa-n-couloirs"
+  ],
+  "confidence": "medium",
+  "notes": "Sources agree on the two-day plan with a basin camp at ~5,400 ft (Wenatchee Outdoors) and on camping where the Sherpa and Stuart routes diverge (Turns All Year). No source gives clock times for the summit day, so schedule is empty. Daily mileage splits the row's 2 x 13.04 km (16.2 mi) round trip; sources did not state per-leg distances, so the 5.5 mi trailhead-to-camp figure is an approximate split, not sourced. Hours are estimates. SummitPost and Mountaineers pages could not be opened (403)."
+ },
+ {
+  "id": "wa_silver_peak_northwest_ridge",
+  "skip": true,
+  "reason": "Row has no location data and several Washington peaks are named Silver Peak; cannot identify which Northwest Ridge is meant, so no honest itinerary is possible."
+ },
+ {
+  "id": "wa_spider_mountain_north_face",
+  "itinerary": {
+   "cal": "A winter and spring snow/ice line (December to April) that is normally done in two days with one night near Cache Col or Kool-Aid Lake. Overnights on the park side of Cache Col need an NPS wilderness permit; south of the col only a free Glacier Peak Wilderness self-issue permit is needed.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Approach over Cache Col to camp",
+     "objective": "Reach a camp at Kool-Aid Lake or below Cache Col",
+     "note": "Ski or hike from the Cascade Pass trailhead up toward Cascade Pass and the Cache Glacier to Cache Col, then drop about 850 ft to Kool-Aid Lake; one winter party camped in a hollow about 500 ft below the col instead. Gain and loss derived from trailhead (3,650 ft), Cache Col (6,969 ft) and Kool-Aid Lake (6,120 ft).",
+     "gainFt": 3300,
+     "lossFt": 850,
+     "hours": 7,
+     "miles": 6.5,
+     "packLb": 42,
+     "schedule": []
+    },
+    {
+     "n": 2,
+     "title": "Climb the north face and exit",
+     "objective": "Climb the north face to the summit and return to the car",
+     "note": "Leave camp before dawn, cross to Art's Knoll by first light to inspect the face and bergschrund, then descend to the Middle Cascade Glacier and climb the north face to the summit ridge. Reverse the line, climb back over Cache Col and descend to the car; elevation figures are approximate because the glacier base elevation is not in the row data.",
+     "gainFt": 3500,
+     "lossFt": 6100,
+     "hours": 15,
+     "miles": 9,
+     "packLb": 20,
+     "schedule": [
+      {"time": "4:45 AM", "label": "Leave camp", "detail": "On skis from a camp below Cache Col."},
+      {"time": "First light", "label": "Art's Knoll", "detail": "Saddle across the valley with a view of the face and bergschrund."},
+      {"time": "Around sunset", "label": "Back at camp", "detail": "Pack up after the climb and descent."},
+      {"time": "~8:00 PM", "label": "Back at the car", "detail": "Ski out by moonlight through Pelton Basin."}
+     ]
+    }
+   ],
+   "totalNote": "Two days: approach over Cache Col to camp, then a very long second day crossing Art's Knoll, climbing the north face and skiing or walking all the way out."
+  },
+  "sources": [
+   "https://www.turns-all-year.com/trip-reports/dec-3-4-spider-mtn-north-face-tag",
+   "https://turns-all-year.com/trip-reports/march-31-2013-spider-mountain-north-face-chute",
+   "https://turns-all-year.com/trip-reports/extended-s-loop-formidable-n-ramp-spider-glacier-spider-se-face-pelton-se-face"
+  ],
+  "confidence": "low",
+  "notes": "Both opened reports are two-day trips, but camps varied: a hollow ~500 ft below Cache Col (Dec 2011) and Art's Knoll itself (Mar 2013); Kool-Aid Lake is used as the row's main camp. Schedule times come from the Dec 2011 report. Row gain_ft and dist_km are null; day mileage and gain are rough estimates from row waypoint elevations and are not sourced, so treat them as approximate. Winter road closures added ~4 mi each way in both reports (not included)."
+ },
+ {
+  "id": "wa_switchback_mountain_west_ridge",
+  "skip": true,
+  "reason": "Opened trip reports (climberkyle 2016, Yellowleaf 2017) climb Switchback by the southeast ridge from Cooney Lake; the only description of the west ridge/west face from Boiling Lake is a Mountaineers route page that could not be opened. Too thin to write an itinerary for this specific line."
+ },
+ {
+  "id": "wa_trapper_mountain_north_couloir",
+  "itinerary": {
+   "cal": "A spring ski/snow objective (roughly January to June, most often April to June once the Cascade River Road melts out). Normally done as one long car-to-car day; an overnight at Pelton Basin or Trapper Lake needs an NPS wilderness permit.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Climb the north couloir car to car",
+     "objective": "Climb the north couloir and return over Alliteration Col",
+     "note": "Go over Cascade Pass (or ski Pelton Basin and skin the Yawning Glacier) to Alliteration Col, descend to Trapper Lake and boot the roughly 45-50 degree couloir to the top. Return by climbing back to Alliteration Col and descending the Yawning Glacier to Cascade Pass and the car; one party logged more than 8,000 ft of climbing for the day.",
+     "gainFt": 8000,
+     "lossFt": 8000,
+     "hours": 11,
+     "miles": 10,
+     "packLb": 20,
+     "schedule": [
+      {"time": "3:15 AM", "label": "Start walking", "detail": "Early-start party (May 2024)."},
+      {"time": "7:40 AM", "label": "Base of the couloir", "detail": "About 4.5 hours from the car via Alliteration Col and Trapper Lake."},
+      {"time": "~9:30 AM", "label": "Top of the couloir", "detail": "A June 2014 party took about 1.5 hours from the base (12:30 to ~2:00 PM)."},
+      {"time": "3:00 PM", "label": "Back at the car", "detail": "After skiing the couloir and climbing back over Alliteration Col; the later-starting 2014 party returned just before 7:00 PM."}
+     ]
+    }
+   ],
+   "totalNote": "Usually a single long spring day: over Cascade Pass to Alliteration Col, down to Trapper Lake, up and down the north couloir, then back over the col to the car (8,000+ ft of climbing)."
+  },
+  "sources": [
+   "https://turns-all-year.com/trip-reports/june-22-23-trapper-mtn-north-couloir-sahale",
+   "https://turns-all-year.com/trip-reports/n-couloir-trapper-mountain",
+   "https://turns-all-year.com/trip-reports/trapper-mountain-north-couloir"
+  ],
+  "confidence": "medium",
+  "notes": "All three opened reports did it in one day; none camped, so the row's Trapper Lake / Pelton Basin camps are not used. The 8,000 ft gain is the 2014 author's figure; row gain_ft is null. No source gives distance; the 10 mi round trip is a rough estimate (not sourced). Hours derived from the 2024 (about 12 h) and 2014 (about 11 h) start/finish times."
+ },
+ {
+  "id": "wa_big_chiwaukum_west_ridge",
+  "itinerary": {
+   "cal": "Snow-free scrambling season is July to September (July for flowers, late August to September for fall color). Usually a long single day of around 11 hours; it can be split into an overnight, with Upper Grace Lake the first water off-trail.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Scramble Big Chiwaukum via Wildhorse Creek",
+     "objective": "Reach the summit by the west ridge and return",
+     "note": "Hike the Whitepine Creek trail about 2.5-2.7 miles to the Wildhorse Creek trail and follow it to about 5,400 ft, then go cross-country through meadows and rock bands to the west ridge. Class 2-3 ledges below the summit headwall lead to the top; the schist is loose, so staying toward the southwest/south ridge side is easier. Return the same way.",
+     "gainFt": 5300,
+     "lossFt": 5300,
+     "hours": 11,
+     "miles": 16.4,
+     "packLb": 20,
+     "schedule": []
+    }
+   ],
+   "totalNote": "A long day hike-and-scramble of about 16 miles and 5,300-5,400 ft round trip from the Whitepine Creek trailhead, up the Wildhorse Creek trail and cross-country to the west ridge."
+  },
+  "sources": [
+   "https://fastestknowntime.com/route/big-chiwaukum",
+   "https://wenatcheeoutdoors.org/2016/05/19/big-chiwaukum/",
+   "https://www.yellowleaf.org/scramble/g/l/Big-Chiwaukum.html"
+  ],
+  "confidence": "medium",
+  "notes": "Row figures (5,300 ft, 13.2 km one-way = 16.4 mi round trip) match the FKT route listing (16.4 mi; its description says ~5,400 ft though its track shows 6,362 ft). Wenatchee Outdoors gives 15-17 mi, ~5,281 ft, about 11 hours, and lists it as a long day or overnight; Yellowleaf logged a 2-day trip. No source gives summit-day clock times."
+ },
+ {
+  "id": "wa_black_peak_east_buttress",
+  "skip": true,
+  "reason": "Only one secondary description of the East Buttress (a SummitPost summary, not openable) was found; no trip reports with timing or route detail. The Wing Lake approach is well documented, but the route itself is too thin for an honest plan."
+ },
+ {
+  "id": "wa_cadet_peak_ne_ridge",
+  "skip": true,
+  "reason": "Only one first-hand account could be opened (climberkyle.com 2023 Heineken High Route, a 20 mi / 8,700 ft one-day loop that exits via Glacier Basin and Monte Cristo with a bike shuttle). The SummitPost route page (mentions Cadet Lake as a camp) returned 403. One source is not enough for a plan."
+ },
+ {
+  "id": "wa_cannon_mountain_northwest_ridge",
+  "itinerary": {
+   "cal": "A summer-to-fall scramble (July to September) done as one long day from the Stuart Lake trailhead; the off-trail approach is brushy and the descent is slow, so plan on 12-14 hours. Day trips need only a self-issue wilderness permit; any overnight is in the Enchantment Permit Area.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Scramble Cannon from Mountaineer Creek",
+     "objective": "Reach the summit and return the same way",
+     "note": "Leave the Stuart Lake trail after about 1.3 miles, before the Mountaineer Creek bridge, and climb west and south through open forest, boulder fields and a brushy alder or cliff-band crux near 5,200 ft into the basin below the north and west sides. Gain the ridge high (about 7,500-7,700 ft) and scramble to the summit slab; parties report the descent taking longer than expected. Gain derived from trailhead (3,404 ft) and summit (8,638 ft).",
+     "gainFt": 5200,
+     "lossFt": 5200,
+     "hours": 13,
+     "miles": 8.6,
+     "packLb": 20,
+     "schedule": [
+      {"time": "5:30 AM", "label": "Start hiking", "detail": "From the Stuart Lake trailhead."},
+      {"time": "~11:30 AM", "label": "Summit", "detail": "About six hours up."},
+      {"time": "~6:30 PM", "label": "Back at the car", "detail": "About 13 hours total; the descent was slower than the ascent."}
+     ]
+    }
+   ],
+   "totalNote": "A single long day of about 8.6 miles and 5,200 ft: a short stretch of the Stuart Lake trail, then a brushy off-trail climb to Cannon's upper ridges and back the same way."
+  },
+  "sources": [
+   "https://hippohamster.vercel.app/posts/cannon-mountain",
+   "https://wenatcheeoutdoors.org/2016/07/12/cannon-mountain-nw-face/"
+  ],
+  "confidence": "low",
+  "notes": "Both opened sources use this exact approach (leave the Stuart Lake trail at ~0.5-1.3 mi and go south) as a one-day trip, but neither climbs the NW ridge proper: hippohamster climbed the southwest ridge in summer (8.62 mi, 5,200 ft, ~13 h, summit ~6 h), and Wenatchee Outdoors describes a winter ski of the NW face (summit at 1:30 PM). Search snippets of a Sept 2025 Mountaineers report mention reaching the NW ridge at ~7,700 ft with difficult gendarmes, and a SummitPost log advises against the NW ridge; neither page could be opened (403). Timing is from the SW ridge party."
+ },
+ {
+  "id": "wa_cashmere_mountain_northeast_ridge",
+  "itinerary": {
+   "cal": "Snow-free scrambling is July to September. Usually a long single day because overnight permits for Lake Caroline come only through the Enchantments lottery; with a permit, a night at Lake Caroline splits it into two easy days.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Scramble Cashmere via Windy Pass",
+     "objective": "Reach the summit from the north side and return",
+     "note": "Hike from the Eightmile trailhead past the Little Eightmile junction (2.8 mi), Lake Caroline (about 5.5 mi) and on toward Windy Pass, leaving the trail near 6,850 ft. Follow the ridge northeast to the minor west peak, cross to the north side and traverse low below the summit pyramid to the notch, then scramble class 3 to the top. Return the same way.",
+     "gainFt": 5500,
+     "lossFt": 5500,
+     "hours": 10,
+     "miles": 17,
+     "packLb": 20,
+     "schedule": []
+    }
+   ],
+   "totalNote": "Typically one long day of about 17 miles and 5,300-5,700 ft via Lake Caroline and Windy Pass, finishing with a north-side traverse and class 3 scramble."
+  },
+  "sources": [
+   "https://wenatcheeoutdoors.org/?p=9609",
+   "https://www.theoutbound.com/washington/hiking/climb-cashmere-mountain"
+  ],
+  "confidence": "low",
+  "notes": "Both opened sources describe the standard north-side finish: cross to the north side, traverse low, then a class 3 gully (Outbound: to a saddle just west of the summit). Neither names the finish as the 'northeast ridge', so the final few hundred feet may differ from the row's route. Mileage/gain: Outbound 17 mi / 5,700 ft; Wenatchee Outdoors 8.5-9 mi one way / 5,200-5,300 ft; search snippets of WTA/Mountaineers reports give 17-19.75 mi and 5,400-6,000 ft. Hours are an estimate (one report snippet: 4.25 h up, 3 h down). Row gain_ft/dist_km are null."
+ },
+ {
+  "id": "wa_cashmere_mountain_se_route",
+  "itinerary": {
+   "cal": "A late-spring line (May to June) when snowfields above the burn make the gullies easier; carry crampons and an axe for firm morning snow. Done as a single day, much shorter than the standard Lake Caroline route; only a self-issue wilderness permit is needed for a day trip.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Climb the SE gullies from Eightmile",
+     "objective": "Summit Cashmere by the south-southeast gullies and return",
+     "note": "Leave the Eightmile trail for an old logging road, then boot about 1,000 ft up a steep burned, deadfall-strewn hillside. Continue cross-country up and left onto a snowfield to the wide S/SE gully system (class 2-3, sometimes with thin ice in June) and on to the summit; descend the same way, boot-skiing the snowfields. Gain derived from trailhead (3,300 ft) and summit (8,514 ft).",
+     "gainFt": 5200,
+     "lossFt": 5200,
+     "hours": 8,
+     "miles": 7,
+     "packLb": 18,
+     "schedule": [
+      {"time": "First light", "label": "Leave the car", "detail": "Firm snow after a cold night; crampons used on the snowfield."},
+      {"time": "Early afternoon", "label": "Back at the car", "detail": "About 8 hours round trip for a fast party."}
+     ]
+    }
+   ],
+   "totalNote": "A one-day, mostly cross-country climb of about 5,200 ft through the Eightmile burn and up the south-southeast gullies, roughly 8 hours for a fast party."
+  },
+  "sources": [
+   "https://climberkyle.com/2017/06/11/mt-cashmere-se-route/",
+   "https://turns-all-year.com/trip-reports/april-9-2017-cashmere-mountain"
+  ],
+  "confidence": "medium",
+  "notes": "climberkyle (June 2017) climbed this exact route in about 8 hours car to car; Turns All Year (April 2017) skied the south route from Eightmile road in one day. Distance is not given by either opened source; the ~3-4 mi one way and 5,200 ft figures come from a SummitPost SE Route page seen only in search snippets (page returned 403), so the 7 mi round trip is approximate. Row gain_ft/dist_km are null."
+ },
+ {
+  "id": "wa_castle_peak_pasayten_south_route",
+  "skip": true,
+  "reason": "Opened sources do not cover the lawful Harts Pass/PCT approach the row names. The written-up line comes in from Manning Park, BC (crossing the border on foot, not lawful), and the one detailed report opened (countryhighpoints.com) used a Ross Lake boat plus Lightning/Freezeout Creek in a single 27.5-hour push (39 mi hiking, 24 mi boating). Row dist_km 21.8 (13.5 mi one way) fits the Canadian approach, not Harts Pass, which is roughly 30 mi each way by PCT to Castle Pass. Too thin and inconsistent for an honest plan."
+ },
+ {
+  "id": "wa_chikamin_peak_glacier_lake",
+  "itinerary": {
+   "cal": "Best July to September once the snow is off the final scramble. Commonly two days with a camp at Glacier Lake (or Park Lakes), though fit parties do it in about 12 hours car to car; only a free self-issue wilderness permit is needed.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Hike up Mineral Creek to Glacier Lake",
+     "objective": "Camp at Glacier Lake",
+     "note": "Mineral Creek trail is steep and badly overgrown in places, with two creek crossings near the trailhead, reaching Upper Park Lake at about 4 miles and the PCT at about 5.4 miles (about 2,600 ft of gain). Go west on the PCT to the last switchback below Chikamin Pass and follow the boot path down about 600 ft to Glacier Lake; camps are spartan dirt and rock sites near the outlet.",
+     "gainFt": 2600,
+     "lossFt": 600,
+     "hours": 5,
+     "miles": 6.5,
+     "packLb": 38,
+     "schedule": []
+    },
+    {
+     "n": 2,
+     "title": "Scramble Chikamin and hike out",
+     "objective": "Summit Chikamin and return to the trailhead",
+     "note": "Contour around the lake to the boulder field, pass the tall standing rock, follow the creek past tarns, then climb a gully and slabs to the south ridge and a boot path; a Class 3-4 chimney/horn guards the summit. Summit round trip from the lake took one party about 5 hours 45 minutes, and the whole day including the hike out about 10 hours.",
+     "gainFt": 3160,
+     "lossFt": 5160,
+     "hours": 10,
+     "miles": 11.3,
+     "packLb": 18,
+     "schedule": [
+      {"time": "6:00 AM", "label": "Wake at Glacier Lake", "detail": "Camp at the lake outlet."},
+      {"time": "~3 hours", "label": "Summit", "detail": "About three hours from camp."},
+      {"time": "~5h45 after leaving", "label": "Back at camp", "detail": "Pack up and climb back to the PCT."},
+      {"time": "~10 hours", "label": "Back at the car", "detail": "Total for the day including the hike out."}
+     ]
+    }
+   ],
+   "totalNote": "Two days: up the brushy Mineral Creek trail and over to a camp at Glacier Lake, then scramble Chikamin's south ridge and hike out, about 5,800 ft and 15-18 miles round trip."
+  },
+  "sources": [
+   "https://hippohamster.vercel.app/posts/chikamin-peak",
+   "https://yellowleaf.org/scramble/g/r/2004-07-31--2004-08-01-Chikamin-Peak-via-Mineral-Creek.html",
+   "https://api.theoutbound.com/washington/hiking/chikamin-peak-scramble"
+  ],
+  "confidence": "medium",
+  "notes": "Day 2 figures (11.27 mi, 3,160 ft gain, 6 AM wake, ~3 h to summit, 5h45 lake round trip, ~10 h day) are from hippohamster (2025), who camped at Glacier Lake. Yellowleaf (2004) camped at Park Lake instead and climbed via Glacier Lake on day 2. Outbound lists 15.34 mi and 5,771 ft as a 12-hour day trip, which matches the 2,600 + 3,160 ft summed here. Day 1 mileage (6.5) is approximate: 5.4 mi to the PCT is from the row, the PCT and descent to the lake are not measured in sources. Row gain_ft/dist_km are null. Schedule times are relative because the source gave durations, not clock times."
+ },
+ {
+  "id": "wa_emerald_peak_west_route",
+  "itinerary": {
+   "cal": "Best mid-July to early October, with larch color in late September; in late season the high-basin water can dry up. Usually two days with one night in the high basin or at Fox Camp, or three if adding Cardinal and Saska; strong parties do it in one very long day.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Hike the North Fork Entiat to the high basin",
+     "objective": "Camp in the basin between Emerald and Saska",
+     "note": "Follow the North Fork Entiat trail about 8 miles (the first 3-4 through hot, shadeless burn) to Fox Camp and the Pyramid trail junction, the last certain water, then continue about 1.5 miles up to the basin between Emerald and Saska. Elevation figures are approximate: one party camped in a meadow near 6,800 ft.",
+     "gainFt": 2900,
+     "lossFt": 0,
+     "hours": 6,
+     "miles": 9.5,
+     "packLb": 38,
+     "schedule": []
+    },
+    {
+     "n": 2,
+     "title": "Climb Emerald's west side and hike out",
+     "objective": "Summit Emerald and return to the trailhead",
+     "note": "From the meadow directly beneath Emerald, go up a gully to a small shoulder, then a right-trending scree gully, turning left at the cliffs to gain the west ridge; follow ridge and gully with occasional cairns to the summit (Class 3, exposed in places). Descend the same way, break camp and walk out.",
+     "gainFt": 2400,
+     "lossFt": 5300,
+     "hours": 10,
+     "miles": 11.5,
+     "packLb": 18,
+     "schedule": []
+    }
+   ],
+   "totalNote": "Two days: walk up the North Fork Entiat to a high camp below Emerald and Saska, then scramble Emerald's west gully and ridge and hike out, about 5,300 ft and 20+ miles round trip."
+  },
+  "sources": [
+   "https://www.countryhighpoints.com/pinnacle-mountain-and-emerald-peak/",
+   "https://climberkyle.com/2017/05/27/saska-emerald-and-cardinal-peaks/"
+  ],
+  "confidence": "low",
+  "notes": "Route detail is from countryhighpoints (2018), who did Pinnacle and Emerald in one ~30 mi day from the North Fork Entiat trailhead (8:30 AM start, both peaks done by 4 PM, back by dark). climberkyle (2017) did a 3-day trip with a camp at ~6,800 ft below Cardinal and climbed Saska, Emerald and Cardinal on day 2. Search snippets of a 2023 WTA report give 30.1 mi / 11,020 ft for Emerald+Pinnacle+Saska in a day. No source gives Emerald-only mileage; the 8 mi to Fox Camp and 1.5 mi to the basin come from the row's camp notes, and day gain splits are estimated so that they sum to the row's 5,272 ft. Row dist_km is null."
+ },
+ {
+  "id": "wa_esmeralda_peaks_east_gully",
+  "skip": true,
+  "reason": "Opened reports (kuresman 2004/2008, Yellowleaf 2007) climb the western summits from the De Roux Creek trail; none describes the East Peak's east gully from the Esmeralda/Ingalls trailhead. Row data (2,280 ft, 8.05 km) cannot be checked against any source."
+ },
+ {
+  "id": "wa_gilbert_peak_klickton_divide",
+  "itinerary": {
+   "cal": "Snow-free season is July to September; in June the approach gullies and ridge still hold snow and an axe, crampons and helmet are advised. Most parties take two days with a camp at Warm Lake; very fit parties do the 21-31 mile round trip in one long day.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Hike from Conrad Meadows to Warm Lake",
+     "objective": "Camp on the west side of Warm Lake",
+     "note": "Follow the South Fork Tieton trail through Conrad Meadows past Surprise Lake to the upper meadows near 6,000 ft, then a faint boot path up the Klickton Divide slope and a contour northwest to Warm Lake. One party took about 4 hours 10 minutes from the trailhead to camp.",
+     "gainFt": 2700,
+     "lossFt": 0,
+     "hours": 4.5,
+     "miles": 9.5,
+     "packLb": 38,
+     "schedule": []
+    },
+    {
+     "n": 2,
+     "title": "Climb the Klickton Divide and hike out",
+     "objective": "Summit Gilbert Peak and return to the car",
+     "note": "Climb southwest up the Klickton Divide face to a boot path along the ridge crest, then scramble near the west base of the summit buttress; the last step to the top is exposed. Return to Warm Lake, pack up and walk out through the meadows (about 4 hours from the lake to the car).",
+     "gainFt": 1500,
+     "lossFt": 4200,
+     "hours": 7.5,
+     "miles": 12,
+     "packLb": 18,
+     "schedule": [
+      {"time": "Start", "label": "Leave Warm Lake", "detail": "Head southwest up the Klickton Divide."},
+      {"time": "+2:00", "label": "Summit", "detail": "About 2 hours from camp."},
+      {"time": "+3:25", "label": "Back at Warm Lake", "detail": "About 1 hour 25 minutes down."},
+      {"time": "+7:25", "label": "Back at the car", "detail": "About 4 hours from Warm Lake to the trailhead."}
+     ]
+    }
+   ],
+   "totalNote": "Two days: hike from Conrad Meadows past Surprise Lake to a camp at Warm Lake, then a 2-hour climb up the Klickton Divide to the Goat Rocks high point and the long walk out, about 4,200-4,600 ft and 21 miles round trip."
+  },
+  "sources": [
+   "https://yellowleaf.org/scramble/g/r/2004-10-04--2004-10-05-Mount-Curtis-Gilbert-via-Klickton-Div.html",
+   "https://www.countryhighpoints.com/gilbert-peak-goat-citadel-north-gilbert"
+  ],
+  "confidence": "medium",
+  "notes": "Timing is from Yellowleaf (2004), who camped at Warm Lake and logged 4,220 ft total gain. countryhighpoints (2019) did it in one day (4:30 AM start, summit ~10 AM, car 5:30 PM; 31 mi / 6,500 ft including Goat Citadel and North Gilbert). Search snippets of WTA (2019) and Mountaineers listings give 21-22 mi and ~6,000 ft round trip; the row says 9-10 mi each way and 4,200-4,600 ft. The day 1 / day 2 gain split is estimated (no source gives Warm Lake's elevation), and daily mileage splits the ~21 mi round trip. Schedule uses elapsed times because the source gave durations only."
+ },
+ {
+  "id": "wa_big_chiwaukum_three_musketeers_ridge",
+  "skip": true,
+  "reason": "No trip report or route description of a scramble on Three Musketeers Ridge was found; sources mention it only as the source of avalanche debris near Toketie Pass and an uninvestigated Prusik-Nada-Musky-Toketie ridgeline. Row has no summit elevation, gain or distance."
+ },
+ {
+  "id": "wa_east_gully",
+  "skip": true,
+  "reason": "Row has no location, approach or elevation data, and no Washington 'Agathla Tower' could be identified (Agathla is a well-known Arizona landmark). Cannot research honestly."
+ },
+ {
+  "id": "wa_granite_mountain_standard_scramble_route",
+  "itinerary": {
+   "cal": "A year-round day trip: in summer it is a steep trail hike, and in winter and spring it becomes a snow scramble that should leave the trail and go straight up the ridge to avoid the big avalanche chute. Only a Northwest Forest Pass is needed; no camping permit applies.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Hike and scramble to the Granite lookout",
+     "objective": "Reach the lookout summit and return",
+     "note": "Take the Pratt Lake trail about 1.2 miles to the Granite Mountain trail junction, then steep switchbacks through forest and avalanche chutes below about 4,100 ft lead to meadows and the east summit ridge. With snow on the ground, the ridge route straight to the summit avoids most of the avalanche danger; once it melts out, the trail is the better line. Descend the same way.",
+     "gainFt": 3800,
+     "lossFt": 3800,
+     "hours": 6.5,
+     "miles": 8.6,
+     "packLb": 15,
+     "schedule": []
+    }
+   ],
+   "totalNote": "A single steep day of about 8 to 8.6 miles and 3,700-4,000 ft round trip from the Pratt Lake trailhead to the 5,629 ft lookout."
+  },
+  "sources": [
+   "https://hikingwithmybrother.com/granite-mountain.html",
+   "https://www.theoutbound.com/washington/hiking/hike-to-the-summit-of-granite-mountain"
+  ],
+  "confidence": "medium",
+  "notes": "hikingwithmybrother gives 8.6 mi, 3,700 ft and a 6h40m hiking time, and describes the snow-season ridge route; Outbound gives 7.92 mi and 3,999 ft and notes the trail switchbacks through avalanche chutes below ~4,100 ft. WTA's 8.6 mi / 3,800 ft (seen in search snippets, page returned 403) is used as the round figure. Row has no gain/distance/high point; summit is 5,629 ft."
+ },
+ {
+  "id": "wa_gully_1",
+  "skip": true,
+  "reason": "Row has no location, approach, elevation or season data, and 'The Amphitheater' could not be tied to a specific Washington feature. Cannot research honestly."
+ },
+ {
+  "id": "wa_gully_2",
+  "skip": true,
+  "reason": "Row has no location, approach, elevation or season data, and 'The Amphitheater' could not be tied to a specific Washington feature. Cannot research honestly."
+ },
+ {
+  "id": "wa_hibox_mountain_southeast_ridge",
+  "skip": true,
+  "reason": "Only one opened source (stevensong.com, Oct 2024: one day, ~6 h round trip from the Rachel Lake trail via the scramble route, which it calls the east ridge). Mountaineers and WTA pages (about 8 mi, 3,900 ft) returned 403, and no opened source names a southeast ridge route, so the route identity is unconfirmed."
+ },
+ {
+  "id": "wa_hozomeen_mountain_north_peak_south_ridge",
+  "skip": true,
+  "reason": "No report of a North Peak south ridge ascent was found. Opened/searched material covers the NE buttress, NE ridge, NW ridge and the southwest peak's south ridge, and access (border gate, loon closure, 2026 fire closure) is unsettled. Too thin for an honest plan."
+ },
+ {
+  "id": "wa_iron_cap_mountain_northeast_shoulder",
+  "skip": true,
+  "reason": "Iron Cap appears only as a waypoint in Foss Lakes / Alpine Lakes High Route loop reports (mostly WTA, which returned 403); no opened source describes an out-and-back ascent by the north ridge/northeast shoulder from Tank Lakes with distances or timing."
+ },
+ {
+  "id": "wa_mount_ballard_east_face",
+  "itinerary": {
+   "cal": "Best July to October once the Harts Pass road is open and the upper east ridge is mostly melted out; early-season parties should expect steep snow near the col and carry crampons. Usually a single day from the Slate Creek gate; a spring trip with the road snowbound becomes two days with a bivy at the South Fork bridge.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Climb the east face from Slate Creek",
+     "objective": "Summit Mount Ballard and return to the car",
+     "note": "Walk the old South Fork Slate Creek road about a mile to the big bridge (about 4,000 ft), then go south off-trail through open woods, a talus field near 4,900 ft and steep forest to a bench on the east ridge near 6,200 ft. Class 3-4 gullies and aretes lead to the col between the north and south summits near 8,150 ft; cross to the west face, traverse a ledge to the cairned summit gully with a short 4th-class corner. Downclimb the same way. Gain derived from the gate (3,800 ft) and summit (8,371 ft).",
+     "gainFt": 4600,
+     "lossFt": 4600,
+     "hours": 8.5,
+     "miles": 7,
+     "packLb": 18,
+     "schedule": [
+      {"time": "6:45 AM", "label": "Leave the car", "detail": "Before sunrise, from the gated Slate Creek road end."},
+      {"time": "~1:00 PM", "label": "Approximate summit", "detail": "Not recorded; the 2019 party took about 3 hours from the 6,200 ft bench to the top."},
+      {"time": "3:15 PM", "label": "Back at the car", "detail": "About 8.5 hours round trip, downclimbing the same route."}
+     ]
+    }
+   ],
+   "totalNote": "One long day from the Slate Creek gate: a mile of old road, a bushwhack to the east ridge, class 3-4 scrambling to the col and a short west-face finish, about 4,600 ft and 8.5 hours round trip."
+  },
+  "sources": [
+   "https://www.countryhighpoints.com/mount-ballard/",
+   "https://lemkeclimbs.com/mount-ballard.html"
+  ],
+  "confidence": "medium",
+  "notes": "countryhighpoints (Oct 2018) gives the one-day timing (6:45 AM start, 3:15 PM finish, 8.5 h). Lemke (May 2019) walked from a snowbound Harts Pass road about 9.5 mi to the bridge, reached the 6,200 ft bench at ~2 PM and the summit shortly before 5 PM, and bivied at the bridge (~4,000 ft); the approximate summit time in the schedule is derived from that 3-hour leg, not observed. Neither source gives off-trail mileage; the 7 mi round trip is an estimate. Row gain_ft/dist_km are null."
+ }
+]

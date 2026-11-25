@@ -51,7 +51,7 @@ const DECLARED = [
     reserves: true,
   },
   {
-    style: 'position:"fixed",top:64/ZOOM,bottom:0,left:"calc(var(--cm-col-left) / "+ZOOM+")",width:280/ZOOM',
+    style: 'position:"fixed",top:HEAD_H/ZOOM,bottom:0,left:"calc(var(--cm-col-left) / "+ZOOM+")",width:280/ZOOM',
     file: "lib/Inbox.jsx",
     why: "the desktop Messages LEFT PANE (Inbox pane=\"side\", 1024px+ only) — it runs to the bottom of the window by design, beside the conversation, not over it",
     // Drawn at the website's ZOOM since 2026-11-04 (it zooms itself, so its geometry is written
@@ -124,6 +124,18 @@ for (const d of DECLARED) {
       "      The panel is fixed and cannot be dismissed, so without it the bottom ~200px of every\n" +
       "      screen is unreachable while it is up — measured at 39 controls across six tabs,\n" +
       "      including the whole footer. Re-run scripts/oneoff/probe-policy-notice-covers-content.mjs.");
+  }
+  // ...AND A POPUP IS NOT THE PAGE. #appscroll's padding moves nothing inside a role="dialog" layer, so the
+  // notice covered the foot of every sheet (2026-11-23: the wall-order sheet's Send sat under "Read Terms").
+  // The reservation for popups is two halves: App publishes the height, index.html ends every popup above it.
+  const indexHtml = fs.readFileSync(path.join(ROOT, "index.html"), "utf8");
+  const publishes = app.includes('setProperty("--cm-policy-h",policyH+"px")') && app.includes('setAttribute("data-policy-notice","")');
+  const rule = indexHtml.includes('html[data-policy-notice] [role="dialog"] { bottom: var(--cm-policy-h, 0px) !important; }');
+  if ((!publishes || !rule) && !fails.some((f) => f.startsWith("PolicyUpdateNotice reserves no space inside POPUPS"))) {
+    fails.push(
+      "PolicyUpdateNotice reserves no space inside POPUPS: " + (!publishes ? "ClimbMatch.jsx no longer writes --cm-policy-h / data-policy-notice to <html>" : "index.html no longer ends a [role=\"dialog\"] at var(--cm-policy-h)") + ".\n" +
+      "      A popup is a fixed layer of its own, so the notice sits on its last rows -- its Send or Save --\n" +
+      "      for as long as the notice is up. Both halves are required.");
   }
 }
 

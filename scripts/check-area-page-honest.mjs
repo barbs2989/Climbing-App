@@ -48,8 +48,28 @@ if (!/sum\.toLocaleString\(\) \+ " climb"/.test(chartBody)) fail("ClimbsChart's 
 if (!/total > sum/.test(chartBody)) fail("ClimbsChart does not say when `total` exceeds the bars' sum — a remainder would be hidden");
 if (/stats\.total\.toLocaleString\(\) \+ " climb"|total\.toLocaleString\(\) \+ " climb"/.test(chartBody)) fail("ClimbsChart prints `total` as its headline — that is the RPC's count, not the bars'");
 const gradeBody = (sections.match(/export function GradeSpread[\s\S]*?\n\}/) || [""])[0];
-if (!/total > shown/.test(gradeBody)) fail("GradeSpread no longer says how many climbs it left out (`total > shown`)");
-if (!fails) ok("the chart's headline is the sum of its bars, and both charts say what they left out");
+// The grade spread draws ONE scale. Until 2026-11-18 it said the rest in words ("276 of 385 list a 5.x grade");
+// the owner removed that line and asked for a discipline picker instead, so the rule is now that every scale
+// the area has is a chip the climber can pick, and the picked chip says so.
+if (!/const scales = \[/.test(gradeBody)) fail("GradeSpread no longer lists the scales the area has (`const scales = [`) — ANCHOR LOST");
+if (!/Object\.keys\(bySys\)\.filter\(k => !SYS_ORDER\.includes\(k\)\)/.test(gradeBody)) fail("GradeSpread's picker drops a scale that is not in SYS_ORDER — its climbs would be on no chart a climber can open");
+if (!/scales\.map\(k => <button.*aria-pressed=\{k === sys\}/.test(gradeBody)) fail("GradeSpread no longer offers every scale as a chip that says which one is picked");
+// EVERY DISCIPLINE IS ITS OWN CHIP (owner, 2026-11-18: "grade spread needs to have trad, sport, top rope be it's own
+// discipline. Make sure every dicipline is its own chip if there's that type of climbing in that area"). The chips
+// were one per SCALE, so trad, sport and top rope drew as a single "Rock". They are now one per discipline with a
+// graded climb here, and the scale chips above are the picked discipline's own scales.
+if (!/const discs = \[\.\.\.DISC_ORDER\.filter\(k => byDisc\[k\]\), \.\.\.Object\.keys\(byDisc\)\.filter\(k => k && !DISC_ORDER\.includes\(k\)\), \.\.\.\(byDisc\[""\] \? \[""\] : \[\]\)\]/.test(gradeBody)) fail("GradeSpread's discipline chips drop a discipline (one not in DISC_ORDER, or the climbs filed with no type) — its climbs would be on no chart a climber can open");
+if (!/discs\.map\(k => <button.*aria-pressed=\{k === disc\}/.test(gradeBody)) fail("GradeSpread no longer offers every discipline as a chip that says which one is picked");
+if (!/const mine = rows\.filter\(g => g\.disc === disc\)/.test(gradeBody)) fail("GradeSpread's columns are no longer the PICKED discipline's rows — a chip would draw another discipline's climbs");
+if (!/by_grade_disc/.test(sections)) fail("the grade spread no longer reads area_climb_stats.by_grade_disc (0476) — without it the chart cannot tell trad from sport");
+// A scale holding a sliver of the picked discipline's climbs gets no chip (owner, 2026-11-18). The bar may be
+// lowered, never raised past 5%: above that a real second scale (alpine on Class is ~8% of its graded climbs)
+// would lose its chart.
+if (!/const SCALE_MIN_SHARE = 0\.0[0-5]\d*;/.test(sections)) fail("SCALE_MIN_SHARE is gone or above 5% — a scale a discipline is really graded on would lose its chip");
+if (!/\.filter\(k => !disc \|\| bySys\[k\] >= byDisc\[disc\] \* SCALE_MIN_SHARE\)/.test(gradeBody)) fail("GradeSpread no longer measures a scale's share against the PICKED discipline's own climbs — ANCHOR LOST");
+if (/yds: "Rock"/.test(sections)) fail("a grade-spread chip is labelled \"Rock\" again — trad, sport and top rope are each their own chip (owner, 2026-11-18)");
+if (/on other scales|" list a "/.test(gradeBody)) fail("GradeSpread prints the \"N of M list a grade\" line again — the owner removed it (2026-11-18); the picker is how the other scales are reached");
+if (!fails) ok("the chart's headline is the sum of its bars, and the grade spread offers every discipline the area has, on every scale it is graded on");
 
 // ── 3. one way to drive there ──
 const dir = (browser.match(/maps\/dir/g) || []).length;

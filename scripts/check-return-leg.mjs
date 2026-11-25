@@ -169,13 +169,36 @@ const NEAR = { distKm: 2, gainM: 1000 / FT, lossM: 1000 / FT };
 const CAMP_DAYS = { days: [{ n: 1, title: "Approach to camp" }, { n: 2, title: "Summit day" }, { n: 3, title: "Walk out" }] };
 const pushNear = legs(T({ approachTimeHrs: 3, summitTimeHrs: 10, totalHrs: 13 }, NEAR));
 const derivedNear = legs(T({ approachTimeHrs: 2, totalHrs: 10 }, NEAR));
-const campMulti = legs(T({ approachTimeHrs: 6, summitTimeHrs: 11, descentTimeHrs: 5, totalHrs: 22 }, Object.assign({ itinerary: CAMP_DAYS }, NEAR)));
+/* A MULTI-DAY route no longer renders the single-push tiles (2026-11-18): the Planner shows its summit
+   day from camp (summitDayPlan). The planTimes maths the Conditions tab counts back from is asserted on
+   planTimes itself, and the rendered summit day on its own two clocks. */
+const campMultiRoute = T({ approachTimeHrs: 6, summitTimeHrs: 11, descentTimeHrs: 5, totalHrs: 22 }, Object.assign({ itinerary: CAMP_DAYS }, NEAR));
+const campP = planTimes(campMultiRoute, {});
+const campMulti = campP ? { summit: Math.round(campP.sumH * 60), ret: Math.round(campP.retH * 60) } : null;
+const SUMMIT_DAY = /([^ ]+ [AP]M) Est\. summit.*?([^ ]+ [AP]M) Back at camp/;
+const campDay = (() => { const m = text(render(campMultiRoute)).match(SUMMIT_DAY); return m ? { summit: mins(m[1]), back: mins(m[2]) } : null; })();
 const campOneDay = legs(T({ approachTimeHrs: 6, summitTimeHrs: 11, descentTimeHrs: 5, totalHrs: 22 }, NEAR));
 eq("ANCHOR: the push, derived and camp fixtures rendered", !!pushNear && !!derivedNear && !!campMulti && !!campOneDay, true);
 eq("a push's DESCENT share (0.41) is walked down, not dropped: the round trip is its stored 13 hr total", pushNear ? JSON.stringify([pushNear.down, pushNear.ret]) : null, JSON.stringify([Math.round(10 * 0.41 * 60), (6 + 13) * 60]));
 eq("a DERIVED leg (total - approach) holds the descent too: 0.59 of it up, the rest down", derivedNear ? JSON.stringify([derivedNear.summit, derivedNear.ret]) : null, JSON.stringify([Math.round((6 + 2 + 8 * 0.59) * 60), (6 + 10) * 60]));
 eq("a MULTI-DAY route's summit leg beside walk in ~= walk out is a round trip from camp: 0.59 up", campMulti ? campMulti.summit : null, Math.round((6 + 6 + 11 * 0.59) * 60));
 eq("...and its other 0.41 comes down to camp BEFORE the stored walk out (round trip = the 22 hr total)", campMulti ? campMulti.ret : null, (6 + 22) * 60);
+eq("the rendered summit day of that trip is timed FROM CAMP: leave at the 4:00 alpine-start default, 0.59 of the leg up", campDay ? campDay.summit : null, Math.round((4 + 11 * 0.59) * 60));
+eq("...and back at camp after the other 0.41, the walk in left out of the clock", campDay ? campDay.back : null, (4 + 11) * 60);
+/* A 2-DAY trip whose summit day walks out to the car (no day after it) stores the summit leg ONE WAY,
+   camp to summit, by the one-total rule (2026-11-18): the camp split halved the climb (Shasta 2.95 hr
+   up from Helen Lake against 4-6 reported). Same legs, walk in ~= walk out, but the plan's day hours
+   put the summit day LAST. */
+const carEndRoute = T({ approachTimeHrs: 6, summitTimeHrs: 11, descentTimeHrs: 5, totalHrs: 22 }, Object.assign({ itinerary: { days: [{ n: 1, title: "Walk in to camp", hours: 6 }, { n: 2, title: "Summit and walk out", hours: 16 }] } }, NEAR));
+const carP = planTimes(carEndRoute, {});
+eq("a 2-day trip whose summit day ends at the CAR reads its summit leg one way: all 11 hr up, no camp split", carP ? JSON.stringify([carP.summitDayFromCamp, carP.techH]) : null, JSON.stringify([false, 11]));
+/* A SUMMIT DAY LONGER THAN THE SUMMIT LEG says the leg is ONE WAY (2026-11-18): the rest of the day is
+   the way back to camp. Walk in 6 ~= descent 8, so without that test the camp rule would split it. */
+const oneWayRoute = T({ approachTimeHrs: 6, summitTimeHrs: 6, descentTimeHrs: 8, totalHrs: 20 }, Object.assign({ itinerary: { days: [{ n: 1, title: "Walk in", hours: 6 }, { n: 2, title: "Summit day", hours: 9 }, { n: 3, title: "Walk out", hours: 5 }] } }, NEAR));
+const owP = planTimes(oneWayRoute, {});
+eq("a summit day LONGER than the summit leg reads the leg one way: all 6 hr up, no camp split", owP ? JSON.stringify([owP.summitDayFromCamp, owP.techH]) : null, JSON.stringify([false, 6]));
+const owDay = (() => { const m = text(render(oneWayRoute)).match(SUMMIT_DAY); return m ? { summit: mins(m[1]), back: mins(m[2]) } : null; })();
+eq("...and is back at camp when the summit day's own hours run out (leave 4:00, 9 hr day)", owDay ? JSON.stringify([owDay.summit, owDay.back]) : null, JSON.stringify([(4 + 6) * 60, (4 + 9) * 60]));
 eq("...while the same legs on a SINGLE-day route are a one-way climb, left whole", campOneDay ? JSON.stringify([campOneDay.summit, campOneDay.down]) : null, JSON.stringify([(6 + 6 + 11) * 60, 5 * 60]));
 /* ...and a stored leg is a FIT PARTY's day ("published times for a fit party in good conditions",
    the contribute form's definition of `timing`), which fitness and pack do not scale. The Planner
@@ -213,7 +236,7 @@ const noWalkHtml = text(render(route({ distKm: null, timing: { approachTimeHrs: 
 const tile = /(≥?)(\d+\.\d)hr Approach/.exec(noWalkHtml);
 eq("ANCHOR: the Approach tile rendered for a route with stored legs and no walk inputs", !!tile, true);
 eq("...and it states the stored approach (3.0hr) with no lower-bound mark", tile ? tile[1] + tile[2] : null, "3.0");
-eq("...and no 'Lower bounds only' note claims the walk is missing", /Lower bounds only — this climb has no recorded/.test(noWalkHtml), false);
+eq("...and no 'Lower bounds only' note claims the walk is missing", /Lower bounds only — no recorded/.test(noWalkHtml), false);
 
 /* The warning div sits immediately after the tile's own "Est. summit" / "Est. return" caption and
    is identified by carrying a margin-top the caption does not. Read from the RAW markup rather
@@ -321,7 +344,6 @@ eq("a starred seed campOption does NOT drive it — that field reaches no real r
 const md3Html = render(md3);
 const iPlan = md3Html.indexOf(">Trip plan<"), iDiscl = md3Html.search(/data-multiday="/);
 eq("ANCHOR: the Trip plan section rendered on the same tab", iPlan >= 0, true);
-eq("...and it really is ABOVE the disclaimer that points at it", iPlan >= 0 && iDiscl > iPlan, true);
 /* The box's OWN text, sliced from its anchor to the first closing tag — it holds one <b> and no
    nested div. Scoped rather than matched page-wide, because "Trip plan" is also the heading of the
    section being pointed AT, so a page-wide test would pass on the strength of the destination
@@ -329,6 +351,15 @@ eq("...and it really is ABOVE the disclaimer that points at it", iPlan >= 0 && i
    destination, never that it is worded one way. */
 const box = md3Html.slice(iDiscl).split("</div>")[0];
 eq("the disclaimer names the section it points at", box.includes("Trip plan"), true);
+/* ...and the direction it gives is TRUE. The trip plan sat above Full trip time until 2026-11-18, when the
+   alpine Plan tab put timing before the itinerary (owner) and the copy turned to "below". Read the word the
+   box uses and check the page against it, so neither a reorder nor a copy edit can make it point the wrong way. */
+/* The box also says "the single-push estimate below", so a bare /below/ reads THAT word: match the direction
+   written right after the Trip plan name. */
+const _dir = box.match(/Trip plan<\/b>[^<.]*?\b(above|below)\b/);
+const says = _dir ? _dir[1] : null;
+eq("the disclaimer says which way the Trip plan is (above or below)", !!says, true);
+eq("...and the Trip plan really is " + (says || "there"), iPlan >= 0 && (says === "above" ? iDiscl > iPlan : says === "below" ? iPlan > iDiscl : false), true);
 eq("...and no longer sends a reader to the tab they are already on", /use the .?Plan.? tab/.test(text(md3Html)), false);
 
 console.log("\na pitch count of 1 beside 100+ m of climb is no pitch count -- not a 0.6 hr climb");

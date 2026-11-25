@@ -1,0 +1,853 @@
+[
+ {
+  "id": "ca_mount_fiske_standard_route",
+  "name": "Standard route",
+  "discipline": "scrambling",
+  "grade": "Class 2",
+  "verdict": "SUMMIT_ONLY",
+  "state": "ca",
+  "peak": {
+   "id": "ca_mount_fiske",
+   "name": "Mount Fiske",
+   "lat": 37.1367,
+   "lng": -118.6678,
+   "elevation_ft": 13503,
+   "region": null,
+   "path": "usa.california.ca_high_sierra.ca_08_bishop_pass_evolution.ca_mount_fiske"
+  },
+  "text": {
+   "approach": null,
+   "approach_logistics": null,
+   "road": null,
+   "overview": null,
+   "description": null,
+   "descent": null
+  },
+  "waypoints": [],
+  "siblingTrailheads": [],
+  "officialCandidates": [
+   {
+    "src": "USFS",
+    "name": "South Lake Trailhead",
+    "lat": 37.169305,
+    "lng": -118.565813,
+    "km": 9.7
+   },
+   {
+    "src": "USFS",
+    "name": "SABRINA LAKE TH",
+    "lat": 37.213605,
+    "lng": -118.610013,
+    "km": 10
+   },
+   {
+    "src": "USFS",
+    "name": "LAMARCK LAKES TH",
+    "lat": 37.227305,
+    "lng": -118.627513,
+    "km": 10.7
+   },
+   {
+    "src": "USFS",
+    "name": "Baker/Green Lakes Th",
+    "lat": 37.186805,
+    "lng": -118.557713,
+    "km": 11.2
+   },
+   {
+    "src": "USFS",
+    "name": "TYEE TH",
+    "lat": 37.195805,
+    "lng": -118.564713,
+    "km": 11.3
+   },
+   {
+    "src": "USFS",
+    "name": "North Lake  Trailhead",
+    "lat": 37.230685,
+    "lng": -118.616614,
+    "km": 11.4
+   },
+   {
+    "src": "USFS",
+    "name": "HORTON LAKES TH",
+    "lat": 37.312105,
+    "lng": -118.624913,
+    "km": 19.9
+   },
+   {
+    "src": "USFS",
+    "name": "BIG PINE CREEK SO FORK TH",
+    "lat": 37.124805,
+    "lng": -118.438913,
+    "km": 20.3
+   },
+   {
+    "src": "USFS",
+    "name": "Big Pine Creek North Fork Trail Trailhea",
+    "lat": 37.128105,
+    "lng": -118.427713,
+    "km": 21.3
+   },
+   {
+    "src": "USFS",
+    "name": "PINE CREEK TH",
+    "lat": 37.361005,
+    "lng": -118.691613,
+    "km": 25
+   },
+   {
+    "src": "USFS",
+    "name": "GABLE LAKES TH",
+    "lat": 37.360905,
+    "lng": -118.691213,
+    "km": 25
+   }
+  ],
+  "firstPass": {
+   "why": "stuck: Own text is empty; no route-specific page opened (Peakbagger human check, Nominatim 429, Wikipedia names none for this route). Retried after brief change: Summi",
+   "trailhead": null,
+   "notes": "Own text is empty; no route-specific page opened (Peakbagger human check, Nominatim 429, Wikipedia names none for this route). Retried after brief change: SummitPost 403, Peakbagger human check, hikespeak slug guesses timed out; Wikipedia has no trailhead."
+  },
+  "earlierPasses": {
+   "why": "stuck: Two documented starts for the SW ridge from Helen Lake: Lake Sabrina via Echo Col (wacziarg-climbing 2024-07-20) and South Lake over Bishop Pass (climber.org/re",
+   "trailhead": null,
+   "notes": "Two documented starts for the SW ridge from Helen Lake: Lake Sabrina via Echo Col (wacziarg-climbing 2024-07-20) and South Lake over Bishop Pass (climber.org/reports/2011/1876.html). Stored route has no text so cannot choose. Candidates: USFS SABRINA LAKE TH 37.213605,-118.610013; South Lake Trailhead 37.169305,-118.565813."
+  },
+  "priorPass": {
+   "kind": "stuck",
+   "why": "Two equally documented starts: Lake Sabrina via Echo Col and South Lake over Bishop Pass."
+  },
+  "lastPassNote": "Lake Sabrina (2025 report, opened) and South Lake over Bishop Pass (climber.org 2011/1876 per earlier pass) are both documented; Sabrina is called the most dire"
+ },
+ {
+  "id": "ca_mount_gibbs_standard_route",
+  "name": "Standard route",
+  "discipline": "scrambling",
+  "grade": "Class 1",
+  "verdict": "SUMMIT_ONLY",
+  "state": "ca",
+  "peak": {
+   "id": "ca_mount_gibbs",
+   "name": "Mount Gibbs",
+   "lat": 37.877,
+   "lng": -119.2117,
+   "elevation_ft": 12773,
+   "region": null,
+   "path": "usa.california.ca_sierra_eastside.ca_lee_vining_canyon_tioga_road.ca_mount_gibbs"
+  },
+  "text": {
+   "approach": null,
+   "approach_logistics": null,
+   "road": null,
+   "overview": null,
+   "description": null,
+   "descent": null
+  },
+  "waypoints": [],
+  "siblingTrailheads": [],
+  "officialCandidates": [
+   {
+    "src": "USFS",
+    "name": "Walker Lake Trailhead",
+    "lat": 37.872305,
+    "lng": -119.159113,
+    "km": 4.6
+   },
+   {
+    "src": "USFS",
+    "name": "Tuolumne Meadows",
+    "lat": 37.89098,
+    "lng": -119.262544,
+    "km": 4.7
+   },
+   {
+    "src": "NPS",
+    "name": "Mono/Parker Pass Trailhead",
+    "lat": 37.89091,
+    "lng": -119.262696,
+    "km": 4.7
+   },
+   {
+    "src": "NPS",
+    "name": "Gaylor Lakes Trailhead",
+    "lat": 37.910225,
+    "lng": -119.258284,
+    "km": 5.5
+   },
+   {
+    "src": "USFS",
+    "name": "Nunatak Tioga Tarns Trailhead",
+    "lat": 37.931328,
+    "lng": -119.250632,
+    "km": 6.9
+   },
+   {
+    "src": "USFS",
+    "name": "GIBBS LAKE TH",
+    "lat": 37.919705,
+    "lng": -119.152713,
+    "km": 7
+   },
+   {
+    "src": "USFS",
+    "name": "PARKER LAKE TH",
+    "lat": 37.853005,
+    "lng": -119.134513,
+    "km": 7.3
+   },
+   {
+    "src": "USFS",
+    "name": "BENNETTVILLE TH",
+    "lat": 37.938505,
+    "lng": -119.250913,
+    "km": 7.7
+   },
+   {
+    "src": "USFS",
+    "name": "WARREN FORK TH",
+    "lat": 37.952415,
+    "lng": -119.225978,
+    "km": 8.5
+   },
+   {
+    "src": "USFS",
+    "name": "GARDISKY LAKE TH",
+    "lat": 37.950505,
+    "lng": -119.261113,
+    "km": 9.3
+   },
+   {
+    "src": "USFS",
+    "name": "Saddlebag Trailhead",
+    "lat": 37.965805,
+    "lng": -119.270513,
+    "km": 11.1
+   },
+   {
+    "src": "NPS",
+    "name": "Dog Lake Trailhead Parking",
+    "lat": 37.878162,
+    "lng": -119.338857,
+    "km": 11.2
+   },
+   {
+    "src": "NPS",
+    "name": "Dog Lake Trailhead",
+    "lat": 37.878407,
+    "lng": -119.338986,
+    "km": 11.2
+   },
+   {
+    "src": "NPS",
+    "name": "Tuolumne Meadows Wilderness Center Parking",
+    "lat": 37.876938,
+    "lng": -119.346071,
+    "km": 11.8
+   },
+   {
+    "src": "NPS",
+    "name": "Lembert Dome Trailhead",
+    "lat": 37.877417,
+    "lng": -119.353701,
+    "km": 12.5
+   },
+   {
+    "src": "NPS",
+    "name": "Elizabeth Lake Trailhead",
+    "lat": 37.870604,
+    "lng": -119.355807,
+    "km": 12.7
+   },
+   {
+    "src": "NPS",
+    "name": "Tuolumne Meadows Store and Picnic Area Parking",
+    "lat": 37.874236,
+    "lng": -119.357217,
+    "km": 12.8
+   },
+   {
+    "src": "NPS",
+    "name": "Elizabeth Lake Parking",
+    "lat": 37.873556,
+    "lng": -119.358045,
+    "km": 12.9
+   },
+   {
+    "src": "NPS",
+    "name": "Glen Aulin Trailhead",
+    "lat": 37.878889,
+    "lng": -119.358511,
+    "km": 12.9
+   },
+   {
+    "src": "NPS",
+    "name": "Tuolumne Meadows Stables Parking",
+    "lat": 37.880991,
+    "lng": -119.359412,
+    "km": 13
+   }
+  ],
+  "firstPass": {
+   "why": "stuck: Own text is empty; no route-specific page opened (Peakbagger human check, Nominatim 429, Wikipedia names none for this route). Wikipedia (https://en.wikipedia.o",
+   "trailhead": null,
+   "notes": "Own text is empty; no route-specific page opened (Peakbagger human check, Nominatim 429, Wikipedia names none for this route). Wikipedia (https://en.wikipedia.org/wiki/Mount_Gibbs) says approached from Tioga Pass Road (west) or Walker Lake trailhead via Bloody Canyon (east): two starts, standard not stated. Retried after brief change: SummitPost 403, Peakbagger human check, hikespeak slug guesses timed out; Wikipedia has no trailhead."
+  },
+  "earlierPasses": {
+   "why": "stuck: Starts found: Tioga Pass entrance station (climber.org 1997/191, via Dana), Horse Meadows unmarked trailhead (1997/214, class 1 from SE), Walker Lake via Bloody",
+   "trailhead": null,
+   "notes": "Starts found: Tioga Pass entrance station (climber.org 1997/191, via Dana), Horse Meadows unmarked trailhead (1997/214, class 1 from SE), Walker Lake via Bloody Canyon (Wikipedia, first pass). Class 1 standard does not say which. Candidate: Mono/Parker Pass Trailhead 37.89091,-119.262696."
+  },
+  "priorPass": {
+   "kind": "stuck",
+   "why": "Wikipedia (opened) names two starts: Tioga Road west side and Walker Lake via Bloody Canyon east side; earlier pass also found Tioga Pass entrance and Horse Mea"
+  },
+  "lastPassNote": "Two equally used starts: Walker Lake (east, one trip report opened) and Mono Pass/Parker Pass trailhead on Tioga Rd (west; USFS/NPS 37.89091,-119.262696 candida"
+ },
+ {
+  "id": "ca_observation_peak_standard_route",
+  "name": "Standard route",
+  "discipline": "scrambling",
+  "grade": "Class 2",
+  "verdict": "SUMMIT_ONLY",
+  "state": "ca",
+  "peak": {
+   "id": "ca_observation_peak",
+   "name": "Observation Peak",
+   "lat": 37.0231,
+   "lng": -118.5238,
+   "elevation_ft": 12362,
+   "region": null,
+   "path": "usa.california.ca_high_sierra.ca_09_palisades_surrounding_peaks.ca_observation_peak"
+  },
+  "text": {
+   "approach": null,
+   "approach_logistics": null,
+   "road": null,
+   "overview": null,
+   "description": null,
+   "descent": null
+  },
+  "waypoints": [],
+  "siblingTrailheads": [],
+  "officialCandidates": [
+   {
+    "src": "USFS",
+    "name": "BIG PINE CREEK SO FORK TH",
+    "lat": 37.124805,
+    "lng": -118.438913,
+    "km": 13.6
+   },
+   {
+    "src": "USFS",
+    "name": "Big Pine Creek North Fork Trail Trailhea",
+    "lat": 37.128105,
+    "lng": -118.427713,
+    "km": 14.5
+   },
+   {
+    "src": "USFS",
+    "name": "RED LAKE TH",
+    "lat": 37.035704,
+    "lng": -118.35896,
+    "km": 14.7
+   },
+   {
+    "src": "USFS",
+    "name": "BIRCH LAKE TH",
+    "lat": 37.087405,
+    "lng": -118.355412,
+    "km": 16.6
+   },
+   {
+    "src": "USFS",
+    "name": "South Lake Trailhead",
+    "lat": 37.169305,
+    "lng": -118.565813,
+    "km": 16.7
+   },
+   {
+    "src": "USFS",
+    "name": "TABOOSE PASS TH",
+    "lat": 37.009505,
+    "lng": -118.327312,
+    "km": 17.5
+   },
+   {
+    "src": "USFS",
+    "name": "Baker/Green Lakes Th",
+    "lat": 37.186805,
+    "lng": -118.557713,
+    "km": 18.4
+   },
+   {
+    "src": "USFS",
+    "name": "TYEE TH",
+    "lat": 37.195805,
+    "lng": -118.564713,
+    "km": 19.5
+   },
+   {
+    "src": "USFS",
+    "name": "SABRINA LAKE TH",
+    "lat": 37.213605,
+    "lng": -118.610013,
+    "km": 22.5
+   },
+   {
+    "src": "USFS",
+    "name": "SAWMILL PASS TH",
+    "lat": 36.938805,
+    "lng": -118.290212,
+    "km": 22.8
+   },
+   {
+    "src": "USFS",
+    "name": "LAMARCK LAKES TH",
+    "lat": 37.227305,
+    "lng": -118.627513,
+    "km": 24.5
+   },
+   {
+    "src": "USFS",
+    "name": "North Lake  Trailhead",
+    "lat": 37.230685,
+    "lng": -118.616614,
+    "km": 24.5
+   }
+  ],
+  "firstPass": {
+   "why": "held: agent flagged the identification as inferred/weak",
+   "trailhead": {
+    "name": "Taboose Pass Trailhead",
+    "identifiedBy": {
+     "kind": "page",
+     "fact": "Trailhead field Taboose Pass for Observation Peak climbed from Upper Basin",
+     "url": "https://climber.org/reports/2007/1718.html"
+    },
+    "placements": [
+     {
+      "source": "USFS",
+      "name": "TABOOSE PASS TH",
+      "lat": 37.009505,
+      "lng": -118.327312,
+      "url": ""
+     }
+    ]
+   },
+   "notes": "That report calls the Upper Basin approach little known; low-moderate confidence it is the standard."
+  },
+  "earlierPasses": {
+   "why": "held: agent flagged the identification as inferred/weak",
+   "trailhead": {
+    "name": "Taboose Pass Trailhead",
+    "identifiedBy": {
+     "kind": "page",
+     "fact": "Trailhead Taboose Pass, then Upper Basin and Amphitheater Pass to Observation; a 2016 Taboose-start plan also climbed Observation. Taboose is the nearest road trailhead on the east side (weak-moderate: peak-specific reports are overnight trips)",
+     "url": "https://climber.org/reports/2007/1718.html"
+    },
+    "placements": [
+     {
+      "source": "USFS",
+      "name": "TABOOSE PASS TH",
+      "lat": 37.009505,
+      "lng": -118.327312,
+      "url": ""
+     },
+     {
+      "source": "climber.org driving GPX (TABCRK, Taboose Pass Trailhead 5400)",
+      "name": "Taboose Pass Trailhead",
+      "lat": 37.009199977,
+      "lng": -118.326900005,
+      "url": "https://climber.org/driving/images/TaboosePass.gpx"
+     }
+    ]
+   },
+   "notes": "Confirms first pass: still inferred. Standard route is the Dumbbell Lakes line, which on the east side is also approached from Taboose via Vennacher Col (a 2016 plan). Observation is a multi-day backpack from any trailhead; Big Pine Creek and Sabrina are far farther. Both placements agree within 50 m."
+  },
+  "priorPass": {
+   "kind": "stuck",
+   "why": "Remote multi-day peak, reachable from Taboose, Sabrina, Big Pine, etc.; only report-level inference. No standard start established. Not re-verified this pass (C"
+  },
+  "lastPassNote": "Two real starts with one report each: Bob Burd started at South Lake (Bishop Pass, Dusy Basin, Knapsack Pass, Palisade Creek, Cataract Creek, Amphitheater Lake,"
+ },
+ {
+  "id": "ca_picket_guard_peak_standard_route",
+  "name": "Standard route",
+  "discipline": "scrambling",
+  "grade": "Class 2",
+  "verdict": "SUMMIT_ONLY",
+  "state": "ca",
+  "peak": {
+   "id": "ca_picket_guard_peak",
+   "name": "Picket Guard Peak",
+   "lat": 36.5766,
+   "lng": -118.4731,
+   "elevation_ft": 12303,
+   "region": null,
+   "path": "usa.california.ca_high_sierra.ca_11_great_western_kings_kern_divide.ca_picket_guard_peak"
+  },
+  "text": {
+   "approach": null,
+   "approach_logistics": null,
+   "road": null,
+   "overview": null,
+   "description": null,
+   "descent": null
+  },
+  "waypoints": [],
+  "siblingTrailheads": [],
+  "officialCandidates": [
+   {
+    "src": "NPS",
+    "name": "Sawtooth",
+    "lat": 36.453305,
+    "lng": -118.596761,
+    "km": 17.6
+   },
+   {
+    "src": "NPS",
+    "name": "Eagle-Mosquito",
+    "lat": 36.448545,
+    "lng": -118.595366,
+    "km": 17.9
+   },
+   {
+    "src": "NPS",
+    "name": "Farewell Gap - Franklin Lakes",
+    "lat": 36.44753,
+    "lng": -118.594135,
+    "km": 18
+   },
+   {
+    "src": "NPS",
+    "name": "Tar Gap",
+    "lat": 36.450721,
+    "lng": -118.614253,
+    "km": 18.8
+   },
+   {
+    "src": "USFS",
+    "name": "Whitney Portal Trailhead",
+    "lat": 36.586905,
+    "lng": -118.240112,
+    "km": 20.8
+   },
+   {
+    "src": "NPS",
+    "name": "Paradise Ridge Trail",
+    "lat": 36.464986,
+    "lng": -118.670944,
+    "km": 21.6
+   },
+   {
+    "src": "NPS",
+    "name": "Atwell/Hockett",
+    "lat": 36.464576,
+    "lng": -118.670521,
+    "km": 21.6
+   },
+   {
+    "src": "USFS",
+    "name": "MEYSAN LAKE TH",
+    "lat": 36.589789,
+    "lng": -118.230163,
+    "km": 21.7
+   },
+   {
+    "src": "USFS",
+    "name": "Lodgepole TH",
+    "lat": 36.604973,
+    "lng": -118.723059,
+    "km": 22.5
+   },
+   {
+    "src": "NPS",
+    "name": "Tokopah Falls",
+    "lat": 36.605023,
+    "lng": -118.722893,
+    "km": 22.5
+   },
+   {
+    "src": "NPS",
+    "name": "Twin Lakes",
+    "lat": 36.604973,
+    "lng": -118.723058,
+    "km": 22.5
+   },
+   {
+    "src": "NPS",
+    "name": "Lodgepole-Sherman Tree",
+    "lat": 36.604383,
+    "lng": -118.72581,
+    "km": 22.8
+   },
+   {
+    "src": "USFS",
+    "name": "Wolverton",
+    "lat": 36.596632,
+    "lng": -118.734168,
+    "km": 23.4
+   },
+   {
+    "src": "NPS",
+    "name": "Lakes Trail",
+    "lat": 36.596644,
+    "lng": -118.734257,
+    "km": 23.4
+   },
+   {
+    "src": "USFS",
+    "name": "SUGARLOAF HILL STAGING",
+    "lat": 36.728002,
+    "lng": -118.663445,
+    "km": 23.9
+   },
+   {
+    "src": "USFS",
+    "name": "Shepherd Pass Th",
+    "lat": 36.726905,
+    "lng": -118.278912,
+    "km": 24.1
+   },
+   {
+    "src": "NPS",
+    "name": "Sherman Tree Parking Access",
+    "lat": 36.58466,
+    "lng": -118.749842,
+    "km": 24.7
+   },
+   {
+    "src": "NPS",
+    "name": "High Sierra Trail",
+    "lat": 36.554944,
+    "lng": -118.748861,
+    "km": 24.7
+   },
+   {
+    "src": "USFS",
+    "name": "Crescent Meadow",
+    "lat": 36.554642,
+    "lng": -118.748928,
+    "km": 24.8
+   },
+   {
+    "src": "USFS",
+    "name": "Onion Valley Campground",
+    "lat": 36.772538,
+    "lng": -118.341244,
+    "km": 24.8
+   }
+  ],
+  "firstPass": {
+   "why": "stuck: Report 1999/466 starts Rowell Meadow Marvin Pass on a Mineral King to Cedar Grove traverse; no standard day start found, no coordinate.",
+   "trailhead": null,
+   "notes": "Report 1999/466 starts Rowell Meadow Marvin Pass on a Mineral King to Cedar Grove traverse; no standard day start found, no coordinate."
+  },
+  "earlierPasses": {
+   "why": "stuck: Three climber.org reports, all multi-day loops from two different trailheads: 2003/1143 starts at Mineral King (Sawtooth Pass Trail, then Little Five Lakes, Cha",
+   "trailhead": null,
+   "notes": "Three climber.org reports, all multi-day loops from two different trailheads: 2003/1143 starts at Mineral King (Sawtooth Pass Trail, then Little Five Lakes, Chagoopa Plateau, Kaweah Pass), 1999/466 and 2003/1154 start at Rowell Meadow (Marvin Pass), via Colby Pass / Gallats Lake. Neither is a standard; the peak is in the remote Kern-Kaweah basin 17+ km from any road. Candidate if forced: Mineral King Sawtooth (NPS 36.453305,-118.596761; climber.org STOOTH 36.45301,-118.59694) or Rowell Meadow, unconfirmed. No second-pass page found naming a standard start; web search budget ran out."
+  },
+  "priorPass": {
+   "kind": "stuck",
+   "why": "Climber.org reports start at two different trailheads (Mineral King, Rowell Meadow); no standard. Candidates: Mineral King Sawtooth, Rowell Meadow. (No new fetc"
+  },
+  "lastPassNote": "Three equal-weight starts in opened reports: Mineral King, Whitney Portal, Rowell Meadow (earlier pass). Remote multi-day peak with no standard day start."
+ },
+ {
+  "id": "ca_pyramid_peak_south_standard_route",
+  "name": "Standard route",
+  "discipline": "scrambling",
+  "grade": "Class 2",
+  "verdict": "SUMMIT_ONLY",
+  "state": "ca",
+  "peak": {
+   "id": "ca_pyramid_peak_south",
+   "name": "Pyramid Peak",
+   "lat": 36.9066,
+   "lng": -118.4621,
+   "elevation_ft": 12779,
+   "region": null,
+   "path": "usa.california.ca_high_sierra.ca_10_taboose_sawmill_baxter_passes.ca_pyramid_peak_south"
+  },
+  "text": {
+   "approach": null,
+   "approach_logistics": null,
+   "road": null,
+   "overview": null,
+   "description": null,
+   "descent": null
+  },
+  "waypoints": [],
+  "siblingTrailheads": [],
+  "officialCandidates": [
+   {
+    "src": "USFS",
+    "name": "SAWMILL PASS TH",
+    "lat": 36.938805,
+    "lng": -118.290212,
+    "km": 15.7
+   },
+   {
+    "src": "USFS",
+    "name": "Baxter Pass Trailhead",
+    "lat": 36.844705,
+    "lng": -118.297612,
+    "km": 16.2
+   },
+   {
+    "src": "USFS",
+    "name": "Cedar Grove",
+    "lat": 36.796368,
+    "lng": -118.58291,
+    "km": 16.3
+   },
+   {
+    "src": "NPS",
+    "name": "Copper Creek",
+    "lat": 36.796495,
+    "lng": -118.583551,
+    "km": 16.3
+   },
+   {
+    "src": "NPS",
+    "name": "Bubbs Creek, Woods Creek, and Rae Lakes  ",
+    "lat": 36.794924,
+    "lng": -118.582577,
+    "km": 16.4
+   },
+   {
+    "src": "USFS",
+    "name": "TABOOSE PASS TH",
+    "lat": 37.009505,
+    "lng": -118.327312,
+    "km": 16.6
+   },
+   {
+    "src": "NPS",
+    "name": "River Trail",
+    "lat": 36.79427,
+    "lng": -118.584209,
+    "km": 16.6
+   },
+   {
+    "src": "USFS",
+    "name": "RED LAKE TH",
+    "lat": 37.035704,
+    "lng": -118.35896,
+    "km": 17
+   },
+   {
+    "src": "NPS",
+    "name": "Zumwalt Meadow/River Trail",
+    "lat": 36.793648,
+    "lng": -118.59852,
+    "km": 17.5
+   },
+   {
+    "src": "USFS",
+    "name": "Onion Valley Campground",
+    "lat": 36.772538,
+    "lng": -118.341244,
+    "km": 18.4
+   },
+   {
+    "src": "USFS",
+    "name": "BIRCH LAKE TH",
+    "lat": 37.087405,
+    "lng": -118.355412,
+    "km": 22.2
+   },
+   {
+    "src": "NPS",
+    "name": "Hotel Creek",
+    "lat": 36.793473,
+    "lng": -118.668599,
+    "km": 22.3
+   },
+   {
+    "src": "NPS",
+    "name": "Don Cecil - lower",
+    "lat": 36.78864,
+    "lng": -118.670443,
+    "km": 22.7
+   },
+   {
+    "src": "NPS",
+    "name": "Lewis Creek",
+    "lat": 36.800486,
+    "lng": -118.691232,
+    "km": 23.6
+   },
+   {
+    "src": "USFS",
+    "name": "BIG PINE CREEK SO FORK TH",
+    "lat": 37.124805,
+    "lng": -118.438913,
+    "km": 24.4
+   },
+   {
+    "src": "USFS",
+    "name": "Big Pine Creek North Fork Trail Trailhea",
+    "lat": 37.128105,
+    "lng": -118.427713,
+    "km": 24.8
+   }
+  ],
+  "firstPass": {
+   "why": "held: agent flagged the identification as inferred/weak",
+   "trailhead": {
+    "name": "Taboose Pass Trailhead",
+    "identifiedBy": {
+     "kind": "page",
+     "fact": "Pyramid Peak report trailhead field Taboose Pass",
+     "url": "https://climber.org/reports/2016/1872.html"
+    },
+    "placements": [
+     {
+      "source": "USFS",
+      "name": "TABOOSE PASS TH",
+      "lat": 37.009505,
+      "lng": -118.327312,
+      "url": ""
+     }
+    ]
+   },
+   "notes": "Other routes use Sawmill Pass; moderate confidence."
+  },
+  "earlierPasses": {
+   "why": "held: agent flagged the identification as inferred/weak",
+   "trailhead": {
+    "name": "Taboose Pass Trailhead",
+    "identifiedBy": {
+     "kind": "page",
+     "fact": "2016 Pyramid Peak (S) report: Taboose Pass trail, over the pass, Arrow Pass cross-country, SW ridge and west face to summit (moderate: Sawmill and Baxter passes are alternatives; Taboose is the nearest)",
+     "url": "https://climber.org/reports/2016/1872.html"
+    },
+    "placements": [
+     {
+      "source": "USFS",
+      "name": "TABOOSE PASS TH",
+      "lat": 37.009505,
+      "lng": -118.327312,
+      "url": ""
+     },
+     {
+      "source": "climber.org driving GPX (TABCRK, Taboose Pass Trailhead 5400)",
+      "name": "Taboose Pass Trailhead",
+      "lat": 37.009199977,
+      "lng": -118.326900005,
+      "url": "https://climber.org/driving/images/TaboosePass.gpx"
+     }
+    ]
+   },
+   "notes": "Moderate. Still one peak-specific report; a different 'Pyramid Peak' report (2001/811, 12,866 ft, Mosquito Flats, Dade Lake) is another peak, ignore. SummitPost (blocked 403) is reported by search summary to call Taboose the closest approach; not opened. Sawmill Pass (USFS 36.938805,-118.290212) is the main alternative. Placements agree within 50 m."
+  },
+  "priorPass": {
+   "kind": "stuck",
+   "why": "Taboose, Sawmill and Baxter passes all plausible; single peak-specific report. Not equally used proof either way; left stuck. (No new fetches this pass: Chrome "
+  },
+  "lastPassNote": "Several equally used starts: Taboose Pass (climber.org 2016/1872), Roads End/Cedar Grove via Paradise Valley (Burd trip report, fetched, ~16 h round trip), Sawm"
+ }
+]

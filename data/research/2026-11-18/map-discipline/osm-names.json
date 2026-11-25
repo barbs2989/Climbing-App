@@ -1,0 +1,968 @@
+{
+ "ca_cartago_peak_standard_route": {
+  "via": "nominatim",
+  "name": "Cartago Canal Trailhead",
+  "hits": []
+ },
+ "ca_mokelumne_peak_standard_route": {
+  "via": "nominatim",
+  "name": "Tanglefoot Trailhead",
+  "hits": [
+   {
+    "type": "node",
+    "id": 3939274836,
+    "name": "Tanglefoot Trailhead",
+    "kind": "trailhead",
+    "lat": 38.5235508,
+    "lng": -120.1735103
+   }
+  ]
+ },
+ "ca_muah_mountain_via_mulkey_pass": {
+  "via": "nominatim",
+  "name": "Mulkey Pass Trailhead (Horseshoe Meadow Road)",
+  "hits": []
+ },
+ "ca_north_maggie_mountain_saddle_route_from_long_meadow": {
+  "via": "nominatim",
+  "name": "Shake Camp Trailhead (Long Meadow Trail, Mountain Home State Forest)",
+  "hits": []
+ },
+ "ca_owens_peak_indian_wells_canyon": {
+  "via": "nominatim",
+  "name": "Indian Wells Canyon Trailhead",
+  "hits": []
+ },
+ "ca_pyramid_peak_north_rocky_canyon": {
+  "via": "nominatim",
+  "name": "Rocky Canyon use-trail pullout on US 50 (near Twin Bridges)",
+  "hits": []
+ },
+ "ca_rockhouse_peak_standard_route": {
+  "via": "nominatim",
+  "name": "South Manter Meadow Trailhead (Big Meadow)",
+  "hits": [
+   {
+    "type": "node",
+    "id": 8284671095,
+    "name": "Manter Meadow Trailhead",
+    "kind": "trailhead",
+    "lat": 35.8688348,
+    "lng": -118.3264831
+   }
+  ]
+ },
+ "ca_san_joaquin_mountain_san_joaquin_ridge": {
+  "via": "nominatim",
+  "name": "Minaret Summit / Minaret Vista (gated road above Mammoth Mountain)",
+  "hits": []
+ },
+ "ca_sawtooth_peak_sierra_standard_route": {
+  "via": "nominatim",
+  "name": "Pacific Crest Trail crossing of Canebrake Road (park at Chimney Peak Campground)",
+  "hits": []
+ },
+ "ca_silver_peak_standard_route": {
+  "via": "nominatim",
+  "name": "Onion Spring Trailhead (Lake Edison)",
+  "hits": []
+ },
+ "ca_sirretta_peak_standard_route": {
+  "via": "nominatim",
+  "name": "Sirretta Trailhead (North Big Meadow), Kern Plateau",
+  "hits": []
+ },
+ "ca_spanish_mountain_north_ridge": {
+  "via": "nominatim",
+  "name": "Crown Valley Trailhead",
+  "hits": [
+   {
+    "type": "node",
+    "id": 1527888043,
+    "name": "Rancheria Trailhead",
+    "kind": "trailhead",
+    "lat": 36.9754743,
+    "lng": -118.956096
+   }
+  ]
+ },
+ "ca_spanish_needle_north_ridge": {
+  "via": "nominatim",
+  "name": "Pacific Crest Trail at Canebrake Road (park at Chimney Creek Campground)",
+  "hits": []
+ },
+ "ca_taylor_dome_west_ridge": {
+  "via": "nominatim",
+  "name": "Big Meadow Trailhead (Taylor Dome trailhead on the Big Meadow loop, FR 23S07)",
+  "hits": []
+ },
+ "ca_tunemah_peak_east_ridge_via_dykeman_pass": {
+  "via": "nominatim",
+  "name": "Rancheria Trailhead (Wishon Reservoir)",
+  "hits": [
+   {
+    "type": "node",
+    "id": 1527888043,
+    "name": "Rancheria Trailhead",
+    "kind": "trailhead",
+    "lat": 36.9754743,
+    "lng": -118.956096
+   }
+  ]
+ },
+ "ca_vandever_mountain_south_slope_from_farewell_gap": {
+  "via": "nominatim",
+  "name": "Mineral King Trailhead",
+  "hits": [
+   {
+    "type": "node",
+    "id": 2840840673,
+    "name": "Farewell Gap - Franklin Lakes Trailhead",
+    "kind": "trailhead",
+    "lat": 36.4475445,
+    "lng": -118.5941023
+   },
+   {
+    "type": "node",
+    "id": 4875372925,
+    "name": "Sawtooth Trailhead",
+    "kind": "trailhead",
+    "lat": 36.4533013,
+    "lng": -118.5967614
+   }
+  ]
+ },
+ "co_atlantic_peak_north_ridge": {
+  "via": "nominatim",
+  "name": "McCullough Gulch Trailhead",
+  "hits": []
+ },
+ "co_california_peak_south_ridge": {
+  "via": "nominatim",
+  "name": "Lily Lake / Huerfano Creek Trailhead",
+  "hits": []
+ },
+ "co_casco_peak_north_ridge": {
+  "via": "nominatim",
+  "name": "South Halfmoon Creek Trailhead",
+  "hits": []
+ },
+ "co_clinton_peak_south_slope": {
+  "via": "nominatim",
+  "name": "Wheeler Lake / Montgomery Reservoir Trailhead",
+  "hits": [
+   {
+    "type": "node",
+    "id": 1449046200,
+    "name": "Wheeler Lake Trailhead",
+    "kind": "trailhead",
+    "lat": 39.3572933,
+    "lng": -106.08226
+   }
+  ]
+ },
+ "co_culebra_peak_northwest_ridge": {
+  "via": "nominatim",
+  "name": "Cielo Vista Ranch headquarters (Culebra Peak, private)",
+  "hits": []
+ },
+ "co_fletcher_mountain_southeast_ridge": {
+  "via": "nominatim",
+  "name": "Blue Lakes / Monte Cristo Creek Trailhead",
+  "hits": [
+   {
+    "type": "node",
+    "id": 178091518,
+    "name": "Upper Blue Lakes Trailhead",
+    "kind": "trailhead",
+    "lat": 39.386744,
+    "lng": -106.1003716
+   },
+   {
+    "type": "node",
+    "id": 12279365005,
+    "name": "Lower Blue Lakes Trailhead",
+    "kind": "trailhead",
+    "lat": 39.3883411,
+    "lng": -106.0892152
+   }
+  ]
+ },
+ "co_french_mountain_southeast_ridge": {
+  "via": "nominatim",
+  "name": "South Halfmoon Creek Trailhead",
+  "hits": []
+ },
+ "co_half_peak_northwest_ridge": {
+  "via": "nominatim",
+  "name": "Carson Pass Trailhead (4x4)",
+  "hits": []
+ },
+ "co_horseshoe_mountain_east_slopes": {
+  "via": "nominatim",
+  "name": "Fourmile Creek Trailhead",
+  "hits": []
+ },
+ "co_huerfano_peak_south_slopes": {
+  "via": "nominatim",
+  "name": "Lily Lake Trailhead (Huerfano)",
+  "hits": []
+ },
+ "co_jones_mountain_northeast_ridge": {
+  "via": "nominatim",
+  "name": "Burns Gulch Trailhead",
+  "hits": []
+ },
+ "co_jupiter_mountain_southwest_slopes": {
+  "via": "nominatim",
+  "name": "Needleton Bridge Trailhead (Durango & Silverton train stop)",
+  "hits": []
+ },
+ "co_mount_buckskin_northeast_slope": {
+  "via": "nominatim",
+  "name": "Kite Lake Trailhead",
+  "hits": [
+   {
+    "type": "way",
+    "id": 1418719133,
+    "name": "Kite Lake Trailhead",
+    "kind": "parking",
+    "lat": 39.3276612,
+    "lng": -106.1294585
+   }
+  ]
+ },
+ "co_mount_democrat_east_slope": {
+  "via": "nominatim",
+  "name": "Kite Lake Trailhead",
+  "hits": [
+   {
+    "type": "way",
+    "id": 1418719133,
+    "name": "Kite Lake Trailhead",
+    "kind": "parking",
+    "lat": 39.3276612,
+    "lng": -106.1294585
+   }
+  ]
+ },
+ "co_mount_edwards_southwest_ridge": {
+  "via": "nominatim",
+  "name": "Argentine Pass Trailhead (Peru Creek)",
+  "hits": [
+   {
+    "type": "way",
+    "id": 1084547985,
+    "name": "Argentine Pass Trailhead",
+    "kind": "parking",
+    "lat": 39.6086463,
+    "lng": -105.800087
+   }
+  ]
+ },
+ "co_mount_eolus_northeast_ridge": {
+  "via": "nominatim",
+  "name": "Needleton (Durango & Silverton train stop)",
+  "hits": []
+ },
+ "co_mount_lincoln_west_ridge": {
+  "via": "nominatim",
+  "name": "Kite Lake Trailhead",
+  "hits": [
+   {
+    "type": "way",
+    "id": 1418719133,
+    "name": "Kite Lake Trailhead",
+    "kind": "parking",
+    "lat": 39.3276612,
+    "lng": -106.1294585
+   }
+  ]
+ },
+ "co_mount_princeton_east_slopes": {
+  "via": "nominatim",
+  "name": "Mt. Princeton Road 2WD Trailhead",
+  "hits": []
+ },
+ "co_mount_sherman_southwest_ridge": {
+  "via": "nominatim",
+  "name": "Fourmile Creek Trailhead",
+  "hits": []
+ },
+ "co_niagara_peak_northeast_ridge": {
+  "via": "nominatim",
+  "name": "Burns Gulch Trailhead",
+  "hits": []
+ },
+ "co_north_apostle_southwest_ridge": {
+  "via": "nominatim",
+  "name": "Clear Creek / Winfield / Apostles Trailhead (South Winfield)",
+  "hits": []
+ },
+ "co_red_mountain_north_ridge_from_culebra_peak": {
+  "via": "nominatim",
+  "name": "Cielo Vista Ranch check-in / Culebra access trailhead (walk starts at the Four-Way road junction)",
+  "hits": []
+ },
+ "co_redcloud_peak_northeast_ridge": {
+  "via": "nominatim",
+  "name": "Silver Creek/Grizzly Gulch Trailhead",
+  "hits": [
+   {
+    "type": "node",
+    "id": 2573676071,
+    "name": "Silver Creek Trailhead",
+    "kind": "trailhead",
+    "lat": 37.9371013,
+    "lng": -107.4604658
+   }
+  ]
+ },
+ "co_snowmass_mountain_east_slopes": {
+  "via": "nominatim",
+  "name": "Snowmass Creek Trailhead",
+  "hits": []
+ },
+ "co_stewart_peak_east_ridge": {
+  "via": "nominatim",
+  "name": "Nutras Creek Trailhead",
+  "hits": []
+ },
+ "co_sunlight_peak_south_face": {
+  "via": "nominatim",
+  "name": "Needleton Trailhead",
+  "hits": []
+ },
+ "co_sunshine_peak_via_redcloud_peak": {
+  "via": "nominatim",
+  "name": "Silver Creek/Grizzly Gulch Trailhead",
+  "hits": [
+   {
+    "type": "node",
+    "id": 2573676071,
+    "name": "Silver Creek Trailhead",
+    "kind": "trailhead",
+    "lat": 37.9371013,
+    "lng": -107.4604658
+   }
+  ]
+ },
+ "co_trinity_peak_west_ridge": {
+  "via": "nominatim",
+  "name": "Molas Pass - Elk Park Trailhead",
+  "hits": []
+ },
+ "co_turret_peak_northwest_slope": {
+  "via": "nominatim",
+  "name": "Needleton Bridge Trailhead",
+  "hits": []
+ },
+ "co_un_13_820_southwest_ridge": {
+  "via": "nominatim",
+  "name": "Silver Creek/Grizzly Gulch Trailhead",
+  "hits": [
+   {
+    "type": "node",
+    "id": 2573676071,
+    "name": "Silver Creek Trailhead",
+    "kind": "trailhead",
+    "lat": 37.9371013,
+    "lng": -107.4604658
+   }
+  ]
+ },
+ "co_un_13_838_west_ridge": {
+  "via": "nominatim",
+  "name": "Silver Creek/Grizzly Gulch Trailhead",
+  "hits": [
+   {
+    "type": "node",
+    "id": 2573676071,
+    "name": "Silver Creek Trailhead",
+    "kind": "trailhead",
+    "lat": 37.9371013,
+    "lng": -107.4604658
+   }
+  ]
+ },
+ "co_windom_peak_west_ridge": {
+  "via": "nominatim",
+  "name": "Needleton Bridge Trailhead",
+  "hits": []
+ },
+ "me_baxter_peak_hunt_trail": {
+  "via": "nominatim",
+  "name": "Katahdin Stream Campground (Hunt Trail trailhead)",
+  "hits": [
+   {
+    "type": "way",
+    "id": 1104853913,
+    "name": "Katahdin Stream Campground",
+    "kind": "camp_site",
+    "lat": 45.8871166,
+    "lng": -68.9988205
+   }
+  ]
+ },
+ "me_crocker_mountain_appalachian_trail_from_route_27": {
+  "via": "nominatim",
+  "name": "Appalachian Trail Route 27 Trailhead (Crocker)",
+  "hits": []
+ },
+ "me_saddleback_mountain_appalachian_trail_north_from_route_4": {
+  "via": "nominatim",
+  "name": "Appalachian Trail Route 4 trailhead (Sandy River Plantation), lot west of ME 4",
+  "hits": []
+ },
+ "me_spaulding_mountain_appalachian_trail_from_caribou_pond_road": {
+  "via": "nominatim",
+  "name": "Caribou Pond Road (Caribou Valley Road) gate parking",
+  "hits": []
+ },
+ "me_the_horn_saddleback_appalachian_trail_north_from_route_4_past_saddleback": {
+  "via": "nominatim",
+  "name": "Appalachian Trailhead on Route 4 (Saddleback / Piazza Rock lot)",
+  "hits": []
+ },
+ "ny_allen_mountain_allen_brook_herd_path": {
+  "via": "nominatim",
+  "name": "Upper Works Trailhead",
+  "hits": []
+ },
+ "ny_basin_mountain_shoreys_shortcut": {
+  "via": "nominatim",
+  "name": "The Garden Trailhead (Keene Valley)",
+  "hits": [
+   {
+    "type": "node",
+    "id": 4203671182,
+    "name": "The Garden Trailhead",
+    "kind": "trailhead",
+    "lat": 44.18889,
+    "lng": -73.816332
+   }
+  ]
+ },
+ "ny_cliff_mountain_uphill_brook_herd_path": {
+  "via": "nominatim",
+  "name": "Upper Works Trailhead",
+  "hits": []
+ },
+ "ny_couchsachraga_peak_via_santanoni_ridge": {
+  "via": "nominatim",
+  "name": "Upper Works Trailhead",
+  "hits": []
+ },
+ "ny_donaldson_mountain_seward_range_herd_path": {
+  "via": "nominatim",
+  "name": "Corey's Road parking area (Ward Brook Truck Trail)",
+  "hits": []
+ },
+ "ny_esther_mountain_herd_path_from_marble_mountain": {
+  "via": "nominatim",
+  "name": "Atmospheric Science Research Center (ASRC) trailhead, Wilmington",
+  "hits": []
+ },
+ "ny_gray_peak_via_lake_tear_of_the_clouds": {
+  "via": "nominatim",
+  "name": "High Peaks Information Center / Adirondak Loj (Heart Lake Program Center) hiker lot",
+  "hits": []
+ },
+ "ny_iroquois_peak_via_algonquin_peak": {
+  "via": "nominatim",
+  "name": "Adirondak Loj / High Peaks Information Center",
+  "hits": []
+ },
+ "ny_mount_emmons_seward_range_herd_path": {
+  "via": "nominatim",
+  "name": "Corey's Road parking area (end of Ampersand Road), Blueberry Trail start",
+  "hits": []
+ },
+ "ny_mount_haystack_phelps_trail_from_the_garden": {
+  "via": "nominatim",
+  "name": "The Garden Trailhead (Keene Valley)",
+  "hits": [
+   {
+    "type": "node",
+    "id": 4203671182,
+    "name": "The Garden Trailhead",
+    "kind": "trailhead",
+    "lat": 44.18889,
+    "lng": -73.816332
+   }
+  ]
+ },
+ "ny_mount_marshall_herbert_brook_herd_path": {
+  "via": "nominatim",
+  "name": "Upper Works Trailhead",
+  "hits": []
+ },
+ "ny_mount_redfield_uphill_brook_herd_path": {
+  "via": "nominatim",
+  "name": "Upper Works Trailhead",
+  "hits": []
+ },
+ "ny_mount_skylight_via_mount_marcy": {
+  "via": "nominatim",
+  "name": "High Peaks Information Center / Adirondak Loj (Heart Lake Program Center) hiker lot",
+  "hits": []
+ },
+ "ny_nye_mountain_via_indian_pass_brook": {
+  "via": "nominatim",
+  "name": "Adirondak Loj / High Peaks Information Center",
+  "hits": []
+ },
+ "ny_panther_peak_panther_brook_herd_path": {
+  "via": "nominatim",
+  "name": "Upper Works Trailhead (Tahawus)",
+  "hits": []
+ },
+ "ny_phelps_mountain_phelps_trail": {
+  "via": "nominatim",
+  "name": "Adirondak Loj / High Peaks Information Center",
+  "hits": []
+ },
+ "ny_rocky_peak_ridge_via_giant_mountain": {
+  "via": "nominatim",
+  "name": "Roaring Brook Trailhead (NY 73, St. Huberts)",
+  "hits": []
+ },
+ "ny_saddleback_mountain_ore_bed_trail": {
+  "via": "nominatim",
+  "name": "The Garden Trailhead, Keene Valley",
+  "hits": [
+   {
+    "type": "node",
+    "id": 4203671182,
+    "name": "The Garden Trailhead",
+    "kind": "trailhead",
+    "lat": 44.18889,
+    "lng": -73.816332
+   }
+  ]
+ },
+ "ny_santanoni_peak_santanoni_express": {
+  "via": "nominatim",
+  "name": "Upper Works Trailhead (Tahawus, Newcomb)",
+  "hits": []
+ },
+ "ny_sawteeth_weld_trail": {
+  "via": "nominatim",
+  "name": "St. Huberts parking area (Adirondack Mountain Reserve lot, NY 73)",
+  "hits": [
+   {
+    "type": "way",
+    "id": 356987003,
+    "name": "Roaring Brook Parking Area",
+    "kind": "parking",
+    "lat": 44.1504404,
+    "lng": -73.7674839
+   }
+  ]
+ },
+ "ny_seward_mountain_seward_herd_path": {
+  "via": "nominatim",
+  "name": "Corey's Road parking area (Blueberry Trail)",
+  "hits": []
+ },
+ "ny_seymour_mountain_ward_brook_herd_path": {
+  "via": "nominatim",
+  "name": "Corey's Road parking area (Blueberry Trail)",
+  "hits": []
+ },
+ "ny_south_dix_dix_range_herd_path": {
+  "via": "nominatim",
+  "name": "Elk Lake Trailhead",
+  "hits": []
+ },
+ "ny_street_mountain_via_indian_pass_brook": {
+  "via": "nominatim",
+  "name": "Adirondak Loj / High Peaks Information Center",
+  "hits": []
+ },
+ "ny_table_top_mountain_herd_path_from_the_van_hoevenberg_trail": {
+  "via": "nominatim",
+  "name": "Adirondak Loj / High Peaks Information Center",
+  "hits": []
+ },
+ "ny_upper_wolfjaw_mountain_wedge_brook_trail": {
+  "via": "nominatim",
+  "name": "St. Huberts parking area (Adirondack Mountain Reserve)",
+  "hits": [
+   {
+    "type": "way",
+    "id": 356987003,
+    "name": "Roaring Brook Parking Area",
+    "kind": "parking",
+    "lat": 44.1504404,
+    "lng": -73.7674839
+   }
+  ]
+ },
+ "or_diamond_peak_southwest_ridge": {
+  "via": "nominatim",
+  "name": "Pioneer Gulch Trailhead",
+  "hits": []
+ },
+ "wa_booker_mountain_northwest_route": {
+  "via": "nominatim",
+  "name": "Thunder Creek Trailhead (Colonial Creek Campground)",
+  "hits": []
+ },
+ "wa_klawatti_peak_north_ridge": {
+  "via": "nominatim",
+  "name": "Eldorado Trailhead (Cascade River Road, mile 20)",
+  "hits": []
+ },
+ "wa_mixup_peak_pbs_late_night_special": {
+  "via": "nominatim",
+  "name": "Cascade Pass Trailhead",
+  "hits": [
+   {
+    "type": "node",
+    "id": 1420498929,
+    "name": "Cascade Pass Trailhead",
+    "kind": "trailhead",
+    "lat": 48.4754883,
+    "lng": -121.0751562
+   }
+  ]
+ },
+ "wa_mount_adams_pinnacle_glacier_headwall": {
+  "via": "nominatim",
+  "name": "Riley Camp Trailhead",
+  "hits": [
+   {
+    "type": "way",
+    "id": 964293067,
+    "name": "Riley Camp Trailhead",
+    "kind": "parking",
+    "lat": 46.217217,
+    "lng": -121.634359
+   }
+  ]
+ },
+ "wa_mount_fury_east_direct_east_ridge": {
+  "via": "nominatim",
+  "name": "Ross Dam Trailhead (SR 20 milepost 134)",
+  "hits": []
+ },
+ "wa_mount_persis_the_hexorcist": {
+  "via": "nominatim",
+  "name": "Mount Persis Trailhead (pullout near FR 62/6220 road end)",
+  "hits": []
+ },
+ "wa_glacier_peak_south_tahoma_headwall": {
+  "via": "nominatim",
+  "name": "Westside Road: Dry Creek Trailhead",
+  "hits": []
+ },
+ "wa_glacier_peak_tahoma_cleaver": {
+  "via": "nominatim",
+  "name": "Westside Road: Dry Creek Trailhead",
+  "hits": []
+ },
+ "wa_mount_sefrit_southeast_ridge": {
+  "via": "nominatim",
+  "name": "Ruth Creek Road pullout near milepost 3 (FS 32, about 2,950 ft)",
+  "hits": []
+ },
+ "wa_north_star_mountain_cloudy_peak_traverse": {
+  "via": "nominatim",
+  "name": "Holden Village / Railroad Creek Trailhead",
+  "hits": [
+   {
+    "type": "node",
+    "id": 10879883869,
+    "name": "10 Mile Falls Trailhead",
+    "kind": "trailhead",
+    "lat": 48.2003666,
+    "lng": -120.7739188
+   },
+   {
+    "type": "node",
+    "id": 3706911464,
+    "name": "Copper Creek Trailhead",
+    "kind": "trailhead",
+    "lat": 48.1988481,
+    "lng": -120.773173
+   },
+   {
+    "type": "node",
+    "id": 47026083,
+    "name": "10 Mile Creek Trailhead",
+    "kind": "trailhead",
+    "lat": 48.1990412,
+    "lng": -120.7616768
+   }
+  ]
+ },
+ "wa_northwest_mox_peak_northeast_ridge": {
+  "via": "nominatim",
+  "name": "Depot Creek Road parking (Chilliwack Lake Road, BC), then walk the old road to the border at Monument 65",
+  "hits": []
+ },
+ "wa_rock_mountain_northeast_ridge": {
+  "via": "nominatim",
+  "name": "Old Merritt Lake Trailhead",
+  "hits": []
+ },
+ "wa_ruby_mountain_northwest_ridge": {
+  "via": "nominatim",
+  "name": "SR 20 turnout across from the large boulder field, about 1,900 ft, 0.4 mi west of Horsetail Creek (about 12 mi east of Newhalem)",
+  "hits": []
+ },
+ "wa_sharkfin_tower_flakes_and_chimneys_south_face": {
+  "via": "nominatim",
+  "name": "Boston Basin Trailhead (Cascade River Road end)",
+  "hits": []
+ },
+ "wa_silver_star_ne_ridge": {
+  "via": "nominatim",
+  "name": "Silver Star Mountain trailhead (SR-20 pullout near milepost 165, first pullout after the Cutthroat Creek turnout)",
+  "hits": []
+ },
+ "wa_southeast_mox_peak_beckey_route_west_ridge": {
+  "via": "nominatim",
+  "name": "Depot Creek Trailhead",
+  "hits": []
+ },
+ "wa_storm_king_north_face": {
+  "via": "nominatim",
+  "name": "High Bridge",
+  "hits": []
+ },
+ "wa_the_chopping_block_northeast_ridge": {
+  "via": "nominatim",
+  "name": "Goodell Creek Trailhead",
+  "hits": []
+ },
+ "wa_the_chopping_block_northwest_route": {
+  "via": "nominatim",
+  "name": "Goodell Creek Trailhead",
+  "hits": []
+ },
+ "wa_the_pyramid_picket_east_ridge": {
+  "via": "nominatim",
+  "name": "Goodell Creek Trailhead",
+  "hits": []
+ },
+ "wa_three_queens_west_peak": {
+  "via": "nominatim",
+  "name": "Mineral Creek Trailhead",
+  "hits": [
+   {
+    "type": "way",
+    "id": 379042576,
+    "name": "Mineral Creek Trailhead",
+    "kind": "parking",
+    "lat": 47.4192992,
+    "lng": -121.2391363
+   }
+  ]
+ },
+ "wa_tupshin_peak_east_face": {
+  "via": "nominatim",
+  "name": "Stehekin Landing",
+  "hits": []
+ },
+ "wa_west_twin_needle_west_slope": {
+  "via": "nominatim",
+  "name": "Goodell Creek Trailhead (Goodell Creek Campground, SR 20 near Newhalem)",
+  "hits": []
+ },
+ "ca_foerster_peak_standard_route": {
+  "via": "nominatim",
+  "name": "Isberg Pass Trailhead (Isberg Trailhead, Sierra National Forest, near Granite Creek Campground)",
+  "hits": []
+ },
+ "ca_lamont_peak_lamont_peak_trail": {
+  "via": "nominatim",
+  "name": "Lamont Peak trailhead, Canebrake Road saddle (CANLAM)",
+  "hits": []
+ },
+ "ca_mount_florence_standard_route": {
+  "via": "nominatim",
+  "name": "Tuolumne Meadows (Rafferty Creek / JMT south start near Tuolumne Lodge)",
+  "hits": [
+   {
+    "type": "node",
+    "id": 5895174809,
+    "name": "Young Lakes Trailhead",
+    "kind": "trailhead",
+    "lat": 37.8774353,
+    "lng": -119.3535845
+   },
+   {
+    "type": "node",
+    "id": 2443957941,
+    "name": "Lyell Canyon Trailhead",
+    "kind": "trailhead",
+    "lat": 37.8766313,
+    "lng": -119.3456662
+   },
+   {
+    "type": "node",
+    "id": 1366302529,
+    "name": "Elizabeth Lake Trailhead",
+    "kind": "trailhead",
+    "lat": 37.8706401,
+    "lng": -119.3558046
+   },
+   {
+    "type": "node",
+    "id": 5494142226,
+    "name": "Dog Lake Trailhead",
+    "kind": "trailhead",
+    "lat": 37.8783537,
+    "lng": -119.3389739
+   },
+   {
+    "type": "node",
+    "id": 10554781208,
+    "name": "Glen Aulin Trailhead",
+    "kind": "trailhead",
+    "lat": 37.8788538,
+    "lng": -119.3583561
+   },
+   {
+    "type": "node",
+    "id": 13121990665,
+    "name": "Soda Springs Trailhead",
+    "kind": "trailhead",
+    "lat": 37.8720699,
+    "lng": -119.3706395
+   }
+  ]
+ },
+ "ca_smith_mountain_albanita_trail_and_northeast_ridge": {
+  "via": "nominatim",
+  "name": "Albanita Trail parking area at end of paved Monache Jeep Road (Smith Mountain)",
+  "hits": []
+ },
+ "co_dyer_mountain_southeast_slopes": {
+  "via": "nominatim",
+  "name": "Iowa Gulch - Leadville Trailhead",
+  "hits": []
+ },
+ "co_emerald_peak_south_southwest_ridge": {
+  "via": "nominatim",
+  "name": "Rockdale / Clohesy Lake Trailhead",
+  "hits": []
+ },
+ "nv_mount_rose_mount_rose_trail": {
+  "via": "nominatim",
+  "name": "Mount Rose Summit Trailhead (SR 431 pass lot)",
+  "hits": []
+ },
+ "wa_burgundy_spire_corkscrew_route": {
+  "via": "nominatim",
+  "name": "SR 20 pullout below Burgundy Col (Early Winters Creek, climbers trail to Burgundy Col)",
+  "hits": []
+ },
+ "wa_castle_peak_pasayten_east_ridge": {
+  "via": "nominatim",
+  "name": "Monument 78/83 Trailhead (Hwy 3, Manning Provincial Park, BC)",
+  "hits": [
+   {
+    "type": "way",
+    "id": 556170917,
+    "name": "Monument 78/83 Trailhead",
+    "kind": "parking",
+    "lat": 49.0566386,
+    "lng": -120.7360874
+   }
+  ]
+ },
+ "wa_cutthroat_the_swarm": {
+  "via": "nominatim",
+  "name": "Cutthroat Peak climbers trail pullout (Hwy 20, ~1.5 mi W of Washington Pass)",
+  "hits": []
+ },
+ "wa_earl_peak_standup_creek_route": {
+  "via": "nominatim",
+  "name": "Standup Creek Trailhead (#1369)",
+  "hits": [
+   {
+    "type": "node",
+    "id": 8853906741,
+    "name": "Standup Creek Trailhead",
+    "kind": "parking",
+    "lat": 47.3691284,
+    "lng": -120.8387035
+   }
+  ]
+ },
+ "wa_east_mcmillan_spire_northeast_buttress": {
+  "via": "nominatim",
+  "name": "Upper Goodell Creek Group Campground (Goodell Creek climbers' access)",
+  "hits": []
+ },
+ "wa_east_twin_needle_north_buttress": {
+  "via": "nominatim",
+  "name": "Goodell Creek trailhead (Lower Goodell Creek, Newhalem)",
+  "hits": []
+ },
+ "wa_east_twin_needle_thread_of_ice": {
+  "via": "nominatim",
+  "name": "Goodell Creek Campground (roadhead)",
+  "hits": [
+   {
+    "type": "relation",
+    "id": 20164855,
+    "name": "Goodell Creek Campground",
+    "kind": "camp_site",
+    "lat": 48.6729529,
+    "lng": -121.2671612
+   }
+  ]
+ },
+ "wa_garfield_mountain_south_route": {
+  "via": "nominatim",
+  "name": "South Route pullout at gravel wash, Middle Fork Snoqualmie Rd (FR 56), 2.6 mi past Taylor River bridge",
+  "hits": []
+ },
+ "wa_hozomeen_mountain_south_peak_southeast_buttress": {
+  "via": "nominatim",
+  "name": "Lightning Creek trailhead (Ross Lake)",
+  "hits": []
+ },
+ "wa_mount_rahm_custer_traverse": {
+  "via": "nominatim",
+  "name": "Depot Creek Trailhead (BC, off Chilliwack Lake Road)",
+  "hits": []
+ },
+ "wa_old_guard_peak_east_side_route": {
+  "via": "nominatim",
+  "name": "Cascade Pass Trailhead",
+  "hits": [
+   {
+    "type": "node",
+    "id": 1420498929,
+    "name": "Cascade Pass Trailhead",
+    "kind": "trailhead",
+    "lat": 48.4754883,
+    "lng": -121.0751562
+   }
+  ]
+ },
+ "wa_overcoat_peak_north_face": {
+  "via": "nominatim",
+  "name": "Dutch Miller Gap Trailhead",
+  "hits": [
+   {
+    "type": "node",
+    "id": 6196962005,
+    "name": "Dutch Miller Gap Trailhead",
+    "kind": "trailhead",
+    "lat": 47.517262,
+    "lng": -121.4542459
+   }
+  ]
+ },
+ "me_sugarloaf_mountain_appalachian_trail_to_sugarloaf": {
+  "via": "nominatim",
+  "name": "Caribou Pond Road (Caribou Valley Road) gate parking",
+  "hits": []
+ }
+}

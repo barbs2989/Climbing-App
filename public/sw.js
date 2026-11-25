@@ -69,6 +69,7 @@ async function pruneIfNewDeploy(html) {
 // Bounded by `seen`, so a cycle cannot loop, and by MAX_DEPTH as a backstop against a bundler
 // output shape that makes the regex match something unexpected. Each fetch is independently
 // caught: one missing chunk must not abandon the rest.
+const FONT_FILES = ["barlow-condensed-latin-600-normal.woff2", "barlow-condensed-latin-ext-600-normal.woff2", "barlow-condensed-latin-700-normal.woff2", "barlow-condensed-latin-ext-700-normal.woff2", "ibm-plex-mono-latin-600-normal.woff2", "ibm-plex-mono-latin-ext-600-normal.woff2"];
 const CHUNK_RE = /"\.\/([A-Za-z0-9_.-]+\.js)"/g;
 const MAX_DEPTH = 6;
 
@@ -138,6 +139,13 @@ self.addEventListener("install", (event) => {
         const cache = await caches.open(SHELL_CACHE);
         await cache.put(self.registration.scope, res);
         await precacheShellAssets(html, cache);
+        // The six font files (lib/fonts.js, declared in index.html) and the contour texture
+        // (public/topo.svg, lib/ScreenHero.jsx). They sit outside /assets/, so
+        // the walk above never sees them, and the latin-ext ones are only requested when a name
+        // needs them: without this a climber offline would get the fallback font for exactly the
+        // names that need the extended set. Best-effort like everything else here.
+        await Promise.all(FONT_FILES.map((f) => "fonts/" + f).concat(["topo.svg"]).map((p) => fetch(new URL(p, self.registration.scope).toString())
+          .then((r) => (r && r.ok ? cache.put(r.url, r) : null)).catch(() => null)));
       } catch (e) {
         /* offline or a failed fetch during install — nothing to precache, carry on */
       }
@@ -178,6 +186,10 @@ self.addEventListener("fetch", (event) => {
   // The offline state files (dist/states/, ~10 MB per large state) are written into IndexedDB by
   // lib/offline.js. Caching them here as well would store every downloaded state twice.
   if (url.pathname.includes("/states/")) return;
+  // The owner's Review desk (review.html + its own review-assets/ build) is network-only. Its HTML
+  // names different bundles than the app's, so reading it below would look like a new deploy and
+  // prune the app's offline shell every time the owner opened it.
+  if (url.pathname.endsWith("/review.html") || url.pathname.includes("/review-assets/")) return;
 
   event.respondWith(
     fetch(req)

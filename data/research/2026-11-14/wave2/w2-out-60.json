@@ -1,0 +1,2039 @@
+{
+ "wa_south_twin_sister_west_ridge": {
+  "area": "wa_south_twin_sister",
+  "facts": [
+   {
+    "field": "gain_ft",
+    "value": 3700,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/south-twin-sister-west-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountaineers route page lists Elevation Gain 3,700 ft for South Twin Sister West Ridge."
+     }
+    ]
+   },
+   {
+    "field": "high_point_ft",
+    "value": 7000,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/south-twin-sister-west-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "The route page lists High Point 7,000 ft."
+     }
+    ]
+   },
+   {
+    "field": "permit",
+    "value": "Northwest Forest Pass",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/south-twin-sister-west-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "Parking permit required: Northwest Forest Pass."
+     }
+    ]
+   },
+   {
+    "field": "land_manager",
+    "value": "Mount Baker-Snoqualmie National Forest",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/south-twin-sister-west-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "Land manager: Mount Baker-Snoqualmie National Forest."
+     }
+    ]
+   },
+   {
+    "field": "season",
+    "value": "May - October",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.climbhigherground.com/south-twin-sister",
+      "retrieved_at": "2026-11-14",
+      "fact": "Climb Higher Ground: when to climb South Twin West Ridge, May to October."
+     }
+    ]
+   },
+   {
+    "field": "grade",
+    "value": "Class 4 with low 5th-class steps",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.climbhigherground.com/south-twin-sister",
+      "retrieved_at": "2026-11-14",
+      "fact": "Guide page: scrambling up to 4th class and even low 5th class."
+     }
+    ]
+   }
+  ],
+  "note": "Mountaineers gain 3,700 ft conflicts with the app's 6,100 ft; the page does not name its start point (possibly a higher road point than the Middle Fork gate). Length shows '20.0' with no unit, so it was not used. Climb Higher Ground's 5.2 mi / 3,000 ft are for its guided trips through the logging-road gate, so they were not used."
+ },
+ "wa_southeast_face": {
+  "area": "wa_sharkfin_tower",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "5.10-",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/108338268/southeast-face",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project grades Southeast Face 5.10-."
+     }
+    ]
+   },
+   {
+    "field": "pitches",
+    "value": 2,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/108338268/southeast-face",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP: Trad, Alpine, 150 ft, 2 pitches, Grade II."
+     }
+    ]
+   },
+   {
+    "field": "length_ft",
+    "value": 150,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/108338268/southeast-face",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP lists the route length as 150 ft."
+     }
+    ]
+   },
+   {
+    "field": "alpine_grade",
+    "value": "II",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/108338268/southeast-face",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP lists Grade II."
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "Jim Nelson, Jim Martin, Kit Lewis, Bill Liddell, Dave Bale (1990)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/108338268/southeast-face",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP FA: Jim Nelson, Jim Martin, Kit Lewis, Bill Liddell, Dave Bale, 1990."
+     }
+    ]
+   },
+   {
+    "field": "descent",
+    "value": "Follow the Southeast Ridge descent: rappel from a fixed anchor near the top of the ridge's first two pitches",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/108338268/southeast-face",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP says to descend using the Southeast Ridge beta, rappelling from a fixed anchor after the first two ridge pitches."
+     }
+    ]
+   },
+   {
+    "field": "camp",
+    "value": "Boston Basin lower camp",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://stephabegg.com/trip-reports/washington/sharkfin-tower/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Sharkfin approach passes Boston Basin lower camp from the Boston Basin trailhead."
+     }
+    ]
+   }
+  ],
+  "note": "Steph Abegg's Sharkfin page covers the SE Ridge and gives about 3.2 mi and 2,500 ft to Boston Basin lower camp, which is not trailhead-to-summit for this route, so it was not used."
+ },
+ "wa_southeast_mox_peak_se_rib": {
+  "area": "wa_southeast_mox_peak",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "5.5",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/124368565/beckey-route-west-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP grades Beckey Route (West Ridge) 5.5."
+     }
+    ]
+   },
+   {
+    "field": "pitches",
+    "value": 3,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/124368565/beckey-route-west-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP: Trad, Alpine, 3 pitches, Grade II."
+     }
+    ]
+   },
+   {
+    "field": "alpine_grade",
+    "value": "II",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/124368565/beckey-route-west-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP lists Grade II."
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "Fred Beckey, Helmy Beckey (1941-06-22)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/124368565/beckey-route-west-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP FA: Fred Beckey and Helmy Beckey, 6/22/1941."
+     }
+    ]
+   },
+   {
+    "field": "gain_ft",
+    "value": 7400,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.wta.org/go-hiking/hikes/mox-peaks-southeast-peak",
+      "retrieved_at": "2026-11-14",
+      "fact": "WTA lists Elevation Gain 7,400 feet for Mox Peaks Southeast Peak."
+     }
+    ]
+   },
+   {
+    "field": "dist_mi_oneway",
+    "value": 15,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.wta.org/go-hiking/hikes/mox-peaks-southeast-peak",
+      "retrieved_at": "2026-11-14",
+      "fact": "WTA lists Length 15.0 miles, one-way."
+     }
+    ]
+   },
+   {
+    "field": "high_point_ft",
+    "value": 8504,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.wta.org/go-hiking/hikes/mox-peaks-southeast-peak",
+      "retrieved_at": "2026-11-14",
+      "fact": "WTA lists Highest Point 8,504 feet."
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Chilliwack Lake Road (BC), north of the border",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.wta.org/go-hiking/hikes/mox-peaks-southeast-peak",
+      "retrieved_at": "2026-11-14",
+      "fact": "WTA says the ascent of both Mox peaks begins on Chilliwack Lake Road, north of the Canadian border."
+     }
+    ]
+   }
+  ],
+  "note": "MP 'length' field reads 8509 ft (the summit height, not route length), so it was not used. The WTA page covers the Southeast Mox peak hike from Chilliwack Lake Road (Depot Creek side) and does not name a route."
+ },
+ "wa_southern_man": {
+  "area": "wa_south_early_winters_spire",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "5.11d",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/110702146/southern-man",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP grades Southern Man 5.11d."
+     }
+    ]
+   },
+   {
+    "field": "pitches",
+    "value": 9,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/110702146/southern-man",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP: Trad, Alpine, 900 ft, 9 pitches, Grade IV."
+     }
+    ]
+   },
+   {
+    "field": "length_ft",
+    "value": 900,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/110702146/southern-man",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP lists 900 ft."
+     }
+    ]
+   },
+   {
+    "field": "alpine_grade",
+    "value": "IV",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/110702146/southern-man",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP lists Grade IV."
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "Allen, Falley, Kauffman (2008); FFA B. Matthews, B. Burdo (2010)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/110702146/southern-man",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP FA: Allen, Falley and Kauffman 2008; free ascent B. Matthews and B. Burdo 2010."
+     }
+    ]
+   }
+  ],
+  "note": ""
+ },
+ "wa_sperry_peak_standard": {
+  "area": "wa_sperry_peak",
+  "facts": [
+   {
+    "field": "gain_ft",
+    "value": 3800,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.wta.org/go-hiking/hikes/sperry-peak",
+      "retrieved_at": "2026-11-14",
+      "fact": "WTA lists Elevation Gain 3,800 feet for Sperry Peak."
+     }
+    ]
+   },
+   {
+    "field": "dist_mi_roundtrip",
+    "value": 6.4,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.wta.org/go-hiking/hikes/sperry-peak",
+      "retrieved_at": "2026-11-14",
+      "fact": "WTA lists Length 6.4 miles, roundtrip."
+     }
+    ]
+   },
+   {
+    "field": "high_point_ft",
+    "value": 6120,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.wta.org/go-hiking/hikes/sperry-peak",
+      "retrieved_at": "2026-11-14",
+      "fact": "WTA lists Highest Point 6,120 feet."
+     }
+    ]
+   },
+   {
+    "field": "permit",
+    "value": "Northwest Forest Pass or America the Beautiful Pass",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.wta.org/go-hiking/hikes/sperry-peak",
+      "retrieved_at": "2026-11-14",
+      "fact": "WTA: parking needs a Northwest Forest Pass or America the Beautiful Pass."
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "Sunrise Mine Trail up steep switchbacks to Headlee Pass, then scramble",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.wta.org/go-hiking/hikes/sperry-peak",
+      "retrieved_at": "2026-11-14",
+      "fact": "WTA: most of the route is on the Sunrise Mine Trail; a steep chute of switchbacks reaches Headlee Pass."
+     }
+    ]
+   }
+  ],
+  "note": "WTA gain 3,800 ft vs app 3,700 ft; only one source states it."
+ },
+ "wa_spire_mountain_scramble": {
+  "area": "wa_spire_mountain",
+  "facts": [
+   {
+    "field": "gain_ft",
+    "value": 5000,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/spire-mountain",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountaineers lists Elevation Gain 5,000 ft for Spire Mountain."
+     }
+    ]
+   },
+   {
+    "field": "dist_mi_roundtrip",
+    "value": 6,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/spire-mountain",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountaineers lists Length 6.0 mi."
+     }
+    ]
+   },
+   {
+    "field": "high_point_ft",
+    "value": 6213,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/spire-mountain",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountaineers lists High Point 6,213 ft."
+     }
+    ]
+   },
+   {
+    "field": "difficulty",
+    "value": "Strenuous 5, Technical 5",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/spire-mountain",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountaineers rates it Strenuous 5, Technical 5."
+     }
+    ]
+   }
+  ],
+  "note": "Jim Brisbine's Spire Mountain trip also bagged Conglomerate Point (multi-peak, 7,200 ft), so it was not used."
+ },
+ "wa_summit_chief_mountain_south_route": {
+  "area": "wa_summit_chief_mountain",
+  "facts": [
+   {
+    "field": "gain_ft",
+    "value": 5000,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/summit-chief",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountaineers lists Elevation Gain 5,000 ft for Summit Chief."
+     }
+    ]
+   },
+   {
+    "field": "dist_mi_roundtrip",
+    "value": 25,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/summit-chief",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountaineers lists Length 25.0 mi."
+     }
+    ]
+   },
+   {
+    "field": "high_point_ft",
+    "value": 7464,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/summit-chief",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountaineers lists High Point 7,464 ft."
+     }
+    ]
+   },
+   {
+    "field": "permit",
+    "value": "Northwest Forest Pass",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/summit-chief",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountaineers: parking requires a Northwest Forest Pass."
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Pete Lake Trailhead, end of Cooper Lake Road (2,800 ft)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://trailcatjim.com/summit-chief-mtn-via-southeast-face-escondido-point/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Trip starts at the Pete Lake Trailhead at the end of Cooper Lake Road, elevation 2,800 ft."
+     }
+    ]
+   }
+  ],
+  "note": "Jim Brisbine's Summit Chief trip (30 mi, 7,700 ft) also climbed Escondido Point, so it was not used."
+ },
+ "wa_the_brothers_south_couloir": {
+  "area": "wa_the_brothers",
+  "facts": [
+   {
+    "field": "gain_ft",
+    "value": 6200,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/the-brothers-south-couloir",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountaineers lists Elevation Gain 6,200 ft for The Brothers South Couloir."
+     },
+     {
+      "url": "https://summitborn.com/the-brothers-south-couloir-route-guide/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Summitborn gives gain of about 6,000 ft (within 10%)."
+     }
+    ]
+   },
+   {
+    "field": "dist_mi_roundtrip",
+    "value": 17,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/the-brothers-south-couloir",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountaineers lists Length 17.0 mi."
+     },
+     {
+      "url": "https://summitborn.com/the-brothers-south-couloir-route-guide/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Summitborn: about 17 mi round trip from the Lena Lake Trailhead."
+     }
+    ]
+   },
+   {
+    "field": "high_point_ft",
+    "value": 6866,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/the-brothers-south-couloir",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountaineers lists High Point 6,866 ft."
+     }
+    ]
+   },
+   {
+    "field": "permit",
+    "value": "Northwest Forest Pass",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/the-brothers-south-couloir",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountaineers: parking requires a Northwest Forest Pass."
+     },
+     {
+      "url": "https://summitborn.com/the-brothers-south-couloir-route-guide/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Summitborn: parking needs a Northwest Forest Pass or the daily equivalent."
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Lena Lake Trailhead on Hamma Hamma River Road (FR 25), about 700 ft",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://summitborn.com/the-brothers-south-couloir-route-guide/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Summitborn: take Hamma Hamma River Road (FR 25) about 8 miles to the signed Lena Lake trailhead at about 700 ft."
+     }
+    ]
+   },
+   {
+    "field": "season",
+    "value": "Late July - September",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://summitborn.com/the-brothers-south-couloir-route-guide/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Summitborn: best season late July to September, once the couloir melts out."
+     }
+    ]
+   },
+   {
+    "field": "car_to_car_hours",
+    "value": "12-15",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://summitborn.com/the-brothers-south-couloir-route-guide/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Summitborn: a long single-push day of 12-15 hours, or split over two days."
+     }
+    ]
+   },
+   {
+    "field": "camp",
+    "value": "Climbers' camp near 3,200 ft",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://summitborn.com/the-brothers-south-couloir-route-guide/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Summitborn: most parties camp near 3,200 ft at the climbers' camp."
+     }
+    ]
+   },
+   {
+    "field": "permit_wilderness",
+    "value": "Self-issued wilderness permit for overnight camping (Brothers Wilderness)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://summitborn.com/the-brothers-south-couloir-route-guide/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Summitborn: overnight camping in the Brothers Wilderness needs a self-issued wilderness permit."
+     }
+    ]
+   },
+   {
+    "field": "difficulty",
+    "value": "Basic Alpine Climb; Strenuous 5, Technical 4",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/the-brothers-south-couloir",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountaineers rates it Strenuous 5, Technical 4, a Basic Alpine Climb."
+     }
+    ]
+   }
+  ],
+  "note": ""
+ },
+ "wa_the_devils_club": {
+  "area": "wa_southeast_mox_peak",
+  "facts": [
+   {
+    "field": "pitches",
+    "value": 25,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106363896/the-devils-club",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP: Trad, Alpine, 2000 ft, 25 pitches, Grade V."
+     },
+     {
+      "url": "https://cascadeclimbers.com/forum/topic/36462-tr-south-east-mox-peak-the-devils-club-first-ascent-of-the-east-face-912005/",
+      "retrieved_at": "2026-11-14",
+      "fact": "FA trip report: about 2,400 ft of climbing in roughly 25 pitches."
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "Mike Layton, Erik Wolfe (Aug 31 - Sep 1, 2005)",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106363896/the-devils-club",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP FA: Mike Layton and Eric Wolfe, 2005."
+     },
+     {
+      "url": "https://cascadeclimbers.com/forum/topic/36462-tr-south-east-mox-peak-the-devils-club-first-ascent-of-the-east-face-912005/",
+      "retrieved_at": "2026-11-14",
+      "fact": "FA report: Mike Layton and Erik Wolfe, 8/31-9/1 2005."
+     }
+    ]
+   },
+   {
+    "field": "grade",
+    "value": "5.11",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106363896/the-devils-club",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP grades The Devils Club 5.11."
+     }
+    ]
+   },
+   {
+    "field": "alpine_grade",
+    "value": "V",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106363896/the-devils-club",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP lists Grade V."
+     }
+    ]
+   },
+   {
+    "field": "length_ft",
+    "value": 2000,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106363896/the-devils-club",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP lists 2000 ft."
+     }
+    ]
+   },
+   {
+    "field": "descent",
+    "value": "Rappel the route",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106363896/the-devils-club",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP says the first party climbed the wall and then rappelled it."
+     }
+    ]
+   }
+  ],
+  "note": "Length: MP 2,000 ft vs the FA report 2,400 ft of climbing, so neither is locked. The FA report graded it V+ 5.9+ A2-; MP gives the later 5.11 free grade."
+ },
+ "wa_the_horn_scramble": {
+  "area": "wa_the_horn",
+  "facts": [
+   {
+    "field": "permit",
+    "value": "National Park entrance fee",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/sawtooth-ridge-the-fin-and-the-horn",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountaineers: parking requires a National Park entrance fee."
+     }
+    ]
+   },
+   {
+    "field": "descent",
+    "value": "East face scramble route avoids rappelling",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/sawtooth-ridge-the-fin-and-the-horn",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountaineers: the east face scramble route can be used for descent to avoid rappels."
+     }
+    ]
+   }
+  ],
+  "note": "Mountaineers page covers The Fin and The Horn together; its gain (5,500 ft) and length (17 mi) are for that combined trip, so they were not used. Its high point (5,500 ft) disagrees with the app (5,536 ft)."
+ },
+ "wa_the_perfect_crime_with_variations": {
+  "area": "wa_cutthroat_wall",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "5.9",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/113436085/the-perfect-crime-with-variations",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP grades The Perfect Crime 5.9."
+     },
+     {
+      "url": "https://cascadeclimbers.com/forum/topic/53734-tr-cutthroat-wall-the-perfect-crime-fa-59-iii-8102007/",
+      "retrieved_at": "2026-11-14",
+      "fact": "FA trip report title: Perfect Crime, 5.9 III."
+     }
+    ]
+   },
+   {
+    "field": "alpine_grade",
+    "value": "III",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/113436085/the-perfect-crime-with-variations",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP lists Grade III."
+     },
+     {
+      "url": "https://cascadeclimbers.com/forum/topic/53734-tr-cutthroat-wall-the-perfect-crime-fa-59-iii-8102007/",
+      "retrieved_at": "2026-11-14",
+      "fact": "FA report rates it III."
+     }
+    ]
+   },
+   {
+    "field": "pitches",
+    "value": 5,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/113436085/the-perfect-crime-with-variations",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP: 800 ft, 5 pitches."
+     },
+     {
+      "url": "https://cascadeclimbers.com/forum/topic/53734-tr-cutthroat-wall-the-perfect-crime-fa-59-iii-8102007/",
+      "retrieved_at": "2026-11-14",
+      "fact": "FA report: climbed in 5 pitches, most of them 60 m."
+     }
+    ]
+   },
+   {
+    "field": "length_ft",
+    "value": 800,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/113436085/the-perfect-crime-with-variations",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP lists 800 ft."
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "Max Hasson, Blake Herrington (Aug 2007)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/113436085/the-perfect-crime-with-variations",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP FA: Max Hasson, Blake Herrington, 2007."
+     }
+    ]
+   },
+   {
+    "field": "permit",
+    "value": "Northwest Forest Pass",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/cutthroat-wall",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountaineers Cutthroat Wall page: Northwest Forest Pass required."
+     }
+    ]
+   },
+   {
+    "field": "rack",
+    "value": "Two 60 m ropes for the rappel",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/cutthroat-wall",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountaineers Cutthroat Wall page: 60 m ropes, at least two for the rappel."
+     }
+    ]
+   },
+   {
+    "field": "descent",
+    "value": "Walk 100-200 ft along the ridge to a rappel station",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/cutthroat-wall",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountaineers: from the top, walk 100-200 feet along the ridge to a rappel station."
+     }
+    ]
+   }
+  ],
+  "note": "App overview says 5 pitches (6 with a short link); MP and FA report both say 5."
+ },
+ "wa_the_scoop_2": {
+  "area": "wa_colchuck_balanced_rock",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "5.11c",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106871886/the-scoop",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP grades The Scoop 5.11c."
+     },
+     {
+      "url": "https://stephabegg.com/trip-reports/washington/cbr-scoop/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Steph Abegg's report title grades The Scoop 5.11c."
+     }
+    ]
+   },
+   {
+    "field": "pitches",
+    "value": 10,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106871886/the-scoop",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP: Trad, 1000 ft, 10 pitches, Grade III."
+     }
+    ]
+   },
+   {
+    "field": "length_ft",
+    "value": 1000,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106871886/the-scoop",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP lists 1000 ft."
+     }
+    ]
+   },
+   {
+    "field": "alpine_grade",
+    "value": "III",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106871886/the-scoop",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP lists Grade III."
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "Matt Clifton, Evan Cabodi, Stewart Matthiesen",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106871886/the-scoop",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP FA: Matt Clifton, Evan Cabodi, Stewart Matthiesen."
+     }
+    ]
+   },
+   {
+    "field": "descent",
+    "value": "Rappel the route from natural anchors (trees, horns)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106871886/the-scoop",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP: natural anchors such as trees and horns let you rappel the route."
+     }
+    ]
+   }
+  ],
+  "note": "Pitches/length conflict: MP 10 pitches, 1,000 ft; Steph Abegg 6+ pitches, 900 ft. Left single-source."
+ },
+ "wa_the_tooth_fairy": {
+  "area": "wa_summer_fall_rock_2",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "5.9+",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/119074107/the-tooth-fairy",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP grades The Tooth Fairy 5.9+."
+     }
+    ]
+   },
+   {
+    "field": "pitches",
+    "value": 6,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/119074107/the-tooth-fairy",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP: Sport, 500 ft, 6 pitches, Grade II."
+     },
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/the-tooth-the-tooth-fairy",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountaineers: 6 pitches of technical climbing 5.6-5.9 plus a scrambling pitch to the top."
+     }
+    ]
+   },
+   {
+    "field": "length_ft",
+    "value": 500,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/119074107/the-tooth-fairy",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP lists 500 ft."
+     }
+    ]
+   },
+   {
+    "field": "alpine_grade",
+    "value": "II",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/119074107/the-tooth-fairy",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP lists Grade II."
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "Jim Nelson, David Whitelaw (2019)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/119074107/the-tooth-fairy",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP FA: Jim Nelson and David Whitelaw, 2019."
+     }
+    ]
+   },
+   {
+    "field": "rappels",
+    "value": 6,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/119074107/the-tooth-fairy",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP: downclimb to the top of P6, then 6 single-length or 3 double-length rappels."
+     },
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/the-tooth-the-tooth-fairy",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountaineers: downclimb to the top of pitch 6, then 6 single-length rappels to the base."
+     }
+    ]
+   },
+   {
+    "field": "gain_ft",
+    "value": 2500,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/the-tooth-the-tooth-fairy",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountaineers lists Elevation Gain 2,500 ft."
+     }
+    ]
+   },
+   {
+    "field": "dist_mi_roundtrip",
+    "value": 6,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/the-tooth-the-tooth-fairy",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountaineers lists Length 6.0 mi."
+     }
+    ]
+   },
+   {
+    "field": "high_point_ft",
+    "value": 5600,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/the-tooth-the-tooth-fairy",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountaineers lists High Point 5,600 ft."
+     }
+    ]
+   },
+   {
+    "field": "permit",
+    "value": "Northwest Forest Pass",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/the-tooth-the-tooth-fairy",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountaineers: parking requires a Northwest Forest Pass."
+     }
+    ]
+   }
+  ],
+  "note": ""
+ },
+ "wa_the_tooth_south_face": {
+  "area": "wa_the_tooth_climbs",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "5.4",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106378880/south-face",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP grades the South Face 5.4."
+     }
+    ]
+   },
+   {
+    "field": "pitches",
+    "value": 4,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106378880/south-face",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP: Trad, 330 ft, 4 pitches, Grade II."
+     }
+    ]
+   },
+   {
+    "field": "length_ft",
+    "value": 330,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106378880/south-face",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP lists 330 ft."
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "C.L. (Lloyd) Anderson, Herman Wunderling (1928)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106378880/south-face",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP FA: C.L. Anderson and Herman Wunderling, 1928."
+     }
+    ]
+   },
+   {
+    "field": "gain_ft",
+    "value": 2500,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/the-tooth-south-face",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountaineers lists Elevation Gain 2,500 ft for The Tooth South Face."
+     }
+    ]
+   },
+   {
+    "field": "dist_mi_roundtrip",
+    "value": 5,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/the-tooth-south-face",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountaineers lists Length 5.0 mi."
+     }
+    ]
+   },
+   {
+    "field": "high_point_ft",
+    "value": 5600,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/the-tooth-south-face",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountaineers lists High Point 5,600 ft."
+     }
+    ]
+   },
+   {
+    "field": "permit",
+    "value": "Northwest Forest Pass",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/the-tooth-south-face",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountaineers: parking requires a Northwest Forest Pass."
+     }
+    ]
+   },
+   {
+    "field": "descent",
+    "value": "Rappel the climbing route, or descend the less-used north ridge",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/the-tooth-south-face",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountaineers: rappel the climbing route or take the less-used north ridge route."
+     }
+    ]
+   }
+  ],
+  "note": ""
+ },
+ "wa_three_queens_middle_peak": {
+  "area": "wa_three_queens",
+  "facts": [
+   {
+    "field": "trailhead",
+    "value": "Mineral Creek Trailhead, end of Cooper Pass Road (2,400 ft)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://trailcatjim.com/three-queens-mtn-middle-peak-via-south-face-south-chimney/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Starts and ends at Mineral Creek Trailhead at the end of Cooper Pass Road, elevation 2,400 ft."
+     }
+    ]
+   },
+   {
+    "field": "gain_ft",
+    "value": 4600,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://trailcatjim.com/three-queens-mtn-middle-peak-via-south-face-south-chimney/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Approximate stats: 4,600 ft gained and lost."
+     }
+    ]
+   },
+   {
+    "field": "dist_mi_roundtrip",
+    "value": 10,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://trailcatjim.com/three-queens-mtn-middle-peak-via-south-face-south-chimney/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Approximate stats: 10 miles traveled."
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "Cross the Kachess River, then the Mineral Creek crossing on trail",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://trailcatjim.com/three-queens-mtn-middle-peak-via-south-face-south-chimney/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Waypoints: Kachess River crossing and Mineral Creek crossing (trail hike)."
+     }
+    ]
+   }
+  ],
+  "note": "Mountaineers three-queens page (8.0 mi) is for the main peak and was not used. The app's 4.9 h / 3.6 h times already came from this same Brisbine report, so they are not a second source."
+ },
+ "wa_tomyhoi_peak_southeast_ridge": {
+  "area": "wa_tomyhoi_peak",
+  "facts": [
+   {
+    "field": "gain_ft",
+    "value": 5600,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://stephabegg.com/trip-reports/washington/tomyhoi/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Steph Abegg's report title: Tomyhoi Southeast Route, 3rd class, about 13.5 miles, 5,600 ft gain/loss."
+     }
+    ]
+   },
+   {
+    "field": "dist_mi_roundtrip",
+    "value": 13.5,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://stephabegg.com/trip-reports/washington/tomyhoi/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Report title gives about 13.5 miles for the trip."
+     }
+    ]
+   },
+   {
+    "field": "grade",
+    "value": "Class 3",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://stephabegg.com/trip-reports/washington/tomyhoi/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Report title rates the Southeast Route 3rd class."
+     }
+    ]
+   },
+   {
+    "field": "high_point_ft",
+    "value": 7435,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://stephabegg.com/trip-reports/washington/tomyhoi/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Report lists elevation 7,435 ft."
+     },
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/tomyhoi-peak-southeast-route",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountaineers lists High Point 7,435 ft."
+     }
+    ]
+   },
+   {
+    "field": "permit",
+    "value": "Northwest Forest Pass",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/tomyhoi-peak-southeast-route",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountaineers: parking requires a Northwest Forest Pass."
+     }
+    ]
+   },
+   {
+    "field": "difficulty",
+    "value": "Basic Alpine Climb; Technical 5, Strenuous 5",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/tomyhoi-peak-southeast-route",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountaineers rates it a Basic Alpine Climb, Technical 5, Strenuous 5."
+     }
+    ]
+   }
+  ],
+  "note": "Gain: Steph Abegg 5,600 ft vs Mountaineers 5,000 ft (more than 10% apart), so neither is locked. Mountaineers length shows 12.5 with no unit."
+ },
+ "wa_tooth_and_claw": {
+  "area": "wa_lexington_tower",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "5.12a",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/112067014/tooth-and-claw",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP grades Tooth and Claw 5.12a."
+     }
+    ]
+   },
+   {
+    "field": "pitches",
+    "value": 8,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/112067014/tooth-and-claw",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP: Trad, Alpine, 800 ft, 8 pitches."
+     }
+    ]
+   },
+   {
+    "field": "length_ft",
+    "value": 800,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/112067014/tooth-and-claw",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP lists 800 ft."
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "Steve Risse, Dave Tower",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/112067014/tooth-and-claw",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP FA: Steve Risse and Dave Tower."
+     }
+    ]
+   },
+   {
+    "field": "descent",
+    "value": "Walk off to the highway, or rappel the route",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/112067014/tooth-and-claw",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP: walk the highway back to the car, or rappel the route."
+     }
+    ]
+   }
+  ],
+  "note": "App says 7 pitches; MP says 8."
+ },
+ "wa_southeast_ridge_se_corner": {
+  "area": "wa_mount_shuksan_climbs",
+  "facts": [
+   {
+    "field": "high_point_ft",
+    "value": 9127,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/mount-shuksan-se-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountaineers lists High Point 9,127 ft for Mount Shuksan SE Ridge."
+     }
+    ]
+   },
+   {
+    "field": "dist_mi_roundtrip",
+    "value": 18.5,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/mount-shuksan-se-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountaineers lists Length 18.5 mi."
+     }
+    ]
+   },
+   {
+    "field": "permit",
+    "value": "None",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/mount-shuksan-se-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountaineers: Parking Permit Required: None."
+     }
+    ]
+   },
+   {
+    "field": "grade",
+    "value": "5.3",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://spokalpine.com/2024/08/20/shuksan-fisher-chimneys-se-ridge-iii-5-3/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Spokalpine trip report titles the route Shuksan SE Ridge, III 5.3."
+     }
+    ]
+   },
+   {
+    "field": "alpine_grade",
+    "value": "III",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://spokalpine.com/2024/08/20/shuksan-fisher-chimneys-se-ridge-iii-5-3/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Report title rates it Grade III."
+     }
+    ]
+   },
+   {
+    "field": "pitches",
+    "value": 6,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://spokalpine.com/2024/08/20/shuksan-fisher-chimneys-se-ridge-iii-5-3/",
+      "retrieved_at": "2026-11-14",
+      "fact": "The party reached the summit in six pitches, with some simul-climbing."
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "Up the upper Sulphide Glacier to gain the Southeast Ridge, then climb the ridge to the summit",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://spokalpine.com/2024/08/20/shuksan-fisher-chimneys-se-ridge-iii-5-3/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Party climbed the upper Sulphide Glacier and gained the Southeast Ridge, then climbed the ridge."
+     }
+    ]
+   }
+  ],
+  "note": "Mountaineers lists Elevation Gain 9,115 ft (close to the summit height, likely a data-entry error) and rates the route 5.7 vs the app's 5.3, so neither was used."
+ },
+ "wa_south_ridge_6": {
+  "area": "wa_aiguille_de_l_m",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "5.6",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.alpineinstitute.com/route-profile-aiguille-de-i-m-north-ridge/",
+      "retrieved_at": "2026-11-14",
+      "fact": "AAI says the Aiguille has two routes; the South Ridge is an exposed 5.6 ridge."
+     }
+    ]
+   },
+   {
+    "field": "camp",
+    "value": "Boston Basin (lower or upper camp)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.alpineinstitute.com/route-profile-aiguille-de-i-m-north-ridge/",
+      "retrieved_at": "2026-11-14",
+      "fact": "AAI: approach as for Forbidden Peak in Boston Basin, camping at the lower or upper camp."
+     }
+    ]
+   },
+   {
+    "field": "overview",
+    "value": "South Ridge is the left skyline of the Aiguille seen from Boston Basin; the North Ridge is the right skyline",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/photo/109252871",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP photo caption: the South Ridge is the left skyline, the North Ridge the right skyline."
+     }
+    ]
+   },
+   {
+    "field": "trip_length",
+    "value": "Half-day climb from Boston Basin camp",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.alpineinstitute.com/route-profile-aiguille-de-i-m-north-ridge/",
+      "retrieved_at": "2026-11-14",
+      "fact": "AAI: the Aiguille can easily be done as a half-day climb from Boston Basin."
+     }
+    ]
+   }
+  ],
+  "note": "The AAI page is the North Ridge profile; it names the South Ridge (5.6) and the shared Boston Basin approach. Mountain Project has no South Ridge route page (only a photo marking the ridge). No page stated distance or gain for this route."
+ },
+ "wa_south_twin_sister_north_ridge": {
+  "area": "wa_south_twin_sister",
+  "skip_reason": "Opened: summitpost.org/south-twin/679815 (403 Forbidden, all SummitPost pages); thewildoutsiders.com/adventure-journal/south-twin-sister (extension could not attach, 2 tries); mountaineers.org routes-places/south-twin-sister-north-ridge (404); Mountain Project north-ridge 111140926 turned out to be an Oregon route; climbhigherground.com/south-twin-sister (West Ridge only). No North Ridge figures found."
+ },
+ "wa_spider_mountain_north_ridge": {
+  "area": "wa_spider_mountain",
+  "facts": [
+   {
+    "field": "dist_mi_roundtrip",
+    "value": 19,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://onehikeaweek.com/2019/07/05/spider-mountain/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Spider Mountain at a glance: access Cascade Pass Trailhead, round trip 19 miles."
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Cascade Pass Trailhead",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://onehikeaweek.com/2019/07/05/spider-mountain/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Access: Cascade Pass Trailhead."
+     }
+    ]
+   },
+   {
+    "field": "rack",
+    "value": "Helmet, ice axe, crampons",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://onehikeaweek.com/2019/07/05/spider-mountain/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Gear listed: helmet, ice axe, crampons."
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "Cascade Pass to Cache Col, Red Ledge, Spider-Formidable Col, then a final class 3 traverse to the summit",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://onehikeaweek.com/2019/07/05/spider-mountain/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Report sections: Cascade Pass trailhead to Cache Col, to Red Ledge, to Spider-Formidable Col; a final class 3 traverse."
+     }
+    ]
+   },
+   {
+    "field": "glacier",
+    "value": "Middle Cascade Glacier is crossed",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://onehikeaweek.com/2019/07/05/spider-mountain/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Party travelled through the Middle Cascade Glacier."
+     }
+    ]
+   }
+  ],
+  "note": "SummitPost Spider Mountain page returned 403."
+ },
+ "wa_spinnaker_peak_s_route": {
+  "area": "wa_spinnaker_peak",
+  "facts": [
+   {
+    "field": "high_point_ft",
+    "value": 5645,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.wta.org/go-hiking/hikes/spinnaker-peak-snowshoe",
+      "retrieved_at": "2026-11-14",
+      "fact": "WTA Spinnaker Peak (snowshoe) page lists Highest Point 5,645 feet."
+     }
+    ]
+   }
+  ],
+  "note": "Mountaineers 'Spinnaker & Martin Peaks' page (7.0 mi, 3,200 ft) is a two-peak outing, so not used. SummitPost Spinnaker pages return 403."
+ },
+ "wa_star_peak_sawtooth_nw_ridge": {
+  "area": "wa_star_peak_sawtooth",
+  "skip_reason": "Opened: wta.org/go-hiking/hikes/star-peak (standard hike from Star Lake basin, high point 8,690 ft; nothing on the NW Ridge); onehikeaweek.com/2011/08/07/star-peak/ (three-peak trip from Wolf Creek, not this route); summitpost.org/star-peak/151520 (403). No NW Ridge figures found."
+ },
+ "wa_sundial_northeast": {
+  "area": "wa_sundial",
+  "skip_reason": "Opened: mountainproject.com/area/105739691/sundial (no route listed for this line); mountainproject.com/approach-trail/203839937/approach-to-sundial (no stats in page HTML); summitpost.org/sundial-peak (403). Nothing usable found."
+ },
+ "wa_switchback_mountain_scramble": {
+  "area": "wa_switchback_mountain",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "Class 3",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.wta.org/go-hiking/hikes/cooney-peak",
+      "retrieved_at": "2026-11-14",
+      "fact": "WTA: the route to Cooney Peak is Class 3 with exposed scrambling."
+     }
+    ]
+   },
+   {
+    "field": "high_point_ft",
+    "value": 8321,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.wta.org/go-hiking/hikes/cooney-peak",
+      "retrieved_at": "2026-11-14",
+      "fact": "WTA lists Highest Point 8,321 feet for Cooney Peak."
+     }
+    ]
+   },
+   {
+    "field": "permit",
+    "value": "Northwest Forest Pass",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.wta.org/go-hiking/hikes/cooney-peak",
+      "retrieved_at": "2026-11-14",
+      "fact": "WTA: Northwest Forest Pass required."
+     }
+    ]
+   }
+  ],
+  "note": "WTA rates the route to Cooney Peak Class 3; the app says Class 2. SummitPost Switchback Peak returns 403."
+ },
+ "wa_tailgunner_peak_w_route": {
+  "area": "wa_tailgunner",
+  "facts": [
+   {
+    "field": "gain_ft",
+    "value": 3900,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://journeywithjoshua.com/trip-reports/tailgunner-peak-the-quiet-one/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Trip report stats: distance 5.38 mi, elevation gain 3,900 ft, time 6.4 hr."
+     }
+    ]
+   },
+   {
+    "field": "dist_mi_roundtrip",
+    "value": 5.38,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://journeywithjoshua.com/trip-reports/tailgunner-peak-the-quiet-one/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Trip report stats: distance 5.38 mi car to car."
+     }
+    ]
+   },
+   {
+    "field": "car_to_car_hours",
+    "value": 6.4,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://journeywithjoshua.com/trip-reports/tailgunner-peak-the-quiet-one/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Trip report stats: time 6.4 hr."
+     }
+    ]
+   },
+   {
+    "field": "grade",
+    "value": "Class 2",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://journeywithjoshua.com/trip-reports/tailgunner-peak-the-quiet-one/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Class 2 scramble with a couple of stream crossings and some forest routefinding."
+     }
+    ]
+   },
+   {
+    "field": "permit",
+    "value": "Northwest Forest Pass",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://journeywithjoshua.com/trip-reports/tailgunner-peak-the-quiet-one/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Passes: Northwest Forest Pass for the Barclay Lake lot."
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Barclay Lake Trailhead, end of Barclay Creek Road (2,300 ft)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://trailcatjim.com/tailgunner-peak-via-barclay-creek-tailgunner-pass-south-slope/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Starts at Barclay Lake Trailhead at the end of Barclay Creek Road, elevation 2,300 ft."
+     }
+    ]
+   }
+  ],
+  "note": "Joshua's report gives 3,900 ft gain (app 3,540 ft, more than 10% apart). Jim Brisbine's report also climbed Gunn Point (two peaks, 4,500 ft), so only its trailhead is used."
+ },
+ "wa_the_brothers_traverse": {
+  "area": "wa_the_brothers",
+  "facts": [
+   {
+    "field": "gain_ft",
+    "value": 6200,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/the-brothers-brothers-traverse",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountaineers Brothers Traverse route page lists Elevation Gain 6,200 ft."
+     }
+    ]
+   },
+   {
+    "field": "high_point_ft",
+    "value": 6866,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/the-brothers-brothers-traverse",
+      "retrieved_at": "2026-11-14",
+      "fact": "The route page lists High Point 6,866 ft."
+     }
+    ]
+   },
+   {
+    "field": "difficulty",
+    "value": "Intermediate Mountaineering Climb",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/the-brothers-brothers-traverse",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountaineers rates it an Intermediate Mountaineering Climb."
+     }
+    ]
+   },
+   {
+    "field": "car_to_car_hours",
+    "value": "10h23m (one party)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/trip-reports/the-brothers-brothers-traverse",
+      "retrieved_at": "2026-11-14",
+      "fact": "Trip report: watch logged 17.34 miles, 7,024 ft gain, 10h23m car to car."
+     }
+    ]
+   },
+   {
+    "field": "water",
+    "value": "Running water along the hike up to about 5,000 ft",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/trip-reports/the-brothers-brothers-traverse",
+      "retrieved_at": "2026-11-14",
+      "fact": "Trip report: plenty of running water on the way up until about 5k ft."
+     }
+    ]
+   }
+  ],
+  "note": "Mountaineers route page gain 6,200 ft vs a member trip report's 7,024 ft (watch), more than 10% apart, so neither is locked. Both pages are from The Mountaineers, so they count as one publisher."
+ },
+ "wa_the_pleiades_scramble": {
+  "area": "wa_the_pleiades",
+  "skip_reason": "Opened: stevensong.com/usa/washington/the-pleiades-peaks-1-2-3-4/ (narrative, no stats); summitpost.org/the-pleiades/931529 (403). No figures found."
+ },
+ "wa_the_pyramid_picket_south_route": {
+  "area": "wa_the_pyramid_picket",
+  "facts": [
+   {
+    "field": "approach_step",
+    "value": "Goodell Creek Trailhead to Terror Basin, then on to Crescent Creek Basin",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://stephabegg.com/trip-reports/washington/pickets/southern-pickets-2/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Trip: Goodell Creek Trailhead to Terror Basin, then Terror Basin to Crescent Creek Basin."
+     }
+    ]
+   },
+   {
+    "field": "permit",
+    "value": "Backcountry permit required (North Cascades NP)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/north-cascades-national-park-cross-country-zones/southern-picket-range",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountaineers Southern Pickets page: leaders must secure backcountry permits."
+     }
+    ]
+   }
+  ],
+  "note": "Steph Abegg climbed the Pyramid's West Ridge inside a 6-day Southern Pickets trip, so no route figures. Jim Brisbine's Degenhardt-Pyramid page had no stats; the Mountaineers Southern Picket Range zone page only covers permits."
+ },
+ "wa_the_rake_traverse_route": {
+  "area": "wa_the_rake",
+  "skip_reason": "Opened: cascadeclimbers.com/forum/topic/108688 (a South Gully route on The Rake, not this ridge traverse); stephabegg.com southern-pickets-2 (does not climb The Rake); summitpost Picket Range (403). No figures for this route."
+ }
+}

@@ -155,19 +155,37 @@ const CASES = [
          "the Plan tab while sitting ON it, past the Trip plan rendered directly above. A gate fix " +
          "that left this would have made a circular pointer visible for the first time",
     edits: [{
-      find: '{"This route is typically done over "+itinDayCount(route)+" days. The single-push estimate below is a reference only — the "}<b style={{color:C.amber}}>Trip plan</b>{" above is the realistic one."}',
+      // Repointed 2026-11-18: the banner now introduces the summit-day view (summitDayPlan).
+      find: '{"This route is typically done over "+itinDayCount(route)+" days. "+(sd&&sd.timed?"The estimate below times the summit day from camp; the ":"The times below are totals for the whole trip; the ")}<b style={{color:C.amber}}>Trip plan</b>{" below has each day."}',
       repl: 'This route is typically done over multiple days. The single-push estimate below is a reference only — use the <b style={{color:C.amber}}>Plan</b> tab for a realistic day-by-day plan.',
     }],
     expect: "fail",
     must: /already on/,
   },
   {
+    name: "multiday-pointer-says-the-wrong-way",
+    why: "The pointer must say which way the Trip plan is, truthfully. Since 2026-11-18 the alpine Plan " +
+         "tab draws Full trip time ABOVE the trip plan; copy that still said 'above' would send a reader " +
+         "up the page to a section that is below them",
+    edits: [{ find: '<b style={{color:C.amber}}>Trip plan</b>{" below has each day."}', repl: '<b style={{color:C.amber}}>Trip plan</b>{" above has each day."}' }],
+    expect: "fail",
+    must: /really is above/,
+  },
+  {
+    name: "multiday-pointer-loses-its-direction",
+    why: "The box also says the single-push estimate is BELOW, so a check reading the first direction word in it " +
+         "would pass a pointer that names no direction at all. The direction must be read after the Trip plan name",
+    edits: [{ find: "<b style={{color:C.amber}}>Trip plan</b>{\" below has each day.\"}", repl: "<b style={{color:C.amber}}>Trip plan</b>{\" has each day.\"}" }],
+    expect: "fail",
+    must: /says which way the Trip plan is/,
+  },
+  {
     name: "SILENT-multiday-copy-reworded-but-still-honest",
     why: "MUST STAY SILENT. Section 3 pins the day COUNT, the pointer's destination and the " +
          "ordering — never one phrasing. A guard pinned to the sentence would forbid improving it",
     edits: [{
-      find: '{"This route is typically done over "+itinDayCount(route)+" days. The single-push estimate below is a reference only — the "}',
-      repl: '{"Parties typically take "+itinDayCount(route)+" days on this route, so read the single-push estimate below as a reference only. The "}',
+      find: '{"This route is typically done over "+itinDayCount(route)+" days. "+(',
+      repl: '{"Parties typically take "+itinDayCount(route)+" days on this route. "+(',
     }],
     expect: "pass",
   },
@@ -185,9 +203,28 @@ const CASES = [
     file: PLAN,
     why: "a single-day route whose walk in ~= walk out is a one-way climb; splitting it shortens the " +
          "time UP, which the storm start counts back from",
-    edits: [{ find: " && isMultiDayOuting(route) && ", repl: " && " }],
+    // Both conditions go: since 2026-11-18 "a day follows the summit day" also excludes a single day.
+    edits: [{ find: " && isMultiDayOuting(route) && hasDayAfterSummitDay && ", repl: " && " }],
     expect: "fail",
     must: /SINGLE-day route are a one-way climb/,
+  },
+  {
+    name: "one-way-summit-leg-split-again",
+    file: PLAN,
+    why: "A summit day longer than its summit leg holds the way back to camp; splitting the leg anyway " +
+         "halves the climb, the Goode / Agnes ambiguity the plan's own hours now settle",
+    edits: [{ find: " && !summitLegOneWay && ", repl: " && " }],
+    expect: "fail",
+    must: /summit day LONGER than the summit leg reads the leg one way/,
+  },
+  {
+    name: "camp-rule-on-a-summit-day-that-walks-out",
+    file: PLAN,
+    why: "THE SHASTA DEFECT, restored: a 2-day trip whose summit day walks out to the car stores its summit " +
+         "leg one way, and the camp split put Avalanche Gulch's summit 2.95 hr from Helen Lake against 4-6 reported",
+    edits: [{ find: " && hasDayAfterSummitDay && ", repl: " && " }],
+    expect: "fail",
+    must: /summit day ends at the CAR reads its summit leg one way/,
   },
   {
     name: "derived-leg-not-split",
@@ -220,7 +257,9 @@ const CASES = [
     why: "Slipstream stores 1 pitch on a 909 m route; the Climbing tile printed 0.6 hr beside a day the reports time at 7.5 hr",
     edits: [{ find: "hasDerivedSummitH || realPitches(route) > 0;", repl: "hasDerivedSummitH || !!route.pitches;" }],
     expect: "fail",
-    must: /the Climbing tile reads N\/A, not a 0\.6 hr climb/,
+    /* Since 2026-11-23 the Climbing tile reads N/A on climbTimed (techH > 0), so a placeholder counted as known
+       no longer prints a 0.6 hr climb there; what it still breaks on screen is the Total's lower-bound marker. */
+    must: /Total carries the lower-bound marker/,
   },
   {
     name: "placeholder-pitch-count-still-timed",
@@ -232,8 +271,11 @@ const CASES = [
   },
   {
     name: "placeholder-pitch-count-opens-an-estimate",
+    file: PLAN,
     why: "with no walk on file a placeholder count alone still made a '≥0.6hr' Total",
-    edits: [{ find: "hasDerivedSummitH||realPitches(route)>0||P.loneApproachH", repl: "hasDerivedSummitH||!!route.pitches||P.loneApproachH" }],
+    /* Since 2026-11-23 whether a leg is timed is planTimes' own test (climbTimed), read by Full trip time and the
+       leg cards alike, so the regression is planted there: a stored count, placeholder or not, counted as a climb. */
+    edits: [{ find: "const climbTimed = techH > 0;", repl: "const climbTimed = techH > 0 || !!route.pitches;" }],
     expect: "fail",
     must: /leaves nothing to estimate/,
   },

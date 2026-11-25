@@ -1,0 +1,769 @@
+[
+ {
+  "id": "wa_big_four_mountain_northwest_ridge",
+  "name": "Northwest Ridge",
+  "area_id": "wa_big_four_mountain",
+  "discipline": "mountaineering",
+  "grade": "Class 4",
+  "pitches": null,
+  "gain_ft": 4450,
+  "dist_km": null,
+  "high_point_ft": 6170,
+  "season": "Jun-Sep",
+  "approach": "Start at the Big Four Ice Caves trailhead on the Mountain Loop Highway (a Northwest Forest Pass is needed for parking). The Ice Caves trail is an easy, mostly boardwalk and paved path of about 1.1 miles each way with roughly 220 ft of gain, passing the old hotel site at the picnic area, crossing the South Fork Stillaguamish on a bridge, and opening into a meadow below the north side of the mountain. Leave the trail at the end and head across the open basin toward the foot of the north-side ridge you are climbing.",
+  "descent": null,
+  "bivy": [
+   {
+    "name": "Big Four north-side staging and base bivouac",
+    "role": "main",
+    "type": "bivy",
+    "notes": "Big Four is a car-to-car objective by design: the trailhead sits at low elevation barely a mile from the base of a face that rises about 4,000 feet, so the climbing starts almost immediately and there is no approach worth camping to shorten. Parties on the north-side lines, including the long winter couloir routes, typically leave overnight gear at the base and go up and down in a push rather than carrying a bivouac onto the face, which is a considered choice on a wall this active — rockfall and avalanche off it are constant and audible through the night. That same activity is why this is a contingency and not a recommendation: sleeping under this face means sleeping under a debris cone that is there because things fall on it. Position any bivouac well out of the runout, not at the toe of the snow. The ice caves at the base are lethal and collapse every year — do not camp near them, on them, or in them, and stay off them entirely. The nearest legal drive-in beds are the developed campgrounds down the paved loop toward Verlot.",
+    "water": "Creeks draining the face run all season near the base, and the debris field itself is meltwater. Treat everything. There is no developed water at the picnic area.",
+    "permit": "Not inside any wilderness — this side of the highway is ordinary national forest with no camping permit requirement. A federal recreation pass is required to park at the picnic area. Fire restrictions are common from midsummer and are frequently forest-wide.",
+    "capacity": "No established camp of any kind. The picnic area at the trailhead is day use only and camping there is not permitted; parties climbing the north side bivouac informally at the base of the face on the avalanche debris and boulder ground beyond the maintained path."
+   }
+  ],
+  "itinerary": null,
+  "waypoints": [
+   {
+    "name": "Big Four Picnic Area / Ice Caves Trailhead",
+    "type": "Trailhead",
+    "elev": 1640
+   },
+   {
+    "name": "Big Four Mountain Summit",
+    "type": "Summit",
+    "elev": 6170
+   }
+  ],
+  "peak": "Big Four Mountain",
+  "area_type": "peak"
+ },
+ {
+  "id": "wa_big_four_mountain_tower_route",
+  "name": "Tower Route",
+  "area_id": "wa_big_four_mountain",
+  "discipline": "alpine",
+  "grade": "5.7",
+  "pitches": null,
+  "gain_ft": null,
+  "dist_km": null,
+  "high_point_ft": 6170,
+  "season": "Jun-Sep",
+  "approach": "Approach via the Big Four Ice Caves trail from the Big Four Picnic Area / Ice Caves Trailhead, then traverse toward the north side of the mountain to reach the base of the first tower's gully.",
+  "descent": "Descend via the north side towers, reversing rappels between towers; alternatively downclimb to the notch system used on ascent.",
+  "bivy": null,
+  "itinerary": null,
+  "waypoints": [
+   {
+    "name": "Big Four Picnic Area / Ice Caves Trailhead",
+    "type": "Trailhead",
+    "elev": 1640
+   },
+   {
+    "name": "Big Four Mountain Summit",
+    "type": "Summit",
+    "elev": 6170
+   }
+  ],
+  "peak": "Big Four Mountain",
+  "area_type": "peak"
+ },
+ {
+  "id": "wa_big_snow_mountain_southwest_ridge",
+  "name": "Southwest Ridge",
+  "area_id": "wa_big_snow_mountain",
+  "discipline": "alpine",
+  "grade": null,
+  "pitches": null,
+  "gain_ft": null,
+  "dist_km": null,
+  "high_point_ft": 6680,
+  "season": "Jul-Sep",
+  "approach": "Start at the Dingford Creek Trailhead and hike the Dingford Creek Trail about 3.2 miles to the junction with the Hester Lake Trail. Leave the Myrtle Lake branch there and take the Hester Lake side, then leave the path and work cross-country toward the mountain's southwest ridge. Expect brush, steep forest and route-finding with no maintained tread.",
+  "descent": null,
+  "bivy": null,
+  "itinerary": null,
+  "waypoints": [
+   {
+    "name": "Dingford Creek Trailhead",
+    "type": "Trailhead",
+    "elev": null
+   }
+  ],
+  "peak": "Big Snow Mountain",
+  "area_type": "peak"
+ },
+ {
+  "id": "wa_black_peak_east_buttress",
+  "name": "East Buttress",
+  "area_id": "wa_black_peak",
+  "discipline": "scrambling",
+  "grade": "Class 4",
+  "pitches": null,
+  "gain_ft": null,
+  "dist_km": null,
+  "high_point_ft": 8970,
+  "season": null,
+  "approach": "As for the other routes: Rainy Pass/Lake Ann trailhead on SR-20, via Heather Pass and Lewis Lake to Wing Lake camp; the East Buttress is accessed from the east side of the Wing Lake basin rather than the south col or NE ridge notch.",
+  "descent": null,
+  "bivy": [
+   {
+    "elev": 6900,
+    "name": "Wing Lake",
+    "role": "main",
+    "type": "camp",
+    "notes": "This is the working climbers' camp for Black Peak and the natural first night for Corteo as well. From the Rainy Pass west lot the loop trail is followed for a little over a mile, then a right fork leads to Heather Pass; from there a boot path crosses a boulder field and drops to Lewis Lake, and a further climb of about twelve hundred feet up the northwest slope reaches Wing Lake in the cirque under Black Peak. Reckon on four to six hours with a pack, and four to seven more from camp to summit and back. Camping here rather than at Lewis costs an hour on the way in and buys a much shorter summit day, which matters because everything above is talus and heather with route-finding rather than trail. The boundary detail is worth knowing: Black Peak's summit stands on the line between the forest and the national park, but this camp is on the forest side, so a party sleeping here needs no permit even though it is climbing a peak the park shares.",
+    "water": "The lake, and it is dependable through the season. Snow patches under Black Peak feed it well into the autumn. Filter or treat.",
+    "permit": "None. This is Okanogan-Wenatchee National Forest, not the national park, so there is no backcountry permit, no quota and nothing to reserve. A Northwest Forest Pass or Interagency pass covers parking at Rainy Pass. Forest-wide campfire bans are routine from mid summer onward and at this elevation there is almost nothing to burn anyway, so plan on a stove and check the current order rather than assuming a fire is legal.",
+    "capacity": "A handful of established pads in the boulders and heather around the outlet, most taking one or two tents. It is the best ground on this side of the peak and it fills on clear summer weekends and hard in larch season, so have Lewis Lake in mind as the fallback."
+   },
+   {
+    "elev": 4860,
+    "name": "Rainy Pass trailhead lots, and the quarter-mile camping closures",
+    "role": "route",
+    "type": "camp",
+    "notes": "This is the door to Black Peak and Corteo and the reason both are approachable in a weekend. It is also where the Pacific Crest Trail heads north, so the lots serve two entirely different sets of objectives and are busier than their size suggests. The closures above exist because the loop is one of the most walked trails in the state and its meadows were being trampled; they are enforced rather than advisory. Parties commonly sleep in the car here before an early start, and there is a toilet but no water. Everything depends on SR 20 being open — the highway shuts for the winter, usually in late November or early December, and reopens after avalanche control and snow clearing, most often between mid April and early May but occasionally very much later when a hard winter leaves washouts and rockslide damage behind it. Confirm the road is actually open before driving out from either side, and expect construction closures on this stretch in some seasons.",
+    "water": "None at the pass. Fill in the valley or plan on filtering from the lakes once you are in.",
+    "permit": "Northwest Forest Pass or Interagency pass to park. The rule that catches people out is a camping closure rather than a permit: no overnight camping within a quarter mile of Lake Ann, Rainy Lake, Heather Pass or Maple Pass, and none anywhere along the Heather-Maple Pass loop trail itself. Walk through to Lewis or Wing and you are legal with no paperwork; stop short of them and you are not.",
+    "capacity": "Two large paved lots either side of the highway, with the Maple Pass loop starting from the west side. They fill early on summer and autumn weekends. This is staging and roadside parking, not a campground."
+   },
+   {
+    "elev": 5700,
+    "name": "Lewis Lake",
+    "role": "route",
+    "type": "camp",
+    "notes": "Lewis sits in the bowl below Wing, reached by dropping off Heather Pass and picking a way through talus on goat paths around the left-hand shore. Most parties treat it as a waypoint rather than a destination, but it is a genuine camp and a sensible one for a late start, a heavy pack or a party that wants a shorter first day. It is also where the Corteo approach commits: from here the line follows the top of the moraine onto the Lewis Glacier and climbs southeast, bearing left at the top, to a notch on the ridge near seven thousand five hundred feet, then works west along the ridge and downclimbs several hundred feet of dirt or snow into the cirque under Corteo's west face, gaining the southwest ridge at a large notch by an easy gully. Nothing above Lewis is trail. Snow lingers on the traverse out of Heather Pass into early summer and an axe is worth carrying until it has gone.",
+    "water": "The lake and its inlet run all season. Reliable.",
+    "permit": "None — national forest, no permit, no quota, no reservation. Northwest Forest Pass or Interagency pass to park at Rainy Pass.",
+    "capacity": "A few sites around the shore, fewer and rougher than Wing Lake's. Adequate for a party or two, and the obvious answer when Wing is full or when weather turns on the way up."
+   }
+  ],
+  "itinerary": null,
+  "waypoints": [
+   {
+    "name": "Rainy Pass / Lake Ann-Maple Pass Trailhead",
+    "type": "Trailhead",
+    "elev": 4855
+   },
+   {
+    "name": "Rainy Pass trailhead lots, and the quarter-mile camping closures",
+    "type": "Campsite",
+    "elev": 4860
+   },
+   {
+    "name": "Heather Pass",
+    "type": "Junction",
+    "elev": 6094
+   },
+   {
+    "name": "Lewis Lake",
+    "type": "Campsite",
+    "elev": 5705
+   },
+   {
+    "name": "Wing Lake",
+    "type": "Campsite",
+    "elev": 6923
+   },
+   {
+    "name": "Black Peak summit",
+    "type": "Summit",
+    "elev": 8970
+   }
+  ],
+  "peak": "Black Peak",
+  "area_type": "peak"
+ },
+ {
+  "id": "wa_burnt_boot_peak_north_ridge",
+  "name": "North Ridge",
+  "area_id": "wa_burnt_boot_peak",
+  "discipline": "alpine",
+  "grade": "5.0",
+  "pitches": 6,
+  "gain_ft": null,
+  "dist_km": null,
+  "high_point_ft": 6540,
+  "season": null,
+  "approach": "From the Dingford Creek gate, walk or bike the closed Middle Fork road (FR 56) about 7.7 miles to its end at Hardscrabble Horse Camp; bikes go no farther. Burnt Boot stands across the Middle Fork to the south, and its north ridge drops straight from the summit to the river near 3,100 ft. There is no bridge here (the next one is at Pedro Camp, near mile 13), so head upstream from the horse camp toward Hardscrabble Creek and ford the river; it can run cold and thigh-deep in July, and logs across it may not reach. From the south bank it is cross-country up steep forest and brush on the ridge to the base of its steepest granite, where the roped climbing starts. There is no trail or established line off the valley floor. In early September the Middle Fork ford, found about a mile upstream where a wash meets the river near 3,100 ft, was a careful rock-hop on slippery stones rather than a deep wade; the far bank opens with head-high huckleberry before easing into open forest.",
+  "descent": null,
+  "bivy": [
+   {
+    "elev": 2828,
+    "name": "Hardscrabble Horse Camp, Middle Fork Snoqualmie",
+    "role": "main",
+    "type": "camp",
+    "notes": "The staging camp for the whole Middle Fork half of this zone, and the answer to the question of what to do with a seven-mile road walk. Forest Road 56 is rough — potholes, ruts and washed river-rock sections that want high clearance — and it is gated at Dingford Creek, so the last roughly seven miles to the horse camp are closed road with about 1,300 ft of gain. That stretch is legal and pleasant to bike and most parties do, then walk from here; a mountain bike is the right tool, a gravel bike is survivable. The camp itself is low, forested and buggy, but it is quiet and it sits at the foot of everything. Burnt Boot Peak is climbed from here by fording the Middle Fork — cold and thigh-deep at ordinary summer flows, and not to be attempted in high water — and then working up the northwest side to the gully system and the northeast gully at around 5,800 ft. The boot path to Hardscrabble Lakes leaves the old road about half a mile below the camp, marked by a large broken log lying across the road; it is easy to walk past. Continuing up-valley on foot the trail runs about six more miles to the old Camp Pedro area and on toward Dutch Miller Gap. Season is May into October at this elevation, but the peaks above hold snow until July.",
+    "water": "The Middle Fork Snoqualmie River and Hardscrabble Creek, both right at camp and both reliable",
+    "permit": "Free self-issue Alpine Lakes Wilderness permit at the Dingford Creek gate. Northwest Forest Pass to park at the gate. Group limit twelve including stock. Fires are legal at this elevation and the camp has established rings, but wood is picked over and summer burn bans are common on this district.",
+    "capacity": "Large — an old horse camp with a broad clearing and riverside sites near Hardscrabble Creek; several parties, stock included"
+   }
+  ],
+  "itinerary": null,
+  "waypoints": [
+   {
+    "name": "Dutch Miller Gap Trailhead (Dingford Creek gate)",
+    "type": "Trailhead",
+    "elev": 1433
+   },
+   {
+    "name": "Hardscrabble Horse Camp, Middle Fork Snoqualmie",
+    "type": "Campsite",
+    "elev": 2828
+   },
+   {
+    "name": "Hardscrabble Creek crossing",
+    "type": "Water",
+    "elev": 2867
+   },
+   {
+    "name": "Burnt Boot Peak",
+    "type": "Summit",
+    "elev": 6540
+   }
+  ],
+  "peak": "Burnt Boot Peak",
+  "area_type": "peak"
+ },
+ {
+  "id": "wa_castle_peak_pasayten_south_route",
+  "name": "South Route",
+  "area_id": "wa_castle_peak_pasayten",
+  "discipline": "scrambling",
+  "grade": "Class 3",
+  "pitches": 0,
+  "gain_ft": 4643,
+  "dist_km": 21.8,
+  "high_point_ft": 8343,
+  "season": "Jul-Sep",
+  "approach": "The line most often written up starts on the Monument 78 Trail in Manning Park, BC and crosses the US/Canada border in the boundary clearing south of Castle Creek; entering the US on foot away from a port of entry is not lawful, so the lawful way in is the long walk north on the PCT from Harts Pass to Castle Pass at the head of Castle Creek. As written up, the Canadian line continues: Cross the Castle Creek bridge, push south through brush and downed timber, navigate the boundary clearing and wetland openings, then follow Castle Creek uphill from about 4,500 ft through alder terrain to a camp around 5,500 ft in Castle Creek Basin.",
+  "descent": "Reverse the ascent line back through the notch, northeast gully and south gully to Castle Creek Basin camp.",
+  "bivy": null,
+  "itinerary": null,
+  "waypoints": [
+   {
+    "name": "Harts Pass Trailhead (Pacific Crest Trail north)",
+    "type": "Trailhead",
+    "elev": 6194
+   },
+   {
+    "name": "Castle Peak summit",
+    "type": "Summit",
+    "elev": 8343
+   }
+  ],
+  "peak": "Castle Peak",
+  "area_type": "peak"
+ },
+ {
+  "id": "wa_castle_peak_pasayten_the_drawbridge",
+  "name": "The Drawbridge",
+  "area_id": "wa_castle_peak_pasayten",
+  "discipline": "alpine",
+  "grade": "5.10+",
+  "pitches": 10,
+  "gain_ft": null,
+  "dist_km": null,
+  "high_point_ft": 8343,
+  "season": "Jun-Sep",
+  "approach": "The lawful approach is from the US side: cross Ross Lake by boat, follow the Lightning Creek trail and the abandoned Freezeout Creek trail, then work round to the glacier below the north face. The first-ascent party instead came in from Canada — from Lightning Lake in Manning Provincial Park, BC, up and over Frosty Mountain, into Princess Creek basin, across the Princess/Crow Creek divide and down into the Crow Creek drainage — but walking into the US away from a port of entry is not a lawful crossing. On that line the first-ascent party camped on the only dry spot on the ridge, about two-thirds of the way down to the approach glacier.",
+  "descent": "Walk off via the south side and the East Ridge.",
+  "bivy": null,
+  "itinerary": null,
+  "waypoints": [
+   {
+    "name": "Castle Peak summit",
+    "type": "Summit",
+    "elev": 8343
+   }
+  ],
+  "peak": "Castle Peak",
+  "area_type": "peak"
+ },
+ {
+  "id": "wa_chair_bryant_traverse",
+  "name": "Chair-Bryant Traverse",
+  "area_id": "wa_chair_peak",
+  "discipline": "alpine",
+  "grade": "5.7",
+  "pitches": 0,
+  "gain_ft": null,
+  "dist_km": null,
+  "high_point_ft": null,
+  "season": "Jul-Oct",
+  "approach": "Begins on Chair Peak's north ridge, reached via the East Face/Northeast Buttress approach (Alpental parking, Snow Lake Trail, Source Lake fork, then a gully to roughly 4,800 ft and the basin below), then continues along the crest over/past Bryant Peak.",
+  "descent": "Typically descend from wherever the traverse is exited (Bryant, the Tooth, or Denny) via that peak's own standard descent, since reversing the ridge crest is slow and exposed.",
+  "bivy": [
+   {
+    "elev": 2283,
+    "name": "Denny Creek Campground, I-90 exit 47",
+    "role": "main",
+    "type": "camp",
+    "notes": "The nearest developed campground to the Alpental trailhead, roughly a twenty-minute drive back down I-90 and then three miles up the Denny Creek road. The sensible answer for a party arriving late the night before a Tooth or Chair Peak day, since it needs no wilderness permit and no early-morning decisions. Sites go quickly on summer weekends; book ahead rather than driving up hoping. In winter this option disappears entirely and you are back to sleeping in the valley towns or driving up in the dark.",
+    "water": "Potable water provided during the operating season.",
+    "permit": "Standard campground fee, reserved through recreation.gov up to six months ahead; a small number of first-come sites. No wilderness permit needed, and no trailhead pass required to sleep here. Seasonal — closed outside the summer months, so it is not an option for a winter climb.",
+    "capacity": "About 33 sites, most reservable, including electric and double sites plus one group site"
+   },
+   {
+    "elev": 1535,
+    "name": "Tinkham Campground, I-90 exit 42",
+    "role": "main",
+    "type": "camp",
+    "notes": "Further down the valley than Denny Creek, about 1.5 miles in on Forest Road 55 from exit 42, and the usual fallback when Denny Creek is booked out. The extra driving costs perhaps fifteen minutes on the approach next morning, which matters little against a ten-hour climbing day. Like every developed site on this stretch of I-90 it is a summer-only option. It sits well below the pass, low in the South Fork valley.",
+    "water": "Water availability here varies by year and is not guaranteed — confirm before relying on it and carry enough for the night otherwise.",
+    "permit": "Campground fee via recreation.gov; seasonal operation only, closed outside the summer months. No wilderness permit or trailhead pass involved.",
+    "capacity": "Small forested Forest Service campground, reservable sites"
+   },
+   {
+    "elev": 3780,
+    "name": "Source Lake basin, Alpental valley",
+    "role": "route",
+    "type": "bivy",
+    "notes": "The honest finding for this zone is that all three peaks are day climbs from the Alpental lot at about 3,100 ft, and almost nobody camps for them — a full car-to-car day on Chair Peak's Northeast Buttress runs 10-12 hours, The Tooth is shorter, and Guye Peak's west face is barely an approach at all. Source Lake is where a party would sleep if it wanted a pre-dawn start without the drive, about an hour in on the Snow Lake trail. Ground here is rough and off the maintained tread, so choose rock or snow rather than making a new clearing. The slopes above the lake toward Chair are an active avalanche path, so this is a fair-weather summer bivy and not a winter one. Separately for Guye Peak: the old walking approach through the Alpental Community Club's private roads has been closed to climbers, so plan the talus approach from public ground.",
+    "water": "Reliable in summer: the lake and the South Fork Snoqualmie headwater creeks run all season. In winter the whole basin is snow-covered and you melt.",
+    "permit": "Free self-issue Alpine Lakes Wilderness permit at the Snow Lake trailhead, required for day and overnight use roughly May 15 to Oct 31. Parking takes a Northwest Forest Pass or Interagency pass, or a day fee; a Washington Discover Pass is NOT valid. Ski season changes this: on weekends and holidays the Alpental lots are run by the ski area under a paid permit, free for carpools of 3+ and for season-pass holders. No Sno-Park permit applies at Alpental.",
+    "capacity": "Informal — a handful of small tent spots on durable ground; no established or designated sites"
+   },
+   {
+    "elev": 4900,
+    "name": "Chair Peak basin snow camp",
+    "role": "route",
+    "type": "bivy",
+    "notes": "Parties climbing Chair Peak's north face or Northeast Buttress in winter sometimes carry up and camp in the basin near the Thumb Tack, which removes the last stretch of approach from a long summit day. Whether that is a good trade is genuinely contested: it shortens the morning but puts you sleeping under loaded avalanche slopes, and most parties instead take a 5 a.m. start from the car and accept the full approach. The elevation given is approximate for the gearing-up basin and will shift with where the snowpack lets you build a platform. Treat this as a conditions-dependent choice, not a standing campsite.",
+    "water": "None running. Melt snow — this is a winter and spring option and there is no reliable liquid source in the basin.",
+    "permit": "No self-issue wilderness permit is required outside roughly May 15 to Oct 31, but wilderness rules still apply and parking is governed by the ski area's winter permit scheme on peak days. Check the Alpental parking rules for the current season before counting on a spot.",
+    "capacity": "Snow camp for one or two tents; no ground sites, entirely dependent on snowpack"
+   }
+  ],
+  "itinerary": null,
+  "waypoints": [
+   {
+    "name": "Alpental Ski Area parking lot / Snow Lake Trailhead",
+    "type": "Trailhead",
+    "elev": 3140
+   },
+   {
+    "name": "Source Lake basin, Alpental valley",
+    "type": "Campsite",
+    "elev": 3780
+   },
+   {
+    "name": "Chair Peak",
+    "type": "Summit",
+    "elev": 6238
+   },
+   {
+    "name": "Bryant Peak",
+    "type": "Summit",
+    "elev": 5801
+   }
+  ],
+  "peak": "Chair Peak",
+  "area_type": "peak"
+ },
+ {
+  "id": "wa_crooked_thumb_peak_east_face",
+  "name": "East Face",
+  "area_id": "wa_crooked_thumb_peak",
+  "discipline": "mountaineering",
+  "grade": "Class 4",
+  "pitches": null,
+  "gain_ft": null,
+  "dist_km": null,
+  "high_point_ft": 8129,
+  "season": "Jun-Sep",
+  "approach": "Shares the same remote, multi-day approach as the peak's northwest-couloir route: via Hannegan Pass Trail and Whatcom/Perfect Pass to the Challenger Glacier and West Challenger Notch, descending to a camp on the Crooked Thumb Glacier below the peak's north/east side (or via the alternate Big Beaver Trailhead-Wiley Ridge-Challenger Arm approach).",
+  "descent": "not recorded; presumed to reverse the east face or descend via the adjacent northwest-couloir line back to the glacier.",
+  "bivy": [
+   {
+    "elev": 6300,
+    "name": "Perfect Pass, Perfect Pass cross-country zone",
+    "role": "main",
+    "type": "bivy",
+    "notes": "The classic high camp for Mount Challenger and for Whatcom Peak, on benches at the western edge of the Challenger Glacier. It is reached either over Whatcom Pass from the Brush Creek side or along Easy Ridge, the latter demanding a substantial descent and reclimb to get around the gap short of the pass. Reported elevations vary between roughly 6,000 and 6,300 ft depending on the account, and there are no facilities of any kind.",
+    "water": "Snowmelt streams and tarns; dependable while snow lingers, marginal to absent late season",
+    "permit": "Wilderness permit for the Perfect Pass cross-country zone. Walk-up only and capped at a single party per night. It cannot be booked ahead, so the permit is won or lost at the counter — this quota is usually the binding constraint on a Challenger trip, not the terrain.",
+    "capacity": "Party limit 6, and only ONE party per night in the whole zone — the tightest quota in this part of the park"
+   },
+   {
+    "name": "Crooked Thumb Glacier moraine camp",
+    "role": "main",
+    "type": "bivy",
+    "notes": "Narrow lateral moraine at the southern edge of the Crooked Thumb Glacier, reached from Perfect Pass across the Challenger Glacier and down through the notch west of Challenger. The base camp for Crooked Thumb and Phantom from the north. Fully exposed to weather.",
+    "water": "Snowmelt and glacier melt only",
+    "permit": "North Cascades NP backcountry permit (cross-country zone)",
+    "capacity": "A few tents on a narrow moraine"
+   },
+   {
+    "elev": 5286,
+    "name": "Whatcom Camp, Brush Creek below Whatcom Pass",
+    "role": "route",
+    "type": "camp",
+    "notes": "The last trail camp beneath Whatcom Pass and the one that serves the Hannegan Pass and Chilliwack River approach to Whatcom Peak and Mount Challenger. Parties coming that way typically chain Boundary, Copper Creek or US Cabin, then Graybeal on Brush Creek, then here — three or four days of walking before any climbing begins. Whatcom Camp and both Graybeal camps have been closed because of fire damage from 2022, and the park's fire-closures page, updated September 14, 2026, still lists them closed until further notice, so there is no legal trail camp close under the pass on that side, which pushes parties either back down the valley or straight up into the Tapto Lakes or Perfect Pass zones.",
+    "water": "Brush Creek drainage — reliable",
+    "permit": "NPS wilderness permit from Marblemount; food hang or approved canister required. Listed as closed for hazard trees on the park's August 2026 closure list, as is Graybeal Camp below it on Brush Creek. Campfires are prohibited here regardless of restrictions elsewhere.",
+    "capacity": "Three 4-person sites; party limit 4; composting toilet; no campfires"
+   },
+   {
+    "name": "Improvised bivouacs on the Challenger Glacier and the crest south of Challenger",
+    "role": "route",
+    "type": "bivy",
+    "notes": "Spectre Peak sits well down the crest south of Challenger and Poltergeist Pinnacle is a multi-pitch rock climb off the glacier, so parties working the far end of the chain sometimes take a night out on the ice rather than commit to a very long day from Perfect Pass or Challenger Arm. These are made rather than found — a platform stamped into snow, or a gravel patch on a rib — and quality is entirely a matter of what the party can dig. There is no shelter and no water, crevasse hazard is present wherever you put the tent, and it only makes sense with a settled forecast. Anyone unwilling to melt snow for every drop should sleep at Challenger Arm or Perfect Pass instead and accept the longer day.",
+    "water": "None. These are snow-and-rock bivouacs — carry water up or melt snow, and assume there is nothing to find.",
+    "permit": "Still inside the Challenger cross-country zone and still needs a wilderness permit with that night assigned to it. On the glacier the surface rule takes care of itself, but human waste must be carried out in a blue bag; there is no burying it here. No fires. Party limit 6.",
+    "capacity": "One party, often on a levelled snow platform or a single gravel ledge"
+   }
+  ],
+  "itinerary": null,
+  "waypoints": [
+   {
+    "name": "Hannegan Pass Trailhead",
+    "type": "Trailhead",
+    "elev": 3100
+   },
+   {
+    "name": "Brush Creek crossing",
+    "type": "Water",
+    "elev": 4556
+   },
+   {
+    "name": "Hannegan Pass",
+    "type": "Junction",
+    "elev": 5072
+   },
+   {
+    "name": "Whatcom Pass",
+    "type": "Junction",
+    "elev": 5239
+   },
+   {
+    "name": "Whatcom Camp, Brush Creek below Whatcom Pass",
+    "type": "Campsite",
+    "elev": 5286
+   },
+   {
+    "name": "Perfect Pass",
+    "type": "Junction",
+    "elev": 6278
+   },
+   {
+    "name": "Crooked Thumb Peak",
+    "type": "Summit",
+    "elev": 8129
+   }
+  ],
+  "peak": "Crooked Thumb Peak",
+  "area_type": "peak"
+ },
+ {
+  "id": "wa_davis_peak_nc_north_face_burdo_cairns",
+  "name": "North Face",
+  "area_id": "wa_davis_peak_nc",
+  "discipline": "alpine",
+  "grade": "5.10",
+  "pitches": 7,
+  "gain_ft": null,
+  "dist_km": null,
+  "high_point_ft": 7054,
+  "season": null,
+  "approach": "Approached through Davis Peak's northern cirque from the Stetattle Creek side, north of the peak; no detailed trailhead-to-base mileage is recorded.",
+  "descent": null,
+  "bivy": null,
+  "itinerary": null,
+  "waypoints": [],
+  "peak": "Davis Peak",
+  "area_type": "peak"
+ },
+ {
+  "id": "wa_east_mcmillan_spire_northeast_buttress",
+  "name": "Northeast Buttress (\"Come Over to the Dark Side\")",
+  "area_id": "wa_east_mcmillan_spire",
+  "discipline": "alpine",
+  "grade": "5.10-",
+  "pitches": 25,
+  "gain_ft": null,
+  "dist_km": null,
+  "high_point_ft": 7992,
+  "season": "Aug-Sep",
+  "approach": "A roughly two-day approach traveling via the remnants of the McMillan Creek glaciers to reach the base of the peak's north side/northeast buttress; on the day of the climb the party hiked about 3.5 hours from a high camp to the base of the wall.",
+  "descent": "Rappel the route (the upper north face, then the north buttress, then the northeast buttress) back to the base.",
+  "bivy": null,
+  "itinerary": null,
+  "waypoints": [
+   {
+    "name": "East McMillan Spire summit",
+    "type": "Summit",
+    "elev": 7992
+   }
+  ],
+  "peak": "East McMillan Spire",
+  "area_type": "peak"
+ },
+ {
+  "id": "wa_fortress_mountain_northeast_face",
+  "name": "Northeast Face",
+  "area_id": "wa_fortress_mountain",
+  "discipline": "alpine",
+  "grade": "5.6",
+  "pitches": null,
+  "gain_ft": null,
+  "dist_km": null,
+  "high_point_ft": 8679,
+  "season": "Jul-Sep",
+  "approach": "Same Trinity Trailhead approach as the East Ridge (via Buck Creek/Chiwawa River Trails); this line is normally climbed or descended as part of a link-up with the East Ridge or Southwest Slope rather than approached independently.",
+  "descent": "Usually descended toward the Chiwawa Mountain connecting ridge as part of a two-peak link-up, or reversed back over the Fortress summit.",
+  "bivy": [
+   {
+    "elev": 6300,
+    "name": "Chiwawa Basin bench",
+    "role": "main",
+    "type": "camp",
+    "notes": "A flat heather bench in the upper Chiwawa basin between Fortress and Chiwawa, reached by a short climb from the end of the Chiwawa River trail. The usual high camp for the east side of Fortress and for Chiwawa.",
+    "water": "Small streams on the bench; they can run low late in the season",
+    "permit": "Free self-issue Glacier Peak Wilderness permit",
+    "capacity": "Several tent sites, some with rock windbreaks"
+   },
+   {
+    "elev": 2800,
+    "name": "Phelps Creek Campground and the Chiwawa River road campgrounds",
+    "role": "route",
+    "type": "camp",
+    "notes": "These are staging camps, not climbing camps: the point of them is that the drive up the Chiwawa River road is around twenty-three miles from the Lake Wenatchee end, the last twelve are rough gravel and dirt genuinely unsuited to low clearance vehicles, and doing that at the end of a long drive from the west side is how parties end up starting the walk in tired and late. Phelps Creek Campground sits near the confluence of Phelps Creek and the Chiwawa a short distance below the Phelps Creek trailhead, and the Trinity trailhead at about 2,800 ft — the start of the Buck Creek trail toward Buck Creek Pass and Fortress Mountain — is a mile or so away, so one night here stages either objective. The road is the fragile part of this whole side of the zone. Storm damage has closed it above Atkinson Flat under a multi-year order, and a 2026 fire closure covered the Chiwawa River road and the Phelps Creek spur on top of that, so check whether you can drive to the trailhead at all before planning around it. When the road is shut above Atkinson Flat the lower campgrounds are still a reasonable base but the trailhead becomes a long walk or ride further on.",
+    "water": "The Chiwawa River is right there but these are primitive campgrounds — treat water and expect no potable supply or trash service",
+    "permit": "Small nightly fee at the developed sites, first come first served with no reservations, so arrive early on a summer Friday. A Northwest Forest Pass or America the Beautiful pass covers trailhead parking the next morning, and the free self-issue wilderness permit is picked up at the trailhead itself. Fire restrictions bite here in late summer and often ban all open flame including in the fire rings.",
+    "capacity": "Phelps Creek Campground has roughly seven tent sites plus half a dozen equestrian sites; Atkinson Flat, Schaefer Creek, Rock Creek and the other small forest campgrounds strung along the road below it each hold a handful more"
+   }
+  ],
+  "itinerary": null,
+  "waypoints": [
+   {
+    "name": "Trinity Trailhead (Buck Creek Trailhead)",
+    "type": "Trailhead",
+    "elev": 2772
+   },
+   {
+    "name": "Fortress Mountain Summit",
+    "type": "Summit",
+    "elev": 8679
+   }
+  ],
+  "peak": "Fortress Mountain",
+  "area_type": "peak"
+ },
+ {
+  "id": "wa_hozomeen_mountain_north_peak_south_ridge",
+  "name": "South Ridge (North Peak)",
+  "area_id": "wa_hozomeen_mountain",
+  "discipline": "scrambling",
+  "grade": "Class 4",
+  "pitches": null,
+  "gain_ft": null,
+  "dist_km": null,
+  "high_point_ft": 8071,
+  "season": "Jun-Sep",
+  "approach": null,
+  "descent": null,
+  "bivy": [
+   {
+    "elev": 4900,
+    "name": "Improvised bivouacs in the western basin between the peaks",
+    "role": "main",
+    "type": "bivy",
+    "notes": "The mountain is two rock summits above a basin, and the approach to that basin from the lake is the crux of the whole trip for most parties: a slow grind through blowdown and heavy brush with no path, on which fifteen miles and seven thousand feet of gain and loss is a fair reckoning for the round trip. Strong parties do go car to car, and parties often describe regretting that decision around hour twelve. Sleeping up here shortens the summit day considerably, at the cost of hauling water up a slope with almost none on it and sleeping on ground that is not flat. There is a second line from the road along the cleared border swath running east from near the ranger station, which is shorter and is described by people who have used it as more unpleasant than the lake approach rather than less. Both are late-summer propositions: snow lingers in the basin, and the brush is at its worst when it is wet.",
+    "water": "This is the hard part and worth planning around. The one stream in the basin runs in a channel that deepens into a slot as you climb, and parties have found it reachable at a single awkward spot at around four thousand feet and nowhere above that. Fill everything you are carrying when you can get to water, because you may not get another chance before the ground goes flat enough to sleep on.",
+    "permit": "National Park Service backcountry permit for the Hozomeen cross-country zone, which allows a maximum party of six and a maximum of three parties on any night. It is a walk-up zone rather than a reservable one, so the permit is collected in person, in practice at Marblemount. Cross-country camping legally begins a mile from any designated camp and half a mile from any trail, out of sight of both, and only on snow, rock or bare ground — never in meadow and never within a hundred feet of water. No fires in the zone. Waste goes in a cathole, or is carried out where the ground will not take one.",
+    "capacity": "No established site and no site count. Parties have reported scratching out a few rough platforms among scattered boulders on a steep forested slope, enough for one small party sleeping poorly. There is no camp here — this is where people stop because they have run out of daylight, not somewhere anyone chose."
+   },
+   {
+    "elev": 1650,
+    "name": "Hozomeen Campground, north end of Ross Lake",
+    "role": "main",
+    "type": "camp",
+    "notes": "This is the roadhead for every route on the mountain and the only developed camping anywhere near it. It sits in deep forest on flat ground by the lake, with vault toilets, boat ramps and no trash service, so everything you bring comes out with you. There is no cell coverage and the nearest supplies are hours away in either country. The season runs roughly late May into October, bounded at the front by snow on the gravel road and at the back by the road being left unmaintained. The other way in is by water: a boat from the resort at the south end will run parties the length of the lake, taking up to six people with packs on a chartered trip that is booked and paid in advance. That is expensive and inflexible but it does not involve a border at all, which through several recent seasons has made it the only way anybody got here. In summer 2026 a lightning fire on the border grew to many thousands of acres immediately east of the mountain, crossed into Canada, and closed the entire Hozomeen area including the docks, the campground and the lake north of Silver Creek. Treat access to this peak as something to verify from scratch each season rather than as a fixed thing.",
+    "water": "Seasonal potable water is provided while the campground is staffed. Outside that window, and any time the system is off, the lake and the creeks are the supply and need treating.",
+    "permit": "National Park Service, Ross Lake NRA. No fee and no reservation for the campground itself, and no backcountry permit to sleep here — but one is required the moment you walk in to the lake camps or up onto the mountain. The border is the complication. The only road access is a long gravel road running south from the Trans-Canada Highway near Hope, British Columbia, and it crosses into the United States at a point with no staffed port of entry. The gate on the American side has been closed to vehicle traffic from Canada for several years, and at times foot traffic across the line has been prohibited as well. A party driving down from Canada is entering the United States, so it needs the documents for that regardless of whether anyone is there to check; the practical position has been that you cannot legally drive through, and that a normal port of entry plus the boat is the way in. Confirm the current gate status with the park and with the border agency before committing to the road, because the answer has changed more than once.",
+    "capacity": "Around 75 sites across two loops, all first-come and first-served with no reservations taken. The Upper Loop has been closed for hazard trees, which removes a good share of that number and also happens to be where the lake trail starts, so check what is actually open before counting on a spot."
+   },
+   {
+    "elev": 2827,
+    "name": "Hozomeen Lake camp",
+    "role": "route",
+    "type": "camp",
+    "notes": "Something under four miles in from the campground's upper loop on an established trail, this is the obvious first night for anyone who wants to start the climb from higher than the road. It is a genuinely pleasant forested lake sitting directly beneath the mountain, and it is the better of the two lake camps by some distance. The climbing route leaves from here: parties work around the eastern shore and then angle up into the basin between the peaks, and that is where the day stops being a hike. Expect heavy deadfall and thick brush from the moment you leave the trail. The loon closure and the fire closures between them have shut this camp for large parts of recent seasons, so confirm it is open before building an itinerary on it.",
+    "water": "The lake is right there and is the supply. It is standing water in a shallow forested basin, so filter or treat rather than drinking it as found.",
+    "permit": "National Park Service backcountry permit required, obtained at the Marblemount wilderness office or through the park's issuing system. A seasonal closure applies: the lake is closed to entry and to camping from the first of April through the end of May to protect nesting loons, which rules out the early-season window entirely. Fires and food storage are governed by the permit; a canister is the sensible choice here whatever the minimum requirement says.",
+    "capacity": "A small designated backcountry camp at the lake, a few sites with a privy and food storage. Sites are assigned by night on the permit, so a walk-up can be turned away if the nights you want are taken."
+   }
+  ],
+  "itinerary": null,
+  "waypoints": [
+   {
+    "name": "Hozomeen Campground, north end of Ross Lake",
+    "type": "Campsite",
+    "elev": 1650
+   },
+   {
+    "name": "Hozomeen Lake camp",
+    "type": "Campsite",
+    "elev": 2827
+   }
+  ],
+  "peak": "Hozomeen Mountain",
+  "area_type": "peak"
+ },
+ {
+  "id": "wa_iron_cap_mountain_northeast_shoulder",
+  "name": "North Ridge via Northeast Shoulder",
+  "area_id": "wa_iron_cap_mountain",
+  "discipline": "scrambling",
+  "grade": "Class 2-3",
+  "pitches": null,
+  "gain_ft": null,
+  "dist_km": null,
+  "high_point_ft": null,
+  "season": "Jul-Sep",
+  "approach": "Reached from the Tank Lakes side of the Alpine Lakes high route, via the Foss River trails, not from Chetwoot Lake.",
+  "descent": null,
+  "bivy": null,
+  "itinerary": null,
+  "waypoints": [],
+  "peak": "Iron Cap Mountain",
+  "area_type": "peak"
+ },
+ {
+  "id": "wa_mount_crowder_southwest_route",
+  "name": "Southwest Route",
+  "area_id": "wa_mount_crowder",
+  "discipline": "mountaineering",
+  "grade": "Class 4",
+  "pitches": null,
+  "gain_ft": null,
+  "dist_km": null,
+  "high_point_ft": 7082,
+  "season": "Jul-Sep",
+  "approach": "Crowder has no trail and no road anywhere near it, and the way in is from the north, down the west side of the Picket Range. From the Hannegan Pass Trailhead, walk over Hannegan Pass and down to the Chilliwack River, ford it, and climb onto Easy Ridge. Follow the ridge over Easy Peak, get around the Imperfect Impasse gap (in most years by dropping well below it and climbing back up an exposed class 4 step) and carry on to Perfect Pass. From there keep heading south across the western slopes of the range, below Challenger, Crooked Thumb and Ghost Peak, to the west side of Phantom Peak, then continue south to the col between Phantom and Crowder, at a little over 6,000 ft, where the climb starts. Allow at least two days to reach the col.\n\nThe other way in comes from the west and is seldom used: the Baker River Trail, then the high route along Pioneer Ridge, whose southeast end sits at the bottom of Crowder's easy southwest slopes.",
+  "descent": "Descend via the standard descent route, retracing the ascent when possible. Be aware of loose rock and snow bridge hazards. Maintain group cohesion on exposed sections.",
+  "bivy": [
+   {
+    "name": "Easy Ridge bivouac ground below Easy Peak",
+    "role": "main",
+    "type": "bivy",
+    "notes": "Open ground above 6,000 ft on the crest of Easy Ridge, near Easy Peak (6,615 ft), where an old fire lookout once stood. It is the end of the first long day from the trailhead: over Hannegan Pass, down to the Chilliwack River, across it and up the ridge. The next morning starts with the detour around the Imperfect Impasse, a drop of several hundred feet and a climb back up, before Perfect Pass.",
+    "water": "Seasonal tarns scattered along the crest. Some hold water and some are dry in the same summer, which makes this the least predictable water on the route. Fill at the Chilliwack River before starting up.",
+    "permit": "Park wilderness permit required. This side is served by the wilderness information centres on both the Mount Baker Highway and at Marblemount, and the ranger will decide whether your night goes onto a designated camp or a cross-country zone — ask rather than assume, because the answer changes what the rest of the itinerary can say. Walk-up. Fires prohibited. Approved food storage required, and above treeline there is nothing to hang from, so a canister is the practical answer.",
+    "capacity": "Small — one or two parties on the ridge crest; party limit 6"
+   },
+   {
+    "elev": 6300,
+    "name": "Perfect Pass, Perfect Pass cross-country zone",
+    "role": "route",
+    "type": "bivy",
+    "notes": "The classic high camp for Mount Challenger and for Whatcom Peak, on benches at the western edge of the Challenger Glacier. It is reached either over Whatcom Pass from the Brush Creek side or along Easy Ridge, the latter demanding a substantial descent and reclimb to get around the gap short of the pass. Reported elevations vary between roughly 6,000 and 6,300 ft depending on the account, and there are no facilities of any kind.",
+    "water": "Snowmelt streams and tarns; dependable while snow lingers, marginal to absent late season",
+    "permit": "Wilderness permit for the Perfect Pass cross-country zone. Walk-up only and capped at a single party per night. It cannot be booked ahead, so the permit is won or lost at the counter — this quota is usually the binding constraint on a Challenger trip, not the terrain.",
+    "capacity": "Party limit 6, and only ONE party per night in the whole zone — the tightest quota in this part of the park"
+   },
+   {
+    "name": "Crooked Thumb Glacier moraine camp",
+    "role": "main",
+    "type": "bivy",
+    "notes": "A moraine camp at the southern edge of the Crooked Thumb Glacier, below Ghost Peak, on the west side of the range. It is reached from Perfect Pass across the Challenger Glacier, and it is the last camp on record before the Phantom-Crowder col, which lies further south along the west side of Phantom Peak. Fully exposed to weather.",
+    "water": "Snowmelt and glacier melt only",
+    "permit": "North Cascades NP backcountry permit (cross-country zone)",
+    "capacity": "A few tents on a narrow moraine"
+   }
+  ],
+  "itinerary": null,
+  "waypoints": [
+   {
+    "name": "Hannegan Pass Trailhead",
+    "type": "Trailhead",
+    "elev": 3100
+   },
+   {
+    "name": "Hannegan Pass",
+    "type": "Junction",
+    "elev": 5100
+   },
+   {
+    "name": "Chilliwack River ford / Easy Ridge climbers' path",
+    "type": "Hazard",
+    "elev": 2800
+   },
+   {
+    "name": "Perfect Pass",
+    "type": "Campsite",
+    "elev": 6278
+   },
+   {
+    "name": "Col between Phantom Peak and Crowder",
+    "type": "Junction",
+    "elev": null
+   },
+   {
+    "name": "NE Ridge chasm (avoid)",
+    "type": "Hazard",
+    "elev": null
+   },
+   {
+    "name": "Mount Crowder",
+    "type": "Summit",
+    "elev": 7082
+   }
+  ],
+  "peak": "Mount Crowder",
+  "area_type": "peak"
+ },
+ {
+  "id": "wa_mount_lincoln_harniss_chute",
+  "name": "Harniss Chute",
+  "area_id": "wa_mount_lincoln",
+  "discipline": "scrambling",
+  "grade": "Class 3",
+  "pitches": null,
+  "gain_ft": null,
+  "dist_km": null,
+  "high_point_ft": 5868,
+  "season": null,
+  "approach": "Same approach as the standard route: Staircase trailhead to Flapjack Lakes via the North Fork Skokomish and Flapjack Lakes Trails, then off-trail toward Mount Lincoln.",
+  "descent": "The way off is the standard scramble, reversed back to Flapjack Lakes - the same approach this variation uses to reach the peak. No turn-by-turn description of the descent exists, so treat the line down as class 3 route-finding rather than a path to follow. In the chute itself, keep the party close together and out from under each other: confined gully terrain concentrates rockfall, and a party strung out in it is above itself.",
+  "bivy": [
+   {
+    "elev": 3900,
+    "name": "Flapjack Lakes — the base camp for the whole Sawtooth Ridge",
+    "role": "main",
+    "type": "camp",
+    "notes": "This is the single most important site in the zone and everything on Sawtooth Ridge runs off it. It is about 7.5 miles and 3,100 ft from the Staircase trailhead, up the North Fork Skokomish valley to the junction near Spike Camp at roughly 3.4 miles, then right and steeply up beside Madeline Creek. Most parties take five to seven hours in with climbing gear. From camp, the trail continues east toward Gladys Divide, gaining about 1,100 ft in a mile to a pass around 5,000 ft directly beneath Mount Cruiser. Cruiser's standard line breaks off before the divide, up a steep snow couloir to Needle Pass and then along the crest — an ice axe and crampons are wanted there most of the season. The Fin and The Horn are reached by cutting east short of the divide to the narrow chute at Sawtooth Pass, and the spires south toward Mount Lincoln go by way of the Harniss Chute. Summit days are four to five hours up from the lakes for Cruiser and long full days for the traverse peaks, so parties routinely book two nights and climb on the middle day. There is no legal higher camp. Gladys Divide, Needle Pass and Sawtooth Pass are all inside the Flapjack quota area and none is a designated site, so the temptation to carry a bivy up to the divide and shorten the summit day is not an option here — you sleep at the lakes and you accept the 1,100 ft of morning warm-up. Camping lower costs you more: the valley camps below the junction add three or more miles and 2,000 ft to every summit day and effectively rule out a one-night trip. Season is late June through September. Snow lingers in the couloirs and on the divide into July, which is what most parties actually want for Cruiser, and by late September the couloirs turn to loose rock. There is a privy at the lakes and a bear wire, but bring the canister regardless.",
+    "water": "Reliable all season at the lakes themselves. The climb up is the dry part — there is little water between the valley and the waterfall near the Black and White Lakes junction, roughly half a mile below the lakes, so fill at Madeline or Donahue Creek on the way through rather than counting on anything in the switchbacks.",
+    "permit": "A wilderness permit is required and Flapjack Lakes is a named quota area, limited year round, so this is the one booking in the zone that will actually stop your trip. Permits are issued only through the federal recreation booking site; the online reservation window for this camp runs mid-June to mid-October, and the whole summer season releases in one drop on April 15 at 7 a.m. Pacific. No sites are held as same-day walk-ups — the old half-reserved, half-first-come arrangement is gone, and availability now updates live, so cancellations are the only late route in. For dates outside the online window you have to arrange it directly with the park's wilderness information office. Fees are a non-refundable per-permit reservation charge plus a per-person nightly charge for anyone sixteen and over, with an annual wilderness pass available that covers the nightly half. Parties of seven or more must take the group site. Bear canisters are required. Campfires are prohibited — the lakes are above the 3,500 ft parkwide fire line. Camping is in designated sites only. Stock is not allowed on the Flapjack trail, and dogs are not allowed on park wilderness trails. A park entrance pass is needed for the drive in, and the access road up Lake Cushman is unpaved for its last stretch and closes for snow and weather. Weekday permits here are usually gettable; summer weekends are not.",
+    "capacity": "A modest number of designated individual sites scattered around the two lakes, plus one designated group site for parties of seven to twelve. The park does not publish a fixed site count and the honest answer is that whatever the booking system shows as available for your dates IS the count; there is no dispersed camping to fall back on. Maximum party size is twelve."
+   },
+   {
+    "elev": 4500,
+    "name": "Black and White Lakes — the fallback when Flapjack is booked out",
+    "role": "main",
+    "type": "camp",
+    "notes": "Reached by branching left across Donahue Creek about half a mile below Flapjack Lakes and climbing further, which puts it around 4,500 ft and some 3,800 ft above the trailhead. It is a fine camp with a big outlook and it is the practical answer when the Flapjack quota is gone, but be clear about what it costs you: it is on the wrong side of the ridge line for the Sawtooth spires, and every summit day has to drop back to the Flapjack trail and then reclimb toward Gladys Divide. Budget an extra hour and a few hundred feet each way against a Flapjack start. Its real strength is as a first night on a longer loop, or as a place to sit out an afternoon when you have come in late and want to be moving early. Snow-free later than the lakes below it, so early-season parties should expect drifts here into July.",
+    "water": "The tarns and a small creek beside the sites, but this is the weak point — these are shallow high tarns and they can drop badly or go stagnant by late summer. Treat everything, and in a dry September carry water up or plan to drop back toward Flapjack for it.",
+    "permit": "A wilderness permit is required. This sits inside the same high-demand Staircase country but is not the Flapjack quota area itself, so it is usually available when the lakes are not — check both when you book. Bear canisters are required, campfires are prohibited at this elevation, and the same reservation site, fees and party-size rules apply as for Flapjack Lakes.",
+    "capacity": "A handful of small sites on the lower side of the tarns, with easy access to a small creek and the water. Rarely busy."
+   }
+  ],
+  "itinerary": null,
+  "waypoints": [
+   {
+    "name": "Flapjack Lakes — the base camp for the whole Sawtooth Ridge",
+    "type": "Campsite",
+    "elev": 3900
+   },
+   {
+    "name": "Mount Lincoln Summit",
+    "type": "Summit",
+    "elev": 5868
+   }
+  ],
+  "peak": "Mount Lincoln",
+  "area_type": "peak"
+ }
+]

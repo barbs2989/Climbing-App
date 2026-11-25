@@ -100,6 +100,20 @@ Part of the guard notes — see [README.md](README.md) for the full index.
   bare `setFixOpenSection("key")`, because that is a pencil that skips the lock. The first run after
   the rewrite reported "found only 0 edit pencil(s) — the scan broke", which is the fail-closed
   shape working as intended.
+- **`check:facts-pencil-open`** (2026-11-11) holds that a pencil covering SEVERAL fields is not one
+  field's pencil. The ROUTE FACTS card pencil was `openFix("grade")`, a crag route's grade is always
+  HIGH (0406), so the card opened the Flag sheet on every crag route while its Location and Pitches
+  were empty, and `HEAD_KEYS` put the grade's *High · locked* on the card heading. It checks
+  `lib/firstEditable.js` with 8 behaviour cases (empty before medium, never a locked or unknown key
+  while an open one exists, all-locked returns the first key). It also checks the source: the card
+  pencil goes through `factsPencilKey`, `CragFactSection` through `firstEditable`, `HEAD_KEYS` has no
+  ROUTE FACTS / TECHNICAL STATS, and TechStats draws the grade's own `ConfChip`. 4 injections put each
+  pre-fix shape back and must be caught. **Cannot see:** whether the editor actually scrolls to the
+  chosen field (verified by hand on a sport route, Coexistence 5.12b). Also out of reach: a pencil
+  added elsewhere that covers several fields but passes one key; route it through `firstEditable` too.
+  **Non-finding, measured 2026-11-11:** `route_field_confidence` had no rows, so no manual "high"
+  override locks an empty field, even though `_route_field_level_for` reads the override before the
+  empty test.
 - **`check:editable-coverage`** asserts that every `routes` column in the schema snapshot either has
   an editor (a `contribution_fields` row names it as a `column_name`) or is declared in the script's
   `NEVER` map with a reason a reviewer can check (identity, derived numbers, owner-curated lists,
@@ -133,10 +147,42 @@ Part of the guard notes — see [README.md](README.md) for the full index.
   2026-10-16: `commaOf` joined `linesOf` there — the comma split `altNames`/`variations` use on
   both paths (0327). The trap: the guard passed locally in a batch whose exit code was `tail`'s,
   and only CI's build job surfaced the FAIL. A guard piped to `tail -1` reports nothing.
+- **`check:edit-scope` (2026-11-18): the edit sheet offers, per discipline, only what that
+  discipline's PAGE draws.** The owner opened a section pencil on a trad route and got Trip shape,
+  Published times, Camping & bivy and a full waypoint editor. Measured that day (every chip × all 76
+  fields, readers traced): the sheet's inline `DROP` map and the page's section gates had been written
+  apart, and a single-pitch sport/trad route was offered ~15 fields its page never shows, while ~20
+  rendered values were not editable on their own discipline. The rule now lives in ONE module,
+  `lib/fieldScope.js` (`FIELD_SCOPE`, `fieldScope(k, ctx)`, `scopeCtx(route, cat, pitchCount)`), read by
+  the sheet's `okField`, the DESCENT gate (RoutePlanTab), the crag "Not on file yet" list and Descent fact
+  (TechStats) and the facts-card pencil (RouteDetail). The guard checks (1) every FIELDS key has exactly
+  one rule and no rule is stale — `fieldScope()` answers **false** for an unknown key, so a field added to
+  FIELDS without a rule silently vanishes everywhere until this fails; (2) fieldScope's CRAG list is
+  CRAG_CATS; (3) those readers still call it (regex anchors); (4) page facts that are gates in the page's
+  own code — no Plan-tab-only field on a crag, crag fact rows only on crags, boulder rows only on
+  boulders, DESCENT on multi-pitch sport/trad and a crag line that stores a descent, but not single-pitch
+  ones; the sections every page draws offered everywhere; (5) 7 injection cases. Section 3b (third PR)
+  anchors the page side: the TRIP SHAPE row gated on the same rule, the PUBLISHED TIMES / CLIMATE & SEASON /
+  PARTNER REQUIREMENTS pencils (the last is App's, so it reads ClimbMatch.jsx too), and the header cells drawn
+  only with a value where dist/gain are not editable. Fourth PR: add-a-climb's `sf()` must gate on fieldScope per
+  climb TYPE (anchor), and the merged fields (proTips→beta, bestSeason/condWindow→seasonalGuidance,
+  rappelCountNote→rappelDetail) are offered only where stored — page facts plus 2 injection cases. **What it cannot see:**
+  section 4 is a hand-written list of page facts, not derived from the JSX, so a NEW section gate (or a
+  section moved onto a crag page) is invisible to it until a fact is added here; and it reads gates by
+  category, not the rendered page — the browser check is to open each discipline's sheet and compare.
+  Single-pitch crag lines that already STORE a descent/rappel/pitch value keep those fields
+  (`scopeCtx().has`): the page still shows the value, so dropping its editor would make it uncorrectable.
+  Crag parking (2026-11-18, second PR): the crag parking card's *Add* buttons open the CRAG's area editor at
+  `parking_pin`, so a crag route is offered no route `waypoints` / `approachLogistics` — except where its
+  crag cannot be edited (`cragAreaEditable`, the same test RouteDetail's `areaFactEdit` uses) or the route
+  stores its own pin / directions (the card shows a route pin ahead of the crag's, and its pencil opens
+  that one). Measured: ~99% of WA crag-discipline routes sit on an area of type `crag`; the rest
+  (area_type null) keep the route editor. The anchors in section 3 hold the card, the pencil and the
+  prop threading through RouteDetail → RouteOverviewTab → RoutePlanTab.
 - **`check:add-route-fields` §3b (2026-10-22): the add form is held LEVEL with the edit sheet, per
-  discipline.** It evaluates RouteDetail's `DROP` literal (via `Function`, with the same
-  `cat`/`roped`/`alpiney`/`boulder` inputs SuggestFix computes) for each of the ten types the add form
-  offers, and requires each kept key to be in `FIELDS[disc] ∪ FIELDS[sub]` (renamed through `AS`:
+  discipline.** Since 2026-11-18 it imports `lib/fieldScope.js` (it used to evaluate SuggestFix's inline
+  `DROP` literal via `Function`) and holds each of the ten types the add form offers to the sheet's
+  MULTI-pitch offer, and requires each kept key to be in `FIELDS[disc] ∪ FIELDS[sub]` (renamed through `AS`:
   pitchCount→pitches, length→height, descentText→descent), or be a gear STEPPER in `GSEC`, or be named
   in `NOT_AT_CREATION` / `NOT_FOR` with a reason. Stale exemptions fail. **What it cannot see:** that a
   form key REACHES its column — rule 4 of `check:approve-route-columns` holds that — nor whether the
@@ -226,6 +272,15 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     assertion cannot see this class at all.
   - **Fails closed:** a card that expands to no new rows, fewer than 5 cards, or a Fifty Classics
     list without both Liberty rows means nothing was measured.
+  - **A list is a PAGE, and it closes with Back (2026-11-23).** #3662 ("Lists open as pages") moved
+    each list out of the panel into `ListPage`, a dialog portalled beside it, and tapping the card's
+    header a second time stopped folding anything. This section read rows inside the panel and
+    "closed" a list by tapping its header again, so from that merge it failed 28 times on main with
+    nothing wrong on screen: half because the rows were in a dialog it did not read, half because
+    the previous list was still open. It now reads rows from every open dialog, closes a list with
+    its page's Back, and fails if a list is still open before the next one is measured. It runs in
+    `render-guards.yml` only (no PR trigger), which is why the PR that changed the layout never saw
+    it. Proven again: with the row selector made unmatchable it fails 26 times (13 lists × 2 widths).
   - **Proven:** with the row put back to one-line no-wrap columns, it failed with 42 findings,
     among them `"Liberty Bell Mountain · Washington" overlaps "Alpine · 5.11a C2"`; on main it
     passes on 13 lists at both widths.
@@ -242,6 +297,20 @@ Part of the guard notes — see [README.md](README.md) for the full index.
   Proved by re-pointing one id at a dead row: co14 and co_cent each dropped to "1 missing" naming it.
   `also` is the fix for containers: list ONLY the peak's own faces, never a neighbouring formation
   filed under it (Eldorado's Dorado Needle, McClellan's Nightmare Needles must not tick the peak).
+- **`check:list-summit-audit`** (2026-11-14): a peak list ticks only from a route that REACHES THE
+  SUMMIT. The 2026-11-14 census found 1,496 routes able to tick a list peak, including a V1 boulder
+  filed under Castleton Tower, crags on Pikes Peak and Mt Evans attached through `also`, and gulch ice
+  on Quandary and Lindsey. Every one got a reviewed verdict with a reason
+  (`research-data/list-summit-audit/audit.json`); `lib/listSummit.js` is GENERATED from it.
+  The guard fails when a roster peak or `also` area was never audited (so **a new list or peak cannot
+  ship unreviewed**), when an area the audit detached is attached again, when the generated deny map
+  drifts from the audit, and when the rule stops working on the Castleton boulder.
+  **Adding a list or peaks:** add the roster to `lib/lists.js`, run `npm run audit:list-summit-routes`
+  (needs a DB slot), write a `verdicts-<name>.json` for the new routes beside the others (a later
+  file wins per id), then `node scripts/build-list-summit-audit.mjs`. **New routes** on an audited
+  peak are invisible to a static guard: `npm run audit:list-summit-routes -- --check` lists them.
+  Until reviewed they count, except bouldering/top-rope, which `reachesSummit` refuses by discipline.
+  An `also` area is detached only when the reviewer said so AND none of its routes summit.
 - **`check:correction-readers`** (was `check:rappel-readers`) enforces one sentence, now for
   **every** contributable column rather than rappels alone: **where a contribute-form field
   competes with an enrichment column, the reader must prefer the CLIMBERS' value once
@@ -339,6 +408,17 @@ Part of the guard notes — see [README.md](README.md) for the full index.
   every **other** climber's row exists only as `dbReports`. Both are opened into the same
   components (`ReportStats`, `TripReport`). So a column one hydration drops is a fact on
   screen for its author and for nobody else. Gated by `npm run build`.
+  **It assumed the rows arrive whole, and on 2026-11-23 they did not.** 0501 (#3736) narrowed
+  `useUserLogs` to five columns for the résumé; App hydrated your OWN logs from the same hook
+  (`myLogsQ`), so every column this guard proved "mapped back" arrived `undefined`, and it stayed
+  green. Found by a log-form audit that logged real climbs and read them back as the author: the
+  friend saw the conditions, the author did not. The guard now finds the hook `myLogsQ=use…(uid)`
+  calls, reads its `.select("…")` in `lib/db.js` and fails unless it is `*` or names every column
+  the hydration reads (own logs: `useMyLogs`); and `profLogsQ` (another climber's Activity) must
+  select `TRIP_REPORT_COLS` (`useClimberReports`). Injection-tested: pointing `myLogsQ` back at
+  `useUserLogs` fails naming 41 columns; pointing `profLogsQ` at it fails. Trap met: the first draft
+  ended a hook's body at the next `export`, ran on into the un-exported `fetchRouteTripReports`, found
+  `TRIP_REPORT_COLS` there and passed the broken case; the body now ends at any top-level declaration.
   - It has now caught that in **both directions**. #843: `car_to_car_minutes` was read by
     RouteDetail and not by ClimbMatch, so your car-to-car time showed while you typed (the
     form computes it), vanished on reload, and stayed visible to everyone else. #861: the
@@ -374,6 +454,12 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     in `RouteDetail.jsx` and the first hit is unrelated, so a bare `.replace()` edited the
     wrong line and the run passed. It reported *"edit landed: false"* rather than *"guard
     missed"* — **prove the injection landed before believing what the guard says about it.**
+  **A starless climb is still a climb (2026-11-18).** The hydration split your logs into `logs` and
+  `condReports` on `stars == null`, but the rating is optional, so a starless Summit (1 of 14 live rows)
+  became a conditions report. `check:log` now runs `isScoutRow` (`lib/tripReportRow.js`: tick
+  `Conditions`, or no tick and no stars) over 5 rows, and fails if `scoutOnly:row.stars==null` or
+  `if(row.stars==null)dbConds.push` comes back, or if fewer than 3 places call `isScoutRow(row)`.
+  Injected both reverts: each fails naming itself.
 - **`check:suggestion-discs`** asserts that Suggested climbs covers **every** discipline a
   climber logs, and that a climb they merely **looked at** is never described as one they have
   climbed. `suggestionProfile` used to end `Object.keys(byDisc).sort(by count)[0]` — it kept the
@@ -402,14 +488,63 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     logged; that is deliberate, not a leak.
   - Fails **closed**: a truncated source, a renamed function (`ANCHOR LOST`), or a missing
     `SUGGEST_DISC_MAX` are reported as a broken scan, never as a clean app.
-  - What it does **not** prove: that the ranked routes are *good*, or that the section is
-    reachable on screen. It tests which disciplines survive and which query fetches them.
-    Grade/gain scoring is stubbed — unchanged by this work and drags in the whole grade scale.
+  - What it does **not** prove: that the section is reachable on screen, or that an area has
+    anything good to rank. Section 1 still stubs the grade scale.
+  - **Section 1b runs the REAL ranking (2026-11-19)**, the whole block from `function gradeLabel(` to
+    `const TRIP={` with `lib/grade.js`, because the stub hid three faults an audit on live rows
+    found: the pool every slot shared was the area's first 120 climbs BY NAME (on Joshua Tree's
+    8,238, names before "Ai"); `rankSimilarRoutes` took the five nearest grades WHATEVER the
+    distance (a 5.7 sport climber at Index got 5.10a and 5.10c, a 5.6 alpine climber on Mount
+    Stuart 5.10d and 5.11-); and `routeGradeVal` was an exact `indexOf`, so "5.10b/c" (about 1
+    climb in 12 of a pool) scored as unknown. It pins the window (`suggestWindow`), the classic
+    tie-break, the nearest-listed-grade lookup, the stated-grade slots, and that
+    `suggestSlotQuery`'s range COVERS every grade the ranking keeps.
+  - **That last check failed on its first run, on real code**: the range was read off the window's
+    two end grades, and the YDS list is not in number order (5.10d is 10.9, the 5.10+ after it
+    10.75), so a 5.10a climber's pool never fetched a 5.10d. The range is now the min and max over
+    every grade in the window. Do not simplify it back to the ends.
+  - **Section 2 was inverted, deliberately.** It pinned the pool as discipline-BLIND (the 2026-09
+    fix for a pool filtered to the one busiest discipline). The rule both bugs break is *every slot
+    is fetched for*, so it now counts one `useSubtreeRoutes(… slotOpts(i))` per slot up to
+    `SUGGEST_DISC_MAX`, forbids `profile.disc`, and keeps only the FALLBACK pool discipline-blind.
+    Raising the cap without adding a hook fails here, which is the point: hooks cannot loop.
+  - **Protection and recency (2026-11-23).** Section 1b also pins that an X or R/X climb is never
+    ranked (and section 2 that `fresh` keeps it out of the fallback list), that an R sits behind an
+    unrated climb at the same grade, and that `suggestLogWeight` halves every two years so the centre
+    leans to recent climbs. Four injections, each caught by name: drop the X filter, drop the R
+    penalty, return a constant weight, and let X back into the fallback.
+  - **Alpine, ice and mixed profile grades (2026-11-23).** The profile already stored an ice and a mixed
+    grade (`climb_grades`, with aid); an earlier report in this work said it did not, from a grep for
+    grade COLUMNS only. They now feed slots, and `PROFILE_GRADES` gained an Alpine entry stored the same
+    way (no column, no migration). Section 2a pins the App memo, the Alpine entry and onboarding's
+    `GRADED_DISC`. Six stated grades against a cap of three is why `suggestDiscSlots` takes `here`: a
+    slot for a discipline the area lacks is dropped before the cap. Aid is deliberately not a slot: its
+    scale mixes A and C grades, which a single window cannot range over.
+  - **A logged slot with no centre borrows the profile's grade (2026-11-23).** Found by driving a real
+    signed-in fixture account on the LIVE site, which no guest walk or stubbed test could: its one log
+    is Mount Baker's North Ridge, alpine but graded on the ice scale, so the alpine slot's `gradeVal`
+    was null and the ranking, with no centre, kept every alpine climb (5.10d and 5.11- for a profile
+    saying Alpine 5.6). The guest walk had passed because the seed climber's logs all carry rock grades.
+  - Measured non-finding, do not re-derive: `catOf` files a trad climb on a peak as alpine, so the
+    alpine pool could miss a peak's trad lines. It is 4 routes of the 1,110 filed on the 535 busiest
+    peaks of six states; the catalog already stores peak climbs as alpine. A fix was built and removed.
+    A first count over fewer peaks read 0; it was not believed until a control with no discipline
+    filter returned rows from the same query.
+  - Measured non-finding: where an area has classics (Smith Rock, Red River Gorge, Joshua Tree,
+    Hyalite) the rows were already right, because classics lead every pool. The faults showed where
+    there are none (all of Washington) or the climber's grade is far from the area's.
 
 - **`check:route-tags`** pins the route page's chip row (`RouteTagRow`, the one consumer of
   `lib/routeTags.js`): every real `routes.lists` string reaches its list chip, every chip agrees
-  with `routeInList`, and — since the 2026-09-25 tag audit — the two DERIVED chips claim only what
-  the route's own text supports. Static, in `npm run build`.
+  with `routeInList`, and — since 2026-11-05 — **only lists are drawn**. Static, in `npm run build`.
+  - **Lists only (owner, 2026-11-05: "keep list membership tag and remove all the rest").** The
+    character chips from `routes.features` (Exposed, Sustained, Slab… and any unknown value such
+    as "Talus", which the fallback drew grey) and the two derived warnings (Glacier travel, Raptor
+    closure) are gone from `routeTags()`; `FEATURE_TAGS`, `crossesGlacier`, `raptorClosure` and
+    `derivedTags` were deleted with their guard cases. The guard's composition case now carries
+    all three kinds of input and asserts the two list chips come back and nothing else. The
+    `features` column stays (data intact, reversible); the *Style / character* editor in SuggestFix and the Add-route picker went with the chips the same day, since they wrote a field nobody could see.
+    The paragraphs below record the derived chips' audit as it stood when they were drawn.
   - **Both derived chips fired on a bare word, and both were mostly wrong.** Measured over all
     211,716 routes: *Glaciated* sat on 659 and **328 crossed no glacier** — 170 on a place name
     alone (Glacier Peak Wilderness, the town of Glacier on SR 542, Glacier Basin), 109 on one
@@ -483,3 +618,22 @@ Part of the guard notes — see [README.md](README.md) for the full index.
   drive controls means one of them is the un-captioned one). Static, in the build; same injection
   suite. Its first run caught a code COMMENT containing the `maps/dir` literal — the rule is on
   the file, not the markup, and a comment counts; the comment was reworded rather than the rule.
+  **Grade spread (2026-11-18).** The guard used to require the chart's "N of M list a 5.x grade ·
+  K on other scales" line (`total > shown`). The owner removed that line and asked for a
+  discipline picker, so the rule became: every scale the area has is a chip (`const scales`,
+  including a scale missing from `SYS_ORDER`), the picked chip says `aria-pressed`, and the
+  removed line may not come back. What it cannot see: climbs with NO parseable grade are on no
+  scale and no chip; the CLIMBS HERE headline is still where the whole count is read.
+  **One chip per discipline (2026-11-18, later the same day).** The owner asked for trad, sport
+  and top rope as their own chips, and every discipline the area has. The guard now also requires
+  `const discs` to keep a discipline missing from `DISC_ORDER` and the climbs filed with no type,
+  the picked discipline chip to say `aria-pressed`, the columns to be the picked discipline's rows
+  (`const mine`), the file to read `by_grade_disc` (0476), and no chip labelled "Rock". The scale
+  anchors above still hold: they now guard the picked discipline's second chip row. What it cannot
+  see: whether the database's answer carries `by_grade_disc` (a response without it falls back to
+  scale chips only), and a route's SECOND discipline, which the rollup does not count.
+  **A sliver is not a scale (2026-11-18).** A scale under `SCALE_MIN_SHARE` (5%) of the picked
+  discipline's graded climbs gets no chip, so those few climbs are on NO chart: a deliberate
+  exception to "no climb on a chart nobody can open", taken because the stray rows put a second
+  chip row on nearly every discipline. The guard holds the bar at 5% or lower and requires the share
+  to be measured against the picked discipline's own total.

@@ -1,0 +1,775 @@
+{
+ "wa_slow_children": {
+  "area": "wa_dwarf_tossing_to_narrow_arrow",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/105815743/slow-children",
+    "https://www.mountainproject.com/area/105790707/dwarf-tossing-to-narrow-arrow",
+    "https://rakkup.com/guidebook/index-rock-climbing/slow-children/c25320",
+    "https://rakkup.com/guidebook/index-rock-climbing/lower-town-wall/s10403",
+    "https://stephabegg.com/trip-reports/washington/index/",
+    "https://services5.arcgis.com/4LKAHwqnBooVDUlX/arcgis/rest/services/ParkBoundaries/FeatureServer/2/query?geometry=-121.57139,47.81847&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ParkName,Category&returnGeometry=false&f=json",
+    "https://gis.snoco.org/host/rest/services/Hosted/CADASTRAL__parcels/FeatureServer/0/query?geometry=-121.57139,47.81847&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ownername,parcel_id&returnGeometry=false&f=json",
+    "https://parks.wa.gov/news/2026/climbers-donate-index-town-wall-washington-state-parks"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "grade",
+    "value": "5.10d",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105815743/slow-children",
+      "fact": "5.10d YDS",
+      "retrieved_at": "2026-11-24"
+     },
+     {
+      "url": "https://rakkup.com/guidebook/index-rock-climbing/slow-children/c25320",
+      "fact": "5.10d, 4 stars, Trad",
+      "retrieved_at": "2026-11-24"
+     },
+     {
+      "url": "https://stephabegg.com/trip-reports/washington/index/",
+      "fact": "Slow Children 5.10d, Lower Town Wall",
+      "retrieved_at": "2026-11-24"
+     }
+    ]
+   },
+   {
+    "field": "discipline",
+    "value": "trad",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105815743/slow-children",
+      "fact": "Type: Trad",
+      "retrieved_at": "2026-11-24"
+     },
+     {
+      "url": "https://rakkup.com/guidebook/index-rock-climbing/slow-children/c25320",
+      "fact": "Trad icon",
+      "retrieved_at": "2026-11-24"
+     }
+    ]
+   },
+   {
+    "field": "length_m",
+    "value": 30,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105815743/slow-children",
+      "fact": "Trad, 100 ft (30 m)",
+      "retrieved_at": "2026-11-24"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_slow_children",
+    "column": "access",
+    "from": {
+     "fees": "None — no climbing fee (National Forest, not Mount Rainier NP)",
+     "notes": "Many of these peaks (Mount Persis, Gunn Peak, Baring Mountain area) sit outside designated wilderness — administratively unrestricted despite serious technical terrain.",
+     "permit": "None required.",
+     "land_manager": "Mt. Baker-Snoqualmie National Forest (Skykomish Ranger District)",
+     "parking_pass": "Northwest Forest Pass or America the Beautiful pass required at developed trailheads."
+    },
+    "to": {
+     "land_manager": "Washington State Parks (Forks of the Sky State Park)"
+    },
+    "why": "Brief AH/AI: replaces the LEGACY object (Mt. Baker-Snoqualmie NF, Skykomish RD, Northwest Forest Pass, a Mount Rainier NP fee line and an unrelated peaks note) with the owner-approved Forks of the Sky object, copied field for field from the live wa_godzilla row. Re-read 2026-11-24: the State Parks boundary layer returns Forks of the Sky, State Park Property, and the Snohomish County parcel (10030000000400) is owned by Washington State Parks & Recreation, at 47.81847,-121.57139; the parks.wa.gov release of 2026-03-13 is unchanged and states no pass, fee or closure rule. permit stays null.",
+    "evidence": [
+     "https://services5.arcgis.com/4LKAHwqnBooVDUlX/arcgis/rest/services/ParkBoundaries/FeatureServer/2/query?geometry=-121.57139,47.81847&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ParkName,Category&returnGeometry=false&f=json",
+     "https://gis.snoco.org/host/rest/services/Hosted/CADASTRAL__parcels/FeatureServer/0/query?geometry=-121.57139,47.81847&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ownername,parcel_id&returnGeometry=false&f=json",
+     "https://parks.wa.gov/news/2026/climbers-donate-index-town-wall-washington-state-parks"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_slow_children",
+    "column": "gear",
+    "from": null,
+    "to": [
+     "many small cams",
+     "0.4 Camalot"
+    ],
+    "why": "gear is empty. Mountain Project: lots of small cams (nuts fit poorly), a 0.4 Camalot at the start. Single source.",
+    "evidence": [
+     "https://www.mountainproject.com/route/105815743/slow-children"
+    ]
+   }
+  ],
+  "held": [
+   "guide_stars: stored 3; the Index guide's own rating is 4 (climb page and Lower Town Wall list, one publisher). Changing an existing nonzero rating needs two sources (brief AI rule 2); reported, not proposed."
+  ],
+  "disputed": [],
+  "notes": "SCOPE: own pitch with its own guide entry (4 stars) and MP page, but it starts high on the wall: the usual way in is Godzilla (wa_godzilla) then City Park P2 (wa_city_park_p2); Abegg climbed exactly that three-pitch link-up. Two finishing pitches sit above it, Tommy's Sandbox (wa_tommy_s_sandbox, stored pitches 0) on the left and an unnamed ~5.10 on the right. Stays a route (batch S rule); flagged only. Grade locked agree-2 (MP + guide, Abegg agrees). Length 30 m locked-1src. Pitches 1 left as is (not a stated count), no ledger. FA DEFECT (report only): fa stores 'FFA: Terry Lien, Jon Carpenter, Pat McNerthney, Jon Nelson' (the FFA party, with its label) while ffa is empty; MP gives the same text; no second source, not moved. No safety warning on the MP page."
+ },
+ "wa_sagittarius": {
+  "area": "wa_dwarf_tossing_to_narrow_arrow",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/105796710/sagittarius",
+    "https://www.mountainproject.com/area/105790707/dwarf-tossing-to-narrow-arrow",
+    "https://rakkup.com/guidebook/index-rock-climbing/saggitarius/c18490",
+    "https://rakkup.com/guidebook/index-rock-climbing/lower-town-wall/s10403",
+    "https://stephabegg.com/trip-reports/washington/index/",
+    "https://services5.arcgis.com/4LKAHwqnBooVDUlX/arcgis/rest/services/ParkBoundaries/FeatureServer/2/query?geometry=-121.57139,47.81847&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ParkName,Category&returnGeometry=false&f=json",
+    "https://gis.snoco.org/host/rest/services/Hosted/CADASTRAL__parcels/FeatureServer/0/query?geometry=-121.57139,47.81847&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ownername,parcel_id&returnGeometry=false&f=json",
+    "https://parks.wa.gov/news/2026/climbers-donate-index-town-wall-washington-state-parks"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "grade",
+    "value": "5.10b",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105796710/sagittarius",
+      "fact": "5.10b YDS",
+      "retrieved_at": "2026-11-24"
+     },
+     {
+      "url": "https://stephabegg.com/trip-reports/washington/index/",
+      "fact": "Sagittarius 5.10b, 1p (Jan 2026)",
+      "retrieved_at": "2026-11-24"
+     }
+    ]
+   },
+   {
+    "field": "discipline",
+    "value": "trad",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105796710/sagittarius",
+      "fact": "Type: Trad",
+      "retrieved_at": "2026-11-24"
+     },
+     {
+      "url": "https://rakkup.com/guidebook/index-rock-climbing/saggitarius/c18490",
+      "fact": "Trad icon",
+      "retrieved_at": "2026-11-24"
+     }
+    ]
+   },
+   {
+    "field": "length_m",
+    "value": 27,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105796710/sagittarius",
+      "fact": "Trad, 90 ft (27 m)",
+      "retrieved_at": "2026-11-24"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_sagittarius",
+    "column": "access",
+    "from": {
+     "fees": "None — no climbing fee (National Forest, not Mount Rainier NP)",
+     "notes": "Many of these peaks (Mount Persis, Gunn Peak, Baring Mountain area) sit outside designated wilderness — administratively unrestricted despite serious technical terrain.",
+     "permit": "None required.",
+     "land_manager": "Mt. Baker-Snoqualmie National Forest (Skykomish Ranger District)",
+     "parking_pass": "Northwest Forest Pass or America the Beautiful pass required at developed trailheads."
+    },
+    "to": {
+     "land_manager": "Washington State Parks (Forks of the Sky State Park)"
+    },
+    "why": "Brief AH/AI: replaces the LEGACY object (Mt. Baker-Snoqualmie NF, Skykomish RD, Northwest Forest Pass, a Mount Rainier NP fee line and an unrelated peaks note) with the owner-approved Forks of the Sky object, copied field for field from the live wa_godzilla row. Re-read 2026-11-24: the State Parks boundary layer returns Forks of the Sky, State Park Property, and the Snohomish County parcel (10030000000400) is owned by Washington State Parks & Recreation, at 47.81847,-121.57139; the parks.wa.gov release of 2026-03-13 is unchanged and states no pass, fee or closure rule. permit stays null.",
+    "evidence": [
+     "https://services5.arcgis.com/4LKAHwqnBooVDUlX/arcgis/rest/services/ParkBoundaries/FeatureServer/2/query?geometry=-121.57139,47.81847&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ParkName,Category&returnGeometry=false&f=json",
+     "https://gis.snoco.org/host/rest/services/Hosted/CADASTRAL__parcels/FeatureServer/0/query?geometry=-121.57139,47.81847&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ownername,parcel_id&returnGeometry=false&f=json",
+     "https://parks.wa.gov/news/2026/climbers-donate-index-town-wall-washington-state-parks"
+    ]
+   }
+  ],
+  "held": [
+   "pitches: stored 2 (with a 2-entry pitch_detail). Abegg logs it as 5.10b, 1 pitch; MP describes one 90 ft pitch that skips the anchor at the end of the traverse and runs to the upper anchor, and states no count (its FA line credits a separate 'P2' party). One stated source for 1; held, not proposed."
+  ],
+  "disputed": [
+   "grade: the Index guide (rakkup, spelled 'Saggitarius') gives 5.11b, 3 stars; MP and Abegg give 5.10b. Majority rule keeps the stored 5.10b (locked agree-2). The guide's 5.11b may cover the 5.11 roof variation above the anchor; not confirmed."
+  ],
+  "notes": "Own route (guide entry 'Saggitarius', MP page). Shares its upper anchor with Iron Horse (wa_iron_horse, context), which can be top-roped from it. guide_stars stored 3 equals the guide's 3. SHAPE: the stored gear array holds two non-gear items ('Finger crack into a steep handcrack on pitch 1', 'Fixed anchor at the top of pitch 1; summit anchor above pitch 2'); MP's rack (doubles of #2 and maybe #3 Camalots, small cams, large cams, an optional #5) could replace them, but the row has gear already and only MP states it; not proposed. FA string mixes several ascents (to the flake, FFA to the roof, FFA P1, P2): catalog defect, report only. No safety warning beyond MP calling the ringing flake 'spooky' (a hollow flake the crack passes)."
+ },
+ "wa_model_worker": {
+  "area": "wa_dwarf_tossing_to_narrow_arrow",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/105814991/model-worker",
+    "https://www.mountainproject.com/area/105790707/dwarf-tossing-to-narrow-arrow",
+    "https://rakkup.com/guidebook/index-rock-climbing/model-worker/c18747",
+    "https://rakkup.com/guidebook/index-rock-climbing/lower-town-wall/s10403",
+    "https://stephabegg.com/trip-reports/washington/index/",
+    "https://services5.arcgis.com/4LKAHwqnBooVDUlX/arcgis/rest/services/ParkBoundaries/FeatureServer/2/query?geometry=-121.57139,47.81847&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ParkName,Category&returnGeometry=false&f=json",
+    "https://gis.snoco.org/host/rest/services/Hosted/CADASTRAL__parcels/FeatureServer/0/query?geometry=-121.57139,47.81847&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ownername,parcel_id&returnGeometry=false&f=json",
+    "https://parks.wa.gov/news/2026/climbers-donate-index-town-wall-washington-state-parks"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "grade",
+    "value": "5.11c",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105814991/model-worker",
+      "fact": "5.11c YDS",
+      "retrieved_at": "2026-11-24"
+     },
+     {
+      "url": "https://rakkup.com/guidebook/index-rock-climbing/model-worker/c18747",
+      "fact": "5.11c, 4 stars, Trad",
+      "retrieved_at": "2026-11-24"
+     },
+     {
+      "url": "https://stephabegg.com/trip-reports/washington/index/",
+      "fact": "Model Worker 5.11c, Lower Town Wall",
+      "retrieved_at": "2026-11-24"
+     }
+    ]
+   },
+   {
+    "field": "discipline",
+    "value": "trad",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105814991/model-worker",
+      "fact": "Type: Trad",
+      "retrieved_at": "2026-11-24"
+     },
+     {
+      "url": "https://rakkup.com/guidebook/index-rock-climbing/model-worker/c18747",
+      "fact": "Trad icon",
+      "retrieved_at": "2026-11-24"
+     }
+    ]
+   },
+   {
+    "field": "length_m",
+    "value": 37,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105814991/model-worker",
+      "fact": "Trad, 120 ft (36 m); stored 37 m within tolerance",
+      "retrieved_at": "2026-11-24"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_model_worker",
+    "column": "access",
+    "from": {
+     "fees": "None — no climbing fee (National Forest, not Mount Rainier NP)",
+     "notes": "Many of these peaks (Mount Persis, Gunn Peak, Baring Mountain area) sit outside designated wilderness — administratively unrestricted despite serious technical terrain.",
+     "permit": "None required.",
+     "land_manager": "Mt. Baker-Snoqualmie National Forest (Skykomish Ranger District)",
+     "parking_pass": "Northwest Forest Pass or America the Beautiful pass required at developed trailheads."
+    },
+    "to": {
+     "land_manager": "Washington State Parks (Forks of the Sky State Park)"
+    },
+    "why": "Brief AH/AI: replaces the LEGACY object (Mt. Baker-Snoqualmie NF, Skykomish RD, Northwest Forest Pass, a Mount Rainier NP fee line and an unrelated peaks note) with the owner-approved Forks of the Sky object, copied field for field from the live wa_godzilla row. Re-read 2026-11-24: the State Parks boundary layer returns Forks of the Sky, State Park Property, and the Snohomish County parcel (10030000000400) is owned by Washington State Parks & Recreation, at 47.81847,-121.57139; the parks.wa.gov release of 2026-03-13 is unchanged and states no pass, fee or closure rule. permit stays null.",
+    "evidence": [
+     "https://services5.arcgis.com/4LKAHwqnBooVDUlX/arcgis/rest/services/ParkBoundaries/FeatureServer/2/query?geometry=-121.57139,47.81847&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ParkName,Category&returnGeometry=false&f=json",
+     "https://gis.snoco.org/host/rest/services/Hosted/CADASTRAL__parcels/FeatureServer/0/query?geometry=-121.57139,47.81847&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ownername,parcel_id&returnGeometry=false&f=json",
+     "https://parks.wa.gov/news/2026/climbers-donate-index-town-wall-washington-state-parks"
+    ]
+   }
+  ],
+  "held": [
+   "guide_stars: stored 3; the Index guide's own rating is 4 (one publisher). Needs two sources to change a nonzero rating; reported, not proposed."
+  ],
+  "disputed": [],
+  "notes": "Own route, just right of Princely Ambitions. MP: best done as one long pitch past the first anchors; since 2018 a lower-off anchor at a no-hands rest at 35 m lets a 70 m rope lower off; otherwise two raps. Mixed pro: bolts on the upper section (count not stated) plus small cams/nuts; bolts and anchor type not proposed (not stated as a count / type). Pitches 1 unchanged. FA string mixes the short and full P1 parties: report only. Related rows: Le Grande Bleu (wa_le_grande_bleu) starts up it; Supermodel (wa_dwarf_tossing_to_narrow_arrow_supermodel) is a separate MP line nearby. No safety warning."
+ },
+ "wa_klaus_von_bulow_and_the_algorithm_of_love": {
+  "area": "wa_dwarf_tossing_to_narrow_arrow",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/110529831/klaus-von-bulow-and-the-algorithm-of-love",
+    "https://www.mountainproject.com/area/105790707/dwarf-tossing-to-narrow-arrow",
+    "https://rakkup.com/guidebook/index-rock-climbing/klaus-von-bulow--the-algorithm-of-love/c39279",
+    "https://rakkup.com/guidebook/index-rock-climbing/lower-town-wall/s10403",
+    "https://services5.arcgis.com/4LKAHwqnBooVDUlX/arcgis/rest/services/ParkBoundaries/FeatureServer/2/query?geometry=-121.57139,47.81847&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ParkName,Category&returnGeometry=false&f=json",
+    "https://gis.snoco.org/host/rest/services/Hosted/CADASTRAL__parcels/FeatureServer/0/query?geometry=-121.57139,47.81847&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ownername,parcel_id&returnGeometry=false&f=json",
+    "https://parks.wa.gov/news/2026/climbers-donate-index-town-wall-washington-state-parks"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "grade",
+    "value": "5.10c",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/110529831/klaus-von-bulow-and-the-algorithm-of-love",
+      "fact": "5.10c YDS",
+      "retrieved_at": "2026-11-24"
+     },
+     {
+      "url": "https://rakkup.com/guidebook/index-rock-climbing/klaus-von-bulow--the-algorithm-of-love/c39279",
+      "fact": "5.10c, 2 stars, Trad",
+      "retrieved_at": "2026-11-24"
+     }
+    ]
+   },
+   {
+    "field": "discipline",
+    "value": "trad",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/110529831/klaus-von-bulow-and-the-algorithm-of-love",
+      "fact": "Type: Trad",
+      "retrieved_at": "2026-11-24"
+     },
+     {
+      "url": "https://rakkup.com/guidebook/index-rock-climbing/klaus-von-bulow--the-algorithm-of-love/c39279",
+      "fact": "Trad icon",
+      "retrieved_at": "2026-11-24"
+     }
+    ]
+   },
+   {
+    "field": "length_m",
+    "value": 26,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/110529831/klaus-von-bulow-and-the-algorithm-of-love",
+      "fact": "Trad, 85 ft (26 m)",
+      "retrieved_at": "2026-11-24"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_klaus_von_bulow_and_the_algorithm_of_love",
+    "column": "access",
+    "from": {
+     "fees": "None — no climbing fee (National Forest, not Mount Rainier NP)",
+     "notes": "Many of these peaks (Mount Persis, Gunn Peak, Baring Mountain area) sit outside designated wilderness — administratively unrestricted despite serious technical terrain.",
+     "permit": "None required.",
+     "land_manager": "Mt. Baker-Snoqualmie National Forest (Skykomish Ranger District)",
+     "parking_pass": "Northwest Forest Pass or America the Beautiful pass required at developed trailheads."
+    },
+    "to": {
+     "land_manager": "Washington State Parks (Forks of the Sky State Park)"
+    },
+    "why": "Brief AH/AI: replaces the LEGACY object (Mt. Baker-Snoqualmie NF, Skykomish RD, Northwest Forest Pass, a Mount Rainier NP fee line and an unrelated peaks note) with the owner-approved Forks of the Sky object, copied field for field from the live wa_godzilla row. Re-read 2026-11-24: the State Parks boundary layer returns Forks of the Sky, State Park Property, and the Snohomish County parcel (10030000000400) is owned by Washington State Parks & Recreation, at 47.81847,-121.57139; the parks.wa.gov release of 2026-03-13 is unchanged and states no pass, fee or closure rule. permit stays null.",
+    "evidence": [
+     "https://services5.arcgis.com/4LKAHwqnBooVDUlX/arcgis/rest/services/ParkBoundaries/FeatureServer/2/query?geometry=-121.57139,47.81847&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ParkName,Category&returnGeometry=false&f=json",
+     "https://gis.snoco.org/host/rest/services/Hosted/CADASTRAL__parcels/FeatureServer/0/query?geometry=-121.57139,47.81847&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ownername,parcel_id&returnGeometry=false&f=json",
+     "https://parks.wa.gov/news/2026/climbers-donate-index-town-wall-washington-state-parks"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_klaus_von_bulow_and_the_algorithm_of_love",
+    "column": "guide_stars",
+    "from": null,
+    "to": 2,
+    "why": "The Index guidebook's own entry rates it 2 stars (climb page and Lower Town Wall list); stored null.",
+    "evidence": [
+     "https://rakkup.com/guidebook/index-rock-climbing/klaus-von-bulow--the-algorithm-of-love/c39279",
+     "https://rakkup.com/guidebook/index-rock-climbing/lower-town-wall/s10403"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_klaus_von_bulow_and_the_algorithm_of_love",
+    "column": "gear",
+    "from": null,
+    "to": [
+     "micro cams to #1 Camalot"
+    ],
+    "why": "gear is empty. Mountain Project protection: micro cams to a #1 Camalot, bolts at the top. Single source.",
+    "evidence": [
+     "https://www.mountainproject.com/route/110529831/klaus-von-bulow-and-the-algorithm-of-love"
+    ]
+   }
+  ],
+  "held": [
+   "prot_rating: stored PG13; neither MP nor the guide's teaser states a protection rating. Unsourced; not removed, reported."
+  ],
+  "disputed": [],
+  "notes": "SCOPE: a finishing pitch high on the wall. The guide calls it an alternative to Japanese Gardens pitch 3 (wa_japanese_gardens, 4 pitches); MP puts its crux just off the second set of chains above Japanese Gardens, reached either by full Japanese Gardens or by Princely Ambitions + Dr. Sniff and a 30 m ledge traverse. Listed as its own climb by the guide and MP, so it stays a route (batch S rule); flagged. FA: MP 'unknown', stays null. Pitches 1 unchanged."
+ },
+ "wa_trout_farm_massacre": {
+  "area": "wa_dwarf_tossing_to_narrow_arrow",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/119711973/trout-farm-massacre",
+    "https://www.mountainproject.com/area/105790707/dwarf-tossing-to-narrow-arrow",
+    "https://rakkup.com/guidebook/index-rock-climbing/trout-farm-massacre/c39274",
+    "https://rakkup.com/guidebook/index-rock-climbing/lower-town-wall/s10403",
+    "https://services5.arcgis.com/4LKAHwqnBooVDUlX/arcgis/rest/services/ParkBoundaries/FeatureServer/2/query?geometry=-121.57139,47.81847&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ParkName,Category&returnGeometry=false&f=json",
+    "https://gis.snoco.org/host/rest/services/Hosted/CADASTRAL__parcels/FeatureServer/0/query?geometry=-121.57139,47.81847&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ownername,parcel_id&returnGeometry=false&f=json",
+    "https://parks.wa.gov/news/2026/climbers-donate-index-town-wall-washington-state-parks"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "grade",
+    "value": "5.11c",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/119711973/trout-farm-massacre",
+      "fact": "5.11c YDS",
+      "retrieved_at": "2026-11-24"
+     },
+     {
+      "url": "https://rakkup.com/guidebook/index-rock-climbing/trout-farm-massacre/c39274",
+      "fact": "5.11c, 4 stars, Trad",
+      "retrieved_at": "2026-11-24"
+     }
+    ]
+   },
+   {
+    "field": "discipline",
+    "value": "trad",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/119711973/trout-farm-massacre",
+      "fact": "Type: Trad",
+      "retrieved_at": "2026-11-24"
+     },
+     {
+      "url": "https://rakkup.com/guidebook/index-rock-climbing/trout-farm-massacre/c39274",
+      "fact": "Trad icon",
+      "retrieved_at": "2026-11-24"
+     }
+    ]
+   },
+   {
+    "field": "length_m",
+    "value": 15,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/119711973/trout-farm-massacre",
+      "fact": "Trad, 50 ft (15 m)",
+      "retrieved_at": "2026-11-24"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_trout_farm_massacre",
+    "column": "access",
+    "from": {
+     "fees": "None — no climbing fee (National Forest, not Mount Rainier NP)",
+     "notes": "Many of these peaks (Mount Persis, Gunn Peak, Baring Mountain area) sit outside designated wilderness — administratively unrestricted despite serious technical terrain.",
+     "permit": "None required.",
+     "land_manager": "Mt. Baker-Snoqualmie National Forest (Skykomish Ranger District)",
+     "parking_pass": "Northwest Forest Pass or America the Beautiful pass required at developed trailheads."
+    },
+    "to": {
+     "land_manager": "Washington State Parks (Forks of the Sky State Park)"
+    },
+    "why": "Brief AH/AI: replaces the LEGACY object (Mt. Baker-Snoqualmie NF, Skykomish RD, Northwest Forest Pass, a Mount Rainier NP fee line and an unrelated peaks note) with the owner-approved Forks of the Sky object, copied field for field from the live wa_godzilla row. Re-read 2026-11-24: the State Parks boundary layer returns Forks of the Sky, State Park Property, and the Snohomish County parcel (10030000000400) is owned by Washington State Parks & Recreation, at 47.81847,-121.57139; the parks.wa.gov release of 2026-03-13 is unchanged and states no pass, fee or closure rule. permit stays null.",
+    "evidence": [
+     "https://services5.arcgis.com/4LKAHwqnBooVDUlX/arcgis/rest/services/ParkBoundaries/FeatureServer/2/query?geometry=-121.57139,47.81847&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ParkName,Category&returnGeometry=false&f=json",
+     "https://gis.snoco.org/host/rest/services/Hosted/CADASTRAL__parcels/FeatureServer/0/query?geometry=-121.57139,47.81847&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ownername,parcel_id&returnGeometry=false&f=json",
+     "https://parks.wa.gov/news/2026/climbers-donate-index-town-wall-washington-state-parks"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_trout_farm_massacre",
+    "column": "guide_stars",
+    "from": null,
+    "to": 4,
+    "why": "The Index guidebook's own entry rates it 4 stars (climb page and Lower Town Wall list); stored null.",
+    "evidence": [
+     "https://rakkup.com/guidebook/index-rock-climbing/trout-farm-massacre/c39274",
+     "https://rakkup.com/guidebook/index-rock-climbing/lower-town-wall/s10403"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_trout_farm_massacre",
+    "column": "gear",
+    "from": null,
+    "to": [
+     "BD C3 (green) to 0.75 cams",
+     "doubles 0.2-0.5",
+     "small nuts"
+    ],
+    "why": "gear is empty. Mountain Project protection: cams from a green C3 to a 0.75, doubles 0.2-0.5, small nuts (more to #2 if continuing). Single source.",
+    "evidence": [
+     "https://www.mountainproject.com/route/119711973/trout-farm-massacre"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_trout_farm_massacre",
+    "column": "anchor",
+    "from": null,
+    "to": "Chain anchor",
+    "why": "anchor is empty. Mountain Project: stop at the chains on the ledge. House spelling (stored on 100+ routes). Single source.",
+    "evidence": [
+     "https://www.mountainproject.com/route/119711973/trout-farm-massacre"
+    ]
+   }
+  ],
+  "held": [],
+  "disputed": [],
+  "notes": "SCOPE: a pitch above full Japanese Gardens P1 (wa_japanese_gardens): it starts up JG P2, steps right onto the face, and ends at chains on a ledge, or continues ~50 ft to the base of JG P3. Own guide entry (4 stars) and MP page, so it stays a route (batch S rule); flagged. FA 'Jon Nelson, Terry Lien' matches MP (no year); one source, left as is. Pitches 1 unchanged."
+ },
+ "wa_le_grande_bleu": {
+  "area": "wa_dwarf_tossing_to_narrow_arrow",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/112102562/le-grande-bleu",
+    "https://www.mountainproject.com/area/105790707/dwarf-tossing-to-narrow-arrow",
+    "https://rakkup.com/guidebook/index-rock-climbing/lower-town-wall/s10403",
+    "https://www.mountainproject.com/route/105814991/model-worker",
+    "https://services5.arcgis.com/4LKAHwqnBooVDUlX/arcgis/rest/services/ParkBoundaries/FeatureServer/2/query?geometry=-121.57139,47.81847&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ParkName,Category&returnGeometry=false&f=json",
+    "https://gis.snoco.org/host/rest/services/Hosted/CADASTRAL__parcels/FeatureServer/0/query?geometry=-121.57139,47.81847&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ownername,parcel_id&returnGeometry=false&f=json",
+    "https://parks.wa.gov/news/2026/climbers-donate-index-town-wall-washington-state-parks"
+   ]
+  },
+  "ledger": [],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_le_grande_bleu",
+    "column": "access",
+    "from": {
+     "fees": "None — no climbing fee (National Forest, not Mount Rainier NP)",
+     "notes": "Many of these peaks (Mount Persis, Gunn Peak, Baring Mountain area) sit outside designated wilderness — administratively unrestricted despite serious technical terrain.",
+     "permit": "None required.",
+     "land_manager": "Mt. Baker-Snoqualmie National Forest (Skykomish Ranger District)",
+     "parking_pass": "Northwest Forest Pass or America the Beautiful pass required at developed trailheads."
+    },
+    "to": {
+     "land_manager": "Washington State Parks (Forks of the Sky State Park)"
+    },
+    "why": "Brief AH/AI: replaces the LEGACY object (Mt. Baker-Snoqualmie NF, Skykomish RD, Northwest Forest Pass, a Mount Rainier NP fee line and an unrelated peaks note) with the owner-approved Forks of the Sky object, copied field for field from the live wa_godzilla row. Re-read 2026-11-24: the State Parks boundary layer returns Forks of the Sky, State Park Property, and the Snohomish County parcel (10030000000400) is owned by Washington State Parks & Recreation, at 47.81847,-121.57139; the parks.wa.gov release of 2026-03-13 is unchanged and states no pass, fee or closure rule. permit stays null.",
+    "evidence": [
+     "https://services5.arcgis.com/4LKAHwqnBooVDUlX/arcgis/rest/services/ParkBoundaries/FeatureServer/2/query?geometry=-121.57139,47.81847&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ParkName,Category&returnGeometry=false&f=json",
+     "https://gis.snoco.org/host/rest/services/Hosted/CADASTRAL__parcels/FeatureServer/0/query?geometry=-121.57139,47.81847&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ownername,parcel_id&returnGeometry=false&f=json",
+     "https://parks.wa.gov/news/2026/climbers-donate-index-town-wall-washington-state-parks"
+    ]
+   }
+  ],
+  "held": [],
+  "disputed": [],
+  "notes": "SCOPE / CATALOG DEFECT (report only): a link-up. MP (5.11c, Trad/TR, 100 ft, FA Anagnostou, Ramier, Todorovich, page posted by one of the FA party in 2016) describes it as climbing Model Worker (wa_model_worker) and moving left into Frog Prince (wa_frog_prince, stored pitches 0) to finish on it. Not in the Index guide's Lower Town Wall list; no other publisher found. Under the scope rule only access is proposed and nothing is locked. Stored grade 5.11c, 30 m, FA all match MP. Owner decides whether it stays as a link-up row."
+ },
+ "wa_leaping_lizards_godzilla_p2": {
+  "area": "wa_dwarf_tossing_to_narrow_arrow",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/115009105/leaping-lizards-godzilla-p2",
+    "https://www.mountainproject.com/route/105790717/godzilla",
+    "https://www.mountainproject.com/area/105790707/dwarf-tossing-to-narrow-arrow",
+    "https://rakkup.com/guidebook/index-rock-climbing/lower-town-wall/s10403",
+    "https://services5.arcgis.com/4LKAHwqnBooVDUlX/arcgis/rest/services/ParkBoundaries/FeatureServer/2/query?geometry=-121.57139,47.81847&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ParkName,Category&returnGeometry=false&f=json",
+    "https://gis.snoco.org/host/rest/services/Hosted/CADASTRAL__parcels/FeatureServer/0/query?geometry=-121.57139,47.81847&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ownername,parcel_id&returnGeometry=false&f=json",
+    "https://parks.wa.gov/news/2026/climbers-donate-index-town-wall-washington-state-parks"
+   ]
+  },
+  "ledger": [],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_leaping_lizards_godzilla_p2",
+    "column": "access",
+    "from": {
+     "fees": "None — no climbing fee (National Forest, not Mount Rainier NP)",
+     "notes": "Many of these peaks (Mount Persis, Gunn Peak, Baring Mountain area) sit outside designated wilderness — administratively unrestricted despite serious technical terrain.",
+     "permit": "None required.",
+     "land_manager": "Mt. Baker-Snoqualmie National Forest (Skykomish Ranger District)",
+     "parking_pass": "Northwest Forest Pass or America the Beautiful pass required at developed trailheads."
+    },
+    "to": {
+     "land_manager": "Washington State Parks (Forks of the Sky State Park)"
+    },
+    "why": "Brief AH/AI: replaces the LEGACY object (Mt. Baker-Snoqualmie NF, Skykomish RD, Northwest Forest Pass, a Mount Rainier NP fee line and an unrelated peaks note) with the owner-approved Forks of the Sky object, copied field for field from the live wa_godzilla row. Re-read 2026-11-24: the State Parks boundary layer returns Forks of the Sky, State Park Property, and the Snohomish County parcel (10030000000400) is owned by Washington State Parks & Recreation, at 47.81847,-121.57139; the parks.wa.gov release of 2026-03-13 is unchanged and states no pass, fee or closure rule. permit stays null.",
+    "evidence": [
+     "https://services5.arcgis.com/4LKAHwqnBooVDUlX/arcgis/rest/services/ParkBoundaries/FeatureServer/2/query?geometry=-121.57139,47.81847&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ParkName,Category&returnGeometry=false&f=json",
+     "https://gis.snoco.org/host/rest/services/Hosted/CADASTRAL__parcels/FeatureServer/0/query?geometry=-121.57139,47.81847&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ownername,parcel_id&returnGeometry=false&f=json",
+     "https://parks.wa.gov/news/2026/climbers-donate-index-town-wall-washington-state-parks"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_leaping_lizards_godzilla_p2",
+    "column": "pitches",
+    "from": 0,
+    "to": 1,
+    "why": "pitches 0 is invalid. One length from the Godzilla/City Park anchor to the chains (Mountain Project page and the P2 paragraph of the Godzilla page).",
+    "evidence": [
+     "https://www.mountainproject.com/route/115009105/leaping-lizards-godzilla-p2",
+     "https://www.mountainproject.com/route/105790717/godzilla"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_leaping_lizards_godzilla_p2",
+    "column": "bolts",
+    "from": null,
+    "to": 3,
+    "why": "bolts is empty. Mountain Project names three bolts (first after the move right, one in the V-slot with a pin, a third at the final step right) and says to bring 3 draws. Single source; the bolts belong to this pitch whatever the scope decision.",
+    "evidence": [
+     "https://www.mountainproject.com/route/115009105/leaping-lizards-godzilla-p2"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_leaping_lizards_godzilla_p2",
+    "column": "anchor",
+    "from": null,
+    "to": "Chain anchor",
+    "why": "anchor is empty. Mountain Project: stem/mantle to the chains. House spelling. Single source.",
+    "evidence": [
+     "https://www.mountainproject.com/route/115009105/leaping-lizards-godzilla-p2"
+    ]
+   }
+  ],
+  "held": [
+   "grade 5.10b: matches MP (route page and Godzilla page, one publisher); not in the guide; not locked under the scope rule."
+  ],
+  "disputed": [],
+  "notes": "SCOPE / CATALOG DEFECT (report only): this row is pitch 2 of Godzilla. The parent wa_godzilla is stored and locked as 1 pitch (P1 only, 32 m), so this pitch is not double-counted in it. MP gives it its own page (5.10b, FA unknown, no length) and says it links with Godzilla P1 into one long pitch; the Index guide does not list it. Under the scope rule only access, pitches 0 and null-only fields of this pitch are proposed; nothing is locked. Owner decides whether it stays or becomes part of wa_godzilla. MP's Godzilla page also mentions a P3 that nobody has described."
+ },
+ "wa_stamper_holland": {
+  "area": "wa_narrow_arrow_and_further_right",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/118282677/stamper-holland",
+    "https://stephabegg.com/trip-reports/washington/index/"
+   ]
+  },
+  "ledger": [],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_stamper_holland",
+    "column": "pitch_detail",
+    "from": [
+     {
+      "crux": false,
+      "grade": "5.9+",
+      "notes": "Stem the 6' wide chimney 40' before it narrows; clip a bolt at a constriction and traverse up-right 25' through broken ledges to a bolted belay midway across the face.",
+      "pitch": 1
+     },
+     {
+      "crux": false,
+      "belay": "Anchor built in the corner at a short finger crack, after the rightward traverse.",
+      "grade": "5.5",
+      "notes": "Traverse right another 25' to a short finger crack in the corner and build an anchor.",
+      "pitch": 2
+     },
+     {
+      "crux": false,
+      "belay": "Belay sits behind a large chockstone, reached after the corner chimney and a sandy ledge.",
+      "grade": "5.7+",
+      "notes": "Climb the corner chimney system, passing a sandy ledge, then behind a large chockstone to a belay. Beware of potential rockfall.",
+      "pitch": 3
+     },
+     {
+      "crux": false,
+      "grade": "5.9",
+      "notes": "Traverse right onto the Quarry Wall, passing 4 bolts before scrambling to the top. A pleasant, clean pitch.",
+      "pitch": 4
+     }
+    ],
+    "to": [
+     {
+      "crux": false,
+      "grade": "5.9+",
+      "notes": "Part of the original first pitch collapsed in a 2013 rockfall. Expect the rock to differ from older descriptions, and do not count on any bolt or bolted belay on this pitch.",
+      "pitch": 1
+     },
+     {
+      "crux": false,
+      "belay": "Anchor built in the corner at a short finger crack, after the rightward traverse.",
+      "grade": "5.5",
+      "notes": "Traverse right another 25' to a short finger crack in the corner and build an anchor.",
+      "pitch": 2
+     },
+     {
+      "crux": false,
+      "belay": "Belay sits behind a large chockstone, reached after the corner chimney and a sandy ledge.",
+      "grade": "5.7+",
+      "notes": "Climb the corner chimney system, passing a sandy ledge, then behind a large chockstone to a belay. Beware of potential rockfall.",
+      "pitch": 3
+     },
+     {
+      "crux": false,
+      "grade": "5.9",
+      "notes": "Traverse right onto the Quarry Wall, passing 4 bolts before scrambling to the top. A pleasant, clean pitch.",
+      "pitch": 4
+     }
+    ],
+    "why": "SAFETY (brief AI section 3). The stored P1 notes send a leader to clip a bolt at a constriction and traverse to a bolted belay. Mountain Project, the only source for this route, still prints that pre-2013 description but adds that a 50 ft section of P1, with at least one of its bolts, collapsed in winter 2013. No source written after the collapse describes P1 (searched MP, the Index guide's lists, Abegg's Index page, web search for cascadeclimbers and other reports: nothing). So P1 notes now say only that the pitch partly collapsed in 2013 and its fixed gear cannot be counted on, in our own words. P1's pitch number, grade (5.9+) and crux flag are unchanged; P2-P4 are byte-identical to the live row. pitch_detail is a never-lock paragraph, so no ledger entry. Could also go through enrich:apply as a top-level pitch_detail with replace_pitch_detail: true.",
+    "evidence": [
+     "https://www.mountainproject.com/route/118282677/stamper-holland"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_stamper_holland",
+    "column": "gear",
+    "from": [
+     "Standard double rack of cams covers most of the pro",
+     "Triples in the 0.75-inch cam size are worth carrying for the cruxy second pitch",
+     "Pitch 1 climbs a 6-foot-wide chimney for 40 feet before narrowing, with a bolted belay reached via a broken-ledge traverse",
+     "A section of pitch 1 (and at least one of its bolts) collapsed in a 2013 rockfall, so don't count on the original bolt count matching older topos"
+    ],
+    "to": [
+     "Standard double rack of cams covers most of the pro",
+     "Triples in the 0.75-inch cam size are worth carrying for the cruxy second pitch",
+     "A section of pitch 1 (and at least one of its bolts) collapsed in a 2013 rockfall, so don't count on the original bolt count matching older topos"
+    ],
+    "why": "SAFETY: removes the item describing P1's bolted belay; part of P1 and at least one bolt collapsed in 2013 (same fact as the pitch_detail fix); the collapse warning item stays",
+    "evidence": [
+     "https://www.mountainproject.com/route/118282677/stamper-holland"
+    ]
+   }
+  ],
+  "held": [],
+  "disputed": [],
+  "notes": "SAFETY: (1) the P1 rewrite above. (2) The stored gear array still holds 'Pitch 1 climbs a 6-foot-wide chimney for 40 feet before narrowing, with a bolted belay reached via a broken-ledge traverse', which repeats the unconfirmed bolted-belay claim; the next item already warns of the 2013 collapse. Not rewritten (brief limits this fix to pitch_detail P1); the owner may want that gear item removed. (3) MP also warns not to climb it with parties below, and of possibly massive rockfall on P3 (stored P3 notes already say to beware of rockfall), plus 40 ft runouts throughout. No grade, pitch or length changes (AH handled them); access already holds the Forks of the Sky object."
+ }
+}

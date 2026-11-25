@@ -85,6 +85,15 @@ const wfText = wfFiles
 
 // Declared exemptions. A name here must be a real file, and must genuinely be unwired.
 const EXCLUDED = {
+  "check-trip-reports.mjs":
+    "replays every migration into PGlite (~40s of WASM, like check:profile-privacy) and drives 0519's trip-report " +
+    "rules as each climber. Hand-run before pushing a change to crew_trip_reports, crew_trip_replies, " +
+    "crew_departures, their functions, or the reliability reads in lib/db.js. No credential and no network.",
+  "check-profile-privacy.mjs":
+    "replays every migration into PGlite (~40s, an extra WASM dependency) and then queries profiles " +
+    "as the anon and authenticated roles — the same hand-run cost and trigger as " +
+    "check:migration-replay: run it before pushing a change to profiles' grants or to a profiles " +
+    "select list in lib/. No credential and no network.",
   "check-migration-replay.mjs":
     "replays supabase/migrations into an empty PGlite database — the local copy of what the " +
     "Supabase GitHub integration's 'Supabase Preview' check already runs on EVERY PR that touches " +
@@ -189,7 +198,7 @@ for (const name of Object.keys(EXCLUDED)) {
     fail(`EXCLUDED names scripts/${name} as unwired, but it now runs in the ${wiring.get(name)}. ` +
          `Remove it from EXCLUDED — a stale exemption is room for a real one to hide in.`);
 }
-if (!failures) ok(`both EXCLUDED entries are real files and genuinely unwired`);
+if (!failures) ok(`all ${Object.keys(EXCLUDED).length} EXCLUDED entries are real files and genuinely unwired`);
 
 // 3. An npm script pointing at a check file that does not exist is dead wiring: the chain
 //    would fail loudly, but a standalone entry just sits there looking like coverage.

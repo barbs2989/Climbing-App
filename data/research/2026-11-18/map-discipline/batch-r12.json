@@ -1,0 +1,96 @@
+{
+ "ca_angora_mountain_standard_route": {
+  "area": "ca_angora_mountain",
+  "set": {
+   "approach_logistics": {
+    "trailhead": "Lewis Camp Trailhead",
+    "trailheadLat": 36.181305,
+    "trailheadLng": -118.515181
+   }
+  },
+  "ledger": [
+   {
+    "field": "approach_logistics",
+    "value": {
+     "trailhead": "Lewis Camp Trailhead",
+     "trailheadLat": 36.181305,
+     "trailheadLng": -118.515181
+    },
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_InfraRecreationSites_01/MapServer/0/query?where=site_cn%3D%275168.004231%27&outFields=site_name&f=json",
+      "fact": "Lewis Camp Trailhead 36.18131,-118.51518",
+      "retrieved_at": "2026-11-23",
+      "official": true
+     },
+     {
+      "url": "https://climber.org/reports/1996/89.html",
+      "fact": "Start: Lewis Camp Trailhead",
+      "retrieved_at": "2026-11-23"
+     },
+     {
+      "url": "https://themtsarecalling.com/angora/",
+      "fact": "Start: Lewis Camp Trailhead",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   }
+  ],
+  "review": {
+   "identifiedBy": {
+    "kind": "research",
+    "fact": "two agreeing sources (owner two-source rule)"
+   },
+   "chunk": "round12"
+  }
+ },
+ "ca_merced_peak_standard_route": {
+  "area": "ca_merced_peak",
+  "set": {
+   "approach_logistics": {
+    "trailhead": "Quartz Mountain Trailhead",
+    "trailheadLat": 37.530826,
+    "trailheadLng": -119.447315
+   }
+  },
+  "ledger": [
+   {
+    "field": "approach_logistics",
+    "value": {
+     "trailhead": "Quartz Mountain Trailhead",
+     "trailheadLat": 37.530826,
+     "trailheadLng": -119.447315
+    },
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_InfraRecreationSites_01/MapServer/0/query?where=site_cn%3D%275221.004381%27&outFields=site_name&f=json",
+      "fact": "Quartz Mountain Trailhead 37.53083,-119.44732",
+      "retrieved_at": "2026-11-23",
+      "official": true
+     },
+     {
+      "url": "https://climber.org/reports/2004/1314.html",
+      "fact": "Start: Quartz Mountain Trailhead",
+      "retrieved_at": "2026-11-23"
+     },
+     {
+      "url": "https://themtsarecalling.com/merced/",
+      "fact": "Start: Quartz Mountain Trailhead",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   }
+  ],
+  "review": {
+   "identifiedBy": {
+    "kind": "research",
+    "fact": "two agreeing sources (owner two-source rule)"
+   },
+   "chunk": "round12"
+  }
+ }
+}

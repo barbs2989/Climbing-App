@@ -1,0 +1,436 @@
+{
+ "wa_beetle_bailey_slab_full_metal_jacket": {
+  "area": "wa_beetle_bailey_slab",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/201692958",
+    "https://www.mountainproject.com/area/108405624/beetle-bailey-slab",
+    "https://www.mountainproject.com/area/108405613/lower-lump-area",
+    "https://rakkup.com/guidebook/index-rock-climbing",
+    "https://www.openstreetmap.org/node/9763591102",
+    "https://services5.arcgis.com/4LKAHwqnBooVDUlX/arcgis/rest/services/ParkBoundaries/FeatureServer/2/query?geometry=-121.5776339,47.8167428&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ParkName,Category&returnGeometry=false&f=json",
+    "https://gis.snoco.org/host/rest/services/Hosted/CADASTRAL__parcels/FeatureServer/0/query?geometry=-121.5776339,47.8167428&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ownername,taxprname,parcel_id&returnGeometry=false&f=json",
+    "https://parks.wa.gov/news/2026/climbers-donate-index-town-wall-washington-state-parks"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "grade",
+    "value": "5.11b",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/201692958",
+      "fact": "5.11b YDS, Sport",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "length_m",
+    "value": 40,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/201692958",
+      "fact": "Sport, 130 ft (39 m); 130 ft = 39.6 m",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "pitches",
+    "value": 1,
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/201692958",
+      "fact": "no pitch count stated; one lead to the highest anchor on the slab",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "Lien and Cramer",
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/201692958",
+      "fact": "FA: Cramer and Lien (no year)",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [],
+  "disputed": [],
+  "notes": "LINK-UP (catalog defect, owner call): this row starts up Smilodon Fatalis (own row wa_smilodon_fatalis), takes a few new bolts right after its 5th bolt, then follows Metal (own row wa_metal, MP: trad 5.11b, 70 ft) to the top anchor, clipping the Short Metal Jacket anchor in passing. Per brief O, no fixes proposed on it (otherwise access would be the Forks of the Sky State Park object, same evidence as wa_beetle_bailey_slab_flying_salamanders_short). Bolts not stated on MP (20 quickdraws). The Index guidebook on Rakkup does not cover the Lower Lump, and theCrag served a bot-check page in Chrome (not retried), so grade/length rest on MP alone. Row lat/lng = MP area GPS exactly (never evidence; not changed)."
+ },
+ "wa_beetle_bailey_slab_short_metal_jacket": {
+  "area": "wa_beetle_bailey_slab",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/201634512",
+    "https://www.mountainproject.com/area/108405624/beetle-bailey-slab",
+    "https://www.mountainproject.com/area/108405613/lower-lump-area",
+    "https://www.openstreetmap.org/node/9763591102",
+    "https://services5.arcgis.com/4LKAHwqnBooVDUlX/arcgis/rest/services/ParkBoundaries/FeatureServer/2/query?geometry=-121.5776339,47.8167428&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ParkName,Category&returnGeometry=false&f=json",
+    "https://gis.snoco.org/host/rest/services/Hosted/CADASTRAL__parcels/FeatureServer/0/query?geometry=-121.5776339,47.8167428&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ownername,taxprname,parcel_id&returnGeometry=false&f=json",
+    "https://parks.wa.gov/news/2026/climbers-donate-index-town-wall-washington-state-parks"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "grade",
+    "value": "5.10d",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/201634512",
+      "fact": "5.10d YDS, Sport",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "length_m",
+    "value": 30,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/201634512",
+      "fact": "Sport, 100 ft (30 m)",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "pitches",
+    "value": 1,
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/201634512",
+      "fact": "no pitch count stated; lower from a two-bolt anchor midway up Metal",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [],
+  "disputed": [],
+  "notes": "LINK-UP / variation (catalog defect, owner call): Smilodon Fatalis (wa_smilodon_fatalis) to its 5th bolt, a few new bolts right into Metal (wa_metal), and a new two-bolt anchor just below Metal's crux; it is also the lower half of Full Metal Jacket (another row). Per brief O, no fixes proposed. FA spelling: row and MP both say 'Terry Lein'; the same climber is spelled 'Lien' on Racer X / Full Metal Jacket (MP). Held: one publisher, owner call. Access would be Forks of the Sky State Park (same evidence as the Flying Salamanders (Short) row)."
+ },
+ "wa_beetle_bailey_slab_flying_salamanders_short": {
+  "area": "wa_beetle_bailey_slab",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/117824423",
+    "https://www.mountainproject.com/area/108405624/beetle-bailey-slab",
+    "https://www.mountainproject.com/area/108405613/lower-lump-area",
+    "https://www.openstreetmap.org/node/9763591102",
+    "https://www.openstreetmap.org/way/1062819198",
+    "https://services5.arcgis.com/4LKAHwqnBooVDUlX/arcgis/rest/services/ParkBoundaries/FeatureServer/2/query?geometry=-121.5776339,47.8167428&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ParkName,Category&returnGeometry=false&f=json",
+    "https://gis.snoco.org/host/rest/services/Hosted/CADASTRAL__parcels/FeatureServer/0/query?geometry=-121.5776339,47.8167428&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ownername,taxprname,parcel_id&returnGeometry=false&f=json",
+    "https://gis.snoco.org/host/rest/services/Hosted/CADASTRAL__parcels/FeatureServer/0/query?geometry=-121.5782,47.817&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ownername,taxprname,parcel_id&returnGeometry=false&f=json",
+    "https://services5.arcgis.com/4LKAHwqnBooVDUlX/arcgis/rest/services/ParkBoundaries/FeatureServer/2/query?geometry=-121.5782,47.817&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ParkName,Category&returnGeometry=false&f=json",
+    "https://parks.wa.gov/news/2026/climbers-donate-index-town-wall-washington-state-parks",
+    "https://services5.arcgis.com/4LKAHwqnBooVDUlX/arcgis/rest/services/ParkBoundaries/FeatureServer"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "grade",
+    "value": "5.7",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/117824423",
+      "fact": "5.7 YDS, Sport",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "length_m",
+    "value": 17,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/117824423",
+      "fact": "Sport, 55 ft (17 m)",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "pitches",
+    "value": 1,
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/117824423",
+      "fact": "no pitch count stated; 9 bolts to a chain anchor",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "Jerome Graham, Adam Wood, Doug Taylor, Gabe Shank",
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/117824423",
+      "fact": "FA: Gabe Shank, Doug Taylor, Adam Wood, Jerome Graham (no year)",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_beetle_bailey_slab_flying_salamanders_short",
+    "column": "bolts",
+    "from": null,
+    "to": 9,
+    "why": "Mountain Project states 9 bolts (and 9 quickdraws). Single source (the Index guidebook on Rakkup does not cover the Lower Lump; theCrag bot-checked); locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/117824423"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_beetle_bailey_slab_flying_salamanders_short",
+    "column": "anchor",
+    "from": null,
+    "to": "Chain anchor",
+    "why": "Mountain Project: chain anchor at the top. Single source; locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/117824423"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_beetle_bailey_slab_flying_salamanders_short",
+    "column": "access",
+    "from": null,
+    "to": {
+     "land_manager": "Washington State Parks (Forks of the Sky State Park)"
+    },
+    "why": "access is empty. Beetle Bailey Slab (OSM crag node 9763591102, 47.81674,-121.57763) and the hillside just west/uphill (47.8170,-121.5782). Official WA State Parks 'Park Boundaries' layer (updated 2026-06-01) puts the point(s) inside 'Forks of the Sky State Park Property'; Snohomish County assessor parcels agree (WA State Parks & Rec parcel 27101900203000, and parcel 27101900200100 whose owner of record is still the WCC with the State of Washington as taxpayer: the ~20-acre Lower Town Wall parcel the WCC gave to State Parks in March 2026, which the State Parks release says joins Forks of the Sky). Same object as the live, verified Lower/Upper Town Wall rows (e.g. wa_dana_s_arch_area_dana_s_arch). official-1, 12 months, after apply. Parking pass HELD: no official page states one for this lot. The sibling rows at this sub-wall still carry a templated Mt. Baker-Snoqualmie NF / NW Forest Pass access object, which is wrong (see notes).",
+    "evidence": [
+     "https://services5.arcgis.com/4LKAHwqnBooVDUlX/arcgis/rest/services/ParkBoundaries/FeatureServer/2/query?geometry=-121.5776339,47.8167428&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ParkName,Category&returnGeometry=false&f=json",
+     "https://gis.snoco.org/host/rest/services/Hosted/CADASTRAL__parcels/FeatureServer/0/query?geometry=-121.5776339,47.8167428&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ownername,taxprname,parcel_id&returnGeometry=false&f=json",
+     "https://services5.arcgis.com/4LKAHwqnBooVDUlX/arcgis/rest/services/ParkBoundaries/FeatureServer/2/query?geometry=-121.5782,47.817&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ParkName,Category&returnGeometry=false&f=json",
+     "https://gis.snoco.org/host/rest/services/Hosted/CADASTRAL__parcels/FeatureServer/0/query?geometry=-121.5782,47.817&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ownername,taxprname,parcel_id&returnGeometry=false&f=json",
+     "https://parks.wa.gov/news/2026/climbers-donate-index-town-wall-washington-state-parks"
+    ]
+   }
+  ],
+  "disputed": [],
+  "notes": "Variation note: this is the lower, 5.7 part of Flying Salamanders (Full) (wa_flying_salamanders_full, MP 5.10a), stopping at its own chain anchor; MP lists both as separate routes. Reported for the owner, fixes still proposed. Boundary detail: the State Parks line runs along the foot of the slab (the slab's OSM node is ~6 m inside; the strip below, with The Wart's mapped centroid, is county right-of-way / BNSF), so the climbing is on park land and the belay ground is at its edge. Catalog defect: the other Beetle Bailey Slab rows with access set (wa_behind_the_tombstone, wa_ride_the_lightning, wa_index_archeology, wa_cupcake_2, wa_metal, wa_everything_hertz, wa_flying_salamanders_full, wa_smilodon_fatalis, wa_racer_x, wa_hedge_trimmer, wa_michal_s_5_5_5_8, wa_larry_s_gaily_colored_lycra, wa_beetle_bailey_p2, wa_36_volts_to_anywhere) carry the templated Mt. Baker-Snoqualmie NF / NW Forest Pass object, which is wrong. Row lat/lng = MP area GPS (never evidence; not changed)."
+ },
+ "wa_grandeur_buttress_corner_flash": {
+  "area": "wa_grandeur_buttress",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/106677557/corner-flash",
+    "https://rakkup.com/guidebook/index-rock-climbing/corner-flash/c25483",
+    "https://rakkup.com/guidebook/index-rock-climbing/delusions-of-grandeur---agent-orange/s11507",
+    "https://www.openstreetmap.org/node/13113494728",
+    "https://www.openstreetmap.org/relation/19555100",
+    "https://services5.arcgis.com/4LKAHwqnBooVDUlX/arcgis/rest/services/ParkBoundaries/FeatureServer/2/query?geometry=-121.5755439,47.8191691&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ParkName,Category&returnGeometry=false&f=json",
+    "https://gis.snoco.org/host/rest/services/Hosted/CADASTRAL__parcels/FeatureServer/0/query?geometry=-121.5755439,47.8191691&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ownername,taxprname,parcel_id&returnGeometry=false&f=json",
+    "https://gis.snoco.org/host/rest/services/Hosted/CADASTRAL__parcels/FeatureServer/0/query?geometry=-121.5758,47.8194&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ownername,taxprname,parcel_id&returnGeometry=false&f=json",
+    "https://gis.snoco.org/host/rest/services/Hosted/CADASTRAL__parcels/FeatureServer/0",
+    "https://parks.wa.gov/news/2026/climbers-donate-index-town-wall-washington-state-parks"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "grade",
+    "value": "5.7",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106677557/corner-flash",
+      "fact": "5.7 YDS, Trad, TR, 55 ft (17 m)",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://rakkup.com/guidebook/index-rock-climbing/corner-flash/c25483",
+      "fact": "Corner Flash 5.7, Trad (Index Town Walls guide, Kalman/Van Biene)",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "discipline",
+    "value": "trad",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106677557/corner-flash",
+      "fact": "Type: Trad, TR",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://rakkup.com/guidebook/index-rock-climbing/corner-flash/c25483",
+      "fact": "trad icon",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "length_m",
+    "value": 17,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106677557/corner-flash",
+      "fact": "Trad, TR, 55 ft (17 m)",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "pitches",
+    "value": 1,
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106677557/corner-flash",
+      "fact": "no pitch count stated; one 55 ft crack",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "G. White and S. Strong, 1982",
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106677557/corner-flash",
+      "fact": "FA: S. Strong, G. White '82",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [],
+  "disputed": [],
+  "notes": "Access HELD (land manager not verifiable): Grandeur Buttress sits ON the line between WA State Parks parcel 27101900203000 (Forks of the Sky) and a PRIVATE parcel (27101900102100, individual owner; it shows as a hole in the State Parks boundary layer). The OSM Corner Flash node is ~0.5 m inside the State Parks parcel, while the OSM Grandeur Buttress relation centre and the Agent Orange / Undertow / The Last Delusion nodes fall 2-5 m inside the private parcel; the county says its parcel lines are not legal boundaries. Needs an official statement before any access text. Catalog defect: the 5 sibling rows on Grandeur Buttress (wa_a_good_first_trad_climb, wa_delusions_of_grandeur, wa_undertow, wa_delusions_of_adequacy, wa_the_last_delusion) carry the templated Mt. Baker-Snoqualmie NF / NW Forest Pass object; no Forest Service land is involved here. Rack per MP: cams to 3 in (detailed_rack empty; not proposed). Row lat/lng (47.81938,-121.57581) is MP's and lands in the private parcel ~13 m from the line; not changed (no pin evidence)."
+ },
+ "wa_tiki_heads_yellow_fever": {
+  "area": "wa_tiki_heads",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/201226376/yellow-fever",
+    "https://www.mountainproject.com/area/126578417/tiki-heads",
+    "https://www.mountainproject.com/area/108405613/lower-lump-area",
+    "https://services5.arcgis.com/4LKAHwqnBooVDUlX/arcgis/rest/services/ParkBoundaries/FeatureServer/2/query?geometry=-121.5782,47.817&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ParkName,Category&returnGeometry=false&f=json",
+    "https://gis.snoco.org/host/rest/services/Hosted/CADASTRAL__parcels/FeatureServer/0/query?geometry=-121.5782,47.817&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ownername,taxprname,parcel_id&returnGeometry=false&f=json",
+    "https://services5.arcgis.com/4LKAHwqnBooVDUlX/arcgis/rest/services/ParkBoundaries/FeatureServer/2/query?geometry=-121.5785,47.8172&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ParkName,Category&returnGeometry=false&f=json",
+    "https://gis.snoco.org/host/rest/services/Hosted/CADASTRAL__parcels/FeatureServer/0/query?geometry=-121.579,47.8175&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ownername,taxprname,parcel_id&returnGeometry=false&f=json",
+    "https://gis.snoco.org/host/rest/services/Hosted/CADASTRAL__parcels/FeatureServer/0/query?geometry=-121.5795,47.817&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ownername,taxprname,parcel_id&returnGeometry=false&f=json",
+    "https://services5.arcgis.com/4LKAHwqnBooVDUlX/arcgis/rest/services/ParkBoundaries/FeatureServer/2/query?geometry=-121.5776339,47.8167428&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ParkName,Category&returnGeometry=false&f=json",
+    "https://parks.wa.gov/news/2026/climbers-donate-index-town-wall-washington-state-parks"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "grade",
+    "value": "5.8+",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/201226376/yellow-fever",
+      "fact": "5.8+ YDS, Sport",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "length_m",
+    "value": 9,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/201226376/yellow-fever",
+      "fact": "Sport, 30 ft (9 m)",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "pitches",
+    "value": 1,
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/201226376/yellow-fever",
+      "fact": "no pitch count stated; one short lead to a ledge anchor below the roof",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "Chase Hughes, Doug Taylor, Gabe Shank",
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/201226376/yellow-fever",
+      "fact": "FA: Gabe Shank, Doug Taylor, Chase Hughes (no year)",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_tiki_heads_yellow_fever",
+    "column": "access",
+    "from": null,
+    "to": {
+     "land_manager": "Washington State Parks (Forks of the Sky State Park)"
+    },
+    "why": "access is empty. Tiki Heads is the westernmost Lower Lump sector, uphill and left (west) of Beetle Bailey Slab (MP area description; MP GPS not used). Every point tested on that hillside (47.8170,-121.5782; 47.8172,-121.5785; 47.8175,-121.5790; 47.8170,-121.5795) and the slab itself fall on State Parks land. Official WA State Parks 'Park Boundaries' layer (updated 2026-06-01) puts the point(s) inside 'Forks of the Sky State Park Property'; Snohomish County assessor parcels agree (WA State Parks & Rec parcel 27101900203000, and parcel 27101900200100 whose owner of record is still the WCC with the State of Washington as taxpayer: the ~20-acre Lower Town Wall parcel the WCC gave to State Parks in March 2026, which the State Parks release says joins Forks of the Sky). Same object as the live, verified Lower/Upper Town Wall rows (e.g. wa_dana_s_arch_area_dana_s_arch). official-1, 12 months, after apply. Parking pass HELD: no official page states one for this lot. The sibling rows at this sub-wall still carry a templated Mt. Baker-Snoqualmie NF / NW Forest Pass access object, which is wrong (see notes).",
+    "evidence": [
+     "https://services5.arcgis.com/4LKAHwqnBooVDUlX/arcgis/rest/services/ParkBoundaries/FeatureServer/2/query?geometry=-121.5782,47.817&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ParkName,Category&returnGeometry=false&f=json",
+     "https://gis.snoco.org/host/rest/services/Hosted/CADASTRAL__parcels/FeatureServer/0/query?geometry=-121.5782,47.817&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ownername,taxprname,parcel_id&returnGeometry=false&f=json",
+     "https://services5.arcgis.com/4LKAHwqnBooVDUlX/arcgis/rest/services/ParkBoundaries/FeatureServer/2/query?geometry=-121.5785,47.8172&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ParkName,Category&returnGeometry=false&f=json",
+     "https://gis.snoco.org/host/rest/services/Hosted/CADASTRAL__parcels/FeatureServer/0/query?geometry=-121.5785,47.8172&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ownername,taxprname,parcel_id&returnGeometry=false&f=json",
+     "https://parks.wa.gov/news/2026/climbers-donate-index-town-wall-washington-state-parks"
+    ]
+   }
+  ],
+  "disputed": [],
+  "notes": "Tiki Heads has no OSM feature, so its land manager rests on the sector's described position (west of and above Beetle Bailey Slab): the whole hillside there is the former WCC Lower Town Wall parcel (now State Parks, taxpayer State of Washington) or the adjoining State Parks parcel, both inside the Forks of the Sky boundary layer. Bolts not stated (MP: a handful of quickdraws); anchor described only as a ledge anchor, type not stated, not proposed. Row lat/lng = MP Tiki Heads area GPS exactly (never evidence; not changed). MP now also has a separate 'Lower Tiki Heads' sub-area; this route is listed under Tiki Heads, matching the row."
+ }
+}

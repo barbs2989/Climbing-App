@@ -1,0 +1,360 @@
+[
+ {
+  "id": "wa_mount_ellinor_standard",
+  "name": "Standard Trail (Upper Trailhead, NFR 24)",
+  "peak": null,
+  "season": "Jun-Oct",
+  "proposed": {
+   "glacier": "no",
+   "snowInSeason": "yes",
+   "snowFreeFrom": "07-01",
+   "lateLine": null
+  },
+  "reasons": [
+   "glacier unsure -> no",
+   "date 07-01 on a glacier-unsure route"
+  ],
+  "why": "Summer trail is snow-free from July through October, but June is in the season and the chute and upper switchbacks are snow-covered then, so no becomes yes. No glacier is mentioned, so unsure becomes no."
+ },
+ {
+  "id": "wa_mount_johnson_standard",
+  "name": "Standard Route",
+  "peak": "Mount Johnson",
+  "season": "Jul-Sep",
+  "proposed": {
+   "glacier": "unsure",
+   "snowInSeason": "yes",
+   "snowFreeFrom": "07-15",
+   "lateLine": null
+  },
+  "reasons": [
+   "date 07-15 on a glacier-unsure route"
+  ],
+  "why": "Snowfields crossed with axe or crampons into July, but the hazards list a remnant glacier or permanent snowfield crossing below the col, so glacier moves from no to unsure."
+ },
+ {
+  "id": "wa_mount_prophet_east",
+  "name": "South Ridge / Southeast Ridge",
+  "peak": null,
+  "season": "Jul-Sep",
+  "proposed": {
+   "glacier": "no",
+   "snowInSeason": "no",
+   "snowFreeFrom": null,
+   "lateLine": null
+  },
+  "reasons": [
+   "glacier unsure -> no"
+  ],
+  "why": "No glacier in the text; the south-ridge cornices are gone by July, before the Jul-Sep season really begins."
+ },
+ {
+  "id": "wa_mount_saul_se_route",
+  "name": "East Slopes (via Airplane Lake)",
+  "peak": null,
+  "season": "Jul-Sep",
+  "proposed": {
+   "glacier": "no",
+   "snowInSeason": "yes",
+   "snowFreeFrom": "08-01",
+   "lateLine": null
+  },
+  "reasons": [
+   "glacier unsure -> no",
+   "date 08-01 on a glacier-unsure route"
+  ],
+  "why": "Text says snow is continuous above about 4,700 ft and step-kicking is normal into July; the reliable window starts late July. No glacier mentioned. Flipped snow to yes since July is in season."
+ },
+ {
+  "id": "wa_mount_seattle_south",
+  "name": "South Slopes (Standard)",
+  "peak": null,
+  "season": "Jul-Sep",
+  "proposed": {
+   "glacier": "no",
+   "snowInSeason": "no",
+   "snowFreeFrom": null,
+   "lateLine": null
+  },
+  "reasons": [
+   "glacier unsure -> no"
+  ],
+  "why": "Scree and talus scramble with only incidental early-season snow before the late-July window; no glacier in the text."
+ },
+ {
+  "id": "wa_mount_stickney_scramble",
+  "name": "Standard Scramble",
+  "peak": null,
+  "season": "Jun-Oct",
+  "proposed": {
+   "glacier": "no",
+   "snowInSeason": "yes",
+   "snowFreeFrom": "07-01",
+   "lateLine": null
+  },
+  "reasons": [
+   "glacier unsure -> no",
+   "date 07-01 on a glacier-unsure route"
+  ],
+  "why": "The summit gully holds snow and ice into June and June is in the Jun-Oct season; the way in is described as July-Sep once it melts. No glacier mentioned. Flipped snow to yes."
+ },
+ {
+  "id": "wa_mount_walkinshaw_scramble",
+  "name": "The Needles Scramble",
+  "peak": null,
+  "season": "Jul-Sep",
+  "proposed": {
+   "glacier": "no",
+   "snowInSeason": "yes",
+   "snowFreeFrom": "07-15",
+   "lateLine": null
+  },
+  "reasons": [
+   "glacier unsure -> no",
+   "date 07-15 on a glacier-unsure route"
+  ],
+  "why": "Snow and ice in the approach gullies lingers into July in heavy years and the way in is mid-July to September. No glacier in the text. Flipped snow to yes."
+ },
+ {
+  "id": "wa_narcos",
+  "name": "Narcos",
+  "peak": null,
+  "season": "Jul-Sep",
+  "proposed": {
+   "glacier": "no",
+   "snowInSeason": "no",
+   "snowFreeFrom": null,
+   "lateLine": null
+  },
+  "reasons": [
+   "glacier unsure -> no"
+  ],
+  "why": "Rock wall climb with no snow or glacier in the text."
+ },
+ {
+  "id": "wa_north_gardner_mountain_southwest",
+  "name": "Southwest Slopes / South Ridge",
+  "peak": null,
+  "season": "Jul–Sep",
+  "proposed": {
+   "glacier": "unsure",
+   "snowInSeason": "yes",
+   "snowFreeFrom": "07-15",
+   "lateLine": null
+  },
+  "reasons": [
+   "date 07-15 on a glacier-unsure route"
+  ],
+  "why": "The way-in line says snow lasts into July, and July is in the season; the descent glissades remaining snow."
+ },
+ {
+  "id": "wa_plummer_peak_r1",
+  "name": "Pinnacle Saddle / North Slopes",
+  "peak": null,
+  "season": "Jul-Oct",
+  "proposed": {
+   "glacier": "unsure",
+   "snowInSeason": "yes",
+   "snowFreeFrom": "08-01",
+   "lateLine": null
+  },
+  "reasons": [
+   "date 08-01 on a glacier-unsure route"
+  ],
+  "why": "A snowfield often crosses the path near the saddle well into July, which is in the Jul-Oct season; date from \"well into July\"."
+ },
+ {
+  "id": "wa_prusik_peak_der_sportsman",
+  "name": "Der Sportsman",
+  "peak": null,
+  "season": "Jul-Sep",
+  "proposed": {
+   "glacier": "unsure",
+   "snowInSeason": "yes",
+   "snowFreeFrom": "07-15",
+   "lateLine": null
+  },
+  "reasons": [
+   "date 07-15 on a glacier-unsure route"
+  ],
+  "why": "The Aasgard Pass way in is hazardous under snow into early July and July is in the season."
+ },
+ {
+  "id": "wa_prusik_peak_solid_gold",
+  "name": "Solid Gold",
+  "peak": null,
+  "season": "Jul-Sep",
+  "proposed": {
+   "glacier": "unsure",
+   "snowInSeason": "yes",
+   "snowFreeFrom": "07-15",
+   "lateLine": null
+  },
+  "reasons": [
+   "date 07-15 on a glacier-unsure route"
+  ],
+  "why": "Snow in Aasgard Pass bridges a hidden creek into July, which is in the season."
+ },
+ {
+  "id": "wa_prusik_peak_south_face_burgner_stanley",
+  "name": "South Face (Burgner-Stanley)",
+  "peak": null,
+  "season": "Jul-Sep",
+  "proposed": {
+   "glacier": "unsure",
+   "snowInSeason": "yes",
+   "snowFreeFrom": "07-15",
+   "lateLine": null
+  },
+  "reasons": [
+   "date 07-15 on a glacier-unsure route"
+  ],
+  "why": "Lingering snow in Aasgard Pass into early July is in the Jul-Sep season."
+ },
+ {
+  "id": "wa_raven_ridge_standard_route",
+  "name": "Raven Ridge Standard Route (Libby Lake Gully-Ridge)",
+  "peak": null,
+  "season": "late May-Oct",
+  "proposed": {
+   "glacier": "unsure",
+   "snowInSeason": "yes",
+   "snowFreeFrom": "08-01",
+   "lateLine": null
+  },
+  "reasons": [
+   "date 08-01 on a glacier-unsure route"
+  ],
+  "why": "The way-in lines say the gully is clear after snow leaves it in late July, and the season starts late May."
+ },
+ {
+  "id": "wa_ruth_peak_olympics_scramble",
+  "name": "Ruth Peak Scramble",
+  "peak": "Ruth Peak",
+  "season": "Jul-Sep",
+  "proposed": {
+   "glacier": "unsure",
+   "snowInSeason": "yes",
+   "snowFreeFrom": "08-01",
+   "lateLine": null
+  },
+  "reasons": [
+   "date 08-01 on a glacier-unsure route"
+  ],
+  "why": "The Catwalk and north-facing slopes hold snow into midsummer and the way in is late July onward; the glacier note applies only to the other side."
+ },
+ {
+  "id": "wa_scramble_route",
+  "name": "Scramble Route",
+  "peak": null,
+  "season": "Jul-Sep",
+  "proposed": {
+   "glacier": "no",
+   "snowInSeason": "no",
+   "snowFreeFrom": null,
+   "lateLine": null
+  },
+  "reasons": [
+   "glacier unsure -> no"
+  ],
+  "why": "Trail and saddle scramble; cornice talk is June, outside the Jul-Sep season, and nothing says glacier."
+ },
+ {
+  "id": "wa_seven_fingered_jack_southwest_slopes",
+  "name": "Southwest Slopes",
+  "peak": null,
+  "season": "Jun-Sep",
+  "proposed": {
+   "glacier": "no",
+   "snowInSeason": "yes",
+   "snowFreeFrom": "07-15",
+   "lateLine": null
+  },
+  "reasons": [
+   "glacier unsure -> no",
+   "date 07-15 on a glacier-unsure route"
+  ],
+  "why": "Snow gully in the entry couloir needs an axe early; season opens in June so snow is in season, and early-to-mid season is vague. A scramble, no glacier."
+ },
+ {
+  "id": "wa_sherpa_balanced_rock_standard",
+  "name": "Standard Route",
+  "peak": null,
+  "season": "Jun-Sep",
+  "proposed": {
+   "glacier": "no",
+   "snowInSeason": "yes",
+   "snowFreeFrom": "07-01",
+   "lateLine": null
+  },
+  "reasons": [
+   "glacier unsure -> no",
+   "date 07-01 on a glacier-unsure route"
+  ],
+  "why": "The way in is dry from July once the gully clears, but the season starts in June, so snow is in season until then; the text gives no exact date."
+ },
+ {
+  "id": "wa_south_gully_south_spur",
+  "name": "South Gully/South Spur",
+  "peak": "Guye Peak",
+  "season": "Jun-Oct",
+  "proposed": {
+   "glacier": "no",
+   "snowInSeason": "no",
+   "snowFreeFrom": null,
+   "lateLine": null
+  },
+  "reasons": [
+   "snow yes -> no"
+  ],
+  "why": "The summer way from Alpental is a dry scramble June to October; the old snow answer came from the winter gully, outside the season."
+ },
+ {
+  "id": "wa_sperry_peak_standard",
+  "name": "Standard Scramble",
+  "peak": null,
+  "season": "Jul-Sep",
+  "proposed": {
+   "glacier": "no",
+   "snowInSeason": "no",
+   "snowFreeFrom": null,
+   "lateLine": null
+  },
+  "reasons": [
+   "glacier unsure -> no"
+  ],
+  "why": "Trail scramble; only a chute snow clear by July and a ford, no glacier."
+ },
+ {
+  "id": "wa_spire_mountain_scramble",
+  "name": "Standard Route",
+  "peak": "Spire Mountain",
+  "season": "Jul-Sep",
+  "proposed": {
+   "glacier": "no",
+   "snowInSeason": "no",
+   "snowFreeFrom": null,
+   "lateLine": null
+  },
+  "reasons": [
+   "snow unsure -> no"
+  ],
+  "why": "The text steers climbers away from permanent snow and the way in starts late July; no snow on the line stated."
+ },
+ {
+  "id": "wa_whistler_mountain_scramble",
+  "name": "South Ridge / Southwest Slope",
+  "peak": null,
+  "season": "Jul-Oct",
+  "proposed": {
+   "glacier": "unsure",
+   "snowInSeason": "yes",
+   "snowFreeFrom": "07-15",
+   "lateLine": null
+  },
+  "reasons": [
+   "date 07-15 on a glacier-unsure route"
+  ],
+  "why": "Snow patches linger in the forest and basin into early summer and can make the gullies icy; season starts in July."
+ }
+]

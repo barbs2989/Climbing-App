@@ -168,8 +168,13 @@ const gate = fp.indexOf("isOpen&&openSt?");
 const decl = fp.indexOf("[openSt,setOpenSt]=useState(");
 if (decl >= 0 && gate >= 0 && decl < gate) ok("the open plan's state is declared ABOVE the branch that renders it");
 else fail("the float plan state is not declared above the branch that unmounts the form");
-if (!/<FloatPlan\b/.test(rd) && /onFloatPlan\(route\)/.test(rd)) ok("the route page LINKS to Crews › Float plans rather than holding a second form");
-else fail("RouteDetail renders its own <FloatPlan> again, or no longer links to Crews › Float plans");
+/* THE ROUTE PAGE DRAWS THE PLAN AGAIN, IN PLACE (2026-11-18). What this section guarded against was a CONTROLLED
+   form whose state lived in a branch the Plan tab unmounts. The route card's form has the crew card's shape instead:
+   uncontrolled, kept by the device copy its scope saves under who — so it must pass both, and the hub link stays. */
+const rdTag = rd.match(/<FloatPlan\b[^>]*>/);
+if (rdTag && !(/\bscope=\{/.test(rdTag[0]) && /\bwho=\{/.test(rdTag[0]))) fail(`the route page draws a <FloatPlan> without scope AND who — leaving the tab loses the form: ${rdTag[0]}`);
+else if (!/onFloatPlan\(route\)/.test(rd)) fail("the route page no longer links to Crews › Float plans");
+else ok(rdTag ? "the route page's in-place float plan passes scope AND who, and still links to Crews › Float plans" : "the route page LINKS to Crews › Float plans");
 
 // ---- 8. THE SECOND CALL SITE. SafetyTab (the crew safety screen) has the same shape and is the
 // WORSE of the two: "Team Alignment" and "Float Plan" are a two-button pair, so the control most
@@ -179,7 +184,10 @@ else fail("RouteDetail renders its own <FloatPlan> again, or no longer links to 
 const coreBare = readCoreSource()
   .replace(/\/\*[\s\S]*?\*\//g, " ").replace(/^[ \t]*\/\/.*$/gm, " ");
 
-const crewTag = coreBare.match(/<FloatPlan\b[^>]*>/);
+/* THE CREW CARD DRAWS ONE TOO (Step 3B, 2026-11-18), and the lib sources are concatenated, so the FIRST
+   <FloatPlan> in coreBare may be the card's. SafetyTab's is the one AFTER its view==="float" branch. */
+const sfGate = coreBare.indexOf('view==="float"');
+const crewTag = sfGate >= 0 ? coreBare.slice(sfGate).match(/<FloatPlan\b[^>]*>/) : null;
 if (!crewTag) fail("ANCHOR LOST: SafetyTab no longer renders <FloatPlan …>");
 else if (/\bplan=\{/.test(crewTag[0]) && /\bonPlan=\{/.test(crewTag[0]))
   ok("SafetyTab passes BOTH plan and onPlan");
@@ -199,6 +207,30 @@ const crewSeed = coreBare.match(/\[floatPlan,setFloatPlan\]\s*=\s*useState\(([^;
 if (!crewSeed) fail("could not read the crew declaration back");
 else if (/floatPlanState\(/.test(crewSeed[1])) ok("the crew site seeds from floatPlanState()");
 else fail(`the crew site does not seed from floatPlanState() — the eleven-key shape is duplicated: ${crewSeed[1].trim()}`);
+
+// ---- 8a. A FILING HANDLER THAT FILES (2026-11-18). PR #3369 left the crew Safety screen with
+// `onFiled={safetyCrew?()=>(form)=>fileCrewFloatPlan(…):undefined}` — a function RETURNING the handler, so Save
+// there never filed; TypeScript accepts it (a function is assignable to a void return). No onFiled may be an
+// arrow whose body is another arrow.
+{
+  const walk = (d) => fs.readdirSync(d, { withFileTypes: true }).flatMap((e) => e.isDirectory() ? walk(path.join(d, e.name)) : /\.(jsx?|tsx?)$/.test(e.name) ? [path.join(d, e.name)] : []);
+  const srcs = [path.join(ROOT, "ClimbMatch.jsx"), ...walk(path.join(ROOT, "lib")), ...walk(path.join(ROOT, "src"))];
+  const curried = [];
+  for (const f of srcs) for (const m of strip(fs.readFileSync(f, "utf8")).matchAll(/\bonFiled(?:Crew)?=\{[^}]{0,80}?\(\s*\)\s*=>\s*\(?\s*\(?[\w\s:,<>{}\[\]|]*\)?\s*=>/g)) curried.push(`${path.relative(ROOT, f)}: ${m[0].slice(0, 90)}`);
+  if (curried.length) fail(`an onFiled handler returns a function instead of filing — Save never reaches fileCrewFloatPlan: ${curried.join(" | ")}`);
+  else ok("every onFiled wiring files when called (no arrow that only returns another arrow)");
+}
+
+// ---- 8b. THE CREW CARD'S INLINE PLAN (Step 3B). It is UNCONTROLLED on purpose — the card's sheet unmounts it on
+// close — so what keeps the eleven fields is the device copy: it MUST pass scope (and who, the key the copy is
+// filed under). Without scope FloatPlan saves nothing and a closed sheet loses the form, the defect this guard is for.
+{
+  const ccBare = fs.readFileSync(path.join(ROOT, "lib", "CrewCard.jsx"), "utf8").replace(/\/\*[\s\S]*?\*\//g, " ").replace(/^[ \t]*\/\/.*$/gm, " ");
+  const ccTag = ccBare.match(/<FloatPlan\b[^>]*>/);
+  if (!ccTag) ok("the crew card draws no float plan of its own");
+  else if (/\bscope=\{/.test(ccTag[0]) && /\bwho=\{/.test(ccTag[0])) ok("the crew card's inline float plan passes scope AND who, so a closed sheet keeps it on the device");
+  else fail(`the crew card's inline <FloatPlan> does not pass scope and who — closing the sheet loses the form: ${ccTag[0]}`);
+}
 
 // ---- 9. THE SAME DEFECT ONE SUB-TAB OVER: <Calculator/>.
 // The planner's own inputs — fitness, pack weight, party size, departure — lived in local state

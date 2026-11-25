@@ -1,0 +1,199 @@
+{
+ "wa_hadley_peak_skyline_divide": {
+  "area": "wa_hadley_peak",
+  "skip_reason": "Mountaineers hadley-peak page states 4,700 ft gain / 13 mi but does not name the approach (likely round-trip cumulative); SummitPost hadley-peak/561479 gives 3,000 ft for the Cougar Divide approach (different route). Single unconfirmed source >10% from stored 2818; not set.",
+  "note": "https://www.mountaineers.org/activities/routes-places/hadley-peak : 4,700 ft gain, 13.0 mi, approach unnamed"
+ },
+ "wa_burnt_boot_peak_north_ridge": {
+  "area": "wa_burnt_boot_peak",
+  "skip_reason": "No Mountaineers or SummitPost page for Burnt Boot Peak."
+ },
+ "wa_mount_adams_adams_glacier": {
+  "area": "wa_mount_adams",
+  "skip_reason": "SummitPost adams-glacier/686134 says the route ascends 'more than 5,000 vertical feet' (imprecise, not trailhead-to-summit). No Mountaineers Adams Glacier page."
+ },
+ "wa_cosho_peak_scramble": {
+  "area": "wa_cosho_peak",
+  "skip_reason": "SummitPost cosho-peak/907140 gives only segment figures (Easy Pass trail 2,700 ft; 4,000 ft from 3,800 ft to the 7,830 ft saddle), no trailhead-to-summit total."
+ },
+ "wa_kimtah_peak_scramble": {
+  "area": "wa_kimtah_peak",
+  "skip_reason": "SummitPost kimtah-peak/980239 gives segments only (2,800 ft to Easy Pass; ~1,800 ft lost dropping into Fisher Creek basin), no total.",
+  "note": "https://www.summitpost.org/kimtah-peak/980239 : ~1,800 ft lost descending from Easy Pass into Fisher Creek basin (partial loss only)"
+ },
+ "wa_mount_shuksan_price_glacier": {
+  "area": "wa_mount_shuksan_climbs",
+  "skip_reason": "Mazamas activity page gives 4,300 ft for Price Glacier (from Nooksack Cirque trail); single source >10% from stored 6000; SummitPost price-glacier-mount-shuksan/758377 states no gain.",
+  "note": "https://mazamas.org/activity/302/ : Price Glacier elevation gain 4,300 ft (single source, conflicts with stored 6000)"
+ },
+ "wa_mount_terror_west_ridge": {
+  "area": "wa_mount_terror",
+  "skip_reason": "SummitPost mount-terror-west-ridge/961673 says the approach alone needs almost 6,000 ft (approach only, imprecise); FKT mount-terror-wa gives 10,000 ft vertical (round trip). No trailhead-to-summit figure."
+ },
+ "wa_primus_peak_south_ridge": {
+  "area": "wa_primus_peak",
+  "skip_reason": "WTA primus-peak states 7,300 ft / 19 mi rt but for the Thunder Creek approach; SummitPost primus-peak/152519 Eldorado/McAllister approach (TH ~2,150 ft, matches pin) gives only camp-to-camp 4,000 ft. No figure for this route."
+ },
+ "wa_amphitheater_mountain_west_route": {
+  "area": "wa_amphitheater_mountain",
+  "skip_reason": "SummitPost amphitheater-mountain/155206: Andrews Creek TH (3,050 ft) to Upper Cathedral Lake is ~4,800 ft gain (approach to the lake, not summit). No summit total."
+ },
+ "wa_amphitheater_mountain_middle_finger_buttress_left_side": {
+  "area": "wa_amphitheater_mountain",
+  "skip_reason": "Stored 4,800 matches SummitPost amphitheater-mountain/155206's Andrews Creek TH to Upper Cathedral Lake approach gain (~4,800 ft), i.e. approach only, not to the summit. No route total published.",
+  "note": "Stored 4,800 appears to be the approach-to-lake figure only."
+ },
+ "wa_mount_lago_south_slope_south_face": {
+  "area": "wa_mount_lago",
+  "skip_reason": "SummitPost mount-lago/151487 gives no gain figure; Mountaineers only has a multi-peak traverse."
+ },
+ "wa_corteo_peak_southwest_ridge": {
+  "area": "wa_corteo_peak",
+  "skip_reason": "No Mountaineers Corteo page found via site search (corteo-peak slug 404s); web search shows only elevation/prominence pages."
+ },
+ "wa_southwest_buttress": {
+  "area": "wa_dorado_needle",
+  "ledger": [
+   {
+    "field": "gain_ft",
+    "value": 7000,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/north-cascades-national-park-cross-country-zones/high-occupancy-xc-zones/dorado-needle-southwest-buttress",
+      "retrieved_at": "2026-11-14",
+      "fact": "Dorado Needle Southwest Buttress listing: 7,000 ft elevation gain, 12.0 mi"
+     }
+    ]
+   }
+  ],
+  "note": "Ledger-only: Mountaineers SW Buttress page states 7,000 ft, equal to stored. WTA dorado-needle 6,280 ft is a generic peak page."
+ },
+ "wa_eldorado_peak_west_arete": {
+  "area": "wa_main_peak",
+  "skip_reason": "WTA eldorado-peak 6,716 ft and Mountaineers Eldorado Peak/Inspiration Glacier 6,768 ft both describe the standard (Inspiration Glacier) route from the same trailhead, not the West Arete. Both within 1% of stored 6,800 but a different route on the same peak, so not locked.",
+  "note": "https://www.wta.org/go-hiking/hikes/eldorado-peak 6,716 ft; https://www.mountaineers.org/activities/routes-places/north-cascades-national-park-cross-country-zones/high-occupancy-xc-zones/eldorado-peak-inspiration-glacier 6,768 ft; SummitPost west-arete/164100 shows the West Arete approach contours/descends to ~5,500 ft from the 6,720 ft saddle, so it is a different line from the standard route."
+ },
+ "wa_gunsight_peak_standard": {
+  "area": "wa_middle_peak",
+  "skip_reason": "trailcatjim.com/gunsight-peak-and-sinister-peak gives 14,000 ft gained and lost over 34 mi for a COMBINED Gunsight + Sinister trip via Downey Creek; stored 14,000 matches that combined round-trip figure, not Gunsight alone. No single-peak trailhead-to-summit figure found.",
+  "note": "Stored 14,000 appears to be the two-peak round-trip total from https://trailcatjim.com/gunsight-peak-and-sinister-peak/ (wrong field meaning)."
+ },
+ "wa_east_ridge_3": {
+  "area": "wa_silver_star_mountain_okanogan",
+  "skip_reason": "Mountaineers silver-star-mountain-silver-star-creek gives 5,500 ft / 8 mi for the Silver Star Creek/Glacier route (different route); no East Ridge figure."
+ },
+ "wa_forbidden_peak_northwest_face": {
+  "area": "wa_forbidden_peak",
+  "skip_reason": "SummitPost northwest-face/644749 and spokalpine NW Face report state no trailhead-to-summit gain."
+ },
+ "wa_south_spur": {
+  "area": "wa_whatcom_peak",
+  "skip_reason": "SummitPost whatcom-peak/326232 gives only segment elevations (Hannegan TH 3,110 ft, pass 5,100 ft, etc.), no total."
+ },
+ "wa_goode_mountain_megalodon_ridge": {
+  "area": "wa_mount_goode",
+  "skip_reason": "Two CascadeClimbers Megalodon Ridge trip reports (topics 104181, 104101) state no gain figures."
+ },
+ "wa_lost_peak_pasayten_scramble": {
+  "area": "wa_lost_peak_pasayten",
+  "skip_reason": "SummitPost lost-peak/151502 states no gain; only multi-peak trip pages (trailcatjim Lost Peak/Shellrock loop, Mountaineers 5-peak traverse)."
+ },
+ "wa_monument_peak_pasayten_scramble": {
+  "area": "wa_monument_peak_pasayten",
+  "skip_reason": "SummitPost monument-peak/151494 and trailcatjim Monument archive state no gain; Mountaineers listing combines Monument + Lake Mountain."
+ },
+ "wa_le_conte_mountain_northern_aspect": {
+  "area": "wa_le_conte_mountain",
+  "skip_reason": "SummitPost le-conte-mountain/539474 gives no gain figure."
+ },
+ "wa_flora_mountain_southwest_slope": {
+  "area": "wa_flora_mountain",
+  "skip_reason": "SummitPost flora-mountain/155323 gives only an imprecise ~6,000 ft (\"maybe\") from Tenmile Pass on the Holden side; WTA flora-mountain lists no gain. Not usable."
+ },
+ "wa_east_twin_needle_south_route": {
+  "area": "wa_east_twin_needle",
+  "skip_reason": "stephabegg twin-needles trip report gives summit elevations only, no gain."
+ },
+ "wa_jack_mountain_northeast_glacier": {
+  "area": "wa_jack_mountain",
+  "skip_reason": "SummitPost jack-mountain/151244 and WTA jack-mountain state no gain for any route."
+ },
+ "wa_mount_barnes_scramble": {
+  "area": "wa_mount_barnes",
+  "skip_reason": "Web search found only trailforks (382 ft for a trail segment, not this outing) and elevation directories; no route gain."
+ },
+ "wa_phantom_peak_south_route": {
+  "area": "wa_phantom_peak",
+  "skip_reason": "Search found only Mountain Project/peakery/Wikipedia and a multi-peak CascadeClimbers Northern Pickets report; no route figure."
+ },
+ "wa_sinister_peak_southwest_route": {
+  "area": "wa_sinister_peak",
+  "skip_reason": "Mountaineers has only Sinister Northwest Face and North Face listings (7,000 ft, different routes); SummitPost sinister-peak/749245 states no number; trailcatjim gives 14,000 ft for a combined Gunsight + Sinister trip."
+ },
+ "wa_mount_lyall_south_route": {
+  "area": "wa_mount_lyall",
+  "skip_reason": "Not reached with a usable source in this Chrome pass (Mountaineers/SummitPost searches found no page for this route, or not searched for time)."
+ },
+ "wa_emerald_peak_se_ridge": {
+  "area": "wa_emerald_peak_entiat",
+  "skip_reason": "Not reached with a usable source in this Chrome pass (Mountaineers/SummitPost searches found no page for this route, or not searched for time)."
+ },
+ "wa_garfield_mountain_preiss_route": {
+  "area": "wa_garfield_mountain",
+  "skip_reason": "Not reached with a usable source in this Chrome pass (Mountaineers/SummitPost searches found no page for this route, or not searched for time)."
+ },
+ "wa_concerto_in_c_for_drill_and_hammer": {
+  "area": "wa_south_face",
+  "skip_reason": "Not reached with a usable source in this Chrome pass (Mountaineers/SummitPost searches found no page for this route, or not searched for time)."
+ },
+ "wa_the_monk_west_cracks_left_crack": {
+  "area": "wa_the_monk_pasayten",
+  "skip_reason": "Not reached with a usable source in this Chrome pass (Mountaineers/SummitPost searches found no page for this route, or not searched for time)."
+ },
+ "rainier_central_mowich_face": {
+  "area": "wa_mount_rainier",
+  "skip_reason": "Not reached with a usable source in this Chrome pass (Mountaineers/SummitPost searches found no page for this route, or not searched for time)."
+ },
+ "wa_liberty_bell_thin_red_line": {
+  "area": "wa_liberty_bell",
+  "skip_reason": "Not reached with a usable source in this Chrome pass (Mountaineers/SummitPost searches found no page for this route, or not searched for time)."
+ },
+ "wa_ingalls_peak_north_peak_southwest_face": {
+  "area": "wa_ingalls_peak",
+  "skip_reason": "Not reached with a usable source in this Chrome pass (Mountaineers/SummitPost searches found no page for this route, or not searched for time)."
+ },
+ "wa_garfield_mountain_southwest_ledges": {
+  "area": "wa_garfield_mountain",
+  "skip_reason": "Not reached with a usable source in this Chrome pass (Mountaineers/SummitPost searches found no page for this route, or not searched for time)."
+ },
+ "wa_magic_mountain_northeast_couloir": {
+  "area": "wa_magic_mountain",
+  "skip_reason": "Not reached with a usable source in this Chrome pass (Mountaineers/SummitPost searches found no page for this route, or not searched for time)."
+ },
+ "wa_chianti_spire_lichen_bouquet": {
+  "area": "wa_chianti_spire",
+  "skip_reason": "Not reached with a usable source in this Chrome pass (Mountaineers/SummitPost searches found no page for this route, or not searched for time)."
+ },
+ "wa_magic_mountain_north_face": {
+  "area": "wa_magic_mountain",
+  "skip_reason": "Not reached with a usable source in this Chrome pass (Mountaineers/SummitPost searches found no page for this route, or not searched for time)."
+ },
+ "wa_soviet_route": {
+  "area": "wa_bonanza_peak",
+  "skip_reason": "Not reached with a usable source in this Chrome pass (Mountaineers/SummitPost searches found no page for this route, or not searched for time)."
+ },
+ "wa_the_tooth_north_ridge": {
+  "area": "wa_summer_fall_rock_2",
+  "skip_reason": "Not reached with a usable source in this Chrome pass (Mountaineers/SummitPost searches found no page for this route, or not searched for time)."
+ },
+ "wa_the_monk_le_gibet": {
+  "area": "wa_the_monk_pasayten",
+  "skip_reason": "Not reached with a usable source in this Chrome pass (Mountaineers/SummitPost searches found no page for this route, or not searched for time)."
+ },
+ "wa_liberty_traverse": {
+  "area": "wa_liberty_bell",
+  "skip_reason": "Not reached with a usable source in this Chrome pass (Mountaineers/SummitPost searches found no page for this route, or not searched for time)."
+ }
+}

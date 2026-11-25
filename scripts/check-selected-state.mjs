@@ -260,7 +260,7 @@ const SCAN = `(() => {
   //
   // The argument for scoping was that every overlay opens with ?zt=me, so the background is always
   // the Profile tab, which is walked first on its own -- nothing could be lost. THAT PREMISE IS
-  // FALSE for the overlays that inject state: postMenuFor and reactPickerFor put a whole GROUP
+  // FALSE for the overlays that inject state: postMenuFor (and reactPickerFor, a dialog until 2026-11-05) put a whole GROUP
   // VIEW on screen behind their dialog, and no other walked screen reaches it. A before/after diff
   // of the measured controls (not the counts -- the SET) showed exactly two lost:
   //     overlay:postMenuFor   [Newest|Most reacted|Saved]   the group feed sort bar

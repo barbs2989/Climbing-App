@@ -1,0 +1,289 @@
+[
+ {
+  "key": "p017",
+  "verdict": "same",
+  "confidence": "medium",
+  "keep": "or_king_louie",
+  "drop": "or_jungle_cliff_king_louie_e",
+  "move": [
+   "length_m",
+   "pitches"
+  ],
+  "alt_names": [],
+  "why": "Same name, area and grade 5.12d; [E] is a map-letter suffix. Unsuffixed row holds the FA; suffixed holds length 30 m.",
+  "evidence": [
+   "Not web-verified (time-boxed); judged from stored rows: identical grade, same area, bracketed letter looks like a guidebook map letter"
+  ]
+ },
+ {
+  "key": "p018",
+  "verdict": "same",
+  "confidence": "medium",
+  "keep": "or_neuromancer",
+  "drop": "or_jungle_cliff_neuromancer_e",
+  "move": [
+   "length_m",
+   "pitches"
+  ],
+  "alt_names": [],
+  "why": "Same name and grade 5.11a; [E] suffix is a map letter. Dropped row holds length 8 m.",
+  "evidence": [
+   "Not web-verified (time-boxed); judged from stored rows: identical grade, same area, bracketed letter looks like a guidebook map letter"
+  ]
+ },
+ {
+  "key": "p019",
+  "verdict": "same",
+  "confidence": "medium",
+  "keep": "or_open_project_jungle_boogie",
+  "drop": "or_jungle_cliff_open_project_jungle_boogie_e",
+  "move": [
+   "length_m",
+   "pitches"
+  ],
+  "alt_names": [],
+  "why": "Same name and grade 5.13b/c; [E] suffix. Dropped row holds length 34 m.",
+  "evidence": [
+   "Not web-verified (time-boxed); judged from stored rows: identical grade, same area, bracketed letter looks like a guidebook map letter"
+  ]
+ },
+ {
+  "key": "p020",
+  "verdict": "same",
+  "confidence": "medium",
+  "keep": "or_wretched_love_affair",
+  "drop": "or_jungle_cliff_wretched_love_affair_l",
+  "move": [
+   "length_m",
+   "pitches"
+  ],
+  "alt_names": [],
+  "why": "Same name and grade 5.11c; [L] suffix. Dropped row holds length 21 m.",
+  "evidence": [
+   "Not web-verified (time-boxed); judged from stored rows: identical grade, same area, bracketed letter looks like a guidebook map letter"
+  ]
+ },
+ {
+  "key": "p037",
+  "verdict": "same",
+  "confidence": "medium",
+  "keep": "or_dark_tower",
+  "drop": "or_north_face_3_dark_tower_e",
+  "move": [
+   "length_m",
+   "pitches"
+  ],
+  "alt_names": [],
+  "why": "Same name and grade 5.13b; [E] suffix. Dropped row holds length 35 m.",
+  "evidence": [
+   "Not web-verified (time-boxed); judged from stored rows: identical grade, same area, bracketed letter looks like a guidebook map letter"
+  ]
+ },
+ {
+  "key": "p046",
+  "verdict": "distinct",
+  "confidence": "medium",
+  "why": "Tommyknocker is V5-6; the Right version is a separate V4 problem with its own grade.",
+  "evidence": [
+   "Stored rows only; variant/extension/traverse names with differing grades indicate separate problems or routes"
+  ]
+ },
+ {
+  "key": "p058",
+  "verdict": "distinct",
+  "confidence": "medium",
+  "why": "Left and Right Gnarly Crack are two different cracks (the right one is described as the centre of three cracks).",
+  "evidence": [
+   "Stored rows only; variant/extension/traverse names with differing grades indicate separate problems or routes"
+  ]
+ },
+ {
+  "key": "p059",
+  "verdict": "distinct",
+  "confidence": "medium",
+  "why": "Mrs. Reach is an extension of Mr. Reach with a different grade (5.11d vs 5.11b) and different first ascensionists.",
+  "evidence": [
+   "Stored rows only; variant/extension/traverse names with differing grades indicate separate problems or routes"
+  ]
+ },
+ {
+  "key": "p067",
+  "verdict": "distinct",
+  "confidence": "medium",
+  "why": "Eaglet is a 5.10 route; Golden Eagle is a 5.12b roof extension with a different FA.",
+  "evidence": [
+   "Stored rows only; variant/extension/traverse names with differing grades indicate separate problems or routes"
+  ]
+ },
+ {
+  "key": "p084",
+  "verdict": "distinct",
+  "confidence": "medium",
+  "why": "Sit/standard problem V2 vs a V3 traverse of 8 m; different problems.",
+  "evidence": [
+   "Stored rows only; variant/extension/traverse names with differing grades indicate separate problems or routes"
+  ]
+ },
+ {
+  "key": "p102",
+  "verdict": "distinct",
+  "confidence": "medium",
+  "why": "Different grade (5.10 vs 5.12a), discipline and FA; the variation is a separate line.",
+  "evidence": [
+   "Stored rows only; variant/extension/traverse names with differing grades indicate separate problems or routes"
+  ]
+ },
+ {
+  "key": "p118",
+  "verdict": "distinct",
+  "confidence": "medium",
+  "why": "Bewitched 5.9+ and its direct 5.10a have different FAs and dates; separate climbs.",
+  "evidence": [
+   "Stored rows only; variant/extension/traverse names with differing grades indicate separate problems or routes"
+  ]
+ },
+ {
+  "key": "p129",
+  "verdict": "distinct",
+  "confidence": "medium",
+  "why": "Fight Club V8 and Fight Club 2 V9 are different problems with different grades.",
+  "evidence": [
+   "Stored rows only; variant/extension/traverse names with differing grades indicate separate problems or routes"
+  ]
+ },
+ {
+  "key": "p139",
+  "verdict": "distinct",
+  "confidence": "medium",
+  "why": "Fly Guy V2 vs Fly Guy SDS V4+ (sit start); separate problems.",
+  "evidence": [
+   "Stored rows only; variant/extension/traverse names with differing grades indicate separate problems or routes"
+  ]
+ },
+ {
+  "key": "p140",
+  "verdict": "distinct",
+  "confidence": "medium",
+  "why": "Tear Duct V5- vs Tear Duct Direct V2; different grades and finishes.",
+  "evidence": [
+   "Stored rows only; variant/extension/traverse names with differing grades indicate separate problems or routes"
+  ]
+ },
+ {
+  "key": "p144",
+  "verdict": "distinct",
+  "confidence": "medium",
+  "why": "E's Dirty B V5 vs the Right finish V2; separate problems.",
+  "evidence": [
+   "Stored rows only; variant/extension/traverse names with differing grades indicate separate problems or routes"
+  ]
+ },
+ {
+  "key": "p154",
+  "verdict": "distinct",
+  "confidence": "high",
+  "why": "Peawabe Spiral is a 5.3 ramp circling the tower; the Direct Variation is a 5.7 crack line, different location and length.",
+  "evidence": [
+   "Stored rows only; variant/extension/traverse names with differing grades indicate separate problems or routes"
+  ]
+ },
+ {
+  "key": "p165",
+  "verdict": "distinct",
+  "confidence": "medium",
+  "why": "Rail Chomper V4 vs SDS V6 (sit start); separate problems.",
+  "evidence": [
+   "Stored rows only; variant/extension/traverse names with differing grades indicate separate problems or routes"
+  ]
+ },
+ {
+  "key": "p173",
+  "verdict": "distinct",
+  "confidence": "medium",
+  "why": "Frodie V-easy vs its left traverse V1; different problems.",
+  "evidence": [
+   "Stored rows only; variant/extension/traverse names with differing grades indicate separate problems or routes"
+  ]
+ },
+ {
+  "key": "p174",
+  "verdict": "distinct",
+  "confidence": "medium",
+  "why": "Frodie vs its right traverse V2; different problems.",
+  "evidence": [
+   "Stored rows only; variant/extension/traverse names with differing grades indicate separate problems or routes"
+  ]
+ },
+ {
+  "key": "p175",
+  "verdict": "distinct",
+  "confidence": "medium",
+  "why": "Frodie vs Frodie's Traverse V3; different problems.",
+  "evidence": [
+   "Stored rows only; variant/extension/traverse names with differing grades indicate separate problems or routes"
+  ]
+ },
+ {
+  "key": "p176",
+  "verdict": "distinct",
+  "confidence": "medium",
+  "why": "Kirito V1 vs the Short version V0; different grades, a shortened problem.",
+  "evidence": [
+   "Stored rows only; variant/extension/traverse names with differing grades indicate separate problems or routes"
+  ]
+ },
+ {
+  "key": "p181",
+  "verdict": "distinct",
+  "confidence": "high",
+  "why": "Two Closed Project rows at different spots: one is the right arete of the big tower, the other a small alcove between Spirits Cradle and Hungry Ghost.",
+  "evidence": [
+   "Stored rows only; variant/extension/traverse names with differing grades indicate separate problems or routes"
+  ]
+ },
+ {
+  "key": "p182",
+  "verdict": "distinct",
+  "confidence": "medium",
+  "why": "Closed Project (right arete, 5.11) vs Walking with a Ghost project (5.12+ X, 18 m); different lines.",
+  "evidence": [
+   "Stored rows only; variant/extension/traverse names with differing grades indicate separate problems or routes"
+  ]
+ },
+ {
+  "key": "p183",
+  "verdict": "distinct",
+  "confidence": "medium",
+  "why": "Closed Project in the rear alcove (5.11a) vs Walking with a Ghost project (5.12+ X); different lines.",
+  "evidence": [
+   "Stored rows only; variant/extension/traverse names with differing grades indicate separate problems or routes"
+  ]
+ },
+ {
+  "key": "p188",
+  "verdict": "distinct",
+  "confidence": "medium",
+  "why": "Trench Reznor V2 vs its arete V-easy; separate problems.",
+  "evidence": [
+   "Stored rows only; variant/extension/traverse names with differing grades indicate separate problems or routes"
+  ]
+ },
+ {
+  "key": "p010",
+  "verdict": "distinct",
+  "confidence": "low",
+  "why": "Spiked V3 and Spiked Direct V3 share a grade but the Direct is a separate variation line; unverified online.",
+  "evidence": [
+   "Stored rows only; variant/extension/traverse names with differing grades indicate separate problems or routes"
+  ]
+ },
+ {
+  "key": "p231",
+  "verdict": "distinct",
+  "confidence": "high",
+  "why": "South Ridge from Summit Lake (scrambling, 2nd) and Southwest Ridge from Pioneer Gulch (snow) start at different trailheads and use different ridges.",
+  "evidence": [
+   "Stored rows only; variant/extension/traverse names with differing grades indicate separate problems or routes"
+  ]
+ }
+]

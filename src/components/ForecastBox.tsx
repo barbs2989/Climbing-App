@@ -2,7 +2,7 @@ import { useState, useEffect, useMemo } from "react";
 import { fetchAlpineForecast, fetchAlpineSpread, fetchCragAir, fetchPointAlerts } from "../../lib/forecast.js";
 import { planTimes } from "../../lib/planTimes.js";
 import { isMultiDayOuting } from "../../lib/outing.js";
-import { wholeDayLegs, hasSnowLegs, snowFloorFt, localDays, todayOf, dayFlags, modelSpread, daySummary, alertsForDay, normAlerts, alertLevel, fogHours, airDay, smokeFlag, localAt, LIMITS } from "../../lib/alpineConditions.js";
+import { wholeDayLegs, hasSnowLegs, bridgeWord, snowFloorFt, localDays, todayOf, dayFlags, modelSpread, daySummary, alertsForDay, normAlerts, alertLevel, fogHours, airDay, smokeFlag, localAt, LIMITS } from "../../lib/alpineConditions.js";
 import { sunFace, groundFt, windowLabel, clockOf, floorQ, KIND_LABEL, flagText } from "../../lib/alpineConditionsShared.js";
 import { catOf, C, ROUTE_GAP, DLOCALE, uElev, uTemp, uWind, uSnowfall } from "../../ClimbMatchCore.jsx";
 import { shadeGrid, gridPx, highestNear, SUMMIT_SNAP_M, faceSunBands } from "../../lib/terrainShade.js";
@@ -50,13 +50,25 @@ const ALERT_TTL = 10 * 60 * 1000; // alerts are issued and cancelled within the 
 // flags never reads as "it's in" or "it's safe".
 const BLIND = {
   glacier: "A forecast can’t see whether bridges are open or a boot track is in — check recent reports.",
+  snow: "A forecast can’t see how firm the snow is or whether a boot track is in — check recent reports.",
   alpineice: "A forecast can’t see whether there is ice on the line, or verglas in the shade — check recent reports.",
   waterfall: "A forecast can’t see whether the ice is in, or still attached — that takes a recent report.",
   cragmixed: "A forecast can’t see whether turf and loose blocks are frozen in — that takes a recent report.",
   scramble: "A forecast can’t see whether the rock is dry or snow lingers in the gullies — check recent reports.",
   alpinerock: "A forecast can’t see seeps, verglas on the pitches or snow in the descent gully — check recent reports.",
 };
-const hrs = (h: number) => (Math.round(h * 2) / 2).toFixed(1).replace(/\.0$/, "") + " h";
+// The glacier card on a route nobody has reviewed as glacier travel: bridges are a possibility, not a fact (bridgeWord "maybe").
+const BLIND_GLACIER_OPEN = "A forecast can’t see how firm the snow is, whether any snow bridges are open or whether a boot track is in — check recent reports.";
+/* A route whose usual line melts out (routes.snow_free_from): say which half of its season this is, so a dry card in
+   late August and a snow card in June both explain themselves (lib/terrain.js snowFreeOn). */
+function snowFreeNote(terrain: unknown): string {
+  const sf = terrain && typeof terrain === "object" ? (terrain as { snowFree?: { label: string; out: boolean } | null }).snowFree : null;
+  if (!sf) return "";
+  return sf.out
+    ? " From " + sf.label + " the usual line is normally off the snow, so the snow and glacier flags are left off. A late-lying snowfield or a fresh storm changes that: check recent reports."
+    : " The usual line normally holds snow until about " + sf.label + "; after that it is dry and these snow flags drop off.";
+}
+const hrs = (h: number) =>(Math.round(h * 2) / 2).toFixed(1).replace(/\.0$/, "") + " h";
 export interface ForecastBoxProps {
   route: { id: string; timing?: { recommendedStart?: unknown } | null };
   /** The Planner's inputs (fitness, pack weight...), passed straight to planTimes. */
@@ -122,7 +134,15 @@ export default function ForecastBox({ route, calc, kind, terrain, pt }: Forecast
   const wd = P.publishedIsWholeDay && !fromCamp ? wholeDayLegs(P.techH, kind) : null;
   const legs = wd ? { up: wd.up, down: wd.down, fromCamp: false, floor: false, tech: wd.up, hike: 0, wholeDay: wd.total }
     : { up: fromCamp ? P.techH : P.hikeH + P.techH, down: P.downH, fromCamp, floor: P.legsFloor || P.publishedIsWholeDay, tech: P.techH, hike: fromCamp ? 0 : P.hikeH };
+  /* A ONE-DAY route whose published climb starts at the camp below it (planTimes' upFromCamp: Slipstream,
+     the Kain Route) is counted back the same way -- no walk-in is added, so the hours are right -- but the
+     card must say "Leave camp by", not "Start by ... walk back down" (owner, 2026-11-24). Wording ONLY:
+     `fromCamp` still decides the maths and which height the start is read from, and these routes store no
+     camp height, so moving them onto `fromCamp` would drop their start time. */
+  const sayCamp = legs.fromCamp || (!wd && P.upFromCamp);
   const snowLegs = hasSnowLegs(kind, terrain);
+  // How the card may speak of snow bridges: "yes" states them, "maybe" says "any", false never names one.
+  const bridges = bridgeWord(kind, terrain);
   const floor = (snowLegs ? snowFloorFt(route, pt && pt.campFt) : null) as { ft: number; basis: string };
 
   /* SUN ON THE FACE for the selected day (lib/terrainShade.js faceSunBands), so the start can count
@@ -139,7 +159,7 @@ export default function ForecastBox({ route, calc, kind, terrain, pt }: Forecast
     days.forEach(function (d, k) {
       if (d.date < today) return;
       const fs = faceSun[d.date];
-      let r = dayFlags(fc, days, k, { kind, rockToo: kind === "glacier" && catOf(route) === "alpine", terrain, highFt: pt.elevFt != null ? pt.elevFt : groundFt(fc), snowFt: floor ? floor.ft : null, legs, sun: fs && fs.bands ? fs : null });
+      let r = dayFlags(fc, days, k, { kind, rockToo: kind === "glacier" && (catOf(route) === "alpine" || catOf(route) === "scrambling"), terrain, highFt: pt.elevFt != null ? pt.elevFt : groundFt(fc), snowFt: floor ? floor.ft : null, legs, sun: fs && fs.bands ? fs : null });
       const ms = sp ? modelSpread(sp, d.date, null, daySummary(fc, d).precip) : null;
       if (ms && ms.over.length) r = Object.assign({}, r, { flags: r.flags.concat([{ key: "models-disagree", level: "caution", v: ms }]) });
       const al = alerts && alerts.data && !alerts.data.outside ? alertsForDay(normAlerts(alerts.data), d.date, fc) : [];
@@ -155,7 +175,7 @@ export default function ForecastBox({ route, calc, kind, terrain, pt }: Forecast
       out.push(Object.assign({ date: d.date, sum: daySummary(fc, d), sunrise: d.sunrise, sunset: d.sunset, aqi: aq }, r, { daysEarly: daysEarly }));
     });
     return { fc, days: out.slice(0, 7) };
-  }, [wx, sp, air, alerts, kind, ck, floor && floor.ft, legs.up, legs.down, legs.floor, legs.fromCamp, legs.tech, legs.hike, faceSun]); // eslint-disable-line react-hooks/exhaustive-deps -- legs is rebuilt every render, so its fields are listed; route/terrain/pt.elevFt are covered by ck, kind and the weather reads
+  }, [wx, sp, air, alerts, kind, ck, floor && floor.ft, legs.up, legs.down, legs.floor, legs.fromCamp, legs.tech, legs.hike, faceSun, terrain && terrain.glacierTravel, terrain && terrain.snowInSeason]); // eslint-disable-line react-hooks/exhaustive-deps -- legs is rebuilt every render, so its fields are listed; route/terrain/pt.elevFt are covered by ck, kind and the weather reads
   const selDay = model && model.days.length ? model.days[Math.min(dayI, model.days.length - 1)] : null;
   useEffect(function () {
     if (!face || face.missing || legs.floor || !selDay || selDay.sunrise == null || selDay.sunset == null || faceSun[selDay.date]) return;
@@ -206,29 +226,29 @@ export default function ForecastBox({ route, calc, kind, terrain, pt }: Forecast
       : day.sunCold ? "The sun reaches steep ground shedding onto the line, but the air there stays below freezing all day — on a cold day the sun alone sets no deadline."
       : !day.sun ? "Under a clear sky the sun doesn’t reach the steep ground shedding onto the line above " + uElev(Math.round(face.fromFt / 100) * 100) + " all day."
       : "";
-    const caveat = fs && fs.bands && !noFrz ? "The line is the fall line down the " + faceDir + " side from the summit, not a traced route — on a ridge it reads one flank. Clear-sky terrain shade from heights about 7 m apart: it misses cornices, seracs and narrow walls, and shade isn’t proof the snow is frozen. Rock and ice can start moving minutes or hours after first sun — no lag is counted — and sun can still shed rime on a cold day." + (kind === "glacier" ? " No timing reduces serac fall." : "") : "";
+    const caveat = fs && fs.bands && !noFrz ? "The line is the fall line down the " + faceDir + " side from the summit, not a traced route — on a ridge it reads one flank. Clear-sky terrain shade from heights about 7 m apart: it misses cornices, seracs and narrow walls, and shade isn’t proof the snow is frozen. Rock and ice can start moving minutes or hours after first sun — no lag is counted — and sun can still shed rime on a cold day." + (kind === "glacier" && bridges === "yes" ? " No timing reduces serac fall." : "") : "";
     if (line || caveat) sunEl = <div style={{ fontSize: 11.5, color: C.textMuted, lineHeight: 1.5, marginTop: startEl ? 6 : 0 }}>{line}{line && caveat ? " " : ""}{caveat}</div>;
   }
   if (kind !== "waterfall" && kind !== "cragmixed") {
     if (legs.floor) {
       startEl = <div style={{ fontSize: 12.5, color: C.textSub, lineHeight: 1.5 }}>{P.publishedIsWholeDay
         ? (fromCamp ? "No start time: this climb’s published time is one figure for the whole trip, with no summit day from camp to count back from."
-          : "No start time: this climb’s published time is one whole-day figure, with no split between the walk in and the climb, and a start for a glacier or ice climb is counted back from those two separately.")
+          : "No start time: this climb’s published time is one whole-day figure, with no split between the walk in and the climb, and a start for a " + (kind === "snow" ? "snow climb" : "glacier or ice climb") + " is counted back from those two separately.")
         : "No start time: the Plan tab’s estimate for this climb is only a minimum (part of the approach or the climbing isn’t on file), and a start counted back from a minimum would be too late."}</div>;
     } else if (day.start) {
       const st = floorQ(day.start.at), daysEarly = day.daysEarly;
       const offBy = clockOf(fc, day.start.at + legs.up * 3600), storm = day.thunder && day.thunder.likely ? "forecast" : "possible";
       const why = day.start.why === "snow"
-        ? (legs.wholeDay ? "to do the " + hrs(legs.wholeDay) + " day and be back down by " : legs.fromCamp ? "to climb " + hrs(legs.up) + " from camp and be back down by " : "to climb " + hrs(legs.up) + " and walk " + hrs(legs.down) + " back down by ") + clockOf(fc, day.softAt) + ", when the snow at " + uElev(floor.ft) + " starts to soften"
-        : day.start.why === "snow-noon" ? (legs.wholeDay ? "to do the " + hrs(legs.wholeDay) + " day and be back down by " : legs.fromCamp ? "to climb " + hrs(legs.up) + " from camp and be back there by " : "to climb " + hrs(legs.up) + " and walk " + hrs(legs.down) + " back down by ") + clockOf(fc, day.start.backBy) + ": parties on glaciers start in the dark and plan to be off the snow by midday, while the night’s freeze still holds and before the sun softens it and weakens the bridges"
+        ? (legs.wholeDay ? "to do the " + hrs(legs.wholeDay) + " day and be back down by " : sayCamp ? "to climb " + hrs(legs.up) + " from camp and be back down by " : "to climb " + hrs(legs.up) + " and walk " + hrs(legs.down) + " back down by ") + clockOf(fc, day.softAt) + ", when the snow at " + uElev(floor.ft) + " starts to soften"
+        : day.start.why === "snow-noon" ? (legs.wholeDay ? "to do the " + hrs(legs.wholeDay) + " day and be back down by " : sayCamp ? "to climb " + hrs(legs.up) + " from camp and be back there by " : "to climb " + hrs(legs.up) + " and walk " + hrs(legs.down) + " back down by ") + clockOf(fc, day.start.backBy) + (kind === "snow" ? ": parties on snow climbs start early and plan to be off the snow by midday, while the night’s freeze still holds and before the sun softens it" : bridges === "yes" ? ": parties on glaciers start in the dark and plan to be off the snow by midday, while the night’s freeze still holds and before the sun softens it and weakens the bridges" : ": parties on glacier and snow routes start in the dark and plan to be off the snow by midday, while the night’s freeze still holds and before the sun softens it and weakens any snow bridges")
           + (day.start.forecast ? ". The forecast alone would allow a start as late as " + clockOf(fc, floorQ(day.start.forecast.at)) + ", but that has no margin" : ". The forecast sets no earlier deadline today")
-        : day.start.why === "sun" ? (legs.fromCamp ? "to climb " + hrs(legs.up) + " from camp" : "to walk in (" + hrs(legs.hike) + ") and climb " + hrs(legs.tech)) + " and be above " + uElev(Math.ceil(day.start.sun.ft / 50) * 50) + " by " + clockOf(fc, day.start.sun.sunAt) + ", when the sun reaches steep ground that sheds onto the line above that height"
+        : day.start.why === "sun" ? (sayCamp ? "to climb " + hrs(legs.up) + " from camp" : "to walk in (" + hrs(legs.hike) + ") and climb " + hrs(legs.tech)) + " and be above " + uElev(Math.ceil(day.start.sun.ft / 50) * 50) + " by " + clockOf(fc, day.start.sun.sunAt) + ", when the sun reaches steep ground that sheds onto the line above that height"
         : day.start.why === "storm-descent" ? "to reach the top" + (legs.wholeDay ? "" : " (" + hrs(legs.up) + ")") + " and start down by " + offBy + ", before the thunderstorms " + storm + " this afternoon"
         : "to be off the summit" + (legs.wholeDay ? "" : " (" + hrs(legs.up) + " up)") + " by " + offBy + ", before the thunderstorms " + storm + " this afternoon";
       startEl = daysEarly >= 2
         ? <div style={{ fontSize: 12.5, color: C.textSub, lineHeight: 1.5 }}>{"Too long for one push: counting back from the Plan tab’s estimate puts the start " + daysEarly + " days early. Plan a camp — see the Plan tab."}</div>
         : <div>
-          <div style={{ fontSize: 15, fontWeight: 800, color: C.text }}>{(legs.fromCamp ? "Leave camp by " : "Start by ") + clockOf(fc, st) + (daysEarly === 1 ? " the night before" : "")}</div>
+          <div style={{ fontSize: 15, fontWeight: 800, color: C.text }}>{(sayCamp ? "Leave camp by " : "Start by ") + clockOf(fc, st) + (daysEarly === 1 ? " the night before" : "")}</div>
           <div style={{ fontSize: 12, color: C.textSub, lineHeight: 1.5, marginTop: 2 }}>{why + (legs.wholeDay ? ". The route publishes one whole-day time (" + hrs(legs.wholeDay) + ") with no split, so the way up is counted as " + Math.round(LIMITS.wholeDayUpShare * 100) + "% of it: a rule of thumb that errs early. It is a fit party’s time, so a slower party should start earlier still." : P.legsStored ? ". Times are this route’s published times for a fit party (Plan tab), so a slower party should start earlier." : ". Times are the Plan tab’s estimate at its own fitness and pack.")}</div>
         </div>;
     } else if (day.noFreeze && floor) {
@@ -256,23 +276,24 @@ export default function ForecastBox({ route, calc, kind, terrain, pt }: Forecast
     <div aria-live="polite" style={{ fontSize: 12, color: C.textSub, marginBottom: 5 }}>{"Showing "}<b style={{ color: C.text }}>{(Math.min(dayI, days.length - 1) === 0 ? "today, " : "") + fullDay}</b>{" — every section below is for this day."}</div>
     <div role="group" aria-label="Day" style={{ display: "flex", gap: 5, overflowX: "auto", paddingBottom: 4 }}>{days.map(function (d: ForecastBoxDay, i: number) {
       const on = i === Math.min(dayI, days.length - 1), w = nWarn(d), c = nCaution(d);
-      return <button key={d.date} onClick={function () { setDayI(i); }} aria-pressed={on} aria-label={dayName(d, i) + ", " + (w + c === 0 ? "no flags" : (w ? w + " warning" + (w === 1 ? "" : "s") : "") + (w && c ? " and " : "") + (c ? c + " caution" + (c === 1 ? "" : "s") : ""))} style={{ flex: "0 0 58px", width: 58, boxSizing: "border-box", minHeight: 58, padding: "6px 2px", borderRadius: 9, border: "1px solid " + (on ? C.blue : C.border), background: on ? C.blueBg : "transparent", color: C.text, cursor: "pointer", textAlign: "center" }}>
-        <div style={{ fontSize: 11.5, fontWeight: 700 }}>{dayName(d, i)}</div>
-        <div style={{ minHeight: 10, lineHeight: "10px" }}>{Array.from({ length: Math.min(w, 3) }, function (_, j) { return <span key={"w" + j}>{dot(C.red)}</span>; })}{Array.from({ length: Math.min(c, 3) }, function (_, j) { return <span key={"c" + j}>{dot(C.amber)}</span>; })}</div>
+      return <button key={d.date} onClick={function () { setDayI(i); }} aria-pressed={on} aria-label={dayName(d, i) + ", " + (d.sum.hi != null ? uTemp(d.sum.hi) + "/" + uTemp(d.sum.lo) + ", " : "") + (w + c === 0 ? "no flags" : (w ? w + " warning" + (w === 1 ? "" : "s") : "") + (w && c ? " and " : "") + (c ? c + " caution" + (c === 1 ? "" : "s") : ""))} style={{ flex: "0 0 58px", width: 58, boxSizing: "border-box", minHeight: 58, padding: "6px 2px", borderRadius: 9, border: "1px solid " + (on ? C.blue : C.border), background: on ? C.blueBg : "transparent", color: C.text, cursor: "pointer", textAlign: "center" }}>
+        {/* The name reads what the button shows, in its order (WCAG 2.5.3): day, then high/low, then the flags the dots stand for. The spaces between the stacked blocks render nothing; they keep "Wed" and "14°" separate words. */}
+        <div style={{ fontSize: 11.5, fontWeight: 700 }}>{dayName(d, i)}</div>{" "}
+        <div style={{ minHeight: 10, lineHeight: "10px" }}>{Array.from({ length: Math.min(w, 3) }, function (_, j) { return <span key={"w" + j}>{dot(C.red)}</span>; })}{Array.from({ length: Math.min(c, 3) }, function (_, j) { return <span key={"c" + j}>{dot(C.amber)}</span>; })}</div>{" "}
         <div style={{ fontSize: 10.5, color: C.textMuted }}>{d.sum.hi != null ? uTemp(d.sum.hi) + "/" + uTemp(d.sum.lo) : ""}</div>
       </button>;
     })}</div></div>
     <div style={box}>
     <DayHead title={"CONDITIONS · " + KIND_LABEL[kind].toUpperCase()} dayLabel={dayName(day, di)} nav={nav} />
-    {startEl || sunEl ? <div style={{ background: C.surface, borderRadius: 10, padding: "10px 12px", marginBottom: 10 }}>{startEl}{pubStart ? <div style={{ fontSize: 12, color: C.text, lineHeight: 1.5, marginTop: 6 }}><b>{"This route’s usual start: "}</b>{pubStart}</div> : null}{sunEl}</div> : null}
+    {startEl || sunEl ? <div style={{ borderLeft: "2px solid " + C.border, padding: "2px 0 2px 10px", marginBottom: 12 }}>{startEl}{pubStart ? <div style={{ fontSize: 12, color: C.text, lineHeight: 1.5, marginTop: 6 }}><b>{"This route’s usual start: "}</b>{pubStart}</div> : null}{sunEl}</div> : null}
     <div style={{ display: "flex", flexDirection: "column", gap: 6, marginBottom: 10 }}>
       {day.flags.length ? day.flags.map(function (f: ForecastBoxFlag, i: number) { const col = f.level === "warn" ? C.red : C.amber; return <div key={f.key + i} style={{ display: "flex", gap: 8, alignItems: "flex-start", fontSize: 12.5, color: C.text, lineHeight: 1.45 }}><span aria-hidden="true" style={{ flexShrink: 0, marginTop: 5, width: 8, height: 8, borderRadius: "50%", background: col }} /><span><b style={{ color: col }}>{f.level === "warn" ? "Warning: " : "Caution: "}</b>{flagText(f, fc)}</span></div>; })
         : <div style={{ fontSize: 12.5, color: C.textSub, lineHeight: 1.5 }}>Nothing in the forecast flags this day.</div>}
     </div>
     <RangeLine route={route} sum={day.sum} />
-    <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 6, marginBottom: 8 }}>{readout.map(function (r) { return <div key={r[0]} style={{ background: C.surface, borderRadius: 8, padding: "6px 8px" }}><div style={{ fontSize: 10.5, color: C.textMuted, fontWeight: 700 }}>{r[0]}</div><div style={{ fontSize: 12.5, color: C.text, fontWeight: 700 }}>{r[1]}</div>{r[2] ? <div style={{ fontSize: 11, color: C.textMuted, marginTop: 1 }}>{r[2]}</div> : null}</div>; })}</div>
+    <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 6, marginBottom: 8 }}>{readout.map(function (r) { return <div key={r[0]} style={{ borderLeft: "1px solid " + C.border, padding: "1px 0 1px 8px", minWidth: 0 }}><div style={{ fontSize: 10.5, color: C.textMuted, fontWeight: 700 }}>{r[0]}</div><div style={{ fontSize: 12.5, color: C.text, fontWeight: 700 }}>{r[1]}</div>{r[2] ? <div style={{ fontSize: 11, color: C.textMuted, marginTop: 1 }}>{r[2]}</div> : null}</div>; })}</div>
     <div style={{ fontSize: 11, color: C.textMuted, lineHeight: 1.5 }}>
-      {"Read at " + (pt.elevFt != null ? uElev(pt.elevFt) : groundFt(fc) != null ? uElev(Math.round(groundFt(fc) / 10) * 10) + ", the ground height at the map point" : "the area’s height") + (pt.pinned ? " at " + pt.name : " over " + pt.name) + "." + (floor && floor.basis === "halfway" ? " Snow is assumed to reach down to " + uElev(floor.ft) + ", halfway up the climb." : floor && floor.basis === "camp" ? " Snow is read down to high camp, " + uElev(floor.ft) + "." : "") + " Flags are rules of thumb, not a go/no-go. " + BLIND[kind]}
+      {"Read at " + (pt.elevFt != null ? uElev(pt.elevFt) : groundFt(fc) != null ? uElev(Math.round(groundFt(fc) / 10) * 10) + ", the ground height at the map point" : "the area’s height") + (pt.pinned ? " at " + pt.name : " over " + pt.name) + "." + (floor && floor.basis === "trailhead" ? " Snow is assumed to reach down to " + uElev(floor.ft) + ", halfway between the trailhead and the top." : floor && floor.basis === "halfway" ?" Snow is assumed to reach down to " + uElev(floor.ft) + ", halfway up the climb." : floor && floor.basis === "camp" ? " Snow is read down to high camp, " + uElev(floor.ft) + "." : "") + " Flags are rules of thumb, not a go/no-go. " + (kind === "glacier" && bridges !== "yes" ? BLIND_GLACIER_OPEN : BLIND[kind]) + snowFreeNote(terrain)}
     </div>
   </div>
   <DayByDay days={days} di={di} pick={setDayI} dayName={dayName} nWarn={nWarn} nCaution={nCaution} fc={fc} legs={legs} startOn={kind !== "waterfall" && kind !== "cragmixed"} />

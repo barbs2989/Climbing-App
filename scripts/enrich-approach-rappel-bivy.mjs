@@ -28,6 +28,7 @@ import fs from "fs";
 import { patchRow, SUPABASE_URL, anonKey, requireServiceKey } from "./lib/supabase-env.mjs";
 import { shoutedStrings } from "./lib/shouted-prose.mjs";
 import { checkEntry, proseStrings } from "./lib/source-overlap.mjs";
+import { validateEntry, lockViolations, ledgerValueMatches, nextLedgerRow } from "./lib/research-ledger.mjs";
 
 const args = process.argv.slice(2);
 const DRY = args.includes("--dry");
@@ -210,7 +211,8 @@ for (const f of FROM) {
       || (Array.isArray(spec.rappel_detail) && spec.rappel_detail.length > 0)
       || (Array.isArray(spec.rappel_lengths) && spec.rappel_lengths.length > 0)
       || (Array.isArray(spec.pitch_detail) && spec.pitch_detail.length > 0)
-      || (spec.set && Object.keys(spec.set).length > 0);
+      || (spec.set && Object.keys(spec.set).length > 0)
+      || (Array.isArray(spec.ledger) && spec.ledger.length > 0);
     if (!hasContent) { console.log(`skip ${id} — ${spec.skip_reason || "nothing to write"}`); continue; }
     if (!spec.area) { console.error(`skip ${id} — batch entry has no area to assert against`); process.exitCode = 1; continue; }
     for (const k of ["climbing_route", "approach_variants", "bivy"]) if (Array.isArray(spec[k]) && !spec[k].length) delete spec[k];
@@ -233,14 +235,14 @@ for (const f of FROM) {
 const key = anonKey();
 // Named so the settable-column assertion below can check itself against them rather than against a
 // string somebody has to remember to keep in step.
-const readSelect = "id,name,area_id,discipline,pitches,pitch_detail,rappel_detail,rappel_count_note,rappels,descent_text,approach,waypoints,overview,beta,hazards,pro_tips,watch_out,pro_needs,bail,road,face,approach_variants,climbing_route,bivy,approach_logistics,fa";
+const readSelect = "id,name,area_id,discipline,pitches,pitch_detail,rappel_detail,rappel_count_note,rappels,descent_text,approach,waypoints,overview,beta,hazards,pro_tips,watch_out,pro_needs,bail,road,face,approach_variants,climbing_route,bivy,approach_logistics,fa,gain_ft,approach_loss_ft,return_gain_ft";
 // `face` is prose describing the wall, the same class as `overview` — NOT a classification column.
 // It is settable because it is where a wrong route NAME leaves its residue: a row renamed in the
 // catalog keeps a `face` written to justify the old name, and four rows in the 2026-08-14
 // name-vs-aspect research carry exactly that (Cameron's "North ridge" on a ridge gained due west,
 // Tye's backwards "(west side)"). `aspect` stays OUT — it drives the sun/shade readout and is a
 // classification, so it goes through SQL a human runs.
-const VERIFY_SCALAR = ["rappel_count_note", "rappels", "descent_text", "approach", "overview", "beta", "pro_needs", "bail", "face", "fa"];
+const VERIFY_SCALAR = ["rappel_count_note", "rappels", "descent_text", "approach", "overview", "beta", "pro_needs", "bail", "face", "fa", "gain_ft", "approach_loss_ft", "return_gain_ft"];
 const VERIFY_JSON = ["hazards", "pro_tips", "watch_out", "road", "approach_logistics"];
 // `waypoints` and `rappel_detail` are compared entry by entry further down rather than whole, so
 // they are verified — just not by either list.
@@ -259,7 +261,12 @@ const SETTABLE = new Set([
   // hand-written one-off per route; this puts it on the same guarded path as everything else —
   // area asserted, patchRow, re-read and reconciled.
   "approach_logistics",
+  // The PUBLISHED climb (owner, 2026-11-14: "i dont want to have to do any of our own math, all the
+  // information should be online"): gain_ft, and the approach's downhill / the way back's uphill (0449)
+  // that the leg cards print. Integers only (checked below), each carried with `ledger` evidence.
+  "gain_ft", "approach_loss_ft", "return_gain_ft",
 ]);
+const SET_INT_FT = new Set(["gain_ft", "approach_loss_ft", "return_gain_ft"]);
 // A settable column is coupled to TWO other places, and getting either wrong is SILENT: it must be
 // in the re-read select or `after[k]` is undefined, and in a verify group or the write is checked by
 // nothing. Both failures report SUCCESS for a write nobody confirmed — the exact shape this script's
@@ -269,6 +276,46 @@ for (const k of SETTABLE) {
   if (!readSelect.split(",").includes(k)) throw new Error(`${k} is settable but missing from the re-read select — after.${k} would be undefined and its verify vacuous`);
   if (![...VERIFY_SCALAR, ...VERIFY_JSON, ...VERIFY_CUSTOM].includes(k)) throw new Error(`${k} is settable but in no verify group — it would be written and checked by nothing`);
 }
+// ── Research ledger (route_field_evidence, 0437; rules in scripts/lib/research-ledger.mjs) ─────
+// A field two independent sources confirmed is LOCKED, and no later batch may change it (owner,
+// 2026-11-14) — that is what makes repeated research converge instead of churning. Read with the
+// service key: the table has RLS on and no policy, so the anon key sees an EMPTY ledger, and an
+// empty ledger would wave every overwrite through.
+const LEDGER_BATCH = FROM.length ? FROM.map(p => p.split(/[\\/]/).pop()).join(",") : "inline";
+let ledgerMissing = false;
+const readLedger = async id => {
+  let k; try { k = requireServiceKey(); } catch { return null; }
+  const res = await fetch(`${SUPABASE_URL}/rest/v1/route_field_evidence?select=*&route_id=eq.${encodeURIComponent(id)}`, { headers: { apikey: k, Authorization: "Bearer " + k } });
+  const text = await res.text();
+  // Before 0437 is applied there is no table and therefore no lock to break; say so loudly, and
+  // refuse any batch that wants to WRITE evidence.
+  if (res.status === 404 || /PGRST205|42P01/.test(text)) { ledgerMissing = true; return []; }
+  if (!res.ok) throw new Error(`ledger read for ${id} -> ${res.status} ${text.slice(0, 160)}`);
+  return JSON.parse(text);
+};
+const readColumns = async (id, cols) => {
+  if (!cols.length) return {};
+  const url = `${SUPABASE_URL}/rest/v1/routes?select=${cols.join(",")}&id=eq.${encodeURIComponent(id)}`;
+  const res = await fetch(url, { headers: { apikey: key, Authorization: "Bearer " + key } });
+  if (!res.ok) throw new Error(`columns ${cols.join(",")} of ${id} -> ${res.status} (is every ledger field a real routes column?)`);
+  return (await res.json())[0] || {};
+};
+const writeLedger = async (id, entries, existing) => {
+  const k = requireServiceKey();
+  const byField = Object.fromEntries((existing || []).map(r => [r.field, r]));
+  const rows = entries.map(e => nextLedgerRow(id, e, byField[e.field], LEDGER_BATCH));
+  const res = await fetch(`${SUPABASE_URL}/rest/v1/route_field_evidence?on_conflict=route_id,field`, {
+    method: "POST",
+    headers: { apikey: k, Authorization: "Bearer " + k, "Content-Type": "application/json", Prefer: "resolution=merge-duplicates,return=representation" },
+    body: JSON.stringify(rows),
+  });
+  const text = await res.text();
+  if (!res.ok) throw new Error(`ledger write for ${id} -> ${res.status} ${text.slice(0, 200)}`);
+  const got = JSON.parse(text);
+  if (!Array.isArray(got) || got.length !== rows.length) throw new Error(`ledger write for ${id} stored ${Array.isArray(got) ? got.length : "?"} of ${rows.length} rows`);
+  return got.length;
+};
+
 const readRoute = async id => {
   const url = `${SUPABASE_URL}/rest/v1/routes?select=${readSelect}&id=eq.${encodeURIComponent(id)}`;
   const res = await fetch(url, { headers: { apikey: key, Authorization: "Bearer " + key } });
@@ -466,9 +513,29 @@ for (const id of ids) {
   if (spec.set) {
     for (const [k, v] of Object.entries(spec.set)) {
       if (!SETTABLE.has(k)) { console.error(`REFUSING ${id} — set.${k} is not an allowed column`); process.exitCode = 1; body._refuse = true; continue; }
+      if (SET_INT_FT.has(k) && !(v === null || (Number.isInteger(v) && v >= 0 && v <= 20000))) { console.error(`REFUSING ${id} — set.${k} must be whole feet 0-20000 or null (got ${JSON.stringify(v)})`); process.exitCode = 1; body._refuse = true; continue; }
+      if (SET_INT_FT.has(k) && !(Array.isArray(spec.ledger) && spec.ledger.some(e => e && e.field === k))) { console.error(`REFUSING ${id} — set.${k} is a published figure and needs a ledger entry with its sources`); process.exitCode = 1; body._refuse = true; continue; }
       body[k] = v;
     }
     if (body._refuse) { delete body._refuse; continue; }
+  }
+
+  // LOCKS FIRST. Nothing below may overwrite a field the ledger has locked, and every evidence entry
+  // the batch carries must clear the owner's lock rules and describe the value the row will hold.
+  const ledgerRows = await readLedger(id);
+  if (ledgerRows === null && !DRY) throw new Error("service key required to read the research ledger");
+  if (ledgerRows === null) console.warn(`warn ${id} — no service key, so the research ledger was NOT read; --dry cannot show lock refusals`);
+  if (ledgerMissing) console.warn(`warn ${id} — route_field_evidence does not exist yet (0437 not applied); no locks were checked`);
+  const locked = lockViolations(body, ledgerRows || [], spec.overturn || {});
+  if (locked.length) { locked.forEach(e => console.error(`REFUSING ${id} — ${e}`)); process.exitCode = 1; continue; }
+  const ledger = Array.isArray(spec.ledger) ? spec.ledger : [];
+  if (ledger.length) {
+    if (ledgerMissing) { console.error(`REFUSING ${id} — the batch carries evidence but route_field_evidence does not exist yet (apply 0437)`); process.exitCode = 1; continue; }
+    const errs = ledger.flatMap(e => validateEntry(e));
+    const cols = [...new Set(ledger.map(e => e.field.split("/")[0]))].filter(c => !(c in body) && !(c in before));
+    const finalRow = { ...before, ...(await readColumns(id, cols)), ...body };
+    for (const e of ledger) if (!errs.some(x => x.startsWith(`ledger ${e.field}:`)) && !ledgerValueMatches(e, finalRow)) errs.push(`ledger ${e.field}: its value is not what the row will hold after this write`);
+    if (errs.length) { errs.forEach(e => console.error(`REFUSING ${id} — ${e}`)); process.exitCode = 1; continue; }
   }
 
   // Every column this script writes renders verbatim, and batches used to SHOUT lead sentences in
@@ -497,7 +564,14 @@ for (const id of ids) {
     const v = body[k];
     console.log(`   ${k}: ${Array.isArray(v) ? v.length + " entr" + (v.length === 1 ? "y" : "ies") : "set"}`);
   }
+  if (ledger.length) console.log(`   ledger: ${ledger.length} field(s) — ${ledger.map(e => e.field + "=" + e.level).join(", ")}`);
   if (DRY) { console.log("   --dry, not written"); continue; }
+  // Evidence alone (a value confirmed and locked as it stands) writes no column, only the ledger.
+  if (!Object.keys(body).length) {
+    const n = await writeLedger(id, ledger, ledgerRows);
+    console.log(`   ledger only: ${n} evidence row(s) stored`);
+    continue;
+  }
 
   if (body.pitch_detail || (body.climbing_route && (before.climbing_route || []).length) || spec.set) {
     rollback[id] = { area: before.area_id };
@@ -553,5 +627,8 @@ for (const id of ids) {
   if (!checks.length) { console.log("   nothing to verify — refusing to claim success"); process.exitCode = 1; continue; }
   const ok = checks.every(Boolean);
   console.log(ok ? "   verified on re-read" : "   MISMATCH on re-read — inspect before trusting");
-  if (!ok) process.exitCode = 1;
+  if (!ok) { process.exitCode = 1; continue; }
+  // Evidence is stored only for a write that verified — a ledger row must never describe a value
+  // the row does not actually hold.
+  if (ledger.length) console.log(`   ledger: ${await writeLedger(id, ledger, ledgerRows)} evidence row(s) stored`);
 }

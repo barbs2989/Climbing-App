@@ -1,0 +1,726 @@
+[
+ {
+  "id": "wa_mount_goode_northeast_buttress",
+  "before": {
+   "timing": {
+    "totalHrs": 32,
+    "summitTimeHrs": 9,
+    "descentTimeHrs": 15,
+    "approachTimeHrs": 6,
+    "recommendedStart": "Alpine start from high camp",
+    "sectionBreakdown": [
+     {
+      "hrs": 8,
+      "note": "PCT south from the Bridge Creek trailhead, then up North Fork Bridge Creek (ford required), finishing with brushy/alder off-trail travel to a camp near the glacier toe (~6,400-6,80…",
+      "fromTo": "Approach to high camp",
+      "section": "Approach"
+     },
+     {
+      "hrs": 9,
+      "note": "Cross the glacier and deal with the moat/bergschrund onto the buttress, then simul-climb the lower 4th-class crest before roping up for several pitches of low 5th class (5.4-5.6) t…",
+      "fromTo": "Climb the Northeast Buttress to a summit bivy",
+      "section": "Climb"
+     },
+     {
+      "hrs": 10,
+      "note": "Rappel and downclimb the Southwest Couloir/south side, then continue losing elevation toward the Bridge Creek drainage. A long day with multiple rappels; parties that don't move ef…",
+      "fromTo": "Descend toward Bridge Creek",
+      "section": "Descent"
+     },
+     {
+      "hrs": 5,
+      "note": "Finish descending to the valley floor and follow the North Fork Bridge Creek Trail and PCT back to Highway 20.",
+      "fromTo": "Hike out",
+      "section": "Descent"
+     }
+    ]
+   },
+   "itinerary": {
+    "cal": "Same NPS backcountry permit zone as the Southwest Couloir; route is best after roughly the third week of July, since accessing the toe of the buttress off the glacier gets harder as the season's moat/bergschrund opens.",
+    "days": [
+     {
+      "n": 1,
+      "note": "PCT south from the Bridge Creek trailhead, then up North Fork Bridge Creek (ford required), finishing with brushy/alder off-trail travel to a camp near the glacier toe (~6,400-6,800 ft). Expect mosquitoes and a slow final half-mile.",
+      "hours": 8,
+      "miles": 15.5,
+      "title": "Approach to high camp",
+      "gainFt": 4700,
+      "lossFt": 0,
+      "packLb": 38,
+      "schedule": [],
+      "objective": "Reach camp near the toe of the Goode Glacier"
+     },
+     {
+      "n": 2,
+      "note": "Cross the glacier and deal with the moat/bergschrund onto the buttress, then simul-climb the lower 4th-class crest before roping up for several pitches of low 5th class (5.4-5.6) to the summit. Most parties reach the top roughly 8 hours after leaving camp and bivy there.",
+      "hours": 9,
+      "miles": 2.5,
+      "title": "Climb the Northeast Buttress to a summit bivy",
+      "gainFt": 2800,
+      "lossFt": 0,
+      "packLb": 20,
+      "schedule": [
+       {
+        "time": "Pre-dawn",
+        "label": "Leave high camp",
+        "detail": "Cross the glacier toward the buttress toe."
+       },
+       {
+        "time": "+1-2 hr",
+        "label": "Onto the buttress",
+        "detail": "Negotiate the bergschrund/moat; can require downclimbing or a short rappel."
+       },
+       {
+        "time": "+2-6 hr",
+        "label": "Simul-climb the crest",
+        "detail": "1,000+ ft of easy 4th class, then low 5th class pitches (a few 5.5/5.6 moves)."
+       },
+       {
+        "time": "~8 hr after camp",
+        "label": "Reach the summit (9,220 ft)",
+        "detail": "Highest point in North Cascades National Park."
+       },
+       {
+        "time": "Evening",
+        "label": "Bivy on the summit",
+        "detail": "Considered the 'safest' bivy on route, away from rockfall."
+       }
+      ],
+      "objective": "Summit via the buttress, bivy on top"
+     },
+     {
+      "n": 3,
+      "note": "Rappel and downclimb the Southwest Couloir/south side, then continue losing elevation toward the Bridge Creek drainage. A long day with multiple rappels; parties that don't move efficiently risk getting benighted on this leg.",
+      "hours": 10,
+      "miles": 10,
+      "title": "Descend toward Bridge Creek",
+      "gainFt": 0,
+      "lossFt": 7500,
+      "packLb": 20,
+      "schedule": [
+       {
+        "time": "6:00 AM",
+        "label": "Start descent",
+        "detail": "Reverse toward Black Tooth Notch."
+       },
+       {
+        "time": "Morning",
+        "label": "Rappels",
+        "detail": "Typically 2-5 rappels (30m) through steep sections."
+       },
+       {
+        "time": "Mid-morning",
+        "label": "Reach heather benches (~7,400 ft)",
+        "detail": "Terrain eases; continue down-valley."
+       },
+       {
+        "time": "Evening",
+        "label": "Camp near Bridge Creek",
+        "detail": "Lower camp before the final hike-out day."
+       }
+      ],
+      "objective": "Down-climb/rappel the Southwest Couloir toward the valley"
+     },
+     {
+      "n": 4,
+      "note": "Finish descending to the valley floor and follow the North Fork Bridge Creek Trail and PCT back to Highway 20.",
+      "hours": 5,
+      "miles": 10,
+      "title": "Hike out",
+      "gainFt": 0,
+      "lossFt": 1400,
+      "packLb": 32,
+      "schedule": [],
+      "objective": "Return to the Bridge Creek trailhead"
+     }
+    ],
+    "totalNote": "A standard 4-day trip (~38 mi RT, ~7,500 ft of climbing gain) for most parties; very fit/fast teams sometimes compress the descent and hike-out into one massive day-3 push (one trip report logged summit-to-car in 10 hours over 24 miles), making it a 3-day trip."
+   }
+  },
+  "after": {
+   "timing": {
+    "totalHrs": 31.5,
+    "summitTimeHrs": 9,
+    "descentTimeHrs": 14,
+    "approachTimeHrs": 8.5,
+    "recommendedStart": "Alpine start from high camp",
+    "sectionBreakdown": [
+     {
+      "hrs": 8.5,
+      "note": "PCT south from the Bridge Creek trailhead, then up North Fork Bridge Creek (ford required), finishing with brushy/alder off-trail travel to a camp near the glacier toe (~6,400-6,80…",
+      "fromTo": "Approach to high camp",
+      "section": "Approach"
+     },
+     {
+      "hrs": 9,
+      "note": "Cross the glacier and deal with the moat/bergschrund onto the buttress, then simul-climb the lower 4th-class crest before roping up for several pitches of low 5th class (5.4-5.6) t…",
+      "fromTo": "Climb the Northeast Buttress to a summit bivy",
+      "section": "Climb"
+     },
+     {
+      "hrs": 9,
+      "note": "Rappel and downclimb the Southwest Couloir/south side, then continue losing elevation toward the Bridge Creek drainage. A long day with multiple rappels; parties that don't move ef…",
+      "fromTo": "Descend toward Bridge Creek",
+      "section": "Descent"
+     },
+     {
+      "hrs": 5,
+      "note": "Finish descending to the valley floor and follow the North Fork Bridge Creek Trail and PCT back to Highway 20.",
+      "fromTo": "Hike out",
+      "section": "Descent"
+     }
+    ]
+   },
+   "itinerary": {
+    "cal": "Same NPS backcountry permit zone as the Southwest Couloir; route is best after roughly the third week of July, since accessing the toe of the buttress off the glacier gets harder as the season's moat/bergschrund opens.",
+    "days": [
+     {
+      "n": 1,
+      "note": "PCT south from the Bridge Creek trailhead, then up North Fork Bridge Creek (ford required), finishing with brushy/alder off-trail travel to a camp near the glacier toe (~6,400-6,800 ft). Expect mosquitoes and a slow final half-mile.",
+      "hours": 8.5,
+      "miles": 15.5,
+      "title": "Approach to high camp",
+      "gainFt": 4700,
+      "lossFt": 0,
+      "packLb": 38,
+      "schedule": [],
+      "objective": "Reach camp near the toe of the Goode Glacier"
+     },
+     {
+      "n": 2,
+      "note": "Cross the glacier and deal with the moat/bergschrund onto the buttress, then simul-climb the lower 4th-class crest before roping up for several pitches of low 5th class (5.4-5.6) to the summit. Most parties reach the top roughly 9 hours after leaving camp and bivy there.",
+      "hours": 9,
+      "miles": 2.5,
+      "title": "Climb the Northeast Buttress to a summit bivy",
+      "gainFt": 2800,
+      "lossFt": 0,
+      "packLb": 20,
+      "schedule": [
+       {
+        "time": "Pre-dawn",
+        "label": "Leave high camp",
+        "detail": "Cross the glacier toward the buttress toe."
+       },
+       {
+        "time": "+1-2 hr",
+        "label": "Onto the buttress",
+        "detail": "Negotiate the bergschrund/moat; can require downclimbing or a short rappel."
+       },
+       {
+        "time": "+2-6 hr",
+        "label": "Simul-climb the crest",
+        "detail": "1,000+ ft of easy 4th class, then low 5th class pitches (a few 5.5/5.6 moves)."
+       },
+       {
+        "time": "~9 hr after camp",
+        "label": "Reach the summit (9,220 ft)",
+        "detail": "Highest point in North Cascades National Park."
+       },
+       {
+        "time": "Evening",
+        "label": "Bivy on the summit",
+        "detail": "Considered the 'safest' bivy on route, away from rockfall."
+       }
+      ],
+      "objective": "Summit via the buttress, bivy on top"
+     },
+     {
+      "n": 3,
+      "note": "Rappel and downclimb the Southwest Couloir/south side, then continue losing elevation toward the Bridge Creek drainage. A long day with multiple rappels; parties that don't move efficiently risk getting benighted on this leg.",
+      "hours": 9,
+      "miles": 10,
+      "title": "Descend toward Bridge Creek",
+      "gainFt": 0,
+      "lossFt": 7500,
+      "packLb": 20,
+      "schedule": [
+       {
+        "time": "6:00 AM",
+        "label": "Start descent",
+        "detail": "Reverse toward Black Tooth Notch."
+       },
+       {
+        "time": "Morning",
+        "label": "Rappels",
+        "detail": "Typically 2-5 rappels (30m) through steep sections."
+       },
+       {
+        "time": "Mid-morning",
+        "label": "Reach heather benches (~7,400 ft)",
+        "detail": "Terrain eases; continue down-valley."
+       },
+       {
+        "time": "Evening",
+        "label": "Camp near Bridge Creek",
+        "detail": "Lower camp before the final hike-out day."
+       }
+      ],
+      "objective": "Down-climb/rappel the Southwest Couloir toward the valley"
+     },
+     {
+      "n": 4,
+      "note": "Finish descending to the valley floor and follow the North Fork Bridge Creek Trail and PCT back to Highway 20.",
+      "hours": 5,
+      "miles": 10,
+      "title": "Hike out",
+      "gainFt": 0,
+      "lossFt": 1400,
+      "packLb": 32,
+      "schedule": [],
+      "objective": "Return to the Bridge Creek trailhead"
+     }
+    ],
+    "totalNote": "A standard 4-day trip (~38 mi RT, ~7,500 ft of climbing gain) for most parties, about 31.5 hours on the move: roughly 8.5 hours in to high camp, 9 hours from camp up the buttress to the summit, and 14 hours from the summit back to the car over the last two days. Very fit, fast teams sometimes cover the whole descent and walk-out in one long third day, making it a 3-day trip."
+   }
+  }
+ },
+ {
+  "id": "wa_dark_peak_dark_glacier_route",
+  "before": {
+   "timing": {
+    "totalHrs": 23.25,
+    "summitTimeHrs": 9,
+    "descentTimeHrs": 10.25,
+    "approachTimeHrs": 4,
+    "recommendedStart": "Alpine (pre-dawn) start from high camp given the length of the summit day, which includes off-trail travel, roped glacier crossing, and a belayed moat crossing before and after the summit",
+    "sectionBreakdown": [
+     {
+      "hrs": 4,
+      "fromTo": "Trailhead to Swamp Creek Camp",
+      "section": "Approach"
+     },
+     {
+      "hrs": 9,
+      "fromTo": "Camp up the Dark Glacier to the summit",
+      "section": "Climb"
+     },
+     {
+      "hrs": 10.25,
+      "fromTo": "Summit back to camp, then out to the trailhead",
+      "section": "Descent"
+     }
+    ]
+   },
+   "itinerary": {
+    "cal": "Jun-Jul. Commonly done as a 3-day trip that depends on the Lady of the Lake ferry or a floatplane to Stehekin and the valley shuttle to High Bridge. An alternate approach via Hemlock Camp, about 12.5 miles south on the PCT, is reported as substantially easier because it avoids most of the Swamp Creek brush.",
+    "days": [
+     {
+      "n": 1,
+      "note": "Take the ferry or a floatplane to Stehekin and the shuttle to High Bridge. Hike the Agnes Creek Trail (PCT) about 5-5.5 miles to Fivemile Camp or 8-9 miles to Swamp Creek Camp, or continue toward Hemlock Camp on the alternate approach.",
+      "hours": null,
+      "miles": 8.5,
+      "title": "Ferry, shuttle, and hike up Agnes Creek",
+      "gainFt": 1100,
+      "lossFt": 0,
+      "packLb": 42,
+      "schedule": [],
+      "objective": "Reach Swamp Creek or Fivemile Camp"
+     },
+     {
+      "n": 2,
+      "note": "This is a long, strenuous summit day: bushwhack up Swamp Creek and travel cross-country to Dark Fin Col, then rope up across the Dark Glacier and belay the moat crossing before a short scramble to the summit. Reverse the entire route back to camp.",
+      "hours": null,
+      "miles": null,
+      "title": "Summit Dark Peak",
+      "gainFt": 5700,
+      "lossFt": 5700,
+      "packLb": 18,
+      "schedule": [],
+      "objective": "Cross the Dark Glacier to the summit and return"
+     },
+     {
+      "n": 3,
+      "note": "Hike out to High Bridge and catch the return shuttle and ferry to Chelan.",
+      "hours": null,
+      "miles": 8.5,
+      "title": "Hike out to High Bridge",
+      "gainFt": 0,
+      "lossFt": 1100,
+      "packLb": 38,
+      "schedule": [],
+      "objective": "Catch the shuttle and ferry back to Chelan"
+     }
+    ],
+    "totalNote": "Ferry and shuttle to High Bridge and hike up Agnes Creek to camp, make a long summit day over Dark Fin Col and the Dark Glacier, then hike out to catch the shuttle and ferry."
+   }
+  },
+  "after": {
+   "timing": {
+    "totalHrs": 21.5,
+    "summitTimeHrs": 14,
+    "descentTimeHrs": 3.5,
+    "approachTimeHrs": 4,
+    "recommendedStart": "Alpine (pre-dawn) start from high camp given the length of the summit day, which includes off-trail travel, roped glacier crossing, and a belayed moat crossing before and after the summit",
+    "sectionBreakdown": [
+     {
+      "hrs": 4,
+      "fromTo": "Trailhead to Swamp Creek Camp",
+      "section": "Approach"
+     },
+     {
+      "hrs": 8,
+      "fromTo": "Camp up the Dark Glacier to the summit",
+      "section": "Climb"
+     },
+     {
+      "hrs": 9.5,
+      "fromTo": "Summit back to camp, then out to the trailhead",
+      "section": "Descent"
+     }
+    ]
+   },
+   "itinerary": {
+    "cal": "Jun-Jul. Commonly done as a 3-day trip that depends on the Lady of the Lake ferry or a floatplane to Stehekin and the valley shuttle to High Bridge. An alternate approach via Hemlock Camp, about 12.5 miles south on the PCT, is reported as substantially easier because it avoids most of the Swamp Creek brush.",
+    "days": [
+     {
+      "n": 1,
+      "note": "Take the ferry or a floatplane to Stehekin and the shuttle to High Bridge. Hike the Agnes Creek Trail (PCT) about 5-5.5 miles to Fivemile Camp or 8-9 miles to Swamp Creek Camp, or continue toward Hemlock Camp on the alternate approach.",
+      "hours": 4,
+      "miles": 8.5,
+      "title": "Ferry, shuttle, and hike up Agnes Creek",
+      "gainFt": 1100,
+      "lossFt": 0,
+      "packLb": 42,
+      "schedule": [],
+      "objective": "Reach Swamp Creek or Fivemile Camp"
+     },
+     {
+      "n": 2,
+      "note": "This is a long, strenuous summit day: bushwhack up Swamp Creek and travel cross-country to Dark Fin Col, then rope up across the Dark Glacier and belay the moat crossing before a short scramble to the summit. Reverse the entire route back to camp.",
+      "hours": 14,
+      "miles": null,
+      "title": "Summit Dark Peak",
+      "gainFt": 5700,
+      "lossFt": 5700,
+      "packLb": 18,
+      "schedule": [],
+      "objective": "Cross the Dark Glacier to the summit and return"
+     },
+     {
+      "n": 3,
+      "note": "Hike out to High Bridge and catch the return shuttle and ferry to Chelan.",
+      "hours": 3.5,
+      "miles": 8.5,
+      "title": "Hike out to High Bridge",
+      "gainFt": 0,
+      "lossFt": 1100,
+      "packLb": 38,
+      "schedule": [],
+      "objective": "Catch the shuttle and ferry back to Chelan"
+     }
+    ],
+    "totalNote": "Ferry and shuttle to High Bridge and hike up Agnes Creek to camp, make a long summit day over Dark Fin Col and the Dark Glacier, then hike out to catch the shuttle and ferry."
+   }
+  }
+ },
+ {
+  "id": "wa_mount_daniel_daniel_glacier",
+  "before": {
+   "timing": {
+    "totalHrs": 19.5,
+    "summitTimeHrs": 11,
+    "descentTimeHrs": 4,
+    "approachTimeHrs": 4.5,
+    "recommendedStart": "4:30 AM from camp",
+    "sectionBreakdown": [
+     {
+      "hrs": 4.5,
+      "note": "From the Cathedral Rock Trailhead (~3,350 ft), climb steadily via Squaw Lake and over Cathedral Pass (~5,550 ft) before dropping slightly to camp at Peggy's Pond (~5,560 ft). Trail…",
+      "fromTo": "Approach to Peggy's Pond",
+      "section": "Approach"
+     },
+     {
+      "hrs": 15,
+      "note": "Alpine start from Peggy's Pond, ascend on trail/snow toward the SE ridge and onto the Daniel Glacier to reach the Middle and West Summits (~2,400 ft gain from camp). Most parties a…",
+      "fromTo": "Summit push and hike out",
+      "section": "Climb"
+     }
+    ]
+   },
+   "itinerary": {
+    "cal": "The route is typically climbed June-September once the Cathedral Pass trail and Daniel Glacier snow are in reasonable shape.",
+    "days": [
+     {
+      "n": 1,
+      "note": "From the Cathedral Rock Trailhead (~3,350 ft), climb steadily via Squaw Lake and over Cathedral Pass (~5,600 ft) before dropping slightly to camp at Peggy's Pond (~5,560 ft). Trail is well-graded switchbacks up to the pass, then a rougher/fainter path along the basin to the pond.",
+      "hours": 4.5,
+      "miles": 5.5,
+      "title": "Approach to Peggy's Pond",
+      "gainFt": 2700,
+      "lossFt": 0,
+      "packLb": 35,
+      "schedule": [],
+      "objective": "Backpack in to high camp at Peggy's Pond"
+     },
+     {
+      "n": 2,
+      "note": "Alpine start from Peggy's Pond, ascend on trail/snow toward the SE ridge and onto the Daniel Glacier to reach the Middle and West Summits (~2,400 ft gain from camp). Most parties are back at camp by mid-afternoon, break camp, and continue the ~5.5 mile, 2,700 ft descent out to the trailhead the same day, finishing in the evening.",
+      "hours": 15,
+      "miles": 9.5,
+      "title": "Summit push and hike out",
+      "gainFt": 2400,
+      "lossFt": 5100,
+      "packLb": 30,
+      "schedule": [
+       {
+        "time": "4:30 AM",
+        "label": "Leave camp",
+        "detail": "Alpine start from Peggy's Pond, light packs for the summit push."
+       },
+       {
+        "time": "7:30 AM",
+        "label": "Reach base of Daniel Glacier",
+        "detail": "Rope up / gear up for glacier travel if crevasses are open."
+       },
+       {
+        "time": "~1:00 PM",
+        "label": "Summit (West Peak)",
+        "detail": "Real trip reports of the adjacent SE-ridge route show parties topping out on all three summits around 1:00-1:15 PM."
+       },
+       {
+        "time": "3:30 PM",
+        "label": "Back at Peggy's Pond",
+        "detail": "Break camp and repack for the hike out."
+       },
+       {
+        "time": "~7:30 PM",
+        "label": "Trailhead",
+        "detail": "Full descent of Cathedral Pass trail back to the car."
+       }
+      ],
+      "objective": "Climb the Daniel Glacier / SE Slopes to the Middle and West (true) Summits, then hike all the way out"
+     }
+    ],
+    "totalNote": "A 2-day/1-night trip: ~15 miles round trip with about 5,100 ft total gain; many parties extend to 3 days by adding a rest/weather day or side trips to Cathedral Rock, Tuck & Robin Lakes, or the Jade/Marmot Lakes basins."
+   }
+  },
+  "after": {
+   "timing": {
+    "totalHrs": 14,
+    "summitTimeHrs": 4.5,
+    "descentTimeHrs": 6,
+    "approachTimeHrs": 3.5,
+    "recommendedStart": "4:30 AM from camp",
+    "sectionBreakdown": [
+     {
+      "hrs": 3.5,
+      "note": "From the Cathedral Rock Trailhead (~3,350 ft), climb steadily via Squaw Lake and over Cathedral Pass (~5,550 ft) before dropping slightly to camp at Peggy's Pond (~5,560 ft). Trail…",
+      "fromTo": "Approach to Peggy's Pond",
+      "section": "Approach"
+     },
+     {
+      "hrs": 10.5,
+      "note": "Alpine start from Peggy's Pond, ascend on trail/snow toward the SE ridge and onto the Daniel Glacier to reach the Middle and West Summits (~2,400 ft gain from camp). Most parties a…",
+      "fromTo": "Summit push and hike out",
+      "section": "Climb"
+     }
+    ]
+   },
+   "itinerary": {
+    "cal": "The route is typically climbed June-September once the Cathedral Pass trail and Daniel Glacier snow are in reasonable shape.",
+    "days": [
+     {
+      "n": 1,
+      "note": "From the Cathedral Rock Trailhead (~3,350 ft), climb steadily via Squaw Lake and over Cathedral Pass (~5,600 ft) before dropping slightly to camp at Peggy's Pond (~5,560 ft). Trail is well-graded switchbacks up to the pass, then a rougher/fainter path along the basin to the pond.",
+      "hours": 3.5,
+      "miles": 5.5,
+      "title": "Approach to Peggy's Pond",
+      "gainFt": 2700,
+      "lossFt": 0,
+      "packLb": 35,
+      "schedule": [],
+      "objective": "Backpack in to high camp at Peggy's Pond"
+     },
+     {
+      "n": 2,
+      "note": "Alpine start from Peggy's Pond, ascend on trail/snow toward the SE ridge and onto the Daniel Glacier to reach the Middle and West Summits (~2,400 ft gain from camp). Most parties are back at camp around midday, break camp, and continue the ~5.5 mile, 2,700 ft descent out to the trailhead the same day, finishing by mid-afternoon.",
+      "hours": 10.5,
+      "miles": 9.5,
+      "title": "Summit push and hike out",
+      "gainFt": 2400,
+      "lossFt": 5100,
+      "packLb": 30,
+      "schedule": [
+       {
+        "time": "4:30 AM",
+        "label": "Leave camp",
+        "detail": "Alpine start from Peggy's Pond, light packs for the summit push."
+       },
+       {
+        "time": "7:00 AM",
+        "label": "Reach base of Daniel Glacier",
+        "detail": "Rope up / gear up for glacier travel if crevasses are open."
+       },
+       {
+        "time": "~9:00 AM",
+        "label": "Summit (West Peak)",
+        "detail": "Parties leaving camp before dawn typically top out mid-morning, about four and a half hours from camp."
+       },
+       {
+        "time": "11:30 AM",
+        "label": "Back at Peggy's Pond",
+        "detail": "Break camp and repack for the hike out."
+       },
+       {
+        "time": "~3:00 PM",
+        "label": "Trailhead",
+        "detail": "Full descent of Cathedral Pass trail back to the car."
+       }
+      ],
+      "objective": "Climb the Daniel Glacier / SE Slopes to the Middle and West (true) Summits, then hike all the way out"
+     }
+    ],
+    "totalNote": "A 2-day/1-night trip: ~15 miles round trip with about 5,100 ft total gain; many parties extend to 3 days by adding a rest/weather day or side trips to Cathedral Rock, Tuck & Robin Lakes, or the Jade/Marmot Lakes basins."
+   }
+  }
+ },
+ {
+  "id": "ca_mt_shasta_avalanche_gulch",
+  "before": {
+   "timing": {
+    "totalHrs": 12,
+    "summitTimeHrs": 5,
+    "descentTimeHrs": 4,
+    "approachTimeHrs": 3,
+    "recommendedStart": "Around 2 a.m. for a summit day from Helen Lake or a single-day push from Bunny Flat",
+    "sectionBreakdown": [
+     {
+      "hrs": 3,
+      "fromTo": "Bunny Flat to Helen Lake",
+      "section": "Approach"
+     },
+     {
+      "hrs": 5,
+      "fromTo": "Helen Lake up Avalanche Gulch to the summit",
+      "section": "Climb"
+     },
+     {
+      "hrs": 4,
+      "fromTo": "Summit back down to Bunny Flat",
+      "section": "Descent"
+     }
+    ]
+   },
+   "itinerary": {
+    "cal": "Single-day parties leave Bunny Flat in the very early hours and climb the whole route in one push.",
+    "days": [
+     {
+      "n": 1,
+      "note": "Hike from Bunny Flat to Horse Camp and up Olberman's Causeway into Avalanche Gulch, then continue on snow to Helen Lake at about 10,400 ft and set up high camp.",
+      "hours": 5,
+      "miles": 3.5,
+      "title": "Bunny Flat to Helen Lake",
+      "gainFt": 3474,
+      "lossFt": 0,
+      "packLb": 42,
+      "schedule": [
+       {
+        "time": "7:00 AM",
+        "label": "Leave Bunny Flat",
+        "detail": "Start time from one trip report."
+       },
+       {
+        "time": "~12:00 PM",
+        "label": "Arrive at Helen Lake",
+        "detail": "The same party reached camp around lunchtime."
+       }
+      ],
+      "objective": "Set up high camp at Helen Lake"
+     },
+     {
+      "n": 2,
+      "note": "Make an alpine start from Helen Lake and climb through the Red Banks and over Misery Hill to the summit. Descend to camp, pack up, and walk out to Bunny Flat.",
+      "hours": null,
+      "miles": 8.5,
+      "title": "Summit and walk out",
+      "gainFt": 3779,
+      "lossFt": 7253,
+      "packLb": 20,
+      "schedule": [
+       {
+        "time": "3:00 AM",
+        "label": "Leave Helen Lake",
+        "detail": "Alpine start reported in one trip report."
+       }
+      ],
+      "objective": "Summit via the Red Banks and Misery Hill, then return to Bunny Flat"
+     }
+    ],
+    "totalNote": "A 2-day climb: hike from Bunny Flat to a high camp at Helen Lake, then summit via the Red Banks and Misery Hill and walk all the way out the next day."
+   }
+  },
+  "after": {
+   "timing": {
+    "totalHrs": 14.5,
+    "summitTimeHrs": 5.5,
+    "descentTimeHrs": 4.5,
+    "approachTimeHrs": 4.5,
+    "recommendedStart": "Around 2 a.m. for a summit day from Helen Lake or a single-day push from Bunny Flat",
+    "sectionBreakdown": [
+     {
+      "hrs": 4.5,
+      "fromTo": "Bunny Flat to Helen Lake",
+      "section": "Approach"
+     },
+     {
+      "hrs": 5.5,
+      "fromTo": "Helen Lake up Avalanche Gulch to the summit",
+      "section": "Climb"
+     },
+     {
+      "hrs": 4.5,
+      "fromTo": "Summit back down to Bunny Flat",
+      "section": "Descent"
+     }
+    ]
+   },
+   "itinerary": {
+    "cal": "Single-day parties leave Bunny Flat in the very early hours and climb the whole route in one push.",
+    "days": [
+     {
+      "n": 1,
+      "note": "Hike from Bunny Flat to Horse Camp and up Olberman's Causeway into Avalanche Gulch, then continue on snow to Helen Lake at about 10,400 ft and set up high camp.",
+      "hours": 4.5,
+      "miles": 3.5,
+      "title": "Bunny Flat to Helen Lake",
+      "gainFt": 3474,
+      "lossFt": 0,
+      "packLb": 42,
+      "schedule": [
+       {
+        "time": "7:00 AM",
+        "label": "Leave Bunny Flat",
+        "detail": "Start time from one trip report."
+       },
+       {
+        "time": "~11:30 AM",
+        "label": "Arrive at Helen Lake",
+        "detail": "The same party reached camp around lunchtime."
+       }
+      ],
+      "objective": "Set up high camp at Helen Lake"
+     },
+     {
+      "n": 2,
+      "note": "Make an alpine start from Helen Lake and climb through the Red Banks and over Misery Hill to the summit. Descend to camp, pack up, and walk out to Bunny Flat.",
+      "hours": 10,
+      "miles": 8.5,
+      "title": "Summit and walk out",
+      "gainFt": 3779,
+      "lossFt": 7253,
+      "packLb": 20,
+      "schedule": [
+       {
+        "time": "3:00 AM",
+        "label": "Leave Helen Lake",
+        "detail": "Alpine start reported in one trip report."
+       }
+      ],
+      "objective": "Summit via the Red Banks and Misery Hill, then return to Bunny Flat"
+     }
+    ],
+    "totalNote": "A 2-day climb: hike from Bunny Flat to a high camp at Helen Lake, then summit via the Red Banks and Misery Hill and walk all the way out the next day."
+   }
+  }
+ }
+]

@@ -1,0 +1,307 @@
+[
+ {
+  "op": "patch",
+  "id": "or_diamond_peak_southwest_ridge",
+  "area_id": "or_diamond_peak",
+  "name": "Southwest Ridge",
+  "set": {
+   "seasonal_guidance": {
+    "monthBreakdown": {
+     "January": {
+      "status": "off"
+     },
+     "February": {
+      "status": "off"
+     },
+     "March": {
+      "status": "marginal"
+     },
+     "April": {
+      "status": "good"
+     },
+     "May": {
+      "reason": "By late May the snow is consolidated from about 6,000 ft to the top, crampons are optional, and a glissade drops roughly 1,500 ft from the summit.",
+      "status": "good"
+     },
+     "June": {
+      "status": "good"
+     },
+     "July": {
+      "status": "marginal"
+     },
+     "August": {
+      "status": "off"
+     },
+     "September": {
+      "status": "off"
+     },
+     "October": {
+      "status": "off"
+     },
+     "November": {
+      "status": "off"
+     },
+     "December": {
+      "status": "off"
+     }
+    }
+   }
+  },
+  "expect": {
+   "seasonal_guidance": {
+    "monthBreakdown": {
+     "May": {
+      "reason": "By late May the snow is consolidated from about 6,000 ft to the top, crampons are optional, and a glissade drops roughly 1,500 ft from the summit.",
+      "status": "good"
+     }
+    }
+   }
+  }
+ },
+ {
+  "op": "patch",
+  "id": "or_mt_mcloughlin_east_ridge",
+  "area_id": "or_mt_mcloughlin",
+  "name": "East Ridge",
+  "set": {
+   "seasonal_guidance": {
+    "monthBreakdown": {
+     "January": {
+      "status": "off"
+     },
+     "February": {
+      "status": "off"
+     },
+     "March": {
+      "status": "off"
+     },
+     "April": {
+      "status": "off"
+     },
+     "May": {
+      "status": "marginal"
+     },
+     "June": {
+      "status": "good"
+     },
+     "July": {
+      "status": "good"
+     },
+     "August": {
+      "status": "good"
+     },
+     "September": {
+      "status": "good"
+     },
+     "October": {
+      "reason": "By late October snow can lie on the upper trail, though it stays a trail hike in good weather.",
+      "status": "good"
+     },
+     "November": {
+      "status": "marginal"
+     },
+     "December": {
+      "status": "off"
+     }
+    }
+   }
+  },
+  "expect": {
+   "seasonal_guidance": {
+    "monthBreakdown": {
+     "October": {
+      "reason": "By late October snow can lie on the upper trail, though it stays a trail hike in good weather.",
+      "status": "good"
+     }
+    }
+   }
+  }
+ },
+ {
+  "op": "patch",
+  "id": "or_south_ridge",
+  "area_id": "or_north_sister",
+  "name": "South Ridge",
+  "set": {
+   "seasonal_guidance": {
+    "monthBreakdown": {
+     "January": {
+      "status": "off"
+     },
+     "February": {
+      "status": "off"
+     },
+     "March": {
+      "status": "off"
+     },
+     "April": {
+      "status": "off"
+     },
+     "May": {
+      "status": "off"
+     },
+     "June": {
+      "status": "marginal"
+     },
+     "July": {
+      "reason": "In late July the traverse toward the Bowling Alley can still be frozen snow at dawn; kicking steps works but gives no real protection.",
+      "status": "good"
+     },
+     "August": {
+      "status": "good"
+     },
+     "September": {
+      "status": "good"
+     },
+     "October": {
+      "status": "marginal"
+     },
+     "November": {
+      "status": "off"
+     },
+     "December": {
+      "status": "off"
+     }
+    }
+   }
+  },
+  "expect": {
+   "seasonal_guidance": {
+    "monthBreakdown": {
+     "July": {
+      "reason": "In late July the traverse toward the Bowling Alley can still be frozen snow at dawn; kicking steps works but gives no real protection.",
+      "status": "good"
+     }
+    }
+   }
+  }
+ },
+ {
+  "op": "patch",
+  "id": "or_south_ridge_2",
+  "area_id": "or_mt_jefferson",
+  "name": "South Ridge",
+  "set": {
+   "seasonal_guidance": {
+    "monthBreakdown": {
+     "January": {
+      "status": "off"
+     },
+     "February": {
+      "status": "off"
+     },
+     "March": {
+      "status": "off"
+     },
+     "April": {
+      "status": "off"
+     },
+     "May": {
+      "status": "off"
+     },
+     "June": {
+      "status": "marginal"
+     },
+     "July": {
+      "reason": "In late July a long steep snow slope can still fill the Red Saddle traverse, steep enough that a self-arrest is unlikely to hold; parties placed pickets or ran a fixed line.",
+      "status": "good"
+     },
+     "August": {
+      "status": "good"
+     },
+     "September": {
+      "reason": "By early September the traverse can shrink to a small ice patch with a dirt line beside it, and Shale Lake is nearly dry.",
+      "status": "good"
+     },
+     "October": {
+      "status": "marginal"
+     },
+     "November": {
+      "status": "off"
+     },
+     "December": {
+      "status": "off"
+     }
+    }
+   }
+  },
+  "expect": {
+   "seasonal_guidance": {
+    "monthBreakdown": {
+     "July": {
+      "reason": "In late July a long steep snow slope can still fill the Red Saddle traverse, steep enough that a self-arrest is unlikely to hold; parties placed pickets or ran a fixed line.",
+      "status": "good"
+     },
+     "September": {
+      "reason": "By early September the traverse can shrink to a small ice patch with a dirt line beside it, and Shale Lake is nearly dry.",
+      "status": "good"
+     }
+    }
+   }
+  }
+ },
+ {
+  "op": "patch",
+  "id": "or_south_sister_south_side_route",
+  "area_id": "or_south_sister",
+  "name": "South Side Route",
+  "set": {
+   "seasonal_guidance": {
+    "monthBreakdown": {
+     "January": {
+      "status": "off"
+     },
+     "February": {
+      "status": "off"
+     },
+     "March": {
+      "status": "off"
+     },
+     "April": {
+      "status": "off"
+     },
+     "May": {
+      "status": "off"
+     },
+     "June": {
+      "reason": "In early June the lower trail can still be dusted with fresh snow and the upper slope below the rim is icy enough that crampons and an axe get used.",
+      "status": "marginal"
+     },
+     "July": {
+      "status": "good"
+     },
+     "August": {
+      "status": "good"
+     },
+     "September": {
+      "status": "good"
+     },
+     "October": {
+      "reason": "By early October mornings at the trailhead freeze hard and frost coats the rocks, and the first dry flurries can arrive by afternoon, though the route is largely bare.",
+      "status": "marginal"
+     },
+     "November": {
+      "status": "off"
+     },
+     "December": {
+      "status": "off"
+     }
+    }
+   }
+  },
+  "expect": {
+   "seasonal_guidance": {
+    "monthBreakdown": {
+     "June": {
+      "reason": "In early June the lower trail can still be dusted with fresh snow and the upper slope below the rim is icy enough that crampons and an axe get used.",
+      "status": "marginal"
+     },
+     "October": {
+      "reason": "By early October mornings at the trailhead freeze hard and frost coats the rocks, and the first dry flurries can arrive by afternoon, though the route is largely bare.",
+      "status": "marginal"
+     }
+    }
+   }
+  }
+ }
+]

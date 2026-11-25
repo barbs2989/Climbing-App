@@ -1,0 +1,256 @@
+{
+ "wa_bonanza_peak_mary_green_glacier": {
+  "area": "wa_bonanza_peak",
+  "overview": "Bonanza Peak (9,516') is the highest non-volcanic summit in Washington and the highpoint of Chelan County. The Mary Green Glacier route — first climbed in 1937 by Curtis Ijames, Barrie James, and Joe Leuthold (Mazamas) — is the peak's classic standard line, ascending its eastern side. Reached only via the Lady of the Lake ferry up Lake Chelan and the remote trail-and-boat village of Holden, the climb combines glacier travel and a moat crossing with a short, exposed Class 3-4 rock finish to a summit deep in the Glacier Peak Wilderness. From the Holden Campground trailhead it's roughly 14 miles round trip with about 6,300 ft of elevation gain to the summit, on top of the multi-day boat-and-trail approach just to reach that trailhead."
+ },
+ "wa_mount_goode_northeast_buttress": {
+  "area": "wa_mount_goode",
+  "waypoints": [
+   {
+    "lat": 48.5049,
+    "lng": -120.7191,
+    "elev": 4500,
+    "name": "Bridge Creek Trailhead",
+    "type": "Trailhead",
+    "distMi": 0,
+    "directions": "Drive SR-20 to the Bridge Creek Trailhead at about milepost 159, just over a mile east of Rainy Pass; the lot is on the north side of the highway, and a short connector trail across the road joins the Pacific Crest Trail southbound. A Northwest Forest Pass or interagency pass is required to park, and overnight stays in the park need a backcountry permit."
+   },
+   {
+    "lat": 48.487365,
+    "lng": -120.853537,
+    "elev": 2800,
+    "name": "PCT / North Fork Junction",
+    "type": "Junction",
+    "distMi": 9.6,
+    "directions": "Follow the Pacific Crest Trail southbound, losing height steadily along Bridge Creek, for about 10 miles to the junction with the North Fork Bridge Creek Trail near North Fork Camp."
+   },
+   {
+    "lat": null,
+    "lng": null,
+    "elev": 6600,
+    "name": "High Camp",
+    "type": "Campsite",
+    "distMi": 15,
+    "directions": "Turn onto the North Fork Bridge Creek Trail and head upstream; it grows brushier and less maintained, with a log crossing at Grizzly Creek. Where the tread fades around mile 13 to 14, ford the North Fork a few steps upstream at a cairn, climb scree and third-class slabs on climber's right of the big waterfall draining the Goode Glacier, and follow the alder tunnel through the slide alder to camp near the glacier toe."
+   },
+   {
+    "lat": 48.4829,
+    "lng": -120.9109,
+    "elev": 9220,
+    "name": "Goode Summit",
+    "type": "Summit",
+    "distMi": 17,
+    "directions": "Cross the Goode Glacier, watching for crevasses and serac fall, to the band of red ledges at the toe of the buttress, and get across the moat there. One or two low fifth-class pitches on loose blocks trend right to the crest; follow over 1,000 ft of 3rd and 4th class, step right around a short unprotectable 5.7 slab near 8,000 ft, then climb about five pitches of 5.4 to 5.5 easing to the summit."
+   },
+   {
+    "lat": null,
+    "lng": null,
+    "elev": 8900,
+    "name": "Black Tooth Notch (Rappels)",
+    "type": "Hazard",
+    "distMi": 17.5,
+    "directions": "From the summit, make three rappels down along the ridge to Black Tooth Notch. The first runs nearly straight down the ridgeline; the second and third traverse to rappeller's left, so watch the rope tails for snags. Anchors are slung horns and blocks, and a single 60 m rope reaches every station."
+   },
+   {
+    "lat": null,
+    "lng": null,
+    "elev": 7200,
+    "name": "SW Couloir Exit",
+    "type": "Hazard",
+    "distMi": 19,
+    "directions": "From the notch, cross the exposed 4th-class ledge, then make about three more single-rope rappels into the Southwest Couloir and downclimb class 3 below them. Where the gully narrows into cliffs lower down, exit left onto easier ground rather than rappelling the waterfall band."
+   }
+  ],
+  "approach_logistics": {
+   "peakLat": 48.48291,
+   "peakLng": -120.9108,
+   "trailhead": "Bridge Creek Trailhead",
+   "trailheadLat": 48.5049,
+   "trailheadLng": -120.7191,
+   "trailheadDirection": "Drive SR-20 to milepost 159, a little over a mile east of Rainy Pass, and park in the lot on the north side of the highway."
+  }
+ },
+ "wa_goode_mountain_southwest_couloir": {
+  "area": "wa_mount_goode",
+  "waypoints": [
+   {
+    "lat": 48.5049,
+    "lng": -120.7191,
+    "elev": 4400,
+    "name": "Bridge Creek Trailhead",
+    "note": "SR-20 milepost ~159, just over a mile east of Rainy Pass; NPS backcountry permit required for overnight camping, $5/day USFS parking fee, no potable water on site.",
+    "type": "Trailhead",
+    "distMi": 0,
+    "elevFt": 4400,
+    "directions": "Park at the Bridge Creek Trailhead on SR-20 near milepost 159, just over a mile east of Rainy Pass. A $5-per-day USFS parking fee applies here, and there's no potable water on site. An NPS backcountry permit is required for overnight camping in the Goode Glacier/moraine camp zone; reserve it in advance at the Wilderness Information Center in Marblemount."
+   },
+   {
+    "lat": 48.4614,
+    "lng": -120.8397,
+    "elev": 2808,
+    "name": "PCT / North Fork Bridge Creek Trail junction",
+    "note": "Leave the Pacific Crest Trail here and turn onto the North Fork Bridge Creek Trail toward Goode's north side.",
+    "type": "Junction",
+    "distMi": 10,
+    "directions": "Cross SR-20 on the connector trail and hike the Pacific Crest Trail south along Bridge Creek, losing elevation steadily through forest for about 9.5 miles to the North Fork Camp junction. Turn off the PCT here onto the North Fork Bridge Creek Trail."
+   },
+   {
+    "lat": 48.494702,
+    "lng": -120.864313,
+    "elev": 3140,
+    "name": "Grizzly Creek crossing",
+    "note": "Usually an easy log crossing but reported as a dangerously high, hard-to-find ford in early season; trail turns brushy/overgrown just beyond it.",
+    "type": "Hazard",
+    "distMi": 13.4,
+    "directions": "Head upstream on the North Fork Bridge Creek Trail to the Grizzly Creek crossing, usually an easy log but a high, hard-to-find ford in early season."
+   },
+   {
+    "lat": 48.482104,
+    "lng": -120.893868,
+    "elev": 6800,
+    "name": "Lateral moraine camp above Goode Glacier",
+    "note": "Established bivy atop the lateral moraine overlooking the Goode Glacier's seracs; standard base camp for the Southwest Couloir attempt.",
+    "type": "Campsite",
+    "distMi": 15,
+    "directions": "Continue up the North Fork trail as it grows brushier, then leave the tread and ford the North Fork, easiest a short way upstream near a cairn. Follow an intermittent boot path and cairns through talus and alder tunnels, then climb heather and scree to the lateral moraine above the Goode Glacier."
+   },
+   {
+    "lat": 48.481227,
+    "lng": -120.900589,
+    "elev": 7400,
+    "name": "Goode Glacier crossing",
+    "note": "Cross the glacier from the moraine camp to reach the couloir base; route-finding is tricky and late-season snow bridges can be deteriorated.",
+    "type": "Junction",
+    "distMi": 15.5,
+    "directions": "Leave camp across the moraine and onto the glacier remnant toward the couloir. Route-finding is tricky and late-season snow bridges can be rotten, so rope up."
+   },
+   {
+    "lat": null,
+    "lng": null,
+    "elev": 8900,
+    "name": "Black Tooth Notch",
+    "note": "Foot-wide notch gained by an exposed class 4 traverse (fixed sling marks the crux step); rock here is loose/\"garbage\" — watch for rockfall onto climbers below.",
+    "type": "Hazard",
+    "distMi": 16.2,
+    "directions": "Scramble talus and loose scree to the rotten ridge below the couloir and the narrow cairned ledge that leads into it. Climb the couloir on the solid dark rock of the black stairs along its left side, class 3-4 with a short low fifth-class step low down, to Black Tooth Notch, gained by an exposed class 4 traverse with a fixed sling at the crux step."
+   },
+   {
+    "lat": 48.4829,
+    "lng": -120.9109,
+    "elev": 9220,
+    "name": "Goode Mountain summit",
+    "note": "Highest point in North Cascades National Park; summit block above the notch adds exposed class 4-5 moves before the true top.",
+    "type": "Summit",
+    "distMi": 16.5,
+    "directions": "From the notch, traverse across the upper Northeast Face and climb the exposed class 4-5 summit block to the true top."
+   }
+  ],
+  "approach_logistics": {
+   "peakLat": 48.4829,
+   "peakLng": -120.9109,
+   "trailhead": "Bridge Creek Trailhead",
+   "trailheadLat": 48.5049,
+   "trailheadLng": -120.7191,
+   "trailheadDirection": "From the Bridge Creek Trailhead on SR-20 near milepost 159, just over a mile east of Rainy Pass, south on the Pacific Crest Trail"
+  }
+ },
+ "wa_mount_challenger_challenger_glacier": {
+  "area": "wa_mount_challenger",
+  "waypoints": [
+   {
+    "lat": 48.9101,
+    "lng": -121.5927,
+    "elev": 3100,
+    "name": "Hannegan Pass Trailhead",
+    "note": "Road-end at Hannegan Campground off Ruth Creek Rd/FR-32; Northwest Forest Pass required, self-issue wilderness permit needed for NOCA camps ahead.",
+    "type": "Trailhead",
+    "distMi": 0,
+    "directions": "Drive to the road-end at Hannegan Campground, at the end of FS Road 32 (Ruth Creek Road) off WA-542 — this is the Hannegan Pass Trailhead. A Northwest Forest Pass is required to park here, and a self-issue wilderness permit is needed for the North Cascades National Park camps ahead on the route."
+   },
+   {
+    "lat": 48.8829219,
+    "lng": -121.5342754,
+    "elev": 5100,
+    "name": "Hannegan Pass",
+    "note": "Trail crests the pass then drops roughly 650 ft per mile into North Cascades National Park toward the Chilliwack River, the gateway from Mt. Baker Wilderness into the park backcountry.",
+    "type": "Junction",
+    "distMi": 4,
+    "directions": "Follow Hannegan Pass Trail #674 up the Ruth Creek valley, a well-graded 2,000 ft over about 4 miles, to Hannegan Pass. It is the last easy water for a while."
+   },
+   {
+    "lat": 48.8875,
+    "lng": -121.5236,
+    "elev": 4410,
+    "name": "Boundary Camp",
+    "note": "Marks the Mt. Baker National Forest / North Cascades National Park boundary; established campsites with pit toilet at the bottom of the roughly 2,500 ft descent off Hannegan Pass.",
+    "type": "Campsite",
+    "distMi": 5.3,
+    "directions": "Cross Hannegan Pass and descend the far side into North Cascades National Park to Boundary Camp."
+   },
+   {
+    "lat": 48.884457,
+    "lng": -121.502415,
+    "elev": 2800,
+    "name": "Chilliwack River ford / Easy Ridge climbers' path",
+    "note": "Faint, unsigned climbers' path leaves the valley trail here to gain Easy Ridge; parties commonly lose it near the river crossing, especially in fog.",
+    "type": "Hazard",
+    "distMi": 7,
+    "directions": "Continue down the Chilliwack River Trail to where the faint, unsigned climbers' path for Easy Ridge leaves the valley trail and fords the Chilliwack. Log crossings here are unreliable, and the path is easy to lose near the river."
+   },
+   {
+    "lat": 48.880853,
+    "lng": -121.489069,
+    "elev": 3146,
+    "name": "Copper Creek camp",
+    "type": "Campsite",
+    "distMi": 6.5
+   },
+   {
+    "lat": 48.875277,
+    "lng": -121.370338,
+    "elev": 5210,
+    "name": "Whatcom Pass camp",
+    "type": "Campsite",
+    "distMi": 14.6
+   },
+   {
+    "lat": 48.8482,
+    "lng": -121.37224,
+    "elev": 6278,
+    "name": "Perfect Pass",
+    "note": "Renowned high bivy site reached off Easy Ridge by working around the exposed notch known as the Impasse below Whatcom Peak; last reliable camp before the glacier.",
+    "type": "Campsite",
+    "distMi": null,
+    "directions": "Ford the Chilliwack and climb steeply onto Easy Ridge, then follow the faint climbers' path along the crest past tarns and slabby sections, over Easy Peak, to the notch known as the Impasse. In many years the direct crossing is unsafe and the way round drops off the crest and re-climbs an exposed class 4 step. Beyond it, continue cross-country over snowfields to Perfect Pass; in fog, do not drift toward Whatcom Peak's summit wall, which steepens where the pass levels into a saddle."
+   },
+   {
+    "lat": 48.839677,
+    "lng": -121.34233,
+    "elev": 7500,
+    "name": "Challenger Glacier crossing",
+    "note": "Crevassed glacier traverse on Challenger's north/northwest slopes from Perfect Pass; crampons recommended even when an existing boot pack is present in season.",
+    "type": "Hazard",
+    "distMi": null,
+    "directions": "From Perfect Pass get down onto the Challenger Glacier. Depending on melt-out this can mean about 200 ft of wet class 4 downclimbing and sometimes a short rappel across a moat; the best entry point shifts year to year with the crevasses. Rope up for the glacier."
+   },
+   {
+    "lat": 48.8356,
+    "lng": -121.342,
+    "elev": 8207,
+    "name": "Mount Challenger (East Summit)",
+    "note": "3rd/4th-class scramble off the glacier exits onto a short 5.5-5.7 pitch to the true east summit; descend by downclimbing to the notch and making a single rappel.",
+    "type": "Summit",
+    "distMi": null,
+    "directions": "Cross the bergschrund and climb steepening snow, a snow arete late in the season, to the summit rocks, watching for the moat just below them. A class 3 scramble leads to the base of the 50 ft, 5.5-5.7 summit pitch."
+   }
+  ],
+  "approach_logistics": {
+   "peakLat": 48.8365,
+   "peakLng": -121.3419,
+   "trailhead": "Hannegan Pass Trailhead",
+   "trailheadLat": 48.91049444,
+   "trailheadLng": -121.5894222,
+   "trailheadDirection": "From Mount Baker Highway (SR-542), about 12.5 miles east of the Glacier Public Service Center, turn left onto Hannegan Pass Road (FR-32) and drive about 5.3 miles to the road-end trailhead."
+  }
+ }
+}

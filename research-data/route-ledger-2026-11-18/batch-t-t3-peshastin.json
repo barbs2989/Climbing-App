@@ -1,0 +1,389 @@
+{
+ "wa_velvet_elvis": {
+  "area": "wa_sunset_slab",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/120745248/velvet-elvis",
+    "https://www.mountainproject.com/area/105874372/sunset-slab",
+    "https://wenatcheeoutdoors.org/?p=1541",
+    "https://parks.wa.gov/find-parks/state-parks/peshastin-pinnacles-state-park",
+    "https://parks.wa.gov/passes-permits/get-park-pass/discover-pass"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "grade",
+    "value": "5.8",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/120745248/velvet-elvis",
+      "fact": "5.8 YDS, Sport",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_velvet_elvis",
+    "column": "pitches",
+    "from": 0,
+    "to": 1,
+    "why": "pitches 0 is invalid. Mountain Project: one 110 ft length, 10 bolts to a two-chain anchor (one length to one anchor). Count implied, not stated: unconfirmed after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/120745248/velvet-elvis"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_velvet_elvis",
+    "column": "bolts",
+    "from": null,
+    "to": 10,
+    "why": "Mountain Project protection states 10 bolts to the anchor (bolts, not clips). Single source; theCrag refused the browser (rate limit) and the other open guide does not list the route. locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/120745248/velvet-elvis"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_velvet_elvis",
+    "column": "length_m",
+    "from": null,
+    "to": 33,
+    "why": "Mountain Project states 110 ft (33 m). Single source, locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/120745248/velvet-elvis"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_velvet_elvis",
+    "column": "anchor",
+    "from": null,
+    "to": "Chain anchor",
+    "why": "Mountain Project: ends at a two-chain anchor. House spelling 'Chain anchor' (stored on 5 routes). Single source, locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/120745248/velvet-elvis"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_velvet_elvis",
+    "column": "access",
+    "from": null,
+    "to": {
+     "fees": "Discover Pass: $10 for one day or $45 for a year.",
+     "rules": "Closed Nov 1 to Mar 15. Open 6:30 a.m. to dusk; be off the rocks half an hour before closing. No bolting or drilling.",
+     "permit": "None needed to climb.",
+     "land_manager": "Washington State Parks (Peshastin Pinnacles State Park)",
+     "parking_pass": "Discover Pass."
+    },
+    "why": "access is empty. Copied field for field from the live sibling wa_austrian_slab (same object on wa_sunset_slab_green_velvet). Re-read 2026-11-23: the park page still gives 6:30 a.m. to dusk, closed Nov 1 to March 15, no bolting or drilling, off the rocks half an hour before closing; the State Parks Discover Pass page states a pass is required to park at State Parks, $45 a year, $10 a day. Nothing changed. official-1, 12 months, after apply.",
+    "evidence": [
+     "https://parks.wa.gov/find-parks/state-parks/peshastin-pinnacles-state-park",
+     "https://parks.wa.gov/passes-permits/get-park-pass/discover-pass"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_velvet_elvis",
+    "column": "permit",
+    "from": null,
+    "to": "Discover Pass required to park. The park is open 6:30 a.m. to dusk and closed Nov 1 to Mar 15; climbers must be off the rocks half an hour before closing, and bolting or drilling is not allowed.",
+    "why": "permit is empty. Copied verbatim from wa_austrian_slab (same on wa_sunset_slab_green_velvet); facts re-checked on the official park and Discover Pass pages 2026-11-23.",
+    "evidence": [
+     "https://parks.wa.gov/find-parks/state-parks/peshastin-pinnacles-state-park",
+     "https://parks.wa.gov/passes-permits/get-park-pass/discover-pass"
+    ]
+   }
+  ],
+  "disputed": [],
+  "notes": "FA 'Al Givler' matches Mountain Project but FA never locks from MP alone; left as is. MP warns the route is long enough that a 60 m rope will not reach the ground lowering (ends must be knotted); no rope column proposed (derived). MP says the route carries new modern hardware, while the stored hazards sentence (shared by every Sunset Slab row) says about half the wedge bolts are worn or spinning: probably stale for this route; flagged, not rewritten. Not the same as the North Bend Exit 34 or Nevada routes of the same name."
+ },
+ "wa_booby_vinton": {
+  "area": "wa_sunset_slab",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/105877265/booby-vinton",
+    "https://www.mountainproject.com/area/105874372/sunset-slab",
+    "https://wenatcheeoutdoors.org/?p=1541",
+    "https://parks.wa.gov/find-parks/state-parks/peshastin-pinnacles-state-park",
+    "https://parks.wa.gov/passes-permits/get-park-pass/discover-pass"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "grade",
+    "value": "5.5",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105877265/booby-vinton",
+      "fact": "5.5 YDS, Sport",
+      "retrieved_at": "2026-11-23"
+     },
+     {
+      "url": "https://wenatcheeoutdoors.org/?p=1541",
+      "fact": "Booby Vinton 5.5, bolts",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_booby_vinton",
+    "column": "pitches",
+    "from": 0,
+    "to": 1,
+    "why": "pitches 0 is invalid. Mountain Project: past 4 bolts to the rappel anchor (one length to one anchor). Count implied, not stated: unconfirmed after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/105877265/booby-vinton"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_booby_vinton",
+    "column": "bolts",
+    "from": null,
+    "to": 4,
+    "why": "Mountain Project states 4 bolts to the rappel anchor (bolts, not clips). The other open guide says only 'bolts'. Single source, locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/105877265/booby-vinton"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_booby_vinton",
+    "column": "access",
+    "from": null,
+    "to": {
+     "fees": "Discover Pass: $10 for one day or $45 for a year.",
+     "rules": "Closed Nov 1 to Mar 15. Open 6:30 a.m. to dusk; be off the rocks half an hour before closing. No bolting or drilling.",
+     "permit": "None needed to climb.",
+     "land_manager": "Washington State Parks (Peshastin Pinnacles State Park)",
+     "parking_pass": "Discover Pass."
+    },
+    "why": "access is empty. Copied field for field from the live sibling wa_austrian_slab (same object on wa_sunset_slab_green_velvet). Re-read 2026-11-23: the park page still gives 6:30 a.m. to dusk, closed Nov 1 to March 15, no bolting or drilling, off the rocks half an hour before closing; the State Parks Discover Pass page states a pass is required to park at State Parks, $45 a year, $10 a day. Nothing changed. official-1, 12 months, after apply.",
+    "evidence": [
+     "https://parks.wa.gov/find-parks/state-parks/peshastin-pinnacles-state-park",
+     "https://parks.wa.gov/passes-permits/get-park-pass/discover-pass"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_booby_vinton",
+    "column": "permit",
+    "from": null,
+    "to": "Discover Pass required to park. The park is open 6:30 a.m. to dusk and closed Nov 1 to Mar 15; climbers must be off the rocks half an hour before closing, and bolting or drilling is not allowed.",
+    "why": "permit is empty. Copied verbatim from wa_austrian_slab (same on wa_sunset_slab_green_velvet); facts re-checked on the official park and Discover Pass pages 2026-11-23.",
+    "evidence": [
+     "https://parks.wa.gov/find-parks/state-parks/peshastin-pinnacles-state-park",
+     "https://parks.wa.gov/passes-permits/get-park-pass/discover-pass"
+    ]
+   }
+  ],
+  "disputed": [],
+  "notes": "POSSIBLE DUPLICATE with wa_sunset_slab_booby_trap (not mine): same slab, same grade 5.5, same discipline (sport). Neither Mountain Project (6 routes on Peshastin's Sunset Slab) nor the Wenatchee Outdoors guide lists any route called Booby Trap; both list Booby Vinton. MP places Booby Vinton as the rightmost of three routes on the left side of the slab, and an MP photo is captioned as two routes merging into one. Unproven: Booby Trap may come from a guidebook I could not read (theCrag refused, rate limit). Reported, not merged. FA: MP says unknown; left null. Anchor: MP says only 'rappel anchor', no type, so none proposed. Stored hazards sentence about worn wedge bolts is shared slab-wide template text; not checked per route."
+ },
+ "wa_sunset": {
+  "area": "wa_sunset_slab",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/113526619/sunset",
+    "https://www.mountainproject.com/area/105874372/sunset-slab",
+    "https://wenatcheeoutdoors.org/?p=1541",
+    "https://parks.wa.gov/find-parks/state-parks/peshastin-pinnacles-state-park",
+    "https://parks.wa.gov/passes-permits/get-park-pass/discover-pass"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "grade",
+    "value": "5.5",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/113526619/sunset",
+      "fact": "5.5 YDS, Sport",
+      "retrieved_at": "2026-11-23"
+     },
+     {
+      "url": "https://wenatcheeoutdoors.org/?p=1541",
+      "fact": "Sunset 5.5, bolts and gear to 3 in",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_sunset",
+    "column": "pitches",
+    "from": 0,
+    "to": null,
+    "why": "pitches 0 is invalid. Mountain Project gives 80 ft and 5 bolts but names no anchor or pitch count; the other guide says many Sunset Slab routes have a looser second pitch and adds gear to 3 in for this one. One pitch is not clear, so null.",
+    "evidence": [
+     "https://www.mountainproject.com/route/113526619/sunset",
+     "https://wenatcheeoutdoors.org/?p=1541"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_sunset",
+    "column": "bolts",
+    "from": null,
+    "to": 5,
+    "why": "Mountain Project protection states 5 bolts (bolts, not clips). Single source; the other guide says 'bolts and gear', no count. locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/113526619/sunset"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_sunset",
+    "column": "length_m",
+    "from": null,
+    "to": 24,
+    "why": "Mountain Project states 80 ft (24 m). Single source, locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/113526619/sunset"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_sunset",
+    "column": "access",
+    "from": null,
+    "to": {
+     "fees": "Discover Pass: $10 for one day or $45 for a year.",
+     "rules": "Closed Nov 1 to Mar 15. Open 6:30 a.m. to dusk; be off the rocks half an hour before closing. No bolting or drilling.",
+     "permit": "None needed to climb.",
+     "land_manager": "Washington State Parks (Peshastin Pinnacles State Park)",
+     "parking_pass": "Discover Pass."
+    },
+    "why": "access is empty. Copied field for field from the live sibling wa_austrian_slab (same object on wa_sunset_slab_green_velvet). Re-read 2026-11-23: the park page still gives 6:30 a.m. to dusk, closed Nov 1 to March 15, no bolting or drilling, off the rocks half an hour before closing; the State Parks Discover Pass page states a pass is required to park at State Parks, $45 a year, $10 a day. Nothing changed. official-1, 12 months, after apply.",
+    "evidence": [
+     "https://parks.wa.gov/find-parks/state-parks/peshastin-pinnacles-state-park",
+     "https://parks.wa.gov/passes-permits/get-park-pass/discover-pass"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_sunset",
+    "column": "permit",
+    "from": null,
+    "to": "Discover Pass required to park. The park is open 6:30 a.m. to dusk and closed Nov 1 to Mar 15; climbers must be off the rocks half an hour before closing, and bolting or drilling is not allowed.",
+    "why": "permit is empty. Copied verbatim from wa_austrian_slab (same on wa_sunset_slab_green_velvet); facts re-checked on the official park and Discover Pass pages 2026-11-23.",
+    "evidence": [
+     "https://parks.wa.gov/find-parks/state-parks/peshastin-pinnacles-state-park",
+     "https://parks.wa.gov/passes-permits/get-park-pass/discover-pass"
+    ]
+   }
+  ],
+  "disputed": [],
+  "notes": "FA: Mountain Project gives Fred Beckey and Steve Johnson, 1960; stored fa is null. Not proposed (FA never from MP alone; no second publisher found). Discipline: MP says sport, the other guide says bolts plus gear to 3 in (stored detailed_rack 'Quickdraws and small cams' agrees with gear being useful); stored sport left alone. MP notes the line is heavily eroded and was rebolted with new solid bolts in recent years, which contradicts the slab-wide hazards sentence about worn wedge bolts; flagged, not rewritten."
+ },
+ "wa_austrian_slab_nirvana_ridge": {
+  "area": "wa_austrian_slab",
+  "review": {
+   "sources": [
+    "https://wenatcheeoutdoors.org/?p=1541",
+    "https://www.mountainproject.com/area/105874850/austrian-slab",
+    "https://www.mountainproject.com/area/105874380/grand-central-tower",
+    "https://parks.wa.gov/find-parks/state-parks/peshastin-pinnacles-state-park",
+    "https://parks.wa.gov/passes-permits/get-park-pass/discover-pass"
+   ]
+  },
+  "ledger": [],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_austrian_slab_nirvana_ridge",
+    "column": "access",
+    "from": null,
+    "to": {
+     "fees": "Discover Pass: $10 for one day or $45 for a year.",
+     "rules": "Closed Nov 1 to Mar 15. Open 6:30 a.m. to dusk; be off the rocks half an hour before closing. No bolting or drilling.",
+     "permit": "None needed to climb.",
+     "land_manager": "Washington State Parks (Peshastin Pinnacles State Park)",
+     "parking_pass": "Discover Pass."
+    },
+    "why": "access is empty. Copied field for field from the live sibling wa_austrian_slab (same object on wa_sunset_slab_green_velvet). Re-read 2026-11-23: the park page still gives 6:30 a.m. to dusk, closed Nov 1 to March 15, no bolting or drilling, off the rocks half an hour before closing; the State Parks Discover Pass page states a pass is required to park at State Parks, $45 a year, $10 a day. Nothing changed. official-1, 12 months, after apply.",
+    "evidence": [
+     "https://parks.wa.gov/find-parks/state-parks/peshastin-pinnacles-state-park",
+     "https://parks.wa.gov/passes-permits/get-park-pass/discover-pass"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_austrian_slab_nirvana_ridge",
+    "column": "permit",
+    "from": null,
+    "to": "Discover Pass required to park. The park is open 6:30 a.m. to dusk and closed Nov 1 to Mar 15; climbers must be off the rocks half an hour before closing, and bolting or drilling is not allowed.",
+    "why": "permit is empty. Copied verbatim from wa_austrian_slab (same on wa_sunset_slab_green_velvet); facts re-checked on the official park and Discover Pass pages 2026-11-23.",
+    "evidence": [
+     "https://parks.wa.gov/find-parks/state-parks/peshastin-pinnacles-state-park",
+     "https://parks.wa.gov/passes-permits/get-park-pass/discover-pass"
+    ]
+   }
+  ],
+  "disputed": [],
+  "notes": "CATALOG DEFECT (name/area mismatch, one source): filed under Austrian Slab, but the only publisher that lists it (Wenatchee Outdoors) puts Nirvana Ridge on the FRONT side of Grand Central (we hold wa_grand_central_tower). Mountain Project lists it on neither Austrian Slab (7 routes) nor Grand Central Tower. Not moved. That guide: 5.9, bolts and gear to 2 in, crumbly rock and serious runouts, and the start may have been changed by a rockslide in winter 2010 (page dated 2016). Grade 5.9 agrees with the stored value but has one source only; not locked. Access is park-wide, so it is correct whichever formation the route is on. pitches is null (not 0), left alone."
+ },
+ "wa_austrian_slab_wind_cave": {
+  "area": "wa_austrian_slab",
+  "review": {
+   "sources": [
+    "https://wenatcheeoutdoors.org/?p=1541",
+    "https://www.mountainproject.com/area/105874850/austrian-slab",
+    "https://www.mountainproject.com/area/105874858/sickle-slab",
+    "https://parks.wa.gov/find-parks/state-parks/peshastin-pinnacles-state-park",
+    "https://parks.wa.gov/passes-permits/get-park-pass/discover-pass"
+   ]
+  },
+  "ledger": [],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_austrian_slab_wind_cave",
+    "column": "access",
+    "from": null,
+    "to": {
+     "fees": "Discover Pass: $10 for one day or $45 for a year.",
+     "rules": "Closed Nov 1 to Mar 15. Open 6:30 a.m. to dusk; be off the rocks half an hour before closing. No bolting or drilling.",
+     "permit": "None needed to climb.",
+     "land_manager": "Washington State Parks (Peshastin Pinnacles State Park)",
+     "parking_pass": "Discover Pass."
+    },
+    "why": "access is empty. Copied field for field from the live sibling wa_austrian_slab (same object on wa_sunset_slab_green_velvet). Re-read 2026-11-23: the park page still gives 6:30 a.m. to dusk, closed Nov 1 to March 15, no bolting or drilling, off the rocks half an hour before closing; the State Parks Discover Pass page states a pass is required to park at State Parks, $45 a year, $10 a day. Nothing changed. official-1, 12 months, after apply.",
+    "evidence": [
+     "https://parks.wa.gov/find-parks/state-parks/peshastin-pinnacles-state-park",
+     "https://parks.wa.gov/passes-permits/get-park-pass/discover-pass"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_austrian_slab_wind_cave",
+    "column": "permit",
+    "from": null,
+    "to": "Discover Pass required to park. The park is open 6:30 a.m. to dusk and closed Nov 1 to Mar 15; climbers must be off the rocks half an hour before closing, and bolting or drilling is not allowed.",
+    "why": "permit is empty. Copied verbatim from wa_austrian_slab (same on wa_sunset_slab_green_velvet); facts re-checked on the official park and Discover Pass pages 2026-11-23.",
+    "evidence": [
+     "https://parks.wa.gov/find-parks/state-parks/peshastin-pinnacles-state-park",
+     "https://parks.wa.gov/passes-permits/get-park-pass/discover-pass"
+    ]
+   }
+  ],
+  "disputed": [],
+  "notes": "CATALOG DEFECT (name/area mismatch, one source): filed under Austrian Slab, but the only publisher that lists it (Wenatchee Outdoors, spelled 'Windcave') puts it on Sickle Slab (we hold wa_sickle_slab; Mountain Project says Sickle Slab lies right of Austrian Slab). Mountain Project lists it on neither slab. Not moved. That guide: 5.8, fixed gear and gear to 2 in, matching the stored grade and gear ['gear to 2 in']. One source only, so nothing locked. pitches is null (not 0), left alone."
+ }
+}

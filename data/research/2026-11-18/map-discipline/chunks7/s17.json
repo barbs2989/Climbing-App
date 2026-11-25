@@ -1,0 +1,870 @@
+[
+ {
+  "id": "wa_mount_persis_the_hexorcist",
+  "name": "The Hexorcist",
+  "peakName": "Mount Persis",
+  "state": "Washington",
+  "discipline": "mountaineering",
+  "status": "held",
+  "peak": {
+   "id": "wa_mount_persis",
+   "name": "Mount Persis",
+   "lat": 47.790401,
+   "lng": -121.611813,
+   "elevation_ft": 5464,
+   "region": "Stevens / Index",
+   "path": "usa.washington.wa_centralwest.wa_stevens_pass_region.wa_mount_persis"
+  },
+  "text": {
+   "approach": "No maintained trail reaches the north face. Parties generally leave the West Ridge boot path or approach cross-country from the Anderson Creek drainage / FR 6220 area, bushwhacking through steep second-growth and old-growth timber to gain the base of the wall; expect substantial off-trail forest travel and real route-finding difficulty.",
+   "approach_logistics": "{\"peakLat\":47.790401,\"peakLng\":-121.611813,\"trailhead\":\"FR-6220 / Anderson Creek drainage (no maintained trail)\"}",
+   "road": "{\"name\":\"Forest Road 62 (FR-62)\",\"status\":\"Unpaved, rough; passenger cars may struggle on the upper section\",\"driveNote\":\"Same general FR-62 access as the West Ridge route; the specific approach to the base of the north face itself is not documented.\",\"seasonalGate\":\"A gate near the US-2 junction is sometimes locked with no advance notice\"}",
+   "overview": "A difficult, multi-pitch technical alpine rock climb up Mount Persis's sheer north face, established by prolific North Cascades first-ascentionist Bryan Burdo.",
+   "description": null,
+   "descent": null
+  },
+  "siblingTrailheads": [
+   {
+    "route": "wa_mount_persis_west_ridge",
+    "name": "Mount Persis Trailhead (FR-62 road's end)"
+   }
+  ],
+  "officialCandidates": [
+   {
+    "src": "USFS",
+    "name": "Lake Serene Trailhead",
+    "lat": 47.809311,
+    "lng": -121.573654,
+    "km": 3.5
+   },
+   {
+    "src": "USFS",
+    "name": "Heybrook Lookout Trailhead",
+    "lat": 47.808327,
+    "lng": -121.535112,
+    "km": 6.1
+   },
+   {
+    "src": "USFS",
+    "name": "Barclay Lake Trailhead",
+    "lat": 47.792236,
+    "lng": -121.459288,
+    "km": 11.4
+   },
+   {
+    "src": "USFS",
+    "name": "Lake Elizabeth",
+    "lat": 47.701276,
+    "lng": -121.517445,
+    "km": 12.2
+   },
+   {
+    "src": "USFS",
+    "name": "Sunday Lake",
+    "lat": 47.660969,
+    "lng": -121.616557,
+    "km": 14.4
+   },
+   {
+    "src": "USFS",
+    "name": "Bare Mountain",
+    "lat": 47.639636,
+    "lng": -121.527105,
+    "km": 17.9
+   },
+   {
+    "src": "USFS",
+    "name": "Lennox Creek",
+    "lat": 47.63634,
+    "lng": -121.523149,
+    "km": 18.4
+   },
+   {
+    "src": "USFS",
+    "name": "Troublesome Creek Trailhead",
+    "lat": 47.898062,
+    "lng": -121.401959,
+    "km": 19.7
+   }
+  ],
+  "lastAnswer": {
+   "status": "found",
+   "trailhead": {
+    "name": "Mount Persis Trailhead (pullout near FR 62/6220 road end)",
+    "identifiedBy": {
+     "kind": "route_text",
+     "fact": "leaves West Ridge boot path / FR 6220 Anderson Creek drainage"
+    },
+    "placements": [
+     {
+      "source": "WTA",
+      "name": "Mount Persis trailhead",
+      "lat": 47.7931,
+      "lng": -121.6449,
+      "url": "https://www.wta.org/go-hiking/hikes/mount-persis"
+     }
+    ]
+   },
+   "notes": "WEAK: no page about the north face found (searches returned nothing on this route). Start inferred from the route's own text and the West Ridge trailhead; one WTA placement, no USFS/NPS match."
+  }
+ },
+ {
+  "id": "wa_mount_rahm_custer_traverse",
+  "name": "Custer-Rahm Traverse",
+  "peakName": "Mount Rahm",
+  "state": "Washington",
+  "discipline": "scrambling",
+  "status": "held",
+  "peak": {
+   "id": "wa_mount_rahm",
+   "name": "Mount Rahm",
+   "lat": 48.997115,
+   "lng": -121.228755,
+   "elevation_ft": 8485,
+   "region": "Chilliwack / Picket",
+   "path": "usa.washington.wa_northwest.wa_hwy20_ncnp.wa_north_cascades.wa_chilliwack_range.wa_mount_rahm"
+  },
+  "text": {
+   "approach": "Reached from the summit of either Mount Rahm (via the Standard Route/Glacier or South Side) or Mount Custer (via its South Ridge), not from a trailhead directly.",
+   "approach_logistics": null,
+   "road": "{\"name\":\"Chilliwack Lake Road + Depot Creek Road (BC) — same access used for the South Side route, from which this traverse is usually launched\",\"status\":\"Paved to Chilliwack Lake (~25 mi), then rough pothole-prone gravel to the Depot Creek Road fork at 32.6 mi; Depot Creek Road itself washed out beyond roughly 0.8-1.6 mi\",\"driveNote\":\"See the South Side route's Depot Creek approach; this traverse is done as a link, not from the road directly.\",\"seasonalGate\":null}",
+   "overview": "A high, mostly Class 2/3 ridge-crest traverse directly connecting the summits of Mount Rahm and Mount Custer, with one short Class 4 gully bypassing an unclimbable arête near Custer's summit block.",
+   "description": null,
+   "descent": "Parties doing this traverse essentially never reverse it. From Custer's summit, descend the South Ridge route back toward Ouzel Lake or the Depot Creek-Silver Lake saddle camp; from Rahm's summit, descend the South Side route's gully system back to camp."
+  },
+  "siblingTrailheads": [],
+  "officialCandidates": [
+   {
+    "src": "NPS",
+    "name": "Nepopekum Horse Trail Loop Trailhead (BC)",
+    "lat": 49.053337,
+    "lng": -121.094073,
+    "km": 11.6
+   },
+   {
+    "src": "NPS",
+    "name": "Strawberry Bar (BC)",
+    "lat": 49.076197,
+    "lng": -121.111462,
+    "km": 12.3
+   },
+   {
+    "src": "NPS",
+    "name": "Skyline II Trailhead (BC)",
+    "lat": 49.041545,
+    "lng": -121.068734,
+    "km": 12.7
+   },
+   {
+    "src": "NPS",
+    "name": "Shawatum Day Use parking area (BC)",
+    "lat": 49.105168,
+    "lng": -121.138761,
+    "km": 13.7
+   }
+  ],
+  "lastAnswer": {
+   "status": "found",
+   "trailhead": {
+    "name": "Depot Creek Trailhead (BC, off Chilliwack Lake Road)",
+    "identifiedBy": {
+     "kind": "page",
+     "url": "https://stephabegg.com/trip-reports/washington/chilliwack-slam/",
+     "fact": "Depot Creek TH 2300 ft; to Ouzel Lake camp, then Rahm and ridge to Custer"
+    },
+    "placements": []
+   },
+   "notes": "Launched from Ouzel Lake camp, not a trailhead of its own; trailhead is the shared Depot Creek TH. No coordinate; official candidates are on the other side of the border and do not match. Report is of a SW-route Rahm then traverse."
+  }
+ },
+ {
+  "id": "wa_mount_rainier_north_mowich_icefall",
+  "name": "North Mowich Icefall",
+  "peakName": "Mount Rainier",
+  "state": "Washington",
+  "discipline": "mountaineering",
+  "status": "nopage",
+  "peak": {
+   "id": "wa_mount_rainier",
+   "name": "Mount Rainier",
+   "lat": 46.8528267,
+   "lng": -121.7604408,
+   "elevation_ft": 14406,
+   "region": "Washington",
+   "path": "usa.washington.wa_sw_tacoma.wa_southwest_cascades.wa_mount_rainier"
+  },
+  "text": {
+   "approach": null,
+   "approach_logistics": null,
+   "road": null,
+   "overview": null,
+   "description": null,
+   "descent": null
+  },
+  "siblingTrailheads": [
+   {
+    "route": "rainier_central_mowich_face",
+    "name": "Mowich Lake Trailhead"
+   }
+  ],
+  "officialCandidates": [
+   {
+    "src": "NPS",
+    "name": "4th Crossing Trailhead",
+    "lat": 46.79018,
+    "lng": -121.726702,
+    "km": 7.4
+   },
+   {
+    "src": "NPS",
+    "name": "Skyline Trailhead",
+    "lat": 46.786404,
+    "lng": -121.73639,
+    "km": 7.6
+   },
+   {
+    "src": "NPS",
+    "name": "Alta Vista Trailhead",
+    "lat": 46.784541,
+    "lng": -121.741355,
+    "km": 7.7
+   },
+   {
+    "src": "NPS",
+    "name": "Nisqually Vista Trailhead",
+    "lat": 46.785052,
+    "lng": -121.741604,
+    "km": 7.7
+   },
+   {
+    "src": "NPS",
+    "name": "Lower Lakes Trailhead",
+    "lat": 46.785505,
+    "lng": -121.733344,
+    "km": 7.8
+   },
+   {
+    "src": "NPS",
+    "name": "Comet Falls Trailhead",
+    "lat": 46.778817,
+    "lng": -121.783602,
+    "km": 8.4
+   },
+   {
+    "src": "NPS",
+    "name": "Narada Falls trailhead",
+    "lat": 46.775194,
+    "lng": -121.746062,
+    "km": 8.7
+   },
+   {
+    "src": "NPS",
+    "name": "Lower Lakes Trail",
+    "lat": 46.776604,
+    "lng": -121.737077,
+    "km": 8.7
+   }
+  ],
+  "lastAnswer": {
+   "status": "stuck",
+   "trailhead": null,
+   "notes": "No page about this route found. Mowich Lake is the usual approach to the North Mowich/Mowich Glacier side (Ptarmigan Ridge via Spray Park), but only as a neighbouring-route inference; Mountaineers 403, SummitPost 403."
+  }
+ },
+ {
+  "id": "wa_glacier_peak_south_tahoma_headwall",
+  "name": "South Tahoma Headwall",
+  "peakName": "Mount Rainier",
+  "state": "Washington",
+  "discipline": "alpine",
+  "status": "held",
+  "peak": {
+   "id": "wa_mount_rainier",
+   "name": "Mount Rainier",
+   "lat": 46.8528267,
+   "lng": -121.7604408,
+   "elevation_ft": 14406,
+   "region": "Washington",
+   "path": "usa.washington.wa_sw_tacoma.wa_southwest_cascades.wa_mount_rainier"
+  },
+  "text": {
+   "approach": "Reached from the closed Westside Road beyond the Dry Creek gate on a long walk in of about 12 miles, then across the Tahoma Glacier or round Success Cleaver to the foot of the headwall.",
+   "approach_logistics": null,
+   "road": null,
+   "overview": "A steep, rimed headwall of snow and ice with short rock and ice steps at the head of the South Tahoma Glacier, dropping from Point Success. Slopes reach about 55 degrees, and an icy step high on the face has been rappelled by skiers. Rockfall and icefall are the main hazards.",
+   "description": null,
+   "descent": null
+  },
+  "siblingTrailheads": [
+   {
+    "route": "rainier_central_mowich_face",
+    "name": "Mowich Lake Trailhead"
+   }
+  ],
+  "officialCandidates": [
+   {
+    "src": "NPS",
+    "name": "4th Crossing Trailhead",
+    "lat": 46.79018,
+    "lng": -121.726702,
+    "km": 7.4
+   },
+   {
+    "src": "NPS",
+    "name": "Skyline Trailhead",
+    "lat": 46.786404,
+    "lng": -121.73639,
+    "km": 7.6
+   },
+   {
+    "src": "NPS",
+    "name": "Alta Vista Trailhead",
+    "lat": 46.784541,
+    "lng": -121.741355,
+    "km": 7.7
+   },
+   {
+    "src": "NPS",
+    "name": "Nisqually Vista Trailhead",
+    "lat": 46.785052,
+    "lng": -121.741604,
+    "km": 7.7
+   },
+   {
+    "src": "NPS",
+    "name": "Lower Lakes Trailhead",
+    "lat": 46.785505,
+    "lng": -121.733344,
+    "km": 7.8
+   },
+   {
+    "src": "NPS",
+    "name": "Comet Falls Trailhead",
+    "lat": 46.778817,
+    "lng": -121.783602,
+    "km": 8.4
+   },
+   {
+    "src": "NPS",
+    "name": "Narada Falls trailhead",
+    "lat": 46.775194,
+    "lng": -121.746062,
+    "km": 8.7
+   },
+   {
+    "src": "NPS",
+    "name": "Lower Lakes Trail",
+    "lat": 46.776604,
+    "lng": -121.737077,
+    "km": 8.7
+   }
+  ],
+  "lastAnswer": {
+   "status": "found",
+   "trailhead": {
+    "name": "Westside Road: Dry Creek Trailhead",
+    "identifiedBy": {
+     "kind": "route_text",
+     "fact": "closed Westside Road beyond the Dry Creek gate, ~12 mi walk in"
+    },
+    "placements": []
+   },
+   "notes": "Peak is Rainier (id says glacier_peak). NPS Dry Creek page prints no coordinate and no candidate matches; unplaced."
+  }
+ },
+ {
+  "id": "wa_glacier_peak_tahoma_cleaver",
+  "name": "Tahoma Cleaver",
+  "peakName": "Mount Rainier",
+  "state": "Washington",
+  "discipline": "mountaineering",
+  "status": "held",
+  "peak": {
+   "id": "wa_mount_rainier",
+   "name": "Mount Rainier",
+   "lat": 46.8528267,
+   "lng": -121.7604408,
+   "elevation_ft": 14406,
+   "region": "Washington",
+   "path": "usa.washington.wa_sw_tacoma.wa_southwest_cascades.wa_mount_rainier"
+  },
+  "text": {
+   "approach": "From Westside Road — Dry Creek Trailhead, walk the closed road past the barricade to the Tahoma Creek Trail and climb it about 2 miles to the Wonderland Trail junction near 4300 ft. Go south over the Tahoma Creek suspension bridge, follow the Wonderland Trail to Indian Henry's Hunting Ground, then take the Mirror Lakes Trail until it fades in the basin between Copper and Pyramid Peaks. Continue cross-country past Pyramid Peak to Success Cleaver and climb it to about 8000 ft, where glacier travel begins. A roped traverse across the South Tahoma Glacier at roughly 8100 ft reaches the base of Tahoma Cleaver.",
+   "approach_logistics": "{\"trailhead\":\"Westside Road — Dry Creek Trailhead\",\"trailheadDirection\":\"Enter Mount Rainier National Park at the Nisqually entrance and, after 1 mile, turn left (north) onto Westside Road. Drive it to the Dry Creek barricade and park in the small lot just south of it; past the barricade the road is closed to vehicles.\"}",
+   "road": null,
+   "overview": "A rocky cleaver between the Tahoma Glacier and the South Tahoma Glacier on Rainier's southwest side, near 9,400 ft. Parties camp on it and use it as a climbing and ski line from the west side.",
+   "description": null,
+   "descent": null
+  },
+  "siblingTrailheads": [
+   {
+    "route": "rainier_central_mowich_face",
+    "name": "Mowich Lake Trailhead"
+   }
+  ],
+  "officialCandidates": [
+   {
+    "src": "NPS",
+    "name": "4th Crossing Trailhead",
+    "lat": 46.79018,
+    "lng": -121.726702,
+    "km": 7.4
+   },
+   {
+    "src": "NPS",
+    "name": "Skyline Trailhead",
+    "lat": 46.786404,
+    "lng": -121.73639,
+    "km": 7.6
+   },
+   {
+    "src": "NPS",
+    "name": "Alta Vista Trailhead",
+    "lat": 46.784541,
+    "lng": -121.741355,
+    "km": 7.7
+   },
+   {
+    "src": "NPS",
+    "name": "Nisqually Vista Trailhead",
+    "lat": 46.785052,
+    "lng": -121.741604,
+    "km": 7.7
+   },
+   {
+    "src": "NPS",
+    "name": "Lower Lakes Trailhead",
+    "lat": 46.785505,
+    "lng": -121.733344,
+    "km": 7.8
+   },
+   {
+    "src": "NPS",
+    "name": "Comet Falls Trailhead",
+    "lat": 46.778817,
+    "lng": -121.783602,
+    "km": 8.4
+   },
+   {
+    "src": "NPS",
+    "name": "Narada Falls trailhead",
+    "lat": 46.775194,
+    "lng": -121.746062,
+    "km": 8.7
+   },
+   {
+    "src": "NPS",
+    "name": "Lower Lakes Trail",
+    "lat": 46.776604,
+    "lng": -121.737077,
+    "km": 8.7
+   }
+  ],
+  "lastAnswer": {
+   "status": "found",
+   "trailhead": {
+    "name": "Westside Road: Dry Creek Trailhead",
+    "identifiedBy": {
+     "kind": "route_text",
+     "fact": "From Westside Road - Dry Creek Trailhead, walk closed road to Tahoma Creek Trail"
+    },
+    "placements": []
+   },
+   "notes": "Own text names it; NPS page confirms the lot. No coordinate printed anywhere (NPS page checked). A SummitPost snippet says Tahoma Creek Trail closed by floods; verify."
+  }
+ },
+ {
+  "id": "wa_mount_sefrit_southeast_ridge",
+  "name": "Southeast Ridge",
+  "peakName": "Mount Sefrit",
+  "state": "Washington",
+  "discipline": "mountaineering",
+  "status": "held",
+  "peak": {
+   "id": "wa_mount_sefrit",
+   "name": "Mount Sefrit",
+   "lat": 48.892,
+   "lng": -121.5942,
+   "elevation_ft": 7191,
+   "region": "Washington",
+   "path": "usa.washington.wa_northwest.wa_shuksan_baker_neighbors.wa_mount_sefrit"
+  },
+  "text": {
+   "approach": "Drive Mt. Baker Highway (SR 542) to Hannegan Pass Road (FS 32); at 1.3 miles bear left onto Ruth Creek Road and continue to a pullout near milepost 3, just past a creek flowing over a concrete weir (about 2,950 ft), well short of the road's end at Hannegan Campground. From the pullout, cross Ruth Creek (a log crossing has been used) and bushwhack roughly 45 minutes through slide alder and devil's club to the base of the Wall Street couloir.",
+   "approach_logistics": "{\"trailhead\":\"Ruth Creek Road pullout near milepost 3 (FS 32)\",\"trailheadDirection\":\"From a pullout near milepost 3 on Ruth Creek Road, just past a creek flowing over a concrete weir (~2,950 ft), off Hannegan Pass Road (FS 32) from the Mt. Baker Highway\"}",
+   "road": "{\"name\":\"Hannegan Pass Road (FS 32) / Ruth Creek Road\",\"status\":\"Gravel Forest Service road to Hannegan Campground/trailhead\",\"driveNote\":\"From Mt. Baker Hwy (SR 542) ~12.5 mi east of Glacier, turn onto Hannegan Pass Rd (FS 32); at 1.3 mi bear left onto Ruth Creek Rd and continue to a roadside pullout near milepost 3, just past a creek flowing over a concrete weir, across Ruth Creek from the Wall Street couloir; do not drive on to the road's end at Hannegan Campground.\",\"seasonalGate\":\"Snow-closed in winter/spring; check Mt. Baker-Snoqualmie NF alerts for opening date\"}",
+   "overview": "The classic north-side line: a steep snow gully ('Wall Street') gains the Northwest Glacier, which is crossed to a 6,500-ft saddle west of the summit, followed by a Class 2-3 scramble up the exposed southeast ridge to the top.",
+   "description": null,
+   "descent": "Reverse the southeast-ridge scramble to the 6,500-ft saddle, re-cross the Northwest Glacier, and plunge-step down the roughly 1,500-ft Wall Street couloir back to the bushwhack and Ruth Creek crossing."
+  },
+  "siblingTrailheads": [],
+  "officialCandidates": [
+   {
+    "src": "USFS",
+    "name": "Hannegan Trailhead",
+    "lat": 48.910191,
+    "lng": -121.591986,
+    "km": 2
+   },
+   {
+    "src": "USFS",
+    "name": "Goat Mountain Trailhead",
+    "lat": 48.897718,
+    "lng": -121.645264,
+    "km": 3.8
+   },
+   {
+    "src": "USFS",
+    "name": "Nooksack Cirque Trailhead",
+    "lat": 48.894006,
+    "lng": -121.651015,
+    "km": 4.2
+   },
+   {
+    "src": "USFS",
+    "name": "Panorama Dome Trailhead",
+    "lat": 48.860749,
+    "lng": -121.656654,
+    "km": 5.7
+   },
+   {
+    "src": "USFS",
+    "name": "Picture Lake Path Trailhead",
+    "lat": 48.865889,
+    "lng": -121.676743,
+    "km": 6.7
+   },
+   {
+    "src": "USFS",
+    "name": "Bagley Lakes Trailhead",
+    "lat": 48.861566,
+    "lng": -121.682905,
+    "km": 7.3
+   },
+   {
+    "src": "USFS",
+    "name": "Twin Lakes Trailhead",
+    "lat": 48.951763,
+    "lng": -121.635355,
+    "km": 7.3
+   },
+   {
+    "src": "USFS",
+    "name": "Tomyhoi/Yellow Aster Butte Trailhead",
+    "lat": 48.943426,
+    "lng": -121.662795,
+    "km": 7.6
+   }
+  ],
+  "lastAnswer": {
+   "status": "found",
+   "trailhead": {
+    "name": "Ruth Creek Road pullout near milepost 3 (FS 32)",
+    "identifiedBy": {
+     "kind": "route_text",
+     "fact": "pullout near milepost 3 on Ruth Creek Road, cross Ruth Creek, bushwhack to Wall Street couloir"
+    },
+    "placements": []
+   },
+   "notes": "Not the Hannegan trailhead (USFS 48.910191,-121.591986 is the road end, further up). No page gave a coordinate for the milepost-3 pullout; SummitPost and CascadeClimbers 403. Route's existing pin is the Hannegan lot typed Campsite."
+  }
+ },
+ {
+  "id": "wa_mount_stuart_direct_north_ridge",
+  "name": "Direct North Ridge",
+  "peakName": "Mount Stuart",
+  "state": "Washington",
+  "discipline": "alpine",
+  "status": "new",
+  "peak": {
+   "id": "wa_mount_stuart",
+   "name": "Mount Stuart",
+   "lat": 47.4750106,
+   "lng": -120.9022286,
+   "elevation_ft": 9415,
+   "region": "Washington",
+   "path": "usa.washington.wa_centraleast.wa_stuart_range.wa_mount_stuart"
+  },
+  "text": {
+   "approach": null,
+   "approach_logistics": null,
+   "road": null,
+   "overview": "Lichen and loose rock mar parts of this bigger outing, which adds roughly 1200 feet and sustained 5.9+ cracks to the regular North Ridge. Easy fifth class follows the crest above the hardest early pitches, which include a slot and a long layback crack past a small roof. Bivouac sites sit around 8200 feet at the notch. Time varies enormously: a rapid half-day simul-climbing, or several days if pitched out.",
+   "description": null,
+   "descent": null
+  },
+  "siblingTrailheads": [
+   {
+    "route": "wa_gorillas_direct",
+    "name": "Esmeralda Basin Trailhead (North Fork Teanaway Rd)"
+   }
+  ],
+  "officialCandidates": [
+   {
+    "src": "USFS",
+    "name": "Esmeralda Trailhead",
+    "lat": 47.436706,
+    "lng": -120.936915,
+    "km": 5
+   },
+   {
+    "src": "USFS",
+    "name": "Iron Peak Trailhead",
+    "lat": 47.421583,
+    "lng": -120.937341,
+    "km": 6.5
+   },
+   {
+    "src": "USFS",
+    "name": "Stuart Lake Trailhead",
+    "lat": 47.527806,
+    "lng": -120.820515,
+    "km": 8.5
+   },
+   {
+    "src": "USFS",
+    "name": "Eightmile Trailhead",
+    "lat": 47.536016,
+    "lng": -120.814025,
+    "km": 9.5
+   },
+   {
+    "src": "USFS",
+    "name": "Beverly Bean Trailhead",
+    "lat": 47.389302,
+    "lng": -120.872266,
+    "km": 9.8
+   },
+   {
+    "src": "USFS",
+    "name": "Scatter Creek Trailhead",
+    "lat": 47.507206,
+    "lng": -121.059815,
+    "km": 12.4
+   },
+   {
+    "src": "USFS",
+    "name": "Fourth Of July Trailhead",
+    "lat": 47.578106,
+    "lng": -120.796015,
+    "km": 14
+   },
+   {
+    "src": "USFS",
+    "name": "Stafford Creek Trailhead",
+    "lat": 47.365806,
+    "lng": -120.803615,
+    "km": 14.2
+   }
+  ],
+  "lastAnswer": {
+   "status": "found",
+   "trailhead": {
+    "name": "Stuart Lake Trailhead",
+    "identifiedBy": {
+     "kind": "page",
+     "url": "https://stephabegg.com/?p=8737",
+     "fact": "Direct North Ridge climbed 2006 and 2016 from the Stuart Lake / Colchuck Lake trailhead; climbers trail up Mountaineer Creek; base of north ridge about 3.2 h from car"
+    },
+    "placements": [
+     {
+      "source": "USFS",
+      "name": "Stuart Lake Trailhead",
+      "lat": 47.527806,
+      "lng": -120.820515,
+      "url": ""
+     }
+    ]
+   },
+   "notes": "One trip report page covering two climbs of this exact route, so identification is for this route. The Eightmile lot is a separate USFS point; the Stuart Lake/Colchuck lot is the Mountaineer Creek one used here."
+  }
+ },
+ {
+  "id": "wa_mount_stuart_gorillas_in_the_mist",
+  "name": "Gorillas in the Mist",
+  "peakName": "Mount Stuart",
+  "state": "Washington",
+  "discipline": "alpine",
+  "status": "nopage",
+  "peak": {
+   "id": "wa_mount_stuart",
+   "name": "Mount Stuart",
+   "lat": 47.4750106,
+   "lng": -120.9022286,
+   "elevation_ft": 9415,
+   "region": "Washington",
+   "path": "usa.washington.wa_centraleast.wa_stuart_range.wa_mount_stuart"
+  },
+  "text": {
+   "approach": null,
+   "approach_logistics": null,
+   "road": null,
+   "overview": "Crack and corner route. P1 (5.11- or 5.10+): hand and finger splitter from a small ledge to a broad ledge, then a mantle and a yellow corner. P2 (5.9): leftward through hanging corners and arete turns to a bolted ledge. P3 (5.10+): face holds to a 4 inch crack and a slung horn near big orange roofs, then diagonal cracks right; may be easier as two pitches. P4 (5.10-): finger cracks and stemming. P5 (5.10): rightward and upward, past a small tree. P6 (5th class): move the belay well right of a bi",
+   "description": null,
+   "descent": null
+  },
+  "siblingTrailheads": [
+   {
+    "route": "wa_gorillas_direct",
+    "name": "Esmeralda Basin Trailhead (North Fork Teanaway Rd)"
+   }
+  ],
+  "officialCandidates": [
+   {
+    "src": "USFS",
+    "name": "Esmeralda Trailhead",
+    "lat": 47.436706,
+    "lng": -120.936915,
+    "km": 5
+   },
+   {
+    "src": "USFS",
+    "name": "Iron Peak Trailhead",
+    "lat": 47.421583,
+    "lng": -120.937341,
+    "km": 6.5
+   },
+   {
+    "src": "USFS",
+    "name": "Stuart Lake Trailhead",
+    "lat": 47.527806,
+    "lng": -120.820515,
+    "km": 8.5
+   },
+   {
+    "src": "USFS",
+    "name": "Eightmile Trailhead",
+    "lat": 47.536016,
+    "lng": -120.814025,
+    "km": 9.5
+   },
+   {
+    "src": "USFS",
+    "name": "Beverly Bean Trailhead",
+    "lat": 47.389302,
+    "lng": -120.872266,
+    "km": 9.8
+   },
+   {
+    "src": "USFS",
+    "name": "Scatter Creek Trailhead",
+    "lat": 47.507206,
+    "lng": -121.059815,
+    "km": 12.4
+   },
+   {
+    "src": "USFS",
+    "name": "Fourth Of July Trailhead",
+    "lat": 47.578106,
+    "lng": -120.796015,
+    "km": 14
+   },
+   {
+    "src": "USFS",
+    "name": "Stafford Creek Trailhead",
+    "lat": 47.365806,
+    "lng": -120.803615,
+    "km": 14.2
+   }
+  ],
+  "lastAnswer": {
+   "status": "stuck",
+   "trailhead": null,
+   "notes": "CascadeClimbers and SummitPost 403; the Mountain Project id I tried was a different (South Dakota) route. Lead only: Ingalls-side approach implies Esmeralda Basin, but no opened page ties it, and the north (Stuart Lake) approach also reaches Stuart Pass."
+  }
+ },
+ {
+  "id": "wa_mount_stuart_stuart_range_traverse",
+  "name": "Stuart Range Traverse",
+  "peakName": "Mount Stuart",
+  "state": "Washington",
+  "discipline": "alpine",
+  "status": "nopage",
+  "peak": {
+   "id": "wa_mount_stuart",
+   "name": "Mount Stuart",
+   "lat": 47.4750106,
+   "lng": -120.9022286,
+   "elevation_ft": 9415,
+   "region": "Washington",
+   "path": "usa.washington.wa_centraleast.wa_stuart_range.wa_mount_stuart"
+  },
+  "text": {
+   "approach": null,
+   "approach_logistics": null,
+   "road": null,
+   "overview": null,
+   "description": null,
+   "descent": null
+  },
+  "siblingTrailheads": [
+   {
+    "route": "wa_gorillas_direct",
+    "name": "Esmeralda Basin Trailhead (North Fork Teanaway Rd)"
+   }
+  ],
+  "officialCandidates": [
+   {
+    "src": "USFS",
+    "name": "Esmeralda Trailhead",
+    "lat": 47.436706,
+    "lng": -120.936915,
+    "km": 5
+   },
+   {
+    "src": "USFS",
+    "name": "Iron Peak Trailhead",
+    "lat": 47.421583,
+    "lng": -120.937341,
+    "km": 6.5
+   },
+   {
+    "src": "USFS",
+    "name": "Stuart Lake Trailhead",
+    "lat": 47.527806,
+    "lng": -120.820515,
+    "km": 8.5
+   },
+   {
+    "src": "USFS",
+    "name": "Eightmile Trailhead",
+    "lat": 47.536016,
+    "lng": -120.814025,
+    "km": 9.5
+   },
+   {
+    "src": "USFS",
+    "name": "Beverly Bean Trailhead",
+    "lat": 47.389302,
+    "lng": -120.872266,
+    "km": 9.8
+   },
+   {
+    "src": "USFS",
+    "name": "Scatter Creek Trailhead",
+    "lat": 47.507206,
+    "lng": -121.059815,
+    "km": 12.4
+   },
+   {
+    "src": "USFS",
+    "name": "Fourth Of July Trailhead",
+    "lat": 47.578106,
+    "lng": -120.796015,
+    "km": 14
+   },
+   {
+    "src": "USFS",
+    "name": "Stafford Creek Trailhead",
+    "lat": 47.365806,
+    "lng": -120.803615,
+    "km": 14.2
+   }
+  ],
+  "lastAnswer": {
+   "status": "stuck",
+   "trailhead": null,
+   "notes": "Multi-peak traverse, no route text, no single trailhead. Not pursued further."
+  }
+ }
+]

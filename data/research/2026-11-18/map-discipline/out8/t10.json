@@ -1,0 +1,130 @@
+[
+ {
+  "id": "ca_triple_divide_peak_standard_route",
+  "status": "stuck",
+  "trailhead": null,
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [
+   {
+    "field": "route",
+    "value": "Glacier Lake, Triple Divide Pass, East Ridge, class 3",
+    "url": "https://climber.org/reports/2006/1529.html"
+   },
+   {
+    "field": "distance_mi",
+    "value": "about 25 to Glacier Lake",
+    "url": "https://climber.org/reports/2013/1844.html"
+   }
+  ],
+  "notes": "Conflict, so stuck. Marvin Pass / Horse Corral start: climber.org/reports/2006/1529.html (Marvin Pass TH) and /2013/1844.html (Horse Corral/Marvin Pass TH); both East Ridge via Glacier Lake. But /2003/1154.html started at Rowell Meadow (horse camp road) via Roaring River, west ridge up. No official candidate matches Horse Corral; no coordinate."
+ },
+ {
+  "id": "ca_twin_peaks_sierra_standard_route",
+  "status": "stuck",
+  "trailhead": null,
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "Conflict. Green Creek via Virginia Pass: climber.org/reports/2003/1162.html (Green Lakes TH, south gully) and 2007/1611 (earlier pass). Mono Village/Twin Lakes backpacker lot via Horse Creek Pass: climber.org/reports/2000/577.html. Starts differ; no page calls one standard."
+ },
+ {
+  "id": "ca_volunteer_peak_standard_route",
+  "status": "found",
+  "trailhead": {
+   "name": "Twin Lakes (Robinson Creek) Trailhead",
+   "identifiedBy": {
+    "kind": "page",
+    "url": "https://climber.org/reports/2010/1774.html",
+    "fact": "party started at Twin Lakes on Robinson Creek Trail via Peeler Lake and Seavey Pass; climber.org 2001/841 also started at Twin Lakes; earlier pass Burd report Twin Lakes day-use lot via Barney Lake and Seavey Pass"
+   },
+   "placements": [
+    {
+     "source": "USFS",
+     "name": "Robinson Creek Trailhead",
+     "lat": 38.146801,
+     "lng": -119.389785,
+     "url": ""
+    }
+   ]
+  },
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [
+   {
+    "field": "route",
+    "value": "Robinson Creek trail, Peeler Lake, Seavey Pass, off-trail near Benson Lake",
+    "url": "https://climber.org/reports/2010/1774.html"
+   },
+   {
+    "field": "class",
+    "value": "2-3",
+    "url": "https://climber.org/reports/2010/1774.html"
+   }
+  ],
+  "notes": "Sources: climber.org/reports/2010/1774.html, climber.org/reports/2001/841.html (generic Twin Lakes; trip ran to Tuolumne). 1999/503 started at Saddlebag Lake but is a traverse ending at Twin Lakes, not counted. Multi-day from every start; USFS candidate matches the Twin Lakes trailhead by name only; one placement."
+ },
+ {
+  "id": "wa_big_snow_mountain_sasquatch_s_breath",
+  "status": "stuck",
+  "trailhead": null,
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "nothing new. One search; no page names the route."
+ },
+ {
+  "id": "wa_cutthroat_peak_a_virtuous_circle",
+  "status": "stuck",
+  "trailhead": null,
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "nothing new. One search; no page names the route."
+ },
+ {
+  "id": "wa_enchantment_peak_east_ridge",
+  "status": "stuck",
+  "trailhead": null,
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "nothing new. Search results only Mountaineers/SummitPost (blocked): Colchuck or Snow Lake both used for Prusik Pass."
+ },
+ {
+  "id": "wa_huckleberry_mountain_north_spur",
+  "status": "stuck",
+  "trailhead": null,
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "nothing new. Search shows only East Face/East Ridge via PCT/Commonwealth Basin."
+ },
+ {
+  "id": "wa_huckleberry_mountain_southwest_slope",
+  "status": "stuck",
+  "trailhead": null,
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "nothing new. Search shows only East Face/East Ridge via PCT/Commonwealth Basin."
+ },
+ {
+  "id": "wa_little_annapurna_northeast_face",
+  "status": "stuck",
+  "trailhead": null,
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "nothing new. AAJ link opened was the Nepal Annapurna, irrelevant."
+ },
+ {
+  "id": "wa_little_annapurna_northwest_buttress",
+  "status": "stuck",
+  "trailhead": null,
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "nothing new. No page about this buttress."
+ }
+]

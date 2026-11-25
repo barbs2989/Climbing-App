@@ -12,6 +12,7 @@ the architecture, and the working rules. The detail lives in `docs/`:
 | [docs/codebase/hand-written-sql.md](docs/codebase/hand-written-sql.md) | hand the user SQL to paste into the Supabase SQL Editor |
 | [docs/codebase/route-identity.md](docs/codebase/route-identity.md) | resolve, dedupe, import or write to route rows by id |
 | [docs/codebase/enrichment-prose.md](docs/codebase/enrichment-prose.md) | write researched text into any existing `routes` column |
+| [docs/codebase/research-ledger.md](docs/codebase/research-ledger.md) | research or verify route facts, or touch `route_field_evidence` / the lock rules (skills: `.claude/skills/route-research/`) |
 | [docs/codebase/deploy-and-icons.md](docs/codebase/deploy-and-icons.md) | touch `public/`, the manifest, the icons, or the Pages base path |
 | [docs/codebase/algorithms.md](docs/codebase/algorithms.md) | change the partner match score (`compat()`) |
 | [docs/refactor-progress.md](docs/refactor-progress.md) | extract a component into `src/components/`, or touch one that already lives there (conventions, the per-PR procedure, and where the last session stopped) |
@@ -44,14 +45,17 @@ npm run measure:guard-reach -- --out before.json # ...then --out after.json --co
 # ── Static code guards — notes: docs/guards/static-code.md ──
 npm run check:refs # identifiers referenced but never bound (runs in build + CI)
 npm run check:jsx-comments # a comment in JSX children position renders to the USER (in build)
-npm run check:no-emoji # the app draws NO emoji — an ActionIcon or the words alone (owner, 2026-10-25) (in build)
+npm run check:no-emoji # the app draws NO emoji — an ActionIcon or the words alone (owner, 2026-10-25); the one exception is the REACTIONS table (owner, 2026-11-05) (in build)
 npm run check:no-nul  # no source file git would treat as BINARY, so diffs stay readable (in build)
 npm run check:no-secrets # no Supabase service key, service_role JWT, or literal anon key / project URL in source (in build)
 npm run check:script-roots # no script reads the app files of somebody ELSE's worktree (in build)
 npm run check:dup-attrs # a declaration written TWICE: the later wins, the earlier is dead (in build)
+npm run check:field-outline # every text field (input, textarea, select) is outlined in C.field, never C.border — its outline is what shows where it is, so it needs 3:1 (in build)
 npm run check:no-module-scope-core-reads # a component core imports BACK must not read core at module scope — the bundle throws before React mounts (in build)
 npm run check:bottom-panels # a fixed panel at the bottom must RESERVE the space it covers (in build)
 npm run check:hooks# React hooks-rules violations (runs in build + CI)
+npm run check:back-button # the phone's Back button steps back inside the app (lib/backButton.js), and NO sideways swipe changes the page — removed 2026-11-18 (in build)
+npm run check:fix-filter # the "you are here" dot on every map (lib/fixFilter.js): which readings count, the dot smooths jitter standing still but keeps up walking, a coarse first fix frames its ring instead of zooming in (in build)
 npm run check:dead-props # props passed or declared but never read (runs in build + CI)
 npm run check:boot # index.html's boot placeholder AND the Help tour still match the real nav
 npm run check:screen-lists # every guard walks EVERY tab the app has, and no tab it hasn't (in build)
@@ -82,7 +86,7 @@ npm run check:message-delivery # a message from a SECOND real account arrives, a
 npm run check:block-guarantees # blocked: cannot read, message or crew-invite you (2 real accounts; hand-run)
 npm run check:new-climber-journey # a new climber onboards, opens a crew, removes a friend — did any of it reach the DB? (hand-run)
 npm run check:overlay-scroll # no overlay pane may chain its scroll to the page behind
-npm run check:pinned-dismiss # a popup's ✕ / ← Back stays on screen, and tappable, scrolled to the end
+npm run check:pinned-dismiss # a popup's ✕ / ← Back stays on screen, and tappable, scrolled to the end; and a popup OPENS at its top unless it edits one field
 npm run check:overlay-fullscreen # on a phone every popup COVERS the screen as a page; the app behind never shows through
 npm run check:a11y-badges # no control announces two fragments welded into one token
 npm run check:selected-state # a control that LOOKS selected must SAY it is selected
@@ -107,7 +111,8 @@ npm run check:chunk-reload # a lazy screen whose file a DEPLOY removed reloads o
 
 # ── Honesty of what the screen claims — notes: docs/guards/honesty-claims.md ──
 npm run check:conditions-score # the crag CONDITIONS SCORE adds up, leaves out what it did not measure, and stays off alpine (in build)
-npm run check:alpine-conditions # the ALPINE Conditions tab: each discipline its own flags, a start counted back from the Planner, nothing it did not read (in build)
+npm run check:alpine-conditions # the ALPINE Conditions tab: each discipline its own flags, a start counted back from the Planner, nothing it did not read; snow bridges only where a route was REVIEWED as glacier travel (in build)
+npm run audit:glacier-travel -- --state wa # which routes still get snow / glacier warnings on a GUESS? (routes.glacier_travel / snow_in_season not settled; the per-state worklist, read-only)
 npm run check:no-sources  # no screen prints a field named source, or any text about sources or "auto-generated" (in build)
 npm run check:preview-claims # no toast tells a climber the app is a PREVIEW, a demo or a simulation (in build)
 npm run check:policy-claims # no legal surface claims a control or a capability the app lacks (in build)
@@ -147,6 +152,7 @@ npm run check:crew-place # a crew has ONE place, a route or an area, and every s
 # ── The route page — notes: docs/guards/route-page.md ──
 npm run check:bare # renders a route with NO enrichment — the shape 99.5% of them have
 npm run check:access-checked-line # the road/access CHECKED DATE reaches a screen (in build)
+npm run check:no-rack-class-1-3 # RULE: a Class 1-3 route (headline grade, any discipline) or a hike has NO RACK card; its own rack items go to GEAR & ESSENTIALS (in build)
 npm run check:trailhead-directions # ONE way to drive there, coordinates with it, labels that match (in build)
 npm run check:trailhead-direction-shape # ...and those directions END AT THE TRAILHEAD, not a hike narrative (in build; --live daily)
 npm run check:approach-section # ONE approach section; the most-used way in is first, marked, and carries the paragraph (in build)
@@ -157,6 +163,7 @@ npm run check:area-page-honest # the area page prints only STORED facts, its cha
 npm run check:photo-contract # route photos keep their ordering, refusal and gating promises (in build)
 npm run check:fire # the wildfire surfaces cannot claim what they don't know (in build)
 npm run check:field-renders # every enriched route column actually reaches a screen
+npm run check:profile-gain # the Gain and Loss above the elevation profile add up, Gain minus Loss is last minus first, and GPS jitter on steep ground is not counted as climbing (in build)
 npm run check:declination # the base-of-the-climb arrow turns a MAGNETIC phone compass into TRUE north, to NOAA's WMM2025 test values (in build)
 npm run check:summit-briefing # a peak page states only what its routes AGREE on — and does not withhold what they do
 npm run check:token-boxes  # no element shaped like a chip holds a paragraph
@@ -178,7 +185,10 @@ npm run check:rappel-single-rope # the headline rappel count is the single-rope 
 npm run check:gain-floor-stated # a gain the route's own PINS contradict is stated (in build)
 npm run check:impossible-leg # ...and no leg prints a distance its own two pins make impossible (in build)
 npm run check:sun-times # the Calendar's sunrise and sunset match an ephemeris to the minute — longitude, equation of time and DST included (in build)
+npm run check:itinerary-shape # a trip plan is day by day or NOTHING, never prose (lib/itineraryShape.js), and every pipeline loader and trip-plan apply script still refuses prose (in build)
+npm run audit:itinerary-shape # does every LIVE trip plan follow that rule? fails on prose; reports gap days (service key)
 npm run check:return-leg      # the walk is split at the summit, a route's stored legs win, the descent is the longer of stored and walked, and each red warning names the DAY it lands on (in build)
+npm run check:leg-loss-regain # the leg cards print the downhill on the way up (Loss) and the uphill on the way back (Regain) from PUBLISHED figures only (0449), never measured; a loop's whole-outing gain is not printed as a leg (in build)
 npm run audit:gain         # is a route gaining LESS than its own waypoints demand?
 npm run check:rappel-lengths # can the rope a route describes actually reach the rappel it states?
 npm run audit:rappel-claims  # does `rappels` claim raps the route's own descent_text denies?
@@ -196,6 +206,7 @@ npm run audit:waypoints    # is each waypoint actually on the route's own gpx tr
 npm run audit:waypoint-order # is the waypoint LIST sensible — order and duplicate pins?
 npm run audit:waypoint-track # THIRD waypoint audit — same question as audit:waypoints, different answer
 npm run audit:map-pins     # what the route MAP draws: two trailheads, and pins it silently drops
+npm run audit:map-discipline # does every PEAK climb's map read trailhead-to-summit, not like a bare crag? (incl. routes with NO pins)
 npm run audit:waypoint-distances # a trail cannot be SHORTER than the straight line — needs no gpx
 npm run audit:summit-pins  # is the SUMMIT pin on the summit? (pin vs the peak's own coordinate)
 npm run audit:peak-coords  # is the PEAK itself where we say it is? (its coordinate vs the ground)
@@ -231,6 +242,7 @@ npm run audit:copied-prose -- --live # ...and does the LIVE text of every route 
 npm run audit:approach-scope # does a route's approach text run past the base of the climb?
 npm run audit:mountaineering-rule # mountaineering is ONLY a walk-up and a scramble is never roped: no mountaineering or scrambling row carries a 5.x grade (alpine instead), and every disciplines list names its own primary; trigger 0280/0366 + catOf/rDiscs enforce it
 npm run audit:aspect-name    # does a route's NAME point the same way as its `aspect`?
+npm run audit:optimal-season # does the HEADER season, the OPTIMAL WINDOW and its month CALENDAR say one thing? (and no window reads like research notes; --selftest needs no DB)
 npm run audit:prose-length   # does a route's DESCRIPTION state a length or pitch count its own STATS contradict? (--selftest needs no DB)
 npm run audit:partner-grade  # does PARTNER REQUIREMENTS ask for a lead grade the route's own GRADE contradicts? (--selftest needs no DB)
 npm run audit:multi-approach # a climb reached MORE THAN ONE WAY that the page cannot switch between yet
@@ -239,22 +251,28 @@ npm run check:enrichment-traceable # does a climbing_route batch invent anything
 npm run audit:terrain      # does a route's safety advice match the terrain it crosses?
 npm run audit:hazard-redundancy # how much repetition the KNOWN HAZARDS merge removes (NOT a backlog)
 npm run enrich:apply       # write approach_variants / climbing_route / bivy (--dry first)
+npm run check:research-locks # can a research batch overwrite a field the evidence ledger has locked? (in build)
+npm run audit:coverage     # how much of each STATE × DISCIPLINE is filled / sourced / LOCKED (approach, descent, protection, pitches, coordinates…), and which destinations to research next, most-used first (writes audits/coverage/<date>.json; --compare an older one; --selftest needs no DB)
 
 # ── Contributions and the logbook — notes: docs/guards/contributions-and-logbook.md ──
 npm run check:contrib-fields # every field the contribute form offers is actually applied (in build)
+npm run check:facts-pencil-open # a facts card/section pencil opens at an open field; a locked grade never locks empty facts (in build)
 npm run check:contrib-summary # ...and its CURRENT-VALUE line never prints [object Object] (in build)
 npm run check:correction-readers # no enrichment column out-votes an agreed correction (in build)
 npm run check:suggestion-discs # suggestions cover EVERY discipline you climb (in build)
 npm run check:log  # BOTH climb_logs hydrations keep every column worth showing (in build)
 npm run check:challenge-rows # tick-list rows say something true, the tick matches the row, and no row's text overlaps at 390 or 320px
 npm run check:route-tags # real list prose still reaches a list key, and each key renders (in build)
+npm run check:list-summit-audit # a peak list ticks only from a route that reaches the SUMMIT; every list peak was audited (in build)
 npm run check:contrib-shapes # what the contribute form SUBMITS is the shape its readers READ (in build)
 npm run check:consensus-clustering # three climbers who agree must be COUNTED as agreeing (in build)
 npm run check:add-route-fields # add-a-climb asks what the discipline needs, and nothing unstorable (in build)
+npm run check:edit-scope # the route EDIT SHEET offers, per discipline, only fields that discipline's page draws — one rule, lib/fieldScope.js (in build)
 npm run check:contrib-field-columns # every editable field has a DB row naming the routes column its confidence is computed from (in build)
 npm run check:editable-coverage # every routes column a climber can SEE has an editor, or a written reason it has none (in build)
 npm run audit:fifty-classics # which Fifty Classics does the catalog hold, and are they tagged?
 npm run audit:list-coverage # how full is each named tick-list against the total it advertises?
+npm run audit:list-summit-routes -- --check # DB slot: any route on a list peak with no summit verdict yet?
 
 # ── Grades — notes: docs/guards/grades.md ──
 npm run check:grade-parser  # grade_num is parsed in one place, and so is the DISPLAYED grade (in build)
@@ -279,7 +297,10 @@ npm run check:schema # lib/db.js never reads a table or column the database lack
 npm run check:list-row-columns # the Climbs list's THIN ROW carries every column its readers read, and nothing they don't (in build)
 npm run check:migrations # two migrations must never share a number (in build)
 npm run check:migration-replay # does supabase/migrations rebuild an EMPTY database, as a Supabase preview does? (--compare-live: into the LIVE schema)
+npm run check:profile-privacy # PGlite replay, then profiles read as anon/authenticated: hidden name/photos and private columns refused, every app select list still allowed; and signed out, climb_logs.partners is refused while every other climb_logs column is granted (hand-run, 0434/0501 — run it when a migration ADDS a climb_logs column)
+npm run check:trip-reports # PGlite replay, then RELIABILITY (0519) driven as each climber: one report counts, hidden until the climber files or 7 days pass, "I was there" takes it out, called off marks nobody, leaving stays reportable (hand-run)
 npm run check:rls   # policies bind the right column; definer fns pin pg_temp; every table has RLS; every write policy asks WHO is calling; every view is read-only to the app's keys (in build)
+npm run check:hook-signature # does the screen-content hook signature (0429) agree between pgcrypto in the trigger and the edge function, and refuse stale/forged calls? (in build)
 ```
 
 There is no unit test suite; `check:types` type-checks `src/` (strict TypeScript), `lint` runs
@@ -325,20 +346,21 @@ Everything else — crews, messages, connections, vouches, logs, trip reports, a
 
 `export default function App()` (~line 214 of `ClimbMatch.jsx`) holds **~250 `useState` hooks** and every screen — where each kind of state lives, and why there is no global store, is in [ARCHITECTURE.md](ARCHITECTURE.md). Navigation is driven by a single `tab` state string. Main tabs:
 
-- `today` — home dashboard (greeting, a setup checklist, *Alerts* (one dropdown: what waits on you, then notifications), *Jump back in* tiles, recent condition reports, recent friend activity). **Not suggestions** — the only suggestion surface is `DbSuggestedClimbs` (*More climbs in this area*), which takes an `area` and renders inside the Climbs area browser.
+- `today` — home dashboard (greeting, a setup checklist, *Notifications* (one dropdown, the bell's list: what waits on you, then the rest; called *Alerts* until 2026-11-11), *Jump back in* tiles, recent condition reports, recent friend activity). **Not suggestions** — the only suggestion surface is `DbSuggestedClimbs` (*More climbs in this area*), which takes an `area` and renders inside the Climbs area browser.
 - `routes` — explore climbs by area, and (when `selRoute` is set) the route detail screen. Route detail has its own sub-`tab` state: `overview`, `planner`, `forecast`, `conditions`, `safety`, `partners`, `photos`.
   - **`forecast` is labelled "Conditions"**: the crag conditions score on sport/trad/top-rope/bouldering, and FLAGS plus a start time (no stars) on alpine/mountaineering/scrambling/ice/mixed; `conditions` is
     labelled "Reports" / "Send Reports" and holds what climbers reported. Two tabs on purpose: they show different things.
+  - **`partners` is labelled "Find"** (owner, 2026-11-23): Current crews with Start a crew, then the climbers listed for the route. The NAV tab `discover` is still labelled "Partners", so a browser walk taps this sub-tab as "Find".
   - **Seven, and Ranks is NOT one of them** — that is a top-level NAV tab. This bullet used to say so, omitting Partners,
     which is the same wrong list `check:screen-lists` records as costing `check:token-boxes` a whole walk. The guard was
     fixed then and this sentence was not, so a reader starting here would reintroduce it; section 4 of that guard now
     reads this bullet and fails on a foreign or missing id. Keep the list on ONE line — the check reads that line, and
     prose naming the absent id would fail on its own explanation.
-- `discover` — find partners, crews **or guides** (`partnersMode` is `"partners"` / `"crews"` / `"guides"`, whose controls read *Find partners* / *Join a crew* / *Hire a guide*). Only the first two are tested with `partnersMode===`; **`guides` is the else branch**, so grepping for the comparison finds two of three.
+- `discover` — find partners or crews (`partnersMode` is `"partners"` / `"crews"`, whose controls read *Find partners* / *Join a crew*). Only `"partners"` is tested with `partnersMode===`; crews is the else branch. The guide directory (*Hire a guide*, guide applications and the guide dashboard) was removed on 2026-11-14 (owner: "I don't want that anymore").
 - `crew` — your crews and direct/crew messaging (`crewView`). Friends and Requests are `crewView`s opened from the Menu's tiles; the tab's own view is crews only.
 - `groups` — the Groups screen, Facebook-style: For you · Your groups · Your activity · Discover · Events (`groupsTab`). **Not on the bottom bar**: NAV marks it `bar:false`, and it opens from the Menu's Groups tile. A group opens as the `openGroupId` overlay over it.
 - `logbook` — your objectives, completed climbs, trip reports.
-- `me` — profile, verification, trust score. The bottom bar's **right-most tab** (back since 2026-10-24; it left the bar in #2074), and the **Menu** (the avatar button at the top left, `menuOpen`) still leads here too, from its "You" card. The Menu also holds what used to be the footer strip (How ClimbMatch works, Feedback, Rate app, Settings, Privacy, About us), shortcut tiles and sign in/out. One tile, *Best day to climb*, opens the `bestDayOpen` overlay (the conditions score over saved crag climbs, `lib/BestDayTile.jsx`); the same tile also renders on Home under Jump back in. Browser walks reach Profile and Menu rows through `scripts/lib/menu-screens.mjs`.
+- `me` — profile, verification, trust score. The bottom bar's **right-most tab** (back since 2026-10-24; it left the bar in #2074), and the **Menu** (the avatar button at the top left, `menuOpen`) still leads here too, from its "You" card. The Menu also holds what used to be the footer strip (How ClimbMatch works, Feedback, Rate app, Settings, Privacy, About us), shortcut tiles and sign in/out. Browser walks reach Profile and Menu rows through `scripts/lib/menu-screens.mjs`.
 
 `openRoute(x)` is the standard way to navigate into a route (sets `routeFrom`, `selRoute`, and `tab="routes"`).
 
@@ -347,13 +369,13 @@ Everything else — crews, messages, connections, vouches, logs, trip reports, a
 Read it in three bands:
 
 1. **`ClimbMatchCore.jsx`, top: constants + pure helpers.** The `C` object is the shared dark-theme color palette used everywhere via inline styles (there are no CSS files or Tailwind). Domain helpers live here: `catOf`/`tripOf` (discipline categorization), `compat` (partner compatibility scoring), `scarfHrs`/`techHrs` (time estimates), `sunReadout`/`aspectDirs` (sun/shade by wall aspect and time of day), `buildConsensus` (aggregates trip reports into conditions consensus weighted by `trustScore`), `gpxDownload`, `passesFilters`, `distMiles`, `fuzzyMatch`.
-2. **`ClimbMatchCore.jsx`, bottom: presentational components** — `OverviewMap` and the other larger panels. The small ones (`RiskBadge`, `DiscBadge`, `DiscBadges`, `TrustBadge`, `Lbl`, `CountUp`, `Pill`, `ActionIcon`, `ElevChart`, `DiscIcon`, `Av`, `SwipeRow`, `ChatComposer`, the two loading skeletons, the chat bubble and typing indicator, `Hr`, `Stars`, `Bar`, `CardHead`, the photo alt-text field and describe box, `ShareExportRow`, `ReactionPicker`, `PullToRefresh`, `TopContribBadge`, `RetryReminder`, `PlaceMatches`, `SectionJumps`, `MiniCalendar`, `SunCorrect`, `StartLocationForm`, `AreaRegionSelect`, `TopContributors`, `PhotoStrip`, `ReportStats`, `ItineraryEditor`, `RealClimberRow`, `CommentMenu`, `DbAreaLevel`, `DbCountryAreaHits`, `BadgeGrid`, `VouchCard`, `SpeedCompat`, `TrackedLists`, `SpeedProfile`, `QuickLog`, `TickList`, `CrewInviteModal`, `SearchSplit`, `WaypointMapPicker`, `SharedListView`, `ConnectModal`, `AspectSunPanel`, `Questionnaire`, `RichEditor`, `AreaTree`, `LogRoutePicker`, `ReportModal`, `FriendsFeed`, `Contributions`, `CatchLedger`, `DbAreaPicker`, `AscentPyramid`, `DbClimbPicker`, `LoginScreen`, `FloatPlan`, `LogCatch`, `Comments`, `Challenges`, `Resume`, `FullProfile`, `PolicyUpdateNotice`) and the route map (`GPXMap`) have moved to band 4; `VerifyBadge`, `ProvenancePanel` and `RouteGearCheck`, once listed here, no longer live in core (`RouteGearCheck` is in `src/components/RouteGearCheck.tsx`).
+2. **`ClimbMatchCore.jsx`, bottom: presentational components** — `OverviewMap` and the other larger panels. The small ones (`RiskBadge`, `DiscBadge`, `DiscBadges`, `TrustBadge`, `Lbl`, `CountUp`, `Pill`, `ActionIcon`, `ElevChart`, `DiscIcon`, `Av`, `SwipeRow`, `ChatComposer`, the two loading skeletons, the chat bubble and typing indicator, `Hr`, `Stars`, `Bar`, `CardHead`, the photo alt-text field and describe box, `ShareExportRow`, `ReactionPicker`, `PullToRefresh`, `TopContribBadge`, `PlaceMatches`, `MiniCalendar`, `SunCorrect`, `StartLocationForm`, `AreaRegionSelect`, `TopContributors`, `PhotoStrip`, `ReportStats`, `ItineraryEditor`, `RealClimberRow`, `CommentMenu`, `DbAreaLevel`, `DbCountryAreaHits`, `BadgeGrid`, `VouchCard`, `SpeedCompat`, `TrackedLists`, `SpeedProfile`, `QuickLog`, `TickList`, `CrewInviteModal`, `SearchSplit`, `WaypointMapPicker`, `SharedListView`, `ConnectModal`, `AspectSunPanel`, `Questionnaire`, `RichEditor`, `AreaTree`, `LogRoutePicker`, `ReportModal`, `FriendsFeed`, `Contributions`, `DbAreaPicker`, `AscentPyramid`, `DbClimbPicker`, `LoginScreen`, `FloatPlan`, `Comments`, `Challenges`, `Resume`, `FullProfile`, `PolicyUpdateNotice`) and the route map (`GPXMap`) have moved to band 4; `VerifyBadge`, `ProvenancePanel` and `RouteGearCheck`, once listed here, no longer live in core (`RouteGearCheck` is in `src/components/RouteGearCheck.tsx`).
 3. **`ClimbMatch.jsx`: `App`** — all stateful screen logic (state, data reads, handlers) and the render switch, gated by `tab===...` and `selRoute`. Since PR61–63 each screen and overlay body is its own component in `src/components/` (`TodayTab`, `CrewListView`, `SettingsPrivacySheet`…), handed App's values as props of the same name.
 4. **`src/components/<Name>.tsx`: single-job components being extracted from the three files above** (since 2026-10; first: `RiskBadge`). Strict TypeScript, one `export default function` each, props declared as an `interface`. The guards still see each one as its parent file's code — every move is registered in `MOVED` in `scripts/lib/guard-sources.mjs`, or the text-reading guards go blind to it. Conventions and the per-PR procedure: [docs/refactor-progress.md](docs/refactor-progress.md). A JS function's destructured params are inferred as REQUIRED props; type the seam with a JSDoc `@param` on the JS side (as `Pill` has), not with casts in the component.
 
 ### Domain concepts to know
 
-- **Trust & safety** is a first-class theme: `trustScore`/`safetyScore`, vouches, belay catch ledgers, `VERIF` verification states, `RISK_LEVELS`, `SAFETY_ESSENTIALS`/`WATCH` (per-discipline safety advice), and float plans on crews.
+- **Trust & safety** is a first-class theme: vouches, `VERIF` verification states, `RISK_LEVELS`, `SAFETY_ESSENTIALS`/`WATCH` (per-discipline safety advice), and float plans on crews.
 - **Crews** are trip parties around a `routeId` with members, proposed `dates`/`dayAcks`, and a "Ready" state computed by `datesAgreed`/`agreedDate` (everyone confirmed + a day everyone acked).
 - **Conditions consensus** is derived, not stored: `buildConsensus(route.activity)` weights reports by reporter trust and recency (`RECENT_DAYS`, `isRecent`) and extracts top condition tags, hazards (`HAZARD_TAGS`), and best months.
 
@@ -361,7 +383,7 @@ Read it in three bands:
 
 Four functions do the real work; everything else is UI around them. The code is the source of truth for the exact constants/formulas — these are just pointers.
 
-- `compat(a, b)` (~L335) — partner compatibility score (20–99) from shared disciplines, grade closeness, shared objectives, verification, pace (`hikingSpeedFtHr`), and availability overlap. Every term is BOUNDED and the total is RESCALED onto that range; it does not clamp.
+- `compat(a, b)` (~L1414) — partner compatibility score (20–99) from shared disciplines, grade closeness (every profile ladder: sport, trad, alpine, ice, mixed, aid, boulder), where you climb (shared objectives OR listed areas, one term), verification of BOTH sides, pace (`hikingSpeedFtHr`), and availability overlap. Every term is BOUNDED and the total is RESCALED onto that range; it does not clamp. It is SYMMETRIC (`compat(a,b) === compat(b,a)`), and a term either side left blank scores half (2026-11-23 audit).
   Its design history — why the terms are bounded and rescaled rather than clamped, and how the
   design was measured — is in [docs/codebase/algorithms.md](docs/codebase/algorithms.md).
 - `buildConsensus(activity)` (~L344) — distills a route's trip reports into a conditions summary, weighting each report by the author's `trustScore` and recency; separates all-time vs recent tags and surfaces hazards.
@@ -424,3 +446,9 @@ Each rule below is a summary; the linked file has the incidents behind it and th
   OUR OWN — facts may come from a source, sentences may not; enrich:apply refuses a string that
   shares 8+ words with a page in the batch's `review.sources`. `rappels` is prose
   and must never be parsed for a count. → [enrichment-prose.md](docs/codebase/enrichment-prose.md)
+- **A trip plan (`routes.itinerary`) is DAY BY DAY or null, never prose** (owner, 2026-11-11, for
+  every route and state): `{ days: [{ title, objective, note, gainFt, lossFt, hours, miles, packLb,
+  schedule }], cal, totalNote }`. A new or converted plan clears `itineraryShapeErrors(it, { complete:
+  true })` in `lib/itineraryShape.js` (every day titled, with hours, miles or gain); every loader and
+  apply script calls it (`check:itinerary-shape`), the live table is `audit:itinerary-shape`, and
+  migration 0409 makes the database refuse a non-object plan. No trip data for a route? Leave it null.

@@ -1,18 +1,23 @@
 import { catOf, routeAscentFt, gainCoversWholeOuting, wpIs, uElev, shapeOf, uDist, uDistMi, C, CRAG_CATS, sunReadout, SUB_LABEL } from "../../ClimbMatchCore.jsx";
 import { effDistKm, recShapeOf, effDistIsWholeTrip, roadWalkMi } from "../../lib/outing.js";
 import { uLen } from "../../lib/uLen.js";
-import { cruxGrade, displayGrade, gradeConversions, gradeDetail, gradeRangeNote, singleGrade } from "../../lib/grade";
+import { cruxGrade, displayGrade, gradeConversions, gradeDetail, gradeRangeNote, singleGrade, splitProtection, withProtection } from "../../lib/grade";
 import { routeRock } from "../../lib/rockType";
 import { pitchAnchorSummary } from "../../lib/pitchAnchors.js";
 import { fmtRopeLen, _ropeEdited } from "../../lib/rack";
 import { ropeworkFacts } from "../../lib/ropework";
-import CragFactRows from "./CragFactRows.tsx";
+import { useContext } from "react";
+import { ConfidenceCtx, ConfChip } from "../../lib/confidence.jsx";
+import CragFactRows, { MissingFactsLine } from "./CragFactRows.tsx";
+import { monthsLabel } from "../../lib/areaFields.js";
 import CragFactSection from "./CragFactSection.tsx";
 import CardHead from "./CardHead.tsx";
 import EditIconButton from "./EditIconButton.tsx";
 import CountUp from "./CountUp.tsx";
-import { FACT_FIELD } from "../../lib/cragFactField.js";
+import { AREA_FACT_FIELD, FACT_FIELD } from "../../lib/cragFactField.js";
+import { fieldScope, scopeCtx } from "../../lib/fieldScope.js";
 import { usableFa } from "../../lib/fa";
+import { useGradeScales, shownConversions } from "../../lib/grade-scales-pref.js";
 import { climbNoun } from "../../lib/discLabels.js";
 import type { CragFact } from "./CragFactRows.tsx";
 
@@ -22,6 +27,8 @@ type Variation = string | {name?: string | null; grade?: string | null; note?: s
 type StatTile = [string, string | number | null | undefined, string];
 /** The route; only the fields this card reads. Everything may be missing on a bare route. */
 export interface TechStatsRoute {
+  /** OTHER DETAILS (0461): the climber's own label/value rows (routes.extra_facts). */
+  extraFacts?: {label?: unknown, value?: unknown}[] | null;
   /** `walkMi` / `walkGainFt`, one way: the closed road the stored distance includes (lib/outing.js roadWalkMi). */
   road?: {name?: string | null; walkMi?: number | string | null; walkGainFt?: number | string | null} | null;
   elevPts?: number[] | null;
@@ -53,7 +60,7 @@ export interface TechStatsRoute {
   descent?: string | null;
   sun?: string | null;
   aspect?: string | null;
-  _dbArea?: {aspect?: string | null} | null;
+  _dbArea?: {aspect?: string | null; areaType?: string | null; seasonMonths?: number[] | null; ancestorSeasonMonths?: number[] | null} | null;
   wet?: string | null; rockQuality?: string | null; fixedGear?: string | null;
   season?: string | null;
   ropeLen?: string | number | null; ropeLengthM?: number | null; ropeType?: string | null;
@@ -65,15 +72,22 @@ export interface TechStatsProps {
   onEdit?: ((field?: string) => void) | null;
   /** "rack" or another crag fact section: draw only that section's rows (the page places them in other cards) instead of the whole card. */
   part?: string | null;
+  /** Opens the route's AREA editor (wall, crag or peak) at an areas column; only where that area takes edits. */
+  onEditArea?: ((field: string) => void) | null;
 }
 
 const COMMITMENT_EXPLAINERS={I:"A few hours — backing off is quick and low-consequence.",II:"Half a day — retreat is straightforward.",III:"Most of a day — retreat takes real time and planning.",IV:"Full day+ — committing. Retreat is difficult once you're in it.",V:"Multi-day — big commitment. Retreat can mean an overnight out.",VI:"Multi-day, remote, or high-altitude — retreat is a serious undertaking on its own."};
 /* "rack" has no heading of its own: its rows (the bolt count and the G/PG-13/R/X protection rating) open the
    RACK card, so a crag route states its protection in ONE place (owner note: "remove protection and just move
-   that info to the rack section. Consolidate and remove duplicates"), as Mountain Project's one Protection box does. */
-const CRAG_FACT_SECTIONS: [string,string,string[]][]=[["location","WHERE IT STARTS",["Location","Start"]],["rack","RACK",["Bolts","Protection"]],["gear","GEAR & SAFETY",["Anchor","Rope","Rope notes","Fixed gear","Landing","Crash pads","Descent"]],["cond","CONDITIONS",["Aspect","Sun","Season","Wet","Rock quality"]]];
+   that info to the rack section. Consolidate and remove duplicates"), as Mountain Project's one Protection box does.
+   "Pitches link" and "Simul-climbing" are ropework prose, often a paragraph long, so they sit in GEAR & SAFETY beside
+   the rope, not in the top card, which keeps to grade, pitches, length and rock (owner, 2026-11-11: the top card was
+   too long; the description goes right under grade and rock type). */
+const CRAG_FACT_SECTIONS: [string,string,string[]][]=[["location","WHERE IT STARTS",["Location","Start"]],["rack","RACK",["Bolts","Protection"]],["gear","GEAR & SAFETY",["Anchor","Rope","Rope notes","Pitches link","Simul-climbing","Fixed gear","Landing","Crash pads","Descent"]],["cond","ROCK & SEASON",["Aspect","Sun","Season","Wet","Rock quality"]]];
 /* Moved verbatim from RouteDetail.jsx (PR58); only the types were added. */
-export default function TechStats({route,onEdit,part}: TechStatsProps){
+export default function TechStats({route,onEdit,part,onEditArea}: TechStatsProps){
+  const _scales=useGradeScales();
+  const _cx=useContext(ConfidenceCtx);const _gradeLv=_cx&&_cx.levels?_cx.levels.grade||null:null;
   const disc=catOf(route);
   const hasElevPts=route.elevPts&&route.elevPts.length>0;
   const maxEl=hasElevPts?Math.max(...(route.elevPts as number[])):(route.highPointFt||0),minEl=hasElevPts?Math.min(...(route.elevPts as number[])):0,relief=maxEl-minEl;
@@ -101,10 +115,6 @@ export default function TechStats({route,onEdit,part}: TechStatsProps){
   // would have deleted 376 round-trip figures, most of them correct.
   const recShape=recShapeOf(route);const distIsWholeTrip=effDistIsWholeTrip(route);
   const isOutBack=recShape?recShape==="outback":shapeOf(route)==="outback";
-  const rtNote=isOutBack?(recShape?" Round trip: this route is recorded as retracing its approach.":" Round trip assumes the same trail back to the trailhead.")
-    :recShape==="loop"?" This route loops back to the trailhead by a different line, so doubling the approach would overstate it."
-    :recShape==="point"?" This route finishes at a different trailhead, so the total runs from one trailhead to the other."
-    :" This route is a loop or point-to-point outing, so no round-trip distance is shown.";
   /* ONE distance tile, and never the one-way figure. It used to print "Distance"/"Approach"
      (the walk IN) beside "Round trip" (the same number doubled) — two tiles for one fact, and the
      one-way one is not what a party plans a day around. What shows now is the whole outing:
@@ -114,12 +124,13 @@ export default function TechStats({route,onEdit,part}: TechStatsProps){
   const distTile: StatTile|null=!hasDist?null:isOutBack?["Round trip",uDist(roundTripKm),C.blue]
     :distIsWholeTrip?[recShape==="point"?"Total distance":"Round trip",uDist(distKm),C.blue]
     :["Distance",uDist(distKm),C.blue];
-  let stats: StatTile[],note: string|null;
+  /* No explainer under the tiles: each label names what it measures (owner, 2026-11-18). */
+  let stats: StatTile[],note: string|null=null;
   if(disc==="bouldering"){
-    stats=[["Crux grade",cruxGrade(route.cruxGrade||route.grade),C.amber]];
+    /* A boulder problem has ONE grade, already in the header pill: no "Crux grade" tile (owner, 2026-11-18). */
+    stats=[];
     if(distTile)stats.unshift(distTile);
     if(route.routeFt)stats.unshift(["Boulder height",uElev(route.routeFt),C.orange]);
-    note="Height is the boulder itself. The distance is just the walk in and out — there is no meaningful elevation gain to a single boulder."+rtNote+"";
   }else if(disc==="hiking"||disc==="mountaineering"){
     stats=[];
     if(hasAscent)stats.push(["Total ascent","↑ "+uElev(totalAscentFt),C.green]);
@@ -130,7 +141,6 @@ export default function TechStats({route,onEdit,part}: TechStatsProps){
     if(hasElevPts)stats.push(["Vertical relief",uElev(relief),C.purple]);
     if(route.maxAngle)stats.push(["Max slope",route.maxAngle+"°",C.orange]);
     if(waterCount)stats.push(["Water sources",waterCount,C.blue]);
-    note="For a summit objective, total ascent from the trailhead is the number that matters most."+rtNote+"";
   }else if(disc==="alpine"){
     stats=[];
     if(hasAscent)stats.push(["Total ascent","↑ "+uElev(totalAscentFt),C.green]);
@@ -146,7 +156,6 @@ export default function TechStats({route,onEdit,part}: TechStatsProps){
        the same thing the RAPPELS heading now says, and it said it on routes that have none:
        rappelCount("0") is 0, not null, so 195 walk-offs rendered a red "0x". Count and
        content are together in one place now; see rappelsAreNone. */
-    note="Total ascent is the whole day from the trailhead; climb length is just the technical climbing within it."+rtNote+"";
   }else{
     const climbLabel=disc==="aid"?"Wall height":disc==="scrambling"?"Scramble section":"Route length";
     stats=climbDisp?[[climbLabel,climbDisp,C.teal]]:[];
@@ -160,12 +169,11 @@ export default function TechStats({route,onEdit,part}: TechStatsProps){
        disagrees with the route's displayed grade (displayGrade, the header pill), which is
        information rather than an echo. */
     const _cx=(route.cruxGrade||route.grade)?cruxGrade(route.cruxGrade||route.grade):null;
-    const _cxEcho=_cx&&(disc==="sport"||disc==="trad"||disc==="toprope")&&displayGrade(route)===_cx;
+    const _cxEcho=_cx&&(disc==="sport"||disc==="trad"||disc==="toprope")&&(displayGrade(route)===_cx||splitProtection(displayGrade(route)).grade===_cx);
     if(_cx&&!_cxEcho)stats.push(["Crux grade",_cx,C.amber]);
     if(route.maxAngle)stats.push(["Max slope",route.maxAngle+"°",C.orange]);
     if(route.peakMetadata&&route.peakMetadata.prominence)stats.push(["Prominence",uElev(route.peakMetadata.prominence),C.purple]);
     /* Second copy of the Rappels tile — same reasoning as the pitched branch above. */
-    const _gainClause=!hasAscent?"":(gainIsWholeOuting?"Total ascent is the whole day from the trailhead, not just the walk in.":"Approach gain is the hike in to the base.");const _distClause=!hasDist?"":(distIsWholeTrip?" Distance is the whole outing, not just the walk in.":isOutBack?" Round trip is the walk in to the base and back out.":"");note=(hasAscent||hasDist)?(climbLabel+" is the climbing itself. "+(_gainClause+_distClause).trim()+rtNote+""):null;
   }
   /* Discipline-agnostic tiles, appended after BOTH branches above so they cannot be lost to
      whichever branch a route falls into. Every one of these is offered in SuggestFix and, until
@@ -186,7 +194,6 @@ export default function TechStats({route,onEdit,part}: TechStatsProps){
      Project and theCrag print a crag's rock: the owner removed the mapped qualifier 2026-10-15. */
   const _rk=routeRock(route);
   if(_rk)stats.push(["Rock",_rk.label,C.textSub]);
-  if(route.crux)stats.push(["Crux",String(route.crux),C.textSub]);
   /* ROUTE FACTS. On a crag discipline (sport, trad, toprope, aid, bouldering) this card is the ONE
      place the guidebook facts live, so every crag route reads the same set in the same order rather
      than each discipline growing its own box. Every row is gated on its own value: a bare route —
@@ -197,24 +204,40 @@ export default function TechStats({route,onEdit,part}: TechStatsProps){
      render on every discipline. Reputation is `guide_stars` (0-4), a guidebook rating kept apart from
      `stars` (the climbers' own 1-5 votes) and never attributed. It was labelled "Quality", then "Star rating";
      both read as the climbers' votes, which a route with no votes yet then seemed to have (owner, 2026-10-30). */
-  const crag=CRAG_CATS.includes(disc);const facts: CragFact[]=[];let _missN=0,_firstMiss: string|null=null;
+  const crag=CRAG_CATS.includes(disc);const facts: CragFact[]=[];let _missRows: CragFact[]=[];
   const _gsRaw=route.guideStars!=null?route.guideStars:route.guide_stars;const _gs=(_gsRaw==null||_gsRaw===""||!isFinite(+_gsRaw))?null:Math.max(0,Math.min(4,Math.round(+_gsRaw)));
   if(_gs!=null)stats.unshift(["Reputation","★".repeat(_gs)+"☆".repeat(4-_gs),C.amber]);
   const _alt=(function(a: unknown){return (Array.isArray(a)?a:(a?[a]:[])).map(function(x: unknown){return String(x==null?"":x).trim();}).filter(Boolean);})(route.altNames!=null?route.altNames:route.alt_names);
   if(_alt.length)facts.push(["Also called",_alt.join(", ")]);
   const _vars=(Array.isArray(route.variations)?route.variations:[]).map(function(v){if(v==null)return "";if(typeof v!=="object")return String(v).trim();return [v.name,v.grade].filter(Boolean).join(" · ")+(v.note?" — "+v.note:"");}).filter(Boolean);
+  /* CRUX is `routes.crux`: WHERE the hardest move or section is ("bulge about halfway up", "first bolt"), as the
+     catalog holds it and as Mountain Project and theCrag describe it, in words. A sentence, so a facts row, not a stat
+     tile; the difficulty itself is the grade (the Crux grade tile). Owner, 2026-11-18. */
+  if(route.crux)facts.push(["Crux",String(route.crux)]);
+  /* OTHER DETAILS (0461): the climber's own label and value for a fact with no field of its own. ONE row holding a line each, so a climber's label can never collide with a built-in row of the same name (rows are found and keyed by label). */
+  const _xf=(Array.isArray(route.extraFacts)?route.extraFacts:[]).filter(function(x: {label?: unknown, value?: unknown}){return x&&typeof x.label==="string"&&typeof x.value==="string"&&x.label.trim()&&x.value.trim();}) as {label: string, value: string}[];
+  if(_xf.length)facts.push(["Other details",<>{_xf.map(function(x,i){return <div key={i} style={{marginTop:i?3:0}}><span style={{fontWeight:700,color:C.text}}>{x.label.trim()}</span>{": "+x.value.trim()}</div>;})}</>]);
   if(_vars.length)facts.push(["Variations",<>{_vars.map(function(v,i){return <div key={i} style={{marginTop:i?3:0}}>{v}</div>;})}</>]);
   if(crag){
+    /* The route's own area (a wall, crag or peak): crag-wide facts are read from it and, with onEditArea, added to it. */
+    const _ar=route._dbArea||null;const _arNoun=_ar&&["crag","wall","peak"].includes(String(_ar.areaType))?String(_ar.areaType):"area";
     if(disc!=="bouldering"&&+(route.bolts as number|string)>0)stats.push(["Bolts",String(Math.round(+(route.bolts as number|string))),C.blue]);
     /* ANCHOR is `anchor` (0242): a short value ("2-bolt chains", "tree, walk off"), the route's TOP
        anchor — a pitch's own anchor stays on its ROUTE BREAKDOWN row. Style is NOT here: `features`
        already draws as the tag chips (RouteTagRow), and a row would print it twice. */
     /* A multipitch crag line whose belays differ says so: the top anchor, then each kind by pitch. */
-    const _anc=String(route.anchor||"").trim();const _pAnc=disc!=="bouldering"?pitchAnchorSummary(route):null;if(disc!=="bouldering"&&((_anc&&_anc.length<=80)||_pAnc))facts.push(["Anchor",_pAnc?((_anc&&_anc.length<=80?_anc+" at the top · ":"")+"by pitch: "+pitchAnchorText(_pAnc)):_anc]);const _longOnFile: string[]=[];if(_anc.length>80)_longOnFile.push("Anchor");
+    /* On a crag page the anchor, wet-rock, rock-quality and fixed-gear facts sit in their own section card
+       (GEAR & SAFETY, ROCK & SEASON), as LOCATION does in WHERE IT STARTS, so none is ever too long to show
+       there. Capped, a long stated value was counted as on file (no "Not on file yet") and drawn nowhere, so a
+       climber could neither read it nor see that it existed (owner, 2026-11-18). */
+    const _factSec=CRAG_CATS.includes(disc);
+    const _anc=String(route.anchor||"").trim();const _pAnc=disc!=="bouldering"?pitchAnchorSummary(route):null;const _ancOk=!!_anc&&(_factSec||_anc.length<=80);if(disc!=="bouldering"&&(_ancOk||_pAnc))facts.push(["Anchor",_pAnc?((_ancOk?_anc+" at the top · ":"")+"by pitch: "+pitchAnchorText(_pAnc)):_anc]);const _longOnFile: string[]=[];if(!_factSec&&_anc.length>80)_longOnFile.push("Anchor");
     /* LOCATION is `location` (0243): where the line starts on its wall, which is how a climber finds it
        at the base. First among the facts, because it is the first thing needed at the crag. */
     const _loc=String(route.location||"").trim();const _locAll=CRAG_CATS.includes(disc);/* on a crag it has a section of its own, so it is never too long to show */if(_loc&&(_locAll||_loc.length<=160))facts.unshift(["Location",_loc]);if(!_locAll&&_loc.length>160)_longOnFile.push("Location");
-    const _dsc=String(route.descent||"").trim();if(_dsc&&_dsc.length<=140)facts.push(["Descent",_dsc]);
+    /* A short descent is a fact line only where the page draws no DESCENT section (a boulder): wherever the
+       section renders (lib/fieldScope.js, as RoutePlanTab gates it) it carries the descent whole, at any length. */
+    const _dsc=String(route.descent||"").trim();if(_dsc&&_dsc.length<=140&&!fieldScope("descentText",scopeCtx(route,disc)))facts.push(["Descent",_dsc]);
     /* SUN is `sun` (0247): when this wall is in sun or shade, as stated for it. Where it exists it
        replaces the sun line computed from the aspect — the stated hours are the better fact. */
     const _sun=String(route.sun||"").trim();
@@ -222,8 +245,11 @@ export default function TechStats({route,onEdit,part}: TechStatsProps){
     if(_sun)facts.push(["Sun",_sun]);
     /* WET, ROCK QUALITY and FIXED GEAR (0247): seepage after rain, loose or polished rock, and the
        pitons/bolt ladders already in place. Short stated values, so each is a facts row, not a tile. */
-    [["Wet",route.wet],["Rock quality",route.rockQuality],["Fixed gear",route.fixedGear]].forEach(function(f){const v=String(f[1]||"").trim();if(v&&v.length<=160)facts.push([f[0] as string,v]);else if(v)_longOnFile.push(f[0] as string);});
-    const _sea=String(route.season||"").trim();if(_sea)facts.push(["Season",_sea]);
+    [["Wet",route.wet],["Rock quality",route.rockQuality],["Fixed gear",route.fixedGear]].forEach(function(f){const v=String(f[1]||"").trim();if(v&&(_factSec||v.length<=160))facts.push([f[0] as string,v]);else if(v)_longOnFile.push(f[0] as string);});
+    /* SEASON is the crag's, wall's or peak's unless the route states its own (owner, 2026-11-13: consolidate
+       to the crag, sub-area or peak). The card said "Not on file yet" on 100% of crag routes while the area had one. Up to four ancestors. Since
+       2026-11-18 this row is where the page states the season: the header strap no longer prints it (owner). */
+    const _sea=String(route.season||"").trim();const _arM=_ar?((_ar.seasonMonths&&_ar.seasonMonths.length)?_ar.seasonMonths:_ar.ancestorSeasonMonths):null;const _seaA=_sea?"":monthsLabel(_arM);if(_sea)facts.push(["Season",_sea]);else if(_seaA)facts.push(["Season",_seaA+" ("+(_ar&&_ar.seasonMonths&&_ar.seasonMonths.length?"the "+_arNoun+"'s season":"the area's season")+")"]);
     /* ROPE. Rope length, rope type and the ropework note were read only by RouteRackBox and RopeworkBox,
        which mount OFF the crag disciplines, so on a trad, sport or aid route all three reached no screen
        (122 crag routes carry one) and the editor's rope length had nowhere to show. Same precedence as
@@ -234,25 +260,28 @@ export default function TechStats({route,onEdit,part}: TechStatsProps){
        pertain to the discipline — no bolts on a boulder, no landing on a sport line. A missing fact
        reads "Not on file yet", never "unknown" or a guess, and one link under the list opens the editor. */
     const _have=new Set(facts.map(function(f){return f[0];}).concat(stats.map(function(t){return t[0];})).concat(_longOnFile));
-    /* Each of these is a field the contribute form offers for this discipline (its DROP rules match),
-       so every "Not on file yet" can actually be filled. Descent is not here: the DESCENT section
+    /* Each of these is a field the contribute form offers for this discipline — filtered through
+       lib/fieldScope.js, the sheet's own rule, so every "Not on file yet" can actually be filled. Descent is not here: the DESCENT section
        below carries its own placeholder. */
     const _want=disc==="bouldering"?["Location","Landing","Crash pads","Start","Aspect","Season","Rock quality","Wet"]
-      :["Location"].concat(disc==="toprope"?[]:["Pitches",disc==="aid"?"Wall height":"Route length"]).concat(disc==="sport"?["Bolts"]:[]).concat(disc==="sport"||disc==="trad"?["Protection"]:[]).concat(["Anchor"]).concat(disc==="toprope"?[]:["Rope"]).concat(["Aspect","Season","Rock quality","Wet"]).concat(disc==="trad"||disc==="aid"?["Fixed gear"]:[]);
-    _want.forEach(function(k){if(_have.has(k))return;facts.push([k,<span style={{color:C.textMuted,fontStyle:"italic"}}>Not on file yet</span>,true]);});
+      :["Location"].concat(disc==="toprope"?[]:["Pitches",disc==="aid"?"Wall height":"Route length"]).concat(disc==="sport"?["Bolts"]:[]).concat(disc==="sport"||disc==="trad"?["Protection"]:[]).concat(["Anchor"]).concat(disc==="toprope"?[]:["Rope"]).concat(["Aspect","Season","Rock quality","Wet"]).concat(disc==="trad"||disc==="aid"?["Fixed gear"]:[]).filter(function(k){const fk=(FACT_FIELD as Record<string,string>)[k];return !fk||fieldScope(fk,scopeCtx(route,disc));});
+    /* A missing crag-wide fact (AREA_FACT_FIELD) is marked with the area's noun, so its Add edits the area once
+       for every route on it; the rest stay the route's. All of them render on ONE "Not on file yet" line. */
+    _want.forEach(function(k){if(_have.has(k))return;facts.push([k,<span style={{color:C.textMuted,fontStyle:"italic"}}>Not on file yet</span>,onEditArea&&(AREA_FACT_FIELD as Record<string,string>)[k]?_arNoun:true]);});
     const _secL=new Set(CRAG_FACT_SECTIONS.flatMap(function(s){return s[2];}));
     for(let i=stats.length-1;i>=0;i--){if(_secL.has(stats[i][0])){facts.push([stats[i][0],<span style={{color:stats[i][2],fontWeight:700}}>{stats[i][1]}</span>]);stats.splice(i,1);}}
-    if(part){const sec=CRAG_FACT_SECTIONS.find(function(s){return s[0]===part;});const rows=sec?sec[2].map(function(l){return facts.find(function(f){return f[0]===l;});}).filter(Boolean) as CragFact[]:[];return !rows.length?null:part==="rack"?<div style={{marginTop:-6,marginBottom:6,borderBottom:"1px solid "+C.border}}><CragFactRows rows={rows} onEdit={onEdit}/></div>:<CragFactSection title={(sec as [string,string,string[]])[1]} rows={rows} onEdit={onEdit}/>;}
+    if(part){const sec=CRAG_FACT_SECTIONS.find(function(s){return s[0]===part;});const rows=sec?sec[2].map(function(l){return facts.find(function(f){return f[0]===l;});}).filter(Boolean) as CragFact[]:[];return !rows.length?null:part==="rack"?<div style={{marginTop:-6,marginBottom:6,borderBottom:"1px solid "+C.border}}><CragFactRows rows={rows} onEdit={onEdit} onEditArea={onEditArea}/></div>:<CragFactSection title={(sec as [string,string,string[]])[1]} rows={rows} onEdit={onEdit} onEditArea={onEditArea}/>;}
     facts.splice(0,facts.length,...facts.filter(function(f){return !_secL.has(f[0]);}));
-    const _mt=facts.filter(function(f){return f[2];});_missN=_mt.length;_firstMiss=_mt.length?_mt[0][0]:null;
+    /* The card's own missing facts (Pitches, Route length) leave the rows and go on ONE line under them. */
+    _missRows=facts.filter(function(f){return f[2];});facts.splice(0,facts.length,...facts.filter(function(f){return !f[2];}));
   }
   /* A road closed below the trailhead: the distance starts where a climber can park, and the note
      says how much of it is the road (lib/outing.js roadWalkMi), so it reads as the walk it is. */
   const _walk=roadWalkMi(route);if(_walk&&hasDist&&!crag){const _wg=Number(route.road&&route.road.walkGainFt);const _rn=String((route.road&&route.road.name)||"").trim();note=(note?note+" ":"")+(hasAscent&&_wg>0?"Distance and ascent include ":"Distance includes ")+"about "+uDistMi(_walk)+" each way on the closed road"+(_rn?" ("+_rn+")":"")+(hasAscent&&_wg>0?" and the "+uElev(_wg)+" it climbs":"")+", from where you can park to the trailhead.";}
   if(part)return null;
-  return <div style={{background:C.card,borderRadius:12,padding:"12px 14px",border:`1px solid ${C.border}`}}><div style={{display:"flex",justifyContent:"space-between",alignItems:"center",marginBottom:10}}><CardHead>{crag?climbNoun(disc).toUpperCase()+" FACTS":"TECHNICAL STATS"}</CardHead>{onEdit?<EditIconButton onClick={onEdit} title={crag?"Edit "+climbNoun(disc)+" facts":"Edit technical stats"}/>:null}</div>{(function(){const ag=route.alpineGrade||route.alpine_grade,rg=route.rockGrade||route.rock_grade,ig=route.iceGrade||route.ice_grade,adg=route.aidGrade||route.aid_grade,cm=route.commitment,gg=route.grade;const P: [string,string][]=[];if(rg)P.push(["Rock",rg]);if(cm)P.push(["Commitment",cm]);if(ag)P.push(["Alpine",ag]);if(ig)P.push(["Ice",ig]);if(adg)P.push(["Aid",adg]);if(P.length<1&&gg)P.push(["Grade",gg]);const notes: [string,string][]=[];[["Rock",rg],["Commitment",cm],["Alpine",ag],["Ice",ig],["Aid",adg],["Grade",gg]].forEach(function(p){const d=p[1]?gradeDetail(p[1]):"";if(!d||notes.some(function(n){return n[1]===d;}))return;notes.push([p[0] as string,d]);});if(P.length<1)return null;/* A class RANGE is one grade on screen (its top, or the headline it contains) plus this notice — see gradeRangeNote. */const rangeNote=gradeRangeNote(route);/* The same grade in other scales, as Mountain Project prints it under a route's grade (lib/grade.js gradeConversions). */const conv=gradeConversions(displayGrade(route));const cmExp=cm?(COMMITMENT_EXPLAINERS as Record<string,string>)[String(cm).replace(/^Grade\s*/i,"").trim()]:null;return <div style={{marginBottom:11,paddingBottom:11,borderBottom:"1px solid "+C.border}}><div style={{...SUB_LABEL,marginBottom:7}}>Composite Grade</div><div style={{display:"flex",flexWrap:"wrap",gap:6}}>{P.map(function(p){return <span key={p[0]} style={{display:"inline-flex",alignItems:"center",gap:5,fontSize:13,fontWeight:700,color:C.text,background:C.surface,border:"1px solid "+C.border,borderRadius:8,padding:"3px 9px"}}><span style={{color:C.textMuted,fontSize:10,fontWeight:800,textTransform:"uppercase",letterSpacing:0.3}}>{p[0]}</span>{singleGrade(p[1],route)}</span>;})}</div>{conv.length?<div style={{fontSize:12,color:C.textSub,lineHeight:1.45,marginTop:7}}>{"About "+conv.map(function(x){return x[1]+" "+x[0];}).join(" · ")}</div>:null}{rangeNote?<div style={{fontSize:12,color:C.textSub,lineHeight:1.45,marginTop:8}}>{rangeNote}</div>:null}{notes.length?<div style={{marginTop:8}}>{notes.map(function(n){return <div key={n[0]} style={{fontSize:12,color:C.textSub,lineHeight:1.45,marginTop:4}}><span style={{fontSize:10,fontWeight:800,color:C.textMuted,textTransform:"uppercase",letterSpacing:0.3}}>{n[0]}</span>{" · "+n[1]}</div>;})}</div>:null}{cmExp?<div style={{fontSize:12,color:C.textSub,lineHeight:1.45,marginTop:8}}>{cmExp}</div>:null}{cmExp?<div style={{fontSize:11.5,color:C.textMuted,lineHeight:1.45,marginTop:4}}>{"Commitment counts the climb, not the walk in — a long approach can make a Grade II a multi-day trip."}</div>:null}</div>;})()}<div style={{display:"grid",gridTemplateColumns:"repeat(2,1fr)",gap:8}}>{stats.map(st=><div key={st[0]} style={{background:C.surface,borderRadius:9,padding:"8px 10px"}}><div style={{fontSize:15,fontWeight:700,color:st[2]}}><CountUp value={st[1]}/></div><div style={{fontSize:11,color:C.textMuted,marginTop:2,textTransform:"uppercase",letterSpacing:0.4}}>{st[0]}</div></div>)}</div>{facts.length?<div style={{marginTop:stats.length?14:4}}>{(function(){/* GROUPED, so ten facts do not read as one undifferentiated run: what the line IS, what protects it,
+  return <div style={{background:C.card,borderRadius:12,padding:"12px 14px",border:`1px solid ${C.border}`}}><div style={{display:"flex",justifyContent:"space-between",alignItems:"center",marginBottom:10}}><CardHead>{crag?climbNoun(disc).toUpperCase()+" FACTS":"TECHNICAL STATS"}</CardHead>{onEdit?<EditIconButton onClick={onEdit} title={crag?"Edit "+climbNoun(disc)+" facts":"Edit technical stats"}/>:null}</div>{(function(){const ag=route.alpineGrade||route.alpine_grade,rg=route.rockGrade||route.rock_grade,ig=route.iceGrade||route.ice_grade,adg=route.aidGrade||route.aid_grade,cm=route.commitment,gg=route.grade;const P: [string,string][]=[];if(rg)P.push(["Rock",rg]);if(cm)P.push(["Commitment",cm]);/* On a crag route the I-VI grade is how long the day is (NCCS commitment), not a claim the line is alpine: Outer Space, a Snow Creek Wall trad route, read "ALPINE III" and looked misfiled (owner, 2026-11-11). */const agL=crag&&!cm?"Commitment":"Alpine";if(ag)P.push([agL,ag]);if(ig)P.push(["Ice",ig]);if(adg)P.push(["Aid",adg]);if(P.length<1&&gg)P.push(["Grade",gg]);/* The protection rating sits beside the grade here too (owner, 2026-11-18): on the climbing-grade chip, unless a chip's stored text already says one. */const _protI=P.some(function(p){return !!splitProtection(p[1]).prot;})?-1:P.findIndex(function(p){return p[0]==="Rock"||p[0]==="Ice"||p[0]==="Grade";});const notes: [string,string][]=[];[["Rock",rg],["Commitment",cm],[agL,ag],["Ice",ig],["Aid",adg],["Grade",gg]].forEach(function(p){const d=p[1]?gradeDetail(p[1]):"";if(!d||notes.some(function(n){return n[1]===d;}))return;notes.push([p[0] as string,d]);});if(P.length<1)return null;/* A class RANGE is one grade on screen (its top, or the headline it contains) plus this notice — see gradeRangeNote. */const rangeNote=gradeRangeNote(route);/* The same grade in other scales, as Mountain Project prints it under a route's grade (lib/grade.js gradeConversions), keeping only the scales the climber turned on under Settings > Display (owner, 2026-11-23: no French grade unless it is in their settings; lib/grade-scales-pref.js). */const conv=shownConversions(gradeConversions(displayGrade(route)),_scales);const cmExp=cm?(COMMITMENT_EXPLAINERS as Record<string,string>)[String(cm).replace(/^Grade\s*/i,"").trim()]:null;return <div style={{marginBottom:11,paddingBottom:11,borderBottom:"1px solid "+C.border}}><div style={{...SUB_LABEL,marginBottom:7,display:"flex",alignItems:"center"}}>Composite Grade{/* The GRADE's own level, here on the grade rather than on the card heading (owner, 2026-11-11): the card holds a dozen fields, and the heading chip read "High · locked" over rows that said "Not on file yet". */_gradeLv?<ConfChip level={_gradeLv} label="Grade" compact onFlag={_cx&&_cx.onFlag?function(){(_cx.onFlag as (k: string, l: unknown)=>void)("grade","Grade");}:null}/>:null}</div><div style={{display:"flex",flexWrap:"wrap",gap:6}}>{P.map(function(p){return <span key={p[0]} style={{display:"inline-flex",alignItems:"center",gap:5,fontSize:13,fontWeight:700,color:C.text,background:C.surface,border:"1px solid "+C.border,borderRadius:8,padding:"3px 9px"}}><span style={{color:C.label,fontSize:10,fontWeight:800,textTransform:"uppercase",letterSpacing:0.3}}>{p[0]}</span>{P.indexOf(p)===_protI?withProtection(singleGrade(p[1],route),route):singleGrade(p[1],route)}</span>;})}</div>{conv.length?<div style={{fontSize:12,color:C.textSub,lineHeight:1.45,marginTop:7}}>{"About "+conv.map(function(x){return x[1]+" "+x[0];}).join(" · ")}</div>:null}{rangeNote?<div style={{fontSize:12,color:C.textSub,lineHeight:1.45,marginTop:8}}>{rangeNote}</div>:null}{notes.length?<div style={{marginTop:8}}>{notes.map(function(n){return <div key={n[0]} style={{fontSize:12,color:C.textSub,lineHeight:1.45,marginTop:4}}><span style={{fontSize:10,fontWeight:800,color:C.label,textTransform:"uppercase",letterSpacing:0.3}}>{n[0]}</span>{" · "+n[1]}</div>;})}</div>:null}{cmExp?<div style={{fontSize:12,color:C.textSub,lineHeight:1.45,marginTop:8}}>{cmExp}</div>:null}</div>;})()}<div style={{display:"grid",gridTemplateColumns:"repeat(2,1fr)",gap:8}}>{stats.map(st=><div key={st[0]} style={{borderLeft:"1px solid "+C.border,padding:"2px 0 2px 10px",minWidth:0}}><div style={{fontSize:15,fontWeight:700,color:st[2]}}><CountUp value={st[1]}/></div><div style={{fontSize:11,color:C.textSub,marginTop:2,textTransform:"uppercase",letterSpacing:0.4}}>{st[0]}</div></div>)}</div>{facts.length?<div style={{marginTop:stats.length?14:4}}>{(function(){/* GROUPED, so ten facts do not read as one undifferentiated run: what the line IS, what protects it,
      and when it is in shape. The label column is 92px and wraps at spaces — at 62px "PROTECTION" and
-     "ROCK QUALITY" ran under their own values. A heading shows only when more than one group renders. */const G: [string,string[]][]=[["The line",["Also called","Variations","Location","Start"]],["Gear & safety",["Bolts","Protection","Anchor","Rope","Rope notes","Fixed gear","Landing","Crash pads","Descent"]],["Conditions",["Aspect","Sun","Season","Wet","Rock quality"]]];const placed=new Set();let groups=G.map(function(g): [string,CragFact[]]{const rows=g[1].map(function(l){return facts.find(function(f){return f[0]===l;});}).filter(Boolean) as CragFact[];rows.forEach(function(f){placed.add(f[0]);});return [g[0],rows];});const rest=facts.filter(function(f){return !placed.has(f[0]);});if(rest.length)groups[0][1]=groups[0][1].concat(rest);groups=groups.filter(function(g){return g[1].length;});return groups.map(function(g,gi){return <div key={g[0]} style={{marginTop:gi?14:0}}>{groups.length>1?<div style={{...SUB_LABEL,color:C.textSub,paddingBottom:6,marginBottom:2,borderBottom:"1px solid "+C.border}}>{g[0]}</div>:null}{g[1].map(function(f,i){return <div key={f[0]} style={{display:"flex",gap:12,alignItems:"baseline",padding:"8px 0",borderTop:i===0?"none":"1px solid "+C.borderLight}}><span style={{fontSize:10.5,fontWeight:700,color:C.textMuted,textTransform:"uppercase",letterSpacing:0.4,lineHeight:1.35,width:92,flexShrink:0}}>{f[0]}</span><span style={{fontSize:13,color:C.text,lineHeight:1.5,flex:1,minWidth:0,overflowWrap:"anywhere"}}>{f[1]}</span></div>;})}</div>;});})()}</div>:null}{_missN&&onEdit?<div style={{display:"flex",alignItems:"center",justifyContent:"space-between",gap:10,flexWrap:"wrap",marginTop:12,paddingTop:10,borderTop:"1px solid "+C.border}}><span style={{fontSize:12,color:C.textMuted,lineHeight:1.4}}>{_missN+(_missN===1?" fact":" facts")+" not on file yet"}</span><button onClick={function(){onEdit((FACT_FIELD as Record<string,string>)[_firstMiss as string]);}} style={{padding:"6px 0",border:"none",background:"none",color:C.blue,fontSize:12.5,fontWeight:700,cursor:"pointer",textAlign:"left"}}>{"Add what you know →"}</button></div>:null}{route.fa&&!(route.peakMetadata&&route.peakMetadata.firstAscent)?<div style={{marginTop:10,fontSize:12.5,color:C.textSub,lineHeight:1.4}}><span style={{...SUB_LABEL}}>First Ascent</span>{" · "+route.fa}</div>:null}{(function(){/* The first FREE and first WINTER ascent sit under the first-ascent line, each only when present and
+     "ROCK QUALITY" ran under their own values. A heading shows only when more than one group renders. */const G: [string,string[]][]=[["The line",["Also called","Variations","Location","Start"]],["Gear & safety",["Bolts","Protection","Anchor","Rope","Rope notes","Fixed gear","Landing","Crash pads","Descent"]],["Conditions",["Aspect","Sun","Season","Wet","Rock quality"]]];const placed=new Set();let groups=G.map(function(g): [string,CragFact[]]{const rows=g[1].map(function(l){return facts.find(function(f){return f[0]===l;});}).filter(Boolean) as CragFact[];rows.forEach(function(f){placed.add(f[0]);});return [g[0],rows];});const rest=facts.filter(function(f){return !placed.has(f[0]);});if(rest.length)groups[0][1]=groups[0][1].concat(rest);groups=groups.filter(function(g){return g[1].length;});return groups.map(function(g,gi){return <div key={g[0]} style={{marginTop:gi?14:0}}>{groups.length>1?<div style={{...SUB_LABEL,color:C.label,paddingBottom:6,marginBottom:2,borderBottom:"1px solid "+C.border}}>{g[0]}</div>:null}{g[1].map(function(f,i){return <div key={f[0]} style={{display:"flex",gap:12,alignItems:"baseline",padding:"8px 0",borderTop:i===0?"none":"1px solid "+C.borderLight}}><span style={{fontSize:10.5,fontWeight:700,color:C.label,textTransform:"uppercase",letterSpacing:0.4,lineHeight:1.35,width:92,flexShrink:0}}>{f[0]}</span><span style={{fontSize:13,color:C.text,lineHeight:1.5,flex:1,minWidth:0,overflowWrap:"anywhere"}}>{f[1]}</span></div>;})}</div>;});})()}</div>:null}{_missRows.length?<div style={{marginTop:facts.length?4:0,borderTop:facts.length?"1px solid "+C.borderLight:"none"}}><MissingFactsLine rows={_missRows} onEdit={onEdit} onEditArea={onEditArea} first/></div>:null}{route.fa&&!(route.peakMetadata&&route.peakMetadata.firstAscent)?<div style={{marginTop:10,fontSize:12.5,color:C.textSub,lineHeight:1.4}}><span style={{...SUB_LABEL}}>First Ascent</span>{" · "+route.fa}</div>:null}{(function(){/* The first FREE and first WINTER ascent sit under the first-ascent line, each only when present and
    different from it. Both go through usableFa(), the same placeholder test `fa` gets ("unknown", "??"). */const fa0=String(route.fa||"").trim();const rows=[["First Free Ascent",route.ffa],["First Winter Ascent",route.fwa]].map(function(p){const v=usableFa(p[1]);return [p[0],v==null?"":String(v).trim()];}).filter(function(p){return p[1]&&p[1]!==fa0;});if(!rows.length)return null;return <>{rows.map(function(p,i){return <div key={p[0]} style={{marginTop:(i||route.fa)?4:10,fontSize:12.5,color:C.textSub,lineHeight:1.4}}><span style={{...SUB_LABEL}}>{p[0]}</span>{" · "+p[1]}</div>;})}</>;})()}{note?<div style={{fontSize:11.5,color:C.textMuted,marginTop:8,lineHeight:1.5}}>{note}</div>:null}</div>;
 }
 const pitchAnchorText=function(sum: NonNullable<ReturnType<typeof pitchAnchorSummary>>){return sum.map(function(x){return x[0]+" "+x[1];}).join(" · ");};

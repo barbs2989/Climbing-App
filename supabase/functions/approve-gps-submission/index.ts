@@ -5,6 +5,8 @@ const corsHeaders = {
   "Access-Control-Allow-Origin": "*",
   "Access-Control-Allow-Methods": "POST, OPTIONS",
   "Access-Control-Allow-Headers": "authorization, x-client-info, apikey, content-type",
+  // Responses carry per-user results; never let a CDN or browser cache hold one.
+  "Cache-Control": "no-store",
 };
 
 serve(async (req) => {
@@ -19,8 +21,9 @@ serve(async (req) => {
 
     // Admin guard. The gateway's JWT check passes for the public anon key,
     // so this endpoint additionally requires a logged-in user whose email is
-    // on the admin list (ADMIN_EMAILS secret, comma-separated).
-    const adminEmails = (Deno.env.get("ADMIN_EMAILS") ?? "barbs2989@gmail.com")
+    // on the admin list (ADMIN_EMAILS secret, comma-separated; unset = nobody here,
+    // and review_gps_submission() checks is_admin() again as the caller).
+    const adminEmails = (Deno.env.get("ADMIN_EMAILS") ?? "")
       .split(",").map((e) => e.trim().toLowerCase()).filter(Boolean);
     const token = (req.headers.get("Authorization") ?? "").replace(/^Bearer\s+/i, "");
     const { data: userData, error: userError } = await supabase.auth.getUser(token);
@@ -59,8 +62,9 @@ serve(async (req) => {
       p_id: submissionId, p_action: action, p_to_area: !!toArea, p_notes: adminNotes ?? null,
     });
     if (rpcError) {
+      console.error("review_gps_submission failed:", rpcError.code, rpcError.message);
       return new Response(
-        JSON.stringify({ error: rpcError.message }),
+        JSON.stringify({ error: rpcError.code === "42501" ? "Admin access required" : "Could not review this submission" }),
         { status: rpcError.code === "42501" ? 403 : 400, headers: { ...corsHeaders, "Content-Type": "application/json" } }
       );
     }
@@ -70,9 +74,9 @@ serve(async (req) => {
       { status: 200, headers: { ...corsHeaders, "Content-Type": "application/json" } }
     );
   } catch (error) {
-    console.error("Error:", error.message);
+    console.error("approve-gps-submission:", error && (error as Error).message);
     return new Response(
-      JSON.stringify({ error: error.message }),
+      JSON.stringify({ error: "Internal error" }),
       { status: 500, headers: { ...corsHeaders, "Content-Type": "application/json" } }
     );
   }

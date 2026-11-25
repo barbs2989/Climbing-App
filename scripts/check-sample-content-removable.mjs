@@ -6,12 +6,12 @@
 // live." The flag's own comment states the removal contract in one sentence —
 //
 //     "TO REMOVE: set this back to `false`. That is the whole switch — every sample group, group
-//      event, group join-request, sample comment, filler climber, sample belay catch and sample
-//      condition report disappears with it."
+//      event, group join-request, sample comment, filler climber and sample condition
+//      report disappears with it."
 //
 // — and NOTHING CHECKED IT. #1566 shipped a probe that proves the flag POPULATES; the direction
 // that matters for launch is that it EMPTIES, and that was unverified in both directions: nobody
-// asserted the seven are gated, and nobody would notice an eighth arriving ungated.
+// asserted the six are gated, and nobody would notice a seventh arriving ungated.
 //
 // THE FAILURE IS QUIET AND LATE. A sample surface that is not behind the flag stays populated
 // after the flip, every guard stays green, and the person who finds out is a real climber looking
@@ -50,7 +50,7 @@ const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const FILES = ["ClimbMatchCore.jsx", "ClimbMatch.jsx"];
 const FLAG = "DEMO_FILLERS";
 
-// The seven things the flag's own comment promises disappear. Each entry names what the reader is
+// The six things the flag's own comment promises disappear. Each entry names what the reader is
 // told, and how it is spelled in the source, so a rename shows up as a stale entry rather than as
 // a question that quietly stopped being asked.
 const PROMISED = [
@@ -63,7 +63,6 @@ const PROMISED = [
 const PROMISED_INLINE = [
   { promise: "sample group event", needle: 'group_wasatch_trad:[{id:"ev1"' },
   { promise: "sample group join-request", needle: 'groupId:"group_alpine_start"' },
-  { promise: "sample belay catch", needle: 'id:"cat_ex1"' },
   { promise: "sample condition report", needle: "scoutOnly:true" },
 ];
 
@@ -185,9 +184,9 @@ if (clearedByReset.size < 10) fail(`the sign-in reset parsed as only ${clearedBy
 // A useState whose initialiser opens with a populated array or object literal is seed CONTENT.
 // NOT_SEED_CONTENT records the exceptions with a reason, and a stale entry fails in both directions
 // — the standard KNOWN and PARTIAL_ON_PURPOSE are held to elsewhere in this repo.
-const NOT_SEED_CONTENT = {
-  filters: "route-search defaults (gradeMin:\"any\", maxMi:500) — a UI starting position, not sample content, and it must survive sign-in like any other preference.",
-};
+// (Empty since 2026-11-05: `filters` was the one entry — route-search defaults, a UI starting position —
+// and it stopped parsing as a seeded declaration when its setter went with saved searches, the only writer.)
+const NOT_SEED_CONTENT = {};
 const seededDecls = [];
 for (const m of appSrc.matchAll(/\[(\w+),\s*set(\w+)\]\s*=\s*useState\(/g)) {
   const from = m.index + m[0].length;

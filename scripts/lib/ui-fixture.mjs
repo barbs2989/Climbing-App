@@ -111,6 +111,23 @@ async function insert(table, row, select = "*") {
   return body[0];
 }
 
+// A crew's CREATOR, seated confirmed. Since 0408 the crews_creator_joins trigger seats the creator
+// itself, so a plain insert here is a duplicate (409, crew_members_pkey) and the whole walk errored
+// before checking anything. ON CONFLICT DO NOTHING works with the trigger and without it, and the
+// read-back keeps the guarantee the plain insert gave: the creator IS a confirmed member.
+async function seatCreator(crewId, userId) {
+  const seat = await rest("crew_members?on_conflict=crew_id,user_id", {
+    method: "POST",
+    headers: { Prefer: "return=minimal,resolution=ignore-duplicates" },
+    body: JSON.stringify({ crew_id: crewId, user_id: userId, status: "confirmed", invited_by: userId }),
+  });
+  if (seat.status >= 300) throw new Error(`seed crew_members (creator) failed (${seat.status}): ${JSON.stringify(seat.body)}`);
+  const row = await rest(`crew_members?crew_id=eq.${crewId}&user_id=eq.${userId}&select=status`);
+  if (row.status !== 200 || !Array.isArray(row.body) || row.body.length !== 1 || row.body[0].status !== "confirmed") {
+    throw new Error(`the crew's creator is not a confirmed member after seating (${row.status}): ${JSON.stringify(row.body)}`);
+  }
+}
+
 async function createUser(tag, name) {
   // A per-run suffix keeps two concurrent runs (this repo routinely has parallel
   // sessions) from colliding on the unique email index.
@@ -135,7 +152,12 @@ async function createUser(tag, name) {
     }),
   });
   if (status >= 300 || !body?.id) throw new Error(`admin create user failed (${status}): ${JSON.stringify(body)}`);
-  return { id: body.id, email, password, name };
+  // A USERNAME, because since #3306 (0420/0432) an account without one is sent to setup on every
+  // screen: check:signed-in's whole walk then measured the "Choose your username" step (2026-11-18,
+  // 7 failures). It starts with the first name so pubName's "@robin_…" still names the climber the
+  // walk looks for, and carries the run's stamp so the unique index on lower(username) never collides.
+  const username = (name.split(" ")[0].toLowerCase().replace(/[^a-z0-9]/g, "") + "_" + stamp).slice(0, 20);
+  return { id: body.id, email, password, name, username };
 }
 
 // The session the browser will run as. Fetched over the auth API rather than typed into
@@ -192,6 +214,7 @@ export async function sweepOrphans(log = () => {}) {
         await rest(`${table}?id=eq.${row.id}`, { method: "DELETE" }).catch(() => {});
       }
     }
+    await rest(`contributions?contributor=eq.${u.id}`, { method: "DELETE" }).catch(() => {});
     await auth(`admin/users/${u.id}`, { method: "DELETE" }).catch(() => {});
   }
   return stale.length;
@@ -216,6 +239,7 @@ export async function createFixture(log = () => {}) {
       const { status } = await rest(`profiles?id=eq.${u.id}`, {
         method: "PATCH",
         body: JSON.stringify({
+          username: u.username,
           location: "Bellingham, WA",
           disciplines: ["alpine", "trad"],
           trad_grade: "5.9",
@@ -230,15 +254,16 @@ export async function createFixture(log = () => {}) {
     const crew = await insert("crews", {
       created_by: owner.id,
       route_id: ROUTE_ID,
-      dates: ["2026-09-12", "2026-09-13"],
+      dates: [fixtureTripDay()],
+      agreed_date: fixtureTripDay(),
+      date_forced: true,
       meet_place: "Heliotrope Ridge TH",
       meet_time: "04:30",
       cap: 4,
     });
     track("crews", `id=eq.${crew.id}`);
-    for (const u of [owner, mate]) {
-      await insert("crew_members", { crew_id: crew.id, user_id: u.id, status: "confirmed", invited_by: owner.id });
-    }
+    await seatCreator(crew.id, owner.id);
+    await insert("crew_members", { crew_id: crew.id, user_id: mate.id, status: "confirmed", invited_by: owner.id });
     log(`  crew ${crew.id.slice(0, 8)} with 2 confirmed members`);
 
     // A SECOND crew, owned by the MATE, with the owner left INVITED rather than confirmed.
@@ -261,13 +286,13 @@ export async function createFixture(log = () => {}) {
     const inviteCrew = await insert("crews", {
       created_by: mate.id,
       route_id: ROUTE_ID,
-      dates: ["2026-10-04"],
+      dates: fixtureCrewDays(1),
       meet_place: "Coleman Deming TH",
       meet_time: "05:00",
       cap: 3,
     });
     track("crews", `id=eq.${inviteCrew.id}`);
-    await insert("crew_members", { crew_id: inviteCrew.id, user_id: mate.id, status: "confirmed", invited_by: mate.id });
+    await seatCreator(inviteCrew.id, mate.id);
     await insert("crew_members", { crew_id: inviteCrew.id, user_id: owner.id, status: "invited", invited_by: mate.id });
     log(`  crew ${inviteCrew.id.slice(0, 8)} owned by the mate, with the owner INVITED and not confirmed`);
 
@@ -279,7 +304,7 @@ export async function createFixture(log = () => {}) {
       route_id: null,
       area_id: AREA_CREW_AREA_ID,
       discipline: "sport",
-      dates: ["2026-10-05"],
+      dates: fixtureCrewDays(1),
       meet_place: "Lower lot",
       meet_time: "09:00",
       cap: 3,
@@ -287,7 +312,7 @@ export async function createFixture(log = () => {}) {
     track("crews", `id=eq.${areaCrew.id}`);
     // Both CONFIRMED, so the session renders as a crew CARD on the Crews view — the surface that
     // prints the place name, the Session steps and the roster — rather than as an invite under Requests.
-    await insert("crew_members", { crew_id: areaCrew.id, user_id: mate.id, status: "confirmed", invited_by: mate.id });
+    await seatCreator(areaCrew.id, mate.id);
     await insert("crew_members", { crew_id: areaCrew.id, user_id: owner.id, status: "confirmed", invited_by: mate.id });
     log(`  AREA crew ${areaCrew.id.slice(0, 8)} at ${AREA_CREW_AREA_ID} (sport) owned by the mate, both CONFIRMED`);
 
@@ -358,10 +383,9 @@ export async function createFixture(log = () => {}) {
       user_id: owner.id, route_id: ROUTE_ID, date_climbed: "2026-07-04",
       discipline: "alpine", tick_type: "Lead", stars: 4, party_size: 2, notes: "Fixture log.",
     });
-    await insert("saved_searches", { user_id: owner.id, name: "Cascades alpine", query: { state: "Washington", disc: ["alpine"] } });
     await insert("user_lists", { user_id: owner.id, name: "Fixture ticklist", icon: "star", route_ids: [ROUTE_ID], shared: false });
     await insert("connections", { requester: owner.id, addressee: mate.id, status: "accepted" });
-    log("  objective, log, saved search, list, connection");
+    log("  objective, log, list, connection");
 
     const session = await signIn(owner);
 
@@ -377,6 +401,10 @@ export async function createFixture(log = () => {}) {
           await rest(`${table}?${filter}`, { method: "DELETE" }).catch(() => {});
         }
         for (const u of users) {
+          // contributions.contributor is text, not a foreign key: nothing cascades, and a fixture sun vote or
+          // photo left behind sits on the owner's Review desk as pending (2026-11-23). The in-app delete-account
+          // function deletes them first for the same reason.
+          await rest(`contributions?contributor=eq.${u.id}`, { method: "DELETE" }).catch(() => {});
           await auth(`admin/users/${u.id}`, { method: "DELETE" }).catch(() => {});
         }
         // Assert the accounts are actually gone. A leaked fixture profile shows up in
@@ -394,7 +422,7 @@ export async function createFixture(log = () => {}) {
     for (const { table, filter } of undo.reverse()) {
       await rest(`${table}?${filter}`, { method: "DELETE" }).catch(() => {});
     }
-    for (const u of users) await auth(`admin/users/${u.id}`, { method: "DELETE" }).catch(() => {});
+    for (const u of users) { await rest(`contributions?contributor=eq.${u.id}`, { method: "DELETE" }).catch(() => {}); await auth(`admin/users/${u.id}`, { method: "DELETE" }).catch(() => {}); }
     throw e;
   }
 }
@@ -414,3 +442,39 @@ export function sessionForStorage(session) {
 }
 
 export const STORAGE_KEY = "climbmatch-auth";
+
+// THE DAYS A FIXTURE CREW PROPOSES, counted from TODAY rather than written down.
+//
+// Every fixture crew used to carry a fixed day ("2026-09-12", "2026-10-04"...). That was harmless
+// while a crew with no agreed day stayed on the active list forever. Since #3816 a crew whose LAST
+// proposed day is more than CREW_UNSETTLED_GRACE_DAYS (14) behind is a PAST crew, so on 2026-11-24
+// the Crews tab of every walk read "You have no crews yet. Past crews (3)" and check:signed-in
+// could not find its crew, its roster or its chat. The app was right; the fixture had aged.
+//
+// LOCAL calendar days, as the app's own comparison is (isArchivedCrew parses "<day>T12:00:00").
+// Three weeks out, so a walk never sits on the day itself, where the recap's wording changes.
+export function fixtureCrewDays(count = 1, now = new Date()) {
+  const p = (n) => String(n).padStart(2, "0");
+  return Array.from({ length: count }, (_, i) => {
+    const d = new Date(now.getFullYear(), now.getMonth(), now.getDate() + 21 + i);
+    return `${d.getFullYear()}-${p(d.getMonth() + 1)}-${p(d.getDate())}`;
+  });
+}
+
+// THE DAY THE FIXTURE'S MAIN CREW CLIMBED: yesterday, locked by its organizer.
+//
+// The trip recap ("How did it go?", 0519) lists crewmates only for a crew with an AGREED day
+// (crews.agreed_date), and takes answers from that day until 14 days after. No fixture crew had
+// one, so the walk could never see the recap's roster. Yesterday rather than today: the database
+// counts "today" in its own zone, and a day that is still tomorrow there closes the sheet. A crew
+// whose day passed stays on the active list for 3 days (CREW_ARCHIVE_GRACE_DAYS), so it is still a
+// crew CARD for the roster and chat assertions.
+//
+// ONLY the main crew, never a per-run one: a crew with crewmates cannot be DELETED while its trip
+// is reportable (crews_keep_while_reportable, 0523), so a per-run crew with a locked day would be
+// left in the live project by every run.
+export function fixtureTripDay(now = new Date()) {
+  const p = (n) => String(n).padStart(2, "0");
+  const d = new Date(now.getFullYear(), now.getMonth(), now.getDate() - 1);
+  return `${d.getFullYear()}-${p(d.getMonth() + 1)}-${p(d.getDate())}`;
+}

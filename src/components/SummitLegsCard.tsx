@@ -1,7 +1,7 @@
 import { C, SUB_LABEL, climbsAPeak, uElev } from "../../ClimbMatchCore.jsx";
 import { itinDayCount } from "../../lib/outing.js";
 import { planTimes } from "../../lib/planTimes.js";
-import { tripLegGeometry, fmtLegKm, fmtLegHrs } from "../../lib/tripLegs.js";
+import { tripLegGeometry, fmtLegKm, fmtLegHrs, publishedLegClimb } from "../../lib/tripLegs.js";
 
 /** A stat on a leg card: its label, then its value. */
 type LegStat = [string, string];
@@ -30,17 +30,32 @@ export default function SummitLegsCard({route,calc}: SummitLegsCardProps){
   const pt=planTimes(route,calc);const g=tripLegGeometry(route);
   const {disc,gainFt,dropFt,km,hasKm,whole,outBack,legKm}=g;
   const top=climbsAPeak(route)||disc==="alpine"||disc==="mountaineering"||disc==="hiking"||disc==="scrambling"?"summit":"top of the climb";
+  /* The downhill on the way up and the uphill on the way home: PUBLISHED figures only (publishedLegClimb,
+     routes.approach_loss_ft / return_gain_ft) — the app does no arithmetic of its own here (owner, 2026-11-14). */
+  const pc=publishedLegClimb(route);
+  const upLoss: LegStat|null=pc.upLoss?["Loss","↓ "+uElev(pc.upLoss)]:null;
+  const downGain: LegStat|null=pc.downGain?["Regain","↑ "+uElev(pc.downGain)]:null;
+  /* On a loop or point-to-point the stored gain is the WHOLE outing (effDistIsWholeTrip), so printing it under
+     TRAILHEAD TO SUMMIT overstated the leg: Goode NE Buttress read 10,700 ft to a summit 4,720 ft above its
+     trailhead. The leg gets no gain of its own (none is published per leg); the note states the outing's. */
+  const legGainFt=whole?null:gainFt;
   const upFloor=!pt.walkInKnown||!pt.climbKnown;const downFloor=!pt.walkOutKnown;
+  /* A leg with nothing to time prints no Time, on planTimes' own test -- the one Full trip time's N/A reads --
+     rather than "≥0.0hr" beside a tile that says N/A. */
+  const upTimed=pt.approachTimed||pt.climbTimed||pt.climbToStartH>0;
   const legs: Leg[]=pt.publishedIsWholeDay
-    ?[["CAR TO CAR",[gainFt?["Gain","↑ "+uElev(gainFt)]:null,hasKm?["Distance",fmtLegKm(outBack&&!whole?km*2:km)]:null,["Time",fmtLegHrs(pt.tripH,upFloor||downFloor)]]]]
-    :[["TRAILHEAD TO "+top.toUpperCase(),[gainFt?["Gain","↑ "+uElev(gainFt)]:null,legKm?["Distance","~"+fmtLegKm(legKm)]:null,["Time",fmtLegHrs(pt.totalH,upFloor)]]],
-      [top.toUpperCase()+" TO TRAILHEAD",[legKm?["Distance","~"+fmtLegKm(legKm)]:null,legKm&&dropFt?["Drop","↓ "+uElev(dropFt)]:null,["Time",fmtLegHrs(pt.downH,downFloor)]]]];
+    ?[["CAR TO CAR",[gainFt?["Gain","↑ "+uElev(gainFt)]:null,upLoss?["Loss on the way in",upLoss[1]]:null,downGain?["Regain on the way out",downGain[1]]:null,hasKm?["Distance",fmtLegKm(outBack&&!whole?km*2:km)]:null,pt.anyTimed?["Time",fmtLegHrs(pt.tripH,upFloor||downFloor)]:null]]]
+    /* A leg that starts or ends at CAMP (upFromCamp / downToCamp) prints its time only: the stored gain,
+       distance, loss and regain are measured from the TRAILHEAD, and would read as the camp leg's own. */
+    :[[(pt.upFromCamp?"CAMP":"TRAILHEAD")+" TO "+top.toUpperCase(),pt.upFromCamp?[upTimed?["Time",fmtLegHrs(pt.totalH,upFloor)]:null]:[legGainFt?["Gain","↑ "+uElev(legGainFt)]:null,upLoss,legKm?["Distance","~"+fmtLegKm(legKm)]:null,upTimed?["Time",fmtLegHrs(pt.totalH,upFloor)]:null]],
+      [top.toUpperCase()+(pt.downToCamp?" TO CAMP":" TO TRAILHEAD"),pt.downToCamp?[pt.descentTimed?["Time",fmtLegHrs(pt.downH,downFloor)]:null]:[legKm?["Distance","~"+fmtLegKm(legKm)]:null,legKm&&dropFt?["Drop","↓ "+uElev(dropFt)]:null,downGain,pt.descentTimed?["Time",fmtLegHrs(pt.downH,downFloor)]:null]]];
   const shown=legs.map(function(l): [string, LegStat[]] {return [l[0],l[1].filter(function(s): s is LegStat {return s!==null;})];}).filter(function(l){return l[1].length;});
   if(!shown.length)return null;
   const days=itinDayCount(route);
-  const note="Times use the pace, pack and party set in Full trip time below."
+  const note=(""
+    +(whole&&gainFt&&!pt.publishedIsWholeDay?" The whole outing gains "+uElev(gainFt)+".":"")
     +(!pt.publishedIsWholeDay&&hasKm&&!legKm?" This route does not come back the way it goes: "+fmtLegKm(km)+" for the whole outing.":"")
-    +(days>1?" Usually done over "+days+" days — the Trip plan below splits it by day.":"");
+    +(days>1?" Usually done over "+days+" days — the Trip plan below splits it by day.":"")).trim();
   return <div style={{background:C.surface,borderRadius:10,padding:"4px 12px 11px",border:"1px solid "+C.border,marginBottom:12}}>
     {shown.map(function(l,i){return <div key={l[0]} style={{padding:"8px 0",borderTop:i===0?"none":"1px solid "+C.borderLight}}>
       <div style={{...SUB_LABEL,marginBottom:5}}>{l[0]}</div>

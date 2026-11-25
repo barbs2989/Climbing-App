@@ -1,0 +1,203 @@
+[
+ {
+  "id": "wa_big_chiwaukum_three_musketeers_ridge",
+  "name": "Three Musketeers Ridge",
+  "area_id": "wa_three_musketeers_ridge",
+  "discipline": "scrambling",
+  "grade": null,
+  "pitches": null,
+  "gain_ft": null,
+  "dist_km": null,
+  "high_point_ft": 7690,
+  "season": "Jul-Sep",
+  "approach": "Start at the Snow Lakes Trailhead on Icicle Creek Road and hike the Snow Lakes trail past Lake Viviane to Nada Lake (roughly 5 to 6 miles). Beyond the end of the maintained trail, climb the buttress ramp above the lake outlet into the upper basin, then head to the ridge saddle.",
+  "descent": null,
+  "bivy": null,
+  "itinerary": null,
+  "waypoints": [
+   {
+    "name": "Snow Lakes Trailhead",
+    "type": "Trailhead",
+    "elev": null
+   },
+   {
+    "name": "Three Musketeers Ridge",
+    "type": "Summit",
+    "elev": null
+   }
+  ],
+  "peak": "Three Musketeers Ridge",
+  "area_type": "peak"
+ },
+ {
+  "id": "wa_cascade_peak_nw_chimney",
+  "name": "Northwest Chimney",
+  "area_id": "wa_cascade_peak",
+  "discipline": "alpine",
+  "grade": "5.8",
+  "pitches": 3,
+  "gain_ft": null,
+  "dist_km": null,
+  "high_point_ft": 7428,
+  "season": null,
+  "approach": "Same approach as the East Ridge to the C-J col (Cascade River Road to Cascade Pass Trailhead, Cascade Pass Trail to Cascade Pass, then cross-country via Mixup Arm/Cache Glacier to the C-J col). From a bivy at the col, cross the moat below Cascade Peak's northwest side to reach the base of the route.",
+  "descent": "Rappel the route on gear-built anchors (no fixed anchors documented).",
+  "bivy": null,
+  "itinerary": null,
+  "waypoints": [],
+  "peak": "Cascade Peak",
+  "area_type": "peak"
+ },
+ {
+  "id": "wa_east_ridge_3",
+  "name": "East Ridge",
+  "area_id": "wa_silver_star_mountain_okanogan",
+  "discipline": "alpine",
+  "grade": "5.9+",
+  "pitches": 0,
+  "gain_ft": 4400,
+  "dist_km": null,
+  "high_point_ft": 8876,
+  "season": "Jul-Sep",
+  "approach": "Start from the Cedar Creek trailhead near Mazama -- a different trailhead than the Silver Star Creek/Highway 20 pullout used for the Glacier and NE Ridge routes -- and gain the ridge near the confluence of Cedar and Early Winters Creeks, then follow the crest north and west for roughly 3.5 miles to the summit.",
+  "descent": "Most parties finish by dropping off the summit onto the Silver Star Glacier and walking/downclimbing out via Burgundy Col back toward Highway 20 near milepost 166 — a different trailhead than the Cedar Creek approach, so a car shuttle or a return hike along the highway is typically needed.",
+  "bivy": [
+   {
+    "elev": 2900,
+    "name": "Klipchuck Campground",
+    "role": "main",
+    "type": "camp",
+    "notes": "Established Forest Service campground just off SR-20 a short walk from the Cedar Creek Trailhead, the nearest place to stage the night before an early start.",
+    "water": "Potable water available in season",
+    "permit": "No permit; nightly fee, first-come first-served, no reservations",
+    "capacity": "Several first-come, first-served sites"
+   }
+  ],
+  "itinerary": null,
+  "waypoints": [
+   {
+    "name": "Klipchuck Campground",
+    "type": "Campsite",
+    "elev": 2900
+   },
+   {
+    "name": "Cedar Creek Trailhead",
+    "type": "Trailhead",
+    "elev": 2985
+   },
+   {
+    "name": "Silver Star Mountain - East/Main Summit",
+    "type": "Summit",
+    "elev": 8876
+   },
+   {
+    "name": "Hwy 20 pullout near MP 166 (descent finish)",
+    "type": "Trailhead",
+    "elev": 4300
+   }
+  ],
+  "peak": "Silver Star Mountain",
+  "area_type": "peak"
+ },
+ {
+  "id": "wa_glacier_peak_south_tahoma_headwall",
+  "name": "South Tahoma Headwall",
+  "area_id": "wa_mount_rainier",
+  "discipline": "alpine",
+  "grade": "AI3",
+  "pitches": null,
+  "gain_ft": 11500,
+  "dist_km": null,
+  "high_point_ft": null,
+  "season": "Apr-Jun",
+  "approach": "Reached from the closed Westside Road beyond the Dry Creek gate on a long walk in of about 12 miles, then across the Tahoma Glacier or round Success Cleaver to the foot of the headwall.",
+  "descent": null,
+  "bivy": null,
+  "itinerary": null,
+  "waypoints": [],
+  "peak": "Mount Rainier",
+  "area_type": "peak"
+ },
+ {
+  "id": "wa_glacier_peak_tahoma_cleaver",
+  "name": "Tahoma Cleaver",
+  "area_id": "wa_mount_rainier",
+  "discipline": "mountaineering",
+  "grade": null,
+  "pitches": null,
+  "gain_ft": null,
+  "dist_km": null,
+  "high_point_ft": null,
+  "season": null,
+  "approach": "From Westside Road — Dry Creek Trailhead, walk the closed road past the barricade to the Tahoma Creek Trail and climb it about 2 miles to the Wonderland Trail junction near 4300 ft. Go south over the Tahoma Creek suspension bridge, follow the Wonderland Trail to Indian Henry's Hunting Ground, then take the Mirror Lakes Trail until it fades in the basin between Copper and Pyramid Peaks. Continue cross-country past Pyramid Peak to Success Cleaver and climb it to about 8000 ft, where glacier travel begins. A roped traverse across the South Tahoma Glacier at roughly 8100 ft reaches the base of Tahoma Cleaver.",
+  "descent": null,
+  "bivy": null,
+  "itinerary": null,
+  "waypoints": [],
+  "peak": "Mount Rainier",
+  "area_type": "peak"
+ },
+ {
+  "id": "wa_mount_adams_pinnacle_glacier_headwall",
+  "name": "Pinnacle Glacier Headwall",
+  "area_id": "wa_mount_adams",
+  "discipline": "mountaineering",
+  "grade": "Mod. Snow",
+  "pitches": 0,
+  "gain_ft": null,
+  "dist_km": null,
+  "high_point_ft": null,
+  "season": null,
+  "approach": "A free wilderness permit is self-issued at the trailhead. From the Riley Camp Trailhead, hike the Riley Camp Trail, staying off the Riley Cut-Off at the first junction, until it meets the Pacific Crest Trail. Turn south on the Pacific Crest Trail for a few minutes to Riley Creek and follow the creek up through boulders to the moraines at the foot of the Pinnacle Glacier. The headwall route begins at the base of the glacier.",
+  "descent": null,
+  "bivy": null,
+  "itinerary": null,
+  "waypoints": [],
+  "peak": "Mount Adams",
+  "area_type": "peak"
+ },
+ {
+  "id": "wa_switchback_mountain_west_ridge",
+  "name": "West Ridge / West Face (via Boiling Lake)",
+  "area_id": "wa_switchback_mountain",
+  "discipline": "mountaineering",
+  "grade": "Class 3",
+  "pitches": null,
+  "gain_ft": null,
+  "dist_km": null,
+  "high_point_ft": 8321,
+  "season": "Jul-Sep",
+  "approach": "Reached from the same Crater Creek/Eagle Lakes Trailhead system, branching toward the Boiling Lake basin rather than continuing to Cooney Lake.",
+  "descent": "Reverse the west face/west ridge scramble back to the contour bench and Boiling Lake basin; no rappels reported.",
+  "bivy": null,
+  "itinerary": null,
+  "waypoints": [
+   {
+    "name": "Switchback Mountain summit",
+    "type": "Summit",
+    "elev": 8321
+   }
+  ],
+  "peak": "Switchback Mountain",
+  "area_type": "peak"
+ },
+ {
+  "id": "wa_little_annapurna_south_face",
+  "name": "South Face",
+  "area_id": "wa_little_annapurna",
+  "discipline": "alpine",
+  "grade": "5.5",
+  "pitches": 3,
+  "gain_ft": null,
+  "dist_km": null,
+  "high_point_ft": null,
+  "season": "Jul-Sep",
+  "approach": "From Highway 97 south of the Y-junction, drive ~7.5 miles and turn onto Ingalls Creek Road/Trailhead. Hike the Ingalls Creek Trail roughly 8 miles, then leave the trail (right/north) into brushy terrain up Crystal Creek, gaining about 2,200 ft to a base-camp meadow and tarn near 6,000 ft. From the tarn, climb a large talus-apron gully west of the tarn to a col at roughly 7,700-7,880 ft between Little Annapurna and the spires to its south.",
+  "descent": "Descend the peak's northeast slopes toward Crystal Lake, then follow the outlet stream back down to the Crystal Creek base camp.",
+  "bivy": null,
+  "itinerary": null,
+  "waypoints": [],
+  "peak": "Little Annapurna",
+  "area_type": "peak"
+ }
+]

@@ -1,0 +1,90 @@
+{
+ "wa_silver_star_ne_ridge": {
+  "area": "wa_silver_star_mountain_okanogan",
+  "road": {
+   "name": "North Cascades Highway (SR-20)",
+   "status": "Open seasonally",
+   "driveNote": "Same trailhead pullout near milepost 166 as the Silver Star Glacier route.",
+   "seasonalGate": "Closed roughly early December to mid/late April"
+  }
+ },
+ "wa_northwest_buttress": {
+  "area": "wa_sloan_peak",
+  "waypoints": [
+   {
+    "lat": 48.09702,
+    "lng": -121.387058,
+    "elev": 1246,
+    "name": "Bedal Campground, Mountain Loop Highway",
+    "type": "Campsite"
+   },
+   {
+    "lat": 48.070136,
+    "lng": -121.375279,
+    "elev": 2800,
+    "name": "Bedal Creek/Sloan Creek Trailhead",
+    "note": "End of FR-4096, ~3 mi off the Mountain Loop Highway south of Bedal Campground.",
+    "type": "Trailhead",
+    "distMi": 0,
+    "directions": "From the Mountain Loop Highway take FR-4096 and follow the spur about 3 miles to its end, south of Bedal Campground, at the Bedal Creek Trailhead around 2,790 ft. Bedal Creek Trail #705 leaves from the parking at the road end. Aim for mid-to-late season, July through September, once snowmelt has cleared the lower approach."
+   },
+   {
+    "lat": 48.05601,
+    "lng": -121.36307,
+    "elev": 3500,
+    "name": "Climber's trail junction (leaves Bedal Creek trail for the basin)",
+    "type": "Junction",
+    "distMi": 1.5,
+    "elevFt": 3500,
+    "directions": "Follow Bedal Creek Trail #705 up the creek through old growth until the maintained tread ends at a washout below the West Face basin. Scramble the washout to the cairned exit, usually flagged pink, where the climbers' path leaves left around 3,500 ft."
+   },
+   {
+    "lat": 48.04149,
+    "lng": -121.34012,
+    "elev": 7835,
+    "name": "Sloan Peak Summit",
+    "note": "Longest route on the peak; shared summit with good bivy spots along the buttress.",
+    "type": "Summit",
+    "distMi": 4.5,
+    "directions": "Climb the path steeply through forest to about 4,900 ft, cross talus and a meadow bench to the Bedal-Sloan saddle, and stay in the meadows below the West Face rather than heading toward the glacier. Start on the corner of darker rock at the lowest, leftmost point of the face, climb nine pitches up the buttress, exit by a short hand crack, and scramble third and fourth class to the sub-summit and summit."
+   }
+  ],
+  "road": {
+   "name": "Bedal Creek Trailhead via FR 4096, Mountain Loop Highway",
+   "status": "FR 4096 is a rough, narrow, pothole-riddled Forest Service spur (about 3 miles) off the Mountain Loop Highway; high-clearance vehicles are strongly recommended, expect scraping on lower-clearance cars.",
+   "driveNote": "About 2-2.5 hours from Seattle via Everett and the Mountain Loop Highway (roughly 18 miles south of Darrington, about 1 mile south of Bedal Campground).",
+   "seasonalGate": "The Deer Creek-to-Bedal section of the Mountain Loop Highway is gated and closed to vehicles all winter, typically reopening in mid-May depending on snowpack."
+  }
+ },
+ "wa_mount_daniel_lynch_glacier": {
+  "area": "wa_mount_daniel",
+  "waypoints": [
+   {
+    "lat": 47.55617,
+    "lng": -121.141647,
+    "elev": 5560,
+    "name": "Peggy's Pond, below Cathedral Rock",
+    "type": "Campsite"
+   },
+   {
+    "lat": 47.565031,
+    "lng": -121.180891,
+    "elev": 7960,
+    "name": "Mount Daniel summit",
+    "type": "Summit",
+    "distMi": null,
+    "elevFt": 7960
+   }
+  ],
+  "road": null
+ },
+ "wa_mount_pugh_pika_slab": {
+  "area": "wa_mount_pugh",
+  "road": {
+   "name": "Mountain Loop Highway (FR 20) to Forest Road 2095",
+   "status": "Access has been seriously disrupted. Mount Baker-Snoqualmie National Forest issued a Mountain Loop Highway closure alert on 19 December 2025 for landslide and storm damage, and as of February 2026 the highway was closed in several sections between Granite Falls and Darrington with the worst damage a mudslide at Shoofly Curve, estimated at around $3.65 million; the Forest Service also reports that access into the Glacier Peak Wilderness is extremely limited as of April 2026 because of the same December 2025 storm event. Verify the current status on the Mt. Baker-Snoqualmie alerts page or with the Darrington Ranger Station before committing to the drive.",
+   "driveNote": "FR 2095 leaves the Mountain Loop Highway on the left at a prominent Mount Pugh sign, roughly 12.5-14 miles from Darrington. It is narrow, one-lane and unpaved, and it is reportedly tight enough that potholes are simply unavoidable — passenger cars generally manage it but take it slowly. The signed trailhead is on the right at the second switchback about 1-1.5 miles up, at 1,900-1,920 ft. Parking is limited and there are no facilities, no toilet and no water at the trailhead; the lot fills on summer weekends and parties describe it as busier than expected.",
+   "seasonalGate": "The Mountain Loop Highway is gated for the winter season between Deer Creek and Bedal Campground. FR 2095 itself is unmaintained in winter and is normally snowbound and effectively closed through April; When the access road is closed it adds roughly half an hour each way to the day."
+  }
+ }
+}

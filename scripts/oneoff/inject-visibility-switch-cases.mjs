@@ -42,20 +42,21 @@ const CASES = [
   { name: "name-hydrate", file: CM, must: "fail", why: "0175's own read-back, removed",
     find: "setShowRealName(!!p.show_name);", repl: "" },
 
-  { name: "partner-cols", file: DB, must: "fail", why: "rule 2 — partner search stops carrying resume_public",
+  { name: "partner-cols", file: "lib/profileCols.js", must: "fail", why: "rule 2 — partner search stops carrying resume_public",
     find: "boulder_grade,show_name,resume_public", repl: "boulder_grade,show_name" },
 
   { name: "conn-select", file: DB, must: "fail", why: "rule 2 — the connections select forgets it",
-    find: '"id, name, username, avatar, location, show_name, resume_public"',
-    repl: '"id, name, username, avatar, location, show_name"' },
+    find: 'profileCols("id,name,username,avatar,location,show_name,resume_public"',
+    repl: 'profileCols("id,name,username,avatar,location,show_name"' },
 
   /* Rule 3 — the second way into a résumé. The stat tile really did call onResume()
    * unconditionally, so gating the profile BUTTON alone left a private résumé reachable by
    * tapping a climb count. */
   { name: "stat-tile", file: "lib/PartnerSearch.jsx", must: "fail",
     why: "the real ungated stat-tile route into another climber's résumé",
-    find: 'const act=st[2]==="climbs"?(c.resumePublic!==false?()=>onResume&&onResume(c):null)',
-    repl: 'const act=st[2]==="climbs"?()=>onResume&&onResume(c)' },
+    // The tile is the one partner card's climbs chip now (owner 2026-11-18); the example climber's route.
+    find: 'onClimbs={c.resumePublic!==false&&onResume?function(){onResume&&onResume(c);}:null}',
+    repl: 'onClimbs={onResume?function(){onResume&&onResume(c);}:null}' },
 
   { name: "resume-button", file: "src/components/FullProfile.tsx", must: "fail", // FullProfile moved from core in PR50
     why: "rule 3 — the profile button stops consulting the flag",

@@ -1,0 +1,72 @@
+{
+ "area_id": "or_aneroid_lake_peaks",
+ "routes": [
+  {
+   "route_id": "or_aneroid_lake_peaks_pete_s_point",
+   "season": {
+    "months": [
+     6,
+     7
+    ],
+    "window": "Jun-Jul",
+    "evidence": "The couloir needs snow; SummitPost says most people climb late June to October, and a late-June 2024 Oregon Hikers report found the snow manageable. Logged ascents run Jun-Sep. Snow route best Jun to early Jul, ridge walk later."
+   },
+   "track": null,
+   "otherTracksConsidered": [
+    {
+     "aid": "3266313",
+     "verdict": "unsure",
+     "why": "Jul 13 ridge from Tenderfoot Pass, no couloir described; our route is the north-face couloir"
+    },
+    {
+     "aid": "2291044",
+     "verdict": "unsure",
+     "why": "Aug 26, summit reached from Tenderfoot Pass, no route named"
+    },
+    {
+     "aid": "454143",
+     "verdict": "different",
+     "why": "Logged as East Fork Trail/North Horn: the north ridge horn, not the couloir"
+    },
+    {
+     "aid": "678661",
+     "verdict": "different",
+     "why": "Ridge from Tenderfoot Pass, no snow, no special gear"
+    },
+    {
+     "aid": "2965232",
+     "verdict": "different",
+     "why": "Long multi-peak trip; highest point 8 km from Petes Point"
+    }
+   ],
+   "pins": [],
+   "facts": []
+  }
+ ],
+ "missing": [
+  {
+   "kind": "route",
+   "peak": "Pete's Point",
+   "name": "North Ridge from Tenderfoot Pass",
+   "alt_names": [
+    "NE Ridge",
+    "North Horn",
+    "East Fork Trail/North Horn"
+   ],
+   "discipline": "scrambling",
+   "grade": "Class 2",
+   "face": "NE",
+   "season": "Jul-Sep",
+   "overview": "Reach Tenderfoot Pass by the East Fork Wallowa trail, then follow the short, steeper north arm of the summit horseshoe on a faint path with a few hands-on steps. The longer, gentler south arm is an alternative.",
+   "loggedAscents": 5,
+   "aids": [
+    "454143",
+    "678661"
+   ],
+   "evidence": [
+    "https://www.summitpost.org/petes-point/153193 - two easy walk-up arms from Tenderfoot Pass, north arm steeper, rock step near 9,500 ft"
+   ]
+  }
+ ],
+ "notes": "Our stored route is the north-face snow couloir; the harvested ascents are ridge walk-ups, which the stored text does not describe, so none is assigned. No trailhead pin is stored; no trailhead coordinate was fetched, so none is proposed."
+}

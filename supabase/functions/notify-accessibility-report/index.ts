@@ -11,7 +11,8 @@
 //
 // WHERE IT GOES: ACCESSIBILITY_ALERT_EMAIL, else SAFETY_ALERT_EMAIL, else the mailer's admin address.
 // Nothing is sent until RESEND_API_KEY is set (the shared mailer returns not_configured); the form
-// never claims an email went out, so an unconfigured mailer degrades to the Review badge.
+// never claims an email went out, so an unconfigured mailer degrades to the Review desk's
+// Accessibility reports section (review.html#access; off the app's Menu and its badge since 2026-11-23).
 //
 // Deploy:  npx supabase functions deploy notify-accessibility-report --no-verify-jwt
 //          (a guest has no session JWT for the gateway to verify; the checks above are the gate)
@@ -25,6 +26,8 @@ const corsHeaders = {
   "Access-Control-Allow-Origin": "*",
   "Access-Control-Allow-Methods": "POST, OPTIONS",
   "Access-Control-Allow-Headers": "authorization, x-client-info, apikey, content-type",
+  // Responses carry per-user results; never let a CDN or browser cache hold one.
+  "Cache-Control": "no-store",
 };
 const json = (body: unknown, status = 200) =>
   new Response(JSON.stringify(body), { status, headers: { ...corsHeaders, "Content-Type": "application/json" } });

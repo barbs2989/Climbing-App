@@ -1,0 +1,506 @@
+{
+ "wa_inner_constance_northwest_buttress": {
+  "area": "wa_inner_constance",
+  "skip_reason": "Mountaineers search (Constance) lists N Chute, S Chute and W Arete only; SummitPost route search found no NW Buttress page; trailcatjim Constance pages are Outer Peak/South Ridge. No stated gain."
+ },
+ "wa_mount_index_bluebell": {
+  "area": "wa_north_norwegian_buttress",
+  "skip_reason": "SummitPost Mount Index routes list (West Ridge, Hourglass, Persis-Index, N Face of N Peak) has no Bluebell; Mountaineers lists East Route only."
+ },
+ "wa_baring_mountain_east_face": {
+  "area": "wa_main_peak_3",
+  "skip_reason": "SummitPost Baring routes list only NW Ridge; WTA mount-baring (3,500 ft) and trailcatjim pages are the west/NW route, not the east face."
+ },
+ "wa_plan_9_from_outer_space": {
+  "area": "wa_ed_wood_memorial_buttress",
+  "skip_reason": "Technical rock route; SummitPost and Mountaineers searches found nothing with a stated gain."
+ },
+ "wa_observation_rock_standard_scramble_route": {
+  "area": "wa_observation_rock",
+  "set": {
+   "gain_ft": 3435
+  },
+  "ledger": [
+   {
+    "field": "gain_ft",
+    "value": 3435,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.wta.org/go-hiking/hikes/observation-rock",
+      "retrieved_at": "2026-11-14",
+      "fact": "Observation Rock via Echo Rock from Mowich Lake through Spray Park: elevation gain 3,435 ft"
+     }
+    ]
+   }
+  ],
+  "extra": [
+   {
+    "field": "distance_mi",
+    "value": 13,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.wta.org/go-hiking/hikes/observation-rock",
+      "retrieved_at": "2026-11-14",
+      "fact": "Length 13.0 miles roundtrip"
+     }
+    ]
+   },
+   {
+    "field": "high_point_ft",
+    "value": 8364,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.wta.org/go-hiking/hikes/observation-rock",
+      "retrieved_at": "2026-11-14",
+      "fact": "Highest point 8,364 ft"
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Mowich Lake, via the Wonderland Trail to Spray Park",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.wta.org/go-hiking/hikes/observation-rock",
+      "retrieved_at": "2026-11-14",
+      "fact": "Start at Mowich Lake and follow the Wonderland Trail to Spray Park"
+     }
+    ]
+   }
+  ],
+  "note": "Mountaineers Echo Rock/Observation Rock/Tillicum Point page lists 3,800 ft for a three-summit outing; differs by more than 10% and is not this route alone."
+ },
+ "wa_hagan_mountain_north_slopes_blum_lakes": {
+  "area": "wa_hagan_mountain",
+  "skip_reason": "SummitPost hagan-mountain/1064993 gives no total gain; Mountaineers Mount Blum & Mount Hagan (6,900 ft, high point 7,680 = Blum) is a two-peak trip; trailcatjim Blum-Hagan pages are traverses."
+ },
+ "wa_trapper_mountain_north_couloir": {
+  "area": "wa_trapper_mountain",
+  "skip_reason": "Mountaineers/trailcatjim/WTA results are Trappers Peak (Thornton Lakes), a different peak."
+ },
+ "wa_castle_in_the_sky": {
+  "area": "wa_whatcom_peak",
+  "skip_reason": "SummitPost Whatcom Peak routes are South Route and North Ridge only; no page for Castle in the Sky with gain."
+ },
+ "wa_ingalls_peak_friends_in_high_places": {
+  "area": "wa_ingalls_peak",
+  "skip_reason": "SummitPost Ingalls routes list lacks this route; Mountain Project was answering 429 to other tabs, not tried."
+ },
+ "wa_rock_mountain_northeast_ridge": {
+  "area": "wa_rock_mountain",
+  "skip_reason": "Mountaineers rock-mountain (4,300 ft, 11 mi, TH 2,675 ft off SR 2) does not name the NE ridge/Nason Ridge; trailcatjim Nason Ridge page is a multi-peak trail traverse."
+ },
+ "wa_lundin_peak_east_ridge": {
+  "area": "wa_lundin_peak",
+  "set": {
+   "gain_ft": 3000
+  },
+  "ledger": [
+   {
+    "field": "gain_ft",
+    "value": 3000,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.summitpost.org/east-ridge/162554",
+      "retrieved_at": "2026-11-14",
+      "fact": "Lundin Peak East Ridge route lists gain 3,000 ft for the outing"
+     }
+    ]
+   }
+  ],
+  "extra": [
+   {
+    "field": "grade",
+    "value": "Class 4",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.summitpost.org/east-ridge/162554",
+      "retrieved_at": "2026-11-14",
+      "fact": "Route type: scramble with short technical section; difficulty Class 4"
+     }
+    ]
+   },
+   {
+    "field": "times",
+    "value": "About 2 h to Red Mountain saddle, then 1-2 h to summit; half a day",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.summitpost.org/east-ridge/162554",
+      "retrieved_at": "2026-11-14",
+      "fact": "Two hours to the saddle plus one or two hours to the summit; half a day"
+     }
+    ]
+   },
+   {
+    "field": "rappels",
+    "value": "One rappel down the step; a 30 m rope is enough",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.summitpost.org/east-ridge/162554",
+      "retrieved_at": "2026-11-14",
+      "fact": "Descent: one rappel off the step, 30 m rope sufficient"
+     }
+    ]
+   }
+  ],
+  "note": "WTA lundin-peak-trail (2,900 ft, high point 6,057 ft) does not name the east ridge, so not counted as a second source."
+ },
+ "wa_himmelhorn_stonehenge": {
+  "area": "wa_himmelhorn",
+  "skip_reason": "No Himmelhorn pages found on SummitPost, Mountaineers or trailcatjim search."
+ },
+ "wa_mount_baker_squak_glacier": {
+  "area": "wa_mount_baker",
+  "skip_reason": "SummitPost squak-glacier/165092 gives only the glacier entry elevation; trailcatjim page is a Squak-Deming-Easton loop."
+ },
+ "wa_mount_daniel_lynch_glacier": {
+  "area": "wa_mount_daniel",
+  "set": {
+   "gain_ft": 5000
+  },
+  "ledger": [
+   {
+    "field": "gain_ft",
+    "value": 5000,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/mount-daniel-lynch-glacier",
+      "retrieved_at": "2026-11-14",
+      "fact": "Lynch Glacier route page lists elevation gain 5,000 ft for the climb"
+     }
+    ]
+   }
+  ],
+  "extra": [
+   {
+    "field": "distance_mi",
+    "value": 16,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/mount-daniel-lynch-glacier",
+      "retrieved_at": "2026-11-14",
+      "fact": "Route length listed as 16.0 mi"
+     }
+    ]
+   },
+   {
+    "field": "high_point_ft",
+    "value": 7986,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/mount-daniel-lynch-glacier",
+      "retrieved_at": "2026-11-14",
+      "fact": "High point listed as 7,986 ft; notes say the true summit is the west peak"
+     }
+    ]
+   },
+   {
+    "field": "season",
+    "value": "June-August",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/mount-daniel-lynch-glacier",
+      "retrieved_at": "2026-11-14",
+      "fact": "Seasons listed as June, July, August"
+     }
+    ]
+   },
+   {
+    "field": "camps",
+    "value": "Peggy's Pond",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/mount-daniel-lynch-glacier",
+      "retrieved_at": "2026-11-14",
+      "fact": "Trip profile camps at Peggy's Pond; expect bugs there"
+     }
+    ]
+   },
+   {
+    "field": "descent",
+    "value": "Descend the scramble route to Peggy's Pond camp, or reverse the climbing route",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/mount-daniel-lynch-glacier",
+      "retrieved_at": "2026-11-14",
+      "fact": "Descent: scramble route back to Peggy's Pond camp or down the climb"
+     }
+    ]
+   },
+   {
+    "field": "rack",
+    "value": "Standard glacier equipment",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/mount-daniel-lynch-glacier",
+      "retrieved_at": "2026-11-14",
+      "fact": "Equipment listed as standard glacier gear"
+     }
+    ]
+   },
+   {
+    "field": "hazards",
+    "value": "Pea Soup Lake approach becomes problematic from mid-July once its ice melts",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/mount-daniel-lynch-glacier",
+      "retrieved_at": "2026-11-14",
+      "fact": "Pea Soup Lake approach gets difficult mid-July and later after ice melts"
+     }
+    ]
+   },
+   {
+    "field": "grade",
+    "value": "Basic Glacier Climb (Mountaineers rating)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/mount-daniel-lynch-glacier",
+      "retrieved_at": "2026-11-14",
+      "fact": "Difficulty: Basic Glacier Climb, Strenuous 2, Technical 2"
+     }
+    ]
+   },
+   {
+    "field": "times",
+    "value": "Trailhead to camp 2.5-4 h; camp to summit 5-7 h; summit to camp 2-3 h; camp to trailhead 3-4 h",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/mount-daniel-lynch-glacier",
+      "retrieved_at": "2026-11-14",
+      "fact": "Trip profile segment times for approach, summit day and return"
+     }
+    ]
+   }
+  ],
+  "note": "Same page trip profile lists trailhead-to-camp 3,000 ft and camp-to-summit 1,800 ft; the 5,000 ft summary is used as stated, nothing summed. SummitPost Lynch Glacier page (summitpost.org/lynch-glacier/159280) states no total gain. WTA mount-daniel (4,600 ft) is the Cathedral Pass route, not counted."
+ },
+ "wa_hoodoo_peak_sawtooth_raven_ridge_traverse": {
+  "area": "wa_hoodoo_peak_sawtooth",
+  "skip_reason": "Mountaineers hoodoo-peak-raven-ridge lists 5,500 ft, 14 mi, Libby Creek TH 4,430 ft, but for a two-summit outing (Hoodoo Peak plus Raven Ridge/Libby Peak) from a camp; not this route alone, so not set."
+ },
+ "wa_dragontail_peak_dragons_of_eden": {
+  "area": "wa_dragontail_peak",
+  "skip_reason": "SummitPost Dragontail routes list lacks Dragons of Eden; no stated gain found."
+ },
+ "wa_prusik_peak_stanley_burgner": {
+  "area": "wa_prusik_peak",
+  "skip_reason": "SummitPost south-face-stanley-burgner/202982 and rpc-s-prusik-peak-stanley-burgner/653254 state no gain; trailcatjim Prusik pages are the West Ridge."
+ },
+ "wa_mount_adams_avalanche_white_salmon_glaciers": {
+  "area": "wa_mount_adams",
+  "skip_reason": "SummitPost Mount Adams page lists Avalanche and White Salmon Glacier routes with no figures or route pages; Mountaineers has no page."
+ },
+ "wa_mount_adams_pinnacle_glacier_headwall": {
+  "area": "wa_mount_adams",
+  "skip_reason": "SummitPost Mount Adams page lists Pinnacle Glacier Headwall (II, Class 4) without a route page or gain; Mountaineers has no page."
+ },
+ "wa_mount_hinman_west_route": {
+  "area": "wa_mount_hinman",
+  "set": {
+   "gain_ft": 5800
+  },
+  "ledger": [
+   {
+    "field": "gain_ft",
+    "value": 5800,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/mount-hinman-west-route",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mount Hinman West Route page lists elevation gain 5,800 ft over 24 mi"
+     },
+     {
+      "url": "https://trailcatjim.com/mt-hinman-via-west-ridge-foss-glacier/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Hinman via Necklace Valley, La Bohn Gap and west ridge: about 5,700 ft gained and lost over 22 mi"
+     }
+    ]
+   }
+  ],
+  "extra": [
+   {
+    "field": "high_point_ft",
+    "value": 7497,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/mount-hinman-west-route",
+      "retrieved_at": "2026-11-14",
+      "fact": "High point listed as 7,497 ft"
+     }
+    ]
+   },
+   {
+    "field": "season",
+    "value": "May-July",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/mount-hinman-west-route",
+      "retrieved_at": "2026-11-14",
+      "fact": "Seasons listed as May, June, July"
+     }
+    ]
+   },
+   {
+    "field": "descent",
+    "value": "Descend the climbing route",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/mount-hinman-west-route",
+      "retrieved_at": "2026-11-14",
+      "fact": "Descent: reverse the climbing route"
+     }
+    ]
+   },
+   {
+    "field": "rack",
+    "value": "Standard alpine climbing gear, ice axe and crampons",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/mount-hinman-west-route",
+      "retrieved_at": "2026-11-14",
+      "fact": "Equipment: standard alpine gear plus ice axe and crampons"
+     }
+    ]
+   },
+   {
+    "field": "hazards",
+    "value": "The Hinman Glacier no longer exists; snowfields may remain, so research current conditions",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/mount-hinman-west-route",
+      "retrieved_at": "2026-11-14",
+      "fact": "Notes the Hinman Glacier is gone; snowfields may be present"
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "East Fork Foss River Trailhead (1,650 ft)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://trailcatjim.com/mt-hinman-via-west-ridge-foss-glacier/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Start and end at East Fork Foss River trailhead, elevation 1,650 ft"
+     }
+    ]
+   },
+   {
+    "field": "times",
+    "value": "Trailhead to camp 7 h; camp to summit 5 h; summit to trailhead 7 h",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/mount-hinman-west-route",
+      "retrieved_at": "2026-11-14",
+      "fact": "Trip profile times: 7 h to camp, 5 h to summit, 7 h back out"
+     }
+    ]
+   },
+   {
+    "field": "grade",
+    "value": "Basic Alpine Climb (Mountaineers rating)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/mount-hinman-west-route",
+      "retrieved_at": "2026-11-14",
+      "fact": "Difficulty: Basic Alpine Climb, Strenuous 5, Technical 4"
+     }
+    ]
+   }
+  ],
+  "note": "Mountaineers 5,800 vs trailcatjim 5,700 (within 10%); Mountaineers figure used. Its trip-profile segments (4,700 + 1,600) do not match the summary and were not used. climberkyle.com/2015/08/15/mt-hinman/ gives only a rough round-trip 7,000 ft, not used. Distances differ (24 vs 22 mi), so distance not recorded."
+ },
+ "wa_big_chiwaukum_three_musketeers_ridge": {
+  "area": "wa_three_musketeers_ridge",
+  "skip_reason": "WTA big-chiwaukum (5,300 ft) is via White Pine Creek, not Three Musketeers Ridge; Mountaineers result is an Enchantments traverse."
+ },
+ "wa_mount_chaval_north_ridge": {
+  "area": "wa_mount_chaval",
+  "skip_reason": "Mountaineers has West Route; SummitPost lists West Face; trailcatjim is West Ridge/NW Face. No North Ridge figures."
+ },
+ "wa_ne_chimney": {
+  "area": "wa_molar_tooth",
+  "skip_reason": "Mountaineers only has an incomplete Molar Tooth North Ridge page; nothing for NE Chimney."
+ },
+ "wa_snoqualmie_mountain_west_ridge": {
+  "area": "wa_snoqualmie_mountain_climbs",
+  "skip_reason": "WTA mount-snoqualmie (3,105 ft) does not name the west ridge; SummitPost lists West Face only."
+ },
+ "wa_davis_peak_nc_north_face_burdo_cairns": {
+  "area": "wa_davis_peak_nc",
+  "skip_reason": "trailcatjim Davis Peak page is via Gorge Creek/South Buttress (other route); nothing for North Face."
+ },
+ "wa_big_snow_mountain_sasquatch_s_breath": {
+  "area": "wa_big_snow_mountain",
+  "skip_reason": "SummitPost Big Snow routes list only East Ridge; trailcatjim pages are NW slope/loops."
+ },
+ "wa_chimney_rock_north_ridge": {
+  "area": "wa_chimney_rock",
+  "skip_reason": "Mountaineers has East Face Direct; trailcatjim pages are East Face routes. Nothing for North Ridge."
+ },
+ "wa_colchuck_balanced_rock_south_route": {
+  "area": "wa_colchuck_balanced_rock",
+  "skip_reason": "Mountaineers, trailcatjim and SummitPost searches found no Colchuck Balanced Rock page with gain."
+ },
+ "wa_colchuck_peak_west_ridge": {
+  "area": "wa_colchuck_peak",
+  "skip_reason": "SummitPost Colchuck routes are N Buttress Couloir, NE Buttress, Colchuck Glacier; no West Ridge page."
+ },
+ "wa_comb_the_toketie_wall": {
+  "area": "wa_comb_the_climbs",
+  "skip_reason": "No page found for The Comb / Toketie Wall on Mountaineers or SummitPost searches."
+ }
+}

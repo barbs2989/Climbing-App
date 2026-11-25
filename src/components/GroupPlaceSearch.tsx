@@ -33,11 +33,11 @@ export default function GroupPlaceSearch({label,onPick}: GroupPlaceSearchProps){
   const hits: PlaceHit[]=(searchQ.data&&searchQ.data.rows)||[];
   const typed=q.trim().length>=2;
   return <div>
-    <input aria-label={label} value={q} onChange={function(e){setQ(e.target.value);}} placeholder={label} style={{width:"100%",boxSizing:"border-box",padding:"9px 12px",borderRadius:9,border:"1px solid "+C.border,background:C.surface,color:C.text,fontSize:13,outline:"none"}}/>
+    <input aria-label={label} value={q} onChange={function(e){setQ(e.target.value);}} placeholder={label} style={{width:"100%",boxSizing:"border-box",padding:"9px 12px",borderRadius:9,border:"1px solid "+C.field,background:C.surface,color:C.text,fontSize:13,outline:"none"}}/>
     {typed?<div style={{marginTop:6,background:C.card,border:"1px solid "+C.border,borderRadius:9,overflow:"hidden"}}>
-      {searchQ.isError?<div role="alert" style={{padding:"10px 12px",fontSize:12.5,color:C.textMuted}}>Couldn’t search the places just now — try again.</div>:hits.length?hits.map(function(m){const trail=(m.trail||[]).slice();return <div key={m.id} {...clickable(function(){setQ("");onPick({id:m.id,name:m.name,trail:trail});})} aria-label={m.name+(trail.length?", "+trail.join(", "):"")} style={{padding:"9px 12px",minHeight:44,boxSizing:"border-box",cursor:"pointer",borderBottom:"1px solid "+C.borderLight}}>
+      {searchQ.isError?<div role="alert" style={{padding:"10px 12px",fontSize:12.5,color:C.textMuted}}>Couldn’t search the places just now — try again.</div>:hits.length?hits.map(function(m){const trail=(m.trail||[]).slice();return <div key={m.id} {...clickable(function(){setQ("");onPick({id:m.id,name:m.name,trail:trail});})} aria-label={/* what the row shows, in its order (WCAG 2.5.3): it read "Index, Washington, …" over a row that says "Index · 1244 climbs" */m.name+(m.route_count?" · "+m.route_count+" climb"+(m.route_count===1?"":"s"):"")+(trail.length?" "+trail.join(" › "):"")} style={{padding:"9px 12px",minHeight:44,boxSizing:"border-box",cursor:"pointer",borderBottom:"1px solid "+C.borderLight}}>
         <div style={{fontSize:13.5,fontWeight:700,color:C.text}}>{hlMatch(m.name,q)}{m.route_count?<span style={{fontSize:11.5,fontWeight:600,color:C.textMuted}}>{" · "+m.route_count+" climb"+(m.route_count===1?"":"s")}</span>:null}</div>
-        {trail.length?<div style={{fontSize:11.5,color:C.textMuted,marginTop:1,lineHeight:1.4}}>{trail.join(" › ")}</div>:null}
+        {" "}{trail.length?<div style={{fontSize:11.5,color:C.textMuted,marginTop:1,lineHeight:1.4}}>{trail.join(" › ")}</div>:null}
       </div>;}):<div style={{padding:"10px 12px",fontSize:12.5,color:C.textMuted}}>{searchQ.isFetching?"Searching…":"No crag, peak or area by that name."}</div>}
     </div>:null}
   </div>;

@@ -16,11 +16,11 @@ export interface PitchConsensusProps {
 export default function PitchConsensus({p,onSuggestFix}: PitchConsensusProps){
   const anchor=String(p.anchor||"").trim();const gear=String(p.gear||"").trim();const belay=String(p.belay||"").trim();
   if(!anchor&&!gear&&!belay&&!onSuggestFix)return null;
-  const box=function(label: string,text: string,empty: string){return <div style={{background:C.card,border:"1px solid "+C.border,borderRadius:8,padding:"8px 10px",marginBottom:6}}>
-    <div style={{fontSize:11,fontWeight:700,color:C.textMuted,letterSpacing:0.4,textTransform:"uppercase",marginBottom:3}}>{label}</div>
+  const box=function(label: string,text: string,empty: string){return <div style={{borderLeft:"2px solid "+C.border,padding:"1px 0 1px 10px",marginBottom:9}}>
+    <div style={{fontSize:11,fontWeight:700,color:C.label,letterSpacing:0.4,textTransform:"uppercase",marginBottom:3}}>{label}</div>
     <div style={{fontSize:13,color:text?C.text:C.textMuted,lineHeight:1.5,whiteSpace:"pre-wrap",wordBreak:"break-word",overflowWrap:"anywhere"}}>{text||empty}</div>
   </div>;};
-  return <div style={{background:C.surface,borderRadius:8,padding:"10px 11px",marginBottom:9,border:"1px solid "+C.border}}>
+  return <div style={{borderTop:"1px solid "+C.borderLight,padding:"10px 0 0",marginBottom:9}}>
     <CardHead tone={C.green} style={{marginBottom:8}}>Pitch gear</CardHead>
     {box("Belay station",belay,"Not described yet — say where the belayer stands and how to find it")}
     {box("Anchor",anchor,"Not described yet — say what the anchor is built of")}

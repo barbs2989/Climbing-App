@@ -1,0 +1,1360 @@
+[
+ {
+  "id": "nv_cowboy",
+  "verdict": "ok",
+  "stored": [
+   40.9005,
+   -115.82222
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/118130390/cowboy",
+    "retrieved_at": "2026-11-18",
+    "lat": 40.9005,
+    "lng": -115.82222,
+    "fact": "MP area page GPS line"
+   },
+   {
+    "url": "https://www.mountainproject.com/area/113755164/eastern-nevada",
+    "retrieved_at": "2026-11-18",
+    "lat": 39.62679,
+    "lng": -114.75806,
+    "fact": "MP parent Eastern Nevada GPS; large region"
+   }
+  ],
+  "note": "Stored matches MP; Eastern Nevada is a large region."
+ },
+ {
+  "id": "wv_observatory_the",
+  "verdict": "ok",
+  "stored": [
+   37.50613,
+   -80.45635
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/116067468/the-observatory",
+    "retrieved_at": "2026-11-18",
+    "lat": 37.50613,
+    "lng": -80.45635,
+    "fact": "MP area page GPS line"
+   },
+   {
+    "url": "https://www.mountainproject.com/area/121909197/southern-wv",
+    "retrieved_at": "2026-11-18",
+    "lat": 38.06561,
+    "lng": -81.45318,
+    "fact": "MP parent Southern WV GPS; large region"
+   }
+  ],
+  "note": "Stored matches MP; Southern WV is a large region."
+ },
+ {
+  "id": "id_lemhi_range",
+  "verdict": "ok",
+  "stored": [
+   44.12945,
+   -113.1011825
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/111690117/lemhi-range",
+    "retrieved_at": "2026-11-18",
+    "lat": 44.24517,
+    "lng": -113.17539,
+    "fact": "MP area page GPS line"
+   },
+   {
+    "url": "https://en.wikipedia.org/wiki/Lemhi_Range",
+    "retrieved_at": "2026-11-18",
+    "lat": 44.141667,
+    "lng": -113.082778,
+    "fact": "Wikipedia infobox coordinate for Lemhi Range"
+   }
+  ],
+  "note": "Range-sized; stored is within ~10 km of both; Central Idaho is a large region."
+ },
+ {
+  "id": "nc_weed_patch_mountain_trail_boulders",
+  "verdict": "parent_wrong",
+  "stored": [
+   35.47813,
+   -82.226995
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": 35.48246,
+  "parent_new_lng": -82.19042,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/116159663/weed-patch-mountain-trail-boulders",
+    "retrieved_at": "2026-11-18",
+    "lat": 35.43154,
+    "lng": -82.25059,
+    "fact": "MP area page GPS line"
+   },
+   {
+    "url": "https://en.wikipedia.org/wiki/Chimney_Rock_State_Park",
+    "retrieved_at": "2026-11-18",
+    "lat": 35.43306,
+    "lng": -82.25056,
+    "fact": "Chimney Rock State Park infobox; Weed Patch Mtn trail is in this area"
+   },
+   {
+    "url": "https://www.mountainproject.com/area/106037528/eagle-rock",
+    "retrieved_at": "2026-11-18",
+    "lat": 35.48246,
+    "lng": -82.19042,
+    "fact": "MP parent Eagle Rock GPS, near Lake Lure, not -81.05"
+   }
+  ],
+  "note": "Child is right (stored is a child centroid ~6 km from MP pin). Parent Eagle Rock stored lng -81.05 is wrong; MP prints 35.48246,-82.19042 (only one source for Eagle Rock itself)."
+ },
+ {
+  "id": "wi_rib_mountain",
+  "verdict": "ok",
+  "stored": [
+   44.921066,
+   -89.6945806666667
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/105863344/rib-mountain",
+    "retrieved_at": "2026-11-18",
+    "lat": 44.9201,
+    "lng": -89.69339,
+    "fact": "MP area page GPS line"
+   },
+   {
+    "url": "https://en.wikipedia.org/wiki/Rib_Mountain",
+    "retrieved_at": "2026-11-18",
+    "lat": 44.920796725,
+    "lng": -89.695204669,
+    "fact": "Wikipedia infobox coordinate for Rib Mountain"
+   }
+  ],
+  "note": "Stored right; Northern Highlands is a large region."
+ },
+ {
+  "id": "ca_02_the_sawtooth_ridge",
+  "verdict": "ok",
+  "stored": [
+   38.1054133333333,
+   -119.404531666667
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/110498412/02-the-sawtooth-ridge",
+    "retrieved_at": "2026-11-18",
+    "lat": 38.10706,
+    "lng": -119.40867,
+    "fact": "MP area page GPS line"
+   },
+   {
+    "url": "https://www.mountainproject.com/area/105791817/high-sierra",
+    "retrieved_at": "2026-11-18",
+    "lat": 37.27549,
+    "lng": -118.6765,
+    "fact": "MP parent High Sierra GPS; large region"
+   }
+  ],
+  "note": "Stored right; High Sierra is a large region."
+ },
+ {
+  "id": "mt_barretts",
+  "verdict": "ok",
+  "stored": [
+   45.1308,
+   -112.7401
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/106535309/barretts",
+    "retrieved_at": "2026-11-18",
+    "lat": 45.1308,
+    "lng": -112.7401,
+    "fact": "MP area page GPS line"
+   }
+  ],
+  "note": "Stored matches MP; Southwest Region is large. MP now files Barretts under Butte Area (46.07441,-111.86135)."
+ },
+ {
+  "id": "az_east_mogollon_rim",
+  "verdict": "ok",
+  "stored": [
+   34.55745,
+   -111.22385
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/107819421/east-mogollon-rim",
+    "retrieved_at": "2026-11-18",
+    "lat": 34.4552,
+    "lng": -111.3967,
+    "fact": "MP area page GPS line"
+   },
+   {
+    "url": "https://www.mountainproject.com/area/106907688/northern-az-bouldering",
+    "retrieved_at": "2026-11-18",
+    "lat": 35.1963,
+    "lng": -111.64989,
+    "fact": "MP parent GPS; large region"
+   }
+  ],
+  "note": "Stored is child centroid ~20 km from MP pin; parent is a large bouldering region."
+ },
+ {
+  "id": "az_pinaleno_mtns_mt_graham",
+  "verdict": "ok",
+  "stored": [
+   32.66946,
+   -109.84792
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/110406778/pinaleno-mountains-mt-graham",
+    "retrieved_at": "2026-11-18",
+    "lat": 32.70289,
+    "lng": -109.87175,
+    "fact": "MP area page GPS line"
+   },
+   {
+    "url": "https://en.wikipedia.org/wiki/Pinale%C3%B1o_Mountains",
+    "retrieved_at": "2026-11-18",
+    "lat": 32.70139,
+    "lng": -109.87167,
+    "fact": "Wikipedia infobox coordinate for Pinaleno Mountains"
+   }
+  ],
+  "note": "Range-sized; stored within ~5 km; Southern Arizona is a large region."
+ },
+ {
+  "id": "ok_diamond_h_scout_ranch",
+  "verdict": "ok",
+  "stored": [
+   35.66726,
+   -94.91748
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/120867602/diamond-h-scout-ranch",
+    "retrieved_at": "2026-11-18",
+    "lat": 35.66726,
+    "lng": -94.91748,
+    "fact": "MP area page GPS line"
+   },
+   {
+    "url": "https://www.mountainproject.com/area/119566601/se-oklahoma",
+    "retrieved_at": "2026-11-18",
+    "lat": 35.00571,
+    "lng": -95.33741,
+    "fact": "MP parent SE Oklahoma GPS; large region"
+   }
+  ],
+  "note": "Stored matches MP; SE Oklahoma is a large region."
+ },
+ {
+  "id": "wy_moose_falls",
+  "verdict": "ok",
+  "stored": [
+   44.15201,
+   -110.67267
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/119173159/moose-falls",
+    "retrieved_at": "2026-11-18",
+    "lat": 44.15201,
+    "lng": -110.67267,
+    "fact": "MP area page GPS line"
+   },
+   {
+    "url": "https://en.wikipedia.org/wiki/Moose_Falls",
+    "retrieved_at": "2026-11-18",
+    "lat": 44.15222,
+    "lng": -110.67222,
+    "fact": "Wikipedia infobox coordinate for Moose Falls"
+   }
+  ],
+  "note": "Stored right. Parent Yellowstone stored 45.09 is north of the park; MP parent GPS 44.51219,-110.5499 (region-sized)."
+ },
+ {
+  "id": "or_spence_mountain_bouldering",
+  "verdict": "fix_one_source",
+  "stored": [
+   42.32861,
+   -121.95817
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/119760603/spence-mountain-bouldering",
+    "retrieved_at": "2026-11-18",
+    "lat": 42.32861,
+    "lng": -121.95817,
+    "fact": "MP area page GPS line"
+   }
+  ],
+  "note": "Stored matches MP (only source); place is near Klamath Lake, so Southwest Oregon is a large region -> effectively ok, no change."
+ },
+ {
+  "id": "id_middle_fork_of_the_salmon",
+  "verdict": "ok",
+  "stored": [
+   45.21975,
+   -114.68391
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/111989136/middle-fork-of-the-salmon",
+    "retrieved_at": "2026-11-18",
+    "lat": 45.21975,
+    "lng": -114.68391,
+    "fact": "MP area page GPS line"
+   },
+   {
+    "url": "https://en.wikipedia.org/wiki/Middle_Fork_Salmon_River",
+    "retrieved_at": "2026-11-18",
+    "lat": 45.29722,
+    "lng": -114.59333,
+    "fact": "Wikipedia coordinate (river mouth)"
+   }
+  ],
+  "note": "Stored matches MP; river-length area, Central Idaho a large region."
+ },
+ {
+  "id": "pa_woodcock_valley",
+  "verdict": "ok",
+  "stored": [
+   40.16391,
+   -78.2934
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/111808253/woodcock-valley",
+    "retrieved_at": "2026-11-18",
+    "lat": 40.16391,
+    "lng": -78.2934,
+    "fact": "MP area page GPS line"
+   },
+   {
+    "url": "https://www.mountainproject.com/area/109481375/south-central-pa",
+    "retrieved_at": "2026-11-18",
+    "lat": 40.25428,
+    "lng": -76.88695,
+    "fact": "MP parent GPS; large region"
+   }
+  ],
+  "note": "Stored matches MP; South Central PA is a large region."
+ },
+ {
+  "id": "nm_crack_cliff",
+  "verdict": "unresolved",
+  "stored": [
+   36.25082,
+   -104.06553
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/108335230/crack-cliff",
+    "retrieved_at": "2026-11-18",
+    "lat": 36.25082,
+    "lng": -104.06553,
+    "fact": "MP GPS; text says 15 min west of Phishbowl in Amole"
+   },
+   {
+    "url": "https://www.mountainproject.com/area/108335150/amole",
+    "retrieved_at": "2026-11-18",
+    "lat": 36.18551,
+    "lng": -105.6178,
+    "fact": "MP parent Amole GPS"
+   }
+  ],
+  "note": "MP's own GPS repeats the stored value, which sits ~140 km east of Amole although MP text places it beside Phishbowl in Amole. No second source; do not borrow digits."
+ },
+ {
+  "id": "va_explore_park",
+  "verdict": "ok",
+  "stored": [
+   37.23432,
+   -79.85011
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/118756043/explore-park",
+    "retrieved_at": "2026-11-18",
+    "lat": 37.23763,
+    "lng": -79.85058,
+    "fact": "MP area page GPS line"
+   },
+   {
+    "url": "https://en.wikipedia.org/wiki/Explore_Park",
+    "retrieved_at": "2026-11-18",
+    "lat": 37.238278,
+    "lng": -79.85194,
+    "fact": "Wikipedia infobox coordinate for Explore Park"
+   }
+  ],
+  "note": "Stored right (Roanoke); SW Virginia is large. MP now files it under Roanoke Vicinity."
+ },
+ {
+  "id": "id_boundary_county_climbing_areas",
+  "verdict": "ok",
+  "stored": [
+   48.7505775,
+   -116.471605
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/110241671/boundary-county-climbing-areas",
+    "retrieved_at": "2026-11-18",
+    "lat": 48.69534,
+    "lng": -116.31039,
+    "fact": "MP area page GPS line"
+   },
+   {
+    "url": "https://www.mountainproject.com/area/112960830/north-idaho",
+    "retrieved_at": "2026-11-18",
+    "lat": 47.69356,
+    "lng": -116.3216,
+    "fact": "MP parent North Idaho GPS"
+   }
+  ],
+  "note": "County-sized area; North Idaho is a large region."
+ },
+ {
+  "id": "ca_antelope_valley_area",
+  "verdict": "ok",
+  "stored": [
+   34.5340788095238,
+   -117.854928095238
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/119558503/antelope-valley-area",
+    "retrieved_at": "2026-11-18",
+    "lat": 34.52084,
+    "lng": -117.99588,
+    "fact": "MP area page GPS line"
+   },
+   {
+    "url": "https://en.wikipedia.org/wiki/Antelope_Valley",
+    "retrieved_at": "2026-11-18",
+    "lat": 34.8,
+    "lng": -118.2,
+    "fact": "Wikipedia coordinate for Antelope Valley"
+   }
+  ],
+  "note": "Region-sized; High Desert is a large region."
+ },
+ {
+  "id": "wa_sillusi_bluffs",
+  "verdict": "fix_one_source",
+  "stored": [
+   45.93975,
+   -119.31216
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/120098873/sillusi-bluffs",
+    "retrieved_at": "2026-11-18",
+    "lat": 45.94153,
+    "lng": -119.32081,
+    "fact": "MP area page GPS line"
+   }
+  ],
+  "note": "Stored matches MP (only source); near Wallula Gap, Southeast Corner is a large region -> effectively ok, no change."
+ },
+ {
+  "id": "ca_crest_the",
+  "verdict": "ok",
+  "stored": [
+   36.17882,
+   -118.6307
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/119480541/the-crest",
+    "retrieved_at": "2026-11-18",
+    "lat": 36.17882,
+    "lng": -118.6307,
+    "fact": "MP GPS; filed under Southern Sierra - The Needles, Kern River"
+   }
+  ],
+  "note": "Stored matches MP; Western Sierra is large. MP files it under Southern Sierra Western Slope > The Needles/Kern River."
+ },
+ {
+  "id": "wi_oak_leaf_bike_trail_sidney",
+  "verdict": "ok",
+  "stored": [
+   43.12849,
+   -87.94586
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/118908807/oak-leaf-bike-trail-sidney",
+    "retrieved_at": "2026-11-18",
+    "lat": 43.12849,
+    "lng": -87.94586,
+    "fact": "MP area page GPS line"
+   }
+  ],
+  "note": "Milwaukee buildering spot; parent is a statewide grouping."
+ },
+ {
+  "id": "wi_jim_falls",
+  "verdict": "ok",
+  "stored": [
+   45.0558671428571,
+   -91.27069
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/106402585/jim-falls",
+    "retrieved_at": "2026-11-18",
+    "lat": 45.0581,
+    "lng": -91.2677,
+    "fact": "MP area page GPS line"
+   },
+   {
+    "url": "https://en.wikipedia.org/wiki/Jim_Falls,_Wisconsin",
+    "retrieved_at": "2026-11-18",
+    "lat": 45.04528,
+    "lng": -91.27306,
+    "fact": "Wikipedia infobox coordinate for Jim Falls"
+   }
+  ],
+  "note": "Stored right; Central Wisconsin is a large region."
+ },
+ {
+  "id": "ma_dpw_boulder",
+  "verdict": "unresolved",
+  "stored": [
+   41.23363,
+   -70.92968
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/110493840/dpw-boulder",
+    "retrieved_at": "2026-11-18",
+    "lat": 41.23363,
+    "lng": -70.92968,
+    "fact": "MP GPS; text: next to DPW off Route 127, Gloucester-Rockport"
+   },
+   {
+    "url": "https://www.mountainproject.com/area/110493610/cape-pond-boulders",
+    "retrieved_at": "2026-11-18",
+    "lat": 42.63705,
+    "lng": -70.63559,
+    "fact": "MP parent Cape Pond Boulders GPS"
+   }
+  ],
+  "note": "MP's own GPS repeats the garbled stored value (south of Cape Cod); text puts it in Rockport. Parent stored 42.147 also differs from MP parent (42.63705,-70.63559), likely pulled by this child."
+ },
+ {
+  "id": "mt_cyanide_creek_augusta_montana",
+  "verdict": "ok",
+  "stored": [
+   47.296595,
+   -112.567555
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/116533177/cyanide-creek-augusta-montana",
+    "retrieved_at": "2026-11-18",
+    "lat": 47.30989,
+    "lng": -112.57253,
+    "fact": "MP area page GPS line"
+   }
+  ],
+  "note": "Near Augusta; Northwest Region is large. MP now files it under Great Falls Area."
+ },
+ {
+  "id": "az_mingus_mountain",
+  "verdict": "ok",
+  "stored": [
+   34.69948,
+   -112.15881
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/112876505/mingus-mountain",
+    "retrieved_at": "2026-11-18",
+    "lat": 34.69948,
+    "lng": -112.15863,
+    "fact": "MP area page GPS line"
+   },
+   {
+    "url": "https://en.wikipedia.org/wiki/Mingus_Mountain",
+    "retrieved_at": "2026-11-18",
+    "lat": 34.6939118,
+    "lng": -112.1276604,
+    "fact": "Wikipedia infobox coordinate for Mingus Mountain"
+   }
+  ],
+  "note": "Stored right; Central Arizona is large."
+ },
+ {
+  "id": "va_roanoke_river_gorge",
+  "verdict": "ok",
+  "stored": [
+   37.2523766666667,
+   -79.86618
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/106594945/roanoke-river-gorge",
+    "retrieved_at": "2026-11-18",
+    "lat": 37.25276,
+    "lng": -79.867,
+    "fact": "MP area page GPS line"
+   }
+  ],
+  "note": "Stored right (Roanoke); SW Virginia is large; MP files it under Roanoke Vicinity."
+ },
+ {
+  "id": "id_reynolds_creek",
+  "verdict": "ok",
+  "stored": [
+   43.27826,
+   -116.70438
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/107468737/reynolds-creek",
+    "retrieved_at": "2026-11-18",
+    "lat": 43.2616,
+    "lng": -116.709,
+    "fact": "MP area page GPS line"
+   }
+  ],
+  "note": "Stored within ~2 km of MP; West Idaho is large."
+ },
+ {
+  "id": "ca_navarro_beach",
+  "verdict": "ok",
+  "stored": [
+   39.1925,
+   -123.7586
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/106921056/navarro-beach",
+    "retrieved_at": "2026-11-18",
+    "lat": 39.1925,
+    "lng": -123.7586,
+    "fact": "MP area page GPS line"
+   }
+  ],
+  "note": "Stored matches MP; Wine Country/Northeast Bay is a large region."
+ },
+ {
+  "id": "va_read_mountain",
+  "verdict": "unresolved",
+  "stored": [
+   37.3429,
+   -79.8977
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [],
+  "note": "MP search returned no Read Mountain page; stored (Roanoke area) not verified. Likely ok as SW Virginia is a large region."
+ },
+ {
+  "id": "tx_debridement_wall",
+  "verdict": "unresolved",
+  "stored": [
+   30.2875,
+   -97.7261
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/107282448/debridement-wall",
+    "retrieved_at": "2026-11-18",
+    "lat": 30.2875,
+    "lng": -97.7261,
+    "fact": "MP GPS; text: section of Medicine Wall left of Old Testament"
+   },
+   {
+    "url": "https://www.mountainproject.com/area/107143945/medicine-wall",
+    "retrieved_at": "2026-11-18",
+    "lat": 29.60328,
+    "lng": -98.55395,
+    "fact": "MP parent Medicine Wall GPS"
+   }
+  ],
+  "note": "MP's own GPS repeats the stored value (Austin) but MP text says it is part of Medicine Wall near San Antonio. No second source."
+ },
+ {
+  "id": "id_salmon_river_south_fork",
+  "verdict": "ok",
+  "stored": [
+   44.94559,
+   -115.60832
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/111542174/salmon-river-south-fork",
+    "retrieved_at": "2026-11-18",
+    "lat": 45.01404,
+    "lng": -115.71448,
+    "fact": "MP area page GPS line"
+   },
+   {
+    "url": "https://en.wikipedia.org/wiki/South_Fork_Salmon_River",
+    "retrieved_at": "2026-11-18",
+    "lat": 45.37778,
+    "lng": -115.51306,
+    "fact": "Wikipedia coordinate (river mouth)"
+   }
+  ],
+  "note": "River-length area; West Idaho is large."
+ },
+ {
+  "id": "nc_big_rock_nature_preserve",
+  "verdict": "ok",
+  "stored": [
+   35.06157,
+   -80.82779
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/120062006/big-rock-nature-preserve",
+    "retrieved_at": "2026-11-18",
+    "lat": 35.06157,
+    "lng": -80.82779,
+    "fact": "MP area page GPS line"
+   }
+  ],
+  "note": "Stored matches MP; Piedmont Region is large."
+ },
+ {
+  "id": "nm_las_vegas_el_porvenir",
+  "verdict": "ok",
+  "stored": [
+   35.7114883333333,
+   -105.390001666667
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/107088646/las-vegas-el-porvenir",
+    "retrieved_at": "2026-11-18",
+    "lat": 35.7135,
+    "lng": -105.41617,
+    "fact": "MP area page GPS line"
+   },
+   {
+    "url": "https://en.wikipedia.org/wiki/El_Porvenir,_New_Mexico",
+    "retrieved_at": "2026-11-18",
+    "lat": 35.69667,
+    "lng": -105.38278,
+    "fact": "Wikipedia infobox coordinate for El Porvenir"
+   }
+  ],
+  "note": "Stored right; parent is a large region."
+ },
+ {
+  "id": "nv_lake_tahoe_area",
+  "verdict": "ok",
+  "stored": [
+   39.1110033,
+   -119.929235616667
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/110531291/lake-tahoe-area",
+    "retrieved_at": "2026-11-18",
+    "lat": 39.09543,
+    "lng": -119.97541,
+    "fact": "MP area page GPS line"
+   },
+   {
+    "url": "https://en.wikipedia.org/wiki/Lake_Tahoe",
+    "retrieved_at": "2026-11-18",
+    "lat": 39,
+    "lng": -120,
+    "fact": "Wikipedia coordinate for Lake Tahoe"
+   }
+  ],
+  "note": "Stored right; Western Nevada is large."
+ },
+ {
+  "id": "mn_shovel_point",
+  "verdict": "parent_wrong",
+  "stored": [
+   47.33938,
+   -91.18778
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": 47.33583,
+  "parent_new_lng": -91.19944,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/105814860/shovel-point",
+    "retrieved_at": "2026-11-18",
+    "lat": 47.33938,
+    "lng": -91.18778,
+    "fact": "MP area page GPS line"
+   },
+   {
+    "url": "https://en.wikipedia.org/wiki/Tettegouche_State_Park",
+    "retrieved_at": "2026-11-18",
+    "lat": 47.33583,
+    "lng": -91.19944,
+    "fact": "Wikipedia infobox coordinate for Tettegouche State Park"
+   },
+   {
+    "url": "https://www.mountainproject.com/area/105812783/tettegouche-sp-north-shore",
+    "retrieved_at": "2026-11-18",
+    "lat": 47.3834,
+    "lng": -91.1924,
+    "fact": "MP parent Tettegouche SP GPS"
+   }
+  ],
+  "note": "Child right. Parent Tettegouche stored 46.85,-92.32 (near Duluth) is wrong; MP and Wikipedia agree within 10 km (park-sized). Parent new = Wikipedia."
+ },
+ {
+  "id": "nm_saddle_rock",
+  "verdict": "ok",
+  "stored": [
+   32.78961,
+   -108.50422
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/114029870/saddle-rock",
+    "retrieved_at": "2026-11-18",
+    "lat": 32.78918,
+    "lng": -108.50284,
+    "fact": "MP area page GPS line"
+   }
+  ],
+  "note": "Stored matches MP; Other Southern Areas is a statewide catch-all."
+ },
+ {
+  "id": "or_pilot_rock",
+  "verdict": "ok",
+  "stored": [
+   42.03069,
+   -122.561
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/107358011/pilot-rock",
+    "retrieved_at": "2026-11-18",
+    "lat": 42.03069,
+    "lng": -122.561,
+    "fact": "MP area page GPS line"
+   },
+   {
+    "url": "https://en.wikipedia.org/wiki/Pilot_Rock_(Oregon)",
+    "retrieved_at": "2026-11-18",
+    "lat": 42.03056,
+    "lng": -122.56083,
+    "fact": "Wikipedia infobox coordinate for Pilot Rock"
+   }
+  ],
+  "note": "Stored right; Southwest Oregon is large."
+ },
+ {
+  "id": "nv_pyramid_lake_area",
+  "verdict": "ok",
+  "stored": [
+   40.1734677272727,
+   -119.490098863636
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/114304808/pyramid-lake-area",
+    "retrieved_at": "2026-11-18",
+    "lat": 39.88433,
+    "lng": -119.60139,
+    "fact": "MP area page GPS line"
+   },
+   {
+    "url": "https://en.wikipedia.org/wiki/Pyramid_Lake_(Nevada)",
+    "retrieved_at": "2026-11-18",
+    "lat": 40.0625,
+    "lng": -119.56361,
+    "fact": "Wikipedia coordinate for Pyramid Lake"
+   }
+  ],
+  "note": "Lake-sized area; stored is a child centroid; Western Nevada is large."
+ },
+ {
+  "id": "mn_sax_wall",
+  "verdict": "unresolved",
+  "stored": [
+   45.89,
+   -94.5703
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/106916026/sax-wall",
+    "retrieved_at": "2026-11-18",
+    "lat": 45.89,
+    "lng": -94.5703,
+    "fact": "MP GPS; filed in Sandstone Ice Park"
+   },
+   {
+    "url": "https://www.mountainproject.com/area/106915985/sandstone-ice-park",
+    "retrieved_at": "2026-11-18",
+    "lat": 46.13481,
+    "lng": -92.85924,
+    "fact": "MP parent Sandstone Ice Park GPS"
+   },
+   {
+    "url": "https://en.wikipedia.org/wiki/Sandstone,_Minnesota",
+    "retrieved_at": "2026-11-18",
+    "lat": 46.12917,
+    "lng": -92.86472,
+    "fact": "Wikipedia coordinate for Sandstone MN"
+   }
+  ],
+  "note": "MP's own GPS repeats the stored value (~130 km west of Sandstone). Wall is in the ice park but no page prints its own coordinate."
+ },
+ {
+  "id": "mn_drill_hole",
+  "verdict": "unresolved",
+  "stored": [
+   45.89,
+   -94.5703
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/106915985/sandstone-ice-park",
+    "retrieved_at": "2026-11-18",
+    "lat": 46.13481,
+    "lng": -92.85924,
+    "fact": "MP Ice Park page lists no Drill Hole sub-area"
+   }
+  ],
+  "note": "No MP page found for Drill Hole (search empty, not in Ice Park list). Stored 45.89,-94.5703 is the same garble as Sax Wall."
+ },
+ {
+  "id": "wi_jake_s_rock",
+  "verdict": "ok",
+  "stored": [
+   42.939,
+   -88.0598
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/106537908/jakes-rock",
+    "retrieved_at": "2026-11-18",
+    "lat": 42.939,
+    "lng": -88.0598,
+    "fact": "MP: artificial boulder installed in Hales Corners Park"
+   }
+  ],
+  "note": "Stored right (Hales Corners Park, Milwaukee Co.); parent is a large region."
+ },
+ {
+  "id": "or_diamond_peak",
+  "verdict": "ok",
+  "stored": [
+   43.5207,
+   -122.14961
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/126830555/diamond-peak",
+    "retrieved_at": "2026-11-18",
+    "lat": 43.52055,
+    "lng": -122.14945,
+    "fact": "MP area page GPS line"
+   },
+   {
+    "url": "https://en.wikipedia.org/wiki/Diamond_Peak_(Oregon)",
+    "retrieved_at": "2026-11-18",
+    "lat": 43.520696292,
+    "lng": -122.149582933,
+    "fact": "Wikipedia infobox coordinate for Diamond Peak"
+   }
+  ],
+  "note": "Stored right; Oregon Volcanoes is a large region."
+ },
+ {
+  "id": "mt_roaring_lion_canyon",
+  "verdict": "ok",
+  "stored": [
+   46.18059,
+   -114.25934
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/108005068/roaring-lion-canyon",
+    "retrieved_at": "2026-11-18",
+    "lat": 46.18059,
+    "lng": -114.25934,
+    "fact": "MP area page GPS line"
+   }
+  ],
+  "note": "Stored matches MP (Bitterroot near Hamilton); Northwest Region is large; MP files under Missoula Area."
+ },
+ {
+  "id": "or_millicoma_boulders",
+  "verdict": "unresolved",
+  "stored": [
+   43.4792,
+   -123.93423
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [],
+  "note": "MP search for Millicoma returned nothing; not verified. Coos Bay area, likely ok under large Southwest Oregon."
+ },
+ {
+  "id": "mn_diagonals_wall",
+  "verdict": "fix_one_source",
+  "stored": [
+   45.89,
+   -94.5703
+  ],
+  "new_lat": 46.13669,
+  "new_lng": -92.85958,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": "Sandstone > Robinson Park (MP 106915998)",
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/106915998/diagonals-wall",
+    "retrieved_at": "2026-11-18",
+    "lat": 46.13669,
+    "lng": -92.85958,
+    "fact": "MP GPS; filed under Sandstone > Robinson Park"
+   }
+  ],
+  "note": "MP's Diagonals Wall is in Robinson Park, Sandstone, not the Ice Park; stored 45.89,-94.5703 is the shared garble."
+ },
+ {
+  "id": "wv_sutton_lake",
+  "verdict": "ok",
+  "stored": [
+   38.6487,
+   -80.6685
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/108005265/sutton-lake",
+    "retrieved_at": "2026-11-18",
+    "lat": 38.6543,
+    "lng": -80.682,
+    "fact": "MP area page GPS line"
+   }
+  ],
+  "note": "Stored right; Southern WV is large."
+ },
+ {
+  "id": "wi_wolf_rock",
+  "verdict": "ok",
+  "stored": [
+   46.03896,
+   -89.46916
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/106004170/wolf-rock",
+    "retrieved_at": "2026-11-18",
+    "lat": 46.05119,
+    "lng": -89.39505,
+    "fact": "MP area page GPS line"
+   }
+  ],
+  "note": "Stored within ~6 km of MP; Northern Highlands is large."
+ },
+ {
+  "id": "mt_coolidge",
+  "verdict": "ok",
+  "stored": [
+   45.4698533333333,
+   -113.02725
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/117994433/coolidge",
+    "retrieved_at": "2026-11-18",
+    "lat": 45.47041,
+    "lng": -113.02803,
+    "fact": "MP area page GPS line"
+   }
+  ],
+  "note": "Stored matches MP; Southwest Region is large."
+ },
+ {
+  "id": "or_harlan_rock_quarry",
+  "verdict": "ok",
+  "stored": [
+   44.55045,
+   -123.72434
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/105824042/harlan-rock-quarry",
+    "retrieved_at": "2026-11-18",
+    "lat": 44.55045,
+    "lng": -123.72434,
+    "fact": "MP area page GPS line"
+   }
+  ],
+  "note": "Stored matches MP; Willamette Valley is large."
+ },
+ {
+  "id": "ca_devils_staircase",
+  "verdict": "fix_one_source",
+  "stored": [
+   33.3882225,
+   -116.5873125
+  ],
+  "new_lat": 33.76248,
+  "new_lng": -116.67424,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/109907677/devils-staircase",
+    "retrieved_at": "2026-11-18",
+    "lat": 33.76248,
+    "lng": -116.67424,
+    "fact": "MP GPS; text: terraced cliffs south of Devils Slide Trail"
+   },
+   {
+    "url": "https://www.mountainproject.com/area/109014094/the-others",
+    "retrieved_at": "2026-11-18",
+    "lat": 33.76306,
+    "lng": -116.67715,
+    "fact": "MP parent The Others GPS"
+   }
+  ],
+  "note": "Stored 33.388 is ~41 km south; MP (only source) puts it by Devils Slide Trail, Idyllwild."
+ }
+]

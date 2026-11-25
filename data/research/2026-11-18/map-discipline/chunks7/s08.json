@@ -1,0 +1,825 @@
+[
+ {
+  "id": "ca_wheel_mountain_standard_route",
+  "name": "Standard route",
+  "peakName": "Wheel Mountain",
+  "state": "California",
+  "discipline": "scrambling",
+  "status": "nopage",
+  "peak": {
+   "id": "ca_wheel_mountain",
+   "name": "Wheel Mountain",
+   "lat": 37.0467,
+   "lng": -118.6294,
+   "elevation_ft": 12774,
+   "region": null,
+   "path": "usa.california.ca_western_sierra.ca_courtright_reservoir.ca_blackcap_basin_area.ca_wheel_mountain"
+  },
+  "text": {
+   "approach": null,
+   "approach_logistics": null,
+   "road": null,
+   "overview": null,
+   "description": null,
+   "descent": null
+  },
+  "siblingTrailheads": [],
+  "officialCandidates": [
+   {
+    "src": "USFS",
+    "name": "South Lake Trailhead",
+    "lat": 37.169305,
+    "lng": -118.565813,
+    "km": 14.8
+   },
+   {
+    "src": "USFS",
+    "name": "Baker/Green Lakes Th",
+    "lat": 37.186805,
+    "lng": -118.557713,
+    "km": 16.8
+   },
+   {
+    "src": "USFS",
+    "name": "TYEE TH",
+    "lat": 37.195805,
+    "lng": -118.564713,
+    "km": 17.5
+   },
+   {
+    "src": "USFS",
+    "name": "SABRINA LAKE TH",
+    "lat": 37.213605,
+    "lng": -118.610013,
+    "km": 18.6
+   },
+   {
+    "src": "USFS",
+    "name": "BIG PINE CREEK SO FORK TH",
+    "lat": 37.124805,
+    "lng": -118.438913,
+    "km": 19
+   },
+   {
+    "src": "USFS",
+    "name": "Big Pine Creek North Fork Trail Trailhea",
+    "lat": 37.128105,
+    "lng": -118.427713,
+    "km": 20
+   },
+   {
+    "src": "USFS",
+    "name": "LAMARCK LAKES TH",
+    "lat": 37.227305,
+    "lng": -118.627513,
+    "km": 20.1
+   },
+   {
+    "src": "USFS",
+    "name": "North Lake  Trailhead",
+    "lat": 37.230685,
+    "lng": -118.616614,
+    "km": 20.5
+   }
+  ],
+  "lastAnswer": {
+   "status": "stuck",
+   "trailhead": null,
+   "notes": "Reports reach it from South Lake (Bishop Pass), Lake Sabrina (via Echo Col, a loop), or the west side; 20+ mi from any lot. No standard-route page tying 'Standard route' to one start. Listsofjohn/SummitPost 403."
+  }
+ },
+ {
+  "id": "co_atlantic_peak_north_ridge",
+  "name": "North Ridge",
+  "peakName": "Atlantic Peak",
+  "state": "Colorado",
+  "discipline": "scrambling",
+  "status": "held",
+  "peak": {
+   "id": "co_atlantic_peak",
+   "name": "Atlantic Peak",
+   "lat": 39.4135,
+   "lng": -106.1259,
+   "elevation_ft": 13856,
+   "region": null,
+   "path": "usa.colorado.co_tenmile_range.co_atlantic_peak"
+  },
+  "text": {
+   "approach": null,
+   "approach_logistics": null,
+   "road": null,
+   "overview": null,
+   "description": "Trail up McCullough Gulch then a talus ridge; parking is restricted at this trailhead.",
+   "descent": null
+  },
+  "siblingTrailheads": [],
+  "officialCandidates": [
+   {
+    "src": "USFS",
+    "name": "Gold Hill Trailhead",
+    "lat": 39.415606,
+    "lng": -106.17115,
+    "km": 3.9
+   },
+   {
+    "src": "USFS",
+    "name": "Spruce Creek Trailhead",
+    "lat": 39.445284,
+    "lng": -106.048066,
+    "km": 7.6
+   },
+   {
+    "src": "USFS",
+    "name": "Boreas Pass Trailhead",
+    "lat": 39.462784,
+    "lng": -106.020844,
+    "km": 10.6
+   },
+   {
+    "src": "USFS",
+    "name": "Peak 7 Trailhead",
+    "lat": 39.508895,
+    "lng": -106.142788,
+    "km": 10.7
+   },
+   {
+    "src": "USFS",
+    "name": "Wheeler Trailhead",
+    "lat": 39.509451,
+    "lng": -106.141677,
+    "km": 10.8
+   },
+   {
+    "src": "USFS",
+    "name": "Buckeye Trailhead",
+    "lat": 39.332387,
+    "lng": -106.245475,
+    "km": 13.7
+   },
+   {
+    "src": "USFS",
+    "name": "Officer's Gulch Campground",
+    "lat": 39.537229,
+    "lng": -106.147233,
+    "km": 13.9
+   },
+   {
+    "src": "USFS",
+    "name": "Gold Dust Trailhead",
+    "lat": 39.360114,
+    "lng": -105.952473,
+    "km": 16
+   }
+  ],
+  "lastAnswer": {
+   "status": "found",
+   "trailhead": {
+    "name": "McCullough Gulch Trailhead",
+    "identifiedBy": {
+     "kind": "route_text",
+     "fact": "Trail up McCullough Gulch then a talus ridge; parking restricted; climb13ers lists the Atlantic North Ridge from McCullough Gulch TH"
+    },
+    "placements": [
+     {
+      "source": "climb13ers",
+      "name": "McCullough Gulch TH",
+      "lat": 39.39851,
+      "lng": -106.06926,
+      "url": "https://www.climb13ers.com/colorado-13ers/un13841--atlantic-peak"
+     }
+    ]
+   },
+   "notes": "Only one printed coordinate (climb13ers, converted from DMS). 14ers.com route page prints none and says small lot 1.4 mi up CR 851, then 0.3 mi walk past gate. Not the North McCullough TH (different fork). No USFS candidate matches. OSM match by script."
+  }
+ },
+ {
+  "id": "co_casco_peak_north_ridge",
+  "name": "North Ridge",
+  "peakName": "Casco Peak",
+  "state": "Colorado",
+  "discipline": "scrambling",
+  "status": "held",
+  "peak": {
+   "id": "co_casco_peak",
+   "name": "Casco Peak",
+   "lat": 39.114,
+   "lng": -106.4939,
+   "elevation_ft": 13905,
+   "region": null,
+   "path": "usa.colorado.co_sawatch_range.co_casco_peak"
+  },
+  "text": {
+   "approach": null,
+   "approach_logistics": null,
+   "road": null,
+   "overview": null,
+   "description": "Rocky ridge scramble that is usually combined with French Mountain and Frasco Benchmark.",
+   "descent": null
+  },
+  "siblingTrailheads": [],
+  "officialCandidates": [
+   {
+    "src": "USFS",
+    "name": "North Fork Lake Creek Trailhead",
+    "lat": 39.121339,
+    "lng": -106.534909,
+    "km": 3.6
+   },
+   {
+    "src": "USFS",
+    "name": "Echo Canyon Trailhead",
+    "lat": 39.073788,
+    "lng": -106.470232,
+    "km": 4.9
+   },
+   {
+    "src": "USFS",
+    "name": "North Halfmoon Trailhead",
+    "lat": 39.153514,
+    "lng": -106.463229,
+    "km": 5.1
+   },
+   {
+    "src": "USFS",
+    "name": "Laplata (North) Trailhead",
+    "lat": 39.067908,
+    "lng": -106.504924,
+    "km": 5.2
+   },
+   {
+    "src": "USFS",
+    "name": "Graham Gulch Trailhead",
+    "lat": 39.08169,
+    "lng": -106.537077,
+    "km": 5.2
+   },
+   {
+    "src": "USFS",
+    "name": "Independence Pass Road Trailhead",
+    "lat": 39.10834,
+    "lng": -106.564177,
+    "km": 6.1
+   },
+   {
+    "src": "USFS",
+    "name": "Independence Pass Trailhead",
+    "lat": 39.108524,
+    "lng": -106.563955,
+    "km": 6.1
+   },
+   {
+    "src": "USFS",
+    "name": "Monitor Rock Trailhead",
+    "lat": 39.071802,
+    "lng": -106.446555,
+    "km": 6.2
+   }
+  ],
+  "lastAnswer": {
+   "status": "found",
+   "trailhead": {
+    "name": "South Halfmoon Creek Trailhead",
+    "identifiedBy": {
+     "kind": "page",
+     "url": "https://www.climb13ers.com/colorado-13ers/casco-peak",
+     "fact": "North Ridge (Class 2+) from Frasco Benchmark, combined with French Mountain, starts at South Halfmoon Creek TH, 10,290 ft"
+    },
+    "placements": [
+     {
+      "source": "climb13ers",
+      "name": "South Halfmoon Creek TH",
+      "lat": 39.150567,
+      "lng": -106.455289,
+      "url": "https://www.climb13ers.com/colorado-13ers/casco-peak"
+     }
+    ]
+   },
+   "notes": "Page is about this exact route and matches the stored text (combined with French and Frasco). Placement is climb13ers only (converted from DMS); not in USFS candidates (North Halfmoon TH is a different road)."
+  }
+ },
+ {
+  "id": "co_dyer_mountain_southeast_slopes",
+  "name": "Southeast Slopes",
+  "peakName": "Dyer Mountain",
+  "state": "Colorado",
+  "discipline": "scrambling",
+  "status": "held",
+  "peak": {
+   "id": "co_dyer_mountain",
+   "name": "Dyer Mountain",
+   "lat": 39.2398,
+   "lng": -106.1832,
+   "elevation_ft": 13861,
+   "region": null,
+   "path": "usa.colorado.co_mosquito_range.co_dyer_mountain"
+  },
+  "text": {
+   "approach": null,
+   "approach_logistics": null,
+   "road": null,
+   "overview": null,
+   "description": "Short climb from a high trailhead above Leadville.",
+   "descent": null
+  },
+  "siblingTrailheads": [],
+  "officialCandidates": [
+   {
+    "src": "USFS",
+    "name": "Limber Grove Trailhead",
+    "lat": 39.20833,
+    "lng": -106.100515,
+    "km": 7.9
+   },
+   {
+    "src": "USFS",
+    "name": "Tie Hack Trailhead",
+    "lat": 39.205871,
+    "lng": -106.070108,
+    "km": 10.4
+   },
+   {
+    "src": "USFS",
+    "name": "Hay Park Trailhead",
+    "lat": 39.248071,
+    "lng": -106.055303,
+    "km": 11.1
+   },
+   {
+    "src": "USFS",
+    "name": "Buckeye Trailhead",
+    "lat": 39.332387,
+    "lng": -106.245475,
+    "km": 11.6
+   },
+   {
+    "src": "USFS",
+    "name": "Browns Pass Trailhead",
+    "lat": 39.16986,
+    "lng": -106.052504,
+    "km": 13.7
+   },
+   {
+    "src": "USFS",
+    "name": "Beaver Creek Trailhead",
+    "lat": 39.260683,
+    "lng": -106.017017,
+    "km": 14.5
+   },
+   {
+    "src": "USFS",
+    "name": "Two Bit Trailhead",
+    "lat": 39.116993,
+    "lng": -106.272565,
+    "km": 15.7
+   },
+   {
+    "src": "USFS",
+    "name": "Turquoise Lake Dam Trailhead",
+    "lat": 39.252122,
+    "lng": -106.368746,
+    "km": 16
+   }
+  ],
+  "lastAnswer": {
+   "status": "found",
+   "trailhead": {
+    "name": "Iowa Gulch - Leadville Trailhead",
+    "identifiedBy": {
+     "kind": "page",
+     "url": "https://www.climb13ers.com/colorado-13ers/dyer-mountain",
+     "fact": "SE flank is part of the circuit from Iowa Gulch TH (11,650 ft, 4.5 mi, 2205 ft); Hiking Project describes the easy south side from the same Iowa Gulch cul-de-sac"
+    },
+    "placements": [
+     {
+      "source": "climb13ers",
+      "name": "Iowa Gulch - Leadville TH",
+      "lat": 39.22972,
+      "lng": -106.20085,
+      "url": "https://www.climb13ers.com/colorado-13ers/trailhead/iowa-gulch---leadville"
+     }
+    ]
+   },
+   "notes": "Medium: no page titled southeast slopes; stored text 'short climb from a high trailhead' fits Iowa Gulch, not the 12 mi SE Ridge from Fourmile. Placement is climb13ers printed coordinate (N39 13 46.98 W106 12 03.07); no USFS point in list."
+  }
+ },
+ {
+  "id": "co_french_mountain_southeast_ridge",
+  "name": "Southeast Ridge",
+  "peakName": "French Mountain",
+  "state": "Colorado",
+  "discipline": "scrambling",
+  "status": "held",
+  "peak": {
+   "id": "co_french_mountain",
+   "name": "French Mountain",
+   "lat": 39.1284,
+   "lng": -106.4823,
+   "elevation_ft": 13942,
+   "region": null,
+   "path": "usa.colorado.co_sawatch_range.co_french_mountain"
+  },
+  "text": {
+   "approach": null,
+   "approach_logistics": null,
+   "road": null,
+   "overview": null,
+   "description": "Grassy ridge and flank above the Halfmoon drainage; often linked in a day with Frasco Benchmark and Casco Peak.",
+   "descent": null
+  },
+  "siblingTrailheads": [],
+  "officialCandidates": [
+   {
+    "src": "USFS",
+    "name": "North Halfmoon Trailhead",
+    "lat": 39.153514,
+    "lng": -106.463229,
+    "km": 3.2
+   },
+   {
+    "src": "USFS",
+    "name": "North Fork Lake Creek Trailhead",
+    "lat": 39.121339,
+    "lng": -106.534909,
+    "km": 4.6
+   },
+   {
+    "src": "USFS",
+    "name": "Mt. Massive Overflow Trailhead",
+    "lat": 39.151511,
+    "lng": -106.419416,
+    "km": 6
+   },
+   {
+    "src": "USFS",
+    "name": "Main Massive Trailhead",
+    "lat": 39.15155,
+    "lng": -106.419391,
+    "km": 6
+   },
+   {
+    "src": "USFS",
+    "name": "Echo Canyon Trailhead",
+    "lat": 39.073788,
+    "lng": -106.470232,
+    "km": 6.2
+   },
+   {
+    "src": "USFS",
+    "name": "Mt. Elbert Trailhead",
+    "lat": 39.15234,
+    "lng": -106.411995,
+    "km": 6.6
+   },
+   {
+    "src": "USFS",
+    "name": "Monitor Rock Trailhead",
+    "lat": 39.071802,
+    "lng": -106.446555,
+    "km": 7
+   },
+   {
+    "src": "USFS",
+    "name": "Laplata (North) Trailhead",
+    "lat": 39.067908,
+    "lng": -106.504924,
+    "km": 7
+   }
+  ],
+  "lastAnswer": {
+   "status": "found",
+   "trailhead": {
+    "name": "South Halfmoon Creek Trailhead",
+    "identifiedBy": {
+     "kind": "page",
+     "url": "https://www.climb13ers.com/colorado-13ers/french-mountain",
+     "fact": "climb13ers 'French Mtn. SE Ridge & flank Route' trailhead: South Halfmoon Creek TH, 10,290 ft, FR110J"
+    },
+    "placements": [
+     {
+      "source": "climb13ers",
+      "name": "South Halfmoon Creek TH",
+      "lat": 39.150567,
+      "lng": -106.455289,
+      "url": "https://www.climb13ers.com/colorado-13ers/french-mountain"
+     }
+    ]
+   },
+   "notes": "Strong identification: climb13ers' only French Mountain route is named SE Ridge. Coordinate converted from the DMS printed on that page (39 09 02.04 N, 106 27 19.04 W). Not in officialCandidates (USFS list has North Halfmoon, a different trailhead). The page prints a different coordinate for the Mt. Massive TH, so this is a separate point up the road. OSM name match 'South Halfmoon' still worth a check."
+  }
+ },
+ {
+  "id": "co_half_peak_northwest_ridge",
+  "name": "Northwest Ridge",
+  "peakName": "Half Peak",
+  "state": "Colorado",
+  "discipline": "scrambling",
+  "status": "held",
+  "peak": {
+   "id": "co_half_peak",
+   "name": "Half Peak",
+   "lat": 37.8643,
+   "lng": -107.4667,
+   "elevation_ft": 13866,
+   "region": null,
+   "path": "usa.colorado.co_san_juans.co_half_peak"
+  },
+  "text": {
+   "approach": null,
+   "approach_logistics": null,
+   "road": null,
+   "overview": null,
+   "description": "Remote peak near the Continental Divide whose mileage depends on how far a high-clearance vehicle can drive; rough ridge scrambling near the top.",
+   "descent": null
+  },
+  "siblingTrailheads": [],
+  "officialCandidates": [
+   {
+    "src": "USFS",
+    "name": "Pole Creek Trailhead",
+    "lat": 37.761996,
+    "lng": -107.46662,
+    "km": 11.4
+   },
+   {
+    "src": "USFS",
+    "name": "Lost Trail Trailhead",
+    "lat": 37.771516,
+    "lng": -107.35757,
+    "km": 14.1
+   },
+   {
+    "src": "USFS",
+    "name": "Ute Creek Trailhead",
+    "lat": 37.759296,
+    "lng": -107.34319,
+    "km": 15.9
+   },
+   {
+    "src": "USFS",
+    "name": "Bear Town Trail",
+    "lat": 37.715006,
+    "lng": -107.51001,
+    "km": 17
+   },
+   {
+    "src": "USFS",
+    "name": "Hayden Trailhead",
+    "lat": 37.959506,
+    "lng": -107.662211,
+    "km": 20.2
+   },
+   {
+    "src": "USFS",
+    "name": "Engineer Pass",
+    "lat": 37.98865,
+    "lng": -107.649329,
+    "km": 21.2
+   },
+   {
+    "src": "USFS",
+    "name": "Nellie Creek Trailhead",
+    "lat": 38.062606,
+    "lng": -107.42211,
+    "km": 22.4
+   },
+   {
+    "src": "USFS",
+    "name": "Bear Creek Trailhead",
+    "lat": 38.002398,
+    "lng": -107.661335,
+    "km": 23
+   }
+  ],
+  "lastAnswer": {
+   "status": "found",
+   "trailhead": {
+    "name": "Carson Pass Trailhead (4x4)",
+    "identifiedBy": {
+     "kind": "page",
+     "url": "https://www.climb13ers.com/colorado-13ers/half-peak",
+     "fact": "Half Peak NW Ridge route start: Carson Pass TH 12,370 ft, 4x4 only, 26 mi RT 5,175 ft"
+    },
+    "placements": [
+     {
+      "source": "climb13ers",
+      "name": "Carson Pass TH",
+      "lat": 37.856264,
+      "lng": -107.368058,
+      "url": "https://www.climb13ers.com/colorado-13ers/half-peak"
+     }
+    ]
+   },
+   "notes": "Placement is climb13ers printed DMS N37 51 22.55 W107 22 05.01 = 37.85626,-107.36806. Page headlines Carson Pass TH as the route's start; many parties use Cataract Gulch TH (no coordinate). TH ~11 km from summit. Single placement."
+  }
+ },
+ {
+  "id": "co_horseshoe_mountain_east_slopes",
+  "name": "East Slopes",
+  "peakName": "Horseshoe Mountain",
+  "state": "Colorado",
+  "discipline": "scrambling",
+  "status": "nopage",
+  "peak": {
+   "id": "co_horseshoe_mountain",
+   "name": "Horseshoe Mountain",
+   "lat": 39.1854,
+   "lng": -106.185,
+   "elevation_ft": 13918,
+   "region": null,
+   "path": "usa.colorado.co_mosquito_range.co_horseshoe_mountain"
+  },
+  "text": {
+   "approach": null,
+   "approach_logistics": null,
+   "road": null,
+   "overview": null,
+   "description": "Gentle walk-up on tundra slopes in the Mosquito Range; one of the easiest Centennial 13ers.",
+   "descent": null
+  },
+  "siblingTrailheads": [],
+  "officialCandidates": [
+   {
+    "src": "USFS",
+    "name": "Limber Grove Trailhead",
+    "lat": 39.20833,
+    "lng": -106.100515,
+    "km": 7.7
+   },
+   {
+    "src": "USFS",
+    "name": "Tie Hack Trailhead",
+    "lat": 39.205871,
+    "lng": -106.070108,
+    "km": 10.2
+   },
+   {
+    "src": "USFS",
+    "name": "Two Bit Trailhead",
+    "lat": 39.116993,
+    "lng": -106.272565,
+    "km": 10.7
+   },
+   {
+    "src": "USFS",
+    "name": "Browns Pass Trailhead",
+    "lat": 39.16986,
+    "lng": -106.052504,
+    "km": 11.6
+   },
+   {
+    "src": "USFS",
+    "name": "Hay Park Trailhead",
+    "lat": 39.248071,
+    "lng": -106.055303,
+    "km": 13.2
+   },
+   {
+    "src": "USFS",
+    "name": "Rich Creek Trailhead",
+    "lat": 39.068252,
+    "lng": -106.116417,
+    "km": 14.3
+   },
+   {
+    "src": "USFS",
+    "name": "Low Pass Trailhead",
+    "lat": 39.063129,
+    "lng": -106.2449,
+    "km": 14.5
+   },
+   {
+    "src": "USFS",
+    "name": "Hayden Gulch Trailhead",
+    "lat": 39.054211,
+    "lng": -106.202016,
+    "km": 14.7
+   }
+  ],
+  "lastAnswer": {
+   "status": "stuck",
+   "trailhead": {
+    "name": "Fourmile-Leavick Trailhead",
+    "identifiedBy": {
+     "kind": "page",
+     "url": "https://www.climb13ers.com/colorado-13ers/horseshoe-mountain",
+     "fact": "page's route (NE Ridge, not East Slopes) starts at Fourmile-Leavick TH 11,250 ft"
+    },
+    "placements": [
+     {
+      "source": "climb13ers",
+      "name": "Fourmile-Leavick TH",
+      "lat": 39.195803,
+      "lng": -106.137725,
+      "url": "https://www.climb13ers.com/colorado-13ers/horseshoe-mountain"
+     }
+    ]
+   },
+   "notes": "Stuck: page covers the NE Ridge, not an East Slopes route; nothing ties East Slopes to a start. Fourmile-Leavick is the only start the page gives (inferred, weak). Coordinate printed N39 11 44.89 W106 08 15.81 = 39.19580,-106.13772 (corrected below)."
+  }
+ },
+ {
+  "id": "co_jones_mountain_northeast_ridge",
+  "name": "Northeast Ridge",
+  "peakName": "Jones Mountain",
+  "state": "Colorado",
+  "discipline": "scrambling",
+  "status": "held",
+  "peak": {
+   "id": "co_jones_mountain",
+   "name": "Jones Mountain",
+   "lat": 37.8965,
+   "lng": -107.5264,
+   "elevation_ft": 13867,
+   "region": null,
+   "path": "usa.colorado.co_san_juans.co_jones_mountain"
+  },
+  "text": {
+   "approach": null,
+   "approach_logistics": null,
+   "road": null,
+   "overview": null,
+   "description": "Straightforward ridge walk, normally strung together with American and Niagara peaks.",
+   "descent": null
+  },
+  "siblingTrailheads": [],
+  "officialCandidates": [
+   {
+    "src": "USFS",
+    "name": "Hayden Trailhead",
+    "lat": 37.959506,
+    "lng": -107.662211,
+    "km": 13.8
+   },
+   {
+    "src": "USFS",
+    "name": "Engineer Pass",
+    "lat": 37.98865,
+    "lng": -107.649329,
+    "km": 14.9
+   },
+   {
+    "src": "USFS",
+    "name": "Pole Creek Trailhead",
+    "lat": 37.761996,
+    "lng": -107.46662,
+    "km": 15.9
+   },
+   {
+    "src": "USFS",
+    "name": "Bear Creek Trailhead",
+    "lat": 38.002398,
+    "lng": -107.661335,
+    "km": 16.7
+   },
+   {
+    "src": "USFS",
+    "name": "Upper Cascade Falls",
+    "lat": 38.022036,
+    "lng": -107.660551,
+    "km": 18.3
+   },
+   {
+    "src": "USFS",
+    "name": "Bear Town Trail",
+    "lat": 37.715006,
+    "lng": -107.51001,
+    "km": 20.2
+   },
+   {
+    "src": "USFS",
+    "name": "Lost Trail Trailhead",
+    "lat": 37.771516,
+    "lng": -107.35757,
+    "km": 20.3
+   },
+   {
+    "src": "USFS",
+    "name": "Nellie Creek Trailhead",
+    "lat": 38.062606,
+    "lng": -107.42211,
+    "km": 20.6
+   }
+  ],
+  "lastAnswer": {
+   "status": "found",
+   "trailhead": {
+    "name": "Burns Gulch Trailhead",
+    "identifiedBy": {
+     "kind": "page",
+     "url": "https://www.climb13ers.com/colorado-13ers/jones-mountain-2",
+     "fact": "Page for Jones Mountain (A) lists an NE Ridge Route from Burns Gulch via American Peak, 9.6 mi / 4150 ft round trip"
+    },
+    "placements": [
+     {
+      "source": "climb13ers printed coordinate",
+      "name": "Burns Gulch Trailhead",
+      "lat": 37.91798,
+      "lng": -107.558,
+      "url": "https://www.climb13ers.com/colorado-13ers/jones-mountain-2"
+     }
+    ]
+   },
+   "notes": "Now from the page titled Jones Mountain (A), which names the NE Ridge Route. Single placement (climb13ers coordinate); no land-manager point matches. Other starts mentioned there: Cuba Gulch (east) and American Basin (via Cinnamon Pass); SummitPost lists South Ridge as the easiest route, a different line."
+  }
+ }
+]

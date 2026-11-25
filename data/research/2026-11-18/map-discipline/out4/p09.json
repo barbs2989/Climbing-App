@@ -1,0 +1,275 @@
+[
+ {
+  "id": "me_sugarloaf_mountain_appalachian_trail_to_sugarloaf",
+  "status": "stuck",
+  "trailhead": null,
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "Earlier pass identified the Caribou Valley Road gate lot (mainebyfoot page). No coordinate for the gate lot found: Nominatim only returns Caribou Valley Road way 11427999 (a track, 45.03185,-70.34498), not the lot. Not placed."
+ },
+ {
+  "id": "nv_mount_rose_mount_rose_trail",
+  "status": "stuck",
+  "trailhead": null,
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "Identification (Mount Rose Summit lot on SR 431, tahoetrailguide + Wikipedia) was already inferred in earlier pass. OSM has unnamed parking ways at the pass: way 38789805 (39.31353,-119.89750) and node 3397154916 (39.31491,-119.89355); neither named, no land-manager point (USFS Tahoe Meadows lot is 1.2 km east, 39.30727,-119.90729 matches OSM way 38782007, a different lot). Left stuck; OSM way 38789805 agrees with earlier Wikipedia pass point within ~100 m if owner accepts."
+ },
+ {
+  "id": "ny_gray_peak_via_lake_tear_of_the_clouds",
+  "status": "found",
+  "trailhead": {
+   "name": "High Peaks Information Center / Adirondak Loj",
+   "identifiedBy": {
+    "kind": "route_text",
+    "fact": "Starts at Adirondak Loj / High Peaks Information Center"
+   },
+   "placements": [
+    {
+     "source": "OSM",
+     "name": "High Peaks Information Center",
+     "lat": 44.1828012,
+     "lng": -73.9639448,
+     "url": "https://www.openstreetmap.org/way/223290700"
+    },
+    {
+     "source": "OSM",
+     "name": "Adirondak Loj",
+     "lat": 44.1827667,
+     "lng": -73.9661642,
+     "url": "https://www.openstreetmap.org/way/489821677"
+    },
+    {
+     "source": "lakeplacid.com",
+     "name": "High Peak Information Center, ADK lot",
+     "lat": 44.182389,
+     "lng": -73.966441,
+     "url": "https://www.lakeplacid.com/hiking/mount-marcy"
+    }
+   ]
+  },
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "OSM HPIC point is ~200 m east of the Loj building point; the parking lot lies between. No NYSDEC coordinate."
+ },
+ {
+  "id": "ny_iroquois_peak_via_algonquin_peak",
+  "status": "found",
+  "trailhead": {
+   "name": "High Peaks Information Center / Adirondak Loj",
+   "identifiedBy": {
+    "kind": "route_text",
+    "fact": "Starts at Adirondak Loj / High Peaks Information Center; Algonquin Peak trail"
+   },
+   "placements": [
+    {
+     "source": "OSM",
+     "name": "High Peaks Information Center",
+     "lat": 44.1828012,
+     "lng": -73.9639448,
+     "url": "https://www.openstreetmap.org/way/223290700"
+    },
+    {
+     "source": "OSM",
+     "name": "Adirondak Loj",
+     "lat": 44.1827667,
+     "lng": -73.9661642,
+     "url": "https://www.openstreetmap.org/way/489821677"
+    },
+    {
+     "source": "lakeplacid.com",
+     "name": "High Peak Information Center, ADK lot",
+     "lat": 44.182389,
+     "lng": -73.966441,
+     "url": "https://www.lakeplacid.com/hiking/mount-marcy"
+    }
+   ]
+  },
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "Same lot as Gray Peak."
+ },
+ {
+  "id": "ny_mount_colvin_gill_brook_trail",
+  "status": "found",
+  "trailhead": {
+   "name": "Adirondack Mountain Reserve parking area (Ausable Club lot), St. Huberts, Route 73",
+   "identifiedBy": {
+    "kind": "page",
+    "url": "https://www.lakeplacid.com/hiking/mount-colvin",
+    "fact": "Colvin via Gill Brook Trail starts at AMR lot on Route 73; Lake Road then Gill Brook Trail"
+   },
+   "placements": [
+    {
+     "source": "NYSDEC",
+     "name": "Adirondack Mountain Reserve parking area",
+     "lat": 44.14915,
+     "lng": -73.7694,
+     "url": "https://dec.ny.gov/places/adirondack-mountain-reserve-conservation-easement-tract"
+    },
+    {
+     "source": "OSM",
+     "name": "Ausable Club Parking Area",
+     "lat": 44.14951,
+     "lng": -73.76796,
+     "url": "https://www.openstreetmap.org/way/424541646"
+    },
+    {
+     "source": "lakeplacid.com",
+     "name": "AMR parking, Route 73",
+     "lat": 44.14985,
+     "lng": -73.767699,
+     "url": "https://www.lakeplacid.com/hiking/mount-colvin"
+    }
+   ]
+  },
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "Placements within ~130 m. OSM way 356987003 'Roaring Brook Parking Area' (44.15044,-73.76748) is the adjacent Roaring Brook lot on the same road; Gill Brook is reached from the AMR/Ausable Club lot per the page."
+ },
+ {
+  "id": "ny_mount_skylight_via_mount_marcy",
+  "status": "found",
+  "trailhead": {
+   "name": "High Peaks Information Center / Adirondak Loj",
+   "identifiedBy": {
+    "kind": "route_text",
+    "fact": "Van Hoevenberg Trail. Starts at Adirondak Loj / High Peaks Information Center"
+   },
+   "placements": [
+    {
+     "source": "OSM",
+     "name": "High Peaks Information Center",
+     "lat": 44.1828012,
+     "lng": -73.9639448,
+     "url": "https://www.openstreetmap.org/way/223290700"
+    },
+    {
+     "source": "OSM",
+     "name": "Adirondak Loj",
+     "lat": 44.1827667,
+     "lng": -73.9661642,
+     "url": "https://www.openstreetmap.org/way/489821677"
+    },
+    {
+     "source": "lakeplacid.com",
+     "name": "High Peak Information Center, ADK lot",
+     "lat": 44.182389,
+     "lng": -73.966441,
+     "url": "https://www.lakeplacid.com/hiking/mount-marcy"
+    }
+   ]
+  },
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "Same lot as Gray Peak."
+ },
+ {
+  "id": "wa_american_border_peak_northeast_face",
+  "status": "stuck",
+  "trailhead": null,
+  "reachesSummit": "unknown",
+  "summitEvidence": {
+   "kind": "route_text",
+   "fact": "overview says class 3-4 rock 'to the summit'",
+   "url": ""
+  },
+  "otherFacts": [],
+  "notes": "Overview text says the route goes to the summit (lean true) but no page checked. Trailhead still not identified for this face: Twin Lakes Trailhead is likely (USFS 48.951763,-121.635355; OSM way 837678310 48.95166,-121.63525) but only unverified. Peakbagger fetch failed (page navigated away); not retried."
+ },
+ {
+  "id": "wa_apex_mountain_pasayten_apex_buttress",
+  "status": "stuck",
+  "trailhead": null,
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "Thirtymile still only inferred from the Tungsten Lake hike, not this buttress. Placements exist if accepted: USFS Thirty Mile Trailhead 48.822806,-120.019715; OSM way 351078767 (48.8229017,-120.0198223). Chewuch is the alternative. Left stuck."
+ },
+ {
+  "id": "wa_big_snow_mountain_sasquatch_s_breath",
+  "status": "stuck",
+  "trailhead": null,
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "No page about this route found; face unknown. Dingford Creek (USFS 47.517325,-121.4543; OSM way 122088962 47.51727,-121.45426) only applies if the route is on the Dingford side."
+ },
+ {
+  "id": "wa_booker_mountain_northwest_route",
+  "status": "found",
+  "trailhead": {
+   "name": "Thunder Creek Trailhead (Colonial Creek Campground)",
+   "identifiedBy": {
+    "kind": "route_text",
+    "fact": "Thunder Creek Trail from Colonial Creek Campground to Park Creek Pass"
+   },
+   "placements": [
+    {
+     "source": "WTA",
+     "name": "Park Creek / Thunder Creek trailhead at Colonial Creek Campground",
+     "lat": 48.6855,
+     "lng": -121.0926,
+     "url": "https://www.wta.org/go-hiking/hikes/park-creek-pass"
+    },
+    {
+     "source": "OSM",
+     "name": "Parking at Colonial Creek (unnamed)",
+     "lat": 48.68547,
+     "lng": -121.09254,
+     "url": "https://www.openstreetmap.org/way/1210519116"
+    }
+   ]
+  },
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "OSM parking way is unnamed, within 10 m of the WTA point. No NPS point in candidates."
+ },
+ {
+  "id": "wa_burgundy_spire_corkscrew_route",
+  "status": "stuck",
+  "trailhead": null,
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "Pullout identified only at area level; Nominatim finds no parking or trailhead within 1 km of Burgundy Col area. No placement."
+ },
+ {
+  "id": "wa_cadet_peak_ne_ridge",
+  "status": "found",
+  "trailhead": {
+   "name": "Bedal Creek Trailhead (end of FR 4096)",
+   "identifiedBy": {
+    "kind": "route_text",
+    "fact": "Start from the end of Forest Service road 4096 and follow the Bedal Creek trail"
+   },
+   "placements": [
+    {
+     "source": "WTA",
+     "name": "Bedal Creek trailhead (Trail 705)",
+     "lat": 48.0701,
+     "lng": -121.3753,
+     "url": "https://www.wta.org/go-hiking/hikes/bedal-creek"
+    },
+    {
+     "source": "OSM",
+     "name": "Bedal Creek Trailhead",
+     "lat": 48.073457,
+     "lng": -121.376681,
+     "url": "https://www.openstreetmap.org/node/50819875"
+    }
+   ]
+  },
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "WTA and OSM about 350 m apart; OSM node is the tagged highway=trailhead, WTA likely the road end lower down. Ask owner to prefer OSM node (named trailhead)."
+ }
+]

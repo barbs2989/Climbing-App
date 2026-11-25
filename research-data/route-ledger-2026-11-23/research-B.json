@@ -1,0 +1,49 @@
+{
+"wa_forbidden_peak_east_ledges": {
+ "claims": [
+  {"field":"dist_to_camp_note","value_as_stated":"old Diamond Mine roadbed for about 1 mile, then steep trail to Boston Basin high camp at about 6,500 ft","from_trailhead":"Boston Basin Trailhead (3,200 ft), Cascade River Road 21.7 mi","to":"camp","url":"https://www.mountaineers.org/activities/routes-places/boston-basin-area-review/forbidden-peak-west-ridge","publisher":"The Mountaineers","quote_of_fact":"about 1 mile","retrieved_at":"2026-11-23"},
+  {"field":"gain_ft_one_way","value_as_stated":"3,300 ft Trailhead to Camp (3 hr)","from_trailhead":"Boston Basin Trailhead","to":"camp","url":"https://www.mountaineers.org/activities/routes-places/boston-basin-area-review/forbidden-peak-west-ridge","publisher":"The Mountaineers","quote_of_fact":"3,300","retrieved_at":"2026-11-23"},
+  {"field":"gain_round_trip","value_as_stated":"Route Elevation Gain 5,600 ft (West Ridge route, same approach); camp to summit 2,300 ft","from_trailhead":"Boston Basin Trailhead","to":"summit","url":"https://www.mountaineers.org/activities/routes-places/boston-basin-area-review/forbidden-peak-west-ridge","publisher":"The Mountaineers","quote_of_fact":"5,600 ft","retrieved_at":"2026-11-23"}
+ ],
+ "trailhead_note": "Same trailhead (Boston Basin, 3,200 ft) as sources. Source gives no total one-way mileage to summit. Stored 0.8 km one way is clearly far too short; the walk to camp alone is over 1 mi. These figures are for the West Ridge route (same approach), not East Ledges.",
+ "other_facts": [
+  {"fact":"Boston Basin trailhead is 21.7 mi up Cascade River Road (FR 15) from Marblemount, pull-out just before Cascade Pass trailhead; register at Marblemount Ranger Station","url":"https://www.mountaineers.org/activities/routes-places/boston-basin-area-review/forbidden-peak-west-ridge"},
+  {"fact":"Forbidden Peak high point 8,815 ft; summit to trailhead descent 8-10 hr (West Ridge)","url":"https://www.mountaineers.org/activities/routes-places/boston-basin-area-review/forbidden-peak-west-ridge"}
+ ],
+ "not_found": ["Mountaineers page has no Length line for West Ridge; Skyward page gave no usable figures to me; Peakbagger search form did not return results via URL; East Ledges route not found on any page opened; SummitPost 403"]
+},
+"wa_austera_peak_southwest_ridge": {
+ "claims": [
+  {"field":"distance_round_trip","value_as_stated":"Length 15.0 mi (Inspiration-McAllister-Klawatti Ice Cap Traverse, Austera is optional tag-along), gain 6,000 ft, high point 8,334 ft","from_trailhead":"Eldorado trailhead (Cascade River Road)","to":"ice cap traverse, not Austera specifically","url":"https://www.mountaineers.org/activities/routes-places/north-cascades-national-park-cross-country-zones/inspiration-mcallister-klawatti-ice-cap","publisher":"The Mountaineers","quote_of_fact":"15.0 mi; 6,000 ft","retrieved_at":"2026-11-23"}
+ ],
+ "trailhead_note": "Mountaineers uses Eldorado trailhead on Cascade River Road; consistent with stored. Figures are for a different (traverse) route and not clearly one-way or round trip; do not apply to Austera without review.",
+ "other_facts": [
+  {"fact":"Route involves Klawatti col, McAllister glacier, notch at base of Klawatti north ridge; Austera optionally with Primus","url":"https://www.mountaineers.org/activities/routes-places/north-cascades-national-park-cross-country-zones/inspiration-mcallister-klawatti-ice-cap"},
+  {"fact":"Parking permit: Northwest Forest Pass; max party size 6 (North Cascades NP)","url":"https://www.mountaineers.org/activities/routes-places/north-cascades-national-park-cross-country-zones/inspiration-mcallister-klawatti-ice-cap"}
+ ],
+ "not_found": ["SummitPost 403 (skip)", "no Austera-specific one-way mileage found in a page I opened"]
+},
+"wa_sherman_peak_baker_route": {
+ "claims": [
+  {"field":"distance_round_trip","value_as_stated":"Length: 13.4 mi","from_trailhead":"Park Butte / Schriebers Meadow trailhead via Park Butte Trail, Railroad Grade, Squak Glacier","to":"summit and back (Squak Glacier route)","url":"https://www.mountaineers.org/activities/routes-places/sherman-peak-squak-glacier-mount-baker","publisher":"The Mountaineers","quote_of_fact":"13.4 mi","retrieved_at":"2026-11-23"},
+  {"field":"gain_round_trip","value_as_stated":"Elevation Gain: 6,800 ft; TH to Camp 3,211 ft; Camp to Summit 3,589 ft","from_trailhead":"same","to":"summit","url":"https://www.mountaineers.org/activities/routes-places/sherman-peak-squak-glacier-mount-baker","publisher":"The Mountaineers","quote_of_fact":"6,800 ft","retrieved_at":"2026-11-23"},
+  {"field":"dist_to_landmark","value_as_stated":"Morovitz Meadows at 2 mi","from_trailhead":"Park Butte trailhead","to":"Morovitz Meadows","url":"https://www.mountaineers.org/activities/routes-places/sherman-peak-squak-glacier-mount-baker","publisher":"The Mountaineers","quote_of_fact":"2 mi","retrieved_at":"2026-11-23"},
+  {"field":"distance_round_trip","value_as_stated":"7.5 miles roundtrip, gain 2,200 ft, high point 5,450 ft (Park Butte hike, not the climb)","from_trailhead":"Park Butte trailhead","to":"Park Butte","url":"https://www.wta.org/go-hiking/hikes/park-butte","publisher":"WTA","quote_of_fact":"7.5 miles","retrieved_at":"2026-11-23"}
+ ],
+ "trailhead_note": "Same Park Butte trailhead (Sulfur Creek / FR 13). Note Mountaineers page does not state whether 13.4 mi is round trip; with 6,800 ft gain it is almost certainly the full trip, but app team decides. Stored 3.9 km one way is far too short; our own trip plan (10.9 mi day) is compatible with 13.4 mi round trip only roughly.",
+ "other_facts": [
+  {"fact":"Sherman Peak high point 10,160 ft; times TH to camp 4-5 hr, camp to summit 5-7 hr, summit to camp 2-3 hr, camp to TH 2-4 hr","url":"https://www.mountaineers.org/activities/routes-places/sherman-peak-squak-glacier-mount-baker"},
+  {"fact":"From high camp: rising traverse of Squak Glacier toward south ridge of Sherman; steep snow on ridge to summit","url":"https://www.mountaineers.org/activities/routes-places/sherman-peak-squak-glacier-mount-baker"},
+  {"fact":"Route goes via Easton? No: mountaineers route is Squak Glacier, not Easton Glacier (differs from our route name)","url":"https://www.mountaineers.org/activities/routes-places/sherman-peak-squak-glacier-mount-baker"}
+ ],
+ "not_found": ["no one-way figure stated by any page opened"]
+},
+"wa_big_four_mountain_spindrift_couloir": {
+ "claims": [
+  {"field":"distance_round_trip","value_as_stated":"2.2 miles roundtrip, gain 220 ft, highest point 1,938 ft (Ice Caves trail only)","from_trailhead":"Big Four Ice Caves trailhead","to":"Ice Caves","url":"https://www.wta.org/go-hiking/hikes/big-four-ice-caves","publisher":"WTA","quote_of_fact":"2.2 miles roundtrip","retrieved_at":"2026-11-23"}
+ ],
+ "trailhead_note": "Same Big Four Picnic Area trailhead. The 2.2 mi round trip is the Ice Caves walk, i.e. about 1.1 mi one way to the basin base, consistent with stored 1.6 km (~1.0 mi) to the base of the climb.",
+ "other_facts": [],
+ "not_found": ["no Spindrift Couloir page found in budget"]
+}
+}

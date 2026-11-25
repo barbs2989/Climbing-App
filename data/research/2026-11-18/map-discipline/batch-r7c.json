@@ -1,0 +1,43 @@
+{
+ "me_spaulding_mountain_appalachian_trail_from_caribou_pond_road": {
+  "area": "me_spaulding_mountain",
+  "set": {
+   "approach_logistics": {
+    "trailhead": "Caribou Pond Road gate parking (Caribou Valley Road, off Route 27)",
+    "trailheadLat": 45.045912,
+    "trailheadLng": -70.346198
+   }
+  },
+  "ledger": [
+   {
+    "field": "approach_logistics",
+    "value": {
+     "trailhead": "Caribou Pond Road gate parking (Caribou Valley Road, off Route 27)",
+     "trailheadLat": 45.045912,
+     "trailheadLng": -70.346198
+    },
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://www.openstreetmap.org/way/665973002",
+      "fact": "parking 45.04591,-70.34620",
+      "retrieved_at": "2026-11-23"
+     },
+     {
+      "url": "https://mainebyfoot.com/spaulding-mountain-near-carrabassett-valley/",
+      "fact": "Start: gate lot 3.8 mi up the road; 0.5 mi walk to the Appalachian Trail",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   }
+  ],
+  "review": {
+   "identifiedBy": {
+    "kind": "research",
+    "fact": "only mapped lot on the road, about 0.45 mi before the trail crossing"
+   },
+   "chunk": "round7"
+  }
+ }
+}

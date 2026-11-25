@@ -1392,7 +1392,7 @@ that they had none — on the one screen whose whole subject is who you climb wi
   asks for a file that 404s the first time it visits a lazy screen (hit on Partners 2026-09-24,
   fixed #1851; the screen itself was fine — `check:signed-in` walked it clean). `main.jsx` answers
   `vite:preloadError` with ONE reload, guarded by a 30s sessionStorage timestamp; `ClimbMatch.jsx`
-  reopens the tab that was tapped, but only right after that reload; `AppErrorBoundary` names a
+  reopens the tab that was tapped, and since 2026-11-18 the route and sub-tab that were open (`routeAfterChunkReload`, key `climbmatch:route`: *List me* on a crag route across a deploy landed on the Climbs root), but only right after that reload; `AppErrorBoundary` names a
   chunk failure as a download failure. Static: asserts the handler exists while any `import()` does,
   calls `preventDefault()` + `location.reload()`, keeps its loop guard, that the reload-marker key is
   the same in both files, and that the boundary's regex matches the Chrome, Firefox and Safari
@@ -1401,6 +1401,34 @@ that they had none — on the one screen whose whole subject is who you climb wi
     404 a chunk with `page.route` in a context with `serviceWorkers: "block"` — `sw.js` precaches
     chunks and its fetches bypass `page.route`, so without the block an interception reports ZERO
     requests and proves nothing.
+  - **The ENTRY bundle can be the missing file** (2026-11-18, owner's Chrome, live). Pages sends
+    `max-age=600` on the page; two deploys landed inside ten minutes, Chrome reused the page from the
+    first, and its entry bundle 404'd. Nothing in `main.jsx` can answer that: it is in the file that
+    did not load. `index.html` carries a classic inline script before the entry: on a failed module
+    script it re-fetches the page with `cache: "reload"`, then reloads, once per 30s (its own key,
+    `climbmatch:boot-reload-at`); a second failure, or offline, rewrites the splash tagline. The check
+    asserts the script sits before the entry, listens in capture, is limited to scripts, keeps its
+    guard and the cache-bypassing fetch. Driven by hand: `vite preview`, `serviceWorkers: "block"`,
+    `page.route` 404ing the entry once (reloads, app mounts) and always (one reload, then the message).
+  - **`preventDefault()` makes the import resolve to UNDEFINED** (2026-11-18, signed-in walk). Vite rethrows only
+    when the event is NOT prevented; prevented, the import yields `undefined`, and `React.lazy` throws its own
+    *Cannot read properties of undefined (reading 'default')* into the boundary while the reload is in flight.
+    Menu › Listed areas across a deploy drew *This screen hit a bug* with that message, and it stayed. The boundary
+    now reads main.jsx's marker (`swallowedChunk`): a *default* error within 30 s of it is the deploy — the
+    download card, and not filed to `app_errors`. The check asserts the key and all three engines' wording.
+    The same day a climb tapped across the NEXT deploy drew `SectionErrorBoundary`'s *Something went wrong loading
+    this section*, whose Try Again cannot help (React.lazy keeps the failed import). Both boundaries now ask one
+    helper, `swallowedChunk` in `lib/chunkReload.js`; the section shows *ClimbMatch was just updated* with Reload.
+    The check asserts the key lives there and that BOTH boundaries import and call it.
+  - **A history step CANCELS the reload** (2026-11-18, live, signed in). The card for Menu › Listed areas
+    stayed because the reload never happened: the error reaches `AppErrorBoundary`, the whole App unmounts, and
+    `lib/backButton.js`'s cleanup calls `history.back()` — and in Chrome a `history.back()` after `reload()` cancels
+    the reload (measured: reload then back = no reload; reload alone = reload). A section-level error does not
+    unmount App, which is why the Climbs tab always reloaded. `main.jsx` now calls `noteReloadPending()` first
+    (`lib/chunkReload.js`) and backButton.js skips BOTH its `history.back()`s while it is set; the entry left behind
+    is the one its boot code replaces. Proven by a staged deploy behind an 800 ms page load (the local preview
+    answers too fast to show it): before, the error card at 18 ms and no reload in 10 s; after, the card at 40 ms
+    and the new build at 837 ms. The check asserts the call order and both guards (injection-tested).
   - **A failed PREFETCH also fires `vite:preloadError`** and so reloads. That is intended for the
     deploy case; `main.jsx`'s idle prefetch skips offline and Save-Data so it cannot reload a
     climber at a trailhead.

@@ -5,7 +5,7 @@ import { setMyCrewRide, useCrewRides } from "../../lib/db";
 /* RIDES on a crew (0377; the owner's Shredder audit, 2026-10-28). Shredder makes carpools a headline feature; for a
    climbing crew it matters more -- trailhead lots fill and permit zones cap the party. Each climber says, for
    themselves only, "Driving from <area> · N seats" or "Needs a ride from <area>". The area is what they type, a town
-   or a neighbourhood, never an address, and only the crew's confirmed members can read it (crew_members is public,
+   or a neighbourhood, never an address, and only the crew's confirmed members can read it (crew_members reaches every invitee and requester,
    so this is its own table). A climber who has only asked to join sees nothing here.
    An example crew (no database row) keeps the choice on this screen only, and says so. */
 
@@ -65,7 +65,7 @@ export default function CrewRides({ crewDbId, roster, confirmedMe }: CrewRidesPr
     {draft ? <div style={{ marginTop: 8, display: "flex", flexDirection: "column", gap: 8 }}>
       <div role="radiogroup" aria-label="Your ride" style={{ display: "flex", gap: 8 }}><button role="radio" aria-checked={draft.mode === "driving"} onClick={() => setDraft({ ...draft, mode: "driving" })} style={btn(draft.mode === "driving")}>I’m driving</button><button role="radio" aria-checked={draft.mode === "need"} onClick={() => setDraft({ ...draft, mode: "need" })} style={btn(draft.mode === "need")}>I need a ride</button></div>
       {draft.mode === "driving" ? <div style={{ display: "flex", alignItems: "center", gap: 8 }}><span style={{ flex: 1, fontSize: 13, color: C.textSub }}>Seats free for the crew</span><button onClick={() => setDraft({ ...draft, seats: Math.max(1, draft.seats - 1) })} disabled={draft.seats <= 1} aria-label="Fewer seats" style={step}>−</button><div role="status" aria-label={"Seats free: " + draft.seats} style={{ minWidth: 26, textAlign: "center", fontSize: 14, fontWeight: 800, color: C.text }}>{draft.seats}</div><button onClick={() => setDraft({ ...draft, seats: Math.min(MAX_SEATS, draft.seats + 1) })} disabled={draft.seats >= MAX_SEATS} aria-label="More seats" style={step}>+</button></div> : null}
-      <input aria-label={draft.mode === "driving" ? "Driving from" : "Need a ride from"} value={draft.fromArea} maxLength={60} onChange={e => setDraft({ ...draft, fromArea: e.target.value })} placeholder={draft.mode === "driving" ? "Driving from — e.g. North Seattle" : "Need a ride from — e.g. Bellevue"} style={{ minHeight: 44, padding: "9px 11px", borderRadius: 9, border: "1px solid " + C.border, background: C.surface, color: C.text, fontSize: 14 }}/>
+      <input aria-label={draft.mode === "driving" ? "Driving from" : "Need a ride from"} value={draft.fromArea} maxLength={60} onChange={e => setDraft({ ...draft, fromArea: e.target.value })} placeholder={draft.mode === "driving" ? "Driving from — e.g. North Seattle" : "Need a ride from — e.g. Bellevue"} style={{ minHeight: 44, padding: "9px 11px", borderRadius: 9, border: "1px solid " + C.field, background: C.surface, color: C.text, fontSize: 14 }}/>
       <div style={{ display: "flex", gap: 8 }}><button onClick={() => { setDraft(null); setNote(""); }} disabled={busy} style={btn(false)}>Cancel</button><button onClick={() => save(draft)} disabled={busy} style={{ ...btn(true), flex: "2 1 0" }}>{busy ? "Saving…" : "Save"}</button></div>
     </div> : null}
     {note ? <div role="status" style={{ fontSize: 11.5, color: C.amber, marginTop: 5 }}>{note}</div> : null}

@@ -59,8 +59,8 @@ Part of the guard notes — see [README.md](README.md) for the full index.
       own stale assertion.
     - **4c IS THE LOAD-BEARING HALF: a rule that only forbids is satisfied by deleting the line.**
       The FAQ must still ANSWER the question a climber asked **and still name where a contact
-      actually goes** (the float plan, whose own copy already says *"Nothing leaves your phone
-      until you share it"* — a verified claim rather than a minted one), and the toast must still
+      actually goes** (the float plan, whose own copy already says *"What you write stays on this
+      phone until you share it"* — a verified claim rather than a minted one), and the toast must still
       say plainly that ClimbMatch will not raise the alarm.
     - **THREE FALSE POSITIVES IN THE FIRST DRAFT, all flagging CORRECT work**, which is the
       direction that teaches people to ignore a guard. A greedy path match read *"Settings → Your
@@ -114,6 +114,11 @@ Part of the guard notes — see [README.md](README.md) for the full index.
       float-plan toast reads *"ClimbMatch can't alert anyone for you"* and the form says what you
       type stays on your phone. The two **legal** surfaces were the ones contradicting it — so a
       climber comparing them would trust the wrong one, since a policy reads as the authority.
+    - **RE-AIMED to `crew_float_filings` (0450, 2026-11-18).** The crew-readable record is now one row per
+      member, written by `setMyFloatFiling`; §5 lifts its keys from `fileCrewFloatPlan`'s `const _mine=…` and adds an
+      OWN-ROW test: ClimbMatch.jsx (comments masked) must take the table off the crews read in exactly one place that
+      keeps `user_id===uid`, and no other lib/ or src/ file may name it (lib/db.js exempt). An injected `return !!x`
+      in that mapping fails it. The policy sentence (members CAN read it; no screen shows it) is unchanged.
     - **BOTH PREMISES ARE DERIVED, so section 5 INVERTS rather than rotting** — the two-directional
       shape `check:profile-claims` and §4b already use. Settability comes from the `profiles`
       snapshot and the editor's own draft; *is the plan rendered* comes from **the write**: the
@@ -350,7 +355,16 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     `extra` is the *Add to résumé* form — six free-text/select inputs, **no route id, no
     verification, no source marker**. Type "The Nose / El Capitan / 5.9 / Lead" and it sat there
     looking like a logged ascent.
-  - **THE MARK IS "added by hand", DELIBERATELY NOT "self-reported".** A logged climb is
+  - **2026-11-05: BOTH MARKS REMOVED by the owner** ("Remove self reported notice when someone
+    adds something ie certifications and same with routes"). The "added by hand" sub-line on a
+    hand-typed climb and the amber "self-reported" chip on a hand-added course are gone; sections
+    1 and 2 now assert the opposite — that NEITHER string renders on any row — so the marks cannot
+    creep back, while keeping what the marks were standing in for: a hand-typed row still renders,
+    and a self-added course never reads "✓ verified". The history below is kept because the
+    reasoning (a logged climb is self-reported too) still explains why the two never shared a word.
+    Same PR: the résumé's ✕ remove buttons became swipe rows (`SwipeRow`), because a long name or
+    role squeezed the ✕ off the end of the flex row and seed rows had no control at all.
+  - **THE MARK WAS "added by hand", DELIBERATELY NOT "self-reported" (2026-09-03 → 2026-11-05).** A logged climb is
     self-reported too, so reusing the courses vocabulary would imply `live` rows are corroborated
     — fixing one false claim by making another. It is tagged at **composition**
     (`...((extra)||[]).map(e=>({...e,selfAdded:true}))`) rather than in `addClimb`, because
@@ -413,7 +427,7 @@ Part of the guard notes — see [README.md](README.md) for the full index.
       honest wording, and *"logged"* once the branch really is fed logs.
 - **`check:offline-claims`** asserts that **an offline promise is backed by the mechanism that makes
   it true**. The offline feature is the **state download** (Home's Pinned states, Manage areas);
-  there has been **no per-route trip pack since #2368**. Static (Babel over `ClimbMatch.jsx`,
+  the per-route trip pack removed in #2368 came back as the route page's **Save offline** (`lib/SaveMapOffline.jsx`), and since 2026-11-19 **§11** asserts what that one-climb save promises: a failed map never unpacks the page; the save writes the route's photos and topos (`savePackMedia`, `pack: true`) and removing the climb removes exactly those; climbers' tracks, the area row and the neighbouring climbs are written at save time AND read back through `useRouteTracks`, `useArea` / `fetchRouteArea` and `useAreaRoutes`, with a failed read left out of the save. §5 lets a Help sentence that names the button (*Save offline*) mention photos, topos and the map, because §11 now backs it; the state-download sentences are still required to say photos and map tiles are not saved. Static (Babel over `ClimbMatch.jsx`,
   `ClimbMatchCore.jsx` and `lib/Help.jsx`, plus source reads of `RouteDetail.jsx`, `lib/db.js`,
   `lib/offline.js` and `scripts/build-state-snapshots.mjs`), so it sits in `npm run build`. The
   last timing on record, before the 2026-10-14 restore, was **1.34x `check:policy-claims`**.
@@ -532,7 +546,7 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     had deliberately removed comes back on the next load.
   - Fails **closed**: an unreadable or unparseable source; `ANCHOR LOST` for a missing
     `useRoutesByIds`, any §10 hook, `HELP_FEATS`, or the Manage areas dialog's aria-label; a
-    **per-surface** region/string floor in §5; and fewer than **34 assertions RUN** — a guard that
+    **per-surface** region/string floor in §5; and fewer than **40 assertions RUN** (34 until §11, 2026-11-19) — a guard that
     quietly stops asking half its questions still exits 0.
   - **The floors are PER SURFACE.** A global floor is satisfied by the other surface: renaming the
     download state in `ClimbMatch.jsx` alone leaves the Help strings standing, so the guard would
@@ -680,6 +694,36 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     with the SAME viewer object it scores with, built from `ME.matchObjectiveIds`. Injection measured:
     `compatWhy(ME,climber)` fails it. The refactor was proved score-identical on 20,036 pairs (seed
     population plus 20,000 random profiles) before the old body was dropped.
+  - **...AND THE ONE-SENTENCE SUMMARY SAYS ONLY WHAT IS SHARED (2026-11-23).** `compatSummary()` is asserted on a
+    fixed pair (two 5.10 sport climbers listed at Index, free weekends) for its exact sentence, then with the grade, the
+    listed area and the availability each taken away in turn: the clause must go with its signal. A pair sharing
+    nothing, and an unfilled profile, must get `null`, never a vague sentence. `FullProfile` must call it with the same
+    two objects it scores. **Measured while building it:** the score's grade steps put 5.6 and 5.10a two steps apart,
+    which the checklist calls *Close in grade*; the first draft of the sentence repeated that and this assertion caught
+    it. The scale was then fixed at the source (owner, same day): every number grade up to 5.9 is its own step, the
+    spacing from 5.9 to 5.12 is unchanged, and the guard asserts 5.6 vs 5.10a is more than two steps while 5.9 vs 5.10a is
+    one. A second review found the same lump at the top (5.13 and up were one step); it steps by letter now, pinned too.
+  - **SECTION 8: THE COMPAT AUDIT OF 2026-11-23** (see `docs/codebase/algorithms.md`). Four assertions, one per
+    owner-approved fix: (a) `compat(a,b) === compat(b,a)` over every ordered pair of ME, the seed climbers and five
+    personas (110 pairs); (b) a crag pair with listed areas only and an alpine pair with objectives only, matching on
+    everything, both reach `COMPAT_TOP`; (c) ice, alpine, mixed and aid grades from `climbGrades` are compared like with
+    like, and the ice line says "(ice)"; (d) against a blank profile every overlap term scores exactly max/2.
+    `scripts/oneoff/inject-match-percent-cases.mjs` reverts each fix alone and each is caught (19/19).
+    - **WHERE YOU CLIMB HAS TWO ANSWERS, so section 4 tests each on a base holding only that answer.** With both in the
+      base, dropping the objectives leaves the area filling the term, which is correct, and section 4 read it as "a
+      signal that does nothing". `baseFor()`/`variantFor()` strip the other answer; section 7 reuses them.
+    - **The copy pattern is `blends (your )?`, and each capture is cut at its first full stop.** The new sentences read
+      "blends where you climb…", which the old `blends your` pattern missed entirely (found 0 sites, so the run proved
+      nothing). The widening also reaches the fourth sentence, `PARTNER_NUMBERS`, which runs on into "Open a climber's
+      profile… line by line" and would otherwise be read as a promised signal.
+    - **Two injection cases had rotted before this change**, and `check:injection-anchors` did not report them: the
+      pre-0209 `_cand` case dropped objectives and pace but not availability (2 unknowns, under the refusal's 3), and the
+      comment case anchored on a `RealClimberRow` signature that has since grown props. Both fixed.
+  - **THE WEEK GRID IS THE SCHEDULE (2026-11-23).** `availOf()` must read a climber's `availWeek` when it has one: a
+    stale `availability` ("weekends") on a test account put one schedule on its partner card and in the % and another on
+    its profile. Asserted on a grid of Wednesday evening and weekend mornings with stale tags; injection measured: the old
+    tags-only reader fails it. Over the 306 ordered example pairs only 2 moved, both the example viewer, whose grid had
+    never reached its empty tags.
   - **THE DEFECT WAS A CLAMP DOING THE WORK OF A FORMULA.** `compat()` ended `Math.min(99, …)`
     while two of its terms were UNCAPPED — shared disciplines ×16, shared objectives ×14 — and the
     BOUNDED terms alone summed to **78 of that 99**. So a climber with a broad profile saturated
@@ -904,6 +948,9 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     (Conditions card, Home tile) go through `fetchCragForecastMeasured`, so they cannot disagree. Measured
     on 2026-10-15: RRG's past 96 h 3.46" modelled vs 2.34" measured, Gunks 0.98" vs 1.48". A time not yet
     analysed is an XML error, a point outside the analysis is `{}`: both are "not measured", never zero.
+    Since 2026-11-18 every window is asked at once (the server refuses a TIME list, a range and two LAYERS,
+    and speaks HTTP/1.1), FINAL values are kept on the device and a preliminary one never is, and the old and
+    new reads returned the same windows at Index, Smith Rock, RRG, Squamish and Red Rock (null).
     The guard pins the merge (amount from the measurement, timing from the model inside a window, gaps keep
     the model, a measured dry window dries a modelled soaking). The two crag-fetch URL checks now match
     `fetchCragForecast\(` exactly — `fetchCragForecastMeasured` shares the prefix and was read in its place.
@@ -956,11 +1003,14 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     §5 now fails if "(mapped)" comes back. `basis` still distinguishes the two in `routeRock()`.
   - **What it cannot see**: the drying hours per rock family (`DRY_HOURS`) are rules of thumb, not
     measurements, and the card says which rock it assumed. How a particular wall holds water is
-    not modelled — seepage is only a risk from recent rain — and the card says so.
-  - **Menu tile (§6)**: *Best day to climb* (`lib/BestDayTile.jsx`, opened from Menu › Plan & log; it left Home 2026-10-14) is the SAME
-    `scoreForecast` over the saved crag climbs, with a compare table of each one's 7 days. It renders
-    nothing with no saved crag climb, says "not a rating" when the forecast fails, and lists an
-    unlocated climb as "No score: …" rather than dropping it. At most 8 crags are fetched, and it says so.
+    not modelled — seepage is only a risk from recent rain, shown as "Seepage risk" (the card's
+    standing footnote saying so was dropped on the owner's request, 2026-11-14).
+  - **Best day to climb — REMOVED (§6)**: the Home tile, Menu tile and overlay that ran `scoreForecast`
+    over the saved crag climbs and areas (with its own honesty rules: "not a rating" on a failed
+    forecast, "No score: …" for an unlocated climb, an 8-crag cap it said out loud) was removed by the
+    owner on 2026-11-05. §6 now fails if the tile file, a `<BestDayTile>`, `bestDayOpen` or the Menu
+    tile comes back; anyone restoring it must re-derive those rules there. *Compare routes* keeps its one
+    best-day cell, and the card's `areas.aspect` fallback check stayed in §6.
   - **Wall direction (0249)**: `areas.aspect` is written ONLY from an online statement about the wall
     or its crag (agents: `research-data/crag-aspects/`, `scripts/apply-crag-research.mjs`; page text:
     `scripts/extract-wall-aspects.mjs`), never from terrain. Both the card and the tile fall back to
@@ -996,6 +1046,11 @@ Part of the guard notes — see [README.md](README.md) for the full index.
       are public domain and add nothing. Checked live: an Alberta crag shows the OGL – Canada line,
       Smith Rock shows only the imagery credit.
     - **It loads only near the screen** (IntersectionObserver): sixteen height tiles are ~1.5 MB.
+    - **Your conditions reachability matches the TAG, not `<CondPrefsControls/>`** (2026-11-05, #3213): it pinned
+      the bare self-closing tag, so passing `onSignIn` failed CI as "no longer reachable from Settings" while
+      both entry points still worked. It matches `<CondPrefsControls` plus up to 160 non-`<` characters to `/>`
+      (`[^>]*` would stop at the arrow in `()=>`). A sibling assertion pins the sign-in button: Settings and the
+      Menu overlay pass `onSignIn`, and `CondPrefsControls` renders it only while signed out.
 
 - **`check:alpine-conditions`** asserts that the **alpine Conditions tab** (sub-tab `forecast` on
   alpine, mountaineering, scrambling, ice and mixed routes — `lib/AlpineConditionsCard.jsx`, logic in
@@ -1199,6 +1254,255 @@ Re-filing a glaciated route as alpine (El Dorado East Ridge: Inspiration Glacier
 crevasse-bridge, snow-deadline, sun-on-face and avalanche-panel logic. An alpine route whose own terrain read says
 `glacier: "yes"` is now kind `glacier`, and `ctx.rockToo` keeps the rock-weather flags (verglas, wet rock, showers)
 on it. The evidence is the terrain read, never the discipline. `check:alpine-conditions` holds it.
+
+## Glacier warnings only where there is a glacier (2026-11-23, migration 0490)
+
+Owner: "Some routes that don't have a glacier don't need overnight freeze warnings… We don't want to be giving
+warnings about snow bridges etc when there's usually not those when people typically climb that route."
+
+**What was wrong.** `condKind` sent EVERY `mountaineering` route to kind `glacier` unless its text proved there
+was no snow, and `dayFlags` set `glacier: true` on the no-refreeze flag for every kind-`glacier` route, so a
+Class 2 walk-up read "the snow starts soft and bridges are weak". `routeTerrain().glacier === "yes"` was a WORD
+match (glacier, crevasse, picket, rope team anywhere in the text), and the 2026-11-12 dry-in-season review only
+reached alpine rock and scrambles.
+
+**Measured on Washington (1,280 alpine-type routes, 753 carrying snow flags):** 409 routes on the glacier card,
+130 with no glacier travel, 72 of those dry in their normal season; 661 routes printing "bridges are weak", 296
+of them with no glacier; and 64 of the 328 routes the word match called glaciated were reviewed as no glacier
+travel. The reverse gap: 8 scrambles and 3 alpine-rock routes DO cross a crevassed glacier (Jack Mountain North
+Ridge on the Nohokomeen, Tricouni on the Borealis) and never had the glacier card.
+
+**What decides now: two reviewed facts per route**, `routes.glacier_travel` and `routes.snow_in_season`, each
+`'yes' | 'no' | null`, about the NORMAL line (approach, climb, normal descent) in its NORMAL season. The rule is
+`research-data/glacier-travel-2026-11-23/RULE.md`. `lib/terrain.js` reads them before the route's text:
+`glacierTravel` is `"yes"` / `"no"` from the column, `"likely"` for a glacier word in unreviewed text, else
+`"unknown"`; `snowInSeason` is the column, else the text's `snow`. Null is "not settled", never "no".
+
+| Route facts | Kind | Freeze / freezing-level flags |
+|---|---|---|
+| glacier travel reviewed yes (any of mountaineering, alpine, scrambling) | `glacier` | "…and bridges are weak" |
+| mountaineering, nothing settled, or a glacier word in unreviewed text | `glacier` | "…; any snow bridges are weak" |
+| mountaineering reviewed NO glacier, snow yes or not settled | `snow` ("Snow climb") | "…: slow steps and wet slides on steep slopes" |
+| mountaineering reviewed dry in season | `scramble` | none |
+| alpine ice, scramble, alpine rock | unchanged kinds | bridges only on evidence: reviewed yes states it, a word in the text says "any", nothing says nothing |
+
+`bridgeWord(kind, terrain)` is the one place that decides how a flag may speak of bridges; `isSnowKind` is the
+one list of kinds timed around the snow (the midday practice start, the sun on the face). The warm-afternoon
+flag says "rock and ice fall" only where there is ice above (`v.ice`), else "wet snow slides and rockfall".
+
+**The research (WA).** Each snow-flagged route's own snow and glacier sentences were read by one reviewer; the
+99 riskiest "no glacier" verdicts (text names a glacier, or the call was from memory) got an independent second
+read with the first verdict withheld, and any disagreement fell back to unsure (16 did); then all 223 unsure
+routes were researched online. Result: glacier travel yes 298 / no 414 / not settled 41; snow not settled 38.
+A "no" that rested on absence of evidence, or that the researcher called its thinnest, was held at not settled.
+`scripts/oneoff/load-glacier-travel.mjs` wrote them (unsure as NULL), together with the 2026-11-12 dry list as
+`snow_in_season = 'no'`, and re-read every row. `lib/snowInSeasonDry.js` stays as a FROZEN fallback, read only
+for a row that carries no answer of its own (an offline copy saved before 0490, a row a load has not reached):
+the first cut of this change deleted it, and review showed that brings the freeze flags back on exactly those
+rows. Its build script is gone; new reviews write the column.
+- **Every sentence that names a bridge goes through `bridgeWord`**, not `kind`: the flag, the
+  what-a-forecast-cannot-see line, the midday reason and the serac caveat. The first cut hedged only the flag,
+  so an unsettled route still read "weakens the bridges" beside "any snow bridges are weak".
+- **The card's day memo depends on `terrain.glacierTravel` / `snowInSeason`**: an approved edit can change the
+  wording without changing the kind.
+
+**Traps.**
+- **Wrongly dropping a warning is the dangerous direction**, so nothing unreviewed loses one: an unreviewed
+  mountaineering route in another state still gets the glacier card, now worded "any snow bridges".
+- **A text match must never be read as "yes" again.** `glacierTravelOf()` maps a terrain object without the
+  field (a fixture, an older cached row) to `"likely"`, not `"yes"`.
+- **Both facts are editable** (`glacierTravel`, `snowInSeason` in SuggestFix, `SS` and `contribution_fields`),
+  and an approved edit reaches the card through the client overlay onto `route.glacierTravel`, which is why the
+  form key and the route property are the same string. Not asked when a climb is ADDED (a new climb starts
+  unsettled): `NOT_AT_CREATION` in `check:add-route-fields` says why.
+- **A season is not one answer** (owner, 2026-11-24, on Forbidden West Ridge: the couloir is snow early season,
+  then parties take the Cat Scratch gullies). `routes.snow_free_from` (0532) is the date the usual line goes dry;
+  the card reads `routeTerrain(route, { on: today })` and is dry from that date to 31 October. The guard holds
+  July (glacier card), September (alpine rock, no snow legs, no bridges), November (stored answers again), the
+  date as the first dry day, and the card passing today's date. **`routeTerrain(route)` with no date must stay the
+  whole-season reading**: the gear and packing readers call it, and a dated read there would drop the axe from a
+  list read in September for a trip planned for June. The review took a date only where the line is
+  dry AND has no glacier; dates on glacier-unsure routes waited for a web check, and a text-only "no glacier"
+  never loaded (absence of evidence).
+- **`npm run audit:glacier-travel -- --state <slug>`** is the worklist for the next state: snow-flagged routes
+  with an unsettled answer. It reads the stored discipline, so a trad route the page calls alpine is outside it.
+- **Six more states reviewed, 2026-11-23** (Oregon, California, Colorado, Wyoming, Montana, Alaska; 775 routes):
+  glacier travel yes 160 / no 488 / not settled 127; snow in season yes 608 / no 96 / not settled 71. Per state,
+  `research-data/glacier-travel-2026-11-23/<state>/` holds the inputs, both reads, the research round and
+  `final.json`. The steps are three scripts in `scripts/oneoff/`: `glacier-travel-extract.mjs --state`
+  (the batches), `glacier-travel-decide.mjs --state --verify-in | --research-in | --final` (the second read takes
+  every risky "no glacier" call AND every unsure route; a disagreement moves toward the warning, never to
+  "no"; the research round settles only a fact still unsure, and only on a page that was read), and
+  `load-glacier-travel.mjs --state` (paced, rollback file, re-read and reconcile). The prompts are the three
+  `*-PROMPT.md` files beside `RULE.md`.
+  - **What the review found, so it is not re-derived:** Colorado has ONE glacier-travel route in the catalog
+    (Fair Glacier, Lone Eagle Peak); 23 of its routes sat on the glacier card only because "Glacier Gorge" or
+    "Andrews Glacier trail" is in their text. Alaska is the reverse: 97 of 130 are glacier travel, most by
+    their approach.
+  - **Held at not settled on purpose** (a "no" that rested on absence of evidence, or on a source that also
+    names a bergschrund): Shasta Avalanche Gulch, Mount Hooper via Tombstone Pass, Iron Maiden (Illumination
+    Rock), Large Ear Direct.
+  - **The review agents answer from recall unless made to search.** The first read used no web search in any
+    batch, and the first second-read batches searched a handful of routes; say "every entry, not a sample" in
+    the prompt, and read the agent's own count of what rests on a page.
+  - **Misfiled text met on the way** (not fixed here): `wy_northeast_couloir` (Kagevah Peak) and `co_old_route`
+    carry sentences that describe Washington routes, the name-derived id collision of
+    [route-identity.md](../codebase/route-identity.md).
+- **Every other place with routes to review, 2026-11-23** (24 more; 393 routes). `glacier-travel-states.mjs`
+  sized every id prefix; 21 small ones had nothing to review (their alpine-type rows are all waterfall ice or
+  crag mixed, which carry no snow logic).
+  - **16 hold no glacier at all** (NH, VT, NY, QC, ON, NS, NB, MN, MI, WI, NC, NJ, ME, UT, NM, AZ; 149 routes):
+    a route its reads could not settle is settled by a REGIONAL FACT, `region.json` in the place's folder,
+    written by hand with its reason ("Utah holds no living glacier", per the Utah Geological Survey). The
+    decide script applies it only to a route still unsure, refuses a region.json that says anything but
+    glacier "no", and on winter-ice places (`iceSeason`) also settles snow in season as yes. Never written
+    for a place that holds a glacier (Idaho, Nevada and Labrador were left out on purpose).
+  - **8 hold glaciers** (BC, AB, YT, NT, NU, ID, NV, NL; 244 routes): first read, second read, no regional
+    fact. Glacier travel yes 116 / no 77 / not settled 51. BC's open ones are mostly where sources disagree
+    whether a small glacier approach is roped (Crescent Glacier and Stadium Glacier in the Bugaboos, Slesse),
+    so a research round was not run on them.
+  - **The web-search budget is shared** by every agent in a session (about 200 searches, refilled in about an
+    hour); eight agents at once spent it mid-batch. The second wave ran four agents with a per-agent cap.
+- **Washington research round 2 (2026-11-23)** on its 72 still-unsettled routes
+  (`scripts/oneoff/glacier-travel-wa-research.mjs --in / --fold`): the shared search budget gave out after
+  12-21 searches per agent, and most climbing sites refuse automated page reads (403). 14 routes got a page
+  read; 7 glacier and 1 snow answer were taken. Four thin "no glacier" answers were held at unsure in the
+  fold's `HOLD_GLACIER` (Forbidden East Ridge, Bonanza Cascadian, both Chopping Block routes). Washington now:
+  glacier yes 298 / no 421 / not settled 34; snow not settled 37.
+- **Legacy id prefixes reviewed:** `adams_avalanche_glacier`, `adams_northwest_ridge`,
+  `rainier_north_mowich_headwall`, `rainier_central_mowich_face` are all glacier yes / snow yes from their own
+  text (crevasse hazards named, or the North Mowich Glacier climbed), added to Washington's `final.json`.
+- **A misfiled hazard list found on the way:** `wy_northeast_couloir` (Kagevah Peak, Wind Rivers) carried
+  Colchuck Peak's Northeast Couloir list (the Colchuck Glacier, its bergschrund, the February 2023 deaths), a
+  same-name collision. Cleared by `scripts/oneoff/clear-wy-northeast-couloir-watch-out.mjs`, rollback kept. A
+  scan of every non-Washington `watch_out`, `hazards` and `what_to_bring` for Enchantments names found no
+  other; `co_old_route`'s "Dragontail Couloir" is Flattop Mountain's own.
+- **Still on a guess:** the unsettled routes `npm run audit:glacier-travel -- --state <slug>` lists, about 300
+  across all states. Each needs a page read, and the search budget, not the method, is what limits it. Section 1 and 2 of `check:alpine-conditions` hold the rule
+  (21 assertions); the data is only as good as the review.
+  A third research round on BC, CO, WY and AK (146 routes, `<state>/research-out-*.json`) settled nothing
+  new. Page reads were mostly refused, and the researchers stopped after 2 to 6 searches. Colorado's two web
+  snow answers were already "yes". Wyoming's one web "no glacier" (Dike Route, Middle Teton) was held at
+  unsure, because its own text sends bail-out parties onto the Middle Teton Glacier. Before another round on
+  these states, make sure WebFetch is permitted for the researchers.
+  A fourth round (`<state>/research-out-4.json`, plus `wy/research-out-9.json` for the Koven Route, which has a
+  park rescue release about a crevasse fall on its descent) researched only the open glacier calls, with page
+  reads working. Glacier not settled went from 41 to 10 in BC, 19 to 10 in CO, 28 to 23 in WY and 26 to 20 in AK.
+  Ten thin "no glacier" answers were held at unsure by hand; each entry's `why` starts "Held at unsure on review":
+  - Colorado's three Mills Glacier routes and Queen's Way (Isabelle Glacier): no page rules out crevasses.
+  - Brenta Spire, and Talchako Up in Smoke (its only source is a different line).
+  - Dragonfly Jr and West Twincil in Alaska.
+  - The Buck Sanction and the Dike Route in Wyoming.
+  Andrews Glacier (five CO routes) stays unsure because its sources disagree: one trip report saw open
+  crevasses in the fall. The Grand Teton's north side (Valhalla Traverse normal, Teton Glacier as an
+  alternative) stays unsure.
+  A fifth round (`research-out-5.json`, plus `wy/research-out-6.json` written on review) settled those:
+  - Andrews Glacier is glacier travel, because the park's glacier research page counts its crevasses. That makes 4
+    CO routes yes; Central Buttress stays unsure, since it has a non-glacier descent.
+  - The three Mills Glacier routes are yes. An alpine-journal accident report has a climber fall on the glacier
+    below Longs Peak's east face into a crevasse.
+  - The Grand Teton North Ridge and North Face Highlight Tour are no. Their standard line is the Valhalla Traverse
+    out and the Owen-Spalding back. The Lowlight Tour stays unsure, because no page of its own was read.
+  - Settled no: McHenry's Notch Couloir, and Eternal Darkness (BC).
+  - Held again: Dragonfly Jr, and Toe Gully's snow "no".
+  Since this round, the fold merges research rounds PER FACT (`glacier-travel-decide.mjs`). A later round's
+  "unsure" never erases an earlier page-read answer, and in a disagreement "yes" wins. Before the change, a
+  later file replaced an earlier one whole.
+  Glacier not settled now: BC 9, CO 2, WY 21, AK 20.
+- **Round 6** (2026-11-23) read pages for the calls still open in WA, CA, OR, MT, AB, NV, NT, NU and YT (160
+  entries). Most came back unsure: no page that loads describes the line.
+  - Glacier yes: Bacon Peak from Diobsud, Northwest Mox NE Ridge, Silver Star NE Ridge (WA), the
+    Thunderbolt to Sill Traverse (CA).
+  - Glacier no: Ottohorn (WA); Jefferson North Ridge, South Sister North
+    Ridge and Large Ear, a rock pinnacle whose "crevasse" is a crack (OR); Lotus Flower Tower (NT).
+  - Snow yes: Pyramid Peak (WA), Mount Davis from North Glacier Pass (CA).
+  - Held at unsure on review (eight): Bonanza Cascadian, Chopping Block NW Route, Devils Club (WA); Austrian
+    Arete, and Bear Creek Spire's snow "no" (CA); Center Ridge (OR); Devils Thumb and Andromeda Asteroid Alley
+    (AB). Each rested on silence, one account, a page about a different line, or "can stay off the glacier".
+    The Chopping Block NE Ridge's new "no" (a park conditions page) is not applied: the WA fold's
+    `HOLD_GLACIER` list keeps it unsure until someone reads that page against the Terror Glacier approach.
+  Glacier not settled now: WA 30, CA 32, OR 11, MT 7, AB 6, NV 1, NU 1, YT 1; NT 0.
+- **Round 7** (2026-11-24) took every glacier call still open in every state (141) in one pool of eight
+  researchers (`research-data/glacier-travel-2026-11-23/round7/`, split by
+  `scripts/oneoff/glacier-travel-round7-split.mjs`, holds in `round7/hold.json`). It steered them off
+  summitpost and cascadeclimbers. Mountaineers.org, peakbagger, WTA and Mazamas also answered 403 this time;
+  Mountain Project, the AAJ, NPS pages and personal trip-report blogs loaded.
+  - The first pass came back almost empty: told to spare the shared search budget, six of the eight
+    researchers stopped after a few searches and read no pages. The prompt now has a binding effort rule
+    (every entry gets a fetch of a result page and two sources), and the re-runs made 35 to 60 calls each.
+    The first pass's files are kept as `try1-out-*.json` and are not folded.
+  - Glacier yes: Vulcan Mountain (YT).
+  - Glacier no (22): the eight Mount Hoffman north face routes, Avalanche Gulch on Shasta (CA); Taylor Peak
+    Central Buttress, whose descent walks the small Andrews Glacier unroped (CO); Big Jobbin, Kagevah NE
+    Couloir, the Watchtower ice (Cirque of the Towers holds no glacier), Moran SW Couloir and the Cathedral
+    Traverse (WY); Magog and Brenta Spire Another Fine Day (BC); Black Peak NE Ridge, Hinman West Route,
+    Worm Flows (WA); the Waterton French Kiss ice (AB); Cantwell Creek Dragonfly Jr (AK).
+  - Held at unsure on review (13): Andromeda Asteroid Alley, Mount Cline SW Ridge (AB); Austrian Arete again
+    (CA); Gog East Face, which rested on the Magog page (BC); four Cabinet Mountains NE Face routes (MT);
+    Center Ridge again and Iron Maiden (OR); both Chopping Block routes and Little Mac Spire (WA). Each rested
+    on a page silent about the glacier, a single account, or another route's page.
+  Glacier not settled now: WA 27, CA 23, AK 19, WY 16, OR 11, BC 7, MT 7, AB 5, CO 1, NV 1, NU 1; YT 0.
+- **Round 8** (2026-11-24) took the 81 routes whose glacier answer is settled but whose snow in season is
+  not (`round8/`, a snow-only prompt; the split, now `--round 8`, writes every glacier answer as "unsure" so
+  no settled one can move). The shared web-search budget ran out a few searches in, so most entries got only
+  fetches of pages that said nothing about snow, and one researcher read no page that settled anything.
+  - Snow yes: Birds of Fire (CO), the Washington–Ellinor Traverse (WA), The Candy Shop (WY).
+  - Snow no: the Humphreys Peak trail (AZ), Silver Lining (WY; an axe only early or in a big snow year).
+  - Held at unsure on review (7, `round8/hold.json`): Bear Creek Spire (a Northeast Ridge page), Devil's
+    Crag #1, Mount Jordan (CA); Gladstone North Ridge and the Glacier Gorge and Spearhead–Longs traverses
+    (CO); Chouinard–Frost Chimney (WY). Each rested on one account, another line's page, or a silent page.
+  Snow not settled now on these routes: WA 29, CA 17, CO 14, WY 8, UT 4, BC 2, ID 1, OR 1; AZ 0. Worth a
+  re-run once the search budget refills.
+  - The loads found a ping-pong: the Washington load (no `--state`) re-asserts the 2026-11-12 dry list, which
+    spans every state, as glacier null, so it undid CO's reviewed "no" on Pyramid Peak NE Ridge each time it
+    ran after CO. `load-glacier-travel.mjs` now skips a dry-list id that a state's own `final.json` reviews;
+    Pyramid Peak was the only one.
+- **Round 9** (2026-11-24) re-ran round 8's 76 open snow calls (`round9/`, each entry carrying round 8's note,
+  and the review bar written into the prompt: a "no" needs a page saying the line is dry, or two accounts from
+  different days). Searches worked longer this time, but most routes still have no page that speaks to snow on
+  the line.
+  - Snow yes: Cashmere Mountain West Ridge (WA; snow late spring to mid-summer, an axe usually needed late).
+  - Snow no: Gladstone Peak North Ridge (CO; several dated June to September reports find the ridge dry).
+  - Held at unsure on review (4, `round9/hold.json`): Pulitzer (a Bailey Range traverse page) and Rock Mountain
+    NE Ridge and Tailgunner (search snippets of pages that answer 403) (WA); Middle Teton SW Couloir (WY), whose
+    own page, read on review, is typed snow but says the couloir melts out fairly quickly.
+  Snow not settled now on these routes: WA 28, CA 17, CO 13, WY 8, UT 4, BC 2, ID 1, OR 1 (74). Further web
+  rounds look unlikely to pay; these wait for climbers' corrections on the edit sheet.
+- **Round 10** (2026-11-24) re-ran the 118 open glacier calls (`round10/`, each entry carrying every earlier
+  note, six researchers). Searches ran out partway for one researcher again; one file of 20 Washington routes
+  settled nothing.
+  - Glacier yes (6): Stanley Peak North Face (AB; seracs, crevasse rescue advised); Mount Michelson North Ridge
+    (the Esetuk valley glacier), Goldfinger (the Ruth Gorge crevasses), The Fall Line (up the Mendenhall
+    Glacier) (AK); Shasta Hotlum–Wintun Ridge (onto the Wintun, small crevasses) and Norman Clyde Peak North
+    Face (the Middle Palisade Glacier's bergschrund) (CA).
+  - Glacier no: North Milk Creek Glacier on Mount Jefferson (OR): the glacier is gone, and the line is a snow
+    gully.
+  - Held at unsure on review (9, `round10/hold.json`). The prompt's bar said a named glacier on the line was
+    enough for "yes", which is looser than RULE.md (crevasse, bergschrund or icefall hazard, normally roped):
+    six answers that only named a small glacier were held on that ground: AK West Ridge (Twincicle), Dana
+    Couloir, Mendel Couloir, Mills North Face (CA), Apache Queen's Way (CO), Vesper North Face (WA). Also
+    Michelson South Face (the page is the peak's normal route), Burgette Arête (a start-only page) and Bonanza
+    Cascadian (one descent account).
+  - The split script's snow-only switch is now rounds 8 and 9 only, so a later glacier round keeps its answers.
+  Glacier not settled now: WA 27, CA 21, AK 16, WY 16, OR 10, BC 7, MT 7, AB 4, CO 1, NV 1, NU 1 (111).
+- **Round 11** (2026-11-24) gave the 13 answers held in rounds 9 and 10 their one open question each
+  (`round11/`, e.g. "does this small glacier have a bergschrund?"), two researchers with the whole budget.
+  - Glacier yes: Dana Couloir (CA): an accident report has a roped party fall near the Dana Glacier's open
+    bergschrund.
+  - Held again (`round11/hold.json`): Mendel Couloir (a snippet), Apache Queen's Way "no" (one unroped trip and
+    a page that only calls the upper Isabelle probably a snowfield), Vesper North Face (snippets), Burgette
+    Arête (the same start-only page); snow on Pulitzer (a page about the traverse), Rock Mountain (one early-June
+    day, which RULE.md counts as early season) and the Middle Teton SW Couloir "no" (one mid-July year).
+  Glacier not settled now: 110. This is where web research stops paying.
+- **Unsure alpine and scramble routes kept no warnings** (live check, 2026-11-24). Forbidden East Ridge, held
+  unsure on its glacier and reviewed snow in season "yes", rendered as plain *Alpine rock*: `condKind` gave
+  alpine and scrambling the glacier card only on a reviewed "yes" (or, for alpine, a glacier word in the text),
+  and its text reads as rock. 42 unsure-glacier routes were alpine or scramble kinds; 30 of them reviewed snowy.
+  Owner decision 3 (unsure keeps the warnings, softer) only reached mountaineering. Now a route reviewed snowy
+  with its glacier unsure gets the glacier card and "any snow bridges" (`bridgeWord` "maybe" even where the text
+  guess says no glacier). `routeTerrain()` returns `glacierReviewed` / `snowReviewed` so a route nobody reviewed
+  (both null) cannot be mistaken for one. The 12 with snow also unsure cannot be told apart from unreviewed
+  rows and stay as they were. Six assertions in `check:alpine-conditions`.
 
   - **HOUR BY HOUR + THE GUST WINDOW (2026-10-08, owner: "clear and exact and accurate science").**
     Section 12 of the guard. Three things it holds, each measured, not assumed:

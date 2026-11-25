@@ -1,0 +1,909 @@
+[
+ {
+  "id": "wa_mount_triumph_west_route",
+  "name": "West Route",
+  "peakName": "Mount Triumph",
+  "state": "Washington",
+  "discipline": "scrambling",
+  "status": "nopage",
+  "peak": {
+   "id": "wa_mount_triumph",
+   "name": "Mount Triumph",
+   "lat": 48.706705,
+   "lng": -121.355985,
+   "elevation_ft": 7260,
+   "region": "North Cascades Core",
+   "path": "usa.washington.wa_northwest.wa_hwy20_ncnp.wa_north_cascades.wa_picket_range.wa_mount_triumph"
+  },
+  "text": {
+   "approach": "Reached via the longer, rougher Triumph Pass climbers' route rather than the standard Thornton Lakes approach used for the Northeast Ridge; used far less often and much less documented than the NE Ridge approach.",
+   "approach_logistics": null,
+   "road": "{\"name\":\"Same regional access as Northeast Ridge (SR-20 corridor)\",\"status\":null,\"driveNote\":null,\"seasonalGate\":null}",
+   "overview": "The technically easiest way up Mount Triumph but the least climbed line: a long Class 4 route up the mountain's west side and south face to the southeast shoulder, reached via the much longer and rougher Triumph Pass climbers' route rather than the popular Thornton Lakes approach used for the Northeast Ridge.",
+   "description": null,
+   "descent": null
+  },
+  "siblingTrailheads": [
+   {
+    "route": "wa_mount_triumph_northeast_ridge",
+    "name": "Thornton Lakes Trailhead"
+   }
+  ],
+  "officialCandidates": [
+   {
+    "src": "NPS",
+    "name": "Gorge Overlook Trail Trailhead",
+    "lat": 48.699938,
+    "lng": -121.21076,
+    "km": 10.7
+   },
+   {
+    "src": "NPS",
+    "name": "Gorge Overlook Trail Trailhead",
+    "lat": 48.700343,
+    "lng": -121.209709,
+    "km": 10.8
+   },
+   {
+    "src": "USFS",
+    "name": "Baker River Trailhead",
+    "lat": 48.750499,
+    "lng": -121.555348,
+    "km": 15.4
+   },
+   {
+    "src": "USFS",
+    "name": "Lookout Mountain Trailhead",
+    "lat": 48.537501,
+    "lng": -121.291755,
+    "km": 19.4
+   },
+   {
+    "src": "USFS",
+    "name": "Watson Lakes Trailhead",
+    "lat": 48.674907,
+    "lng": -121.615318,
+    "km": 19.4
+   },
+   {
+    "src": "USFS",
+    "name": "Shannon Ridge Trailhead",
+    "lat": 48.767233,
+    "lng": -121.618094,
+    "km": 20.4
+   },
+   {
+    "src": "NPS",
+    "name": "Happy Creek Forest Walk Trailhead",
+    "lat": 48.728543,
+    "lng": -121.055832,
+    "km": 22.2
+   },
+   {
+    "src": "USFS",
+    "name": "Hidden Lake Trailhead",
+    "lat": 48.514161,
+    "lng": -121.221581,
+    "km": 23.6
+   }
+  ],
+  "lastAnswer": {
+   "status": "stuck",
+   "trailhead": null,
+   "notes": "Wikipedia (opened) names the Triumph Pass climbers route as the approach but no trailhead. A search summary says it is reached via the Thornton Lakes Trail; the opened page ties Thornton Lakes only to the NE Ridge, so unconfirmed. SummitPost 403."
+  }
+ },
+ {
+  "id": "wa_north_early_winter_spire_christianson_roskelley",
+  "name": "Christianson-Roskelley",
+  "peakName": "North Early Winters Spire",
+  "state": "Washington",
+  "discipline": "alpine",
+  "status": "nopage",
+  "peak": {
+   "id": "wa_north_early_winters_spire",
+   "name": "North Early Winters Spire",
+   "lat": 48.512935,
+   "lng": -120.655465,
+   "elevation_ft": 7760,
+   "region": "Washington",
+   "path": "usa.washington.wa_northwest.wa_hwy20_ncnp.wa_north_cascades.wa_sub_wapass.wa_liberty_bell_group.wa_north_early_winters_spire"
+  },
+  "text": {
+   "approach": null,
+   "approach_logistics": null,
+   "road": null,
+   "overview": null,
+   "description": null,
+   "descent": null
+  },
+  "siblingTrailheads": [
+   {
+    "route": "wa_chockstone_route",
+    "name": "Blue Lake TH"
+   }
+  ],
+  "officialCandidates": [
+   {
+    "src": "USFS",
+    "name": "Hairpin",
+    "lat": 48.514336,
+    "lng": -120.642715,
+    "km": 1
+   },
+   {
+    "src": "USFS",
+    "name": "Blue Lake Trailhead",
+    "lat": 48.519016,
+    "lng": -120.674215,
+    "km": 1.5
+   },
+   {
+    "src": "USFS",
+    "name": "Burgundy Col",
+    "lat": 48.551406,
+    "lng": -120.630895,
+    "km": 4.6
+   },
+   {
+    "src": "USFS",
+    "name": "Bridge Creek Trailhead",
+    "lat": 48.504906,
+    "lng": -120.719115,
+    "km": 4.8
+   },
+   {
+    "src": "USFS",
+    "name": "Cutthroat Trailhead",
+    "lat": 48.556306,
+    "lng": -120.654715,
+    "km": 4.8
+   },
+   {
+    "src": "USFS",
+    "name": "Rainy Pass Trailhead (PCT North)",
+    "lat": 48.515306,
+    "lng": -120.736025,
+    "km": 5.9
+   },
+   {
+    "src": "USFS",
+    "name": "Heather Maple Pass Trailhead Rainy Pass ",
+    "lat": 48.516606,
+    "lng": -120.735815,
+    "km": 5.9
+   },
+   {
+    "src": "USFS",
+    "name": "Gilbert Trailhead",
+    "lat": 48.458443,
+    "lng": -120.565926,
+    "km": 9
+   }
+  ],
+  "lastAnswer": {
+   "status": "stuck",
+   "trailhead": null,
+   "notes": "Weak only: sources (MP area page, Gaia, search summaries) say most NEWS routes are approached from the west via Blue Lake Trail #314 (USFS Blue Lake Trailhead 48.519016,-120.674215), but none lists this route or its side. MP NEWS area lists only six routes (Chockstone, Early Winter Couloir, Flycatcher Buttress, Labor Pains, Northwest Corner, West Face); this route is absent. SummitPost returned 403. If a default is acceptable, Blue Lake TH is the inferred start; not confirmed."
+  }
+ },
+ {
+  "id": "wa_north_early_winter_spire_twitch_of_the_death_nerve",
+  "name": "Twitch of the Death Nerve",
+  "peakName": "North Early Winters Spire",
+  "state": "Washington",
+  "discipline": "alpine",
+  "status": "nopage",
+  "peak": {
+   "id": "wa_north_early_winters_spire",
+   "name": "North Early Winters Spire",
+   "lat": 48.512935,
+   "lng": -120.655465,
+   "elevation_ft": 7760,
+   "region": "Washington",
+   "path": "usa.washington.wa_northwest.wa_hwy20_ncnp.wa_north_cascades.wa_sub_wapass.wa_liberty_bell_group.wa_north_early_winters_spire"
+  },
+  "text": {
+   "approach": null,
+   "approach_logistics": null,
+   "road": null,
+   "overview": null,
+   "description": null,
+   "descent": null
+  },
+  "siblingTrailheads": [
+   {
+    "route": "wa_chockstone_route",
+    "name": "Blue Lake TH"
+   }
+  ],
+  "officialCandidates": [
+   {
+    "src": "USFS",
+    "name": "Hairpin",
+    "lat": 48.514336,
+    "lng": -120.642715,
+    "km": 1
+   },
+   {
+    "src": "USFS",
+    "name": "Blue Lake Trailhead",
+    "lat": 48.519016,
+    "lng": -120.674215,
+    "km": 1.5
+   },
+   {
+    "src": "USFS",
+    "name": "Burgundy Col",
+    "lat": 48.551406,
+    "lng": -120.630895,
+    "km": 4.6
+   },
+   {
+    "src": "USFS",
+    "name": "Bridge Creek Trailhead",
+    "lat": 48.504906,
+    "lng": -120.719115,
+    "km": 4.8
+   },
+   {
+    "src": "USFS",
+    "name": "Cutthroat Trailhead",
+    "lat": 48.556306,
+    "lng": -120.654715,
+    "km": 4.8
+   },
+   {
+    "src": "USFS",
+    "name": "Rainy Pass Trailhead (PCT North)",
+    "lat": 48.515306,
+    "lng": -120.736025,
+    "km": 5.9
+   },
+   {
+    "src": "USFS",
+    "name": "Heather Maple Pass Trailhead Rainy Pass ",
+    "lat": 48.516606,
+    "lng": -120.735815,
+    "km": 5.9
+   },
+   {
+    "src": "USFS",
+    "name": "Gilbert Trailhead",
+    "lat": 48.458443,
+    "lng": -120.565926,
+    "km": 9
+   }
+  ],
+  "lastAnswer": {
+   "status": "stuck",
+   "trailhead": null,
+   "notes": "Same as Christianson-Roskelley: no page names this route. Inferred lead only, Blue Lake TH (west-side approach shared by most NEWS routes). SummitPost 403, MP area page does not list it."
+  }
+ },
+ {
+  "id": "wa_north_early_winter_spire_vulcan_death_grip",
+  "name": "Vulcan Death Grip",
+  "peakName": "North Early Winters Spire",
+  "state": "Washington",
+  "discipline": "alpine",
+  "status": "nopage",
+  "peak": {
+   "id": "wa_north_early_winters_spire",
+   "name": "North Early Winters Spire",
+   "lat": 48.512935,
+   "lng": -120.655465,
+   "elevation_ft": 7760,
+   "region": "Washington",
+   "path": "usa.washington.wa_northwest.wa_hwy20_ncnp.wa_north_cascades.wa_sub_wapass.wa_liberty_bell_group.wa_north_early_winters_spire"
+  },
+  "text": {
+   "approach": null,
+   "approach_logistics": null,
+   "road": null,
+   "overview": null,
+   "description": null,
+   "descent": null
+  },
+  "siblingTrailheads": [
+   {
+    "route": "wa_chockstone_route",
+    "name": "Blue Lake TH"
+   }
+  ],
+  "officialCandidates": [
+   {
+    "src": "USFS",
+    "name": "Hairpin",
+    "lat": 48.514336,
+    "lng": -120.642715,
+    "km": 1
+   },
+   {
+    "src": "USFS",
+    "name": "Blue Lake Trailhead",
+    "lat": 48.519016,
+    "lng": -120.674215,
+    "km": 1.5
+   },
+   {
+    "src": "USFS",
+    "name": "Burgundy Col",
+    "lat": 48.551406,
+    "lng": -120.630895,
+    "km": 4.6
+   },
+   {
+    "src": "USFS",
+    "name": "Bridge Creek Trailhead",
+    "lat": 48.504906,
+    "lng": -120.719115,
+    "km": 4.8
+   },
+   {
+    "src": "USFS",
+    "name": "Cutthroat Trailhead",
+    "lat": 48.556306,
+    "lng": -120.654715,
+    "km": 4.8
+   },
+   {
+    "src": "USFS",
+    "name": "Rainy Pass Trailhead (PCT North)",
+    "lat": 48.515306,
+    "lng": -120.736025,
+    "km": 5.9
+   },
+   {
+    "src": "USFS",
+    "name": "Heather Maple Pass Trailhead Rainy Pass ",
+    "lat": 48.516606,
+    "lng": -120.735815,
+    "km": 5.9
+   },
+   {
+    "src": "USFS",
+    "name": "Gilbert Trailhead",
+    "lat": 48.458443,
+    "lng": -120.565926,
+    "km": 9
+   }
+  ],
+  "lastAnswer": {
+   "status": "stuck",
+   "trailhead": null,
+   "notes": "A targeted search for 'Vulcan Death Grip' returned nothing relevant. Inferred lead only, Blue Lake TH. Not confirmed."
+  }
+ },
+ {
+  "id": "wa_north_peak_north_ridge",
+  "name": "North Ridge",
+  "peakName": "North Peak",
+  "state": "Washington",
+  "discipline": "alpine",
+  "status": "nopage",
+  "peak": {
+   "id": "wa_north_peak",
+   "name": "North Peak",
+   "lat": 48.3068,
+   "lng": -120.994,
+   "elevation_ft": 8160,
+   "region": "Washington",
+   "path": "usa.washington.wa_northwest.wa_glacier_peak_region.wa_glacier_peak_wilderness.wa_gunsight_range_the.wa_north_peak"
+  },
+  "text": {
+   "approach": null,
+   "approach_logistics": null,
+   "road": null,
+   "overview": null,
+   "description": null,
+   "descent": null
+  },
+  "siblingTrailheads": [
+   {
+    "route": "wa_west_face_2",
+    "name": "Downey Creek Trailhead"
+   }
+  ],
+  "officialCandidates": [
+   {
+    "src": "USFS",
+    "name": "Suiattle Trailhead",
+    "lat": 48.248106,
+    "lng": -121.192115,
+    "km": 16
+   },
+   {
+    "src": "USFS",
+    "name": "Downey Creek Trailhead",
+    "lat": 48.259506,
+    "lng": -121.222915,
+    "km": 17.7
+   },
+   {
+    "src": "USFS",
+    "name": "Green Mountain Trailhead",
+    "lat": 48.268149,
+    "lng": -121.236861,
+    "km": 18.5
+   },
+   {
+    "src": "NPS",
+    "name": "Imus Creek Loop Trail Trailhead",
+    "lat": 48.3085,
+    "lng": -120.65601,
+    "km": 25
+   }
+  ],
+  "lastAnswer": {
+   "status": "stuck",
+   "trailhead": null,
+   "notes": "Identity of North Peak unresolved. Searches suggest North Peak = North Gunsight Peak (8,160 ft), whose West Face is reached by Downey Creek trail + Bachelor Creek (stephabegg.com, upwardescape blog), but the Mountain Project 'North Peak' area (1 route, West Face, GPS 48.5093,-120.66) carries coordinates near Early Winters, not the Gunsight Range, so MP data is muddled. No page about a North Ridge. Other Gunsight approaches (Agnes Creek via Stehekin) exist. Downey Creek TH is only an inferred lead for the west side."
+  }
+ },
+ {
+  "id": "wa_northwest_mox_peak_northeast_ridge",
+  "name": "Northeast Ridge",
+  "peakName": "Northwest Mox Peak",
+  "state": "Washington",
+  "discipline": "alpine",
+  "status": "held",
+  "peak": {
+   "id": "wa_northwest_mox_peak",
+   "name": "Northwest Mox Peak",
+   "lat": 48.948747,
+   "lng": -121.262656,
+   "elevation_ft": 8407,
+   "region": "Chilliwack / Picket",
+   "path": "usa.washington.wa_northwest.wa_hwy20_ncnp.wa_north_cascades.wa_chilliwack_range.wa_northwest_mox_peak"
+  },
+  "text": {
+   "approach": null,
+   "approach_logistics": null,
+   "road": null,
+   "overview": "The standard route on this spire and its easiest line to the top, though awkward for reaching the SE Spire. Ascend the snowy finger to reach rock, then take two pitches, fourth class into low fifth, directly to the saddle (rappel anchor atop each). A ledge line on the left may be easier but often seems wet and slimy. Beyond the saddle, follow the NE ridge on foot, with some exposed scrambling at class 3-4, then drop into a class 4 chute short of the summit and walk to the foot of the last pitch.",
+   "description": null,
+   "descent": null
+  },
+  "siblingTrailheads": [
+   {
+    "route": "wa_northwest_mox_peak_standard",
+    "name": "Depot Creek Road Trailhead"
+   }
+  ],
+  "officialCandidates": [
+   {
+    "src": "NPS",
+    "name": "Nepopekum Horse Trail Loop Trailhead (BC)",
+    "lat": 49.053337,
+    "lng": -121.094073,
+    "km": 16.9
+   },
+   {
+    "src": "NPS",
+    "name": "Skyline II Trailhead (BC)",
+    "lat": 49.041545,
+    "lng": -121.068734,
+    "km": 17.5
+   },
+   {
+    "src": "NPS",
+    "name": "Strawberry Bar (BC)",
+    "lat": 49.076197,
+    "lng": -121.111462,
+    "km": 18
+   },
+   {
+    "src": "NPS",
+    "name": "Shawatum Day Use parking area (BC)",
+    "lat": 49.105168,
+    "lng": -121.138761,
+    "km": 19.6
+   },
+   {
+    "src": "USFS",
+    "name": "Hannegan Trailhead",
+    "lat": 48.910191,
+    "lng": -121.591986,
+    "km": 24.4
+   }
+  ],
+  "lastAnswer": {
+   "status": "found",
+   "trailhead": {
+    "name": "Depot Creek Road parking (Chilliwack Lake Road, BC), then walk the old road to the border at Monument 65",
+    "identifiedBy": {
+     "kind": "page",
+     "fact": "Easy Mox NE Ridge party parked at a small lot at a fork on Depot Creek Road near milepost 1.5 (about 2,350 ft), walked old road about 2 miles to the border, then Ouzel Lake and Redoubt Glacier to the NE ridge",
+     "url": "https://trailcatjim.com/hard-mox-peak-easy-mox-peak-depot-creek-falls/"
+    },
+    "placements": []
+   },
+   "notes": "Strong for the start (page is this exact route, NE Ridge of Easy Mox, and agrees with the sibling's Depot Creek Road Trailhead). No coordinate on any page; official candidates are only BC points 17+ km off and none is Depot Creek. SummitPost, Mountaineers 403."
+  }
+ },
+ {
+  "id": "wa_overcoat_peak_north_face",
+  "name": "North Face",
+  "peakName": "Overcoat Peak",
+  "state": "Washington",
+  "discipline": "alpine",
+  "status": "held",
+  "peak": {
+   "id": "wa_overcoat_peak",
+   "name": "Overcoat Peak",
+   "lat": 47.5139668,
+   "lng": -121.2922506,
+   "elevation_ft": 7432,
+   "region": "Washington",
+   "path": "usa.washington.wa_centralwest.wa_western_alpine_lakes.wa_overcoat_peak"
+  },
+  "text": {
+   "approach": null,
+   "approach_logistics": null,
+   "road": null,
+   "overview": null,
+   "description": null,
+   "descent": "In mid-July the descent was a class 4 downclimb to a rappel anchor about 50 ft above the gully, then crossing snow at the gully bottom while roped."
+  },
+  "siblingTrailheads": [
+   {
+    "route": "wa_overcoat_peak_southeast_route",
+    "name": "Dingford Creek Trailhead"
+   }
+  ],
+  "officialCandidates": [
+   {
+    "src": "USFS",
+    "name": "Pete Lake Trailhead",
+    "lat": 47.434106,
+    "lng": -121.186915,
+    "km": 11.9
+   },
+   {
+    "src": "USFS",
+    "name": "Dingford Creek Trailhead",
+    "lat": 47.517325,
+    "lng": -121.4543,
+    "km": 12.2
+   },
+   {
+    "src": "USFS",
+    "name": "Snow Lake Trailhead",
+    "lat": 47.445656,
+    "lng": -121.423665,
+    "km": 12.5
+   },
+   {
+    "src": "USFS",
+    "name": "Rachel Lake Trailhead",
+    "lat": 47.400706,
+    "lng": -121.283915,
+    "km": 12.6
+   },
+   {
+    "src": "USFS",
+    "name": "Dorothy Lake Trailhead",
+    "lat": 47.608617,
+    "lng": -121.384459,
+    "km": 12.6
+   },
+   {
+    "src": "USFS",
+    "name": "Pacific Crest Trail - Snoqualmie North T",
+    "lat": 47.428012,
+    "lng": -121.413484,
+    "km": 13.2
+   },
+   {
+    "src": "USFS",
+    "name": "Pacific Crest Trail/Stevens Pass Trailhe",
+    "lat": 47.42841,
+    "lng": -121.415498,
+    "km": 13.3
+   },
+   {
+    "src": "USFS",
+    "name": "West Fork Foss Lakes Trailhead",
+    "lat": 47.635006,
+    "lng": -121.303348,
+    "km": 13.5
+   }
+  ],
+  "lastAnswer": {
+   "status": "found",
+   "trailhead": {
+    "name": "Dutch Miller Gap Trailhead",
+    "identifiedBy": {
+     "kind": "page",
+     "fact": "North-side route: snow finger in the north gully from Overcoat Glacier, descent east gully with two rappels; trip started at Dutch Miller Gap Trailhead (gated, bike about 7 mi to Hardscrabble Horse Camp)",
+     "url": "https://onehikeaweek.com/2024/07/13/overcoat-peak/"
+    },
+    "placements": []
+   },
+   "notes": "Moderate. Replaces the earlier Dingford guess: that is the Mountaineers' listed start (Dingford Creek TH, FR 5620, 26 mi, via search summary, page 403) and the route is the same long approach, but the opened trip report on the north side names Dutch Miller Gap TH. Both sit on the same road system; two starts, so keep the note. Dingford is USFS 47.517325,-121.4543 if the owner prefers the official lot. No coordinate for Dutch Miller Gap TH found."
+  }
+ },
+ {
+  "id": "wa_red_mountain_snoqualmie_east_face",
+  "name": "East Face",
+  "peakName": "Red Mountain",
+  "state": "Washington",
+  "discipline": "alpine",
+  "status": "nopage",
+  "peak": {
+   "id": "wa_red_mountain_snoqualmie",
+   "name": "Red Mountain",
+   "lat": 47.456135,
+   "lng": -121.389105,
+   "elevation_ft": 5890,
+   "region": "Alpine Lakes",
+   "path": "usa.washington.wa_centralwest.wa_snoqualmie_pass_area.wa_red_mountain_snoqualmie"
+  },
+  "text": {
+   "approach": null,
+   "approach_logistics": null,
+   "road": null,
+   "overview": null,
+   "description": null,
+   "descent": null
+  },
+  "siblingTrailheads": [
+   {
+    "route": "wa_red_mountain_snoqualmie_standard",
+    "name": "PCT North Trailhead, Snoqualmie Pass"
+   }
+  ],
+  "officialCandidates": [
+   {
+    "src": "USFS",
+    "name": "Snow Lake Trailhead",
+    "lat": 47.445656,
+    "lng": -121.423665,
+    "km": 2.8
+   },
+   {
+    "src": "USFS",
+    "name": "Pacific Crest Trail - Snoqualmie North T",
+    "lat": 47.428012,
+    "lng": -121.413484,
+    "km": 3.6
+   },
+   {
+    "src": "USFS",
+    "name": "Pacific Crest Trail/Stevens Pass Trailhe",
+    "lat": 47.42841,
+    "lng": -121.415498,
+    "km": 3.7
+   },
+   {
+    "src": "USFS",
+    "name": "Pants - Snoqualmie South Trailhead",
+    "lat": 47.427228,
+    "lng": -121.420293,
+    "km": 4
+   },
+   {
+    "src": "USFS",
+    "name": "Denny Creek Trailhead",
+    "lat": 47.415956,
+    "lng": -121.441168,
+    "km": 5.9
+   },
+   {
+    "src": "USFS",
+    "name": "Franklin Falls Trailhead",
+    "lat": 47.413339,
+    "lng": -121.441404,
+    "km": 6.2
+   },
+   {
+    "src": "USFS",
+    "name": "Kendall Peaks Trailhead",
+    "lat": 47.398249,
+    "lng": -121.394411,
+    "km": 6.4
+   },
+   {
+    "src": "USFS",
+    "name": "Gold Creek Trailhead",
+    "lat": 47.398629,
+    "lng": -121.380326,
+    "km": 6.4
+   }
+  ],
+  "lastAnswer": {
+   "status": "stuck",
+   "trailhead": null,
+   "notes": "No readable page about the east side. WTA describes only the west slope from the PCT/Commonwealth Basin; SummitPost east-side pages (red-mountain-from-its-east/90320, east-ridge-from-red-mtn-pass) returned 403. Search summaries mention a Mountaineers option via Cave Ridge from Alpental and Snow Lake, none verified. Probable (weak, inferred): PCT North TH like the standard route."
+  }
+ },
+ {
+  "id": "wa_red_mountain_snoqualmie_east_ridge",
+  "name": "East Ridge",
+  "peakName": "Red Mountain",
+  "state": "Washington",
+  "discipline": "alpine",
+  "status": "nopage",
+  "peak": {
+   "id": "wa_red_mountain_snoqualmie",
+   "name": "Red Mountain",
+   "lat": 47.456135,
+   "lng": -121.389105,
+   "elevation_ft": 5890,
+   "region": "Alpine Lakes",
+   "path": "usa.washington.wa_centralwest.wa_snoqualmie_pass_area.wa_red_mountain_snoqualmie"
+  },
+  "text": {
+   "approach": null,
+   "approach_logistics": null,
+   "road": null,
+   "overview": null,
+   "description": null,
+   "descent": null
+  },
+  "siblingTrailheads": [
+   {
+    "route": "wa_red_mountain_snoqualmie_standard",
+    "name": "PCT North Trailhead, Snoqualmie Pass"
+   }
+  ],
+  "officialCandidates": [
+   {
+    "src": "USFS",
+    "name": "Snow Lake Trailhead",
+    "lat": 47.445656,
+    "lng": -121.423665,
+    "km": 2.8
+   },
+   {
+    "src": "USFS",
+    "name": "Pacific Crest Trail - Snoqualmie North T",
+    "lat": 47.428012,
+    "lng": -121.413484,
+    "km": 3.6
+   },
+   {
+    "src": "USFS",
+    "name": "Pacific Crest Trail/Stevens Pass Trailhe",
+    "lat": 47.42841,
+    "lng": -121.415498,
+    "km": 3.7
+   },
+   {
+    "src": "USFS",
+    "name": "Pants - Snoqualmie South Trailhead",
+    "lat": 47.427228,
+    "lng": -121.420293,
+    "km": 4
+   },
+   {
+    "src": "USFS",
+    "name": "Denny Creek Trailhead",
+    "lat": 47.415956,
+    "lng": -121.441168,
+    "km": 5.9
+   },
+   {
+    "src": "USFS",
+    "name": "Franklin Falls Trailhead",
+    "lat": 47.413339,
+    "lng": -121.441404,
+    "km": 6.2
+   },
+   {
+    "src": "USFS",
+    "name": "Kendall Peaks Trailhead",
+    "lat": 47.398249,
+    "lng": -121.394411,
+    "km": 6.4
+   },
+   {
+    "src": "USFS",
+    "name": "Gold Creek Trailhead",
+    "lat": 47.398629,
+    "lng": -121.380326,
+    "km": 6.4
+   }
+  ],
+  "lastAnswer": {
+   "status": "stuck",
+   "trailhead": null,
+   "notes": "Same as East Face. A SummitPost page titled 'East Ridge from Red Mtn Pass' exists (403), which suggests it starts from the PCT/Commonwealth Basin side to Red Pass, but this was not read, so not evidence. Probable: PCT North TH (47.428012,-121.413484)."
+  }
+ },
+ {
+  "id": "wa_red_mountain_snoqualmie_southeast_face",
+  "name": "Southeast Face",
+  "peakName": "Red Mountain",
+  "state": "Washington",
+  "discipline": "alpine",
+  "status": "nopage",
+  "peak": {
+   "id": "wa_red_mountain_snoqualmie",
+   "name": "Red Mountain",
+   "lat": 47.456135,
+   "lng": -121.389105,
+   "elevation_ft": 5890,
+   "region": "Alpine Lakes",
+   "path": "usa.washington.wa_centralwest.wa_snoqualmie_pass_area.wa_red_mountain_snoqualmie"
+  },
+  "text": {
+   "approach": null,
+   "approach_logistics": null,
+   "road": null,
+   "overview": null,
+   "description": null,
+   "descent": null
+  },
+  "siblingTrailheads": [
+   {
+    "route": "wa_red_mountain_snoqualmie_standard",
+    "name": "PCT North Trailhead, Snoqualmie Pass"
+   }
+  ],
+  "officialCandidates": [
+   {
+    "src": "USFS",
+    "name": "Snow Lake Trailhead",
+    "lat": 47.445656,
+    "lng": -121.423665,
+    "km": 2.8
+   },
+   {
+    "src": "USFS",
+    "name": "Pacific Crest Trail - Snoqualmie North T",
+    "lat": 47.428012,
+    "lng": -121.413484,
+    "km": 3.6
+   },
+   {
+    "src": "USFS",
+    "name": "Pacific Crest Trail/Stevens Pass Trailhe",
+    "lat": 47.42841,
+    "lng": -121.415498,
+    "km": 3.7
+   },
+   {
+    "src": "USFS",
+    "name": "Pants - Snoqualmie South Trailhead",
+    "lat": 47.427228,
+    "lng": -121.420293,
+    "km": 4
+   },
+   {
+    "src": "USFS",
+    "name": "Denny Creek Trailhead",
+    "lat": 47.415956,
+    "lng": -121.441168,
+    "km": 5.9
+   },
+   {
+    "src": "USFS",
+    "name": "Franklin Falls Trailhead",
+    "lat": 47.413339,
+    "lng": -121.441404,
+    "km": 6.2
+   },
+   {
+    "src": "USFS",
+    "name": "Kendall Peaks Trailhead",
+    "lat": 47.398249,
+    "lng": -121.394411,
+    "km": 6.4
+   },
+   {
+    "src": "USFS",
+    "name": "Gold Creek Trailhead",
+    "lat": 47.398629,
+    "lng": -121.380326,
+    "km": 6.4
+   }
+  ],
+  "lastAnswer": {
+   "status": "stuck",
+   "trailhead": null,
+   "notes": "Same as East Face. Search summary (not opened) says the SE face is Class 4 and its SummitPost page is a 2002 east-side climb; page 403. Probable: PCT North TH, unverified."
+  }
+ }
+]

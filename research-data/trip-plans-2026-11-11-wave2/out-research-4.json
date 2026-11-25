@@ -1,0 +1,272 @@
+[
+ {
+  "id": "wa_mount_adams_northwest_ridge",
+  "itinerary": {
+   "cal": "Best in June-July while snow still covers much of the loose ridge rock. A Cascade Volcano Pass is required above 7,000 ft (May 1-Sep 30) plus a free self-issued wilderness permit at the Killen Creek trailhead; most parties take two days with a night at High Camp.",
+   "totalNote": "Two-day north-side climb: carry about 5 miles and 2,300 ft to High Camp, then a long summit day of roughly 5,400 ft up the North Ridge and all the way back to the car (about 16 miles and 7,700 ft round trip).",
+   "days": [
+    {
+     "n": 1,
+     "title": "Hike Killen Creek to High Camp",
+     "objective": "Carry camp to High Camp (Adams Creek Meadows)",
+     "note": "Killen Creek Trail 113 climbs through lodgepole forest to the PCT just past 3 miles, then a rocky climbers' path with a few scrambly steps leads to the meadows at about 6,900 ft. A 2004 party took about 3 hours trailhead to High Camp; water is snowmelt and the camp is very exposed to wind.",
+     "gainFt": 2300,
+     "lossFt": 0,
+     "hours": 3,
+     "miles": 5.0,
+     "packLb": 40,
+     "schedule": []
+    },
+    {
+     "n": 2,
+     "title": "Climb the North Ridge and hike out",
+     "objective": "Summit via the North Ridge, then return to the car",
+     "note": "Follow the boot track and occasional flags past the rock bivy sites and Lake 7505 onto the ridge; it is mixed snow and loose rock in the middle with broad snowfields on the top third. Gain of about 5,400 ft is derived from High Camp (6,900 ft) to the summit (12,276 ft); a 2004 party reached 9,700 ft in about 3.5 hours and took about 2 hours from High Camp back to the trailhead.",
+     "gainFt": 5400,
+     "lossFt": 7700,
+     "hours": 13,
+     "miles": 11.0,
+     "packLb": 18,
+     "schedule": [
+      {"time": "~6:20 AM", "label": "Leave High Camp", "detail": "Start time of a June 2019 party; an earlier start gives firmer snow."},
+      {"time": "~9:50 AM", "label": "About 9,700 ft on the ridge", "detail": "Roughly 3.5 hours above camp per a 2004 party."},
+      {"time": "~2:30 PM", "label": "Leave the top", "detail": "The 2019 party started down about 8 hours after leaving camp."},
+      {"time": "Evening", "label": "Back at the car", "detail": "Pack up camp, then about 2 hours from High Camp to the trailhead."}
+     ]
+    }
+   ]
+  },
+  "sources": [
+   "https://www.wta.org/go-hiking/hikes/killen-creek",
+   "https://apps.yellowleaf.org/scramble/g/r/2004-09-03-Mount-Adams-via-north-ridge.html",
+   "https://turns-all-year.com/trip-reports/june-1-2-2019-mt-adams-north-side",
+   "https://globalsummitguide.com/mountains-mount-adams-washington-state-usa/"
+  ],
+  "confidence": "medium",
+  "notes": "Round trip of about 16 mi / 7,700 ft comes from globalsummitguide (a weaker source); WTA gives 10 mi RT / 2,300 ft to High Camp (Mountaineers is quoted at 8.4 mi RT). Summit-day miles (about 6 mi above camp plus 5 mi out) are back-calculated from those totals; hours are estimates from the 2004 and 2019 splits. Row grade 'AI2, 5 pitches' and the name 'North Ridge (West Face)' look off: the sources describe the North Ridge as a non-technical snow and loose-rock route, not an ice climb, and the row's 7,700 ft moraine bivy is an Adams Glacier option."
+ },
+ {
+  "id": "wa_mount_hinman_southeast_route",
+  "itinerary": {
+   "cal": "July through September, once the La Bohn Gap gully melts out; earlier the snow chute below the gap needs axe and crampons. A free wilderness permit is self-issued at the trailhead; most parties take two days, while fit parties go car-to-car in about 12-15 hours.",
+   "totalNote": "Two-day Necklace Valley climb: hike about 9 miles to a camp in the upper valley, then climb from La Bohn Gap along the ridge to the summit and walk out (about 25 miles and 7,000 ft round trip).",
+   "days": [
+    {
+     "n": 1,
+     "title": "Hike up the Necklace Valley",
+     "objective": "Camp in the upper Necklace Valley or at La Bohn Lakes",
+     "note": "The first 5 miles up the East Fork Foss are gentle forest to the river crossing, where the footlog can run with water in early season; then the trail climbs steep and rooty to Jade Lake and on up the lake chain. WTA gives 9 miles one way and 3,400 ft to the upper valley; campfires are not allowed.",
+     "gainFt": 3400,
+     "lossFt": 0,
+     "hours": 5,
+     "miles": 9.0,
+     "packLb": 38,
+     "schedule": []
+    },
+    {
+     "n": 2,
+     "title": "Climb Hinman via La Bohn Gap, hike out",
+     "objective": "Summit from La Bohn Gap and return to the car",
+     "note": "Leave the trail at the head of the valley and climb the boulder gully, waterfall route or early-season snow chute (axe and crampons) to La Bohn Gap at about 6,000 ft, then follow the climbers' track north along a broad Class 2 ridge across the upper edges of receding glaciers to the summit. Gain is the remainder of a 7,000 ft round trip reported for the whole climb; mileage is the remainder of about 25 miles.",
+     "gainFt": 3600,
+     "lossFt": 7000,
+     "hours": 11,
+     "miles": 16.0,
+     "packLb": 18,
+     "schedule": []
+    }
+   ]
+  },
+  "sources": [
+   "https://www.wta.org/go-hiking/hikes/necklace-valley",
+   "https://climberkyle.com/2015/08/15/mt-hinman/",
+   "https://turns-all-year.com/trip-reports/hinman",
+   "https://fastestknowntime.com/fkt/michael-searing-mt-hinman-2022-08-14"
+  ],
+  "confidence": "medium",
+  "notes": "Totals (about 25 mi / 7,000 ft) come from a climberkyle day trip; WTA gives 18 mi RT / 3,400 ft to the upper valley. Day-2 gain and miles are the totals minus day 1, and hours are estimates. Sources describe the standard climbers' track north from La Bohn Gap but do not call it the 'Southeast Route', so that mapping comes from the row's description. As a day trip it is about 12 hours car-to-car (turns-all-year), and an FKT did it in 8h16m."
+ },
+ {
+  "id": "wa_mount_hinman_west_route",
+  "skip": true,
+  "reason": "The sources I could open (WTA, climberkyle, turns-all-year, FKT) describe only one line, the climbers' track north from La Bohn Gap, which this file uses for the Southeast Route. Nothing separates a West Route, so a separate plan would just copy that one. If the two rows are the same line, reuse the Southeast Route plan."
+ },
+ {
+  "id": "wa_mount_hinman_east_route",
+  "skip": true,
+  "reason": "The row has no data, and no source I could open describes an East Route on Hinman."
+ },
+ {
+  "id": "wa_mount_index_bluebell",
+  "itinerary": {
+   "cal": "Best in high summer: rockfall is worst while snow is still melting off the upper buttress and from the gullies of Mount Index, so aim later in the June-September window. Most parties take two days with a portaledge bivy, though one-day ascents have been done.",
+   "totalNote": "Two-day wall climb: hike to Lake Serene and the base, climb to a portaledge bivy at the top of pitch 10 (or 12), then finish all 17 pitches, rappel the route on one 70 m rope and walk out.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Approach and climb to the bivy",
+     "objective": "Reach the base and climb pitches 1-10",
+     "note": "Lake Serene Trail is about 3.6 miles and 2,000 ft to the lake; fill water there, then traverse the talus west of the lake to the toe of the buttress, about 200 ft left of an old fixed line. The ledge atop P10 has extra bolts for portaledges; the ledge above P12 is narrow and sloping, maybe a bivy for one. Gain is the trail gain plus roughly 1,000 ft of pitches 1-10, summed from the topo.",
+     "gainFt": 3000,
+     "lossFt": 0,
+     "hours": 12,
+     "miles": 3.8,
+     "packLb": 40,
+     "schedule": []
+    },
+    {
+     "n": 2,
+     "title": "Top out, rappel the route, hike out",
+     "objective": "Finish to P17, rappel to the talus, walk out",
+     "note": "The headwall holds the crux overhang (P12, 5.13-), and P14-15 may need a stick clip; P16-17 ease to 5.8-5.9. Every anchor is rigged for rappel, with dedicated stations that skip belays on the overhanging headwall, and there is no walk-off from the top.",
+     "gainFt": 900,
+     "lossFt": 3900,
+     "hours": 12,
+     "miles": 3.8,
+     "packLb": 30,
+     "schedule": []
+    }
+   ]
+  },
+  "sources": [
+   "https://www.mountainproject.com/route/124804426/bluebell",
+   "https://publications.americanalpineclub.org/articles/13201216755",
+   "https://www.wta.org/go-hiking/hikes/lake-serene"
+  ],
+  "confidence": "medium",
+  "notes": "The pitch count differs: Mountain Project lists 17 pitches (about 590 m) and the AAJ article says 21. Wall gain comes from the MP pitch lengths. Day hours are estimates; no source gives clock times. The row's high point of 5,527 ft (Middle Peak summit) is not reached, because the route ends atop the buttress and you rappel from there. The row's dist_km of 5.8 matches the one-way trail to the lake (3.6 mi), and the talus to the base is extra."
+ },
+ {
+  "id": "wa_lundin_peak_southeast_ridge",
+  "itinerary": {
+   "cal": "July to early October once Commonwealth Basin and the gullies are snow-free; with snow, the descent gully off the east summit needs care. A one-day climb from Snoqualmie Pass with no overnight permit needed.",
+   "totalNote": "Day climb from Snoqualmie Pass via Commonwealth Basin and Red Pass, over Lundin's east and middle summits to Class 3 rock on the main summit's east ridge, about 7.6 miles and 2,900 ft round trip.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Red Pass to Lundin via the east ridge",
+     "objective": "Summit Lundin from Red Pass and return",
+     "note": "Take the Commonwealth Basin trail to Red/Lundin pass, climb a boot path to the east summit, descend its south-side gully (some parties rappel) and traverse the north side of the middle peak to the middle-main notch. Then climb the south side of the east ridge on Class 3 rock to a bolted step, where slower parties fix a line, and scramble easily to the summit.",
+     "gainFt": 2900,
+     "lossFt": 2900,
+     "hours": 7.5,
+     "miles": 7.6,
+     "packLb": 18,
+     "schedule": [
+      {"time": "0:00", "label": "Leave the PCT trailhead", "detail": "Elapsed times from a 2007 party."},
+      {"time": "+2:25", "label": "East summit of Lundin", "detail": "Via Commonwealth Basin and Red Pass."},
+      {"time": "+4:25", "label": "Main summit", "detail": "About 2 hours along the ridge from the east summit."},
+      {"time": "+5:25", "label": "Back on the east summit", "detail": "About an hour on the return."},
+      {"time": "+7:35", "label": "Back at the trailhead", "detail": "About 2 hours 12 minutes down."}
+     ]
+    }
+   ]
+  },
+  "sources": [
+   "https://apps.yellowleaf.org/scramble/g/r/2007-07-04-lundin.html",
+   "https://www.wta.org/go-hiking/hikes/lundin-peak-trail"
+  ],
+  "confidence": "low",
+  "notes": "The 2007 source calls this the 'east ridge' and never says 'Southeast Ridge'. Treating it as this row's route is an assumption. The two sources agree on gain (2,845 vs 2,900 ft). Mileage is WTA's 7.6 mi RT; the Mountaineers list 9.5 mi for the West Ridge. The schedule shows elapsed times, not clock times."
+ },
+ {
+  "id": "wa_lundin_peak_northwest_face",
+  "skip": true,
+  "reason": "The row has no data, and no source I could open describes a Northwest Face route on Lundin. The sources cover only the West Ridge and the east ridge."
+ },
+ {
+  "id": "wa_little_annapurna_boola_boola_buttress",
+  "skip": true,
+  "reason": "The row has no data. Searches found no usable beta for this route, and the SummitPost Little Annapurna pages return 403."
+ },
+ {
+  "id": "wa_little_annapurna_northeast_face",
+  "skip": true,
+  "reason": "The row has no data. Searches found no usable beta for this route, and the SummitPost Little Annapurna pages return 403."
+ },
+ {
+  "id": "wa_little_annapurna_northwest_buttress",
+  "skip": true,
+  "reason": "The row has no data. Searches found no usable beta for this route, and the SummitPost Little Annapurna pages return 403."
+ },
+ {
+  "id": "wa_little_annapurna_south_face",
+  "skip": true,
+  "reason": "The only detailed beta is on SummitPost (route page and trip report), which returns 403. Lemke's page has no approach or timing figures, so there are not two usable sources. Search snippets agree with the row: about 8 mi up Ingalls Creek, a 6-7 h approach to a tarn camp in Crystal Creek, and a descent past Crystal Lake."
+ },
+ {
+  "id": "wa_little_big_chief_mountain_southwest_face",
+  "skip": true,
+  "reason": "No source describes a Southwest Face. The documented routes are the NW Face (Falcon) and a Class 3 north ridge from the Dutch Miller Gap side."
+ },
+ {
+  "id": "wa_middle_peak_north_face",
+  "skip": true,
+  "reason": "The row has no data and 'Middle Peak' is ambiguous. It may be Mount Index's Middle Peak, but the Index trip reports are on CascadeClimbers (403) and I could not confirm the peak."
+ },
+ {
+  "id": "wa_middle_peak_traverse_route",
+  "skip": true,
+  "reason": "The row has no data and 'Middle Peak' is ambiguous. It may be the North-Middle-Main Index Traverse, usually done as an overnight with scarce bivies, but the trip reports are on CascadeClimbers (403) and I could not confirm the peak."
+ },
+ {
+  "id": "wa_north_peak_north_ridge",
+  "skip": true,
+  "reason": "'North Peak' is ambiguous (Index? Ingalls?) and the row has no approach or elevation data. No source matched this route name and grade."
+ },
+ {
+  "id": "wa_north_peak_southeast_buttress",
+  "skip": true,
+  "reason": "'North Peak' is ambiguous and the row has no approach or elevation data. No source matched a 5.7 Southeast Buttress on a North Peak."
+ },
+ {
+  "id": "wa_mount_chaval_north_ridge",
+  "skip": true,
+  "reason": "The Chaval beta is on SummitPost and CascadeClimbers, and both return 403. No source I could open describes the North Ridge."
+ },
+ {
+  "id": "wa_mount_crowder_northeast_ridge",
+  "skip": true,
+  "reason": "This ridge is only done as the descent leg of multi-day Picket traverses. Steph Abegg (Mystery Ridge Enchainment, 7 days, about 55 mi) and Mount Baker Experience describe it as grassy Class 3 ledges with one or two 5th-class downclimbs or brushy rappels, ending at a heather-bench camp at Pickell Pass. Neither gives route-level timing, so a stand-alone plan would invent figures. Abegg's Day 4 (Pioneer, Crowder, Pickell Pass: +4,480 / -4,050 ft, 5.8 mi) is the best template."
+ },
+ {
+  "id": "wa_mount_johnson_deception_chimney",
+  "skip": true,
+  "reason": "The row has no data. The route names look like Olympic Mountains Climbing Guide routes on Mt Johnson (The Needles, Royal Basin), and no source I could open describes them."
+ },
+ {
+  "id": "wa_mount_johnson_northwest_face",
+  "skip": true,
+  "reason": "The row has no data. No source I could open describes a Northwest Face route on Mt Johnson (Olympics); turns-all-year covers only a ski descent of the NW Couloir."
+ },
+ {
+  "id": "wa_mount_johnson_rumble_gully",
+  "skip": true,
+  "reason": "The row has no data, and no source I could open describes Rumble Gully on Mt Johnson."
+ },
+ {
+  "id": "wa_mount_johnson_south_terrace_route",
+  "skip": true,
+  "reason": "The row has no data, and no source I could open describes a South Terrace Route on Mt Johnson."
+ },
+ {
+  "id": "wa_mount_johnson_southwest_route",
+  "skip": true,
+  "reason": "The row has no data. A search snippet mentions OMCG route 1B up the rib above the southwest-facing gully (via a CascadeClimbers report, 403), but no source I could open gives approach, camp or timing."
+ },
+ {
+  "id": "wa_mount_johnson_staircase_route",
+  "skip": true,
+  "reason": "The row has no data, and no source I could open describes a Staircase Route on Mt Johnson."
+ },
+ {
+  "id": "wa_mount_shuksan_northeast_ridge",
+  "skip": true,
+  "reason": "AAI's NW Rib profile confirms the NE Ridge of the summit pyramid (5.7) is only a finish, taken after the North Face or NW Rib from White Salmon bivies. No opened source gives an itinerary or timing, and the CascadeClimbers/SummitPost reports return 403."
+ },
+ {
+  "id": "wa_mount_shuksan_northwest_arete",
+  "skip": true,
+  "reason": "The only trip reports for the NW Arete/'Arayete' are on CascadeClimbers, which returns 403. No opened source gives days, camps or timing. AAI grades it III 5.9; the row says 5.7."
+ }
+]

@@ -194,7 +194,12 @@ try {
   const geometry = async () => page.evaluate(() => {
     const dlg = [...document.querySelectorAll('[role="dialog"]')].find(d => /Challenges & Lists/.test(d.textContent || ""));
     if (!dlg) return { rows: 0, bad: ["the Challenges & Lists panel is not open"] };
-    const rows = [...dlg.querySelectorAll('div[style*="gap: 9px"][style*="padding: 8px 6px"]')];
+    // A LIST OPENS AS A PAGE OF ITS OWN since #3662 (2026-11-23, "Lists open as pages"): ListPage is a dialog
+    // portalled beside the panel, not inside it. This read the panel alone, so from that merge every list
+    // "drew no rows" and the scan measured nothing (28 failures on main, none of them a defect on screen).
+    // Rows are read from every open dialog: the panel, and the list's page above it.
+    const dialogs = [...document.querySelectorAll('[role="dialog"]')];
+    const rows = [...new Set(dialogs.flatMap(d => [...d.querySelectorAll('div[style*="gap: 9px"][style*="padding: 8px 6px"]')]))];
     const bad = [];
     const hit = (a, b) => !(a.right <= b.left + 0.5 || b.right <= a.left + 0.5 || a.bottom <= b.top + 0.5 || b.bottom <= a.top + 0.5);
     for (const row of rows) {
@@ -212,7 +217,7 @@ try {
         for (let j = i + 1; j < runs.length; j++) if (hit(runs[i].b, runs[j].b)) bad.push(`"${runs[i].t}" overlaps "${runs[j].t}" — row: ${label}`);
       }
     }
-    return { rows: rows.length, bad, text: dlg.innerText || "" };
+    return { rows: rows.length, bad, text: dialogs.map(d => d.innerText || "").join("\n") };
   });
   const tapCard = (name) => page.evaluate((nm) => {
     const dlg = [...document.querySelectorAll('[role="dialog"]')].find(d => /Challenges & Lists/.test(d.textContent || ""));
@@ -220,9 +225,18 @@ try {
     if (b) b.click();
     return !!b;
   }, name);
-  // The Colorado card above was left open; close it, so each card below is measured against a
-  // panel with nothing expanded.
-  if (co) { await tapCard("Colorado 14ers"); await page.waitForTimeout(600); }
+  // CLOSING A LIST is its page's own Back button since #3662: the page covers the panel, and tapping the card's
+  // header a second time no longer folds anything, so the old "tap it again" left the last list open and every
+  // list was compared with the one before it.
+  const closePage = () => page.evaluate(() => {
+    const pages = [...document.querySelectorAll('[role="dialog"]')].filter(d => !/Challenges & Lists/.test(d.textContent || ""));
+    let n = 0;
+    for (const pg of pages.reverse()) { const b = [...pg.querySelectorAll("button")].find(x => /Back/.test(x.textContent || "")); if (b) { b.click(); n++; } }
+    return n;
+  });
+  // The Colorado list above was left open; close it, so each list below is measured against a panel with
+  // nothing open.
+  if (co) { await closePage(); await page.waitForTimeout(600); }
   // Show every list, not just the filter the panel happened to open on; the click re-renders, so
   // the cards are read in a SEPARATE step after it lands.
   await page.evaluate(() => {
@@ -251,13 +265,14 @@ try {
       if (!(await tapCard(name))) { fail.push(`list card "${name.slice(0, 30)}" vanished at ${width}px`); continue; }
       await page.waitForTimeout(900);
       const g = await geometry();
+      if (closed.rows) fail.push(`a list was still open before "${name.slice(0, 30)}" at ${width}px (${closed.rows} rows) — its page did not close, so this one was not measured alone`);
       if (g.rows <= closed.rows) fail.push(`expanding "${name.slice(0, 30)}" at ${width}px drew no rows — its overlap was not measured`);
       for (const b of g.bad) fail.push(`${width}px, ${name.slice(0, 24)}: ${b}`);
       if (/^Fifty Classic/.test(name)) {
         fiftySeen = true;
         if (!/Liberty Crack/.test(g.text) || !/Liberty Ridge/.test(g.text)) fail.push(`the Fifty Classics list at ${width}px has no Liberty Crack/Liberty Ridge row — the rows the owner saw overlap were not measured`);
       }
-      await tapCard(name);
+      await closePage();
       await page.waitForTimeout(400);
     }
   }

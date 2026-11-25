@@ -1,0 +1,192 @@
+{
+ "note": "Values replaced by the owner-approved batch-B fixes, 2026-11-18",
+ "rollback": [
+  {
+   "table": "routes",
+   "id": "wa_mount_rainier_emmons_glacier",
+   "before": {
+    "high_point_ft": 14406
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_mount_rainier_kautz_glacier",
+   "before": {
+    "high_point_ft": 14406
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_mount_rainier_gibraltar_ledges",
+   "before": {
+    "high_point_ft": 14406
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_mount_rainier_gibraltar_ledges",
+   "before": {
+    "pitches": 0
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_mount_baker_north_ridge",
+   "before": {
+    "dist_km": 4
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_mount_baker_north_ridge",
+   "before": {
+    "gpx": [
+     [
+      48.80201,
+      -121.89597
+     ],
+     [
+      48.7893,
+      -121.86777
+     ],
+     [
+      48.7897,
+      -121.84
+     ],
+     [
+      48.776797,
+      -121.814467
+     ]
+    ]
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_mount_shuksan_sulphide_glacier",
+   "before": {
+    "pitches": 3
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_vesper_peak_standard_route",
+   "before": {
+    "pitches": 0
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_ingalls_peak_south_ridge",
+   "before": {
+    "permit": ""
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_colchuck_peak_colchuck_glacier",
+   "before": {
+    "pitches": 0
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_midway",
+   "before": {
+    "pitches": 0
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_midway",
+   "before": {
+    "length_m": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_midway",
+   "before": {
+    "permit": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_angel",
+   "before": {
+    "pitches": 0
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_angel",
+   "before": {
+    "length_m": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_angel",
+   "before": {
+    "permit": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_potholes",
+   "before": {
+    "length_m": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_potholes",
+   "before": {
+    "bolts": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_potholes",
+   "before": {
+    "permit": null
+   }
+  },
+  {
+   "table": "areas",
+   "id": "wa_west_side_4",
+   "before": {
+    "parking_lat": null,
+    "parking_lng": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_cro_magnon_caveman",
+   "before": {
+    "pitches": 0
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_cro_magnon_caveman",
+   "before": {
+    "permit": null
+   }
+  },
+  {
+   "table": "areas",
+   "id": "wa_northwest_side",
+   "before": {
+    "parking_lat": null,
+    "parking_lng": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_silver_star_glacier",
+   "before": {
+    "gain_ft": 4000
+   }
+  }
+ ]
+}

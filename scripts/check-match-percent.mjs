@@ -48,7 +48,8 @@ const stripped = src.replace(/\/\*[\s\S]*?\*\//g, " ").replace(/(^|[^:])\/\/[^\n
 // ---- 1. THE CEILING MUST NOT BE A LITERAL, AND THE MAXIMUM MUST BE DERIVED.
 // This is the half that stops the defect returning by a different route: the old code held the
 // weights in one place and the ceiling in another, so adding a term drifted them apart silently.
-const DERIVED = /COMPAT_MAX\s*=\s*COMPAT_BASE\s*\+\s*CMAX_DISC\s*\+\s*CMAX_GRADE\s*\+\s*CMAX_OBJ\s*\+\s*CMAX_VERIF\s*\+\s*CMAX_PACE\s*\+\s*CMAX_AVAIL\s*\+\s*CMAX_AREA/;
+// WHERE (2026-11-23) is one term: shared objectives OR listed areas, which were CMAX_OBJ + CMAX_AREA.
+const DERIVED = /COMPAT_MAX\s*=\s*COMPAT_BASE\s*\+\s*CMAX_DISC\s*\+\s*CMAX_GRADE\s*\+\s*CMAX_WHERE\s*\+\s*CMAX_VERIF\s*\+\s*CMAX_PACE\s*\+\s*CMAX_AVAIL\s*\+\s*CMAX_REL\s*;/;
 if (DERIVED.test(stripped)) ok("COMPAT_MAX is derived by summing the term maxima, not written down");
 else fail("COMPAT_MAX is not derived from the CMAX_* constants — a new term can drift from the ceiling silently");
 
@@ -80,7 +81,7 @@ const out = path.join(outdir, "b.cjs");
 const CORE = JSON.stringify(corePath);
 await build({
   stdin: {
-    contents: `export { compat, compatParts, compatWhy, compatUnknown, CLIMBERS, ME, CMAX_DISC, CMAX_GRADE, CMAX_OBJ, CMAX_VERIF, CMAX_PACE, CMAX_AVAIL, CMAX_AREA, COMPAT_BASE, COMPAT_TOP, COMPAT_MAX } from ${CORE};`,
+    contents: `export { compat, compatParts, compatWhy, compatSummary, compatUnknown, availOf, availSlotLabels, AVAIL_OPTS, AVAIL_SLOT_OPTS, __set_MY_PACE, CLIMBERS, ME, CMAX_DISC, CMAX_GRADE, CMAX_WHERE, CMAX_VERIF, CMAX_PACE, CMAX_AVAIL, CMAX_REL, REL_PRIOR, COMPAT_BASE, COMPAT_TOP, COMPAT_MAX } from ${CORE};`,
     resolveDir: ROOT, loader: "js",
   },
   bundle: true, format: "cjs", platform: "node", jsx: "automatic",
@@ -88,14 +89,14 @@ await build({
   outfile: out, logLevel: "error",
 });
 const M = require_(out);
-for (const k of ["compat", "compatParts", "compatWhy", "compatUnknown", "CMAX_DISC", "CMAX_GRADE", "CMAX_OBJ", "CMAX_VERIF", "CMAX_PACE", "CMAX_AVAIL", "CMAX_AREA", "COMPAT_BASE", "COMPAT_TOP", "COMPAT_MAX"]) {
+for (const k of ["compat", "compatParts", "compatWhy", "compatSummary", "compatUnknown", "availOf", "availSlotLabels", "AVAIL_OPTS", "AVAIL_SLOT_OPTS", "CMAX_DISC", "CMAX_GRADE", "CMAX_WHERE", "CMAX_VERIF", "CMAX_PACE", "CMAX_AVAIL", "CMAX_REL", "COMPAT_BASE", "COMPAT_TOP", "COMPAT_MAX"]) {
   if (M[k] === undefined) dead(`core does not export ${k} — this guard cannot judge the formula`);
 }
 const { compat, CLIMBERS, ME, COMPAT_BASE, COMPAT_TOP, COMPAT_MAX } = M;
 if (!Array.isArray(CLIMBERS) || CLIMBERS.length < 4) dead(`only ${CLIMBERS && CLIMBERS.length} seed climbers — the population is too thin to judge saturation`);
 
 // ---- 2. THE ARITHMETIC REACHES BOTH ENDS OF THE DISPLAYED RANGE.
-const summed = COMPAT_BASE + M.CMAX_DISC + M.CMAX_GRADE + M.CMAX_OBJ + M.CMAX_VERIF + M.CMAX_PACE + M.CMAX_AVAIL + M.CMAX_AREA;
+const summed = COMPAT_BASE + M.CMAX_DISC + M.CMAX_GRADE + M.CMAX_WHERE + M.CMAX_VERIF + M.CMAX_PACE + M.CMAX_AVAIL + M.CMAX_REL;
 if (COMPAT_MAX === summed) ok(`COMPAT_MAX (${COMPAT_MAX}) equals the sum of the term maxima`);
 else fail(`COMPAT_MAX is ${COMPAT_MAX} but the term maxima sum to ${summed} — a term is unaccounted for`);
 
@@ -103,7 +104,7 @@ else fail(`COMPAT_MAX is ${COMPAT_MAX} but the term maxima sum to ${summed} — 
 // overshoots and the result clamps below its own maximum, which this catches.
 const DISCS = ["sport", "trad", "alpine"];
 // LISTED AREAS (0300): dotted ltree paths; a shared one, or one inside the other, is the yes of a yes/no term.
-const maxA = { name: "maxA", disciplines: DISCS, sportGrade: "5.11a", objectiveIds: ["o1", "o2", "o3"], verified: true, hikingSpeedFtHr: 1000, availability: ["sat", "sun"], partnerAreaPaths: ["usa.utah.ut_wasatch_range.ut_little_cottonwood_canyon"] };
+const maxA = { name: "maxA", disciplines: DISCS, sportGrade: "5.11a", objectiveIds: ["o1", "o2", "o3"], verified: true, hikingSpeedFtHr: 1000, availability: ["sat", "sun"], partnerAreaPaths: ["usa.utah.ut_wasatch_range.ut_little_cottonwood_canyon"], reliability: { trips: 200, onTime: 200 } };
 const maxB = { ...maxA, name: "maxB" };
 const topScore = compat(maxA, maxB);
 if (topScore === COMPAT_TOP) ok(`a pair that maxes every signal scores exactly ${COMPAT_TOP}`);
@@ -111,8 +112,8 @@ else fail(`a maximal pair scores ${topScore}, not ${COMPAT_TOP} — the top of t
 
 // A pair that shares nothing. Every term at its floor must land on the base, or the displayed
 // range is narrower than it claims.
-const minA = { name: "minA", disciplines: ["sport"], sportGrade: "5.6", objectiveIds: ["a"], verified: false, hikingSpeedFtHr: 400, availability: ["mon"], partnerAreaPaths: ["usa.utah.ut_wasatch_range"] };
-const minB = { name: "minB", disciplines: ["ice"], sportGrade: "5.14a", objectiveIds: ["z"], verified: false, hikingSpeedFtHr: 2000, availability: ["tue"], partnerAreaPaths: ["usa.washington.wa_north_cascades"] };
+const minA = { name: "minA", disciplines: ["sport"], sportGrade: "5.6", objectiveIds: ["a"], verified: false, hikingSpeedFtHr: 400, availability: ["mon"], partnerAreaPaths: ["usa.utah.ut_wasatch_range"], reliability: { trips: 200, noShow: 200 } };
+const minB = { name: "minB", disciplines: ["ice"], sportGrade: "5.14a", objectiveIds: ["z"], verified: false, hikingSpeedFtHr: 2000, availability: ["tue"], partnerAreaPaths: ["usa.washington.wa_north_cascades"], reliability: { trips: 200, noShow: 200 } };
 const botScore = compat(minA, minB);
 if (botScore === COMPAT_BASE) ok(`a pair that shares nothing scores exactly ${COMPAT_BASE}`);
 else fail(`a pair sharing nothing scores ${botScore}, not ${COMPAT_BASE}`);
@@ -135,7 +136,7 @@ else fail(`the pane shows only ${distinct} distinct values across ${CLIMBERS.len
 // ---- 4. EVERY SIGNAL THE SCREEN NAMES MUST MOVE THE NUMBER.
 // This is the invariant. It is deliberately NOT a check on any weight: a rebalance is allowed, a
 // signal that stops mattering is not.
-const base = { name: "base", disciplines: ["sport", "trad"], sportGrade: "5.11a", objectiveIds: ["o1", "o2"], verified: true, hikingSpeedFtHr: 1000, availability: ["sat", "sun"], partnerAreaPaths: ["usa.utah.ut_wasatch_range.ut_little_cottonwood_canyon.ut_hellgate_cliffs"] };
+const base = { name: "base", disciplines: ["sport", "trad"], sportGrade: "5.11a", objectiveIds: ["o1", "o2"], verified: true, hikingSpeedFtHr: 1000, availability: ["sat", "sun"], partnerAreaPaths: ["usa.utah.ut_wasatch_range.ut_little_cottonwood_canyon.ut_hellgate_cliffs"], reliability: { trips: 10, onTime: 10 } };
 const withoutSignal = {
   disciplines: { ...base, disciplines: ["ice"] },
   "grade range": { ...base, sportGrade: "5.6" },
@@ -146,10 +147,18 @@ const withoutSignal = {
   "verified": { ...base, verified: false },
   "availability overlap": { ...base, availability: ["wed"] },
   pace: { ...base, hikingSpeedFtHr: 300 },
+  // RELIABILITY (0519): crewmates say they did not show, ten times.
+  reliability: { ...base, reliability: { trips: 10, noShow: 10 } },
 };
+// WHERE YOU CLIMB has two answers (2026-11-23): shared objectives OR the same listed area. With both in the base, losing
+// one leaves the other filling the term -- correct, and not a signal that does nothing -- so each is tested on a base
+// that holds only that answer.
+const baseFor = (signal) => signal === "shared objectives" ? { ...base, partnerAreaPaths: [] } : signal === "listed areas" ? { ...base, objectiveIds: [] } : base;
+const variantFor = (signal) => ({ ...withoutSignal[signal], ...(signal === "shared objectives" ? { partnerAreaPaths: [] } : signal === "listed areas" ? { objectiveIds: [] } : {}) });
 const moves = {};
-for (const [signal, variant] of Object.entries(withoutSignal)) {
-  const a = compat(base, base), b = compat(base, variant);
+for (const signal of Object.keys(withoutSignal)) {
+  const B = baseFor(signal), variant = variantFor(signal);
+  const a = compat(B, B), b = compat(B, variant);
   moves[signal] = a !== b;
   if (a !== b) ok(`${signal} moves the number (${a} -> ${b})`);
   else fail(`${signal} CANNOT move the number — it is ${a} either way, so the screen promises a signal that does nothing`);
@@ -162,7 +171,7 @@ for (const [signal, variant] of Object.entries(withoutSignal)) {
 // compatibility panel's own tooltip — describes the same score in different words, and a
 // pattern anchored on the label missed it entirely while it was claiming the score included
 // DISTANCE, which compat() does not use.
-const COPY_SITES = [...src.matchAll(/[Bb]lends your ([^"<]{20,240})/g)].map((m) => m[1]);
+const COPY_SITES = [...src.matchAll(/[Bb]lends (?:your )?([^"<]{20,240})/g)].map((m) => m[1].split(/\.\s/)[0]); // one sentence: the 4th site (PARTNER_NUMBERS) runs on into the next
 if (COPY_SITES.length >= 2) ok(`found ${COPY_SITES.length} surfaces describing what Match % blends`);
 else dead(`found ${COPY_SITES.length} Match % descriptions — expected the glossary, the explainer and the tooltip. Cannot tie copy to behaviour.`);
 
@@ -216,7 +225,7 @@ const candSrc = (row.match(/(?:var|const) _cand=\{([\s\S]*?)\};/) || [])[1];
 if (!candSrc) dead("ANCHOR LOST: _cand's object literal could not be lifted from RealClimberRow");
 // eslint-disable-next-line no-new-func
 // `listing` is the row's listed areas (0300); undefined here means "not read", exactly as the row sees it.
-const buildCand = new Function("p", "objIds", "verified", "listing", "return {" + candSrc + "};");
+const buildCand = new Function("p", "objIds", "verified", "listing", "reliability", "return {" + candSrc + "};");
 const richRow = {
   id: "3f2a91cc-0000-4000-8000-000000000001", name: "Robin Belay", username: "robinb",
   show_name: true, resume_public: true, avatar: null, bio: "b", location: "Salt Lake City, UT",
@@ -275,9 +284,9 @@ else fail(`the browse row no longer explains the missing match % (${JSON.stringi
   const w0 = why(base, base);
   if (Object.keys(w0).length === parts.length && Object.values(w0).every((r) => r.text && r.text.length >= 6)) ok("compatWhy() writes a sentence for every scored term");
   else fail("compatWhy() leaves a scored term without a sentence");
-  const KEY = { disciplines: "disc", "grade range": "grade", "shared objectives": "obj", "listed areas": "area", verified: "verif", "availability overlap": "avail", pace: "pace" };
-  for (const [signal, variant] of Object.entries(withoutSignal)) {
-    const k = KEY[signal], before = w0[k], after = why(base, variant)[k];
+  const KEY = { disciplines: "disc", "grade range": "grade", "shared objectives": "where", "listed areas": "where", verified: "verif", "availability overlap": "avail", pace: "pace", reliability: "rel" };
+  for (const signal of Object.keys(withoutSignal)) {
+    const B = baseFor(signal), k = KEY[signal], before = why(B, B)[k], after = why(B, variantFor(signal))[k];
     if (before && after && before.text !== after.text && before.tone !== after.tone) ok(`losing ${signal} changes its "How you match" line ("${before.text}" -> "${after.text}")`);
     else fail(`losing ${signal} moves the score but not its "How you match" line — the checklist would explain a number it does not describe`);
   }
@@ -287,21 +296,195 @@ else fail(`the browse row no longer explains the missing match % (${JSON.stringi
   const bad_ = wb.filter((r) => r.tone !== "unk");
   if (!bad_.length) ok("an unfilled profile reads as NOT SAID on every line, never as a mismatch");
   else fail(`an unfilled profile reads as ${bad_.map((r) => r.k + "=" + r.tone).join(", ")} — absence is being described as a mismatch`);
+  // GRADE IS LIKE WITH LIKE (compat audit 2026-11-18). Taking each side's first rope grade compared a sport grade with a
+  // trad grade: a 5.11a sport / 5.10a trad leader read "Far apart" from a 5.9 trad leader one step below their trad grade.
+  const gOf = (a, b) => M.compatParts(a, b).find((r) => r.k === "grade");
+  const lw = gOf({ sportGrade: "5.11a", tradGrade: "5.10a" }, { tradGrade: "5.9" });
+  if (lw.known && lw.mine === "5.10a" && lw.theirs === "5.9" && lw.kind === "trad") ok("grade compares trad with trad when both set a trad grade (5.10a vs 5.9, not 5.11a sport vs 5.9 trad)");
+  else fail(`grade compared ${lw.mine} with ${lw.theirs} (${lw.kind}) — a sport grade is being measured against a trad grade`);
+  // EVERY NUMBER GRADE IS A STEP (2026-11-23). 5.8 and below shared one step, so 5.6 against 5.10a was two steps: "Close in
+  // grade", and most of the grade term's points, for a pair four number grades apart.
+  const far = gOf({ sportGrade: "5.10a" }, { sportGrade: "5.6" }), near = gOf({ sportGrade: "5.10a" }, { sportGrade: "5.9" });
+  const farLine = M.compatWhy({ sportGrade: "5.10a" }, { sportGrade: "5.6" }).find((r) => r.k === "grade");
+  if (far.gap > 2 && farLine.tone !== "good" && near.gap === 1 && gOf({ sportGrade: "5.6" }, { sportGrade: "5.7" }).gap === 1) ok(`5.6 is ${far.gap} steps from 5.10a ("${farLine.text}"), and 5.9 is still 1`);
+  else fail(`5.6 vs 5.10a is a grade gap of ${far.gap} ("${farLine.text}"); 5.9 vs 5.10a is ${near.gap} — the grades below 5.9 are sharing a step again`);
+  // ...and so is every letter grade above 5.12: 5.13 and up shared one step, so 5.13a read "Same grade" as 5.14d.
+  const top = gOf({ sportGrade: "5.13a" }, { sportGrade: "5.14d" }), mid = gOf({ sportGrade: "5.12d" }, { sportGrade: "5.13a" });
+  if (top.gap === 7 && mid.gap === 1 && gOf({ sportGrade: "5.10a" }, { sportGrade: "5.12d" }).gap === 11) ok("5.13a is 7 steps from 5.14d and 1 from 5.12d; 5.10a to 5.12d is still 11");
+  else fail(`5.13a vs 5.14d is a grade gap of ${top.gap} and 5.12d vs 5.13a is ${mid.gap} — the grades above 5.12 are sharing a step again`);
+  const both = gOf({ sportGrade: "5.12a", tradGrade: "5.10a" }, { sportGrade: "5.10a", tradGrade: "5.10a" });
+  if (both.gap === 0 && both.kind === "trad") ok("when both set both, the CLOSER kind decides (same trad grade beats a sport gap)");
+  else fail(`two climbers with the same trad grade scored a grade gap of ${both.gap} (${both.kind})`);
+  const cross = gOf({ sportGrade: "5.10a" }, { tradGrade: "5.10a" });
+  if (cross.known && cross.gap === 0 && cross.kind === null) ok("with no rope-grade kind in common, it still compares across (sport vs trad) rather than calling it unknown");
+  else fail(`a sport-only and a trad-only climber no longer compare grades (known=${cross.known}, gap=${cross.gap})`);
+  // AVAILABILITY IS AN OVERLAP COEFFICIENT (compat audit 2026-11-18): two climbers with the SAME schedule, or one whose
+  // slots all sit inside the other's, are a full match; it used to be 6 per shared slot, so weekends-only twins read amber.
+  const avOf = (a, b) => M.compatParts(a, b).find((r) => r.k === "avail");
+  const twin = avOf({ availability: ["weekends"] }, { availability: ["weekends"] });
+  const inside = avOf({ availability: ["weekends"] }, { availability: ["weekends", "weekday_pm"] });
+  const half = avOf({ availability: ["weekends", "weekday_am"] }, { availability: ["weekends", "weekday_pm"] });
+  const none = avOf({ availability: ["weekday_am"] }, { availability: ["weekday_pm"] });
+  if (twin.pts === twin.max && inside.pts === inside.max) ok("the same schedule, or one inside the other, counts fully for availability");
+  else fail(`weekends vs weekends scores ${twin.pts}/${twin.max} and weekends inside weekends+weekday PM ${inside.pts}/${inside.max} — a perfect fit reads as partial`);
+  // THE WEEK GRID IS THE SCHEDULE (2026-11-23). A row whose stored tags went stale ("weekends") while its grid says weekday
+  // evenings and weekend mornings read one schedule on the partner card and the % and another on its profile.
+  const stale = { availability: ["weekends"], availWeek: ["wed_pm", "sat_am", "sun_am"] };
+  const st = M.availOf(stale);
+  if (st.includes("weekday_pm") && st.includes("weekends") && M.availOf({ availability: ["weekday_am"] }).join() === "weekday_am") ok("a climber with a week grid is read from the grid, not from stale tags; one without a grid keeps their tags");
+  else fail(`availOf read ${JSON.stringify(st)} for a grid of Wed evening and weekend mornings: the card and the % follow stale tags the profile does not show`);
+  // ONE SET OF WORDS FOR WHEN YOU ARE FREE (owner 2026-11-23, "make it consistent"). The card printed "Weekday PM" beside a
+  // profile reading "Weekday evenings". The card's line is the profile's lit chips, and no label anywhere says AM or PM.
+  const slotWords = M.AVAIL_SLOT_OPTS.map((o) => o[1]);
+  const cardWords = M.availSlotLabels(stale);
+  const rowSrc = fs.readFileSync(path.join(ROOT, "src/components/RealClimberRow.tsx"), "utf8");
+  const amPm = M.AVAIL_OPTS.concat(M.AVAIL_SLOT_OPTS).map((o) => o[1]).filter((w) => /\b[AP]M\b/.test(w));
+  const readsSlots = /availSlotLabels\(_c\)/.test(rowSrc), readsTags = /\bavailLabel\b/.test(rowSrc);
+  if (cardWords.join() === "Weekday evenings,Weekend mornings" && cardWords.every((w) => slotWords.includes(w)) && !amPm.length && readsSlots && !readsTags) ok("the partner card's \"Usually free\" uses the profile's own chip words, and no availability label says AM or PM");
+  else fail(`the card would print ${JSON.stringify(cardWords)} (profile chips: ${JSON.stringify(slotWords)}); AM/PM labels: ${JSON.stringify(amPm)}; card reads availSlotLabels: ${readsSlots}, still reads availLabel: ${readsTags}`);
+  if (half.pts > 0 && half.pts < half.max && none.pts === 0) ok("half the smaller schedule shared counts partly; nothing shared counts nothing");
+  else fail(`partial overlap scores ${half.pts}/${half.max} and no overlap ${none.pts}/${none.max}`);
+  // PACE IS KNOWN THE SAME WAY BY BOTH (browser pass 2026-11-18). A signed-in viewer's pace is MY_PACE, not a field on
+  // ME (id 0); compatParts reads it through paceOf() and compatUnknown read the bare field, so every signed-in card said
+  // "based on limited info" while its pace line had an answer.
+  if (typeof M.__set_MY_PACE !== "function") dead("core does not export __set_MY_PACE — the signed-in pace case cannot be judged");
+  M.__set_MY_PACE(1300);
+  const meNoField = { id: 0, disciplines: ["trad"], tradGrade: "5.9", availability: ["weekends"], partnerAreaPaths: ["usa.wa.index"] };
+  const them = { id: "x", disciplines: ["trad"], tradGrade: "5.9", availability: ["weekends"], partnerAreaPaths: ["usa.wa.index"], hikingSpeedFtHr: 1500 };
+  const paceKnown = M.compatParts(meNoField, them).find((r) => r.k === "pace").known;
+  const unk = M.compatUnknown(meNoField, them);
+  M.__set_MY_PACE(null);
+  if (paceKnown && unk === 0) ok("a signed-in viewer's pace (MY_PACE) counts as KNOWN for \"limited info\" exactly as the pace line scores it");
+  else fail(`the pace line is known=${paceKnown} but compatUnknown counts ${unk} unknown signal(s) for a viewer whose pace is MY_PACE — the card says "based on limited info" with every line answered`);
+  // WHERE YOU CLIMB IS KNOWN ONLY WHEN IT IS COMPARABLE (retest 2026-11-18): objectives vs objectives, or areas vs areas.
+  // An alpinist with only mountain objectives and a crag climber with only listed areas show "?" on BOTH lines; counting
+  // that as known under-stated "limited info" and let a % show three unknowns deep.
+  const objOnly = { disciplines: ["trad"], objectiveIds: ["r1"] }, areaOnly = { disciplines: ["trad"], partnerAreaPaths: ["usa.wa.index"] };
+  const wParts = M.compatParts(objOnly, areaOnly), wLinesUnknown = !wParts.find((r) => r.k === "where").known;
+  const wBase = M.compatUnknown({ disciplines: ["trad"], objectiveIds: ["r1"] }, { disciplines: ["trad"], objectiveIds: ["r2"] });
+  const wMixed = M.compatUnknown(objOnly, areaOnly);
+  if (wLinesUnknown && wMixed === wBase + 1) ok("objectives on one side and only areas on the other count as an UNKNOWN \"where you climb\", as both its lines say");
+  else fail(`objectives-only vs areas-only: both lines unknown=${wLinesUnknown}, but compatUnknown counts ${wMixed} (comparable pair: ${wBase}) — "limited info" disagrees with the card`);
+  const wAreas = M.compatUnknown(areaOnly, { disciplines: ["trad"], partnerAreaPaths: ["usa.ut.x"] });
+  if (wAreas === wBase) ok("...while two climbers who both LISTED areas (0300: crag partners) stay comparable without any objective");
+  else fail(`two climbers with listed areas and no objectives count ${wAreas} unknowns, not ${wBase} — crag climbers read as "limited info" again`);
   // The panel renders compatWhy() with the SAME viewer object it scores with: the partner row scores ME's MOUNTAIN
   // objectives (matchObjectiveIds), and the profile once scored ME.objectiveIds, so one climber read two numbers.
   const fpStart = stripped.indexOf("function FullProfile(");
   const fp = fpStart < 0 ? "" : stripped.slice(fpStart, stripped.indexOf("\nfunction ", fpStart + 10));
   if (fp.length < 2000) dead("ANCHOR LOST: FullProfile could not be lifted");
-  const meVar = (fp.match(/score=climber\._real\?\(\(realObjQ\.data&&_unkN<3\)\?compat\((\w+),climber\)/) || [])[1];
-  if (!meVar) dead("ANCHOR LOST: FullProfile's score expression");
+  const scoreM = fp.match(/score=climber\._real\?\(\(_scoreReady&&_unkN<3\)\?compat\((\w+),(\w+)\)/);
+  if (!scoreM) dead("ANCHOR LOST: FullProfile's score expression");
+  const meVar = scoreM[1], themVar = scoreM[2];
+  // THE OTHER SIDE is the partner row's too (compat audit 2026-11-18): the objectives that still count for a match and
+  // their LISTED AREAS, read by the sheet itself. Only the row carried listed areas, so the same climber opened from
+  // Friends or a chat read "Areas: not listed by both of you" and up to 10 points lower.
+  const themDef = (fp.match(new RegExp("const " + themVar + "=climber\\._real\\?Object\\.assign\\(\\{\\},climber,\\{([^}]*)\\}")) || [])[1] || "";
+  if (/objectiveIds:_mObj/.test(themDef) && /useMatchObjectivesOfUsers\(/.test(fp) && /const _mObj[^;]*matchObjQ\.data/.test(fp)) ok("the profile scores THEIR side with the match objectives the partner row uses, not every objective");
+  else fail("the profile scores their objectives from a different read than the partner row (match_objectives_of_users) — the two can show different %s");
+  if (/partnerAreaPaths:_mAreas/.test(themDef) && /usePartnerAreasOfUsers\(/.test(fp) && /const _mAreas[^;]*partnerAreasQ\.data/.test(fp)) ok("the profile reads their listed areas itself, so every door into it scores the area term");
+  else fail("the profile only has listed areas when the partner row passed them — opened from anywhere else it says \"Areas: not listed by both of you\"");
   if (meVar !== "ME" && new RegExp(meVar + "=Object\\.assign\\(\\{\\},ME,\\{objectiveIds:Array\\.isArray\\(ME\\.matchObjectiveIds\\)").test(fp)) ok("the profile scores with ME's mountain objectives, as the partner row does");
   else fail("the profile scores with ME.objectiveIds while the partner row scores ME.matchObjectiveIds — the same climber reads two different match %s");
-  if (fp.includes("compatWhy(" + meVar + ",climber)")) ok("the profile's \"How you match\" checklist explains that same score");
+  // THE ONE-SENTENCE SUMMARY (2026-11-23) says only what the pair SHARES. It is read off the same rows, so each clause
+  // must go when its signal goes, and a climber who filled in nothing gets no sentence at all rather than a vague one.
+  {
+    const SUM = { name: "sum", disciplines: ["sport"], sportGrade: "5.10a", availability: ["weekends"], partnerAreaPaths: ["usa.wa.index"] };
+    const them = { ...SUM, sportGrade: "5.10c" };
+    const NAMES = { "usa.wa.index": "Index", "usa.ut.x": "X" };
+    const s0 = M.compatSummary(SUM, them, NAMES);
+    if (s0 === "You both climb 5.10 sport, list Index to climb, and are free Saturday and Sunday.") ok(`the match sentence names the shared grade, area and days ("${s0}")`);
+    else fail(`the match sentence for two 5.10 sport climbers, both listed at Index and free weekends, reads ${JSON.stringify(s0)}`);
+    const kept = [
+      ["grade", { ...them, sportGrade: "5.6" }, /5\.\d/],
+      ["listed area", { ...them, partnerAreaPaths: ["usa.ut.x"] }, /\blist\b/],
+      ["availability", { ...them, availability: ["weekday_am"] }, /\bfree\b/],
+    ].filter(([, v, re]) => re.test(M.compatSummary(SUM, v, NAMES) || ""));
+    if (!kept.length) ok("...and drops the grade, the area and the days when the pair no longer shares them");
+    else fail(`the match sentence still claims a shared ${kept.map((g) => g[0]).join(", ")} for a pair that does not share it`);
+    if (M.compatSummary(SUM, { name: "blank" }) === null && M.compatSummary(SUM, { ...SUM, disciplines: ["ice"], sportGrade: "5.6", availability: ["weekday_am"], partnerAreaPaths: ["usa.ut.x"] }) === null) ok("a pair with nothing in common, or an unfilled profile, gets NO sentence");
+    else fail("the match sentence says something about a pair that shares nothing: it is inventing agreement");
+    if (fp.includes("compatSummary(" + meVar + "," + themVar + ",")) ok("the profile writes its match sentence for the same pair it scores");
+    else fail("the profile does not write compatSummary() for the pair it scores, so the sentence would describe a different match than the %");
+  }
+  if (fp.includes("compatWhy(" + meVar + "," + themVar + ")")) ok("the profile's \"How you match\" checklist explains that same score");
   else fail("the profile does not render compatWhy() for the viewer it scores — the match % has no explanation, or explains a different pair");
 }
 
+// ---- 8. THE COMPAT AUDIT OF 2026-11-23 (owner approved all four fixes).
+{
+  // 8a. ONE NUMBER FOR THE PAIR. `verified` read only the other climber, so 12 of 20 seed pairs differed by direction.
+  const PERSONAS = [
+    { disciplines: ["sport"], sportGrade: "5.11a", availability: ["weekends"], partnerAreaPaths: ["usa.wa.index"], verified: true },
+    { disciplines: ["sport", "trad"], sportGrade: "5.11b", tradGrade: "5.10a", availability: ["weekends"], partnerAreaPaths: ["usa.wa.index.lower"], hikingSpeedFtHr: 1200 },
+    { disciplines: ["alpine"], tradGrade: "5.7", objectiveIds: ["r1", "r2"], hikingSpeedFtHr: 1500, verified: true },
+    { disciplines: ["ice"], climbGrades: { ice: { grade: "WI4" } }, availability: ["weekends"] },
+    { name: "blank" },
+  ];
+  const pop = [ME, ...CLIMBERS, ...PERSONAS];
+  let asym = 0, n = 0, ex = "";
+  for (const a of pop) for (const b of pop) if (a !== b) { n++; const x = compat(a, b), y = compat(b, a); if (x !== y) { asym++; ex = ex || `${x} vs ${y}`; } }
+  if (!asym) ok(`the match % is the same in both directions for all ${n} ordered pairs`);
+  else fail(`${asym} of ${n} ordered pairs score differently by direction (first: ${ex}) — A and B see different numbers for one match`);
+  // 8b. A CRAG CLIMBER CAN REACH THE TOP. Objectives and listed areas were two terms, so a crag pair matching on
+  // everything topped out at 84% (an alpine pair with no listed area at 89%).
+  const crag = { disciplines: ["sport"], sportGrade: "5.11a", partnerAreaPaths: ["usa.wa.index"], verified: true, hikingSpeedFtHr: 1000, availability: ["weekends"], reliability: { trips: 200, onTime: 200 } };
+  const alp = { disciplines: ["alpine"], tradGrade: "5.8", objectiveIds: ["r1", "r2"], verified: true, hikingSpeedFtHr: 1000, availability: ["weekends"], reliability: { trips: 200, onTime: 200 } };
+  if (compat(crag, crag) === COMPAT_TOP && compat(alp, alp) === COMPAT_TOP) ok(`a crag pair (listed areas only) and an alpine pair (objectives only) that match on everything both reach ${COMPAT_TOP}`);
+  else fail(`a crag pair matching on everything scores ${compat(crag, crag)} and an alpine pair ${compat(alp, alp)} — one way of saying where you climb is worth less than the other`);
+  // 8c. EVERY LADDER IS A GRADE. Ice, alpine, mixed and aid grades live in climb_grades (0237) and were read by nothing.
+  const gr = (a, b) => M.compatParts(a, b).find((r) => r.k === "grade");
+  const iceA = { climbGrades: { ice: { grade: "WI4" } } }, iceB = { climbGrades: { ice: { grade: "WI2" } } };
+  const iceSame = gr(iceA, iceA), iceFar = gr(iceA, iceB);
+  const alpG = gr({ climbGrades: { alpine: { grade: "5.9" } } }, { climbGrades: { alpine: { grade: "5.8" } } });
+  const mixG = gr({ climbGrades: { mixed: { grade: "M5" } } }, { climbGrades: { mixed: { grade: "M6" } } });
+  const aidG = gr({ climbGrades: { aid: { grade: "A2" } } }, { climbGrades: { aid: { grade: "C2" } } });
+  if (iceSame.known && iceSame.gap === 0 && iceSame.kind === "ice" && iceFar.known && iceFar.pts < iceSame.pts && alpG.known && alpG.kind === "alpine" && mixG.known && mixG.kind === "mixed" && aidG.known && aidG.gap === 0) ok(`ice (WI4 vs WI2: ${iceFar.pts}/${iceFar.max}), alpine, mixed and aid grades are compared like with like`);
+  else fail(`a grade from climb_grades is not scored: ice same=${JSON.stringify(iceSame)}, ice far=${iceFar.pts}, alpine known=${alpG.known}, mixed known=${mixG.known}, aid gap=${aidG.gap}`);
+  const iceWhy = M.compatWhy(iceA, iceB).find((r) => r.k === "grade");
+  if (/\(ice\)/.test(iceWhy.text)) ok(`...and the line names the kind ("${iceWhy.text}")`);
+  else fail(`the ice grade line does not say it compared ice grades: "${iceWhy.text}"`);
+  // 8d. ONE RULE FOR A BLANK: half of every overlap term, whichever field was left blank.
+  // verified and reliability are each a property of EACH side, not an overlap: the filled-in climber's own ✓ and own
+  // record still count against a blank one, and section 9 holds the blank side's half of reliability to the neutral.
+  const blankParts = M.compatParts(base, { name: "blank" }).filter((r) => r.k !== "verif" && r.k !== "rel");
+  const off = blankParts.filter((r) => r.known || r.pts !== r.max / 2);
+  if (!off.length) ok(`a field the other climber left blank scores half on every term (${blankParts.map((r) => r.k + " " + r.pts + "/" + r.max).join(", ")})`);
+  else fail(`blank fields score unevenly: ${off.map((r) => r.k + " " + r.pts + "/" + r.max + (r.known ? " (known?)" : "")).join(", ")} — which field you leave blank decides the score`);
+}
+
+// ---- 9. RELIABILITY (0519, owner 2026-11-23): both sides, from crewmates' reports, never a bad mark for having none.
+{
+  const relOf = (a, b) => M.compatParts(a, b).find((r) => r.k === "rel");
+  const good = { reliability: { trips: 9, onTime: 9 } }, flaky = { reliability: { trips: 4, onTime: 1, noShow: 3 } }, none = {};
+  const g = relOf(none, good), fl = relOf(none, flaky), nn = relOf(none, none);
+  // NO RECORD READS AS A TYPICAL CLIMBER (REL_PRIOR, owner 2026-11-24 re-audit), the rate a short record is pulled toward:
+  // at the neutral half, 3 no-shows in 5 trips scored the same as a brand-new climber. So a flaky record must now sit
+  // BELOW no record, and a spotless one at or above it.
+  const prior = M.REL_PRIOR;
+  if (typeof prior !== "number") dead("core does not export REL_PRIOR — section 9 cannot judge the no-record rule");
+  if (g.pts > nn.pts && fl.pts < nn.pts && Math.abs(nn.pts - nn.max * prior) < 1e-9 && !nn.known) ok(`a good record lifts the match (${g.pts.toFixed(1)}), a flaky one lowers it (${fl.pts.toFixed(1)}), and NO record reads as a typical climber (${nn.pts.toFixed(1)}/${nn.max}), never a bad mark`);
+  else fail(`reliability term: good ${g.pts}, flaky ${fl.pts}, none ${nn.pts}/${nn.max} (known ${nn.known})`);
+  const one = relOf(none, { reliability: { trips: 1, noShow: 1 } });
+  if (one.pts > fl.pts && one.rate > 0.4) ok(`one bad trip on a one-trip record does not sink it (rate ${one.rate.toFixed(2)}): the record is pulled toward the norm until it is long`);
+  else fail(`a single no-show reads rate ${one.rate} — one bad day sinks a new climber`);
+  if (compat(good, flaky) === compat(flaky, good)) ok("reliability counts both sides, so it keeps the pair's number one number");
+  else fail("reliability made the match differ by direction");
+  const seedRel = M.compatParts({}, { vouches: [{ ratings: { reliability: 5 } }, { ratings: { reliability: 4, safety: 2 } }] }).find((r) => r.k === "rel");
+  if (seedRel.known && seedRel.rec && seedRel.rec.relN === 2) ok("an example climber's own vouch Reliability stars are their record, so guests see the same rule");
+  else fail(`an example climber's vouch stars are not read as reliability: ${JSON.stringify(seedRel)}`);
+  // A vouch from before "reliability" was asked rated the retired "punctuality" (the example climbers' all do): it counts,
+  // unless the vouch has a reliability rating of its own (owner 2026-11-24 re-audit: guests saw no reliability at all).
+  const punct = M.compatParts({}, { vouches: [{ ratings: { punctuality: 4 } }, { ratings: { punctuality: 1, reliability: 5 } }] }).find((r) => r.k === "rel");
+  if (punct.known && punct.rec && punct.rec.relN === 2 && punct.rec.relAvg === 4.5) ok("an older vouch's \"punctuality\" stars count as reliability, and a vouch's own reliability rating wins over it");
+  else fail(`punctuality fallback: ${JSON.stringify(punct.rec)} — expected 2 ratings averaging 4.5 (4 from punctuality, 5 from reliability)`);
+  const line = M.compatWhy(none, { reliability: { trips: 10, onTime: 8, late: 1, cancelledLate: 1 } }).find((r) => r.k === "rel");
+  if (/Showed up for 9 of 10 crew trips/.test(line.text) && /1 cancelled last minute/.test(line.text) && !/score|%/.test(line.text)) ok(`the line is plain counts, not a score ("${line.text}")`);
+  else fail(`the reliability line reads "${line.text}" — it must be counts (owner: no trust score)`);
+}
+
 // ---- Fail closed on a run that quietly stopped asking.
-const FLOOR = 20;
+const FLOOR = 28;
 if (ran < FLOOR) dead(`only ${ran} assertions ran, expected at least ${FLOOR} — this run proved less than it claims`);
 
 console.log(bad ? `\n${bad} problem(s).` : `\nok — the match % blends what the screen says it blends (${ran} assertions)`);

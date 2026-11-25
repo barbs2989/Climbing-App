@@ -24,10 +24,12 @@
 //   { days: [{ n, title, objective, gainFt, lossFt, hours, miles, packLb,
 //              note, schedule: [{ time, label, detail }] }],
 //     cal, totalNote }
-// (only days[].note is required; everything else is optional). A plain
-// string still works as a fallback (the UI parses "Day 1: ... Day 2: ..."
-// prose into cards), but the structured shape renders far better.
+// Each day needs a title; figures are numbers. A prose STRING is REFUSED
+// (owner 2026-11-11: trip plans are day by day, in every state): pre-flight
+// aborts on any plan lib/itineraryShape.js rejects, and migration 0409 makes
+// the database refuse one too. No trip data for a route? Leave itinerary null.
 import { readFileSync, readdirSync } from "node:fs";
+import { itineraryShapeErrors } from "../../lib/itineraryShape.js";
 
 const PREFIX = process.argv[2];
 if (!PREFIX) { console.error("Usage: SUPABASE_SERVICE_KEY=... node import-alpine.mjs <prefix>"); process.exit(1); }
@@ -66,12 +68,14 @@ const stateNode = slug(region);
     if (!ids.has(r.mountainId) && r.mountainId !== stateNode) issues.push("ORPHAN route " + r.id + " -> mountainId '" + r.mountainId + "' (no matching area)");
     if (r.discipline && !DISC.has(r.discipline)) issues.push("route " + r.id + " unknown discipline: " + r.discipline);
     if (Array.isArray(r.disciplines) && r.disciplines.some(d => !DISC.has(d))) issues.push("route " + r.id + " unknown discipline in array: " + JSON.stringify(r.disciplines));
+    // The trip-plan rule (owner 2026-11-11, lib/itineraryShape.js): day by day or nothing, never prose.
+    for (const e of itineraryShapeErrors(r.itinerary)) issues.push("TRIP PLAN route " + r.id + ": " + e);
   });
   if (!issues.length) { console.log("  pre-flight: data clean"); return; }
   console.log("\n!! PRE-FLIGHT found " + issues.length + " issue(s):");
   issues.slice(0, 40).forEach(s => console.log("   - " + s));
   if (issues.length > 40) console.log("   ... +" + (issues.length - 40) + " more");
-  const fatal = issues.filter(s => s.startsWith("ORPHAN") || s.startsWith("MISSING"));
+  const fatal = issues.filter(s => s.startsWith("ORPHAN") || s.startsWith("MISSING") || s.startsWith("TRIP PLAN"));
   if (fatal.length) { console.error("\nABORT: " + fatal.length + " fatal (orphan/missing) — fix these or ask Claude to, then re-run."); process.exit(1); }
   console.log("   (all non-fatal — proceeding)\n");
 })();

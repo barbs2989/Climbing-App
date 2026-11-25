@@ -1,0 +1,2342 @@
+{
+ "wa_mount_formidable_south_face": {
+  "area": "wa_mount_formidable",
+  "facts": [
+   {
+    "field": "gain_ft",
+    "value": 6100,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/cascade-pass-area-review/mount-formidable-south-route",
+      "retrieved_at": "2026-11-14",
+      "fact": "Route stats list elevation gain 6,100 ft for the South Route; the WTA summit entry repeats the same figures."
+     }
+    ]
+   },
+   {
+    "field": "dist_mi_roundtrip",
+    "value": 20,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/cascade-pass-area-review/mount-formidable-south-route",
+      "retrieved_at": "2026-11-14",
+      "fact": "Route length listed as 20.0 mi (round trip from Cascade Pass Trailhead)."
+     }
+    ]
+   },
+   {
+    "field": "high_point_ft",
+    "value": 8325,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/cascade-pass-area-review/mount-formidable-south-route",
+      "retrieved_at": "2026-11-14",
+      "fact": "High point 8,325 ft; summit reached via Class 3 rock heading north."
+     }
+    ]
+   },
+   {
+    "field": "season",
+    "value": "June-September",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/cascade-pass-area-review/mount-formidable-south-route",
+      "retrieved_at": "2026-11-14",
+      "fact": "Seasons listed: June, July, August, September."
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Cascade Pass Trailhead (3,600 ft), end of Cascade River Road (FR 15), 22.3 mi from Marblemount",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/cascade-pass-area-review/mount-formidable-south-route",
+      "retrieved_at": "2026-11-14",
+      "fact": "Register at Marblemount Ranger Station; drive Cascade River Road 22.3 miles to the road-end Cascade Pass lot at 3,600 ft."
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "Cascade Pass trail 3.7 mi to the pass (5,400 ft), then climber trail SSE",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/cascade-pass-area-review/mount-formidable-south-route",
+      "retrieved_at": "2026-11-14",
+      "fact": "Follow the Cascade Pass trail 3.7 miles; at the 5,400 ft pass take a climber trail bearing SSE."
+     }
+    ]
+   },
+   {
+    "field": "camp",
+    "value": "Kool-Aid Lake (6,120 ft)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/cascade-pass-area-review/mount-formidable-south-route",
+      "retrieved_at": "2026-11-14",
+      "fact": "After crossing the col, descend SSE to Kool-Aid Lake with good camping at 6,120 ft."
+     }
+    ]
+   },
+   {
+    "field": "approach_loss_ft",
+    "value": 800,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/cascade-pass-area-review/mount-formidable-south-route",
+      "retrieved_at": "2026-11-14",
+      "fact": "Trip profile: trailhead to camp gains 3,300 ft and loses 800 ft, 5-6 hours."
+     }
+    ]
+   },
+   {
+    "field": "summit_day",
+    "value": "Camp to summit 4-5 h, +2,800 / -600 ft",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/cascade-pass-area-review/mount-formidable-south-route",
+      "retrieved_at": "2026-11-14",
+      "fact": "Trip profile: camp to summit 4-5 hours, 2,800 ft gain, 600 ft loss."
+     }
+    ]
+   },
+   {
+    "field": "return_gain_ft",
+    "value": 1400,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/cascade-pass-area-review/mount-formidable-south-route",
+      "retrieved_at": "2026-11-14",
+      "fact": "Trip profile: summit to trailhead 9-10 hours with 1,400 ft gain and 6,400 ft loss."
+     }
+    ]
+   },
+   {
+    "field": "descent",
+    "value": "Descend the climbing route",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/cascade-pass-area-review/mount-formidable-south-route",
+      "retrieved_at": "2026-11-14",
+      "fact": "Descent route: descend the climbing route."
+     }
+    ]
+   },
+   {
+    "field": "rack",
+    "value": "Standard glacier travel gear, ice axe, crampons",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/cascade-pass-area-review/mount-formidable-south-route",
+      "retrieved_at": "2026-11-14",
+      "fact": "Equipment: standard glacier travel gear plus ice axe and crampons."
+     }
+    ]
+   },
+   {
+    "field": "hazard",
+    "value": "Cache Col can moat out late season; Mixup traverse snow-covered with bad runout early season",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/cascade-pass-area-review/mount-formidable-south-route",
+      "retrieved_at": "2026-11-14",
+      "fact": "Notes warn Cache Col moats late in season and the Mixup traverse can be snowy with poor runout early."
+     }
+    ]
+   },
+   {
+    "field": "permit",
+    "value": "No parking permit; register at Marblemount Ranger Station",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/cascade-pass-area-review/mount-formidable-south-route",
+      "retrieved_at": "2026-11-14",
+      "fact": "Parking permit required: none; land manager North Cascades National Park; register at Marblemount."
+     }
+    ]
+   },
+   {
+    "field": "grade",
+    "value": "Class 4",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.wta.org/go-hiking/hikes/mount-formidable",
+      "retrieved_at": "2026-11-14",
+      "fact": "WTA describes the route to Mount Formidable as Class 4 with exposed scrambling."
+     }
+    ]
+   }
+  ],
+  "note": "WTA summit page stats are identical to The Mountaineers (20 mi, 6,100 ft, 8,325 ft) so treated as shared data, not a second source."
+ },
+ "wa_mount_fury_east_southeast_glaciers": {
+  "area": "wa_mount_fury_east",
+  "facts": [
+   {
+    "field": "dist_mi_roundtrip",
+    "value": 32,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/north-cascades-national-park-cross-country-zones/mount-fury-southeast-glacier",
+      "retrieved_at": "2026-11-14",
+      "fact": "Route length listed as 32.0 mi for Mount Fury/Southeast Glacier."
+     }
+    ]
+   },
+   {
+    "field": "season",
+    "value": "August-October",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/north-cascades-national-park-cross-country-zones/mount-fury-southeast-glacier",
+      "retrieved_at": "2026-11-14",
+      "fact": "Seasons listed: August, September, October."
+     }
+    ]
+   },
+   {
+    "field": "overview",
+    "value": "Snow and glacier of 20-40 degrees plus Class 3 to Class 5 rock",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/north-cascades-national-park-cross-country-zones/mount-fury-southeast-glacier",
+      "retrieved_at": "2026-11-14",
+      "fact": "Route has snow/glacier sections of 20 to 40 degrees and Class 3 to Class 5 rock travel."
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "Big Beaver Trail to Access Creek (alternative: Eiley-Wiley Ridge / Little Beaver)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/north-cascades-national-park-cross-country-zones/mount-fury-southeast-glacier",
+      "retrieved_at": "2026-11-14",
+      "fact": "Common approaches: Big Beaver Trail to Access Creek, or Eiley-Wiley Ridge via Little Beaver Trail."
+     }
+    ]
+   },
+   {
+    "field": "permit",
+    "value": "No parking permit; North Cascades National Park",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/north-cascades-national-park-cross-country-zones/mount-fury-southeast-glacier",
+      "retrieved_at": "2026-11-14",
+      "fact": "Parking permit required: none; land manager North Cascades National Park."
+     }
+    ]
+   }
+  ],
+  "note": "Mountaineers page states no elevation gain; its high point 8,288 ft differs from ours (8,356) so not recorded. trailcatjim report combines Luna Peak and East Fury (42 mi / 13,000 ft) so not usable for this route alone."
+ },
+ "wa_mount_herman_standard_scramble": {
+  "area": "wa_mount_herman",
+  "facts": [
+   {
+    "field": "gain_ft",
+    "value": 2100,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/mount-herman",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mount Herman route stats: elevation gain 2,100 ft, length 6.0 mi."
+     }
+    ]
+   },
+   {
+    "field": "dist_mi_roundtrip",
+    "value": 6,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/mount-herman",
+      "retrieved_at": "2026-11-14",
+      "fact": "Length listed as 6.0 mi."
+     }
+    ]
+   },
+   {
+    "field": "high_point_ft",
+    "value": 6285,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/mount-herman",
+      "retrieved_at": "2026-11-14",
+      "fact": "High point listed as 6,285 ft."
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "Bagley Lakes trail past the lakes toward Herman Saddle; leave trail at last switchback for the Mazama Dome-Herman ridge",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/mount-herman",
+      "retrieved_at": "2026-11-14",
+      "fact": "Approach follows Bagley Lakes trail toward Herman Saddle, leaving it at the last switchback for the ridge between Mazama Dome and Herman."
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Heather Meadows parking (or Mountaineers Baker Lodge in winter), Mount Baker Highway SR 542",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/mount-herman",
+      "retrieved_at": "2026-11-14",
+      "fact": "Take SR 542 east to the winter closure and park at Baker Lodge or the Heather Meadows lot."
+     }
+    ]
+   },
+   {
+    "field": "permit",
+    "value": "Northwest Forest Pass",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/mount-herman",
+      "retrieved_at": "2026-11-14",
+      "fact": "Parking permit required: Northwest Forest Pass; Mount Baker Wilderness, Mount Baker-Snoqualmie NF."
+     }
+    ]
+   },
+   {
+    "field": "hazard",
+    "value": "Avalanche terrain rated Challenging",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/mount-herman",
+      "retrieved_at": "2026-11-14",
+      "fact": "Page gives an avalanche terrain rating of Challenging and links the avalanche forecast."
+     }
+    ]
+   }
+  ],
+  "note": "Mountaineers page is written as a winter/spring route (seasons year-round, Dec-May)."
+ },
+ "wa_mount_howard_south_slope": {
+  "area": "wa_mount_howard",
+  "facts": [
+   {
+    "field": "gain_ft",
+    "value": 4900,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/mount-howard-mount-mastiff",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mount Howard from Merritt Lake trailhead: 12 miles round trip with 4,900 feet of elevation gain."
+     }
+    ]
+   },
+   {
+    "field": "dist_mi_roundtrip",
+    "value": 12,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/mount-howard-mount-mastiff",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mount Howard from the Merritt Lake trailhead is 12 miles round trip."
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Merritt Lake Trailhead (3,050 ft), ~1.5 mi up FR 657 off SR 2",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/mount-howard-mount-mastiff",
+      "retrieved_at": "2026-11-14",
+      "fact": "Drive SR 2 to Forest Road 657 and about 1.5 miles to road end at the Merritt Lake trailhead, 3,050 ft."
+     }
+    ]
+   },
+   {
+    "field": "season",
+    "value": "June-September",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/mount-howard-mount-mastiff",
+      "retrieved_at": "2026-11-14",
+      "fact": "Seasons listed: June, July, August, September."
+     }
+    ]
+   },
+   {
+    "field": "permit",
+    "value": "Northwest Forest Pass",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/mount-howard-mount-mastiff",
+      "retrieved_at": "2026-11-14",
+      "fact": "Parking permit required: Northwest Forest Pass."
+     }
+    ]
+   }
+  ],
+  "note": "trailcatjim.com/mount-howard-nason-ridge-summit-camp/ gives 12 mi / 6,400 ft gained and lost with 8.1 h up and 5.3 h down, but via Rock Mountain shoulder and Rock Lake (different trailhead), so not counted."
+ },
+ "wa_mount_logan_r2": {
+  "area": "wa_mount_logan",
+  "facts": [
+   {
+    "field": "gain_ft",
+    "value": 8500,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/mt-logan-douglas-glacier",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mt Logan/Douglas Glacier route stats: elevation gain 8,500 ft, length 30.0 mi."
+     }
+    ]
+   },
+   {
+    "field": "dist_mi_roundtrip",
+    "value": 30,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/mt-logan-douglas-glacier",
+      "retrieved_at": "2026-11-14",
+      "fact": "Length listed as 30.0 mi."
+     }
+    ]
+   },
+   {
+    "field": "season",
+    "value": "June-September",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/mt-logan-douglas-glacier",
+      "retrieved_at": "2026-11-14",
+      "fact": "Seasons listed: June through September."
+     }
+    ]
+   },
+   {
+    "field": "approach_loss_ft",
+    "value": 1500,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/mt-logan-douglas-glacier",
+      "retrieved_at": "2026-11-14",
+      "fact": "Trip profile: trailhead to camp ~13 mi, 10 h, 4,000 ft gain and 1,500 ft loss."
+     }
+    ]
+   },
+   {
+    "field": "return_gain_ft",
+    "value": 1500,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/mt-logan-douglas-glacier",
+      "retrieved_at": "2026-11-14",
+      "fact": "Trip profile: summit to trailhead ~15 mi, 13-14 h, 1,500 ft gain and 7,000 ft loss."
+     }
+    ]
+   },
+   {
+    "field": "summit_day",
+    "value": "Camp to summit 6-9 h, ~2 mi, +3,000 ft",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/mt-logan-douglas-glacier",
+      "retrieved_at": "2026-11-14",
+      "fact": "Trip profile: camp to summit 6-9 hours, about 2 miles, 3,000 ft gain."
+     }
+    ]
+   },
+   {
+    "field": "permit",
+    "value": "No parking permit",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/mt-logan-douglas-glacier",
+      "retrieved_at": "2026-11-14",
+      "fact": "Parking permit required: none."
+     }
+    ]
+   },
+   {
+    "field": "grade",
+    "value": "Class 4 (4th), moderate snow",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/122977581/douglas-glacier",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project rates Douglas Glacier 4th class with moderate snow."
+     }
+    ]
+   },
+   {
+    "field": "length_ft",
+    "value": 3000,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/122977581/douglas-glacier",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project lists the route as 3000 ft, Grade III."
+     }
+    ]
+   },
+   {
+    "field": "alpine_grade",
+    "value": "III",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/122977581/douglas-glacier",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project lists Douglas Glacier as Grade III."
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "Easy Pass TH to Fisher Creek Trail; cross Fisher Creek ~1 mi east of Cosho Camp and go up the Douglas Glacier drainage",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/122977581/douglas-glacier",
+      "retrieved_at": "2026-11-14",
+      "fact": "Shortest access is Easy Pass trailhead to Fisher Creek Trail, then cross the creek east of Cosho Camp up the drainage."
+     }
+    ]
+   }
+  ],
+  "note": "Our alpine_grade is \"II\"; Mountain Project says Grade III (our overview text also says Grade III). MP FA \"Unknown, 1920s?\" not recorded."
+ },
+ "wa_mount_maude_r1": {
+  "area": "wa_mount_maude",
+  "facts": [
+   {
+    "field": "trailhead",
+    "value": "Phelps Creek Trailhead (3,500 ft), FR 6211 off Chiwawa River Road FR 6200",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/mt-maude-n-face",
+      "retrieved_at": "2026-11-14",
+      "fact": "Turn onto Forest Road 6211 and continue 2.5 mi to the Phelps Creek Trailhead at 3,500 ft."
+     }
+    ]
+   },
+   {
+    "field": "high_point_ft",
+    "value": 9082,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/mt-maude-n-face",
+      "retrieved_at": "2026-11-14",
+      "fact": "High point listed as 9,082 ft; difficulty Intermediate Ice Climb."
+     }
+    ]
+   },
+   {
+    "field": "permit",
+    "value": "Northwest Forest Pass; Glacier Peak Wilderness",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/mt-maude-n-face",
+      "retrieved_at": "2026-11-14",
+      "fact": "Parking permit required: Northwest Forest Pass; Glacier Peak Wilderness, Okanogan-Wenatchee NF."
+     }
+    ]
+   },
+   {
+    "field": "grade",
+    "value": "AI2, steep snow",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/108229013/north-face",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project grades the North Face AI2 steep snow."
+     }
+    ]
+   },
+   {
+    "field": "length_ft",
+    "value": 1750,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/108229013/north-face",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project lists the North Face as 1750 ft, Grade III."
+     }
+    ]
+   },
+   {
+    "field": "alpine_grade",
+    "value": "III",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/108229013/north-face",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project lists the route as Grade III."
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "Fred Beckey, Don Gordon, John Rupley, Herb Staley",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/108229013/north-face",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project credits the first ascent to Beckey, Gordon, Rupley and Staley (no year given)."
+     }
+    ]
+   }
+  ],
+  "note": "Our overview says ~4,000 vertical ft of face; MP says 1,750 ft route length (conflict)."
+ },
+ "wa_mount_maude_r3": {
+  "area": "wa_mount_maude",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "Class 4 (4th)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/area/108229010/mt-maude",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project Mt. Maude area lists Nothing Couloir as 4th class."
+     }
+    ]
+   },
+   {
+    "field": "length_ft",
+    "value": 1500,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/202193352/nothing-couloir",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project lists Nothing Couloir as 1500 ft (trad, alpine)."
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Phelps Creek Trailhead (3,500 ft) via FR 6211",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/mt-maude-n-face",
+      "retrieved_at": "2026-11-14",
+      "fact": "The Mountaineers gives Phelps Creek Trailhead at 3,500 ft, 2.5 mi up FR 6211, for Mount Maude."
+     }
+    ]
+   }
+  ],
+  "note": "No published gain or distance for this exact line found."
+ },
+ "wa_mount_mccausland_n_route": {
+  "area": "wa_mount_mccausland",
+  "facts": [
+   {
+    "field": "gain_ft",
+    "value": 1800,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/smithbrook-road-area-review/mount-mccausland",
+      "retrieved_at": "2026-11-14",
+      "fact": "Day hiking route: 7.0 miles round trip, 1,800 feet of elevation gain from Smithbrook Trailhead."
+     },
+     {
+      "url": "https://www.wta.org/go-hiking/hikes/mt.-mccausland",
+      "retrieved_at": "2026-11-14",
+      "fact": "WTA lists 7.0 miles roundtrip and 1,800 feet elevation gain."
+     }
+    ]
+   },
+   {
+    "field": "dist_mi_roundtrip",
+    "value": 7,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/smithbrook-road-area-review/mount-mccausland",
+      "retrieved_at": "2026-11-14",
+      "fact": "Day hiking route is 7.0 miles round trip."
+     },
+     {
+      "url": "https://www.wta.org/go-hiking/hikes/mt.-mccausland",
+      "retrieved_at": "2026-11-14",
+      "fact": "WTA length 7.0 miles, roundtrip."
+     }
+    ]
+   },
+   {
+    "field": "high_point_ft",
+    "value": 5747,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/smithbrook-road-area-review/mount-mccausland",
+      "retrieved_at": "2026-11-14",
+      "fact": "High point listed as 5,747 ft."
+     },
+     {
+      "url": "https://www.wta.org/go-hiking/hikes/mt.-mccausland",
+      "retrieved_at": "2026-11-14",
+      "fact": "WTA highest point 5,747 feet."
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Smithbrook Trailhead (3,950 ft), 2.8 mi up Smith Brook Road FR 6700, 4.2 mi east of Stevens Pass",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/smithbrook-road-area-review/mount-mccausland",
+      "retrieved_at": "2026-11-14",
+      "fact": "Smithbrook Road turnoff is 4.2 mi east of Stevens Pass; in summer drive 2.8 mi on FR 6700 to the 3,950 ft trailhead."
+     }
+    ]
+   },
+   {
+    "field": "permit",
+    "value": "Northwest Forest Pass",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/smithbrook-road-area-review/mount-mccausland",
+      "retrieved_at": "2026-11-14",
+      "fact": "Parking permit required: Northwest Forest Pass."
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "First 3 miles easy trail; last half mile to the summit steep",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.wta.org/go-hiking/hikes/mt.-mccausland",
+      "retrieved_at": "2026-11-14",
+      "fact": "WTA says the first three miles of trail are easy and the last half mile to the summit is steep."
+     }
+    ]
+   }
+  ],
+  "note": "Our current notes say no pass required and a storm-damage road closure; Mountaineers lists a Northwest Forest Pass. Closure not checked here."
+ },
+ "wa_mount_persis_west_ridge": {
+  "area": "wa_mount_persis",
+  "facts": [
+   {
+    "field": "gain_ft",
+    "value": 2800,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/mount-persis",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mount Persis: 4.0 miles round trip with 2,800 feet of elevation gain."
+     },
+     {
+      "url": "https://trailcatjim.com/mt-persis-via-northwest-ridge-2015/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Trip stats: 4 miles traveled, 2,800 feet gained and lost via the northwest ridge."
+     }
+    ]
+   },
+   {
+    "field": "dist_mi_roundtrip",
+    "value": 4,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/mount-persis",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mount Persis is 4.0 miles round trip."
+     },
+     {
+      "url": "https://www.wta.org/go-hiking/hikes/mount-persis",
+      "retrieved_at": "2026-11-14",
+      "fact": "WTA length 4.0 miles, roundtrip."
+     }
+    ]
+   },
+   {
+    "field": "car_to_car_hours",
+    "value": "5.7 (3.0 up, 2.7 down)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://trailcatjim.com/mt-persis-via-northwest-ridge-2015/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Trip report: 3.0 hours up and 2.7 hours down."
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "End of Forest Road 62 off US-2 (take the left fork both times); boot trail ~100 ft before road end",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/mount-persis",
+      "retrieved_at": "2026-11-14",
+      "fact": "Drive FR 62 east of Gold Bar, taking the left fork at both junctions; unmarked boot trail about 100 ft from road end."
+     }
+    ]
+   },
+   {
+    "field": "road",
+    "value": "Big mud hole on FR 62 may stop non-4WD vehicles, adding ~0.5 mi each way",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/mount-persis",
+      "retrieved_at": "2026-11-14",
+      "fact": "Cars without 4WD/high clearance may stop at the big mud hole, adding about 0.5 mile each way."
+     }
+    ]
+   },
+   {
+    "field": "high_point_ft",
+    "value": 5464,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.wta.org/go-hiking/hikes/mount-persis",
+      "retrieved_at": "2026-11-14",
+      "fact": "WTA highest point 5,464 feet."
+     }
+    ]
+   },
+   {
+    "field": "permit",
+    "value": "Northwest Forest Pass",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/mount-persis",
+      "retrieved_at": "2026-11-14",
+      "fact": "Parking permit required: Northwest Forest Pass."
+     }
+    ]
+   }
+  ],
+  "note": "WTA states 2,658 ft gain (our current value); Mountaineers and trailcatjim both state 2,800 ft (within 10% of WTA)."
+ },
+ "wa_mount_pilchuck_east_ridge": {
+  "area": "wa_mount_pilchuck",
+  "facts": [
+   {
+    "field": "gain_ft",
+    "value": 2800,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/mount-pilchuck-east-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mount Pilchuck/East Ridge: a moderate scramble of 10 miles round trip with 2,800 feet of gain."
+     }
+    ]
+   },
+   {
+    "field": "dist_mi_roundtrip",
+    "value": 10,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/mount-pilchuck-east-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "Scramble is 10 miles round trip."
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Bear/Pinnacle Lake trailhead (2,700 ft) via FR 4020 and FR 4021, 4.6 mi past Verlot",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/mount-pilchuck-east-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "Drive 4.6 mi past Verlot, right on FR 4020, right fork FR 4021 at 2.7 mi, stay right to the 2,700 ft trailhead."
+     }
+    ]
+   },
+   {
+    "field": "road",
+    "value": "Gravel access roads have many potholes",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/mount-pilchuck-east-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "The gravel roads to the trailhead have many potholes; drive slowly."
+     }
+    ]
+   },
+   {
+    "field": "season",
+    "value": "June-October",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/mount-pilchuck-east-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "Seasons listed: June through October."
+     }
+    ]
+   },
+   {
+    "field": "high_point_ft",
+    "value": 5340,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/mount-pilchuck-east-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "High point listed as 5,340 ft."
+     }
+    ]
+   },
+   {
+    "field": "permit",
+    "value": "Northwest Forest Pass",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/mount-pilchuck-east-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "Parking permit required: Northwest Forest Pass."
+     }
+    ]
+   }
+  ],
+  "note": "High point 5,340 differs slightly from our 5,324."
+ },
+ "wa_mount_prophet_east": {
+  "area": "wa_mount_prophet",
+  "facts": [
+   {
+    "field": "gain_ft",
+    "value": 7200,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/mount-prophet",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mount Prophet: about 18 miles round trip and over 7,000 ft gain; stats list 7,200 ft."
+     },
+     {
+      "url": "https://trailcatjim.com/mt-prophet-via-south-ridge-southeast-ridge/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Trip stats via Thirtynine Mile Creek and South Ridge: 18 miles traveled, 7,200 feet gained and lost."
+     }
+    ]
+   },
+   {
+    "field": "dist_mi_roundtrip",
+    "value": 18,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/mount-prophet",
+      "retrieved_at": "2026-11-14",
+      "fact": "About 18 miles round trip."
+     },
+     {
+      "url": "https://trailcatjim.com/mt-prophet-via-south-ridge-southeast-ridge/",
+      "retrieved_at": "2026-11-14",
+      "fact": "18 miles traveled (with water taxi to Big Beaver Landing)."
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Ross Dam Trailhead (2,100 ft), SR-20",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/mount-prophet",
+      "retrieved_at": "2026-11-14",
+      "fact": "Drive SR-20 to the Ross Dam Trailhead at the south end of Ross Lake, 2,100 ft."
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "Ross Dam Trail 1.2 mi to Big Beaver Trail (or Ross Lake Resort boat to Big Beaver), leave trail just past Thirtynine Mile Creek/Camp",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/mount-prophet",
+      "retrieved_at": "2026-11-14",
+      "fact": "Hike the Ross Dam Trail 1.2 miles to the Big Beaver Trail, or boat to Big Beaver; leave trail after Thirtynine Mile Camp."
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "Thirtynine Mile Ridge over Points 5078 and 6071 to the South Ridge, past Points 6690, 7361, 7547",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/mount-prophet",
+      "retrieved_at": "2026-11-14",
+      "fact": "Follow Thirtynine Mile Ridge to Points 5078 and 6071 then the South Ridge past Points 6690, 7361 and 7547."
+     }
+    ]
+   },
+   {
+    "field": "camp",
+    "value": "Saddle after Point 6690, or saddle between Points 7361 and 6690",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/mount-prophet",
+      "retrieved_at": "2026-11-14",
+      "fact": "Camping at the saddle after Point 6690 or between Points 7361 and 6690."
+     }
+    ]
+   },
+   {
+    "field": "season",
+    "value": "Mid to late summer for the South Ridge (Jul-Sep listed)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/mount-prophet",
+      "retrieved_at": "2026-11-14",
+      "fact": "Climb the South Ridge mid to late summer; page seasons July, August, September."
+     }
+    ]
+   },
+   {
+    "field": "hazard",
+    "value": "Cornices on the South Ridge early season",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/mount-prophet",
+      "retrieved_at": "2026-11-14",
+      "fact": "Spring/early summer cornices on the South Ridge; the Southwest Rib is preferred then."
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "Class 1-2 travel along the crest; 6,600 ft saddle on the south ridge",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://trailcatjim.com/mt-prophet-via-south-ridge-southeast-ridge/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Crest offered straightforward Class 1-2 travel after gaining a 6,600-foot saddle on the south ridge."
+     }
+    ]
+   }
+  ],
+  "note": ""
+ },
+ "wa_mount_prophet_southwest_rib": {
+  "area": "wa_mount_prophet",
+  "facts": [
+   {
+    "field": "season",
+    "value": "Spring or early summer",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/mount-prophet",
+      "retrieved_at": "2026-11-14",
+      "fact": "Climb the Southwest Rib in spring or early summer to avoid South Ridge cornices."
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Ross Dam Trailhead (2,100 ft), SR-20",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/mount-prophet",
+      "retrieved_at": "2026-11-14",
+      "fact": "Ross Dam Trailhead at the south end of Ross Lake, 2,100 ft."
+     }
+    ]
+   },
+   {
+    "field": "hazard",
+    "value": "Upper southwest cirque is talus and scree once snow melts",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/mount-prophet",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mid to late summer the upper southwest cirque is talus and scree; early season it is snow covered."
+     }
+    ]
+   }
+  ],
+  "note": "Mountaineers page stats (18 mi, 7,200 ft) are for the peak, not split by route, so not recorded for this line."
+ },
+ "wa_mount_pugh_stujack": {
+  "area": "wa_mount_pugh",
+  "facts": [
+   {
+    "field": "gain_ft",
+    "value": 5300,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/mount-pugh",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mount Pugh route stats: elevation gain 5,300 ft."
+     },
+     {
+      "url": "https://www.wta.org/go-hiking/hikes/mount-pugh",
+      "retrieved_at": "2026-11-14",
+      "fact": "WTA lists 5,300 feet elevation gain."
+     }
+    ]
+   },
+   {
+    "field": "dist_mi_roundtrip",
+    "value": 11,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/mount-pugh",
+      "retrieved_at": "2026-11-14",
+      "fact": "A very strenuous 11 mile hike; length 11.0 mi."
+     },
+     {
+      "url": "https://www.wta.org/go-hiking/hikes/mount-pugh",
+      "retrieved_at": "2026-11-14",
+      "fact": "WTA length 11.0 miles, roundtrip."
+     }
+    ]
+   },
+   {
+    "field": "high_point_ft",
+    "value": 7201,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/mount-pugh",
+      "retrieved_at": "2026-11-14",
+      "fact": "High point listed as 7,201 ft."
+     },
+     {
+      "url": "https://www.wta.org/go-hiking/hikes/mount-pugh",
+      "retrieved_at": "2026-11-14",
+      "fact": "WTA highest point 7,201 feet."
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Mount Pugh Trailhead (1,900 ft), 2 mi up FR 2095 off the Mountain Loop Highway",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/mount-pugh",
+      "retrieved_at": "2026-11-14",
+      "fact": "Take the right fork onto Forest Road 2095 and drive 2 miles to the Mount Pugh Trailhead at 1,900 ft."
+     }
+    ]
+   },
+   {
+    "field": "water",
+    "value": "Lake Metan (3,260 ft) at 1.5 mi is the last water",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.wta.org/go-hiking/hikes/mount-pugh",
+      "retrieved_at": "2026-11-14",
+      "fact": "Lake Metan, at 3,260 ft about 1.5 miles in, is the final water source on the trail."
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "Trail to Stujack Pass; final mile is exposed Class 2 scrambling",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/mount-pugh",
+      "retrieved_at": "2026-11-14",
+      "fact": "Hike the Mount Pugh Trail to Stujack Pass; the final mile to the summit is Class 2 with exposure."
+     }
+    ]
+   },
+   {
+    "field": "season",
+    "value": "July-October",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/mount-pugh",
+      "retrieved_at": "2026-11-14",
+      "fact": "Seasons listed: July, August, September, October."
+     }
+    ]
+   },
+   {
+    "field": "permit",
+    "value": "Northwest Forest Pass",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/mount-pugh",
+      "retrieved_at": "2026-11-14",
+      "fact": "Parking permit required: Northwest Forest Pass."
+     }
+    ]
+   }
+  ],
+  "note": "Mountaineers calls the final mile Class 2; our grade is Class 3."
+ },
+ "wa_mount_fury_east_mongo_ridge": {
+  "area": "wa_mount_fury_west",
+  "facts": [
+   {
+    "field": "fa",
+    "value": "Wayne Wallace, 2006 (solo)",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://publications.americanalpineclub.org/articles/12200713002/North-America-United-States-Washington-Cascade-Range-Mt-Fury-West-Peak-Mongo-Ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "AAJ article by Wayne Wallace, climb year 2006, on the first ascent of Mongo Ridge on West Fury."
+     },
+     {
+      "url": "https://alpinevagabonds.com/mount-furys-mongo-ridge-a-second-ascent/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Second-ascent report says Wayne climbed the route solo in 2006."
+     }
+    ]
+   },
+   {
+    "field": "length_ft",
+    "value": 4000,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://publications.americanalpineclub.org/articles/12200713002/North-America-United-States-Washington-Cascade-Range-Mt-Fury-West-Peak-Mongo-Ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mongo Ridge is the South Buttress of West Fury: a mile-long, 4,000 ft vertical rise studded with gendarmes."
+     },
+     {
+      "url": "https://alpinevagabonds.com/mount-furys-mongo-ridge-a-second-ascent/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Ridge rises 4,000 ft over a mile from Goodell Creek with clusters of gendarmes."
+     }
+    ]
+   },
+   {
+    "field": "grade",
+    "value": "5.10",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://publications.americanalpineclub.org/articles/12200713002/North-America-United-States-Washington-Cascade-Range-Mt-Fury-West-Peak-Mongo-Ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "First ascensionist reports a 5.10 pitch and bypassing a 5.11 headwall on a ledge."
+     },
+     {
+      "url": "https://alpinevagabonds.com/mount-furys-mongo-ridge-a-second-ascent/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Second party found difficulties to 5.9 plus one 5.10b pitch taken by a route-finding error."
+     }
+    ]
+   },
+   {
+    "field": "rappels",
+    "value": "About a dozen rappels to descend off the gendarmes along the ridge",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://publications.americanalpineclub.org/articles/12200713002/North-America-United-States-Washington-Cascade-Range-Mt-Fury-West-Peak-Mongo-Ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "Wallace set the first of a dozen rappels on the ridge, including a full-length double-rope rappel."
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "First ascent approached by climbing East Fury and descending to the ridge rather than up Goodell Creek",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://publications.americanalpineclub.org/articles/12200713002/North-America-United-States-Washington-Cascade-Range-Mt-Fury-West-Peak-Mongo-Ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "Instead of bushwhacking up Goodell Creek, Wallace climbed East Fury and descended to the start of the ridge."
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "Four narrow towers on the lower half must each be summited and rappelled",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://alpinevagabonds.com/mount-furys-mongo-ridge-a-second-ascent/",
+      "retrieved_at": "2026-11-14",
+      "fact": "The bottom half has four narrow towers that must be climbed and rappelled to progress."
+     }
+    ]
+   }
+  ],
+  "note": "Grade agree-2 means both parties report a 5.10 pitch; the second ascent says the normal line is 5.9 with the 5.10b pitch an error."
+ },
+ "wa_mount_rainier_disappointment_cleaver": {
+  "area": "wa_mount_rainier",
+  "facts": [
+   {
+    "field": "gain_ft",
+    "value": 8790,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/paradise-area-review/mount-rainier-disappointment-cleaver",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mount Rainier/Disappointment Cleaver route stats: elevation gain 8,790 ft, length 15.0 mi."
+     }
+    ]
+   },
+   {
+    "field": "dist_mi_roundtrip",
+    "value": 15,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/paradise-area-review/mount-rainier-disappointment-cleaver",
+      "retrieved_at": "2026-11-14",
+      "fact": "Length listed as 15.0 mi."
+     }
+    ]
+   },
+   {
+    "field": "season",
+    "value": "June-August",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/paradise-area-review/mount-rainier-disappointment-cleaver",
+      "retrieved_at": "2026-11-14",
+      "fact": "Seasons listed: June, July, August."
+     }
+    ]
+   },
+   {
+    "field": "approach_leg",
+    "value": "Paradise to Camp Muir 6-8 h, +4,460 ft",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/paradise-area-review/mount-rainier-disappointment-cleaver",
+      "retrieved_at": "2026-11-14",
+      "fact": "Trip profile: trailhead to camp 6-8 hours, 4,460 ft gain."
+     }
+    ]
+   },
+   {
+    "field": "summit_day",
+    "value": "Camp Muir to summit 5-8 h, +4,330 ft; back to camp 2-3 h; camp to trailhead 2-3 h",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/paradise-area-review/mount-rainier-disappointment-cleaver",
+      "retrieved_at": "2026-11-14",
+      "fact": "Trip profile: camp to summit 5-8 h with 4,330 ft gain; summit to camp 2-3 h; camp to trailhead 2-3 h."
+     }
+    ]
+   },
+   {
+    "field": "rack",
+    "value": "Standard glacier equipment and helmet",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/paradise-area-review/mount-rainier-disappointment-cleaver",
+      "retrieved_at": "2026-11-14",
+      "fact": "Equipment: standard glacier equipment and helmet."
+     }
+    ]
+   },
+   {
+    "field": "permit",
+    "value": "National Park entrance fee",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/paradise-area-review/mount-rainier-disappointment-cleaver",
+      "retrieved_at": "2026-11-14",
+      "fact": "Parking permit required: National Park Entrance Fee."
+     }
+    ]
+   },
+   {
+    "field": "camp",
+    "value": "No camping in the Paradise lot; nearest car camping Cougar Rock Campground",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/paradise-area-review/mount-rainier-disappointment-cleaver",
+      "retrieved_at": "2026-11-14",
+      "fact": "Notes: no camping in the parking area; nearest car camping is Cougar Rock Campground."
+     }
+    ]
+   },
+   {
+    "field": "grade",
+    "value": "Moderate snow (glacier); trad/snow/alpine",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105877100/ingraham-glacier-disappointment-cleaver-route",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project lists Ingraham Glacier-Disappointment Cleaver as Mod. Snow, Trad, Snow, Alpine; FA unknown."
+     }
+    ]
+   }
+  ],
+  "note": "Our gain 9,000 is within 10% of 8,790. NPS camp-muir page was an in-progress placeholder. No second publisher with a full-route figure was reached."
+ },
+ "wa_mount_rainier_emmons_glacier": {
+  "area": "wa_mount_rainier",
+  "facts": [
+   {
+    "field": "gain_ft",
+    "value": 10000,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/mount-rainier-emmons-glacier",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mount Rainier/Emmons Glacier route stats: elevation gain 10,000 ft."
+     }
+    ]
+   },
+   {
+    "field": "summit_day_gain_ft",
+    "value": 4900,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/mount-rainier-emmons-glacier",
+      "retrieved_at": "2026-11-14",
+      "fact": "Trip profile: camp to summit 5-8 h, 4,900 ft gain."
+     },
+     {
+      "url": "https://www.alpineascents.com/climbs/mount-rainier-climb-emmons/itinerary/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Day 3: Camp Schurman 9,500 ft to Columbia Crest, 4,911 ft ascent, 3 mi up, 5-7 h up, 4-5 h down."
+     }
+    ]
+   },
+   {
+    "field": "approach_leg",
+    "value": "Trailhead to Camp Schurman 6-8 h, +5,100 ft",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/mount-rainier-emmons-glacier",
+      "retrieved_at": "2026-11-14",
+      "fact": "Trip profile: trailhead to camp 6-8 hours, 5,100 ft gain."
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "White River Campground (4,300 ft)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.alpineascents.com/climbs/mount-rainier-climb-emmons/itinerary/",
+      "retrieved_at": "2026-11-14",
+      "fact": "The climb begins at White River Campground at 4,300 ft and follows the White River to Glacier Basin."
+     }
+    ]
+   },
+   {
+    "field": "camp",
+    "value": "Inter Glacier camp (~8,500 ft); Camp Schurman (9,500 ft)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.alpineascents.com/climbs/mount-rainier-climb-emmons/itinerary/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Guide itinerary camps on the Inter Glacier near 8,500 ft (4,200 ft gain, 5 mi) then Camp Schurman at 9,500 ft."
+     }
+    ]
+   },
+   {
+    "field": "season",
+    "value": "June-August",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/mount-rainier-emmons-glacier",
+      "retrieved_at": "2026-11-14",
+      "fact": "Seasons listed: June, July, August."
+     }
+    ]
+   },
+   {
+    "field": "rack",
+    "value": "Standard glacier equipment; helmet and wands recommended",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/mount-rainier-emmons-glacier",
+      "retrieved_at": "2026-11-14",
+      "fact": "Equipment: standard glacier equipment, helmet and wands recommended."
+     }
+    ]
+   },
+   {
+    "field": "permit",
+    "value": "National Park entrance fee",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/mount-rainier-emmons-glacier",
+      "retrieved_at": "2026-11-14",
+      "fact": "Parking permit required: National Park Entrance Fee."
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "J. W. Fobes, G. James, R. O. Wells (1884)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105982534/emmons-glacier",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project credits the Emmons Glacier FA to Fobes, James and Wells in 1884."
+     }
+    ]
+   },
+   {
+    "field": "grade",
+    "value": "Moderate snow (glacier)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105982534/emmons-glacier",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project lists Emmons Glacier as Mod. Snow, snow/alpine, 10700 ft."
+     }
+    ]
+   },
+   {
+    "field": "hazard",
+    "value": "Crevasses and snow bridges in the Emmons Corridor",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.alpineascents.com/climbs/mount-rainier-climb-emmons/itinerary/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Summit day crosses snow bridges and navigates crevasses in the Emmons Glacier Corridor."
+     }
+    ]
+   }
+  ],
+  "note": "Our gain 10,300 is within 10% of the Mountaineers 10,000. Alpine Ascents states 4,300 ft at White River Campground; our trailhead pin is 4,400."
+ },
+ "wa_mount_olympus_blue_glacier": {
+  "area": "wa_mount_olympus",
+  "facts": [
+   {
+    "field": "gain_ft",
+    "value": 7400,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/mount-olympus-blue-glacier",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mount Olympus/Blue Glacier route stats: elevation gain 7,400 ft, length 44.0 mi."
+     },
+     {
+      "url": "https://trailcatjim.com/mount-olympus-blue-glacier-north-face-2003/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Trip stats via Hoh River and Blue Glacier: 47 miles traveled, 8,000 feet gained and lost."
+     }
+    ]
+   },
+   {
+    "field": "dist_mi_roundtrip",
+    "value": 44,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/mount-olympus-blue-glacier",
+      "retrieved_at": "2026-11-14",
+      "fact": "Length listed as 44.0 mi."
+     },
+     {
+      "url": "https://trailcatjim.com/mount-olympus-blue-glacier-north-face-2003/",
+      "retrieved_at": "2026-11-14",
+      "fact": "47 miles traveled on the Hoh River / Blue Glacier route."
+     }
+    ]
+   },
+   {
+    "field": "season",
+    "value": "May-August",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/mount-olympus-blue-glacier",
+      "retrieved_at": "2026-11-14",
+      "fact": "Seasons listed: May, June, July, August."
+     }
+    ]
+   },
+   {
+    "field": "approach_leg",
+    "value": "Trailhead to high camp 10-13 h (1-2 days), +3,622 ft",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/mount-olympus-blue-glacier",
+      "retrieved_at": "2026-11-14",
+      "fact": "Trip profile: trailhead to camp 10-13 hours over 1-2 days, 3,622 ft gain."
+     }
+    ]
+   },
+   {
+    "field": "summit_day",
+    "value": "Camp to summit 6-8 h, +3,765 ft; back to camp 3-4 h; out 1 day",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/mount-olympus-blue-glacier",
+      "retrieved_at": "2026-11-14",
+      "fact": "Trip profile: camp to summit 6-8 h, 3,765 ft gain; summit to camp 3-4 h; camp to trailhead 1 day."
+     }
+    ]
+   },
+   {
+    "field": "trip_days",
+    "value": "3-4 days",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/mount-olympus-blue-glacier",
+      "retrieved_at": "2026-11-14",
+      "fact": "Notes: the climb can be done in three or four days; bring food for four."
+     }
+    ]
+   },
+   {
+    "field": "rack",
+    "value": "Standard glacier equipment and helmet",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/mount-olympus-blue-glacier",
+      "retrieved_at": "2026-11-14",
+      "fact": "Equipment: standard glacier equipment and helmet."
+     }
+    ]
+   },
+   {
+    "field": "permit",
+    "value": "Wilderness permit; Elk Lake and Glacier Meadows permits limited; bear canisters required",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.nps.gov/olym/planyourvisit/climbing-mount-olympus.htm",
+      "retrieved_at": "2026-11-14",
+      "fact": "NPS: permits limited for Elk Lake and Glacier Meadows; food and scented items must be in bear canisters."
+     }
+    ]
+   },
+   {
+    "field": "camp",
+    "value": "Caltech Rocks and Snow Dome; no camping between Glacier Meadows and the Blue Glacier",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.nps.gov/olym/planyourvisit/climbing-mount-olympus.htm",
+      "retrieved_at": "2026-11-14",
+      "fact": "NPS lists camp areas at Caltech Rocks and Snow Dome and bans camping between Glacier Meadows and the Blue Glacier."
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "Lower Blue Glacier, Snow Dome, Crystal Pass, Upper Blue Glacier, High Saddle, summit block",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://trailcatjim.com/mount-olympus-blue-glacier-north-face-2003/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Route via Lower Blue Glacier, Snow Dome, Crystal Pass, Upper Blue Glacier and High Saddle to the summit."
+     }
+    ]
+   },
+   {
+    "field": "grade",
+    "value": "5.3, Grade II (summit block)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/109143016/north-ridge-via-blue-glacier",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project rates North Ridge via Blue Glacier 5.3, Grade II, 100 ft of rock."
+     }
+    ]
+   },
+   {
+    "field": "rappels",
+    "value": "Rappel from the summit block of the West Peak",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.nps.gov/olym/planyourvisit/climbing-mount-olympus.htm",
+      "retrieved_at": "2026-11-14",
+      "fact": "NPS photo caption shows a rappel from the West Peak summit block."
+     }
+    ]
+   }
+  ],
+  "note": "Our grade is 5.4; Mountain Project says 5.3. Trip-report figures (47 mi / 8,000 ft) are within 10% of the Mountaineers figures."
+ },
+ "wa_mount_fricaba_standard": {
+  "area": "wa_mount_fricaba",
+  "facts": [
+   {
+    "field": "peak_fa",
+    "value": "Don Bechlem and Jack Newman, 1957 (first ascent of the peak; route not stated)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://en.wikipedia.org/wiki/Mount_Fricaba",
+      "retrieved_at": "2026-11-14",
+      "fact": "Wikipedia: first ascent of the mountain was made in 1957 by Don Bechlem and Jack Newman."
+     }
+    ]
+   }
+  ],
+  "note": "The Mountaineers page (routes-places/deception-mystery-fricaba-hal-foss: 18 mi, 8,500 ft) covers a four-peak traverse, so its figures are not for this route. WTA mount-fricaba page carried no stats. SummitPost not tried (403 for other agents)."
+ },
+ "wa_mount_johnson_standard": {
+  "area": "wa_mount_johnson",
+  "facts": [
+   {
+    "field": "peak_fa",
+    "value": "Scott Osborn, Joe Halwax, John King, about 1935 (earlier credit: Elvin Johnson and George Martin, 1940)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://en.wikipedia.org/wiki/Mount_Johnson_(Washington)",
+      "retrieved_at": "2026-11-14",
+      "fact": "Wikipedia: named for a believed 1940 ascent by Johnson and Martin; evidence shows Osborn, Halwax and King climbed it about 1935."
+     }
+    ]
+   }
+  ],
+  "note": "No Mountaineers route page for Mount Johnson (only activity listings); WTA mount-johnson 404; stevensong 404. No published gain or distance for the Royal Basin line was reached."
+ },
+ "wa_mount_la_crosse_scramble": {
+  "area": "wa_mount_la_crosse",
+  "facts": [
+   {
+    "field": "peak_fa",
+    "value": "Richard Paulson, William Ryer, Paul Wiseman, Frank Woodworth, 1928 (peak FA; route not stated)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://en.wikipedia.org/wiki/Mount_LaCrosse",
+      "retrieved_at": "2026-11-14",
+      "fact": "Wikipedia: first ascent of the mountain in 1928 by Paulson, Ryer, Wiseman and Woodworth."
+     }
+    ]
+   }
+  ],
+  "note": "The Mountaineers mt-elk-lick-lacrosse page (18 mi, 6,500-7,500 ft) combines Elk Lick and LaCrosse from Duckabush or Dosewallips, so not used. jonnewmark and cascadeclimbers LaCrosse reports were found but not opened."
+ },
+ "wa_mount_lawson_standard": {
+  "area": "wa_mount_lawson",
+  "facts": [
+   {
+    "field": "trailhead",
+    "value": "North Fork Quinault Trailhead (519 ft)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.nps.gov/olym/planyourvisit/north-for-quinault.htm",
+      "retrieved_at": "2026-11-14",
+      "fact": "NPS: North Fork Quinault trail runs 16 miles to Low Divide, elevation change 519 ft to 3,602 ft."
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "North Fork Trailhead to Wolf Bar ~2.5 mi, Wolf Bar to Elip Creek ~4 mi",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.nps.gov/olym/planyourvisit/north-for-quinault.htm",
+      "retrieved_at": "2026-11-14",
+      "fact": "NPS trail guide: trailhead to Wolf Bar about 2.5 miles, then about 4 miles to Elip Creek."
+     }
+    ]
+   },
+   {
+    "field": "hazard",
+    "value": "River crossings can be hazardous in high water",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.nps.gov/olym/planyourvisit/north-for-quinault.htm",
+      "retrieved_at": "2026-11-14",
+      "fact": "NPS warns the trail crossings can be hazardous during high water."
+     }
+    ]
+   }
+  ],
+  "note": "WTA trip report trip_report.2022-08-26.1005557646 mentions a 16-hour summit day but gives no route figures. explor8ion.com lawson-mount is a different (Kananaskis) peak. Wikipedia Mount Lawson (WA) gives no route facts."
+ },
+ "wa_mount_noyes_standard": {
+  "area": "wa_mount_noyes",
+  "facts": [
+   {
+    "field": "approach_step",
+    "value": "North Fork Quinault Trail 16 mi to Low Divide (519 ft to 3,602 ft)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.nps.gov/olym/planyourvisit/north-for-quinault.htm",
+      "retrieved_at": "2026-11-14",
+      "fact": "NPS: 16 miles to Low Divide; trailhead 519 ft rising to 3,602 ft; legs via Wolf Bar, Elip Creek and Sixteen Mile."
+     }
+    ]
+   },
+   {
+    "field": "hazard",
+    "value": "Sixteen Mile river crossing can be impassable in heavy rain or snowmelt",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.nps.gov/olym/planyourvisit/north-for-quinault.htm",
+      "retrieved_at": "2026-11-14",
+      "fact": "NPS: the crossing at 16-Mile can be difficult or impossible in heavy rain or snowmelt."
+     }
+    ]
+   },
+   {
+    "field": "season",
+    "value": "Best season May (trail)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.nps.gov/olym/planyourvisit/north-for-quinault.htm",
+      "retrieved_at": "2026-11-14",
+      "fact": "NPS lists best season for the North Fork Quinault trail starting May."
+     }
+    ]
+   }
+  ],
+  "note": "Wikipedia Mount_Noyes_(Washington) only says USGS mappers may have climbed it 1898-1900 (not recorded, uncertain). No published summit-route gain found."
+ },
+ "wa_mount_olson_standard": {
+  "area": "wa_mount_olson",
+  "facts": [
+   {
+    "field": "camp",
+    "value": "Camp Riley (~6 mi from Upper South Fork Skokomish TH, just inside the park) and Sundown Lake (~3 mi beyond)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.wta.org/go-hiking/trip-reports/trip_report.2018-07-28.3740270681",
+      "retrieved_at": "2026-11-14",
+      "fact": "Trip report: Camp Riley lies roughly 6 miles in, just inside the park boundary; Sundown Lake about 3 miles further; no official sites there."
+     }
+    ]
+   }
+  ],
+  "note": "Second page: Wikipedia Mount_Olson returned 404. Trip report figures are approximate (\"roughly\"); no summit-route gain stated."
+ },
+ "wa_mount_mastiff_south_route": {
+  "area": "wa_mount_mastiff",
+  "facts": [
+   {
+    "field": "gain_ft",
+    "value": 3330,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/mount-howard-mount-mastiff",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mount Mastiff from the Merritt Lake trailhead: 10 miles round trip with 3,330 feet of elevation gain."
+     }
+    ]
+   },
+   {
+    "field": "dist_mi_roundtrip",
+    "value": 10,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/mount-howard-mount-mastiff",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mount Mastiff from the Merritt Lake trailhead is 10 miles round trip."
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Merritt Lake Trailhead (3,050 ft), ~1.5 mi up FR 657 off SR 2",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/mount-howard-mount-mastiff",
+      "retrieved_at": "2026-11-14",
+      "fact": "Merritt Lake trailhead at 3,050 ft at the end of FR 657, about 1.5 miles off SR 2."
+     }
+    ]
+   },
+   {
+    "field": "road",
+    "value": "Unpaved road to Merritt Lake trailhead is rough",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://stevensong.com/usa/washington/mount-mastiff/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Steven Song reports the unpaved road to the Merritt Lake trailhead was rough."
+     }
+    ]
+   },
+   {
+    "field": "grade",
+    "value": "Class 2 on the easiest line",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://stevensong.com/usa/washington/mount-mastiff/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Steven Song: the scrambling was class 2 at most if you keep to the easiest path."
+     }
+    ]
+   },
+   {
+    "field": "season",
+    "value": "June-September",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/mount-howard-mount-mastiff",
+      "retrieved_at": "2026-11-14",
+      "fact": "Seasons listed: June, July, August, September."
+     }
+    ]
+   }
+  ],
+  "note": "CONFLICT: our gain is 4,900 ft; The Mountaineers states 3,330 ft for Mastiff alone from Merritt Lake. Our grade is Class 3; Steven Song says class 2 at most."
+ },
+ "wa_mount_mystery_standard": {
+  "area": "wa_mount_mystery",
+  "facts": [
+   {
+    "field": "high_point_ft",
+    "value": 7639,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/mount-mystery",
+      "retrieved_at": "2026-11-14",
+      "fact": "High point listed as 7,639 ft."
+     }
+    ]
+   },
+   {
+    "field": "season",
+    "value": "May-September",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/mount-mystery",
+      "retrieved_at": "2026-11-14",
+      "fact": "Seasons listed: May through September."
+     }
+    ]
+   },
+   {
+    "field": "permit",
+    "value": "National Park entrance fee",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/mount-mystery",
+      "retrieved_at": "2026-11-14",
+      "fact": "Parking permit required: National Park Entrance Fee."
+     }
+    ]
+   }
+  ],
+  "note": "The Mountaineers approach goes up the Dosewallips to Deception Creek, not Royal Basin as our route does, so its distances are not used. trailcatjim mt-mystery report is the Mystery Glacier east face (other route). WTA mount-mystery had no stats; Wikipedia Mount_Mystery gives no route facts."
+ },
+ "wa_mount_pershing_standard": {
+  "area": "wa_mount_pershing",
+  "facts": [
+   {
+    "field": "high_point_ft",
+    "value": 6154,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/mount-pershing",
+      "retrieved_at": "2026-11-14",
+      "fact": "The Mountaineers: south peak at 6,154 ft is the highest of three; gain listed 3,600 ft (approach not stated)."
+     }
+    ]
+   },
+   {
+    "field": "hazard",
+    "value": "Steep snow to 45 degrees and moderately exposed class 3+ scrambling on the regular route",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://stevensong.com/usa/washington/mount-pershing/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Steven Song: the regular route has steep snow to 45 degrees and moderately exposed scrambling around class 3+."
+     }
+    ]
+   },
+   {
+    "field": "permit",
+    "value": "Northwest Forest Pass",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/mount-pershing",
+      "retrieved_at": "2026-11-14",
+      "fact": "Parking permit required: Northwest Forest Pass."
+     }
+    ]
+   }
+  ],
+  "note": "Mountaineers lists 3,600 ft gain but does not name the approach, so not recorded as gain (ours 3,700). Steven Song calls the regular route class 3+; ours says Class 4."
+ },
+ "wa_mount_pugh_pika_slab": {
+  "area": "wa_mount_pugh",
+  "facts": [
+   {
+    "field": "trailhead",
+    "value": "Mount Pugh Trailhead (1,900 ft), FR 2095",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/mount-pugh",
+      "retrieved_at": "2026-11-14",
+      "fact": "The Mountaineers: Mount Pugh Trailhead at 1,900 ft, 2 miles up FR 2095."
+     }
+    ]
+   },
+   {
+    "field": "water",
+    "value": "Lake Metan (3,260 ft) at 1.5 mi is the last water on the trail",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.wta.org/go-hiking/hikes/mount-pugh",
+      "retrieved_at": "2026-11-14",
+      "fact": "WTA: Lake Metan at 3,260 ft, 1.5 miles in, is the final water source."
+     }
+    ]
+   }
+  ],
+  "note": "No page found that describes the Pika Slab pitch itself; facts here are for the shared Mount Pugh trail approach."
+ },
+ "wa_mount_pulitzer_standard": {
+  "area": "wa_mount_pulitzer",
+  "facts": [
+   {
+    "field": "fa",
+    "value": "Doug Waali, Bob Wood, Kent Heathershaw, 1961 (east ridge)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://en.wikipedia.org/wiki/Mount_Pulitzer_(Washington)",
+      "retrieved_at": "2026-11-14",
+      "fact": "Wikipedia: first ascent in 1961 by Waali, Wood and Heathershaw via the east ridge."
+     }
+    ]
+   }
+  ],
+  "note": "climberkyle Bailey Range traverse and WTA Bailey Range trip reports were found but not opened; no route-specific figures reached."
+ },
+ "wa_mount_rahm_south_side": {
+  "area": "wa_mount_rahm",
+  "facts": [
+   {
+    "field": "approach_step",
+    "value": "Standard route from Depot Creek and Lake Ouzel; the approach to Lake Ouzel takes most parties a full day",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://stevensong.com/usa/washington/mount-rahm/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Steven Song: standard route goes from Depot Creek and Lake Ouzel; the modern approach to Lake Ouzel takes a full day."
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "Alternative standard route from Silver Lake involves a long side-hill on the bench above the lake",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://stevensong.com/usa/washington/mount-rahm/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Steven Song: the Silver Lake standard route involves an arduous side-hill trudge on the bench above Silver Lake."
+     }
+    ]
+   }
+  ],
+  "note": "WTA mount-rahm page describes the route as Class 5 (ours Class 4) without detail; not recorded as a grade. The Mountaineers Chilliwacks page only gives Depot Creek Road driving."
+ },
+ "wa_mount_price_hester_lake_route": {
+  "area": "wa_mount_price",
+  "facts": [
+   {
+    "field": "trailhead",
+    "value": "Dingford Creek Trailhead (1,400 ft), FR 56 Middle Fork Snoqualmie Road",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/mount-price",
+      "retrieved_at": "2026-11-14",
+      "fact": "The Mountaineers: continue to the Dingford Creek Trailhead at 1,400 ft."
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "Dingford trail 2.1 mi (4-5 creek crossings) to Goat Creek (2,570 ft), then off-trail toward the saddle NW of Little Hester Lake",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/mount-price",
+      "retrieved_at": "2026-11-14",
+      "fact": "Hike the Dingford trail 2.1 miles with 4-5 creek crossings to Goat Creek, then head cross-country to the saddle NW of Little Hester Lake."
+     }
+    ]
+   }
+  ],
+  "note": "Mountaineers stats (10 mi, 4,100 ft, HP 5,587) are for its winter/spring standard route via Goat Creek, which leaves the trail far earlier than our Hester Lake line, so not recorded. WTA mount-price page (13.5 mi, 4,500 ft, high point 5,000 ft) does not reach the summit."
+ }
+}

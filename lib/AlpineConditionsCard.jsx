@@ -33,7 +33,11 @@ export function forecastPoint(route, mtn) {
 }
 
 export default function AlpineConditionsCard({ route, mtn, calc, activity, reportsUnavailable }) {
-  const terrain = useMemo(function () { return routeTerrain(route); }, [route]);
+  /* Read as of TODAY: a route whose usual line melts out (routes.snow_free_from, lib/terrain.js snowFreeOn) is a dry
+     route past that date, so it loses its snow and glacier flags then and keeps them before. The card covers this
+     week, so today's date stands for all seven days. */
+  const day = new Date().toDateString();
+  const terrain = useMemo(function () { return routeTerrain(route, { on: new Date(day) }); }, [route, day]);
   const kind = condKind(route, terrain, catOf(route));
   const pt = useMemo(function () { return forecastPoint(route, mtn); }, [route, mtn]);
   if (!kind) return null;
@@ -47,7 +51,7 @@ export default function AlpineConditionsCard({ route, mtn, calc, activity, repor
     {pt ? <div style={BOX}>
       {avyOn ? <AvalancheSection pt={pt} /> : null}
       <div style={{ marginTop: avyOn ? ROUTE_GAP : 0 }}><SnowSection pt={pt} /></div>
-      {kind !== "waterfall" && kind !== "cragmixed" ? <div style={{ marginBottom: ROUTE_GAP }}><StreamsSection pt={pt} base={trailhead} /></div> : null}
+      {kind !== "waterfall" && kind !== "cragmixed" ? <div style={{ marginTop: ROUTE_GAP, marginBottom: ROUTE_GAP }}><StreamsSection pt={pt} base={trailhead} /></div> : null}
       <OutcomesSection activity={activity} />
       <ReportFreshness activity={activity} unavailable={reportsUnavailable} />
       <div style={{ marginTop: 14 }}><SeasonSection pt={pt} /></div>

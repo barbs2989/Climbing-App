@@ -1,0 +1,1093 @@
+[
+ {
+  "route_id": "wa_mount_logan_fremont_glacier",
+  "area_id": "wa_mount_logan",
+  "field": "gain_ft",
+  "verdict": "confirmed_1src",
+  "value": 8900,
+  "confirmed_urls": [
+   "https://cnmtstuartclimbproject.blogspot.com/2017/07/route-mount-logan-fremont-glacier-north.html"
+  ],
+  "problems": "Page: 'Gain: 8,900 ft / Round Trip: 47 miles', copied from The Mountaineers (one source). CAVEAT: Mountaineers 'Elevation Gain' is the whole-trip figure on their Goode page (segments include return gain), so 8,900 may be round-trip total, not one-way.",
+  "why": "verifier flagged doubt"
+ },
+ {
+  "route_id": "ca_mount_baldwin_via_convict_canyon_and_bright_dot_lake",
+  "area_id": "ca_mount_baldwin",
+  "field": "gain_ft",
+  "verdict": "confirmed_1src",
+  "value": 5380,
+  "confirmed_urls": [
+   "https://daiyi.co/blog/mount-baldwin/"
+  ],
+  "problems": "Page: 'West slope, class 2. 17.5mi, 5380ft vert'. Outing stat (17.5 mi is round trip; descent varied); not labelled one-way.",
+  "why": "verifier flagged doubt"
+ },
+ {
+  "route_id": "ca_mt_irvine_east_couloir",
+  "area_id": "ca_mt_irvine",
+  "field": "gain_ft",
+  "verdict": "confirmed_1src",
+  "value": 6500,
+  "confirmed_urls": [
+   "https://fresnoclimber.blogspot.com/2017/05/mt-irvine-13770-east-couloir.html"
+  ],
+  "problems": "Page trip summary: '~10 miles, 6,500' elevation gain, 10.5 hours' (round-trip outing stats, approximate). CAVEAT: weak - looks low for Meysan Lake TH to 13,770 summit; treat with suspicion.",
+  "why": "verifier flagged doubt"
+ },
+ {
+  "route_id": "ca_tinker_knob_via_the_pacific_crest_trail",
+  "area_id": "ca_tinker_knob",
+  "field": "gain_ft",
+  "verdict": "confirmed_1src",
+  "value": 3100,
+  "confirmed_urls": [
+   "https://greglamy.net/Hiking/TinkerKnob.html"
+  ],
+  "problems": "Page: 'Distance: 16.6 Miles / Vertical Gain: 3100'' for Donner Pass out-and-back. Page does not say round trip, but stat is for the 16.6-mi outing; likely includes return undulations.",
+  "why": "verifier flagged doubt"
+ },
+ {
+  "route_id": "id_diamond_peak_east_ridge",
+  "area_id": "id_diamond_peak",
+  "field": "gain_ft",
+  "verdict": "confirmed_1src",
+  "value": 4150,
+  "confirmed_urls": [
+   "https://idahotwelvers.com/pages/diamond-peak"
+  ],
+  "problems": "Page: East Ridge, Elevation Gain 4,150 ft, Round Trip Distance 5.8 mi. App 4200 within 2%.",
+  "why": "verifier flagged doubt"
+ },
+ {
+  "route_id": "wa_tailgunner_peak_w_route",
+  "area_id": "wa_tailgunner",
+  "field": "gain_ft",
+  "verdict": "confirmed_1src",
+  "value": 3900,
+  "confirmed_urls": [
+   "https://journeywithjoshua.com/trip-reports/tailgunner-peak-the-quiet-one/"
+  ],
+  "problems": "Page: 'Distance: 5.38 miles round trip (per GPS) / Elevation gain: ~3,900 ft'. App 3540 is ~10% lower.",
+  "why": "verifier flagged doubt"
+ },
+ {
+  "route_id": "ca_sirretta_peak_standard_route",
+  "area_id": "ca_sirretta_peak",
+  "field": "gain_ft",
+  "verdict": "confirmed_1src",
+  "value": 2200,
+  "confirmed_urls": [
+   "https://kernriversierra.com/hike/Sirretta_trail.html"
+  ],
+  "problems": "Page: 'About 7 miles roundtrip / 2200 feet of elevation gain'.",
+  "why": "verifier flagged doubt"
+ },
+ {
+  "route_id": "wa_mount_baker_boulder_glacier",
+  "area_id": "wa_mount_baker",
+  "field": "gain_ft",
+  "verdict": "confirmed_1src",
+  "value": 8328,
+  "confirmed_urls": [
+   "https://nextadventure.net/blog/trip-report-mount-baker"
+  ],
+  "problems": "Input 8100 is not on page. Page: 'Start / summit elevation 2,723' / 10,778'', 'Elevation gain 8,328'' (also '8,328 feet of gain over about 13 miles' for the round trip). App 8100 within 3%.",
+  "why": "verifier flagged doubt"
+ },
+ {
+  "route_id": "wa_ruby_mountain_northwest_ridge",
+  "area_id": "wa_ruby_mountain",
+  "field": "gain_ft",
+  "verdict": "confirmed_1src",
+  "value": 5500,
+  "confirmed_urls": [
+   "https://onehikeaweek.com/2011/05/01/ruby-mountain/"
+  ],
+  "problems": "Page: 'Round Trip: 7 miles', '5500′ gain over 3.5 miles' (one way).",
+  "why": "verifier flagged doubt"
+ },
+ {
+  "route_id": "ny_algonquin_van_hoevenberg_and_macintyre_range_trails",
+  "area_id": "ny_algonquin",
+  "field": "gain_ft",
+  "verdict": "confirmed_1src",
+  "value": 2936,
+  "confirmed_urls": [
+   "https://pureadirondacks.com/blogs/adirondack-hiking/algonquin-peak",
+   "https://www.adirondackhikers.com/adirondack-high-peaks/algonquin-peak/"
+  ],
+  "problems": "Both pages state 2,936 ft (Adirondak Loj; 4.3 mi to summit). Identical odd figure = shared/copied source, counted as one.",
+  "why": "verifier flagged doubt"
+ },
+ {
+  "route_id": "ny_cascade_mountain_cascade_mountain_trail",
+  "area_id": "ny_cascade_mountain",
+  "field": "gain_ft",
+  "verdict": "confirmed_1src",
+  "value": 1940,
+  "confirmed_urls": [
+   "https://pureadirondacks.com/blogs/adirondack-hiking/cascade-mountain",
+   "https://www.hikeadk.com/hikes/cascade-mountain"
+  ],
+  "problems": "Both state 1,940 ft with 4.8 mi round trip. Identical figures = one source.",
+  "why": "verifier flagged doubt"
+ },
+ {
+  "route_id": "ny_iroquois_peak_via_algonquin_peak",
+  "area_id": "ny_iroquois_peak",
+  "field": "gain_ft",
+  "verdict": "confirmed_1src",
+  "value": 3800,
+  "confirmed_urls": [
+   "https://pureadirondacks.com/blogs/adirondack-hiking/iroquois-peak",
+   "https://www.hikeadk.com/hikes/iroquois-peak"
+  ],
+  "problems": "Both state ~3,800 ft with 10.2 mi round trip - identical = one source. CAVEAT: route goes over Algonquin, so total may include re-climbing Algonquin on the return.",
+  "why": "verifier flagged doubt"
+ },
+ {
+  "route_id": "ny_macomb_mountain_macomb_slide",
+  "area_id": "ny_macomb_mountain",
+  "field": "gain_ft",
+  "verdict": "confirmed_1src",
+  "value": 2344,
+  "confirmed_urls": [
+   "https://pureadirondacks.com/blogs/adirondack-hiking/macomb-mountain"
+  ],
+  "problems": "Page: 8 mi round trip, total gain 2,344 ft, Elk Lake via Slide Brook and the slide.",
+  "why": "verifier flagged doubt"
+ },
+ {
+  "route_id": "ny_panther_peak_panther_brook_herd_path",
+  "area_id": "ny_panther_peak",
+  "field": "gain_ft",
+  "verdict": "confirmed_1src",
+  "value": 3762,
+  "confirmed_urls": [
+   "https://pureadirondacks.com/blogs/adirondack-hiking/panther-peak"
+  ],
+  "problems": "Page: 12.5 mi round trip, total gain ~3,762 ft, Santanoni Road TH.",
+  "why": "verifier flagged doubt"
+ },
+ {
+  "route_id": "ny_porter_mountain_cascade_mountain_trail_to_porter_spur",
+  "area_id": "ny_porter_mountain",
+  "field": "gain_ft",
+  "verdict": "confirmed_1src",
+  "value": 1960,
+  "confirmed_urls": [
+   "https://pureadirondacks.com/blogs/adirondack-hiking/porter-mountain"
+  ],
+  "problems": "Page: 5.6 mi round trip, 1,960 ft, from the Cascade/Porter TH on Route 73.",
+  "why": "verifier flagged doubt"
+ },
+ {
+  "route_id": "ny_whiteface_wilmington_trail",
+  "area_id": "ny_whiteface",
+  "field": "gain_ft",
+  "verdict": "confirmed_agree2",
+  "value": 3620,
+  "confirmed_urls": [
+   "https://pureadirondacks.com/blogs/adirondack-hiking/whiteface-mountain",
+   "https://www.cnyhiking.com/WhitefaceMountain.htm"
+  ],
+  "problems": "Pure ADK 3,620 ft (Wilmington Trail, ~11.4 mi RT); cnyhiking: one-way hike from NY 431 'elevation gain of nearly 3700 feet'. Within 3%.",
+  "why": "verifier flagged doubt"
+ },
+ {
+  "route_id": "ny_wright_peak_wright_peak_spur_trail_from_algonquin_trail",
+  "area_id": "ny_wright_peak",
+  "field": "gain_ft",
+  "verdict": "confirmed_agree2",
+  "value": 2400,
+  "confirmed_urls": [
+   "https://pureadirondacks.com/blogs/adirondack-hiking/wright-peak",
+   "https://www.hikeadk.com/hikes/wright-peak"
+  ],
+  "problems": "Pure ADK 2,400 ft (7.0 mi RT); Hike ADK 2,500 ft (8.2 mi RT). Within 5%.",
+  "why": "verifier flagged doubt"
+ },
+ {
+  "route_id": "ca_mount_elwell_mt_elwell_trail",
+  "area_id": "ca_mount_elwell",
+  "field": "gain_ft",
+  "verdict": "confirmed_1src",
+  "value": 2080,
+  "confirmed_urls": [
+   "https://sierrapeaks.org/SPS%20peaks%20with%20mileage/SPS_list_with_mileage_TH_gain.xls"
+  ],
+  "problems": "SPS row: Gain 2080, 3.4 mi, Lake Basin campground (one way). Wildernessportal's ~1,900 ft is explicitly a ~6-mi ROUND-TRIP figure that 'depends on which trailhead and loop' - wrong scope, not a second source.",
+  "why": "verifier flagged doubt"
+ },
+ {
+  "route_id": "ca_mount_mallory_east_slopes_from_meysan_lake",
+  "area_id": "ca_mount_mallory",
+  "field": "gain_ft",
+  "verdict": "confirmed_agree2",
+  "value": 5985,
+  "confirmed_urls": [
+   "https://sierrapeaks.org/SPS%20peaks%20with%20mileage/SPS_list_with_mileage_TH_gain.xls",
+   "https://www.kathywing.com/CaliforniaHikesandScrambles/Sierra-Nevada-Hiking/Mount-Mallory-13845-9608/i-47VQ9kK"
+  ],
+  "problems": "SPS xls: Gain 5985, TH Meysan Lake Trail. KathyWing: 'About 14 miles round-trip with 6500' elevation gain' (+8.6%; RT qualifies the miles). Within 10%.",
+  "why": "verifier flagged doubt"
+ },
+ {
+  "route_id": "ak_moose_s_tooth_west_ridge",
+  "area_id": "ak_moose_s_tooth",
+  "field": "gain_ft",
+  "verdict": "confirmed_1src",
+  "value": 4800,
+  "confirmed_urls": [
+   "https://skyrun.skimo.co/mooses-tooth-west-ridge"
+  ],
+  "problems": "Page: 'Elevation gain 4800 ft, Highest point 9749 ft, Lowest point 5000 ft' - ski-mountaineering line from the glacier (5000 ft), not a road trailhead.",
+  "why": "verifier flagged doubt"
+ },
+ {
+  "route_id": "wa_mount_rainier_ptarmigan_ridge",
+  "area_id": "wa_mount_rainier",
+  "field": "gain_ft",
+  "verdict": "confirmed_1src",
+  "value": 11400,
+  "confirmed_urls": [
+   "https://stephabegg.com/trip-reports/washington/rainier-ptarmigan/"
+  ],
+  "problems": "Page: 'Elevation gain: 11,400 feet', Approach: White River (page notes many use shorter Mowich Lake approach). Figure is for the White River start.",
+  "why": "verifier flagged doubt"
+ },
+ {
+  "route_id": "ca_freel_peak_south_ridge_via_tahoe_rim_trail",
+  "area_id": "ca_freel_peak",
+  "field": "gain_ft",
+  "verdict": "confirmed_1src",
+  "value": 2700,
+  "confirmed_urls": [
+   "https://www.renotrails.com/fp/fp.htm"
+  ],
+  "problems": "RenoTrails: 'ESTIMATE DISTANCE TO CLIMB (feet): 2700', Armstrong Pass + TRT. Summitborn also says 2,700 but as 'about 2,400 to 2,700 ft; this guide uses about 2,700' - a pick from other sources, not independent.",
+  "why": "verifier flagged doubt"
+ },
+ {
+  "route_id": "ca_lone_pine_peak_standard_route",
+  "area_id": "ca_lone_pine_peak",
+  "field": "gain_ft",
+  "verdict": "confirmed_1src",
+  "value": 4600,
+  "confirmed_urls": [
+   "https://summitborn.com/lone-pine-peak-northwest-slope-route-guide/"
+  ],
+  "problems": "Page: 'Elevation Gain ~4,600 ft / 1,400 m' via Meysan Lakes trail. Summitborn is an aggregator (copies 14ers etc.) - single, weak source.",
+  "why": "verifier flagged doubt"
+ },
+ {
+  "route_id": "ca_lyell_glacier",
+  "area_id": "ca_mt_lyell",
+  "field": "gain_ft",
+  "verdict": "confirmed_1src",
+  "value": 4500,
+  "confirmed_urls": [
+   "https://summitborn.com/mount-lyell-mountain-guide/"
+  ],
+  "problems": "Page: 'about 24 miles round trip from Tuolumne Meadows with about 4,500 ft of net gain'. Summitborn is an aggregator (copies 14ers etc.) - single, weak source.",
+  "why": "verifier flagged doubt"
+ },
+ {
+  "route_id": "ca_from_the_john_muir_trail",
+  "area_id": "ca_mt_muir",
+  "field": "gain_ft",
+  "verdict": "confirmed_1src",
+  "value": 5800,
+  "confirmed_urls": [
+   "https://summitborn.com/mount-muir-class-3-shoulder-route-guide/"
+  ],
+  "problems": "Page: 'Elevation Gain ~5,800 ft / 1,770 m', from Whitney Portal. Summitborn is an aggregator (copies 14ers etc.) - single, weak source.",
+  "why": "verifier flagged doubt"
+ },
+ {
+  "route_id": "ca_the_mountaineer_s_route",
+  "area_id": "ca_mt_whitney",
+  "field": "gain_ft",
+  "verdict": "confirmed_1src",
+  "value": 6200,
+  "confirmed_urls": [
+   "https://summitborn.com/mount-whitney-mountaineers-route-guide/"
+  ],
+  "problems": "Page: 'about 6,200 feet of gain in about 4.8 miles one way' - but flagged '(we estimate)' / cumulative: the site's own estimate. Summitborn is an aggregator (copies 14ers etc.) - single, weak source.",
+  "why": "verifier flagged doubt"
+ },
+ {
+  "route_id": "ca_shastina_lightning_couloir",
+  "area_id": "ca_shastina",
+  "field": "gain_ft",
+  "verdict": "confirmed_1src",
+  "value": 5400,
+  "confirmed_urls": [
+   "https://summitborn.com/shastina-mountain-guide/"
+  ],
+  "problems": "Route table: 'About 5,400 ft' for Shastina via the Lightning Bolt Couloir, net gain from Bunny Flat. Summitborn is an aggregator (copies 14ers etc.) - single, weak source.",
+  "why": "verifier flagged doubt"
+ },
+ {
+  "route_id": "wy_northwest_couloir",
+  "area_id": "wy_south_teton",
+  "field": "gain_ft",
+  "verdict": "confirmed_1src",
+  "value": 6000,
+  "confirmed_urls": [
+   "https://summitborn.com/south-teton-northwest-couloir-route-guide/"
+  ],
+  "problems": "Page: 'Elevation Gain ~5,800-6,000 ft cumulative (our estimate)'; 'About 6,000 feet of climbing'. Site's own estimate, range. Summitborn is an aggregator (copies 14ers etc.) - single, weak source.",
+  "why": "verifier flagged doubt"
+ },
+ {
+  "route_id": "wy_east_ridge_2",
+  "area_id": "wy_symmetry_spire",
+  "field": "gain_ft",
+  "verdict": "confirmed_1src",
+  "value": 3800,
+  "confirmed_urls": [
+   "https://summitborn.com/symmetry-spire-east-ridge-route-guide/"
+  ],
+  "problems": "Page: 'Elevation Gain ~3,800 ft / 1,160 m' (with Jenny Lake boat). Summitborn is an aggregator (copies 14ers etc.) - single, weak source.",
+  "why": "verifier flagged doubt"
+ },
+ {
+  "route_id": "wy_east_face",
+  "area_id": "wy_teewinot",
+  "field": "gain_ft",
+  "verdict": "confirmed_1src",
+  "value": 5600,
+  "confirmed_urls": [
+   "https://summitborn.com/teewinot-mountaineering-route-scrambling-guide/"
+  ],
+  "problems": "Page: 'Elevation Gain ~5,600 ft / 1,707 m' from Lupine Meadows (distance is 'our estimate'). Summitborn is an aggregator (copies 14ers etc.) - single, weak source.",
+  "why": "verifier flagged doubt"
+ },
+ {
+  "route_id": "wa_mount_rainier_liberty_ridge",
+  "area_id": "wa_mount_rainier",
+  "field": "gain_ft",
+  "verdict": "confirmed_agree2",
+  "value": 11500,
+  "confirmed_urls": [
+   "https://tahomawild.com/liberty-ridge-rainier-route/",
+   "https://stephabegg.com/trip-reports/washington/rainier-liberty/"
+  ],
+  "problems": "Tahomawild 'about 11,500 ft' (citing NPS brief; globalsummitguide repeats the same NPS figure = same source); Stephabegg 'Elevation gain: 11,400 feet' via White River. Mountaineers 10,000 is NOT stated as gain: segment gains +3,000/+3,400/+3,600 and 'Summit to Trailhead -10,000' (descent) - its sum would be our math.",
+  "why": "verifier flagged doubt"
+ },
+ {
+  "route_id": "or_east_side_2_newton_clark_headwall",
+  "area_id": "or_east_side_2",
+  "field": "gain_ft",
+  "verdict": "confirmed_1src",
+  "value": 5715,
+  "confirmed_urls": [
+   "https://wildsnow.com/26393/trip-report-mount-hoods-newton-clark-headwall/"
+  ],
+  "problems": "Route Beta: 'Time Round Trip: 5-8 Hours, Total Ascent: 5715'.",
+  "why": "verifier flagged doubt"
+ },
+ {
+  "route_id": "co_ellingwood_ridge",
+  "area_id": "co_la_plata",
+  "field": "gain_ft",
+  "verdict": "confirmed_1src",
+  "value": 5900,
+  "confirmed_urls": [
+   "https://www.14ers.com/peaks/10005/la-plata-peak?t=routes"
+  ],
+  "problems": "14ers stat box: 'La Plata Peak - Ellingwood Ridge ... Total Elevation Gain: 5,900'' (separate 'Round-Trip' distance field; gain not labelled RT).",
+  "why": "verifier flagged doubt"
+ },
+ {
+  "route_id": "co_grays_peak_north_slopes",
+  "area_id": "co_grays_peak",
+  "field": "gain_ft",
+  "verdict": "confirmed_1src",
+  "value": 3000,
+  "confirmed_urls": [
+   "https://www.14ers.com/peaks/10009/grays-peak?t=routes"
+  ],
+  "problems": "14ers stat box: 'Grays Peak - North Slopes ... Total Elevation Gain: 3,000'' (separate 'Round-Trip' distance field; gain not labelled RT).",
+  "why": "verifier flagged doubt"
+ },
+ {
+  "route_id": "co_hagerman_peak_southface",
+  "area_id": "co_hagerman_peak",
+  "field": "gain_ft",
+  "verdict": "confirmed_1src",
+  "value": 4358,
+  "confirmed_urls": [
+   "https://www.14ers.com/peaks/10086/13er-hagerman-peak?t=routes"
+  ],
+  "problems": "14ers stat box: 'Hagerman Peak - Southface ... Total Elevation Gain: 4,358'' (separate 'Round-Trip' distance field; gain not labelled RT).",
+  "why": "verifier flagged doubt"
+ },
+ {
+  "route_id": "co_gladstone_peak_north_ridge",
+  "area_id": "co_gladstone_peak",
+  "field": "gain_ft",
+  "verdict": "confirmed_1src",
+  "value": 4100,
+  "confirmed_urls": [
+   "https://www.14ers.com/peaks/10278/13er-gladstone-peak?t=routes"
+  ],
+  "problems": "14ers stat box: 'Gladstone Peak - North Ridge ... Total Elevation Gain: 4,100'' (separate 'Round-Trip' distance field; gain not labelled RT).",
+  "why": "verifier flagged doubt"
+ },
+ {
+  "route_id": "co_fletcher_mountain_southeast_ridge",
+  "area_id": "co_fletcher_mountain",
+  "field": "gain_ft",
+  "verdict": "confirmed_1src",
+  "value": 2250,
+  "confirmed_urls": [
+   "https://www.14ers.com/peaks/10837/13er-fletcher-mountain?t=routes"
+  ],
+  "problems": "14ers stat box: 'Fletcher Mountain - Southeast Ridge ... Total Elevation Gain: 2,250'' (separate 'Round-Trip' distance field; gain not labelled RT).",
+  "why": "verifier flagged doubt"
+ },
+ {
+  "route_id": "co_mount_adams_west_ridge_via_willow_creek",
+  "area_id": "co_mount_adams",
+  "field": "gain_ft",
+  "verdict": "confirmed_1src",
+  "value": 5300,
+  "confirmed_urls": [
+   "https://www.14ers.com/route.php?route=201007315116754"
+  ],
+  "problems": "14ers stat box: 'Trailhead Willow Creek 8,850 / Elevation Gain 5,300 ft' (separate 'Round-Trip' distance field; gain not labelled RT).",
+  "why": "verifier flagged doubt"
+ },
+ {
+  "route_id": "co_mount_oklahoma_southeast_slopes",
+  "area_id": "co_mount_oklahoma",
+  "field": "gain_ft",
+  "verdict": "confirmed_1src",
+  "value": 3400,
+  "confirmed_urls": [
+   "https://www.14ers.com/route.php?route=201108091417383"
+  ],
+  "problems": "14ers stat box: 'Trailhead N. Halfmoon Creek 10,500 / Elevation Gain 3,400 ft' (separate 'Round-Trip' distance field; gain not labelled RT).",
+  "why": "verifier flagged doubt"
+ },
+ {
+  "route_id": "co_mount_silverheels_north_spur_from_hoosier_pass",
+  "area_id": "co_mount_silverheels",
+  "field": "gain_ft",
+  "verdict": "confirmed_1src",
+  "value": 3500,
+  "confirmed_urls": [
+   "https://www.14ers.com/route.php?route=201201050806033"
+  ],
+  "problems": "14ers stat box: 'Trailhead Hoosier Pass 11,550 / Elevation Gain 3,500 ft' (separate 'Round-Trip' distance field; gain not labelled RT).",
+  "why": "verifier flagged doubt"
+ },
+ {
+  "route_id": "co_horseshoe_mountain_east_slopes",
+  "area_id": "co_horseshoe_mountain",
+  "field": "gain_ft",
+  "verdict": "confirmed_1src",
+  "value": 2300,
+  "confirmed_urls": [
+   "https://www.14ers.com/route.php?route=201208120738083"
+  ],
+  "problems": "14ers stat box: 'Trailhead Fourmile Creek 11,600 / Elevation Gain 2,300 ft' (separate 'Round-Trip' distance field; gain not labelled RT).",
+  "why": "verifier flagged doubt"
+ },
+ {
+  "route_id": "co_dyer_mountain_southeast_slopes",
+  "area_id": "co_dyer_mountain",
+  "field": "gain_ft",
+  "verdict": "confirmed_1src",
+  "value": 1775,
+  "confirmed_urls": [
+   "https://www.14ers.com/route.php?route=201208150940453"
+  ],
+  "problems": "14ers stat box: 'Trailhead Iowa Gulch 12,100 / Elevation Gain 1,775 ft' (separate 'Round-Trip' distance field; gain not labelled RT).",
+  "why": "verifier flagged doubt"
+ },
+ {
+  "route_id": "co_mount_edwards_southwest_ridge",
+  "area_id": "co_mount_edwards",
+  "field": "gain_ft",
+  "verdict": "confirmed_1src",
+  "value": 2950,
+  "confirmed_urls": [
+   "https://www.14ers.com/route.php?route=201401170729013"
+  ],
+  "problems": "14ers stat box: 'Trailhead Argentine Pass 11,050 / Elevation Gain 2,950 ft' (separate 'Round-Trip' distance field; gain not labelled RT).",
+  "why": "verifier flagged doubt"
+ },
+ {
+  "route_id": "co_mount_hope_east_ridge",
+  "area_id": "co_mount_hope",
+  "field": "gain_ft",
+  "verdict": "confirmed_1src",
+  "value": 4200,
+  "confirmed_urls": [
+   "https://www.14ers.com/route.php?route=201408141940373"
+  ],
+  "problems": "14ers stat box: 'Trailhead Sheep Gulch 9,850 / Elevation Gain 4,200 ft' (separate 'Round-Trip' distance field; gain not labelled RT).",
+  "why": "verifier flagged doubt"
+ },
+ {
+  "route_id": "co_mount_ouray_west_ridge",
+  "area_id": "co_mount_ouray",
+  "field": "gain_ft",
+  "verdict": "confirmed_1src",
+  "value": 3275,
+  "confirmed_urls": [
+   "https://www.14ers.com/route.php?route=201507060952333"
+  ],
+  "problems": "14ers: 'Marshall Pass 10,850 / Elevation Gain 3,275 ft'. climb13ers figure is written 'RT From Marshall Pass: 6.4MI / 3,200'' - labelled round trip, so not counted as a 2nd one-way source.",
+  "why": "verifier flagged doubt"
+ },
+ {
+  "route_id": "co_cronin_peak_north_ridge",
+  "area_id": "co_cronin_peak",
+  "field": "gain_ft",
+  "verdict": "confirmed_1src",
+  "value": 4500,
+  "confirmed_urls": [
+   "https://www.14ers.com/route.php?route=201507110630393"
+  ],
+  "problems": "14ers stat box: 'Trailhead Baldwin Gulch 9,400 / Elevation Gain 4,500 ft' (separate 'Round-Trip' distance field; gain not labelled RT).",
+  "why": "verifier flagged doubt"
+ },
+ {
+  "route_id": "co_california_peak_south_ridge",
+  "area_id": "co_california_peak",
+  "field": "gain_ft",
+  "verdict": "confirmed_1src",
+  "value": 4500,
+  "confirmed_urls": [
+   "https://www.14ers.com/route.php?route=201707020742383"
+  ],
+  "problems": "14ers stat box: 'Trailhead Huerfano/Lily Lake 10,700 / Elevation Gain 4,500 ft' (separate 'Round-Trip' distance field; gain not labelled RT).",
+  "why": "verifier flagged doubt"
+ },
+ {
+  "route_id": "co_stewart_peak_east_ridge",
+  "area_id": "co_stewart_peak",
+  "field": "gain_ft",
+  "verdict": "confirmed_1src",
+  "value": 3000,
+  "confirmed_urls": [
+   "https://www.14ers.com/route.php?route=201708080742073"
+  ],
+  "problems": "14ers stat box: 'Trailhead Nutras Creek 11,000 / Elevation Gain 3,000 ft' (separate 'Round-Trip' distance field; gain not labelled RT).",
+  "why": "verifier flagged doubt"
+ },
+ {
+  "route_id": "co_arapahoe_peaks_skywalker_couloir",
+  "area_id": "co_arapahoe_peaks",
+  "field": "gain_ft",
+  "verdict": "confirmed_1src",
+  "value": 3252,
+  "confirmed_urls": [
+   "https://www.14ers.com/route.php?route=2018070514250948171"
+  ],
+  "problems": "14ers stat box: 'South Arapaho Skywalker Couloir, Trailhead Fourth of July 10,145 / Elevation Gain 3,252 ft' (separate 'Round-Trip' distance field; gain not labelled RT).",
+  "why": "verifier flagged doubt"
+ },
+ {
+  "route_id": "co_west_buttress",
+  "area_id": "co_snowdon_peak_2",
+  "field": "gain_ft",
+  "verdict": "confirmed_1src",
+  "value": 2400,
+  "confirmed_urls": [
+   "https://www.14ers.com/route.php?route=2023072619305214851"
+  ],
+  "problems": "14ers stat box: 'Snowdon Peak West Buttress, Trailhead Andrews Lake 10,750 / Elevation Gain 2,400 ft' (separate 'Round-Trip' distance field; gain not labelled RT).",
+  "why": "verifier flagged doubt"
+ },
+ {
+  "route_id": "co_mount_buckskin_northeast_slope",
+  "area_id": "co_mount_buckskin",
+  "field": "gain_ft",
+  "verdict": "confirmed_1src",
+  "value": 1950,
+  "confirmed_urls": [
+   "https://www.14ers.com/route.php?route=buck1"
+  ],
+  "problems": "14ers 1,950 confirmed. climb13ers says \"RT From Kite Lake: 3.2mi / 1,850'\" (a round-trip figure, so not counted; it would be within 10%)",
+  "why": "verifier flagged doubt"
+ },
+ {
+  "route_id": "co_red_gully",
+  "area_id": "co_the_crestones",
+  "field": "gain_ft",
+  "verdict": "confirmed_1src",
+  "value": 6200,
+  "confirmed_urls": [
+   "https://www.14ers.com/route.php?route=cpea2"
+  ],
+  "problems": "14ers cpea2 (Crestone Peak South Face = Red Gully): 6,200 from 4WD TH; single source. Same URL as co_crestone_peak_south_face, so the two rows may be duplicates",
+  "why": "verifier flagged doubt"
+ },
+ {
+  "route_id": "co_handies_peak_standard_route_southwest_slopes",
+  "area_id": "co_handies_peak_standard_route",
+  "field": "gain_ft",
+  "verdict": "confirmed_agree2",
+  "value": 2500,
+  "confirmed_urls": [
+   "https://www.14ers.com/route.php?route=hand1",
+   "https://www.runbikehike.us/hiking/american-basin-handies-peak/"
+  ],
+  "problems": "14ers says 2,500 from the American Basin TH; RunBikeHike says 2,700, which is 8% apart. RunBikeHike looks auto-generated, so this is weak",
+  "why": "verifier flagged doubt"
+ },
+ {
+  "route_id": "ny_mount_marshall_herbert_brook_herd_path",
+  "area_id": "ny_mount_marshall",
+  "field": "gain_ft",
+  "verdict": "confirmed_1src",
+  "value": 2900,
+  "confirmed_urls": [
+   "https://www.hikeadk.com/hikes/mount-marshall"
+  ],
+  "problems": "Upper Works via Calamity Brook and Herbert Brook; gain label sits next to round-trip distance",
+  "why": "verifier flagged doubt"
+ },
+ {
+  "route_id": "ny_nye_mountain_via_indian_pass_brook",
+  "area_id": "ny_nye_mountain",
+  "field": "gain_ft",
+  "verdict": "confirmed_1src",
+  "value": 2200,
+  "confirmed_urls": [
+   "https://www.hikeadk.com/hikes/nye-mountain"
+  ],
+  "problems": "CAUTION: Nye and Street pages show identical 8.4 mi / 2,200 ft, linked to the shared Street & Nye guide; the figure may be for the combined outing",
+  "why": "verifier flagged doubt"
+ },
+ {
+  "route_id": "wa_hibox_mountain_southeast_ridge",
+  "area_id": "wa_hibox_mountain",
+  "field": "gain_ft",
+  "verdict": "confirmed_1src",
+  "value": 3900,
+  "confirmed_urls": [
+   "https://www.mountaineers.org/activities/activities/alpine-scramble-hibox-mountain-84"
+  ],
+  "problems": "trailcatjim says '3800 feet gained & lost' (round-trip wording) so it does not count",
+  "why": "verifier flagged doubt"
+ },
+ {
+  "route_id": "wa_big_snow_mountain_east_ridge_hardscrabble_route",
+  "area_id": "wa_big_snow_mountain",
+  "field": "gain_ft",
+  "verdict": "confirmed_1src",
+  "value": 5300,
+  "confirmed_urls": [
+   "https://www.mountaineers.org/activities/routes-places/big-snow-mountain"
+  ],
+  "problems": "via Old Middle Fork Road and Hardscrabble Lakes; gain given beside '16 miles round trip'",
+  "why": "verifier flagged doubt"
+ },
+ {
+  "route_id": "wa_martin_peak_west_ridge",
+  "area_id": "wa_martin_peak",
+  "field": "gain_ft",
+  "verdict": "confirmed_1src",
+  "value": 5300,
+  "confirmed_urls": [
+   "https://www.mountaineers.org/activities/routes-places/bonanza-martin-peaks"
+  ],
+  "problems": "Martin Peak/West Ridge: '14 miles round trip, 5,300 feet of elevation gain'",
+  "why": "verifier flagged doubt"
+ },
+ {
+  "route_id": "wa_bonanza_peak_mary_green_glacier",
+  "area_id": "wa_bonanza_peak",
+  "field": "gain_ft",
+  "verdict": "confirmed_1src",
+  "value": 6300,
+  "confirmed_urls": [
+   "https://www.mountaineers.org/activities/routes-places/bonanza-peak-mary-green-glacier"
+  ],
+  "problems": "URL redirects to the Bonanza & Martin Peaks page (Mary Green Glacier 6,300); trailcatjim says '6300 feet gained & lost' = round-trip wording, so it does not count",
+  "why": "verifier flagged doubt"
+ },
+ {
+  "route_id": "wa_forbidden_peak_west_ridge",
+  "area_id": "wa_forbidden_peak",
+  "field": "gain_ft",
+  "verdict": "confirmed_1src",
+  "value": 5600,
+  "confirmed_urls": [
+   "https://www.mountaineers.org/activities/routes-places/boston-basin-area-review/forbidden-peak-west-ridge"
+  ],
+  "problems": "trailcatjim '5700 feet gained & lost' = round-trip wording, so it does not count",
+  "why": "verifier flagged doubt"
+ },
+ {
+  "route_id": "wa_cathedral_rock_standard",
+  "area_id": "wa_cathedral_rock",
+  "field": "gain_ft",
+  "verdict": "confirmed_1src",
+  "value": 3400,
+  "confirmed_urls": [
+   "https://www.mountaineers.org/activities/routes-places/cathedral-rock-southwest-face"
+  ],
+  "problems": "page is 'Cathedral Rock/Southwest Face' from TH 1345; whether it is our 'standard' route is not proven",
+  "why": "verifier flagged doubt"
+ },
+ {
+  "route_id": "wa_granite_mountain_standard_scramble_route",
+  "area_id": "wa_granite_mountain",
+  "field": "gain_ft",
+  "verdict": "confirmed_1src",
+  "value": 3800,
+  "confirmed_urls": [
+   "https://www.mountaineers.org/activities/routes-places/granite-mountain-trail",
+   "https://www.wta.org/go-hiking/hikes/granite-mountain"
+  ],
+  "problems": "WTA and Mountaineers give the same figure = one source; WTA gain beside '8.6 miles, roundtrip'",
+  "why": "verifier flagged doubt"
+ },
+ {
+  "route_id": "wa_guye_peak_r1",
+  "area_id": "wa_guye_peak",
+  "field": "gain_ft",
+  "verdict": "confirmed_1src",
+  "value": 1700,
+  "confirmed_urls": [
+   "https://www.mountaineers.org/activities/routes-places/guye-peak-west-face"
+  ],
+  "problems": "page is Guye Peak/West Face; whether route_id 'r1' is that line is not proven; app 2000",
+  "why": "verifier flagged doubt"
+ },
+ {
+  "route_id": "or_matterhorn_wallowas_east_ridge_from_ice_lake",
+  "area_id": "or_matterhorn_wallowas",
+  "field": "gain_ft",
+  "verdict": "confirmed_agree2",
+  "value": 5300,
+  "confirmed_urls": [
+   "https://www.mountaineers.org/activities/routes-places/ice-lake-matterhorn",
+   "https://mazamas.org/activity/594/"
+  ],
+  "problems": "Mountaineers 5,300 (18 mi round trip); Mazamas 5,200 (19.8 mi, Wallowa Lake TH)",
+  "why": "verifier flagged doubt"
+ },
+ {
+  "route_id": "wa_lemah_mountain_east_route",
+  "area_id": "wa_lemah_mountain",
+  "field": "gain_ft",
+  "verdict": "confirmed_1src",
+  "value": 5500,
+  "confirmed_urls": [
+   "https://www.mountaineers.org/activities/routes-places/lemah-mountain-southeast-approach"
+  ],
+  "problems": "page is 'Southeast Approach' and our route is 'East Route', likely the same line but not proven; app 4680",
+  "why": "verifier flagged doubt"
+ },
+ {
+  "route_id": "wa_liberty_bell_beckey_route",
+  "area_id": "wa_liberty_bell",
+  "field": "gain_ft",
+  "verdict": "confirmed_1src",
+  "value": 2500,
+  "confirmed_urls": [
+   "https://www.mountaineers.org/activities/routes-places/liberty-bell-blue-lake-trail-area-review/liberty-bell-southwest-face"
+  ],
+  "problems": "Mountaineers SW Face (page: \"also called the Beckey Route\") 2,500 confirmed; trailcatjim page says \"gained & lost\" (round-trip wording) -> not one-way gain, not counted (2,400)",
+  "why": "verifier flagged doubt"
+ },
+ {
+  "route_id": "wa_merchant_peak_south_route",
+  "area_id": "wa_merchant_peak",
+  "field": "gain_ft",
+  "verdict": "confirmed_1src",
+  "value": 3900,
+  "confirmed_urls": [
+   "https://www.mountaineers.org/activities/routes-places/merchant-peak"
+  ],
+  "problems": "trailcatjim page says \"gained & lost\" (round-trip wording) -> not one-way gain, not counted (4,200)",
+  "why": "verifier flagged doubt"
+ },
+ {
+  "route_id": "wa_mount_baker_coleman_deming",
+  "area_id": "wa_mount_baker",
+  "field": "gain_ft",
+  "verdict": "confirmed_1src",
+  "value": 8100,
+  "confirmed_urls": [
+   "https://www.mountaineers.org/activities/routes-places/mount-baker-coleman-glacier"
+  ],
+  "problems": "page headline 8,100, but its own trip profile reads TH-camp 2,300 and camp-summit 4,800; headline may include a variant (Colfax) - review",
+  "why": "verifier flagged doubt"
+ },
+ {
+  "route_id": "wa_mount_washington_olympic_winter_direct",
+  "area_id": "wa_mount_washington_olympic",
+  "field": "gain_ft",
+  "verdict": "confirmed_1src",
+  "value": 3500,
+  "confirmed_urls": [
+   "https://www.mountaineers.org/activities/routes-places/mount-ellinor-mount-washington"
+  ],
+  "problems": "shared Ellinor/Washington page; Winter Direct line reads \"6.0 miles round trip, 3.500 feet of elevation gain\"",
+  "why": "verifier flagged doubt"
+ },
+ {
+  "route_id": "wa_mount_hinman_west_ridge",
+  "area_id": "wa_mount_hinman",
+  "field": "gain_ft",
+  "verdict": "confirmed_1src",
+  "value": 5800,
+  "confirmed_urls": [
+   "https://www.mountaineers.org/activities/routes-places/mount-hinman-west-route"
+  ],
+  "problems": "page is Mount Hinman/West Route; trailcatjim page says \"gained & lost\" (round-trip wording) -> not one-way gain, not counted (5,700)",
+  "why": "verifier flagged doubt"
+ },
+ {
+  "route_id": "wa_mount_hinman_west_route",
+  "area_id": "wa_mount_hinman",
+  "field": "gain_ft",
+  "verdict": "confirmed_1src",
+  "value": 5800,
+  "confirmed_urls": [
+   "https://www.mountaineers.org/activities/routes-places/mount-hinman-west-route"
+  ],
+  "problems": "trailcatjim page says \"gained & lost\" (round-trip wording) -> not one-way gain, not counted (5,700); same page as wa_mount_hinman_west_ridge - possible duplicate route",
+  "why": "verifier flagged doubt"
+ },
+ {
+  "route_id": "wa_mount_howard_south_slope",
+  "area_id": "wa_mount_howard",
+  "field": "gain_ft",
+  "verdict": "confirmed_1src",
+  "value": 4900,
+  "confirmed_urls": [
+   "https://www.mountaineers.org/activities/routes-places/mount-howard-mount-mastiff"
+  ],
+  "problems": "page headline 5,500 is Howard+Mastiff; Howard-only text: 12 mi RT, 4,900 ft from Merritt Lake TH",
+  "why": "verifier flagged doubt"
+ },
+ {
+  "route_id": "wa_mount_olympus_blue_glacier",
+  "area_id": "wa_mount_olympus",
+  "field": "gain_ft",
+  "verdict": "confirmed_1src",
+  "value": 7400,
+  "confirmed_urls": [
+   "https://www.mountaineers.org/activities/routes-places/mount-olympus-blue-glacier"
+  ],
+  "problems": "trailcatjim page says \"gained & lost\" (round-trip wording) -> not one-way gain, not counted (8,000)",
+  "why": "verifier flagged doubt"
+ },
+ {
+  "route_id": "wa_mount_persis_west_ridge",
+  "area_id": "wa_mount_persis",
+  "field": "gain_ft",
+  "verdict": "confirmed_1src",
+  "value": 2800,
+  "confirmed_urls": [
+   "https://www.mountaineers.org/activities/routes-places/mount-persis"
+  ],
+  "problems": "trailcatjim page says \"gained & lost\" (round-trip wording) -> not one-way gain, not counted (2,800, via NW ridge)",
+  "why": "verifier flagged doubt"
+ },
+ {
+  "route_id": "wa_mount_prophet_east",
+  "area_id": "wa_mount_prophet",
+  "field": "gain_ft",
+  "verdict": "confirmed_1src",
+  "value": 7200,
+  "confirmed_urls": [
+   "https://www.mountaineers.org/activities/routes-places/mount-prophet"
+  ],
+  "problems": "trailcatjim page says \"gained & lost\" (round-trip wording) -> not one-way gain, not counted (7,200)",
+  "why": "verifier flagged doubt"
+ },
+ {
+  "route_id": "wa_point_success_south_side",
+  "area_id": "wa_point_success",
+  "field": "gain_ft",
+  "verdict": "confirmed_1src",
+  "value": 11500,
+  "confirmed_urls": [
+   "https://www.mountaineers.org/activities/routes-places/mount-rainier-success-cleaver"
+  ],
+  "problems": "page is Mount Rainier/Success Cleaver (25 mi RT)",
+  "why": "verifier flagged doubt"
+ },
+ {
+  "route_id": "wa_mount_skokomish_standard",
+  "area_id": "wa_mount_skokomish",
+  "field": "gain_ft",
+  "verdict": "confirmed_1src",
+  "value": 5000,
+  "confirmed_urls": [
+   "https://www.mountaineers.org/activities/routes-places/mount-skokomish"
+  ],
+  "problems": "trailcatjim page says \"gained & lost\" (round-trip wording) -> not one-way gain, not counted (5,100)",
+  "why": "verifier flagged doubt"
+ },
+ {
+  "route_id": "ca_matterhorn_peak_ski_dreams",
+  "area_id": "ca_matterhorn_peak",
+  "field": "gain_ft",
+  "verdict": "confirmed_1src",
+  "value": 5000,
+  "confirmed_urls": [
+   "https://www.mountainproject.com/route/122573218/ski-dreams"
+  ],
+  "problems": "'Total elevation gain about ~5000 feet' to the top (one-way; ~11 mi RT)",
+  "why": "verifier flagged doubt"
+ },
+ {
+  "route_id": "wy_southwest_couloir_3",
+  "area_id": "wy_middle_teton",
+  "field": "gain_ft",
+  "verdict": "confirmed_1src",
+  "value": 6000,
+  "confirmed_urls": [
+   "https://www.nomadswithapurpose.com/middle-teton-hike-via-southwest-couloir/"
+  ],
+  "problems": "Nomads: 6.5 mi each way, gain 6000. Summitborn ~6,100 is labelled its own estimate (not counted)",
+  "why": "verifier flagged doubt"
+ },
+ {
+  "route_id": "ca_alta_peak_alta_trail",
+  "area_id": "ca_alta_peak",
+  "field": "gain_ft",
+  "verdict": "confirmed_1src",
+  "value": 4000,
+  "confirmed_urls": [
+   "https://www.nps.gov/places/000/wolverton-picnic-area-trailhead-and-snowplay-area.htm"
+  ],
+  "problems": "NPS: 'climbs more than 4,000 feet ... to the summit of Alta Peak'. Summitborn '3,900-4,000' is its own estimate (not counted)",
+  "why": "verifier flagged doubt"
+ },
+ {
+  "route_id": "ca_d_half_dome_cables_route_cables_route",
+  "area_id": "ca_d_half_dome_cables_route",
+  "field": "gain_ft",
+  "verdict": "confirmed_agree2",
+  "value": 4800,
+  "confirmed_urls": [
+   "https://www.nps.gov/yose/planyourvisit/halfdome.htm",
+   "https://www.yosemitehikes.com/yosemite-valley/half-dome/half-dome.htm"
+  ],
+  "problems": "NPS: gaining 'a total of 4,800 feet' on the way to the top (one-way, not RT as the input fact said); yosemitehikes 'Total Elevation Gain 4,800 from Yosemite Valley'",
+  "why": "verifier flagged doubt"
+ },
+ {
+  "route_id": "wy_owen_spalding",
+  "area_id": "wy_grand_teton",
+  "field": "gain_ft",
+  "verdict": "confirmed_1src",
+  "value": 7100,
+  "confirmed_urls": [
+   "https://www.runbikehike.us/hiking/grand-teton-summit-wyoming/"
+  ],
+  "problems": "RunBikeHike 'ELEVATION GAIN 7100', but the same page's track shows ~8011 gain / 6,481 uphill - weak aggregator. Summitborn 7,200 is its own estimate (not counted)",
+  "why": "verifier flagged doubt"
+ },
+ {
+  "route_id": "ca_highland_peak_via_noble_lake",
+  "area_id": "ca_highland_peak",
+  "field": "gain_ft",
+  "verdict": "confirmed_1src",
+  "value": 2000,
+  "confirmed_urls": [
+   "https://www.snwburd.com/bob/trip_reports/highland_1.html"
+  ],
+  "problems": "Casual 'just over 2,000 feet of climbing' from Ebbetts Pass; approximate, and the page does not say it goes via Noble Lake - weak",
+  "why": "verifier flagged doubt"
+ },
+ {
+  "route_id": "wa_mount_price_northwest_route",
+  "area_id": "wa_mount_price",
+  "field": "gain_ft",
+  "verdict": "confirmed_1src",
+  "value": 4100,
+  "confirmed_urls": [
+   "https://www.mountaineers.org/activities/routes-places/mount-price"
+  ],
+  "problems": "Mountaineers confirmed (10 mi RT, 4,100 ft, Dingford Creek / saddle NW of Little Hester Lake); SummitPost 403, not counted",
+  "why": "verifier flagged doubt"
+ },
+ {
+  "route_id": "ca_a_clouds_rest_trail_clouds_rest_trail",
+  "area_id": "ca_a_clouds_rest_trail",
+  "field": "gain_ft",
+  "verdict": "confirmed_1src",
+  "value": 2300,
+  "confirmed_urls": [
+   "https://www.thetrailmaster.com/hike/clouds-rest/"
+  ],
+  "problems": "'14.5 miles round trip with 2,300-foot elevation gain'; page does not call the gain round-trip (the input fact overstated that)",
+  "why": "verifier flagged doubt"
+ },
+ {
+  "route_id": "ca_stanislaus_peak_southeast_face_from_st_marys_pass",
+  "area_id": "ca_stanislaus_peak",
+  "field": "gain_ft",
+  "verdict": "confirmed_1src",
+  "value": 2400,
+  "confirmed_urls": [
+   "https://www.wildernessportal.com/trails/stanislaus-peak"
+  ],
+  "problems": "From St Marys Pass TH, 8 mi out-and-back, 'ELEV GAIN 2,400 ft'; the page does NOT label it round trip (the input fact did). Aggregator-style site",
+  "why": "verifier flagged doubt"
+ },
+ {
+  "route_id": "wa_cadet_peak_scramble",
+  "area_id": "wa_cadet_peak",
+  "field": "gain_ft",
+  "verdict": "confirmed_1src",
+  "value": 5000,
+  "confirmed_urls": [
+   "https://www.wta.org/go-hiking/hikes/cadet-peak"
+  ],
+  "problems": "trailcatjim '4900 feet gained & lost' is a whole-outing figure (wrong_scope), not counted",
+  "why": "verifier flagged doubt"
+ },
+ {
+  "route_id": "wa_del_campo_peak_standard",
+  "area_id": "wa_del_campo_peak",
+  "field": "gain_ft",
+  "verdict": "confirmed_1src",
+  "value": 4200,
+  "confirmed_urls": [
+   "https://www.wta.org/go-hiking/hikes/del-campo-peak"
+  ],
+  "problems": "11.0 mi RT, 4,200 ft",
+  "why": "verifier flagged doubt"
+ },
+ {
+  "route_id": "wa_luna_peak_southwest_ridge",
+  "area_id": "wa_luna_peak",
+  "field": "gain_ft",
+  "verdict": "confirmed_1src",
+  "value": 8009,
+  "confirmed_urls": [
+   "https://www.wta.org/go-hiking/hikes/luna-peak"
+  ],
+  "problems": "WTA 8,009 (36.5 mi RT); app has 8700",
+  "why": "verifier flagged doubt"
+ },
+ {
+  "route_id": "wa_mount_ellinor_standard",
+  "area_id": "wa_mount_ellinor",
+  "field": "gain_ft",
+  "verdict": "confirmed_1src",
+  "value": 2444,
+  "confirmed_urls": [
+   "https://www.wta.org/go-hiking/hikes/mount-ellinor"
+  ],
+  "problems": "2,444 is from the UPPER trailhead, in the prose; the WTA headline stat is 3,300 (6.2 mi RT, lower TH) - pick per trailhead",
+  "why": "verifier flagged doubt"
+ }
+]

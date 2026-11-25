@@ -5,6 +5,9 @@ A control that claims to remember something must store it: float plans and plann
 Part of the guard notes — see [README.md](README.md) for the full index.
 
 - **`check:float-plan-persistence`** asserts that a filed float plan survives leaving the tab.
+  - **8a, a handler that files (2026-11-18):** #3369 left the crew Safety screen with `onFiled={safetyCrew?()=>(form)=>fileCrewFloatPlan(…)}` — an arrow RETURNING the handler, so Save there never filed, and TypeScript accepts it. 8a fails on any `onFiled`/`onFiledCrew` arrow whose body is another arrow; re-injecting that exact line fails it.
+  - **A third site, the crew card (2026-11-18):** section 8 now finds SafetyTab's tag AFTER its `view==="float"` branch (the lib sources are concatenated, so the card's tag came first), and 8b requires the card's uncontrolled `<FloatPlan>` to pass `scope` and `who` — the device copy is what survives the sheet closing. Removing `scope` there fails it.
+  - **The route page draws it again, in place (2026-11-18):** the Safety tab's float-plan card now holds the plan itself (`FloatPlanFold`, uncontrolled, same `crew:<id>` / `route:<id>` scope and filing as Crews › Float plans) instead of jumping to the bottom of Crews. Section 7 no longer forbids a route-page `<FloatPlan>`: it requires that tag to pass `scope` AND `who` (the device copy is what survives the Plan tab unmounting it) and the hub link to stay; removing `scope` there fails it.
   - **THE FORM MOVED TO CREWS (2026-09-30).** It is no longer on the route page's Safety tab: that
     tab links to **Crews › Float plans** (`lib/FloatPlans.jsx`), which lists every plan on the device
     (`listFloatPlans`, incl. old `route:<id>` scopes) and exports via Share / Email / Save as PDF.
@@ -505,6 +508,11 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     the fourth time this file records that.
 - **`check:count-matches-its-list`** asserts that **a count agrees with the list under it**, on one
   screen. Static (one source read), so it sits in `npm run build`.
+  - **SECTION 1 RETIRED (owner, 2026-11-11).** Home's *"Nothing needs you right now"* card was
+    removed: it flashed on every load before its reads landed, and the Alerts dropdown already
+    carries the empty state. With no empty-state gate left, section 1 (and its *UNFINISHED
+    BUSINESS* fail-closed checks) is gone; sections 2 and 3 (the bell and *View all N alerts*)
+    still run, and the assertion floor dropped from 11 to 5. The history below is kept as record.
   - **`check:ui` ALREADY ASSERTS THIS ACROSS TWO SCREENS** — #1203, where the Profile said *"3
     active"* and the Logbook *"4 climbs to go"* about one list. **Home does it to ITSELF, twice**,
     and no browser walk can see either: both surfaces are correct in isolation, and only their
@@ -645,6 +653,16 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     new account has — so `!profileReadFailed` is `check:profile-edit-gate`'s rule one surface over:
     opening a blank onboarding sheet over a profile the app could not load is how that profile gets
     overwritten, since onboarding writes `location`, `disciplines` and all three grades.
+  - **SINCE 2026-11-14 SETUP IS REQUIRED FOR A SIGNED-IN ACCOUNT, which changed both halves above.**
+    The predicate also asks for a **username** (0432 locks it once chosen), and that clause ignores
+    the session's `onboarded` flag, because finishing setup no longer proves one was chosen; the
+    guard executes *disciplines but no username* and *just finished, no username* and expects both
+    to NEED it. The effect skips the once-per-device preference for a signed-in account, so its
+    setup reopens on every load until done (the owner asked for it to be required, which is exactly
+    the "nag" this note used to warn about); a guest is still offered it once. The username clause
+    is written `profileLoaded&&signedIn&&!profileReadFailed` on purpose: the injection suite
+    anchors on the disciplines clause's `signedIn&&profileLoaded&&!profileReadFailed` and needs it
+    to occur once.
   - **THE PREDICATE IS LIFTED FROM SOURCE AND EXECUTED, never retyped** — a hand-typed copy would
     agree with itself whatever the app did, which is the entire question — with `ANCHOR LOST` if it
     moves and a **refusal if it is declared twice**, since then the guard cannot say which one is

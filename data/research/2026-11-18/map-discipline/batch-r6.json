@@ -1,0 +1,157 @@
+{
+ "ca_lippincott_mountain_standard_route": {
+  "area": "ca_lippincott_mountain",
+  "set": {
+   "approach_logistics": {
+    "trailhead": "Sawtooth Pass Trailhead, Mineral King",
+    "trailheadLat": 36.453305,
+    "trailheadLng": -118.596761
+   }
+  },
+  "ledger": [
+   {
+    "field": "approach_logistics",
+    "value": {
+     "trailhead": "Sawtooth Pass Trailhead, Mineral King",
+     "trailheadLat": 36.453305,
+     "trailheadLng": -118.596761
+    },
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://mapservices.nps.gov/arcgis/rest/services/NationalDatasets/NPS_Public_POIs_Geographic/FeatureServer/0/query?where=POINAME%3D%27Sawtooth%27&outFields=POINAME&f=json",
+      "fact": "Sawtooth trailhead (SEKI) 36.45331,-118.59676",
+      "retrieved_at": "2026-11-18",
+      "official": true
+     }
+    ]
+   }
+  ],
+  "review": {
+   "identifiedBy": {
+    "kind": "page",
+    "url": "https://www.climber.org/reports/1998/355.html",
+    "fact": "three opened reports (1998, 2008 attempt, 2026) start at Mineral King / Sawtooth Pass trailhead; no opened page uses another start"
+   },
+   "chunk": "out6/r02.json"
+  }
+ },
+ "ca_mount_corcoran_standard_route": {
+  "area": "ca_mount_corcoran",
+  "set": {
+   "approach_logistics": {
+    "trailhead": "Meysan Lake Trailhead",
+    "trailheadLat": 36.589789,
+    "trailheadLng": -118.230163
+   }
+  },
+  "ledger": [
+   {
+    "field": "approach_logistics",
+    "value": {
+     "trailhead": "Meysan Lake Trailhead",
+     "trailheadLat": 36.589789,
+     "trailheadLng": -118.230163
+    },
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_InfraRecreationSites_01/MapServer/0/query?where=site_cn%3D%275343.003721%27&outFields=site_name&f=json",
+      "fact": "MEYSAN LAKE TH 36.58979,-118.23016",
+      "retrieved_at": "2026-11-18",
+      "official": true
+     }
+    ]
+   }
+  ],
+  "review": {
+   "identifiedBy": {
+    "kind": "page",
+    "url": "https://www.climber.org/reports/2009/1710.html",
+    "fact": "four of six opened reports climb from the Meysan Lakes side (two name the trailhead, two name only the lake); the other two used Cottonwood and Tuttle Creek"
+   },
+   "chunk": "out6/r02.json"
+  }
+ },
+ "wa_chianti_spire_north_face": {
+  "area": "wa_chianti_spire",
+  "set": {
+   "approach_logistics": {
+    "trailhead": "SR 20 pullout near milepost 166 (Burgundy Col trail)",
+    "trailheadLat": 48.551406,
+    "trailheadLng": -120.630895
+   }
+  },
+  "ledger": [
+   {
+    "field": "approach_logistics",
+    "value": {
+     "trailhead": "SR 20 pullout near milepost 166 (Burgundy Col trail)",
+     "trailheadLat": 48.551406,
+     "trailheadLng": -120.630895
+    },
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_InfraRecreationSites_01/MapServer/0/query?where=site_cn%3D%276738221010602%27&outFields=site_name&f=json",
+      "fact": "Burgundy Col recreation site 48.55141,-120.63089; ground 4,305 ft (USGS), stored road text says about 4,250 ft",
+      "retrieved_at": "2026-11-18",
+      "official": true
+     }
+    ]
+   }
+  ],
+  "review": {
+   "identifiedBy": {
+    "kind": "stored",
+    "fact": "route road text names the SR 20 pullout near milepost 166; WTA Silver Star page prints 48.5500,-120.6306 (about 160 m away) for the same pullout"
+   },
+   "chunk": "out6/r05.json"
+  }
+ },
+ "co_culebra_peak_northwest_ridge": {
+  "area": "co_culebra_peak",
+  "set": {
+   "approach_logistics": {
+    "trailhead": "Cielo Vista Ranch gate (Culebra main trailhead)",
+    "trailheadLat": 37.14981,
+    "trailheadLng": -105.29256
+   }
+  },
+  "ledger": [
+   {
+    "field": "approach_logistics",
+    "value": {
+     "trailhead": "Cielo Vista Ranch gate (Culebra main trailhead)",
+     "trailheadLat": 37.14981,
+     "trailheadLng": -105.29256
+    },
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://www.climb13ers.com/colorado-13ers/trailhead/culebra-peak-cielo-vista-ranch",
+      "fact": "ranch gate N37 08 59.3 W105 17 33.2 = 37.14981,-105.29256",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://www.14ers.com/php14ers/trailhead.php?thparm=sc07",
+      "fact": "Culebra (Main) Trailhead 37.15,-105.2925 (rounded; agrees)",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   }
+  ],
+  "review": {
+   "identifiedBy": {
+    "kind": "page",
+    "url": "https://www.14ers.com/php14ers/trailhead.php?thparm=sc07",
+    "fact": "every party checks in at the ranch gate; the route page starts (ranch HQ, Four Way, upper) are one trip by vehicle choice"
+   },
+   "chunk": "out6/r04.json"
+  }
+ }
+}

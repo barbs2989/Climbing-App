@@ -32,8 +32,7 @@ try {
   const dlg = page.locator('[role="dialog"][aria-label="My listed areas"]');
   ok(await dlg.waitFor({ timeout: 15000 }).then(() => true, () => false), "the My listed areas screen is open");
   await page.screenshot({ path: path.join(OUT, "1-empty.png") });
-  const sel = dlg.locator('select[aria-label="State to search"]');
-  if (!(await sel.inputValue())) await sel.selectOption({ label: "Washington" });
+  // The box searches every state since 2026-11-14 (no state dropdown).
   await dlg.locator('input[aria-label="Search for an area to add"]').fill("index");
   await page.waitForTimeout(4000);
   await page.screenshot({ path: path.join(OUT, "2-search.png") });

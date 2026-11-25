@@ -152,13 +152,15 @@ else fail("a Campsite waypoint does not reach CAMPING & BIVY — the two stores 
     bivy: [SITE], waypoints: [{ name: "Boston Basin", type: "Campsite", lat: 48.4, lng: -121.0 }],
   }), "planner"));
   const start = t.indexOf(HEAD);
-  // Skip the panel's OWN intro sentence ("...also a pin under ROUTE TRACK."): since a same-named pin
-  // now lends its distance and on-track chip to the researched site, that sentence renders here too,
-  // and bounding on it sliced the panel off before its first site.
-  const intro = t.indexOf("pin under ROUTE TRACK", start);
-  const after = t.indexOf("ROUTE TRACK", intro >= 0 ? intro + "pin under ROUTE TRACK".length : start);
+  // The panel ends at the next section heading. Since 2026-11-18 the alpine Plan tab puts ROUTE TRACK
+  // (the map) ABOVE the climb, and CAMPING & BIVY is followed by CROWDS & SOLITUDE (when mounted) and then
+  // the recent tracks list, so bound on whichever of those comes first after the panel's heading. ROUTE TRACK
+  // and WAYPOINTS are NOT ends any more: a site note naming them would cut the slice short.
+  const NEXT = ["CROWDS", "Recent tracks", "Recent logged climbs"];
+  const afters = NEXT.map((h) => t.indexOf(h, start + HEAD.length)).filter((i) => i > start);
+  const after = afters.length ? Math.min(...afters) : -1;
   if (start < 0) fail("dedupe case: the panel did not render at all");
-  else if (after < 0) fail("ANCHOR LOST: 'ROUTE TRACK' no longer follows the panel — this slice cannot be bounded");
+  else if (after < 0) fail("ANCHOR LOST: no section heading (" + NEXT.join(", ") + ") follows the panel — this slice cannot be bounded");
   else {
     const panel = t.slice(start, after);
     const n = (panel.match(/Boston Basin/g) || []).length;
@@ -207,9 +209,11 @@ else fail("a Campsite waypoint does not reach CAMPING & BIVY — the two stores 
   const noCoord = text(render(route("alpine", { bivy: [{ name: "Basin camp" }] }), "planner"));
   if (!/pin under ROUTE TRACK/.test(noCoord)) ok("no track-pin claim when no site is on the track");
   else fail("claims sites are pinned on the track when none are");
+  // The panel's intro paragraph (which carried the track-pin sentence) was removed at the owner's
+  // request on 2026-11-14; an on-track site now says so only through its own "Marked on the track" chip.
   const onTrack = text(render(route("alpine", { waypoints: [WP] }), "planner"));
-  if (/pin under ROUTE TRACK/.test(onTrack)) ok("the track-pin claim appears when a site IS on the track");
-  else fail("a waypoint-derived site should say it is pinned on the track");
+  if (!/Where you can sleep on this route|pin under ROUTE TRACK/.test(onTrack)) ok("the panel carries no intro paragraph (removed 2026-11-14)");
+  else fail("the camping intro paragraph is back — the owner asked for it removed (2026-11-14)");
   // A PIN WITH NO COORDINATE IS NOT ON THE MAP (2026-10-28, audit:camp-pins: 48 such pins wore the
   // chip). Neither the pin's own row nor a researched site it backs may claim it.
   const bare = { ...WP, lat: null, lng: null };
@@ -439,8 +443,8 @@ else fail("a Campsite waypoint does not reach CAMPING & BIVY — the two stores 
   else fail("a use-group heading is back, splitting the list out of walking order");
   if (/Where most parties sleep/.test(t.slice(a, b)) && /Other option/.test(t.slice(b, c)) && !/Where most parties sleep|Other option/.test(t.slice(c))) ok("each site carries its use as a tag, and an unsorted site claims none");
   else fail("the use tags are missing, on the wrong site, or an unsorted site claims a use");
-  if (/order you reach them walking in from the trailhead; the site with no distance or height on file comes last/.test(t)) ok("the list says it runs in walking order, and names the site it could not place");
-  else fail("the list does not say how it is ordered, or hides that a site could not be placed");
+  // The on-screen "Listed in the order you reach them" sentence went with the intro (2026-11-14);
+  // campOrderNote stays as a helper and is checked directly below.
   if (campOrderNote([{ name: "x" }, { name: "y" }]) === "" && campOrderNote([{ name: "x", elev: 1 }]) === "") ok("no order claim when nothing can be placed, or for one site");
   else fail("the order note claims a walking order it could not establish");
 
@@ -547,8 +551,8 @@ else fail("a Campsite waypoint does not reach CAMPING & BIVY — the two stores 
   else fail("the night tag did not reach the screen");
   if (/\u2248\d+(\.5)? h walk in at your planner pace/.test(t)) ok("the walk-in time reaches the camp card");
   else fail("the walk-in time did not reach the screen");
-  if (t.includes("Choosing a camp:")) ok("the panel says once what the tags and times mean");
-  else fail("no explanation of the night tag and walk-in time");
+  if (!t.includes("Choosing a camp:")) ok("no 'Choosing a camp' explainer (removed at the owner's request, 2026-11-14)");
+  else fail("the 'Choosing a camp' explainer is back — the owner asked for it removed (2026-11-14)");
 }
 
 // ── 13. OVERNIGHT PERMIT: what + where + the agency link, and only an https link.

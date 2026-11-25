@@ -27,7 +27,7 @@ import { tx } from "./tapWords.js";
 import { useEffect, useLayoutEffect, useMemo, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 import { POP_CLOSE, POP_CLOSE_MEDIA } from "./popupChrome.js";
-import { TEXT_TAP } from "./buttonStyles.js";
+import { TEXT_TAP, SOLID_FILL } from "./buttonStyles.js";
 import { loadLeaflet, applyBaseLayer, BaseLayerToggle, useFollowMe, locateLabel } from "./mapKit";
 import { useActiveFires, useFirePerimeters, useFireWeather, useHeat, useFireAlert, nwsPointPage, HEAT_MIN_ZOOM, HEAT_HOURS, fmtHoursAgo, useSmokeWindow, smokeHours, smokeTileUrl, fmtSmokeHour, SMOKE_BANDS, SMOKE_MAX_NATIVE_ZOOM, fireColor, fireLevel, fmtAcres, fmtContained, fmtDiscovered, fmtEnds, fmtStarts, zoneInEffect, fireDistMi } from "./fire";
 import LoadingRows from "../src/components/LoadingRows.tsx";
@@ -314,7 +314,7 @@ export default function FireMap({ onClose, C, ActionIcon, uDistMi = mi => Math.r
     if (!show.fires) return;
     fires.forEach(f => {
       const color = fireColor(f, C);
-      L.circleMarker([f.lat, f.lng], { radius: radiusFor(f.acres), color: "#0d1117", weight: 1.5, fillColor: color, fillOpacity: 0.95 })
+      L.circleMarker([f.lat, f.lng], { radius: radiusFor(f.acres), color: "#12110f", weight: 1.5, fillColor: color, fillOpacity: 0.95 })
         .bindTooltip(f.name + " — " + fmtAcres(f.acres), { direction: "top" })
         .on("click", () => setSel(f.id))
         .addTo(grp);
@@ -407,7 +407,7 @@ export default function FireMap({ onClose, C, ActionIcon, uDistMi = mi => Math.r
     </button>
   );
 
-  const hd = { fontSize: 11, fontWeight: 700, letterSpacing: 0.5, textTransform: "uppercase", color: C.textSub };
+  const hd = { fontSize: 11, fontWeight: 700, letterSpacing: 0.5, textTransform: "uppercase", color: C.label };
 
   return createPortal(
     <div role="dialog" aria-label="Fire map" onClick={e => { if (e.target === e.currentTarget) onClose(); }}
@@ -483,7 +483,7 @@ export default function FireMap({ onClose, C, ActionIcon, uDistMi = mi => Math.r
             {/* The area map's button, exactly: "📍 Me". It was a line-drawn pin icon in
                 the same white as its word, which read as decoration, not "where am I". */}
             <button onClick={locate} disabled={me.locating} aria-label="Show my location on the map"
-              style={{ position: "absolute", bottom: 26, right: 10, zIndex: 1000, background: C.blueSolid, color:C.onSolid, border: "none", borderRadius: 9, padding: "9px 12px", fontSize: 12.5, fontWeight: 700, cursor: me.locating ? "default" : "pointer", boxShadow: "0 2px 8px rgba(0,0,0,0.4)" }}><span style={{ display: "inline-flex", alignItems: "center", gap: 5 }}><ActionIcon name="pin" size={14} color="currentColor" />{locateLabel(me, "Me")}</span></button>
+              style={{ position: "absolute", bottom: 26, right: 10, zIndex: 1000, ...SOLID_FILL(C), color:C.onSolid, border: "none", borderRadius: 9, padding: "9px 12px", fontSize: 12.5, fontWeight: 700, cursor: me.locating ? "default" : "pointer", boxShadow: "0 2px 8px rgba(0,0,0,0.4)" }}><span style={{ display: "inline-flex", alignItems: "center", gap: 5 }}><ActionIcon name="pin" size={14} color="currentColor" />{locateLabel(me, "Me")}</span></button>
             {fullscreen ? null : <button onClick={() => setFullscreen(true)} aria-label="Full screen" title="Full screen" style={Object.assign({}, POP_CLOSE_MEDIA, { position: "absolute", top: 10, right: 10, zIndex: 1000 })}>⤢</button>}
             {/* Top-right under the zoom buttons (which end ~140px down, below the ⤢), not
                 GPXMap's bottom-left: that corner holds the layer chips here. */}
@@ -524,7 +524,7 @@ export default function FireMap({ onClose, C, ActionIcon, uDistMi = mi => Math.r
                   ))}
                 </div>
               )}
-              <div style={{ color: C.textMuted, lineHeight: 1.45 }}>Fine smoke near the ground, an hour&apos;s average, forecast for the region up to two days out — not a reading at your route. Clear map means under 9 µg/m³.</div>
+              <div style={{ color: C.textMuted, lineHeight: 1.45 }}>Regional smoke forecast, not a reading at your route. Clear = under 9 µg/m³.</div>
             </div>
           ) : null}
           <div style={{ width: "100%", color: C.textMuted, lineHeight: 1.45 }}>
@@ -711,7 +711,7 @@ function FireAlertSheet({ zone, onClose, C, locale }) {
                 {d.headline ? <div style={{ fontSize: 13, fontWeight: 700, color: C.text, lineHeight: 1.45 }}>{d.headline}</div> : null}
                 {d.areaDesc ? <div style={{ fontSize: 11.5, color: C.textMuted, lineHeight: 1.5 }}>{d.areaDesc}</div> : null}
                 {d.description ? <div style={para}>{d.description}</div> : null}
-                {d.instruction ? <div><div style={{ fontSize: 11, fontWeight: 700, letterSpacing: 0.5, textTransform: "uppercase", color: C.textSub, marginBottom: 4 }}>What to do</div><div style={para}>{d.instruction}</div></div> : null}
+                {d.instruction ? <div><div style={{ fontSize: 11, fontWeight: 700, letterSpacing: 0.5, textTransform: "uppercase", color: C.label, marginBottom: 4 }}>What to do</div><div style={para}>{d.instruction}</div></div> : null}
               </>
             )}
           <a href={nwsPointPage(zone.pt)} target="_blank" rel="noopener noreferrer" style={{ fontSize: 12, fontWeight: 700, color: C.blue, textDecoration: "none", marginTop: 4 }}>Forecast and alerts for this area on weather.gov →</a>

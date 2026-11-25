@@ -1,0 +1,2453 @@
+{
+ "wa_tower_arete": {
+  "area": "wa_north_face_tiffany_mountain",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "4th class",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/110624881/tower-arete",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project rates Tower Arete 4th class"
+     }
+    ]
+   },
+   {
+    "field": "pitches",
+    "value": 5,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/110624881/tower-arete",
+      "retrieved_at": "2026-11-14",
+      "fact": "Listed as trad/alpine, 640 ft, 5 pitches"
+     }
+    ]
+   },
+   {
+    "field": "length_ft",
+    "value": 640,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/110624881/tower-arete",
+      "retrieved_at": "2026-11-14",
+      "fact": "Route length 640 ft (194 m)"
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "P1 4th 100 ft; P2 4th 200 ft to alcove; P3 4th 175 ft left of vertical section; P4 4th 90 ft to tower top; P5 3rd 75 ft to main slope",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/110624881/tower-arete",
+      "retrieved_at": "2026-11-14",
+      "fact": "Five pitches: four 4th-class pitches of 100, 200, 175, 90 ft then 3rd-class 75 ft to Tiffany's main slope"
+     }
+    ]
+   },
+   {
+    "field": "descent",
+    "value": "Walk down NW Ridge to top of NE Ridge above Little Tiffany Lake; old trail down to main trail near Honeymoon Pass",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/110624881/tower-arete",
+      "retrieved_at": "2026-11-14",
+      "fact": "Descend NW Ridge of Tiffany to NE Ridge above Little Tiffany Lake, old trail to Honeymoon Pass"
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "From Honeymoon Pass take old NE Ridge trail to col above Little Tiffany Lake, traverse south and down to base (30 min from pass)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/110624881/tower-arete",
+      "retrieved_at": "2026-11-14",
+      "fact": "Approach from Honeymoon Pass via old NE Ridge trail, traverse south to the arete base, 30 minutes"
+     }
+    ]
+   },
+   {
+    "field": "rack",
+    "value": "60 m rope and long slings",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/110624881/tower-arete",
+      "retrieved_at": "2026-11-14",
+      "fact": "Gear: 60 m rope and a selection of long slings"
+     }
+    ]
+   },
+   {
+    "field": "hazard",
+    "value": "Loose rock and boulders on questionable rock",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/110624881/tower-arete",
+      "retrieved_at": "2026-11-14",
+      "fact": "Warns to be careful of loose rock and boulders"
+     }
+    ]
+   }
+  ],
+  "note": "MP rates it 4th class (we hold Class 4); MP FA field shows only a date 6/16/15, not used. SummitPost pages 403."
+ },
+ "wa_tower_mountain_southwest_route": {
+  "area": "wa_tower_mountain",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "Class 3",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.wta.org/go-hiking/hikes/tower-mountain-1",
+      "retrieved_at": "2026-11-14",
+      "fact": "WTA says the route to Tower Mountain is Class 3 with exposed scrambling"
+     }
+    ]
+   },
+   {
+    "field": "dist_mi_roundtrip",
+    "value": 25,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.wta.org/go-hiking/hikes/tower-mountain-1",
+      "retrieved_at": "2026-11-14",
+      "fact": "WTA lists 25.0 miles roundtrip, reached via Cutthroat Pass trailhead"
+     }
+    ]
+   },
+   {
+    "field": "high_point_ft",
+    "value": 8444,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.wta.org/go-hiking/hikes/tower-mountain-1",
+      "retrieved_at": "2026-11-14",
+      "fact": "WTA lists highest point 8,444 feet"
+     },
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/tower-mountain-golden-horn",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountaineers Tower Mountain & Golden Horn page lists high point 8,444 ft"
+     }
+    ]
+   }
+  ],
+  "note": "WTA 25 mi roundtrip conflicts with current dist_km 19; Mountaineers page covers Tower + Golden Horn together so its 25 mi not used."
+ },
+ "wa_tricouni_peak_southwest_slopes": {
+  "area": "wa_tricouni_peak",
+  "facts": [
+   {
+    "field": "route_step",
+    "value": "Thunder Creek Trail to McAllister Camp; cross Thunder Creek on a log jam; climbers trail up the north ridge to Borealis Lake outlet; cross Borealis Glacier to Lucky Pass; ridgeline to summit",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.wta.org/go-hiking/trip-reports/trip_report.2019-08-07.3073754053",
+      "retrieved_at": "2026-11-14",
+      "fact": "Hike Thunder Creek Trail to McAllister stock camp, cross on log jam, north-ridge climbers trail to Borealis Lake, glacier to Lucky Pass, ridge to summit"
+     },
+     {
+      "url": "https://onehikeaweek.com/2019/07/14/tricouni-peak/",
+      "retrieved_at": "2026-11-14",
+      "fact": "6.5-mile walk to McAllister Camp, log jam over Thunder Creek near a sandbar, climb toward Borealis Lake, via Borealis Glacier and Lucky Pass"
+     }
+    ]
+   },
+   {
+    "field": "dist_mi_to_camp",
+    "value": 6.5,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://onehikeaweek.com/2019/07/14/tricouni-peak/",
+      "retrieved_at": "2026-11-14",
+      "fact": "The walk to McAllister Camp is 6.5 miles"
+     }
+    ]
+   },
+   {
+    "field": "high_point_ft",
+    "value": 8102,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://onehikeaweek.com/2019/07/14/tricouni-peak/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Elevation range 1240 to 8102 ft from Thunder Creek Trailhead"
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Thunder Creek Trailhead",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://onehikeaweek.com/2019/07/14/tricouni-peak/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Access: Thunder Creek Trailhead"
+     }
+    ]
+   },
+   {
+    "field": "rack",
+    "value": "Helmet, ice axe, crampons",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://onehikeaweek.com/2019/07/14/tricouni-peak/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Gear listed: helmet, ice ax, crampons"
+     }
+    ]
+   }
+  ],
+  "note": "onehikeaweek trip combined Primus Peak (24 mi RT) so distance not used. The Mountaineers tricouni-peak page is the BC Tricouni (wrong peak)."
+ },
+ "wa_true_grit_2": {
+  "area": "wa_vesper_peak",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "5.8",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/111956810/true-grit",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project rates True Grit 5.8 YDS"
+     }
+    ]
+   },
+   {
+    "field": "pitches",
+    "value": 5,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/111956810/true-grit",
+      "retrieved_at": "2026-11-14",
+      "fact": "Listed as trad/alpine, 5 pitches, Grade II"
+     }
+    ]
+   },
+   {
+    "field": "length_ft",
+    "value": 590,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/111956810/true-grit",
+      "retrieved_at": "2026-11-14",
+      "fact": "Route length given as 590 ft (179 m)"
+     }
+    ]
+   },
+   {
+    "field": "commitment_grade",
+    "value": "II",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/111956810/true-grit",
+      "retrieved_at": "2026-11-14",
+      "fact": "Commitment grade listed as Grade II"
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "P1 easy granite to bolted belay below a narrow chimney (5.4, ~200 ft); P2 groove and squeeze chimney to short bolted slab (5.8, 100 ft)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/111956810/true-grit",
+      "retrieved_at": "2026-11-14",
+      "fact": "Pitch notes: P1 5.4 about 200 ft to bolted belay; P2 5.8 100 ft chimney then bolted slab, chimney avoidable to the right"
+     }
+    ]
+   },
+   {
+    "field": "hazard",
+    "value": "Exposed heather benches or steeper snow; loose rock and lichen possible",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/111956810/true-grit",
+      "retrieved_at": "2026-11-14",
+      "fact": "Page warns of exposed heather benches or snow, possible loose rock and lichen"
+     }
+    ]
+   }
+  ],
+  "note": "Only Mountain Project opened for climbing data; WTA Vesper page is the hike, not this line."
+ },
+ "wa_ultramega_ok": {
+  "area": "wa_burgundy_spire",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "5.11a",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/114960561/ultramega-ok",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project rates Ultramega OK 5.11a"
+     }
+    ]
+   },
+   {
+    "field": "grade",
+    "value": "5.11",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://publications.americanalpineclub.org/articles/12200515000/",
+      "retrieved_at": "2026-11-14",
+      "fact": "AAJ gives climbing at 5.11 (5.10c/d A0), mostly 5.8-5.9 with a 5.11 crux"
+     }
+    ]
+   },
+   {
+    "field": "pitches",
+    "value": 8,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/114960561/ultramega-ok",
+      "retrieved_at": "2026-11-14",
+      "fact": "Listed as trad/alpine, 900 ft, 8 pitches, Grade III"
+     }
+    ]
+   },
+   {
+    "field": "length_ft",
+    "value": 900,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/114960561/ultramega-ok",
+      "retrieved_at": "2026-11-14",
+      "fact": "Route length 900 ft (273 m)"
+     }
+    ]
+   },
+   {
+    "field": "commitment_grade",
+    "value": "III",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/114960561/ultramega-ok",
+      "retrieved_at": "2026-11-14",
+      "fact": "Commitment grade Grade III"
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "Mark Allen & Tom Smith, 2004",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/114960561/ultramega-ok",
+      "retrieved_at": "2026-11-14",
+      "fact": "FA listed as Mark Allen and Tom Smith, 2004"
+     },
+     {
+      "url": "https://publications.americanalpineclub.org/articles/12200515000/",
+      "retrieved_at": "2026-11-14",
+      "fact": "AAJ 2005 note by Mark Allen: he and Tom Smith climbed the independent line on July 24 and named it Ultramega OK"
+     }
+    ]
+   },
+   {
+    "field": "rack",
+    "value": "Doubles to #2, one #3, one #4",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/114960561/ultramega-ok",
+      "retrieved_at": "2026-11-14",
+      "fact": "Protection: doubles to #2, 1 #3, 1 #4"
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "From Burgundy Col scramble loose rock or steep snow down and around the north face to a twin-crack system",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/114960561/ultramega-ok",
+      "retrieved_at": "2026-11-14",
+      "fact": "From Burgundy Col scramble down around the north face to twin cracks with loose blocks about 60 ft up"
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "P1 5.8 30 m twin cracks over loose blocks; P2 5.8 55 m chimney to right-facing crack; P3 5.9 20 m; P8 5.8 60 m to offwidth finish",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/114960561/ultramega-ok",
+      "retrieved_at": "2026-11-14",
+      "fact": "Pitch notes: P1 5.8 30m, P2 5.8 55m, P3 5.9 20m, P8 5.8 60m ending up an offwidth to the summit"
+     },
+     {
+      "url": "https://publications.americanalpineclub.org/articles/12200515000/",
+      "retrieved_at": "2026-11-14",
+      "fact": "AAJ: line starts 10 ft right of Action Potential, chimney and corner to cracks, 5.11 roof crux, finish via Original Route to summit block"
+     }
+    ]
+   }
+  ],
+  "note": "Grade: MP 5.11a vs AAJ 5.11 (kept separate). Pitches: MP 8 vs AAJ seven pitches (5.8,5.9,5.8,5.11,5.9+,5.9,5.8). FA year 2004 from MP only; AAJ note published 2005 gives July 24 without year."
+ },
+ "wa_union_peak_se_route": {
+  "area": "wa_union_peak",
+  "facts": [
+   {
+    "field": "gain_ft",
+    "value": 1096,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.wta.org/go-hiking/hikes/union-peak",
+      "retrieved_at": "2026-11-14",
+      "fact": "WTA lists elevation gain 1,096 feet"
+     }
+    ]
+   },
+   {
+    "field": "high_point_ft",
+    "value": 5696,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.wta.org/go-hiking/hikes/union-peak",
+      "retrieved_at": "2026-11-14",
+      "fact": "WTA lists highest point 5,696 feet"
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Smithbrook Road 6700 off US 2",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.wta.org/go-hiking/hikes/union-peak",
+      "retrieved_at": "2026-11-14",
+      "fact": "Drive US 2 east 68 miles from Everett/Seattle, left on Smithbrook Road 6700"
+     }
+    ]
+   },
+   {
+    "field": "seasonal",
+    "value": "In winter Smithbrook Road is unmaintained, adding roughly 5 km each way; route crests the broad SE Ridge",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://stevensong.com/usa/washington/union-peak/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Winter: no maintenance on Smithbrook Road, about 5 km extra one way; ascent crested the broad SE Ridge"
+     }
+    ]
+   }
+  ],
+  "note": "WTA gain 1,096 ft conflicts with current 1,696 (from a 4,000 ft trailhead); flag for review. Mountaineers page covers Union + Jove together, not used."
+ },
+ "wa_vanishing_point": {
+  "area": "wa_dolomite_tower",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "5.12b",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/119221029/vanishing-point",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project rates Vanishing Point 5.12b"
+     }
+    ]
+   },
+   {
+    "field": "pitches",
+    "value": 20,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/119221029/vanishing-point",
+      "retrieved_at": "2026-11-14",
+      "fact": "Listed as trad/alpine, 1400 ft, 20 pitches"
+     }
+    ]
+   },
+   {
+    "field": "length_ft",
+    "value": 1400,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/119221029/vanishing-point",
+      "retrieved_at": "2026-11-14",
+      "fact": "Route length 1400 ft (424 m)"
+     }
+    ]
+   },
+   {
+    "field": "commitment_grade",
+    "value": "V",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/119221029/vanishing-point",
+      "retrieved_at": "2026-11-14",
+      "fact": "Commitment grade listed as Grade V"
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "Bryan Burdo",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/119221029/vanishing-point",
+      "retrieved_at": "2026-11-14",
+      "fact": "FA credited to Bryan Burdo, who established it over a few years"
+     },
+     {
+      "url": "https://nathanhadley.com/stories/vanishing-point-2-0-a-classic-route-modernized/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Blog says the route was put up in 1998 by Brian Burdo and modernized in 2020"
+     }
+    ]
+   },
+   {
+    "field": "rack",
+    "value": "16 draws incl. runners; single rack to #1 with a few doubles in finger sizes; optional small/medium nuts",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/119221029/vanishing-point",
+      "retrieved_at": "2026-11-14",
+      "fact": "Protection: 16 draws, single rack to 1 with finger-size doubles, small/med nuts optional"
+     }
+    ]
+   },
+   {
+    "field": "descent",
+    "value": "Walk off: slide down heather to the base-jumper trail, circle Dolomite Tower past the gully below Mt Baring; keep skier-left across Baring's flank",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/119221029/vanishing-point",
+      "retrieved_at": "2026-11-14",
+      "fact": "Descent walks off via heather to the base jumper trail around Dolomite Tower, staying skier-left on Baring's flank"
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "Starts at the toe of the central prow; P1 bolts left then right around the arete, 20 m 5.10",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/119221029/vanishing-point",
+      "retrieved_at": "2026-11-14",
+      "fact": "Start at toe of the macro-prow; P1 20 m 5.10 bolts up left then right to bolted anchor"
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Barclay Lake trailhead",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://nathanhadley.com/stories/vanishing-point-2-0-a-classic-route-modernized/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Author left from the Barclay Lake trailhead, about 1.5 hours from Seattle"
+     }
+    ]
+   },
+   {
+    "field": "hazard",
+    "value": "Approach is technical and hard to follow; part of pitch 5 once fell away taking bolts (rebolted 2020)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://nathanhadley.com/stories/vanishing-point-2-0-a-classic-route-modernized/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Approach called very technical; a section of pitch 5 had fallen off with some bolts before the 2020 work"
+     }
+    ]
+   }
+  ],
+  "note": "MP Grade V vs our alpine_grade VI. Pitches: MP 20 vs a 2012 cascadeclimbers TR saying ~13 pitches. FA name spelled Bryan (MP) vs Brian (nathanhadley); year 1998 from nathanhadley only."
+ },
+ "wa_vasiliki_ridge_standard": {
+  "area": "wa_vasiliki_ridge",
+  "facts": [
+   {
+    "field": "dist_mi_roundtrip",
+    "value": 5,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://onehikeaweek.com/2025/05/06/vasiliki-ridge/",
+      "retrieved_at": "2026-11-14",
+      "fact": "At-a-glance box: round trip 5 miles from Early Winters Creek access"
+     }
+    ]
+   },
+   {
+    "field": "high_point_ft",
+    "value": 8203,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://onehikeaweek.com/2025/05/06/vasiliki-ridge/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Elevation range listed 4080 to 8203 ft"
+     }
+    ]
+   },
+   {
+    "field": "approach_loss_ft",
+    "value": 250,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://onehikeaweek.com/2025/05/06/vasiliki-ridge/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Trip starts with a 250-foot drop from the highway down to Early Winters Creek"
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "Drop from SR-20 to Early Winters Creek, cross on a large log, then the steep Burgundy Col climbers trail through forest to snow near 6,600 ft",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://onehikeaweek.com/2025/05/06/vasiliki-ridge/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Log crossing of Early Winters Creek then steep Burgundy Col climbers trail up through forest"
+     }
+    ]
+   },
+   {
+    "field": "rack",
+    "value": "Helmet, ice axe, crampons (snowshoes in spring)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://onehikeaweek.com/2025/05/06/vasiliki-ridge/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Essential gear listed: helmet, ice ax, crampons, snowshoes"
+     }
+    ]
+   },
+   {
+    "field": "grade",
+    "value": "4th class",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.countryhighpoints.com/ares-tower-and-the-acropolis/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Ares Tower described as a 4th class rock spire atop Vasiliki Ridge"
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Standard Burgundy Col trailhead off SR-20",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.countryhighpoints.com/ares-tower-and-the-acropolis/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Parked at the standard Burgundy col trailhead off highway 20, dropped to Early Winters Creek log crossing"
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "4th class route to the notch north of the summit (a direct low-5th variation exists on the west face)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.countryhighpoints.com/ares-tower-and-the-acropolis/",
+      "retrieved_at": "2026-11-14",
+      "fact": "One climber took a 4th class route to the notch north of the summit; a partner soloed a low-fifth west-face variation"
+     }
+    ]
+   }
+  ],
+  "note": "onehikeaweek 5 mi RT was a spring trip; countryhighpoints mentions a low-5th step to a summit but it is unclear whether Ares or Niki Tower, so not used."
+ },
+ "wa_vesper_peak_standard_route": {
+  "area": "wa_vesper_peak",
+  "facts": [
+   {
+    "field": "gain_ft",
+    "value": 4000,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.wta.org/go-hiking/hikes/vesper-peak",
+      "retrieved_at": "2026-11-14",
+      "fact": "WTA lists elevation gain 4,000 feet"
+     }
+    ]
+   },
+   {
+    "field": "dist_mi_roundtrip",
+    "value": 8,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.wta.org/go-hiking/hikes/vesper-peak",
+      "retrieved_at": "2026-11-14",
+      "fact": "WTA lists length 8.0 miles, roundtrip"
+     }
+    ]
+   },
+   {
+    "field": "high_point_ft",
+    "value": 6214,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.wta.org/go-hiking/hikes/vesper-peak",
+      "retrieved_at": "2026-11-14",
+      "fact": "WTA lists highest point 6,214 feet"
+     }
+    ]
+   },
+   {
+    "field": "permit",
+    "value": "Northwest Forest Pass",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.wta.org/go-hiking/hikes/vesper-peak",
+      "retrieved_at": "2026-11-14",
+      "fact": "WTA lists Northwest Forest Pass for parking"
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Sunrise Mine Trail 707 via Forest Road 4065",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.wta.org/go-hiking/hikes/vesper-peak",
+      "retrieved_at": "2026-11-14",
+      "fact": "Follow Sunrise Mine Trail 707 to Vesper Creek where the scramble begins; drive turns onto Forest Road 4065"
+     }
+    ]
+   }
+  ],
+  "note": "Mountaineers vesper-sperry-wolf-peaks is a multi-peak page, not used."
+ },
+ "wa_wallaby_peak_standard": {
+  "area": "wa_wallaby_peak",
+  "facts": [
+   {
+    "field": "gain_ft",
+    "value": 2800,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/wallaby-peak",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountaineers lists elevation gain 2,800 ft"
+     },
+     {
+      "url": "https://www.wta.org/go-hiking/hikes/wallaby-peak-7995",
+      "retrieved_at": "2026-11-14",
+      "fact": "WTA lists elevation gain 2,900 feet"
+     }
+    ]
+   },
+   {
+    "field": "dist_mi",
+    "value": 6,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/wallaby-peak",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountaineers lists length 6.0 mi (one-way/round trip not stated)"
+     },
+     {
+      "url": "https://www.wta.org/go-hiking/hikes/wallaby-peak-7995",
+      "retrieved_at": "2026-11-14",
+      "fact": "WTA lists 6.0 miles, roundtrip"
+     }
+    ]
+   },
+   {
+    "field": "high_point_ft",
+    "value": 7995,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/wallaby-peak",
+      "retrieved_at": "2026-11-14",
+      "fact": "High point 7,995 ft"
+     },
+     {
+      "url": "https://www.wta.org/go-hiking/hikes/wallaby-peak-7995",
+      "retrieved_at": "2026-11-14",
+      "fact": "WTA lists highest point 7,995 feet"
+     }
+    ]
+   },
+   {
+    "field": "permit",
+    "value": "Northwest Forest Pass",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/wallaby-peak",
+      "retrieved_at": "2026-11-14",
+      "fact": "Parking permit required: Northwest Forest Pass; land manager Methow Valley Ranger District"
+     },
+     {
+      "url": "https://www.wta.org/go-hiking/hikes/wallaby-peak-7995",
+      "retrieved_at": "2026-11-14",
+      "fact": "Parking pass: America the Beautiful Pass or Northwest Forest Pass"
+     }
+    ]
+   },
+   {
+    "field": "season",
+    "value": "June-October",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/wallaby-peak",
+      "retrieved_at": "2026-11-14",
+      "fact": "Seasons listed June through October"
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "From the SR-20 hairpin east of Washington Pass, a bootpath climbs about 1,500 ft to Kangaroo Pass (6,671 ft)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.wta.org/go-hiking/hikes/wallaby-peak-7995",
+      "retrieved_at": "2026-11-14",
+      "fact": "Bootpath from the hairpin turn climbs some 1,500 feet to Kangaroo Pass at 6671 feet"
+     }
+    ]
+   }
+  ],
+  "note": "Mountaineers Technical 4 is a club rating, not YDS; not used as grade."
+ },
+ "wa_warrior_peak_standard": {
+  "area": "wa_warrior_peak",
+  "facts": [
+   {
+    "field": "gain_ft",
+    "value": 5000,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/warrior-peak-southeast-summit",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountaineers lists elevation gain 5,000 ft for the Southeast Summit"
+     }
+    ]
+   },
+   {
+    "field": "dist_mi",
+    "value": 18,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/warrior-peak-southeast-summit",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountaineers lists length 18.0 mi (one-way/round trip not stated)"
+     }
+    ]
+   },
+   {
+    "field": "high_point_ft",
+    "value": 7300,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/warrior-peak-southeast-summit",
+      "retrieved_at": "2026-11-14",
+      "fact": "High point 7,300 ft"
+     }
+    ]
+   },
+   {
+    "field": "permit",
+    "value": "Northwest Forest Pass",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/warrior-peak-southeast-summit",
+      "retrieved_at": "2026-11-14",
+      "fact": "Parking permit: Northwest Forest Pass; land manager Olympic National Park, Olympic Wilderness"
+     }
+    ]
+   },
+   {
+    "field": "season",
+    "value": "June-October",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/warrior-peak-southeast-summit",
+      "retrieved_at": "2026-11-14",
+      "fact": "Seasons listed June through October"
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Upper Dungeness trailhead past the Dungeness River Bridge (2,500 ft)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/warrior-peak-southeast-summit",
+      "retrieved_at": "2026-11-14",
+      "fact": "Large parking area just past the Dungeness River Bridge, 2,500 ft"
+     }
+    ]
+   },
+   {
+    "field": "camp",
+    "value": "Camp Handy (3,100 ft, 3.2 mi); Boulder Shelter (4,950 ft, 6.3 mi)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/warrior-peak-southeast-summit",
+      "retrieved_at": "2026-11-14",
+      "fact": "Pass Camp Handy at 3.2 mi (3,100 ft), reach Boulder Shelter at 6.3 mi (4,950 ft)"
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "From Boulder Shelter south 2+ mi on Dungeness Trail to flat saddle ~6,200 ft; couloir NNE to saddle ~7,000 ft",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/warrior-peak-southeast-summit",
+      "retrieved_at": "2026-11-14",
+      "fact": "Ascent: south on Dungeness Trail to a saddle near 6,200 ft, then prominent couloir north-northeast to a ~7,000 ft saddle"
+     }
+    ]
+   },
+   {
+    "field": "hazard",
+    "value": "Rockfall in the gully between the south and north peaks",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/warrior-peak-southeast-summit",
+      "retrieved_at": "2026-11-14",
+      "fact": "Warns of rockfall in the gully between the south and north peaks"
+     }
+    ]
+   }
+  ],
+  "note": "Mountaineers route goes via Upper Dungeness to Boulder Shelter (consistent with our approach); 18 mi direction not stated."
+ },
+ "wa_washington_ellinor_traverse_ridge": {
+  "area": "wa_mount_washington_olympic",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "Easy 5th, moderate snow",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/119255389/washington-ellinor-traverse-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project rates it Easy 5th, Mod. Snow, X"
+     }
+    ]
+   },
+   {
+    "field": "commitment_grade",
+    "value": "II",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/119255389/washington-ellinor-traverse-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "Grade II trad/snow/alpine"
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "From Washington's summit follow fractured pillow-basalt crest; downclimb gendarmes (crux); regain crest via ramps to ledge under Horse's Mouth or gully NE of Point B",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/119255389/washington-ellinor-traverse-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "Downclimbing the gendarme ridge is the crux; regain crest by ramps or a gully on NE side of Point B"
+     }
+    ]
+   },
+   {
+    "field": "hazard",
+    "value": "Very poor rock, severe exposure, protection problematic",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/119255389/washington-ellinor-traverse-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "Rock is horrible, exposure severe, protection problematic"
+     }
+    ]
+   }
+  ],
+  "note": "MP length 6000 ft not used (unclear meaning). Mountaineers mount-ellinor-mount-washington page has high point 5,920 (Ellinor) and is a different outing; WTA mount-washington is the standard route, not the traverse."
+ },
+ "wa_west_craggy_peak_standard_route": {
+  "area": "wa_west_craggy_peak",
+  "facts": [
+   {
+    "field": "trailhead",
+    "value": "Copper Glance Trailhead, last ~10 mi of road beyond Forest Road 5130 camping",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.lucasmountainknowledge.com/post/the-craggies-june-2022",
+      "retrieved_at": "2026-11-14",
+      "fact": "Camped off Forest Road 5130 then drove the last 10 miles or so to the Copper Glance Trailhead"
+     }
+    ]
+   },
+   {
+    "field": "hazard",
+    "value": "Ford of Copper Glance Creek about 0.5 mi in (shoes off)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.lucasmountainknowledge.com/post/the-craggies-june-2022",
+      "retrieved_at": "2026-11-14",
+      "fact": "About half a mile in they took shoes off to cross Copper Glance Creek"
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "Trail past the old Copper Glance mine to the Copper Glance Lake turnoff (~2 hr); a hidden snow ramp gives access to West Craggy",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.lucasmountainknowledge.com/post/the-craggies-june-2022",
+      "retrieved_at": "2026-11-14",
+      "fact": "Reached Copper Glance Lake turnoff about 2 hours from trailhead past the old mine; hidden snow ramp accesses West Craggy"
+     }
+    ]
+   }
+  ],
+  "note": "Mountaineers big-craggy-west-craggy-peaks covers both peaks (12 mi, 5,800 ft) so not used; WTA west-craggy-peak has no stats."
+ },
+ "wa_west_twin_needle_south_route": {
+  "area": "wa_west_twin_needle",
+  "facts": [
+   {
+    "field": "dist_mi_roundtrip",
+    "value": 19.5,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://onehikeaweek.com/2023/08/28/west-twin-needle/",
+      "retrieved_at": "2026-11-14",
+      "fact": "At-a-glance: round trip 19.5 miles from Goodell Creek Cross-Country Zone access trailhead (party climbed an east-face line)"
+     }
+    ]
+   },
+   {
+    "field": "high_point_ft",
+    "value": 7936,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://onehikeaweek.com/2023/08/28/west-twin-needle/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Elevation range 600 to 7936 ft"
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Goodell Creek Cross-Country Zone access trailhead",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://onehikeaweek.com/2023/08/28/west-twin-needle/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Access: Goodell Creek Cross-Country Zone Access Trailhead"
+     }
+    ]
+   },
+   {
+    "field": "rack",
+    "value": "Helmet, rock gear and two 60 m ropes; multi-night trip",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://onehikeaweek.com/2023/08/28/west-twin-needle/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Essential gear: helmet, rock and rope (60m x 2), multi-night"
+     }
+    ]
+   },
+   {
+    "field": "rappels",
+    "value": 2,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://onehikeaweek.com/2023/08/28/west-twin-needle/",
+      "retrieved_at": "2026-11-14",
+      "fact": "After downclimbing the class 2-3 west face they rappelled twice below the notch, using two 60 m ropes"
+     }
+    ]
+   },
+   {
+    "field": "descent",
+    "value": "Downclimb class 2-3 west face to the notch, then two rappels past vertical slabs; easy to drop into the wrong gully near 6,800 ft",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://onehikeaweek.com/2023/08/28/west-twin-needle/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Descended class 2-3 west face, two raps below the notch, then grass and sloping rock; party ended up one gully off"
+     }
+    ]
+   },
+   {
+    "field": "camp",
+    "value": "Camp at 6,400 ft above Terror Creek; Crescent Creek Basin camp ~6,440 ft (200 ft drop into basin)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://onehikeaweek.com/2023/08/28/west-twin-needle/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Break at the 6400-ft camp before dropping 200 ft into Crescent Creek Basin; Crescent Creek camp at 6440 ft"
+     }
+    ]
+   }
+  ],
+  "note": "onehikeaweek party climbed an East Face 5.7 direct line but descended the class 2-3 west side with 2 rappels; stephabegg Twin Needles page is the Thread of Ice route, not used."
+ },
+ "wa_whistler_mountain_scramble": {
+  "area": "wa_whistler_mountain_okanogan",
+  "facts": [
+   {
+    "field": "gain_ft",
+    "value": 3000,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/whistler-mountain",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountaineers lists elevation gain 3,000 ft"
+     }
+    ]
+   },
+   {
+    "field": "dist_mi",
+    "value": 4,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/whistler-mountain",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountaineers lists length 4.0 mi (one-way/round trip not stated)"
+     }
+    ]
+   },
+   {
+    "field": "high_point_ft",
+    "value": 7790,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/whistler-mountain",
+      "retrieved_at": "2026-11-14",
+      "fact": "High point 7,790 ft"
+     }
+    ]
+   },
+   {
+    "field": "permit",
+    "value": "Northwest Forest Pass",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/whistler-mountain",
+      "retrieved_at": "2026-11-14",
+      "fact": "Parking permit required: Northwest Forest Pass"
+     }
+    ]
+   },
+   {
+    "field": "season",
+    "value": "April-October",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/whistler-mountain",
+      "retrieved_at": "2026-11-14",
+      "fact": "Seasons listed April through October"
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Rainy Pass PCT north-side lot (4,850 ft)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/whistler-mountain",
+      "retrieved_at": "2026-11-14",
+      "fact": "Park on north side of Rainy Pass at the PCT lot, 4850 ft; head east to the second gully and follow it to the summit"
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "Alternate start: turnout about 3.1 mi past Rainy Pass (0.7 mi before Blue Lake TH), 5,000 ft, boot path",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/whistler-mountain",
+      "retrieved_at": "2026-11-14",
+      "fact": "Alternate route parks at a turnout about 3.1 miles past Rainy Pass, 0.7 mi before Blue Lake trailhead, 5,000 ft"
+     }
+    ]
+   }
+  ]
+ },
+ "wa_white_mountain_olympics_scramble": {
+  "area": "wa_white_mountain_olympics",
+  "facts": [
+   {
+    "field": "gain_ft",
+    "value": 9000,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/white-mountain-6400-ft",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountaineers lists elevation gain 9,000 ft for White Mountain"
+     }
+    ]
+   },
+   {
+    "field": "dist_mi",
+    "value": 42,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/white-mountain-6400-ft",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountaineers lists length 42.0 mi (one-way/round trip not stated)"
+     }
+    ]
+   },
+   {
+    "field": "high_point_ft",
+    "value": 6400,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/white-mountain-6400-ft",
+      "retrieved_at": "2026-11-14",
+      "fact": "High point 6,400 ft"
+     }
+    ]
+   },
+   {
+    "field": "season",
+    "value": "July-October",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/white-mountain-6400-ft",
+      "retrieved_at": "2026-11-14",
+      "fact": "Seasons listed July through October"
+     }
+    ]
+   },
+   {
+    "field": "permit",
+    "value": "National Park entrance fee",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/white-mountain-6400-ft",
+      "retrieved_at": "2026-11-14",
+      "fact": "Parking permit: National Park Entrance Fee; land manager Olympic National Park"
+     }
+    ]
+   },
+   {
+    "field": "camp",
+    "value": "Diamond Meadows",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/activities/alpine-scramble-white-mountain-6400-ft",
+      "retrieved_at": "2026-11-14",
+      "fact": "Trip plan: bike the abandoned Dosewallips road and hike 7-8 hours to camp at Diamond Meadows; about 13 miles each day"
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "Bike the abandoned Dosewallips road from its end, then hike to Diamond Meadows camp",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/activities/alpine-scramble-white-mountain-6400-ft",
+      "retrieved_at": "2026-11-14",
+      "fact": "Bike the abandoned road portion from the end of Dosewallips Road, then trail to Diamond Meadows"
+     }
+    ]
+   }
+  ],
+  "note": "Mountaineers gain 9,000 ft and 42 mi differ from current 5,706 ft / 33.8 km; WTA white-mountain is a Kettle Crest peak (wrong peak)."
+ },
+ "wa_whitehorse_mountain_nw_shoulder": {
+  "area": "wa_whitehorse_mountain",
+  "facts": [
+   {
+    "field": "gain_ft",
+    "value": 7000,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/whitehorse-mountain-northwest-shoulder",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountaineers lists elevation gain 7,000 ft"
+     }
+    ]
+   },
+   {
+    "field": "dist_mi",
+    "value": 12,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/whitehorse-mountain-northwest-shoulder",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountaineers lists length 12.0 mi (one-way/round trip not stated)"
+     }
+    ]
+   },
+   {
+    "field": "high_point_ft",
+    "value": 6840,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/whitehorse-mountain-northwest-shoulder",
+      "retrieved_at": "2026-11-14",
+      "fact": "High point 6,840 ft"
+     }
+    ]
+   },
+   {
+    "field": "season",
+    "value": "April-June",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/whitehorse-mountain-northwest-shoulder",
+      "retrieved_at": "2026-11-14",
+      "fact": "Seasons listed April, May, June (early-season climb)"
+     }
+    ]
+   },
+   {
+    "field": "time_to_summit_hours",
+    "value": "12-14",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/whitehorse-mountain-northwest-shoulder",
+      "retrieved_at": "2026-11-14",
+      "fact": "States 12-14 hours from trailhead to summit"
+     }
+    ]
+   },
+   {
+    "field": "approach_loss_ft",
+    "value": 500,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/whitehorse-mountain-northwest-shoulder",
+      "retrieved_at": "2026-11-14",
+      "fact": "From Lone Tree Pass traverse east and down about 500 feet toward a small lake (approach loss, approximate)"
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "Niederprum Trail ~2 mi to 3,000 ft; traverse ~0.5 mi south to couloir; couloir to Lone Tree Pass 5,000 ft; gully to High Pass 6,100 ft; cross Whitehorse Glacier",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/whitehorse-mountain-northwest-shoulder",
+      "retrieved_at": "2026-11-14",
+      "fact": "Route steps: Niederprum Trail to 3,000 ft, traverse to couloir (snow until early July), Lone Tree Pass 5,000 ft, High Pass 6,100 ft, Whitehorse Glacier"
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Park at closed bridges over Moose Creek; walk road ~2 mi to Niederprum Camp trailhead",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/whitehorse-mountain-northwest-shoulder",
+      "retrieved_at": "2026-11-14",
+      "fact": "Park at the closed Moose Creek bridges, walk road past Furland Creek to trailhead marked Niederprum Camp"
+     }
+    ]
+   }
+  ],
+  "note": "Mountaineers 12 mi direction not stated; 500 ft approach loss is stated as approximate."
+ },
+ "wa_wilmans_peak_scramble": {
+  "area": "wa_wilmans_peak",
+  "facts": [
+   {
+    "field": "hazard",
+    "value": "Sauk River crossing on a slippery log on the Monte Cristo approach",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://cascadeclimbers.com/forum/topic/100734-tr-wilmans-peak-and-east-wilmans-spire-wilmans-nw-face-east-spire-standard-6172017/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Party hauled bikes over the Sauk on a slippery log en route to the Wilmans massif"
+     }
+    ]
+   }
+  ],
+  "note": "cascadeclimbers TR climbed the NW face, so only the shared approach hazard is used; no stats found."
+ },
+ "wa_winchester_mountain_south_trail": {
+  "area": "wa_winchester_mountain",
+  "facts": [
+   {
+    "field": "gain_ft",
+    "value": 1320,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/winchester-mountain",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountaineers lists elevation gain 1,320 ft"
+     },
+     {
+      "url": "https://www.wta.org/go-hiking/hikes/winchester-mountain",
+      "retrieved_at": "2026-11-14",
+      "fact": "WTA lists elevation gain 1,300 feet"
+     }
+    ]
+   },
+   {
+    "field": "dist_mi_roundtrip",
+    "value": 3.5,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/winchester-mountain",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountaineers lists length 3.5 mi"
+     },
+     {
+      "url": "https://www.wta.org/go-hiking/hikes/winchester-mountain",
+      "retrieved_at": "2026-11-14",
+      "fact": "WTA lists 3.4 miles roundtrip"
+     }
+    ]
+   },
+   {
+    "field": "high_point_ft",
+    "value": 6521,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/winchester-mountain",
+      "retrieved_at": "2026-11-14",
+      "fact": "High point 6,521 ft"
+     },
+     {
+      "url": "https://www.wta.org/go-hiking/hikes/winchester-mountain",
+      "retrieved_at": "2026-11-14",
+      "fact": "Highest point 6,521 feet"
+     }
+    ]
+   },
+   {
+    "field": "permit",
+    "value": "Northwest Forest Pass",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/winchester-mountain",
+      "retrieved_at": "2026-11-14",
+      "fact": "Parking permit: Northwest Forest Pass"
+     },
+     {
+      "url": "https://www.wta.org/go-hiking/hikes/winchester-mountain",
+      "retrieved_at": "2026-11-14",
+      "fact": "Parking pass: Northwest Forest Pass"
+     }
+    ]
+   },
+   {
+    "field": "season",
+    "value": "July-October",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/winchester-mountain",
+      "retrieved_at": "2026-11-14",
+      "fact": "Seasons listed July through October"
+     }
+    ]
+   }
+  ]
+ },
+ "wa_windy_peak_trail": {
+  "area": "wa_windy_peak",
+  "facts": [
+   {
+    "field": "gain_ft",
+    "value": 4050,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.wta.org/go-hiking/hikes/windy-peak",
+      "retrieved_at": "2026-11-14",
+      "fact": "WTA lists elevation gain 4,050 feet"
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Long Swamp Campground (FR 39 / FR 3900-300)",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.wta.org/go-hiking/hikes/windy-peak",
+      "retrieved_at": "2026-11-14",
+      "fact": "Trailhead next to Long Swamp Campground at FR 39 / FR 3900-300, 20 miles along CR 4066 from Loomis"
+     },
+     {
+      "url": "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/trails/windy-peak-trail",
+      "retrieved_at": "2026-11-14",
+      "fact": "USFS lists trailhead as Long Swamp Campground, reached from Loomis via CR 9425 and Forest Road 39"
+     }
+    ]
+   },
+   {
+    "field": "water",
+    "value": "Two Bear Camp",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.wta.org/go-hiking/hikes/windy-peak",
+      "retrieved_at": "2026-11-14",
+      "fact": "Water can be restocked at Two Bear Camp, past burned lodgepole beyond the wilderness boundary (2.5 mi)"
+     },
+     {
+      "url": "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/trails/windy-peak-trail",
+      "retrieved_at": "2026-11-14",
+      "fact": "USFS: trail passes burned lodgepole to Two Bear Camp, where water is available"
+     }
+    ]
+   },
+   {
+    "field": "permit",
+    "value": "Northwest Forest Pass or America the Beautiful Pass",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.wta.org/go-hiking/hikes/windy-peak",
+      "retrieved_at": "2026-11-14",
+      "fact": "Parking pass: America the Beautiful Pass or Northwest Forest Pass"
+     },
+     {
+      "url": "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/trails/windy-peak-trail",
+      "retrieved_at": "2026-11-14",
+      "fact": "Day use $5 per vehicle per day or $30 annual; NW Forest Pass and America the Beautiful honored"
+     }
+    ]
+   },
+   {
+    "field": "overview",
+    "value": "Trail continues past the summit to the Boundary Trail at Horseshoe Basin; side trip to Windy Lake north of the peak",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/trails/windy-peak-trail",
+      "retrieved_at": "2026-11-14",
+      "fact": "Trail continues past summit to Boundary Trail at Horseshoe Basin; Windy Lake is an off-trail side trip"
+     }
+    ]
+   }
+  ],
+  "note": "WTA length reads 11.0 miles one-way (likely roundtrip) and highest point 8,100 ft; neither used. USFS 11.5 mi is total trail length past the summit, not used."
+ },
+ "wa_windy_peak_windy_creek_trail": {
+  "area": "wa_windy_peak",
+  "facts": [
+   {
+    "field": "gain_ft",
+    "value": 3000,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.willhiteweb.com/pasayten_wilderness/windy_peak/lookout_232.htm",
+      "retrieved_at": "2026-11-14",
+      "fact": "Willhite lists elevation gain about 3,000 feet via Windy Creek Trail"
+     }
+    ]
+   },
+   {
+    "field": "dist_mi_oneway",
+    "value": 5.5,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.willhiteweb.com/pasayten_wilderness/windy_peak/lookout_232.htm",
+      "retrieved_at": "2026-11-14",
+      "fact": "Hiking distance about 5.5 miles one way via Windy Creek Trail"
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Cathedral Driveway (Chewuch) trailhead, 3 mi west of Long Swamp",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.willhiteweb.com/pasayten_wilderness/windy_peak/lookout_232.htm",
+      "retrieved_at": "2026-11-14",
+      "fact": "Drive Toats Coulee Road about 22 miles to Long Swamp, continue 3 miles west to Cathedral Driveway Trailhead"
+     },
+     {
+      "url": "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/trails/windy-creek-trail",
+      "retrieved_at": "2026-11-14",
+      "fact": "USFS: drive FR 3900-300 for 3 miles to Chewuch Trailhead, then 0.5 mile on Cathedral Driveway Trail 510A to Windy Creek Trail"
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "0.5 mi on Cathedral Driveway Trail 510A to Windy Creek Trail; up Windy Creek through burned lodgepole to Windy Peak Trail #342; 0.5 mi to summit",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/trails/windy-creek-trail",
+      "retrieved_at": "2026-11-14",
+      "fact": "Windy Creek Trail climbs through fire-damaged lodgepole to Windy Peak Trail #342, then 0.5 mile to the top"
+     }
+    ]
+   },
+   {
+    "field": "hazard",
+    "value": "Some sections overgrown from lack of maintenance",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.willhiteweb.com/pasayten_wilderness/windy_peak/lookout_232.htm",
+      "retrieved_at": "2026-11-14",
+      "fact": "Windy Creek is the shortest option but has sections overgrowing from lack of use and maintenance"
+     }
+    ]
+   }
+  ]
+ },
+ "wa_wing_peak_northwest_ridge": {
+  "area": "wa_wing_peak",
+  "facts": [
+   {
+    "field": "approach_step",
+    "value": "Barclay Creek road walk and shore, then Tailgunner Creek, Ravine and Couloir to Tailgunner Pass (5,320 ft), about 3,200 ft and 6.6 hr from the trailhead",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://trailcatjim.com/east-gunn-peak-gunn-point-tailgunner-peak-wing-peak/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Reached 5320-ft Tailgunner Pass 6.6 hours and 3200 feet from the trailhead via Tailgunner Couloir"
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "Snow climb and rock climb via the Northwest Ridge, including a steep snow finger below the summit",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://trailcatjim.com/east-gunn-peak-gunn-point-tailgunner-peak-wing-peak/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Wing Peak summited by snow climb and rock climb via Northwest Ridge; steep snowfinger below the summit"
+     }
+    ]
+   }
+  ],
+  "note": "trailcatjim stats (7 mi, 6,000 ft) cover a four-summit trip, not used."
+ },
+ "wa_witches_tower_south_face": {
+  "area": "wa_witches_tower",
+  "facts": [
+   {
+    "field": "gain_ft",
+    "value": 5000,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/enchantments-area-review/witches-tower-south-face",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountaineers lists elevation gain 5,000 ft"
+     }
+    ]
+   },
+   {
+    "field": "dist_mi",
+    "value": 16,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/enchantments-area-review/witches-tower-south-face",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountaineers lists length 16.0 mi (one-way/round trip not stated)"
+     }
+    ]
+   },
+   {
+    "field": "high_point_ft",
+    "value": 8520,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/enchantments-area-review/witches-tower-south-face",
+      "retrieved_at": "2026-11-14",
+      "fact": "High point 8,520 ft"
+     }
+    ]
+   },
+   {
+    "field": "season",
+    "value": "July-September",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/enchantments-area-review/witches-tower-south-face",
+      "retrieved_at": "2026-11-14",
+      "fact": "Seasons listed July through September"
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "Colchuck Lake (5,570 ft), around south end, up to Aasgard Pass (7,750 ft)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/enchantments-area-review/witches-tower-south-face",
+      "retrieved_at": "2026-11-14",
+      "fact": "Approach: hike to Colchuck Lake 5,570 ft, around its south end, then up to Aasgard Pass 7,750 ft"
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "Right-trending ledge across the south side; exposed 2nd-class corner; short 4th/easy 5th step below the flat summit",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/enchantments-area-review/witches-tower-south-face",
+      "retrieved_at": "2026-11-14",
+      "fact": "Scramble follows a right-trending ledge, rounds an exposed second-class corner; one short 4th/easy 5th section below summit"
+     }
+    ]
+   }
+  ],
+  "note": "Mountaineers high point 8,520 vs current 8,566."
+ },
+ "wa_wolframite_mountain_scramble": {
+  "area": "wa_wolframite_mountain",
+  "facts": [
+   {
+    "field": "approach_step",
+    "value": "From Thirtymile TH follow Chewuch Trail just over 8 mi to the Tungsten Trail junction, turn right; Tungsten Trail climbs toward Wolframite past the old mine",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.wta.org/go-hiking/hikes/tungsten",
+      "retrieved_at": "2026-11-14",
+      "fact": "Tungsten Trail leaves the Chewuch Trail after just over 8 miles from Thirtymile Trailhead and climbs toward Wolframite Mountain"
+     }
+    ]
+   },
+   {
+    "field": "permit",
+    "value": "Self-issue wilderness permit at trailhead (no fee)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.wta.org/go-hiking/hikes/tungsten",
+      "retrieved_at": "2026-11-14",
+      "fact": "Permit: self-issue at trailhead, no fee"
+     }
+    ]
+   },
+   {
+    "field": "overview",
+    "value": "Tungsten mine on its slopes found by the international Boundary Survey crew, most active 1915-1918",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.wta.org/go-hiking/hikes/tungsten",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mine discovered by the Boundary Survey crew and most active 1915-1918"
+     }
+    ]
+   },
+   {
+    "field": "high_point_ft",
+    "value": 8137,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.wta.org/go-hiking/hikes/wolframite-mountain",
+      "retrieved_at": "2026-11-14",
+      "fact": "WTA lists highest point 8,137 feet"
+     }
+    ]
+   }
+  ],
+  "note": "WTA wolframite page says summit reached via Cathedral Driveway TH (different approach); only its high point used."
+ },
+ "ca_mt_shasta_avalanche_gulch": {
+  "area": "ca_mt_shasta",
+  "facts": [
+   {
+    "field": "gain_ft",
+    "value": 7300,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.willhiteweb.com/california_climbing/avalanche_gulch/mount_shasta_045.htm",
+      "retrieved_at": "2026-11-14",
+      "fact": "Willhite lists elevation gain about 7,300 feet"
+     },
+     {
+      "url": "https://summitborn.com/mount-shasta-avalanche-gulch-route-guide/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Summitborn lists about 7,250 ft cumulative gain Bunny Flat to summit (labelled their estimate)"
+     }
+    ]
+   },
+   {
+    "field": "dist_mi",
+    "value": 5.5,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.willhiteweb.com/california_climbing/avalanche_gulch/mount_shasta_045.htm",
+      "retrieved_at": "2026-11-14",
+      "fact": "Willhite lists distance about 5.5 miles (direction not stated)"
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Bunny Flat trailhead, Everitt Memorial Highway",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.willhiteweb.com/california_climbing/avalanche_gulch/mount_shasta_045.htm",
+      "retrieved_at": "2026-11-14",
+      "fact": "Take Everitt Memorial Highway to the Bunny Flat Trailhead"
+     },
+     {
+      "url": "https://summitborn.com/mount-shasta-avalanche-gulch-route-guide/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Trailhead elevation about 6,950 ft at Bunny Flat"
+     }
+    ]
+   },
+   {
+    "field": "camp",
+    "value": "Horse Camp (7,900 ft, 1.7 mi); 50/50 Flat (~9,400 ft); Lake Helen (10,400 ft, main base camp)",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.willhiteweb.com/california_climbing/avalanche_gulch/mount_shasta_045.htm",
+      "retrieved_at": "2026-11-14",
+      "fact": "Horse Camp at 1.7 miles, 7,900 ft; 50/50 flat near 9,400 ft; Lake Helen 10,400 ft main base camp"
+     },
+     {
+      "url": "https://summitborn.com/mount-shasta-avalanche-gulch-route-guide/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Most parties take 2 days camping at Helen Lake"
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "Horse Camp, Lake Helen, headwall toward Thumb Rock and through the Red Banks, then Misery Hill to the summit",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://summitborn.com/mount-shasta-avalanche-gulch-route-guide/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Route climbs past Horse Camp to Helen Lake, through the Red Banks and over Misery Hill to the summit"
+     }
+    ]
+   },
+   {
+    "field": "hazard",
+    "value": "Rockfall above Lake Helen (from the Heart and Red Banks); wear a helmet",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.willhiteweb.com/california_climbing/avalanche_gulch/mount_shasta_045.htm",
+      "retrieved_at": "2026-11-14",
+      "fact": "Above Lake Helen rockfall potential begins; put the helmet on"
+     },
+     {
+      "url": "https://summitborn.com/mount-shasta-avalanche-gulch-route-guide/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Rockfall from the Heart and Red Banks is the signature hazard; slips on firm snow; summit plateau featureless"
+     }
+    ]
+   },
+   {
+    "field": "rack",
+    "value": "Ice axe and crampons; no glacier gear needed",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.willhiteweb.com/california_climbing/avalanche_gulch/mount_shasta_045.htm",
+      "retrieved_at": "2026-11-14",
+      "fact": "Only an ice axe and crampons are needed, no extra glacier gear"
+     }
+    ]
+   },
+   {
+    "field": "permit",
+    "value": "Free wilderness permit plus Mount Shasta Summit Pass above 10,000 ft ($25 for 3 days or $30 annual)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://summitborn.com/mount-shasta-avalanche-gulch-route-guide/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Free wilderness permit for everyone; Summit Pass above 10,000 ft, $25 for 3 days or $30 annual"
+     }
+    ]
+   },
+   {
+    "field": "season",
+    "value": "April-June",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://summitborn.com/mount-shasta-avalanche-gulch-route-guide/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Best seasons April to June"
+     }
+    ]
+   },
+   {
+    "field": "time_single_day",
+    "value": "8-10 hr up, 4-5 hr down",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://summitborn.com/mount-shasta-avalanche-gulch-route-guide/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Fit climbers do one long day, about 8-10 hours up and 4-5 hours down"
+     }
+    ]
+   },
+   {
+    "field": "high_point_ft",
+    "value": 14179,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://summitborn.com/mount-shasta-avalanche-gulch-route-guide/",
+      "retrieved_at": "2026-11-14",
+      "fact": "High point 14,179 ft, Mount Shasta summit"
+     }
+    ]
+   }
+  ],
+  "note": "Summitborn gain labelled as their estimate; willhite distance direction not stated; shastaavalanche.org route page returned 404."
+ },
+ "id_a_boy_and_his_goat": {
+  "area": "id_billy_goat_buttress",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "5.10a/b",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/112201303/a-boy-and-his-goat",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project rates it 5.10a/b"
+     }
+    ]
+   },
+   {
+    "field": "length_ft",
+    "value": 80,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/112201303/a-boy-and-his-goat",
+      "retrieved_at": "2026-11-14",
+      "fact": "TR/alpine, 80 ft (24 m)"
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "Tim Ball, Wolf Reihle",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/112201303/a-boy-and-his-goat",
+      "retrieved_at": "2026-11-14",
+      "fact": "FA listed as Tim ball, wolf reihle"
+     }
+    ]
+   },
+   {
+    "field": "descent",
+    "value": "Rappel from tree anchor",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/112201303/a-boy-and-his-goat",
+      "retrieved_at": "2026-11-14",
+      "fact": "Left of the Charles Peterman; rap off tree anchor"
+     }
+    ]
+   },
+   {
+    "field": "overview",
+    "value": "Toprope left of the Charles Peterman: steep start onto flakes; not bolted",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/112201303/a-boy-and-his-goat",
+      "retrieved_at": "2026-11-14",
+      "fact": "Top-roped after climbing the Charles Peterman; steep start onto flakes; unbolted"
+     }
+    ]
+   }
+  ],
+  "note": "Only Mountain Project found for this crag route."
+ },
+ "id_a_wing_and_a_pereyra": {
+  "area": "id_right_flank_the",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "5.12b PG13",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/114622657/a-wing-and-a-pereyra",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project rates it 5.12b PG13"
+     }
+    ]
+   },
+   {
+    "field": "length_ft",
+    "value": 100,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/114622657/a-wing-and-a-pereyra",
+      "retrieved_at": "2026-11-14",
+      "fact": "Sport, 100 ft (30 m)"
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "Jonny Woodward, Martin Berzins, Jose Pereyra, 2001",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/114622657/a-wing-and-a-pereyra",
+      "retrieved_at": "2026-11-14",
+      "fact": "FA Jonny Woodward, Martin Berzins, Jose Pereyra, '01"
+     }
+    ]
+   },
+   {
+    "field": "rack",
+    "value": "Quickdraws",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/114622657/a-wing-and-a-pereyra",
+      "retrieved_at": "2026-11-14",
+      "fact": "Protection: draws"
+     }
+    ]
+   },
+   {
+    "field": "overview",
+    "value": "Center of the smooth face just right of the arete, Bear Creek Wall, Lost River Range",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/114622657/a-wing-and-a-pereyra",
+      "retrieved_at": "2026-11-14",
+      "fact": "Climbs the center of the smooth face, just right of the arete; The Right Flank, Bear Creek Wall"
+     }
+    ]
+   }
+  ],
+  "note": "Only Mountain Project found for this crag route."
+ },
+ "id_alpine_dance_lessons": {
+  "area": "id_myrtle_2_aka_turtle_arches",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "5.8+",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/113535026/alpine-dance-lessons",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project rates it 5.8+"
+     }
+    ]
+   },
+   {
+    "field": "length_ft",
+    "value": 185,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/113535026/alpine-dance-lessons",
+      "retrieved_at": "2026-11-14",
+      "fact": "Trad/alpine, 185 ft (56 m)"
+     }
+    ]
+   },
+   {
+    "field": "overview",
+    "value": "Face/slab past a bolt 20 ft up into a left-arching corner for 180 ft; last 40 ft sustained with good gear",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/113535026/alpine-dance-lessons",
+      "retrieved_at": "2026-11-14",
+      "fact": "Face/slab past a bolt at 20 ft into left-arching corner; last 40 ft sustained, always good gear"
+     }
+    ]
+   },
+   {
+    "field": "hazard",
+    "value": "Potentially dangerous block/flake right of the first bolt (as of 2017)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/113535026/alpine-dance-lessons",
+      "retrieved_at": "2026-11-14",
+      "fact": "As of 2017 a potentially dangerous block/flake is immediately right of the bolt"
+     }
+    ]
+   }
+  ],
+  "note": "Only Mountain Project found; FA field reads just \"Fremont\", not used."
+ },
+ "id_alternative_fact": {
+  "area": "id_right_flank_the",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "5.11c PG13",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/114622623/alternative-fact",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project rates it 5.11c PG13"
+     }
+    ]
+   },
+   {
+    "field": "length_ft",
+    "value": 90,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/114622623/alternative-fact",
+      "retrieved_at": "2026-11-14",
+      "fact": "Sport, 90 ft (27 m)"
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "Jonny Woodward, 1997",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/114622623/alternative-fact",
+      "retrieved_at": "2026-11-14",
+      "fact": "FA Jonny Woodward, ? '97"
+     }
+    ]
+   },
+   {
+    "field": "rack",
+    "value": "Quickdraws",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/114622623/alternative-fact",
+      "retrieved_at": "2026-11-14",
+      "fact": "Protection: draws"
+     }
+    ]
+   },
+   {
+    "field": "overview",
+    "value": "Rounded arete right of the chimney; crux high on the pitch",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/114622623/alternative-fact",
+      "retrieved_at": "2026-11-14",
+      "fact": "Rounded arete right of the chimney, crux well up the pitch"
+     }
+    ]
+   }
+  ],
+  "note": "Only Mountain Project found; a same-named Arizona route (Alternative Fact Checking) was rejected."
+ },
+ "id_axilla": {
+  "area": "id_crooked_rock",
+  "skip_reason": "Mountain Project search API (only a Thai \"Axilla\") and MP Idaho area pages, plus DuckDuckGo for \"Crooked Rock\" Idaho Axilla: no matching route page found."
+ }
+}

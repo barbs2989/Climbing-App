@@ -1,0 +1,1419 @@
+[
+ {
+  "id": "ok_lake_tenkiller_dam_closed",
+  "verdict": "fix",
+  "stored": [
+   35.60369,
+   -97.55858
+  ],
+  "new_lat": 35.59343,
+  "new_lng": -95.03857,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/105920743/lake-tenkiller-dam-closed",
+    "retrieved_at": "2026-11-18",
+    "lat": 35.60369,
+    "lng": -97.55858,
+    "fact": "MP GPS line carries the same garbled longitude as stored (west of OKC)."
+   },
+   {
+    "url": "https://www.geonames.org/4552860/lake-tenkiller-ferry-dam.html",
+    "retrieved_at": "2026-11-18",
+    "lat": 35.59343,
+    "lng": -95.03857,
+    "fact": "GeoNames (GNIS-derived) dam feature, Sequoyah County OK."
+   },
+   {
+    "url": "https://www.swt-wc.usace.army.mil/TENK.lakepage.html",
+    "retrieved_at": "2026-11-18",
+    "lat": 35.5967,
+    "lng": -95.0492,
+    "fact": "USACE Tenkiller lake page: Latitude 35 35 48, Longitude -95 2 57."
+   }
+  ],
+  "note": "Longitude off by ~2.5 deg in MP itself (MP says climbs are below the spillway near Gore). USACE and GeoNames points both lie on the dam, 1.03 km apart (dam length); used GeoNames dam point."
+ },
+ {
+  "id": "mt_blackleaf_canyon",
+  "verdict": "ok",
+  "stored": [
+   48.00901,
+   -112.712113333333
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/106447499/blackleaf-canyon",
+    "retrieved_at": "2026-11-18",
+    "lat": 48.0184,
+    "lng": -112.7131,
+    "fact": "MP area under Montana > Northwest Region > Great Falls Area."
+   }
+  ],
+  "note": "Stored value matches Mountain Project; parent \"Northwest Region\" is a large region, so the distance is expected. Rocky Mountain Front west of Bynum."
+ },
+ {
+  "id": "ca_dos_rios",
+  "verdict": "ok",
+  "stored": [
+   39.70474875,
+   -123.35319875
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/113553216/dos-rios",
+    "retrieved_at": "2026-11-18",
+    "lat": 39.71331,
+    "lng": -123.35277,
+    "fact": "MP Dos Rios bouldering area, Northwest California."
+   },
+   {
+    "url": "https://en.wikipedia.org/wiki/Dos_Rios,_California",
+    "retrieved_at": "2026-11-18",
+    "lat": 39.71694,
+    "lng": -123.35333,
+    "fact": "Wikipedia infobox for the community of Dos Rios."
+   }
+  ],
+  "note": "Stored value matches Mountain Project; parent \"Redwood Coast\" is a large region, so the distance is expected. Two sources agree within 1.4 km."
+ },
+ {
+  "id": "mt_muddy_creek",
+  "verdict": "ok",
+  "stored": [
+   47.990115,
+   -112.70643
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/116500788/muddy-creek",
+    "retrieved_at": "2026-11-18",
+    "lat": 47.99054,
+    "lng": -112.70718,
+    "fact": "MP Muddy Creek, Montana > Northwest Region > Great Falls Area."
+   }
+  ],
+  "note": "Stored value matches Mountain Project; parent \"Northwest Region\" is a large region, so the distance is expected. Rocky Mountain Front."
+ },
+ {
+  "id": "or_whale_s_head_beach_bouldering",
+  "verdict": "ok",
+  "stored": [
+   42.13706,
+   -124.35329
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/115341508/whales-head-beach-bouldering",
+    "retrieved_at": "2026-11-18",
+    "lat": 42.13706,
+    "lng": -124.35329,
+    "fact": "MP area; MP files it under Oregon > Coastal Region."
+   },
+   {
+    "url": "https://en.wikipedia.org/wiki/Samuel_H._Boardman_State_Scenic_Corridor",
+    "retrieved_at": "2026-11-18",
+    "lat": 42.1201122,
+    "lng": -124.3537114,
+    "fact": "Boardman corridor (contains Whaleshead Beach) infobox."
+   }
+  ],
+  "note": "Stored value matches Mountain Project; parent \"Southwest Oregon\" is a large region, so the distance is expected. Place is right (Boardman corridor north of Brookings)."
+ },
+ {
+  "id": "mi_petoskey_park",
+  "verdict": "ok",
+  "stored": [
+   45.3791,
+   -84.95247
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/120434040/petoskey-park",
+    "retrieved_at": "2026-11-18",
+    "lat": 45.3791,
+    "lng": -84.95247,
+    "fact": "MP area under Michigan > Lower Peninsula."
+   },
+   {
+    "url": "https://en.wikipedia.org/wiki/Petoskey,_Michigan",
+    "retrieved_at": "2026-11-18",
+    "lat": 45.37333,
+    "lng": -84.95528,
+    "fact": "Wikipedia infobox for Petoskey city."
+   }
+  ],
+  "note": "Stored value matches Mountain Project; parent \"Lower Peninsula\" is a large region, so the distance is expected."
+ },
+ {
+  "id": "co_red_mountain",
+  "verdict": "ok",
+  "stored": [
+   37.1122,
+   -105.1813
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://en.wikipedia.org/wiki/Red_Mountain_(Costilla_County,_Colorado)",
+    "retrieved_at": "2026-11-18",
+    "lat": 37.112242,
+    "lng": -105.1811176,
+    "fact": "Wikipedia infobox (GNIS) for Red Mountain, Culebra Range."
+   }
+  ],
+  "note": "Stored matches Wikipedia/GNIS summit. Parent Sangre de Cristo Range spans ~350 km; distance from its centre is expected. No MP area found by search."
+ },
+ {
+  "id": "wi_cave_point_county_park_door_county",
+  "verdict": "ok",
+  "stored": [
+   44.9298075,
+   -87.172835
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/113495421/cave-point-county-park-door-county",
+    "retrieved_at": "2026-11-18",
+    "lat": 44.9292,
+    "lng": -87.17331,
+    "fact": "MP area under Wisconsin > Niagara Escarpment."
+   }
+  ],
+  "note": "Stored value matches Mountain Project; parent \"Niagara Escarpment & Kettle Moraine\" is a large region, so the distance is expected. Door County peninsula."
+ },
+ {
+  "id": "id_south_black_magic_channel",
+  "verdict": "ok",
+  "stored": [
+   43.06548,
+   -114.31529
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/200888967/south-black-magic-channel",
+    "retrieved_at": "2026-11-18",
+    "lat": 43.06548,
+    "lng": -114.31529,
+    "fact": "MP area under Idaho > Central Idaho."
+   },
+   {
+    "url": "https://en.wikipedia.org/wiki/Black_Magic_Canyon",
+    "retrieved_at": "2026-11-18",
+    "lat": 43.1932,
+    "lng": -114.3246,
+    "fact": "Wikipedia point for Black Magic Canyon (Big Wood River)."
+   }
+  ],
+  "note": "Stored value matches Mountain Project; parent \"Central Idaho\" is a large region, so the distance is expected. Wikipedia point is the canyon reference, 14 km north; channel area plausible."
+ },
+ {
+  "id": "co_culebra_peak",
+  "verdict": "ok",
+  "stored": [
+   37.1224,
+   -105.1858
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://en.wikipedia.org/wiki/Culebra_Peak",
+    "retrieved_at": "2026-11-18",
+    "lat": 37.1222416,
+    "lng": -105.1855625,
+    "fact": "Wikipedia infobox (GNIS/NGS) for Culebra Peak summit."
+   }
+  ],
+  "note": "Stored matches the summit. Parent Sangre de Cristo Range is ~350 km long; distance expected. No MP area found by search."
+ },
+ {
+  "id": "id_lenville_road_boulders",
+  "verdict": "ok",
+  "stored": [
+   46.61189,
+   -116.802
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/111752836/lenville-road-boulders",
+    "retrieved_at": "2026-11-18",
+    "lat": 46.61189,
+    "lng": -116.802,
+    "fact": "MP area under Idaho > North Idaho > Moscow Area Bouldering."
+   }
+  ],
+  "note": "Stored value matches Mountain Project; parent \"North Idaho\" is a large region, so the distance is expected."
+ },
+ {
+  "id": "ca_needles_kern_river_the",
+  "verdict": "ok",
+  "stored": [
+   35.9141505375394,
+   -118.514436713671
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/105834180/southern-sierra-the-needles-kern-river-domelands-etc",
+    "retrieved_at": "2026-11-18",
+    "lat": 36.02916,
+    "lng": -118.46983,
+    "fact": "MP region \"Southern Sierra - The Needles, Kern River, Domelands, etc.\""
+   }
+  ],
+  "note": "Region-sized area (13 child areas); stored is ~13 km from MP point, within region tolerance. Parent Western Sierra is a large region."
+ },
+ {
+  "id": "co_turtle_rocks_baby_turtle_and_the_corridor",
+  "verdict": "fix_one_source",
+  "stored": [
+   40.0633733333333,
+   -106.069886666667
+  ],
+  "new_lat": 38.88192,
+  "new_lng": -106.14758,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/204127342/turtle-rock-massif",
+    "retrieved_at": "2026-11-18",
+    "lat": 38.88192,
+    "lng": -106.14758,
+    "fact": "MP \"Turtle Rock Massif\" under Colorado > Buena Vista (parent of The Corridor)."
+   },
+   {
+    "url": "https://www.mountainproject.com/area/119563481/the-corridor",
+    "retrieved_at": "2026-11-18",
+    "lat": 38.88085,
+    "lng": -106.14753,
+    "fact": "MP child The Corridor, under Turtle Rock Massif."
+   }
+  ],
+  "note": "Stored lat 40.06 is ~130 km north of all its children (38.88) and of its own parent Buena Vista; MP now names it Turtle Rock Massif. Only MP gives the point."
+ },
+ {
+  "id": "wv_harpers_ferry",
+  "verdict": "ok",
+  "stored": [
+   39.3226,
+   -77.7271
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/107574380/harpers-ferry",
+    "retrieved_at": "2026-11-18",
+    "lat": 39.3226,
+    "lng": -77.7271,
+    "fact": "MP area under West Virginia > Eastern WV."
+   },
+   {
+    "url": "https://en.wikipedia.org/wiki/Harpers_Ferry,_West_Virginia",
+    "retrieved_at": "2026-11-18",
+    "lat": 39.32778,
+    "lng": -77.74639,
+    "fact": "Wikipedia infobox for Harpers Ferry town."
+   }
+  ],
+  "note": "Stored value matches Mountain Project; parent \"Eastern WV\" is a large region, so the distance is expected. Two sources within 1.8 km (crag vs town centre)."
+ },
+ {
+  "id": "ca_sherman_pass",
+  "verdict": "ok",
+  "stored": [
+   36.0215325,
+   -118.3401975
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/117537319/sherman-pass-road",
+    "retrieved_at": "2026-11-18",
+    "lat": 36.01391,
+    "lng": -118.34698,
+    "fact": "MP \"Sherman Pass Road\" under Southern Sierra - The Needles/Kern."
+   }
+  ],
+  "note": "Stored within 1 km of MP; parent Western Sierra is a large region."
+ },
+ {
+  "id": "mt_baker_lake_boulders",
+  "verdict": "ok",
+  "stored": [
+   45.89355,
+   -114.25759
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/112159382/baker-lake-boulders",
+    "retrieved_at": "2026-11-18",
+    "lat": 45.89355,
+    "lng": -114.25759,
+    "fact": "MP area under Montana > Northwest Region > Missoula Area."
+   }
+  ],
+  "note": "Stored value matches Mountain Project; parent \"Northwest Region\" is a large region, so the distance is expected. Bitterroot range."
+ },
+ {
+  "id": "co_corridor_the",
+  "verdict": "parent_wrong",
+  "stored": [
+   38.88085,
+   -106.14753
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": 38.88192,
+  "parent_new_lng": -106.14758,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/119563481/the-corridor",
+    "retrieved_at": "2026-11-18",
+    "lat": 38.88085,
+    "lng": -106.14753,
+    "fact": "MP The Corridor, Colorado > Buena Vista > Turtle Rock Massif."
+   },
+   {
+    "url": "https://www.mountainproject.com/area/204127342/turtle-rock-massif",
+    "retrieved_at": "2026-11-18",
+    "lat": 38.88192,
+    "lng": -106.14758,
+    "fact": "MP parent Turtle Rock Massif GPS."
+   }
+  ],
+  "note": "Child is right; parent \"Turtle Rocks, Baby Turtle, and The Corridor\" stored at lat 40.06 is wrong (MP-only value for parent)."
+ },
+ {
+  "id": "wy_leg",
+  "verdict": "ok",
+  "stored": [
+   41.23302,
+   -105.39548
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/108778821/leg",
+    "retrieved_at": "2026-11-18",
+    "lat": 41.23302,
+    "lng": -105.39548,
+    "fact": "MP: ridge north of Headquarters Trail high point; start at Lincoln Monument, I-80 summit."
+   },
+   {
+    "url": "https://en.wikipedia.org/wiki/Abraham_Lincoln_Memorial_Monument",
+    "retrieved_at": "2026-11-18",
+    "lat": 41.23693,
+    "lng": -105.43626,
+    "fact": "Wikipedia point for the Lincoln Monument at the I-80 summit, the stated start."
+   },
+   {
+    "url": "https://www.mountainproject.com/area/108778403/9000-venture-series",
+    "retrieved_at": "2026-11-18",
+    "lat": 42.50949,
+    "lng": -105.85364,
+    "fact": "MP: series = the 14 Laramie Range topo high points above 9000 ft; Leg is one."
+   }
+  ],
+  "note": "Leg is right (3.4 km from its stated start). Parent 9000 Venture Series is a peak list spread across the whole Laramie Range, so its point is not a location."
+ },
+ {
+  "id": "az_kaibab_plateau",
+  "verdict": "ok",
+  "stored": [
+   36.726485,
+   -112.134385
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/115143262/kaibab-plateau",
+    "retrieved_at": "2026-11-18",
+    "lat": 36.70247,
+    "lng": -112.22927,
+    "fact": "MP area under Arizona > Northern Arizona."
+   },
+   {
+    "url": "https://en.wikipedia.org/wiki/Kaibab_Plateau",
+    "retrieved_at": "2026-11-18",
+    "lat": 36.12667,
+    "lng": -112.00889,
+    "fact": "Wikipedia point for the plateau (region centre)."
+   }
+  ],
+  "note": "Region-sized area; stored within 9 km of MP. Parent Northern Arizona is a large region."
+ },
+ {
+  "id": "id_copper_falls",
+  "verdict": "ok",
+  "stored": [
+   48.97132,
+   -116.14358
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/118879932/copper-falls",
+    "retrieved_at": "2026-11-18",
+    "lat": 48.97132,
+    "lng": -116.14358,
+    "fact": "MP area under Idaho > North Idaho."
+   }
+  ],
+  "note": "Stored value matches Mountain Project; parent \"North Idaho\" is a large region, so the distance is expected. Near Eastport by the Canadian border."
+ },
+ {
+  "id": "az_thumb",
+  "verdict": "ok",
+  "stored": [
+   35.71958,
+   -113.35494
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://openbeta.io/area/fb061789-5ea5-554f-b385-535979e04bf2/thumb",
+    "retrieved_at": "2026-11-18",
+    "lat": 35.71958,
+    "lng": -113.35494,
+    "fact": "OpenBeta Thumb under Grand Canyon National Park > Unconventionals, no description."
+   },
+   {
+    "url": "https://www.geonames.org/search.html?q=Thumb&country=US&adminCode1=AZ",
+    "retrieved_at": "2026-11-18",
+    "lat": 35.7194,
+    "lng": -113.3556,
+    "fact": "GeoNames (GNIS) 'Thumb', mountain, Mohave County AZ, N 35 43 10 W 113 21 20."
+   },
+   {
+    "url": "https://openbeta.io/area/e25f632e-4c23-5ae2-9209-0e32a26f309e/unconventionals",
+    "retrieved_at": "2026-11-18",
+    "lat": 35.55628,
+    "lng": -111.91827,
+    "fact": "Parent Unconventionals = 'seventeen unusually named vertices'; its point is the Northern Arizona default."
+   }
+  ],
+  "note": "Stored matches the GNIS summit 'Thumb'. Parent Unconventionals has no own point (copies Northern Arizona). Caveat: this GNIS Thumb is in Mohave County south of the park, maybe a homonym of the intended canyon feature; owner check."
+ },
+ {
+  "id": "mt_little_mcgregor_massifs",
+  "verdict": "ok",
+  "stored": [
+   48.04825,
+   -114.82792
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/114437611/little-mcgregor-massifs",
+    "retrieved_at": "2026-11-18",
+    "lat": 48.05414,
+    "lng": -114.82708,
+    "fact": "MP area under Montana > Northwest Region > Kalispell Area."
+   }
+  ],
+  "note": "Stored value matches Mountain Project; parent \"Northwest Region\" is a large region, so the distance is expected."
+ },
+ {
+  "id": "ut_antelope_island",
+  "verdict": "ok",
+  "stored": [
+   41.03262,
+   -112.26339
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/119088492/antelope-island",
+    "retrieved_at": "2026-11-18",
+    "lat": 40.9516,
+    "lng": -112.211,
+    "fact": "MP area under Utah > West Desert."
+   },
+   {
+    "url": "https://en.wikipedia.org/wiki/Antelope_Island",
+    "retrieved_at": "2026-11-18",
+    "lat": 40.95833,
+    "lng": -112.21389,
+    "fact": "Wikipedia infobox for Antelope Island."
+   }
+  ],
+  "note": "Stored point (likely child centroid) is ~10 km from the island centre but still on the 25 km island; region tolerance. Parent West Desert is a large region."
+ },
+ {
+  "id": "co_turtle_rocks",
+  "verdict": "parent_wrong",
+  "stored": [
+   38.88191,
+   -106.14755
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": 38.88192,
+  "parent_new_lng": -106.14758,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/204127342/turtle-rock-massif",
+    "retrieved_at": "2026-11-18",
+    "lat": 38.88192,
+    "lng": -106.14758,
+    "fact": "MP Turtle Rock Massif (the Turtle Rocks formation), Colorado > Buena Vista."
+   }
+  ],
+  "note": "Child stored 38.88191,-106.14755 matches MP; parent \"Turtle Rocks, Baby Turtle, and The Corridor\" stored lat 40.06 is wrong (MP-only value)."
+ },
+ {
+  "id": "wi_apostle_islands",
+  "verdict": "ok",
+  "stored": [
+   46.8500425,
+   -90.6003725
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/114794371/apostle-islands",
+    "retrieved_at": "2026-11-18",
+    "lat": 46.86769,
+    "lng": -90.68624,
+    "fact": "MP area under Wisconsin > Northwest."
+   },
+   {
+    "url": "https://en.wikipedia.org/wiki/Apostle_Islands",
+    "retrieved_at": "2026-11-18",
+    "lat": 46.96528,
+    "lng": -90.66417,
+    "fact": "Wikipedia point for the island group."
+   }
+  ],
+  "note": "Region-sized (island group); stored within ~7 km of MP. Parent Northwest is a large region."
+ },
+ {
+  "id": "nv_elephant_land_aka_the_lava_beds",
+  "verdict": "ok",
+  "stored": [
+   40.585065,
+   -119.002085
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/113481050/elephant-land-aka-the-lava-beds",
+    "retrieved_at": "2026-11-18",
+    "lat": 40.58399,
+    "lng": -118.99993,
+    "fact": "MP area under Nevada > Western Nevada."
+   }
+  ],
+  "note": "Stored value matches Mountain Project; parent \"Western Nevada\" is a large region, so the distance is expected."
+ },
+ {
+  "id": "nv_rainbow_canyon",
+  "verdict": "ok",
+  "stored": [
+   37.3743683333333,
+   -114.550668333333
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/105849658/rainbow-canyon",
+    "retrieved_at": "2026-11-18",
+    "lat": 37.37404,
+    "lng": -114.55026,
+    "fact": "MP area under Nevada > Southern Nevada."
+   },
+   {
+    "url": "https://en.wikipedia.org/wiki/Rainbow_Canyon_(Nevada)",
+    "retrieved_at": "2026-11-18",
+    "lat": 37.615,
+    "lng": -114.514,
+    "fact": "Wikipedia point at the canyon north end (canyon runs south of Caliente)."
+   }
+  ],
+  "note": "Stored value matches Mountain Project; parent \"Southern Nevada\" is a large region, so the distance is expected."
+ },
+ {
+  "id": "va_harkening_hill",
+  "verdict": "ok",
+  "stored": [
+   37.4575390735855,
+   -79.6184924383575
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/107421639/harkening-hill",
+    "retrieved_at": "2026-11-18",
+    "lat": 37.45549,
+    "lng": -79.61958,
+    "fact": "MP area under Virginia > Southwest Virginia (Appalachia)."
+   }
+  ],
+  "note": "Stored value matches Mountain Project; parent \"Southwest Virginia (Appalachia)\" is a large region, so the distance is expected. Peaks of Otter; MP files it the same way."
+ },
+ {
+  "id": "mt_trapper_creek",
+  "verdict": "ok",
+  "stored": [
+   45.92278,
+   -114.22565
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/109433168/trapper-creek",
+    "retrieved_at": "2026-11-18",
+    "lat": 45.92278,
+    "lng": -114.22565,
+    "fact": "MP area under Montana > Northwest Region > Missoula Area."
+   }
+  ],
+  "note": "Stored value matches Mountain Project; parent \"Northwest Region\" is a large region, so the distance is expected."
+ },
+ {
+  "id": "wi_willow_river_state_park",
+  "verdict": "ok",
+  "stored": [
+   45.0196,
+   -92.67418
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/105795588/willow-river-state-park",
+    "retrieved_at": "2026-11-18",
+    "lat": 45.0196,
+    "lng": -92.67417,
+    "fact": "MP area under Wisconsin > Northwest."
+   },
+   {
+    "url": "https://en.wikipedia.org/wiki/Willow_River_State_Park",
+    "retrieved_at": "2026-11-18",
+    "lat": 45.01556,
+    "lng": -92.69556,
+    "fact": "Wikipedia infobox for the state park."
+   }
+  ],
+  "note": "Stored value matches Mountain Project; parent \"Northwest\" is a large region, so the distance is expected. Two sources within 1.8 km (park is large)."
+ },
+ {
+  "id": "az_vulcans_throne",
+  "verdict": "ok",
+  "stored": [
+   36.21876,
+   -113.07712
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://en.wikipedia.org/wiki/Vulcan's_Throne",
+    "retrieved_at": "2026-11-18",
+    "lat": 36.2188701,
+    "lng": -113.0774265,
+    "fact": "Wikipedia infobox (GNIS) for Vulcans Throne, Toroweap."
+   }
+  ],
+  "note": "Stored matches Wikipedia/GNIS; parent Grand Canyon National Park is large and its stored point is a centroid. No MP area found."
+ },
+ {
+  "id": "ut_bullion_canyon_ice",
+  "verdict": "ok",
+  "stored": [
+   38.41408,
+   -112.32728
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/202212782/bullion-canyon-ice",
+    "retrieved_at": "2026-11-18",
+    "lat": 38.41408,
+    "lng": -112.32728,
+    "fact": "MP area under Utah > Central Utah."
+   }
+  ],
+  "note": "Stored value matches Mountain Project; parent \"Central Utah\" is a large region, so the distance is expected. Near Marysvale."
+ },
+ {
+  "id": "id_box_canyon",
+  "verdict": "ok",
+  "stored": [
+   43.8657644444444,
+   -112.917766666667
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/107290450/box-canyon",
+    "retrieved_at": "2026-11-18",
+    "lat": 43.8621,
+    "lng": -112.9204,
+    "fact": "MP area under Idaho > Central Idaho > Lemhi Range."
+   }
+  ],
+  "note": "Stored value matches Mountain Project; parent \"Central Idaho\" is a large region, so the distance is expected."
+ },
+ {
+  "id": "ca_mojave_national_preserve",
+  "verdict": "ok",
+  "stored": [
+   35.2347655,
+   -115.479435
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/106156350/mojave-national-preserve",
+    "retrieved_at": "2026-11-18",
+    "lat": 35.0121,
+    "lng": -115.65499,
+    "fact": "MP area under California > High Desert."
+   },
+   {
+    "url": "https://en.wikipedia.org/wiki/Mojave_National_Preserve",
+    "retrieved_at": "2026-11-18",
+    "lat": 34.883,
+    "lng": -115.717,
+    "fact": "Wikipedia infobox for the preserve."
+   }
+  ],
+  "note": "Region-sized (preserve ~6,500 km2); stored point is inside the preserve, ~29 km from MP point (child centroid). Parent High Desert is large."
+ },
+ {
+  "id": "ak_granite_tors",
+  "verdict": "ok",
+  "stored": [
+   64.85382,
+   -146.27091
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/105975526/granite-tors",
+    "retrieved_at": "2026-11-18",
+    "lat": 64.85382,
+    "lng": -146.27091,
+    "fact": "MP area under Alaska > Fairbanks and Vicinity."
+   }
+  ],
+  "note": "Stored value matches Mountain Project; parent \"Fairbanks and Vicinity\" is a large region, so the distance is expected. Chena Hot Springs Road."
+ },
+ {
+  "id": "or_kissing_rock",
+  "verdict": "ok",
+  "stored": [
+   42.3865,
+   -124.42409
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/119379729/kissing-rock",
+    "retrieved_at": "2026-11-18",
+    "lat": 42.3865,
+    "lng": -124.42409,
+    "fact": "MP area under Oregon > Southwest Oregon."
+   }
+  ],
+  "note": "Stored value matches Mountain Project; parent \"Southwest Oregon\" is a large region, so the distance is expected. Coast at Gold Beach."
+ },
+ {
+  "id": "ca_parker_bluff",
+  "verdict": "ok",
+  "stored": [
+   35.97769,
+   -118.55727
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/123441174/parker-bluff",
+    "retrieved_at": "2026-11-18",
+    "lat": 35.97769,
+    "lng": -118.55727,
+    "fact": "MP area under Southern Sierra - The Needles/Kern."
+   }
+  ],
+  "note": "Stored value matches Mountain Project; parent \"Western Sierra\" is a large region, so the distance is expected."
+ },
+ {
+  "id": "ak_mount_saint_elias",
+  "verdict": "ok",
+  "stored": [
+   60.29222,
+   -140.93139
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://en.wikipedia.org/wiki/Mount_Saint_Elias",
+    "retrieved_at": "2026-11-18",
+    "lat": 60.29222,
+    "lng": -140.93139,
+    "fact": "Wikipedia infobox for Mount Saint Elias summit."
+   }
+  ],
+  "note": "Stored equals the summit coordinate; parent St. Elias Range is a large range."
+ },
+ {
+  "id": "az_winslow_hwy_s_87_99_corridors",
+  "verdict": "ok",
+  "stored": [
+   34.79039578125,
+   -110.868774427083
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/107448739/winslow-area-hwys-87-99-corridors",
+    "retrieved_at": "2026-11-18",
+    "lat": 35.00747,
+    "lng": -110.70437,
+    "fact": "MP \"Winslow Area - Hwys 87 & 99 Corridors\", Northern Arizona."
+   }
+  ],
+  "note": "Region-sized corridor area (4 children); stored ~28 km from MP point along the highways. Parent Northern Arizona is large."
+ },
+ {
+  "id": "ca_dark_angel_buttress_the",
+  "verdict": "fix_one_source",
+  "stored": [
+   32.26613,
+   -116.32559
+  ],
+  "new_lat": 33.76058,
+  "new_lng": -116.6745,
+  "parent_new_lat": 33.76248,
+  "parent_new_lng": -116.67424,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/109921591/the-dark-angel-buttress",
+    "retrieved_at": "2026-11-18",
+    "lat": 33.76058,
+    "lng": -116.6745,
+    "fact": "MP: California > Tahquitz & Suicide > Others > Devils Staircase."
+   },
+   {
+    "url": "https://www.mountainproject.com/area/109907677/devils-staircase",
+    "retrieved_at": "2026-11-18",
+    "lat": 33.76248,
+    "lng": -116.67424,
+    "fact": "MP parent Devils Staircase GPS, Tahquitz area."
+   }
+  ],
+  "note": "Stored 32.27,-116.33 is in Baja California; MP puts it by Tahquitz/Idyllwild. Parent Devils Staircase stored 33.39 is also wrong (MP 33.762)."
+ },
+ {
+  "id": "or_cougar_rock_boulders",
+  "verdict": "ok",
+  "stored": [
+   42.23606,
+   -121.7033
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/117734149/cougar-rock-boulders",
+    "retrieved_at": "2026-11-18",
+    "lat": 42.23606,
+    "lng": -121.7033,
+    "fact": "MP area under Oregon > Southwest Oregon."
+   }
+  ],
+  "note": "Stored value matches Mountain Project; parent \"Southwest Oregon\" is a large region, so the distance is expected. Klamath Falls area."
+ },
+ {
+  "id": "mt_north_fork_teton_river_canyon",
+  "verdict": "ok",
+  "stored": [
+   47.88424,
+   -112.71728
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/112857477/north-fork-teton-river-canyon",
+    "retrieved_at": "2026-11-18",
+    "lat": 47.88451,
+    "lng": -112.71795,
+    "fact": "MP area under Montana > Northwest Region > Great Falls Area."
+   }
+  ],
+  "note": "Stored value matches Mountain Project; parent \"Northwest Region\" is a large region, so the distance is expected."
+ },
+ {
+  "id": "va_iron_gate_va",
+  "verdict": "ok",
+  "stored": [
+   37.81205,
+   -79.7991
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/106761455/iron-gate-va",
+    "retrieved_at": "2026-11-18",
+    "lat": 37.8132,
+    "lng": -79.7997,
+    "fact": "MP area under Virginia > Shenandoah & NW VA Region."
+   },
+   {
+    "url": "https://en.wikipedia.org/wiki/Iron_Gate,_Virginia",
+    "retrieved_at": "2026-11-18",
+    "lat": 37.79861,
+    "lng": -79.79111,
+    "fact": "Wikipedia infobox for the town of Iron Gate."
+   }
+  ],
+  "note": "Stored value matches Mountain Project; parent \"Shenandoah & NW VA Region\" is a large region, so the distance is expected."
+ },
+ {
+  "id": "mt_chaffin_creek",
+  "verdict": "ok",
+  "stored": [
+   45.949605,
+   -114.286395
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/113609777/chaffin-creek",
+    "retrieved_at": "2026-11-18",
+    "lat": 45.9551,
+    "lng": -114.21373,
+    "fact": "MP area under Montana > Northwest Region > Missoula Area."
+   }
+  ],
+  "note": "Stored (child centroid) within 6 km of MP; parent Northwest Region is large."
+ },
+ {
+  "id": "ca_roadkill_crag",
+  "verdict": "ok",
+  "stored": [
+   36.02916,
+   -118.46982
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/124155745/roadkill-crag",
+    "retrieved_at": "2026-11-18",
+    "lat": 36.02916,
+    "lng": -118.46982,
+    "fact": "MP area under Southern Sierra - The Needles/Kern."
+   }
+  ],
+  "note": "Stored value matches Mountain Project; parent \"Western Sierra\" is a large region, so the distance is expected."
+ },
+ {
+  "id": "va_guest_river_gorge",
+  "verdict": "ok",
+  "stored": [
+   36.9023318259411,
+   -82.4114743852817
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/108649375/guest-river-gorge",
+    "retrieved_at": "2026-11-18",
+    "lat": 36.89934,
+    "lng": -82.41876,
+    "fact": "MP area under Virginia > Southwest Virginia (Appalachia)."
+   }
+  ],
+  "note": "Stored value matches Mountain Project; parent \"Southwest Virginia (Appalachia)\" is a large region, so the distance is expected."
+ },
+ {
+  "id": "ca_brewery_the",
+  "verdict": "ok",
+  "stored": [
+   36.00883,
+   -118.51928
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/123896924/brewery-the",
+    "retrieved_at": "2026-11-18",
+    "lat": 36.00883,
+    "lng": -118.51928,
+    "fact": "MP area under Southern Sierra - The Needles/Kern."
+   }
+  ],
+  "note": "Stored value matches Mountain Project; parent \"Western Sierra\" is a large region, so the distance is expected."
+ },
+ {
+  "id": "mt_anaconda_range",
+  "verdict": "ok",
+  "stored": [
+   45.98641,
+   -113.46038
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/119031158/anaconda-range",
+    "retrieved_at": "2026-11-18",
+    "lat": 45.96364,
+    "lng": -113.39528,
+    "fact": "MP area under Montana > Southwest Region > Butte Area."
+   },
+   {
+    "url": "https://en.wikipedia.org/wiki/Anaconda_Range",
+    "retrieved_at": "2026-11-18",
+    "lat": 45.95,
+    "lng": -113.467,
+    "fact": "Wikipedia infobox for the Anaconda Range."
+   }
+  ],
+  "note": "Mountain range; stored within 6 km of both. Parent Southwest Region is large."
+ },
+ {
+  "id": "mo_upper_limits_chesterfield",
+  "verdict": "ok",
+  "stored": [
+   38.66382,
+   -90.60584
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/115408117/upper-limits-chesterfield",
+    "retrieved_at": "2026-11-18",
+    "lat": 38.66382,
+    "lng": -90.60584,
+    "fact": "MP area under Missouri > Indoor Walls."
+   },
+   {
+    "url": "https://en.wikipedia.org/wiki/Chesterfield,_Missouri",
+    "retrieved_at": "2026-11-18",
+    "lat": 38.65889,
+    "lng": -90.58028,
+    "fact": "Wikipedia infobox for Chesterfield city."
+   }
+  ],
+  "note": "Parent Indoor Walls is a statewide list; distance expected."
+ },
+ {
+  "id": "wi_420th_bluff",
+  "verdict": "ok",
+  "stored": [
+   44.83347,
+   -91.94985
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/106305316/420th-bluff",
+    "retrieved_at": "2026-11-18",
+    "lat": 44.83347,
+    "lng": -91.94985,
+    "fact": "MP area under Wisconsin > Central."
+   }
+  ],
+  "note": "Stored value matches Mountain Project; parent \"Central\" is a large region, so the distance is expected."
+ },
+ {
+  "id": "wi_stevens_point_buildering",
+  "verdict": "ok",
+  "stored": [
+   44.5276,
+   -89.5703
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/108133302/stevens-point-buildering",
+    "retrieved_at": "2026-11-18",
+    "lat": 44.5242,
+    "lng": -89.5767,
+    "fact": "MP area under Wisconsin > Buildering Sites (statewide)."
+   },
+   {
+    "url": "https://en.wikipedia.org/wiki/Stevens_Point,_Wisconsin",
+    "retrieved_at": "2026-11-18",
+    "lat": 44.52306,
+    "lng": -89.56028,
+    "fact": "Wikipedia infobox for Stevens Point."
+   }
+  ],
+  "note": "Parent is a statewide list; distance expected."
+ },
+ {
+  "id": "ca_wagon_wheel",
+  "verdict": "ok",
+  "stored": [
+   35.5742651515151,
+   -117.545207424242
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/108088026/wagon-wheel",
+    "retrieved_at": "2026-11-18",
+    "lat": 35.57274,
+    "lng": -117.55141,
+    "fact": "MP area under California > High Desert > High Desert Bouldering."
+   }
+  ],
+  "note": "Stored value matches Mountain Project; parent \"High Desert Bouldering\" is a large region, so the distance is expected. Near Ridgecrest."
+ },
+ {
+  "id": "nv_needles_and_haystacks",
+  "verdict": "ok",
+  "stored": [
+   37.35394,
+   -115.23576
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/118236546/needles-and-haystacks",
+    "retrieved_at": "2026-11-18",
+    "lat": 37.34145,
+    "lng": -115.21692,
+    "fact": "MP area under Nevada > Southern Nevada."
+   }
+  ],
+  "note": "Stored within 2 km of MP; parent Southern Nevada is large."
+ },
+ {
+  "id": "id_hells_canyon",
+  "verdict": "ok",
+  "stored": [
+   45.1327,
+   -116.73273
+  ],
+  "new_lat": null,
+  "new_lng": null,
+  "parent_new_lat": null,
+  "parent_new_lng": null,
+  "right_parent": null,
+  "sources": [
+   {
+    "url": "https://www.mountainproject.com/area/105795225/hells-canyon",
+    "retrieved_at": "2026-11-18",
+    "lat": 45.1292,
+    "lng": -116.738,
+    "fact": "MP area under Idaho > West Idaho."
+   },
+   {
+    "url": "https://en.wikipedia.org/wiki/Hells_Canyon",
+    "retrieved_at": "2026-11-18",
+    "lat": 45.37139,
+    "lng": -116.63833,
+    "fact": "Wikipedia point for Hells Canyon (long canyon)."
+   }
+  ],
+  "note": "Stored value matches Mountain Project; parent \"West Idaho\" is a large region, so the distance is expected."
+ }
+]

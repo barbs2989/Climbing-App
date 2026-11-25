@@ -1,0 +1,678 @@
+{
+ "wa_concord_tower_north_face": {
+  "area": "wa_concord_tower",
+  "set": {
+   "road": {
+    "name": "North Cascades Highway (SR-20)",
+    "status": "Paved",
+    "driveNote": "The Blue Lake Trailhead (5,400 ft) is on the south side of SR-20, half a mile beyond milepost 162 and roughly 31 miles west of Winthrop. It has vault toilets and about 20 parking spaces but no drinking water, and the lot is often full.",
+    "seasonalGate": "SR-20 is gated each winter from the Ross Dam trailhead (MP 134) to the Silver Star gate (MP 171). Recent closures fell between mid-November and early December (Nov. 18 in 2024, Dec. 4 in 2025), and the road has reopened in late April."
+   }
+  },
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/106543279/north-face",
+    "https://www.mountaineers.org/activities/routes-places/concord-tower-n-face",
+    "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/blue-lake-trailhead",
+    "https://wsdot.wa.gov/travel/roads-bridges/mountain-pass-closure-and-opening-dates",
+    "https://wsdot.wa.gov/about/news/2025/sr-20-north-cascades-highway-closes-season-thursday-dec-4-6-pm",
+    "https://wsdot.com/travel/real-time/mountainpasses/North-Cascade-Hwy",
+    "https://www.openstreetmap.org/node/9181916060",
+    "https://epqs.nationalmap.gov/v1/json"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "grade",
+    "value": "5.7",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106543279/north-face",
+      "fact": "5.7",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/concord-tower-n-face",
+      "fact": "Grade II, 5.7 rock climb",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "rock_grade",
+    "value": "5.7",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106543279/north-face",
+      "fact": "5.7",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/concord-tower-n-face",
+      "fact": "5.7",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "alpine_grade",
+    "value": "II",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106543279/north-face",
+      "fact": "Grade II",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/concord-tower-n-face",
+      "fact": "Grade II",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "commitment",
+    "value": "II",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106543279/north-face",
+      "fact": "Grade II",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/concord-tower-n-face",
+      "fact": "Grade II",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "pitches",
+    "value": 3,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106543279/north-face",
+      "fact": "3 pitches (SummitPost 403 even in Chrome; Mountaineers page gives no count)",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "length_m",
+    "value": 91,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106543279/north-face",
+      "fact": "300 ft (91 m)",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "waypoints/Blue Lake Trailhead",
+    "value": {
+     "name": "Blue Lake Trailhead",
+     "lat": 48.518965,
+     "lng": -120.67436
+    },
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/blue-lake-trailhead",
+      "official": true,
+      "fact": "Blue Lake Trailhead 48.51901, -120.6742 (13 m from pin)",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://www.openstreetmap.org/node/9181916060",
+      "fact": "highway=trailhead 'Blue Lake Trailhead' 48.518994,-120.674346 (3 m from pin); parking way 301865978 beside it",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "permit",
+    "value": "No climbing or wilderness permit required; Northwest Forest Pass (or day fee) to park at developed trailheads.",
+    "method": "official-1",
+    "level": "locked",
+    "expires_at": "2027-11-18T00:00:00Z",
+    "evidence": [
+     {
+      "url": "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/blue-lake-trailhead",
+      "official": true,
+      "fact": "passes accepted: Digital Day Pass, Northwest Forest Pass, Interagency; $5/day or $30/yr; no permit listed",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "road",
+    "value": {
+     "name": "North Cascades Highway (SR-20)",
+     "status": "Paved",
+     "driveNote": "The Blue Lake Trailhead (5,400 ft) is on the south side of SR-20, half a mile beyond milepost 162 and roughly 31 miles west of Winthrop. It has vault toilets and about 20 parking spaces but no drinking water, and the lot is often full.",
+     "seasonalGate": "SR-20 is gated each winter from the Ross Dam trailhead (MP 134) to the Silver Star gate (MP 171). Recent closures fell between mid-November and early December (Nov. 18 in 2024, Dec. 4 in 2025), and the road has reopened in late April."
+    },
+    "method": "official-1",
+    "level": "locked",
+    "expires_at": "2027-02-15T00:00:00Z",
+    "evidence": [
+     {
+      "url": "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/blue-lake-trailhead",
+      "official": true,
+      "fact": "MP 162 + 0.5 mi; south side; 31.3 mi; 5,400 ft; vault toilets; ~20 spots; no potable water; winter: closed",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://wsdot.wa.gov/about/news/2025/sr-20-north-cascades-highway-closes-season-thursday-dec-4-6-pm",
+      "official": true,
+      "fact": "closure Ross Dam trailhead (MP 134) to Silver Star gate (MP 171); closed Dec 4 2025",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://wsdot.wa.gov/travel/roads-bridges/mountain-pass-closure-and-opening-dates",
+      "official": true,
+      "fact": "closed Nov 30 2023, Nov 18 2024, Dec 4 2025; reopened Apr 19 2024, Apr 22 2025, Apr 30 2026",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   }
+  ],
+  "disputed": [
+   "high_point_ft: stored 7611 (USGS elevation model 7,610 at the OSM Concord Tower node); The Mountaineers page says 7,560 ft, which is the figure usually given for neighbouring Lexington Tower. No official survey figure found.",
+   "fa: stored 'Fred Beckey & John Parrott, June 12, 1956'; Mountain Project says 'Beckey and Parrott, 1956'; the only other source with the date, SummitPost, is blocked. Left unlocked."
+  ],
+  "notes": "Road object rewritten: the old seasonalGate said closures typically come in early-to-mid December, but WSDOT's dates are Nov 30 2023, Nov 18 2024 and Dec 4 2025. The driveNote now holds only what the USFS trailhead page states (the old 'about 1 mile west of the Washington Pass Overlook' clashed with The Mountaineers' '1.5 miles west of Washington Pass' and came from no official page). SR-20 was still open on 2026-11-18 (WSDOT pass report). dist_km 4 matches one-way (notch pin distMi 2.4 = 3.9 km; straight line from trailhead to summit 1.3 km). Two route pins are 'Hazard' type on the climb itself (gully, pitch 2 crux), which is a loose use of the type."
+ },
+ "wa_lexington_tower_east_face": {
+  "area": "wa_lexington_tower",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/106482011/east-face",
+    "https://www.mountaineers.org/activities/trip-reports/lexington-tower-east-face",
+    "https://chossclimbers.com/?p=6946",
+    "https://en.wikipedia.org/wiki/Lexington_Tower",
+    "https://www.openstreetmap.org/node/12040414409",
+    "https://epqs.nationalmap.gov/v1/json"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "grade",
+    "value": "5.9+",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106482011/east-face",
+      "fact": "5.9+",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://www.mountaineers.org/activities/trip-reports/lexington-tower-east-face",
+      "fact": "Route Grade: 5.9+",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "rock_grade",
+    "value": "5.9+",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106482011/east-face",
+      "fact": "5.9+",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://www.mountaineers.org/activities/trip-reports/lexington-tower-east-face",
+      "fact": "5.9+",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_lexington_tower_east_face",
+    "column": "dist_km",
+    "from": 10.46,
+    "to": 1.9,
+    "why": "One-way convention. 10.46 km (6.5 mi) is impossible for a 30-45 minute walk from the pond pullout: the straight line from the trailhead pin to the tower is 1.04 km, and the route's own notch pin says distMi 1.2 (= 1.9 km). 10.46 km looks like a different trip (perhaps a Blue Lake loop). Value derived from the route's own pin, so it should stay unlocked until a published approach distance is found.",
+    "evidence": [
+     "https://www.mountainproject.com/route/106482011/east-face",
+     "route's own waypoint 'Lexington Tower notch' distMi 1.2"
+    ]
+   }
+  ],
+  "disputed": [
+   "alpine_grade / commitment: stored IV; Mountain Project says Grade III; SummitPost (blocked) is reported to say IV.",
+   "pitches: stored 10 = Mountain Project 10; chossclimbers trip report climbed it in 8 (SummitPost reportedly 8 too). Varies with linking.",
+   "length_m: stored 244; Mountain Project 800 ft (242 m), no second source.",
+   "fa: stored 'Steve Marts, Don McPherson (1966)'; Mountain Project names Marts and McPherson without a year; Wikipedia gives 1966 citing Beckey but also cites Mountain Project, so not independent. Unlocked.",
+   "high_point_ft: stored 7560 (Wikipedia, citing Beckey); listsofjohn is cited at 7,580; USGS elevation model reads 7,615 at the OSM Lexington Tower node. No official figure."
+  ],
+  "notes": "The only pins are the trailhead and a 'Topout' named 'Lexington Tower notch' that sits exactly on the summit coordinate (OSM Lexington Tower node 48.514240,-120.657495), not on a notch. No Summit pin. The pond-pullout trailhead pin could not be checked: OSM maps no parking there. gain_ft 2171 is less than the summit-minus-trailhead difference (7,560 - 5,151 = 2,409 ft), so it is probably wrong as well, but no published figure was found."
+ },
+ "wa_burgundy_spire_north_face": {
+  "area": "wa_burgundy_spire",
+  "set": {
+   "waypoints": [
+    {
+     "lat": 48.5514,
+     "lng": -120.6309,
+     "elev": 4310,
+     "name": "SR-20 Pullout (Burgundy Col climbers' trail)",
+     "note": "",
+     "type": "Trailhead",
+     "elevFt": 4310,
+     "directions": "Park at the pullout on SR-20 near milepost 166, about three and three-quarters miles east of Washington Pass and directly across the valley from Silver Star Mountain. There's no numbered Forest Service trail here — this pullout is simply the start of an established but unofficial boot path used by climbers heading for Burgundy Col."
+    },
+    {
+     "lat": 48.554232,
+     "lng": -120.601804,
+     "elev": 6400,
+     "name": "Burgundy Creek bench camp — west side",
+     "type": "Campsite",
+     "distMi": 1.5
+    },
+    {
+     "lat": 48.55464,
+     "lng": -120.5924,
+     "name": "Burgundy Col",
+     "type": "Junction",
+     "distMi": null,
+     "elevFt": null,
+     "directions": "Scramble down the loose talus embankment past the cairns into forest, pass the wilderness trail-register box, and cross Early Winters Creek on logs at about 4,080 ft — the logjam shifts year to year, so look up and down stream for the best one, and expect a cold, pushy ford in early season. The path winds through forest for about a quarter mile, then turns straight uphill between two small creeks and climbs relentlessly to the broad flat bench at ~6,460 ft (last reliable water); above the bench it climbs and traverses loose scree gullies and makes a rising traverse right beneath the cliffs on heather-covered slabs, with a final cairned stretch of very unstable scree over slab into the notch — do not take the obvious direct gully that appears to lead straight to the col, and travel tightly grouped, as this scree kicks rock onto anyone below."
+    },
+    {
+     "lat": 48.553455,
+     "lng": -120.590745,
+     "elev": 8400,
+     "name": "Burgundy Spire Summit",
+     "type": "Summit",
+     "elevFt": 8400,
+     "directions": "The route starts essentially straight off the col: the first pitch is directly above the notch and visually obvious, with no traverse along the base. Six to seven pitches lead up — 4th class with occasional mid-5th moves to a broad sandy ledge, along the ledge system toward the wide bowl, then the bowl's right side on loose exfoliating flakes to a tat-slung horn (the 5.8 crux, more rock quality than difficulty), past the horn to a hand crack in a flare and exposed 5.7–5.8 face climbing, then airy ridge with hand cracks, sharp arête moves and mandatory downclimbing to the heavily slung summit boulder."
+    }
+   ]
+  },
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/107231977/north-face",
+    "https://lemkeclimbs.com/burgundy-spire-north-face",
+    "https://stephabegg.com/?p=8707",
+    "https://www.openstreetmap.org/node/14355496589",
+    "https://epqs.nationalmap.gov/v1/json"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "grade",
+    "value": "5.8",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/107231977/north-face",
+      "fact": "5.8",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://lemkeclimbs.com/burgundy-spire-north-face",
+      "fact": "5.8",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "rock_grade",
+    "value": "5.8",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/107231977/north-face",
+      "fact": "5.8",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://lemkeclimbs.com/burgundy-spire-north-face",
+      "fact": "5.8",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_burgundy_spire_north_face",
+    "column": "pitches",
+    "from": 7,
+    "to": 6,
+    "why": "Mountain Project lists 6 pitches and Steph Abegg's pitch-by-pitch report has six; two independent sources agree. One blog (lemkeclimbs) counts 8.",
+    "evidence": [
+     "https://www.mountainproject.com/route/107231977/north-face",
+     "https://stephabegg.com/?p=8707"
+    ]
+   }
+  ],
+  "disputed": [
+   "grade: Steph Abegg rates it 5.8+; Mountain Project and lemkeclimbs say 5.8. Locked at 5.8 on the two that agree.",
+   "length_m: stored 244 (800 ft) = Steph Abegg 800 ft; Mountain Project says 600 ft (182 m).",
+   "high_point_ft: stored 8400 (Steph Abegg and the route title on lemkeclimbs say 8,400); the lemkeclimbs page header says 8,483 ft and the USGS elevation model reads 8,482 ft at the high point. Burgundy Spire has no USGS place-name point and no official survey figure.",
+   "alpine_grade / commitment III: Mountain Project only."
+  ],
+  "notes": "Summit pin MOVED (unlocked): the old pin (48.55186,-120.59014) is 183 m south of the top, at 8,167 ft on the USGS elevation model, more than 300 ft below the summit. The new point (48.553455,-120.590745, which is also the area's coordinate) is the elevation-model high point at 8,482 ft, 179 m from the Burgundy Col pin (7,809 ft), which fits a 600-800 ft north face rising from the col. There is no USGS place-name point; the unnamed OSM peak node 14355496589 (8,442 ft) is 105 m south, so the two methods do not agree within 50 m and the pin stays unlocked. The fa column holds a sentence ('Fred Beckey party, 1953 (original ascent line, using aid...)') rather than names; Mountain Project gives 'Fred Beckey, Michael Hane & John Parrott (8/17/1953)', with no second source, so it was left alone. The first winter ascent per MP was Kit Lewis, Jim Nelson and Kevin Joiner, 12/28/1984 (fwa, unverified). Bivy pin 'Burgundy Creek bench camp' at 6,605 ft agrees with the published camp height of about 6,500 ft. dist_km 8 is above the 2.96 km straight line; no published distance was found to say which convention it uses."
+ },
+ "wa_cutthroat_south_buttress": {
+  "area": "wa_cutthroat_peak",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/109326651/south-buttress",
+    "https://www.mountaineers.org/activities/routes-places/cutthroat-peak-se-buttress",
+    "https://www.alpineinstitute.com/route-profile-cutthroat-peak-s-buttress-5-8-iii/",
+    "https://listsofjohn.com/peak/48864",
+    "https://en.wikipedia.org/wiki/Cutthroat_Peak",
+    "https://www.openstreetmap.org/node/5229890651",
+    "https://epqs.nationalmap.gov/v1/json",
+    "USGS GNIS DomesticNames_WA feature 1518440"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "grade",
+    "value": "5.8",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/109326651/south-buttress",
+      "fact": "5.8",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/cutthroat-peak-se-buttress",
+      "fact": "Grade III, 5.8 rock climb",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://www.alpineinstitute.com/route-profile-cutthroat-peak-s-buttress-5-8-iii/",
+      "fact": "5.8, III+",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "rock_grade",
+    "value": "5.8",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/109326651/south-buttress",
+      "fact": "5.8",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/cutthroat-peak-se-buttress",
+      "fact": "5.8",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "alpine_grade",
+    "value": "III",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/109326651/south-buttress",
+      "fact": "Grade III",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/cutthroat-peak-se-buttress",
+      "fact": "Grade III",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "commitment",
+    "value": "III",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/109326651/south-buttress",
+      "fact": "Grade III",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/cutthroat-peak-se-buttress",
+      "fact": "Grade III",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "length_m",
+    "value": 259,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/109326651/south-buttress",
+      "fact": "850 ft (258 m)",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_cutthroat_south_buttress",
+    "column": "high_point_ft",
+    "from": 8066,
+    "to": 8050,
+    "why": "8,066 is the listsofjohn LiDAR figure. The published map (USGS) figure is 8,050 ft, which The Mountaineers and the American Alpine Institute also give. The rule is to use the published official figure. Owner's call if LiDAR should win; Black Peak in this batch is locked at its map figure (8,970), not LiDAR (8,990).",
+    "evidence": [
+     "https://listsofjohn.com/peak/48864",
+     "https://www.mountaineers.org/activities/routes-places/cutthroat-peak-se-buttress",
+     "https://www.alpineinstitute.com/route-profile-cutthroat-peak-s-buttress-5-8-iii/"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_cutthroat_south_buttress",
+    "column": "gain_ft",
+    "from": 2500,
+    "to": 3050,
+    "why": "2,500 ft is less than the summit-minus-trailhead difference (8,050 - 5,227 ft on the USGS elevation model at the trailhead pin = 2,823 ft), before the drop to State Creek. The Mountaineers trip profile gives 1,500 + 1,550 = 3,050 ft.",
+    "evidence": [
+     "https://www.mountaineers.org/activities/routes-places/cutthroat-peak-se-buttress",
+     "USGS 3DEP 5,227 ft at the trailhead pin 48.5162,-120.6836"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_cutthroat_south_buttress",
+    "column": "dist_km",
+    "from": 2,
+    "to": 3.2,
+    "why": "One-way convention. The route's own summit pin says distMi 2 (= 3.2 km), and 2 km is barely above the 1.87 km straight line from the trailhead pin, with a drop to State Creek between. It looks like miles stored as km. No published approach distance found, so this is derived and should stay unlocked; low confidence.",
+    "evidence": [
+     "route's own Summit waypoint distMi 2"
+    ]
+   }
+  ],
+  "disputed": [
+   "fa: stored 'Fred Beckey and Donald (Don) Gordon, 1958' = Mountain Project 'Fred Beckey and Donald Gordon, 1958'; no second source (SummitPost blocked).",
+   "pitches: stored 12 = Mountain Project 12, but its own description links it into 10; no second count found.",
+   "Summit pin: the stored pin (48.526495,-120.703655) sits on the USGS elevation-model high point (8,062 ft), 3 m from the OSM node and 2 m from listsofjohn. The USGS GNIS point (1518440, 48.5262472,-120.7031603) is 46 m away and reads 7,948 ft, 114 ft lower. That is just inside the 50 m rule, so strictly the pin should move to GNIS. I left it on the high point and did not lock it; owner's call.",
+   "Name: The Mountaineers file this line as the 'Southeast Buttress'."
+  ],
+  "notes": "The Mountaineers give land manager 'North Cascades National Park' and 'Parking Permit Required: None'. listsofjohn puts the peak in Okanogan-Wenatchee / Mt Baker NF, and the access object says Okanogan-Wenatchee NF, so permit was not locked. Waypoint defects: 'Base of the South Buttress gully' has null lat/lng; the two Campsite pins (Lone Fir and Klipchuck campgrounds) are 7-15 km down-valley, not on the route. The loss_ft value of 3143 is larger than gain_ft 2500, which is odd for an out-and-back. The trailhead pullout could not be checked against OSM because no parking is mapped there."
+ },
+ "wa_black_peak_northeast_ridge": {
+  "area": "wa_black_peak",
+  "set": {
+   "waypoints": [
+    {
+     "lat": 48.51622,
+     "lng": -120.7354,
+     "elev": 4855,
+     "name": "Rainy Pass / Lake Ann-Maple Pass Trailhead",
+     "type": "Trailhead",
+     "distMi": null,
+     "elevFt": 4855,
+     "directions": "From Marblemount or Winthrop, drive SR-20 to the signed Rainy Pass Picnic Area trailhead at milepost 157, on the south side of the highway at Rainy Pass. A Northwest Forest Pass, interagency pass or day-use fee is required to park; overflow parking is along the highway."
+    },
+    {
+     "lat": 48.519444,
+     "lng": -120.733889,
+     "elev": 4860,
+     "name": "Rainy Pass trailhead lots, and the quarter-mile camping closures",
+     "type": "Campsite"
+    },
+    {
+     "lat": 48.5093,
+     "lng": -120.76288,
+     "elev": 6094,
+     "name": "Heather Pass",
+     "note": "Leave the maintained trail here for the unmarked climbers' path to Lewis and Wing Lakes.",
+     "type": "Junction",
+     "distMi": null,
+     "directions": "Take the Lake Ann trail and keep right at the signed fork toward Heather Pass, climbing through meadows to the pass."
+    },
+    {
+     "lat": 48.5141,
+     "lng": -120.78237,
+     "elev": 5705,
+     "name": "Lewis Lake",
+     "note": "A few tent sites in the timber on the north shore.",
+     "type": "Campsite",
+     "distMi": null,
+     "directions": "From Heather Pass follow the unmarked, cairned climbers' path west across two loose talus fields, then drop to Lewis Lake. The cairns are easy to lose in fog or early-season snow."
+    },
+    {
+     "lat": 48.5185,
+     "lng": -120.807,
+     "elev": 6923,
+     "name": "Wing Lake camp",
+     "note": "The usual base camp for the Northeast Ridge.",
+     "type": "Campsite",
+     "distMi": null,
+     "directions": "From Lewis Lake climb about 1,200 ft of meadow and talus west to Wing Lake."
+    },
+    {
+     "lat": 48.5233329,
+     "lng": -120.8162065,
+     "elev": 8970,
+     "name": "Black Peak summit",
+     "type": "Summit",
+     "distMi": null,
+     "elevFt": 8970,
+     "directions": "From Wing Lake, climb snow toward the low notch in the Northeast Ridge, following the moraine wide right before traversing back left, then climb the ridge, about five pitches of loose low-5th terrain, to the summit."
+    }
+   ]
+  },
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/106528795/northeast-ridge",
+    "https://www.mountaineers.org/activities/routes-places/north-cascades-national-park-cross-country-zones/black-peak-northeast-ridge",
+    "https://listsofjohn.com/peak/16886",
+    "https://canyoneeringusa.com/rave/northeast-ridge-black-peak",
+    "https://alpinedave.com/black/black.htm",
+    "https://www.nps.gov/noca/blogs/black-peak-8-3-16.htm",
+    "https://www.openstreetmap.org/node/348974325",
+    "https://epqs.nationalmap.gov/v1/json",
+    "USGS GNIS DomesticNames_WA feature 1516618"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "waypoints/Black Peak summit",
+    "value": {
+     "name": "Black Peak summit",
+     "lat": 48.5233329,
+     "lng": -120.8162065
+    },
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "measurement": "USGS GNIS feature 1516618 'Black Peak' (Summit) primary point; USGS 3DEP high point found 25 m away",
+      "fact": "48.5233329, -120.8162065"
+     },
+     {
+      "url": "https://listsofjohn.com/peak/16886",
+      "fact": "Coords 48.52346, -120.81612 (16 m from the GNIS point)",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "high_point_ft",
+    "value": 8970,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://listsofjohn.com/peak/16886",
+      "fact": "map: 8,970' (LiDAR 8,990')",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/north-cascades-national-park-cross-country-zones/black-peak-northeast-ridge",
+      "fact": "High Point: 8,970 ft",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "gain_ft",
+    "value": 4130,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/north-cascades-national-park-cross-country-zones/black-peak-northeast-ridge",
+      "fact": "Elevation Gain: 4,130 ft",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "measurement": "USGS map summit 8,970 ft - USGS 3DEP 4,855 ft at the Rainy Pass trailhead pin",
+      "fact": "4115 ft"
+     }
+    ]
+   }
+  ],
+  "disputed": [
+   "grade / rock_grade: stored '5.3' / 'Low 5th class (around 5.3)'; Mountain Project says 'Easy 5th', The Mountaineers 'low 5th class', alpinedave's report puts the hardest move at about 5.4 with one 5.5-5.6 tower pitch. No two sources give the same number.",
+   "alpine_grade / commitment: stored II = Mountain Project II; The Mountaineers say Grade III.",
+   "fa: stored 'Roger Jackson and Michael Kennedy, September 1, 1973.' Mountain Project and canyoneeringusa both give 9/1/73 in the same format, so the second may copy the first; not independent. Unlocked.",
+   "pitches 5 / length_m 457: no source states either (MP: 'mostly 4th class', The Mountaineers: 'three linked pitches')."
+  ],
+  "notes": "Summit pin moved 31 m onto the USGS GNIS point and locked: listsofjohn agrees within 16 m, and the elevation-model high point is 25 m away. The OSM node is 85 m off and was not used. dist_km 16.1 is a ROUND TRIP (The Mountaineers: 10.0 mi; the straight line from trailhead to summit is 6.0 km one-way). Left as stored, since the catalog uses both conventions. Permit is null: the access object says NPS wilderness permits are needed to camp in the park but not at Wing or Lewis Lake (national forest). The Mountaineers put the route in an NCNP cross-country zone and list 'Parking Permit Required: None'. One web source claims Wing Lake needs a Recreation.gov lottery permit. No NPS page settling Wing Lake's land status was found, so permit and access were not locked. Recheck against the NPS wilderness permit page. The Campsite pin 'Rainy Pass trailhead lots, and the quarter-mile camping closures' sits at the trailhead and is not a campsite. The Rainy Pass trailhead pin is 53 m from the nearest OSM parking polygon (way 374400980) and was not locked, because there are several lots."
+ }
+}

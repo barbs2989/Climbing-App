@@ -1,0 +1,77 @@
+[
+ {
+  "id": "wa_mount_adams_wilson_glacier_headwall",
+  "season": "Jul-Sep",
+  "seasonal_guidance": {
+   "optimalWindow": "May to June",
+   "monthBreakdown": {
+    "May": {
+     "reason": "Within the best-season window",
+     "status": "optimal"
+    },
+    "July": {
+     "reason": "Outside the best-season window; expect an unstable, warmed-out headwall",
+     "status": "risky"
+    },
+    "June": {
+     "reason": "Still within the season window, but rockfall increases as the headwall warms",
+     "status": "good"
+    },
+    "April": {
+     "reason": "Still full winter conditions with difficult access",
+     "status": "risky"
+    }
+   }
+  }
+ },
+ {
+  "id": "wa_goode_mountain_northeast_face",
+  "beta": "Grade IV 5.5 alpine rock with 6-8 pitches of low 5th class climbing. Approach requires glacier travel with crampons, navigation skills, and rope handling. Route includes Class 3-4 scrambling sections and rappel descents. Hazards: glacial crevasses/seracs, loose rock, rockfall, sun exposure. Best climbing season: mid-July for snowmelt conditions. Total climb: 2.2 miles, 3,300-3,800 ft elevation gain, ~10 hours."
+ },
+ {
+  "id": "wa_snowking_mountain_standard",
+  "best_season": "Mid-summer through early fall once the approach is snow-free and the glacier is well-covered.",
+  "seasonal_guidance": {
+   "optimalWindow": "Mid-July through early September, once the approach brush/trail is snow-free and the Snowking Glacier is still well-covered",
+   "monthBreakdown": {
+    "July": {
+     "reason": "Approach typically clears by mid-to-late July; glacier still well-covered but afternoon thunderstorms become a factor",
+     "status": "good"
+    },
+    "August": {
+     "reason": "Best combination of a snow-free approach and a glacier that is still well-covered enough for safer travel",
+     "status": "optimal"
+    },
+    "September": {
+     "reason": "Still climbable and often stable, but crevasses on the Snowking Glacier open up more by late season and early-fall storms can move in",
+     "status": "good"
+    }
+   }
+  }
+ },
+ {
+  "id": "wa_forbidden_peak_northeast_face",
+  "best_season": "Late spring to early summer for the best face ice and snow.",
+  "seasonal_guidance": {
+   "optimalWindow": "Late spring to early summer, for the best face ice and snow.",
+   "monthBreakdown": {
+    "May": {
+     "reason": "Prime face-ice season, though lingering avalanche hazard remains a real concern.",
+     "status": "good"
+    },
+    "July": {
+     "reason": "The face melts and sheds rock later in summer, making it less recommended.",
+     "status": "marginal"
+    },
+    "June": {
+     "reason": "Best balance of firm snow/ice, with improving access.",
+     "status": "optimal"
+    },
+    "April": {
+     "reason": "Cold with firm ice potentially available, but road access to the trailhead may still be limited and avalanche hazard is at its seasonal peak.",
+     "status": "marginal"
+    }
+   }
+  }
+ }
+]

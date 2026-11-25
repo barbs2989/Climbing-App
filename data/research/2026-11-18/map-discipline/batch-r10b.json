@@ -1,0 +1,59 @@
+{
+ "ca_mount_hilgard_standard_route": {
+  "area": "ca_mount_hilgard",
+  "set": {
+   "approach_logistics": {
+    "trailhead": "Bear Creek Diversion Dam trailhead (end of the 4WD Bear Diversion Road off the Lake Edison road)",
+    "trailheadLat": 37.336831,
+    "trailheadLng": -118.976049
+   }
+  },
+  "ledger": [
+   {
+    "field": "approach_logistics",
+    "value": {
+     "trailhead": "Bear Creek Diversion Dam trailhead (end of the 4WD Bear Diversion Road off the Lake Edison road)",
+     "trailheadLat": 37.336831,
+     "trailheadLng": -118.976049
+    },
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://www.openstreetmap.org/node/87350473",
+      "fact": "Bear Creek Trailhead 37.33683,-118.97605",
+      "retrieved_at": "2026-11-23"
+     },
+     {
+      "url": "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_InfraRecreationSites_01/MapServer/0/query?where=site_cn%3D%275284.004381%27&outFields=site_name&f=json",
+      "fact": "Bear Creek Trailhead 37.33538,-118.97465",
+      "retrieved_at": "2026-11-23",
+      "official": true
+     },
+     {
+      "url": "https://climber.org/reports/2007/1603.html",
+      "fact": "Start: Bear Creek Diversion Dam trailhead",
+      "retrieved_at": "2026-11-23"
+     },
+     {
+      "url": "https://climber.org/reports/2001/734.html",
+      "fact": "Start: Bear Creek Diversion Dam trailhead",
+      "retrieved_at": "2026-11-23"
+     },
+     {
+      "url": "https://climber.org/reports/1999/508.html",
+      "fact": "Start: Bear Creek Diversion Dam trailhead",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   }
+  ],
+  "review": {
+   "identifiedBy": {
+    "kind": "research",
+    "fact": "three independent trip reports start here; one other report starts at Pine Creek. Mapped trailhead, board and guidepost at the road end"
+   },
+   "chunk": "round10-climber-org"
+  }
+ }
+}

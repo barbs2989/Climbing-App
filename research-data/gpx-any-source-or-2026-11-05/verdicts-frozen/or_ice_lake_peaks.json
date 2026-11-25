@@ -1,0 +1,158 @@
+{
+ "area_id": "or_ice_lake_peaks",
+ "routes": [
+  {
+   "route_id": "or_matterhorn_west_face_chimney",
+   "season": {
+    "months": [
+     7,
+     8,
+     9
+    ],
+    "window": "Jul-Sep",
+    "evidence": "Wallowa high country is open mid-July to late September (AP/Washington Times listing, SummitPost Matterhorn page); 213 of 223 logged Matterhorn ascents fall Jun-Sep, 213 in Jul-Sep. Technical west-face rock is climbed in the same snow-free window."
+   },
+   "track": null,
+   "otherTracksConsidered": [
+    {
+     "aid": "3374394",
+     "verdict": "different",
+     "why": "Sacajawea ridge traverse, Oct 2026, class 2+ walking; not a west-face rock route"
+    },
+    {
+     "aid": "2939106",
+     "verdict": "different",
+     "why": "Matterhorn/Sacajawea traverse by trail and ridge, no route named"
+    },
+    {
+     "aid": "2307815",
+     "verdict": "different",
+     "why": "Ice Lake basecamp walk-up, not the west face"
+    },
+    {
+     "aid": "268594",
+     "verdict": "different",
+     "why": "East ridge via Ice Lake climbers trail"
+    },
+    {
+     "aid": "692596",
+     "verdict": "different",
+     "why": "Ice Lake walk-up; no technical climbing described"
+    },
+    {
+     "aid": "2850713",
+     "verdict": "offseason",
+     "why": "Oct 15, outside the Jul-Sep window, and a walk-up line"
+    },
+    {
+     "aid": "262896",
+     "verdict": "different",
+     "why": "Walk-up via Ice Lake"
+    },
+    {
+     "aid": "1460767",
+     "verdict": "different",
+     "why": "Walk-up via Ice Lake"
+    }
+   ],
+   "pins": [],
+   "facts": []
+  },
+  {
+   "route_id": "or_matterhorn_west_face_wall",
+   "season": {
+    "months": [
+     7,
+     8,
+     9
+    ],
+    "window": "Jul-Sep",
+    "evidence": "Same as West Face Chimney: snow-free window mid-July to late September (AP/Washington Times listing, logged-ascent histogram). Stored text imagines a winter mixed ascent but none is recorded."
+   },
+   "track": null,
+   "otherTracksConsidered": [
+    {
+     "aid": "2939106",
+     "verdict": "different",
+     "why": "walk-up/traverse, not an aid wall"
+    },
+    {
+     "aid": "2307815",
+     "verdict": "different",
+     "why": "walk-up"
+    }
+   ],
+   "pins": [],
+   "facts": []
+  },
+  {
+   "route_id": "or_razzberry_mt",
+   "season": {
+    "months": [
+     7,
+     8,
+     9
+    ],
+    "window": "Jul-Sep",
+    "evidence": "Oregon Hikers reports (Ice Lake to Razz Lake, Aug 2012; Aug 2017) show August trips; reached from the Ice Lake basin via the Razzberry-Craig saddle, snow-free Jul-Sep."
+   },
+   "track": null,
+   "otherTracksConsidered": [
+    {
+     "aid": "2939106",
+     "verdict": "different",
+     "why": "Matterhorn summit track; Razzberry is a separate peak (Pt 9314), never Matterhorn"
+    }
+   ],
+   "pins": [],
+   "facts": []
+  }
+ ],
+ "missing": [
+  {
+   "kind": "route",
+   "peak": "Matterhorn",
+   "name": "East Ridge from Ice Lake",
+   "alt_names": [
+    "Ice Lake route",
+    "East Slope",
+    "Ice Lake/East slopes"
+   ],
+   "discipline": "scrambling",
+   "grade": "Class 2",
+   "face": "E",
+   "season": "Jul-Sep",
+   "overview": "The usual way up Matterhorn: trail to Ice Lake, then a climbers path and open slopes onto the east ridge and the summit. Most parties overnight at the lake; a single long day is possible. Late summer is the dependable window.",
+   "loggedAscents": 20,
+   "aids": [
+    "692596",
+    "268594"
+   ],
+   "evidence": [
+    "https://www.summitpost.org/matterhorn-oregon/150682 - east ridge via Ice Lake is the standard route",
+    "https://www.mountaineers.org/activities/routes-places/ice-lake-matterhorn - Ice Lake & Matterhorn listing"
+   ]
+  },
+  {
+   "kind": "route",
+   "peak": "Matterhorn",
+   "name": "Sacajawea-Matterhorn Ridge Traverse",
+   "alt_names": [
+    "Traverse from Sacajawea Pk"
+   ],
+   "discipline": "scrambling",
+   "grade": "Class 3",
+   "face": "",
+   "season": "Jul-Sep",
+   "overview": "A ridge link between the two highest summits of the Wallowas, with one false summit and a couple of exposed class 4 moves that can be avoided. Usually done from an Ice Lake camp.",
+   "loggedAscents": 5,
+   "aids": [
+    "2939106"
+   ],
+   "evidence": [
+    "https://www.summitpost.org/matterhorn-oregon/150682 - ridge to Sacajawea rated Class 3"
+   ]
+  }
+ ],
+ "notes": "No track assigned: every harvested Matterhorn ascent is the Ice Lake walk-up / east ridge or the Sacajawea traverse, none the west-face rock routes, which are stored with no pins. Razzberry Mt. is Pt 9314 west of Craig Mountain, a different peak; the Matterhorn Peakbagger match fits only the West Face routes. The standard Matterhorn route is absent from allRoutesOnPeak."
+}

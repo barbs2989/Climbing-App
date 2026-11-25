@@ -25,29 +25,26 @@ const CASES = [
     name: "fresh-ladder",
     why: "RouteDetail's private age ladder, restored exactly as it stood: rounds where ago() floors",
     file: "src/components/ConsensusPanel.tsx", // PR57 moved it from RouteDetail.jsx
-    find: 'const _fresh=_latest?"Updated "+ago(_latest):"";',
-    repl: 'const _dago=_latest?Math.round((new Date()-new Date(String(_latest).slice(0,10)+"T12:00:00"))/86400000):null;'
-        + 'const _fresh=_dago==null?"":(_dago<=0?"Updated today":_dago===1?"Updated yesterday":'
-        + '(_dago<14?"Updated "+_dago+"d ago":(_dago<60?"Updated "+Math.round(_dago/7)+"w ago":'
-        + '"Updated "+Math.round(_dago/30)+"mo ago")));',
-    expect: /is reported as ".+" and as ".+" on one screen/,
-    section: "screen",
+    /* Repointed 2026-11-18. The card now prints the newest date ONCE (the summary line: "7 reports · latest 1w ago by
+       Sam"), so there is no second print on the screen to disagree with and the "on one screen" comparison has nothing
+       to compare; the static half is what catches a private ladder coming back. The old anchor was the "Updated ..."
+       strap, which the summary line replaced. */
+    find: '(n===1?"":"latest ")+ago(_latest)+',
+    repl: '(n===1?"":"latest ")+(function(d){const g=Math.round((Date.now()-new Date(String(d).slice(0,10)+"T12:00:00").getTime())/86400000);'
+        + 'return g<=0?"today":g<14?g+"d ago":g<60?Math.round(g/7)+"w ago":Math.round(g/30)+"mo ago";})(_latest)+',
+    expect: /src\/components\/ConsensusPanel\.tsx @\d+: ".*mo ago" — a second age ladder/,
+    section: "static",
   },
-  {
-    name: "badge-verified-routedetail",
-    why: "the What's changed badge calling a plain report count verified",
-    file: "src/components/BetaDiff.tsx",
-    find: '{"✓ "+acts.length+" report"+(acts.length!==1?"s":"")}',
-    repl: '{"✓ "+acts.length+" verified report"+(acts.length!==1?"s":"")}',
-    expect: /BetaDiff\.tsx @\d+: ".* verified report/,
-    section: "static+screen",
-  },
+  /* badge-verified-routedetail went with its target: the What's changed card (BetaDiff.tsx) was folded
+     into the Community Consensus freshness row on the Reports tab, so there is no "✓ N reports" badge
+     there to mislabel. badge-verified-core below still covers the same rule. */
   {
     name: "badge-verified-core",
     why: "the climb-matches list doing the same thing on a screen the browser half never opens",
     file: "lib/PartnerSearch.jsx",
-    find: '{"✓ "+condRep(r)+" report"+(condRep(r)!==1?"s":"")}',
-    repl: '{"✓ "+condRep(r)+" verified report"+(condRep(r)!==1?"s":"")}',
+    // repN = condRep for seed rows, the DB report count for DB rows (real-data parity, batch 1)
+    find: '{"✓ "+repN(r)+" report"+(repN(r)!==1?"s":"")}',
+    repl: '{"✓ "+repN(r)+" verified report"+(repN(r)!==1?"s":"")}',
     expect: /lib\/PartnerSearch\.jsx @\d+: ".* verified report/,
     section: "static only — this is why the static half exists",
   },

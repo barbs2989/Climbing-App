@@ -7,6 +7,7 @@
 // detail; sending again replaces the note. Refusals come from the database with a sentence written
 // for the climber (not signed in, banned from contributing, five a day).
 import { useState } from "react";
+import { SOLID_LEDGE } from "./buttonStyles.js";
 import { createPortal } from "react-dom";
 import { C } from "../ClimbMatchCore.jsx";
 import { POP_CLOSE } from "./popupChrome.js";
@@ -28,10 +29,10 @@ export default function FlagRouteSheet({ target, busy, onClose, onSubmit }) {
         <div style={{ fontSize: 12.5, color: C.textSub, lineHeight: 1.55, marginBottom: 10 }}>
           {"Something on "}<b>{target.routeName || "this route"}</b>{target.field ? " under " + what.toUpperCase() : ""}{" looks wrong and you don’t have the right value? Say what you saw. ClimbMatch will check it and fix the page, and you’ll be told when it is."}
         </div>
-        <textarea aria-label="What looks wrong" value={text} onChange={(e) => setText(e.target.value.slice(0, 1000))} rows={4} placeholder="What looks wrong, and when you were there" style={{ width: "100%", boxSizing: "border-box", background: C.card, color: C.text, border: "1px solid " + C.border, borderRadius: 10, padding: "9px 11px", fontSize: 13.5, fontFamily: "inherit", resize: "vertical", lineHeight: 1.5 }} />
+        <textarea aria-label="What looks wrong" value={text} onChange={(e) => setText(e.target.value.slice(0, 1000))} rows={4} placeholder="What looks wrong, and when you were there" style={{ width: "100%", boxSizing: "border-box", background: C.card, color: C.text, border: "1px solid " + C.field, borderRadius: 10, padding: "9px 11px", fontSize: 13.5, fontFamily: "inherit", resize: "vertical", lineHeight: 1.5 }} />
         <div style={{ fontSize: 11, color: C.textMuted, marginTop: 4, textAlign: "right" }}>{text.length + " / 1000"}</div>
-        <button disabled={!can} onClick={() => onSubmit(text.trim())} style={{ width: "100%", marginTop: 8, padding: 11, borderRadius: 10, border: "none", background: can ? C.blueSolid : C.surface, color: can ? C.onSolid : C.textMuted, fontSize: 13.5, fontWeight: 700, cursor: can ? "pointer" : "default" }}>{busy ? "Sending…" : "Send flag"}</button>
-        <div style={{ fontSize: 11, color: C.textMuted, lineHeight: 1.5, marginTop: 8 }}>A flag never changes the page by itself. If you know the right value, use Edit instead.</div>
+        <button disabled={!can} onClick={() => onSubmit(text.trim())} style={{ width: "100%", marginTop: 8, padding: 11, borderRadius: 10, border: "none", background: can ? C.actionSolid : C.surface,boxShadow:(can)?SOLID_LEDGE(C):"none", color: can ? C.onSolid : C.textMuted, fontSize: 13.5, fontWeight: 700, cursor: can ? "pointer" : "default" }}>{busy ? "Sending…" : "Send flag"}</button>
+        <div style={{ fontSize: 11, color: C.textMuted, lineHeight: 1.5, marginTop: 8 }}>A flag never changes the page by itself. If the detail is open to edits and you know the right value, use Edit instead; a locked detail can only be flagged.</div>
       </div>
     </div>
   </div>, document.body);

@@ -20,6 +20,7 @@ import { fileHref } from "./lib/file-href.mjs";
 //      `name ilike '%' || q || '%'`. 0196 re-created both route finders from a pre-0190 body and
 //      put the verbatim ilike back 17 minutes after 0190 shipped: "NE Buttress" then found nothing
 //      in an area's route list. Sections 1-3 passed throughout — they never read the finders.
+//   5. the state/province table: place_regions() (0487) holds REGION_ABBR's rows (lib/db.js), in order
 //
 // It does NOT prove the live database runs that migration — check:function-drift does.
 import fs from "fs";
@@ -102,6 +103,13 @@ for (const [a, b] of [["mt baker", "Mount Baker"], ["Mt. St. Helens", "mount sai
   if (S.searchCanon(a) !== S.searchCanon(b)) fails.push(`searchCanon("${a}") != searchCanon("${b}")`);
 }
 if (S.searchNorm("Mt Baker") !== S.searchNorm("mount baker")) fails.push("searchNorm is not spelling-independent for Mt/Mount — the exact-area leg's `eq` would miss");
+// The route search's place+route split names an area by its words, after Mount/The, or with the
+// landform word a climber drops: "liberty bell beckey" must reach Liberty Bell Mountain's Beckey Route.
+const SPLIT_PLACE = [[["liberty", "bell"], "Liberty Bell Mountain"], [["liberty", "bell"], "Liberty Bell Mtn"],
+  [["stuart"], "Mount Stuart"], [["mt", "stuart"], "Mount Stuart"], [["prusik"], "Prusik Peak"],
+  [["early", "winters"], "Early Winters Spire"], [["main", "wall"], "The Main Wall"], [["liberty", "bell"], "Liberty Bell"]];
+for (const [w, name] of SPLIT_PLACE) if (!S.splitPlaceSpellings(w).includes(S.searchNorm(name))) fails.push(`splitPlaceSpellings(${JSON.stringify(w)}) misses "${name}" — "${w.join(" ")} <route>" would not narrow climbs to it`);
+for (const [w, name] of [[["liberty"], "Liberty Bell Mountain"], [["west"], "West Ridge"]]) if (S.splitPlaceSpellings(w).includes(S.searchNorm(name))) fails.push(`splitPlaceSpellings(${JSON.stringify(w)}) matches "${name}" — the place half must name the area outright`);
 // Tokens go into ilike patterns unescaped: they must never carry a LIKE metacharacter.
 for (const q of ["100% pure", "a_b", "50% off \\ back"]) {
   if (S.searchTokens(q).some((t) => /[%_\\]/.test(t))) fails.push(`searchTokens("${q}") leaks a LIKE metacharacter`);
@@ -128,9 +136,41 @@ for (const fn of SEARCH_FNS) {
   else if (!/search_patterns\(|name_search|search_clean\(/.test(last.body)) fails.push(`${last.f}: the newest ${fn}() never reads name_search — it cannot forgive spelling`);
 }
 
+// ── 5. the state/province table behind "browse groups by state" (0487) ──────────────────────
+// A group's region is worked out in SQL (groups.region, region_of_place) and Discover's chips,
+// its state filter and its search haystack read that. The climber's HOME region is still worked
+// out in JS (regionOfPlace, lib/db.js) and sent to discover_groups() to rank by. Same rows in the
+// same order, or "Home" names a state no group is filed under.
+let regionRows = 0;
+{
+  const dbSrc = fs.readFileSync(path.join(ROOT, "lib/db.js"), "utf8");
+  const lit = dbSrc.match(/const REGION_ABBR = \{([^}]+)\}/);
+  const jsRows = lit ? [...lit[1].matchAll(/([A-Z]{2}): "([^"]+)"/g)].map((m) => m[1] + "=" + m[2]) : [];
+  const regDef = migFiles.filter((f) => /create or replace function (public\.)?place_regions\s*\(/i.test(fs.readFileSync(path.join(MIG, f), "utf8")));
+  if (jsRows.length < 50) fails.push(`lib/db.js: parsed only ${jsRows.length} REGION_ABBR entries — ANCHOR LOST, not a pass`);
+  else if (!regDef.length) fails.push("no migration defines place_regions() — cannot compare the SQL region table with REGION_ABBR in lib/db.js");
+  else {
+    const f = regDef[regDef.length - 1];
+    const sql = fs.readFileSync(path.join(MIG, f), "utf8");
+    const at = sql.search(/create or replace function (public\.)?place_regions\s*\(/i);
+    const open = sql.indexOf("$$", at), close = sql.indexOf("$$", open + 2);
+    const sqlRows = [...sql.slice(open, close).matchAll(/\(\s*(\d+)\s*,\s*'([A-Z]{2})'\s*,\s*'([^']+)'\s*\)/g)];
+    if (sqlRows.length < 50) fails.push(`${f}: parsed only ${sqlRows.length} place_regions() rows — ANCHOR LOST, not a pass`);
+    else {
+      sqlRows.forEach((m, i) => { if (Number(m[1]) !== i + 1) fails.push(`${f}: place_regions() row ${i + 1} is numbered ${m[1]} — the order decides a tie between two names of one length`); });
+      const got = sqlRows.map((m) => m[2] + "=" + m[3]);
+      if (got.join("|") !== jsRows.join("|")) {
+        const miss = jsRows.filter((r) => !got.includes(r)), extra = got.filter((r) => !jsRows.includes(r));
+        fails.push(`${f}: place_regions() and REGION_ABBR (lib/db.js) differ` + (miss.length ? ` — SQL lacks ${miss.join(", ")}` : "") + (extra.length ? ` — SQL adds ${extra.join(", ")}` : "") + (!miss.length && !extra.length ? " — same rows, different order" : ""));
+      }
+      regionRows = got.length;
+    }
+  }
+}
+
 if (fails.length) {
   console.error(`check:search-norm FAILED (${fails.length})`);
   for (const f of fails) console.error("  - " + f);
   process.exit(1);
 }
-console.log(`check:search-norm OK — SQL and JS spelling rules agree; ${MATCH.length + NOMATCH.length} match cases hold; ${SEARCH_FNS.length} search functions match through name_search`);
+console.log(`check:search-norm OK — SQL and JS spelling rules agree; ${MATCH.length + NOMATCH.length} match cases hold; ${SEARCH_FNS.length} search functions match through name_search; ${regionRows} states and provinces agree`);

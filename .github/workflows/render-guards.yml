@@ -26,7 +26,8 @@ name: Render guards
 # Independent jobs rather than steps, so a browser flake in one cannot stop the
 # others from reporting.
 #
-# They run on push to main as well as on pull_request, because a green PR is not a
+# They also walk main itself (on a four-hour schedule since 2026-11-13; on every push
+# before that -- see the `on:` block), because a green PR is not a
 # statement about main. A pull_request run tests merge(head, base) as base stood WHEN
 # THE RUN STARTED, so two PRs that are each green can still break main between them —
 # and that is not hypothetical here: #728 and #727 merged three seconds apart, both
@@ -34,12 +35,38 @@ name: Render guards
 # collision; nothing catches the general case, because until now no browser guard had
 # ever been run against main. The failure would surface on the NEXT unrelated PR,
 # attributed to whoever opened it.
+#
+# Every guard step runs through scripts/ci-db-inconclusive.mjs. When a guard fails ONLY
+# because the production database was down (its own "THE DATABASE IS UNREACHABLE" / "proves
+# NOTHING" / gateway 52x lines), the job ends with a yellow "Inconclusive" warning instead of
+# a red failure. Measured 2026-11-11: ~95% of red jobs here were outages, each one emailed the
+# owner, and the handful of real findings drowned in them. Any other failure stays red.
 
 on:
-  pull_request:
-    branches: [main, master]
-  push:
-    branches: [main, master]
+  # NO pull_request TRIGGER (owner, 2026-11-14). Every PR push started these 15 browser jobs, each
+  # walking the PRODUCTION database. On 2026-11-14 the workflow was switched back on after a day
+  # off: the runner queue went from about 30 runs to 60+, and the database's health
+  # probe, clean all morning, failed from 14:00 UTC and was down 19:28-21:10. That is a
+  # correlation, not a proof, but docs/codebase/supabase-scripts.md already names these walks as
+  # what spends the disk I/O budget, and the paths-ignore list that used to sit here was an
+  # earlier attempt at the same load. The workflow had been disabled by hand to stop it, which
+  # also stopped the scheduled walk of main -- so nothing walked a screen anywhere.
+  #
+  # What a PR still gets: `build` (the required check) and the static guards in build-check.yml.
+  # What it no longer gets before merge: these walks. A screen broken by a PR is caught by the
+  # scheduled walk below within four hours, or at once with `gh workflow run render-guards.yml`.
+  # Before merging a risky UI change, run its walk locally (npm run check:ui, check:axe, ...).
+  #
+  # Main is walked on a timer, not on every merge (owner, 2026-11-13). Per-merge walks started
+  # 15 browser jobs (16 with zero-state.yml) that gated nothing -- deploy.yml never waits on
+  # them -- and took the free plan's ~20-runner pool from every PR's required `build` and from
+  # the deploy itself. Measured over the previous ~60 runs: build-check jobs ran ~0.4 min but
+  # waited ~26 min for a runner; render-guard jobs waited ~39 min; a merge took ~19 jobs. The
+  # scheduled walk still answers "is main itself healthy?" (the #727/#728 case above) within
+  # four hours, and workflow_dispatch walks main on demand.
+  schedule:
+    - cron: "10 */4 * * *"
+  workflow_dispatch:
 
 concurrency:
   # On a PR, group by branch so a new push supersedes the run it replaces. On a push,
@@ -84,8 +111,8 @@ jobs:
     # check:overlay-fullscreen joined (2026-10-29).
     timeout-minutes: 90
     steps:
-      - uses: actions/checkout@v7
-      - uses: actions/setup-node@v7
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
         with:
           node-version: 22
           cache: npm
@@ -105,7 +132,7 @@ jobs:
           google-chrome --version
 
       - name: Overlay scroll containment
-        run: npm run check:overlay-scroll
+        run: node scripts/ci-db-inconclusive.mjs npm run check:overlay-scroll
         env:
           # Match zero-state.yml. Without these USE_DB is off and the app under test
           # is not the one that ships, so a pass would say nothing about production.
@@ -117,7 +144,7 @@ jobs:
       # Same scaffold, same opener, same browser: a popup's ✕ / ← Back stays on screen and tappable
       # scrolled to the end. A second walk of the same overlays, so the job's timeout covers both.
       - name: Popup close and back stay pinned
-        run: npm run check:pinned-dismiss
+        run: node scripts/ci-db-inconclusive.mjs npm run check:pinned-dismiss
         env:
           VITE_SUPABASE_URL: ${{ secrets.VITE_SUPABASE_URL }}
           VITE_SUPABASE_ANON_KEY: ${{ secrets.VITE_SUPABASE_ANON_KEY }}
@@ -127,7 +154,7 @@ jobs:
       # Third walk of the same overlays: on a phone each popup covers the screen as a page, and the
       # app behind never shows through around a card (owner 2026-10-24, index.html's full-screen rules).
       - name: Popups fill the phone screen
-        run: npm run check:overlay-fullscreen
+        run: node scripts/ci-db-inconclusive.mjs npm run check:overlay-fullscreen
         env:
           VITE_SUPABASE_URL: ${{ secrets.VITE_SUPABASE_URL }}
           VITE_SUPABASE_ANON_KEY: ${{ secrets.VITE_SUPABASE_ANON_KEY }}
@@ -143,8 +170,8 @@ jobs:
     # expected duration.
     timeout-minutes: 25
     steps:
-      - uses: actions/checkout@v7
-      - uses: actions/setup-node@v7
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
         with:
           node-version: 22
           cache: npm
@@ -161,7 +188,7 @@ jobs:
           google-chrome --version
 
       - name: Walk every screen
-        run: npm run check:ui -- --snapshot ui-screens.json
+        run: node scripts/ci-db-inconclusive.mjs npm run check:ui -- --snapshot ui-screens.json
         env:
           # Match zero-state.yml. Without these USE_DB is off and check:ui walks the
           # seed catalog instead of the DB one — a different app than production, and
@@ -175,7 +202,7 @@ jobs:
       # is what tells you whether it is a real bug. Same reasoning as zero-state.yml.
       - name: Upload per-screen text
         if: always()
-        uses: actions/upload-artifact@v7
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
         with:
           name: ui-screens
           path: ui-screens.json
@@ -188,8 +215,8 @@ jobs:
     # that discovery, so it inherited the wider walk — and the longer runtime with it.
     timeout-minutes: 60
     steps:
-      - uses: actions/checkout@v7
-      - uses: actions/setup-node@v7
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
         with:
           node-version: 22
           cache: npm
@@ -206,7 +233,7 @@ jobs:
           google-chrome --version
 
       - name: Badge counts stay out of accessible names
-        run: npm run check:a11y-badges
+        run: node scripts/ci-db-inconclusive.mjs npm run check:a11y-badges
         env:
           # Same reasoning as overlay-scroll above: without these USE_DB is off and the
           # app under test is not the one that ships.
@@ -221,8 +248,8 @@ jobs:
     # One screen and two overlays, so it is the quickest of these.
     timeout-minutes: 15
     steps:
-      - uses: actions/checkout@v7
-      - uses: actions/setup-node@v7
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
         with:
           node-version: 22
           cache: npm
@@ -239,7 +266,7 @@ jobs:
           google-chrome --version
 
       - name: A qualifying log produces an anniversary
-        run: npm run check:anniversary
+        run: node scripts/ci-db-inconclusive.mjs npm run check:anniversary
         env:
           # Same reasoning as overlay-scroll above: without these USE_DB is off and the
           # app under test is not the one that ships.
@@ -256,15 +283,15 @@ jobs:
     # request and fails closed rather than retrying, so this cannot sit spinning.
     timeout-minutes: 10
     steps:
-      - uses: actions/checkout@v7
-      - uses: actions/setup-node@v7
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
         with:
           node-version: 22
           cache: npm
       - run: npm ci
 
       - name: No column's prose lands in a chip
-        run: npm run check:token-boxes
+        run: node scripts/ci-db-inconclusive.mjs npm run check:token-boxes
         env:
           # Read-only, anon key. Same stance as field-renders below: `routes` is publicly
           # readable and CI has no business holding a key that bypasses RLS.
@@ -282,15 +309,15 @@ jobs:
     # after spending this, so the budget buys a correct verdict, never a false pass.
     timeout-minutes: 25
     steps:
-      - uses: actions/checkout@v7
-      - uses: actions/setup-node@v7
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
         with:
           node-version: 22
           cache: npm
       - run: npm ci
 
       - name: Every enriched column reaches a screen
-        run: npm run check:field-renders
+        run: node scripts/ci-db-inconclusive.mjs npm run check:field-renders
         env:
           # Read-only, and the ANON key on purpose — `routes` and `areas` are publicly
           # readable, CI has no business holding a key that bypasses RLS, and a checker
@@ -306,15 +333,15 @@ jobs:
     # a cold or degraded project, where the anon role's 3s statement timeout can bite.
     timeout-minutes: 10
     steps:
-      - uses: actions/checkout@v7
-      - uses: actions/setup-node@v7
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
         with:
           node-version: 22
           cache: npm
       - run: npm ci
 
       - name: The peak briefing speaks and refuses in the right places
-        run: npm run check:summit-briefing
+        run: node scripts/ci-db-inconclusive.mjs npm run check:summit-briefing
         env:
           # Read-only, and the ANON key on purpose — `routes` is publicly readable, CI has no
           # business holding a key that bypasses RLS, and a checker that could write is a
@@ -329,8 +356,8 @@ jobs:
     # locally, so this is headroom rather than an expected duration.
     timeout-minutes: 45
     steps:
-      - uses: actions/checkout@v7
-      - uses: actions/setup-node@v7
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
         with:
           node-version: 22
           cache: npm
@@ -345,7 +372,7 @@ jobs:
           google-chrome --version
 
       - name: Nothing runs off the right-hand edge
-        run: npm run check:overflow
+        run: node scripts/ci-db-inconclusive.mjs npm run check:overflow
         env:
           # Same reasoning as the jobs above: without these USE_DB is off and the app
           # under test is not the one that ships.
@@ -357,7 +384,7 @@ jobs:
       - name: Nothing runs off the right-hand edge of the desktop website (1280px)
         # Its own finding even when the phone walk above is red.
         if: ${{ !cancelled() }}
-        run: npm run check:overflow -- --width 1280
+        run: node scripts/ci-db-inconclusive.mjs npm run check:overflow -- --width 1280
         env:
           # The desktop layout (sidebar, 640px column, right rail) is its own set of inline
           # styles that the phone walk never draws. Same env as the phone walk.
@@ -389,8 +416,8 @@ jobs:
     # starving the process, not the guard being slow.
     timeout-minutes: 75
     steps:
-      - uses: actions/checkout@v7
-      - uses: actions/setup-node@v7
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
         with:
           node-version: 22
           cache: npm
@@ -408,7 +435,7 @@ jobs:
       # does not. Measured on main: 3m43s at 8 screens (19:02 run) against 42m33s at 58 (21:41
       # run) — an 11.4x rise from #1233's expansion, invisible because a slower guard still goes
       # green. NOTHING STOPS BEING CHECKED: a mute control introduced inside an overlay is caught
-      # when the branch merges instead of while it is in review, the same trade check:ui's
+      # by the scheduled main walk (every 4 h) instead of while it is in review, the same trade check:ui's
       # live-site walk already makes by running on a schedule.
       #
       # `--overlays=` is an EXPLICIT empty list, which the guard obeys. Discovery finding almost
@@ -419,10 +446,10 @@ jobs:
         run: |
           if [ "${{ github.event_name }}" = "pull_request" ]; then
             echo "pull request — walking the fast screens (tabs, onboarding, route detail + Plan)."
-            echo "The 50-overlay sweep runs on push to main; see the note above."
-            npm run check:selected-state -- --overlays=
+            echo "The 50-overlay sweep runs on the scheduled main walk; see the note above."
+            node scripts/ci-db-inconclusive.mjs npm run check:selected-state -- --overlays=
           else
-            npm run check:selected-state
+            node scripts/ci-db-inconclusive.mjs npm run check:selected-state
           fi
         env:
           # Same reasoning as the jobs above: without these USE_DB is off and the app under
@@ -438,8 +465,8 @@ jobs:
     # Opens ONE panel and expands ONE card, so it is much shorter than its siblings.
     timeout-minutes: 12
     steps:
-      - uses: actions/checkout@v7
-      - uses: actions/setup-node@v7
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
         with:
           node-version: 22
           cache: npm
@@ -454,7 +481,7 @@ jobs:
           google-chrome --version
 
       - name: The Challenges list panel renders real rows
-        run: npm run check:challenge-rows
+        run: node scripts/ci-db-inconclusive.mjs npm run check:challenge-rows
         env:
           # Same reasoning as the jobs above: without these USE_DB is off and the app
           # under test is not the one that ships.
@@ -466,8 +493,8 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 25
     steps:
-      - uses: actions/checkout@v7
-      - uses: actions/setup-node@v7
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
         with:
           node-version: 22
           cache: npm
@@ -489,7 +516,7 @@ jobs:
       # fails if a screen whose content changed says nothing about the failure. A screen that is
       # identical either way is seed-backed and is reported as proving nothing.
       - name: Walk a signed-in account with the database down
-        run: npm run check:outage
+        run: node scripts/ci-db-inconclusive.mjs npm run check:outage
         env:
           VITE_SUPABASE_URL: ${{ secrets.VITE_SUPABASE_URL }}
           VITE_SUPABASE_ANON_KEY: ${{ secrets.VITE_SUPABASE_ANON_KEY }}
@@ -504,8 +531,8 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 25
     steps:
-      - uses: actions/checkout@v7
-      - uses: actions/setup-node@v7
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
         with:
           node-version: 22
           cache: npm
@@ -535,7 +562,7 @@ jobs:
       # discoverable=false and so cannot surface in partner browse. lib/durable-fixture.mjs
       # re-asserts that on every run rather than trusting the day it was set.
       - name: Walk a real signed-in account
-        run: npm run check:signed-in -- --dump signed-in-screens.json
+        run: node scripts/ci-db-inconclusive.mjs npm run check:signed-in -- --dump signed-in-screens.json
         env:
           VITE_SUPABASE_URL: ${{ secrets.VITE_SUPABASE_URL }}
           VITE_SUPABASE_ANON_KEY: ${{ secrets.VITE_SUPABASE_ANON_KEY }}
@@ -567,7 +594,7 @@ jobs:
       # whose profiles are discoverable=false, not sessions or keys.
       - name: Upload per-screen text
         if: always()
-        uses: actions/upload-artifact@v7
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
         with:
           name: signed-in-screens
           path: signed-in-screens.json
@@ -578,8 +605,8 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 20
     steps:
-      - uses: actions/checkout@v7
-      - uses: actions/setup-node@v7
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
         with:
           node-version: 22
           cache: npm
@@ -612,7 +639,7 @@ jobs:
       # GITHUB_RUN_ID so a run asserts on its OWN message. Without that last part run A passes on
       # run B's row — a false pass in the exact window this guard watches.
       - name: Deliver a message between two real accounts
-        run: npm run check:message-delivery
+        run: node scripts/ci-db-inconclusive.mjs npm run check:message-delivery
         env:
           VITE_SUPABASE_URL: ${{ secrets.VITE_SUPABASE_URL }}
           VITE_SUPABASE_ANON_KEY: ${{ secrets.VITE_SUPABASE_ANON_KEY }}
@@ -629,8 +656,8 @@ jobs:
     # second dev server. Each scan is a second or two; the page loads are the cost.
     timeout-minutes: 40
     steps:
-      - uses: actions/checkout@v7
-      - uses: actions/setup-node@v7
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
         with:
           node-version: 22
           cache: npm
@@ -649,7 +676,7 @@ jobs:
       # -- properties of LAYOUT that only a rendered page has. The guard sets VITE_DEMO_AUTOLOGIN
       # itself: "true" for the signed-in walk, "false" for the signed-out one, so it is not set here.
       - name: WCAG 2.2 A/AA on every screen
-        run: npm run check:axe
+        run: node scripts/ci-db-inconclusive.mjs npm run check:axe
         env:
           VITE_SUPABASE_URL: ${{ secrets.VITE_SUPABASE_URL }}
           VITE_SUPABASE_ANON_KEY: ${{ secrets.VITE_SUPABASE_ANON_KEY }}
@@ -662,8 +689,8 @@ jobs:
     # in-page probe each.
     timeout-minutes: 30
     steps:
-      - uses: actions/checkout@v7
-      - uses: actions/setup-node@v7
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
         with:
           node-version: 22
           cache: npm
@@ -681,7 +708,7 @@ jobs:
       # fixed the style objects that set both; this reads the RENDERED colours, so a blue box on a
       # wrapper with blue text in a child is caught too.
       - name: Blue boxes carry white text
-        run: npm run check:blue-on-blue
+        run: node scripts/ci-db-inconclusive.mjs npm run check:blue-on-blue
         env:
           VITE_SUPABASE_URL: ${{ secrets.VITE_SUPABASE_URL }}
           VITE_SUPABASE_ANON_KEY: ${{ secrets.VITE_SUPABASE_ANON_KEY }}

@@ -1,0 +1,416 @@
+[
+ {
+  "id": "wa_goat_mountain_eastern_route",
+  "status": "stuck",
+  "trailhead": null,
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "No route text; no page found (SummitPost 403, WTA Goat Mountain page is login-gated/absent). Sibling uses Goat Mountain Trailhead but that is a lead, not proof; Twin Lakes, Tomyhoi and Hannegan are also within 3.3 km."
+ },
+ {
+  "id": "wa_goat_mountain_southeast_face",
+  "status": "stuck",
+  "trailhead": null,
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "No route text; no page found (SummitPost 403, WTA Goat Mountain page is login-gated/absent). Sibling uses Goat Mountain Trailhead but that is a lead, not proof; Twin Lakes, Tomyhoi and Hannegan are also within 3.3 km."
+ },
+ {
+  "id": "wa_goat_mountain_southeast_route",
+  "status": "stuck",
+  "trailhead": null,
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "No route text; no page found (SummitPost 403, WTA Goat Mountain page is login-gated/absent). Sibling uses Goat Mountain Trailhead but that is a lead, not proof; Twin Lakes, Tomyhoi and Hannegan are also within 3.3 km."
+ },
+ {
+  "id": "wa_goat_mountain_southwest_route",
+  "status": "stuck",
+  "trailhead": null,
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "No route text; no page found (SummitPost 403, WTA Goat Mountain page is login-gated/absent). Sibling uses Goat Mountain Trailhead but that is a lead, not proof; Twin Lakes, Tomyhoi and Hannegan are also within 3.3 km."
+ },
+ {
+  "id": "wa_half_moon_uncle_wehrly_s_toupee",
+  "status": "stuck",
+  "trailhead": null,
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [
+   {
+    "field": "pitches",
+    "value": "5",
+    "url": "https://publications.americanalpineclub.org/articles/13201214567"
+   },
+   {
+    "field": "grade",
+    "value": "III 5.10-",
+    "url": "https://publications.americanalpineclub.org/articles/13201214567"
+   },
+   {
+    "field": "first_ascent",
+    "value": "Chris Mutzel, Jimmy Voorhis, 2017",
+    "url": "https://publications.americanalpineclub.org/articles/13201214567"
+   }
+  ],
+  "notes": "AAC Journal article describes the route but names no trailhead; sibling's SR-20 Hairpin/Pond pullout (USFS Hairpin 48.514336,-120.642715, 2.2 km) is only a lead. Route is on Hai Tower, right-most summit of Half Moon."
+ },
+ {
+  "id": "wa_hibox_mountain_south_face",
+  "status": "found",
+  "trailhead": {
+   "name": "Rachel Lake Trailhead",
+   "identifiedBy": {
+    "kind": "page",
+    "url": "https://www.wta.org/go-hiking/hikes/hibox-mountain",
+    "fact": "WTA Hibox Mountain page lists its trailhead at 47.4008,-121.2840 (Rachel Lake trailhead); the standard way to Hibox"
+   },
+   "placements": [
+    {
+     "source": "USFS",
+     "name": "Rachel Lake Trailhead",
+     "lat": 47.400706,
+     "lng": -121.283915,
+     "url": ""
+    }
+   ]
+  },
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [
+   {
+    "field": "length_mi_rt",
+    "value": "10.0",
+    "url": "https://www.wta.org/go-hiking/hikes/hibox-mountain"
+   },
+   {
+    "field": "gain_ft",
+    "value": "3900",
+    "url": "https://www.wta.org/go-hiking/hikes/hibox-mountain"
+   },
+   {
+    "field": "high_point_ft",
+    "value": "6560",
+    "url": "https://www.wta.org/go-hiking/hikes/hibox-mountain"
+   }
+  ],
+  "notes": "Page is peak-level (WTA hike to Hibox), not specific to this 5.2 south-face route; route own text silent. USFS point is ~35 m from WTA coordinate. Moderate confidence."
+ },
+ {
+  "id": "wa_hibox_mountain_southeast_ridge",
+  "status": "found",
+  "trailhead": {
+   "name": "Rachel Lake Trailhead",
+   "identifiedBy": {
+    "kind": "page",
+    "url": "https://www.wta.org/go-hiking/hikes/hibox-mountain",
+    "fact": "WTA Hibox Mountain page lists its trailhead at 47.4008,-121.2840 (Rachel Lake trailhead); the standard way to Hibox"
+   },
+   "placements": [
+    {
+     "source": "USFS",
+     "name": "Rachel Lake Trailhead",
+     "lat": 47.400706,
+     "lng": -121.283915,
+     "url": ""
+    }
+   ]
+  },
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [
+   {
+    "field": "length_mi_rt",
+    "value": "10.0",
+    "url": "https://www.wta.org/go-hiking/hikes/hibox-mountain"
+   },
+   {
+    "field": "gain_ft",
+    "value": "3900",
+    "url": "https://www.wta.org/go-hiking/hikes/hibox-mountain"
+   },
+   {
+    "field": "high_point_ft",
+    "value": "6560",
+    "url": "https://www.wta.org/go-hiking/hikes/hibox-mountain"
+   }
+  ],
+  "notes": "Page is peak-level (scramble to Hibox); route own text silent. Moderate confidence."
+ },
+ {
+  "id": "wa_himmelhorn_stonehenge",
+  "status": "stuck",
+  "trailhead": {
+   "name": "Goodell Creek Trailhead",
+   "identifiedBy": {
+    "kind": "route_text",
+    "fact": "road: SR-20 to Goodell Creek Trailhead"
+   },
+   "placements": []
+  },
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "Trailhead named by the route own road text, but no USFS/NPS candidate within 25 km matches Goodell Creek; needs OSM placement by coordinator. Approach text starts from a high camp above Crescent Creek Basin."
+ },
+ {
+  "id": "wa_himmelhorn_wild_hair_crack",
+  "status": "stuck",
+  "trailhead": {
+   "name": "Goodell Creek Trailhead",
+   "identifiedBy": {
+    "kind": "route_text",
+    "fact": "Via Goodell Creek Trailhead (~600 ft) and the Stump Hollow approach"
+   },
+   "placements": []
+  },
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "Trailhead named by own text and sibling agrees; no official candidate matches Goodell Creek; needs OSM placement. Its route-start waypoint has null lat/lng."
+ },
+ {
+  "id": "wa_hoodoo_peak_sawtooth_raven_ridge_traverse",
+  "status": "summit_only_answered",
+  "trailhead": null,
+  "reachesSummit": true,
+  "summitEvidence": {
+   "kind": "route_text",
+   "fact": "descent begins from Hoodoo's summit; overview: ridge traverse linking Raven Ridge to Hoodoo Peak"
+  },
+  "otherFacts": [],
+  "notes": "Already has Libby Lake Trailhead waypoint (48.2759,-120.29), consistent with USFS Libby Creek Trailhead 48.276036,-120.290055. Traverse ends on Hoodoo summit per own text."
+ },
+ {
+  "id": "wa_hozomeen_mountain_north_peak_south_ridge",
+  "status": "stuck",
+  "trailhead": null,
+  "reachesSummit": "unknown",
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "Overview only says it ascends the ridge toward the South Peak saddle; no statement it reaches the North Peak summit. Has only campsite waypoints, no trailhead; no text or page to identify one."
+ },
+ {
+  "id": "wa_hozomeen_mountain_northeast_buttress",
+  "status": "found",
+  "trailhead": {
+   "name": "Skyline II Trailhead",
+   "identifiedBy": {
+    "kind": "route_text",
+    "fact": "drive Silver-Skagit Road ... to the Skyline II trailhead"
+   },
+   "placements": [
+    {
+     "source": "NPS",
+     "name": "Skyline II Trailhead (BC)",
+     "lat": 49.041545,
+     "lng": -121.068734,
+     "url": ""
+    }
+   ]
+  },
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "Route text names Skyline II explicitly (8 mi / 4,000 ft to Hozomeen Ridge junction). Trailhead is in British Columbia, 7.8 km from peak. Text warns of border closure since 2020 and 2026 wildfire closure of Silver-Skagit Road; a shorter bushwhack from Hozomeen ranger station is also described."
+ },
+ {
+  "id": "wa_hozomeen_mountain_south_peak_north_ridge",
+  "status": "stuck",
+  "trailhead": null,
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "No route text, no page opened. Sibling uses Hozomeen Campground/Lake trailhead; unverified."
+ },
+ {
+  "id": "wa_hozomeen_mountain_south_peak_southeast_buttress",
+  "status": "stuck",
+  "trailhead": {
+   "name": "Lightning Creek trailhead (Ross Lake)",
+   "identifiedBy": {
+    "kind": "route_text",
+    "fact": "From the Lightning Creek trailhead on Ross Lake, the first-ascent party hiked east past Willow Lake"
+   },
+   "placements": []
+  },
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "Named by own text (a first-ascent account); no official candidate (all listed are BC). Needs placement."
+ },
+ {
+  "id": "wa_hozomeen_mountain_south_peak_southwest_route",
+  "status": "stuck",
+  "trailhead": {
+   "name": "Hozomeen Lake / Willow Lake trailhead at Hozomeen Campground",
+   "identifiedBy": {
+    "kind": "route_text",
+    "fact": "From the Hozomeen Lake/Willow Lake trailhead at Hozomeen Campground"
+   },
+   "placements": []
+  },
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "Named by own text; no official candidate (all listed are BC trailheads). Sibling NO_SUMMIT route has a Hozomeen Campground waypoint 48.9871,-121.0711 (a stored pin, not an independent placement). Needs OSM placement."
+ },
+ {
+  "id": "wa_hozomeen_mountain_southwest_buttress",
+  "status": "stuck",
+  "trailhead": null,
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "No route text, no page opened. Sibling Hozomeen Campground/Lake trailhead unverified for this route."
+ },
+ {
+  "id": "wa_hozomeen_mountain_west_face",
+  "status": "found",
+  "trailhead": {
+   "name": "Skyline II Trailhead",
+   "identifiedBy": {
+    "kind": "route_text",
+    "fact": "drive Silver-Skagit Road ... to the Skyline II trailhead"
+   },
+   "placements": [
+    {
+     "source": "NPS",
+     "name": "Skyline II Trailhead (BC)",
+     "lat": 49.041545,
+     "lng": -121.068734,
+     "url": ""
+    }
+   ]
+  },
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "Own text: day one is 11+ miles from the road via Silver-Skagit Road to a camp just north of the peak; the road text says Skyline II (near km 55) serves the northern approach. Inferred, medium confidence; same border/fire closure caveats."
+ },
+ {
+  "id": "wa_huckleberry_mountain_north_route",
+  "status": "stuck",
+  "trailhead": null,
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "No route text; no page found for this Huckleberry (Snoqualmie area, 47.474,-121.334). WTA huckleberry-mountain is the Suiattle River one, a different mountain. Sibling PCT North (Snoqualmie Pass) is a lead only."
+ },
+ {
+  "id": "wa_huckleberry_mountain_north_spur",
+  "status": "stuck",
+  "trailhead": null,
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "No route text; no page found for this Huckleberry (Snoqualmie area, 47.474,-121.334). WTA huckleberry-mountain is the Suiattle River one, a different mountain. Sibling PCT North (Snoqualmie Pass) is a lead only."
+ },
+ {
+  "id": "wa_huckleberry_mountain_southwest_slope",
+  "status": "stuck",
+  "trailhead": null,
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "No route text; no page found for this Huckleberry (Snoqualmie area, 47.474,-121.334). WTA huckleberry-mountain is the Suiattle River one, a different mountain. Sibling PCT North (Snoqualmie Pass) is a lead only."
+ },
+ {
+  "id": "wa_east_ridge_9",
+  "status": "summit_only_answered",
+  "trailhead": null,
+  "reachesSummit": true,
+  "summitEvidence": {
+   "kind": "route_text",
+   "fact": "descent: from the summit, scramble back to the ridge crest and use the South Ridge rappel line from the summit anchor"
+  },
+  "otherFacts": [],
+  "notes": "Already has Esmeralda Basin / Ingalls Way trailhead waypoint (47.4367,-120.9372), consistent with USFS Esmeralda Trailhead 47.436706,-120.936915."
+ },
+ {
+  "id": "wa_ingalls_peak_east_peak_southwest_face",
+  "status": "found",
+  "trailhead": {
+   "name": "Esmeralda Trailhead",
+   "identifiedBy": {
+    "kind": "route_text",
+    "fact": "sibling East Peak NE ridge route road text: Same access as the Southwest Face route: FR-9737 to the Esmeralda/Lake Ingalls Trailhead"
+   },
+   "placements": [
+    {
+     "source": "USFS",
+     "name": "Esmeralda Trailhead",
+     "lat": 47.436706,
+     "lng": -120.936915,
+     "url": ""
+    }
+   ]
+  },
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "This route own text is empty; evidence is the sibling route text stating the SW Face route shares that access. Medium-high confidence."
+ },
+ {
+  "id": "wa_ingalls_peak_friends_in_high_places",
+  "status": "found",
+  "trailhead": {
+   "name": "Esmeralda Trailhead",
+   "identifiedBy": {
+    "kind": "route_text",
+    "fact": "approach: standard approach (Esmeralda trailhead - Longs Pass - Ingalls Pass - above Ingalls Lake)"
+   },
+   "placements": [
+    {
+     "source": "USFS",
+     "name": "Esmeralda Trailhead",
+     "lat": 47.436706,
+     "lng": -120.936915,
+     "url": ""
+    }
+   ]
+  },
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "Own approach and road text both name the Esmeralda trailhead."
+ },
+ {
+  "id": "wa_ingalls_peak_ingalls_error",
+  "status": "stuck",
+  "trailhead": null,
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "No route text, no page opened. Esmeralda Trailhead is the likely start (all other Ingalls routes use it) but not verified for this route."
+ },
+ {
+  "id": "wa_ingalls_peak_east_ne_ridge_route",
+  "status": "found",
+  "trailhead": {
+   "name": "Esmeralda Trailhead",
+   "identifiedBy": {
+    "kind": "route_text",
+    "fact": "Park at the Esmeralda trailhead at the end of the North Fork Teanaway road and take the Lake Ingalls trail"
+   },
+   "placements": [
+    {
+     "source": "USFS",
+     "name": "Esmeralda Trailhead",
+     "lat": 47.436706,
+     "lng": -120.936915,
+     "url": ""
+    }
+   ]
+  },
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "Own text names it."
+ }
+]

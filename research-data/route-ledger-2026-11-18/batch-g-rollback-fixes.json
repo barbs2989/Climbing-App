@@ -1,0 +1,195 @@
+{
+ "note": "Values replaced by the owner-approved batch-B fixes, 2026-11-18",
+ "rollback": [
+  {
+   "table": "routes",
+   "id": "wa_silent_running",
+   "before": {
+    "grade": "5.10-"
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_silent_running",
+   "before": {
+    "grade_num": 10
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_silent_running",
+   "before": {
+    "length_m": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_blueberry_hill_proxima_wall_blueberry_buttress",
+   "before": {
+    "grade": "5.8+"
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_blueberry_hill_proxima_wall_blueberry_buttress",
+   "before": {
+    "grade_num": 8
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_centralia",
+   "before": {
+    "pitches": 0
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_centralia",
+   "before": {
+    "length_m": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_centralia",
+   "before": {
+    "bolts": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_bridger",
+   "before": {
+    "pitches": 0
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_bridger",
+   "before": {
+    "length_m": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_bridger",
+   "before": {
+    "permit": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_ball_and_chain",
+   "before": {
+    "pitches": 0
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_ball_and_chain",
+   "before": {
+    "permit": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_main_face_belayer_slayer",
+   "before": {
+    "permit": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_contraction_action",
+   "before": {
+    "pitches": 0
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_contraction_action",
+   "before": {
+    "permit": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_cactus_love",
+   "before": {
+    "pitches": 0
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_cactus_love",
+   "before": {
+    "length_m": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_cactus_love",
+   "before": {
+    "permit": null
+   }
+  },
+  {
+   "table": "areas",
+   "id": "wa_bonanza_peak",
+   "before": {
+    "elevation_ft": 9516
+   }
+  },
+  {
+   "table": "areas",
+   "id": "wa_bonanza_peak",
+   "before": {
+    "blurb": "Bonanza Peak (9,516') is the highest non-volcanic summit in Washington and the highpoint of Chelan County, rising deep in the Glacier Peak Wilderness above Lake Chelan. The peak is split into three summits (main, west, and southwest) and flanked by three glaciers — Mary Green (east), Company (north), and Isella (south). It's reached only by a multi-day approach: the Lady of the Lake ferry up Lake Chelan to Lucerne, a bus to the remote village of Holden, and miles of trail/off-trail travel to Holden Lake or Holden Pass. First climbed in 1937 by Curtis James, Barrie James, and Joe Leuthold (Mazamas) via what's now the standard Mary Green Glacier route, the peak is also home to the historically significant 1975 Soviet Route on its southwest summit — one of the most notable big alpine rock routes in the North Cascades."
+   }
+  },
+  {
+   "table": "areas",
+   "id": "wa_mount_goode",
+   "before": {
+    "lat": 48.4829,
+    "lng": -120.9109
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_goode_mountain_southwest_couloir",
+   "before": {
+    "dist_km": 59.5
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_bridger",
+   "before": {
+    "grade": "5.6"
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_bridger",
+   "before": {
+    "grade_num": 6
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_ball_and_chain",
+   "before": {
+    "grade": "5.10a"
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_ball_and_chain",
+   "before": {
+    "grade_num": 10.25
+   }
+  }
+ ]
+}

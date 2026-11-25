@@ -1,0 +1,535 @@
+{
+ "wa_behind_the_tombstone": {
+  "area": "wa_beetle_bailey_slab",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/117064979",
+    "https://www.mountainproject.com/area/108405624/beetle-bailey-slab",
+    "https://services5.arcgis.com/4LKAHwqnBooVDUlX/arcgis/rest/services/ParkBoundaries/FeatureServer/2/query?geometry=-121.5776339,47.8167428&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ParkName,Category&returnGeometry=false&f=json",
+    "https://services5.arcgis.com/4LKAHwqnBooVDUlX/arcgis/rest/services/ParkBoundaries/FeatureServer/2/query?geometry=-121.579,47.8178&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ParkName,Category&returnGeometry=false&f=json",
+    "https://gis.snoco.org/host/rest/services/Hosted/CADASTRAL__parcels/FeatureServer/0/query?geometry=-121.5776339,47.8167428&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ownername,taxprname,parcel_id&returnGeometry=false&f=json",
+    "https://parks.wa.gov/news/2026/climbers-donate-index-town-wall-washington-state-parks"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "fa",
+    "value": "Doug Taylor, Adam Wood 2019",
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/117064979",
+      "fact": "FA: Doug Taylor, Adam Wood 2019",
+      "retrieved_at": "2026-11-19"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_behind_the_tombstone",
+    "column": "access",
+    "from": {
+     "fees": "None — no climbing fee (National Forest, not Mount Rainier NP)",
+     "notes": "Many of these peaks (Mount Persis, Gunn Peak, Baring Mountain area) sit outside designated wilderness — administratively unrestricted despite serious technical terrain.",
+     "permit": "None required.",
+     "land_manager": "Mt. Baker-Snoqualmie National Forest (Skykomish Ranger District)",
+     "parking_pass": "Northwest Forest Pass or America the Beautiful pass required at developed trailheads."
+    },
+    "to": {
+     "land_manager": "Washington State Parks (Forks of the Sky State Park)"
+    },
+    "why": "Templated access names Mt. Baker-Snoqualmie NF, a Northwest Forest Pass and unrelated peaks (Persis, Gunn, Baring). Beetle Bailey Slab (OSM crag node 9763591102) and the hillside above it fall inside 'Forks of the Sky' State Park Property on the official WA State Parks boundary layer (re-queried 2026-11-19 at the slab and at 47.8178,-121.5790 uphill); Snohomish County parcel 27101900203000 under it is owned by WA State Parks & Rec. Copied field for field from the live, verified sibling wa_beetle_bailey_slab_flying_salamanders_short. Parking pass held: no official page states one for this lot. official-1, 12 months, after apply.",
+    "evidence": [
+     "https://services5.arcgis.com/4LKAHwqnBooVDUlX/arcgis/rest/services/ParkBoundaries/FeatureServer/2/query?geometry=-121.5776339,47.8167428&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ParkName,Category&returnGeometry=false&f=json",
+     "https://services5.arcgis.com/4LKAHwqnBooVDUlX/arcgis/rest/services/ParkBoundaries/FeatureServer/2/query?geometry=-121.579,47.8178&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ParkName,Category&returnGeometry=false&f=json",
+     "https://gis.snoco.org/host/rest/services/Hosted/CADASTRAL__parcels/FeatureServer/0/query?geometry=-121.5776339,47.8167428&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ownername,taxprname,parcel_id&returnGeometry=false&f=json",
+     "https://parks.wa.gov/news/2026/climbers-donate-index-town-wall-washington-state-parks"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_behind_the_tombstone",
+    "column": "pitches",
+    "from": 0,
+    "to": 1,
+    "why": "MP gives one length to one anchor and no pitch count; single pitch is clear, so 0 → 1 (level unconfirmed: count implied, not stated).",
+    "evidence": [
+     "https://www.mountainproject.com/route/117064979"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_behind_the_tombstone",
+    "column": "length_m",
+    "from": null,
+    "to": 15,
+    "why": "Mountain Project states 50 ft (15 m). Single source (theCrag 403 even in Chrome); locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/117064979"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_behind_the_tombstone",
+    "column": "bolts",
+    "from": null,
+    "to": 6,
+    "why": "Mountain Project states 6 bolts. Single source; locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/117064979"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_behind_the_tombstone",
+    "column": "anchor",
+    "from": null,
+    "to": "Chains with Mussy hooks",
+    "why": "Mountain Project: chains with Mussy hooks. Single source; locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/117064979"
+    ]
+   }
+  ],
+  "disputed": [
+   "grade: stored 5.9; Mountain Project 5.9+ (and Ride the Lightning's page calls this pitch 5.9 in the text, 5.9+ in its gear list). One publisher, held.",
+   "discipline: stored trad; Mountain Project says Sport (6 bolts to chains, no gear listed). One source, held for the owner (discipline never changes on one source)."
+  ],
+  "notes": "Is also pitch 1 of Ride the Lightning (wa_ride_the_lightning)."
+ },
+ "wa_ride_the_lightning": {
+  "area": "wa_beetle_bailey_slab",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/117722802",
+    "https://www.mountainproject.com/area/108405624/beetle-bailey-slab",
+    "https://services5.arcgis.com/4LKAHwqnBooVDUlX/arcgis/rest/services/ParkBoundaries/FeatureServer/2/query?geometry=-121.5776339,47.8167428&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ParkName,Category&returnGeometry=false&f=json",
+    "https://services5.arcgis.com/4LKAHwqnBooVDUlX/arcgis/rest/services/ParkBoundaries/FeatureServer/2/query?geometry=-121.579,47.8178&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ParkName,Category&returnGeometry=false&f=json",
+    "https://gis.snoco.org/host/rest/services/Hosted/CADASTRAL__parcels/FeatureServer/0/query?geometry=-121.5776339,47.8167428&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ownername,taxprname,parcel_id&returnGeometry=false&f=json",
+    "https://parks.wa.gov/news/2026/climbers-donate-index-town-wall-washington-state-parks"
+   ]
+  },
+  "ledger": [],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_ride_the_lightning",
+    "column": "access",
+    "from": {
+     "fees": "None — no climbing fee (National Forest, not Mount Rainier NP)",
+     "notes": "Many of these peaks (Mount Persis, Gunn Peak, Baring Mountain area) sit outside designated wilderness — administratively unrestricted despite serious technical terrain.",
+     "permit": "None required.",
+     "land_manager": "Mt. Baker-Snoqualmie National Forest (Skykomish Ranger District)",
+     "parking_pass": "Northwest Forest Pass or America the Beautiful pass required at developed trailheads."
+    },
+    "to": {
+     "land_manager": "Washington State Parks (Forks of the Sky State Park)"
+    },
+    "why": "Templated access names Mt. Baker-Snoqualmie NF, a Northwest Forest Pass and unrelated peaks (Persis, Gunn, Baring). Beetle Bailey Slab (OSM crag node 9763591102) and the hillside above it fall inside 'Forks of the Sky' State Park Property on the official WA State Parks boundary layer (re-queried 2026-11-19 at the slab and at 47.8178,-121.5790 uphill); Snohomish County parcel 27101900203000 under it is owned by WA State Parks & Rec. Copied field for field from the live, verified sibling wa_beetle_bailey_slab_flying_salamanders_short. Parking pass held: no official page states one for this lot. official-1, 12 months, after apply.",
+    "evidence": [
+     "https://services5.arcgis.com/4LKAHwqnBooVDUlX/arcgis/rest/services/ParkBoundaries/FeatureServer/2/query?geometry=-121.5776339,47.8167428&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ParkName,Category&returnGeometry=false&f=json",
+     "https://services5.arcgis.com/4LKAHwqnBooVDUlX/arcgis/rest/services/ParkBoundaries/FeatureServer/2/query?geometry=-121.579,47.8178&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ParkName,Category&returnGeometry=false&f=json",
+     "https://gis.snoco.org/host/rest/services/Hosted/CADASTRAL__parcels/FeatureServer/0/query?geometry=-121.5776339,47.8167428&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ownername,taxprname,parcel_id&returnGeometry=false&f=json",
+     "https://parks.wa.gov/news/2026/climbers-donate-index-town-wall-washington-state-parks"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_ride_the_lightning",
+    "column": "pitches",
+    "from": 0,
+    "to": 4,
+    "why": "Mountain Project states 4 pitches (300 ft). Single source; locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/117722802"
+    ]
+   }
+  ],
+  "disputed": [],
+  "notes": "Catalog defect (link-up): MP's P1 is Behind the Tombstone (own row wa_behind_the_tombstone) and P2 is Rope Eating Mice (MP 117723114); only P3/P4 are this route's own. Only the access and pitches-0 fixes proposed. Length 300 ft not proposed for that reason."
+ },
+ "wa_index_archeology": {
+  "area": "wa_beetle_bailey_slab",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/117065066",
+    "https://www.mountainproject.com/area/108405624/beetle-bailey-slab",
+    "https://services5.arcgis.com/4LKAHwqnBooVDUlX/arcgis/rest/services/ParkBoundaries/FeatureServer/2/query?geometry=-121.5776339,47.8167428&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ParkName,Category&returnGeometry=false&f=json",
+    "https://services5.arcgis.com/4LKAHwqnBooVDUlX/arcgis/rest/services/ParkBoundaries/FeatureServer/2/query?geometry=-121.579,47.8178&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ParkName,Category&returnGeometry=false&f=json",
+    "https://gis.snoco.org/host/rest/services/Hosted/CADASTRAL__parcels/FeatureServer/0/query?geometry=-121.5776339,47.8167428&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ownername,taxprname,parcel_id&returnGeometry=false&f=json",
+    "https://parks.wa.gov/news/2026/climbers-donate-index-town-wall-washington-state-parks"
+   ]
+  },
+  "ledger": [],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_index_archeology",
+    "column": "access",
+    "from": {
+     "fees": "None — no climbing fee (National Forest, not Mount Rainier NP)",
+     "notes": "Many of these peaks (Mount Persis, Gunn Peak, Baring Mountain area) sit outside designated wilderness — administratively unrestricted despite serious technical terrain.",
+     "permit": "None required.",
+     "land_manager": "Mt. Baker-Snoqualmie National Forest (Skykomish Ranger District)",
+     "parking_pass": "Northwest Forest Pass or America the Beautiful pass required at developed trailheads."
+    },
+    "to": {
+     "land_manager": "Washington State Parks (Forks of the Sky State Park)"
+    },
+    "why": "Templated access names Mt. Baker-Snoqualmie NF, a Northwest Forest Pass and unrelated peaks (Persis, Gunn, Baring). Beetle Bailey Slab (OSM crag node 9763591102) and the hillside above it fall inside 'Forks of the Sky' State Park Property on the official WA State Parks boundary layer (re-queried 2026-11-19 at the slab and at 47.8178,-121.5790 uphill); Snohomish County parcel 27101900203000 under it is owned by WA State Parks & Rec. Copied field for field from the live, verified sibling wa_beetle_bailey_slab_flying_salamanders_short. Parking pass held: no official page states one for this lot. official-1, 12 months, after apply.",
+    "evidence": [
+     "https://services5.arcgis.com/4LKAHwqnBooVDUlX/arcgis/rest/services/ParkBoundaries/FeatureServer/2/query?geometry=-121.5776339,47.8167428&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ParkName,Category&returnGeometry=false&f=json",
+     "https://services5.arcgis.com/4LKAHwqnBooVDUlX/arcgis/rest/services/ParkBoundaries/FeatureServer/2/query?geometry=-121.579,47.8178&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ParkName,Category&returnGeometry=false&f=json",
+     "https://gis.snoco.org/host/rest/services/Hosted/CADASTRAL__parcels/FeatureServer/0/query?geometry=-121.5776339,47.8167428&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ownername,taxprname,parcel_id&returnGeometry=false&f=json",
+     "https://parks.wa.gov/news/2026/climbers-donate-index-town-wall-washington-state-parks"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_index_archeology",
+    "column": "pitches",
+    "from": 0,
+    "to": 1,
+    "why": "MP gives one length to one anchor and no pitch count; single pitch is clear, so 0 → 1 (level unconfirmed: count implied, not stated).",
+    "evidence": [
+     "https://www.mountainproject.com/route/117065066"
+    ]
+   }
+  ],
+  "disputed": [],
+  "notes": "Catalog defect (variation): MP describes it as an alternative start to Racer X (wa_racer_x) ending at Beetle Bailey p1's anchor. Only access and pitches-0 fixes proposed. MP facts for the owner: 60 ft, 3 bolts + finger-size gear, FA Max Dufford (matches stored fa)."
+ },
+ "wa_cupcake_2": {
+  "area": "wa_beetle_bailey_slab",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/110923677",
+    "https://www.mountainproject.com/area/108405624/beetle-bailey-slab",
+    "https://services5.arcgis.com/4LKAHwqnBooVDUlX/arcgis/rest/services/ParkBoundaries/FeatureServer/2/query?geometry=-121.5776339,47.8167428&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ParkName,Category&returnGeometry=false&f=json",
+    "https://services5.arcgis.com/4LKAHwqnBooVDUlX/arcgis/rest/services/ParkBoundaries/FeatureServer/2/query?geometry=-121.579,47.8178&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ParkName,Category&returnGeometry=false&f=json",
+    "https://gis.snoco.org/host/rest/services/Hosted/CADASTRAL__parcels/FeatureServer/0/query?geometry=-121.5776339,47.8167428&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ownername,taxprname,parcel_id&returnGeometry=false&f=json",
+    "https://parks.wa.gov/news/2026/climbers-donate-index-town-wall-washington-state-parks"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "grade",
+    "value": "5.10c",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/110923677",
+      "fact": "5.10c YDS, Trad",
+      "retrieved_at": "2026-11-19"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_cupcake_2",
+    "column": "access",
+    "from": {
+     "fees": "None — no climbing fee (National Forest, not Mount Rainier NP)",
+     "notes": "Many of these peaks (Mount Persis, Gunn Peak, Baring Mountain area) sit outside designated wilderness — administratively unrestricted despite serious technical terrain.",
+     "permit": "None required.",
+     "land_manager": "Mt. Baker-Snoqualmie National Forest (Skykomish Ranger District)",
+     "parking_pass": "Northwest Forest Pass or America the Beautiful pass required at developed trailheads."
+    },
+    "to": {
+     "land_manager": "Washington State Parks (Forks of the Sky State Park)"
+    },
+    "why": "Templated access names Mt. Baker-Snoqualmie NF, a Northwest Forest Pass and unrelated peaks (Persis, Gunn, Baring). Beetle Bailey Slab (OSM crag node 9763591102) and the hillside above it fall inside 'Forks of the Sky' State Park Property on the official WA State Parks boundary layer (re-queried 2026-11-19 at the slab and at 47.8178,-121.5790 uphill); Snohomish County parcel 27101900203000 under it is owned by WA State Parks & Rec. Copied field for field from the live, verified sibling wa_beetle_bailey_slab_flying_salamanders_short. Parking pass held: no official page states one for this lot. official-1, 12 months, after apply.",
+    "evidence": [
+     "https://services5.arcgis.com/4LKAHwqnBooVDUlX/arcgis/rest/services/ParkBoundaries/FeatureServer/2/query?geometry=-121.5776339,47.8167428&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ParkName,Category&returnGeometry=false&f=json",
+     "https://services5.arcgis.com/4LKAHwqnBooVDUlX/arcgis/rest/services/ParkBoundaries/FeatureServer/2/query?geometry=-121.579,47.8178&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ParkName,Category&returnGeometry=false&f=json",
+     "https://gis.snoco.org/host/rest/services/Hosted/CADASTRAL__parcels/FeatureServer/0/query?geometry=-121.5776339,47.8167428&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ownername,taxprname,parcel_id&returnGeometry=false&f=json",
+     "https://parks.wa.gov/news/2026/climbers-donate-index-town-wall-washington-state-parks"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_cupcake_2",
+    "column": "pitches",
+    "from": 0,
+    "to": 2,
+    "why": "Mountain Project states 2 pitches (100 ft). Single source; locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/110923677"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_cupcake_2",
+    "column": "length_m",
+    "from": null,
+    "to": 30,
+    "why": "Mountain Project states 100 ft (30 m). Single source; locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/110923677"
+    ]
+   }
+  ],
+  "disputed": [],
+  "notes": "FA unknown on MP; fa left null."
+ },
+ "wa_metal": {
+  "area": "wa_beetle_bailey_slab",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/116682712",
+    "https://www.mountainproject.com/area/108405624/beetle-bailey-slab",
+    "https://services5.arcgis.com/4LKAHwqnBooVDUlX/arcgis/rest/services/ParkBoundaries/FeatureServer/2/query?geometry=-121.5776339,47.8167428&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ParkName,Category&returnGeometry=false&f=json",
+    "https://services5.arcgis.com/4LKAHwqnBooVDUlX/arcgis/rest/services/ParkBoundaries/FeatureServer/2/query?geometry=-121.579,47.8178&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ParkName,Category&returnGeometry=false&f=json",
+    "https://gis.snoco.org/host/rest/services/Hosted/CADASTRAL__parcels/FeatureServer/0/query?geometry=-121.5776339,47.8167428&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ownername,taxprname,parcel_id&returnGeometry=false&f=json",
+    "https://parks.wa.gov/news/2026/climbers-donate-index-town-wall-washington-state-parks"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "grade",
+    "value": "5.11b",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/116682712",
+      "fact": "5.11b YDS, Trad",
+      "retrieved_at": "2026-11-19"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_metal",
+    "column": "access",
+    "from": {
+     "fees": "None — no climbing fee (National Forest, not Mount Rainier NP)",
+     "notes": "Many of these peaks (Mount Persis, Gunn Peak, Baring Mountain area) sit outside designated wilderness — administratively unrestricted despite serious technical terrain.",
+     "permit": "None required.",
+     "land_manager": "Mt. Baker-Snoqualmie National Forest (Skykomish Ranger District)",
+     "parking_pass": "Northwest Forest Pass or America the Beautiful pass required at developed trailheads."
+    },
+    "to": {
+     "land_manager": "Washington State Parks (Forks of the Sky State Park)"
+    },
+    "why": "Templated access names Mt. Baker-Snoqualmie NF, a Northwest Forest Pass and unrelated peaks (Persis, Gunn, Baring). Beetle Bailey Slab (OSM crag node 9763591102) and the hillside above it fall inside 'Forks of the Sky' State Park Property on the official WA State Parks boundary layer (re-queried 2026-11-19 at the slab and at 47.8178,-121.5790 uphill); Snohomish County parcel 27101900203000 under it is owned by WA State Parks & Rec. Copied field for field from the live, verified sibling wa_beetle_bailey_slab_flying_salamanders_short. Parking pass held: no official page states one for this lot. official-1, 12 months, after apply.",
+    "evidence": [
+     "https://services5.arcgis.com/4LKAHwqnBooVDUlX/arcgis/rest/services/ParkBoundaries/FeatureServer/2/query?geometry=-121.5776339,47.8167428&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ParkName,Category&returnGeometry=false&f=json",
+     "https://services5.arcgis.com/4LKAHwqnBooVDUlX/arcgis/rest/services/ParkBoundaries/FeatureServer/2/query?geometry=-121.579,47.8178&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ParkName,Category&returnGeometry=false&f=json",
+     "https://gis.snoco.org/host/rest/services/Hosted/CADASTRAL__parcels/FeatureServer/0/query?geometry=-121.5776339,47.8167428&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ownername,taxprname,parcel_id&returnGeometry=false&f=json",
+     "https://parks.wa.gov/news/2026/climbers-donate-index-town-wall-washington-state-parks"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_metal",
+    "column": "pitches",
+    "from": 0,
+    "to": 1,
+    "why": "MP gives one length to one anchor and no pitch count; single pitch is clear, so 0 → 1 (level unconfirmed: count implied, not stated).",
+    "evidence": [
+     "https://www.mountainproject.com/route/116682712"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_metal",
+    "column": "length_m",
+    "from": null,
+    "to": 21,
+    "why": "Mountain Project states 70 ft (21 m). Single source; locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/116682712"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_metal",
+    "column": "bolts",
+    "from": null,
+    "to": 7,
+    "why": "Mountain Project states 7 bolts (plus 2 fixed pitons). Single source; locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/116682712"
+    ]
+   }
+  ],
+  "disputed": [],
+  "notes": "FA held: Mountain Project gives D. Cramer and T. Lien, April 1987 (stored fa is null); an FA never sets from one source. Starts from the Racer X / Beetle Bailey p1 chains."
+ },
+ "wa_everything_hertz": {
+  "area": "wa_beetle_bailey_slab",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/119296557",
+    "https://www.mountainproject.com/area/108405624/beetle-bailey-slab",
+    "https://services5.arcgis.com/4LKAHwqnBooVDUlX/arcgis/rest/services/ParkBoundaries/FeatureServer/2/query?geometry=-121.5776339,47.8167428&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ParkName,Category&returnGeometry=false&f=json",
+    "https://services5.arcgis.com/4LKAHwqnBooVDUlX/arcgis/rest/services/ParkBoundaries/FeatureServer/2/query?geometry=-121.579,47.8178&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ParkName,Category&returnGeometry=false&f=json",
+    "https://gis.snoco.org/host/rest/services/Hosted/CADASTRAL__parcels/FeatureServer/0/query?geometry=-121.5776339,47.8167428&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ownername,taxprname,parcel_id&returnGeometry=false&f=json",
+    "https://parks.wa.gov/news/2026/climbers-donate-index-town-wall-washington-state-parks"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "grade",
+    "value": "5.10b/c",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/119296557",
+      "fact": "5.10b/c YDS, Trad",
+      "retrieved_at": "2026-11-19"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_everything_hertz",
+    "column": "access",
+    "from": {
+     "fees": "None — no climbing fee (National Forest, not Mount Rainier NP)",
+     "notes": "Many of these peaks (Mount Persis, Gunn Peak, Baring Mountain area) sit outside designated wilderness — administratively unrestricted despite serious technical terrain.",
+     "permit": "None required.",
+     "land_manager": "Mt. Baker-Snoqualmie National Forest (Skykomish Ranger District)",
+     "parking_pass": "Northwest Forest Pass or America the Beautiful pass required at developed trailheads."
+    },
+    "to": {
+     "land_manager": "Washington State Parks (Forks of the Sky State Park)"
+    },
+    "why": "Templated access names Mt. Baker-Snoqualmie NF, a Northwest Forest Pass and unrelated peaks (Persis, Gunn, Baring). Beetle Bailey Slab (OSM crag node 9763591102) and the hillside above it fall inside 'Forks of the Sky' State Park Property on the official WA State Parks boundary layer (re-queried 2026-11-19 at the slab and at 47.8178,-121.5790 uphill); Snohomish County parcel 27101900203000 under it is owned by WA State Parks & Rec. Copied field for field from the live, verified sibling wa_beetle_bailey_slab_flying_salamanders_short. Parking pass held: no official page states one for this lot. official-1, 12 months, after apply.",
+    "evidence": [
+     "https://services5.arcgis.com/4LKAHwqnBooVDUlX/arcgis/rest/services/ParkBoundaries/FeatureServer/2/query?geometry=-121.5776339,47.8167428&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ParkName,Category&returnGeometry=false&f=json",
+     "https://services5.arcgis.com/4LKAHwqnBooVDUlX/arcgis/rest/services/ParkBoundaries/FeatureServer/2/query?geometry=-121.579,47.8178&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ParkName,Category&returnGeometry=false&f=json",
+     "https://gis.snoco.org/host/rest/services/Hosted/CADASTRAL__parcels/FeatureServer/0/query?geometry=-121.5776339,47.8167428&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ownername,taxprname,parcel_id&returnGeometry=false&f=json",
+     "https://parks.wa.gov/news/2026/climbers-donate-index-town-wall-washington-state-parks"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_everything_hertz",
+    "column": "pitches",
+    "from": 0,
+    "to": 2,
+    "why": "Mountain Project states 2 pitches (140 ft). Single source; locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/119296557"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_everything_hertz",
+    "column": "length_m",
+    "from": null,
+    "to": 42,
+    "why": "Mountain Project states 140 ft (42 m). Single source; locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/119296557"
+    ]
+   }
+  ],
+  "disputed": [],
+  "notes": "FA held: stored fa lists only the P1 party; Mountain Project adds a P2 party (Michal Rynkiewicz, Jeff Kljaich, Adam Wood). Single source, not rewritten. Shares its first two bolts with 36 Volts to Anywhere."
+ },
+ "wa_flying_salamanders_full": {
+  "area": "wa_beetle_bailey_slab",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/119257785",
+    "https://www.mountainproject.com/area/108405624/beetle-bailey-slab",
+    "https://services5.arcgis.com/4LKAHwqnBooVDUlX/arcgis/rest/services/ParkBoundaries/FeatureServer/2/query?geometry=-121.5776339,47.8167428&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ParkName,Category&returnGeometry=false&f=json",
+    "https://services5.arcgis.com/4LKAHwqnBooVDUlX/arcgis/rest/services/ParkBoundaries/FeatureServer/2/query?geometry=-121.579,47.8178&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ParkName,Category&returnGeometry=false&f=json",
+    "https://gis.snoco.org/host/rest/services/Hosted/CADASTRAL__parcels/FeatureServer/0/query?geometry=-121.5776339,47.8167428&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ownername,taxprname,parcel_id&returnGeometry=false&f=json",
+    "https://parks.wa.gov/news/2026/climbers-donate-index-town-wall-washington-state-parks"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "grade",
+    "value": "5.10a",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/119257785",
+      "fact": "5.10a YDS, Sport",
+      "retrieved_at": "2026-11-19"
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "A.Wood, G.Shank, D.Taylor",
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/119257785",
+      "fact": "FA: A.Wood, G.Shank, D.Taylor",
+      "retrieved_at": "2026-11-19"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_flying_salamanders_full",
+    "column": "access",
+    "from": {
+     "fees": "None — no climbing fee (National Forest, not Mount Rainier NP)",
+     "notes": "Many of these peaks (Mount Persis, Gunn Peak, Baring Mountain area) sit outside designated wilderness — administratively unrestricted despite serious technical terrain.",
+     "permit": "None required.",
+     "land_manager": "Mt. Baker-Snoqualmie National Forest (Skykomish Ranger District)",
+     "parking_pass": "Northwest Forest Pass or America the Beautiful pass required at developed trailheads."
+    },
+    "to": {
+     "land_manager": "Washington State Parks (Forks of the Sky State Park)"
+    },
+    "why": "Templated access names Mt. Baker-Snoqualmie NF, a Northwest Forest Pass and unrelated peaks (Persis, Gunn, Baring). Beetle Bailey Slab (OSM crag node 9763591102) and the hillside above it fall inside 'Forks of the Sky' State Park Property on the official WA State Parks boundary layer (re-queried 2026-11-19 at the slab and at 47.8178,-121.5790 uphill); Snohomish County parcel 27101900203000 under it is owned by WA State Parks & Rec. Copied field for field from the live, verified sibling wa_beetle_bailey_slab_flying_salamanders_short. Parking pass held: no official page states one for this lot. official-1, 12 months, after apply.",
+    "evidence": [
+     "https://services5.arcgis.com/4LKAHwqnBooVDUlX/arcgis/rest/services/ParkBoundaries/FeatureServer/2/query?geometry=-121.5776339,47.8167428&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ParkName,Category&returnGeometry=false&f=json",
+     "https://services5.arcgis.com/4LKAHwqnBooVDUlX/arcgis/rest/services/ParkBoundaries/FeatureServer/2/query?geometry=-121.579,47.8178&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ParkName,Category&returnGeometry=false&f=json",
+     "https://gis.snoco.org/host/rest/services/Hosted/CADASTRAL__parcels/FeatureServer/0/query?geometry=-121.5776339,47.8167428&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ownername,taxprname,parcel_id&returnGeometry=false&f=json",
+     "https://parks.wa.gov/news/2026/climbers-donate-index-town-wall-washington-state-parks"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_flying_salamanders_full",
+    "column": "pitches",
+    "from": 0,
+    "to": 1,
+    "why": "Mountain Project: 100 ft, continue past the first anchor to the top on a 70 m rope; one length to one top anchor, no pitch count stated. 0 → 1 (unconfirmed).",
+    "evidence": [
+     "https://www.mountainproject.com/route/119257785"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_flying_salamanders_full",
+    "column": "length_m",
+    "from": null,
+    "to": 30,
+    "why": "Mountain Project states 100 ft (30 m). Single source; locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/119257785"
+    ]
+   }
+  ],
+  "disputed": [
+   "bolts: Mountain Project says 15 bolts in one section and 16 in another; held."
+  ],
+  "notes": "Its lower part is the separate row wa_beetle_bailey_slab_flying_salamanders_short (5.7, 9 bolts to chains)."
+ }
+}

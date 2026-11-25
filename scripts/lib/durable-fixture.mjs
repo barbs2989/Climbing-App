@@ -18,6 +18,7 @@ import { POLICY_VERSION } from "../../lib/policy.js";
 // Re-exported from ui-fixture so the two modes cannot disagree about the storage contract.
 // Safe to import now that its service-key lookup is lazy.
 export { sessionForStorage, STORAGE_KEY } from "./ui-fixture.mjs";
+import { fixtureCrewDays, fixtureTripDay } from "./ui-fixture.mjs";
 
 const ANON = anonKey();
 
@@ -49,6 +50,14 @@ const asUser = async (sess, path, init = {}) => readBody(await fetch(`${SUPABASE
     "Content-Type": "application/json", Prefer: "return=representation", ...(init.headers || {}),
   },
 }));
+// 0408 (crew_creator_joins): creating a crew seats its creator CONFIRMED, by trigger, so the creator's own
+// row is already there and inserting it again is a duplicate key (23505 -> HTTP 409). A run against a
+// database without 0408 (a preview replaying older migrations) still needs the insert, so ask first.
+const alreadySeated = async (sess, crewId, uid) => {
+  const r = await asUser(sess, `crew_members?crew_id=eq.${crewId}&user_id=eq.${uid}&select=status`);
+  assertHealthy(r, "reading whether the crew's creator is already seated");
+  return Array.isArray(r.json) && r.json.some((m) => m.status === "confirmed");
+};
 
 async function signIn(email, password) {
   const res = await readBody(await fetch(`${SUPABASE_URL}/auth/v1/token?grant_type=password`, {
@@ -79,9 +88,10 @@ export async function durableFixture(log) {
   // and asserted on it. Selecting the column made the app render the mate's REAL handle
   // (@climbmatch-ci-mate) and the guard failed, having pinned a value that existed only because
   // of the defect. A fixture that reads the identity it asserts on cannot make that mistake.
+  // On the MATE's own JWT through my_profile(): since 0434 the raw name is readable only by its owner.
   const res = await readBody(await fetch(
-    `${SUPABASE_URL}/rest/v1/profiles?id=eq.${mateSession.user.id}&select=id,name,username,discoverable`,
-    { headers: { apikey: ANON, Authorization: `Bearer ${session.access_token}` } },
+    `${SUPABASE_URL}/rest/v1/rpc/my_profile?select=id,name,username,discoverable`,
+    { headers: { apikey: ANON, Authorization: `Bearer ${mateSession.access_token}` } },
   ));
   assertHealthy(res, "reading the mate's profile");
   const mate = res.json?.[0];
@@ -105,14 +115,15 @@ export async function durableFixture(log) {
   // acceptCurrentPolicy() does in the app -- no service key, and nothing CI is not allowed to
   // hold. Idempotent: it reads first and writes only when the version differs, so a re-run is
   // one extra GET.
+  // terms_accepted_version is owner-only since 0434: read through my_profile() on the owner's JWT.
   const pol = await readBody(await fetch(
-    `${SUPABASE_URL}/rest/v1/profiles?id=eq.${session.user.id}&select=terms_accepted_version`,
+    `${SUPABASE_URL}/rest/v1/rpc/my_profile?select=terms_accepted_version`,
     { headers: { apikey: ANON, Authorization: `Bearer ${session.access_token}` } },
   ));
   assertHealthy(pol, "reading the owner's policy acceptance");
   if (pol.json?.[0]?.terms_accepted_version !== POLICY_VERSION) {
     const stamp = await readBody(await fetch(
-      `${SUPABASE_URL}/rest/v1/profiles?id=eq.${session.user.id}`,
+      `${SUPABASE_URL}/rest/v1/profiles?id=eq.${session.user.id}&select=id`,
       {
         method: "PATCH",
         headers: {
@@ -159,7 +170,7 @@ export async function durableFixture(log) {
     assertHealthy(cur, `reading the durable ${who}'s disciplines`);
     if (!(cur.json?.[0]?.disciplines || []).length) {
       const shape = await readBody(await fetch(
-        `${SUPABASE_URL}/rest/v1/profiles?id=eq.${acct.user.id}`,
+        `${SUPABASE_URL}/rest/v1/profiles?id=eq.${acct.user.id}&select=id`,
         {
           method: "PATCH",
           headers: {
@@ -280,6 +291,38 @@ export async function durableFixture(log) {
     }
   }
 
+  // THE DURABLE CREW CLIMBED YESTERDAY, ON EVERY RUN. It was seeded once
+  // (scripts/oneoff/seed-ci-test-fixture.mjs) proposing 2026-09-12 and -13, and it is the crew the
+  // walk's roster, chat and recap assertions are about. Two things need its day to keep moving:
+  //   * since #3816 a crew whose last day is long behind is a PAST crew, so on 2026-11-24 this
+  //     account's Crews tab read "You have no crews yet" and check:signed-in failed on four lines
+  //     with the app correct;
+  //   * the recap (0519) lists crewmates only for a crew with an AGREED day, and takes answers for
+  //     14 days after it. See fixtureTripDay() in ui-fixture.mjs for why yesterday, and why this
+  //     crew and never a per-run one.
+  // Same reason as the policy stamp and the disciplines above: these rows are permanent, so a
+  // property has to KEEP being true. It is the organizer's own "lock the day" (agreed_date +
+  // date_forced, 0075), written by the crew's CREATOR on their own JWT (the update policy is
+  // created_by = auth.uid()), read back, and skipped when the row already says it.
+  {
+    const DURABLE_CREW_MEET = "Heliotrope Ridge TH";
+    const got = await asUser(session, `crews?route_id=eq.${CREW_ROUTE_ID}&meet_place=eq.${encodeURIComponent(DURABLE_CREW_MEET)}&select=id,created_by,dates,agreed_date`);
+    assertHealthy(got, "reading the durable crew's day");
+    const rows = Array.isArray(got.json) ? got.json : [];
+    if (!rows.length) throw new Error("the durable crew (North Ridge, " + DURABLE_CREW_MEET + ") is not readable by the owner — re-run scripts/oneoff/seed-ci-test-fixture.mjs");
+    const day = fixtureTripDay();
+    for (const c of rows) {
+      const had = String(c.agreed_date || "").slice(0, 10);
+      if (had === day && (c.dates || []).map((d) => String(d).slice(0, 10)).join() === day) continue;
+      const by = c.created_by === session.user.id ? session : c.created_by === mateSession.user.id ? mateSession : null;
+      if (!by) throw new Error(`the durable crew ${c.id} belongs to neither fixture account, so nobody here may lock its day`);
+      const up = await asUser(by, `crews?id=eq.${c.id}&select=id,agreed_date`, { method: "PATCH", body: JSON.stringify({ dates: [day], agreed_date: day, date_forced: true }) });
+      assertHealthy(up, "locking the durable crew's day");
+      if (up.status >= 300 || String(up.json?.[0]?.agreed_date || "").slice(0, 10) !== day) throw new Error(`could not lock the durable crew's day (HTTP ${up.status}): ${(up.text || "").slice(0, 200)}`);
+      log(`  locked the durable crew's day to yesterday (${had || "none"} -> ${day}): active for 3 days, and its recap lists the crewmate (0519)`);
+    }
+  }
+
   const mk = await asUser(session, "groups", {
     method: "POST",
     body: JSON.stringify({
@@ -345,7 +388,7 @@ export async function durableFixture(log) {
   const mkCrew = await asUser(mateSession, "crews", {
     method: "POST",
     body: JSON.stringify({
-      created_by: mateSession.user.id, route_id: CREW_ROUTE_ID, dates: ["2026-10-04"],
+      created_by: mateSession.user.id, route_id: CREW_ROUTE_ID, dates: fixtureCrewDays(1),
       meet_place: "Coleman Deming TH", meet_time: "05:00", cap: 3,
     }),
   });
@@ -358,6 +401,7 @@ export async function durableFixture(log) {
   // status other than confirmed). Doing it as the owner would manufacture a state the app's own
   // flow cannot reach -- the trap this repo already records for the accepted connection.
   for (const [uid, status] of [[mateSession.user.id, "confirmed"], [session.user.id, "invited"]]) {
+    if (uid === mateSession.user.id && await alreadySeated(mateSession, inviteCrew.id, uid)) continue;
     const seat = await asUser(mateSession, "crew_members", {
       method: "POST",
       body: JSON.stringify({ crew_id: inviteCrew.id, user_id: uid, status, invited_by: mateSession.user.id }),
@@ -385,7 +429,7 @@ export async function durableFixture(log) {
     method: "POST",
     body: JSON.stringify({
       created_by: mateSession.user.id, route_id: null, area_id: AREA_CREW_AREA_ID, discipline: "sport",
-      dates: ["2026-10-05"], meet_place: "Lower lot", meet_time: "09:00", cap: 3,
+      dates: fixtureCrewDays(1), meet_place: "Lower lot", meet_time: "09:00", cap: 3,
     }),
   });
   assertHealthy(mkArea, "creating this run's area crew");
@@ -397,6 +441,7 @@ export async function durableFixture(log) {
   // crew invite", 0086/0227 — the first draft seated the owner confirmed and CI answered 403), so the
   // mate invites and the OWNER accepts, which is exactly the app's own flow.
   for (const [uid, status] of [[mateSession.user.id, "confirmed"], [session.user.id, "invited"]]) {
+    if (uid === mateSession.user.id && await alreadySeated(mateSession, areaCrew.id, uid)) continue;
     const seat = await asUser(mateSession, "crew_members", {
       method: "POST",
       body: JSON.stringify({ crew_id: areaCrew.id, user_id: uid, status, invited_by: mateSession.user.id }),

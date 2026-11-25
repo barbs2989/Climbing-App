@@ -4,6 +4,70 @@ What enrichment wrote and where it landed: approach scope, the climbing_route sw
 
 Part of the guard notes — see [README.md](README.md) for the full index.
 
+- **`audit:optimal-season`** asks whether a route page says ONE thing about when to go: the header
+  strap (`routeSeasonShort`), the SEASONAL GUIDANCE *Optimal window* and its 12-month calendar.
+  Report-only; it cannot say which side is right. First run (owner note "Audit optimal season",
+  2026-11-18): 9 headers contradicted both window and calendar, every one a snow/ice line with a
+  summer header or the reverse; 4 windows read as research notes. Two headers (Park Glacier
+  Headwall, Buckner N Face) and the 4 windows were fixed
+  (`scripts/oneoff/fix-optimal-season-2026-11-18.mjs`, rollback `audits/optimal-season/`); the
+  rest were researched and HELD on thin or split evidence (Tye Peak, Goode NE Face, Forbidden NE
+  Face, Adams Wilson/Lava headwalls behind the Yakama Jul-Oct permit, Snowking's two seasons).
+  - **Second pass, same day (owner "keep going")**: a wider research round found 2+ agreeing
+    sources for six of the held lines, fixed by `scripts/oneoff/fix-optimal-season-2026-11-18-b.mjs`
+    (Adams North Ridge Jun-mid Jul, Adams Lava Headwall May-Jun, Tye Peak to its winter snow season
+    — header, window AND calendar — Honeymoon Route May-Jun, Mount Lawson Late Jun-Sep, Whatcom
+    South Spur's August). Still held, and **two are route identity, not season**: Adams "Wilson
+    Glacier Headwall" is a known RAINIER route name and no source knows one on Adams; Goode
+    "Northeast Face" turns up only the NE Buttress. Forbidden "Northeast Face" is ambiguous (the
+    old name of the normal summer traverse, or a direct ice face); Snowking (glacier vs west
+    ridge) and South Twin Sister (sources span May-Oct to year-round) stay low.
+  - **Third pass: the three "identity" rows are REAL routes** — the research agent's "Wilson
+    Glacier Headwall is a Rainier route" was wrong for our row (it climbs Adams's Roosevelt Cliff),
+    and Goode's and Forbidden's NE faces each carry a distinct FA (1954; 1961, the direct ice face).
+    What is wrong instead: Goode NE Face's `beta` describes the NE BUTTRESS ("Grade IV 5.5, 6-8
+    pitches") under a 5.8 grade; five Adams glacier and headwall lines are graded "Class 3"; and
+    Wilson's best snow (May-Jun) falls outside the Yakama east-side Jul 1-Oct 1 access, which is an
+    access question, not a research one. All held. **Shoulders are not a worklist**: `--shoulders`
+    lists the 56 (mostly "Jun-Sep" over a risky June). Header and calendar came from one pipeline,
+    so narrowing the header to the calendar would be a mechanical bulk edit with no new evidence.
+  - **Fourth pass, read through the owner's Chrome (2026-11-18)** — do not re-derive:
+    - **"Class 3" on the Adams glacier lines is NOT an error.** The 2026-10-01 final-grade pass put
+      every WA mountain route's crux on one of three scales (`FINAL_GRADE` in lib/grade.js: Class
+      1-4, 5.x, WI/AI); Mountain Project's "Mod. Snow" / "Steep Snow" (Lyman, North Ridge, Mazama
+      Headwall) is not one of them, and writing it would drop the headline grade and the finder
+      filter. Pass three's flag was wrong.
+    - **Yakama Tract D (Adams's east side: Mazama and Wilson) opens on dates the Yakama set each
+      year, day use only** — late July to early September in 2023, late August to late September in
+      2021, closed all of 2018 and "until further notice" from June 2019 on The Mountaineers' Mazama
+      page; plus a Tract D tribal-use permit. The often-quoted "Jul 1-Oct 1" is an older rule. So
+      Wilson's May-Jun snow season has no public access window at all: an owner call, not research.
+    - **Goode NE Face is a dead end**: `audits/route-grades/deep/out/g5.json` already records that
+      the only source is one AAJ 1967 sentence (no grade), that 5.8 is unsupported, and that the beta
+      describes the 1966 NE Buttress. MP, The Mountaineers and SummitPost (403 even in Chrome) have no
+      page for it.
+    - **South Twin Sister West Ridge: closed, no change** — The Mountaineers lists it year-round, so
+      the stored May-Oct header sits inside every published range. **Snowking: still held** — The
+      Mountaineers' NE Shoulder (May-Oct, "early season snow scramble") is not shown to be our Kindy
+      Creek / Snowking Glacier line, and its range overlaps both of our conflicting values.
+    - SummitPost answers 403 in Chrome too; Mountain Project and The Mountaineers open. The AAJ
+      site is not readable through the Chrome extension (no permission) but WebFetch reads it.
+  - **Fifth pass: the held rows decided** (`scripts/oneoff/fix-optimal-season-2026-11-18-d.mjs`).
+    Owner: Adams Wilson Glacier Headwall shows its snow season (May-Jun) with a Yakama access note
+    in the window; Goode NE Face's buttress beta cleared, grade kept; the 56 shoulders left. Research
+    decided the other two: **Snowking** is the line The Mountaineers describe (same FR-1570 approach,
+    Cyclone Lake, the small glacier), "very good early season (May-June)", with a WTA ascent on snow
+    on May 26, 2019, so its May-Jul header was right and its mid-summer window, calendar and When to
+    go were not. **Forbidden NE Face**'s AAJ first-ascent report is a mid-September climb in fine
+    late-season weather over Sharkfin Col, so its Jul-Sep header was right and its "late spring"
+    window had no source.
+  - A range can START or END on a season word ("Late autumn through May" on Colfax's Polish
+    Route); read as May alone, it was a false finding. `SRANGE` pins the season end to one month
+    by its qualifier and marks the result as words.
+  - **A regex over the window is the trap.** The first draft read "August and September" as
+    August alone, "Late May (ski) through August" as May, and "nearly year-round" as year-round:
+    34 of its 36 window-vs-calendar flags were its own. `--selftest` pins those shapes. A risky
+    month at the unqualified END of a range is a shoulder (53 headers), counted and not listed.
 - **`audit:aspect-name`** asks whether a route's **name** points the same way as its `aspect`
   column. Both describe the same piece of mountain, so a disagreement means one is wrong —
   and which one is **not** decidable from the columns, which is why this is **report-only** and
@@ -604,6 +668,30 @@ the correction knows the screen is wrong, and they have no way to report it.
   `check:no-rendered-sources` enforces it for app *fields* and is structurally blind to this,
   because these citations are free prose inside jsonb columns — every identifier is bound, the
   column is populated, the section renders. Only reading the value finds them.
+  - **`Climber Kyle` and the Mazamas as a SOURCE joined `NAMED` on 2026-11-23** (found because the
+    ROPEWORK card began quoting "climberkyle notes only ~4 pitches really need pitching"). Both were on
+    the enrichment source list and in no needle, so 22 values slipped it. The Mazamas alternative is
+    the sourcing shapes only (`per/by/from/(` + Mazamas, or Mazamas + rates/gives/says…), because "a
+    Mazamas party" first ascent and "a Mountaineers/Mazamas basic climb" are a club as credit or
+    operator, which the rule keeps; injections `mazamasclub` (0) / `mazamascite` (all) pin both
+    directions. WA then read **61 values on 46 routes**; the 47 citation edits on 25 routes (two
+    "per Mazamas" lines on `adams_avalanche_glacier`, whose id has no `wa_` prefix, came from
+    `audit:misplaced-prose`) are in `scripts/oneoff/prose-citations-2026-11-23/` (edits.json,
+    apply.mjs, dry-run clean). Same day, `The Mountaineers` stopped matching the **Mountaineers
+    Route / Wall / Couloir** — Whitney's descent and a trail, ~16 of that audit's 75 all-state hits,
+    place names not sources — unless a page/description/notes word follows ("The Mountaineers route
+    page:" is still a citation). The rest
+    are the kept classes: FA credits, a club as operator or grading body, a guidebook or map to carry,
+    and the NWAC caveat. `audit:misplaced-prose` section 4 reads this same `NAMED`, so the widening
+    reaches every state there.
+  - **Applied 2026-11-23: WA 61 → 23**, every survivor a kept class. The same day the all-state
+    section 4 (75 strings) was read whole: `Mountaineers Gully` joined the place-name exception, five
+    keeps joined its `KEEP` (a Mazamas-scale grade, a first-ascent party's club twice, the route
+    *Names in the Guidebook*, a club-named campground), and its unnamed SOURCING hedges — "one report
+    logged 15 hours", "Sources differ on the number of bolts", "guidebooks list 8-9", "published
+    beta" — became 16 plain statements of the same fact on 14 rows (CA, OR, UT, WV, WA; one area
+    blurb) in `scripts/oneoff/prose-hedges-2026-11-23/`. A disagreement becomes a RANGE ("4th to 5th
+    class", "AI4+ or WI4"), never a pick of one side.
   - **`waypoints[].directions` is scanned too, since 2026-10-01** — the "Getting here —" line in
     the same card as the note, and the one waypoint string the audit never read. Added when a
     web-researched pass filled 1,642 of them (663 routes; record and brief in
@@ -1065,7 +1153,10 @@ the correction knows the screen is wrong, and they have no way to report it.
     *"possibly done previously"*) — that is a climber writing their own FA note, the ordinary voice of
     the field, not the pipeline. The section-2 cues match research vocabulary, not uncertainty.
   - **Measured non-findings, exempted by name:** *"Source Lake"* is a place; *"This entry gully"* is a
-    gully you enter (the cue is `this entry is`); the waypoint caveat *"Coordinate is a geometric
+    gully you enter (the cue is `this entry is`, and since 2026-11-23 only when database talk follows —
+    `based`, `derived`, `a duplicate`, `a placeholder`, `sourced`, `for the`…: *"this entry is far
+    gentler than the original"* (a roof's way in) and *"This entry is the loosest ground of the day"*
+    (a gully) were the section's only two hits, both climbing words); the waypoint caveat *"Coordinate is a geometric
     interpolation … not independently verified"* is REQUIRED by `check:waypoint-caveat`;
     `access._raw.*` does not render. *"(6,320-6,340 ft depending on source)"* is deliberately not a
     cue — collapsing it invents a number — and publisher names inside grade columns belong to
@@ -1300,3 +1391,55 @@ the correction knows the screen is wrong, and they have no way to report it.
     (5.9+ to 5.10b). Sharkfin Tower stays 5.0 (near-universal) with its text naming "a couple of
     harder moves near 5.4".
   - Service key, `partner_requirements=not.is.null` in 100-row pages. Not a build gate.
+
+- **`audit:coverage`** — how much of the catalog is FILLED and how much is BACKED BY EVIDENCE, per
+  state × discipline × region, and which destinations to research next, the most-used first (owner,
+  2026-11-23: "a measurable coverage system by region and discipline … verified approach, descent,
+  protection, pitch information, coordinates … then prioritize the most-used climbing areas").
+  `scripts/audit-coverage.mjs` measures; every rule is in `scripts/lib/coverage.mjs` (`--selftest`,
+  no DB). Read-only; writes `audits/coverage/<date>.json`, and `--compare <older snapshot>` prints
+  what moved, in FIELDS (a research batch is a few hundred of ~1.4 million; percentage points read
+  "+0.00").
+  - **16 dimensions**: coordinates, trailhead/parking pin, approach, descent, protection/rack, pitch
+    count, pitch-by-pitch, rappels, grade, length, gain, GPS track, season, access/road/permit,
+    hazards, overview.
+  - **Relevant** is `lib/fieldScope.js` — the edit sheet's and the page's own rule — per `catOf`
+    discipline, so a boulder never "misses" a rappel table and a single-pitch sport line never
+    "misses" a descent. A stored value keeps its field in scope, as fieldScope says.
+  - **Four tiers**: missing · stored · **sourced** (a `route_field_evidence` row with ≥1 evidence
+    item that has not locked) · **locked** (`locked`/`locked-1src`, or an owner-approved
+    `route_field_confidence`). Paragraphs (approach, descent, pitch_detail, overview…) NEVER lock
+    (owner, 2026-11-18), so **sourced is their ceiling** — read "verified" for prose as sourced. A
+    `disputed` row, or one with no evidence items, backs nothing; evidence never lifts an EMPTY column.
+  - **Area fallbacks the page itself uses count as stored**: the crag's (or the nearest ancestor's)
+    parking pin for the trailhead, its walk-in for the approach (0397), its `season_months`, and its
+    coordinate (`dbRouteToCamel` takes `lat` from the area — only 121 of 14,226 WA routes store
+    their own; a first draft read coordinates as 0.9%). An area flagged `coords_approx` does NOT
+    count: its page says the coordinates are approximate. A region's row never fills a route.
+  - **Destination** (the ranking unit, `destinationOf`): a peak is its own; a crag ranks as the
+    region directly above its OUTERMOST crag (walls nest in crags), unless that is the state's
+    top-level region. First draft ranked the outermost crag and listed "South Face" five times —
+    five different walls; their regions above are Pinto Rock, Beacon Rock, Squire Creek…
+  - **Use weight** (`usageWeight`): 1 + 3·classic + quality 0–4 (classic_score › guide_stars ›
+    stars) + 2·on a named list + log-scaled 90-day views, climbers who logged it, and objectives.
+    Pre-launch the app's own signals are thin (2026-11-23: 14 logs on 10 routes, 2,313 view-days on
+    328 routes since 2026-10-23, mostly the team), so the catalog's popularity carries the ranking;
+    real use takes over as it grows. **Priority** = Σ weight × gap, gap = 1 per missing relevant
+    field + ¼ per stored-but-unsourced one.
+  - **Baseline 2026-11-23** (`audits/coverage/2026-11-23.json`, 316,985 routes, 61 states):
+    **37.0% of relevant fields stored, 0.07% sourced, 0.04% locked.** Coordinates 100% and grade
+    100% stored; pitch count 99%; approach 14%; descent 21% of 20.7k relevant; protection 4.7%;
+    pitch-by-pitch 4.8% of 18.8k; access/road/permit 1.1%; overview 6.5%. Top destinations:
+    Indian Creek, Clear Creek Canyon, PMRP and the Northern Gorge (Red River Gorge), Boulder Canyon,
+    Rifle, American Fork, Smith Rock, Miller Fork, Muir Valley. WA alone: 47.1% stored; Icicle
+    Creek, Beacon Rock, Index's Lookout Point Area, Tum Tum, Frenchman Coulee top it.
+  - **What it cannot see**: whether a stored value is RIGHT (that is the research ledger's job, and
+    the other audits'); per-route repetition — a crag-wide fact such as access counts once per
+    route, so big crags weigh it heavily; route_views is per device-day, not per person.
+  - **Traps met**: one `supabase db query` costs ~5 s of CLI start-up whatever it reads — 61
+    one-state calls overran 10 minutes, so states are packed into ≤20k-route batches (16 queries,
+    ~3 min, none over 18 s). The per-state count is read seconds before its batch and parallel
+    sessions add routes meanwhile (one WA route did): a short read fails, a few rows of drift is
+    noted. The first snapshot was 3.1 MB, three quarters a 3,357-row priority list: it keeps the top
+    500 plus each state's top 20, and drops dimensions no route of an entry is relevant to.
+  - Take the DB slot first (`~/dev/db-throttle/dbslot.mjs acquire <name>`). Not a build gate.

@@ -1,0 +1,607 @@
+{
+ "wa_mid_wall_seamstress_access_route": {
+  "area": "wa_mid_wall",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/108145655/seamstress-access-route",
+    "https://www.mountainproject.com/area/106386407/mid-wall",
+    "https://rakkup.com/guidebook/index-rock-climbing/mid-wall/s11509",
+    "https://services5.arcgis.com/4LKAHwqnBooVDUlX/arcgis/rest/services/ParkBoundaries/FeatureServer/2/query?geometry=-121.5719,47.8191&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ParkName,Category&returnGeometry=false&f=json",
+    "https://parks.wa.gov/news/2026/climbers-donate-index-town-wall-washington-state-parks"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "grade",
+    "value": "5.7",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/108145655/seamstress-access-route",
+      "fact": "5.7 YDS, Trad",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   },
+   {
+    "field": "pitches",
+    "value": 1,
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/108145655/seamstress-access-route",
+      "fact": "a single access pitch; count implied, not stated",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_mid_wall_seamstress_access_route",
+    "column": "bolts",
+    "from": null,
+    "to": 2,
+    "why": "Mountain Project's protection line states two bolts (with small cams). Single source: locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/108145655/seamstress-access-route"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_mid_wall_seamstress_access_route",
+    "column": "access",
+    "from": null,
+    "to": {
+     "land_manager": "Washington State Parks (Forks of the Sky State Park)"
+    },
+    "why": "Brief AB: copy access field for field from wa_folsom_blues (same wall, owner-approved; read live 2026-11-23, land_manager only). Re-read 2026-11-23: the State Parks boundary layer returns Forks of the Sky, State Park Property at the Mid Wall point (47.8191,-121.5719); the parks.wa.gov release of 2026-03-13 still loads (HTTP 200). Fills a null access. permit stays null.",
+    "evidence": [
+     "https://services5.arcgis.com/4LKAHwqnBooVDUlX/arcgis/rest/services/ParkBoundaries/FeatureServer/2/query?geometry=-121.5719,47.8191&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ParkName,Category&returnGeometry=false&f=json",
+     "https://parks.wa.gov/news/2026/climbers-donate-index-town-wall-washington-state-parks"
+    ]
+   }
+  ],
+  "held": [],
+  "disputed": [],
+  "notes": "What it gives access to: a short link pitch that takes a party from the K-Cliff area straight up onto the Mid Wall; the Mid Wall area page lists it first among the ways onto the wall. Not on the Index guide's Mid Wall teaser page (17 climbs), and theCrag gave no usable page (one attempt in Chrome), so the grade rests on Mountain Project alone (locked-1src). Discipline trad matches MP but never locks from MP alone. FA on MP: Geoff Georges and Bill Ayre, 15 Oct 2011; the stored fa is blank and only one source gives it, so it is not filled. Length and anchor not stated. Minor name defect: the name carries the descriptor '(access route)'; the climb itself is Seamstress. Reported only."
+ },
+ "wa_mid_wall_all_my_friends_are_aliens": {
+  "area": "wa_mid_wall",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/109314855/all-my-friends-are-aliens",
+    "https://rakkup.com/guidebook/index-rock-climbing/all-my-friends-are-aliens/c39466",
+    "https://www.mountainproject.com/area/106386407/mid-wall",
+    "https://rakkup.com/guidebook/index-rock-climbing/mid-wall/s11509",
+    "https://services5.arcgis.com/4LKAHwqnBooVDUlX/arcgis/rest/services/ParkBoundaries/FeatureServer/2/query?geometry=-121.5719,47.8191&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ParkName,Category&returnGeometry=false&f=json",
+    "https://parks.wa.gov/news/2026/climbers-donate-index-town-wall-washington-state-parks"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "grade",
+    "value": "5.10a",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/109314855/all-my-friends-are-aliens",
+      "fact": "5.10a YDS",
+      "retrieved_at": "2026-11-23"
+     },
+     {
+      "url": "https://rakkup.com/guidebook/index-rock-climbing/all-my-friends-are-aliens/c39466",
+      "fact": "5.10a (guide)",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   },
+   {
+    "field": "discipline",
+    "value": "trad",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/109314855/all-my-friends-are-aliens",
+      "fact": "Type: Trad",
+      "retrieved_at": "2026-11-23"
+     },
+     {
+      "url": "https://rakkup.com/guidebook/index-rock-climbing/all-my-friends-are-aliens/c39466",
+      "fact": "Trad (guide icon)",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   },
+   {
+    "field": "length_m",
+    "value": 30,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/109314855/all-my-friends-are-aliens",
+      "fact": "100 ft (30 m), anchor at 100 ft",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   },
+   {
+    "field": "pitches",
+    "value": 1,
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/109314855/all-my-friends-are-aliens",
+      "fact": "one line to one anchor at 100 ft; count implied, not stated",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_mid_wall_all_my_friends_are_aliens",
+    "column": "guide_stars",
+    "from": null,
+    "to": 2,
+    "why": "The Index guidebook's own entry (publisher's teaser page) rates it 2 stars.",
+    "evidence": [
+     "https://rakkup.com/guidebook/index-rock-climbing/all-my-friends-are-aliens/c39466",
+     "https://rakkup.com/guidebook/index-rock-climbing/mid-wall/s11509"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_mid_wall_all_my_friends_are_aliens",
+    "column": "anchor",
+    "from": null,
+    "to": "Chain anchor",
+    "why": "Mountain Project: a bolted anchor fitted with rappel chains at the top. House spelling \"Chain anchor\" (stored on 86 routes). Single source: locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/109314855/all-my-friends-are-aliens"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_mid_wall_all_my_friends_are_aliens",
+    "column": "gear",
+    "from": null,
+    "to": [
+     "standard rack to 2 in",
+     "extra finger-size cams",
+     "small brass nuts"
+    ],
+    "why": "Mountain Project: a standard rack to 2 in, extra finger sizes, and brass nuts for the lower seam. Single source: locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/109314855/all-my-friends-are-aliens"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_mid_wall_all_my_friends_are_aliens",
+    "column": "access",
+    "from": null,
+    "to": {
+     "land_manager": "Washington State Parks (Forks of the Sky State Park)"
+    },
+    "why": "Brief AB: copy access field for field from wa_folsom_blues (same wall, owner-approved; read live 2026-11-23, land_manager only). Re-read 2026-11-23: the State Parks boundary layer returns Forks of the Sky, State Park Property at the Mid Wall point (47.8191,-121.5719); the parks.wa.gov release of 2026-03-13 still loads (HTTP 200). Fills a null access. permit stays null.",
+    "evidence": [
+     "https://services5.arcgis.com/4LKAHwqnBooVDUlX/arcgis/rest/services/ParkBoundaries/FeatureServer/2/query?geometry=-121.5719,47.8191&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ParkName,Category&returnGeometry=false&f=json",
+     "https://parks.wa.gov/news/2026/climbers-donate-index-town-wall-washington-state-parks"
+    ]
+   }
+  ],
+  "held": [],
+  "disputed": [],
+  "notes": "Furthest-left line on the main Mid Wall (both sources). FA on MP: Geoff Georges and Jessica Todd, no year; the guide teaser shows none, so a blank fa is not filled from one source. Bolts: MP mentions only a bolt planned for an alternate offwidth start; no count, nothing proposed. Above the anchor a short scramble leads up to the Blue Tile Lounge."
+ },
+ "wa_the_gentlemen_s_club_fools_gold": {
+  "area": "wa_the_gentlemen_s_club",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/200636612/fools-gold",
+    "https://www.mountainproject.com/area/126915111/the-gentlemens-club",
+    "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_BasicOwnership_01/MapServer/0/query?geometry=-120.42992,48.60994&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ownerclassification,forestname&returnGeometry=false&f=json",
+    "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_RangerDistricts_03/MapServer/1/query?geometry=-120.42992,48.60994&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=districtname,forestname&returnGeometry=false&f=json"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "grade",
+    "value": "5.8+",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/200636612/fools-gold",
+      "fact": "5.8+ YDS, Sport/TR",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   },
+   {
+    "field": "length_m",
+    "value": 18,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/200636612/fools-gold",
+      "fact": "60 ft (18 m)",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   },
+   {
+    "field": "pitches",
+    "value": 1,
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/200636612/fools-gold",
+      "fact": "60 ft (18 m), bolted line to one anchor; count implied, not stated",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_the_gentlemen_s_club_fools_gold",
+    "column": "bolts",
+    "from": null,
+    "to": 8,
+    "why": "Mountain Project's protection line states 8 bolts. Single source: locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/200636612/fools-gold"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_the_gentlemen_s_club_fools_gold",
+    "column": "anchor",
+    "from": null,
+    "to": "Chain anchor",
+    "why": "Mountain Project: chains for the anchor. House spelling \"Chain anchor\" (stored on 86 routes). Single source: locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/200636612/fools-gold"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_the_gentlemen_s_club_fools_gold",
+    "column": "access",
+    "from": null,
+    "to": {
+     "land_manager": "Okanogan-Wenatchee National Forest (Methow Valley Ranger District)"
+    },
+    "why": "Brief AB: copy access field for field from wa_the_gentlemen_s_club_aquaman (read live 2026-11-23, land_manager only; settled in batch AA from the USFS ownership layer). Re-read 2026-11-23 at the crag's own coordinate (48.60994,-120.42992): EDW BasicOwnership returns USDA FOREST SERVICE, Okanogan-Wenatchee National Forest; the ranger district layer returns Methow Valley Ranger District. Unchanged. Fills a null access. permit stays null.",
+    "evidence": [
+     "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_BasicOwnership_01/MapServer/0/query?geometry=-120.42992,48.60994&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ownerclassification,forestname&returnGeometry=false&f=json",
+     "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_RangerDistricts_03/MapServer/1/query?geometry=-120.42992,48.60994&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=districtname,forestname&returnGeometry=false&f=json"
+    ]
+   }
+  ],
+  "held": [],
+  "disputed": [],
+  "notes": "Only source: Mountain Project (theCrag's search finds no Gentlemen's Club in Washington, only a New Zealand crag of that name; one web search found no guide, club or blog page for this 2025-era crag). Grade 5.8+ and length 18 m match the row; locked-1src. Sector: VIP Wall, The Gentlemen's Club. FA on MP: Alex Perz, 2025; a blank fa needs two sources, so it is not filled. Bolts and chains are stated on the page. Pitches 1 matches but no source states a count: unconfirmed."
+ },
+ "wa_the_gentlemen_s_club_wonder_dog": {
+  "area": "wa_the_gentlemen_s_club",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/201661019/wonder-dog",
+    "https://www.mountainproject.com/area/126915111/the-gentlemens-club",
+    "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_BasicOwnership_01/MapServer/0/query?geometry=-120.42992,48.60994&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ownerclassification,forestname&returnGeometry=false&f=json",
+    "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_RangerDistricts_03/MapServer/1/query?geometry=-120.42992,48.60994&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=districtname,forestname&returnGeometry=false&f=json"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "grade",
+    "value": "5.12-",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/201661019/wonder-dog",
+      "fact": "5.12- YDS, Sport/TR",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   },
+   {
+    "field": "length_m",
+    "value": 15,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/201661019/wonder-dog",
+      "fact": "50 ft (15 m)",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   },
+   {
+    "field": "pitches",
+    "value": 1,
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/201661019/wonder-dog",
+      "fact": "50 ft (15 m), bolted line to one anchor; count implied, not stated",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_the_gentlemen_s_club_wonder_dog",
+    "column": "access",
+    "from": null,
+    "to": {
+     "land_manager": "Okanogan-Wenatchee National Forest (Methow Valley Ranger District)"
+    },
+    "why": "Brief AB: copy access field for field from wa_the_gentlemen_s_club_aquaman (read live 2026-11-23, land_manager only; settled in batch AA from the USFS ownership layer). Re-read 2026-11-23 at the crag's own coordinate (48.60994,-120.42992): EDW BasicOwnership returns USDA FOREST SERVICE, Okanogan-Wenatchee National Forest; the ranger district layer returns Methow Valley Ranger District. Unchanged. Fills a null access. permit stays null.",
+    "evidence": [
+     "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_BasicOwnership_01/MapServer/0/query?geometry=-120.42992,48.60994&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ownerclassification,forestname&returnGeometry=false&f=json",
+     "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_RangerDistricts_03/MapServer/1/query?geometry=-120.42992,48.60994&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=districtname,forestname&returnGeometry=false&f=json"
+    ]
+   }
+  ],
+  "held": [],
+  "disputed": [],
+  "notes": "Only source: Mountain Project (theCrag's search finds no Gentlemen's Club in Washington, only a New Zealand crag of that name; one web search found no guide, club or blog page for this 2025-era crag). Grade 5.12- and length 15 m match the row; locked-1src. MP names only the bolter (Brooks Middleton, no date), which is not an FA; fa stays null. Bolts not counted. Anchor: Mussy hooks, which has no house spelling, so not proposed. Wall not named on the page. Pitches 1 matches but no source states a count: unconfirmed."
+ },
+ "wa_the_gentlemen_s_club_que_sera_sera": {
+  "area": "wa_the_gentlemen_s_club",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/200790485/que-sera-sera",
+    "https://www.mountainproject.com/area/126915111/the-gentlemens-club",
+    "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_BasicOwnership_01/MapServer/0/query?geometry=-120.42992,48.60994&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ownerclassification,forestname&returnGeometry=false&f=json",
+    "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_RangerDistricts_03/MapServer/1/query?geometry=-120.42992,48.60994&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=districtname,forestname&returnGeometry=false&f=json"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "grade",
+    "value": "5.9",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/200790485/que-sera-sera",
+      "fact": "5.9 YDS, Sport/TR",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   },
+   {
+    "field": "length_m",
+    "value": 18,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/200790485/que-sera-sera",
+      "fact": "60 ft (18 m)",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   },
+   {
+    "field": "pitches",
+    "value": 1,
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/200790485/que-sera-sera",
+      "fact": "60 ft (18 m), bolted line to one anchor; count implied, not stated",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_the_gentlemen_s_club_que_sera_sera",
+    "column": "bolts",
+    "from": null,
+    "to": 7,
+    "why": "Mountain Project's protection line states 7 bolts. Single source: locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/200790485/que-sera-sera"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_the_gentlemen_s_club_que_sera_sera",
+    "column": "anchor",
+    "from": null,
+    "to": "Chain anchor",
+    "why": "Mountain Project: chains for the anchor. House spelling \"Chain anchor\" (stored on 86 routes). Single source: locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/200790485/que-sera-sera"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_the_gentlemen_s_club_que_sera_sera",
+    "column": "access",
+    "from": null,
+    "to": {
+     "land_manager": "Okanogan-Wenatchee National Forest (Methow Valley Ranger District)"
+    },
+    "why": "Brief AB: copy access field for field from wa_the_gentlemen_s_club_aquaman (read live 2026-11-23, land_manager only; settled in batch AA from the USFS ownership layer). Re-read 2026-11-23 at the crag's own coordinate (48.60994,-120.42992): EDW BasicOwnership returns USDA FOREST SERVICE, Okanogan-Wenatchee National Forest; the ranger district layer returns Methow Valley Ranger District. Unchanged. Fills a null access. permit stays null.",
+    "evidence": [
+     "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_BasicOwnership_01/MapServer/0/query?geometry=-120.42992,48.60994&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ownerclassification,forestname&returnGeometry=false&f=json",
+     "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_RangerDistricts_03/MapServer/1/query?geometry=-120.42992,48.60994&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=districtname,forestname&returnGeometry=false&f=json"
+    ]
+   }
+  ],
+  "held": [],
+  "disputed": [],
+  "notes": "Only source: Mountain Project (theCrag's search finds no Gentlemen's Club in Washington, only a New Zealand crag of that name; one web search found no guide, club or blog page for this 2025-era crag). Grade 5.9 and length 18 m match the row; locked-1src. Sector: VIP Wall, The Gentlemen's Club. FA on MP: Alex Perz, 2025; a blank fa needs two sources, so it is not filled. Bolts and chains are stated on the page. Pitches 1 matches but no source states a count: unconfirmed."
+ },
+ "wa_the_gentlemen_s_club_batman": {
+  "area": "wa_the_gentlemen_s_club",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/201660941/batman",
+    "https://www.mountainproject.com/area/126915111/the-gentlemens-club",
+    "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_BasicOwnership_01/MapServer/0/query?geometry=-120.42992,48.60994&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ownerclassification,forestname&returnGeometry=false&f=json",
+    "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_RangerDistricts_03/MapServer/1/query?geometry=-120.42992,48.60994&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=districtname,forestname&returnGeometry=false&f=json"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "grade",
+    "value": "5.9",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/201660941/batman",
+      "fact": "5.9 YDS, Sport/TR",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   },
+   {
+    "field": "length_m",
+    "value": 18,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/201660941/batman",
+      "fact": "60 ft (18 m)",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   },
+   {
+    "field": "pitches",
+    "value": 2,
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/201660941/batman",
+      "fact": "header states 2 pitches on a 60 ft (18 m) line; implausible, no description",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_the_gentlemen_s_club_batman",
+    "column": "access",
+    "from": null,
+    "to": {
+     "land_manager": "Okanogan-Wenatchee National Forest (Methow Valley Ranger District)"
+    },
+    "why": "Brief AB: copy access field for field from wa_the_gentlemen_s_club_aquaman (read live 2026-11-23, land_manager only; settled in batch AA from the USFS ownership layer). Re-read 2026-11-23 at the crag's own coordinate (48.60994,-120.42992): EDW BasicOwnership returns USDA FOREST SERVICE, Okanogan-Wenatchee National Forest; the ranger district layer returns Methow Valley Ranger District. Unchanged. Fills a null access. permit stays null.",
+    "evidence": [
+     "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_BasicOwnership_01/MapServer/0/query?geometry=-120.42992,48.60994&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ownerclassification,forestname&returnGeometry=false&f=json",
+     "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_RangerDistricts_03/MapServer/1/query?geometry=-120.42992,48.60994&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=districtname,forestname&returnGeometry=false&f=json"
+    ]
+   }
+  ],
+  "held": [
+   "pitches: stored 2 = Mountain Project's header '2 pitches', but 60 ft to one anchor suggests 1; no second source; nothing proposed."
+  ],
+  "disputed": [],
+  "notes": "Only source: Mountain Project (theCrag's search finds no Gentlemen's Club in Washington, only a New Zealand crag of that name; one web search found no guide, club or blog page for this 2025-era crag). Grade 5.9 and length 18 m match the row; locked-1src. MP names only the bolter (Brooks Middleton, no date), which is not an FA; fa stays null. Bolts not counted. Anchor: Mussy hooks, which has no house spelling, so not proposed. Wall not named on the page. PITCHES CHECK: the stored 2 matches Mountain Project's header ('2 pitches'), but the line is only 60 ft (18 m) to one Mussy-hook anchor, the description is empty, and every sibling the same submitter entered that day is one pitch. It looks like a data-entry slip on the source. Not changed (the only source says 2, and a one-source change to an existing value is held); recorded as unconfirmed, not locked. The owner may want 2 -> 1 once a second source exists."
+ },
+ "wa_the_gentlemen_s_club_flash": {
+  "area": "wa_the_gentlemen_s_club",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/201660966/flash",
+    "https://www.mountainproject.com/area/126915111/the-gentlemens-club",
+    "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_BasicOwnership_01/MapServer/0/query?geometry=-120.42992,48.60994&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ownerclassification,forestname&returnGeometry=false&f=json",
+    "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_RangerDistricts_03/MapServer/1/query?geometry=-120.42992,48.60994&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=districtname,forestname&returnGeometry=false&f=json"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "grade",
+    "value": "5.9",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/201660966/flash",
+      "fact": "5.9 YDS, Sport/TR",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   },
+   {
+    "field": "length_m",
+    "value": 14,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/201660966/flash",
+      "fact": "45 ft (14 m)",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   },
+   {
+    "field": "pitches",
+    "value": 1,
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/201660966/flash",
+      "fact": "45 ft (14 m), bolted line to one anchor; count implied, not stated",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_the_gentlemen_s_club_flash",
+    "column": "access",
+    "from": null,
+    "to": {
+     "land_manager": "Okanogan-Wenatchee National Forest (Methow Valley Ranger District)"
+    },
+    "why": "Brief AB: copy access field for field from wa_the_gentlemen_s_club_aquaman (read live 2026-11-23, land_manager only; settled in batch AA from the USFS ownership layer). Re-read 2026-11-23 at the crag's own coordinate (48.60994,-120.42992): EDW BasicOwnership returns USDA FOREST SERVICE, Okanogan-Wenatchee National Forest; the ranger district layer returns Methow Valley Ranger District. Unchanged. Fills a null access. permit stays null.",
+    "evidence": [
+     "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_BasicOwnership_01/MapServer/0/query?geometry=-120.42992,48.60994&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ownerclassification,forestname&returnGeometry=false&f=json",
+     "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_RangerDistricts_03/MapServer/1/query?geometry=-120.42992,48.60994&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=districtname,forestname&returnGeometry=false&f=json"
+    ]
+   }
+  ],
+  "held": [],
+  "disputed": [],
+  "notes": "Only source: Mountain Project (theCrag's search finds no Gentlemen's Club in Washington, only a New Zealand crag of that name; one web search found no guide, club or blog page for this 2025-era crag). Grade 5.9 and length 14 m match the row; locked-1src. MP names only the bolter (Brooks Middleton, no date), which is not an FA; fa stays null. Bolts not counted. Anchor: Mussy hooks, which has no house spelling, so not proposed. Wall not named on the page. Pitches 1 matches but no source states a count: unconfirmed."
+ }
+}

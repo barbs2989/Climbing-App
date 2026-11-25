@@ -1,0 +1,425 @@
+[
+ {
+  "route_id": "wa_iron_peak_teanaway_scramble",
+  "area_id": "wa_iron_peak_teanaway",
+  "field": "gain_ft",
+  "verdict": "confirmed_1src",
+  "value": 2543,
+  "confirmed_urls": [
+   "https://besthikesbc.ca/hiking-iron-peak-in-the-teanaway-region/"
+  ],
+  "problems": "Page: elevation gain 775 m (2,543 ft), \"only have to gain around 775m to get there\" (one way). Page describes a trail with no scrambling while route id says scramble. 2543 vs app 2710."
+ },
+ {
+  "route_id": "or_krag_peak_traverse",
+  "area_id": "or_wallowa_mountains_traverses",
+  "field": "gain_ft",
+  "verdict": "wrong_scope",
+  "value": null,
+  "confirmed_urls": [],
+  "problems": "FKT page: 10.76 mi, vertical gain 4,888 ft, tagged loop: total for the whole loop traverse, not one-way trailhead-to-summit."
+ },
+ {
+  "route_id": "wa_ives_peak_r1",
+  "area_id": "wa_ives_peak",
+  "field": "approach_loss_ft",
+  "verdict": "confirmed_1src",
+  "value": 75,
+  "confirmed_urls": [
+   "https://onehikeaweek.com/2022/07/10/ives-peak/"
+  ],
+  "problems": "Page: Goat Creek bridge is lowest point after dropping 75 ft from the trailhead (way in via Snowgrass Flat; trip also did Old Snowy)."
+ },
+ {
+  "route_id": "wa_vasiliki_ridge_standard",
+  "area_id": "wa_vasiliki_ridge",
+  "field": "approach_loss_ft",
+  "verdict": "confirmed_1src",
+  "value": 250,
+  "confirmed_urls": [
+   "https://onehikeaweek.com/2025/05/06/vasiliki-ridge/"
+  ],
+  "problems": "Page: started with a 250-foot drop from the highway down to Early Winters Creek, then Burgundy Col climbers trail."
+ },
+ {
+  "route_id": "ca_devils_crag_1_standard_route",
+  "area_id": "ca_devils_crag_1",
+  "field": "gain_ft",
+  "verdict": "confirmed_1src",
+  "value": 6410,
+  "confirmed_urls": [
+   "https://sierrapeaks.org/SPS%20peaks%20with%20mileage/SPS_list_with_mileage_TH_gain.xls"
+  ],
+  "problems": "SPS xls row states it; sheet note: mileage is least-technical route, one way; start - loss + gain = summit"
+ },
+ {
+  "route_id": "ca_devils_crag_1_standard_route",
+  "area_id": "ca_devils_crag_1",
+  "field": "approach_loss_ft",
+  "verdict": "confirmed_1src",
+  "value": 3820,
+  "confirmed_urls": [
+   "https://sierrapeaks.org/SPS%20peaks%20with%20mileage/SPS_list_with_mileage_TH_gain.xls"
+  ],
+  "problems": "SPS xls row states it; sheet note: mileage is least-technical route, one way; start - loss + gain = summit"
+ },
+ {
+  "route_id": "ca_diamond_peak_standard_route",
+  "area_id": "ca_diamond_peak",
+  "field": "gain_ft",
+  "verdict": "confirmed_1src",
+  "value": 8860,
+  "confirmed_urls": [
+   "https://sierrapeaks.org/SPS%20peaks%20with%20mileage/SPS_list_with_mileage_TH_gain.xls"
+  ],
+  "problems": "SPS xls row states it; sheet note: mileage is least-technical route, one way; start - loss + gain = summit"
+ },
+ {
+  "route_id": "ca_diamond_peak_standard_route",
+  "area_id": "ca_diamond_peak",
+  "field": "approach_loss_ft",
+  "verdict": "confirmed_1src",
+  "value": 1765,
+  "confirmed_urls": [
+   "https://sierrapeaks.org/SPS%20peaks%20with%20mileage/SPS_list_with_mileage_TH_gain.xls"
+  ],
+  "problems": "SPS xls row states it; sheet note: mileage is least-technical route, one way; start - loss + gain = summit"
+ },
+ {
+  "route_id": "ca_disappointment_peak_standard_route",
+  "area_id": "ca_disappointment_peak",
+  "field": "gain_ft",
+  "verdict": "confirmed_1src",
+  "value": 6315,
+  "confirmed_urls": [
+   "https://sierrapeaks.org/SPS%20peaks%20with%20mileage/SPS_list_with_mileage_TH_gain.xls"
+  ],
+  "problems": "SPS xls row states it; sheet note: mileage is least-technical route, one way; start - loss + gain = summit"
+ },
+ {
+  "route_id": "ca_disappointment_peak_standard_route",
+  "area_id": "ca_disappointment_peak",
+  "field": "approach_loss_ft",
+  "verdict": "confirmed_1src",
+  "value": 200,
+  "confirmed_urls": [
+   "https://sierrapeaks.org/SPS%20peaks%20with%20mileage/SPS_list_with_mileage_TH_gain.xls"
+  ],
+  "problems": "SPS xls row states it; sheet note: mileage is least-technical route, one way; start - loss + gain = summit"
+ },
+ {
+  "route_id": "ca_four_gables_peak_12_801_peak_12_808_standard_route",
+  "area_id": "ca_four_gables_peak_12_801_peak_12_808",
+  "field": "gain_ft",
+  "verdict": "confirmed_1src",
+  "value": 5050,
+  "confirmed_urls": [
+   "https://sierrapeaks.org/SPS%20peaks%20with%20mileage/SPS_list_with_mileage_TH_gain.xls"
+  ],
+  "problems": "SPS xls row states it; sheet note: mileage is least-technical route, one way; start - loss + gain = summit; Four Gables row Start cell is corrupt (8441903) but gain 5050 / loss 100 are stated"
+ },
+ {
+  "route_id": "ca_four_gables_peak_12_801_peak_12_808_standard_route",
+  "area_id": "ca_four_gables_peak_12_801_peak_12_808",
+  "field": "approach_loss_ft",
+  "verdict": "confirmed_1src",
+  "value": 100,
+  "confirmed_urls": [
+   "https://sierrapeaks.org/SPS%20peaks%20with%20mileage/SPS_list_with_mileage_TH_gain.xls"
+  ],
+  "problems": "SPS xls row states it; sheet note: mileage is least-technical route, one way; start - loss + gain = summit; Four Gables row Start cell is corrupt (8441903) but gain 5050 / loss 100 are stated"
+ },
+ {
+  "route_id": "ca_electra_peak_standard_route",
+  "area_id": "ca_electra_peak",
+  "field": "gain_ft",
+  "verdict": "confirmed_1src",
+  "value": 7800,
+  "confirmed_urls": [
+   "https://sierrapeaks.org/SPS%20peaks%20with%20mileage/SPS_list_with_mileage_TH_gain.xls"
+  ],
+  "problems": "SPS xls row states it; sheet note: mileage is least-technical route, one way; start - loss + gain = summit"
+ },
+ {
+  "route_id": "ca_electra_peak_standard_route",
+  "area_id": "ca_electra_peak",
+  "field": "approach_loss_ft",
+  "verdict": "confirmed_1src",
+  "value": 2600,
+  "confirmed_urls": [
+   "https://sierrapeaks.org/SPS%20peaks%20with%20mileage/SPS_list_with_mileage_TH_gain.xls"
+  ],
+  "problems": "SPS xls row states it; sheet note: mileage is least-technical route, one way; start - loss + gain = summit"
+ },
+ {
+  "route_id": "ca_excelsior_mountain_standard_route",
+  "area_id": "ca_excelsior_mountain",
+  "field": "gain_ft",
+  "verdict": "confirmed_1src",
+  "value": 2995,
+  "confirmed_urls": [
+   "https://sierrapeaks.org/SPS%20peaks%20with%20mileage/SPS_list_with_mileage_TH_gain.xls"
+  ],
+  "problems": "SPS xls row states it; sheet note: mileage is least-technical route, one way; start - loss + gain = summit"
+ },
+ {
+  "route_id": "ca_excelsior_mountain_standard_route",
+  "area_id": "ca_excelsior_mountain",
+  "field": "approach_loss_ft",
+  "verdict": "confirmed_1src",
+  "value": 360,
+  "confirmed_urls": [
+   "https://sierrapeaks.org/SPS%20peaks%20with%20mileage/SPS_list_with_mileage_TH_gain.xls"
+  ],
+  "problems": "SPS xls row states it; sheet note: mileage is least-technical route, one way; start - loss + gain = summit"
+ },
+ {
+  "route_id": "ca_finger_peak_standard_route",
+  "area_id": "ca_finger_peak",
+  "field": "gain_ft",
+  "verdict": "confirmed_1src",
+  "value": 7485,
+  "confirmed_urls": [
+   "https://sierrapeaks.org/SPS%20peaks%20with%20mileage/SPS_list_with_mileage_TH_gain.xls"
+  ],
+  "problems": "SPS xls row states it; sheet note: mileage is least-technical route, one way; start - loss + gain = summit"
+ },
+ {
+  "route_id": "ca_finger_peak_standard_route",
+  "area_id": "ca_finger_peak",
+  "field": "approach_loss_ft",
+  "verdict": "confirmed_1src",
+  "value": 1800,
+  "confirmed_urls": [
+   "https://sierrapeaks.org/SPS%20peaks%20with%20mileage/SPS_list_with_mileage_TH_gain.xls"
+  ],
+  "problems": "SPS xls row states it; sheet note: mileage is least-technical route, one way; start - loss + gain = summit"
+ },
+ {
+  "route_id": "ca_gemini_standard_route",
+  "area_id": "ca_gemini",
+  "field": "gain_ft",
+  "verdict": "confirmed_1src",
+  "value": 6380,
+  "confirmed_urls": [
+   "https://sierrapeaks.org/SPS%20peaks%20with%20mileage/SPS_list_with_mileage_TH_gain.xls"
+  ],
+  "problems": "SPS xls row states it; sheet note: mileage is least-technical route, one way; start - loss + gain = summit"
+ },
+ {
+  "route_id": "ca_gemini_standard_route",
+  "area_id": "ca_gemini",
+  "field": "approach_loss_ft",
+  "verdict": "confirmed_1src",
+  "value": 1150,
+  "confirmed_urls": [
+   "https://sierrapeaks.org/SPS%20peaks%20with%20mileage/SPS_list_with_mileage_TH_gain.xls"
+  ],
+  "problems": "SPS xls row states it; sheet note: mileage is least-technical route, one way; start - loss + gain = summit"
+ },
+ {
+  "route_id": "ca_glacier_ridge_standard_route",
+  "area_id": "ca_glacier_ridge",
+  "field": "gain_ft",
+  "verdict": "confirmed_1src",
+  "value": 6870,
+  "confirmed_urls": [
+   "https://sierrapeaks.org/SPS%20peaks%20with%20mileage/SPS_list_with_mileage_TH_gain.xls"
+  ],
+  "problems": "SPS xls row states it; sheet note: mileage is least-technical route, one way; start - loss + gain = summit; Glacier Ridge row Start cell is corrupt (83401) but gain 6870 / loss 2850 are stated"
+ },
+ {
+  "route_id": "ca_glacier_ridge_standard_route",
+  "area_id": "ca_glacier_ridge",
+  "field": "approach_loss_ft",
+  "verdict": "confirmed_1src",
+  "value": 2850,
+  "confirmed_urls": [
+   "https://sierrapeaks.org/SPS%20peaks%20with%20mileage/SPS_list_with_mileage_TH_gain.xls"
+  ],
+  "problems": "SPS xls row states it; sheet note: mileage is least-technical route, one way; start - loss + gain = summit; Glacier Ridge row Start cell is corrupt (83401) but gain 6870 / loss 2850 are stated"
+ },
+ {
+  "route_id": "ca_joe_devel_peak_standard_route",
+  "area_id": "ca_joe_devel_peak",
+  "field": "gain_ft",
+  "verdict": "confirmed_1src",
+  "value": 5285,
+  "confirmed_urls": [
+   "https://sierrapeaks.org/SPS%20peaks%20with%20mileage/SPS_list_with_mileage_TH_gain.xls"
+  ],
+  "problems": "SPS xls row states it; sheet note: mileage is least-technical route, one way; start - loss + gain = summit"
+ },
+ {
+  "route_id": "ca_joe_devel_peak_standard_route",
+  "area_id": "ca_joe_devel_peak",
+  "field": "approach_loss_ft",
+  "verdict": "confirmed_1src",
+  "value": 1900,
+  "confirmed_urls": [
+   "https://sierrapeaks.org/SPS%20peaks%20with%20mileage/SPS_list_with_mileage_TH_gain.xls"
+  ],
+  "problems": "SPS xls row states it; sheet note: mileage is least-technical route, one way; start - loss + gain = summit"
+ },
+ {
+  "route_id": "ca_kern_point_standard_route",
+  "area_id": "ca_kern_point",
+  "field": "gain_ft",
+  "verdict": "confirmed_1src",
+  "value": 11020,
+  "confirmed_urls": [
+   "https://sierrapeaks.org/SPS%20peaks%20with%20mileage/SPS_list_with_mileage_TH_gain.xls"
+  ],
+  "problems": "SPS xls row states it; sheet note: mileage is least-technical route, one way; start - loss + gain = summit"
+ },
+ {
+  "route_id": "ca_kern_point_standard_route",
+  "area_id": "ca_kern_point",
+  "field": "approach_loss_ft",
+  "verdict": "confirmed_1src",
+  "value": 4600,
+  "confirmed_urls": [
+   "https://sierrapeaks.org/SPS%20peaks%20with%20mileage/SPS_list_with_mileage_TH_gain.xls"
+  ],
+  "problems": "SPS xls row states it; sheet note: mileage is least-technical route, one way; start - loss + gain = summit"
+ },
+ {
+  "route_id": "ca_koip_peak_via_parker_pass_and_koip_peak_pass",
+  "area_id": "ca_koip_peak",
+  "field": "gain_ft",
+  "verdict": "confirmed_1src",
+  "value": 3005,
+  "confirmed_urls": [
+   "https://sierrapeaks.org/SPS%20peaks%20with%20mileage/SPS_list_with_mileage_TH_gain.xls"
+  ],
+  "problems": "SPS xls row states it; sheet note: mileage is least-technical route, one way; start - loss + gain = summit; row trailhead is Mono Pass Trail (Dana Meadows), start of the Parker Pass / Koip Peak Pass route"
+ },
+ {
+  "route_id": "ca_koip_peak_via_parker_pass_and_koip_peak_pass",
+  "area_id": "ca_koip_peak",
+  "field": "approach_loss_ft",
+  "verdict": "confirmed_1src",
+  "value": 400,
+  "confirmed_urls": [
+   "https://sierrapeaks.org/SPS%20peaks%20with%20mileage/SPS_list_with_mileage_TH_gain.xls"
+  ],
+  "problems": "SPS xls row states it; sheet note: mileage is least-technical route, one way; start - loss + gain = summit; row trailhead is Mono Pass Trail (Dana Meadows), start of the Parker Pass / Koip Peak Pass route"
+ },
+ {
+  "route_id": "ca_lion_rock_standard_route",
+  "area_id": "ca_lion_rock",
+  "field": "gain_ft",
+  "verdict": "confirmed_1src",
+  "value": 7650,
+  "confirmed_urls": [
+   "https://sierrapeaks.org/SPS%20peaks%20with%20mileage/SPS_list_with_mileage_TH_gain.xls"
+  ],
+  "problems": "SPS xls row states it; sheet note: mileage is least-technical route, one way; start - loss + gain = summit"
+ },
+ {
+  "route_id": "ca_lion_rock_standard_route",
+  "area_id": "ca_lion_rock",
+  "field": "approach_loss_ft",
+  "verdict": "confirmed_1src",
+  "value": 2550,
+  "confirmed_urls": [
+   "https://sierrapeaks.org/SPS%20peaks%20with%20mileage/SPS_list_with_mileage_TH_gain.xls"
+  ],
+  "problems": "SPS xls row states it; sheet note: mileage is least-technical route, one way; start - loss + gain = summit"
+ },
+ {
+  "route_id": "ca_lippincott_mountain_standard_route",
+  "area_id": "ca_lippincott_mountain",
+  "field": "gain_ft",
+  "verdict": "confirmed_1src",
+  "value": 8405,
+  "confirmed_urls": [
+   "https://sierrapeaks.org/SPS%20peaks%20with%20mileage/SPS_list_with_mileage_TH_gain.xls"
+  ],
+  "problems": "SPS xls row states it; sheet note: mileage is least-technical route, one way; start - loss + gain = summit"
+ },
+ {
+  "route_id": "ca_lippincott_mountain_standard_route",
+  "area_id": "ca_lippincott_mountain",
+  "field": "approach_loss_ft",
+  "verdict": "confirmed_1src",
+  "value": 3950,
+  "confirmed_urls": [
+   "https://sierrapeaks.org/SPS%20peaks%20with%20mileage/SPS_list_with_mileage_TH_gain.xls"
+  ],
+  "problems": "SPS xls row states it; sheet note: mileage is least-technical route, one way; start - loss + gain = summit"
+ },
+ {
+  "route_id": "ca_merced_peak_standard_route",
+  "area_id": "ca_merced_peak",
+  "field": "gain_ft",
+  "verdict": "confirmed_1src",
+  "value": 6900,
+  "confirmed_urls": [
+   "https://sierrapeaks.org/SPS%20peaks%20with%20mileage/SPS_list_with_mileage_TH_gain.xls"
+  ],
+  "problems": "SPS xls row states it; sheet note: mileage is least-technical route, one way; start - loss + gain = summit"
+ },
+ {
+  "route_id": "ca_merced_peak_standard_route",
+  "area_id": "ca_merced_peak",
+  "field": "approach_loss_ft",
+  "verdict": "confirmed_1src",
+  "value": 2405,
+  "confirmed_urls": [
+   "https://sierrapeaks.org/SPS%20peaks%20with%20mileage/SPS_list_with_mileage_TH_gain.xls"
+  ],
+  "problems": "SPS xls row states it; sheet note: mileage is least-technical route, one way; start - loss + gain = summit"
+ },
+ {
+  "route_id": "ca_moses_mountain_standard_route",
+  "area_id": "ca_moses_mountain",
+  "field": "gain_ft",
+  "verdict": "confirmed_1src",
+  "value": 3510,
+  "confirmed_urls": [
+   "https://sierrapeaks.org/SPS%20peaks%20with%20mileage/SPS_list_with_mileage_TH_gain.xls"
+  ],
+  "problems": "SPS xls row states it; sheet note: mileage is least-technical route, one way; start - loss + gain = summit"
+ },
+ {
+  "route_id": "ca_moses_mountain_standard_route",
+  "area_id": "ca_moses_mountain",
+  "field": "approach_loss_ft",
+  "verdict": "confirmed_1src",
+  "value": 100,
+  "confirmed_urls": [
+   "https://sierrapeaks.org/SPS%20peaks%20with%20mileage/SPS_list_with_mileage_TH_gain.xls"
+  ],
+  "problems": "SPS xls row states it; sheet note: mileage is least-technical route, one way; start - loss + gain = summit"
+ },
+ {
+  "route_id": "ca_mount_bago_north_ridge",
+  "area_id": "ca_mount_bago",
+  "field": "gain_ft",
+  "verdict": "wrong_route",
+  "value": null,
+  "confirmed_urls": [],
+  "problems": "SPS row Mount Bago (Class 1, Kearsarge Pass Trail, gain 4110 / loss 1430 stated) is the least-technical route; page never names the North Ridge, so cannot confirm it is this line."
+ },
+ {
+  "route_id": "ca_mount_bago_north_ridge",
+  "area_id": "ca_mount_bago",
+  "field": "approach_loss_ft",
+  "verdict": "wrong_route",
+  "value": null,
+  "confirmed_urls": [],
+  "problems": "SPS row Mount Bago (Class 1, Kearsarge Pass Trail, gain 4110 / loss 1430 stated) is the least-technical route; page never names the North Ridge, so cannot confirm it is this line."
+ },
+ {
+  "route_id": "ca_mount_baxter_standard_route",
+  "area_id": "ca_mount_baxter",
+  "field": "gain_ft",
+  "verdict": "confirmed_1src",
+  "value": 8355,
+  "confirmed_urls": [
+   "https://sierrapeaks.org/SPS%20peaks%20with%20mileage/SPS_list_with_mileage_TH_gain.xls"
+  ],
+  "problems": "SPS xls row states it; sheet note: mileage is least-technical route, one way; start - loss + gain = summit"
+ }
+]

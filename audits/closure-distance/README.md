@@ -12,10 +12,29 @@ Owner's note, on Three Fingers South Peak via Lookout: "the road was washed out 
 |---|---|---|---|
 | b01 | FR 41, Three Fingers | 3 (+8 mi each way, +1,400 ft) | none |
 | b02 | Chiwawa FR 6200 | 14 | 5 (see verdicts) |
-| b03 | Suiattle FR 26 | 7 | 10 (see verdicts) |
+| b03 | Suiattle FR 26 | 7 | 10 (see verdicts) — SUPERSEDED 2026-11-18, see below |
 | b04 | Squire Creek FS 2040 | 0 | 12, all NO_CHANGE: published walk-in figures conflict, and 11 of the 12 store no distance |
 
 Rollback files: `rollback-b01..b03.json`, plus `scripts/rollback-closure-distance-*.json`.
+
+**b03 superseded (2026-11-18).** The Forest Service replaced the post-flood order (06-05-26-03, FR 26
+closed at ~milepost 4, 16 road miles to the Downey Creek Trailhead) with order 06-05-26-25, in effect
+from 2026-11-05: closed to vehicles from **milepost 12** to the Suiattle River Trailhead, so ~8 road
+miles to Downey Creek and ~11 to the road's end. The Miners Fire trail closure is no longer listed
+either. `scripts/oneoff/apply-suiattle-road.mjs` rewrote the road/access text of 20 routes, halved
+b03's +16 mi (day miles and `road.walkMi`; `dist_km` 41.84 -> 28.97 on the three that store one), and,
+because b03 had added miles but no HOURS, added 2.75 hr each way for the 8 walked miles (Frostbite
+Ridge, which said to drive to the road's end, +3.75 hr for 11). Rollback:
+`audits/rollback-suiattle-road-1795060575617.json`; find the affected rows again with
+`scripts/oneoff/scan-suiattle-road.mjs`.
+
+**Order 06-05-26-25 read in full (2026-11-18):** it prohibits only "any type of vehicle" under
+36 CFR 261.54(a) and says the closed road is "closed to all motorized vehicles"; no foot or
+bicycle prohibition, so walking or biking past the gate is allowed (the old 03 order cited
+261.54(e), being on the road). It runs 2026-11-05 to **2028-10-01** unless rescinded, supersedes
+06-05-26-03, and also closes the whole Green Mountain Road (FR 2680) to vehicles. A re-scan of the
+live text found every route consistent with this (foot/bike past the gate; Sitkum and Cool Glacier
+give the 1 Oct 2028 end date); nothing to change.
 
 ## Left (resume here)
 

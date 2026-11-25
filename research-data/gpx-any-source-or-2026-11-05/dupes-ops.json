@@ -1,0 +1,187 @@
+[
+ {
+  "op": "merge",
+  "key": "p021",
+  "id": "or_red_wall_critical_mass_e",
+  "into": "or_critical_mass",
+  "area_id": "or_red_wall",
+  "name": "Critical Mass [E]",
+  "move": "*"
+ },
+ {
+  "op": "merge",
+  "key": "p022",
+  "id": "or_red_wall_pinhead_e",
+  "into": "or_pinhead",
+  "area_id": "or_red_wall",
+  "name": "Pinhead [E]",
+  "move": "*"
+ },
+ {
+  "op": "merge",
+  "key": "p024",
+  "id": "or_red_wall_trailer_park_sunset_e",
+  "into": "or_trailer_park_sunset",
+  "area_id": "or_red_wall",
+  "name": "Trailer Park Sunset [E]",
+  "move": "*"
+ },
+ {
+  "op": "merge",
+  "key": "p098",
+  "id": "or_red_wall_kashmir_e",
+  "into": "or_kashmir",
+  "area_id": "or_red_wall",
+  "name": "Kashmir [E]",
+  "move": "*"
+ },
+ {
+  "op": "merge",
+  "key": "p100",
+  "id": "or_red_wall_the_conspiracy_aka_kashmir_direct_l",
+  "into": "or_the_conspiracy_aka_kashmir_direct",
+  "area_id": "or_red_wall",
+  "name": "The Conspiracy (aka Kashmir Direct) [L]",
+  "move": "*"
+ },
+ {
+  "op": "merge",
+  "key": "p030",
+  "id": "or_bat_wall_full_blood_sucker_e",
+  "into": "or_full_blood_sucker",
+  "area_id": "or_bat_wall",
+  "name": "Full Blood Sucker [E]",
+  "move": "*"
+ },
+ {
+  "op": "merge",
+  "key": "p031",
+  "id": "or_bat_wall_mystic_boyz_l",
+  "into": "or_mystic_boyz",
+  "area_id": "or_bat_wall",
+  "name": "Mystic Boyz [L]",
+  "move": "*"
+ },
+ {
+  "op": "merge",
+  "key": "p032",
+  "id": "or_bat_wall_natural_mystic_e",
+  "into": "or_natural_mystic_2",
+  "area_id": "or_bat_wall",
+  "name": "Natural Mystic [E]",
+  "move": "*"
+ },
+ {
+  "op": "merge",
+  "key": "p033",
+  "id": "or_bat_wall_vlad_the_impaler_l",
+  "into": "or_vlad_the_impaler",
+  "area_id": "or_bat_wall",
+  "name": "Vlad the Impaler [L]",
+  "move": "*"
+ },
+ {
+  "op": "merge",
+  "key": "p034",
+  "id": "or_bat_wall_well_digger_l",
+  "into": "or_well_digger",
+  "area_id": "or_bat_wall",
+  "name": "Well Digger [L]",
+  "move": "*"
+ },
+ {
+  "op": "merge",
+  "key": "p017",
+  "id": "or_jungle_cliff_king_louie_e",
+  "into": "or_king_louie",
+  "area_id": "or_jungle_cliff",
+  "name": "King Louie [E]",
+  "move": "*"
+ },
+ {
+  "op": "merge",
+  "key": "p018",
+  "id": "or_jungle_cliff_neuromancer_e",
+  "into": "or_neuromancer",
+  "area_id": "or_jungle_cliff",
+  "name": "Neuromancer [E]",
+  "move": "*"
+ },
+ {
+  "op": "merge",
+  "key": "p019",
+  "id": "or_jungle_cliff_open_project_jungle_boogie_e",
+  "into": "or_open_project_jungle_boogie",
+  "area_id": "or_jungle_cliff",
+  "name": "Open Project--Jungle Boogie [E]",
+  "move": "*"
+ },
+ {
+  "op": "merge",
+  "key": "p020",
+  "id": "or_jungle_cliff_wretched_love_affair_l",
+  "into": "or_wretched_love_affair",
+  "area_id": "or_jungle_cliff",
+  "name": "Wretched Love Affair [L]",
+  "move": "*"
+ },
+ {
+  "op": "merge",
+  "key": "p037",
+  "id": "or_north_face_3_dark_tower_e",
+  "into": "or_dark_tower",
+  "area_id": "or_north_face_3",
+  "name": "Dark Tower [E]",
+  "move": "*"
+ },
+ {
+  "op": "merge",
+  "key": "p026",
+  "id": "or_bulo_point_fat_rabbit_aka_i_am_not_the_man",
+  "into": "or_i_am_not_the_man",
+  "area_id": "or_bulo_point",
+  "name": "Fat Rabbit (aka I Am Not The Man)",
+  "move": "*",
+  "set": {
+   "alt_names": [
+    "Fat Rabbit"
+   ]
+  }
+ },
+ {
+  "op": "merge",
+  "key": "p229",
+  "id": "or_south_side_south_side_route",
+  "into": "or_mt_hood_south_side_hogsback",
+  "area_id": "or_south_side",
+  "name": "South Side Route",
+  "move": [
+   "length_m",
+   "fa",
+   "detailed_rack",
+   "classic_score"
+  ],
+  "set": {
+   "alt_names": [
+    "South Side Route"
+   ],
+   "disciplines": [
+    "mountaineering"
+   ]
+  }
+ },
+ {
+  "op": "merge",
+  "key": "p230",
+  "id": "or_mt_mcloughlin_trail_3716",
+  "into": "or_mt_mcloughlin_east_ridge",
+  "area_id": "or_mt_mcloughlin",
+  "name": "Mt. McLoughlin Trail #3716",
+  "move": "*",
+  "set": {
+   "alt_names": [
+    "Mt. McLoughlin Trail #3716"
+   ]
+  }
+ }
+]

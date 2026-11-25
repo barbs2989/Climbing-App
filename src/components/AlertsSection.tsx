@@ -39,6 +39,6 @@ export default function AlertsSection({ day, dayLabel, nav, alerts, fc, onRetry 
           {a.what ? <div style={{ fontSize: 12, color: C.textSub, lineHeight: 1.5, marginTop: 5 }}>{"As issued: " + a.what}</div> : null}
         </div>;
       })}</div>}
-    <div style={{ fontSize: 11, color: C.textMuted, lineHeight: 1.5, marginTop: 8 }}>An alert covers a whole forecast zone, which can be much larger than the route and span very different heights, so it may not describe the route itself. Alerts are issued only a day or two ahead: a day with none is not an all-clear.{list.length ? " The wording above is kept in the units it was issued in." : ""}</div>
+    <div style={{ fontSize: 11, color: C.textMuted, lineHeight: 1.5, marginTop: 8 }}>Alerts cover a whole zone, not just this route. No alert is not an all-clear.</div>
   </div>;
 }

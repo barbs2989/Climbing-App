@@ -1,0 +1,89 @@
+{
+ "note": "Values replaced by the owner-approved batch-B fixes, 2026-11-18",
+ "rollback": [
+  {
+   "table": "routes",
+   "id": "wa_stick_boy",
+   "before": {
+    "grade": "5.11+"
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_stick_boy",
+   "before": {
+    "grade_num": 11.75
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_namby_pamby",
+   "before": {
+    "grade": "5.10b"
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_namby_pamby",
+   "before": {
+    "grade_num": 10.5
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_subliminal",
+   "before": {
+    "fa": "Brian Burdo"
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_namby_pamby",
+   "before": {
+    "fa": "Brian Burdo"
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_lovey_dovey",
+   "before": {
+    "fa": "Brian Burdo"
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_hangover_helper",
+   "before": {
+    "guide_stars": 1
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_you_re_only_nice_to_me_when_i_tie_you_up",
+   "before": {
+    "guide_stars": 1
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_glob_job",
+   "before": {
+    "guide_stars": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_slippery_when_wet",
+   "before": {
+    "guide_stars": null
+   }
+  },
+  {
+   "table": "routes",
+   "id": "wa_you_re_only_nice_to_me_when_you_re_wet",
+   "before": {
+    "guide_stars": null
+   }
+  }
+ ]
+}

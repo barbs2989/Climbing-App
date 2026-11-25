@@ -185,16 +185,32 @@ if (warm.replace(/\s+/g, " ").trim().length <= CHROME_ONLY) {
 }
 
 const dump = {};
+const logsState = {}; // per surface: had the account's climb_logs read answered? "data" | "error" | "pending"
 let found = 0;
 for (const s of SURFACES) {
   let text = "";
   // Some overlays are scoped to one screen, so opening them from the wrong tab renders
   // nothing and the check would read a bare tab. Take the first tab where the text appears.
-  for (const t of s.tabs) {
+  for (const [i, t] of s.tabs.entries()) {
     text = await load(s.qs.replace(/zt=[a-z]+/, "zt=" + t));
+    // The signed-in climb_logs fetch can land after the page "settles" on a slow CI runner,
+    // so a fixed pause read the panel before `_anniv` had a log to map (red on #3264/#3265/
+    // #3267 while the dropdown, read second, passed). Wait for the line itself; a severed
+    // path still fails, only later. The first tab gets the long wait -- by then the fetch has
+    // either landed or is not coming, so the remaining tabs need only a short one.
+    if (!text.includes(HEAD)) {
+      // The probe row is prepended only once the account's own climb_logs read has answered
+      // (anniversary.config.mjs), and that is a real read of the production database. Wait for
+      // IT first: a 20s wait for the line was still red on a slow read (2026-11-14, and several
+      // times that week), with a message that blamed the feed.
+      if (i === 0) await page.waitForFunction(() => window.__annivLogsQ && window.__annivLogsQ !== "pending", null, { timeout: 60000 }).catch(() => {});
+      await page.waitForFunction((h) => document.body.innerText.includes(h), HEAD, { timeout: i === 0 ? 20000 : 3000 }).catch(() => {});
+      text = await page.innerText("body").catch(() => text);
+    }
     if (text.includes(HEAD)) break;
   }
   dump[s.label] = text;
+  logsState[s.label] = await page.evaluate(() => window.__annivLogsQ || "unset").catch(() => "unknown");
   const hasHead = text.includes(HEAD);
   const hasTail = text.includes(TAIL);
   if (hasHead && hasTail) { found++; log(`  ${s.label}: ok — the anniversary notification rendered`); continue; }
@@ -202,7 +218,7 @@ for (const s of SURFACES) {
     fail(s.label, `the anniversary line begins but is missing its tail ${JSON.stringify(TAIL)} — the composed string was cut short`);
     continue;
   }
-  fail(s.label, `no anniversary notification, with a log dated exactly one year ago today. Expected a line containing ${JSON.stringify(HEAD)}.`);
+  fail(s.label, `no anniversary notification, with a log dated exactly one year ago today. Expected a line containing ${JSON.stringify(HEAD)}. (The account's climb_logs read was "${logsState[s.label]}" when this was read.)`);
 }
 
 if (pageErrors.length) fail("page", `uncaught error(s): ${[...new Set(pageErrors)].join(" | ")}`);
@@ -211,6 +227,16 @@ if (DUMP) { fs.writeFileSync(DUMP, JSON.stringify(dump, null, 1)); log(`\nwrote 
 
 await browser.close();
 stopServer();
+
+// NOTHING rendered and the read the probe rides on never answered: that is one failure, and it is
+// the database's. Said in the words ci-db-inconclusive.mjs knows, so CI asks the database before it
+// calls this a finding: a slow project makes the run inconclusive, a healthy one keeps it red (a
+// read that hangs against a healthy database is the app's).
+if (found === 0 && fails.length && Object.values(logsState).every((v) => v === "pending")) {
+  console.error("\ncheck:anniversary FAILED (1): the signed-in query never resolved — the probe account's climb_logs read did not answer within 60s, so the probe row never reached the hydration.");
+  console.error("Nothing above is evidence about the anniversary feed. Re-run once the database answers.\n");
+  process.exit(1);
+}
 
 if (fails.length) {
   console.error(`\ncheck:anniversary: ${fails.length} problem(s):\n`);

@@ -1,0 +1,483 @@
+{
+ "ak_slabby": {
+  "area": "ak_ramparts_wall",
+  "skip_reason": "Only theCrag (Hatchers Pass route 3766016379) found; theCrag answered Forbidden; Mountain Project 429."
+ },
+ "ak_slabbyville": {
+  "area": "ak_independence_crag",
+  "skip_reason": "Only theCrag (Hatchers Pass route 3766015053) found; theCrag answered Forbidden; Mountain Project 429."
+ },
+ "ak_sling_that_horn": {
+  "area": "ak_valdez_glacier_campground",
+  "skip_reason": "Only theCrag (Valdez Area Rock route 3773339490) found; theCrag Forbidden; Alaska Guide has no page; Mountain Project 429."
+ },
+ "ak_slippery_slope": {
+  "area": "ak_valdez_glacier_campground",
+  "skip_reason": "Not reached: Mountain Project answered 429 Too Many Requests; no other publisher found for this crag route."
+ },
+ "ak_sloppy_peaches": {
+  "area": "ak_peanut_gullery",
+  "skip_reason": "Not reached: Mountain Project answered 429 Too Many Requests; no other publisher found for this crag route."
+ },
+ "ak_smoke_em_if_you_got_em": {
+  "area": "ak_mt_harding",
+  "skip_reason": "Not reached: Mountain Project answered 429 Too Many Requests; no other publisher found for this crag route."
+ },
+ "ak_smoked_bluffs": {
+  "area": "ak_crack_garden_the_2",
+  "skip_reason": "Not reached: Mountain Project answered 429 Too Many Requests; no other publisher found for this crag route."
+ },
+ "ak_smooth_ride": {
+  "area": "ak_glacier_view",
+  "skip_reason": "Not reached: Mountain Project answered 429 Too Many Requests; no other publisher found for this crag route."
+ },
+ "ak_snot_a_rocket": {
+  "area": "ak_sunny_side_the",
+  "facts": [
+   {
+    "field": "length_ft",
+    "value": 195,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/112361096/snot-a-rocket",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project lists Snot a Rocket as sport, 195 ft, 2 pitches."
+     }
+    ]
+   },
+   {
+    "field": "pitches",
+    "value": 2,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/112361096/snot-a-rocket",
+      "retrieved_at": "2026-11-14",
+      "fact": "Listed as 2 pitches: P1 5.7 at 95 ft, P2 5.5 at 100 ft."
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "Nick Weicht",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/112361096/snot-a-rocket",
+      "retrieved_at": "2026-11-14",
+      "fact": "First ascent credited to Nick Weicht."
+     }
+    ]
+   },
+   {
+    "field": "descent",
+    "value": "From the top two-bolt anchor walk 25 ft right to a chain anchor, then two rappels to the ground",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/112361096/snot-a-rocket",
+      "retrieved_at": "2026-11-14",
+      "fact": "Descent: walk right 25 ft from the top anchor to a chain anchor and make two rappels to the ground."
+     }
+    ]
+   },
+   {
+    "field": "rappels",
+    "value": 2,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/112361096/snot-a-rocket",
+      "retrieved_at": "2026-11-14",
+      "fact": "Descent is two rappels from a chain anchor 25 ft right of the top anchor."
+     }
+    ]
+   },
+   {
+    "field": "rack",
+    "value": "Sport: P1 6 bolts to a 2-bolt chain anchor; P2 2 bolts to a 2-bolt anchor",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/112361096/snot-a-rocket",
+      "retrieved_at": "2026-11-14",
+      "fact": "Protection: P1 six bolts plus chain anchor, P2 two bolts plus two-bolt anchor."
+     }
+    ]
+   }
+  ],
+  "note": "Mountain Project route page is the only source found; no second independent publisher."
+ },
+ "ak_soldiers_of_the_cross": {
+  "area": "ak_tsaina_river_gorge_wall",
+  "skip_reason": "Not reached: Mountain Project answered 429 Too Many Requests; no other publisher found for this crag route."
+ },
+ "ak_solva_buttress": {
+  "area": "ak_5th_tower",
+  "skip_reason": "Only page found was SummitPost 'Mendenhall Towers Solva Buttress trip report' which answered 403; Mountain Project 429; theCrag 403."
+ },
+ "ak_south_buttress": {
+  "area": "ak_3rd_tower_main",
+  "skip_reason": "Not reached: Mountain Project answered 429 Too Many Requests; no other publisher found for this crag route."
+ },
+ "ak_south_face": {
+  "area": "ak_middle_troll",
+  "skip_reason": "AAJ hit for Middle Troll (2002) describes a different route (Chaos); SuperTopo page empty; Mountain Project 429."
+ },
+ "ak_south_face_couloir": {
+  "area": "ak_throne_the",
+  "skip_reason": "Only page found was SummitPost South Face Couloir (/south-face-couloir/290185); SummitPost answering 403; Mountain Project 429."
+ },
+ "ak_south_park": {
+  "area": "ak_sunny_side_the",
+  "facts": [
+   {
+    "field": "length_ft",
+    "value": 80,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://alaska.guide/Route/South-Park",
+      "retrieved_at": "2026-11-14",
+      "fact": "Alaska Guide quick facts list South Park at The Sunny Side, Thompson Pass, length 80 ft, rated 5.8."
+     }
+    ]
+   },
+   {
+    "field": "region",
+    "value": "Thompson Pass, nearest city Valdez",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://alaska.guide/Route/South-Park",
+      "retrieved_at": "2026-11-14",
+      "fact": "Quick facts: region Thompson Pass, nearest city Valdez, part of The Sunny Side."
+     }
+    ]
+   }
+  ],
+  "note": "Alaska Guide Co page (its data appears to mirror Mountain Project). Mountain Project route page answered 429, so no second source."
+ },
+ "ak_south_ridge_5": {
+  "area": "ak_south_troll",
+  "skip_reason": "Not reached: Mountain Project answered 429 Too Many Requests; no other publisher found for this crag route."
+ },
+ "ak_south_ridge_6": {
+  "area": "ak_hobbit_s_footstool",
+  "skip_reason": "Not reached: Mountain Project answered 429 Too Many Requests; no other publisher found for this crag route."
+ },
+ "ak_southeast_face_2": {
+  "area": "ak_peak_6500",
+  "skip_reason": "Not reached: Mountain Project answered 429 Too Many Requests; no other publisher found for this crag route."
+ },
+ "ak_southeast_ridge_2": {
+  "area": "ak_3rd_tower_main",
+  "skip_reason": "Not reached: Mountain Project answered 429 Too Many Requests; no other publisher found for this crag route."
+ },
+ "ak_southwest_buttress": {
+  "area": "ak_throne_the",
+  "skip_reason": "Not reached: Mountain Project answered 429 Too Many Requests; no other publisher found for this crag route."
+ },
+ "ak_southwest_face": {
+  "area": "ak_mount_alice",
+  "skip_reason": "Not reached: Mountain Project answered 429 Too Many Requests; no other publisher found for this crag route."
+ },
+ "ak_southwest_face_2": {
+  "area": "ak_hut_tower",
+  "skip_reason": "SuperTopo Hut Tower Southwest Face page renders empty; Mountain Project 429; no other publisher found."
+ },
+ "ak_southwest_ridge_2": {
+  "area": "ak_munchkin_the",
+  "skip_reason": "Only pages found were SummitPost Southwest Ridge (/918316, /728522), walled 403; Mountain Project 429."
+ },
+ "ak_splitter_choss": {
+  "area": "ak_mount_alice",
+  "skip_reason": "Not reached: Mountain Project answered 429 Too Many Requests; no other publisher found for this crag route."
+ },
+ "ak_steave_s_goalie": {
+  "area": "ak_sunny_side_the",
+  "facts": [
+   {
+    "field": "length_ft",
+    "value": 190,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/112352836/steaves-goalie",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project lists Steave's Goalie as trad, 190 ft, 2 pitches."
+     }
+    ]
+   },
+   {
+    "field": "pitches",
+    "value": 2,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/112352836/steaves-goalie",
+      "retrieved_at": "2026-11-14",
+      "fact": "Listed as 2 pitches."
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "Nick Weicht",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/112352836/steaves-goalie",
+      "retrieved_at": "2026-11-14",
+      "fact": "First ascent credited to Nick Weicht."
+     }
+    ]
+   },
+   {
+    "field": "rack",
+    "value": "Full rack, plus extra large gear if available",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/112352836/steaves-goalie",
+      "retrieved_at": "2026-11-14",
+      "fact": "Protection: a full rack, with extra large pieces if you have them."
+     }
+    ]
+   },
+   {
+    "field": "descent",
+    "value": "Rappel from the chain anchor station a few meters left of and slightly below the top anchor",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/112352836/steaves-goalie",
+      "retrieved_at": "2026-11-14",
+      "fact": "The chain rappel station sits a few meters left and a bit down from the anchor."
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "Route climbs the gully in the center of the crag",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/112352836/steaves-goalie",
+      "retrieved_at": "2026-11-14",
+      "fact": "Location: the central gully of the crag."
+     }
+    ]
+   },
+   {
+    "field": "hazard",
+    "value": "Loose material in the gully can be knocked onto the belayer",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/112352836/steaves-goalie",
+      "retrieved_at": "2026-11-14",
+      "fact": "Page warns to avoid knocking things down onto your partner."
+     }
+    ]
+   }
+  ],
+  "note": "Mountain Project route page is the only source found; no second independent publisher."
+ },
+ "ak_stellar_cruise": {
+  "area": "ak_mine_the",
+  "skip_reason": "Not reached: Mountain Project answered 429 Too Many Requests; no other publisher found for this crag route."
+ },
+ "ak_stem_cell_2": {
+  "area": "ak_upper_wall",
+  "skip_reason": "Not reached: Mountain Project answered 429 Too Many Requests; no other publisher found for this crag route."
+ },
+ "ak_steve_s_tanker": {
+  "area": "ak_sunny_side_the",
+  "facts": [
+   {
+    "field": "length_ft",
+    "value": 175,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/112353275/steves-tanker",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project lists Steve's Tanker as trad, 175 ft, 2 pitches."
+     }
+    ]
+   },
+   {
+    "field": "pitches",
+    "value": 2,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/112353275/steves-tanker",
+      "retrieved_at": "2026-11-14",
+      "fact": "Listed as 2 pitches (P1 90 ft, P2 85 ft)."
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "Nick Weicht",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/112353275/steves-tanker",
+      "retrieved_at": "2026-11-14",
+      "fact": "First ascent credited to Nick Weicht."
+     }
+    ]
+   },
+   {
+    "field": "descent",
+    "value": "Rappel the route",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/112353275/steves-tanker",
+      "retrieved_at": "2026-11-14",
+      "fact": "Page says to rappel the route from the two-bolt chain anchor."
+     }
+    ]
+   },
+   {
+    "field": "rack",
+    "value": "5 bolts, small to medium cams/nuts, 2-bolt chain anchors",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/112353275/steves-tanker",
+      "retrieved_at": "2026-11-14",
+      "fact": "Protection: five bolts, small-to-medium gear, two-bolt chain anchor."
+     }
+    ]
+   },
+   {
+    "field": "hazard",
+    "value": "Opening ledge is slippery when wet (black water streaks)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/112353275/steves-tanker",
+      "retrieved_at": "2026-11-14",
+      "fact": "Crux move off the ground is on a smooth ledge described as slick when wet, marked by black streaks."
+     }
+    ]
+   }
+  ],
+  "note": "Mountain Project route page is the only source found; no second independent publisher."
+ },
+ "ak_stoken_the_stove": {
+  "area": "ak_sunny_side_the",
+  "facts": [
+   {
+    "field": "length_ft",
+    "value": 180,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/112359237/stoken-the-stove",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project lists Stoken the Stove as sport, 180 ft, 2 pitches."
+     }
+    ]
+   },
+   {
+    "field": "pitches",
+    "value": 2,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/112359237/stoken-the-stove",
+      "retrieved_at": "2026-11-14",
+      "fact": "Listed as 2 pitches: P1 5.7 at 100 ft, P2 5th class at 80 ft."
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "Nick Weicht",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/112359237/stoken-the-stove",
+      "retrieved_at": "2026-11-14",
+      "fact": "First ascent credited to Nick Weicht."
+     }
+    ]
+   },
+   {
+    "field": "descent",
+    "value": "From the top two-bolt anchor walk 25 ft right to a chain anchor, then two rappels to the ground",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/112359237/stoken-the-stove",
+      "retrieved_at": "2026-11-14",
+      "fact": "Descent: walk right 25 ft from the top anchor to a chain anchor and make two rappels down."
+     }
+    ]
+   },
+   {
+    "field": "rappels",
+    "value": 2,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/112359237/stoken-the-stove",
+      "retrieved_at": "2026-11-14",
+      "fact": "Descent is two rappels from a chain anchor 25 ft right of the top anchor."
+     }
+    ]
+   },
+   {
+    "field": "rack",
+    "value": "Sport: P1 6 bolts to a 2-bolt chain anchor; P2 3 bolts to a 2-bolt anchor",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/112359237/stoken-the-stove",
+      "retrieved_at": "2026-11-14",
+      "fact": "Protection: P1 six bolts plus chain anchor, P2 three bolts plus two-bolt anchor."
+     }
+    ]
+   }
+  ],
+  "note": "Mountain Project route page is the only source found; no second independent publisher."
+ },
+ "ak_storm_the_castle": {
+  "area": "ak_ramparts_wall",
+  "skip_reason": "Not reached: Mountain Project answered 429 Too Many Requests; no other publisher found for this crag route."
+ }
+}

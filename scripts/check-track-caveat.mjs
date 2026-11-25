@@ -388,17 +388,20 @@ else ok("predicate: a two-point waypoint join yields to the waypoint-line caveat
   const REPORTS = [{ user: "Maya Chen", date: "2026-07-12", text: "Snow to the notch.", avatar: "" }];
   // A DB route: no `activity` key and no `communityTracks`, reports arriving as a prop.
   const dbBody = text(render(route({ gpxPts: REAL, waypoints: WPS }), "planner", REPORTS));
-  // ANCHOR ON THE CAPTION, NEVER ON THE HEADING. The heading is the thing under test, so anchoring
+  // ANCHOR ON A MARKER, NEVER ON THE HEADING. The heading is the thing under test, so anchoring
   // there makes every edit to it report ANCHOR LOST -- and "the anchor moved, re-point the guard"
-  // and "you changed the heading, change it back" want opposite repairs. The caption below it
-  // describes the section and is not what these assertions are about.
-  const CAP = "Recorded lines other parties walked";
-  const ci = dbBody.indexOf(CAP);
-  // The heading is the text immediately above the caption; bounded by it rather than by a guess
-  // at how big the section is.
-  const headSeg = ci < 0 ? "" : dbBody.slice(Math.max(0, ci - 160), ci);
+  // and "you changed the heading, change it back" want opposite repairs. This used to anchor on the
+  // caption under the heading; the owner had that caption removed (2026-11-14), so the section's
+  // wrapper now carries data-section="tracks", which no copy edit touches.
+  const MARK = 'data-section="tracks"';
+  const dbHtml = render(route({ gpxPts: REAL, waypoints: WPS }), "planner", REPORTS);
+  const mi = dbHtml.indexOf(MARK);
+  // The heading is the first text node inside the marked wrapper -- exactly the heading, not a
+  // guess at how many characters it spans (the rows below it say "Trip report" too).
+  const headSeg = mi < 0 ? "" : text(((dbHtml.slice(mi).match(/>([^<]*[^<\s][^<]*)</) || [])[1]) || "");
+  const ci = mi < 0 ? -1 : dbBody.indexOf(headSeg.trim());
 
-  if (ci < 0) fail("ANCHOR LOST: the tracks section's caption could not be found - section 5 proved nothing");
+  if (mi < 0 || ci < 0) fail("ANCHOR LOST: the tracks section's data-section=\"tracks\" marker could not be found - section 5 proved nothing");
   else {
     ok("the tracks section renders on the planner tab");
 
@@ -415,7 +418,9 @@ else ok("predicate: a two-point waypoint join yields to the waypoint-line caveat
     else ok("the heading names trip reports too");
 
     // Non-vacuity: the rows must really be there, or every assertion above is about an empty box.
-    if (!/Trip report/.test(dbBody.slice(ci, ci + 900))) fail("no trip-report row rendered - section 5's heading assertions would be vacuous");
+    // Anchored on the REPORTER, not on row copy: the row used to read "Trip report - no recorded
+    // track." and that line was cut when the section became one list of reports and tracks (2026-11-18).
+    if (!dbBody.slice(ci, ci + 900).includes(REPORTS[0].user)) fail("no trip-report row rendered - section 5's heading assertions would be vacuous");
     else ok("a trip report really does render under that heading");
   }
 
@@ -426,9 +431,9 @@ else ok("predicate: a two-point waypoint join yields to the waypoint-line caveat
   // four grade parsers, and a rename should have to update the FAQ rather than this guard.
   {
     const rdSrc = readAppFile(path.join(ROOT, "RouteDetail.jsx")); // stitched: the tracks section moved to RouteReportsTab (PR60)
-    const capAt = rdSrc.indexOf(CAP);
-    const slMatches = capAt < 0 ? [] : [...rdSrc.slice(Math.max(0, capAt - 400), capAt).matchAll(/<SL>([^<]{4,60})<\/SL>/g)];
-    const heading = slMatches.length ? slMatches[slMatches.length - 1][1] : null;
+    const capAt = rdSrc.indexOf(MARK);
+    const slMatch = capAt < 0 ? null : rdSrc.slice(capAt, capAt + 400).match(/<SL>([^<]{4,60})<\/SL>/);
+    const heading = slMatch ? slMatch[1] : null;
     const core = readCoreSource();
     const faqAt = core.indexOf("recorded GPX tracks?");
 
@@ -454,6 +459,47 @@ else ok("predicate: a two-point waypoint join yields to the waypoint-line caveat
   if (!/No recent tracks or trip reports yet/.test(emptyBody))
     fail("the empty state does not name both kinds the section can hold");
   else ok("the empty state names both kinds");
+
+  // A SPORT, TRAD, TOP-ROPE OR BOULDER LINE HAS NO TRACK AND NO TRIP (owner, 2026-11-18): what it carries
+  // is logged climbs, so the same section is headed "Recent logged climbs", its rows name the tick, a
+  // conditions-only scout report is not listed as a climb, and no GPX is offered. Aid too (owner, same day);
+  // alpine keeps the tracks heading.
+  {
+    const LOGS = [
+      { user: "Maya Chen", date: "2026-07-12", tickType: "Redpoint", stars: 3, text: "Crux is the third bolt.", avatar: "" },
+      { user: "Scout Only", date: "2026-07-14", tickType: "Conditions", scoutOnly: true, text: "Wet at the base.", avatar: "" },
+    ];
+    const sport = route({ discipline: "sport", grade: "5.10a", pitches: 1 });
+    const html = render(sport, "planner", LOGS);
+    const mi = html.indexOf(MARK);
+    const head = mi < 0 ? "" : text(((html.slice(mi).match(/>([^<]*[^<s][^<]*)</) || [])[1]) || "");
+    const body = text(html);
+    const at = body.indexOf(head.trim());
+    const seg = mi < 0 || at < 0 ? "" : body.slice(at, at + 900);
+    if (mi < 0 || at < 0) fail("ANCHOR LOST: the tracks section did not render on a sport route");
+    else {
+      if (head.trim() !== "Recent logged climbs") fail(`a sport route's section is headed "${head.trim()}", not "Recent logged climbs"`);
+      else ok("a sport route's section is headed Recent logged climbs");
+      if (!/Maya Chen/.test(seg) || !/Redpoint/.test(seg)) fail("a sport route's logged climb, with its tick, did not render under the heading");
+      else ok("a logged climb renders with its tick");
+      if (/Trip report|no recorded track/.test(seg)) fail("a sport route's log still reads Trip report - no recorded track.");
+      else ok("no log is called a trip report or a missing track");
+      if (/Scout Only/.test(seg)) fail("a conditions-only scout report is listed as a logged climb");
+      else ok("a conditions-only scout report is not listed");
+    }
+    const empty = text(render(sport, "planner", []));
+    if (!/No logged climbs yet/.test(empty)) fail("a sport route's empty section does not say it has no logged climbs");
+    else ok("a sport route's empty section says no logged climbs");
+    const aid = render(route({ discipline: "aid", grade: "C2", pitches: 6 }), "planner", REPORTS);
+    const ai = aid.indexOf(MARK);
+    const aidHead = ai < 0 ? "" : text(((aid.slice(ai).match(/>([^<]*[^<s][^<]*)</) || [])[1]) || "");
+    if (aidHead.trim() !== "Recent logged climbs") fail(`an aid route is headed "${aidHead.trim()}", not "Recent logged climbs"`);
+    else ok("an aid route is headed Recent logged climbs too");
+    const faqAt = readCoreSource().indexOf("recorded GPX tracks?");
+    if (faqAt >= 0 && !readCoreSource().slice(faqAt, faqAt + 900).includes("Recent logged climbs"))
+      fail('the Help FAQ does not name "Recent logged climbs", the heading a sport route renders');
+    else if (faqAt >= 0) ok('the Help FAQ names "Recent logged climbs" too');
+  }
 }
 
 // ── 6. THE ROUTE LINE IS A RECORDED TRACK OR NOTHING (owner, 2026-10-25) ──────────────────────

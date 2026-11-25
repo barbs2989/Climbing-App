@@ -5,22 +5,49 @@
 `lib/Leaderboards.jsx`, loaded lazily.
 
 ## 1. What it does today
-- **Scope** row: Overall · Near me (home zip + radius) · Friends · By area (area tree, down from the countries; the breadcrumb's last crumb is the current area, plain text with `aria-current`, not a control) —
+- **Scope** row: Overall · Near me (home zip + radius) · Friends · By area —
   four equal-width boxes across the full row, 46px tall at 14px type (a 44px touch target), not small scrolling chips.
+- **By area is chosen the way a climb is found** (`RankAreaPicker`, owner 2026-11-18: "ranks by area on phone needs
+  a better ui like how we would find a climb"). Over the board, a *Ranking in* card names the area (plain text with
+  `aria-current`, its trail without the country under it) beside a 44px **Change** button. Change opens the
+  **Choose-an-area page** in place of the board (the scope row and the table are not drawn while it is open;
+  `pickId` in `Leaderboards`), laid out as the Climbs tab is: a header card with the area’s name, the path above it
+  as links (*All countries › United States*) and one **See rankings for <area>** button; under it the countries or
+  states as two-column cards with their climb counts, A to Z (the look of `StatePicker`’s phone cards), and below a
+  state the Climbs area page’s own sub-area list (`AreaChildrenList`: every child that holds climbs, A to Z, the same
+  Sort, the discipline line, a *View area* button on each row). Walking the page ranks nothing; See rankings does, and
+  so do a search hit (`GroupPlaceSearch` → `useCatalogAreaSearch`, signed in only) and a *Your areas* chip (the
+  climber’s partner listings, `useMyPartnerAreas`). **Back to rankings** leaves it unchanged; on a phone the top bar
+  draws that Back (`data-cm-step-back`). Each step starts at the top with the area’s name in focus. *All countries*
+  ranks nothing, so it has no See rankings. A failed children read says so rather than drawing an area with nothing
+  inside; a wall with nothing inside says that, and keeps its path. Signed out it walks the seed tree, with no search.
+  A failed path read names the area *Couldn’t load this area’s name*, not "this area".
+  `scripts/oneoff/probe-ranks-area-picker.mjs` drives all of it signed in at 390px and runs axe on the state cards, the
+  area rows and the search results, which no browser walk reaches (30/30). The picker keeps one slot in
+  `Leaderboards`' tree, open or closed, so it stays mounted: opening puts focus on the area's name, leaving hands it back to
+  Change, and while a path loads the header reads *Loading…*, never the root's name.
+- **TOP CONTRIBUTORS card** (area page, and the route page’s Overview in its compact form): the top three by contribution points for that area and everything inside it. A row opens that climber’s profile (your own row opens yours) on both pages; a contributor whose profile cannot be read is drawn as *Climber* with their points, as plain text. Checked against the raw rows with real accounts on 2026-11-19 (27 areas × 5 viewers).
+- **A row is not a button holding buttons** (fixed 2026-11-18, owner "fix it"; axe `nested-interactive`, WCAG 4.1.2,
+  found by that probe): the row is a plain container, and rank + avatar + name are ONE real `<button>` that opens the
+  profile and carries the row's `lbRowName` name ("#1, …", which probes find rows by). The points button (*How X got
+  N pts*, drawn as plain text) sits BESIDE it, so each is reached and announced on its own. Where a row has no points
+  button (signed out, Vouched, Contributions) the number stays inside the profile button, so the whole row still opens
+  the profile. `scripts/oneoff/probe-ranks-row-a11y.mjs` drives it signed in and as a guest, with axe (13/13).
 - **Climbing type** (All, Sport, Trad, Top rope, Bouldering, Alpine, Mountaineering, Scrambling, Ice, Mixed, Aid)
   and **Ranking**, grouped Performance · Lists · Reliability · Community. Which boards a type offers is the `ids`
   list in `Leaderboards`: Send points on every graded type (not Mountaineering/Scrambling, whose class grades weigh
   nothing), Onsight points on sport/trad/bouldering, Peaks on the three peak types.
 - **Row height**: ~42px on the website (1024px+, tighter line heights), 56px on a phone (competitor review batch A, item 8, owner 2026-11-04; Mountain Project's tables run ~40px).
 - **The table**: a header row (`#` · Climber · the board's unit), one row per climber with the rank, avatar, name,
-  location and "N of M backed", the value in a fixed right-hand column, and a ⚑ Report column on real rows.
+  location and "N of M backed", and the value in a fixed right-hand column. There is no ⚑ Report column (owner
+  2026-11-18: the board should look as clean signed in as signed out); you report a climber from their profile.
   Rows alternate shading; yours is tinted with a blue edge. Only climbers with a score above 0 on that board are
   ranked; equal scores share a rank (1, 2, 2, 4). The list shows 15 at a time up to the **top 100**, and your own
   row is pinned under it whenever the visible part does not include you. *You're #N of M* sits above the table, or
   *You're not ranked on this board yet* when nothing you logged counts toward it.
 - **Backed climbs only** (signed in, log-counted boards): ranks on partner-confirmed / photo / GPS-backed climbs only.
-- **The climbs behind a number (0357)**: on every board counted from logs (not Belay, Vouched, Contributions
-  or Top climbs), a real row's value is a button that opens `RankBreakdown`, *How N points add up*: a sentence on
+- **The climbs behind a number (0357)**: on every board counted from logs (not Vouched, Contributions
+  or Top climbs), a real row's value is a button, drawn as plain text like the guest board's numbers, that opens `RankBreakdown`, *How N points add up*: a sentence on
   how that board scores, then one line per counted climb — name, grade, date, tick, area, its backing tier
   (Partner confirmed ×1 · Photo or GPS ×0.75 · Self-logged ×0.5) on the points boards, and what it added. Send
   points lists each route's best log; Days lists days with their climbs; Peaks lists summits. It reads
@@ -31,6 +58,11 @@
   still count; the sheet sums them into one "N more climbs they keep private" line. Modelled on 8a.nu's
   scorecard (the ascents a score is summed from) and theCrag's CPR timeline (the ascent list under a column).
 - **Top climbs**: routes, not climbers, from `leaderboard_top_climbs`.
+- **Crag regular, under By area** (competitor review batch C, item 22, 2026-11-05 — Strava's Local Legend): below the area's
+  *Ranking in* card, one row names the climber with the most logged DAYS under that area in the last 90
+  (two at least, visible logs, no conditions reports, the same people the boards rank, ties by logs then last day) with the
+  count; the row opens their profile. `useCragRegular` → `crag_regular` (0404), signed-in only; nothing is drawn when nobody
+  has two days there, and a failed read draws nothing rather than a wrong name. The same row sits on the area page's PARTNERS HERE card.
 - Signed out (or `USE_DB` off) the board is the seed example set plus you, never mixed with real climbers.
 
 ## 2. How it works — the scoring (audited 2026-10-15, 0323)
@@ -41,9 +73,9 @@ Every number for a real climber comes from `leaderboard()` on the server; the cl
   `{"<all|backed>|<type>|<board>": [your rank or null, climbers ranked]}`; the app reads it for *You're #N of M*, your
   pinned row's number and *The top 100 of N*, and falls back to counting the rows when it is absent. Checked with
   `scripts/oneoff/probe-ranks-0379.sql` (130 test climbers: exactly the 100 that belong come back; the caller reads #121 of 131).
-- **Which logs count**: `rankable_logs()` (0203/0208) — catalog routes only, no future dates, one log per route per
+- **Which logs count**: `rankable_logs()` (0203/0208/0269/0504) — catalog routes only, no future dates, one log per route per
   day, 30 a day, a climb a tagged partner denied is dropped; each log is tiered confirmed (1.0) / evidence (0.75) /
-  self (0.5). A **Conditions** tick (a scouting report) is not a climb and counts on no board.
+  self (0.5). **Confirmed** = a tagged partner said they were there; ONE partner is enough (0504, owner 2026-11-23 — 0208 to 0504 needed two different partners). That partner must be an accepted friend, unblocked, with a confirmed email (no account-age wait since 0507, owner 2026-11-23), and any one partner backs at most 12 of your climbs a calendar year. A **Conditions** tick (a scouting report) is not a climb and counts on no board.
 - **Sent** = any tick except Attempt, Turned around, Fell, Hung, Project (case-insensitive).
 - **Send points**: per DIFFERENT sent route, its best log scores `(8 + g² × 0.35) × tier`, where g is the route's
   grade on ONE scale (`rank_grade()` / `rankGrade()`: 5.10a = 10, a letter = 0.25; V, WI and M converted; class,
@@ -57,7 +89,7 @@ Every number for a real climber comes from `leaderboard()` on the server; the cl
 - **Classic climbs**: different classic routes sent.
 - **Per type**: on any type but All, Logged, Days, Vert, Classics and Peaks read `stats.<all|backed>.by.<type>`
   (sport and trad also roll up as `rock`), so the Bouldering board's Days are bouldering days.
-- **Belay** `counted_catch_count` (a catch both climbers recorded, 0361), **Vouched** distinct vouchers,
+- **Vouched** distinct vouchers (the Belay board was removed 2026-11-05 with the rest of belay catches),
   **Contributions** points from `contribution_points()` (0333) — all server-side.
 - **Contribution points (0333)**: ONE ledger, `contribution_points()`, feeds this board, every area's and route's
   TOP CONTRIBUTORS (`area_top_contributors`, rendered by `TopContributors` in `src/components/TopContributors.tsx`) and the profile's
@@ -69,6 +101,9 @@ Every number for a real climber comes from `leaderboard()` on the server; the cl
   the area, the state and the country. On Ranks By area only that area's points count, and a climber who
   contributed there without logging a climb there is listed. Since 0338 a logged climb (1, once per route) and a trip report (2, once per route per month) count too, only when shared with Everyone.
   Weights follow Mountain Project (area 15 · route 10 · photo 5 · comment 1); once-per-place follows theCrag's karma.
+- **Who is on an area’s TOP CONTRIBUTORS card (0486)**: `area_top_contributors` leaves out the climbers `leaderboard()` leaves out. A climber who turned *Show me on leaderboards* off is on nobody’s card (their own included: the card has no "you are hidden" line) and holds no Top Contributor badge; a signed-in reader is not shown a contributor they blocked or who blocked them. Signed out, blocks change nothing, as with profile reads (0095). Before 0486 the card ranked everyone in the ledger: a hidden climber stayed on it by name, and a blocked reader saw a nameless *Climber* row.
+- **Ties on the card and the badge (0495)**: climbers level on points share a place, as on Ranks (1, 1, 3). Everyone level with the leader gets the ★ Top Contributor pill and the gold medal, and each holds the profile badge for that area (`user_top_contributor_areas` ranks with `rank()` over points). Before 0495 the account id decided which of two equals got them.
+- **Test accounts stay off the boards**: the two CI walk accounts (`scripts/oneoff/create-ci-test-accounts.mjs`) are written with `show_on_ranks = false`, and the script reads it back; until 2026-11-23 the owner account sat at #2 of the real Send points board.
 - The demo board mirrors the same rules in `meStats` for your own row.
 
 ## 3. Files
@@ -80,23 +115,24 @@ Every number for a real climber comes from `leaderboard()` on the server; the cl
 | `lib/Help.jsx` | `Help` (its `topic` prop opens one section) |
 | `lib/db.js` | `useLeaderboard`, `useTopClimbs`, `useRankBreakdown` |
 | `ClimbMatchCore.jsx` | `HELP_FEATS` (the Ranks section holds the scoring text), `tickTypesFor`, `NONCOMPLETION_TICKS`, `lbRowName` |
-| `supabase/migrations` | 0194, 0203, 0208, 0235, 0323, 0333, 0338, 0357 (`rank_breakdown`), 0373, 0379 (top 100 per board) |
+| `supabase/migrations` | 0194, 0203, 0208, 0235, 0323, 0333, 0338, 0357 (`rank_breakdown`), 0373, 0379 (top 100 per board), 0486 (the area card honours the leaderboard switch and blocks), 0495 (ties share first) |
 
 ## 4. Data
 `climb_logs`, `climb_log_confirmations`, `routes` (`grade_system`, `grade_num`, `gain_ft`, `length_m`, `classic`,
 `discipline`), `areas` (`path` for By area), `profiles.show_on_ranks` (0177), `profile_zips`/`zip_centroids`,
-`connections`, `blocked_users`, `vouches`, `belay_catches`, `contributions`.
+`connections`, `blocked_users`, `vouches`, `contributions`.
 
 ## 5. Connections
 - **Logbook**: the log form's tick types (`tickTypesFor`) decide what a board can see, and each discipline offers only its own words (2026-10-25 audit). Alpine: Summit, Turned around, Lead, Follow, Hung, Fell. Ice and mixed: those plus Top-rope. Top rope: Top-rope, Hung, Attempt. Aid: Lead, Follow, Top-rope, Hung, Fell, Attempt. Sport and trad keep the full roped list (Onsight, Flash, Redpoint included). A summit and a style on one climb: pick the style, then tap *Also reached the summit*. The client reads both through `summitedLog()` in `ClimbMatchCore.jsx`.
 - **Profile**: tapping a row opens `FullProfile`; friend and message actions live there, not on the row.
-- **Moderation**: ⚑ opens the report sheet (`setReportUser`).
+- **Moderation**: a row opens the climber's profile, whose *Report* opens the report sheet (`setReportUser`).
 - **No Trusted board**: it went with the trust score (2026-10-21). 0335 dropped `leaderboard()`'s `trust` column with `compute_trust_score`.
 
 ## 6. Guards
 `check:grade-parser` holds `lib/rankGrade.js` equal to `rank_grade()` in the newest migration that defines it.
 Hand-run probes: `scripts/oneoff/probe-ranks-anti-padding.sql`, `probe-ranks-anti-collusion.sql`,
-`probe-ranks-0323.sql`, `probe-ranks-0379.sql`; `scripts/oneoff/probe-ranks-renders.mjs`.
+`probe-ranks-0323.sql`, `probe-ranks-0379.sql`; `scripts/oneoff/probe-ranks-renders.mjs`;
+`scripts/oneoff/probe-top-contributors-0486.mjs` (replays the migrations offline, then reads the area card, the badge and Ranks By area as each role with a climber hidden and with a block: 36/36).
 
 ## 7. Last significant change
 - **Ranks audit (0323)**: one grade scale across V/WI/M, top-rope/follow a letter lower, conditions reports out,

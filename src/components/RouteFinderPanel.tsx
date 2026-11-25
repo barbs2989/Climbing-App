@@ -2,12 +2,15 @@ import { useContext, useState, useEffect, useMemo, Fragment } from "react";
 import { ClimberCtx } from "../../lib/climberCtx.js";
 import { usePinnedBar } from "../../lib/usePinnedBar.js";
 import { searchPlaces } from "../../lib/mapKit";
-import { useMySavedSearches, useSubtreeRoutes, useSubtreeRouteCount, useAreaChildren, deleteSavedSearchRow, useAreaNamesByIds, useAreaSearch, createSavedSearchRow, areaSearchTotal } from "../../lib/db";
+import { useSubtreeRoutes, useSubtreeRouteCount, useAreaChildren, useAreaNamesByIds, useAreaTrailsByIds, useAreaPeakElevationsByIds, useAreaSearch, areaSearchTotal } from "../../lib/db";
 import { discLabel } from "../../lib/areaDiscLabel.js";
-import { BTN_LG, CHIP, BTN_LINK } from "../../lib/buttonStyles.js";
+import { BTN_LG, CHIP, BTN_LINK, btnChip, BTN_SECONDARY, SOLID_FILL } from "../../lib/buttonStyles.js";
+import { useWideScreen } from "../../lib/wideLayout.js";
+import { downloadCsv } from "../../lib/csv.js";
+import { rowGrade } from "../../lib/areaBrowserShared.js";
 import { SL } from "../../lib/areaBrowserParts.jsx";
 import { ScreenHero } from "../../lib/ScreenHero";
-import { POP_CHIP_X, POP_REMOVE, POP_CLOSE } from "../../lib/popupChrome.js";
+import { POP_CHIP_X, POP_CLOSE } from "../../lib/popupChrome.js";
 import LoadingRows from "./LoadingRows.tsx";
 import EmptyState from "./EmptyState.tsx";
 import { clickable } from "../../lib/clickable";
@@ -34,7 +37,6 @@ type RouteFinderPanelNearSt = { busy: boolean; err: string; hits: RouteFinderPan
 type RouteFinderPanelAreaHit = { id: string; name: string; area_type: keyof typeof ATYPE; parent_name?: string | null; route_count: number };
 type RouteFinderPanelChip = { k: string; label: string; clear: () => void };
 type RouteFinderPanelSortKey = "name" | "name_desc" | "area" | "lr" | "rl" | "grade_asc" | "grade_desc" | "stars_desc" | "near";
-type RouteFinderPanelSaved = { id: string; _dbId: string; name: string; kind?: string; q?: string; filters: Partial<RouteFinderPanelFilters>; loc?: AddHereFooterArea };
 type RouteFinderPanelList = { id: string; name: string; routeIds?: Array<string | number> };
 type RouteFinderPanelJump = { id: string; name: string };
 export interface RouteFinderPanelProps {
@@ -55,11 +57,8 @@ export interface RouteFinderPanelProps {
   onToggleListRoute?: ((listId: string, routeId: string | number) => void) | null;
   onAddClimb?: AddHereFooterProps["onAddClimb"];
   onAddArea?: AddHereFooterProps["onAddArea"];
-  /** A saved search being reopened. */
+  /** Words and filters to open with (the website header's typed search). */
   initial?: { id?: string; q?: string; filters?: Partial<RouteFinderPanelFilters> } | null;
-  uid?: string | null;
-  notify?: ((msg: string) => void) | null;
-  onSignIn?: (() => void) | null;
 }
 
 // ── Route finder: search + Filters sheet (discipline, grade, sort, stars, pitches,
@@ -132,14 +131,16 @@ const findB = <T extends [string, ...unknown[]]>(list: T[], k: string | undefine
 /* The grade options a range can be set from, per grading system, on the SAME number line as
    gradeNumFrom (lib/grade.js). Each entry is [label, lo, hi]: `lo` is the bound used when the
    grade is the MINIMUM, `hi` when it is the MAXIMUM, so a pick means "this grade" at either end.
-   YDS letters sit on quarter steps (5.10a = 10.25 … 5.10d = 11, the catalog's unanimous
-   convention). A bare "5.10" stores 10, so 5.10a as the MINIMUM uses 10 — otherwise a route
-   written without a letter falls out of the 5.10 band it belongs to. The one collision is in the
-   DATA, not here: 5.10d and a bare 5.11 are both stored as 11, so they travel together there. */
-const GRADE_SCALES: Record<string, RouteFinderPanelGrade[]> = (() => {
+   YDS letters sit inside their number (5.10a = 10.25, b 10.5, c 10.75, d 10.9 — lib/grade.js, 0464).
+   A 5.10- / 5.10 / 5.10+ sits on a / b / c (10.25 / 10.5 / 10.75, 0466), so "5.10c and up" finds a 5.10+.
+   5.10a as the MINIMUM still uses the whole number, so nothing in the 5.10 band can fall below it.
+   5.10d used to be 11, the number of a bare 5.11, so "up to 5.10d" took in every 5.11 and the grade
+   chart filed every 5.10d under 5.11 (2026-11-18). */
+export const GRADE_SCALES: Record<string, RouteFinderPanelGrade[]> = (() => {
   const yds: RouteFinderPanelGrade[] = [];
   for (let i = 0; i <= 9; i++) yds.push(["5." + i, i, i]);
-  for (let b = 10; b <= 15; b++) for (let k = 0; k < 4; k++) yds.push(["5." + b + "abcd"[k], k === 0 ? b : b + (k + 1) / 4, b + (k + 1) / 4]);
+  const LETTER = [0.25, 0.5, 0.75, 0.9];
+  for (let b = 10; b <= 15; b++) for (let k = 0; k < 4; k++) yds.push(["5." + b + "abcd"[k], k === 0 ? b : b + LETTER[k], b + LETTER[k]]);
   const ints = (pre: string, a: number, z: number) => { const o: RouteFinderPanelGrade[] = []; for (let i = a; i <= z; i++) o.push([pre + i, i, i]); return o; };
   // A/C: aid and clean-aid grades share one number (A2 and C2 are both 2), so one option covers both.
   const aid: RouteFinderPanelGrade[] = []; for (let i = 0; i <= 5; i++) aid.push(["A" + i + "/C" + i, i, i]);
@@ -159,7 +160,7 @@ const SCALE_NAMES: Record<string, string> = { yds: "5.x rock", v: "V", class: "C
 //     (an ice final also fills ice_grade_num, which the WI range reads). Both also offer Snow:
 //     Mountain Project's Easy / Mod. / Steep Snow, read from snow_grade_num (0246), which a route
 //     carries BESIDE its Class or 5.x grade — the owner wanted both (2026-10-04).
-const DISC_GRADE_SCALES: Record<string, string[]> = { sport: ["yds"], trad: ["yds"], toprope: ["yds"], bouldering: ["v"], scrambling: ["class", "yds"], mountaineering: ["class", "snow", "yds", "wi"], alpine: ["yds", "class", "wi", "snow"], aid: ["aid", "yds"], mixed: ["m", "yds"], ice: ["wi", "yds"] };
+export const DISC_GRADE_SCALES: Record<string, string[]> = { sport: ["yds"], trad: ["yds"], toprope: ["yds"], bouldering: ["v"], scrambling: ["class", "yds"], mountaineering: ["class", "snow", "yds", "wi"], alpine: ["yds", "class", "wi", "snow"], aid: ["aid", "yds"], mixed: ["m", "yds"], ice: ["wi", "yds"] };
 // The disciplines whose grade_system says which scale grade_num is on, so a range there passes it
 // as grade_sys: ice/mixed/aid since 0196, and the three mountain disciplines since their labels
 // were corrected (above). The rock disciplines keep #1811's behaviour — one scale each, no label
@@ -181,8 +182,14 @@ const GROUPED_SORTS: Record<string, number> = { area: 1, lr: 1, rl: 1, near: 1 }
 // left order ... with bouldering"). With Bouldering the only type picked, the two wall orders become BY BOULDER:
 // each boulder's problems together under its name, by name (the RPC's `area` order), and the count says problems.
 const boulderOnly = (discs: string[] | null | undefined) => !!discs && discs.length === 1 && discs[0] === "bouldering";
-const sortsFor = (discs: string[] | null | undefined) => boulderOnly(discs) ? [["area", "By boulder"], ...FINDER_SORTS.slice(2)] : FINDER_SORTS;
-const sortFor = (discs: string[] | null | undefined, s: string) => boulderOnly(discs) && (s === "lr" || s === "rl") ? "area" : s;
+// The same for MOUNTAIN routes (owner, 2026-11-14: "when i select alpine, you don't need to sort by wall left to
+// right"): a peak's routes are faces and ridges, not a line along a cliff base. Whenever no ticked discipline has a
+// wall order, the two wall sorts become one BY PEAK (or By boulder / By area) sort, grouped under each area's name.
+const NO_WALL_ORDER: Record<string, true> = { bouldering: true, alpine: true, mountaineering: true, scrambling: true };
+const noWallOrder = (discs: string[] | null | undefined) => !!discs && discs.length > 0 && discs.every(d => NO_WALL_ORDER[d]);
+const groupWord = (discs: string[] | null | undefined) => boulderOnly(discs) ? "boulder" : discs && discs.length && discs.every(d => d !== "bouldering") ? "peak" : "area";
+const sortsFor = (discs: string[] | null | undefined) => noWallOrder(discs) ? [["area", "By " + groupWord(discs)], ...FINDER_SORTS.slice(2)] : FINDER_SORTS;
+const sortFor = (discs: string[] | null | undefined, s: string) => noWallOrder(discs) && (s === "lr" || s === "rl") ? "area" : s;
 const finderNoun = (discs: string[] | null | undefined, n: number) => (boulderOnly(discs) ? " problem" : " route") + (n !== 1 ? "s" : "");
 // A whole state (or more) is not listed until an area in it is picked or a name is typed: an
 // unfiltered California list took 3.3 s in the database (2026-10-21), and nobody pages through
@@ -207,11 +214,30 @@ const finderArgs = (q: string, f: RouteFinderPanelFilters, metric: boolean) => {
 // Filters that narrow the AREAS before any climb is read (0369) make a whole state cheap to search,
 // so they lift FINDER_NEEDS_AREA. Gain and round trip are read climb by climb and do not: alone
 // over California they took 3.6 s cold, past the 3 s statement timeout (2026-10-24).
+// EACH FILTER ONLY WHERE IT MEANS SOMETHING (owner, 2026-11-14: "when I select top rope, trad, sport, aid, there doesn't
+// need to be an elevation gain, round trip, or prominence ... same for when I select bouldering, there aren't any pitches,
+// length doesn't match boulder height"). Gain, round trip, peak elevation and prominence are recorded almost only on
+// mountain routes (0369's coverage count: alpine / mountaineering / scrambling); a boulder has no pitches and its height
+// is not a route length (research 2026-11-14: Mountain Project, AllTrails, Peakbagger, The Mountaineers route pages;
+// Baymard: hide filters that do not apply to the chosen category). A filter shows while ANY ticked discipline uses it, and with none ticked every filter shows.
+const MOUNTAIN_DISCS: Record<string, true> = { alpine: true, mountaineering: true, scrambling: true };
+const NO_PITCHES: Record<string, true> = { bouldering: true, toprope: true, mountaineering: true, scrambling: true };
+const NO_LENGTH: Record<string, true> = { bouldering: true, mountaineering: true, scrambling: true };
+const FILTER_DISCS: Record<string, (d: string) => boolean> = {
+  // Pitches: none on a boulder, a walk-up or a scramble, and a top rope is one pitch by definition. Length: a boulder
+  // has a height, not a route length, and on a mountain day the round trip is the distance that matters.
+  minPitches: d => !NO_PITCHES[d], len: d => !NO_LENGTH[d],
+  gain: d => !!MOUNTAIN_DISCS[d], trip: d => !!MOUNTAIN_DISCS[d], elev: d => !!MOUNTAIN_DISCS[d], prom: d => !!MOUNTAIN_DISCS[d],
+};
+const fitsDiscs = (discs: string[], k: string) => !discs.length || discs.some(FILTER_DISCS[k]);
+// A value left on a filter that is no longer shown would narrow the list unseen, so it is cleared.
+const dropUnfit = (f: RouteFinderPanelFilters): RouteFinderPanelFilters => {
+  const out = { ...f, minPitches: fitsDiscs(f.discs, "minPitches") ? f.minPitches : 0, len: fitsDiscs(f.discs, "len") ? f.len : "any" };
+  for (const k of ["gain", "trip", "elev", "prom"] as const) if (!fitsDiscs(f.discs, k)) out[k] = "any";
+  return out;
+};
 const narrowsAreas = (f: RouteFinderPanelFilters) => !!(f.near || (f.elev && f.elev !== "any") || (f.prom && f.prom !== "any"));
-// A saved search's identity: the words, the filters and where it looks. Keys are sorted because the
-// filters come back from a jsonb column, which does not keep the order they were written in.
-const searchKey = (q: string | undefined, f: Record<string, unknown>, locId: string | undefined) => JSON.stringify([(q || "").trim(), Object.keys(f || {}).sort().map(k => [k, f[k]]), locId]);
-export default function RouteFinderPanel({ scope, onOpen, onJumpToArea, C, uElevN, uElevUnit, presetDisc, bookmarks, onToggleBookmark, onToggleWish, userLists, onToggleListRoute, onAddClimb, onAddArea, initial, uid, notify, onSignIn }: RouteFinderPanelProps) {
+export default function RouteFinderPanel({ scope, onOpen, onJumpToArea, C, uElevN, uElevUnit, presetDisc, bookmarks, onToggleBookmark, onToggleWish, userLists, onToggleListRoute, onAddClimb, onAddArea, initial }: RouteFinderPanelProps) {
   const { wishlist } = useContext(ClimberCtx);
   const DEF: RouteFinderPanelFilters = { discs: [], sortBy: "lr", minStars: 0, minPitches: 0, len: "any", gSys: "", gLo: "", gHi: "", gain: "any", trip: "any", elev: "any", prom: "any", near: null, within: "w2" };
   const metric = isMetric(uElevUnit);
@@ -221,8 +247,8 @@ export default function RouteFinderPanel({ scope, onOpen, onJumpToArea, C, uElev
   // must be narrowed to an area inside it first (FINDER_NEEDS_AREA). The panel is keyed by the
   // scope's id, so a new scope starts a new Location.
   const [loc, setLoc] = useState<AddHereFooterArea>(scope);
-  // A saved search opened from Logbook › Saved or the Menu arrives as `initial`: its words and
-  // filters, on the area it was saved in (which is this panel's scope).
+  // A search handed in from outside (the website header's typed search) arrives as `initial`: its
+  // words and filters, on the area it was scoped to (which is this panel's scope).
   const [q, setQ] = useState(initial ? initial.q || "" : "");
   // The query follows the box a beat behind, so typing "castle" is one search, not six.
   const [qD, setQD] = useState(initial ? initial.q || "" : "");
@@ -235,6 +261,7 @@ export default function RouteFinderPanel({ scope, onOpen, onJumpToArea, C, uElev
   const AF0 = initial && initial.filters ? { ...DEF, ...initial.filters } : DEF0;
   const [af, setAf] = useState<RouteFinderPanelFilters>(AF0);
   const [df, setDf] = useState<RouteFinderPanelFilters>(AF0);
+  useEffect(() => { setDf(d => { const n = dropUnfit(d); return (["minPitches", "len", "gain", "trip", "elev", "prom"] as const).some(k => n[k] !== d[k]) ? n : d; }); }, [df.discs]);
   const needsArea = needsAreaFor(af);
   const [sheet, setSheet] = useState(false);
   // DISTANCE AWAY's point: your device's location, or a town / zip you type (AllTrails offers both).
@@ -258,15 +285,11 @@ export default function RouteFinderPanel({ scope, onOpen, onJumpToArea, C, uElev
       else setNearSt({ busy: false, err: "", hits: rows });
     }, () => setNearSt({ busy: false, err: "Couldn’t look that place up — check your connection and try again.", hits: [] }));
   };
-  // SAVED SEARCHES ARE THE ACCOUNT'S (saved_searches, 0091), the same rows Logbook › Saved and the
-  // Menu's "Saved searches · N" read. This list used to be this panel's own React state: a search
-  // saved here was gone the moment the finder closed, never reached the Logbook, and the table held
-  // no row at all (0 on 2026-10-24). Only finder searches are listed here; their `kind` says so.
-  const mySearchesQ = useMySavedSearches(uid);
-  const savedSearches: RouteFinderPanelSaved[] = (mySearchesQ.data || []).filter(s => s.kind === "finder");
-  const [showSaved, setShowSaved] = useState(false);
-  const [savingSearch, setSavingSearch] = useState(false);
   const [page, setPage] = useState(0);
+  /* THE WEBSITE'S LIST (competitor review batch B, item 11, owner 2026-11-04): a Compact rows toggle (remembered on the device) and Export CSV of the loaded results; the phone keeps its cards. */
+  const wide = useWideScreen();
+  const [compact, setCompact] = useState(() => { try { return localStorage.getItem("cm_finder_compact") === "1"; } catch { return false; } });
+  const toggleCompact = () => setCompact(c => { try { localStorage.setItem("cm_finder_compact", c ? "0" : "1"); } catch { /* private mode: the toggle still works for this visit */ } return !c; });
   const [all, setAll] = useState<RouteFinderPanelRow[]>([]);
   const lenRange = (LEN_BUCKETS.find(l => l[0] === af.len) || LEN_BUCKETS[0]);
   // Resolved against the APPLIED discipline's scale, so a label saved under one discipline can
@@ -284,35 +307,35 @@ export default function RouteFinderPanel({ scope, onOpen, onJumpToArea, C, uElev
   // Mountain Project's filter screen does — so a tap on it visibly does something, and a
   // combination that matches nothing is seen before the sheet is left. Queried only while open.
   const { data: draftTotal, isFetching: draftCounting } = useSubtreeRouteCount(sheet && !needsAreaFor(df) ? loc.id : null, finderArgs(qD, df, metric));
-  // While the sheet is open the page behind it must not scroll. The document is the scroller
-  // here, and on a phone a drag past the end of the sheet moved the page instead, which slid the
-  // browser's own toolbar in and out and shifted the sheet under the climber's finger.
-  useEffect(() => {
-    if (!sheet) return;
-    const el = document.documentElement, prev = el.style.overflow;
-    el.style.overflow = "hidden";
-    return () => { el.style.overflow = prev; };
-  }, [sheet]);
+  // The page behind the open sheet is held still by the ONE shared lock in lib/dialogA11y.js (it
+  // finds this sheet by its dialog role). The sheet used to lock <html> itself as well,
+  // and the two locks froze the app for good (2026-11-23: "after I apply filters the scroll stops
+  // working, even when I click back"): this effect set overflow:hidden first, the shared lock ran a
+  // frame later and RECORDED that "hidden" as the page's own value, so on close this effect cleared
+  // it and the shared lock then put "hidden" back. Never add a second lock here.
 
-  const loadSearch = (search: RouteFinderPanelSaved) => {
-    setQ(search.q || "");
-    setAf({ ...DEF, ...(search.filters || {}) });
-    setLoc(search.loc && search.loc.id ? search.loc : scope);
-    setShowSaved(false);
-    setPage(0);
-    setAll([]);
-  };
-  const deleteSearch = (s: RouteFinderPanelSaved) => {
-    deleteSavedSearchRow(s._dbId).then(() => { if (notify) notify("Saved search removed"); },
-      () => { if (notify) notify("Couldn’t delete that search — try again."); });
-  };
-  useEffect(() => { setPage(0); setAll([]); }, [qD, af, loc.id]);
+  // Start the list over only when the QUERY changes, not when `af` is a new object holding the same
+  // filters: "Show routes" with nothing changed stores a fresh object, and keyed on its identity
+  // this emptied the list while the query, unchanged, never refetched to refill it — "600 routes",
+  // "No routes match these filters", and a page too short to scroll (2026-11-24).
+  const queryKey = JSON.stringify(finderArgs(qD, af, metric));
+  useEffect(() => { setPage(0); setAll([]); }, [queryKey, loc.id]);
   useEffect(() => {
     if (!batch) return;
     setAll(prev => page === 0 ? batch : [...prev, ...batch]);
   }, [batch, page]);
   const areaIds = useMemo(() => [...new Set(all.map(r => r.area_id).filter(Boolean))], [all]);
   const { data: areaNames } = useAreaNamesByIds(areaIds);
+  // THE AREA LINE above each wall (owner, 2026-11-14: "it shows the wall, but it needs to show City of Rocks or the
+  // general area breakdown"): the levels between the state and the wall, e.g. City of Rocks › Circle Creek Overlook.
+  const { data: areaTrails } = useAreaTrailsByIds(areaIds);
+  // A PEAK heading carries its height (2026-11-18): Peak elevation is a filter here, and nothing on the list said it.
+  const { data: peakElev } = useAreaPeakElevationsByIds(areaIds) as { data?: Record<string, number> };
+  const trailOf = (id: string): { id: string; name: string }[] => ((areaTrails && id && areaTrails[id]) || []).filter((c: { state?: boolean }) => !c.state);
+  // ...but only the levels BELOW the area being searched: inside Leavenworth a wall's line read "Central-East Cascades,
+  // Wenatchee & Leavenworth › Leavenworth › Icicle Creek" over every wall, two to four lines on a phone, repeating the
+  // path the climber is already in (2026-11-18). The export keeps the whole trail.
+  const shownTrailOf = (id: string) => { const t = trailOf(id), i = t.findIndex(c => c.id === loc.id); return i >= 0 ? t.slice(i + 1) : t; };
   const { data: areaHits, isLoading: la, error: ea }: { data?: RouteFinderPanelAreaHit[] | null; isLoading: boolean; error: unknown } = useAreaSearch(scope.id, mode === "areas" ? qD.trim() : "");
 
   const nF = af.discs.length + (gLoO || gHiO ? 1 : 0) + (af.minStars ? 1 : 0) + (af.minPitches ? 1 : 0) + (af.len !== "any" ? 1 : 0) + (af.sortBy !== DEF.sortBy ? 1 : 0) + ["gain", "trip", "elev", "prom"].filter(k => af[k] && af[k] !== "any").length + (af.near ? 1 : 0);
@@ -332,27 +355,14 @@ export default function RouteFinderPanel({ scope, onOpen, onJumpToArea, C, uElev
   if (af.elev && af.elev !== "any") afChips.push({ k: "elev", label: "Peak " + minLabel(findB(PEAK_ELEV_MINS, af.elev), metric, eU), clear: () => setAf(a => ({ ...a, elev: "any" })) });
   if (af.prom && af.prom !== "any") afChips.push({ k: "prom", label: minLabel(findB(PROM_MINS, af.prom), metric, eU) + " prominence", clear: () => setAf(a => ({ ...a, prom: "any" })) });
   if (af.near) afChips.push({ k: "near", label: "Within " + withinLabel(findB(WITHIN, af.within) || WITHIN[1], metric, dU) + " of " + af.near.label, clear: () => setAf(a => ({ ...a, near: null, sortBy: a.sortBy === "near" ? DEF.sortBy : a.sortBy })) });
-  if (sortFor(af.discs, af.sortBy) !== sortFor(af.discs, DEF.sortBy)) afChips.push({ k: "sort", label: { name: "A→Z", name_desc: "Z→A", area: boulderOnly(af.discs) ? "By boulder" : "By area", lr: "Left → right", rl: "Right → left", grade_asc: "↓ Easiest", grade_desc: "↑ Hardest", stars_desc: "Most starred", near: "Nearest first" }[af.sortBy as RouteFinderPanelSortKey], clear: () => setAf(a => ({ ...a, sortBy: DEF.sortBy })) });
-  const curKey = searchKey(q, af, loc.id);
-  const isSavedSearch = savedSearches.some(s => searchKey(s.q, s.filters, s.loc && s.loc.id) === curKey);
-  const saveSearch = () => {
-    if (!uid) { if (onSignIn) onSignIn(); else if (notify) notify("Sign in to save searches."); return; }
-    if (isSavedSearch) { if (notify) notify("Already saved — it’s in Logbook › Saved."); return; }
-    if (savingSearch) return;
-    // Named for what it IS, as the applied chips read: words, filters, place. "Untitled search"
-    // told a climber nothing when they came back to it from the Logbook.
-    const name = [q.trim() ? "“" + q.trim() + "”" : null, ...afChips.filter(c => c.k !== "sort").map(c => c.label), loc.name].filter(Boolean).join(" · ");
-    setSavingSearch(true);
-    createSavedSearchRow(uid, name, { kind: "finder", q: q.trim(), filters: af, loc: { id: loc.id, name: loc.name, area_type: loc.area_type } })
-      .then(() => { if (notify) notify("Search saved — find it in Logbook › Saved."); },
-        () => { if (notify) notify("Couldn’t save that search — check your connection and try again."); })
-      .finally(() => setSavingSearch(false));
-  };
+  if (sortFor(af.discs, af.sortBy) !== sortFor(af.discs, DEF.sortBy)) afChips.push({ k: "sort", label: { name: "A→Z", name_desc: "Z→A", area: "By " + (noWallOrder(af.discs) ? groupWord(af.discs) : "area"), lr: "Left → right", rl: "Right → left", grade_asc: "↓ Easiest", grade_desc: "↑ Hardest", stars_desc: "Most starred", near: "Nearest first" }[af.sortBy as RouteFinderPanelSortKey], clear: () => setAf(a => ({ ...a, sortBy: DEF.sortBy })) });
   const inList = (l: RouteFinderPanelList, id: string | number) => (l.routeIds || []).includes(id);
   const customLists = (userLists || []).filter(l => l.id !== "ul_obj");
   const isSaved = (id: string | number) => (wishlist || []).includes(id) || customLists.some(l => inList(l, id));
 
-  const rowBtn = (on: unknown) => ({ ...BTN_LG, flex: 1, border: "1px solid " + (on ? C.blue : C.border), background: on ? C.blueBg : C.surface, color: on ? C.onSolid : C.text });
+  // FILTERS beside the search box, not a full-width row of its own (owner, 2026-11-14: "on my phone, the filters
+  // button takes a lot of screen space"). Still 44px tall to tap.
+  const rowBtn = (on: unknown) => ({ ...BTN_LG, flexShrink: 0, minHeight: 44, padding: "0 13px", display: "inline-flex", alignItems: "center", gap: 6, fontSize: 13.5, border: "1px solid " + (on ? C.blue : C.border), background: on ? C.blueBg : C.surface, color: on ? C.onSolid : C.text });
   const chip = (label: string, on: boolean, fn: () => void) => <button key={label} onClick={fn} aria-pressed={on} style={{ ...CHIP, border: "1px solid " + (on ? C.blue : C.border), background: on ? C.blueBg : C.surface, color: on ? C.onSolid : C.textSub, fontSize: 12.5, fontWeight: 700, cursor: "pointer", whiteSpace: "nowrap" }}>{label}</button>;
   const lab = (s: string) => <SL C={C}>{s}</SL>;
 
@@ -361,24 +371,23 @@ export default function RouteFinderPanel({ scope, onOpen, onJumpToArea, C, uElev
 
   return (
     <div>
-      <ScreenHero C={C} title={"Route finder · " + loc.name} />
+      {/* QUIET on a phone, as the five top tabs are (owner, 2026-10-25: "the box took a third of a phone screen"):
+          the path bar above already ends on the area, and the box pushed the first climb ~60% down a 390px screen
+          (2026-11-18). The title stays an <h1> for screen readers, and the website still draws it. */}
+      <ScreenHero C={C} title={"Route finder · " + loc.name} quiet mb={4} />
       {/* THE SEARCH BAR STAYS PUT (owner, 2026-10-21: "keep the search for areas and routes bar sticky
           to the top of the page"): Routes | Areas, the box, Filters and the applied chips pin under the
           app's top bar (usePinnedBar) while the results scroll under them. */}
       <div ref={barWrap} style={{ margin: "0 -14px", height: pin ? pin.height : undefined }}>
       <div ref={barRef} style={{ ...(pin ? { position: "fixed", top: pin.top, left: pin.left, width: pin.width, zIndex: 25, boxShadow: "0 6px 12px rgba(0,0,0,0.25)" } : {}), boxSizing: "border-box", background: C.bg, padding: "8px 14px 2px", borderBottom: "1px solid " + C.borderLight }}>
       <div style={{ display: "flex", gap: 4, background: C.surface, border: "1px solid " + C.border, borderRadius: 9, padding: 3, marginBottom: 8 }}>
-        {[["routes", "Routes"], ["areas", "Areas"]].map(([k, l]) => <button key={k} onClick={() => setMode(k)} aria-pressed={mode === k} style={{ flex: 1, padding: "8px 0", border: "none", borderRadius: 7, background: mode === k ? C.blueSolid : "transparent", color: mode === k ? C.onSolid : C.textSub, fontSize: 13.5, fontWeight: 700, cursor: "pointer" }}>{l}</button>)}
+        {[["routes", "Routes"], ["areas", "Areas"]].map(([k, l]) => <button key={k} onClick={() => setMode(k)} aria-pressed={mode === k} style={{ flex: 1, padding: "8px 0", border: "none", borderRadius: 7, background: mode === k ? C.blueBg : "transparent", boxShadow: mode === k ? "inset 0 0 0 1px " + C.blue : "none", color: mode === k ? C.onSolid : C.textSub, fontSize: 13.5, fontWeight: 700, cursor: "pointer" }}>{l}</button>)}
       </div>
-      <input aria-label={mode === "areas" ? "Search areas, crags, peaks" : "Search routes"} value={q} onChange={e => setQ(e.target.value)} placeholder={mode === "areas" ? "Search areas, crags, peaks…" : "Search routes in " + loc.name + "…"} style={{ width: "100%", padding: "11px 13px", borderRadius: 10, border: "1px solid " + C.border, background: C.surface, color: C.text, fontSize: 14, boxSizing: "border-box", outline: "none", marginBottom: 8 }} />
-      {mode === "routes" ? <>
-      {/* ONE style for the three buttons in this row. Filters was drawn in the text colour and
-          Save search in blue, which read as two different sizes of type side by side. */}
       <div style={{ display: "flex", gap: 8, marginBottom: 8 }}>
-        <button onClick={() => { setDf(af); setSheet(true); }} style={rowBtn(nF)}>{"Filters" + (nF ? " (" + nF + ")" : "")}</button>
-        <button onClick={saveSearch} disabled={savingSearch} aria-pressed={isSavedSearch} style={rowBtn(isSavedSearch)}>{savingSearch ? "Saving…" : isSavedSearch ? "✓ Saved" : "Save search"}</button>
-        {savedSearches.length > 0 && <button onClick={() => setShowSaved(!showSaved)} style={rowBtn(true)}>{savedSearches.length} saved</button>}
+      <input aria-label={mode === "areas" ? "Search areas, crags, peaks" : "Search routes"} value={q} onChange={e => setQ(e.target.value)} placeholder={mode === "areas" ? "Search areas, crags, peaks…" : "Search routes in " + loc.name + "…"} style={{ flex: 1, minWidth: 0, padding: "11px 13px", borderRadius: 10, border: "1px solid " + C.field, background: C.surface, color: C.text, fontSize: 14, boxSizing: "border-box", outline: "none" }} />
+      {mode === "routes" ? <button onClick={() => { setDf(af); setSheet(true); }} style={rowBtn(nF)}><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"><path d="M4 6h16M7 12h10M10 18h4" /></svg>{"Filters" + (nF ? " (" + nF + ")" : "")}</button> : null}
       </div>
+      {mode === "routes" ? <>
       {afChips.length ? (
         <div style={{ display: "flex", gap: 6, flexWrap: "wrap", alignItems: "center", marginBottom: 8 }}>
           {afChips.map(c => <button key={c.k} onClick={c.clear} aria-label={"Remove filter: " + c.label} style={{ ...CHIP, display: "inline-flex", alignItems: "center", gap: 5, padding: "7px 10px 7px 12px", border: "1px solid " + C.blueDim, background: C.blueBg, color:C.onSolid }}>{c.label}<span aria-hidden="true" style={POP_CHIP_X}>✕</span></button>)}
@@ -386,10 +395,13 @@ export default function RouteFinderPanel({ scope, onOpen, onJumpToArea, C, uElev
         </div>
       ) : null}
       {/* No count after a failed read: "0 routes" above "Couldn't search routes" reads as an empty area. */}
-      {!needsArea && !(error && total == null && !all.length) ? <div style={{ fontSize: 11.5, color: C.textMuted, marginBottom: 6, padding: "0 2px" }}>{nRes.toLocaleString() + finderNoun(af.discs, nRes) + " · sorted by " + (boulderOnly(af.discs) && sortFor(af.discs, af.sortBy) === "area" ? "boulder" : SORT_PHRASE[sortFor(af.discs, af.sortBy)])}</div> : null}
+      {!needsArea && !(error && total == null && !all.length) ? <div style={{ fontSize: 11.5, color: C.textMuted, marginBottom: 6, padding: "0 2px" }}>{/* ONE SENTENCE OF WHAT IS FILTERED (batch B, item 11): the active filters' own chip labels, between the count and the sort, so the header reads "42 climbs · Sport · 5.8–5.10 · 2+ pitches · sorted by …". */nRes.toLocaleString() + finderNoun(af.discs, nRes) + (afChips.length ? " · " + afChips.map(c => c.label).join(" · ") : "") + " · sorted by " + (noWallOrder(af.discs) && sortFor(af.discs, af.sortBy) === "area" ? groupWord(af.discs) : SORT_PHRASE[sortFor(af.discs, af.sortBy)])}</div> : null}
       </> : null}
       </div>
       </div>
+      {/* Compact rows and Export CSV sit UNDER the pinned bar, not in it (owner, 2026-11-14: "move the export csv lower so
+          that it doesn't stick when you scroll. same with compact rows"): they scroll away with the results. */}
+      {mode === "routes" && !needsArea && wide && all.length ? <div style={{ display: "flex", gap: 8, alignItems: "center", margin: "10px 0 0" }}><button onClick={toggleCompact} aria-pressed={compact} style={btnChip(C, compact)}>Compact rows</button><button onClick={() => downloadCsv("climbmatch-route-finder-" + new Date().toISOString().slice(0, 10), ["Climb", "Grade", "Discipline", "Pitches", "Stars", "Area", "Wall or area"], all.map(r => [r.name, rowGrade(r) === "—" ? "" : rowGrade(r), r.discipline ? discLabel(r.discipline) : "", r.pitches > 0 ? r.pitches : "", r.stars != null ? Math.round(r.stars * 10) / 10 : "", trailOf(r.area_id).map(c => c.name).join(" › "), (areaNames && areaNames[r.area_id]) || ""]))} title="The loaded results as a spreadsheet" style={{ ...BTN_SECONDARY(C), ...CHIP }}>{/* It exports what is LOADED: "(40)" under "703 routes" read as a different count. */"Export CSV (" + (total != null && total > all.length ? all.length + " of " + total.toLocaleString() + " loaded" : all.length) + ")"}</button></div> : null}
       {loc.id !== scope.id ? (
         <div style={{ display: "flex", alignItems: "center", gap: 8, margin: "10px 0 2px", fontSize: 12.5, color: C.textSub }}>
           <span style={{ flex: 1, minWidth: 0, overflowWrap: "anywhere" }}>{"In " + loc.name + ", " + scope.name}</span>
@@ -414,16 +426,6 @@ export default function RouteFinderPanel({ scope, onOpen, onJumpToArea, C, uElev
           {areaSearchTotal(areaHits) > areaHits.length ? <div style={{ fontSize: 11.5, color: C.textMuted, padding: "10px 4px", textAlign: "center" }}>{"Closest " + areaHits.length + " of " + areaSearchTotal(areaHits).toLocaleString() + " — keep typing to narrow."}</div> : null}
         </>
       ) : <>
-      {showSaved && savedSearches.length > 0 && (
-        <div style={{ background: C.card, border: "1px solid " + C.border, borderRadius: 10, padding: 10, margin: "10px 0" }}>
-          {savedSearches.map(s => (
-            <div key={s.id} style={{ display: "flex", justifyContent: "space-between", alignItems: "center", padding: "8px 10px", borderBottom: "1px solid " + C.borderLight, cursor: "pointer" }} {...clickable(() => loadSearch(s))}>
-              <div style={{ flex: 1, fontSize: 13, color: C.text, fontWeight: 600 }}>{s.name}</div>
-              <button aria-label={"Remove saved search " + s.name} onClick={e => { e.stopPropagation(); deleteSearch(s); }} style={POP_REMOVE}>✕</button>
-            </div>
-          ))}
-        </div>
-      )}
       {/* PICK AN AREA FIRST on a state (FINDER_NEEDS_AREA). The filters still apply once one is
           picked; typing a climb's name searches the whole state straight away. */}
       {needsArea ? <>
@@ -438,7 +440,7 @@ export default function RouteFinderPanel({ scope, onOpen, onJumpToArea, C, uElev
           </div>
         ))}
       </> : <>
-      {af.minStars ? <div style={{ fontSize: 11.5, color: C.textMuted, margin: "8px 2px", lineHeight: 1.45 }}>{"Few climbs have a star rating yet, so climbs nobody has rated still show. Only climbs rated below " + af.minStars + "★ are hidden."}</div> : null}
+      {af.minStars ? <div style={{ fontSize: 11.5, color: C.textMuted, margin: "8px 2px", lineHeight: 1.45 }}>{"Unrated climbs still show."}</div> : null}
       {error && !all.length ? <div style={{ color: C.red, fontSize: 12.5 }}>Couldn't search routes — check your connection and try again.</div> : null}
       {error && all.length ? <div style={{ color: C.textMuted, fontSize: 12.5 }}>Couldn't refresh just now — showing the results from your last load.</div> : null}
       {/* GROUPED BY WALL on a wall sort: a heading opens the wall's page and saves it; the rows under
@@ -451,12 +453,12 @@ export default function RouteFinderPanel({ scope, onOpen, onJumpToArea, C, uElev
         return <Fragment key={r.id}>
           {head ? (
             <div style={{ display: "flex", alignItems: "center", gap: 8, margin: i ? "16px 0 8px" : "10px 0 8px" }}>
-              <button onClick={() => onJumpToArea({ id: r.area_id, name: wall || "" })} style={{ ...BTN_LINK(C), flex: 1, minWidth: 0, textAlign: "left", padding: "3px 0", fontSize: 13.5, fontWeight: 800, color: C.text, overflowWrap: "anywhere" }}>{(wall || "This wall") + " ›"}</button>
+              <button onClick={() => onJumpToArea({ id: r.area_id, name: wall || "" })} style={{ ...BTN_LINK(C), flex: 1, minWidth: 0, textAlign: "left", padding: "3px 0", fontSize: 13.5, fontWeight: 800, color: C.text, overflowWrap: "anywhere" }}>{shownTrailOf(r.area_id).length ? <span style={{ display: "block", fontSize: 12, fontWeight: 600, color: C.textSub, marginBottom: 2 }}>{shownTrailOf(r.area_id).map(c => c.name).join(" › ")}</span> : null}{wall || "This wall"}{peakElev && peakElev[r.area_id] ? <span style={{ fontSize: 12, fontWeight: 600, color: C.textSub }}>{" · " + (uElevN(peakElev[r.area_id]) ?? 0).toLocaleString() + " " + uElevUnit()}</span> : null}{" ›"}</button>
               {onToggleBookmark ? <button onClick={() => onToggleBookmark(r.area_id)} aria-label={booked ? "Remove " + (wall || "this wall") + " from Saved" : "Save " + (wall || "this wall")} style={savePill(booked)}>{booked ? "★ Saved" : "☆ Save area"}</button> : null}
             </div>
           ) : null}
           <div style={{ display: "flex", gap: 6, alignItems: "stretch" }}>
-            <RouteRow r={r} onOpen={onOpen} C={C} areaName={GROUPED_SORTS[af.sortBy] ? null : wall} />
+            <RouteRow r={r} onOpen={onOpen} C={C} areaName={GROUPED_SORTS[af.sortBy] ? null : [...shownTrailOf(r.area_id).map(c => c.name), wall].filter(Boolean).join(" › ") || null} savedMark={!onToggleWish} dense={wide && compact} />
             {onToggleWish ? <button onClick={() => setSaveFor({ ...r, wall })} aria-haspopup="dialog" aria-label={"Save " + r.name + (saved ? ", saved" : "")} style={{ ...CHIP, flexShrink: 0, width: 44, marginBottom: 8, padding: 0, fontSize: 17, cursor: "pointer", border: "1px solid " + (saved ? C.blue : C.border), background: saved ? C.blueBg : C.card, color: saved ? C.onSolid : C.textSub }}><span aria-hidden="true">{saved ? "★" : "☆"}</span></button> : null}
           </div>
         </Fragment>;
@@ -467,7 +469,7 @@ export default function RouteFinderPanel({ scope, onOpen, onJumpToArea, C, uElev
       )}
       {/* A star minimum no longer empties a search (0334: unrated climbs stay in), so the
           explanation left is the grade range's: a route with no readable grade fails it. */}
-      {!isLoading && !error && !all.length && <div style={{ fontSize: 13, color: C.textMuted, textAlign: "center", padding: "26px 12px", lineHeight: 1.5 }}>{(gLoO || gHiO) ? "No routes match these filters. Routes without a readable grade are hidden while a grade range is set — try widening it or setting it back to Any." : ["gain", "trip", "elev", "prom"].some(k => af[k] && af[k] !== "any") ? "No routes match these filters. Gain, round trip, peak elevation and prominence are recorded mostly for mountain routes, and climbs without the figure are hidden while one is set." : af.near ? "No routes in " + loc.name + " are that close to " + af.near.label + " — try a wider distance." : "No routes match these filters."}</div>}
+      {!isLoading && !error && !all.length && <div style={{ fontSize: 13, color: C.textMuted, textAlign: "center", padding: "26px 12px", lineHeight: 1.5 }}>{(gLoO || gHiO) ? "No routes match these filters. Routes without a readable grade are hidden while a grade range is set — try widening it or setting it back to Any." : ["gain", "trip", "elev", "prom"].some(k => af[k] && af[k] !== "any") ? "No routes match these filters. Climbs missing the figure are hidden." : af.near ? "No routes in " + loc.name + " are that close to " + af.near.label + " — try a wider distance." : "No routes match these filters."}</div>}
       </>}
       </>}
 
@@ -504,7 +506,7 @@ export default function RouteFinderPanel({ scope, onOpen, onJumpToArea, C, uElev
                   {!customLists.length ? <div style={{ fontSize: 11.5, color: C.textMuted, marginTop: 12, lineHeight: 1.45 }}>Make your own lists under Logbook → Saved, and they show up here.</div> : null}
                 </>;
               })()}
-              <button onClick={() => setSaveFor(null)} style={{ ...BTN_LG, width: "100%", marginTop: 16, border: "none", background: C.blueSolid, color:C.onSolid }}>Done</button>
+              <button onClick={() => setSaveFor(null)} style={{ ...BTN_LG, width: "100%", marginTop: 16, border: "none", ...SOLID_FILL(C), color:C.onSolid }}>Done</button>
             </div>
           </div>
         </div>, document.body) : null}
@@ -556,7 +558,7 @@ export default function RouteFinderPanel({ scope, onOpen, onJumpToArea, C, uElev
             </> : <>
               <button onClick={locateMe} disabled={nearSt.busy} style={{ ...BTN_LG, width: "100%", marginBottom: 8, border: "1px solid " + C.border, background: C.surface, color: C.text }}>{nearSt.busy ? "Finding…" : "Use my location"}</button>
               <form onSubmit={e => { e.preventDefault(); findNear(); }} style={{ display: "flex", gap: 8 }}>
-                <input aria-label="Town or zip code" value={nearQ} onChange={e => setNearQ(e.target.value)} placeholder="…or a town or zip code" style={{ flex: 1, minWidth: 0, padding: "10px 12px", borderRadius: 10, border: "1px solid " + C.border, background: C.surface, color: C.text, fontSize: 14, boxSizing: "border-box" }} />
+                <input aria-label="Town or zip code" value={nearQ} onChange={e => setNearQ(e.target.value)} placeholder="…or a town or zip code" style={{ flex: 1, minWidth: 0, padding: "10px 12px", borderRadius: 10, border: "1px solid " + C.field, background: C.surface, color: C.text, fontSize: 14, boxSizing: "border-box" }} />
                 <button type="submit" disabled={nearSt.busy || !nearQ.trim()} style={{ ...BTN_LG, flexShrink: 0, border: "1px solid " + C.border, background: C.surface, color: C.text }}>Go</button>
               </form>
               {nearSt.err ? <div style={{ fontSize: 12, color: C.red, marginTop: 8, lineHeight: 1.45 }}>{nearSt.err}</div> : null}
@@ -574,7 +576,7 @@ export default function RouteFinderPanel({ scope, onOpen, onJumpToArea, C, uElev
               const iLo = df.gLo ? sc.findIndex(o => o[0] === df.gLo) : -1, iHi = df.gHi ? sc.findIndex(o => o[0] === df.gHi) : -1;
               const sel = (label: string, val: string, opts: RouteFinderPanelGrade[], set: (v: string) => void) => (
                 <label style={{ flex: 1, display: "flex", flexDirection: "column", gap: 5, fontSize: 11.5, color: C.textMuted, fontWeight: 700 }}>{label}
-                  <select aria-label={label + " grade"} value={val} onChange={e => set(e.target.value)} style={{ padding: "10px 10px", borderRadius: 10, border: "1px solid " + (val ? C.blue : C.border), background: val ? C.blueBg : C.surface, color: val ? C.onSolid : C.text, fontSize: 14, fontWeight: 700 }}>
+                  <select aria-label={label + " grade"} value={val} onChange={e => set(e.target.value)} style={{ padding: "10px 10px", borderRadius: 10, border: "1px solid " + (val ? C.blue : C.field), background: val ? C.blueBg : C.surface, color: val ? C.onSolid : C.text, fontSize: 14, fontWeight: 700 }}>
                     <option value="">Any</option>
                     {opts.map(o => <option key={o[0]} value={o[0]}>{o[0]}</option>)}
                   </select>
@@ -606,13 +608,18 @@ export default function RouteFinderPanel({ scope, onOpen, onJumpToArea, C, uElev
             <div style={{ display: "flex", gap: 7, flexWrap: "wrap" }}>{([[0, "Any"], [2, "★★+"], [3, "★★★+"], [4, "★★★★+"]] as [number, string][]).map(o => chip(o[1], df.minStars === o[0], () => setDf(d => ({ ...d, minStars: o[0] }))))}</div>
             {/* 0334: an unrated climb is not ruled out. 2 of 90,084 sport climbs had a rating when this
                 was written, so the old rule turned every star search into an empty list. */}
-            <div style={{ fontSize: 11.5, color: C.textMuted, marginTop: 8, lineHeight: 1.45 }}>Few climbs have a star rating yet, so climbs nobody has rated always show. This hides only climbs rated below the minimum.</div>
+            <div style={{ fontSize: 11.5, color: C.textMuted, marginTop: 8, lineHeight: 1.45 }}>Unrated climbs still show.</div>
+            {fitsDiscs(df.discs, "minPitches") ? <>
             {lab("Pitches")}
             <div style={{ display: "flex", gap: 7, flexWrap: "wrap" }}>{([[0, "Any"], [1, "1+ (single)"], [2, "2+ (multi-pitch)"], [3, "3+"], [5, "5+"], [10, "10+"]] as [number, string][]).map(o => chip(o[1], df.minPitches === o[0], () => setDf(d => ({ ...d, minPitches: o[0] }))))}</div>
+            </> : null}
+            {fitsDiscs(df.discs, "len") ? <>
             {lab("Length")}
             <div style={{ display: "flex", gap: 7, flexWrap: "wrap" }}>{LEN_BUCKETS.map(o => chip(lenLabel(o, uElevN, uElevUnit), df.len === o[0], () => setDf(d => ({ ...d, len: o[0] }))))}</div>
+            </> : null}
             {/* Recorded mostly on mountain routes (0369's header has the counts), so each says what a
                 climb without the figure does: it is hidden while the filter is set, as an ungraded climb is by a grade range. */}
+            {fitsDiscs(df.discs, "gain") ? <>
             {lab("Elevation gain")}
             <div style={{ display: "flex", gap: 7, flexWrap: "wrap" }}>{GAIN_BUCKETS.map(o => chip(rangeLabel(o, metric, eU), df.gain === o[0], () => setDf(d => ({ ...d, gain: o[0] }))))}</div>
             {lab("Round trip")}
@@ -621,11 +628,12 @@ export default function RouteFinderPanel({ scope, onOpen, onJumpToArea, C, uElev
             <div style={{ display: "flex", gap: 7, flexWrap: "wrap" }}>{PEAK_ELEV_MINS.map(o => chip(minLabel(o, metric, eU), df.elev === o[0], () => setDf(d => ({ ...d, elev: o[0] }))))}</div>
             {lab("Prominence")}
             <div style={{ display: "flex", gap: 7, flexWrap: "wrap" }}>{PROM_MINS.map(o => chip(minLabel(o, metric, eU), df.prom === o[0], () => setDf(d => ({ ...d, prom: o[0] }))))}</div>
-            {[df.gain, df.trip, df.elev, df.prom].some(v => v && v !== "any") ? <div style={{ fontSize: 11.5, color: C.textMuted, marginTop: 8, lineHeight: 1.45 }}>Gain, round trip, peak elevation and prominence are recorded mostly for mountain routes. Climbs without the figure are hidden while one of these is set.</div> : null}
+            {[df.gain, df.trip, df.elev, df.prom].some(v => v && v !== "any") ? <div style={{ fontSize: 11.5, color: C.textMuted, marginTop: 8, lineHeight: 1.45 }}>Climbs missing this figure are hidden.</div> : null}
+            </> : null}
             </div>
             <div style={{ flexShrink: 0, display: "flex", gap: 8, padding: "12px 16px calc(env(safe-area-inset-bottom) + 12px)", borderTop: "1px solid " + C.border, background: C.bg }}>
               <button onClick={() => setDf(DEF)} style={{ ...BTN_LG, flex: 1, border: "1px solid " + C.border, background: C.surface, color: C.textSub }}>Clear all</button>
-              <button onClick={() => { setAf(df); setSheet(false); }} style={{ ...BTN_LG, flex: 2, border: "none", background: C.blueSolid, color:C.onSolid }}>{draftTotal == null || draftCounting ? "Show" + finderNoun(df.discs, 2) : "Show " + draftTotal.toLocaleString() + finderNoun(df.discs, draftTotal)}</button>
+              <button onClick={() => { setAf(dropUnfit(df)); setSheet(false); }} style={{ ...BTN_LG, flex: 2, border: "none", ...SOLID_FILL(C), color:C.onSolid }}>{draftTotal == null || draftCounting ? "Show" + finderNoun(df.discs, 2) : "Show " + draftTotal.toLocaleString() + finderNoun(df.discs, draftTotal)}</button>
             </div>
           </div>
         </div>, document.body) : null}

@@ -1,0 +1,212 @@
+{
+ "ca_lamont_peak_lamont_peak_trail": {
+  "area": "ca_lamont_peak",
+  "set": {
+   "approach_logistics": {
+    "trailhead": "Lamont Peak Trailhead (Canebrake Road saddle)",
+    "trailheadLat": 35.787783,
+    "trailheadLng": -118.071883
+   }
+  },
+  "ledger": [
+   {
+    "field": "approach_logistics",
+    "value": {
+     "trailhead": "Lamont Peak Trailhead (Canebrake Road saddle)",
+     "trailheadLat": 35.787783,
+     "trailheadLng": -118.071883
+    },
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://climber.org/driving/images/Canebrake.gpx",
+      "fact": "CANLAM waypoint 35.78778,-118.07188",
+      "retrieved_at": "2026-11-23"
+     },
+     {
+      "url": "https://www.openstreetmap.org/way/1026162022",
+      "fact": "Lamont Peak Spur Trail starts 35.78784,-118.07190",
+      "retrieved_at": "2026-11-23"
+     },
+     {
+      "url": "https://climber.org/driving/canebrake.html",
+      "fact": "Start: saddle on Canebrake Road",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   }
+  ],
+  "review": {
+   "identifiedBy": {
+    "kind": "research",
+    "fact": "driving-guide waypoint and the mapped trail start agree within 6 m"
+   },
+   "chunk": "round7"
+  }
+ },
+ "ca_owens_peak_indian_wells_canyon": {
+  "area": "ca_owens_peak",
+  "set": {
+   "approach_logistics": {
+    "trailhead": "Indian Wells Canyon trailhead (road end at the wilderness boundary)",
+    "trailheadLat": 35.715369,
+    "trailheadLng": -117.974359
+   }
+  },
+  "ledger": [
+   {
+    "field": "approach_logistics",
+    "value": {
+     "trailhead": "Indian Wells Canyon trailhead (road end at the wilderness boundary)",
+     "trailheadLat": 35.715369,
+     "trailheadLng": -117.974359
+    },
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://hundredpeaks.org/guides/01h.htm",
+      "fact": "trailhead 35.71537,-117.97436",
+      "retrieved_at": "2026-11-23"
+     },
+     {
+      "url": "https://www.openstreetmap.org/way/10411145",
+      "fact": "Owens Peak Trail starts 35.71542,-117.97454",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   }
+  ],
+  "review": {
+   "identifiedBy": {
+    "kind": "research",
+    "fact": "guide coordinate and the mapped trail start agree within 17 m"
+   },
+   "chunk": "round7"
+  }
+ },
+ "ca_pyramid_peak_north_rocky_canyon": {
+  "area": "ca_pyramid_peak_north",
+  "set": {
+   "approach_logistics": {
+    "trailhead": "Rocky Canyon pullout on US 50 (near Twin Bridges)",
+    "trailheadLat": 38.807805,
+    "trailheadLng": -120.136722
+   }
+  },
+  "ledger": [
+   {
+    "field": "approach_logistics",
+    "value": {
+     "trailhead": "Rocky Canyon pullout on US 50 (near Twin Bridges)",
+     "trailheadLat": 38.807805,
+     "trailheadLng": -120.136722
+    },
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://www.theoutbound.com/lake-tahoe/backpacking/hike-pyramid-peak-via-rocky-canyon",
+      "fact": "pullout 38.80781,-120.13672",
+      "retrieved_at": "2026-11-23"
+     },
+     {
+      "url": "https://www.openstreetmap.org/way/324131746",
+      "fact": "Pyramid Peak Trail starts 38.80809,-120.13659",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   }
+  ],
+  "review": {
+   "identifiedBy": {
+    "kind": "research",
+    "fact": "published pullout and the mapped trail start agree within 34 m"
+   },
+   "chunk": "round7"
+  }
+ },
+ "co_casco_peak_north_ridge": {
+  "area": "co_casco_peak",
+  "set": {
+   "approach_logistics": {
+    "trailhead": "South Halfmoon Creek Trailhead (Halfmoon Road at FR 110.J)",
+    "trailheadLat": 39.150567,
+    "trailheadLng": -106.455289
+   }
+  },
+  "ledger": [
+   {
+    "field": "approach_logistics",
+    "value": {
+     "trailhead": "South Halfmoon Creek Trailhead (Halfmoon Road at FR 110.J)",
+     "trailheadLat": 39.150567,
+     "trailheadLng": -106.455289
+    },
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://www.climb13ers.com/colorado-13ers/casco-peak",
+      "fact": "South Halfmoon Creek TH 39.15057,-106.45529",
+      "retrieved_at": "2026-11-23"
+     },
+     {
+      "url": "https://www.openstreetmap.org/way/542297901",
+      "fact": "Forest Road 110.J South Halfmoon starts 39.15057,-106.45537",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   }
+  ],
+  "review": {
+   "identifiedBy": {
+    "kind": "research",
+    "fact": "printed coordinate is the mapped junction where the South Halfmoon road leaves Halfmoon Road (7 m)"
+   },
+   "chunk": "round7"
+  }
+ },
+ "co_french_mountain_southeast_ridge": {
+  "area": "co_french_mountain",
+  "set": {
+   "approach_logistics": {
+    "trailhead": "South Halfmoon Creek Trailhead (Halfmoon Road at FR 110.J)",
+    "trailheadLat": 39.150567,
+    "trailheadLng": -106.455289
+   }
+  },
+  "ledger": [
+   {
+    "field": "approach_logistics",
+    "value": {
+     "trailhead": "South Halfmoon Creek Trailhead (Halfmoon Road at FR 110.J)",
+     "trailheadLat": 39.150567,
+     "trailheadLng": -106.455289
+    },
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://www.climb13ers.com/colorado-13ers/casco-peak",
+      "fact": "South Halfmoon Creek TH 39.15057,-106.45529",
+      "retrieved_at": "2026-11-23"
+     },
+     {
+      "url": "https://www.openstreetmap.org/way/542297901",
+      "fact": "Forest Road 110.J South Halfmoon starts 39.15057,-106.45537",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   }
+  ],
+  "review": {
+   "identifiedBy": {
+    "kind": "research",
+    "fact": "printed coordinate is the mapped junction where the South Halfmoon road leaves Halfmoon Road (7 m)"
+   },
+   "chunk": "round7"
+  }
+ }
+}

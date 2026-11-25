@@ -47,7 +47,7 @@ export default function CrewShareCard({ token, signedIn, onJoin, onSignIn, onDis
   if (q.isLoading) return <div style={box}>{head}<div style={{ fontSize: 12.5, color: C.textMuted }}>Loading the shared crew…</div></div>;
   if (q.isError) return <div style={box}>{head}<div style={{ fontSize: 12.5, color: C.amber, lineHeight: 1.5, marginBottom: 6 }}>Couldn’t load this crew right now. The link may still work — try again in a moment.</div><div style={{ display: "flex", gap: 12 }}><button type="button" onClick={() => { q.refetch(); }} style={{ background: "none", border: "none", color: C.blue, fontSize: 12.5, fontWeight: 700, cursor: "pointer", padding: "4px 0" }}>Try again</button>{close}</div></div>;
   const p = q.data as CrewPreview | null | undefined;
-  if (!p) return <div style={box}>{head}<div style={{ fontSize: 12.5, color: C.textSub, lineHeight: 1.5, marginBottom: 6 }}>This crew link has expired or was turned off by its organiser.</div>{close}</div>;
+  if (!p) return <div style={box}>{head}<div style={{ fontSize: 12.5, color: C.textSub, lineHeight: 1.5, marginBottom: 6 }}>This crew link has expired or was turned off by its organizer.</div>{close}</div>;
   const day = p.agreed_date && ISO_DAY.test(p.agreed_date) ? p.agreed_date : ((p.dates || []).filter(d => ISO_DAY.test(d)).sort()[0] || null);
   const open = Math.max(0, (p.cap || 0) - (p.going || 0));
   const names = (p.first_names || []).slice(0, 3);
@@ -64,9 +64,9 @@ export default function CrewShareCard({ token, signedIn, onJoin, onSignIn, onDis
     <div style={{ fontSize: 12.5, color: C.textSub, lineHeight: 1.5, marginBottom: 8 }}>{(day ? fmtDay(day) : "Date to be agreed") + " · " + p.going + " of " + p.cap + (open ? " · " + open + (open === 1 ? " spot left" : " spots left") : " · Full")}</div>
     <div style={{ fontSize: 12.5, color: C.text, marginBottom: 10 }}>{"With " + who}</div>
     {sent
-      ? <div style={{ fontSize: 12.5, color: C.green, fontWeight: 700, lineHeight: 1.5 }}>Request sent. The organiser will see it in Requests.</div>
+      ? <div style={{ fontSize: 12.5, color: C.green, fontWeight: 700, lineHeight: 1.5 }}>Request sent. The organizer will see it in Requests.</div>
       : <div style={{ display: "flex", alignItems: "center", gap: 14, flexWrap: "wrap" }}>
-          <button type="button" disabled={busy || !open} onClick={join} style={{ padding: "10px 16px", borderRadius: 10, border: "none", background: open ? C.blueSolid : C.surface, color: open ? C.onSolid : C.textMuted, fontSize: 13, fontWeight: 800, cursor: busy || !open ? "default" : "pointer", opacity: busy ? 0.6 : 1 }}>{!open ? "Crew is full" : busy ? "Sending…" : signedIn ? "Ask to join" : "Sign up to join"}</button>
+          <button type="button" disabled={busy || !open} onClick={join} style={{ padding: "10px 16px", borderRadius: 10, border: "none", background: open ? C.actionSolid : C.surface, color: open ? C.onSolid : C.textMuted, fontSize: 13, fontWeight: 800, cursor: busy || !open ? "default" : "pointer", opacity: busy ? 0.6 : 1 }}>{!open ? "Crew is full" : busy ? "Sending…" : signedIn ? "Ask to join" : "Sign up to join"}</button>
           {close}
         </div>}
     {err ? <div style={{ fontSize: 12, color: C.amber, marginTop: 6 }}>{err}</div> : null}

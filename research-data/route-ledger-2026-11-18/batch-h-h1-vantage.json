@@ -1,0 +1,967 @@
+{
+ "wa_air_guitar": {
+  "area": "wa_c_king_pins",
+  "set": {
+   "waypoints": [
+    {
+     "lat": 47.025311,
+     "lng": -119.968157,
+     "elev": 1056,
+     "name": "Frenchman Coulee climbers' parking",
+     "type": "Trailhead",
+     "distMi": 0,
+     "elevFt": 1056,
+     "note": "WDFW gravel lot off Vantage Road SW, the main lot for Echo Basin and the Sunshine Wall. Park with a Discover Pass or a WDFW Vehicle Access Pass. Since May 2026 the county has kept Vantage Road SW closed at Silica Road, so the lot cannot be reached by the road."
+    }
+   ],
+   "road": {
+    "name": "Vantage Road SW",
+    "status": "Closed at Silica Road SW by Grant County after the May 15, 2026 rockslide, to drivers and to people on foot, with no reopening date (county update dated Sep 30, 2026).",
+    "driveNote": "Leave I-90 at exit 143 and go north on Silica Road SW for about 0.8 mi. Turn left onto Vantage Road SW and drop into the coulee; past the Feathers, the main WDFW climbers' lot is on the left, about 1.4 mi along."
+   },
+   "fa": "M. Dufford, D. Leonardi"
+  },
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/105802381/air-guitar",
+    "https://www.openstreetmap.org/relation/19339858",
+    "https://www.mountainproject.com/area/105793798/c-king-pins",
+    "https://www.mountainproject.com/area/105792231/vantage-frenchman-coulee",
+    "https://www.mountainproject.com/area/105793350/sunshine-wall",
+    "https://chossclimbers.com/testing/us/washington/vantage-cragging/",
+    "https://www.grantcountywa.gov/1335/Road-Closures-Advisories",
+    "https://www.columbiabasinherald.com/news/2026/may/16/vantage-road-sw-closed-due-to-rockslides/",
+    "https://wdfw.wa.gov/places-to-go/wildlife-areas/quincy-lakes-wildlife-area-unit",
+    "https://wdfw.wa.gov/places-to-go/wildlife-areas/columbia-basin-wildlife-area",
+    "https://wdfw.wa.gov/licenses/parking",
+    "https://www.mountaineers.org/activities/routes-places/vantage-frenchman-coulee",
+    "https://www.openstreetmap.org/way/217009714",
+    "https://www.mountainproject.com/forum/message/203807221",
+    "https://kpq.com/grant-county-rockslide-closure/"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "grade",
+    "value": "5.10a",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105802381/air-guitar",
+      "fact": "5.10a, trad",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://chossclimbers.com/testing/us/washington/vantage-cragging/",
+      "fact": "Air Guitar (5.10a)",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "M. Dufford, D. Leonardi",
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105802381/air-guitar",
+      "fact": "FA M. Dufford and D. Leonardi, 85'",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "waypoints/Frenchman Coulee climbers' parking",
+    "value": {
+     "name": "Frenchman Coulee climbers' parking",
+     "lat": 47.025311,
+     "lng": -119.968157
+    },
+    "method": "agree-2",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://www.openstreetmap.org/way/217009714",
+      "fact": "amenity=parking, operator WDFW, Frenchman Coulee parking; centre 47.025311,-119.968157; USGS 3DEP 1,056 ft",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/vantage-frenchman-coulee",
+      "fact": "main parking for the other walls is just past the Feathers on Vantage Rd (place only, no coordinate)",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "road",
+    "value": {
+     "name": "Vantage Road SW",
+     "status": "Closed at Silica Road SW by Grant County after the May 15, 2026 rockslide, to drivers and to people on foot, with no reopening date (county update dated Sep 30, 2026).",
+     "driveNote": "Leave I-90 at exit 143 and go north on Silica Road SW for about 0.8 mi. Turn left onto Vantage Road SW and drop into the coulee; past the Feathers, the main WDFW climbers' lot is on the left, about 1.4 mi along."
+    },
+    "method": "official-1",
+    "level": "locked",
+    "expires_at": "2027-02-15T00:00:00Z",
+    "evidence": [
+     {
+      "url": "https://www.grantcountywa.gov/1335/Road-Closures-Advisories",
+      "official": true,
+      "fact": "Vantage Road SW at Silica Road SW closed indefinitely after May 15, 2026 rockslide; motorists and pedestrians; updated 9/30/2026",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://wdfw.wa.gov/places-to-go/wildlife-areas/quincy-lakes-wildlife-area-unit",
+      "official": true,
+      "fact": "Quincy Lakes Unit alert: rockslide caused a Grant County closure of Vantage Road SW",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://www.columbiabasinherald.com/news/2026/may/16/vantage-road-sw-closed-due-to-rockslides/",
+      "fact": "May 16, 2026: GCSO closed Vantage Road SW west of Silica Road until further notice",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_air_guitar",
+    "column": "length_m",
+    "from": null,
+    "to": 23,
+    "why": "MP: 75 ft (23 m). Single source (theCrag gave a bot check); locked-1src after applying.",
+    "evidence": [
+     "https://www.mountainproject.com/route/105802381/air-guitar"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_air_guitar",
+    "column": "anchor",
+    "from": null,
+    "to": "Bolted anchor with permadraws",
+    "why": "MP: bolted anchor, permadraws at the anchor. Single source.",
+    "evidence": [
+     "https://www.mountainproject.com/route/105802381/air-guitar"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_air_guitar",
+    "column": "permit",
+    "from": null,
+    "to": "A Discover Pass, or a WDFW Vehicle Access Pass, is needed to park on WDFW land in Frenchman Coulee.",
+    "why": "WDFW Quincy Lakes Unit page: a Discover Pass is required on WDFW lands, or a Vehicle Access Pass; the WDFW parking page says the same for wildlife areas. The Frenchman Climbing Area is on the Quincy Lakes Unit (WDFW page). Official-1, lock after applying (expires 2027-11-18).",
+    "evidence": [
+     "https://wdfw.wa.gov/places-to-go/wildlife-areas/quincy-lakes-wildlife-area-unit",
+     "https://wdfw.wa.gov/licenses/parking",
+     "https://www.mountaineers.org/activities/routes-places/vantage-frenchman-coulee"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_air_guitar",
+    "column": "access",
+    "from": null,
+    "to": {
+     "land_manager": "Washington Department of Fish and Wildlife (Columbia Basin Wildlife Area, Quincy Lakes Unit)",
+     "parking_pass": "Discover Pass or WDFW Vehicle Access Pass"
+    },
+    "why": "WDFW Quincy Lakes Unit page lists the Frenchman Climbing Area and rock climbers on the unit, and carries the Frenchman Coulee road alert; the Columbia Basin Wildlife Area page lists Quincy Lakes as one of its units. The Mountaineers: land manager Columbia Basin Wildlife Area, Quincy Lakes Unit; Discover Pass.",
+    "evidence": [
+     "https://wdfw.wa.gov/places-to-go/wildlife-areas/quincy-lakes-wildlife-area-unit",
+     "https://wdfw.wa.gov/places-to-go/wildlife-areas/columbia-basin-wildlife-area",
+     "https://wdfw.wa.gov/licenses/parking",
+     "https://www.mountaineers.org/activities/routes-places/vantage-frenchman-coulee"
+    ]
+   }
+  ],
+  "disputed": [
+   "gear: stored 'cams to about 4.5 in, off-width moves near the top'; MP says TCUs and cams to 4 in and does not mention off-width. Not changed (gear is not an enrich:apply column)."
+  ],
+  "notes": "Filed correctly: MP places it in (c) King Pins on the Sunshine Wall, between Pony Keg and Crossing the Threshold; OSM's King Pins climbing site sits at the same spot. pitches=1 already (MP gives one 75 ft length). FA year 1985 is MP's \"85'\" shorthand - dropped from fa (names only); keep it if a year field ever exists. Discipline trad agrees with MP (one publisher, not locked). Vantage Road SW closed since May 2026 (official), so the lot is not drivable; forum posts describe walk-ins, but the county closure covers pedestrians on the road. No raptor or seasonal climbing closure found on WDFW pages; the stored hazards sentence about posted raptor closures is unconfirmed (template on every route here). MP: south-facing wall."
+ },
+ "wa_party_in_your_pants": {
+  "area": "wa_e_near_end_aka_twin_cracks_area",
+  "set": {
+   "waypoints": [
+    {
+     "lat": 47.025311,
+     "lng": -119.968157,
+     "elev": 1056,
+     "name": "Frenchman Coulee climbers' parking",
+     "type": "Trailhead",
+     "distMi": 0,
+     "elevFt": 1056,
+     "note": "WDFW gravel lot off Vantage Road SW, the main lot for Echo Basin and the Sunshine Wall. Park with a Discover Pass or a WDFW Vehicle Access Pass. Since May 2026 the county has kept Vantage Road SW closed at Silica Road, so the lot cannot be reached by the road."
+    }
+   ],
+   "road": {
+    "name": "Vantage Road SW",
+    "status": "Closed at Silica Road SW by Grant County after the May 15, 2026 rockslide, to drivers and to people on foot, with no reopening date (county update dated Sep 30, 2026).",
+    "driveNote": "Leave I-90 at exit 143 and go north on Silica Road SW for about 0.8 mi. Turn left onto Vantage Road SW and drop into the coulee; past the Feathers, the main WDFW climbers' lot is on the left, about 1.4 mi along."
+   },
+   "fa": "Fred Stanley"
+  },
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/105795744/party-in-your-pants",
+    "https://www.openstreetmap.org/relation/19339864",
+    "https://www.mountainproject.com/area/105793798/c-king-pins",
+    "https://www.mountainproject.com/area/105792231/vantage-frenchman-coulee",
+    "https://www.mountainproject.com/area/105793350/sunshine-wall",
+    "https://chossclimbers.com/testing/us/washington/vantage-cragging/",
+    "https://www.grantcountywa.gov/1335/Road-Closures-Advisories",
+    "https://www.columbiabasinherald.com/news/2026/may/16/vantage-road-sw-closed-due-to-rockslides/",
+    "https://wdfw.wa.gov/places-to-go/wildlife-areas/quincy-lakes-wildlife-area-unit",
+    "https://wdfw.wa.gov/places-to-go/wildlife-areas/columbia-basin-wildlife-area",
+    "https://wdfw.wa.gov/licenses/parking",
+    "https://www.mountaineers.org/activities/routes-places/vantage-frenchman-coulee",
+    "https://www.openstreetmap.org/way/217009714",
+    "https://www.mountainproject.com/forum/message/203807221",
+    "https://kpq.com/grant-county-rockslide-closure/"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "grade",
+    "value": "5.8",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105795744/party-in-your-pants",
+      "fact": "5.8, trad, 90 ft",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://chossclimbers.com/testing/us/washington/vantage-cragging/",
+      "fact": "Party In Your Pants (5.8)",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "Fred Stanley",
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105795744/party-in-your-pants",
+      "fact": "FA Fred Stanley, 1966",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "waypoints/Frenchman Coulee climbers' parking",
+    "value": {
+     "name": "Frenchman Coulee climbers' parking",
+     "lat": 47.025311,
+     "lng": -119.968157
+    },
+    "method": "agree-2",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://www.openstreetmap.org/way/217009714",
+      "fact": "amenity=parking, operator WDFW, Frenchman Coulee parking; centre 47.025311,-119.968157; USGS 3DEP 1,056 ft",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/vantage-frenchman-coulee",
+      "fact": "main parking for the other walls is just past the Feathers on Vantage Rd (place only, no coordinate)",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "road",
+    "value": {
+     "name": "Vantage Road SW",
+     "status": "Closed at Silica Road SW by Grant County after the May 15, 2026 rockslide, to drivers and to people on foot, with no reopening date (county update dated Sep 30, 2026).",
+     "driveNote": "Leave I-90 at exit 143 and go north on Silica Road SW for about 0.8 mi. Turn left onto Vantage Road SW and drop into the coulee; past the Feathers, the main WDFW climbers' lot is on the left, about 1.4 mi along."
+    },
+    "method": "official-1",
+    "level": "locked",
+    "expires_at": "2027-02-15T00:00:00Z",
+    "evidence": [
+     {
+      "url": "https://www.grantcountywa.gov/1335/Road-Closures-Advisories",
+      "official": true,
+      "fact": "Vantage Road SW at Silica Road SW closed indefinitely after May 15, 2026 rockslide; motorists and pedestrians; updated 9/30/2026",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://wdfw.wa.gov/places-to-go/wildlife-areas/quincy-lakes-wildlife-area-unit",
+      "official": true,
+      "fact": "Quincy Lakes Unit alert: rockslide caused a Grant County closure of Vantage Road SW",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://www.columbiabasinherald.com/news/2026/may/16/vantage-road-sw-closed-due-to-rockslides/",
+      "fact": "May 16, 2026: GCSO closed Vantage Road SW west of Silica Road until further notice",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_party_in_your_pants",
+    "column": "pitches",
+    "from": 0,
+    "to": 1,
+    "why": "0 is invalid. MP: a single 90 ft trad line.",
+    "evidence": [
+     "https://www.mountainproject.com/route/105795744/party-in-your-pants"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_party_in_your_pants",
+    "column": "length_m",
+    "from": null,
+    "to": 27,
+    "why": "MP: 90 ft (27 m). Single source; locked-1src after applying.",
+    "evidence": [
+     "https://www.mountainproject.com/route/105795744/party-in-your-pants"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_party_in_your_pants",
+    "column": "gear",
+    "from": "Cams to about 2 in; a #4 is handy for the belay",
+    "to": "Cams to 3 in, mostly hand sizes, with a few small units",
+    "why": "MP: gear to 3 in; small TCUs to 2s and 3s fit, most placements take hand-size cams. The stored 'to about 2 in' understates the rack.",
+    "evidence": [
+     "https://www.mountainproject.com/route/105795744/party-in-your-pants"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_party_in_your_pants",
+    "column": "permit",
+    "from": null,
+    "to": "A Discover Pass, or a WDFW Vehicle Access Pass, is needed to park on WDFW land in Frenchman Coulee.",
+    "why": "WDFW Quincy Lakes Unit page: a Discover Pass is required on WDFW lands, or a Vehicle Access Pass; the WDFW parking page says the same for wildlife areas. The Frenchman Climbing Area is on the Quincy Lakes Unit (WDFW page). Official-1, lock after applying (expires 2027-11-18).",
+    "evidence": [
+     "https://wdfw.wa.gov/places-to-go/wildlife-areas/quincy-lakes-wildlife-area-unit",
+     "https://wdfw.wa.gov/licenses/parking",
+     "https://www.mountaineers.org/activities/routes-places/vantage-frenchman-coulee"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_party_in_your_pants",
+    "column": "access",
+    "from": null,
+    "to": {
+     "land_manager": "Washington Department of Fish and Wildlife (Columbia Basin Wildlife Area, Quincy Lakes Unit)",
+     "parking_pass": "Discover Pass or WDFW Vehicle Access Pass"
+    },
+    "why": "WDFW Quincy Lakes Unit page lists the Frenchman Climbing Area and rock climbers on the unit, and carries the Frenchman Coulee road alert; the Columbia Basin Wildlife Area page lists Quincy Lakes as one of its units. The Mountaineers: land manager Columbia Basin Wildlife Area, Quincy Lakes Unit; Discover Pass.",
+    "evidence": [
+     "https://wdfw.wa.gov/places-to-go/wildlife-areas/quincy-lakes-wildlife-area-unit",
+     "https://wdfw.wa.gov/places-to-go/wildlife-areas/columbia-basin-wildlife-area",
+     "https://wdfw.wa.gov/licenses/parking",
+     "https://www.mountaineers.org/activities/routes-places/vantage-frenchman-coulee"
+    ]
+   }
+  ],
+  "disputed": [
+   "fa: MP says Fred Stanley, 1966 - early for Vantage; no second source, kept unconfirmed"
+  ],
+  "notes": "Filed correctly: MP places it in (e) Near End (aka Twin Cracks Area) of the Sunshine Wall, just left of Easy Off; OSM's Twin Cracks Area site is at the wall's east end. It is NOT in King Pins. FA year 1966 dropped from fa (names only). The '#4 for the belay' part of the stored gear has no source. Road/pass/closure notes as for the King Pins routes."
+ },
+ "wa_throbbing_gristle": {
+  "area": "wa_c_king_pins",
+  "set": {
+   "waypoints": [
+    {
+     "lat": 47.025311,
+     "lng": -119.968157,
+     "elev": 1056,
+     "name": "Frenchman Coulee climbers' parking",
+     "type": "Trailhead",
+     "distMi": 0,
+     "elevFt": 1056,
+     "note": "WDFW gravel lot off Vantage Road SW, the main lot for Echo Basin and the Sunshine Wall. Park with a Discover Pass or a WDFW Vehicle Access Pass. Since May 2026 the county has kept Vantage Road SW closed at Silica Road, so the lot cannot be reached by the road."
+    }
+   ],
+   "road": {
+    "name": "Vantage Road SW",
+    "status": "Closed at Silica Road SW by Grant County after the May 15, 2026 rockslide, to drivers and to people on foot, with no reopening date (county update dated Sep 30, 2026).",
+    "driveNote": "Leave I-90 at exit 143 and go north on Silica Road SW for about 0.8 mi. Turn left onto Vantage Road SW and drop into the coulee; past the Feathers, the main WDFW climbers' lot is on the left, about 1.4 mi along."
+   }
+  },
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/105802373/throbbing-gristle",
+    "https://www.openstreetmap.org/relation/19339858",
+    "https://www.mountainproject.com/area/105793798/c-king-pins",
+    "https://www.mountainproject.com/area/105792231/vantage-frenchman-coulee",
+    "https://www.mountainproject.com/area/105793350/sunshine-wall",
+    "https://chossclimbers.com/testing/us/washington/vantage-cragging/",
+    "https://www.grantcountywa.gov/1335/Road-Closures-Advisories",
+    "https://www.columbiabasinherald.com/news/2026/may/16/vantage-road-sw-closed-due-to-rockslides/",
+    "https://wdfw.wa.gov/places-to-go/wildlife-areas/quincy-lakes-wildlife-area-unit",
+    "https://wdfw.wa.gov/places-to-go/wildlife-areas/columbia-basin-wildlife-area",
+    "https://wdfw.wa.gov/licenses/parking",
+    "https://www.mountaineers.org/activities/routes-places/vantage-frenchman-coulee",
+    "https://www.openstreetmap.org/way/217009714",
+    "https://www.mountainproject.com/forum/message/203807221",
+    "https://kpq.com/grant-county-rockslide-closure/"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "grade",
+    "value": "5.9",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105802373/throbbing-gristle",
+      "fact": "5.9, sport, 80 ft, 13 bolts",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "waypoints/Frenchman Coulee climbers' parking",
+    "value": {
+     "name": "Frenchman Coulee climbers' parking",
+     "lat": 47.025311,
+     "lng": -119.968157
+    },
+    "method": "agree-2",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://www.openstreetmap.org/way/217009714",
+      "fact": "amenity=parking, operator WDFW, Frenchman Coulee parking; centre 47.025311,-119.968157; USGS 3DEP 1,056 ft",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/vantage-frenchman-coulee",
+      "fact": "main parking for the other walls is just past the Feathers on Vantage Rd (place only, no coordinate)",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "road",
+    "value": {
+     "name": "Vantage Road SW",
+     "status": "Closed at Silica Road SW by Grant County after the May 15, 2026 rockslide, to drivers and to people on foot, with no reopening date (county update dated Sep 30, 2026).",
+     "driveNote": "Leave I-90 at exit 143 and go north on Silica Road SW for about 0.8 mi. Turn left onto Vantage Road SW and drop into the coulee; past the Feathers, the main WDFW climbers' lot is on the left, about 1.4 mi along."
+    },
+    "method": "official-1",
+    "level": "locked",
+    "expires_at": "2027-02-15T00:00:00Z",
+    "evidence": [
+     {
+      "url": "https://www.grantcountywa.gov/1335/Road-Closures-Advisories",
+      "official": true,
+      "fact": "Vantage Road SW at Silica Road SW closed indefinitely after May 15, 2026 rockslide; motorists and pedestrians; updated 9/30/2026",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://wdfw.wa.gov/places-to-go/wildlife-areas/quincy-lakes-wildlife-area-unit",
+      "official": true,
+      "fact": "Quincy Lakes Unit alert: rockslide caused a Grant County closure of Vantage Road SW",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://www.columbiabasinherald.com/news/2026/may/16/vantage-road-sw-closed-due-to-rockslides/",
+      "fact": "May 16, 2026: GCSO closed Vantage Road SW west of Silica Road until further notice",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_throbbing_gristle",
+    "column": "pitches",
+    "from": 0,
+    "to": 1,
+    "why": "0 is invalid. MP: a single 80 ft sport line to one set of anchors.",
+    "evidence": [
+     "https://www.mountainproject.com/route/105802373/throbbing-gristle"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_throbbing_gristle",
+    "column": "length_m",
+    "from": null,
+    "to": 24,
+    "why": "MP: 80 ft (24 m). Single source; locked-1src after applying.",
+    "evidence": [
+     "https://www.mountainproject.com/route/105802373/throbbing-gristle"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_throbbing_gristle",
+    "column": "bolts",
+    "from": null,
+    "to": 13,
+    "why": "MP: draws, 13 bolts. Single source; locked-1src after applying.",
+    "evidence": [
+     "https://www.mountainproject.com/route/105802373/throbbing-gristle"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_throbbing_gristle",
+    "column": "anchor",
+    "from": null,
+    "to": "Bolted anchor",
+    "why": "MP: a set of anchors at the top, reached up the arete. Single source.",
+    "evidence": [
+     "https://www.mountainproject.com/route/105802373/throbbing-gristle"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_throbbing_gristle",
+    "column": "permit",
+    "from": null,
+    "to": "A Discover Pass, or a WDFW Vehicle Access Pass, is needed to park on WDFW land in Frenchman Coulee.",
+    "why": "WDFW Quincy Lakes Unit page: a Discover Pass is required on WDFW lands, or a Vehicle Access Pass; the WDFW parking page says the same for wildlife areas. The Frenchman Climbing Area is on the Quincy Lakes Unit (WDFW page). Official-1, lock after applying (expires 2027-11-18).",
+    "evidence": [
+     "https://wdfw.wa.gov/places-to-go/wildlife-areas/quincy-lakes-wildlife-area-unit",
+     "https://wdfw.wa.gov/licenses/parking",
+     "https://www.mountaineers.org/activities/routes-places/vantage-frenchman-coulee"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_throbbing_gristle",
+    "column": "access",
+    "from": null,
+    "to": {
+     "land_manager": "Washington Department of Fish and Wildlife (Columbia Basin Wildlife Area, Quincy Lakes Unit)",
+     "parking_pass": "Discover Pass or WDFW Vehicle Access Pass"
+    },
+    "why": "WDFW Quincy Lakes Unit page lists the Frenchman Climbing Area and rock climbers on the unit, and carries the Frenchman Coulee road alert; the Columbia Basin Wildlife Area page lists Quincy Lakes as one of its units. The Mountaineers: land manager Columbia Basin Wildlife Area, Quincy Lakes Unit; Discover Pass.",
+    "evidence": [
+     "https://wdfw.wa.gov/places-to-go/wildlife-areas/quincy-lakes-wildlife-area-unit",
+     "https://wdfw.wa.gov/places-to-go/wildlife-areas/columbia-basin-wildlife-area",
+     "https://wdfw.wa.gov/licenses/parking",
+     "https://www.mountaineers.org/activities/routes-places/vantage-frenchman-coulee"
+    ]
+   }
+  ],
+  "disputed": [],
+  "notes": "Filed correctly: MP places it in (c) King Pins, between Pony Keg and Corner Pockets. Only MP describes it (chossclimbers does not list it; theCrag gave a bot check, not used) - grade locked-1src. Discipline sport (13 bolts, draws only) agrees with MP but cannot lock from MP alone. FA K. Pogue, no year (MP) - stored as is. Road/pass notes as for the other routes."
+ },
+ "wa_george_and_martha": {
+  "area": "wa_c_king_pins",
+  "set": {
+   "waypoints": [
+    {
+     "lat": 47.025311,
+     "lng": -119.968157,
+     "elev": 1056,
+     "name": "Frenchman Coulee climbers' parking",
+     "type": "Trailhead",
+     "distMi": 0,
+     "elevFt": 1056,
+     "note": "WDFW gravel lot off Vantage Road SW, the main lot for Echo Basin and the Sunshine Wall. Park with a Discover Pass or a WDFW Vehicle Access Pass. Since May 2026 the county has kept Vantage Road SW closed at Silica Road, so the lot cannot be reached by the road."
+    }
+   ],
+   "road": {
+    "name": "Vantage Road SW",
+    "status": "Closed at Silica Road SW by Grant County after the May 15, 2026 rockslide, to drivers and to people on foot, with no reopening date (county update dated Sep 30, 2026).",
+    "driveNote": "Leave I-90 at exit 143 and go north on Silica Road SW for about 0.8 mi. Turn left onto Vantage Road SW and drop into the coulee; past the Feathers, the main WDFW climbers' lot is on the left, about 1.4 mi along."
+   },
+   "fa": "Karl Birkinkamp"
+  },
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/105793801/george-and-martha",
+    "https://outthereoutdoors.com/?p=8125",
+    "https://www.openstreetmap.org/relation/19339858",
+    "https://www.mountainproject.com/area/105793798/c-king-pins",
+    "https://www.mountainproject.com/area/105792231/vantage-frenchman-coulee",
+    "https://www.mountainproject.com/area/105793350/sunshine-wall",
+    "https://chossclimbers.com/testing/us/washington/vantage-cragging/",
+    "https://www.grantcountywa.gov/1335/Road-Closures-Advisories",
+    "https://www.columbiabasinherald.com/news/2026/may/16/vantage-road-sw-closed-due-to-rockslides/",
+    "https://wdfw.wa.gov/places-to-go/wildlife-areas/quincy-lakes-wildlife-area-unit",
+    "https://wdfw.wa.gov/places-to-go/wildlife-areas/columbia-basin-wildlife-area",
+    "https://wdfw.wa.gov/licenses/parking",
+    "https://www.mountaineers.org/activities/routes-places/vantage-frenchman-coulee",
+    "https://www.openstreetmap.org/way/217009714",
+    "https://www.mountainproject.com/forum/message/203807221",
+    "https://kpq.com/grant-county-rockslide-closure/"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "grade",
+    "value": "5.10a",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105793801/george-and-martha",
+      "fact": "5.10a, trad, 75 ft",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://outthereoutdoors.com/?p=8125",
+      "fact": "George and Martha 5.10a crack, Sunshine Wall",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://chossclimbers.com/testing/us/washington/vantage-cragging/",
+      "fact": "George And Martha (5.10a)",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "Karl Birkinkamp",
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105793801/george-and-martha",
+      "fact": "FA Karl Birkinkamp (1986)",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "waypoints/Frenchman Coulee climbers' parking",
+    "value": {
+     "name": "Frenchman Coulee climbers' parking",
+     "lat": 47.025311,
+     "lng": -119.968157
+    },
+    "method": "agree-2",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://www.openstreetmap.org/way/217009714",
+      "fact": "amenity=parking, operator WDFW, Frenchman Coulee parking; centre 47.025311,-119.968157; USGS 3DEP 1,056 ft",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/vantage-frenchman-coulee",
+      "fact": "main parking for the other walls is just past the Feathers on Vantage Rd (place only, no coordinate)",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "road",
+    "value": {
+     "name": "Vantage Road SW",
+     "status": "Closed at Silica Road SW by Grant County after the May 15, 2026 rockslide, to drivers and to people on foot, with no reopening date (county update dated Sep 30, 2026).",
+     "driveNote": "Leave I-90 at exit 143 and go north on Silica Road SW for about 0.8 mi. Turn left onto Vantage Road SW and drop into the coulee; past the Feathers, the main WDFW climbers' lot is on the left, about 1.4 mi along."
+    },
+    "method": "official-1",
+    "level": "locked",
+    "expires_at": "2027-02-15T00:00:00Z",
+    "evidence": [
+     {
+      "url": "https://www.grantcountywa.gov/1335/Road-Closures-Advisories",
+      "official": true,
+      "fact": "Vantage Road SW at Silica Road SW closed indefinitely after May 15, 2026 rockslide; motorists and pedestrians; updated 9/30/2026",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://wdfw.wa.gov/places-to-go/wildlife-areas/quincy-lakes-wildlife-area-unit",
+      "official": true,
+      "fact": "Quincy Lakes Unit alert: rockslide caused a Grant County closure of Vantage Road SW",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://www.columbiabasinherald.com/news/2026/may/16/vantage-road-sw-closed-due-to-rockslides/",
+      "fact": "May 16, 2026: GCSO closed Vantage Road SW west of Silica Road until further notice",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_george_and_martha",
+    "column": "pitches",
+    "from": 0,
+    "to": 1,
+    "why": "0 is invalid. MP: a single 75 ft crack to a bolted anchor.",
+    "evidence": [
+     "https://www.mountainproject.com/route/105793801/george-and-martha"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_george_and_martha",
+    "column": "length_m",
+    "from": null,
+    "to": 23,
+    "why": "MP: 75 ft (23 m). Single source; locked-1src after applying.",
+    "evidence": [
+     "https://www.mountainproject.com/route/105793801/george-and-martha"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_george_and_martha",
+    "column": "anchor",
+    "from": null,
+    "to": "Bolted anchor with chains",
+    "why": "MP: bolted top anchor with chains and mussy hooks; an independent 2014 trip report says it shares its anchor with Red M&Ms.",
+    "evidence": [
+     "https://www.mountainproject.com/route/105793801/george-and-martha",
+     "https://outthereoutdoors.com/?p=8125"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_george_and_martha",
+    "column": "permit",
+    "from": null,
+    "to": "A Discover Pass, or a WDFW Vehicle Access Pass, is needed to park on WDFW land in Frenchman Coulee.",
+    "why": "WDFW Quincy Lakes Unit page: a Discover Pass is required on WDFW lands, or a Vehicle Access Pass; the WDFW parking page says the same for wildlife areas. The Frenchman Climbing Area is on the Quincy Lakes Unit (WDFW page). Official-1, lock after applying (expires 2027-11-18).",
+    "evidence": [
+     "https://wdfw.wa.gov/places-to-go/wildlife-areas/quincy-lakes-wildlife-area-unit",
+     "https://wdfw.wa.gov/licenses/parking",
+     "https://www.mountaineers.org/activities/routes-places/vantage-frenchman-coulee"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_george_and_martha",
+    "column": "access",
+    "from": null,
+    "to": {
+     "land_manager": "Washington Department of Fish and Wildlife (Columbia Basin Wildlife Area, Quincy Lakes Unit)",
+     "parking_pass": "Discover Pass or WDFW Vehicle Access Pass"
+    },
+    "why": "WDFW Quincy Lakes Unit page lists the Frenchman Climbing Area and rock climbers on the unit, and carries the Frenchman Coulee road alert; the Columbia Basin Wildlife Area page lists Quincy Lakes as one of its units. The Mountaineers: land manager Columbia Basin Wildlife Area, Quincy Lakes Unit; Discover Pass.",
+    "evidence": [
+     "https://wdfw.wa.gov/places-to-go/wildlife-areas/quincy-lakes-wildlife-area-unit",
+     "https://wdfw.wa.gov/places-to-go/wildlife-areas/columbia-basin-wildlife-area",
+     "https://wdfw.wa.gov/licenses/parking",
+     "https://www.mountaineers.org/activities/routes-places/vantage-frenchman-coulee"
+    ]
+   }
+  ],
+  "disputed": [
+   "gear: stored 'pieces up to about 5 in'; MP says a standard rack, mostly hand sizes, plus one larger piece (a 3 in cam) for the top. Not changed.",
+   "grade: an MP comment says some call it 5.9 or 5.8 - opinion; the three sources read agree on 5.10a"
+  ],
+  "notes": "Filed correctly: MP places it in (c) King Pins (Stems and Seeds part), two cracks right of Seven Virgins and a Mule. FA: the stored '(?)' is gone on MP, which now gives Karl Birkinkamp, 1986 - single source, unconfirmed. Road/pass notes as for the other routes."
+ },
+ "wa_seven_virgins_and_a_mule": {
+  "area": "wa_c_king_pins",
+  "set": {
+   "waypoints": [
+    {
+     "lat": 47.025311,
+     "lng": -119.968157,
+     "elev": 1056,
+     "name": "Frenchman Coulee climbers' parking",
+     "type": "Trailhead",
+     "distMi": 0,
+     "elevFt": 1056,
+     "note": "WDFW gravel lot off Vantage Road SW, the main lot for Echo Basin and the Sunshine Wall. Park with a Discover Pass or a WDFW Vehicle Access Pass. Since May 2026 the county has kept Vantage Road SW closed at Silica Road, so the lot cannot be reached by the road."
+    }
+   ],
+   "road": {
+    "name": "Vantage Road SW",
+    "status": "Closed at Silica Road SW by Grant County after the May 15, 2026 rockslide, to drivers and to people on foot, with no reopening date (county update dated Sep 30, 2026).",
+    "driveNote": "Leave I-90 at exit 143 and go north on Silica Road SW for about 0.8 mi. Turn left onto Vantage Road SW and drop into the coulee; past the Feathers, the main WDFW climbers' lot is on the left, about 1.4 mi along."
+   },
+   "fa": "Bill Robins, Pete Rieke, Paul Hunt"
+  },
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/105793812/seven-virgins-and-a-mule",
+    "https://www.openstreetmap.org/relation/19339858",
+    "https://www.mountainproject.com/area/105793798/c-king-pins",
+    "https://www.mountainproject.com/area/105792231/vantage-frenchman-coulee",
+    "https://www.mountainproject.com/area/105793350/sunshine-wall",
+    "https://chossclimbers.com/testing/us/washington/vantage-cragging/",
+    "https://www.grantcountywa.gov/1335/Road-Closures-Advisories",
+    "https://www.columbiabasinherald.com/news/2026/may/16/vantage-road-sw-closed-due-to-rockslides/",
+    "https://wdfw.wa.gov/places-to-go/wildlife-areas/quincy-lakes-wildlife-area-unit",
+    "https://wdfw.wa.gov/places-to-go/wildlife-areas/columbia-basin-wildlife-area",
+    "https://wdfw.wa.gov/licenses/parking",
+    "https://www.mountaineers.org/activities/routes-places/vantage-frenchman-coulee",
+    "https://www.openstreetmap.org/way/217009714",
+    "https://www.mountainproject.com/forum/message/203807221",
+    "https://kpq.com/grant-county-rockslide-closure/"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "grade",
+    "value": "5.7",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105793812/seven-virgins-and-a-mule",
+      "fact": "5.7, trad, 85 ft",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://chossclimbers.com/testing/us/washington/vantage-cragging/",
+      "fact": "Seven Virgins And A Mule (5.7)",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "Bill Robins, Pete Rieke, Paul Hunt",
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105793812/seven-virgins-and-a-mule",
+      "fact": "FA Bill Robins, Pete Rieke & Paul Hunt (1989)",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "waypoints/Frenchman Coulee climbers' parking",
+    "value": {
+     "name": "Frenchman Coulee climbers' parking",
+     "lat": 47.025311,
+     "lng": -119.968157
+    },
+    "method": "agree-2",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://www.openstreetmap.org/way/217009714",
+      "fact": "amenity=parking, operator WDFW, Frenchman Coulee parking; centre 47.025311,-119.968157; USGS 3DEP 1,056 ft",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/vantage-frenchman-coulee",
+      "fact": "main parking for the other walls is just past the Feathers on Vantage Rd (place only, no coordinate)",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "road",
+    "value": {
+     "name": "Vantage Road SW",
+     "status": "Closed at Silica Road SW by Grant County after the May 15, 2026 rockslide, to drivers and to people on foot, with no reopening date (county update dated Sep 30, 2026).",
+     "driveNote": "Leave I-90 at exit 143 and go north on Silica Road SW for about 0.8 mi. Turn left onto Vantage Road SW and drop into the coulee; past the Feathers, the main WDFW climbers' lot is on the left, about 1.4 mi along."
+    },
+    "method": "official-1",
+    "level": "locked",
+    "expires_at": "2027-02-15T00:00:00Z",
+    "evidence": [
+     {
+      "url": "https://www.grantcountywa.gov/1335/Road-Closures-Advisories",
+      "official": true,
+      "fact": "Vantage Road SW at Silica Road SW closed indefinitely after May 15, 2026 rockslide; motorists and pedestrians; updated 9/30/2026",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://wdfw.wa.gov/places-to-go/wildlife-areas/quincy-lakes-wildlife-area-unit",
+      "official": true,
+      "fact": "Quincy Lakes Unit alert: rockslide caused a Grant County closure of Vantage Road SW",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://www.columbiabasinherald.com/news/2026/may/16/vantage-road-sw-closed-due-to-rockslides/",
+      "fact": "May 16, 2026: GCSO closed Vantage Road SW west of Silica Road until further notice",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_seven_virgins_and_a_mule",
+    "column": "pitches",
+    "from": 0,
+    "to": 1,
+    "why": "0 is invalid. MP: a single 85 ft chimney to a two-bolt anchor.",
+    "evidence": [
+     "https://www.mountainproject.com/route/105793812/seven-virgins-and-a-mule"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_seven_virgins_and_a_mule",
+    "column": "length_m",
+    "from": null,
+    "to": 26,
+    "why": "MP: 85 ft (26 m). Single source; locked-1src after applying.",
+    "evidence": [
+     "https://www.mountainproject.com/route/105793812/seven-virgins-and-a-mule"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_seven_virgins_and_a_mule",
+    "column": "anchor",
+    "from": null,
+    "to": "Two bolts with chains",
+    "why": "MP: two bolts with chains. Single source.",
+    "evidence": [
+     "https://www.mountainproject.com/route/105793812/seven-virgins-and-a-mule"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_seven_virgins_and_a_mule",
+    "column": "permit",
+    "from": null,
+    "to": "A Discover Pass, or a WDFW Vehicle Access Pass, is needed to park on WDFW land in Frenchman Coulee.",
+    "why": "WDFW Quincy Lakes Unit page: a Discover Pass is required on WDFW lands, or a Vehicle Access Pass; the WDFW parking page says the same for wildlife areas. The Frenchman Climbing Area is on the Quincy Lakes Unit (WDFW page). Official-1, lock after applying (expires 2027-11-18).",
+    "evidence": [
+     "https://wdfw.wa.gov/places-to-go/wildlife-areas/quincy-lakes-wildlife-area-unit",
+     "https://wdfw.wa.gov/licenses/parking",
+     "https://www.mountaineers.org/activities/routes-places/vantage-frenchman-coulee"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_seven_virgins_and_a_mule",
+    "column": "access",
+    "from": null,
+    "to": {
+     "land_manager": "Washington Department of Fish and Wildlife (Columbia Basin Wildlife Area, Quincy Lakes Unit)",
+     "parking_pass": "Discover Pass or WDFW Vehicle Access Pass"
+    },
+    "why": "WDFW Quincy Lakes Unit page lists the Frenchman Climbing Area and rock climbers on the unit, and carries the Frenchman Coulee road alert; the Columbia Basin Wildlife Area page lists Quincy Lakes as one of its units. The Mountaineers: land manager Columbia Basin Wildlife Area, Quincy Lakes Unit; Discover Pass.",
+    "evidence": [
+     "https://wdfw.wa.gov/places-to-go/wildlife-areas/quincy-lakes-wildlife-area-unit",
+     "https://wdfw.wa.gov/places-to-go/wildlife-areas/columbia-basin-wildlife-area",
+     "https://wdfw.wa.gov/licenses/parking",
+     "https://www.mountaineers.org/activities/routes-places/vantage-frenchman-coulee"
+    ]
+   }
+  ],
+  "disputed": [],
+  "notes": "Filed correctly: MP places it in (c) King Pins. FA was null; MP gives Bill Robins, Pete Rieke and Paul Hunt, 1989 - single source, set unconfirmed (drop the set if the owner wants FAs only at 2 sources). Stored gear (cams to about 3 in, crack inside the chimney) agrees with MP. Road/pass notes as for the other routes."
+ }
+}

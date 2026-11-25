@@ -38,16 +38,14 @@ import { readCoreSource, readParentSource, MOVED, movedAsParentText } from "./gu
 // overlay at all, which is how a list like this normally rots.
 export const NEEDS_EXTRA_STATE = {
   areaTreeOpen: "rendered as `areaTreeOpen && selArea` — needs an area selected first",
-  crewListOpen: "a disclosure inside the crew finder's result list — needs crews to list",
   reviewQueue: "rendered as `reviewQueue&&isAdmin` — the Menu's Review queues (moved off Profile 2026-10-23) open only for an ADMIN account, and no walk signs in as one",
-  compareOpen: "rendered as `wide&&compareOpen` — a desktop-only view (#2621) that needs a viewport of WIDE_MIN (1024px) or wider; the walks run at phone width",
   // `sessionRestoring` deliberately gets NO entry — it is a derived const
   // (`realAuthGate && session===undefined`), not state, so discovery cannot return it and an
   // exemption naming it would be the stale bookkeeping this registry fails on. `editDraft` is
   // no longer here either: it is opened with a LIFTED literal, see `lift` in OVERLAY_PAYLOADS.
 };
 
-// OPT-IN OPENERS for three of the four above, reached with `?zx=<name>` rather than `?z=`.
+// OPT-IN OPENERS for two of the three above, reached with `?zx=<name>` rather than `?z=`.
 //
 // Every guard reading NEEDS_EXTRA_STATE skips these names before it loads anything, and that does
 // not change: a guard has to ask for `zx` by name, so widening check:pinned-dismiss (owner note,
@@ -56,17 +54,33 @@ export const NEEDS_EXTRA_STATE = {
 // same 1200ms the `z` opener waits.
 //   areaTreeOpen: renders as `areaTreeOpen&&selArea`, so a seed STATE is selected first; the tree
 //     opens expanded at it, the longest list it can show.
-//   compareOpen: renders as `wide&&compareOpen`, so the GUARD must also widen the viewport to
-//     `viewport` before loading, or `wide` is false and nothing mounts.
+//   An entry may also carry `viewport` ({width,height}) for a popup gated on a desktop width; the
+//     GUARD widens to it before loading. (Compare used it until the owner removed it, 2026-11-12.)
 //   reviewQueue: renders as `reviewQueue&&isAdmin`, and isAdmin is a DB query on a signed-in admin.
 //     A config that serves `zx` applies ADMIN_GATE, which lets window.__ovAdminGate stand in for it;
 //     only this opener sets that. The queue's own reads fail without an admin, which leaves its
 //     header (the subject) exactly as an admin sees it.
-// crewListOpen has no entry: it is an inline disclosure in the crew finder's results, not a popup.
 export const EXTRA_STATE_OPENERS = {
   areaTreeOpen: { open: 'setSelArea(MOUNTAINS.find(function(m){return m.areaType==="state";})||null);setAreaTreeOpen(true);' },
-  compareOpen: { viewport: { width: 1280, height: 900 }, open: "setCompareList(ROUTES.slice(0,3));setCompareOpen(true);" },
-  reviewQueue: { open: 'window.__ovAdminGate=true;setReviewQueue("fieldEdits");' },
+  reviewQueue: { open: 'window.__ovAdminGate=true;setReviewQueue("standing");' },
+};
+// WHERE A POPUP OPENS, for the cases a flag alone cannot build: reached with `?zp=<name>`.
+//
+// A new page opens at the TOP (owner, 2026-11-19); the one exception is a control that edits a
+// specific field, which lands on that field. check:pinned-dismiss asks every overlay it opens
+// whether it started at the top, but the `z` opener only ever sets an overlay's own state, and the
+// bug that prompted the rule needed three: "Add trip report" opened the log form with
+// logModalFocus="report", which scrolled it ~20 sections down. So each entry here builds one such
+// opening and says where it must land:
+//   expect "top"    — no pane in the popup may be scrolled.
+//   expect "target" — a pane MUST be scrolled. This is the control: it proves the probe can see a
+//                     scrolled pane at all, and that the fix did not flatten the deliberate case.
+// `open` runs inside App after the same 1200ms the other openers wait.
+export const TOP_PROBES = {
+  logReportNew: { expect: "top", what: "Add trip report on a climb with no write-up",
+    open: 'setLogEditData({_idx:0,routeId:ROUTES[0].id,date:"2026-01-01"});setLogModalFocus("report");setLogModal(ROUTES[0]);' },
+  logReportEdit: { expect: "target", what: "Edit report on a climb that has a write-up (lands on the write-up box)",
+    open: 'setLogEditData({_idx:0,routeId:ROUTES[0].id,date:"2026-01-01",text:"Overlay probe write-up."});setLogModalFocus("report");setLogModal(ROUTES[0]);' },
 };
 export const ADMIN_GATE = { from: "{reviewQueue&&isAdmin&&", to: "{reviewQueue&&(isAdmin||window.__ovAdminGate)&&" };
 
@@ -111,7 +125,8 @@ export const OVERLAY_PAYLOADS = {
   // what becomes the `posts` local. None of this is DB-backed — group posts are client state —
   // so no fixture could seed them, and this is the only way to reach these two in any walk.
   postMenuFor: { prep: 'setCreatedGroups([{id:"__ov_group",name:"Overlay probe group",blurb:"",location:"",disciplines:["alpine"],visibility:"public",ownerId:0,memberIds:[0],moderatorIds:[]}]);setGroupPosts({__ov_group:[{id:"__ov_post",authorId:0,text:"Overlay probe post.",date:"2026-01-01"}]});setOpenGroupId("__ov_group");', expr: '"__ov_post"' },
-  reactPickerFor: { prep: 'setCreatedGroups([{id:"__ov_group",name:"Overlay probe group",blurb:"",location:"",disciplines:["alpine"],visibility:"public",ownerId:0,memberIds:[0],moderatorIds:[]}]);setGroupPosts({__ov_group:[{id:"__ov_post",authorId:0,text:"Overlay probe post.",date:"2026-01-01"}]});setOpenGroupId("__ov_group");', expr: '"__ov_post"' },
+  // reactPickerFor left this list on 2026-11-05: the reaction picker is Facebook's floating emoji bar now (role="group",
+  // anchored to the button that opened it, no scrim), not a dialog, so there is nothing for a walk to open.
   // 4b's Share sheet: the same group view, the same post.
   sharePostFor: { prep: 'setCreatedGroups([{id:"__ov_group",name:"Overlay probe group",blurb:"",location:"",disciplines:["alpine"],visibility:"public",ownerId:0,memberIds:[0],moderatorIds:[]}]);setGroupPosts({__ov_group:[{id:"__ov_post",authorId:0,text:"Overlay probe post.",date:"2026-01-01"}]});setOpenGroupId("__ov_group");', expr: '"__ov_post"' },
 
@@ -133,7 +148,7 @@ export const OVERLAY_PAYLOADS = {
   // `ev.date.split("-")`, `ev.hostId`, `ev.going` and `ev.capacity` — so an unresolvable payload
   // does not render an empty view, it throws. `events` is client state seeded from DEMO_FILLERS
   // (permanently false), so no fixture can seed it and a `prep` is the only way in — the same
-  // situation as postMenuFor/reactPickerFor above.
+  // situation as postMenuFor above.
   openEvent: {
     prep: 'setEvents({__ov_group:[{id:"__ov_event",title:"Overlay probe event",date:"2026-01-01",hostId:0,going:[0],capacity:0}]});',
     expr: '{groupId:"__ov_group",id:"__ov_event"}',
@@ -173,7 +188,6 @@ export const OVERLAY_PAYLOADS = {
   // A climber object. Every call site passes a CLIMBERS-shaped record (`c`, `fr`, `host`).
   connectModal: { expr: "CLIMBERS[0]" },
   giveVouchWith: { expr: "CLIMBERS[0]" },
-  logCatchWith: { expr: "CLIMBERS[0]" },
   mutualModal: { expr: "CLIMBERS[0]" },
   profileModal: { expr: "CLIMBERS[0]" },
   // The `?list=<uuid>` link viewer (0199). Its one setter passes the uuid read from the address bar.
@@ -214,7 +228,12 @@ export const OVERLAY_PAYLOADS = {
     expr: "(crews.length?{crewId:crews[0].id,climber:CLIMBERS[0]}:null)",
     needsData: "`crews.find(id)` must hit AND that crew's route must resolve",
   },
-  recapId: { expr: "(crews[0]||{}).id", needsData: "`crews.find(x=>x.id===recapId)` — needs a crew" },
+  // The crew with a LOCKED day first: the recap lists crewmates only for one (0519), and the signed-in fixture's
+  // main crew is the one that has it. Any crew otherwise, as before.
+  recapId: { expr: "(crews.find(function(c){return c&&c.date;})||crews[0]||{}).id", needsData: "`crews.find(x=>x.id===recapId)` — needs a crew" },
+  // 0519: "Your side" of a trip report about you. The report comes from my_trip_reports_about_me, which only a real
+  // crew trip that a crewmate reported on can fill, so a walk opens the first one when the account has one.
+  tripReplyId: { expr: "(((tripAboutQ.data)||[])[0]||{}).id", needsData: "`tripAboutQ.data.find(id)` — needs a revealed trip report about the signed-in climber (0519)" },
   groupInvite: {
     expr: "(createdGroups.concat(GROUPS)[0]||{}).id",
     needsData: "`createdGroups.concat(GROUPS).find(...)` — needs a group",
@@ -678,7 +697,7 @@ export function buildOpener(code, anchor, label, coreCode, routeDetailNames_) {
       "var p=new URLSearchParams(location.search);var t=p.get('zt');var z=p.get('z');" +
       "if(t)setTab(t);" +
       // `?mt=<profile|activity>` picks the Profile screen's tab, so a walk can reach the sections
-      // that left its default view (the catch record, the logbook and the Year in Climbing banner live on Activity).
+      // that left its default view (the logbook and the Year in Climbing banner live on Activity).
       "var mt=p.get('mt');if(mt)setMeTab(mt);" +
       // `?zr=1` opens the route detail screen and nothing else. check:overflow reached it by
       // driving the UI — select a state, tap Routes, tap the first row — and that drill-in did
@@ -696,6 +715,9 @@ export function buildOpener(code, anchor, label, coreCode, routeDetailNames_) {
       // `?zx=` opens an EXTRA_STATE_OPENERS entry, asked for by name (see that registry).
       "var zx=p.get('zx');var __X={" + Object.entries(EXTRA_STATE_OPENERS).map(([n, e]) => JSON.stringify(n) + ":function(){" + e.open + "}").join(",") + "};" +
       "if(zx&&__X[zx])setTimeout(function(){try{__X[zx]();}catch(e){(window.__overlayOpenErrors=window.__overlayOpenErrors||{})[zx]=String(e&&e.message||e);}window.__overlaysReady=true;},1200);" +
+      // `?zp=` opens a TOP_PROBES entry (see that registry).
+      "var zp=p.get('zp');var __P={" + Object.entries(TOP_PROBES).map(([n, e]) => JSON.stringify(n) + ":function(){" + e.open + "}").join(",") + "};" +
+      "if(zp&&__P[zp])setTimeout(function(){try{__P[zp]();}catch(e){(window.__overlayOpenErrors=window.__overlayOpenErrors||{})[zp]=String(e&&e.message||e);}window.__overlaysReady=true;},1200);" +
 "if(_zr){setTimeout(function(){openRoute(__zrPick());window.__routeOpen=true;window.__overlaysReady=true;},900);}" +
       // __overlaysReady means "the opener has RUN", not "the effect mounted". Every guard
       // waits on this flag and then asks what happened; setting it synchronously while the
@@ -718,7 +740,7 @@ export function buildOpener(code, anchor, label, coreCode, routeDetailNames_) {
       "if(z)setTimeout(function(){var _rd=__rdOv.indexOf(z)>=0;__ovOpen.current(z);" +
       "if(_rd)setTimeout(function(){window.__overlaysReady=true;},2500);" +
       "else window.__overlaysReady=true;},1200);" +
-      "else if(!_zr&&!zx)window.__overlaysReady=true;},[]);",
+      "else if(!_zr&&!zx&&!zp)window.__overlaysReady=true;},[]);",
   };
 }
 

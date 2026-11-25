@@ -1,0 +1,157 @@
+{
+ "area_id": "or_mt_mcloughlin",
+ "routes": [
+  {
+   "route_id": "or_mt_mcloughlin_east_ridge",
+   "season": {
+    "months": [
+     6,
+     7,
+     8,
+     9,
+     10
+    ],
+    "window": "Jun-Oct",
+    "evidence": "Peakbagger months peak Jul (133) then Aug/Sep/Jun; trail-named ascents Jun-Oct. USFS lists the trailhead summer-fall; Oregon Hikers lists late spring to mid-fall; Outdoor Pilgrim says snow lingers on parts of the route until late June; others suggest late July-September, or September-early October after the bugs."
+   },
+   "track": {
+    "aid": "2621022",
+    "verdict": "same",
+    "kind": "complete",
+    "inSeason": true,
+    "why": "Catalog holds exactly one route on the peak (East Ridge, which now carries the Trail 3716 name). Logged Mount McLoughlin Trail, 25 Aug 2024, starts and ends at the trailhead (about 30 m apart), reaches the summit within 3 m, dense track, follows the trail to the east ridge as our text describes."
+   },
+   "otherTracksConsidered": [
+    {
+     "aid": "3353884",
+     "verdict": "same",
+     "why": "21 Sep 2026, equally good full round trip from the same trailhead; 2621022 chosen for the logged trail name."
+    },
+    {
+     "aid": "2957564",
+     "verdict": "same",
+     "why": "Aug 2025 standard route, same line; not chosen."
+    },
+    {
+     "aid": "2517335",
+     "verdict": "different",
+     "why": "May ski ascent logged SE ridge from the NF 3650/3661 intersection, different start; also off season."
+    },
+    {
+     "aid": "1723404",
+     "verdict": "different",
+     "why": "Starts at 43.43151,-122.26164 (north side), different line."
+    },
+    {
+     "aid": "1124772",
+     "verdict": "different",
+     "why": "Starts at 43.44038,-122.29985, north side."
+    },
+    {
+     "aid": "3200828",
+     "verdict": "offseason",
+     "why": "22 May with a Freye Lake loop; outside Jun-Oct."
+    },
+    {
+     "aid": "1667483",
+     "verdict": "offseason",
+     "why": "30 May."
+    },
+    {
+     "aid": "3022488",
+     "verdict": "same",
+     "why": "22 Oct 2025, within a month of the window, snow on ground; used only for a fact."
+    }
+   ],
+   "pins": [
+    {
+     "type": "Trailhead",
+     "action": "add",
+     "lat": 42.42099,
+     "lng": -122.25422,
+     "name": "Mount McLoughlin Trailhead",
+     "evidence": "Route has no waypoints. Twelve harvested tracks start within about 30-100 m of this point (cluster at 42.42094,-122.25428); the Oregon Hikers field guide gives this coordinate for the Mount McLoughlin Trailhead.",
+     "confirmedBy": "https://www.oregonhikers.org/field_guide/Mount_McLoughlin_Hike"
+    },
+    {
+     "type": "Summit",
+     "action": "add",
+     "lat": 42.44449,
+     "lng": -122.31592,
+     "name": "Mount McLoughlin summit",
+     "evidence": "Peakbagger lidar summit coordinate; all logged tracks top out within 1-21 m of it.",
+     "confirmedBy": "https://www.peakbagger.com/peak.aspx?pid=2465"
+    }
+   ],
+   "facts": [
+    {
+     "field": "watch_out",
+     "month": 7,
+     "text": "A canal crossing near the start has no bridge; in early July it is crossed on logs.",
+     "aids": [
+      "2233196"
+     ]
+    },
+    {
+     "field": "watch_out",
+     "month": 7,
+     "text": "In July the tread fades in the upper scree and braids; pick your own line and watch for painted marks.",
+     "aids": [
+      "3273239",
+      "1962584"
+     ]
+    },
+    {
+     "field": "pro_tips",
+     "month": 9,
+     "text": "White dots and arrows are painted on the rock through the maze section; they stop about 250 ft below the top, so follow the ridge to the summit.",
+     "aids": [
+      "3353884"
+     ]
+    },
+    {
+     "field": "pro_tips",
+     "month": 7,
+     "text": "Roughly two miles in the middle are nearly flat, so the steep part comes late; start early to be off the loose upper mountain in daylight.",
+     "aids": [
+      "1962584"
+     ]
+    },
+    {
+     "field": "watch_out",
+     "month": 7,
+     "text": "In early July bugs are bad below treeline and ease higher up.",
+     "aids": [
+      "2233196"
+     ]
+    },
+    {
+     "field": "pro_tips",
+     "month": 7,
+     "text": "In early July a snowfield below the summit gave a glissade descent, but it ends well away from the trail; check where it lands.",
+     "aids": [
+      "1962584"
+     ]
+    },
+    {
+     "field": "approach_note",
+     "month": 7,
+     "text": "The trailhead charges a fee and has no camping.",
+     "aids": [
+      "3273239"
+     ]
+    },
+    {
+     "field": "monthBreakdown",
+     "month": 10,
+     "text": "By late October snow can lie on the upper trail, though it stays a trail hike in good weather.",
+     "aids": [
+      "3022488"
+     ]
+    }
+   ]
+  }
+ ],
+ "missing": [],
+ "notes": "East Ridge is the only route on the peak and is effectively the standard Mt. McLoughlin Trail #3716 (merged today). Winter/spring ski lines (South Face to East Ridge, from Fish Lake, SE ridge from NF 3650/3661) are variants of the same east-ridge climb, not listed as missing. The route has no stored pins, so trailhead and summit are proposed as adds."
+}

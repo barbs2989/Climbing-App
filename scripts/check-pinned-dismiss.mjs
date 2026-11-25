@@ -25,7 +25,15 @@ import { fileURLToPath } from "node:url";
 // question is asked. Without that, coverage would be a function of how much seed data exists.
 //
 // The popups no flag alone opens (NEEDS_EXTRA_STATE) are built by EXTRA_STATE_OPENERS via `?zx=`
-// and walked after the rest; Compare at 1280px, the only width it renders at.
+// and walked after the rest (an entry with a `viewport` is walked at that width).
+//
+// IT ALSO ASKS WHERE EACH POPUP OPENED (owner, 2026-11-19: "it needs to start you at the top of
+// the page ... the only reason I wouldn't want you to start at the top of the page is when you are
+// editing a specific field"). Before anything is scrolled, every pane in the top layer is read: one
+// that is already scrolled fails, unless OPENS_ELSEWHERE names it with the reason. The openings a
+// flag alone cannot build (the log form asked for its report: the bug that prompted the rule) are
+// TOP_PROBES in the scaffold, opened with `?zp=`; one of them is a control that MUST land scrolled.
+// This reads popups only. A sub-tab or a step that reuses a pane (lib/usePaneTop.js) is not walked.
 //
 // WHAT IT CANNOT SEE: popups no opener can build (listed as skipped, with why), a popup whose
 // only way out is a Cancel/Done (Edit profile's sticky Cancel·Save bar is that shape and is fine),
@@ -39,7 +47,12 @@ import net from "node:net";
 import fs from "node:fs";
 import { chromium } from "playwright-core";
 import { assertQuietBox } from "./lib/quiet-box.mjs";
-import { overlayStates, NEEDS_EXTRA_STATE, EXTRA_STATE_OPENERS, assertKnownOverlays, buildRouteDetailOpener, routeDetailSource } from "./lib/overlay-scaffold.mjs";
+import { overlayStates, NEEDS_EXTRA_STATE, EXTRA_STATE_OPENERS, TOP_PROBES, assertKnownOverlays, buildRouteDetailOpener, routeDetailSource } from "./lib/overlay-scaffold.mjs";
+
+// Popups that open somewhere other than their top ON PURPOSE, by overlay name, each with its reason.
+// Empty is the expected state: the walk opens an overlay by its own state alone, which never carries
+// a field to land on. An entry here is a decision, not a way to quiet a failure.
+const OPENS_ELSEWHERE = {};
 
 assertQuietBox("check:pinned-dismiss");
 const ROOT = fileURLToPath(new URL("..", import.meta.url));
@@ -145,8 +158,14 @@ const scan = () => page.evaluate(async () => {
   const out = [];
   for (const root of roots) {
     const label = root.getAttribute("aria-label") || root.getAttribute("role") || "(unlabelled)";
+    // WHERE IT OPENED, read before this scan moves anything: the furthest any pane is scrolled.
+    const startTop = [root, ...root.querySelectorAll("*")].reduce((n, el) => {
+      if (el.scrollTop < 1) return n;
+      const oy = getComputedStyle(el).overflowY;
+      return oy === "auto" || oy === "scroll" ? Math.max(n, Math.round(el.scrollTop)) : n;
+    }, 0);
     const ctl = [...root.querySelectorAll("button")].filter(isDismiss).filter(visible)[0];
-    if (!ctl) { out.push({ overlay: label, noControl: true }); continue; }
+    if (!ctl) { out.push({ overlay: label, noControl: true, startTop }); continue; }
     const canScroll = (el) => { const cs = getComputedStyle(el); return cs.overflowY === "auto" || cs.overflowY === "scroll"; };
     // Only a pane that HOLDS the control can carry it away; a list scrolling beside the header cannot.
     let moving = [root, ...root.querySelectorAll("*")].filter((el) => canScroll(el) && el.contains(ctl) && el.scrollHeight > el.clientHeight + 1);
@@ -177,7 +196,7 @@ const scan = () => page.evaluate(async () => {
     const travel = moving.reduce((n, s) => n + s.scrollHeight - s.clientHeight, 0);
     for (const s of moving) s.scrollTop = 0;
     if (spacer) spacer.remove();
-    out.push({ overlay: label, scrolls: moving.length > 0, latent: !!spacer, travel, onScreen, reachable, top: Math.round(r.top),
+    out.push({ overlay: label, startTop, scrolls: moving.length > 0, latent: !!spacer, travel, onScreen, reachable, top: Math.round(r.top),
       ctl: (ctl.getAttribute("aria-label") || ctl.textContent || "").trim().slice(0, 30),
       over: hit && !reachable ? (hit.getAttribute("aria-label") || hit.textContent || "").trim().slice(0, 40) + " <" + hit.tagName.toLowerCase() + " " + (hit.getAttribute("style") || "").slice(0, 80) + ">" : "",
       hint: (ctl.parentElement.getAttribute("style") || "").slice(0, 140) });
@@ -193,7 +212,8 @@ const load = async (qs, settle) => {
 const TABS = ["me", "today", "crew", "logbook", "routes", "discover", "ranks", "groups"];
 const notReached = [];        // changed NOTHING on any tab — a real failure to open
 const notFixed = [];          // opened, but is not a fixed overlay — out of this guard's subject
-let checkedOverlays = 0, pinned = 0, outside = 0, noPayload = 0;
+let checkedOverlays = 0, pinned = 0, outside = 0, noPayload = 0, atTop = 0;
+const openedAt = (landed) => Math.max(0, ...landed.rows.map((x) => x.startTop || 0));
 const noControl = [];
 
 // Warm once so the first real navigation is not paying for the module graph.
@@ -289,6 +309,9 @@ for (const name of overlays) {
 
 function judge(name, landed) {
   checkedOverlays++;
+  const down = openedAt(landed);
+  if (down > 1 && !OPENS_ELSEWHERE[name]) fail(name, `opens scrolled ${down}px down, not at its top — a new page starts at the top unless it is editing one specific field (then name it in OPENS_ELSEWHERE with the reason). Look for a scrollIntoView / autoFocus that runs on mount.`);
+  else if (down <= 1) atTop++;
   const rows = landed.rows.filter((x) => !x.noControl);
   if (!rows.length) noControl.push(name);
   const bad = rows.filter((x) => x.scrolls && !(x.onScreen && x.reachable));
@@ -315,6 +338,21 @@ for (const name of overlays.filter((n) => EXTRA_STATE_OPENERS[n])) {
   if (x.viewport) await page.setViewportSize({ width: 390, height: 844 });
   if (err || !r.roots) { fail(name, err ? `its opener threw: ${err}` : "its EXTRA_STATE_OPENERS entry opened nothing — the gate it builds has changed"); continue; }
   judge(name, { tab: "routes" + (x.viewport ? ` @${x.viewport.width}px` : ""), ...r });
+}
+
+// Where the openings no flag alone builds land (TOP_PROBES): at the top, or — the control — on their field.
+let probed = 0;
+for (const [name, p] of Object.entries(TOP_PROBES)) {
+  if (ONLY && !ONLY.includes(name)) continue;
+  await load(`?zt=logbook&zp=${name}`, 3600);
+  const err = await page.evaluate((n) => (window.__overlayOpenErrors || {})[n], name);
+  const r = await scan();
+  if (err || !r.roots) { fail(name, err ? `its opener threw: ${err}` : "its TOP_PROBES entry opened nothing — the state it builds has changed"); continue; }
+  const down = openedAt(r);
+  probed++;
+  if (p.expect === "top" && down > 1) fail(name, `${p.what}: opens scrolled ${down}px down, not at its top`);
+  else if (p.expect === "target" && down <= 1) fail(name, `${p.what}: opened at the top. Either the landing was removed, or this probe can no longer see a scrolled pane — in which case every "top" verdict above is unproven`);
+  else log(`  ${name}`.padEnd(26) + `ok  (${p.expect === "top" ? "opens at its top" : `lands ${down}px down, on its field`}: ${p.what})`);
 }
 
 if (pageErrors.length) fail("page", `uncaught error(s): ${[...new Set(pageErrors)].join(" | ")}`);
@@ -344,10 +382,10 @@ if (notReached.length) {
 if (noControl.length) log(`\n  ${noControl.length} overlay(s) have no ✕ / ← Back at all (a menu, an alert, a stepped flow, a Cancel/Save bar), so nothing here was tested: ${noControl.join(", ")}`);
 
 if (!fails.length) {
-  log(`\ncheck:pinned-dismiss: ok — across ${checkedOverlays} overlay(s), ${pinned} ✕/Back stay on screen scrolled to the end, ${outside} sit outside the pane that scrolls.\n`);
+  log(`\ncheck:pinned-dismiss: ok — across ${checkedOverlays} overlay(s), ${pinned} ✕/Back stay on screen scrolled to the end, ${outside} sit outside the pane that scrolls; ${atTop} open at their top, and ${probed} asked-for opening(s) land where they should.\n`);
   process.exit(0);
 }
-console.error(`\ncheck:pinned-dismiss: ${fails.length} popup(s) whose way out leaves the screen or cannot be tapped:\n`);
+console.error(`\ncheck:pinned-dismiss: ${fails.length} popup(s) whose way out leaves the screen or cannot be tapped, or that do not open where they should:\n`);
 for (const f of fails) console.error("  " + f);
 console.error("");
 process.exit(1);

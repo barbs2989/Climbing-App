@@ -64,9 +64,87 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     total" and read as the whole descent. It now sums only known stations and says "60 m across 2
     of 3" when the line is partial.
 - **THE TOTAL ALWAYS INCLUDES CLIMBING** (owner rule, 2026-10-30). Every planner Total carries the climb: a stored summit leg, a derived one, or the pitch model (`techH`), plus a stored `climbToStartHrs` on a via way in (the climb up a chimney or couloir to reach a linked route's base), added once in `planTimes`. A published whole-day total already includes it and is not added again. The guard is `check:return-leg`'s last five assertions (the Total moves by exactly the stored climb, the return clock with it, and a whole-day total is not double-counted). Where a climbing route (alpine, ice, mixed, trad) has no pitch count, `climbPitches` estimates it from the route length (`routeFt` over one 35 m pitch, at least one), so its climb is in the Total; that Total stays marked "≥" because the count is an estimate. A route with neither a count nor a length has NO climb in its Total, and `audit:climb-in-total` lists it for research rather than inventing a time. Walk-ups and scrambles are never given a climb from their length.
+- **`check:return-leg`: the multi-day pointer is checked by DIRECTION** (2026-11-18). Full trip time says the *Trip plan* is "above" or "below"; the guard reads which word the box uses and asserts the Trip plan really is there. It asserted ABOVE until the alpine Plan tab put timing before the itinerary and the copy turned to "below" — reading the word means neither a reorder nor a copy edit can leave the pointer wrong.
 - **`check:return-leg`** holds the planner's time maths, which live in **`lib/planTimes.js`** since
   2026-10-07 (the Conditions tab's alpine start counts back from the same estimate, so neither may
   compute it for itself). Static SSR through the real `<Calculator/>`, so it sits in `npm run build`.
+  - **A MULTI-DAY ROUTE IS RENDERED AS DAYS since 2026-11-18** (owner: "What if the trip is multiple
+    days?"). The single push added every day into one run from Depart, so 445 of 507 multi-day WA
+    routes showed a red After dark / Overnight (Forbidden's West Ridge summited at 3:54 PM, day 1's
+    walk in stacked on day 2's climb). `summitDayPlan` lays the same `planTimes` estimate out as the
+    walk in, the summit day timed from camp (Depart reads *Leave camp*), and the walk out; reds fell
+    to 115 / 109, and those are a 6 AM camp start that is genuinely late
+    (`scripts/oneoff/measure-multiday-estimate.mjs`). The camp fixture's single-push clocks are now
+    asserted on `planTimes` itself (the Conditions tab still counts back from them), and the rendered
+    summit day on its own two clocks: leave 6:00, summit after 0.59 of the leg, back at camp after the
+    rest. A stored summit leg planTimes did NOT split (walk in and out outside `CAMP_LEG_MATCH`) is
+    split for the CLOCK only when days follow it, 61 WA rows; the trip total and planTimes never move.
+    A climb longer than `SUMMIT_DAY_MAX_H` (20 hr, a traverse) gets no clock, and its days are counted
+    from the plan's hours. Injection: `inject-return-leg-day-cases.mjs` 25/25, its two banner cases
+    repointed at the new copy.
+  - **THE CAMP RULE NEEDS A DAY AFTER THE SUMMIT DAY (2026-11-18, `summitDayIndex`).** When the summit
+    day walks out to the car, the one-total rule stores the summit leg as camp to summit ONE WAY, so the
+    0.59 split halved the climb: Shasta's Avalanche Gulch 2.95 hr up from Helen Lake against 4-6 reported
+    (20 sources), Mount Daniel 2.7 against 4.5, Courtney Peak 1.2. `summitDayFromCamp` now also requires
+    a later day (the summit day is found where the walk-in hours end on the plan). It errs SAFE: a row
+    that still stores a round trip there summits late, and the Conditions start counts back from a
+    longer climb. Pinned by "a 2-day trip whose summit day ends at the CAR"; injection case
+    `camp-rule-on-a-summit-day-that-walks-out` (26/26). The display-only split of an unsplit leg was
+    REMOVED the same day: Goode's NE Buttress ends its summit day at a bivy ON the summit, so splitting
+    put it on top in 5.3 hr against 9. *Leave camp* defaults to 4:00 AM (`calc.camp`, its own input).
+  - **THE 32 SUMMIT DAYS THAT WALK OUT were researched and rewritten the same day**
+    (`audits/2026-11-18-trip-time-summit-day-walks-out.json`, 31 rows; Dragontail's Triple Couloirs was
+    already right): summit leg = camp to summit one way, descent = summit to car. Forbidden's West Ridge
+    6 hr up (10 sources), Stuart's Ice Cliff Glacier 7, Argonaut South Face 6. A summit reached ON THE
+    WALK IN (Courtney Peak: approach 5 + summit 1 inside a 7.5 hr day 1) gets no clock (`why: "enroute"`).
+    **102 multi-day rows whose summit leg the camp rule left unsplit with later days after it** (plus
+    Eldorado NE Face) are being researched to ONE convention: summit leg = camp to summit one way, the
+    summit day's hours = that leg + the way back to camp, so the plan's own hours say which way the leg
+    runs (`summitLegOneWay` in `lib/planTimes.js`; guard "a summit day LONGER than the summit leg reads
+    the leg one way"). 16 rewritten 2026-11-18 (`audits/2026-11-18-trip-time-camp-summit-days.json`):
+    Forbidden North Ridge 13 hr "up" was ridge + whole descent, now 5 up from the bivy; Eldorado East
+    Ridge 7 was a round trip, now 3; Beckey-Davis, Boving-Christensen and Energizer Bunny had every
+    section label shifted one row. 16 more the same day: Baker North Ridge's summit leg also held the
+    Coleman-Deming descent; Huckleberry's 1.3 hr descent could not cover camp plus a 7-mile walk out;
+    Klawatti's 1 hr was only the col-to-summit scramble; Torment-Forbidden's "~40 hr" was elapsed
+    time, now 30.5 on the move. 14 more after that (46 of the 103 in all): NW Mox's and Primus's
+    summit legs were round trips; the East Fury traverse's 5 hr total was the ridge alone, now 30.
+    A second, deeper pass on the 57 held rows the same night moved 10 to medium and applied them
+    (Prusik's Craggers' Delight and Sail Away, Gato Negro, Poltergeist, Sitkum, Spickard Silver
+    Glacier, Sinister SW, Eldorado NW, Smears Jugs, Fortress SW; 56 of the 103 in all).
+    Of the 47 still at low confidence, 39 stored blank or fragmentary times (Agnes showed 19.4 hr for
+    a 5-day trip; several stored only the 0.5 hr camp-to-base walk as the "approach"); the owner chose
+    to write their researched, consistent proposals anyway (marked `confidence: "low"`,
+    `ownerApproved` in the audit; 95 of the 103 in all). **STILL OPEN:** 8 rows whose stored times
+    already add up but whose split the evidence questions (Willis Wall, Ghost, Dot, Dragontail
+    Gerber-Sink, Barnes, Sentinel, Ferry, North Star) — left as they are. The forum and guide pages
+    that would settle them refuse automated fetches, so a third web pass is unlikely to move them; a
+    climber's logged time is the way. **Blank day hours** (same day, `audits/2026-11-18-trip-time-blank-days.json`):
+    the catalog census found 45 multi-day plans with some or all day hours blank and 4 rows with three
+    legs but no total. The 4 got the sum of their legs; 35 of the 45 were researched and written (11
+    medium, 24 low on blank or fragmentary times). 10 were held, and on the owner's "do what you
+    recommend" 6 were then written (`secondDecision` in the audit): both Adams routes and Aiguille North
+    Ridge (their stored descents could not cover the walk out), Ragged Ridge (its 13-14 hr wording is
+    the labelled one-day option), Challenger (legs and section notes moved to the Easy Ridge trip its
+    day plan and summary describe; 26 -> 37 hr), and Jötnar (168 hr was the first ascent's elapsed
+    week; now a four-day plan, 41 hr). **STILL OPEN:** 4 left as they are — Buckindy (its text says two
+    or three days each way, one timed report did it in a day), Gilbert (three-peak plan, one-peak
+    legs), Dana (no reports) and Bacon (legs mix two approaches). The 129 crag routes
+    with only an approach figure and no total print one number and contradict nothing; left. The Suiattle
+    River Road routes (Sinister, Spire Point, Gunsight, Dome, Frostbite Ridge) now walk the 8 closed
+    road miles of the order in force since 2026-11-05 IN their day hours; the earlier closure pass had
+    added the road miles but not the hours (`audits/closure-distance/README.md`). Re-run with the same brief per row; a row whose summit day already equals its leg is
+    read as a round trip by the camp rule meanwhile.
+  - **ACCURACY, measured 2026-11-18** (`audits/2026-11-18-multiday-estimate-accuracy.json`): on 15 of a
+    28-route sample with reported leg times, the summit-day view's time up from camp was 0.98x reported
+    where the summit day ends at the car and 1.02x where later days follow; the whole summit day ran
+    1.14-1.17x (long, the safe side). Reading a car-ending summit leg as ONE WAY instead of the camp
+    rule's round trip scored worse (1.67x), so `CAMP_LEG_MATCH` stays: the stored leg's meaning varies
+    by row, and the misses are row data (Goode NE Buttress up 5.3 hr vs 10.5 reported, Dark Peak 5.3 vs
+    8, Daniel's summit day 15 vs 7, Shasta's Avalanche Gulch 2.95 vs 4.5). The evidence is search
+    snippets, mostly low confidence; do not bulk-rewrite rows from it. A whole-trip-only route shows
+    the total alone: the walk-model legs beside it never added up to it (Indian Head, 9.5 + 13.6 + 8.6
+    over 13.6).
   - **THE WALK IS TWO LEGS.** One `scarfHrs()` used to charge gain AND loss before the summit, so the
     descent was walked on the way UP: on the 352 gain≈loss rows Est. summit EQUALLED Est. return, and a
     pitched route's return had no walk out at all. Now `up` = distance + gain, `down` = distance +
@@ -1164,3 +1242,45 @@ trip** row, and `tripH` (lib/planTimes.js) is defined as `retH - depart` so the 
 disagree. A whole-day published figure is already car-to-car and is not given a descent on top (the Descent tile
 reads "incl."). `totalH` is unchanged: the summit clock and the alpine start count back from it.
 `check:return-leg` holds Total trip = Approach + Climbing + Descent.
+
+## Approach loss and return regain: `check:leg-loss-regain` (2026-11-14)
+
+Owner, 2026-11-14: *"mt goode northeast buttress has a pretty big descent on the approach, but the stats
+don't show that"*, then *"i dont want to have to do any of our own math, all the information should be
+online"*. The leg cards print **Loss** (downhill on the way to the summit) and **Regain** (uphill on the way
+back) ONLY from `routes.approach_loss_ft` / `return_gain_ft` (0449), which the research pipeline writes with
+their sources in `route_field_evidence` (0437). `publishedLegClimb()` in `lib/tripLegs.js` only reads them.
+
+- **Do not measure them.** PR #3352 summed the recorded track's heights (`measuredLegClimb`); the owner
+  replaced that the same day. The guard fails if the helper or either card reads `elevPts` or a track.
+- **`loss_ft` cannot stand in.** It holds two conventions (the descent to the car, or only the dips on the
+  way in) and on some rows a gain filed as a loss; the audit is `research-data/gain-loss-audit-2026-11-14/`.
+- **A loop's stored gain is the whole outing**, so the TRAILHEAD TO SUMMIT leg prints no gain of its own
+  (Goode NE Buttress read 10,700 ft to a summit 4,720 ft above its trailhead); the note states the outing's.
+- **Blind spot:** it renders synthetic routes; it cannot tell whether a stored figure is the one the source
+  states. That is the ledger's job (`check:research-locks`, enrich:apply).
+
+## The trip-plan shape: `check:itinerary-shape` and `audit:itinerary-shape`
+
+Owner, 2026-11-11: *"text only plans convert day by day, make that a rule in the app when we do other
+routes and states."* The rule is ONE function, `itineraryShapeErrors` in `lib/itineraryShape.js`:
+a route's `itinerary` is null or `{ days: [ … ] }` with typed figures (the SHAPE every stored plan
+has), and a new or converted plan must also pass `{ complete: true }` (every day titled, <= 60
+characters, with hours, miles or gain).
+
+- **`check:itinerary-shape`** (in build, offline) runs the rule's fixed cases (a real stored plan,
+  Bonanza Peak's Mary Green Glacier, must pass; prose with and without Day markers, a bare day list,
+  text figures and `hours: "45 min"` must not; a stored day with no title passes, a new one does not)
+  and then finds every WRITER: each `scripts/pipeline/*.mjs` that maps an `itinerary:` into a row and
+  every `scripts/oneoff/apply-trip-plans-*.mjs`. Each must import and call `itineraryShapeErrors`. It
+  dies, rather than passing, if it finds fewer than three writers. Its first run caught the wave 1
+  apply script, which had its own checks but not the shared rule.
+  - **Cannot see:** a writer that is not in those two places (a hand-pasted SQL update, the SQL
+    Editor). Migration 0409 is what stops those.
+- **`audit:itinerary-shape`** (hand-run, service key) reads every live plan. It FAILS on prose or a
+  malformed plan and REPORTS gap days (a day with no hours, miles or gain), which are not failures:
+  the page shows them as gaps with *+ Add*. First run, 2026-11-11: 842 plans, 310 prose, 0 otherwise
+  malformed once title length moved to the `complete` bar (11 stored plans have a longer title that
+  wraps fine; Bacon Peak's three days have none). Run it after any batch that writes `itinerary`, and
+  BEFORE applying 0409: Postgres re-checks a CHECK constraint on every UPDATE of a row, even a
+  `NOT VALID` one, so adding it while one prose row remains makes every later edit of that row fail.

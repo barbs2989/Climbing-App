@@ -8,8 +8,8 @@
 // never from the request body. An admin account is refused (deleting the only reviewer would leave
 // every report unanswered; hand that over first).
 // Order matters, because each step makes the next one possible:
-//   1. their uploaded FILES (topo-photos/<uid>/…, guide-documents/<uid>/…) — a row delete leaves a
-//      file reachable at its public URL;
+//   1. their uploaded FILES (topo-photos/<uid>/…) — a row delete leaves a file reachable at its
+//      public URL (the guide-documents bucket went with the guide feature, 0445);
 //   2. their contributions — `contributor` is text, not a foreign key, so nothing would cascade;
 //   3. the auth user — everything else is keyed to it and cascades (0266 made the last nine
 //      blocking foreign keys cascade or set null).
@@ -22,6 +22,8 @@ const corsHeaders = {
   "Access-Control-Allow-Origin": "*",
   "Access-Control-Allow-Methods": "POST, OPTIONS",
   "Access-Control-Allow-Headers": "authorization, x-client-info, apikey, content-type",
+  // Responses carry per-user results; never let a CDN or browser cache hold one.
+  "Cache-Control": "no-store",
 };
 const json = (body: unknown, status = 200) =>
   new Response(JSON.stringify(body), { status, headers: { ...corsHeaders, "Content-Type": "application/json" } });
@@ -58,7 +60,7 @@ serve(async (req) => {
     const { data: prof } = await supabase.from("profiles").select("is_admin").eq("id", uid).maybeSingle();
     if (prof && prof.is_admin) return json({ error: "An admin account can’t delete itself here — hand ClimbMatch Safety to another admin first." }, 409);
 
-    const files = (await removePrefix(supabase, "topo-photos", uid)) + (await removePrefix(supabase, "guide-documents", uid));
+    const files = await removePrefix(supabase, "topo-photos", uid);
     const { error: cErr } = await supabase.from("contributions").delete().eq("contributor", uid);
     if (cErr) throw new Error("contributions: " + cErr.message);
     const { error: dErr } = await supabase.auth.admin.deleteUser(uid);

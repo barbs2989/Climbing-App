@@ -1,6 +1,6 @@
 import { C, SUB_LABEL, uElev } from "../../ClimbMatchCore.jsx";
 import { planTimes } from "../../lib/planTimes.js";
-import { tripLegGeometry, fmtLegKm, fmtLegHrs } from "../../lib/tripLegs.js";
+import { tripLegGeometry, fmtLegKm, fmtLegHrs, publishedLegClimb } from "../../lib/tripLegs.js";
 
 export interface DescentLegStripProps {
   route: Parameters<typeof tripLegGeometry>[0];
@@ -18,7 +18,7 @@ export interface DescentLegStripProps {
 export default function DescentLegStrip({route,calc}: DescentLegStripProps){
   const pt=planTimes(route,calc);const g=tripLegGeometry(route);
   if(pt.publishedIsWholeDay||!g.legKm)return null;
-  const rowsAll: ([string, string] | null)[]=[["Distance","~"+fmtLegKm(g.legKm)],g.dropFt?["Drop","↓ "+uElev(g.dropFt)]:null,["Time",fmtLegHrs(pt.downH,!pt.walkOutKnown)]];
+  const rowsAll: ([string, string] | null)[]=[["Distance","~"+fmtLegKm(g.legKm)],g.dropFt?["Drop","↓ "+uElev(g.dropFt)]:null,(function(){const pc=publishedLegClimb(route);return pc.downGain?["Regain","↑ "+uElev(pc.downGain)] as [string,string]:null;})(),pt.descentTimed?["Time",fmtLegHrs(pt.downH,!pt.walkOutKnown)]:null];
   const rows=rowsAll.filter(function(s): s is [string, string] {return s!==null;});
   return <div style={{background:C.surface,borderRadius:10,padding:"8px 12px",marginBottom:8,border:"1px solid "+C.border}}>
     <div style={{...SUB_LABEL,marginBottom:5}}>{"SUMMIT TO TRAILHEAD"}</div>

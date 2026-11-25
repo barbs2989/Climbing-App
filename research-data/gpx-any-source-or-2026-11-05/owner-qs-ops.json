@@ -1,0 +1,643 @@
+[
+ {
+  "op": "patch",
+  "key": "volcano-ice-rows",
+  "id": "or_broken_top_2_full_richardson",
+  "area_id": "or_broken_top",
+  "name": "Full Richardson",
+  "expect": {
+   "discipline": "ice"
+  },
+  "set": {
+   "discipline": "alpine",
+   "disciplines": [
+    "alpine",
+    "ice",
+    "mixed"
+   ]
+  }
+ },
+ {
+  "op": "patch",
+  "key": "volcano-ice-rows",
+  "id": "or_high_noon_3",
+  "area_id": "or_broken_top",
+  "name": "High Noon",
+  "expect": {
+   "discipline": "ice"
+  },
+  "set": {
+   "discipline": "alpine",
+   "disciplines": [
+    "alpine",
+    "ice"
+   ]
+  }
+ },
+ {
+  "op": "patch",
+  "key": "volcano-ice-rows",
+  "id": "or_east_side_2_black_spider_fric_amos",
+  "area_id": "or_east_side_2",
+  "name": "Black Spider - Fric-Amos",
+  "expect": {
+   "discipline": "ice"
+  },
+  "set": {
+   "discipline": "alpine",
+   "disciplines": [
+    "alpine",
+    "ice",
+    "trad",
+    "mixed"
+   ]
+  }
+ },
+ {
+  "op": "patch",
+  "key": "volcano-ice-rows",
+  "id": "or_east_side_2_black_spider_three_little_monkeys_burkhardt_getlin",
+  "area_id": "or_east_side_2",
+  "name": "Black Spider - Three Little Monkeys (Burkhardt-Getlin)",
+  "expect": {
+   "discipline": "ice"
+  },
+  "set": {
+   "discipline": "alpine",
+   "disciplines": [
+    "alpine",
+    "ice",
+    "trad",
+    "mixed"
+   ]
+  }
+ },
+ {
+  "op": "patch",
+  "key": "volcano-ice-rows",
+  "id": "or_east_side_2_wy_east",
+  "area_id": "or_east_side_2",
+  "name": "Wy'East",
+  "expect": {
+   "discipline": "ice"
+  },
+  "set": {
+   "discipline": "alpine",
+   "disciplines": [
+    "alpine",
+    "ice"
+   ]
+  }
+ },
+ {
+  "op": "patch",
+  "key": "volcano-ice-rows",
+  "id": "or_h_mt_thielsen_east_face_aka_brainless_child_tyler_adams_memorial_rout",
+  "area_id": "or_mt_thielsen",
+  "name": "East Face aka \"Brainless Child\" (Tyler Adams Memorial Route)",
+  "expect": {
+   "discipline": "ice"
+  },
+  "set": {
+   "discipline": "alpine",
+   "disciplines": [
+    "alpine",
+    "ice",
+    "trad"
+   ]
+  }
+ },
+ {
+  "op": "patch",
+  "key": "volcano-ice-rows",
+  "id": "or_h_mt_thielsen_western_gulch",
+  "area_id": "or_mt_thielsen",
+  "name": "Western Gulch",
+  "expect": {
+   "discipline": "ice"
+  },
+  "set": {
+   "discipline": "alpine",
+   "disciplines": [
+    "alpine",
+    "ice"
+   ]
+  }
+ },
+ {
+  "op": "patch",
+  "key": "volcano-ice-rows",
+  "id": "or_ice_lake_peaks_exegesis",
+  "area_id": "or_ice_lake_peaks",
+  "name": "Exegesis",
+  "expect": {
+   "discipline": "ice"
+  },
+  "set": {
+   "discipline": "alpine",
+   "disciplines": [
+    "alpine",
+    "ice",
+    "trad",
+    "mixed"
+   ]
+  }
+ },
+ {
+  "op": "patch",
+  "key": "volcano-ice-rows",
+  "id": "or_south_side_devil_s_kitchen_headwall_dkh_left_variation",
+  "area_id": "or_south_side",
+  "name": "Devil's Kitchen Headwall (DKH) - Left Variation",
+  "expect": {
+   "discipline": "ice"
+  },
+  "set": {
+   "discipline": "alpine",
+   "disciplines": [
+    "alpine",
+    "ice"
+   ]
+  }
+ },
+ {
+  "op": "patch",
+  "key": "volcano-ice-rows",
+  "id": "or_south_side_devil_s_kitchen_headwall_dkh_right_variation",
+  "area_id": "or_south_side",
+  "name": "Devil's Kitchen Headwall (DKH) - Right Variation",
+  "expect": {
+   "discipline": "ice"
+  },
+  "set": {
+   "discipline": "alpine",
+   "disciplines": [
+    "alpine",
+    "ice"
+   ]
+  }
+ },
+ {
+  "op": "patch",
+  "key": "volcano-ice-rows",
+  "id": "or_south_side_east_crater_wall_dkh_v4",
+  "area_id": "or_south_side",
+  "name": "East Crater Wall (DKH V4)",
+  "expect": {
+   "discipline": "ice"
+  },
+  "set": {
+   "discipline": "alpine",
+   "disciplines": [
+    "alpine",
+    "ice"
+   ]
+  }
+ },
+ {
+  "op": "patch",
+  "key": "volcano-ice-rows",
+  "id": "or_south_side_flying_buttress_dkh_v3",
+  "area_id": "or_south_side",
+  "name": "Flying Buttress (DKH V3)",
+  "expect": {
+   "discipline": "ice"
+  },
+  "set": {
+   "discipline": "alpine",
+   "disciplines": [
+    "alpine",
+    "ice"
+   ]
+  }
+ },
+ {
+  "op": "patch",
+  "key": "volcano-ice-rows",
+  "id": "or_south_side_icefall_chute_boy_scouts_chute",
+  "area_id": "or_south_side",
+  "name": "Icefall Chute (Boy Scouts Chute)",
+  "expect": {
+   "discipline": "ice"
+  },
+  "set": {
+   "discipline": "alpine",
+   "disciplines": [
+    "alpine",
+    "ice"
+   ]
+  }
+ },
+ {
+  "op": "patch",
+  "key": "volcano-ice-rows",
+  "id": "or_south_side_men_of_steel",
+  "area_id": "or_south_side",
+  "name": "Men of Steel",
+  "expect": {
+   "discipline": "ice"
+  },
+  "set": {
+   "discipline": "alpine",
+   "disciplines": [
+    "alpine",
+    "ice"
+   ]
+  }
+ },
+ {
+  "op": "patch",
+  "key": "volcano-ice-rows",
+  "id": "or_south_side_steel_cliff_south_face",
+  "area_id": "or_south_side",
+  "name": "Steel Cliff South Face",
+  "expect": {
+   "discipline": "ice"
+  },
+  "set": {
+   "discipline": "alpine",
+   "disciplines": [
+    "alpine",
+    "ice"
+   ]
+  }
+ },
+ {
+  "op": "patch",
+  "key": "volcano-ice-rows",
+  "id": "or_south_sister_2_north_face_couloir",
+  "area_id": "or_south_sister",
+  "name": "North Face Couloir",
+  "expect": {
+   "discipline": "ice"
+  },
+  "set": {
+   "discipline": "alpine",
+   "disciplines": [
+    "alpine",
+    "ice"
+   ]
+  }
+ },
+ {
+  "op": "patch",
+  "key": "volcano-ice-rows",
+  "id": "or_south_sister_2_north_face_of_the_northwest_ridge",
+  "area_id": "or_south_sister",
+  "name": "North Face of the Northwest Ridge",
+  "expect": {
+   "discipline": "ice"
+  },
+  "set": {
+   "discipline": "alpine",
+   "disciplines": [
+    "alpine",
+    "ice"
+   ]
+  }
+ },
+ {
+  "op": "patch",
+  "key": "volcano-ice-rows",
+  "id": "or_south_sister_2_silver_couloir",
+  "area_id": "or_south_sister",
+  "name": "Silver Couloir",
+  "expect": {
+   "discipline": "ice"
+  },
+  "set": {
+   "discipline": "alpine",
+   "disciplines": [
+    "alpine",
+    "ice"
+   ]
+  }
+ },
+ {
+  "op": "patch",
+  "key": "volcano-ice-rows",
+  "id": "or_north_side_cathedral_ramp",
+  "area_id": "or_north_side",
+  "name": "Cathedral Ramp",
+  "expect": {
+   "discipline": "ice"
+  },
+  "set": {
+   "discipline": "alpine",
+   "disciplines": [
+    "alpine",
+    "ice",
+    "mixed"
+   ]
+  }
+ },
+ {
+  "op": "patch",
+  "key": "volcano-ice-rows",
+  "id": "or_north_side_eliot_glacier_headwall",
+  "area_id": "or_north_side",
+  "name": "Eliot Glacier Headwall",
+  "expect": {
+   "discipline": "ice"
+  },
+  "set": {
+   "discipline": "alpine",
+   "disciplines": [
+    "alpine",
+    "ice"
+   ]
+  }
+ },
+ {
+  "op": "patch",
+  "key": "volcano-ice-rows",
+  "id": "or_north_side_north_face_left_gully",
+  "area_id": "or_north_side",
+  "name": "North Face Left Gully",
+  "expect": {
+   "discipline": "ice"
+  },
+  "set": {
+   "discipline": "alpine",
+   "disciplines": [
+    "alpine",
+    "ice"
+   ]
+  }
+ },
+ {
+  "op": "patch",
+  "key": "volcano-ice-rows",
+  "id": "or_north_side_north_face_right_gully",
+  "area_id": "or_north_side",
+  "name": "North Face Right Gully",
+  "expect": {
+   "discipline": "ice"
+  },
+  "set": {
+   "discipline": "alpine",
+   "disciplines": [
+    "alpine",
+    "ice",
+    "trad"
+   ]
+  }
+ },
+ {
+  "op": "patch",
+  "key": "volcano-ice-rows",
+  "id": "or_north_side_ravine",
+  "area_id": "or_north_side",
+  "name": "Ravine",
+  "expect": {
+   "discipline": "ice"
+  },
+  "set": {
+   "discipline": "alpine",
+   "disciplines": [
+    "alpine",
+    "ice",
+    "trad",
+    "mixed"
+   ]
+  }
+ },
+ {
+  "op": "patch",
+  "key": "volcano-ice-rows",
+  "id": "or_north_sister_2_east_buttress",
+  "area_id": "or_north_sister",
+  "name": "East Buttress",
+  "expect": {
+   "discipline": "ice"
+  },
+  "set": {
+   "discipline": "alpine",
+   "disciplines": [
+    "alpine",
+    "ice",
+    "mixed"
+   ]
+  }
+ },
+ {
+  "op": "patch",
+  "key": "volcano-ice-rows",
+  "id": "or_north_sister_2_kids",
+  "area_id": "or_north_sister",
+  "name": "KIDS",
+  "expect": {
+   "discipline": "ice"
+  },
+  "set": {
+   "discipline": "alpine",
+   "disciplines": [
+    "alpine",
+    "ice"
+   ]
+  }
+ },
+ {
+  "op": "patch",
+  "key": "volcano-ice-rows",
+  "id": "or_north_sister_2_thayer_glacier_headwall",
+  "area_id": "or_north_sister",
+  "name": "Thayer Glacier Headwall",
+  "expect": {
+   "discipline": "ice"
+  },
+  "set": {
+   "discipline": "alpine",
+   "disciplines": [
+    "alpine",
+    "ice",
+    "mixed"
+   ]
+  }
+ },
+ {
+  "op": "patch",
+  "key": "volcano-ice-rows",
+  "id": "or_west_side_3_cathedral_ridge",
+  "area_id": "or_west_side_3",
+  "name": "Cathedral Ridge",
+  "expect": {
+   "discipline": "ice"
+  },
+  "set": {
+   "discipline": "alpine",
+   "disciplines": [
+    "alpine",
+    "ice"
+   ]
+  }
+ },
+ {
+  "op": "patch",
+  "key": "volcano-ice-rows",
+  "id": "or_west_side_3_leuthold_couloir",
+  "area_id": "or_west_side_3",
+  "name": "Leuthold Couloir",
+  "expect": {
+   "discipline": "ice"
+  },
+  "set": {
+   "discipline": "alpine",
+   "disciplines": [
+    "alpine",
+    "ice"
+   ]
+  }
+ },
+ {
+  "op": "patch",
+  "key": "volcano-ice-rows",
+  "id": "or_west_side_3_reid_glacier_headwall",
+  "area_id": "or_west_side_3",
+  "name": "Reid Glacier Headwall",
+  "expect": {
+   "discipline": "ice"
+  },
+  "set": {
+   "discipline": "alpine",
+   "disciplines": [
+    "alpine",
+    "ice"
+   ]
+  }
+ },
+ {
+  "op": "patch",
+  "key": "volcano-ice-rows",
+  "id": "or_west_side_3_sandy_glacier_headwall",
+  "area_id": "or_west_side_3",
+  "name": "Sandy Glacier Headwall",
+  "expect": {
+   "discipline": "ice"
+  },
+  "set": {
+   "discipline": "alpine",
+   "disciplines": [
+    "alpine",
+    "ice",
+    "trad"
+   ]
+  }
+ },
+ {
+  "op": "patch",
+  "key": "volcano-ice-rows",
+  "id": "or_west_side_3_yocum_ridge",
+  "area_id": "or_west_side_3",
+  "name": "Yocum Ridge",
+  "expect": {
+   "discipline": "ice"
+  },
+  "set": {
+   "discipline": "alpine",
+   "disciplines": [
+    "alpine",
+    "ice"
+   ]
+  }
+ },
+ {
+  "op": "patch",
+  "key": "thielsen-partly-void",
+  "id": "or_h_mt_thielsen_northwest_arete",
+  "area_id": "or_mt_thielsen",
+  "name": "Northwest Arete",
+  "expect": {
+   "discipline": "trad"
+  },
+  "set": {
+   "discipline": "alpine",
+   "disciplines": [
+    "alpine",
+    "trad"
+   ]
+  }
+ },
+ {
+  "op": "patch",
+  "key": "thielsen-partly-void",
+  "id": "or_h_mt_thielsen_northeast_buttress_mclaughlin_memorial_route",
+  "area_id": "or_mt_thielsen",
+  "name": "Northeast Buttress (McLaughlin Memorial Route)",
+  "expect": {
+   "discipline": "trad"
+  },
+  "set": {
+   "discipline": "alpine",
+   "disciplines": [
+    "alpine",
+    "trad"
+   ]
+  }
+ },
+ {
+  "op": "patch",
+  "key": "mcloughlin-discipline",
+  "id": "or_mt_mcloughlin_east_ridge",
+  "area_id": "or_mt_mcloughlin",
+  "name": "East Ridge",
+  "expect": {
+   "disciplines": [
+    "mountaineering",
+    "alpine"
+   ]
+  },
+  "set": {
+   "disciplines": [
+    "mountaineering"
+   ]
+  }
+ },
+ {
+  "op": "patch",
+  "key": "petes-point",
+  "id": "or_aneroid_lake_peaks_pete_s_point",
+  "area_id": "or_aneroid_lake_peaks",
+  "name": "Pete's Point",
+  "fill": {
+   "season": "Jun-Jul"
+  }
+ },
+ {
+  "op": "patch",
+  "key": "red-eye-peking",
+  "id": "or_peking",
+  "area_id": "or_u_red_wall_routes",
+  "name": "Peking",
+  "expect": {
+   "pitches": 3
+  },
+  "set": {
+   "pitches": 2
+  }
+ },
+ {
+  "op": "patch",
+  "key": "jefferson-center-ridge",
+  "id": "or_center_ridge",
+  "area_id": "or_mt_jefferson",
+  "name": "Center Ridge",
+  "expect": {
+   "overview": null,
+   "approach": null,
+   "descent_text": null
+  },
+  "set": {
+   "name": "West Rib",
+   "alt_names": [
+    "Center Ridge"
+   ]
+  },
+  "fill": {
+   "season": "Jun-Sep",
+   "overview": "A straight line up the west side of Mount Jefferson to the summit pinnacle. The lower ridge is moderate snow; the pinnacle is sound rock. Protection is rarely needed until the pinnacle, so most parties carry a few pickets or screws for the snow and a light rack of nuts and slings for the top. The face holds shade well into the morning.",
+   "approach": "Reached from the west off the Pacific Crest Trail, starting from either the Pamelia Lake or the Woodpecker Ridge trailhead. The walk in is long; check which permit applies to the trailhead you choose.",
+   "descent_text": "Reverse the ridge, or traverse north around the pinnacle to its east side and downclimb loose fourth-class rock from there. Rockfall is common."
+  }
+ }
+]

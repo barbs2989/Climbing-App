@@ -1,0 +1,594 @@
+[
+ {
+  "id": "wa_northwest_face_2",
+  "itinerary": {
+   "cal": "Climbable once the Kangaroo Pass approach melts out, typically July through September. Done as a single car-to-car day; a Northwest Forest Pass covers parking and no climbing permit is needed.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Car-to-car via Kangaroo Pass",
+     "objective": "Climb the Northwest Face and rappel to the north notch",
+     "note": "From the hairpin, a faint cairned climbers' path crosses boulders and sandy gullies to Kangaroo Pass in about an hour, then traverses to the gully toward the North Ridge notch; leave it on a bench trail about 200 ft below the notch to reach the face. Four to six pitches of sustained 5.7 (squeeze chimney, then a 5.7+ lieback on P2) lead to the summit ridge, followed by two to three single-rope rappels on the north side to the notch.",
+     "gainFt": 2425,
+     "lossFt": 2425,
+     "hours": 11,
+     "miles": 6,
+     "packLb": 20,
+     "schedule": [
+      {
+       "time": "Start",
+       "label": "Leave the hairpin turnout",
+       "detail": "Climbers' path across the boulder field toward Kangaroo Pass."
+      },
+      {
+       "time": "~+1:00",
+       "label": "Kangaroo Pass",
+       "detail": "About an hour from the car in one report; another took longer to the base."
+      },
+      {
+       "time": "~+2:15",
+       "label": "Base of the Northwest Face",
+       "detail": "Via the bench trail about 200 ft below the North Ridge notch; allow ~30 min to gear up."
+      },
+      {
+       "time": "~+2.5-4 h on route",
+       "label": "Summit",
+       "detail": "Parties report 2.5 to just over 4 hours on the route depending on size and variations."
+      },
+      {
+       "time": "~+1:30 after summit",
+       "label": "North notch",
+       "detail": "Two to three single-rope rappels; waits for other parties are common."
+      },
+      {
+       "time": "~11 h total",
+       "label": "Back at the car",
+       "detail": "Roughly an hour from the notch back to the pass and another hour down to the highway."
+      }
+     ]
+    }
+   ],
+   "totalNote": "A one-day, roughly 11-hour car-to-car outing: an hour or two of climbers' path to Kangaroo Pass and the face, four to six pitches of 5.7, and north-side rappels back to the notch."
+  },
+  "sources": [
+   "https://alpinedave.com/kangaroo/kangaroo_nw.html",
+   "https://apps.yellowleaf.org/scramble/g/r/2006-09-23-kangaroo.html"
+  ],
+  "confidence": "medium",
+  "notes": "Gain 2,425 ft matches both the row and the Yellowleaf report. The 6.0 mi round-trip figure and 11-hour car-to-car come from The Mountaineers route listing (seen only as a search excerpt; the page returns 403), so miles are less certain. Yellowleaf segment times sum to ~13.6 h although the page headline says 11h38m; schedule uses relative times because no clock times were published. Row dist_km is null."
+ },
+ {
+  "id": "wa_prusik_peak_taylor_wood_route",
+  "itinerary": {
+   "cal": "July through September, once Aasgard Pass sheds most of its snow. Overnight stays in the Enchantments need an advance lottery/permit (May 15 - Oct 15), so most parties plan three days around their permit dates.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Hike over Aasgard Pass to Gnome Tarn",
+     "objective": "Reach the Gnome Tarn bivy below the south face",
+     "note": "From the Stuart Lake trailhead go to Colchuck Lake (about 4 mi, 2,300 ft), then grind up Aasgard Pass (about 2,200 ft in under a mile) to 7,800 ft and cross the Core past Isolation and Tranquil lakes to Gnome Tarn. Total is roughly 8 mi; gain uses WTA's 4,500 ft to the pass and loss is an estimate for the drop to the tarn.",
+     "gainFt": 4500,
+     "lossFt": 500,
+     "hours": 8,
+     "miles": 8,
+     "packLb": 40,
+     "schedule": []
+    },
+    {
+     "n": 2,
+     "title": "Climb the Taylor-Wood Route",
+     "objective": "Climb 8-10 pitches to the east summit and rappel",
+     "note": "Walk 20 minutes from Gnome Tarn to the south face, pass the Beckey-Davis start and continue right past the big tilted slab. The first-ascent party took about 10 hours for roughly 670 ft of 5.9+; descend by five rappels down the couloir to the right with easy scrambling to the base, or by the Stanley-Burgner north-side rappels (a single 60 m rope works).",
+     "gainFt": 900,
+     "lossFt": 900,
+     "hours": 11,
+     "miles": 1,
+     "packLb": 15,
+     "schedule": []
+    },
+    {
+     "n": 3,
+     "title": "Hike out via the Snow Lakes",
+     "objective": "Descend past Viviane, Snow and Nada lakes",
+     "note": "The Snow Lakes trail is about 10 mi from the Prusik area and loses more than a mile of elevation; one party took just under 6 hours from the base of Prusik to the car. This needs a car or shuttle at the Snow Lakes trailhead; reversing Aasgard Pass is the alternative.",
+     "gainFt": 300,
+     "lossFt": 5800,
+     "hours": 6,
+     "miles": 10,
+     "packLb": 38,
+     "schedule": []
+    }
+   ],
+   "totalNote": "A three-day Enchantments trip: over Aasgard Pass to Gnome Tarn, a long day on the 8-10 pitch Taylor-Wood (about 10 hours for the first ascent), and out the Snow Lakes trail."
+  },
+  "sources": [
+   "https://www.mountainproject.com/route/124913765/taylor-wood-route",
+   "https://www.mountainproject.com/area/105808510/prusik-peak",
+   "https://stephabegg.com/?p=58486",
+   "https://stephabegg.com/?p=8743",
+   "https://www.wta.org/go-hiking/hikes/enchantment-lakes",
+   "https://www.wta.org/go-hiking/hikes/colchuck-lake"
+  ],
+  "confidence": "medium",
+  "notes": "Mileages: Colchuck 4 mi one-way (WTA); MP says the Snow Lakes approach is ~10 mi and ~2 mi longer than via Colchuck/Aasgard, giving ~8 mi in; WTA thru-hike 18 mi total agrees with the 8 + 10 split. Day 1 loss, day 2 gain/loss and day 3 loss are estimates derived from published elevations (Aasgard 7,800 ft, summit 8,008 ft, Snow Lakes descent >1 mile); day 1 hours are an estimate. MP sidebar says 8 pitches but its text says 10 (two summit pitches added later); SummitPost FA report lists 5.9+/5.10-. Row gain/dist are null."
+ },
+ {
+  "id": "wa_prusik_peak_sail_away",
+  "itinerary": {
+   "cal": "July through September, once Aasgard Pass sheds most of its snow. Overnight stays in the Enchantments need an advance lottery/permit (May 15 - Oct 15), so most parties plan three days around their permit dates.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Hike over Aasgard Pass to Gnome Tarn",
+     "objective": "Reach the Gnome Tarn bivy below the south face",
+     "note": "From the Stuart Lake trailhead go to Colchuck Lake (about 4 mi, 2,300 ft), then grind up Aasgard Pass (about 2,200 ft in under a mile) to 7,800 ft and cross the Core past Isolation and Tranquil lakes to Gnome Tarn. Total is roughly 8 mi; gain uses WTA's 4,500 ft to the pass and loss is an estimate for the drop to the tarn.",
+     "gainFt": 4500,
+     "lossFt": 500,
+     "hours": 8,
+     "miles": 8,
+     "packLb": 40,
+     "schedule": []
+    },
+    {
+     "n": 2,
+     "title": "Climb Sail Away",
+     "objective": "Climb six pitches to the Sail headwall and rappel",
+     "note": "From Gnome Tarn walk about 20 minutes to the south face and find the large right-facing dihedral about 20 yards left of Solid Gold. The first-ascent party took about 8 hours unhurried for six pitches (403 ft) of 5.5 to 5.11 cracks, finishing on the off-width-widening Sail headwall; descend with two rappels from the Solid Gold anchors and walk off the back side.",
+     "gainFt": 700,
+     "lossFt": 700,
+     "hours": 9,
+     "miles": 1,
+     "packLb": 15,
+     "schedule": []
+    },
+    {
+     "n": 3,
+     "title": "Hike out via the Snow Lakes",
+     "objective": "Descend past Viviane, Snow and Nada lakes",
+     "note": "The Snow Lakes trail is about 10 mi from the Prusik area and loses more than a mile of elevation; one party took just under 6 hours from the base of Prusik to the car. This needs a car or shuttle at the Snow Lakes trailhead; reversing Aasgard Pass is the alternative.",
+     "gainFt": 300,
+     "lossFt": 5800,
+     "hours": 6,
+     "miles": 10,
+     "packLb": 38,
+     "schedule": []
+    }
+   ],
+   "totalNote": "A three-day Enchantments trip: over Aasgard Pass to Gnome Tarn, an 8-9 hour day on the six-pitch Sail Away, and out the Snow Lakes trail."
+  },
+  "sources": [
+   "https://www.mountainproject.com/route/201502096/sail-away",
+   "https://www.mountainproject.com/area/105808510/prusik-peak",
+   "https://stephabegg.com/?p=58486",
+   "https://stephabegg.com/?p=8743",
+   "https://www.wta.org/go-hiking/hikes/enchantment-lakes",
+   "https://www.wta.org/go-hiking/hikes/colchuck-lake"
+  ],
+  "confidence": "medium",
+  "notes": "Sail Away is a 2025 first ascent (Taylor/Wood) with only the MP page as route beta; the 8-hour climbing time is the FA party's. Approach mileage: Colchuck 4 mi one-way (WTA); MP says the Snow Lakes approach is ~10 mi and ~2 mi longer than via Colchuck/Aasgard, giving ~8 mi in; WTA's 18 mi thru-hike agrees. Day 1 loss, climbing-day gain/loss and walk-out loss are estimates derived from published elevations (Aasgard 7,800 ft, summit 8,008 ft); day 1 hours are an estimate. Row gain/dist are null."
+ },
+ {
+  "id": "wa_prusik_peak_alpine_craggers_delight",
+  "itinerary": {
+   "cal": "July through September, once Aasgard Pass sheds most of its snow. Overnight stays in the Enchantments need an advance lottery/permit (May 15 - Oct 15), so most parties plan three days around their permit dates.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Hike over Aasgard Pass to Gnome Tarn",
+     "objective": "Reach the Gnome Tarn bivy below the south face",
+     "note": "From the Stuart Lake trailhead go to Colchuck Lake (about 4 mi, 2,300 ft), then grind up Aasgard Pass (about 2,200 ft in under a mile) to 7,800 ft and cross the Core past Isolation and Tranquil lakes to Gnome Tarn. Total is roughly 8 mi; gain uses WTA's 4,500 ft to the pass and loss is an estimate for the drop to the tarn.",
+     "gainFt": 4500,
+     "lossFt": 500,
+     "hours": 8,
+     "miles": 8,
+     "packLb": 40,
+     "schedule": []
+    },
+    {
+     "n": 2,
+     "title": "Climb the finger crack and Stanley-Burgner",
+     "objective": "Climb the pitch, link into Stanley-Burgner and summit",
+     "note": "The 80 ft 5.10+ finger crack starts about 20 ft left of the normal Stanley-Burgner start and tops out at the same belay, so most parties link it into Stanley-Burgner P2 and continue to the summit. One party climbed Stanley-Burgner in 4.5 hours base to summit and took about an hour to rappel the north side and walk back to the base.",
+     "gainFt": 900,
+     "lossFt": 900,
+     "hours": 7,
+     "miles": 1,
+     "packLb": 15,
+     "schedule": []
+    },
+    {
+     "n": 3,
+     "title": "Hike out via the Snow Lakes",
+     "objective": "Descend past Viviane, Snow and Nada lakes",
+     "note": "The Snow Lakes trail is about 10 mi from the Prusik area and loses more than a mile of elevation; one party took just under 6 hours from the base of Prusik to the car. This needs a car or shuttle at the Snow Lakes trailhead; reversing Aasgard Pass is the alternative.",
+     "gainFt": 300,
+     "lossFt": 5800,
+     "hours": 6,
+     "miles": 10,
+     "packLb": 38,
+     "schedule": []
+    }
+   ],
+   "totalNote": "A three-day Enchantments trip: over Aasgard Pass to Gnome Tarn, the one-pitch finger crack linked into Stanley-Burgner to the summit, and out the Snow Lakes trail."
+  },
+  "sources": [
+   "https://www.mountainproject.com/route/123036168/alpine-craggers-delight",
+   "https://stephabegg.com/?p=8741",
+   "https://www.mountainproject.com/area/105808510/prusik-peak",
+   "https://stephabegg.com/?p=58486",
+   "https://stephabegg.com/?p=8743",
+   "https://www.wta.org/go-hiking/hikes/enchantment-lakes",
+   "https://www.wta.org/go-hiking/hikes/colchuck-lake"
+  ],
+  "confidence": "medium",
+  "notes": "The route itself is a single 80 ft pitch, so the itinerary assumes the link-up into Stanley-Burgner that the MP author describes; the 4.5 h climb and ~1 h descent are from Abegg's Stanley-Burgner report. Approach mileage: Colchuck 4 mi one-way (WTA); MP says the Snow Lakes approach is ~10 mi and ~2 mi longer than via Colchuck/Aasgard, giving ~8 mi in; WTA's 18 mi thru-hike agrees. Day 1 loss, climbing-day gain/loss and walk-out loss are estimates derived from published elevations (Aasgard 7,800 ft, summit 8,008 ft); day 1 hours are an estimate. Row gain/dist are null."
+ },
+ {
+  "id": "wa_prusik_peak_prayer_for_a_friend",
+  "itinerary": {
+   "cal": "Late summer to early fall when the south face is dry; a send effort typically needs multiple days at a Gnome Tarn camp, and every night in the Enchantments needs an advance permit (May 15 - Oct 15).",
+   "days": [
+    {
+     "n": 1,
+     "title": "Hike over Aasgard Pass to Gnome Tarn",
+     "objective": "Reach the Gnome Tarn bivy below the south face",
+     "note": "From the Stuart Lake trailhead go to Colchuck Lake (about 4 mi, 2,300 ft), then grind up Aasgard Pass (about 2,200 ft in under a mile) to 7,800 ft and cross the Core past Isolation and Tranquil lakes to Gnome Tarn. Total is roughly 8 mi; gain uses WTA's 4,500 ft to the pass and loss is an estimate for the drop to the tarn.",
+     "gainFt": 4500,
+     "lossFt": 500,
+     "hours": 8,
+     "miles": 8,
+     "packLb": 40,
+     "schedule": []
+    },
+    {
+     "n": 2,
+     "title": "Ground-up push on Prayer for a Friend",
+     "objective": "Climb from the ground through the lower pitches",
+     "note": "Start at the easy corner left of Der Sportsman. Five pitches (5.9 to 5.12-, some suspect rock) lead to the 35 m 5.14a headwall splitter, which ends at a bolt belay on the West Ridge; scramble the West Ridge to the summit and use its north-side rappels to descend.",
+     "gainFt": 900,
+     "lossFt": 900,
+     "hours": 9,
+     "miles": 1,
+     "packLb": 18,
+     "schedule": []
+    },
+    {
+     "n": 3,
+     "title": "Rappel in to work the crux pitches",
+     "objective": "Rehearse the headwall from the West Ridge",
+     "note": "The free-ascent team soloed the four-pitch 5.7 West Ridge and rappelled in to the 5.14a sixth pitch to work and send it rather than climbing from the ground each day. The first free ascent took ten days on the route across two seasons, so add work days as needed.",
+     "gainFt": 900,
+     "lossFt": 900,
+     "hours": 8,
+     "miles": 1,
+     "packLb": 18,
+     "schedule": []
+    },
+    {
+     "n": 4,
+     "title": "Hike out via the Snow Lakes",
+     "objective": "Descend past Viviane, Snow and Nada lakes",
+     "note": "The Snow Lakes trail is about 10 mi from the Prusik area and loses more than a mile of elevation; one party took just under 6 hours from the base of Prusik to the car. This needs a car or shuttle at the Snow Lakes trailhead; reversing Aasgard Pass is the alternative.",
+     "gainFt": 300,
+     "lossFt": 5800,
+     "hours": 6,
+     "miles": 10,
+     "packLb": 38,
+     "schedule": []
+    }
+   ],
+   "totalNote": "A project-style trip of four or more days: hike over Aasgard Pass to Gnome Tarn, a ground-up day on the lower pitches, rappel-in days from the West Ridge to work the 5.14a headwall, then hike out."
+  },
+  "sources": [
+   "https://www.mountainproject.com/route/125073409/prayer-for-a-friend",
+   "https://publications.americanalpineclub.org/articles/13201216752",
+   "https://www.mountainproject.com/area/105808510/prusik-peak",
+   "https://stephabegg.com/?p=58486",
+   "https://stephabegg.com/?p=8743",
+   "https://www.wta.org/go-hiking/hikes/enchantment-lakes",
+   "https://www.wta.org/go-hiking/hikes/colchuck-lake"
+  ],
+  "confidence": "low",
+  "notes": "Only one free ascent is documented (Vanoni, Oct 2023, ten days over two seasons; the AAC article says the team camped nearby but not where). The day structure follows that account; Gnome Tarn camp and approach are the standard south-face logistics, not stated in the AAC article. Row says 6 pitches; MP/AAC say 7 (600 ft). Approach mileage: Colchuck 4 mi one-way (WTA); MP says the Snow Lakes approach is ~10 mi and ~2 mi longer than via Colchuck/Aasgard, giving ~8 mi in; WTA's 18 mi thru-hike agrees. Day 1 loss, climbing-day gain/loss and walk-out loss are estimates derived from published elevations (Aasgard 7,800 ft, summit 8,008 ft); day 1 hours are an estimate. Row gain/dist are null."
+ },
+ {
+  "id": "wa_phantom_peak_west_ridge",
+  "itinerary": {
+   "cal": "July through August, when Easy Ridge holds some snowmelt and the Challenger Glacier is still well bridged. Plan five days with a spare; every night needs a North Cascades wilderness permit (walk-up for the Perfect Pass/Challenger cross-country zones).",
+   "days": [
+    {
+     "n": 1,
+     "title": "Hannegan Pass, ford, and up Easy Ridge",
+     "objective": "Camp where the old trail reaches Easy Ridge",
+     "note": "Hike about 4 mi and 2,000 ft to Hannegan Pass, descend the Chilliwack River trail roughly 6 more miles, ford the river near Easy Creek, and climb the abandoned Easy Ridge trail several thousand feet to the first camp with a tarn on the crest. One party took about 8.5 hours of walking (2:20 to the pass, 2:50 to the ford, 3:15 up the ridge).",
+     "gainFt": 5300,
+     "lossFt": 2500,
+     "hours": 8.5,
+     "miles": 12,
+     "packLb": 45,
+     "schedule": []
+    },
+    {
+     "n": 2,
+     "title": "Imperfect Impasse to Crooked Thumb camp",
+     "objective": "Cross Perfect Pass and the Challenger Glacier to the bivy",
+     "note": "Ramble the ridge over Easy Peak (6,613 ft), drop to the Imperfect Impasse low crossing near 4,450 ft (exposed 3rd-4th class, a serious slip zone with heavy packs), and climb to Perfect Pass; one party took about 7.5 hours from the first ridge camp to Perfect Pass. Continue roped over the Challenger Glacier, then descend and traverse steep snow, talus and glacier to the moraine bivy under Ghost Peak.",
+     "gainFt": 3400,
+     "lossFt": 3200,
+     "hours": 11,
+     "miles": 6,
+     "packLb": 42,
+     "schedule": []
+    },
+    {
+     "n": 3,
+     "title": "Climb the West Ridge",
+     "objective": "Climb ten pitches and descend the southeast face",
+     "note": "Ascend to the 6,100 ft saddle and scramble a few hundred feet to a notch with a ledge to rope up. Ten pitches, mostly 5.7+ crack and ridge climbing with one 5.10 stem across a deep cleft on P6 and a 100 ft rappel into a notch after P7, then about 400 ft of 4th class to the summit pinnacle; descend the southeast face route with careful downclimbing and a rockfall-exposed snowfield, back to camp.",
+     "gainFt": 1916,
+     "lossFt": 1916,
+     "hours": 12,
+     "miles": 2,
+     "packLb": 18,
+     "schedule": []
+    },
+    {
+     "n": 4,
+     "title": "Back over Perfect Pass to Easy Peak",
+     "objective": "Recross the glacier and impasse to the Easy Peak camp",
+     "note": "Reverse the Challenger Glacier and Perfect Pass. One party took about 6 hours from Perfect Pass back through the impasse to the Easy Peak summit camp, which has two tent spots and a tarn.",
+     "gainFt": 3200,
+     "lossFt": 3000,
+     "hours": 10,
+     "miles": 6,
+     "packLb": 40,
+     "schedule": []
+    },
+    {
+     "n": 5,
+     "title": "Down Easy Ridge and out Hannegan Pass",
+     "objective": "Return to the Hannegan trailhead",
+     "note": "Descend the ridge to the Chilliwack ford (about 4 hours), regain Hannegan Pass (about 3.5 hours) and finish to the trailhead (about 1.5 hours).",
+     "gainFt": 2600,
+     "lossFt": 6100,
+     "hours": 9.5,
+     "miles": 13,
+     "packLb": 38,
+     "schedule": []
+    }
+   ],
+   "totalNote": "A five-day Northern Pickets trip: two days in over Hannegan Pass, Easy Ridge and Perfect Pass to a moraine bivy under Ghost Peak, a long day on the ten-pitch West Ridge, and two days out."
+  },
+  "sources": [
+   "https://publications.americanalpineclub.org/articles/13201216005",
+   "https://apps.yellowleaf.org/scramble/g/r/2006-07-13-16-challenger.html",
+   "https://stephabegg.com/trip-reports/washington/pickets/mystery-ridge-enchainment/"
+  ],
+  "confidence": "low",
+  "notes": "Only one ascent is documented (Wehrly/Larson, AAJ, July 2021: two-day approach, bivy under Ghost Peak, ten pitches plus ~400 ft soloing, descent of the southeast face; exit not described). Hours for days 1, 4 and 5 come from the Yellowleaf Easy Ridge/Perfect Pass segment times; day 2 and 3 hours are estimates. Miles are estimates from the AAJ's ~10 mi of trail plus ~5 mi of Easy Ridge; gain/loss are derived from published elevations (trailhead 3,040, Hannegan Pass 5,066, Easy Peak 6,613, impasse low point ~4,450, summit 8,016, saddle 6,100) and an estimated ford elevation, and sum close to Yellowleaf's 12,720 ft for a 4-day Perfect Pass round trip. Row gain_ft 1,916 is used for the climb day only."
+ },
+ {
+  "id": "wa_old_guard_peak_east_side_route",
+  "itinerary": {
+   "cal": "Mid-July through August is the usual Ptarmigan Traverse window, and the climb is normally done as a layover day from White Rock Lakes. Allow about seven days north to south; camps east of Cache Col are in Glacier Peak Wilderness (free self-issue), while any night on the park side needs an NPS permit.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Cascade Pass to Kool-Aid Lake",
+     "objective": "Cross Cache Col to the Kool-Aid Lake camp",
+     "note": "Hike to Cascade Pass (about an hour), up the Mix-up Arm and Cache Glacier to Cache Col, and drop to Kool-Aid Lake; one party reached it about 4 hours from the car and guided parties allow 6-8 hours. Gain/loss derived from trailhead 3,600 ft, Cache Col 6,920 ft and the lake near 6,200 ft.",
+     "gainFt": 3400,
+     "lossFt": 700,
+     "hours": 6,
+     "miles": 6,
+     "packLb": 45,
+     "schedule": []
+    },
+    {
+     "n": 2,
+     "title": "Red Ledge to Yang Yang Lakes",
+     "objective": "Cross the Middle Cascade Glacier to Yang Yang Lakes",
+     "note": "Traverse the Red Ledge, rope up for the Middle Cascade Glacier, climb to the Spider-Formidable col (7,320 ft) and descend the gully to camp at Yang Yang Lakes (5,830 ft); guided parties budget 8-11 hours.",
+     "gainFt": 1200,
+     "lossFt": 1600,
+     "hours": 8,
+     "miles": 4,
+     "packLb": 43,
+     "schedule": []
+    },
+    {
+     "n": 3,
+     "title": "Le Conte Glacier to White Rock Lakes",
+     "objective": "Pass under Old Guard to the White Rock Lakes camp",
+     "note": "Climb to Le Conte Pass, cross the Le Conte Glacier to the Le Conte-Sentinel saddle (7,280 ft) and descend past the South Cascade Glacier to White Rock Lakes (6,200 ft). Often described as the shortest day of the traverse.",
+     "gainFt": 1500,
+     "lossFt": 1100,
+     "hours": 7,
+     "miles": 4,
+     "packLb": 42,
+     "schedule": []
+    },
+    {
+     "n": 4,
+     "title": "Climb Old Guard by the east side",
+     "objective": "Summit Old Guard via two pitches of mid-fifth class",
+     "note": "Return to the Le Conte Glacier; guided parties pair Sentinel's southwest ridge with Old Guard, whose east side gives two to three pitches of easy-moderate fifth class (the west side is a class 2-3 snow couloir and short scramble from the Old Guard-Sentinel col). A 2025 survey found Old Guard 8,260 ft, a few feet higher than Sentinel; gain is derived from that and the lake camp.",
+     "gainFt": 2100,
+     "lossFt": 2100,
+     "hours": 8,
+     "miles": 4,
+     "packLb": 18,
+     "schedule": []
+    },
+    {
+     "n": 5,
+     "title": "Dana Glacier to Itswoot Ridge",
+     "objective": "Cross the Dana Glacier col to camp on Itswoot Ridge",
+     "note": "Climb the Dana Glacier to the col near 7,600-7,750 ft and descend Itswoot Ridge to camp around 6,400 ft, or continue an hour to Cub Lake; guided parties allow 8-12 hours.",
+     "gainFt": 1500,
+     "lossFt": 1300,
+     "hours": 8,
+     "miles": 4,
+     "packLb": 40,
+     "schedule": []
+    },
+    {
+     "n": 6,
+     "title": "Spare day or Dome Peak",
+     "objective": "Weather buffer or optional Dome Peak ascent",
+     "note": "Most parties keep a day here for weather or to climb Dome Peak (8,920 ft) by the Dome Glacier from the Itswoot camp.",
+     "gainFt": 0,
+     "lossFt": 0,
+     "hours": 0,
+     "miles": 0,
+     "packLb": 0,
+     "schedule": []
+    },
+    {
+     "n": 7,
+     "title": "Cub Lake and out Downey Creek",
+     "objective": "Descend Bachelor and Downey creeks to the trailhead",
+     "note": "Pass Cub Lake, cross the saddle near 6,000 ft and descend the brushy Bachelor Creek path to the Downey Creek trail (about 2,500 ft at the junction), then about 6 miles of trail out; guided parties allow 7-12 hours and one party took about 6 hours from Itswoot.",
+     "gainFt": 600,
+     "lossFt": 5600,
+     "hours": 9,
+     "miles": 11,
+     "packLb": 38,
+     "schedule": []
+    }
+   ],
+   "totalNote": "Old Guard's east side is normally climbed on a layover day from White Rock Lakes during a north-to-south Ptarmigan Traverse of about seven days and 30-40 miles."
+  },
+  "sources": [
+   "https://www.alpineinstitute.com/itinerary-bakw00-26r-ptarmtraverse/",
+   "https://www.countryhighpoints.com/sentinel-peak-and-old-guard-peak-surveys/",
+   "https://stephabegg.com/?p=8961",
+   "https://sverdina.com/Ptarmigan_Traverse1.asp",
+   "https://climberkyle.com/2019/07/09/the-extended-ptarmigan-traverse/"
+  ],
+  "confidence": "low",
+  "notes": "Day structure follows the Alpine Institute itinerary (which climbs Old Guard's east ridge, two pitches mid-fifth, on day 4 from White Rock Lakes). No source gives per-day miles: totals are 30+ mi (Abegg) to almost 40 mi (Sverdina), and the split here is an estimate. Gain/loss are derived from waypoint elevations in Abegg's report and the row (Kool-Aid 6,120-6,320, Yang Yang 5,830-5,850, White Rock 6,200). Countryhighpoints measured Old Guard at 8,259.6 ft (2025 survey); row high_point_ft is null. Row grade 5.5 is not confirmed by an opened source (sources say easy/moderate or mid-fifth)."
+ },
+ {
+  "id": "wa_south_early_winter_spire_southwest_couloir",
+  "itinerary": {
+   "cal": "A spring snow climb, best from late April into June while the couloir is still filled with snow; by late season it melts out to loose rock. Done in a single day with no climbing permit; a Northwest Forest Pass covers trailhead parking.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Climb the Southwest Couloir and descend",
+     "objective": "Climb the couloir to the summit and return to the car",
+     "note": "From the Blue Lake trailhead head into the woods, break out of the trees around 5,900 ft and aim for the large Y-shaped snow gully below the South Arete (the approach is often skied or snowshoed and the gear cached at its base). Climb about 600 ft of 25-30 degree snow, take the right fork as it narrows to 40-50 degrees, and finish from a small saddle with a low fifth-class move about 50 ft below the summit; downclimb or rappel the couloir.",
+     "gainFt": 2430,
+     "lossFt": 2430,
+     "hours": 6,
+     "miles": 3,
+     "packLb": 20,
+     "schedule": []
+    }
+   ],
+   "totalNote": "A single-day spring snow climb from the Blue Lake trailhead: about 3 miles round trip and 2,400-2,600 ft of gain, roughly 6 hours car to car."
+  },
+  "sources": [
+   "https://www.mountainproject.com/route/108102127/southwest-couloir",
+   "https://www.ncmountainguides.com/node/62"
+  ],
+  "confidence": "medium",
+  "notes": "Gain is derived from the row waypoints (Blue Lake trailhead 5,380 ft, summit 7,807 ft); The Mountaineers course listing gives 3.0 mi and 2,600 ft (search excerpt only, page returns 403). The ~6-hour car-to-car time is from a May 2017 trip report seen only as a search excerpt (car 7 am, summit 10 am, car 1 pm), so no schedule is stored. Row season May-Jun agrees with sources; the guide service also starts from the hairpin when conditions favor it."
+ },
+ {
+  "id": "wa_silver_star_ne_ridge",
+  "skip": true,
+  "reason": "No opened source describes the 5.9 Northeast Ridge of the west peak (pitches, time on route or descent); only the Burgundy Col approach and Silver Star Glacier are documented (stephabegg.com/?p=8704: <5 mi, ~3,470 ft, ~3 h to the col). A summit-day plan would require invented figures."
+ },
+ {
+  "id": "wa_prusik_peak_east_face",
+  "skip": true,
+  "reason": "No route called East Face on Prusik Peak appears on Mountain Project's Prusik Peak page or in any trip report found; route has no grade, pitches or description in the row."
+ },
+ {
+  "id": "wa_snoqualmie_mountain_boogie_wonderland",
+  "skip": true,
+  "reason": "Only source is the Mountain Project route page (60 ft, single pitch, 5.7 M5-, just right of the Snot Couloir on the NW face; FA Christian Junkar, 2022), which gives no approach time, descent or car-to-car time; the New York Gully MP page describes the shared approach but also no timing. Too thin for an honest day plan. Note the row's peak field is the MP area name 'Winter-Spring (ice, snow' rather than Snoqualmie Mountain."
+ },
+ {
+  "id": "wa_snoqualmie_mountain_south_face",
+  "skip": true,
+  "reason": "Row has no grade or description and the name is ambiguous between the standard south-side scramble (WTA: 3.8 mi RT, 3,105 ft, 6,278 ft) and a technical route on the south face; no opened source describes a route by this name, so the plan cannot be tied to the row with confidence. Row peak field 'Snoqualmie Mountain Routes' is an area name."
+ },
+ {
+  "id": "wa_snoqualmie_mountain_west_ridge",
+  "skip": true,
+  "reason": "No source found describing a West Ridge route on Snoqualmie Mountain (MP lists only New York Gully, Boogie Wonderland, The Snostril and crag sub-areas); row has no grade or description."
+ },
+ {
+  "id": "wa_skeena26",
+  "skip": true,
+  "reason": "Route beta exists only in CascadeClimbers trip reports (2012 FA by Whitelaw/Enger/Lewis, III 5.9, 12 pitches; 2014 repeat), which return 403 to fetch; the route page found was a dead OpenBeta preview. No opened source gives climbing time or descent, so a day plan would need invented figures. Row peak field 'South Face' is a wall name, not a peak."
+ },
+ {
+  "id": "wa_overcoat_peak_north_face",
+  "skip": true,
+  "reason": "Row has no grade, approach, camps or waypoints, and no source describing the North Face of Overcoat Peak could be found or opened (web search budget exhausted partway through this batch)."
+ },
+ {
+  "id": "wa_preacher_mountain_east_gully",
+  "skip": true,
+  "reason": "Row is empty (no grade, approach or waypoints) and no source on Preacher Mountain routes could be found or opened (web search budget exhausted partway through this batch)."
+ },
+ {
+  "id": "wa_preacher_mountain_north_route",
+  "skip": true,
+  "reason": "Row is empty (no grade, approach or waypoints) and no source on Preacher Mountain routes could be found or opened (web search budget exhausted partway through this batch)."
+ },
+ {
+  "id": "wa_preacher_mountain_south_gully_south_spur",
+  "skip": true,
+  "reason": "Row is empty (no grade, approach or waypoints) and no source on Preacher Mountain routes could be found or opened (web search budget exhausted partway through this batch)."
+ },
+ {
+  "id": "wa_preacher_mountain_south_rib",
+  "skip": true,
+  "reason": "Row is empty (no grade, approach or waypoints) and no source on Preacher Mountain routes could be found or opened (web search budget exhausted partway through this batch)."
+ },
+ {
+  "id": "wa_preacher_mountain_west_face",
+  "skip": true,
+  "reason": "Row is empty (no grade, approach or waypoints) and no source on Preacher Mountain routes could be found or opened (web search budget exhausted partway through this batch)."
+ },
+ {
+  "id": "wa_red_mountain_snoqualmie_east_face",
+  "skip": true,
+  "reason": "Row is empty and no route-specific source for Red Mountain (Snoqualmie Pass) East Face could be found or opened (web search budget exhausted partway through this batch)."
+ },
+ {
+  "id": "wa_red_mountain_snoqualmie_east_ridge",
+  "skip": true,
+  "reason": "Row is empty and no route-specific source for Red Mountain (Snoqualmie Pass) East Ridge could be found or opened (web search budget exhausted partway through this batch)."
+ },
+ {
+  "id": "wa_red_mountain_snoqualmie_southeast_face",
+  "skip": true,
+  "reason": "Row has only a grade (Class 4) and no route-specific source for Red Mountain (Snoqualmie Pass) Southeast Face could be found or opened (web search budget exhausted partway through this batch)."
+ },
+ {
+  "id": "wa_red_mountain_snoqualmie_west_ridge",
+  "skip": true,
+  "reason": "Row is empty and no route-specific source for Red Mountain (Snoqualmie Pass) West Ridge could be found or opened (web search budget exhausted partway through this batch)."
+ },
+ {
+  "id": "wa_sherpa_peak_northeast_face",
+  "skip": true,
+  "reason": "Row is empty and no source for Sherpa Peak's Northeast Face could be found or opened (web search budget exhausted partway through this batch)."
+ },
+ {
+  "id": "wa_silver_peak_northeast_route",
+  "skip": true,
+  "reason": "Row is empty (and typed as a crag) and no route-specific source for a Silver Peak Northeast Route could be found or opened (web search budget exhausted partway through this batch)."
+ },
+ {
+  "id": "wa_silver_peak_south_spur",
+  "skip": true,
+  "reason": "Row is empty (and typed as a crag) and no route-specific source for a Silver Peak South Spur could be found or opened (web search budget exhausted partway through this batch)."
+ }
+]

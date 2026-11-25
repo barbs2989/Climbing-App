@@ -1,4 +1,5 @@
 import { useState, useEffect, useMemo } from "react";
+import { SOLID_LEDGE } from "../../lib/buttonStyles.js";
 import { C, ROUTES, ROUTE_GAP, RSL as SL, rxOf } from "../../ClimbMatchCore.jsx";
 import { USE_DB } from "../../lib/supabase.js";
 import { useRoutePairings, useRouteLoggedWith, submitRoutePairing, deleteRoutePairing, useRoutesByIds, dbRouteToCamel } from "../../lib/db.js";
@@ -86,11 +87,11 @@ export default function PairsWellWith({route,onOpenRoute,notify}: PairsWellWithP
     {uid?(open?<div style={{background:C.card,border:"1px solid "+C.border,borderRadius:10,padding:"10px 12px",marginBottom:7}}>
       {pick?<div>
         <div style={{display:"flex",alignItems:"center",justifyContent:"space-between",gap:8,marginBottom:8}}><span style={{fontSize:13.5,fontWeight:700,minWidth:0,overflowWrap:"anywhere"}}>{pick.name}</span><button onClick={function(){setPick(null);}} disabled={busy} style={Object.assign({},btn,{background:C.surface,color:C.textSub,border:"1px solid "+C.border,padding:"5px 10px"})}>Change</button></div>
-        <textarea value={note} onChange={function(e){setNote(e.target.value.slice(0,280));}} maxLength={280} rows={2} aria-label="Why these two climbs pair well" placeholder="Why do they pair well? (optional — e.g. same approach, both in the shade by noon)" style={{width:"100%",boxSizing:"border-box",background:C.surface,color:C.text,border:"1px solid "+C.border,borderRadius:8,padding:"8px 10px",fontSize:13,fontFamily:"inherit",resize:"vertical"}}/>
+        <textarea value={note} onChange={function(e){setNote(e.target.value.slice(0,280));}} maxLength={280} rows={2} aria-label="Why these two climbs pair well" placeholder="Why do they pair well? (optional — e.g. same approach, both in the shade by noon)" style={{width:"100%",boxSizing:"border-box",background:C.surface,color:C.text,border:"1px solid "+C.field,borderRadius:8,padding:"8px 10px",fontSize:13,fontFamily:"inherit",resize:"vertical"}}/>
         <div style={{fontSize:11,color:C.textMuted,textAlign:"right",marginTop:2}}>{note.length+" / 280"}</div>
       </div>:<div><div style={{fontSize:12.5,color:C.textSub,marginBottom:6}}>Pick the climb that pairs with this one.</div><DbClimbPicker onPickRoute={function(r){setPick(r);}}/></div>}
       <div style={{display:"flex",gap:12,marginTop:8}}>
-        {pick?<button onClick={save} disabled={busy} aria-busy={busy?"true":undefined} style={Object.assign({},btn,{background:busy?C.border:C.blueSolid,color:C.onSolid,border:"none"})}>{busy?"Saving…":"Add pairing"}</button>:null}
+        {pick?<button onClick={save} disabled={busy} aria-busy={busy?"true":undefined} style={Object.assign({},btn,{background:busy?C.border:C.actionSolid,boxShadow:busy?"none":SOLID_LEDGE(C),color:C.onSolid,border:"none"})}>{busy?"Saving…":"Add pairing"}</button>:null}
         <button onClick={function(){setOpen(false);setPick(null);setNote("");}} disabled={busy} style={Object.assign({},btn,{background:C.surface,color:C.textSub,border:"1px solid "+C.border})}>Cancel</button>
       </div>
     </div>:<button onClick={function(){setOpen(true);}} style={Object.assign({},btn,{width:"100%",background:C.surface,color:C.blue,border:"1px solid "+C.border,marginBottom:7})}>+ Suggest a climb that pairs with this</button>):null}

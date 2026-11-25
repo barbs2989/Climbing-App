@@ -107,7 +107,7 @@ export default function HourChartCard({all,selIdx,title,series,lo,hi,axisFmt,bar
   for(let k=1;k<ends.length;k++)if(ends[k].y-ends[k-1].y<14)ends[k].y=ends[k-1].y+14;
   for(let k2=ends.length-1;k2>=0;k2--)ends[k2].y=Math.min(ends[k2].y,k2===ends.length-1?PH-8:ends[k2+1].y-14);
   const axis=all.map(function(h: HourRow,i: number){return h.hr%3===0?<text key={i} x={x(i)} y={PH+14} fontSize="11" fill={C.textMuted} textAnchor="middle">{h.hr===0?"12A":h.hr===12?"12P":(h.hr%12)+(h.hr<12?"A":"P")}</text>:null;});
-  return <div style={{background:C.card,border:"1px solid "+C.border,borderRadius:12,padding:"11px 12px",marginTop:12}}>
+  return <div style={{borderTop:"1px solid "+C.borderLight,padding:"12px 0 0",marginTop:14}}>
     <div style={{fontSize:14.5,fontWeight:800,color:C.text}}>{title}</div>
     <div style={{marginTop:2}}>
       <div style={{display:"flex",alignItems:"center",gap:8,minHeight:44,marginBottom:3}}><div style={{flex:1,minWidth:0,fontSize:12.5,fontWeight:700,color:C.textSub,overflowWrap:"anywhere"}}>{clockHr(a.hr)}{a.past?<span style={{color:C.textMuted,fontWeight:600}}>{"  ·  already past"}</span>:null}</div>{at!==selIdx&&selIdx>=0?<button onClick={function(){setPin(null);setHv(null);}} style={{flexShrink:0,minHeight:44,padding:"0 12px",borderRadius:22,border:"1px solid "+C.blueDim,background:C.blueBg,color:C.onSolid,fontSize:11.5,fontWeight:700,cursor:"pointer"}}>{"Back to "+clockHr(all[selIdx].hr)}</button>:null}</div>

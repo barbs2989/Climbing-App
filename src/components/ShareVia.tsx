@@ -10,10 +10,12 @@ export interface ShareViaProps {
   link: string;
   /** Says what happened (copied, or the browser refused). */
   onToast: (msg: string) => void;
+  /** Offer Facebook too (a group event, to post in a Facebook group). Facebook's share dialog takes only the link, so the message is copied first to paste into the post. */
+  facebook?: boolean;
 }
 
 /** SEND IT ANOTHER WAY, to someone who may not have the app: Text, Email, Copy link, and the phone's own share sheet (More…) where there is one. AllTrails' trail Share offers the same four (Copy link · Text · Email · Embed); the message carries a link that opens the climb or list for anyone, signed in or not. */
-export default function ShareVia({ title, text, link, onToast }: ShareViaProps) {
+export default function ShareVia({ title, text, link, onToast, facebook }: ShareViaProps) {
   const tile: CSSProperties = { flex: 1, minWidth: 0, minHeight: 44, display: "flex", alignItems: "center", justifyContent: "center", padding: "9px 6px", borderRadius: 10, border: "1px solid " + C.border, background: C.surface, color: C.blue, fontSize: 12.5, fontWeight: 700, cursor: "pointer", textDecoration: "none", boxSizing: "border-box" };
   const canShare = typeof navigator !== "undefined" && typeof navigator.share === "function";
   const copy = function () {
@@ -26,11 +28,15 @@ export default function ShareVia({ title, text, link, onToast }: ShareViaProps) 
   const more = function () {
     navigator.share({ title: title, text: text }).catch(function (e: unknown) { if (e && (e as { name?: string }).name === "AbortError") return; copy(); });
   };
+  const toFacebook = function () {
+    try { const p = navigator.clipboard && navigator.clipboard.writeText(text); if (p) p.then(function () { onToast("Message copied — paste it into your Facebook post"); }, function () { /* the link still goes */ }); } catch (_e) { /* the link still goes */ }
+  };
   return (
-    <div style={{ display: "flex", gap: 7 }}>
+    <div style={facebook ? { display: "grid", gridTemplateColumns: "repeat(3,minmax(0,1fr))", gap: 7 } : { display: "flex", gap: 7 }}>
       {/* `sms:?&body=` is the form both iOS and Android Messages read. */}
       <a href={"sms:?&body=" + encodeURIComponent(text)} aria-label={"Send " + title + " by text message"} style={tile}>{"Text"}</a>
       <a href={"mailto:?subject=" + encodeURIComponent(title) + "&body=" + encodeURIComponent(text)} aria-label={"Send " + title + " by email"} style={tile}>{"Email"}</a>
+      {facebook ? <a href={"https://www.facebook.com/sharer/sharer.php?u=" + encodeURIComponent(link)} target="_blank" rel="noopener noreferrer" onClick={toFacebook} aria-label={"Share " + title + " on Facebook"} style={tile}>{"Facebook"}</a> : null}
       <button onClick={copy} aria-label={"Copy the link to " + title} style={tile}>{"Copy link"}</button>
       {canShare ? <button onClick={more} aria-label={"More ways to share " + title} style={tile}>{"More…"}</button> : null}
     </div>

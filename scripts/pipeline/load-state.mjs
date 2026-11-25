@@ -28,6 +28,7 @@ function gradeSystem(d) { if (d === "bouldering") return "v"; if (["scrambling",
 // scripts/oneoff/verify-grade-parser-equivalence.mjs. Do not re-inline it —
 // check:grade-parser fails if a second parser appears.
 import { gradeNumFrom as gradeNum } from "../../lib/grade.js";
+import { itineraryShapeErrors } from "../../lib/itineraryShape.js";
 
 // USA root is shared across states — upsert is idempotent. Topological order (parents first) for the path trigger.
 const areas = [{ id: "usa", name: "United States", parentId: null, areaType: "country", region: "USA", lat: 39.83, lng: -98.58 }, ...A];
@@ -97,6 +98,8 @@ async function preflight(rows) {
   process.exit(1);
 }
 
+// The trip-plan rule (owner 2026-11-11, lib/itineraryShape.js): day by day or nothing, never prose.
+{ const bad = R.flatMap((r) => itineraryShapeErrors(r.itinerary).map((e) => r.id + ": " + e)); if (bad.length) { console.error("ABORT: " + bad.length + " trip plan(s) are not day-by-day objects:\n  " + bad.slice(0, 40).join("\n  ")); process.exit(1); } }
 const routeRows = R.map(rRow);
 if (process.argv.includes("--allow-duplicate-names")) {
   console.log("WARNING: --allow-duplicate-names — skipping the (area_id, name) collision check.");

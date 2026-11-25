@@ -1,0 +1,978 @@
+[
+ {
+  "id": "bc_ossa_mountain_east_ridge",
+  "name": "East Ridge",
+  "discipline": "scrambling",
+  "grade": "4th",
+  "verdict": "SUMMIT_ONLY",
+  "state": "bc",
+  "peak": {
+   "id": "bc_ossa_mountain",
+   "name": "Ossa Mountain",
+   "lat": 49.86333,
+   "lng": -123.36722,
+   "elevation_ft": 7418,
+   "region": "British Columbia",
+   "path": "canada.bc.bc_sea_to_sky_squamish_to_whistler.bc_tantalus_range.bc_ossa_mountain"
+  },
+  "text": {
+   "approach": null,
+   "approach_logistics": "{\"trailhead\":\"Ossa Mountain trailhead, about 30 minutes from Squamish\"}",
+   "road": null,
+   "overview": "Ossa Mountain is climbed by its east ridge, a long day from the Squamish side with steep forest, meadows and creek crossings below a route-finding scramble. Near the top the route downclimbs into a notch and works through a chimney section before the summit.",
+   "description": null,
+   "descent": "Return the same way; the downclimbs and loose ground make the descent as serious as the ascent."
+  },
+  "waypoints": [
+   {
+    "lat": 49.86333,
+    "lng": -123.36722,
+    "elev": 7418,
+    "name": "Ossa Mountain summit",
+    "type": "Summit"
+   }
+  ],
+  "siblingTrailheads": [],
+  "officialCandidates": [],
+  "firstPass": {
+   "why": "stuck: Route has no stored approach text naming a trailhead (only 'Ossa Mountain trailhead, ~30 min from Squamish', unnamed place, no official candidates); page lookup",
+   "trailhead": null,
+   "notes": "Route has no stored approach text naming a trailhead (only 'Ossa Mountain trailhead, ~30 min from Squamish', unnamed place, no official candidates); page lookups not possible this run (OSM 429/406, no page evidence gathered). Not guessed."
+  }
+ },
+ {
+  "id": "ca_adams_peak_standard_route",
+  "name": "Standard route",
+  "discipline": "scrambling",
+  "grade": "Class 2",
+  "verdict": "SUMMIT_ONLY",
+  "state": "ca",
+  "peak": {
+   "id": "ca_adams_peak",
+   "name": "Adams Peak",
+   "lat": 39.9106,
+   "lng": -120.1003,
+   "elevation_ft": 8197,
+   "region": null,
+   "path": "usa.california.ca_northern_sierra.ca_adams_peak"
+  },
+  "text": {
+   "approach": null,
+   "approach_logistics": null,
+   "road": null,
+   "overview": null,
+   "description": null,
+   "descent": null
+  },
+  "waypoints": [],
+  "siblingTrailheads": [],
+  "officialCandidates": [],
+  "firstPass": {
+   "why": "stuck: Route has no stored approach text naming a trailhead; page lookups not possible this run (OSM 429/406, no page evidence gathered). Not guessed.",
+   "trailhead": null,
+   "notes": "Route has no stored approach text naming a trailhead; page lookups not possible this run (OSM 429/406, no page evidence gathered). Not guessed."
+  }
+ },
+ {
+  "id": "ca_angora_mountain_standard_route",
+  "name": "Standard route",
+  "discipline": "scrambling",
+  "grade": "Class 2",
+  "verdict": "SUMMIT_ONLY",
+  "state": "ca",
+  "peak": {
+   "id": "ca_angora_mountain",
+   "name": "Angora Mountain",
+   "lat": 36.2643,
+   "lng": -118.446,
+   "elevation_ft": 10198,
+   "region": null,
+   "path": "usa.california.ca_high_sierra.ca_11_great_western_kings_kern_divide.ca_angora_mountain"
+  },
+  "text": {
+   "approach": null,
+   "approach_logistics": null,
+   "road": null,
+   "overview": null,
+   "description": null,
+   "descent": null
+  },
+  "waypoints": [],
+  "siblingTrailheads": [],
+  "officialCandidates": [
+   {
+    "src": "USFS",
+    "name": "Lewis Camp Trailhead",
+    "lat": 36.181305,
+    "lng": -118.515181,
+    "km": 11.1
+   },
+   {
+    "src": "USFS",
+    "name": "Jerkey Trailhead",
+    "lat": 36.167611,
+    "lng": -118.485535,
+    "km": 11.3
+   },
+   {
+    "src": "USFS",
+    "name": "Forks Of The Kern Trailhead",
+    "lat": 36.1379,
+    "lng": -118.455968,
+    "km": 14.1
+   },
+   {
+    "src": "USFS",
+    "name": "Magician (needles) Trailhead",
+    "lat": 36.109583,
+    "lng": -118.484775,
+    "km": 17.6
+   },
+   {
+    "src": "USFS",
+    "name": "Blackrock Trailhead",
+    "lat": 36.178129,
+    "lng": -118.267418,
+    "km": 18.7
+   },
+   {
+    "src": "NPS",
+    "name": "Farewell Gap - Franklin Lakes",
+    "lat": 36.44753,
+    "lng": -118.594135,
+    "km": 24.3
+   },
+   {
+    "src": "NPS",
+    "name": "Eagle-Mosquito",
+    "lat": 36.448545,
+    "lng": -118.595366,
+    "km": 24.5
+   },
+   {
+    "src": "NPS",
+    "name": "Sawtooth",
+    "lat": 36.453305,
+    "lng": -118.596761,
+    "km": 25
+   }
+  ],
+  "firstPass": {
+   "why": "stuck: Route has no stored approach text naming a trailhead; page lookups not possible this run (OSM 429/406, no page evidence gathered). Not guessed.",
+   "trailhead": null,
+   "notes": "Route has no stored approach text naming a trailhead; page lookups not possible this run (OSM 429/406, no page evidence gathered). Not guessed."
+  }
+ },
+ {
+  "id": "ca_birch_mountain_standard_route",
+  "name": "Standard route",
+  "discipline": "scrambling",
+  "grade": "Class 2",
+  "verdict": "SUMMIT_ONLY",
+  "state": "ca",
+  "peak": {
+   "id": "ca_birch_mountain",
+   "name": "Birch Mountain",
+   "lat": 37.0626,
+   "lng": -118.4189,
+   "elevation_ft": 13602,
+   "region": null,
+   "path": "usa.california.ca_high_sierra.ca_09_palisades_surrounding_peaks.ca_birch_mountain"
+  },
+  "text": {
+   "approach": null,
+   "approach_logistics": null,
+   "road": null,
+   "overview": null,
+   "description": null,
+   "descent": null
+  },
+  "waypoints": [],
+  "siblingTrailheads": [],
+  "officialCandidates": [
+   {
+    "src": "USFS",
+    "name": "RED LAKE TH",
+    "lat": 37.035704,
+    "lng": -118.35896,
+    "km": 6.1
+   },
+   {
+    "src": "USFS",
+    "name": "BIRCH LAKE TH",
+    "lat": 37.087405,
+    "lng": -118.355412,
+    "km": 6.3
+   },
+   {
+    "src": "USFS",
+    "name": "BIG PINE CREEK SO FORK TH",
+    "lat": 37.124805,
+    "lng": -118.438913,
+    "km": 7.1
+   },
+   {
+    "src": "USFS",
+    "name": "Big Pine Creek North Fork Trail Trailhea",
+    "lat": 37.128105,
+    "lng": -118.427713,
+    "km": 7.3
+   },
+   {
+    "src": "USFS",
+    "name": "TABOOSE PASS TH",
+    "lat": 37.009505,
+    "lng": -118.327312,
+    "km": 10
+   },
+   {
+    "src": "USFS",
+    "name": "South Lake Trailhead",
+    "lat": 37.169305,
+    "lng": -118.565813,
+    "km": 17.6
+   },
+   {
+    "src": "USFS",
+    "name": "SAWMILL PASS TH",
+    "lat": 36.938805,
+    "lng": -118.290212,
+    "km": 17.9
+   },
+   {
+    "src": "USFS",
+    "name": "Baker/Green Lakes Th",
+    "lat": 37.186805,
+    "lng": -118.557713,
+    "km": 18.5
+   },
+   {
+    "src": "USFS",
+    "name": "TYEE TH",
+    "lat": 37.195805,
+    "lng": -118.564713,
+    "km": 19.7
+   },
+   {
+    "src": "USFS",
+    "name": "SABRINA LAKE TH",
+    "lat": 37.213605,
+    "lng": -118.610013,
+    "km": 23.9
+   }
+  ],
+  "firstPass": {
+   "why": "stuck: Route has no stored approach text naming a trailhead; page lookups not possible this run (OSM 429/406, no page evidence gathered). Not guessed.",
+   "trailhead": null,
+   "notes": "Route has no stored approach text naming a trailhead; page lookups not possible this run (OSM 429/406, no page evidence gathered). Not guessed."
+  }
+ },
+ {
+  "id": "ca_black_giant_west_slope_from_black_giant_pass",
+  "name": "West Slope from Black Giant Pass",
+  "discipline": "scrambling",
+  "grade": "Class 1",
+  "verdict": "SUMMIT_ONLY",
+  "state": "ca",
+  "peak": {
+   "id": "ca_black_giant",
+   "name": "Black Giant",
+   "lat": 37.1023,
+   "lng": -118.6486,
+   "elevation_ft": 13330,
+   "region": null,
+   "path": "usa.california.ca_high_sierra.ca_08_bishop_pass_evolution.ca_black_giant"
+  },
+  "text": {
+   "approach": null,
+   "approach_logistics": null,
+   "road": null,
+   "overview": null,
+   "description": "A remote peak reached off the John Muir Trail near Muir Pass; leave the trail for Black Giant Pass, then walk up about half a mile of loose rock to the summit. The east-side approach over Echo Col from Lake Sabrina adds class 3 and possible snow.",
+   "descent": null
+  },
+  "waypoints": [],
+  "siblingTrailheads": [],
+  "officialCandidates": [
+   {
+    "src": "USFS",
+    "name": "South Lake Trailhead",
+    "lat": 37.169305,
+    "lng": -118.565813,
+    "km": 10.5
+   },
+   {
+    "src": "USFS",
+    "name": "Baker/Green Lakes Th",
+    "lat": 37.186805,
+    "lng": -118.557713,
+    "km": 12.4
+   },
+   {
+    "src": "USFS",
+    "name": "TYEE TH",
+    "lat": 37.195805,
+    "lng": -118.564713,
+    "km": 12.8
+   },
+   {
+    "src": "USFS",
+    "name": "SABRINA LAKE TH",
+    "lat": 37.213605,
+    "lng": -118.610013,
+    "km": 12.8
+   },
+   {
+    "src": "USFS",
+    "name": "LAMARCK LAKES TH",
+    "lat": 37.227305,
+    "lng": -118.627513,
+    "km": 14
+   },
+   {
+    "src": "USFS",
+    "name": "North Lake  Trailhead",
+    "lat": 37.230685,
+    "lng": -118.616614,
+    "km": 14.6
+   },
+   {
+    "src": "USFS",
+    "name": "BIG PINE CREEK SO FORK TH",
+    "lat": 37.124805,
+    "lng": -118.438913,
+    "km": 18.8
+   },
+   {
+    "src": "USFS",
+    "name": "Big Pine Creek North Fork Trail Trailhea",
+    "lat": 37.128105,
+    "lng": -118.427713,
+    "km": 19.8
+   },
+   {
+    "src": "USFS",
+    "name": "HORTON LAKES TH",
+    "lat": 37.312105,
+    "lng": -118.624913,
+    "km": 23.4
+   }
+  ],
+  "firstPass": {
+   "why": "stuck: Route has no stored approach text naming a trailhead; page lookups not possible this run (OSM 429/406, no page evidence gathered). Not guessed.",
+   "trailhead": null,
+   "notes": "Route has no stored approach text naming a trailhead; page lookups not possible this run (OSM 429/406, no page evidence gathered). Not guessed."
+  }
+ },
+ {
+  "id": "ca_black_hawk_mountain_via_summit_creek_and_mosquito_pass",
+  "name": "Via Summit Creek and Mosquito Pass",
+  "discipline": "scrambling",
+  "grade": "Class 2",
+  "verdict": "SUMMIT_ONLY",
+  "state": "ca",
+  "peak": {
+   "id": "ca_black_hawk_mountain",
+   "name": "Black Hawk Mountain",
+   "lat": 38.206,
+   "lng": -119.7089,
+   "elevation_ft": 10348,
+   "region": null,
+   "path": "usa.california.ca_high_sierra.ca_01_hoover_wilderness.ca_black_hawk_mountain"
+  },
+  "text": {
+   "approach": null,
+   "approach_logistics": null,
+   "road": null,
+   "overview": null,
+   "description": "Follow Summit Creek trail about 10 miles to Lunch Meadow, leave the trail before Mosquito Pass, and climb a drainage to the summit ridge.",
+   "descent": null
+  },
+  "waypoints": [],
+  "siblingTrailheads": [],
+  "officialCandidates": [
+   {
+    "src": "USFS",
+    "name": "Silver Mine",
+    "lat": 38.274705,
+    "lng": -119.759813,
+    "km": 8.8
+   },
+   {
+    "src": "USFS",
+    "name": "Upper Kennedy Meadow Trailhead",
+    "lat": 38.299605,
+    "lng": -119.740413,
+    "km": 10.8
+   },
+   {
+    "src": "USFS",
+    "name": "Leavitt Lake Trailhead",
+    "lat": 38.27341,
+    "lng": -119.612366,
+    "km": 11.3
+   },
+   {
+    "src": "USFS",
+    "name": "Kennedy Meadows Campground",
+    "lat": 38.316593,
+    "lng": -119.747204,
+    "km": 12.7
+   },
+   {
+    "src": "USFS",
+    "name": "Gianelli Cabin Trailhead",
+    "lat": 38.197505,
+    "lng": -119.883013,
+    "km": 15.2
+   },
+   {
+    "src": "USFS",
+    "name": "Sonora Pass Trailhead",
+    "lat": 38.329792,
+    "lng": -119.635133,
+    "km": 15.2
+   },
+   {
+    "src": "USFS",
+    "name": "Coyote Meadow Trailhead",
+    "lat": 38.24043,
+    "lng": -119.87956,
+    "km": 15.4
+   },
+   {
+    "src": "USFS",
+    "name": "Saint Marys Pass Trailhead",
+    "lat": 38.337162,
+    "lng": -119.645481,
+    "km": 15.6
+   },
+   {
+    "src": "USFS",
+    "name": "SEVEN PINES",
+    "lat": 38.340205,
+    "lng": -119.778313,
+    "km": 16.1
+   },
+   {
+    "src": "USFS",
+    "name": "Crabtree Trailhead",
+    "lat": 38.179381,
+    "lng": -119.909693,
+    "km": 17.8
+   },
+   {
+    "src": "USFS",
+    "name": "Waterhouse Trailhead",
+    "lat": 38.234205,
+    "lng": -119.914013,
+    "km": 18.2
+   },
+   {
+    "src": "USFS",
+    "name": "BOX SPRINGS",
+    "lat": 38.129205,
+    "lng": -119.907913,
+    "km": 19.4
+   },
+   {
+    "src": "USFS",
+    "name": "Leavitt Meadows Trailhead",
+    "lat": 38.331885,
+    "lng": -119.553443,
+    "km": 19.5
+   },
+   {
+    "src": "USFS",
+    "name": "Pinecrest Peak",
+    "lat": 38.225205,
+    "lng": -119.941113,
+    "km": 20.4
+   },
+   {
+    "src": "USFS",
+    "name": "Bell Meadow Trailhead",
+    "lat": 38.168211,
+    "lng": -119.942874,
+    "km": 20.9
+   }
+  ],
+  "firstPass": {
+   "why": "stuck: Route has no stored approach text naming a trailhead; page lookups not possible this run (OSM 429/406, no page evidence gathered). Not guessed.",
+   "trailhead": null,
+   "notes": "Route has no stored approach text naming a trailhead; page lookups not possible this run (OSM 429/406, no page evidence gathered). Not guessed."
+  }
+ },
+ {
+  "id": "ca_black_mountain_sierra_standard_route",
+  "name": "Standard route",
+  "discipline": "scrambling",
+  "grade": "Class 2",
+  "verdict": "SUMMIT_ONLY",
+  "state": "ca",
+  "peak": {
+   "id": "ca_black_mountain_sierra",
+   "name": "Black Mountain",
+   "lat": 36.809,
+   "lng": -118.3783,
+   "elevation_ft": 13291,
+   "region": null,
+   "path": "usa.california.ca_high_sierra.ca_12_kearsarge_pass_to_cedar_grove.ca_black_mountain_sierra"
+  },
+  "text": {
+   "approach": null,
+   "approach_logistics": null,
+   "road": null,
+   "overview": null,
+   "description": null,
+   "descent": null
+  },
+  "waypoints": [],
+  "siblingTrailheads": [],
+  "officialCandidates": [
+   {
+    "src": "USFS",
+    "name": "Onion Valley Campground",
+    "lat": 36.772538,
+    "lng": -118.341244,
+    "km": 5.2
+   },
+   {
+    "src": "USFS",
+    "name": "Baxter Pass Trailhead",
+    "lat": 36.844705,
+    "lng": -118.297612,
+    "km": 8.2
+   },
+   {
+    "src": "USFS",
+    "name": "Shepherd Pass Th",
+    "lat": 36.726905,
+    "lng": -118.278912,
+    "km": 12.7
+   },
+   {
+    "src": "USFS",
+    "name": "SAWMILL PASS TH",
+    "lat": 36.938805,
+    "lng": -118.290212,
+    "km": 16.4
+   },
+   {
+    "src": "USFS",
+    "name": "Cedar Grove",
+    "lat": 36.796368,
+    "lng": -118.58291,
+    "km": 18.3
+   },
+   {
+    "src": "NPS",
+    "name": "Copper Creek",
+    "lat": 36.796495,
+    "lng": -118.583551,
+    "km": 18.3
+   },
+   {
+    "src": "NPS",
+    "name": "Bubbs Creek, Woods Creek, and Rae Lakes  ",
+    "lat": 36.794924,
+    "lng": -118.582577,
+    "km": 18.3
+   },
+   {
+    "src": "NPS",
+    "name": "River Trail",
+    "lat": 36.79427,
+    "lng": -118.584209,
+    "km": 18.4
+   },
+   {
+    "src": "NPS",
+    "name": "Zumwalt Meadow/River Trail",
+    "lat": 36.793648,
+    "lng": -118.59852,
+    "km": 19.7
+   },
+   {
+    "src": "NPS",
+    "name": "Cemetery Parking",
+    "lat": 36.725198,
+    "lng": -118.162135,
+    "km": 21.4
+   },
+   {
+    "src": "NPS",
+    "name": "Cemetery Parking",
+    "lat": 36.725769,
+    "lng": -118.161778,
+    "km": 21.4
+   },
+   {
+    "src": "NPS",
+    "name": " ",
+    "lat": 36.728353,
+    "lng": -118.146862,
+    "km": 22.5
+   },
+   {
+    "src": "USFS",
+    "name": "TABOOSE PASS TH",
+    "lat": 37.009505,
+    "lng": -118.327312,
+    "km": 22.8
+   }
+  ],
+  "firstPass": {
+   "why": "stuck: Route has no stored approach text naming a trailhead; page lookups not possible this run (OSM 429/406, no page evidence gathered). Not guessed.",
+   "trailhead": null,
+   "notes": "Route has no stored approach text naming a trailhead; page lookups not possible this run (OSM 429/406, no page evidence gathered). Not guessed."
+  }
+ },
+ {
+  "id": "ca_caltech_peak_standard_route",
+  "name": "Standard route",
+  "discipline": "scrambling",
+  "grade": "Class 2",
+  "verdict": "SUMMIT_ONLY",
+  "state": "ca",
+  "peak": {
+   "id": "ca_caltech_peak",
+   "name": "Caltech Peak",
+   "lat": 36.6889,
+   "lng": -118.3907,
+   "elevation_ft": 13832,
+   "region": null,
+   "path": "usa.california.ca_high_sierra.ca_13_shepherd_pass.ca_caltech_peak"
+  },
+  "text": {
+   "approach": null,
+   "approach_logistics": null,
+   "road": null,
+   "overview": null,
+   "description": null,
+   "descent": null
+  },
+  "waypoints": [],
+  "siblingTrailheads": [],
+  "officialCandidates": [
+   {
+    "src": "USFS",
+    "name": "Onion Valley Campground",
+    "lat": 36.772538,
+    "lng": -118.341244,
+    "km": 10.3
+   },
+   {
+    "src": "USFS",
+    "name": "Shepherd Pass Th",
+    "lat": 36.726905,
+    "lng": -118.278912,
+    "km": 10.8
+   },
+   {
+    "src": "USFS",
+    "name": "Whitney Portal Trailhead",
+    "lat": 36.586905,
+    "lng": -118.240112,
+    "km": 17.6
+   },
+   {
+    "src": "USFS",
+    "name": "MEYSAN LAKE TH",
+    "lat": 36.589789,
+    "lng": -118.230163,
+    "km": 18.1
+   },
+   {
+    "src": "USFS",
+    "name": "Baxter Pass Trailhead",
+    "lat": 36.844705,
+    "lng": -118.297612,
+    "km": 19.2
+   },
+   {
+    "src": "NPS",
+    "name": "River Trail",
+    "lat": 36.79427,
+    "lng": -118.584209,
+    "km": 20.8
+   },
+   {
+    "src": "NPS",
+    "name": "Bubbs Creek, Woods Creek, and Rae Lakes  ",
+    "lat": 36.794924,
+    "lng": -118.582577,
+    "km": 20.8
+   },
+   {
+    "src": "NPS",
+    "name": "Cemetery Parking",
+    "lat": 36.725198,
+    "lng": -118.162135,
+    "km": 20.8
+   },
+   {
+    "src": "NPS",
+    "name": "Cemetery Parking",
+    "lat": 36.725769,
+    "lng": -118.161778,
+    "km": 20.8
+   },
+   {
+    "src": "USFS",
+    "name": "Whitney Portal NRT Trailhead",
+    "lat": 36.597405,
+    "lng": -118.186412,
+    "km": 20.9
+   },
+   {
+    "src": "USFS",
+    "name": "Cedar Grove",
+    "lat": 36.796368,
+    "lng": -118.58291,
+    "km": 20.9
+   },
+   {
+    "src": "NPS",
+    "name": "Copper Creek",
+    "lat": 36.796495,
+    "lng": -118.583551,
+    "km": 20.9
+   },
+   {
+    "src": "NPS",
+    "name": "Zumwalt Meadow/River Trail",
+    "lat": 36.793648,
+    "lng": -118.59852,
+    "km": 21.9
+   },
+   {
+    "src": "NPS",
+    "name": " ",
+    "lat": 36.728353,
+    "lng": -118.146862,
+    "km": 22.2
+   },
+   {
+    "src": "USFS",
+    "name": "TUTTLE CREEK TH",
+    "lat": 36.553705,
+    "lng": -118.184212,
+    "km": 23.8
+   },
+   {
+    "src": "USFS",
+    "name": "SUGARLOAF HILL STAGING",
+    "lat": 36.728002,
+    "lng": -118.663445,
+    "km": 24.7
+   }
+  ],
+  "firstPass": {
+   "why": "stuck: Route has no stored approach text naming a trailhead; page lookups not possible this run (OSM 429/406, no page evidence gathered). Not guessed.",
+   "trailhead": null,
+   "notes": "Route has no stored approach text naming a trailhead; page lookups not possible this run (OSM 429/406, no page evidence gathered). Not guessed."
+  }
+ },
+ {
+  "id": "ca_cartago_peak_standard_route",
+  "name": "Standard route",
+  "discipline": "scrambling",
+  "grade": "Class 3",
+  "verdict": "SUMMIT_ONLY",
+  "state": "ca",
+  "peak": {
+   "id": "ca_cartago_peak",
+   "name": "Cartago Peak",
+   "lat": 36.3245,
+   "lng": -118.102,
+   "elevation_ft": 10480,
+   "region": null,
+   "path": "usa.california.ca_high_sierra.ca_14_whitney_surrounding_peaks.ca_cartago_peak"
+  },
+  "text": {
+   "approach": null,
+   "approach_logistics": null,
+   "road": null,
+   "overview": null,
+   "description": "Class 2 to the summit block, which is Class 3.",
+   "descent": null
+  },
+  "waypoints": [],
+  "siblingTrailheads": [],
+  "officialCandidates": [
+   {
+    "src": "USFS",
+    "name": "OLANCHA PASS/SAGE FLAT TH",
+    "lat": 36.225667,
+    "lng": -118.061566,
+    "km": 11.6
+   },
+   {
+    "src": "USFS",
+    "name": "Cottonwood Pass Trailhead",
+    "lat": 36.448305,
+    "lng": -118.170612,
+    "km": 15.1
+   },
+   {
+    "src": "USFS",
+    "name": "Cottonwood Lakes Trailhead",
+    "lat": 36.453362,
+    "lng": -118.169987,
+    "km": 15.6
+   },
+   {
+    "src": "USFS",
+    "name": "Blackrock Trailhead",
+    "lat": 36.178129,
+    "lng": -118.267418,
+    "km": 22
+   }
+  ],
+  "firstPass": {
+   "why": "stuck: Route has no stored approach text naming a trailhead; page lookups not possible this run (OSM 429/406, no page evidence gathered). Not guessed.",
+   "trailhead": null,
+   "notes": "Route has no stored approach text naming a trailhead; page lookups not possible this run (OSM 429/406, no page evidence gathered). Not guessed."
+  }
+ },
+ {
+  "id": "ca_castle_peak_summit_via_castle_pass",
+  "name": "Via Castle Pass",
+  "discipline": "scrambling",
+  "grade": "Class 3",
+  "verdict": "SUMMIT_ONLY",
+  "state": "ca",
+  "peak": {
+   "id": "ca_castle_peak_summit",
+   "name": "Castle Peak",
+   "lat": 39.3655,
+   "lng": -120.3492,
+   "elevation_ft": 9103,
+   "region": null,
+   "path": "usa.california.ca_lake_tahoe.ca_i_80_corridor.ca_donner_truckee_bouldering.ca_castle_peak.ca_castle_peak_summit"
+  },
+  "text": {
+   "approach": null,
+   "approach_logistics": null,
+   "road": null,
+   "overview": null,
+   "description": "Take the Pacific Crest Trail under I-80 to Castle Pass, then follow the ridge northeast to the top of the northwest turret. The last bit is a loose, steep scramble. Class 2 to the summit block, which is Class 3.",
+   "descent": null
+  },
+  "waypoints": [],
+  "siblingTrailheads": [],
+  "officialCandidates": [
+   {
+    "src": "USFS",
+    "name": "Donner Summit  Trailhead",
+    "lat": 39.339885,
+    "lng": -120.343949,
+    "km": 2.9
+   },
+   {
+    "src": "USFS",
+    "name": "Cold Stream Trailhead",
+    "lat": 39.271123,
+    "lng": -120.284665,
+    "km": 11.9
+   },
+   {
+    "src": "USFS",
+    "name": "MOSSY POND",
+    "lat": 39.353052,
+    "lng": -120.493374,
+    "km": 12.5
+   },
+   {
+    "src": "USFS",
+    "name": "Donkey Town",
+    "lat": 39.309135,
+    "lng": -120.212023,
+    "km": 13.4
+   },
+   {
+    "src": "USFS",
+    "name": "Mt. Lola Trailhead",
+    "lat": 39.488416,
+    "lng": -120.340129,
+    "km": 13.7
+   },
+   {
+    "src": "USFS",
+    "name": "Hobart Mills Trailhead , Prosser Trailhe",
+    "lat": 39.398708,
+    "lng": -120.18714,
+    "km": 14.4
+   },
+   {
+    "src": "USFS",
+    "name": "Sawtooth Trailhead",
+    "lat": 39.310009,
+    "lng": -120.191538,
+    "km": 14.9
+   },
+   {
+    "src": "USFS",
+    "name": "Thelin",
+    "lat": 39.312646,
+    "lng": -120.189267,
+    "km": 15
+   },
+   {
+    "src": "USFS",
+    "name": "Loch Leven Trailhead",
+    "lat": 39.309278,
+    "lng": -120.515939,
+    "km": 15.6
+   },
+   {
+    "src": "USFS",
+    "name": "Cherry Point Trailhead",
+    "lat": 39.281005,
+    "lng": -120.505013,
+    "km": 16.4
+   },
+   {
+    "src": "USFS",
+    "name": "Little Truckee Summit Staging Area",
+    "lat": 39.505107,
+    "lng": -120.283074,
+    "km": 16.5
+   },
+   {
+    "src": "USFS",
+    "name": "Big Chief - North",
+    "lat": 39.269285,
+    "lng": -120.200476,
+    "km": 16.7
+   },
+   {
+    "src": "USFS",
+    "name": "Salmon Lake",
+    "lat": 39.280302,
+    "lng": -120.531283,
+    "km": 18.3
+   },
+   {
+    "src": "USFS",
+    "name": "BIG GRANITE",
+    "lat": 39.274725,
+    "lng": -120.530673,
+    "km": 18.6
+   },
+   {
+    "src": "USFS",
+    "name": "Indian Springs Trailhead",
+    "lat": 39.33017,
+    "lng": -120.570162,
+    "km": 19.4
+   }
+  ],
+  "firstPass": {
+   "why": "stuck: Route has no stored approach text naming a trailhead; page lookups not possible this run (OSM 429/406, no page evidence gathered). Not guessed.",
+   "trailhead": null,
+   "notes": "Route has no stored approach text naming a trailhead; page lookups not possible this run (OSM 429/406, no page evidence gathered). Not guessed."
+  }
+ }
+]

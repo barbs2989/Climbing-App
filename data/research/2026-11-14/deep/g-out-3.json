@@ -1,0 +1,98 @@
+[
+ {"route_id":"co_maroon_peak_south_ridge","field":"gain_ft","stored_value":4600,"found_value":4800,"verdict":"found_confirmed","final_value":4800,"trailhead":"Maroon Lake Trailhead (~9,590 ft)",
+  "figures":[
+   {"value":4800,"trailhead":"Maroon Lake TH","url":"https://www.14ers.com/route.php?route=maro1","one_way":true,"fact":"14ers: Standard 12-mile, 4,800-foot Class 3 out-and-back route from Maroon Lake."},
+   {"value":5200,"trailhead":"Maroon Lake","url":"https://stavislost.com/hikes/trail/maroon-peak/","one_way":true,"fact":"Stav is Lost: 11.9 mi out/back from Maroon Lake, 'Net Gain 5,200 ft'; cites no other site."},
+   {"value":4800,"trailhead":"Maroon Lake (9,580 ft)","url":"https://www.coloradounited.com/colorado-14ers/maroon-peak","one_way":true,"fact":"Colorado United: about 11.5 mi round trip, 4,800 ft of gain from Maroon Lake; no citation, likely 14ers-derived."},
+   {"value":4800,"trailhead":"Maroon Lake TH","url":"https://mountainfieldguide.com/maroon-peak/","one_way":true,"fact":"Mountain Field Guide 4,800 ft; lists 14ers.com among its sources, so not independent."},
+   {"value":3800,"trailhead":"Maroon Lake","url":"https://listhiker.com/peaks/co-maroon","one_way":true,"fact":"List Hiker snippet: 11.7 mi RT, about 3,800 ft; listhiker is a known 14ers copier, excluded."},
+   {"value":5400,"trailhead":"Maroon Lake Road","url":"https://www.14ers.com/php14ers/tripreport.php?trip=22895","one_way":false,"fact":"Trip report total including backtracking and a run up Maroon Lake Road; outing total, excluded."}
+  ],
+  "evidence":[
+   {"url":"https://www.14ers.com/route.php?route=maro1","retrieved_at":"2026-11-18","fact":"South Ridge standard route: 12 miles, 4,800 feet, Class 3, from Maroon Lake Trailhead."},
+   {"url":"https://stavislost.com/hikes/trail/maroon-peak/","retrieved_at":"2026-11-18","fact":"Out/back from Maroon Lake via Crater Lake: 11.9 mi, Net Gain 5,200 ft (7.7% from 4,800)."}
+  ],
+  "note":"Stav is Lost is independent (different figure, no citation) and within 10% of 4,800, but 11.5% from stored 4,600, so found_value wins. 14ers is the most route-precise page. No land-manager figure found. Maroon Creek Road is shuttle/reservation-only in season."},
+ {"route_id":"wa_mix_up_peak_east_face","field":"gain_ft","stored_value":3800,"found_value":3900,"verdict":"stored_confirmed","final_value":3800,"trailhead":"Cascade Pass Trailhead",
+  "figures":[
+   {"value":3900,"trailhead":"Cascade Pass TH","url":"https://www.mountaineers.org/activities/routes-places/cascade-pass-area-review/mixup-peak-e-face","one_way":true,"fact":"Mountaineers route page: Elevation Gain 3,900 ft; 7-9 hr trailhead to summit."},
+   {"value":3800,"trailhead":"Cascade Pass TH (hike to Cascade Pass, traverse to glacier basin)","url":"https://mazamas.org/activity/217/","one_way":true,"fact":"Mazamas Mix up Peak, East Face climb route page: Elevation Gain 3,800 ft; approach via Cascade Pass."}
+  ],
+  "evidence":[
+   {"url":"https://mazamas.org/activity/217/","retrieved_at":"2026-11-18","fact":"Mazamas Mix up Peak, East Face: Elevation Gain 3,800 ft; hike to Cascade Pass then traverse to the glacier basin."},
+   {"url":"https://www.mountaineers.org/activities/routes-places/cascade-pass-area-review/mixup-peak-e-face","retrieved_at":"2026-11-18","fact":"Mountaineers Mixup Peak/East Face: Elevation Gain 3,900 ft from Cascade Pass trailhead."}
+  ],
+  "note":"Mazamas (3,800) and Mountaineers (3,900) give different figures, so neither copies the other. Both agree within 2.6%. Mazamas states exactly the stored 3,800, so I kept it; 3,900 would also pass. Also checked with no figure: CascadeClimbers TR 2025-06-10, Mountaineers TR 2019-07-13, Peakbagger ascent aid=2902192, MP area page. Mazamas pages render only in a browser (WebFetch 403)."},
+ {"route_id":"wa_mcclellan_peak_southwest_scramble","field":"gain_ft","stored_value":8100,"found_value":7200,"verdict":"unresolved","final_value":null,"trailhead":"Ingalls Creek Trailhead (south/southwest routes); Mountaineers figure is Snow Lakes TH",
+  "figures":[
+   {"value":7200,"trailhead":"Snow Lakes TH (1,350 ft), north-side routes","url":"https://www.mountaineers.org/activities/routes-places/enchantments-area-review/mcclellan-peak","one_way":true,"fact":"Mountaineers: 22.0 mi, Elevation Gain 7,200 ft, high point 8,364; describes north-face routes from Snow Lakes/Enchantments."},
+   {"value":6700,"trailhead":"Ingalls Creek TH (1,950 ft)","url":"https://trailcatjim.com/mcclellan-peak-crystal-lake-ingalls-creek/","one_way":false,"fact":"Trailcatjim via Ingalls Creek, Crystal Lake, southwest face: '6700 feet gained & lost', 14 miles; outing total, excluded."},
+   {"value":4964,"trailhead":"unstated (Enchantments walk-through via Aasgard)","url":"https://www.yellowleaf.org/scramble/g/r/2014-09-28-mcclellan.html","one_way":false,"fact":"Yellowleaf 2014 Enchantments walk-through plus McClellan, 4,964 ft; traverse, not trailhead-to-summit."}
+  ],
+  "evidence":[],
+  "note":"The route id is the southwest scramble, which starts from Ingalls Creek TH (trailcatjim, lemkeclimbs, ericsbasecamp), while the Mountaineers 7,200 is for north-side routes from Snow Lakes, so the two numbers may describe different routes. Lemke and Eric's Basecamp give no total gain (Eric: TH c.2,000', summit 8,364', ~18 mi RT). No one-way Ingalls Creek figure found; no source for the stored 8,100."},
+ {"route_id":"wa_lane_peak_r1","field":"gain_ft","stored_value":2000,"found_value":1500,"verdict":"stored_confirmed","final_value":2000,"trailhead":"Narada Falls / Reflection Lakes (Stevens Canyon Road bend), Mount Rainier NP",
+  "figures":[
+   {"value":1500,"trailhead":"Narada Falls/Reflection Lakes","url":"https://www.mountaineers.org/activities/routes-places/lane-peak-zipper-lovers-lane","one_way":true,"fact":"Mountaineers page covering both Zipper and Lovers Lane together: 1,500 ft gain."},
+   {"value":2000,"trailhead":"Reflection Lakes TH","url":"https://mazamas.org/activity/instance/9144/detail/","one_way":true,"fact":"Mazamas Lane Peak, The Zipper: hike from Reflection Lakes TH, couloir to summit ridge; 2,000 ft gain (prior pass)."},
+   {"value":2000,"trailhead":"Narada Falls (winter)","url":"https://www.willhiteweb.com/mount_rainier_national_park/lane_peak/tatoosh_range_301.htm","one_way":true,"fact":"WillhiteWeb Lane Peak: Distance 2 miles, Elevation Gain 2,000 feet; winter start Narada Falls; author climbed the Zipper."},
+   {"value":1980,"trailhead":"near Reflection Lakes (Cliff Lake trail)","url":"https://sahalegps.com/trails/washington/lane-peak/","one_way":false,"fact":"Sahale GPS 4.3 mi out & back, 1,980 ft; computed from map data, describes a Cliff Lake trail line, not the Zipper; excluded."}
+  ],
+  "evidence":[
+   {"url":"https://www.willhiteweb.com/mount_rainier_national_park/lane_peak/tatoosh_range_301.htm","retrieved_at":"2026-11-18","fact":"Lane Peak: Distance 2 miles, Elevation Gain 2,000 feet, summit 6,012; winter approach from Narada Falls; Zipper described."},
+   {"url":"https://mazamas.org/activity/instance/9144/detail/","retrieved_at":"2026-11-18","fact":"Mazamas Lane Peak, The Zipper from Reflection Lakes trailhead: 2,000 ft elevation gain."}
+  ],
+  "note":"WillhiteWeb is a personal guide site, independent of Mazamas, and gives 2,000 ft. Its stats are for Lane Peak in general, but the route it describes from experience is the Zipper. Mountaineers' 1,500 is 25% lower and stands alone. The two pages name different start points (Narada Falls vs Reflection Lakes) about half a mile apart on the same road. Stevens Canyon Road is closed in winter past Narada Falls."},
+ {"route_id":"wa_se_ridge_aka_shield_wall","field":"gain_ft","stored_value":3229,"found_value":5255,"verdict":"unresolved","final_value":null,"trailhead":"FR 2419 just past second Big Creek crossing (3,100 ft), Lake Cushman",
+  "figures":[
+   {"value":5255,"trailhead":"FR 2419 Big Creek (3,100 ft)","url":"https://www.mountaineers.org/activities/routes-places/mount-washington-shield-wall","one_way":true,"fact":"Mountaineers: Length 8.0 mi, Elevation Gain 5,255 ft, High Point 6,255 ft; trailhead stated at 3,100 ft."},
+   {"value":2000,"trailhead":"climbers trail off FR 2419","url":"https://hiking.andrewleader.net/routes/se-ridge-shield-wall/","one_way":false,"fact":"Andrew's Hikes: approach about 1 mile, 2,000 ft to the base of the route; approach only, not to summit."},
+   {"value":1600,"trailhead":"approach trail","url":"https://www.peakbagger.com/climber/ascent.aspx?aid=1667630","one_way":false,"fact":"Peakbagger ascent (Andrew Yi, 2021): approach gains roughly 1,600 ft to the basin below the Shield Wall; approach only."},
+   {"value":3190,"trailhead":"FR 2419 standard-route TH","url":"https://www.wta.org/go-hiking/hikes/mount-washington","one_way":true,"fact":"WTA Mount Washington: 4.0 mi roundtrip, 3,190 ft gain; standard scramble route, not the Shield Wall."}
+  ],
+  "evidence":[],
+  "note":"No page gives a trailhead-to-summit gain for the Shield Wall route besides the Mountaineers 5,255. The Mountaineers' own trailhead (3,100) and high point (6,255) do not support 5,255. Also checked with no gain figure: Mountaineers TR 2021-07-31 (Hansen), CascadeClimbers TR 2009 (Off_White), Peakbagger peak pid=1048 ascents, Simmons Mountain Works (page gone). WTA's 3,190 is for the standard route (Route 1), which starts on the same road, and the stored 3,229 is within 10% of it, but it is a different route. Road washed out beyond the Mount Ellinor upper TH (2021 TR)."},
+ {"route_id":"wa_news_nw_corner","field":"gain_ft","stored_value":2600,"found_value":2372,"verdict":"found_confirmed","final_value":2372,"trailhead":"Blue Lake Trailhead, Washington Pass (SR 20)",
+  "figures":[
+   {"value":2372,"trailhead":"Blue Lake TH","url":"https://www.mountaineers.org/activities/routes-places/north-early-winter-spire-northwest-corner","one_way":true,"fact":"Mountaineers NEWS/Northwest Corner route page: Elevation Gain 2,372 ft."},
+   {"value":2200,"trailhead":"Blue Lake area, car to car in one day","url":"https://mazamas.org/activity/105/","one_way":true,"fact":"Mazamas North Early Winter Spire, NW Corner/Boving Route: Elevation Gain 2,200 ft; car to car in one day."}
+  ],
+  "evidence":[
+   {"url":"https://www.mountaineers.org/activities/routes-places/north-early-winter-spire-northwest-corner","retrieved_at":"2026-11-18","fact":"North Early Winter Spire/Northwest Corner, Grade III 5.9+: Elevation Gain 2,372 ft."},
+   {"url":"https://mazamas.org/activity/105/","retrieved_at":"2026-11-18","fact":"Mazamas NEWS NW Corner/Boving Route climb page: Elevation Gain 2,200 ft."}
+  ],
+  "note":"Mazamas' 2,200 differs from Mountaineers' 2,372, so it is not a copy. The two agree within 7.3%. Stored 2,600 is 15% from Mazamas and 8.8% from Mountaineers. Final is the found value, 2,372, the more precise of the two agreeing figures. NCMG and Peakbagger ascents give no gain."},
+ {"route_id":"wa_the_brothers_traverse","field":"gain_ft","stored_value":6042,"found_value":6200,"verdict":"unresolved","final_value":null,"trailhead":"Lena Lake Trailhead (Hamma Hamma Road)",
+  "figures":[
+   {"value":6200,"trailhead":"Lena Lake TH","url":"https://www.mountaineers.org/activities/routes-places/the-brothers-brothers-traverse","one_way":true,"fact":"Mountaineers Brothers Traverse route page: Elevation Gain 6,200 ft."},
+   {"value":5000,"trailhead":"Lena Lake TH to ~5,500 ft bivy","url":"https://cascadeclimbers.com/forum/topic/101686-tr-the-brothers-brothers-traverse-05132018/","one_way":false,"fact":"CascadeClimbers TR 2018: TH to camp about 5,000 ft of vert and 10 miles; to a bivy, not a summit."}
+  ],
+  "evidence":[],
+  "note":"No second trailhead-to-summit figure for the traverse. Checked: CascadeClimbers TRs 2018-05-13 and 2014-06-01 (no totals), theCrag route page (no stats). A prior pass found a Mountaineers TR with a 7,024 ft car-to-car watch total (excluded). Stored and found differ 2.5%, within 10%."},
+ {"route_id":"wa_sperry_peak_standard","field":"gain_ft","stored_value":3700,"found_value":3800,"verdict":"unresolved","final_value":null,"trailhead":"Sunrise Mine Trailhead (Mountain Loop Hwy)",
+  "figures":[
+   {"value":3800,"trailhead":"Sunrise Mine TH","url":"https://www.wta.org/go-hiking/hikes/sperry-peak","one_way":true,"fact":"WTA Sperry Peak hike page: 3,800 ft gain (Mountaineers listing identical, counted as one source)."},
+   {"value":5300,"trailhead":"Sunrise Mine TH, Vesper+Sperry loop","url":"https://www.pnwsota.org/activation-reports/wa7ben/2026-08-17/sperry-peak-wa-aug-2026","one_way":false,"fact":"PNW SOTA report: Vesper and Sperry loop, 9.6 miles, total ascent 5,300 ft; multi-peak total, excluded."}
+  ],
+  "evidence":[],
+  "note":"No new independent one-way figure. Checked: Mountaineers TR 'Sperry Peak' 2015 (times only, Vesper/Sperry/Wolf), Peakbagger peak pid=1804 (ascent stats not reachable), PNW SOTA (multi-peak loop). A prior pass excluded trailcatjim's 4,000 'gained & lost'. Stored and found differ 2.6%, within 10%."},
+ {"route_id":"wa_slippery_slab_tower_ne_face","field":"gain_ft","stored_value":3300,"found_value":4200,"verdict":"unresolved","final_value":null,"trailhead":"Tunnel Creek Trailhead No. 1061 (3,100 ft), FR 6095 off US-2",
+  "figures":[
+   {"value":4200,"trailhead":"Tunnel Creek TH (3,100 ft)","url":"https://www.mountaineers.org/activities/routes-places/slippery-slab-tower-ne-face","one_way":true,"fact":"Mountaineers stats: Elevation Gain 4,200 ft, high point 6,400; trip profile TH-to-pass 3,500 plus pass-to-summit 700."},
+   {"value":3400,"trailhead":"Tunnel Creek TH","url":"https://www.mountaineers.org/activities/routes-places/slippery-slab-tower-ne-face","one_way":true,"fact":"The same Mountaineers page's intro: 'A pleasant 6.5 mi, 3,400 feet gain, hike along the Pacific Crest Trail'. Same publisher."},
+   {"value":4200,"trailhead":"Tunnel Creek TH","url":"https://www.theoutbound.com/washington/hiking/climb-slippery-slab-tower","one_way":true,"fact":"The Outbound: 13 miles out-and-back, 4,200 ft from Tunnel Creek TH. Identical to the Mountaineers figure and distance, so probably derived from it."}
+  ],
+  "evidence":[],
+  "note":"The Mountaineers page contradicts itself: the intro says 3,400 ft and the stats say 4,200 ft. Stored 3,300 is within 10% of the 3,400 intro, but that is the same publisher. The Outbound's 4,200 / 13 mi exactly mirrors Mountaineers, so independence is not shown. Also checked with no total: MP route page, Mountaineers TR 2026-09-11 (TH 3,200, Trap Pass 5,700, base 6,100), CascadeClimbers TR 2006 (Hope Lake leg only). The alternate Surprise Creek approach adds about 900 ft, according to Mountaineers."},
+ {"route_id":"wa_del_campo_peak_standard","field":"gain_ft","stored_value":4200,"found_value":4400,"verdict":"stored_confirmed","final_value":4200,"trailhead":"Barlow Pass (2,360 ft), Mountain Loop Hwy",
+  "figures":[
+   {"value":4400,"trailhead":"Barlow Pass (2,360 ft)","url":"https://www.mountaineers.org/activities/routes-places/monte-cristo-barlow-pass-area/del-campo-gothic-peaks","one_way":true,"fact":"Mountaineers Del Campo section: 12 miles round trip with 4,400 feet of elevation gain, from Barlow Pass via Foggy Lake."},
+   {"value":4200,"trailhead":"Barlow Pass (2,360 ft)","url":"https://www.wta.org/go-hiking/hikes/del-campo-peak","one_way":true,"fact":"WTA Del Campo Peak: 11.0 miles roundtrip, 4,200 ft gain, highest point 6,610, Barlow Pass trailhead."},
+   {"value":5500,"trailhead":"Barlow Pass","url":"https://www.mountaineers.org/activities/routes-places/monte-cristo-barlow-pass-area/del-campo-gothic-peaks","one_way":false,"fact":"Mountaineers headline 14 mi, 5,500 ft is Del Campo plus Gothic combined; multi-peak, excluded."}
+  ],
+  "evidence":[
+   {"url":"https://www.wta.org/go-hiking/hikes/del-campo-peak","retrieved_at":"2026-11-18","fact":"Del Campo Peak: 11.0 miles roundtrip, 4,200 feet gain, highest point 6,610 feet, Barlow Pass trailhead."},
+   {"url":"https://www.mountaineers.org/activities/routes-places/monte-cristo-barlow-pass-area/del-campo-gothic-peaks","retrieved_at":"2026-11-18","fact":"Del Campo Peak (6,610 ft): 12 miles round trip with 4,400 feet of elevation gain from Barlow Pass."}
+  ],
+  "note":"WTA (4,200) and Mountaineers (4,400) differ, so they are independent. They agree within 4.5%. WTA states exactly the stored 4,200 on a Del Campo-only page, so I kept it; 4,400 would also pass. Neither is a land manager. The Mountain Loop Hwy is unpaved past Barlow Pass and has seasonal winter closures; WTA's page notes no closure."}
+]

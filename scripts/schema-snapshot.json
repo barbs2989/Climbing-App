@@ -1,6 +1,6 @@
 {
   "note": "Generated from the live database by scripts/refresh-schema-snapshot.mjs. Do not hand-edit.",
-  "generatedAt": "2026-11-04",
+  "generatedAt": "2026-11-24",
   "tables": {
     "accessibility_reports": [
       "assistive",
@@ -44,9 +44,27 @@
       "status",
       "user_id"
     ],
+    "app_secrets": [
+      "key",
+      "value"
+    ],
     "app_settings": [
       "key",
       "value"
+    ],
+    "area_route_rollup": [
+      "area_id",
+      "b",
+      "disc",
+      "n",
+      "sys"
+    ],
+    "area_subtree_rollup": [
+      "area_id",
+      "b",
+      "disc",
+      "n",
+      "sys"
     ],
     "areas": [
       "approach",
@@ -82,16 +100,6 @@
       "walkin_kind",
       "walkin_submission_id"
     ],
-    "belay_catches": [
-      "belayer_id",
-      "climb_log_id",
-      "climber_id",
-      "created_at",
-      "date_occurred",
-      "description",
-      "filed_by",
-      "id"
-    ],
     "blocked_users": [
       "blocked",
       "blocker",
@@ -125,10 +133,6 @@
       "name",
       "route_id",
       "state"
-    ],
-    "cert_track_disciplines": [
-      "cert_track",
-      "discipline"
     ],
     "climb_log_confirmations": [
       "created_at",
@@ -178,6 +182,7 @@
       "photo_near_route",
       "photo_taken_on",
       "photos",
+      "pitches_climbed",
       "protection_quality",
       "rappel_count",
       "rappel_longest_m",
@@ -280,6 +285,7 @@
       "field",
       "id",
       "kind",
+      "prior_value",
       "reason",
       "result_id",
       "review_note",
@@ -289,9 +295,27 @@
       "status",
       "value"
     ],
+    "conversation_state": [
+      "archived_at",
+      "cleared_before",
+      "kind",
+      "marked_unread",
+      "muted_until",
+      "target_id",
+      "updated_at",
+      "user_id"
+    ],
     "crew_day_acks": [
       "crew_id",
       "date",
+      "rank",
+      "user_id"
+    ],
+    "crew_departures": [
+      "agreed_date",
+      "crew_id",
+      "left_at",
+      "removed_by_other",
       "user_id"
     ],
     "crew_email_invites": [
@@ -304,7 +328,15 @@
       "invited_by",
       "note"
     ],
+    "crew_float_filings": [
+      "crew_id",
+      "filed_at",
+      "return_by",
+      "updated_at",
+      "user_id"
+    ],
     "crew_listings": [
+      "agreed_date",
       "area_id",
       "cap",
       "confirmed_count",
@@ -313,10 +345,13 @@
       "created_by",
       "dates",
       "discipline",
+      "held_count",
       "id",
+      "open_note",
       "route_id"
     ],
     "crew_members": [
+      "confirmed_at",
       "crew_id",
       "gear_claims",
       "gear_counts",
@@ -355,6 +390,28 @@
       "updated_at",
       "user_id"
     ],
+    "crew_trip_replies": [
+      "about_id",
+      "created_at",
+      "note",
+      "outcome",
+      "reply",
+      "report_id",
+      "reporter_id",
+      "trip_crew",
+      "trip_date"
+    ],
+    "crew_trip_reports": [
+      "about_id",
+      "created_at",
+      "crew_id",
+      "id",
+      "outcome",
+      "reporter_id",
+      "trip_crew",
+      "trip_date",
+      "updated_at"
+    ],
     "crews": [
       "agreed_date",
       "area_id",
@@ -362,6 +419,7 @@
       "created_at",
       "created_by",
       "date_forced",
+      "date_proposers",
       "dates",
       "discipline",
       "dismissed",
@@ -369,8 +427,12 @@
       "id",
       "itinerary",
       "itinerary_by",
+      "meet_lat",
+      "meet_lng",
       "meet_place",
       "meet_time",
+      "open_note",
+      "private",
       "route_id",
       "share_on",
       "share_token"
@@ -542,8 +604,13 @@
     ],
     "groups": [
       "accent",
+      "announcement",
       "area_id",
+      "area_place",
+      "area_region",
+      "avatar_url",
       "blurb",
+      "cover_url",
       "created_at",
       "created_by",
       "disciplines",
@@ -552,72 +619,18 @@
       "invite_policy",
       "join_questions",
       "lat",
+      "links",
       "lng",
       "location",
+      "mod_title",
       "moderation",
       "name",
       "policy",
+      "region",
       "rules",
-      "visibility"
-    ],
-    "guide_credentials": [
-      "cert_number",
-      "cert_track",
-      "created_at",
-      "cross_cutting_type",
-      "guide_id",
-      "id",
-      "issuing_org",
-      "kind",
-      "label",
-      "rejected_reason",
-      "reviewed_by",
-      "status",
-      "submitted_at",
-      "verified_at",
-      "verified_expires_at"
-    ],
-    "guide_documents": [
-      "credential_id",
-      "deleted_at",
-      "doc_type",
-      "guide_id",
-      "id",
-      "storage_path",
-      "uploaded_at"
-    ],
-    "guide_profiles": [
-      "active_disciplines",
-      "agreement_signed_at",
-      "agreement_signed_name",
-      "base_location",
-      "bio",
-      "cancellation_policy",
-      "created_at",
-      "day_rate",
-      "group_max",
-      "id",
-      "independent_contractor_attested",
-      "independent_contractor_attested_at",
-      "insurance_attested",
-      "insurance_attested_at",
-      "insurance_carrier_name",
-      "languages",
-      "lat",
-      "listed_at",
-      "lng",
-      "permit_attested",
-      "permit_attested_at",
-      "regions",
-      "rejected_reason",
-      "response_hrs",
-      "specialty",
-      "status",
-      "submitted_at",
-      "title",
-      "updated_at",
-      "waiver_process_attested",
-      "waiver_process_attested_at"
+      "search_text",
+      "visibility",
+      "welcome_text"
     ],
     "hazard_votes": [
       "created_at",
@@ -627,20 +640,6 @@
       "updated_at",
       "user_id",
       "vote"
-    ],
-    "inquiries": [
-      "climber_disclaimer_accepted_at",
-      "climber_id",
-      "created_at",
-      "guide_id",
-      "guide_responded_at",
-      "id",
-      "includes_minor",
-      "message",
-      "objective",
-      "party_size",
-      "requested_dates",
-      "status"
     ],
     "kudos": [
       "climb_log_id",
@@ -685,6 +684,7 @@
     ],
     "notification_state": [
       "dismissed_ids",
+      "prefs",
       "seen_ids",
       "updated_at",
       "user_id"
@@ -746,6 +746,7 @@
       "hiking_speed_ft_hr",
       "id",
       "is_admin",
+      "is_reviewer",
       "level",
       "location",
       "mutuals_visible",
@@ -755,17 +756,24 @@
       "photos_public",
       "pinned_states",
       "primary_account_id",
+      "pronouns",
+      "public_name",
+      "public_photo_alts",
+      "public_photos",
       "requests_from",
       "resume_public",
       "show_name",
       "show_on_ranks",
+      "skill_practiced",
       "skills",
       "sport_grade",
       "terms_accepted_at",
       "terms_accepted_version",
       "trad_grade",
       "trip_reports_default",
-      "username"
+      "username",
+      "username_changes",
+      "username_set_at"
     ],
     "restricted_users": [
       "created_at",
@@ -773,16 +781,38 @@
       "restricted",
       "restrictor"
     ],
-    "reviews": [
-      "climber_id",
-      "created_at",
-      "guide_id",
-      "guide_reply",
-      "guide_reply_at",
+    "review_ai_verdicts": [
+      "ai_value",
+      "area_id",
+      "checked_at",
+      "confidence",
+      "current_value",
+      "field",
       "id",
-      "inquiry_id",
-      "rating",
-      "text"
+      "item_hash",
+      "item_id",
+      "item_kind",
+      "model",
+      "reasoning",
+      "route_id",
+      "sources",
+      "suggested_value",
+      "verdict"
+    ],
+    "review_worklist": [
+      "area_id",
+      "audit",
+      "detail",
+      "found_at",
+      "id",
+      "item_key",
+      "last_seen",
+      "note",
+      "resolved_at",
+      "resolved_by",
+      "route_id",
+      "status",
+      "title"
     ],
     "route_base_checkins": [
       "accuracy_m",
@@ -832,6 +862,18 @@
       "set_at",
       "set_by"
     ],
+    "route_field_evidence": [
+      "batch",
+      "evidence",
+      "expires_at",
+      "field",
+      "history",
+      "level",
+      "method",
+      "route_id",
+      "set_at",
+      "value"
+    ],
     "route_flags": [
       "created_at",
       "field",
@@ -858,6 +900,15 @@
       "route_ids",
       "state"
     ],
+    "route_partner_listings": [
+      "created_at",
+      "free_from",
+      "free_to",
+      "note",
+      "route_id",
+      "updated_at",
+      "user_id"
+    ],
     "route_ratings": [
       "created_at",
       "route_id",
@@ -881,6 +932,7 @@
       "anchor",
       "approach",
       "approach_logistics",
+      "approach_loss_ft",
       "approach_variants",
       "area_id",
       "ascender",
@@ -912,6 +964,7 @@
       "dist_km",
       "elev_pts",
       "emergency",
+      "extra_facts",
       "fa",
       "face",
       "features",
@@ -922,6 +975,7 @@
       "gear",
       "gear_bucket",
       "gear_confidence",
+      "glacier_travel",
       "gps_contributor_name",
       "gpx",
       "grade",
@@ -961,6 +1015,7 @@
       "rappel_count_note",
       "rappel_detail",
       "rappels",
+      "return_gain_ft",
       "road",
       "rock",
       "rock_grade",
@@ -972,7 +1027,9 @@
       "seasonal_guidance",
       "seasonal_hazards",
       "sling_rack",
+      "snow_free_from",
       "snow_grade_num",
+      "snow_in_season",
       "sort_order",
       "stars",
       "start_type",
@@ -991,13 +1048,6 @@
       "created_at",
       "user_id"
     ],
-    "saved_searches": [
-      "created_at",
-      "id",
-      "name",
-      "query",
-      "user_id"
-    ],
     "screening_terms": [
       "category",
       "term"
@@ -1007,6 +1057,7 @@
       "created_by",
       "id",
       "label",
+      "moderation",
       "pins",
       "points",
       "route_id",
@@ -1017,6 +1068,7 @@
     "topos": [
       "alt",
       "area_id",
+      "area_photo",
       "caption",
       "created_at",
       "created_by",

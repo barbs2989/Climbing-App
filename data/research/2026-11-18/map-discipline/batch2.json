@@ -1,0 +1,204 @@
+{
+ "co_cronin_peak_north_ridge": {
+  "area": "co_cronin_peak",
+  "set": {
+   "approach_logistics": {
+    "trailhead": "Baldwin Creek Trailhead",
+    "trailheadLat": 38.709992,
+    "trailheadLng": -106.291811
+   }
+  },
+  "ledger": [
+   {
+    "field": "approach_logistics",
+    "value": {
+     "trailhead": "Baldwin Creek Trailhead",
+     "trailheadLat": 38.709992,
+     "trailheadLng": -106.291811
+    },
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_InfraRecreationSites_01/MapServer/0/query?where=site_cn%3D%275285.001621%27&outFields=site_name&f=json",
+      "fact": "Baldwin Creek Trailhead 38.70999,-106.29181",
+      "retrieved_at": "2026-11-18",
+      "official": true
+     },
+     {
+      "url": "https://www.climb13ers.com/colorado-13ers/cronin-peak_north-ridge",
+      "fact": "Baldwin Creek Trailhead (within 7 m) 38.70999,-106.29181",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   }
+  ],
+  "review": {
+   "identifiedBy": {
+    "kind": "page",
+    "url": "https://www.climb13ers.com/colorado-13ers/cronin-peak_north-ridge",
+    "fact": "North Ridge starts Baldwin Creek TH 9,540 ft (4x4); route text says Baldwin Creek area"
+   },
+   "chunk": "out4/p08.json",
+   "kmFromPeak": 6.1
+  }
+ },
+ "co_phoenix_peak_south_ridge_and_slopes": {
+  "area": "co_phoenix_peak",
+  "set": {
+   "approach_logistics": {
+    "trailhead": "East Willow Creek Trailhead (lower, passenger car; USFS Phoenix Park Trailhead)",
+    "trailheadLat": 37.904527,
+    "trailheadLng": -106.91652
+   }
+  },
+  "ledger": [
+   {
+    "field": "approach_logistics",
+    "value": {
+     "trailhead": "East Willow Creek Trailhead (lower, passenger car; USFS Phoenix Park Trailhead)",
+     "trailheadLat": 37.904527,
+     "trailheadLng": -106.91652
+    },
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_InfraRecreationSites_01/MapServer/0/query?where=site_cn%3D%27375402010602%27&outFields=site_name&f=json",
+      "fact": "East Willow Creek Trailhead (lower, passenger car; USFS Phoenix Park Trailhead) 37.90453,-106.91652",
+      "retrieved_at": "2026-11-18",
+      "official": true
+     },
+     {
+      "url": "https://www.climb13ers.com/colorado-13ers/un13895--phoenix-peak",
+      "fact": "East Willow Creek Trailhead (lower, passenger car; USFS Phoenix Park Trailhead) (within 50 m) 37.90453,-106.91652",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   }
+  ],
+  "review": {
+   "identifiedBy": {
+    "kind": "page",
+    "url": "https://www.climb13ers.com/colorado-13ers/un13895--phoenix-peak",
+    "fact": "South Ridge and Slopes from East Willow Creek TH via CR 502; passenger cars park at lower switchback, 4WD upper TH saves about 3 mi RT"
+   },
+   "chunk": "out4/p08.json",
+   "kmFromPeak": 5.6
+  }
+ },
+ "wa_cadet_peak_ne_ridge": {
+  "area": "wa_cadet_peak",
+  "set": {
+   "approach_logistics": {
+    "trailhead": "Bedal Creek Trailhead (end of FR 4096)",
+    "trailheadLat": 48.073457,
+    "trailheadLng": -121.376681
+   }
+  },
+  "ledger": [
+   {
+    "field": "approach_logistics",
+    "value": {
+     "trailhead": "Bedal Creek Trailhead (end of FR 4096)",
+     "trailheadLat": 48.073457,
+     "trailheadLng": -121.376681
+    },
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://www.openstreetmap.org/node/50819875",
+      "fact": "Bedal Creek Trailhead (end of FR 4096) 48.07346,-121.37668",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   }
+  ],
+  "review": {
+   "identifiedBy": {
+    "kind": "route_text",
+    "fact": "Start from the end of Forest Service road 4096 and follow the Bedal Creek trail"
+   },
+   "chunk": "out4/p09.json",
+   "kmFromPeak": 10
+  }
+ },
+ "wa_hozomeen_mountain_south_peak_southwest_route": {
+  "area": "wa_hozomeen_mountain",
+  "set": {
+   "approach_logistics": {
+    "trailhead": "Hozomeen Lake / Willow Lake trailhead at Hozomeen Campground",
+    "trailheadLat": 48.994948,
+    "trailheadLng": -121.067205
+   }
+  },
+  "ledger": [
+   {
+    "field": "approach_logistics",
+    "value": {
+     "trailhead": "Hozomeen Lake / Willow Lake trailhead at Hozomeen Campground",
+     "trailheadLat": 48.994948,
+     "trailheadLng": -121.067205
+    },
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://www.openstreetmap.org/node/1948388517",
+      "fact": "Hozomeen Lake / Willow Lake trailhead at Hozomeen Campground 48.99495,-121.06721",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   }
+  ],
+  "review": {
+   "identifiedBy": {
+    "kind": "route_text",
+    "fact": "From the Hozomeen Lake/Willow Lake trailhead at Hozomeen Campground"
+   },
+   "chunk": "out4/p13.json",
+   "kmFromPeak": 4.3
+  }
+ },
+ "wa_mount_hinman_west_route": {
+  "area": "wa_mount_hinman",
+  "set": {
+   "approach_logistics": {
+    "trailhead": "Necklace Valley Trailhead",
+    "trailheadDirection": "From US 2 just past the Skykomish Ranger Station, turn south onto Foss River Road (FR 68); the Necklace Valley Trailhead parking is on the left after about 4 miles.",
+    "trailheadLat": 47.665562,
+    "trailheadLng": -121.287237
+   }
+  },
+  "ledger": [
+   {
+    "field": "approach_logistics",
+    "value": {
+     "trailhead": "Necklace Valley Trailhead",
+     "trailheadDirection": "From US 2 just past the Skykomish Ranger Station, turn south onto Foss River Road (FR 68); the Necklace Valley Trailhead parking is on the left after about 4 miles.",
+     "trailheadLat": 47.665562,
+     "trailheadLng": -121.287237
+    },
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_InfraRecreationSites_01/MapServer/0/query?where=site_cn%3D%2711206010357%27&outFields=site_name&f=json",
+      "fact": "Necklace Valley Trailhead 47.66556,-121.28724",
+      "retrieved_at": "2026-11-18",
+      "official": true
+     }
+    ]
+   }
+  ],
+  "review": {
+   "identifiedBy": {
+    "kind": "route_text",
+    "fact": "From the Necklace Valley Trailhead, follow the Necklace Valley Trail; Foss River Road FR 68 about 4 miles"
+   },
+   "chunk": "out4/p15.json",
+   "kmFromPeak": 12.1
+  }
+ }
+}

@@ -122,6 +122,34 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     array (in the probe, never in the app) to render it — `"#126, Nathan Barber, you, Salt Lake City,
     UT, 0 pts"`. It also asserts the badge **still renders**: a probe that passed because the badge
     was deleted would be certifying the feature's removal.
+- **`check:field-outline`** (2026-11-24) asserts that every text field — a JSX `<input>`,
+  `<textarea>` or `<select>` that is not a checkbox, radio, range, file, hidden, color, submit or
+  button — is outlined in `C.field`, never `C.border`. WCAG 1.4.11 asks 3:1 for an outline that is the
+  only thing showing where a control is; `C.border` (`#514a41`) is 1.88:1 on a card, `C.field`
+  (`#776e62`) is 3.09–3.77:1 on every background a field sits on. **Why it exists:** the move to
+  `C.field` was a codemod over text, and its review found seven field styles it had missed, every one
+  declared with a type annotation (`const fld: CSSProperties = {…}`) its pattern did not allow. This
+  guard parses with Babel and follows EVERY name a field's `style` refers to through
+  `scope.getBinding`, recursively with a visited set: a variable, a spread, an argument
+  (`Object.assign({},fld,{…})` — 59 fields are written that way), a function declaration's body, the
+  names a followed declaration uses in turn (`const fld={...base}`), and an import from a relative
+  module, resolved to the declaration in that file. `S.field` is NARROWED to the `field` property —
+  through an object literal or the object a called function returns (`S = sheetStyles()`) — because
+  the rest of such a map is buttons and dividers, which keep `C.border`. A `type` written as an
+  expression (`{"checkbox"}`, or a conditional of non-text types) is still recognised as not a text
+  field. A file with a syntax error stops it (DEAD), since a partial parse would skip the fields after
+  the error. **Second version, 2026-11-24, from the review of #3880:** the first version followed one
+  level, skipped `Object.assign`, function declarations and imports, and misread `type={"checkbox"}`;
+  making it follow everything found one more real miss the text codemod and the first version both
+  passed — the GPS submission form's four fields, styled `S.field` from `sheetStyles()`.
+  **What it cannot see:** a value handed in as a function PARAMETER or a prop (counted and printed as a
+  `note`, never silent); a package import; a colour that is not a palette member (`<palette>.border`
+  with the palette named `C` or `c`) — a hex literal, or a variable holding the colour — passes.
+  **Fails closed** below 200 fields or 100 followed references; this version reads 385 fields and
+  follows 416. **Proved** (a throwaway probe file, deleted): `Object.assign`, two-level, function
+  declaration, import and `S.field` cases each FAIL with the chain they were reached by; `type={"checkbox"}`,
+  a conditional checkbox/radio and a map's other properties pass; a syntax error is DEAD. Earlier:
+  turning `LoginScreen.tsx`'s `inp` back to `C.border` fails all five sign-in fields that share it.
 - **`check:dup-attrs`** asserts that no declaration is written **twice in one place** — a JSX
   attribute on one element, or a key in one object literal. The later one wins and the earlier one
   is **dead**. Static (Babel), so it sits in `npm run build`.
@@ -171,6 +199,13 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     `POLICY_VERSION` — i.e. **every signed-in account, every time the policy is bumped**, which its
     own copy has a branch for (*"Our Terms and Privacy Policy have changed"*). Its
     non-dismissibility is deliberate and correct; the missing reservation was the defect.
+  - **A POPUP IS NOT THE PAGE (2026-11-23).** `#appscroll`'s padding reserves nothing inside a `role="dialog"` layer, so the notice still
+    covered the foot of every sheet. Found by driving the wall-order sheet on the live site with the notice up: at 1568×726 its note box
+    and Send were wholly under the notice, and the centre of Send was the notice's *Read Terms*. The guard now also requires both halves of
+    the popup reservation: App writing `--cm-policy-h` and `data-policy-notice` to `<html>`, and `index.html` ending a `[role="dialog"]`
+    at `var(--cm-policy-h)`. It reads the two spellings; it cannot see whether a popup that is NOT pinned with `inset:0` is shortened.
+    Measured after the fix with a stand-in notice at 390×844, 1568×726 and 1456×819: the backdrop ends at the notice's top and a tap at the
+    centre of Send lands on Send. The browser guards never show the notice (their accounts are stamped as accepted), so none of them walks this.
   - **THE PROBE MEASURED THE WRONG SCROLLER FIRST, AND REPORTED A SMALLER, DIFFERENT FINDING.** It
     scrolled `#appscroll` — which is `overflowY:auto` and looks like the scroller — and got
     `905/905`, "fits, no scroll", on every tab. The **document** is the scroller here
@@ -906,6 +941,11 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     (it was a 440px drawer). Its content is centred in a 720px column by the panel's padding. It is
     keyed on the WHOLE style string, so the Menu's phone branch, with the same zIndex and capped, is
     still checked.
+    A **fifth**, `trail-draw` (2026-11-05): `TrailDrawMap`'s full-screen branch, the Add-the-trail
+    drawer and the desktop Draw approach tool. Same class as the route map — a line is drawn by
+    eye, point by point, and the owner asked for the whole screen to do it in. It sits at
+    `zIndex: 10000`, not the route map's 9700, because the GPS submission sheet it opens from is a
+    9999 overlay; matched by file AND that literal, so a change to either fails as stale.
   - **THE DETECTOR ANCHORED ON `style={{` AND THE ROUTE MAP WAS OUTSIDE ITS CENSUS ENTIRELY.**
     That matches a **literal** style object, and `GPXMap` writes
     `style={fullscreen?{position:"fixed",inset:0,…}:{position:"relative"}}` — a **ternary**. So the
@@ -1021,6 +1061,26 @@ Part of the guard notes — see [README.md](README.md) for the full index.
   - Injection-tested 4/4, cases at the bottom of the script, each proving its edit landed **by
     checksum** before judging the guard. Case 4 must **pass**: a guard clause returning `null` is
     not a screen.
+- **`check:flex-scroll`** asks whether every scroll pane inside a height-capped flex column can
+  actually shrink to scroll (`minHeight:0`, or a height of its own). Prompted by the Filter routes
+  sheet, whose header slid off the top because its body never scrolled.
+  - **`minHeight:0` is not enough on its own (2026-11-18).** The route edit sheet ("Add or fix
+    info", `SuggestFix.tsx`) had `flex:1` + `minHeight:0` on its pane, so the guard exempted it,
+    but the pane and its footer sat in a plain `<div>` under the capped column. The pane grew to
+    ~4,400px and never scrolled, and because it is `overscroll-behavior:contain` Chrome let it
+    SWALLOW every mouse wheel over it: on a desktop the form could not be scrolled at all (owner:
+    "Editing a climb on desktop view doesn't allow you to scroll down"). A touch drag hid it on the
+    phone. The guard now also fails a `minHeight:0` pane whose nearest DOM parent is not
+    `display:flex` when a capped flex column sits above it; `display:contents` is looked through
+    (AreaSuggestFix.jsx wraps its pane that way, correctly), and a component tag is left alone.
+    Injection-tested against the original SuggestFix.
+  - **The browser sweep that found it** wheeled the mouse over all 61 openable popups at 1440×900
+    and 1024×768 (a throwaway probe, not committed). Besides the edit sheet, Notifications on
+    desktop left *See all notifications* 19px under the window (its 72vh list did not shrink inside
+    the desktop window cap; the card is now a flex column with `minHeight:0` on the list). Vouch
+    for a climber flagged too and is NOT a bug: the wheel sat over the inner climber list, which
+    scrolls to its end and contains; off the list the sheet scrolls to the end. Fire map flagged
+    on its Leaflet tile layer (overflow:hidden by design); its last link is on screen.
 - **`check:scroll-containment`** asks whether every inline scroll pane (`overflowY`/`overflow`
   `auto|scroll`) declares `overscrollBehavior`. Without it a drag that reaches the pane's end
   is handed to the page behind, and on a phone the sheet reads as **stuck**. Prompted by
@@ -1037,6 +1097,31 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     pane fails the run naming `ClimbMatchCore.jsx` and the style.
   - Cannot see a style held in a variable or spread; those are `check:overlay-scroll`'s where
     reachable.
+  - **Second rule (2026-11-23): ONE page scroll lock.** No file but `lib/dialogA11y.js` may write
+    an element's `.style.overflow`. The Route finder's Filters sheet set `overflow:hidden` on
+    `<html>` in its own effect; the shared lock ran a frame later (it is a MutationObserver +
+    rAF), RECORDED that "hidden" as the page's resting value, and restored it after the sheet's
+    cleanup had cleared it, so the app stayed unscrollable through Back and every tab until a
+    reload. Reproduced in the browser on the old code (`<html>` still `hidden` with no dialog
+    open) and gone on the fix. The shared lock also now records "" when it finds "hidden".
+    Scans every app source plus every `lib/` file; fails closed if its fixture stops matching or
+    the owner file stops writing the lock. `overflowY` (lib/Ads.jsx's rail) is a different
+    property and is not matched.
+    - **Five spellings, not one (2026-11-24):** `x.style.overflow =`, `x.style["overflow"] =`,
+      `setProperty("overflow", …)`, a one-line `cssText` string holding `overflow:`, and
+      `Object.assign(x.style, { overflow })`. The fixture lists each spelling it must catch AND the
+      look-alikes the app really has that it must not (`overflowY`, `setProperty("overflow-y")`, a
+      read, the map popups' `cssText`), and prints which one drifted. Injection-tested: each of the
+      five planted in `lib/Ads.jsx` fails the run.
+    - **`ALLOW_WRITERS`** (empty) is for a deliberate overflow write on an element that is NOT the
+      page; an entry names the file and why it cannot freeze the page, and a stale entry fails.
+    - **Still blind to:** a multi-line `cssText` template, a computed property name, and a write
+      through a helper that takes the property as an argument. None exist.
+    - **Phone-width proof (2026-11-24):** a 390x844 touch emulation in Playwright drove the finder
+      with RAW touch swipes (CDP `Input.dispatchTouchEvent`; `Input.synthesizeScrollGesture` scrolls
+      nothing in this Chrome, not even a plain page, so do not use it to judge scrolling). 14 checks
+      pass: each popup holds the page open and frees it on ✕, Escape, Done, Show routes, Back and
+      a tab change. Not a guard (it needs the dev server and a signed-in or guest session).
   - **Same day, same report: `PullToRefresh` (Today) tested `window.scrollY`**, which is always
     0 because `#appscroll` scrolls, not the document — so any downward drag mid-feed grew the
     pull spacer instead of scrolling. It now reads `#appscroll.scrollTop` and ignores touches
@@ -1097,7 +1182,7 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     anything outside those blocks (← → ↗ ⌂ ⇢ ◈ ● ▪ • ›). The waypoint glyphs are all outside them,
     so `check:wp-styles`' own "no emoji glyph" rule and this one agree; Hazard's ⚠ became "!" and the
     unstyled fallback 📍 became "○" (which `check:wp-styles` now asserts never renders).
-  - **Three things may still hold one, and the census line prints how many of each:**
+  - **Four things may still hold one, and the census line prints how many of each:**
     1. a **lookup key** — `{"🏆":"award"}`, quoted, after `{` or `,`, followed by `:`. `EMOJI_ICON`
        is the main one. A first draft accepted any quoted emoji followed by `:`, which let a
        ternary's `x.lit?"☀":"▪"` through as a "key" — the hourly forecast's sun and rain marks hid
@@ -1107,14 +1192,19 @@ Part of the guard notes — see [README.md](README.md) for the full index.
        to print it), so nothing passed to Lbl can reach the screen as a glyph. A string built
        elsewhere and passed to Lbl (`groupWhere()` returned `"📍 Based in …"`) is NOT recognised —
        move the emoji to the call site, as `<Lbl s={"📍 "+t}/>`;
-    3. `src/components/Lbl.tsx` itself, whose regex recognises the emoji it swaps.
+    3. `src/components/Lbl.tsx` itself, whose regex recognises the emoji it swaps;
+    4. **the `REACTIONS` table** in `ClimbMatchCore.jsx` (owner, 2026-11-05: "Emojis for comment and
+       discussion reactions should be added back"): only a quoted `e:` value on the one line that
+       opens `const REACTIONS=[`. The bar, the count discs and the Like button draw `r.e` from it,
+       which is data to this guard. It also fails if fewer than five are found, so the emoji cannot
+       quietly leave the table again.
   - **Comments are stripped first** (block, JSX `{/* */}`, and `//` after whitespace or punctuation
     so `https://` survives) — a comment may quote what a screen used to say.
   - **What it cannot see:** text from the database (a climber's own words, a list name typed with an
     emoji) and strings assembled at runtime from escapes. Neither is the app's own copy.
   - **Data that held emoji now holds icon NAMES:** `routeTags.js` (lists and features),
     `RISK_LEVELS`, the challenge lists and goal rows in `useCuratedLists`/`Challenges`, and
-    `REACTIONS` (`i`, an ActionIcon name or none — the faces have no icon and render as their word).
+    `REACTIONS` held `i`, an ActionIcon name or none, until 2026-11-05, when its emoji came back as `e` (item 4 above).
     `DISC`/`CAT` `icon`, `VERIF.icon`, `Contributions`' `ST.icon` and the Ranks metric `icon` were
     read by nothing and were removed or blanked. Saved `user_lists.icon` values are already names.
   - **Injection-tested 7/7** with a throwaway `src/components/` file: a drawn emoji, a ternary's

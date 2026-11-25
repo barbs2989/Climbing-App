@@ -70,11 +70,29 @@ const CM = "ClimbMatch.jsx", RD = "RouteDetail.jsx", CORE = "ClimbMatchCore.jsx"
 
 const TRIGGER_FILES = ["src/components/ManageAreasSheet.tsx", "src/components/TodayTab.tsx", "src/components/LogbookTab.tsx"];
 const CASES = [
+  /* §11 — one climb saved whole (2026-11-19). The first is the regression itself; the others are
+   * each a silent half: the write stays, the read goes, nothing renders differently with a signal. */
+  { name: "map-fail-unpacks-again", file: "lib/SaveMapOffline.jsx", must: "fail", expect: "save handler unpacks the climb again",
+    why: "§11 — a failed map throws the whole save away, so a route outside tile coverage cannot be kept",
+    find: "packRouteWithSnapshot(routeId, { onMapProgress: setProg }).then(function (res) { say(savedMessage(res)); })",
+    repl: "packRouteWithSnapshot(routeId, { onMapProgress: setProg }).then(function (res) { say(savedMessage(res)); if (!res.map) return unpackRouteOffline(routeId); })" },
+  { name: "tracks-fallback-gone", file: DB, must: "fail", expect: "useRouteTracks lost its device fallback",
+    why: "§11 — tracks are written at save time and never read back",
+    find: "queryFn: () => orOfflineExact(() => fetchRouteTracks(routeId, limit), () => offlinePackTracks(routeId)),",
+    repl: "queryFn: () => fetchRouteTracks(routeId, limit)," },
+  { name: "siblings-fallback-gone", file: DB, must: "fail", expect: "useAreaRoutes lost its fallback to the saved neighbours",
+    why: "§11 — the neighbours are stored and NEXT DOOR still goes blank",
+    find: "return st.length || full ? st : offlinePackSiblings(areaId);", repl: "return st;" },
+  { name: "photos-not-saved", file: DB, must: "fail", expect: "no longer saves the route's photos and topos",
+    why: "§11 — Help says a saved climb keeps its photos; the save stops writing them",
+    find: "try { media = await savePackMedia(routeId, row, photoRows, people, reportRows); } catch (e) { media = null; }", repl: "media = null;" },
   /* THE SILENT HALF. Write, copy and hydration all stay; only the fallback goes. Nothing renders
    * differently, no name moves, and the pack empties the moment there is no signal. */
   { name: "read-gone", file: DB, must: "fail", expect: "fallback is not offlineRoutesByIds",
     why: "§2 — the row is written and never read back; the defect no render assertion can see",
-    find: "}, () => offlineRoutesByIds(ids)),", repl: "}, () => []),"  },
+    // useRoutesByIds reads the device in TWO places (the orOffline fallback and the chunked path's own
+    // catch). Replacing one left the other standing, so the guard passed and this case proved nothing.
+    rx: [[/offlineRoutesByIds\(ids\)/g, "Promise.resolve([])"]] },
 
   { name: "reader-gone", file: OFF, must: "fail", expect: "no longer defines offlineRoutesByIds",
     why: "§2 — the reader itself is renamed out from under lib/db.js",
@@ -114,7 +132,8 @@ const CASES = [
     find: "cacheItineraries(userId, out).catch(() => {});", repl: "" },
   { name: "undated-reports", file: "src/components/RouteReportsTab.tsx", must: "fail", expect: "stopped dating the saved reports",
     why: "§10 — a saved copy of the reports reads as live",
-    find: "savedAgo(reportsPackedAt)", repl: "\"\"" },
+    // The Reports tab dates the saved copy twice on one line; a single-match find could not land.
+    rx: [[/savedAgo\(reportsPackedAt\)/g, "\"\""]] },
   { name: "photos-ignore-stamp", file: CM, must: "fail", expect: "photosUnavailable ignores the `_packedAt` stamp",
     why: "§10 — a route served from the device claims it has no photos",
     find: "(dbContribs.data&&dbContribs.data._packedAt)", repl: "false" },
@@ -140,15 +159,15 @@ const CASES = [
     why: "§5 — Manage areas promises photos and map tiles the download never stores",
     find: "\" downloads it: the full catalog — areas,", repl: "\" downloads it with every photo and map tile to this device: the full catalog — areas," },
   { name: "claims-photos-home", file: TODAY, must: "fail", expect: "claims something is on the device",
-    why: "§5 — Home's Pinned states card promises photos",
-    find: "\" downloads its climbs to this device so they open with no signal", repl: "\" downloads its climbs and their photos to this device so they open with no signal" },
+    why: "§5 — Home's Pinned states card (the guest line; the signed-in one was removed 2026-11-18) promises photos",
+    find: "\" you download are saved in this browser and open in one tap", repl: "\" you download are saved with their photos on this device and open in one tap" },
   { name: "claims-topos-help", file: HELP, must: "fail", expect: "claims something is on the device",
     why: "§5 — the Help FAQ promises topos",
     find: "its climbs, areas, gear and beta.", repl: "its climbs, areas, gear, beta and topos, all saved to your phone." },
   /* MUST STAY SILENT: a true claim about the CATALOG, in the no-signal idiom. */
   { name: "honest-claim", file: TODAY, must: "pass",
     why: "MUST PASS — the catalog really is on the device and opens with no signal",
-    find: "\" downloads its climbs to this device so they open with no signal", repl: "\" saves its climbs on this device, so they open with no signal" },
+    find: "\" you download are saved in this browser and open in one tap", repl: "\" you download are saved on this device and open in one tap" },
 
   /* Fail closed — a rename blinds a surface. The Manage areas dialog is found by its aria-label,
    * and the trigger regions alone would keep ClimbMatch's floor satisfied without it. */

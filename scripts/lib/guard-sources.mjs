@@ -161,9 +161,7 @@ export const MOVED = {
     "src/components/ReactionPicker.tsx",
     "src/components/PullToRefresh.tsx",
     "src/components/TopContribBadge.tsx",
-    "src/components/RetryReminder.tsx",
     "src/components/PlaceMatches.tsx",
-    "src/components/SectionJumps.tsx",
     "src/components/MiniCalendar.tsx",
     "src/components/SunCorrect.tsx",
     "src/components/AreaRegionSelect.tsx",
@@ -195,18 +193,18 @@ export const MOVED = {
     "src/components/ReportModal.tsx",
     "src/components/FriendsFeed.tsx",
     "src/components/Contributions.tsx",
-    "src/components/CatchLedger.tsx",
     "src/components/DbAreaPicker.tsx",
     "src/components/AscentPyramid.tsx",
     "src/components/DbClimbPicker.tsx",
     "src/components/LoginScreen.tsx",
     "src/components/FloatPlan.tsx",
-    "src/components/LogCatch.tsx",
     "src/components/Comments.tsx",
     "src/components/Challenges.tsx",
     "src/components/Resume.tsx",
     "src/components/FullProfile.tsx",
     "src/components/PolicyUpdateNotice.tsx",
+    // Ranks › By area's card and picker, out of lib/Leaderboards.jsx (itself moved from core).
+    "src/components/RankAreaPicker.tsx",
   ],
   "lib/AlpineConditionsCard.jsx": [
     "src/components/AirSection.tsx",
@@ -266,7 +264,6 @@ export const MOVED = {
     "src/components/GroupAboutTab.tsx",
     "src/components/GroupMembersTab.tsx",
     "src/components/GroupEventsTab.tsx",
-    "src/components/GroupMediaTab.tsx",
     "src/components/GroupEventForm.tsx",
     "src/components/SettingsPrivacySheet.tsx",
     "src/components/SettingsDataSheet.tsx",
@@ -281,6 +278,10 @@ export const MOVED = {
     "src/components/GroupJoinQuestionsEditor.tsx",
     "src/components/DeleteAccountConfirm.tsx",
     "src/components/BlockedClimbersSheet.tsx",
+    // 0519 (2026-11-23): the trip recap replaced App's inline Showed / No-show sheet, and the reply sheet is new; both
+    // are App's overlays (recapId, tripReplyId), so the overlay guards must see them as App's code.
+    "src/components/TripRecapSheet.tsx",
+    "src/components/TripReplySheet.tsx",
     "src/components/ClimberProfileSheet.tsx",
     "src/components/DataRequestSheet.tsx",
     "src/components/AboutSheet.tsx",
@@ -298,13 +299,13 @@ export const MOVED = {
     "src/components/CragWalkIn.tsx",
     "src/components/SaveOfflineChip.tsx",
     "src/components/TopoCaptionBox.tsx",
-    "src/components/BetaDiff.tsx",
     "src/components/CRow.tsx",
     "src/components/EditIconButton.tsx",
     "src/components/GapNote.tsx",
     "src/components/VerifNote.tsx",
     "src/components/TagChip.tsx",
     "src/components/RouteTagRow.tsx",
+    "src/components/RouteSocialRow.tsx",
     "src/components/CragSafetyNotes.tsx",
     "src/components/RackBetaList.tsx",
     "src/components/PitchConsensus.tsx",
@@ -322,6 +323,8 @@ export const MOVED = {
     "src/components/TopoPinKey.tsx",
     "src/components/TopoThumb.tsx",
     "src/components/EmptySection.tsx",
+    "src/components/HelpFillProvider.tsx",
+    "src/components/HelpFillList.tsx",
     "src/components/PitchPhotos.tsx",
     "src/components/CopyCoordButton.tsx",
     "src/components/TopoZoomPhoto.tsx",
@@ -448,7 +451,16 @@ export function readParentSource(root = OWN_ROOT, parent = "ClimbMatchCore.jsx",
     // DiscBadges). Stitched verbatim, that import plus the moved body is a duplicate declaration
     // and Babel refuses the whole file — so the parent's own import of each moved file is dropped.
     out = out.replace(new RegExp(`^import [^\\n]* from "[^"\\n]*/${path.basename(f).replace(/\./g, "\\.")}";?\\n`, "m"), "");
-    out += "\n" + movedAsParentText(fs.readFileSync(p, "utf8"), f);
+    const movedText = fs.readFileSync(p, "utf8");
+    // A parent that loads the component LAZILY (lib/lazyScreens.js, 2026-11-14) imports it by name
+    // from there instead — `import { SuggestFix, … } from "./lib/lazyScreens.js"`. Drop that one
+    // name from the braces too, or the stitched function is a duplicate declaration to Babel.
+    const fn = (movedText.match(/^export default function (\w+)/m) || [])[1];
+    if (fn) out = out.replace(/^import \{([^}\n]*)\} from ("[^"\n]*\/lazyScreens\.js");?$/gm, (line, names, from) => {
+      const kept = names.split(",").map((s) => s.trim()).filter((s) => s && s !== fn);
+      return kept.length ? `import { ${kept.join(", ")} } from ${from};` : "";
+    });
+    out += "\n" + movedAsParentText(movedText, f);
   }
   return out;
 }

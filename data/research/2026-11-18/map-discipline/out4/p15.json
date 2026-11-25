@@ -1,0 +1,224 @@
+[
+ {
+  "id": "wa_mixup_peak_pbs_late_night_special",
+  "status": "found",
+  "trailhead": {
+   "name": "Cascade Pass Trailhead",
+   "identifiedBy": {
+    "kind": "page",
+    "url": "https://cascadeclimbers.com/forum/topic/108657-trip-report-mix-up-peak-pbs-late-night-special-08102026/",
+    "fact": "approach via Gunsight Notch / Cache Col side from Cascade Pass road end; lot not named in report (inferred)"
+   },
+   "placements": [
+    {
+     "source": "WTA",
+     "name": "Cascade Pass trailhead",
+     "lat": 48.4754,
+     "lng": -121.0751,
+     "url": "https://www.wta.org/go-hiking/hikes/cascade-pass"
+    },
+    {
+     "source": "OSM",
+     "name": "Cascade Pass Trailhead",
+     "lat": 48.4754883,
+     "lng": -121.0751562,
+     "url": "https://www.openstreetmap.org/node/1420498929"
+    }
+   ]
+  },
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "WEAK identification: no page this pass names the lot for this route; Cascade Pass is the only practical road-end for the Mix-up arm. No USFS/NPS candidate match. Reviewer decide."
+ },
+ {
+  "id": "wa_mount_adams_avalanche_white_salmon_glaciers",
+  "status": "found",
+  "trailhead": {
+   "name": "South Climb Trailhead (Cold Springs)",
+   "identifiedBy": {
+    "kind": "route_text",
+    "fact": "Start at the Cold Springs trailhead at the end of FR 8040; South Climb Trail"
+   },
+   "placements": [
+    {
+     "source": "USFS",
+     "name": "South Climb Trailhead",
+     "lat": 46.135758,
+     "lng": -121.497589,
+     "url": ""
+    },
+    {
+     "source": "USFS",
+     "name": "Cold Springs/Tr.72 Th",
+     "lat": 46.136557,
+     "lng": -121.496904,
+     "url": ""
+    },
+    {
+     "source": "OSM",
+     "name": "South Climb Trailhead (parking)",
+     "lat": 46.1353614,
+     "lng": -121.4961679,
+     "url": "https://www.openstreetmap.org/relation/17923072"
+    }
+   ]
+  },
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "Approach and descent text agree on Cold Springs; overview line 'PCT or Shorthorn trail' conflicts and is ignored. OSM parking relation is the lot; OSM board node 2999475779 at 46.1356169,-121.4979691 matches USFS South Climb point. All within ~150 m."
+ },
+ {
+  "id": "wa_mount_adams_pinnacle_glacier_headwall",
+  "status": "found",
+  "trailhead": {
+   "name": "Riley Camp Trailhead",
+   "identifiedBy": {
+    "kind": "route_text",
+    "fact": "From the Riley Camp Trailhead, hike the Riley Camp Trail; FR 23 Buck Creek Road ~17.5 mi"
+   },
+   "placements": [
+    {
+     "source": "WTA",
+     "name": "Riley Camp (#64)",
+     "lat": 46.2172,
+     "lng": -121.6344,
+     "url": "https://www.wta.org/go-hiking/hikes/riley-camp"
+    },
+    {
+     "source": "OSM",
+     "name": "Riley Camp Trailhead (parking way)",
+     "lat": 46.217217,
+     "lng": -121.634359,
+     "url": "https://www.openstreetmap.org/way/964293067"
+    }
+   ]
+  },
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "No USFS/NPS candidate for Riley Camp. WTA and OSM agree to <10 m."
+ },
+ {
+  "id": "wa_mount_ballard_east_face",
+  "status": "stuck",
+  "trailhead": null,
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "Text gives a locked gate on Slate Creek road (~3,800 ft), not a named trailhead; Wikipedia Ballard page is a disambiguation with no access info; no land-manager point. Not placed."
+ },
+ {
+  "id": "wa_mount_chaval_north_ridge",
+  "status": "stuck",
+  "trailhead": null,
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "Text only says same approach as West Route via Grade Creek Rd/Illabot Creek Rd; no page names a lot. Sibling Arrow Creek switchback is a different spur; not assumed."
+ },
+ {
+  "id": "wa_mount_despair_northeast_buttress",
+  "status": "stuck",
+  "trailhead": null,
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "Text names no trailhead (Goodell Creek drainage); SR 20 start unconfirmed. Thornton Lakes is only the FA exit."
+ },
+ {
+  "id": "wa_mount_hinman_east_route",
+  "status": "stuck",
+  "trailhead": null,
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "No route text; Wikipedia has no routes. East side plausibly Middle Fork Snoqualmie (Tucquala/Dutch Miller) but unconfirmed; Necklace Valley sibling is not proof."
+ },
+ {
+  "id": "wa_mount_hinman_west_route",
+  "status": "found",
+  "trailhead": {
+   "name": "Necklace Valley Trailhead",
+   "identifiedBy": {
+    "kind": "route_text",
+    "fact": "From the Necklace Valley Trailhead, follow the Necklace Valley Trail; Foss River Road FR 68 about 4 miles"
+   },
+   "placements": [
+    {
+     "source": "USFS",
+     "name": "Necklace Valley Trailhead",
+     "lat": 47.665562,
+     "lng": -121.287237,
+     "url": ""
+    },
+    {
+     "source": "OSM",
+     "name": "Necklace Valley Trailhead",
+     "lat": 47.6647943,
+     "lng": -121.2881568,
+     "url": "https://www.openstreetmap.org/node/2523603738"
+    }
+   ]
+  },
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "USFS and OSM about 100 m apart; both are the trailhead node/lot on Foss River Road. 12 km from peak."
+ },
+ {
+  "id": "wa_mount_johnson_deception_chimney",
+  "status": "stuck",
+  "trailhead": null,
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "No route text; Wikipedia and WTA Royal Basin name no Johnson route; SummitPost 403. Upper Dungeness (Royal Basin) is the likely standard start but not tied to this route."
+ },
+ {
+  "id": "wa_mount_johnson_northwest_face",
+  "status": "stuck",
+  "trailhead": null,
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "No route text; Wikipedia and WTA Royal Basin name no Johnson route; SummitPost 403. Upper Dungeness (Royal Basin) is the likely standard start but not tied to this route."
+ },
+ {
+  "id": "wa_mount_johnson_rumble_gully",
+  "status": "stuck",
+  "trailhead": null,
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "No route text; Wikipedia and WTA Royal Basin name no Johnson route; SummitPost 403. Upper Dungeness (Royal Basin) is the likely standard start but not tied to this route."
+ },
+ {
+  "id": "wa_mount_johnson_south_terrace_route",
+  "status": "stuck",
+  "trailhead": null,
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "No route text; Wikipedia and WTA Royal Basin name no Johnson route; SummitPost 403. Upper Dungeness (Royal Basin) is the likely standard start but not tied to this route."
+ },
+ {
+  "id": "wa_mount_johnson_southwest_route",
+  "status": "stuck",
+  "trailhead": null,
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "No route text; Wikipedia and WTA Royal Basin name no Johnson route; SummitPost 403. Upper Dungeness (Royal Basin) is the likely standard start but not tied to this route."
+ },
+ {
+  "id": "wa_mount_johnson_staircase_route",
+  "status": "stuck",
+  "trailhead": null,
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "No route text; Wikipedia and WTA Royal Basin name no Johnson route; SummitPost 403. Upper Dungeness (Royal Basin) is the likely standard start but not tied to this route; name suggests a Staircase (Skokomish) start, unverified."
+ }
+]

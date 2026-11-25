@@ -1,0 +1,415 @@
+{
+ "wa_chimney_rock_southeast_ridge": {
+  "area": "wa_chimney_rock",
+  "set": {
+   "approach_logistics": {
+    "trailhead": "Pete Lake Trailhead (Trail #1323, FR-4616)",
+    "trailheadLat": 47.434106,
+    "trailheadLng": -121.186915
+   }
+  },
+  "ledger": [
+   {
+    "field": "approach_logistics",
+    "value": {
+     "trailhead": "Pete Lake Trailhead (Trail #1323, FR-4616)",
+     "trailheadLat": 47.434106,
+     "trailheadLng": -121.186915
+    },
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_InfraRecreationSites_01/MapServer/0/query?where=site_cn%3D%275547.005511%27&outFields=site_name&f=json",
+      "fact": "Pete Lake Trailhead (Trail #1323, FR-4616) 47.43411,-121.18691",
+      "retrieved_at": "2026-11-23",
+      "official": true
+     },
+     {
+      "url": "https://lemkeclimbs.com/chimney-rock-2",
+      "fact": "Start: Pete Lake Trailhead (Trail #1323, FR-4616)",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   }
+  ],
+  "review": {
+   "identifiedBy": {
+    "kind": "research",
+    "fact": "all 6 pinned routes on the peak and every report found use this lot; no other start named"
+   },
+   "chunk": "round12-peak"
+  }
+ },
+ "wa_chimney_rock_southeast_shoulder": {
+  "area": "wa_chimney_rock",
+  "set": {
+   "approach_logistics": {
+    "trailhead": "Pete Lake Trailhead (Trail #1323, FR-4616)",
+    "trailheadLat": 47.434106,
+    "trailheadLng": -121.186915
+   }
+  },
+  "ledger": [
+   {
+    "field": "approach_logistics",
+    "value": {
+     "trailhead": "Pete Lake Trailhead (Trail #1323, FR-4616)",
+     "trailheadLat": 47.434106,
+     "trailheadLng": -121.186915
+    },
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_InfraRecreationSites_01/MapServer/0/query?where=site_cn%3D%275547.005511%27&outFields=site_name&f=json",
+      "fact": "Pete Lake Trailhead (Trail #1323, FR-4616) 47.43411,-121.18691",
+      "retrieved_at": "2026-11-23",
+      "official": true
+     },
+     {
+      "url": "https://lemkeclimbs.com/chimney-rock-2",
+      "fact": "Start: Pete Lake Trailhead (Trail #1323, FR-4616)",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   }
+  ],
+  "review": {
+   "identifiedBy": {
+    "kind": "research",
+    "fact": "all 6 pinned routes on the peak and every report found use this lot; no other start named"
+   },
+   "chunk": "round12-peak"
+  }
+ },
+ "wa_dragontail_peak_boving_route": {
+  "area": "wa_dragontail_peak",
+  "set": {
+   "approach_logistics": {
+    "trailhead": "Stuart Lake Trailhead (Trail #1599)",
+    "trailheadLat": 47.527806,
+    "trailheadLng": -120.820515
+   }
+  },
+  "ledger": [
+   {
+    "field": "approach_logistics",
+    "value": {
+     "trailhead": "Stuart Lake Trailhead (Trail #1599)",
+     "trailheadLat": 47.527806,
+     "trailheadLng": -120.820515
+    },
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_InfraRecreationSites_01/MapServer/0/query?where=site_cn%3D%276221.005511%27&outFields=site_name&f=json",
+      "fact": "Stuart Lake Trailhead (Trail #1599) 47.52781,-120.82052",
+      "retrieved_at": "2026-11-23",
+      "official": true
+     },
+     {
+      "url": "https://lemkeclimbs.com/dragontail-peak",
+      "fact": "Start: Stuart Lake Trailhead (Trail #1599)",
+      "retrieved_at": "2026-11-23"
+     },
+     {
+      "url": "https://www.wta.org/go-hiking/hikes/colchuck-lake",
+      "fact": "Start: Stuart Lake Trailhead (Trail #1599)",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   }
+  ],
+  "review": {
+   "identifiedBy": {
+    "kind": "research",
+    "fact": "all 16 pinned routes on the peak use this lot; no other start named"
+   },
+   "chunk": "round12-peak"
+  }
+ },
+ "wa_big_snow_mountain_sasquatch_s_breath": {
+  "area": "wa_big_snow_mountain",
+  "set": {
+   "approach_logistics": {
+    "trailhead": "Dingford Creek Trailhead (Middle Fork Snoqualmie Road)",
+    "trailheadLat": 47.517325,
+    "trailheadLng": -121.4543
+   }
+  },
+  "ledger": [
+   {
+    "field": "approach_logistics",
+    "value": {
+     "trailhead": "Dingford Creek Trailhead (Middle Fork Snoqualmie Road)",
+     "trailheadLat": 47.517325,
+     "trailheadLng": -121.4543
+    },
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_InfraRecreationSites_01/MapServer/0/query?where=site_cn%3D%2711220010357%27&outFields=site_name&f=json",
+      "fact": "Dingford Creek Trailhead (Middle Fork Snoqualmie Road) 47.51732,-121.45430",
+      "retrieved_at": "2026-11-23",
+      "official": true
+     },
+     {
+      "url": "https://turns-all-year.com/trip-reports/june-1-2008-big-snow-via-dingford-creek",
+      "fact": "Start: Dingford Creek Trailhead (Middle Fork Snoqualmie Road)",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   }
+  ],
+  "review": {
+   "identifiedBy": {
+    "kind": "research",
+    "fact": "all 3 pinned routes on the peak and every report found use this lot; no other start named"
+   },
+   "chunk": "round12-peak"
+  }
+ },
+ "wa_little_big_chief_mountain_southwest_face": {
+  "area": "wa_little_big_chief_mountain",
+  "set": {
+   "approach_logistics": {
+    "trailhead": "Dingford Creek Trailhead",
+    "trailheadLat": 47.517325,
+    "trailheadLng": -121.4543
+   }
+  },
+  "ledger": [
+   {
+    "field": "approach_logistics",
+    "value": {
+     "trailhead": "Dingford Creek Trailhead",
+     "trailheadLat": 47.517325,
+     "trailheadLng": -121.4543
+    },
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_InfraRecreationSites_01/MapServer/0/query?where=site_cn%3D%2711220010357%27&outFields=site_name&f=json",
+      "fact": "Dingford Creek Trailhead 47.51732,-121.45430",
+      "retrieved_at": "2026-11-23",
+      "official": true
+     },
+     {
+      "url": "https://www.wta.org/go-hiking/hikes/dingford-creek",
+      "fact": "Start: Dingford Creek Trailhead",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   }
+  ],
+  "review": {
+   "identifiedBy": {
+    "kind": "research",
+    "fact": "all 3 pinned routes on the peak use this lot; no other start named"
+   },
+   "chunk": "round12-peak"
+  }
+ },
+ "wa_red_mountain_snoqualmie_east_face": {
+  "area": "wa_red_mountain_snoqualmie",
+  "set": {
+   "approach_logistics": {
+    "trailhead": "Pacific Crest Trail Trailhead (Snoqualmie Pass, Red Mountain #1033)",
+    "trailheadLat": 47.428012,
+    "trailheadLng": -121.413484
+   }
+  },
+  "ledger": [
+   {
+    "field": "approach_logistics",
+    "value": {
+     "trailhead": "Pacific Crest Trail Trailhead (Snoqualmie Pass, Red Mountain #1033)",
+     "trailheadLat": 47.428012,
+     "trailheadLng": -121.413484
+    },
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_InfraRecreationSites_01/MapServer/0/query?where=site_cn%3D%275140010357%27&outFields=site_name&f=json",
+      "fact": "Pacific Crest Trail Trailhead (Snoqualmie Pass, Red Mountain #1033) 47.42801,-121.41348",
+      "retrieved_at": "2026-11-23",
+      "official": true
+     },
+     {
+      "url": "https://www.wta.org/go-hiking/hikes/red-mountain-commonwealth-basin",
+      "fact": "Start: Pacific Crest Trail Trailhead (Snoqualmie Pass, Red Mountain #1033)",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   }
+  ],
+  "review": {
+   "identifiedBy": {
+    "kind": "research",
+    "fact": "all 3 pinned routes on the peak use this lot; no other start named"
+   },
+   "chunk": "round12-peak"
+  }
+ },
+ "wa_red_mountain_snoqualmie_east_ridge": {
+  "area": "wa_red_mountain_snoqualmie",
+  "set": {
+   "approach_logistics": {
+    "trailhead": "Pacific Crest Trail Trailhead (Snoqualmie Pass, Red Mountain #1033)",
+    "trailheadLat": 47.428012,
+    "trailheadLng": -121.413484
+   }
+  },
+  "ledger": [
+   {
+    "field": "approach_logistics",
+    "value": {
+     "trailhead": "Pacific Crest Trail Trailhead (Snoqualmie Pass, Red Mountain #1033)",
+     "trailheadLat": 47.428012,
+     "trailheadLng": -121.413484
+    },
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_InfraRecreationSites_01/MapServer/0/query?where=site_cn%3D%275140010357%27&outFields=site_name&f=json",
+      "fact": "Pacific Crest Trail Trailhead (Snoqualmie Pass, Red Mountain #1033) 47.42801,-121.41348",
+      "retrieved_at": "2026-11-23",
+      "official": true
+     },
+     {
+      "url": "https://www.wta.org/go-hiking/hikes/red-mountain-commonwealth-basin",
+      "fact": "Start: Pacific Crest Trail Trailhead (Snoqualmie Pass, Red Mountain #1033)",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   }
+  ],
+  "review": {
+   "identifiedBy": {
+    "kind": "research",
+    "fact": "all 3 pinned routes on the peak use this lot; no other start named"
+   },
+   "chunk": "round12-peak"
+  }
+ },
+ "wa_red_mountain_snoqualmie_southeast_face": {
+  "area": "wa_red_mountain_snoqualmie",
+  "set": {
+   "approach_logistics": {
+    "trailhead": "Pacific Crest Trail Trailhead (Snoqualmie Pass, Red Mountain #1033)",
+    "trailheadLat": 47.428012,
+    "trailheadLng": -121.413484
+   }
+  },
+  "ledger": [
+   {
+    "field": "approach_logistics",
+    "value": {
+     "trailhead": "Pacific Crest Trail Trailhead (Snoqualmie Pass, Red Mountain #1033)",
+     "trailheadLat": 47.428012,
+     "trailheadLng": -121.413484
+    },
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_InfraRecreationSites_01/MapServer/0/query?where=site_cn%3D%275140010357%27&outFields=site_name&f=json",
+      "fact": "Pacific Crest Trail Trailhead (Snoqualmie Pass, Red Mountain #1033) 47.42801,-121.41348",
+      "retrieved_at": "2026-11-23",
+      "official": true
+     },
+     {
+      "url": "https://www.wta.org/go-hiking/hikes/red-mountain-commonwealth-basin",
+      "fact": "Start: Pacific Crest Trail Trailhead (Snoqualmie Pass, Red Mountain #1033)",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   }
+  ],
+  "review": {
+   "identifiedBy": {
+    "kind": "research",
+    "fact": "all 3 pinned routes on the peak use this lot; no other start named"
+   },
+   "chunk": "round12-peak"
+  }
+ },
+ "wa_mount_rainier_north_mowich_icefall": {
+  "area": "wa_mount_rainier",
+  "set": {
+   "approach_logistics": {
+    "trailhead": "Mowich Lake Trailhead",
+    "trailheadLat": 46.93318,
+    "trailheadLng": -121.86453
+   }
+  },
+  "ledger": [
+   {
+    "field": "approach_logistics",
+    "value": {
+     "trailhead": "Mowich Lake Trailhead",
+     "trailheadLat": 46.93318,
+     "trailheadLng": -121.86453
+    },
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://turns-all-year.com/trip-reports/july-6-7-2012-mrnp-mowich-face-circuit",
+      "fact": "Start: Mowich Lake Trailhead",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   }
+  ],
+  "review": {
+   "identifiedBy": {
+    "kind": "research",
+    "fact": "every pinned Mowich-side route (North Mowich Headwall, Mowich Face, Central Mowich Face, Edmunds Headwall) starts here"
+   },
+   "chunk": "round12-peak"
+  }
+ },
+ "wa_south_early_winters_spire_east_buttress_direct": {
+  "area": "wa_south_early_winters_spire",
+  "set": {
+   "approach_logistics": {
+    "trailhead": "SR-20 Hairpin / Pond Pullout (east of Washington Pass)",
+    "trailheadLat": 48.51454,
+    "trailheadLng": -120.64332
+   }
+  },
+  "ledger": [
+   {
+    "field": "approach_logistics",
+    "value": {
+     "trailhead": "SR-20 Hairpin / Pond Pullout (east of Washington Pass)",
+     "trailheadLat": 48.51454,
+     "trailheadLng": -120.64332
+    },
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://stephabegg.com/trip-reports/washington/washington-pass/",
+      "fact": "Start: SR-20 Hairpin / Pond Pullout (east of Washington Pass)",
+      "retrieved_at": "2026-11-23"
+     }
+    ]
+   }
+  ],
+  "review": {
+   "identifiedBy": {
+    "kind": "research",
+    "fact": "its twin Direct East Buttress and Southern Man on the same face store this pullout"
+   },
+   "chunk": "round12-peak"
+  }
+ }
+}

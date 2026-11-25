@@ -1,0 +1,379 @@
+[
+ {
+  "id": "wa_apex_mountain_pasayten_apex_buttress",
+  "skip": true,
+  "reason": "Searched Apex Buttress / Apex Mountain Pasayten. The only route page opened (Mountain Project) places it above the Tungsten Lake cirque on the north face but gives no approach, descent or times. The one other opened page (a Pasayten trip report) covers the Tungsten Creek approach to a different peak (Cathedral) and never mentions Apex or Tungsten Lake, so no two opened sources cover this outing."
+ },
+ {
+  "id": "wa_big_snow_mountain_sasquatch_s_breath",
+  "skip": true,
+  "reason": "Two searches for Sasquatch's Breath on Big Snow Mountain (with and without Mountain Project) found no page naming the route; results covered only the standard Hardscrabble Lakes scramble, mostly on blocked sites. Without the route's location on the peak, no plan can be built."
+ },
+ {
+  "id": "wa_burgundy_spire_corkscrew_route",
+  "itinerary": {
+   "cal": "Washington Pass alpine season, roughly July through September. Bring an ice axe: the route crosses a steep snow couloir midway. Late in the season the basin camp has no running water and the col holds only hard snow.",
+   "totalNote": "A long alpine day on Burgundy Spire, best split with a camp in the basin below the spire: hike up the steep climbers' path from Highway 20 the first day, then climb the 15-pitch Corkscrew (rock to 5.6, a snow couloir up to about 50 degrees, then four pitches to 5.8), rappel the North Face to Burgundy Col and walk out.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Hike to the basin camp",
+     "objective": "Reach a camp in the basin below Burgundy Spire",
+     "note": "From the big pullout on Highway 20 east of Washington Pass (about 4,250 ft), drop through talus, cross Early Winters Creek on a log and climb the steep climbers' path up the forested rib left of Burgundy Creek. The basin camp sits near 6,500 ft, about two hours up; Burgundy Col at about 7,720 ft is the higher option.",
+     "gainFt": null,
+     "lossFt": null,
+     "hours": 2,
+     "miles": null,
+     "packLb": null,
+     "schedule": [
+      {
+       "time": null,
+       "label": "Leave the highway pullout",
+       "detail": "Cross Early Winters Creek on a log, then climb the rib north of Burgundy Creek."
+      },
+      {
+       "time": null,
+       "label": "Basin camp, about 6,500 ft",
+       "detail": "Roughly two hours from the car."
+      }
+     ]
+    },
+    {
+     "n": 2,
+     "title": "Climb the Corkscrew, rappel, hike out",
+     "objective": "Climb the Corkscrew to the 8,400 ft summit, rappel to the col and return to the car",
+     "note": "Eight to ten pitches of rock up to 5.6 lead into a snow couloir of about 400 ft, up to 50 degrees, then four more pitches up to 5.8 reach the summit; the upper pitches finish on the west face near where the North Face route's ledge traverse arrives. Descend by rappelling the North Face line: from the summit block to a bolted anchor (a 60 m rope comes up about 10 ft short), more rappels to a ledge, a traverse, and further rappels over sandy terraces to Burgundy Col, about an hour and a half with ropes that like to snag. From the col it is about two hours back to the highway. Confirm where the route starts before you go: the base is not described in the sources found.",
+     "gainFt": 1900,
+     "lossFt": null,
+     "hours": null,
+     "miles": null,
+     "packLb": null,
+     "schedule": [
+      {
+       "time": null,
+       "label": "Rock pitches to 5.6",
+       "detail": "About eight to ten pitches."
+      },
+      {
+       "time": null,
+       "label": "Snow couloir",
+       "detail": "About 400 ft, up to 50 degrees; ice axe."
+      },
+      {
+       "time": null,
+       "label": "Upper pitches to 5.8",
+       "detail": "Four pitches to the summit."
+      },
+      {
+       "time": null,
+       "label": "Rappel the North Face to Burgundy Col",
+       "detail": "About 1.5 hours; a 70 m rope saves rappels."
+      },
+      {
+       "time": null,
+       "label": "Col to the car",
+       "detail": "About 2 hours."
+      }
+     ]
+    }
+   ]
+  },
+  "sources": [
+   "https://www.mountainproject.com/route/122154391/corkscrew-route",
+   "https://www.mountainproject.com/area/107231974/burgundy-spire",
+   "https://stephabegg.com/?p=8707"
+  ],
+  "confidence": "low",
+  "figureSources": "Route make-up (pitches, couloir length and angle, grades, 1,500 ft, ice axe, descend the North Face) from the Mountain Project route page. Trailhead and basin/col elevations, the 2-hour basin time, the 1.5-hour rappel descent and the 2-hour col-to-car time from Steph Abegg's Burgundy Spire report (a North Face ascent). Summit 8,400 ft from Mountain Project and Abegg. Day 2 gainFt 1900 is NOT stated by a source: it is the difference between Abegg's 6,500 ft basin camp and the 8,400 ft summit, so treat it as derived. No source gives the Corkscrew's climbing time, start location or mileage.",
+  "rowIssues": ""
+ },
+ {
+  "id": "wa_colchuck_balanced_rock_the_foot_of_faith_west_face_p3_variation",
+  "itinerary": {
+   "cal": "Summer to early fall. A day trip needs no overnight permit; camping at Colchuck Lake from May 15 to October 31 needs an Enchantments overnight permit. Parking needs a Northwest Forest Pass or an America the Beautiful pass.",
+   "totalNote": "A long single day: the Colchuck Lake trail, a climbers' path to the cirque under the west face, eight-plus pitches of the West Face with this variation taking the place of the third pitch, a boulder move onto the balanced rock, then a short descent back to the base and the walk out. Car to car runs about 14.5 to 15.5 hours.",
+   "days": [
+    {
+     "n": 1,
+     "title": "West Face of Colchuck Balanced Rock",
+     "objective": "Climb the West Face with the Foot of Faith third-pitch variation and return to the car",
+     "note": "Hike the Stuart Lake trailhead path to the north end of Colchuck Lake (about two hours), cross the outlet just below the dam, and follow a climbers' trail up the wooded slope into the cirque below the face, then scramble a third-class ramp to the base: three to four hours in all. The West Face runs about 850 ft and eight-plus pitches; this variation replaces the regular 5.9 third pitch, which stems a thin slabby corner to a treed ledge. Top out with a short boulder problem onto the balanced rock. Get down with one rappel of about 30 m east off a slung horn, or by downclimbing a gully of about 5.6, then scree or snow back around to the base, under an hour, and walk out in a bit under three hours.",
+     "gainFt": null,
+     "lossFt": null,
+     "hours": "14.5-15.5",
+     "miles": null,
+     "packLb": null,
+     "schedule": [
+      {
+       "time": null,
+       "label": "Trailhead to Colchuck Lake",
+       "detail": "About 2 hours."
+      },
+      {
+       "time": null,
+       "label": "Climbers' path to the cirque and base",
+       "detail": "1 to 2 hours, plus a short third-class ramp."
+      },
+      {
+       "time": null,
+       "label": "Climb the West Face",
+       "detail": "About 5.5 to 6.5 hours base to summit, plus the boulder move."
+      },
+      {
+       "time": null,
+       "label": "Descend to the basin",
+       "detail": "Rappel or downclimb, under an hour."
+      },
+      {
+       "time": null,
+       "label": "Basin to the car",
+       "detail": "About 2.5 to 3 hours."
+      }
+     ]
+    }
+   ]
+  },
+  "sources": [
+   "https://stephabegg.com/?p=8702",
+   "https://www.wta.org/go-hiking/hikes/colchuck-lake"
+  ],
+  "confidence": "low",
+  "figureSources": "Hours 14.5-15.5 are the two car-to-car times (14:31 and 15:25) in Steph Abegg's West Face report; segment times, approach line, pitch 3 description, 850 ft length and both descent options from the same page. Permit and parking rules from the WTA Colchuck Lake hike page. No opened source describes the Foot of Faith pitch itself; the plan treats it as a third-pitch swap on the standard West Face outing. [Lead: held as low - no opened source describes this variation pitch.]",
+  "rowIssues": "The row is a one-pitch variation, but the outing it belongs to is the full eight-plus-pitch West Face (5.11+/12- crux per the source); its 5.10 grade could not be checked against any opened source."
+ },
+ {
+  "id": "wa_colchuck_balanced_rock_west_face_p3_1984_variation",
+  "itinerary": {
+   "cal": "Summer to early fall. A day trip needs no overnight permit; camping at Colchuck Lake from May 15 to October 31 needs an Enchantments overnight permit. Parking needs a Northwest Forest Pass or an America the Beautiful pass.",
+   "totalNote": "A long single day: the Colchuck Lake trail, a climbers' path to the cirque under the west face, eight-plus pitches of the West Face with the 1984 variation taking the place of the third pitch, a boulder move onto the balanced rock, then a short descent back to the base and the walk out. Car to car runs about 14.5 to 15.5 hours.",
+   "days": [
+    {
+     "n": 1,
+     "title": "West Face of Colchuck Balanced Rock",
+     "objective": "Climb the West Face with the 1984 third-pitch variation and return to the car",
+     "note": "Walk from the Stuart Lake trailhead to the north end of Colchuck Lake in about two hours, cross the outlet below the dam and take the climbers' trail up through timber to the cirque, finishing with a third-class ramp to the base; budget three to four hours. The West Face is about 850 ft over eight-plus pitches, with this variation standing in for the usual 5.9 thin-corner third pitch. A short boulder problem gains the top of the balanced rock. Descend by a single rappel of about 30 m to the east from a slung horn, or downclimb a gully near 5.6, and circle back to the base on scree or snow in under an hour; the walk out takes roughly two and a half to three hours.",
+     "gainFt": null,
+     "lossFt": null,
+     "hours": "14.5-15.5",
+     "miles": null,
+     "packLb": null,
+     "schedule": [
+      {
+       "time": null,
+       "label": "Trailhead to Colchuck Lake",
+       "detail": "About 2 hours."
+      },
+      {
+       "time": null,
+       "label": "Climbers' path to the cirque and base",
+       "detail": "1 to 2 hours, plus a short third-class ramp."
+      },
+      {
+       "time": null,
+       "label": "Climb the West Face",
+       "detail": "About 5.5 to 6.5 hours base to summit, plus the boulder move."
+      },
+      {
+       "time": null,
+       "label": "Descend to the basin",
+       "detail": "Rappel or downclimb, under an hour."
+      },
+      {
+       "time": null,
+       "label": "Basin to the car",
+       "detail": "About 2.5 to 3 hours."
+      }
+     ]
+    }
+   ]
+  },
+  "sources": [
+   "https://stephabegg.com/?p=8702",
+   "https://www.wta.org/go-hiking/hikes/colchuck-lake"
+  ],
+  "confidence": "low",
+  "figureSources": "Hours 14.5-15.5 are the two car-to-car times (14:31 and 15:25) in Steph Abegg's West Face report; segment times, approach line, pitch 3 description, 850 ft length and both descent options from the same page. Permit and parking rules from the WTA Colchuck Lake hike page. No opened source describes the 1984 variation pitch itself; the plan treats it as a third-pitch swap on the standard West Face outing. [Lead: held as low - no opened source describes this variation pitch.]",
+  "rowIssues": "The row is a one-pitch variation, but the outing it belongs to is the full eight-plus-pitch West Face (5.11+/12- crux per the source); its 5.9+ grade could not be checked against any opened source."
+ },
+ {
+  "id": "wa_comb_the_boomerang",
+  "skip": true,
+  "reason": "Three searches for The Comb (Darrington) found no opened page describing Boomerang: the only listing (theCrag, which places it on Green Giant Buttress at 5.11a III) returned 403, and the Comb trip reports are on CascadeClimbers (blocked). The Green Giant Buttress pages opened (Mountain Project, Steph Abegg) list Dreamer and its neighbours but not Boomerang."
+ },
+ {
+  "id": "wa_comb_the_desire",
+  "skip": true,
+  "reason": "Desire on the Comb near Darrington appears only in a CascadeClimbers trip report (blocked) and a 403 theCrag listing. No opened page covers its approach, the Comb's own approach paths or its descent, so fewer than two usable sources."
+ },
+ {
+  "id": "wa_comb_the_dreamer",
+  "itinerary": {
+   "cal": "Summer and early fall, once the approach creek crossings drop; parties have met high water at the stream crossings and running water on the route early in the season. Boulder River Wilderness.",
+   "totalNote": "A full single day near Darrington: about 3 miles and 1,500 ft of bushy approach to Green Giant Buttress, ten pitches of Dreamer (5.9, about 1,000 ft), nine or ten double-rope rappels back down the route, and the walk out.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Dreamer on Green Giant Buttress",
+     "objective": "Climb Dreamer, rappel the route and walk out",
+     "note": "From the end of the Clear Creek road southeast of Darrington, follow an old logging road extension and then an older mining road, cross a side fork of Copper Creek and follow the main fork to a set of three waterfalls. A small gully up and right into maples leads to a larger gully and the rock; scramble up and right to the staging area below the steep slabs. The approach is about 3 miles and 1,500 ft, roughly two hours, with some brush and a stream that can run high. Climb ten pitches of cracks and knobby face to 5.9, with gear to about 3 inches. Most parties rappel the route rather than walking off: nine or ten double-rope rappels with two 60 m ropes, about two hours, where flakes and trees catch ropes. The walk back to the road end takes about an hour and a quarter.",
+     "gainFt": 1500,
+     "lossFt": null,
+     "hours": null,
+     "miles": null,
+     "packLb": null,
+     "schedule": [
+      {
+       "time": null,
+       "label": "Road end to the base",
+       "detail": "About 2 hours, roughly 3 miles and 1,500 ft."
+      },
+      {
+       "time": null,
+       "label": "Climb Dreamer",
+       "detail": "Ten pitches, about 1,000 ft, 5.9."
+      },
+      {
+       "time": null,
+       "label": "Rappel the route",
+       "detail": "Nine or ten double-rope rappels, about 2 hours."
+      },
+      {
+       "time": null,
+       "label": "Walk out",
+       "detail": "About 1.25 hours to the road end."
+      }
+     ]
+    }
+   ]
+  },
+  "sources": [
+   "https://www.mountainproject.com/v/110888940",
+   "https://stephabegg.com/?p=8694",
+   "https://alpinedave.com/dreamer.html",
+   "https://chossclimbers.com/?p=16063"
+  ],
+  "confidence": "medium",
+  "figureSources": "Approach line, 10 pitches, 1,000 ft, 5.9 and gear to 3 inches from Mountain Project (Green Giant Buttress). Approach of about 3 miles, 1,500 ft and about 2 hours, the 9-10 double-rope rappels in about 2 hours and the 1:18 walk out from Steph Abegg's Dreamer Direct/Urban Bypass report (same buttress and descent). Rappel-rather-than-walk-off advice from alpinedave; high creek crossings and bushwhack from chossclimbers. gainFt 1500 is the approach gain stated by Abegg; no source gives a car-to-car time, so hours is null.",
+  "rowIssues": "The row files Dreamer under 'Comb, The'; every opened source places Dreamer on Green Giant Buttress. It also ends at a rappel descent with no summit or walk-off, and the approach is about two hours, so it reads more like a long crag route than a mountain day."
+ },
+ {
+  "id": "wa_comb_the_the_fast_lane",
+  "skip": true,
+  "reason": "The Fast Lane appears only in a 403 theCrag listing (Green Giant Buttress, 5.11c IV) and in passing in a blocked CascadeClimbers report. No opened page describes the route, so fewer than two usable sources."
+ },
+ {
+  "id": "wa_crater_mountain_appassionata_smothered_in_smoke",
+  "skip": true,
+  "reason": "Two searches for 'Appassionata Smothered In Smoke' (alone and with Crater Mountain / Mountain Project) found no page naming the route; results were the Crater Mountain standard hike-and-scramble from Canyon Creek and unrelated pages. The route's location could not be confirmed."
+ },
+ {
+  "id": "wa_dragontail_peak_a_kidney_for_a_friend",
+  "itinerary": {
+   "cal": "Summer to early fall. A day trip needs no overnight permit; camping at Colchuck Lake or above it from May 15 to October 31 needs an Enchantments overnight permit. Parking needs a Northwest Forest Pass or an America the Beautiful pass.",
+   "totalNote": "A long single day on the northeast tower of Dragontail: the Colchuck Lake trail and the lower Aasgard Pass path to about 7,500 ft, seven pitches up the East Face of the NE Tower (5.8, about 1,000 ft, loose and not well cleaned), a gully descent with one rappel back to the Aasgard path, and the walk out past Colchuck Lake.",
+   "days": [
+    {
+     "n": 1,
+     "title": "A Kidney for a Friend",
+     "objective": "Climb the East Face of Dragontail's NE Tower and return to the car",
+     "note": "Hike from the Stuart Lake trailhead to Colchuck Lake (4 miles and about 2,300 ft each way on trail), go around the lake and start up the Aasgard Pass path; roughly three hours from the car takes you to where climbers leave it. Above about 7,000 ft take the right-hand branch, cross the rockfall couloir near 7,500 ft and scramble a ledge past a few trees to the base of the small tower. Seven pitches (5.8 at most, then a 4th to 5.5 ridge and a third-class ledge system) reach the notch west of the summit tower, about five hours for the first party. The rock is loose and there are no fixed anchors. To descend, cross to the south side toward the Enchantment Snowfield, downclimb the gully on skier's right to a big tree, rappel about 30 m past a chimney, finish the gully and trend down and right to the Aasgard path. The walk from there back to the car is a bit under three hours.",
+     "gainFt": null,
+     "lossFt": null,
+     "hours": null,
+     "miles": null,
+     "packLb": null,
+     "schedule": [
+      {
+       "time": null,
+       "label": "Car to where you leave the Aasgard path",
+       "detail": "About 3 hours."
+      },
+      {
+       "time": null,
+       "label": "Cross the rockfall couloir near 7,500 ft",
+       "detail": "Scramble a ledge to the base of the NE Tower."
+      },
+      {
+       "time": null,
+       "label": "Climb seven pitches and the ridge",
+       "detail": "About 5 hours to the notch west of the summit tower."
+      },
+      {
+       "time": null,
+       "label": "Gully descent",
+       "detail": "Downclimb, one rappel of about 30 m, then down to the Aasgard path."
+      },
+      {
+       "time": null,
+       "label": "Hike out",
+       "detail": "About 2.5 to 3 hours to the car."
+      }
+     ]
+    }
+   ]
+  },
+  "sources": [
+   "https://www.mountainproject.com/route/121374488/a-kidney-for-a-friend",
+   "https://stephabegg.com/?p=8700",
+   "https://www.wta.org/go-hiking/hikes/colchuck-lake"
+  ],
+  "confidence": "medium",
+  "figureSources": "Route, pitch grades, approach from the Aasgard path (right branch above 7,000 ft, couloir at 7,500 ft), the five-hour climb and the gully-and-rappel descent from the Mountain Project route page. Three hours from the car to leaving the Aasgard path and the 2:40 walk out from Steph Abegg's Dragontail NE Buttress report (same approach and trailhead). Miles 8 is the Colchuck Lake trail round trip from the WTA hike page and covers only the trail to the lake, not the off-trail climb above it; no source gives the full day's mileage, gain or car-to-car time. [Lead: miles 8 removed - it is only the lake trail round trip, not the day; no stated day figure remains, so the plan is held.]",
+  "rowIssues": ""
+ },
+ {
+  "id": "wa_dragontail_peak_complete_northeast_buttress",
+  "itinerary": {
+   "cal": "Summer to early fall; it has also been climbed in winter. Bring an ice axe for snow on the approach and descent. Camping at Colchuck Lake or above it from May 15 to October 31 needs an Enchantments overnight permit; a day trip does not. Parking needs a Northwest Forest Pass or an America the Beautiful pass.",
+   "totalNote": "A long single day: the Colchuck Lake trail and the lower Aasgard Pass path to the toe of the buttress, about 2,000 ft of climbing (four loose pitches to 5.8 R, a chimney, then a long stretch of 4th class to 5.5 slabs best simul-climbed), a walk across the Enchantment snowfield to the summit, and down Aasgard Pass to the lake and the car.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Complete Northeast Buttress of Dragontail",
+     "objective": "Climb the whole Northeast Buttress, tag the summit and descend Aasgard Pass",
+     "note": "Walk the Stuart Lake trailhead path to Colchuck Lake (4 miles, about 2,300 ft on trail), round the lake and climb the Aasgard Pass path to the lowest point of the buttress; reaching the point where climbers leave that path takes about three hours. The first four pitches of cracks and chimneys (5.6 to 5.8 R) are poor rock where gear and holds can both pull. A better pitch leads to a chimney (5.7 to 5.8) that crosses the crest; above, the rock improves into a long run of 4th class to easy 5th slab that most parties simul-climb. The route tops out in the towers short of the true summit; drop to the snowfield and hike to the top. Descend Aasgard Pass, loose and steep, back to Colchuck Lake; from the base of the face the walk to the car took a bit under three hours on a neighbouring route.",
+     "gainFt": null,
+     "lossFt": null,
+     "hours": null,
+     "miles": null,
+     "packLb": null,
+     "schedule": [
+      {
+       "time": null,
+       "label": "Car to the toe of the buttress",
+       "detail": "About 3 hours via Colchuck Lake and the Aasgard path."
+      },
+      {
+       "time": null,
+       "label": "Lower buttress",
+       "detail": "About four loose pitches, 5.6 to 5.8 R, then a 5.7-5.8 chimney."
+      },
+      {
+       "time": null,
+       "label": "Upper buttress",
+       "detail": "Long 4th class to 5.5 slabs, best simul-climbed."
+      },
+      {
+       "time": null,
+       "label": "Summit",
+       "detail": "Cross the snowfield from the towers to the top, about 8,840 ft."
+      },
+      {
+       "time": null,
+       "label": "Descend Aasgard Pass and hike out",
+       "detail": "About 2.5 to 3 hours from the base of the face to the car."
+      }
+     ]
+    }
+   ]
+  },
+  "sources": [
+   "https://www.mountainproject.com/route/125262901/complete-northeast-buttress",
+   "https://stephabegg.com/?p=8700",
+   "https://www.wta.org/go-hiking/hikes/colchuck-lake"
+  ],
+  "confidence": "medium",
+  "figureSources": "Route make-up, 2,000 ft, Grade IV, ice axe, finish in the towers and descend Aasgard Pass from the Mountain Project route page. Three hours car to leaving the Aasgard path, the 8,842 ft summit and the 2:40 walk out from Steph Abegg's Dragons of Eden + Northeast Buttress report (shares the upper buttress, approach and descent). Miles 8 is the Colchuck Lake trail round trip from the WTA hike page and covers only the trail to the lake; no source gives a car-to-car time for this line, so hours is null. [Lead: miles 8 removed - it is only the lake trail round trip, not the day; no stated day figure remains, so the plan is held.]",
+  "rowIssues": "The row says 1 pitch; Mountain Project gives about 2,000 ft, Grade IV, with four roped pitches, a chimney pitch and a long simul-climbed upper section."
+ }
+]

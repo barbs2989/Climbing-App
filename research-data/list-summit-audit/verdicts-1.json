@@ -1,0 +1,1380 @@
+{
+ "routes": [
+  {
+   "id": "ca_a_clouds_rest_trail_clouds_rest_trail",
+   "summits": true,
+   "confidence": "high",
+   "reason": "standard/walk-up route to summit"
+  },
+  {
+   "id": "ca_my_favorite_things",
+   "summits": true,
+   "confidence": "low",
+   "reason": "2,700 ft West Face route; slab walk finishes on Clouds Rest summit ridge"
+  },
+  {
+   "id": "ca_adams_peak_standard_route",
+   "summits": true,
+   "confidence": "high",
+   "reason": "standard/walk-up route to summit"
+  },
+  {
+   "id": "ca_alta_peak_alta_trail",
+   "summits": true,
+   "confidence": "high",
+   "reason": "standard/walk-up route to summit"
+  },
+  {
+   "id": "ca_angora_mountain_standard_route",
+   "summits": true,
+   "confidence": "high",
+   "reason": "standard/walk-up route to summit"
+  },
+  {
+   "id": "ca_northeast_spur",
+   "summits": true,
+   "confidence": "high",
+   "reason": "named peak route tops out on summit"
+  },
+  {
+   "id": "ca_banner_peak_northeast_buttress",
+   "summits": true,
+   "confidence": "high",
+   "reason": "named peak route tops out on summit"
+  },
+  {
+   "id": "ca_east_corner_3",
+   "summits": true,
+   "confidence": "high",
+   "reason": "named peak route tops out on summit"
+  },
+  {
+   "id": "ca_north_arete_7",
+   "summits": true,
+   "confidence": "high",
+   "reason": "named peak route tops out on summit"
+  },
+  {
+   "id": "ca_northwest_glacier_to_southeast_ridge",
+   "summits": true,
+   "confidence": "high",
+   "reason": "named peak route tops out on summit"
+  },
+  {
+   "id": "ca_basin_mountain_the_full_ridge",
+   "summits": true,
+   "confidence": "low",
+   "reason": "Basin Mountain ridge traverse to the summit"
+  },
+  {
+   "id": "ca_east_couloir",
+   "summits": true,
+   "confidence": "high",
+   "reason": "named peak route tops out on summit"
+  },
+  {
+   "id": "ca_east_couloir_variation",
+   "summits": true,
+   "confidence": "low",
+   "reason": "variant of the East Couloir route, still goes to summit"
+  },
+  {
+   "id": "ca_east_face_direct_couloir",
+   "summits": true,
+   "confidence": "high",
+   "reason": "named peak route tops out on summit"
+  },
+  {
+   "id": "ca_bear_creek_spire_standard_route",
+   "summits": true,
+   "confidence": "high",
+   "reason": "standard/walk-up route to summit"
+  },
+  {
+   "id": "ca_east_arete_5",
+   "summits": true,
+   "confidence": "high",
+   "reason": "named peak route tops out on summit"
+  },
+  {
+   "id": "ca_north_arete_4",
+   "summits": true,
+   "confidence": "high",
+   "reason": "named peak route tops out on summit"
+  },
+  {
+   "id": "ca_birch_mountain_standard_route",
+   "summits": true,
+   "confidence": "high",
+   "reason": "standard/walk-up route to summit"
+  },
+  {
+   "id": "ca_black_giant_west_slope_from_black_giant_pass",
+   "summits": true,
+   "confidence": "high",
+   "reason": "standard/walk-up route to summit"
+  },
+  {
+   "id": "ca_black_hawk_mountain_via_summit_creek_and_mosquito_pass",
+   "summits": true,
+   "confidence": "high",
+   "reason": "standard/walk-up route to summit"
+  },
+  {
+   "id": "ca_southwest_chute_5",
+   "summits": true,
+   "confidence": "high",
+   "reason": "named peak route tops out on summit"
+  },
+  {
+   "id": "ca_black_mountain_sierra_standard_route",
+   "summits": true,
+   "confidence": "high",
+   "reason": "standard/walk-up route to summit"
+  },
+  {
+   "id": "ca_bloody_mountain_laurel_lakes_road_bloody_couloir",
+   "summits": true,
+   "confidence": "high",
+   "reason": "named peak route tops out on summit"
+  },
+  {
+   "id": "ca_bloody_mountain_laurel_lakes_road_standard_route",
+   "summits": true,
+   "confidence": "high",
+   "reason": "standard/walk-up route to summit"
+  },
+  {
+   "id": "ca_caltech_peak_standard_route",
+   "summits": true,
+   "confidence": "high",
+   "reason": "standard/walk-up route to summit"
+  },
+  {
+   "id": "ca_cardinal_mountain_via_taboose_pass",
+   "summits": true,
+   "confidence": "high",
+   "reason": "standard/walk-up route to summit"
+  },
+  {
+   "id": "ca_cartago_peak_standard_route",
+   "summits": true,
+   "confidence": "high",
+   "reason": "standard/walk-up route to summit"
+  },
+  {
+   "id": "ca_castle_peak_summit_via_castle_pass",
+   "summits": true,
+   "confidence": "low",
+   "reason": "scramble to Castle Peak summit turret"
+  },
+  {
+   "id": "ca_beer_gut",
+   "summits": false,
+   "confidence": "low",
+   "reason": "short North Buttress crag line, ends on the buttress below the summit"
+  },
+  {
+   "id": "ca_cathedral_wall_the_direct_line",
+   "summits": false,
+   "confidence": "low",
+   "reason": "Cathedral Wall crag route, does not top out on Cathedral Peak summit"
+  },
+  {
+   "id": "ca_double_down",
+   "summits": false,
+   "confidence": "high",
+   "reason": "79 m North Buttress crag line below summit"
+  },
+  {
+   "id": "ca_family_flake",
+   "summits": false,
+   "confidence": "high",
+   "reason": "85 m North Buttress crag line below summit"
+  },
+  {
+   "id": "ca_garden_party_4",
+   "summits": false,
+   "confidence": "high",
+   "reason": "61 m North Buttress crag line below summit"
+  },
+  {
+   "id": "ca_grand_central",
+   "summits": false,
+   "confidence": "low",
+   "reason": "North Buttress route, ends on buttress, not summit block"
+  },
+  {
+   "id": "ca_hops_n_barley",
+   "summits": false,
+   "confidence": "high",
+   "reason": "107 m North Buttress crag line below summit"
+  },
+  {
+   "id": "ca_john_muir_route_the_mountaineer_s_route",
+   "summits": true,
+   "confidence": "high",
+   "reason": "Mountaineer's Route scrambles to summit block"
+  },
+  {
+   "id": "ca_metal_pecker",
+   "summits": false,
+   "confidence": "high",
+   "reason": "85 m North Buttress crag line below summit"
+  },
+  {
+   "id": "ca_muscle_fat",
+   "summits": false,
+   "confidence": "low",
+   "reason": "183 m North Buttress line, ends below summit"
+  },
+  {
+   "id": "ca_north_buttress_2_after_party",
+   "summits": false,
+   "confidence": "high",
+   "reason": "2-pitch sport route, rappel from anchors"
+  },
+  {
+   "id": "ca_panic_pillar",
+   "summits": false,
+   "confidence": "high",
+   "reason": "15 m pillar crag route"
+  },
+  {
+   "id": "ca_party_of_two",
+   "summits": false,
+   "confidence": "high",
+   "reason": "52 m North Buttress crag line"
+  },
+  {
+   "id": "ca_pedestal_center",
+   "summits": false,
+   "confidence": "high",
+   "reason": "61 m North Buttress crag line"
+  },
+  {
+   "id": "ca_slab_time",
+   "summits": false,
+   "confidence": "high",
+   "reason": "61 m North Buttress crag line"
+  },
+  {
+   "id": "ca_slab_time_crack",
+   "summits": false,
+   "confidence": "high",
+   "reason": "61 m North Buttress crag line"
+  },
+  {
+   "id": "ca_small_arch_left_side",
+   "summits": false,
+   "confidence": "high",
+   "reason": "61 m North Buttress crag line"
+  },
+  {
+   "id": "ca_southeast_buttress_2",
+   "summits": true,
+   "confidence": "high",
+   "reason": "Southeast Buttress classic tops out on summit"
+  },
+  {
+   "id": "ca_std",
+   "summits": false,
+   "confidence": "high",
+   "reason": "61 m North Buttress crag line"
+  },
+  {
+   "id": "ca_the_original_route_2",
+   "summits": false,
+   "confidence": "low",
+   "reason": "Cathedral Wall crag route, not the summit"
+  },
+  {
+   "id": "ca_center_peak_standard_route",
+   "summits": true,
+   "confidence": "high",
+   "reason": "standard/walk-up route to summit"
+  },
+  {
+   "id": "ca_charybdis_northeast_ridge",
+   "summits": true,
+   "confidence": "high",
+   "reason": "standard/walk-up route to summit"
+  },
+  {
+   "id": "ca_north_ridge_5",
+   "summits": true,
+   "confidence": "high",
+   "reason": "named peak route tops out on summit"
+  },
+  {
+   "id": "ca_east_ridge_3",
+   "summits": true,
+   "confidence": "high",
+   "reason": "named peak route tops out on summit"
+  },
+  {
+   "id": "ca_inconsolable_traverse",
+   "summits": true,
+   "confidence": "low",
+   "reason": "Inconsolable Range traverse passes over Cloudripper summit"
+  },
+  {
+   "id": "ca_north_slope_2",
+   "summits": true,
+   "confidence": "high",
+   "reason": "named peak route tops out on summit"
+  },
+  {
+   "id": "ca_west_chute",
+   "summits": true,
+   "confidence": "high",
+   "reason": "named peak route tops out on summit"
+  },
+  {
+   "id": "ca_clyde_minaret_central_chute",
+   "summits": true,
+   "confidence": "high",
+   "reason": "named peak route tops out on summit"
+  },
+  {
+   "id": "ca_clyde_minaret_east_ridge",
+   "summits": true,
+   "confidence": "high",
+   "reason": "named peak route tops out on summit"
+  },
+  {
+   "id": "ca_clyde_minaret_southeast_edge",
+   "summits": true,
+   "confidence": "high",
+   "reason": "named peak route tops out on summit"
+  },
+  {
+   "id": "ca_clyde_minaret_southeast_ridge",
+   "summits": true,
+   "confidence": "high",
+   "reason": "named peak route tops out on summit"
+  },
+  {
+   "id": "ca_rock_route",
+   "summits": true,
+   "confidence": "high",
+   "reason": "named peak route tops out on summit"
+  },
+  {
+   "id": "ca_southeast_face_4",
+   "summits": true,
+   "confidence": "high",
+   "reason": "named peak route tops out on summit"
+  },
+  {
+   "id": "ca_southeast_face_direct_start",
+   "summits": false,
+   "confidence": "high",
+   "reason": "direct start variation only"
+  },
+  {
+   "id": "ca_starr_s_route",
+   "summits": true,
+   "confidence": "high",
+   "reason": "named peak route tops out on summit"
+  },
+  {
+   "id": "ca_colosseum_mountain_standard_route",
+   "summits": true,
+   "confidence": "high",
+   "reason": "standard/walk-up route to summit"
+  },
+  {
+   "id": "ca_coyote_peaks_via_coyote_pass_and_the_saddle",
+   "summits": true,
+   "confidence": "high",
+   "reason": "standard/walk-up route to summit"
+  },
+  {
+   "id": "ca_crag_peak_via_clover_meadow",
+   "summits": true,
+   "confidence": "high",
+   "reason": "standard/walk-up route to summit"
+  },
+  {
+   "id": "ca_1_northwest_face_north_ridge",
+   "summits": true,
+   "confidence": "low",
+   "reason": "North Ridge of Half Dome tops out on Half Dome"
+  },
+  {
+   "id": "ca_1_northwest_face_stratosphere",
+   "summits": true,
+   "confidence": "low",
+   "reason": "16-pitch big wall to Half Dome top"
+  },
+  {
+   "id": "ca_1_northwest_face_the_direct",
+   "summits": true,
+   "confidence": "high",
+   "reason": "Direct NW Face tops out on Half Dome"
+  },
+  {
+   "id": "ca_3_sunshine_buttress_camp_four_toilet_stall",
+   "summits": false,
+   "confidence": "high",
+   "reason": "2-pitch Sunshine Buttress crag route at base"
+  },
+  {
+   "id": "ca_3_sunshine_buttress_cold_rain_and_snow",
+   "summits": false,
+   "confidence": "low",
+   "reason": "Sunshine Buttress route, ends on buttress below Half Dome"
+  },
+  {
+   "id": "ca_3_sunshine_buttress_sunshine_buttress",
+   "summits": false,
+   "confidence": "high",
+   "reason": "1-pitch Sunshine Buttress aid line"
+  },
+  {
+   "id": "ca_autobahn_3",
+   "summits": true,
+   "confidence": "low",
+   "reason": "South Face route to Half Dome top"
+  },
+  {
+   "id": "ca_blond_ike",
+   "summits": true,
+   "confidence": "low",
+   "reason": "SW Face slab line joins upper slabs to summit"
+  },
+  {
+   "id": "ca_d_half_dome_cables_route_cables_route",
+   "summits": true,
+   "confidence": "high",
+   "reason": "standard/walk-up route to summit"
+  },
+  {
+   "id": "ca_deuceldike",
+   "summits": true,
+   "confidence": "low",
+   "reason": "Snake Dike variation that rejoins and finishes on summit"
+  },
+  {
+   "id": "ca_direct_northwest_face_2",
+   "summits": true,
+   "confidence": "low",
+   "reason": "name indicates Half Dome Direct NW Face, though filed under Porcelain Wall"
+  },
+  {
+   "id": "ca_eye_in_the_sky_2",
+   "summits": true,
+   "confidence": "low",
+   "reason": "SW Face slab line to summit"
+  },
+  {
+   "id": "ca_growing_up",
+   "summits": true,
+   "confidence": "high",
+   "reason": "21-pitch South Face to summit"
+  },
+  {
+   "id": "ca_regular_northwest_face_of_half_dome",
+   "summits": true,
+   "confidence": "high",
+   "reason": "RNWF tops out, walk off cables"
+  },
+  {
+   "id": "ca_snake_dike",
+   "summits": true,
+   "confidence": "high",
+   "reason": "Snake Dike finishes on Half Dome summit"
+  },
+  {
+   "id": "ca_the_southwest_face",
+   "summits": true,
+   "confidence": "low",
+   "reason": "Southwest Face route tops out on Half Dome"
+  },
+  {
+   "id": "ca_the_xue_way",
+   "summits": true,
+   "confidence": "high",
+   "reason": "20-pitch South Face to summit"
+  },
+  {
+   "id": "ca_two_hoofers",
+   "summits": true,
+   "confidence": "low",
+   "reason": "SW Face slab line to summit"
+  },
+  {
+   "id": "ca_deerhorn_mountain_northeast_buttress",
+   "summits": true,
+   "confidence": "high",
+   "reason": "standard/walk-up route to summit"
+  },
+  {
+   "id": "ca_devils_crag_1_standard_route",
+   "summits": true,
+   "confidence": "high",
+   "reason": "standard/walk-up route to summit"
+  },
+  {
+   "id": "ca_diamond_peak_standard_route",
+   "summits": true,
+   "confidence": "high",
+   "reason": "standard/walk-up route to summit"
+  },
+  {
+   "id": "ca_dicks_peak_standard_route",
+   "summits": true,
+   "confidence": "high",
+   "reason": "standard/walk-up route to summit"
+  },
+  {
+   "id": "ca_disappointment_peak_standard_route",
+   "summits": true,
+   "confidence": "high",
+   "reason": "standard/walk-up route to summit"
+  },
+  {
+   "id": "ca_disaster_peak_southwest_ridge",
+   "summits": true,
+   "confidence": "high",
+   "reason": "standard/walk-up route to summit"
+  },
+  {
+   "id": "ca_dragon_peak_north_arete",
+   "summits": true,
+   "confidence": "high",
+   "reason": "named peak route tops out on summit"
+  },
+  {
+   "id": "ca_south_ridge_via_south_chute",
+   "summits": true,
+   "confidence": "high",
+   "reason": "named peak route tops out on summit"
+  },
+  {
+   "id": "ca_dunderberg_peak_southeast_slopes_from_virginia_lakes",
+   "summits": true,
+   "confidence": "high",
+   "reason": "standard/walk-up route to summit"
+  },
+  {
+   "id": "ca_dancing_deer_direct",
+   "summits": true,
+   "confidence": "low",
+   "reason": "east face rock route to Eagle Scout summit"
+  },
+  {
+   "id": "ca_east_face_20",
+   "summits": true,
+   "confidence": "high",
+   "reason": "named peak route tops out on summit"
+  },
+  {
+   "id": "ca_east_vidette_standard_route",
+   "summits": true,
+   "confidence": "high",
+   "reason": "standard/walk-up route to summit"
+  },
+  {
+   "id": "ca_electra_peak_standard_route",
+   "summits": true,
+   "confidence": "high",
+   "reason": "standard/walk-up route to summit"
+  },
+  {
+   "id": "ca_emerald_peak_west_gully_to_north_ridge",
+   "summits": true,
+   "confidence": "high",
+   "reason": "standard/walk-up route to summit"
+  },
+  {
+   "id": "ca_english_mountain_standard_route",
+   "summits": true,
+   "confidence": "high",
+   "reason": "standard/walk-up route to summit"
+  },
+  {
+   "id": "ca_excelsior_mountain_standard_route",
+   "summits": true,
+   "confidence": "high",
+   "reason": "standard/walk-up route to summit"
+  },
+  {
+   "id": "ca_finger_peak_affirmation_of_life",
+   "summits": true,
+   "confidence": "low",
+   "reason": "8-pitch route on Finger Peak tops out"
+  },
+  {
+   "id": "ca_finger_peak_standard_route",
+   "summits": true,
+   "confidence": "high",
+   "reason": "standard/walk-up route to summit"
+  },
+  {
+   "id": "ca_florence_peak_standard_route",
+   "summits": true,
+   "confidence": "high",
+   "reason": "standard/walk-up route to summit"
+  },
+  {
+   "id": "ca_variation_to_the_great_chimney",
+   "summits": false,
+   "confidence": "low",
+   "reason": "variation to another route (Great Chimney), not a standalone summit climb"
+  },
+  {
+   "id": "ca_foerster_peak_standard_route",
+   "summits": true,
+   "confidence": "high",
+   "reason": "standard/walk-up route to summit"
+  },
+  {
+   "id": "ca_direct_east_face",
+   "summits": true,
+   "confidence": "low",
+   "reason": "big east face route tops out on Four Gables"
+  },
+  {
+   "id": "ca_four_gables_peak_12_801_peak_12_808_standard_route",
+   "summits": true,
+   "confidence": "high",
+   "reason": "standard/walk-up route to summit"
+  },
+  {
+   "id": "ca_northwest_ridge_2",
+   "summits": true,
+   "confidence": "high",
+   "reason": "named peak route tops out on summit"
+  },
+  {
+   "id": "ca_freel_peak_south_ridge_via_tahoe_rim_trail",
+   "summits": true,
+   "confidence": "high",
+   "reason": "standard/walk-up route to summit"
+  },
+  {
+   "id": "ca_gemini_standard_route",
+   "summits": true,
+   "confidence": "high",
+   "reason": "standard/walk-up route to summit"
+  },
+  {
+   "id": "ca_giraud_peak_standard_route",
+   "summits": true,
+   "confidence": "high",
+   "reason": "standard/walk-up route to summit"
+  },
+  {
+   "id": "ca_glacier_ridge_standard_route",
+   "summits": true,
+   "confidence": "high",
+   "reason": "standard/walk-up route to summit"
+  },
+  {
+   "id": "ca_goat_mountain_via_grouse_lake_and_northwest_ridge",
+   "summits": true,
+   "confidence": "high",
+   "reason": "standard/walk-up route to summit"
+  },
+  {
+   "id": "ca_goodale_mountain_west_side_from_taboose_pass",
+   "summits": true,
+   "confidence": "high",
+   "reason": "standard/walk-up route to summit"
+  },
+  {
+   "id": "ca_granite_chief_granite_chief_trail_from_olympic_valley",
+   "summits": true,
+   "confidence": "high",
+   "reason": "standard/walk-up route to summit"
+  },
+  {
+   "id": "ca_gray_peak_standard_route",
+   "summits": true,
+   "confidence": "high",
+   "reason": "standard/walk-up route to summit"
+  },
+  {
+   "id": "ca_hermit_the_standard_route",
+   "summits": true,
+   "confidence": "high",
+   "reason": "named peak route tops out on summit"
+  },
+  {
+   "id": "ca_highland_peak_via_noble_lake",
+   "summits": true,
+   "confidence": "high",
+   "reason": "standard/walk-up route to summit"
+  },
+  {
+   "id": "ca_homers_nose_standard_route",
+   "summits": true,
+   "confidence": "high",
+   "reason": "standard/walk-up route to summit"
+  },
+  {
+   "id": "ca_north_ridge_12",
+   "summits": true,
+   "confidence": "high",
+   "reason": "named peak route tops out on summit"
+  },
+  {
+   "id": "ca_west_face_south_ridge",
+   "summits": true,
+   "confidence": "high",
+   "reason": "named peak route tops out on summit"
+  },
+  {
+   "id": "ca_iron_mountain_via_fern_lake",
+   "summits": true,
+   "confidence": "high",
+   "reason": "standard/walk-up route to summit"
+  },
+  {
+   "id": "ca_joe_devel_peak_standard_route",
+   "summits": true,
+   "confidence": "high",
+   "reason": "standard/walk-up route to summit"
+  },
+  {
+   "id": "ca_junction_peak_east_couloir",
+   "summits": true,
+   "confidence": "high",
+   "reason": "standard/walk-up route to summit"
+  },
+  {
+   "id": "ca_south_ridge_2",
+   "summits": true,
+   "confidence": "high",
+   "reason": "named peak route tops out on summit"
+  },
+  {
+   "id": "ca_kearsarge_peak_standard_route",
+   "summits": true,
+   "confidence": "high",
+   "reason": "standard/walk-up route to summit"
+  },
+  {
+   "id": "ca_kennedy_mountain_standard_route",
+   "summits": true,
+   "confidence": "high",
+   "reason": "standard/walk-up route to summit"
+  },
+  {
+   "id": "ca_kern_peak_kern_peak_trail_east_face",
+   "summits": true,
+   "confidence": "high",
+   "reason": "standard/walk-up route to summit"
+  },
+  {
+   "id": "ca_kern_point_standard_route",
+   "summits": true,
+   "confidence": "high",
+   "reason": "standard/walk-up route to summit"
+  },
+  {
+   "id": "ca_koip_peak_via_parker_pass_and_koip_peak_pass",
+   "summits": true,
+   "confidence": "high",
+   "reason": "standard/walk-up route to summit"
+  },
+  {
+   "id": "ca_lamont_peak_lamont_peak_trail",
+   "summits": true,
+   "confidence": "high",
+   "reason": "standard/walk-up route to summit"
+  },
+  {
+   "id": "ca_lassen_peak_trail",
+   "summits": true,
+   "confidence": "high",
+   "reason": "standard/walk-up route to summit"
+  },
+  {
+   "id": "ca_leavitt_peak_pacific_crest_trail_and_east_shoulder",
+   "summits": true,
+   "confidence": "high",
+   "reason": "standard/walk-up route to summit"
+  },
+  {
+   "id": "ca_lion_rock_standard_route",
+   "summits": true,
+   "confidence": "high",
+   "reason": "standard/walk-up route to summit"
+  },
+  {
+   "id": "ca_lippincott_mountain_standard_route",
+   "summits": true,
+   "confidence": "high",
+   "reason": "standard/walk-up route to summit"
+  },
+  {
+   "id": "ca_bastille_buttress_beckey_route",
+   "summits": false,
+   "confidence": "high",
+   "reason": "tops out on Bastille Buttress ledges, descends gully without summit"
+  },
+  {
+   "id": "ca_bastille_buttress_papillon",
+   "summits": false,
+   "confidence": "high",
+   "reason": "finishes at Bastille Buttress top with Beckey route, no summit"
+  },
+  {
+   "id": "ca_direct_south_face",
+   "summits": true,
+   "confidence": "low",
+   "reason": "Direct South Face reaches summit plateau"
+  },
+  {
+   "id": "ca_lone_pine_peak_czech_pillar",
+   "summits": false,
+   "confidence": "low",
+   "reason": "7-pitch Czech Pillar route on south face, ends on pillar"
+  },
+  {
+   "id": "ca_lone_pine_peak_land_of_little_rain",
+   "summits": true,
+   "confidence": "low",
+   "reason": "16-pitch south face route tops out on summit plateau"
+  },
+  {
+   "id": "ca_lone_pine_peak_north_ridge_full",
+   "summits": true,
+   "confidence": "high",
+   "reason": "named peak route tops out on summit"
+  },
+  {
+   "id": "ca_lone_pine_peak_standard_route",
+   "summits": true,
+   "confidence": "high",
+   "reason": "standard/walk-up route to summit"
+  },
+  {
+   "id": "ca_lone_pine_peak_summer_ridge_route",
+   "summits": true,
+   "confidence": "low",
+   "reason": "Summer Ridge leads up to summit"
+  },
+  {
+   "id": "ca_lone_pine_peak_three_arrows",
+   "summits": false,
+   "confidence": "low",
+   "reason": "aid line on south face buttress, unclear whether it reaches summit"
+  },
+  {
+   "id": "ca_michael_strassman_memorial_route",
+   "summits": false,
+   "confidence": "high",
+   "reason": "ends at top of pitch 5, rappel to notch; summit optional"
+  },
+  {
+   "id": "ca_ne_ridge_full",
+   "summits": true,
+   "confidence": "high",
+   "reason": "named peak route tops out on summit"
+  },
+  {
+   "id": "ca_north_ridge_4",
+   "summits": true,
+   "confidence": "high",
+   "reason": "named peak route tops out on summit"
+  },
+  {
+   "id": "ca_winter_chimney",
+   "summits": false,
+   "confidence": "low",
+   "reason": "winter ice chimney, likely a gully pitch below the plateau"
+  },
+  {
+   "id": "ca_winter_route",
+   "summits": true,
+   "confidence": "low",
+   "reason": "winter route reaches plateau/summit"
+  },
+  {
+   "id": "ca_marion_peak_northeast_ridge",
+   "summits": true,
+   "confidence": "high",
+   "reason": "standard/walk-up route to summit"
+  },
+  {
+   "id": "ca_double_dihedral",
+   "summits": true,
+   "confidence": "low",
+   "reason": "Double Dihedral on north face tops out"
+  },
+  {
+   "id": "ca_matterhorn_peak_east_couloir",
+   "summits": true,
+   "confidence": "high",
+   "reason": "standard/walk-up route to summit"
+  },
+  {
+   "id": "ca_matterhorn_peak_ski_dreams",
+   "summits": false,
+   "confidence": "high",
+   "reason": "ski descent line"
+  },
+  {
+   "id": "ca_north_arete_6",
+   "summits": true,
+   "confidence": "high",
+   "reason": "named peak route tops out on summit"
+  },
+  {
+   "id": "ca_west_ridge_3",
+   "summits": true,
+   "confidence": "high",
+   "reason": "named peak route tops out on summit"
+  },
+  {
+   "id": "ca_merced_peak_standard_route",
+   "summits": true,
+   "confidence": "high",
+   "reason": "standard/walk-up route to summit"
+  },
+  {
+   "id": "ca_direct_north_buttress",
+   "summits": true,
+   "confidence": "low",
+   "reason": "Direct North Buttress tops out on Merriam summit"
+  },
+  {
+   "id": "ca_dr_bear_love_project",
+   "summits": false,
+   "confidence": "high",
+   "reason": "project placeholder"
+  },
+  {
+   "id": "ca_gargoyle",
+   "summits": true,
+   "confidence": "low",
+   "reason": "north buttress route tops out"
+  },
+  {
+   "id": "ca_merriam_peak_heart_of_darkness",
+   "summits": true,
+   "confidence": "low",
+   "reason": "8-pitch route to summit"
+  },
+  {
+   "id": "ca_merriam_peak_northeast_ridge",
+   "summits": true,
+   "confidence": "high",
+   "reason": "named peak route tops out on summit"
+  },
+  {
+   "id": "ca_merriam_peak_standard_route",
+   "summits": true,
+   "confidence": "high",
+   "reason": "standard/walk-up route to summit"
+  },
+  {
+   "id": "ca_the_flying_buttress",
+   "summits": true,
+   "confidence": "low",
+   "reason": "Flying Buttress route to summit"
+  },
+  {
+   "id": "ca_the_foundation_crack",
+   "summits": false,
+   "confidence": "high",
+   "reason": "43 m single crack at the base"
+  },
+  {
+   "id": "ca_triple_cracks_project",
+   "summits": false,
+   "confidence": "high",
+   "reason": "project placeholder, 91 m"
+  },
+  {
+   "id": "ca_northeast_face_4",
+   "summits": true,
+   "confidence": "high",
+   "reason": "named peak route tops out on summit"
+  },
+  {
+   "id": "ca_midway_mountain_west_slope",
+   "summits": true,
+   "confidence": "high",
+   "reason": "standard/walk-up route to summit"
+  },
+  {
+   "id": "ca_milestone_mountain_standard_route",
+   "summits": true,
+   "confidence": "high",
+   "reason": "standard/walk-up route to summit"
+  },
+  {
+   "id": "ca_mokelumne_peak_standard_route",
+   "summits": true,
+   "confidence": "high",
+   "reason": "standard/walk-up route to summit"
+  },
+  {
+   "id": "ca_moses_mountain_standard_route",
+   "summits": true,
+   "confidence": "high",
+   "reason": "standard/walk-up route to summit"
+  },
+  {
+   "id": "ca_mount_abbot_warning_shot_nw_face",
+   "summits": true,
+   "confidence": "high",
+   "reason": "named peak route tops out on summit"
+  },
+  {
+   "id": "ca_north_couloir",
+   "summits": true,
+   "confidence": "high",
+   "reason": "named peak route tops out on summit"
+  },
+  {
+   "id": "ca_mount_bago_north_ridge",
+   "summits": true,
+   "confidence": "high",
+   "reason": "standard/walk-up route to summit"
+  },
+  {
+   "id": "ca_mount_baldwin_via_convict_canyon_and_bright_dot_lake",
+   "summits": true,
+   "confidence": "high",
+   "reason": "standard/walk-up route to summit"
+  },
+  {
+   "id": "ca_mount_barnard_standard_route",
+   "summits": true,
+   "confidence": "high",
+   "reason": "standard/walk-up route to summit"
+  },
+  {
+   "id": "ca_mount_baxter_standard_route",
+   "summits": true,
+   "confidence": "high",
+   "reason": "standard/walk-up route to summit"
+  },
+  {
+   "id": "ca_mount_bolton_brown_standard_route",
+   "summits": true,
+   "confidence": "high",
+   "reason": "standard/walk-up route to summit"
+  },
+  {
+   "id": "ca_mount_bradley_standard_route",
+   "summits": true,
+   "confidence": "high",
+   "reason": "standard/walk-up route to summit"
+  },
+  {
+   "id": "ca_mount_corcoran_standard_route",
+   "summits": true,
+   "confidence": "high",
+   "reason": "standard/walk-up route to summit"
+  },
+  {
+   "id": "ca_mount_cotter_standard_route",
+   "summits": true,
+   "confidence": "high",
+   "reason": "standard/walk-up route to summit"
+  },
+  {
+   "id": "ca_northeast_buttress_2",
+   "summits": true,
+   "confidence": "high",
+   "reason": "named peak route tops out on summit"
+  },
+  {
+   "id": "ca_north_face_18",
+   "summits": true,
+   "confidence": "high",
+   "reason": "named peak route tops out on summit"
+  },
+  {
+   "id": "ca_mount_dana_2_dana_couloir",
+   "summits": true,
+   "confidence": "high",
+   "reason": "named peak route tops out on summit"
+  },
+  {
+   "id": "ca_mount_dana_2_standard_route",
+   "summits": true,
+   "confidence": "high",
+   "reason": "standard/walk-up route to summit"
+  },
+  {
+   "id": "ca_mount_davis_southeast_slopes_from_north_glacier_pass",
+   "summits": true,
+   "confidence": "high",
+   "reason": "standard/walk-up route to summit"
+  },
+  {
+   "id": "ca_mount_eisen_southeast_ridge_from_black_rock_pass",
+   "summits": true,
+   "confidence": "high",
+   "reason": "standard/walk-up route to summit"
+  },
+  {
+   "id": "ca_mount_elwell_mt_elwell_trail",
+   "summits": true,
+   "confidence": "high",
+   "reason": "standard/walk-up route to summit"
+  },
+  {
+   "id": "ca_mount_ericsson_west_ridge_from_lucys_foot_pass",
+   "summits": true,
+   "confidence": "high",
+   "reason": "standard/walk-up route to summit"
+  },
+  {
+   "id": "ca_mount_fiske_standard_route",
+   "summits": true,
+   "confidence": "high",
+   "reason": "standard/walk-up route to summit"
+  },
+  {
+   "id": "ca_mount_florence_standard_route",
+   "summits": true,
+   "confidence": "high",
+   "reason": "standard/walk-up route to summit"
+  },
+  {
+   "id": "ca_mount_gabb_north_face",
+   "summits": true,
+   "confidence": "high",
+   "reason": "named peak route tops out on summit"
+  },
+  {
+   "id": "ca_mount_genevra_standard_route",
+   "summits": true,
+   "confidence": "high",
+   "reason": "standard/walk-up route to summit"
+  },
+  {
+   "id": "ca_mount_gibbs_standard_route",
+   "summits": true,
+   "confidence": "high",
+   "reason": "standard/walk-up route to summit"
+  },
+  {
+   "id": "ca_mount_goddard_standard_route",
+   "summits": true,
+   "confidence": "high",
+   "reason": "standard/walk-up route to summit"
+  },
+  {
+   "id": "ca_mount_goethe_north_central_couloir",
+   "summits": true,
+   "confidence": "high",
+   "reason": "named peak route tops out on summit"
+  },
+  {
+   "id": "ca_mount_goethe_standard_route",
+   "summits": true,
+   "confidence": "high",
+   "reason": "standard/walk-up route to summit"
+  },
+  {
+   "id": "ca_ne_ridge",
+   "summits": true,
+   "confidence": "high",
+   "reason": "named peak route tops out on summit"
+  },
+  {
+   "id": "ca_mount_guyot_guyot_pass_route",
+   "summits": true,
+   "confidence": "high",
+   "reason": "standard/walk-up route to summit"
+  },
+  {
+   "id": "ca_mount_hale_standard_route",
+   "summits": true,
+   "confidence": "high",
+   "reason": "standard/walk-up route to summit"
+  },
+  {
+   "id": "ca_mount_harrington_aerie_arete",
+   "summits": false,
+   "confidence": "low",
+   "reason": "3-pitch arete, likely on a sub-feature not the summit"
+  },
+  {
+   "id": "ca_mt_harrington_north_ridge",
+   "summits": true,
+   "confidence": "high",
+   "reason": "named peak route tops out on summit"
+  },
+  {
+   "id": "ca_mount_henry_west_ridge",
+   "summits": true,
+   "confidence": "high",
+   "reason": "standard/walk-up route to summit"
+  },
+  {
+   "id": "ca_mount_hilgard_standard_route",
+   "summits": true,
+   "confidence": "high",
+   "reason": "standard/walk-up route to summit"
+  },
+  {
+   "id": "ca_mount_hooper_southwest_ridge_via_tombstone_pass",
+   "summits": true,
+   "confidence": "high",
+   "reason": "standard/walk-up route to summit"
+  },
+  {
+   "id": "ca_mount_huxley_standard_route",
+   "summits": true,
+   "confidence": "high",
+   "reason": "standard/walk-up route to summit"
+  },
+  {
+   "id": "ca_mount_izaak_walton_east_face",
+   "summits": true,
+   "confidence": "high",
+   "reason": "standard/walk-up route to summit"
+  },
+  {
+   "id": "ca_mount_jordan_standard_route",
+   "summits": true,
+   "confidence": "high",
+   "reason": "standard/walk-up route to summit"
+  },
+  {
+   "id": "ca_mount_kaweah_standard_route",
+   "summits": true,
+   "confidence": "high",
+   "reason": "standard/walk-up route to summit"
+  },
+  {
+   "id": "ca_mount_keith_south_face",
+   "summits": true,
+   "confidence": "high",
+   "reason": "standard/walk-up route to summit"
+  },
+  {
+   "id": "ca_lamorck_subpeak_mindy_free_variation",
+   "summits": false,
+   "confidence": "high",
+   "reason": "Lamarck subpeak free variation, not Mount Lamarck summit"
+  },
+  {
+   "id": "ca_mount_lamarck_christine",
+   "summits": false,
+   "confidence": "high",
+   "reason": "north-face wall route; walk-off from wall top, not Lamarck summit"
+  },
+  {
+   "id": "ca_mount_lamarck_mindy",
+   "summits": false,
+   "confidence": "low",
+   "reason": "tops out on wall/subpeak; descent heads toward Lamarck summit but does not require it"
+  },
+  {
+   "id": "ca_mount_lamarck_nicole",
+   "summits": false,
+   "confidence": "high",
+   "reason": "north-face wall route; walks off from wall top"
+  },
+  {
+   "id": "ca_mount_lamarck_north_couloir",
+   "summits": true,
+   "confidence": "high",
+   "reason": "named peak route tops out on summit"
+  },
+  {
+   "id": "ca_mount_lamarck_paige",
+   "summits": false,
+   "confidence": "high",
+   "reason": "2-pitch wall route"
+  },
+  {
+   "id": "ca_mount_lamarck_petra",
+   "summits": false,
+   "confidence": "high",
+   "reason": "north-face wall route; walks off from wall top"
+  },
+  {
+   "id": "ca_mount_lamarck_standard_route",
+   "summits": true,
+   "confidence": "high",
+   "reason": "standard/walk-up route to summit"
+  }
+ ],
+ "areas": [
+  {
+   "area": "ca_a_clouds_rest_trail",
+   "peak": "ca_a_clouds_rest",
+   "keepArea": true,
+   "reason": "Clouds Rest Trail: trail to summit"
+  },
+  {
+   "area": "ca_west_face_18",
+   "peak": "ca_a_clouds_rest",
+   "keepArea": true,
+   "reason": "West Face: Clouds Rest West Face routes top out"
+  },
+  {
+   "area": "ca_north_buttress_2",
+   "peak": "ca_cathedral_peak_2",
+   "keepArea": false,
+   "reason": "North Buttress: short crag lines on Cathedral Peak North Buttress"
+  },
+  {
+   "area": "ca_cathedral_wall",
+   "peak": "ca_cathedral_peak_2",
+   "keepArea": false,
+   "reason": "Cathedral Wall: wall routes not reaching summit (low conf)"
+  },
+  {
+   "area": "ca_southeast_slopes",
+   "peak": "ca_cathedral_peak_2",
+   "keepArea": true,
+   "reason": "Southeast Slopes: standard routes to summit"
+  },
+  {
+   "area": "ca_panic_pillar",
+   "peak": "ca_cathedral_peak_2",
+   "keepArea": false,
+   "reason": "Panic Pillar: 15 m pillar crag"
+  },
+  {
+   "area": "ca_1_northwest_face",
+   "peak": "ca_d_half_dome",
+   "keepArea": true,
+   "reason": "Northwest Face: big wall routes top out on Half Dome"
+  },
+  {
+   "area": "ca_3_sunshine_buttress",
+   "peak": "ca_d_half_dome",
+   "keepArea": false,
+   "reason": "Sunshine Buttress: buttress crag at base"
+  },
+  {
+   "area": "ca_4_south_face",
+   "peak": "ca_d_half_dome",
+   "keepArea": true,
+   "reason": "South Face: big wall routes top out"
+  },
+  {
+   "area": "ca_3_southwest_face",
+   "peak": "ca_d_half_dome",
+   "keepArea": true,
+   "reason": "Southwest Face: Snake Dike etc. top out"
+  },
+  {
+   "area": "ca_d_half_dome_cables_route",
+   "peak": "ca_d_half_dome",
+   "keepArea": true,
+   "reason": "Cables Route: hike to summit"
+  },
+  {
+   "area": "ca_2_porcelain_wall",
+   "peak": "ca_d_half_dome",
+   "keepArea": false,
+   "reason": "Porcelain Wall: separate formation beside Half Dome (low conf)"
+  }
+ ]
+}

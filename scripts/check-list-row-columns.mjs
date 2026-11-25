@@ -47,7 +47,7 @@ const ENTRIES = [
   { file: "RouteDetail.jsx", fn: "approachFinishes" },
   { file: "RouteDetail.jsx", fn: "approachSibOpts" },
   { file: "RouteDetail.jsx", fn: "ApproachPicker", rows: ["sibs"] },
-  // `cell` (the header's prev/next strip) went 2026-10-21; NEXT DOOR (WallNeighbours) reads the same thin rows.
+  // NEXT DOOR (WallNeighbours, the thin strip under the header facts since 2026-11-12) reads the crag's thin rows.
   { file: "RouteDetail.jsx", fn: "WallNeighbours", rows: ["rows"] },
   { file: "RouteDetail.jsx", enclosing: "sibs" },
 ];

@@ -1,0 +1,228 @@
+{
+ "wa_forbidden_peak_west_ridge": {
+  "area": "wa_forbidden_peak",
+  "waypoints": [
+   {
+    "lat": 48.48055,
+    "lng": -121.07979,
+    "elev": 3200,
+    "name": "Boston Basin Trailhead",
+    "note": "Small pullout on Cascade River Road ~21.7 mi from Marblemount; NW Forest Pass to park, self-issue wilderness permit required.",
+    "type": "Trailhead",
+    "distMi": 0,
+    "elevFt": 3200,
+    "directions": "From SR-20 in Marblemount, take the Cascade River Road (FS Road 15) east about 22 miles. Pavement ends near mile 10; the gravel beyond is potholed and gets narrow and steep near the end. The Boston Basin trailhead is a small pullout at about 3,200 ft, just before the Cascade Pass road-end lot. A Northwest Forest Pass is needed to park, and camping in Boston Basin requires a park backcountry permit."
+   },
+   {
+    "lat": 48.501315,
+    "lng": -121.062561,
+    "elev": 6200,
+    "name": "Boston Basin",
+    "type": "Campsite",
+    "distMi": 3,
+    "elevFt": 6200,
+    "directions": "From the pullout, follow the old Diamond Mine roadbed about a mile, then take the unsigned climbers' path that leaves it and climbs steeply through forest, crossing four streams, to treeline near 5,300 ft. Continue up heather and boulder slopes into the Boston Basin cirque to the camps."
+   },
+   {
+    "lat": 48.511,
+    "lng": -121.06,
+    "elev": 8265,
+    "name": "West Ridge notch",
+    "type": "Junction",
+    "distMi": 4.2,
+    "elevFt": 8265,
+    "directions": "Make an ascending traverse up and east across talus and the glacier remnant toward Forbidden's south face, roping up if it is snow-covered or crevassed; when it is melted out, a class 3 rock spur on climber's right is often faster. Climb the obvious 500 ft snow couloir on the left edge of the south face, steepening to 40-50 degrees past a moat near the top, to the notch on the crest. Late season, use the loose Cat Scratch gullies just left of it."
+   },
+   {
+    "lat": 48.5115,
+    "lng": -121.0579,
+    "elev": 8815,
+    "name": "Forbidden Peak summit",
+    "type": "Summit",
+    "distMi": 4.5,
+    "elevFt": 8815,
+    "directions": "From the notch, climb steep blocks onto the crest and follow it to climber's right over the air step and a series of gendarmes and knife edges, about six pitches of low fifth class. Take the crux tower two-thirds of the way up on its left side, continue along the narrowing crest to a false summit, downclimb about 10 ft of exposed rock, and make easy moves to the true summit."
+   }
+  ]
+ },
+ "wa_mount_stuart_north_ridge": {
+  "area": "wa_mount_stuart",
+  "waypoints": [
+   {
+    "lat": 47.5278,
+    "lng": -120.8205,
+    "elev": 3400,
+    "name": "Stuart Lake Trailhead",
+    "type": "Trailhead",
+    "distMi": 0,
+    "directions": "Drive to Leavenworth and head up Icicle Creek Road, then turn onto Forest Road 7601 (signed as Eightmile Road) and follow it to its end, around 3,540 feet, where the Stuart Lake Trailhead and the Stuart/Colchuck Lake Trail begin."
+   },
+   {
+    "lat": 47.509254,
+    "lng": -120.830501,
+    "elev": 3945,
+    "name": "Mountaineer Creek crossing",
+    "type": "Water"
+   },
+   {
+    "lat": null,
+    "lng": null,
+    "elev": 6600,
+    "name": "North Ridge Base",
+    "type": "Junction",
+    "distMi": null,
+    "directions": "Follow the Stuart Lake Trail about 2.5 miles to the Colchuck Lake junction and stay right toward Stuart Lake. Where the trail later turns uphill and starts switchbacking away from Mountaineer Creek, leave it, cross the creek and follow the climbers' path up the valley, then climb loose talus into the basin under the Sherpa Glacier. Angle up the moraine to the lowest rock of the North Ridge at about 6,600 ft, with the Ice Cliff Glacier on your left."
+   },
+   {
+    "lat": null,
+    "lng": null,
+    "elev": 9000,
+    "name": "Great Gendarme",
+    "type": "Hazard",
+    "distMi": null
+   },
+   {
+    "lat": 47.47514,
+    "lng": -120.90238,
+    "elev": 9415,
+    "name": "Mount Stuart Summit",
+    "type": "Summit",
+    "distMi": null
+   }
+  ]
+ },
+ "wa_mount_stuart_west_ridge": {
+  "area": "wa_mount_stuart",
+  "waypoints": [
+   {
+    "lat": 47.43656,
+    "lng": -120.93697,
+    "elev": 4243,
+    "name": "Esmeralda Basin Trailhead",
+    "type": "Trailhead",
+    "distMi": 0,
+    "directions": "Drive the North Fork Teanaway Road (FR-9737) to its end at the Esmeralda trailhead, about 4,243 ft, and start on the Ingalls Way Trail. At about 0.3 mile stay right onto Ingalls Way where it leaves the Esmeralda Basin Trail, and at about 1.7 miles turn right at the Longs Pass junction rather than carrying on toward Ingalls Basin. There is a longer northern approach to this ridge from the Stuart Lake Trailhead over Stuart Pass, but it adds significant mileage and is not the standard line, so Esmeralda is the lot you want."
+   },
+   {
+    "lat": 47.4492902,
+    "lng": -120.9251031,
+    "elev": 6300,
+    "name": "Longs Pass",
+    "type": "Pass",
+    "distMi": 2.9,
+    "directions": "From the signed Longs Pass junction on the Ingalls Way Trail, near 5,440 ft, turn right and climb steep, rocky, sparsely switchbacked trail about 1.2 miles to the pass, which gives the first clear view of Stuart's west side."
+   },
+   {
+    "lat": 47.45704,
+    "lng": -120.90957,
+    "elev": 4919,
+    "name": "Ingalls Creek crossing",
+    "note": "Last reliable water before the ridge; fill up here.",
+    "type": "Water",
+    "distMi": 4,
+    "directions": "Descend the steep, dusty north side of the pass about a mile, losing about 1,300 ft, to Ingalls Creek in the timber and cross it. In normal summer flow it is a rock-hop; early in the season the slope above can hold snow and be icy at dawn."
+   },
+   {
+    "lat": null,
+    "lng": null,
+    "elev": null,
+    "name": "Talus Approach to West Ridge",
+    "type": "Junction",
+    "distMi": 4.5,
+    "directions": "After the creek, head west up the Ingalls Creek valley on the climbers' path toward Stuart Pass. Well short of the pass, in the upper meadows, leave the path and traverse north across talus and heather benches toward the foot of the West Ridge. There is no tread on this traverse, and several minor gullies look alike."
+   },
+   {
+    "lat": null,
+    "lng": null,
+    "elev": 7200,
+    "name": "West Ridge Crest",
+    "type": "Junction",
+    "distMi": 5,
+    "directions": "Aim for the deep middle gully of the three parallel gullies on the lower ridge, the one with a house-sized boulder at its foot. Push through scrub into it and scramble sandy class 3 granite up and rightward, with short class 4 steps, to the notch at its head where Long John Tower stands directly ahead. Snow can linger in the gully into midsummer and is often icy early in the day."
+   },
+   {
+    "lat": 47.47501637590171,
+    "lng": -120.90224317764522,
+    "elev": 9415,
+    "name": "Mount Stuart Summit",
+    "type": "Summit",
+    "distMi": 6,
+    "directions": "From the notch at the top of the approach gully, Long John Tower is directly ahead; pass it by the chimney on its left, or by the short dihedral with a fixed piton or the layback farther along the ledge, then regain the crest. Cross the exposed West Ridge Notch traverse, and higher up climb the 5.4 dihedral or 5.6 layback below the summit to easier fifth-class ground and the top."
+   }
+  ]
+ },
+ "wa_mount_stuart_cascadian_couloir": {
+  "area": "wa_mount_stuart",
+  "waypoints": [
+   {
+    "lat": 47.43656,
+    "lng": -120.93697,
+    "elev": 4243,
+    "name": "Esmeralda Basin Trailhead",
+    "type": "Trailhead",
+    "distMi": 0,
+    "directions": "Drive to the Esmeralda Basin trailhead at the end of the North Fork Teanaway River Road, Forest Road 9737: from I-90 take exit 85 near Cle Elum onto SR 970 heading northeast, then follow the Teanaway River Road roughly 23 miles to the road-end parking at about 4,243 feet. The road is gravel and is not maintained through winter, typically staying snowed in until late June in a heavy year, so check conditions before an early-season trip."
+   },
+   {
+    "lat": null,
+    "lng": null,
+    "elev": null,
+    "name": "Ingalls Way Trail Junction",
+    "type": "Junction",
+    "distMi": 0.3,
+    "directions": "Walk the old road from the trailhead about 0.3 mile to the fork and bear right onto the Ingalls Way Trail, leaving the Esmeralda Basin Trail."
+   },
+   {
+    "lat": 47.4492902,
+    "lng": -120.9251031,
+    "elev": 6300,
+    "name": "Longs Pass",
+    "type": "Pass",
+    "distMi": 3.5,
+    "directions": "Climb the Ingalls Way Trail to the signed Longs Pass junction near 5,440 ft and turn right, then switchback up the open, shadeless hillside to the pass, where Mount Stuart and the Cascadian Couloir first come into view. Start before dawn in summer."
+   },
+   {
+    "lat": null,
+    "lng": null,
+    "elev": null,
+    "name": "Long's Pass Trail Junction",
+    "type": "Junction",
+    "distMi": 4.5,
+    "directions": "Descend the steep, loose trail down the north side of the pass, losing about 1,300 ft to Ingalls Creek, and cross the creek on the log to meet the Ingalls Creek Trail on the far bank. The slope can hold firm snow early in the season."
+   },
+   {
+    "lat": 47.459,
+    "lng": -120.911,
+    "elev": null,
+    "name": "Cascadian Couloir Base",
+    "type": "Junction",
+    "distMi": 5,
+    "directions": "Turn right (east, downstream) on the Ingalls Creek Trail and follow it a short way to an unmarked climbers' path on the left. Take it north through the meadow and camps to the toe of the couloir. Fill water here; none is reliable higher up."
+   },
+   {
+    "lat": null,
+    "lng": null,
+    "elev": 9200,
+    "name": "False Summit Notch",
+    "type": "Junction",
+    "distMi": 5.8
+   },
+   {
+    "lat": 47.47501637590171,
+    "lng": -120.90224317764522,
+    "elev": 9415,
+    "name": "Mount Stuart Summit",
+    "type": "Summit",
+    "distMi": 6
+   },
+   {
+    "lat": 47.456341,
+    "lng": -120.910977,
+    "elev": 4886,
+    "name": "Ingalls Creek crossing",
+    "type": "Water",
+    "distMi": 3.5
+   }
+  ]
+ }
+}

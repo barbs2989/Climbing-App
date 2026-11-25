@@ -10,6 +10,9 @@
 // The ground is the free, keyless Terrarium elevation tiles on AWS (Tilezen), which answer CORS `*`;
 // MapLibre assumes the other encoding unless told, and a wrong one draws noise rather than failing, so
 // `encoding: "terrarium"` is load-bearing. The picture on it is the route map's own Esri imagery.
+// The AREA map opens it too (owner, 2026-11-14: "I want the 3d map while on the areas view map too"):
+// `view` is the flat map's box, which the 3D view opens on, and the areas in it come as pins with their
+// own colour, icon, climb count and an Open button.
 import { useEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 import { C, WP_COLORS, WP_STYLE, wpType } from "../ClimbMatchCore.jsx";
@@ -44,10 +47,17 @@ function loadMaplibre(onReady, onError) {
 const lineFeature = (pts) => ({ type: "Feature", properties: {}, geometry: { type: "LineString", coordinates: pts.map((p) => [p[1], p[0]]) } });
 
 /**
- * @param {{ line?: Array<Array<number|null>>|null, waypoints?: Array<{lat:number,lng:number,name?:string|null,type?:string|null}>,
- *   tracks?: Array<{id:string,color:string,label:string,pts:Array<Array<number|null>>}>, title?: string, onClose: () => void }} props
+ * @param {{ line?: Array<Array<number|null>>|null,
+ *   waypoints?: Array<{lat:number,lng:number,name?:string|null,type?:string|null,color?:string,iconHtml?:string|null,sub?:string|null,onOpen?:() => void,openLabel?:string}>,
+ *   tracks?: Array<{id:string,color:string,label:string,pts:Array<Array<number|null>>}>, title?: string,
+ *   view?: {minLat:number,maxLat:number,minLng:number,maxLng:number}|null, kind?: string, maxZoom?: number, exaggeration?: number, onClose: () => void }} props
  */
-export default function Route3DView({ line, waypoints, tracks, title, onClose }) {
+// `kind` names the map for a screen reader when it is neither of the two below. `maxZoom` is how close the view may
+// open: 15 frames a route, but a crag's walk in is a few hundred feet and at 15 its two pins sit on top of each other.
+// `exaggeration` raises the ground so relief reads from far off. Up close it only stretches the picture down a steep
+// face (the terrain is far coarser than the imagery), so a crag's own map passes 1.
+export default function Route3DView({ line, waypoints, tracks, title, view, kind: kindProp, maxZoom = 15, exaggeration = 1.3, onClose }) {
+  const kind = kindProp || (view ? "map" : "route map");
   const div = useRef(null), mapRef = useRef(null);
   const [state, setState] = useState("loading");
   useEffect(() => {
@@ -65,7 +75,7 @@ export default function Route3DView({ line, waypoints, tracks, title, onClose })
       (line || []).forEach((p) => all.push([p[1], p[0]]));
       (tracks || []).forEach((t) => t.pts.forEach((p) => all.push([p[1], p[0]])));
       (waypoints || []).forEach((w) => all.push([w.lng, w.lat]));
-      if (!all.length) { setState("empty"); return; }
+      if (!all.length && !view) { setState("empty"); return; }
       let map;
       try {
         map = new ml.Map({
@@ -79,14 +89,13 @@ export default function Route3DView({ line, waypoints, tracks, title, onClose })
               dem: { type: "raster-dem", tiles: [TERRAIN_TILES], tileSize: 256, maxzoom: 14, encoding: "terrarium", attribution: TERRAIN_CREDIT },
             },
             layers: [{ id: "sat", type: "raster", source: "sat" }],
-            terrain: { source: "dem", exaggeration: 1.3 },
+            terrain: { source: "dem", exaggeration },
           },
-          center: all[0], zoom: 12,
+          center: view ? [(view.minLng + view.maxLng) / 2, (view.minLat + view.maxLat) / 2] : all[0], zoom: 12,
         });
       } catch { setState("nogl"); return; }
       mapRef.current = map;
       map.addControl(new ml.NavigationControl({ visualizePitch: true }), "top-right");
-      map.addControl(new ml.AttributionControl({ compact: true }), "bottom-right");
       map.on("error", () => { /* a tile that fails is drawn as a gap; the rest of the map stands */ });
       map.on("load", () => {
         if (cancelled) return;
@@ -101,23 +110,40 @@ export default function Route3DView({ line, waypoints, tracks, title, onClose })
           map.addLayer({ id: id + "-casing", type: "line", source: id, paint: { "line-color": "#000", "line-width": 5, "line-opacity": 0.4 }, layout: { "line-join": "round", "line-cap": "round" } });
           map.addLayer({ id, type: "line", source: id, paint: { "line-color": t.color, "line-width": 3 }, layout: { "line-join": "round", "line-cap": "round" } });
         });
+        const markers = [];
         (waypoints || []).forEach((w) => {
-          const ty = wpType(w), st = WP_STYLE[ty], col = WP_COLORS[ty] || (st && st.color) || C.blue;
+          const ty = w.color && !w.type ? null : wpType(w), st = ty ? WP_STYLE[ty] : null, col = w.color || (ty && WP_COLORS[ty]) || (st && st.color) || C.blue;
           const el = document.createElement("button");
           el.type = "button";
           el.setAttribute("aria-label", (w.name || ty || "Waypoint") + (ty && w.name ? ", " + ty : ""));
           el.style.cssText = "width:24px;height:24px;border-radius:12px;border:2px solid #fff;background:" + col + ";color:#fff;font-size:12px;font-weight:800;display:flex;align-items:center;justify-content:center;padding:0;cursor:pointer;box-shadow:0 1px 4px rgba(0,0,0,0.6)";
-          el.textContent = st ? st.glyph : "•";
+          // iconHtml is the app's own static SVG (discIconMarkup), never text from the data.
+          if (w.iconHtml) el.innerHTML = w.iconHtml; else el.textContent = st ? st.glyph : "•";
           const pop = new ml.Popup({ offset: 14, closeButton: false, maxWidth: "240px" });
           const card = document.createElement("div");
           card.style.cssText = "font-size:13px;line-height:1.4;color:#111";
           const nm = document.createElement("div"); nm.style.fontWeight = "700"; nm.textContent = w.name || ty || "Waypoint"; card.appendChild(nm);
           if (ty && w.name) { const t2 = document.createElement("div"); t2.style.cssText = "font-size:11px;font-weight:700;text-transform:uppercase;opacity:0.7"; t2.textContent = ty; card.appendChild(t2); }
+          if (w.sub) { const s2 = document.createElement("div"); s2.style.cssText = "font-size:12px;opacity:0.8"; s2.textContent = w.sub; card.appendChild(s2); }
+          if (w.onOpen) {
+            const ob = document.createElement("button");
+            ob.type = "button";
+            ob.style.cssText = "margin-top:6px;padding:7px 12px;border-radius:8px;border:none;background:" + C.actionSolid + ";color:#fff;font-size:12.5px;font-weight:700;cursor:pointer";
+            ob.textContent = w.openLabel || "Open";
+            ob.addEventListener("click", w.onOpen);
+            card.appendChild(ob);
+          }
           pop.setDOMContent(card);
-          new ml.Marker({ element: el }).setLngLat([w.lng, w.lat]).setPopup(pop).addTo(map);
+          markers.push(new ml.Marker({ element: el }).setLngLat([w.lng, w.lat]).setPopup(pop).addTo(map));
+          // MapLibre's Marker overwrites the element's aria-label with "Map marker"; put the pin's own name back.
+          el.setAttribute("aria-label", (w.name || ty || "Waypoint") + (ty && w.name ? ", " + ty : "") + (w.sub ? ", " + w.sub : ""));
         });
-        const b = all.reduce((bb, c) => bb.extend(c), new ml.LngLatBounds(all[0], all[0]));
-        map.fitBounds(b, { padding: 60, pitch: 62, bearing: -20, maxZoom: 15, duration: 0 });
+        // A pin is placed at the height of the ground under it, and it is placed before the terrain tiles arrive, so on a
+        // slope it sat below its own line until the map next moved. Each time the map settles, seat the pins again.
+        map.on("idle", () => { markers.forEach((m) => m.setLngLat(m.getLngLat())); });
+        // The area map opens on the box the flat map showed; the route map on everything it draws.
+        const b = view ? new ml.LngLatBounds([view.minLng, view.minLat], [view.maxLng, view.maxLat]) : all.reduce((bb, c) => bb.extend(c), new ml.LngLatBounds(all[0], all[0]));
+        map.fitBounds(b, { padding: view ? 20 : 60, pitch: 62, bearing: -20, maxZoom, duration: 0 });
         setState("ready");
       });
     }, () => { if (!cancelled) setState("fail"); });
@@ -126,20 +152,24 @@ export default function Route3DView({ line, waypoints, tracks, title, onClose })
   }, []);
   const msg = state === "loading" ? "Loading 3D map…" : state === "fail" ? "The 3D map couldn’t load. Check your connection, or use the flat map." : state === "nogl" ? "This device can’t draw 3D maps. The flat map still works." : state === "empty" ? "This route has nothing to draw in 3D yet." : null;
   return createPortal(
-    <div role="dialog" aria-modal="true" aria-label="3D route map" style={{ position: "fixed", inset: 0, zIndex: 9700, background: C.bg, padding: 12, display: "flex", flexDirection: "column" }}>
+    <div role="dialog" aria-modal="true" aria-label={"3D " + kind} style={{ position: "fixed", inset: 0, zIndex: 9700, background: C.bg, padding: 12, display: "flex", flexDirection: "column" }}>
       <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 9, gap: 10 }}>
-        <span style={{ fontSize: 14, fontWeight: 700, color: C.text, minWidth: 0, overflowWrap: "anywhere" }}>{title ? title + " · 3D" : "3D route map"}</span>
+        <span style={{ fontSize: 14, fontWeight: 700, color: C.text, minWidth: 0, overflowWrap: "anywhere" }}>{title ? title + " · 3D" : "3D " + kind}</span>
         <button onClick={onClose} aria-label="Close 3D map" style={POP_CLOSE}>✕</button>
       </div>
       <div style={{ position: "relative", flex: 1, minHeight: 0 }}>
-        <div ref={div} style={{ position: "absolute", inset: 0, borderRadius: 9, border: "1px solid " + C.border, overflow: "hidden", background: "#0a0f1a" }} />
+        <div ref={div} style={{ position: "absolute", inset: 0, borderRadius: 9, border: "1px solid " + C.border, overflow: "hidden", background: "#0e0d0b" }} />
+        {/* The credit, in the map's corner and always shown, as on the flat maps (index.html styles theirs the same). MapLibre's own
+            control opened as a white box three lines deep on a phone, over the map. It says what TERRAIN_CREDIT and
+            TILE_CREDIT.sat say; keep the three in step. */}
+        <div style={{ position: "absolute", right: 1, bottom: 1, maxWidth: "calc(100% - 2px)", boxSizing: "border-box", borderRadius: "0 0 8px 0", fontSize: 9, lineHeight: 1.35, padding: "1px 5px", background: "rgba(0,0,0,0.55)", color: "#d6d6d6", textAlign: "right" }}>Terrain: <a href="https://github.com/tilezen/joerd" target="_blank" rel="noopener noreferrer" style={{ color: "#fff" }}>Mapzen / Tilezen</a> · Powered by <a href="https://www.esri.com" target="_blank" rel="noopener noreferrer" style={{ color: "#fff" }}>Esri</a> · Esri, Maxar, Earthstar Geographics, and the GIS User Community</div>
         {msg ? <div style={{ position: "absolute", inset: 0, display: "flex", alignItems: "center", justifyContent: "center", color: C.textMuted, fontSize: 13, textAlign: "center", padding: 16, pointerEvents: "none" }}>{msg}</div> : null}
       </div>
       <div style={{ paddingTop: 8, display: "flex", flexWrap: "wrap", gap: "4px 12px", fontSize: 12, color: C.textSub }}>
         {line && line.length >= 2 ? <span style={{ display: "inline-flex", alignItems: "center", gap: 5 }}><span aria-hidden="true" style={{ width: 16, height: 0, borderTop: "3px solid " + C.blue }} />Route line</span> : null}
         {(tracks || []).map((t) => <span key={t.id} style={{ display: "inline-flex", alignItems: "center", gap: 5 }}><span aria-hidden="true" style={{ width: 16, height: 0, borderTop: "3px solid " + t.color }} />{t.label}</span>)}
       </div>
-      <div style={{ fontSize: 11.5, color: C.textMuted, paddingTop: 4 }}>Drag with two fingers to tilt, twist to turn. On a computer, right-drag. The ground is raised 1.3× so slopes read clearly.</div>
+      <div style={{ fontSize: 11.5, color: C.textMuted, paddingTop: 4 }}>Drag with two fingers to tilt, twist to turn. On a computer, right-drag.{exaggeration !== 1 ? " The ground is raised " + exaggeration + "× so slopes read clearly." : ""}</div>
     </div>,
     document.body
   );

@@ -4,6 +4,69 @@ Crews, groups, connections and presence: who is on a crew, how a climber is name
 
 Part of the guard notes — see [README.md](README.md) for the full index.
 
+- **`check:trip-reports` — RELIABILITY'S RULES, executed (0519, owner 2026-11-23).** Replays every migration into PGlite
+  with Supabase's default grants, builds four climbers and four crews (yesterday, 20 days ago, next week, and one a
+  member LEFT), and drives each rule as the climber who would try to break it: 24 assertions. Hand-run like
+  `check:profile-privacy` (~40 s of WASM), declared in `check:guard-wiring`'s EXCLUDED with its trigger.
+  - **What it proves:** the three tables are unreadable row by row and unwritable directly, to anon and signed in
+    alike; reports are refused from a stranger, about yourself, about a non-member, before the day, after day+14 and
+    signed out; ONE report counts, but is hidden from its subject (and from every count) until the subject files their
+    own recap for the crew or 7 days pass; "I was there" takes a report out while a note does not; changing a report
+    drops its reply and hides it again; "called off" by a crewmate takes the trip off everyone's record, but the
+    reported climber cannot excuse THEMSELF that way; a member who leaves stays reportable (as cancelling, never as a
+    no-show) and one the organizer removed is not recorded as leaving; deleting the crew keeps its reports; two
+    crewmates who disagree about one trip count once, at the more favourable outcome; vouch Reliability stars average
+    numbers and numeric strings and skip a plain-text vouch.
+  - **Injection measured (2026-11-23):** four rules broken one at a time in a copy of 0519 (counts reading unrevealed
+    reports; removal recorded as a departure; "I was there" ignored; self-excusing "called off"): each run exits
+    non-zero on the matching assertion.
+  - **Trap met building it:** section 9 first read 2 trips for one climber because section 8's DELETED crew kept its
+    report, which is the behaviour being proved. The section now clears that climber's reports first.
+  - **Section 13 (0527, fifth review 2026-11-24):** a crew's offset comes from its place (a Sydney pin is +10; no
+    coordinate is -7); invited before and accepted after the trip is not on it; leaving the evening before the crew's
+    day is bailing; an organizer's removal on the crew's day is recorded; one in three calling it off does not wipe the
+    others' reports, two in three does; a late joiner does not stop a solo organizer disbanding. 51 assertions. Every
+    section's "today" is now the crew's local date (the fixtures have no coordinate, so UTC-7), and `backdateMembers`
+    backdates `confirmed_at` too. Without 0527 the run stops at the missing column (measured).
+  - **Section 12 (0526, fourth review 2026-11-24):** left before the day cannot report (called off included) and is
+    reportable; joined after the day neither reports nor is reported; an organizer's removal the day before is not a
+    departure; an organizer alone who leaves can still disband; a crewmate removed after the day is listed by
+    `my_trip_recaps` and can report. 44 assertions; all five fail without 0526 (measured). Every call now backdates
+    fixture memberships a month (`backdateMembers`), since "on the trip" needs `joined_at` before the day ended and the
+    fixtures add members now to crews dated yesterday; `LATE_JOINERS` keeps the one test's late joiner late. The live
+    probe backdates its real crew the same way.
+  - **Section 11 (0525, third review 2026-11-24):** the organizer cannot move or clear a day that has come, and can
+    before it; declining after the day is a departure and stays reportable; a removal before the day is not one; a
+    departure from an earlier trip does not put a climber on the next trip's roster; switching answers and back cannot
+    wipe a dispute. Section 8 now asserts an organizer's removal AFTER the day is recorded (marked removed) and the
+    removed member can still report. 39 assertions. Without 0525 the run stops at section 8's new column (measured).
+  - **Section 10 rewritten for 0523 (second review, 2026-11-24):** a deleted crew's reports still group by trip; leaving
+    after the day is still reportable with any answer; the organizer cannot disband in the window but can before the
+    day; a second trip on one crew is its own trip; withdraw and re-file meets the same *I was there*, a different
+    answer does not; a note after *I was there* keeps it; the window is [day, day+14] at UTC-12. Dates are built from
+    the same UTC-12 "today" the functions use, so no assertion depends on the hour the run starts. 34 assertions.
+    Without 0523 the run cannot even query its reply columns (measured).
+  - **Section 10 (0522, review 2026-11-24):** a deleted crew's reports still group by trip and its *called off* still
+    holds; leaving after the day is no departure; a note after *I was there* keeps the dispute; the window opens a day
+    early and closes a day late. Run without 0522, all four fail (measured). 31 assertions. Section 8's fixture crew
+    that a member leaves is dated TODAY now: leaving on the day is a bail, leaving after it is not.
+  - **What it cannot see:** time. `now()` is real, so the 7-day reveal and the 14-day window are tested by ageing
+    `updated_at` and choosing agreed dates relative to `current_date`, not by waiting.
+
+- **A PRIVATE CREW'S ROSTER IS NOT PUBLIC (0426).** `crew_members` was `using (true)` from 0036 on; it now reads
+  `crew_visible_to_me(crew_id)`. Two traps, both hit while writing it:
+  - a policy on `crew_members` that subqueries `crews` runs under the CALLER's RLS on `crews` (organiser/members
+    only), so a non-member reads NULL for every crew. The first draft's insert policy did exactly that and refused
+    every request to join, listed crews too. Both lookups are SECURITY DEFINER helpers (`crew_visible_to_me`,
+    `crew_is_private`).
+  - any new SECURITY DEFINER reader of `crew_members` granted to anon/authenticated must answer only a caller on that
+    crew, or check `not private`; `crew_listings` and `crew_share_preview` do the latter.
+  **0496 closed the listed crews too**: `crew_visible_to_me` now answers only the organiser and row-holders for every
+  crew, and the bucket `topo-photos` can no longer be LISTED by anyone but a file's owner or an admin (images load
+  by public URL without RLS). The verifier below covers both.
+  `scripts/oneoff/verify-0426-private-crew-pglite.mjs` replays every migration into PGlite and walks organiser,
+  invitee, outsider and anon through a private and a listed crew (20 expectations, no live database).
+
 - **A NOTIFICATION THAT NAVIGATES RENDERED AS INERT, because one screen derived "where does this
   go" TWICE and the two disagreed.** `NotifPanel` had an if/else chain for the CLICK and a separate
   boolean for the AFFORDANCE:
@@ -329,7 +392,7 @@ Part of the guard notes — see [README.md](README.md) for the full index.
 - **THE GROUP PAGE IS TABS, AND OUTSIDERS SEE ONLY A COUNT (2026-10-14; roster rule settled 2026-10-21).** The
   `openGroupId` view was one scroll holding the hero, rules, notifications, the calendar, the
   roster, the moderation queues and the discussion. It is now a hero (name, *Private/Public group
-  · N members*, Join and + Invite) over the tabs **About · Discussion · Events · Members · Media**
+  · N members*, Join and + Invite) over the tabs **About · Discussion · Events · Members**
   (`groupPageTab`, kept per group as `{gid, tab}`). A member lands on Discussion and anyone else
   on About, because a real group's posts are members-only (0230).
   - **Members shows the roster to the group's members and moderators, a COUNT to anyone else**
@@ -355,9 +418,19 @@ Part of the guard notes — see [README.md](README.md) for the full index.
   by hand, which `check:date-locale` cannot see because it reads only `toLocale*String` calls), and
   a ⋯ button. Then the text (long posts clamp with *See more*), the photo grid, a counts line
   (reaction emoji + total, *N comments*) and one row: **Like · Comment**.
-  - **Like is the 👍 reaction (`solid`).** A tap toggles it; press-and-hold or right-click opens
-    every reaction, and so does the reaction count, so **no reaction needs a long press** (a
-    keyboard can reach all of them). Like carries `aria-pressed`, Comment `aria-expanded`:
+  - **Like is the 👍 reaction (`solid`).** A tap toggles it; resting the mouse on it, press-and-hold
+    or right-click opens **the reaction bar**, and so does the reaction count, so **no reaction needs a
+    long press** (a keyboard can reach all of them). **The bar is Facebook's (2026-11-05**, owner: "Emojis
+    for comment and discussion reactions should be added back … more like how Facebook does it"):
+    `ReactionPicker` is a floating pill of the 21 emoji (`REACTIONS[].e`), seven to a row, **no word
+    under each** (the word is the button's `aria-label`), anchored over the control that opened it,
+    your pick on a blue disc, the pointer swelling the one under it; nothing dims, a tap elsewhere,
+    Escape or a scroll closes it, and one the mouse opened closes when the mouse leaves. It is
+    `role="group"`, not a dialog, so the overlay scaffold no longer lists `reactPickerFor`.
+    `reactionTrigger` (same file) is the handler set that makes a button behave as Like does. The
+    count line stacks the top three emoji on small discs (`reactionEmoji`); the button shows your
+    emoji and its word once you have reacted, as Facebook's turns into *Haha*. Between 2026-10-25 and
+    then the picker was a bottom sheet of line icons over words. Like carries `aria-pressed`, Comment `aria-expanded`:
     `check:selected-state` measures that row behind the `postMenuFor` overlay.
   - **Photos: 1 full width, 2 side by side, 3 as one wide over two, 4 as a square, 5+ as a square
     whose last tile is "+N"** and shows them all. There is no photo viewer yet, so "+N" must reveal
@@ -372,8 +445,8 @@ Part of the guard notes — see [README.md](README.md) for the full index.
   - **Saved left the sort.** Save/Unsave is in the ⋯ menu, and **Groups › Your activity** lists
     *Saved posts*, gated on `myPostSavesQ.isError` so a failed read is not "nothing saved".
   - **Block is in the ⋯ menu of someone else's post** (Apple 1.2: block an abusive user from the
-    content). A **blocked climber's posts leave the feeds you read** — the Discussion, the Media
-    tab, For you, Your activity and the unread count — through `groupPostByBlocked`. They stay in
+    content). A **blocked climber's posts leave the feeds you read** — the Discussion,
+    For you, Your activity and the unread count — through `groupPostByBlocked`. They stay in
     the page's own `posts`, because the Reported queue reads that list to tell a removed post from
     a live one. Their **comments** are not filtered yet: that is the Comments redesign's job.
 - **A SHARED POST IS A LINK, NOT ITS WORDS (2026-10-15).** The card's third action, **Share**, opens
@@ -399,9 +472,11 @@ Part of the guard notes — see [README.md](README.md) for the full index.
 - **EVERY THREAD IS FACEBOOK'S (2026-10-15).** `Comments` in core is the ONE thread component: routes
   and their five tabs, areas, trip reports, photos and group posts. A change there reaches all of them.
   - **A comment is a grey bubble** (name + words), with a small line under it: *time · Like · Reply ·
-    React*. Reactions are a pill at the bubble's edge that opens the picker. Edit, Delete, Report,
-    Remove and **Block** live behind ⋯ (`menuFor`, a portalled sheet at z 9700 like `ReactionPicker`,
-    state local to `Comments` so the overlay scaffold, which reads App's state, has nothing to register).
+    React*. Reactions are a pill at the bubble's edge (the top emoji stacked, `reactionEmoji`) that
+    opens the reaction bar; Like opens it on hover, hold or right-click too (`reactionTrigger`), and
+    React shows the emoji you gave with its word. Edit, Delete, Report, Remove and **Block** live
+    behind ⋯ (`menuFor`, a portalled sheet at z 9700, the bar's depth, state local to `Comments`
+    so the overlay scaffold, which reads App's state, has nothing to register).
   - **Time is `commentWhen`**: *now / 5m / 3h / 2d*, then a date through `DLOCALE`; a tap spells out
     the day and time. Replies have a time now. `ago()` printed fixed English and stays for other callers.
   - **Sort: Most relevant (default) · Newest · Oldest.** Relevant = reactions + likes + 2 × replies,
@@ -411,7 +486,7 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     counts what it hid. **Block** (`onBlock` → `blockClimber`) needs an author with an account.
   - **Kept for the guards:** the composer's `ariaLabel="Add a comment"` (a one-off probe matches it),
     `"Reply to "+name` on the reply box (`check:a11y-names`), and the reaction entry point is a real
-    named button (*Add a reaction* / *Change your reaction*), which `check:clickable` records was once
+    named button (*Add a reaction* / *Your reaction: …. Choose a different reaction*), which `check:clickable` records was once
     inert on Enter. Like carries `aria-pressed`; Reply and *View N more replies* carry `aria-expanded`.
 - **`check:mutual-friends`** asserts that a mutual friend is **real**, **named the way they asked**,
   and **counted as the list that renders**. Static (one esbuild bundle of core plus two Babel
@@ -800,6 +875,14 @@ Part of the guard notes — see [README.md](README.md) for the full index.
   - The example (seed) list stands down under Near my areas: seed climbers list no areas, and a
     "0 climbers found" header under a real list would be the seed path showing through.
 
+- **THE AREA DISCUSSION IS ON THE AREA PAGE ONLY (owner 2026-11-11, "Remove discussion from area maps").**
+  RoutesTab passes the thread to `DbAreaBrowser` as `areaDiscussion`; the browser draws `{areaDiscussion}` once,
+  right after `<AreaPage …/>`, so it never shows under the Map, the Route finder or Objectives, and it
+  switches in the same render as the screen. `check:area-surfaces` asserts the handoff (gated on
+  `areaCommentTargets.length`) and the single placement; the injection harness covers drawing it under
+  the Map, outside the area-page branch, and dropping the handoff. **Blind spot:** it reads the JSX
+  text, so a slot reached through some other variable name would not be seen.
+
 - **THE AREA PAGE, THE CRAG ROUTE PAGE AND THE LOGBOOK ALL REACH THE LISTING (0300, Step 5).**
   `PartnersHereCard` on every crag-family area page and its ancestors below the state ("12 climbers
   listed here or nearby", up to three rows, a one-tap **List me here / Listed ✓** that writes THIS
@@ -823,6 +906,19 @@ Part of the guard notes — see [README.md](README.md) for the full index.
   in both function bodies, demands `ME.matchObjectiveIds` is derived with the imported `CRAG_CATS`,
   and refuses the raw hook's return (10 injections). Probe: `partners_by_objective` finds B through
   the alpine objective and not through the sport one (47 assertions).
+
+- **A ROUTE LISTING IS OWNER-ONLY, NEVER ON A CRAG ROUTE, AND HAS ONE GATED READER (`0489`, `check:partner-areas` rule 7).**
+  Owner 2026-11-23: "you should be able to list yourself as a partner under the partners tab for all routes". A crag
+  route already listed by area; every other route had only the saved objective. `route_partner_listings` is the
+  route-level half, and rule 7 holds four things: every policy binds `auth.uid() = user_id` and none is public
+  (`objectives` is public-read and must not be the model); `route_partner_listings_validate` refuses a crag-family
+  route that is not on a peak, so crag partners stay area-based; `partners_by_objective` is the ONLY function that
+  reads the table across climbers, and it is a definer with the signed-in gate, the not-self filter and
+  `discoverable` + `profile_owner_blocked_me`; and `routeListingReaders` names `partners-by-objective`, so
+  listing or unlisting refreshes the route page and the finder. What it cannot see: whether a row RENDERS as listed
+  (the tab's `tag`), which is a browser check. The route sub-tab's label is *Find* since the same day; four
+  browser walks tap it by label (`check:axe`, `check:blue-on-blue`, `check:overflow`, `check:a11y-badges`), and
+  a walk still tapping "Partners" on a route page would land on the NAV tab of that name without failing.
 
 - **AREA CREWS CAN BE STARTED, FOUND AND JOINED (0302, Step 7).** `lib/StartCrewSheet.jsx` collects what the
   database demands of an area crew (the area, the session's discipline) and what a session needs to be

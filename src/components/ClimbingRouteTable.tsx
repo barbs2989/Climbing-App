@@ -31,7 +31,6 @@ export default function ClimbingRouteTable({route,onEdit}: ClimbingRouteTablePro
   if(!segs.length)return null;
   const list=segs.map((s: ClimbSection,i: number)=>({...s,_n:s.n!=null?s.n:i+1})).sort((a,b)=>a._n-b._n);
   return <><SL action={onEdit?<EditIconButton onClick={onEdit} title="Edit the climbing route"/>:null}>{"CLIMBING ROUTE · "+list.length+" section"+(list.length!==1?"s":"")}</SL><div style={{background:C.card,borderRadius:12,padding:"12px 14px",border:`1px solid ${C.border}`}}>
-    <div style={{fontSize:11.5,color:C.textMuted,lineHeight:1.5,marginBottom:10}}>From the base of the climbing to the top — the technical ground itself, not the walk in.</div>
     {list.map((s,idx)=><div key={s._n+"-"+idx} style={{display:"flex",gap:10,padding:"9px 11px",alignItems:"flex-start",border:"1px solid "+C.border,borderRadius:10,marginBottom:8}}>
       <div style={{width:26,height:26,borderRadius:7,background:C.surface,border:"1px solid "+C.border,display:"flex",alignItems:"center",justifyContent:"center",flexShrink:0,fontSize:12,fontWeight:700,color:C.textSub}}>{s._n}</div>
       <div style={{flex:1,minWidth:0}}>

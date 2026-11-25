@@ -1,0 +1,428 @@
+{
+ "wa_air_over_aries": {
+  "area": "wa_great_northern_slab",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/106620646/air-over-aries",
+    "https://www.mountainproject.com/area/105790646/great-northern-slab",
+    "https://rakkup.com/guidebook/index-rock-climbing/the-great-northern-slab/s10833",
+    "https://rakkup.com/guidebook/index-rock-climbing/lower-town-wall/s10403",
+    "https://www.thetopo.com/crags/index-washington-united-states/routelist",
+    "https://www.mountainproject.com/forum/message/125423151",
+    "https://services5.arcgis.com/4LKAHwqnBooVDUlX/arcgis/rest/services/ParkBoundaries/FeatureServer/2/query?geometry=-121.57219,47.81841&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ParkName,Category&returnGeometry=false&f=json",
+    "https://gis.snoco.org/host/rest/services/Hosted/CADASTRAL__parcels/FeatureServer/0/query?geometry=-121.57219,47.81841&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ownername,parcel_id&returnGeometry=false&f=json",
+    "https://parks.wa.gov/news/2026/climbers-donate-index-town-wall-washington-state-parks"
+   ]
+  },
+  "ledger": [],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_air_over_aries",
+    "column": "pitches",
+    "from": 0,
+    "to": 1,
+    "why": "pitches 0 is invalid. Mountain Project: one 60 ft bolted slab line (5 bolts). The count is implied, not stated: single source, unconfirmed. Proposed under the scope rule (pitches 0 is wrong whatever the row is).",
+    "evidence": [
+     "https://www.mountainproject.com/route/106620646/air-over-aries"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_air_over_aries",
+    "column": "access",
+    "from": {
+     "fees": "None — no climbing fee (National Forest, not Mount Rainier NP)",
+     "notes": "Many of these peaks (Mount Persis, Gunn Peak, Baring Mountain area) sit outside designated wilderness — administratively unrestricted despite serious technical terrain.",
+     "permit": "None required.",
+     "land_manager": "Mt. Baker-Snoqualmie National Forest (Skykomish Ranger District)",
+     "parking_pass": "Northwest Forest Pass or America the Beautiful pass required at developed trailheads."
+    },
+    "to": {
+     "land_manager": "Washington State Parks (Forks of the Sky State Park)"
+    },
+    "why": "Brief AJ/AI/AH: copy the owner-approved State Parks object field for field from wa_godzilla (saved live row): land_manager only, permit stays null. Re-read 2026-11-24: the State Parks boundary layer returns 'Forks of the Sky, State Park Property' at the Great Northern Slab (47.81841,-121.57219); the Snohomish County parcel there (10030000000400) is owned by Washington State Parks & Recreation; the parks.wa.gov release of 2026-03-13 (WCC donation of the Lower Town Wall, managed as a climbing park in Forks of the Sky SP; no pass or fee rule stated) is unchanged. Replaces the LEGACY object (Mt. Baker-Snoqualmie NF, Skykomish RD, Northwest Forest Pass, Mount Rainier NP fee line, Persis/Gunn/Baring note), which names the wrong manager.",
+    "evidence": [
+     "https://services5.arcgis.com/4LKAHwqnBooVDUlX/arcgis/rest/services/ParkBoundaries/FeatureServer/2/query?geometry=-121.57219,47.81841&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ParkName,Category&returnGeometry=false&f=json",
+     "https://gis.snoco.org/host/rest/services/Hosted/CADASTRAL__parcels/FeatureServer/0/query?geometry=-121.57219,47.81841&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ownername,parcel_id&returnGeometry=false&f=json",
+     "https://parks.wa.gov/news/2026/climbers-donate-index-town-wall-washington-state-parks"
+    ]
+   }
+  ],
+  "held": [
+   "length_m: MP 60 ft (18 m); not proposed under the scope rule (the line starts mid-wall, above Aries P3; see notes).",
+   "bolts: MP states 5 bolts; not proposed under the scope rule.",
+   "grade: stored 5.11a matches MP; thetopo.com (27crags) lists 'AOA (Air over Aires)' at 6b+ (about 5.10c/d), and that site is a user-added list of unclear origin. No second publisher agrees; not locked.",
+   "discipline: stored sport matches MP (5 bolts); thetopo.com lists it as traditional. Not changed.",
+   "fa: stored 'Matt Kerns' matches MP (no year); an FA never locks from MP."
+  ],
+  "disputed": [],
+  "notes": "SCOPE (variation finish, owner call): MP describes a thin friction slab ABOVE the traversing third pitch of Aries (wa_aries_aka_the_lizard), reached by walking about 20 ft right from the top of the Butt Lips Chimney or from the Sonic Slab anchors. So it does not start from the ground: it is an alternative upper pitch reached from Aries, with its own bolts. MP lists it as its own route; the Index guide's teaser lists (GNS 4 climbs, Lower Town Wall 50) do not show it. MP page has 0 comments, so there is no report from after the 2023 rockfall. ROCKFALL CHECK (brief AJ): the 29 Nov 2023 rockfall is confirmed in the MP forum thread 'Index rockfall' (Nov 29 2023 - Feb 8 2024): debris and trees came off the top of the Great Northern Slab and raked it top to base, the trail from before the toilet to Roger's Corner was taped off (tape still up Dec 17 2023), on Jan 7 2024 GNS and the Roger's Corner area were reported not climbable, GNS was reported not destroyed (some big trees gone, no bolts known damaged), and a Feb 8 2024 post placed the START of the slide at Winkie Dinkie Cliff, directly above GNS. The thread names none of the aj1 lines. Air Over Aries sits in the upper part of GNS, in the zone the debris crossed; no source says it was changed or lost, and none confirms it climbed since. Anchor type not stated."
+ },
+ "wa_on_the_verge": {
+  "area": "wa_great_northern_slab",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/106621795/on-the-verge",
+    "https://www.mountainproject.com/comments/forObject/Climb-Lib-Models-Route/106621795?sortOrder=newest&showAll=true",
+    "https://www.mountainproject.com/area/105790646/great-northern-slab",
+    "https://www.mountainproject.com/route/106620701/voyage-to-the-bottom-of-the-verge",
+    "https://rakkup.com/guidebook/index-rock-climbing/the-great-northern-slab/s10833",
+    "https://rakkup.com/guidebook/index-rock-climbing/lower-town-wall/s10403",
+    "https://www.thetopo.com/crags/index-washington-united-states/routelist",
+    "https://www.thetopo.com/crags/index-washington-united-states/routes/on-the-verge-18616",
+    "https://www.mountainproject.com/forum/message/125423151",
+    "https://services5.arcgis.com/4LKAHwqnBooVDUlX/arcgis/rest/services/ParkBoundaries/FeatureServer/2/query?geometry=-121.57219,47.81841&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ParkName,Category&returnGeometry=false&f=json",
+    "https://gis.snoco.org/host/rest/services/Hosted/CADASTRAL__parcels/FeatureServer/0/query?geometry=-121.57219,47.81841&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ownername,parcel_id&returnGeometry=false&f=json",
+    "https://parks.wa.gov/news/2026/climbers-donate-index-town-wall-washington-state-parks"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "grade",
+    "value": "5.11b/c",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106621795/on-the-verge",
+      "fact": "5.11b/c YDS, Trad, 45 ft, 4 bolts",
+      "retrieved_at": "2026-11-24"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_on_the_verge",
+    "column": "pitches",
+    "from": 0,
+    "to": 1,
+    "why": "pitches 0 is invalid. Mountain Project: one 45 ft arete line, 4 bolts. Count implied, not stated: single source, unconfirmed. Proposed under the scope rule.",
+    "evidence": [
+     "https://www.mountainproject.com/route/106621795/on-the-verge"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_on_the_verge",
+    "column": "access",
+    "from": {
+     "fees": "None — no climbing fee (National Forest, not Mount Rainier NP)",
+     "notes": "Many of these peaks (Mount Persis, Gunn Peak, Baring Mountain area) sit outside designated wilderness — administratively unrestricted despite serious technical terrain.",
+     "permit": "None required.",
+     "land_manager": "Mt. Baker-Snoqualmie National Forest (Skykomish Ranger District)",
+     "parking_pass": "Northwest Forest Pass or America the Beautiful pass required at developed trailheads."
+    },
+    "to": {
+     "land_manager": "Washington State Parks (Forks of the Sky State Park)"
+    },
+    "why": "Brief AJ/AI/AH: copy the owner-approved State Parks object field for field from wa_godzilla (saved live row): land_manager only, permit stays null. Re-read 2026-11-24: the State Parks boundary layer returns 'Forks of the Sky, State Park Property' at the Great Northern Slab (47.81841,-121.57219); the Snohomish County parcel there (10030000000400) is owned by Washington State Parks & Recreation; the parks.wa.gov release of 2026-03-13 (WCC donation of the Lower Town Wall, managed as a climbing park in Forks of the Sky SP; no pass or fee rule stated) is unchanged. Replaces the LEGACY object (Mt. Baker-Snoqualmie NF, Skykomish RD, Northwest Forest Pass, Mount Rainier NP fee line, Persis/Gunn/Baring note), which names the wrong manager.",
+    "evidence": [
+     "https://services5.arcgis.com/4LKAHwqnBooVDUlX/arcgis/rest/services/ParkBoundaries/FeatureServer/2/query?geometry=-121.57219,47.81841&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ParkName,Category&returnGeometry=false&f=json",
+     "https://gis.snoco.org/host/rest/services/Hosted/CADASTRAL__parcels/FeatureServer/0/query?geometry=-121.57219,47.81841&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ownername,parcel_id&returnGeometry=false&f=json",
+     "https://parks.wa.gov/news/2026/climbers-donate-index-town-wall-washington-state-parks"
+    ]
+   }
+  ],
+  "held": [
+   "discipline: stored sport; Mountain Project says Trad (4 bolts plus gear to 2 in for the anchor) and thetopo.com also lists it as traditional with 4 bolts. thetopo.com's '(b/c)' grade note suggests it was copied from a YDS listing, so it is not shown to be independent; discipline never changes on MP alone. Held for the owner: sport -> trad.",
+   "length_m: MP 45 ft (14 m); not proposed under the scope rule.",
+   "bolts: MP 4 bolts (thetopo.com also 4); not proposed under the scope rule.",
+   "fa: MP 'Dan Lepeska (~1981)'; the row stores none. A blank FA is filled only from two sources; held."
+  ],
+  "disputed": [],
+  "notes": "SCOPE (possible variation of Aries, owner call): MP: hard climbing up the arete right of the Butt Lips Chimney; Voyage to the Bottom of the Verge (wa_voyage_to_the_bottom_of_the_verge) is the longer arete pitch directly BELOW it. thetopo.com calls On the Verge a 4-bolt variation on Aries. So it is a mid-wall arete pitch beside Aries (wa_aries_aka_the_lizard), usually reached by Voyage or Aries. Anchor: MP says gear to 2 in is needed for the anchor (no fixed anchor stated). Only MP comment is from 2013 (toprope it from one of the 5.8s to the left). ROCKFALL CHECK (brief AJ): the 29 Nov 2023 rockfall is confirmed in the MP forum thread 'Index rockfall' (Nov 29 2023 - Feb 8 2024): debris and trees came off the top of the Great Northern Slab and raked it top to base, the trail from before the toilet to Roger's Corner was taped off (tape still up Dec 17 2023), on Jan 7 2024 GNS and the Roger's Corner area were reported not climbable, GNS was reported not destroyed (some big trees gone, no bolts known damaged), and a Feb 8 2024 post placed the START of the slide at Winkie Dinkie Cliff, directly above GNS. The thread names none of the aj1 lines. No source says On the Verge was changed or lost; none reports it climbed since."
+ },
+ "wa_voyage_to_the_bottom_of_the_verge": {
+  "area": "wa_great_northern_slab",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/106620701/voyage-to-the-bottom-of-the-verge",
+    "https://www.mountainproject.com/comments/forObject/Climb-Lib-Models-Route/106620701?sortOrder=oldest&showAll=true",
+    "https://www.mountainproject.com/route/106621795/on-the-verge",
+    "https://www.mountainproject.com/area/105790646/great-northern-slab",
+    "https://rakkup.com/guidebook/index-rock-climbing/the-great-northern-slab/s10833",
+    "https://rakkup.com/guidebook/index-rock-climbing/lower-town-wall/s10403",
+    "https://www.thetopo.com/crags/index-washington-united-states/routelist",
+    "https://www.mountainproject.com/forum/message/125423151",
+    "https://services5.arcgis.com/4LKAHwqnBooVDUlX/arcgis/rest/services/ParkBoundaries/FeatureServer/2/query?geometry=-121.57219,47.81841&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ParkName,Category&returnGeometry=false&f=json",
+    "https://gis.snoco.org/host/rest/services/Hosted/CADASTRAL__parcels/FeatureServer/0/query?geometry=-121.57219,47.81841&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ownername,parcel_id&returnGeometry=false&f=json",
+    "https://parks.wa.gov/news/2026/climbers-donate-index-town-wall-washington-state-parks"
+   ]
+  },
+  "ledger": [],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_voyage_to_the_bottom_of_the_verge",
+    "column": "pitches",
+    "from": 0,
+    "to": 1,
+    "why": "pitches 0 is invalid. Mountain Project: one 55 ft arete line right of the Aries dihedral, 2 bolts plus cams (On the Verge continues directly above as its own route). Count implied: single source, unconfirmed.",
+    "evidence": [
+     "https://www.mountainproject.com/route/106620701/voyage-to-the-bottom-of-the-verge"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_voyage_to_the_bottom_of_the_verge",
+    "column": "length_m",
+    "from": null,
+    "to": 17,
+    "why": "length is empty. Mountain Project: 55 ft (17 m). Single source; locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/106620701/voyage-to-the-bottom-of-the-verge"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_voyage_to_the_bottom_of_the_verge",
+    "column": "bolts",
+    "from": null,
+    "to": 2,
+    "why": "bolts is empty. Mountain Project protection: 'Has 2 bolts' (a 2013 comment says the route was re-bolted). Stated as bolts. Single source.",
+    "evidence": [
+     "https://www.mountainproject.com/route/106620701/voyage-to-the-bottom-of-the-verge",
+     "https://www.mountainproject.com/comments/forObject/Climb-Lib-Models-Route/106620701?sortOrder=oldest&showAll=true"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_voyage_to_the_bottom_of_the_verge",
+    "column": "access",
+    "from": {
+     "fees": "None — no climbing fee (National Forest, not Mount Rainier NP)",
+     "notes": "Many of these peaks (Mount Persis, Gunn Peak, Baring Mountain area) sit outside designated wilderness — administratively unrestricted despite serious technical terrain.",
+     "permit": "None required.",
+     "land_manager": "Mt. Baker-Snoqualmie National Forest (Skykomish Ranger District)",
+     "parking_pass": "Northwest Forest Pass or America the Beautiful pass required at developed trailheads."
+    },
+    "to": {
+     "land_manager": "Washington State Parks (Forks of the Sky State Park)"
+    },
+    "why": "Brief AJ/AI/AH: copy the owner-approved State Parks object field for field from wa_godzilla (saved live row): land_manager only, permit stays null. Re-read 2026-11-24: the State Parks boundary layer returns 'Forks of the Sky, State Park Property' at the Great Northern Slab (47.81841,-121.57219); the Snohomish County parcel there (10030000000400) is owned by Washington State Parks & Recreation; the parks.wa.gov release of 2026-03-13 (WCC donation of the Lower Town Wall, managed as a climbing park in Forks of the Sky SP; no pass or fee rule stated) is unchanged. Replaces the LEGACY object (Mt. Baker-Snoqualmie NF, Skykomish RD, Northwest Forest Pass, Mount Rainier NP fee line, Persis/Gunn/Baring note), which names the wrong manager.",
+    "evidence": [
+     "https://services5.arcgis.com/4LKAHwqnBooVDUlX/arcgis/rest/services/ParkBoundaries/FeatureServer/2/query?geometry=-121.57219,47.81841&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ParkName,Category&returnGeometry=false&f=json",
+     "https://gis.snoco.org/host/rest/services/Hosted/CADASTRAL__parcels/FeatureServer/0/query?geometry=-121.57219,47.81841&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ownername,parcel_id&returnGeometry=false&f=json",
+     "https://parks.wa.gov/news/2026/climbers-donate-index-town-wall-washington-state-parks"
+    ]
+   }
+  ],
+  "held": [
+   "grade: stored 5.10d matches MP; thetopo.com lists 6b (about 5.10a/b) and a 2013 MP comment suggests 11a. No two sources agree; not locked.",
+   "gear: MP 'some small cams, a 3, and a 3.5 inch cam'. It is unclear whether '3' and '3.5' are sizes in inches or a maker's numbers (no current Camalot is a #3.5), so it is left out (brief AE gear-size rule).",
+   "fa: stored 'Greg Olsen, Jon Nelson, Russell Erickson' matches MP (no year); an FA never locks from MP."
+  ],
+  "disputed": [],
+  "notes": "Own line on MP (arete right of the Aries dihedral), the lower of two stacked arete pitches: On the Verge (wa_on_the_verge) lies directly above. Not on the Index guide's teaser lists. MP comments: re-bolted by 2013; overgrown with black lichen in May 2016 and needed cleaning; a 2020 comment calls it worth doing. Anchor type not stated. ROCKFALL CHECK (brief AJ): the 29 Nov 2023 rockfall is confirmed in the MP forum thread 'Index rockfall' (Nov 29 2023 - Feb 8 2024): debris and trees came off the top of the Great Northern Slab and raked it top to base, the trail from before the toilet to Roger's Corner was taped off (tape still up Dec 17 2023), on Jan 7 2024 GNS and the Roger's Corner area were reported not climbable, GNS was reported not destroyed (some big trees gone, no bolts known damaged), and a Feb 8 2024 post placed the START of the slide at Winkie Dinkie Cliff, directly above GNS. The thread names none of the aj1 lines. No source says this line was changed or lost; no comment after 2020."
+ },
+ "wa_sandy_corner": {
+  "area": "wa_great_northern_slab",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/116361231/sandy-corner",
+    "https://www.mountainproject.com/comments/forObject/Climb-Lib-Models-Route/116361231?sortOrder=newest&showAll=true",
+    "https://www.mountainproject.com/area/105790646/great-northern-slab",
+    "https://rakkup.com/guidebook/index-rock-climbing/the-great-northern-slab/s10833",
+    "https://rakkup.com/guidebook/index-rock-climbing/lower-town-wall/s10403",
+    "https://www.thetopo.com/crags/index-washington-united-states/routelist",
+    "https://www.mountainproject.com/forum/message/125423151",
+    "https://services5.arcgis.com/4LKAHwqnBooVDUlX/arcgis/rest/services/ParkBoundaries/FeatureServer/2/query?geometry=-121.57219,47.81841&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ParkName,Category&returnGeometry=false&f=json",
+    "https://gis.snoco.org/host/rest/services/Hosted/CADASTRAL__parcels/FeatureServer/0/query?geometry=-121.57219,47.81841&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ownername,parcel_id&returnGeometry=false&f=json",
+    "https://parks.wa.gov/news/2026/climbers-donate-index-town-wall-washington-state-parks"
+   ]
+  },
+  "ledger": [],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_sandy_corner",
+    "column": "pitches",
+    "from": 0,
+    "to": null,
+    "why": "pitches 0 is invalid. Mountain Project describes a 15 ft corner used as an alternate START to Great Northern Slab or to Pisces/Libra Crack, with no anchor of its own: it is part of a pitch, so no count is stated or implied. 0 -> null.",
+    "evidence": [
+     "https://www.mountainproject.com/route/116361231/sandy-corner"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_sandy_corner",
+    "column": "access",
+    "from": {
+     "fees": "None — no climbing fee (National Forest, not Mount Rainier NP)",
+     "notes": "Many of these peaks (Mount Persis, Gunn Peak, Baring Mountain area) sit outside designated wilderness — administratively unrestricted despite serious technical terrain.",
+     "permit": "None required.",
+     "land_manager": "Mt. Baker-Snoqualmie National Forest (Skykomish Ranger District)",
+     "parking_pass": "Northwest Forest Pass or America the Beautiful pass required at developed trailheads."
+    },
+    "to": {
+     "land_manager": "Washington State Parks (Forks of the Sky State Park)"
+    },
+    "why": "Brief AJ/AI/AH: copy the owner-approved State Parks object field for field from wa_godzilla (saved live row): land_manager only, permit stays null. Re-read 2026-11-24: the State Parks boundary layer returns 'Forks of the Sky, State Park Property' at the Great Northern Slab (47.81841,-121.57219); the Snohomish County parcel there (10030000000400) is owned by Washington State Parks & Recreation; the parks.wa.gov release of 2026-03-13 (WCC donation of the Lower Town Wall, managed as a climbing park in Forks of the Sky SP; no pass or fee rule stated) is unchanged. Replaces the LEGACY object (Mt. Baker-Snoqualmie NF, Skykomish RD, Northwest Forest Pass, Mount Rainier NP fee line, Persis/Gunn/Baring note), which names the wrong manager.",
+    "evidence": [
+     "https://services5.arcgis.com/4LKAHwqnBooVDUlX/arcgis/rest/services/ParkBoundaries/FeatureServer/2/query?geometry=-121.57219,47.81841&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ParkName,Category&returnGeometry=false&f=json",
+     "https://gis.snoco.org/host/rest/services/Hosted/CADASTRAL__parcels/FeatureServer/0/query?geometry=-121.57219,47.81841&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ownername,parcel_id&returnGeometry=false&f=json",
+     "https://parks.wa.gov/news/2026/climbers-donate-index-town-wall-washington-state-parks"
+    ]
+   }
+  ],
+  "held": [
+   "length_m: MP 15 ft (5 m); not proposed under the scope rule (start variation).",
+   "grade: stored 5.10d matches MP; thetopo.com lists 6a+ (about 5.10a/b). No two sources agree; not locked.",
+   "fa: stored 'Mike Berman, Mark Weigelt 1969' matches MP (comment, 2019); an FA never locks from MP."
+  ],
+  "disputed": [],
+  "notes": "SCOPE (start variation, owner call): MP: the obvious short corner directly right of the Great Northern Slab start, used as an alternate start to GNS (wa_great_northern_slab) or to Pisces (wa_pisces) / Libra Crack (no Libra row seen). A 2020 comment links it into Libra, then the Pisces crack and slab. Protection: a few small nuts and micro cams. ROCKFALL CHECK (brief AJ): the 29 Nov 2023 rockfall is confirmed in the MP forum thread 'Index rockfall' (Nov 29 2023 - Feb 8 2024): debris and trees came off the top of the Great Northern Slab and raked it top to base, the trail from before the toilet to Roger's Corner was taped off (tape still up Dec 17 2023), on Jan 7 2024 GNS and the Roger's Corner area were reported not climbable, GNS was reported not destroyed (some big trees gone, no bolts known damaged), and a Feb 8 2024 post placed the START of the slide at Winkie Dinkie Cliff, directly above GNS. The thread names none of the aj1 lines. Sandy Corner is at the base of GNS, below the debris path; no source says it was changed or lost."
+ },
+ "wa_a_great_northern_slab_gorilla_my_dreams": {
+  "area": "wa_great_northern_slab",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/105805980/gorilla-my-dreams",
+    "https://www.mountainproject.com/comments/forObject/Climb-Lib-Models-Route/105805980?sortOrder=newest&showAll=true",
+    "https://www.mountainproject.com/area/105805977/winkie-dinkie-cliff",
+    "https://rakkup.com/guidebook/index-rock-climbing/gorilla-my-dreams/c25311",
+    "https://www.mountainproject.com/area/105790646/great-northern-slab",
+    "https://rakkup.com/guidebook/index-rock-climbing/the-great-northern-slab/s10833",
+    "https://www.mountainproject.com/forum/message/125423151",
+    "https://services5.arcgis.com/4LKAHwqnBooVDUlX/arcgis/rest/services/ParkBoundaries/FeatureServer/2/query?geometry=-121.5723,47.81868&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ParkName,Category&returnGeometry=false&f=json",
+    "https://gis.snoco.org/host/rest/services/Hosted/CADASTRAL__parcels/FeatureServer/0/query?geometry=-121.5723,47.81868&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ownername,parcel_id&returnGeometry=false&f=json",
+    "https://parks.wa.gov/news/2026/climbers-donate-index-town-wall-washington-state-parks"
+   ]
+  },
+  "ledger": [],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_a_great_northern_slab_gorilla_my_dreams",
+    "column": "access",
+    "from": null,
+    "to": {
+     "land_manager": "Washington State Parks (Forks of the Sky State Park)"
+    },
+    "why": "Brief AJ/AI/AH: copy the owner-approved State Parks object field for field from wa_godzilla (saved live row): land_manager only, permit stays null. Re-read 2026-11-24: the State Parks boundary layer returns 'Forks of the Sky, State Park Property' at Winkie Dinkie Cliff, where the route actually is (MP route GPS) (47.81868,-121.5723); the Snohomish County parcel there (10030000000400) is owned by Washington State Parks & Recreation; the parks.wa.gov release of 2026-03-13 (WCC donation of the Lower Town Wall, managed as a climbing park in Forks of the Sky SP; no pass or fee rule stated) is unchanged. Fills a null access.",
+    "evidence": [
+     "https://services5.arcgis.com/4LKAHwqnBooVDUlX/arcgis/rest/services/ParkBoundaries/FeatureServer/2/query?geometry=-121.5723,47.81868&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ParkName,Category&returnGeometry=false&f=json",
+     "https://gis.snoco.org/host/rest/services/Hosted/CADASTRAL__parcels/FeatureServer/0/query?geometry=-121.5723,47.81868&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ownername,parcel_id&returnGeometry=false&f=json",
+     "https://parks.wa.gov/news/2026/climbers-donate-index-town-wall-washington-state-parks"
+    ]
+   }
+  ],
+  "held": [
+   "grade: stored 5.10a matches the Index guide (rakkup: 5.10a, sport, 3 stars); Mountain Project gives 5.10-. 5.10- is not the same grade as 5.10a under the tolerance table; not locked.",
+   "guide_stars: stored 2; the Index guide's own entry shows 3 stars. Changing an existing nonzero rating needs two sources (brief AI); reported, not changed.",
+   "fa: MP 'Darryl Cramer, Erik Thixton, Charles Buehl (~1990)'; the row stores none. A blank FA is filled only from two sources; held.",
+   "length_m: the MP Winkie Dinkie area list shows 18 m; the route page states no length. Not proposed (misfiled row; see notes)."
+  ],
+  "disputed": [],
+  "notes": "MISFILED (catalog defect, report only): Gorilla My Dreams is NOT on the Great Northern Slab. Mountain Project files it under Middle Town Walls > Winkie Dinkie Cliff, and the Index guide (rakkup) files it under The Lower Town Walls > Winkie Dinkie Cliff. Winkie Dinkie sits directly ABOVE GNS (reached by any GNS route or Dr. Sniff, then up and slightly west). The catalog already has an area wa_winkie_dinkie_cliff (parent wa_middle_town_walls, 47.81891,-121.5723) holding no Gorilla row, so this row should probably move there; no duplicate row exists. It is not a pitch or variation of Great Northern Slab or Aries: a bolted lieback flake in the middle of Winkie Dinkie, its own route in both publishers. Access is still the Godzilla object: the State Parks layer and the county parcel put Winkie Dinkie inside Forks of the Sky (same parcel 10030000000400). pitches stays null (no count stated). SAFETY: a 2008 MP comment reports a climber who fell from the first bolt and was flown out; gear low (a #3 before the first bolt) when wet. The MP area page asks climbers not to knock anything onto the busy GNS below. ROCKFALL CHECK (brief AJ): the 29 Nov 2023 rockfall is confirmed in the MP forum thread 'Index rockfall' (Nov 29 2023 - Feb 8 2024): debris and trees came off the top of the Great Northern Slab and raked it top to base, the trail from before the toilet to Roger's Corner was taped off (tape still up Dec 17 2023), on Jan 7 2024 GNS and the Roger's Corner area were reported not climbable, GNS was reported not destroyed (some big trees gone, no bolts known damaged), and a Feb 8 2024 post placed the START of the slide at Winkie Dinkie Cliff, directly above GNS. The thread names none of the aj1 lines. Winkie Dinkie is where that Feb 2024 post put the start of the slide, but Gorilla My Dreams has MP comments from Jul 28 2024, Aug 4 2024 (gear beta) and Sep 2 2025 describing it climbed, so it was not lost. No source says its bolts or anchor changed."
+ },
+ "wa_let_s_go_bowling": {
+  "area": "wa_great_northern_slab",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/106621770/lets-go-bowling",
+    "https://www.mountainproject.com/comments/forObject/Climb-Lib-Models-Route/106621770?sortOrder=newest&showAll=true",
+    "https://www.mountainproject.com/area/105790646/great-northern-slab",
+    "https://rakkup.com/guidebook/index-rock-climbing/the-great-northern-slab/s10833",
+    "https://rakkup.com/guidebook/index-rock-climbing/lower-town-wall/s10403",
+    "https://www.thetopo.com/crags/index-washington-united-states/routelist",
+    "https://www.mountainproject.com/forum/message/125423151",
+    "https://services5.arcgis.com/4LKAHwqnBooVDUlX/arcgis/rest/services/ParkBoundaries/FeatureServer/2/query?geometry=-121.57219,47.81841&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ParkName,Category&returnGeometry=false&f=json",
+    "https://gis.snoco.org/host/rest/services/Hosted/CADASTRAL__parcels/FeatureServer/0/query?geometry=-121.57219,47.81841&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ownername,parcel_id&returnGeometry=false&f=json",
+    "https://parks.wa.gov/news/2026/climbers-donate-index-town-wall-washington-state-parks"
+   ]
+  },
+  "ledger": [],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_let_s_go_bowling",
+    "column": "pitches",
+    "from": 0,
+    "to": 1,
+    "why": "pitches 0 is invalid. Mountain Project: one 60 ft face line right of the Pisces crack that finishes up the last part of the Aries fourth-pitch crack. Count implied, not stated: single source, unconfirmed. Proposed under the scope rule.",
+    "evidence": [
+     "https://www.mountainproject.com/route/106621770/lets-go-bowling"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_let_s_go_bowling",
+    "column": "access",
+    "from": {
+     "fees": "None — no climbing fee (National Forest, not Mount Rainier NP)",
+     "notes": "Many of these peaks (Mount Persis, Gunn Peak, Baring Mountain area) sit outside designated wilderness — administratively unrestricted despite serious technical terrain.",
+     "permit": "None required.",
+     "land_manager": "Mt. Baker-Snoqualmie National Forest (Skykomish Ranger District)",
+     "parking_pass": "Northwest Forest Pass or America the Beautiful pass required at developed trailheads."
+    },
+    "to": {
+     "land_manager": "Washington State Parks (Forks of the Sky State Park)"
+    },
+    "why": "Brief AJ/AI/AH: copy the owner-approved State Parks object field for field from wa_godzilla (saved live row): land_manager only, permit stays null. Re-read 2026-11-24: the State Parks boundary layer returns 'Forks of the Sky, State Park Property' at the Great Northern Slab (47.81841,-121.57219); the Snohomish County parcel there (10030000000400) is owned by Washington State Parks & Recreation; the parks.wa.gov release of 2026-03-13 (WCC donation of the Lower Town Wall, managed as a climbing park in Forks of the Sky SP; no pass or fee rule stated) is unchanged. Replaces the LEGACY object (Mt. Baker-Snoqualmie NF, Skykomish RD, Northwest Forest Pass, Mount Rainier NP fee line, Persis/Gunn/Baring note), which names the wrong manager.",
+    "evidence": [
+     "https://services5.arcgis.com/4LKAHwqnBooVDUlX/arcgis/rest/services/ParkBoundaries/FeatureServer/2/query?geometry=-121.57219,47.81841&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ParkName,Category&returnGeometry=false&f=json",
+     "https://gis.snoco.org/host/rest/services/Hosted/CADASTRAL__parcels/FeatureServer/0/query?geometry=-121.57219,47.81841&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ownername,parcel_id&returnGeometry=false&f=json",
+     "https://parks.wa.gov/news/2026/climbers-donate-index-town-wall-washington-state-parks"
+    ]
+   }
+  ],
+  "held": [
+   "length_m: MP 60 ft (18 m); not proposed under the scope rule (finishes on Aries).",
+   "bolts: the MP page says only 'bolts and gear to 1.5 in'; a Sep 25 2023 comment says its three 1/4 in bolts were replaced. A count from a comment alone is not proposed.",
+   "grade: stored 5.11b matches MP; thetopo.com lists 6c (about 5.11a/b), likely a conversion. No second independent publisher; not locked."
+  ],
+  "disputed": [],
+  "notes": "SCOPE (partial link-up, owner call): MP calls it a contrived face route right of the Pisces hand crack (wa_pisces) that finishes on the last part of the Aries P4 crack (wa_aries_aka_the_lizard). Own bolts on the face, shared finish with Aries. Not on the Index guide teaser lists. FA unknown on MP (row stores none). Bolts were rebolted (three 1/4 in bolts replaced) per a Sep 25 2023 comment, two months BEFORE the rockfall. ROCKFALL CHECK (brief AJ): the 29 Nov 2023 rockfall is confirmed in the MP forum thread 'Index rockfall' (Nov 29 2023 - Feb 8 2024): debris and trees came off the top of the Great Northern Slab and raked it top to base, the trail from before the toilet to Roger's Corner was taped off (tape still up Dec 17 2023), on Jan 7 2024 GNS and the Roger's Corner area were reported not climbable, GNS was reported not destroyed (some big trees gone, no bolts known damaged), and a Feb 8 2024 post placed the START of the slide at Winkie Dinkie Cliff, directly above GNS. The thread names none of the aj1 lines. No source says this line was changed or lost after 2023, and none reports it climbed since."
+ },
+ "wa_a_great_northern_slab_snow_white": {
+  "area": "wa_great_northern_slab",
+  "review": {
+   "sources": [
+    "https://rakkup.com/guidebook/index-rock-climbing/snow-white---dwarf-tossing/c39266",
+    "https://rakkup.com/guidebook/index-rock-climbing/lower-town-wall/s10403",
+    "https://rakkup.com/guidebook/index-rock-climbing/nobody-tosses-a-dwarf/c39268",
+    "https://www.mountainproject.com/route/106911856/dwarf-tossing-to-narrow-arrow-1856",
+    "https://www.mountainproject.com/route/108619257/nobody-tosses-a-dwarf",
+    "https://www.mountainproject.com/area/105790707/dwarf-tossing-to-narrow-arrow",
+    "https://www.mountainproject.com/area/105790643/lower-town-wall",
+    "https://www.thetopo.com/crags/index-washington-united-states/routelist",
+    "https://www.thetopo.com/crags/index-washington-united-states/routes/snow-white-37835",
+    "https://www.mountainproject.com/forum/message/125423151",
+    "https://services5.arcgis.com/4LKAHwqnBooVDUlX/arcgis/rest/services/ParkBoundaries/FeatureServer/2/query?geometry=-121.57139,47.81847&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ParkName,Category&returnGeometry=false&f=json",
+    "https://gis.snoco.org/host/rest/services/Hosted/CADASTRAL__parcels/FeatureServer/0/query?geometry=-121.57139,47.81847&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ownername,parcel_id&returnGeometry=false&f=json",
+    "https://parks.wa.gov/news/2026/climbers-donate-index-town-wall-washington-state-parks"
+   ]
+  },
+  "ledger": [],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_a_great_northern_slab_snow_white",
+    "column": "access",
+    "from": null,
+    "to": {
+     "land_manager": "Washington State Parks (Forks of the Sky State Park)"
+    },
+    "why": "Brief AJ/AI/AH: copy the owner-approved State Parks object field for field from wa_godzilla (saved live row): land_manager only, permit stays null. Re-read 2026-11-24: the State Parks boundary layer returns 'Forks of the Sky, State Park Property' at the Main Wall left side (area coordinate of wa_c_main_wall_left_side, beside Princely Ambitions where Snow White starts) (47.81847,-121.57139); the Snohomish County parcel there (10030000000400) is owned by Washington State Parks & Recreation; the parks.wa.gov release of 2026-03-13 (WCC donation of the Lower Town Wall, managed as a climbing park in Forks of the Sky SP; no pass or fee rule stated) is unchanged. Fills a null access.",
+    "evidence": [
+     "https://services5.arcgis.com/4LKAHwqnBooVDUlX/arcgis/rest/services/ParkBoundaries/FeatureServer/2/query?geometry=-121.57139,47.81847&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ParkName,Category&returnGeometry=false&f=json",
+     "https://gis.snoco.org/host/rest/services/Hosted/CADASTRAL__parcels/FeatureServer/0/query?geometry=-121.57139,47.81847&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=ownername,parcel_id&returnGeometry=false&f=json",
+     "https://parks.wa.gov/news/2026/climbers-donate-index-town-wall-washington-state-parks"
+    ]
+   }
+  ],
+  "held": [
+   "pitches: stored null; the Index guide says the original Snow White was a 2-pitch route. Not proposed: the row describes a line the guide now lists only as 'Snow White / Dwarf Tossing' (5.12b), and only one source states the count.",
+   "guide_stars: stored 0; the guide's 3 stars belong to the combined free entry 'Snow White / Dwarf Tossing' 5.12b, not to the original aid line this row holds. Not proposed.",
+   "aid_grade: stored A2; thetopo.com lists 'Snow White (A3)' with a free grade of 6a+. No two sources agree on A2, A3 or the stored free grade 5.11c; nothing locked.",
+   "discipline: stored trad with disciplines [trad, aid]; thetopo.com lists it as aid. Not changed."
+  ],
+  "disputed": [],
+  "notes": "MISFILED + SUPERSEDED (clean-up candidate, owner call). Snow White is NOT on the Great Northern Slab: it is on the Main Wall at the start of Princely Ambitions, in MP's 'Dwarf Tossing to Narrow Arrow' area (catalog: wa_dwarf_tossing_to_narrow_arrow). MP has no Snow White page. How the rows relate: (1) Dwarf Tossing to Narrow Arrow (wa_dwarf_tossing_to_narrow_arrow_dwarf_tossing_to_narrow_arrow; MP 5.12b, 100 ft, FFA James Wyland 2001) is, per MP, essentially the free variation of Snow White's first pitch (the original took the thin crack from the Princely Ambitions start straight to the mini roof at the 3rd bolt); the guide lists it as 'Snow White / Dwarf Tossing' 5.12b, formerly Snow White, a 2-pitch route. (2) NTAD / Nobody Tosses A Dwarf (MP 5.12, 110 ft, Ben Gilkison & Ryan Daudistel, freed 2014 per the guide) starts from a bolted chain anchor about 2/3 up Princely Ambitions P1 and, per MP, roughly half of it is terrain from the ORIGINAL second (aid) pitch of Snow White; it ends at Tadpole's anchor. So NTAD is a free version of part of Snow White P2, not of the whole route. DUPLICATE to report: wa_ntad_free_var_to_snow_white (Main Wall left side, 5.12c/d, 34 m, same FA) and wa_dwarf_tossing_to_narrow_arrow_nobody_tosses_a_dwarf (5.12, 34 m) are the same line, NTAD; the keeper is likely the latter (MP name and area). The stored 5.12c/d on the NTAD row matches neither MP (5.12) nor the guide (5.12). Access uses the Godzilla object, which is the Main Wall's own (Godzilla is in the same MP area). ROCKFALL: the 2023 rockfall thread mentions only debris over the trail near Roger's Corner / Princely Ambitions, not damage to these lines."
+ }
+}

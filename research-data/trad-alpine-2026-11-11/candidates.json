@@ -1,0 +1,5728 @@
+{
+ "generated": "2026-11-11",
+ "rule": "discipline=trad AND (area_type=peak OR NCCS grade III+ OR descent mentions summit/glacier/crampon/ice axe/snowfield/couloir)",
+ "count": 476,
+ "rows": [
+  {
+   "area": "Main Peak",
+   "area_type": "peak",
+   "high_point_ft": 8113,
+   "id": "wa_main_peak_tepeh_towers",
+   "name": "Tepeh Towers",
+   "nccs": "Grade III",
+   "pitches": 1,
+   "signals": [
+    "on_peak",
+    "grade_III",
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "End Pinnacle",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "az_days_of_future_passed",
+   "name": "Days of Future Passed",
+   "nccs": "III",
+   "pitches": 4,
+   "signals": [
+    "grade_III",
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "Cathedral Wall",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "co_cathedral_wall_garden_wall",
+   "name": "Garden Wall",
+   "nccs": "III",
+   "pitches": 7,
+   "signals": [
+    "grade_III",
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "Poster Peak",
+   "area_type": "crag",
+   "high_point_ft": 7565,
+   "id": "wa_house_buttress",
+   "name": "House Buttress",
+   "nccs": "III",
+   "pitches": null,
+   "signals": [
+    "grade_III",
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "Full Montey, The",
+   "area_type": "crag",
+   "high_point_ft": 4916,
+   "id": "wa_junior_s_farm",
+   "name": "Junior's Farm",
+   "nccs": "III",
+   "pitches": 10,
+   "signals": [
+    "grade_III",
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "Liberty Bell Mountain",
+   "area_type": "peak",
+   "high_point_ft": null,
+   "id": "wa_liberty_bell_the_barber_pole",
+   "name": "The Barber Pole",
+   "nccs": "III",
+   "pitches": null,
+   "signals": [
+    "on_peak",
+    "grade_III"
+   ]
+  },
+  {
+   "area": "North Early Winters Spire",
+   "area_type": "peak",
+   "high_point_ft": null,
+   "id": "wa_north_early_winter_spire_christianson_roskelley",
+   "name": "Christianson-Roskelley",
+   "nccs": "III",
+   "pitches": null,
+   "signals": [
+    "on_peak",
+    "grade_III"
+   ]
+  },
+  {
+   "area": "Goose Egg Mountain",
+   "area_type": "crag",
+   "high_point_ft": 4566,
+   "id": "wa_ride_the_lightning_2",
+   "name": "Ride the Lightning",
+   "nccs": "III",
+   "pitches": 7,
+   "signals": [
+    "grade_III",
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "Adams Lake Wall",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "ab_adams_lake_wall_wonderous_wanderer",
+   "name": "Wonderous Wanderer",
+   "nccs": null,
+   "pitches": 4,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "Grand Sentinel",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "ab_grand_sentinel_south_face",
+   "name": "South Face",
+   "nccs": null,
+   "pitches": 4,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "Lady Macdonald",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "ab_lady_macdonald_east_south_east_ridge",
+   "name": "East South East Ridge",
+   "nccs": null,
+   "pitches": 1,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "Mount Alberta",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "ab_mount_alberta_northeast_ridge",
+   "name": "Northeast Ridge",
+   "nccs": null,
+   "pitches": 12,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "Mount Edith Cavell",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "ab_mount_edith_cavell_east_ridge",
+   "name": "East Ridge",
+   "nccs": null,
+   "pitches": 1,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "Mount Louis",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "ab_mount_louis_the_gmoser_route",
+   "name": "The Gmoser Route",
+   "nccs": null,
+   "pitches": 15,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "Mount Louis",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "ab_mount_louis_the_kain_route",
+   "name": "The Kain Route",
+   "nccs": null,
+   "pitches": 1,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "Mount Temple",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "ab_mount_temple_greenwood_jones",
+   "name": "Greenwood-Jones",
+   "nccs": null,
+   "pitches": 1,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "Mount Temple",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "ab_mount_temple_squashed_bones",
+   "name": "Squashed Bones",
+   "nccs": null,
+   "pitches": null,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "Mount Whyte",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "ab_mount_whyte_perren_route_east_ridge",
+   "name": "Perren Route (East Ridge)",
+   "nccs": null,
+   "pitches": 7,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "Mt. Babel",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "ab_mt_babel_east_face",
+   "name": "East Face",
+   "nccs": null,
+   "pitches": 1,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "Mt. Colin",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "ab_mt_colin_nw_traverse",
+   "name": "NW Traverse",
+   "nccs": null,
+   "pitches": 3,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "Mt. Deltaform",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "ab_mt_deltaform_flying_buttress",
+   "name": "Flying Buttress",
+   "nccs": null,
+   "pitches": 15,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "Outpost Peak",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "ab_outpost_peak_north_buttress",
+   "name": "North Buttress",
+   "nccs": null,
+   "pitches": 7,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "Rim Wall",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "ab_rim_wall_on_the_wings_of_maybe",
+   "name": "On the wings of Maybe",
+   "nccs": null,
+   "pitches": 10,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "Roche a Perdrix",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "ab_roche_a_perdrix_chimney_route",
+   "name": "Chimney Route",
+   "nccs": null,
+   "pitches": 5,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "3rd/4th The Curtain",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "ak_3rd_4th_the_curtain_inside_passage",
+   "name": "Inside Passage",
+   "nccs": null,
+   "pitches": 8,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "3rd/4th The Curtain",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "ak_3rd_4th_the_curtain_resisting_a_rest",
+   "name": "Resisting A Rest",
+   "nccs": null,
+   "pitches": 8,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "5390 West Face",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "ak_5390_west_face_f_tea_parties",
+   "name": "F Tea Parties",
+   "nccs": null,
+   "pitches": 2,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "5390 West Face",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "ak_5390_west_face_fossilized_potential",
+   "name": "Fossilized Potential",
+   "nccs": null,
+   "pitches": 2,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "5390 West Face",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "ak_5390_west_face_four_amigos_aka_5_hours_to_freedom_big_anime_titties_se",
+   "name": "Four Amigos (AKA 5 Hours to Freedom, Big Anime Titties, Set a Time and Stick to It)",
+   "nccs": null,
+   "pitches": 2,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "Nunatak",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "ak_nunatak_kissing_up_the_choss_pile",
+   "name": "Kissing up the choss pile",
+   "nccs": null,
+   "pitches": 4,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "O'Malley Peak",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "ak_o_malley_peak_3_unknown_5_9",
+   "name": "Unknown 5.9",
+   "nccs": null,
+   "pitches": 2,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "Southeast Buttress",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "ak_southeast_buttress_barnyard_betty",
+   "name": "Barnyard Betty",
+   "nccs": null,
+   "pitches": 3,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "Southeast Buttress",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "ak_southeast_buttress_homewrecker",
+   "name": "Homewrecker",
+   "nccs": null,
+   "pitches": 6,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "The Throne",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "ak_the_throne_oxidado_express",
+   "name": "Oxidado Express",
+   "nccs": null,
+   "pitches": 12,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "Rockfellow Dome",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "az_abracadaver",
+   "name": "Abracadaver",
+   "nccs": "IV",
+   "pitches": 5,
+   "signals": [
+    "grade_IV_plus"
+   ]
+  },
+  {
+   "area": "Pinnacle Peak",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "az_beezlebub",
+   "name": "Beezlebub",
+   "nccs": null,
+   "pitches": 0,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "End Pinnacle",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "az_cap_m_pissgums",
+   "name": "Cap'm Pissgums",
+   "nccs": "III",
+   "pitches": 6,
+   "signals": [
+    "grade_III"
+   ]
+  },
+  {
+   "area": "Finger Rock",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "az_finger_rock_standard_route",
+   "name": "Finger Rock (Standard Route)",
+   "nccs": null,
+   "pitches": 0,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "Fool's Gold Wall",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "az_fool_s_gold_wall_flakey_bats_on_crack",
+   "name": "Flakey Bats on Crack",
+   "nccs": null,
+   "pitches": 2,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "Whale Dome",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "az_moby_dick",
+   "name": "Moby Dick",
+   "nccs": "III",
+   "pitches": 5,
+   "signals": [
+    "grade_III"
+   ]
+  },
+  {
+   "area": "South Walls/Neck Area",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "az_neck_route",
+   "name": "Neck Route",
+   "nccs": null,
+   "pitches": 2,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "East Face",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "az_southeast_arete_2",
+   "name": "Southeast Arete",
+   "nccs": "III",
+   "pitches": 0,
+   "signals": [
+    "grade_III"
+   ]
+  },
+  {
+   "area": "AMC Boulder",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "az_varicose",
+   "name": "Varicose",
+   "nccs": null,
+   "pitches": 0,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "West Face",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "az_west_gully_2",
+   "name": "West Gully",
+   "nccs": null,
+   "pitches": 8,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "North Faces (from Fairy Meadow)",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "bc_1_north_faces_from_fairy_meadow_adamant_turret_austerity_traverse",
+   "name": "Adamant-Turret-Austerity Traverse",
+   "nccs": null,
+   "pitches": 25,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "North Faces (from Fairy Meadow)",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "bc_1_north_faces_from_fairy_meadow_gog_east_face",
+   "name": "Gog East Face",
+   "nccs": null,
+   "pitches": 2,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "North Faces (from Fairy Meadow)",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "bc_1_north_faces_from_fairy_meadow_horn_se_face_and_unicorn",
+   "name": "Horn - SE Face and Unicorn",
+   "nccs": null,
+   "pitches": 3,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "North Faces (from Fairy Meadow)",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "bc_1_north_faces_from_fairy_meadow_magog",
+   "name": "Magog",
+   "nccs": null,
+   "pitches": 2,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "North Faces (from Fairy Meadow)",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "bc_1_north_faces_from_fairy_meadow_mount_quadrant_west_face_to_north_summit_stem_winder",
+   "name": "Mount Quadrant West Face to North Summit (Stem-winder)",
+   "nccs": null,
+   "pitches": 6,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "North Faces (from Fairy Meadow)",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "bc_1_north_faces_from_fairy_meadow_mt_austerity_east_face",
+   "name": "Mt Austerity - East Face",
+   "nccs": null,
+   "pitches": 10,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "North Faces (from Fairy Meadow)",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "bc_1_north_faces_from_fairy_meadow_north_peak_of_colossal_via_east_couloir",
+   "name": "North Peak of Colossal via East Couloir",
+   "nccs": null,
+   "pitches": 4,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "North Faces (from Fairy Meadow)",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "bc_1_north_faces_from_fairy_meadow_outpost_to_spire_traverse_quadrant_spire",
+   "name": "Outpost to Spire Traverse/ Quadrant Spire",
+   "nccs": null,
+   "pitches": 1,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "North Faces (from Fairy Meadow)",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "bc_1_north_faces_from_fairy_meadow_the_black_rib",
+   "name": "The Black Rib",
+   "nccs": null,
+   "pitches": 6,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "South & West Faces (from Adamant or AusterityGlacier)",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "bc_3_south_west_faces_from_adamant_or_austerityglacier_iron_man_gibson_rohn",
+   "name": "Iron Man- Gibson/Rohn",
+   "nccs": null,
+   "pitches": 8,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "South & West Faces (from Adamant or AusterityGlacier)",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "bc_3_south_west_faces_from_adamant_or_austerityglacier_south_buttress_adamant_mountain",
+   "name": "South Buttress, Adamant Mountain",
+   "nccs": null,
+   "pitches": 14,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "South & West Faces (from Adamant or AusterityGlacier)",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "bc_3_south_west_faces_from_adamant_or_austerityglacier_west_buttress_of_the_horn",
+   "name": "West Buttress of the Horn",
+   "nccs": null,
+   "pitches": 20,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "Alpaca Peak",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "bc_alpaca_peak_whitewater",
+   "name": "Whitewater",
+   "nccs": null,
+   "pitches": 6,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "Brenta Spire",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "bc_brenta_spire_another_fine_day_in_the_bugaboos",
+   "name": "Another Fine Day in The Bugaboos",
+   "nccs": null,
+   "pitches": 9,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "Crescent Spire",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "bc_crescent_spire_westside_story",
+   "name": "Westside Story",
+   "nccs": null,
+   "pitches": 5,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "Crescent Towers",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "bc_crescent_towers_ears_between",
+   "name": "Ears Between",
+   "nccs": null,
+   "pitches": 6,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "Crescent Towers",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "bc_crescent_towers_thatcher_cracker",
+   "name": "Thatcher Cracker",
+   "nccs": null,
+   "pitches": 7,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "Crown Mountain",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "bc_crown_mountain_widowmaker_arete",
+   "name": "Widowmaker Arete",
+   "nccs": null,
+   "pitches": 10,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "Dione",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "bc_dione_sunny_chibas",
+   "name": "Sunny Chibas",
+   "nccs": null,
+   "pitches": 1,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "Dione",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "bc_dione_sw_buttress_of_dione",
+   "name": "SW Buttress of Dione",
+   "nccs": null,
+   "pitches": 10,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "Eastpost Spire",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "bc_eastpost_spire_classic_grit",
+   "name": "Classic Grit",
+   "nccs": null,
+   "pitches": 5,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "Frontier Creek",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "bc_frontier_creek_culbert_crag",
+   "name": "Culbert Crag",
+   "nccs": null,
+   "pitches": 7,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "Frontier Creek",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "bc_frontier_creek_trident_tower_west_face",
+   "name": "Trident Tower West Face",
+   "nccs": null,
+   "pitches": 3,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "Goat Lake Area",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "bc_goat_lake_area_eternal_darkness",
+   "name": "Eternal Darkness",
+   "nccs": null,
+   "pitches": 9,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "Goat Lake Area",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "bc_goat_lake_area_loose_caboose",
+   "name": "Loose Caboose",
+   "nccs": null,
+   "pitches": 6,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "Goat Lake Area",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "bc_goat_lake_area_needs_more_cowbell",
+   "name": "Needs More Cowbell",
+   "nccs": null,
+   "pitches": 6,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "Grimface",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "bc_grimface_grimface_se_chimney",
+   "name": "Grimface SE Chimney",
+   "nccs": null,
+   "pitches": 4,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "Grimface",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "bc_grimface_matriarch_sw_face",
+   "name": "Matriarch SW Face",
+   "nccs": null,
+   "pitches": 4,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "Grimface",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "bc_grimface_se_notch",
+   "name": "SE Notch",
+   "nccs": null,
+   "pitches": 2,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "Les Cornes",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "bc_les_cornes_springbok_arete",
+   "name": "Springbok Arete",
+   "nccs": null,
+   "pitches": 13,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "Mount Assiniboine (3,618m)",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "bc_mount_assiniboine_3_618m_north_ridge",
+   "name": "North Ridge",
+   "nccs": null,
+   "pitches": 1,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "Mount Athelstan",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "bc_mount_athelstan_gnomon_direct",
+   "name": "Gnomon Direct",
+   "nccs": null,
+   "pitches": 20,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "Mount Athelstan",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "bc_mount_athelstan_lillarete",
+   "name": "Lillarete",
+   "nccs": null,
+   "pitches": 18,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "Mount Athelstan",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "bc_mount_athelstan_moonraker",
+   "name": "Moonraker",
+   "nccs": null,
+   "pitches": 10,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "Mount Athelstan",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "bc_mount_athelstan_raised_by_bears",
+   "name": "Raised By Bears",
+   "nccs": null,
+   "pitches": 10,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "Mount Athelstan",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "bc_mount_athelstan_selective_cut",
+   "name": "Selective Cut",
+   "nccs": null,
+   "pitches": 20,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "Mount Athelstan",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "bc_mount_athelstan_solstice_start",
+   "name": "Solstice Start",
+   "nccs": null,
+   "pitches": 20,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "Mount Athelstan",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "bc_mount_athelstan_south_face_randy_stoltmann_tower",
+   "name": "South Face, Randy Stoltmann Tower",
+   "nccs": null,
+   "pitches": 8,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "Mount Athelstan",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "bc_mount_athelstan_standing_wave",
+   "name": "Standing Wave",
+   "nccs": null,
+   "pitches": 12,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "Mount Bardean",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "bc_mount_bardean_the_tuning_fork",
+   "name": "The Tuning Fork",
+   "nccs": null,
+   "pitches": 15,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "Mount Gimli",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "bc_mount_gimli_beach_break",
+   "name": "Beach Break",
+   "nccs": null,
+   "pitches": 6,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "Mount Gimli",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "bc_mount_gimli_kristiansen_croston",
+   "name": "Kristiansen-Croston",
+   "nccs": null,
+   "pitches": 7,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "Mount Gimli",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "bc_mount_gimli_kristiansen_croston_direct_start",
+   "name": "Kristiansen-Croston (Direct Start)",
+   "nccs": null,
+   "pitches": 5,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "Mount Gimli",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "bc_mount_gimli_lusting_after_women",
+   "name": "Lusting After Women",
+   "nccs": null,
+   "pitches": 9,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "Mount Gimli",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "bc_mount_gimli_north_face_arete",
+   "name": "North Face Arete",
+   "nccs": null,
+   "pitches": 5,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "Mount Gimli",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "bc_mount_gimli_south_ridge",
+   "name": "South Ridge",
+   "nccs": null,
+   "pitches": 7,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "Mount Gimli",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "bc_mount_gimli_tight_ass",
+   "name": "Tight Ass",
+   "nccs": null,
+   "pitches": 6,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "Mount Gimli",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "bc_mount_gimli_valhalla_gold",
+   "name": "Valhalla Gold",
+   "nccs": null,
+   "pitches": 5,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "Mount Harvey",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "bc_mount_harvey_pup_buttress",
+   "name": "Pup Buttress",
+   "nccs": null,
+   "pitches": 1,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "Mount MacDonald (Roger’s Pass)",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "bc_mount_macdonald_roger_s_pass_northwest_ridge_integral",
+   "name": "Northwest Ridge Integral",
+   "nccs": null,
+   "pitches": 14,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "Mount Sir Donald",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "bc_mount_sir_donald_northwest_ridge",
+   "name": "Northwest Ridge",
+   "nccs": null,
+   "pitches": null,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "Mount Sir Donald",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "bc_mount_sir_donald_uto_peak_southwest_ridge",
+   "name": "Uto Peak Southwest Ridge",
+   "nccs": null,
+   "pitches": 1,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "Mount Tupper",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "bc_mount_tupper_west_ridge",
+   "name": "West Ridge",
+   "nccs": null,
+   "pitches": 1,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "Mouses Tooth",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "bc_mouses_tooth_mighty_mouse",
+   "name": "Mighty Mouse",
+   "nccs": null,
+   "pitches": 8,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "Mt Colonel Foster",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "bc_mt_colonel_foster_walsh_s_foray",
+   "name": "Walsh's Foray",
+   "nccs": null,
+   "pitches": 1,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "Nesakwatch Spires",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "bc_nesakwatch_spires_dairyland",
+   "name": "Dairyland",
+   "nccs": null,
+   "pitches": 6,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "Nesakwatch Spires",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "bc_nesakwatch_spires_north_nesakwatch_spire_nesakwatch_notch_ne_buttress",
+   "name": "North Nesakwatch Spire - Nesakwatch Notch (NE Buttress)",
+   "nccs": null,
+   "pitches": 14,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "Nesakwatch Spires",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "bc_nesakwatch_spires_north_nesakwatch_spire_nw_face_to_w_ridge",
+   "name": "North Nesakwatch Spire - NW Face to W Ridge",
+   "nccs": null,
+   "pitches": 3,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "Nesakwatch Spires",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "bc_nesakwatch_spires_north_spire_sw_ridge",
+   "name": "North Spire - SW Ridge",
+   "nccs": null,
+   "pitches": 7,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "Nesakwatch Spires",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "bc_nesakwatch_spires_south_spire_east_buttress",
+   "name": "South Spire - East Buttress",
+   "nccs": null,
+   "pitches": 9,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "Nesakwatch Spires",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "bc_nesakwatch_spires_south_spire_fairytales_fantasies_5_11_5_11",
+   "name": "South Spire - Fairytales & Fantasies (5.11- / 5.11+)",
+   "nccs": null,
+   "pitches": 7,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "Nesakwatch Spires",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "bc_nesakwatch_spires_south_spire_south_ridge",
+   "name": "South Spire - South Ridge",
+   "nccs": null,
+   "pitches": 1,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "Nesakwatch Spires",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "bc_nesakwatch_spires_south_spire_west_buttress",
+   "name": "South Spire - West Buttress",
+   "nccs": null,
+   "pitches": 4,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "Nesakwatch Spires",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "bc_nesakwatch_spires_waltz_right_in",
+   "name": "Waltz Right In",
+   "nccs": null,
+   "pitches": 6,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "North Illusion Peak",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "bc_north_illusion_peak_illusion_traverse_south_to_north",
+   "name": "Illusion Traverse - South to North",
+   "nccs": null,
+   "pitches": 3,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "Phyllis' Engine",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "bc_phyllis_engine_south_face_variation",
+   "name": "South Face Variation",
+   "nccs": null,
+   "pitches": 3,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "Pigeon Feathers",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "bc_pigeon_feathers_furry_friends",
+   "name": "Furry Friends",
+   "nccs": null,
+   "pitches": 8,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "Pigeon Feathers",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "bc_pigeon_feathers_lentils_or_tvp_eh",
+   "name": "Lentils or TVP, eh?",
+   "nccs": null,
+   "pitches": 8,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "Pigeon Spire",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "bc_pigeon_spire_cooper_kor",
+   "name": "Cooper-Kor",
+   "nccs": null,
+   "pitches": 18,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "Pigeon Spire",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "bc_pigeon_spire_west_ridge",
+   "name": "West Ridge",
+   "nccs": null,
+   "pitches": 1,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "Rugged Mountain",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "bc_rugged_mountain_thunderbird",
+   "name": "Thunderbird",
+   "nccs": null,
+   "pitches": 22,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "Serra 2",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "bc_serra_2_south_ridge",
+   "name": "South Ridge",
+   "nccs": null,
+   "pitches": 1,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "Skihist Mountain",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "bc_skihist_mountain_traverse_of_the_seasons",
+   "name": "Traverse of the Seasons",
+   "nccs": null,
+   "pitches": 1,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "Slesse Mountain",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "bc_slesse_mountain_east_pillar_of_labor_day_horn_neufeld_brayshaw",
+   "name": "East Pillar of Labor Day Horn (Neufeld/Brayshaw)",
+   "nccs": null,
+   "pitches": 5,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "Slesse Mountain",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "bc_slesse_mountain_flight_810_buttress",
+   "name": "Flight 810 Buttress",
+   "nccs": null,
+   "pitches": 14,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "Slesse Mountain",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "bc_slesse_mountain_north_east_headwall_variation",
+   "name": "North East  Headwall Variation",
+   "nccs": null,
+   "pitches": 16,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "Slesse Mountain",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "bc_slesse_mountain_north_pillar",
+   "name": "North Pillar",
+   "nccs": null,
+   "pitches": 6,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "Slesse Mountain",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "bc_slesse_mountain_north_rib_kiesel_lowe",
+   "name": "North Rib (Kiesel/Lowe)",
+   "nccs": null,
+   "pitches": 27,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "Slesse Mountain",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "bc_slesse_mountain_russian_roulette",
+   "name": "Russian Roulette",
+   "nccs": null,
+   "pitches": 9,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "Slesse Mountain",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "bc_slesse_mountain_slesse_massif_traverse",
+   "name": "Slesse Massif Traverse",
+   "nccs": null,
+   "pitches": 10,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "Slesse Mountain",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "bc_slesse_mountain_southwest_gully",
+   "name": "Southwest Gully",
+   "nccs": null,
+   "pitches": 3,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "Slesse Mountain",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "bc_slesse_mountain_welcome_to_the_wack",
+   "name": "Welcome to the Wack",
+   "nccs": null,
+   "pitches": 26,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "Snowpatch Spire",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "bc_snowpatch_spire_buckingham_route_easy_version",
+   "name": "Buckingham Route (easy version)",
+   "nccs": null,
+   "pitches": 8,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "Snowpatch Spire",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "bc_snowpatch_spire_snowpatch_route_aka_se_corner_wiessner_s_route",
+   "name": "Snowpatch Route (aka SE Corner/Wiessner's Route)",
+   "nccs": null,
+   "pitches": 17,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "Snowpatch Spire",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "bc_snowpatch_spire_southwest_ridge_direct_finish",
+   "name": "Southwest Ridge - Direct Finish",
+   "nccs": null,
+   "pitches": 5,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "Snowpatch Spire",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "bc_snowpatch_spire_surfs_up",
+   "name": "Surfs Up",
+   "nccs": null,
+   "pitches": 7,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "Snowpatch Spire",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "bc_snowpatch_spire_west_face",
+   "name": "West Face",
+   "nccs": null,
+   "pitches": 8,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "Snowpatch Spire",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "bc_snowpatch_spire_wildflowers",
+   "name": "Wildflowers",
+   "nccs": null,
+   "pitches": 8,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "South Howser Tower",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "bc_south_howser_tower_beckey_chouinard",
+   "name": "Beckey-Chouinard",
+   "nccs": null,
+   "pitches": 15,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "The Camel",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "bc_the_camel_regular_route",
+   "name": "Regular Route",
+   "nccs": null,
+   "pitches": 1,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "The Deacon",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "bc_the_deacon_sentinel_direct",
+   "name": "Sentinel Direct",
+   "nccs": null,
+   "pitches": 8,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "The Deacon",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "bc_the_deacon_the_heretic",
+   "name": "The Heretic",
+   "nccs": null,
+   "pitches": 7,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "The Old Settler",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "bc_the_old_settler_black_september",
+   "name": "Black September",
+   "nccs": null,
+   "pitches": 12,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "The Old Settler",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "bc_the_old_settler_central_peak_west_buttress_down_duck",
+   "name": "Central Peak - West Buttress (Down/Duck)",
+   "nccs": null,
+   "pitches": 12,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "The Old Settler",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "bc_the_old_settler_complete_northwest_ridge",
+   "name": "Complete Northwest Ridge",
+   "nccs": null,
+   "pitches": 3,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "The Old Settler",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "bc_the_old_settler_duck_a_l_orange",
+   "name": "Duck a L'Orange",
+   "nccs": null,
+   "pitches": 10,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "The Old Settler",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "bc_the_old_settler_the_contact_zone",
+   "name": "The Contact Zone",
+   "nccs": null,
+   "pitches": 8,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "The Old Settler",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "bc_the_old_settler_watchman_s_northeast_ridge",
+   "name": "Watchman's (Northeast) Ridge",
+   "nccs": null,
+   "pitches": 4,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "The Old Settler",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "bc_the_old_settler_west_face_of_the_north_peak",
+   "name": "West Face of the North Peak",
+   "nccs": null,
+   "pitches": 8,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "Vowell Group",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "bc_vowell_group_archduke_trio",
+   "name": "Archduke Trio",
+   "nccs": null,
+   "pitches": 10,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "West Ear",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "bc_west_ear_helix",
+   "name": "Helix",
+   "nccs": null,
+   "pitches": 6,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "West Ear",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "bc_west_ear_the_pack",
+   "name": "The Pack",
+   "nccs": null,
+   "pitches": 5,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "Yak Peak",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "bc_yak_peak_beckey_route_speedway",
+   "name": "Beckey route/Speedway",
+   "nccs": null,
+   "pitches": 12,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "Yak Peak",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "bc_yak_peak_cardiyak_rhythm",
+   "name": "CardiYak Rhythm",
+   "nccs": null,
+   "pitches": 17,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "Yak Peak",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "bc_yak_peak_hole_in_my_heaven",
+   "name": "Hole in My Heaven",
+   "nccs": null,
+   "pitches": 14,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "Yak Peak",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "bc_yak_peak_madness",
+   "name": "Madness",
+   "nccs": null,
+   "pitches": null,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "Yak Peak",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "bc_yak_peak_reality_check",
+   "name": "Reality Check",
+   "nccs": null,
+   "pitches": 13,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "Yak Peak",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "bc_yak_peak_somwow_seven_one_move_wonders_of_the_world",
+   "name": "SOMWOW - Seven One Move Wonders Of the World",
+   "nccs": null,
+   "pitches": 14,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "Yak Peak",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "bc_yak_peak_wind_walker",
+   "name": "Wind Walker",
+   "nccs": null,
+   "pitches": 14,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "Yak Peak",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "bc_yak_peak_yak_check",
+   "name": "Yak Check",
+   "nccs": null,
+   "pitches": 12,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "Yak Peak",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "bc_yak_peak_yak_crack",
+   "name": "Yak Crack",
+   "nccs": null,
+   "pitches": 14,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "Arctic Lake Wall",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "ca_arctic_lake_wall_chillin_the_most",
+   "name": "Chillin The Most",
+   "nccs": null,
+   "pitches": 5,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "Arctic Lake Wall",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "ca_arctic_lake_wall_too_much_fun",
+   "name": "Too Much Fun",
+   "nccs": null,
+   "pitches": 5,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "Banner Peak",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "ca_banner_peak_northeast_buttress",
+   "name": "Northeast Buttress",
+   "nccs": null,
+   "pitches": 8,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "Cyclops Rock",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "ca_carolyn_s_rump",
+   "name": "Carolyn's Rump",
+   "nccs": null,
+   "pitches": 0,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "Charlotte Dome",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "ca_charlotte_dome_beast_and_beauty",
+   "name": "Beast and Beauty",
+   "nccs": null,
+   "pitches": 10,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "Charlotte Dome",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "ca_charlotte_dome_stop_that_train",
+   "name": "Stop that Train",
+   "nccs": null,
+   "pitches": 11,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "Cherubim Dome",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "ca_cherubim_dome_archangel",
+   "name": "Archangel",
+   "nccs": null,
+   "pitches": 8,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "Sentinel Rock",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "ca_chouinard_herbert",
+   "name": "Chouinard-Herbert",
+   "nccs": null,
+   "pitches": 0,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "Natural Resources Rock",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "ca_d_natural_resources_rock_natural_resources",
+   "name": "Natural Resources",
+   "nccs": null,
+   "pitches": 1,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "Sentinel Rock",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "ca_direct_north_face_2",
+   "name": "Direct North Face",
+   "nccs": null,
+   "pitches": 0,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "Discovery Wall",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "ca_discovery_wall_coffin_nail",
+   "name": "Coffin Nail",
+   "nccs": null,
+   "pitches": null,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "East Wall",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "ca_east_wall_2_names_in_the_guidebook",
+   "name": "Names in the Guidebook",
+   "nccs": null,
+   "pitches": 1,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "Echo Peaks & Echo Ridge",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "ca_echo_peaks_echo_ridge_echo_peak_9_sw_face",
+   "name": "Echo Peak #9 SW Face",
+   "nccs": null,
+   "pitches": 2,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "Golden Trout Spire",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "ca_golden_trout_spire_dry_flyin",
+   "name": "Dry Flyin'",
+   "nccs": null,
+   "pitches": 7,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "Hot Tuna Tower",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "ca_hot_tuna_tower_sorry_charlie",
+   "name": "Sorry Charlie",
+   "nccs": "IV",
+   "pitches": null,
+   "signals": [
+    "grade_IV_plus"
+   ]
+  },
+  {
+   "area": "Iceberg Lake Crags",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "ca_iceberg_lake_crags_iceberg_lake_gear_exchange",
+   "name": "Iceberg Lake Gear Exchange",
+   "nccs": null,
+   "pitches": 1,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "Incredible Hulk",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "ca_incredible_hulk_infinity_gauntlet",
+   "name": "Infinity Gauntlet",
+   "nccs": null,
+   "pitches": 12,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "Lone Pine Peak",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "ca_lone_pine_peak_north_ridge_full",
+   "name": "North Ridge (full)",
+   "nccs": null,
+   "pitches": 1,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "Main Wall",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "ca_main_wall_21_antichrist_dihedral",
+   "name": "Antichrist Dihedral",
+   "nccs": null,
+   "pitches": 9,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "Middle Buttress",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "ca_middle_buttress_center_route",
+   "name": "Center Route",
+   "nccs": null,
+   "pitches": 5,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "Middle Buttress",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "ca_middle_buttress_north_arete_route",
+   "name": "North Arete Route",
+   "nccs": null,
+   "pitches": 6,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "Mount Lamarck",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "ca_mount_lamarck_mindy",
+   "name": "Mindy",
+   "nccs": null,
+   "pitches": 5,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "Mt. Whitney",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "ca_mount_whitney_direct_east_face",
+   "name": "Direct East Face",
+   "nccs": null,
+   "pitches": 16,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "Mt. Whitney",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "ca_mount_whitney_our_own_devices",
+   "name": "Our Own Devices",
+   "nccs": null,
+   "pitches": 6,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "Mt. Whitney",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "ca_mount_whitney_the_great_book",
+   "name": "The Great Book",
+   "nccs": null,
+   "pitches": 19,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "Mt. Clarence King",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "ca_mt_clarence_king_south_face",
+   "name": "South Face",
+   "nccs": null,
+   "pitches": 1,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "Mt. Goode",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "ca_mt_goode_goode_earth",
+   "name": "Goode Earth",
+   "nccs": null,
+   "pitches": 6,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "Mt. Goode",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "ca_mt_goode_west_ridge",
+   "name": "West Ridge",
+   "nccs": null,
+   "pitches": 1,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "Mt. Russell",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "ca_mt_russell_goldbug",
+   "name": "Goldbug",
+   "nccs": null,
+   "pitches": 6,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "Mt. Whitney",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "ca_mt_whitney_hairline_free",
+   "name": "Hairline Free",
+   "nccs": null,
+   "pitches": 13,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "Mt. Winchell",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "ca_mt_winchell_silver_linings_arete",
+   "name": "Silver Linings Arete",
+   "nccs": null,
+   "pitches": 12,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "Mt. Winchell",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "ca_mt_winchell_training_day",
+   "name": "Training Day",
+   "nccs": null,
+   "pitches": 11,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "North Buttress",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "ca_north_buttress_3_east_arete",
+   "name": "East Arete",
+   "nccs": null,
+   "pitches": 4,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "North Face, The",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "ca_north_face_the_sauron_s_sport_route",
+   "name": "Sauron's Sport Route",
+   "nccs": null,
+   "pitches": 3,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "Northern Tooth",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "ca_northern_tooth_gin_and_juice",
+   "name": "Gin and Juice",
+   "nccs": null,
+   "pitches": 5,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "Panther Peak",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "ca_panther_peak_house_cat",
+   "name": "House Cat",
+   "nccs": null,
+   "pitches": 3,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "Panther Peak",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "ca_panther_peak_on_the_hunt",
+   "name": "On The Hunt",
+   "nccs": null,
+   "pitches": 4,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "Tourist Trap",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "ca_pastie",
+   "name": "Pastie",
+   "nccs": null,
+   "pitches": 0,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "Peeler Pillar",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "ca_peeler_pillar_nimue",
+   "name": "Nimue",
+   "nccs": null,
+   "pitches": 5,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "Regge Pole",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "ca_regge_pole_free_radical",
+   "name": "Free Radical",
+   "nccs": null,
+   "pitches": 7,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "Osiris",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "ca_regular_route_5",
+   "name": "Regular Route",
+   "nccs": null,
+   "pitches": 0,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "Royce Peak",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "ca_royce_peak_north_ridge_direct",
+   "name": "North Ridge Direct",
+   "nccs": null,
+   "pitches": 5,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "Scout Peak",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "ca_scout_peak_regular_route",
+   "name": "Regular Route",
+   "nccs": null,
+   "pitches": null,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "Sky Blue Diamond",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "ca_sky_blue_diamond_altared_state",
+   "name": "Altared State",
+   "nccs": null,
+   "pitches": 7,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "Sky Blue Diamond",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "ca_sky_blue_diamond_journey_to_the_center_of_the_earth",
+   "name": "Journey to the Center of the Earth",
+   "nccs": null,
+   "pitches": 8,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "Sky Blue Diamond",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "ca_sky_blue_diamond_stupa_troopers",
+   "name": "Stupa Troopers",
+   "nccs": null,
+   "pitches": 7,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "Sky Blue Spire 2",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "ca_sky_blue_spire_2_bofa_spire",
+   "name": "Bofa Spire",
+   "nccs": null,
+   "pitches": 6,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "Sky Blue Spire",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "ca_sky_blue_spire_hawg_ripper",
+   "name": "Hawg Ripper",
+   "nccs": null,
+   "pitches": 5,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "Sky Blue Spire",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "ca_sky_blue_spire_sapphire_crack",
+   "name": "Sapphire Crack",
+   "nccs": null,
+   "pitches": 7,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "Southern Cross",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "ca_southern_cross_the_astraphobia_treatment_aka_southern_belle",
+   "name": "The Astraphobia Treatment, AKA Southern Belle",
+   "nccs": null,
+   "pitches": 3,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "Spring Lake Wall",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "ca_spring_lake_wall_friends",
+   "name": "Friends",
+   "nccs": null,
+   "pitches": 8,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "Swooped",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "ca_swooped_the_wrong_hill",
+   "name": "The Wrong Hill",
+   "nccs": null,
+   "pitches": 4,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "The Fortress",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "ca_the_fortress_2_the_sage",
+   "name": "The Sage",
+   "nccs": null,
+   "pitches": 10,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "The Miter",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "ca_the_miter_janitorial_service",
+   "name": "Janitorial Service",
+   "nccs": null,
+   "pitches": 6,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "The Miter",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "ca_the_miter_the_miterhorn",
+   "name": "The Miterhorn",
+   "nccs": null,
+   "pitches": 5,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "The Sphinx",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "ca_the_sphinx_north_buttress",
+   "name": "North Buttress",
+   "nccs": null,
+   "pitches": 2,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "The Sphinx",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "ca_the_sphinx_south_side",
+   "name": "South Side",
+   "nccs": null,
+   "pitches": 1,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "The Thing",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "ca_the_thing_2_gambit",
+   "name": "Gambit",
+   "nccs": null,
+   "pitches": 6,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "The Thing",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "ca_the_thing_2_wonder_woman",
+   "name": "Wonder Woman",
+   "nccs": null,
+   "pitches": 5,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "Trapezoid Peak",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "ca_trapezoid_peak_harvest_time",
+   "name": "Harvest Time",
+   "nccs": null,
+   "pitches": 6,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "Trapezoid Peak",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "ca_trapezoid_peak_shield_of_dreams",
+   "name": "Shield of Dreams",
+   "nccs": null,
+   "pitches": 5,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "Southwest Face",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "ca_west_face_22",
+   "name": "West Face",
+   "nccs": "V",
+   "pitches": 0,
+   "signals": [
+    "grade_IV_plus"
+   ]
+  },
+  {
+   "area": "Whitney Portal Buttress",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "ca_whitney_portal_buttress_sartoris",
+   "name": "Sartoris",
+   "nccs": "IV",
+   "pitches": null,
+   "signals": [
+    "grade_IV_plus"
+   ]
+  },
+  {
+   "area": "Whorl Mt.",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "ca_whorl_mt_golden_pillar",
+   "name": "Golden Pillar",
+   "nccs": null,
+   "pitches": 7,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "Whorl Mt.",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "ca_whorl_mt_north_ridge",
+   "name": "North Ridge",
+   "nccs": null,
+   "pitches": 10,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "North Chasm View Wall",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "co_a_midsummer_night_s_dream",
+   "name": "A Midsummer Night's Dream",
+   "nccs": "III",
+   "pitches": 7,
+   "signals": [
+    "grade_III"
+   ]
+  },
+  {
+   "area": "Aiguille de Fleur",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "co_aiguille_de_fleur_fish_in_formation",
+   "name": "Fish In Formation",
+   "nccs": null,
+   "pitches": 4,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "First Flatiron",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "co_atalanta",
+   "name": "Atalanta",
+   "nccs": null,
+   "pitches": 0,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "Castle Rock",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "co_athlete_s_feat",
+   "name": "Athlete's Feat",
+   "nccs": null,
+   "pitches": 5,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "Bookmark, The",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "co_backflip",
+   "name": "Backflip",
+   "nccs": null,
+   "pitches": 0,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "First Flatiron",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "co_baker_s_way",
+   "name": "Baker's Way",
+   "nccs": null,
+   "pitches": 0,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "Big Buttress",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "co_big_buttress_zeb_s_arete",
+   "name": "Zeb's Arete",
+   "nccs": null,
+   "pitches": 8,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "Bigger Bagger Pinnacle",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "co_bigger_bagger_pinnacle_anus_grape",
+   "name": "Anus Grape",
+   "nccs": null,
+   "pitches": 5,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "Bigger Bagger Pinnacle",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "co_bigger_bagger_pinnacle_solar_winds",
+   "name": "Solar Winds",
+   "nccs": null,
+   "pitches": 4,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "Black Wall, The",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "co_black_wall_the_miller_s_face",
+   "name": "Miller's Face",
+   "nccs": null,
+   "pitches": 1,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "Eyes of the Canyon",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "co_blinded",
+   "name": "Blinded",
+   "nccs": null,
+   "pitches": 0,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "Checkerboard Rock",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "co_checkerboard_rock_fallen_shark",
+   "name": "Fallen Shark",
+   "nccs": null,
+   "pitches": null,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "Twin Owls",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "co_crack_of_fear",
+   "name": "Crack of Fear",
+   "nccs": null,
+   "pitches": 4,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "Window Rock",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "co_curtains",
+   "name": "Curtains",
+   "nccs": null,
+   "pitches": 0,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "Achean Pronouncement",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "co_dark_obsession",
+   "name": "Dark Obsession",
+   "nccs": null,
+   "pitches": 0,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "First Flatiron",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "co_direct_route_2",
+   "name": "Direct Route",
+   "nccs": "II",
+   "pitches": 10,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "Third Flatiron",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "co_east_face_left_4",
+   "name": "East Face Left",
+   "nccs": null,
+   "pitches": 10,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "Third Flatiron",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "co_east_face_standard",
+   "name": "East Face (Standard)",
+   "nccs": null,
+   "pitches": 8,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "Elephant Rock",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "co_elephant_rock_safari_land",
+   "name": "Safari Land",
+   "nccs": null,
+   "pitches": null,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "Sundance Buttress",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "co_eumenides",
+   "name": "Eumenides",
+   "nccs": null,
+   "pitches": 5,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "First Flatiron",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "co_fandango",
+   "name": "Fandango",
+   "nccs": "II",
+   "pitches": 0,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "Flattop Mountain",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "co_flattop_mountain_mosquito_wall",
+   "name": "Mosquito Wall",
+   "nccs": "III",
+   "pitches": 6,
+   "signals": [
+    "grade_III"
+   ]
+  },
+  {
+   "area": "Flattop Mountain",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "co_flattop_mountain_south_ridge",
+   "name": "South Ridge",
+   "nccs": null,
+   "pitches": 7,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "Elephant Rock",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "co_for_boars_only",
+   "name": "For Boars Only",
+   "nccs": null,
+   "pitches": 0,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "Third Flatiron",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "co_friday_s_folly",
+   "name": "Friday's Folly",
+   "nccs": null,
+   "pitches": 2,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "Monument Canyon",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "co_get_a_life",
+   "name": "Get A Life",
+   "nccs": "III",
+   "pitches": 5,
+   "signals": [
+    "grade_III"
+   ]
+  },
+  {
+   "area": "Eagle Rock",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "co_great_dihedral_2",
+   "name": "Great Dihedral",
+   "nccs": null,
+   "pitches": 0,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "South Rim Routes",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "co_ground_control_to_major_tom_2",
+   "name": "Ground Control to Major Tom",
+   "nccs": "III",
+   "pitches": 0,
+   "signals": [
+    "grade_III"
+   ]
+  },
+  {
+   "area": "Turret Dome",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "co_guide_s_route",
+   "name": "Guide's Route",
+   "nccs": null,
+   "pitches": 3,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "Third Pinnacle",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "co_halls_of_ivy",
+   "name": "Halls of Ivy",
+   "nccs": null,
+   "pitches": 0,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "Pear, The",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "co_heavenly_journey",
+   "name": "Heavenly Journey",
+   "nccs": null,
+   "pitches": 2,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "Sundance Buttress",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "co_idiot_wind",
+   "name": "Idiot Wind",
+   "nccs": "III",
+   "pitches": 7,
+   "signals": [
+    "grade_III"
+   ]
+  },
+  {
+   "area": "Ironsides Slab",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "co_ironsides_slab_excitable_boy",
+   "name": "Excitable Boy",
+   "nccs": null,
+   "pitches": 2,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "Elephant Rock",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "co_ivory_coast",
+   "name": "Ivory Coast",
+   "nccs": null,
+   "pitches": 0,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "Jamcrack Spire",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "co_jamcrack_spire_monster_of_rock",
+   "name": "Monster of Rock",
+   "nccs": null,
+   "pitches": null,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "Turret Dome",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "co_jaws_2",
+   "name": "Jaws",
+   "nccs": null,
+   "pitches": 3,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "North Chasm View Wall",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "co_journey_home",
+   "name": "Journey Home",
+   "nccs": "IV",
+   "pitches": 8,
+   "signals": [
+    "grade_IV_plus"
+   ]
+  },
+  {
+   "area": "Aretes",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "co_lauren_s_arete",
+   "name": "Lauren's Arete",
+   "nccs": "III",
+   "pitches": 12,
+   "signals": [
+    "grade_III"
+   ]
+  },
+  {
+   "area": "North Chasm View Wall",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "co_leisure_climb",
+   "name": "Leisure Climb",
+   "nccs": "III",
+   "pitches": 0,
+   "signals": [
+    "grade_III"
+   ]
+  },
+  {
+   "area": "Lone Eagle Peak",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "co_lone_eagle_peak_detour_crack",
+   "name": "Detour Crack",
+   "nccs": null,
+   "pitches": 1,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "Kissing Couple",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "co_long_dong_wall_aka_bell_tower",
+   "name": "Long Dong Wall (aka Bell Tower)",
+   "nccs": "III",
+   "pitches": 0,
+   "signals": [
+    "grade_III"
+   ]
+  },
+  {
+   "area": "Pear, The",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "co_magical_chrome_plated_semi_automatic_enema_syringe",
+   "name": "Magical Chrome Plated Semi-Automatic Enema Syringe",
+   "nccs": null,
+   "pitches": 5,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "Sentinel Spire",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "co_medicine_man",
+   "name": "Medicine Man",
+   "nccs": "III",
+   "pitches": 4,
+   "signals": [
+    "grade_III"
+   ]
+  },
+  {
+   "area": "Mount Neva",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "co_mount_neva_peace_is_for_the_valleys_war_is_for_the_mountains",
+   "name": "Peace is for the Valleys, War is for the Mountains",
+   "nccs": null,
+   "pitches": 4,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "North Chasm View Wall",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "co_musical_partners",
+   "name": "Musical Partners",
+   "nccs": "III",
+   "pitches": 7,
+   "signals": [
+    "grade_III"
+   ]
+  },
+  {
+   "area": "Sunday Wall",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "co_napa_valley",
+   "name": "Napa Valley",
+   "nccs": "III",
+   "pitches": 4,
+   "signals": [
+    "grade_III"
+   ]
+  },
+  {
+   "area": "East Face",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "co_new_era",
+   "name": "New Era",
+   "nccs": null,
+   "pitches": 0,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "First Flatiron",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "co_north_arete_3",
+   "name": "North Arete",
+   "nccs": null,
+   "pitches": 5,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "North Fortress",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "co_north_fortress_nobody_s_fault_but_my_own",
+   "name": "Nobody's Fault but My Own",
+   "nccs": null,
+   "pitches": 4,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "Palisades",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "co_palisades_the_great_chimney",
+   "name": "The Great Chimney",
+   "nccs": null,
+   "pitches": 3,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "Pilot Mtn.",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "co_pilot_mtn_sandwich_cannon",
+   "name": "Sandwich Cannon",
+   "nccs": null,
+   "pitches": 14,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "Slot Rock",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "co_point_of_honor",
+   "name": "Point of Honor",
+   "nccs": null,
+   "pitches": 0,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "Ptarmigan Towers",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "co_ptarmigan_towers_ptarmigan_reality_aka_night_moose",
+   "name": "Ptarmigan Reality AKA Night Moose",
+   "nccs": null,
+   "pitches": 8,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "Ptarmigan Towers",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "co_ptarmigan_towers_unoriginal_sin",
+   "name": "Unoriginal Sin",
+   "nccs": null,
+   "pitches": 7,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "Big Rock Candy Mountain",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "co_rotten_teeth",
+   "name": "Rotten Teeth",
+   "nccs": "III",
+   "pitches": 14,
+   "signals": [
+    "grade_III"
+   ]
+  },
+  {
+   "area": "Aretes",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "co_russian_arete_2",
+   "name": "Russian Arete",
+   "nccs": "III",
+   "pitches": 0,
+   "signals": [
+    "grade_III"
+   ]
+  },
+  {
+   "area": "Ridge 2 aka Satan's Slab",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "co_satan_s_slab",
+   "name": "Satan's Slab",
+   "nccs": null,
+   "pitches": 0,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "Turret Dome",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "co_schooldaze",
+   "name": "Schooldaze",
+   "nccs": null,
+   "pitches": 0,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "Bucksnort Slab",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "co_shake_n_bake",
+   "name": "Shake 'n' Bake",
+   "nccs": null,
+   "pitches": 3,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "Sharkstooth",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "co_sharkstooth_northeast_ridge",
+   "name": "Northeast Ridge",
+   "nccs": null,
+   "pitches": 6,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "Amphitheater, The",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "co_siberian_north_face",
+   "name": "Siberian North Face",
+   "nccs": null,
+   "pitches": 0,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "Sleeping Elephant",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "co_sleeping_elephant_raspberry_tarts",
+   "name": "Raspberry Tarts",
+   "nccs": null,
+   "pitches": 4,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "Window Rock",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "co_south_ridge_12",
+   "name": "South Ridge",
+   "nccs": null,
+   "pitches": 0,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "Elephant Rock",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "co_south_side_classic",
+   "name": "South Side Classic",
+   "nccs": null,
+   "pitches": 0,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "Southeast Face",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "co_southeast_face_coming_of_age",
+   "name": "Coming of Age",
+   "nccs": null,
+   "pitches": 4,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "The Painted Wall",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "co_southern_arete",
+   "name": "Southern Arete",
+   "nccs": "IV",
+   "pitches": 25,
+   "signals": [
+    "grade_IV_plus"
+   ]
+  },
+  {
+   "area": "First Flatiron",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "co_southwest_face_2",
+   "name": "Southwest Face",
+   "nccs": null,
+   "pitches": 0,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "North Chasm View Wall",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "co_stoned_oven",
+   "name": "Stoned Oven",
+   "nccs": "V",
+   "pitches": 0,
+   "signals": [
+    "grade_IV_plus"
+   ]
+  },
+  {
+   "area": "Window Rock",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "co_sunshine_daydream_3",
+   "name": "Sunshine Daydream",
+   "nccs": null,
+   "pitches": 0,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "Window Rock",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "co_sunshine_face",
+   "name": "Sunshine Face",
+   "nccs": null,
+   "pitches": 0,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "T 3",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "co_t_3_northeast_corner",
+   "name": "Northeast Corner",
+   "nccs": null,
+   "pitches": 1,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "The Crestones",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "co_the_crestones_the_prow_kit_carson",
+   "name": "The Prow (Kit Carson)",
+   "nccs": "III",
+   "pitches": 1,
+   "signals": [
+    "grade_III"
+   ]
+  },
+  {
+   "area": "The Hand",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "co_the_hand_north_arete",
+   "name": "North Arete",
+   "nccs": null,
+   "pitches": 3,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "The Moon Tower",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "co_the_moon_tower_butterfingers",
+   "name": "Butterfingers",
+   "nccs": null,
+   "pitches": 3,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "Sundance Buttress",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "co_the_nose_5",
+   "name": "The Nose",
+   "nccs": "III",
+   "pitches": 6,
+   "signals": [
+    "grade_III"
+   ]
+  },
+  {
+   "area": "North Chasm View Wall",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "co_the_scenic_cruise",
+   "name": "The Scenic Cruise",
+   "nccs": "V",
+   "pitches": 0,
+   "signals": [
+    "grade_IV_plus"
+   ]
+  },
+  {
+   "area": "The Wall",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "co_the_wall_katana_ridge",
+   "name": "Katana Ridge",
+   "nccs": null,
+   "pitches": 4,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "Window Rock",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "co_tim_s_solo",
+   "name": "Tim's Solo",
+   "nccs": null,
+   "pitches": 0,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "Tower 2",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "co_tower_2_giants_vs_dragons",
+   "name": "Giants vs. Dragons",
+   "nccs": null,
+   "pitches": 5,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "Elephant Rock",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "co_trunk_line",
+   "name": "Trunk Line",
+   "nccs": null,
+   "pitches": 0,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "Valhalla Peak, Eldar Tower",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "co_valhalla_peak_eldar_tower_i_found_the_letters",
+   "name": "I Found The Letters",
+   "nccs": null,
+   "pitches": 5,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "Walk of Life Spire",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "co_walk_of_life_spire_walk_of_life",
+   "name": "Walk of Life",
+   "nccs": null,
+   "pitches": 4,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "Castle Rock",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "co_west_face_3",
+   "name": "West Face",
+   "nccs": null,
+   "pitches": 0,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "Beehive Dome",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "id_beehive_dome_beehive_five",
+   "name": "Beehive Five",
+   "nccs": null,
+   "pitches": 3,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "Bighorn Crags/Litner Group of Peaks",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "id_bighorn_crags_litner_group_of_peaks_pace_setter",
+   "name": "Pace Setter",
+   "nccs": null,
+   "pitches": 9,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "Mt Idaho",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "id_mt_idaho_east_face_mountaineer_s_route",
+   "name": "East Face – Mountaineer’s Route",
+   "nccs": null,
+   "pitches": 5,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "South Face",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "id_south_face_southeast_face",
+   "name": "Southeast Face",
+   "nccs": null,
+   "pitches": 2,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "Storm Dome",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "id_storm_dome_pika_paradise",
+   "name": "Pika Paradise",
+   "nccs": null,
+   "pitches": 7,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "Long Wall",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "ky_two_step",
+   "name": "Two Step",
+   "nccs": null,
+   "pitches": 0,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "Chimney Pond (\"South\") Basin - Summer Rock Routes",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "me_flatiron",
+   "name": "Flatiron",
+   "nccs": "III",
+   "pitches": 0,
+   "signals": [
+    "grade_III"
+   ]
+  },
+  {
+   "area": "Chimney Pond (\"South\") Basin - Summer Rock Routes",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "me_the_armadillo",
+   "name": "The Armadillo",
+   "nccs": "IV",
+   "pitches": 0,
+   "signals": [
+    "grade_IV_plus"
+   ]
+  },
+  {
+   "area": "Arrowhead Bowl / No Name Bowl",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "mt_arrowhead_bowl_no_name_bowl_alpine_boogie",
+   "name": "Alpine Boogie",
+   "nccs": null,
+   "pitches": 3,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "Mt. Wood North Face",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "mt_mt_wood_north_face_central_rib",
+   "name": "Central Rib",
+   "nccs": null,
+   "pitches": 1,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "Palm Springs Buttress",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "mt_palm_springs_buttress_if_i_had_a_hammer",
+   "name": "If I Had A Hammer",
+   "nccs": null,
+   "pitches": 5,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "Sacajawea Peak",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "mt_sacajawea_peak_sacajawea_direct",
+   "name": "Sacajawea direct.",
+   "nccs": null,
+   "pitches": 1,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "Spirit Mountain",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "mt_spirit_mountain_lunar_arete",
+   "name": "Lunar Arete",
+   "nccs": null,
+   "pitches": 12,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "Tower of Incubus",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "mt_tower_of_incubus_by_many_or_by_few_aka_west_face_of_the_tower_of_incubus",
+   "name": "By Many or By Few aka West Face of the Tower of Incubus",
+   "nccs": null,
+   "pitches": 6,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "Witchtowers",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "mt_witchtowers_hocus_pocus",
+   "name": "Hocus Pocus",
+   "nccs": null,
+   "pitches": 8,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "Lion's Head",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "nh_04_lion_s_head_lion_s_head_standard",
+   "name": "Lion's Head Standard",
+   "nccs": null,
+   "pitches": 5,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "White's Ledge",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "nh_endeavor",
+   "name": "Endeavor",
+   "nccs": null,
+   "pitches": 7,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "White's Ledge",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "nh_the_white_streak",
+   "name": "The White Streak",
+   "nccs": null,
+   "pitches": 6,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "Sugarloaf",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "nm_left_eyebrow",
+   "name": "Left Eyebrow",
+   "nccs": null,
+   "pitches": 10,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "Mummy, The",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "nm_mummy_the_route_1",
+   "name": "Route 1",
+   "nccs": null,
+   "pitches": 1,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "Shield",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "nm_rainbow_dancer",
+   "name": "Rainbow Dancer",
+   "nccs": "V",
+   "pitches": 0,
+   "signals": [
+    "grade_IV_plus"
+   ]
+  },
+  {
+   "area": "Rat's Rock",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "nm_rat_s_rock_bombs_away",
+   "name": "Bombs Away",
+   "nccs": null,
+   "pitches": 3,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "Whiskey Peak",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "nm_whiskey_peak_whiskey_ridge",
+   "name": "Whiskey Ridge",
+   "nccs": null,
+   "pitches": 5,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "Mt. Sir James MacBrien Peak",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "nt_mt_sir_james_macbrien_peak_southeast_arete",
+   "name": "Southeast Arete",
+   "nccs": null,
+   "pitches": 9,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "Coronation Glacier",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "nu_coronation_glacier_escape_from_azkaban",
+   "name": "Escape from Azkaban",
+   "nccs": null,
+   "pitches": 10,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "Coronation Glacier",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "nu_coronation_glacier_the_salami_exchange_commission",
+   "name": "The Salami Exchange Commission",
+   "nccs": null,
+   "pitches": 15,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "East Face",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "nv_black_widow_hollow",
+   "name": "Black Widow Hollow",
+   "nccs": "III",
+   "pitches": 0,
+   "signals": [
+    "grade_III"
+   ]
+  },
+  {
+   "area": "East Face",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "nv_centerfold",
+   "name": "Centerfold",
+   "nccs": "III",
+   "pitches": 0,
+   "signals": [
+    "grade_III"
+   ]
+  },
+  {
+   "area": "North Face",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "nv_community_pillar",
+   "name": "Community Pillar",
+   "nccs": "III",
+   "pitches": 0,
+   "signals": [
+    "grade_III"
+   ]
+  },
+  {
+   "area": "Dark Shadows Wall",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "nv_dark_shadows",
+   "name": "Dark Shadows",
+   "nccs": "III",
+   "pitches": 4,
+   "signals": [
+    "grade_III"
+   ]
+  },
+  {
+   "area": "Dark Shadows Wall",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "nv_dark_shadows_full",
+   "name": "Dark Shadows (Full)",
+   "nccs": "III",
+   "pitches": 0,
+   "signals": [
+    "grade_III"
+   ]
+  },
+  {
+   "area": "East Face",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "nv_deep_space",
+   "name": "Deep Space",
+   "nccs": "III",
+   "pitches": 0,
+   "signals": [
+    "grade_III"
+   ]
+  },
+  {
+   "area": "Jackrabbit Buttress",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "nv_geronimo",
+   "name": "Geronimo",
+   "nccs": null,
+   "pitches": 5,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "Dark Shadows Wall",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "nv_heart_of_darkness",
+   "name": "Heart of Darkness",
+   "nccs": "IV",
+   "pitches": 0,
+   "signals": [
+    "grade_IV_plus"
+   ]
+  },
+  {
+   "area": "South Face",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "nv_hot_fudge_thursday",
+   "name": "Hot Fudge Thursday",
+   "nccs": "III",
+   "pitches": 0,
+   "signals": [
+    "grade_III"
+   ]
+  },
+  {
+   "area": "South Face",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "nv_jubilant_song",
+   "name": "Jubilant Song",
+   "nccs": "III",
+   "pitches": 0,
+   "signals": [
+    "grade_III"
+   ]
+  },
+  {
+   "area": "North Face",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "nv_magic_triangle",
+   "name": "Magic Triangle",
+   "nccs": "III-IV",
+   "pitches": 7,
+   "signals": [
+    "grade_III"
+   ]
+  },
+  {
+   "area": "North Face",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "nv_midsummer_night_scheme",
+   "name": "Midsummer Night Scheme",
+   "nccs": "III",
+   "pitches": 0,
+   "signals": [
+    "grade_III"
+   ]
+  },
+  {
+   "area": "Dark Shadows Wall",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "nv_negro_blanco",
+   "name": "Negro Blanco",
+   "nccs": "IV",
+   "pitches": 0,
+   "signals": [
+    "grade_IV_plus"
+   ]
+  },
+  {
+   "area": "Straight Shooter Wall",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "nv_orange_clonus",
+   "name": "Orange Clonus",
+   "nccs": "III",
+   "pitches": 0,
+   "signals": [
+    "grade_III"
+   ]
+  },
+  {
+   "area": "Brass Wall",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "nv_spectrum",
+   "name": "Spectrum",
+   "nccs": "IV",
+   "pitches": 0,
+   "signals": [
+    "grade_IV_plus"
+   ]
+  },
+  {
+   "area": "Brass Wall",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "nv_the_big_horn",
+   "name": "The Big Horn",
+   "nccs": "III",
+   "pitches": 7,
+   "signals": [
+    "grade_III"
+   ]
+  },
+  {
+   "area": "Friar and Byrd Pinnacle, The",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "nv_the_friar",
+   "name": "The Friar",
+   "nccs": null,
+   "pitches": 0,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "South Face",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "nv_windy_corner",
+   "name": "Windy Corner",
+   "nccs": "III",
+   "pitches": 0,
+   "signals": [
+    "grade_III"
+   ]
+  },
+  {
+   "area": "Monkey Face",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "or_astro_monkey",
+   "name": "Astro Monkey",
+   "nccs": "III",
+   "pitches": 0,
+   "signals": [
+    "grade_III"
+   ]
+  },
+  {
+   "area": "Gunsight Slab",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "or_gunsight_slab_zig_zag",
+   "name": "Zig-Zag",
+   "nccs": null,
+   "pitches": 2,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "Monkey Face",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "or_northwest_passage_free",
+   "name": "Northwest Passage (Free)",
+   "nccs": "III",
+   "pitches": 0,
+   "signals": [
+    "grade_III"
+   ]
+  },
+  {
+   "area": "Mount Félix-Antoine-Savard",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "qc_mount_f_lix_antoine_savard_la_f_lix_antoine",
+   "name": "La Félix-Antoine",
+   "nccs": null,
+   "pitches": 8,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "Plumb Line Gully",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "ut_boomerang",
+   "name": "Boomerang",
+   "nccs": null,
+   "pitches": 2,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "DeMoisy Peak",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "ut_demoisy_peak_2_lone_tree",
+   "name": "Lone Tree",
+   "nccs": null,
+   "pitches": 1,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "DeMoisy Peak",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "ut_demoisy_peak_2_on_the_fly",
+   "name": "On The Fly",
+   "nccs": null,
+   "pitches": 2,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "Wavebreak Wall",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "ut_jagged_edge",
+   "name": "Jagged Edge",
+   "nccs": null,
+   "pitches": 0,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "Plumb Line Gully",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "ut_plumb_line",
+   "name": "Plumb Line",
+   "nccs": null,
+   "pitches": 0,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "The Thumb Area",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "ut_the_standard_thumb",
+   "name": "The Standard Thumb",
+   "nccs": null,
+   "pitches": 9,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "Top Notch Buttress",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "ut_top_notch_buttress_european_death_notch",
+   "name": "European Death Notch",
+   "nccs": null,
+   "pitches": 3,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "Top Notch Buttress",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "ut_top_notch_buttress_juggernotch_arete",
+   "name": "Juggernotch Arete",
+   "nccs": null,
+   "pitches": 3,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "Top Notch Buttress",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "ut_top_notch_buttress_notch_yer_average_corner",
+   "name": "Notch yer Average Corner",
+   "nccs": null,
+   "pitches": 3,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "Wavebreak Wall",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "ut_wave_break",
+   "name": "Wave Break",
+   "nccs": null,
+   "pitches": 0,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "Dark Angel",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "ut_west_face_3",
+   "name": "West Face",
+   "nccs": null,
+   "pitches": 2,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "Apex Mountain",
+   "area_type": "peak",
+   "high_point_ft": null,
+   "id": "wa_apex_mountain_pasayten_apex_buttress",
+   "name": "Apex Buttress",
+   "nccs": null,
+   "pitches": 7,
+   "signals": [
+    "on_peak"
+   ]
+  },
+  {
+   "area": "Big Snow Mountain",
+   "area_type": "peak",
+   "high_point_ft": null,
+   "id": "wa_big_snow_mountain_sasquatch_s_breath",
+   "name": "Sasquatch's Breath",
+   "nccs": null,
+   "pitches": 4,
+   "signals": [
+    "on_peak"
+   ]
+  },
+  {
+   "area": "Goose Egg Mountain",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "wa_bowl_packer",
+   "name": "Bowl Packer",
+   "nccs": "III",
+   "pitches": 5,
+   "signals": [
+    "grade_III"
+   ]
+  },
+  {
+   "area": "Burgundy Spire",
+   "area_type": "peak",
+   "high_point_ft": null,
+   "id": "wa_burgundy_spire_corkscrew_route",
+   "name": "Corkscrew Route",
+   "nccs": null,
+   "pitches": 15,
+   "signals": [
+    "on_peak"
+   ]
+  },
+  {
+   "area": "Three O'clock Rock",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "wa_bushy_galore",
+   "name": "Bushy Galore",
+   "nccs": "III",
+   "pitches": 0,
+   "signals": [
+    "grade_III"
+   ]
+  },
+  {
+   "area": "Summit Wall",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "wa_c_summit_wall_the_blueberry_route",
+   "name": "The Blueberry Route",
+   "nccs": "III",
+   "pitches": null,
+   "signals": [
+    "grade_III"
+   ]
+  },
+  {
+   "area": "Colchuck Balanced Rock",
+   "area_type": "peak",
+   "high_point_ft": null,
+   "id": "wa_colchuck_balanced_rock_the_foot_of_faith_west_face_p3_variation",
+   "name": "The Foot of Faith - West Face P3 variation",
+   "nccs": null,
+   "pitches": 1,
+   "signals": [
+    "on_peak"
+   ]
+  },
+  {
+   "area": "Colchuck Balanced Rock",
+   "area_type": "peak",
+   "high_point_ft": null,
+   "id": "wa_colchuck_balanced_rock_west_face_p3_1984_variation",
+   "name": "West Face P3 \"1984 Variation\"",
+   "nccs": null,
+   "pitches": 1,
+   "signals": [
+    "on_peak"
+   ]
+  },
+  {
+   "area": "Comb, The Routes",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "wa_comb_the_boomerang",
+   "name": "Boomerang",
+   "nccs": "III",
+   "pitches": 2,
+   "signals": [
+    "grade_III"
+   ]
+  },
+  {
+   "area": "Comb, The Routes",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "wa_comb_the_desire",
+   "name": "Desire",
+   "nccs": "IV",
+   "pitches": 8,
+   "signals": [
+    "grade_IV_plus"
+   ]
+  },
+  {
+   "area": "Comb, The Routes",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "wa_comb_the_dreamer",
+   "name": "Dreamer",
+   "nccs": "IV",
+   "pitches": 10,
+   "signals": [
+    "grade_IV_plus"
+   ]
+  },
+  {
+   "area": "Comb, The Routes",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "wa_comb_the_the_fast_lane",
+   "name": "The Fast Lane",
+   "nccs": "IV",
+   "pitches": 3,
+   "signals": [
+    "grade_IV_plus"
+   ]
+  },
+  {
+   "area": "Goose Egg Mountain",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "wa_commandho_pillar",
+   "name": "The Commandho Pillar",
+   "nccs": "III",
+   "pitches": 7,
+   "signals": [
+    "grade_III"
+   ]
+  },
+  {
+   "area": "Crater Mountain",
+   "area_type": "peak",
+   "high_point_ft": null,
+   "id": "wa_crater_mountain_appassionata_smothered_in_smoke",
+   "name": "Appassionata Smothered In Smoke",
+   "nccs": null,
+   "pitches": 1,
+   "signals": [
+    "on_peak"
+   ]
+  },
+  {
+   "area": "Steeple Rock",
+   "area_type": "crag",
+   "high_point_ft": 5570,
+   "id": "wa_direct_finish",
+   "name": "Direct Finish",
+   "nccs": "I",
+   "pitches": 1,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "Goose Egg Mountain",
+   "area_type": "crag",
+   "high_point_ft": 4566,
+   "id": "wa_dirty_sanchez",
+   "name": "The Dirty",
+   "nccs": "III",
+   "pitches": 7,
+   "signals": [
+    "grade_III"
+   ]
+  },
+  {
+   "area": "Dragontail Peak",
+   "area_type": "peak",
+   "high_point_ft": null,
+   "id": "wa_dragontail_peak_a_kidney_for_a_friend",
+   "name": "A Kidney for a Friend",
+   "nccs": null,
+   "pitches": 7,
+   "signals": [
+    "on_peak"
+   ]
+  },
+  {
+   "area": "Dragontail Peak",
+   "area_type": "peak",
+   "high_point_ft": null,
+   "id": "wa_dragontail_peak_complete_northeast_buttress",
+   "name": "Complete Northeast Buttress",
+   "nccs": null,
+   "pitches": 1,
+   "signals": [
+    "on_peak"
+   ]
+  },
+  {
+   "area": "Dragontail Peak",
+   "area_type": "peak",
+   "high_point_ft": null,
+   "id": "wa_dragontail_peak_dragon_s_jaw",
+   "name": "Dragon’s Jaw",
+   "nccs": null,
+   "pitches": 6,
+   "signals": [
+    "on_peak"
+   ]
+  },
+  {
+   "area": "Dragontail Peak",
+   "area_type": "peak",
+   "high_point_ft": null,
+   "id": "wa_dragontail_peak_dragonfruit",
+   "name": "Dragonfruit",
+   "nccs": null,
+   "pitches": 5,
+   "signals": [
+    "on_peak"
+   ]
+  },
+  {
+   "area": "Dragontail Peak",
+   "area_type": "peak",
+   "high_point_ft": null,
+   "id": "wa_dragontail_peak_dragons_of_eden",
+   "name": "Dragons of Eden",
+   "nccs": null,
+   "pitches": 7,
+   "signals": [
+    "on_peak"
+   ]
+  },
+  {
+   "area": "Dragontail Peak",
+   "area_type": "peak",
+   "high_point_ft": null,
+   "id": "wa_dragontail_peak_new_dark_ages",
+   "name": "New Dark Ages",
+   "nccs": null,
+   "pitches": 5,
+   "signals": [
+    "on_peak"
+   ]
+  },
+  {
+   "area": "Steeple Rock",
+   "area_type": "crag",
+   "high_point_ft": 5570,
+   "id": "wa_east_ridge",
+   "name": "East Ridge",
+   "nccs": "I",
+   "pitches": 1,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "Elephant Head",
+   "area_type": "peak",
+   "high_point_ft": null,
+   "id": "wa_elephant_head_lower_west_face",
+   "name": "Lower West Face",
+   "nccs": null,
+   "pitches": 5,
+   "signals": [
+    "on_peak"
+   ]
+  },
+  {
+   "area": "Elephant Head",
+   "area_type": "peak",
+   "high_point_ft": null,
+   "id": "wa_elephant_head_variation_p1_west_face",
+   "name": "Variation P1 West Face",
+   "nccs": null,
+   "pitches": 1,
+   "signals": [
+    "on_peak"
+   ]
+  },
+  {
+   "area": "Shark Rock",
+   "area_type": "crag",
+   "high_point_ft": 5410,
+   "id": "wa_ez_way",
+   "name": "EZ Way",
+   "nccs": "II",
+   "pitches": 1,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "South Face",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "wa_flying_swallow",
+   "name": "Flying Swallow",
+   "nccs": "III",
+   "pitches": 0,
+   "signals": [
+    "grade_III"
+   ]
+  },
+  {
+   "area": "Narrow Arrow and further right",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "wa_free_at_last",
+   "name": "Free at Last",
+   "nccs": "III",
+   "pitches": 4,
+   "signals": [
+    "grade_III"
+   ]
+  },
+  {
+   "area": "M&M wall (AKA \"Supercave Wall\")",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "wa_golden_age",
+   "name": "Golden Age",
+   "nccs": "IV",
+   "pitches": 7,
+   "signals": [
+    "grade_IV_plus"
+   ]
+  },
+  {
+   "area": "South Face",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "wa_ground_zero_3",
+   "name": "Ground Zero",
+   "nccs": "III",
+   "pitches": 0,
+   "signals": [
+    "grade_III"
+   ]
+  },
+  {
+   "area": "Half Moon",
+   "area_type": "peak",
+   "high_point_ft": null,
+   "id": "wa_half_moon_uncle_wehrly_s_toupee",
+   "name": "Uncle Wehrly's Toupee",
+   "nccs": null,
+   "pitches": 5,
+   "signals": [
+    "on_peak"
+   ]
+  },
+  {
+   "area": "Snow Creek Wall",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "wa_hyperspace",
+   "name": "Hyperspace",
+   "nccs": "IV",
+   "pitches": 0,
+   "signals": [
+    "grade_IV_plus"
+   ]
+  },
+  {
+   "area": "Goose Egg Mountain",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "wa_ignorant_bliss",
+   "name": "Ignorant Bliss",
+   "nccs": "III",
+   "pitches": 6,
+   "signals": [
+    "grade_III"
+   ]
+  },
+  {
+   "area": "Ingalls Peak",
+   "area_type": "peak",
+   "high_point_ft": null,
+   "id": "wa_ingalls_peak_east_peak_southwest_face",
+   "name": "East Peak (Southwest Face)",
+   "nccs": null,
+   "pitches": 2,
+   "signals": [
+    "on_peak"
+   ]
+  },
+  {
+   "area": "Ingalls Peak",
+   "area_type": "peak",
+   "high_point_ft": null,
+   "id": "wa_ingalls_peak_ingalls_error",
+   "name": "Ingalls Error",
+   "nccs": null,
+   "pitches": 2,
+   "signals": [
+    "on_peak"
+   ]
+  },
+  {
+   "area": "Dwarf Tossing to Narrow Arrow",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "wa_japanese_gardens",
+   "name": "Japanese Gardens",
+   "nccs": "III",
+   "pitches": 4,
+   "signals": [
+    "grade_III"
+   ]
+  },
+  {
+   "area": "South Face",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "wa_left_gull",
+   "name": "Left Gull",
+   "nccs": "III",
+   "pitches": 0,
+   "signals": [
+    "grade_III"
+   ]
+  },
+  {
+   "area": "Little Big Chief Mountain",
+   "area_type": "peak",
+   "high_point_ft": null,
+   "id": "wa_little_big_chief_mountain_falcon_route",
+   "name": "Falcon Route",
+   "nccs": null,
+   "pitches": 15,
+   "signals": [
+    "on_peak"
+   ]
+  },
+  {
+   "area": "Little Bridge Creek Rock",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "wa_little_bridge_creek_rock_chton",
+   "name": "Chton",
+   "nccs": "III",
+   "pitches": 6,
+   "signals": [
+    "grade_III"
+   ]
+  },
+  {
+   "area": "Static Point",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "wa_lost_charms",
+   "name": "Lost Charms",
+   "nccs": "III",
+   "pitches": 0,
+   "signals": [
+    "grade_III"
+   ]
+  },
+  {
+   "area": "Lower Castle",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "wa_lower_castle_endgame",
+   "name": "Endgame",
+   "nccs": "IV",
+   "pitches": 7,
+   "signals": [
+    "grade_IV_plus"
+   ]
+  },
+  {
+   "area": "Lower Castle",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "wa_lower_castle_four_knights",
+   "name": "Four Knights",
+   "nccs": "III",
+   "pitches": null,
+   "signals": [
+    "grade_III"
+   ]
+  },
+  {
+   "area": "Lower Castle",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "wa_lower_castle_king_s_indian",
+   "name": "King’s Indian",
+   "nccs": "IV",
+   "pitches": null,
+   "signals": [
+    "grade_IV_plus"
+   ]
+  },
+  {
+   "area": "Lower Castle",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "wa_lower_castle_nimzo_indian",
+   "name": "Nimzo Indian",
+   "nccs": "IV",
+   "pitches": null,
+   "signals": [
+    "grade_IV_plus"
+   ]
+  },
+  {
+   "area": "Three O'clock Rock",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "wa_magic_bus",
+   "name": "Magic Bus",
+   "nccs": "III",
+   "pitches": 0,
+   "signals": [
+    "grade_III"
+   ]
+  },
+  {
+   "area": "Mix-up Peak",
+   "area_type": "peak",
+   "high_point_ft": null,
+   "id": "wa_mixup_peak_pbs_late_night_special",
+   "name": "PBS Late Night Special",
+   "nccs": null,
+   "pitches": 3,
+   "signals": [
+    "on_peak"
+   ]
+  },
+  {
+   "area": "Monte Cristo Peak",
+   "area_type": "peak",
+   "high_point_ft": null,
+   "id": "wa_monte_cristo_peak_standard_route_variation_1",
+   "name": "Standard Route, Variation 1",
+   "nccs": null,
+   "pitches": 3,
+   "signals": [
+    "on_peak"
+   ]
+  },
+  {
+   "area": "Monte Cristo Peak",
+   "area_type": "peak",
+   "high_point_ft": null,
+   "id": "wa_monte_cristo_peak_standard_route_variation_2",
+   "name": "Standard Route, Variation 2",
+   "nccs": null,
+   "pitches": 3,
+   "signals": [
+    "on_peak"
+   ]
+  },
+  {
+   "area": "Mount Olympus (West Peak)",
+   "area_type": "peak",
+   "high_point_ft": null,
+   "id": "wa_mount_olympus_2_north_ridge_via_blue_glacier",
+   "name": "North Ridge via Blue Glacier",
+   "nccs": null,
+   "pitches": 1,
+   "signals": [
+    "on_peak"
+   ]
+  },
+  {
+   "area": "Mount Stuart",
+   "area_type": "peak",
+   "high_point_ft": null,
+   "id": "wa_mount_stuart_direct_north_ridge",
+   "name": "Direct North Ridge",
+   "nccs": null,
+   "pitches": 20,
+   "signals": [
+    "on_peak"
+   ]
+  },
+  {
+   "area": "Mount Stuart",
+   "area_type": "peak",
+   "high_point_ft": null,
+   "id": "wa_mount_stuart_gorillas_in_the_mist",
+   "name": "Gorillas in the Mist",
+   "nccs": null,
+   "pitches": 9,
+   "signals": [
+    "on_peak"
+   ]
+  },
+  {
+   "area": "Mount Stuart",
+   "area_type": "peak",
+   "high_point_ft": null,
+   "id": "wa_mount_stuart_stuart_range_traverse",
+   "name": "Stuart Range Traverse",
+   "nccs": null,
+   "pitches": 40,
+   "signals": [
+    "on_peak"
+   ]
+  },
+  {
+   "area": "North Early Winters Spire",
+   "area_type": "peak",
+   "high_point_ft": null,
+   "id": "wa_north_early_winter_spire_twitch_of_the_death_nerve",
+   "name": "Twitch of the Death Nerve",
+   "nccs": null,
+   "pitches": null,
+   "signals": [
+    "on_peak"
+   ]
+  },
+  {
+   "area": "North Early Winters Spire",
+   "area_type": "peak",
+   "high_point_ft": null,
+   "id": "wa_north_early_winter_spire_vulcan_death_grip",
+   "name": "Vulcan Death Grip",
+   "nccs": null,
+   "pitches": null,
+   "signals": [
+    "on_peak"
+   ]
+  },
+  {
+   "area": "North Early Winters Spire",
+   "area_type": "peak",
+   "high_point_ft": null,
+   "id": "wa_north_early_winters_spire_northwest_corner_a_k_a_boving_pollack_route",
+   "name": "Northwest Corner (a.k.a. Boving-Pollack Route)",
+   "nccs": null,
+   "pitches": 5,
+   "signals": [
+    "on_peak"
+   ]
+  },
+  {
+   "area": "Steeple Rock",
+   "area_type": "crag",
+   "high_point_ft": 5570,
+   "id": "wa_north_ridge",
+   "name": "North Ridge",
+   "nccs": "I",
+   "pitches": 1,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "Vasiliki Tower",
+   "area_type": "crag",
+   "high_point_ft": 7663,
+   "id": "wa_northwest_face",
+   "name": "Mountaineers' Northwest Face",
+   "nccs": null,
+   "pitches": 2,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "Northwest Mox Peak",
+   "area_type": "peak",
+   "high_point_ft": null,
+   "id": "wa_northwest_mox_peak_northeast_ridge",
+   "name": "Northeast Ridge",
+   "nccs": null,
+   "pitches": 3,
+   "signals": [
+    "on_peak"
+   ]
+  },
+  {
+   "area": "Snow Creek Wall",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "wa_orbit",
+   "name": "Orbit",
+   "nccs": "III",
+   "pitches": 7,
+   "signals": [
+    "grade_III"
+   ]
+  },
+  {
+   "area": "Snow Creek Wall",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "wa_outer_space_2",
+   "name": "Outer Space",
+   "nccs": "III",
+   "pitches": 7,
+   "signals": [
+    "grade_III"
+   ]
+  },
+  {
+   "area": "South Face",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "wa_primal_scream",
+   "name": "Primal Scream",
+   "nccs": "III",
+   "pitches": 12,
+   "signals": [
+    "grade_III"
+   ]
+  },
+  {
+   "area": "Prusik Peak",
+   "area_type": "peak",
+   "high_point_ft": null,
+   "id": "wa_prusik_peak_stanley_burgner",
+   "name": "Stanley-Burgner",
+   "nccs": null,
+   "pitches": 6,
+   "signals": [
+    "on_peak"
+   ]
+  },
+  {
+   "area": "Full (or nearly) Wall Routes",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "wa_rise_and_fall",
+   "name": "Rise and Fall",
+   "nccs": "IV",
+   "pitches": 5,
+   "signals": [
+    "grade_IV_plus"
+   ]
+  },
+  {
+   "area": "Green Giant Buttress",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "wa_safe_sex",
+   "name": "Safe Sex",
+   "nccs": "IV",
+   "pitches": 0,
+   "signals": [
+    "grade_IV_plus"
+   ]
+  },
+  {
+   "area": "Sharkfin Tower",
+   "area_type": "peak",
+   "high_point_ft": null,
+   "id": "wa_sharkfin_tower_flakes_and_chimneys_south_face",
+   "name": "Flakes and Chimneys (South Face)",
+   "nccs": null,
+   "pitches": 2,
+   "signals": [
+    "on_peak"
+   ]
+  },
+  {
+   "area": "Skookum Peak",
+   "area_type": "peak",
+   "high_point_ft": null,
+   "id": "wa_skookum_peak_twinsisters_jaw_s_tooth_and_northwest_ridge",
+   "name": "Jaw's Tooth and Northwest Ridge",
+   "nccs": null,
+   "pitches": 6,
+   "signals": [
+    "on_peak"
+   ]
+  },
+  {
+   "area": "Viviane Campsite",
+   "area_type": "crag",
+   "high_point_ft": 6802,
+   "id": "wa_smears_jugs_and_rock_roll",
+   "name": "Smears, Jugs, and Rock & Roll",
+   "nccs": "I",
+   "pitches": 1,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "Snow Creek Wall",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "wa_snow_creek_wall_galaxy",
+   "name": "Galaxy",
+   "nccs": "IV",
+   "pitches": 9,
+   "signals": [
+    "grade_IV_plus"
+   ]
+  },
+  {
+   "area": "Snow Creek Wall",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "wa_snow_creek_wall_medusa_s_roof",
+   "name": "Medusa’s Roof",
+   "nccs": "V",
+   "pitches": null,
+   "signals": [
+    "grade_IV_plus"
+   ]
+  },
+  {
+   "area": "South Early Winters Spire",
+   "area_type": "peak",
+   "high_point_ft": null,
+   "id": "wa_south_early_winters_spire_backseat_driver",
+   "name": "Backseat Driver",
+   "nccs": null,
+   "pitches": 7,
+   "signals": [
+    "on_peak"
+   ]
+  },
+  {
+   "area": "South Early Winters Spire",
+   "area_type": "peak",
+   "high_point_ft": null,
+   "id": "wa_south_early_winters_spire_south_east_mank",
+   "name": "South East Mank",
+   "nccs": null,
+   "pitches": 1,
+   "signals": [
+    "on_peak"
+   ]
+  },
+  {
+   "area": "South Early Winters Spire",
+   "area_type": "peak",
+   "high_point_ft": null,
+   "id": "wa_south_early_winters_spire_the_rubbernecker",
+   "name": "The Rubbernecker",
+   "nccs": null,
+   "pitches": 7,
+   "signals": [
+    "on_peak"
+   ]
+  },
+  {
+   "area": "South Face",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "wa_south_face_4_steppenwolf",
+   "name": "Steppenwolf",
+   "nccs": "III",
+   "pitches": null,
+   "signals": [
+    "grade_III"
+   ]
+  },
+  {
+   "area": "Goose Egg Mountain",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "wa_southeast_arete",
+   "name": "Southeast Arête",
+   "nccs": "III",
+   "pitches": 7,
+   "signals": [
+    "grade_III"
+   ]
+  },
+  {
+   "area": "Southeast Mox Peak",
+   "area_type": "peak",
+   "high_point_ft": null,
+   "id": "wa_southeast_mox_peak_beckey_route_west_ridge",
+   "name": "Beckey Route (West Ridge)",
+   "nccs": null,
+   "pitches": 3,
+   "signals": [
+    "on_peak"
+   ]
+  },
+  {
+   "area": "Goose Egg Mountain",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "wa_spoil_ill",
+   "name": "Spoil Ill",
+   "nccs": "III",
+   "pitches": 6,
+   "signals": [
+    "grade_III"
+   ]
+  },
+  {
+   "area": "Static Point",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "wa_static_point_shock_treatment",
+   "name": "Shock Treatment",
+   "nccs": "III",
+   "pitches": null,
+   "signals": [
+    "grade_III"
+   ]
+  },
+  {
+   "area": "The Temple",
+   "area_type": "peak",
+   "high_point_ft": null,
+   "id": "wa_the_temple_west_face",
+   "name": "West Face",
+   "nccs": null,
+   "pitches": 2,
+   "signals": [
+    "on_peak"
+   ]
+  },
+  {
+   "area": "Lower Cheeks",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "wa_the_zipper",
+   "name": "The Zipper",
+   "nccs": "IV",
+   "pitches": 0,
+   "signals": [
+    "grade_IV_plus"
+   ]
+  },
+  {
+   "area": "Three O'clock Rock",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "wa_three_o_clock_rock_rubber_soul",
+   "name": "Rubber Soul",
+   "nccs": "III",
+   "pitches": null,
+   "signals": [
+    "grade_III"
+   ]
+  },
+  {
+   "area": "Three O'clock Rock",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "wa_three_o_clock_rock_total_soul",
+   "name": "Total Soul",
+   "nccs": "III",
+   "pitches": 8,
+   "signals": [
+    "grade_III"
+   ]
+  },
+  {
+   "area": "East Side",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "wa_vertigo_2",
+   "name": "Vertigo",
+   "nccs": null,
+   "pitches": 0,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "Vesper Peak",
+   "area_type": "peak",
+   "high_point_ft": null,
+   "id": "wa_vesper_peak_north_face",
+   "name": "North Face",
+   "nccs": null,
+   "pitches": 4,
+   "signals": [
+    "on_peak"
+   ]
+  },
+  {
+   "area": "Steeple Rock",
+   "area_type": "crag",
+   "high_point_ft": 5570,
+   "id": "wa_wings",
+   "name": "Wings",
+   "nccs": "I",
+   "pitches": 2,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "Witch Doctor Wall",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "wa_witch_doctor_wall_sunday_cruise",
+   "name": "Sunday Cruise",
+   "nccs": "III",
+   "pitches": null,
+   "signals": [
+    "grade_III"
+   ]
+  },
+  {
+   "area": "Brokeback Mountain",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "wy_brokeback_mountain_dead_horse_road",
+   "name": "Dead Horse Road",
+   "nccs": null,
+   "pitches": 7,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "Buck Mt.",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "wy_buck_mt_smith_lepore_variation",
+   "name": "Smith-Lepore Variation",
+   "nccs": null,
+   "pitches": 3,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "Buck Mt.",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "wy_buck_mt_the_buck_sanction",
+   "name": "The Buck Sanction",
+   "nccs": null,
+   "pitches": 7,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "Cathedral Buttress",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "wy_cathedral_buttress_the_widowmaker",
+   "name": "The Widowmaker",
+   "nccs": null,
+   "pitches": 6,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "Disappointment Peak",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "wy_disappointment_peak_almost_overhanging",
+   "name": "Almost Overhanging",
+   "nccs": null,
+   "pitches": 7,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "Eocene",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "wy_eocene_eohippus",
+   "name": "Eohippus",
+   "nccs": null,
+   "pitches": 4,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "Gannett Peak",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "wy_gannett_peak_northeast_ridge",
+   "name": "Northeast Ridge",
+   "nccs": null,
+   "pitches": null,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "Grand Teton",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "wy_grand_teton_flipping_tokens_to_hoboken",
+   "name": "Flipping Tokens to Hoboken",
+   "nccs": null,
+   "pitches": 2,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "Grand Teton",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "wy_grand_teton_petzoldt_ridge",
+   "name": "Petzoldt Ridge",
+   "nccs": null,
+   "pitches": 6,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "Grand Teton",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "wy_grand_teton_the_rainbow_bridge",
+   "name": "The Rainbow Bridge",
+   "nccs": null,
+   "pitches": 5,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "Grand Teton",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "wy_grand_teton_trust_but_verify",
+   "name": "Trust But Verify",
+   "nccs": null,
+   "pitches": 3,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "Grand Teton",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "wy_grand_teton_wish_you_were_here",
+   "name": "Wish You Were Here",
+   "nccs": null,
+   "pitches": 3,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "Grand Teton",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "wy_grand_teton_wooden_ships",
+   "name": "Wooden Ships",
+   "nccs": null,
+   "pitches": 4,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "Index Peak",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "wy_index_peak_west_face",
+   "name": "West Face",
+   "nccs": null,
+   "pitches": 6,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "Index",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "wy_index_pika_hunter",
+   "name": "Pika Hunter",
+   "nccs": null,
+   "pitches": 7,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "Medicine Bow Peak Area",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "wy_medicine_bow_peak_area_diamond_central_diamond_express",
+   "name": "Diamond Central / Diamond Express",
+   "nccs": null,
+   "pitches": 5,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "Medicine Bow Peak Area",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "wy_medicine_bow_peak_area_dr_kervorkian",
+   "name": "Dr. Kervorkian",
+   "nccs": null,
+   "pitches": 5,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "Medicine Bow Peak Area",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "wy_medicine_bow_peak_area_midnight_cowboy",
+   "name": "Midnight Cowboy",
+   "nccs": null,
+   "pitches": 5,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "Monolith Cirque",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "wy_monolith_cirque_big_jobbin",
+   "name": "Big Jobbin",
+   "nccs": null,
+   "pitches": 8,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "Monolith Cirque",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "wy_monolith_cirque_monolith_north_face_gran_route",
+   "name": "Monolith, North Face, Gran Route",
+   "nccs": null,
+   "pitches": 14,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "South side of Death Canyon",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "wy_south_side_of_death_canyon_predator",
+   "name": "Predator",
+   "nccs": null,
+   "pitches": 7,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "Stuart Draw",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "wy_stuart_draw_peaches",
+   "name": "Peaches",
+   "nccs": null,
+   "pitches": 4,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "Symmetry Spire",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "wy_symmetry_spire_reticent_slabs",
+   "name": "Reticent Slabs",
+   "nccs": null,
+   "pitches": null,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "Table Mountain",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "wy_table_mountain_heartbreak_ridge",
+   "name": "Heartbreak Ridge",
+   "nccs": null,
+   "pitches": 8,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "Taminah Arete",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "wy_taminah_arete_sunrise_ridge",
+   "name": "Sunrise Ridge",
+   "nccs": null,
+   "pitches": 3,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "Mouth, The",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "wy_the_mouth_of_the_clark_s_fork_high_plains_hoedown",
+   "name": "High Plains Hoedown",
+   "nccs": null,
+   "pitches": 12,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "Warrior 1",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "wy_warrior_1_northeast_face_r_of_warrior_i",
+   "name": "Northeast Face R of Warrior I",
+   "nccs": null,
+   "pitches": 7,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "Caribou Mountain",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "yt_caribou_mountain_gwaihir",
+   "name": "Gwaihir",
+   "nccs": null,
+   "pitches": 1,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  },
+  {
+   "area": "Mt Kelsall area",
+   "area_type": "crag",
+   "high_point_ft": null,
+   "id": "yt_mt_kelsall_area_unnamed_peak_honeymoon_arete",
+   "name": "Unnamed peak - Honeymoon Arete",
+   "nccs": null,
+   "pitches": 4,
+   "signals": [
+    "descent_mentions_alpine"
+   ]
+  }
+ ]
+}

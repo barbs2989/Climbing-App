@@ -235,7 +235,7 @@ export function renderProfile(climber) {
     return renderToStaticMarkup(
       React.createElement(QueryClientProvider, { client: qc },
         React.createElement(FullProfile, {
-          climber, onClose: noop, onResume: noop, catchCredits: [], myCrews: [],
+          climber, onClose: noop, onResume: noop, myCrews: [],
           myFriendIds: [], vouched: false, mySpeedFtHr: 0, routeById: () => null,
         })));
   } finally { ReactDOM.createPortal = orig; if (!hadDoc) delete globalThis.document; }
@@ -883,8 +883,10 @@ async function runFilters() {
   else fail("the applied-filter chip goes through routeLengthLabel too");
   if (!/"20[01]\s*[–-]\s*600 ft"/.test(mask)) ok("no hand-copied length literal survives anywhere");
   else fail("no hand-copied length literal survives anywhere");
-  if (/"Within "\+uDistMi\(\s*50\s*\)/.test(mask)) ok("the distance chip calls uDistMi rather than naming a unit");
-  else fail("the distance chip calls uDistMi rather than naming a unit");
+  // The guide directory's "Within 50" chip was the uDistMi call this used to find; it went with the
+  // guide feature (2026-11-14). What it protected still holds: no chip spells a unit out by hand.
+  if (!/"Within \d+\s*(mi|km)\b/.test(mask)) ok("no distance chip names a unit by hand");
+  else fail("no distance chip names a unit by hand");
   if (!/aria-label="[^"]*\bin miles\b/.test(mask)) ok("no aria-label still hardcodes miles");
   else fail("no aria-label still hardcodes miles");
   // 4, not 5: Partners' By Area "Near me" radius slider was REMOVED (a third distance control that

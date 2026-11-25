@@ -8,7 +8,7 @@ import { EMPTY_ARR } from "../../lib/emptyArr.js";
 import { declinationDeg } from "../../lib/declination";
 import CardHead from "./CardHead.tsx";
 import LoadingRows from "./LoadingRows.tsx";
-import { BTN } from "../../lib/buttonStyles.js";
+import { BTN, SOLID_LEDGE } from "../../lib/buttonStyles.js";
 import { askConfirm } from "../../lib/ConfirmSheet.jsx";
 
 /** One clustered spot climbers checked in at (route_base_spots): never who, never when. */
@@ -160,14 +160,14 @@ export default function BaseCheckinPanel({route,who,spots,q}: BaseCheckinPanelPr
         <button onClick={function(){stopGuide();setGuide(null);stopCompass();setCompass(null);}} style={{marginTop:7,padding:0,background:"none",border:"none",color:C.blue,fontSize:12.5,fontWeight:600,cursor:"pointer"}}>Stop</button>
       </div>}
     </div>:null}
-    {st.phase==="done"?<div role="status" style={{fontSize:12.5,color:C.green,fontWeight:600,marginBottom:8}}>{st.late?"✓ Your saved check-in was sent and accepted — thanks for marking the start.":"✓ You’re checked in at the base — thanks for marking the start for the next party."}</div>
+    {st.phase==="done"?<div role="status" style={{fontSize:12.5,color:C.green,fontWeight:600,marginBottom:8}}>{st.late?"✓ Your saved check-in was sent and accepted — thanks for marking the start.":"✓ You’re checked in at the base."}</div>
     :st.phase==="refused"?<div role="status" style={{fontSize:12.5,color:C.amber,lineHeight:1.45,marginBottom:8}}>{baseCheckinMessage(st.res,_baseDist)}</div>
     :st.phase==="queued"?<div role="status" style={{fontSize:12.5,color:C.textSub,lineHeight:1.45,marginBottom:8}}>No signal here — your GPS reading is saved on this phone and will be sent, and checked, the next time you open this climb with a connection.</div>
     :st.phase==="error"?<div role="status" style={{fontSize:12.5,color:C.red,marginBottom:8}}>{st.withdraw?"Couldn’t remove your check-in — try again.":"Couldn’t check you in — try again."}</div>
     :st.phase==="locating"?<div role="status" style={{fontSize:12.5,color:C.textSub,marginBottom:8}}>{"Getting a steady GPS fix — stand still"+(prog?" ("+prog.good+" good reading"+(prog.good!==1?"s":"")+")":"")+"…"}</div>
     :st.phase==="sending"?<div role="status" style={{fontSize:12.5,color:C.textSub,marginBottom:8}}>Checking your position against this climb…</div>:null}
     {who?<div style={{display:"flex",gap:12,flexWrap:"wrap"}}>
-      <button onClick={go} disabled={busy} aria-busy={busy?"true":undefined} style={{padding:"8px 12px",background:busy?C.border:C.blueSolid,color:C.onSolid,border:"none",borderRadius:9,fontSize:12.5,fontWeight:700,cursor:busy?"default":"pointer"}}>{mineAny?"I’m at the base — check in again":"I’m at the base — check in"}</button>
+      <button onClick={go} disabled={busy} aria-busy={busy?"true":undefined} style={{padding:"8px 12px",background:busy?C.border:C.actionSolid,boxShadow:(busy)?"none":SOLID_LEDGE(C),color:C.onSolid,border:"none",borderRadius:9,fontSize:12.5,fontWeight:700,cursor:busy?"default":"pointer"}}>{mineAny?"I’m at the base — check in again":"I’m at the base — check in"}</button>
       {mineAny?<button onClick={function(){askConfirm({title:"Remove your check-in?",body:"Checking in again means being back at the base of the climb.",confirmLabel:"Remove check-in"}).then(function(ok){if(ok)withdraw();});}} disabled={busy} style={{padding:"8px 12px",background:C.surface,color:C.textSub,border:`1px solid ${C.border}`,borderRadius:9,fontSize:12.5,fontWeight:600,cursor:busy?"default":"pointer"}}>Remove my check-in</button>:null}
     </div>:<div style={{fontSize:12,color:C.textMuted}}>Sign in to check in when you’re standing at the start of the climb.</div>}
     {who?<div style={{fontSize:11.5,color:C.textMuted,lineHeight:1.45,marginTop:8}}>Uses your phone’s GPS, and only works at the start of the climb: your position is checked against where this climb is on file. Other climbers see the spot and how many climbers stood there — never who, or when.</div>:null}

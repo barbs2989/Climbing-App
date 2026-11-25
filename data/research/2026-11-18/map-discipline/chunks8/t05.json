@@ -1,0 +1,814 @@
+[
+ {
+  "id": "ca_joe_devel_peak_standard_route",
+  "name": "Standard route",
+  "peakName": "Joe Devel Peak",
+  "state": "California",
+  "discipline": "scrambling",
+  "status": "stuck",
+  "peak": {
+   "id": "ca_joe_devel_peak",
+   "name": "Joe Devel Peak",
+   "lat": 36.5153,
+   "lng": -118.2967,
+   "elevation_ft": 13327,
+   "region": null,
+   "path": "usa.california.ca_high_sierra.ca_14_whitney_surrounding_peaks.ca_joe_devel_peak"
+  },
+  "text": {
+   "approach": null,
+   "approach_logistics": null,
+   "road": null,
+   "overview": null,
+   "description": null,
+   "descent": null
+  },
+  "siblingTrailheads": [],
+  "officialCandidates": [
+   {
+    "src": "USFS",
+    "name": "Whitney Portal Trailhead",
+    "lat": 36.586905,
+    "lng": -118.240112,
+    "km": 9.4
+   },
+   {
+    "src": "USFS",
+    "name": "MEYSAN LAKE TH",
+    "lat": 36.589789,
+    "lng": -118.230163,
+    "km": 10.2
+   },
+   {
+    "src": "USFS",
+    "name": "TUTTLE CREEK TH",
+    "lat": 36.553705,
+    "lng": -118.184212,
+    "km": 10.9
+   },
+   {
+    "src": "USFS",
+    "name": "Cottonwood Lakes Trailhead",
+    "lat": 36.453362,
+    "lng": -118.169987,
+    "km": 13.3
+   },
+   {
+    "src": "USFS",
+    "name": "Whitney Portal NRT Trailhead",
+    "lat": 36.597405,
+    "lng": -118.186412,
+    "km": 13.4
+   },
+   {
+    "src": "USFS",
+    "name": "Cottonwood Pass Trailhead",
+    "lat": 36.448305,
+    "lng": -118.170612,
+    "km": 13.5
+   },
+   {
+    "src": "USFS",
+    "name": "Shepherd Pass Th",
+    "lat": 36.726905,
+    "lng": -118.278912,
+    "km": 23.6
+   }
+  ],
+  "lastAnswer": "Downgraded from found. Opened climber.org 2012/1806: trailhead Meysan Lake (Whitney Portal), camp Soldier Lake, day hike down to Rock Creek then south slopes. Opened climber.org 2003/1067: New Army (Cottonwood Lakes) TH, Soldier Lake. Starts in use: Cottonwood Lakes TH (USFS 36.453362,-118.169987), Cottonwood Pass TH (36.448305,-118.170612), Whitney Portal/Meysan. No page ties the route to one. climber.org SierraPeaks 03/07 gives no approach."
+ },
+ {
+  "id": "wa_little_annapurna_boola_boola_buttress",
+  "name": "Boola Boola Buttress",
+  "peakName": "Little Annapurna",
+  "state": "Washington",
+  "discipline": "alpine",
+  "status": "stuck",
+  "peak": {
+   "id": "wa_little_annapurna",
+   "name": "Little Annapurna",
+   "lat": 47.468226,
+   "lng": -120.814335,
+   "elevation_ft": 8485,
+   "region": "Washington",
+   "path": "usa.washington.wa_centraleast.wa_stuart_range.wa_little_annapurna"
+  },
+  "text": {
+   "approach": null,
+   "approach_logistics": null,
+   "road": null,
+   "overview": null,
+   "description": null,
+   "descent": null
+  },
+  "siblingTrailheads": [
+   {
+    "route": "wa_little_annapurna_south_slopes",
+    "name": "Stuart Lake Trailhead"
+   }
+  ],
+  "officialCandidates": [
+   {
+    "src": "USFS",
+    "name": "Stuart Lake Trailhead",
+    "lat": 47.527806,
+    "lng": -120.820515,
+    "km": 6.6
+   },
+   {
+    "src": "USFS",
+    "name": "Eightmile Trailhead",
+    "lat": 47.536016,
+    "lng": -120.814025,
+    "km": 7.5
+   },
+   {
+    "src": "USFS",
+    "name": "Beverly Bean Trailhead",
+    "lat": 47.389302,
+    "lng": -120.872266,
+    "km": 9.8
+   },
+   {
+    "src": "USFS",
+    "name": "Esmeralda Trailhead",
+    "lat": 47.436706,
+    "lng": -120.936915,
+    "km": 9.9
+   },
+   {
+    "src": "USFS",
+    "name": "Iron Peak Trailhead",
+    "lat": 47.421583,
+    "lng": -120.937341,
+    "km": 10.6
+   },
+   {
+    "src": "USFS",
+    "name": "Ingalls Creek Trailhead",
+    "lat": 47.462906,
+    "lng": -120.673025,
+    "km": 10.6
+   },
+   {
+    "src": "USFS",
+    "name": "Miller-bear Trailhead",
+    "lat": 47.368606,
+    "lng": -120.784615,
+    "km": 11.3
+   },
+   {
+    "src": "USFS",
+    "name": "Stafford Creek Trailhead",
+    "lat": 47.365806,
+    "lng": -120.803615,
+    "km": 11.4
+   }
+  ],
+  "lastAnswer": "nothing new. Two searches, no page names a 'Boola Boola' buttress. Opened lemkeclimbs.com South Face 5.5 page (no trailhead stated, no mention of this route). Search summaries show Little Annapurna reached from Stuart Lake TH (Aasgard Pass), Ingalls Creek/Crystal Creek, or Snow Creek, so the peak has several starts and nothing ties this route to one."
+ },
+ {
+  "id": "wa_little_big_chief_mountain_southwest_face",
+  "name": "Southwest Face",
+  "peakName": "Little Big Chief Mountain",
+  "state": "Washington",
+  "discipline": "alpine",
+  "status": "stuck",
+  "peak": {
+   "id": "wa_little_big_chief_mountain",
+   "name": "Little Big Chief Mountain",
+   "lat": 47.5296806,
+   "lng": -121.2566659,
+   "elevation_ft": 7225,
+   "region": "Washington",
+   "path": "usa.washington.wa_centralwest.wa_western_alpine_lakes.wa_little_big_chief_mountain"
+  },
+  "text": {
+   "approach": null,
+   "approach_logistics": null,
+   "road": null,
+   "overview": null,
+   "description": null,
+   "descent": null
+  },
+  "siblingTrailheads": [
+   {
+    "route": "wa_little_big_chief_mountain_northeast_face",
+    "name": "Dingford Creek (Dutch Miller Gap) Trailhead"
+   }
+  ],
+  "officialCandidates": [
+   {
+    "src": "USFS",
+    "name": "Pete Lake Trailhead",
+    "lat": 47.434106,
+    "lng": -121.186915,
+    "km": 11.8
+   },
+   {
+    "src": "USFS",
+    "name": "Tucquala Meadows Trailhead",
+    "lat": 47.543506,
+    "lng": -121.096615,
+    "km": 12.1
+   },
+   {
+    "src": "USFS",
+    "name": "West Fork Foss Lakes Trailhead",
+    "lat": 47.635006,
+    "lng": -121.303348,
+    "km": 12.2
+   },
+   {
+    "src": "USFS",
+    "name": "Dorothy Lake Trailhead",
+    "lat": 47.608617,
+    "lng": -121.384459,
+    "km": 13
+   },
+   {
+    "src": "USFS",
+    "name": "Paddy-Go-Easy Trailhead",
+    "lat": 47.532873,
+    "lng": -121.082797,
+    "km": 13.1
+   },
+   {
+    "src": "USFS",
+    "name": "Rachel Lake Trailhead",
+    "lat": 47.400706,
+    "lng": -121.283915,
+    "km": 14.5
+   },
+   {
+    "src": "USFS",
+    "name": "Dingford Creek Trailhead",
+    "lat": 47.517325,
+    "lng": -121.4543,
+    "km": 14.9
+   },
+   {
+    "src": "USFS",
+    "name": "Scatter Creek Trailhead",
+    "lat": 47.507206,
+    "lng": -121.059815,
+    "km": 15
+   }
+  ],
+  "lastAnswer": "nothing new. No page about a SW face found in two searches; the one Mountain Project 'Southwest Face' hit is Early Morning Spire (opened), not this peak. Peak has several starts in use: Dingford Creek (NW face, Cascade Climbers 2023 summary), Waptus Lake / Cooper Lake side (north ridge, SummitPost summary), Dutch Miller Gap (sibling). Not tied to one."
+ },
+ {
+  "id": "wa_lundin_peak_northwest_face",
+  "name": "Northwest Face",
+  "peakName": "Lundin Peak",
+  "state": "Washington",
+  "discipline": "alpine",
+  "status": "stuck",
+  "peak": {
+   "id": "wa_lundin_peak",
+   "name": "Lundin Peak",
+   "lat": 47.4628774,
+   "lng": -121.400379,
+   "elevation_ft": 6057,
+   "region": "Washington",
+   "path": "usa.washington.wa_centralwest.wa_snoqualmie_pass_area.wa_lundin_peak"
+  },
+  "text": {
+   "approach": null,
+   "approach_logistics": null,
+   "road": null,
+   "overview": null,
+   "description": null,
+   "descent": null
+  },
+  "siblingTrailheads": [
+   {
+    "route": "wa_lundin_peak_east_ridge",
+    "name": "PCT North (Snoqualmie Pass) Trailhead"
+   }
+  ],
+  "officialCandidates": [
+   {
+    "src": "USFS",
+    "name": "Snow Lake Trailhead",
+    "lat": 47.445656,
+    "lng": -121.423665,
+    "km": 2.6
+   },
+   {
+    "src": "USFS",
+    "name": "Pacific Crest Trail - Snoqualmie North T",
+    "lat": 47.428012,
+    "lng": -121.413484,
+    "km": 4
+   },
+   {
+    "src": "USFS",
+    "name": "Pacific Crest Trail/Stevens Pass Trailhe",
+    "lat": 47.42841,
+    "lng": -121.415498,
+    "km": 4
+   },
+   {
+    "src": "USFS",
+    "name": "Pants - Snoqualmie South Trailhead",
+    "lat": 47.427228,
+    "lng": -121.420293,
+    "km": 4.2
+   },
+   {
+    "src": "USFS",
+    "name": "Denny Creek Trailhead",
+    "lat": 47.415956,
+    "lng": -121.441168,
+    "km": 6.1
+   },
+   {
+    "src": "USFS",
+    "name": "Franklin Falls Trailhead",
+    "lat": 47.413339,
+    "lng": -121.441404,
+    "km": 6.3
+   },
+   {
+    "src": "USFS",
+    "name": "Kendall Peaks Trailhead",
+    "lat": 47.398249,
+    "lng": -121.394411,
+    "km": 7.2
+   },
+   {
+    "src": "USFS",
+    "name": "Dingford Creek Trailhead",
+    "lat": 47.517325,
+    "lng": -121.4543,
+    "km": 7.3
+   }
+  ],
+  "lastAnswer": "nothing new. Two searches returned only west ridge, south face, east ridge pages (Mountaineers, WTA, yellowleaf summaries; none opened for this face). No page about a northwest face. Commonwealth Basin / Alpental or PCT Snoqualmie North are the usual starts for the peak but nothing ties this face to one."
+ },
+ {
+  "id": "ca_marion_peak_northeast_ridge",
+  "name": "Northeast Ridge",
+  "peakName": "Marion Peak",
+  "state": "California",
+  "discipline": "scrambling",
+  "status": "stuck",
+  "peak": {
+   "id": "ca_marion_peak",
+   "name": "Marion Peak",
+   "lat": 36.9567,
+   "lng": -118.5223,
+   "elevation_ft": 12719,
+   "region": null,
+   "path": "usa.california.ca_high_sierra.ca_10_taboose_sawmill_baxter_passes.ca_marion_peak"
+  },
+  "text": {
+   "approach": null,
+   "approach_logistics": null,
+   "road": null,
+   "overview": null,
+   "description": "Reach Cartridge Pass or Marion Lake, then follow the northeast ridge on class 2 terrain.",
+   "descent": null
+  },
+  "siblingTrailheads": [],
+  "officialCandidates": [
+   {
+    "src": "USFS",
+    "name": "RED LAKE TH",
+    "lat": 37.035704,
+    "lng": -118.35896,
+    "km": 17
+   },
+   {
+    "src": "USFS",
+    "name": "TABOOSE PASS TH",
+    "lat": 37.009505,
+    "lng": -118.327312,
+    "km": 18.3
+   },
+   {
+    "src": "USFS",
+    "name": "Cedar Grove",
+    "lat": 36.796368,
+    "lng": -118.58291,
+    "km": 18.6
+   },
+   {
+    "src": "NPS",
+    "name": "Copper Creek",
+    "lat": 36.796495,
+    "lng": -118.583551,
+    "km": 18.6
+   },
+   {
+    "src": "NPS",
+    "name": "Bubbs Creek, Woods Creek, and Rae Lakes  ",
+    "lat": 36.794924,
+    "lng": -118.582577,
+    "km": 18.8
+   },
+   {
+    "src": "NPS",
+    "name": "River Trail",
+    "lat": 36.79427,
+    "lng": -118.584209,
+    "km": 18.9
+   },
+   {
+    "src": "NPS",
+    "name": "Zumwalt Meadow/River Trail",
+    "lat": 36.793648,
+    "lng": -118.59852,
+    "km": 19.4
+   },
+   {
+    "src": "USFS",
+    "name": "BIG PINE CREEK SO FORK TH",
+    "lat": 37.124805,
+    "lng": -118.438913,
+    "km": 20.1
+   }
+  ],
+  "lastAnswer": "Opened snwburd marion_n1_1: started Taboose Pass TH, over Taboose, South Fork Kings, old Cartridge Pass trail, Cirque Crest (page does not say NE ridge). Opened climber.org 2001/789: Taboose Pass, Cartridge Pass, Lake Basin, Marion Lake (no ridge named, no TH named). Other reports (search results only) come from Big Pine via Marion Lake and Road's End; route text allows Cartridge Pass or Marion Lake. Weak lead: Taboose Pass TH (USFS TABOOSE PASS TH 37.009505,-118.327312), not tied to this route by a page."
+ },
+ {
+  "id": "wa_middle_peak_north_face",
+  "name": "North Face",
+  "peakName": "Middle Peak",
+  "state": "Washington",
+  "discipline": "alpine",
+  "status": "stuck",
+  "peak": {
+   "id": "wa_middle_peak",
+   "name": "Middle Peak",
+   "lat": 48.30639,
+   "lng": -120.99403,
+   "elevation_ft": 8185,
+   "region": "Washington",
+   "path": "usa.washington.wa_northwest.wa_glacier_peak_region.wa_glacier_peak_wilderness.wa_gunsight_range_the.wa_middle_peak"
+  },
+  "text": {
+   "approach": null,
+   "approach_logistics": null,
+   "road": null,
+   "overview": null,
+   "description": null,
+   "descent": null
+  },
+  "siblingTrailheads": [
+   {
+    "route": "wa_east_face",
+    "name": "Downey Creek Trailhead"
+   }
+  ],
+  "officialCandidates": [
+   {
+    "src": "USFS",
+    "name": "Suiattle Trailhead",
+    "lat": 48.248106,
+    "lng": -121.192115,
+    "km": 16
+   },
+   {
+    "src": "USFS",
+    "name": "Downey Creek Trailhead",
+    "lat": 48.259506,
+    "lng": -121.222915,
+    "km": 17.7
+   },
+   {
+    "src": "USFS",
+    "name": "Green Mountain Trailhead",
+    "lat": 48.268149,
+    "lng": -121.236861,
+    "km": 18.5
+   },
+   {
+    "src": "NPS",
+    "name": "Imus Creek Loop Trail Trailhead",
+    "lat": 48.3085,
+    "lng": -120.65601,
+    "km": 25
+   }
+  ],
+  "lastAnswer": "nothing new. Opened Mountain Project Middle Peak area (lists only East Face and Gunrunner; no approach text, no north face), stephabegg.com North Gunsight West Face (started Downey Creek Trailhead via Downey/Bachelor Creeks, ~12.8 mi day 1; says Stehekin side is the alternative; no Middle north face), AAJ Gunrunner (approach started at Blizzard-Gunsight Col, two-day approach, no trailhead named). Two starts in use for the range (Downey Creek from the west, Stehekin from the east); nothing ties this face to either."
+ },
+ {
+  "id": "wa_middle_peak_traverse_route",
+  "name": "Traverse Route",
+  "peakName": "Middle Peak",
+  "state": "Washington",
+  "discipline": "alpine",
+  "status": "stuck",
+  "peak": {
+   "id": "wa_middle_peak",
+   "name": "Middle Peak",
+   "lat": 48.30639,
+   "lng": -120.99403,
+   "elevation_ft": 8185,
+   "region": "Washington",
+   "path": "usa.washington.wa_northwest.wa_glacier_peak_region.wa_glacier_peak_wilderness.wa_gunsight_range_the.wa_middle_peak"
+  },
+  "text": {
+   "approach": null,
+   "approach_logistics": null,
+   "road": null,
+   "overview": null,
+   "description": null,
+   "descent": null
+  },
+  "siblingTrailheads": [
+   {
+    "route": "wa_east_face",
+    "name": "Downey Creek Trailhead"
+   }
+  ],
+  "officialCandidates": [
+   {
+    "src": "USFS",
+    "name": "Suiattle Trailhead",
+    "lat": 48.248106,
+    "lng": -121.192115,
+    "km": 16
+   },
+   {
+    "src": "USFS",
+    "name": "Downey Creek Trailhead",
+    "lat": 48.259506,
+    "lng": -121.222915,
+    "km": 17.7
+   },
+   {
+    "src": "USFS",
+    "name": "Green Mountain Trailhead",
+    "lat": 48.268149,
+    "lng": -121.236861,
+    "km": 18.5
+   },
+   {
+    "src": "NPS",
+    "name": "Imus Creek Loop Trail Trailhead",
+    "lat": 48.3085,
+    "lng": -120.65601,
+    "km": 25
+   }
+  ],
+  "lastAnswer": "nothing new. A traverse has no single start; no opened page names this 'Traverse Route'. AAJ Gunrunner report (likely the nearest traverse, not shown to be the same route) names no trailhead, only a two-day approach to Blizzard-Gunsight Col and Chickamin Glacier. See north face note."
+ },
+ {
+  "id": "ca_midway_mountain_west_slope",
+  "name": "West Slope",
+  "peakName": "Midway Mountain",
+  "state": "California",
+  "discipline": "scrambling",
+  "status": "stuck",
+  "peak": {
+   "id": "ca_midway_mountain",
+   "name": "Midway Mountain",
+   "lat": 36.6432,
+   "lng": -118.4836,
+   "elevation_ft": 13665,
+   "region": null,
+   "path": "usa.california.ca_high_sierra.ca_11_great_western_kings_kern_divide.ca_midway_mountain"
+  },
+  "text": {
+   "approach": null,
+   "approach_logistics": null,
+   "road": null,
+   "overview": null,
+   "description": "A multi-day approach reaches the Colby Lake area in Cloud Canyon. From there a class 2 slope leads up to the summit.",
+   "descent": null
+  },
+  "siblingTrailheads": [],
+  "officialCandidates": [
+   {
+    "src": "USFS",
+    "name": "SUGARLOAF HILL STAGING",
+    "lat": 36.728002,
+    "lng": -118.663445,
+    "km": 18.6
+   },
+   {
+    "src": "NPS",
+    "name": "River Trail",
+    "lat": 36.79427,
+    "lng": -118.584209,
+    "km": 19
+   },
+   {
+    "src": "NPS",
+    "name": "Bubbs Creek, Woods Creek, and Rae Lakes  ",
+    "lat": 36.794924,
+    "lng": -118.582577,
+    "km": 19
+   },
+   {
+    "src": "USFS",
+    "name": "Cedar Grove",
+    "lat": 36.796368,
+    "lng": -118.58291,
+    "km": 19.2
+   },
+   {
+    "src": "USFS",
+    "name": "Onion Valley Campground",
+    "lat": 36.772538,
+    "lng": -118.341244,
+    "km": 19.2
+   },
+   {
+    "src": "NPS",
+    "name": "Copper Creek",
+    "lat": 36.796495,
+    "lng": -118.583551,
+    "km": 19.2
+   },
+   {
+    "src": "NPS",
+    "name": "Zumwalt Meadow/River Trail",
+    "lat": 36.793648,
+    "lng": -118.59852,
+    "km": 19.6
+   },
+   {
+    "src": "USFS",
+    "name": "Shepherd Pass Th",
+    "lat": 36.726905,
+    "lng": -118.278912,
+    "km": 20.5
+   }
+  ],
+  "lastAnswer": "Opened climber.org 2005/1428: Westside trailhead at Sunset Meadow near Grant Grove, Cloud Canyon trail to Colby Lake, ramps to summit. Opened climber.org 2010/1764: High Sierra Trail, Crescent Meadow, Elizabeth Pass, Cloud Canyon, via Milestone then east ridge. Search summaries give Road's End via Bubbs Creek/Sphinx Creek/Avalanche Pass. Three starts, none tied to this route; Sunset Meadow and Crescent Meadow not in officialCandidates."
+ },
+ {
+  "id": "ca_milestone_mountain_standard_route",
+  "name": "Standard route",
+  "peakName": "Milestone Mountain",
+  "state": "California",
+  "discipline": "scrambling",
+  "status": "stuck",
+  "peak": {
+   "id": "ca_milestone_mountain",
+   "name": "Milestone Mountain",
+   "lat": 36.6345,
+   "lng": -118.4844,
+   "elevation_ft": 13638,
+   "region": null,
+   "path": "usa.california.ca_high_sierra.ca_11_great_western_kings_kern_divide.ca_milestone_mountain"
+  },
+  "text": {
+   "approach": null,
+   "approach_logistics": null,
+   "road": null,
+   "overview": null,
+   "description": null,
+   "descent": null
+  },
+  "siblingTrailheads": [],
+  "officialCandidates": [
+   {
+    "src": "USFS",
+    "name": "SUGARLOAF HILL STAGING",
+    "lat": 36.728002,
+    "lng": -118.663445,
+    "km": 19.1
+   },
+   {
+    "src": "NPS",
+    "name": "River Trail",
+    "lat": 36.79427,
+    "lng": -118.584209,
+    "km": 19.9
+   },
+   {
+    "src": "NPS",
+    "name": "Bubbs Creek, Woods Creek, and Rae Lakes  ",
+    "lat": 36.794924,
+    "lng": -118.582577,
+    "km": 19.9
+   },
+   {
+    "src": "USFS",
+    "name": "Cedar Grove",
+    "lat": 36.796368,
+    "lng": -118.58291,
+    "km": 20
+   },
+   {
+    "src": "USFS",
+    "name": "Onion Valley Campground",
+    "lat": 36.772538,
+    "lng": -118.341244,
+    "km": 20
+   },
+   {
+    "src": "NPS",
+    "name": "Copper Creek",
+    "lat": 36.796495,
+    "lng": -118.583551,
+    "km": 20.1
+   },
+   {
+    "src": "NPS",
+    "name": "Zumwalt Meadow/River Trail",
+    "lat": 36.793648,
+    "lng": -118.59852,
+    "km": 20.4
+   },
+   {
+    "src": "USFS",
+    "name": "Shepherd Pass Th",
+    "lat": 36.726905,
+    "lng": -118.278912,
+    "km": 21
+   }
+  ],
+  "lastAnswer": "Opened: snwburd milestone_1 (Shepherd Pass TH, NE Face) and wacziarg 2016-09 (Shepherd Pass TH, east side). Both are Shepherd Pass. But the NW approach from Roads End is documented only in search summaries, and no opened page calls either one the standard. Starts in use: Shepherd Pass TH (USFS 'Shepherd Pass Th' 36.726905,-118.278912) vs Roads End. Nothing tying 'Standard route' to one; stuck. Leaning Shepherd Pass if forced (weak)."
+ },
+ {
+  "id": "ca_moses_mountain_standard_route",
+  "name": "Standard route",
+  "peakName": "Moses Mountain",
+  "state": "California",
+  "discipline": "scrambling",
+  "status": "stuck",
+  "peak": {
+   "id": "ca_moses_mountain",
+   "name": "Moses Mountain",
+   "lat": 36.2785,
+   "lng": -118.6808,
+   "elevation_ft": 9331,
+   "region": null,
+   "path": "usa.california.ca_high_sierra.ca_11_great_western_kings_kern_divide.ca_moses_mountain"
+  },
+  "text": {
+   "approach": null,
+   "approach_logistics": null,
+   "road": null,
+   "overview": null,
+   "description": null,
+   "descent": null
+  },
+  "siblingTrailheads": [],
+  "officialCandidates": [
+   {
+    "src": "NPS",
+    "name": "South Fork-Ladybug",
+    "lat": 36.349909,
+    "lng": -118.763135,
+    "km": 10.8
+   },
+   {
+    "src": "NPS",
+    "name": "South Fork - Garfield Grove",
+    "lat": 36.349861,
+    "lng": -118.764365,
+    "km": 10.9
+   },
+   {
+    "src": "USFS",
+    "name": "Lewis Camp Trailhead",
+    "lat": 36.181305,
+    "lng": -118.515181,
+    "km": 18.4
+   },
+   {
+    "src": "NPS",
+    "name": "Tar Gap",
+    "lat": 36.450721,
+    "lng": -118.614253,
+    "km": 20.1
+   },
+   {
+    "src": "NPS",
+    "name": "Farewell Gap - Franklin Lakes",
+    "lat": 36.44753,
+    "lng": -118.594135,
+    "km": 20.3
+   },
+   {
+    "src": "NPS",
+    "name": "Eagle-Mosquito",
+    "lat": 36.448545,
+    "lng": -118.595366,
+    "km": 20.4
+   },
+   {
+    "src": "NPS",
+    "name": "Atwell/Hockett",
+    "lat": 36.464576,
+    "lng": -118.670521,
+    "km": 20.7
+   },
+   {
+    "src": "NPS",
+    "name": "Paradise Ridge Trail",
+    "lat": 36.464986,
+    "lng": -118.670944,
+    "km": 20.8
+   }
+  ],
+  "lastAnswer": "Opened wacziarg 2025-07 (Tule River trail start, trailhead unnamed), snwburd moses_1 (Shake Camp TH), climber.org 2001/771 (Tule River trail, unnamed). Starts in use: Shake Camp, Hidden Falls (Tule River trail); no page ties 'standard route' to one. Nothing new."
+ }
+]

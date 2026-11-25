@@ -4,6 +4,8 @@
 //   - unused variables         (no-unused-vars / @typescript-eslint/no-unused-vars)
 //   - implicit or explicit any (@typescript-eslint/no-explicit-any; tsc strict owns noImplicitAny)
 //   - hooks                    (react-hooks/rules-of-hooks, react-hooks/exhaustive-deps)
+// plus two bug-shaped rules (no-restricted-syntax): a palette-function style spread uncalled (2026-11-18),
+// and the palette key C.blueSolid, renamed C.actionSolid (2026-11-24).
 // Every rule is an error. The JS app files get exactly these rules; src/ (TypeScript) also gets
 // typescript-eslint's `strict` set. Findings that predate this config are held in
 // eslint-suppressions.json — see scripts/check-lint.mjs for how that baseline only shrinks.
@@ -14,6 +16,12 @@ import react from "eslint-plugin-react";
 import reactHooks from "eslint-plugin-react-hooks";
 import globals from "globals";
 
+// A palette style in lib/buttonStyles.js that is a FUNCTION of C, spread uncalled, adds nothing: CrewCard's
+// "All your float plans" link drew as a grey browser-default button that way (2026-11-18).
+const paletteSpread = ["error", { selector: "SpreadElement > Identifier.argument[name=/^(BTN_PRIMARY|BTN_SECONDARY|BTN_GO|BTN_LINK|INPUT|SOLID_FILL)$/]", message: "This style is a function of the palette: spread NAME(C), not NAME." },
+  // The solid action colour was C.blueSolid until 2026-11-24. A branch cut before the rename can bring the old name
+  // back, and a missing palette key is `undefined`: the button draws with no fill and nothing fails.
+  { selector: "MemberExpression > Identifier.property[name='blueSolid']", message: "C.blueSolid was renamed: use C.actionSolid." }];
 const unused = { args: "after-used", ignoreRestSiblings: true, varsIgnorePattern: "^_", argsIgnorePattern: "^_", caughtErrors: "none" };
 
 export default tseslint.config(
@@ -33,6 +41,7 @@ export default tseslint.config(
       "react/jsx-uses-vars": "error",
       "react-hooks/rules-of-hooks": "error",
       "react-hooks/exhaustive-deps": "error",
+      "no-restricted-syntax": paletteSpread,
     },
   },
   {
@@ -45,6 +54,7 @@ export default tseslint.config(
       "react/jsx-uses-vars": "error",
       "react-hooks/rules-of-hooks": "error",
       "react-hooks/exhaustive-deps": "error",
+      "no-restricted-syntax": paletteSpread,
     },
   },
 );

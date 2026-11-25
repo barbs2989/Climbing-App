@@ -2,6 +2,7 @@
 //
 //   node scripts/manual-test-accounts.mjs create   # make Avery, Blake, Casey and Drew + their data
 //   node scripts/manual-test-accounts.mjs status   # are they still there? (row counts)
+//   node scripts/manual-test-accounts.mjs reset-passwords   # accounts exist but the .local file was lost
 //   node scripts/manual-test-accounts.mjs link you@example.com   # show them in YOUR OWN account too
 //   node scripts/manual-test-accounts.mjs unlink you@example.com # take them back out of it
 //   node scripts/manual-test-accounts.mjs delete   # remove every row this script made, then the accounts
@@ -18,7 +19,7 @@
 //
 // The service key bypasses RLS, so seeding proves nothing about policies -- it only puts each
 // screen in a state worth looking at. Triggers still fire: columns that default to auth.uid() are
-// set explicitly, and belay_catches.filed_by is patched after insert (its trigger stamps NULL).
+// set explicitly.
 
 import { writeFileSync, readFileSync, existsSync, unlinkSync } from "node:fs";
 import { dirname, join } from "node:path";
@@ -96,6 +97,15 @@ async function insert(table, row, key = "id") {
   const filter = Array.isArray(key) ? key.map((k) => `${k}=eq.${encodeURIComponent(got[k])}`).join("&") : `${key}=eq.${encodeURIComponent(got[key])}`;
   made.push({ table, filter });
   return got;
+}
+// A crew's CREATOR is already seated (confirmed) by migration 0408's trigger the moment the crew row
+// lands, so a plain insert of that row fails on crew_members_pkey. Upsert it instead: the trigger's row
+// gets this one's fields (gear claims, invited_by), and it is recorded for `delete` like any insert.
+async function seatCreator(row) {
+  const { status, body } = await rest(`crew_members?on_conflict=crew_id,user_id&select=*`, { method: "POST", headers: { Prefer: "return=representation,resolution=merge-duplicates" }, body: JSON.stringify(row) });
+  if (status >= 300 || !Array.isArray(body) || body.length !== 1) throw new Error(`seat crew creator failed (${status}): ${JSON.stringify(body).slice(0, 300)}`);
+  made.push({ table: "crew_members", filter: `crew_id=eq.${encodeURIComponent(row.crew_id)}&user_id=eq.${encodeURIComponent(row.user_id)}` });
+  return body[0];
 }
 async function patch(table, filter, body) {
   const { status, body: out } = await rest(`${table}?${filter}`, { method: "PATCH", headers: { Prefer: "return=representation" }, body: JSON.stringify(body) });
@@ -199,7 +209,7 @@ async function create() {
       created_by: A.id, route_id: R.coleman, dates: [day(18), day(19)], meet_place: "Heliotrope Ridge Trailhead", meet_time: "05:00", cap: 4,
       float_plan: { vehicle: "Grey Subaru Outback (test)", lot: "Heliotrope Ridge TH", depart: `${day(18)} 05:00`, ret: `${day(19)} 18:00`, contact: "Jordan 555-0100 (test)", notes: "Turnaround 1 pm. TEST DATA." },
     });
-    await insert("crew_members", { crew_id: crew1.id, user_id: A.id, status: "confirmed", invited_by: A.id, gear_claims: ["Rope", "Pickets"] }, ["crew_id", "user_id"]);
+    await seatCreator({ crew_id: crew1.id, user_id: A.id, status: "confirmed", invited_by: A.id, gear_claims: ["Rope", "Pickets"] });
     await insert("crew_members", { crew_id: crew1.id, user_id: B.id, status: "confirmed", invited_by: A.id, gear_claims: ["Stove"] }, ["crew_id", "user_id"]);
     await insert("crew_members", { crew_id: crew1.id, user_id: C.id, status: "pending", invited_by: C.id, note: "Room for one more? I can bring a second rope." }, ["crew_id", "user_id"]);
     await insert("crew_day_acks", { crew_id: crew1.id, user_id: A.id, date: day(18) }, ["crew_id", "user_id", "date"]);
@@ -209,11 +219,11 @@ async function create() {
     await insert("crews_messages", { crew_id: crew1.id, user_id: B.id, body: "Casey asked to join — your call, Avery." });
 
     const crew2 = await insert("crews", { created_by: B.id, route_id: R.stuart, dates: [day(25), day(26)], meet_place: "Stuart Lake Trailhead", meet_time: "04:30", cap: 3 });
-    await insert("crew_members", { crew_id: crew2.id, user_id: B.id, status: "confirmed", invited_by: B.id }, ["crew_id", "user_id"]);
+    await seatCreator({ crew_id: crew2.id, user_id: B.id, status: "confirmed", invited_by: B.id });
     await insert("crew_members", { crew_id: crew2.id, user_id: A.id, status: "invited", invited_by: B.id, note: "Want to lead the upper ridge?" }, ["crew_id", "user_id"]);
 
     const crew3 = await insert("crews", { created_by: A.id, route_id: R.colchuck, dates: ["2026-08-23"], agreed_date: "2026-08-23", dismissed: true, meet_place: "Stuart Lake Trailhead", meet_time: "04:00", cap: 4 });
-    await insert("crew_members", { crew_id: crew3.id, user_id: A.id, status: "confirmed", invited_by: A.id }, ["crew_id", "user_id"]);
+    await seatCreator({ crew_id: crew3.id, user_id: A.id, status: "confirmed", invited_by: A.id });
     await insert("crew_members", { crew_id: crew3.id, user_id: B.id, status: "confirmed", invited_by: A.id }, ["crew_id", "user_id"]);
 
     // ── Groups ──
@@ -255,23 +265,16 @@ async function create() {
     await insert("kudos", { giver: B.id, receiver: A.id, climb_log_id: L.stuart.id, route_name: "North Ridge (Complete)" });
     await insert("kudos", { giver: A.id, receiver: B.id, climb_log_id: L.bPtarmigan.id, route_name: "Ptarmigan Traverse" });
 
-    // ── Belay catches, both directions, filed by the climber who was caught ──
-    const c1 = await insert("belay_catches", { belayer_id: A.id, climber_id: B.id, date_occurred: "2026-08-30", description: R.stuart });
-    await patch("belay_catches", `id=eq.${c1.id}`, { filed_by: B.id });
-    const c2 = await insert("belay_catches", { belayer_id: B.id, climber_id: A.id, date_occurred: "2026-09-14", description: R.coleman });
-    await patch("belay_catches", `id=eq.${c2.id}`, { filed_by: A.id });
-
     // ── Vouches: received (new style + an OLD-style one) and one EMPTY one-tap vouch given, to edit ──
     await insert("vouches", { from_id: B.id, to_id: A.id, reason: JSON.stringify({ route: "Coleman–Deming Glacier", ratings: { safety: 5, communication: 4, reliability: 5, preparation: 4, fitness: 4, teamwork: 5 }, skills: ["glacier", "crevasse", "anchors"], text: "Solid on the glacier and calm when it got windy. (TEST)", wouldClimbAgain: true }) });
     await insert("vouches", { from_id: C.id, to_id: A.id, created_at: "2026-06-01T12:00:00Z", reason: JSON.stringify({ route: "Outer Space", ratings: { safety: 5, punctuality: 3, gear: 4, belay: 5 }, skills: ["leadbelay"], text: "Older-style vouch, from before the categories changed. (TEST)", wouldClimbAgain: true }) });
     await insert("vouches", { from_id: A.id, to_id: B.id, reason: JSON.stringify({ route: "Coleman–Deming Glacier", ratings: {}, skills: [], text: "" }) });
 
-    // ── Logbook: objectives (one shared with Blake), lists, saved search ──
+    // ── Logbook: objectives (one shared with Blake), lists ──
     for (const r of [R.bakerNR, R.ptarmigan, R.dc]) await insert("objectives", { user_id: A.id, route_id: r }, ["user_id", "route_id"]);
     await insert("objectives", { user_id: B.id, route_id: R.ptarmigan }, ["user_id", "route_id"]);
     await insert("user_lists", { user_id: A.id, name: "Cascade glaciers to do", icon: "star", description: "Public test list.", route_ids: [R.bakerNR, R.dc, R.colchuck], shared: true });
     await insert("user_lists", { user_id: A.id, name: "Rock days (private)", icon: "star", description: "Private test list.", route_ids: [R.stuart], shared: false });
-    await insert("saved_searches", { user_id: A.id, name: "Moderate alpine", query: { filters: { gradeMin: "5.6", gradeMax: "5.10", minStars: 3 }, discSel: ["alpine"] } });
 
     // ── Route page: a comment thread and difficulty ratings on Coleman–Deming ──
     const cm = await insert("comments", { target_id: R.coleman, user_id: B.id, text: "Anyone been up since the September storm? (TEST comment)" });
@@ -314,13 +317,6 @@ async function create() {
       const e = await insert("group_events", { group_id: g1.id, host: A.id, title: "Tuesday gym night (TEST)", event_date: d, event_time: "6:30 pm", location: "Vital Bellingham", descr: "Weekly training session.", capacity: 0, repeat: "weekly", series_id: series });
       await insert("group_event_rsvps", { event_id: e.id, user_id: A.id }, ["event_id", "user_id"]);
     }
-
-    // ── Guides: Casey is a verified, listed guide; Avery has an open inquiry; Blake reviewed a trip ──
-    await insert("guide_profiles", { id: C.id, status: "active", title: "Alpine Guide (TEST)", base_location: "Bellingham, WA", specialty: "Glacier & alpine", bio: "TEST guide profile — not a real guide.", cancellation_policy: "Full refund 7+ days out.", lat: 48.7519, lng: -122.4787, day_rate: 450, group_max: 3, response_hrs: 24, regions: ["North Cascades", "Mount Baker"], languages: ["English"], insurance_carrier_name: "Test Mutual", insurance_attested: true, insurance_attested_at: now, permit_attested: true, permit_attested_at: now, waiver_process_attested: true, waiver_process_attested_at: now, independent_contractor_attested: true, independent_contractor_attested_at: now, agreement_signed_name: "Casey Tester", agreement_signed_at: now, submitted_at: now, listed_at: now });
-    await insert("guide_credentials", { guide_id: C.id, kind: "primary_track", cert_track: "AlpineGuide", label: "Alpine Guide (TEST)", issuing_org: "AMGA", cert_number: "TEST-001", status: "verified", verified_at: now, verified_expires_at: new Date(Date.now() + 365 * 86400000).toISOString() });
-    await insert("inquiries", { guide_id: C.id, climber_id: A.id, objective: "Coleman–Deming, first glacier climb (TEST)", requested_dates: "Late June 2027", party_size: 2, message: "Looking for a guided first glacier trip. TEST.", status: "new" });
-    const bq = await insert("inquiries", { guide_id: C.id, climber_id: B.id, objective: "Crevasse rescue refresher (TEST)", requested_dates: "Aug 2026", party_size: 1, message: "TEST.", status: "accepted", guide_responded_at: now });
-    await insert("reviews", { inquiry_id: bq.id, guide_id: C.id, climber_id: B.id, rating: 5, text: "Patient and thorough — the rescue drills finally clicked. (TEST review)", guide_reply: "Thanks Blake! (TEST)", guide_reply_at: now });
 
     // ── Blocked: Avery has blocked Drew (never connected, so the block has nothing to remove) ──
     await insert("blocked_users", { blocker: A.id, blocked: D.id });
@@ -416,13 +412,13 @@ async function link(email) {
     await insert("messages", { sender_id: B.id, recipient_id: O, body: "I've put you in a crew for the North Ridge — open it from Crews. (TEST)", read: false });
     // A crew you are in (Blake's): two proposed days, Blake has picked the first -- pick it too and the crew is Ready.
     const cr = await insert("crews", { created_by: B.id, route_id: R.bakerNR, dates: [day(32), day(33)], meet_place: "Heliotrope Ridge Trailhead", meet_time: "05:00", cap: 4 });
-    await insert("crew_members", { crew_id: cr.id, user_id: B.id, status: "confirmed", invited_by: B.id, gear_claims: ["Rope"] }, ["crew_id", "user_id"]);
+    await seatCreator({ crew_id: cr.id, user_id: B.id, status: "confirmed", invited_by: B.id, gear_claims: ["Rope"] });
     await insert("crew_members", { crew_id: cr.id, user_id: O, status: "confirmed", invited_by: B.id }, ["crew_id", "user_id"]);
     await insert("crew_day_acks", { crew_id: cr.id, user_id: B.id, date: day(32) }, ["crew_id", "user_id", "date"]);
     await insert("crews_messages", { crew_id: cr.id, user_id: B.id, body: "The first day works for me — pick it too and we're set. (TEST)" });
     // A crew invite (Casey's), waiting on your answer.
     const ci = await insert("crews", { created_by: C.id, route_id: R.colchuck, dates: [day(40)], meet_place: "Stuart Lake Trailhead", meet_time: "04:00", cap: 3 });
-    await insert("crew_members", { crew_id: ci.id, user_id: C.id, status: "confirmed", invited_by: C.id }, ["crew_id", "user_id"]);
+    await seatCreator({ crew_id: ci.id, user_id: C.id, status: "confirmed", invited_by: C.id });
     await insert("crew_members", { crew_id: ci.id, user_id: O, status: "invited", invited_by: C.id, note: "Want to come up the Colchuck Glacier? (TEST)" }, ["crew_id", "user_id"]);
     // Groups: a member of Avery's public group, invited to Blake's private one, and to an event.
     const g1 = await one(`groups?created_by=eq.${A.id}&visibility=eq.public&select=id`);
@@ -461,6 +457,28 @@ async function unlink(email) {
   console.log(`Unlinked ${email}: removed ${l.rows.length} rows.`);
 }
 
+// reset-passwords: the accounts exist but manual-test-accounts.local was lost (it lives in whichever
+// checkout ran `create`, and a deleted worktree takes it along). Give ONLY the @climbmatch-manual.invalid
+// accounts new passwords and write a fresh state file. Their data stays; the rows list starts empty, so
+// `delete` falls back to its by-account cleanup (crews/invites they made, then the accounts).
+async function resetPasswords() {
+  if (existsSync(STATE)) throw new Error(`${STATE} already exists — its passwords should still work (check with "status").`);
+  const found = await existingUsers();
+  if (!found.length) throw new Error(`no @${DOMAIN} accounts — run create instead.`);
+  const accounts = [];
+  for (const u of found) {
+    if (!(u.email || "").endsWith("@" + DOMAIN)) continue;
+    const pw = password();
+    const { status } = await auth(`admin/users/${u.id}`, { method: "PUT", body: JSON.stringify({ password: pw }) });
+    if (status >= 300) throw new Error(`could not reset ${u.email} (${status})`);
+    accounts.push({ name: u.user_metadata?.name || u.email, email: u.email, password: pw, id: u.id });
+  }
+  const order = ["avery", "blake", "casey", "drew"];
+  accounts.sort((a, b) => order.indexOf(a.email.split("@")[0]) - order.indexOf(b.email.split("@")[0]));
+  writeFileSync(STATE, JSON.stringify({ note: "Manual-test accounts for ClimbMatch (passwords reset; rows made before the reset are not listed). Remove with: node scripts/manual-test-accounts.mjs delete", created: new Date().toISOString(), accounts, rows: [] }, null, 2) + "\n", { mode: 0o600 });
+  console.log(`Reset ${accounts.length} account password(s): ${accounts.map((a) => a.name).join(", ")}. Sign-in details: ${STATE}`);
+}
+
 async function status() {
   const st = existsSync(STATE) ? JSON.parse(readFileSync(STATE, "utf8")) : null;
   const users = await existingUsers();
@@ -480,7 +498,8 @@ try {
   else if (cmd === "status") await status();
   else if (cmd === "link") await link(process.argv[3]);
   else if (cmd === "unlink") await unlink(process.argv[3]);
-  else { console.log("usage: node scripts/manual-test-accounts.mjs create | status | link <email> | unlink <email> | delete"); process.exitCode = 2; }
+  else if (cmd === "reset-passwords") await resetPasswords();
+  else { console.log("usage: node scripts/manual-test-accounts.mjs create | status | reset-passwords | link <email> | unlink <email> | delete"); process.exitCode = 2; }
 } catch (e) {
   console.error(e.message);
   process.exitCode = 1;

@@ -1,0 +1,770 @@
+[
+ {
+  "id": "ca_milestone_mountain_standard_route",
+  "name": "Standard route",
+  "peakName": "Milestone Mountain",
+  "state": "California",
+  "discipline": "scrambling",
+  "status": "nopage",
+  "peak": {
+   "id": "ca_milestone_mountain",
+   "name": "Milestone Mountain",
+   "lat": 36.6345,
+   "lng": -118.4844,
+   "elevation_ft": 13638,
+   "region": null,
+   "path": "usa.california.ca_high_sierra.ca_11_great_western_kings_kern_divide.ca_milestone_mountain"
+  },
+  "text": {
+   "approach": null,
+   "approach_logistics": null,
+   "road": null,
+   "overview": null,
+   "description": null,
+   "descent": null
+  },
+  "siblingTrailheads": [],
+  "officialCandidates": [
+   {
+    "src": "USFS",
+    "name": "SUGARLOAF HILL STAGING",
+    "lat": 36.728002,
+    "lng": -118.663445,
+    "km": 19.1
+   },
+   {
+    "src": "NPS",
+    "name": "River Trail",
+    "lat": 36.79427,
+    "lng": -118.584209,
+    "km": 19.9
+   },
+   {
+    "src": "NPS",
+    "name": "Bubbs Creek, Woods Creek, and Rae Lakes  ",
+    "lat": 36.794924,
+    "lng": -118.582577,
+    "km": 19.9
+   },
+   {
+    "src": "USFS",
+    "name": "Cedar Grove",
+    "lat": 36.796368,
+    "lng": -118.58291,
+    "km": 20
+   },
+   {
+    "src": "USFS",
+    "name": "Onion Valley Campground",
+    "lat": 36.772538,
+    "lng": -118.341244,
+    "km": 20
+   },
+   {
+    "src": "NPS",
+    "name": "Copper Creek",
+    "lat": 36.796495,
+    "lng": -118.583551,
+    "km": 20.1
+   },
+   {
+    "src": "NPS",
+    "name": "Zumwalt Meadow/River Trail",
+    "lat": 36.793648,
+    "lng": -118.59852,
+    "km": 20.4
+   },
+   {
+    "src": "USFS",
+    "name": "Shepherd Pass Th",
+    "lat": 36.726905,
+    "lng": -118.278912,
+    "km": 21
+   }
+  ],
+  "lastAnswer": {
+   "status": "stuck",
+   "trailhead": null,
+   "notes": "Searched; SummitPost 403 (not opened), Burd page 404. Search-summary only: Shepherd Pass (east, East Ridge via Milestone Basin, ~23 mi) vs Road's End/Cloud Canyon (NW Face, ~26 mi). No opened page says which is the standard."
+  }
+ },
+ {
+  "id": "ca_mokelumne_peak_standard_route",
+  "name": "Standard route",
+  "peakName": "Mokelumne Peak",
+  "state": "California",
+  "discipline": "scrambling",
+  "status": "held",
+  "peak": {
+   "id": "ca_mokelumne_peak",
+   "name": "Mokelumne Peak",
+   "lat": 38.5378,
+   "lng": -120.094,
+   "elevation_ft": 9334,
+   "region": null,
+   "path": "usa.california.ca_lake_tahoe.ca_carson_pass_highway_88.ca_mokelumne_wilderness.ca_mokelumne_peak"
+  },
+  "text": {
+   "approach": null,
+   "approach_logistics": null,
+   "road": null,
+   "overview": null,
+   "description": null,
+   "descent": null
+  },
+  "siblingTrailheads": [],
+  "officialCandidates": [
+   {
+    "src": "USFS",
+    "name": "Lake Valley Trailhead",
+    "lat": 38.50904,
+    "lng": -120.016703,
+    "km": 7.4
+   },
+   {
+    "src": "USFS",
+    "name": "Underwood Valley Trailhead",
+    "lat": 38.506928,
+    "lng": -120.01067,
+    "km": 8
+   },
+   {
+    "src": "USFS",
+    "name": "Round Valley Sno Park",
+    "lat": 38.485213,
+    "lng": -120.019384,
+    "km": 8.7
+   },
+   {
+    "src": "USFS",
+    "name": "Lake Alpine Sno Park",
+    "lat": 38.481585,
+    "lng": -120.017063,
+    "km": 9.2
+   },
+   {
+    "src": "USFS",
+    "name": "LAKE ALPINE",
+    "lat": 38.479107,
+    "lng": -120.011293,
+    "km": 9.7
+   },
+   {
+    "src": "USFS",
+    "name": "Corral Hollow Trailhead",
+    "lat": 38.458338,
+    "lng": -120.04168,
+    "km": 9.9
+   },
+   {
+    "src": "USFS",
+    "name": "Woodchuck Basin Trailhead",
+    "lat": 38.494605,
+    "lng": -119.980013,
+    "km": 11
+   },
+   {
+    "src": "USFS",
+    "name": "Allens Camp Trailhead",
+    "lat": 38.635188,
+    "lng": -120.126772,
+    "km": 11.2
+   }
+  ],
+  "lastAnswer": {
+   "status": "found",
+   "trailhead": {
+    "name": "Tanglefoot Trailhead",
+    "identifiedBy": {
+     "kind": "page",
+     "url": "https://climber.org/reports/2010/1760.html",
+     "fact": "2010 report starts at Tanglefoot TH via Lower Bear River Reservoir road; USFS page says Tanglefoot trail skirts the W and N slopes of the peak"
+    },
+    "placements": [
+     {
+      "source": "climber.org (printed coordinate, DMS converted, earlier pass)",
+      "name": "Tanglefoot Trailhead",
+      "lat": 38.52336,
+      "lng": -120.17347,
+      "url": "https://climber.org/reports/2001/793.html"
+     }
+    ]
+   },
+   "notes": "MODERATE: USFS and climber.org confirm Tanglefoot as a start; 'standard' rests on search summaries (SummitPost 403). Alternatives exist (Munson Meadows, Hwy 88 in winter). USFS page prints no coordinate; not in USFS candidate list. OSM by name."
+  }
+ },
+ {
+  "id": "ca_moses_mountain_standard_route",
+  "name": "Standard route",
+  "peakName": "Moses Mountain",
+  "state": "California",
+  "discipline": "scrambling",
+  "status": "nopage",
+  "peak": {
+   "id": "ca_moses_mountain",
+   "name": "Moses Mountain",
+   "lat": 36.2785,
+   "lng": -118.6808,
+   "elevation_ft": 9331,
+   "region": null,
+   "path": "usa.california.ca_high_sierra.ca_11_great_western_kings_kern_divide.ca_moses_mountain"
+  },
+  "text": {
+   "approach": null,
+   "approach_logistics": null,
+   "road": null,
+   "overview": null,
+   "description": null,
+   "descent": null
+  },
+  "siblingTrailheads": [],
+  "officialCandidates": [
+   {
+    "src": "NPS",
+    "name": "South Fork-Ladybug",
+    "lat": 36.349909,
+    "lng": -118.763135,
+    "km": 10.8
+   },
+   {
+    "src": "NPS",
+    "name": "South Fork - Garfield Grove",
+    "lat": 36.349861,
+    "lng": -118.764365,
+    "km": 10.9
+   },
+   {
+    "src": "USFS",
+    "name": "Lewis Camp Trailhead",
+    "lat": 36.181305,
+    "lng": -118.515181,
+    "km": 18.4
+   },
+   {
+    "src": "NPS",
+    "name": "Tar Gap",
+    "lat": 36.450721,
+    "lng": -118.614253,
+    "km": 20.1
+   },
+   {
+    "src": "NPS",
+    "name": "Farewell Gap - Franklin Lakes",
+    "lat": 36.44753,
+    "lng": -118.594135,
+    "km": 20.3
+   },
+   {
+    "src": "NPS",
+    "name": "Eagle-Mosquito",
+    "lat": 36.448545,
+    "lng": -118.595366,
+    "km": 20.4
+   },
+   {
+    "src": "NPS",
+    "name": "Atwell/Hockett",
+    "lat": 36.464576,
+    "lng": -118.670521,
+    "km": 20.7
+   },
+   {
+    "src": "NPS",
+    "name": "Paradise Ridge Trail",
+    "lat": 36.464986,
+    "lng": -118.670944,
+    "km": 20.8
+   }
+  ],
+  "lastAnswer": {
+   "status": "stuck",
+   "trailhead": null,
+   "notes": "climber.org driving page (opened) labels Shake Camp and Hidden Falls together as the 'standard Moses and Maggie approach'; no coordinates printed (GPX only). Two-plus starts, none tied to this route. If forced to pick: Hidden Falls."
+  }
+ },
+ {
+  "id": "ca_mount_baldwin_via_convict_canyon_and_bright_dot_lake",
+  "name": "Via Convict Canyon and Bright Dot Lake",
+  "peakName": "Mount Baldwin",
+  "state": "California",
+  "discipline": "scrambling",
+  "status": "held",
+  "peak": {
+   "id": "ca_mount_baldwin",
+   "name": "Mount Baldwin",
+   "lat": 37.5321,
+   "lng": -118.8514,
+   "elevation_ft": 12615,
+   "region": null,
+   "path": "usa.california.ca_high_sierra.ca_05_convict_lake_mcgee_creek.ca_mount_baldwin"
+  },
+  "text": {
+   "approach": null,
+   "approach_logistics": null,
+   "road": null,
+   "overview": null,
+   "description": "Follow the trail up from Convict Lake to Bright Dot Lake, then a use trail up the steep sand and gravel above it to the summit. About 13 miles round trip with roughly 5,000 ft of gain.",
+   "descent": null
+  },
+  "siblingTrailheads": [],
+  "officialCandidates": [
+   {
+    "src": "USFS",
+    "name": "Mcgee Pass Trailhead",
+    "lat": 37.550978,
+    "lng": -118.802533,
+    "km": 4.8
+   },
+   {
+    "src": "USFS",
+    "name": "Convict Lake Trail",
+    "lat": 37.595125,
+    "lng": -118.852757,
+    "km": 7
+   },
+   {
+    "src": "USFS",
+    "name": "Convict Lake Trailhead",
+    "lat": 37.600105,
+    "lng": -118.853813,
+    "km": 7.6
+   },
+   {
+    "src": "USFS",
+    "name": "Hilton Creek  Trailhead",
+    "lat": 37.563305,
+    "lng": -118.756813,
+    "km": 9
+   },
+   {
+    "src": "USFS",
+    "name": "LAUREL LAKES TH",
+    "lat": 37.622805,
+    "lng": -118.907113,
+    "km": 11.2
+   },
+   {
+    "src": "USFS",
+    "name": "VALENTINE LAKE TH",
+    "lat": 37.624205,
+    "lng": -118.924413,
+    "km": 12.1
+   },
+   {
+    "src": "USFS",
+    "name": "Sherwin Lakes Trail Trailhead",
+    "lat": 37.624492,
+    "lng": -118.945845,
+    "km": 13.2
+   },
+   {
+    "src": "USFS",
+    "name": "TAMARACK LAKES TH",
+    "lat": 37.451705,
+    "lng": -118.734313,
+    "km": 13.7
+   }
+  ],
+  "lastAnswer": {
+   "status": "found",
+   "trailhead": {
+    "name": "Convict Lake Trailhead",
+    "identifiedBy": {
+     "kind": "page",
+     "url": "https://themtsarecalling.com/baldwin",
+     "fact": "Route text: trail up from Convict Lake to Bright Dot Lake; two opened reports (themtsarecalling, climber.org 2004/1313) start and return at the Convict Lake trailhead"
+    },
+    "placements": [
+     {
+      "source": "USFS",
+      "name": "Convict Lake Trailhead",
+      "lat": 37.600105,
+      "lng": -118.853813,
+      "url": ""
+     },
+     {
+      "source": "USFS",
+      "name": "Convict Lake Trail",
+      "lat": 37.595125,
+      "lng": -118.852757,
+      "url": ""
+     }
+    ]
+   },
+   "notes": "Identification strong. Two USFS points about 0.55 km apart: the signed-name 'Convict Lake Trailhead' (northern) is the lot; 'Convict Lake Trail' is the lake-side trail start (earlier pass: OSM agrees with it). Lot not independently proven."
+  }
+ },
+ {
+  "id": "ca_mount_barnard_standard_route",
+  "name": "Standard route",
+  "peakName": "Mount Barnard",
+  "state": "California",
+  "discipline": "scrambling",
+  "status": "held",
+  "peak": {
+   "id": "ca_mount_barnard",
+   "name": "Mount Barnard",
+   "lat": 36.6283,
+   "lng": -118.3218,
+   "elevation_ft": 13990,
+   "region": null,
+   "path": "usa.california.ca_high_sierra.ca_13_shepherd_pass.ca_mount_barnard"
+  },
+  "text": {
+   "approach": null,
+   "approach_logistics": null,
+   "road": null,
+   "overview": null,
+   "description": null,
+   "descent": null
+  },
+  "siblingTrailheads": [],
+  "officialCandidates": [
+   {
+    "src": "USFS",
+    "name": "Whitney Portal Trailhead",
+    "lat": 36.586905,
+    "lng": -118.240112,
+    "km": 8.6
+   },
+   {
+    "src": "USFS",
+    "name": "MEYSAN LAKE TH",
+    "lat": 36.589789,
+    "lng": -118.230163,
+    "km": 9.2
+   },
+   {
+    "src": "USFS",
+    "name": "Shepherd Pass Th",
+    "lat": 36.726905,
+    "lng": -118.278912,
+    "km": 11.6
+   },
+   {
+    "src": "USFS",
+    "name": "Whitney Portal NRT Trailhead",
+    "lat": 36.597405,
+    "lng": -118.186412,
+    "km": 12.6
+   },
+   {
+    "src": "USFS",
+    "name": "TUTTLE CREEK TH",
+    "lat": 36.553705,
+    "lng": -118.184212,
+    "km": 14.8
+   },
+   {
+    "src": "USFS",
+    "name": "Onion Valley Campground",
+    "lat": 36.772538,
+    "lng": -118.341244,
+    "km": 16.1
+   },
+   {
+    "src": "NPS",
+    "name": "Cemetery Parking",
+    "lat": 36.725198,
+    "lng": -118.162135,
+    "km": 17.9
+   },
+   {
+    "src": "NPS",
+    "name": "Cemetery Parking",
+    "lat": 36.725769,
+    "lng": -118.161778,
+    "km": 17.9
+   }
+  ],
+  "lastAnswer": {
+   "status": "found",
+   "trailhead": {
+    "name": "Whitney Portal Trailhead",
+    "identifiedBy": {
+     "kind": "page",
+     "url": "https://www.scaruffi.com/travel/wales.html",
+     "fact": "SW slope of Barnard climbed from Whitney Portal over Carillon-Cleaver Pass and Wallace Lake; ridge to summit easy class 2"
+    },
+    "placements": [
+     {
+      "source": "USFS",
+      "name": "Whitney Portal Trailhead",
+      "lat": 36.586905,
+      "lng": -118.240112,
+      "url": ""
+     }
+    ]
+   },
+   "notes": "WEAK: one personal trip report. Other starts exist (Shepherd Pass, George Creek, open only Apr 15-May 15 and Dec 15-Jan 1 per search summary). SummitPost 403, hikearizona 403. Whitney Portal is the best-supported start for the class 2 SW slope; whole route needs a Whitney Zone permit."
+  }
+ },
+ {
+  "id": "ca_mount_bolton_brown_standard_route",
+  "name": "Standard route",
+  "peakName": "Mount Bolton Brown",
+  "state": "California",
+  "discipline": "scrambling",
+  "status": "nopage",
+  "peak": {
+   "id": "ca_mount_bolton_brown",
+   "name": "Mount Bolton Brown",
+   "lat": 37.0462,
+   "lng": -118.4407,
+   "elevation_ft": 13491,
+   "region": null,
+   "path": "usa.california.ca_high_sierra.ca_09_palisades_surrounding_peaks.ca_mount_bolton_brown"
+  },
+  "text": {
+   "approach": null,
+   "approach_logistics": null,
+   "road": null,
+   "overview": null,
+   "description": "Class 2 to the summit block, which is Class 3.",
+   "descent": null
+  },
+  "siblingTrailheads": [],
+  "officialCandidates": [
+   {
+    "src": "USFS",
+    "name": "RED LAKE TH",
+    "lat": 37.035704,
+    "lng": -118.35896,
+    "km": 7.3
+   },
+   {
+    "src": "USFS",
+    "name": "BIG PINE CREEK SO FORK TH",
+    "lat": 37.124805,
+    "lng": -118.438913,
+    "km": 8.7
+   },
+   {
+    "src": "USFS",
+    "name": "BIRCH LAKE TH",
+    "lat": 37.087405,
+    "lng": -118.355412,
+    "km": 8.8
+   },
+   {
+    "src": "USFS",
+    "name": "Big Pine Creek North Fork Trail Trailhea",
+    "lat": 37.128105,
+    "lng": -118.427713,
+    "km": 9.2
+   },
+   {
+    "src": "USFS",
+    "name": "TABOOSE PASS TH",
+    "lat": 37.009505,
+    "lng": -118.327312,
+    "km": 10.9
+   },
+   {
+    "src": "USFS",
+    "name": "South Lake Trailhead",
+    "lat": 37.169305,
+    "lng": -118.565813,
+    "km": 17.6
+   },
+   {
+    "src": "USFS",
+    "name": "SAWMILL PASS TH",
+    "lat": 36.938805,
+    "lng": -118.290212,
+    "km": 17.9
+   },
+   {
+    "src": "USFS",
+    "name": "Baker/Green Lakes Th",
+    "lat": 37.186805,
+    "lng": -118.557713,
+    "km": 18.8
+   }
+  ],
+  "lastAnswer": {
+   "status": "stuck",
+   "trailhead": null,
+   "notes": "Opened peaksforfreaks: Red Lake TH route via Prater is class 3-4 with 5.3 moves, not this 'class 2 then class 3 block' route. Search summary (not opened): Birch Lake approach easiest (class 2); Tinemaha Canyon and Split ridge also class 3. No page ties this route to one start."
+  }
+ },
+ {
+  "id": "ca_mount_elwell_mt_elwell_trail",
+  "name": "Mt. Elwell Trail",
+  "peakName": "Mount Elwell",
+  "state": "California",
+  "discipline": "scrambling",
+  "status": "nopage",
+  "peak": {
+   "id": "ca_mount_elwell",
+   "name": "Mount Elwell",
+   "lat": 39.7082,
+   "lng": -120.6891,
+   "elevation_ft": 7818,
+   "region": null,
+   "path": "usa.california.ca_northern_sierra.ca_mount_elwell"
+  },
+  "text": {
+   "approach": null,
+   "approach_logistics": null,
+   "road": null,
+   "overview": null,
+   "description": "A trail leads up from the Lakes Basin to the summit. Other access points also exist.",
+   "descent": null
+  },
+  "siblingTrailheads": [],
+  "officialCandidates": [
+   {
+    "src": "USFS",
+    "name": "Smith Lake And Long Lake Trailheads",
+    "lat": 39.724905,
+    "lng": -120.661813,
+    "km": 3
+   },
+   {
+    "src": "USFS",
+    "name": "Round Lake Trailhead",
+    "lat": 39.693405,
+    "lng": -120.655213,
+    "km": 3.3
+   },
+   {
+    "src": "USFS",
+    "name": "Grizzly Family Campground .",
+    "lat": 39.708403,
+    "lng": -120.646147,
+    "km": 3.7
+   },
+   {
+    "src": "USFS",
+    "name": "Tamarack Lake Trailhead",
+    "lat": 39.621844,
+    "lng": -120.652102,
+    "km": 10.1
+   },
+   {
+    "src": "USFS",
+    "name": "Sierra Buttes Trailhead",
+    "lat": 39.611613,
+    "lng": -120.665347,
+    "km": 10.9
+   },
+   {
+    "src": "USFS",
+    "name": "Wild Plum PCT Trailhead",
+    "lat": 39.566899,
+    "lng": -120.606175,
+    "km": 17.2
+   },
+   {
+    "src": "USFS",
+    "name": "Downieville Mt Bike & Hiker Trailhead",
+    "lat": 39.557656,
+    "lng": -120.830602,
+    "km": 20.7
+   }
+  ],
+  "lastAnswer": {
+   "status": "stuck",
+   "trailhead": null,
+   "notes": "Blog loop starts at Smith Lake Trailhead (spur off Gray Eagle Lodge road; map link ~39.726,-120.663, not a printed coordinate); it says Lakes Basin Trailhead also works. Other accounts start at Lakes Basin Campground or Elwell Lodge/Silver Lake. FS handout (search summary) calls the Mt Elwell Trail a 12 mi out-and-back to the PCT. USFS PDF 404. No page ties the Elwell Trail to one lot."
+  }
+ },
+ {
+  "id": "ca_mount_florence_standard_route",
+  "name": "Standard route",
+  "peakName": "Mount Florence",
+  "state": "California",
+  "discipline": "scrambling",
+  "status": "held",
+  "peak": {
+   "id": "ca_mount_florence",
+   "name": "Mount Florence",
+   "lat": 37.7398,
+   "lng": -119.3161,
+   "elevation_ft": 12561,
+   "region": null,
+   "path": "usa.california.ca_high_sierra.ca_03_lyell_group.ca_mount_florence"
+  },
+  "text": {
+   "approach": null,
+   "approach_logistics": null,
+   "road": null,
+   "overview": null,
+   "description": null,
+   "descent": null
+  },
+  "siblingTrailheads": [],
+  "officialCandidates": [
+   {
+    "src": "NPS",
+    "name": "Elizabeth Lake Trailhead",
+    "lat": 37.870604,
+    "lng": -119.355807,
+    "km": 15
+   },
+   {
+    "src": "NPS",
+    "name": "Elizabeth Lake Parking",
+    "lat": 37.873556,
+    "lng": -119.358045,
+    "km": 15.3
+   },
+   {
+    "src": "NPS",
+    "name": "Parsons Lodge Trailhead Parking",
+    "lat": 37.871696,
+    "lng": -119.368268,
+    "km": 15.4
+   },
+   {
+    "src": "NPS",
+    "name": "Tuolumne Meadows Store and Picnic Area Parking",
+    "lat": 37.874236,
+    "lng": -119.357217,
+    "km": 15.4
+   },
+   {
+    "src": "NPS",
+    "name": "Soda Springs Trailhead",
+    "lat": 37.872064,
+    "lng": -119.370647,
+    "km": 15.5
+   },
+   {
+    "src": "NPS",
+    "name": "Dog Lake Trailhead Parking",
+    "lat": 37.878162,
+    "lng": -119.338857,
+    "km": 15.5
+   },
+   {
+    "src": "NPS",
+    "name": "Dog Lake Trailhead",
+    "lat": 37.878407,
+    "lng": -119.338986,
+    "km": 15.5
+   },
+   {
+    "src": "NPS",
+    "name": "Tuolumne Meadows Wilderness Center Parking",
+    "lat": 37.876938,
+    "lng": -119.346071,
+    "km": 15.5
+   }
+  ],
+  "lastAnswer": {
+   "status": "found",
+   "trailhead": {
+    "name": "Tuolumne Meadows (Rafferty Creek / JMT south start near Tuolumne Lodge)",
+    "identifiedBy": {
+     "kind": "page",
+     "url": "https://www.snwburd.com/bob/trip_reports/florence_n_1.html",
+     "fact": "Parked near Tuolumne Lodge, Rafferty Creek Trail, Vogelsang Pass, Lewis Creek, cross-country to Florence"
+    },
+    "placements": []
+   },
+   "notes": "WEAK: one opened report (snwburd) plus a SummitPost search summary (403 when opened) say Tuolumne Meadows; earlier Happy Isles reports are a far longer start and not chosen. No exact lot coordinate printed; NPS list has Tuolumne Meadows Stables / Wilderness Center parking nearby but none is signed as the Rafferty Creek start, so no placement."
+  }
+ }
+]

@@ -84,6 +84,19 @@ if (!/areaCommentTargets[\s\S]{0,200}\["world","country","state"\]/.test(app)) {
   ok("world/country/state are excluded from area comments");
 }
 
+// Area PAGE only (owner 2026-11-11, "Remove discussion from area maps"). RoutesTab hands the thread to
+// DbAreaBrowser as `areaDiscussion`, and the browser draws it in exactly one place: right after
+// <AreaPage …/>, in the branch that renders when no other screen (finder / objectives / Map) is up.
+// Placed by the browser itself, so it switches in the same render as the screen (no frame under the Map).
+const slots = browser.split("{areaDiscussion}").length - 1;
+if (!/<DbAreaBrowser\s+areaDiscussion=\{/.test(app)) {
+  problems.push("RoutesTab no longer hands the area thread to DbAreaBrowser as `areaDiscussion` — the browser cannot place it on the area page.");
+} else if (slots !== 1 || !/<AreaPage key=\{current\.id\}[^\n]*\/>\{areaDiscussion\}<\/>\s*\)\}/.test(browser)) {
+  problems.push(`area comments are no longer limited to the area page — DbAreaBrowser must draw {areaDiscussion} once, right after <AreaPage …/> (found ${slots}); the Discussion would show under the area Map again.`);
+} else {
+  ok("area comments render on the area page only, not under the Map");
+}
+
 // ---------------------------------------------------------------------------------------
 // 2. DIRECTIONS TO AN AREA — present, and gated to somewhere you can actually park.
 //
@@ -95,9 +108,9 @@ if (!/maps\/dir/.test(browser)) {
 } else {
   ok("the area page offers directions");
   // Since 2026-10-15 the drive links live in AreaGettingThere (the GETTING THERE card), and the
-  // gate is on its MOUNT — so the test is that the mount is written `["crag","peak","wall"].includes(area.area_type) ? <AreaGettingThere`.
+  // gate is on its MOUNT — so the test is that the mount is written `["crag","peak","wall"].includes(area.area_type) ? <AreaGettingThere`, or wrapped in AreaPage's section() card (2026-11-18).
   // The older shape (gate within 120 chars of the href) is accepted too, so the card can move.
-  const gated = /\[\s*"crag",\s*"peak",\s*"wall"\s*\]\.includes\(area\.area_type\)\s*\?\s*<AreaGettingThere/.test(browser)
+  const gated = /\[\s*"crag",\s*"peak",\s*"wall"\s*\]\.includes\(area\.area_type\)\s*\?\s*(?:section\(\s*)?<AreaGettingThere/.test(browser)
     || /\[\s*"crag",\s*"peak",\s*"wall"\s*\]\.includes\(area\.area_type\)[\s\S]{0,120}maps\/dir/.test(browser);
   if (!gated) {
     problems.push('the Directions link is no longer gated on area_type in ["crag","peak","wall"] — every area has a coordinate, so this offers to route a climber to a state or country centroid.');
@@ -132,7 +145,9 @@ if (!/function PartnersHereCard\(/.test(browser)) {
   else ok("the render is gated on that list");
   if (!/usePartnerAreaCount\(area\.id/.test(browser) || !/usePartnersInArea\(area\.id/.test(browser)) problems.push("PartnersHereCard no longer reads the count and the rows for THIS area (usePartnerAreaCount / usePartnersInArea on area.id).");
   else ok("the card reads the count and the rows for the area on screen");
-  if (!/savePartnerArea\(uid,\s*\{\s*areaId:\s*area\.id/.test(browser) || !/removePartnerArea\(uid,\s*area\.id\)/.test(browser)) problems.push("the one-tap List me here / Listed ✓ toggle no longer writes THIS area's listing (savePartnerArea / removePartnerArea on area.id).");
+  // addPartnerArea since 2026-11-23: an insert that leaves an existing listing alone. savePartnerArea, an upsert of a
+  // whole row, blanked a stored note and dates when the tap came before the climber's own listings had loaded.
+  if (!/addPartnerArea\(uid,\s*area\.id\b/.test(browser) || !/removePartnerArea\(uid,\s*area\.id\)/.test(browser)) problems.push("the one-tap List me here / Listed ✓ toggle no longer writes THIS area's listing (addPartnerArea / removePartnerArea on area.id).");
   else ok("List me here writes and removes this area's listing");
   if (!/Sign in to see who climbs here/.test(browser)) problems.push("the signed-out card no longer says to sign in — the count RPC refuses a signed-out caller, so the card would read as nobody listed.");
   else ok("signed out, the card asks for sign-in rather than claiming nobody is listed");

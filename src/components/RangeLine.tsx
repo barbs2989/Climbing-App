@@ -4,7 +4,7 @@ import { catOf, uTemp, C } from "../../ClimbMatchCore.jsx";
 import { rangeNote } from "../../lib/alpineConditions.js";
 
 /* "Your range": ONE plain line saying whether the day's forecast temperatures fall inside the range the
-   climber set for alpine, or for ice and mixed. Neutral colour on purpose: it is a preference, not a
+   climber set for alpine, for mountaineering and scrambling, or for ice and mixed. Neutral colour on purpose: it is a preference, not a
    hazard, so it never reads like a warning and never feeds the flags above it (rangeNote). Without a
    range it shows only the way to set one. */
 export interface RangeLineProps {
@@ -18,7 +18,8 @@ export default function RangeLine({ route, sum }: RangeLineProps) {
   const disc = catOf(route), scope = scopeForDiscipline(disc);
   const range = p.temp[scope] || null;
   const n = range && sum ? rangeNote(range, sum.hi, sum.lo) : null;
-  const r = range ? uTemp(range[0]) + "–" + uTemp(range[1]) : "";
+  // "to", not a dash: a mountain range runs below zero, and "-1°–50°" reads as a minus beside a dash.
+  const r = range ? uTemp(range[0]) + " to " + uTemp(range[1]) : "";
   const text = !n ? null : n.rel === "within" ? "Inside your " + r + " range for the whole day (" + uTemp(sum.lo) + " to " + uTemp(sum.hi) + ")."
     : n.rel === "below" ? "Colder than your " + r + " range for the whole day (high " + uTemp(sum.hi) + ")."
     : n.rel === "above" ? "Warmer than your " + r + " range for the whole day (low " + uTemp(sum.lo) + ")."

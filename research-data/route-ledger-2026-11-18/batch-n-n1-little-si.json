@@ -1,0 +1,438 @@
+{
+ "wa_a_blackstone_blackstone_curve": {
+  "area": "wa_a_blackstone",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/202251811/blackstone-curve",
+    "https://www.mountainproject.com/area/105827415/blackstone",
+    "https://rakkup.com/guidebook/exit-32-little-si-rock-climbing/blackstone/s20105"
+   ]
+  },
+  "ledger": [],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_a_blackstone_blackstone_curve",
+    "column": "name",
+    "from": "**Blackstone Curve",
+    "to": "Blackstone Curve",
+    "why": "Stray '**' prefix (carried over from the Mountain Project page title, where it is markup junk). The climb is named Blackstone Curve; name_search already reads 'blackstone curve'. Apply only if the owner keeps the row (see notes: it is a linkup).",
+    "evidence": [
+     "https://www.mountainproject.com/route/202251811/blackstone-curve"
+    ]
+   }
+  ],
+  "disputed": [],
+  "notes": "CATALOG DEFECT: not an independent line. Mountain Project (shared Dec 21 2025, 1 vote) describes it as a traverse/linkup: starts up BLM-1, crosses Stepping Stones to The Big Easy, curves back through Stepping Stones and finishes at the BLM-1 anchor (a 'rope drag experiment'). All three are their own rows on this wall (wa_a_blackstone_blm_1, wa_a_blackstone_stepping_stones, wa_the_big_easy). The Exit 32 guidebook's Blackstone list does not include it. Owner call: keep as a linkup row or drop. Nothing locked. MP facts for reference only: 5.10c, 85 ft (26 m), 11 bolts, chain anchor with lower-offs, FA Leland Windham (2/2000); stored grade 5.10c / length 26 already match. Access fix NOT proposed for this row until the owner decides whether it stays."
+ },
+ "wa_a_blackstone_blm_1": {
+  "area": "wa_a_blackstone",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/110715326/blm-1",
+    "https://www.mountainproject.com/area/105827415/blackstone",
+    "https://rakkup.com/guidebook/exit-32-little-si-rock-climbing/blm-1/c61667",
+    "https://rakkup.com/guidebook/exit-32-little-si-rock-climbing/blackstone/s20105",
+    "https://dnr.wa.gov/MountSi",
+    "https://gis.dnr.wa.gov/site3/rest/services/Public_Boundaries/WADNR_PUBLIC_Managed_Lands/MapServer"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "discipline",
+    "value": "sport",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/110715326/blm-1",
+      "fact": "Type: Sport",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://rakkup.com/guidebook/exit-32-little-si-rock-climbing/blm-1/c61667",
+      "fact": "Sport icon (Exit 32 guidebook, Kutzke & Price)",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "length_m",
+    "value": 27,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/110715326/blm-1",
+      "fact": "Sport, 90 ft (27 m)",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_a_blackstone_blm_1",
+    "column": "bolts",
+    "from": null,
+    "to": 13,
+    "why": "Mountain Project states 13 bolts. Single source (guidebook full text paywalled); locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/110715326/blm-1"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_a_blackstone_blm_1",
+    "column": "anchor",
+    "from": null,
+    "to": "Chain anchor",
+    "why": "Mountain Project: chain anchor with lower-offs. Single source; locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/110715326/blm-1"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_a_blackstone_blm_1",
+    "column": "access",
+    "from": null,
+    "to": {
+     "fees": null,
+     "rules": "Dogs must be on a leash.",
+     "permit": "None needed to climb.",
+     "land_manager": "Washington State Department of Natural Resources (Mount Si Natural Resources Conservation Area, South Puget Sound Region)",
+     "parking_pass": "A Discover Pass is required to park at the Little Si Trailhead."
+    },
+    "why": "access is empty. DNR's Mount Si NRCA page (re-read 2026-11-18): DNR South Puget Sound Region manages it; Discover Pass required to park at the Little Si Trailhead; dogs on leash. DNR managed-lands layer at the wall point (47.49638,-121.75503) returns 'Mount Si NRCA' (layer 8) and surface trust 'Natural Resources Conservation Area' (layer 1). Value copied exactly from the live wa_chronic access (batch J). Lock official-1 after apply, expires 2027-11-18. The page also says day use only; no gate hours stated; no fee amount, so fees stays null.",
+    "evidence": [
+     "https://dnr.wa.gov/MountSi",
+     "https://gis.dnr.wa.gov/site3/rest/services/Public_Boundaries/WADNR_PUBLIC_Managed_Lands/MapServer"
+    ]
+   }
+  ],
+  "disputed": [
+   "grade: stored 5.10c/d = Mountain Project 5.10c/d; the Exit 32 guidebook (rakkup) gives 5.10b. Two sources disagree: HELD, not locked, not changed. (MP notes the climb changed after a loose key flake near the top was removed, which may explain the gap.)",
+   "fa: stored null; Mountain Project gives Bryan Burdo (1998). An FA is never set from MP alone: held."
+  ],
+  "notes": "Pitch count 1 implied (single lowered line), not stated: not locked. BLM-1 and BLM-2 cross at a ledge near the top; bailing left into the BLM-2 finish eases it. Land manager verified on the official DNR page and DNR GIS (Mount Si NRCA)."
+ },
+ "wa_a_blackstone_stepping_stones": {
+  "area": "wa_a_blackstone",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/106463637/stepping-stones",
+    "https://www.mountainproject.com/area/105827415/blackstone",
+    "https://rakkup.com/guidebook/exit-32-little-si-rock-climbing/stepping-stone/c62365",
+    "https://rakkup.com/guidebook/exit-32-little-si-rock-climbing/blackstone/s20105",
+    "https://dnr.wa.gov/MountSi",
+    "https://gis.dnr.wa.gov/site3/rest/services/Public_Boundaries/WADNR_PUBLIC_Managed_Lands/MapServer"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "grade",
+    "value": "5.10c",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106463637/stepping-stones",
+      "fact": "5.10c YDS",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://rakkup.com/guidebook/exit-32-little-si-rock-climbing/stepping-stone/c62365",
+      "fact": "Stepping Stone 5.10c (Exit 32 guidebook, Kutzke & Price)",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "discipline",
+    "value": "sport",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106463637/stepping-stones",
+      "fact": "Type: Sport",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://rakkup.com/guidebook/exit-32-little-si-rock-climbing/stepping-stone/c62365",
+      "fact": "Sport icon",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "length_m",
+    "value": 27,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106463637/stepping-stones",
+      "fact": "Sport, 90 ft (27 m)",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_a_blackstone_stepping_stones",
+    "column": "access",
+    "from": null,
+    "to": {
+     "fees": null,
+     "rules": "Dogs must be on a leash.",
+     "permit": "None needed to climb.",
+     "land_manager": "Washington State Department of Natural Resources (Mount Si Natural Resources Conservation Area, South Puget Sound Region)",
+     "parking_pass": "A Discover Pass is required to park at the Little Si Trailhead."
+    },
+    "why": "access is empty. DNR's Mount Si NRCA page (re-read 2026-11-18): DNR South Puget Sound Region manages it; Discover Pass required to park at the Little Si Trailhead; dogs on leash. DNR managed-lands layer at the wall point (47.49638,-121.75503) returns 'Mount Si NRCA' (layer 8) and surface trust 'Natural Resources Conservation Area' (layer 1). Value copied exactly from the live wa_chronic access (batch J). Lock official-1 after apply, expires 2027-11-18. The page also says day use only; no gate hours stated; no fee amount, so fees stays null.",
+    "evidence": [
+     "https://dnr.wa.gov/MountSi",
+     "https://gis.dnr.wa.gov/site3/rest/services/Public_Boundaries/WADNR_PUBLIC_Managed_Lands/MapServer"
+    ]
+   }
+  ],
+  "disputed": [
+   "fa: stored null; Mountain Project gives John Heiman & Aaron Houseknecht (1992). Never set from MP alone: held.",
+   "bolts/anchor: Mountain Project says only '11 QDs, upper leftmost anchor' and mentions chains in passing; bolt count and anchor type not stated, not proposed."
+  ],
+  "notes": "Name: the guidebook spells it 'Stepping Stone', Mountain Project 'Stepping Stones'; stored name left as is. Starts on the bolt line right of The Big Easy. Pitch count 1 implied, not stated: not locked."
+ },
+ "wa_the_big_easy": {
+  "area": "wa_a_blackstone",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/105827418/the-big-easy",
+    "https://www.mountainproject.com/area/105827415/blackstone",
+    "https://rakkup.com/guidebook/exit-32-little-si-rock-climbing/blackstone/s20105",
+    "https://dnr.wa.gov/MountSi",
+    "https://gis.dnr.wa.gov/site3/rest/services/Public_Boundaries/WADNR_PUBLIC_Managed_Lands/MapServer"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "grade",
+    "value": "5.9+",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105827418/the-big-easy",
+      "fact": "5.9+ YDS",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://rakkup.com/guidebook/exit-32-little-si-rock-climbing/blackstone/s20105",
+      "fact": "The Big Easy 5.9+, sport (Exit 32 guidebook Blackstone list)",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "discipline",
+    "value": "sport",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105827418/the-big-easy",
+      "fact": "Type: Sport",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://rakkup.com/guidebook/exit-32-little-si-rock-climbing/blackstone/s20105",
+      "fact": "Sport icon beside The Big Easy",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "Aaron Houseknecht (1992)",
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105827418/the-big-easy",
+      "fact": "FA: Aaron Houseknecht (1992)",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_the_big_easy",
+    "column": "pitches",
+    "from": 0,
+    "to": 1,
+    "why": "0 is invalid. A single bolted line with chains at the top, 90 ft, 60 m rope needed; Mountain Project does not state a pitch count, so 1 is implied: approve 1, record as unconfirmed single-source.",
+    "evidence": [
+     "https://www.mountainproject.com/route/105827418/the-big-easy"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_the_big_easy",
+    "column": "length_m",
+    "from": null,
+    "to": 27,
+    "why": "Mountain Project: Sport, 90 ft (27 m). Single source (guidebook full text paywalled); locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/105827418/the-big-easy"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_the_big_easy",
+    "column": "bolts",
+    "from": null,
+    "to": 7,
+    "why": "Mountain Project: 7 bolts plus chains at the top. Single source; locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/105827418/the-big-easy"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_the_big_easy",
+    "column": "anchor",
+    "from": null,
+    "to": "Chain anchor",
+    "why": "Mountain Project: chains at the top. Single source; locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/105827418/the-big-easy"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_the_big_easy",
+    "column": "access",
+    "from": null,
+    "to": {
+     "fees": null,
+     "rules": "Dogs must be on a leash.",
+     "permit": "None needed to climb.",
+     "land_manager": "Washington State Department of Natural Resources (Mount Si Natural Resources Conservation Area, South Puget Sound Region)",
+     "parking_pass": "A Discover Pass is required to park at the Little Si Trailhead."
+    },
+    "why": "access is empty. DNR's Mount Si NRCA page (re-read 2026-11-18): DNR South Puget Sound Region manages it; Discover Pass required to park at the Little Si Trailhead; dogs on leash. DNR managed-lands layer at the wall point (47.49638,-121.75503) returns 'Mount Si NRCA' (layer 8) and surface trust 'Natural Resources Conservation Area' (layer 1). Value copied exactly from the live wa_chronic access (batch J). Lock official-1 after apply, expires 2027-11-18. The page also says day use only; no gate hours stated; no fee amount, so fees stays null.",
+    "evidence": [
+     "https://dnr.wa.gov/MountSi",
+     "https://gis.dnr.wa.gov/site3/rest/services/Public_Boundaries/WADNR_PUBLIC_Managed_Lands/MapServer"
+    ]
+   }
+  ],
+  "disputed": [],
+  "notes": "Stored fa 'Aaron Houseknecht (1992)' matches Mountain Project only (no second source): recorded unconfirmed, unchanged. MP says a 60 m rope is needed. Stored overview ('far left of the wall', 'big flake') not contradicted: MP calls it the last route on the left that starts from the ground. Row has empty `disciplines` while siblings carry [\"sport\"] (minor defect, not proposed)."
+ },
+ "wa_a_hanging_gardens_twisted_youth": {
+  "area": "wa_a_hanging_gardens",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/202775024/twisted-youth",
+    "https://www.mountainproject.com/area/123642069/hanging-gardens",
+    "https://www.mountainproject.com/area/123607839/canopy-crag-group",
+    "https://dnr.wa.gov/MountSi",
+    "https://gis.dnr.wa.gov/site3/rest/services/Public_Boundaries/WADNR_PUBLIC_Managed_Lands/MapServer"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "grade",
+    "value": "5.11b",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/202775024/twisted-youth",
+      "fact": "5.11b YDS",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "length_m",
+    "value": 17,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/202775024/twisted-youth",
+      "fact": "Sport, 55 ft (17 m)",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "discipline",
+    "value": "sport",
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/202775024/twisted-youth",
+      "fact": "Type: Sport",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_a_hanging_gardens_twisted_youth",
+    "column": "bolts",
+    "from": null,
+    "to": 6,
+    "why": "Mountain Project states 6 bolts. Single source (not on the open guidebook pages); locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/202775024/twisted-youth"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_a_hanging_gardens_twisted_youth",
+    "column": "anchor",
+    "from": null,
+    "to": "Chain anchor",
+    "why": "Mountain Project: chain anchor. Single source; locked-1src after apply.",
+    "evidence": [
+     "https://www.mountainproject.com/route/202775024/twisted-youth"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_a_hanging_gardens_twisted_youth",
+    "column": "access",
+    "from": null,
+    "to": {
+     "fees": null,
+     "rules": "Dogs must be on a leash.",
+     "permit": "None needed to climb.",
+     "land_manager": "Washington State Department of Natural Resources (Mount Si Natural Resources Conservation Area, South Puget Sound Region)",
+     "parking_pass": "A Discover Pass is required to park at the Little Si Trailhead."
+    },
+    "why": "access is empty. DNR's Mount Si NRCA page (re-read 2026-11-18): DNR South Puget Sound Region manages it; Discover Pass required to park at the Little Si Trailhead; dogs on leash. DNR managed-lands layer at the wall point (47.49028,-121.74905) returns 'Mount Si NRCA' (layer 8) and surface trust 'Natural Resources Conservation Area' (layer 1). Value copied exactly from the live wa_chronic access (batch J). Lock official-1 after apply, expires 2027-11-18. The page also says day use only; no gate hours stated; no fee amount, so fees stays null.",
+    "evidence": [
+     "https://dnr.wa.gov/MountSi",
+     "https://gis.dnr.wa.gov/site3/rest/services/Public_Boundaries/WADNR_PUBLIC_Managed_Lands/MapServer"
+    ]
+   }
+  ],
+  "disputed": [
+   "fa: stored null; Mountain Project gives John Heiman & Keith Wentz (5/1993). Never set from MP alone: held."
+  ],
+  "notes": "Only Mountain Project lists it (shared Apr 2026, 2 votes); not found on the open Exit 32 guidebook pages. MP area page: rock very poor to poor; in 2025 the most prominent route was rebolted and the rest still need hardware replaced (likely including this one); approach trail in poor shape. Worth a hazard note in a later writer pass. Pitch count 1 implied, not stated: not locked."
+ }
+}

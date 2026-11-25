@@ -237,7 +237,11 @@ try {
     const cands = [...document.querySelectorAll('button,[role="button"],a,summary,div,span,b')]
       .filter((e) => re.test((e.textContent || "").trim()));
     if (!cands.length) return false;
-    cands.sort((a, b) => (a.textContent || "").length - (b.textContent || "").length);
+    // A TIE GOES TO THE CONTROL. The crew card's footer wraps its "Crew chat" button in a div of
+    // the same text, and the div comes first: clicking it presses nothing, so the chat never opened
+    // and the walk measured the crew list as the chat (2026-11-18). tapByText learned this in #1420.
+    const ctl = (e) => (e.tagName === "BUTTON" || e.tagName === "A" || e.getAttribute("role") === "button" ? 1 : 0);
+    cands.sort((a, b) => ((a.textContent || "").length - (b.textContent || "").length) || (ctl(b) - ctl(a)));
     cands[0].scrollIntoView({ block: "center" });
     cands[0].click();
     return true;
@@ -344,15 +348,11 @@ try {
      after this capture: "North Ridge" was listed but "CI" was not named and the chat would not open,
      which read as the #569 regression. Same shape as the Group wait below. Waiting cannot mask a real
      defect: the assertions are unchanged, so a roster that never renders still fails, just 15s later. */
-  /* Every crew card starts COLLAPSED (2026-10-21: the tab used to open the first crew's whole plan
-     inline, and the owner found it overwhelming), so the roster and the chat button sit behind the
-     North Ridge card's "View plan". Open that card first; the assertions below are unchanged. */
+  /* THE COMPACT CARD NAMES ITS CREW (2026-11-14, "guided, not gated"): there is no "View plan" any
+     more -- each card shows who is in ("You, Robin") under the cover and carries the Crew chat button
+     itself, while the full roster lives in the Crew step's sheet. So nothing is opened here: opening a
+     sheet would put a dialog over the card the chat click below reads. The assertions are unchanged. */
   await page.waitForFunction(() => [...document.querySelectorAll('[id^="crewcard-"]')].some((c) => (c.innerText || "").includes("North Ridge")), null, { timeout: 15000 }).catch(() => {});
-  await page.evaluate(() => {
-    const card = [...document.querySelectorAll('[id^="crewcard-"]')].find((c) => (c.innerText || "").includes("North Ridge"));
-    const b = card && [...card.querySelectorAll("button")].find((e) => (e.textContent || "").trim().startsWith("View plan"));
-    if (b) b.click();
-  });
   const mateWait = fixture.mate.name.split(" ")[0].toLowerCase();
   await page.waitForFunction(
     (m) => document.body.innerText.toLowerCase().includes(m),
@@ -452,6 +452,11 @@ try {
   // fixture now names its group per run; matching that name is what makes the assertion about
   // this run's data. Falls back to the literal only if a fixture predates the field.
   const groupName = fixture.group?.name || "Fixture Alpine Club";
+  // Wait for the NAME, not for two seconds. The list is a read of the live database; on
+  // 2026-11-24 it answered after the fixed wait above, the tap found nothing, and the walk
+  // reported "not listed for its own owner" over a Groups screen that listed it a moment later.
+  // The assertion is unchanged: a group that never renders still fails, 15s later.
+  await page.waitForFunction((n) => document.body.innerText.includes(n), groupName, { timeout: 15000 }).catch(() => {});
   if (await clickContaining(groupName)) {
     /* AND a second, independent gap that per-run groups do not close. `isCreator` in
        ClimbMatch.jsx reads `cl._db ? (!!uid && cl.ownerId === uid) : ...`, and `isMod` is
@@ -464,7 +469,7 @@ try {
 
        Waiting here cannot mask a real defect: the assertions below are unchanged, so a control
        that genuinely never renders still fails, with the same message, just later. */
-    // The group page is TABS (About · Discussion · Events · Members · Media) and a member lands on
+    // The group page is TABS (About · Discussion · Events · Members) and a member lands on
     // the Discussion, so the roster is one tap away: on Members, which renders it for a member and
     // only a count for anyone else. The tap is scoped to THIS group's dialog and matches the tab's
     // whole label -- a page-wide "contains" would also match "2 members" in the header.
@@ -566,7 +571,7 @@ try {
   // rendered fine. Comparing against this baseline asks the question that actually
   // matters: did opening the overlay change the screen at all?
   // No single tab hosts every overlay. Several are rendered inside one tab's subtree and
-  // simply do not exist elsewhere: alertsOpen and unfinishedOpen live on Home, crewListOpen
+  // simply do not exist elsewhere: alertsOpen and unfinishedOpen live on Home, crewAllOpen
   // on Crew, areaTreeOpen on Climbs. Opening those from the Profile tab leaves the screen
   // untouched, which reads as "the overlay is dead" when the truth is it was never mounted.
   //
@@ -679,30 +684,47 @@ try {
     // unscoped search for it fails on a working fix. (I made exactly this mistake writing this
     // assertion, and it is the third time today: a fixed window or a whole-screen read is not a
     // section.) The modal runs from its title to its submit button.
+    //
+    // SINCE #3838 THE RECAP IS TripRecapSheet ("How did it go?"), and it has NO "You" row: you say how
+    // the trip went for each CREWMATE. The sheet above ("Trip recap" ... "Confirm attendance") is gone,
+    // and this assertion went red on 2026-11-24 looking for its submit button. What it protected is
+    // restated for the new sheet: the signed-in climber must never be a row they can mark, and when
+    // the sheet lists crewmates the other member must be one of them.
+    //   The sheet is portalled to document.body, so it is the END of the captured text: it runs from
+    // its title to its "Done" button.
     const _whole = screens["modal:recapId"];
-    const _a = _whole === undefined ? -1 : _whole.indexOf("Trip recap");
-    const _b = _a < 0 ? -1 : _whole.indexOf("Confirm attendance", _a);
+    const _a = _whole === undefined ? -1 : _whole.lastIndexOf("How did it go?");
+    const _b = _a < 0 ? -1 : _whole.lastIndexOf("Done");
     const recap = (_a >= 0 && _b > _a) ? _whole.slice(_a, _b) : undefined;
     if (_whole === undefined) {
       log("  recap roster: not checked — modal:recapId was skipped or never opened");
     } else if (recap === undefined) {
       asserted++;
-      fail("modal:recapId", "could not find the recap between its title and \"Confirm attendance\" — it was renamed, so the roster was NOT checked");
+      fail("modal:recapId", "could not find the recap between its title \"How did it go?\" and its \"Done\" button — it was renamed, so the roster was NOT checked");
     } else {
       asserted++;
-      if (!/\bYou\b/.test(recap)) {
-        fail("modal:recapId", "the recap does not list a \"You\" row, so there is nothing for the duplicate check to be relative to");
+      if (/Loading your crew|Couldn’t load this trip/.test(recap)) {
+        fail("modal:recapId", "the recap never loaded its crew — it reads " + JSON.stringify(recap.slice(0, 160)));
       } else if (recap.includes(fixture.owner.name)) {
-        fail("modal:recapId",
-          `the signed-in climber is listed twice — a "You" row and a ${JSON.stringify(fixture.owner.name)} row. ` +
-          "Both carry cid 0, so they share one attendance mark and one React key.");
+        fail("modal:recapId", `the signed-in climber ${JSON.stringify(fixture.owner.name)} is a row on their own recap — nobody reports on themselves`);
       }
+      // The ROSTER renders only for a crew with an AGREED day. The fixture's main crew has one
+      // (fixtureTripDay(): locked to yesterday), and the scaffold opens the recap on the crew
+      // with a locked day, so the roster is REQUIRED here: the sheet's own "needs an agreed day"
+      // note now means the lock or the read of it broke.
       asserted++;
-      // …and the OTHER member must still be there. A roster that dropped everyone would satisfy
-      // the check above and be a worse screen than the one it replaced.
-      const mateFirst = fixture.mate.name.split(" ")[0];
-      if (!recap.toLowerCase().includes(mateFirst.toLowerCase())) {
-        fail("modal:recapId", `the crew's other member ${JSON.stringify(mateFirst)} is not on the recap roster`);
+      if (/We called it off, or didn’t go/.test(recap)) {
+        // …and the OTHER member must be on it, under the name the app gives them (pubNameRow: the
+        // handle when they have one). "Nobody else was on this crew." is the #569 shape here.
+        const mateFirst = fixture.mate.name.split(" ")[0];
+        const low = recap.toLowerCase();
+        if (/Nobody else was on this crew/.test(recap) || !(low.includes(mateFirst.toLowerCase()) || (fixture.mate.username && low.includes(fixture.mate.username.toLowerCase())))) {
+          fail("modal:recapId", `the crew's other member ${JSON.stringify(fixture.mate.username || mateFirst)} is not on the recap roster — it reads ${JSON.stringify(recap.slice(0, 200))}`);
+        }
+      } else if (/needs an agreed day/.test(recap)) {
+        fail("modal:recapId", "the recap says the crew has no agreed day, but the fixture's main crew is locked to yesterday — the lock, the scaffold's choice of crew, or crew_recap's read of it broke");
+      } else {
+        fail("modal:recapId", "the recap shows neither its roster nor its no-agreed-day note — it reads " + JSON.stringify(recap.slice(0, 160)));
       }
     }
   }

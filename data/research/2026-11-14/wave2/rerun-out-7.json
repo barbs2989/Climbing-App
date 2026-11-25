@@ -1,0 +1,1549 @@
+{
+ "wa_guye_peak_r2": {
+  "area": "wa_guye_peak",
+  "facts": [
+   {
+    "field": "gain_ft",
+    "value": 2000,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.wta.org/go-hiking/hikes/guye-peak",
+      "retrieved_at": "2026-11-14",
+      "fact": "Guye Peak hike: 2,000 ft elevation gain, 3.0 mi roundtrip, highest point 5,172 ft (north summit)."
+     },
+     {
+      "url": "https://trailcatjim.com/guye-peak-north-summit-middle-summit-south-summit-cave-ridge/",
+      "retrieved_at": "2026-11-14",
+      "fact": "North summit only from the Alpental trailhead: about 2,050 ft gained and lost, round trip."
+     }
+    ]
+   },
+   {
+    "field": "dist_mi_roundtrip",
+    "value": 3,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.wta.org/go-hiking/hikes/guye-peak",
+      "retrieved_at": "2026-11-14",
+      "fact": "Length 3.0 miles roundtrip."
+     }
+    ]
+   },
+   {
+    "field": "high_point_ft",
+    "value": 5172,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.wta.org/go-hiking/hikes/guye-peak",
+      "retrieved_at": "2026-11-14",
+      "fact": "Highest point 5,172 ft; the north summit is the highpoint by a few inches."
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Snoqualmie Mountain / Guye Peak trailhead beside the Alpental ski area lot, Alpental Road #9040 (3,130 ft)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://trailcatjim.com/guye-peak-north-summit-middle-summit-south-summit-cave-ridge/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Start: Snoqualmie Mountain / Guye Peak trailhead next to Alpental lot on Alpental Road #9040, elevation 3,130 ft."
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "Steep climbers' trail shared with the Snoqualmie Mountain and Cave Ridge paths, to the Cave Ridge saddle, then on to the north summit",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.wta.org/go-hiking/hikes/guye-peak",
+      "retrieved_at": "2026-11-14",
+      "fact": "Steep climbers' trail, also used to reach Snoqualmie Mountain and Cave Ridge."
+     },
+     {
+      "url": "https://trailcatjim.com/guye-peak-north-summit-middle-summit-south-summit-cave-ridge/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Waypoints: Snoqualmie Mtn/Guye Peak trail junction, Cave Ridge saddle four-way junction, Guye Pond, access notch."
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "North summit needs only a short Class 2 scramble at the top; middle and south summits are harder",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://trailcatjim.com/guye-peak-north-summit-middle-summit-south-summit-cave-ridge/",
+      "retrieved_at": "2026-11-14",
+      "fact": "North summit is the easiest, a short Class 2 scramble at the top; middle summit needs tricky exposed scrambling."
+     },
+     {
+      "url": "https://www.wta.org/go-hiking/hikes/guye-peak",
+      "retrieved_at": "2026-11-14",
+      "fact": "Reaching the middle or south summits is an exposed class 3 or 4 scramble; north summit is the highpoint."
+     }
+    ]
+   },
+   {
+    "field": "hazard",
+    "value": "Middle and south summits involve exposed class 3-4 scrambling",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.wta.org/go-hiking/hikes/guye-peak",
+      "retrieved_at": "2026-11-14",
+      "fact": "Getting to the middle or south summits is an exposed class 3 or 4 scramble."
+     }
+    ]
+   }
+  ],
+  "note": "Distance conflicts: WTA 3.0 mi RT vs trailcatjim 2.4 mi RT for the north summit only; recorded WTA single-source. Gain figures are round-trip totals. trailcatjim grades the north summit top Class 2, below our Class 3."
+ },
+ "wa_guye_peak_improbable_traverse": {
+  "area": "wa_guye_peak",
+  "facts": [
+   {
+    "field": "route_step",
+    "value": "Easy class 3-4 first pitch, then about two more pitches up a corner to Lunch Ledge, where the traverse pitches start",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://cascadeclimbers.com/forum/topic/15861-trip-report-guye-peak-tr-the-improbable-traverse/",
+      "retrieved_at": "2026-11-14",
+      "fact": "First pitch easy class 3-4; second pitch up a corner; one more pitch reaches Lunch Ledge, then the traverse."
+     },
+     {
+      "url": "https://staff.washington.edu/khask/personal/climbing/improbable/",
+      "retrieved_at": "2026-11-14",
+      "fact": "First pitch usually climbed unroped as hard-to-protect 4th class; head up and left to Lunch Ledge, start of the traverse pitches."
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "From Lunch Ledge the traverse pitch crosses to a final corner that leads to class 3 ramps",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://cascadeclimbers.com/forum/topic/15861-trip-report-guye-peak-tr-the-improbable-traverse/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Leader built a belay before the final corner that takes you to the class 3 ramps."
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Alpental parking area; approach by the steep talus and scree slope below the west face",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://staff.washington.edu/khask/personal/climbing/improbable/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Started from the Alpental area and approached up the road to the steep talus/scree slope below the face."
+     },
+     {
+      "url": "https://cascadeclimbers.com/forum/topic/15861-trip-report-guye-peak-tr-the-improbable-traverse/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Parked near the ski club and pushed through brush to the scree gully below the west face."
+     }
+    ]
+   }
+  ],
+  "note": "No page read stated distance, gain, pitch count or FA outright. SummitPost (643498, 162420) is 403 site-wide; AAJ 1961 PDF not readable in the tab."
+ },
+ "wa_gilbert_peak_meade_glacier": {
+  "area": "wa_gilbert_peak",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "Class 3",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/201485317/meade-glacier",
+      "retrieved_at": "2026-11-14",
+      "fact": "Meade Glacier route rated 3rd class, easy snow; third class rock at the summit block."
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Conrad Meadows trailhead (South Fork Tieton)",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/201485317/meade-glacier",
+      "retrieved_at": "2026-11-14",
+      "fact": "From the Conrad Meadows trailhead hike west to the meadow below the Meade valley."
+     },
+     {
+      "url": "https://mazamas.org/activity/instance/1104/detail/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Approach begins at Conrad Meadows on the South Tieton Creek trailhead."
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "Off trail up the right side of the Meade valley; ledges and ramps lead to the base of the upper glacier/snowfield",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/201485317/meade-glacier",
+      "retrieved_at": "2026-11-14",
+      "fact": "Off trail up the right side of the Meade valley; ledges and ramps reach the upper glacier; harder than 3rd class is off route."
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "Traverse left across the snowfield to the ridge, then follow the Klickton Divide (east ridge) to the summit",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/201485317/meade-glacier",
+      "retrieved_at": "2026-11-14",
+      "fact": "Traverse climber's left across the snowfield, gain the ridge, then follow the standard Klickton Divide (east ridge) route to the summit."
+     }
+    ]
+   },
+   {
+    "field": "descent",
+    "value": "Descend the climbing route",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/201485317/meade-glacier",
+      "retrieved_at": "2026-11-14",
+      "fact": "Descent via the climbing route."
+     }
+    ]
+   },
+   {
+    "field": "rack",
+    "value": "No glacier gear needed",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/201485317/meade-glacier",
+      "retrieved_at": "2026-11-14",
+      "fact": "No glacier gear needed; in good late-season conditions trail runners and poles suffice."
+     }
+    ]
+   },
+   {
+    "field": "car_to_car_note",
+    "value": "Easily done car-to-car",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/201485317/meade-glacier",
+      "retrieved_at": "2026-11-14",
+      "fact": "Easily done car to car from Conrad Meadows."
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "unknown",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/201485317/meade-glacier",
+      "retrieved_at": "2026-11-14",
+      "fact": "FA listed as unknown."
+     }
+    ]
+   },
+   {
+    "field": "seasonal_hazard",
+    "value": "Steep snow on the upper route may be gone late in the season",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://mazamas.org/activity/instance/1104/detail/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Late in the season the final section may hold no steep snow."
+     },
+     {
+      "url": "https://www.mountainproject.com/route/201485317/meade-glacier",
+      "retrieved_at": "2026-11-14",
+      "fact": "In good late-season conditions the route can be done in trail runners with poles."
+     }
+    ]
+   }
+  ],
+  "note": "Mazamas lists 4,200 ft gain and 'two or more days' but for its Conrad-Meade combination (up the Conrad Glacier to the saddle, then onto the Meade) - a different line, so its gain is not used. WTA 20 mi/4,600 ft (earlier pass) is via the Klickton Divide hike, not used."
+ },
+ "wa_helmet_butte_standard_route": {
+  "area": "wa_helmet_butte",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "Class 3",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://en.wikipedia.org/wiki/Helmet_Butte",
+      "retrieved_at": "2026-11-14",
+      "fact": "Easiest route: class 3 scrambling."
+     }
+    ]
+   },
+   {
+    "field": "high_point_ft",
+    "value": 7400,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://en.wikipedia.org/wiki/Helmet_Butte",
+      "retrieved_at": "2026-11-14",
+      "fact": "Helmet Butte summit elevation 7,400 ft."
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Trinity trailhead, Buck Creek Pass Trail",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.wta.org/go-hiking/trip-reports/trip_report-2024-08-28.224652782050",
+      "retrieved_at": "2026-11-14",
+      "fact": "Access: Trinity Trailhead (Buck Creek Trail)."
+     },
+     {
+      "url": "https://en.wikipedia.org/wiki/Helmet_Butte",
+      "retrieved_at": "2026-11-14",
+      "fact": "Peak sits just northeast above Buck Creek Pass; access is by the Buck Creek Pass Trail."
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "From near Buck Creek Pass, walk under a mile south on the Buck Creek Trail and take the unsigned Pass No Pass trail north to the upper basin",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.wta.org/go-hiking/trip-reports/trip_report-2024-08-28.224652782050",
+      "retrieved_at": "2026-11-14",
+      "fact": "Walk under a mile south on Buck Creek Trail, then north on the unsigned Pass No Pass Trail to the upper basin."
+     }
+    ]
+   },
+   {
+    "field": "route_variant",
+    "value": "Alternative: climb the steep southwest face directly from Buck Creek Pass",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.wta.org/go-hiking/trip-reports/trip_report-2024-08-28.224652782050",
+      "retrieved_at": "2026-11-14",
+      "fact": "From the pass, climb Helmet Butte's steep southwest face and return to the pass."
+     }
+    ]
+   },
+   {
+    "field": "rock_type",
+    "value": "Granodiorite / quartz diorite",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://en.wikipedia.org/wiki/Helmet_Butte",
+      "retrieved_at": "2026-11-14",
+      "fact": "Rock types granodiorite and quartz diorite."
+     }
+    ]
+   },
+   {
+    "field": "rack",
+    "value": "Helmet and microspikes",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.wta.org/go-hiking/trip-reports/trip_report-2024-08-28.224652782050",
+      "retrieved_at": "2026-11-14",
+      "fact": "Essential gear listed: helmet, microspikes (multi-peak trip)."
+     }
+    ]
+   }
+  ],
+  "note": "WTA 2024-08-28 report is a multi-peak trip (27 mi RT, 2,800-7,625 ft range) - its totals are not used. SummitPost helmet-butte/979358 is 403."
+ },
+ "wa_indian_head_peak_southwest_slopes": {
+  "area": "wa_indian_head_peak",
+  "facts": [
+   {
+    "field": "route_step",
+    "value": "Off-trail scramble up the southwest/south slope (sandy face) to the summit",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://trailcatjim.com/little-indian-traverse-meander-meadow-indian-head-peak/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Summit reached by an off-trail hike and rock scramble via the Southwest Slope."
+     },
+     {
+      "url": "https://www.wta.org/go-hiking/trip-reports/trip_report-2024-10-14.094702904095",
+      "retrieved_at": "2026-11-14",
+      "fact": "From the Indian Pass area went up the sandy south face; the farther right, the less steep; west ridge also possible."
+     }
+    ]
+   },
+   {
+    "field": "camp",
+    "value": "Camp on the ridge above Indian Pass",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.wta.org/go-hiking/trip-reports/trip_report-2024-10-14.094702904095",
+      "retrieved_at": "2026-11-14",
+      "fact": "At Indian Pass the author went up to the ridge to camp before the summit."
+     }
+    ]
+   },
+   {
+    "field": "rock_type",
+    "value": "Eroded conglomerate",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://trailcatjim.com/little-indian-traverse-meander-meadow-indian-head-peak/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Photo captions note eroded conglomerate on Indian Head Peak."
+     }
+    ]
+   }
+  ],
+  "note": "trailcatjim figures (22 mi, 5,400 ft gained, 6,100 lost) are for a one-way multi-peak traverse; WTA 2024 report went in via Pilot Ridge and out the North Fork Sauk - neither gives figures for this route. WTA hike page has no stats."
+ },
+ "wa_iron_peak_teanaway_scramble": {
+  "area": "wa_iron_peak_teanaway",
+  "facts": [
+   {
+    "field": "gain_ft",
+    "value": 2543,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://besthikesbc.ca/hiking-iron-peak-in-the-teanaway-region/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Iron Peak summit hike: elevation gain 775 m (2,543 ft); highest elevation 6,444 ft."
+     }
+    ]
+   },
+   {
+    "field": "dist_mi_stated",
+    "value": 6.4,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://besthikesbc.ca/hiking-iron-peak-in-the-teanaway-region/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Distance 10.30 km (6.4 miles); page does not say one-way or round trip."
+     }
+    ]
+   },
+   {
+    "field": "car_to_car_hours",
+    "value": "4-5",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://besthikesbc.ca/hiking-iron-peak-in-the-teanaway-region/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Time needed: moderate pace 4-5 hours (slow 5-6, fast 3-4)."
+     }
+    ]
+   },
+   {
+    "field": "season",
+    "value": "May-October",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://besthikesbc.ca/hiking-iron-peak-in-the-teanaway-region/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Season roughly May to October."
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "Trail #1399 switchbacks up to the small saddle between Iron Peak and Teanaway Peak",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.wta.org/go-hiking/hikes/iron-peak",
+      "retrieved_at": "2026-11-14",
+      "fact": "Switchbacks shorten as the trail funnels up to a small saddle; the trail then drops the far side to the Beverly Creek Trail."
+     },
+     {
+      "url": "https://besthikesbc.ca/hiking-iron-peak-in-the-teanaway-region/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Proceed toward the saddle between Iron Peak and Teanaway Peak."
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "From the saddle follow the ridge to the summit; no scrambling needed though the ridge narrows near the top",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://besthikesbc.ca/hiking-iron-peak-in-the-teanaway-region/",
+      "retrieved_at": "2026-11-14",
+      "fact": "From the saddle follow the ridge to the summit; no scrambling necessary, the ridge narrows somewhat at the end."
+     }
+    ]
+   },
+   {
+    "field": "permit",
+    "value": "No parking pass or entry fee listed",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.wta.org/go-hiking/hikes/iron-peak",
+      "retrieved_at": "2026-11-14",
+      "fact": "Parking pass/entry fee: None."
+     }
+    ]
+   },
+   {
+    "field": "road",
+    "value": "No 4x4 or high clearance needed",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://besthikesbc.ca/hiking-iron-peak-in-the-teanaway-region/",
+      "retrieved_at": "2026-11-14",
+      "fact": "4x4 / high clearance required: No."
+     }
+    ]
+   }
+  ],
+  "note": "WTA's 7.6 mi RT / 2,360 ft / 6,160 ft figures stop at the saddle, not the summit - not used. BestHikesBC high point 6,444 ft differs from our 6,510 ft; it rates scrambling/exposure 'none', softer than our Class 2."
+ },
+ "wa_iron_cap_mountain_south_route": {
+  "area": "wa_iron_cap_mountain",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "Class 2-3 (North Ridge, easiest route)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://en.wikipedia.org/wiki/Iron_Cap_Mountain",
+      "retrieved_at": "2026-11-14",
+      "fact": "Easiest route: class 2-3 scrambling via the North Ridge."
+     }
+    ]
+   },
+   {
+    "field": "peak_fa",
+    "value": "1925, Joe Hazard and party",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://en.wikipedia.org/wiki/Iron_Cap_Mountain",
+      "retrieved_at": "2026-11-14",
+      "fact": "First ascent 1925 by Joe Hazard and party (peak, not route-specific)."
+     }
+    ]
+   },
+   {
+    "field": "high_point_ft",
+    "value": 6347,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://en.wikipedia.org/wiki/Iron_Cap_Mountain",
+      "retrieved_at": "2026-11-14",
+      "fact": "Iron Cap Mountain elevation 6,347 ft."
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "West Fork Foss River trail past Copper Lake and Little and Big Heart Lakes, then on to Chetwoot Lake",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/activities/alpine-scramble-iron-cap-6347",
+      "retrieved_at": "2026-11-14",
+      "fact": "Plan goes in by the West Fork Foss River past Copper, Little Heart and Big Heart lakes, then Chetwoot, to Iron Cap."
+     },
+     {
+      "url": "https://www.wta.org/go-hiking/trip-reports/trip_report.2019-08-15.9756207890",
+      "retrieved_at": "2026-11-14",
+      "fact": "Out-and-back from the West Fork Foss lakes past Big Heart to Chetwoot and Iron Cap; much up and down near Chetwoot."
+     }
+    ]
+   },
+   {
+    "field": "camp",
+    "value": "Saddle just west of the Iron Cap summit",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.wta.org/go-hiking/trip-reports/trip_report.2019-08-15.9756207890",
+      "retrieved_at": "2026-11-14",
+      "fact": "Camped on the saddle just west of the Iron Cap summit."
+     }
+    ]
+   },
+   {
+    "field": "route_note",
+    "value": "Skirting around the north side is easier than going up the south ridge",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.wta.org/go-hiking/trip-reports/trip_report.2019-08-15.9756207890",
+      "retrieved_at": "2026-11-14",
+      "fact": "After trying the south Iron Cap ridge, the easier way was to skirt around the north."
+     }
+    ]
+   }
+  ],
+  "note": "Mountaineers activity page notes its plan differs from the club's official route description (not readable). No page gave distance or gain for this route."
+ },
+ "wa_huckleberry_mountain_west_route": {
+  "area": "wa_huckleberry_mountain",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "5.6",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/120322178/west-face",
+      "retrieved_at": "2026-11-14",
+      "fact": "West Face rated 5.6 YDS, Trad/Alpine, Grade II."
+     }
+    ]
+   },
+   {
+    "field": "alpine_grade",
+    "value": "II",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/120322178/west-face",
+      "retrieved_at": "2026-11-14",
+      "fact": "Commitment Grade II."
+     }
+    ]
+   },
+   {
+    "field": "length_ft",
+    "value": 450,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/120322178/west-face",
+      "retrieved_at": "2026-11-14",
+      "fact": "Route length 450 ft (136 m)."
+     }
+    ]
+   },
+   {
+    "field": "pitches",
+    "value": 4,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/120322178/west-face",
+      "retrieved_at": "2026-11-14",
+      "fact": "4 pitches."
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "Gary Hehn & Dave Stephens, 2001",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/120322178/west-face",
+      "retrieved_at": "2026-11-14",
+      "fact": "FA: Gary Hehn and Dave Stephens (2001)."
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "P1 class 3 (80 ft) left of a loose chimney to the ridge; P2 class 4 (200 ft) along the ridge to a big ledge; P3 class 4 (80 ft) up a ramp; P4 5.6 (90 ft) two small dihedrals to the summit",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/120322178/west-face",
+      "retrieved_at": "2026-11-14",
+      "fact": "Pitches: P1 class 3 80 ft, P2 class 4 200 ft, P3 class 4 80 ft ramp, P4 5.6 90 ft dihedrals."
+     }
+    ]
+   },
+   {
+    "field": "descent",
+    "value": "Rappel the east side: first rap off a tat-wrapped rock pile to the notch, 4th class up the notch's far side, then more raps down the gully, then about 800 ft of loose gully and scree to the PCT",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/120322178/west-face",
+      "retrieved_at": "2026-11-14",
+      "fact": "Descent: rap a slung rock pile to the notch, 4th class scramble, rap a horn, two more gully raps, 800 ft scree to PCT."
+     }
+    ]
+   },
+   {
+    "field": "rappels",
+    "value": 4,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/120322178/west-face",
+      "retrieved_at": "2026-11-14",
+      "fact": "If you made the 4 raps, 800 ft of loose downclimbing remains to the PCT."
+     }
+    ]
+   },
+   {
+    "field": "rack",
+    "value": "Bring extra tat for the rappel anchors; test the final bush anchor",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/120322178/west-face",
+      "retrieved_at": "2026-11-14",
+      "fact": "Bring extra tat for all rap stations and test the small bush before weighting it."
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "Hike the PCT north from Snoqualmie Pass past Kendall Katwalk to the Joe Lake area, then leave the trail",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/area/120322128/huckleberry-mountain",
+      "retrieved_at": "2026-11-14",
+      "fact": "Hike the PCT about 10 miles north of Snoqualmie Pass to above Joe Lake (or Gold Creek trail to Joe Lake)."
+     },
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/huckleberry-mountain-east-face",
+      "retrieved_at": "2026-11-14",
+      "fact": "Reached by hiking the PCT past Kendall Katwalk to near Edds and Joe lakes; approach roughly 11 miles on the PCT."
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "For the west face, leave the PCT at a flowery meadow northeast of Joe Lake and go up a streambed and talus into the basin below the face; a short 3rd class step near the top",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/120322178/west-face",
+      "retrieved_at": "2026-11-14",
+      "fact": "From a flowery meadow NE of Joe Lake follow a streambed into talus; it steepens about 300 ft to a short 3rd class step."
+     }
+    ]
+   },
+   {
+    "field": "trip_days",
+    "value": "Overnight: camp near the ridge west of Joe Lake; a one-day push is called exceedingly difficult",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/120322178/west-face",
+      "retrieved_at": "2026-11-14",
+      "fact": "Find a campsite; about 25 miles of hiking plus roped climbing and a 2-hour descent make one day exceedingly difficult."
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "PCT trailhead at Snoqualmie Pass (3,000 ft)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/huckleberry-mountain-east-face",
+      "retrieved_at": "2026-11-14",
+      "fact": "Paved road to the Pacific Crest Trail trailhead, 3,000 ft."
+     }
+    ]
+   },
+   {
+    "field": "permit",
+    "value": "Northwest Forest Pass",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/huckleberry-mountain-east-face",
+      "retrieved_at": "2026-11-14",
+      "fact": "Parking permit required: Northwest Forest Pass; Alpine Lakes Wilderness, Snoqualmie Ranger District."
+     }
+    ]
+   },
+   {
+    "field": "hazard",
+    "value": "Loose, lichen-covered rock on the final pitch; loose gully and scree on the descent",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/120322178/west-face",
+      "retrieved_at": "2026-11-14",
+      "fact": "Final pitch rock is pretty loose and licheny; descent ends with 800 ft of loose gully and scree."
+     }
+    ]
+   }
+  ],
+  "note": "High point conflict: MP area lists Huckleberry Mountain at 5,878 ft, Mountaineers East Face page 6,230 ft; our 6,320 ft matches neither and looks copied from the Mountaineers East Face GAIN (6,320 ft for 22 mi) - that gain is for the East Face route and is not used here. MP says ~12 mi of PCT to the meadow and ~25 mi of hiking total (not used as a figure)."
+ },
+ "wa_honeymoon_route": {
+  "area": "wa_mount_deception",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "Class 3",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.thecrag.com/en/climbing/united-states/olympic-penninsula/route/4505692149",
+      "retrieved_at": "2026-11-14",
+      "fact": "Honeymoon Route, Mt Deception (Royal Basin): assigned grade 3rd class."
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Royal Basin trailhead",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/activities/basic-alpine-climb-deception-honeymoon-route-1",
+      "retrieved_at": "2026-11-14",
+      "fact": "Leave from the Royal Basin trailhead, camp on snow, climb Deception."
+     },
+     {
+      "url": "https://cascadeclimbers.com/forum/topic/51976-tr-mount-deception-honeymoon-route-6232007/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Party bivied at the Royal Basin parking lot and hiked past Shelter Rock to Royal Lake."
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "A prominent, narrow snow gully climbing to Deception's summit ridge",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://cascadeclimbers.com/forum/topic/51976-tr-mount-deception-honeymoon-route-6232007/",
+      "retrieved_at": "2026-11-14",
+      "fact": "The Honeymoon route is a prominent but narrow gully running up to the summit ridge."
+     }
+    ]
+   },
+   {
+    "field": "snow_angle",
+    "value": "About 45 degrees",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://cascadeclimbers.com/forum/topic/51976-tr-mount-deception-honeymoon-route-6232007/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Gully grade consistently about 45 degrees, sometimes steeper or gentler (June conditions)."
+     }
+    ]
+   },
+   {
+    "field": "rack",
+    "value": "Crampons, helmet, ice axe",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://cascadeclimbers.com/forum/topic/51976-tr-mount-deception-honeymoon-route-6232007/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Party put on boots, crampons and helmets for the snow climb."
+     }
+    ]
+   },
+   {
+    "field": "hazard",
+    "value": "A fall on the steep snow gully would be serious; ice-coated rock near the top in early season",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://cascadeclimbers.com/forum/topic/51976-tr-mount-deception-honeymoon-route-6232007/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Caution needed as a fall would be bad; about 100 ft of ice-coated rock near the summit in June."
+     }
+    ]
+   },
+   {
+    "field": "camp",
+    "value": "Camp in upper Royal Basin on snow",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/activities/basic-alpine-climb-deception-honeymoon-route-1",
+      "retrieved_at": "2026-11-14",
+      "fact": "Leader plan: camp on the snow in Royal Basin, then climb Deception."
+     },
+     {
+      "url": "https://cascadeclimbers.com/forum/topic/51976-tr-mount-deception-honeymoon-route-6232007/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Approach from Royal Lake into the snowy upper basin before the climb."
+     }
+    ]
+   },
+   {
+    "field": "difficulty_class",
+    "value": "Mountaineers Basic Alpine Climb",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/activities/basic-alpine-climb-deception-honeymoon-route-1",
+      "retrieved_at": "2026-11-14",
+      "fact": "Listed as a Basic Alpine Climb - Deception/Honeymoon Route."
+     }
+    ]
+   }
+  ],
+  "note": "No page stated distance or gain for the Honeymoon Route itself; Mountaineers standard-route figures (35 mi, 8,000 ft, from an earlier pass) are for a different line and not used."
+ },
+ "wa_icy_peak_southwest_route": {
+  "area": "wa_icy_peak",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "Class 4",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://en.wikipedia.org/wiki/Icy_Peak",
+      "retrieved_at": "2026-11-14",
+      "fact": "Easiest route: climbing, class 4, glacier travel."
+     },
+     {
+      "url": "https://www.mountainproject.com/route/112189865/ruth-icy-traverse",
+      "retrieved_at": "2026-11-14",
+      "fact": "About 500 ft of 2nd-3rd class leads to a 100-ft 4th class summit gully."
+     }
+    ]
+   },
+   {
+    "field": "high_point_ft",
+    "value": 7073,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://en.wikipedia.org/wiki/Icy_Peak",
+      "retrieved_at": "2026-11-14",
+      "fact": "Icy Peak elevation 7,073 ft."
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "Aim for the notch west of Icy's Northwest Spire (about 6,500 ft), then about 500 ft of 2nd-3rd class to a 100-ft 4th class summit gully",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/112189865/ruth-icy-traverse",
+      "retrieved_at": "2026-11-14",
+      "fact": "Aim for a notch west of Icy NW Spire (~6,500 ft); then ~500 ft of 2nd-3rd class to a 100-ft 4th class gully."
+     }
+    ]
+   },
+   {
+    "field": "descent",
+    "value": "The summit gully can be rappelled or downclimbed",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/112189865/ruth-icy-traverse",
+      "retrieved_at": "2026-11-14",
+      "fact": "The gully can be rapped on the way down, but downclimbing is also no problem."
+     }
+    ]
+   },
+   {
+    "field": "rack",
+    "value": "Rope, crampons, ice axe, snow pickets",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/112189865/ruth-icy-traverse",
+      "retrieved_at": "2026-11-14",
+      "fact": "Gear: snow pickets, rope, crampons, axe."
+     },
+     {
+      "url": "https://www.theoutbound.com/washington/hiking/climb-ruth-mountain-and-icy-peak",
+      "retrieved_at": "2026-11-14",
+      "fact": "Glacier climb with crampons and optional roping; unrope on the summit rock."
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "About 4 miles of good trail from the trailhead to Hannegan Pass",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.theoutbound.com/washington/hiking/climb-ruth-mountain-and-icy-peak",
+      "retrieved_at": "2026-11-14",
+      "fact": "Trailhead to Hannegan Pass is about 4 miles on a good trail with modest gain."
+     }
+    ]
+   },
+   {
+    "field": "camp",
+    "value": "Bivy sites on Icy Peak's south ridge",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.theoutbound.com/washington/hiking/climb-ruth-mountain-and-icy-peak",
+      "retrieved_at": "2026-11-14",
+      "fact": "Trip can be split over two days; bivy sites on Icy Peak's south ridge."
+     }
+    ]
+   },
+   {
+    "field": "rock_quality",
+    "value": "Mostly good rock; casual climbing in the summit gully",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/112189865/ruth-icy-traverse",
+      "retrieved_at": "2026-11-14",
+      "fact": "Rock is mostly pretty good and the climbing casual."
+     }
+    ]
+   },
+   {
+    "field": "glacier",
+    "value": "Moderate glacier slopes; glacier travel required",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://en.wikipedia.org/wiki/Icy_Peak",
+      "retrieved_at": "2026-11-14",
+      "fact": "Easiest route involves glacier travel; small glaciers on all sides."
+     },
+     {
+      "url": "https://www.theoutbound.com/washington/hiking/climb-ruth-mountain-and-icy-peak",
+      "retrieved_at": "2026-11-14",
+      "fact": "Introductory glacier climb with moderate glacial slopes and 4th class scrambling."
+     }
+    ]
+   }
+  ],
+  "note": "Figures not used: The Outbound 17 mi / 6,000 ft and MP 2,000 ft Grade II are for the combined Ruth Mountain + Icy Peak trip, not Icy alone."
+ },
+ "wa_glacier_peak_kennedy_glacier": {
+  "area": "wa_glacier_peak",
+  "facts": [
+   {
+    "field": "route_step",
+    "value": "Kennedy Ridge trail to camp by the Kennedy Glacier moraine, then up the lower Kennedy Glacier to Frostbite Ridge and past the Rabbit Ears to the summit",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://trailcatjim.com/glacier-peak-via-lower-kennedy-glacier-frostbite-ridge-rabbit-ears-2000/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Snow climb via Lower Kennedy Glacier, Frostbite Ridge and Rabbit Ears; waypoints Kennedy Ridge, Glacier Creek, Kennedy Glacier moraine."
+     },
+     {
+      "url": "https://www.nwhikers.net/forums/viewtopic.php?p=893559",
+      "retrieved_at": "2026-11-14",
+      "fact": "Crossed to Kennedy Ridge, camped on the Kennedy Glacier moraine, then summited via Frostbite Ridge through the Rabbit Ears spires."
+     }
+    ]
+   },
+   {
+    "field": "camp",
+    "value": "Kennedy Creek bench (about 6,200 ft) near the Kennedy Glacier moraine",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://trailcatjim.com/glacier-peak-via-lower-kennedy-glacier-frostbite-ridge-rabbit-ears-2000/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Campsite: Kennedy Creek Bench, elevation 6,200 ft."
+     },
+     {
+      "url": "https://www.nwhikers.net/forums/viewtopic.php?p=893559",
+      "retrieved_at": "2026-11-14",
+      "fact": "Planned camp on the moraine of the Kennedy Glacier."
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Old White Chuck trailhead at the end of the White Chuck River Road (2,350 ft)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://trailcatjim.com/glacier-peak-via-lower-kennedy-glacier-frostbite-ridge-rabbit-ears-2000/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Start: old White Chuck trailhead at the end of White Chuck River Road, 2,350 ft."
+     }
+    ]
+   },
+   {
+    "field": "descent",
+    "value": "Alternative descent via the Sitkum Glacier and Boulder Basin back to Kennedy Ridge",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://trailcatjim.com/glacier-peak-via-lower-kennedy-glacier-frostbite-ridge-rabbit-ears-2000/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Descent via Sitkum Glacier, Boulder Basin, Sitkum Creek, Kennedy Creek and Kennedy Ridge."
+     }
+    ]
+   },
+   {
+    "field": "difficulty_note",
+    "value": "Not one of the easy ways up Glacier Peak",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.nwhikers.net/forums/viewtopic.php?p=893559",
+      "retrieved_at": "2026-11-14",
+      "fact": "There are easy ways up Glacier Peak; going in by the Kennedy Glacier and through the Rabbit Ears is not one of them."
+     }
+    ]
+   }
+  ],
+  "note": "trailcatjim totals (27 mi, 12,100 ft gained and lost) cover an ascent/descent loop from the old White Chuck trailhead, now cut off by the FR 23 closure - not used. nwhikers trip is a multi-day loop via Lost Creek Ridge - no figures used."
+ },
+ "wa_himmelhorn_southeast_route": {
+  "area": "wa_himmelhorn",
+  "facts": [
+   {
+    "field": "fa",
+    "value": "Cooper, Denny, Firey, Firey and Whitmore (reported AAJ 1962)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://publications.americanalpineclub.org/articles/13201213408/Himmelhorn-South-Face-Stonehenge",
+      "retrieved_at": "2026-11-14",
+      "fact": "Standard route credited to Cooper-Denny-Firey-Firey-Whitmore, AAJ 1962."
+     }
+    ]
+   },
+   {
+    "field": "aspect",
+    "value": "Northwest",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://publications.americanalpineclub.org/articles/13201213408/Himmelhorn-South-Face-Stonehenge",
+      "retrieved_at": "2026-11-14",
+      "fact": "Both the standard route and Wild Hair Crack are on Himmelhorn's northwest aspect."
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "Goodell Creek trailhead, up the brushy Goodell Creek valley and the Barrier into Crescent Creek basin",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://publications.americanalpineclub.org/articles/13201213408/Himmelhorn-South-Face-Stonehenge",
+      "retrieved_at": "2026-11-14",
+      "fact": "Hauled packs up the Goodell Creek jungle and camped above Crescent Creek; Himmelhorn's south face rises over Crescent Creek basin."
+     },
+     {
+      "url": "https://stephabegg.com/trip-reports/washington/pickets/pickets-traverse/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Exit day: Himmelhorn-Ottohorn col to Crescent Creek basin, over the Barrier, to the Goodell Creek trailhead."
+     }
+    ]
+   },
+   {
+    "field": "camp",
+    "value": "Below the Chopping Block above Crescent Creek basin",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://publications.americanalpineclub.org/articles/13201213408/Himmelhorn-South-Face-Stonehenge",
+      "retrieved_at": "2026-11-14",
+      "fact": "Camped below the Chopping Block above Crescent Creek."
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "The Himmelhorn-Ottohorn col links the peak to Crescent Creek basin",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://stephabegg.com/trip-reports/washington/pickets/pickets-traverse/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Traversed to the Himmelhorn-Ottohorn col, then descended into Crescent Creek basin."
+     }
+    ]
+   },
+   {
+    "field": "overview",
+    "value": "Part of the Crescent Creek Spires, the western end of the Southern Pickets; climbed perhaps every other year",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://publications.americanalpineclub.org/articles/13201213408/Himmelhorn-South-Face-Stonehenge",
+      "retrieved_at": "2026-11-14",
+      "fact": "Himmelhorn belongs to the Crescent Creek Spires, westernmost Southern Pickets; it probably sees an ascent every other year or so."
+     }
+    ]
+   }
+  ],
+  "note": "Naming conflict: AAJ places the standard route on the NORTHWEST aspect, while our id says 'southeast_route' - check before applying. No page gave distance or gain for this route. SummitPost 403."
+ },
+ "wa_inspiration_traverse": {
+  "area": "wa_alpine_and_technical_traverses",
+  "facts": [
+   {
+    "field": "permit",
+    "value": "Overnight backcountry permit for the Klawatti cross-country zone, picked up in Marblemount",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.jeffreyjhebert.com/adventures/inspiration-traverse-eldorado-austera-dorado-needle",
+      "retrieved_at": "2026-11-14",
+      "fact": "Secured permits for the Klawatti zone in Marblemount before driving to the Eldorado trailhead."
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Eldorado Creek trailhead (Cascade River Road)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.jeffreyjhebert.com/adventures/inspiration-traverse-eldorado-austera-dorado-needle",
+      "retrieved_at": "2026-11-14",
+      "fact": "Drove from Marblemount to the Eldorado trailhead and started from there."
+     }
+    ]
+   },
+   {
+    "field": "rack",
+    "value": "Double rack plus rock shoes for the rock summits; 3-4 days of food",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.jeffreyjhebert.com/adventures/inspiration-traverse-eldorado-austera-dorado-needle",
+      "retrieved_at": "2026-11-14",
+      "fact": "Left with 3-4 days of food, a double rack and rock shoes."
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "Peak lines used on the traverse: Primus by its east slope, Austera by the south slope/ridge, Klawatti by its south face, Dorado Needle by the northeast face and northwest ridge",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://trailcatjim.com/inspiration-traverse-primus-peak-austera-peak-klawatti-peak-dorado-needle/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Summits: Primus via East Slope; Austera via South Slope-South Ridge; Klawatti via South Face; Dorado Needle via Northeast Face-Northwest Ridge."
+     }
+    ]
+   },
+   {
+    "field": "camp",
+    "value": "South Klawatti saddle and the North Klawatti Glacier flats",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://trailcatjim.com/inspiration-traverse-primus-peak-austera-peak-klawatti-peak-dorado-needle/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Campsites: Borealis Ridge bench, North Klawatti Glacier flats, South Klawatti Saddle."
+     }
+    ]
+   },
+   {
+    "field": "glacier",
+    "value": "Crosses the Klawatti and Inspiration glaciers",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://trailcatjim.com/inspiration-traverse-primus-peak-austera-peak-klawatti-peak-dorado-needle/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Waypoints include North Klawatti Glacier, Klawatti Glacier, Inspiration Glacier and Tepeh Gap."
+     }
+    ]
+   }
+  ],
+  "note": "Figures not used: Hebert's 25.38 mi / 11,450 ft (GPS) is a three-peak out-and-back from the Eldorado trailhead; trailcatjim (22 mi, 13,400 ft gained, 12,400 lost) and walkingplacestogether (32 mi, 5 days) start at Thunder Creek and run point to point - neither matches our five-peak Eldorado out-and-back."
+ },
+ "wa_ghost_peak_south_route": {
+  "area": "wa_ghost_peak",
+  "facts": [
+   {
+    "field": "fa",
+    "value": "July 17, 1970: Carla and Joan Firey, David Knudson, Peter Renz",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://en.wikipedia.org/wiki/Ghost_Peak",
+      "retrieved_at": "2026-11-14",
+      "fact": "First ascent July 17, 1970 by Carla and Joan Firey, David Knudson and Peter Renz."
+     },
+     {
+      "url": "https://www.mountainproject.com/area/120231853/ghost-peak",
+      "retrieved_at": "2026-11-14",
+      "fact": "First climbed in 1970 by Carla and Joan Firey, Peter Renz and David Knudson."
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "Traverse the south face to the south arete, then finish up the west face",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/area/120231853/ghost-peak",
+      "retrieved_at": "2026-11-14",
+      "fact": "First ascent party traversed the south face to the south arete and then to the west face."
+     }
+    ]
+   },
+   {
+    "field": "grade",
+    "value": "Class 4",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://en.wikipedia.org/wiki/Ghost_Peak",
+      "retrieved_at": "2026-11-14",
+      "fact": "Easiest route: West Face Route, class 4."
+     }
+    ]
+   },
+   {
+    "field": "rock_quality",
+    "value": "Rock generally solid by Pickets standards",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/area/120231853/ghost-peak",
+      "retrieved_at": "2026-11-14",
+      "fact": "Rock is generally solid as the Pickets go."
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "Reached directly from the Northern Pickets high camp",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/area/120231853/ghost-peak",
+      "retrieved_at": "2026-11-14",
+      "fact": "Access is obvious from high camp; see the Northern Pickets page for getting there."
+     }
+    ]
+   },
+   {
+    "field": "overview",
+    "value": "A small, sheer rock horn just south of Crooked Thumb with a big, steep east face",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/area/120231853/ghost-peak",
+      "retrieved_at": "2026-11-14",
+      "fact": "A sheer, small rock horn just south of Crooked Thumb with a huge, steep east face."
+     }
+    ]
+   }
+  ],
+  "note": "Wikipedia gives elevation 8,000+ ft and prominence 160 ft. No page gave distance or gain for this route."
+ },
+ "wa_garfield_mountain_south_route": {
+  "area": "wa_garfield_mountain",
+  "facts": [
+   {
+    "field": "high_point_ft",
+    "value": 5519,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://ericsbasecamp.net/trips/Garfield/Garfield.htm",
+      "retrieved_at": "2026-11-14",
+      "fact": "High point: main summit of Garfield Mountain, 5,519 ft."
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Middle Fork Snoqualmie River Road (about 1,200 ft)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://ericsbasecamp.net/trips/Garfield/Garfield.htm",
+      "retrieved_at": "2026-11-14",
+      "fact": "Starting point: Middle Fork Snoqualmie River Road, about 1,200 ft."
+     }
+    ]
+   },
+   {
+    "field": "dist_mi_roundtrip",
+    "value": 5,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://ericsbasecamp.net/trips/Garfield/Garfield.htm",
+      "retrieved_at": "2026-11-14",
+      "fact": "Round-trip distance about 5 miles."
+     }
+    ]
+   },
+   {
+    "field": "rack",
+    "value": "Two 50 m ropes, a light rack and plenty of slings",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://ericsbasecamp.net/trips/Garfield/Garfield.htm",
+      "retrieved_at": "2026-11-14",
+      "fact": "Equipment: ten essentials, 2 x 50 m ropes, light rack, plenty of slings."
+     }
+    ]
+   },
+   {
+    "field": "grade_note",
+    "value": "Route finding plus rock climbing to mid-5th class",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://ericsbasecamp.net/trips/Garfield/Garfield.htm",
+      "retrieved_at": "2026-11-14",
+      "fact": "Difficulties: route finding and rock climbing to mid 5th."
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "Named features: grassy slabs, the Great Canyon, the Key Ledge Traverse and the Number 2 Gully below the main summit",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://ericsbasecamp.net/trips/Garfield/Garfield.htm",
+      "retrieved_at": "2026-11-14",
+      "fact": "Photo captions: grassy slabs, edge of the Great Canyon, Key Ledge Traverse, Number 2 Gully, approach to summit."
+     }
+    ]
+   }
+  ],
+  "note": "Only one page for the main peak's south route could be found and read: DuckDuckGo returned only ericsbasecamp; SummitPost is 403, Mountaineers garfield-mountain 404 (earlier pass), trailcatjim covers the northwest couloir/west ridge (different route). Ericsbasecamp grades the rock 'mid 5th', vaguer than our 5.8."
+ }
+}

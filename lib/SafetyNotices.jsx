@@ -9,7 +9,12 @@
 // The reason shown is the one the reviewer typed into set_account_standing(); the climber can read
 // only their own row (RLS), so nothing here can show anybody else's standing.
 import { useState } from "react";
+import { SOLID_LEDGE } from "./buttonStyles.js";
 import { C, DLOCALE } from "../ClimbMatchCore.jsx";
+import { useSession } from "../src/AuthContext.tsx";
+import { useMyContributionStanding } from "./db";
+import { USE_DB } from "./supabase";
+import { openAppeal } from "./reportBus.js";
 import { POP_CLOSE } from "./popupChrome.js";
 
 export function AccountStandingNotice({ standing, onAppeal }) {
@@ -33,7 +38,17 @@ export function AccountStandingNotice({ standing, onAppeal }) {
 // sheet: warned (edits still accepted), restricted (field edits refused until a date; flags still
 // allowed) or banned from contributing (edits and flags refused). The reason is the one the owner
 // typed into the rejection or the override; only the climber's own row is readable (RLS).
-export function ContributionStandingNotice({ standing, onAppeal }) {
+// The signed-in climber's own contribution standing, for a form that is not the edit sheet (Add a climb,
+// Add an area). Since 0505 a restricted or banned contributor cannot propose a climb or an area either,
+// so the form says so before they fill it in, with the same Appeal button.
+export function MyContributionStandingNotice() {
+  const sess = useSession();
+  const uid = USE_DB && sess && sess.user ? sess.user.id : null;
+  const q = useMyContributionStanding(uid);
+  return <ContributionStandingNotice standing={(q && q.data) || null} what="Adding climbs and route editing" onAppeal={function () { openAppeal({ kind: "contributing", label: "your contributing standing" }); }} />;
+}
+
+export function ContributionStandingNotice({ standing, onAppeal, what = "Route editing" }) {
   if (!standing || standing.status === "ok") return null;
   const banned = standing.status === "banned", restricted = standing.status === "restricted";
   let untilTxt = "";
@@ -44,7 +59,7 @@ export function ContributionStandingNotice({ standing, onAppeal }) {
   const strikes = standing.strikes || 0;
   return <div role="status" style={{ margin: "12px 16px 0", padding: "11px 13px", borderRadius: 12, border: "1px solid " + col, background: bg, color: C.text }}>
     <div style={{ fontSize: 13.5, fontWeight: 800, color: col }}>
-      {banned ? "Route editing is closed for your account" : restricted ? "Route editing is paused" + (untilTxt ? " until " + untilTxt : "") : "One of your route edits was turned down"}
+      {banned ? what + " is closed for your account" : restricted ? what + " is paused" + (untilTxt ? " until " + untilTxt : "") : "One of your contributions was turned down"}
     </div>
     <div style={{ fontSize: 12.5, color: C.textSub, marginTop: 4, lineHeight: 1.5 }}>
       {standing.reason ? "Reason: " + standing.reason + ". " : ""}
@@ -71,9 +86,9 @@ export function AppealSheet({ target, busy, onClose, onSubmit }) {
       </div>
       <div style={{ padding: 16 }}>
         <div style={{ fontSize: 12, color: C.textMuted, fontWeight: 700, marginBottom: 6 }}>WHY SHOULD WE LOOK AGAIN?</div>
-        <textarea aria-label="Why should ClimbMatch Safety look again?" value={text} onChange={e => setText(e.target.value)} maxLength={2000} rows={5} placeholder="What we got wrong, or context we didn’t have." style={{ width: "100%", padding: "9px 11px", borderRadius: 9, border: "1px solid " + C.border, background: C.card, color: C.text, fontSize: 13, boxSizing: "border-box", resize: "vertical", minHeight: 100, outline: "none", fontFamily: "inherit", lineHeight: 1.5 }} />
+        <textarea aria-label="Why should ClimbMatch Safety look again?" value={text} onChange={e => setText(e.target.value)} maxLength={2000} rows={5} placeholder="What we got wrong, or context we didn’t have." style={{ width: "100%", padding: "9px 11px", borderRadius: 9, border: "1px solid " + C.field, background: C.card, color: C.text, fontSize: 13, boxSizing: "border-box", resize: "vertical", minHeight: 100, outline: "none", fontFamily: "inherit", lineHeight: 1.5 }} />
       </div>
-      <div style={{ padding: "12px 16px", borderTop: "1px solid " + C.border }}><button disabled={!text.trim() || busy} onClick={() => onSubmit(text.trim())} style={{ width: "100%", padding: 12, background: text.trim() && !busy ? C.blueSolid : C.border, color: text.trim() && !busy ? C.onSolid : C.textMuted, border: "none", borderRadius: 11, fontSize: 15, cursor: text.trim() && !busy ? "pointer" : "default", fontWeight: 700 }}>{busy ? "Sending…" : "Send appeal"}</button></div>
+      <div style={{ padding: "12px 16px", borderTop: "1px solid " + C.border }}><button disabled={!text.trim() || busy} onClick={() => onSubmit(text.trim())} style={{ width: "100%", padding: 12, background: text.trim() && !busy ? C.actionSolid : C.border,boxShadow:(text.trim() && !busy)?SOLID_LEDGE(C):"none", color: text.trim() && !busy ? C.onSolid : C.textSub, border: "none", borderRadius: 11, fontSize: 15, cursor: text.trim() && !busy ? "pointer" : "default", fontWeight: 700 }}>{busy ? "Sending…" : "Send appeal"}</button></div>
     </div>
   </div>;
 }

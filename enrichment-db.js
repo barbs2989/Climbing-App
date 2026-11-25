@@ -1,12 +1,6 @@
 // Enrichment database with validation
 // Schema: all fields optional, but when present must follow structure
 
-export const enrichmentTiers = {
-  FULL: ['peakMetadata', 'seasonalGuidance', 'hazards', 'crowds', 'partnerRequirements', 'dataQuality'],
-  ALPINE: ['peakMetadata', 'seasonalGuidance', 'seasonalHazards', 'crowds', 'partnerRequirements', 'dataQuality'],
-  ROCK: ['peakMetadata', 'partnerRequirements', 'crowds', 'dataQuality'],
-  MINIMAL: ['peakMetadata', 'dataQuality'],
-};
 
 // Validation schema
 export const validateEnrichmentData = (route) => {

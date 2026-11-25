@@ -34,6 +34,10 @@ export async function hashKey(value: string): Promise<string> {
 // Checks all limits before recording any, so a refused call does not consume quota.
 export async function allow(supabase: Client, limits: Limit[]): Promise<boolean> {
   try {
+    // A window longer than the ledger keeps rows is a limit that silently resets when cleanup runs
+    // (screen-content's "once per row for 30 days" lasted 8). Refuse it loudly instead.
+    const tooLong = limits.find((l) => l.windowSec > RETENTION_SEC);
+    if (tooLong) throw new Error(`${tooLong.bucket}: windowSec ${tooLong.windowSec} exceeds ledger retention ${RETENTION_SEC}`);
     const hashed = await Promise.all(limits.map(async (l) => ({ ...l, h: await hashKey(l.key) })));
     for (const l of hashed) {
       const since = new Date(Date.now() - l.windowSec * 1000).toISOString();
@@ -58,7 +62,7 @@ export async function allow(supabase: Client, limits: Limit[]): Promise<boolean>
     }
     // Opportunistic cleanup, ~1 call in 50: nothing here needs more than a week.
     if (Math.random() < 0.02) {
-      const cutoff = new Date(Date.now() - 8 * 86400 * 1000).toISOString();
+      const cutoff = new Date(Date.now() - RETENTION_SEC * 1000).toISOString();
       await supabase.from("edge_rate_events").delete().lt("created_at", cutoff);
     }
     return true;
@@ -71,3 +75,5 @@ export async function allow(supabase: Client, limits: Limit[]): Promise<boolean>
 export const HOUR = 3600;
 export const DAY = 86400;
 export const WEEK = 7 * DAY;
+// How long the ledger keeps a row. No limit's window may exceed it (allow() refuses one that does).
+export const RETENTION_SEC = 8 * DAY;

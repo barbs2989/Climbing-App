@@ -1,5 +1,6 @@
-import { memo, useRef, type KeyboardEvent, type PointerEvent } from "react";
+import { memo, useMemo, useRef, type KeyboardEvent, type PointerEvent } from "react";
 import { C, uDist, uElev } from "../../ClimbMatchCore.jsx";
+import { elevationGainLoss } from "../../lib/elevGain.js";
 
 export interface ElevChartProps {
   /** Elevation of each recorded sample in feet (the route's elev_pts), index-aligned with the track. */
@@ -13,25 +14,12 @@ export interface ElevChartProps {
   onIndex?: (i: number | null) => void;
   /** Line and fill colour (default the palette blue). */
   color?: string;
+  /** The track starts well away from the route's trailhead, so its climb and descent are a piece of
+   *  the route's: the totals are not printed, and the line says why. */
+  partial?: boolean;
 }
 
 const W = 340, H = 92, P = 8;
-
-/**
- * Total climb and descent over a profile, in the same units as `pts` (feet). A change counts only
- * once it is `threshold` feet away from the last level that counted, so the jitter of a GPS or a
- * barometer does not add up as hundreds of feet of gain on a flat walk.
- */
-export function elevationGainLoss(pts: readonly number[], threshold = 10): { gain: number; loss: number } {
-  let gain = 0, loss = 0;
-  if (pts.length < 2) return { gain, loss };
-  let base = pts[0];
-  for (const v of pts) {
-    if (v - base >= threshold) { gain += v - base; base = v; }
-    else if (base - v >= threshold) { loss += base - v; base = v; }
-  }
-  return { gain, loss };
-}
 
 /** The sample whose distance is nearest `target`; `km` is sorted ascending. */
 function nearestIndex(km: readonly number[], target: number): number {
@@ -43,20 +31,23 @@ function nearestIndex(km: readonly number[], target: number): number {
   return lo > 0 && target - km[lo - 1] < km[lo] - target ? lo - 1 : lo;
 }
 
-function ElevChartImpl({ pts, km, index, onIndex, color }: ElevChartProps) {
+function ElevChartImpl({ pts, km, index, onIndex, color, partial }: ElevChartProps) {
   const svgRef = useRef<SVGSVGElement | null>(null);
   const dragging = useRef(false);
+  /* Once per track, not once per scrub step: the totals do not depend on where the marker is. */
+  const { gain, loss } = useMemo(() => (pts && pts.length >= 2 ? elevationGainLoss(pts, km && km.length === pts.length ? km : null) : { gain: 0, loss: 0 }), [pts, km]);
   if (!pts || pts.length < 2 || (km && km.length !== pts.length)) return null;
   const n = pts.length;
   const total = km ? km[n - 1] : n - 1;
   if (!(total > 0)) return null;
   const scrub = !!km && !!onIndex;
-  const mn = Math.min(...pts), mx = Math.max(...pts);
+  /* A loop, not Math.min(...pts): spreading a very long track as arguments overflows the stack. */
+  let mn = pts[0], mx = pts[0];
+  for (const v of pts) { if (v < mn) mn = v; if (v > mx) mx = v; }
   const x = (i: number) => P + ((km ? km[i] : i) / total) * (W - 2 * P);
   const y = (v: number) => H - P - ((v - mn) / (mx - mn || 1)) * (H - 2 * P);
   const d = pts.map((v, i) => `${i ? "L" : "M"}${x(i).toFixed(1)},${y(v).toFixed(1)}`).join(" ");
   const col = color || C.blue;
-  const { gain, loss } = elevationGainLoss(pts);
   const on = index != null && index >= 0 && index < n ? index : null;
 
   /* A finger or a pen scrubs only while it is down, so a page scroll never moves the marker; a mouse
@@ -98,9 +89,11 @@ function ElevChartImpl({ pts, km, index, onIndex, color }: ElevChartProps) {
   };
 
   return (
-    <div style={{ background: "#050d1a", borderRadius: 8, padding: "8px 10px 4px", border: `1px solid ${C.border}` }}>
+    <div style={{ background: "#0e0d0b", borderRadius: 8, padding: "8px 10px 4px", border: `1px solid ${C.border}` }}>
       <div style={{ display: "flex", justifyContent: "space-between", gap: 8, flexWrap: "wrap", fontSize: 12, color: C.textMuted, marginBottom: 4 }}>
-        <span>Gain <strong style={{ color: col }}>{uElev(gain)}</strong> · Loss <strong style={{ color: C.red }}>{uElev(loss)}</strong></span>
+        {partial
+          ? <span>Track starts away from the trailhead</span>
+          : <span>Gain <strong style={{ color: col }}>{uElev(gain)}</strong> · Loss <strong style={{ color: C.red }}>{uElev(loss)}</strong></span>}
         <span style={{ color: C.text }}>{on != null && km ? `${uElev(pts[on])} at ${uDist(km[on])}` : km ? uDist(total) : `${n} samples`}</span>
       </div>
       <svg

@@ -23,8 +23,10 @@ const sha = (s) => crypto.createHash("sha256").update(s).digest("hex");
 const CASES = [
   {
     name: "pendDay back on roster",
-    find: "var pendDay=inCrew.filter(function(p){return !_ds.some(",
-    repl: "var pendDay=roster.filter(function(p){return !_ds.some(",
+    // Lives in crewStage (ClimbMatchCore.jsx) since the guided-journey card: drop the confirmed-only filter.
+    file: path.join(ROOT, "ClimbMatchCore.jsx"),
+    find: "var need=[0].concat((c.members||[]).filter(function(m){return m&&m.status===\"confirmed\"&&m.climberId!==0;})",
+    repl: "var need=[0].concat((c.members||[]).filter(function(m){return m&&m.climberId!==0;})",
     expect: "waiting on X to tap a day that works",
     silent: false,
   },
@@ -35,13 +37,8 @@ const CASES = [
     expect: "usually free for everyone",
     silent: false,
   },
-  {
-    name: "the backcountry safety total back on roster",
-    find: "var total=inCrew.length;var done=inCrew.filter(",
-    repl: "var total=roster.length;var done=roster.filter(",
-    expect: "the backcountry safety brief's total",
-    silent: false,
-  },
+  // "the backcountry safety total back on roster" retired 2026-11-14: the Ready-up safety banner that
+  // counted inCrew was folded into the checklist's Safety part (crewStage), which check:crew covers.
   {
     name: "risk alignment back on roster",
     find: 'const risks=tp.modules.includes("align")?inCrew.map(',
@@ -93,6 +90,9 @@ for (const c of CASES) {
 }
 
 for (const c of CASES) {
+  const FILE = c.file || SRC;
+  const original = fs.readFileSync(FILE, "utf8");
+  const originalSha = sha(original);
   const n = original.split(c.find).length - 1;
   if (n !== 1) {
     console.log(`  BROKEN CASE  ${c.name} — anchor matched ${n} times, expected 1`);
@@ -105,10 +105,10 @@ for (const c of CASES) {
     bad++;
     continue;
   }
-  fs.writeFileSync(SRC, injected);
+  fs.writeFileSync(FILE, injected);
   const r = runProbe();
-  fs.writeFileSync(SRC, original);
-  if (sha(fs.readFileSync(SRC, "utf8")) !== originalSha) {
+  fs.writeFileSync(FILE, original);
+  if (sha(fs.readFileSync(FILE, "utf8")) !== originalSha) {
     console.error("BROKEN HARNESS: the file was not restored byte-identically. Stopping.");
     process.exit(2);
   }

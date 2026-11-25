@@ -415,6 +415,14 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     database a day later anyway.
   - Injection-tested 9/9, listed at the bottom of the script. Case 1 is the real historical defect,
     reproduced by un-qualifying `0163`.
+  - **A DROP followed by a CREATE in the same file is not a dropped function** (2026-11-19, 0478).
+    The parser read every CREATE in a file and then every DROP, so a migration that changes a
+    function's argument list or `RETURNS TABLE` (which cannot be a `CREATE OR REPLACE`) left the
+    function marked gone, and every later rule skipped it. Six live definer functions were unseen
+    this way; one, `partner_signals` (0335), is client-callable without an identity test and is now
+    listed in `PUBLIC_DEFINER` with its reason. The drop loop now asks whether a CREATE of that name
+    follows the DROP in that file. It still cannot tell two OVERLOADS apart: the map is keyed by
+    name, so dropping one signature while another lives reads as whichever statement came last.
 - **`check:catalog-duplicates`** asks whether the catalog can gain a **duplicate route** again, and
   whether one already has. Built 2026-09-25 after `import-route-grades --create-areas` filed MP's
   `North Cascades › Mt. Baker` beside our `Bellingham and Mt Baker Hwy › Mount Baker` (~225 copy
@@ -1022,6 +1030,18 @@ Part of the guard notes — see [README.md](README.md) for the full index.
   - Injection-tested; the four cases are named at the bottom of the script and are
     driven by `--inject=`, since the fault lives in the DB and the checker cannot
     write. `--sql` prints the repair as a **recount**, never as literal numbers.
+  - **WHEN THE `--sql` RECOUNT CHANGES NOTHING, THE PATHS ARE WRONG, NOT THE COUNT (0520, 2026-11-24).**
+    This guard walks `parent_id`; the recount (and every `path <@` reader) walks `areas.path`. Twelve
+    regions "drifted" and the printed recount left every one unchanged, because `route_count` matched
+    the path tree exactly: 36 areas held a path under their parent's OLD place. A mid-level area had
+    moved (Lover's Leap Limestone, Point Mugu, Riggins, Memorial Falls, Leslie Gulch…), `areas_set_path`
+    rewrote its own path, and nothing rewrote its children's — that trigger fires only on a row's own
+    `parent_id`/`id`. Diagnose with `select a.id from areas a join areas p on p.id = a.parent_id where
+    a.path <> p.path || subpath(a.path, nlevel(a.path) - 1)`. 0520 repaired them and added
+    `trg_areas_cascade_path`: a changed path now carries its children (recursively), and a change of
+    PARENT moves the area's `route_count` from its old ancestors to its new ones, so a move no longer
+    leaves either drift behind. It also cleared an `check:area-duplicates` finding (Buffalo Canyon/Dark
+    Canyon), which paired two children whose stranded paths sat outside their own parent.
 - **`check:approve-route-columns`** asserts that nothing may fork `approve_new_route` again.
   That function is the whole consume half of the add-a-route flow: it turns a pending
   `new_route` contribution into a row in `routes`, and it is a `SECURITY DEFINER` RPC precisely
@@ -1485,6 +1505,16 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     the NAME, not their stored `name_search`, so an old pack cannot keep the old rule. The three
     remaining verbatim route/area-name boxes (add-route dupes seed half, AreaTree filter, inbox
     crew-thread route name) now use `searchMatches`.
+  - **Section 5 — the state/province table (0487).** Discover's groups are searched, filtered by
+    state and paged in the database, so a group's region is worked out in SQL
+    (`region_of_place`, stored as `groups.region`) while the climber's HOME region is still
+    worked out in JS (`regionOfPlace`, `lib/db.js`) and sent to `discover_groups()` to rank by.
+    The section reads the newest migration defining `place_regions()` and `REGION_ABBR`, and
+    fails unless they hold the same rows in the same order (the order decides a tie between two
+    names of one length). `ANCHOR LOST` under 50 rows on either side. It compares the TABLE, not
+    the three tests `region_of_place` applies to it; those are asserted by
+    `scripts/oneoff/verify-0487-discover-groups-pglite.mjs` (hand-run, PGlite). Injection: misspell
+    one SQL row and it names the row SQL lacks and the one it adds.
   - **Structurally cannot see** whether the live database runs that migration —
     `check:function-drift` does.
   - Injection-tested **4/4** (SQL drops a row, JS adds an alias SQL lacks, the SQL accent fold
@@ -1559,3 +1589,16 @@ Owner rule: a peak route with rock-climbing pitches (5th class and above) is **a
 - **Widened 2026-10-24 to SCRAMBLING and to the `disciplines` LIST.** Owner, on Monte Cristo ("Standard Scramble", 5.6): "Most people don't scramble a 5.6 graded route." The row's primary had been alpine since #1854, but its list still read `["scrambling"]`, and `DiscBadges`/`rDiscs` let a non-empty list win outright, so the page said Scrambling. 83 rows' lists omitted their own primary, because every walk-up round re-filed `discipline` and left `disciplines`. Now: `rDiscs` leads with `catOf(r)` and drops "scrambling" from a 5.x route; `catOf` and trigger **0366** turn scrambling + 5.x into alpine (Cardinal SE Slopes, Mount Meany, Huckleberry West Face, Lundin East Ridge — each carries rope or rack for its pitch) and keep the primary in the list on every write; `scripts/oneoff/fix-disciplines-list-matches-primary.mjs` repaired 123 rows (rollback file in `scripts/`), renamed Monte Cristo's row *North Col* (The Mountaineers list it as "Basic Alpine Climb — Monte Cristo/North Col") and Horseshoe/Spire's "Standard Scramble" to *Standard Route*; four peak labels (Huckleberry, Lundin, Meany, Cardinal) moved to alpine with their standard route. This audit fails on either kind again. It reads with the **service key** now: under the anon key RLS makes the sparse scrambling/alpine keyset pages hit the statement timeout.
 - **Residue fixed 2026-10-25 (owner's note: "5.6 or 5.7 yds still counted as mountaineering").** 0280 turned a mountaineering row alpine but kept "mountaineering" in its `disciplines` list, and `rDiscs` reads that list, so **83 live alpine routes with a 5.x grade still showed the Mountaineering chip**. The audit's primary-column pass could not see it (their `discipline` was already alpine). Fixed three ways: `rDiscs` drops "mountaineering" from a 5.x route as it does "scrambling"; `scripts/oneoff/strip-mountaineering-residue.mjs` stripped the tag from exactly those 83 rows (paced, each PATCH asserts its old list; re-read: 0 left; 20 alpine+mountaineering rows with no 5.x kept as walk-ups); this audit now also fails on a five-class alpine row listing mountaineering. Note the audit's `disciplines=cs.` array filter times out on `routes`, so the residue scan reads the indexed primary `discipline=eq.alpine` and filters the array in memory. No new trigger: 0366 already keeps every grade-driven write honest.
 - **Class 1-2 mountaineering rows lost "alpine"/"scrambling" from their list** (walk-ups — Baker Easton, Rainier Emmons, Mount Townsend's trail). **Class 3+ lists were left alone**: a first draft that rebuilt lists from the Class grade tagged Rainier's Disappointment Cleaver a scramble.
+
+- **`check:profile-privacy` (0434/0435, 0501): what the API itself hands a signed-out or a signed-in stranger.** Replays every
+  migration into PGlite with Supabase's default grants, then reads `profiles` as anon and authenticated (hidden name and
+  photos, private columns, every app select list) and, since 0501, `climb_logs` signed out (section 7): `partners` and
+  `select *` refused, every OTHER column granted, and every `.from("climb_logs").select("…")` list plus `TRIP_REPORT_COLS`
+  run as anon. Hand-run, so run it whenever a migration ADDS a `climb_logs` or `profiles` column: column grants mean a new
+  column is invisible to the roles that lost the table-level SELECT until its migration grants it, and a guest's trip-report
+  read naming it fails outright (the 0121 fallback only catches an UNKNOWN column, not a forbidden one).
+  - Injection-tested 2026-11-23: with 0501 moved aside, section 7 fails twice (partners readable, `select *` allowed); with a
+    migration adding `climb_logs.zz_test` and no grant, it fails naming that column.
+  - `check:migration-replay` cannot carry this: its stand-in database sets NO default grants, so anon holds nothing there and
+    every column-privilege question answers "no".
+  **One list may name `partners`: `useMyLogs`** (your own logs, `.eq("user_id", userId)`, 2026-11-23). Section 7 runs every other `climb_logs` list signed out, and this one signed in as its author (`where user_id = auth.uid()`); a list naming `partners` anywhere else, or `useMyLogs` reading anything but its own rows, fails. Injection-tested by adding `partners` to `useUserLogs`. The exception exists because the author's own logbook and edit form need who they climbed with, which 0501 had taken from them along with every other column.

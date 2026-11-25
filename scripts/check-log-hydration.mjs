@@ -93,7 +93,7 @@ const written = depth1Keys(payloadLit);
 // hydration of the same rows DID read the column, so it stayed on screen for every other
 // climber. An exemption is a claim about the code, and this one had quietly stopped being
 // true; it is now a real round-trip and the exemption is gone so it cannot lapse again.
-const DERIVED = new Set(["discipline", "caught_fall"]);
+const DERIVED = new Set(["discipline"]);
 
 // ---- what the read path maps back -------------------------------------------
 const hi = SRC.indexOf("var item={_dbId:row.id");
@@ -127,8 +127,8 @@ console.log(`  ok    every persisted column is mapped back`);
 // code and is silent data loss in practice: the field is mapped, so it looks
 // handled, and it is always empty because nothing ever put a value there.
 //
-// Four columns are in that state today. They are NOT oversights and adding them
-// to the payload would not work: partners is uuid[] and belayed_by/crew_id are
+// Three columns are in that state today. They are NOT oversights and adding them
+// to the payload would not work: partners is uuid[] and crew_id is
 // uuid, while the app holds partner NAMES ("Maya Chen") and has no profile ids
 // to resolve them against. They are blocked on partner tagging resolving real
 // profiles, so they are recorded here rather than silently tolerated. Remove an
@@ -136,7 +136,6 @@ console.log(`  ok    every persisted column is mapped back`);
 // go away.
 const UNWRITTEN_OK = new Map([
   ["partners",   "uuid[]; app holds partner names, needs profile-id resolution"],
-  ["belayed_by", "uuid; same — catch credit has no profile id to point at"],
   ["crew_id",    "uuid; log<->crew link is never set on save"],
   ["gpx_track",  "written only via contribute, never by the log save path"],
 ]);
@@ -259,6 +258,70 @@ if (staleThin.length) {
   process.exit(1);
 }
 console.log("  ok    the route-page hydration drops nothing a reader wants");
+
+// ---- a starless CLIMB is still a climb (2026-11-18) ----------------------------
+// The star rating is optional. The hydration filed every `stars == null` row with your CONDITIONS
+// reports, so a starless Summit (1 of the 14 live logs) left your climbs, and the bell said its
+// climber "reported conditions on" it. One rule now decides, isScoutRow in lib/tripReportRow.js:
+// tick "Conditions", or no tick AND no stars (an older scout report). Read its body and run it.
+{
+  const trr = readFileSync(new URL("../lib/tripReportRow.js", import.meta.url), "utf8");
+  const m = trr.match(/export function isScoutRow\((\w+)\) \{([\s\S]*?)\n\}/);
+  if (!m) fail("ANCHOR LOST — isScoutRow is gone from lib/tripReportRow.js.");
+  const isScoutRow = new Function(m[1], m[2]);
+  const cases = [
+    [{ tick_type: "Conditions", stars: null }, true, "a Conditions report"],
+    [{ tick_type: null, stars: null }, true, "an older scout report (no tick, no stars)"],
+    [{ tick_type: "Summit", stars: null }, false, "a starless Summit"],
+    [{ tick_type: "Redpoint", stars: 3 }, false, "a rated Redpoint"],
+    [{ tick_type: null, stars: 4 }, false, "a rated log with no tick"],
+  ];
+  for (const [row, want, name] of cases) if (isScoutRow(row) !== want) fail("isScoutRow calls " + name + (want ? " a climb." : " a conditions report."));
+  console.log("  ok    isScoutRow tells a starless climb from a conditions report (5 cases)");
+  for (const bad of ["scoutOnly:row.stars==null", "if(row.stars==null)dbConds.push"])
+    if (SRC.includes(bad)) fail("the hydration decides scout by stars alone again (" + bad + ") — use isScoutRow(row).");
+  const uses = (SRC.match(/isScoutRow\(row\)/g) || []).length;
+  if (uses < 3) fail("isScoutRow(row) decides only " + uses + " of the 3 places (scoutOnly, the dbConds split, the bell's wording).");
+  console.log("  ok    the hydration and the bell both use isScoutRow");
+}
+
+// ---- the SELECT that feeds the hydration (2026-11-23) -----------------------
+// Everything above compares the payload with the mapping and assumed the rows arrive whole
+// ("useUserLogs selects *"). 0501 (#3736) narrowed useUserLogs to five columns for the résumé,
+// not knowing App hydrated your OWN logs from it too: every column above was mapped and every one
+// arrived undefined, so a signed-in climber's write-ups, conditions and times loaded blank, their
+// own route page lost their conditions, and an edit saved the blanks back. This reads the hook App
+// actually calls and fails unless it selects `*` or names every column the hydration reads.
+{
+  const DB = readFileSync(new URL("../lib/db.js", import.meta.url), "utf8");
+  const hookBody = (name) => {
+    const at = DB.indexOf("export function " + name + "(");
+    if (at < 0) fail(`could not find export function ${name}( in lib/db.js (the hook App's ${name === hookOwn ? "myLogsQ" : "profLogsQ"} calls).`);
+    // ends at the next TOP-LEVEL declaration, exported or not: the body must not run on into a
+    // neighbour that happens to name TRIP_REPORT_COLS (a first draft ended at "\nexport " and passed
+    // useUserLogs, because fetchRouteTripReports below it is not exported)
+    const rest = DB.slice(at + 10);
+    const m = rest.match(/\n(?:export |async function |function |const |let |\/\/ Query)/);
+    return DB.slice(at, m ? at + 10 + m.index : DB.length);
+  };
+  const ownM = SRC.match(/myLogsQ=(use[A-Za-z]+)\(uid\)/);
+  if (!ownM) fail("ANCHOR LOST: myLogsQ=use…(uid) not found in ClimbMatch.jsx — cannot tell which query feeds the hydration.");
+  var hookOwn = ownM[1];
+  const body = hookBody(hookOwn);
+  const sel = body.match(/\.select\(\s*"([^"]*)"\s*\)/);
+  if (!sel) fail(`${hookOwn} has no literal .select("...") — this check cannot read what it fetches.`);
+  if (sel[1].trim() !== "*") {
+    const got = new Set(sel[1].split(",").map((x) => x.trim()));
+    const short = [...readBack].filter((c) => !got.has(c)).sort();
+    if (short.length) fail(`${hookOwn} (myLogsQ, the rows App hydrates your own logs from) selects "${sel[1]}" and never fetches ${short.length} column(s) the hydration reads: ${short.join(", ")}. Each loads as blank, and an edit saves the blank back.`);
+  }
+  console.log(`  ok    ${hookOwn} (myLogsQ) fetches every column the hydration reads`);
+  const profM = SRC.match(/profLogsQ=(use[A-Za-z]+)\(_profUid\)/);
+  if (!profM) fail("ANCHOR LOST: profLogsQ=use…(_profUid) not found in ClimbMatch.jsx.");
+  const pBody = hookBody(profM[1]);
+  if (!/TRIP_REPORT_COLS/.test(pBody)) fail(`${profM[1]} (profLogsQ: another climber's Activity, opened as trip reports) does not select TRIP_REPORT_COLS — the reports it opens would be missing their write-up and conditions.`);
+  console.log(`  ok    ${profM[1]} (profLogsQ) selects the route page's report columns`);
+}
 
 console.log("\nclimb-log hydration: ok");
 

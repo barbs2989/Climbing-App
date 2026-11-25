@@ -4,8 +4,48 @@ Moved verbatim from `CLAUDE.md`, which keeps a one-paragraph summary of the rule
 Read this before doing the kind of work it describes. Where the text says "this file" it means the
 project documentation as a whole — `CLAUDE.md`, `docs/codebase/` and `docs/guards/`.
 
-- `compat(a, b)` (~L335) — partner compatibility score (20–99) from shared disciplines, grade closeness, shared objectives, **shared listed areas** (`partnerAreaPaths`, 0300), verification, pace (`hikingSpeedFtHr`), and availability overlap. Every term is BOUNDED and the total is RESCALED onto that range; it does not clamp.
-  - **LISTED AREAS (2026-10-15, 0300).** Crag partners are found by area, so a yes/no term `CMAX_AREA=14`
+- `compat(a, b)` (~L1414) — partner compatibility score (20–99) from shared disciplines (16), grade closeness (28),
+  **where you climb** (24: shared objectives OR listed areas), verification of both sides (8), pace (10) and
+  availability overlap (12). Every term is BOUNDED and the total is RESCALED onto that range; it does not clamp.
+  - **THE COMPAT AUDIT OF 2026-11-23 (owner approved all four fixes).** Measured by running the real `compat()` over
+    the 5 seed climbers and 11 real-row-shaped personas:
+    1. **One number for the pair.** `verified` read only the OTHER climber, so 12 of 20 seed pairs differed by
+       direction, by up to 6 points. Each verified side is now half the term; 0 pairs differ.
+    2. **WHERE YOU CLIMB is one term (`CMAX_WHERE` 24), replacing `CMAX_OBJ` 20 + `CMAX_AREA` 14.** A crag climber never
+       saves a mountain objective (see LISTED AREAS below), so the objectives term could never be earned and a crag pair
+       that matched on everything topped out at 84%; an alpine pair with no listed area at 89%. Now the same listed
+       area is full marks, one shared objective three quarters, two or more full, and the term takes the higher. Both
+       reach 99. Known only for a COMPARABLE pair, which was already `compatUnknown`'s rule.
+    3. **Every profile ladder is a grade.** The term read `sportGrade` / `tradGrade` / `boulderGrade` only; ice, alpine,
+       mixed and aid grades (`climb_grades`, 0237) were read by nothing, so an ice climber always read *Grade: not
+       comparable*. It now takes the closest kind both climbers set (sport, trad, alpine, ice, mixed, aid, boulder); on
+       the ice, mixed and aid ladders a number grade is two steps and a "+" one, so WI2 vs WI4 is *Far apart*. The
+       cross comparison stays a YDS-only fallback (sport, trad, alpine).
+    4. **One rule for a blank: half the term.** It was half for grade and pace, a third for availability and nothing
+       for disciplines, objectives and areas, so WHICH field was left blank decided the score. Two empty profiles now
+       score 56% rather than 37%, which no screen shows: a real row with 3+ unknowns still refuses to print a %.
+    `check:match-percent` section 8 pins all four, and `scripts/oneoff/inject-match-percent-cases.mjs` reverts each
+    one on its own (19/19 as expected).
+  - **RELIABILITY (`CMAX_REL` 24, 0519, owner 2026-11-23; reweighted 2026-11-24).** Each climber's record (`relRecordOf`:
+    crewmates' trip reports from `reliability_of_users`, plus their vouches' Reliability stars, or the retired "punctuality"
+    stars on a vouch that has no reliability rating) becomes a rate (`relRate`): a trip is worth 1 on time,
+    0.9 cancelled with notice, 0.75 late, 0.35 cancelled last minute, 0 no-show; each vouch's stars half a trip at
+    (stars−1)/4; pulled toward `REL_PRIOR` (0.85, a typical climber) by two imaginary trips, so one bad day on a short record
+    does not sink it (one no-show alone reads 0.57). The term is `12 × r(me) + 12 × r(them)`, a missing record counting
+    `REL_PRIOR`, so it stays SYMMETRIC like verified and no record is never a bad mark.
+    - **No record caps a perfect pair at 97, by design (second review 2026-11-24).** Two climbers who match on everything
+      else but have no crew record each count `REL_PRIOR` (0.85), and `relRate` keeps any record below 1.0, so 99 needs a
+      long spotless record on both sides. #3826's "a crag pair can reach 99" holds with that record
+      (`check:match-percent` 8b builds it); without one, the same pair reads 97.
+    - **Re-audit 2026-11-24 (owner: "do what you recommend").** At 12 with a missing record at 0.5, a partner with 20
+      no-shows read 84% against 87% for 20 on time, and 3 no-shows in 5 trips read the SAME as a brand-new climber (the
+      neutral half sat below the norm the rate is pulled toward). Now, from a mid profile: 20 on time 89%, no record 88%,
+      3 of 5 no-shows 86%, 20 no-shows 82% -- a chronic no-show costs about as much as four letter grades. The estimate
+      given beforehand (about 13 points between the extremes) missed the rescale onto 20..99; the measured gap is 7.
+      The example climbers' vouches all rate "punctuality", so guests saw no reliability at all until the fallback. It is not one of `compatUnknown`'s signals: a new climber's blank record must
+    not push real partner rows over the "limited info" line. The checklist line is plain counts (`reliabilityText`).
+    `check:match-percent` section 9.
+  - **LISTED AREAS (2026-10-15, 0300; merged into WHERE YOU CLIMB on 2026-11-23, above).** Crag partners are found by area, so a yes/no term `CMAX_AREA=14`
     (the weight of ONE shared objective, deliberately — one shared crag is one shared climb's worth of
     "we climb in the same place") fires when any of a's listed-area paths is b's, or sits inside it, or
     contains it (`areaPathsOverlap`, the client form of the ltree `<@`/`@>` reach). In the same change
@@ -15,6 +55,28 @@ project documentation as a whole — `CLAUDE.md`, `docs/codebase/` and `docs/gua
     `compatUnknown` treats objectives-or-areas as ONE "where you climb" signal, so a crag climber with
     listed areas and no alpine objective is not "unknown". `check:match-percent` demands the new term
     moves the number and names it in the copy ("shared objectives and listed areas").
+  - **GRADE IS LIKE WITH LIKE (2026-11-18, compat audit over 10 accounts).** The term took each side's first rope grade
+    (sport, else trad), so a sport grade was measured against a trad grade: Avery (5.11a sport / 5.10a trad) read *Far
+    apart* from Blake (5.9 trad). It now compares sport with sport and trad with trad, takes the closer when both set
+    both, and falls back to the cross comparison only when they share no rope-grade kind. `check:match-percent` pins all three.
+  - **EVERY NUMBER GRADE IS A STEP (2026-11-23).** The grade term's scale gave 5.8 and below ONE step, so 5.6 was two
+    steps from 5.10a: *Close in grade*, and 22 of the term's 28 points, for a pair four number grades apart. It is now one
+    step per number grade up to 5.9 and one per letter grade above. 5.13 and up had shared one step too (5.13a read *Same
+    grade* as 5.14d) and now step by letter. 5.9 to 5.12 is spaced as before, so only pairs with a grade below 5.9 or
+    above 5.12 move.
+    Found when the one-sentence match summary repeated "close grades (5.10a and 5.6)". `check:match-percent` pins it.
+  - **AVAILABILITY IS AN OVERLAP COEFFICIENT (2026-11-18).** It scored 6 per shared slot, so two weekends-only
+    climbers (the same schedule) got 6 of 12 and an amber "partly". It now scores shared slots over the SMALLER side's
+    slots (Szymkiewicz-Simpson), so one schedule wholly inside the other counts fully; flexible stays full. Chosen over
+    Jaccard, which would penalise the climber who is free MORE often; partner apps match on whether times line up.
+    `scripts/oneoff/measure-compat-designs.mjs` no longer reproduces the shipped formula, and has not since the
+    listed-areas term (0300) was added; it is a historical record, not a check.
+  - **LEAD vs FOLLOW GRADES (2026-11-05, competitor review item 20).** A roped discipline's profile grade
+    is the grade the climber LEADS (or, for a follow-only climber, follows); a leader may add the harder
+    grade they will follow (`climb_grades[k].follow`, see `PROFILE_GRADES` in core). The grade term here
+    still reads `sportGrade` / `tradGrade` / `boulderGrade` — the lead (or only) grade — and does not look
+    at `follow`: two leaders are matched on what each leads, which is the number that decides who
+    takes the sharp end. The follow grade is shown beside the role on profiles for the partner to read.
   - **IT SATURATES, AND THE SCREEN'S OWN COPY IS FALSE EXACTLY WHERE THE SEARCH POINTS YOU.**
     Partners says *"Match % blends your shared objectives, grade range, disciplines, availability
     overlap and whether they are verified"* — and the demo walk shows three climbers at **5.10a, 5.11a and

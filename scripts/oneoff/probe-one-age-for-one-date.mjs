@@ -156,27 +156,19 @@ await browser.close();
 stop();
 
 if (txt) {
-  const strap = txt.match(/Updated ([^\n·]+?)(?=\s*(?:↘|↗|→|\n|$))/);
-  const recent = txt.match(/Most recent report:\s*([^·\n]+?)\s*·\s*(\d{4}-\d{2}-\d{2})/);
-  if (!strap) problems.push('the "Updated ..." freshness strap did not render — NOT MEASURED, not agreement');
-  if (!recent) problems.push('the "Most recent report: ..." line did not render — NOT MEASURED, not agreement');
-  if (strap && recent) {
-    const a = strap[1].trim(), b = recent[1].trim(), date = recent[2];
-    console.log(`[screen] latest report date  : ${date}`);
-    console.log(`[screen] freshness strap     : "Updated ${a}"`);
-    console.log(`[screen] consensus panel     : "Most recent report: ${b}"`);
-    if (a !== b) problems.push(`one date (${date}) is reported as "${a}" and as "${b}" on one screen`);
-    else console.log(`[screen] -> both derive "${a}" from ${date}`);
-  }
+  // ONE PRINT NOW (2026-11-18). The Community Consensus card used to give the newest report's date twice, an
+  // "Updated ..." strap and a "Most recent report: ..." line, and this section compared the two ages. The card was
+  // rebuilt to say each thing once: the summary line ("7 reports · latest 1w ago by Sam") is the only print. So the
+  // assertion is that the summary rendered and the second print has NOT come back. If it does, compare them again.
+  const summary = txt.match(/\d+ reports? · (?:latest )?(today|\d+(?:d|w|mo|y) ago)/);
+  if (!summary) problems.push('the consensus summary line ("N reports · latest ...") did not render — NOT MEASURED, not agreement');
+  else console.log(`[screen] consensus summary   : "${summary[0]}"`);
+  if (/Most recent report:|Updated (?:today|\d+(?:d|w|mo|y) ago)/.test(txt)) problems.push("the newest report's date is printed a SECOND time on the Reports tab — one date, one print; if both are wanted, this probe must compare their ages again");
   // The honest figure the badge used to contradict, printed a few hundred pixels below it.
   if (/\d+\s+verified reports?/.test(txt)) problems.push('a badge still claims "N verified reports" from a plain report count');
-  const vc = txt.match(/(\d+) of (\d+) reports from verified climbers/);
-  if (!vc) problems.push("the verified-climber line did not render — that is the figure the badge must not contradict, so its absence is NOT MEASURED");
-  else {
-    console.log(`[screen] verified climbers   : ${vc[1]} of ${vc[2]}`);
-    const badge = txt.match(/✓\s*(\d+)\s+reports?\b/);
-    if (badge) console.log(`[screen] what's-changed badge: "✓ ${badge[1]} reports" — the report count, said plainly`);
-  }
+  // The verified figure rides on the confidence line and is only drawn when at least one reporter is verified.
+  const vc = txt.match(/(\d+) from verified climbers/);
+  console.log(`[screen] verified climbers   : ${vc ? vc[1] : "none on this route (the line is not drawn at zero)"}`);
 }
 
 if (problems.length) { console.error("\nFAIL:"); problems.forEach((p) => console.error("  - " + p)); process.exit(1); }

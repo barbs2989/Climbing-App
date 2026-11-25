@@ -179,6 +179,12 @@ if (!pushWorkflows) {
 // The two browser guards must still run on main at all -- the #795 invariant. A workflow that
 // stops being push-triggered drops out of the loop above silently, which is the same
 // coverage-hole-is-invisible shape check:overlay-discovery exists for.
+//
+// Either trigger satisfies it: a push to main, or a `schedule:` cron (which GitHub always runs
+// on the default branch). Since 2026-11-13 (owner) both walk main on a four-hour schedule
+// instead of on every merge: per-merge walks were 16 jobs that gated nothing and starved PR
+// builds and the deploy of runners (~26-39 min queue waits). A scheduled run is not a
+// per-commit check, so the per-SHA group rule above does not apply to it.
 for (const required of ["render-guards.yml", "zero-state.yml"]) {
   if (!files.includes(required)) {
     fail.push(`${required} is missing — it is one of the two browser guards that must run against main`);
@@ -187,11 +193,17 @@ for (const required of ["render-guards.yml", "zero-state.yml"]) {
   const src = decomment(fs.readFileSync(path.join(DIR, required), "utf8"));
   const on = topBlocks(src).on || "";
   const pushBlock = on.match(/(^|\n)\s{2}push:([\s\S]*?)(?=\n\s{2}\w|$)/);
-  if (!(pushBlock && /branches:.*\b(main|master)\b/s.test(pushBlock[2]))) {
+  const onPush = pushBlock && /branches:.*\b(main|master)\b/s.test(pushBlock[2]);
+  const scheduleBlock = on.match(/(^|\n)\s{2}schedule:([\s\S]*?)(?=\n\s{2}\w|$)/);
+  const onSchedule = scheduleBlock && /-\s*cron:\s*["']?[^"'\s]/.test(scheduleBlock[2]);
+  if (!onPush && !onSchedule) {
     fail.push(
-      `${required} no longer triggers on a push to main. A pull_request run tests the base as ` +
-        `it stood when that run started, so without this nothing asks about main itself (#795).`
+      `${required} no longer walks main: it has neither a push-to-main trigger nor a schedule. ` +
+        `A pull_request run tests the base as it stood when that run started, so without one ` +
+        `of these nothing asks about main itself (#795).`
     );
+  } else if (onSchedule && !onPush) {
+    note.push(`${required} — walks main on a schedule`);
   }
 }
 
@@ -210,6 +222,6 @@ console.log("ok — no guard that runs on main can be cancelled by the next merg
 //   1. render-guards.yml: `github.sha` -> `github.ref`            => fails naming render-guards.yml
 //   2. zero-state.yml:    `github.sha` -> `github.ref`            => fails naming zero-state.yml
 //   3. deploy.yml:        `group: pages` -> `group: deploy-${{ github.ref }}` => fails as a stale exemption
-//   4. render-guards.yml: delete the `push:` trigger              => fails on the #795 invariant
+//   4. render-guards.yml: delete the `schedule:` trigger (no push) => fails on the #795 invariant
 //   5. all workflows:     delete the `push:` trigger              => fails closed, "NONE that trigger on a push"
 //   6. add `# group: ${{ github.ref }}` as a COMMENT              => must PASS (comments are stripped)

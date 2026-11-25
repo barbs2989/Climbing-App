@@ -74,11 +74,11 @@ const CASES = [
   { name: "6. the Conditions tab is gated to crags again",
     find: "x[0]===\"forecast\"?(showScore||showAlpineCond):true", repl: "x[0]===\"forecast\"?showScore:true",
     expect: "fail", expectText: "the Conditions tab is offered and its card mounts" },
-  /* Inverted 2026-10-24: the forecast now opens Safety on EVERY route (owner), so the defect is it leaving again. */
-  { name: "7. the weather panel is gated off Safety for alpine routes again",
-    /* PR59: wxEl() is now rendered inside RouteSafetyTab (a prop), so the gate goes on the call site in RouteDetail.jsx, where showScore/showAlpineCond are in scope. */
-    find: "wxEl={wxEl}", repl: "wxEl={showScore||showAlpineCond?()=>null:wxEl}",
-    expect: "fail", expectText: "the weather panel opens Safety on an alpine route" },
+  /* Inverted again 2026-11-11: the forecast is off Safety wherever the Conditions tab carries it (owner), so the defect is it coming back. */
+  { name: "7. the weather panel is repeated on Safety for alpine routes again",
+    /* PR59: wxEl() is rendered inside RouteSafetyTab (a prop), so the gate is on the call site in RouteDetail.jsx, where showScore/showAlpineCond are in scope. */
+    find: "(showScore||showAlpineCond)?()=>null:wxEl}", repl: "wxEl}",
+    expect: "fail", expectText: "the weather panel stays off Safety on an alpine route" },
   { name: "8. a flag hard-codes mph", file: SHARED,
     find: "case \"wind\": return \"Summit gusts to \" + uWind(v.gust) + \" in daylight\";", repl: "case \"wind\": return \"Summit gusts to \" + Math.round(v.gust) + \" mph in daylight\";",
     expect: "fail", expectText: "in metric units only" },

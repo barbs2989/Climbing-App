@@ -84,11 +84,9 @@ for (const [f, src] of Object.entries(libs)) {
 const ALLOW = {
   "ClimbMatch.jsx": [
     ["setLogModal(routeById(cr.routeId))", "log THIS CREW'S CLIMB from the crew tab and the recap — a route-only action; an area crew logs its climbs from the Logbook (CrewCard hides its log button)"],
-    ["setPartnerClimb(routeById(cr.routeId))", "Find partners for this crew's ROUTE — the area-crew form of this (find partners at the crag) lands with the Partners-tab area mode"],
     ["const r=routeById(ci.routeId)||{}", "a seed crew INVITE (crewReqIn), which is a route invite by shape"],
     ["const acceptCrewInvite=(ci)=>{const r=routeById(ci.routeId)", "accepting a seed crew INVITE (crewReqIn) builds a route crew from it — the seed shape has no area"],
     ["routeName:(routeById(ci.routeId)||{}).name||\"their crew\"", "the profile modal's seed crew INVITE (crewReqIn) — route by shape"],
-    ["const r=routeById(c.routeId);const fn=c.friendName", "a belay CATCH, not a crew"],
   ],
   "lib/CrewFinder.jsx": [], "lib/CrewCard.jsx": [], "lib/Inbox.jsx": [], "lib/FloatPlans.jsx": [], "lib/PartnerSearch.jsx": [],
 };

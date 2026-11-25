@@ -1,0 +1,208 @@
+{
+ "wa_booker_mountain_northwest_route": {
+  "area": "wa_booker_mountain",
+  "set": {
+   "approach_logistics": {
+    "trailhead": "Thunder Creek Trailhead (Colonial Creek Campground)",
+    "trailheadLat": 48.685484,
+    "trailheadLng": -121.092562
+   }
+  },
+  "ledger": [
+   {
+    "field": "approach_logistics",
+    "value": {
+     "trailhead": "Thunder Creek Trailhead (Colonial Creek Campground)",
+     "trailheadLat": 48.685484,
+     "trailheadLng": -121.092562
+    },
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://www.openstreetmap.org/way/1210519116",
+      "fact": "trailhead parking 48.68548,-121.09256",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://www.wta.org/go-hiking/hikes/park-creek-pass",
+      "fact": "trailhead at the back of Colonial Creek Campground 48.6855,-121.0926 (within 3 m)",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   }
+  ],
+  "review": {
+   "identifiedBy": {
+    "kind": "research",
+    "fact": "route text: Thunder Creek Trail from Colonial Creek to Park Creek Pass"
+   },
+   "chunk": "overpass"
+  }
+ },
+ "ca_taylor_dome_west_ridge": {
+  "area": "ca_taylor_dome",
+  "set": {
+   "approach_logistics": {
+    "trailhead": "Big Meadow Trailhead (Taylor Dome), Forest Road 23S07",
+    "trailheadLat": 35.86761,
+    "trailheadLng": -118.32626
+   }
+  },
+  "ledger": [
+   {
+    "field": "approach_logistics",
+    "value": {
+     "trailhead": "Big Meadow Trailhead (Taylor Dome), Forest Road 23S07",
+     "trailheadLat": 35.86761,
+     "trailheadLng": -118.32626
+    },
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://climber.org/driving/images/BigMeadow.gpx",
+      "fact": "TAYLTH trailhead 7,800 ft 35.86761,-118.32626",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://www.openstreetmap.org/node/8284671095",
+      "fact": "Manter Meadow Trailhead, the adjacent lot about 135 m away",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   }
+  ],
+  "review": {
+   "identifiedBy": {
+    "kind": "research",
+    "fact": "driving guide and route text: Big Meadow Trail from the upper trailhead, leave at the saddle at the head of Taylor Creek"
+   },
+   "chunk": "overpass"
+  }
+ },
+ "ca_sawtooth_peak_sierra_standard_route": {
+  "area": "ca_sawtooth_peak_sierra",
+  "set": {
+   "approach_logistics": {
+    "trailhead": "Pacific Crest Trail crossing, Canebrake Road (park at Chimney Creek Campground)",
+    "trailheadLat": 35.835816,
+    "trailheadLng": -118.044042
+   }
+  },
+  "ledger": [
+   {
+    "field": "approach_logistics",
+    "value": {
+     "trailhead": "Pacific Crest Trail crossing, Canebrake Road (park at Chimney Creek Campground)",
+     "trailheadLat": 35.835816,
+     "trailheadLng": -118.044042
+    },
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://www.openstreetmap.org/node/13939311223",
+      "fact": "trail guidepost at the Pacific Crest Trail crossing 35.83582,-118.04404",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://climber.org/driving/images/Canebrake.gpx",
+      "fact": "CANPCT PCT crossing 35.83572,-118.04398 (within 12 m)",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   }
+  ],
+  "review": {
+   "identifiedBy": {
+    "kind": "research",
+    "fact": "driving guide: the PCT crossing serves Sawtooth Peak; cars park at the campground 330 m north"
+   },
+   "chunk": "overpass"
+  }
+ },
+ "ca_spanish_needle_north_ridge": {
+  "area": "ca_spanish_needle",
+  "set": {
+   "approach_logistics": {
+    "trailhead": "Pacific Crest Trail crossing, Canebrake Road (park at Chimney Creek Campground)",
+    "trailheadLat": 35.835816,
+    "trailheadLng": -118.044042
+   }
+  },
+  "ledger": [
+   {
+    "field": "approach_logistics",
+    "value": {
+     "trailhead": "Pacific Crest Trail crossing, Canebrake Road (park at Chimney Creek Campground)",
+     "trailheadLat": 35.835816,
+     "trailheadLng": -118.044042
+    },
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://www.openstreetmap.org/node/13939311223",
+      "fact": "trail guidepost at the Pacific Crest Trail crossing 35.83582,-118.04404",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://climber.org/driving/images/Canebrake.gpx",
+      "fact": "CANPCT PCT crossing 35.83572,-118.04398 (within 12 m)",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   }
+  ],
+  "review": {
+   "identifiedBy": {
+    "kind": "research",
+    "fact": "one report calls the PCT from Chimney Creek the standard route; two more reports and the driving guide start at this crossing; route text fits"
+   },
+   "chunk": "overpass"
+  }
+ },
+ "wa_burgundy_spire_corkscrew_route": {
+  "area": "wa_burgundy_spire",
+  "set": {
+   "approach_logistics": {
+    "trailhead": "SR 20 pullout near milepost 166 (Burgundy Col trail)",
+    "trailheadLat": 48.551406,
+    "trailheadLng": -120.630895
+   }
+  },
+  "ledger": [
+   {
+    "field": "approach_logistics",
+    "value": {
+     "trailhead": "SR 20 pullout near milepost 166 (Burgundy Col trail)",
+     "trailheadLat": 48.551406,
+     "trailheadLng": -120.630895
+    },
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_InfraRecreationSites_01/MapServer/0/query?where=site_cn%3D%276738221010602%27&outFields=site_name&f=json",
+      "fact": "Burgundy Col recreation site 48.55141,-120.63089",
+      "retrieved_at": "2026-11-18",
+      "official": true
+     },
+     {
+      "url": "https://stephabegg.com/trip-reports/washington/paisano-burgundy/",
+      "fact": "large pullout on Highway 20 about 4 miles east of Washington Pass at about 4,250 ft; climbers trail to Burgundy Col",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   }
+  ],
+  "review": {
+   "identifiedBy": {
+    "kind": "research",
+    "fact": "every Burgundy Spire route is reached from Burgundy Col by this one approach; same point as the Chianti Spire North Face"
+   },
+   "chunk": "overpass"
+  }
+ }
+}

@@ -1,0 +1,32 @@
+{
+ "at": "2026-11-05T17:52:41.215Z",
+ "note": "restore with patchRow(routes, id, before)",
+ "rows": [
+  {
+   "id": "or_south_ridge",
+   "before": {
+    "waypoints": [
+     {
+      "lat": 44.18754,
+      "lng": -121.70081,
+      "name": "Pole Creek Trailhead",
+      "type": "Trailhead"
+     }
+    ]
+   }
+  },
+  {
+   "id": "or_south_sister_south_side_route",
+   "before": {
+    "waypoints": [
+     {
+      "lat": 44.03545,
+      "lng": -121.76579,
+      "name": "Devils Lake",
+      "type": "Trailhead"
+     }
+    ]
+   }
+  }
+ ]
+}

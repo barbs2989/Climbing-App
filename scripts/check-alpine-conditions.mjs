@@ -129,6 +129,50 @@ eq("...while an alpine rock grade stays alpine rock", k({ discipline: "alpine", 
 eq("a GLACIATED alpine route (El Dorado East Ridge: Inspiration Glacier, then 5.7) keeps the GLACIER card", k({ discipline: "alpine", grade: "5.7" }, { glacier: "yes", snow: "yes" }, "alpine"), "glacier");
 eq("...but an alpine route with snow and NO glacier stays alpine rock (snow legs only)", k({ discipline: "alpine", grade: "5.7" }, { glacier: "no", snow: "yes" }, "alpine"), "alpinerock");
 eq("...and a glaciated alpine route graded AI/WI is still alpine ice", k({ discipline: "alpine", grade: "AI3" }, { glacier: "yes" }, "alpine"), "alpineice");
+/* GLACIER WARNINGS ONLY WHERE THERE IS A GLACIER (owner, 2026-11-23). The reviewed facts (routes.glacier_travel,
+   routes.snow_in_season, read by lib/terrain.js as glacierTravel / snowInSeason) decide the kind, not the
+   discipline alone. WA audit: 130 of 409 glacier-card routes had no glacier travel, 72 of them dry in season. */
+eq("mountaineering reviewed NO glacier, snow in season (Mount Adams South Climb) is a SNOW CLIMB, not a glacier", k({ discipline: "mountaineering" }, { glacierTravel: "no", glacier: "no", snow: "yes", snowInSeason: "yes" }), "snow");
+eq("...reviewed no glacier with the snow not settled is still a snow climb (the freeze may matter; bridges do not)", k({ discipline: "mountaineering" }, { glacierTravel: "no", glacier: "no", snow: "unknown", snowInSeason: "unknown" }), "snow");
+eq("...reviewed DRY on a normal day (a Class 2 walk-up) is read as a scramble: no snow card at all", k({ discipline: "mountaineering" }, { glacierTravel: "no", glacier: "no", snow: "yes", snowInSeason: "no" }), "scramble");
+eq("...reviewed glacier travel is the glacier card", k({ discipline: "mountaineering" }, { glacierTravel: "yes", glacier: "yes", snow: "yes", snowInSeason: "yes" }), "glacier");
+eq("...a glacier word in text nobody reviewed keeps the glacier card (the careful reading)", k({ discipline: "mountaineering" }, { glacierTravel: "likely", glacier: "yes", snow: "yes" }), "glacier");
+eq("a SCRAMBLE reviewed as crossing a crevassed glacier (Jack Mountain North Ridge) gets the GLACIER card", k({ discipline: "scrambling" }, { glacierTravel: "yes", glacier: "yes", snow: "yes", snowInSeason: "yes" }), "glacier");
+eq("...but a glacier WORD in an unreviewed scramble's text does not promote it", k({ discipline: "scrambling" }, { glacierTravel: "likely", glacier: "yes", snow: "yes" }), "scramble");
+/* Owner, 2026-11-24: a route REVIEWED snowy whose glacier stayed unsure keeps the glacier card, "any snow bridges".
+   Live: Forbidden East Ridge (alpine, text reads as rock) showed no snow logic at all. Both columns null = nobody
+   looked = untouched. */
+{
+  const held = { glacierTravel: "no", glacier: "no", snow: "yes", snowInSeason: "yes", glacierReviewed: null, snowReviewed: "yes" };
+  const never = { glacierTravel: "no", glacier: "no", snow: "no", snowInSeason: "no", glacierReviewed: null, snowReviewed: null };
+  eq("an ALPINE route reviewed snowy with its glacier held unsure (Forbidden East Ridge) gets the glacier card", k({ discipline: "alpine", grade: "5.8" }, held, "alpine"), "glacier");
+  eq("...a SCRAMBLE in the same state too", k({ discipline: "scrambling" }, held), "glacier");
+  eq("...and its bridges are 'any snow bridges', never stated, even though its text reads as rock", A.bridgeWord("glacier", held), "maybe");
+  eq("...an alpine route nobody reviewed (both columns null) stays alpine rock", k({ discipline: "alpine", grade: "5.8" }, never, "alpine"), "alpinerock");
+  eq("...a route REVIEWED no glacier stays off the card even when snowy", k({ discipline: "alpine", grade: "5.8" }, Object.assign({}, held, { glacierReviewed: "no" }), "alpine"), "alpinerock");
+  const { routeTerrain } = await import(pathToFileURL(path.join(ROOT, "lib", "terrain.js")).href);
+  eq("routeTerrain hands condKind the two reviewed columns on their own", [routeTerrain({ id: "x", discipline: "alpine", grade: "5.8", snow_in_season: "yes" }).snowReviewed, routeTerrain({ id: "x", discipline: "alpine", grade: "5.8", snow_in_season: "yes" }).glacierReviewed, routeTerrain({ id: "x", discipline: "alpine", glacier_travel: "no" }).glacierReviewed], ["yes", null, "no"]);
+}
+/* SNOW-FREE FROM A DATE (owner, 2026-11-24): Forbidden West Ridge's couloir is a snow climb until it melts out,
+   then parties take the Cat Scratch gullies. routes.snow_free_from (0532) makes the card read the route as dry from
+   that date to 31 October, and as stored before it. */
+{
+  const { routeTerrain, snowFreeOn } = await import(pathToFileURL(path.join(ROOT, "lib", "terrain.js")).href);
+  const fwr = { id: "x", discipline: "alpine", grade: "5.6", glacier_travel: "yes", snow_in_season: "yes", snow_free_from: "08-15" };
+  const july = routeTerrain(fwr, { on: new Date(2026, 6, 10) }), sept = routeTerrain(fwr, { on: new Date(2026, 8, 5) }), nov = routeTerrain(fwr, { on: new Date(2026, 10, 3) });
+  eq("FORBIDDEN WEST RIDGE in July (couloir in) is the glacier card", k(fwr, july, "alpine"), "glacier");
+  eq("...in September (Cat Scratch gullies, snow-free from mid-August) it is alpine rock with no snow legs", [k(fwr, sept, "alpine"), A.hasSnowLegs(k(fwr, sept, "alpine"), sept), A.bridgeWord(k(fwr, sept, "alpine"), sept)], ["alpinerock", false, false]);
+  eq("...from November the stored answers apply again", k(fwr, nov, "alpine"), "glacier");
+  eq("...the date itself is the first dry day", [snowFreeOn(fwr, new Date(2026, 7, 14)).out, snowFreeOn(fwr, new Date(2026, 7, 15)).out, snowFreeOn(fwr, null).label], [false, true, "mid-August"]);
+  eq("...without a date (gear, packing) routeTerrain reads the whole season, as before", routeTerrain(fwr).snowInSeason, "yes");
+  eq("...a malformed or missing date is no date", [snowFreeOn({ snow_free_from: "Aug" }, new Date()), snowFreeOn({}, new Date())], [null, null]);
+  const early = { id: "y", discipline: "mountaineering", glacier_travel: "no", snow_in_season: "yes", snow_free_from: "07-01" };
+  eq("a walk-up holding snow THROUGH JUNE is a snow climb in June and a scramble in August", [k(early, routeTerrain(early, { on: new Date(2026, 5, 20) })), k(early, routeTerrain(early, { on: new Date(2026, 7, 1) }))], ["snow", "scramble"]);
+  const card = fs.readFileSync(path.join(ROOT, "lib", "AlpineConditionsCard.jsx"), "utf8");
+  eq("the card reads the terrain AS OF TODAY", /routeTerrain\(route, \{ on: /.test(card), true);
+}
+eq("an alpine route reviewed NO glacier is alpine rock even when its text names one", k({ discipline: "alpine", grade: "5.7" }, { glacierTravel: "no", glacier: "no", snow: "yes" }, "alpine"), "alpinerock");
+eq("the snow climb carries the snow legs and the snow timing; it is one of the snow kinds", [A.hasSnowLegs("snow", {}), A.isSnowKind("snow"), A.isSnowKind("glacier"), A.isSnowKind("alpineice"), A.isSnowKind("scramble")], [true, true, true, true, false]);
 eq("a sport route gets no alpine kind", k({ discipline: "sport" }, {}, "sport"), null);
 eq("the alpine set and the crag score's set are DISJOINT", A.ALPINE_COND_DISCIPLINES.filter((d) => A.CRAG_SCORE_DISCIPLINES.includes(d)), []);
 
@@ -148,9 +192,62 @@ eq("a night with the freezing level above the snow is flagged: no refreeze (warn
 eq("...and that day gets NO snow-anchored start: there is no frozen window to be back down in", [warm.start, warm.noFreeze], [null, true]);
 const nfText = (kind, terrain) => { const r = run(forecast(() => ({ fl: 9000 })), { kind, terrain, highFt: 10000, snowFt: 7000, legs: LEGS }); const f = r.flags.find((x) => x.key === "no-refreeze"); return f ? A.flagText(f) : null; };
 eq("'bridges are weak' only where there may be a glacier: yes on a glacier, no on a snow scramble with none", [/bridges/.test(nfText("glacier", { snow: "yes", glacier: "yes" }) || ""), /bridges/.test(nfText("scramble", { snow: "yes", glacier: "no" }) || "x bridges")], [true, false]);
+/* Owner, 2026-11-23: "we don't want to be giving warnings about snow bridges etc when there's usually not those
+   when people typically climb that route". Bridges are STATED only on reviewed glacier travel, said as "any snow
+   bridges" where nothing is settled, and never mentioned on a route reviewed as having no glacier. */
+{
+  const GL = /bridge|crevasse|serac|ice fall/i;
+  const yes = { glacierTravel: "yes", glacier: "yes", snow: "yes", snowInSeason: "yes" }, none = { glacierTravel: "no", glacier: "no", snow: "yes", snowInSeason: "yes" }, open = { glacierTravel: "unknown", glacier: "unknown", snow: "unknown", snowInSeason: "unknown" }, word = { glacierTravel: "likely", glacier: "yes", snow: "yes", snowInSeason: "yes" };
+  eq("no-refreeze on reviewed glacier travel STATES the bridges", nfText("glacier", yes), "No overnight freeze at 7,000 ft — the snow starts soft and bridges are weak");
+  eq("...on a glacier card with nothing settled it says 'any snow bridges'", [nfText("glacier", open), nfText("glacier", word)], Array(2).fill("No overnight freeze at 7,000 ft — the snow starts soft; any snow bridges are weak"));
+  eq("...on a SNOW CLIMB it is worded for snow and never names a bridge", nfText("snow", none), "No overnight freeze at 7,000 ft — the snow starts soft: slow steps and wet slides on steep slopes");
+  eq("...nor on any kind whose route was reviewed as having NO glacier, the old glacier card included", ["glacier", "snow", "alpineice", "scramble", "alpinerock"].filter((kd) => GL.test(nfText(kd, none) || "")), []);
+  eq("...alpine ice, a scramble and alpine rock name bridges only on evidence: reviewed yes states it, a word in the text says 'any', nothing says nothing", ["alpineice", "scramble", "alpinerock"].map((kd) => [nfText(kd, yes), nfText(kd, word), nfText(kd, Object.assign({}, open, { snow: "yes", snowInSeason: "yes" }))].map((s) => /and bridges are weak/.test(s) ? "stated" : /any snow bridges/.test(s) ? "any" : "none").join("/")), Array(3).fill("stated/any/none"));
+  const flText = (kind, terrain) => { const r = run(forecast((d, h) => ({ fl: h >= 6 ? 13000 : 5000 })), { kind, terrain, highFt: 10000, snowFt: 7000, legs: LEGS }); const f = r.flags.find((x) => x.key === "fl-above"); return f ? A.flagText(f) : null; };
+  eq("a warm afternoon above the summit: 'rock and ice fall' where there is ice above (glacier, alpine ice), 'wet snow slides and rockfall' on a snow climb", [flText("glacier", yes), flText("alpineice", none), flText("snow", none)].map((s) => /rock and ice fall$/.test(s || "") ? "ice" : /wet snow slides and rockfall$/.test(s || "") ? "snow" : s), ["ice", "ice", "snow"]);
+  const dryWalkUp = run(forecast(() => ({ fl: 12000 })), { kind: A.condKind({ discipline: "mountaineering" }, { glacierTravel: "no", glacier: "no", snow: "yes", snowInSeason: "no" }), terrain: { glacierTravel: "no", glacier: "no", snow: "yes", snowInSeason: "no" }, highFt: 10000, snowFt: 7000, legs: LEGS });
+  eq("a MOUNTAINEERING walk-up reviewed dry in season gets NO freeze or freezing-level flags (it had all three)", ["fl-above-night", "fl-above", "no-refreeze"].filter((x) => has(dryWalkUp, x)), []);
+  const snowNoon = run(forecast(() => ({ fl: 4000 })), { kind: "snow", terrain: none, highFt: 10000, snowFt: 7000, legs: LEGS });
+  eq("a snow climb on a frozen night still starts early: back off the snow by noon, like a glacier", snowNoon.start && [clock(snowNoon.start.at), snowNoon.start.why], [2, "snow-noon"]);
+  const { routeTerrain } = await import(pathToFileURL(path.join(ROOT, "lib", "terrain.js")).href);
+  const named = { discipline: "mountaineering", grade: "Class 2", beta: "Fine views of the glacier across the valley; carry a picket for the steep snow." };
+  eq("routeTerrain: the reviewed column wins over the text, both ways and in both spellings; unreviewed text with a glacier word is only 'likely'", [routeTerrain(Object.assign({ glacier_travel: "no" }, named)).glacierTravel, routeTerrain(Object.assign({ glacierTravel: "no" }, named)).glacier, routeTerrain(Object.assign({ glacier_travel: "yes" }, { discipline: "scrambling", grade: "Class 3" })).glacierTravel, routeTerrain(named).glacierTravel, routeTerrain(Object.assign({ glacier_travel: "maybe" }, named)).glacierTravel], ["no", "no", "yes", "likely", "likely"]);
+  eq("routeTerrain: a reviewed snow_in_season is the answer; reviewed glacier travel is never dry", [routeTerrain(Object.assign({ snow_in_season: "no" }, named, { glacier_travel: "no" })).snowInSeason, routeTerrain({ discipline: "mountaineering", snow_in_season: "yes", glacier_travel: "no" }).snowInSeason, routeTerrain({ discipline: "mountaineering", snow_in_season: "no", glacier_travel: "yes" }).snowInSeason], ["no", "yes", "yes"]);
+  const card = readAppFile(path.join(ROOT, "lib", "AlpineConditionsCard.jsx"));
+  eq("the card has a title and a what-a-forecast-cannot-see line for the snow climb, with no bridge in it", [/snow: "Snow climb"/.test(readAppFile(path.join(ROOT, "lib", "alpineConditionsShared.js"))), /snow: "A forecast can’t see how firm the snow is[^"]*"/.test(card), GL.test((/snow: "(A forecast can’t see[^"]*)"/.exec(card) || [])[1] || "bridge")], [true, true, false]);
+  eq("...and its midday sentence does not speak of bridges on a snow climb, states them only on reviewed glacier travel, and says 'any snow bridges' where nothing is settled", /kind === "snow" \? ": parties on snow climbs start early and plan to be off the snow by midday[^"]*softens it" : bridges === "yes" \? ": parties on glaciers[^"]*weakens the bridges" : ": parties on glacier and snow routes[^"]*weakens any snow bridges"/.test(card), true);
+  /* Review, 2026-11-23: the no-refreeze FLAG was hedged on an unsettled route while three sentences beside it
+     still stated bridges as fact (the what-a-forecast-cannot-see line, the midday reason, the serac caveat). */
+  eq("...the glacier card on an unsettled route does not state bridges or seracs as fact anywhere: its cannot-see line says 'any snow bridges', and the serac caveat needs reviewed glacier travel", [/const bridges = bridgeWord\(kind, terrain\)/.test(card), /kind === "glacier" && bridges !== "yes" \? BLIND_GLACIER_OPEN : BLIND\[kind\]/.test(card), /BLIND_GLACIER_OPEN = "[^"]*whether any snow bridges are open[^"]*"/.test(card), /kind === "glacier" && bridges === "yes" \? " No timing reduces serac fall\." : ""/.test(card)], [true, true, true, true]);
+  eq("...and the day's flags are rebuilt when the reviewed facts change (an approved edit can change the wording without changing the kind)", /faceSun, terrain && terrain\.glacierTravel, terrain && terrain\.snowInSeason\]/.test(card), true);
+}
 eq("...and the card says why, instead of a start beside a warning that the snow starts soft", /day\.noFreeze && floor\)[\s\S]{0,200}didn’t freeze overnight at[\s\S]{0,80}no frozen window to be back down in/.test(readAppFile(path.join(ROOT, "lib", "AlpineConditionsCard.jsx"))), true);
 const hot = run(forecast(() => ({ fl: 12000 })), { kind: "glacier", terrain: { snow: "yes" }, highFt: 10000, snowFt: 7000, legs: LEGS });
 eq("the freezing level above the SUMMIT all night is its own warning", has(hot, "fl-above-night"), true);
+/* Owner, 2026-11-12: the freezing-level and refreeze flags only matter where a normal summit day crosses snow or
+   a glacier. A rock route whose text mentions only early-season snow (reviewed: snowInSeason "no") gets none. */
+const dryRock = { snow: "yes", glacier: "no", snowInSeason: "no" };
+const hotDry = run(forecast(() => ({ fl: 12000 })), { kind: "alpinerock", terrain: dryRock, highFt: 10000, snowFt: 7000, legs: LEGS });
+eq("an alpine rock route dry in peak season gets NO freezing-level or refreeze flags", ["fl-above-night", "fl-above", "no-refreeze"].filter((x) => has(hotDry, x)), []);
+const warmDayDry = run(forecast((d, h) => ({ fl: h >= 6 ? 13000 : 5000 })), { kind: "scramble", terrain: dryRock, highFt: 10000, snowFt: 7000, legs: LEGS });
+eq("...nor a dry-in-season scramble on a warm afternoon", has(warmDayDry, "fl-above"), false);
+const hotSnowRock = run(forecast(() => ({ fl: 12000 })), { kind: "alpinerock", terrain: { snow: "yes", glacier: "no", snowInSeason: "yes" }, highFt: 10000, snowFt: 7000, legs: LEGS });
+eq("...while one that crosses snow in season keeps them", [has(hotSnowRock, "fl-above-night"), has(hotSnowRock, "no-refreeze")], [true, true]);
+eq("'unsure' (no snowInSeason mark) keeps the snow legs; a dry mark never touches glacier or alpine ice", [A.hasSnowLegs("alpinerock", { snow: "yes" }), A.hasSnowLegs("alpinerock", dryRock), A.hasSnowLegs("glacier", dryRock), A.hasSnowLegs("alpineice", dryRock)], [true, false, true, true]);
+{
+  const { routeTerrain } = await import(pathToFileURL(path.join(ROOT, "lib", "terrain.js")).href);
+  /* The dry review lives ON THE ROW now (routes.snow_in_season, 0490), which is the copy a climber can correct.
+     The 2026-11-12 id list stays as a FROZEN FALLBACK for a row that carries no answer (an offline copy saved
+     before 0490, a row a load has not reached): removing it brought the freeze flags back on exactly those rows. */
+  const { SNOW_DRY_IN_SEASON } = await import(pathToFileURL(path.join(ROOT, "lib", "snowInSeasonDry.js")).href);
+  const anyDry = [...SNOW_DRY_IN_SEASON][0];
+  const lingering = { discipline: "alpine", grade: "5.9", beta: "The approach gully holds snow into July; carry an ice axe early season." };
+  eq("routeTerrain: a reviewed-dry route reads snowInSeason 'no'; an unreviewed one follows snow", [routeTerrain(Object.assign({ snow_in_season: "no" }, lingering)).snowInSeason, routeTerrain(Object.assign({ id: "zz_not_reviewed" }, lingering)).snowInSeason], ["no", "yes"]);
+  eq("...a row with NO answer of its own (saved before 0490) still reads the 2026-11-12 review; the row's own answer wins over the list", [routeTerrain(Object.assign({ id: anyDry }, lingering)).snowInSeason, routeTerrain(Object.assign({ id: anyDry, snow_in_season: "yes" }, lingering)).snowInSeason], ["no", "yes"]);
+  const snowOf = (beta) => routeTerrain({ discipline: "alpine", grade: "5.9", beta }).snow;
+  eq("'névé' is a word, not a substring: 'never', 'whenever', 'Nineveh' are not snow; 'névé' and 'neve' are", ["You never need a rack.", "Whenever it rains.", "Nineveh", "Firm névé to the col.", "Hard neve."].map((s) => snowOf(s) === "yes"), [false, false, false, true, true]);
+  eq("...and a route whose own text shows a glacier, with the glacier question NOT settled, is never read dry", routeTerrain({ discipline: "alpine", snow_in_season: "no", beta: "Cross the glacier to the col." }).snowInSeason, "yes");
+}
 const frozen = run(forecast(() => ({ fl: 4000 })), { kind: "glacier", terrain: { snow: "yes" }, highFt: 10000, snowFt: 7000, legs: LEGS });
 eq("snow that never thaws has no softening hour, so the forecast sets no start...", [frozen.softAt, frozen.start && frozen.start.forecast], [null, null]);
 /* PRACTICE (owner, 2026-10-16: Easton read "leave camp by 7:30 AM" on a cold Saturday, "no one leaves camp at
@@ -167,7 +264,7 @@ eq("the noon rule is glacier and alpine ice only: a snowy scramble on a cold day
 const iceP = run(forecast(() => ({ fl: 4000 })), { kind: "alpineice", terrain: { snow: "yes" }, highFt: 10000, snowFt: 7000, legs: LEGS });
 eq("...and alpine ice gets it too", iceP.start && iceP.start.why, "snow-noon");
 const cardSrc = readAppFile(path.join(ROOT, "lib", "AlpineConditionsCard.jsx"));
-eq("the card says WHY the noon start, and shows the later start the forecast alone allows", /why === "snow-noon"[\s\S]{0,700}plan to be off the snow by midday[\s\S]{0,300}The forecast alone would allow a start as late as/.test(cardSrc), true);
+eq("the card says WHY the noon start, and shows the later start the forecast alone allows", /why === "snow-noon"[\s\S]{0,700}plan to be off the snow by midday[\s\S]{0,900}The forecast alone would allow a start as late as/.test(cardSrc), true);
 eq("the day strip says every section below is for that day", /every section below is for this day[\s\S]{0,200}role="group" aria-label="Day"/.test(cardSrc), true);
 /* Not sticky: #appscroll is overflow:auto yet grows to its content, so a sticky strip binds to a box that never
    scrolls and rides away with the page (measured live 2026-10-21). Each day section steps the day instead. */
@@ -180,6 +277,16 @@ eq("the flags card and Sun and shade carry the ‹ › day step in their own hea
 eq("DAY BY DAY renders every forecast day, each a button that opens it in every section", /<DayByDay days=\{days\} di=\{di\} pick=\{setDayI\}/.test(cardSrc) && /function DayByDay(?:<[^>]*>)?\([\s\S]{0,1400}DAY BY DAY[\s\S]{0,200}days\.map\([\s\S]{0,2000}onClick=\{function \(\) \{ pick\(i\); \}\} aria-pressed=\{on\}/.test(cardSrc), true);
 eq("...and its start is the start box's own: none on a minimum estimate or past a one-day push", /startOn && !legs\.floor && d\.start && d\.daysEarly < 2/.test(cardSrc), true);
 eq("...and a missing neighbour day is a DISABLED button with a name, never a gap", /disabled=\{!n\} aria-label=\{n \? dir \+ " day: " \+ n\.name : "No "/.test(cardSrc), true);
+/* WHERE THE SNOW IS ASSUMED TO START (2026-11-23). The stored gain is the whole outing's climbing, so half
+   of it can reach below the trailhead on a long approach: Jack Mountain North Ridge read "No overnight
+   freeze at 1,643 ft". With a trailhead pin the midpoint is taken between the pin and the high point. */
+const JACK = { highPointFt: 9066, gainM: 14846 / 3.28084, waypoints: [{ type: "Trailhead", elev: 1900 }, { type: "Summit", elev: 9066 }] };
+eq("the snow floor is halfway between the TRAILHEAD pin and the high point, not half the outing's gain", A.snowFloorFt(JACK, null), { ft: 5483, basis: "trailhead" });
+eq("...a trailhead pin in metres is converted, and the source's 'trailhead/pass' spelling counts", A.snowFloorFt({ highPointFt: 9000, gainM: 3000, waypoints: [{ type: "trailhead/pass", elevM: 1000 }] }, null), { ft: 6140, basis: "trailhead" });
+eq("...a high camp still wins over both", A.snowFloorFt(JACK, 6200), { ft: 6200, basis: "camp" });
+eq("...no trailhead pin, or one with no height, falls back to half the gain and says so", [A.snowFloorFt({ highPointFt: 9000, gainM: 4000 / 3.28084 }, null), A.snowFloorFt({ highPointFt: 9000, gainM: 4000 / 3.28084, waypoints: [{ type: "Trailhead" }] }, null)], [{ ft: 7000, basis: "halfway" }, { ft: 7000, basis: "halfway" }]);
+eq("...a 'trailhead' at or above the high point is not measured from", A.snowFloorFt({ highPointFt: 9000, gainM: 4000 / 3.28084, waypoints: [{ type: "Trailhead", elev: 9400 }] }, null).basis, "halfway");
+eq("...and the card names which assumption it used", /floor\.basis === "trailhead" \? " Snow is assumed to reach down to " \+ uElev\(floor\.ft\) \+ ", halfway between the trailhead and the top\."/.test(cardSrc), true);
 
 console.log("\n3. SCRAMBLE — thunder sets the deadline; cold and wet is verglas, not a refreeze");
 const storm = run(forecast((d, h) => (d === T && h === 14 ? { code: 95 } : {})), { kind: "scramble", terrain: { snow: "no" }, highFt: 8000, snowFt: null, legs: { up: 4, down: 3, fromCamp: false, floor: false } });
@@ -276,10 +383,11 @@ const alpPinned = A.render(Object.assign({}, BASE, { discipline: "alpine", grade
 eq("...while an alpine route keeps 'Forecast at key points'", /Forecast at key points/.test(alpPinned), true);
 const safetyAlp = A.render(Object.assign({}, BASE, { discipline: "mountaineering" }), "safety");
 const safetyHike = A.render(Object.assign({}, BASE, { discipline: "hiking" }), "safety");
-/* 2026-10-24 the owner put the forecast BACK on Safety, at the top, for every route ("Forecast should be
-   at the top of safety tab"), superseding 2026-10-07's move of it to Conditions only. So both are asserted
-   present: on Conditions (above) and on Safety, with or without a Conditions tab. */
-eq("the weather panel opens Safety on an alpine route too (and stays on its Conditions tab)", /Weather &amp; mountain forecasts/.test(safetyAlp), true);
+/* 2026-11-11 the owner took the forecast back OFF Safety where the Conditions tab already carries it
+   ("Forecast at key points should be removed from safety tab since it's already on the conditions tab.
+   Same with WEATHER & MOUNTAIN FORECASTS"), superseding 2026-10-24's "at the top of safety tab". A route
+   with NO Conditions tab keeps it on Safety, or it would render nowhere. */
+eq("the weather panel stays off Safety on an alpine route (its Conditions tab carries it)", [/Weather &amp; mountain forecasts/.test(safetyAlp), /Forecast at key points/.test(safetyAlp)], [false, false]);
 eq("...and on Safety for a discipline with no Conditions tab", /Weather &amp; mountain forecasts/.test(safetyHike), true);
 const fcHtml = A.render(Object.assign({}, BASE, { discipline: "mountaineering", waypoints: [] }), "forecast");
 eq("a route with NO waypoints still gets a weather panel (its area's point), not 'No forecast yet'", /No forecast yet/.test(fcHtml), false);
@@ -469,7 +577,7 @@ console.log("\n10. SUN ON THE FACE — be above each height of the face before t
   eq("a start the sun decided says so, with the height and the hour", /day\.start\.why === "sun" \?[^\n]*" and be above " \+ uElev\(Math\.ceil\(day\.start\.sun\.ft \/ 50\) \* 50\) \+ " by "[^\n]*when the sun reaches steep ground that sheds onto the line above that height/.test(card), true);
   eq("...and says the line is the fall line from the summit, not a traced route, and reads one flank on a ridge", /The line is the fall line down the " \+ faceDir \+ " side from the summit, not a traced route — on a ridge it reads one flank\./.test(card), true);
   eq("the model's limits are said beside it — no lag counted, shade isn't frozen, cornices, seracs, narrow walls", /no lag is counted/.test(card) && /shade isn’t proof the snow is frozen/.test(card) && /misses cornices, seracs and narrow walls/.test(card), true);
-  eq("...and on a glacier, that no timing reduces serac fall", /kind === "glacier" \? " No timing reduces serac fall\." : ""/.test(card), true);
+  eq("...and on a glacier REVIEWED as glacier travel, that no timing reduces serac fall", /kind === "glacier" && bridges === "yes" \? " No timing reduces serac fall\." : ""/.test(card), true);
   eq("a night that never froze says the sun gives no deadline", /The sun gives no deadline today: with nothing frozen overnight/.test(card), true);
   eq("...and so does a day too cold for the sun to matter", /day\.sunCold \? "The sun reaches steep ground shedding onto the line, but the air there stays below freezing all day/.test(card), true);
   eq("what the start could not read is said, every time (no aspect, no summit pin, no start height, no terrain)", /This start doesn’t count in sun on the face: /.test(card) && /Couldn’t load the terrain, so this start doesn’t count in sun on the face\./.test(card), true);
@@ -578,7 +686,7 @@ console.log("\n14. WEATHER ALERTS — each on the right local day, by its event 
   eq("no alerts and no response are both []", [A.normAlerts({ features: [] }).length, A.normAlerts(null).length], [0, 0]);
   eq("outside the US the fetch resolves {outside:true} (HTTP 400), which the card words as NOT CHECKED", /r\.status === 400\) return \{ outside: true \}/.test(fcSrc2) && /Weather alerts are only checked for places in the United States\. Nothing was checked for this route\./.test(card), true);
   eq("a failed read is 'not measured' with a retry, never 'none'", /Couldn’t load weather alerts, so they are not measured\. This is not a report of none\./.test(card), true);
-  eq("a quiet day says none is NOT an all-clear and that an alert covers a zone, not the route", /a day with none is not an all-clear/.test(card) && /covers a whole forecast zone, which can be much larger than the route/.test(card), true);
+  eq("a quiet day says none is NOT an all-clear and that an alert covers a zone, not the route", /No alert is not an all-clear/.test(card) && /Alerts cover a whole zone, not just this route/.test(card), true);
   eq("the alerts are cached for minutes, not the session (they are issued and cancelled within the hour)", /ALERT_TTL = 10 \* 60 \* 1000/.test(card), true);
   eq("each alert joins the day's flags, so the day chips show it", /key: "alert", level: alertLevel\(a\)/.test(card), true);
   eq("the card prints the alert's own prose verbatim and says so, in the units issued", /"As issued: " \+ a\.what/.test(card), true);
@@ -648,7 +756,7 @@ console.log("\n15. FOG, SNOWFALL, SNOW LEVEL, STREAM FLOW, REPORT FRESHNESS — 
   eq("fog is a CAUTION that says the model is unchecked in mountains and no fog hour is not a clear day", /whose accuracy in the mountains is unchecked; no fog hour is not a clear day/.test(card + FLAG_WORDS), true);
   eq("the snow section hands snowLevel the RAW local day (it has `hours`); the card's per-day summary has none and crashed the route page", /const raw = localDays\(fc\)\.find\(function \(d\) \{ return d\.date === day\.date; \}\);[\s\S]{0,120}lvl = raw \? snowLevel\(fc, raw\) : null/.test(card), true);
   eq("...and snowLevel on a day shape WITHOUT hours would throw, which is why it must not be handed one", (() => { try { A.snowLevel(fc, { date: "2026-10-08" }); return false; } catch (e) { return true; } })(), true);
-  eq("the snow section says the history is modelled, flags nothing, and that stability depends on the layers beneath", /not a measurement on the route/.test(card) && /depends on the layers beneath it/.test(card), true);
+  eq("the snow section says the history is modelled, flags nothing, and that stability depends on the layers beneath", /not measured on the route/.test(card) && /depends on the layers beneath it/.test(card), true);
   // Built in THIS machine's local time, as the card reads today's date from the device: the assertions hold in any zone.
   const now = new Date(2026, 9, 8, 18).getTime();
   const rfr = A.reportFreshness([{ date: "2026-10-03" }, { date: "2026-09-01T10:00" }, { date: "2026-10-07" }, { date: null }, {}], now);
@@ -677,9 +785,9 @@ console.log("\n16. TEMPERATURE GAPS — shifted to the pin's height, stated, unk
   eq("an unknown or non-metre cell height shifts nothing", [A.nwsHeightShiftF(null, 9000), A.nwsHeightShiftF({}, 9000), A.nwsHeightShiftF({ properties: { elevation: { unitCode: "wmoUnit:ft", value: 3000 } } }, 9000), A.nwsHeightShiftF({ properties: { elevation: { unitCode: "wmoUnit:m", value: null } } }, 9000)], [0, 0, 0, 0]);
   eq("the weather panel applies the shift to every NWS temperature it reads", /const nwsShift=nwsHeightShiftF\(nwsJson,w\.elev\);[\s\S]{0,400}push\(v\.value\*9\/5\+32\+nwsShift\)/.test(rd), true);
   eq("...and says how far it adjusted, in the climber's units, when that is a degree or more", /Math\.abs\(\(?dy\.nws(?: as [^)]+\))?\.adj\)>=1\?" · adjusted "\+uTempDelta\(Math\.abs\(\(?dy\.nws(?: as [^)]+\))?\.adj\)\)\+"° "/.test(rd), true);
-  eq("the alpine card states the measured station error through the unit helper, not a fixed Fahrenheit figure", /typically off by \{uTempDelta\(3\)\}–\{uTempDelta\(5\)\}°/.test(card) && !/off by 3–5 ?°F/.test(card), true);
+  eq("the alpine card states the measured station error through the unit helper, not a fixed Fahrenheit figure", /often off by \{uTempDelta\(3\)\}–\{uTempDelta\(5\)\}°/.test(card) && !/off by 3–5 ?°F/.test(card), true);
   eq("...and no longer adds that forecast services can disagree (owner, 2026-10-24: not under the forecast)", /different services can differ/.test(card), false);
-  eq("...and that winter is worse and reads too cold (measured: 53 station-seasons, winter median error 4.6 F, 90th percentile 8.5 F, 14 of 17 winter stations too cold), in the unit helper", /and in winter by up to \{uTempDelta\(9\)\}°, most often reading too cold/.test(card), true);
+  eq("...and that winter is worse and reads too cold (measured: 53 station-seasons, winter median error 4.6 F, 90th percentile 8.5 F, 14 of 17 winter stations too cold), in the unit helper", /up to \{uTempDelta\(9\)\}° in winter, usually too cold/.test(card), true);
 }
 
 /* ── 17. YOUR RANGE ── */
@@ -703,9 +811,21 @@ console.log("\n17. YOUR RANGE — the climber's own, one neutral line, never a f
   const rl = (card2.match(/function RangeLine[\s\S]*?(?=\nfunction [A-Z]|\nexport default function|$)/) || [""])[0];
   eq("the range line is neutral: no red, amber or warning words", rl.length > 200 && !/C\.red|C\.amber|Warning|Caution/.test(rl), true);
   eq("the line mounts once, after the day's flags, from that day's own summary", (card2.match(/<RangeLine route=\{route\} sum=\{day\.sum\} \/>/g) || []).length === 1 && /Nothing in the forecast flags this day\.<\/div>\}\s*<\/div>\s*<RangeLine/.test(card2), true);
-  eq("alpine and ice/mixed are their own scopes with no preset and no inherited default", /RANGE_ONLY = \{ alpine:/.test(prefsSrc) && /ice: "Ice & mixed"/.test(prefsSrc) && /ownOnly \? \(p\.temp\[scope\] \|\| null\)/.test(prefsSrc) && /scopeForDiscipline/.test(card2), true);
+  eq("alpine, mountaineering and ice/mixed are their own scopes with no preset and no inherited default", /RANGE_ONLY = \{ alpine: "Alpine", mountaineering: "Mountaineering & scrambling", ice: "Ice & mixed" \}/.test(prefsSrc) && /ownOnly \? \(p\.temp\[scope\] \|\| null\)/.test(prefsSrc) && /scopeForDiscipline/.test(card2), true);
   const fnText = (prefsSrc.match(/export function scopeForDiscipline[\s\S]*?\n}/) || [""])[0];
-  eq("alpine, mountaineering and scrambling map to the alpine scope; ice and mixed to ice; crag disciplines to themselves", /d === "alpine" \|\| d === "mountaineering" \|\| d === "scrambling"\) return "alpine"/.test(fnText) && /d === "ice" \|\| d === "mixed"\) return "ice"/.test(fnText) && /COND_DISCS\.indexOf\(d\) >= 0\) return d/.test(fnText), true);
+  // Alpine and mountaineering were one scope until 2026-11-23 (owner: "alpine and mountaineering need to be separated").
+  eq("alpine maps to alpine; mountaineering and scrambling to mountaineering; ice and mixed to ice; crag disciplines to themselves", /d === "alpine"\) return "alpine"/.test(fnText) && /d === "mountaineering" \|\| d === "scrambling"\) return "mountaineering"/.test(fnText) && /d === "ice" \|\| d === "mixed"\) return "ice"/.test(fnText) && /COND_DISCS\.indexOf\(d\) >= 0\) return d/.test(fnText), true);
+  // The carry-over (lib/condPrefsSplit.js): without it every climber who saved an alpine range before the split
+  // silently loses the temperature line on their walk-ups and scrambles. Run it, don't read it.
+  const { carryAlpineRange } = await import(pathToFileURL(path.join(ROOT, "lib", "condPrefsSplit.js")).href);
+  const pre = { alpine: [20, 50] };
+  eq("a range saved BEFORE the split is carried onto mountaineering", carryAlpineRange(pre, undefined).mountaineering, [20, 50]);
+  eq("...but a copy saved AFTER it (split) is left alone: a removed mountaineering range stays removed", carryAlpineRange(pre, true).mountaineering, undefined);
+  eq("...a mountaineering range of its own is never overwritten", carryAlpineRange({ alpine: [20, 50], mountaineering: [30, 60] }, undefined).mountaineering, [30, 60]);
+  eq("...and the input is not mutated", (carryAlpineRange(pre, undefined), pre.mountaineering), undefined);
+  eq("cleanPrefs carries through carryAlpineRange and marks its output split", /carryAlpineRange\(o\.temp, o\.split\)/.test(prefsSrc) && /out\.split = true/.test(prefsSrc), true);
+  // Each route's box is about its own kind of climbing: no crag chips on a mountain route, no mountain chips on a crag's score card.
+  eq("the crag score card hides the mountain scopes; Settings and the Menu (no disc) show both groups", /const showMtn = !disc \|\| ownOnly \|\| COND_DISCS\.indexOf\(disc\) < 0/.test(prefsSrc) && /\{showMtn \? <>/.test(prefsSrc) && /\{showCrag \? <>/.test(prefsSrc), true);
 }
 
 
