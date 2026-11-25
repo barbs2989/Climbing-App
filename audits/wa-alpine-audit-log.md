@@ -40372,3 +40372,44 @@ contradict).
 6 confirmed errors fixed, 5 flagged for human review (including the Half Moon id
 mismatch), 4 clean. Next batch continues id-ascending from `wa_himmelhorn_stonehenge`
 (pass 9).
+
+## 2026-11-25 — Pass 9, Batch 583
+
+Ten routes, continuing id-ascending from `wa_himmelhorn_stonehenge`: Wild Hair Crack
+(Himmelhorn), Honeymoon Route (Mount Deception), Raven Ridge Traverse and Standard Scramble
+(Hoodoo Peak), Standard Route (Horseshoe Peak), Hourglass Gully Winter (Mount Index Main
+Peak), North Ridge / Southeast Buttress / Southwest Route (Hozomeen Mountain South Peak), and
+Southwest Buttress (Hozomeen Mountain North Peak). Skipped `wa_house_buttress`, which falls
+between Hourglass Gully and the Hozomeen routes in id order: its area `wa_poster_peak` is
+`area_type = 'crag'`, not `peak`, so it's out of this audit's scope.
+
+1 confirmed error fixed:
+- Honeymoon Route's top-level `gain_ft`/`loss_ft` (7861/5400) didn't match this same row's
+  own itinerary, whose three days sum to 5250 gain / 5250 loss — and 7861 exceeds the route's
+  entire possible net gain (trailhead ~2,550 ft per `waypoints[0]` to summit 7,788 ft = 5,238
+  ft net). The route is there-and-back on one trail (its own `approach_variants` and
+  `descent_text` both describe returning the same way), so gain should equal loss, as the
+  itinerary already has it. Corrected both to 5250.
+
+0 flagged for human review this batch.
+
+Clean (9): Wild Hair Crack (high_point_ft 7,880 ft and FA "Silas Wild, Russ Kroeker, John
+Roper — 1981" both match the American Alpine Journal's account of the 1981
+Kroeker-Roper-Wild route on Himmelhorn's NW side); Raven Ridge Traverse and Standard Scramble
+on Hoodoo Peak (high_point_ft 8,475 ft matches ListsOfJohn's current figure; the scramble's
+own gain/loss/distance — 4500/4600 ft, 19.63 km — match its own `data_quality.gaps` note
+citing "12-12.5 mi/4,000-4,600 ft to the summit"); Horseshoe Peak Standard Route
+(high_point_ft 8,480 ft matches the 8,480-8,491 ft range from Mountaineers.org/TopoZone/
+ListsOfJohn; its own `data_quality.gaps` already discloses the SummitPost-noted naming/
+coordinate confusion with the separately-named "Ripsaw Ridge" high point at 8,300 ft, so
+nothing new to flag there); Hourglass Gully Winter (high_point_ft 5,991 ft for Mount Index
+Main Peak matches Wikipedia exactly; gain/loss 5500/5500 ft is a plausible, symmetric
+there-and-back figure); and all four Hozomeen Mountain routes (high_point_ft 8,003 ft for the
+South Peak and 8,071 ft for the North Peak both match Wikipedia/ListsOfJohn exactly;
+access/road/emergency blocks are identical and internally consistent across the three South
+Peak routes, and the cited Border 2 Fire/border-crossing closures match current reporting and
+are already self-dated for climbers to re-check). No waypoints are stored yet for any of the
+four Hozomeen routes — unenriched, not contradictory.
+
+1 confirmed error fixed, 0 flagged for human review, 9 clean. Next batch continues
+id-ascending from `wa_hozomeen_mountain_southwest_buttress` (pass 9).
