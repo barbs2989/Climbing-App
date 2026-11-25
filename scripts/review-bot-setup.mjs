@@ -21,6 +21,7 @@ import crypto from "crypto";
 import { spawnSync } from "child_process";
 import { fileURLToPath } from "url";
 import { SUPABASE_URL, requireServiceKey, headers, loadEnv } from "./lib/supabase-env.mjs";
+import { NPX, NPX_PRE } from "./lib/npx.mjs";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const KEY = requireServiceKey();
@@ -75,7 +76,7 @@ select id, name, is_admin from profiles where id = '${user.id}';
 commit;`;
 const tmp = path.join(fs.mkdtempSync(path.join(ROOT, ".review-bot-")), "grant.sql");
 fs.writeFileSync(tmp, sql);
-const r = spawnSync("npx", ["supabase", "db", "query", "--linked", "-f", tmp], { cwd: ROOT, encoding: "utf8" });
+const r = spawnSync(NPX, [...NPX_PRE, "supabase", "db", "query", "--linked", "-f", tmp], { cwd: ROOT, encoding: "utf8" });
 fs.rmSync(path.dirname(tmp), { recursive: true, force: true });
 console.log((r.stdout || "") + (r.stderr || ""));
 if (r.status !== 0) { console.error("granting admin failed"); process.exit(1); }
