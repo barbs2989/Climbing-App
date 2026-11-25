@@ -87,7 +87,7 @@ export function loggedTopMonths(counts) {
 // Each fact is a tile: an icon in a tinted square, the label, then the value (owner, 2026-11-23: "make the area facts
 // look nicer"). The icon and tint are keyed by the label and are decoration only -- the label still says what it is.
 // `loggedMonths`: the twelve counts from useAreaLoggedMonths, or null to draw no MOST LOGGED strip.
-const FACT_LOOK = { Rock: ["rock", "orange"], Faces: ["explore", "teal"], Elevation: ["mountain", "purple"], "Walk-in": ["clock", "green"], Parking: ["car", "amber"] };
+const FACT_LOOK = { Rock: ["rock", "orange"], Faces: ["explore", "teal"], Elevation: ["mountain", "blue"], "Walk-in": ["clock", "green"], Parking: ["car", "amber"] };
 const factLbl = C => ({ fontSize: 10.5, fontWeight: 700, color: C.label, letterSpacing: 0.3, textTransform: "uppercase" });
 function FactTile({ label, value, C }) {
   const [icon, tone] = FACT_LOOK[label] || ["info", "teal"];

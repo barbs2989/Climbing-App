@@ -149,7 +149,7 @@ function DayCard({n,title,objective,figures,note,steps,schedule,onContribute,las
       <Tile label="Loss" value={has(f.lossFt)?uElev(f.lossFt as number):null} color={C.amber}/>
       <Tile label="Time" value={fmtHrs(f.hours)}/>
       <Tile label="Dist" value={has(f.miles)?uDistMi(f.miles as number):null}/>
-      <Tile label="Pack" value={has(f.packLb)&&f.packLb?uMass(f.packLb as number):null} color={C.purple}/>
+      <Tile label="Pack" value={has(f.packLb)&&f.packLb?uMass(f.packLb as number):null} color={C.teal}/>
     </div>:f?<div style={{display:"flex",alignItems:"center",justifyContent:"space-between",gap:8,fontSize:11.5,color:C.textMuted,background:C.surface,borderRadius:9,padding:"7px 10px",marginBottom:(note||steps)?9:0}}><span>No gain, time or distance on file for this day.</span>{onContribute?<button onClick={onContribute} style={{flexShrink:0,minHeight:32,background:"transparent",border:"none",color:C.blue,fontSize:12,fontWeight:700,cursor:"pointer",padding:"0 2px"}}>+ Add</button>:null}</div>:null}
     {steps&&steps.length>1?<ul style={{margin:0,paddingLeft:18,display:"flex",flexDirection:"column",gap:6}}>{steps.map((s: string,si: number)=><li key={si} style={{fontSize:12.5,color:C.textSub,lineHeight:1.5}}>{cap(s)}</li>)}</ul>:note?<div style={{fontSize:12.5,color:C.textSub,lineHeight:1.55}}>{cap(note)}</div>:null}
     {schedule&&schedule.length?<ScheduleFold schedule={schedule}/>:null}

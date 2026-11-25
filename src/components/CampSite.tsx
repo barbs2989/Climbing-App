@@ -74,7 +74,7 @@ export default function CampSite({b,i,first,calc,dayCount,slept,prev}: CampSiteP
   /* Each kind gets its own accent so a scan down the list tells a camp from a bivy from a hut
      before reading a word; the three detail fields get theirs so WATER is findable at a glance in
      an open card — it is the field a party most needs and the longest one to wade through. */
-  const tone=(b&&{Camp:C.purple,Bivy:C.teal,Hut:C.amber}[b.kind as "Camp"|"Bivy"|"Hut"])||C.purple;
+  const tone=(b&&{Camp:C.blue,Bivy:C.teal,Hut:C.amber}[b.kind as "Camp"|"Bivy"|"Hut"])||C.blue;
   const DTONE={Capacity:tone,Water:C.blue,Permit:C.amber};
   const chip=function(c: string,bd: string){return {fontSize:11,fontWeight:700,color:c,background:C.surface,border:"1px solid "+bd,borderRadius:20,padding:"2px 9px"};};
   return <div style={{background:C.card,border:"1px solid "+(open?tone+"66":C.border),borderLeft:"3px solid "+tone,borderRadius:12,marginBottom:ROUTE_GAP,overflow:"hidden"}}>
