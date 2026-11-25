@@ -40273,3 +40273,44 @@ Bare, nothing to check (2): Goat Mountain Southeast Route, Southwest Route.
 0 confirmed errors, 2 flagged for human review, 6 clean, 2 bare. No SQL file this batch —
 nothing cleared the bar for a fix. Next batch continues id-ascending from
 `wa_goode_mountain_southwest_couloir` (pass 9).
+
+## Batch 581 (pass 9) — 2026-11-25
+
+Eight routes, continuing id-ascending from `wa_goode_mountain_southwest_couloir`: Gorillas
+Direct (Mount Stuart), Southeast Slopes / Standard Scramble (Gray Wolf Ridge), Gunnshy Peak
+Standard Route (Barclay Lake Approach), Gunrunner and Standard Route (both filed under the
+"Middle Peak" area in the Gunsight Range), and three of Guye Peak's routes (Improbable
+Traverse, West Face, North Route / "Hidden Ridge").
+
+Gorillas Direct's FA ("Sol Wertkin, Jens Holsten & Mark Westman, 2011") is confirmed by two
+independent, contemporaneous authoritative sources — Mountain Project and the American Alpine
+Journal — even though Wertkin's own 2016 retrospective blog post misremembers it as 2010; two
+sources closer to the event outweigh one written five-plus years later, so the stored 2011 date
+is the well-supported value, not an error. Gray Wolf Ridge's FA ("Leigh B. Lint, 1928") and
+7,218 ft high point match Wikipedia exactly. Gunnshy Peak's 6,218 ft high point and 4,295 ft
+gain match WTA's and SummitPost's "Peak 6218" listings exactly. Gunrunner's FA ("Blake
+Herrington and Dan Hilden, July 9, 2007") matches Mountain Project, Alpinist, and the AAJ
+write-up exactly. Gunsight Peak's Standard Route 8,198 ft high point matches the map elevation
+on listsofjohn.com and a Wenatchee Outdoors trip report; its own `data_quality.gaps` already
+discloses the prominence-figure discrepancy, so that's not a new finding. Guye Peak's
+Improbable Traverse FA ("Dave Hiser and Mike Borghoff, 1960; first winter ascent Kit Lewis,
+1975") matches Mountain Project and OpenBeta, and its stored account of the November 2021
+rockfall (a 30x40 ft section gone, now requiring 5.9-5.10 downclimbing) matches a July 2022
+cascadeclimbers.com trip report describing the same damage. Guye Peak's North Route / "Hidden
+Ridge" FA ("Charles Hazlehurst, Hector Abel, Paul Dubuar, and Mary Hard, October 6, 1912")
+matches Wikipedia exactly. The West Face route's 5,169 ft high point vs. the other two Guye
+routes' 5,168 ft is ordinary survey variance already flagged in the West Face's own text
+(LiDAR/WTA give 5,172-5,173 ft) — not a new error.
+
+One item flagged for human review, not fixed:
+- Gunrunner is filed solely under `area_id` `wa_middle_peak`, but its own stored content
+  describes a complete north-to-south traverse summiting all four Gunsight peaks (Northeast,
+  North, Middle, and South) — the same `area_id`/content mismatch already flagged for
+  `wa_big_kangaroo_southwest_rib` (batch 3) and the Tahoma-prefixed routes filed under Mount
+  Rainier (batch 579). Extending the existing pattern, not re-litigating it.
+
+Clean (7): Gorillas Direct, Southeast Slopes (Gray Wolf Ridge), Gunnshy Peak Standard Route,
+Gunsight Peak Standard Route, Improbable Traverse, West Face, North Route / "Hidden Ridge".
+
+0 confirmed errors, 1 flagged for human review, 7 clean. No SQL file this batch — nothing
+cleared the bar for a fix. Next batch continues id-ascending from `wa_guye_peak_r2` (pass 9).
