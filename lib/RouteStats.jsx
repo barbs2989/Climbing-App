@@ -8,6 +8,8 @@ import Chevron from "../src/components/Chevron.tsx";
    no names: private logs count here, as private ticks do on Mountain Project, without saying whose.
    A view is one visitor, one route, one day (recordRouteView, called by RouteDetail), so a reload
    does not inflate it, and "in the last 30 days" is a real window, not a lifetime average.
+   The card carries no footnote explaining any of this (owner 2026-11-25: "Remove this text: A view is
+   one visitor in one day, counted since Nov 2026. Private logs count here without a name.").
    A failed read says so; it never shows a row of zeros (check:read-failures). */
 const MONTHS = ["J", "F", "M", "A", "M", "J", "J", "A", "S", "O", "N", "D"];
 const MONTH_NAMES = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
@@ -44,7 +46,6 @@ export default function RouteStats({ routeId, cragOnly, onOpenPartners }) {
   const raters = stars.reduce((a, b) => a + b, 0), topStar = Math.max(1, ...stars);
   const months = Array.isArray(s.sends_by_month) ? s.sends_by_month.map(Number) : [];
   const dated = months.reduce((a, b) => a + b, 0), topMonth = Math.max(1, ...months);
-  const since = s.views_since ? new Date(s.views_since + "T12:00:00").toLocaleDateString(DLOCALE, { month: "short", year: "numeric" }) : null;
   const last = s.last_climbed ? new Date(s.last_climbed + "T12:00:00").toLocaleDateString(DLOCALE, { month: "short", day: "numeric", year: "numeric" }) : null;
   const sendWord = cragOnly ? "Sends" : "Sends / summits";
   return <div style={{ marginBottom: 12 }}>
@@ -72,6 +73,5 @@ export default function RouteStats({ routeId, cragOnly, onOpenPartners }) {
         </div>)}
       </div>
     </div> : null}
-    <div style={{ fontSize: 11.5, color: C.textMuted, lineHeight: 1.5, marginTop: 10 }}>A view is one visitor in one day{since ? ", counted since " + since : ""}. Private logs count here without a name.</div>
   </div>;
 }
