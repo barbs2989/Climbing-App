@@ -268,7 +268,6 @@ export const MOVED = {
     "src/components/SettingsPrivacySheet.tsx",
     "src/components/SettingsDataSheet.tsx",
     "src/components/SettingsMenuSheet.tsx",
-    "src/components/ReviewQueueSheet.tsx",
     "src/components/LogClimbSheet.tsx",
     "src/components/ManageAreasSheet.tsx",
     "src/components/PrivacySheet.tsx",

@@ -106,6 +106,9 @@ empty field fill at once and two agreeing climbers change one; the owner withdre
   (`AccessibilityReportQueue`, 0343/0354; `review.html#access`). Each is the same component the Menu tile
   used to open, so the review calls are unchanged; each tab shows its waiting count from `useAdminQueueCounts`,
   which no longer counts these two into the Menu button's badge. "Open" on a track opens the route in the app in a new tab.
+  *Wrong place claims* (`AreaPlacementQueue`, 0372; `review.html#placements`) and *Feedback & ratings* (`AppFeedbackQueue`, 0365;
+  `review.html#feedback`, counted by open notes) followed on 2026-11-25, the last of the Menu's admin Review tiles: the app's Menu
+  has no Review section, no review sheet and no count on its button any more (owner: "remove since we created the admin page").
 - **The nightly AI checker**: `scripts/review-queue-export.mjs` (service key, read-only) lists items with
   no verdict or whose content changed since (`item_hash`); `.claude/workflows/review-flags-nightly.js`
   researches each (open web only; no AllTrails/Gaia/CalTopo/Strava/Wikiloc/Peakbagger/Mountain Project)

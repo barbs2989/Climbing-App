@@ -34,7 +34,8 @@ import {
 } from "../lib/db";
 import { GpsSubmissionQueue } from "../lib/GpsSubmissionQueue";
 import { AccessibilityReportQueue } from "../lib/AccessibilityReports";
-import { RouteProposalQueue, AreaProposalQueue } from "../lib/RouteProposals";
+import { RouteProposalQueue, AreaProposalQueue, AreaPlacementQueue } from "../lib/RouteProposals";
+import { AppFeedbackQueue } from "../lib/AppFeedback";
 import { C, DLOCALE, sameEditValue } from "../ClimbMatchCore";
 import { AREA_EDIT_FIELDS } from "../lib/areaFields";
 
@@ -146,9 +147,13 @@ export default function ReviewDesk() {
 // than a zero. A link can open a section directly: review.html#trails or review.html#access.
 // PROPOSED CLIMBS & AREAS (0505, owner 2026-11-23: quality control on people who add a climb or an area) are
 // the Menu's two proposal queues, with the AI checker's verdict on each card. review.html#proposals opens it.
-// The last five (2026-11-24) are DeskSections.jsx. A reviewer (0530) sees only the ones marked true.
-const SECTIONS = [["edits", "Edits, flags & wall orders", true], ["proposals", "Proposed climbs & areas"], ["trails", "Trails & GPS tracks"], ["access", "Accessibility reports"],
-  ["history", "History", true], ["climbers", "Climbers"], ["appeals", "Appeals"], ["locks", "Locks"], ["worklist", "Worklist"]];
+// The five after them (2026-11-24) are DeskSections.jsx. A reviewer (0530) sees only the ones marked true.
+// WRONG PLACE CLAIMS and FEEDBACK & RATINGS were the last two tiles of the app Menu's admin-only Review section;
+// with them here that section, its full-screen sheet and the Menu button's count are gone (owner 2026-11-25: "Is the
+// review section on menu only for me as the owner of the app? If so, remove since we created the admin page").
+// review.html#placements and review.html#feedback open them; Feedback counts open notes, as the Menu tile did.
+const SECTIONS = [["edits", "Edits, flags & wall orders", true], ["proposals", "Proposed climbs & areas"], ["placements", "Wrong place claims"], ["trails", "Trails & GPS tracks"], ["access", "Accessibility reports"],
+  ["feedback", "Feedback & ratings"], ["history", "History", true], ["climbers", "Climbers"], ["appeals", "Appeals"], ["locks", "Locks"], ["worklist", "Worklist"]];
 const fromHash = (admin) => { const h = (typeof window !== "undefined" && window.location.hash || "").slice(1); return SECTIONS.some(([k, , rev]) => k === h && (admin || rev)) ? h : "edits"; };
 function Desk({ admin }) {
   const [sec, setSec] = useState(() => fromHash(admin));
@@ -173,6 +178,12 @@ function Desk({ admin }) {
     </div> : sec === "access" ? <div style={{ maxWidth: 640 }}>
       <p style={{ fontSize: 12.5, color: C.textMuted, lineHeight: 1.5, marginTop: 0 }}>Problems climbers and visitors reported from the Accessibility statement. The statement promises a reply within 5 business days; reply by email, then mark it answered.</p>
       <AccessibilityReportQueue notify={notify} />
+    </div> : sec === "placements" ? <div style={{ maxWidth: 640 }}>
+      <p style={{ fontSize: 12.5, color: C.textMuted, lineHeight: 1.5, marginTop: 0 }}>Climbers who say an area is filed in the wrong place. Nothing on the page changes until you move it: then mark the claim moved, or not wrong.</p>
+      <AreaPlacementQueue />
+    </div> : sec === "feedback" ? <div style={{ maxWidth: 640 }}>
+      <p style={{ fontSize: 12.5, color: C.textMuted, lineHeight: 1.5, marginTop: 0 }}>What climbers and visitors sent from Feedback, and ratings that came with a comment. Reply by email if they left an address, then mark it read. Ratings without a comment only count toward the app rating above.</p>
+      <AppFeedbackQueue notify={notify} />
     </div> : sec === "proposals" ? <ProposalsSection /> : sec === "history" ? <HistorySection admin={admin} /> : sec === "climbers" ? <ClimbersSection admin={admin} />
       : sec === "appeals" ? <AppealsSection /> : sec === "locks" ? <LocksSection /> : sec === "worklist" ? <WorklistSection /> : <EditsTable admin={admin} />}
   </div>;
