@@ -57,6 +57,13 @@ Part of the guard notes — see [README.md](README.md) for the full index.
       forbidding a claim that would then be true. A hardcoded *"there is no such field"* would be a
       guard forbidding the fix, which is the shape this file records for `check:profile-claims`'
       own stale assertion.
+      **It has now gone both ways**: 0237 made a contact settable (the rule stood down), and the
+      owner removed it on 2026-11-25 (the rule came back by itself, no edit to 4b). Two blind spots
+      found when it came back: `stripLine` read two adjacent block comments (`*//*`) as a `//` and
+      dropped the rest of a line thousands of characters long, so 4b never saw the float-plan toast
+      (block comments are now stripped first); and 5b's disclosure test matched 0484's crew
+      meeting-place sentence, so deleting the float-plan disclosure passed (it now has to be the
+      float-plan sentence). Old contacts still sit in `profile_emergency_contacts`, unread.
     - **4c IS THE LOAD-BEARING HALF: a rule that only forbids is satisfied by deleting the line.**
       The FAQ must still ANSWER the question a climber asked **and still name where a contact
       actually goes** (the float plan, whose own copy already says *"What you write stays on this
