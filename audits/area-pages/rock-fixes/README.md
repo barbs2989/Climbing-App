@@ -26,3 +26,13 @@ Shawangunk conglomerate sitting on Martinsburg shale, so the map said "shale". T
 - 298 "unsure" rows: mixed-rock canyons, pages that contradict the siblings, or only one page.
 - NJ syenite rows: the siblings check did not reach them.
 - Area names that carry an access status: "Lonestar (closed)", "Cap des Pères (closed)", "Private Property - do not use".
+
+## Follow-up 2026-11-25 (applied, verified live)
+- `batch-nj-allamuchy.json`: 6 Allamuchy walls syenite -> granite (two fetched pages; no page says syenite).
+  Upper Lead Wall (metaquartzite + granite mix) and Cranberry Hollow (pages hedge granite/gneiss) left alone.
+- `batch-blurb-clashes.json`: tier-20 ROCK-CLASHES re-checked against two fetched pages each.
+  Rock set on Elusive Edge (gneiss), Dog Boulder, Little Big Man, Interstate Homeless Camp (granite), and Broom Wall (sandstone).
+  The Shanahan Crag blurb's "granite" was corrected to conglomerate (Fountain Formation); its stored rock was already right.
+  Left alone: Dome Rock, Firehouse, Three Tiers, Nova Scotia Main Cliff (unsure), Main Wall CA (one forum poster).
+- Deliberately NOT changed: ~130 area names carrying "CLOSED" / "Private Property". The name is often the only
+  closure signal a climber sees; stripping it would make closed crags look open.
