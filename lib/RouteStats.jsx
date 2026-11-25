@@ -28,8 +28,10 @@ const recent = (all, yr) => (Number(all) > 0 && yr != null ? " · " + n(yr) + " 
 /* Minutes as "9 hr 40 min" / "45 min". */
 const hrMin = (m) => { const v = Math.round(Number(m) || 0), h = Math.floor(v / 60), r = v % 60; return h ? h + " hr" + (r ? " " + r + " min" : "") : r + " min"; };
 /* An object of counts ({Onsight: 3, Follow: 1}) as rows, biggest first; a missing object (an RPC
-   older than 0535) is no rows, so the section is left out rather than drawn empty. */
-const countRows = (o) => Object.entries(o && typeof o === "object" ? o : {}).map(([k, v]) => [k, Number(v) || 0]).filter(([, v]) => v > 0).sort((a, b) => b[1] - a[1]);
+   older than 0535) is no rows, so the section is left out rather than drawn empty.
+   Keys are merged without regard to case and shown with a capital first letter: some older logs
+   store "lead" where the form now writes "Lead", and one style must not read as two rows. */
+const countRows = (o) => { const m = {}; Object.entries(o && typeof o === "object" ? o : {}).forEach(([k, v]) => { const key = String(k).trim(); if (!key) return; const lk = key.toLowerCase(); if (!m[lk]) m[lk] = [key.charAt(0).toUpperCase() + key.slice(1), 0]; m[lk][1] += Number(v) || 0; }); return Object.values(m).filter(([, v]) => v > 0).sort((a, b) => b[1] - a[1]); };
 
 /* One labelled bar: the star breakdown, how it was climbed, why parties turned back. */
 function BarRow({ label, value, top, color, labelWidth }) {
