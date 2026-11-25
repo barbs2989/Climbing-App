@@ -537,5 +537,32 @@ console.log("check:conditions-score");
 }
 function sN0() { return scoreForecast(fixture(), WALL, null, NOW); }
 
+// THE SCORE'S WAIT (owner, 2026-11-25: "Conditions score is slow still"). The card waits for the measured past rain so the
+// score is drawn once; one stalled rain window used to hold it for 8 s. Offline, with a stubbed fetch: (a) a window that
+// never answers does not hold the read past its deadline, and the windows that did answer are used; (b) a crag outside the
+// analysis answers "none" on the newest window, without waiting for the rest; (c) the area page starts the same read.
+{
+  const realFetch = globalThis.fetch;
+  const { fetchMeasuredRain } = await import("../lib/forecast.js");
+  const NOWR = Date.UTC(2026, 10, 25, 20, 0, 0), last = Math.floor(NOWR / 216e5) * 216e5, stuck = new Date(last - 3 * 216e5).toISOString().slice(0, 19) + "Z";
+  const json = (o) => Promise.resolve(new Response(JSON.stringify(o), { status: 200 }));
+  globalThis.fetch = (url) => String(url).includes(stuck) ? new Promise(() => {}) : String(url).includes("geo.weather.gc.ca") ? json({ features: [{ properties: { value: 2.54 } }] }) : json({ data: [] });
+  let t0 = Date.now();
+  const part = await fetchMeasuredRain(47.8, -121.6, NOWR);
+  const tPart = Date.now() - t0;
+  globalThis.fetch = (url) => String(url).includes("geo.weather.gc.ca") ? (String(url).includes(new Date(last).toISOString().slice(0, 19)) ? json({ features: [] }) : new Promise(() => {})) : json({ data: [] });
+  t0 = Date.now();
+  const out = await fetchMeasuredRain(36.1, -115.4, NOWR);
+  const tOut = Date.now() - t0;
+  globalThis.fetch = realFetch;
+  if (part && part.kind === "6h" && part.windows.length === 15 && tPart < 6000) ok(`one stalled rain window no longer holds the score: the read answered in ${tPart} ms with the 15 windows that came back`);
+  else fail(`the measured-rain read waited on a stalled window or dropped the ones that answered: ${tPart} ms, ${part ? part.windows.length + " windows" : "none"}`);
+  if (out === null && tOut < 1000) ok(`a crag outside the rain analysis answers on its newest window (${tOut} ms), not after every window`);
+  else fail(`a crag outside the rain analysis waited ${tOut} ms for every window before answering`);
+  const ap = readAppFile(path.join(ROOT, "src/components/AreaPage.tsx"));
+  if (/fetchCragForecastMeasured\(Number\(area\.lat\), Number\(area\.lng\)\)/.test(ap)) ok("a crag's page starts its climbs' conditions read, so the score is usually back before the Conditions tab opens");
+  else fail("the area page no longer starts the conditions read: the score waits for its whole read again after the climb opens");
+}
+
 console.log(failed ? `\ncheck:conditions-score: ${failed} FAILED` : "\ncheck:conditions-score: all passed");
 process.exit(failed ? 1 : 0);

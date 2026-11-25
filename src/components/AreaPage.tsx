@@ -28,6 +28,8 @@ import RouteRow from "./RouteRow.tsx";
 import { DISC_GRADE_SCALES } from "./RouteFinderPanel.tsx";
 import AddHereFooter from "./AddHereFooter.tsx";
 import AreaWrongSpot from "../../lib/AreaWrongSpot";
+import { fetchCragForecastMeasured } from "../../lib/forecast";
+import { CRAG_SCORE_DISCIPLINES } from "../../lib/conditionsScore.js";
 import WallOrderSuggest from "./WallOrderSuggest.tsx";
 import DbSuggestedClimbs from "./DbSuggestedClimbs.tsx";
 import AreaLatestReports from "./AreaLatestReports.tsx";
@@ -43,6 +45,8 @@ import type { DbSearchSplitArea, DbSearchSplitRoute } from "./DbSearchSplit.tsx"
 import type { AreaGettingThereArea } from "./AreaGettingThere.tsx";
 import type { AddHereFooterArea } from "./AddHereFooter.tsx";
 
+/** A raw `routes.discipline` whose climb can carry the crag conditions score ("rock" is split by style, sport or trad). */
+const CRAG_WX_DISCS: string[] = ["rock", ...CRAG_SCORE_DISCIPLINES];
 /** A row of the area page's climb list (useAreaRoutes). */
 export interface AreaPageRoute extends Omit<RouteRowRoute, "stars"> {
   /** The climbers' mean rating; an unrated climb is null or 0 in the database and compares as 0 here. */
@@ -210,6 +214,13 @@ export default function AreaPage({ area: areaRow, onSignIn, uElev, uDistMi, book
   const { data: children, isLoading: lc, error: ec }: AreaPageQuery<AreaPageArea[]> = useAreaChildren(area.id);
   const { data: routes, isLoading: lr, error: er }: AreaPageQuery<AreaPageRoute[]> = useAreaRoutes(area.id);
   const isLeaf = Array.isArray(children) && children.length === 0;
+  /* START THE CONDITIONS SCORE'S READ HERE (owner, 2026-11-25: "Conditions score is slow still"). Every climb listed on
+     this page is filed on THIS area, so its score is read at this area's coordinate: the same read RouteDetail starts
+     when a crag climb opens and the card then joins (lib/forecast.js fetchCragForecastMeasured, one per crag for ten
+     minutes). Started while the climber is still choosing a climb, it is usually back before they reach Conditions.
+     Only where a listed climb could carry a score (a crag discipline, not on a peak, where trad reads as alpine). */
+  const cragWx = area.area_type !== "peak" && Array.isArray(routes) && routes.some(function (r) { return CRAG_WX_DISCS.includes(String(r.discipline)); }) && area.lat != null && area.lng != null && isFinite(Number(area.lat)) && isFinite(Number(area.lng));
+  useEffect(function () { if (cragWx) fetchCragForecastMeasured(Number(area.lat), Number(area.lng)).catch(function () { /* the card asks again, and says so if it fails */ }); }, [cragWx, area.lat, area.lng]);
   // A state, region or range always has areas under it, so its subtree reads (classics, the wall cards'
   // grade bars) start with the page instead of waiting a round trip for the children list. Anything
   // else waits for the list: a crag or peak can be a leaf.
