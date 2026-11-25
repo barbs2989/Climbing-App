@@ -1,0 +1,20 @@
+{
+ "nh_swamp_boulders_the": {
+  "_expect": { "name": "Swamp Boulders, The", "region": "New Hampshire" },
+  "blurb": "A cluster of big forest boulders in Pawtuckaway State Park, within the Boulder Natural zone and a short stroll along the Devil's Den trail past the Yosemite boulders. Roughly 50 problems, all bouldering, in four pockets: The Chasm, Colossal Cluster, Outcast Boulders and Possibilities Boulder. Expect mostly V2 to V4 with a good spread of easy warm-ups below and a handful of hard lines up to the low double digits. The boulders are large and some faces are tall, up to about 30 feet, so bring several pads for the highballs. Despite the swampy name, the landings are mostly flat and dry. The surrounding woods are shady and dry slowly.",
+  "review": { "sources": ["https://www.mountainproject.com/area/108145705/the-swamp-boulders", "https://www.mountainproject.com/route/113278093/bog-of-eternal-stench?print=1", "https://www.mountainproject.com/area/106523360/boulder-natural?print=1"] }
+ },
+ "ut_right_sign_area": {
+  "_expect": { "name": "Right Sign Area", "region": "Utah" },
+  "blurb": "A bouldering sector up the Left Fork of Joe's Valley in central Utah, built around one steep, overhanging main wall with few features. Twenty problems on sandstone, mostly in the V5 to V9 range, with one easier line near V2 and a few seriously hard problems from V10 into V12. It suits strong boulderers more than beginners. Sandstone here soaks up water and gets fragile when damp, so plan your visit around dry weather. The main boulder sits a short way up the hill from the road, and the Left Fork's other sectors are close by for a bigger day.",
+  "review": { "sources": ["https://www.mountainproject.com/area/105880471/right-sign-area", "https://www.mountainproject.com/area/105880391/left-fork"] }
+ },
+ "_skipped": {
+  "ny_g_v3_middle_earth": "no fetched page about V3 - Middle Earth itself; only the parent Trapps page names it, route-page fetches returned the wrong area",
+  "ny_west_face": "no fetched page about the West Face itself; only whole-Rat-Rock pages (Mountain Project, Wikipedia, thetopo) and a route page, none about this face as a crag",
+  "ut_standard_overhang_boulder_the": "no fetched page about the Standard Overhang Boulder itself; only the parent Gate Boulders page lists it, route pages fetched were for a different Oregon area or gave no boulder detail"
+ },
+ "_conflicts": {
+  "nh_swamp_boulders_the": "Stored rock is diorite, but https://www.mountainproject.com/area/105929413/pawtuckaway describes Pawtuckaway's boulders as granite and https://www.mountainproject.com/area/106523360/boulder-natural?print=1 says the glacial boulders are granite."
+ }
+}
