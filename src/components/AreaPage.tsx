@@ -412,12 +412,12 @@ export default function AreaPage({ area: areaRow, onSignIn, uElev, uDistMi, book
       {/* The area's box IS the Climbs tab's header once you are in an area: App's generic "Climbs"
           box is drawn only on the picker (rootHeader), so Florida heads Florida. */}
       {/* ONE HEADER CARD (owner, 2026-11-18: "combine this ... so that the name of the area is the top section"): the
-          name and Save, the path above the area (it was a separate bar over this box, ending on the same name), the
+          name, the path above the area (it was a separate bar over this box, ending on the same name), the
           pills, ONE facts line, and a foot row -- the browser's Back (the phone's top bar takes it over, lib/pageBack.js)
-          on the left, Area tree and Fire map on the right. */}
-      <ScreenHero C={C} title={area.name} right={area.area_type !== "country" && area.area_type !== "state" ? (
-          <button onClick={onToggleSave} aria-label={booked ? "Remove from Saved" : area.area_type === "peak" ? "Save this peak" : "Save this area"} style={{ ...HEAD_BTN, background: booked ? C.amber : "rgba(255,255,255,0.08)", border: "1px solid " + (booked ? C.amber : C.border), color: booked ? "#1a1200" : C.text }}>{booked ? "Saved" : area.area_type === "peak" ? "Save peak" : "Save area"}</button>
-        ) : null}>
+          on the left, Save area, Area tree and Fire map on the right. SAVE lives in the foot row, left of Area tree
+          (owner, 2026-11-25: "move save area to the left of area tree. That would give us more space for the area
+          name"): the title row is the name alone, full width, so a long name wraps less. */}
+      <ScreenHero C={C} title={area.name}>
         {headerNav ? <div style={{ marginTop: 6 }}>{headerNav.path}</div> : null}
         <div style={{ marginTop: 10, display: "flex", gap: 6, flexWrap: "wrap", alignItems: "center" }}>
           <Pill label={ATYPE[area.area_type] || "Area"} color={C.blue} bg={C.blueBg} sm />
@@ -446,11 +446,16 @@ export default function AreaPage({ area: areaRow, onSignIn, uElev, uDistMi, book
               {"Area tree"}
             </button>
           ) : null;
-          if (!fire && !tree && !headerNav) return null;
+          const save = area.area_type !== "country" && area.area_type !== "state" ? (
+            <button onClick={onToggleSave} aria-label={booked ? "Remove from Saved" : area.area_type === "peak" ? "Save this peak" : "Save this area"} style={{ ...HEAD_BTN, background: booked ? C.amber : "rgba(255,255,255,0.08)", border: "1px solid " + (booked ? C.amber : C.border), color: booked ? "#1a1200" : C.text }}>{booked ? "Saved" : area.area_type === "peak" ? "Save peak" : "Save area"}</button>
+          ) : null;
+          if (!fire && !tree && !save && !headerNav) return null;
+          // Three 100px buttons (and the website's Back) outgrow a small phone's card, so the row WRAPS, right-aligned,
+          // rather than running off the edge.
           return (
-            <div style={{ display: "flex", alignItems: "center", gap: 8, marginTop: 12, paddingTop: 12, borderTop: "1px solid " + C.border }}>
+            <div style={{ display: "flex", flexWrap: "wrap", alignItems: "center", gap: 8, marginTop: 12, paddingTop: 12, borderTop: "1px solid " + C.border }}>
               {headerNav ? headerNav.back : null}
-              <div style={{ marginLeft: "auto", display: "flex", gap: 8, flexShrink: 0 }}>{tree}{fire}</div>
+              <div style={{ marginLeft: "auto", display: "flex", flexWrap: "wrap", justifyContent: "flex-end", gap: 8, minWidth: 0 }}>{save}{tree}{fire}</div>
             </div>
           );
         })()}
