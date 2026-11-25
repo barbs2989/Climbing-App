@@ -1210,6 +1210,30 @@ Part of the guard notes — see [README.md](README.md) for the full index.
   - **Injection-tested 7/7** with a throwaway `src/components/` file: a drawn emoji, a ternary's
     `"☀"` and a bare `"⚠ careful"` FAIL; a comment, a `{"🏆":"award"}` key, an `<Lbl s={"📍 "+x}/>`
     and `"✓ done ★"` PASS.
+- **`check:no-purple-text`** (2026-11-25) asserts that **the app draws no purple text** (owner,
+  2026-11-25: "I don't like the purple text"). Purple (`C.purple` `#a371f7`) had been the colour of
+  the Trad discipline badge and its map pin, the Expert level pill, one avatar-initials colour in
+  five, the Prominence / Vertical relief / High point stats, the crew organiser tag, the five
+  peak-list tags (Bulgers, CO/CA 14ers, WA Top 200, generic lists), community-verified hazards, a
+  climb's target date, the Vouches count, UV 11+ and a dozen smaller labels. They now take blue,
+  teal, amber, red or orange (Trad is `#f0883e`, everywhere the discipline is drawn), the `C`
+  palette has **no** purple token, and the group-colour picker offers Cyan where it offered Purple
+  (a group that stored `#a371f7` reads back with no accent, so it takes its name colour). Static, in
+  `npm run build`.
+  - **What counts.** A `C.purple*` / `C.violet*` token; a palette NAME `"purple"`/`"violet"` in a
+    string (`TagChip` and the area page's fact tiles resolve a colour by name, `C[t.color]`); any
+    quoted hex whose hue is 250°–320° with saturation > 0.3 and lightness 0.2–0.85 (a built-in
+    self-test pins `#a371f7`/`#8957e5`/`#e05fd8` in and indigo `#7d7cf5`, the pinks and the app's
+    other hues out); and `C.magenta` anywhere but `lib/topoMarks.jsx`. Comments are blanked first.
+  - **Allowed, because they are drawn MARKS, not text** (`ALLOW`, one reason each): the Campsite map
+    pin + its legend/heading glyph (`check:wp-styles` spaced all twelve pin colours around it), the
+    topo rappel-station disc and crux mark, the 45°+ slope shading (the CalTopo / Gaia GPS
+    convention), the EPA "Very unhealthy" smoke band and a recorded track line. The guard fails if
+    fewer than four ALLOW entries still match, so a stale entry is pruned rather than left to
+    excuse a new one.
+  - **Cannot see** a colour built at runtime (`"hsl("+h+"…")`) or read from the database other than
+    the group accent; indigo (`C.indigo`, 241°) is a blue-violet kept for the wind chart line and the
+    Logbook's "Lead" bar, both graphics.
 - **`check:tap-slop`** (in build) keeps **lib/tapSlop.js** installed: a TOUCH whose click lands on
   nothing tappable goes to the nearest small control whose 44px box (centred on it) holds the
   touch. Owner note 2026-10-28, *"Some clicks links are small"*.

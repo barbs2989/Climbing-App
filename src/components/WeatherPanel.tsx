@@ -150,7 +150,7 @@ const RAIN_PART_WORD: Record<string,string>={AM:"in the morning",PM:"in the afte
 function rainMostly(dy: {parts?: WxPart[] | null; precipIn: number}){const ps=(dy.parts||[]).filter(function(p){return p.rain>0;});const tot=ps.reduce(function(a,p){return a+p.rain;},0);if(!(dy.precipIn>0)||!ps.length||tot<0.01)return "";const top=ps.reduce(function(a,p){return p.rain>a.rain?p:a;});return top.rain>=0.6*tot&&RAIN_PART_WORD[top.label]?" · mostly "+RAIN_PART_WORD[top.label]:"";}
 function gustWorthShowing(dy: {wind10Max?: number | null; gustMax: number}){const surf=dy.wind10Max;return !(typeof surf==="number"&&isFinite(surf))||dy.gustMax>surf;}
 function wxCondColor(code: number | null | undefined){if(code==null)return C.blue;if(code>=95)return C.red;if(code===0||code===1)return C.green;if(code===2||code===3||code===45||code===48)return C.textSub;return C.blue;}
-function wxUvColor(uv: number){return uv>=11?C.purple:uv>=8?C.red:uv>=6?C.amber:uv>=3?C.yellow||C.amber:C.green;}
+function wxUvColor(uv: number){return uv>=8?C.red:uv>=6?C.amber:uv>=3?C.yellow||C.amber:C.green;}
 function wxUvLabel(uv: number){return uv>=11?"Extreme":uv>=8?"Very High":uv>=6?"High":uv>=3?"Moderate":"Low";}
 const FROSTBITE_WINDCHILL_F=-19;
 function metWxLabel(code: string | null | undefined){

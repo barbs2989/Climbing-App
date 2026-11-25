@@ -136,9 +136,9 @@ export default function TechStats({route,onEdit,part,onEditArea}: TechStatsProps
     if(hasAscent)stats.push(["Total ascent","↑ "+uElev(totalAscentFt),C.green]);
     if(distTile)stats.push(distTile);
     if(maxEl>0)stats.push(["High point",uElev(maxEl),C.amber]);
-    if(route.peakMetadata&&route.peakMetadata.prominence)stats.push(["Prominence",uElev(route.peakMetadata.prominence),C.purple]);
+    if(route.peakMetadata&&route.peakMetadata.prominence)stats.push(["Prominence",uElev(route.peakMetadata.prominence),C.teal]);
     if(avgGrade!=null)stats.push(["Avg grade",avgGrade.toFixed(1)+"%",C.textSub]);
-    if(hasElevPts)stats.push(["Vertical relief",uElev(relief),C.purple]);
+    if(hasElevPts)stats.push(["Vertical relief",uElev(relief),C.teal]);
     if(route.maxAngle)stats.push(["Max slope",route.maxAngle+"°",C.orange]);
     if(waterCount)stats.push(["Water sources",waterCount,C.blue]);
   }else if(disc==="alpine"){
@@ -149,8 +149,8 @@ export default function TechStats({route,onEdit,part,onEditArea}: TechStatsProps
     if(distTile)stats.push(distTile);
     if(route.maxAngle)stats.push(["Max slope",route.maxAngle+"°",C.orange]);
     if(route.cruxGrade||route.grade)stats.push(["Crux grade",cruxGrade(route.cruxGrade||route.grade),C.amber]);
-    if(maxEl>0)stats.push(["High point",uElev(maxEl),C.purple]);
-    if(route.peakMetadata&&route.peakMetadata.prominence)stats.push(["Prominence",uElev(route.peakMetadata.prominence),C.purple]);
+    if(maxEl>0)stats.push(["High point",uElev(maxEl),C.teal]);
+    if(route.peakMetadata&&route.peakMetadata.prominence)stats.push(["Prominence",uElev(route.peakMetadata.prominence),C.teal]);
     /* The Rappels tile used to sit here, at the top of Overview, while every other rappel
        fact — the table, its total length, the prose — sat further down the same tab. It said
        the same thing the RAPPELS heading now says, and it said it on routes that have none:
@@ -172,7 +172,7 @@ export default function TechStats({route,onEdit,part,onEditArea}: TechStatsProps
     const _cxEcho=_cx&&(disc==="sport"||disc==="trad"||disc==="toprope")&&(displayGrade(route)===_cx||splitProtection(displayGrade(route)).grade===_cx);
     if(_cx&&!_cxEcho)stats.push(["Crux grade",_cx,C.amber]);
     if(route.maxAngle)stats.push(["Max slope",route.maxAngle+"°",C.orange]);
-    if(route.peakMetadata&&route.peakMetadata.prominence)stats.push(["Prominence",uElev(route.peakMetadata.prominence),C.purple]);
+    if(route.peakMetadata&&route.peakMetadata.prominence)stats.push(["Prominence",uElev(route.peakMetadata.prominence),C.teal]);
     /* Second copy of the Rappels tile — same reasoning as the pitched branch above. */
   }
   /* Discipline-agnostic tiles, appended after BOTH branches above so they cannot be lost to
