@@ -1,0 +1,43 @@
+{
+ "wi_south_faces": {
+  "_expect": { "name": "South Faces", "region": "Wisconsin" },
+  "blurb": "South Faces is a small cluster of lines on the sun-catching side of the Fishin' Crag bluff near Highland, beside a trout stream. Eleven climbs mix sport (the largest group), trad, and a single boulder problem. Grades start around 5.8 and run up past 5.12, with a handful of mid-5.10s and 5.11s in between, so there is something for a solid intermediate and a few lines for strong leaders. The faces and airy arêtes are long and exposed by Wisconsin standards. Rock quality varies across the bluff, and it needs time to dry after wet weather. It is a quiet alternative to the busier crags in the state.",
+  "review": { "sources": ["https://www.mountainproject.com/area/105955706/south-faces", "https://www.mountainproject.com/area/105860573/the-fishin-crag-castle-rock-south"] }
+ },
+ "wi_3_dead_tree_wall": {
+  "_expect": { "name": "Dead Tree Wall", "region": "Wisconsin" },
+  "blurb": "Dead Tree Wall is a steep cliff of roughly fifty to sixty feet on the West Rampart of Devil's Lake's West Bluff, just north of the Reclining Tower. Its eleven climbs are almost all trad, with a couple of top-rope lines, and the grades stretch from 5.6 through 5.12. The middle of the range (5.8 to 5.10) holds most of the options, so it suits climbers comfortable placing gear who want a bit of variety. The cliff top sits close to the West Bluff Trail, and the way down is an easy gully at the south end. This stretch of the rampart is noticeably quieter than other parts of the bluff.",
+  "review": { "sources": ["https://www.mountainproject.com/area/105828864/dead-tree-wall", "https://www.mountainproject.com/area/105730012/west-bluff-05-west-rampart"] }
+ },
+ "wi_greatest_show_boulders": {
+  "_expect": { "name": "Greatest Show Boulders", "region": "Wisconsin" },
+  "blurb": "Greatest Show Boulders is a small bouldering zone on Devil's Lake's East Bluff, below the nearby Greatest Bluff boulder. It has eleven problems on sandstone, with a wide spread: a few easy warm-ups, several moderate problems around V2 to V3, and a cluster of hard tests from V8 up to V10 or harder, including one of the tougher problems at the lake. The stone here is not as good as on the neighbouring Greatest Bluff, so it appeals mainly to strong boulderers chasing the harder lines. Expect a short downhill walk from the neighbouring boulder.",
+  "review": { "sources": ["https://www.mountainproject.com/area/105935513/greatest-show-boulders", "https://www.mountainproject.com/area/105935505/greatest-bluff"] }
+ },
+ "wi_sentinel_area": {
+  "_expect": { "name": "Sentinel Area", "region": "Wisconsin" },
+  "blurb": "Sentinel Area is a compact crag in Interstate Park on the Wisconsin side of the St. Croix, in forest that gives welcome shade on hot summer days. The ten or so routes are nearly all trad, plus one top-rope, and the cracks are the draw. Most of the grades sit around 5.10, with a couple of easier 5.8 and 5.9 lines and a few climbs reaching 5.11 and 5.12. The park's rock is textured basalt. With no beginner-grade climbs and a somewhat exposed walk-in, it is better for experienced climbers than for first-timers. The descent is a third-class scramble through pine needles that can be slick.",
+  "review": { "sources": ["https://www.mountainproject.com/area/105842571/sentinel-area", "https://mountainproject.com/area/105794827/interstate-park"] }
+ },
+ "wi_5_nature_walk": {
+  "_expect": { "name": "Nature Walk", "region": "Wisconsin" },
+  "blurb": "Nature Walk is a boulder-and-talus pocket on the lower west side of Devil's Lake, above the lakeshore trail not far from the north end of the lake. It holds eleven quartzite problems, nearly all of them in the V0 to V4 range with the largest group at V3, plus one harder line around V6. That makes it a good stop for climbers working through moderate grades. A few problems have uneven or scary landings, so bring pads and spotters. It sits farther from the car than the closest boulders on this part of the bluff.",
+  "review": { "sources": ["https://www.mountainproject.com/area/118971967/nature-walk", "https://www.mountainproject.com/area/118972659/west-bluff-north-lower-access"] }
+ },
+ "wi_fire_rhoad_bluff": {
+  "_expect": { "name": "Fire Rhoad Bluff", "region": "Wisconsin" },
+  "blurb": "Fire Rhoad Bluff is a short, broken cliff band in the woods on Devil's Lake's West Bluff, reaching nearly to the West Bluff Trail and sitting beside the fire road area. It offers eleven boulder problems, most between V0 and V3, with a single V5 as the top end. That makes it friendly to newer boulderers and good for a mellow circuit, while the one hard problem gives stronger climbers something to try. The wooded setting means shade and some undergrowth. One approach leaves the bench on the trail and contours south into the trees.",
+  "review": { "sources": ["https://www.mountainproject.com/area/107130793/fire-rhoad-bluff", "https://www.mountainproject.com/area/111419504/north-of-fire-road"] }
+ },
+ "yt_upper_chunder_multipitch": {
+  "_expect": { "name": "Upper Chunder (Multipitch)", "region": "Yukon" },
+  "blurb": "Upper Chunder is the multipitch section of Chunder Canyon on Paint Mountain, near Haines Junction. The recessed canyon holds the most sustained vertical rock on the mountain, and all eleven climbs here are trad. Grades run from 5.5 to about 5.11, with most in the 5.10 range, and the area has an alpine feel. Several lines start from a series of ledges, so the options interlock. The canyon takes morning sun, goes into shade in the afternoon, and can be cold when wind funnels through. Approach pitches are dirty, a fixed rope helps on the steep gully, and rockfall is a real concern, especially on the off-width climbs.",
+  "review": { "sources": ["https://www.mountainproject.com/area/117996778/upper-chunder", "https://www.mountainproject.com/area/124366646/chunder-canyon"] }
+ },
+ "_skipped": {
+  "wi_aberdeen_quarry_south": "no fetched page about Aberdeen Quarry (South) itself; only the park page lists it and the North page does not name it"
+ },
+ "_conflicts": {
+  "yt_upper_chunder_multipitch": "stored rock is diorite but https://www.mountainproject.com/area/124366646/chunder-canyon says granite; no rock named"
+ }
+}

@@ -1,0 +1,78 @@
+{
+ "va_warm_up_boulder_3": {
+  "_expect": {
+   "name": "Warm Up Boulder",
+   "region": "Virginia"
+  },
+  "blurb": "Warm Up Boulder is the first block you meet in the Roadside Boulders group near Atkins, on the slopes of Big Walker Mountain. It is a long, fairly low sandstone boulder, mostly under nine feet, so it suits an easy session more than a project day. About ten problems run from VB-level easy to V4, with most sitting at V3 or below. Mantel and top-out moves tend to be the hardest part, and it works well for loosening up before moving to the taller blocks nearby or for a quick visit when you live close by.",
+  "rock": "sandstone",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/area/106492153/warm-up-boulder",
+    "https://www.mountainproject.com/area/106492144/roadside-boulders"
+   ]
+  }
+ },
+ "va_big_boy": {
+  "_expect": {
+   "name": "Big Boy",
+   "region": "Virginia"
+  },
+  "blurb": "Big Boy is a bouldering spot in The Forest, the greenstone boulder field beside the Blue Ridge Parkway near Charlottesville. It stands among the bigger blocks in the circuit of boulders that makes up the Main Area. The ten problems are a mix of moderate lines and a few hard ones, from V1 through V6, with V3 the most common grade. A stand-start and sit-start version of the main line give two levels of challenge on the same face. Greenstone can be sharp on the skin, so expect edgy holds and flakes.",
+  "rock": "greenstone",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/area/119697102/big-boy",
+    "https://www.mountainproject.com/area/107264568/the-forest"
+   ]
+  }
+ },
+ "va_crossroads": {
+  "_expect": {
+   "name": "Crossroads",
+   "region": "Virginia"
+  },
+  "blurb": "Crossroads is one of the early boulders on the loop through The Forest, the greenstone boulder field beside the Blue Ridge Parkway near Charlottesville. Its ten problems all work the boulder's overhanging side, which has some very good holds. Difficulty is wide: a couple of easy problems at the bottom, a handful of V1 to V3 lines in the middle, and a few harder ones reaching V6. That range makes it a decent early stop for climbers of mixed ability, though greenstone is sharp enough to be rough on the fingertips.",
+  "rock": "greenstone",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/area/118813744/crossroads",
+    "https://www.mountainproject.com/area/107264568/the-forest"
+   ]
+  }
+ },
+ "va_dike_creek_area_the": {
+  "_expect": {
+   "name": "Dike Creek Area, The",
+   "region": "Virginia"
+  },
+  "blurb": "The Dike Creek Area is a small cluster of short cliffs along the Potomac River at Great Falls, a little upstream from the Juliet's climbing area. Its roughly ten routes are trad lines of modest height, with a pair of scrambly easy ones, most climbs around 5.5 to 5.7, and a couple of harder lines reaching about 5.10a. Many of the climbs are top-rope friendly as well as leadable, so it suits climbers building up on easy to moderate terrain more than anyone chasing hard grades.",
+  "review": {
+   "sources": [
+    "https://rakkup.com/guidebook/great-falls-rock-climbing/dike-creek/s23186",
+    "https://www.mountainproject.com/route/112779539/tack"
+   ]
+  }
+ },
+ "wa_punk_rock": {
+  "_expect": {
+   "name": "Punk Rock",
+   "region": "Washington"
+  },
+  "blurb": "Punk Rock is a small tower that straddles the crest of Tumwater Mountain above Tumwater Canyon, near Leavenworth. Climbing is mostly traditional, about eight lines from 5.8 up to 5.12, with 5.10 the most common grade, plus two aid lines at A2. It is one of five sub-areas on the crest, which has a ridge-top, almost alpine feel and sees few visitors.",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/area/111898616/punk-rock",
+    "https://mountainproject.com/area/111898586/tumwater-mountain-crest"
+   ]
+  }
+ },
+ "_skipped": {
+  "va_gallery_boulder": "Only the MP boulder page and its parent were found, and they place Center Lightside at 36.565,-82.2014, far from the input coordinates (36.899,-82.4186); location mismatch",
+  "va_estate_boulder": "No page about the boulder itself; only a parent listing (Moonstone Area) names it with a problem count",
+  "wa_power_shower_boulder": "No page about the boulder itself found; only the Booka Boulders parent page and route listings name it"
+ },
+ "_conflicts": {
+  "va_dike_creek_area_the": "Stored rock greywacke; a general Great Falls Mather Gorge page (https://potomacmountainclub.org/climbing-crags-beta/virginia-crags/great-falls-national-park-rocktr/) says mica schist. No rock named in the blurb."
+ }
+}

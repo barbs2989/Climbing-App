@@ -1,0 +1,36 @@
+{
+ "wi_main_wall": {
+  "_expect": {"name": "Main Wall", "region": "Wisconsin"},
+  "blurb": "Main Wall is the principal face of Steinke Wall in the Steinke Basin at Devil's Lake, in Wisconsin's Baraboo Range. It carries ten climbs on quartzite and mixes three kinds of outing: trad lines, a top-rope, and boulder problems. The roped routes run from easy fifth-class up to about 5.10, while the problems start near V1 and climb to a couple of much harder ones. A mild-to-moderate spread makes it a decent stop for a mixed party, with plenty of choices at an easier level before the hard end of the range.",
+  "review": {"sources": ["https://www.mountainproject.com/area/106486377/main-wall", "https://www.mountainproject.com/area/106486354/steinke-wall"]}
+ },
+ "wi_wiessner_wall": {
+  "_expect": {"name": "Wiessner Wall", "region": "Wisconsin"},
+  "blurb": "Wiessner Wall sits on Devil's Lake's West Bluff, in the Cleo Amphitheater section of the Baraboo Range. Ten climbs share the face, mostly traditional leads, with a top-rope and a pair of easy boulder problems. Grades begin at low fifth-class and cover a broad middle, with the hardest roped line reaching the 5.11 range. The quartzite wall is a handy add-on to a day in the amphitheater, and most of its lines suit climbers who want moderate trad.",
+  "approach": "Hike up the West Bluff Trail to the lookout over the Cleo Amphitheater. From there a short climbers' path heads north-east toward a gully beside Turk's Head, and the wall lies back to the south-west.",
+  "review": {"sources": ["https://www.mountainproject.com/area/105730080/wiessner-wall", "https://www.mountainproject.com/area/105730003/west-bluff-03-cleo-amphitheater"]}
+ },
+ "yt_dnd_boulder": {
+  "_expect": {"name": "DnD Boulder", "region": "Yukon"},
+  "blurb": "DnD Boulder is a single big boulder in the trees near Whitehorse, Yukon, in the Rock Gardens zone of the local bouldering scene. It carries ten problems, from an easy V0 up to a V8 at the top end, with the bulk of them clustered around V3 to V5. The setting is shaded, tucked among trees. A good stop for strong boulderers who want a concentrated set of mid-grade to hard problems on one rock.",
+  "review": {"sources": ["https://www.mountainproject.com/area/111797242/dnd-boulder", "https://rakkup.com/guidebook/yukon-bouldering/d--d-boulder/s16383"]}
+ },
+ "yt_buffalo_shoulder_buttress": {
+  "_expect": {"name": "Buffalo Shoulder Buttress", "region": "Yukon"},
+  "blurb": "Buffalo Shoulder Buttress is one of the established walls on Paint Mountain (Tsi Dhal), near Haines Junction in the Yukon. It is the third buttress from the left as seen from the highway, and forms the shoulder of the mountain's buffalo-shaped outline. Ten trad routes run from around 5.9 to the 5.12 range, with most in the 5.9 to 5.11 band. Expect a committing day: the walk in is long and steep, and the cliff sits high on the mountain where it is cooler and windier than the valley.",
+  "review": {"sources": ["https://www.mountainproject.com/area/112229886/buffalo-shoulder-buttress", "https://gripped.com/news/new-multi-pitch-5-10-in-yukon-looks-great/"]}
+ },
+ "wi_equestria": {
+  "_expect": {"name": "Equestria", "region": "Wisconsin"},
+  "blurb": "Equestria is a small bouldering face in Donald Park near Mount Vernon, Wisconsin, on the north-west side of the ridge overlook. Ten problems range from V0 through V6, with a nice spread in the V1 to V3 range plus a couple of hard ones at the top. The face can be seen from the trail when the trees are bare. Good for climbers who want a short session on mostly moderate problems in a quiet park, with a neighbouring bouldering sector reachable by traversing across.",
+  "review": {"sources": ["https://www.mountainproject.com/area/118790595/equestria", "https://mountainproject.com/area/112341795/donald-park"]}
+ },
+ "_skipped": {
+  "wi_oak_leaf_bike_trail_wilson": "no page describing the boulders found; only a bare listing and trail pages",
+  "wi_hidie_hole": "only a single route page names it; no crag page",
+  "yt_copper_cliffs": "only a 2013 forum post found; could not fetch two pages (news page cert expired)"
+ },
+ "_conflicts": {
+  "wi_equestria": "Stored rock is dolomite, but the Donald Park page (https://mountainproject.com/area/112341795/donald-park) calls the park's rock pocketed sandstone; rock not written."
+ }
+}

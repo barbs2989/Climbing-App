@@ -1,0 +1,76 @@
+{
+ "va_lower_sunset_wall": {
+  "_expect": {
+   "name": "Lower Sunset Wall",
+   "region": "Virginia"
+  },
+  "blurb": "Lower Sunset Wall is the first wall you meet on the climbers' path to the Sunset Walls, on the Old Rag side of Shenandoah National Park. About ten routes are mostly trad, with a pair of sport lines, and grades stretch from easy fifth class up through the 5.10s and 5.11s to a couple of 5.12s. The face holds shade nearly all day and the wind can pick up, which makes it a sensible choice when the rest of Old Rag is hot. It is a short wall, so expect a handful of quick climbs rather than a full day of mileage.",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/area/106672120/lower-sunset-wall",
+    "https://mountainproject.com/area/106247433/sunset-walls"
+   ]
+  }
+ },
+ "va_luminary_boulder": {
+  "_expect": {
+   "name": "Luminary Boulder",
+   "region": "Virginia"
+  },
+  "blurb": "Luminary Boulder is a big, bold block in the Luminary Area of Grayson Highlands State Park, in southwest Virginia. It carries ten boulder problems with a wide spread: a handful of easy to moderate lines around V0 to V2, a few mid-grade problems, and some serious hard ones that reach the V9 range. Climbers regard it as one of the best boulders in the park. You reach it by following a built access trail with stone steps down from the Listening Rock Trail side, passing Equinox Boulder on the way.",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/area/107062490/luminary-boulder",
+    "https://www.mountainproject.com/route/107062650/cursive"
+   ]
+  }
+ },
+ "va_rage_boulders": {
+  "_expect": {
+   "name": "Rage Boulders",
+   "region": "Virginia"
+  },
+  "blurb": "Rage Boulders is a pair of large, steep boulders standing side by side in the Right Boneyard at Grayson Highlands State Park, southwest Virginia. Ten bouldering problems cover a steady range, from easy V1s through the middle grades up to about V6. The rock here is not as good as on much of the rest of the Boneyard, so it suits a visit to round out a day in the field rather than a headline destination. Look for the blocks higher up the hill from Belgrano Blade and Gunslinger Prow, in the rhododendrons.",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/area/108235474/rage-boulders",
+    "https://www.mountainproject.com/area/106660723/right-boneyard"
+   ]
+  }
+ },
+ "va_rectory_the": {
+  "_expect": {
+   "name": "Rectory, The",
+   "region": "Virginia"
+  },
+  "blurb": "The Rectory is a wall of mostly sport climbing in the Mile Two section of Guest River Gorge, in southwest Virginia. Of its ten routes, eight are bolted and two are trad. Most fall in the 5.10 range, with a single 5.9, one 5.12 and two 5.13s, so it works as a warm-up wall before harder lines nearby. It sits just right of the Virtues Area. To find it, climb up from the Silver Fortune area and bear right, finishing just beyond the first low roof.",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/area/108770909/the-rectory",
+    "https://mountainproject.com/area/108650466/mile-two"
+   ]
+  }
+ },
+ "va_cigar_box": {
+  "_expect": {
+   "name": "Cigar Box",
+   "region": "Virginia"
+  },
+  "blurb": "Cigar Box is a riverside crag in the Great Falls area of the Potomac, close to the Sandbox. It is two blocky crags with about ten short climbs: five trad lines, four top-rope problems and one easy scramble. Grades run from third class through the 5.4 to 5.9 range, with one 5.10 at the top end, so most of it suits newer climbers and quick sessions. From the climbers' parking, walk straight to the river and follow the River Trail downstream onto the rocky stretch.",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/area/109612265/cigar-box",
+    "https://rakkup.com/guidebook/great-falls-rock-climbing/cigar-box/s23184"
+   ]
+  }
+ },
+ "_skipped": {
+  "va_main_wall_4": "no fetched page about Main Wall itself (Driveby Boulders parent page only lists it; no basalt or Main Wall page found)",
+  "va_skidmore_wall": "no fetched page about Skidmore Wall itself; only the North River Gorge parent page names it",
+  "va_supermassive_boulder": "no fetched page about Supermassive Boulder itself; only the Cascadia Area parent page names it"
+ },
+ "_conflicts": {
+  "va_lower_sunset_wall": "Stored aspect N; parent page https://mountainproject.com/area/106247433/sunset-walls says Sunset Walls face northwest. No direction written.",
+  "va_rectory_the": "Stored rock shale; https://mountainproject.com/area/108650466/mile-two calls Mile Two sandstone. No rock named."
+ }
+}

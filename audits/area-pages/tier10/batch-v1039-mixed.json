@@ -1,0 +1,40 @@
+{
+ "yt_3_naked_grotto": {
+  "_expect": {"name": "Naked Grotto", "region": "Yukon"},
+  "blurb": "Naked Grotto is a small limestone sport crag near Mount White, east of Whitehorse, and one of three pockets that make up the Roadside Crags. It holds eleven bolted routes, from 5.9 up to the 5.11 range, with the harder lines outnumbering the easy ones. Expect a sunny wall that picks up some shade from the trees around it, and ground that can be damp underfoot. The bolting is dense in places, so some lines feel very close together, but several routes are well regarded. Climbs are short and the crag suits a quick session from the road.",
+  "review": {"sources": ["https://www.mountainproject.com/area/109430916/naked-grotto", "https://www.mountainproject.com/area/124366616/roadside-crags"]}
+ },
+ "tn_celebrity_flake": {
+  "_expect": {"name": "Celebrity Flake", "region": null},
+  "blurb": "Celebrity Flake is a trad-only buttress within Sunset South at Sunset Park in southeast Tennessee. Its eleven routes mix face climbing with crack lines, running from 5.7 through the 5.11 range, with the 5.11 climbs making up the largest share and a handful of moderates below them. The back side of the flake stays cooler in hot weather, which helps in summer. The stretch of Sunset South it belongs to is known for good lines and thinner crowds than the busier parts of the cliff. Bring a standard trad rack with extra small gear.",
+  "review": {"sources": ["https://www.mountainproject.com/area/202784545/celebrity-flake", "https://www.mountainproject.com/area/105890113/sunset-south"]}
+ },
+ "al_slider_boulder_the": {
+  "_expect": {"name": "The Slider Boulder", "region": "Alabama"},
+  "blurb": "The Slider Boulder is one of the best-known blocks at Horse Pens 40 in Steele, Alabama, sitting in the Slider Boulders group beside the Lady Slipper and Uniball boulders. Ten problems cover it, from V4 and V5 through a cluster at V6 up to V8, V9 and V10 sit starts. The boulder overhangs and the holds are crimpy, so it rewards finger strength more than slopers. It tends to draw a crowd on cold days. Pads and spotters are worth bringing for the steeper problems.",
+  "review": {"sources": ["https://www.mountainproject.com/area/108029340/the-slider-boulder", "https://www.mountainproject.com/area/108029336/slider-boulders"]}
+ },
+ "al_peace_cave_2": {
+  "_expect": {"name": "Peace Cave", "region": "Alabama"},
+  "blurb": "Peace Cave is a small bouldering zone in Hurricane Creek Park, a short drive from the University of Alabama in Tuscaloosa. Ten problems are gathered around one cave boulder, spanning easy V1 up to a V8 traverse, with a good run of V4 to V6 problems in the middle. The rest of the park is cliff-faced boulders ten to twenty-five feet high, and much of it is still being explored. It is a short walk from the trail, and the park is family friendly with plenty of parking.",
+  "review": {"sources": ["https://www.mountainproject.com/area/116541185/peace-cave", "https://mountainproject.com/area/115965038/hurricane-creek-park-tuscaloosa"]}
+ },
+ "ar_ivory_coast_wall": {
+  "_expect": {"name": "Ivory Coast Wall", "region": "Arkansas"},
+  "blurb": "Ivory Coast Wall is a southeast-facing sport wall at Lake Lincoln in northwest Arkansas, where it picks up some morning sun. Ten bolted routes range from one 5.8 and one 5.9 through a lone 5.10 to seven 5.11s, so it is best for climbers comfortable at that level. It sits well back from the main North Side, which makes it quiet compared with the busier walls. It is the first wall you meet on the Lower Eagle View Loop.",
+  "aspect": "SE",
+  "review": {"sources": ["https://www.mountainproject.com/v/ivory-coast-wall/112261366", "https://www.mountainproject.com/area/106232604/lake-lincoln"]}
+ },
+ "ar_fish_wall": {
+  "_expect": {"name": "Fish Wall", "region": "Arkansas"},
+  "blurb": "Fish Wall is the first big bluff on the left along the trail at Steel Creek on the upper Buffalo River in north-central Arkansas. Routes run a full 100 feet or a bit more, so a 70 m rope is recommended, especially for linking pitches. Nine sport routes and one trad line range from 5.9 to 5.13a, with the middle of the range at 5.12 being the most common. The wall gets sun around noon, and the walk from the campground is only about five minutes on a flat trail.",
+  "review": {"sources": ["https://www.mountainproject.com/area/118222536/fish-wall", "https://mountainproject.com/area/118222436/steel-creek-upper-buffalo-river"]}
+ },
+ "_skipped": {
+  "yt_left_of_crevice": "no fetched page about this crag or an Eagle's Nest in Whitehorse/Yukon found; only Below Crevice snippet, unverified",
+  "al_north_dorms": "no page found; only NC State North Campus (Raleigh, NC) and unrelated Tuscaloosa gym/park pages"
+ },
+ "_conflicts": {
+  "ar_fish_wall": "input rock sandstone vs limestone on https://mountainproject.com/area/118222436/steel-creek-upper-buffalo-river (area-wide); no rock named in blurb"
+ }
+}

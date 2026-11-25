@@ -1,0 +1,27 @@
+{
+ "wa_hood_the": {
+  "_expect": { "name": "Hood, The", "region": "Washington" },
+  "blurb": "The Hood is a small sector of McLellan Rocks, on the south side of the Spokane River west of Spokane. It sits at the head of a canyon on the west side of the main cliffs, and the walk from the main parking area is short: roughly ten minutes across open pine flats, around a pond and up the canyon, with the crag on your right at the top. Eleven routes, mostly bolted sport with a few trad lines, run from 5.8 into the 5.12s, and the harder end is well represented, so it suits climbers with some mileage. Most climbing at McLellan faces east or west, which lets you chase sun or shade as the day goes.",
+  "review": { "sources": ["https://www.mountainproject.com/area/105794259/the-hood", "https://www.mountainproject.com/area/105794255/mclellan-rocks"] }
+ },
+ "wa_open_book": {
+  "_expect": { "name": "Open book", "region": "Washington" },
+  "blurb": "Open Book is a compact bolted crag at Lake Cushman, on the Olympic Peninsula side of the Olympic National Forest. It sits just left of Reclamation Wall, close to X Rock, and is easy to spot by the obvious dihedral toward the right side of the formation. The eleven sport routes range from about 5.7 up to 5.12, with a handful of moderates and a bigger group in the 5.10 to 5.12 range. Walls around the reservoir are short, up to about 70 feet, and tend to be mossy, so expect a quick session of single-pitch climbing rather than a full day out.",
+  "review": { "sources": ["https://www.mountainproject.com/area/114075599/open-book", "https://www.mountainproject.com/area/114075500/lake-cushman"] }
+ },
+ "wa_pumphouse_the": {
+  "_expect": { "name": "Pumphouse, The", "region": "Washington" },
+  "blurb": "The Pumphouse is the middle section of the Power House Hill cliff band, a short drive up the Mount Baker Highway from Bellingham and just above the North Fork of the Nooksack. This is a shady sport crag set among large firs and cedars, with steep, blocky, often overhanging rock and big roofs. Moss and drainage from the hillside above can leave parts of the wall damp, though some lines stay climbable in the rain and many can be done through much of the year. All eleven routes are bolted and sit between 5.10 and 5.12, mostly 5.11 and 5.12, so it is a place for strong, steep sport climbing rather than a first lead.",
+  "review": { "sources": ["https://mountainproject.com/area/112042585/the-pumphouse", "https://www.mountainproject.com/area/111904593/power-house-hill-pumphouse-baker-city-crags"] }
+ },
+ "_skipped": {
+  "wa_grandview_boulder": "no fetched page about the boulder area itself beyond one route page and the parent page; could not fetch two qualifying pages",
+  "wa_helena_ridge_forest_crag": "two searches found no page naming this crag; search budget not the cause, nothing exists to fetch",
+  "wa_left_cliff": "two searches found no page about this Left Cliff or the CSC circuit in Washington; only unrelated crags with similar names",
+  "wa_lower_goat_dome": "no fetched page about Lower Goat Dome itself; only the Upper Goat Dome page mentions it in passing",
+  "wa_lower_pratt": "no page about Lower Pratt itself; parent Bessemer Mountain page does not describe it"
+ },
+ "_conflicts": {
+  "wa_open_book": "stored rock is basalt but the Lake Cushman page (https://www.mountainproject.com/area/114075500/lake-cushman) describes mossy, metamorphic rock; no rock named in blurb"
+ }
+}

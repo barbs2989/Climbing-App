@@ -1,0 +1,40 @@
+{
+ "vt_ethan_allen_wall": {
+  "_expect": { "name": "Ethan Allen Wall", "region": "Vermont" },
+  "blurb": "A short rock face tucked among the boulders of Ethan Allen Park in north Burlington, reached from the footpath that runs past the boulder cluster. The ten climbs here are almost all top-rope lines, ranging from easy 5.7 up through the 5.11s, with the bulk of them sitting in the 5.9 to 5.10 range. Two boulder problems, one near V0 and one far harder, sit alongside the ropes. The setting is a small city park rather than a destination crag, so it suits a quick after-work session close to town and a mix of abilities on a single rope setup.",
+  "review": { "sources": ["https://www.mountainproject.com/area/117273367/ethan-allen-wall", "https://www.mountainproject.com/area/106567224/ethan-allen-park"] }
+ },
+ "vt_prospector_s_nugget": {
+  "_expect": { "name": "Prospector’s Nugget", "region": "Vermont" },
+  "blurb": "One big schist boulder resting beneath the ledge of Prospect Rock in northern Vermont, home to ten problems and nothing else. The lines run from V2 to the upper end of the scale, with a cluster of V3 and V4 problems in the middle, a couple around V5, and a few real tests above that, including one reaching V8. Because it is a single block, it makes a compact stop rather than a full day, and the rock is solid and pleasant to pull on. A faint climbers' path follows the base of the cliff toward it.",
+  "rock": "schist",
+  "review": { "sources": ["https://www.mountainproject.com/area/118713467/prospectors-nugget", "https://www.mountainproject.com/area/111000156/prospect-rock"] }
+ },
+ "va_big_rig_boulder": {
+  "_expect": { "name": "Big Rig Boulder", "region": "Virginia" },
+  "blurb": "A large, dark, richly featured boulder lower on the hillside in the Wild Wood section of Grayson Highlands State Park in southwest Virginia. Its ten problems run from a very easy line through the V3 range, with a handful at V4 and V5, and the faces change shape as you walk around it: overhanging roofs on one side, slabbier tops on another. That variety lets a group with mixed ability find something each, and a few of the lines are held in high regard by the area's developer. Wild Wood is reached on a trail that drops below the Listening Rock Trail.",
+  "review": { "sources": ["https://www.mountainproject.com/area/107910027/big-rig-boulder", "https://www.mountainproject.com/area/106511238/wild-wood"] }
+ },
+ "va_alone_boulder": {
+  "_expect": { "name": "Alone Boulder", "region": "Virginia" },
+  "blurb": "A boulder among a scattered set of blocks near the Appalachian Trail close to Crescent Rocks, in the Shenandoah and northwest Virginia region. Despite the name it sits in the company of other boulders. It holds ten problems, running from V2 up to V7, with a middle band of V2 to V4 lines and a pair of hard ones at the top end. Some of the problems are tall, so bring several pads and someone to spot.",
+  "review": { "sources": ["https://www.mountainproject.com/area/119407782/alone-boulder", "https://www.mountainproject.com/area/119407702/crescent-boulders"] }
+ },
+ "va_shade_boulder": {
+  "_expect": { "name": "Shade Boulder", "region": "Virginia" },
+  "blurb": "A friendly slab-to-vertical boulder in the Center Darkside sector of Jay's Gorge, in the Guest River area of southwest Virginia, tucked between two neighbouring blocks. It holds ten problems, mostly V0 to V4, with one standout around V6 for climbers who want a test. The height is comfortable, the landings are good, and there is an easy way off the top, which makes it a good pick for newer boulderers or for warming up before heading to harder blocks nearby.",
+  "review": { "sources": ["https://www.mountainproject.com/area/119942451/shade-boulder", "https://www.mountainproject.com/area/118237174/center-darkside"] }
+ },
+ "va_contact_boulder": {
+  "_expect": { "name": "Contact Boulder", "region": "Virginia" },
+  "blurb": "One of the Contact Station Boulders in Grayson Highlands State Park, in southwest Virginia. This block holds ten problems that start at the easy end around V1, step through V3 and a solid group at V4, and finish with a couple of harder lines around V6. Two of the lines earn top marks from climbers. One of the problems begins under a low roof and works a long finger crack, so expect a mix of steep and technical moves. It makes a rewarding stop for someone working through the park's more moderate grades.",
+  "review": { "sources": ["https://rakkup.com/guidebook/grayson-highlands-bouldering/contact-boulder/s11945", "https://www.mountainproject.com/route/106761755/full-contact"] }
+ },
+ "_skipped": {
+  "vt_trailside_boulder": "parent area Chaffee Falls is marked CURRENTLY CLOSED on the Vermont area page",
+  "va_devil_s_kitchen_2": "only one page (area page); the McAfee's Knob parent page does not name Devil's Kitchen and the other candidate page was a 404; the _2 duplicate-style row"
+ },
+ "_conflicts": {
+  "va_big_rig_boulder": "stored rock conglomerate; https://www.mountainproject.com/area/107910027/big-rig-boulder says dark metamorphic sandstone with green sandstone faces"
+ }
+}

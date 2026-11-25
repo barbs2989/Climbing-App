@@ -1,0 +1,48 @@
+{
+ "ut_birthday_corridor": {
+  "_expect": {"name": "Birthday Corridor", "region": "Utah"},
+  "blurb": "Birthday Corridor is a small single-pitch sport crag tucked into the Right Fork of Maple Canyon. Roughly ten routes run from about 45 to 90 feet, with the bulk of them in the easy to moderate range, from the 5.7s through the 5.10s, plus a single trad line. Shade and sun are both on offer here at different times of day, so you can usually pick your comfort. Because it was developed after the most recent printed guide, it tends to stay quiet even on busy weekends. It sits only a few minutes' walk beyond Pipe Dream, which makes it a handy pick for newer leaders and mixed-ability groups. Expect about half an hour on foot from the trailhead.",
+  "approach_min": 30,
+  "review": {"sources": ["https://www.mountainproject.com/area/107772482/birthday-corridor", "https://www.mountainproject.com/area/106479936/right-fork"]}
+ },
+ "ut_lone_pine_wall": {
+  "_expect": {"name": "Lone Pine Wall", "region": "Utah"},
+  "blurb": "Lone Pine Wall is a short roadside cliff in Big Cottonwood Canyon, easy to pick out thanks to a big lone pine growing at its foot between the rock and the pavement. About ten routes make up the wall, mostly trad with a couple of bolted lines, running from around 5.7 up to a single 5.10. Most of the moderate climbs finish at two-bolt anchors, so lowering or rappelling off is simple. It is a quick hit for a short session when you want something close to the car rather than a long day out, and it suits climbers who are comfortable placing gear on modest grades.",
+  "review": {"sources": ["https://www.mountainproject.com/area/105739491/lone-pine-wall", "https://rakkup.com/guidebook/big-cottonwood-rock-climbing/lone-pine-wall/s14186"]}
+ },
+ "ut_pods_wall": {
+  "_expect": {"name": "Pods Wall", "region": "Utah"},
+  "blurb": "Pods Wall is a sunny buttress in Indian Creek, just north of Scarface and close to the Reservoir Wall end of the canyon. It holds around ten routes, all of them trad. This is hard-leaning terrain for the Creek: most lines sit in the 5.11 range, with one climb around 5.10 and a few more at 5.12. Expect steep crack climbing with a stout rack, and a wall that gets plenty of sun, so cooler months suit it best. Visitors should plan to pack out their own waste, as toilet facilities near the walls are limited.",
+  "review": {"sources": ["https://www.mountainproject.com/area/116033647/pods-wall", "https://www.mountainproject.com/area/105716763/indian-creek"]}
+ },
+ "ut_j_crags": {
+  "_expect": {"name": "J Crags", "region": "Utah"},
+  "blurb": "J Crags is a group of east-facing slabs on the Eastern Reef in the San Rafael Swell, running south from Uneva Canyon. Nearly all of its ten routes are trad, with a single bolted line, and they span a very wide range of difficulty, from fourth-class and easy fifth-class terrain through the 5.6 to 5.9 middle ground up to a couple of 5.11 and 5.12 lines. Climbs here are long, running from one pitch up to as many as seven, and several carry runout or serious ratings, so this is committing, mountaineering-flavoured slab climbing rather than a quick crag session. Rock on the Reef overall is described as fine to excellent with the odd soft patch.",
+  "review": {"sources": ["https://mountainproject.com/area/107784632/j-crags?print=1", "https://www.mountainproject.com/v/105717146"]}
+ },
+ "ut_over_the_hill": {
+  "_expect": {"name": "Over the Hill", "region": "Utah"},
+  "blurb": "Over the Hill is a small wall in Indian Creek that sits behind The Gash and offers some of the canyon's shadier climbing. All ten routes are trad, and they lean toward the harder end of the Creek: most are 5.11 or 5.12, with two around 5.10 and a lone 5.9. Come here when the sun-baked walls elsewhere are too hot, and bring a full crack rack. Toilet facilities nearby are limited, so plan to carry out your waste.",
+  "review": {"sources": ["https://www.mountainproject.com/area/119684948/over-the-hill", "https://www.mountainproject.com/area/105716763/indian-creek"]}
+ },
+ "ut_eastwood_crag": {
+  "_expect": {"name": "Eastwood Crag", "region": "Utah"},
+  "blurb": "Eastwood Crag is a high-elevation trad crag in the Indian Creek region of southeast Utah, perched at roughly 7,100 feet with sweeping views across Canyonlands. It holds about ten routes, all trad, and most sit at 5.10, with a couple of 5.11s and one 5.12. Most lines are worth two stars, and the setting is a big part of the draw. The route to the base follows a ridge up to a prow, so expect a short scramble-style approach rather than a roadside crag. Toilet facilities are limited, so carry out your waste.",
+  "review": {"sources": ["https://www.mountainproject.com/area/119926339/eastwood-crag", "https://www.mountainproject.com/area/105716763/indian-creek"]}
+ },
+ "ut_diamond_the": {
+  "_expect": {"name": "Diamond, The", "region": "Utah"},
+  "blurb": "The Diamond is a popular crag in Ogden Canyon, east of Ogden in the Wasatch. It is mostly bolted, with some trad lines, and the grades are friendly: from around 5.6 up through the 5.9s and 5.10s to a hard 5.11, with a few boulder problems rounding out the mix. The wall faces north, which makes it a good choice for hot summer days, and the short hike from the roadside pullout keeps it busy. Most routes share the same set of anchors, so lowering and swapping ropes is straightforward.",
+  "review": {"sources": ["https://www.mountainproject.com/area/105795415/the-diamond", "https://www.mountainproject.com/area/105739271/ogden-canyon"]}
+ },
+ "ut_7_mile_marker": {
+  "_expect": {"name": "7 Mile Marker", "region": "Utah"},
+  "blurb": "7 Mile Marker is a small sandstone boulder zone on the Left Fork of Joe's Valley, reached from the roadside near the seventh mile marker. About ten problems are scattered through black rock on a steep slope, mostly in the V3 to V7 range, with the bulk of them around V3 and V5. A short walk up a steep wash leads to the first boulders, and more are found straight uphill. Sandstone here weakens when wet, so give it a couple of days to dry after rain before pulling on.",
+  "rock": "sandstone",
+  "review": {"sources": ["https://www.mountainproject.com/area/112832810/7-mile-marker", "https://www.mountainproject.com/area/105880391/left-fork"]}
+ },
+ "_skipped": {},
+ "_conflicts": {
+  "ut_diamond_the": "Stored rock is granite but https://www.mountainproject.com/area/105795415/the-diamond says mostly sport routes on nice quartzite; no rock written. Page also mentions no boulder problems although the input has 3."
+ }
+}

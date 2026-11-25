@@ -1,0 +1,91 @@
+{
+ "ut_iron_curtain_wall": {
+  "_expect": {
+   "name": "Iron Curtain Wall",
+   "region": "Utah"
+  },
+  "blurb": "A compact sport wall in Parley's Canyon on the east side of Salt Lake City, below Grandeur Peak. Ten routes run from easy 5.7 and 5.8 territory up to a single 5.11, with most lines clustered around 5.9 and the low 5.10s, so it suits climbers building up to harder grades. The bolting is good, and the quick walk down makes it a handy spot for a short after-work session when you want a pump without a long day. Expect the hum of the nearby interstate throughout. A few of the better lines wander through roofs and thin slab moves near the top.",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/area/105739425/iron-curtain-wall",
+    "https://rakkup.com/guidebook/wasatch-bench-rock-climbing/iron-curtain-wall/s22727"
+   ]
+  }
+ },
+ "ut_nerve_damage": {
+  "_expect": {
+   "name": "Nerve Damage",
+   "region": "Utah"
+  },
+  "blurb": "A small cluster of ten boulder problems within New Joe's, the hillside zone of Joe's Valley in central Utah. The sandstone problems run from V0 up to V8, with a handful in the middle grades and a couple of hard ones at the top end, so there is something for most levels though the standout lines lean difficult. The namesake boulder is an odd, alien-looking block that is easy to pick out on the hillside. The area is sunny and can be climbable when the Left Fork is not. The sandstone is porous, so only climb it once fully dry.",
+  "rock": "sandstone",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/area/106318962/nerve-damage",
+    "https://www.mountainproject.com/area/105880388/new-joes"
+   ]
+  }
+ },
+ "ut_nerf_wall": {
+  "_expect": {
+   "name": "Nerf Wall",
+   "region": "Utah"
+  },
+  "blurb": "A big striped boulder riddled with pockets, tucked into the Damn Boulders hillside in the Left Fork of Joe's Valley, central Utah. Ten problems share the block, running from moderate V2 through a solid band of V4s to a few V7s and a V8 or V9 at the top end. This makes it a stop for stronger boulderers more than for beginners, though the V4 pair are popular warm targets. The rock here soaks up water, so give it several days to dry after any precipitation.",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/area/109609660/nerf-wall",
+    "https://www.mountainproject.com/area/109609168/damn-boulders"
+   ]
+  }
+ },
+ "ut_parriot_mesa": {
+  "_expect": {
+   "name": "Parriot Mesa",
+   "region": "Utah"
+  },
+  "blurb": "The large mesa that greets you at the mouth of Castle Valley near Moab, built from Wingate-type sandstone. Climbing here is trad, with ten routes running from an easy 5.6 scramble-style line through the 5.10s and 5.11s to a 5.12 at the top. Cracks are common, and many lines are multi-pitch affairs, some of them mixing in aid moves. A trail leads toward the north face and takes roughly an hour of steady effort for some objectives. The mesa sees little traffic, and there is still room for new lines, so expect solitude and a committing day out.",
+  "rock": "sandstone",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/area/105716865/parriot-mesa",
+    "https://www.cmc.org/education-adventure/trips/routes-places/parriot-mesa"
+   ]
+  }
+ },
+ "ut_roadside_formation_red_fleet_state_park_area": {
+  "_expect": {
+   "name": "Roadside Formation (Red Fleet State Park Area)",
+   "region": "Utah"
+  },
+  "blurb": "A roadside formation about ten miles north of Vernal, visible from the highway where it crosses Big Brush Creek. Most of the ten climbs here are boulder problems, mainly from VB-ish easy up to V3, with a couple of trad lines and one hard toprope as well. The wall faces west and sits in a small gorge, so it catches sun mainly around midday. The rock is a pebbly river-bottom type that includes petrified wood, which gives it a distinctive character. A quick stop for a few problems rather than a full day.",
+  "review": {
+   "sources": [
+    "https://mountainproject.com/area/107521480/roadside-formation-red-fleet-state-park-area",
+    "https://www.mountainproject.com/area/106268212/vernal-area"
+   ]
+  }
+ },
+ "ut_lab_the": {
+  "_expect": {
+   "name": "Lab, The",
+   "region": "Utah"
+  },
+  "blurb": "A boulder zone in The Wash, the main developed area of the Swett Hills in southwest Utah. The ten problems here lean toward the hard end, running from V3 up into double digits, with several in the V7 to V10 range, so it is best for strong boulderers. The boulders sit right in the wash and are obvious on arrival, about a ten-minute walk up from the start. Quad Damage and Globetrotter are the standout lines. Water can linger in the wash in early spring.",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/area/112225777/the-lab",
+    "https://www.mountainproject.com/area/109408410/the-wash"
+   ]
+  }
+ },
+ "_skipped": {
+  "ut_old_pin_boulder": "only one fetched page about the boulder (Mountain Project); rakkup page names Old Pin Roof not the boulder, Mount Olympus page does not name it",
+  "ut_shredder": "no fetched page about the Shredder crag itself; only the Windy Ridge parent listing names it (a different Shredder Wall in Montana turned up and is not this place)"
+ },
+ "_conflicts": {
+  "ut_iron_curtain_wall": "stored rock is sandstone but both fetched pages say quartzite (https://www.mountainproject.com/area/105739425/iron-curtain-wall); the same page gives approach as 15-20 minutes while a search snippet gave 5-10, so no approach written",
+  "ut_nerf_wall": "stored rock is shale but both fetched pages say sandstone (https://www.mountainproject.com/area/109609660/nerf-wall, https://www.mountainproject.com/area/109609168/damn-boulders)",
+  "ut_roadside_formation_red_fleet_state_park_area": "stored rock is sandstone but the area page says Chinle conglomerate (https://mountainproject.com/area/107521480/roadside-formation-red-fleet-state-park-area)"
+ }
+}
