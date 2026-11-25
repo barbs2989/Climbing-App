@@ -40221,3 +40221,55 @@ Bare, nothing to check (1): Goat Mountain Eastern Route.
 0 confirmed errors, 3 flagged for human review, 4 clean, 1 bare. No SQL file this batch —
 nothing cleared the bar for a fix. Next batch continues id-ascending from
 `wa_goat_mountain_south_ridge` (pass 9).
+
+## Batch 580 (pass 9) — 2026-11-25
+
+Ten routes, continuing id-ascending from `wa_goat_mountain_south_ridge`: Goat Mountain
+(Southeast Face, Southeast Route, Southwest Route), all four of Golden Horn's routes (East
+Face, North Face, Northeast Arête, Southwest Route), and three of Mount Goode's (Megalodon
+Ridge, Northeast Face, Southwest Couloir).
+
+Golden Horn's four routes all checked out clean: East Face's FA ("Joe Sambataro and Jason
+Schilling — June 27, 2015," route named "F*ck the Pain Away") matches Alpinist's news report and
+the climbers' own cascadeclimbers.com FA trip report exactly, including the route's 11 pitches,
+5.10+ R grade, and no-bolts/ground-up/onsight claims. North Face's FA ("Fred Beckey and Roe
+'Duke' Watson — 1958") matches the 1959 American Alpine Journal report, which gives the full
+date as July 27, 1958. Northeast Arête's FA ("Gordy Skoog and Jim Walseth — August 8, 1979")
+matches exactly, including the 5-pitch/5.8 grade. Southwest Route's FA of the peak itself
+("Fred Beckey, Keith Rankin, and Charles Welsh, September 18, 1946") matches multiple sources
+(one rendering spells the third climber "Walsh," but every source agrees on the two Beckey
+partners and the year). Golden Horn's 8,366 ft elevation — already corrected from an outlier
+Mountain Project figure in a prior pass, and used consistently across all four routes — checks
+out against Alpinist's reporting too.
+
+Mount Goode's Megalodon Ridge and Southwest Couloir also checked out clean. Megalodon Ridge's
+FA ("Blake Herrington and Sol Wertkin, September 6, 2007") and IV+ 5.10 grade match Wikipedia
+and Alpinist's news report exactly. Southwest Couloir's 1936 FA — July 5, 1936, crediting Wolf
+Bauer's Mountaineers climbing-course party — matches multiple sources on the date and 4 of its 5
+named climbers (Bauer, Halwax, Hossack, MacGowan); the 5th name's spelling varies across sources
+("Dickert" vs. "Dickett") but that's ordinary source noise, not a database error worth flagging.
+
+Two items flagged for human review, neither fixed:
+- Goat Mountain Southeast Face's FA ("Pete Doorish and Ross Guffey in September 1985") — this
+  Goat Mountain is the Baker Lake-area peak (off Baker Lake Road near Grandy Creek), which turns
+  up zero rock-climbing documentation anywhere searched: WTA, the Mountaineers, and SummitPost
+  only cover it as a hike/scramble, and no Mountain Project or cascadeclimbers.com page for it
+  was found. The claim can't be confirmed or denied from available sources, so flagging rather
+  than guessing.
+- Mount Goode Northeast Face's FA ("Fred Beckey and John Parrott, 1954") — a 1967 AAJ report does
+  describe an unnamed author and John Parrott making "an early ascent of the direct northeast
+  face" in 1954, but a separately documented account of Beckey's own 1954 season covers only
+  Mount McKinley, Mount Deborah, and Mount Hunter in Alaska — nothing in Washington. The route's
+  own stored `data_quality.gaps` already says "No confirmed first-ascent party/date found for
+  this specific line," which sits oddly next to a confidently named `fa` field. Flagging the
+  contradiction rather than nulling a field that might turn out to be right; a human with AAJ's
+  full 1967 text (not just the search snippet) could settle whether the unnamed author is really
+  Beckey.
+
+Clean (6): Golden Horn East Face, North Face, Northeast Arête, Southwest Route; Mount Goode
+Megalodon Ridge, Southwest Couloir.
+Bare, nothing to check (2): Goat Mountain Southeast Route, Southwest Route.
+
+0 confirmed errors, 2 flagged for human review, 6 clean, 2 bare. No SQL file this batch —
+nothing cleared the bar for a fix. Next batch continues id-ascending from
+`wa_goode_mountain_southwest_couloir` (pass 9).
