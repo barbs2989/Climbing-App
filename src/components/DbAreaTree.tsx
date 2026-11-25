@@ -1,7 +1,7 @@
 import { tx } from "../../lib/tapWords.js";
 import { useAreaChildren, useCountries, useAreaSearch, areaSearchTotal } from "../../lib/db";
 import Chevron from "./Chevron.tsx";
-import ViewAreaPill from "./ViewAreaPill.tsx";
+import AreaRowArrow from "./AreaRowArrow.tsx";
 import LoadingRows from "./LoadingRows.tsx";
 import { useState } from "react";
 import { createPortal } from "react-dom";
@@ -27,8 +27,6 @@ interface DbAreaTreeNodeProps {
   expanded: Set<string>;
   onToggle: (id: string) => void;
   onNavigate: (a: DbAreaTreeArea) => void;
-  /** The open button's words: "View area", or "View" on a narrow phone. */
-  viewLabel: string;
   C: typeof Palette;
 }
 interface DbAreaTreeRootsProps {
@@ -37,7 +35,6 @@ interface DbAreaTreeRootsProps {
   expanded: Set<string>;
   onToggle: (id: string) => void;
   onNavigate: (a: DbAreaTreeArea) => void;
-  viewLabel: string;
   C: typeof Palette;
 }
 export interface DbAreaTreeProps {
@@ -61,7 +58,7 @@ export interface DbAreaTreeProps {
 // so Washington used to sit halfway down a list of fifty — the one row you came from was
 // the one you had to scroll to find. Everything else keeps its order.
 const pinFirst = (list: DbAreaTreeArea[], pinIds?: string[] | null) => pinIds && pinIds.length ? [...list].sort((a, b) => (pinIds.includes(b.id) ? 1 : 0) - (pinIds.includes(a.id) ? 1 : 0)) : list;
-function DbAreaTreeNode({ area, depth, currentId, pinIds, expanded, onToggle, onNavigate, viewLabel, C }: DbAreaTreeNodeProps) {
+function DbAreaTreeNode({ area, depth, currentId, pinIds, expanded, onToggle, onNavigate, C }: DbAreaTreeNodeProps) {
   const isOpen = expanded.has(area.id);
   // `error` is destructured because without it a FAILED children fetch left `children`
   // undefined and fell through to "No sub-areas." — an affirmative claim that a
@@ -87,14 +84,14 @@ function DbAreaTreeNode({ area, depth, currentId, pinIds, expanded, onToggle, on
         <button onClick={() => onNavigate(area)} aria-label={"View " + area.name + (n > 0 ? ", " + n + " climb" + (n !== 1 ? "s" : "") : "")} style={{ flex: 1, minWidth: 0, minHeight: 44, display: "flex", alignItems: "center", gap: 8, textAlign: "left", background: "none", border: "none", cursor: "pointer", padding: "2px 0" }}>
           <div style={{ flex: 1, minWidth: 0 }}><div style={{ fontSize: 14.5, lineHeight: 1.3, fontWeight: cur ? 800 : 700, color: cur ? C.blue : C.text, overflowWrap: "anywhere" }}>{area.name}{cur ? <span style={{ marginLeft: 7, fontSize: 10, fontWeight: 800, color: C.blue, background: C.bg, border: "1px solid " + C.blueDim, borderRadius: 20, padding: "1px 7px", whiteSpace: "nowrap", display: "inline-block" }}>You are here</span> : null}</div>
           {n > 0 ? <div style={{ fontSize: 11.5, fontWeight: 600, color: C.textMuted, marginTop: 2 }}>{n.toLocaleString() + " climb" + (n !== 1 ? "s" : "")}</div> : null}</div>
-          <ViewAreaPill C={C} label={viewLabel} />
+          <AreaRowArrow C={C} />
         </button>
       </div>
       {isOpen ? (
         isLoading
           ? <LoadingRows C={C} label="Loading…" style={{padding: "10px 14px 10px " + (pad + 46) + "px"}}/>
           : children && children.length
-            ? pinFirst(children, pinIds).map((k: DbAreaTreeArea) => <DbAreaTreeNode key={k.id} area={k} depth={depth + 1} currentId={currentId} pinIds={pinIds} expanded={expanded} onToggle={onToggle} onNavigate={onNavigate} viewLabel={viewLabel} C={C} />)
+            ? pinFirst(children, pinIds).map((k: DbAreaTreeArea) => <DbAreaTreeNode key={k.id} area={k} depth={depth + 1} currentId={currentId} pinIds={pinIds} expanded={expanded} onToggle={onToggle} onNavigate={onNavigate} C={C} />)
             : error
               ? <div style={{ padding: "10px 14px 10px " + (pad + 46) + "px", color: C.amber, fontSize: 12 }}>Couldn’t load what’s inside.</div>
               : <div style={{ padding: "10px 14px 10px " + (pad + 46) + "px", color: C.textMuted, fontSize: 12 }}>No sub-areas.</div>
@@ -113,13 +110,13 @@ function DbAreaTreeNode({ area, depth, currentId, pinIds, expanded, onToggle, on
 // country picker on the area screen has already run, so opening the tree costs no
 // request. Children below this are still fetched only on expand — the catalog is 47k
 // areas and eagerly walking it has never been affordable.
-function DbAreaTreeRoots({ currentId, pinIds, expanded, onToggle, onNavigate, viewLabel, C }: DbAreaTreeRootsProps) {
+function DbAreaTreeRoots({ currentId, pinIds, expanded, onToggle, onNavigate, C }: DbAreaTreeRootsProps) {
   const { data: roots, isLoading, error } = useCountries();
   const pad = { padding: "14px 16px", color: C.textMuted, fontSize: 12.5 };
   if (isLoading) return <div style={pad}>Loading…</div>;
   if (error) return <div style={{ ...pad, color: C.amber }}>Couldn’t load the area tree.</div>;
   if (!roots || !roots.length) return <div style={pad}>No areas.</div>;
-  return pinFirst(roots, pinIds).map((r: DbAreaTreeArea) => <DbAreaTreeNode key={r.id} area={r} depth={0} currentId={currentId} pinIds={pinIds} expanded={expanded} onToggle={onToggle} onNavigate={onNavigate} viewLabel={viewLabel} C={C} />);
+  return pinFirst(roots, pinIds).map((r: DbAreaTreeArea) => <DbAreaTreeNode key={r.id} area={r} depth={0} currentId={currentId} pinIds={pinIds} expanded={expanded} onToggle={onToggle} onNavigate={onNavigate} C={C} />);
 }
 export default function DbAreaTree({ stateRoot, current, ancestorIds, onNavigate, onClose, C }: DbAreaTreeProps) {
   // Open on the path you are actually standing on: the country above the state, the
@@ -134,12 +131,6 @@ export default function DbAreaTree({ stateRoot, current, ancestorIds, onNavigate
   // eslint-disable-next-line @typescript-eslint/no-unused-expressions -- original ternary statement, kept verbatim
   const toggle = (id: string) => setExpanded(s => { const n = new Set(s); n.has(id) ? n.delete(id) : n.add(id); return n; });
   const total = areaSearchTotal(results);
-  // A NARROW PHONE (under 380px) says just "View" on every tree row (owner, 2026-11-18): the indent grows each level,
-  // and with "View area" a name three or more levels down wrapped to three lines. One word for the whole tree, so
-  // no list mixes the two; the hint under the search box uses the same word. The search hits are not indented and
-  // keep "View area".
-  const narrow = typeof window !== "undefined" && window.innerWidth < 380;
-  const viewLabel = narrow ? "View" : "View area";
 
   // Portal to <body> — this component mounts deep inside the tab content tree,
   // and an ancestor there creates its own stacking context, which traps a plain
@@ -171,8 +162,8 @@ export default function DbAreaTree({ stateRoot, current, ancestorIds, onNavigate
             what is inside it without going anywhere. */}
         <div style={{ fontSize: 11.5, color: C.textMuted, marginTop: 7, lineHeight: 1.45 }}>
           {q.trim()
-            ? (total > 0 ? tx("Best matches first — tap View area to open one.") : "Searches every area under " + stateRoot.name + ", at any depth.")
-            : tx(viewLabel + " opens that area and its climbs · the arrow just shows what’s inside it")}
+            ? (total > 0 ? tx("Best matches first — tap one to open it.") : "Searches every area under " + stateRoot.name + ", at any depth.")
+            : tx("Tap a name to open that area and its climbs · the boxed arrow on the left just shows what’s inside it")}
         </div>
       </div>
       <div style={{ flex: 1, minHeight: 0, overflowY: "auto", overscrollBehavior: "contain", paddingBottom: 30 }}>
@@ -191,7 +182,7 @@ export default function DbAreaTree({ stateRoot, current, ancestorIds, onNavigate
                       line. Same data, same shape, so the two searches now agree. */}
                   <div style={{ fontSize: 11.5, color: C.textMuted, overflowWrap: "anywhere" }}>{[ATYPE[m.area_type] || m.area_type, m.parent_name, m.route_count > 0 ? m.route_count.toLocaleString() + " climb" + (m.route_count !== 1 ? "s" : "") : null].filter(Boolean).join(" · ")}</div>
                 </div>
-                <ViewAreaPill C={C} />
+                <AreaRowArrow C={C} />
               </div>
             ))}
             {/* Never truncate silently. Before 0147 this list was the alphabetically-first
@@ -205,7 +196,7 @@ export default function DbAreaTree({ stateRoot, current, ancestorIds, onNavigate
             ) : null}
           </>
         ) : (
-          <DbAreaTreeRoots currentId={current.id} pinIds={[stateRoot.parent_id, stateRoot.id].filter(Boolean)} expanded={expanded} onToggle={toggle} onNavigate={onNavigate} viewLabel={viewLabel} C={C} />
+          <DbAreaTreeRoots currentId={current.id} pinIds={[stateRoot.parent_id, stateRoot.id].filter(Boolean)} expanded={expanded} onToggle={toggle} onNavigate={onNavigate} C={C} />
         )}
       </div>
     </div>,
