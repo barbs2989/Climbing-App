@@ -40413,3 +40413,47 @@ four Hozomeen routes — unenriched, not contradictory.
 
 1 confirmed error fixed, 0 flagged for human review, 9 clean. Next batch continues
 id-ascending from `wa_hozomeen_mountain_southwest_buttress` (pass 9).
+
+## 2026-11-25 — Pass 9, Batch 584
+
+Ten routes, continuing id-ascending from `wa_hozomeen_mountain_southwest_buttress`: West Face
+(Hozomeen Mountain, North Peak), East Ridge / North Route / North Spur / South Face / Southwest
+Slope / West Route (Huckleberry Mountain), South Ridge (Hurry-Up Peak), and the Ruth-Icy
+Traverse and Southwest Route (Icy Peak).
+
+3 confirmed errors fixed:
+- `wa_huckleberry_mountain_east_ridge`'s `loss_ft` was NULL while `gain_ft` was 5850; the row's
+  own itinerary (three days, trailhead to trailhead) sums to 5850 gain / 5850 loss, so `loss_ft`
+  should match, not be empty. Set to 5850.
+- `wa_icy_peak_ruth_icy_traverse`'s `loss_ft` was NULL while `gain_ft` was 8000; its own
+  single-day itinerary entry already states `lossFt: 8000` for the same round trip. Set to 8000.
+- `wa_icy_peak_southwest_route`'s top-level `gain_ft`/`loss_ft` (8000/3963) didn't match this
+  same row's own itinerary, whose two days sum to 5800 gain / 4300 loss. Corrected to 5800/4300.
+
+3 flagged for human review:
+- `wa_huckleberry_mountain_west_route`'s stored FA ("Gary Hehn & Dave Stephens, September 2001")
+  is disputed by a Cascade Climbers forum thread titled specifically about this first ascent:
+  Hehn's own post suggests 2001 is when he wrote it up for the Boealps newsletter, not
+  necessarily when he and Stephens climbed it, and a reply in the same thread relays a claim
+  from "Johnny Jeans" that he climbed the west face earlier. No guidebook/AAJ record found to
+  settle it.
+- `wa_huckleberry_mountain_south_face`'s stored FA ("Mark Bunker & Mike Press, 1998") could not
+  be corroborated against Mountain Project, AAJ, SummitPost, Mountaineers.org, or Cascade
+  Climbers in a focused search.
+- Even after the `wa_icy_peak_southwest_route` fix above, it and its sibling
+  `wa_icy_peak_ruth_icy_traverse` — which share nearly the same Hannegan-Pass-via-Ruth-Mountain
+  approach to Icy Peak, within half a mile of total distance — still disagree on total
+  round-trip gain/loss (5800/4300 vs. 8000/8000). Worth a human reconciling against a topo map
+  or GPS track.
+
+Clean: Hozomeen West Face (elevation 8071 ft and the FA/grade — Rolf Larson & Eric Wehrly,
+Aug 31–Sep 1 2013, 5.9 — both match AAJ/Cascade Climbers/skisickness.com's record of the "Zorro
+Face" first ascent); Huckleberry Mountain's North Route, North Spur, and Southwest Slope (no
+data on file for any — unenriched, not contradictory); Huckleberry West Route's elevation (sits
+inside the previously-disclosed 6,320–6,340 ft cross-source range; FA flagged separately above);
+and Hurry-Up Peak South Ridge (elevation 7821 ft matches Wikipedia/Peakbagger exactly; gain/loss
+already matched its own itinerary; its already-disclosed name/FA uncertainty needed no new
+flag).
+
+3 confirmed errors fixed, 3 flagged for human review. Next batch continues id-ascending from
+`wa_icy_peak_southwest_route` (pass 9).
