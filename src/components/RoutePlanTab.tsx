@@ -56,7 +56,7 @@ import { navTarget, navLinks } from "../../lib/navLinks";
 import { LOGGED_ONLY_CATS } from "../../lib/RouteTracksPanel.jsx";
 import WaypointList from "./WaypointList.tsx";
 import RouteGearCheck from "./RouteGearCheck.tsx";
-import { routeRackFor, rackRows, DISC_RACK } from "../../lib/rack";
+import { routeRackFor, rackRows, DISC_RACK, isNoRopeClass } from "../../lib/rack";
 import { scrollBelowPinned } from "../../lib/pinnedTop.js";
 import { walkInOf } from "../../lib/areaInherit.js";
 
@@ -274,7 +274,7 @@ const _pmLm=((ac.land_manager||"")+" "+(ac.landManager||"")+" "+(ac.permit||"")+
   const openEdit=function(){openFix("rap");};
   /* EMPTY IS A PLACEHOLDER, NOT AN ABSENCE — but only where rappelling is a question the route can
      have: not a boulder problem, not a walk-up, and not a single-pitch crag line (it lowers off). */
-  if(!hasTable&&!heading&&!prose&&!crepCard)return (route.discipline!=="bouldering"&&!["scrambling","hiking","scramble","hike"].includes(route.discipline)&&(!cragOnly||pitchCountOf(route)>1))?<EmptySection title="RAPPELS" what="No rappel information" why="Nothing says whether you rappel off this, how many raps, or how long a rope they need." cta="Add the rappels" onFix={openEdit}/>:null;
+  /* No empty RAPPELS invitation on a Class 1-3 route that crosses no glacier (lib/rack.js isNoRopeClass): it is not roped, so there is no rappel to add. */if(!hasTable&&!heading&&!prose&&!crepCard)return (route.discipline!=="bouldering"&&!isNoRopeClass(route)&&!["scrambling","hiking","scramble","hike"].includes(route.discipline)&&(!cragOnly||pitchCountOf(route)>1))?<EmptySection title="RAPPELS" what="No rappel information" why="Nothing says whether you rappel off this, how many raps, or how long a rope they need." cta="Add the rappels" onFix={openEdit}/>:null;
   return <div style={{marginBottom:12}}>
     {hasTable?<Capped><RappelTable route={route} onEdit={openEdit}/></Capped>:<>
       <SL action={<EditIconButton onClick={openEdit} title="Edit rappel information"/>}>{"RAPPELS"+(heading?" · "+heading:"")}</SL>
