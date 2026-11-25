@@ -21,7 +21,7 @@ export const TOPO_VAR=C.amber;
    is the one move a topo most often has to point at. The hazard is the one marker that is not a
    disc: a warning TRIANGLE, the shape every road sign and app uses for "careful here", so it
    cannot be mistaken for a station at a glance. */
-export const PIN_CATEGORIES=[["belay","Belay station",C.blue],["grade","Grade",C.onSolid],["bolt","Bolt","#6e7681"],["rappel","Rappel station",C.purple],["natural","Natural anchor",C.green],["crux","Crux",C.magenta],["bivy","Bivy",C.teal],["hazard","Hazard",C.red]];
+export const PIN_CATEGORIES=[["belay","Belay station",C.blue],["grade","Grade",C.onSolid],["bolt","Bolt","#6e7681"],["rappel","Rappel station","#a371f7"],["natural","Natural anchor",C.green],["crux","Crux",C.magenta],["bivy","Bivy",C.teal],["hazard","Hazard",C.red]];
 export function pinColor(cat){var f=PIN_CATEGORIES.find(function(p){return p[0]===cat;});return f?f[2]:C.textMuted;}
 export function pinLabel(cat){var f=PIN_CATEGORIES.find(function(p){return p[0]===cat;});return f?f[1]:"Marker";}
 /* Each pin category draws its own glyph. They used to be bare coloured dots, which asked a

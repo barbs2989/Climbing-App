@@ -28,6 +28,8 @@ import RouteRow from "./RouteRow.tsx";
 import { DISC_GRADE_SCALES } from "./RouteFinderPanel.tsx";
 import AddHereFooter from "./AddHereFooter.tsx";
 import AreaWrongSpot from "../../lib/AreaWrongSpot";
+import { fetchCragForecastMeasured } from "../../lib/forecast";
+import { CRAG_SCORE_DISCIPLINES } from "../../lib/conditionsScore.js";
 import WallOrderSuggest from "./WallOrderSuggest.tsx";
 import DbSuggestedClimbs from "./DbSuggestedClimbs.tsx";
 import AreaLatestReports from "./AreaLatestReports.tsx";
@@ -43,6 +45,8 @@ import type { DbSearchSplitArea, DbSearchSplitRoute } from "./DbSearchSplit.tsx"
 import type { AreaGettingThereArea } from "./AreaGettingThere.tsx";
 import type { AddHereFooterArea } from "./AddHereFooter.tsx";
 
+/** A raw `routes.discipline` whose climb can carry the crag conditions score ("rock" is split by style, sport or trad). */
+const CRAG_WX_DISCS: string[] = ["rock", ...CRAG_SCORE_DISCIPLINES];
 /** A row of the area page's climb list (useAreaRoutes). */
 export interface AreaPageRoute extends Omit<RouteRowRoute, "stars"> {
   /** The climbers' mean rating; an unrated climb is null or 0 in the database and compares as 0 here. */
@@ -210,6 +214,13 @@ export default function AreaPage({ area: areaRow, onSignIn, uElev, uDistMi, book
   const { data: children, isLoading: lc, error: ec }: AreaPageQuery<AreaPageArea[]> = useAreaChildren(area.id);
   const { data: routes, isLoading: lr, error: er }: AreaPageQuery<AreaPageRoute[]> = useAreaRoutes(area.id);
   const isLeaf = Array.isArray(children) && children.length === 0;
+  /* START THE CONDITIONS SCORE'S READ HERE (owner, 2026-11-25: "Conditions score is slow still"). Every climb listed on
+     this page is filed on THIS area, so its score is read at this area's coordinate: the same read RouteDetail starts
+     when a crag climb opens and the card then joins (lib/forecast.js fetchCragForecastMeasured, one per crag for ten
+     minutes). Started while the climber is still choosing a climb, it is usually back before they reach Conditions.
+     Only where a listed climb could carry a score (a crag discipline, not on a peak, where trad reads as alpine). */
+  const cragWx = area.area_type !== "peak" && Array.isArray(routes) && routes.some(function (r) { return CRAG_WX_DISCS.includes(String(r.discipline)); }) && area.lat != null && area.lng != null && isFinite(Number(area.lat)) && isFinite(Number(area.lng));
+  useEffect(function () { if (cragWx) fetchCragForecastMeasured(Number(area.lat), Number(area.lng)).catch(function () { /* the card asks again, and says so if it fails */ }); }, [cragWx, area.lat, area.lng]);
   // A state, region or range always has areas under it, so its subtree reads (classics, the wall cards'
   // grade bars) start with the page instead of waiting a round trip for the children list. Anything
   // else waits for the list: a crag or peak can be a leaf.
@@ -412,12 +423,12 @@ export default function AreaPage({ area: areaRow, onSignIn, uElev, uDistMi, book
       {/* The area's box IS the Climbs tab's header once you are in an area: App's generic "Climbs"
           box is drawn only on the picker (rootHeader), so Florida heads Florida. */}
       {/* ONE HEADER CARD (owner, 2026-11-18: "combine this ... so that the name of the area is the top section"): the
-          name and Save, the path above the area (it was a separate bar over this box, ending on the same name), the
+          name, the path above the area (it was a separate bar over this box, ending on the same name), the
           pills, ONE facts line, and a foot row -- the browser's Back (the phone's top bar takes it over, lib/pageBack.js)
-          on the left, Area tree and Fire map on the right. */}
-      <ScreenHero C={C} title={area.name} right={area.area_type !== "country" && area.area_type !== "state" ? (
-          <button onClick={onToggleSave} aria-label={booked ? "Remove from Saved" : area.area_type === "peak" ? "Save this peak" : "Save this area"} style={{ ...HEAD_BTN, background: booked ? C.amber : "rgba(255,255,255,0.08)", border: "1px solid " + (booked ? C.amber : C.border), color: booked ? "#1a1200" : C.text }}>{booked ? "Saved" : area.area_type === "peak" ? "Save peak" : "Save area"}</button>
-        ) : null}>
+          on the left, Save area, Area tree and Fire map on the right. SAVE lives in the foot row, left of Area tree
+          (owner, 2026-11-25: "move save area to the left of area tree. That would give us more space for the area
+          name"): the title row is the name alone, full width, so a long name wraps less. */}
+      <ScreenHero C={C} title={area.name}>
         {headerNav ? <div style={{ marginTop: 6 }}>{headerNav.path}</div> : null}
         <div style={{ marginTop: 10, display: "flex", gap: 6, flexWrap: "wrap", alignItems: "center" }}>
           <Pill label={ATYPE[area.area_type] || "Area"} color={C.blue} bg={C.blueBg} sm />
@@ -446,11 +457,16 @@ export default function AreaPage({ area: areaRow, onSignIn, uElev, uDistMi, book
               {"Area tree"}
             </button>
           ) : null;
-          if (!fire && !tree && !headerNav) return null;
+          const save = area.area_type !== "country" && area.area_type !== "state" ? (
+            <button onClick={onToggleSave} aria-label={booked ? "Remove from Saved" : area.area_type === "peak" ? "Save this peak" : "Save this area"} style={{ ...HEAD_BTN, background: booked ? C.amber : "rgba(255,255,255,0.08)", border: "1px solid " + (booked ? C.amber : C.border), color: booked ? "#1a1200" : C.text }}>{booked ? "Saved" : area.area_type === "peak" ? "Save peak" : "Save area"}</button>
+          ) : null;
+          if (!fire && !tree && !save && !headerNav) return null;
+          // Three 100px buttons (and the website's Back) outgrow a small phone's card, so the row WRAPS, right-aligned,
+          // rather than running off the edge.
           return (
-            <div style={{ display: "flex", alignItems: "center", gap: 8, marginTop: 12, paddingTop: 12, borderTop: "1px solid " + C.border }}>
+            <div style={{ display: "flex", flexWrap: "wrap", alignItems: "center", gap: 8, marginTop: 12, paddingTop: 12, borderTop: "1px solid " + C.border }}>
               {headerNav ? headerNav.back : null}
-              <div style={{ marginLeft: "auto", display: "flex", gap: 8, flexShrink: 0 }}>{tree}{fire}</div>
+              <div style={{ marginLeft: "auto", display: "flex", flexWrap: "wrap", justifyContent: "flex-end", gap: 8, minWidth: 0 }}>{save}{tree}{fire}</div>
             </div>
           );
         })()}
