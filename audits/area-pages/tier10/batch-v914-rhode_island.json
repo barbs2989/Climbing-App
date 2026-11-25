@@ -1,0 +1,102 @@
+{
+ "ri_crag_2": {
+  "_expect": {
+   "name": "Crag 2",
+   "region": "Rhode Island"
+  },
+  "blurb": "Crag 2 is a low bouldering wall of roughly fifteen feet, sitting on the lower level of Snake Den State Park in Johnston, close to the trail. It holds 19 problems split between two boulders. The grades lean friendly: more than half are V2 or easier, including a handful of VB and V0 lines, and the rest run up through V3 to V5, so there is something for newer boulderers and a few steps beyond. It is a small, quick stop rather than a destination, and works well tacked onto a visit to the park's other cliffs and boulders, which are a short walk away.",
+  "parking_note": "Reach the park from Providence by following Route 6 west, then turn right onto Brown Avenue. Leave the car at one of the small pullouts beside the road, cross over, and follow the trail a few hundred yards.",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/area/111877601/crag-2",
+    "https://mountainproject.com/area/106845339/snake-den"
+   ]
+  }
+ },
+ "ri_the_tombstone": {
+  "_expect": {
+   "name": "The Tombstone",
+   "region": "Rhode Island"
+  },
+  "blurb": "The Tombstone is a single large boulder inside Lincoln Woods State Park, just north of Providence, set right beside the loop road. It has a tall, steep, overhanging face for highball work, a shorter overhanging nose at the front and a roof around the back. The 19 problems span a wide range: about half sit at V5 or easier, mixing a slab warm-up with several moderate lines, while a harder tier runs from V9 up to V12. Easy access and short walking make it a quick stop, though the taller lines call for pads and spotters.",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/area/106705264/the-tombstone",
+    "https://thetopo.com/crags/lincoln-woods/routelist/tombstone"
+   ]
+  }
+ },
+ "ri_summit_boulders": {
+  "_expect": {
+   "name": "Summit Boulders",
+   "region": "Rhode Island"
+  },
+  "blurb": "Summit Boulders is a cluster of boulders near the high point of Lincoln Woods State Park, north of Providence, reached by a path that climbs the hill from the loop road. A tall boulder, the Pinnacle, is the first of the group, with the Summit Boulders just past it. The 19 problems cover nearly the whole range from V0 to V9, though the bulk fall between V0 and V6, with a few much harder lines at the top. A good pick if you want a mix of easy to mid-grade problems away from the busier lower blocks.",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/area/106833047/summit-pinnacle-boulders",
+    "https://thetopo.com/crags/lincoln-woods/routelist/summit-boulders"
+   ]
+  }
+ },
+ "ut_one_small_step_area": {
+  "_expect": {
+   "name": "One Small Step Area",
+   "region": "Utah"
+  },
+  "blurb": "One Small Step Area sits at the heart of the Moon boulder field in the Big Water area of Glen Canyon, in south central Utah. Good blocks lie on both sides of the central boulder, and the wider Moon area has some of the best stone in the Big Waters area and tends to be quiet. The 19 problems are gentle: most are V0 to V2, with a few V3s and a single V4, which suits beginners and warm-ups. Expect a remote desert setting with little shelter and no crowds.",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/area/113637096/one-small-step-area",
+    "https://www.mountainproject.com/area/112271350/the-moon"
+   ]
+  }
+ },
+ "ut_flag_crag": {
+  "_expect": {
+   "name": "Flag Crag",
+   "region": "Utah"
+  },
+  "blurb": "Flag Crag is a small, newly developed sandstone wall just outside Vernal in northeast Utah, across the road from a city park. Most of its 19 routes are sport, with a few trad lines and one top-rope. Grades run from 5.5 to the low 5.11s, with the bulk in the 5.9 to 5.11 range, so it suits intermediate climbers best. A 40 m rope reaches everything. The rock is still shedding some loose material, so helmets are wise. The wall bakes in the morning and shades over by early afternoon.",
+  "review": {
+   "sources": [
+    "https://mountainproject.com/area/126999292/flag-crag",
+    "https://www.mountainproject.com/area/106268212/vernal-area"
+   ]
+  }
+ },
+ "ut_sam_trap_boulder": {
+  "_expect": {
+   "name": "Sam Trap Boulder",
+   "region": "Utah"
+  },
+  "blurb": "Sam Trap Boulder is one of about five main boulders in the Snowbird Boulders group, in Little Cottonwood Canyon east of Salt Lake City, at nearly 7,900 feet among aspens. The elevation keeps it cooler than the lower canyon. Its 19 problems cover a broad spread: a few easy V0 to V2 lines, a solid middle of V3 to V6, and a strong top end up to V10. A short trail from the roadside brings you to the boulder in a few minutes, so it is quick to reach and good for a mixed group.",
+  "approach": "Take the trail on the road's north side past Man Trap Boulder and reaches Sam Trap about a minute later.",
+  "approach_min": 3,
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/area/109642597/sam-trap-boulder",
+    "https://www.mountainproject.com/area/109642503/snowbird-boulders"
+   ]
+  }
+ },
+ "ut_closet_the": {
+  "_expect": {
+   "name": "Closet, The",
+   "region": "Utah"
+  },
+  "blurb": "The Closet is a secluded, fairly short sandstone boulder in New Joe's, part of Joe's Valley in central Utah. With 19 problems packed onto it, the grades stay friendly: most are V0 to V2, with a few V3s and V4s and two at V5. That makes it a good spot for climbers working through easier and mid-range problems away from the busier boulders. Like all the sandstone here it is porous and weakens when damp, so let it dry fully after any precipitation before pulling on it.",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/area/106028817/the-closet",
+    "https://mountainproject.com/area/105880388/new-joes"
+   ]
+  }
+ },
+ "_conflicts": {
+  "ut_farmington_crag": "Stored rock is schist; https://www.mountainproject.com/area/118714510/tracys-towers calls the neighbouring Tracy's Towers rock gneiss (not stated for the crag itself)."
+ },
+ "_skipped": {
+  "ut_farmington_crag": "only page about the crag is onX; second page is the neighbouring Tracy's Towers crag"
+ }
+}

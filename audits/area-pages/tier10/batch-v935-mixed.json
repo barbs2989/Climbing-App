@@ -1,0 +1,43 @@
+{
+ "va_pegasus_boulder": {
+  "_expect": {"name": "Pegasus Boulder", "region": "Virginia"},
+  "blurb": "A single prominent boulder in the Gasland section of the Darkside zone in the southwest Virginia mountains, with 17 problems spread over its front face and a standout arete. It is all bouldering, running from V1 up to V7, with the bulk of the lines landing between V3 and V5 and a couple of hard V7s for strong climbers. The most celebrated line is a juggy V1 that makes a fine warm-up. Bring pads. The boulder sits near the bottom of a saddle, reached by a short, faint trail, and the area feels quiet rather than crowded.",
+  "review": {"sources": ["https://www.mountainproject.com/area/113886282/pegasus-boulder", "https://www.mountainproject.com/route/113886513/pegasus?print=1"]}
+ },
+ "va_mickey_mouse_boulders": {
+  "_expect": {"name": "Mickey Mouse Boulders", "region": "Virginia"},
+  "blurb": "A small cluster of sandstone boulders near McAfee's Knob in the Roanoke area, reached by a gentle mile-long stroll along a fire road with the blocks on your right. Seventeen problems range from V0 to V6, but the sweet spot is V2 to V3, which makes this a good stop for newer boulderers looking for real challenge. The main face is big and overhanging with dynamic moves, vertical lines and steeper sections, and it stays mostly shaded. Harder options include a crimpy traverse and a couple of V5 lines.",
+  "review": {"sources": ["https://www.mountainproject.com/area/107084191/mickey-mouse-boulders", "https://www.mountainproject.com/area/105922668/mcafees-knob?print=1"]}
+ },
+ "va_seclusion": {
+  "_expect": {"name": "Seclusion", "region": "Virginia"},
+  "blurb": "A stretch of cliff above the Potomac gorge on the Virginia side of Great Falls, close to Washington, DC. Despite the name it sees plenty of traffic. The climbing is a mix of ten trad lines, four top-ropes and three boulder problems, covering everything from easy scrambling and low 5th class up through 5.10. Top-roping is the usual way to climb here, with trees as the typical anchors, and the cliffs are modest in height. Rising river levels can cover belay spots, so check the water before heading down.",
+  "review": {"sources": ["https://rakkup.com/guidebook/great-falls-rock-climbing/seclusion/s23188", "https://www.mountainproject.com/area/106163226"]}
+ },
+ "wa_domestic_dome": {
+  "_expect": {"name": "Domestic Dome", "region": "Washington"},
+  "blurb": "A tall slab in Icicle Canyon near Leavenworth, holding sport and trad lines on its sections of bolted face. The 17 routes here run from 5.6 to 5.11, with most clustered between 5.7 and 5.10, so it suits climbers stepping up from moderates as well as those after something harder. Nine are sport and eight are trad, and the longest lines reach beyond 120 feet. Several climbers' trails leave the parking area toward the base, so take care to follow the one that heads to this dome rather than the neighboring wall.",
+  "review": {"sources": ["https://www.mountainproject.com/area/108880332/domestic-dome?print=1", "https://mountainproject.com/area/105790237/icicle-creek"]}
+ },
+ "wa_iron_mountain_crag": {
+  "_expect": {"name": "Iron Mountain Crag", "region": "Washington"},
+  "blurb": "A small, out-of-the-way crag in the Cumberland Crags group off the South Skagit Highway, reached by a rough forest road and a few minutes on a cairned trail. Almost everything here is trad, with one sport line among 17 routes, and the grades start at 5.8 then cluster in the 5.10 to 5.12 range, so it favors experienced leaders. The wall ranges from slab to steeply overhanging. Expect some lichen, moss and loose rock on certain lines, and a quiet, scenic day with few other climbers.",
+  "review": {"sources": ["https://mountainproject.com/area/108211474/iron-mountain-crag?print=1", "https://www.mountainproject.com/route/115129263/fe-line"]}
+ },
+ "wa_north_section_left_side": {
+  "_expect": {"name": "North Section (Left Side)", "region": "Washington"},
+  "blurb": "The left half of the north end of Rock Creek Cliff in the Columbia Gorge, with around 17 sport and trad routes. Grades run from 5.8 to 5.12, with most lines between 5.8 and 5.10, so there is plenty for solid moderate climbers and a few harder tests. Routes are roughly evenly split between trad and sport, and one of the longer lines is about 65 feet, with edges and a dihedral. From the top of the trail, follow the cliff face along until it rounds a corner and ends; the routes run back from there.",
+  "review": {"sources": ["https://www.mountainproject.com/area/108491183/north-section-left-side", "https://www.mountainproject.com/route/110268491/progressive-climax"]}
+ },
+ "wa_leggo_my_ego_boulder": {
+  "_expect": {"name": "Leggo my Ego Boulder", "region": "Washington"},
+  "blurb": "One of the River Boulders beside the Skykomish River near Index, with 17 problems on a single block. The granite is river-polished and slick, and the problems span a huge range from V0 to V9, though most sit between V1 and V4. The famous line is a sit start on big horizontal rails followed by a committing jump to a blind lip. A stand-start arete on the left side is a gentler option. A single pad is enough for some, but landings vary. The boulders go underwater in spring and fall floods.",
+  "review": {"sources": ["https://blog.kayaclimb.com/?p=713", "https://www.mountainproject.com/route/109177010/leggo-arete?print=1"]}
+ },
+ "_skipped": {
+  "wa_amphitheater_the_2": "no fetched page about the Amphitheater itself; only the Horsethief Butte parent page lists it, and a second page did not mention it"
+ },
+ "_conflicts": {
+  "va_seclusion": "stored rock is greywacke but fetched pages (https://potomacmountainclub.org/climbing-crags-beta/virginia-crags/great-falls-national-park-rocktr/ and https://www.mountainproject.com/area/106163226) describe Great Falls rock as mica schist"
+ }
+}

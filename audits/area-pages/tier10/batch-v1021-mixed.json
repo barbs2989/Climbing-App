@@ -1,0 +1,35 @@
+{
+ "sc_parking_lot_boulders": {
+  "_expect": { "name": "Parking Lot Boulders", "region": "South Carolina" },
+  "blurb": "A compact group of boulders on the Climber's Trail at Big Rock, close to the trailhead lot. Eleven problems sit on a wall just up the hill from the car park, most of them at V0 and V1, with a handful stepping up through V2, V3 and V4 to a single V5. Pine trees keep the whole place shaded through the year, which suits warm days. It makes an easy first stop or a quick warm-up before heading higher on the trail to the other Big Rock boulder groups, though the short list of problems will not fill a long session on its own.",
+  "review": { "sources": ["https://www.mountainproject.com/area/123819953/parking-lot-boulders", "https://mountainproject.com/area/125788302/climbers-trail-boulders"] }
+ },
+ "ut_hourglass_canyon": {
+  "_expect": { "name": "Hourglass Canyon", "region": "Utah" },
+  "blurb": "A tight little side canyon in Maple Canyon, only a minute's stroll from the road and just across from the Wiper Wall. Eleven bolted sport routes line its walls, eight of them in the 5.10 range and three at 5.11, so it suits climbers already comfortable on steeper, more technical pitches rather than beginners. Small trees give some shade, and the canyon has a quiet, enclosed feel. The rock is mostly good, though as elsewhere in Maple a bit of loose stone turns up, so keep an eye overhead.",
+  "review": { "sources": ["https://www.mountainproject.com/area/112072274/hourglass-canyon", "https://www.mountainproject.com/area/106479926/maple-canyon-road", "https://www.mountainproject.com/route/112072418/spoonin?print=1"] }
+ },
+ "ut_convent_the": {
+  "_expect": { "name": "The Convent", "region": "Utah" },
+  "blurb": "A big desert mesa in Castle Valley near Moab, the northernmost in a line of towers that runs south past Sister Superior and the Rectory. Climbing is multi-pitch trad, and every known line takes the west side. The eleven routes are hard for the most part, split between the 5.10, 5.11 and 5.12 ranges, so this is a place for experienced parties comfortable with long days, loose sections and route-finding. The approach is a steep talus slog, and the routes see far fewer climbers than the better-known Castle Valley towers.",
+  "review": { "sources": ["https://www.mountainproject.com/area/105717107/the-convent", "https://www.mountainproject.com/route/111965060/whore-house?print=1"] }
+ },
+ "ut_bolt_slab": {
+  "_expect": { "name": "Bolt Slab", "region": "Utah" },
+  "blurb": "A short cliff in Rock Canyon above Provo, reached by a brief uphill trail that leaves just below the green gate near The Kitchen. The face is split by two parallel offwidth chimneys and topped by a pair of spires. Most of the eleven climbs are trad, running from 5.7 up to 5.12, with a couple of sport lines and one hard boulder problem, and the moderate trad lines are the draw. Expect to bring medium cams and stoppers. Morning and early afternoon bring shade, and the walk in is easy.",
+  "review": { "sources": ["https://www.mountainproject.com/area/105739795/bolt-slab", "https://www.mountainproject.com/route/106149784/two-nut-muffin", "https://mountainproject.com/area/105739292/rock-canyon"] }
+ },
+ "ut_talk_buttress": {
+  "_expect": { "name": "Talk Buttress", "region": "Utah" },
+  "blurb": "A fairly secluded buttress in Big Cottonwood Canyon, found beyond Challenge Buttress by way of a gully beside it. Most of the eleven routes are trad, with a few bolted lines, and the grades start easy at 5.5 and reach 5.11, with plenty in the middle at 5.8 to 5.10. A long ridge line of 5.5 gives a gentle introduction to the crag. Getting here means a steep, loose walk of well over twenty minutes, and the gully is easy to overshoot, so watch for it. Big Cottonwood is mainly quartzite country.",
+  "review": { "sources": ["https://www.mountainproject.com/area/105739458/talk-buttress", "https://www.mountainproject.com/v/direct-north-ridge/108278393", "https://mountainproject.com/area/105739280/big-cottonwood-canyon"] }
+ },
+ "_skipped": {
+  "tn_n_giant_s_niche": "Giant's Niche is only a guidebook publisher name in searches; no page about a crag by that name could be fetched",
+  "ut_chokecherry_dike": "only one fetched page (Salt Creek Canyon / Chokecherry Dike share one page); no second page naming it",
+  "ut_salt_creek_canyon": "only one fetched page; no second page naming it"
+ },
+ "_conflicts": {
+  "ut_bolt_slab": "Crag page https://www.mountainproject.com/area/105739795/bolt-slab says north-facing; route page https://www.mountainproject.com/route/106149784/two-nut-muffin says the slab faces west; stored aspect is E. No direction written."
+ }
+}

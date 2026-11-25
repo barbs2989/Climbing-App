@@ -1,0 +1,40 @@
+{
+ "ut_lost_world_butte": {
+  "_expect": { "name": "Lost World Butte", "region": "Utah" },
+  "blurb": "Lost World Butte is a large desert butte north of Moab in southeast Utah, with two separate summits and a base that wanders three to four miles around. Nearly all of the 15 climbs here are multipitch trad, with one aid line mixed in. Most of them fall in the 5.10 to 5.11 range, with a few gentler options between 5.5 and 5.9. This is a quiet, adventurous corner that rarely sees visitors, and reaching it takes a high-clearance vehicle. Fall, winter and spring suit the long outings best.",
+  "review": { "sources": ["https://www.mountainproject.com/area/105717080/lost-world-butte", "https://roadtripryan.com/go/t/utah/moab/lostworldbutte"] }
+ },
+ "ut_schoolroom_area": {
+  "_expect": { "name": "Schoolroom Area", "region": "Utah" },
+  "blurb": "The Schoolroom is a compact gully crag along Maple Canyon Road in central Utah, built from the cobble-studded wall the canyon is known for. Of its 15 climbs, 14 are bolted sport lines and one is trad. Grades start around 5.4 and climb through the 5.10s, with a generous helping of 5.7 and 5.8 lines, so it works well for newer leaders. One alcove faces east, and the main drawback is crowds rather than glare. A few routes finish on cold-shuts instead of modern anchors.",
+  "review": { "sources": ["https://www.mountainproject.com/area/105739554/schoolroom-area", "https://rakkup.com/guidebook/maple-canyon-rock-climbing/the-schoolroom/s10575", "https://www.mountainproject.com/area/106479926/maple-canyon-road"] }
+ },
+ "ut_tower_two": {
+  "_expect": { "name": "Tower Two", "region": "Utah" },
+  "blurb": "Tower Two is one of three outcrops in the Hellgate Cliffs of Little Cottonwood Canyon, sitting higher up and to the west of Tower One. Roughly 15 routes share a blend of nine trad lines and six bolted sport lines, spread from 5.9 through 5.11, with the hardest group the largest. The spot is sunny and much cooler than the lower canyon, which makes it a popular summer escape. Rockfall is a real concern from the terrain above, so wearing a helmet here is strongly advised.",
+  "review": { "sources": ["https://mountainproject.com/area/106024855/tower-two?print=1", "https://rakkup.com/guidebook/little-cottonwood-rock-climbing/tower-2/s13316"] }
+ },
+ "ut_eon_blue_zone": {
+  "_expect": { "name": "Eon Blue Zone", "region": "Utah" },
+  "blurb": "Eon Blue Zone is a bouldering pocket in the Triassic area of central Utah, on a plateau between the Nunyo and Tongue sections and a short drive from Joe's Valley. It holds 15 problems on sandstone, ranging from V0 up to V14, with the bulk landing between V5 and V7 and a handful of much harder lines. The stone is excellent but the boulders are on the short side, and some landings are rocky. It feels remote, sunny and breezy, and gets hot, so it is probably the most secluded corner of Triassic.",
+  "review": { "sources": ["https://mountainproject.com/area/110224953/eon-blue-zone", "https://mountainproject.com/area/105895938/triassic"] }
+ },
+ "ut_starting_block_the": {
+  "_expect": { "name": "Starting Block, The", "region": "Utah" },
+  "blurb": "The Starting Block is the sector of The Overlook nearest the parking turnaround, high above Brian Head in southwest Utah at about 11,000 feet. Its 15 routes are mostly bolted sport climbs (eleven) with four trad lines, running from 5.8 into 5.12, centred on 5.10 and 5.11. The rock is welded tuff, textured, sharp and full of finger pockets, and most lines can be top-roped. Walls face both east and west, so you can choose sun or shade, and the thin air keeps things cool in summer.",
+  "approach": "The base is only a few minutes' walk east of the road-end turnaround. The trail first reaches the top of the formation, and a steeper path then drops to the foot of the routes.",
+  "review": { "sources": ["https://www.mountainproject.com/area/105854509/the-starting-block", "https://www.mountainproject.com/area/105854492/the-overlook"] }
+ },
+ "ut_saloon_the": {
+  "_expect": { "name": "Saloon, The", "region": "Utah" },
+  "blurb": "The Saloon is a small cliff band of steep boulder problems in Axe Handle Canyon, just west of Ephraim in central Utah, at about 6,000 feet. The 15 problems run from V2 to V5, with the biggest group at V5, and rely on small holds and crimps. A few extra boulders are scattered around the original wall. The canyon is sunny for most of the day, and stone here can be crumbly in places, so expect some cleaning and test holds as you go.",
+  "review": { "sources": ["https://www.mountainproject.com/area/114778591/the-saloon", "https://www.mountainproject.com/v/axe-handle-canyon/107102070"] }
+ },
+ "_skipped": {
+  "ut_3d": "only one fetched page (Mountain Project) was about the crag; thetopo Indian Creek page does not list it",
+  "ut_tokey_dokey": "no fetched page about Tokey Dokey itself; only the Valley of Zion parent page, which names it"
+ },
+ "_conflicts": {
+  "ut_starting_block_the": "stored aspect E, but the crag page and the Overlook page (https://www.mountainproject.com/area/105854509/the-starting-block, https://www.mountainproject.com/area/105854492/the-overlook) say routes face both east and west"
+ }
+}

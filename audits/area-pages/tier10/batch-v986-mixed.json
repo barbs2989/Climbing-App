@@ -1,0 +1,27 @@
+{
+ "va_constant_boulder": {
+  "_expect": { "name": "Constant Boulder", "region": "Virginia" },
+  "blurb": "A large boulder tucked away in the Right Boneyard, part of the Boneyard bouldering zone at Grayson Highlands State Park. It sits over a small rise away from the main trail, so expect a bit of off-trail wandering to reach it. Thirteen problems are packed around the one block. They begin at easy warm-ups and cluster in the V2 to V5 range, then jump to a pair of much harder lines up near V8. A fair choice for a mixed group, with plenty for moderate climbers and a couple of projects for strong ones.",
+  "review": { "sources": ["https://www.mountainproject.com/area/106919227/constant-boulder", "https://rakkup.com/guidebook/grayson-highlands-bouldering/constant-boulder/s11937", "https://www.mountainproject.com/area/106660723/right-boneyard"] }
+ },
+ "va_figurehead_wall": {
+  "_expect": { "name": "Figurehead Wall", "region": "Virginia" },
+  "blurb": "A small urban bouldering wall in Forest Hill Park, in the middle of the park in Richmond. It stands right beside the paved path near the lake, so there is almost no walk. About a dozen problems run from VB and V0 warm-ups through to V4, and most sit at the easy end, which makes it handy for beginners and for a quick session with a single pad. Heights are low, around ten to twelve feet. Expect it to be busy on nice days given how close it is to the city.",
+  "review": { "sources": ["https://www.mountainproject.com/area/202361505/figurehead-wall", "https://www.mountainproject.com/area/classics/202361499/forest-hill-park", "https://www.mountainproject.com/route/117966311/the-perfect-zero"] }
+ },
+ "va_froopy_land_cliff": {
+  "_expect": { "name": "Froopy Land Cliff", "region": "Virginia" },
+  "blurb": "The main cliff line of the Froopy Land section, within the Pinnacle Rock Area of Breaks Interstate Park on the Virginia and Kentucky border. You reach it by turning right at the foot of the rock gully. Thirteen roped routes, mostly sport with three trad lines, cover a wide spread: a handful of moderate 5.9s, several 5.10s and 5.11s, and a couple of 5.12s at the top end. The wall stays in shade all day, which helps in warm weather. A detached pillar with more routes sits alongside.",
+  "review": { "sources": ["https://www.mountainproject.com/area/114460122/froopy-land", "https://www.mountainproject.com/area/111742350/breaks-interstate-park", "https://www.mountainproject.com/area/114460319/froopy-land-pillar"] }
+ },
+ "_skipped": {
+  "vt_alien_boulder": "no fetched page about this boulder itself (the only Alien Boulder page found is in Massachusetts); Bolton parent pages only list it",
+  "va_mushroom_area_ridgeline": "no page about the Mushroom Area itself; The Forest page only lists it as a sub-area",
+  "va_funny_farm_boulder": "only one page; it sits on private farmland and that page says not to visit until access is sorted",
+  "va_island_boulder": "no page about Island Boulder itself found (Colorado page is a different place); Moonstone page names it only as a landmark",
+  "va_ultra_boulder": "no page about Ultra Boulder itself; Gasland page only lists it as a sub-area"
+ },
+ "_conflicts": {
+  "va_froopy_land_cliff": "stored rock is shale but Breaks Interstate Park pages describe sandstone climbing (https://www.mountainproject.com/area/111742350/breaks-interstate-park, https://breakspark.com/rock-climbing)"
+ }
+}

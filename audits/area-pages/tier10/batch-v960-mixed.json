@@ -1,0 +1,41 @@
+{
+ "wa_4_maple_tree_cluster": {
+  "_expect": { "name": "Maple Tree Cluster", "region": "Washington" },
+  "blurb": "A small trad-focused pocket of andesite in the Columbia Gorge, tucked into the Farside and Dropzone stretch of the Ozone cliff band along Highway 14. A stand of maple trees at the base gives the spot its name and makes it easy to recognise. Roughly fifteen climbs are on record, nearly all of them gear-protected with a single top-rope line, and the difficulty sits in a tight band from 5.8 up to the low 5.10s, with the bulk of the lines at 5.10. That makes it a fit for leaders who already move comfortably on moderate crack and ledge terrain rather than beginners.",
+  "review": { "sources": ["https://rakkup.com/guidebook/ozone-dropzone-farside-stratosphere-rock-climbing/maple-tree-area/s18206", "https://www.mountainproject.com/route/106863082/the-head-wall"] }
+ },
+ "wi_great_tower": {
+  "_expect": { "name": "Great Tower", "region": "Wisconsin" },
+  "blurb": "Great Tower is an outcrop of quartzite on Devil's Lake's West Bluff, close to Cleo's Amphitheater and reached on foot with no real trail for the last stretch. The surrounding area is quiet, with few other parties even though the lines are good. About fifteen climbs are logged, mostly traditionally protected with a few top-rope options. Most are easy to moderate, running from about 5.2 through 5.8 and into the 5.10s, with one standout at 5.12. It suits parties who want a calm day of moderate trad away from the busier faces of the park.",
+  "approach": "Follow the Tumbled Rocks trail to the wide boulder field, then pick up a faint path along its south edge and head uphill. The tower is the second exposed outcrop you reach.",
+  "review": { "sources": ["https://www.mountainproject.com/area/105730184/great-tower", "https://www.mountainproject.com/area/105730006"] }
+ },
+ "wi_02_february_wall": {
+  "_expect": { "name": "February Wall", "region": "Wisconsin" },
+  "blurb": "February Wall is a short quartzite wall at Devil's Lake State Park, found just off the Ice Age Trail. It holds around fifteen problems and routes split between boulder problems, traditional leads and a single top-rope line. The rope climbs run from about 5.4 up to 5.10, with more moderate ones in the middle, while the boulders range from very easy to quite hard. The face is cut by a series of outside corners and cracks, so expect tidy, technical movement on small knobs and edges rather than big holds.",
+  "review": { "sources": ["https://www.mountainproject.com/area/106505069/february-wall", "https://www.mountainproject.com/route/109083252/bills-beta"] }
+ },
+ "wi_07_the_bandshell": {
+  "_expect": { "name": "The Bandshell", "region": "Wisconsin" },
+  "blurb": "The Bandshell is a compact quartzite area at Devil's Lake, sitting between Rattlesnake Ridge and Mousehole Buttress and easy to walk past without noticing. Around fifteen climbs are recorded, almost all traditionally protected with one top-rope line. Difficulty is friendly: most routes fall between 5.4 and 5.9, with a couple of harder lines near 5.11. A scrappy, low-angle buttress guards the base, so the walk to the start is a bit of a scramble. Smooth faces and ridge striations give it a distinct look among the park's cliffs, and it works well as a quieter alternative to busier walls.",
+  "review": { "sources": ["https://www.mountainproject.com/area/106409950/the-bandshell", "https://www.mountainproject.com/route/119963049/torn-joint"] }
+ },
+ "wi_bob_s_rock": {
+  "_expect": { "name": "Bob's Rock", "region": "Wisconsin" },
+  "blurb": "Bob's Rock, also known as Marengo Creek Bluff, is a red granite slab in the Marengo Valley of northern Wisconsin, left over from the ancient Penokee range. The cliff stands roughly seventy feet tall and the climbing is gentle. Most of the fifteen entries are short boulder problems from VB to V2, backed by a handful of top-rope lines and a lone trad route, spanning about 5.6 to 5.10. The mellow, moderate slab character suits newer climbers and group outings.",
+  "review": { "sources": ["https://mountainproject.com/area/117583783/bobs-rock", "https://www.mountainproject.com/area/119930693/northwest"] }
+ },
+ "wi_stettner_rocks": {
+  "_expect": { "name": "Stettner Rocks Routes", "region": "Wisconsin" },
+  "blurb": "Stettner Rocks is a small cliff on Devil's Lake's West Bluff and one of the park's better places to learn. The routes are short, around thirty feet, and easy to set up for top rope, with walk-offs available in every direction. Of fifteen climbs, most are traditionally protected and a few are top-rope lines. Grades start at the very easiest, cluster at 5.5 and below, and top out near 5.8, so it suits first-timers, instructors and anyone wanting relaxed practice. Climbers tend to find sun while the belayers sit in shade.",
+  "approach": "Start from the southwest boat ramp parking and walk up the West Bluff Trail, then follow a short path that branches off toward the base of the cliff.",
+  "review": { "sources": ["https://www.mountainproject.com/area/105730170/stettner-rocks", "https://www.mountainproject.com/v/105731345"] }
+ },
+ "_skipped": {
+  "wa_dream_wall": "no fetched page about Dream Wall itself (Lava Point parent page, Tieton River page, Upper Ledge page and route pages only; cascadeclimbers 403)",
+  "wi_george_s_point": "no fetched page about George's Point itself (Grandad Bluff parent and route page only; thecrag 403)"
+ },
+ "_conflicts": {
+  "wi_stettner_rocks": "stored rock is sandstone, but search results describe Devil's Lake West Bluff as quartzite; no fetched page states rock, so left unchanged"
+ }
+}

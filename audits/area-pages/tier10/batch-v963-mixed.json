@@ -1,0 +1,39 @@
+{
+ "ar_game_wall": {
+  "_expect": { "name": "Game Wall", "region": "Arkansas" },
+  "blurb": "A compact wall in the Jamestown Crag complex outside Batesville, in northeast Arkansas. It holds 14 routes, mostly bolted sport lines with a couple of trad options, and the grades start around 5.5 and top out at 5.10, so it suits newer leaders as much as people warming up. The climbing is on sandstone, and the wall tucks into a small inlet off the upper trail. The easiest way down from the bluff top is the walk-down path, which brings you out close to the base. Expect a quieter session than the busier sections of the crag.",
+  "review": { "sources": ["https://www.mountainproject.com/v/game-wall/106410451", "https://www.mountainproject.com/area/106407913/jamestown-crag"] }
+ },
+ "ct_rubix_cube": {
+  "_expect": { "name": "Rubix Cube", "region": "Connecticut" },
+  "blurb": "A single squarish boulder in a small wooded pocket of Woodbridge, Connecticut, a short walk north of the better-known Frankenrock. It stands roughly eight to ten feet tall and packs in around a dozen lines plus assorted variations, splits and traverses, many from a sit start. The 14 problems here run from VB up to about V4, mostly easy to moderate, which makes it a friendly outdoor introduction or a warm-up before heading to the bigger block. Poison ivy grows around the base, and the holds are worth brushing before you pull on.",
+  "review": { "sources": ["https://www.mountainproject.com/area/106809258/rubix-cube", "https://www.mountainproject.com/area/106805750/woodbridge-land-trust-park-lane?print=1"] }
+ },
+ "ct_land_trust_boulder": {
+  "_expect": { "name": "Land Trust Boulder", "region": "Connecticut" },
+  "blurb": "One glacial erratic beside a trail in Granby, Connecticut, reached on foot along forest paths in roughly ten to fifteen minutes (a bit longer with a stack of pads). The 14 problems lean easy: a slabby downclimb, a tall slabby face with several gentle lines, and a mildly overhanging side with a few moderates, topping out around V3 to V4 with the steep center-face line as the hardest. There is also a small crack boulder across the trail for low-ball enthusiasts. Bring multiple pads, as the tallest line is about 15 feet and the landings need padding.",
+  "review": { "sources": ["https://www.mountainproject.com/area/123608666/land-trust-boulder", "https://mountainproject.com/route/123981088/big-ol-boulder?print=1"] }
+ },
+ "ct_north_end": {
+  "_expect": { "name": "North End", "region": "Connecticut" },
+  "blurb": "The far-end cliffs of Ross Rocks in Killingly, Connecticut, across from the pond. This is a tall wall with big roofs and steep faces, home to some of the longest lines at the crag, with fern-covered corners and overhangs. The 14 routes are mostly bolted sport lines with a few trad climbs, a mixed line and a top-rope, spanning roughly 5.5 to 5.11 with the bulk sitting in the 5.10 range. There are a couple of easy lines for beginners, but expect loose or sharp rock near the tops of some routes, so helmets matter.",
+  "review": { "sources": ["https://www.mountainproject.com/area/108037967/north-end", "https://climbri.org/ross.htm"] }
+ },
+ "ct_party_wall": {
+  "_expect": { "name": "Party Wall", "region": "Connecticut" },
+  "blurb": "A wall at Ross Rocks in Killingly, Connecticut, easy to spot from the trail thanks to its huge roof. The 14 routes mix trad, bolted sport and top-rope lines, almost all between 5.5 and 5.9, which makes it one of the more approachable sections at the crag for moderate climbers. The rock is uneven: some stretches are solid, while others are crumbly or chossy, and several lines warn of loose blocks or questionable gear. Wear a helmet, inspect fixed hardware before trusting it, and expect an overlook above the wall where people hang out.",
+  "review": { "sources": ["https://www.mountainproject.com/area/108037957/party-wall", "https://climbri.org/ross.htm"] }
+ },
+ "ct_amphitheater": {
+  "_expect": { "name": "Amphitheater", "region": "Connecticut" },
+  "blurb": "A cliff on East Peak in Meriden, Connecticut, rising to roughly 110 feet and known for long routes by Connecticut standards. Climbing here is traditional: eight trad lines and six top-ropes, from about 5.7 up through the 5.10s and 5.11s to a pair of 5.12 and one 5.13 test pieces. Expect a variety of styles, including face climbing, chimneys, off-widths and cracks from fingers to hands. The cliff sits out of view behind a bulge until you are close, so it helps to go with someone who knows the way. It is a good cold-weather choice and especially scenic in autumn.",
+  "review": { "sources": ["https://www.mountainproject.com/area/106079355/amphitheater", "https://www.raggedmtn.org/meriden-cliffs"] }
+ },
+ "_skipped": {
+  "ct_high_rock_jumble": "No fetched page is about High Rock Jumble itself; only the parent TJ's Bar and Grill page names it (14 problems, no description)",
+  "ks_golden_eagles_pulpit": "No fetched page is about Golden Eagles Pulpit itself; Placer Ridge and North Side pages only name it as a landmark/subarea with 14 problems"
+ },
+ "_conflicts": {
+  "ct_land_trust_boulder": "Stored rock is arkose, but https://www.mountainproject.com/area/123608666/land-trust-boulder describes granite (single page; stored value left as is)"
+ }
+}

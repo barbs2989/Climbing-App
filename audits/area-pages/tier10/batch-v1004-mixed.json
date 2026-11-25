@@ -1,0 +1,31 @@
+{
+ "ut_circus_wall": {
+  "_expect": { "name": "Circus Wall", "region": "Utah" },
+  "blurb": "Circus Wall is a tall sandstone face on the Island in the Sky formation in Snow Canyon, near St. George. It offers both single-pitch and multi-pitch lines up to roughly 250 feet, split between trad and bolted sport climbs plus a few that can be top-roped. Grades run from 5.6 up to a lone 5.11, with most routes in the 5.9 to 5.10 range. Many climbs follow solid patina edges, and the unbolted ones take a light rack. The wall faces west, so it catches sun in the afternoon, with the left-hand routes warming first. A 60 m rope works for most rappels, though some lines want a longer one.",
+  "review": { "sources": ["https://www.mountainproject.com/area/105717179/circus-wall", "https://www.mountainproject.com/area/106637386/island-in-the-sky"] }
+ },
+ "ut_backhoe": {
+  "_expect": { "name": "Backhoe", "region": "Utah" },
+  "blurb": "Backhoe is a small cluster of sandstone boulders near the middle of Moe's Valley, west of St. George. The problems here lean toward overhanging, roof-style lines with big juggy holds and satisfying topouts. The grade spread is wide: a couple of easy problems around V1, then a solid group in the V3 to V6 range, with a few hard ones up to V8. It sits beside neighbouring boulders, so it is easy to link with a larger session in the valley. The rock is soft and easily damaged when wet, so give it a day or two to dry after any rain or snow.",
+  "review": { "sources": ["https://www.mountainproject.com/area/112499379/backhoe", "https://www.mountainproject.com/area/106028834/moes-valley"] }
+ },
+ "ut_hop_garden": {
+  "_expect": { "name": "Hop Garden", "region": "Utah" },
+  "blurb": "Hop Garden is a sport crag at the far end of the Sunset Alley walls near St. George. It holds a dozen bolted routes that start at 5.10 and are mostly in the 5.11 and 5.12 range, so it suits climbers warmed up and looking for a challenge rather than beginners. The wall changes character along its length, with slabbier lines on one side, an arete in the middle, and steeper overhanging climbing higher up. It is reached by walking along the base of the cliff past the other Sunset Alley sections.",
+  "review": { "sources": ["https://www.mountainproject.com/v/hop-garden/109455569", "https://www.mountainproject.com/v/109455297"] }
+ },
+ "ut_promised_land": {
+  "_expect": { "name": "Promised Land", "region": "Utah" },
+  "blurb": "Promised Land is a steep crag in Logan Canyon in northern Utah, with multi-pitch routes of 200 feet or more. Most of the climbing is bolted sport, with a couple of mixed trad and sport lines and a few top-rope options. The difficulty is firmly hard: everything sits in the 5.11 to 5.12 range, so it is a place for experienced climbers with a good head for long, sustained pitches. It is a walk in from the road rather than a roadside crag, which tends to keep it quiet.",
+  "review": { "sources": ["https://www.mountainproject.com/area/107515268/promised-land", "https://www.mountainproject.com/area/105739310/logan-canyon"] }
+ },
+ "_skipped": {
+  "ut_watchtower_the_3": "closed to climbing (parent Soul Asylum page says closed); no second page",
+  "ut_the_rock_skyline_face": "no page about the crag itself; Basecamp page only lists it with a route count",
+  "ut_strange_things_east_face": "no page about the crag itself; Aiguille du RV page only lists it",
+  "ut_spring_break": "no crag page found; only an unrelated route page"
+ },
+ "_conflicts": {
+  "ut_promised_land": "stored rock sandstone, but https://www.mountainproject.com/area/107515268/promised-land says limestone and the Logan Canyon page says limestone and quartzite"
+ }
+}

@@ -1,0 +1,21 @@
+{
+ "ut_hidden_forest": {
+  "_expect": { "name": "Hidden Forest", "region": "Utah" },
+  "blurb": "A small cluster of boulders tucked among trees in Little Cottonwood Canyon, east of Sandy, at roughly 6,200 feet. Nineteen problems are logged, all bouldering, and the range is wide: a handful of easy V0 to V3 lines, a solid middle block around V4, and a harder top end that reaches V9. Landings are mostly good, and most of the boulders are modest in height, so a couple of pads cover the easier lines. Reaching them takes a short trail walk and a stream crossing, which can be tricky when the water runs high. The setting is quiet and wooded rather than a roadside scene.",
+  "review": { "sources": ["https://mountainproject.com/area/117129232/hidden-forest", "https://thetopo.com/crags/little-cottonwood-canyon-utah/routelist/hidden-forest"] }
+ },
+ "va_mustang_boulder": {
+  "_expect": { "name": "Mustang Boulder", "region": "Virginia" },
+  "blurb": "A greenstone boulder on the hillside beneath the Rock Point Overlook along the Blue Ridge Parkway, south of Charlottesville, at about 3,000 feet. It holds 19 problems and nothing else, running from V1 to V11, with most of the weight in the V4 to V10 range, so it suits strong boulderers more than beginners. The boulder is set slightly higher up the slope than its neighbors and is hard to spot from the overlook. Its problems face northwest and stay shaded for most of the day, which helps on warm days but means cold, damp conditions earlier and later in the year.",
+  "aspect": "NW",
+  "review": { "sources": ["https://www.mountainproject.com/area/120231856/mustang-boulder", "https://mountainproject.com/area/120231814/rock-point-overlook"] }
+ },
+ "_skipped": {
+  "ut_flying_raptor_s_area": "no fetched page is about the crag itself; only the Jungle parent page and route pages mention it",
+  "vt_eagle_ledge": "fetched area page says the cliff is closed to climbing",
+  "vt_magnitude_boulder": "no page about the boulder itself; only the 2020 Landslide Boulders parent page and a single problem page",
+  "va_rawley_springs": "only one page about the place; the Second Mountain page describes a different location",
+  "va_spatula_city": "only a list entry on the park page; no page about the crag found",
+  "va_warm_up_boulder_2": "only the Belly Boulder Area parent page describes it; no page about the boulder itself"
+ }
+}

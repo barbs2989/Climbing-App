@@ -1,0 +1,32 @@
+{
+ "vt_revolution_wall": {
+  "_expect": { "name": "Revolution Wall", "region": "Vermont" },
+  "blurb": "A small, out-of-the-way crag in the Bolton area of northern Vermont, set high on the hillside and reached by a walk of around an hour that eases off after an opening steep stretch. It holds about sixteen climbs: mostly bolted sport lines, a handful of trad routes and a couple of easy boulder problems. Sport grades start near 5.6 and reach into the low 5.12s, with the bulk in the 5.10 and 5.11 range, so newer leaders and stronger climbers both find something. The wall catches plenty of sun and rarely sees crowds, which makes it a quiet pick for a day away from the busier cliffs.",
+  "review": { "sources": ["https://www.mountainproject.com/area/119667484/revolution-wall", "https://rakkup.com/guidebook/vermont-rock-climbing/revolution-wall/s22584"] }
+ },
+ "vt_main_crag": {
+  "_expect": { "name": "Main Crag", "region": "Vermont" },
+  "blurb": "A slabby quartzite cliff of roughly eighty feet above Lake Dunmore in central Vermont, within the Falls of Lana climbing area. Its sixteen climbs are mostly easy to moderate, from about 5.3 to 5.9, plus one low boulder problem, and they split between gear-protected leads and top-rope lines finished at fixed anchors. The hard, fine-grained rock is clean on the popular lines, and the faces mostly look west. School groups and camps use the cliff heavily in summer, so expect company on the easier routes. Some loose blocks and flakes lurk off the established lines.",
+  "review": { "sources": ["https://www.mountainproject.com/area/108194841/main-crag", "https://mountainproject.com/area/108194828/lake-dunmorefalls-of-lana"] }
+ },
+ "va_blood_pool": {
+  "_expect": { "name": "Blood Pool", "region": "Virginia" },
+  "blurb": "A face-climbing crag in the Shenandoah region of northern Virginia, high in the hills at about 2,500 feet. Its sixteen routes are mostly sport, with a few trad lines and one top-rope, spanning 5.6 to 5.12 with most between 5.9 and 5.11. Expect long single-pitch climbing on mostly clean rock, though newer lines can still hold loose pieces and some patches stay damp or lichen covered. A few routes call for cams and nuts. The face takes direct sun in winter, which keeps it climbable through the year, but the walk in is a real effort with a bushwhack, a steep gully and a boulderfield.",
+  "review": { "sources": ["https://www.mountainproject.com/area/125433086/blood-pool", "https://www.mountainproject.com/area/110848216/shenandoah-nw-va-region"] }
+ },
+ "va_homestead_the": {
+  "_expect": { "name": "Homestead, The", "region": "Virginia" },
+  "blurb": "A compact sandstone wall inside Breaks Interstate Park on the Virginia and Kentucky line, part of the long Prospectors cliffline. About sixteen climbs run roughly 45 feet tall, most of them bolted sport with five trad lines, on solid rock with plenty of features. Grades start around 5.7, cluster between 5.8 and 5.10, and top out in a couple of 5.11s, so it suits climbers working through moderate routes. The walk in drops down a trail from an overlook, passes beneath a boulder cave and goes through a short rock tunnel before reaching the base.",
+  "review": { "sources": ["https://www.mountainproject.com/area/114362666/the-homestead", "https://www.mountainproject.com/area/111794178/prospectors"] }
+ },
+ "va_dr_needlepoint": {
+  "_expect": { "name": "Dr. Needlepoint", "region": "Virginia" },
+  "blurb": "A top-rope wall on the Virginia bank of the Potomac in the Great Falls area, starting a short distance downstream of the Cornice section. Nearly all of its sixteen climbs are top-ropes, with two trad lines, ranging from scrambling difficulty up to 5.12, with several around 5.7 and many at 5.10 and 5.11. The cliff is approached from above, so it can be hard to find on a first visit, and the usual way to the base is an awkward downclimb that many parties replace with a rappel. Ratings here reflect leading conditions, so top-roping can feel easier than the numbers suggest.",
+  "review": { "sources": ["https://www.mountainproject.com/area/106163268/dr-needlepoint", "https://rakkup.com/guidebook/great-falls-rock-climbing/dr.-needlepoint/s23190"] }
+ },
+ "_skipped": {
+  "va_fiesta_boulder": "no fetched page about a Fiesta Boulder; the only match (Siesta Boulder, MP) sits at 37.94722,-78.92154, about 700 m from the input coordinates and never uses the name",
+  "va_downstream_climbs": "could not fetch a page about the crag itself (summitpost 403); the parent page names it but gives no description",
+  "va_state_line_overlook": "no fetched page about the crag itself; only the park page, which lists it with a count and no description"
+ }
+}

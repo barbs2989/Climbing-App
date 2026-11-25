@@ -1,0 +1,88 @@
+{
+ "wi_jake_s_rock": {
+  "_expect": {
+   "name": "Jake's Rock",
+   "region": "Wisconsin"
+  },
+  "blurb": "Jake's Rock is a manufactured boulder sitting in a park at Hales Corners rather than a natural outcrop. It holds 19 problems, running from V0 up to a handful around V5, with the bulk falling between V0 and V2, so it suits beginners, kids and anyone wanting a quick training session. The surface is covered in pockets, edges and jugs, and climbers report it feels remarkably close to real rock. Trees ring the boulder, which keeps it shaded, and children often play around its base, so expect to share the space.",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/area/106537908/jakes-rock",
+    "https://www.mountainproject.com/area/119930669/niagara-escarpment-kettle-moraine"
+   ]
+  }
+ },
+ "wi_07_brinton_s_buttress": {
+  "_expect": {
+   "name": "Brinton's Buttress",
+   "region": "Wisconsin"
+  },
+  "blurb": "Brinton's Buttress is one of the best-known formations on the East Rampart at Devil's Lake, a long cliff band on the park's East Bluff. Routes here are mostly traditional leads plus several top-rope lines, spanning easy fifth class through the low 5.10s and on to a few very hard testpieces in the 5.12 to 5.13 range. Climbs on this section of the bluff tend to be long and exposed, and the buttress sees heavy traffic. The walk in is a steady uphill scramble over rock steps and talus from the lower trail.",
+  "approach": "Follow the hiking trail uphill over rock steps and a talus field, turn left at the 20-foot wall called The Monster, and keep climbing to Pedestal Buttress. Turn left there for the base of the buttress, or go right around the east end of the rampart to reach the top.",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/v/wisconsin/devils_lake/east_bluff__east_rampart/105730101",
+    "https://www.mountainproject.com/area/105730000/east-bluff-04-east-rampart"
+   ]
+  }
+ },
+ "wi_jurassics": {
+  "_expect": {
+   "name": "Jurassics",
+   "region": "Wisconsin"
+  },
+  "blurb": "Jurassics is a band of quartzite boulders on Rib Mountain, just north of the overlook tower near Wausau. It has around 19 problems spanning very easy lines to roughly V4, most of them between V1 and V4, which makes it a good place to warm up or spend an afternoon on moderates. The boulders face north, so they stay shaded and some problems hold moisture after rain or snow. To get there, head north from the tower along the trails, through a rock band, and around to the chalked boulders. Bring a pad.",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/v/105974049",
+    "https://www.mountainproject.com/area/105863344/rib-mountain"
+   ]
+  }
+ },
+ "wi_uw_madison_campus": {
+  "_expect": {
+   "name": "UW Madison Campus",
+   "region": "Wisconsin"
+  },
+  "blurb": "This is a city buildering spot on the University of Wisconsin campus in Madison, where short boulder problems, arete lines and wall traverses are found on university buildings such as Van Hise, Science Hall and the Memorial Union. Of the 19 listed climbs, 18 are boulder problems and one is a trad line. Most are V0 to V3, with a few harder problems up to about V5, so it works for easy urban circuits more than for a serious session. No special gear beyond a crash pad and shoes is needed, and the setting is entirely urban.",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/area/105808646/uw-madison-campus",
+    "https://www.mountainproject.com/area/105730021/buildering-sites-statewide"
+   ]
+  }
+ },
+ "ar_bleeder_boulder": {
+  "_expect": {
+   "name": "Bleeder Boulder",
+   "region": "Arkansas"
+  },
+  "blurb": "Bleeder Boulder is a compact block at the Fern climbing area in northwest Arkansas, the first formation you meet when walking down the crack on the usual approach. Most of its 18 lines are sport routes, with a few trad lines, and many can also be top-roped. Grades centre on 5.10, with a scattering of easier lines from the 5.6 range and a few in the 5.11 to 5.12 range. Routes are short, generally under 50 feet like much of Fern, which makes the block handy for a quick stop between walls.",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/area/109376883/bleeder-boulder",
+    "https://www.mountainproject.com/area/107468143/fern"
+   ]
+  }
+ },
+ "ar_white_trash_wall": {
+  "_expect": {
+   "name": "White Trash Wall",
+   "region": "Arkansas"
+  },
+  "blurb": "White Trash Wall sits in the Throne section of Sam's Throne in north-central Arkansas, a grassy valley hill ringed by steep walls. All 18 routes here are trad lines, mostly cracks and faces on good-quality rock, from easy fifth class through the 5.8 to 5.9 range, with a few steep ones around 5.12. The wall faces south and west and forms a corner, and the surrounding Throne area offers a mix of sun and shade. Easy top access makes it handy for setting up top-ropes, so it works well for beginners and newer leaders.",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/area/105906330/white-trash-wall",
+    "https://www.mountainproject.com/area/105901622/the-throne"
+   ]
+  }
+ },
+ "_skipped": {
+  "ar_power_wall": "no fetched page about the Cowell Power Wall itself: Mountain Project area page is for an Oklahoma Power Wall; Cowell parent, Font Red page and thetopo sector listing only name it (counts, no description)",
+  "ar_fred_s_cave_area": "second page is about the neighbouring Font Red area"
+ },
+ "_conflicts": {
+  "wi_jake_s_rock": "stored rock is dolomite, but https://www.mountainproject.com/area/106537908/jakes-rock says the boulder is built from synthetic material by a sculpture company"
+ }
+}

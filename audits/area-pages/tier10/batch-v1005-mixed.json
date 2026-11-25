@@ -1,0 +1,87 @@
+{
+ "ut_principality_the": {
+  "_expect": {
+   "name": "Principality, The",
+   "region": "Utah"
+  },
+  "blurb": "A high-elevation crag in the hills above Brian Head, around 9,000 feet, set among trees with a meadow below. It holds about a dozen climbs, mostly sport with a pair of trad lines, and the grades lean hard: a few routes in the 5.10s, then a cluster from 5.12 into 5.13, plus one easy outlier. The rock is dense tuff with short pitches, roughly 35 to 65 feet, that reward strong fingers and clean footwork. Because of the altitude it suits warm-weather days, and a fire has left little shade on some of the walls. Not a place for beginners, but a good change of pace for climbers working at the upper end of the sport scale.",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/area/107184726/the-principality",
+    "https://mountainproject.com/area/106984454/brian-head"
+   ]
+  }
+ },
+ "ut_planet_of_the_apes_area": {
+  "_expect": {
+   "name": "Planet of the Apes Area",
+   "region": "Utah"
+  },
+  "blurb": "A compact circuit of about a dozen boulder problems in the Big Water boulders near Glen Canyon, in south-central Utah, at roughly 4,100 feet. The blocks sit at the end of a small wash a short walk back from the road, past a big, obvious roof boulder. Problems are mostly easy to moderate, with V0 through V2 making up the bulk, a couple around V4, and a handful of harder tests reaching V6 and V7. Good for a short session or a warm-up circuit in a larger field of boulders, and a fine spot to bring a mixed-ability group.",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/area/112190877/planet-of-the-apes-area",
+    "https://www.mountainproject.com/area/112271268/2nd-roadside-pullout"
+   ]
+  }
+ },
+ "vt_red_rocks_boulder": {
+  "_expect": {
+   "name": "Red Rocks Boulder",
+   "region": "Vermont"
+  },
+  "blurb": "A single lakeside boulder in Red Rocks Park, looking out over Shelburne Bay near sea level. It carries a dozen bouldering problems, mostly friendly: V0 to V2 account for the majority, with a V3, a V4 and one V6 for those who want a challenge. The boulder sits just down and left of a large slanted overlook platform, and the base is close to the water, so landings and the lake edge are worth checking before you pull on. It is an easy, short outing from the park trail, handy for a quick warm-up session or an evening after work.",
+  "review": {
+   "sources": [
+    "https://mountainproject.com/area/118777198/red-rocks-boulder",
+    "https://www.mountainproject.com/area/119673925/vermonts-lonely-rocks-northern"
+   ]
+  }
+ },
+ "vt_g_tradisfaction_wall": {
+  "_expect": {
+   "name": "Tradisfaction Wall",
+   "region": "Vermont"
+  },
+  "blurb": "A trad-focused wall on the Main Cliff of Bone Mountain, up in the Bolton Valley hills in northern Vermont, at about 2,300 feet. About a dozen climbs are packed within a short stretch of cliff, nearly all of them gear-protected with a couple of bolted lines. Most grades sit between 5.9 and 5.11, with a few steeper, harder pitches pushing into 5.12 and one easy line at the bottom end. Face and crack climbing both come into play, and the commitment of the long hike in tends to keep the crowds light. A good wall for a day of focused traditional climbing.",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/area/109675930/tradisfaction-wall",
+    "https://www.mountainproject.com/area/107301944/bone-mountain"
+   ]
+  }
+ },
+ "vt_wheaties_boulder": {
+  "_expect": {
+   "name": "Wheaties Boulder",
+   "region": "Vermont"
+  },
+  "blurb": "A well-known block in the Top of the Notch cluster at Smugglers' Notch, in northern Vermont, with problems on all four sides. Two of the faces are vertical and slick while another overhangs and calls for power. About a dozen problems run from V1 up to V8, with most falling between V2 and V6 and three of the hardest at V8. The rock is slick schist that climbs poorly when wet or hot, so cool, dry days are best, and it can take a while to dry after rain. It sits a short uphill walk from the parking, close to the road.",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/area/109546306/wheaties-boulder",
+    "https://www.mountainproject.com/v/top-of-the-notch-boulders/106557476"
+   ]
+  }
+ },
+ "vt_tomahawk": {
+  "_expect": {
+   "name": "Tomahawk",
+   "region": "Vermont"
+  },
+  "blurb": "A small boulder in the woods below the powerline in the Shipyard zone of Bromley Forest, southern Vermont, at about 1,900 feet. It is part of a cluster of boulders beside The Monolith, and its sharp arete is the easiest feature to spot. The boulder offers about a dozen problems with a wide spread: a few at V0 and V1, a middle group around V3 to V5, and a hard V6 and a V9 project at the top end. A good stop for a mixed group, with easy warm-ups and real challenges within a few feet of each other.",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/area/119090070/tomahawk",
+    "https://www.mountainproject.com/area/118995123/shipyard"
+   ]
+  }
+ },
+ "_skipped": {
+  "vt_prize_boulder": "no fetchable page about the boulder itself (only the parent Groton page and route pages; thecrag returned 403)",
+  "vt_a_left_end": "no fetched page about this Left End crag itself; Bone Mountain page does not list it as a sector and the Main Cliff pages fetched were other cliffs"
+ },
+ "_conflicts": {
+  "vt_red_rocks_boulder": "stored rock is sandstone but https://mountainproject.com/area/118777198/red-rocks-boulder describes coarse limestone; no rock named in blurb"
+ }
+}

@@ -1,0 +1,37 @@
+{
+ "wa_fridge_the": {
+  "_expect": {
+   "name": "Fridge, The",
+   "region": "Washington"
+  },
+  "blurb": "A small roadside bouldering spot in Icicle Creek canyon, a short drive up from Leavenworth, centred on one obvious boulder beside the road, with room for more problems on the hillside above. It holds 15 problems. Most sit between V3 and V5, with a couple of V0 warm-ups and a short run of much harder lines from V8 to V10 for strong climbers. Being right off the road, it is quick to reach and works as a short stop or a warm-up for a longer Icicle day.",
+  "review": {
+   "sources": [
+    "https://mountainproject.com/area/105802896/the-fridge",
+    "https://sendage.com/area/fridge-boulder-leavenworth-wa-usa",
+    "https://thetopo.com/crags/icicle-canyon/topos/the-fridge-2246"
+   ]
+  }
+ },
+ "wa_7_heaven_s_wall": {
+  "_expect": {
+   "name": "Heaven's Wall",
+   "region": "Washington"
+  },
+  "blurb": "One of the walls at Ozone, a roadside cliff band on the Washington side of the Columbia Gorge. Routes here are short multi-pitch lines that begin and end at a ledge partway up the face, so a visit is as much about the ledge-hopping style as the difficulty. Most of the 15 climbs are trad, with a few sport lines, and the grades run from 5.6 to 5.10. The bulk fall between 5.8 and 5.10, so it suits climbers comfortable placing gear on moderate terrain.",
+  "review": {
+   "sources": [
+    "https://rakkup.com/guidebook/ozone-dropzone-farside-stratosphere-rock-climbing/heaven's-wall/s17869",
+    "https://www.mountainproject.com/area/106164682/ozone"
+   ]
+  }
+ },
+ "_skipped": {
+  "va_madness_boulder": "no fetched page about the boulder itself (only parent Grayson Highlands pages and a route page)",
+  "va_bank_the": "could not fetch a page about the crag itself; Mile Two pages and a route page only list it",
+  "va_end_of_the_line_area": "no fetched page about the area itself; Crescent Boulders parent page only lists it",
+  "wa_western_washington_university_buildering": "only one page found about it; no second fetched page",
+  "va_fetish_wall": "fetched page says climbing at Iron Gate is currently not allowed",
+  "wa_bouldering": "generic-named area ('Bouldering'); being renamed by the generic-name cleanup"
+ }
+}

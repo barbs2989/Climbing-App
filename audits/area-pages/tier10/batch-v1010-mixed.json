@@ -1,0 +1,39 @@
+{
+ "wa_goat_wall_climbs": {
+  "_expect": { "name": "Goat Wall Routes", "region": "Washington" },
+  "blurb": "Goat Wall is a huge glacier-carved face above the Lost River Road near Mazama in the Methow Valley, standing about 1,500 feet tall. This crag mixes styles: seven sport lines, four ice climbs and a single trad route. The sport climbing is mostly 5.9 to 5.11, while the ice runs from WI3 up to WI5, and the winter lines form only in some seasons. Many routes here are long multi-pitch outings rather than quick single pitches, and the rock quality varies a good deal across the face. It is a serious place for a first big wall day, so bring an experienced partner and a solid head.",
+  "review": { "sources": ["https://www.mountainproject.com/area/107192115/goat-wall", "https://wenatcheeoutdoors.org/2017/01/23/goat-wall-routes/"] }
+ },
+ "wa_icehouse_the": {
+  "_expect": { "name": "Icehouse, The", "region": "Washington" },
+  "blurb": "The Icehouse is a small bouldering zone beside the Icicle Creek road outside Leavenworth, part of the Straightaway stretch of boulders. The main face sits only a short scramble above the pavement, so walking in takes a minute or two. Twelve problems here run from about V2 up to V9, but most fall between V3 and V5, which makes it one of the friendlier spots on the strip for climbers who want moderate lines. Warm-ups are scarce elsewhere along the road, so people often start the day here. Snow can linger on the slope in winter.",
+  "review": { "sources": ["https://www.mountainproject.com/area/114128231/the-icehouse", "https://www.mountainproject.com/area/118705414/straightaway-boulders"] }
+ },
+ "wa_mid_west_red_tail_wall_the": {
+  "_expect": { "name": "Mid West - Red-tail Wall, The", "region": "Washington" },
+  "blurb": "The Red-tail Wall is the upper middle section of Last Wall in McLoughlin Canyon near Tonasket, in the Okanogan. It holds twelve routes, eight sport and four trad, with grades from 5.7 to 5.10, so it suits climbers working through the moderates. Many lines run a full pitch, and the wall rewards a trad mindset: belay at the top and rappel instead of lowering as at a typical sport crag. Expect a walk of roughly half an hour from the parking area up a ramp to reach the base.",
+  "review": { "sources": ["https://mountainproject.com/area/108739519/the-mid-west-red-tail-wall", "https://www.mountainproject.com/area/108588270/last-wall"] }
+ },
+ "wa_reclamation_wall": {
+  "_expect": { "name": "Reclamation wall", "region": "Washington" },
+  "blurb": "Reclamation Wall is a small sport crag by Lake Cushman in the Olympic foothills, the easternmost of the walls reached from the pullout on the road toward Staircase. Its twelve bolted routes are roughly 35 to 60 feet tall and span 5.7 to 5.11, with most clustered in the 5.8 to 5.10 range, making it a decent pick for newer leaders and mid-grade climbers. Trees shade the wall, so it stays cool in summer, though the rock tends to be mossy. Each walk-in from the car is short.",
+  "review": { "sources": ["https://www.mountainproject.com/area/114075510/reclamation-wall", "https://www.mountainproject.com/area/114075500/lake-cushman"] }
+ },
+ "wa_the_butte_tresses": {
+  "_expect": { "name": "The Butte-tresses", "region": "Washington" },
+  "blurb": "The Butte-tresses is a trad-only section of The Rump, at the southeast end of Stegosaurus Butte in the Middle Fork valley near North Bend. Twelve crack routes here range from 5.6 up to 5.12, concentrated in the 5.9 to 5.10 range. Most are one pitch, a few take two, and one long line goes up six pitches. The Rump is known for having continuous crack systems, and the walk to the base is roughly half an hour through forested talus, a tricky approach that is not great for dogs or small children. Development is ongoing nearby, so watch for tape marking fall zones.",
+  "review": { "sources": ["https://www.mountainproject.com/area/classics/201171327/d-the-butte-tresses", "https://www.mountainproject.com/area/124970593/the-rump"] }
+ },
+ "wa_top_sail": {
+  "_expect": { "name": "Top Sail", "region": "Washington" },
+  "blurb": "Top Sail is a single boulder in the Treasury section of the Skykomish Valley, near the Semantics boulders at roughly 3,650 feet in the Central-West Cascades. Twelve problems cover V0 to V7, with the largest group at V2 and a few lines at V5 and above. It is regarded as one of the better boulders in its field for quality and for how many problems pack onto it. A short walk uphill from Semantics leads there, and you step up onto a few blocks to reach the slab and shelf at its base.",
+  "review": { "sources": ["https://www.mountainproject.com/area/119915802/top-sail", "https://www.mountainproject.com/area/119591053/semantics-area"] }
+ },
+ "_skipped": {
+  "wa_hourglass_boulder": "no fetched page about the Hourglass Boulder itself; only the parent Sword/Underwear Rock page and route-level search hits (and a Colorado Hourglass page that is a different place)",
+  "wa_jigsaw_left": "both fetched pages (Jigsaw Left, Jigsaw Wall) state the area is effectively closed (May 2026); skipped per closed rule"
+ },
+ "_conflicts": {
+  "wa_reclamation_wall": "stored rock basalt, but https://www.mountainproject.com/area/114075510/reclamation-wall and https://www.mountainproject.com/area/114075500/lake-cushman both say metamorphic; no rock named in blurb"
+ }
+}

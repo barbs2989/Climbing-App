@@ -1,0 +1,44 @@
+{
+ "ct_chatfield_weather_caves": {
+  "_expect": { "name": "Chatfield Weather Caves", "region": "Connecticut" },
+  "blurb": "A small bouldering venue in Killingworth, tucked among the pockets of cliff and boulder fields around Chatfield Hollow State Park. Eighteen problems run from the easiest grades up to a single problem near the top of the scale, with a good cluster of mid-grade lines and a handful of hard ones in the V8 to V10 range. The walls are steep, so the climbing stays sheltered from wind and weather, and the place is popular when snow is on the ground. It picks up direct sun in the afternoon. The walk from the car is very short, a couple of minutes at most. Litter can build up, so a spare bag is handy.",
+  "review": { "sources": ["https://www.mountainproject.com/area/106639534/chatfield-weather-caves", "https://www.mountainproject.com/area/106360500/killingworth"] }
+ },
+ "ms_jean_s_overhang": {
+  "_expect": { "name": "Jean's Overhang", "region": "Mississippi" },
+  "blurb": "The highest bluffs in Tishomingo State Park hold this cluster of overhanging walls, found just upstream of the swinging bridge in the park's wooded northeast Mississippi setting. The namesake line is a 5.11 fist crack splitting an 18-foot roof, the park's best-known climb. Around it sit eighteen routes of mixed style: mostly top-rope, with some trad, a few boulder problems and a pair of aid lines. Grades start near beginner level and climb to the low 5.12 range, with the bulk in the 5.8 to 5.10 band. Heavy tree cover gives welcome summer shade, and top-rope anchors often sit well back from the edge.",
+  "review": { "sources": ["https://www.mountainproject.com/area/108324964/jeans-overhang", "https://www.mountainproject.com/area/108324934/tishomingo"] }
+ },
+ "ri_fatboy_boulder": {
+  "_expect": { "name": "Fatboy Boulder", "region": "Rhode Island" },
+  "blurb": "A single boulder in the Pond Cave Area of Lincoln Woods, Rhode Island, reached by following the trail toward Pond Cave and continuing roughly 200 yards beyond the cave rock, with the pond on your left. It makes a friendly warm-up stop: eighteen problems, many of them easy, a solid band of V3 and V4 lines that includes a traverse, a dyno and a pocketed problem, and one harder problem around V6. A pleasant add-on to a day at the nearby, much larger cave boulders.",
+  "review": { "sources": ["https://www.mountainproject.com/area/106912822/fatboy-boulder", "https://www.mountainproject.com/area/112540800/pond-cave-area"] }
+ },
+ "sc_arch_wall": {
+  "_expect": { "name": "Arch Wall", "region": "South Carolina" },
+  "blurb": "One of the walls at Big Rock Mountain near Pickens, South Carolina, reached from the main parking area by taking the right fork and turning left at the X-Wall; Arch Wall is the next face along. About eighteen routes, mostly bolted, with a few trad lines and several that are easy to top-rope. Grades run from 5.6 up to the low 5.12s, but most sit in the 5.9 to 5.11 range, with 5.10 the biggest group. The standouts are a couple of friction climbs and a crack around 5.9 or 5.10a, while the rest are of less interest.",
+  "review": { "sources": ["https://www.mountainproject.com/area/116191154/arch-wall", "https://mountainproject.com/route/118100516/the-underdog?print=1"] }
+ },
+ "ut_b_52_wall_the": {
+  "_expect": { "name": "B-52 Wall, The", "region": "Utah" },
+  "blurb": "A cliff band of about 300 feet in American Fork Canyon, Utah, set on the hillside across the road from the Hell Cave area. All eighteen routes are bolted, mainly single pitch with a few longer multi-pitch lines. Grades start around 5.7 and the weight sits in the 5.10 to 5.12 range, so it suits climbers comfortable on steeper, harder ground more than beginners. The wall faces north, which keeps it cool; the western end catches sun first in the late afternoon. The approach follows the trail up canyon from the Suspect area to the base.",
+  "review": { "sources": ["https://mountainproject.com/area/105836772/the-b-52-wall", "https://www.mountainproject.com/route/117686346/hallowed-ground"] }
+ },
+ "ut_glass_ocean_and_environs": {
+  "_expect": { "name": "Glass Ocean and Environs", "region": "Utah" },
+  "blurb": "A remote wall high on the west side of Big Cottonwood Canyon, Utah, and usually empty. Eighteen routes mix bolted and gear-protected climbing, with most graded 5.10 and a spread of easier 5.7 to 5.9 lines plus a couple of harder ones. Holds vary from thin cracks to knobs, and the wall is smooth and polished in places. It is mostly shaded and the views are among the best in the canyon. The approach is steep and tiring, up slippery talus beyond the Dead Snag area, and most routes are descended by rappel with a 60 m rope.",
+  "review": { "sources": ["https://www.mountainproject.com/area/105739383/glass-ocean-and-environs", "https://rakkup.com/guidebook/big-cottonwood-rock-climbing/glass-ocean-wall/s14132", "https://www.mountainproject.com/route/107604450/get-the-net?print=1"] }
+ },
+ "ut_lizard_head": {
+  "_expect": { "name": "Lizard Head", "region": "Utah" },
+  "blurb": "A group of boulders in Little Cottonwood Canyon, Utah, up the hill from the vault on the north side of the road, about 100 yards up a gully beyond the Lizard Head route area. All eighteen problems are bouldering, spread from the very easy to hard: a good number of V2 to V5 lines, with a few V7 to V10 problems at the top end. The sub-boulders include Drama, KGB, Sundial and a set of warm-up slabs. Described as sunny and south facing.",
+  "review": { "sources": ["https://www.mountainproject.com/area/118655852/lizard-head", "https://www.thetopo.com/crags/little-cottonwood-canyon-utah/topos/lizard-head-boulders"] }
+ },
+ "_skipped": {
+  "ks_tall_wall": "no fetched page about this crag itself: only the parent park page lists Tall wall as a sub-area (other 'Tall Wall' pages found are in Arizona and elsewhere)"
+ },
+ "_conflicts": {
+  "ut_glass_ocean_and_environs": "one page lists mostly sport routes (https://www.mountainproject.com/area/105739383/glass-ocean-and-environs) while the guidebook page for Glass Ocean Wall lists all 13 routes as trad (https://rakkup.com/guidebook/big-cottonwood-rock-climbing/glass-ocean-wall/s14132)",
+  "ri_fatboy_boulder": "area page lists 18 climbs V0-V5/6; the Pond Cave Area page likewise; one search snippet said 12 climbs (no stored value changed)"
+ }
+}

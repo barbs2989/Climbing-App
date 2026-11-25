@@ -1,0 +1,44 @@
+{
+ "ct_cracked_wall": {
+  "_expect": { "name": "Cracked Wall", "region": "Connecticut" },
+  "blurb": "Cracked Wall is one of seven sections at Pinnacle Rock in central Connecticut. It holds eleven routes, mostly trad leads with a few that are climbed on top rope, and the wall is organized around three crack lines. Grades begin around 5.4 and reach 5.10, but most lines fall between 5.6 and 5.9, so it works well for newer trad leaders. The cliffs at Pinnacle generally stand about 50 to 80 feet tall, which keeps everything to short single-pitch outings.",
+  "review": { "sources": ["https://www.mountainproject.com/v/cracked-wall/106050777", "https://www.mountainproject.com/area/105877744/pinnacle-rock"] }
+ },
+ "de_lower_tier": {
+  "_expect": { "name": "Lower Tier", "region": "Delaware" },
+  "blurb": "Lower Tier is a cluster of boulders within Rockford Park, the bouldering park near Wilmington, Delaware, that slopes toward the Brandywine River. It has eleven problems on gneiss, mostly V1 and V2 with a couple of easier and harder ones, topping out near V4. These boulders sit low on the slope close to the water, in shade, so the rock stays humid and damp longer than elsewhere in the park. Reaching the first boulders means dropping down the hillside and over a built retaining wall, and the farthest one sits right beside the river.",
+  "review": { "sources": ["https://www.mountainproject.com/area/120676093/lower-tier", "https://www.mountainproject.com/area/115175215/rockford-park"] }
+ },
+ "ga_firewoman_area": {
+  "_expect": { "name": "Firewoman Area", "region": "Georgia" },
+  "blurb": "Firewoman Area is a small bouldering zone inside Boat Rock in the Atlanta area. It sits directly behind the Kashmir area and just left of Lost Digits, under five minutes on foot from the main parking lot. Eleven problems are spread over the boulders, with the grades centered on V3, a handful around V6, and a few harder lines above that. The front face carries the area's namesake classic, and the back side adds further problems.",
+  "review": { "sources": ["https://www.mountainproject.com/area/112774977/firewoman-area", "https://www.mountainproject.com/area/112774850/paint-canlost-digits-area"] }
+ },
+ "ga_pin_wall": {
+  "_expect": { "name": "Pin Wall", "region": "Georgia" },
+  "blurb": "Pin Wall is a slab wall on the south side of Mount Yonah, in the ravine between Yonah and neighboring Pink Mountain in northeast Georgia. The granite climbing is mostly single pitch, with eleven routes running from easy terrain up to 5.9, nearly all trad leads and one set up for top rope. Routes carry a few bolts but still need gear, and a standard rack covers most of them. Some lines seep after rain, so if the Main Face is wet this wall likely is too. The name comes from old military pins left in cracks.",
+  "review": { "sources": ["https://www.mountainproject.com/area/121504198/pin-wall", "https://www.mountainproject.com/area/105941346/mount-yonah"] }
+ },
+ "ga_slab_area": {
+  "_expect": { "name": "Slab Area", "region": "Georgia" },
+  "blurb": "Slab Area is a steep slab wall downstream of the main wall at Tallulah Gorge in northeast Georgia. All eleven routes are single-pitch trad on good-quality quartzite, graded from 5.10 through 5.12, with five around 5.10 and the rest split between 5.11 and 5.12. Taller lines call for two ropes to rappel. The wall catches sun for most of the day except early morning. The gorge is serious climbing terrain aimed at experienced trad leaders, not beginners or top-roping.",
+  "review": { "sources": ["https://www.mountainproject.com/area/106192759/slab-area", "https://www.mountainproject.com/area/105897996/tallulah-gorge"] }
+ },
+ "ga_campbellton_creek_nature_park_bouldering": {
+  "_expect": { "name": "Campbellton Creek Nature Park - Bouldering", "region": "Georgia" },
+  "blurb": "Campbellton Creek Nature Park Bouldering is a small, beginner-oriented boulder field in South Fulton, in the greater Atlanta area. The Southeastern Climbers Coalition developed it with the land trust that manages the park, and volunteers cleaned the boulders, built landings and added a trail loop. Eleven short problems range from V0 to V3, mostly V0 to V2, so it is a gentle place to learn to boulder rather than a destination for hard climbing.",
+  "review": { "sources": ["https://www.mountainproject.com/area/124145846/campbellton-creek-nature-park-bouldering", "https://www.seclimbers.org/project/campbellton-boulders/"] }
+ },
+ "ga_waterworld": {
+  "_expect": { "name": "Waterworld", "region": "Georgia" },
+  "blurb": "Waterworld is a line of shoreline boulders on a peninsula at Lake Juliette in middle Georgia, between Macon and Forsyth, part of the Juliette Boulders. The rock sits partly underwater for most of the year, so it only becomes climbable when winter or drought drops the lake. Eleven problems range from very easy to V10, mostly V3 to V5 with a few much harder lines. Mostly overhanging shapes with sloper top-outs call for careful pad placement, and sharp rocks and stumps on the lake bottom make landings tricky.",
+  "review": { "sources": ["https://www.mountainproject.com/area/107420914/waterworld", "https://www.mountainproject.com/v/107897160"] }
+ },
+ "_skipped": {
+  "ms_university_of_mississippi": "no outdoor crag page found; searches only turn up the campus indoor climbing wall, so no fetched page about a crag itself"
+ },
+ "_conflicts": {
+  "ct_cracked_wall": "stored rock is shale, but https://www.mountainproject.com/area/105877744/pinnacle-rock describes Pinnacle Rock as basalt (trap rock); no rock written",
+  "ga_waterworld": "stored rock is gneiss, but https://www.mountainproject.com/v/107897160 has the author guessing sandstone or similar; no rock written"
+ }
+}

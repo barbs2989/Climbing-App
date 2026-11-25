@@ -1,0 +1,35 @@
+{
+ "wa_west_wall_2": {
+  "_expect": { "name": "West Wall", "region": "Washington" },
+  "blurb": "West Wall is a compact cliff on the southwest side of Mount Hull above the northern Okanogan Valley near Oroville. It holds roughly eighteen moderate routes, a mix of gear climbs and bolted lines, running from about 5.5 up to 5.10. Most sit in the 5.7 to 5.9 range, so it suits climbers who want steady, sustained pitches rather than hard testpieces. The gneiss is fractured in places but offers pockets, edges and horizontal cracks for hands and protection, and several routes end at chain or ring anchors. A short south-facing section sits at one end of the main face. The wall looks west, giving afternoon and evening sun. Routes run from about fifty to a little over a hundred feet.",
+  "review": { "sources": ["https://wenatcheeoutdoors.org/2020/09/21/mount-hull/", "https://www.mountainproject.com/area/108202815/mount-hull-lower-sw-face-oroville"] }
+ },
+ "wi_06_gill_s_buttress": {
+  "_expect": { "name": "Gill's Buttress", "region": "Wisconsin" },
+  "blurb": "Gill's Buttress is a steep, nearly vertical south-facing wall on the East Rampart of Devil's Lake, between Pedestal and Brinton's Buttresses. It is a traditional-and-toprope venue with a reputation for hard climbing: a few beginner-friendly lines near 5.3 and 5.4 share the wall with a cluster of 5.10 to 5.13 routes, most of them set up for toprope. The quartzite is slick and rewards precise footwork. The cliff is part of the busiest stretch of climbing in the park, so expect company on good weekends. Reaching the base takes a hike up the CCC trail, followed by a short scramble in the gully beside the neighbouring route.",
+  "review": { "sources": ["https://www.mountainproject.com/area/105730092/gills-buttress", "https://www.mountainproject.com/area/105730000/east-bluff-04-east-rampart"] }
+ },
+ "wi_tomahawk_rocks": {
+  "_expect": { "name": "Tomahawk Rocks", "region": "Wisconsin" },
+  "blurb": "Tomahawk Rocks is a quiet little cliff at the north end of Devil's Lake's East Bluff, found at a hikers' overlook along the ridge trail. It is mostly traditional climbing with a few toprope lines, spanning easy fifth-class routes up to about 5.10, though the bulk sit between 5.6 and 5.9, which makes it a decent pick for climbers building up to harder leads. It is the shadiest and least visited of the three crags at this end of the bluff, so it can feel peaceful and stays cooler in summer. Getting there means a hike from the North Shore, passing the Cave and Elephant Rock on the way.",
+  "review": { "sources": ["https://www.mountainproject.com/area/107200404/tomahawk-rocks", "https://www.mountainproject.com/area/105898054/east-bluff-08-north-end"] }
+ },
+ "wi_monolith_blocks": {
+  "_expect": { "name": "Monolith Blocks", "region": "Wisconsin" },
+  "blurb": "Monolith Blocks is a bluff-top cliff line on the north end of Devil's Lake's East Bluff, looking out over talus and the lake. It is better known for short roped climbs than for bouldering, and most of the routes here are traditional with a few on toprope, along with the odd highball boulder. Grades span easy fifth class to the low 5.11s, with many lines in the 5.8 to 5.9 zone. It sits just beyond Elephant Rocks along the East Bluff trail from the North Shore parking, before the busier Monolith Ridge boulders, and sees light traffic.",
+  "review": { "sources": ["https://www.mountainproject.com/area/123337758/monolith-blocks", "https://www.mountainproject.com/area/105898054/east-bluff-08-north-end"] }
+ },
+ "wi_03_big_toe_to_great_chimney": {
+  "_expect": { "name": "Big Toe to Great Chimney", "region": "Wisconsin" },
+  "blurb": "This stretch of the upper wall on Devil's Lake's West Bluff lies between Prospect Point Pinnacle and Great Chimney, just east of the West Bluff Trail. It belongs to the Prospect Point Rampart, known for some of the longest climbing in the park. The lines here are mostly traditional with several on toprope, running from an easy 5.2 start through the middling grades to a handful of 5.11 and 5.12 tests. Some routes are run out, so it suits climbers comfortable placing their own gear. Features include chimneys and a pedestal, and the quartzite on this bluff is hard and slick.",
+  "review": { "sources": ["https://www.mountainproject.com/area/107372171/big-toe-to-great-chimney", "https://www.mountainproject.com/area/105730178/prospect-point-rampart"] }
+ },
+ "_skipped": {
+  "wi_wildcat_mountain": "no fetched page describes climbing at this location (only park pages; the OpenBeta page 404ed)",
+  "wi_white_wall": "only one page about the crag; second page (route breadcrumb) names a different sector ('E of the East') from the input parent",
+  "wi_2_new_sandstone_area": "search results say the area is closed to climbing; fetched parent page claims reopened in 2026, unresolved, and no separate page about the crag itself"
+ },
+ "_conflicts": {
+  "wi_tomahawk_rocks": "stored rock is sandstone but the Devil's Lake overview (https://www.thecrag.com/climbing/united-states/devils-lake-state-park/guide fetch returned 403; https://www.mountainproject.com/area/105729927/devils-lake describes quartzite cliffs) puts the park's cliffs in quartzite; blurb names no rock"
+ }
+}

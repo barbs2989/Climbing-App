@@ -1,0 +1,41 @@
+{
+ "id_castle_rock_east_face": {
+  "_expect": { "name": "Castle Rock - East Face", "region": "Idaho" },
+  "blurb": "The broad east side of Castle Rock, in the Castle Rocks of southern Idaho, holds fifteen routes that mix sport lines, traditional gear climbs and a few that need both bolts and cams. Difficulty runs from about 5.8 to a single 5.12, with most lines sitting around 5.10 and a handful at 5.11. Much of the action is gathered in a notch in the face. The wall falls into shade by afternoon, and it tends to be quieter than the formation's west side, which makes it a decent choice for a climber who wants moderate-to-hard lines without much of a queue.",
+  "review": { "sources": ["https://www.mountainproject.com/area/105817267/castle-rock-east-face", "https://www.mountainproject.com/area/105739867/castle-rocks"] }
+ },
+ "ri_boulder_1_3": {
+  "_expect": { "name": "Boulder 1", "region": "Rhode Island" },
+  "blurb": "A compact boulder in the Railroad Area of Rocky Point, a state park in Warwick, Rhode Island. It is the first block you meet on the way in, easy to pick out by the fallen tree resting on it, and you reach it by crossing the old railway line. Fifteen problems are packed onto it, running from easy warm-ups at V1 up to V6, with the largest share in the middle of that range. Lines on the stone are marked, so finding the problems is simple. Expect graffiti and litter around the park, which was a local hangout for years.",
+  "review": { "sources": ["https://www.mountainproject.com/area/111340866/boulder-1", "https://www.mountainproject.com/area/111340860/railroad-area", "https://www.mountainproject.com/area/111259332/rocky-point"] }
+ },
+ "sc_first_slab": {
+  "_expect": { "name": "First Slab", "region": "South Carolina" },
+  "blurb": "First Slab sits in the Pumpkintown section of Table Rock State Park in the South Carolina Upstate, at roughly 2,400 feet. The main feature is a slab with only a sparse scattering of bolts, so it is mostly a traditional venue: fifteen climbs, nearly all trad with one sport line, running from easy fifth class up to 5.11, with the concentration at 5.10 and 5.11. Pumpkintown as a whole faces southwest and dries faster than the neighbouring Table Rock side. Reaching the clearing below the slab takes a 2.1-mile trail hike followed by a short scramble, and the surroundings still show burn scars from a forest fire.",
+  "review": { "sources": ["https://www.mountainproject.com/area/119909957/first-slab", "https://mountainproject.com/area/119449436/pumpkintown"] }
+ },
+ "ut_chadbourne_crag": {
+  "_expect": { "name": "Chadbourne Crag", "region": "Utah" },
+  "blurb": "Chadbourne Crag is a steep, pocketed sport crag high in Neff's Canyon above Salt Lake City, at around 8,600 feet. Fifteen bolted routes cluster in a set of caves, and the grades start at 5.10 and climb to 5.13, with nine of them at 5.12 and the best lines mostly in that band. It faces west and sits well above the valley, so it works for warm-weather days. Stone quality is uneven: some of it is excellent, while the lower-angled sections are loose, so belayers should wear helmets. The walk up is long and steep, and most parties budget about an hour each way.",
+  "review": { "sources": ["https://www.mountainproject.com/v/chadbourne-crag/106513775", "https://rakkup.com/guidebook/wasatch-backcountry-rock-climbing-guidebook/chadbourne-crag/s20875"] }
+ },
+ "ut_ac_dc_wall": {
+  "_expect": { "name": "AC/DC Wall", "region": "Utah" },
+  "blurb": "AC/DC Wall is a small quartzite crag on the north side of Rock Canyon above Provo, set on the east side of the gully beneath Trilogy Buttress. Its fifteen routes are mostly bolted, with three gear-protected lines, and they range from about 5.8 to 5.11, with the heaviest concentration at 5.10. The cleanest lines follow two dark streaks, with a big roof and several projects higher up. The rock is better than its setting suggests, though helmets are sensible while the loose material finishes coming off. Most routes face southwest, with the Bad Bananas buttress to the west casting afternoon shade later in the summer.",
+  "review": { "sources": ["https://www.mountainproject.com/area/105974993/acdc-wall", "https://mountainproject.com/area/105739292/rock-canyon"] }
+ },
+ "ut_hurt_locker_area": {
+  "_expect": { "name": "Hurt Locker Area", "region": "Utah" },
+  "blurb": "The Hurt Locker is a south-facing sandstone wall in Indian Creek, Utah, so it takes sun all day. Fifteen traditional routes follow the cracks here, most of them over 100 feet tall, with a few shorter lines. Grades run from 5.8 to 5.12, and about two thirds of them sit at 5.10 or 5.11. The right side offers wide cracks and chimneys, while the middle and left carry shorter finger cracks. The footing below is unstable and the cliff sheds rock regularly, so wear a helmet and do not trust small crimps. The walk in is longer than it looks and finishes up a loose gully.",
+  "review": { "sources": ["https://www.mountainproject.com/area/116838635/hurt-locker-area", "https://www.mountainproject.com/area/105716763/indian-creek"] }
+ },
+ "_skipped": {
+  "ks_the_overhang": "no fetched page dedicated to The Overhang at Lake Olathe (only the parent Lake Olathe page and a neighbouring boulder page name it; other 'The Overhang' pages are in Texas, Alberta, BC, Wisconsin)",
+  "ri_best_kept_secret": "only list entries (MP area list, thetopo sector list) name it; no fetched page describes the crag itself"
+ },
+ "_conflicts": {
+  "ri_boulder_1_3": "stored rock conglomerate, but Rocky Point page says sandstone (https://mountainproject.com/area/111259332/rocky-point); blurb names no rock",
+  "ut_chadbourne_crag": "stored rock dolomite, but pages say limestone (https://www.mountainproject.com/v/chadbourne-crag/106513775, https://rakkup.com/guidebook/wasatch-backcountry-rock-climbing-guidebook/chadbourne-crag/s20875); blurb names no rock",
+  "sc_first_slab": "stored rock gneiss, but Pumpkintown page calls the cliff granite (https://carolinaclimbers.org/climbing-areas/pumpkintown-sc.html); blurb names no rock"
+ }
+}

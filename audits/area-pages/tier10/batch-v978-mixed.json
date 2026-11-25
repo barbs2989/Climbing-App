@@ -1,0 +1,89 @@
+{
+ "ar_3_emerald_wall": {
+  "_expect": {
+   "name": "Emerald Wall",
+   "region": "Arkansas"
+  },
+  "blurb": "Emerald Wall is a bolted sport wall within Capitol Crag, in the Crystal Bluff area of the River Valley and Ouachitas region. It holds about a dozen routes, running from the high 5.8s through the 5.10s and into the low 5.11s, with the bulk of them in the 5.10 range. Most lines are tall and broken up by ledges, so expect technical cruxes rather than steady pumpy climbing. The wall mostly faces south, which makes it a sunny option. You reach it on the main trail just beyond the neighbouring Crowbar Wall, so it sits in the middle of the crag rather than at an end.",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/area/201976229/emerald-wall",
+    "https://www.mountainproject.com/area/201991897/capitol-crag"
+   ]
+  }
+ },
+ "ct_diamond_ledge": {
+  "_expect": {
+   "name": "Diamond Ledge Routes",
+   "region": "Connecticut"
+  },
+  "blurb": "Diamond Ledge is a small, mostly shaded cliff in the Western Highlands of Connecticut, reaching roughly 60 feet at its tallest. The routes are split about evenly between traditional leads and top-rope problems, with a lone boulder problem as well. Grades start near 5.7, include a single 5.9, and cluster in the 5.10 and 5.11 range, with one 5.12 top-rope. That makes it better suited to climbers who already lead moderate trad or enjoy setting up top ropes than to complete beginners. A scatter of boulders sits a short walk uphill from the base, though their quality is uneven and some of the rock is loose.",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/area/106714272/diamond-ledge",
+    "https://www.mountainproject.com/area/118097125/diamond-cluster",
+    "https://www.mountainproject.com/area/106076684/western-highlands"
+   ]
+  }
+ },
+ "ct_roadside_boulder_in_the_cut": {
+  "_expect": {
+   "name": "Roadside Boulder In The Cut",
+   "region": "Connecticut"
+  },
+  "blurb": "Roadside Boulder In The Cut is a small cluster of boulders and short cliff bands inside the Westwoods bouldering zone, a wooded stretch of coastal lowland in the Branford and Guilford area. It holds around a dozen problems that cover a wide range, from V0 up to V8, with a handful of solid mid-range lines in between. The main boulder is the draw: overhanging, athletic climbing on rock described as good for the area. This is a quick stop rather than a full day.",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/area/114203187/roadside-boulder-in-the-cut",
+    "https://www.mountainproject.com/area/106360495/westwoods-cockaponset-state-forest"
+   ]
+  }
+ },
+ "ct_tibbs_area": {
+  "_expect": {
+   "name": "Tibbs Area",
+   "region": "Connecticut"
+  },
+  "blurb": "Tibbs Area is a bouldering spot in God's Country, along the west-facing cliffs of West Rock in the New Haven area of Connecticut. The problems sit along a broken cliff band high on the ridge, which gives the place a secluded feel. There are about a dozen of them, mostly easy to moderate, with several V0 and V1 lines and a few harder problems topping out around V6. It sees shade in the morning and sun later in the day. The hillside holds more rock than the listed problems cover, so it rewards some exploring.",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/area/111521614/tibbs-area",
+    "https://www.mountainproject.com/area/111521462/gods-country"
+   ]
+  }
+ },
+ "ct_red_trail_boulder": {
+  "_expect": {
+   "name": "Red Trail Boulder",
+   "region": "Connecticut"
+  },
+  "blurb": "Red Trail Boulder is a group of about a dozen problems at Case Mountain, a wooded area in Connecticut that is also popular with mountain bikers. The grades lean easy: most lines fall in the V0 to V2 range, which suits newer boulderers and warm-ups, with just a couple of tougher problems at V4 and V5. Case Mountain overall still has room for new development, and many of its better boulders are tucked away and take some bushwhacking to find, so expect a bit of exploring rather than a polished circuit.",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/area/117393649/red-trail-boulder",
+    "https://www.mountainproject.com/area/113253610/case-mountain"
+   ]
+  }
+ },
+ "ct_lower_tier": {
+  "_expect": {
+   "name": "Lower Tier",
+   "region": "Connecticut"
+  },
+  "blurb": "Lower Tier is the second of the two short cliffs at Wolf Rock in the Eastern Highlands of Connecticut, with walls around 30 to 40 feet high. It carries thirteen trad lines that range from very easy up to 5.9, so it suits beginner leaders as well as those wanting a step up from the sunnier Upper Tier above. The cliff stays shaded and is a little dirtier after rain because of runoff. Climbing is on good-quality rock with slabs and cracks, and top ropes can be rigged from trees on top using long webbing.",
+  "approach": "From the middle of the Upper Tier, follow the trail down to the Lower Tier.",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/area/106586862/lower-tier",
+    "https://www.mountainproject.com/area/106586849/wolf-rock"
+   ]
+  }
+ },
+ "_skipped": {
+  "ar_mma_wall": "no fetched page about the crag itself; only a route page (Tap Out) places it under Area 51, Bigfoot Hollow",
+  "ar_broken_boulders": "no fetched page about the crag; only a guidebook table-of-contents mention found, no area page"
+ },
+ "_conflicts": {
+  "ct_diamond_ledge": "Stored rock is schist, but https://www.mountainproject.com/area/106714272/diamond-ledge describes the rock as a blend of gneiss and quartz. The stored value was left alone."
+ }
+}

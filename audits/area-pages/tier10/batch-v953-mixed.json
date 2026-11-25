@@ -1,0 +1,44 @@
+{
+ "ut_booty_wall_area": {
+  "_expect": {"name": "Booty Wall Area", "region": "Utah"},
+  "blurb": "Booty Wall sits in the tight, steep middle stretch of Tanners Gulch, a side drainage off Little Cottonwood Canyon in the Central Wasatch. Roughly fifteen lines, two-thirds trad and the rest bolted, run from easy 5.8 up to a single 5.13, with the bulk landing between 5.9 and 5.12. Avalanche scouring has left the stone cleaner than most of the gulch. The wall faces east, so it is the last part of the gulch to get morning sun, and the whole gulch drops into shade by mid-afternoon. The footing above is loose talus, so expect a scrappy scramble in.",
+  "review": {"sources": ["https://www.mountainproject.com/area/106276425/booty-wall-area", "https://www.mountainproject.com/area/105983812/tanners-gulch"]}
+ },
+ "ut_flannigan_boulder": {
+  "_expect": {"name": "Flannigan Boulder", "region": "Utah"},
+  "blurb": "Flannigan Boulder is the biggest block on the west side of the road in Cedar Canyon, in the Cedar Slide bouldering zone outside Cedar City. About fifteen problems are developed, with a few more still open as projects. The range is unusually wide, from V0 warm-ups through the middle grades and on to V8 and V10 testpieces, and a roofed cave on the south side holds some of the harder lines. It sits close to the access road and is easy to spot, so there is little hiking involved, and the faces give you a choice of starting points.",
+  "review": {"sources": ["https://www.mountainproject.com/area/106587417/flannigan-boulder", "https://www.mountainproject.com/area/105974172/cedar-canyon"]}
+ },
+ "ut_cretaceous_crag": {
+  "_expect": {"name": "Cretaceous Crag", "region": "Utah"},
+  "blurb": "Cretaceous Crag is the first cliff on the left as you walk up Dry Canyon above Orem, on the western flank of Timpanogos. It is mostly bolted sport climbing, with a handful of top-rope setups, in the 5.9 to 5.10 range plus a few easier lines down to 5.4. The rock is loose in places, so it suits climbers who do not mind some choss and want something quiet. The face looks east with no trees to shade it, so it gets sun from first light and is pleasant on late-fall mornings.",
+  "review": {"sources": ["https://www.mountainproject.com/area/113327898/cretaceous-crag", "https://www.mountainproject.com/area/106332246/dry-canyon"]}
+ },
+ "ut_house_boulder": {
+  "_expect": {"name": "House Boulder", "region": "Utah"},
+  "blurb": "House Boulder is a large, nearly square block beside the road in American Fork Canyon, in the Southern Wasatch. It holds around fifteen problems, a lot of them slabby and crimpy, spread from V1 up to a V8 or V9. Grades cluster at V2 and at V5, so there is a fair amount for intermediate climbers and a couple of hard lines to aim for. The boulder is very shady, which helps on warm days, and it is easy to find from the road. The pullout beside it is small, so busy summer weekends can be tight.",
+  "review": {"sources": ["https://www.mountainproject.com/area/106505303", "https://mountainproject.com/area/105739274/american-fork-canyon"]}
+ },
+ "ut_not_notch_canyon": {
+  "_expect": {"name": "Not-Notch Canyon", "region": "Utah"},
+  "blurb": "Not-Notch Canyon is a remote, high-elevation desert canyon west of the Abajo Mountains, a drive out from Blanding in southeast Utah. The climbing is on sandstone towers, mostly trad, with about fifteen routes from 5.7 to 5.10 and a couple of aid lines. The stone ranges from decent to poor, and sand is common, so expect to inspect and replace old anchor webbing. Few routes carry star ratings, and the place sees very little traffic, which suits climbers who like exploring. A high-clearance vehicle and a long walk up the drainage are part of the trip.",
+  "review": {"sources": ["https://www.mountainproject.com/area/125424735/not-notch-canyon", "https://www.mountainproject.com/area/106183429/blanding"]}
+ },
+ "ut_industrial_wall": {
+  "_expect": {"name": "Industrial Wall", "region": "Utah"},
+  "blurb": "Industrial Wall is the west-facing side of Coalpit Gulch in Little Cottonwood Canyon, opposite the steeper Waterfall Wall. It is mostly bolted sport climbing on slabby rock, with rappel descents and about fifteen routes from easy 5.6 slabs up to 5.12, most in the 5.9 to 5.11 band. One short ice line also forms here. Being a west wall, it stays in shade in the morning and takes sun in the afternoon, which makes it a decent hot-day pick. The approach is a short but awkward scramble up the gulch past the first waterfall, and high runoff makes it unpleasant.",
+  "review": {"sources": ["https://www.mountainproject.com/area/105739524/industrial-wall", "https://www.mountainproject.com/area/112168733/coalpit-gulch"]}
+ },
+ "ut_main": {
+  "_expect": {"name": "Main", "region": "Utah"},
+  "blurb": "Main is the biggest cluster of boulders in The Meadows, the most popular zone at Bunker Creek near Brian Head, at roughly 9,000 feet. It holds fifteen problems covering nearly the full ladder, from V0 slabs through the middle grades to a few V10s and one V11. Classic mid-range lines sit alongside the hard ones, so a mixed group can find something. The short, flat walk in and the density of problems explain its popularity. The altitude keeps it cool, so late spring and early fall are the comfortable seasons.",
+  "review": {"sources": ["https://www.mountainproject.com/area/115178330/main", "https://mountainproject.com/area/115178229/the-meadows"]}
+ },
+ "_skipped": {
+  "ut_serpentine_sector": "no page found naming Serpentine Sector; the only Pandemic Wall found is in the San Rafael Swell (39.15, -110.72), not near these coordinates (37.31, -113.12); two searches"
+ },
+ "_conflicts": {
+  "ut_house_boulder": "stored rock is quartzite but https://www.mountainproject.com/area/106505303 captions the slab as limestone; left unchanged",
+  "ut_industrial_wall": "stored rock quartz monzonite but https://www.mountainproject.com/area/105739524/industrial-wall calls it granite; left unchanged"
+ }
+}

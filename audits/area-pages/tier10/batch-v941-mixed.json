@@ -1,0 +1,36 @@
+{
+ "ut_main_hellgate": {
+  "_expect": { "name": "Main Hellgate", "region": "Utah" },
+  "blurb": "Main Hellgate is a group of steep, fractured cliffs on the north side of Little Cottonwood Canyon, facing Snowbird at around 8,500 feet. Expect alpine-style, multi-pitch days rather than quick laps: routes need route-finding, a small rack even on bolted lines, and often two ropes to get down. The sixteen listed climbs are mostly trad with some sport, running from 5.8 to 5.11, with the bulk at 5.10, plus a single WI5 ice line. Many lines face south, yet the wall can feel cold and windy. Loose rock and rockfall are real here, so wear a helmet and belay out of the fall line.",
+  "review": { "sources": ["https://www.mountainproject.com/area/106024847/main-hellgate", "https://www.mountainproject.com/area/105739780/hellgate-cliffs"] }
+ },
+ "ut_raiden_area": {
+  "_expect": { "name": "Raiden Area", "region": "Utah" },
+  "blurb": "Raiden Area is a sandstone bouldering zone on the Left Fork of Joe's Valley, in central Utah. It holds sixteen problems, all hard: roughly V4 through V9, with most in the V5 to V8 range, so it suits strong boulderers rather than beginners. Some boulders sit right beside the road, while a few of the better-known ones need a short walk of a couple hundred feet toward the canyon mouth from a well-worn start. The stone is porous and loses strength when damp, so give it a couple of days to dry after any precipitation.",
+  "review": { "sources": ["https://www.mountainproject.com/area/108172495/raiden-area", "https://thetopo.com/crags/left-fork/routelist/left-fork-general"] }
+ },
+ "ut_mezzanines_the": {
+  "_expect": { "name": "The Mezzanines", "region": "Utah" },
+  "blurb": "The Mezzanines are big, broken quartzite cliffs on the west side of Lewis Peak, above northern Ogden and between Ogden Canyon and Jumpoff Canyon. They are a trad-only venue with no fixed anchors, and some of the climbs are among the longest in the Wasatch. Expect ledges, loose and broken rock, and an adventurous feel. Most of the trad lines fall between 5.6 and 5.10, with one 5.5, one 5.11 and a lone ice line. The cliffs face west to southwest and soak up the sun. Walk off by the north gully, which is quicker and easier than the southern canyon descent.",
+  "review": { "sources": ["https://www.mountainproject.com/v/the-mezzanines/111959961", "https://www.visitogden.com/blog/an-introductory-guide-to-rock-climbing-in-ogden/"] }
+ },
+ "ut_flat_top_boulder": {
+  "_expect": { "name": "Flat Top Boulder", "region": "Utah" },
+  "blurb": "Flat Top Boulder is a broad, flat-topped block within the Big Bend bouldering zone on River Road, near Moab, tucked just behind its neighbour Chaos Boulder and close to the road. Its sixteen problems cover a wide spread: a handful of easy to moderate lines in the V0 to V4 range, a cluster in the V6 range, and a couple of very hard outliers up to V10. The flat summit gives an easy walk-off. Sandstone here is fragile when wet, so skip it during and after rain.",
+  "review": { "sources": ["https://www.mountainproject.com/area/106150077/flat-top-boulder", "https://www.mountainproject.com/area/105716862/big-bend-bouldering-area"] }
+ },
+ "ut_commitment_buttress": {
+  "_expect": { "name": "Commitment Buttress", "region": "Utah" },
+  "blurb": "Commitment Buttress is a slabby piece of rock in Little Cottonwood Canyon, just east of Coalpit Buttress, broken into several walls including a lower wall, a large main wall and a roofed eastern wall. Sixteen climbs mix trad and sport, mostly easy to moderate: mainly 5.8 and 5.9, with a few 5.6 and 5.7 lines and two 5.10s. That makes it friendlier than much of the canyon for newer leaders. The walk starts on a trail that crosses a bridge, and reaching the upper walls involves bushwhacking and loose talus.",
+  "review": { "sources": ["https://www.mountainproject.com/area/106049892/commitment-buttress", "https://www.mountainproject.com/area/203744191/commitment-east"] }
+ },
+ "_skipped": {
+  "ut_lower_mill_creek": "no fetched page about the crag itself; only the Mill Creek parent page naming it and a route page whose coordinates sit about 5 km from the input",
+  "ut_turtle_boulder": "the only Turtle Boulder page found is on Long Island, New York, not Moe's Valley, Utah; no page found for a Utah Turtle Boulder",
+  "ut_upper_muddy_creek": "no fetched page about the crag itself; parent page lists it with no description and only route pages mention it"
+ },
+ "_conflicts": {
+  "ut_main_hellgate": "stored rock is dolomite; fetched pages (https://www.mountainproject.com/area/106024847/main-hellgate, https://www.mountainproject.com/area/105739780/hellgate-cliffs) call it limestone",
+  "ut_commitment_buttress": "stored parking is a roadside pullout 2.4 mi up the canyon; https://www.mountainproject.com/area/106049892/commitment-buttress gives the Pentapitch parking"
+ }
+}

@@ -1,0 +1,43 @@
+{
+ "ut_quarantine_cliff": {
+  "_expect": { "name": "Quarantine Cliff", "region": "Utah" },
+  "blurb": "Quarantine Cliff is a small, recently developed crag in Big Cottonwood Canyon, east of Salt Lake City, sitting on the hillside above the Birches picnic area. Thirteen routes, nearly all bolted sport lines plus two trad leads, run from easy fifth-class up to 5.9, which makes it a good fit for newer leaders and for quick after-work laps. The rock quality is good, the lines are well protected, and the cliff points north, so it stays shaded through much of the hottest part of the day. The walk up is short but fairly steep.",
+  "review": { "sources": ["https://www.mountainproject.com/area/124703954/quarantine-cliff", "https://www.wasatchmountainclub.org/view-trip-report/2024/September/29/rock-climb-quarantine-cliff-in-bcc"] }
+ },
+ "ut_slug_wall": {
+  "_expect": { "name": "Slug Wall", "region": "Utah" },
+  "blurb": "Slug Wall is an out-of-the-way trad wall far back in Indian Creek, tucked between Cat Wall and Reservoir Wall. It holds about thirteen routes, mostly 5.10 and 5.11 with a couple at 5.12 and one 5.9. Quality is uneven and the lines are less celebrated than those on the Creek's headline walls, but the wall sees very few visitors, so you will likely have it to yourself. Most of the routes cluster toward the right end. Getting there means following the wash up-canyon, roughly 30 to 45 minutes from the farthest Cat Wall trailhead.",
+  "review": { "sources": ["https://www.mountainproject.com/area/107074434/slug-wall", "https://www.mountainproject.com/area/105716763/indian-creek"] }
+ },
+ "ut_ramp_routes": {
+  "_expect": { "name": "Ramp Routes", "region": "Utah" },
+  "blurb": "Ramp Routes is the first wall you reach on the northern end of the Schoolroom, a tiered quartzite cliff band above Ogden in the northern Wasatch. It has thirteen routes, a mix of bolted and trad, running from beginner-level 5.5 to a single 5.11, with most clustered around 5.9 and 5.10. That spread makes it a handy warm-up or learning wall. The walls here face west, so expect shade in the morning and sun later in the day. The hike in is steep, about 20 to 35 minutes from the east end of 22nd Street.",
+  "review": { "sources": ["https://www.mountainproject.com/area/105804413/ramp-routes", "https://www.mountainproject.com/area/105804409/the-schoolroom"] }
+ },
+ "ut_the_rectory": {
+  "_expect": { "name": "The Rectory", "region": "Utah" },
+  "blurb": "The Rectory is a narrow sandstone mesa in Castle Valley near Moab, standing between Castleton Tower and the Priest. All thirteen routes here are trad, many of them sustained multi-pitch climbs of four or five pitches. Grades start at 5.9 and are centred on 5.11, with a few climbs at 5.10 and one each at 5.12 and 5.13, so this is a place for confident, experienced crack and face leaders. Several of the free routes are among the most popular in Castle Valley. Desert sandstone is fragile when wet, so wait out rain.",
+  "review": { "sources": ["https://mountainproject.com/area/105716925/the-rectory", "https://en.wikipedia.org/wiki/The_Rectory_(Utah)"] }
+ },
+ "ut_block_top_boulder": {
+  "_expect": { "name": "Block Top Boulder", "region": "Utah" },
+  "blurb": "Block Top Boulder is a chunky block with a west-facing overhang, one sub-area of the Big Bend bouldering zone beside the Colorado River near Moab. It has thirteen problems from V0 up to V9, with the bulk in the V2 to V6 range and a pair of very hard lines at the top end. Big Bend's sandstone is generally kind to skin, landings are good, and one pad is usually enough. Easy problems here can feel stiff for their grade. The best months are October through March, and the walk from the overflow lot is short.",
+  "review": { "sources": ["https://www.mountainproject.com/area/106347513/block-top-boulder", "https://www.mountainproject.com/area/105716862/big-bend-bouldering-area"] }
+ },
+ "ut_efs_wall": {
+  "_expect": { "name": "EFS Wall", "region": "Utah" },
+  "blurb": "EFS Wall is a sport wall in Box Canyon, a side branch of Maple Canyon in central Utah. It has thirteen bolted routes between 5.7 and 5.13, though the weight sits in the 5.10 to 5.12 range, so strong intermediates and above will find the most to do. Box Canyon is known as a good place to escape summer sun, and this wall is one of its few spots with a handful of moderate lines. The wall is on the right as you head up the canyon.",
+  "review": { "sources": ["https://www.mountainproject.com/area/105836351/efs-wall", "https://rakkup.com/guidebook/maple-canyon-rock-climbing/the-efs-wall/s10967"] }
+ },
+ "ut_flintstones": {
+  "_expect": { "name": "Flintstones", "region": "Utah" },
+  "blurb": "Flintstones is a group of boulders in the middle of the Cart Bridge Boulders near Flaming Gorge in northeast Utah, reached from the Cart Creek Bridge area off Route 191. Thirteen problems range from very easy slabs to V6, with a few gentle ones for beginners, a scatter of V1 and V2, and a solid run of V3 to V6 for climbers wanting a challenge. From the parking area, drop down the hill and follow the cairns north. The Bat Cave boulders are within easy walking distance, so a session can combine both zones.",
+  "review": { "sources": ["https://www.mountainproject.com/area/113020294/flintstones", "https://www.utah.com/articles/post/bouldering-is-catching-fire-in-flaming-gorge/"] }
+ },
+ "_skipped": {
+  "ut_graffiti_wars": "no fetched page about this area found after four searches (name, Parley's Canyon, Parleys Crossing, mountainproject)"
+ },
+ "_conflicts": {
+  "ut_slug_wall": "Stored aspect E, but the area page (https://www.mountainproject.com/area/107074434/slug-wall) says the wall it leads up to faces west, with morning sun on the right side. Aspect left unchanged; not used in blurb."
+ }
+}

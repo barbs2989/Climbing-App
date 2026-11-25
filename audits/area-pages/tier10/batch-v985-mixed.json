@@ -1,0 +1,38 @@
+{
+ "ut_terrible_twos_wall": {
+  "_expect": { "name": "Terrible Twos Wall", "region": "Utah" },
+  "blurb": "A short crack-climbing wall in Grand Wash, a gorge within Capitol Reef National Park in south-central Utah. It is among the park's easier crags to reach, sitting on the left as the wash road enters the canyon. Nearly everything here is traditional protection climbing on cracks and dihedrals, plus a single top-rope line. The 13 routes cluster in the 5.10 range, with a couple of easier leads in the 5.8 to 5.9 zone and a handful of harder lines reaching into the 5.11s and one 5.12. Bring a standard trad rack. It makes a handy quick stop for climbers working through the wash.",
+  "review": { "sources": ["https://www.mountainproject.com/area/105717027/terrible-twos-wall", "https://mountainproject.com/area/105717078/grand-wash"] }
+ },
+ "vt_82_steep_wall": {
+  "_expect": { "name": "82 Steep Wall", "region": "Vermont" },
+  "blurb": "The steep, overhanging section of the 82 Crag above Bolton in northern Vermont, and a hub for hard sport climbing in the state. Of its 13 routes, 12 are bolted sport lines and one is trad. Difficulty sits mostly around 5.12, with one route in the 5.10s, one 5.11, and a few climbs reaching into the 5.13 and 5.14 range, so it suits strong climbers and is not a place for beginners. Local climbers often leave fixed draws hanging on projects. A quickdraw rack is needed, and the wall gets a cooling breeze through summer.",
+  "review": { "sources": ["https://mountainproject.com/area/110535801/82-steep-wall", "https://www.mountainproject.com/area/106734682/82-crag"] }
+ },
+ "vt_82_main_wall": {
+  "_expect": { "name": "82 Main Wall", "region": "Vermont" },
+  "blurb": "The lower, longer wall of the 82 Crag above Bolton in northern Vermont, known for some of the better long lines in the Bolton area. It holds 13 routes, mostly trad with five sport lines, and top-roping is also possible on some. Grades run from about 5.7 up to 5.12, with the bulk between 5.9 and 5.10, making it a good fit for climbers who lead moderate grades and carry a rack. The crag sits on a steady uphill walk from the quarry and catches a breeze in warm weather.",
+  "approach": "Walk uphill from the quarry on marked trails and old logging roads to the base of the cliff, roughly 25 minutes for a fit hiker.",
+  "approach_min": 25,
+  "review": { "sources": ["https://www.mountainproject.com/area/110535791/82-main-wall", "https://www.mountainproject.com/area/106734682/82-crag"] }
+ },
+ "vt_brewski_boulder_the": {
+  "_expect": { "name": "Brewski Boulder, The", "region": "Vermont" },
+  "blurb": "A large boulder tucked into the trees close to the main lot and visitor center at Smugglers' Notch, on the Mount Mansfield side of the road in northern Vermont. It carries 13 problems with a wide spread: a couple of easy V1s, a few mid-grade V3 to V6 problems, and several seriously hard ones from V8 through V11. The short walk makes it an easy stop, and it sits among a dense cluster of boulders and caves nearby. A good pick for strong boulderers who want a few hard problems close to the car.",
+  "review": { "sources": ["https://www.mountainproject.com/area/109500231/the-brewski-boulder", "https://www.mountainproject.com/v/106558952"] }
+ },
+ "vt_biscuit_and_gravy_boulders": {
+  "_expect": { "name": "Biscuit and Gravy Boulders", "region": "Vermont" },
+  "blurb": "Two tall vertical boulders, roughly 15 to 20 feet high, that form a small alcove just above the main lot at Smugglers' Notch in northern Vermont. One face looks toward the road and the other faces south. The 13 problems start at V0 and are heavily weighted toward V1 to V3, with a scattering of harder ones and a few that reach into the V8 to V11 range. Some lines are tall enough to feel like highballs. A convenient quick stop for a mixed-ability group visiting the Notch's boulders.",
+  "review": { "sources": ["https://www.mountainproject.com/area/109500587/biscuit-and-gravy-boulders", "https://www.mountainproject.com/v/106558952"] }
+ },
+ "vt_grandma_s_hump": {
+  "_expect": { "name": "Grandma's Hump", "region": "Vermont" },
+  "blurb": "A big boulder, about 18 feet at its tallest, on Right Ridge in the Killington area of central Vermont. It offers a bit of everything: traverses, highballs, overhanging faces and slabs, and the boulder is low on its north side but tall on the south. Its 13 problems are mostly easy to moderate, running from V0 through V2 with a lone V3 and one V5, so it works well for newer boulderers as well as those seeking a few taller lines. It sits in a small cluster of boulders along the ridge.",
+  "review": { "sources": ["https://www.mountainproject.com/area/107229417/grandmas-hump", "https://www.mountainproject.com/area/107229405/right-ridge"] }
+ },
+ "_skipped": {
+  "ut_the_roadside_crag": "No fetched page places a Roadside Crag in Utah's Eastern Formations at lat 41.52 lng -113.66; the only Utah Roadside Crag found is in Echo Canyon (41.00, -111.38), a different location",
+  "vt_island_boulder": "Only fetched Island Boulder pages are in Massachusetts and Colorado; no fetched page about a Vermont Island Boulder in Beaver Brook (and Beaver Brook page fetched was New York)"
+ }
+}
