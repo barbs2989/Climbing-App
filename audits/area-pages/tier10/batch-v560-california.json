@@ -1,0 +1,89 @@
+{
+ "ca_chanchelulla": {
+  "_expect": {
+   "name": "Chanchelulla",
+   "region": "California"
+  },
+  "blurb": "A small, secluded limestone crag in Northwest California with eleven routes, nearly all of them bolted sport lines plus a single top-rope. The walls run roughly 40 to 105 feet and feel taller and steeper than they look from below. Grades start at 5.10 and climb through the 5.12s to one 5.13, so this is a stronger climber's crag rather than a place to learn. Lines are packed tightly in spots, tracking the cliff's own features. The cliff picks up afternoon shade, has very little poison oak, and the top opens onto a clear view of Mount Shasta.",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/area/200345548/chanchelulla",
+    "https://www.mountainproject.com/area/105846963/northwest-california"
+   ]
+  }
+ },
+ "ca_tenaja_falls": {
+  "_expect": {
+   "name": "Tenaja Falls",
+   "region": "California"
+  },
+  "blurb": "A small, low-key bouldering spot beside a seasonal waterfall in the Santa Ana Mountains. The granite is worn smooth by moving water, which gives mostly low problems and a few slick harder ones rather than a destination circuit. Eleven climbs in all: mainly boulder problems from VB to about V2, with a handful of top-rope and trad lines around 5.10 to 5.11 and one far easier line. Reaching it means a moderate hike up the trail through chaparral and oak woodland to the falls, and the rock near the water can be slippery.",
+  "review": {
+   "sources": [
+    "https://mountainproject.com/area/112541406/tenaja-falls-boulders",
+    "https://app.advcollective.com/california/Hiking/natural-beauty-at-tenaja-falls-trail-head"
+   ]
+  }
+ },
+ "ca_borson_s_wall": {
+  "_expect": {
+   "name": "Borson's Wall",
+   "region": "California"
+  },
+  "blurb": "A small boulder wall beside the paved road up Mount Rubidoux in Riverside, one of the sub-areas of Borson's Area. It holds eleven problems, running from very easy beginner moves up through V4, with a couple of harder lines mixed in. The wall faces east and offers only a little shade. Problems in this part of the hill are mostly not tall and land on flat, solid ground, which makes it a friendly place for moderate climbers and a quick session close to the car.",
+  "approach": "Walk up the paved access road toward the summit, cross the small bridge near the top, then descend to the lower path and take it east. The wall stands beside the path on your left.",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/area/105928855/borsons-wall",
+    "https://www.mountainproject.com/area/107013331/borsons-area"
+   ]
+  }
+ },
+ "ca_chlorissa": {
+  "_expect": {
+   "name": "Chlorissa",
+   "region": "California"
+  },
+  "blurb": "A slab boulder about 15 feet tall on Bishop Peak above San Luis Obispo, and one of the most visited blocks in town. Eleven problems, all bouldering, from V0 up to V6: several easy lines, a middle group around V3 to V5, and a few harder ones. The rock is consistent and the style rewards balance and footwork over power, with an easy walk-off from the top. The slab turns slick when wet. Bring two pads for the sloping landings; it is often busy with families and dogs, with a relaxed, social feel.",
+  "approach": "Follow the main Bishop Peak trail until two large boulders come into view above you; Chlorissa is the one on the right.",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/area/105737133/chlorissa",
+    "https://app.advcollective.com/climbing/chlorissa-boulder-san-luis-obispos-beloved-boulder-experience"
+   ]
+  }
+ },
+ "ca_main_formation_2": {
+  "_expect": {
+   "name": "Main Formation",
+   "region": "California"
+  },
+  "blurb": "A rock of roughly 25 feet in Remillard Park, in the Berkeley hills, used mainly for top-roping and short bouldering. Of the eleven climbs, six are top-rope lines and five are boulder problems. The face has pockets, a crack toward the left and a ramp on the right; top-ropes run from the 5.8 range to 5.11, while the boulder problems are mostly easy with a few much harder. Anchors sit well behind a sharp top edge, so carry long slings, about 25 feet. Damp air can leave moss on holds.",
+  "review": {
+   "sources": [
+    "https://mountainproject.com/area/105734123/main-formation",
+    "https://mountainproject.com/area/105733899/remillard-park"
+   ]
+  }
+ },
+ "ca_nature_nazi_boulders": {
+  "_expect": {
+   "name": "Nature Nazi Boulders",
+   "region": "California"
+  },
+  "blurb": "A roadside cluster of boulders on the Indian Rock side of Sanborn County Park near Saratoga, a short walk from the car. All eleven problems are bouldering: a few easy ones at V0 to V2, a solid group around V3, and a couple of harder lines up to about V6. The rock is good quality, and the problems lean on aretes, mantles, laybacks and a slab face, so it suits a quick session of varied moves. The site is close to the larger Castle Rock bouldering, which makes it easy to combine.",
+  "review": {
+   "sources": [
+    "https://rakkup.com/guidebook/castle-rock-bouldering/nature-nazi-boulders/s11336",
+    "https://thetopo.com/crags/castle-rock-santa-cruz-ca/routelist/nature-nazi-s"
+   ]
+  }
+ },
+ "_skipped": {
+  "ca_b_tourist_attraction": "no fetched page is about the crag itself (only the parent Outer Limits page and a generic Outer Limits guide that does not name it)",
+  "ca_brown_wall_the": "only one page fetched (Mountain Project); SummitPost returned 403 and the other candidate page did not mention the wall"
+ },
+ "_conflicts": {
+  "ca_borson_s_wall": "Stored parking is the Ryan Bonaminio Park lot; https://www.mountainproject.com/area/105928855/borsons-wall says to park at the San Andreas / Glenwood parking area"
+ }
+}

@@ -9,7 +9,7 @@ import { ATYPE, areaWhere } from "../../lib/areaBrowserShared.js";
 import type { CSSProperties, RefObject } from "react";
 import { hlMatch } from "../../ClimbMatchCore.jsx";
 import RouteRow from "./RouteRow.tsx";
-import ViewAreaPill from "./ViewAreaPill.tsx";
+import AreaRowArrow from "./AreaRowArrow.tsx";
 import type { RouteRowRoute } from "./RouteRow.tsx";
 import type { C as Palette } from "../../ClimbMatchCore.jsx";
 
@@ -96,7 +96,7 @@ export default function DbSearchSplit({ scope, onJumpToArea, onOpenRoute, C, onM
                     <div style={{ fontSize: 13.5, color: C.text, lineHeight: 1.3, overflowWrap: "anywhere" }}>{hlMatch(a.name, qq)}</div>
                     <div style={{ fontSize: 11, color: C.textMuted, overflowWrap: "anywhere" }}>{(ATYPE[a.area_type] || a.area_type) + (a.parent_name ? " · " + a.parent_name : "") + (a.route_count > 0 ? " · " + a.route_count.toLocaleString() + " climb" + (a.route_count !== 1 ? "s" : "") : "")}</div>
                   </div>
-                  <ViewAreaPill C={C} />
+                  <AreaRowArrow C={C} />
                 </div>
               ))}
               {areaSearchTotal(areaHits) > areaHits.length ? <div style={{ fontSize: 11.5, color: C.textMuted, padding: "10px 4px", textAlign: "center" }}>{"Closest " + areaHits.length + " of " + areaSearchTotal(areaHits).toLocaleString() + " — keep typing to narrow."}</div> : null}

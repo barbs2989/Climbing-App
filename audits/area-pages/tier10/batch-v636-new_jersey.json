@@ -1,0 +1,37 @@
+{
+ "nj_r_benes": {
+  "_expect": {"name": "Benes", "region": "New Jersey"},
+  "blurb": "Benes is a small top-rope cliff in the Cranberry Hollow cluster of northwest New Jersey. It has 19 top-rope lines, roughly 30 to 45 feet tall, on near-vertical, featured rock. Grades begin around 5.5 and 5.6, bunch up at 5.8 and 5.9, and reach a single 5.11, which makes it a decent place for newer climbers to log mileage on a rope. The wall faces southwest and mature trees shade much of it, so cool afternoons suit it best. Expect brush, slick holds, some loose rock and a damp, buggy base. Top anchors are set by scrambling up the slippery left side.",
+  "review": {"sources": ["https://www.mountainproject.com/area/115157890/benes", "https://mountainproject.com/route/115157913/left-gully"]}
+ },
+ "nj_parsippany_rock_house": {
+  "_expect": {"name": "Parsippany Rock House", "region": "New Jersey"},
+  "blurb": "Parsippany Rock House is a compact boulder spot in the Parsippany area of Morris County, tucked at the end of Dale Road. Enormous glacial boulders lean together to form a natural shelter that locals have known for generations. There are 19 bouldering problems here, most of them easy to moderate: V0 through V3 make up the bulk, with V1 the most common grade, and just one problem each at V4 and V5. The approach is practically nonexistent, so it works as a short stop for a quick session rather than a full day out, and it pairs naturally with other North Central New Jersey bouldering.",
+  "review": {"sources": ["https://mountainproject.com/area/109239330/parsippany-rock-house", "https://www.njskylands.com/tn_parsippany_091"]}
+ },
+ "nj_garrett_mountain": {
+  "_expect": {"name": "Garrett Mountain", "region": "New Jersey"},
+  "blurb": "Garrett Mountain is a bouldering zone on the crest of the First Watchung Mountain, within the Paterson and Woodland Park reservation in Passaic County. The problems sit just under a 50-foot tower on the ridgeline above Paterson, among arêtes, flakes and a splitter crack on the northwest corner. There are 17 problems, mostly V1 to V5, with a V0 warm-up at the easy end and one V8 at the top. The boulders are in the woods and partly hidden from view down the slope, so expect a quiet, low-key session close to the city.",
+  "review": {"sources": ["https://mountainproject.com/area/107763763/garrett-mountain", "https://en.wikipedia.org/wiki/Garret_Mountain_Reservation"]}
+ },
+ "nj_southfield": {
+  "_expect": {"name": "Southfield", "region": "New Jersey"},
+  "blurb": "Southfield is one of the boulder zones in Sourland Mountain Preserve, on the Somerset County side near Hillsborough. The blocks sit on a steep, wooded hillside right beside a trail, away from the busier parts of the preserve, so it tends to be quiet. It has 15 problems, and the grades lean easy: six at V0, a spread of V1 to V3 problems, and a single V6 for the strong. That makes it a good fit for beginners and for climbers looking to string together a relaxed circuit. Combine it with the preserve's other boulder areas for a bigger day.",
+  "review": {"sources": ["https://www.mountainproject.com/v/108855525", "https://mountainproject.com/area/107910373/sourland-mountain-preserve"]}
+ },
+ "nj_cedar_grove_reservoir": {
+  "_expect": {"name": "Cedar Grove Reservoir", "region": "New Jersey"},
+  "blurb": "Cedar Grove Reservoir is a small bouldering spot in Essex County, set among trees in a residential park. It is a place for local training rather than a trip destination. Four short walls, a trail wall, a near wall, a second wall and a back wall, hold 15 problems, and they are mostly very easy: ten sit at V0, with a handful at VB, V1 and V2. The boulders lie on both sides of a trail near a small hill, about a ten-minute walk from the parking area. It suits beginners, warm-ups and kids more than anyone chasing difficulty.",
+  "review": {"sources": ["https://www.mountainproject.com/v/cedar-grove-reservoir/113536486", "https://mountainproject.com/area/116146038/bouldering-northeast-nj"]}
+ },
+ "_skipped": {
+  "nj_watchung_reservation": "the only climbing page lists coordinates (40.31, -74.55) that do not match the Watchung Reservation (about 40.69, -74.37), and its other fetched pages say climbing is prohibited there; no second matching page",
+  "nj_s_ronca": "no fetched page about the Ronca sector of Cranberry Hollow itself (the only Mountain Project 'Ronca Area' is a different place on Mt. Tammany); route pages only point to a sector description that could not be fetched",
+  "nj_franklin_lakes_nature_preserve": "no page describing climbing here could be fetched; the preserve's Wikipedia page does not mention boulders and the parent list only gives a count"
+ },
+ "_conflicts": {
+  "nj_r_benes": "stored rock 'syenite' vs https://www.mountainproject.com/area/115157890/benes which says granite or granitic gneiss",
+  "nj_cedar_grove_reservoir": "stored rock 'basalt' vs https://www.mountainproject.com/v/cedar-grove-reservoir/113536486 which says gabbro trap rock",
+  "nj_franklin_lakes_nature_preserve": "stored rock 'sandstone' vs https://en.wikipedia.org/wiki/Franklin_Lakes_Nature_Preserve which says volcanic basalt/traprock"
+ }
+}

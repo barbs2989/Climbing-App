@@ -1,0 +1,47 @@
+{
+ "ca_la_jolla": {
+  "_expect": {"name": "La Jolla", "region": "California"},
+  "blurb": "A small stretch of seaside sandstone cliffs in La Jolla, just below the bluff-top museum, used almost entirely for bouldering, with a single top-rope line. Problems run mostly from V0 to V3, with one V4 and a lone V6. The rock is sandy and crumbly, and the lines change as the cliffs erode, so this is a casual beach session or a rest-day outing rather than a destination in its own right. Landings are soft sand, but the base is cut off when the tide is high.",
+  "review": {"sources": ["https://sendage.com/area/jolla-ca-usa", "https://www.mountainproject.com/forum/message/110157788"]}
+ },
+ "ca_king_dome_east_face": {
+  "_expect": {"name": "King Dome - East Face", "region": "California"},
+  "blurb": "The east side of King Dome, a tall formation in the Hall of Horrors part of Joshua Tree National Park. It is mostly a trad wall, with a mix of crack and face lines, plus a few top ropes, one bolted route and a boulder problem. Grades start around 5.6 and reach low 5.12, with the bulk between 5.8 and 5.11. This is the side of the dome you see on the walk in, and the formation makes a calmer alternative to the busier walls near the parking area.",
+  "approach": "From the Hall of Horrors parking area, follow a faint footpath toward King Dome; the east side lies roughly 200 m northwest of the West Wall Outer formation.",
+  "review": {"sources": ["https://www.mountainproject.com/area/107176577/king-dome-east-face", "https://www.mountainproject.com/area/105720705/king-dome"]}
+ },
+ "ca_f_torture_machine_area": {
+  "_expect": {"name": "Torture Machine Area", "region": "California"},
+  "blurb": "A central sector of Riverside Quarry in the Inland Empire, with only bolted sport climbing. The lines are short single pitches, roughly 50 to 70 feet, and the grades spread widely: one 5.9, five 5.10s, four 5.11s, five 5.12s and a single 5.13. You can spot it by the orange streak running down the face, above a big mound of rubble. The setting is raw and industrial, with loose footing below and loose rock overhead, so a helmet is sensible. Mornings and late afternoons are the comfortable times to climb.",
+  "approach": "Take the short, steep climbers' trail up the rubble pile at the foot of the quarry face; the sector sits near the top, under the orange streak. Footing is loose.",
+  "review": {"sources": ["https://www.mountainproject.com/area/107471280/torture-machine-area", "https://app.advcollective.com/climbing/torture-machine-area-riverside-quarry-climbing-guide"]}
+ },
+ "ca_pink_face": {
+  "_expect": {"name": "Pink Face", "region": "California"},
+  "blurb": "A small wall in the Lower Gorge of Owens River Gorge, near Bishop on the Eastern Sierra side. Most of the lines are bolted sport, with a few trad routes mixed in. The grades are friendly, running from 5.3 up to 5.10, with most of the climbs in the easy to moderate range, which makes it a good pick for newer leaders. The wall faces northwest, so it holds shade in the morning, and it rarely gets crowded. Many route names borrow from Sesame Street and the Muppets. A power plant road runs alongside the gorge, which some climbers find takes a little from the atmosphere.",
+  "review": {"sources": ["https://mountainproject.com/area/105951574/pink-face", "https://www.mountainproject.com/area/105843309/lower-gorge", "https://www.mountainproject.com/area/classics/105843309/lower-gorge"]}
+ },
+ "ca_diamond_face": {
+  "_expect": {"name": "Diamond Face", "region": "California"},
+  "blurb": "One of the more popular walls in the Lower Gorge of Owens River Gorge, near Bishop. The climbing is almost all bolted sport, with two trad lines and a couple of two-pitch routes. Grades begin at 5.8 but cluster between 5.10 and 5.12, with two 5.13s at the top, so it is the harder neighbour of the gentler wall close by. The Lower Gorge as a whole is quieter than much of the canyon, though the power plant beside the road is a visible reminder of the setting.",
+  "review": {"sources": ["https://www.mountainproject.com/area/105843309/lower-gorge", "https://www.mountainproject.com/area/classics/105843309/lower-gorge", "https://thetopo.com/crags/owens-river-gorge/routelist/diamond-face"]}
+ },
+ "ca_north_star_wall": {
+  "_expect": {"name": "North Star Wall", "region": "California"},
+  "blurb": "A quiet wall near Donner Summit, above Lake Tahoe's northern shore at around 7,100 feet. It mixes about eight trad lines, five bolted routes and three boulder problems. Roped climbs run from 5.6 to 5.11, with the largest group at 5.11, while the problems at the base range from V4 to V8. Some of the best-known cracks get little traffic and can be vegetated, so expect a bit of cleaning. Despite the short walk in, the wall sees few people, making it a good place to find some solitude among the Donner Summit crags.",
+  "approach": "Follow the Pacific Crest Trail for about five minutes to where it switchbacks up a steep, brushy hill. A trail forks left there and reaches the base within a couple of minutes.",
+  "review": {"sources": ["https://www.mountainproject.com/area/106506954/north-star-wall", "https://mountainproject.com/area/120323975/north-star-wall-bouldering?print=1", "https://www.mountainproject.com/area/105733935/donner-summit"]}
+ },
+ "ca_desert_skies_morning_dove_area": {
+  "_expect": {"name": "Desert Skies/Morning Dove Area", "region": "California"},
+  "blurb": "A bouldering zone on the West Rim above the Happy Boulders, near Bishop in the Eastern Sierra, at roughly 4,500 feet. All sixteen problems are boulders, spanning V0 to V9, with a good number of V5 to V8 lines, so it leans toward stronger climbers while still offering a few easy options. It is known for moderate pocketed problems, along with some tall ones. The West Rim stays shadier and cooler than much of the canyon and draws fewer people than the middle of the Happies.",
+  "review": {"sources": ["https://www.mountainproject.com/area/106054170/desert-skiesmorning-dove-area", "https://www.mountainproject.com/area/106068416/west-rim-area", "https://www.mountainproject.com/area/105799640/happy-boulders"]}
+ },
+ "_skipped": {
+  "ca_lizard_land": "no fetched page about Lizard Land itself; only the Two Trees West parent page names it (16 problems, no detail); a search for the name found nothing else"
+ },
+ "_conflicts": {
+  "ca_f_torture_machine_area": "stored rock tonalite; https://app.advcollective.com/climbing/torture-machine-area-riverside-quarry-climbing-guide says fractured limestone (single weak page, rock left out of blurb)",
+  "ca_desert_skies_morning_dove_area": "stored rock rhyolite; https://www.mountainproject.com/area/105799640/happy-boulders calls the Happy Boulders rock volcanic Bishop Tuff (rock left out of blurb)"
+ }
+}

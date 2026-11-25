@@ -1,0 +1,33 @@
+{
+ "ca_beehive_boulders": {
+  "_expect": { "name": "Beehive Boulders", "region": "California" },
+  "blurb": "A small cluster of three or four boulders on the east hillside of the Moby Dick Area at Santee Boulders in southern San Diego County. The faces look southwest. Almost everything here is bouldering, with a single top-rope line, and the grades lean easy: several problems sit around V0, with a few much harder lines at the top end. Many of the gentler problems are short knob and crack climbs that make friendly warm-ups, and a couple of the cracks can also be led with gear. Coming over from the Hillside Area, you top the rise and the first boulder is on your right.",
+  "review": { "sources": ["https://www.mountainproject.com/area/105930382", "https://www.mountainproject.com/area/105928236/moby-dick-area"] }
+ },
+ "ca_bighorn_wall": {
+  "_expect": { "name": "Bighorn Wall", "region": "California" },
+  "blurb": "A wall inside Scheelite Canyon, the busiest side canyon of Pine Creek above Bishop in the Eastern Sierra. It holds a mix of bolted sport lines and gear-protected trad routes, evenly split, with grades running from 5.9 up to a single 5.13 and most falling between 5.10 and 5.12. Several of the better-known lines are multi-pitch, with the longest reaching about 400 feet. The talus slope at the top of the wall is the route used to reach the neighbouring Trailerpark crag beyond it. Expect a hike up the canyon rather than a roadside crag.",
+  "review": { "sources": ["https://www.mountainproject.com/area/classics/106875504/bighorn-wall", "https://www.mountainproject.com/area/106366417", "https://www.mountainproject.com/route/118934921/hail-to-hanuman"] }
+ },
+ "ca_trailerpark": {
+  "_expect": { "name": "Trailerpark", "region": "California" },
+  "blurb": "A steep single-pitch sport wall in Scheelite Canyon, one of the side canyons of Pine Creek above Bishop. Routes are short, roughly 50 to 70 feet, on solid granite, though the less-travelled lines can use a brush. The grades are demanding: two climbs at 5.11, five at 5.12 and five at 5.13, so this is a place for strong sport climbers rather than beginners. Shade covers much of the day, which helps when the canyon is warm. A quickdraw rack is all you need, and the way back down is an easy walk-off.",
+  "approach": "Hike up the canyon beyond Pratt's Crack, Gecko Wall and Bighorn Wall, then drop down the talus and scree from above Bighorn Wall to reach the base of the crag.",
+  "rock": "granite",
+  "review": { "sources": ["https://mountainproject.com/area/118829969/trailerpark", "https://app.advcollective.com/climbing/trailerpark-climbing-high-quality-granite-walls-in-eastern-sierra"] }
+ },
+ "ca_7_the_columns": {
+  "_expect": { "name": "The Columns", "region": "California" },
+  "blurb": "A sport wall in the Bear Crag complex above Mammoth Lakes, numbered as the seventh sector there. It has twelve bolted routes, all between 5.11 and 5.12, so it suits climbers comfortable on steep terrain. Expect big holds on blocky volcanic stone; a few lines have rough rock in the first few feet and clean stone higher up. Sun reaches the routes around 1 or 2 in the afternoon, depending on the line. The walk in takes about 45 minutes from the Rainbow Falls trailhead and ends on a use trail. Getting there is awkward, but the payoff is often a quiet crag, best in summer.",
+  "review": { "sources": ["https://www.mountainproject.com/area/classics/105912029/7-the-columns", "https://www.mountainproject.com/area/105911993/bear-crag"] }
+ },
+ "_skipped": {
+  "ca_bucket_flake_the": "no fetched page about this boulder itself; only a Deer Creek Park overview (one page) was readable and it does not describe the boulder",
+  "ca_carousel_rock": "only a one-line sub-area listing under Stoney Point was fetched; no page about Carousel Rock itself",
+  "ca_rock_haven_spring_slopes": "only one page about the area (it is the single readable page); the parent Mount Woodson page does not mention it",
+  "ca_cling_or_fling_corridor": "no fetched page about the corridor itself; Screamer Rocks parent page only covers it in passing"
+ },
+ "_conflicts": {
+  "ca_7_the_columns": "Stored rock is granodiorite but https://www.mountainproject.com/area/105911993/bear-crag calls the rock blocky volcanic; stored value left unchanged and no rock named in the blurb."
+ }
+}

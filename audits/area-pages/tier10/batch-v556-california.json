@@ -1,0 +1,42 @@
+{
+ "ca_three_amigos_wall": {
+  "_expect": { "name": "Three Amigos Wall", "region": "California" },
+  "blurb": "A small steep wall in the Land of the Lost cluster on Horse Mountain in northwest California, facing Tropics Wall across a creek. Twelve routes, mostly bolted sport lines with a few trad ones and a top-rope or two, running from 5.9 through the low 5.13s. The bulk sit in the 5.11 to 5.13 range, so this is a spot for people already comfortable on harder terrain rather than for beginners. The quartzite is high quality, the routes are short, and the wall stays shaded for most of the day, which suits warmer afternoons. Expect a ridge walk from the main parking, and snow keeps it a spring-to-fall destination.",
+  "review": { "sources": ["https://www.mountainproject.com/area/109253605/three-amigos-wall", "https://mountainproject.com/area/109219793/land-of-the-lost"] }
+ },
+ "ca_upper_tier_the": {
+  "_expect": { "name": "Upper Tier, The", "region": "California" },
+  "blurb": "A band of buttresses and faces in the Echo Cliffs of the Santa Monica Mountains, tucked below the rim of Carlisle Canyon and beneath Balanced Rock. It holds twelve bolted sport routes that are short and mostly easy to moderate: a couple around 5.7, a couple at 5.9, and most of the rest at 5.10. The flat, rocky ground at the base makes it comfortable to hang out, and it sees fewer climbers than the better-known walls nearby. Reach it by hiking the Mishe Mokwa Trail from the dirt lot and dropping into a rocky wash at the west end of the tier.",
+  "review": { "sources": ["https://www.mountainproject.com/area/106682534", "https://www.mountainproject.com/area/105825729/echo-cliffs"] }
+ },
+ "ca_sleepers_wall": {
+  "_expect": { "name": "Sleepers Wall", "region": "California" },
+  "blurb": "A compact granite wall on Box Springs Mountain above Riverside, set in the Belvedere Heights West zone. Twelve routes, nearly all bolted single-pitch sport lines with one trad line. Grades climb from 5.7 to the low 5.13s, but the sweet spot is hard: a handful of 5.10s, then five routes at 5.12 and a 5.13. The wall is around 70 feet tall, with a big knob in the middle that works as a landmark and a rest on some lines. It is quiet and secluded, and the trail to it is easy to lose, so watch the route-finding after the main wall paths.",
+  "review": { "sources": ["https://app.advcollective.com/climbing/exploring-sleepers-wall-a-challenging-crag-in-box-springs-california", "https://www.mountainproject.com/route/106545743/acrobatic-porno-tricks"] }
+ },
+ "ca_target_rock_n_face": {
+  "_expect": { "name": "Target Rock (N. Face)", "region": "California" },
+  "parking_note": "Use the big paved turnout on the road between Ryan Campground and the Hall of Horrors / Saddle Rocks area.",
+  "blurb": "The shaded north side of Target Rock, just east of Ryan Campground in Joshua Tree National Park. It is the quieter, less-visited side compared with the southwest face. Twelve routes, mostly trad with a couple of top-ropes, spanning an easy 5.3 up to a single 5.11, and most of it falls at 5.10 or below. Nothing here is a headline classic, but the rock is close to the car, a signed trail covers the walk in a few minutes, and the shade is welcome when the sun is punishing elsewhere. Good for an easy warm-up or a beginner-friendly crack outing.",
+  "review": { "sources": ["https://www.mountainproject.com/area/107970228/target-rock-n-face", "https://www.mountainproject.com/area/106239047/oyster-bar-area"] }
+ },
+ "ca_weird_corner": {
+  "_expect": { "name": "Weird Corner", "region": "California" },
+  "blurb": "A niche section of the Inner Gorge in the Owens River Gorge near Bishop, lying between the Staying Power Towers and the right end of Eldorado Roof. Twelve routes, mostly bolted with one trad line, from 5.7 into the low 5.12s, with the weight in the 5.10 range. The climbing leans on dihedrals and crack systems, with pitches around 50 to 100 feet. Most of the walls stay shaded through the day, with only the two leftmost routes catching afternoon sun, and traffic is lighter than on the busier gorge walls. Take care with sharp or loose rock near the cracks.",
+  "review": { "sources": ["https://app.advcollective.com/climbing/weird-corner-owens-river-gorge-climbing-guide", "https://www.mountainproject.com/v/105843282"] }
+ },
+ "ca_spikes_peak": {
+  "_expect": { "name": "Spikes Peak", "region": "California" },
+  "blurb": "A small formation in the High Peaks of Pinnacles National Park, a short stroll off the High Peaks Trail near the junction with the Tunnel Trail. Twelve single-pitch routes, a mix of bolted sport lines and trad, ranging from about 5.7 to 5.11 with the most common grades in the 5.8 to 5.9 band. Climbs run roughly 100 to 150 feet, and the approach is gentle and easy to follow. It is a reasonable pick for climbers moving up from beginner grades, with a basic rack plus quickdraws covering most lines. Ledges can hold loose rock, so test holds before pulling on them.",
+  "review": { "sources": ["https://app.advcollective.com/climbing/climbing-spikes-peak-pinnacles-national-park-accessible-high-peaks", "https://www.mountainproject.com/area/119014323/high-peaks-north"] }
+ },
+ "_skipped": {
+  "ca_test_site": "no fetched page about Test Site itself (only a route count on the Echo Cliffs parent page; thecrag fetch returned 403)",
+  "ca_primate_avenger_boulder": "no page found about this boulder; Monkeyface Boulders page does not mention it"
+ },
+ "_conflicts": {
+  "ca_target_rock_n_face": "stored aspect SW, but the area is the north face and its page calls it shady (https://www.mountainproject.com/area/107970228/target-rock-n-face)",
+  "ca_weird_corner": "stored aspect W; one page lists south-facing (https://app.advcollective.com/climbing/weird-corner-owens-river-gorge-climbing-guide)",
+  "ca_spikes_peak": "stored rock rhyolite; one page says granite (https://app.advcollective.com/climbing/climbing-spikes-peak-pinnacles-national-park-accessible-high-peaks)"
+ }
+}

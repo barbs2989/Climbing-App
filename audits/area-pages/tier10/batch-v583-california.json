@@ -1,0 +1,36 @@
+{
+ "ca_local_trivia_tower": {
+  "_expect": {"name": "Local Trivia Tower", "region": "California"},
+  "blurb": "A small single-pitch tower on the east side of the Inner Gorge of the Owens River Gorge, just south of the Narrows and above talus near Bishop. Roughly 50 to 70 feet tall, it holds ten routes, nearly all of them bolted, plus one line that takes a trad rack. Difficulty runs from an easy 5.7 up to a single 5.13, but the bulk of the climbing sits between 5.9 and 5.10, so it suits a mid-grade day more than a hard project session. It is a quiet spot, and spring through fall is the comfortable window for the gorge.",
+  "review": {"sources": ["https://app.advcollective.com/climbing/local-trivia-tower-owens-river-gorges-compact-trad-and-sport-playground", "https://www.mountainproject.com/area/105897290/local-trivia-tower"]}
+ },
+ "ca_all_day_boulder_the": {
+  "_expect": {"name": "All Day Boulder, The", "region": "California"},
+  "blurb": "One big boulder in Kung Fu Canyon, high in the San Jacinto Mountains above the Tramway at about 8,400 feet. Problems wrap around almost every side, which is how it earned its name: you can stay busy here for hours. The ten problems skew friendly, with a handful of V0 and easier lines, a few in the V1 to V4 range, and a small number of much harder test pieces at the top end. It sits uphill from the main trail, reached by turning off just past the House Boulder and scrambling up rocky ground. Being this high, it is mostly a spring-through-fall destination.",
+  "review": {"sources": ["https://www.mountainproject.com/area/106492511/the-all-day-boulder", "https://www.mountainproject.com/area/106487358/kung-fu-canyon"]}
+ },
+ "ca_cleopatra_area": {
+  "_expect": {"name": "Cleopatra Area", "region": "California"},
+  "blurb": "A partly developed corner of the Happy Boulders in the Volcanic Tablelands north of Bishop, found on the west rim of the canyon beyond the Top Gun area. Ten problems are spread across a few buttresses and slots, finishing at the tall rounded prow that gives the area its name. Most lines fall between V1 and V3, with a couple of V5 and V6 problems for stronger climbers. The headline prow is clean but committing, so bring several pads and spotters. It is a good add-on for a climber who has already worked through the nearer Happy Boulders classics and wants fewer people around.",
+  "review": {"sources": ["https://www.mountainproject.com/area/107375535/cleopatra-area", "https://bishopvisitor.com/happy-and-sad-boulders-climbing/"]}
+ },
+ "ca_community_boulder": {
+  "_expect": {"name": "Community Boulder", "region": "California"},
+  "blurb": "A cluster of low boulders in Rockview Park, beside the Mojave River in Victorville, in the High Desert. The group sits on the left of the trail only a minute or two beyond the gate nearest the bouldering. Ten problems are listed, and they are all gentle: a lot of V0, a handful at V1, and nothing above V2. That makes it a relaxed spot for beginners, warm-ups or a short after-work session rather than a destination trip. The park as a whole grew up as a training ground, with boulders scattered about and generally light traffic, and more lines may appear as the area is cleaned up.",
+  "review": {"sources": ["https://www.mountainproject.com/area/119898487/community-boulder", "https://www.mountainproject.com/area/119898445/rockview-park"]}
+ },
+ "ca_6_teflon_wall": {
+  "_expect": {"name": "Teflon Wall", "region": "California"},
+  "blurb": "A large buttress at Bear Crag in the Reds Meadow area near Mammoth Lakes, a short way beyond the Huber Wall and starting from a big downed tree. All ten routes are bolted sport lines of about 100 feet, and they are sustained, with the hardest moves usually saved for near the top. Grades split evenly between 5.11 and 5.12, so this is a wall for climbers already comfortable on steep, pumpy ground rather than anyone building up. Some of the features have a postpile look. Bear Crag is a high crag best suited to summer, and it needs a longer walk in than most.",
+  "review": {"sources": ["https://www.mountainproject.com/area/105912023/6-teflon-wall", "https://www.mountainproject.com/area/105911993/bear-crag"]}
+ },
+ "_skipped": {
+  "ca_campground_61": "no page found that describes a bouldering area by this name; searches only returned an unrelated campground listing",
+  "ca_bouldering_rock_the": "only one page (a park FAQ) mentions it, in passing; no page about the boulder itself",
+  "ca_barbershop_buttress": "only one page lists the buttress (a route page); the parent canyon page does not mention it, so could not fetch two pages that describe it"
+ },
+ "_conflicts": {
+  "ca_6_teflon_wall": "stored rock granodiorite, but https://www.mountainproject.com/area/105911993/bear-crag describes the crag's rock as blocky volcanic; not changed",
+  "ca_cleopatra_area": "stored rock rhyolite, but https://bishopvisitor.com/happy-and-sad-boulders-climbing/ describes the Happy Boulders rock as Bishop Tuff; not changed"
+ }
+}

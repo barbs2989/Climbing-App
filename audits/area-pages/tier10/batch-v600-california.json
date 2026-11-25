@@ -1,0 +1,44 @@
+{
+ "ca_treasure_chest_the": {
+  "_expect": { "name": "Treasure Chest, The", "region": "California" },
+  "blurb": "A short, sunny sport wall in a small southwest-facing cove on the Sonoma coast, inside Salt Point State Park. Ten climbs, nearly all bolted, rise roughly 40 to 50 feet on multicolored sandstone that is mostly solid. The lines are sustained and a touch harder than they look. Grades start with one easy crack at 5.7, add a few 5.10s and 5.11s, and bunch up at 5.12. The setting feels remote and open to the ocean: swell and high tide wash the base of the wall, so plan around the water and keep your pack up high. Sun reaches the face for most of the day, with shade more likely in winter. You get to the base by a short rappel or a longer walk along the beach.",
+  "review": { "sources": ["https://www.mountainproject.com/area/105734312/the-treasure-chest", "https://www.mountainproject.com/route/105735392/captain-hook"] }
+ },
+ "ca_twin_towers_3": {
+  "_expect": { "name": "Twin Towers", "region": "California" },
+  "blurb": "A steep, overhanging sport sector in Box Canyon East, the busiest part of the New Jack City crags near Barstow in the High Desert. The ten bolted routes face southeast and sit on the hillside across from Raven Rock, south of Lethal Rock. Expect pumpy, powerful climbing rather than easy mileage: there is a single 5.8 warm-up, then three 5.10s, three 5.11s, two 5.12s and one 5.13. A trail leaves the main parking lot and curves up and left to reach the base. Good for a strong intermediate or advanced climber who wants overhanging routes.",
+  "review": { "sources": ["https://www.mountainproject.com/area/105901541/twin-towers", "https://www.mountainproject.com/area/108075686/box-canyon-east"] }
+ },
+ "ca_ursus": {
+  "_expect": { "name": "Ursus", "region": "California" },
+  "blurb": "A compact trad wall above Ladybug Canyon in the Hwy 33 corridor near Ojai, about 100 feet at its tallest. All ten climbs are traditionally protected single pitches that follow cracks, edges and slab on sandstone. The grades are friendly: seven sit at 5.7, one is a 5.6, and just one each reach 5.10 and 5.11, which makes it a decent place to build trad skills. Bring a rack with a spread of crack sizes. You hike up the canyon beyond the Dark Prow and a broken block, and the setting is quiet and creekside, with a short slab by the stream holding the first routes you meet.",
+  "review": { "sources": ["https://app.advcollective.com/climbing/exploring-ursus-californias-compact-single-pitch-wall-with-classic-lines", "https://www.mountainproject.com/route/114367106/little-wren"] }
+ },
+ "ca_warm_up_boulder": {
+  "_expect": { "name": "Warm Up Boulder", "region": "California" },
+  "blurb": "A small bouldering stop at Hartley Springs, near June Lake in the Eastern Sierra at about 8,200 feet. The boulders stand in a pine forest with flat pumice landings, and the whole zone is a short walk of around ten minutes from the parking area. Ten problems here run from VB up to V6, with a pile of easy ones around V0 to V3 and a few steeper ones at V5 and V6, so it works as an opener before the harder boulders nearby. The altitude makes it a spring through late fall venue.",
+  "review": { "sources": ["https://thetopo.com/crags/hartley-springs/routelist/warm-up-boulder-36637", "https://www.mountainproject.com/area/108162038/hartley-springs", "https://www.mountainproject.com/area/classics/108162071/warm-up-area"] }
+ },
+ "ca_riders_ready_wall": {
+  "_expect": { "name": "Riders Ready Wall", "region": "California" },
+  "blurb": "A sunny, south-facing sport wall near the Horsemen's Center in Apple Valley, in the High Desert, at roughly 3,200 feet. The bolted single pitches are about 40 to 50 feet tall on dense, good-quality stone. This is a place for harder climbers: ten routes, with a lone 5.9, a 5.10 and a 5.11, then a big cluster of six at 5.12 and one 5.13. Shade is scarce, so summer days are best saved for early or late sessions. After you climb, the descent is an easy walk down the hill with no rappelling.",
+  "approach": "From the parking area, head north past the BMX track, keeping Carousel Rock on your right, then scramble up the sandy, scrubby slope to the wall. Allow roughly 10 to 15 minutes.",
+  "review": { "sources": ["https://www.mountainproject.com/area/108003431/riders-ready-wall", "https://app.advcollective.com/climbing/riders-ready-wall-high-deserts-south-facing-crag-in-california"] }
+ },
+ "ca_x_factor_dome": {
+  "_expect": { "name": "X Factor Dome", "region": "California" },
+  "blurb": "A large dome in the Roadside Rocks, in the Hidden Valley part of Joshua Tree National Park, just south of Watts Towers. Ten routes are mostly traditionally protected, with a single bolted line, and are spread over the north, west and southwest sides of the formation. Expect short, technical single pitches of about 40 to 50 feet, some with a roof pull or loose, chossy patches. The grades span 5.8 up to 5.12, with three at 5.9 and a solid group of four at 5.11. It rewards careful route reading over brute strength. Early morning or late afternoon is more comfortable than the midday glare.",
+  "review": { "sources": ["https://www.mountainproject.com/area/105894056", "https://app.advcollective.com/climbing/indecision-2000-at-x-factor-dome-joshua-tree-national-park"] }
+ },
+ "ca_worthwhile_pile": {
+  "_expect": { "name": "Worthwhile Pile", "region": "California" },
+  "blurb": "A small, low-key trad crag in Real Hidden Valley West at Joshua Tree National Park, set among the formations of the Land that Time Forgot and reached by crossing the desert from the Pep Boys Crag side. Ten short routes, all traditionally protected, with a detached pillar beside some of them. Most of the climbing is friendly: one route each at 5.4, 5.5 and 5.6, four at 5.7, then three at 5.10 for a harder finish. It suits a relaxed outing for moderate climbers who like off-the-beaten-path pockets and mark-offs, rather than a destination for a long day.",
+  "review": { "sources": ["https://www.mountainproject.com/area/105721169/worthwhile-pile", "https://www.mountainproject.com/route/106576841/holden-on"] }
+ },
+ "_skipped": {
+  "ca_wall_2": "no fetched page about Wall 2 itself; only the Panic Town parent page lists it as a section, and the one search hit for it on theCrag returned 403 (search budget not hit)"
+ },
+ "_conflicts": {
+  "ca_warm_up_boulder": "stored rock is granodiorite but https://www.mountainproject.com/area/108162038/hartley-springs describes Hartley Springs boulders as volcanic tuff; rock left unnamed in the blurb"
+ }
+}

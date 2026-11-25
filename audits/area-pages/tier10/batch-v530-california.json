@@ -1,0 +1,51 @@
+{
+ "ca_hall_of_the_mountain_queens": {
+  "_expect": { "name": "Hall of the Mountain Queens", "region": "California" },
+  "blurb": "Hall of the Mountain Queens is a slab boulder in the Otherworld, beyond the main Druid Stones zone outside Bishop in the Eastern Sierra, at about 6,000 feet. It holds 13 problems spread from V0 to V4, with most sitting in the V1 to V3 band. The uphill face has steep slab climbing that rewards careful footwork, while the downhill side carries a single pumpy lip traverse. The boulder stands roughly 15 to 20 feet tall, so landings and top-outs deserve respect: bring a couple of pads and a spotter. The walk in from the Druid Stones is short and runs through forest.",
+  "review": { "sources": [
+   "https://www.mountainproject.com/area/106317421/the-otherworld",
+   "https://app.advcollective.com/climbing/hall-of-the-mountain-queens-steep-slabs-and-pumping-traverse-problems-in-bishop"
+  ] }
+ },
+ "ca_black_corridor_right_side": {
+  "_expect": { "name": "Black Corridor - Right Side", "region": "California" },
+  "blurb": "This is the east-facing side of the Black Corridor, a narrow cove at Horsemen's Center near Apple Valley in the high desert. It has 13 routes, mostly bolted sport lines with a few trad and top-rope options. Grades start at 5.6 and reach 5.12, with the bulk in the 5.8 to 5.9 range and a handful of harder lines above, so newer leaders have real choices. The corridor as a whole is shaded for much of the day and keeps desert wind out, with walls around 50 to 70 feet. Reach it with a short walk in from behind a picnic site.",
+  "review": { "sources": [
+   "https://www.mountainproject.com/area/111839519/black-corridor-right-side",
+   "https://app.advcollective.com/climbing/black-corridor-climbing-guide-a-shaded-sport-climbing-escape-in-california"
+  ] }
+ },
+ "ca_berkeley_camp_rocks": {
+  "_expect": { "name": "Berkeley Camp Rocks", "region": "California" },
+  "blurb": "Berkeley Camp Rocks is a small cliff band just below Berkeley Camp near Echo Lakes, off Highway 50 on the Tahoe side of Echo Summit, at roughly 7,300 feet. Thirteen routes, nearly all bolted sport lines with one trad climb, run 40 to 60 feet on vertical to slightly overhanging stone. Grades start around 5.6, but the weight sits at 5.10 through 5.12, so it suits climbers who already lead the harder grades, with only a few easy warm-ups. The faces point east and north and fall into shade by afternoon. A short switchback trail leads up beside the camp lodge.",
+  "review": { "sources": [
+   "https://www.mountainproject.com/area/105734318/berkeley-camp-rocks",
+   "https://mountainproject.com/area/105733995/echo-lakes"
+  ] }
+ },
+ "ca_matrimony_wall": {
+  "_expect": { "name": "Matrimony Wall", "region": "California" },
+  "blurb": "Matrimony Wall is a south-facing cliff at the northern edge of the Mammoth Lakes climbing area in the Eastern Sierra, around 7,600 feet. Its 13 routes are almost all short bolted sport lines, plus one trad route. Grades run from 5.5 to 5.12, but the core of the wall is 5.10, with a few 5.8 to 5.9 routes and a couple of harder ones at the top end. A small parking spot sits right below the face, so the walk is under a minute and the base is easy to manage. Because it faces south, expect sun on the rock.",
+  "review": { "sources": [
+   "https://www.mountainproject.com/area/105913271/matrimony-wall",
+   "https://mountainproject.com/area/106064821/mammoth-lakes-area"
+  ] }
+ },
+ "ca_mugu_rock": {
+  "_expect": { "name": "Mugu Rock", "region": "California" },
+  "blurb": "Mugu Rock is a small, slightly overhanging roadside outcrop on Pacific Coast Highway at Point Mugu in Ventura County, right beside the ocean. It holds 13 climbs: nine top-rope lines and four boulder problems. Most are short, moderate cracks that have taught generations of local climbers basic crack technique, with a few harder lines up to 5.11 and one much harder boulder problem. Anchors are on top, and the walk-off is a class 3 scramble on climber's right. Expect to share the spot with other climbers, sightseers and highway noise. A turnout nearby holds the cars.",
+  "review": { "sources": [
+   "https://www.mountainproject.com/area/106508649/mugu-rock",
+   "https://mountainproject.com/area/106508646/point-mugu"
+  ] }
+ },
+ "_skipped": {
+  "ca_hansel_s_hangout": "no page about the crag itself; only a thin page about a single three-pitch route, and the Pine Creek Canyon page does not list it",
+  "ca_central_area": "no fetched page about Central Area itself; only the parent Rainbow page lists it as a sub-area",
+  "ca_magic_wall": "no page about this Magic Wall itself; the Montana Magic Wall page is a different place, and the Chilkoot Lake parent page plus a trip blog only mention it briefly"
+ },
+ "_conflicts": {
+  "ca_matrimony_wall": "Stored rock is rhyolite, but https://www.mountainproject.com/area/105913271/matrimony-wall calls the wall fractured granite (the parent https://mountainproject.com/area/106064821/mammoth-lakes-area mentions volcanic tuff for other Mammoth cliffs). Not changed; rock not named in blurb.",
+  "ca_hall_of_the_mountain_queens": "Aspect disagrees between pages (one says south-facing at https://app.advcollective.com/climbing/hall-of-the-mountain-queens-steep-slabs-and-pumping-traverse-problems-in-bishop, a Mountain Project route page in the area says north-facing); no aspect written."
+ }
+}

@@ -1,0 +1,27 @@
+{
+ "ca_b_word": {
+  "_expect": { "name": "B Word", "region": "California" },
+  "blurb": "A compact, steep sport wall in Bowman Valley, in the I-80 corridor north of Lake Tahoe, sitting above Cabin Creek at roughly 5,000 feet. The face is about 75 feet tall and 100 feet across and leans past vertical the whole way, so expect powerful, sustained pulling on featured granodiorite rather than delicate slab work. All 14 routes are bolted. Most sit in the 5.12 range, with a couple of 5.11s and three 5.13s, which makes this a destination for strong climbers rather than a place to warm up or learn. Together with the gully behind it, the wall holds the valley's densest cluster of hard lines.",
+  "review": { "sources": ["https://www.mountainproject.com/area/108013173/b-word", "https://www.mountainproject.com/area/114347347/bowmanemeralds"] }
+ },
+ "ca_main_saddle": {
+  "_expect": { "name": "Main Saddle", "region": "California" },
+  "blurb": "A small cluster of big boulders within Potter's Point, in the hills above Santa Barbara, holding 14 problems from V0 to V7. The grades bunch up around V4 to V6, with a few easy problems and a single V7, so it suits climbers who already boulder at a decent level more than complete beginners. The boulders are tall for the sport, roughly 15 to 25 feet, and the landings are uneven and sometimes sloped, so bring several pads and spotters. The walk in from the main trail is short and easy. It is a quiet spot with ocean views and a coastal breeze, while the surrounding rock is coarse and hard on skin and the hilltop offers little shade.",
+  "review": { "sources": ["https://app.advcollective.com/climbing/exploring-main-saddle-boulder-cluster-in-santa-barbara", "https://www.mountainproject.com/area/107145903/potters-point"] }
+ },
+ "ca_lost_orbit_rock_west_face": {
+  "_expect": { "name": "Lost Orbit Rock - West Face", "region": "California" },
+  "blurb": "The west side of Lost Orbit Rock, one of the Holcomb Valley Pinnacles in the San Bernardino Mountains above Big Bear Lake, at about 7,400 feet. The face looks slabby and broken, yet it gives short, enjoyable lines, mostly protected with removable gear: ten of the fourteen routes are trad, with two sport and two top-rope. Grades run from about 5.5 up through 5.9, with a cluster of 5.10s and one 5.12, so newer leaders and people after bolted slab both have options. Some lines are only about 50 feet, and a few start with runout slab above an awkward landing. Trails in are through pine forest with loose debris underfoot.",
+  "review": { "sources": ["https://www.mountainproject.com/area/105810680/lost-orbit-rock-west-face", "https://app.advcollective.com/climbing/cruise-control-at-lost-orbit-rock-a-bold-trad-challenge-above-big-bear-lake"] }
+ },
+ "_skipped": {
+  "ca_happy_isles": "no fetched page describes the crag itself (listing pages only name a few problems; rockclimbing.com fetch failed)",
+  "ca_lower_buttresses": "no fetched page about the crag itself (MP parent pages only list it; thecrag 403); Lake Arrowhead pages do not describe the sector",
+  "ca_n_rebolting_face": "no fetched page about the face itself; Suicide Rock page only lists it",
+  "ca_panhandle_the": "only parent Texas Canyon page and a classics list fetched; no page about the Panhandle itself",
+  "ca_main_wall_24": "no fetched page about this Main Wall; the MP Main Wall result is a Washington crag and the Lucerne Limestone page does not mention a Main Wall"
+ },
+ "_conflicts": {
+  "ca_lost_orbit_rock_west_face": "aspect: mountainproject area page says west-facing; the Cruise Control page lists the route as South Facing. https://www.mountainproject.com/area/105810680/lost-orbit-rock-west-face vs https://app.advcollective.com/climbing/cruise-control-at-lost-orbit-rock-a-bold-trad-challenge-above-big-bear-lake"
+ }
+}

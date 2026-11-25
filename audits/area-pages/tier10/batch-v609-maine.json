@@ -1,0 +1,51 @@
+{
+ "me_cat_pine_boulder": {
+  "_expect": {
+   "name": "Cat Pine Boulder",
+   "region": "Maine"
+  },
+  "blurb": "A small bouldering sector in the South Freeport boulder zone, on the Greater Portland side of Maine's coast. It is one of four main boulders that together make up the popular Strip Area, second in line from the north end. The 14 problems run along a short cliff line just uphill of the road, so the walk in is brief. Grades are mostly V1 to V3, with a handful at V4 and V5 and one easy crack at the bottom of the scale. The stone is described as sticky. Some boulders nearby stay wet or icy for much of the year while others dry fast, so conditions vary from one visit to the next. A handy stop for a short session with a mix of moderate and harder lines.",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/area/117600037/cat-pine-boulder",
+    "https://www.mountainproject.com/area/120288069/the-strip-area"
+   ]
+  }
+ },
+ "me_06_skyline_crag": {
+  "_expect": {
+   "name": "Skyline Crag",
+   "region": "Maine"
+  },
+  "blurb": "A small crag in the Camden Hills of midcoast Maine, set high above the right-hand end of Barrett's Cove Cliff. It holds 13 climbs, mostly traditional, plus a single sport line and one short ice climb in winter. Rock grades cluster around 5.9, with the rest spread between 5.6 and 5.10. The wall is shady and breezy, which makes it a pleasant choice on a hot day. A large free-standing pillar, split from the main face by a chimney, is the standout feature. A cairned path climbs to the base from the cliff below. Protection can be thin and runouts are common in the Camden Hills, so be comfortable at the grade before leading.",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/area/111468788/skyline-crag",
+    "https://www.mountainproject.com/area/106174845/camden-hills"
+   ]
+  }
+ },
+ "me_1_west_world": {
+  "_expect": {
+   "name": "West World",
+   "region": "Maine"
+  },
+  "blurb": "The far-left developed sector of the Square Dock cliff band in Maine's Western Mountains. It has 13 bolted sport routes, with most in the 5.10 range and a few stepping up to 5.11 and 5.12. The band is schist, and the climbing here is mostly single-pitch, with at least one longer line. To get here, a trail follows the drainage, crosses a ridge, then works up through talus to the base of the left-hand wall. Expect poison ivy on this side, and black flies can be bad in late spring. Best suited to climbers who want moderate-to-hard bolted lines away from the more central walls.",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/area/200667391/west-world",
+    "https://www.mountainproject.com/area/124090570/square-dock-rock-climbing"
+   ]
+  }
+ },
+ "_skipped": {
+  "me_otter_cliffs_south": "only one fetched page (a trip listing) is about South Otter Cliffs; NPS and guide pages do not mention it, rockclimbing.com unreachable",
+  "me_buck_s_ledge": "only a bare Mountain Project listing under Western Mountains (14 climbs); no fetched page describes the crag itself",
+  "me_main_wall_linkups": "no fetched page about the linkups section itself; only the Shagg Crag parent page covers it",
+  "me_batman_s_lair_main_cliff": "no fetched page about the crag itself; only route and boulder pages that name it as a landmark",
+  "me_06_all_winter_ice_routes_chimney_pond_other_sub_areas": "no page about this section itself"
+ },
+ "_conflicts": {
+  "me_cat_pine_boulder": "stored rock is sandstone but https://www.mountainproject.com/area/117600037/cat-pine-boulder describes sticky granite; blurb names no rock"
+ }
+}

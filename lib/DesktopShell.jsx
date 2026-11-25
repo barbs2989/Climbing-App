@@ -10,7 +10,7 @@ import { discLabel } from "./discLabels";
 import { useMyHomeStatePaths, usePlaceSearch, useRouteSearch, useStates } from "./db.js";
 import { USE_DB } from "./supabase";
 import Chevron from "../src/components/Chevron.tsx";
-import ViewAreaPill from "../src/components/ViewAreaPill.tsx";
+import AreaRowArrow from "../src/components/AreaRowArrow.tsx";
 import { RailAd, useRailFollow } from "./Ads.jsx";
 import { ZOOM } from "./wideLayout.js";
 import BrandMark from "../src/components/BrandMark.tsx";
@@ -206,7 +206,7 @@ export function WideSearch({ onOpenRoute, onOpenArea, onOpenFinder, width, left,
     const where = h.kind === "finder" ? "Open the Route finder with these filters" : h.kind === "place" ? [h.a.where, h.a.route_count ? Number(h.a.route_count).toLocaleString() + (Number(h.a.route_count) === 1 ? " climb" : " climbs") : ""].filter(Boolean).join(" · ") : routePlace(h.r);
     const grade = h.kind === "route" ? h.r.grade : "";
     const held = (h.kind === "place" && placesState === "busy") || (h.kind === "route" && routesState === "busy");
-    return <button key={h.kind + (h.kind === "finder" ? "" : h.kind === "place" ? h.a.id : h.r.id)} id={OPT + i} role="option" aria-selected={on} onMouseDown={e => e.preventDefault()} onMouseEnter={() => setHi(i)} onClick={click(h)} aria-busy={held || undefined} style={{ ...ROW, background: on ? C.card : "transparent", opacity: held ? 0.5 : 1 }}>{h.kind === "route" ? <DiscIcon d={disc} size={17}/> : <ActionIcon name={h.kind === "finder" ? "explore" : "pin"} size={17} color={C.textMuted}/>}<span style={{ minWidth: 0, flex: 1 }}><span style={{ display: "block", fontSize: 14, fontWeight: 700, overflowWrap: "anywhere" }}>{name}</span>{grade || where ? <span style={{ display: "block", fontSize: 12, color: C.textMuted, overflowWrap: "anywhere" }}>{grade ? <span style={{ color: discColor, fontWeight: 700 }}>{grade}</span> : null}{grade && where ? " · " : ""}{where}</span> : null}</span>{h.kind === "place" ? <ViewAreaPill C={C}/> : null}</button>;
+    return <button key={h.kind + (h.kind === "finder" ? "" : h.kind === "place" ? h.a.id : h.r.id)} id={OPT + i} role="option" aria-selected={on} onMouseDown={e => e.preventDefault()} onMouseEnter={() => setHi(i)} onClick={click(h)} aria-busy={held || undefined} style={{ ...ROW, background: on ? C.card : "transparent", opacity: held ? 0.5 : 1 }}>{h.kind === "route" ? <DiscIcon d={disc} size={17}/> : <ActionIcon name={h.kind === "finder" ? "explore" : "pin"} size={17} color={C.textMuted}/>}<span style={{ minWidth: 0, flex: 1 }}><span style={{ display: "block", fontSize: 14, fontWeight: 700, overflowWrap: "anywhere" }}>{name}</span>{grade || where ? <span style={{ display: "block", fontSize: 12, color: C.textMuted, overflowWrap: "anywhere" }}>{grade ? <span style={{ color: discColor, fontWeight: 700 }}>{grade}</span> : null}{grade && where ? " · " : ""}{where}</span> : null}</span>{h.kind === "place" ? <AreaRowArrow C={C} /> : null}</button>;
   };
   const showList = open && !!qq;
   // The EMPTY box, focused: recent words and Near me (nothing when there is neither).
@@ -217,7 +217,7 @@ export function WideSearch({ onOpenRoute, onOpenArea, onOpenFinder, width, left,
   /* LEFT (App passes the geometry's searchL, lined up with the nav strip's tabs) wins; without it the
      box is centred on the window as before. */
   const wrap = { position: "absolute", top: 12, left: left || "calc(50vw - (" + w + ") / 2)", width: w };
-  /* THE AREAS LIST IS WIDER THAN ITS BOX (walkthrough 2026-11-18): each place row now carries a "View area"
+  /* THE AREAS LIST IS WIDER THAN ITS BOX (walkthrough 2026-11-18): each place row carried a "View area"
      button, and in the half-width box at 1024px that left the name ~45px, broken mid-word ("Yosem / ite").
      The list reaches over the Routes box beside it (out of use while you type here); the Routes box keeps its width. */
   const panel = { position: "absolute", top: 46, left: 0, ...(only === "places" ? { width: "max(100%, 420px)" } : { right: 0 }), background: C.surface, border: "1px solid " + C.border, borderRadius: 14, boxShadow: "0 18px 50px rgba(0,0,0,0.55)", padding: 6, maxHeight: "min(70vh, 520px)", overflowY: "auto", overscrollBehavior: "contain", zIndex: 2 };

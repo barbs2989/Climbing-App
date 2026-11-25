@@ -1,0 +1,31 @@
+{
+ "ca_pyramid_the_4": {
+  "_expect": {"name": "Pyramid, The", "region": "California"},
+  "blurb": "A south-facing crag up Rattlesnake Canyon in the Indian Cove part of Joshua Tree National Park, reached on foot after a stroll up the wash. Eleven climbs, mostly traditional with a pair of bolted lines, spread from 5.7 up to a single 5.11, with the largest cluster in the 5.10 range. The rock is varnished, and the style mixes crack climbing with face moves on the slabby formations. Facing south makes it among the warmer walls in the park, so it suits cooler months, and in warm weather an early start or a late-day visit keeps the stone comfortable. Expect a quieter day than the roadside crags.",
+  "review": {"sources": ["https://www.mountainproject.com/area/105721316/the-pyramid", "https://app.advcollective.com/climbing/high-tops-cheops-trad-climb-in-joshua-tree"]}
+ },
+ "ca_ring_side_boulders": {
+  "_expect": {"name": "Ring Side Boulders", "region": "California"},
+  "blurb": "A small hillside bouldering spot in the high desert near Apple Valley, close to the Horsemen's Center and the neighboring BMX crags. Two separate groups of boulders sit on the slope on either side of Carousel Rock, and reaching them involves a little scrambling over loose, uneven ground. The eleven problems are gentle: about half are the easiest grades, with the rest running up to V2, so it suits beginners and warm-ups. Granite boulders stay fairly low, so a couple of pads is plenty. Mornings are the more comfortable time to climb, spring and fall are the best seasons, and summer calls for very early starts.",
+  "review": {"sources": ["https://mountainproject.com/area/107868859/ring-side-boulders", "https://app.advcollective.com/climbing/exploring-ring-side-boulders-high-desert-climbing-in-california"]}
+ },
+ "ca_sacrificial_boulder": {
+  "_expect": {"name": "Sacrificial Boulder", "region": "California"},
+  "blurb": "One of the first boulder clusters you meet in the Druid Stones, on the hillside above Bishop in the Eastern Sierra. A large oval block about 15 to 20 feet tall stands with a couple of smaller companions, in a setting shaded by tall pines. Eleven problems cover a wide range: mostly V1 to V3, a few easy ones, and a handful of much harder lines including one at V9. It is a good place to warm up after the uphill walk, which crosses rocky, uneven ground, so wear sturdy shoes and bring two pads. Spring through fall is the usual window, with cooler mornings and late afternoons in summer.",
+  "review": {"sources": ["https://app.advcollective.com/climbing/sacrificial-boulder-accessible-warm-up-boulder-in-bishops-eastern-sierra", "https://www.mountainproject.com/area/106079037/druid-stones"]}
+ },
+ "ca_scott_s_rock": {
+  "_expect": {"name": "Scott's Rock", "region": "California"},
+  "blurb": "The boulder nearest the road at the start of the Hillcrest section of the Nut Tree Boulders above Vacaville, in the northeast Bay Area. It sits under tree cover, so it stays shaded and tends to grow moss. The walk from the start of the trail is about a minute. Eleven problems range from V1 to V9, with most landing at V3 or V4 and a couple of much harder test pieces, one of them a long traverse that is the standout of the whole area. Homes are close by, so keep noise down and be considerate of the neighbors.",
+  "review": {"sources": ["https://www.mountainproject.com/v/scotts-rock/107421502", "https://www.mountainproject.com/area/108012775/hillcrest-boulders"]}
+ },
+ "_skipped": {
+  "ca_the_hammock": "no fetched page about The Hammock itself; only the parent Upper Atlantis list names it (two searches, MP parent page fetched)",
+  "ca_roly_poly_boulder": "no fetched page about Roly Poly Boulder; only mentioned as a landmark on a neighbouring boulder's page (two searches)",
+  "ca_shadow_wall": "no fetched page about this Shadow Wall; only the Mountaineer Walls parent lists it and other Shadow Walls found are in other states (three searches)",
+  "ca_sex_wall": "no fetched page about the Trapper Dome Sex Wall itself; the MP Sex Wall page is a Utah wall; parent Trapper Dome page and a route page only"
+ },
+ "_conflicts": {
+  "ca_scott_s_rock": "stored rock sandstone, but https://www.mountainproject.com/v/scotts-rock/107421502 says basalt"
+ }
+}

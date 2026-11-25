@@ -2,12 +2,11 @@ import { useMemo, useState } from "react";
 import { clickable } from "../../lib/clickable";
 import WallGradeBars from "./WallGradeBars.tsx";
 import type { WallGradeRow } from "./WallGradeBars.tsx";
-import ViewAreaPill from "./ViewAreaPill.tsx";
+import AreaRowArrow from "./AreaRowArrow.tsx";
 import WalkInMap from "../../lib/WalkInMap.jsx";
 import type { C as Palette } from "../../ClimbMatchCore.jsx";
 import { childSortOptions, sortChildren, childSortFigure, getChildSort, setChildSort, CHILD_SORT_DEFAULT } from "../../lib/areaChildSort.js";
 import type { ChildDiscCounts, ChildSortPoint } from "../../lib/areaChildSort.js";
-import { DISC_LABELS } from "../../lib/discLabels.js";
 
 export interface AreaChildRow { id: string | number; name: string; route_count: number; path?: string | null; [column: string]: unknown }
 export interface AreaChildrenListProps<T extends AreaChildRow> {
@@ -31,8 +30,6 @@ export interface AreaChildrenListProps<T extends AreaChildRow> {
   discCounts?: ChildDiscCounts | null;
 }
 
-// The order a child's disciplines are listed in when they tie (and when only the row's disciplines[] list is known).
-const DISC_ROW_ORDER = ["sport", "trad", "bouldering", "toprope", "alpine", "ice", "mixed", "aid", "mountaineering", "scrambling"];
 const FINDING = "Finding you…";
 
 // THE SUB-AREAS, near the top of the page (owner, 2026-11-11: "you have to scroll too far to look at the areas
@@ -45,6 +42,12 @@ const FINDING = "Finding you…";
 // children hold, and the extras the rows can answer (lib/areaChildSort.js). Under a discipline sort the row's
 // figure is THAT discipline's count, so the number matches the order. The choice lasts for the visit, so
 // drilling down keeps it; a key a level cannot answer reads A → Z.
+//
+// ONE LINE PER ROW (owner, 2026-11-25: "Remove text like this from areas lists Bouldering 2,058 · Trad 1,409 ·
+// Sport 1,144 · +7 more I just want the total number of climbs ... to allow it to be skinnier. Also let's remove
+// view area button the right and just have an arrow"): the name, the total climbs, and a plain arrow -- the shape
+// of Mountain Project's and theCrag's area lists. The per-discipline line under each name and the solid blue
+// View area pill are gone; the discipline counts still drive the "Most sport / trad…" sorts.
 export default function AreaChildrenList<T extends AreaChildRow>({ rows: given, noun, onDrill, C, grades, objectives, variant, onAllAreas, map, onNear, discCounts }: AreaChildrenListProps<T>) {
   const side = variant === "sidebar";
   const [sortKey, setSortKey] = useState<string>(getChildSort);
@@ -93,28 +96,6 @@ export default function AreaChildrenList<T extends AreaChildRow>({ rows: given, 
     const n = a.route_count;
     return n.toLocaleString() + (side ? "" : " climb" + (n !== 1 ? "s" : ""));
   };
-  // What kind of climbing is in a child, as a muted line of words under its name (phone), so a climber can
-  // tell a boulder field from a sport crag before tapping: "Alpine 820 · Trad 310 · Sport 110", largest
-  // first, each with its own count. No colour dots (owner, 2026-11-18: "the discipline dots can be removed
-  // ... we need a better ui for listing the disciplines") -- a dot said a discipline was present, never how
-  // much of it. A child of one discipline reads the word alone, since the count above is already that number;
-  // under a "Most sport" sort the sorted discipline is left out, since the figure above is its count. Before
-  // the counts load (or when that read fails) the row's own disciplines[] list gives the words, no numbers.
-  const discLine = (a: T) => {
-    const c = discCounts ? discCounts[String(a.id)] : null;
-    const all = c ? Object.keys(c).filter(d => c[d] > 0 && d in DISC_LABELS).sort((x, y) => c[y] - c[x] || DISC_ROW_ORDER.indexOf(x) - DISC_ROW_ORDER.indexOf(y))
-      : (Array.isArray(a.disciplines) ? (a.disciplines as string[]) : []).filter(d => d in DISC_LABELS).sort((x, y) => DISC_ROW_ORDER.indexOf(x) - DISC_ROW_ORDER.indexOf(y));
-    const ds = disc ? all.filter(d => d !== key.slice(5)) : all;
-    if (!ds.length) return null;
-    const shown = ds.slice(0, 3); // three fit one line at 390px; the rest fold into "+N more"
-    const withN = all.length > 1;
-    // A label and its count never split across lines (no-break space); the line wraps only AFTER a "·", so no
-    // line starts with one. It is drawn under the name-and-button row, at the row's full width: beside the
-    // View area button three counts wrapped on most rows at 390px.
-    const parts = shown.map(d => ((DISC_LABELS as Record<string, string>)[d] + (c && withN ? " " + c[d].toLocaleString() : "")).replace(/ /g, "\u00a0"));
-    if (ds.length > shown.length) parts.push("+" + (ds.length - shown.length) + "\u00a0more");
-    return <span style={{ fontSize: 12, color: C.textMuted, fontWeight: 600, lineHeight: 1.4, fontVariantNumeric: "tabular-nums" }}>{parts.join("\u00a0· ")}</span>;
-  };
   return <div>
     {side && map ? <div style={{ position: "relative", marginBottom: 10 }}>
       <WalkInMap pts={[]} park={null} crag={map.pin ? { lat: map.lat, lng: map.lng } : null} center={{ lat: map.lat, lng: map.lng }} height={120} zoom={map.zoom} label={"Map of " + map.name} />
@@ -132,17 +113,13 @@ export default function AreaChildrenList<T extends AreaChildRow>({ rows: given, 
     <div>
       {rows.map((a, i) => {
         const g = grades ? grades[String(a.id)] : null;
-        const dl = side ? null : discLine(a);
-        return <div key={a.id} {...clickable(() => onDrill(a))} style={{ cursor: "pointer", padding: side ? "7px 2px" : "11px 0", minHeight: side ? 36 : 52, boxSizing: "border-box", borderTop: i ? "1px solid " + C.border : "none", display: "flex", flexDirection: "column", justifyContent: "center", gap: 4 }}>
+        return <div key={a.id} {...clickable(() => onDrill(a))} style={{ cursor: "pointer", padding: side ? "7px 2px" : "10px 0", minHeight: side ? 36 : 48, boxSizing: "border-box", borderTop: i ? "1px solid " + C.border : "none", display: "flex", flexDirection: "column", justifyContent: "center", gap: 4 }}>
           <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
-            <span style={{ flex: 1, minWidth: 0, display: "flex", flexDirection: "column", gap: 3 }}>
-              <span style={{ fontSize: side ? 13 : 15, fontWeight: 700, color: side ? C.blue : C.text, overflowWrap: "anywhere", lineHeight: 1.3 }}>{a.name}</span>
-              {side ? null : <span style={{ fontSize: 12, color: disc ? C.text : C.textMuted, fontWeight: disc ? 700 : 600, fontVariantNumeric: "tabular-nums" }}>{count(a)}</span>}
-            </span>
+            <span style={{ flex: 1, minWidth: 0, fontSize: side ? 13 : 15, fontWeight: 700, color: side ? C.blue : C.text, overflowWrap: "anywhere", lineHeight: 1.3 }}>{a.name}</span>
             {badge(a.id)}
-            {side ? <span style={{ flexShrink: 0, fontSize: 12, color: disc ? C.text : C.textMuted, fontWeight: disc ? 700 : 600, fontVariantNumeric: "tabular-nums" }}>{count(a)}</span> : <ViewAreaPill C={C} />}
+            <span style={{ flexShrink: 0, fontSize: 12, color: disc ? C.text : C.textMuted, fontWeight: disc ? 700 : 600, fontVariantNumeric: "tabular-nums", whiteSpace: "nowrap" }}>{count(a)}</span>
+            {side ? null : <AreaRowArrow C={C} />}
           </div>
-          {dl}
           {g && g.length ? <WallGradeBars rows={g} name={a.name} total={a.route_count} C={C} /> : null}
         </div>;
       })}

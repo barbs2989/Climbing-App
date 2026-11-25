@@ -1,0 +1,35 @@
+{
+ "ny_king_wall_the": {
+  "_expect": { "name": "The King Wall", "region": "New York" },
+  "blurb": "A tall, steep face set back from Route 73 in Chapel Pond Pass, in the Keene Valley area of the Adirondacks. It is a hard-face crag rather than a place for easy mileage: of eleven climbs, most are 5.12, with a few in the 5.10 to 5.11 range and a single 5.7. Trad lines are slightly more numerous than sport, and there is one aid line plus a winter ice route graded WI5. The wall is more secluded than the cliffs closer to the road, and reaching it takes a short, steep bushwhack, so plan for a committed day rather than a quick lap.",
+  "parking_note": "Leave the car at the Chapel Pond Slab pullout, or in the small lot directly across the road from the cliff, roughly 0.2 miles south of the slab pullout.",
+  "approach": "From the road, drop into the woods, cross flat ground, then head steeply uphill, following a stream to the wall. Expect a bushwhack and a loose gully.",
+  "review": { "sources": ["https://www.mountainproject.com/area/112406987/king-wall", "https://www.lakeplacid.com/do/activities/king-wall"] }
+ },
+ "ny_neanderthal_cave": {
+  "_expect": { "name": "Neanderthal Cave", "region": "New York" },
+  "blurb": "A small, friendly section of Shelving Rock on the eastern shore of Lake George. Eleven routes split between sport and trad, running from 5.7 up to a single 5.11, with the bulk sitting between 5.7 and 5.10. Several lines are fully bolted, and a handful of moderate classics make this a sensible starting point for someone climbing around 5.8. A few harder lines and some trad leads add variety. The walk from the Shelving Rock path is short: roughly 200 feet downhill and to the right of the herd path that serves the Main Wall.",
+  "approach": "Follow the herd path to the Main Wall, then continue about 200 feet downhill and bear right.",
+  "review": { "sources": ["https://www.mountainproject.com/v/108191597", "https://mountainproject.com/area/107743027/shelving-rock"] }
+ },
+ "ny_diesel_boulder": {
+  "_expect": { "name": "Diesel Boulder", "region": "New York" },
+  "blurb": "A big, overhanging block in the Diesel and Ice Cube group at Ice Pond, in the hills near Brewster. The setting is a gneiss bouldering preserve with a long list of problems, and this one boulder is steep on nearly every side. All eleven problems here are on the harder end: a few in the V3 to V4 range, several V6 and V7 lines, and a cluster of V9 to V11 at the top. It sits a few hundred yards beyond the Ice Cube boulder, with the cliffline uphill to your left as you walk in. Best suited to strong boulderers with a good stack of pads.",
+  "review": { "sources": ["https://www.mountainproject.com/area/121023027/diesel-boulder", "https://mountainproject.com/area/107399355/ice-pond"] }
+ },
+ "ny_avalanche_lake_pass": {
+  "_expect": { "name": "Avalanche Lake/Pass", "region": "New York" },
+  "blurb": "A remote winter destination in the Interior High Peaks of the Adirondacks, where the walls above the pass hold mostly ice and mixed lines. The eleven climbs run from easy WI2 up to WI6, with several WI4 and WI5 routes and one mixed climb around M7. The Trap Dike is the one line that draws a crowd; the rest of the pass is usually quiet. The approach is long, about five miles in from the Loj, and skis are worth bringing. The lake sits near 3,000 feet, so expect true winter conditions and a very full day.",
+  "review": { "sources": ["https://mountainproject.com/area/108378609/avalanche-lakepass", "https://pureadirondacks.com/blogs/news/ice-climbing-the-avalanche-mountain-gully"] }
+ },
+ "ny_lock_ness": {
+  "_expect": { "name": "Lock Ness", "region": "New York" },
+  "blurb": "An ice and mixed crag in the Keene Valley area of the Adirondacks, split into a lower wall and an upper wall. Ten of the eleven climbs are water ice, divided evenly between WI3 and WI4, plus one mixed line near M7. Climbers have described it as a good early-season choice, since thin ice can produce interesting mixed lines before the pure ice is fat. The cliff is at higher elevation than some of its neighbours, and the approach follows a small drainage with the main cliff on your left as you go up.",
+  "review": { "sources": ["https://www.jimlawyer.adirondackrock.com/Area%20-%20Adirondacks%20-%20Lock%20Ness.htm", "https://www.mountainproject.com/forum/message/113806504"] }
+ },
+ "_skipped": {
+  "ny_mahican_wall": "no fetched page about the crag itself (only the Hailes Cave South parent page and a different sector, Mahican Ledge; thecrag returned 403)",
+  "ny_bear_run": "only one page about the crag fetched (MP Bear Run); no second page that mentions it",
+  "ny_sherman_boulders": "no page about Sherman Boulders itself could be fetched; only generic Fort Tryon pages that do not name it"
+ }
+}

@@ -41,7 +41,7 @@ const RANK_ROOT: RankArea = { id: "", name: "All countries" };
    better ui like how we would find a climb"). The board keeps one card naming the area it ranks; Change
    opens a PAGE in place of the board, laid out as the Climbs tab is: the countries and states as
    two-column cards with their climb counts (StatePicker's phone cards), and below a state the Climbs
-   area page's own sub-area list (AreaChildrenList: A to Z, the same Sort, a View area button on every
+   area page's own sub-area list (AreaChildrenList: A to Z, the same Sort, an open arrow on every
    row), under a header that names the area with its path as links. Walking the page ranks nothing; the
    header's "See rankings for <area>" does, and so does a search hit or one of Your areas. It replaced
    an inline list squeezed between the scope row and the board, eight rows at a time, ordered by size,

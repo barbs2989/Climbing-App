@@ -1,0 +1,39 @@
+{
+ "ca_hand_to_hand_combat_wall": {
+  "_expect": {"name": "Hand to Hand Combat Wall", "region": "California"},
+  "blurb": "A small boulder wall on the West Rim of the Happy Boulders, in the volcanic Tablelands north of Bishop in the Eastern Sierra, at roughly 4,500 feet. Eleven problems run from an easy V1 up to V9, with the bulk of the interest in the V5 to V8 range, where three problems sit at V7. The style is short, steep and pocketed, with a long lumpy traverse tying some of it together. To find it, continue up the canyon past the Gleanor Boulder junction and bear uphill to the left. It makes a good stop for a strong boulderer who wants a few hard lines in one spot.",
+  "review": {"sources": ["https://www.mountainproject.com/area/106279723/hand-to-hand-combat-wall", "https://www.mountainproject.com/area/105799640/happy-boulders"]}
+ },
+ "ca_patina_wall": {
+  "_expect": {"name": "Patina Wall", "region": "California"},
+  "blurb": "A steep sport wall in the Valley of the Moon, a small formation area in southern San Diego County close to the Imperial County line, at about 3,900 feet. Of its eleven routes, nine are bolted and two are trad. Grades start around 5.8 and reach 5.12, but most of the climbing is 5.10 and 5.11, so it suits climbers who already lead steep lines. The face is covered in large patina flakes, which give the climbing its character. You reach the valley by four-wheel-drive road and then walk on down the road, with the wall eventually showing up on your right.",
+  "review": {"sources": ["https://mountainproject.com/area/105946825/patina-wall", "https://mountainproject.com/area/105946815/valley-of-the-moon"]}
+ },
+ "ca_debra": {
+  "_expect": {"name": "Debra", "region": "California"},
+  "blurb": "A bouldering wall within Potter's Point, the sandstone boulder field above Santa Barbara near the top of Gibraltar Road, at about 3,500 feet. The rock is a smooth wave of coarse sandstone. Eleven problems here cover a wide spread: roughly two thirds are V1 to V3, a few sit between V4 and V8, and one project-level problem tops out at V11. It is a good stop for a mixed group, with plenty of easy and moderate lines beside one famous hard test piece. The wall is a short walk along the main trail beyond the Jacked and Tan boulder and is hard to miss.",
+  "review": {"sources": ["https://www.mountainproject.com/area/107442426/debra", "https://www.mountainproject.com/area/107145903/potters-point"]}
+ },
+ "ca_eagle_s_nest_upper": {
+  "_expect": {"name": "Eagle's Nest (Upper)", "region": "California"},
+  "blurb": "A quiet south-facing crag on Shuteye Ridge off Highway 41, near Fresno Dome in the southern Sierra, at roughly 7,600 feet. Eleven lines, none longer than about 30 metres: six trad, four sport and one boulder problem. Grades are modest to middling, with one route at 5.7, four at 5.8, four at 5.10 and a single 5.12, plus a V1. Expect sun most of the day, so it is pleasant in cooler weather and best started early when it is hot. Crowds are light and some of the moderate lines work well for beginners. The hike follows cairns over slab and through a notch to the wall.",
+  "review": {"sources": ["https://www.mountainproject.com/area/114454823/eagles-nest-upper", "https://app.advcollective.com/climbing/deep-space"]}
+ },
+ "ca_fly_dog_buttress": {
+  "_expect": {"name": "Fly Dog Buttress", "region": "California"},
+  "blurb": "A buttress on El Cajon Mountain in east San Diego County, at about 2,800 feet, with routes between roughly 100 and 300 feet long. Eleven lines mix seven trad and four sport, mostly 5.10 and 5.11, with one 5.8, one 5.9 and two 5.12s at the top end. Climbing ranges from technical cracks to slab, chimney and sustained pitches, and some routes are multi-pitch. It is a long, tiring day: you hike to the Wedge first and then keep going west along a cairned trail beneath the buttress. There is no water on the way, so carry plenty and start early on warm days.",
+  "review": {"sources": ["https://www.mountainproject.com/area/108400670/fly-dog-buttress", "https://app.advcollective.com/climbing/fly-dog-a-technical-59-trad-climb-on-el-cajon-mountain"]}
+ },
+ "ca_dr_seuss_wall": {
+  "_expect": {"name": "Dr. Seuss Wall", "region": "California"},
+  "blurb": "A small crag beside Wishon Reservoir on the western slope of the southern Sierra, at about 6,500 feet. It sits well below Courtright Reservoir, so it is usable earlier in the season. The wall is about 30 feet tall at its left end and climbs to around 70 feet toward the south end. Eleven routes mostly follow cracks and are mainly trad, with one sport route and one top-rope line; grades run from 5.4 to 5.10, and most are 5.9 or easier. A short scramble leads to bolted top-rope anchors, which makes it a friendly spot for beginners and families.",
+  "review": {"sources": ["https://www.mountainproject.com/area/117602988/dr-seuss-wall", "https://mountainproject.com/area/117602969/wishon-reservoir"]}
+ },
+ "_skipped": {
+  "ca_east_crack_boulder": "no fetched page about the boulder itself: only the single route page and the Melrose Boulders parent page",
+  "ca_main_wall_17": "no page about the Descanso Main Wall itself found (only the Descanso Wall parent page, which has a short sub-area section); other Main Walls are different places"
+ },
+ "_conflicts": {
+  "ca_fly_dog_buttress": "stored rock is monzogranite but https://app.advcollective.com/climbing/fly-dog-a-technical-59-trad-climb-on-el-cajon-mountain describes the buttress as solid sandstone; the area page https://www.mountainproject.com/area/108400670/fly-dog-buttress gives no rock"
+ }
+}
