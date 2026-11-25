@@ -63,7 +63,7 @@ const READERS = [
   [/\.filter\(function\(k\)\{const fk=\(FACT_FIELD as Record<string,string>\)\[k\];return !fk\|\|fieldScope\(fk,scopeCtx\(route,disc\)\);\}\)/, "the crag \"Not on file yet\" list (TechStats _want)"],
   [/_dsc\.length<=140&&!fieldScope\("descentText",scopeCtx\(route,disc\)\)/, "the crag Descent fact, skipped where DESCENT renders (TechStats)"],
   [/\.filter\(function\(k\)\{return fieldScope\(k,_sc\);\}\)\)\|\|"grade"/, "the facts-card pencil (RouteDetail factsPencilKey)"],
-  [/openFix\(catOf\(route\)==="sport"\?"draws":"rack"\)/, "the \"Brought different gear?\" box opening draws on sport (RouteDetail gearUpdateBox)"],
+  [/const sec=disc==="bouldering"\?"pads":disc==="sport"\?"draws":"rack";/, "the crag RACK pencil opening draws on sport (CragRack sec)"],
   [/<CragLocationCard route=\{route\} mtn=\{mtn\} onEditParking=\{onEditArea\?\(\)=>\{onEditArea\("parking_pin"\);\}:\(\)=>\{openFix\("waypoints"\);\}\} onEditRoutePin=\{\(\)=>\{openFix\("waypoints"\);\}\}\/>/, "the crag parking card editing the CRAG's pin, the route pin only as fallback (RoutePlanTab)"],
   [/park&&onEditParking\?<EditIconButton onClick=\{!parkIsCrag&&onEditRoutePin\?onEditRoutePin:onEditParking\}/, "the parking pencil editing the pin it SHOWS — the route's own when trailheadPoint() picked it (CragLocationCard)"],
   [/const areaFactEdit=onSuggestAreaEdit&&cragAreaEditable\(route\)\?/, "the crag-area editor offered exactly where fieldScope's cragPin says (RouteDetail areaFactEdit)"],
@@ -74,8 +74,8 @@ const READERS = [
 const lost = READERS.filter(([re]) => !re.test(rd)).map(([, n]) => n);
 if (lost.length) fail(`no longer reads lib/fieldScope.js: ${lost.join("; ")} — a page section and the edit sheet can drift apart again`);
 else ok(`all ${READERS.length} page readers and the sheet gate on lib/fieldScope.js`);
-// The sport gear box is only right while sport edits draws and not rack.
-if (!fieldScope("draws", scopeCtx({}, "sport")) || fieldScope("rack", scopeCtx({}, "sport"))) fail("sport's gear box opens `draws`, so sport must be offered draws and not rack");
+// The crag RACK pencil on sport is only right while sport edits draws and not rack.
+if (!fieldScope("draws", scopeCtx({}, "sport")) || fieldScope("rack", scopeCtx({}, "sport"))) fail("sport's RACK pencil opens `draws`, so sport must be offered draws and not rack");
 
 // ── 3b. the page side: what the sheet offers, the page names and can open (2026-11-18, third PR) ──
 const PAGE_SIDE = [
