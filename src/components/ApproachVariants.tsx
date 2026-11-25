@@ -1,3 +1,4 @@
+import { noteBox } from "../../lib/accents.js";
 import { approachKeyOf } from "../../lib/approaches.js";
 import { primaryApproachIndex, longFormApproachIndex, approachHasCrossing } from "../../lib/approachIndex.js";
 import { catOf, routeAscentFt, uDist, uElev, gainCoversWholeOuting, uDistMi, C, ROUTE_GAP, RSL as SL } from "../../ClimbMatchCore.jsx";
@@ -105,7 +106,7 @@ export default function ApproachVariants({route,onEdit,onEditProse}: ApproachVar
       {seasonFull?<div data-approach-window="1" style={{fontSize:12.5,fontWeight:700,color:C.onSolid,background:C.blueBg,border:"1px solid "+C.blueDim,borderRadius:10,padding:"6px 10px",lineHeight:1.5,marginBottom:9,overflowWrap:"anywhere"}}>{seasonFull}</div>:null}
       {badge?<div style={{fontSize:9.5,fontWeight:800,color:C.green,textTransform:"uppercase",letterSpacing:0.5,marginBottom:2}}>Most used</div>:null}
       {vars.length?<div style={{fontSize:13.5,fontWeight:800,color:C.text,wordBreak:"break-word",marginBottom:6}}>{v.name||("Approach "+(i+1))}</div>:null}
-      {why?<div data-approach-why="1" style={{borderLeft:"3px solid "+C.blue,background:C.surface,borderRadius:"0 9px 9px 0",padding:"6px 10px",marginBottom:8}}>
+      {why?<div data-approach-why="1" style={{...noteBox(C.blue,C.surface),marginBottom:8}}>
         <div style={{fontSize:9.5,fontWeight:800,color:C.blue,textTransform:"uppercase",letterSpacing:0.5,marginBottom:2}}>Why go this way</div>
         <div style={{fontSize:12.5,color:C.text,lineHeight:1.55}}>{why}</div>
       </div>:null}

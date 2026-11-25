@@ -1,3 +1,4 @@
+import { noteBox } from "../../lib/accents.js";
 import { C } from "../../ClimbMatchCore.jsx";
 import { BTN } from "../../lib/buttonStyles.js";
 import CardHead from "./CardHead.tsx";
@@ -16,7 +17,7 @@ export interface PitchConsensusProps {
 export default function PitchConsensus({p,onSuggestFix}: PitchConsensusProps){
   const anchor=String(p.anchor||"").trim();const gear=String(p.gear||"").trim();const belay=String(p.belay||"").trim();
   if(!anchor&&!gear&&!belay&&!onSuggestFix)return null;
-  const box=function(label: string,text: string,empty: string){return <div style={{borderLeft:"2px solid "+C.border,padding:"1px 0 1px 10px",marginBottom:9}}>
+  const box=function(label: string,text: string,empty: string){return <div style={{...noteBox(null,C.surface),marginBottom:9}}>
     <div style={{fontSize:11,fontWeight:700,color:C.label,letterSpacing:0.4,textTransform:"uppercase",marginBottom:3}}>{label}</div>
     <div style={{fontSize:13,color:text?C.text:C.textMuted,lineHeight:1.5,whiteSpace:"pre-wrap",wordBreak:"break-word",overflowWrap:"anywhere"}}>{text||empty}</div>
   </div>;};
