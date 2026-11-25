@@ -40457,3 +40457,70 @@ flag).
 
 3 confirmed errors fixed, 3 flagged for human review. Next batch continues id-ascending from
 `wa_icy_peak_southwest_route` (pass 9).
+
+## 2026-11-25 — Pass 9, Batch 585
+
+Ten routes, continuing id-ascending from `wa_icy_peak_southwest_route`: Southwest Slopes
+(Indian Head Peak), Indian Mountain Scramble, East Peak Northeast Ridge/East Face and East
+Peak Low Fifth Class (both filed under Ingalls Peak's East Peak sub-area), East Peak
+Southwest Face / Friends In High Places / Ingalls Error / North Peak Southwest Face / South
+Ridge (all filed under the main Ingalls Peak area), and Northwest Buttress (Inner
+Constance).
+
+6 confirmed errors fixed — the same recurring gain_ft/loss_ft vs. itinerary pattern as prior
+batches:
+- `wa_indian_head_peak_southwest_slopes` (gain_ft 5900, loss_ft NULL) didn't match its own
+  two-day itinerary, which sums to 6000/6000 for this there-and-back route. Corrected to
+  6000/6000.
+- `wa_ingalls_peak_east_ne_ridge_route` (gain_ft/loss_ft both NULL) had its own single-day
+  itinerary entry already stating 3210/3210. Filled from it.
+- `wa_ingalls_peak_east_route`'s gain_ft (3500) didn't match its own itinerary (3300); loss_ft
+  already matched at 3300. Corrected gain_ft to 3300.
+- `wa_ingalls_peak_friends_in_high_places` (gain_ft/loss_ft both NULL) had its own itinerary
+  entry already stating 3400/3400. Filled from it.
+- `wa_ingalls_peak_south_ridge` (gain_ft/loss_ft 3500/3500) didn't match its own itinerary
+  (3600/3600) — also the more plausible figure given the ~4,100 ft trailhead to 7,662 ft
+  summit. Corrected to 3600/3600.
+- `wa_inner_constance_northwest_buttress` (gain_ft/loss_ft both NULL) had its own three-day
+  itinerary already summing to 2800/2800. Filled from it.
+
+1 addition: `wa_ingalls_peak_ingalls_error`'s `fa` was NULL; Mountain Project's page for the
+route credits Andy Kish & Adam Moorad (no date given). Filled from that single source; the
+stored grade (5.7 PG13) already matched MP exactly and needed no change.
+
+3 flagged for human review, not fixed:
+- `wa_ingalls_peak_east_peak_southwest_face`'s `area_id` is `wa_ingalls_peak` (the main
+  summit), but Mountain Project and the Mountaineers both describe this specific route as
+  being on Ingalls Peak's separate East Peak summit — starting at the chockstone in the notch
+  between the North and East Peaks — and explicitly warn not to confuse it with the main
+  peak's own, unrelated Southwest Face/Ledges route. Its two siblings
+  (`wa_ingalls_peak_east_ne_ridge_route`, `wa_ingalls_peak_east_route`) are already correctly
+  filed under `wa_ingalls_peak_east`; this one looks misfiled the same way, but reassigning
+  `area_id` touches the `route_count` trigger and the route-identity rules, so it needs a
+  human to re-home it rather than an audit-run UPDATE.
+- `wa_indian_mountain_baker_scramble`'s `dist_km` (25.7, ~16 mi) looks like a one-way figure:
+  doubled, it's ~31.9 mi, matching this same row's own hazards text ("about 32 mi round trip")
+  almost exactly. CLAUDE.md already documents that `dist_km` holds two conventions across this
+  table and warns against normalizing it in bulk, so left as a flag rather than corrected.
+- `wa_inner_constance_northwest_buttress`'s stored `fa` ("Eric Hardee and Dan Coffey, 1983")
+  could not be corroborated against any source found — Wikipedia and the American Alpine
+  Club's archive document only the peak's own 1939 first ascent (David Harrah's party) and an
+  unrelated 1963 Inner Constance Ridge traverse.
+
+Also noted, no action needed: `wa_ingalls_peak_south_ridge`'s `fa` ("Keith Rankin & Ken
+Solberg, May 30, 1941") is confirmed twice, independently, on OpenBeta exactly as stored — but
+Mountain Project names the second climber "Ken Colbert" instead of "Solberg." Two outside
+sources disagree with each other, not with our stored value, and nothing found settles which
+spelling is right.
+
+Clean (7, loosely — some count in more than one bucket): Indian Head Peak's `high_point_ft`
+(7447 ft, within rounding of the best current LiDAR estimate 7448 ft per Wikipedia/
+listsofjohn.com); Indian Mountain's `high_point_ft` (7133 ft, matching Wikipedia/
+listsofjohn.com exactly) and its Brush Creek Valley location (corroborated by PeakVisor)
+aside from the `dist_km` flag above; East Peak Low Fifth Class's `fa` (Nov 1952, Stan
+Butchart/Gene & Bill Prater, matching SummitPost exactly); Ingalls Error's `grade` (5.7 PG13,
+matching Mountain Project exactly); and East Peak Southwest Face and North Peak Southwest
+Face, both otherwise unenriched — no further stored facts to contradict.
+
+6 confirmed errors fixed, 1 addition, 3 flagged for human review. Next batch continues
+id-ascending from `wa_inner_constance_northwest_buttress` (pass 9).
