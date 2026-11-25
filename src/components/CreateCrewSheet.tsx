@@ -1,3 +1,4 @@
+import { knotHead } from "../../lib/accents.js";
 import { useState } from "react";
 import { createPortal } from "react-dom";
 import { C, SL, routePlace } from "../../ClimbMatchCore.jsx";
@@ -93,7 +94,7 @@ export default function CreateCrewSheet({ picks, formedIds, onClose, onRoute, on
     <div onClick={e => e.stopPropagation()} style={{ background: C.surface, borderRadius: "18px 18px 0 0", border: "1px solid " + C.border, width: "100%", maxWidth: 520, padding: 16, boxSizing: "border-box", maxHeight: "90%", overflowY: "auto", overscrollBehavior: "contain" }}>
       <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 14 }}>
         <div style={{ flex: 1, minWidth: 0 }}>
-          <div style={{ fontSize: 16, fontWeight: 700, color: C.text, borderLeft: "3px solid " + C.blue, paddingLeft: 9, overflowWrap: "anywhere" }}>{title}</div>
+          <div style={{ fontSize: 16, fontWeight: 700, color: C.text, ...knotHead(C.brand), overflowWrap: "anywhere" }}>{title}</div>
           <div style={{ fontSize: 12, color: C.textMuted, marginTop: 2, paddingLeft: 12 }}>{subtitle}</div>
         </div>
         <button onClick={onClose} aria-label="Close" style={POP_CLOSE}>✕</button>

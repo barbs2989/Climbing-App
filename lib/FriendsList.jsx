@@ -1,5 +1,6 @@
 // Moved out of ClimbMatchCore.jsx verbatim so it can load lazily, off the first-paint
 // bundle. It is rendered only from App (ClimbMatch.jsx) behind React.lazy + Suspense.
+import { knotHead } from "./accents.js";
 import { FONT_DISPLAY } from "./fonts.js";
 import { tx } from "./tapWords.js";
 import { clickable } from "./clickable";
@@ -38,7 +39,7 @@ export default function FriendsList({routeById,unavailable,friends,onClose,onOpe
   const chipStyle=(on)=>({flexShrink:0,padding:"9px 11px",borderRadius:14,border:"1px solid "+(on?C.blue:C.border),background:on?C.blueBg:C.surface,color:on?C.onSolid:C.textSub,fontSize:12,fontWeight:600,cursor:"pointer",whiteSpace:"nowrap"});
   return <div onClick={onClose} role="dialog" aria-label="Friends" aria-modal="true" style={{position:"fixed",inset:0,background:C.scrimStrong,zIndex:1150,overflowY:"auto",overscrollBehavior:"contain",display:"flex",alignItems:"flex-start",justifyContent:"center",padding:"12px 8px"}}>
     <div onClick={e=>e.stopPropagation()} style={{background:C.surface,borderRadius:18,width:"100%",maxWidth:460,border:"1px solid "+C.border,overflow:"hidden"}}>
-      <div style={{display:"flex",justifyContent:"space-between",alignItems:"center",padding:"14px 16px",borderBottom:"1px solid "+C.border}}><div style={{color:C.text,fontSize:17,fontWeight:700,borderLeft:"3px solid "+C.blue,paddingLeft:9}}>{"Friends ("+friends.length+")"}</div><button onClick={onClose} style={POP_CLOSE} aria-label="Close">✕</button></div>
+      <div style={{display:"flex",justifyContent:"space-between",alignItems:"center",padding:"14px 16px",borderBottom:"1px solid "+C.border}}><div style={{color:C.text,fontSize:17,fontWeight:700,...knotHead(C.brand)}}>{"Friends ("+friends.length+")"}</div><button onClick={onClose} style={POP_CLOSE} aria-label="Close">✕</button></div>
       <div style={{padding:"12px 14px"}}>
         {/* The search box shows for ANY friends list, not only past four: it used to appear at five, so a climber with a short list looked for it and found none. Facebook's and Instagram's friend/follower lists always carry one. */}{friends.length?<div style={{position:"relative",marginBottom:9}}><input type="search" aria-label="Search friends" value={q} onChange={e=>setQ(e.target.value)} onKeyDown={e=>{if(e.key==="Escape"&&q){e.stopPropagation();setQ("");}}} placeholder="Search friends by name or @handle" style={{width:"100%",boxSizing:"border-box",padding:"9px 34px 9px 12px",borderRadius:10,border:"1px solid "+C.field,background:C.card,color:C.text,fontSize:14,outline:"none"}}/>{q?<button onClick={()=>setQ("")} aria-label="Clear search" style={Object.assign({},POP_REMOVE,{position:"absolute",right:5,top:"50%",transform:"translateY(-50%)"})}>✕</button>:null}</div>:null}
         {friends.length>1?<div style={{display:"flex",gap:6,overflowX:"auto",paddingBottom:3,marginBottom:8}}>{SORTS.map(x=><button key={x[0]} onClick={()=>setSort(x[0])} aria-current={sort===x[0]?"true":undefined} style={chipStyle(sort===x[0])}>{x[1]}</button>)}</div>:null}

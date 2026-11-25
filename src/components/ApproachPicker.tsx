@@ -1,3 +1,4 @@
+import { glowCard } from "../../lib/accents.js";
 import { EMPTY_ARR } from "../../lib/emptyArr.js";
 import { viaPitchSpans, wholeLine, spanLabel } from "../../lib/approaches.js";
 import { C, ROUTE_GAP } from "../../ClimbMatchCore.jsx";
@@ -83,7 +84,7 @@ export default function ApproachPicker({route,opts,sel,onSel,sibs,sibsErr,finish
   /* The picker is the page's first decision, so it reads as one: a blue rail and the section's own CardHead
      heading, a tighter box than the cards below it. A box as loud as a card made the choice look like a
      footnote of the title, and a padded box made the page feel as if it had two headers. */
-  const card={background:C.card,border:"1px solid "+C.border,borderLeft:"4px solid "+C.blue,borderRadius:12,padding:"11px 12px",marginBottom:ROUTE_GAP};
+  const card={background:C.card,...glowCard(C.blue,C.card),borderRadius:12,padding:"11px 12px",marginBottom:ROUTE_GAP};
   const head={fontSize:13.5,fontWeight:800,color:C.text,marginBottom:4};
   const chip=function(r: ApproachRouteRef,label: string,key: string){return <button key={key} onClick={function(){if(onOpenRoute)onOpenRoute(r);}} aria-label={"Open "+r.name} style={{display:"inline-flex",alignItems:"center",gap:4,padding:"7px 12px",minHeight:36,background:"transparent",color:C.blue,border:"1px solid "+C.blueDim,borderRadius:20,fontSize:12.5,fontWeight:700,cursor:"pointer",maxWidth:"100%",textAlign:"left"}}>{label} ›</button>;};
   return <>

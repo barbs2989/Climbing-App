@@ -46,6 +46,7 @@ npm run measure:guard-reach -- --out before.json # ...then --out after.json --co
 npm run check:refs # identifiers referenced but never bound (runs in build + CI)
 npm run check:jsx-comments # a comment in JSX children position renders to the USER (in build)
 npm run check:no-emoji # the app draws NO emoji — an ActionIcon or the words alone (owner, 2026-10-25); the one exception is the REACTIONS table (owner, 2026-11-05) (in build)
+npm run check:no-left-stripes # no box wears a thick coloured line down its LEFT side — a knot, a corner glow or a tinted panel instead (owner, 2026-11-25) (in build)
 npm run check:no-purple-text # the app draws NO purple text: C has no purple token, and the few purple MAP marks are an allow-list (owner, 2026-11-25) (in build)
 npm run check:no-nul  # no source file git would treat as BINARY, so diffs stay readable (in build)
 npm run check:no-secrets # no Supabase service key, service_role JWT, or literal anon key / project URL in source (in build)

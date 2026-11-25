@@ -25,7 +25,7 @@ export default function RichEditor({value,onChange,elRef,ariaLabel,placeholder,m
   const [linkOpen,setLinkOpen]=useState(false);const [url,setUrl]=useState("");const [linkErr,setLinkErr]=useState(false);const saved=useRef<Range | null>(null);const urlRef=useRef<HTMLInputElement | null>(null);
   const setEl=function(el: HTMLDivElement | null){ref.current=el;if(elRef)elRef.current=el;};
   /* A quote is drawn as renderMD draws it: a bar down its left. The browser's own blockquote is a 40px indent and no bar. */
-  const paintQuotes=function(){const el=ref.current;if(!el)return;Array.prototype.forEach.call(el.querySelectorAll("blockquote"),function(q: HTMLElement){q.style.cssText="margin:4px 0;padding:1px 0 1px 10px;border-left:3px solid "+C.border+";color:"+C.textSub;});};
+  const paintQuotes=function(){const el=ref.current;if(!el)return;Array.prototype.forEach.call(el.querySelectorAll("blockquote"),function(q: HTMLElement){q.style.cssText="margin:4px 0;padding:6px 10px;border-radius:9px;background:"+C.surface+";color:"+C.textSub;});};
   /* The stored text is the source of truth. It is only written INTO the box when it changed from
      outside (a prompt chip, a mention pick, a reset) — rewriting it on every keystroke would throw
      the caret back to the start. */

@@ -6,6 +6,7 @@
 // area half: the area page's "Start a crew here", the Crews tab's "At an area…", a past crew's "…or an
 // area". It collects what the database demands of an area crew (the area and the session's discipline)
 // and what a session needs to be joinable (a day, a size), then hands `formCrew` a place.
+import { knotHead } from "./accents.js";
 import { createPortal } from "react-dom";
 import { SOLID_LEDGE } from "./buttonStyles.js";
 import { useMemo, useState } from "react";
@@ -50,7 +51,7 @@ export default function StartCrewSheet({ payload, uid, onClose, onStart, notify 
   };
   return createPortal(<div onClick={onClose} role="dialog" aria-label="Start a crew" aria-modal="true" style={{ position: "fixed", inset: 0, background:C.scrimStrong, zIndex: 1200, overflowY: "auto", overscrollBehavior: "contain", display: "flex", alignItems: "flex-start", justifyContent: "center", padding: "12px 8px" }}>
     <div onClick={(e) => e.stopPropagation()} style={{ background: C.surface, borderRadius: 18, width: "100%", maxWidth: 440, border: "1px solid " + C.border, overflow: "hidden" }}>
-      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", padding: "14px 16px", borderBottom: "1px solid " + C.border }}><div style={{ color: C.text, fontSize: 17, fontWeight: 700, borderLeft: "3px solid " + C.blue, paddingLeft: 9 }}>{area ? "Start a crew at " + area.name : "Start a crew at an area"}</div><button onClick={onClose} style={POP_CLOSE} aria-label="Close">✕</button></div>
+      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", padding: "14px 16px", borderBottom: "1px solid " + C.border }}><div style={{ color: C.text, fontSize: 17, fontWeight: 700, ...knotHead(C.brand) }}>{area ? "Start a crew at " + area.name : "Start a crew at an area"}</div><button onClick={onClose} style={POP_CLOSE} aria-label="Close">✕</button></div>
       <div style={{ padding: "12px 14px", maxHeight: "76vh", overflowY: "auto", overscrollBehavior: "contain" }}>
         <div style={{ fontSize: 12.5, color: C.textMuted, marginBottom: 12, lineHeight: 1.5 }}>A crag session: the crag, canyon or range you’re meeting at, what you’re climbing, and a day. {priv ? "Private: only the climbers you invite will see it." : "Climbers browsing Join a crew for that area will find it."}</div>
         <SL>Where</SL>
