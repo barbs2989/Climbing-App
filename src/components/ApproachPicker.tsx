@@ -53,8 +53,8 @@ export interface ApproachPickerProps {
    CHANGES something: a variant pointing at a sibling route, or carrying its own trip data. The 125
    routes whose ways in are prose cards keep the cards and get no control that would change nothing.
    It sits UNDER the sub-tab bar, at the top of every tab (owner, 2026-10-21: above the bar it read as
-   part of the header and crowded the top of the page). It stays on every tab because the pick drives
-   every one of them — Plan's hours and trip plan, Overview's trailhead and map, the camps — and a
+   part of the header and crowded the top of the page). It stays on every tab but Partners (owner, 2026-11-25: Partners reads nothing from the
+   pick, so RouteDetail does not mount it there) because the pick drives every one of the others — Plan's hours and trip plan, Overview's trailhead and map, the camps — and a
    control on one tab that silently rewrites another is how a climber ends up reading the Sulphide's
    camps under a Fisher Chimneys plan.
    With more than one way in the choice is a RADIO GROUP of full-width rows, each with a radio dot,
