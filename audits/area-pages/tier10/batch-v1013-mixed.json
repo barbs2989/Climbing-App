@@ -1,28 +1,58 @@
 {
-  "wa_what_wall": {
-    "_expect": { "name": "What Wall", "region": "Washington" },
-    "blurb": "What Wall is a secluded crag set apart from the rest of McLellan Rocks, in Riverside State Park near Spokane. It holds a dozen routes split evenly between sport and trad, with the bulk of them at 5.10 to 5.11, a couple of 5.9s and a single 5.12. The lines face mostly north and northeast, so the wall stays in shade nearly all day, a useful trait when the other walls at McLellan bake in summer. The top of the cliff gives good views, and because it sits well away from the main sectors it tends to feel quiet.",
-    "review": { "sources": ["https://www.mountainproject.com/area/114211745/what-wall", "https://www.mountainproject.com/area/105794255/mclellan-rocks"] }
+ "wa_what_wall": {
+  "_expect": {
+   "name": "What Wall",
+   "region": "Washington"
   },
-  "wa_chunkyard_the": {
-    "_expect": { "name": "Chunkyard, The", "region": "Washington" },
-    "blurb": "The Chunkyard is a small sport crag in the Tieton River canyon on the east side of Washington's southern Cascades. It sits just east of the Moon Rocks wall and is reached by carrying on along the trail beyond that crag. All twelve routes are bolted sport lines, running from 5.8 to 5.11, with most clustered around 5.10. The cliff is blocky andesite and unremarkable from a distance, but it offers a decent helping of moderate climbing in a canyon better known for harder sport and for trad cracks.",
-    "review": { "sources": ["https://www.mountainproject.com/area/108873653/the-chunkyard", "https://www.mountainproject.com/area/105921237/tieton-river"] }
-  },
-  "wi_1_east_of_trail_boulders": {
-    "_expect": { "name": "East of Trail Boulders", "region": "Wisconsin" },
-    "blurb": "East of Trail Boulders is a low band of quartzite right beside the East Bluff Trail at Devil's Lake in Wisconsin's Baraboo Range, just before the Monolith area. Its dozen problems run from V1 to V10, with most between V1 and V4 and a few much harder lines. Several are highballs, and every problem faces north. The ridge it belongs to is known for a wide variety of problems and mostly flat landings. The boulders sit next to the hiking path, so keep pads and packs out of walkers' way and go easy on chalk.",
-    "review": { "sources": ["https://www.mountainproject.com/area/106435372/east-of-trail-boulders", "https://www.mountainproject.com/area/105730018/monolith-ridge"] }
-  },
-  "wi_dumpster_boulder": {
-    "_expect": { "name": "Dumpster Boulder", "region": "Wisconsin" },
-    "blurb": "Dumpster Boulder is a freestanding block in the trees on the West Bluff at Devil's Lake in Wisconsin's Baraboo Range, near the top of a large talus field and a short way northwest of the Half Dome Boulder. Its twelve problems span V0 to V9, with more than half at V3 or easier, so it works well as a warm-up stop that still has a few hard lines for later. It belongs to the West Bluff Central zone, a spread-out collection of talus bouldering reached from the Tumbled Rocks Trail.",
-    "review": { "sources": ["https://www.mountainproject.com/area/105791948/dumpster-boulder", "https://www.mountainproject.com/area/106554295/west-bluff-central"] }
-  },
-  "_skipped": {
-    "wa_main_wall_9": "fetched page for the crag carries a raptor closure notice",
-    "wa_eagle_feather_buttress": "fetched page for the crag carries a seasonal raptor closure notice",
-    "wa_queen_boulder": "fetched pages place the boulder in Smithbrook near 47.79, -121.06, about 30 km from the input coordinates",
-    "wi_east_bluff_linkups": "no page about this crag itself found; only a route breadcrumb names it"
+  "blurb": "What Wall is a secluded crag set apart from the rest of McLellan Rocks, in Riverside State Park near Spokane. It holds a dozen routes split evenly between sport and trad, with the bulk of them at 5.10 to 5.11, a couple of 5.9s and a single 5.12. The lines face mostly north and northeast, so the wall stays in shade nearly all day, a useful trait when the other walls at McLellan bake in summer. The top of the cliff gives good views, and because it sits well away from the main sectors it tends to feel quiet.",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/area/114211745/what-wall",
+    "https://www.mountainproject.com/area/105794255/mclellan-rocks"
+   ]
   }
+ },
+ "wa_chunkyard_the": {
+  "_expect": {
+   "name": "Chunkyard, The",
+   "region": "Washington"
+  },
+  "blurb": "The Chunkyard is a small sport crag in the Tieton River canyon on the east side of Washington's southern Cascades. It sits just east of the Moon Rocks wall and is reached by carrying on along the trail beyond that crag. All twelve routes are bolted sport lines, running from 5.8 to 5.11, with most clustered around 5.10. The cliff is blocky andesite and unremarkable from a distance, but it offers a decent helping of moderate climbing in a canyon better known for harder sport and for trad cracks.",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/area/108873653/the-chunkyard",
+    "https://www.mountainproject.com/area/105921237/tieton-river"
+   ]
+  }
+ },
+ "wi_1_east_of_trail_boulders": {
+  "_expect": {
+   "name": "East of Trail Boulders",
+   "region": "Wisconsin"
+  },
+  "blurb": "East of Trail Boulders is a low band of quartzite right beside the East Bluff Trail at Devil's Lake in Wisconsin's Baraboo Range, just before the Monolith area. Its dozen problems run from V1 to V10, with most between V1 and V4 and a few much harder lines. Several are highballs, and every problem faces north. The ridge it belongs to is known for a wide variety of problems and mostly flat landings. The boulders sit next to the hiking path, so keep pads and packs out of walkers' way and go easy on chalk.",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/area/106435372/east-of-trail-boulders",
+    "https://www.mountainproject.com/area/105730018/monolith-ridge"
+   ]
+  }
+ },
+ "wi_dumpster_boulder": {
+  "_expect": {
+   "name": "Dumpster Boulder",
+   "region": "Wisconsin"
+  },
+  "blurb": "Dumpster Boulder is a freestanding block in the trees on the West Bluff at Devil's Lake in Wisconsin's Baraboo Range, near the top of a large talus field and a short way northwest of the Half Dome Boulder. Its twelve problems span V0 to V9, with more than half at V3 or easier, so it works well as a warm-up stop that still has a few hard lines for later. It belongs to the West Bluff Central zone, a spread-out collection of talus bouldering reached from the Tumbled Rocks Trail.",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/area/105791948/dumpster-boulder",
+    "https://www.mountainproject.com/area/106554295/west-bluff-central"
+   ]
+  }
+ },
+ "_skipped": {
+  "wa_queen_boulder": "fetched pages place the boulder in Smithbrook near 47.79, -121.06, about 30 km from the input coordinates",
+  "wi_east_bluff_linkups": "no page about this crag itself found; only a route breadcrumb names it"
+ }
 }
