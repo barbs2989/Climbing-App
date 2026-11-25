@@ -15,10 +15,11 @@
 //     — .gov / .us / nps / usda / blm / state parks — may stand alone, flagged official:true);
 //   * 'unsure' is always allowed, with or without sources;
 //   * reasoning is 1–1200 characters.
-// This is advice only: nothing here approves, rejects or resolves an item.
+// Nothing here approves, rejects or resolves an item; scripts/review-autopilot.mjs acts on what it stores.
 
 import fs from "fs";
 import { SUPABASE_URL, requireServiceKey, headers } from "./lib/supabase-env.mjs";
+import { checkVerdict as check, isOfficial } from "./lib/review-ai.mjs";
 
 const args = process.argv.slice(2);
 const FILE = args.find((a) => !a.startsWith("--"));
@@ -29,31 +30,9 @@ let input = JSON.parse(fs.readFileSync(FILE, "utf8"));
 if (!Array.isArray(input)) input = input.verdicts;
 if (!Array.isArray(input)) { console.error("review-verdicts-write: expected an array of verdicts"); process.exit(2); }
 
-const UUID = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
+// The ledger itself lives in scripts/lib/review-ai.mjs, shared with the review autopilot (2026-11-25).
+export { checkVerdict as check, isOfficial } from "./lib/review-ai.mjs";
 const host = (u) => { try { return new URL(u).hostname.replace(/^www\./, ""); } catch { return null; } };
-// US federal/state/county (.gov, .us) and Canadian federal/provincial (.gc.ca, bcparks.ca) land managers.
-export const isOfficial = (u) => /(\.gov|\.us|\.gc\.ca|(^|\.)bcparks\.ca)$/.test(host(u) || "");
-
-export function check(v) {
-  const errs = [];
-  if (!["contribution", "flag"].includes(v.item_kind)) errs.push("item_kind");
-  if (!UUID.test(String(v.item_id || ""))) errs.push("item_id");
-  if (!v.item_hash || typeof v.item_hash !== "string") errs.push("item_hash");
-  if (!["agree", "disagree", "partly", "unsure"].includes(v.verdict)) errs.push("verdict");
-  if (!["2-source", "1-source", "none"].includes(v.confidence)) errs.push("confidence");
-  const src = Array.isArray(v.sources) ? v.sources : null;
-  if (!src) errs.push("sources must be an array");
-  const good = (src || []).filter((s) => s && host(s.url) && typeof s.quote === "string" && s.quote.trim().length >= 3);
-  if (v.verdict !== "unsure" && !good.length) errs.push("a verdict other than unsure needs a source with url + quote");
-  if (v.confidence === "2-source") {
-    const hosts = new Set(good.map((s) => host(s.url)));
-    if (hosts.size < 2 && !good.some((s) => isOfficial(s.url))) errs.push("2-source needs two different sites (or one official land-manager page)");
-  }
-  if (v.confidence === "none" && v.verdict !== "unsure") errs.push("confidence none only goes with unsure");
-  const why = String(v.reasoning || "").trim();
-  if (!why || why.length > 1200) errs.push("reasoning 1–1200 chars");
-  return errs;
-}
 
 const bad = [];
 input.forEach((v, i) => { const e = check(v); if (e.length) bad.push(`#${i} ${v.item_kind}:${v.item_id} — ${e.join("; ")}`); });
