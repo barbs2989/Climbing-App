@@ -40314,3 +40314,61 @@ Gunsight Peak Standard Route, Improbable Traverse, West Face, North Route / "Hid
 
 0 confirmed errors, 1 flagged for human review, 7 clean. No SQL file this batch — nothing
 cleared the bar for a fix. Next batch continues id-ascending from `wa_guye_peak_r2` (pass 9).
+
+## Batch 582 (pass 9) — 2026-11-25
+
+Ten routes, continuing id-ascending from `wa_guye_peak_r2`: Cougar Divide and Skyline Divide
+(both Hadley Peak), North Slopes via Blum Lakes and South Slopes (both Hagan Mountain), two
+Half Moon routes (Southwest Slopes/"North Ridge" and Uncle Wehrly's Toupee), Helmet Butte
+Standard Route, Hibox Mountain South Face, and two Himmelhorn routes (Standard Route and
+Stonehenge).
+
+Six confirmed errors, applied as `audits/sql/2026-11-25-batch-582.sql`:
+- `areas.wa_hadley_peak.elevation_ft` (7522) disagreed with both of its own routes'
+  `high_point_ft`/summit waypoints (7515) and every outside source found (SummitPost,
+  Mountaineers.org, a cascadeclimbers.com trip report) — corrected to 7515, including the
+  area's own blurb text.
+- Skyline Divide's top-level `gain_ft`/`loss_ft` (2818) contradicted its own stored
+  `itinerary.days[0]` (3300) and the mileage that itinerary states — corrected to 3300.
+- Hagan Mountain South's `gear` list never named crampons despite its own waypoint
+  directions calling them required for the Hagan Glacier crossing — appended.
+- Helmet Butte's summit waypoint still carried the pre-correction 7420 ft figure its own
+  `corrections` field already rejected in favor of 7400 (matching `high_point_ft` and the
+  area row) — an earlier fix pass that updated the other two fields never reached this one.
+- Himmelhorn Standard Route's top-level `season` ("Jul-Oct") contradicted its own
+  `best_season` text and `seasonal_guidance.monthBreakdown`, neither of which mention
+  October — corrected to "Jul-Sep" (and the nested `approach_variants[0].season` with it).
+- Himmelhorn Stonehenge's `emergency.rangerStation` named the Sedro-Woolley park
+  headquarters address/phone as the Wilderness Information Center; per NPS's own contact
+  pages the WIC is in Marblemount with a different number — corrected to match, and to
+  match the sibling route on the same peak which already had it right.
+
+Half Moon's `wa_half_moon_southwest_slopes` turned out to be the same id/content-mismatch
+family as `wa_big_kangaroo_southwest_rib`: its `name` ("North Ridge") and content are
+correct and externally corroborated (SummitPost, Mountain Project, a 2018 trip report), but
+the `id` implies a "Southwest Slopes" line that doesn't exist on this peak. Flagged via a
+`data_quality.gaps` append (included in the SQL file) rather than renamed, per the existing
+precedent that an id rename needs a human FK/UI check first.
+
+Four more items flagged for human review, not fixed:
+- Skyline Divide's `permit` text disagrees with sibling Cougar Divide's for the same
+  Wilderness area; no trailhead-specific source found to settle which wording is current.
+- Hagan Mountain South's `approach`/`descent_text`/`bail` describe a Baker River Trailhead
+  approach while its own `waypoints`/`itinerary`/`access`/`road` independently and
+  consistently describe a different, externally-verified Watson Lakes Trailhead approach —
+  two research passes' content look merged into one row without reconciliation.
+- Himmelhorn Standard Route's `id` says "southeast_route" but every descriptive field
+  (aspect, face, overview, approach) describes a northwest-facing line, and its own
+  `corrections` field separately references an unrelated route/grade — a leftover
+  identity mix-up, not a plain field fix.
+- Himmelhorn Stonehenge's `emergency.nearestHospital` names a hospital further away than
+  its sibling route's answer for the identical approach; plausible but not confirmed by a
+  sourced mileage comparison.
+
+Clean (4): Cougar Divide, North Slopes via Blum Lakes, Uncle Wehrly's Toupee, Hibox
+Mountain South Face (the last one is mostly unenriched — most fields null, nothing to
+contradict).
+
+6 confirmed errors fixed, 5 flagged for human review (including the Half Moon id
+mismatch), 4 clean. Next batch continues id-ascending from `wa_himmelhorn_stonehenge`
+(pass 9).
