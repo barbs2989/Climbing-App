@@ -123,13 +123,19 @@ empty field fill at once and two agreeing climbers change one; the owner withdre
   the AI reviewer account (`review-bot@climbmatch.app`, "ClimbMatch AI review", made once by
   `scripts/review-bot-setup.mjs`, hidden from partner search). It calls the same RPCs as the desk's buttons, so
   each decision is a History row with *Take back*. The rules are `decide()` in `scripts/lib/review-ai.mjs`
-  (`--selftest` proves all 23 branches plus the source ledger):
+  (`--selftest` proves all 26 branches plus the source ledger):
     - an edit two sources confirm is approved (with the sources' exact value when it differs); an edit they
       contradict is turned down, NEVER as a strike, or, when the page is also wrong, approved with their value;
     - a flag is fixed with the sources' value (filed as the AI reviewer's own edit, approved, flag marked fixed)
       or closed as "no change needed" when the sources match the page;
     - a proposed climb or area the sources confirm is approved unless `catalog_find_route` / `catalog_find_area`
-      returns a possible duplicate; one they contradict is turned down, no strike;
+      returns a possible duplicate. One the AI cannot confirm is NEVER turned down by it (a climb missing from the
+      web is not evidence it does not exist; small crags are often unpublished): it goes to the owner;
+    - a value the AI would write is checked first: no links, a grade must parse (`gradeNumFor`), coordinates on
+      the map; a failure goes to the owner;
+    - a verdict is acted on only while it matches the item's CURRENT content, page value included (`item_hash`
+      covers the climber's value, the clustered ids and the page value); a new verdict clears the old decision,
+      and a timeout or server error is retried next run rather than recorded;
     - EVERYTHING ELSE stays for the owner with `review_ai_verdicts.auto_action = 'needs_owner'` and a sentence in
       `auto_note`: one source or none ("The AI could not find this online"), unsure, an edit that removes
       something, a possible duplicate, partly-right proposals, a value whose shape does not fit the field, a flag

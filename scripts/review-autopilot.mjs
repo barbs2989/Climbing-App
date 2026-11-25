@@ -94,7 +94,7 @@ function askClaude(prompt) {
   return new Promise((resolve) => {
     const p = spawn("claude", ["-p", "--model", MODEL, "--output-format", "json", "--json-schema", JSON.stringify(VERDICT_SCHEMA),
       "--allowed-tools", "WebSearch,WebFetch", "--disallowed-tools", "Bash,Edit,Write,NotebookEdit,Agent,Task",
-      "--permission-mode", "dontAsk"], { cwd: TMP, stdio: ["pipe", "pipe", "pipe"] });
+      "--permission-mode", "dontAsk", "--strict-mcp-config"], { cwd: TMP, stdio: ["pipe", "pipe", "pipe"] });
     let out = "", err = "";
     const timer = setTimeout(() => p.kill("SIGTERM"), 15 * 60 * 1000);
     p.stdout.on("data", (d) => { out += d; });
@@ -192,7 +192,8 @@ async function perform(bot, it, d) {
         reason: "Corrected by the AI reviewer from a climber's flag, with two published sources." }, { Prefer: "return=representation" });
       const c = Array.isArray(rows) ? rows[0] : rows;
       if (!c || !c.id) throw new Error("the correcting edit was not saved");
-      await rpc(bot, "approve_field_contribution", { p_id: c.id, p_value: null, p_also: [] });
+      try { await rpc(bot, "approve_field_contribution", { p_id: c.id, p_value: null, p_also: [] }); }
+      catch (e) { await rest("DELETE", `contributions?id=eq.${c.id}&status=eq.pending`, undefined, KEY, { Prefer: "return=minimal" }).catch(() => {}); throw e; }
       return rpc(bot, "resolve_route_flag", { p_id: it.item_id, p_status: "fixed", p_note: "Thanks — we checked it against published sources and corrected it." });
     }
     case "approve_proposal": {
@@ -226,9 +227,11 @@ async function apply() {
   for (const it of items) {
     const v = vBy[it.item_kind + ":" + it.item_id] || null;
     if (!v) continue; // not researched yet: the next run's research picks it up; nothing to record
+    if (v.item_hash !== it.item_hash) continue; // changed since it was researched: the next research run refreshes it; record nothing
     if (v.auto_action && v.auto_hash === it.item_hash) continue; // already decided for this exact content
     if (!DRY && !slotHealthy()) { log("database slot check failed; stopping this run (the rest is decided next run)."); break; }
-    const d = decide(it, v, isProposal(it) && v.verdict === "agree" ? { duplicates: await duplicatesFor(it) } : {});
+    const gradeOk = (g) => Number.isFinite(gradeNumFor(g, (it.route && it.route.discipline) || null));
+    const d = decide(it, v, { gradeOk, ...(isProposal(it) && v.verdict === "agree" ? { duplicates: await duplicatesFor(it) } : {}) });
     const label = `${(it.route && it.route.name) || (it.suggested_value && it.suggested_value.name) || (it.area && it.area.name) || it.item_id} · ${it.field_label || it.field}`;
     log(`${d.action.padEnd(16)} ${label} — ${d.note}`);
     if (DRY) continue;
@@ -236,7 +239,13 @@ async function apply() {
     if (d.action !== "needs_owner" && !bot) { log("  (not acted: no AI reviewer account)"); continue; }
     if (d.action !== "needs_owner") {
       try { await perform(bot, it, d); acted++; }
-      catch (e) { failed++; action = "needs_owner"; note = "The AI tried to act and the database refused: " + String(e.message || e).slice(0, 300); log("  failed:", note); }
+      catch (e) {
+        failed++;
+        const m = String(e.message || e);
+        // A timeout, a 5xx, a rate limit or an expired session is retried next run, unrecorded.
+        if (!/-> 4\d\d/.test(m) || /-> (401|408|429)/.test(m)) { log("  failed (will retry next run):", m.slice(0, 200)); await sleep(1000); continue; }
+        action = "needs_owner"; note = "The AI tried to act and the database refused: " + m.slice(0, 300); log("  refused:", note);
+      }
     } else owner++;
     await rest("PATCH", `review_ai_verdicts?item_kind=eq.${it.item_kind}&item_id=eq.${it.item_id}`,
       { auto_action: action, auto_note: note.slice(0, 600), auto_at: new Date().toISOString(), auto_hash: it.item_hash }, KEY, { Prefer: "return=minimal" });
@@ -284,7 +293,10 @@ async function selftest() {
     ["flag, whole route", { ...base, item_kind: "flag", field: null }, v({ ai_value: "x" }), "needs_owner"],
     ["proposal agree, no dupes", { ...base, field: "new_route", suggested_value: { name: "X" } }, v({}), "approve_proposal", { duplicates: 0 }],
     ["proposal agree, dupes", { ...base, field: "new_route", suggested_value: { name: "X" } }, v({}), "needs_owner", { duplicates: 2 }],
-    ["proposal disagree", { ...base, field: "new_area", suggested_value: { name: "X" } }, v({ verdict: "disagree" }), "reject_proposal"],
+    ["proposal disagree (never auto-rejected)", { ...base, field: "new_area", suggested_value: { name: "X" } }, v({ verdict: "disagree" }), "needs_owner"],
+    ["AI value carries a link", { ...base, field: "descent" , current_value: "Walk off.", suggested_value: "Rap the route." }, v({ ai_value: "See www.example.com" }), "needs_owner"],
+    ["AI grade that is not a grade", base, v({ ai_value: "hard" }), "needs_owner", { gradeOk: (g) => /^5\./.test(g) }],
+    ["flag pin off the map", { ...base, item_kind: "flag", field: "parking_pin", current_value: { lat: 47.5, lng: -120.7 }, suggested_value: null }, v({ ai_value: { lat: 147.5, lng: -120.7 } }), "needs_owner"],
     ["proposal partly", { ...base, field: "new_route", suggested_value: { name: "X" } }, v({ verdict: "partly", ai_value: { grade: "5.7" } }), "needs_owner"],
   ];
   let bad = 0;

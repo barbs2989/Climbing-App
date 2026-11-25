@@ -128,6 +128,20 @@ function shapeFits(aiValue, ...refs) {
   if (!known.length) return typeof aiValue !== "object" || aiValue === null; // nothing to compare: plain values only
   return known.includes(kindOf(aiValue));
 }
+// A value the AI wants to WRITE must look like the field: a grade must parse as a grade, coordinates must be
+// on the map, and no prose may carry a link (links in route text are refused for climbers too, 0530).
+const URLISH = /(https?:\/\/|www\.|\.(com|org|net|io)\b)/i;
+export function valueProblem(field, value, gradeOk) {
+  const flat = JSON.stringify(value ?? "");
+  if (URLISH.test(flat)) return "The AI's value contains a link.";
+  if (/grade/i.test(String(field || "")) && typeof value === "string" && gradeOk && !gradeOk(value)) return "The AI's value is not a grade this app can read.";
+  if (value && typeof value === "object" && !Array.isArray(value) && ("lat" in value || "lng" in value)) {
+    const lat = Number(value.lat), lng = Number(value.lng);
+    if (!(Math.abs(lat) <= 90 && Math.abs(lng) <= 180)) return "The AI's coordinates are off the map.";
+  }
+  if (typeof value === "number" && !Number.isFinite(value)) return "The AI's number is not a number.";
+  return null;
+}
 const clip = (s, n) => { s = String(s || "").trim().replace(/\s+/g, " "); return s.length > n ? s.slice(0, n - 1) + "…" : s; };
 
 /**
@@ -140,6 +154,7 @@ const clip = (s, n) => { s = String(s || "").trim().replace(/\s+/g, " "); return
  */
 export function decide(it, v, extra = {}) {
   const owner = (note) => ({ action: "needs_owner", note });
+  const bad = (val) => valueProblem(it.field, val, extra.gradeOk);
   if (!v) return owner("The AI has not checked this yet.");
   if (v.item_hash !== it.item_hash) return owner("Changed since the AI checked it; it will be checked again.");
   if (v.verdict === "unsure" || v.confidence === "none") return owner("The AI could not find this online. Your call.");
@@ -152,7 +167,9 @@ export function decide(it, v, extra = {}) {
       if (extra.duplicates > 0) return owner(`Confirmed online, but it may duplicate ${extra.duplicates} catalog ${extra.duplicates === 1 ? "entry" : "entries"}. Read them first.`);
       return { action: "approve_proposal", note: "Confirmed by two sources; added to the catalog." };
     }
-    if (v.verdict === "disagree") return { action: "reject_proposal", note: "Two sources say otherwise; turned down (no strike).", reason: "We checked published sources and could not confirm this one: " + why };
+    // A missing climb is not evidence it does not exist: small crags are often unpublished. The AI never turns a
+    // proposal down by itself (code review, 2026-11-25); it tells the owner what it found.
+    if (v.verdict === "disagree") return owner("The AI could not confirm this exists where it is filed. Your call.");
     return owner("Real, but some details are wrong; a proposal cannot be approved with corrections. Fix and approve it yourself.");
   }
 
@@ -161,6 +178,7 @@ export function decide(it, v, extra = {}) {
     if (v.verdict === "disagree") return { action: "dismiss_flag", note: "Two sources agree with the page; flag closed.", reason: "We checked this against published sources and the page matches them. " + why };
     if (!aiVal) return owner("The AI agrees something is wrong but did not find the right value.");
     if (!shapeFits(aiVal, it.current_value)) return owner("The AI's value does not fit this field's format.");
+    if (bad(aiVal)) return owner(bad(aiVal));
     if (sameValue(aiVal, it.current_value)) return { action: "dismiss_flag", note: "The AI's value is what the page already says; flag closed.", reason: "We checked this against published sources and the page matches them. " + why };
     return { action: "fix_flag", value: aiVal, note: "Corrected with the value two sources give." };
   }
@@ -170,13 +188,16 @@ export function decide(it, v, extra = {}) {
   if (v.verdict === "agree") {
     if (aiVal && !sameValue(aiVal, it.suggested_value)) {
       if (!shapeFits(aiVal, it.suggested_value, it.current_value)) return owner("The AI's value does not fit this field's format.");
+      if (bad(aiVal)) return owner(bad(aiVal));
       return { action: "approve_ai_value", value: aiVal, note: "Confirmed by two sources, applied with the sources' exact value." };
     }
+    if (bad(it.suggested_value)) return owner(bad(it.suggested_value).replace("The AI's value", "The climber's value"));
     return { action: "approve", note: "Confirmed by two sources; applied." };
   }
   if (v.verdict === "partly" || v.verdict === "disagree") {
     if (aiVal && !sameValue(aiVal, it.current_value)) {
       if (!shapeFits(aiVal, it.suggested_value, it.current_value)) return owner("The AI's value does not fit this field's format.");
+      if (bad(aiVal)) return owner(bad(aiVal));
       if (sameValue(aiVal, it.suggested_value)) return { action: "approve", note: "Confirmed by two sources; applied." };
       return { action: "approve_ai_value", value: aiVal, note: "The page needed a change; applied with the value two sources give." };
     }

@@ -90,7 +90,10 @@ for (const rows of clusters.values()) {
   const f = fieldBy[e.field];
   const r = routeBy[e.route_id];
   const isArea = !!(e.area_id && !e.route_id);
-  const hash = itemHash({ v: e.value, also: rows.map((x) => x.id).sort() });
+  // The hash covers the PAGE value too (2026-11-25): a verdict judged against an older page is stale, so the
+  // review autopilot never applies it after the owner (or another edit) has changed the field.
+  const pageNow = !isArea && f && r ? (r[f.column_name] ?? null) : null;
+  const hash = itemHash({ v: e.value, also: rows.map((x) => x.id).sort(), cur: pageNow });
   items.push({
     item_kind: "contribution", item_id: e.id, item_hash: hash,
     route_id: e.route_id || null, area_id: isArea ? e.area_id : null, field: e.field,
@@ -111,7 +114,7 @@ for (const fl of flags) {
   const f = fieldBy[fl.field];
   const r = routeBy[fl.route_id];
   items.push({
-    item_kind: "flag", item_id: fl.id, item_hash: itemHash({ n: fl.note, f: fl.field }),
+    item_kind: "flag", item_id: fl.id, item_hash: itemHash({ n: fl.note, f: fl.field, cur: f && r ? (r[f.column_name] ?? null) : null }),
     route_id: fl.route_id, area_id: null, field: fl.field,
     field_label: fl.field ? (f ? f.label : fl.field) : "Whole route", column: f ? f.column_name : null,
     route: routeCtx(r),

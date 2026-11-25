@@ -45,6 +45,8 @@ const rows = input.map((v) => ({
   verdict: v.verdict, confidence: v.confidence,
   sources: v.sources.map((s) => ({ url: s.url, title: s.title || host(s.url), quote: String(s.quote || "").slice(0, 500), official: isOfficial(s.url) })),
   reasoning: String(v.reasoning).trim(), model: v.model || null, checked_at: new Date().toISOString(),
+  // A new verdict starts undecided: the review autopilot (0534) decides it afresh.
+  auto_action: null, auto_note: null, auto_at: null, auto_hash: null,
 }));
 
 if (DRY) { console.log(`review-verdicts-write: ${rows.length} verdict(s) valid (dry run, nothing written).`); process.exit(0); }

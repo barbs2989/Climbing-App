@@ -56,7 +56,12 @@ if (!user) {
 } else console.log("found the AI reviewer account", user.id);
 
 // .env.local in the MAIN checkout's root (the file the autopilot reads); never committed (.gitignore).
-const envFile = path.join(ROOT, ".env.local");
+// A worktree's .env.local is a symlink to the main checkout's; write through it. Without one, write the main
+// checkout's (the git common dir's parent), never a stray copy in a worktree.
+const common = spawnSync("git", ["rev-parse", "--path-format=absolute", "--git-common-dir"], { cwd: ROOT, encoding: "utf8" }).stdout.trim();
+const MAIN = common ? path.dirname(common) : ROOT;
+const local = path.join(ROOT, ".env.local");
+const envFile = fs.existsSync(local) ? fs.realpathSync(local) : path.join(MAIN, ".env.local");
 let text = fs.existsSync(envFile) ? fs.readFileSync(envFile, "utf8") : "";
 text = text.split("\n").filter((l) => !/^REVIEW_BOT_(EMAIL|PASSWORD)=/.test(l)).join("\n").replace(/\n*$/, "\n");
 text += `REVIEW_BOT_EMAIL=${EMAIL}\nREVIEW_BOT_PASSWORD=${password}\n`;
@@ -74,3 +79,7 @@ const r = spawnSync("npx", ["supabase", "db", "query", "--linked", "-f", tmp], {
 fs.rmSync(path.dirname(tmp), { recursive: true, force: true });
 console.log((r.stdout || "") + (r.stderr || ""));
 if (r.status !== 0) { console.error("granting admin failed"); process.exit(1); }
+// The grant must have LANDED: an UPDATE that matched nothing (no profile row yet, or no existing admin to act as)
+// still exits 0.
+if (!/"is_admin":\s*true/.test(r.stdout || "")) { console.error("the AI reviewer account is NOT an admin yet — check its profiles row and that an owner admin exists"); process.exit(1); }
+console.log("the AI reviewer account is ready.");
