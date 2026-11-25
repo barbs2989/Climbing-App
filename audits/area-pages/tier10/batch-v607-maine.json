@@ -1,0 +1,67 @@
+{
+ "me_upper_strip_boulder": {
+  "_expect": {
+   "name": "Upper Strip Boulder",
+   "region": "Maine"
+  },
+  "blurb": "Upper Strip Boulder is a long, low boulder in the South Freeport cluster near Freeport, sitting just uphill of the Lower Strip and Coffin boulders. It holds about sixteen problems, all bouldering, with most between V2 and V4 and a handful of harder lines up to V6. Expect traverses and sustained problems rather than tall highballs. The stone is sharp, with plenty of slab and sloper moves, and the walk from the road is only a few minutes. A few of the harder lines are reported to be dirty and need brushing before they go, so bring a brush.",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/area/120290123/upper-strip-boulder",
+    "https://www.mountainproject.com/area/120288069/the-strip-area",
+    "https://mountainproject.com/area/117562677/south-freeport-boulders"
+   ]
+  }
+ },
+ "me_school_house": {
+  "_expect": {
+   "name": "School House",
+   "region": "Maine"
+  },
+  "blurb": "School House is a small, tucked-away bouldering spot on Mount Desert Island in Acadia, on the coastal stretch of boulders east of Otter Cliffs and west of Sand Beach, reached from the Gorham Mountain trailhead. About sixteen problems sit in a little slot between rocks, and nearly all are easy: slabby warm-ups from VB to V1, a few at V2 and V3. The top-outs are friendly, which makes it a decent place to introduce someone to outdoor bouldering. Puddles collect at the base, though it may be dry when nearby Monument Cove is still wet. Watch the tide near the coastal boulders.",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/area/112243652/school-house",
+    "https://mountainproject.com/area/114558946/mdi-bouldering"
+   ]
+  }
+ },
+ "me_dike_wall": {
+  "_expect": {
+   "name": "Dike Wall",
+   "region": "Maine"
+  },
+  "blurb": "Dike Wall is the main face at Bald Bluff in western Maine, near Greenwood, and the area's standout sport wall. It stands over a hundred feet high and runs roughly three hundred feet along, with vertical to gently overhanging climbing on square-cut blocks left behind by an eroded dike. All fifteen routes are bolted, graded from 5.10 to 5.12, with the hardest grades the most common, so it suits climbers comfortable on steep, sustained pitches. Bring a 60 m rope. The wall is reached by a short walk from the roadside, with steeper hiking to the middle and upper sections. It gets morning sun and afternoon shade, and it is not a good spot for small children.",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/area/119751807/dike-wall",
+    "https://mountainproject.com/area/119751185/bald-bluff"
+   ]
+  }
+ },
+ "me_02_practice_wall_left": {
+  "_expect": {
+   "name": "Practice Wall Left",
+   "region": "Maine"
+  },
+  "blurb": "Practice Wall Left is the left-hand end of the Practice Wall at Eagle Bluff in Clifton, a short cliff rising from a long ledge. Its fifteen routes are mostly trad, with some sport lines and a couple of top-rope options. Most of the climbing runs from 5.9 up through the low and mid 5.11s and into 5.12, but there is also an easy 5.4 and a 5.7, so it works for newer leaders getting their first placements as well as stronger climbers looking for short, hard pitches. The routes here are generally shorter than those on the main cliff.",
+  "approach": "From the north lot, follow the trail for about ten minutes, passing the Entrance Wall; the left spur leads to this wall.",
+  "approach_min": 10,
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/area/125565583/practice-wall-left",
+    "https://www.mountainproject.com/area/106269542/eagle-bluff"
+   ]
+  }
+ },
+ "_skipped": {
+  "me_twitchell_pond": "only one fetched page about the crag (Mountain Project); other results were about the lake, not climbing",
+  "me_mt_philips": "no fetched page about Mt Philips itself; only the parent Belgrade Lakes page names it",
+  "me_13_hot_spot_rock_climbing": "no page about this Camden rock crag found; the Hot Spot page that turned up is a Leavenworth WA area and the Camden ice page is a different listing",
+  "me_main_face_linkups": "a list of link-up combinations on the Main Face of Shagg Crag, not a crag with its own page; only whole-wall/section pages exist"
+ },
+ "_conflicts": {
+  "me_upper_strip_boulder": "stored rock is sandstone but the parent page says South Freeport boulders are granite: https://mountainproject.com/area/117562677/south-freeport-boulders",
+  "me_dike_wall": "stored rock is tonalite but both pages call the dike basalt: https://www.mountainproject.com/area/119751807/dike-wall and https://mountainproject.com/area/119751185/bald-bluff"
+ }
+}

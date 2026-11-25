@@ -1,0 +1,88 @@
+{
+ "ca_eastern_royal_arches": {
+  "_expect": {
+   "name": "Eastern Royal Arches",
+   "region": "California"
+  },
+  "blurb": "The eastern end of the Royal Arches wall on the north side of Yosemite Valley holds a handful of long traditional lines, mostly multi-pitch, plus one aid route. The grades start at 5.8 and climb through the 5.10s into a cluster of 5.11 routes, with a single 5.12 at the top end, so it suits parties with some Valley experience rather than first-timers. Expect slabby, blank-looking granodiorite where protection can be sparse and a few bolted sections link the cracks. The wall sits above the Ahwahnee area and is reached by following the valley foot trail east, then a climbers' path angling up and to the northeast.",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/area/116973614/eastern-royal-arches",
+    "https://mountainproject.com/route/106304615/arches-terrace"
+   ]
+  }
+ },
+ "ca_slant_rock": {
+  "_expect": {
+   "name": "Slant Rock",
+   "region": "California"
+  },
+  "blurb": "A small sandstone boulder in the Stoney Point bouldering park in the San Fernando Valley, sitting just south of the Boulder 1 block. It holds 14 problems, nearly all at the easy end: the bulk run from VB to V0, with a single V2 dyno as the hardest. That makes it a gentle stop for beginners, though the north and east sides have steeper lines that are more fun for stronger climbers. The sandstone here is fragile and chips easily, so it is best left alone whenever the ground at the base still feels damp.",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/v/slant-rock/105873711",
+    "https://mountainproject.com/v/stoney-point/105870979"
+   ]
+  }
+ },
+ "ca_serengeti_boulder": {
+  "_expect": {
+   "name": "Serengeti Boulder",
+   "region": "California"
+  },
+  "blurb": "A prominent boulder in the middle of the Happy Boulders canyon on the volcanic tablelands north of Bishop, within the Serengeti area. It carries 14 problems on its faces, and the south and west sides have the best lines. Most are easy to moderate, around V0 to V1, but the boulder is best known for harder showpieces: a couple of V4s and the V5 that gives the block its reputation. The sheltered wash tends to be warmer and less windy than the open Buttermilks, which makes it a decent cold-weather choice.",
+  "review": {
+   "sources": [
+    "https://mountainproject.com/area/106326658/serengeti-boulder",
+    "https://mountainproject.com/area/105799640/happy-boulders",
+    "https://bishopvisitor.com/places/happy-and-sad-boulders/"
+   ]
+  }
+ },
+ "ca_vent_5_2": {
+  "_expect": {
+   "name": "Vent #5",
+   "region": "California"
+  },
+  "blurb": "A small sport crag on the Marin coast near Stinson Beach, part of the Vent 5 cluster of seaside cliffs. It has 14 bolted routes with a wide spread: a few easy 5.6 to 5.8 lines, then a solid block of 5.10s and 5.11s and a couple of 5.12s. The wall is pocketed and featured, and gets sun in the afternoon. Getting in is half the fun, since you reach the base by squeezing through a tunnel in the boulders or scrambling over them. Cliffs in this area are modest in height, and some coastal rock is still loose, so stay alert.",
+  "review": {
+   "sources": [
+    "https://mountainproject.com/area/121452881/vent-5",
+    "https://www.mountainproject.com/area/121379999/vent-5"
+   ]
+  }
+ },
+ "ca_toprope_wall": {
+  "_expect": {
+   "name": "Toprope Wall",
+   "region": "California"
+  },
+  "blurb": "A short wall beside the road at Ortega Falls in the Santa Ana Mountains, handy for a quick session. Despite the name it offers short leads as well as top-rope setups, and most of its 14 climbs are cracks and corners placed with gear. The grades lean easy to moderate, mainly 5.7 to 5.9, with a few 5.10s and 5.11s, one sport line and a V0 boulder problem. The water-polished rock can feel slick, and this is a busy, popular spot. From the road, walk to the rim of the canyon and bear right to arrive above the wall.",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/area/114957123/toprope-wall",
+    "https://mountainproject.com/area/106002993/ortega-falls"
+   ]
+  }
+ },
+ "ca_rock_land": {
+  "_expect": {
+   "name": "Rock Land",
+   "region": "California"
+  },
+  "blurb": "A cluster of low outcrops on Cabrillo Peak, the volcanic dacite plug in Morro Bay State Park near San Luis Obispo. Rock Land is mostly a top-rope spot, with a few bolted sport lines and some trad. The 13 climbs run from 5.4 up to 5.11, with the majority between 5.6 and 5.8, so it works well for beginners and groups. Features include chimneys, corners and cracks, and the anchors reward you with views over the estuary. The dacite is slick, which keeps leads exciting. Sun can be strong at midday, and poison oak grows around the rocks.",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/v/105737957",
+    "https://www.mountainproject.com/area/105737103/cabrillo-peak"
+   ]
+  }
+ },
+ "_skipped": {
+  "ca_sunset_boulevard": "no fetched page is about the sector itself (parent Lizard's Mouth page only lists it, thetopo sector page has no description, route page has no sector text)",
+  "ca_raven_rocks_north_face_power_block_area": "only low-reliability pages that contradict stored rock and aspect"
+ },
+ "_conflicts": {
+  "ca_raven_rocks_north_face_power_block_area": "Stored rock is volcanic rock but https://app.advcollective.com/climbing/raven-rocks-climbing-guide-californias-versatile-high-desert-crag says high desert sandstone; its own Power Block page (https://app.advcollective.com/climbing/raven-rocks-north-face-power-block-area) says north-facing in text but South Facing in the sidebar."
+ }
+}

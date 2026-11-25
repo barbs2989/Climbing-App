@@ -1,0 +1,43 @@
+{
+ "nv_black_corridor_lower_right": {
+  "_expect": {"name": "Black Corridor Lower Right", "region": "Nevada"},
+  "blurb": "A sandstone wall on the lower level of the Black Corridor in the Calico Basin part of Red Rock, west of Las Vegas. It holds a dozen routes, nearly all sport, plus a single boulder problem. Lines sit in the 5.10 to 5.11 range, so it suits climbers comfortable leading in the low double digits. The corridor stays shaded most of the day apart from a window around midday, and it is sheltered from wind, which keeps it usable through much of the year. Expect company, since the corridor as a whole is one of the busier sport destinations in the canyon. The rock is delicate when damp, so wait for it to dry fully.",
+  "review": {"sources": ["https://www.mountainproject.com/area/112893605/lower-level-right", "https://mountainproject.com/area/105732030/the-black-corridor"]}
+ },
+ "nv_cannabis_crag": {
+  "_expect": {"name": "Cannabis Crag", "region": "Nevada"},
+  "blurb": "A steep sandstone sport crag tucked into Gateway Canyon behind Kraft Mountain in Calico Basin, Red Rock. Twelve bolted lines, almost all in the 5.12 range, with a couple of 5.11 and a few 5.13 routes, so this is a place for strong sport climbers rather than beginners. The face is recognisable by three dark water streaks and takes sun into the middle of the afternoon. It is calmer and more sheltered than the busier walls nearby. Plan on a half-hour walk in along the wash, with a short scramble up a ramp at the end. Sandstone here is brittle after rain, so give it time to dry.",
+  "review": {"sources": ["https://www.mountainproject.com/area/106060602/cannabis-crag", "https://www.mountainproject.com/route/106060635/one-mans-kokopelli?print=1"]}
+ },
+ "nv_woody_wall": {
+  "_expect": {"name": "Woody Wall", "region": "Nevada"},
+  "blurb": "A small cliff on the north side of Mount Potosi, part of the Comedy Crags near Las Vegas, sitting between the Comedy Central and Cuzcotopia sections. Twelve sport routes, mostly easy to moderate: the bulk run from 5.6 to 5.9, with one 5.11 and one 5.12 for variety. The rock here sees less traffic and is a touch less solid than on its neighbours, but the lines are handy and quick to reach. The walk is a short climb on a trail that zig-zags up past a gray slab. Good for a mellow day or for warming up before heading to the harder walls nearby.",
+  "review": {"sources": ["https://www.mountainproject.com/area/124247395/woody-wall", "https://mountainproject.com/area/120464550/comedy-crags"]}
+ },
+ "nv_cut_your_teeth_crag": {
+  "_expect": {"name": "Cut Your Teeth Crag", "region": "Nevada"},
+  "blurb": "A compact sandstone crag in Calico Basin, Red Rock, set on the north side of Guardian Angel Pass just short of the saddle. A dozen routes mix sport, top-rope and trad, with grades spanning 5.4 to 5.10, which makes it friendlier than most walls in the basin for newer climbers. The face looks southwest and warms up from mid-morning. A roomy ledge at the base gives wide views over the park to the west and toward the city to the east. Allow roughly half an hour for the uphill walk in. Wet sandstone breaks easily, so only climb when the rock is dry.",
+  "review": {"sources": ["https://www.mountainproject.com/area/105864749/cut-your-teeth-crag", "https://www.mountainproject.com/route/105864794/toothache"]}
+ },
+ "nv_iron_man_wall": {
+  "_expect": {"name": "Iron Man Wall", "region": "Nevada"},
+  "blurb": "A multi-faceted sandstone wall near the First Pullout in Calico Basin, Red Rock, reached from the wash below Newcastle Crag. Twelve routes, mostly sport with a few trad lines, running from the 5.7 range up into 5.11, with the strongest concentration at 5.11 and a scattering of 5.8 to 5.10. The climbing changes across the wall, from flaky slabs to vertical huecos to overhanging crimps. It faces due south and collects sun for most of the day, so it is a good choice when the weather is cool. A short scramble leads up to the base. Avoid it when the rock is damp.",
+  "review": {"sources": ["https://www.mountainproject.com/area/106222686/iron-man-wall", "https://mountainproject.com/area/105731953/first-pullout-calico-i"]}
+ },
+ "nv_newcastle_crag": {
+  "_expect": {"name": "Newcastle Crag", "region": "Nevada"},
+  "blurb": "A small sandstone crag in the wash between the first and second pullouts of the Calico Basin side of Red Rock, directly beneath Ultraman Wall. It carries a dozen routes, half of them top-rope setups and the rest mostly sport, with one trad line. Difficulty runs from easy fifth class through the 5.8 to 5.9 middle ground and up to several 5.11s, so it serves both beginners and climbers wanting short, harder pitches. The face looks northeast and goes into shade from mid-morning. The rock is a bit loose near the ground and improves higher up. Expect around a quarter hour of walking from either parking area.",
+  "review": {"sources": ["https://www.mountainproject.com/v/106607226", "https://mountainproject.com/area/105731953/first-pullout-calico-i"]}
+ },
+ "nv_infectious_cave_slab_the": {
+  "_expect": {"name": "Infectious Cave / Slab, The", "region": "Nevada"},
+  "blurb": "A steep limestone cave on The Hood, the main cliff on Mount Charleston in the Spring Mountains outside Las Vegas. Twelve sport routes, all bolted, covering a wide range: a lone 5.9, a couple of 5.10s, and then a hard core of 5.12 and 5.13 lines, topped by two 5.14 routes. A low-angle slab sits just east of the cave with a few easier lines. At roughly 7,800 feet the area is cooler than the desert crags below, which makes it a summer option. Rock is smooth, pocketed limestone. This is a place for strong sport climbers working steep, powerful terrain.",
+  "review": {"sources": ["https://www.mountainproject.com/area/105850032/the-hood", "https://thetopo.com/crags/the-hood/topos"]}
+ },
+ "_skipped": {
+  "nv_big_brown_boulder_aka_brown_round": "no fetched page about the boulder itself; only the Willow Spring Boulders parent and route pages (Brown Round Traverse) mention it"
+ },
+ "_conflicts": {
+  "nv_woody_wall": "stored rock is limestone; the Woody Wall page (https://www.mountainproject.com/area/124247395/woody-wall) says chert while the Comedy Crags page (https://mountainproject.com/area/120464550/comedy-crags) says limestone; rock left unchanged and unnamed in blurb"
+ }
+}

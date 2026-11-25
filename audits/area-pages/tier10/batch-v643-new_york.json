@@ -1,0 +1,48 @@
+{
+ "ny_fern_cliff": {
+  "_expect": {"name": "Fern Cliff", "region": "New York"},
+  "blurb": "Fern Cliff is one of the sectors of the Rock Dojo cluster in the Powerlinez zone of Harriman State Park, near Suffern. It stands beside the Godzilla Boulder and is tall enough to host a pair of short top-rope lines alongside its boulder problems. Most of the fifteen climbs are bouldering, spread from moderate V2 and V3 problems up through a scattering of V6 to V8 testpieces and one V10, with the two top-ropes at about 5.9 and 5.10. Powerlinez is compact and quiet, with highballs, slabs and overhangs, so Fern Cliff works as a stop on a longer circuit around the Dojo rather than a destination by itself.",
+  "review": {"sources": ["https://rakkup.com/guidebook/powerlinez-rock-climbing/fern-cliff/s14724", "https://www.mountainproject.com/area/111788865/rock-dojo"]}
+ },
+ "ny_q_chalkboard_wall": {
+  "_expect": {"name": "Chalkboard Wall", "region": "New York"},
+  "blurb": "Chalkboard Wall is a short one-pitch face in the Peterskill cliffs of Minnewaska State Park, a smaller cousin of the Gunks just past the Trapps. It is a pale, nearly featureless wall set in a natural amphitheater with a big flake at its centre, and the climbing is technical: small horizontals and tiny crystals rather than jugs, with a single finger crack in a corner. The fifteen climbs are a mix of top-rope and trad, running from easy fifth class through the 5.8 to 5.10 range to a handful at 5.12 and 5.13. Bolted anchors are rare at Peterskill, and this wall has some, which makes top-roping straightforward.",
+  "rock": "conglomerate",
+  "review": {"sources": ["https://www.mountainproject.com/area/105897274/chalkboard-wall", "https://www.mountainproject.com/area/105896719/peterskill"]}
+ },
+ "ny_high_ball_boulder": {
+  "_expect": {"name": "High Ball Boulder", "region": "New York"},
+  "blurb": "High Ball Boulder is the tallest of the three blocks at Split Rock, a small bouldering spot in the woods on the north shore of Long Island, above the old power plant. It holds fifteen problems, mostly short crack and arete lines in the V1 to V4 range, with a few easier warm-ups and one hard stand-start near V6. Several of the lines can also be top-roped. The setting is quiet and wooded, but the trail in has ticks, so bug spray is worthwhile in warm weather.",
+  "approach": "Take the trail that leaves North Country Road opposite Pheasant Run, then turn right onto a sandy power-line clearing and follow it until it bends left and drops into open woods where the boulders come into view.",
+  "review": {"sources": ["https://www.mountainproject.com/area/112519706/high-ball-boulder", "https://www.mountainproject.com/area/112519277/split-rock"]}
+ },
+ "ny_southern_boulder": {
+  "_expect": {"name": "Southern Boulder", "region": "New York"},
+  "blurb": "Southern Boulder is one of the three blocks that make up Split Rock, a quiet bouldering spot in the woods on the north shore of Long Island, overlooking the old power plant. It carries fifteen problems from V0 up to about V5: easy cracks and overhangs to start on, then a good run of V3 and V4 lines. It suits a short afternoon, and pairs naturally with the taller boulder close by. Ticks are common along the trail in, so bring bug spray in warm weather.",
+  "approach": "Take the trail that leaves North Country Road opposite Pheasant Run, then turn right onto a sandy power-line clearing and follow it until it bends left and drops into open woods where the boulders come into view.",
+  "review": {"sources": ["https://www.mountainproject.com/area/112519729/southern-boulder", "https://www.mountainproject.com/area/112519277/split-rock"]}
+ },
+ "ny_kings_park_bluff_boulder": {
+  "_expect": {"name": "Kings Park Bluff Boulder", "region": "New York"},
+  "blurb": "Kings Park Bluff Boulder is a single feature-rich boulder on the north shore of Long Island, in the town of Kings Park. It offers fifteen problems that mostly stay friendly: a good number of V0 to V3 lines for beginners and circuits, a few V4s, and one harder problem around V5 to V6. The walk from the car is only a couple of minutes, which makes it easy to fit in. Visitors report that broken glass sometimes collects around the base, so check the landings before you set pads down.",
+  "review": {"sources": ["https://mountainproject.com/area/121863114/kings-park-bluff-boulder", "https://mountainproject.com/area/116124293/long-island"]}
+ },
+ "ny_area_2_cream_cheese": {
+  "_expect": {"name": "Area 2 (Cream Cheese)", "region": "New York"},
+  "blurb": "Area 2 is a secluded cluster of boulders in the Near Trapps zone of the Gunks, reached on foot beyond the Messiah boulder. The hub is a low cave, and the other problems are found around it. It holds fifteen problems, from approachable V1 and V2 warm-ups through a solid middle of V3 to V5, up to harder lines at V6 to V8, and a few open projects remain. The best-known line here is sustained and dynamic on good rock, finishing with a throw to a slopey lip, so bring a few pads and a spotter.",
+  "review": {"sources": ["https://www.mountainproject.com/area/113572411/area-2-cream-cheese", "https://mountainproject.com/route/113572454/cream-cheese"]}
+ },
+ "ny_quarantine_area_outbreak_boulder": {
+  "_expect": {"name": "Quarantine Area & Outbreak Boulder", "region": "New York"},
+  "blurb": "The Quarantine Area and Outbreak Boulder sit among the Peterskill boulders of Minnewaska, close to the cliff line. The centrepiece is a huge house-sized block that forms a narrow corridor with a smaller boulder just beside it. Of the fifteen problems here, most are easy to moderate: around a dozen fall between V0 and V3, with a few harder lines up to roughly V6. Easier problems have good landings, so this is a pleasant place to circuit the low grades. Peterskill boulders are mostly shaded, which keeps things cool but slows drying after rain.",
+  "review": {"sources": ["https://mountainproject.com/area/107238320/quarantine-area-outbreak-boulder", "https://www.mountainproject.com/area/107238290/peterskill-bouldering"]}
+ },
+ "_skipped": {
+  "ny_cliffs_the": "no fetched page about The Cliffs itself; only the Nine Corner Lake parent page mentions it (search snippets only otherwise)"
+ },
+ "_conflicts": {
+  "ny_fern_cliff": "stored rock amphibolite; the Powerlinez page https://www.mountainproject.com/area/108193801/powerlinez describes the rock there as mostly granitic gneiss. Left unchanged and no rock named in the blurb.",
+  "ny_area_2_cream_cheese": "stored rock shale; the Trapps Bouldering page https://www.mountainproject.com/area/106510895/trapps-bouldering says the Trapps boulders are hard quartz conglomerate. Left unchanged and no rock named in the blurb.",
+  "ny_quarantine_area_outbreak_boulder": "stored rock shale; https://www.mountainproject.com/area/105896719/peterskill says Peterskill rock is quartzite conglomerate. Left unchanged and no rock named in the blurb."
+ }
+}

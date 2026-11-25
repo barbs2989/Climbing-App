@@ -1,0 +1,91 @@
+{
+ "ca_valentine_wall_the": {
+  "_expect": {
+   "name": "Valentine Wall, The",
+   "region": "California"
+  },
+  "blurb": "A tall, dark wall in the high desert near Barstow, tucked among the rock formations of Sawtooth Canyon. It holds eleven routes, mostly bolted sport lines with a single trad line and one top-rope, running from easy fives through the low sevens and eights up to a handful of 5.10s and two 5.11s. That makes it a comfortable stop for a mixed-ability group, with enough steeper material to keep stronger climbers busy. The walk from the car is only a few steps.",
+  "parking_note": "Drive into the Sawtooth Canyon campground and leave the car in the wide pullout beside campsite 3. The wall is a short stroll from there.",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/area/110089918/the-valentine-wall?print=1",
+    "https://app.advcollective.com/climbing/valentine-wall-classic-desert-climbing-at-new-jack-city"
+   ]
+  }
+ },
+ "ca_wonder_bluffs": {
+  "_expect": {
+   "name": "Wonder Bluffs",
+   "region": "California"
+  },
+  "blurb": "A quiet crack-climbing wall on the edge of Indian Cove, in the north end of Joshua Tree National Park. All eleven lines are trad, from the high fives up through the 5.10s, with most clustered around 5.10. The wall faces east, so expect sun in the morning and shade once the afternoon arrives. It sees far fewer parties than the roadside formations nearby and rewards the effort with good views. Reaching the base means a half-hour or so of scrambling up a boulder-strewn gully, with no obvious path. Cracks vary in quality, so choose lines with some care.",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/area/105720702/wonder-bluffs",
+    "https://www.mountainproject.com/route/105910721/dry-rain"
+   ]
+  }
+ },
+ "ca_willit_pillar": {
+  "_expect": {
+   "name": "Willit Pillar",
+   "region": "California"
+  },
+  "blurb": "A compact pillar in the Indian Cove campground area of Joshua Tree, sitting directly behind campsite 3 and a short distance east of Billboard Buttress. Eleven climbs cover a bit of everything: mostly trad, a couple of sport lines, a top-rope and an aid bolt ladder on the west side. Free climbs range from easy fives up to a single 5.11, with most falling in the 5.8 to 5.9 band, so it suits moderate leaders looking for short single-pitch routes close to camp. A bolted anchor tops at least one of the main lines.",
+  "review": {
+   "sources": [
+    "https://mountainproject.com/area/105720924/willit-pillar",
+    "https://app.advcollective.com/climbing/call-of-the-west-at-willit-pillar",
+    "https://www.mountainproject.com/route/105723709/call-of-the-west"
+   ]
+  }
+ },
+ "ca_warm_up_wall": {
+  "_expect": {
+   "name": "Warm Up Wall",
+   "region": "California"
+  },
+  "blurb": "An easy-grade sport wall in the Central Gorge of the Owens River Gorge, near Bishop in the Eastern Sierra. It has eleven bolted routes, from 5.6 through the 5.9s with a pair at 5.10, which is rare in a canyon known for harder climbing. That puts it among the more popular spots for beginners and for anyone loosening up before the steeper walls. It sits up and to the right of Soul Power Wall, and a stepped path runs along its base. Expect company, since the central section of the gorge draws crowds.",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/area/105891387/warm-up-wall?print=1",
+    "https://mountainproject.com/area/105843226/owens-river-gorge"
+   ]
+  }
+ },
+ "ca_rattlesnake_buttress": {
+  "_expect": {
+   "name": "Rattlesnake Buttress",
+   "region": "California"
+  },
+  "blurb": "A smooth gray face at the head of Rattlesnake Canyon, reached by hiking up the canyon wash for twenty to thirty minutes in Indian Cove, Joshua Tree. Of eleven routes, nine are trad, with one sport line and one top-rope. Grades span the high fives to the low 5.12s, and the middle of the range, 5.8 to 5.11, has the most to offer. Pitches run around a hundred feet, and a couple of the 5.8 cracks are among the most repeated in the canyon. Shade is limited on warm days, so go early or in cooler months.",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/area/105721076/rattlesnake-buttress",
+    "https://app.advcollective.com/climbing/taken-for-granite-a-classic-crack-climb-at-rattlesnake-buttress",
+    "https://www.mountainproject.com/area/106235964/rattlesnake-canyon"
+   ]
+  }
+ },
+ "ca_upper_cow_rock": {
+  "_expect": {
+   "name": "Upper Cow Rock",
+   "region": "California"
+  },
+  "blurb": "A secluded cliff on the hillside north of Real Hidden Valley in Joshua Tree National Park, reached by a walk of roughly half an hour from the Real Hidden Valley lot. Eleven routes, seven trad and four sport, range from an easy 5.6 through a core of 5.10 and 5.11 lines to a few hard sport climbs in the 5.12s and one 5.13. Short, bold crack and face climbs share the wall, and the setting feels remote compared to the busy formations in the main valley. Views over the valley are wide, and crowds are rare.",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/area/105721130/upper-cow-rock",
+    "https://app.advcollective.com/climbing/cottage-cheese-a-brief-but-bold-joshua-tree-trad-climb"
+   ]
+  }
+ },
+ "_skipped": {
+  "ca_west_boulders": "no fetched page about this crag itself: the Mountain Project pages named West Boulders were in BC and Alabama, and the Descanso Boulders page only lists it (11 problems) without describing it; search budget not at issue",
+  "ca_potato_head": "no page about the crag itself could be fetched (rockclimbing.com refused connection, theCrag 403; Mountain Project 'Mr. Potato Head' is a Utah tower)"
+ },
+ "_conflicts": {
+  "ca_upper_cow_rock": "Mountain Project area page says the wall faces east (morning sun); the Adventure Collective Cottage Cheese page says south-facing. Stored aspect E left unchanged, aspect omitted from blurb.",
+  "ca_valentine_wall_the": "Mountain Project says the wall is shady in the morning with afternoon sun; Adventure Collective lists a south aspect in its metadata. Stored aspect W left unchanged."
+ }
+}

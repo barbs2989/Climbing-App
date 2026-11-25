@@ -1,0 +1,28 @@
+{
+ "pa_main_wall_6": {
+  "_expect": {"name": "Main Wall", "region": "Pennsylvania"},
+  "blurb": "Main Wall is a roadside cliff in the Mocanaqua area near Shickshinny, in the hills of northeastern Pennsylvania where old coal workings still show. The rock is quartzite. About eighteen lines are logged, nearly all of them trad or top-rope with a single bolted line. Grades start around 5.4 and reach one 5.12, but the bulk sit in the 5.10 range, so this suits climbers who already lead moderates while still offering a few easy cracks and slabs for newer ones. Trees hide the face from the road, and the walk in from the small lot is brief.",
+  "parking_note": "Small dirt lot on the left side of the road, about a mile beyond town; the path to the cliff begins at the right-hand edge of the lot.",
+  "review": {"sources": ["https://www.mountainproject.com/v/106510412", "https://www.mountainproject.com/area/106510408/mocanaqua-aka-shickshinny"]}
+ },
+ "pa_island_block": {
+  "_expect": {"name": "Island Block", "region": "Pennsylvania"},
+  "blurb": "Island Block is a small freestanding block along Rim Road in McConnells Mill State Park, above Slippery Rock Creek in western Pennsylvania. Eighteen lines are logged: roughly eight boulder problems from VB to V5, and mostly top-rope routes with a couple of trad leads, running from about 5.4 to 5.12. Easy and middle grades are scattered, then there is a cluster of 5.11s. Trees shade this stretch of cliff, so the rock can stay damp for a while after rain. The surrounding Rim Road cliffs are short and friendly to beginner and intermediate climbers; anchors may need extending to cut rope drag.",
+  "review": {"sources": ["https://www.mountainproject.com/area/110570643/island-block", "https://www.mountainproject.com/v/106055887"]}
+ },
+ "pa_powercut_central": {
+  "_expect": {"name": "Powercut Central", "region": "Pennsylvania"},
+  "blurb": "Powercut Central is a boulder cluster within the Powercut section of Hunter's Rocks, on a ridge in the Rocky Ridge Natural Area of central Pennsylvania. Seventeen problems are logged, mostly between V0 and V3 with a few harder ones, topping out around V7, so there is useful variety for a mixed group. The Hunter's Rocks boulders are praised for good friction and plentiful pockets, giving the climbing a distinct feel. A trail climbs steadily from the Powercut parking area to the ridge top where the problems sit.",
+  "review": {"sources": ["https://www.mountainproject.com/area/125288636/powercut-central", "https://www.mountainproject.com/area/106531911/hunters-rocks-rocky-ridge-natural-area"]}
+ },
+ "_skipped": {
+  "pa_old_toboggan_boulders": "no page about the boulders themselves found; only park-event and auto-generated pages",
+  "pa_gorgeous_rocks": "closed to climbing (trail to the crag closed by the state park); not written",
+  "pa_private_property_do_not_use": "private land, labelled do-not-use; only one page",
+  "pa_the_devil_s_kitchen_a_k_a_the_duke": "private land where climbing is not permitted; only the parent page and a photo caption describe it, no two pages about the crag",
+  "pa_main_rock": "no fetched page about Main Rock itself; only the Livezey Rock parent page and general park/blog pages"
+ },
+ "_conflicts": {
+  "pa_powercut_central": "stored rock is shale, but https://www.mountainproject.com/area/106531911/hunters-rocks-rocky-ridge-natural-area and https://www.statecollege.com/articles/local-news/hunters-rocks-a-climbworthy-hike-with-breathtaking-views/ call the Hunter's Rocks boulders sandstone"
+ }
+}

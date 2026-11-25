@@ -1,0 +1,27 @@
+{
+ "ca_prospect_wall": {
+  "_expect": { "name": "Prospect Wall", "region": "California" },
+  "blurb": "Prospect Wall is a tall, conspicuous face on Butterfly Peak above Garner Valley in the San Jacinto Mountains, at roughly 6,000 feet and about 180 feet high. It holds 14 routes, almost all trad with a couple of sport lines, and the climbing is steep: faces, cracks and stemming corners. Many lines mix bolts with gear, so a light rack is the usual plan. A handful of routes sit in the 5.7 to 5.8 range, but the bulk of the wall is 5.10 and 5.11, which makes it a better fit for solid leaders than for beginners. Rappels can be long enough that a 70 m or 80 m rope is worth carrying. Expect to get well away from the roadside crags and the crowds.",
+  "review": { "sources": ["https://mountainproject.com/area/105879600/prospect-wall", "https://www.mountainproject.com/area/105879566/garner-valley"] }
+ },
+ "ca_polka_dot_wall_the": {
+  "_expect": { "name": "Polka Dot Wall, The", "region": "California" },
+  "blurb": "The Polka Dot Wall is a quiet wall in Rattlesnake Canyon, in the Indian Cove part of Joshua Tree National Park. It has 14 routes, nearly all traditional crack and face lines, plus two top-rope problems on a clean brown buttress left of centre. Difficulty is moderate: grades start at 5.7 and top out around 5.10, with the 5.8 and 5.10 range holding most of the lines. The surface is speckled with dark spots that give the wall its name. It is a good choice for climbers wanting moderate pitches away from the busier Joshua Tree crags, though reaching it takes a canyon hike and some gully scrambling. The setting is dry desert, so carry water and plan around the heat.",
+  "review": { "sources": ["https://www.mountainproject.com/area/105721016/the-polka-dot-wall", "https://app.advcollective.com/climbing/caterpillar-at-the-polka-dot-wall"] }
+ },
+ "ca_tower_of_zen": {
+  "_expect": { "name": "Tower of Zen", "region": "California" },
+  "blurb": "Tower of Zen is a sport wall within Echo Cliffs in the Santa Monica Mountains of the Los Angeles area. All 14 routes are bolted. The lower part of the wall offers short, easier pitches, while the overhanging headwall above carries the hard climbing: grades begin around 5.10 and climb well into the 5.12s and 5.13 range, with most routes sitting at 5.11 and up. That makes it a crag for strong, pumpy sport climbers rather than first-time leaders. The base routes get shade in the morning and late afternoon, which helps on warm days. Echo Cliffs as a whole is best from fall through spring, and routes here can be long, so bring a 60 m rope.",
+  "review": { "sources": ["https://www.mountainproject.com/v/tower-of-zen/106630220", "https://www.mountainproject.com/area/105825729/echo-cliffs"] }
+ },
+ "_skipped": {
+  "ca_hueco_wall": "no fetched page is about this Hueco Wall; every Mountain Project Hueco Wall page fetched was Barstow, Thailand, WV, CO or SD, and Boney Bluff page does not mention it",
+  "ca_tomb_the": "the only Mountain Project The Tomb page fetched is in Arkansas; no page for a California Tomb in the Apple Valley Dead Zone found",
+  "ca_ugly_wall_the": "no fetched page about the crag itself; only a route page, a parent page and blocked pages (403)",
+  "ca_upper_tier_4": "no fetched page about the Upper Tier itself; parent Stonewall Peak page only, summitpost blocked (403)",
+  "ca_willow_creek_wall": "no fetched page about the crag itself; parent area and a route page only, ukclimbing blocked"
+ },
+ "_conflicts": {
+  "ca_prospect_wall": "stored rock is sandstone but the parent Garner Valley page https://www.mountainproject.com/area/105879566/garner-valley describes the valley's rock as granite"
+ }
+}

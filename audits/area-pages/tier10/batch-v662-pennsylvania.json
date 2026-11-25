@@ -1,0 +1,43 @@
+{
+ "pa_11_jim_s_wall": {
+  "_expect": { "name": "Jim's Wall", "region": "Pennsylvania" },
+  "blurb": "The tallest and broadest of the three main formations at White Rocks, in the Pond Bank cluster of south-central Pennsylvania. Sixteen climbs are logged, nearly all traditional lines with a single boulder problem mixed in, spanning easy fifth-class up to about 5.9. Cracks, corners, chimneys and a cave make up the features, and the wall reaches roughly 125 feet, so many lines can be led as one pitch or broken into two. It faces west and collects sun from around midday into the evening during the busy months. A friendly spot for newer trad leaders working through moderate grades.",
+  "aspect": "W",
+  "review": { "sources": ["https://www.mountainproject.com/area/107171227/11-jims-wall", "https://mountainproject.com/area/108497180/white-rocks", "https://potomacmountainclub.org/venues/pondbank/"] }
+ },
+ "pa_area_1": {
+  "_expect": { "name": "Area 1", "region": "Pennsylvania" },
+  "blurb": "The first of three bouldering zones in a patch of Gallitzin State Forest, with sixteen problems on small sandstone boulders and low walls. Most lines sit between V1 and V3, a couple stretch to V4 or V5, and nothing here is very tall, so a single crash pad covers most landings. A main wall holds the bulk of the climbing, with a few free-standing boulders behind it and a smaller wall off to one side. It suits a relaxed session for climbers working through the lower and middle grades.",
+  "approach": "Walk the Lost Turkey Trail from the trailhead until a large rock cairn appears on your right, then follow the log-edged side path into the trees. The boulders are within about 100 yards of the trail.",
+  "review": { "sources": ["https://www.mountainproject.com/area/119134632/area-1", "https://www.mountainproject.com/area/110829872/56-boulders"] }
+ },
+ "pa_3_4_s_l_area": {
+  "_expect": { "name": "3.4 S. L. Area", "region": "Pennsylvania" },
+  "blurb": "A cluster of small crags right beside the Enola Low Grade rail trail at about the 3.4 mile mark, in the northern half of the Safe Harbor cliffs above the Susquehanna River. Fifteen routes, mostly sport with three trad lines, run from 5.7 to a single 5.12, with the greatest numbers in the 5.8 to 5.10 range. The schist is slick and the northern end of Safe Harbor tends to be steeper and more spread out than the southern end. Sunny days bring plenty of walkers and cyclists along the trail below the walls.",
+  "review": { "sources": ["https://www.mountainproject.com/area/108805246/34-s-l-area", "https://www.mountainproject.com/area/108805095/safe-harbor-north", "https://potomacmountainclub.org/climbing-crags-beta/pennsylvania-crags/safe-harbor-sport/"] }
+ },
+ "pa_e_machismo_sector": {
+  "_expect": { "name": "Machismo Sector", "region": "Pennsylvania" },
+  "blurb": "A vertical face section in the southern half of Safe Harbor, found by heading north along the Enola Low Grade rail trail from the Green Hill Road tunnel. Fifteen routes, almost all bolted sport lines plus one trad climb, cover 5.6 through 5.13, though most land between 5.8 and 5.11. The schist rewards fingery, balancey moves, and a stick clip can come in handy. Expect a bolted, single-pitch day that suits intermediate climbers, with a few harder lines to aim for.",
+  "review": { "sources": ["https://mountainproject.com/area/107379893/machismo-sector", "https://mountainproject.com/area/107374711/safe-harbor-south", "https://potomacmountainclub.org/climbing-crags-beta/pennsylvania-crags/safe-harbor-sport/"] }
+ },
+ "pa_pulley_area": {
+  "_expect": { "name": "Pulley Area", "region": "Pennsylvania" },
+  "blurb": "A set of fifteen boulder problems tucked into the woods of Governor Dick Park near Mount Gretna. Many of them are gentle V0 and V1 lines, a handful sit in the V2 to V6 band, and a few serious problems reach V8 and above. The area is frequently skipped because the way in is hard to locate, but the harder lines make a visit worthwhile. A large boulder that gives the area its name anchors the group, with a smaller boulder close by.",
+  "review": { "sources": ["https://www.mountainproject.com/area/106754248/pulley-area", "https://www.mountainproject.com/area/106746577/mount-gretna"] }
+ },
+ "pa_caves_the": {
+  "_expect": { "name": "Caves, The", "region": "Pennsylvania" },
+  "blurb": "A compact bouldering cluster along the Caves Trail on Haycock Mountain near Nockamixon. About fifteen problems mix aretes, cracks and face climbs, running from easy V0 warm-ups all the way to V10, with a good share at V5 and harder. The concentration is high enough for a full day without wandering far. The woodland route in is rough and easy to lose, so first-timers do better following someone who knows it. Cooler weather suits the friction here.",
+  "season_months": [3, 4, 10, 11],
+  "review": { "sources": ["https://www.mountainproject.com/area/109585358/the-caves", "https://www.mountainproject.com/area/107441099/caves-trail", "https://www.mountainproject.com/area/107082197", "https://app.advcollective.com/climbing/dubeck-bouldering-small-stone-adventures-on-the-caves-trail"] }
+ },
+ "_skipped": {
+  "pa_smedley_park": "search budget not hit; two searches found no climbing page about Smedley Park, only county park and mountain biking pages (Mountain Project Southeastern Lowlands lists it with 16 boulder problems but no description)",
+  "pa_main_wall_9": "no fetched page about Main Wall at Nay Aug Park; the only climbing page found covers a different wall (Tree House Wall) and returned 403 when fetched"
+ },
+ "_conflicts": {
+  "pa_caves_the": "stored rock is basalt; the Haycock page https://www.mountainproject.com/area/107082197 says Triassic diabase and https://app.advcollective.com/climbing/dubeck-bouldering-small-stone-adventures-on-the-caves-trail says granite",
+  "pa_pulley_area": "stored rock is basalt; https://www.mountainproject.com/area/106746577/mount-gretna says the park's boulders are diabase"
+ }
+}

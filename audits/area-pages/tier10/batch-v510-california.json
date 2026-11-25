@@ -1,0 +1,36 @@
+{
+ "ca_smooth_sole_wall_right_side": {
+  "_expect": { "name": "Smooth Sole Wall - Right Side", "region": "California" },
+  "blurb": "The busier half of the Smooth Sole Wall on Suicide Rock, above Idyllwild. Fifteen climbs, nearly all single-pitch trad face routes, with a single sport line and a single top-rope. Grades run from 5.7 up through 5.11, and the middle of that range is well stocked. The climbing is thin, delicate slab and face work where holds are small and protection can be sparse, so some of the better-known lines are runouts. It suits climbers who are comfortable and in control at the grade, not those testing a new number. The wall catches sun for most of the day, which makes it a cool-weather or early-morning choice once summer heat arrives.",
+  "review": { "sources": ["https://www.mountainproject.com/area/106032225/smooth-sole-wall-right-side", "https://www.mountainproject.com/area/105790796/smooth-sole-walls"] }
+ },
+ "ca_triple_play_cliff": {
+  "_expect": { "name": "Triple Play Cliff", "region": "California" },
+  "blurb": "A slabby sport cliff in the Upper Gorge of the Owens River Gorge near Bishop, set between Holy Trinity and the larger Gorgeous Towers wall. It holds 15 routes, almost all bolted, plus one trad line, and grades spread from about 5.6 up to 5.12, with the greatest number in the 5.8 and 5.10 ranges. That makes it a decent stop for warm-ups and for mid-grade climbers who like precise footwork over strength. Shade is scarce on the slabs, so midday sun in the desert can be harsh; early or late sessions feel better. The approach finishes with a short, loose talus scramble.",
+  "review": { "sources": ["https://www.mountainproject.com/area/105907283/triple-play-cliff", "https://app.advcollective.com/climbing/exploring-triple-play-cliff-owens-river-gorges-slabby-challenge"] }
+ },
+ "ca_lower_guadalupe_rock": {
+  "_expect": { "name": "Lower Guadalupe Rock", "region": "California" },
+  "blurb": "A quiet, tall free-standing block of rock tucked beside the stream that feeds Guadalupe Reservoir, at the far end of Hicks Road in the South Bay. It carries 15 climbs, mostly bolted sport lines, with a few trad cracks, two top-ropes and a boulder problem. Most routes fall in the 5.9 to 5.11 range, with a few easy lines near 5.3 and 5.4 for beginners. The walk in is only a few steps and a hop across the creek, though high water can leave the base surrounded and a stick clip helps. You can scramble around the back to reach the top anchors.",
+  "review": { "sources": ["https://mountainproject.com/area/106640150/lower-guadalupe-rock", "https://mountainproject.com/area/116559606/hicks-road"] }
+ },
+ "ca_swallow_rock_boulders": {
+  "_expect": { "name": "Swallow Rock Boulders", "region": "California" },
+  "blurb": "A cluster of river-polished boulders near Dos Rios in northern California, beside the stream below the big namesake rock. There are 15 problems, all bouldering, covering a very wide range: a handful of easy V1 lines, a solid middle of V3 to V6, and a few hard problems that reach into the high single digits. Holds are smooth and friction is poor, so the style rewards careful footwork and patience. Boulders away from the water are brittle, so avoid pulling hard on loose features; the ones by the river are sound. The area is open to the sun, so mornings or late afternoons are comfortable.",
+  "review": { "sources": ["https://www.mountainproject.com/area/117372087/swallow-rock-boulders", "https://www.mountainproject.com/area/117372076/swallow-rock"] }
+ },
+ "ca_af_finger_lickin_area": {
+  "_expect": { "name": "Af. Finger Lickin' Area", "region": "California" },
+  "blurb": "A trad-only hillside wall on the north side of the Lower Merced River Canyon, between Arch Rock and Roadside Attraction heading east from El Portal. All 15 climbs are crack and face lines placed on natural gear, nearly all at 5.10 and 5.11 with a few 5.9s and a couple of 5.12s, so it suits confident leaders rather than beginners. The cliff sits in sun for most of the day, which makes it a pleasant winter option, and the canyon overall tends to see fewer climbers than the headline walls in the Valley. Expect sustained finger and hand crack climbing.",
+  "review": { "sources": ["https://www.mountainproject.com/area/106578516", "https://mountainproject.com/area/110464982/lower-merced-river-canyon"] }
+ },
+ "_skipped": {
+  "ca_trout_rock": "no fetched page about the crag itself: only route pages (Sherman Tank, Fish Egg) naming it, no area page found",
+  "ca_mossy_rock": "no page found for this Angwin boulder area after several searches",
+  "ca_the_power_station": "no page found for this El Dorado boulder area after several searches"
+ },
+ "_conflicts": {
+  "ca_swallow_rock_boulders": "Stored rock is sandstone but https://www.mountainproject.com/area/117372076/swallow-rock describes river rock (greenstone, jade, schist, serpentine).",
+  "ca_lower_guadalupe_rock": "Stored rock is greywacke; https://mountainproject.com/area/106640150/lower-guadalupe-rock agrees (greywacke sandstone) but https://mountainproject.com/area/116559606/hicks-road hints at limestone via a photo title; left unchanged."
+ }
+}
