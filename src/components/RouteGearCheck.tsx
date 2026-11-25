@@ -10,7 +10,7 @@ import RouteRackBox from "./RouteRackBox.tsx";
 import type { GearRoute, RouteRackBoxProps } from "./RouteRackBox.tsx";
 import RouteGearEssentialsBox from "./RouteGearEssentialsBox.tsx";
 import type { GearEssentialsRoute } from "./RouteGearEssentialsBox.tsx";
-import { rackLeftovers, isNoRackClass, rackForNoRackClass } from "../../lib/rack";
+import { rackLeftovers, isNoRackClass, rackForNoRackClass, isNoRopeClass } from "../../lib/rack";
 
 /** The route fields the ropework card reads (ropeworkFacts reads the rest). */
 export interface RopeworkRoute {
@@ -92,5 +92,8 @@ function RopeworkBox({route,onEdit}: {route: RopeworkRoute; onEdit?: (() => void
      packing list instead, so nothing it states is dropped. */
   const noRack=isNoRackClass(route);
   const ownRack=noRack?rackForNoRackClass(route):[];
-  return <><SL>GEAR</SL>{noRack?null:<RouteRackBox route={route} activity={activity} onEditRack={onEditRack} rack={rack} onSeeReports={onSeeReports} rackGeneric={rackGeneric}/>}{afterRack}<RopeworkBox route={route} onEdit={onEditRopeNote}/><RouteGearEssentialsBox route={route} essentials={(essentials||[]).concat(rackLeftovers(route)).concat(ownRack)} onEdit={onEditEssentials}/></>;
+  /* No ROPEWORK card on a Class 1-3 route that crosses no glacier (lib/rack.js isNoRopeClass): no rope
+     placeholder, no rope length. A glacier walk keeps it, because it is crossed as a rope team. */
+  const noRope=isNoRopeClass(route);
+  return <><SL>GEAR</SL>{noRack?null:<RouteRackBox route={route} activity={activity} onEditRack={onEditRack} rack={rack} onSeeReports={onSeeReports} rackGeneric={rackGeneric}/>}{afterRack}{noRope?null:<RopeworkBox route={route} onEdit={onEditRopeNote}/>}<RouteGearEssentialsBox route={route} essentials={(essentials||[]).concat(rackLeftovers(route)).concat(ownRack)} onEdit={onEditEssentials}/></>;
 }

@@ -528,6 +528,12 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     (every "no RACK" assertion passes against an empty render), and Class 4, Class 3-4 and a 5.6
     alpine route must still render RACK, so the rule cannot quietly over-reach. The card heading
     is matched as `>RACK<`, never as a substring ("ROUTE TRACK" contains RACK).
+  - **It also holds the NO-ROPE rule (owner, 2026-11-25)**, `isNoRopeClass`: the same Class 1-3 routes
+    render no ROPEWORK card and no generic *Harness*, and `fieldScope` asks them no `ropeNote`,
+    `ropeLen` or `ropeType`. Pinned the other way too: a Class 2 GLACIER walk (reviewed `glacierTravel:
+    "yes"`, and one known only from its text), Class 4, Class 3-4 and a 5.6 alpine route keep
+    ROPEWORK, the Harness and the ropework editor; a Class 2 route that STORES a rope note shows no ROPEWORK and is offered no rope
+    editor (106 live routes store one, nearly all "no rope needed"). A reviewed `glacierTravel: "no"` beats a glacier word in the text ("views of the glacier").
 - **`check:access-checked-line`** asserts the road/access **CHECKED DATE** reaches a screen, and that
   a route without one says **nothing**. Static (one esbuild bundle, two SSR renders), so it sits in
   `npm run build`.
