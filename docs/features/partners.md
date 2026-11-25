@@ -56,6 +56,12 @@ whole guide feature on 2026-11-14 (owner). This doc covers the partners mode (`l
   (`usePartnersForMyAreas`), then at your saved areas (`usePartnersInAreas`, at most the first 12, saved peaks too since 0456, a saved country
   said to be too broad), then who share a mountain objective (`usePartnersByObjective`), each climber once (`minePeople`). It replaced
   *My areas* with its **Where I'm listed / Saved areas** buttons (the `myareas` / `saved` modes) and *My objectives* (`objectives`).
+  **Your places · N** (owner note 2026-11-25: "I feel like I have more areas saved than this … they should be able to select 2 or
+  more specific ones"): above the list, every place you are LISTED at or SAVED (deduped, listed first; a country or the world left
+  out as too broad) is a filter chip, behind **All**. The old Saved areas chips showed saved areas only, so an account with 5 saved
+  and 13 listed saw 5. Any number can be picked (`minePicks`); the list is then climbers at the picked places only
+  (`usePartnersInAreas` over the picks, `pickPeople`), shared objectives left out, and All clears the picks. The first 12 chips show
+  until **Show all N**; a picked chip stays visible. A picked place is searched even past the 12 the All search reads.
   The list waits until every enabled read has answered, so a late source never pushes cards down under a thumb; signed in,
   no example climber is drawn under it; *Plan a session* is offered only to a climber matched by an AREA (not one matched by a
   shared mountain objective); a climber whose saved climbs are all crag climbs is told crag partners are found by area.
