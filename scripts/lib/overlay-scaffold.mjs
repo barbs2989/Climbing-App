@@ -38,14 +38,13 @@ import { readCoreSource, readParentSource, MOVED, movedAsParentText } from "./gu
 // overlay at all, which is how a list like this normally rots.
 export const NEEDS_EXTRA_STATE = {
   areaTreeOpen: "rendered as `areaTreeOpen && selArea` — needs an area selected first",
-  reviewQueue: "rendered as `reviewQueue&&isAdmin` — the Menu's Review queues (moved off Profile 2026-10-23) open only for an ADMIN account, and no walk signs in as one",
   // `sessionRestoring` deliberately gets NO entry — it is a derived const
   // (`realAuthGate && session===undefined`), not state, so discovery cannot return it and an
   // exemption naming it would be the stale bookkeeping this registry fails on. `editDraft` is
   // no longer here either: it is opened with a LIFTED literal, see `lift` in OVERLAY_PAYLOADS.
 };
 
-// OPT-IN OPENERS for two of the three above, reached with `?zx=<name>` rather than `?z=`.
+// OPT-IN OPENERS for the overlays above, reached with `?zx=<name>` rather than `?z=`.
 //
 // Every guard reading NEEDS_EXTRA_STATE skips these names before it loads anything, and that does
 // not change: a guard has to ask for `zx` by name, so widening check:pinned-dismiss (owner note,
@@ -56,13 +55,10 @@ export const NEEDS_EXTRA_STATE = {
 //     opens expanded at it, the longest list it can show.
 //   An entry may also carry `viewport` ({width,height}) for a popup gated on a desktop width; the
 //     GUARD widens to it before loading. (Compare used it until the owner removed it, 2026-11-12.)
-//   reviewQueue: renders as `reviewQueue&&isAdmin`, and isAdmin is a DB query on a signed-in admin.
-//     A config that serves `zx` applies ADMIN_GATE, which lets window.__ovAdminGate stand in for it;
-//     only this opener sets that. The queue's own reads fail without an admin, which leaves its
-//     header (the subject) exactly as an admin sees it.
+//   (reviewQueue, the Menu's admin Review sheet, had an opener and an ADMIN_GATE here until the sheet was
+//     removed on 2026-11-25: its queues live on review.html, the owner's Review desk.)
 export const EXTRA_STATE_OPENERS = {
   areaTreeOpen: { open: 'setSelArea(MOUNTAINS.find(function(m){return m.areaType==="state";})||null);setAreaTreeOpen(true);' },
-  reviewQueue: { open: 'window.__ovAdminGate=true;setReviewQueue("standing");' },
 };
 // WHERE A POPUP OPENS, for the cases a flag alone cannot build: reached with `?zp=<name>`.
 //
@@ -82,7 +78,6 @@ export const TOP_PROBES = {
   logReportEdit: { expect: "target", what: "Edit report on a climb that has a write-up (lands on the write-up box)",
     open: 'setLogEditData({_idx:0,routeId:ROUTES[0].id,date:"2026-01-01",text:"Overlay probe write-up."});setLogModalFocus("report");setLogModal(ROUTES[0]);' },
 };
-export const ADMIN_GATE = { from: "{reviewQueue&&isAdmin&&", to: "{reviewQueue&&(isAdmin||window.__ovAdminGate)&&" };
 
 // ---------------------------------------------------------------------------------------
 // Payloads for the dialog-shaped overlays.
