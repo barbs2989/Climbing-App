@@ -24,7 +24,7 @@ const sum = (p) => crypto.createHash("sha1").update(fs.readFileSync(p)).digest("
 
 const CASES = [
   { name: "faq-settings-control", file: "lib/Help.jsx", fires: true,
-    find: '"Is my emergency contact private?","Yes. The emergency contact you save in Edit profile is stored with your account where only you can read it',
+    find: '"Is my emergency contact private?","Yes. ClimbMatch does not keep an emergency contact on your account or your profile.',
     repl: '"Is my emergency contact private?","Yes. You control who can see it in Settings — keep it private, share with your crew only, or show it to partners.","XX',
     expect: "claims a Settings control over an emergency contact",
     why: "the real historical FAQ answer, restored verbatim" },
@@ -32,8 +32,8 @@ const CASES = [
   { name: "toast-profile-field", file: "ClimbMatch.jsx",
     find: "\"Float plan saved. \"",
     repl: "\"Float plan saved. Add an emergency contact in your profile, and send them the plan yourself. \"",
-    fires: false,
-    why: "the real historical toast — false while nothing could set a contact, TRUE since 0237 added one to Edit profile, so the rule stands down by itself (its own design: a hardcoded ban would forbid the fix). Repointed 2026-11-14 (PR #3369): fileCrewFloatPlan's old toast is gone, so the profile-contact wording is injected into the organizer's success toast instead" },
+    fires: true, expect: "points a climber at a place to set or control an emergency contact",
+    why: "the real historical toast — false while nothing could set a contact, true from 0237 until 2026-11-25 (when the rule stood down by itself), FALSE again since the profile contact was removed. The toast wording (its own design: a hardcoded ban would forbid the fix). Repointed 2026-11-14 (PR #3369): fileCrewFloatPlan's old toast is gone, so the profile-contact wording is injected into the organizer's success toast instead" },
 
   { name: "settings-privacy-section", file: "lib/PartnerSearch.jsx", fires: true,
     find: "under Settings → Privacy & safety.",
@@ -41,11 +41,7 @@ const CASES = [
     expect: 'Settings renders no such section or control',
     why: "the real historical path — a section called Privacy does not exist" },
 
-  { name: "contact-denied-again", file: "lib/Help.jsx", fires: true,
-    find: '"Yes. The emergency contact you save in Edit profile',
-    repl: '"There is no emergency-contact field on your profile. The emergency contact you save in Edit profile',
-    expect: "still denies the emergency contact",
-    why: "the real pre-0237 FAQ sentence: once a contact CAN be saved, saying there is none is the false claim (4b, re-aimed)" },
+  /* contact-denied-again was deleted 2026-11-25: the profile contact is gone, so "there is no emergency-contact field on your profile" is TRUE again and 4b's deny rule cannot fire. The turned-round claim (sending a climber to a profile field) is toast-profile-field above. */
 
   { name: "faq-answer-deleted", file: "lib/Help.jsx", fires: true,
     find: '"Is my emergency contact private?"',
@@ -64,8 +60,8 @@ const CASES = [
     why: "a path may name a CONTROL Settings renders, not only a section" },
 
   { name: "SILENT-answer-reworded", file: "lib/Help.jsx", fires: false,
-    find: '"Yes. The emergency contact you save in Edit profile is stored with your account where only you can read it',
-    repl: '"Yes — only you can read the emergency contact saved in Edit profile; it is kept with your account',
+    find: '"Yes. ClimbMatch does not keep an emergency contact on your account or your profile.',
+    repl: '"Yes. Your account and profile hold no emergency contact at all.',
     why: "a guard pinned to one phrasing forbids improving it — the rule is that the answer still names where a contact goes" },
 ];
 

@@ -361,7 +361,10 @@ if (LABELS.length < 3) dead(`only ${LABELS.length} Settings row label(s) harvest
 
 // Comments are stripped first: this file's own header names "Settings → Privacy" while explaining
 // why it is wrong, and a guard that fails on its own documentation is a trap this repo records.
-const stripLine = (t) => t.replace(/(^|[^:])\/\/[^\n]*/g, "$1");
+// Block comments go FIRST (2026-11-25): two adjacent ones read `*//*`, which the line-comment
+// pattern took for a `//` and dropped the REST OF THE LINE -- and App's lines are thousands of
+// characters long, so the float-plan toast on line ~1031 was invisible to section 4b.
+const stripLine = (t) => t.replace(/\/\*[\s\S]*?\*\//g, " ").replace(/(^|[^:])\/\/[^\n]*/g, "$1");
 let paths = 0;
 // `core` is readCoreSource(): it already carries every component moved out of core to load
 // lazily (partner browse holds one of this section's founding sentences), so nothing is added here.
@@ -585,7 +588,10 @@ else if (!/on your (own )?(device|phone)|stays on your|held on your own/i.test(p
    earlier version of this check passed on a policy that had stopped saying anything about who else
    can read what you filed. `crews` RLS is `status <> 'pending'` since 0180, so the other members
    genuinely can. */
-else if (!/crew[^.]{0,140}can (read|see)|other members can read/i.test(privacyDoc)) bad(`the Privacy Policy no longer says the other members of a crew can read what filing a float plan stores — that is the DISCLOSURE, and a policy that drops it tells the reader LESS than the false version did`);
+/* Tied to the FLOAT PLAN sentence (2026-11-25): the bare "crew … can read" also matched 0484's
+   meeting-place sentence ("the people on that crew or invited to it can read it"), so deleting the
+   float-plan disclosure passed -- the disclosure-deleted injection case had been MISSED since 0484. */
+else if (!/float plan[^.]{0,200}can (read|see)/i.test(privacyDoc)) bad(`the Privacy Policy no longer says the other members of a crew can read what filing a float plan stores — that is the DISCLOSURE, and a policy that drops it tells the reader LESS than the false version did`);
 else ok(`the Privacy Policy still discloses the float plan, still says the form itself stays on your device, and still says who else can read what filing one stores`);
 if (!/float plan/i.test(sheetDoc)) bad(`the in-app privacy sheet no longer mentions a float plan — the sheet is where the privacy decision is actually made, and deleting the subject is not correcting it`);
 else if (!HONEST_ALARM.test(sheetDoc)) bad(`the in-app privacy sheet no longer says the app cannot raise the alarm for you — that sentence is what stops a climber relying on their crew instead of telling a real person`);
