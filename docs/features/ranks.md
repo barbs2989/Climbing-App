@@ -15,7 +15,7 @@
   as links (*All countries › United States*) and one **See rankings for <area>** button; under it the countries or
   states as two-column cards with their climb counts, A to Z (the look of `StatePicker`’s phone cards), and below a
   state the Climbs area page’s own sub-area list (`AreaChildrenList`: every child that holds climbs, A to Z, the same
-  Sort, the discipline line, a *View area* button on each row). Walking the page ranks nothing; See rankings does, and
+  Sort, one line a row: name, total climbs, an open arrow). Walking the page ranks nothing; See rankings does, and
   so do a search hit (`GroupPlaceSearch` → `useCatalogAreaSearch`, signed in only) and a *Your areas* chip (the
   climber’s partner listings, `useMyPartnerAreas`). **Back to rankings** leaves it unchanged; on a phone the top bar
   draws that Back (`data-cm-step-back`). Each step starts at the top with the area’s name in focus. *All countries*

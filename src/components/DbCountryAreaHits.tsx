@@ -3,7 +3,7 @@ import { C } from "../../ClimbMatchCore.jsx";
 import { useAreaSearch } from "../../lib/db.js";
 import { clickable } from "../../lib/clickable";
 import EmptyState from "./EmptyState.tsx";
-import ViewAreaPill from "./ViewAreaPill.tsx";
+import AreaRowArrow from "./AreaRowArrow.tsx";
 
 /** One area hit of `areas_in_subtree`: the area, its parent's name for disambiguation, and its climb count. */
 export interface AreaHit { id: string; name: string; parent_name?: string | null; route_count: number; }
@@ -27,5 +27,5 @@ export default function DbCountryAreaHits({country,q,showName,rowStyle,onOpen}: 
   const _q=(q||"").trim();
   const searchQ: SearchQuery=useAreaSearch(country.id,q);
   const hits=searchQ.data||[];
-  return <div style={{marginBottom:showName?10:0}}>{showName?<div style={{fontSize:11,fontWeight:800,letterSpacing:0.5,textTransform:"uppercase",color:C.label,padding:"6px 4px 2px"}}>{country.name}</div>:null}{searchQ.isLoading?<div style={{fontSize:13,color:C.textMuted,padding:"12px 4px",textAlign:"center"}}>Searching…</div>:null}{searchQ.error?<div style={{fontSize:12.5,color:C.red,padding:"12px 4px",textAlign:"center"}}>Couldn't run that search — check your connection.</div>:null}{hits.map(function(a){return <div key={a.id} {...clickable(function(){onOpen(a);})} aria-label={"View "+a.name+(a.parent_name?" in "+a.parent_name:"")} style={rowStyle}><div style={{flex:1,minWidth:0}}><div style={{fontSize:13.5,fontWeight:700,color:C.text,overflowWrap:"anywhere"}}>{a.name}</div><div style={{fontSize:10.5,color:C.textMuted,overflowWrap:"anywhere"}}>{[a.parent_name,a.route_count>0?a.route_count.toLocaleString()+" climb"+(a.route_count!==1?"s":""):null].filter(Boolean).join(" · ")}</div></div><ViewAreaPill C={C}/></div>;})}{(!searchQ.isLoading&&!searchQ.error&&!hits.length)?<EmptyState C={C} icon="search">{"No area"+(showName?" in "+country.name:"")+" matches “"+_q+"”."}</EmptyState>:null}</div>;
+  return <div style={{marginBottom:showName?10:0}}>{showName?<div style={{fontSize:11,fontWeight:800,letterSpacing:0.5,textTransform:"uppercase",color:C.label,padding:"6px 4px 2px"}}>{country.name}</div>:null}{searchQ.isLoading?<div style={{fontSize:13,color:C.textMuted,padding:"12px 4px",textAlign:"center"}}>Searching…</div>:null}{searchQ.error?<div style={{fontSize:12.5,color:C.red,padding:"12px 4px",textAlign:"center"}}>Couldn't run that search — check your connection.</div>:null}{hits.map(function(a){return <div key={a.id} {...clickable(function(){onOpen(a);})} aria-label={"View "+a.name+(a.parent_name?" in "+a.parent_name:"")} style={rowStyle}><div style={{flex:1,minWidth:0}}><div style={{fontSize:13.5,fontWeight:700,color:C.text,overflowWrap:"anywhere"}}>{a.name}</div><div style={{fontSize:10.5,color:C.textMuted,overflowWrap:"anywhere"}}>{[a.parent_name,a.route_count>0?a.route_count.toLocaleString()+" climb"+(a.route_count!==1?"s":""):null].filter(Boolean).join(" · ")}</div></div><AreaRowArrow C={C} /></div>;})}{(!searchQ.isLoading&&!searchQ.error&&!hits.length)?<EmptyState C={C} icon="search">{"No area"+(showName?" in "+country.name:"")+" matches “"+_q+"”."}</EmptyState>:null}</div>;
 }
