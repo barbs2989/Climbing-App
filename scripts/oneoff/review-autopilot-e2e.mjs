@@ -33,12 +33,14 @@ const asUser = (tok, method, p, body, extra) => call(method, `${SUPABASE_URL}/re
 if (cmd === "file") {
   // cases: [{label, kind:'field'|'flag'|'new_route'|'new_area', route_id?, area_id?, field?, value?, reason?, note?, expect}]
   const cases = JSON.parse(fs.readFileSync(CASES_FILE, "utf8"));
-  const email = `e2e-review-${Date.now()}@climbmatch.app`, password = crypto.randomBytes(24).toString("base64url");
-  const u = await svc("POST", "auth/v1/admin/users", { email, password, email_confirm: true, user_metadata: { name: "E2E Test Climber" } });
-  await svc("PATCH", `rest/v1/profiles?id=eq.${u.id}`, { discoverable: false, name: "E2E Test Climber" }, { Prefer: "return=minimal" });
+  // A second `file` run adds to the same test climber (its throwaway password is kept in the temp state file).
+  const prev = fs.existsSync(STATE) ? JSON.parse(fs.readFileSync(STATE, "utf8")) : null;
+  const email = prev ? prev.email : `e2e-review-${Date.now()}@climbmatch.app`, password = prev ? prev.password : crypto.randomBytes(24).toString("base64url");
+  const u = prev ? { id: prev.user } : await svc("POST", "auth/v1/admin/users", { email, password, email_confirm: true, user_metadata: { name: "E2E Test Climber" } });
+  if (!prev) await svc("PATCH", `rest/v1/profiles?id=eq.${u.id}`, { discoverable: false, name: "E2E Test Climber" }, { Prefer: "return=minimal" });
   const s = await call("POST", `${SUPABASE_URL}/auth/v1/token?grant_type=password`, { email, password }, { apikey: anonKey(), "Content-Type": "application/json" });
   const tok = s.access_token;
-  const out = { user: u.id, email, filed: [] };
+  const out = prev || { user: u.id, email, password, filed: [] };
   for (const c of cases) {
     try {
       let id;

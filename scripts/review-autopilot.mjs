@@ -8,6 +8,7 @@
 //   node scripts/review-autopilot.mjs --no-research   # only act on verdicts already stored
 //   node scripts/review-autopilot.mjs --no-apply      # only research (store verdicts, act on nothing)
 //   node scripts/review-autopilot.mjs --dry           # research nothing, write nothing: print what it WOULD do
+//   node scripts/review-autopilot.mjs --only <id,id> # just these items (a test, or one the owner wants now)
 //   node scripts/review-autopilot.mjs --selftest      # prove decide() on built-in cases (no network)
 //
 // Runs on a schedule from launchd (scripts/review-autopilot.plist; install steps in its header).
@@ -43,6 +44,8 @@ const opt = (k, d) => { const i = args.indexOf(k); return i >= 0 ? args[i + 1] :
 const LIMIT = Number(opt("--limit", 15));
 const DRY = has("--dry");
 const MODEL = opt("--model", "sonnet");
+// --only id,id: research and decide just these items (a test, or one item the owner wants checked now).
+const ONLY = opt("--only", "") ? new Set(opt("--only", "").split(",").map((x) => x.trim()).filter(Boolean)) : null;
 const log = (...a) => console.log(new Date().toISOString().slice(0, 19).replace("T", " "), ...a);
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
@@ -65,7 +68,7 @@ async function acquireSlot() {
   });
   log("database slot granted.");
 }
-function releaseSlot() { if (fs.existsSync(SLOT)) spawnSync(process.execPath, [SLOT, "release", slotId], { stdio: "ignore" }); }
+function releaseSlot() { if (fs.existsSync(SLOT) && !has("--slot")) spawnSync(process.execPath, [SLOT, "release", slotId], { stdio: "ignore" }); }
 function slotHealthy() { return !fs.existsSync(SLOT) || spawnSync(process.execPath, [SLOT, "check"], { stdio: "ignore" }).status === 0; }
 
 // ── REST helpers ──
@@ -205,7 +208,7 @@ async function perform(bot, it, d) {
 
 async function apply() {
   const q = exportQueue(true);
-  const items = q.items || [];
+  const items = (q.items || []).filter((it) => !ONLY || ONLY.has(it.item_id));
   if (!items.length) { log("apply: nothing waiting."); return { acted: 0, owner: 0 }; }
   // The stored verdicts for these items, with the columns decide() needs.
   const ids = items.map((it) => it.item_id);
@@ -224,11 +227,11 @@ async function apply() {
     const v = vBy[it.item_kind + ":" + it.item_id] || null;
     if (!v) continue; // not researched yet: the next run's research picks it up; nothing to record
     if (v.auto_action && v.auto_hash === it.item_hash) continue; // already decided for this exact content
+    if (!DRY && !slotHealthy()) { log("database slot check failed; stopping this run (the rest is decided next run)."); break; }
     const d = decide(it, v, isProposal(it) && v.verdict === "agree" ? { duplicates: await duplicatesFor(it) } : {});
     const label = `${(it.route && it.route.name) || (it.suggested_value && it.suggested_value.name) || (it.area && it.area.name) || it.item_id} · ${it.field_label || it.field}`;
     log(`${d.action.padEnd(16)} ${label} — ${d.note}`);
     if (DRY) continue;
-    if (!slotHealthy()) { log("database slot check failed; stopping this run."); break; }
     let action = d.action, note = d.note;
     if (d.action !== "needs_owner" && !bot) { log("  (not acted: no AI reviewer account)"); continue; }
     if (d.action !== "needs_owner") {
@@ -247,8 +250,8 @@ async function main() {
   await acquireSlot();
   try {
     if (!has("--no-research") && !DRY) {
-      const q = exportQueue(false);
-      const due = q.items || [];
+      const q = exportQueue(!!ONLY);
+      const due = (q.items || []).filter((it) => !ONLY || ONLY.has(it.item_id));
       if (due.length) storeVerdicts(await research(due));
       else log("research: nothing due.");
     }
