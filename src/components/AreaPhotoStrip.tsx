@@ -6,7 +6,7 @@ import { POP_CLOSE_MEDIA } from "../../lib/popupChrome.js";
 import { clickable } from "../../lib/clickable";
 import type { C as Palette } from "../../ClimbMatchCore.jsx";
 
-/** An area_photos row (0411, 0538) with its public URL: a topo (storage_path) or a Photos-tab route photo (url). */
+/** An area_photos row (0411, 0541) with its public URL: a topo (storage_path) or a Photos-tab route photo (url). */
 export interface AreaFeedPhoto { id: string; url: string | null; storage_path?: string | null; alt?: string | null; route_id?: string | null; route_name?: string | null; area_id: string; area_name?: string | null; created_at: string }
 export interface AreaPhotoStripProps {
   area: { id: string; name: string };
@@ -27,7 +27,7 @@ const THUMB = 64;
 // of its area pages; here it is a 64px strip, the area's own photos and every route photo under it, newest first.
 // Tapping one opens it full size, naming where it was taken, with a way to the climb it came from.
 // WHICH PAGES (owner note 2026-11-25: "We shouldn't have photos for general areas like north cascades"): the
-// database decides (`area_takes_photos`, 0538) and answers `place`. A general area -- a state, a range, or a
+// database decides (`area_takes_photos`, 0541) and answers `place`. A general area -- a state, a range, or a
 // region spread over many km like North Cascades or Leavenworth -- draws nothing, not even the Add tile.
 // While the answer is loading nothing is drawn either, so a general area never flashes a strip. A FAILED
 // read still draws the strip with "Couldn't load photos": the page cannot tell, and silence would read as none.
