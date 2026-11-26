@@ -1597,6 +1597,14 @@ Owner rule: a peak route with rock-climbing pitches (5th class and above) is **a
   run as anon. Hand-run, so run it whenever a migration ADDS a `climb_logs` or `profiles` column: column grants mean a new
   column is invisible to the roles that lost the table-level SELECT until its migration grants it, and a guest's trip-report
   read naming it fails outright (the 0121 fallback only catches an UNKNOWN column, not a forbidden one).
+  - **Section 8 + CI (2026-11-26, 0540).** Hand-run was not enough: 0501 shipped with `state_trip_reports` (SECURITY
+    INVOKER, `select l.*`) refused to anon, so the nightly offline state files built 0 of 61 states for three nights; and
+    0537 shipped `grade_feel` ungranted, refusing guests' trip-report reads. Section 8 calls every SECURITY INVOKER,
+    read-only function anon may execute whose body names `climb_logs`, as anon with NULL arguments (no row matches, but
+    column privileges are checked before any row is read), and fails on "permission denied". The guard now runs in
+    `build-check.yml`'s side-guards job on any PR that changes `supabase/migrations/`, `lib/db.js` or `lib/profileCols.js`.
+    Injection-tested: with 0540 moved aside it fails three times (grade_feel ungranted, the TRIP_REPORT_COLS + 0121 list
+    refused, `state_trip_reports` refused).
   - Injection-tested 2026-11-23: with 0501 moved aside, section 7 fails twice (partners readable, `select *` allowed); with a
     migration adding `climb_logs.zz_test` and no grant, it fails naming that column.
   - `check:migration-replay` cannot carry this: its stand-in database sets NO default grants, so anon holds nothing there and
