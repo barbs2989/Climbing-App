@@ -698,6 +698,7 @@ CREATE TABLE public.conversation_state (
   muted_until timestamp with time zone,
   marked_unread boolean NOT NULL DEFAULT false,
   updated_at timestamp with time zone NOT NULL DEFAULT now(),
+  accepted_at timestamp with time zone,
   CONSTRAINT conversation_state_pkey PRIMARY KEY (user_id, kind, target_id),
   CONSTRAINT conversation_state_kind_check CHECK ((kind = ANY (ARRAY['dm'::text, 'crew'::text]))),
   CONSTRAINT conversation_state_user_id_fkey FOREIGN KEY (user_id) REFERENCES profiles(id) ON DELETE CASCADE
