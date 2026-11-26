@@ -32,7 +32,7 @@ const { parse } = require_("@babel/parser");
 const traverse = require_("@babel/traverse").default;
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const GUARD = "check:list-row-columns";
-const FILES = ["lib/db.js", "lib/DbAreaBrowser.jsx", "lib/grade.js", "lib/outing.js", "RouteDetail.jsx", "ClimbMatchCore.jsx"];
+const FILES = ["lib/db.js", "lib/DbAreaBrowser.jsx", "lib/grade.js", "lib/outing.js", "lib/offline.js", "RouteDetail.jsx", "ClimbMatchCore.jsx"];
 // The functions and memos that are handed a thin list row. A `sibsOf` entry names the IIFE that holds
 // the route page's "More on this peak" rows, found by the variable it declares.
 // `rows` names the destructured props that carry list rows — ApproachPicker's `route` is the page's FULL
@@ -44,6 +44,9 @@ const ENTRIES = [
   { file: "lib/DbAreaBrowser.jsx", fn: "classicQuality", rows: ["r"] },
   { file: "lib/DbAreaBrowser.jsx", fn: "areaClassics", rows: ["routes"] },
   { file: "lib/DbAreaBrowser.jsx", fn: "SummitBriefing", rows: ["routes"] },
+  // The area page's Filters (owner note, 2026-11-25) run the Route finder's test over the thin rows: finderRowFilter ->
+  // routeMatches reads grade_num and the per-scale grade columns, pitches, length, gain and round trip.
+  { file: "lib/offline.js", fn: "routeMatches", rows: ["r"] },
   { file: "RouteDetail.jsx", fn: "approachFinishes" },
   { file: "RouteDetail.jsx", fn: "approachSibOpts" },
   { file: "RouteDetail.jsx", fn: "ApproachPicker", rows: ["sibs"] },

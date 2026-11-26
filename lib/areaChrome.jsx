@@ -26,5 +26,8 @@ export function CopyCoordButton({ lat, lng, what, C }) {
 
 // The honest line under directions that go to the formation rather than a parking spot —
 // RouteDetail's CragLocationCard wording, shared so the two pages say the same thing.
-export const NO_PARKING_PIN_LINE = "No parking spot on file, so these go to the crag itself — your maps app will stop at the nearest road, which may not be where climbers park.";
-export const NO_PARKING_PIN_BUT_NOTE_LINE = "No parking pin on file yet, so these go to the crag itself — the note above says where climbers park.";
+// `place` is where the directions fall back to: "crag", or "summit" on a peak's page (a peak is not a crag).
+/** @param {string} place */
+export const noParkingPinLine = (place) => "No parking spot on file, so these go to the " + place + " itself — your maps app will stop at the nearest road, which may not be where climbers park.";
+/** @param {string} place */
+export const noParkingPinButNoteLine = (place) => "No parking pin on file yet, so these go to the " + place + " itself — the note above says where climbers park.";

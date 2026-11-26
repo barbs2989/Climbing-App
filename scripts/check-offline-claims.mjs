@@ -239,7 +239,7 @@ if (findings.length) {
  * and must not be deleted to satisfy anything above. */
 console.log("\n6. THE STATE DOWNLOAD still says it works with no signal:");
 const REAL = [
-  ["the Manage areas promise", /is saved on this device and keeps working with no signal/],
+  ["the Manage areas promise", /on this device so it keeps working with no signal/],
   ["the state-download toast", /showToast\("Saved for offline — "\+r\.routeCount/],
 ];
 for (const [name, re] of REAL) {

@@ -556,9 +556,35 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     dead. **An AST does not see comments at all.** One injection case is a comment quoting the
     forbidden shapes and must stay SILENT, which is what pays for the rewrite.
   - **`fedge()` IS REMOVED**: declared, exported, and called by nothing.
+  - **AUDIT 2026-11-25: EVERY CHECK WAS GREEN WHILE THE ROW COULD NOT DRAW FOR A STRANGER.** The
+    guard proved each screen was HANDED the map; it never asked whether the climber a row is drawn
+    for was ever ASKED about. The ask set was friends, incoming requests and the open profile, so
+    the Find-partners cards and the People-you-may-know cards (strangers by definition, the people
+    a mutual row is FOR) never had one, and the suggestion cards could name none of their mutual
+    friends. Section **2b** now asserts each source: `mutualExtra` (the ids `PartnerSearch` reports
+    from `_cardIds` through `onAskMutuals` → DiscoverTab → App's `askMutualsFor`) and `pymkQ.data`,
+    each read as a `(x||[]).forEach` SOURCE — a bare-name test passed an injection that deleted the
+    source, because the useMemo dependency array names both. `pymkQ` moved above `_mutualAsk` (a
+    `const` read inside an earlier useMemo is a TDZ throw at render).
+  - **THE SQL ANSWERS NOTHING FOR AN ASK OVER 64, AND THE HOOK SLICED TO 64.** With partner cards in
+    the set the cap is reachable without a large friends list, and the slice silently dropped
+    whoever sorted last. `useMutualConnections` now asks in chunks of 64 (`Promise.all`, any chunk's
+    error throws) and holds the same account's previous answer as `placeholderData`, so rows on
+    screen do not blink out each time a card scrolls in. Asserted: no `].slice(0, 64)`, a `+= 64`.
+  - **THE SUGGESTION CARD'S COUNT WAS A SECOND DERIVATION (`0545`).** `people_you_may_know()` counted
+    friends-of-friends through EVERY friend, while `mutual_connections()` drops one with
+    `mutuals_visible` off — *"2 mutual friends"* on the card, one name on the profile a tap later,
+    and a number that counted the friend who asked not to be shown. Its `fof` CTE now joins the
+    friend's profile on `mutuals_visible`; the guard reads the NEWEST definition's `fof` CTE.
+    Live-proven by `probe-mutuals-visible-switch.mjs` (now 10 assertions: B leaves A's suggestions
+    while C hides, and comes back with `mutuals = 1` when C turns it on — the control).
+  - **THAT PROBE HAD ROTTED**: it PATCHed `profiles` with `return=representation`, which asks for
+    columns a climber cannot select since 0434's column grants, and died 42501 before its first
+    real case. It now writes as the app does (`return=minimal`, read back through `my_profile()`).
+    A hand-run probe is not a guard: nothing tells you it stopped running.
   - Fails **closed**: a bundle that does not build, any of the five helpers missing from core's
     exports, either app source unparseable, a missing `useMutualConnections` or `_mutualAsk`
-    (`ANCHOR LOST`), a migration that strips to nothing, no migration adding `mutuals_visible`, and fewer than **29** assertions run.
+    (`ANCHOR LOST`), a migration that strips to nothing, no migration adding `mutuals_visible`, no migration defining `people_you_may_know` or its `fof` CTE, and fewer than **36** assertions run (38 on a clean run).
   - Injection-tested **10/10** (`scripts/oneoff/inject-mutual-friends-cases.mjs`), each case proving
     its edit landed **by checksum** and restoring the file byte-identically. **Two must stay
     SILENT.** The harness's usual *refuse an expectation that matches the clean run* check is

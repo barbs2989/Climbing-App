@@ -162,7 +162,7 @@ Part of the guard notes — see [README.md](README.md) for the full index.
   own code — no Plan-tab-only field on a crag, crag fact rows only on crags, boulder rows only on
   boulders, DESCENT on multi-pitch sport/trad and a crag line that stores a descent, but not single-pitch
   ones; the sections every page draws offered everywhere; (5) 7 injection cases. Section 3b (third PR)
-  anchors the page side: the TRIP SHAPE row gated on the same rule, the PUBLISHED TIMES / CLIMATE & SEASON /
+  anchors the page side: the TRIP SHAPE row gated on the same rule, the PUBLISHED TIMES / SEASON-section climate /
   PARTNER REQUIREMENTS pencils (the last is App's, so it reads ClimbMatch.jsx too), and the header cells drawn
   only with a value where dist/gain are not editable. Fourth PR: add-a-climb's `sf()` must gate on fieldScope per
   climb TYPE (anchor), and the merged fields (proTips→beta, bestSeason/condWindow→seasonalGuidance,
@@ -641,3 +641,19 @@ Part of the guard notes — see [README.md](README.md) for the full index.
   exception to "no climb on a chart nobody can open", taken because the stray rows put a second
   chip row on nearly every discipline. The guard holds the bar at 5% or lower and requires the share
   to be measured against the picked discipline's own total.
+
+- **`check:route-prose-format` (2026-11-25): a route field the edit sheet FORMATS is READ as
+  formatting.** Owner note: "When edited climb, especially for sections that can be long paragraphs
+  we should allow formatting options ... descriptions, approaches, descents". The audit of the sheet's
+  eleven `long` fields sorted them by how their page section READS them. Formatted (RichEditor, no
+  link button, read by `renderProse` in core): the description (`overview`), `approach`,
+  `descentText`, `location`, plus a way in's notes and a climbing section's notes; Add a climb's
+  description, approach, descent and location boxes too. Left plain on purpose: pro tips and beta
+  (one item per line, drawn as tips), gear & essentials (parsed into a packing list), watch out for
+  (merged into hazard lines by `knownHazards`), and the legacy short notes (when to go, rappel count
+  note); a bullet or a bold marker there would be split apart or printed. Pitch notes stay one line of
+  data. The guard checks the list, the editors (every one `noLink`, since 0530 refuses links in route
+  text), Add a climb, each reader calling `renderProse` and none still running `splitParagraphs`,
+  and `proseHasMarkup` against seven sentences; 7 injection cases. **What it cannot see:** a NEW
+  reader of these columns elsewhere (the printed route sheet, `lib/routeSheet.js`, reads them through
+  its own escaped `para`); grep `route.overview`, `route.approach`, `descentBeta(` when adding one.

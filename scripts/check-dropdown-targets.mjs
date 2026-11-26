@@ -89,6 +89,31 @@ for (const f of files) {
     if (k < 0 || !w.slice(k).includes("aria-expanded")) fails.push(`${f}:${s.slice(0, m.index).split("\n").length} a Chevron that turns (open={${m[1]}}) inside a control with no aria-expanded — a dropdown that does not say it is one`);
   }
 }
+// RULE 3: DIRECTION (owner note 2026-11-25: "Look at all dropdown buttons ... sometimes it points right when
+// collapsed and sometimes it faces down ... I would like the collapsed view to point right when collapsed at all
+// times"). Chevron already draws that: right when closed, down when open. A dropdown escaped it three ways, and
+// each was in the app: a text glyph "▾" that pointed DOWN while closed and flipped up when open ("Climbs here by
+// type" on the area page, which read as already open under the Grade spread chart); a Chevron frozen open
+// (`<Chevron open .../>`, always down) in a wrapper rotated 180deg on a condition (Suggest a fix's field rows:
+// down when closed, up when open); and a "+" that turned into an "x" (Help's FAQ rows).
+const blank = (c) => c.replace(/[^\n]/g, " ");
+let dirScanned = 0;
+for (const f of files) {
+  const s = fs.readFileSync(path.join(ROOT, f), "utf8");
+  // comments describe the old glyphs; only code counts
+  const code = s.replace(/\/\*[\s\S]*?\*\//g, blank).replace(/(^|[\s;{}(),])\/\/[^\n]*/g, (c, p) => p + blank(c.slice(p.length)));
+  const at = (i) => `${f}:${code.slice(0, i).split("\n").length}`;
+  for (const m of code.matchAll(/["'>]\s*[▾▴⌄⌃]\s*["'<]/g)) fails.push(`${at(m.index)} a disclosure drawn as the text glyph ${m[0].trim()}: it points down (or up) while closed. Draw <Chevron open={...}/> (right when closed, down when open)`);
+  for (const m of code.matchAll(/<Chevron\s+open(?=[\s/>])/g)) fails.push(`${at(m.index)} <Chevron open> with no value is frozen pointing DOWN; pass the live state, open={...}`);
+  for (const m of code.matchAll(/<Chevron\b/g)) {
+    dirScanned++;
+    const w = code.slice(Math.max(0, m.index - 500), m.index);
+    const o = w.lastIndexOf("<span"), wrap = o < 0 ? "" : w.slice(o);
+    if (/transform\s*:[^,}]*\?[^,}]*rotate\(/.test(wrap)) fails.push(`${at(m.index)} a Chevron inside a wrapper that ROTATES it on a condition; Chevron turns itself, so pass open={...} and drop the wrapper's transform`);
+  }
+  for (const m of code.matchAll(/transform\s*:\s*[A-Za-z_.!]+\s*\?\s*"rotate\(45deg\)"/g)) fails.push(`${at(m.index)} a "+" that turns into an "x" on open; a dropdown draws <Chevron open={...}/>`);
+}
+if (dirScanned < 60) { console.log(`${G} FAILED: the direction scan read only ${dirScanned} Chevrons; the app has 100+, so it is not reaching them`); process.exit(1); }
 if (chevrons < 20) { console.log(`${G} FAILED: read only ${chevrons} turning Chevrons — the app has 40+, so the scan is not reaching them`); process.exit(1); }
 if (counted.length < 30) { console.log(`${G} FAILED: read only ${counted.length} dropdowns — the app has 40+, so the scan is not reaching them`); process.exit(1); }
 if (fails.length) {
