@@ -1,0 +1,147 @@
+[
+ {
+  "id": "az_moby_dick",
+  "name": "Moby Dick",
+  "area": "az_whale_dome",
+  "area_name": "Whale Dome",
+  "area_parent": "az_west_stronghold",
+  "discipline": "trad",
+  "grade": "5.8",
+  "pitches": 5,
+  "current": {
+   "rappels": null,
+   "rappel_count_note": null,
+   "rappel_detail": [
+    {
+     "n": 1,
+     "notes": "A free-hanging rappel of about 140 ft to the saddle with two ropes, then scramble down the drainage to the base. A single 70 m rope also works if you accept about 15 ft of easy downclimbing at the bottom.",
+     "anchor": "bolts on west side of summit",
+     "hazards": [
+      "free-hanging rappel",
+      "single-rope option leaves a short downclimb"
+     ],
+     "lengthM": 43,
+     "station": "Find the rappel anchors on the west side of the summit."
+    }
+   ],
+   "descent_text": null
+  }
+ },
+ {
+  "id": "ab_whiteman_falls_drainage_ice_mixed_whiteman_falls",
+  "name": "Whiteman Falls",
+  "area": "ab_whiteman_falls_drainage_ice_mixed",
+  "area_name": "Whiteman Falls Drainage",
+  "area_parent": "ab_kananaskis",
+  "discipline": "ice",
+  "grade": "WI5-6",
+  "pitches": 2,
+  "current": {
+   "rappels": "Two rappels normally; a single one is possible with a pair of 70 m ropes when snow has accumulated below.",
+   "rappel_count_note": null,
+   "rappel_detail": null,
+   "descent_text": null
+  }
+ },
+ {
+  "id": "wa_winter_spring_ice_snow_mixed_2_east_face_variation",
+  "name": "East Face Variation",
+  "area": "wa_winter_spring_ice_snow_mixed_2",
+  "area_name": "Winter-Spring (ice, snow",
+  "area_parent": "wa_snoqualmie_pass_area",
+  "discipline": "ice",
+  "grade": "5.8 AI3-4 M4-5 Steep Snow PG13",
+  "pitches": 5,
+  "current": {
+   "rappels": "Descend via the South Face rappel route (shared anchors/gear with the South Face descent; 60m rope recommended)",
+   "rappel_count_note": "Descends via The Tooth's shared South Face rap line; reported as ~4 rappels combining upper tree/gear anchors with two bolted chain stations lower down near Pineapple Pass (one party describes 4 raps on one rope, or 2 on twin ropes, with sling anchors on trees/boulders). Individual per-station lengths beyond the ~4-rap, single-60m-rope total aren't known, so no per-station length is shown.",
+   "rappel_detail": [
+    {
+     "n": 1,
+     "notes": "First rappel down the upper South Face on a natural tree or gear anchor, joining the shared South Face descent line used by several routes on this side of the peak.",
+     "anchor": "tree/gear sling",
+     "lengthM": null
+    },
+    {
+     "n": 2,
+     "notes": "Continues down the face on natural anchors toward easier ground above Pineapple Pass.",
+     "anchor": "tree/gear sling",
+     "lengthM": null
+    },
+    {
+     "n": 3,
+     "notes": "First of two bolted chain rap stations near Pineapple Pass; a 60m rope is recommended through this section.",
+     "anchor": "bolted chain station",
+     "lengthM": null
+    },
+    {
+     "n": 4,
+     "notes": "Second chain station, dropping to the basin/talus below Pineapple Pass; from there hike or ski out toward Source Lake and the Alpental trailhead.",
+     "anchor": "bolted chain station",
+     "lengthM": null
+    }
+   ],
+   "descent_text": "Descend by rappelling the South Face line, using its tree/gear anchors and the two bolted chain rappel stations at Pineapple Pass lower down (60m rope recommended), then hike/ski back out through the basin to Source Lake and the Alpental trailhead."
+  }
+ },
+ {
+  "id": "wa_winter_spring_ice_snow_mixed_2_northeast_slabs",
+  "name": "Northeast Slabs",
+  "area": "wa_winter_spring_ice_snow_mixed_2",
+  "area_name": "Winter-Spring (ice, snow",
+  "area_parent": "wa_snoqualmie_pass_area",
+  "discipline": "ice",
+  "grade": "Easy 5th WI3 Mod. Snow",
+  "pitches": 5,
+  "current": {
+   "rappels": "Standard descent follows the South Face rappel line (4 raps, roughly 25-30m each) back to Pineapple Pass; some winter parties instead make 2 long rappels (60m) from a tree below the summit directly down to the notch before skiing out.",
+   "rappel_count_note": "Four rappels on a single 60 m rope, each under 30 m, reversing the four pitches of the South Face - this is the standard descent that Northeast Slabs parties join at the summit. Two 60 m ropes let you link them into fewer, longer raps. A separate two-rappel option exists in the east gully off Pineapple Pass on two bolted chain stations (60 m rope); its second station is not directly below the first, so you rappel out east and may have to scramble a few feet up a rib to reach it - that is a different line, not part of the four-rappel tree sequence above. Some winter parties instead take two long 60 m rappels from a tree below the summit straight down to the notch.",
+   "rappel_detail": [
+    {
+     "n": 1,
+     "pull": "Check the pull direction before the last person leaves the anchor, and keep the strands out of the clefts beside the line.",
+     "notes": "First rappel of the standard South Face descent that Northeast Slabs climbers join at the summit.",
+     "anchor": "tree in a notch at the summit's southeast edge",
+     "hazards": [
+      "This is the pull that hangs up most often on the descent; at least one party has had to prusik back up the stuck strand to free it",
+      "Wide clefts in the rock flanking the line will swallow a thrown rope end - feed the rope down rather than tossing it"
+     ],
+     "lengthM": 25,
+     "station": "From the summit, facing back down the climbing route, a short step down and to the left lands in the small notch on the southeast edge. The tree growing in that notch is the standard top anchor and normally already carries slings and rings. The rappel drops back onto the ledge where pitch 3 finishes."
+    },
+    {
+     "n": 2,
+     "notes": "Uses a single 60m rope; reported to come up just slightly short of the next anchor, requiring brief unroped scrambling.",
+     "anchor": "tree anchor at the pitch-3 ledge",
+     "hazards": [
+      "A 60 m rope doubled (a 30 m rappel) finishes just short of the next tree, so the last few metres are an unroped down-scramble - expect it rather than discovering it at the rope ends. The scramble itself is short and surrounded by trees"
+     ],
+     "lengthM": 30,
+     "station": "The anchor on the ledge at the top of pitch 3, right where the first rappel deposits you. The ground below is scrambly, but exposed enough that most parties rappel it rather than downclimb."
+    },
+    {
+     "n": 3,
+     "pull": "The tree sits back about two metres from the lip, so the rope saws across the flat top of the ledge and this pull can be very stiff. Pull from immediately at the slung rock horn atop pitch 1 - moving any further from the ledge before pulling is what makes it stick.",
+     "notes": "Long-used tree anchor; some parties worry about its long-term health.",
+     "anchor": "tree anchor at the pitch-2 ledge (a rock-anchor supplement has reportedly been added alongside the aging tree)",
+     "hazards": [
+      "The tree is an ageing anchor carrying most of the traffic on the peak; use the rock backup beside it where it is in place"
+     ],
+     "lengthM": 30,
+     "station": "The large, straight tree on the skier's-left side of the ledge where pitch 2 ends - the long-standing rappel tree on this descent. Since August 2024 a rock-based anchor has been added alongside it, because the tree is ageing under heavy traffic."
+    },
+    {
+     "n": 4,
+     "notes": "Final rappel back to the base of the South Face route near Pineapple Pass.",
+     "anchor": "slung rock horn atop pitch 1",
+     "hazards": [
+      "The anchor is a balanced block on a horn rather than fixed hardware; load it in line with the pull and do not shock-load or shift it"
+     ],
+     "lengthM": 30,
+     "station": "Slung blocks at the top of pitch 1 - a balanced tabletop rock resting on a slung horn - which is also where you pull the previous rope from. The rappel returns you to the spot where you first roped up."
+    }
+   ],
+   "descent_text": "From the summit, downclimb a short distance to the tree anchor in the small notch just below the true summit. From there, rappel the South Face line to the notch (Pineapple Pass) between The Tooth and its south sub-summit — four rappels of under 30 m on a single 60 m rope, or two long ones with two 60 m ropes; parties often note the second rappel can pull stiffly, so flake the rope and check your pull direction before committing. Some parties instead rappel off a chockstone lower on the gully, but this is described as less efficient than the tree-anchor double rappel and is not the standard line. From the notch you join the South Face (standard) descent: downclimb/walk the gully and talus down through Great Scott Bowl, then retrace the approach traverse back above Source Lake to the Snow Lake/Source Lake trail and the Alpental lot. In good winter/spring coverage this whole descent from the notch is frequently skied or glissaded — parties report as little as ~10 minutes from the notch back to the car on skis in prime conditions; on foot through talus, plan on more like 45-60 minutes. The same avalanche exposure noted on the approach applies to the descent, and expect possible traffic from parties climbing the South Face route if your lines overlap near Pineapple Pass."
+  }
+ }
+]

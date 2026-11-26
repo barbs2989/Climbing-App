@@ -1,0 +1,760 @@
+{
+ "co_lost_needle_north_ridge": {
+  "area": "co_lost_needle",
+  "pitch_detail": [
+   {
+    "pitch": "1",
+    "notes": "After class 3 ground to a good ledge, climb a full 30 m or a bit more to a notch on the ridgeline. Small to medium cams and nuts."
+   },
+   {
+    "pitch": "2",
+    "lengthM": 15,
+    "notes": "A slab for about 15 m to another big ledge. Build a belay with small gear on the left side of the ledge. A single 60 m rope can link pitches 1 and 2. Class 3 ledges lead on to the summit."
+   }
+  ],
+  "replace_pitch_detail": true,
+  "rappel_detail": [
+   {
+    "n": 1,
+    "station": "ridge crest above pitch 2 top",
+    "anchor": "slung horns on the ridge crest",
+    "notes": "Rappel to the top of pitch 1."
+   },
+   {
+    "n": 2,
+    "lengthM": 30,
+    "station": "notch at top of pitch 1",
+    "anchor": "slung horns in the notch",
+    "notes": "A full 30 m rappel down pitch 1. Cord left behind may not last in the wind."
+   }
+  ],
+  "review": {
+   "confidence": "medium",
+   "sources": [
+    "https://www.mountainproject.com/route/203746182"
+   ],
+   "source_texts": {
+    "https://www.mountainproject.com/route/203746182": "/Users/nathanbarber/dev/mp-data/_mp/_pitchtext/co_lost_needle_north_ridge.txt"
+   },
+   "changed": "Wrote both pitches and a two-rappel table. Pitch 1 length is given as 'a full 30 m plus', so kept it in the notes only.",
+   "pitch_count_found": 2,
+   "other_findings": "None."
+  }
+ },
+ "co_mccullough_gulch_claim_jumper": {
+  "area": "co_mccullough_gulch",
+  "pitch_detail": [
+   {
+    "pitch": "1",
+    "grade": "WI3 M3",
+    "notes": "Mixed runnel to the large right-facing corner; belay in a sheltered alcove on rock gear, which can be tricky to find."
+   },
+   {
+    "pitch": "2",
+    "grade": "WI3 M3",
+    "notes": "Leave the right-facing corner and climb slabby ice into a chimney that takes OK protection. Bring pitons and 3-4 16 cm and 13 cm screws. Descent: traverse east and go down the boxed couloir, watching avalanche conditions."
+   }
+  ],
+  "replace_pitch_detail": true,
+  "review": {
+   "confidence": "medium",
+   "sources": [
+    "https://www.mountainproject.com/route/106716137"
+   ],
+   "source_texts": {
+    "https://www.mountainproject.com/route/106716137": "/Users/nathanbarber/dev/mp-data/_mp/_pitchtext/co_mccullough_gulch_claim_jumper.txt"
+   },
+   "changed": "Wrote both pitches. No lengths stated.",
+   "pitch_count_found": 2,
+   "other_findings": "None."
+  }
+ },
+ "co_mcreynold_s_peak_mcreynold_s_chimney": {
+  "area": "co_mcreynold_s_peak",
+  "pitch_detail": [
+   {
+    "pitch": "1",
+    "grade": "5.8",
+    "lengthM": 24,
+    "notes": "Blocky ground to a shallow left-facing dihedral, aiming for the mouth of the chimney. About 80 feet."
+   },
+   {
+    "pitch": "2",
+    "grade": "5.9",
+    "lengthM": 37,
+    "crux": true,
+    "notes": "Up the chimney, with gear from a finger crack that grows to hand size, past a large flake, then out of the chimney onto a splitter that goes from hands to fists and back to hands, ending over a bulge. Great views and belay. About 120 feet. Pro to 4 inches in doubles."
+   }
+  ],
+  "replace_pitch_detail": true,
+  "review": {
+   "confidence": "medium",
+   "sources": [
+    "https://www.mountainproject.com/route/203100451"
+   ],
+   "source_texts": {
+    "https://www.mountainproject.com/route/203100451": "/Users/nathanbarber/dev/mp-data/_mp/_pitchtext/co_mcreynold_s_peak_mcreynold_s_chimney.txt"
+   },
+   "changed": "Wrote both pitches; stored 2 agrees.",
+   "pitch_count_found": 2,
+   "other_findings": "None."
+  }
+ },
+ "co_middle_fork_blue_headed_stepchild": {
+  "area": "co_middle_fork",
+  "pitch_detail": [
+   {
+    "pitch": "1",
+    "grade": "WI2",
+    "lengthM": 15,
+    "notes": "Low-angle, uneven ice for about 15 m to trees. Likely buried by midwinter. A short walk separates it from pitch 2."
+   },
+   {
+    "pitch": "2",
+    "grade": "WI3",
+    "lengthM": 15,
+    "notes": "A short steeper pitch; the top-out is exciting when the ice is thin. Screws only."
+   }
+  ],
+  "replace_pitch_detail": true,
+  "review": {
+   "confidence": "medium",
+   "sources": [
+    "https://www.mountainproject.com/route/121753801"
+   ],
+   "source_texts": {
+    "https://www.mountainproject.com/route/121753801": "/Users/nathanbarber/dev/mp-data/_mp/_pitchtext/co_middle_fork_blue_headed_stepchild.txt"
+   },
+   "changed": "Wrote both pitches. Descent: two short rappels from trees, or a 30 m rappel in the next drainage (anchor with quicklink in place); not a station-by-station list, so no table.",
+   "pitch_count_found": 2,
+   "other_findings": "Pitch 2 may be WI3 plus; kept WI3."
+  }
+ },
+ "co_middle_fork_giant_j_tunn_aka_precipillar": {
+  "area": "co_middle_fork",
+  "pitch_detail": [
+   {
+    "pitch": "1",
+    "grade": "WI2-3",
+    "lengthM": 50,
+    "notes": "Climb the slab to a belay stance under the main pillar. The belay is hard to protect."
+   },
+   {
+    "pitch": "2",
+    "grade": "WI5",
+    "lengthM": 40,
+    "crux": true,
+    "notes": "The vertical pillar, topping out into the basin above. Trees for an anchor stand 20-30 feet back on the climber's right; look for cord. In very deep snow it may be possible to cross the slab from the right and lead only the steep ice as one pitch of about 220 feet to the trees. Late in the season it eases to about WI4. A second pillar may form to the left."
+   }
+  ],
+  "replace_pitch_detail": true,
+  "review": {
+   "confidence": "medium",
+   "sources": [
+    "https://www.mountainproject.com/route/123993643"
+   ],
+   "source_texts": {
+    "https://www.mountainproject.com/route/123993643": "/Users/nathanbarber/dev/mp-data/_mp/_pitchtext/co_middle_fork_giant_j_tunn_aka_precipillar.txt"
+   },
+   "changed": "Wrote both pitches. Two ropes and plenty of screws recommended.",
+   "pitch_count_found": 2,
+   "other_findings": "None."
+  }
+ },
+ "co_middle_fork_porphyry_creek": {
+  "area": "co_middle_fork",
+  "pitch_detail": [
+   {
+    "pitch": "1",
+    "grade": "WI2-3",
+    "lengthM": 9,
+    "notes": "A bulge of about 30 feet to a ledge."
+   },
+   {
+    "pitch": "2",
+    "grade": "WI3",
+    "lengthM": 21,
+    "notes": "A cascade of about 70 feet; can be combined with pitch 1."
+   },
+   {
+    "pitch": "3",
+    "grade": "WI2-3",
+    "lengthM": 9,
+    "notes": "Another 30 foot bulge, then more low-angle creek ice. Expect to get wet from spray. Descent: scramble up and left (north) to the Porphyry Basin trail and follow it down."
+   }
+  ],
+  "replace_pitch_detail": true,
+  "review": {
+   "confidence": "medium",
+   "sources": [
+    "https://www.mountainproject.com/route/120048132"
+   ],
+   "source_texts": {
+    "https://www.mountainproject.com/route/120048132": "/Users/nathanbarber/dev/mp-data/_mp/_pitchtext/co_middle_fork_porphyry_creek.txt"
+   },
+   "changed": "Wrote all three pitches with lengths converted from feet.",
+   "pitch_count_found": 3,
+   "other_findings": "None."
+  }
+ },
+ "co_mount_neva_peace_is_for_the_valleys_war_is_for_the_mountains": {
+  "area": "co_mount_neva",
+  "pitch_detail": [
+   {
+    "pitch": "1",
+    "anchor": "gear",
+    "notes": "Scramble out of the snowfield, up the right flank of a big detached pyramid sitting at the foot of the face. The first half is a loose dihedral; move right onto the face for better gear, then traverse back left near the top to step across the gap onto the top of the detached formation. A big chockstone in the gap is held both climbers, but trust it cautiously. Build a gear anchor under the roof."
+   },
+   {
+    "pitch": "2",
+    "anchor": "two stainless rappel anchors",
+    "notes": "Climb back onto the main wall from the detached formation or the chockstone and through a small roof. Continue up and right along a large flake to a comfortable grassy ledge with dark rectangular blocks. Two new stainless rappel anchors are there, plus an old thin hanger with a drive-in bolt. Loose rock lies on any near-horizontal surface; watch the belayer."
+   },
+   {
+    "pitch": "3",
+    "anchor": "gear",
+    "notes": "Up and left on the easiest ground to the pink rock band below a short chimney. The rock is mediocre and suspect for cams; nuts may be better. Build a gear anchor before the chimney. Several cracks on the right headwall look like an alternative to the chimney."
+   },
+   {
+    "pitch": "4",
+    "anchor": "gear",
+    "notes": "The short chimney, then fourth class scrambling to a belay among grassy boulders on top."
+   }
+  ],
+  "replace_pitch_detail": true,
+  "rappel_detail": [
+   {
+    "n": 1,
+    "lengthM": 50,
+    "anchor": "two stainless rappel anchors",
+    "station": "high ledge system just right of the summit area of the unnamed peak, marked by two pointed upright rocks",
+    "notes": "Run the ropes through the bolts directly; two 60 m half ropes."
+   },
+   {
+    "n": 2,
+    "lengthM": 50,
+    "anchor": "two stainless rappel anchors",
+    "station": "pitch 2 ledge with dark rectangular blocks",
+    "notes": "Rappel to the snowfield. Alternative: walk the fourth class ridge down to Arapaho Pass, or continue to Mount Neva."
+   }
+  ],
+  "review": {
+   "confidence": "medium",
+   "sources": [
+    "https://www.mountainproject.com/route/201456536"
+   ],
+   "source_texts": {
+    "https://www.mountainproject.com/route/201456536": "/Users/nathanbarber/dev/mp-data/_mp/_pitchtext/co_mount_neva_peace_is_for_the_valleys_war_is_for_the_mountains.txt"
+   },
+   "changed": "Wrote 4 pitches with anchor types and a 2-rappel table. No grades or lengths per pitch were given.",
+   "pitch_count_found": 4,
+   "other_findings": "None."
+  }
+ },
+ "co_mt_alice_northeast_ridge": {
+  "area": "co_mt_alice",
+  "pitch_detail": [
+   {
+    "pitch": "1",
+    "lengthM": 46,
+    "notes": "Begin in the large left-facing corner or gully. About 150 feet of 5.4 to 5.5 brings you to a belay beneath a smaller left-facing corner, left of the main gully."
+   },
+   {
+    "pitch": "2",
+    "grade": "5.7 A1",
+    "crux": true,
+    "notes": "Pick the small left-facing corner (left) or the bigger one (right); both look about 5.7. A few 5.8 moves, plus a small ledge about 50 feet up where two nut moves need aid (one nut at the lip, one just above); that section might free at about 5.10. Belay about 30 feet under the ridge. The original line may have gone right up the larger corner at 5.7 A1."
+   },
+   {
+    "pitch": "3",
+    "notes": "Up and left, finally reaching the ridge, at easy 5.4 to 5.5. About half the pitch is on the ridge; most parties stop around 100-120 feet because of rope drag."
+   },
+   {
+    "pitch": "4",
+    "notes": "Another long, easy 5.4 to 5.5 ridge pitch, mostly left of the crest, to a gendarme. Belay on the left of it at the base of a chute with several cracks. Rope drag may justify splitting it."
+   },
+   {
+    "pitch": "5",
+    "grade": "5.7",
+    "notes": "Work right roughly 30 feet past a corner, then take the big chimney cutting the gendarme at 5.7, with significant rockfall hazard. The chute on the left of the gendarme may also go but is untried. Belay on top of the gendarme, roughly an 80 foot pitch."
+   },
+   {
+    "pitch": "6",
+    "notes": "Roughly 120 feet of easy 5.4/5.5 along the left side of the wide ridge reaches grass ledges beneath the last headwall, which holds a huge chimney."
+   },
+   {
+    "pitch": "7",
+    "grade": "5.6+",
+    "notes": "Split the massive final chimney (200-220 feet) into two pitches. Climb about 80 feet to a good ledge where a ridge inside bisects the chimney. The chimney can be wet, with verglas over half of it in June."
+   },
+   {
+    "pitch": "8",
+    "grade": "5.8 PG13",
+    "lengthM": 37,
+    "crux": true,
+    "notes": "The left side was too steep and wet, and the right turned back after 30 feet because of verglas. Instead pull straight onto the chimney's inner ridge from its right-hand side, a committing 5.8 move with poor protection. Climb the small ridge at 5.5/5.6 to a steep section about 60 feet up, where a right-side layback along good but not very secure fins goes at 5.8 PG-13, then 5.6/5.4 to the top. Belay on a big boulder up and right."
+   }
+  ],
+  "replace_pitch_detail": true,
+  "review": {
+   "confidence": "medium",
+   "sources": [
+    "https://www.mountainproject.com/route/114520129"
+   ],
+   "source_texts": {
+    "https://www.mountainproject.com/route/114520129": "/Users/nathanbarber/dev/mp-data/_mp/_pitchtext/co_mt_alice_northeast_ridge.txt"
+   },
+   "changed": "Wrote all eight pitches. Then scramble 400 feet of 3rd class to the summit and descend class 2 scree. Pitch lengths from text mostly approximate, so kept in notes except P1 and P8.",
+   "pitch_count_found": 8,
+   "other_findings": "None; stored 8 pitches and 5.7+ A1- agree."
+  }
+ },
+ "co_mt_blue_sky_formerly_mount_evans_mixed_couloirs_far_right_dihedral_2nd_apron": {
+  "area": "co_mt_blue_sky_formerly_mount_evans_mixed_couloirs",
+  "pitch_detail": [
+   {
+    "pitch": "1",
+    "grade": "5.5 M2",
+    "lengthM": 61,
+    "notes": "Good belay ledges are plentiful."
+   },
+   {
+    "pitch": "2",
+    "grade": "5.5 M3",
+    "lengthM": 61,
+    "notes": "About 200 feet of the same."
+   },
+   {
+    "pitch": "3",
+    "grade": "5.5 M3",
+    "lengthM": 61,
+    "notes": "Can be a breeze with good snow, otherwise a handful of scrappy moves near the top. The belay is on the large terrace."
+   },
+   {
+    "pitch": "4",
+    "grade": "5th class M1",
+    "notes": "Shift left on the large terrace and exit by whatever line is easiest. To descend, use the couloir lying between the 2nd and 3rd Aprons (one short rappel at the top, then steep snow downclimbing), or hike down a main ridge trail."
+   }
+  ],
+  "replace_pitch_detail": true,
+  "review": {
+   "confidence": "medium",
+   "sources": [
+    "https://www.mountainproject.com/route/109062763"
+   ],
+   "source_texts": {
+    "https://www.mountainproject.com/route/109062763": "/Users/nathanbarber/dev/mp-data/_mp/_pitchtext/co_mt_blue_sky_formerly_mount_evans_mixed_couloirs_far_right_dihedral_2nd_apron.txt"
+   },
+   "changed": "Wrote all four pitches. The route varies a lot with conditions; corners turn to ice and snice in spring.",
+   "pitch_count_found": 4,
+   "other_findings": "None."
+  }
+ },
+ "co_mt_blue_sky_formerly_mount_evans_mixed_couloirs_telepherique": {
+  "area": "co_mt_blue_sky_formerly_mount_evans_mixed_couloirs",
+  "pitch_detail": [
+   {
+    "pitch": "1",
+    "grade": "M2",
+    "lengthM": 61,
+    "notes": "Many belay options along about 200 feet."
+   },
+   {
+    "pitch": "2",
+    "grade": "M2",
+    "lengthM": 15,
+    "notes": "About 50 feet to a belay on the ridge."
+   }
+  ],
+  "replace_pitch_detail": true,
+  "review": {
+   "confidence": "medium",
+   "sources": [
+    "https://www.mountainproject.com/route/109064295"
+   ],
+   "source_texts": {
+    "https://www.mountainproject.com/route/109064295": "/Users/nathanbarber/dev/mp-data/_mp/_pitchtext/co_mt_blue_sky_formerly_mount_evans_mixed_couloirs_telepherique.txt"
+   },
+   "changed": "Wrote both pitches.",
+   "pitch_count_found": 2,
+   "other_findings": "None."
+  }
+ },
+ "co_mt_craig_caveat_emptor": {
+  "area": "co_mt_craig",
+  "pitch_detail": [
+   {
+    "pitch": "1",
+    "grade": "WI3",
+    "lengthM": 60,
+    "notes": "Several lines are possible; a belay on the right is probably better protected. It is about 60 m to the base of the vertical stretch. Moving right to trees to belay is possible but needs an extra belay higher up."
+   },
+   {
+    "pitch": "2",
+    "lengthM": 45,
+    "notes": "Climb strange thin ice up several steps, then snow-covered rock slab to the trees, with runouts near the top."
+   }
+  ],
+  "replace_pitch_detail": true,
+  "rappel_detail": [
+   {
+    "n": 1,
+    "lengthM": 63,
+    "anchor": "large tree with 2 slings and 2 rings",
+    "station": "top of pitch 2",
+    "notes": "Lands at trees on a gentler snow patch."
+   },
+   {
+    "n": 2,
+    "lengthM": 45,
+    "anchor": "trees",
+    "station": "snow patch with trees",
+    "notes": "Rappel to the base."
+   }
+  ],
+  "review": {
+   "confidence": "medium",
+   "sources": [
+    "https://www.mountainproject.com/route/105747851"
+   ],
+   "source_texts": {
+    "https://www.mountainproject.com/route/105747851": "/Users/nathanbarber/dev/mp-data/_mp/_pitchtext/co_mt_craig_caveat_emptor.txt"
+   },
+   "changed": "Wrote both pitches and a two-rappel table. Bring 8-10 screws including a few 13 cm.",
+   "pitch_count_found": 2,
+   "other_findings": "None."
+  }
+ },
+ "co_mt_craig_glazed_and_confused": {
+  "area": "co_mt_craig",
+  "pitch_detail": [
+   {
+    "pitch": "1",
+    "lengthM": 37,
+    "notes": "Begin left of Tunnel Vision. Low-angle ice with a few short steep bits crosses several rock steps to a wide ledge holding big trees, with a short ice wall at its right. Some ice is thin and badly attached to the rock. Belay off large trees. About 120 feet."
+   },
+   {
+    "pitch": "2",
+    "lengthM": 12,
+    "notes": "From the ledge, 15 feet of good moderate ice to a bushy ledge, then bash through bushes to the start of Tunnel Vision's second pitch. Belay from screws or long slings on bushes if desired. The route can also be done as one pitch."
+   }
+  ],
+  "replace_pitch_detail": true,
+  "rappel_detail": [
+   {
+    "n": 1,
+    "lengthM": 12,
+    "anchor": "tree to the left, through some bushes",
+    "station": "top of the route",
+    "notes": "Rappel about 40 feet to the last belay."
+   },
+   {
+    "n": 2,
+    "anchor": "trees at the belay",
+    "station": "top of pitch 1",
+    "notes": "Rappel the ice of pitch 1; a 60 m rope falls short of the ground but the last 15 feet on climber's left can be downclimbed."
+   }
+  ],
+  "review": {
+   "confidence": "medium",
+   "sources": [
+    "https://www.mountainproject.com/route/105747858"
+   ],
+   "source_texts": {
+    "https://www.mountainproject.com/route/105747858": "/Users/nathanbarber/dev/mp-data/_mp/_pitchtext/co_mt_craig_glazed_and_confused.txt"
+   },
+   "changed": "Wrote both pitches and the two rappels. No grades are stated per pitch; route is WI3 overall.",
+   "pitch_count_found": 2,
+   "other_findings": "None."
+  }
+ },
+ "co_mt_craig_logjammin": {
+  "area": "co_mt_craig",
+  "pitch_detail": [
+   {
+    "pitch": "1",
+    "lengthM": 61,
+    "notes": "Mostly solid staircase ice, easy going, running out about 200 feet to a semi-hanging belay."
+   },
+   {
+    "pitch": "2",
+    "lengthM": 46,
+    "notes": "More ramp-like, ending at a stand of solid pines about 150 feet higher. Harder mixed variations exist here. Watch for ropes sticking on wet, low-angle ice. Use 8-10 medium to long screws."
+   }
+  ],
+  "replace_pitch_detail": true,
+  "review": {
+   "confidence": "medium",
+   "sources": [
+    "https://www.mountainproject.com/route/105747848"
+   ],
+   "source_texts": {
+    "https://www.mountainproject.com/route/105747848": "/Users/nathanbarber/dev/mp-data/_mp/_pitchtext/co_mt_craig_logjammin.txt"
+   },
+   "changed": "Wrote both pitches. Per-pitch grades not stated.",
+   "pitch_count_found": 2,
+   "other_findings": "None."
+  }
+ },
+ "co_mt_craig_tunnel_vision": {
+  "area": "co_mt_craig",
+  "pitch_detail": [
+   {
+    "pitch": "1",
+    "lengthM": 49,
+    "notes": "Begin on good ice atop a snow ramp; solid sticks soon turn into careful hooking on cauliflower ice. After 40 feet there is a well-protected rest. Step left over a hollow curtain into the chimney, where room is tight and swings are restricted. Exit onto a hollow snow ramp above running water to a big flat belay, about 160 feet in total. Bushes or a tree there are the rappel anchor shared with the first pitch of Glazed and Confused."
+   },
+   {
+    "pitch": "2",
+    "notes": "A short curtain leads to a low-angle slab with thin ice. Move up the rock past an okay fixed knifeblade-type pin. Traverse right and down to rappel from screws or V-threads, or better, right and up 30 feet to a bush with a thick trunk carrying 2 long slings and 2 carabiners. Rappel about 190 feet down the smear."
+   }
+  ],
+  "replace_pitch_detail": true,
+  "review": {
+   "confidence": "medium",
+   "sources": [
+    "https://www.mountainproject.com/route/105747845"
+   ],
+   "source_texts": {
+    "https://www.mountainproject.com/route/105747845": "/Users/nathanbarber/dev/mp-data/_mp/_pitchtext/co_mt_craig_tunnel_vision.txt"
+   },
+   "changed": "Wrote both pitches. No rappel table: anchors are described as options rather than a numbered list. No per-pitch grades.",
+   "pitch_count_found": 2,
+   "other_findings": "None."
+  }
+ },
+ "co_ne_buttress_hallett_peak_mixed_ice_analysis_paralysis": {
+  "area": "co_ne_buttress_hallett_peak_mixed_ice",
+  "pitch_detail": [
+   {
+    "pitch": "1",
+    "grade": "M6",
+    "lengthM": 46,
+    "notes": "Easy low-angle ground ends at a steep featureless wall. Traverse out left, exposed, to a shallow right-facing corner with perfect pick slots up a steep wall, then a large left-facing corner, then cross a gentle slab leftward to a semi-hanging belay. A wandering line, so watch rope drag. About 150 feet."
+   },
+   {
+    "pitch": "2",
+    "grade": "M6",
+    "lengthM": 46,
+    "notes": "An enticing crack diagonals up and left into a slot that becomes the prominent V-groove. After a short rest on low-angle terrain it turns steep and relentless, passing two small roofs. A hanging belay below the second roof is possible, but going on makes one great pitch. About 150 feet."
+   },
+   {
+    "pitch": "3",
+    "grade": "M5",
+    "lengthM": 64,
+    "notes": "Classic lower-angle alpine ground up and left. About halfway, a short double-crack right-facing corner then a slender seam across the face. At the seam's top, an exciting leftward traverse leads to a pedestal immediately right of the chimney that cuts the upper face. About 210 feet."
+   },
+   {
+    "pitch": "4",
+    "grade": "M5",
+    "lengthM": 61,
+    "notes": "A big step left from the pedestal into the chimney, then several small chockstone roofs to a large alcove. A long pitch, about 200 feet, a little less spectacular than the rest."
+   },
+   {
+    "pitch": "5",
+    "grade": "M6",
+    "lengthM": 61,
+    "notes": "Either the steep flaring squeeze chimney on the left of the alcove, or the steep corner on its right. Exit left through a passage under a massive chockstone out onto an airy northwest-facing crest, then a steep thin seam with perfect pick placements. About 200 feet."
+   }
+  ],
+  "replace_pitch_detail": true,
+  "review": {
+   "confidence": "medium",
+   "sources": [
+    "https://www.mountainproject.com/route/110209018"
+   ],
+   "source_texts": {
+    "https://www.mountainproject.com/route/110209018": "/Users/nathanbarber/dev/mp-data/_mp/_pitchtext/co_ne_buttress_hallett_peak_mixed_ice_analysis_paralysis.txt"
+   },
+   "changed": "Wrote all five pitches. Gear: stoppers, cams to #4, a few small pins.",
+   "pitch_count_found": 5,
+   "other_findings": "None."
+  }
+ },
+ "co_north_face_cowboy_nudes": {
+  "area": "co_north_face",
+  "pitch_detail": [
+   {
+    "pitch": "1",
+    "grade": "5.8",
+    "notes": "From the midway ledge, start at a short fist/offwidth splitter of about 20 feet, then wander up through white rock and face climbing back left to a short vertical section. Climb in right-facing dihedral climbing next to the tower wall; the rock is poor in places. Then lower-angle scrambling leads to the foot of the main splitter. About 180 feet. A good belay takes 0.5, 0.75 and 1 cams just under the crack."
+   },
+   {
+    "pitch": "2",
+    "grade": "5.8",
+    "notes": "The splitter crack, a mere 35 feet or so, with 2 to 4 inch gear and some wider spots; hardest at the crack at about 5.8. Follow the good ledge around the corner and belay below a crack choked with vegetation."
+   },
+   {
+    "pitch": "3-4",
+    "grade": "5.7",
+    "notes": "Climb up and right on easy 5.6 face without protection, staying 5-10 feet right of the vegetated crack. Return left before the roof to low-angle cracks reaching a ledge that links the mini-tower back to the main face, where it joins the end of Raise the Roof. Mostly easy with a couple of roof pulls, about 5.7. Roughly 500 feet total, which went in two full 70 m lengths simul-climbing. Few belay spots. Some runouts."
+   }
+  ],
+  "replace_pitch_detail": true,
+  "review": {
+   "confidence": "medium",
+   "sources": [
+    "https://www.mountainproject.com/route/203353250"
+   ],
+   "source_texts": {
+    "https://www.mountainproject.com/route/203353250": "/Users/nathanbarber/dev/mp-data/_mp/_pitchtext/co_north_face_cowboy_nudes.txt"
+   },
+   "changed": "Wrote 3 entries (the upper section is described as one 3-4 stretch). Lengths in the text are approximate ('ish'), so kept in notes. Descent: east gully, staying close to the North Face, following cairns down the scree and talus.",
+   "pitch_count_found": 3,
+   "other_findings": "Stored 4 pitches; text describes pitches 1, 2 and a combined 3-4 stretch."
+  }
+ },
+ "co_north_face_dark_tower_direct_start": {
+  "area": "co_north_face",
+  "pitch_detail": [
+   {
+    "pitch": "1",
+    "grade": "5.10b",
+    "lengthM": 50,
+    "crux": true,
+    "notes": "The start is a steep right-facing corner roughly 50 feet to the left of the giant one. Climb the corner (crux) past a small roof, through a short slot, back left to thin cracks, then step left along a ledge under a steep wall. Belay on a ledge under a left-facing open book. An old, poor rappel anchor sits here."
+   },
+   {
+    "pitch": "2",
+    "grade": "5.10a PG-13",
+    "lengthM": 23,
+    "notes": "Up the right wall of the open book on incipient cracks, then an exciting pull onto a slab trending up and right to a superb belay on the arete that the huge corner's left wall forms."
+   },
+   {
+    "pitch": "3",
+    "notes": "Step right and get protection in sound rock high above a hollow flake, then downclimb a step rather than go into the choss horizontal crack overhead. Cross the huge corner's steep left wall by a wild 20 foot rightward traverse (the crux). Climb the chossy corner about 20 feet to a stance under an overhang (#4 Camalot helps), then work up and right into a 5.9 corner facing left, which gives access to easier ground. The rope can reach the midway ledge system, but belaying where you can see the follower on the traverse is better. Loose, scary rock. The triple roofs in the main corner would be a harder finish but need protection for the entry."
+   }
+  ],
+  "replace_pitch_detail": true,
+  "review": {
+   "confidence": "medium",
+   "sources": [
+    "https://www.mountainproject.com/route/126314347"
+   ],
+   "source_texts": {
+    "https://www.mountainproject.com/route/126314347": "/Users/nathanbarber/dev/mp-data/_mp/_pitchtext/co_north_face_dark_tower_direct_start.txt"
+   },
+   "changed": "Wrote the three pitches described; the pitches then join the Dark Tower route after moving the belay 100 feet right. The stored 7 pitches presumably include the upper tower. Escape: walk left along the ledge to the Deep Freeze gully, downclimb a few tiers to a rappel anchor; two single-rope rappels with a 60 m rope reach the ground (not written as a table).",
+   "pitch_count_found": 3,
+   "other_findings": "Stored pitches 7 vs 3 described here."
+  }
+ },
+ "co_north_face_of_pike_s_peak_66_years_of_fun": {
+  "area": "co_north_face_of_pike_s_peak",
+  "pitch_detail": [
+   {
+    "pitch": "1",
+    "grade": "M2",
+    "lengthM": 40,
+    "anchor": "fixed nut on snowy ledge",
+    "notes": "Climb the groove, with some steeper bits and turf, to a snowy ledge that has a fixed nut. About 130 feet."
+   },
+   {
+    "pitch": "2",
+    "grade": "WI3 M4",
+    "lengthM": 46,
+    "anchor": "fixed anchor under snow",
+    "notes": "The line steepens and turns icy; belay on the next snowy patch, where a fixed anchor can be found by digging. About 150 feet."
+   },
+   {
+    "pitch": "3",
+    "grade": "M5",
+    "lengthM": 49,
+    "crux": true,
+    "notes": "Steepening dihedral, with the crux breaking left over an arete, then easier. Above, a ramp angling left ends at a good ledge even with Total Abandon's top. About 160 feet. Easy scramble to the walk-off ledge."
+   }
+  ],
+  "replace_pitch_detail": true,
+  "review": {
+   "confidence": "medium",
+   "sources": [
+    "https://www.mountainproject.com/route/108375473"
+   ],
+   "source_texts": {
+    "https://www.mountainproject.com/route/108375473": "/Users/nathanbarber/dev/mp-data/_mp/_pitchtext/co_north_face_of_pike_s_peak_66_years_of_fun.txt"
+   },
+   "changed": "Wrote all three pitches. Gear: a screw or two, rock gear to #2 Camalot.",
+   "pitch_count_found": 3,
+   "other_findings": "None."
+  }
+ },
+ "co_north_face_of_pike_s_peak_furloughed": {
+  "area": "co_north_face_of_pike_s_peak",
+  "pitch_detail": [
+   {
+    "pitch": "1",
+    "grade": "M5",
+    "lengthM": 30,
+    "notes": "Start under 66 Years of Fun. Traverse right across easy snow and slab, place a piece, and follow the rightward-slanting rock up and over to the next snowy ledge. More snow over slab leads to a wide dirty dihedral; climb it and belay. About 100 feet."
+   },
+   {
+    "pitch": "2",
+    "grade": "AI4 M5",
+    "lengthM": 30,
+    "notes": "Climb the rock runnel straight to the wide flake, pass it on the left with awkward moves, and reach thin ice. Climb the thin ice with delicate moves and careful rock protection, searching left and right for placements. On the first lead, one stubby screw went in near the upper end of the flow. Belay at the top of the ice. About 100 feet."
+   },
+   {
+    "pitch": "3",
+    "grade": "M6",
+    "lengthM": 61,
+    "crux": true,
+    "notes": "Straight up toward a hand-sized crack and jam it. A pin from the first ascent is somewhere above; continue up broken ground to a rock knob and finish on easier snow and turf. Belay to climber's right. About 200 feet. Exit the same way as Total Abandon."
+   }
+  ],
+  "replace_pitch_detail": true,
+  "review": {
+   "confidence": "medium",
+   "sources": [
+    "https://www.mountainproject.com/route/202026844"
+   ],
+   "source_texts": {
+    "https://www.mountainproject.com/route/202026844": "/Users/nathanbarber/dev/mp-data/_mp/_pitchtext/co_north_face_of_pike_s_peak_furloughed.txt"
+   },
+   "changed": "Wrote all three pitches.",
+   "pitch_count_found": 3,
+   "other_findings": "None."
+  }
+ },
+ "co_north_face_of_pike_s_peak_guide_s_couloir": {
+  "area": "co_north_face_of_pike_s_peak",
+  "pitch_detail": [
+   {
+    "pitch": "1",
+    "grade": "M2",
+    "lengthM": 30,
+    "notes": "Start on the snow cone below a rocky constriction. With enough snow and ice, go right through; if it is dry choss, skirt it on the right. M2 either way. Belay below the next constriction. About 100 feet."
+   },
+   {
+    "pitch": "2",
+    "grade": "AI2 M2+",
+    "lengthM": 37,
+    "notes": "Up the second choke on enjoyable alpine ice, jamming and placing gear in a hand crack before the lip gives way to steep neve. Belay on a sunny platform on the right side. About 120 feet. With a 70 m rope, pitches 1 and 2 link if you begin high on the snow cone."
+   },
+   {
+    "pitch": "3",
+    "lengthM": 46,
+    "notes": "Moderate to steep snow and neve to the next constriction. About 150 feet."
+   },
+   {
+    "pitch": "4",
+    "grade": "AI1 M1",
+    "lengthM": 26,
+    "notes": "A final easy bulge of ice while the slope relaxes. Once past the difficulties, belay wherever suits on the right. About 85 feet. Pitches 3 and 4 link readily if you simul-climb a bit. Finish on easy snow up to the shoulder near the summit and take the hikers trail down."
+   }
+  ],
+  "replace_pitch_detail": true,
+  "review": {
+   "confidence": "medium",
+   "sources": [
+    "https://www.mountainproject.com/route/203142257"
+   ],
+   "source_texts": {
+    "https://www.mountainproject.com/route/203142257": "/Users/nathanbarber/dev/mp-data/_mp/_pitchtext/co_north_face_of_pike_s_peak_guide_s_couloir.txt"
+   },
+   "changed": "Wrote all four pitches with grades and lengths.",
+   "pitch_count_found": 4,
+   "other_findings": "None."
+  }
+ },
+ "skip_reasons": {}
+}

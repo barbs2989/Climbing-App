@@ -1,0 +1,481 @@
+[
+ {
+  "id": "wa_bowling_alley_aka_regular_route",
+  "name": "Bowling Alley (aka Regular Route)",
+  "area": "wa_south_face_3",
+  "area_name": "South Face",
+  "area_parent": "wa_pinto_rock",
+  "discipline": "sport",
+  "grade": "5.4",
+  "pitches": 4,
+  "current": {
+   "rappels": "2 rappels with a 60m rope from an anchor near a tree at the north end of the East Face (full rope-stretchers; a single double-rope rappel to the ground is also reported)",
+   "rappel_count_note": "Can be done as 1 rappel instead with two ropes tied together",
+   "rappel_detail": [
+    {
+     "n": 1,
+     "notes": "First of two rappels using a single 60m rope; tie stopper knots since the rappel is close to the rope's max length.",
+     "anchor": "bolted anchor",
+     "lengthM": 30
+    },
+    {
+     "n": 2,
+     "notes": "Second rappel reaches the base of the formation.",
+     "anchor": "bolted anchor near tree, north end",
+     "lengthM": 30
+    }
+   ],
+   "descent_text": "From the top, move to the rappel anchor near a tree at the north end of the formation. With a single 60m rope, two rappels down bolted anchors return climbers to the base; with two ropes, one long rappel suffices. Tie stopper knots in the rope ends — the rappels can otherwise run the ends off the rock."
+  }
+ },
+ {
+  "id": "wa_cobbles_101",
+  "name": "Cobbles 101",
+  "area": "wa_south_face_3",
+  "area_name": "South Face",
+  "area_parent": "wa_pinto_rock",
+  "discipline": "sport",
+  "grade": "5.7",
+  "pitches": 5,
+  "current": {
+   "rappels": "2 rappels with a 60m rope from a tree-anchored station at the north end of the East Face (double-rope rappel option also reported)",
+   "rappel_count_note": "Can be done as 1 rappel instead with two ropes tied together",
+   "rappel_detail": [
+    {
+     "n": 1,
+     "notes": "First of two rappels using a single 60m rope; tie stopper knots since the rappel is close to the rope's max length.",
+     "anchor": "bolted anchor",
+     "lengthM": 30
+    },
+    {
+     "n": 2,
+     "notes": "Second rappel reaches the base of the formation.",
+     "anchor": "bolted anchor near tree, north end",
+     "lengthM": 30
+    }
+   ],
+   "descent_text": "From the top, move to the rappel anchor near a tree at the north end of the formation. With a single 60m rope, two rappels down bolted anchors return climbers to the base; with two ropes, one long rappel suffices. Tie stopper knots in the rope ends — the rappels can otherwise run the ends off the rock."
+  }
+ },
+ {
+  "id": "wa_concerto_in_c_for_drill_and_hammer",
+  "name": "Concerto in C for Drill and Hammer",
+  "area": "wa_south_face",
+  "area_name": "South Face",
+  "area_parent": "wa_squire_creek_walls",
+  "discipline": "alpine",
+  "grade": "5.8+",
+  "pitches": 14,
+  "current": {
+   "rappels": "Rappel the line of ascent on its fixed Fixe chain anchors, one rappel per pitch (14), some a full 60 m; carry two ropes",
+   "rappel_count_note": "The descent is the line of ascent, one rappel per belay; no separate total is published, and some rappels are a full 60 m, so two ropes are needed. The upper pitches share anchors with Primal Scream.",
+   "rappel_detail": [
+    {
+     "n": 1,
+     "notes": "Rappel 1 of 14 on two ropes, down pitch 14 to the anchor at the top of pitch 13.",
+     "anchor": "fixed bolted anchor with Fixe chains",
+     "lengthM": null,
+     "station": "The anchor at the top of pitch 14."
+    },
+    {
+     "n": 2,
+     "notes": "Rappel 2 of 14 on two ropes, down pitch 13 to the anchor at the top of pitch 12.",
+     "anchor": "fixed bolted anchor with Fixe chains",
+     "lengthM": null,
+     "station": "The anchor at the top of pitch 13."
+    },
+    {
+     "n": 3,
+     "notes": "Rappel 3 of 14 on two ropes, down pitch 12 to the anchor at the top of pitch 11.",
+     "anchor": "fixed bolted anchor with Fixe chains",
+     "lengthM": null,
+     "station": "The anchor at the top of pitch 12."
+    },
+    {
+     "n": 4,
+     "notes": "Rappel 4 of 14 on two ropes, down pitch 11 to the anchor at the top of pitch 10.",
+     "anchor": "fixed bolted anchor with Fixe chains",
+     "lengthM": null,
+     "station": "The anchor at the top of pitch 11."
+    },
+    {
+     "n": 5,
+     "notes": "Rappel 5 of 14 on two ropes, down pitch 10 to the anchor at the top of pitch 9.",
+     "anchor": "fixed bolted anchor with Fixe chains",
+     "lengthM": null,
+     "station": "The anchor at the top of pitch 10."
+    },
+    {
+     "n": 6,
+     "notes": "Rappel 6 of 14 on two ropes, down pitch 9 to the anchor at the top of pitch 8.",
+     "anchor": "fixed bolted anchor with Fixe chains",
+     "lengthM": null,
+     "station": "The anchor at the top of pitch 9."
+    },
+    {
+     "n": 7,
+     "notes": "Rappel 7 of 14 on two ropes, down pitch 8 to the anchor at the top of pitch 7.",
+     "anchor": "fixed bolted anchor with Fixe chains",
+     "lengthM": null,
+     "station": "The anchor at the top of pitch 8."
+    },
+    {
+     "n": 8,
+     "notes": "Rappel 8 of 14 on two ropes, down pitch 7 to the anchor at the top of pitch 6.",
+     "anchor": "fixed bolted anchor with Fixe chains",
+     "lengthM": null,
+     "station": "The anchor at the top of pitch 7."
+    },
+    {
+     "n": 9,
+     "notes": "Rappel 9 of 14 on two ropes, down pitch 6 to the anchor at the top of pitch 5.",
+     "anchor": "fixed bolted anchor with Fixe chains",
+     "lengthM": null,
+     "station": "The anchor at the top of pitch 6."
+    },
+    {
+     "n": 10,
+     "notes": "Rappel 10 of 14 on two ropes, down pitch 5 to the anchor at the top of pitch 4.",
+     "anchor": "fixed bolted anchor with Fixe chains",
+     "lengthM": null,
+     "station": "The anchor at the top of pitch 5."
+    },
+    {
+     "n": 11,
+     "notes": "Rappel 11 of 14 on two ropes, down pitch 4 to the anchor at the top of pitch 3.",
+     "anchor": "fixed bolted anchor with Fixe chains",
+     "lengthM": null,
+     "station": "The anchor at the top of pitch 4."
+    },
+    {
+     "n": 12,
+     "notes": "Rappel 12 of 14 on two ropes, down pitch 3 to the anchor at the top of pitch 2.",
+     "anchor": "fixed bolted anchor with Fixe chains",
+     "lengthM": null,
+     "station": "The anchor at the top of pitch 3."
+    },
+    {
+     "n": 13,
+     "notes": "Rappel 13 of 14 on two ropes, down pitch 2 to the anchor at the top of pitch 1.",
+     "anchor": "fixed bolted anchor with Fixe chains",
+     "lengthM": null,
+     "station": "The anchor at the top of pitch 2."
+    },
+    {
+     "n": 14,
+     "notes": "Rappel 14 of 14 on two ropes, down pitch 1 to the ground.",
+     "anchor": "fixed bolted anchor with Fixe chains",
+     "lengthM": null,
+     "station": "The anchor at the top of pitch 1."
+    }
+   ],
+   "descent_text": "Rappel the line of ascent on fixed chain/bolt anchors; parties typically rappel to the Pitch 13 chain anchor near the summit before continuing down."
+  }
+ },
+ {
+  "id": "wa_doorway_flake",
+  "name": "Doorway Flake",
+  "area": "wa_south_face",
+  "area_name": "South Face",
+  "area_parent": "wa_squire_creek_walls",
+  "discipline": "alpine",
+  "grade": "5.9",
+  "pitches": 5,
+  "current": {
+   "rappels": "5 rappels on two 60 m ropes down the line of ascent, one per pitch, from bolted Fixe chain anchors",
+   "rappel_count_note": "One rappel per pitch from the bolted chain belays; two 60 m ropes are recommended. Rappel lengths are not published.",
+   "rappel_detail": [
+    {
+     "n": 1,
+     "notes": "Rappel 1 of 5 on two 60 m ropes, down pitch 5 to the anchor at the top of pitch 4.",
+     "anchor": "two-bolt chain anchor (hand-drilled bolts, Fixe chains)",
+     "lengthM": null,
+     "station": "The anchor at the top of pitch 5."
+    },
+    {
+     "n": 2,
+     "notes": "Rappel 2 of 5 on two 60 m ropes, down pitch 4 to the anchor at the top of pitch 3.",
+     "anchor": "two-bolt chain anchor (hand-drilled bolts, Fixe chains)",
+     "lengthM": null,
+     "station": "The anchor at the top of pitch 4."
+    },
+    {
+     "n": 3,
+     "notes": "Rappel 3 of 5 on two 60 m ropes, down pitch 3 to the anchor at the top of pitch 2.",
+     "anchor": "two-bolt chain anchor (hand-drilled bolts, Fixe chains)",
+     "lengthM": null,
+     "station": "The anchor at the top of pitch 3."
+    },
+    {
+     "n": 4,
+     "notes": "Rappel 4 of 5 on two 60 m ropes, down pitch 2 to the anchor at the top of pitch 1.",
+     "anchor": "two-bolt chain anchor (hand-drilled bolts, Fixe chains)",
+     "lengthM": null,
+     "station": "The anchor at the top of pitch 2."
+    },
+    {
+     "n": 5,
+     "notes": "Rappel 5 of 5 on two 60 m ropes, down pitch 1 to the ground.",
+     "anchor": "two-bolt chain anchor (hand-drilled bolts, Fixe chains)",
+     "lengthM": null,
+     "station": "The anchor at the top of pitch 1."
+    }
+   ],
+   "descent_text": "Rappel the line of ascent using the fixed hand-drilled bolt and Fixe chain anchors; two 60m ropes recommended."
+  }
+ },
+ {
+  "id": "wa_primal_scream",
+  "name": "Primal Scream",
+  "area": "wa_south_face",
+  "area_name": "South Face",
+  "area_parent": "wa_squire_creek_walls",
+  "discipline": "alpine",
+  "grade": "5.9",
+  "pitches": 12,
+  "current": {
+   "rappels": "Rappel the line of ascent on the 2023 bolted anchors, one rappel per pitch (12); the upper three share anchors with Concerto in C for Drill and Hammer",
+   "rappel_count_note": "The descent is the line of ascent, one rappel per belay; no separate total is published. The upper three pitches share anchors with Concerto in C for Drill and Hammer, where some rappels are a full 60 m, so carry two ropes.",
+   "rappel_detail": [
+    {
+     "n": 1,
+     "notes": "Rappel 1 of 12 on two ropes, down pitch 12 to the anchor at the top of pitch 11.",
+     "anchor": "modern bolted anchor (installed 2023)",
+     "lengthM": null,
+     "station": "The anchor at the top of pitch 12."
+    },
+    {
+     "n": 2,
+     "notes": "Rappel 2 of 12 on two ropes, down pitch 11 to the anchor at the top of pitch 10.",
+     "anchor": "modern bolted anchor (installed 2023)",
+     "lengthM": null,
+     "station": "The anchor at the top of pitch 11."
+    },
+    {
+     "n": 3,
+     "notes": "Rappel 3 of 12 on two ropes, down pitch 10 to the anchor at the top of pitch 9.",
+     "anchor": "modern bolted anchor (installed 2023)",
+     "lengthM": null,
+     "station": "The anchor at the top of pitch 10."
+    },
+    {
+     "n": 4,
+     "notes": "Rappel 4 of 12 on two ropes, down pitch 9 to the anchor at the top of pitch 8.",
+     "anchor": "modern bolted anchor (installed 2023)",
+     "lengthM": null,
+     "station": "The anchor at the top of pitch 9."
+    },
+    {
+     "n": 5,
+     "notes": "Rappel 5 of 12 on two ropes, down pitch 8 to the anchor at the top of pitch 7.",
+     "anchor": "modern bolted anchor (installed 2023)",
+     "lengthM": null,
+     "station": "The anchor at the top of pitch 8."
+    },
+    {
+     "n": 6,
+     "notes": "Rappel 6 of 12 on two ropes, down pitch 7 to the anchor at the top of pitch 6.",
+     "anchor": "modern bolted anchor (installed 2023)",
+     "lengthM": null,
+     "station": "The anchor at the top of pitch 7."
+    },
+    {
+     "n": 7,
+     "notes": "Rappel 7 of 12 on two ropes, down pitch 6 to the anchor at the top of pitch 5.",
+     "anchor": "modern bolted anchor (installed 2023)",
+     "lengthM": null,
+     "station": "The anchor at the top of pitch 6."
+    },
+    {
+     "n": 8,
+     "notes": "Rappel 8 of 12 on two ropes, down pitch 5 to the anchor at the top of pitch 4.",
+     "anchor": "modern bolted anchor (installed 2023)",
+     "lengthM": null,
+     "station": "The anchor at the top of pitch 5."
+    },
+    {
+     "n": 9,
+     "notes": "Rappel 9 of 12 on two ropes, down pitch 4 to the anchor at the top of pitch 3.",
+     "anchor": "modern bolted anchor (installed 2023)",
+     "lengthM": null,
+     "station": "The anchor at the top of pitch 4."
+    },
+    {
+     "n": 10,
+     "notes": "Rappel 10 of 12 on two ropes, down pitch 3 to the anchor at the top of pitch 2.",
+     "anchor": "modern bolted anchor (installed 2023)",
+     "lengthM": null,
+     "station": "The anchor at the top of pitch 3."
+    },
+    {
+     "n": 11,
+     "notes": "Rappel 11 of 12 on two ropes, down pitch 2 to the anchor at the top of pitch 1.",
+     "anchor": "modern bolted anchor (installed 2023)",
+     "lengthM": null,
+     "station": "The anchor at the top of pitch 2."
+    },
+    {
+     "n": 12,
+     "notes": "Rappel 12 of 12 on two ropes, down pitch 1 to the ground.",
+     "anchor": "modern bolted anchor (installed 2023)",
+     "lengthM": null,
+     "station": "The anchor at the top of pitch 1."
+    }
+   ],
+   "descent_text": "Rappel the line of ascent using the 2023-installed modern bolted anchors; the upper three pitches share anchors with Concerto in C for Drill and Hammer."
+  }
+ },
+ {
+  "id": "wa_skeena26",
+  "name": "Skeena26",
+  "area": "wa_south_face",
+  "area_name": "South Face",
+  "area_parent": "wa_squire_creek_walls",
+  "discipline": "alpine",
+  "grade": "5.9",
+  "pitches": 12,
+  "current": {
+   "rappels": "12 rappels on two 50 m ropes down the line of ascent, one per pitch; with 60 m ropes, pitches 5 and 6 combine for 11",
+   "rappel_count_note": "The route was built for 50 m ropes: most pitches take the full 50 m, and so do the rappels. With 60 m ropes, the rappels down pitches 6 and 5 can be combined into one, making 11.",
+   "rappel_detail": [
+    {
+     "n": 1,
+     "notes": "Rappel 1 of 12 on two 50 m ropes, down pitch 12 to the anchor at the top of pitch 11.",
+     "anchor": "bolted belay anchor",
+     "lengthM": null,
+     "station": "The anchor at the top of pitch 12."
+    },
+    {
+     "n": 2,
+     "notes": "Rappel 2 of 12 on two 50 m ropes, down pitch 11 to the anchor at the top of pitch 10.",
+     "anchor": "bolted belay anchor",
+     "lengthM": null,
+     "station": "The anchor at the top of pitch 11."
+    },
+    {
+     "n": 3,
+     "notes": "Rappel 3 of 12 on two 50 m ropes, down pitch 10 to the anchor at the top of pitch 9.",
+     "anchor": "bolted belay anchor",
+     "lengthM": null,
+     "station": "The anchor at the top of pitch 10."
+    },
+    {
+     "n": 4,
+     "notes": "Rappel 4 of 12 on two 50 m ropes, down pitch 9 to the anchor at the top of pitch 8.",
+     "anchor": "bolted belay anchor",
+     "lengthM": null,
+     "station": "The anchor at the top of pitch 9."
+    },
+    {
+     "n": 5,
+     "notes": "Rappel 5 of 12 on two 50 m ropes, down pitch 8 to the anchor at the top of pitch 7.",
+     "anchor": "bolted belay anchor",
+     "lengthM": null,
+     "station": "The anchor at the top of pitch 8."
+    },
+    {
+     "n": 6,
+     "notes": "Rappel 6 of 12 on two 50 m ropes, down pitch 7 to the anchor at the top of pitch 6.",
+     "anchor": "bolted belay anchor",
+     "lengthM": null,
+     "station": "The anchor at the top of pitch 7."
+    },
+    {
+     "n": 7,
+     "notes": "Rappel 7 of 12 on two 50 m ropes, down pitch 6 to the anchor at the top of pitch 5.",
+     "anchor": "bolted belay anchor",
+     "lengthM": null,
+     "station": "The anchor at the top of pitch 6."
+    },
+    {
+     "n": 8,
+     "notes": "Rappel 8 of 12 on two 50 m ropes, down pitch 5 to the anchor at the top of pitch 4.",
+     "anchor": "bolted belay anchor",
+     "lengthM": null,
+     "station": "The anchor at the top of pitch 5."
+    },
+    {
+     "n": 9,
+     "notes": "Rappel 9 of 12 on two 50 m ropes, down pitch 4 to the anchor at the top of pitch 3.",
+     "anchor": "bolted belay anchor",
+     "lengthM": null,
+     "station": "The anchor at the top of pitch 4."
+    },
+    {
+     "n": 10,
+     "notes": "Rappel 10 of 12 on two 50 m ropes, down pitch 3 to the anchor at the top of pitch 2.",
+     "anchor": "bolted belay anchor",
+     "lengthM": null,
+     "station": "The anchor at the top of pitch 3."
+    },
+    {
+     "n": 11,
+     "notes": "Rappel 11 of 12 on two 50 m ropes, down pitch 2 to the anchor at the top of pitch 1.",
+     "anchor": "bolted belay anchor",
+     "lengthM": null,
+     "station": "The anchor at the top of pitch 2."
+    },
+    {
+     "n": 12,
+     "notes": "Rappel 12 of 12 on two 50 m ropes, down pitch 1 to the ground.",
+     "anchor": "bolted belay anchor",
+     "lengthM": null,
+     "station": "The anchor at the top of pitch 1."
+    }
+   ],
+   "descent_text": "Rappel the line of ascent; 50-meter ropes are adequate for most pitches, while 60-meter ropes allow combining pitches 5 and 6 to speed the descent."
+  }
+ },
+ {
+  "id": "wa_western_dihedral",
+  "name": "Western Dihedral",
+  "area": "wa_south_face",
+  "area_name": "South Face",
+  "area_parent": "wa_squire_creek_walls",
+  "discipline": "alpine",
+  "grade": "5.8",
+  "pitches": 5,
+  "current": {
+   "rappels": "5 rappels on two 60 m ropes down the line of ascent, one per pitch, from bolted Fixe chain anchors",
+   "rappel_count_note": "One rappel per pitch from the bolted chain belays; two 60 m ropes are recommended. Rappel lengths are not published.",
+   "rappel_detail": [
+    {
+     "n": 1,
+     "notes": "Rappel 1 of 5 on two 60 m ropes, down pitch 5 to the anchor at the top of pitch 4.",
+     "anchor": "two-bolt chain anchor (hand-drilled bolts, Fixe chains)",
+     "lengthM": null,
+     "station": "The anchor at the top of pitch 5."
+    },
+    {
+     "n": 2,
+     "notes": "Rappel 2 of 5 on two 60 m ropes, down pitch 4 to the anchor at the top of pitch 3.",
+     "anchor": "two-bolt chain anchor (hand-drilled bolts, Fixe chains)",
+     "lengthM": null,
+     "station": "The anchor at the top of pitch 4."
+    },
+    {
+     "n": 3,
+     "notes": "Rappel 3 of 5 on two 60 m ropes, down pitch 3 to the anchor at the top of pitch 2.",
+     "anchor": "two-bolt chain anchor (hand-drilled bolts, Fixe chains)",
+     "lengthM": null,
+     "station": "The anchor at the top of pitch 3."
+    },
+    {
+     "n": 4,
+     "notes": "Rappel 4 of 5 on two 60 m ropes, down pitch 2 to the anchor at the top of pitch 1.",
+     "anchor": "two-bolt chain anchor (hand-drilled bolts, Fixe chains)",
+     "lengthM": null,
+     "station": "The anchor at the top of pitch 2."
+    },
+    {
+     "n": 5,
+     "notes": "Rappel 5 of 5 on two 60 m ropes, down pitch 1 to the ground.",
+     "anchor": "two-bolt chain anchor (hand-drilled bolts, Fixe chains)",
+     "lengthM": null,
+     "station": "The anchor at the top of pitch 1."
+    }
+   ],
+   "descent_text": "Descend by rappelling the line of ascent using the fixed hand-drilled bolt anchors; two 60m ropes recommended."
+  }
+ }
+]

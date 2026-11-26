@@ -102,11 +102,11 @@ const LANDMARKS = {
   // The Year in Climbing banner is the ONLY opener of that modal, and until #713 it was
   // gated on MY_CLIMBS.length — a constant DEMO_FILLERS empties — so the whole modal was
   // unreachable and nothing said so. check:dead-flag-gates catches a re-gating onto a dead
-  // constant; this catches the banner simply disappearing. Built from the current year
-  // because the label carries it, so this does not rot every January.
+  // constant; this catches the banner simply disappearing. Any year: the banner names the
+  // latest year with a climb in it (YearInClimbing.tsx recapYear), which in January is last year.
   // It lives on the Profile screen's ACTIVITY tab (Profile · Activity · Review), walked by the
   // profile-tabs-switch flow below; the default Profile view no longer carries it.
-  "Profile:Activity": [`Your ${new Date().getFullYear()} Year in Climbing`],
+  "Profile:Activity": [/^Your \d{4} Year in Climbing$/],
   // The Crew sub-views, unreachable to this check until #740/#755 named their buttons.
   //
   // "PEOPLE YOU'VE CLIMBED WITH" is the surface #713 revived: it used to map over

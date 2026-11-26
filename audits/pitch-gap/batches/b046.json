@@ -1,0 +1,707 @@
+{
+ "wy_1_lower_bench_the_moratorium": {
+  "area": "wy_1_lower_bench",
+  "pitch_detail": [
+   {
+    "pitch": "1",
+    "notes": "Continuous flow that varies from thin, hard-to-protect ice to thick smooth ice. The belayer stands exposed to ice shed from above, and the leader should watch for chunks releasing. Plan on a full 60 m rope length. The pitch ends on a small shelf on the left side of the flow, a good spot to build a V-thread for the descent."
+   },
+   {
+    "pitch": "2",
+    "notes": "Opens on a steep curtain; roughly forty to fifty feet up it relaxes onto a sloping ledge with an easy exit. Another steeper curtain exists to the right. Plan on a full rope length here as well."
+   }
+  ],
+  "replace_pitch_detail": true,
+  "review": {
+   "confidence": "medium",
+   "sources": [
+    "https://www.mountainproject.com/route/105792496"
+   ],
+   "source_texts": {
+    "https://www.mountainproject.com/route/105792496": "/Users/nathanbarber/dev/mp-data/_mp/_pitchtext/wy_1_lower_bench_the_moratorium.txt"
+   },
+   "changed": "Wrote the two described pitches without grades or lengths (rope-length figure is a planning remark). No rappel table: descent is a general instruction to rappel the route with V-threads, not a station list.",
+   "pitch_count_found": 2
+  }
+ },
+ "wy_2_upper_bench_spotted_owl_sandwich": {
+  "area": "wy_2_upper_bench",
+  "pitch_detail": [
+   {
+    "pitch": "1",
+    "notes": "Two-stepped ice chimney immediately right of Hunter Creek Falls. If the lower step is not formed, climb the first 40 feet of the neighbouring falls and traverse a ledge across. The second step may involve some easy mixed moves."
+   },
+   {
+    "pitch": "2",
+    "notes": "A short walk from the first belay leads to a flow that is probably fat. It runs about half a rope length."
+   },
+   {
+    "pitch": "3",
+    "notes": "Another good flow of roughly half a rope length, reached by more walking up the drainage. Descent is by rappelling the top two pitches."
+   }
+  ],
+  "replace_pitch_detail": true,
+  "review": {
+   "confidence": "medium",
+   "sources": [
+    "https://www.mountainproject.com/route/113781288"
+   ],
+   "source_texts": {
+    "https://www.mountainproject.com/route/113781288": "/Users/nathanbarber/dev/mp-data/_mp/_pitchtext/wy_2_upper_bench_spotted_owl_sandwich.txt"
+   },
+   "changed": "Three pitches written, no grades or lengths (only half-rope remarks). No rappel table.",
+   "pitch_count_found": 3
+  }
+ },
+ "wy_3_flying_h_ranch_shank_stew": {
+  "area": "wy_3_flying_h_ranch",
+  "pitch_detail": [
+   {
+    "pitch": "1",
+    "notes": "Long, wide flow with easier or harder line choices. One of the two best pitches on the route."
+   },
+   {
+    "pitch": "2",
+    "notes": "Reached after walking a couple hundred feet from the first belay. A shorter steep-ish section leads to a longer moderate stretch of skinny ice inside a slot."
+   },
+   {
+    "pitch": "3",
+    "notes": "Stow the ropes and hike the creek bed for 20-30 minutes. At the big fork in the drainage the flow is visible high on the right. Three ice pitches lie beyond the junction with some walking between them. This is the first of those and one of the best pitches of the route."
+   }
+  ],
+  "replace_pitch_detail": true,
+  "review": {
+   "confidence": "medium",
+   "sources": [
+    "https://www.mountainproject.com/route/127318762"
+   ],
+   "source_texts": {
+    "https://www.mountainproject.com/route/127318762": "/Users/nathanbarber/dev/mp-data/_mp/_pitchtext/wy_3_flying_h_ranch_shank_stew.txt"
+   },
+   "changed": "Wrote pitches 1-3 only; the last two ice pitches beyond the junction are not described one by one, so no entries for them.",
+   "pitch_count_found": 3,
+   "other_findings": "Stored pitch count 5; per-pitch text covers only the first three, then states three ice pitches beyond the junction."
+  }
+ },
+ "wy_3_stringer_slow_turning_area_stringer": {
+  "area": "wy_3_stringer_slow_turning_area",
+  "pitch_detail": [
+   {
+    "pitch": "1",
+    "grade": "WI3",
+    "lengthM": 45,
+    "anchor": "bolt anchor on climber right",
+    "notes": "Moderate ice to a bolted belay on the right. A 5 minute walk separates it from the next pitch."
+   },
+   {
+    "pitch": "2",
+    "grade": "WI2",
+    "lengthM": 30,
+    "anchor": "single bolt, climber left",
+    "notes": "Easier ice to a one-bolt belay on the left side. About 10 minutes of walking follows."
+   },
+   {
+    "pitch": "3",
+    "grade": "WI2",
+    "lengthM": 20,
+    "anchor": "tree on climber right",
+    "notes": "Short low-angle step finishing at a tree on the right. The walk to the last pitch takes around 30 minutes."
+   },
+   {
+    "pitch": "4",
+    "grade": "WI3",
+    "lengthM": 25,
+    "anchor": "screws; v-thread to rappel",
+    "notes": "Final pitch, belayed from screws. Descend by V-thread rappel or walk off to the right."
+   }
+  ],
+  "replace_pitch_detail": true,
+  "review": {
+   "confidence": "high",
+   "sources": [
+    "https://www.mountainproject.com/route/105922897"
+   ],
+   "source_texts": {
+    "https://www.mountainproject.com/route/105922897": "/Users/nathanbarber/dev/mp-data/_mp/_pitchtext/wy_3_stringer_slow_turning_area_stringer.txt"
+   },
+   "changed": "Four pitches with lengths, grades and anchors as stated. No rappel table: only a general V-thread or walk-off remark.",
+   "pitch_count_found": 4
+  }
+ },
+ "wy_4_legg_creek_ovisight": {
+  "area": "wy_4_legg_creek",
+  "pitch_detail": [
+   {
+    "pitch": "1",
+    "crux": true,
+    "notes": "The crux. When formed it is a skinny pillar over 100 feet tall, a serious test for the valley, and it does not always form. The upper pitches can be reached without it via the neighbouring routes Oversight or Who's Your Daddy."
+   },
+   {
+    "pitch": "2",
+    "grade": "WI5",
+    "notes": "A classic pillar pitch."
+   },
+   {
+    "pitch": "3",
+    "grade": "WI5",
+    "anchor": "ice screws",
+    "notes": "Reached by hiking up and left for about five minutes from the top of the previous pitch. Double-tiered, with easier ice leading to a last steep pillar that is often more of a wide curtain. 60 m ropes do not reach any trees, so belay from screws."
+   }
+  ],
+  "replace_pitch_detail": true,
+  "review": {
+   "confidence": "medium",
+   "sources": [
+    "https://www.mountainproject.com/route/122084082"
+   ],
+   "source_texts": {
+    "https://www.mountainproject.com/route/122084082": "/Users/nathanbarber/dev/mp-data/_mp/_pitchtext/wy_4_legg_creek_ovisight.txt"
+   },
+   "changed": "Three pitches; pitch 1 crux named but not graded in the text. No rappel table (rappel the route, no stations listed).",
+   "pitch_count_found": 3
+  }
+ },
+ "wy_4_majo_ranch_n_facing_high_on_boulder": {
+  "area": "wy_4_majo_ranch_n_facing",
+  "pitch_detail": [
+   {
+    "pitch": "1",
+    "grade": "WI3+",
+    "anchor": "2 bolts, left side of next pitch base",
+    "notes": "Every pitch is a full rope length. The belay for the second pitch is on two bolts at the left side of its base."
+   },
+   {
+    "pitch": "2",
+    "grade": "WI4",
+    "anchor": "bolts at the right side of next pitch base",
+    "crux": true,
+    "notes": "Sustained crux: a ramp, then roughly 100 feet of vertical ice. Strong leaders can substitute the WI5 Moonrise curtain instead."
+   },
+   {
+    "pitch": "3",
+    "grade": "WI3+",
+    "anchor": "tree at top",
+    "notes": "Final full-rope pitch, finishing at a tree at the top."
+   }
+  ],
+  "replace_pitch_detail": true,
+  "review": {
+   "confidence": "medium",
+   "sources": [
+    "https://www.mountainproject.com/route/105909185"
+   ],
+   "source_texts": {
+    "https://www.mountainproject.com/route/105909185": "/Users/nathanbarber/dev/mp-data/_mp/_pitchtext/wy_4_majo_ranch_n_facing_high_on_boulder.txt"
+   },
+   "changed": "Three pitches, grades as stated; lengths are only \"full rope length\" so omitted.",
+   "pitch_count_found": 3
+  }
+ },
+ "wy_4_majo_ranch_n_facing_mean_green": {
+  "area": "wy_4_majo_ranch_n_facing",
+  "pitch_detail": [
+   {
+    "pitch": "1",
+    "grade": "WI4-",
+    "lengthM": 60,
+    "anchor": "screws on a ledge",
+    "notes": "A full 60 m of ice to a ledge where the belay is built with screws."
+   },
+   {
+    "pitch": "2",
+    "grade": "WI3- to WI4",
+    "lengthM": 25,
+    "anchor": "tree",
+    "notes": "Directly above the first pitch, ending at a tree."
+   },
+   {
+    "pitch": "3",
+    "grade": "WI3 to WI4+",
+    "lengthM": 30,
+    "anchor": "screws",
+    "notes": "Move up the gully, round a corner and past a big log to reach about 30 m of ice."
+   },
+   {
+    "pitch": "4",
+    "grade": "WI4",
+    "lengthM": 25,
+    "anchor": "screws",
+    "crux": true,
+    "notes": "The crux, now short because debris flows have built up at its base (2018 note); a screw belay at the top."
+   },
+   {
+    "pitch": "5",
+    "grade": "WI2",
+    "notes": "Ramble up the gully on snow or WI2. From here, either continue up the gully or take the 200 ft WI3 on the right side of the gully; the steeper right-hand option is the one continued here."
+   },
+   {
+    "pitch": "6",
+    "anchor": "screws",
+    "notes": "Two bulges, each around 25 ft high; build a screw anchor above."
+   },
+   {
+    "pitch": "7",
+    "lengthM": 43,
+    "anchor": "small tree with cord",
+    "notes": "About 140 feet of ice to the top, finishing at a small tree with cord, set above the middle of the flow."
+   }
+  ],
+  "replace_pitch_detail": true,
+  "review": {
+   "confidence": "high",
+   "sources": [
+    "https://www.mountainproject.com/route/105790722"
+   ],
+   "source_texts": {
+    "https://www.mountainproject.com/route/105790722": "/Users/nathanbarber/dev/mp-data/_mp/_pitchtext/wy_4_majo_ranch_n_facing_mean_green.txt"
+   },
+   "changed": "Seven pitches as listed. Descent: rappel V-threads with some down-climbing; no per-station list so no rappel table.",
+   "pitch_count_found": 7
+  }
+ },
+ "wy_4_majo_ranch_n_facing_sticky_plum_juice_on_your_fingers": {
+  "area": "wy_4_majo_ranch_n_facing",
+  "pitch_detail": [
+   {
+    "pitch": "1",
+    "grade": "WI3",
+    "notes": "Begins halfway between pitches 3 and 4 of Mean Green. Approach pitches like this come in only rarely."
+   },
+   {
+    "pitch": "2",
+    "grade": "WI3",
+    "anchor": "tree",
+    "notes": "An ice smear with a log frozen into the lower half, then it narrows into a chimney just wide enough for a body in the second half, about 60 ft. Its start is level with Mean Green pitch 4, 100 ft to the right. Tree anchor at the top (as of March 2019)."
+   },
+   {
+    "pitch": "3",
+    "grade": "WI4",
+    "anchor": "tree",
+    "notes": "The best pitch: a two-tiered curtain around 120 ft tall. Tree anchor at the top (as of March 2019). From the top you can traverse left to the base of Mean Green pitch 5."
+   },
+   {
+    "pitch": "4-5",
+    "grade": "WI3",
+    "notes": "Two bulges of WI3 ice a couple hundred feet farther up the drainage."
+   }
+  ],
+  "replace_pitch_detail": true,
+  "review": {
+   "confidence": "medium",
+   "sources": [
+    "https://www.mountainproject.com/route/116638837"
+   ],
+   "source_texts": {
+    "https://www.mountainproject.com/route/116638837": "/Users/nathanbarber/dev/mp-data/_mp/_pitchtext/wy_4_majo_ranch_n_facing_sticky_plum_juice_on_your_fingers.txt"
+   },
+   "changed": "Pitches 4 and 5 combined as the text groups them. Lengths approximate so left in notes. No rappel table.",
+   "pitch_count_found": 4,
+   "other_findings": "Stored pitch count 5; text lists P1,P2,P3 and P4+P5 together."
+  }
+ },
+ "wy_6_broken_hearts_drainage_broken_hearts": {
+  "area": "wy_6_broken_hearts_drainage",
+  "pitch_detail": [
+   {
+    "pitch": "1",
+    "grade": "WI3",
+    "notes": "First of two pitches visible from the road. Short WI3 steps of 5-20 feet separate the main pitches, with walks of 5-15 minutes between."
+   },
+   {
+    "pitch": "2",
+    "grade": "WI3",
+    "notes": "Second pitch visible from the road, again WI3."
+   },
+   {
+    "pitch": "3",
+    "grade": "WI3+",
+    "notes": "Tends to be sun-baked."
+   },
+   {
+    "pitch": "4",
+    "grade": "WI3",
+    "notes": "WI3 ice below the amphitheatre."
+   },
+   {
+    "pitch": "5",
+    "grade": "WI5",
+    "notes": "In the amphitheatre, take the line on the right; the left-hand line is a different route. A walk-off is possible from just before this amphitheatre."
+   },
+   {
+    "pitch": "6",
+    "grade": "WI6",
+    "notes": "Rarely forms."
+   },
+   {
+    "pitch": "7",
+    "grade": "WI6",
+    "notes": "Rarely forms."
+   },
+   {
+    "pitch": "8",
+    "grade": "WI4",
+    "notes": "WI4 ice above the steep pitches."
+   },
+   {
+    "pitch": "9",
+    "grade": "WI3",
+    "notes": "Final WI3 pitch. Descent uses no-threads and the bolted stations found mostly on climber left below pitch 5, plus trees for a few pitches."
+   }
+  ],
+  "replace_pitch_detail": true,
+  "review": {
+   "confidence": "medium",
+   "sources": [
+    "https://www.mountainproject.com/route/105914838"
+   ],
+   "source_texts": {
+    "https://www.mountainproject.com/route/105914838": "/Users/nathanbarber/dev/mp-data/_mp/_pitchtext/wy_6_broken_hearts_drainage_broken_hearts.txt"
+   },
+   "changed": "Nine pitches with grades only; notes are minimal since the text gives little else. No rappel table.",
+   "pitch_count_found": 9
+  }
+ },
+ "wy_6_broken_hearts_drainage_broken_ribs": {
+  "area": "wy_6_broken_hearts_drainage",
+  "pitch_detail": [
+   {
+    "pitch": "1",
+    "grade": "WI3",
+    "anchor": "ice anchor",
+    "notes": "Ice step of about 15 m to an ice anchor, followed by around 50 m of further ice steps."
+   },
+   {
+    "pitch": "2",
+    "grade": "WI2",
+    "lengthM": 25,
+    "anchor": "ice anchor",
+    "notes": "Easy ice to an ice anchor."
+   },
+   {
+    "pitch": "3",
+    "grade": "WI2-",
+    "anchor": "ice anchor",
+    "notes": "Ice anchor, then lots of low-angle terrain and some fiddly work turning a boulder."
+   },
+   {
+    "pitch": "4",
+    "grade": "WI3",
+    "lengthM": 25,
+    "notes": "Pillar just below the unclimbed dagger Anti-Wingman, a WI5+ line about 35 m tall to the right that rarely forms."
+   }
+  ],
+  "replace_pitch_detail": true,
+  "review": {
+   "confidence": "medium",
+   "sources": [
+    "https://www.mountainproject.com/route/200363518"
+   ],
+   "source_texts": {
+    "https://www.mountainproject.com/route/200363518": "/Users/nathanbarber/dev/mp-data/_mp/_pitchtext/wy_6_broken_hearts_drainage_broken_ribs.txt"
+   },
+   "changed": "Four pitches as given. Descent: rappel the route or walk off shared with Broken Hearts; no station list.",
+   "pitch_count_found": 4
+  }
+ },
+ "wy_6_broken_hearts_drainage_the_stent": {
+  "area": "wy_6_broken_hearts_drainage",
+  "pitch_detail": [
+   {
+    "pitch": "1",
+    "anchor": "trees",
+    "notes": "Thin flow; use your thinnest screws. Belay from trees above."
+   },
+   {
+    "pitch": "2",
+    "grade": "WI3",
+    "anchor": "ice anchor",
+    "notes": "Fatter and longer than the first, ending at an ice anchor in the drainage above. Rappel from a no-thread; 60 m ropes get you back to the base of pitch 1."
+   }
+  ],
+  "replace_pitch_detail": true,
+  "review": {
+   "confidence": "medium",
+   "sources": [
+    "https://www.mountainproject.com/route/118244044"
+   ],
+   "source_texts": {
+    "https://www.mountainproject.com/route/118244044": "/Users/nathanbarber/dev/mp-data/_mp/_pitchtext/wy_6_broken_hearts_drainage_the_stent.txt"
+   },
+   "changed": "Two pitches. No rappel table.",
+   "pitch_count_found": 2
+  }
+ },
+ "wy_7_deer_creek_fredericks_of_hollywood": {
+  "area": "wy_7_deer_creek",
+  "pitch_detail": [
+   {
+    "pitch": "1",
+    "grade": "WI3+",
+    "lengthM": 43,
+    "anchor": "tree",
+    "notes": "About 140 feet. From the trail drop down a steep slope, find a crossing of the river, and follow the water upstream a few hundred feet to reach the start."
+   },
+   {
+    "pitch": "2",
+    "grade": "WI3",
+    "lengthM": 55,
+    "anchor": "tree",
+    "notes": "About 180 feet; descend by rappelling from trees."
+   }
+  ],
+  "replace_pitch_detail": true,
+  "review": {
+   "confidence": "medium",
+   "sources": [
+    "https://www.mountainproject.com/route/116638861"
+   ],
+   "source_texts": {
+    "https://www.mountainproject.com/route/116638861": "/Users/nathanbarber/dev/mp-data/_mp/_pitchtext/wy_7_deer_creek_fredericks_of_hollywood.txt"
+   },
+   "changed": "Two pitches with feet converted to metres.",
+   "pitch_count_found": 2
+  }
+ },
+ "wy_7_deer_creek_transient_alterations": {
+  "area": "wy_7_deer_creek",
+  "pitch_detail": [
+   {
+    "pitch": "1",
+    "grade": "WI3",
+    "anchor": "tree",
+    "notes": "Fun WI3 ice with a nice tree to belay from."
+   },
+   {
+    "pitch": "2",
+    "grade": "WI3",
+    "notes": "More WI3 ice, ending in a bowl."
+   },
+   {
+    "pitch": "3",
+    "grade": "WI5",
+    "crux": true,
+    "notes": "Above the bowl is a steep WI5 pitch. Or head 100 feet right along the cliff band for a different WI4 pitch."
+   }
+  ],
+  "replace_pitch_detail": true,
+  "review": {
+   "confidence": "medium",
+   "sources": [
+    "https://www.mountainproject.com/route/118672937"
+   ],
+   "source_texts": {
+    "https://www.mountainproject.com/route/118672937": "/Users/nathanbarber/dev/mp-data/_mp/_pitchtext/wy_7_deer_creek_transient_alterations.txt"
+   },
+   "changed": "Three pitches described; double ropes and screws advised.",
+   "pitch_count_found": 3,
+   "other_findings": "Stored pitch count 4; text describes three."
+  }
+ },
+ "wy_9_cabin_creek_chasing_the_sun": {
+  "area": "wy_9_cabin_creek",
+  "pitch_detail": [
+   {
+    "pitch": "1",
+    "grade": "WI3",
+    "lengthM": 10,
+    "notes": "Short step; it can be walked around on the climber right just past the big rappel tree."
+   },
+   {
+    "pitch": "2",
+    "grade": "WI3",
+    "lengthM": 30,
+    "notes": "Reached by a short hike. Fun climbing."
+   },
+   {
+    "pitch": "3",
+    "grade": "WI4",
+    "lengthM": 45,
+    "crux": true,
+    "notes": "A good pitch after a fairly long walk up the drainage, which is easy unless there is fresh snow. In 2021 a further WI3 pitch of about 20 m lay five minutes beyond, and a rambling WI3 pitch of about 50 m dropped in from the right between pitches 2 and 3. Two ropes are needed to rappel this pitch; a single 60 m rope suffices for the lower two."
+   }
+  ],
+  "replace_pitch_detail": true,
+  "review": {
+   "confidence": "high",
+   "sources": [
+    "https://www.mountainproject.com/route/120301681"
+   ],
+   "source_texts": {
+    "https://www.mountainproject.com/route/120301681": "/Users/nathanbarber/dev/mp-data/_mp/_pitchtext/wy_9_cabin_creek_chasing_the_sun.txt"
+   },
+   "changed": "Three pitches; extra seasonal pitches kept in notes.",
+   "pitch_count_found": 3
+  }
+ },
+ "wy_9_cabin_creek_wyoming_wave": {
+  "area": "wy_9_cabin_creek",
+  "pitch_detail": [
+   {
+    "pitch": "1",
+    "grade": "WI3",
+    "lengthM": 30,
+    "anchor": "tree",
+    "notes": "Fun flow pouring into the drainage from the left."
+   },
+   {
+    "pitch": "2",
+    "lengthM": 10,
+    "anchor": "tree",
+    "notes": "Short pitch after a ten-minute walk; the ice was thin in January 2019."
+   },
+   {
+    "pitch": "3",
+    "grade": "WI3",
+    "lengthM": 25,
+    "anchor": "tree",
+    "notes": "Rolling ice."
+   },
+   {
+    "pitch": "4",
+    "grade": "WI3",
+    "anchor": "tree",
+    "notes": "More of a pillar, about 15-20 m tall. Rappel anchors were in place above every pitch in 2019."
+   }
+  ],
+  "replace_pitch_detail": true,
+  "review": {
+   "confidence": "medium",
+   "sources": [
+    "https://www.mountainproject.com/route/116385337"
+   ],
+   "source_texts": {
+    "https://www.mountainproject.com/route/116385337": "/Users/nathanbarber/dev/mp-data/_mp/_pitchtext/wy_9_cabin_creek_wyoming_wave.txt"
+   },
+   "changed": "Four pitches.",
+   "pitch_count_found": 4
+  }
+ },
+ "wy_abiathar_peak_ice_marlboro_madness": {
+  "area": "wy_abiathar_peak_ice",
+  "pitch_detail": [
+   {
+    "pitch": "1",
+    "grade": "WI4",
+    "lengthM": 40,
+    "notes": "Steeper first pitch with two options: left through a possibly thin curtain at WI4 or harder, or right on a pillar around WI5. Easier steps lead to an alcove. Expect lots of water and perhaps a dam at the top of any pitch."
+   },
+   {
+    "pitch": "2",
+    "grade": "WI3+",
+    "notes": "Moderate ice."
+   },
+   {
+    "pitch": "3",
+    "grade": "WI2",
+    "notes": "Short step. Descend on rappel using threads and trees over on climber left."
+   }
+  ],
+  "replace_pitch_detail": true,
+  "review": {
+   "confidence": "medium",
+   "sources": [
+    "https://www.mountainproject.com/route/123466381"
+   ],
+   "source_texts": {
+    "https://www.mountainproject.com/route/123466381": "/Users/nathanbarber/dev/mp-data/_mp/_pitchtext/wy_abiathar_peak_ice_marlboro_madness.txt"
+   },
+   "changed": "Three pitches.",
+   "pitch_count_found": 3
+  }
+ },
+ "wy_b_central_sector_grandcentral": {
+  "area": "wy_b_central_sector",
+  "pitch_detail": [
+   {
+    "pitch": "1",
+    "grade": "5.10a/5.11b",
+    "notes": "Two choices: Gray Wall at 5.10a, or Crucify the Dread at 5.11b (a 5.11a/b start is also given)."
+   },
+   {
+    "pitch": "2",
+    "grade": "5.12b/c",
+    "crux": true,
+    "notes": "Starts from the chains at the end of the ledge, with a cryptic 5.10b warm-up to the ledge. Step left into a crack, with a rattly hand jam at an undercling, a no-hands rest, then pop up and left through stamina cruxes with a chain draw. Easier 5.10 leads to the belay."
+   },
+   {
+    "pitch": "3",
+    "grade": "5.11b",
+    "notes": "Well-protected corner with a distinct crux at the top. A variation, Big Man on Campus, takes the hanging arete left of the belay at 5.12a."
+   },
+   {
+    "pitch": "4",
+    "grade": "5.11c",
+    "notes": "Steep face with slopers at the crux."
+   },
+   {
+    "pitch": "5",
+    "grade": "5.9",
+    "notes": "Right to a short wall on the crest."
+   },
+   {
+    "pitch": "6",
+    "grade": "5.6",
+    "notes": "Third-class ridge to a short wall with a fixed pin. Graded anywhere from 5.4 to 5.6."
+   }
+  ],
+  "replace_pitch_detail": true,
+  "review": {
+   "confidence": "medium",
+   "sources": [
+    "https://www.mountainproject.com/route/109238890"
+   ],
+   "source_texts": {
+    "https://www.mountainproject.com/route/109238890": "/Users/nathanbarber/dev/mp-data/_mp/_pitchtext/wy_b_central_sector_grandcentral.txt"
+   },
+   "changed": "Six pitches written.",
+   "pitch_count_found": 6,
+   "other_findings": "Stored pitches 5; text lists six, and its header gives the last as 5.6 trad while the body says 5.4."
+  }
+ },
+ "wy_b_central_sector_piton_country": {
+  "area": "wy_b_central_sector",
+  "pitch_detail": [
+   {
+    "pitch": "1",
+    "lengthM": 30,
+    "anchor": "2 stainless bolts",
+    "notes": "Steep hand crack (or go right at 5.8), then enjoyable broken alpine ground up to a solid stance."
+   },
+   {
+    "pitch": "2",
+    "lengthM": 25,
+    "anchor": "2 stainless bolts",
+    "notes": "Right-trending hanging corners to two bolts, then an ice section: straight up is a steep M6+ crack torque, or take a 5.8 route up and right."
+   },
+   {
+    "pitch": "3",
+    "lengthM": 20,
+    "anchor": "2 stainless bolts",
+    "notes": "Traverse right to shallow corners with dry tooling, up a short technical chimney with good hooking."
+   },
+   {
+    "pitch": "4",
+    "lengthM": 20,
+    "anchor": "slung evergreen tree",
+    "notes": "Climb diagonally up and right from a juggy mantle across dirty, hard-to-protect ground toward the chimney-arete about fifteen feet left of the gully end, then to the tree."
+   }
+  ],
+  "replace_pitch_detail": true,
+  "review": {
+   "confidence": "medium",
+   "sources": [
+    "https://www.mountainproject.com/route/109897318"
+   ],
+   "source_texts": {
+    "https://www.mountainproject.com/route/109897318": "/Users/nathanbarber/dev/mp-data/_mp/_pitchtext/wy_b_central_sector_piton_country.txt"
+   },
+   "changed": "Four pitches; M6+ is an option, not graded onto the pitch.",
+   "pitch_count_found": 4,
+   "other_findings": "Text mentions M6+ moves while stored grade is M5+."
+  }
+ },
+ "skip_reasons": {
+  "wy_2_schoolhouse_creek_illogicicle_the_schoolhouse_route": "no per-pitch climbing text; only lengths and rappel remarks",
+  "wy_7_deer_creek_too_cold_to_fire": "pitch breakdown ambiguous (scrambling sections, anchor numbering unclear, stored length 21 m)"
+ }
+}

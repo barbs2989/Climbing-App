@@ -1,0 +1,123 @@
+{
+ "wa_slippery_slab_tower_ne_face": {
+  "area": "wa_thunder_mountain_and_slippery_slab_tower",
+  "set": {
+   "rappels": "2 rappels on a single 60 m rope down the climbing route, off webbing-wrapped tree and boulder anchors. Watch for loose, pointy rock on the way down.",
+   "rappel_count_note": "The route is two pitches, so the descent is two rappels on a single 60 m rope, one per pitch. Per-station lengths are not published, so check that the rope reaches each station before committing to it.",
+   "descent_text": "From the summit, make two rappels down the climbing route to return to the base of the tower, using a single 60 m rope. Be mindful of loose, pointy rocks during the descent. Once back at the base, scramble back through the pass terrain to Trap Pass, then reverse the PCT and Tunnel Creek Trail descent."
+  },
+  "review": {
+   "confidence": "low",
+   "sources": [
+    "https://www.mountaineers.org/activities/trip-reports/basic-rock-climb-slippery-slab-tower-northeast-face-7",
+    "https://mountainproject.com/area/115128222/thunder-mountain-and-slippery-slab-tower"
+   ],
+   "single_rope": "Two pitches, so about one rappel per pitch on one 60 m rope; no source states per-rappel lengths. Existing 2-station table (30 m each) fits one rope and is kept.",
+   "changed": "Removed the doubled-rope and extra-rope wording from rappels, note and descent_text; kept the table."
+  }
+ },
+ "wa_flight_of_the_falcon": {
+  "area": "wa_waterfall_basin",
+  "set": {
+   "rappels": "No single-rope rappel line is documented; the easy way down on one rope is to finish the climb and walk off west, about 40 minutes",
+   "rappel_count_note": "The fixed rappel line from the anchor atop pitch 7 is described only for a longer rope setup (about 5 rappels, all from bolted anchors), and no source gives station lengths. Whether one 60 m rope reaches each station is unknown, so do not count on it. Parties who continue to the summit can walk off to the west instead, about 40 minutes of brushy, low-angle terrain back to the packs; that needs no rope at all.",
+   "descent_text": "Two descent options exist. Most parties walk off: climb to the summit, then descend to the left (west), a descent that takes about 40 minutes from the summit back down to packs at the base, navigating brushy, low-angle terrain. The alternative is to rappel the route from the anchor atop Pitch 7 ('Falcon's Perch'); no single-rope station list is known for that line."
+  },
+  "clear_rappels": true,
+  "review": {
+   "confidence": "low",
+   "sources": [
+    "https://stephabegg.com/?p=8738",
+    "https://www.mountainproject.com/route/115159395/flight-of-the-falcon"
+   ],
+   "single_rope": "Both sources describe rappelling only with a longer setup; none gives single-rope stations or per-station lengths. Walk-off west from the summit (about 40 min) is the documented single-rope-friendly option.",
+   "changed": "Cleared the five-station table (all labelled for the longer setup, no lengths); rewrote prose to state what is and is not known for one rope and to lead with the walk-off."
+  }
+ },
+ "wa_roan_wall_center_stage": {
+  "area": "wa_waterfall_basin",
+  "set": {
+   "rappels": "Rappel the route on bolted anchors; no single-rope station list is documented",
+   "rappel_count_note": "Every belay on the route carries a new double-ring stainless anchor, so the descent reverses the route's own stations. No source gives the number of rappels or any station length, so it is not known whether a single 60 m rope reaches each belay from the one above on this 10-pitch wall. Check each pitch length before committing. The two disconnected approach pitches below the wall are normally scrambled or downclimbed rather than rappelled.",
+   "descent_text": "Descend by rappelling the route itself, using the new double-ring stainless-steel bolted anchors present at each belay station; verify that a single 60 m rope reaches each one."
+  },
+  "clear_rappels": true,
+  "review": {
+   "confidence": "low",
+   "sources": [
+    "https://www.mountainproject.com/route/106257989/roan-wall-center-stage"
+   ],
+   "single_rope": "Route page states only that all belays have new double-ring stainless anchors; no rappel count, rope length or station lengths are given.",
+   "changed": "Cleared the eight-station table (built for a longer rope setup from pitch lengths, not measured) and removed that wording from all text."
+  }
+ },
+ "wa_roan_wall_stage_right": {
+  "area": "wa_waterfall_basin",
+  "set": {
+   "rappels": "Traverse to the top of Center Stage, then rappel that route's bolted anchors; no single-rope station list is documented",
+   "rappel_count_note": "Stage Right tops out onto a narrow ledge that leads left and slightly down to the top of Center Stage, and the descent from there is Center Stage's own bolted double-ring anchors. That initial traverse is a walk and a downclimb, not a rappel. No source gives a rappel count or station lengths, so it is not known whether a single 60 m rope reaches each of those stations; check each one before committing to it.",
+   "descent_text": "From the top of Stage Right, find a narrow ledge and work left and slightly downward to reach the top of the Center Stage route. From there, rappel Center Stage's bolted double-ring anchors (the face is described as clean and open), confirming a single 60 m rope reaches each station."
+  },
+  "clear_rappels": true,
+  "review": {
+   "confidence": "low",
+   "sources": [
+    "https://open-tacos-erooiffln-openbeta-dev.vercel.app/climb/6dde7b3b-a13f-589c-931b-3e794db409ab/roan-wall-stage-right",
+    "https://www.mountainproject.com/route/106257989/roan-wall-center-stage"
+   ],
+   "single_rope": "Descent is the traverse to Center Stage then its bolted stations; no source gives count, rope length or station lengths.",
+   "changed": "Cleared the copied eight-station table and removed longer-rope wording."
+  }
+ },
+ "wa_waterfall_buttress": {
+  "area": "wa_waterfall_basin",
+  "set": {
+   "rappels": "Rappel the route from bolted anchors, about one per pitch (6 pitches); no single-rope station lengths are documented",
+   "rappel_count_note": "The descent follows the route's bolted belays, roughly one rappel per pitch. Rappel lengths are not published, so it is not known whether a single 60 m rope reaches each station; check before committing. Stay skier's right on the lower-angle part of pitch 4 so the rope does not pull you left into the gully, and keep the rope out of the creek at the base.",
+   "descent_text": "Descend by rappelling the route on a single 60 m rope where each station is within reach. On the lower-angle section, stay skier's-right to avoid dropping into the adjacent gully and creek below the slab waterfall."
+  },
+  "clear_rappels": true,
+  "review": {
+   "confidence": "low",
+   "sources": [
+    "https://open-tacos-bvohlxdg5-openbeta-dev.vercel.app/climb/972716da-f211-5266-a5b1-17d8e18473e8/waterfall-buttress"
+   ],
+   "single_rope": "Only source says rappel the route (stated for a longer setup) with hazards on pitch 4 and the creek; no single-rope count or lengths.",
+   "changed": "Cleared the six-station table (longer-rope, no lengths) and removed that wording; kept the skier's-right and creek hazards."
+  }
+ },
+ "wa_wild_wild_west": {
+  "area": "wa_west_face_6",
+  "set": {
+   "rappels": "2 rappels on a single 60 m rope from the anchor near a stand of fir trees at the north end of the formation, down the East Face",
+   "rappel_count_note": "The descent does not reverse the route: it rappels the shorter east side of the formation, in two rappels that each fit a single 60 m rope. Tie stopper knots in the ends."
+  },
+  "review": {
+   "confidence": "low",
+   "sources": [
+    "https://www.mountainproject.com/route/110943576/wild-wild-west",
+    "https://www.mountainproject.com/area/110771649/west-face"
+   ],
+   "single_rope": "Rappel is up and left on the back side near fir trees; total height about 121 m, so two rappels on one 60 m rope; no source gives per-rappel lengths.",
+   "changed": "Removed the one-long-rappel aside; kept the existing two-station table."
+  }
+ },
+ "wa_west_twin_needle_south_route": {
+  "area": "wa_west_twin_needle",
+  "set": {
+   "rappels": "Up to 2 rappels through a left-hand gully below the Himmelhorn-West Twin Needle col; no single-rope station lengths are documented.",
+   "rappel_count_note": "Parties have made two rappels past the band of vertical slabs below the Himmelhorn-West Twin Needle notch. No per-station distance is published for either, and it is not known whether a single 60 m rope reaches each station, so judge each one on the ground. Both anchors are natural rather than fixed: bring cord and rap rings. The non-technical alternative is to reverse the east-face gully (class 2-3) into Crescent Creek Basin.",
+   "descent_text": "Rather than reversing the ascent gully to the Eye Col, descend the class 2–3 west face to the Himmelhorn–West Twin Needle notch on the far side of the peak. Below that, plan on 2 rappels to get past a band of vertical slabs; no single-rope station list is known, so confirm a single 60 m rope reaches each station. Parties report the first anchor built on a protruding rock angled upward (to keep a rappel sling from walking off) and a second anchor set above boulders in the south gully; treat these as natural/gear anchors rather than fixed bolted stations; bring cord/rap rings since existing tat should not be counted on. From the base of the rappels, grassy benches sit around 6800 ft; from there traverse east and climb back up roughly 200 ft to regain the 'left gully,' which is then downclimbed/scrambled to the base near the buttress that splits the approach gullies. From there, retrace the south-route approach line back down through Crescent Creek Basin to camp. Where conditions and the exact line allow, some parties instead reverse the east-face gully (class 2–3) directly into Crescent Creek Basin, avoiding the technical col rappels entirely but at the cost of more sustained loose, exposed scrambling — this is the non-technical walk-off alternative referenced in older route notes. Watch for loose blocks throughout and be prepared for stuck ropes on retrieval (parties have had them, freed with a hard tug) — a real risk on this kind of low-angle-slab rappel line."
+  },
+  "clear_rappels": true,
+  "review": {
+   "confidence": "low",
+   "sources": [
+    "https://stephabegg.com/?p=8734",
+    "https://publications.americanalpineclub.org/articles/13201213408/Himmelhorn-South-Face-Stonehenge"
+   ],
+   "single_rope": "Sources found only mention rappelling and downclimbing a gully with a chockstone rappel; no single-rope count, lengths or station list were found. The existing two-station table was written for a longer setup and has no lengths.",
+   "changed": "Cleared the two-station table, removed the longer-rope wording from rappels, note and descent_text, and stated what is unknown for one rope."
+  }
+ }
+}

@@ -1,4 +1,4 @@
-name: Rappel length drift check
+name: Route data drift check (rappel lengths, rack items)
 
 # Asks whether any rappel table states a distance the rope it describes can reach.
 #
@@ -60,3 +60,18 @@ jobs:
           VITE_SUPABASE_URL: ${{ secrets.VITE_SUPABASE_URL }}
           VITE_SUPABASE_ANON_KEY: ${{ secrets.VITE_SUPABASE_ANON_KEY }}
         run: node scripts/check-rappel-lengths.mjs
+
+      # Owner, 2026-10-15 and again 2026-10-28: "Rack only needs to be the protection." A helmet,
+      # an ice axe or approach shoes filed under detailed_rack / pro_needs / rack renders under
+      # RACK on the route page. Two sweeps (#2453, #2667) brought the catalog to 0, and 44 routes
+      # imported in between had drifted back, found only because somebody audited by hand. The
+      # reader (lib/rack.js rackLeftovers) already moves such an entry to GEAR & ESSENTIALS, so this
+      # is a filing error at the source, a property of the DATABASE: asked daily, not in the build.
+      # Fix a finding through scripts/oneoff/rack-rewrites.json + fix-rack-non-rack-items.mjs.
+      # Anon key: the audit falls back to it when no service key is set; no npm install needed.
+      - name: Does any route file NON-RACK gear where the RACK card reads?
+        if: always()
+        env:
+          VITE_SUPABASE_URL: ${{ secrets.VITE_SUPABASE_URL }}
+          VITE_SUPABASE_ANON_KEY: ${{ secrets.VITE_SUPABASE_ANON_KEY }}
+        run: node scripts/audit-rack-items.mjs

@@ -117,11 +117,15 @@ for (const r of rackRows) ids.add(r.id);
 const idList = [...ids];
 const rows = new Map();
 for (let i = 0; i < idList.length; i += 100) for (const r of await fetchRows(`id=in.(${idList.slice(i, i + 100).map(encodeURIComponent).join(",")})`)) rows.set(r.id, r);
-if (rows.size !== idList.length) { console.error(`expected ${idList.length} rows, read ${rows.size} — refusing`); process.exit(1); }
+// A route deleted or merged since its rewrite was written has nothing left to repair; name it and go
+// on. More than a handful missing is a broken read, not a few merges, so that still refuses.
+const gone = idList.filter(id => !rows.has(id));
+if (gone.length > 5) { console.error(`expected ${idList.length} rows, read ${rows.size} — refusing`); process.exit(1); }
+if (gone.length) console.log(`${gone.length} rewrite id(s) no longer in routes (deleted or merged since): ${gone.join(", ")}`);
 
 const plans = []; let skipped = 0;
 for (const id of idList) {
-  const r = rows.get(id); const patch = {}; const why = []; let adds = []; const betaAdds = [];
+  const r = rows.get(id); if (!r) continue; const patch = {}; const why = []; let adds = []; const betaAdds = [];
   // detailed_rack: replace each flagged sentence by its rewrite, in place.
   if (byId.has(id)) {
     /* rackFromText appends a period to a sentence that lacks one; the rewrites were keyed on

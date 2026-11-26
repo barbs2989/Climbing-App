@@ -82,8 +82,13 @@ export default function RichEditor({value,onChange,elRef,ariaLabel,placeholder,m
       <button type="button" onClick={function(){setLinkOpen(false);}} style={{flexShrink:0,padding:"8px 10px",borderRadius:8,border:"1px solid "+C.border,background:C.card,color:C.textSub,fontSize:12,fontWeight:700,cursor:"pointer"}}>Cancel</button>
     </div>{linkErr?<div role="alert" style={{fontSize:11.5,color:C.red,marginTop:4}}>That doesn’t look like a web address.</div>:null}</div>:null}
     <div style={{position:"relative"}}>
+      {/* The box scrolls its own text past half a screen, and then HANDS THE REST OF A DRAG ON
+          (overscrollBehavior "auto"): it always sits inside something that scrolls, a sheet or the
+          page. With "contain" a finger that landed on it, its text at the end or only one line long,
+          moved nothing, and the edit sheet read as stuck (owner note 2026-11-26). The sheet around it
+          contains the drag; check:scroll-containment pins this. */}
       {!value?<div aria-hidden="true" style={{position:"absolute",top:9,left:11,right:11,color:C.textMuted,fontSize:16,lineHeight:1.5,pointerEvents:"none"}}>{placeholder}</div>:null}
-      <div ref={setEl} role="textbox" aria-multiline="true" aria-label={ariaLabel} aria-placeholder={placeholder} tabIndex={0} contentEditable suppressContentEditableWarning onInput={emit} onKeyUp={refresh} onMouseUp={refresh} onFocus={refresh} onPaste={function(e){const t=e.clipboardData&&e.clipboardData.getData("text/plain");if(t==null)return;e.preventDefault();try{document.execCommand("insertText",false,t);}catch{/* insertText is unsupported here */}emit();}} style={{width:"100%",padding:"9px 11px",borderRadius:9,border:"1px solid "+C.border,background:C.card,color:C.text,fontSize:16,boxSizing:"border-box",minHeight:minHeight||78,maxHeight:"50vh",overflowY:"auto",overscrollBehavior:"contain",outline:"none",lineHeight:1.5,wordBreak:"break-word",whiteSpace:"pre-wrap"}}/>
+      <div ref={setEl} role="textbox" aria-multiline="true" aria-label={ariaLabel} aria-placeholder={placeholder} tabIndex={0} contentEditable suppressContentEditableWarning onInput={emit} onKeyUp={refresh} onMouseUp={refresh} onFocus={refresh} onPaste={function(e){const t=e.clipboardData&&e.clipboardData.getData("text/plain");if(t==null)return;e.preventDefault();try{document.execCommand("insertText",false,t);}catch{/* insertText is unsupported here */}emit();}} style={{width:"100%",padding:"9px 11px",borderRadius:9,border:"1px solid "+C.border,background:C.card,color:C.text,fontSize:16,boxSizing:"border-box",minHeight:minHeight||78,maxHeight:"50vh",overflowY:"auto",overscrollBehavior:"auto",outline:"none",lineHeight:1.5,wordBreak:"break-word",whiteSpace:"pre-wrap"}}/>
     </div>
   </div>;
 }

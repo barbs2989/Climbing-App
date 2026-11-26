@@ -1,0 +1,223 @@
+[
+ {
+  "id": "wa_news_nw_corner",
+  "name": "Northwest Corner (Boving-Pollack Route)",
+  "area": "wa_north_early_winters_spire",
+  "area_name": "North Early Winters Spire",
+  "area_parent": "wa_liberty_bell_group",
+  "discipline": "alpine",
+  "grade": "5.9+",
+  "pitches": 5,
+  "current": {
+   "rappels": "Two lines: the bolted West Face (six bolted stations), all single-rope on a 60 m rope that just barely reaches - a 70 m is the comfortable choice - or the classic line (3 single-rope raps to the notch, then a largely free-hanging double-rope rappel past the chockstone, then a short tree rap)",
+   "rappel_count_note": "Two established descents. The bolted West Face line is six bolted single-rope stations; a 60 m rope only just reaches and a 70 m is the comfortable choice. The classic line is three single-rope rappels to the notch, a free-hanging double-rope rappel past the chockstone, then a short tree rappel or a downclimb to the ground; the table below lists the classic line.",
+   "rappel_detail": [
+    {
+     "n": 1,
+     "notes": "First of three single-rope rappels down the south side toward the notch. Plan on near the full reach of a doubled 60 m rope.",
+     "anchor": "fixed station near summit",
+     "hazards": [
+      "committing to the wrong descent is the easy mistake here - the bolted West Face rappels start well away from this line"
+     ],
+     "lengthM": null,
+     "station": "This is the classic line, not the bolted West Face one, and the two leave the summit from different places. Scramble down south and west of the summit, then down and skier's left toward the notch between North and South Early Winters Spire; the first fixed station is on that side."
+    },
+    {
+     "n": 2,
+     "notes": "Second single-rope rappel continuing toward the notch/gully.",
+     "anchor": "fixed station",
+     "lengthM": 30
+    },
+    {
+     "n": 3,
+     "notes": "Third single-rope rappel reaching the notch between North and South Early Winters Spire.",
+     "anchor": "fixed station at notch/gully",
+     "hazards": [
+      "the notch is often still snow-covered in summer - expect a wet or snowy stance and possibly a footwear change at the anchor"
+     ],
+     "lengthM": 30,
+     "station": "This rappel lands in the notch and Southwest Couloir between North and South Early Winters Spire."
+    },
+    {
+     "n": 4,
+     "pull": "Described as a double-rope rappel; check the pull before the second climber commits, since there is no way back up to the anchor once you are hanging free.",
+     "notes": "Largely free-hanging double-rope rappel past a huge chockstone (~50 ft/15m of air). Plan on a typical double-rope pitch.",
+     "anchor": "fixed station above chockstone",
+     "hazards": [
+      "free-hanging and spinning below the chockstone",
+      "the anchor is webbing around a natural feature rather than hardware - inspect it and replace or back it up"
+     ],
+     "lengthM": null,
+     "station": "Fixed slings on the large chockstone blocking the couloir. The rappel goes off and past the chockstone and is largely free-hanging, about 50 ft of air."
+    },
+    {
+     "n": 5,
+     "notes": "Final short (~30 ft) rappel, or downclimb/scramble alternative, reaching the base of the Southwest Gully.",
+     "anchor": "tree anchor",
+     "lengthM": 10,
+     "station": "Short rappel of about 30 ft off a tree at the bottom of the couloir; scrambling and downclimbing is the accepted alternative if the tree or its slings look poor."
+    }
+   ],
+   "descent_text": "Two established ways off the summit; both are widely used and either works, but they return you to different spots relative to a gear stash at the base.\n\nBolted West Face rappel line (most direct back to packs at the base of NW Corner/West Face): from the summit, downclimb/walk skier's-left to the top of a clean, purpose-bolted rappel line down the right side of the West Face. Six bolted (2-bolt) rappel stations in a nearly direct line bring you back down to essentially the same spot where you left your pack at the base of the route. Pulls are reported as clean and the line is efficient — regulars find it a breeze. A single 60m rope is just barely sufficient (one station, reportedly the 3rd rappel, is tight enough that you may need to reach down to clip your PAS/daisy to the anchor and feed rope through your device to reach it); a 70m rope removes that squeeze and is the more comfortable choice. No natural anchors needed on this line — it's fully bolted.\n\nClassic notch/chockstone descent (South/Southwest Gully): downclimb and rappel the south side into the notch between North and South Early Winters Spire, then continue down the Southwest Gully (the South Early Winter Spire \"Chockstone Route\" descent). This runs three single-rope rappels from near the summit down to the notch/gully (which often holds snow even in summer), followed by one spectacular, largely free-hanging double-rope rappel down and past a huge chockstone (~50 ft of air), then a final short rappel (~30 ft, off a tree anchor) or downclimb/scramble to reach the base. Total is about 4-5 rappels on this line. Anchors are natural/fixed slings around the chockstone and trees rather than bolts — inspect webbing before trusting it. Summit-to-base time on this descent is typically around 1.5-2 hours. This option is the standard descent if you climbed a route on the south/southwest side, or as a backup if the West Face bolt line is congested or iced."
+  }
+ },
+ {
+  "id": "wa_mount_index_north_face",
+  "name": "North Face (North Peak)",
+  "area": "wa_north_peak_2",
+  "area_name": "North Peak",
+  "area_parent": "wa_mount_index",
+  "discipline": "alpine",
+  "grade": "5.7",
+  "pitches": 12,
+  "current": {
+   "rappels": "Descend by rappelling the route on existing slung and natural anchors (trees, roots, blocks), many hung with old slings; multiple double-rope rappels are needed, so carry extra webbing/cord.",
+   "rappel_count_note": "Reported as 4-5 rappels of roughly 30-50 ft each on existing (sometimes old) anchors; exact station-by-station beta beyond the total count and length range isn't published — inspect and back up any worn anchors with extra webbing/rap rings.",
+   "rappel_detail": null,
+   "descent_text": "Reported round-trip climbing time is roughly 6-8 hours up and about 5 hours down from the base, on loose terrain that demands careful downclimbing/rappelling through the brushy, broken lower rib. Rappel anchors near the summit have been refreshed, and in mid-June they formed a clear path down the descent."
+  }
+ },
+ {
+  "id": "wa_west_face_2",
+  "name": "West Face",
+  "area": "wa_north_peak",
+  "area_name": "North Peak",
+  "area_parent": "wa_gunsight_range_the",
+  "discipline": "alpine",
+  "grade": "5.11+",
+  "pitches": 6,
+  "current": {
+   "rappels": "4 double-rope rappels down the West Face",
+   "rappel_count_note": "Four rappels, and they are double-rope rappels: the published descent is roughly 50 m, 50 m, 50 m and a short 20 m, so two 60 m ropes are needed and one rope will not complete it. Two independent accounts describe the descent as double-rope throughout. The stations are the north-ridge line down to the packs at the base of the route.",
+   "rappel_detail": [
+    {
+     "n": 1,
+     "notes": "From the north end of the flat terrace below the summit block, descending the North Ridge.",
+     "anchor": "rap station on the North Ridge (natural anchor/tat)",
+     "lengthM": 50
+    },
+    {
+     "n": 2,
+     "notes": "Either continue down the North Ridge to a small notch, or rappel straight down the face to this anchor.",
+     "anchor": "flake with tat (black tat reported; often reinforced by parties)",
+     "lengthM": 50
+    },
+    {
+     "n": 3,
+     "notes": "Terrain eases toward the packs below.",
+     "anchor": "horn with tat (red tat reported) or a party-built anchor",
+     "lengthM": 50
+    },
+    {
+     "n": 4,
+     "notes": "Short final rappel reaching packs at the base of the route.",
+     "anchor": "natural anchor near the base",
+     "lengthM": 20
+    }
+   ],
+   "descent_text": "Rappel down the center of the West Face via four consecutive double-rope rappels of roughly 50 m, 50 m, 50 m and 20 m, using natural anchor features and existing bolt/gear anchors established on the granite. Ensure proper rope management to avoid tangling on the steep granite face. Once back at the base of the route, climb back up to the Chikamin-Dome Col via the Chickamin Glacier approach, watching carefully for crevasses and potential moat crossings. From the col, descend the cross-country route back to Bachelor Flats (taking approximately 8-10 hours depending on snow coverage and conditions). From Bachelor Flats, follow the Downey Creek trail back to the trailhead (6-8 hours depending on fitness and pack weight). Plan on getting back to the col the day you climb, then two days out to the car."
+  }
+ },
+ {
+  "id": "wa_northwest_mox_peak_standard",
+  "name": "Standard Route / Northwest Spire",
+  "area": "wa_northwest_mox_peak",
+  "area_name": "Northwest Mox Peak",
+  "area_parent": "wa_chilliwack_range",
+  "discipline": "alpine",
+  "grade": "5.5",
+  "pitches": 3,
+  "current": {
+   "rappels": "3 rappels: 2 single-rope off the summit tower, then one double-rope (~60 m) from the ridge saddle to the Redoubt Glacier — two ropes required for the last",
+   "rappel_count_note": "The stored count of 2 was a partial count of the same sequence. The full descent is three rappels: two single-rope rappels to the wide ledge, then from the saddle one double-rope rappel off the highest anchor, which just reaches the glacier below. No single-rope way off the saddle is documented, so plan on two ropes.",
+   "rappel_detail": [
+    {
+     "n": 1,
+     "notes": "First of two single-rope rappels descending the ridge toward its low point.",
+     "anchor": "ridge terrain (anchor type not specified)",
+     "lengthM": 30
+    },
+    {
+     "n": 2,
+     "notes": "Second single-rope rappel continuing down to the ridge's low point.",
+     "anchor": "ridge terrain (anchor type not specified)",
+     "lengthM": 30
+    },
+    {
+     "n": 3,
+     "notes": "Long double-rope rappel from the ridge low point back onto the Redoubt Glacier; remote/serious retreat, rappels must be managed carefully.",
+     "anchor": "station at ridge low point",
+     "lengthM": 60
+    }
+   ],
+   "descent_text": "Downclimb/reverse the ridge to the headwall, then rappel: parties commonly make several rappels down to the ridge's low point followed by a long double-rope rappel back onto Redoubt Glacier, then reverse the approach to camp."
+  }
+ },
+ {
+  "id": "wa_prey",
+  "name": "Prey",
+  "area": "wa_osprey_wall",
+  "area_name": "Osprey Wall",
+  "area_parent": "wa_snoqualmie_pass_area",
+  "discipline": "trad",
+  "grade": "5.10c",
+  "pitches": 5,
+  "current": {
+   "rappels": "Double-rope (60m) rappels from fixed tree anchors, trending left tree-to-tree back to lower ledges.",
+   "rappel_count_note": "The number of rappels is not published. The descent starts from a tree anchor on climber's left of the final belay and continues tree to tree on two 60 m ropes, trending slightly left to each lower ledge. Inspect the fixed slings before use; damage from pikas has been reported at the anchors.",
+   "rappel_detail": null,
+   "descent_text": "From the top of the wall, double-rope rappels (two 60 m ropes) from tree anchors on climber's left lead back down, trending slightly left to the next ledge — inspect any fixed gear before trusting it due to reported pika damage at anchors. Alternatively, descend the scree slope, using the full rope length as a handline/backup if downclimbing."
+  }
+ },
+ {
+  "id": "wa_direct_west_face",
+  "name": "Direct West Face",
+  "area": "wa_pernod_spire",
+  "area_name": "Pernod Spire",
+  "area_parent": "wa_silver_star_and_wine_spires",
+  "discipline": "alpine",
+  "grade": "5.10+",
+  "pitches": 8,
+  "current": {
+   "rappels": "Multiple rappels (2x 60m ropes) east down the gully to the Pernod/Chablis notch, then more raps down steep slabs to the neve below",
+   "rappel_count_note": "Individual lengths aren't given in feet/meters and exact per-rap distances aren't documented, so no per-station length is shown.",
+   "rappel_detail": [
+    {
+     "n": 1,
+     "notes": "Rappel east down the gully to the Pernod-Chablis notch.",
+     "anchor": "Fixed nuts on the summit ridge (only reliable fixed anchor on route)",
+     "lengthM": null
+    },
+    {
+     "n": 2,
+     "notes": "Continues down steep slabs toward the neve/snowfield.",
+     "anchor": "Natural anchor on steep slabs, unspecified and described as unreliable",
+     "lengthM": null
+    },
+    {
+     "n": 3,
+     "notes": "Final rappel reaching the neve/snowfield below; two 60m ropes are needed for these lower rappels.",
+     "anchor": "Natural anchor on steep slabs, unspecified and described as unreliable",
+     "lengthM": null
+    }
+   ],
+   "descent_text": "From the top of the Direct West Face, rappel east down the gully to the Pernod-Chablis notch (rappel 1), then make a couple more rappels down steep slabs to the neve/snowfield below (rappels 2 and 3) — three rappels total to get off the technical ground. Two 60m ropes are needed for these. The only fixed rappel anchor on the route is on the summit ridge, where nuts have been left in place; everything else, including the old aid bolts used to reach the summit block (one reported missing a hanger, another loose in its hole), should be treated as unreliable — back up or build natural gear anchors in cracks/horns where you can. From the neve, trend north around the base of Chianti Spire and climb back up to Burgundy Col (~7,770 ft), then descend the climbers' path down the scree gullies to the bench camp and boot path back to the highway pullout. Budget real time for this — the three raps only get you to the neve, after which there's a substantial re-ascent to the col before the walk-off begins."
+  }
+ },
+ {
+  "id": "wa_pernod_spire_standard",
+  "name": "Standard Rock Route",
+  "area": "wa_pernod_spire",
+  "area_name": "Pernod Spire",
+  "area_parent": "wa_silver_star_and_wine_spires",
+  "discipline": "alpine",
+  "grade": "5.7",
+  "pitches": 6,
+  "current": {
+   "rappels": "Several: from the summit back to the Pernod–Chianti notch, then long rappels down the east side to the glacier edge (no published count)",
+   "rappel_count_note": "No published count: rappels lead from the summit back to the notch between Pernod and Chianti, then long rappels on double ropes descend the east side to the glacier edge.",
+   "rappel_detail": null,
+   "descent_text": "This is a rappel descent, not a walk-off. Rappel from the summit block back to the notch between Pernod and Chianti, then make long rappels down the east side to the snow and névé at the edge of the Silver Star Glacier basin. No rappel count is published for this line; carry double ropes, and cord to back up or replace old slings and bolts. From the glacier edge, traverse back north below Chianti and climb a few hundred feet to regain Burgundy Col, then descend the climbers' trail (scree, the bench, then the timbered rib) to the SR-20 pullout. Watch for moats along the rock late in the season, and budget real time for the loose scree below the col."
+  }
+ }
+]

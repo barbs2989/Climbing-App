@@ -797,6 +797,27 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     *"0.0 mi"* would call it clean: it derives the expected number of printed legs from the same
     geometry and asserts it exactly. Non-vacuous both ways — 3 of 4 routes fail on the old code,
     and the clean control `wa_mount_baker_coleman_deming` stays green either way.
+- **`audit:rappel-one-rope`** — the RAPPELS section describes ONE rope only (owner note, 2026-11-26).
+  Reads every route carrying `rappels`, `rappel_count_note` or `rappel_detail` (728 on 2026-11-26) and
+  fails on (1) a station longer than one rope reaches (> 37 m, a single 70 m's reach) or a row that
+  states one rope does not reach, and (2) two-rope WORDING in any of the three columns or a station's
+  text: *double-rope*, *two 60 m ropes*, *2 x 60 m*, *two 60s*, *twin ropes*, *a second rope*, *tag
+  line*, *halves it*. Read-only, service key, fails closed on zero rows; `--selftest` needs no DB.
+  - **Its negatives matter as much as its positives**: *a single 70 m rope used doubled* (how every
+    rappel works), *jammed ropes*, *the party ropes up*, *pulling ropes in the gully*, *two single-rope
+    rappels* and *two rope-lengths of downclimbing* are all clean.
+  - **Measured before the pass: 130 of 728 routes failed** (14 by a station length, 129 by wording);
+    6 more were found by a wider hand scan (`two 60s`, `a second rope`, `doubled-up 50m ropes`).
+  - **After the pass: 0 of 763.** The census grew by 35 during the session because a parallel
+    pitch-gap import (#4039) wrote new rappel tables; 17 of them were two-rope and were researched
+    the same way. Re-run this after ANY rappel import.
+  - **The pattern list grew twice from real misses**: *double 60m ropes*, *link two 30 m ropes*,
+    *two shorter ropes joined* — the first cut only knew 50/60/70 m and the word "two".
+  - **A cleared table is not a lost answer.** Where research found no single-rope station list, the
+    two-rope stations were removed (`enrich:apply` `clear_rappels`, refused unless the same entry
+    rewrites `rappels` or `rappel_count_note`) and the prose says what one rope does there: a
+    count, the walk-off, or plainly that one rope does not reach and no intermediate station is known.
+    Halving a two-rope length into "single-rope stations" was forbidden: that invents anchors.
 - **`check:rappel-single-rope`** keeps the headline count honest for the rope most parties carry,
   and it asks the question two ways. `rappelRopeNeed()` decided which rope a descent
   needs from `rappel_detail[].lengthM` **alone** — deliberately, and the reasoning in its own

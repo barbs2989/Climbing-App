@@ -15,7 +15,7 @@ the architecture, and the working rules. The detail lives in `docs/`:
 | [docs/codebase/research-ledger.md](docs/codebase/research-ledger.md) | research or verify route facts, or touch `route_field_evidence` / the lock rules (skills: `.claude/skills/route-research/`) |
 | [docs/codebase/deploy-and-icons.md](docs/codebase/deploy-and-icons.md) | touch `public/`, the manifest, the icons, or the Pages base path |
 | [docs/codebase/algorithms.md](docs/codebase/algorithms.md) | change the partner match score (`compat()`) |
-| [docs/codebase/maintainability.md](docs/codebase/maintainability.md) | debug something that broke on a climber's phone (`npm run errors:read`), or ask where code lives and why it is shaped the way it is |
+| [docs/codebase/maintainability.md](docs/codebase/maintainability.md) | debug something that broke on a climber's phone (`npm run errors:read`), look after the LIVE app (`npm run ops:status`, the post-launch runbook), or ask where code lives and why it is shaped the way it is |
 | [docs/refactor-progress.md](docs/refactor-progress.md) | extract a component into `src/components/`, or touch one that already lives there (conventions, the per-PR procedure, and where the last session stopped) |
 | [docs/BACKEND.md](docs/BACKEND.md) | work on the schema or the catalog pipeline (its "still simulated" lists run stale — re-derive from `lib/db.js`) |
 
@@ -30,6 +30,7 @@ npm run dev        # local dev server with HMR
 npm run build      # production build to dist/ — runs every guard in build:guards first (concurrently), then vite
 npm run preview    # serve the built dist/ locally
 npm run errors:read # what crashed on climbers' phones (app_errors), grouped, each stack frame mapped back to file:line via the build's source maps (service key, DB gate)
+npm run ops:status # is anything on main red, and since WHEN? every workflow's state, how often each cron REALLY ran, open Dependabot + stale PRs (gh only; the Ops status workflow keeps ONE ops-status issue in step)
 npm run clean:worktrees # list worktrees + local branches whose PR merged (idle 24h, nothing untracked or precious); -- --apply removes them
 
 # ── Guard infrastructure — notes: docs/guards/infrastructure.md ──
@@ -153,6 +154,7 @@ npm run check:mutual-friends # a mutual friend is real, named as they asked, and
 npm run check:crew  # guards the crew "Ready" calculation (in build)
 npm run check:partner-areas # crag partners are found by AREA both ways up the tree, and a crag-route objective is a tick list, not a match signal (in build)
 npm run check:crew-place # a crew has ONE place, a route or an area, and every surface that names it resolves it through crewPlace() (in build)
+npm run check:rank-breakdown # the climbs behind a Ranks number ADD UP to it: leaderboard() and rank_breakdown() count the same way, and the sheet's sentences state the SQL's constants (in build)
 
 # ── The route page — notes: docs/guards/route-page.md ──
 npm run check:bare # renders a route with NO enrichment — the shape 99.5% of them have
@@ -175,6 +177,7 @@ npm run check:token-boxes  # no element shaped like a chip holds a paragraph
 npm run check:pitch-split # every pitch_detail entry is a row of ROUTE BREAKDOWN, in order (in build)
 npm run check:approach-overlay # the PICKED way in drives the page, nothing from another leaks, edits hit the stored row (in build)
 npm run audit:approach-hazards # does every way in you can pick show its OWN hazard list? (MISSING / IDENTICAL, read-only)
+npm run audit:next-door    # are the climbs NEXT DOOR right? every wall's left/right vs Mountain Project's own order: ties, order, a position from another wall, a climb stored twice, a climb MP places that we leave unplaced (--refresh re-reads the DB)
 npm run audit:rack-items   # does any rack column, in ANY state, file NON-RACK gear (an ice axe, a helmet) where the RACK card reads? (--state wa narrows; --selftest needs no DB)
 
 # ── Camping and bivy — notes: docs/guards/camping.md ──
@@ -198,6 +201,7 @@ npm run audit:gain         # is a route gaining LESS than its own waypoints dema
 npm run check:rappel-lengths # can the rope a route describes actually reach the rappel it states?
 npm run audit:rappel-claims  # does `rappels` claim raps the route's own descent_text denies?
 npm run audit:rappels      # do a route's rappel fields agree with each other?
+npm run audit:rappel-one-rope # does the RAPPELS section describe ONE rope only — no station past one rope's reach, no two-rope wording? (--selftest needs no DB)
 
 # ── Waypoints and tracks — notes: docs/guards/waypoints-and-tracks.md ──
 npm run check:wp-styles    # the app can DRAW every waypoint type it recognises (in build)

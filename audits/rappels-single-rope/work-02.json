@@ -1,0 +1,271 @@
+[
+ {
+  "id": "wa_action_potential",
+  "name": "Action Potential",
+  "area": "wa_burgundy_spire",
+  "area_name": "Burgundy Spire",
+  "area_parent": "wa_silver_star_and_wine_spires",
+  "discipline": "alpine",
+  "grade": "5.10c",
+  "pitches": 8,
+  "current": {
+   "rappels": "5",
+   "rappel_count_note": "The five stations are the double-rope count. The same descent is not five rappels for everyone: a party taking many shorter rappels on a single rope logged 9-10 to reverse the route back to Burgundy Col, and a party on two 60 m ropes describes doubling up for the first, one single rappel to the ledge at the bottom of pitch 3, then three more double rappels to the col. Neither is wrong. Action Potential has no rappel line of its own - parties finish into North Face terrain near Burgundy Ledge and take that route's descent. On rope choice, experience differs in a way worth knowing: two ropes are faster, but one party found double ropes on this descent annoying and prone to getting stuck, and recommends a single 70 m instead - a single 60 m leaves you about 10 ft above the only bolted anchor on the route. Per-station distances are not known; the figures given are estimates, not measurements.",
+   "rappel_detail": [
+    {
+     "n": 1,
+     "pull": "Keep both ends clear of the constriction above the wide crack before the last climber pulls - it is the documented rope trap on this descent.",
+     "notes": "First rappel of the shared North Face descent line.",
+     "anchor": "Heavily slung summit boulder",
+     "hazards": [
+      "A single 60 m rope does NOT reach the bolts: you finish roughly 10 ft above them and downclimb easy 5th class to get there. A 70 m single is the length that reaches, and is what recent parties recommend",
+      "This is the rappel where a party got a rope end stuck in a constriction above a wide crack and had to lead 5.8 back up to free it"
+     ],
+     "lengthM": 40,
+     "station": "The summit anchor - the heavily slung summit boulder - dropping down the upper north face to what is reported to be the only bolted anchor on the whole rappel route. Everything below it is slung natural gear, so this is the one station you can identify with certainty."
+    },
+    {
+     "n": 2,
+     "notes": "Traverses to reach the next anchor.",
+     "anchor": "Bolts to a ledge near a rock arch",
+     "hazards": [
+      "The line does not follow the route, so what you see going down is not what you climbed"
+     ],
+     "lengthM": 55,
+     "station": "Down toward the main ledge system. Parties on two ropes report doubling up and rappelling climber's-left of the climbing line to reach the next station rather than dropping straight down it."
+    },
+    {
+     "n": 3,
+     "notes": "Drops to a slung horn.",
+     "anchor": "Sling at a rock constriction",
+     "hazards": [
+      "Ledge-to-ledge rappelling on this face means loose material sitting on every stance above you"
+     ],
+     "lengthM": 55,
+     "station": "One rappel goes from the ledge system down to the ledge at the base of the third pitch."
+    },
+    {
+     "n": 4,
+     "notes": "Down to scree ledges.",
+     "anchor": "Slung horn",
+     "hazards": [
+      "You have to walk under and past a large block to find this station, so it is not visible from where the previous rappel lands",
+      "Traversing a ledge with the ropes still out is where they snag on this descent"
+     ],
+     "lengthM": 40,
+     "station": "From the ledge, cut climber's left to the station, which sits just after you walk back underneath the large block. A station is also reported at the top of pitch 4, reached by a ledge traverse - the ledge is the feature to navigate by, not the fall line."
+    },
+    {
+     "n": 5,
+     "notes": "Final rappel back to Burgundy Col, 5-10 minutes from Action Potential's own start.",
+     "anchor": "Scree ledge anchor",
+     "hazards": [
+      "The notch is the aiming point; below the col the descent continues down loose gullies on foot"
+     ],
+     "lengthM": 60,
+     "station": "The last rappels run down through the sandy terraces to Burgundy Col. From the final stance the rappel route is a straight shot through the obvious notch in the rock below to the ground."
+    }
+   ],
+   "descent_text": "Action Potential tops out in two possible ways, and the descent depends on which finish you take: either climb up past an old bolt to the skyline and ramble class-5.7 terrain to the true summit, or finish by traversing Burgundy Ledge into the standard North Face route. Either way, the descent used by essentially all parties is the North Face's rappel line: with double ropes, plan on 5 rappels from the summit area back down the face — roughly 40m off a heavily slung summit boulder, 55m off bolts to a ledge near a rock arch, 55m off a sling at a constriction to a slung horn, 40m to scree ledges, and a final 60m back to Burgundy Col, 5-10 minutes from Action Potential's own start. Anchors are a mix of slung boulders/horns and fixed bolts; watch for old webbing and be deliberate pulling ropes, since the face has ledges that catch the line. From the base of the last rappel, reverse the Burgundy Col approach to the highway."
+  }
+ },
+ {
+  "id": "wa_burgundy_spire_north_face",
+  "name": "North Face",
+  "area": "wa_burgundy_spire",
+  "area_name": "Burgundy Spire",
+  "area_parent": "wa_silver_star_and_wine_spires",
+  "discipline": "alpine",
+  "grade": "5.8",
+  "pitches": 6,
+  "current": {
+   "rappels": "~5 rappels with double ropes (approx. 40m/55m/55m/40m/60m) back to Burgundy Col; a single 60m rope requires some downclimbing between stations.",
+   "rappel_count_note": "Standard descent is 5 rappels with double 60m ropes; parties using a single 60-70m rope have gotten down with more, shorter rappels (one party logged 9-10) and some downclimbing.",
+   "rappel_detail": [
+    {
+     "n": 1,
+     "pull": "Two ropes or a 70 m if you want to arrive at the bolts on rope. On a single 60 m, plan the downclimb deliberately rather than discovering it at the ends.",
+     "notes": "Drops down the middle of the upper face to a bolted anchor on a ledge.",
+     "anchor": "large, heavily slung boulder at the summit",
+     "hazards": [
+      "A 60 m rope doubled comes up short of it — you finish about 10 ft above the bolts and have to downclimb easy but unprotected 5th class off the ends to reach them"
+     ],
+     "lengthM": 40,
+     "station": "From the heavily slung boulder on the summit the line drops down the middle of the upper face to the only bolted anchor on the entire descent, sitting on a ledge."
+    },
+    {
+     "n": 2,
+     "notes": "Down lichen-covered rock to a huge ledge near a rock arch; traverse the ledge to a constriction with slings up to the next anchor.",
+     "anchor": "bolted anchor on ledge",
+     "hazards": [
+      "The station is reached by traversing rather than rappelling, so a party looking straight down from the landing will not find an anchor"
+     ],
+     "lengthM": 55,
+     "station": "Lands on a large ledge beside the rock arch. The next anchor is not below where you land — walk the ledge across to a constriction where slings back up the station."
+    },
+    {
+     "n": 3,
+     "notes": "Down more lichen-covered rock to a horn with a blue sling.",
+     "anchor": "constriction (slung)",
+     "hazards": [
+      "The constriction swallows a pulled rope — one party had to lead back up the ground below it to free theirs",
+      "Lichen-covered rock the whole way, and the descent generally has many places for a rope to hang up"
+     ],
+     "lengthM": 55,
+     "station": "The slung constriction above the wide-crack ground; the rappel runs down lichen-covered rock to a horn carrying a blue sling, set climber's right of the ascent line."
+    },
+    {
+     "n": 4,
+     "notes": "Down to broad, scree-covered upper ledges.",
+     "anchor": "horn with blue sling",
+     "hazards": [
+      "Genuine potential to snag the rope on the ledge system below — pull from clear of the fall line and watch the strand all the way down"
+     ],
+     "lengthM": 40,
+     "station": "From the blue-slung horn down to the broad, scree-covered upper ledges."
+    },
+    {
+     "n": 5,
+     "notes": "Final rappel down to the base of the route at Burgundy Col.",
+     "anchor": "top of the lower scramble pitches",
+     "lengthM": 60
+    }
+   ],
+   "descent_text": "From the summit, the descent is 5 double-rope rappels down the face back to Burgundy Col, then a reversal of the approach. Specifically: R1 (~40m) from a large, heavily slung boulder at the summit down the middle of the upper face to a bolted anchor on a ledge; R2 (~55m) from the bolts down lichen-covered rock to a huge ledge near a rock arch — traverse the ledge to a constriction where slings back up the next anchor; R3 (~55m) from that constriction down more lichen-covered rock to a horn with a blue sling (climber's right of the ascent line); R4 (~40m) from that horn down to broad, scree-covered upper ledges — pull the rope carefully here, as there's real potential to snag it on the ledge system; R5 (~60m) down over the lower scramble terrain, landing back at Burgundy Col where the route starts. Double 60m ropes are the standard setup; parties have gotten down with a single 60–70m rope and some added downclimbing between stances (more, shorter rappels than the five double-rope ones; one party logged 9-10), but that's tighter and involves more exposed downclimbing on loose terrain. Anchors are a mix of slung natural features (boulder, horn) and fixed bolts/webbing — inspect webbing before weighting it, since it's exposed to UV and can be old. Once at the base of the last rappel, reverse the Burgundy Col approach (down the loose scree, then the boot path past the flat bench and creek crossing) back to the highway pullout."
+  }
+ },
+ {
+  "id": "wa_ultramega_ok",
+  "name": "Ultramega OK",
+  "area": "wa_burgundy_spire",
+  "area_name": "Burgundy Spire",
+  "area_parent": "wa_silver_star_and_wine_spires",
+  "discipline": "alpine",
+  "grade": "5.11a",
+  "pitches": 8,
+  "current": {
+   "rappels": "5 double-rope rappels down the North Face rappel line to Burgundy Col; 9-10 shorter rappels on a single rope",
+   "rappel_count_note": "Five stations is the double-rope count. Ultramega OK has no rappel line of its own - it is a Northeast Buttress route that merges into upper North Face terrain, and parties take the North Face descent. The same ground is 9-10 rappels for a party doing many shorter ones on a single rope, and a two-60 party describes it as a doubled first rappel, one single rappel to the ledge at the bottom of pitch 3, then three more double rappels to Burgundy Col - all three counts describe one descent under different rope setups. Rope opinion is genuinely split rather than settled: two ropes are quicker, but a first-hand account calls double ropes here annoying and prone to sticking and prefers a single 70 m, and a single 60 m does not reach the only bolted anchor on the route. The approximate lengths, about 40, 55, 55, 40 and 60 m, come from the North Face descent description.",
+   "rappel_detail": [
+    {
+     "n": 1,
+     "pull": "The constriction above the wide crack is the documented rope-eater on this face. Watch where the ends land and keep both strands out of it.",
+     "notes": "Drops down the middle of the upper face to a bolted ledge anchor.",
+     "anchor": "Heavily slung summit boulder",
+     "hazards": [
+      "A single 60 m rope comes up about 10 ft short of the bolts and the last of it is an unroped downclimb on easy 5th class; a 70 m single reaches",
+      "A party rappelling here got a rope end wedged in a constriction above a wide crack and had to lead 5.8 to recover it"
+     ],
+     "lengthM": 40,
+     "station": "The slung summit boulder, dropping down the upper north face to the only bolted anchor anywhere on this rappel route. Below it every station is slung natural gear, so this is the single anchor you can positively identify."
+    },
+    {
+     "n": 2,
+     "notes": "Down lichen-covered rock to a large ledge near a rock arch; traverse the ledge to a constriction with slings.",
+     "anchor": "Bolted ledge anchor",
+     "hazards": [
+      "The rappel line diverges from the climb, so the terrain below you is ground you have not seen"
+     ],
+     "lengthM": 55,
+     "station": "Down toward the main ledge system, rappelling climber's-left of the climbing line rather than straight down it."
+    },
+    {
+     "n": 3,
+     "notes": "Drops to a horn slung with blue webbing.",
+     "anchor": "Slings at a rock constriction",
+     "hazards": [
+      "Loose material accumulates on these ledges and sits directly above whoever is next on the rope"
+     ],
+     "lengthM": 55,
+     "station": "One rappel from the ledge system down to the ledge at the bottom of the third pitch."
+    },
+    {
+     "n": 4,
+     "notes": "Down to broad scree ledges.",
+     "anchor": "Blue-slung horn",
+     "hazards": [
+      "Not visible from where the previous rappel lands - you have to walk under the block to find it",
+      "Traversing with ropes deployed is where they hang up here"
+     ],
+     "lengthM": 40,
+     "station": "Cut climber's left from the ledge; the station is just past the point where you walk back underneath the large block. Accounts also describe a station at the top of pitch 4 reached by traversing the ledge - navigate by the ledge and the block, not by looking straight down."
+    },
+    {
+     "n": 5,
+     "notes": "Final rappel back to Burgundy Col.",
+     "anchor": "Scree ledge anchor",
+     "hazards": [
+      "Below the col the descent is loose gullies on foot rather than more rappelling"
+     ],
+     "lengthM": 60,
+     "station": "The remaining rappels run down through the sandy terraces to Burgundy Col; from the last stance the line is a straight shot down through the obvious notch in the rock below to the ground."
+    }
+   ],
+   "descent_text": "Ultramega OK has no independent, well-established rappel line of its own — it is a Northeast Buttress route whose last pitch finishes up an offwidth crack to the summit, though a party that loses the line high up can traverse ledges into upper North Face terrain (near Burgundy Ledge) and finish from there. From wherever the route is topped out, the standard way down is the North Face's 5-rappel descent: ~40m from a heavily slung summit boulder down the middle of the upper face to a bolted ledge anchor; ~55m from the bolts down lichen-covered rock to a huge ledge near a rock arch (traverse the ledge to a constriction with slings); ~55m from that constriction down to a blue-slung horn; ~40m from the horn to broad scree ledges (watch the rope pull here — lots of snag potential); and a final ~60m back to Burgundy Col. Double 60m ropes make this clean; parties with a single 70m have reported getting down with some downclimbing between stances, but it's tighter on this line than on the standard North Face. From the base of the raps, reverse the Burgundy Col approach back to the highway. A few parties describe instead downclimbing loose 3rd/4th-class terrain on Burgundy's east side back toward the col to avoid rappelling altogether, but this is opportunistic route-finding rather than an established descent, and is not recommended in the wet or for parties unfamiliar with the terrain."
+  }
+ },
+ {
+  "id": "wa_cascade_peak_east_ridge",
+  "name": "East Ridge and NW Chimney",
+  "area": "wa_cascade_peak",
+  "area_name": "Cascade Peak",
+  "area_parent": "wa_north_cascades_core",
+  "discipline": "alpine",
+  "grade": "5.8",
+  "pitches": 3,
+  "current": {
+   "rappels": "Rappel the NW Chimney back to the moat on double ropes, building anchors from slung horns, chockstones and your own gear: there is no fixed hardware, and what tat exists is poor. No count is published; plan on several rappels, then reverse the CJ Couloir.",
+   "rappel_count_note": "No party has published a rappel count or station list for this descent, so none is shown. Expect to build every anchor yourself in the NW Chimney, bring doubles for full-length rappels, and carry cord to leave behind.",
+   "rappel_detail": null,
+   "descent_text": "From the summit, downclimb/simul-climb back to the top of the technical pitches, then rappel the NW Chimney back down to the moat using gear anchors you build as you go (bring doubles for full-length raps -- there is no fixed hardware on this route). Traverse back to the C-J col and reverse the CJ Couloir (roughly 3,400 ft of downclimbing/rappelling on snow and ice) to the base near the Cascade River, then retrace the short bushwhack and road walk to the trailhead. Avoid the Doug Direct descent some older references mention off the col -- a firsthand trip report calls it a slower, no-safer heather-and-rock traverse than simply reversing the couloir."
+  }
+ },
+ {
+  "id": "ut_kor_ingalls_route",
+  "name": "Kor-Ingalls Route",
+  "area": "ut_castleton_tower",
+  "area_name": "Castleton Tower",
+  "area_parent": "ut_castle_valley",
+  "discipline": "trad",
+  "grade": "5.9+",
+  "pitches": 4,
+  "current": {
+   "rappels": "Descent from the north face takes four raps on one 70 m rope, or two on a pair of 70 m ropes.",
+   "rappel_count_note": null,
+   "rappel_detail": null,
+   "descent_text": null
+  }
+ },
+ {
+  "id": "wa_cathedral_rock_northeast_buttress",
+  "name": "Northeast Buttress",
+  "area": "wa_cathedral_rock",
+  "area_name": "Cathedral Rock",
+  "area_parent": "wa_western_alpine_lakes",
+  "discipline": "alpine",
+  "grade": "5.7",
+  "pitches": 7,
+  "current": {
+   "rappels": "No established rappel descent; the route is descended by the south side. Doubled-up 50m ropes have been used, which also gives a full-length rappel capability for bailing off the buttress or for the one to two rappels on the Southwest Face descent.",
+   "rappel_count_note": null,
+   "rappel_detail": null,
+   "descent_text": "From the summit, work down the south side rather than trying to reverse the buttress. Parties describe slowly picking their way down through a few short fourth-class sections; the south side gets more frequent traffic, which has cleaned much of the loose rock off it compared with the northeast. Follow the Southwest Face line: the Class 2-3 ridge crest southwest, then one or two rappels down the short crux face (a rock horn with fixed slings and rings is the usual anchor — inspect it), then downclimb the main gully and contour back southeast across talus to Cathedral Pass and trail #1345. Retrieve any gear you cached in the trees on the way in. Allow 2-3 hours from the summit back to the pass, plus another 1.5-2 hours down the trail."
+  }
+ },
+ {
+  "id": "wa_cathedral_rock_northeast_ridge_2003_variation",
+  "name": "Northeast Ridge (2003 Variation)",
+  "area": "wa_cathedral_rock",
+  "area_name": "Cathedral Rock",
+  "area_parent": "wa_western_alpine_lakes",
+  "discipline": "alpine",
+  "grade": "5.9",
+  "pitches": 6,
+  "current": {
+   "rappels": "No established rappel line; descend the south side. Carry spare slings and rings to build bail anchors if you need to retreat off the lower pitches. Doubled ropes make retreat from mid-route far more practical.",
+   "rappel_count_note": null,
+   "rappel_detail": null,
+   "descent_text": "From the summit area, descend the south side rather than reversing the ridge. Scramble the Class 2-3 crest southwest to the top of the Southwest Face crux, make one or two rappels using the rock horn with fixed slings and rings (inspect and back it up), downclimb the main gully — the loosest ground of the day — and contour southeast across talus and heather to Cathedral Pass. Pick up any cached gear on the way back around to the trail. The south side sees more traffic and so carries less loose rock than the northeast, which is why it is the usual descent for the peak. Allow 2-3 hours summit to pass, plus 1.5-2 hours down trail #1345."
+  }
+ }
+]

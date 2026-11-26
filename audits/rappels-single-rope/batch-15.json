@@ -1,0 +1,193 @@
+{
+ "wa_south_face_2": {
+  "area": "wa_pernod_spire",
+  "set": {
+   "rappels": "One 60 m rope does not reach the Pernod-Chablis notch (a single 70 m rope just barely does); no single-rope station list is known for this descent",
+   "rappel_count_note": "The first rappel, down the south face to the Pernod-Chablis notch, is the long one: a single 70 m rope just barely reaches and a single 60 m rope leaves you several metres short, and no intermediate station is known. From the notch, a short 4th-class scramble regains the Chablis East Face rappel line down to the base; how many rappels that line takes on one rope is not documented. Rope-eating cracks sit a few feet below the slung-horn station, so build that anchor as high as practical. The old quarter-inch bolt on the aid block near the top should not be trusted alone.",
+   "descent_text": "This is not a walk-off — the way down is by rappel. From the summit area, one commonly used anchor is a two-piton station equalized with cord; the short aid block just below the top is protected by a mix of one newer bolt and one old quarter-inch bolt with an aging hanger — treat the old bolt with real suspicion. Rappel the south face to the Pernod-Chablis notch; a single 70m rope can just barely work, but a single 60m rope can leave you several meters short of the notch. Watch for rope-eating cracks a few feet below a slung-horn rap station — build that anchor as high as practical so the rope doesn't jam on the pull. From the notch, a short 4th-class scramble regains the East Face rappel line on Chablis, and the rappels down that line reach the base, rather than re-climbing back over to Burgundy Col. If you're descending independently instead of via Chablis, reverse the traverse below Chianti back to Burgundy Col and follow the climbers' path down the scree gullies to the bench camp and boot path to the highway."
+  },
+  "clear_rappels": true,
+  "review": {
+   "confidence": "low",
+   "sources": [
+    "https://www.mountainproject.com/route/108106040/direct-west-face",
+    "https://stg.openbeta.io/climb/5a2070cd-44db-5a09-9784-e4e885a6a2c3/south-face"
+   ],
+   "single_rope": "Sources describe only the long first rappel (single 70 m barely reaches, 60 m short) and rappels down Chablis; no single-rope intermediate stations documented.",
+   "changed": "Removed two-rope wording and the three-station table (all lengths unknown, framed for two ropes); stated plainly that one 60 m rope does not reach the notch."
+  }
+ },
+ "ab_professor_falls_area_the_professor_falls": {
+  "area": "ab_professor_falls_area",
+  "set": {
+   "rappels": "Bolted rappel stations on each tier; a single 60 m or 70 m rope is enough.",
+   "rappel_count_note": null
+  },
+  "review": {
+   "confidence": "medium",
+   "sources": [
+    "https://gripped.com/?p=6363",
+    "https://avalanche.ca/resources/ice-climbing/atlas/professor-falls"
+   ],
+   "single_rope": "Rappelling the route on mostly bolted anchors works on a single 60 m rope; a walk-off on climbers left with one short rappel is the alternative.",
+   "changed": "Dropped the aside about a second rope; kept the rest."
+  }
+ },
+ "az_abracadaver": {
+  "area": "az_rockfellow_dome",
+  "set": {
+   "rappels": "No single-rope count is documented for the line of ascent; a newer descent of three rappels on a single 70 m rope is reported near the top of Jabberwock",
+   "rappel_count_note": "The established descent is a long rappel down the north face. A newer line of three rappels, each on a single 70 m rope, is reported up and left of the top anchor of the neighbouring route Jabberwock. It is not confirmed that this is the line to use after Abracadaver, so check it on the ground before relying on it.",
+   "descent_text": "Descend by rappel. A newer line of three rappels on a single 70 m rope is reported up and left of the top anchor of Jabberwock; confirm it before relying on it. No single-rope count is known for rappelling the route itself."
+  },
+  "review": {
+   "confidence": "low",
+   "sources": [
+    "https://summitpost.org/abracadaver-5-11-pg-5-pitches/1057932",
+    "https://www.mountainproject.com/route/109546544/bandersnatch-hanger"
+   ],
+   "single_rope": "Search results mention a newer three-rappel descent on single 70 m rope near Jabberwock's top anchor; not confirmed for this route. Pages could not be fetched.",
+   "changed": "Replaced the two-rope instruction with what is and is not known for one rope."
+  }
+ },
+ "wa_sahale_mountain_r1": {
+  "area": "wa_sahale_mountain",
+  "set": {
+   "rappels": "One short rappel (~30m, single rope) off tat/sling anchors on the summit block down to the col; some parties instead continue south to the Sahale Glacier via a longer second rappel (a single 60m rope doubled).",
+   "descent_text": "Most parties reverse the col traverse and Quien Sabe Glacier back down to Boston Basin camp, staying roped through the crevassed midsection and re-negotiating the two snow-bridge crossings near 8,100 ft and 7,600 ft. Coming off the true summit block itself typically involves one short rappel rather than a downclimb - commonly to the southeast/south off the summit block on tat/slings at a natural anchor, dropping onto easier class 3 terrain; a single 30m rope is generally sufficient for this short rappel, though confident parties without rope sometimes downclimb the class 3-4 moves in reverse instead. Some parties skip reversing the technical col/glacier terrain and instead continue down the south side into the Sahale Glacier basin (as on the standard Sahale Arm route), which involves a second, longer rappel - a single 60m rope doubled, off tat anchors on the south face - down to a ledge, followed by a short 3rd-class downscramble to the Sahale Glacier, then a hike out via the Sahale Arm/Cascade Pass Trail. Either way, expect real crevasse hazard on the glacier descent that increases through the season, plus loose, chossy rock on the south-side downscramble option."
+  },
+  "review": {
+   "confidence": "medium",
+   "sources": [
+    "https://mountaineers.org/explore/routes-places/sahale-peak-quien-sabe-glacier",
+    "https://www.mountaineers.org/activities/trip-reports/sahale-peak-quien-sabe-glacier-5"
+   ],
+   "single_rope": "Summit-block rappel works on one 30 m rope or downclimbing; one party reached the bottom of the south-side rappel with a single 60 m rope.",
+   "changed": "Replaced the two 30 m ropes option with the single 60 m doubled in both rappels and descent_text."
+  }
+ },
+ "wa_sharkfin_tower_southeast_ridge": {
+  "area": "wa_sharkfin_tower",
+  "set": {
+   "rappels": "About 5 rappels on a single 60 m rope, reversing the route down the ridge and couloir to the Quien Sabe Glacier",
+   "rappel_count_note": "This count covers the couloir as well as the ridge above the notch. Climbers' accounts give about five rappels, descending by rappelling and downclimbing the route. One party logged three: 20 m into the gully, 10 m to the belay anchor, then a final 30 m rappel to the Quien Sabe Glacier. Anchors along this line are blocky and inconsistent, so inspect before trusting.",
+   "descent_text": "Descend by reversing the ridge: downclimb the upper class 4 crest a short distance (commonly cited as roughly 20 ft) to a chockstone/horn or fixed tat-and-ring station near the top of the gully, then rappel and downclimb the rest of the way back to the glacier along essentially the same line you climbed. Parties converge on roughly 4–5 rappels total to get from the ridge back down through the gully to the Quien Sabe Glacier — a short rappel or two off the upper ridge to regain the notch/gully, followed by two or three longer rappels down the couloir itself (some parties do the gully in two long raps of ~30 m each on a single 60 m rope doubled, others break it into shorter 15–20 m pitches on natural anchors). A single 60 m rope is generally enough for any individual station. Anchors are a mix of fixed tat-and-ring stations left by prior parties, slung chockstones and horns, and at least one station reported built from a couple of old pitons — quality is inconsistent and should not be trusted blindly. This matters here specifically: a well-documented 2005 accident on this exact descent involved a single-point natural anchor (one cordelette/webbing around a loose block, no backup) that failed under a multi-person rappel and resulted in three fatalities. Back up marginal anchors, rappel one at a time where anchors are questionable, and expect loose/blocky rock and, in shoulder season, wet rope and snow/ice in the gully. Once back on the Quien Sabe Glacier, downclimb/walk the snowfields back to camp, reversing the approach."
+  },
+  "review": {
+   "confidence": "medium",
+   "sources": [
+    "https://www.mountainproject.com/route/108338771/southeast-ridge",
+    "https://www.ncmountainguides.com/node/1295",
+    "https://mountaineers.org/activities/trip-reports/basic-alpine-climb-sharkfin-tower-se-ridge"
+   ],
+   "single_rope": "Anchors are tagged and one 60 m rope is needed; about 5 rappels mixed with downclimbing.",
+   "changed": "Kept the existing table (all stations under 30 m); removed the two-rope count and doubling advice from prose."
+  }
+ },
+ "wa_sherpa_peak_east_ridge": {
+  "area": "wa_sherpa_peak",
+  "set": {
+   "rappels": "Descend the West Ridge rap line: about 4 rappels on a single 60 m rope (two singles, a scramble, another single, then the last long rappel to the west notch, which can be split in two); parties heading for the South Gully often take only the first two and downclimb",
+   "rappel_count_note": "Counts run from 3 to 5 depending on how stations are combined. Three stations are listed here, down to the scramble and the single rappel below it. The last, longest rappel returns to the west notch; parties report it can be done as two single-rope rappels, but no station between is described, so none is listed. Some parties skip the final downclimb and rappel the loose gully straight from the notch. From the notch it is scree, talus and boot path back into the basin.",
+   "descent_text": "Most parties do not reverse the East Ridge; the accepted descent is to finish near the summit, traverse to the top of the West Ridge, and go down using the West Ridge's established rappel line (two rappels past the crux, a short scramble, another single, then a longer final rappel to the west notch that can be done as two single-rope rappels - see the West Ridge descent for full detail) before dropping back to the basin and Ingalls Creek. Some parties do reverse the East Ridge directly, especially when combining the climb with the nearby Balanced Rock feature: this involves downclimbing/rappelling a vertical chimney using chained-together fixed rappel slings, then a rappel down a steep gully to an exposed slab, then another rappel after crossing the slab, finishing with class 3 downclimbing to the 8,000-ft notch. Expect roughly 2-4 short single-rope rappels off existing (sometimes weathered) fixed slings and chains rather than full ropelength raps; a 50m rope was reported as sufficient. Back up any suspect fixed anchors with your own gear. From the notch/basin, reverse the approach: descend to Ingalls Creek Trail, cross the creek, and climb back over Longs Pass to the trailhead."
+  },
+  "rappel_detail": [
+   {
+    "n": 1,
+    "station": "Reached by reversing the exposed summit slab traverse from the summit block back to the top of the final pitch. It is on the crest, not on a face.",
+    "anchor": "Fixed slings around a horn or flake at the top of the last pitch, on the ridge crest. There is no anchor on the summit itself; parties who go to the top build a gear belay there and traverse back to the crest station.",
+    "lengthM": null,
+    "hazards": [
+     "It is a ridge rappel rather than a face rappel: the start is awkward and the ropes want to run down either side of the crest",
+     "Loose rock is present throughout this descent and parties specifically credit helmets; keep the group off the fall line"
+    ],
+    "pull": "If you intend to link this with the next rappel, the technique reported is to flick the rope over a horn so it hangs down the correct side; check the pull line before the last climber commits."
+   },
+   {
+    "n": 2,
+    "station": "At the base of the crux pitch, on the ascent line. It can be bypassed entirely: flicking the rope over a horn from station 1 lets a single 60 m rope doubled just reach the gully around the corner from the start of pitch 3, running rappels 1 and 2 as one roughly 30 m rappel.",
+    "anchor": "Fixed slings around a horn/flake at the foot of the crux (5.4-5.6) pitch.",
+    "lengthM": null,
+    "hazards": [
+     "If you take the linked option the rope only just reaches, and you arrive off-anchor; send the most capable scrambler down first, so they can unclip, reach the pitch-3 anchor and back up everyone behind",
+     "A rope that only just reaches will not reach if the last person weights it lower or the ends are uneven; knot the ends"
+    ]
+   },
+   {
+    "n": 3,
+    "station": "Below a long scrambling section that separates rappels 2 and 3, and it is one of the hard ones to find. Parties consistently report that the stations here are not obvious and recommend spotting and remembering them on the way up. This rappel also wanders off the ascent line.",
+    "anchor": "Fixed slings around a horn or flake. At least one station on this descent was reported as a solid load-bearing horn with a useless backup beside it, a wad of slings looped around a handful of small loose rocks. Clip the horn; treat the wad as decoration.",
+    "lengthM": null,
+    "hazards": [
+     "Route-finding: this rappel does not follow the climbing line, so what you see on the way down is not what you climbed",
+     "Loose rock on and below the station"
+    ],
+    "notes": "Some parties shorten their ascent pitches deliberately so that they belay at these stations and know exactly where they are on the way down."
+   }
+  ],
+  "replace_rappels": true,
+  "review": {
+   "confidence": "medium",
+   "sources": [
+    "https://www.mountaineers.org/activities/routes-places/ingalls-stuart-area/sherpa-peak-w-ridge",
+    "https://www.mountaineers.org/activities/trip-reports/intermediate-alpine-climb-sherpa-peak-west-ridge-3",
+    "https://stg.openbeta.io/climb/4d9035ba-8175-5189-beda-aaec46a68c4d/west-ridge"
+   ],
+   "single_rope": "West Ridge rap line is mostly single-rope rappels; the last long one can be done as two single-rope rappels (no intermediate station described); one source says 4 single-rope rappels.",
+   "changed": "Dropped the two-rope final station from the table, rewrote the count and note for one rope."
+  }
+ },
+ "wa_sherpa_peak_west_ridge": {
+  "area": "wa_sherpa_peak",
+  "set": {
+   "rappels": "About 4 rappels on a single 60 m rope down the ascent line: two singles, a scramble, another single, then the last long rappel to the west notch, which can be split in two. Parties combine or split stations differently, so expect 3-5.",
+   "rappel_count_note": "Counts run from 3 to 5 depending on how stations are combined. Three stations are listed here, down to the scramble and the single rappel below it. The last, longest rappel returns to the west notch; parties report it can be done as two single-rope rappels, but no station between is described, so none is listed. Some parties skip the final downclimb and rappel the loose gully straight from the notch. From the notch it is scree, talus and boot path back into the basin.",
+   "descent_text": "The standard descent reverses the West Ridge using a sequence of rappels rather than downclimbing the whole route. From the summit area, two single-rope rappels lead down past the crux (5.4-5.6) pitch to a short 3rd-class scramble; this is followed by another single-rope rappel and then a longer final rappel that returns you to the west notch below the technical climbing, which parties can break into two single-rope rappels. Anchors are a mix of fixed slings around horns and flakes; most are solid (slings around big, well-set flakes/horns), but at least one reported station was backed by a sketchy bundle of slings wrapped around a few small loose rocks next to the actual load-bearing horn - inspect and back up questionable tat with your own gear. Some parties skip the last downclimb and instead rappel directly down the loose, dirty gully from the notch. Bring a 60m rope and extra slings/cord to replace weathered anchors. From the notch, descend scree/talus and boot path back into the basin (glissading is possible on lingering snow) to camp, then reverse the approach over Longs Pass to the trailhead. Total rappel count is commonly described as four (two singles, a scramble, one more single, then a final long rappel that can be split in two); some parties count three depending on how stations are combined, so expect 3-5 total."
+  },
+  "rappel_detail": [
+   {
+    "n": 1,
+    "station": "Reached by reversing the exposed summit slab traverse from the summit block back to the top of the final pitch. It is on the crest, not on a face.",
+    "anchor": "Fixed slings around a horn or flake at the top of the last pitch, on the ridge crest. There is no anchor on the summit itself; parties who go to the top build a gear belay there and traverse back to the crest station.",
+    "lengthM": null,
+    "hazards": [
+     "It is a ridge rappel rather than a face rappel: the start is awkward and the ropes want to run down either side of the crest",
+     "Loose rock is present throughout this descent and parties specifically credit helmets; keep the group off the fall line"
+    ],
+    "pull": "If you intend to link this with the next rappel, the technique reported is to flick the rope over a horn so it hangs down the correct side; check the pull line before the last climber commits."
+   },
+   {
+    "n": 2,
+    "station": "At the base of the crux pitch, on the ascent line. It can be bypassed entirely: flicking the rope over a horn from station 1 lets a single 60 m rope doubled just reach the gully around the corner from the start of pitch 3, running rappels 1 and 2 as one roughly 30 m rappel.",
+    "anchor": "Fixed slings around a horn/flake at the foot of the crux (5.4-5.6) pitch.",
+    "lengthM": null,
+    "hazards": [
+     "If you take the linked option the rope only just reaches, and you arrive off-anchor; send the most capable scrambler down first, so they can unclip, reach the pitch-3 anchor and back up everyone behind",
+     "A rope that only just reaches will not reach if the last person weights it lower or the ends are uneven; knot the ends"
+    ]
+   },
+   {
+    "n": 3,
+    "station": "Below a long scrambling section that separates rappels 2 and 3, and it is one of the hard ones to find. Parties consistently report that the stations here are not obvious and recommend spotting and remembering them on the way up. This rappel also wanders off the ascent line.",
+    "anchor": "Fixed slings around a horn or flake. At least one station on this descent was reported as a solid load-bearing horn with a useless backup beside it, a wad of slings looped around a handful of small loose rocks. Clip the horn; treat the wad as decoration.",
+    "lengthM": null,
+    "hazards": [
+     "Route-finding: this rappel does not follow the climbing line, so what you see on the way down is not what you climbed",
+     "Loose rock on and below the station"
+    ],
+    "notes": "Some parties shorten their ascent pitches deliberately so that they belay at these stations and know exactly where they are on the way down."
+   }
+  ],
+  "replace_rappels": true,
+  "review": {
+   "confidence": "medium",
+   "sources": [
+    "https://www.mountaineers.org/activities/routes-places/ingalls-stuart-area/sherpa-peak-w-ridge",
+    "https://www.mountaineers.org/activities/trip-reports/intermediate-alpine-climb-sherpa-peak-west-ridge-3",
+    "https://stg.openbeta.io/climb/4d9035ba-8175-5189-beda-aaec46a68c4d/west-ridge"
+   ],
+   "single_rope": "Route description: two singles, scramble, single, final long rappel; a 2016 report says the long one could be two singles; OpenBeta says 4 single-rope rappels.",
+   "changed": "Dropped the two-rope station 4 from the table, removed all double-rope wording."
+  }
+ }
+}

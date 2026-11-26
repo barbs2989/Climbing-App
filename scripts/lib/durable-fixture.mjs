@@ -291,21 +291,29 @@ export async function durableFixture(log) {
     }
   }
 
-  // THE DURABLE CREW CLIMBED YESTERDAY, ON EVERY RUN. It was seeded once
-  // (scripts/oneoff/seed-ci-test-fixture.mjs) proposing 2026-09-12 and -13, and it is the crew the
-  // walk's roster, chat and recap assertions are about. Two things need its day to keep moving:
-  //   * since #3816 a crew whose last day is long behind is a PAST crew, so on 2026-11-24 this
-  //     account's Crews tab read "You have no crews yet" and check:signed-in failed on four lines
-  //     with the app correct;
-  //   * the recap (0519) lists crewmates only for a crew with an AGREED day, and takes answers for
-  //     14 days after it. See fixtureTripDay() in ui-fixture.mjs for why yesterday, and why this
-  //     crew and never a per-run one.
-  // Same reason as the policy stamp and the disciplines above: these rows are permanent, so a
-  // property has to KEEP being true. It is the organizer's own "lock the day" (agreed_date +
-  // date_forced, 0075), written by the crew's CREATOR on their own JWT (the update policy is
-  // created_by = auth.uid()), read back, and skipped when the row already says it.
+  // THE DURABLE CREW'S TRIP: an AGREED day in the past, so the recap (0519) has a roster to show.
+  // It was seeded once (scripts/oneoff/seed-ci-test-fixture.mjs) and is what the recap assertions
+  // are about: the recap lists crewmates only for a crew with an agreed day, and takes answers for
+  // 14 days after it. See fixtureTripDay() in ui-fixture.mjs for why yesterday, and why this crew and
+  // never a per-run one.
+  //
+  // THE DAY MOVES AT MOST ONCE EVERY 15 DAYS, because the database says so. #3876 relocked it to
+  // yesterday on EVERY run; a day later 0525/0527 (crew_keep_day_while_reportable) made a crew's day
+  // immovable from the day itself until its trip reports close 14 days on, so from 2026-11-24 every
+  // run died with "This crew's day has come, so it stays Nov 23 until its trip reports close on
+  // Dec 07" and render-guards was red on main for three days with the app correct. The rule is
+  // right; the fixture was asking for something no organizer may do. So: keep the day while the
+  // recap is still open for it (yesterday back to 14 days ago, exactly the trigger's window), and
+  // move it to yesterday only once that window has closed, which is also exactly when the trigger
+  // lets it move. Written by the crew's CREATOR on their own JWT (update policy created_by =
+  // auth.uid()), read back.
+  //
+  // The CREW CARD and CHAT assertions no longer lean on this crew: after 3 days
+  // (CREW_ARCHIVE_GRACE_DAYS) a crew whose day passed is a PAST crew, so for 11 of every 15 days it
+  // is not a card on the Crews tab. The crew below that never agrees a day carries those.
+  const DURABLE_CREW_MEET = "Heliotrope Ridge TH";
+  const dayNum = (d) => Date.UTC(+d.slice(0, 4), +d.slice(5, 7) - 1, +d.slice(8, 10)) / 86400000;
   {
-    const DURABLE_CREW_MEET = "Heliotrope Ridge TH";
     const got = await asUser(session, `crews?route_id=eq.${CREW_ROUTE_ID}&meet_place=eq.${encodeURIComponent(DURABLE_CREW_MEET)}&select=id,created_by,dates,agreed_date`);
     assertHealthy(got, "reading the durable crew's day");
     const rows = Array.isArray(got.json) ? got.json : [];
@@ -313,13 +321,62 @@ export async function durableFixture(log) {
     const day = fixtureTripDay();
     for (const c of rows) {
       const had = String(c.agreed_date || "").slice(0, 10);
-      if (had === day && (c.dates || []).map((d) => String(d).slice(0, 10)).join() === day) continue;
+      const age = /^\d{4}-\d{2}-\d{2}$/.test(had) ? dayNum(day) - dayNum(had) : null;
+      if (age !== null && age >= 0 && age <= 13) { log(`  the durable crew's trip day is ${had}, ${age} day(s) before yesterday: its recap is still open, so it stays`); continue; }
       const by = c.created_by === session.user.id ? session : c.created_by === mateSession.user.id ? mateSession : null;
       if (!by) throw new Error(`the durable crew ${c.id} belongs to neither fixture account, so nobody here may lock its day`);
       const up = await asUser(by, `crews?id=eq.${c.id}&select=id,agreed_date`, { method: "PATCH", body: JSON.stringify({ dates: [day], agreed_date: day, date_forced: true }) });
       assertHealthy(up, "locking the durable crew's day");
       if (up.status >= 300 || String(up.json?.[0]?.agreed_date || "").slice(0, 10) !== day) throw new Error(`could not lock the durable crew's day (HTTP ${up.status}): ${(up.text || "").slice(0, 200)}`);
-      log(`  locked the durable crew's day to yesterday (${had || "none"} -> ${day}): active for 3 days, and its recap lists the crewmate (0519)`);
+      log(`  locked the durable crew's day to yesterday (${had || "none"} -> ${day}): its recap lists the crewmate for 14 days (0519)`);
+    }
+  }
+
+  // THE DURABLE CREW CARD: the same two climbers on the same route, with NO agreed day and proposed
+  // days three weeks out, so it is an ACTIVE crew card on every run whatever the trip crew's day is.
+  // Created once by the OWNER (0408 seats the creator; the creator may seat the mate CONFIRMED, the
+  // same path the per-run invite crew uses), found again by its meet place, and its proposed days
+  // rolled forward whenever they come within a week, so it never ages into a past crew (#3816).
+  // Never swept: the stale sweep above only takes crews the MATE created.
+  {
+    const CARD_MEET = "Glacier Creek Rd gate";
+    const got = await asUser(session, `crews?route_id=eq.${CREW_ROUTE_ID}&meet_place=eq.${encodeURIComponent(CARD_MEET)}&created_by=eq.${session.user.id}&select=id,dates,agreed_date&order=created_at.asc`);
+    assertHealthy(got, "reading the durable crew card");
+    let card = Array.isArray(got.json) ? got.json[0] : null;
+    if (!card) {
+      const mkCard = await asUser(session, "crews", { method: "POST", body: JSON.stringify({ created_by: session.user.id, route_id: CREW_ROUTE_ID, dates: fixtureCrewDays(1), meet_place: CARD_MEET, meet_time: "05:00", cap: 4 }) });
+      assertHealthy(mkCard, "creating the durable crew card");
+      card = mkCard.json?.[0];
+      if (!card?.id) throw new Error(`could not create the durable crew card (HTTP ${mkCard.status}): ${(mkCard.text || "").slice(0, 200)}`);
+      log(`  created the durable crew card ${card.id.slice(0, 8)} (owner + mate, no agreed day)`);
+    }
+    if (!(await alreadySeated(session, card.id, session.user.id))) {
+      const s1 = await asUser(session, "crew_members", { method: "POST", body: JSON.stringify({ crew_id: card.id, user_id: session.user.id, status: "confirmed", invited_by: session.user.id }) });
+      assertHealthy(s1, "seating the owner in the durable crew card");
+    }
+    // The owner INVITES and the mate ACCEPTS on their own JWT: "Only the climber themselves can accept a
+    // crew invite" (403), so a creator cannot seat anyone else as confirmed. Same path the area crew's
+    // accept below takes, and the path a real invite takes.
+    if (!(await alreadySeated(session, card.id, mateSession.user.id))) {
+      const has = await asUser(session, `crew_members?crew_id=eq.${card.id}&user_id=eq.${mateSession.user.id}&select=status`);
+      assertHealthy(has, "reading the mate's seat in the durable crew card");
+      if (!(Array.isArray(has.json) && has.json.length)) {
+        const inv = await asUser(session, "crew_members", { method: "POST", body: JSON.stringify({ crew_id: card.id, user_id: mateSession.user.id, status: "invited", invited_by: session.user.id }) });
+        assertHealthy(inv, "inviting the mate to the durable crew card");
+        if (inv.status >= 300) throw new Error(`could not invite the mate to the durable crew card (HTTP ${inv.status}): ${(inv.text || "").slice(0, 200)}`);
+      }
+      const acc = await asUser(mateSession, `crew_members?crew_id=eq.${card.id}&user_id=eq.${mateSession.user.id}`, { method: "PATCH", body: JSON.stringify({ status: "confirmed" }) });
+      assertHealthy(acc, "the mate accepting the durable crew card");
+      if (acc.status >= 300 || !Array.isArray(acc.json) || acc.json.length !== 1) throw new Error(`the mate could not accept the durable crew card (HTTP ${acc.status}): ${(acc.text || "").slice(0, 200)}`);
+      log("  the mate accepted the durable crew card's invite — both CONFIRMED");
+    }
+    const last = (card.dates || []).map((d) => String(d).slice(0, 10)).sort().pop() || "";
+    const today = fixtureTripDay(new Date(Date.now() + 86400000));
+    if (card.agreed_date || !last || dayNum(last) - dayNum(today) < 7) {
+      const roll = await asUser(session, `crews?id=eq.${card.id}&select=id,dates`, { method: "PATCH", body: JSON.stringify({ dates: fixtureCrewDays(1), agreed_date: null, date_forced: false }) });
+      assertHealthy(roll, "rolling the durable crew card's days forward");
+      if (roll.status >= 300) throw new Error(`could not roll the durable crew card's days forward (HTTP ${roll.status}): ${(roll.text || "").slice(0, 200)}`);
+      log(`  rolled the durable crew card's proposed day forward to ${fixtureCrewDays(1)[0]}`);
     }
   }
 

@@ -1,0 +1,293 @@
+[
+ {
+  "id": "wa_east_twin_needle_south_route",
+  "name": "South Route",
+  "area": "wa_east_twin_needle",
+  "area_name": "East Twin Needle",
+  "area_parent": "wa_southern_pickets",
+  "discipline": "alpine",
+  "grade": "5.7",
+  "pitches": null,
+  "current": {
+   "rappels": "One to three short single-rope rappels off natural anchors down the south gullies to the Eye Col; parties continuing to West Twin Needle exit by the Himmelhorn-West Twin Needle notch on two double-rope rappels",
+   "rappel_count_note": "Reversing the route takes one to three short single-rope rappels off horns and slings, depending on snow cover and the gully taken; their positions are not published. Two 60 m ropes are recommended because the enchainment exit via the Himmelhorn-West Twin Needle notch needs two double-rope rappels.",
+   "rappel_detail": null,
+   "descent_text": "Most parties reverse the route: downclimb the south-facing gullies back to the Eye Col and continue down into Crescent Creek Basin, a mix of class 4 downclimbing and short rappels off natural anchors (rock horns and slings - no bolted stations reported) on loose rock; expect 1-3 short single-rope rappels depending on snow coverage and the exact gully taken. East Twin Needle is frequently climbed in combination with West Twin Needle as part of a Southern Pickets enchainment; in that case parties continue the ridge west and exit via the Himmelhorn-West Twin Needle notch rather than re-descending the Eye Col gullies. That exit is better documented: two rappels using double 60m ropes are needed below the notch to get past vertical slabs, landing on grass and sloping rock around 6,800'; from there the route continues down a south gully with additional short rappels over vertical rock above a lingering snowfield before regaining Crescent Creek Basin. All anchors encountered on this descent are natural (horns, chockstones, slings) - carry cord/webbing for anchor building and expect to leave gear. From Crescent Creek Basin, reverse the approach: back up and over the Chopping Block ridge, down The Barrier (roughly 4,300' of descent to Terror Creek - loose and brushy, arguably harder in descent than ascent), across Terror Creek, and out the Goodell Creek Trail to the trailhead."
+  }
+ },
+ {
+  "id": "wa_forbidden_peak_east_ledges",
+  "name": "East Ledges",
+  "area": "wa_forbidden_peak",
+  "area_name": "Forbidden Peak",
+  "area_parent": "wa_boston_basin",
+  "discipline": "mountaineering",
+  "grade": "Class 4",
+  "pitches": null,
+  "current": {
+   "rappels": "5 single-rope rappels, approximately 400 ft total, down the NE Face",
+   "rappel_count_note": "The East Ridge itself is not reversed as a rappel line. These stations are the East Ledges descent: three rappels heading northeast from the summit, a short exposed grassy traverse, then two more onto the ledges. Individual lengths are not stated, so no per-station length is shown.",
+   "rappel_detail": [
+    {
+     "n": 1,
+     "pull": "Five single-rope rappels totalling roughly 400 ft, so a 60 m rope doubled covers every one — two ropes buy nothing here.",
+     "notes": "First of three rappels heading northeast from the summit area.",
+     "anchor": "Natural anchor (slung horn/block), trending NE off summit",
+     "hazards": [
+      "Easy to rappel past the next anchor: it appears short of the rope end and does not read as a station from above",
+      "Parties have had to free a jammed rappel rope on this descent, and one needed a handline thrown down to finish the exit gully"
+     ],
+     "lengthM": null,
+     "station": "A slung horn at the summit. The line drops straight down the northeast face rather than following any rib or ridge, and the stations below are oddly rigged and scruffy rather than obvious — they come into view before you reach the end of a 60 m rope, not at it."
+    },
+    {
+     "n": 2,
+     "notes": "Second of the three NE-trending rappels.",
+     "anchor": "Natural/tat anchor, continuing NE trend",
+     "lengthM": null
+    },
+    {
+     "n": 3,
+     "notes": "Third rappel; followed by a short, exposed grassy traverse east to the next rock rib before the final two rappels.",
+     "anchor": "Natural/tat anchor near next rock rib",
+     "hazards": [
+      "The link between the two anchors is a sloping grass-and-dirt traverse over slab with full exposure, and it is the section parties are usually unroped on"
+     ],
+     "lengthM": null,
+     "station": "The third rappel ends at the start of a short, exposed grassy traverse running east to the next rock rib. The following anchor is on that rib, not beneath you, so you walk before you rappel again."
+    },
+    {
+     "n": 4,
+     "notes": "First of two rappels dropping onto the East Ledges; a handful of fixed/bolted stations exist along this option.",
+     "anchor": "Mixed natural/fixed anchor above East Ledges",
+     "lengthM": null
+    },
+    {
+     "n": 5,
+     "notes": "Final rappel reaching the East Ledges, from which loose class 3-4 ledges/slabs are descended on foot above the Boston Glacier.",
+     "anchor": "Anchor above East Ledges",
+     "hazards": [
+      "Several hundred metres of loose sandy and grassy 3rd-class ledges follow, with 4th-class steps where the ledges cross each rock rib",
+      "Cairns come in a higher and a lower set at every rib and the two are not equivalent — the low line finishes in a 4th-class red gully",
+      "Rockfall onto your own party on the ledges and the slabs below: move one at a time between sheltered stances"
+     ],
+     "lengthM": null,
+     "station": "The last rappel lands on the East Ledges themselves. Some parties instead downclimb from the bottom of this rope to a further anchor on steep ledges above the Boston Glacier rather than walking straight off."
+    }
+   ],
+   "descent_text": "The usual descent is the ascent line reversed. From a horn near the summit, make the first of five single-rope rappels (roughly 400 ft total) down the northeast side to a series of ledges, then follow the ledges east - mostly 3rd class with short 4th-class moves at rib crossings - across roughly five rock ribs before a short gully leads back up to the East Ridge crest near the solitary gendarme. There is no easy way off Forbidden Peak - this line is unprotectable in places and has had a fatality (1975) on the ledge traverse. Cairns (a higher and lower option at most rib crossings) mark the easiest line; recent parties describe the terrain as more straightforward than its reputation suggests when the cairned line is followed carefully, but conditions and route-finding difficulty vary by party experience and weather. From the gendarme, continue down the East Ridge's standard gully system to Boston Basin."
+  }
+ },
+ {
+  "id": "wa_forbidden_peak_east_ridge",
+  "name": "East Ridge Direct",
+  "area": "wa_forbidden_peak",
+  "area_name": "Forbidden Peak",
+  "area_parent": "wa_boston_basin",
+  "discipline": "alpine",
+  "grade": "5.8-",
+  "pitches": 6,
+  "current": {
+   "rappels": "~5 single-rope rappels down the north side on the East Ledges descent, the standard way off this route. Reversing to the West Ridge instead takes about eight.",
+   "rappel_count_note": "The East Ridge itself is not reversed as a rappel line. These stations are the East Ledges descent: three rappels heading northeast from the summit, a short exposed grassy traverse, then two more onto the ledges. Individual lengths are not stated, so no per-station length is shown.",
+   "rappel_detail": [
+    {
+     "n": 1,
+     "pull": "Five single-rope rappels totalling roughly 400 ft, so a 60 m rope doubled covers every one — two ropes buy nothing here.",
+     "notes": "First of three rappels heading northeast from the summit area.",
+     "anchor": "Natural anchor (slung horn/block), trending NE off summit",
+     "hazards": [
+      "Easy to rappel past the next anchor: it appears short of the rope end and does not read as a station from above",
+      "Parties have had to free a jammed rappel rope on this descent, and one needed a handline thrown down to finish the exit gully"
+     ],
+     "lengthM": null,
+     "station": "A slung horn at the summit. The line drops straight down the northeast face rather than following any rib or ridge, and the stations below are oddly rigged and scruffy rather than obvious — they come into view before you reach the end of a 60 m rope, not at it."
+    },
+    {
+     "n": 2,
+     "notes": "Second of the three NE-trending rappels.",
+     "anchor": "Natural/tat anchor, continuing NE trend",
+     "lengthM": null
+    },
+    {
+     "n": 3,
+     "notes": "Third rappel; followed by a short, exposed grassy traverse east to the next rock rib before the final two rappels.",
+     "anchor": "Natural/tat anchor near next rock rib",
+     "hazards": [
+      "The link between the two anchors is a sloping grass-and-dirt traverse over slab with full exposure, and it is the section parties are usually unroped on"
+     ],
+     "lengthM": null,
+     "station": "The third rappel ends at the start of a short, exposed grassy traverse running east to the next rock rib. The following anchor is on that rib, not beneath you, so you walk before you rappel again."
+    },
+    {
+     "n": 4,
+     "notes": "First of two rappels dropping onto the East Ledges; a handful of fixed/bolted stations exist along this option.",
+     "anchor": "Mixed natural/fixed anchor above East Ledges",
+     "lengthM": null
+    },
+    {
+     "n": 5,
+     "notes": "Final rappel reaching the East Ledges, from which loose class 3-4 ledges/slabs are descended on foot above the Boston Glacier.",
+     "anchor": "Anchor above East Ledges",
+     "hazards": [
+      "Several hundred metres of loose sandy and grassy 3rd-class ledges follow, with 4th-class steps where the ledges cross each rock rib",
+      "Cairns come in a higher and a lower set at every rib and the two are not equivalent — the low line finishes in a 4th-class red gully",
+      "Rockfall onto your own party on the ledges and the slabs below: move one at a time between sheltered stances"
+     ],
+     "lengthM": null,
+     "station": "The last rappel lands on the East Ledges themselves. Some parties instead downclimb from the bottom of this rope to a further anchor on steep ledges above the Boston Glacier rather than walking straight off."
+    }
+   ],
+   "descent_text": "The East Ridge is not reversed as a rappel line in its own right; two descents are used instead. The standard one is the East Ledges, dropping climber's-right/northeast directly off the summit: three rappels trend northeast from the summit area, then a short, exposed grassy traverse east to the next rock rib, followed by two more rappels onto the East Ledges proper, about 5 rappels in all. From there, several hundred metres of loose, sandy and grassy class 3–4 ledges and slabs, marked by intermittent and sometimes doubled cairn lines, lead east above the cliffs over the crevassed Boston Glacier to a gully about 100 ft below the Solitary Gendarme; go up and over the East Ridge through it, then down snow slopes on the south side to the small glacier below Forbidden's south face and the walk back across Boston Basin. The alternative is to reverse along the ridge crest past the gendarmes to the West Ridge notch and descend the West Ridge line: about three rappels on the ridge and about five down the Cat Scratch gullies, roughly eight on a single 60 m rope. It is longer, but it is more travelled and easier to follow, and many parties prefer it to the East Ledges, which are faster but loose, exposed, rockfall-prone and easy to lose. Either way, expect mostly natural slung-horn and block anchors with some tat and a handful of fixed or bolted stations, and carry a 60 m rope. In August and September the West Ridge can be mostly downclimbed, needing at most one rappel."
+  }
+ },
+ {
+  "id": "wa_davis_holland_route",
+  "name": "Davis-Holland Route",
+  "area": "wa_full_or_nearly_wall_routes",
+  "area_name": "Full (or nearly) Wall Routes",
+  "area_parent": "wa_f_central_wall_area",
+  "discipline": "trad",
+  "grade": "5.10c",
+  "pitches": 3,
+  "current": {
+   "rappels": "3 single-rope rappels from the bolted belays, starting at the top of pitch 3; double ropes make it one long rappel to the ground",
+   "rappel_count_note": "Every belay is bolted. Most parties rappel from the top of pitch 3 rather than continuing up the brushy upper pitches. With two ropes it is one long rappel to the ground; with a single rope, one per pitch.",
+   "rappel_detail": [
+    {
+     "n": 1,
+     "notes": "Rappel 1 of 3 on a single rope, down pitch 3 to the anchor at the top of pitch 2.",
+     "anchor": "bolted belay anchor",
+     "lengthM": null,
+     "station": "The anchor at the top of pitch 3."
+    },
+    {
+     "n": 2,
+     "notes": "Rappel 2 of 3 on a single rope, down pitch 2 to the anchor at the top of pitch 1.",
+     "anchor": "bolted belay anchor",
+     "lengthM": null,
+     "station": "The anchor at the top of pitch 2."
+    },
+    {
+     "n": 3,
+     "notes": "Rappel 3 of 3 on a single rope, down pitch 1 to the ground.",
+     "anchor": "bolted belay anchor",
+     "lengthM": null,
+     "station": "The anchor at the top of pitch 1."
+    }
+   ],
+   "descent_text": "Most parties rappel from the bolted anchor at the top of pitch 3 rather than continuing up the brushy upper pitches or onto Lovin' Arms. Every belay on the route is bolted. Double ropes allow a long rappel to the ground; with a single rope, expect more, shorter rappels."
+  }
+ },
+ {
+  "id": "wa_garfield_mountain_infinite_bliss",
+  "name": "Infinite Bliss",
+  "area": "wa_garfield_mountain",
+  "area_name": "Garfield Mountain",
+  "area_parent": "wa_exit_34_middle_fork_amp_taylor_river",
+  "discipline": "alpine",
+  "grade": "5.10c",
+  "pitches": 23,
+  "current": {
+   "rappels": "Counts for this rappel line differ - about 20 to 25 double-rope rappels off the chained stations, interspersed with downclimbing. They do not correspond one-to-one with the route's 23 pitches. Two 60 m ropes are required; a single 70 m or 80 m is not long enough for some stations. Reported rappel times run 2.5 to 4 hours.",
+   "rappel_count_note": null,
+   "rappel_detail": null,
+   "descent_text": "Rappel the line. Two 60 m ropes are required — a single 70 m or 80 m is not long enough for some stations. Reported rappel times run 2.5 to 4 hours. The stations are chained; one station 10 m above the crux anchor lets two 60 m ropes reach the base of the crux pitch in one rappel. Carrying over the top and descending the far side of the mountain has been done but risks an extra night out in brushy, cliffy terrain, and is not recommended. Knot your rope ends: a climber died here on September 7, 2014 after deliberately bypassing a station in fading light, running out of rope, and falling roughly three pitches. Start the rappels with real daylight in hand, and watch for parties still climbing beneath you."
+  }
+ },
+ {
+  "id": "wa_garfield_mountain_preiss_route",
+  "name": "Preiss Route",
+  "area": "wa_garfield_mountain",
+  "area_name": "Garfield Mountain",
+  "area_parent": "wa_exit_34_middle_fork_amp_taylor_river",
+  "discipline": "alpine",
+  "grade": "5.9",
+  "pitches": 13,
+  "current": {
+   "rappels": "No fixed rappel line on the route. Descend over the main West Peak summit and down the west ridge, or - if you have carried two 60 m ropes - rappel Infinite Bliss instead: counts for this rappel line differ - about 20 to 25 double-rope rappels. Do not head straight down the northwest backside slope.",
+   "rappel_count_note": null,
+   "rappel_detail": null,
+   "descent_text": "From the sub-summit, walk down and left through the small gap in the trees onto the gentle northern slope, then go up and over the main West Peak summit and descend the west ridge. Do NOT head straight down the northwest backside slope — the first ascensionist flags this specifically. The alternative, if you have carried two 60 m ropes, is to rappel Infinite Bliss (about 20 rappels off the chain stations); a single 70 m or 80 m is not long enough for those stations. Either way this is a long descent on brushy, disorienting terrain and should be started with hours of daylight in hand."
+  }
+ },
+ {
+  "id": "wa_garfield_mountain_south_route",
+  "name": "South Route (Main Peak)",
+  "area": "wa_garfield_mountain",
+  "area_name": "Garfield Mountain",
+  "area_parent": "wa_exit_34_middle_fork_amp_taylor_river",
+  "discipline": "alpine",
+  "grade": "5.8",
+  "pitches": 9,
+  "current": {
+   "rappels": "About 8 rappels: one single-rope from the summit slab to the col, about four double-rope (two 60 m ropes) down #2 Gully, one single-rope off the wooded ramp, and two double-rope down the lower slab",
+   "rappel_count_note": null,
+   "rappel_detail": [
+    {
+     "n": 1,
+     "notes": "Rappel 1 of 8, single rope, to the col at the top of #2 Gully.",
+     "anchor": "anchor at the top of the easy summit slab",
+     "lengthM": null,
+     "station": "From the summit, scramble down to the top of the easy slab."
+    },
+    {
+     "n": 2,
+     "notes": "Rappel 2 of 8, the first of about four double-rope rappels (two 60 m ropes) down #2 Gully.",
+     "anchor": "bolted rappel station",
+     "lengthM": null,
+     "station": "Scramble from the col to the bolted station on the east side of #2 Gully."
+    },
+    {
+     "n": 3,
+     "notes": "Rappel 3 of 8, double-rope, down #2 Gully.",
+     "anchor": "tree or chockstone with old slings",
+     "hazards": [
+      "Slings here date back decades; back them up or replace them."
+     ],
+     "lengthM": null,
+     "station": "After traversing a long stretch of slab, up to 100 yards, on the east side of the gully."
+    },
+    {
+     "n": 4,
+     "notes": "Rappel 4 of 8, double-rope, down #2 Gully.",
+     "anchor": "tree or chockstone with old slings",
+     "lengthM": null,
+     "station": "The next station down the east side of the gully, after another slab traverse."
+    },
+    {
+     "n": 5,
+     "notes": "Rappel 5 of 8, double-rope. Near the base of the gully, pack the ropes and downclimb.",
+     "anchor": "tree or chockstone with old slings",
+     "hazards": [
+      "The west-side rock near the base of the gully is the loosest on the descent; a party member was struck by a 500 lb block that came loose under hand pressure in 2001."
+     ],
+     "lengthM": null,
+     "station": "The lowest station in #2 Gully."
+    },
+    {
+     "n": 6,
+     "notes": "Rappel 6 of 8, single rope, off the steep part of the ramp. Continue down past the Glade Saddle.",
+     "anchor": "tree on the wooded ramp",
+     "lengthM": null,
+     "station": "The steep section of the wooded ramp, reached after crossing back over the Y Notch and the Key Ledge Traverse."
+    },
+    {
+     "n": 7,
+     "notes": "Rappel 7 of 8, double-rope, down the slab.",
+     "anchor": "anchor at the top of the lower slab",
+     "lengthM": null,
+     "station": "The top of the lower slab."
+    },
+    {
+     "n": 8,
+     "notes": "Rappel 8 of 8, double-rope, to the base of the slab.",
+     "anchor": "anchor partway down the lower slab",
+     "lengthM": null,
+     "station": "Partway down the lower slab."
+    }
+   ],
+   "descent_text": "From the summit scramble down to the top of the easy slab and rig a single-rope rappel to the col at the top of #2 Gully. From there scramble to a bolted rappel station and make the first of about four double-rope rappels with two 60 m ropes, traversing 100-yard stretches of slab between stations on the east side of the gully; the lower stations are on trees and chockstones with slings dating back to the 1990s. Pack the ropes near the base of the gully and downclimb — this is where the west-side rock is loosest and where a party member was struck by a 500-pound block that cut loose under hand pressure in 2001. Cross back over the Y Notch and the Key Ledge Traverse, make a single-rope rappel off the steep section of the wooded ramp, and continue down past the Glade Saddle. Two more double-rope rappels land you at the base of the slab at 2,900 ft; from there it is the wooded ridge, then the dirt gully to the creek at 2,100 ft, then the faint trail and the dry creek bed to the car. Expect to lose the trail in the dark at least once."
+  }
+ }
+]

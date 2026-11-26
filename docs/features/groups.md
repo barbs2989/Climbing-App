@@ -6,6 +6,15 @@ views under `groupsTab`: For you · Your groups · Your activity · Discover · 
 (owner 2026-11-23: a photo someone posts already shows in the Discussion).
 
 ## 1. What it does today
+- **The Discussion draws 10 posts at a time** (`GROUP_POSTS_PAGE` in `GroupDiscussionTab`; owner note 2026-11-26,
+  "the screen freezes when I click on groups that I have joined"). Pinned posts always show; under the rest,
+  *Show more posts (N more)* adds the next 10. Before, every post was drawn at once: at 150 posts the tab built ~5,000
+  elements and 729 buttons in one go and held the screen 1.6 + 1.3 s; now 662 elements and one 343 ms task
+  (`scripts/oneoff/probe-group-open-freeze.mjs`, which signs in a fixture member of a filled group, opens it over and
+  over and times every tap, on a phone or `--desktop`). A shared post link past the first page still lands: the page
+  grows to include that post (`focusPostId`) and keeps it. No permanent freeze could be made to happen on any path
+  (phone and desktop at 1280-1920 wide, guest and signed in, the nav strip, the page lock), so a stall of 2 s or more
+  is now written to `app_errors` (`lib/errorReport.js`) for the next time.
 - **Who may change what.** Only a group's **managers** (the owner and its moderators) can change its settings,
   including **public / private**. The *Make private / Make public* switch and the *Edit group* button render only
   for a manager (`isMod`, which also requires an active membership), and the server refuses anyone else:
@@ -27,10 +36,13 @@ views under `groupsTab`: For you · Your groups · Your activity · Discover · 
   groups is matched in the browser by the same rule (`searchMatches`, `lib/search.js`).
 - **Discover — explore by state** (reworked 2026-11-13 for scale). Under *Explore by discipline*, at most six state
   chips (`STATE_CHIPS`): your **home** state, then the states of the areas you listed yourself at for partners
-  (`partner_areas`, 0300) — marked *You climb here* — then the states with the most groups. A chip filters the list to
+  (`partner_areas`, 0300) — marked *You climb here* — then **every state you downloaded**, marked *Downloaded*, each
+  with its count even at 0 (owner 2026-11-26: "it only shows Utah for me … I also have Colorado and Idaho downloaded";
+  your own states are never cut by the six), then the states with the most groups. A chip filters the list to
   that whole state and combines with the search box. The list below (*Every state* or one state, alphabetical, with
-  counts) holds every state with a group **and every state you downloaded**, then, in its own *Every other state* section, **every other US state** at 0 (`US_STATES`; owner 2026-11-23, to find groups outside your home state) (`groupMyStates`, the account's pins, else
-  this device's downloads; owner 2026-11-23), a downloaded state with no group yet listed with a 0. It shows whenever
+  counts) holds every state with a group **and every state you downloaded**, then, in its own *Every other state* section, **every other US state** at 0 (`US_STATES`; owner 2026-11-23, to find groups outside your home state) (`groupMyStates`: the account's pins AND
+  this device's downloads, both; owner 2026-11-23, widened 2026-11-26 — signed in it read the pins alone, so a state
+  downloaded on the phone but never pinned to the account was missing), a downloaded state with no group yet listed with a 0. It shows whenever
   it has two or more states; before, it was built only from states that already had a group and hidden when the chips
   covered them, so a climber whose only groups were at home could pick nothing but home. It no longer offers each typed town, which ran to hundreds of spellings. A town is found
   by the search box and a distance by *Near a place*. Results show 20 at a time with *Show more groups*, reset

@@ -70,7 +70,7 @@ const once = (needle, why) => {
 
 // Since 2026-11-14 setup is REQUIRED for a signed-in account (username, home area, climbing), so for
 // one it opens on every load until done; a guest's optional setup is still offered once per device.
-once("useEffect(()=>{if(!accountNeedsOnboarding)return;if(!(realAuthGate&&signedIn)){if(onboardPrompted())return;markOnboardPrompted();}setOnboardOpen(true);},[accountNeedsOnboarding]);",
+once("useEffect(()=>{if(!accountNeedsOnboarding)return;if(!(realAccount&&signedIn)){if(onboardPrompted())return;markOnboardPrompted();}setOnboardOpen(true);},[accountNeedsOnboarding]);",
      "the sheet opens off accountNeedsOnboarding: every load for a signed-in account, once per device for a guest");
 once('(accountNeedsOnboarding&&!homeDismiss.includes("climbsetup"))',
      "the Home card is gated on the same predicate, so the prompt and the sheet cannot disagree");
@@ -104,16 +104,16 @@ if (app.indexOf(DECL, at + 1) >= 0) dead("`accountNeedsOnboarding` is declared t
 const semi = app.indexOf(";", at + DECL.length);
 const expr = app.slice(at + DECL.length, semi);
 if (expr.length < 40) dead(`the lifted predicate is ${expr.length} chars — too short to be the expression.`);
-for (const name of ["onboarded", "realAuthGate", "signedIn", "profileLoaded", "profileReadFailed", "profile", "authed"]) {
+for (const name of ["onboarded", "realAccount", "signedIn", "profileLoaded", "profileReadFailed", "profile", "authed"]) {
   if (!expr.includes(name)) dead(`the lifted predicate does not mention \`${name}\` — it is not the expression this guard was written for.`);
 }
 
-const needs = new Function("onboarded", "realAuthGate", "signedIn", "profileLoaded", "profileReadFailed", "profile", "authed",
+const needs = new Function("onboarded", "realAccount", "signedIn", "profileLoaded", "profileReadFailed", "profile", "authed",
   "return (" + expr + ");");
 // A real account, mid-flight and afterwards. `disciplines` is what onboarding's finish handler
 // persists, so it is the account's own record of having completed it.
-const REAL = { onboarded: false, realAuthGate: true, signedIn: true, profileLoaded: true, profileReadFailed: false, profile: { disciplines: [] }, authed: false };
-const call = (o) => needs(o.onboarded, o.realAuthGate, o.signedIn, o.profileLoaded, o.profileReadFailed, o.profile, o.authed);
+const REAL = { onboarded: false, realAccount: true, signedIn: true, profileLoaded: true, profileReadFailed: false, profile: { disciplines: [] }, authed: false };
+const call = (o) => needs(o.onboarded, o.realAccount, o.signedIn, o.profileLoaded, o.profileReadFailed, o.profile, o.authed);
 const expect = (label, o, want) => {
   const got = !!call(o);
   if (got === want) ok(label);
@@ -138,13 +138,18 @@ expect("...and nobody is judged before the profile read has resolved",
 expect("...and a FAILED profile read never opens a blank sheet over a profile we could not load",
        { ...REAL, profileLoaded: true, profileReadFailed: true }, false);
 expect("...and a signed-OUT visitor is not onboarded at", { ...REAL, signedIn: false }, false);
+// PRODUCTION BUILDS WITH THE DEMO GATE ON (deploy.yml: VITE_DEMO_AUTOLOGIN for View as guest), so `onboarded` STARTS TRUE and
+// realAuthGate is false there. Keyed on realAuthGate, a real sign-up was never sent through setup (new-climber partner walk,
+// 2026-11-26: a fresh account with no username landed on Home and stayed there). The predicate keys on a real SESSION.
+expect("PRODUCTION (demo gate on, `onboarded` starts true): a new real account with no username still NEEDS setup",
+       { ...REAL, onboarded: true, profile: { disciplines: [] } }, true);
 expect("...and finishing it in this session stops it immediately", { ...REAL, onboarded: true, profile: { disciplines: [], username: "alexclimbs" } }, false);
 // The seed/demo path keeps its own signal, and must not start depending on a profile read that
 // never happens there.
 expect("on the seed path `authed` is still the sign-in",
-       { ...REAL, realAuthGate: false, signedIn: false, profileLoaded: false, authed: true }, true);
+       { ...REAL, realAccount: false, signedIn: false, profileLoaded: false, authed: true }, true);
 expect("...and an un-signed-in seed visitor is left alone",
-       { ...REAL, realAuthGate: false, signedIn: false, profileLoaded: false, authed: false }, false);
+       { ...REAL, realAccount: false, signedIn: false, profileLoaded: false, authed: false }, false);
 
 // ---- SECTION 3: THE DEVICE PREFERENCE, EXECUTED ----------------------------------------------
 // This is what makes the sheet an invitation rather than a nag: without it the account fact alone
