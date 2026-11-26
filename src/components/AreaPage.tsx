@@ -149,6 +149,8 @@ export interface AreaPageProps {
   /** Whether this area is in Saved. */
   booked?: boolean;
   onToggleSave: () => void;
+  /** Saves or unsaves ONE climb on My Objectives (App toggleWish): the star at the end of each row of this wall's climb list. Absent hides it. */
+  onToggleWish?: ((id: string | number) => void) | null;
   /** The header's ONE Log button: the climb picker opened at this area, for a quick or a full log. Absent hides it. */
   onLog?: ((area: AreaPageArea, mode: "quick" | "full") => void) | null;
   onDrill: (a: AreaPageArea) => void;
@@ -189,7 +191,7 @@ export interface AreaPageProps {
 // THE HEADER CARD'S BUTTONS: Save area, Area tree and Fire map are ONE size (owner, 2026-11-18: "fire map needs to be
 // the same size as save area") -- 34px, the height Save was given on 2026-11-14 -- and one width; only the colour differs.
 const HEAD_BTN: CSSProperties = { flexShrink: 0, boxSizing: "border-box", display: "inline-flex", alignItems: "center", justifyContent: "center", gap: 5, height: 34, minWidth: 100, padding: "0 12px", borderRadius: 9, fontSize: 12, fontWeight: 800, cursor: "pointer", lineHeight: 1, whiteSpace: "nowrap" };
-export default function AreaPage({ area: areaRow, onSignIn, uElev, uDistMi, booked, onToggleSave, onLog, onDrill, onFinder, onNear, onObjectives, onAllAreas, onOpenRoute, onOpenReport, onJumpToArea, C, onAddClimb, onAddArea, TopContributors, onViewContributor, onFireMap, onSuggestAreaEdit, myId, PartnerRow, uid, myListings, onListMe, onFindPartnersInArea, onViewProfile, notify, onStartCrew, onCrewsHere, onGroupsHere, openCrewCountAt, headerNav}: AreaPageProps) {
+export default function AreaPage({ area: areaRow, onSignIn, uElev, uDistMi, booked, onToggleSave, onToggleWish, onLog, onDrill, onFinder, onNear, onObjectives, onAllAreas, onOpenRoute, onOpenReport, onJumpToArea, C, onAddClimb, onAddArea, TopContributors, onViewContributor, onFireMap, onSuggestAreaEdit, myId, PartnerRow, uid, myListings, onListMe, onFindPartnersInArea, onViewProfile, notify, onStartCrew, onCrewsHere, onGroupsHere, openCrewCountAt, headerNav}: AreaPageProps) {
   const [wrongOpen, setWrongOpen] = useState(false);
   // The Log button's choice sheet: Quick log or Full log, then the climb.
   const [logChoice, setLogChoice] = useState(false);
@@ -411,7 +413,14 @@ export default function AreaPage({ area: areaRow, onSignIn, uElev, uDistMi, book
                     sortAreaRoutes(shownAll, key).forEach(r => {
                       if (key === "disc" && r.discipline !== last) out.push(<SL key={"h-" + r.discipline} C={C}>{discLabel(r.discipline)}</SL>);
                       last = r.discipline;
-                      out.push(<RouteRow key={r.id} r={r} onOpen={onOpenRoute} C={C} />);
+                      // SAVE FROM THE WALL'S LIST (owner note, 2026-11-25: "Add another save to objectives"): one tap puts the
+                      // climb on My Objectives, or takes it off, without opening it. The route finder's rows already had a star;
+                      // the wall's own list, where a crag is browsed, did not. Same toggle as the route page's header Save.
+                      const onList = (wishlist || []).includes(r.id as string | number);
+                      out.push(onToggleWish && r.id != null ? <div key={r.id} style={{ display: "flex", gap: 6, alignItems: "stretch" }}>
+                        <RouteRow r={r} onOpen={onOpenRoute} C={C} savedMark={false} />
+                        <button onClick={() => onToggleWish(r.id as string | number)} aria-pressed={onList} aria-label={onList ? "Remove " + (r.name || "this climb") + " from My Objectives" : "Save " + (r.name || "this climb") + " to My Objectives"} title={onList ? "On My Objectives, tap to remove" : "Save to My Objectives"} style={{ ...CHIP, flexShrink: 0, width: 44, minHeight: 44, marginBottom: 8, padding: 0, fontSize: 17, cursor: "pointer", border: "1px solid " + (onList ? C.amber : C.border), background: onList ? C.amberBg : C.card, color: onList ? C.amber : C.textSub }}><span aria-hidden="true">{onList ? "★" : "☆"}</span></button>
+                      </div> : <RouteRow key={r.id} r={r} onOpen={onOpenRoute} C={C} />);
                     });
                     return out;
                   })() : <div style={{ fontSize: 12.5, color: C.textMuted, lineHeight: 1.5 }}>{"No climb on this wall matches these filters. "}<button onClick={() => { setWallDisc(""); setWallStars(0); }} style={{ ...BTN, border: "none", background: "transparent", color: C.blue, padding: 0, fontWeight: 700, textDecoration: "underline" }}>Clear filters</button></div>}
