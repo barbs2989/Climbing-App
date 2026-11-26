@@ -1,7 +1,9 @@
 import { tx } from "../../lib/tapWords.js";
 import { useRef, useState, useLayoutEffect, useEffect, useMemo, useContext, lazy, Suspense } from "react";
 import type { FormEvent } from "react";
-import { useNearbyAreas, useRoutesByIds, useAreaFootprint } from "../../lib/db";
+import { useNearbyAreas, useRoutesByIds, useAreaFootprint, useAreaNamesByIds } from "../../lib/db";
+import { layoutRings, ancestorIds, ringHtml, LOCATOR_HTML, areaOutline } from "../ringLayout.ts";
+import type { Box } from "../ringLayout.ts";
 import { ClimberCtx } from "../../lib/climberCtx.js";
 import MapAreaClimbs from "./MapAreaClimbs.tsx";
 import type { RouteRowRoute } from "./RouteRow.tsx";
@@ -32,7 +34,7 @@ const Route3DView = lazy(() => import("../../lib/Route3DView.jsx"));
 // fixed zoom for every level (the old behavior) zoomed a state-scale "View
 // map" in absurdly tight since it centered on the state's single lat/lng
 // point at the same zoom used for a crag.
-const ZOOM_BY_AREA_TYPE: Record<string, number> = { world: 2, country: 3, state: 6, range: 8, region: 8, canyon: 10, peak: 12, crag: 13, wall: 14 };
+const ZOOM_BY_AREA_TYPE: Record<string, number> = { world: 2, country: 3, state: 6, range: 8, region: 8, canyon: 10, peak: 13, crag: 15, wall: 16 };
 export type NearMePanelDisc = keyof typeof DL;
 export interface NearMePanelBounds { minLat: number; maxLat: number; minLng: number; maxLng: number }
 export interface NearMePanelPlace { name: string; sub: string; lat: number; lng: number; bbox: number[][] | null }
@@ -65,36 +67,12 @@ export interface NearMePanelProps {
    number fits (7px up to 99, 9px from 100, 13px from 1,000, 15px from 10,000). MP splits the ring by
    route type and leaves a ring under 10 routes blank; on the owner's word ours does neither.
    The marker's box is at least 36px whatever the ring's size, so a small ring is still a tap target.
-   A SINGLE AREA carries its NAME under the ring (owner, 2026-11-24: "it has a name when applicable?"),
-   dark on a white halo as MP labels its map; a cluster has no one name, so it shows the count alone,
-   which is also how a cluster is told from a crag. Where two names would collide, the busier area keeps
-   its label and the other's appears as the climber zooms in (`labelFits`, in the marker effect).
+   EVERY RING CARRIES A NAME (owner, 2026-11-26: "some circles don't have names on them. It should always
+   show a name"), dark on a white halo as MP labels its map: a single area its own, a cluster the area its
+   members share ("Powerline Area"), else its busiest and how many more. Where a name fits nowhere round
+   its ring, that ring joins its nearest neighbour instead of going bare (layoutRings, src/ringLayout.ts).
    An area holding climbs from your list wears a small amber STAR at the ring's shoulder: the amber ring
    it used to wear vanished against the orange one. */
-const LABEL_MAX = 120;
-const labelWidth = (name: string) => Math.min(LABEL_MAX, Math.round(name.length * 6.4) + 8);
-function ringHtml(color: string, total: number, listed: boolean, label: string | null): { html: string; box: number } {
-  const a = total >= 10000 ? 15 : total >= 1000 ? 13 : total >= 100 ? 9 : 7;
-  const R = a + 8, box = Math.max(36, 2 * R + 8), c = box / 2;
-  const band = "<circle cx='" + c + "' cy='" + c + "' r='" + (a + 4) + "' fill='none' stroke='" + color + "' stroke-width='8'/>";
-  const hole = "<circle cx='" + c + "' cy='" + c + "' r='" + a + "' fill='#f2f2f2'/>";
-  const num = "<text x='" + c + "' y='" + c + "' dy='3' text-anchor='middle' font-size='9' font-weight='700' font-family='system-ui,sans-serif' fill='#000'>" + total.toLocaleString("en-US") + "</text>";
-  const edge = "<circle cx='" + c + "' cy='" + c + "' r='" + (R - 0.25) + "' fill='none' stroke='#f2f2f2' stroke-width='0.5'/>";
-  const sx = c + R * 0.72, sy = c - R * 0.72, s = 6.5;
-  const star = listed ? "<polygon points='" + [0, 1, 2, 3, 4, 5, 6, 7, 8, 9].map(k => { const r = k % 2 ? s * 0.45 : s, t = -Math.PI / 2 + k * Math.PI / 5; return (sx + r * Math.cos(t)).toFixed(1) + "," + (sy + r * Math.sin(t)).toFixed(1); }).join(" ") + "' fill='#e3b341' stroke='#1a1916' stroke-width='1.2' stroke-linejoin='round'/>" : "";
-  const svg = "<svg width='" + box + "' height='" + box + "' viewBox='0 0 " + box + " " + box + "' style='display:block;overflow:visible;filter:drop-shadow(0 1px 2px rgba(0,0,0,0.55))' aria-hidden='true'>" + band + hole + num + edge + star + "</svg>";
-  if (!label) return { box, html: svg };
-  const safe = label.replace(/[<>&"']/g, "");
-  const tag = "<div aria-hidden='true' style='position:absolute;left:50%;top:" + (c + R + 2) + "px;transform:translateX(-50%);max-width:" + LABEL_MAX + "px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font:700 11px/14px system-ui,sans-serif;color:#1a1916;text-shadow:0 0 2px #fff,0 0 2px #fff,0 0 3px #fff,0 0 3px #fff;pointer-events:none'>" + safe + "</div>";
-  return { box, html: "<div style='position:relative;width:" + box + "px;height:" + box + "px'>" + svg + tag + "</div>" };
-}
-// The area you came from, marked as MP marks it (/img/map/locator.svg): a fixed red bullseye, 120px,
-// on the area's own point. It takes no taps; the rings above it do.
-const LOCATOR_HTML = "<svg width='120' height='120' viewBox='0 0 120 120' aria-hidden='true'>" +
-  "<circle cx='60' cy='60' r='51' fill='none' stroke='#fff' stroke-opacity='0.35' stroke-width='16'/>" +
-  "<circle cx='60' cy='60' r='18.1' fill='none' stroke='#fff' stroke-opacity='0.15' stroke-width='14.75'/>" +
-  "<g fill='none' stroke='#c00'><circle cx='60' cy='60' r='59' stroke-width='1.5'/><circle cx='60' cy='60' r='43'/><circle cx='60' cy='60' r='25.5' stroke-width='1.5'/><circle cx='60' cy='60' r='10.75'/>" +
-  "<path d='M60 1v9M60 110v9M1 60h9M110 60h9M60 34.5v5M60 80.5v5M34.5 60h5M80.5 60h5' stroke-width='1.5'/></g></svg>";
 // A stray coordinate (one crag filed hundreds of miles off) must not stretch the frame over a whole
 // region: with enough pins, the outer 2% on each side is left out of it.
 function trimOutliers<T extends { lat: number; lng: number }>(pts: T[]): T[] {
@@ -103,6 +81,25 @@ function trimOutliers<T extends { lat: number; lng: number }>(pts: T[]): T[] {
   const la = pts.map(p => p.lat).sort((a, b) => a - b), ln = pts.map(p => p.lng).sort((a, b) => a - b);
   const [a0, a1, n0, n1] = [q(la, 0.02), q(la, 0.98), q(ln, 0.02), q(ln, 0.98)];
   return pts.filter(p => p.lat >= a0 && p.lat <= a1 && p.lng >= n0 && p.lng <= n1);
+}
+// THE FRAME IS WHERE THE CLIMBS ARE (owner, 2026-11-26: Mount Erie's map "should be zoomed in closer on that
+// specific area"). Framing every pin put Mount Erie's five boulders 700 m off (4% of its 413 climbs) in view,
+// and the map opened a whole zoom out, the walls a single ring. On each axis the pins holding the outer 5% of
+// the climbs are left out of the FRAME (not of the outline, which still shows the area's whole extent).
+type FpPt = { lat: number; lng: number; route_count?: number | null };
+function climbCore(pts: FpPt[]): FpPt[] {
+  if (pts.length < 2) return pts;
+  const w = (p: FpPt) => Math.max(1, p.route_count || 0), tot = pts.reduce((s, p) => s + w(p), 0);
+  const cut = (key: "lat" | "lng") => {
+    const o = pts.slice().sort((a, b) => a[key] - b[key]);
+    let lo = 0, hi = o.length - 1, sLo = w(o[0]), sHi = w(o[hi]);
+    while (lo < hi && sLo <= tot * 0.05) sLo += w(o[++lo]);
+    while (hi > lo && sHi <= tot * 0.05) sHi += w(o[--hi]);
+    return [o[lo][key], o[hi][key]];
+  };
+  const [a0, a1] = cut("lat"), [n0, n1] = cut("lng");
+  const core = pts.filter(p => p.lat >= a0 && p.lat <= a1 && p.lng >= n0 && p.lng <= n1);
+  return core.length ? core : pts;
 }
 export default function NearMePanel({ center0, areaType, name, onBack, onOpenArea, C, uDistMi, onOpenRoute, autoLocate, focus }: NearMePanelProps) {
   const mapDiv = useRef<HTMLDivElement | null>(null), mapRef = useRef<LeafletAny>(null), markRef = useRef<LeafletAny>(null), tileRef = useRef<LeafletAny>(null), placeMarkRef = useRef<LeafletAny>(null);
@@ -168,7 +165,7 @@ export default function NearMePanel({ center0, areaType, name, onBack, onOpenAre
   // crag under it, so the map opens with all of it in view, and a bullseye on it (below).
   const focusPath = focus && focus.path ? focus.path : null;
   const { data: fp, isFetched: fpDone } = useAreaFootprint(focusPath ? focus : null);
-  const fpPts = useMemo(() => fp ? trimOutliers(fp.points as { lat: number; lng: number }[]) : [], [fp]);
+  const fpPts = useMemo(() => fp ? trimOutliers(fp.points as FpPt[]) : [], [fp]);
   // NO JUMP ON OPEN (review of #3854, 2026-11-24): opened from an area, the map used to show its first
   // fixed zoom for a moment and then leap to the area's frame. It stays under "Loading map…" until it is
   // framed, or the footprint read came back empty or failed, or 2.5 s pass, whichever is first.
@@ -179,6 +176,9 @@ export default function NearMePanel({ center0, areaType, name, onBack, onOpenAre
   const nearbyAll: NearMePanelArea[] | undefined = data && data.rows;
   const typesOf = (a: NearMePanelArea) => Array.isArray(a.disciplines) ? a.disciplines : (a.dominant_discipline ? [a.dominant_discipline] : []);
   const nearby = useMemo(() => nearbyAll && (disc ? nearbyAll.filter(a => typesOf(a).includes(disc)) : nearbyAll), [nearbyAll, disc]);
+  // The names a cluster can carry: every area above the rings in view, below the state. One id-keyed read.
+  const ancIds = useMemo(() => ancestorIds((nearby || []).map(a => a.path || "").filter(Boolean)), [nearby]);
+  const { data: ancNames } = useAreaNamesByIds(ancIds);
   // YOUR LIST ON THE MAP (the seed map ringed areas holding your objectives and said "★ N on your
   // list"). The wishlist routes are read by id with their area's ltree path embedded — the same small
   // read the Climbs list uses — and an area counts the ones whose path sits under its own.
@@ -253,30 +253,37 @@ export default function NearMePanel({ center0, areaType, name, onBack, onOpenAre
   }, []); // eslint-disable-line react-hooks/exhaustive-deps -- builds the Leaflet map once; area type, base layer and centre are applied by their own effects and a rebuild would reset the view
   useEffect(() => { if (!mapRef.current) return; applyBaseLayer(mapRef.current, tileRef, baseLayer); }, [baseLayer]);
 
-  // THE BULLSEYE on the area you came from: on its own coordinate, else the middle of its pins (a range
-  // filed with no point of its own). In a pane of its own under the rings, so every ring stays tappable.
+  // THE BULLSEYE on the area you came from. A crag or a peak: on its own coordinate. An area that holds others
+  // (a region, a canyon, a range): on the middle of its climbs, weighted by their counts. A region's own point
+  // is often nowhere in particular (Leavenworth's sits up Tumwater, a corner of its climbing), and there the
+  // bullseye pulled the frame and the outline off to one side. Its own point is the fallback while the pins
+  // load or when it has none. In a pane of its own under the rings, so every ring stays tappable.
   const focusPt = useMemo(() => {
     if (!focusPath) return null;
-    if (focus && focus.lat != null && focus.lng != null) return { lat: focus.lat, lng: focus.lng };
-    if (!fpPts.length) return null;
-    return { lat: fpPts.reduce((s, p) => s + p.lat, 0) / fpPts.length, lng: fpPts.reduce((s, p) => s + p.lng, 0) / fpPts.length };
-  }, [focusPath, focus, fpPts]);
+    const own = focus && focus.lat != null && focus.lng != null ? { lat: focus.lat, lng: focus.lng } : null;
+    if (own && (areaType === "crag" || areaType === "peak" || areaType === "wall")) return own;
+    const core = climbCore(fpPts);
+    if (core.length < 2) return own || (core.length ? { lat: core[0].lat, lng: core[0].lng } : null);
+    const w = (p: FpPt) => Math.max(1, p.route_count || 0), tot = core.reduce((s, p) => s + w(p), 0);
+    return { lat: core.reduce((s, p) => s + p.lat * w(p), 0) / tot, lng: core.reduce((s, p) => s + p.lng * w(p), 0) / tot };
+  }, [focusPath, focus, fpPts, areaType]);
 
   // FRAME THE AREA ONCE, when its pins arrive: the whole of it in view, its bullseye included, not a
   // fixed zoom on its one point (a region's point is its middle, so a fixed zoom cut half of
-  // Leavenworth off). The padding is the bullseye's own half-width, so it is never cut by the edge.
+  // Leavenworth off). The padding keeps the edge rings and their names clear of the map's border.
   // Skipped when the climber has already dragged the map, or a Near me tap asked for their own position.
   useEffect(() => {
     const L = window.L, map = mapRef.current;
     if (!ready || !L || !map || framedRef.current || autoLocate || !fpPts.length) return;
     framedRef.current = true;
     if (movedRef.current) { setShown(true); return; }
-    const pts = focusPt ? fpPts.concat([focusPt]) : fpPts;
+    const core = climbCore(fpPts);
+    const pts = focusPt ? core.concat([focusPt]) : core;
     const one = pts.every(p => Math.abs(p.lat - pts[0].lat) < 1e-4 && Math.abs(p.lng - pts[0].lng) < 1e-4);
     try {
       // Not animated: the map is still hidden, and it should appear already framed.
-      if (one) map.setView([pts[0].lat, pts[0].lng], Math.max(map.getZoom(), ZOOM_BY_AREA_TYPE[areaType] || 12), { animate: false });
-      else map.fitBounds(L.latLngBounds(pts.map(p => [p.lat, p.lng])), { padding: [60, 60], maxZoom: 14, animate: false });
+      if (one) map.setView([pts[0].lat, pts[0].lng], Math.max(map.getZoom(), areaType === "crag" || areaType === "peak" || areaType === "wall" ? ZOOM_BY_AREA_TYPE[areaType] : 15), { animate: false });
+      else map.fitBounds(L.latLngBounds(pts.map(p => [p.lat, p.lng])), { padding: [40, 40], maxZoom: 16, animate: false });
     } catch (e) { /* the map is gone or not laid out yet; nothing to update */ }
     setShown(true);
   }, [ready, fpPts, focusPt]); // eslint-disable-line react-hooks/exhaustive-deps -- frames once per footprint; areaType and autoLocate are fixed for this panel's life (it is keyed on the area)
@@ -292,6 +299,24 @@ export default function NearMePanel({ center0, areaType, name, onBack, onOpenAre
     return () => { if (mk) { try { map.removeLayer(mk); } catch (e) { /* the map is gone; nothing to remove */ } } };
   }, [ready, focusPt]);
 
+  // THE AREA'S OUTLINE (owner, 2026-11-26: "some sort of view that allows you to easily tell that is where the
+  // area is"): a dashed red line round every peak and crag under it, faintly filled, as theCrag and Gaia GPS
+  // outline an area. Not for a single crag (its bullseye is the mark) nor a whole state or country (the frame
+  // is the area). Under the rings, and takes no taps.
+  useEffect(() => {
+    const L = window.L, map = mapRef.current;
+    if (!ready || !L || !map || !focusPath || ["world", "country", "state"].includes(areaType)) return;
+    const pts = focusPt ? fpPts.concat([focusPt]) : fpPts;
+    if (pts.length < 2 || pts.every(p => Math.abs(p.lat - pts[0].lat) < 3e-4 && Math.abs(p.lng - pts[0].lng) < 3e-4)) return;
+    const spanM = Math.hypot((Math.max(...pts.map(p => p.lat)) - Math.min(...pts.map(p => p.lat))) * 110540, (Math.max(...pts.map(p => p.lng)) - Math.min(...pts.map(p => p.lng))) * 111320 * Math.cos(pts[0].lat * Math.PI / 180));
+    let pg: LeafletAny = null;
+    try {
+      if (!map.getPane("cmOutline")) { const pane = map.createPane("cmOutline"); pane.style.zIndex = "440"; pane.style.pointerEvents = "none"; }
+      pg = L.polygon(areaOutline(pts, Math.max(60, spanM * 0.06)), { pane: "cmOutline", interactive: false, color: "#c00", weight: 2.5, opacity: 0.9, dashArray: "7 5", fillColor: "#c00", fillOpacity: 0.07 }).addTo(map);
+    } catch (e) { /* the map is gone or not laid out yet; nothing to update */ }
+    return () => { if (pg) { try { map.removeLayer(pg); } catch (e) { /* the map is gone; nothing to remove */ } } };
+  }, [ready, focusPath, fpPts, focusPt]); // eslint-disable-line react-hooks/exhaustive-deps -- areaType is fixed for this panel's life (it is keyed on the area)
+
   // Screen-space clustering: at national/state scale a single viewport can hold
   // hundreds of crags, and one dot per area (the first version of this map) is
   // unreadable and gives no sense of "zoom in to see more" the way the static
@@ -303,81 +328,56 @@ export default function NearMePanel({ center0, areaType, name, onBack, onOpenAre
     const L = window.L, map = mapRef.current, grp = markRef.current;
     if (!L || !map || !grp) return;
     grp.clearLayers();
-    // Kept above the largest ring (44px) so tightly spaced but distinct areas cluster instead of
-    // visually overlapping.
+    // Kept above the largest ring (44px) so tightly spaced but distinct areas share a ring instead of overlapping.
     const CLUSTER_PX = 48;
-    const pts = nearby.filter(a => a.lat != null && a.lng != null).map(a => ({ a, pt: map.latLngToContainerPoint([a.lat, a.lng]) }));
-    const used = new Array(pts.length).fill(false);
-    const groups: (typeof pts)[] = [];
-    for (let i = 0; i < pts.length; i++) {
-      if (used[i]) continue;
-      const group = [pts[i]]; used[i] = true;
-      for (let j = i + 1; j < pts.length; j++) {
-        if (used[j]) continue;
-        if (Math.hypot(pts[i].pt.x - pts[j].pt.x, pts[i].pt.y - pts[j].pt.y) < CLUSTER_PX) { group.push(pts[j]); used[j] = true; }
-      }
-      groups.push(group);
-    }
-    // NAMES THAT FIT: every ring's box is known first; then, busiest area first (`nearby` is ordered by
-    // climbs), a name is drawn only where it overlaps no ring and no name already placed.
-    type Box = { x0: number; y0: number; x1: number; y1: number };
-    const hit = (p: Box, q: Box) => p.x0 < q.x1 && q.x0 < p.x1 && p.y0 < q.y1 && q.y0 < p.y1;
-    const ringR = (t: number) => (t >= 10000 ? 15 : t >= 1000 ? 13 : t >= 100 ? 9 : 7) + 8;
-    const ringBoxes = groups.map(g => {
-      const n = g.length, x = g.reduce((s, p) => s + p.pt.x, 0) / n, y = g.reduce((s, p) => s + p.pt.y, 0) / n;
-      const r = ringR(g.reduce((s, p) => s + (p.a.route_count || 0), 0));
-      return { x0: x - r, y0: y - r, x1: x + r, y1: y + r };
-    });
-    // ...and never under the map's own controls (owner, 2026-11-24, phone check: a name sat under the
+    // ...and no name under the map's own controls (owner, 2026-11-24, phone check: a name sat under the
     // Street / Satellite row). Each control's box is read from the page, in the map's own pixels, so the
     // row, ⤢, + / − and "Me" are avoided at whatever size they render on this screen.
-    const placed: Box[] = [];
+    const avoid: Box[] = [];
     const host = mapDiv.current, frame = host && host.parentElement;
     if (host && frame) {
       const m = host.getBoundingClientRect();
       frame.querySelectorAll("button, .leaflet-control").forEach(el => {
         const r = el.getBoundingClientRect();
-        if (r.width && r.height) placed.push({ x0: r.left - m.left - 2, y0: r.top - m.top - 2, x1: r.right - m.left + 2, y1: r.bottom - m.top + 2 });
+        if (r.width && r.height) avoid.push({ x0: r.left - m.left - 2, y0: r.top - m.top - 2, x1: r.right - m.left + 2, y1: r.bottom - m.top + 2 });
       });
     }
-    const labelFits = (gi: number, name: string) => {
-      const rb = ringBoxes[gi], cx = (rb.x0 + rb.x1) / 2, w = labelWidth(name);
-      const lb = { x0: cx - w / 2, y0: rb.y1 + 2, x1: cx + w / 2, y1: rb.y1 + 16 };
-      if (placed.some(p => hit(p, lb)) || ringBoxes.some((q, k) => k !== gi && hit(q, lb))) return false;
-      placed.push(lb);
-      return true;
-    };
-    groups.forEach((group, gi) => {
-      if (group.length === 1) {
-        const a = group[0].a;
-        const wl = wlByArea[a.id] || 0;
-        const { html, box } = ringHtml(C.brand, a.route_count || 0, !!wl, a.name && labelFits(gi, a.name) ? a.name : null);
-        const mk = L.marker([a.lat, a.lng], { icon: L.divIcon({ html, className: "", iconSize: [box, box], iconAnchor: [box / 2, box / 2] }) });
+    const size = map.getSize();
+    const under = (a: NearMePanelArea) => !!focusPath && !!a.path && (a.path === focusPath || a.path.startsWith(focusPath + "."));
+    const pts = nearby.filter(a => a.lat != null && a.lng != null).map(a => { const pt = map.latLngToContainerPoint([a.lat, a.lng]); return { a, x: pt.x, y: pt.y, climbs: a.route_count || 0, path: a.path || "", name: a.name || "", side: under(a) ? 1 : 0 }; });
+    const rings = layoutRings(pts, { clusterPx: CLUSTER_PX, nameOf: id => (ancNames as Record<string, string> | undefined)?.[id], avoid, width: size.x, height: size.y });
+    rings.forEach(ring => {
+      const areas = ring.areas, n = areas.length;
+      const wl = areas.reduce((s, a) => s + (wlByArea[a.id] || 0), 0);
+      // The area you came from stands out; the rings round it that are not part of it are drawn faint.
+      const isFocus = n === 1 && !!focusPath && areas[0].path === focusPath;
+      const dim = !!focusPath && !["world", "country", "state"].includes(areaType) && !areas.some(under);
+      const look = { listed: !!wl, focus: isFocus, dim, label: { text: ring.name, box: ring.label, side: ring.side, x: ring.x, y: ring.y } };
+      const { html, box } = ringHtml(C.brand, ring.climbs, look);
+      // A shared ring at the point layoutRings put it: where its climbs are.
+      const at = n === 1 ? { lat: areas[0].lat, lng: areas[0].lng } : map.containerPointToLatLng([ring.x, ring.y]);
+      const lat = at.lat, lng = at.lng;
+      const mk = L.marker([lat, lng], { icon: L.divIcon({ html, className: "", iconSize: [box, box], iconAnchor: [box / 2, box / 2] }), zIndexOffset: isFocus ? 500 : dim ? -500 : 0 });
+      const safe = (t: string) => t.replace(/[<>&]/g, "");
+      if (n === 1) {
+        const a = areas[0];
         // MP's hover card: the name in bold, then the count.
-        const tipName = "<b>" + (a.name || "").replace(/[<>&]/g, "") + "</b>";
-        mk.bindTooltip(tipName + "<br>" + a.route_count + " climb" + (a.route_count !== 1 ? "s" : "") + (wl ? "<br>" + onList(wl) : ""), { direction: "top" });
+        mk.bindTooltip("<b>" + safe(a.name || "") + "</b><br>" + a.route_count + " climb" + (a.route_count !== 1 ? "s" : "") + (wl ? "<br>" + onList(wl) : ""), { direction: "top" });
         named(mk, a.name + ", " + a.route_count + " climb" + (a.route_count !== 1 ? "s" : "") + (wl ? ", " + onList(wl) : ""));
         mk.on("click", () => setPick({ areas: [a], cluster: false }));
-        grp.addLayer(mk);
       } else {
-        const areas = group.map(g => g.a);
-        const n = areas.length;
-        const climbs = areas.reduce((s, a) => s + (a.route_count || 0), 0);
-        const avgLat = areas.reduce((s, a) => s + a.lat, 0) / n, avgLng = areas.reduce((s, a) => s + a.lng, 0) / n;
-        const wl = areas.reduce((s, a) => s + (wlByArea[a.id] || 0), 0);
-        // A cluster is one ring for all its areas, as MP's parent-area ring is: their climbs added up.
-        const { html, box } = ringHtml(C.brand, climbs, !!wl, null);
-        const mk = L.marker([avgLat, avgLng], { icon: L.divIcon({ html, className: "", iconSize: [box, box], iconAnchor: [box / 2, box / 2] }) });
-        mk.bindTooltip("<b>" + n + " areas</b><br>" + climbs + (climbs === 1 ? " climb" : " climbs") + (wl ? "<br>" + onList(wl) : "") + "<br>" + tx("Tap to zoom in"), { direction: "top" });
-        named(mk, n + " areas, " + climbs + (climbs === 1 ? " climb" : " climbs") + (wl ? ", " + onList(wl) : "") + tx(", tap to zoom in"));
+        // A cluster is one ring for all its areas, as MP's parent-area ring is: their climbs added up, under
+        // the name of the area they share.
+        mk.bindTooltip("<b>" + safe(ring.name) + "</b><br>" + n + " areas · " + ring.climbs + (ring.climbs === 1 ? " climb" : " climbs") + (wl ? "<br>" + onList(wl) : "") + "<br>" + tx("Tap to zoom in"), { direction: "top" });
+        named(mk, ring.name + ", " + n + " areas, " + ring.climbs + (ring.climbs === 1 ? " climb" : " climbs") + (wl ? ", " + onList(wl) : "") + tx(", tap to zoom in"));
         mk.on("click", () => {
           setPick({ areas, cluster: true });
-          try { map.fitBounds(L.latLngBounds(areas.map(a => [a.lat, a.lng])), { padding: [50, 50], maxZoom: 15 }); } catch (e) { /* the map is gone or not laid out yet; nothing to update */ }
+          try { map.fitBounds(L.latLngBounds(areas.map(a => [a.lat, a.lng])), { padding: [50, 50], maxZoom: 17 }); } catch (e) { /* the map is gone or not laid out yet; nothing to update */ }
         });
-        grp.addLayer(mk);
       }
+      grp.addLayer(mk);
     });
-  }, [ready, nearby, wlByArea]); // eslint-disable-line react-hooks/exhaustive-deps -- markers are redrawn when the map is ready, the nearby list changes or your list's counts arrive; theme colours are constants
+  }, [ready, nearby, wlByArea, ancNames]); // eslint-disable-line react-hooks/exhaustive-deps -- markers are redrawn when the map is ready, the nearby list changes, your list's counts or the shared areas' names arrive; theme colours, the focus and the area type are fixed for this panel's life
 
   // Live, and refining: see useFollowMe in lib/mapKit.jsx. Only the FIRST fix re-centres the
   // nearby list -- re-querying on every step of a walk would refetch for nothing.
