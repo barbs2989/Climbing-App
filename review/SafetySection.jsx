@@ -9,7 +9,7 @@
 //   Closed         — the last 100 decided reports, so a decision can be found again
 // Actions: remove / hide / keep the content (moderate_content), mark the report, suspend / ban / reinstate the
 // account (set_account_standing), and decide an appeal (decide_appeal). Each new report, reported photo or appeal
-// also puts a notice in every admin's bell (0550). The "How to decide" panel is the written policy the
+// also puts a notice in every admin's bell (0551). The "How to decide" panel is the written policy the
 // App Store and Google Play reviewers expect a developer to follow (docs/APP-STORE-READINESS-AUDIT.md).
 import { useState } from "react";
 import {

@@ -117,7 +117,7 @@ empty field fill at once and two agreeing climbers change one; the owner withdre
   which stays in *Appeals*), *Closed*, and *How to decide* (the written enforcement rules, NCMEC procedure included).
   Buttons: `moderateContent` (remove / hide / keep), `reviewUserReport`, `setAccountStanding` (suspend 1-365 days / ban,
   optionally removing everything they posted / reinstate), `takeDownReportedPhoto`, `dismissPhotoReport`, `decideAppeal`.
-  `useAdminQueueCounts` counts them as `safety` (+ `safetyOldestAt`). **0550** puts a `safety_report` notice in every
+  `useAdminQueueCounts` counts them as `safety` (+ `safetyOldestAt`). **0551** puts a `safety_report` notice in every
   admin's bell for each new report, reported photo or appeal; its link `{desk}` opens `review.html#<desk>` (`goSpecial`).
   The audit and store checklist: [docs/APP-STORE-READINESS-AUDIT.md](../APP-STORE-READINESS-AUDIT.md).
 - **The nightly AI checker**: `scripts/review-queue-export.mjs` (service key, read-only) lists items with
