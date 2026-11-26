@@ -1,0 +1,1757 @@
+[
+ {
+  "n": 1,
+  "area": "ak_left_side_walls",
+  "keep": "ak_left_side_walls_resting_belayer_face",
+  "drop": "ak_rbf",
+  "keepName": "Resting Belayer Face",
+  "dropName": "RBF",
+  "evidence": "SAME? (renamed: OpenBeta has only the old name); OpenBeta: RBF (5.10a, lr 16)"
+ },
+ {
+  "n": 2,
+  "area": "ak_right_side_walls",
+  "keep": "ak_right_side_walls_catch_of_fire",
+  "drop": "ak_catch_a_fire",
+  "keepName": "Catch of Fire",
+  "dropName": "Catch a Fire",
+  "evidence": "SAME? (renamed: OpenBeta has only the old name); OpenBeta: Catch a Fire (5.11d, lr 10)"
+ },
+ {
+  "n": 3,
+  "area": "ak_glak_s_place_and_tree_fort",
+  "keep": "ak_glak_s_place_and_tree_fort_somethin_fishy_2",
+  "drop": "ak_glak_s_place_and_tree_fort_somethin_fishy",
+  "keepName": "Somethin' Fishy",
+  "dropName": "Something Fishy",
+  "evidence": "SAME? (renamed: OpenBeta has only the old name); OpenBeta: Something Fishy (5.10, lr 9)"
+ },
+ {
+  "n": 5,
+  "area": "ak_upper_pivot_point",
+  "keep": "ak_upper_pivot_point_butt_cheek",
+  "drop": "ak_butt_check",
+  "keepName": "Butt Cheek",
+  "dropName": "Butt Check",
+  "evidence": "SAME? (renamed: OpenBeta has only the old name); OpenBeta: Butt Check (5.7, lr 1)"
+ },
+ {
+  "n": 8,
+  "area": "al_unshackled",
+  "keep": "al_unshackled_hot_taaka",
+  "drop": "al_hot_takka",
+  "keepName": "Hot Taaka",
+  "dropName": "Hot Takka",
+  "evidence": "SAME? (renamed: OpenBeta has only the old name); OpenBeta: Hot Takka (5.11d, lr 18)"
+ },
+ {
+  "n": 22,
+  "area": "ar_black_on_blonde_wall",
+  "keep": "ar_3_black_on_blonde_wall_black_and_blonde",
+  "drop": "ar_black_on_blonde",
+  "keepName": "Black and Blonde",
+  "dropName": "Black on Blonde",
+  "evidence": "SAME? (renamed: OpenBeta has only the old name); OpenBeta: Black on Blonde (5.12a, lr 1)"
+ },
+ {
+  "n": 23,
+  "area": "ar_oasis_the",
+  "keep": "ar_oasis_the_trail_of_tears",
+  "drop": "ar_trail_of_fears_2",
+  "keepName": "Trail of Tears",
+  "dropName": "Trail of Fears",
+  "evidence": "REVIEW (no OpenBeta copy); OpenBeta: "
+ },
+ {
+  "n": 24,
+  "area": "ar_main_bluffline",
+  "keep": "ar_main_bluffline_apes_shall_not_kill_apes",
+  "drop": "ar_ape_shall_not_kill_ape",
+  "keepName": "Apes Shall Not Kill Apes",
+  "dropName": "Ape Shall Not Kill Ape",
+  "evidence": "SAME? (renamed: OpenBeta has only the old name); OpenBeta: Ape Shall Not Kill Ape (5.13, lr 5)"
+ },
+ {
+  "n": 40,
+  "area": "ar_south_side_albino_rhino_wall",
+  "keep": "ar_south_side_albino_rhino_wall_eminent_front_2",
+  "drop": "ar_south_side_albino_rhino_wall_eminent_front",
+  "keepName": "Eminent Front",
+  "dropName": "Eminence Front",
+  "evidence": "SAME? (renamed: OpenBeta has only the old name); OpenBeta: Eminence Front (5.10d, lr 7)"
+ },
+ {
+  "n": 41,
+  "area": "ar_heresy_wall",
+  "keep": "ar_heresy_wall_holey_war",
+  "drop": "ar_holy_war",
+  "keepName": "Holey War",
+  "dropName": "Holy War",
+  "evidence": "SAME? (renamed: OpenBeta has only the old name); OpenBeta: Holy War (5.12b, lr 4)"
+ },
+ {
+  "n": 42,
+  "area": "ar_oriental_wall",
+  "keep": "ar_oriental_wall_great_kabuki",
+  "drop": "ar_gray_kabuki",
+  "keepName": "Great kabuki",
+  "dropName": "Gray kabuki",
+  "evidence": "SAME? (renamed: OpenBeta has only the old name); OpenBeta: Gray kabuki (5.10+, lr 1)"
+ },
+ {
+  "n": 43,
+  "area": "ar_confederate_cracks",
+  "keep": "ar_confederate_cracks_the_mud_the_blood_and_the_beer",
+  "drop": "ar_the_mud_and_the_blood_and_the_beer",
+  "keepName": "The Mud, the Blood, and the Beer",
+  "dropName": "The Mud and The Blood and the Beer",
+  "evidence": "SAME? (renamed: OpenBeta has only the old name); OpenBeta: The Mud and The Blood and the Beer (5.10d, lr 3)"
+ },
+ {
+  "n": 44,
+  "area": "ar_shadow_wall",
+  "keep": "ar_shadow_wall_git_sum",
+  "drop": "ar_get_sum",
+  "keepName": "Git Sum",
+  "dropName": "Get Sum",
+  "evidence": "SAME? (renamed: OpenBeta has only the old name); OpenBeta: Get Sum (5.11d, lr 3)"
+ },
+ {
+  "n": 46,
+  "area": "az_avalon",
+  "keep": "az_avalon_whyte_knyght",
+  "drop": "az_white_knight",
+  "keepName": "Whyte Knyght",
+  "dropName": "White Knight",
+  "evidence": "SAME? (renamed: OpenBeta has only the old name); OpenBeta: White Knight (5.6, lr 1)"
+ },
+ {
+  "n": 47,
+  "area": "az_wall_of_the_trundling_trolls",
+  "keep": "az_wall_of_the_trundling_trolls_eggeshegedre",
+  "drop": "az_eggashegadrae",
+  "keepName": "Eggeshegedre",
+  "dropName": "Eggashegadrae",
+  "evidence": "SAME? (renamed: OpenBeta has only the old name); OpenBeta: Eggashegadrae (5.9+, lr 35)"
+ },
+ {
+  "n": 50,
+  "area": "az_prow_area_the",
+  "keep": "az_prow_area_the_jacked",
+  "drop": "az_jaked",
+  "keepName": "Jacked",
+  "dropName": "Jaked",
+  "evidence": "REVIEW (no OpenBeta copy); OpenBeta: "
+ },
+ {
+  "n": 53,
+  "area": "az_nurd_rock",
+  "keep": "az_nurd_rock_w_r_e_e_l",
+  "drop": "az_wreel",
+  "keepName": "W.R.E.E.L.",
+  "dropName": "Wreel",
+  "evidence": "DIFFERENT? (OpenBeta lists both); OpenBeta: Wreel (5.10+, lr 0)"
+ },
+ {
+  "n": 84,
+  "area": "ca_4_goodrich_pinnacle_area",
+  "keep": "ca_4_goodrich_pinnacle_area_hoser_s_highway_aka_hoosier_s_highway",
+  "drop": "ca_hoosier_s_highway",
+  "keepName": "Hoser's Highway (aka Hoosier’s Highway)",
+  "dropName": "Hoosier’s Highway",
+  "evidence": "SAME? (renamed: OpenBeta has only the old name); OpenBeta: Hoosier’s Highway (5.10c, lr 7)"
+ },
+ {
+  "n": 89,
+  "area": "ca_west_face_4",
+  "keep": "ca_west_face_4_aplodontia",
+  "drop": "ca_aplodonita",
+  "keepName": "Aplodontia",
+  "dropName": "Aplodonita",
+  "evidence": "SAME? (renamed: OpenBeta has only the old name); OpenBeta: Aplodonita (5.9, lr 12)"
+ },
+ {
+  "n": 90,
+  "area": "ca_center_cave",
+  "keep": "ca_center_cave_totally_chossome",
+  "drop": "ca_totally_chawsome",
+  "keepName": "Totally Chossome",
+  "dropName": "Totally Chawsome",
+  "evidence": "SAME? (renamed: OpenBeta has only the old name); OpenBeta: Totally Chawsome (5.12b, lr 5)"
+ },
+ {
+  "n": 97,
+  "area": "ca_central_royal_arches",
+  "keep": "ca_central_royal_arches_rum_sodomy_and_the_lash",
+  "drop": "ca_rum_sodomy_in_the_lash",
+  "keepName": "Rum, Sodomy and the Lash",
+  "dropName": "Rum Sodomy in the Lash",
+  "evidence": "SAME? (renamed: OpenBeta has only the old name); OpenBeta: Rum Sodomy in the Lash (5.10d, lr 15)"
+ },
+ {
+  "n": 98,
+  "area": "ca_q_agony_arch_area",
+  "keep": "ca_q_agony_arch_area_every_dog_has_his_day",
+  "drop": "ca_every_dog_has_it_s_day",
+  "keepName": "Every Dog Has His Day",
+  "dropName": "Every Dog Has It's Day",
+  "evidence": "SAME? (renamed: OpenBeta has only the old name); OpenBeta: Every Dog Has It's Day (5.9, lr 5)"
+ },
+ {
+  "n": 99,
+  "area": "ca_left_hand_of_darkness_e_face",
+  "keep": "ca_left_hand_of_darkness_e_face_the_middle_hand",
+  "drop": "ca_middle_hand_of_darkness",
+  "keepName": "The Middle Hand",
+  "dropName": "Middle Hand of Darkness",
+  "evidence": "SAME? (renamed: OpenBeta has only the old name); OpenBeta: Middle Hand of Darkness (5.11c, lr 4)"
+ },
+ {
+  "n": 101,
+  "area": "ca_all_you_can_eat",
+  "keep": "ca_all_you_can_eat_crotalusley_challenged",
+  "drop": "ca_crotalulsley_challenged",
+  "keepName": "Crotalusley Challenged",
+  "dropName": "Crotalulsley Challenged",
+  "evidence": "SAME? (renamed: OpenBeta has only the old name); OpenBeta: Crotalulsley Challenged (5.6, lr 9)"
+ },
+ {
+  "n": 103,
+  "area": "ca_alpentine_wall",
+  "keep": "ca_alpentine_wall_kalachnikov_kulture",
+  "drop": "ca_kalishnakov_culture",
+  "keepName": "Kalachnikov Kulture",
+  "dropName": "Kalishnakov Culture",
+  "evidence": "SAME? (renamed: OpenBeta has only the old name); OpenBeta: Kalishnakov Culture (5.12a, lr 6)"
+ },
+ {
+  "n": 104,
+  "area": "ca_dmz_2",
+  "keep": "ca_dmz_2_sandinista",
+  "drop": "ca_sandanista",
+  "keepName": "Sandinista",
+  "dropName": "Sandanista",
+  "evidence": "SAME? (renamed: OpenBeta has only the old name); OpenBeta: Sandanista (5.11a, lr 13)"
+ },
+ {
+  "n": 112,
+  "area": "ca_motown",
+  "keep": "ca_motown_whale_if_yer_scared_direct_ahab_direct",
+  "drop": "ca_whale_if_yer_scared_ahab_direct",
+  "keepName": "Whale If Yer Scared Direct (Ahab Direct)",
+  "dropName": "Whale If Yer Scared (Ahab Direct)",
+  "evidence": "REVIEW (no OpenBeta copy); OpenBeta: "
+ },
+ {
+  "n": 114,
+  "area": "ca_stately_pleasure_dome",
+  "keep": "ca_stately_pleasure_dome_jabberwalky",
+  "drop": "ca_jabberwocky_3",
+  "keepName": "Jabberwalky",
+  "dropName": "Jabberwocky",
+  "evidence": "SAME? (renamed: OpenBeta has only the old name); OpenBeta: Jabberwocky (5.5, lr 3)"
+ },
+ {
+  "n": 116,
+  "area": "ca_table_scraps_pinnacle",
+  "keep": "ca_table_scraps_pinnacle_hobolicious",
+  "drop": "ca_hobolicous",
+  "keepName": "Hobolicious",
+  "dropName": "Hobolicous",
+  "evidence": "SAME? (renamed: OpenBeta has only the old name); OpenBeta: Hobolicous (5.7, lr 0)"
+ },
+ {
+  "n": 120,
+  "area": "ca_pea_brain",
+  "keep": "ca_pea_brain_jane_jetson",
+  "drop": "ca_joan_jetson",
+  "keepName": "Jane Jetson",
+  "dropName": "Joan Jetson",
+  "evidence": "SAME? (renamed: OpenBeta has only the old name); OpenBeta: Joan Jetson (5.9+, lr 2)"
+ },
+ {
+  "n": 121,
+  "area": "ca_west_face_6",
+  "keep": "ca_west_face_6_expresso_2",
+  "drop": "ca_west_face_6_expresso",
+  "keepName": "Expresso",
+  "dropName": "Espresso",
+  "evidence": "SAME? (renamed: OpenBeta has only the old name); OpenBeta: Espresso (5.11a, lr 12)"
+ },
+ {
+  "n": 122,
+  "area": "ca_snickers_north_face",
+  "keep": "ca_snickers_north_face_humerus",
+  "drop": "ca_humerous",
+  "keepName": "Humerus",
+  "dropName": "Humerous",
+  "evidence": "SAME? (renamed: OpenBeta has only the old name); OpenBeta: Humerous (5.10b, lr 12)"
+ },
+ {
+  "n": 124,
+  "area": "ca_blob_west_face_the",
+  "keep": "ca_blob_west_face_the_berkeley_dike",
+  "drop": "ca_berkeley_dyke",
+  "keepName": "Berkeley Dike",
+  "dropName": "Berkeley Dyke",
+  "evidence": "REVIEW (no OpenBeta copy); OpenBeta: "
+ },
+ {
+  "n": 125,
+  "area": "ca_junk_clump_south_face",
+  "keep": "ca_junk_clump_south_face_samba",
+  "drop": "ca_sambo",
+  "keepName": "Samba",
+  "dropName": "Sambo",
+  "evidence": "SAME? (renamed: OpenBeta has only the old name); OpenBeta: Sambo (5.4, lr 5)"
+ },
+ {
+  "n": 126,
+  "area": "ca_boiler_pinnacle",
+  "keep": "ca_boiler_pinnacle_solid_fuel",
+  "drop": "ca_solid_full",
+  "keepName": "Solid Fuel",
+  "dropName": "Solid Full",
+  "evidence": "SAME? (renamed: OpenBeta has only the old name); OpenBeta: Solid Full (5.10a, lr 3)"
+ },
+ {
+  "n": 129,
+  "area": "ca_kearsarge_dome_aka_the_battle_ship",
+  "keep": "ca_kearsarge_dome_aka_the_battle_ship_southern_choss_boss_back_side",
+  "drop": "ca_souther_choss_boss_back_side",
+  "keepName": "Southern Choss Boss Back Side.",
+  "dropName": "Souther Choss Boss Back Side.",
+  "evidence": "SAME? (renamed: OpenBeta has only the old name); OpenBeta: Souther Choss Boss Back Side. (5.7+, lr 6)"
+ },
+ {
+  "n": 130,
+  "area": "ca_doda_dome",
+  "keep": "ca_doda_dome_silicone_corner",
+  "drop": "ca_silcone_corner",
+  "keepName": "Silicone Corner",
+  "dropName": "Silcone Corner",
+  "evidence": "SAME? (renamed: OpenBeta has only the old name); OpenBeta: Silcone Corner (5.7, lr 1)"
+ },
+ {
+  "n": 131,
+  "area": "ca_super_slab_the",
+  "keep": "ca_super_slab_the_coyote_s_corner",
+  "drop": "ca_coyote_corner",
+  "keepName": "Coyote's Corner",
+  "dropName": "Coyote Corner",
+  "evidence": "REVIEW (no OpenBeta copy); OpenBeta: "
+ },
+ {
+  "n": 133,
+  "area": "ca_west_face_of_the_lamb",
+  "keep": "ca_west_face_of_the_lamb_little_sheeba",
+  "drop": "ca_little_sheba",
+  "keepName": "Little Sheeba",
+  "dropName": "Little Sheba",
+  "evidence": "SAME? (renamed: OpenBeta has only the old name); OpenBeta: Little Sheba (5.10a, lr 9)"
+ },
+ {
+  "n": 135,
+  "area": "ca_wonder_wall",
+  "keep": "ca_wonder_wall_reed_s_route",
+  "drop": "ca_reed_route",
+  "keepName": "Reed's Route",
+  "dropName": "Reed' Route",
+  "evidence": "SAME? (renamed: OpenBeta has only the old name); OpenBeta: Reed' Route (5.7, lr 1)"
+ },
+ {
+  "n": 143,
+  "area": "ca_shadow_wall",
+  "keep": "ca_shadow_wall_traversy",
+  "drop": "ca_traversi",
+  "keepName": "Traversy",
+  "dropName": "Traversi",
+  "evidence": "SAME? (renamed: OpenBeta has only the old name); OpenBeta: Traversi (5.11d, lr 11)"
+ },
+ {
+  "n": 149,
+  "area": "ca_pixie_rock",
+  "keep": "ca_pixie_rock_rhythm_of_the_heart",
+  "drop": "ca_rhythm_of_the_heat",
+  "keepName": "Rhythm of the Heart",
+  "dropName": "Rhythm of the Heat",
+  "evidence": "SAME? (renamed: OpenBeta has only the old name); OpenBeta: Rhythm of the Heat (5.8, lr 4)"
+ },
+ {
+  "n": 167,
+  "area": "co_5_cartoon_wall",
+  "keep": "co_5_cartoon_wall_animaniacs",
+  "drop": "co_amimaniacs",
+  "keepName": "Animaniacs",
+  "dropName": "Amimaniacs",
+  "evidence": "SAME? (renamed: OpenBeta has only the old name); OpenBeta: Amimaniacs (5.10b/c, lr 1)"
+ },
+ {
+  "n": 168,
+  "area": "co_contest_wall",
+  "keep": "co_contest_wall_spiney_dan_aka_spinney_dan_incorrectly",
+  "drop": "co_spinney_dan",
+  "keepName": "Spiney Dan (aka Spinney Dan, incorrectly)",
+  "dropName": "Spinney Dan",
+  "evidence": "SAME? (renamed: OpenBeta has only the old name); OpenBeta: Spinney Dan (5.10c, lr 41)"
+ },
+ {
+  "n": 169,
+  "area": "co_redgarden_s_buttress",
+  "keep": "co_redgarden_s_buttress_archer_mclenahan_2",
+  "drop": "co_redgarden_s_buttress_archer_mclenahan",
+  "keepName": "Archer McLenahan",
+  "dropName": "Archer McLanahan",
+  "evidence": "SAME? (renamed: OpenBeta has only the old name); OpenBeta: Archer McLanahan (5.10, lr 28)"
+ },
+ {
+  "n": 196,
+  "area": "co_wizard_s_gate",
+  "keep": "co_c_wizard_s_gate_the_arrival_removed_july_21_2022",
+  "drop": "co_the_arrival",
+  "keepName": "The Arrival (removed July 21, 2022)",
+  "dropName": "The Arrival",
+  "evidence": "SAME? (renamed: OpenBeta has only the old name); OpenBeta: The Arrival (5.11, lr 17)"
+ },
+ {
+  "n": 199,
+  "area": "co_brown_cloud_rocks",
+  "keep": "co_brown_cloud_rocks_jolobee_aka_volobee",
+  "drop": "co_volobee_aka_jolobee",
+  "keepName": "Jolobee (aka Volobee)",
+  "dropName": "Volobee (aka Jolobee)",
+  "evidence": "SAME? (renamed: OpenBeta has only the old name); OpenBeta: Volobee (aka Jolobee) (5.11a, lr 17)"
+ },
+ {
+  "n": 205,
+  "area": "co_brown_cloud_rocks",
+  "keep": "co_brown_cloud_rocks_crack_aka_sheltered_2_left_of_interface",
+  "drop": "co_crack_2_left_of_interface",
+  "keepName": "Crack aka Sheltered (2 left of Interface)",
+  "dropName": "Crack (2 left of Interface)",
+  "evidence": "SAME? (renamed: OpenBeta has only the old name); OpenBeta: Crack (2 left of Interface) (5.7, lr 22)"
+ },
+ {
+  "n": 221,
+  "area": "co_whiskey_rocks_west",
+  "keep": "co_whiskey_rocks_west_clam_chowda",
+  "drop": "co_clam_chowder",
+  "keepName": "Clam Chowda",
+  "dropName": "Clam Chowder",
+  "evidence": "SAME? (renamed: OpenBeta has only the old name); OpenBeta: Clam Chowder (5.13-, lr 4)"
+ },
+ {
+  "n": 223,
+  "area": "co_eagle_rock",
+  "keep": "co_eagle_rock_barely_eagle",
+  "drop": "co_rarely_eagle",
+  "keepName": "Barely Eagle",
+  "dropName": "Rarely Eagle",
+  "evidence": "SAME? (renamed: OpenBeta has only the old name); OpenBeta: Rarely Eagle (5.13-, lr 9)"
+ },
+ {
+  "n": 224,
+  "area": "co_easter_rock",
+  "keep": "co_easter_rock_knappweed_herbicide",
+  "drop": "co_knappweed_herbacide",
+  "keepName": "Knappweed Herbicide",
+  "dropName": "Knappweed Herbacide",
+  "evidence": "SAME? (renamed: OpenBeta has only the old name); OpenBeta: Knappweed Herbacide (5.10b, lr 3)"
+ },
+ {
+  "n": 229,
+  "area": "co_black_wall_the",
+  "keep": "co_black_wall_the_harry_caray",
+  "drop": "co_harry_cary",
+  "keepName": "Harry Caray",
+  "dropName": "Harry Cary",
+  "evidence": "REVIEW (no OpenBeta copy); OpenBeta: "
+ },
+ {
+  "n": 230,
+  "area": "co_block_tower",
+  "keep": "co_block_tower_mister_mantel",
+  "drop": "co_mister_mantle",
+  "keepName": "Mister Mantel",
+  "dropName": "Mister Mantle",
+  "evidence": "SAME? (renamed: OpenBeta has only the old name); OpenBeta: Mister Mantle (5.12a, lr 1)"
+ },
+ {
+  "n": 240,
+  "area": "co_nappy_dugout_the",
+  "keep": "co_nappy_dugout_the_pmt_aka_squawk_box",
+  "drop": "co_pmt",
+  "keepName": "PMT aka Squawk Box",
+  "dropName": "PMT",
+  "evidence": "REVIEW (no OpenBeta copy); OpenBeta: "
+ },
+ {
+  "n": 242,
+  "area": "ct_party_wall",
+  "keep": "ct_3_party_wall_unamed_5_7_crack",
+  "drop": "ct_unamed_crack",
+  "keepName": "Unamed 5.7 crack",
+  "dropName": "Unamed Crack",
+  "evidence": "SAME? (renamed: OpenBeta has only the old name); OpenBeta: Unamed Crack (5.7, lr 10)"
+ },
+ {
+  "n": 246,
+  "area": "id_building_blocks_west",
+  "keep": "id_building_blocks_west_vice_grips_2",
+  "drop": "id_building_blocks_west_vice_grips",
+  "keepName": "Vice Grips",
+  "dropName": "Vise Grips",
+  "evidence": "SAME? (renamed: OpenBeta has only the old name); OpenBeta: Vise Grips (5.11+, lr 5)"
+ },
+ {
+  "n": 248,
+  "area": "id_comp_rock_east_face",
+  "keep": "id_comp_rock_east_face_mantel_dynamics",
+  "drop": "id_mantle_dynamics",
+  "keepName": "Mantel Dynamics",
+  "dropName": "Mantle Dynamics",
+  "evidence": "SAME? (renamed: OpenBeta has only the old name); OpenBeta: Mantle Dynamics (5.10b, lr 3)"
+ },
+ {
+  "n": 249,
+  "area": "id_bath_rock_west",
+  "keep": "id_bath_rock_west_minimum_impact",
+  "drop": "id_maximum_impact",
+  "keepName": "Minimum Impact",
+  "dropName": "Maximum Impact",
+  "evidence": "SAME? (renamed: OpenBeta has only the old name); OpenBeta: Maximum Impact (5.11b, lr 10)"
+ },
+ {
+  "n": 250,
+  "area": "id_creekside",
+  "keep": "id_creekside_moderne_zeiten",
+  "drop": "id_moderna_zeiten",
+  "keepName": "Moderne Zeiten",
+  "dropName": "Moderna Zeiten",
+  "evidence": "SAME? (renamed: OpenBeta has only the old name); OpenBeta: Moderna Zeiten (5.11c, lr 7)"
+ },
+ {
+  "n": 257,
+  "area": "id_crack_house_the",
+  "keep": "id_crack_house_the_mountin_mahogany_2",
+  "drop": "id_crack_house_the_mountin_mahogany",
+  "keepName": "Mountin' Mahogany",
+  "dropName": "Mountain Mahogany",
+  "evidence": "REVIEW (no OpenBeta copy); OpenBeta: "
+ },
+ {
+  "n": 259,
+  "area": "id_lost_arrow_spire",
+  "keep": "id_lost_arrow_spire_forcash_riches_2",
+  "drop": "id_lost_arrow_spire_forcash_riches",
+  "keepName": "Forcash & Riches",
+  "dropName": "Forkash & Riches",
+  "evidence": "SAME? (renamed: OpenBeta has only the old name); OpenBeta: Forkash & Riches (5.11a, lr 4)"
+ },
+ {
+  "n": 260,
+  "area": "il_i_railroad_rock",
+  "keep": "il_i_railroad_rock_where_s_my_bourbon",
+  "drop": "il_where_s_my_bourban",
+  "keepName": "Where's My Bourbon",
+  "dropName": "Where's My Bourban",
+  "evidence": "SAME? (renamed: OpenBeta has only the old name); OpenBeta: Where's My Bourban (5.12b, lr 5)"
+ },
+ {
+  "n": 262,
+  "area": "il_d_beaver_wall",
+  "keep": "il_d_beaver_wall_tasmanian_devil",
+  "drop": "il_tasmania_devil",
+  "keepName": "Tasmanian Devil",
+  "dropName": "Tasmania Devil",
+  "evidence": "SAME? (renamed: OpenBeta has only the old name); OpenBeta: Tasmania Devil (5.12a/b, lr 10)"
+ },
+ {
+  "n": 264,
+  "area": "ky_4_madness_cave",
+  "keep": "ky_4_madness_cave_pushin_up_daisies_2",
+  "drop": "ky_4_madness_cave_pushin_up_daisies",
+  "keepName": "Pushin' Up Daisies",
+  "dropName": "Pushing Up Daisies",
+  "evidence": "SAME? (renamed: OpenBeta has only the old name); OpenBeta: Pushing Up Daisies (5.13c, lr 3)"
+ },
+ {
+  "n": 265,
+  "area": "ky_chocolate_factory",
+  "keep": "ky_chocolate_factory_toxicondendron_2",
+  "drop": "ky_chocolate_factory_toxicondendron",
+  "keepName": "Toxicondendron",
+  "dropName": "Toxicodendron",
+  "evidence": "SAME? (renamed: OpenBeta has only the old name); OpenBeta: Toxicodendron (5.11b, lr 10)"
+ },
+ {
+  "n": 266,
+  "area": "ky_boneyard_the",
+  "keep": "ky_boneyard_the_captain_blondie_sinks_the_ship",
+  "drop": "ky_captain_blonde_sinks_the_ship",
+  "keepName": "Captain Blondie Sinks The Ship",
+  "dropName": "Captain Blonde Sinks The Ship",
+  "evidence": "REVIEW (no OpenBeta copy); OpenBeta: "
+ },
+ {
+  "n": 268,
+  "area": "ky_chica_bonita_wall",
+  "keep": "ky_chica_bonita_wall_helluva_caucasian",
+  "drop": "ky_hellava_caucasian",
+  "keepName": "Helluva Caucasian",
+  "dropName": "Hellava Caucasian",
+  "evidence": "SAME? (renamed: OpenBeta has only the old name); OpenBeta: Hellava Caucasian (5.12a, lr 17)"
+ },
+ {
+  "n": 269,
+  "area": "ky_staircase_wall",
+  "keep": "ky_staircase_wall_staircase_to_heaven",
+  "drop": "ky_stairway_to_heaven",
+  "keepName": "Staircase to Heaven",
+  "dropName": "Stairway to Heaven",
+  "evidence": "SAME? (renamed: OpenBeta has only the old name); OpenBeta: Stairway to Heaven (5.3, lr 2)"
+ },
+ {
+  "n": 270,
+  "area": "ky_pebble_beach",
+  "keep": "ky_pebble_beach_welcome_to_ole_kentuck",
+  "drop": "ky_welcome_to_ol_kentuck",
+  "keepName": "Welcome to Ole Kentuck",
+  "dropName": "Welcome to ol' Kentuck",
+  "evidence": "SAME? (renamed: OpenBeta has only the old name); OpenBeta: Welcome to ol' Kentuck (5.13a, lr 24)"
+ },
+ {
+  "n": 271,
+  "area": "ky_slab_city",
+  "keep": "ky_slab_city_a_middle_path",
+  "drop": "ky_the_middle_path",
+  "keepName": "A Middle Path",
+  "dropName": "The Middle Path",
+  "evidence": "SAME? (renamed: OpenBeta has only the old name); OpenBeta: The Middle Path (5.11, lr 2)"
+ },
+ {
+  "n": 274,
+  "area": "ma_crag_1_aka_pinnacle_rock",
+  "keep": "ma_crag_1_aka_pinnacle_rock_ohc",
+  "drop": "ma_o_h_c",
+  "keepName": "OHC",
+  "dropName": "O.H.C.",
+  "evidence": "DIFFERENT? (OpenBeta lists both); OpenBeta: O.H.C. (5.8, lr 10)"
+ },
+ {
+  "n": 284,
+  "area": "md_jungle_cliffs",
+  "keep": "md_jungle_cliffs_left_edge_of_jan_s_face",
+  "drop": "md_left_edge_of_jane_s_face",
+  "keepName": "Left Edge of Jan’s Face",
+  "dropName": "Left Edge of Jane's Face",
+  "evidence": "SAME? (renamed: OpenBeta has only the old name); OpenBeta: Left Edge of Jane's Face (5.3, lr 7)"
+ },
+ {
+  "n": 286,
+  "area": "me_precipice_aka_the_south_wall_the",
+  "keep": "me_precipice_aka_the_south_wall_the_band_of_gypsies_mid_cliff_start",
+  "drop": "me_band_of_gypsys",
+  "keepName": "Band of Gypsies (Mid-Cliff Start)",
+  "dropName": "Band of Gypsys",
+  "evidence": "REVIEW (no OpenBeta copy); OpenBeta: "
+ },
+ {
+  "n": 287,
+  "area": "me_precipice_aka_the_south_wall_the",
+  "keep": "me_precipice_aka_the_south_wall_the_fingers_on_a_seascape_mid_cliff_start",
+  "drop": "me_fingertips_on_a_seascape_mid_cliff_start",
+  "keepName": "Fingers on a Seascape  (mid-cliff START)",
+  "dropName": "Fingertips on a Seascape  (mid-cliff START)",
+  "evidence": "REVIEW (no OpenBeta copy); OpenBeta: "
+ },
+ {
+  "n": 290,
+  "area": "me_c_main_face",
+  "keep": "me_c_main_face_echoes_of_life",
+  "drop": "me_echos_of_life",
+  "keepName": "Echoes of Life",
+  "dropName": "Echos of Life",
+  "evidence": "SAME? (renamed: OpenBeta has only the old name); OpenBeta: Echos of Life (5.10a, lr 13)"
+ },
+ {
+  "n": 291,
+  "area": "me_high_meadow_wall",
+  "keep": "me_high_meadow_wall_stranglehold",
+  "drop": "me_strangehold",
+  "keepName": "Stranglehold",
+  "dropName": "Strangehold",
+  "evidence": "REVIEW (no OpenBeta copy); OpenBeta: "
+ },
+ {
+  "n": 300,
+  "area": "mt_main_crag",
+  "keep": "mt_main_crag_money_can_t_buy_knives",
+  "drop": "mt_money_can_t_but_knives",
+  "keepName": "Money Can't Buy Knives",
+  "dropName": "Money Can't But Knives",
+  "evidence": "SAME? (renamed: OpenBeta has only the old name); OpenBeta: Money Can't But Knives (5.11d, lr 35)"
+ },
+ {
+  "n": 303,
+  "area": "mt_blow_hard_wall",
+  "keep": "mt_blow_hard_wall_pissin_in_the_wind_2",
+  "drop": "mt_blow_hard_wall_pissin_in_the_wind",
+  "keepName": "Pissin' in the Wind",
+  "dropName": "Pissing In the Wind",
+  "evidence": "SAME? (renamed: OpenBeta has only the old name); OpenBeta: Pissing In the Wind (5.6, lr 4)"
+ },
+ {
+  "n": 305,
+  "area": "mt_main_wall_west_end",
+  "keep": "mt_main_wall_west_end_climbing_101_aka_5_easy",
+  "drop": "mt_climbign_101",
+  "keepName": "Climbing 101 (aka 5-Easy)",
+  "dropName": "Climbign 101",
+  "evidence": "SAME? (renamed: OpenBeta has only the old name); OpenBeta: Climbign 101 (5.9, lr 7)"
+ },
+ {
+  "n": 306,
+  "area": "nc_main_tier",
+  "keep": "nc_main_tier_b_o_g_man",
+  "drop": "nc_bog_man",
+  "keepName": "B.O.G Man",
+  "dropName": "BOG Man",
+  "evidence": "DIFFERENT? (OpenBeta lists both); OpenBeta: BOG Man (5.11a, lr 5)"
+ },
+ {
+  "n": 309,
+  "area": "nc_north_side",
+  "keep": "nc_north_side_invisible_airways",
+  "drop": "nc_invisible_airwaves",
+  "keepName": "Invisible Airways",
+  "dropName": "Invisible Airwaves",
+  "evidence": "SAME? (renamed: OpenBeta has only the old name); OpenBeta: Invisible Airwaves (5.10c, lr 15)"
+ },
+ {
+  "n": 311,
+  "area": "nc_north_side",
+  "keep": "nc_north_side_invisible_airways_direct",
+  "drop": "nc_invisible_airwaves_direct",
+  "keepName": "Invisible Airways Direct",
+  "dropName": "Invisible Airwaves Direct",
+  "evidence": "SAME? (renamed: OpenBeta has only the old name); OpenBeta: Invisible Airwaves Direct (5.12a, lr 16)"
+ },
+ {
+  "n": 313,
+  "area": "nc_big_green",
+  "keep": "nc_big_green_big_greeny_weeny",
+  "drop": "nc_big_greenie_weenie",
+  "keepName": "Big Greeny Weeny",
+  "dropName": "Big Greenie Weenie",
+  "evidence": "SAME? (renamed: OpenBeta has only the old name); OpenBeta: Big Greenie Weenie (5.11a/b, lr 5)"
+ },
+ {
+  "n": 314,
+  "area": "nh_02_the_ocean",
+  "keep": "nh_02_the_ocean_power_drills_and_peckerheads",
+  "drop": "nh_bosch_drills_and_peckerheads",
+  "keepName": "Power Drills and Peckerheads",
+  "dropName": "Bosch Drills and Peckerheads",
+  "evidence": "SAME? (renamed: OpenBeta has only the old name); OpenBeta: Bosch Drills and Peckerheads (5.11, lr 4)"
+ },
+ {
+  "n": 315,
+  "area": "nh_03_main_slab",
+  "keep": "nh_03_main_slab_bear_minimum_to_intercept_star_trek_night_climb",
+  "drop": "nh_bear_minimum_to_intercept_star_trek_and_gamma_ray",
+  "keepName": "Bear Minimum (to intercept Star Trek/“Night Climb”)",
+  "dropName": "Bear Minimum (to intercept Star Trek, and Gamma Ray)",
+  "evidence": "SAME? (renamed: OpenBeta has only the old name); OpenBeta: Bear Minimum (to intercept Star Trek, and Gamma Ray) (5.7, lr 14)"
+ },
+ {
+  "n": 316,
+  "area": "nh_big_wall",
+  "keep": "nh_6_big_wall_van_burren_route_aka_siren_s_song",
+  "drop": "nh_van_burren_route",
+  "keepName": "Van Burren Route aka Siren’s Song",
+  "dropName": "Van Burren Route",
+  "evidence": "SAME? (renamed: OpenBeta has only the old name); OpenBeta: Van Burren Route (5.11c, lr 0)"
+ },
+ {
+  "n": 318,
+  "area": "nh_big_wall",
+  "keep": "nh_6_big_wall_leading_cause_of_death",
+  "drop": "nh_leading_cause",
+  "keepName": "Leading Cause of Death",
+  "dropName": "Leading cause",
+  "evidence": "SAME? (renamed: OpenBeta has only the old name); OpenBeta: Leading cause (5.10+, lr 4)"
+ },
+ {
+  "n": 323,
+  "area": "nh_big_wall_2",
+  "keep": "nh_big_wall_2_the_ghost",
+  "drop": "nh_the_ghost_clean_aid",
+  "keepName": "The Ghost",
+  "dropName": "The Ghost (Clean Aid)",
+  "evidence": "SAME? (renamed: OpenBeta has only the old name); OpenBeta: The Ghost (Clean Aid) (5.7, lr 4)"
+ },
+ {
+  "n": 325,
+  "area": "nh_boundary_rock",
+  "keep": "nh_boundary_rock_out_of_bounds",
+  "drop": "nh_outer_bounds",
+  "keepName": "Out Of Bounds",
+  "dropName": "Outer Bounds",
+  "evidence": "SAME? (renamed: OpenBeta has only the old name); OpenBeta: Outer Bounds (5.8+, lr 1)"
+ },
+ {
+  "n": 338,
+  "area": "nm_my_secret_garden",
+  "keep": "nm_my_secret_garden_jail_bite",
+  "drop": "nm_jailbait",
+  "keepName": "Jail Bite",
+  "dropName": "Jailbait",
+  "evidence": "SAME? (renamed: OpenBeta has only the old name); OpenBeta: Jailbait (5.10+, lr 18)"
+ },
+ {
+  "n": 339,
+  "area": "nm_minor_wall",
+  "keep": "nm_minor_wall_socorro_louie_nabs_another_minor",
+  "drop": "nm_socorro_louie_bags_another_minor",
+  "keepName": "Socorro Louie Nabs Another Minor",
+  "dropName": "Socorro Louie Bags Another Minor",
+  "evidence": "SAME? (renamed: OpenBeta has only the old name); OpenBeta: Socorro Louie Bags Another Minor (5.10d, lr 9)"
+ },
+ {
+  "n": 344,
+  "area": "nm_bush_shark_area",
+  "keep": "nm_bush_shark_area_westeron_wynde_2",
+  "drop": "nm_bush_shark_area_westeron_wynde",
+  "keepName": "Westeron Wynde",
+  "dropName": "Westron Wynde",
+  "evidence": "SAME? (renamed: OpenBeta has only the old name); OpenBeta: Westron Wynde (5.9, lr 11)"
+ },
+ {
+  "n": 348,
+  "area": "nm_solar_cave_2",
+  "keep": "nm_solar_cave_2_solo_man_aka_homo_erectus_soloensis",
+  "drop": "nm_solo_man_or_homo_erectus_soloensis",
+  "keepName": "Solo Man (aka Homo Erectus Soloensis)",
+  "dropName": "Solo Man (or Homo Erectus Soloensis)",
+  "evidence": "SAME? (renamed: OpenBeta has only the old name); OpenBeta: Solo Man (or Homo Erectus Soloensis) (5.12b, lr 21)"
+ },
+ {
+  "n": 349,
+  "area": "nv_dali_dome",
+  "keep": "nv_dali_dome_surreal_peel",
+  "drop": "nv_surreal_peal",
+  "keepName": "Surreal Peel",
+  "dropName": "Surreal Peal",
+  "evidence": "SAME? (renamed: OpenBeta has only the old name); OpenBeta: Surreal Peal (5.10b, lr 1)"
+ },
+ {
+  "n": 354,
+  "area": "nv_red_springs_rock",
+  "keep": "nv_red_springs_rock_welcome_to_n_i_m_b_y_town",
+  "drop": "nv_welcome_to_n_i_m_b_y_not_in_my_back_yard_town",
+  "keepName": "Welcome To N.I.M.B.Y. Town",
+  "dropName": "Welcome to N.I.M.B.Y. (Not In My Back Yard) Town",
+  "evidence": "SAME? (renamed: OpenBeta has only the old name); OpenBeta: Welcome to N.I.M.B.Y. (Not In My Back Yard) Town (5.8, lr 13)"
+ },
+ {
+  "n": 355,
+  "area": "nv_the_pier",
+  "keep": "nv_the_pier_drug_smelling_pot_bellied_pig",
+  "drop": "nv_drug_sniffing_pot_bellied_pig",
+  "keepName": "Drug Smelling Pot Bellied Pig",
+  "dropName": "Drug Sniffing Pot-Bellied Pig",
+  "evidence": "SAME? (renamed: OpenBeta has only the old name); OpenBeta: Drug Sniffing Pot-Bellied Pig (5.12d, lr 9)"
+ },
+ {
+  "n": 358,
+  "area": "nv_clear_light_cave",
+  "keep": "nv_clear_light_cave_whamo_extension",
+  "drop": "nv_whammo_extension",
+  "keepName": "Whamo Extension",
+  "dropName": "Whammo Extension",
+  "evidence": "SAME? (renamed: OpenBeta has only the old name); OpenBeta: Whammo Extension (5.13b, lr 25)"
+ },
+ {
+  "n": 366,
+  "area": "nv_great_red_book_area_the",
+  "keep": "nv_great_red_book_area_the_too_school_foor_cool",
+  "drop": "nv_too_school_4_cool",
+  "keepName": "Too School Foor Cool",
+  "dropName": "Too School 4 Cool",
+  "evidence": "REVIEW (no OpenBeta copy); OpenBeta: "
+ },
+ {
+  "n": 369,
+  "area": "nv_running_man_wall",
+  "keep": "nv_running_man_wall_frictiony_face_panty_waist",
+  "drop": "nv_friction_face_panty_waist",
+  "keepName": "Frictiony Face Panty Waist",
+  "dropName": "Friction Face Panty Waist",
+  "evidence": "SAME? (renamed: OpenBeta has only the old name); OpenBeta: Friction Face Panty Waist (5.9-, lr 0)"
+ },
+ {
+  "n": 372,
+  "area": "ny_1_manayunk",
+  "keep": "ny_1_manayunk_the_schuylkill",
+  "drop": "ny_schuylkill_trail",
+  "keepName": "The Schuylkill",
+  "dropName": "Schuylkill Trail",
+  "evidence": "SAME? (renamed: OpenBeta has only the old name); OpenBeta: Schuylkill Trail (5.3, lr 5)"
+ },
+ {
+  "n": 373,
+  "area": "ny_sleepy_hollow",
+  "keep": "ny_l_sleepy_hollow_dick_s_prick",
+  "drop": "ny_dick_s_trick",
+  "keepName": "Dick's Prick",
+  "dropName": "Dick's Trick",
+  "evidence": "SAME? (renamed: OpenBeta has only the old name); OpenBeta: Dick's Trick (5.6, lr 22)"
+ },
+ {
+  "n": 374,
+  "area": "ny_j_the_yellow_wall_and_the_seasons",
+  "keep": "ny_j_the_yellow_wall_and_the_seasons_fillipina_2",
+  "drop": "ny_j_the_yellow_wall_and_the_seasons_fillipina",
+  "keepName": "Fillipina",
+  "dropName": "Filipina",
+  "evidence": "SAME? (renamed: OpenBeta has only the old name); OpenBeta: Filipina (5.9, lr 26)"
+ },
+ {
+  "n": 379,
+  "area": "ny_bella_vista_slab",
+  "keep": "ny_bella_vista_slab_le_jour_de_bon_heures",
+  "drop": "ny_le_jeur_de_bon_heures",
+  "keepName": "Le Jour de Bon Heures",
+  "dropName": "Le Jeur de Bon Heures",
+  "evidence": "SAME? (renamed: OpenBeta has only the old name); OpenBeta: Le Jeur de Bon Heures (5.3, lr 0)"
+ },
+ {
+  "n": 380,
+  "area": "ny_frontiertown_crag",
+  "keep": "ny_frontiertown_crag_witness_the_sickness",
+  "drop": "ny_witness_the_sickess",
+  "keepName": "Witness the Sickness",
+  "dropName": "Witness the Sickess",
+  "evidence": "SAME? (renamed: OpenBeta has only the old name); OpenBeta: Witness the Sickess (5.13b, lr 0)"
+ },
+ {
+  "n": 381,
+  "area": "oh_isle_of_many_faces",
+  "keep": "oh_isle_of_many_faces_aztic_walk_2",
+  "drop": "oh_isle_of_many_faces_aztic_walk",
+  "keepName": "Aztic Walk",
+  "dropName": "Aztec Walk",
+  "evidence": "SAME? (renamed: OpenBeta has only the old name); OpenBeta: Aztec Walk (5.7, lr 1)"
+ },
+ {
+  "n": 382,
+  "area": "oh_isle_of_many_faces",
+  "keep": "oh_isle_of_many_faces_chossburg_arete",
+  "drop": "oh_chossburger_arete",
+  "keepName": "Chossburg Arete",
+  "dropName": "Chossburger Arete",
+  "evidence": "SAME? (renamed: OpenBeta has only the old name); OpenBeta: Chossburger Arete (5.10, lr 5)"
+ },
+ {
+  "n": 383,
+  "area": "ok_upper_mount_scott",
+  "keep": "ok_upper_mount_scott_marc_johnston_face_route",
+  "drop": "ok_marc_johnson_face_route",
+  "keepName": "Marc Johnston Face Route",
+  "dropName": "Marc Johnson face route",
+  "evidence": "SAME? (renamed: OpenBeta has only the old name); OpenBeta: Marc Johnson face route (5.9, lr 0)"
+ },
+ {
+  "n": 385,
+  "area": "ok_voodoo_wall",
+  "keep": "ok_voodoo_wall_unknown_voodoo",
+  "drop": "ok_unknown_vodoo",
+  "keepName": "Unknown Voodoo",
+  "dropName": "Unknown Vodoo",
+  "evidence": "SAME? (renamed: OpenBeta has only the old name); OpenBeta: Unknown Vodoo (5.6, lr 0)"
+ },
+ {
+  "n": 386,
+  "area": "ok_lichen_wall",
+  "keep": "ok_lichen_wall_2_titanic_sky_fka_rock_bottom",
+  "drop": "ok_rock_bottom",
+  "keepName": "Titanic Sky FKA Rock Bottom",
+  "dropName": "Rock Bottom",
+  "evidence": "SAME? (renamed: OpenBeta has only the old name); OpenBeta: Rock Bottom (5.11a, lr 25)"
+ },
+ {
+  "n": 387,
+  "area": "or_3_catwalk_cliff",
+  "keep": "or_3_catwalk_cliff_taxtor",
+  "drop": "or_taxdor",
+  "keepName": "Taxtor",
+  "dropName": "Taxdor",
+  "evidence": "SAME? (renamed: OpenBeta has only the old name); OpenBeta: Taxdor (5.9, lr 14)"
+ },
+ {
+  "n": 388,
+  "area": "or_4_big_ben_tower",
+  "keep": "or_4_big_ben_tower_diamond_in_the_tuff_open_project",
+  "drop": "or_diamond_in_the_tuff_closed_project",
+  "keepName": "Diamond in the Tuff (open project)",
+  "dropName": "Diamond in the Tuff (closed project)",
+  "evidence": "SAME? (renamed: OpenBeta has only the old name); OpenBeta: Diamond in the Tuff (closed project) (5.13, lr 3)"
+ },
+ {
+  "n": 389,
+  "area": "or_4_star_wall",
+  "keep": "or_4_star_wall_jonny_and_the_melonheads",
+  "drop": "or_johnny_and_the_mellonheads",
+  "keepName": "Jonny and the Melonheads",
+  "dropName": "Johnny and the Mellonheads",
+  "evidence": "SAME? (renamed: OpenBeta has only the old name); OpenBeta: Johnny and the Mellonheads (5.12b, lr 5)"
+ },
+ {
+  "n": 390,
+  "area": "or_4_wolf_point",
+  "keep": "or_4_wolf_point_gsr_great_sport_route",
+  "drop": "or_gsr_good_sport_route",
+  "keepName": "GSR (Great Sport Route)",
+  "dropName": "GSR (Good Sport Route)",
+  "evidence": "SAME? (renamed: OpenBeta has only the old name); OpenBeta: GSR (Good Sport Route) (5.7, lr 4)"
+ },
+ {
+  "n": 391,
+  "area": "or_garden_cliffs",
+  "keep": "or_garden_cliffs_honeycomb_open_project",
+  "drop": "or_honeycomb_closed_project",
+  "keepName": "Honeycomb (Open Project)",
+  "dropName": "Honeycomb (Closed Project)",
+  "evidence": "SAME? (renamed: OpenBeta has only the old name); OpenBeta: Honeycomb (Closed Project) (5.12, lr 21)"
+ },
+ {
+  "n": 393,
+  "area": "or_k_the_dihedrals",
+  "keep": "or_k_the_dihedrals_watts_tots",
+  "drop": "or_watts_totts",
+  "keepName": "Watts Tots",
+  "dropName": "Watts Totts",
+  "evidence": "SAME? (renamed: OpenBeta has only the old name); OpenBeta: Watts Totts (5.12b, lr 35)"
+ },
+ {
+  "n": 395,
+  "area": "or_bat_wall",
+  "keep": "or_bat_wall_frightlight_l",
+  "drop": "or_link_up_frightlight",
+  "keepName": "Frightlight [L]",
+  "dropName": "(Link-up) Frightlight",
+  "evidence": "SAME? (renamed: OpenBeta has only the old name); OpenBeta: (Link-up) Frightlight (5.13a, lr 10)"
+ },
+ {
+  "n": 397,
+  "area": "or_bat_wall",
+  "keep": "or_bat_wall_bitenight_l",
+  "drop": "or_link_up_bitenight",
+  "keepName": "Bitenight [L]",
+  "dropName": "(Link-up) Bitenight",
+  "evidence": "SAME? (renamed: OpenBeta has only the old name); OpenBeta: (Link-up) Bitenight (5.13a, lr 12)"
+ },
+ {
+  "n": 399,
+  "area": "pa_h_the_righteous_and_the_wicked",
+  "keep": "pa_h_the_righteous_and_the_wicked_cruizin_south",
+  "drop": "pa_cruising_south",
+  "keepName": "Cruizin' South",
+  "dropName": "Cruising South",
+  "evidence": "SAME? (renamed: OpenBeta has only the old name); OpenBeta: Cruising South (5.4, lr 4)"
+ },
+ {
+  "n": 400,
+  "area": "sd_inner_outlet",
+  "keep": "sd_inner_outlet_mac_daddy",
+  "drop": "sd_mack_daddy",
+  "keepName": "Mac Daddy",
+  "dropName": "Mack Daddy",
+  "evidence": "SAME? (renamed: OpenBeta has only the old name); OpenBeta: Mack Daddy (5.12, lr 23)"
+ },
+ {
+  "n": 402,
+  "area": "sd_inner_outlet",
+  "keep": "sd_inner_outlet_mac_daddy_direct",
+  "drop": "sd_mack_daddy_direct",
+  "keepName": "Mac Daddy Direct",
+  "dropName": "Mack Daddy Direct",
+  "evidence": "SAME? (renamed: OpenBeta has only the old name); OpenBeta: Mack Daddy Direct (5.12+, lr 24)"
+ },
+ {
+  "n": 404,
+  "area": "sd_lady_in_red",
+  "keep": "sd_lady_in_red_yippey_kiy_yay",
+  "drop": "sd_yippey_kay_yay",
+  "keepName": "Yippey-Kiy-Yay",
+  "dropName": "Yippey-Kay-Yay",
+  "evidence": "SAME? (renamed: OpenBeta has only the old name); OpenBeta: Yippey-Kay-Yay (5.10b, lr 0)"
+ },
+ {
+  "n": 405,
+  "area": "sd_wars_wall",
+  "keep": "sd_wars_wall_teepee",
+  "drop": "sd_teepee_creeper",
+  "keepName": "Teepee",
+  "dropName": "teepee creeper",
+  "evidence": "SAME? (renamed: OpenBeta has only the old name); OpenBeta: teepee creeper (5.12c, lr 4)"
+ },
+ {
+  "n": 406,
+  "area": "tx_fishing_hole",
+  "keep": "tx_5_fishing_hole_flying_fish",
+  "drop": "tx_flying_fish_unnamed",
+  "keepName": "Flying Fish",
+  "dropName": "Flying Fish (Unnamed)",
+  "evidence": "SAME? (renamed: OpenBeta has only the old name); OpenBeta: Flying Fish (Unnamed) (5.11, lr 2)"
+ },
+ {
+  "n": 407,
+  "area": "tx_cave_tower",
+  "keep": "tx_cave_tower_68_rachael_s_way",
+  "drop": "tx_racheal_s_way",
+  "keepName": "Rachael's Way",
+  "dropName": "Racheal's Way",
+  "evidence": "SAME? (renamed: OpenBeta has only the old name); OpenBeta: Racheal's Way (5.10a, lr 6)"
+ },
+ {
+  "n": 408,
+  "area": "tx_middle_earth_wall",
+  "keep": "tx_middle_earth_wall_worm_tongue",
+  "drop": "tx_worm_tounge",
+  "keepName": "Worm Tongue",
+  "dropName": "Worm Tounge",
+  "evidence": "SAME? (renamed: OpenBeta has only the old name); OpenBeta: Worm Tounge (5.9, lr 26)"
+ },
+ {
+  "n": 409,
+  "area": "tx_new_wall_proper",
+  "keep": "tx_a_new_wall_proper_walk_the_dog_l",
+  "drop": "tx_walk_the_dog",
+  "keepName": "Walk the Dog (L)",
+  "dropName": "Walk the Dog",
+  "evidence": "SAME? (renamed: OpenBeta has only the old name); OpenBeta: Walk the Dog (5.11c, lr 4)"
+ },
+ {
+  "n": 410,
+  "area": "tx_great_wall_the",
+  "keep": "tx_c_the_great_wall_shock_the_monkey_l",
+  "drop": "tx_shock_the_monkey",
+  "keepName": "Shock the Monkey (L)",
+  "dropName": "Shock the Monkey",
+  "evidence": "REVIEW (no OpenBeta copy); OpenBeta: "
+ },
+ {
+  "n": 411,
+  "area": "tx_terrace_the",
+  "keep": "tx_b_the_terrace_crystal_blue_persuasion",
+  "drop": "tx_crystal_new_persuasion",
+  "keepName": "Crystal Blue Persuasion",
+  "dropName": "Crystal New Persuasion",
+  "evidence": "REVIEW (no OpenBeta copy); OpenBeta: "
+ },
+ {
+  "n": 412,
+  "area": "tx_terrace_the",
+  "keep": "tx_b_the_terrace_patch_of_heaven_l",
+  "drop": "tx_patch_of_heaven",
+  "keepName": "Patch of Heaven (L)",
+  "dropName": "Patch of Heaven",
+  "evidence": "REVIEW (no OpenBeta copy); OpenBeta: "
+ },
+ {
+  "n": 413,
+  "area": "tx_zoey_s_wall",
+  "keep": "tx_zoey_s_wall_zoey_s_first_step",
+  "drop": "tx_zoe_s_first_step",
+  "keepName": "Zoey's First Step",
+  "dropName": "Zoes First Step",
+  "evidence": "SAME? (renamed: OpenBeta has only the old name); OpenBeta: Zoes First Step (5.8, lr 3)"
+ },
+ {
+  "n": 414,
+  "area": "tx_kingdom_of_ging",
+  "keep": "tx_c_kingdom_of_ging_hank_s_extension",
+  "drop": "tx_hank_s_b8_extension",
+  "keepName": "Hank's Extension",
+  "dropName": "Hank's B8 Extension",
+  "evidence": "SAME? (renamed: OpenBeta has only the old name); OpenBeta: Hank's B8 Extension (5.12d, lr 5)"
+ },
+ {
+  "n": 415,
+  "area": "ut_cat_wall",
+  "keep": "ut_cat_wall_look_at_what_zog_do",
+  "drop": "ut_look_what_zog_do",
+  "keepName": "Look at what Zog Do",
+  "dropName": "Look What Zog Do",
+  "evidence": "SAME? (renamed: OpenBeta has only the old name); OpenBeta: Look What Zog Do (5.11, lr 23)"
+ },
+ {
+  "n": 417,
+  "area": "ut_supercrack_buttress",
+  "keep": "ut_supercrack_buttress_super_babushka",
+  "drop": "ut_super_bubbushka",
+  "keepName": "Super Babushka",
+  "dropName": "Super Bubbushka",
+  "evidence": "SAME? (renamed: OpenBeta has only the old name); OpenBeta: Super Bubbushka (5.11+, lr 13)"
+ },
+ {
+  "n": 419,
+  "area": "ut_2nd_meat_wall",
+  "keep": "ut_2nd_meat_wall_hot_pork_sunday",
+  "drop": "ut_hot_pork_sundae",
+  "keepName": "Hot Pork Sunday",
+  "dropName": "Hot Pork Sundae",
+  "evidence": "SAME? (renamed: OpenBeta has only the old name); OpenBeta: Hot Pork Sundae (5.13, lr 2)"
+ },
+ {
+  "n": 424,
+  "area": "ut_battle_of_the_bulge_buttress",
+  "keep": "ut_battle_of_the_bulge_buttress_unnamed_lf_flake_in_deep_corner",
+  "drop": "ut_unnamed_5_10_lf_flake_in_deep_corner",
+  "keepName": "Unnamed LF flake in deep corner",
+  "dropName": "Unnamed 5.10 LF flake in deep corner",
+  "evidence": "SAME? (renamed: OpenBeta has only the old name); OpenBeta: Unnamed 5.10 LF flake in deep corner (5.9, lr 40)"
+ },
+ {
+  "n": 425,
+  "area": "ut_booty_wall_area",
+  "keep": "ut_booty_wall_area_scallywags",
+  "drop": "ut_scallywaggers",
+  "keepName": "Scallywags",
+  "dropName": "Scallywaggers",
+  "evidence": "SAME? (renamed: OpenBeta has only the old name); OpenBeta: Scallywaggers (5.9, lr 1)"
+ },
+ {
+  "n": 426,
+  "area": "ut_beckey_s_wall_area",
+  "keep": "ut_beckey_s_wall_area_elementary_dear_watson",
+  "drop": "ut_elementary_my_dear_watson",
+  "keepName": "\"Elementary Dear Watson\"",
+  "dropName": "\"Elementary My Dear Watson\"",
+  "evidence": "SAME? (renamed: OpenBeta has only the old name); OpenBeta: \"Elementary My Dear Watson\" (5.9+, lr 18)"
+ },
+ {
+  "n": 427,
+  "area": "ut_damascus_gate_the",
+  "keep": "ut_damascus_gate_the_51",
+  "drop": "ut_51_scoops",
+  "keepName": "51",
+  "dropName": "51 (Scoops)",
+  "evidence": "REVIEW (no OpenBeta copy); OpenBeta: "
+ },
+ {
+  "n": 432,
+  "area": "ut_gash_the",
+  "keep": "ut_gash_the_unknown_calcite_corner",
+  "drop": "ut_unknown_chossy_calcite_corner",
+  "keepName": "Unknown Calcite Corner",
+  "dropName": "Unknown Chossy Calcite Corner",
+  "evidence": "REVIEW (no OpenBeta copy); OpenBeta: "
+ },
+ {
+  "n": 433,
+  "area": "ut_underworld",
+  "keep": "ut_underworld_extortion",
+  "drop": "ut_extrortion",
+  "keepName": "Extortion",
+  "dropName": "Extrortion",
+  "evidence": "SAME? (renamed: OpenBeta has only the old name); OpenBeta: Extrortion (5.10c, lr 10)"
+ },
+ {
+  "n": 435,
+  "area": "ut_sparks_wall",
+  "keep": "ut_sparks_wall_sparking_spurs",
+  "drop": "ut_sparkling_spurs",
+  "keepName": "Sparking Spurs",
+  "dropName": "Sparkling Spurs",
+  "evidence": "SAME? (renamed: OpenBeta has only the old name); OpenBeta: Sparkling Spurs (5.12-, lr 23)"
+ },
+ {
+  "n": 442,
+  "area": "ut_blacksmith_left",
+  "keep": "ut_blacksmith_left_zurinskas_right",
+  "drop": "ut_zuribkfas_right",
+  "keepName": "Zurinskas Right",
+  "dropName": "Zuribkfas right",
+  "evidence": "SAME? (renamed: OpenBeta has only the old name); OpenBeta: Zuribkfas right (5.12b, lr 11)"
+ },
+ {
+  "n": 445,
+  "area": "ut_ren_and_stimpy_wall",
+  "keep": "ut_ren_and_stimpy_wall_brush_fire",
+  "drop": "ut_bush_fire",
+  "keepName": "Brush Fire",
+  "dropName": "Bush Fire",
+  "evidence": "SAME? (renamed: OpenBeta has only the old name); OpenBeta: Bush Fire (5.10a, lr 11)"
+ },
+ {
+  "n": 456,
+  "area": "ut_dihedrals_area",
+  "keep": "ut_dihedrals_area_black_and_white_frosted_john_and_mary",
+  "drop": "ut_black_and_white_john_and_mary",
+  "keepName": "Black and White Frosted, John and Mary",
+  "dropName": "Black and White John and Mary",
+  "evidence": "SAME? (renamed: OpenBeta has only the old name); OpenBeta: Black and White John and Mary (5.10c, lr 4)"
+ },
+ {
+  "n": 459,
+  "area": "ut_lower_tier",
+  "keep": "ut_lower_tier_huecos_from_hades",
+  "drop": "ut_heucos_from_hades",
+  "keepName": "Huecos from Hades",
+  "dropName": "Heucos from Hades",
+  "evidence": "SAME? (renamed: OpenBeta has only the old name); OpenBeta: Heucos from Hades (5.11d, lr 2)"
+ },
+ {
+  "n": 460,
+  "area": "ut_pipeline_the",
+  "keep": "ut_pipeline_the_dyna_bone",
+  "drop": "ut_dynobone",
+  "keepName": "Dyna Bone",
+  "dropName": "Dynobone",
+  "evidence": "REVIEW (no OpenBeta copy); OpenBeta: "
+ },
+ {
+  "n": 462,
+  "area": "ut_sand_dunes",
+  "keep": "ut_sand_dunes_fragments_from_floyd",
+  "drop": "ut_fragments_of_floyd",
+  "keepName": "Fragments from Floyd",
+  "dropName": "Fragments of Floyd",
+  "evidence": "SAME? (renamed: OpenBeta has only the old name); OpenBeta: Fragments of Floyd (5.11d, lr 6)"
+ },
+ {
+  "n": 474,
+  "area": "wa_narrow_arrow_and_further_right",
+  "keep": "wa_narrow_arrow_and_further_right_quarry_quack",
+  "drop": "wa_quarry_crack",
+  "keepName": "Quarry Quack",
+  "dropName": "Quarry Crack",
+  "evidence": "SAME? (renamed: OpenBeta has only the old name); OpenBeta: Quarry Crack (5.9, lr 22)"
+ },
+ {
+  "n": 475,
+  "area": "wa_middle_east_wall",
+  "keep": "wa_middle_east_wall_theresa_s_lingerie",
+  "drop": "wa_theresa_s_lingere",
+  "keepName": "Theresa's Lingerie",
+  "dropName": "Theresa's Lingere",
+  "evidence": "SAME? (renamed: OpenBeta has only the old name); OpenBeta: Theresa's Lingere (5.9, lr 28)"
+ },
+ {
+  "n": 478,
+  "area": "wa_careno_crag",
+  "keep": "wa_careno_crag_corina_corner",
+  "drop": "wa_corino_corner",
+  "keepName": "Corina Corner",
+  "dropName": "Corino Corner",
+  "evidence": "SAME? (renamed: OpenBeta has only the old name); OpenBeta: Corino Corner (5.11c, lr 8)"
+ },
+ {
+  "n": 482,
+  "area": "wa_world_wall",
+  "keep": "wa_world_wall_rainy_day_women",
+  "drop": "wa_rainy_day_woman_2",
+  "keepName": "Rainy Day Women",
+  "dropName": "Rainy Day Woman",
+  "evidence": "SAME? (renamed: OpenBeta has only the old name); OpenBeta: Rainy Day Woman (5.12a, lr 59)"
+ },
+ {
+  "n": 483,
+  "area": "wa_woods_the",
+  "keep": "wa_b_the_woods_l_tablature_of_emotion",
+  "drop": "wa_tablature_of_emotion",
+  "keepName": "[L] Tablature of Emotion",
+  "dropName": "Tablature of Emotion",
+  "evidence": "REVIEW (no OpenBeta copy); OpenBeta: "
+ },
+ {
+  "n": 484,
+  "area": "wa_woods_the",
+  "keep": "wa_b_the_woods_e_godflesh",
+  "drop": "wa_godflesh",
+  "keepName": "[E] Godflesh",
+  "dropName": "Godflesh",
+  "evidence": "REVIEW (no OpenBeta copy); OpenBeta: "
+ },
+ {
+  "n": 485,
+  "area": "wa_woods_the",
+  "keep": "wa_b_the_woods_incarnated_solvent_abuse_p2_of_human_glue",
+  "drop": "wa_incarnated_solvent_abuse",
+  "keepName": "Incarnated Solvent Abuse (p2 of Human Glue)",
+  "dropName": "Incarnated Solvent Abuse",
+  "evidence": "REVIEW (no OpenBeta copy); OpenBeta: "
+ },
+ {
+  "n": 488,
+  "area": "wa_woods_the",
+  "keep": "wa_b_the_woods_xxrip_monkey_madness",
+  "drop": "wa_monkey_madness",
+  "keepName": "xxRIP - Monkey Madness",
+  "dropName": "Monkey Madness",
+  "evidence": "REVIEW (no OpenBeta copy); OpenBeta: "
+ },
+ {
+  "n": 490,
+  "area": "wa_great_northern_slab",
+  "keep": "wa_great_northern_slab_xxrip_blockbuster",
+  "drop": "wa_blockbuster",
+  "keepName": "xxRIP - Blockbuster",
+  "dropName": "Blockbuster",
+  "evidence": "SAME? (renamed: OpenBeta has only the old name); OpenBeta: Blockbuster (5.9+, lr 5)"
+ },
+ {
+  "n": 491,
+  "area": "wa_roadside_rock_west",
+  "keep": "wa_roadside_rock_west_airy_butt_easy",
+  "drop": "wa_airy_but_easy",
+  "keepName": "Airy Butt Easy",
+  "dropName": "Airy But Easy",
+  "evidence": "SAME? (renamed: OpenBeta has only the old name); OpenBeta: Airy But Easy (5.7, lr 20)"
+ },
+ {
+  "n": 492,
+  "area": "wa_zig_zag_wall",
+  "keep": "wa_zig_zag_wall_one_of_these_days_mohel_with_a_dull_knife",
+  "drop": "wa_one_of_these_days_aka_mohel_with_a_dull_knife",
+  "keepName": "One of These Days (Mohel With a Dull Knife)",
+  "dropName": "One of These Days (AKA Mohel With A Dull Knife)",
+  "evidence": "SAME? (renamed: OpenBeta has only the old name); OpenBeta: One of These Days (AKA Mohel With A Dull Knife) (5.9, lr 3)"
+ },
+ {
+  "n": 493,
+  "area": "wa_k_9_crag",
+  "keep": "wa_c_k_9_crag_doggy_stylin",
+  "drop": "wa_doggy_stylin_full_version",
+  "keepName": "Doggy Stylin'",
+  "dropName": "Doggy Stylin' (full version)",
+  "evidence": "SAME? (renamed: OpenBeta has only the old name); OpenBeta: Doggy Stylin' (full version) (5.11d, lr 7)"
+ },
+ {
+  "n": 497,
+  "area": "wa_nevermind_wall",
+  "keep": "wa_nevermind_wall_trundling_for_glory_hangerville",
+  "drop": "wa_trundling_for_glory_aka_hangerville",
+  "keepName": "Trundling for Glory / Hangerville",
+  "dropName": "Trundling for Glory (AKA Hangerville)",
+  "evidence": "SAME? (renamed: OpenBeta has only the old name); OpenBeta: Trundling for Glory (AKA Hangerville) (5.11c, lr 8)"
+ },
+ {
+  "n": 499,
+  "area": "wa_lower_band",
+  "keep": "wa_lower_band_the_therapist_s_couch",
+  "drop": "wa_the_couch",
+  "keepName": "The Therapist's Couch",
+  "dropName": "The Couch",
+  "evidence": "SAME? (renamed: OpenBeta has only the old name); OpenBeta: The Couch (5.9+, lr 29)"
+ },
+ {
+  "n": 500,
+  "area": "wa_jigsaw_right",
+  "keep": "wa_jigsaw_right_beautiful_sunshine",
+  "drop": "wa_beautiful_sunrise",
+  "keepName": "Beautiful Sunshine",
+  "dropName": "Beautiful Sunrise",
+  "evidence": "SAME? (renamed: OpenBeta has only the old name); OpenBeta: Beautiful Sunrise (5.11b, lr 20)"
+ },
+ {
+  "n": 503,
+  "area": "wa_hen_house",
+  "keep": "wa_c_hen_house_bucking_bronco",
+  "drop": "wa_bucking_bronco_project",
+  "keepName": "Bucking Bronco",
+  "dropName": "Bucking Bronco / Project",
+  "evidence": "SAME? (renamed: OpenBeta has only the old name); OpenBeta: Bucking Bronco / Project (5.12a, lr 7)"
+ },
+ {
+  "n": 504,
+  "area": "wa_new_millennium_wall",
+  "keep": "wa_f_new_millennium_wall_talking_turkey",
+  "drop": "wa_talking_turkeys",
+  "keepName": "Talking Turkey",
+  "dropName": "Talking Turkeys",
+  "evidence": "SAME? (renamed: OpenBeta has only the old name); OpenBeta: Talking Turkeys (5.8, lr 9)"
+ },
+ {
+  "n": 505,
+  "area": "wa_x_world_wall_ii",
+  "keep": "wa_x_world_wall_ii_e_honorable_discharge",
+  "drop": "wa_honorable_discharge",
+  "keepName": "[E] Honorable Discharge",
+  "dropName": "Honorable Discharge",
+  "evidence": "SAME? (renamed: OpenBeta has only the old name); OpenBeta: Honorable Discharge (5.13d, lr 7)"
+ },
+ {
+  "n": 506,
+  "area": "wa_x_world_wall_ii",
+  "keep": "wa_x_world_wall_ii_e_rear_admiral",
+  "drop": "wa_rear_admiral",
+  "keepName": "[E] Rear Admiral",
+  "dropName": "Rear Admiral",
+  "evidence": "SAME? (renamed: OpenBeta has only the old name); OpenBeta: Rear Admiral (5.14a, lr 8)"
+ },
+ {
+  "n": 507,
+  "area": "wa_x_world_wall_ii",
+  "keep": "wa_x_world_wall_ii_l_webelo",
+  "drop": "wa_webelo",
+  "keepName": "[L] Webelo",
+  "dropName": "Webelo",
+  "evidence": "SAME? (renamed: OpenBeta has only the old name); OpenBeta: Webelo (5.12d, lr 10)"
+ },
+ {
+  "n": 508,
+  "area": "wa_x_world_wall_ii",
+  "keep": "wa_x_world_wall_ii_l_gray_people_mini_clench",
+  "drop": "wa_gray_people_mini_clench",
+  "keepName": "[L] Gray People (Mini Clench)",
+  "dropName": "Gray People (Mini Clench)",
+  "evidence": "SAME? (renamed: OpenBeta has only the old name); OpenBeta: Gray People (Mini Clench) (5.12c/d, lr 12)"
+ },
+ {
+  "n": 509,
+  "area": "wa_x_world_wall_ii",
+  "keep": "wa_x_world_wall_ii_e_the_sickness",
+  "drop": "wa_the_sickness",
+  "keepName": "[E] The Sickness",
+  "dropName": "The Sickness",
+  "evidence": "SAME? (renamed: OpenBeta has only the old name); OpenBeta: The Sickness (5.14a, lr 15)"
+ },
+ {
+  "n": 511,
+  "area": "wa_x_world_wall_ii",
+  "keep": "wa_x_world_wall_ii_l_the_wetness",
+  "drop": "wa_the_wetness",
+  "keepName": "[L] The Wetness",
+  "dropName": "The Wetness",
+  "evidence": "SAME? (renamed: OpenBeta has only the old name); OpenBeta: The Wetness (5.13c, lr 16)"
+ },
+ {
+  "n": 512,
+  "area": "wa_x_world_wall_ii",
+  "keep": "wa_x_world_wall_ii_e_reformation",
+  "drop": "wa_reformation",
+  "keepName": "[E] Reformation",
+  "dropName": "Reformation",
+  "evidence": "SAME? (renamed: OpenBeta has only the old name); OpenBeta: Reformation (5.13b, lr 18)"
+ },
+ {
+  "n": 513,
+  "area": "wa_x_world_wall_ii",
+  "keep": "wa_x_world_wall_ii_l_black_plague",
+  "drop": "wa_black_plague",
+  "keepName": "[L] Black Plague",
+  "dropName": "Black Plague",
+  "evidence": "SAME? (renamed: OpenBeta has only the old name); OpenBeta: Black Plague (5.13c/d, lr 19)"
+ },
+ {
+  "n": 514,
+  "area": "wa_x_world_wall_ii",
+  "keep": "wa_x_world_wall_ii_l_scarlett_letter",
+  "drop": "wa_scarlett_letter",
+  "keepName": "[L] Scarlett Letter",
+  "dropName": "Scarlett Letter",
+  "evidence": "SAME? (renamed: OpenBeta has only the old name); OpenBeta: Scarlett Letter (5.12c, lr 20)"
+ },
+ {
+  "n": 515,
+  "area": "wa_x_world_wall_ii",
+  "keep": "wa_x_world_wall_ii_e_don_t_ask_don_t_tell",
+  "drop": "wa_don_t_ask_don_t_tell",
+  "keepName": "[E] Don't Ask Don't Tell",
+  "dropName": "Don't Ask Don't Tell",
+  "evidence": "SAME? (renamed: OpenBeta has only the old name); OpenBeta: Don't Ask Don't Tell (5.14b, lr 22)"
+ },
+ {
+  "n": 521,
+  "area": "wa_woods_alcove_the",
+  "keep": "wa_d_the_woods_alcove_garmonbozia",
+  "drop": "wa_garmonboiza",
+  "keepName": "Garmonbozia",
+  "dropName": "Garmonboiza",
+  "evidence": "REVIEW (no OpenBeta copy); OpenBeta: "
+ },
+ {
+  "n": 523,
+  "area": "wi_6_the_effie",
+  "keep": "wi_6_the_effie_hush_money",
+  "drop": "wi_hu_h_money",
+  "keepName": "Hush Money",
+  "dropName": "Hu$h Money",
+  "evidence": "SAME? (renamed: OpenBeta has only the old name); OpenBeta: Hu$h Money (5.10a, lr 0)"
+ },
+ {
+  "n": 525,
+  "area": "wi_picnic_area",
+  "keep": "wi_picnic_area_pine_tree_picnic_face",
+  "drop": "wi_pine_tree_a_k_a_picnic_face",
+  "keepName": "Pine Tree (Picnic Face)",
+  "dropName": "Pine Tree, a.k.a. Picnic Face",
+  "evidence": "SAME? (renamed: OpenBeta has only the old name); OpenBeta: Pine Tree, a.k.a. Picnic Face (5.10a, lr 1)"
+ },
+ {
+  "n": 526,
+  "area": "wv_01_sandstonia",
+  "keep": "wv_01_sandstonia_bobby_d_bunny",
+  "drop": "wv_bobby_d_s_bunny",
+  "keepName": "Bobby D'Bunny",
+  "dropName": "Bobby D's Bunny",
+  "evidence": "SAME? (renamed: OpenBeta has only the old name); OpenBeta: Bobby D's Bunny (5.6, lr 4)"
+ },
+ {
+  "n": 527,
+  "area": "wv_3_the_brain",
+  "keep": "wv_3_the_brain_mensa",
+  "drop": "wv_m_e_n_s_a",
+  "keepName": "Mensa",
+  "dropName": "M.E.N.S.A.",
+  "evidence": "REVIEW (no OpenBeta copy); OpenBeta: "
+ },
+ {
+  "n": 528,
+  "area": "wv_4_third_buttress",
+  "keep": "wv_4_third_buttress_baron_von_sauerkraut",
+  "drop": "wv_baron_von_saurkrauten",
+  "keepName": "Baron Von Sauerkraut",
+  "dropName": "Baron Von Saurkrauten",
+  "evidence": "SAME? (renamed: OpenBeta has only the old name); OpenBeta: Baron Von Saurkrauten (5.11a, lr 37)"
+ },
+ {
+  "n": 529,
+  "area": "wv_5_sunkist_wall",
+  "keep": "wv_5_sunkist_wall_mr_mogely",
+  "drop": "wv_mr_mogley",
+  "keepName": "Mr. Mogely",
+  "dropName": "Mr. Mogley",
+  "evidence": "SAME? (renamed: OpenBeta has only the old name); OpenBeta: Mr. Mogley (5.11c, lr 8)"
+ },
+ {
+  "n": 530,
+  "area": "wv_5_white_wall",
+  "keep": "wv_5_white_wall_i_smell_a_r_te",
+  "drop": "wv_i_smell_arete",
+  "keepName": "I Smell A-rête",
+  "dropName": "I Smell Arete",
+  "evidence": "DIFFERENT? (OpenBeta lists both); OpenBeta: I Smell Arete (5.11c, lr 13)"
+ },
+ {
+  "n": 531,
+  "area": "wv_6_butcher_s_branch",
+  "keep": "wv_6_butcher_s_branch_flight_of_the_gumbie",
+  "drop": "wv_flight_of_the_gumby",
+  "keepName": "Flight of the Gumbie",
+  "dropName": "Flight of the Gumby",
+  "evidence": "SAME? (renamed: OpenBeta has only the old name); OpenBeta: Flight of the Gumby (5.9+, lr 13)"
+ },
+ {
+  "n": 533,
+  "area": "wv_ambassador_buttress",
+  "keep": "wv_ambassador_buttress_lunar_tunes",
+  "drop": "wv_lunar_times",
+  "keepName": "Lunar Tunes",
+  "dropName": "Lunar Times",
+  "evidence": "SAME? (renamed: OpenBeta has only the old name); OpenBeta: Lunar Times (5.10a, lr 8)"
+ },
+ {
+  "n": 534,
+  "area": "wv_junkyard_wall",
+  "keep": "wv_junkyard_wall_jumpin_jack_flash_2",
+  "drop": "wv_junkyard_wall_jumpin_jack_flash",
+  "keepName": "Jumpin' Jack Flash",
+  "dropName": "Jumping Jack Flash",
+  "evidence": "SAME? (renamed: OpenBeta has only the old name); OpenBeta: Jumping Jack Flash (5.7+, lr 23)"
+ },
+ {
+  "n": 535,
+  "area": "wv_long_wall_the",
+  "keep": "wv_long_wall_the_quarrymen_s_hands",
+  "drop": "wv_quarryman_s_hands",
+  "keepName": "Quarrymen's Hands",
+  "dropName": "Quarryman's Hands",
+  "evidence": "REVIEW (no OpenBeta copy); OpenBeta: "
+ },
+ {
+  "n": 538,
+  "area": "wv_g_diamond_point",
+  "keep": "wv_g_diamond_point_this_sport_needs_an_enema",
+  "drop": "wv_this_sport_needs_a_enema",
+  "keepName": "This Sport Needs an Enema",
+  "dropName": "This Sport Needs a Enema",
+  "evidence": "REVIEW (no OpenBeta copy); OpenBeta: "
+ },
+ {
+  "n": 539,
+  "area": "wy_cheese_roof",
+  "keep": "wy_03_cheese_roof_cheesy_living",
+  "drop": "wy_cheesy_livin",
+  "keepName": "Cheesy Living",
+  "dropName": "Cheesy Livin",
+  "evidence": "SAME? (renamed: OpenBeta has only the old name); OpenBeta: Cheesy Livin (5.12a/b, lr 4)"
+ },
+ {
+  "n": 540,
+  "area": "wy_sector_shinto",
+  "keep": "wy_sector_shinto_100_000_miles_burnin_that_gasoline",
+  "drop": "wy_100_000_miles_burning_that_gasoline",
+  "keepName": "100,000 Miles (Burnin' That Gasoline)",
+  "dropName": "100,000 Miles (Burning that gasoline)",
+  "evidence": "SAME? (renamed: OpenBeta has only the old name); OpenBeta: 100,000 Miles (Burning that gasoline) (5.11a, lr 4)"
+ },
+ {
+  "n": 541,
+  "area": "wy_purple_galaxy",
+  "keep": "wy_purple_galaxy_galactic_tactic",
+  "drop": "wy_galctic_tactic",
+  "keepName": "Galactic Tactic",
+  "dropName": "Galctic Tactic",
+  "evidence": "SAME? (renamed: OpenBeta has only the old name); OpenBeta: Galctic Tactic (5.11+, lr 11)"
+ },
+ {
+  "n": 542,
+  "area": "wy_hardware_wall",
+  "keep": "wy_hardware_wall_murgatroid",
+  "drop": "wy_mergatroid_2",
+  "keepName": "Murgatroid",
+  "dropName": "Mergatroid",
+  "evidence": "SAME? (renamed: OpenBeta has only the old name); OpenBeta: Mergatroid (5.12a, lr 19)"
+ },
+ {
+  "n": 543,
+  "area": "wy_reynolds_hill",
+  "keep": "wy_reynolds_hill_moor_crossing",
+  "drop": "wy_moor_s_crossing",
+  "keepName": "Moor Crossing",
+  "dropName": "Moor's Crossing",
+  "evidence": "SAME? (renamed: OpenBeta has only the old name); OpenBeta: Moor's Crossing (5.7, lr 29)"
+ },
+ {
+  "n": 547,
+  "area": "wy_wolfs_head",
+  "keep": "wy_wolfs_head_fred_beckey_s_route",
+  "drop": "wy_fred_becky_s_route",
+  "keepName": "Fred Beckey's Route",
+  "dropName": "Fred Becky's Route",
+  "evidence": "SAME? (renamed: OpenBeta has only the old name); OpenBeta: Fred Becky's Route (5.9+, lr 4)"
+ },
+ {
+  "n": 548,
+  "area": "wy_zorro_area",
+  "keep": "wy_zorro_area_salsa_for_the_sole",
+  "drop": "wy_salsa_for_the_soul",
+  "keepName": "Salsa for the Sole",
+  "dropName": "Salsa for the soul",
+  "evidence": "SAME? (renamed: OpenBeta has only the old name); OpenBeta: Salsa for the soul (5.12a, lr 6)"
+ },
+ {
+  "n": 549,
+  "area": "wy_rap_stars_wall",
+  "keep": "wy_rap_stars_wall_thugaggra",
+  "drop": "wy_thugagra",
+  "keepName": "Thugaggra",
+  "dropName": "Thugagra",
+  "evidence": "SAME? (renamed: OpenBeta has only the old name); OpenBeta: Thugagra (5.13a, lr 6)"
+ }
+]
