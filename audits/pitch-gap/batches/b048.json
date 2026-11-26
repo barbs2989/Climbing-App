@@ -1,870 +1,836 @@
 {
-  "wy_emerson_chimney": {
-    "area": "wy_grand_teton",
-    "pitch_detail": [
-      {
-        "pitch": "1",
-        "notes": "Steep hand crack in a shallow left-facing corner, with the first hard moves low. It ends at an overhanging wedged block with slings, which holds the second hard section. A set of hand-sized gear covers it."
-      },
-      {
-        "pitch": "2",
-        "grade": "5.0",
-        "notes": "Easy crawling leftward on a ledge system, far gentler than the first pitch. Plenty of crouching and shuffling rather than real climbing."
-      }
-    ],
-    "replace_pitch_detail": true,
-    "review": {
-      "confidence": "medium",
-      "sources": [
-        "https://www.mountainproject.com/route/112050906"
-      ],
-      "source_texts": {
-        "https://www.mountainproject.com/route/112050906": "/Users/nathanbarber/dev/mp-data/_mp/_pitchtext/wy_emerson_chimney.txt"
-      },
-      "changed": "Wrote both pitches: the steep hand-crack pitch (no pitch grade given) and the 5.0 crawl pitch. No lengths or bolt counts stated.",
-      "pitch_count_found": 2,
-      "other_findings": ""
-    }
-  },
-  "wy_enclosure_lowe_route": {
-    "area": "wy_enclosure",
-    "pitch_detail": [
-      {
-        "pitch": "1",
-        "notes": "Begin at the bottom of the couloir, working up poor-quality ice and loose broken rock until the chimney and wide cracks that define the route begin."
-      },
-      {
-        "pitch": "2",
-        "grade": "5.9+",
-        "notes": "Work the cracks within the open chimney. A single reachy move is the crux and its feel depends on your height; above it, keep going to where the wide cracks start."
-      },
-      {
-        "pitch": "3",
-        "notes": "A very long wide-crack lead of roughly 170 feet or a bit more. Protection takes a lot of big cams, and the climber may still be 25 to 35 feet above the last piece. The hard part is a slightly overhanging offwidth that tends to be wet, and it feels harder than 5.9."
-      },
-      {
-        "pitch": "4",
-        "grade": "5.9",
-        "notes": "Another long pitch, about 150 to 160 feet, of sustained old-style wide crack that is often damp. Very little gear is available in the lower part, with one big piece reachable low and then nothing until the anchor, so it is serious. Run-out."
-      },
-      {
-        "pitch": "5",
-        "grade": "5.8",
-        "notes": "A short 5.8 pitch."
-      },
-      {
-        "pitch": "6-7",
-        "notes": "Two long, moderate fifth-class pitches along a rock rib. Details of these are vague."
-      },
-      {
-        "pitch": "8",
-        "grade": "5.8+",
-        "notes": "A steep hand crack in a corner."
-      },
-      {
-        "pitch": "9-10",
-        "notes": "Easy fifth class changing to scrambling, finishing on the top of the Enclosure. Details are vague."
-      }
-    ],
-    "replace_pitch_detail": true,
-    "review": {
-      "confidence": "medium",
-      "sources": [
-        "https://www.mountainproject.com/route/125118257"
-      ],
-      "source_texts": {
-        "https://www.mountainproject.com/route/125118257": "/Users/nathanbarber/dev/mp-data/_mp/_pitchtext/wy_enclosure_lowe_route.txt"
-      },
-      "changed": "Wrote the pitches the account describes: 1, 2, 3, 4, 5, 6-7, 8, 9-10. Pitch 3 and 4 lengths are approximate so kept in notes; 6-7 and 9-10 are given as linked labels because the pitches are not described individually.",
-      "pitch_count_found": 8,
-      "other_findings": "The route is described from memory, so details are hedged; pitch 3 is rated harder than 5.9+ (wet, slightly overhanging offwidth)."
-    }
-  },
-  "wy_eocene_eohippus": {
-    "area": "wy_eocene",
-    "pitch_detail": [
-      {
-        "pitch": "1",
-        "grade": "5.6",
-        "lengthM": 25,
-        "notes": "Take the leftmost corner on the rock bridge's southern face, the one joining Eocene and Brokeback. A crack taking hands and fists leads to a very roomy bivy ledge."
-      },
-      {
-        "pitch": "2",
-        "grade": "5.10a",
-        "lengthM": 35,
-        "bolts": 6,
-        "notes": "Short offwidth crack to a pocketed face with 6 bolts, reaching the top of a small tower. Then traverse the ridge east and downclimb with some thought."
-      },
-      {
-        "pitch": "3",
-        "grade": "5.10+",
-        "lengthM": 20,
-        "crux": true,
-        "notes": "The hardest pitch. Move up and left on good holds to a steep splitter crack that goes from fingers to fists."
-      },
-      {
-        "pitch": "4",
-        "grade": "5.9",
-        "lengthM": 40,
-        "notes": "Work up and left, then take one airy step by a bolt over a drop to reach a good corner. Its crack leads to a little ledge just under the summit blocks; shift left to a simpler mantle and finish on easy, crumbly rock."
-      }
-    ],
-    "replace_pitch_detail": true,
-    "rappel_detail": [
-      {
-        "n": 1,
-        "lengthM": 40,
-        "station": "Summit",
-        "notes": "First rappel goes down the southwest face from the top to the anchor at the third pitch belay."
-      },
-      {
-        "n": 2,
-        "lengthM": 40,
-        "station": "Anchor at the P3 belay",
-        "notes": "Second rappel continues down the southwest face to the ground."
-      }
-    ],
-    "review": {
-      "confidence": "high",
-      "sources": [
-        "https://www.mountainproject.com/route/200959845"
-      ],
-      "source_texts": {
-        "https://www.mountainproject.com/route/200959845": "/Users/nathanbarber/dev/mp-data/_mp/_pitchtext/wy_eocene_eohippus.txt"
-      },
-      "changed": "Wrote all four pitches with grades and lengths. Wrote the two-rappel descent in order (summit, then P3 anchor).",
-      "pitch_count_found": 4,
-      "other_findings": ""
-    }
-  },
-  "wy_erodeica_spire_rest_day": {
-    "area": "wy_erodeica_spire",
-    "pitch_detail": [
-      {
-        "pitch": "1",
-        "grade": "5.8",
-        "lengthM": 61,
-        "notes": "The route starts inside a recess at the left side. A brief crack, climbed by stemming, gives a jug and a pull onto slab; angle right via blocky corners, then return up and left."
-      },
-      {
-        "pitch": "2",
-        "grade": "3rd-4th class",
-        "lengthM": 91,
-        "notes": "Wander up to a big ledge, then scramble around its left side to the base of large left-facing fins. Moving together makes this go faster."
-      },
-      {
-        "pitch": "3",
-        "grade": "5.5",
-        "lengthM": 61,
-        "notes": "Climb the fins, trending right, to a sloping ledge with a crack below more left-facing fins."
-      },
-      {
-        "pitch": "4",
-        "grade": "5.7",
-        "lengthM": 61,
-        "notes": "Climb the crack and fins for about 40 feet, step over the overlap to the right, then follow flakes and cracks on the face to the foot of a long straight crack."
-      },
-      {
-        "pitch": "5",
-        "grade": "5.8",
-        "lengthM": 53,
-        "notes": "Follow the straight crack for around 100 feet, then continue straight up through thin flakes to a roof. Pull the roof and belay on a blocky ledge. Do not drift right into the gully."
-      },
-      {
-        "pitch": "6",
-        "grade": "5.7",
-        "lengthM": 70,
-        "notes": "Go up and right through the gully to a headwall with good flakes and cracks, reach a big ledge under the summit, and continue to the crest. Moving together helps here."
-      }
-    ],
-    "replace_pitch_detail": true,
-    "review": {
-      "confidence": "high",
-      "sources": [
-        "https://www.mountainproject.com/route/122764903"
-      ],
-      "source_texts": {
-        "https://www.mountainproject.com/route/122764903": "/Users/nathanbarber/dev/mp-data/_mp/_pitchtext/wy_erodeica_spire_rest_day.txt"
-      },
-      "changed": "Wrote all six pitches with grades and feet converted to metres. No rappel table: descent is only 'rap the route with double ropes'.",
-      "pitch_count_found": 6,
-      "other_findings": ""
-    }
-  },
-  "wy_grand_teton_the_rainbow_bridge": {
-    "area": "wy_grand_teton",
-    "pitch_detail": [
-      {
-        "pitch": "1",
-        "grade": "5.10",
-        "lengthM": 50,
-        "notes": "Go up the steep broken cracks to their end, then slant right on small holds around a large block to a short right-facing dihedral. Shift roughly 15 feet left along the broad ramp and stop under a tips crack that curves rightward."
-      },
-      {
-        "pitch": "2",
-        "grade": "5.11",
-        "lengthM": 40,
-        "crux": true,
-        "notes": "Place cams at the base of the tips crack, then launch up and right on crimps and hollow flakes into a splitter right-facing dihedral. Save tiny cams for it; a fixed nut sits en route. Belay at the second big ledge, below the steep upper headwall. Rated PG13."
-      },
-      {
-        "pitch": "3",
-        "grade": "5.9+",
-        "lengthM": 30,
-        "notes": "Move the belay about 100 feet left to directly below the obvious right-facing dihedral. Stem and jam it past a few bulges to a hanging stance below the last bulge, about 20 feet under the large roof. Can be linked with the next pitch."
-      },
-      {
-        "pitch": "4",
-        "grade": "5.10",
-        "lengthM": 20,
-        "notes": "Finish the dihedral and exit the roof by a 5-inch crack. Turn the corner and go up a short chimney to a ledge under a left-facing chimney corner."
-      },
-      {
-        "pitch": "5",
-        "grade": "5.7",
-        "lengthM": 60,
-        "notes": "Follow the left-facing corner, then meander over gentle slab, placing gear in horizontal breaks, to end on the sharp ridge crest."
-      }
-    ],
-    "replace_pitch_detail": true,
-    "review": {
-      "confidence": "high",
-      "sources": [
-        "https://www.mountainproject.com/route/201495561"
-      ],
-      "source_texts": {
-        "https://www.mountainproject.com/route/201495561": "/Users/nathanbarber/dev/mp-data/_mp/_pitchtext/wy_grand_teton_the_rainbow_bridge.txt"
-      },
-      "changed": "Wrote all five pitches with grades and metre lengths. Rappels not described.",
-      "pitch_count_found": 5,
-      "other_findings": "Stored length 213 m; pitch lengths sum to 200 m."
-    }
-  },
-  "wy_grand_teton_trust_but_verify": {
-    "area": "wy_grand_teton",
-    "pitch_detail": [
-      {
-        "pitch": "1",
-        "grade": "5.10a",
-        "crux": true,
-        "notes": "Stem up the chimney toward a friendly hand crack in its right wall; side footholds are plentiful. Cams from about .75 near the bottom up to a 3 near the top fit. Belay on the ledge under the offwidth using big nuts and hand-size cams, or carry on into pitch two."
-      },
-      {
-        "pitch": "2",
-        "grade": "5.8 R",
-        "notes": "Either squirm inside the sparsely protected offwidth chimney or stem along its outside. A #6 is too small, though odd smaller placements exist. Trend up and right toward the roof, and set the belay above it but short of the loose talus, which would rain down the route. Easier than it appears."
-      },
-      {
-        "pitch": "3",
-        "grade": "5.5",
-        "notes": "Mostly a scramble on loose talus with one solid 5.5 step, joining the upper Exum Ridge."
-      }
-    ],
-    "replace_pitch_detail": true,
-    "review": {
-      "confidence": "high",
-      "sources": [
-        "https://www.mountainproject.com/route/203639846"
-      ],
-      "source_texts": {
-        "https://www.mountainproject.com/route/203639846": "/Users/nathanbarber/dev/mp-data/_mp/_pitchtext/wy_grand_teton_trust_but_verify.txt"
-      },
-      "changed": "Wrote all three pitches with grades. No lengths stated.",
-      "pitch_count_found": 3,
-      "other_findings": ""
-    }
-  },
-  "wy_grand_teton_wish_you_were_here": {
-    "area": "wy_grand_teton",
-    "pitch_detail": [
-      {
-        "pitch": "1",
-        "grade": "5.9+",
-        "lengthM": 50,
-        "notes": "From the cairn, take the path of least resistance toward the arrow-shaped roof. The start is scabby rock but quality improves. Awkward moves lead to the inverted V roof; pull a bulge with a small welded chockstone (around 5.9), then go up an easy weakness to a belay at the left side of the dark band."
-      },
-      {
-        "pitch": "2",
-        "grade": "5.10",
-        "lengthM": 50,
-        "notes": "Move left in low fifth class along the line between light and dark rock to golden granite with little but easy-to-place gear. Pull a bulge (5.9+), jams and flakes to the right, then a handful of 5.10 moves on a seam and crimps in good rock. Easier ground leads to the huge roof, passed at its right edge (easy), to the next stance."
-      },
-      {
-        "pitch": "3",
-        "lengthM": 50,
-        "notes": "Follow the easy-to-moderate cracks up to a crack leaning right in superb rock (roughly 5.9). A jug above and left gives a few face moves before you drift back into the crack. Bare slab with no protection looms overhead, so cross left on a sloping ledge of footholds to join the last 40 feet of the neighboring route."
-      }
-    ],
-    "replace_pitch_detail": true,
-    "review": {
-      "confidence": "medium",
-      "sources": [
-        "https://www.mountainproject.com/route/126619683"
-      ],
-      "source_texts": {
-        "https://www.mountainproject.com/route/126619683": "/Users/nathanbarber/dev/mp-data/_mp/_pitchtext/wy_grand_teton_wish_you_were_here.txt"
-      },
-      "changed": "Wrote the three lettered pitches. Left out 'P4+' (it just joins the Golden Stair and Upper Exum, another route). Pitch grades only where stated; hedged grades kept in notes.",
-      "pitch_count_found": 3,
-      "other_findings": ""
-    }
-  },
-  "wy_grand_teton_wooden_ships": {
-    "area": "wy_grand_teton",
-    "pitch_detail": [
-      {
-        "pitch": "1",
-        "grade": "5.7",
-        "notes": "Moderate, fairly featureless climbing through dark rock to a big ledge. Belay near a small flake below an overlap where dark rock meets light."
-      },
-      {
-        "pitch": "2",
-        "grade": "5.10- R",
-        "crux": true,
-        "notes": "Steep, small-holds climbing passes the small roof on its left side, then you cut well right for several body lengths with solid footholds. Black rock leads to a face mantle and pale rock above to the foot of a curving wide crack. Protection is awkward or missing."
-      },
-      {
-        "pitch": "3",
-        "grade": "5.9+",
-        "notes": "The wide crack gradually relaxes into a 5.8 corner. Stop at a small ledge beneath a second striking corner, the one that heads toward the Step Across move on Wall Street."
-      },
-      {
-        "pitch": "4",
-        "grade": "5.7",
-        "notes": "This excellent corner ends beneath the start of the Golden Staircase, where the route meets the Upper Exum."
-      }
-    ],
-    "replace_pitch_detail": true,
-    "review": {
-      "confidence": "high",
-      "sources": [
-        "https://www.mountainproject.com/route/126170927"
-      ],
-      "source_texts": {
-        "https://www.mountainproject.com/route/126170927": "/Users/nathanbarber/dev/mp-data/_mp/_pitchtext/wy_grand_teton_wooden_ships.txt"
-      },
-      "changed": "Wrote all four pitches with stated grades. No lengths stated.",
-      "pitch_count_found": 4,
-      "other_findings": "Stored length 183 m has no pitch-level backing."
-    }
-  },
-  "wy_index_peak_west_face": {
-    "area": "wy_index_peak",
-    "pitch_detail": [
-      {
-        "pitch": "1",
-        "grade": "5.6",
-        "lengthM": 35,
-        "notes": "Start at the one clear weakness in the lower headwall. In winter and spring it is a snow, ice and water tongue over a short overhang; later in summer it melts to a chimney with good cracks. Pull over it onto a gently angled, crumbly slab, finishing at a block anchored with slings."
-      },
-      {
-        "pitch": "2",
-        "grade": "5.7",
-        "lengthM": 10,
-        "notes": "A short steep boulder problem to the south end of a big ledge below the summit block's southern prow. After this a 150 m ledge walk north and a talus fan with a 4th class step lead to the saddle."
-      },
-      {
-        "pitch": "3",
-        "grade": "5.5",
-        "lengthM": 35,
-        "notes": "Follow a weakness running right to left that takes decent gear; once past a horn, head left to a pleasant ledge for the belay."
-      },
-      {
-        "pitch": "4",
-        "lengthM": 30,
-        "notes": "Cross a rubble-filled gap to the left and descend an easy yet loose chimney, ending at a two-cam belay next to a tunnel shaped like a ring. Then, still roped, go through the tunnel and set a belay on a natural thread and slung cobble down and left of the crux chimney."
-      },
-      {
-        "pitch": "5",
-        "grade": "5.8+",
-        "lengthM": 35,
-        "crux": true,
-        "notes": "The chimney: an overhanging start, then stemming and offwidth moves past chockstones. It becomes low-angle and loose near the end. Belay off a horn at the right end."
-      },
-      {
-        "pitch": "6",
-        "lengthM": 25,
-        "notes": "Scamper through the notch to the summit."
-      }
-    ],
-    "replace_pitch_detail": true,
-    "rappel_detail": [
-      {
-        "n": 1,
-        "lengthM": 40,
-        "station": "Beak and horn anchor on the prow, southeast of the top of the crux chimney",
-        "notes": "Rappel off the prow to the ledge above pitch 2. Cord on any of these anchors may need replacing."
-      },
-      {
-        "n": 2,
-        "lengthM": 40,
-        "station": "Corded block on the P2 ledge",
-        "notes": "Rappel to the snow or choss gully, then downclimb to the slung block above pitch 1."
-      },
-      {
-        "n": 3,
-        "lengthM": 35,
-        "station": "Slung block on top of P1",
-        "notes": "Rappel to the base of the route."
-      }
-    ],
-    "review": {
-      "confidence": "medium",
-      "sources": [
-        "https://www.mountainproject.com/route/203766170"
-      ],
-      "source_texts": {
-        "https://www.mountainproject.com/route/203766170": "/Users/nathanbarber/dev/mp-data/_mp/_pitchtext/wy_index_peak_west_face.txt"
-      },
-      "changed": "Wrote P1-P6 with grades and metre lengths where given; left out the scrambles between pitches (described in notes). Wrote a three-station rappel table following the south-prow descent line.",
-      "pitch_count_found": 6,
-      "other_findings": "The first rappel has an alternative (the north side of the summit, then through the tunnel to a hanging anchor on the P2 ledge); the table follows the prow option."
-    }
-  },
-  "wy_medicine_bow_peak_area_2_bombs_away": {
-    "area": "wy_medicine_bow_peak_area",
-    "pitch_detail": [
-      {
-        "pitch": "1",
-        "lengthM": 60,
-        "notes": "Easy ice runnel to a big ledge below the steeper waterfall."
-      },
-      {
-        "pitch": "2",
-        "grade": "WI3+",
-        "lengthM": 60,
-        "crux": true,
-        "notes": "Hardest pitch, rated WI3+/M4. Either go up ice just short of vertical or use a hand-to-fist crack slanting from right to left into an ice bulge. Gentler runnel above takes you to a sloping ledge."
-      },
-      {
-        "pitch": "3-4",
-        "grade": "WI2-3",
-        "notes": "Easier ice steps that are simple to link; about 70 m of climbing in total across the two. Protection gets harder if the lines are mixed rather than iced."
-      },
-      {
-        "pitch": "5",
-        "lengthM": 100,
-        "notes": "Easy snow trending right for roughly 100 m, or go directly upward for a tougher M5 rock exit."
-      }
-    ],
-    "replace_pitch_detail": true,
-    "review": {
-      "confidence": "medium",
-      "sources": [
-        "https://www.mountainproject.com/route/202062858"
-      ],
-      "source_texts": {
-        "https://www.mountainproject.com/route/202062858": "/Users/nathanbarber/dev/mp-data/_mp/_pitchtext/wy_medicine_bow_peak_area_2_bombs_away.txt"
-      },
-      "changed": "Wrote P1, P2, P3-4 (linked), P5. P3-4 total length stated for both pitches together, kept in notes. No rappel table (descent is a couloir walk).",
-      "pitch_count_found": 5,
-      "other_findings": ""
-    }
-  },
-  "wy_medicine_bow_peak_area_2_grunge_gully": {
-    "area": "wy_medicine_bow_peak_area",
-    "pitch_detail": [
-      {
-        "pitch": "1",
-        "grade": "WI2+",
-        "lengthM": 50,
-        "notes": "Pleasant climbing up a narrow ice runnel to an okay belay ledge on the right. A fixed anchor tops the pitch."
-      },
-      {
-        "pitch": "2",
-        "grade": "M4",
-        "lengthM": 60,
-        "notes": "Ice patches and snowy rock that gets smoother higher up. Slabby, with gear hard to find and runouts of 30 feet or more. Belay ledge on the right with a fixed anchor."
-      },
-      {
-        "pitch": "3",
-        "grade": "M4",
-        "lengthM": 60,
-        "notes": "Steeper than pitch two yet nicer, mixing ice, rock and snow, with far better gear. A boulder at the top serves as the belay."
-      }
-    ],
-    "replace_pitch_detail": true,
-    "review": {
-      "confidence": "high",
-      "sources": [
-        "https://www.mountainproject.com/route/127266367"
-      ],
-      "source_texts": {
-        "https://www.mountainproject.com/route/127266367": "/Users/nathanbarber/dev/mp-data/_mp/_pitchtext/wy_medicine_bow_peak_area_2_grunge_gully.txt"
-      },
-      "changed": "Wrote all three pitches. No rappel table: only that fixed anchors exist on top of P1 and P2 and two 60 m ropes are needed.",
-      "pitch_count_found": 3,
-      "other_findings": ""
-    }
-  },
-  "wy_medicine_bow_peak_area_diamond_central_diamond_express": {
-    "area": "wy_medicine_bow_peak_area",
-    "pitch_detail": [
-      {
-        "pitch": "1",
-        "lengthM": 65,
-        "crux": true,
-        "notes": "The pillar, the technical crux. Begin with easy 5.7 face climbing and occasional hand jams. A third of the way up the right crack narrows to a seam; shift left into another crack for about 15 feet, then traverse back right on a diagonal rail to the now fist-sized crack. Higher the left crack becomes a chimney with creaky jugs and little protection. A 60 m rope may force an escape left; a 70 can reach the pillar top. The top ledge is very loose."
-      },
-      {
-        "pitch": "2",
-        "lengthM": 60,
-        "notes": "Choose-your-own-adventure terrain: face climbing, easy overhangs and a short chimney, heading straight up and right before jogging left. Protection is sparse on easy ground, and rope drag is a concern. Belay on hand-sized pieces in a crack right of the arete."
-      },
-      {
-        "pitch": "3",
-        "lengthM": 25,
-        "notes": "Round the arete into a brief traverse on incut staircase-like holds in sound red quartz; finger cracks now and then protect the second. A small roof on large jugs gets you to the diagonal ledge, where a slung block makes the anchor. Shove it hard first, since many blocks there are not attached."
-      },
-      {
-        "pitch": "4",
-        "lengthM": 60,
-        "notes": "From the ledge, hike uphill some 30 feet to a seam in the wall. A long run on easy holds precedes an overhanging finger-and-fist corner; above it, an old steel cable marks a triangular stance. Set the belay in hand-size cracks a little higher than the cable."
-      },
-      {
-        "pitch": "5",
-        "lengthM": 35,
-        "notes": "From the crow's nest belay, go up and slightly right into an offset seam, then a tricky move on small crimps just under the roof. Pull the roof on jugs into a vegetated crack, stem left and finish with an easy committing mantle. A bolted anchor sits 15 feet above the roof."
-      }
-    ],
-    "replace_pitch_detail": true,
-    "review": {
-      "confidence": "medium",
-      "sources": [
-        "https://www.mountainproject.com/route/127096435"
-      ],
-      "source_texts": {
-        "https://www.mountainproject.com/route/127096435": "/Users/nathanbarber/dev/mp-data/_mp/_pitchtext/wy_medicine_bow_peak_area_diamond_central_diamond_express.txt"
-      },
-      "changed": "Wrote all five pitches with metre lengths. No pitch grades stated except a 5.7 opening on P1, so grades omitted.",
-      "pitch_count_found": 5,
-      "other_findings": "Stored length 274 m; pitch lengths sum to 245 m."
-    }
-  },
-  "wy_midsummer_s_dome_southeast_face_midsummer_s_dome": {
-    "area": "wy_midsummer_s_dome",
-    "pitch_detail": [
-      {
-        "pitch": "1",
-        "notes": "Climb one of the two parallel left-leaning ramps (the higher is fine) and anchor near or just above where it fades out."
-      },
-      {
-        "pitch": "2",
-        "grade": "5.5",
-        "crux": true,
-        "notes": "A shorter pitch working back right to the base of the chimney corner seen from below. Technical crux of the route, on good rock. Protect the follower against a swing at the arete traverse before the ledge belay at the chimney base; anchor gear goes deep into the cracks."
-      },
-      {
-        "pitch": "3",
-        "notes": "A long lead on rock right of the chimney and crack line, taking over half of a 60 m rope. Loose rock is about. The big ledge it reaches resembles the dome's shoulder, yet a few hundred feet of climbing still lie above."
-      }
-    ],
-    "replace_pitch_detail": true,
-    "review": {
-      "confidence": "medium",
-      "sources": [
-        "https://www.mountainproject.com/route/201529585"
-      ],
-      "source_texts": {
-        "https://www.mountainproject.com/route/201529585": "/Users/nathanbarber/dev/mp-data/_mp/_pitchtext/wy_midsummer_s_dome_southeast_face_midsummer_s_dome.txt"
-      },
-      "changed": "Wrote P1-P3 only. Pitches 4-8 are described together as wandering ledges and ramps with no per-pitch detail, so they are not written.",
-      "pitch_count_found": 3,
-      "other_findings": "Stored 8 pitches; the upper wall can be climbed in a variable number of pitches."
-    }
-  },
-  "wy_mount_hooker_the_living_stone": {
-    "area": "wy_mount_hooker",
-    "pitch_detail": [
-      {
-        "pitch": "1",
-        "grade": "5.11",
-        "lengthM": 68,
-        "bolts": 3,
-        "notes": "A pin and three bolts lead directly up the face to a big right-facing corner that curves left into a ramp, ending on a large ledge."
-      },
-      {
-        "pitch": "2",
-        "grade": "5.12",
-        "lengthM": 50,
-        "anchor": "bolt and piton",
-        "notes": "Go directly up past bolts and pins to the ledge where a distinctive splitter cuts rightward across the slab. Follow that splitter to a system of ledges, where a bolt plus a piton make the belay."
-      },
-      {
-        "pitch": "3",
-        "grade": "5.13",
-        "lengthM": 50,
-        "crux": true,
-        "notes": "Stroll right along the ledge, then climb a slab with no protection toward the large overlap. As it kicks back steeper, make dramatic moves on big holds to the second overlap, then break right to knobs and the first bolt. Dikes lead to the roof, and the belay sits on a ledge past its lip. Keep a carabiner on the bolt above the roof for the rope, so the second is held."
-      },
-      {
-        "pitch": "4",
-        "grade": "5.10",
-        "lengthM": 35,
-        "anchor": "2 bolts",
-        "notes": "Leave the belay leftward and trace the seam through the middle of the jade-colored heart feature, ending at a stance with a two-bolt anchor."
-      },
-      {
-        "pitch": "5",
-        "grade": "5.12+",
-        "lengthM": 68,
-        "notes": "Boulder through the slanting seam, then move up and left when it lies back. A second seam curves left to a bolt that protects a traverse and then a right-facing corner. Surmount the roof at the top and follow holds up a wide easy ramp to an old bolt with a knifeblade belay. A long meandering pitch."
-      },
-      {
-        "pitch": "6",
-        "grade": "5.13-",
-        "lengthM": 50,
-        "notes": "Lower the belay roughly 30 feet to a grassy spot that sleeps two. Climb the flake to a tiny corner with two bolts, track the seam, and angle left to another bolt. Connect cracks leftward to the foot of a large left-facing corner and belay from gear on a good ledge."
-      },
-      {
-        "pitch": "7",
-        "grade": "5.12-",
-        "lengthM": 55,
-        "notes": "Shift left to a thin crack and continue left to a small tower. Climb the tower, traverse briefly past a bolt, then follow a corner-flake directly up to a small ledge with one bolt plus gear for the belay."
-      },
-      {
-        "pitch": "8",
-        "grade": "5.12",
-        "lengthM": 60,
-        "notes": "Follow the crack up to a steep awkward feature, then the corners above to a belay on another route."
-      },
-      {
-        "pitch": "9",
-        "grade": "5.12-",
-        "lengthM": 55,
-        "notes": "Move the belay up to a clean left-facing corner guarded by a roof. Climb through the roof to the crack, up through a squeeze and discontinuous cracks past blocks to a big flat ledge."
-      },
-      {
-        "pitch": "10",
-        "grade": "5.6",
-        "lengthM": 35,
-        "notes": "A long ramp of about 5.6 to the top."
-      }
-    ],
-    "replace_pitch_detail": true,
-    "review": {
-      "confidence": "high",
-      "sources": [
-        "https://www.mountainproject.com/route/201628262"
-      ],
-      "source_texts": {
-        "https://www.mountainproject.com/route/201628262": "/Users/nathanbarber/dev/mp-data/_mp/_pitchtext/wy_mount_hooker_the_living_stone.txt"
-      },
-      "changed": "Wrote all ten pitches with grades, metre lengths and stated bolt and anchor details.",
-      "pitch_count_found": 10,
-      "other_findings": ""
-    }
-  },
-  "wy_omega_buttress_man_o_war_ship_s_prow_pillar": {
-    "area": "wy_omega_buttress",
-    "pitch_detail": [
-      {
-        "pitch": "1",
-        "grade": "5.7 R",
-        "notes": "Start on the far right of the approach slab. Get a thin flake in as high as possible, then move up on 5.7 friction with ground-fall potential. Pass a tree and belay at the top of a grassy ramp."
-      },
-      {
-        "pitch": "2",
-        "grade": "5.7",
-        "notes": "Climb a blocky left-facing corner with a layback crack toward the southeast face. Pull a notch onto easy slabs with a large flake (last gear), then a long run of 5.5 slab to a grassy ledge with a big tree. Bail slings were on it as of 2023."
-      },
-      {
-        "pitch": "3",
-        "grade": "5.9 PG13",
-        "notes": "Long, wandering lead. From the belay tree go to a second small tree (sling it, last pro for a while), then a right-trending layback flake leads to the arete. Reach the flake over unprotected bulging 5.7 slab or by a trough to the right and a left traverse. Layback the well-protected flake (5.9), then hand-traverse a jug rail back onto the face to a large detached flake (5.6 R). Gritty 5.9 PG13 up the overhanging black wall on edges with only random gear, then slabs to below the final roof. A halfway belay above the flake helps rope drag."
-      },
-      {
-        "pitch": "4",
-        "grade": "5.9",
-        "notes": "Around the arete on the east face, take the second crack reached. Pull a juggy roof (5.9+) and layback and jam up the crack on insecure slab, then easier going (5.7) to a belay in a hollow. Dirty rock."
-      },
-      {
-        "pitch": "5",
-        "grade": "5.7",
-        "notes": "Many line choices on blocky ground lead from the belay to the top."
-      }
-    ],
-    "replace_pitch_detail": true,
-    "review": {
-      "confidence": "high",
-      "sources": [
-        "https://www.mountainproject.com/route/124364367"
-      ],
-      "source_texts": {
-        "https://www.mountainproject.com/route/124364367": "/Users/nathanbarber/dev/mp-data/_mp/_pitchtext/wy_omega_buttress_man_o_war_ship_s_prow_pillar.txt"
-      },
-      "changed": "Wrote all five pitches; the long third pitch is described as one lead. No lengths stated.",
-      "pitch_count_found": 5,
-      "other_findings": "Stored count 6; the account climbs it in five pitches (with a possible intermediate belay on the long third lead). Overall grade 5.8+ versus the account's 5.9."
-    }
-  },
-  "wy_south_side_of_death_canyon_predator": {
-    "area": "wy_south_side_of_death_canyon",
-    "pitch_detail": [
-      {
-        "pitch": "1",
-        "grade": "5.10+",
-        "lengthM": 60,
-        "notes": "Follow the moderate left-trending ramp past the entry to a large corner route, onto steeper ground out left with a couple of hard steep bulges. Belay on a small grassy ledge with a lone short tree at the base of the yellow overhanging corner."
-      },
-      {
-        "pitch": "2",
-        "grade": "5.11-",
-        "lengthM": 30,
-        "crux": true,
-        "notes": "The crux corner, a great pitch: thoughtful moves, decent gear, not very sustained, but dirty. Belay on the midway ledge in the corner, or at a sloping hanging belay under the roof."
-      },
-      {
-        "pitch": "3",
-        "lengthM": 20,
-        "notes": "Difficult, steep work in a crack packed with dirt, going to a blocky roof that is passed on its right, then up to a stance beneath a short open book. The dirt adds a lot: about 5.11+ in effort when filthy, or perhaps 5.10 A2 (uncertain). Joining pitches 2 and 3 works if you bring three sets of mid-size cams."
-      },
-      {
-        "pitch": "4",
-        "grade": "5.9",
-        "lengthM": 35,
-        "notes": "Straight up the short dirty-looking open book capped by a small roof (climbs better than it looks), then a hard left across a featured face to a small tree and up to a large grassy forested ledge."
-      }
-    ],
-    "replace_pitch_detail": true,
-    "review": {
-      "confidence": "medium",
-      "sources": [
-        "https://www.mountainproject.com/route/122899757"
-      ],
-      "source_texts": {
-        "https://www.mountainproject.com/route/122899757": "/Users/nathanbarber/dev/mp-data/_mp/_pitchtext/wy_south_side_of_death_canyon_predator.txt"
-      },
-      "changed": "Wrote P1-P4 with grades and lengths. P5-7 (three 5.8 pitches, not climbed by the account's authors) left out. No rappel table: descent options are not a station-by-station list.",
-      "pitch_count_found": 4,
-      "other_findings": "Stored 7 pitches; only 4 climbed in detail."
-    }
-  },
-  "wy_steamboat_ragtime_cowboy_joe": {
-    "area": "wy_steamboat",
-    "pitch_detail": [
-      {
-        "pitch": "1",
-        "grade": "5.7+",
-        "lengthM": 40,
-        "notes": "Begin in a dihedral immediately left of the west arete. After a small ledge, wide cracks in the corner lead to an excellent belay ledge."
-      },
-      {
-        "pitch": "2",
-        "grade": "5.7",
-        "lengthM": 25,
-        "notes": "Loose ground leads to a hand crack that divides a small tower from the main wall; then work the face up to a big ledge."
-      },
-      {
-        "pitch": "3",
-        "grade": "5.5",
-        "lengthM": 35,
-        "notes": "Cross the gap and follow easy, loose offwidth to a large ledge. Then circle the south side for 120 m along the wide ledge, belaying at the point it tapers near the east arete."
-      },
-      {
-        "pitch": "4",
-        "grade": "5.6",
-        "lengthM": 35,
-        "notes": "One airy move on the arete's north side starts it, followed by an easy, loose crack system to a reasonable ledge."
-      },
-      {
-        "pitch": "5",
-        "grade": "5.9",
-        "lengthM": 30,
-        "crux": true,
-        "notes": "Steep pockets and edges, then left to a closed dihedral with great movement."
-      },
-      {
-        "pitch": "6",
-        "grade": "5.4",
-        "lengthM": 35,
-        "notes": "Easy romp to the summit."
-      }
-    ],
-    "replace_pitch_detail": true,
-    "review": {
-      "confidence": "high",
-      "sources": [
-        "https://www.mountainproject.com/route/200928248"
-      ],
-      "source_texts": {
-        "https://www.mountainproject.com/route/200928248": "/Users/nathanbarber/dev/mp-data/_mp/_pitchtext/wy_steamboat_ragtime_cowboy_joe.txt"
-      },
-      "changed": "Wrote all six pitches. No rappel table: only '3 x 40 m rappels' stated.",
-      "pitch_count_found": 6,
-      "other_findings": ""
-    }
-  },
-  "wy_stuart_draw_peaches": {
-    "area": "wy_stuart_draw",
-    "pitch_detail": [
-      {
-        "pitch": "1",
-        "grade": "5.8",
-        "notes": "Begin in a vegetated right-facing corner roughly 30 feet to the right of a solitary bolt. Climb the corner (5.7) to a blank face, then discontinuous cracks and insecure 5.8 face climbing with thin gear for about fifty feet. Belay at a ledge next to anchors on a neighboring route, which also offers an easy bail. PG13."
-      },
-      {
-        "pitch": "2",
-        "grade": "5.8",
-        "notes": "Go directly up about 15 feet toward the roof, then traverse west on a hand-rail crack to the far right end. Pull the small bulge on big 5.5 jugs and continue up another spicy slab. The large ledge has few anchor placements apart from a #2 cam."
-      },
-      {
-        "pitch": "3",
-        "grade": "5.7",
-        "notes": "Long, over 50 m. Diagonal right on easy ground and up a steep finger crack (5.7), then wander left through about 40 m of dicey face climbing (around 5.7) among questionable blocks, with runouts. Belay on a large ledge below the summit ridge. PG13; take care not to dislodge loose blocks."
-      },
-      {
-        "pitch": "4",
-        "grade": "5.7",
-        "notes": "A face cut by mostly easy cracks leads to a mantle onto the east ridge; afterward stretch the rope over fourth-class slabs to the high point of the ridge."
-      }
-    ],
-    "replace_pitch_detail": true,
-    "review": {
-      "confidence": "high",
-      "sources": [
-        "https://www.mountainproject.com/route/123251894"
-      ],
-      "source_texts": {
-        "https://www.mountainproject.com/route/123251894": "/Users/nathanbarber/dev/mp-data/_mp/_pitchtext/wy_stuart_draw_peaches.txt"
-      },
-      "changed": "Wrote P1-P4. Optional summit spire pitch left out. No rappels (descent is a gully walk).",
-      "pitch_count_found": 4,
-      "other_findings": "Pitch 3 is 50+ m (kept in notes)."
-    }
-  },
-  "wy_sundance_pinnacle_east_face_left": {
-    "area": "wy_sundance_pinnacle",
-    "pitch_detail": [
-      {
-        "pitch": "1",
-        "notes": "The first lead goes up the big left-facing dihedral, about a third of the way in from the left edge of the east face. At the top, a huge ledge; scramble about 10 feet further right to a smaller but comfortable belay ledge, which suits belaying the next pitch."
-      },
-      {
-        "pitch": "2",
-        "notes": "Traverse right, then climb an easy crack diagonaling right. Cross some boulders to a small ledge and belay."
-      },
-      {
-        "pitch": "3",
-        "notes": "Climb another crack, starting slightly right but going mostly straight up. A bulge halfway obscures the view, with easy climbing above. Belay on a platform formed by a huge flake separated from the face by a foot-wide cleft. From there, walk about 30 feet left and make an easy fifth-class move onto the summit ridge."
-      }
-    ],
-    "replace_pitch_detail": true,
-    "review": {
-      "confidence": "medium",
-      "sources": [
-        "https://www.mountainproject.com/route/122614553"
-      ],
-      "source_texts": {
-        "https://www.mountainproject.com/route/122614553": "/Users/nathanbarber/dev/mp-data/_mp/_pitchtext/wy_sundance_pinnacle_east_face_left.txt"
-      },
-      "changed": "Wrote the three pitches. No grades, lengths or bolt counts stated.",
-      "pitch_count_found": 3,
-      "other_findings": ""
-    }
-  },
-  "skip_reasons": {
-    "wy_mount_moran_staircase_arete": "Pitches are grouped (P1-P3, P4-P5+, P6-P10+) with approximate difficulty and no per-pitch detail; counts uncertain, so skipped."
+ "wy_emerson_chimney": {
+  "area": "wy_grand_teton",
+  "pitch_detail": [
+   {
+    "pitch": "1",
+    "notes": "Steep hand crack in a shallow left-facing corner, with the first hard moves low. It ends at an overhanging wedged block with slings, which holds the second hard section. A set of hand-sized gear covers it."
+   },
+   {
+    "pitch": "2",
+    "grade": "5.0",
+    "notes": "Easy crawling leftward on a ledge system, far gentler than the first pitch. Plenty of crouching and shuffling rather than real climbing."
+   }
+  ],
+  "replace_pitch_detail": true,
+  "review": {
+   "confidence": "medium",
+   "sources": [
+    "https://www.mountainproject.com/route/112050906"
+   ],
+   "source_texts": {
+    "https://www.mountainproject.com/route/112050906": "/Users/nathanbarber/dev/mp-data/_mp/_pitchtext/wy_emerson_chimney.txt"
+   },
+   "changed": "Wrote both pitches: the steep hand-crack pitch (no pitch grade given) and the 5.0 crawl pitch. No lengths or bolt counts stated.",
+   "pitch_count_found": 2,
+   "other_findings": ""
   }
+ },
+ "wy_enclosure_lowe_route": {
+  "area": "wy_enclosure",
+  "pitch_detail": [
+   {
+    "pitch": "1",
+    "notes": "Begin at the bottom of the couloir, working up poor-quality ice and loose broken rock until the chimney and wide cracks that define the route begin."
+   },
+   {
+    "pitch": "2",
+    "grade": "5.9+",
+    "notes": "Work the cracks within the open chimney. A single reachy move is the crux and its feel depends on your height; above it, keep going to where the wide cracks start."
+   },
+   {
+    "pitch": "3",
+    "notes": "A very long wide-crack lead of roughly 170 feet or a bit more. Protection takes a lot of big cams, and the climber may still be 25 to 35 feet above the last piece. The hard part is a slightly overhanging offwidth that tends to be wet, and it feels harder than 5.9."
+   },
+   {
+    "pitch": "4",
+    "grade": "5.9",
+    "notes": "Another long pitch, about 150 to 160 feet, of sustained old-style wide crack that is often damp. Very little gear is available in the lower part, with one big piece reachable low and then nothing until the anchor, so it is serious. Run-out."
+   },
+   {
+    "pitch": "5",
+    "grade": "5.8",
+    "notes": "A short 5.8 pitch."
+   },
+   {
+    "pitch": "6-7",
+    "notes": "Two long, moderate fifth-class pitches along a rock rib. Details of these are vague."
+   },
+   {
+    "pitch": "8",
+    "grade": "5.8+",
+    "notes": "A steep hand crack in a corner."
+   },
+   {
+    "pitch": "9-10",
+    "notes": "Easy fifth class changing to scrambling, finishing on the top of the Enclosure. Details are vague."
+   }
+  ],
+  "replace_pitch_detail": true,
+  "review": {
+   "confidence": "medium",
+   "sources": [
+    "https://www.mountainproject.com/route/125118257"
+   ],
+   "source_texts": {
+    "https://www.mountainproject.com/route/125118257": "/Users/nathanbarber/dev/mp-data/_mp/_pitchtext/wy_enclosure_lowe_route.txt"
+   },
+   "changed": "Wrote the pitches the account describes: 1, 2, 3, 4, 5, 6-7, 8, 9-10. Pitch 3 and 4 lengths are approximate so kept in notes; 6-7 and 9-10 are given as linked labels because the pitches are not described individually.",
+   "pitch_count_found": 8,
+   "other_findings": "The route is described from memory, so details are hedged; pitch 3 is rated harder than 5.9+ (wet, slightly overhanging offwidth)."
+  }
+ },
+ "wy_eocene_eohippus": {
+  "area": "wy_eocene",
+  "pitch_detail": [
+   {
+    "pitch": "1",
+    "grade": "5.6",
+    "lengthM": 25,
+    "notes": "Take the leftmost corner on the rock bridge's southern face, the one joining Eocene and Brokeback. A crack taking hands and fists leads to a very roomy bivy ledge."
+   },
+   {
+    "pitch": "2",
+    "grade": "5.10a",
+    "lengthM": 35,
+    "bolts": 6,
+    "notes": "Short offwidth crack to a pocketed face with 6 bolts, reaching the top of a small tower. Then traverse the ridge east and downclimb with some thought."
+   },
+   {
+    "pitch": "3",
+    "grade": "5.10+",
+    "lengthM": 20,
+    "crux": true,
+    "notes": "The hardest pitch. Move up and left on good holds to a steep splitter crack that goes from fingers to fists."
+   },
+   {
+    "pitch": "4",
+    "grade": "5.9",
+    "lengthM": 40,
+    "notes": "Work up and left, then take one airy step by a bolt over a drop to reach a good corner. Its crack leads to a little ledge just under the summit blocks; shift left to a simpler mantle and finish on easy, crumbly rock."
+   }
+  ],
+  "replace_pitch_detail": true,
+  "review": {
+   "confidence": "high",
+   "sources": [
+    "https://www.mountainproject.com/route/200959845"
+   ],
+   "source_texts": {
+    "https://www.mountainproject.com/route/200959845": "/Users/nathanbarber/dev/mp-data/_mp/_pitchtext/wy_eocene_eohippus.txt"
+   },
+   "changed": "Wrote all four pitches with grades and lengths. Wrote the two-rappel descent in order (summit, then P3 anchor). (Reviewer: rappel table removed: 40 m stations need two ropes; RAPPELS describes one rope only, owner 2026-11-26.)",
+   "pitch_count_found": 4,
+   "other_findings": ""
+  }
+ },
+ "wy_erodeica_spire_rest_day": {
+  "area": "wy_erodeica_spire",
+  "pitch_detail": [
+   {
+    "pitch": "1",
+    "grade": "5.8",
+    "lengthM": 61,
+    "notes": "The route starts inside a recess at the left side. A brief crack, climbed by stemming, gives a jug and a pull onto slab; angle right via blocky corners, then return up and left."
+   },
+   {
+    "pitch": "2",
+    "grade": "3rd-4th class",
+    "lengthM": 91,
+    "notes": "Wander up to a big ledge, then scramble around its left side to the base of large left-facing fins. Moving together makes this go faster."
+   },
+   {
+    "pitch": "3",
+    "grade": "5.5",
+    "lengthM": 61,
+    "notes": "Climb the fins, trending right, to a sloping ledge with a crack below more left-facing fins."
+   },
+   {
+    "pitch": "4",
+    "grade": "5.7",
+    "lengthM": 61,
+    "notes": "Climb the crack and fins for about 40 feet, step over the overlap to the right, then follow flakes and cracks on the face to the foot of a long straight crack."
+   },
+   {
+    "pitch": "5",
+    "grade": "5.8",
+    "lengthM": 53,
+    "notes": "Follow the straight crack for around 100 feet, then continue straight up through thin flakes to a roof. Pull the roof and belay on a blocky ledge. Do not drift right into the gully."
+   },
+   {
+    "pitch": "6",
+    "grade": "5.7",
+    "lengthM": 70,
+    "notes": "Go up and right through the gully to a headwall with good flakes and cracks, reach a big ledge under the summit, and continue to the crest. Moving together helps here."
+   }
+  ],
+  "replace_pitch_detail": true,
+  "review": {
+   "confidence": "high",
+   "sources": [
+    "https://www.mountainproject.com/route/122764903"
+   ],
+   "source_texts": {
+    "https://www.mountainproject.com/route/122764903": "/Users/nathanbarber/dev/mp-data/_mp/_pitchtext/wy_erodeica_spire_rest_day.txt"
+   },
+   "changed": "Wrote all six pitches with grades and feet converted to metres. No rappel table: descent is only 'rap the route with double ropes'.",
+   "pitch_count_found": 6,
+   "other_findings": ""
+  }
+ },
+ "wy_grand_teton_the_rainbow_bridge": {
+  "area": "wy_grand_teton",
+  "pitch_detail": [
+   {
+    "pitch": "1",
+    "grade": "5.10",
+    "lengthM": 50,
+    "notes": "Go up the steep broken cracks to their end, then slant right on small holds around a large block to a short right-facing dihedral. Shift roughly 15 feet left along the broad ramp and stop under a tips crack that curves rightward."
+   },
+   {
+    "pitch": "2",
+    "grade": "5.11",
+    "lengthM": 40,
+    "crux": true,
+    "notes": "Place cams at the base of the tips crack, then launch up and right on crimps and hollow flakes into a splitter right-facing dihedral. Save tiny cams for it; a fixed nut sits en route. Belay at the second big ledge, below the steep upper headwall. Rated PG13."
+   },
+   {
+    "pitch": "3",
+    "grade": "5.9+",
+    "lengthM": 30,
+    "notes": "Move the belay about 100 feet left to directly below the obvious right-facing dihedral. Stem and jam it past a few bulges to a hanging stance below the last bulge, about 20 feet under the large roof. Can be linked with the next pitch."
+   },
+   {
+    "pitch": "4",
+    "grade": "5.10",
+    "lengthM": 20,
+    "notes": "Finish the dihedral and exit the roof by a 5-inch crack. Turn the corner and go up a short chimney to a ledge under a left-facing chimney corner."
+   },
+   {
+    "pitch": "5",
+    "grade": "5.7",
+    "lengthM": 60,
+    "notes": "Follow the left-facing corner, then meander over gentle slab, placing gear in horizontal breaks, to end on the sharp ridge crest."
+   }
+  ],
+  "replace_pitch_detail": true,
+  "review": {
+   "confidence": "high",
+   "sources": [
+    "https://www.mountainproject.com/route/201495561"
+   ],
+   "source_texts": {
+    "https://www.mountainproject.com/route/201495561": "/Users/nathanbarber/dev/mp-data/_mp/_pitchtext/wy_grand_teton_the_rainbow_bridge.txt"
+   },
+   "changed": "Wrote all five pitches with grades and metre lengths. Rappels not described.",
+   "pitch_count_found": 5,
+   "other_findings": "Stored length 213 m; pitch lengths sum to 200 m."
+  }
+ },
+ "wy_grand_teton_trust_but_verify": {
+  "area": "wy_grand_teton",
+  "pitch_detail": [
+   {
+    "pitch": "1",
+    "grade": "5.10a",
+    "crux": true,
+    "notes": "Stem up the chimney toward a friendly hand crack in its right wall; side footholds are plentiful. Cams from about .75 near the bottom up to a 3 near the top fit. Belay on the ledge under the offwidth using big nuts and hand-size cams, or carry on into pitch two."
+   },
+   {
+    "pitch": "2",
+    "grade": "5.8 R",
+    "notes": "Either squirm inside the sparsely protected offwidth chimney or stem along its outside. A #6 is too small, though odd smaller placements exist. Trend up and right toward the roof, and set the belay above it but short of the loose talus, which would rain down the route. Easier than it appears."
+   },
+   {
+    "pitch": "3",
+    "grade": "5.5",
+    "notes": "Mostly a scramble on loose talus with one solid 5.5 step, joining the upper Exum Ridge."
+   }
+  ],
+  "replace_pitch_detail": true,
+  "review": {
+   "confidence": "high",
+   "sources": [
+    "https://www.mountainproject.com/route/203639846"
+   ],
+   "source_texts": {
+    "https://www.mountainproject.com/route/203639846": "/Users/nathanbarber/dev/mp-data/_mp/_pitchtext/wy_grand_teton_trust_but_verify.txt"
+   },
+   "changed": "Wrote all three pitches with grades. No lengths stated.",
+   "pitch_count_found": 3,
+   "other_findings": ""
+  }
+ },
+ "wy_grand_teton_wish_you_were_here": {
+  "area": "wy_grand_teton",
+  "pitch_detail": [
+   {
+    "pitch": "1",
+    "grade": "5.9+",
+    "lengthM": 50,
+    "notes": "From the cairn, take the path of least resistance toward the arrow-shaped roof. The start is scabby rock but quality improves. Awkward moves lead to the inverted V roof; pull a bulge with a small welded chockstone (around 5.9), then go up an easy weakness to a belay at the left side of the dark band."
+   },
+   {
+    "pitch": "2",
+    "grade": "5.10",
+    "lengthM": 50,
+    "notes": "Move left in low fifth class along the line between light and dark rock to golden granite with little but easy-to-place gear. Pull a bulge (5.9+), jams and flakes to the right, then a handful of 5.10 moves on a seam and crimps in good rock. Easier ground leads to the huge roof, passed at its right edge (easy), to the next stance."
+   },
+   {
+    "pitch": "3",
+    "lengthM": 50,
+    "notes": "Follow the easy-to-moderate cracks up to a crack leaning right in superb rock (roughly 5.9). A jug above and left gives a few face moves before you drift back into the crack. Bare slab with no protection looms overhead, so cross left on a sloping ledge of footholds to join the last 40 feet of the neighboring route."
+   }
+  ],
+  "replace_pitch_detail": true,
+  "review": {
+   "confidence": "medium",
+   "sources": [
+    "https://www.mountainproject.com/route/126619683"
+   ],
+   "source_texts": {
+    "https://www.mountainproject.com/route/126619683": "/Users/nathanbarber/dev/mp-data/_mp/_pitchtext/wy_grand_teton_wish_you_were_here.txt"
+   },
+   "changed": "Wrote the three lettered pitches. Left out 'P4+' (it just joins the Golden Stair and Upper Exum, another route). Pitch grades only where stated; hedged grades kept in notes.",
+   "pitch_count_found": 3,
+   "other_findings": ""
+  }
+ },
+ "wy_grand_teton_wooden_ships": {
+  "area": "wy_grand_teton",
+  "pitch_detail": [
+   {
+    "pitch": "1",
+    "grade": "5.7",
+    "notes": "Moderate, fairly featureless climbing through dark rock to a big ledge. Belay near a small flake below an overlap where dark rock meets light."
+   },
+   {
+    "pitch": "2",
+    "grade": "5.10- R",
+    "crux": true,
+    "notes": "Steep, small-holds climbing passes the small roof on its left side, then you cut well right for several body lengths with solid footholds. Black rock leads to a face mantle and pale rock above to the foot of a curving wide crack. Protection is awkward or missing."
+   },
+   {
+    "pitch": "3",
+    "grade": "5.9+",
+    "notes": "The wide crack gradually relaxes into a 5.8 corner. Stop at a small ledge beneath a second striking corner, the one that heads toward the Step Across move on Wall Street."
+   },
+   {
+    "pitch": "4",
+    "grade": "5.7",
+    "notes": "This excellent corner ends beneath the start of the Golden Staircase, where the route meets the Upper Exum."
+   }
+  ],
+  "replace_pitch_detail": true,
+  "review": {
+   "confidence": "high",
+   "sources": [
+    "https://www.mountainproject.com/route/126170927"
+   ],
+   "source_texts": {
+    "https://www.mountainproject.com/route/126170927": "/Users/nathanbarber/dev/mp-data/_mp/_pitchtext/wy_grand_teton_wooden_ships.txt"
+   },
+   "changed": "Wrote all four pitches with stated grades. No lengths stated.",
+   "pitch_count_found": 4,
+   "other_findings": "Stored length 183 m has no pitch-level backing."
+  }
+ },
+ "wy_index_peak_west_face": {
+  "area": "wy_index_peak",
+  "pitch_detail": [
+   {
+    "pitch": "1",
+    "grade": "5.6",
+    "lengthM": 35,
+    "notes": "Start at the one clear weakness in the lower headwall. In winter and spring it is a snow, ice and water tongue over a short overhang; later in summer it melts to a chimney with good cracks. Pull over it onto a gently angled, crumbly slab, finishing at a block anchored with slings."
+   },
+   {
+    "pitch": "2",
+    "grade": "5.7",
+    "lengthM": 10,
+    "notes": "A short steep boulder problem to the south end of a big ledge below the summit block's southern prow. After this a 150 m ledge walk north and a talus fan with a 4th class step lead to the saddle."
+   },
+   {
+    "pitch": "3",
+    "grade": "5.5",
+    "lengthM": 35,
+    "notes": "Follow a weakness running right to left that takes decent gear; once past a horn, head left to a pleasant ledge for the belay."
+   },
+   {
+    "pitch": "4",
+    "lengthM": 30,
+    "notes": "Cross a rubble-filled gap to the left and descend an easy yet loose chimney, ending at a two-cam belay next to a tunnel shaped like a ring. Then, still roped, go through the tunnel and set a belay on a natural thread and slung cobble down and left of the crux chimney."
+   },
+   {
+    "pitch": "5",
+    "grade": "5.8+",
+    "lengthM": 35,
+    "crux": true,
+    "notes": "The chimney: an overhanging start, then stemming and offwidth moves past chockstones. It becomes low-angle and loose near the end. Belay off a horn at the right end."
+   },
+   {
+    "pitch": "6",
+    "lengthM": 25,
+    "notes": "Scamper through the notch to the summit."
+   }
+  ],
+  "replace_pitch_detail": true,
+  "review": {
+   "confidence": "medium",
+   "sources": [
+    "https://www.mountainproject.com/route/203766170"
+   ],
+   "source_texts": {
+    "https://www.mountainproject.com/route/203766170": "/Users/nathanbarber/dev/mp-data/_mp/_pitchtext/wy_index_peak_west_face.txt"
+   },
+   "changed": "Wrote P1-P6 with grades and metre lengths where given; left out the scrambles between pitches (described in notes). Wrote a three-station rappel table following the south-prow descent line. (Reviewer: rappel table removed: 40 m stations need two ropes; RAPPELS describes one rope only, owner 2026-11-26.)",
+   "pitch_count_found": 6,
+   "other_findings": "The first rappel has an alternative (the north side of the summit, then through the tunnel to a hanging anchor on the P2 ledge); the table follows the prow option."
+  }
+ },
+ "wy_medicine_bow_peak_area_2_bombs_away": {
+  "area": "wy_medicine_bow_peak_area",
+  "pitch_detail": [
+   {
+    "pitch": "1",
+    "lengthM": 60,
+    "notes": "Easy ice runnel to a big ledge below the steeper waterfall."
+   },
+   {
+    "pitch": "2",
+    "grade": "WI3+",
+    "lengthM": 60,
+    "crux": true,
+    "notes": "Hardest pitch, rated WI3+/M4. Either go up ice just short of vertical or use a hand-to-fist crack slanting from right to left into an ice bulge. Gentler runnel above takes you to a sloping ledge."
+   },
+   {
+    "pitch": "3-4",
+    "grade": "WI2-3",
+    "notes": "Easier ice steps that are simple to link; about 70 m of climbing in total across the two. Protection gets harder if the lines are mixed rather than iced."
+   },
+   {
+    "pitch": "5",
+    "lengthM": 100,
+    "notes": "Easy snow trending right for roughly 100 m, or go directly upward for a tougher M5 rock exit."
+   }
+  ],
+  "replace_pitch_detail": true,
+  "review": {
+   "confidence": "medium",
+   "sources": [
+    "https://www.mountainproject.com/route/202062858"
+   ],
+   "source_texts": {
+    "https://www.mountainproject.com/route/202062858": "/Users/nathanbarber/dev/mp-data/_mp/_pitchtext/wy_medicine_bow_peak_area_2_bombs_away.txt"
+   },
+   "changed": "Wrote P1, P2, P3-4 (linked), P5. P3-4 total length stated for both pitches together, kept in notes. No rappel table (descent is a couloir walk).",
+   "pitch_count_found": 5,
+   "other_findings": ""
+  }
+ },
+ "wy_medicine_bow_peak_area_2_grunge_gully": {
+  "area": "wy_medicine_bow_peak_area",
+  "pitch_detail": [
+   {
+    "pitch": "1",
+    "grade": "WI2+",
+    "lengthM": 50,
+    "notes": "Pleasant climbing up a narrow ice runnel to an okay belay ledge on the right. A fixed anchor tops the pitch."
+   },
+   {
+    "pitch": "2",
+    "grade": "M4",
+    "lengthM": 60,
+    "notes": "Ice patches and snowy rock that gets smoother higher up. Slabby, with gear hard to find and runouts of 30 feet or more. Belay ledge on the right with a fixed anchor."
+   },
+   {
+    "pitch": "3",
+    "grade": "M4",
+    "lengthM": 60,
+    "notes": "Steeper than pitch two yet nicer, mixing ice, rock and snow, with far better gear. A boulder at the top serves as the belay."
+   }
+  ],
+  "replace_pitch_detail": true,
+  "review": {
+   "confidence": "high",
+   "sources": [
+    "https://www.mountainproject.com/route/127266367"
+   ],
+   "source_texts": {
+    "https://www.mountainproject.com/route/127266367": "/Users/nathanbarber/dev/mp-data/_mp/_pitchtext/wy_medicine_bow_peak_area_2_grunge_gully.txt"
+   },
+   "changed": "Wrote all three pitches. No rappel table: only that fixed anchors exist on top of P1 and P2 and two 60 m ropes are needed.",
+   "pitch_count_found": 3,
+   "other_findings": ""
+  }
+ },
+ "wy_medicine_bow_peak_area_diamond_central_diamond_express": {
+  "area": "wy_medicine_bow_peak_area",
+  "pitch_detail": [
+   {
+    "pitch": "1",
+    "lengthM": 65,
+    "crux": true,
+    "notes": "The pillar, the technical crux. Begin with easy 5.7 face climbing and occasional hand jams. A third of the way up the right crack narrows to a seam; shift left into another crack for about 15 feet, then traverse back right on a diagonal rail to the now fist-sized crack. Higher the left crack becomes a chimney with creaky jugs and little protection. A 60 m rope may force an escape left; a 70 can reach the pillar top. The top ledge is very loose."
+   },
+   {
+    "pitch": "2",
+    "lengthM": 60,
+    "notes": "Choose-your-own-adventure terrain: face climbing, easy overhangs and a short chimney, heading straight up and right before jogging left. Protection is sparse on easy ground, and rope drag is a concern. Belay on hand-sized pieces in a crack right of the arete."
+   },
+   {
+    "pitch": "3",
+    "lengthM": 25,
+    "notes": "Round the arete into a brief traverse on incut staircase-like holds in sound red quartz; finger cracks now and then protect the second. A small roof on large jugs gets you to the diagonal ledge, where a slung block makes the anchor. Shove it hard first, since many blocks there are not attached."
+   },
+   {
+    "pitch": "4",
+    "lengthM": 60,
+    "notes": "From the ledge, hike uphill some 30 feet to a seam in the wall. A long run on easy holds precedes an overhanging finger-and-fist corner; above it, an old steel cable marks a triangular stance. Set the belay in hand-size cracks a little higher than the cable."
+   },
+   {
+    "pitch": "5",
+    "lengthM": 35,
+    "notes": "From the crow's nest belay, go up and slightly right into an offset seam, then a tricky move on small crimps just under the roof. Pull the roof on jugs into a vegetated crack, stem left and finish with an easy committing mantle. A bolted anchor sits 15 feet above the roof."
+   }
+  ],
+  "replace_pitch_detail": true,
+  "review": {
+   "confidence": "medium",
+   "sources": [
+    "https://www.mountainproject.com/route/127096435"
+   ],
+   "source_texts": {
+    "https://www.mountainproject.com/route/127096435": "/Users/nathanbarber/dev/mp-data/_mp/_pitchtext/wy_medicine_bow_peak_area_diamond_central_diamond_express.txt"
+   },
+   "changed": "Wrote all five pitches with metre lengths. No pitch grades stated except a 5.7 opening on P1, so grades omitted.",
+   "pitch_count_found": 5,
+   "other_findings": "Stored length 274 m; pitch lengths sum to 245 m."
+  }
+ },
+ "wy_midsummer_s_dome_southeast_face_midsummer_s_dome": {
+  "area": "wy_midsummer_s_dome",
+  "pitch_detail": [
+   {
+    "pitch": "1",
+    "notes": "Climb one of the two parallel left-leaning ramps (the higher is fine) and anchor near or just above where it fades out."
+   },
+   {
+    "pitch": "2",
+    "grade": "5.5",
+    "crux": true,
+    "notes": "A shorter pitch working back right to the base of the chimney corner seen from below. Technical crux of the route, on good rock. Protect the follower against a swing at the arete traverse before the ledge belay at the chimney base; anchor gear goes deep into the cracks."
+   },
+   {
+    "pitch": "3",
+    "notes": "A long lead on rock right of the chimney and crack line, taking over half of a 60 m rope. Loose rock is about. The big ledge it reaches resembles the dome's shoulder, yet a few hundred feet of climbing still lie above."
+   }
+  ],
+  "replace_pitch_detail": true,
+  "review": {
+   "confidence": "medium",
+   "sources": [
+    "https://www.mountainproject.com/route/201529585"
+   ],
+   "source_texts": {
+    "https://www.mountainproject.com/route/201529585": "/Users/nathanbarber/dev/mp-data/_mp/_pitchtext/wy_midsummer_s_dome_southeast_face_midsummer_s_dome.txt"
+   },
+   "changed": "Wrote P1-P3 only. Pitches 4-8 are described together as wandering ledges and ramps with no per-pitch detail, so they are not written.",
+   "pitch_count_found": 3,
+   "other_findings": "Stored 8 pitches; the upper wall can be climbed in a variable number of pitches."
+  }
+ },
+ "wy_mount_hooker_the_living_stone": {
+  "area": "wy_mount_hooker",
+  "pitch_detail": [
+   {
+    "pitch": "1",
+    "grade": "5.11",
+    "lengthM": 68,
+    "bolts": 3,
+    "notes": "A pin and three bolts lead directly up the face to a big right-facing corner that curves left into a ramp, ending on a large ledge."
+   },
+   {
+    "pitch": "2",
+    "grade": "5.12",
+    "lengthM": 50,
+    "anchor": "bolt and piton",
+    "notes": "Go directly up past bolts and pins to the ledge where a distinctive splitter cuts rightward across the slab. Follow that splitter to a system of ledges, where a bolt plus a piton make the belay."
+   },
+   {
+    "pitch": "3",
+    "grade": "5.13",
+    "lengthM": 50,
+    "crux": true,
+    "notes": "Stroll right along the ledge, then climb a slab with no protection toward the large overlap. As it kicks back steeper, make dramatic moves on big holds to the second overlap, then break right to knobs and the first bolt. Dikes lead to the roof, and the belay sits on a ledge past its lip. Keep a carabiner on the bolt above the roof for the rope, so the second is held."
+   },
+   {
+    "pitch": "4",
+    "grade": "5.10",
+    "lengthM": 35,
+    "anchor": "2 bolts",
+    "notes": "Leave the belay leftward and trace the seam through the middle of the jade-colored heart feature, ending at a stance with a two-bolt anchor."
+   },
+   {
+    "pitch": "5",
+    "grade": "5.12+",
+    "lengthM": 68,
+    "notes": "Boulder through the slanting seam, then move up and left when it lies back. A second seam curves left to a bolt that protects a traverse and then a right-facing corner. Surmount the roof at the top and follow holds up a wide easy ramp to an old bolt with a knifeblade belay. A long meandering pitch."
+   },
+   {
+    "pitch": "6",
+    "grade": "5.13-",
+    "lengthM": 50,
+    "notes": "Lower the belay roughly 30 feet to a grassy spot that sleeps two. Climb the flake to a tiny corner with two bolts, track the seam, and angle left to another bolt. Connect cracks leftward to the foot of a large left-facing corner and belay from gear on a good ledge."
+   },
+   {
+    "pitch": "7",
+    "grade": "5.12-",
+    "lengthM": 55,
+    "notes": "Shift left to a thin crack and continue left to a small tower. Climb the tower, traverse briefly past a bolt, then follow a corner-flake directly up to a small ledge with one bolt plus gear for the belay."
+   },
+   {
+    "pitch": "8",
+    "grade": "5.12",
+    "lengthM": 60,
+    "notes": "Follow the crack up to a steep awkward feature, then the corners above to a belay on another route."
+   },
+   {
+    "pitch": "9",
+    "grade": "5.12-",
+    "lengthM": 55,
+    "notes": "Move the belay up to a clean left-facing corner guarded by a roof. Climb through the roof to the crack, up through a squeeze and discontinuous cracks past blocks to a big flat ledge."
+   },
+   {
+    "pitch": "10",
+    "grade": "5.6",
+    "lengthM": 35,
+    "notes": "A long ramp of about 5.6 to the top."
+   }
+  ],
+  "replace_pitch_detail": true,
+  "review": {
+   "confidence": "high",
+   "sources": [
+    "https://www.mountainproject.com/route/201628262"
+   ],
+   "source_texts": {
+    "https://www.mountainproject.com/route/201628262": "/Users/nathanbarber/dev/mp-data/_mp/_pitchtext/wy_mount_hooker_the_living_stone.txt"
+   },
+   "changed": "Wrote all ten pitches with grades, metre lengths and stated bolt and anchor details.",
+   "pitch_count_found": 10,
+   "other_findings": ""
+  }
+ },
+ "wy_omega_buttress_man_o_war_ship_s_prow_pillar": {
+  "area": "wy_omega_buttress",
+  "pitch_detail": [
+   {
+    "pitch": "1",
+    "grade": "5.7 R",
+    "notes": "Start on the far right of the approach slab. Get a thin flake in as high as possible, then move up on 5.7 friction with ground-fall potential. Pass a tree and belay at the top of a grassy ramp."
+   },
+   {
+    "pitch": "2",
+    "grade": "5.7",
+    "notes": "Climb a blocky left-facing corner with a layback crack toward the southeast face. Pull a notch onto easy slabs with a large flake (last gear), then a long run of 5.5 slab to a grassy ledge with a big tree. Bail slings were on it as of 2023."
+   },
+   {
+    "pitch": "3",
+    "grade": "5.9 PG13",
+    "notes": "Long, wandering lead. From the belay tree go to a second small tree (sling it, last pro for a while), then a right-trending layback flake leads to the arete. Reach the flake over unprotected bulging 5.7 slab or by a trough to the right and a left traverse. Layback the well-protected flake (5.9), then hand-traverse a jug rail back onto the face to a large detached flake (5.6 R). Gritty 5.9 PG13 up the overhanging black wall on edges with only random gear, then slabs to below the final roof. A halfway belay above the flake helps rope drag."
+   },
+   {
+    "pitch": "4",
+    "grade": "5.9",
+    "notes": "Around the arete on the east face, take the second crack reached. Pull a juggy roof (5.9+) and layback and jam up the crack on insecure slab, then easier going (5.7) to a belay in a hollow. Dirty rock."
+   },
+   {
+    "pitch": "5",
+    "grade": "5.7",
+    "notes": "Many line choices on blocky ground lead from the belay to the top."
+   }
+  ],
+  "replace_pitch_detail": true,
+  "review": {
+   "confidence": "high",
+   "sources": [
+    "https://www.mountainproject.com/route/124364367"
+   ],
+   "source_texts": {
+    "https://www.mountainproject.com/route/124364367": "/Users/nathanbarber/dev/mp-data/_mp/_pitchtext/wy_omega_buttress_man_o_war_ship_s_prow_pillar.txt"
+   },
+   "changed": "Wrote all five pitches; the long third pitch is described as one lead. No lengths stated.",
+   "pitch_count_found": 5,
+   "other_findings": "Stored count 6; the account climbs it in five pitches (with a possible intermediate belay on the long third lead). Overall grade 5.8+ versus the account's 5.9."
+  }
+ },
+ "wy_south_side_of_death_canyon_predator": {
+  "area": "wy_south_side_of_death_canyon",
+  "pitch_detail": [
+   {
+    "pitch": "1",
+    "grade": "5.10+",
+    "lengthM": 60,
+    "notes": "Follow the moderate left-trending ramp past the entry to a large corner route, onto steeper ground out left with a couple of hard steep bulges. Belay on a small grassy ledge with a lone short tree at the base of the yellow overhanging corner."
+   },
+   {
+    "pitch": "2",
+    "grade": "5.11-",
+    "lengthM": 30,
+    "crux": true,
+    "notes": "The crux corner, a great pitch: thoughtful moves, decent gear, not very sustained, but dirty. Belay on the midway ledge in the corner, or at a sloping hanging belay under the roof."
+   },
+   {
+    "pitch": "3",
+    "lengthM": 20,
+    "notes": "Difficult, steep work in a crack packed with dirt, going to a blocky roof that is passed on its right, then up to a stance beneath a short open book. The dirt adds a lot: about 5.11+ in effort when filthy, or perhaps 5.10 A2 (uncertain). Joining pitches 2 and 3 works if you bring three sets of mid-size cams."
+   },
+   {
+    "pitch": "4",
+    "grade": "5.9",
+    "lengthM": 35,
+    "notes": "Straight up the short dirty-looking open book capped by a small roof (climbs better than it looks), then a hard left across a featured face to a small tree and up to a large grassy forested ledge."
+   }
+  ],
+  "replace_pitch_detail": true,
+  "review": {
+   "confidence": "medium",
+   "sources": [
+    "https://www.mountainproject.com/route/122899757"
+   ],
+   "source_texts": {
+    "https://www.mountainproject.com/route/122899757": "/Users/nathanbarber/dev/mp-data/_mp/_pitchtext/wy_south_side_of_death_canyon_predator.txt"
+   },
+   "changed": "Wrote P1-P4 with grades and lengths. P5-7 (three 5.8 pitches, not climbed by the account's authors) left out. No rappel table: descent options are not a station-by-station list.",
+   "pitch_count_found": 4,
+   "other_findings": "Stored 7 pitches; only 4 climbed in detail."
+  }
+ },
+ "wy_steamboat_ragtime_cowboy_joe": {
+  "area": "wy_steamboat",
+  "pitch_detail": [
+   {
+    "pitch": "1",
+    "grade": "5.7+",
+    "lengthM": 40,
+    "notes": "Begin in a dihedral immediately left of the west arete. After a small ledge, wide cracks in the corner lead to an excellent belay ledge."
+   },
+   {
+    "pitch": "2",
+    "grade": "5.7",
+    "lengthM": 25,
+    "notes": "Loose ground leads to a hand crack that divides a small tower from the main wall; then work the face up to a big ledge."
+   },
+   {
+    "pitch": "3",
+    "grade": "5.5",
+    "lengthM": 35,
+    "notes": "Cross the gap and follow easy, loose offwidth to a large ledge. Then circle the south side for 120 m along the wide ledge, belaying at the point it tapers near the east arete."
+   },
+   {
+    "pitch": "4",
+    "grade": "5.6",
+    "lengthM": 35,
+    "notes": "One airy move on the arete's north side starts it, followed by an easy, loose crack system to a reasonable ledge."
+   },
+   {
+    "pitch": "5",
+    "grade": "5.9",
+    "lengthM": 30,
+    "crux": true,
+    "notes": "Steep pockets and edges, then left to a closed dihedral with great movement."
+   },
+   {
+    "pitch": "6",
+    "grade": "5.4",
+    "lengthM": 35,
+    "notes": "Easy romp to the summit."
+   }
+  ],
+  "replace_pitch_detail": true,
+  "review": {
+   "confidence": "high",
+   "sources": [
+    "https://www.mountainproject.com/route/200928248"
+   ],
+   "source_texts": {
+    "https://www.mountainproject.com/route/200928248": "/Users/nathanbarber/dev/mp-data/_mp/_pitchtext/wy_steamboat_ragtime_cowboy_joe.txt"
+   },
+   "changed": "Wrote all six pitches. No rappel table: only '3 x 40 m rappels' stated.",
+   "pitch_count_found": 6,
+   "other_findings": ""
+  }
+ },
+ "wy_stuart_draw_peaches": {
+  "area": "wy_stuart_draw",
+  "pitch_detail": [
+   {
+    "pitch": "1",
+    "grade": "5.8",
+    "notes": "Begin in a vegetated right-facing corner roughly 30 feet to the right of a solitary bolt. Climb the corner (5.7) to a blank face, then discontinuous cracks and insecure 5.8 face climbing with thin gear for about fifty feet. Belay at a ledge next to anchors on a neighboring route, which also offers an easy bail. PG13."
+   },
+   {
+    "pitch": "2",
+    "grade": "5.8",
+    "notes": "Go directly up about 15 feet toward the roof, then traverse west on a hand-rail crack to the far right end. Pull the small bulge on big 5.5 jugs and continue up another spicy slab. The large ledge has few anchor placements apart from a #2 cam."
+   },
+   {
+    "pitch": "3",
+    "grade": "5.7",
+    "notes": "Long, over 50 m. Diagonal right on easy ground and up a steep finger crack (5.7), then wander left through about 40 m of dicey face climbing (around 5.7) among questionable blocks, with runouts. Belay on a large ledge below the summit ridge. PG13; take care not to dislodge loose blocks."
+   },
+   {
+    "pitch": "4",
+    "grade": "5.7",
+    "notes": "A face cut by mostly easy cracks leads to a mantle onto the east ridge; afterward stretch the rope over fourth-class slabs to the high point of the ridge."
+   }
+  ],
+  "replace_pitch_detail": true,
+  "review": {
+   "confidence": "high",
+   "sources": [
+    "https://www.mountainproject.com/route/123251894"
+   ],
+   "source_texts": {
+    "https://www.mountainproject.com/route/123251894": "/Users/nathanbarber/dev/mp-data/_mp/_pitchtext/wy_stuart_draw_peaches.txt"
+   },
+   "changed": "Wrote P1-P4. Optional summit spire pitch left out. No rappels (descent is a gully walk).",
+   "pitch_count_found": 4,
+   "other_findings": "Pitch 3 is 50+ m (kept in notes)."
+  }
+ },
+ "wy_sundance_pinnacle_east_face_left": {
+  "area": "wy_sundance_pinnacle",
+  "pitch_detail": [
+   {
+    "pitch": "1",
+    "notes": "The first lead goes up the big left-facing dihedral, about a third of the way in from the left edge of the east face. At the top, a huge ledge; scramble about 10 feet further right to a smaller but comfortable belay ledge, which suits belaying the next pitch."
+   },
+   {
+    "pitch": "2",
+    "notes": "Traverse right, then climb an easy crack diagonaling right. Cross some boulders to a small ledge and belay."
+   },
+   {
+    "pitch": "3",
+    "notes": "Climb another crack, starting slightly right but going mostly straight up. A bulge halfway obscures the view, with easy climbing above. Belay on a platform formed by a huge flake separated from the face by a foot-wide cleft. From there, walk about 30 feet left and make an easy fifth-class move onto the summit ridge."
+   }
+  ],
+  "replace_pitch_detail": true,
+  "review": {
+   "confidence": "medium",
+   "sources": [
+    "https://www.mountainproject.com/route/122614553"
+   ],
+   "source_texts": {
+    "https://www.mountainproject.com/route/122614553": "/Users/nathanbarber/dev/mp-data/_mp/_pitchtext/wy_sundance_pinnacle_east_face_left.txt"
+   },
+   "changed": "Wrote the three pitches. No grades, lengths or bolt counts stated.",
+   "pitch_count_found": 3,
+   "other_findings": ""
+  }
+ },
+ "skip_reasons": {
+  "wy_mount_moran_staircase_arete": "Pitches are grouped (P1-P3, P4-P5+, P6-P10+) with approximate difficulty and no per-pitch detail; counts uncertain, so skipped."
+ }
 }
