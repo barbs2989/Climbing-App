@@ -907,6 +907,14 @@ Part of the guard notes — see [README.md](README.md) for the full index.
   and refuses the raw hook's return (10 injections). Probe: `partners_by_objective` finds B through
   the alpine objective and not through the sport one (47 assertions).
 
+- **NO LISTING AT A STATE OR PROVINCE (`0542`, `check:partner-areas` rules 5 + 5b).** Owner note 2026-11-25: "too
+  broad". Rule 5 demands `'state'` in the trigger's refused list (Canadian provinces are `area_type = 'state'`, the 12
+  children of Canada). Rule 5b demands `lib/db.js` export `UNLISTABLE_AREA_TYPES` = world, country, state (not peak), and
+  that My listed areas, ListMeInAreaBox and LogbookTab read it with no world/country-only copy of their own — three
+  local copies are how a state stayed listable in the UI. What it cannot see: a NEW List-me control that inlines its own
+  test; and a state reached with no type (the By Area dropdown) — PartnerSearch passes `state` for that case by hand.
+  Live proof at ship: a rolled-back insert at Washington was refused with the new message; 0 of 20 listings were at a state.
+
 - **A ROUTE LISTING IS OWNER-ONLY, NEVER ON A CRAG ROUTE, AND HAS ONE GATED READER (`0489`, `check:partner-areas` rule 7).**
   Owner 2026-11-23: "you should be able to list yourself as a partner under the partners tab for all routes". A crag
   route already listed by area; every other route had only the saved objective. `route_partner_listings` is the
