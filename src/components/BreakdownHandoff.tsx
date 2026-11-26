@@ -1,5 +1,5 @@
 import { C } from "../../ClimbMatchCore.jsx";
-import { breakdownRows } from "../../lib/breakdownRows.js";
+import { breakdownRows, pitchIceWords } from "../../lib/breakdownRows.js";
 
 export interface BreakdownHandoffProps {
   route: Parameters<typeof breakdownRows>[0];
@@ -13,10 +13,10 @@ export interface BreakdownHandoffProps {
  * Reads `C` at render time. Moved verbatim from RouteDetail.jsx; only the types were added.
  */
 export default function BreakdownHandoff({route}: BreakdownHandoffProps){
-  const {pitchCount,stageCount}=breakdownRows(route);
+  const {rows,pitchCount,stageCount}=breakdownRows(route);const ice=pitchIceWords(rows);
   if(!pitchCount&&!stageCount)return null;
   const what=pitchCount
-    ?(pitchCount+" roped pitch"+(pitchCount!==1?"es":"")+(stageCount?" and "+stageCount+" leg"+(stageCount!==1?"s":""):""))
+    ?(pitchCount+" roped pitch"+(pitchCount!==1?"es":"")+(ice?" "+ice:"")+(stageCount?" and "+stageCount+" leg"+(stageCount!==1?"s":""):""))
     :(stageCount+" leg"+(stageCount!==1?"s":""));
   return <div data-handoff="" style={{display:"flex",alignItems:"center",gap:10,padding:"0 0 0 24px"}}><div aria-hidden="true" style={{width:2,height:22,background:C.blueDim,flexShrink:0}}/><span style={{fontSize:11.5,color:C.textMuted,lineHeight:1.4}}>{"↓ "+(pitchCount?"Pitch by pitch":"Leg by leg")+" below — "+what+" in the route breakdown."}</span></div>;
 }

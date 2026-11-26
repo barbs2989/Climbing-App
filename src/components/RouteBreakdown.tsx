@@ -1,6 +1,6 @@
 import { noteBox } from "../../lib/accents.js";
 import { useState, useEffect } from "react";
-import { breakdownRows } from "../../lib/breakdownRows.js";
+import { breakdownRows, pitchIceWords } from "../../lib/breakdownRows.js";
 import { pitchAnchorSummary, pitchShortfall } from "../../lib/pitchAnchors.js";
 import { ROUTE_GAP, RSL as SL, C, SUB_LABEL } from "../../ClimbMatchCore.jsx";
 import EditIconButton from "./EditIconButton.tsx";
@@ -119,10 +119,11 @@ export default function RouteBreakdown({route,focus,onEdit,comments,commentsUnav
   const _anchors=pitchAnchorSummary(route);
   const _undesc=(route.pitches as number)-pitchCount;
   const short=pitchShortfall(route,rows.length)?(" The route lists "+route.pitches+" pitches, so "+_undesc+(_undesc===1?" is":" are")+" not described here."):"";
+  const _ice=pitchIceWords(rows);const _roped=pitchCount+" roped pitch"+(pitchCount!==1?"es":"")+(_ice?" "+_ice:"");
   const intro=(pitchCount&&stageCount)
-    ?(pitchCount+" roped pitch"+(pitchCount!==1?"es":"")+", "+stageCount+" travel leg"+(stageCount!==1?"s":"")+", in order."+short)
+    ?(_roped+", "+stageCount+" travel leg"+(stageCount!==1?"s":"")+", in order."+short)
     :(pitchCount
-      ?(pitchCount+" roped pitch"+(pitchCount!==1?"es":"")+", in route order."+short)
+      ?(_roped+", in route order."+short)
       :(stageCount+" leg"+(stageCount!==1?"s":"")+", in order."));
   return <div id="route-breakdown" style={{marginBottom:ROUTE_GAP,scrollMarginTop:"80px"}}>
     {/* No caption beside the pencil (owner, 2026-11-05: "Tap a row for detail ... cuts off the edit button on the phone"):
