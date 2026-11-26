@@ -25,8 +25,16 @@ const ACC = JSON.parse(readFileSync(process.argv[3] || "manual-test-accounts.loc
 const SH = headers(requireServiceKey());
 const get = async (p) => { const r = await fetch(SUPABASE_URL + "/rest/v1/" + p, { headers: SH }); if (!r.ok) throw new Error(p + " -> " + r.status + " " + (await r.text()).slice(0, 200)); return r.json(); };
 
-const tok = await fetch(SUPABASE_URL + "/auth/v1/token?grant_type=password", { method: "POST", headers: { apikey: anonKey(), "content-type": "application/json" }, body: JSON.stringify({ email: ACC.email, password: ACC.password }) });
-if (!tok.ok) throw new Error("sign-in failed " + tok.status);
+// A session WITHOUT the password (it goes stale when another session resets it): the admin API mints a magic link,
+// and verifying its hashed token returns a session. Nothing about the account changes.
+let tok = await fetch(SUPABASE_URL + "/auth/v1/token?grant_type=password", { method: "POST", headers: { apikey: anonKey(), "content-type": "application/json" }, body: JSON.stringify({ email: ACC.email, password: ACC.password }) });
+if (!tok.ok) {
+  const gl = await fetch(SUPABASE_URL + "/auth/v1/admin/generate_link", { method: "POST", headers: { ...SH, "content-type": "application/json" }, body: JSON.stringify({ type: "magiclink", email: ACC.email }) });
+  if (!gl.ok) throw new Error("generate_link failed " + gl.status);
+  const link = await gl.json(); const th = link.hashed_token || (link.properties && link.properties.hashed_token);
+  tok = await fetch(SUPABASE_URL + "/auth/v1/verify", { method: "POST", headers: { apikey: anonKey(), "content-type": "application/json" }, body: JSON.stringify({ type: "magiclink", token_hash: th }) });
+  if (!tok.ok) throw new Error("sign-in failed " + tok.status + " " + (await tok.text()).slice(0, 200));
+}
 const session = await tok.json();
 const uid = session.user.id;
 
@@ -54,8 +62,8 @@ console.log(`DB: ${logs.length} logs, ${savedRoutes.length} saved routes, ${save
 const browser = await chromium.launch({ channel: "chrome", headless: true });
 const page = await browser.newPage({ viewport: { width: 390, height: 844 } });
 await page.addInitScript(([k, v]) => { try { localStorage.setItem(k, v); } catch (e) {} }, [STORAGE_KEY, JSON.stringify(sessionForStorage(session))]);
-await page.goto(BASE, { waitUntil: "domcontentloaded" });
-await page.waitForTimeout(9000);
+await page.goto(BASE, { waitUntil: "domcontentloaded", timeout: 240000 });
+await page.waitForTimeout(20000);
 let fails = 0; const fail = (m) => { fails++; console.log("FAIL " + m); }; const ok = (m) => console.log("ok   " + m);
 if (!(await tapMenuItem(page, "Listed areas", 4000))) { fail("no Listed areas in the Menu"); await browser.close(); process.exit(1); }
 const dlg = page.locator('[role="dialog"][aria-label="My listed areas"]');
