@@ -142,10 +142,19 @@ const scan = () => page.evaluate(() => {
       const bounded = cs.maxHeight !== "none" || el === root;
       if (!overflowing && !bounded) continue;
       const ob = cs.overscrollBehaviorY;
+      // Where does a drag that runs out of THIS box go? To the next scroll container out, and on
+      // through every one that does not contain it. So the box is safe when it contains the drag
+      // itself OR a scroll container around it, inside the overlay, does. A box nested in a sheet
+      // that contains MUST chain (overscroll "auto"): with "contain" a finger that lands on it cannot
+      // scroll the sheet at all (owner note 2026-11-26, "Edit in a climb, sometimes get stuck when
+      // you were trying to scroll"; check:scroll-containment's NESTED rule pins the edit sheet's).
+      const stops = (n) => { const s = getComputedStyle(n); return (s.overflowY === "auto" || s.overflowY === "scroll") && (s.overscrollBehaviorY === "contain" || s.overscrollBehaviorY === "none"); };
+      let caught = false;
+      if (el !== root) for (let n = el.parentElement; n; n = n.parentElement) { if (stops(n)) { caught = true; break; } if (n === root) break; }
       out.push({
         overlay: label,
         self: el === root,
-        contained: ob === "contain" || ob === "none",
+        contained: ob === "contain" || ob === "none" || caught,
         overscroll: ob,
         px: el.scrollHeight - el.clientHeight,
         overflowing,
