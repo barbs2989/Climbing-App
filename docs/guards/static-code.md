@@ -263,7 +263,15 @@ Part of the guard notes — see [README.md](README.md) for the full index.
   script. Verified in Chrome against the built app: the app, a route page and the Review desk boot with
   zero violations, Leaflet, MapLibre (a map reaching `load`) and Turnstile load, and a `javascript:` link
   is refused. With AdSense on (`VITE_ADSENSE_CLIENT`) script-src is dropped, as AdSense cannot run
-  under a host list. A `<meta>` policy cannot set `frame-ancestors`, so framing is not stopped.
+  under a host list. A `<meta>` policy cannot set `frame-ancestors`, and Pages sends no
+  X-Frame-Options, so **rule 5** holds the substitute: `main.jsx` and `review/main.jsx` ask
+  `framedByAnotherSite()` (`lib/frameGuard.js`) before mounting, and inside another site's frame draw
+  only an *Open ClimbMatch* link (OWASP's clickjacking cheat sheet). Verified: a page on another port
+  framing the app and the Review desk got the notice; a direct load drew the app. **Trap met:** the
+  wrap moved an anchor in `inject-trailhead-directions-cases.mjs` case 7 (`TrailheadCard`'s Google
+  Maps link), which `check:injection-anchors` caught on CI — any case that quotes a JSX `href={…}` must
+  quote it wrapped. And do not run `check:injection-anchors` while an injection suite is running in
+  the same tree: the suite edits files in place, so the anchor guard reports its cases as ROTTED.
 - **`check:no-secrets`** asserts that no tracked or untracked file holds a Supabase credential or the
   project's own URL as a literal. The repo is **public**, and a `service_role` key was once committed
   in a checklist doc and as a `process.env.X || '<key>'` fallback. It stayed in git history after the

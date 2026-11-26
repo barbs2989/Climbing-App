@@ -66,7 +66,8 @@ console.log("\n--- 2. the broadcast omits the identity, rather than the receiver
 const src = fs.readFileSync(path.join(ROOT, "lib", "presence.js"), "utf8");
 const m = /channel\.track\(\s*(m\.visible\s*\?[\s\S]*?)\s*\);/.exec(src);
 if (!m) dead("could not lift the channel.track(...) expression from lib/presence.js — ANCHOR LOST");
-const payload = new Function("m", "return (" + m[1] + ");");
+const ANON = { current: "anon-test-tab" };
+const payload = (mm) => new Function("m", "anonRef", "return (" + m[1] + ");")(mm, ANON);
 
 const ME = { id: "u-1", name: "Robin Belay", avatar: "https://example.test/a.png" };
 const off = payload({ ...ME, visible: false });
@@ -80,7 +81,9 @@ t("...and the avatar", on.avatar === ME.avatar);
 const offJson = JSON.stringify(off);
 t("with the switch OFF the name is NOT IN THE PAYLOAD — omission at source, so no receiver has anything to filter", !("name" in off) && !offJson.includes(ME.name));
 t("...nor the avatar", !("avatar" in off) && !offJson.includes(ME.avatar));
-t("...and you are still COUNTED, which is exactly what the control's own copy promises", off.id === ME.id && off.visible === false);
+t("...and you are still COUNTED, which is exactly what the control's own copy promises", off.visible === false && !!off.id);
+/* Security audit 2026-11-26: the OFF payload carried the ACCOUNT id, so a listener on the public channel could still tell who was browsing. It now carries this tab's random id. */
+t("...under a random id for this tab, NOT the account id", off.id === ANON.current && !offJson.includes(ME.id));
 
 console.log("\n--- 3. the two halves meet: the DEFAULT is the omitting branch ---");
 store = {};

@@ -6,12 +6,15 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { AuthProvider } from "../src/AuthContext.tsx";
 import { setQueryClient } from "../lib/queryClientRef.js";
 import ReviewDesk from "./ReviewDesk.jsx";
+import { framedByAnotherSite, showFramedNotice } from "../lib/frameGuard.js";
 
 const qc = new QueryClient({ defaultOptions: { queries: { networkMode: "always", retry: 1, refetchOnWindowFocus: false, staleTime: 30000 } } });
 // lib/db.js's write helpers refresh the queue through this ref after each approve / reject / resolve.
 setQueryClient(qc);
 
-createRoot(document.getElementById("root")).render(
+// Framed by another site (clickjacking): no desk, a link out instead -- lib/frameGuard.js.
+if (framedByAnotherSite()) showFramedNotice();
+else createRoot(document.getElementById("root")).render(
   <QueryClientProvider client={qc}>
     <AuthProvider>
       <ReviewDesk />

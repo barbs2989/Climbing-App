@@ -78,6 +78,12 @@ for (const cfg of ["vite.config.js", "vite.review.config.js"]) {
   const t = readFileSync(path.join(ROOT, cfg), "utf8");
   if (!/from\s+["']\.\/scripts\/lib\/vite-csp\.mjs["']/.test(t) || !/plugins:\s*\[[^\]]*\bcspPlugin\(\)/.test(t)) fail.push(`${cfg} does not use cspPlugin() — the built page would ship without its Content-Security-Policy`);
 }
+// Rule 5. Both entries refuse to draw inside another site's frame (lib/frameGuard.js): the CSP
+// cannot say frame-ancestors from a <meta>, and Pages sends no X-Frame-Options.
+for (const entry of ["main.jsx", "review/main.jsx"]) {
+  const t = readFileSync(path.join(ROOT, entry), "utf8");
+  if (!/if \(framedByAnotherSite\(\)\) showFramedNotice\(\);\s*\n\s*else /.test(t)) fail.push(`${entry} renders without first asking framedByAnotherSite() — a hostile site could frame it and steer taps (clickjacking)`);
+}
 const csp = readFileSync(path.join(ROOT, "scripts/lib/vite-csp.mjs"), "utf8");
 if (/unsafe-inline|unsafe-eval/.test(csp.replace(/\/\/.*$/gm, ""))) fail.push("scripts/lib/vite-csp.mjs allows unsafe-inline or unsafe-eval in code — that undoes the policy");
 
