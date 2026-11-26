@@ -32,7 +32,7 @@
 // browser pass are for. This checks the rules, not the pixels.
 import fs from "node:fs";
 import path from "node:path";
-import { fileURLToPath } from "node:url";
+import { fileURLToPath, pathToFileURL } from "node:url";
 import { assertCovered, readAppFile } from "./lib/guard-sources.mjs";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
@@ -453,6 +453,42 @@ console.log("\n--- the offline path stays honest ---");
 if (/networkMode\s*:\s*["']online["']/.test(code[DATA])) {
   fail(`${DATA}: networkMode "online" reintroduces paused queries — no data and no error, which every empty branch reads as "no fires"`);
 } else ok('no query opts back into networkMode "online"');
+
+// ── WHICH fires the route panel lists (owner note 2026-11-26: "we may be showing fires that are
+// too far away to even be of anything of concern"). Before, every wildfire whose ORIGIN lay within
+// 80 km was listed, a 0.1-acre start or a 100%-contained fire 49 miles off included. The rule is now
+// one pair of functions in lib/fire.js; this runs them on concrete fires, and checks the panel
+// filters through them, so the rule cannot drift back to "anything in the circle".
+{
+  const p = raw[PANEL];
+  if (!/\.filter\(\s*fireMatters\s*\)/.test(p)) fail(`${PANEL}: the fire list is not filtered through fireMatters — every fire in the query circle would be listed again, however small, contained or far`);
+  else ok(`${PANEL}: the list is filtered through fireMatters`);
+  if (!/\.filter\(\s*fireIsClose\s*\)/.test(p)) fail(`${PANEL}: the red "Active fire nearby" state does not come from fireIsClose`);
+  else ok(`${PANEL}: red comes from fireIsClose`);
+  const F = await import(pathToFileURL(path.join(ROOT, DATA)).href);
+  const at = (originMi, acres, contained) => ({ originMi, acres, contained });
+  const cases = [
+    [at(3, null, null), true, true, "a new fire with no size yet, 3 mi off"],
+    [at(8, 0.5, null), false, false, "a half-acre start 8 mi off"],
+    [at(12, 50, 10), false, false, "a 50-acre fire 12 mi off"],
+    [at(20, 5000, 20), true, false, "a 5,000-acre fire 20 mi off"],
+    [at(40, 100000, 5), true, false, "a 100,000-acre fire whose origin is 40 mi off (edge ~33)"],
+    [at(49, 20000, 0), false, false, "a 20,000-acre fire 49 mi off"],
+    [at(6, 30000, 100), false, false, "a 100%-contained fire 6 mi off"],
+    [at(14, 100000, 30), true, true, "a 100,000-acre fire 14 mi off (edge ~7)"],
+    [at(9, 800, 60), true, false, "an 800-acre fire, 60% contained, 9 mi off (listed, not red)"],
+  ];
+  for (const [f, show, red, what] of cases) {
+    const s = F.fireMatters(f), r = s && F.fireIsClose(f);
+    if (s !== show || r !== red) fail(`${DATA}: ${what}: listed=${s} red=${r}, expected listed=${show} red=${red}`);
+  }
+  if (!fails) ok(`${DATA}: fireMatters/fireIsClose decide ${cases.length} concrete fires as the rule says`);
+  // The query must reach every fire the rule can list: the widest reach plus a million-acre radius.
+  const widest = Math.max(...F.FIRE_REACH_MI.map(r => r[1]));
+  const needKm = (widest + F.fireRadiusMi(1e6)) * 1.609344;
+  if (F.NEAR_ROUTE_KM < needKm) fail(`${DATA}: NEAR_ROUTE_KM ${F.NEAR_ROUTE_KM} km cannot reach a large fire the rule lists (needs ${Math.ceil(needKm)} km)`);
+  else ok(`${DATA}: the ${F.NEAR_ROUTE_KM} km query reaches every fire the ${widest} mi rule can list`);
+}
 
 console.log("");
 if (fails) {
