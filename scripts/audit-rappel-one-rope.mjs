@@ -22,7 +22,9 @@ import { rappelRopeNeed } from "../lib/rappels.js";
 
 export const TWO_ROPE_TEXT = new RegExp([
   String.raw`\bdouble[- ]ropes?\b`,
-  String.raw`\b(?:two|2|twin|pair of|both)\s+(?:(?:50|60|70|80)\s?-?\s?(?:m|meter|metre)s?\s+|(?:half|full[- ]length|joined|tied)\s+)?ropes\b`,
+  String.raw`\b(?:two|2|twin|pair of|both)\s+(?:(?:30|40|45|50|60|70|80)\s?-?\s?(?:m|meter|metre)s?\s+|(?:half|full[- ]length|joined|tied|shorter|longer)\s+)?ropes\b`,
+  String.raw`\bdouble\s+(?:30|40|50|60|70|80)\s?-?\s?(?:m|meter|metre)s?\s+ropes\b`,
+  String.raw`\b(?:join|link|tie)\s+two\b`,
   String.raw`\btwo\s+(?:50|60|70)s\b`,
   String.raw`\b2\s?[x×]\s?(?:30|50|60|70)\s?m?\b`,
   String.raw`\b(?:50|60|70)\s?m?\s?[x×]\s?2\b`,
@@ -67,6 +69,9 @@ function selftest() {
   t("two 60s", w("a single 70 m rope or two 60s"), true);
   t("a second rope", w("A second rope makes linking easier"), true);
   t("halves it", w("Two ropes roughly halves it"), true);
+  t("double 60m ropes", w("tree-anchor rappels with double 60m ropes"), true);
+  t("link two 30 m ropes", w("or plan to link two 30 m ropes"), true);
+  t("two shorter ropes", w("a double rappel with two shorter ropes"), true);
   t("NOT: a single 60 m rope doubled", w("on a single 70m rope used doubled"), false);
   t("NOT: jammed ropes", w("a documented history of jammed ropes"), false);
   t("NOT: the party ropes up", w("after which the party ropes up again"), false);

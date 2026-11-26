@@ -1,0 +1,146 @@
+{
+  "bc_les_cornes_springbok_arete": {
+    "area": "bc_les_cornes",
+    "set": {
+      "rappels": "9 rappels on a single 70 m rope down the waterfall gully, from slung blocks, nuts, pitons and trees",
+      "rappel_count_note": "The gully between Les Cornes and Ibex goes in nine short rappels, none longer than about 35 m, mixed with a little downclimbing and scrambling. A 70 m rope is the right one: a 60 m rope falls short on the three longest stations. The anchors are natural or fixed bits rather than bolts, and the route sees few parties, so the tat may be old. Carry spare cord, tat and a knife. In early season, snow can fill the gully."
+    },
+    "rappel_detail": [
+      { "n": 1, "lengthM": 35, "anchor": "slung block with a piton and a nut", "station": "just below the summit knife edge", "notes": "Starts the gully descent." },
+      { "n": 2, "lengthM": 20, "anchor": "slung block and a nut", "station": "slightly to skier's left of the first station" },
+      { "n": 3, "lengthM": 33, "anchor": "3 fixed nuts", "station": "skier's right of the previous station" },
+      { "n": 4, "lengthM": 30, "anchor": "small tree", "station": "short scramble below the nuts", "notes": "Tat may be missing. Lands on a large ledge." },
+      { "n": 5, "lengthM": 25, "anchor": "large tree", "station": "walk skier's left along the ledge", "notes": "The tree is partly hidden behind a white block." },
+      { "n": 6, "lengthM": 25, "anchor": "2 pitons and a nut", "station": "skier's right, on a slab" },
+      { "n": 7, "lengthM": 35, "anchor": "huge slung block or horn", "station": "below the slab" },
+      { "n": 8, "lengthM": 25, "anchor": "slung horn", "station": "ledge hidden until you are close" },
+      { "n": 9, "lengthM": 10, "anchor": "slung chockstone", "station": "after scrambling down talus", "notes": "Goes over a large boulder and a polished slab. Then 2nd-3rd class out of the gully and a short walk along the base." }
+    ],
+    "replace_rappels": true,
+    "review": {
+      "confidence": "medium",
+      "sources": ["https://stephabegg.com/?p=8501", "https://mountainproject.com/route/114545765/springbok-arete"],
+      "single_rope": "One report used a single 70 m rope for 9 rappels (35,20,33,30,25,25,35,25,10 m); a 60 m rope would be short on a few. The other page confirms a single 70 m is workable with intermediate stations.",
+      "changed": "Replaced the 5-station table (50/50/60 m stations) with the 9-station single-rope list; set rappels and note for one 70 m rope."
+    }
+  },
+  "bc_mount_bryce_3_507m_rice_cooker": {
+    "area": "bc_mount_bryce_3_507m",
+    "set": {
+      "rappels": "4 rappels, the first three about 60 m each; one 60 m rope does not reach them",
+      "rappel_count_note": "The first three rappels are each described as a full 60 m, which is double what a single 60 m rope can do. No intermediate stations are known, so no single-rope version of this descent is documented. The fourth rappel, to the ground, has no stated length. Anyone with one rope needs a different way down or local knowledge of extra anchors.",
+      "descent_text": "Follow the obvious ledge that leads climber's left until you reach a tree with rappel tat. Rappel from the tree, then use fixed nuts for the next anchor, which takes you across the gully. A third rappel from fixed nuts reaches a grassy slope, from which you hike down to a tree with tat and make the last rappel to the ground."
+    },
+    "clear_rappels": true,
+    "review": {
+      "confidence": "low",
+      "sources": ["https://www.mountainproject.com/route/123571076/rice-cooker"],
+      "single_rope": "Only one page found; it gives full 60 m rappels and no single-rope option, no comments.",
+      "changed": "Cleared the 60 m station table, removed the carry-extra-rope sentence, and stated plainly that one rope does not reach."
+    }
+  },
+  "ca_stately_pleasure_dome_direct_white_flake": {
+    "area": "ca_stately_pleasure_dome",
+    "set": {
+      "rappels": "A walk-off is the single-rope descent; the rappel line ends with a 60 m rappel that one rope does not reach",
+      "rappel_count_note": "The rappel line runs from a station beside the small tree, under the headwall, past the anchor atop Jabberwalky, then down the Aoxomoxoa line to the big sandy ledge. The final rappel there is about 60 m, longer than a single 60 m rope reaches, and no intermediate station is known for it. The earlier stations have no stated lengths. With one rope, walk off instead."
+    },
+    "clear_rappels": true,
+    "review": {
+      "confidence": "low",
+      "sources": ["https://www.mountainproject.com/area/105835737/stately-pleasure-dome", "https://www.mountainproject.com/route/105836052/hermaphrodite-flake"],
+      "single_rope": "Nothing found for this route directly; the dome's walk-off is documented, and a nearby route uses a rap station near the same tree. Station lengths are not given, so no single-rope table can be confirmed.",
+      "changed": "Cleared the table whose lengths are unknown and whose last station is 60 m; pointed one-rope parties to the walk-off already in descent_text."
+    }
+  },
+  "co_andrews_creek_the_gash_ol_dawg_chimney": {
+    "area": "co_andrews_creek_the_gash",
+    "set": {
+      "rappels": "2 rappels of about 60 m each; one 60 m rope does not reach them",
+      "rappel_count_note": "Both rappels are described as a full 60 m, with a short hop between them off a sling around a boulder. A single 60 m rope reaches only about 30 m, and no intermediate station is known, so no single-rope descent is documented. The last rappel barely reaches the snowfield and may not reach it once the snow melts back."
+    },
+    "clear_rappels": true,
+    "review": {
+      "confidence": "low",
+      "sources": ["https://www.mountainproject.com/route/106149104/ol-dawg-chimney"],
+      "single_rope": "The one page found describes two 60 m rappels and says nothing about a single rope.",
+      "changed": "Cleared the two 60 m stations and stated the single-rope situation plainly."
+    }
+  },
+  "co_angel_creek_campground_angel_creek": {
+    "area": "co_angel_creek_campground",
+    "set": {
+      "rappels": "6 rappels down the steps, but three (about 50, 60 and 50 m) are too long for a single 60 m rope",
+      "rappel_count_note": "From the top the rappels are about 30, 50, 60, 50, 20 and 30 m, walking between the steps. The top and bottom two (30, 20, 30 m) fit a single 60 m rope; the 50 m and 60 m ones do not, and no intermediate stations are documented. Parties on one rope would need to downclimb or find extra anchors on those steps."
+    },
+    "clear_rappels": true,
+    "review": {
+      "confidence": "medium",
+      "sources": ["https://www.mountainproject.com/route/202451757/angel-creek"],
+      "single_rope": "The route page lists six rappels of 30/50/60/50/20/30 m and gear for long rope lengths; no single-rope line is given for the three long ones.",
+      "changed": "Cleared the mixed table because the middle stations exceed 30 m; kept the lengths in the note."
+    }
+  },
+  "co_east_buttress_3_no_2_gully": {
+    "area": "co_east_buttress_3",
+    "set": {
+      "rappels": "3 rappels, the first two about 55 m and 60 m; one rope does not reach them",
+      "rappel_count_note": "The first two rappels are about 55 m and 60 m, beyond what a single 60 m rope covers, and the third has no stated length. No intermediate stations are known. A party with one rope can walk down the Hallett Couloir instead."
+    },
+    "clear_rappels": true,
+    "review": {
+      "confidence": "low",
+      "sources": ["https://www.mountainproject.com/route/106448170/the-cleft"],
+      "single_rope": "No page found describing this route's descent; the existing text gives 55 and 60 m rappels and a Hallett Couloir walk-down.",
+      "changed": "Cleared the long-station table and stated the one-rope facts; descent_text left as is."
+    }
+  },
+  "co_grand_mesa_2_watson": {
+    "area": "co_grand_mesa_2",
+    "set": {
+      "rappels": "Rappel the pillars from trees, boulders, chockstones or V-threads; the biggest pillars may not fit a single rope",
+      "rappel_count_note": "The top pillar and the pitch 3 chockstone have been rappelled on a single rope, and creek ice between the pillars can be downclimbed. The big pillars below pitches 5 and 4 are long: whether a single rope reaches pitch 5 is untested, and no single-rope line for the pitch 4 pillar is known. Lengths are not recorded for any station."
+,
+      "descent_text": "Reverse the route pillar by pillar. Rappel the pillars from trees, boulders, chockstones or the belay arch, or from V-threads in the ice if you trust it. The big pillars are long and a single rope may not reach them. Where the creek ice lies back, downclimb it, and walk around the lowest boulder-blocked step."
+    },
+    "clear_rappels": true,
+    "review": {
+      "confidence": "low",
+      "sources": [],
+      "single_rope": "No online page found for this route; existing text says the top and pitch 3 stations take one rope and the big pillars are long.",
+      "changed": "Cleared the table whose notes assumed extra rope and wrote the single-rope status plainly; reworded the pillar sentence in descent_text."
+    }
+  },
+  "co_little_cimarron_perky_turkey": {
+    "area": "co_little_cimarron",
+    "set": {
+      "rappels": "1 rappel of about 25 m on a single 60 m rope; the lower 50 m rappel is too long for one rope",
+      "rappel_count_note": "The top rappel off the small tree is about 25 m, which a single 60 m rope covers. The lower rappel, from a rock pinch beneath the big chockstone, is about 50 m and does not fit one rope; no intermediate station is known. With one rope, the walk-off is the option: leave the canyon to the north above the second pitch, then drop east."
+    },
+    "rappel_detail": [
+      { "n": 1, "lengthM": 25, "anchor": "small tree", "station": "top of pitch 2" }
+    ],
+    "replace_rappels": true,
+    "review": {
+      "confidence": "medium",
+      "sources": ["https://www.mountainproject.com/route/121752140/perky-turkey"],
+      "single_rope": "Page gives 25 m from the tree and 50 m from the rock pinch, plus a walk-off; no single-rope version of the 50 m.",
+      "changed": "Kept the 25 m station, dropped the 50 m one, and pointed to the walk-off."
+    }
+  },
+  "co_mount_neva_peace_is_for_the_valleys_war_is_for_the_mountains": {
+    "area": "co_mount_neva",
+    "set": {
+      "rappels": "2 rappels of about 50 m each; one 60 m rope does not reach them",
+      "rappel_count_note": "Both rappels are about 50 m, from bolted anchors, and no intermediate stations are known, so a single 60 m rope does not do this descent. Walk the fourth-class ridge down to Arapaho Pass, or continue to the summit of Mount Neva and descend one of its faces.",
+      "descent_text": "From the top, walk and scramble to the flat summit area then find the ledge on the right-hand side marked by two upright pointed rocks. Bolted rappel anchors there lead down to a ledge with dark rock and a second set of anchors, and another rappel reaches the snowfield; each rappel is about 50 m, more than one 60 m rope reaches. Alternatively, take the fourth-class ridge down to Arapaho Pass, or keep going up the ridge to Mount Neva and descend one of its faces."
+    },
+    "clear_rappels": true,
+    "review": {
+      "confidence": "medium",
+      "sources": ["https://www.mountainproject.com/route/201456536/peace-is-for-the-valleys-war-is-for-the-mountains"],
+      "single_rope": "Both rappels are about 50 m with no intermediate anchors; the page offers the 4th-class ridge to Arapaho Pass as the alternative.",
+      "changed": "Cleared the 50 m table and rewrote the rope clause and note for one rope."
+    }
+  }
+}

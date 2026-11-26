@@ -1,0 +1,136 @@
+{
+ "co_mt_craig_caveat_emptor": {
+  "area": "co_mt_craig",
+  "set": {
+   "rappels": "2 rappels of about 63 m and 45 m, both longer than one rope reaches; no intermediate station is known",
+   "rappel_count_note": "The first rappel from the tree at the top of pitch 2 is about 63 m and the second to the base about 45 m. A single 60 m rope reaches neither of them, and no intermediate station is known. Before relying on one rope, plan to downclimb or add stations with screws or V-threads."
+  },
+  "clear_rappels": true,
+  "review": {
+   "confidence": "low",
+   "sources": [
+    "https://www.mountainproject.com/area/105747097/mt-craig"
+   ],
+   "single_rope": "Stored lengths of 63 m and 45 m exceed one 60 m rope; no page found documents a single-rope line.",
+   "changed": "Cleared the table whose stations do not fit one rope and stated that plainly."
+  }
+ },
+ "co_north_star_ursa_major": {
+  "area": "co_north_star",
+  "set": {
+   "rappels": "3 rappels of about 60 m down the line, longer than one rope reaches; on one rope, walk off to the west",
+   "rappel_count_note": "The rappel stations are about 60 m apart, which one 60 m rope cannot reach with any stretch to spare, and no intermediate station is known. The walk-off west down scree and talus from the upper pitches avoids the problem."
+  },
+  "clear_rappels": true,
+  "review": {
+   "confidence": "low",
+   "sources": [],
+   "single_rope": "No page found documents a single-rope descent; the walk-off to the west is the one-rope alternative already stored.",
+   "changed": "Cleared the 60 m station table and said plainly what one rope does not cover."
+  }
+ },
+ "id_bighorn_crags_litner_group_of_peaks_pace_setter": {
+  "area": "id_bighorn_crags_litner_group_of_peaks",
+  "set": {
+   "rappels": "About 5 rappels of about 60 m down the east gully, longer than one rope reaches; no intermediate station is known",
+   "rappel_count_note": "The rappels are described as 60 m each, off a fixed anchor just below the summit and then off large trees in the east gully. One 60 m rope does not reach a 60 m station, and no shorter intermediate anchors are known, so a single-rope descent is not documented."
+  },
+  "clear_rappels": true,
+  "review": {
+   "confidence": "low",
+   "sources": [
+    "https://mountainproject.com/route/124699414/pace-setter"
+   ],
+   "single_rope": "The only description gives five 60 m rappels; nothing documents a single-rope variant.",
+   "changed": "Cleared the 60 m table and stated that one rope is not documented to reach."
+  }
+ },
+ "id_east_face_the_royal_wilder": {
+  "area": "id_east_face",
+  "set": {
+   "rappels": "2 rappels on the east side from the horn on the cirque crest",
+   "rappel_count_note": "Station lengths are not documented, so check that your single rope reaches before pulling it."
+  },
+  "rappel_detail": [
+   {
+    "n": 1,
+    "lengthM": null,
+    "anchor": "horn on the cirque crest",
+    "station": "top of the route",
+    "notes": "Bring 8 to 10 ft of cord or sling for the horn, since sun wears it out each season. The east rappel lands on top of pitch 1."
+   },
+   {
+    "n": 2,
+    "lengthM": null,
+    "station": "top of pitch 1",
+    "notes": "Second rappel on the east side reaches the ground."
+   }
+  ],
+  "replace_rappels": true,
+  "review": {
+   "confidence": "low",
+   "sources": [],
+   "single_rope": "No lengths found; two rappels east, a short route of two pitches.",
+   "changed": "Dropped the extra-rope aside from the first station and added a note that lengths are not documented."
+  }
+ },
+ "id_north_face_elephant_graveyard": {
+  "area": "id_north_face",
+  "set": {
+   "rappels": "Most rappels down the route are longer than one rope reaches; only the last, to the ground, is a single-rope rappel",
+   "rappel_count_note": "The ground rappel from mid pitch 1 is the one documented on a single rope. From the base of pitch 5, about 30 m reaches the base of pitch 4 (swing left to the anchor), but the stretches below that are described only for longer reach, including a 50 m drop to bolts off the route. No single-rope line for those sections is known.",
+   "descent_text": "Rappelling the route is the best way down, stopping at the triangular tower at the base of the fifth pitch and at the bolts passed halfway up the first pitch. Fix one rope end at the base of pitch 5 so you can return to the face."
+  },
+  "clear_rappels": true,
+  "review": {
+   "confidence": "low",
+   "sources": [],
+   "single_rope": "Only a 30 m rappel from the pitch 5 base to the pitch 4 base and the final ground rappel are single-rope; the middle sections are undocumented for one rope.",
+   "changed": "Cleared the mixed table, removed all long-reach wording and stated what is and is not known."
+  }
+ },
+ "id_north_face_rafiki_s_wisdom": {
+  "area": "id_north_face",
+  "set": {
+   "rappels": "About 4 rappels down the route, lengths not documented",
+   "rappel_count_note": "A single-rope line is not documented: the rappel to the top of pitch 2 is described as long and no intermediate station is known. The alternative is walking across the summit to the usual rappel stations on the southeast side of Lion's Head.",
+   "descent_text": "With a full wall kit you can rappel the route, leaving a rope fixed at the top of pitch 4 for the swing back to the belay. The other option is to walk across the summit area to the usual rappel stations on Lion's Head's southeast side."
+  },
+  "clear_rappels": true,
+  "review": {
+   "confidence": "low",
+   "sources": [],
+   "single_rope": "No single-rope station list found; the southeast-side walk-over is the stated alternative.",
+   "changed": "Cleared the table, removed the extra-rope wording and noted what is unknown."
+  }
+ },
+ "me_cliff_s_right_bite_the_pillow_we_re_going_in_dry": {
+  "area": "me_cliff_s_right",
+  "set": {
+   "rappels": "1 rappel from the top ledge to the base, longer than a single 60 m rope covers",
+   "rappel_count_note": "The one rappel back to the base over a three-pitch route is far longer than one 60 m rope reaches, and no intermediate station is known. One rope alone does not get you down this route."
+  },
+  "clear_rappels": true,
+  "review": {
+   "confidence": "low",
+   "sources": [],
+   "single_rope": "Stored descent needs ropes of 80 m each; no single-rope line found.",
+   "changed": "Cleared the table and stated plainly that one rope is not documented to work."
+  }
+ },
+ "wa_three_queens_middle_peak": {
+  "area": "wa_three_queens",
+  "set": {
+   "rappels": "2 rappels of about 18 m (60 ft) down the South Chimney, on a single rope",
+   "rappel_count_note": "Both rappels are short enough for a single 60 m rope. Bring slings, since the anchors are not described."
+  },
+  "review": {
+   "confidence": "medium",
+   "sources": [
+    "https://mountaineers.org/activities/routes-places/mineral-creek"
+   ],
+   "single_rope": "Both stored stations are about 18 m, well inside one 60 m rope; no new source confirmed them.",
+   "changed": "Kept the table and rewrote the summary line and note."
+  }
+ }
+}

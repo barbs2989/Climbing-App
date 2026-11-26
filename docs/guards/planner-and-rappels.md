@@ -808,6 +808,11 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     rappels* and *two rope-lengths of downclimbing* are all clean.
   - **Measured before the pass: 130 of 728 routes failed** (14 by a station length, 129 by wording);
     6 more were found by a wider hand scan (`two 60s`, `a second rope`, `doubled-up 50m ropes`).
+  - **After the pass: 0 of 763.** The census grew by 35 during the session because a parallel
+    pitch-gap import (#4039) wrote new rappel tables; 17 of them were two-rope and were researched
+    the same way. Re-run this after ANY rappel import.
+  - **The pattern list grew twice from real misses**: *double 60m ropes*, *link two 30 m ropes*,
+    *two shorter ropes joined* — the first cut only knew 50/60/70 m and the word "two".
   - **A cleared table is not a lost answer.** Where research found no single-rope station list, the
     two-rope stations were removed (`enrich:apply` `clear_rappels`, refused unless the same entry
     rewrites `rappels` or `rappel_count_note`) and the prose says what one rope does there: a
