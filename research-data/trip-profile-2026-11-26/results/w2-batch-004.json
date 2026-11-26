@@ -1,0 +1,14 @@
+[
+ {"id":"co_mt_bierstadt_standard_route_west_slopes","waypoints":[
+  {"i":0,"name":"Guanella Pass Trailhead","elev":11669,"sources":["https://www.14ers.com/route.php?route=bier1"],"note":"14ers.com"},
+  {"i":1,"name":"Standard Route summit","distMi":3.6,"elev":14066,"sources":["https://www.14ers.com/route.php?route=bier1"],"note":"14ers.com 7.25 mi round trip halved = 3.6; USFS trail page search snippet also says 3.6 one way; SummitPost says 3.0 (disagrees). Summit 14,066 per 14ers.com (others 14,060)"}],
+  "unresolved":""},
+ {"id":"co_pikes_peak_east_slopes","waypoints":[
+  {"i":0,"name":"Barr Trail (Manitou Springs)","elev":6707,"sources":["https://en.wikipedia.org/wiki/Barr_Trail"],"note":"Wikipedia"},
+  {"i":1,"name":"Pike's Peak Routes summit","distMi":13,"elev":14115,"sources":["https://en.wikipedia.org/wiki/Barr_Trail"],"note":"Wikipedia 13 mi one way; CMC says 12 and Komoot 12.4 (disagree)"}],
+  "unresolved":""},
+ {"id":"co_north_ridge_2","waypoints":[],"unresolved":"only car-to-car FKT 11.6 mi (ambiguous) and trip-report round trips found; no stated one-way figure"},
+ {"id":"co_quandary_peak_standard_route_east_ridge","waypoints":[],"unresolved":"sources conflict (trails.colorado.gov 3.1 mi out-and-back with 3,344 ft ascent vs ~6.75 mi round trip elsewhere)"},
+ {"id":"co_rio_grande_pyramid_east_slope_ridge","waypoints":[],"unresolved":"sources give round trips 18.5-21 mi or ambiguous FKT 19.2 mi; no clear one-way figure"},
+ {"id":"co_solo_flight","waypoints":[],"unresolved":"approach to Crater Lake from Monarch ~7-8 mi found but no published distance to the peak itself"}
+]

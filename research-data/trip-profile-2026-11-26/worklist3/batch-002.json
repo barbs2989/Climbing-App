@@ -1,0 +1,293 @@
+[
+ {
+  "id": "or_south_ridge",
+  "name": "South Ridge",
+  "where": "Three Sisters Wilderness > North Sister",
+  "discipline": "alpine",
+  "grade": "4th",
+  "why": "no summit waypoint with a distance from the trailhead",
+  "distKmStored": null,
+  "outingShape": null,
+  "gainFt": 5000,
+  "waypoints": [
+   {
+    "i": 0,
+    "type": "Trailhead",
+    "name": "Pole Creek Trailhead",
+    "elev": null,
+    "distMi": null
+   },
+   {
+    "i": 1,
+    "type": "Summit",
+    "name": "North Sister summit",
+    "elev": null,
+    "distMi": null
+   }
+  ]
+ },
+ {
+  "id": "or_south_ridge_2",
+  "name": "South Ridge",
+  "where": "Oregon Volcanoes > Mt. Jefferson",
+  "discipline": "alpine",
+  "grade": "4th",
+  "why": "no one-way distance",
+  "distKmStored": null,
+  "outingShape": null,
+  "gainFt": null,
+  "waypoints": [
+   {
+    "i": 0,
+    "type": "Trailhead",
+    "name": "Pamelia Lake Trailhead",
+    "elev": null,
+    "distMi": null
+   },
+   {
+    "i": 1,
+    "type": "Summit",
+    "name": "Mount Jefferson summit",
+    "elev": null,
+    "distMi": null
+   }
+  ]
+ },
+ {
+  "id": "or_south_sister_south_side_route",
+  "name": "South Side Route",
+  "where": "Three Sisters Wilderness > South Sister",
+  "discipline": "mountaineering",
+  "grade": "Easy Snow",
+  "why": "no one-way distance",
+  "distKmStored": null,
+  "outingShape": null,
+  "gainFt": 4900,
+  "waypoints": [
+   {
+    "i": 0,
+    "type": "Trailhead",
+    "name": "Devils Lake",
+    "elev": null,
+    "distMi": null
+   },
+   {
+    "i": 1,
+    "type": "Summit",
+    "name": "South Sister summit",
+    "elev": null,
+    "distMi": null
+   }
+  ]
+ },
+ {
+  "id": "wa_agnes_mountain_south_ridge",
+  "name": "South Ridge (via Asa Peak NE Ridge)",
+  "where": "Stehekin > Agnes Mountain",
+  "discipline": "alpine",
+  "grade": "5.8",
+  "why": "no summit waypoint with a distance from the trailhead",
+  "distKmStored": null,
+  "outingShape": null,
+  "gainFt": 6515,
+  "waypoints": [
+   {
+    "i": 0,
+    "type": "Trailhead",
+    "name": "High Bridge (PCT/Stehekin Valley Road)",
+    "elev": 1576,
+    "distMi": 0
+   },
+   {
+    "i": 1,
+    "type": "Summit",
+    "name": "Agnes Mountain summit",
+    "elev": 8119,
+    "distMi": null
+   }
+  ]
+ },
+ {
+  "id": "wa_cardinal_peak_nw_couloir_north_ridge",
+  "name": "Northwest Couloir–North Ridge",
+  "where": "Sawtooth / Lake Chelan > Cardinal Peak",
+  "discipline": "mountaineering",
+  "grade": "Class 4",
+  "why": "no summit waypoint with a distance from the trailhead",
+  "distKmStored": null,
+  "outingShape": null,
+  "gainFt": null,
+  "waypoints": [
+   {
+    "i": 0,
+    "type": "Trailhead",
+    "name": "North Fork Entiat Trailhead",
+    "elev": null,
+    "distMi": null
+   },
+   {
+    "i": 1,
+    "type": "Summit",
+    "name": "Cardinal Peak summit",
+    "elev": null,
+    "distMi": null
+   }
+  ]
+ },
+ {
+  "id": "wa_cashmere_mountain_northeast_ridge",
+  "name": "Northeast Ridge",
+  "where": "Stuart-Enchantments > Cashmere Mountain",
+  "discipline": "scrambling",
+  "grade": "Class 3",
+  "why": "no summit waypoint with a distance from the trailhead",
+  "distKmStored": null,
+  "outingShape": null,
+  "gainFt": null,
+  "waypoints": [
+   {
+    "i": 0,
+    "type": "Trailhead",
+    "name": "Eightmile Lake Trailhead",
+    "elev": 3303,
+    "distMi": 0
+   },
+   {
+    "i": 1,
+    "type": "waypoint",
+    "name": "Northeast Ridge route (low point on ridge)",
+    "elev": null,
+    "distMi": null
+   },
+   {
+    "i": 2,
+    "type": "Summit",
+    "name": "Cashmere Mountain Summit",
+    "elev": 8514,
+    "distMi": null
+   }
+  ]
+ },
+ {
+  "id": "wa_castle_in_the_sky",
+  "name": "Castle in the Sky",
+  "where": "Northern Pickets > Whatcom Peak",
+  "discipline": "alpine",
+  "grade": "5.10b",
+  "why": "no summit waypoint with a distance from the trailhead",
+  "distKmStored": null,
+  "outingShape": null,
+  "gainFt": null,
+  "waypoints": [
+   {
+    "i": 0,
+    "type": "Trailhead",
+    "name": "Hannegan Trailhead",
+    "elev": 3100,
+    "distMi": 0
+   },
+   {
+    "i": 1,
+    "type": "Campsite",
+    "name": "Easy Peak bivy",
+    "elev": 6623,
+    "distMi": null
+   },
+   {
+    "i": 2,
+    "type": "Summit",
+    "name": "Whatcom Peak summit",
+    "elev": 7574,
+    "distMi": null
+   }
+  ]
+ },
+ {
+  "id": "wa_castle_peak_pasayten_south_route",
+  "name": "South Route",
+  "where": "Pasayten Wilderness > Castle Peak",
+  "discipline": "scrambling",
+  "grade": "Class 3",
+  "why": "no summit waypoint with a distance from the trailhead",
+  "distKmStored": null,
+  "outingShape": null,
+  "gainFt": 4643,
+  "waypoints": [
+   {
+    "i": 0,
+    "type": "Trailhead",
+    "name": "Harts Pass Trailhead (Pacific Crest Trail north)",
+    "elev": 6194,
+    "distMi": null
+   },
+   {
+    "i": 1,
+    "type": "Summit",
+    "name": "Castle Peak summit",
+    "elev": 8343,
+    "distMi": null
+   }
+  ]
+ },
+ {
+  "id": "wa_chair_peak_west_ridge",
+  "name": "West Ridge",
+  "where": "Snoqualmie Pass Area > Chair Peak",
+  "discipline": "alpine",
+  "grade": "5.7",
+  "why": "no summit waypoint with a distance from the trailhead",
+  "distKmStored": null,
+  "outingShape": null,
+  "gainFt": 3138,
+  "waypoints": [
+   {
+    "i": 0,
+    "type": "Trailhead",
+    "name": "Alpental parking lot / Snow Lake TH #1013",
+    "elev": 3100,
+    "distMi": 0
+   },
+   {
+    "i": 1,
+    "type": "Summit",
+    "name": "Chair Peak summit",
+    "elev": 6238,
+    "distMi": null
+   }
+  ]
+ },
+ {
+  "id": "wa_clean_break",
+  "name": "Clean Break",
+  "where": "Silver Star and Wine spires > Juno Tower",
+  "discipline": "alpine",
+  "grade": "5.10c",
+  "why": "no one-way distance",
+  "distKmStored": null,
+  "outingShape": null,
+  "gainFt": 4500,
+  "waypoints": [
+   {
+    "i": 0,
+    "type": "Trailhead",
+    "name": "Silver Star Creek pullout (SR-20, milepost 171)",
+    "elev": 3450,
+    "distMi": 0
+   },
+   {
+    "i": 1,
+    "type": "Campsite",
+    "name": "Bench Camp — larch bench above the Wine Spires pullout",
+    "elev": 6450,
+    "distMi": null
+   },
+   {
+    "i": 2,
+    "type": "Summit",
+    "name": "Juno Tower - Summit",
+    "elev": 7920,
+    "distMi": null
+   }
+  ]
+ }
+]
