@@ -1,0 +1,325 @@
+[
+ {
+  "id": "wa_mount_herman_standard_scramble",
+  "beta_new": "The route generally follows the south/southwest ridge to the summit over a mix of dirt, talus, and short class 3 rock steps; in early season the ridge and gullies hold snow and are often climbed with an ice axe and crampons, or skied/split-boarded as a ski-mountaineering tour. It is also frequently combined with a loop past Chain Lakes.",
+  "moves": [
+   {
+    "to": "approach",
+    "action": "covered",
+    "from": "From the Heather Meadows/Bagley Lakes trailhead, follow the maintained Bagley Lakes Trail up toward Herman Saddle, then leave the trail near the last switchback to gain the ridge between Mazama Dome and Mount Herman. "
+   }
+  ]
+ },
+ {
+  "id": "wa_mount_hinman_hinman_glacier",
+  "beta_new": "Most climbers approach from Necklace Valley (9 miles, 5,100 ft gain), the shortest and most common route. The ascent involves 4-9 miles of off-trail scrambling from La Bohn Lakes, gaining 2,500-3,000 ft to the summit via Class 2 talus and snow slopes. The Hinman Glacier (namesake feature) has largely disappeared as of August 2022, leaving only stranded patches of snow/ice. Standard gear includes ice axe, crampons, GPS, and map. Most climbers execute this as a 2-3 day backpacking trip.",
+  "moves": []
+ },
+ {
+  "id": "wa_mount_hopper_standard",
+  "beta_new": "This is not a technical climb but a serious backcountry scramble: about 13.1 trail miles from the Staircase trailhead to First Divide/Home Sweet Home camp, then off-trail travel east over talus, heather benches, and a short rocky ridge to the summit.",
+  "moves": [
+   {
+    "to": "bivy",
+    "action": "covered",
+    "from": " Most parties backpack in and camp at Home Sweet Home (just below First Divide) to split the approach over two days."
+   },
+   {
+    "to": "approach",
+    "action": "covered",
+    "from": " The Staircase trail, the Home Sweet Home Trail and the camps along them are currently closed after the 2025 Bear Gulch Fire, so check the park's trail status first."
+   },
+   {
+    "to": "approach",
+    "action": "add",
+    "value": "A shorter but steeper off-trail alternative starts at Lake of the Angels, reached by the Putvin Trail: cross the ridge, drop into the valley below Mount Stone, then climb the ridge west of Stone toward Hopper.",
+    "from": " A shorter but steeper off-trail alternative climbs from Lake of the Angels (reached via the Putvin Trail), crossing the ridge and dropping into the valley below Mount Stone before climbing the ridge west of Stone toward Hopper."
+   }
+  ]
+ },
+ {
+  "id": "wa_mount_howard_south_slope",
+  "beta_new": "From Crescent Lake's NE side, ascend north up open talus and meadow slopes; the upper mountain narrows into a loose, dirty class 3 gully before easing back to talus and a climbers' trail to the summit. Many parties combine the ascent with a traverse to neighboring Mount Mastiff (about 1 mile away) or Rock Mountain for a full Nason Ridge outing.",
+  "moves": [
+   {
+    "to": "approach",
+    "action": "covered",
+    "from": "Most parties reach Crescent Lake, which sits below Howard's south side along the Nason Ridge Trail, from either the Merritt Lake Trailhead (shorter, more direct) or the Rock Mountain Trailhead via Rock Lake and the Rock-Crescent col (longer, more scenic, and commonly combined with Rock Mountain). "
+   }
+  ]
+ },
+ {
+  "id": "wa_mount_index_bluebell",
+  "beta_new": "Seventeen pitches as usually linked (21 if split at every stance), in six sections: the Toe (P1-3); the slightly overhanging Shield (P4-6) with the 3D Dike and a boulder-problem crux on blank pinches; the steep Roofs (P7-8); the technical Slab (P9-11), with a ledge at P10 that takes a portaledge; the overhanging Headwall (P12-15) with the 5.13- crux; and easier, barely cleaned Summit pitches (P16-17). Bring a stick clip for the headwall bolts.",
+  "moves": [
+   {
+    "to": "rack",
+    "action": "copy",
+    "value": {
+     "rows": [
+      {
+       "item": "Stick clip"
+      }
+     ],
+     "text": "A stick clip for the headwall bolts."
+    },
+    "from": "Bring a stick clip for the headwall bolts."
+   }
+  ]
+ },
+ {
+  "id": "wa_mount_johnson_standard",
+  "beta_new": "The standard approach to Mount Johnson involves hiking to Royal Lake (7.2 miles, 2,650 ft gain), continuing into upper basin, then accessing Surprise Basin. From Surprise Basin, aim for the 6900-foot notch between Mount Johnson and Mount Clark. Mount Johnson sits on climber's left from this col. The route ascends via ramp systems, keeping to class 3 by skirting right of Gasp Pinnacle, then makes a final class 4 push to the summit block. Terrain is consistently loose and rotten, particularly in upper sections.",
+  "moves": []
+ },
+ {
+  "id": "wa_mount_la_crosse_scramble",
+  "beta_new": "This is a wilderness-approach peak rather than a technical climb: the crux is the multi-day hike in, not the summit itself. Reach LaCrosse Pass via trail from either the Duckabush or West Fork Dosewallips valley, then leave the trail for an unroped Class 2 ascent over talus, heather benches, and open ridge to the summit. No rope, rack, or technical protection is used on the standard line; sturdy boots, navigation tools, and self-sufficiency for a remote multi-day trip matter far more than climbing gear.",
+  "moves": []
+ },
+ {
+  "id": "wa_mount_lago_south_slope_south_face",
+  "beta_new": "Mount Lago has no maintained summit trail and sees relatively few visitors given its remote, multi-day approach deep in the Pasayten Wilderness. Nearly all parties climb it from a backcountry camp at Fred's Lake or Shellrock Basin, ascending the South Slope-South Face - a straightforward but tedious scramble over notoriously loose rock - often combined with neighboring Mount Carru via the connecting saddle, or with Osceola Peak and Mount Rolo as part of a longer Pasayten peak-bagging trip or ridge traverse.",
+  "moves": []
+ },
+ {
+  "id": "wa_mount_larrabee_south_ridge",
+  "beta_new": "Locate the gully system in the rocky face with two narrow channels 30 feet apart; take the right channel and ascend the narrow then open gully to broken rock to attain the ridge top. Follow the ridge, favoring the west side, to the summit. Most of ridge top has a way trail and the route is partially marked with cairns after leaving the basin, but cairns may be far apart and the way trail may disappear for long stretches. If you lose cairns or way trail most gullies probably work though some may be more difficult than others.",
+  "moves": [
+   {
+    "to": "approach",
+    "action": "covered",
+    "from": "From High Pass, descend into the basin below the peak. Traverse west and ascend boulder fields and scree to the southwest spur at approximately 6,900 feet. "
+   }
+  ]
+ },
+ {
+  "id": "wa_mount_lawson_standard",
+  "beta_new": "Mount Lawson has no summit trail. Climbers follow the North Fork Quinault River Trail upstream through old-growth rainforest, then cut off-trail to gain the peak's slopes to the 5,401-foot summit. The scrambling itself is only Class 2 with no technical climbing, but route-finding through dense old-growth forest and brush, combined with three unbridged river fords on the approach, make this a serious, rarely-repeated wilderness undertaking rather than a casual outing.",
+  "moves": []
+ },
+ {
+  "id": "wa_mount_lincoln_harniss_chute",
+  "beta_new": "Documented as an alternate class 3 scrambling line to Mount Lincoln's summit, climbing a chute/gully rather than the open south ridge; reached from the same Flapjack Lakes approach as the standard route. Detailed pitch-by-pitch or turn-by-turn beta is not available.",
+  "moves": []
+ },
+ {
+  "id": "wa_mount_lincoln_standard",
+  "beta_new": "From Flapjack Lakes, either contour around to the right or climb east and then south over the forested ridge to the head of the Madeline Creek basin. Exposed rock scrambling from there gains the north ridge, which leads south to the summit. The 5,700-ft north peak, the prominent point seen from the lakes, is not the top; keep it on your left. Allow about three hours from the lakes. The scrambling is class 3 for most of its length, with a class 4 chockstone move near the summit. The terrain is loose: steep duff and scree below the ridge, the chockstone gully and a boulder field, and an airy knife-edge near the top, so route-finding and care matter as much as difficulty. Car-to-car it is a very long day. A different, easier line climbs the ridge south of the peak from lower on the valley trail, but its old trail burned in 1985 and is largely gone.",
+  "moves": [
+   {
+    "to": "bivy",
+    "action": "covered",
+    "from": "Most parties camp at the lakes; car-to-car"
+   }
+  ]
+ },
+ {
+  "id": "wa_mount_logan_fremont_glacier",
+  "beta_new": "Ascend the gentle glacier to the south ridge (Hogsback), negotiate a snow-filled gully through cliff bands, and scramble Class 3-4 rock via ledges on the east side of the summit ridge to the summit.",
+  "moves": [
+   {
+    "to": "approach",
+    "action": "add",
+    "value": "The trail approach to Park Creek Pass is about 19.6 miles with 4,900 ft of gain from the trailhead; from the pass, traverse north about 2 miles across heather and alpine meadows to the Fremont Glacier at 8,000 ft.",
+    "from": "Approach via Thunder Creek Trail to Park Creek Pass (19.6 mi, 4,900 ft gain from trailhead), then traverse northward 2 miles across heather and alpine meadows to Fremont Glacier at 8,000 feet. "
+   }
+  ]
+ },
+ {
+  "id": "wa_mount_logan_r1",
+  "beta_new": "Ascend unstable scree slopes to reach the glacier, cross the Banded Glacier to meet the NE ridge at approximately 8,800 feet, then scramble Class 3-4 rock to the summit. The critical transition point is gaining the NE ridge on solid rock rather than attempting the summit block directly from the glacier.",
+  "moves": [
+   {
+    "to": "approach",
+    "action": "covered",
+    "from": "Approach via Easy Pass (6,500 ft) from Highway 20 mile 151, descend into Fisher Basin, then off-trail climb to Banded Glacier basin. "
+   },
+   {
+    "to": "approach",
+    "action": "covered",
+    "from": " (A longer, always-open alternate approach exists via the Thunder Creek/Fisher Creek Trail from Colonial Creek Campground — ~13 mi one-way vs. ~10 mi via Easy Pass — useful when Easy Pass Trailhead is gated by SR 20's seasonal closure.)"
+   }
+  ]
+ },
+ {
+  "id": "wa_mount_logan_r2",
+  "beta_new": "Gain Douglas Glacier basin, ascend steep glacier with steeper ice/snow sections to col, traverse to meet Banded Glacier, then scramble Class 3-4 rock to summit via standard summit block.",
+  "moves": [
+   {
+    "to": "approach",
+    "action": "covered",
+    "from": "Approach via Easy Pass (6,500 ft) from Highway 20 mile 151, descend into Fisher Creek valley, cross Fisher Creek, travel up Douglas Creek valley (extremely brushy, slow progress), "
+   }
+  ]
+ },
+ {
+  "id": "wa_mount_lyall_south_route",
+  "beta_new": "From a Swamp Creek camp, travelers cross Swamp Creek, climb through brush and open basin to about 4,000', then work up scree and talus (with lingering snow possible) toward a roughly 7,300' notch on the southwest ridge. From the notch, a traverse below a prominent white vertical rock band on grassy ledges leads to an exposed, narrowing class 3 gully; the final ~200' to the summit climbs through loose, stacked boulders (choss).",
+  "moves": [
+   {
+    "to": "approach",
+    "action": "covered",
+    "from": "An off-trail scramble approached via the Swamp Creek drainage off the Agnes Creek/PCT corridor. "
+   }
+  ]
+ },
+ {
+  "id": "wa_mount_mastiff_south_route",
+  "beta_new": "On the ridge, follow the crest -- staying just below it to avoid small cliffs and dense subalpine trees -- to the summit. The route is entirely unmarked past Merritt Lake, so navigation, not climbing difficulty, is the main challenge. Many parties combine the peak with Mount Howard (1 mile west) as a single long day.",
+  "moves": [
+   {
+    "to": "approach",
+    "action": "add",
+    "value": "From Merritt Lake, follow the Nason Ridge Trail for about a mile, then turn uphill on an unsigned boot path that climbs steep forest to Mastiff's southeast ridge. Other lines reach the peak from the Crescent Lake basin via the Howard-Mastiff ridge, or up the northeast ridge from Lost Lake.",
+    "from": "Most parties start from the Merritt Lake Trailhead, hike the maintained trail to Merritt Lake, then follow the Nason Ridge Trail for about a mile and turn uphill on an unsigned boot path that climbs steep forest to Mastiff's southeast ridge (other lines reach the peak from the Crescent Lake basin via the Howard-Mastiff ridge, or up the northeast ridge from Lost Lake). "
+   }
+  ]
+ },
+ {
+  "id": "wa_mount_mathias_scramble",
+  "beta_new": "Two variations reach the same Class 4 summit ridge: (1) climb the steep snow finger between Mount Mathias and Glacier Pass, then scramble Class 4 rock on the ridge to the summit; or (2) climb steep gullies to the Mercury-Mathias col and take the Class 4 ridge from there. Both require prior glacier travel across the Blue Glacier/Hoh Glacier system and are often combined with Mount Mercury or a Mount Olympus trip, since the approach alone is a multi-day undertaking.",
+  "moves": []
+ },
+ {
+  "id": "wa_mount_maude_r2",
+  "beta_new": "From a bivy above Ice Lakes, over the ridge from Leroy Creek Basin, descend to the Entiat Glacier surface, cross the ablation zone, and climb the icefall's short vertical ice steps and ramps between crevasses (running belay) before turning right onto ~900 vertical feet of crumbly 4th/low-5th class rock leading to the summit. The glacier has receded substantially since Fred Beckey's era, when the route reportedly had 9 pitches of ice; today's icefall is shorter and more variable year to year.",
+  "moves": []
+ },
+ {
+  "id": "wa_mount_mccausland_n_route",
+  "beta_new": "Mount McCausland's only established access is this north-side approach: Smithbrook Trail #1590 climbs to Union Gap on the PCT, then the route follows the PCT south before cutting off onto an unsigned but well-trodden boot path that switchbacks north up open heather meadows to the 5,747 ft summit. The whole outing is about 6.4 miles round trip with roughly 1,800 ft of elevation gain and is popular as a moderate day hike/scramble; there is no documented technical first ascent or climbing route on the peak.",
+  "moves": []
+ },
+ {
+  "id": "wa_mount_meany_standard",
+  "beta_new": "The standard route is less about technical difficulty and more about remoteness: a multi-day wilderness approach up the North Fork Quinault River and through Seattle Basin precedes a day of ridge scrambling, a sidehill traverse beneath Mt. Noyes, a loose couloir/snow col, and a short but real 5th-class crux on crumbly sandstone just below the summit. The easiest route is rated Class 3, but multiple parties in the 2020s describe an exposed ~25 ft 5.2 lead pitch protected with a small rack and rope, descended via two rappels — treat this as harder than a pure scramble.",
+  "moves": []
+ },
+ {
+  "id": "wa_mount_mystery_standard",
+  "beta_new": "Descend into Deception Basin, cross the stagnant, minimally-crevassed Mystery Glacier to a col (~6,700 ft) on the peak's east side, then work up mixed scree, snow, and rock on the south side of the mountain, finishing with a short, exposed Class 4 breccia section/gully to the summit block.",
+  "moves": [
+   {
+    "to": "approach",
+    "action": "covered",
+    "from": "From the Upper Dungeness Trailhead, hike the Royal Basin trail to Royal Lake/Upper Royal Basin, then climb a steep snowfield to the ridge notch (locally called Royal Pass or Deception Pass) dividing Royal and Deception basins. "
+   }
+  ]
+ },
+ {
+  "id": "wa_mount_norton_scramble",
+  "beta_new": "Mount Norton has no maintained summit trail. The accepted easiest route follows the Elwha River Trail south from Whiskey Bend to the Hayes River area, then leaves the trail for cross-country Class 2 travel (talus, heather, open forest) up the mountain's flank to the summit. No technical climbing gear is required, but off-trail route-finding, brush, and the remoteness of the approach are the main obstacles.",
+  "moves": []
+ },
+ {
+  "id": "wa_mount_noyes_standard",
+  "beta_new": "Mount Noyes is rarely climbed as a standalone objective; most parties tag it while on a multi-day scramble traverse linking Mount Christie, Noyes, Meany, and Seattle from a base camp near Low Divide or Seattle Creek/Twelvemile Shelter. The standard line follows steep talus, heather, and (early season) snow to one of the peak's bounding cols, then scrambles class 2-3 terrain along the summit ridge to the top. Parties describe the approach itself -- a long sidehill traverse across eroded, loose gullies beneath the peak's east and west aspects -- as the real crux of the day, more consequential than the summit scrambling.",
+  "moves": []
+ },
+ {
+  "id": "wa_mount_olson_standard",
+  "beta_new": "Mount Olson sees very few ascents. There is no recorded roped climbing route, rack, or pitch-by-pitch description for this peak anywhere; it is treated purely as a bushwhack/scramble objective by Olympic peak-baggers.",
+  "moves": [
+   {
+    "to": "approach",
+    "action": "covered",
+    "from": " Most parties reach it as a side trip from the long Six Ridge traverse between the South Fork and North Fork Skokomish valleys: hike the South Fork Skokomish River Trail to Sundown Pass/Sundown Lake, join the Six Ridge Trail, then leave it on the primitive, unsigned way trail toward Mount Olson before finishing cross-country to the summit."
+   }
+  ]
+ },
+ {
+  "id": "wa_mount_olympus_blue_glacier",
+  "beta_new": "From Glacier Meadows, descend to and cross the Blue Glacier for approximately 1 mile with crevasse avoidance. Ascend the broad Snow Dome (6,600 feet) with careful snow bridge assessment. Navigate toward Crystal Pass at 7,250 feet, then traverse to the summit block base and complete the final Class 5.3-5.4 climbing to the true summit.",
+  "moves": []
+ },
+ {
+  "id": "wa_mount_pershing_standard",
+  "beta_new": "From the Jefferson Creek trailhead pullout (~2,440 ft) a faint, flagged climber's path follows the north side of Jefferson Creek through forest, boulders and windfall, steepening and thickening into brush before angling up into a rocky gully. The gully (talus, sometimes snow-filled) is followed to a small basin around 4,300 ft; from there the route continues straight up, then left up a second gully to the basin east of the true (south) summit at around 5,400 ft. From there, either the center gully or a left-hand gully — the left option featuring 45-50° snow followed by a short, loose/brushy class 4 rock step — gains the south ridge. The ridge crest is class 2, occasionally class 3, with one distinctly exposed knife-edge section requiring a class 3/4 move near the 6,154 ft summit. Most parties treat the whole thing as a long, committing scramble rather than a roped climb, though a rope is commonly carried for the class 4 step and the ridge crux.",
+  "moves": []
+ },
+ {
+  "id": "wa_mount_persis_the_hexorcist",
+  "beta_new": "Known only as a difficult alpine rock climb by Bryan Burdo on Persis's north face — no detailed grade, pitch count, or topo is available. This is a serious, low-traffic line distinct from the peak's Class 2 West Ridge hiking route; treat it as an alpine rock objective requiring full trad rack, rope, and North Cascades route-finding/approach skills rather than a hiking route.",
+  "moves": []
+ },
+ {
+  "id": "wa_mount_pilchuck_standard_route",
+  "beta_new": "From the FR 42 trailhead the trail climbs through subalpine forest, crosses open talus/boulder slopes marked with orange blazes below the final headwall, and finishes with roughly 20-30 ft of boulder scrambling and a short fixed steel ladder (rungs can spin underfoot) up to the lookout deck. The route is non-technical hiking/scrambling in dry summer conditions but becomes a genuine, consequential snow/ice ascent whenever the upper mountain still holds snow, which in a heavy year can persist into July.",
+  "moves": []
+ },
+ {
+  "id": "wa_mount_price_hester_lake_route",
+  "beta_new": "From the lakes basin, ascend the boulder field south of Little Hester Lake to gain Price's east ridge near Point 5,480'/5,440', traverse the steep north side of the ridge to a col around 5,400 ft just east of the true summit, and finish with a short ridge scramble to the 5,587 ft summit. Expect Class 3 scrambling with occasional steep snow or rock gullies on the ridge, and real routefinding difficulty — at least one party's own GPS track diverged noticeably between ascent and descent.",
+  "moves": [
+   {
+    "to": "approach",
+    "action": "covered",
+    "from": "From the Dingford Creek Trailhead, follow the Dingford Creek Trail (multiple creek crossings) toward Hester Lake and Little Hester Lake — roughly the first 5-6 miles. "
+   }
+  ]
+ },
+ {
+  "id": "wa_mount_price_northwest_route",
+  "beta_new": "Four cliff bands cross the way, near 2,800, 3,200, 3,600 and 4,500 ft; each goes with careful map reading, and the slopes between are talus or forest. Keep east of the creek draining Price Lake. In snow the gully above the lake is wide and steady. Roughly 4,100 ft of gain over about 4 miles, 4 to 6 hours up. Inside the Alpine Lakes Wilderness.",
+  "moves": []
+ },
+ {
+  "id": "wa_mount_price_south_ridge",
+  "beta_new": "Follow the spur through forest to about 4,400 ft, where the trees give way to an open talus slope. Climb the talus, or its edge, to the east-west crest near 5,100 ft, then turn west along the crest, staying on its forested north side because the south face is cliffy. Expect rock steps and towers to be passed or skirted, with hands needed in places. Route-finding is the main challenge. About 3,700 ft of gain and 2 to 3 miles off-trail beyond the road walk, which adds about 8 miles round trip; allow 3 to 5 hours up from the spur. The line stays outside the Alpine Lakes Wilderness.",
+  "moves": []
+ },
+ {
+  "id": "wa_mount_prophet_east",
+  "beta_new": "From a camp near Thirtynine Mile Creek/Thirtynine Mile Lake, parties push through brush alongside the creek to a relatively brush-free rib and climb to the south ridge crest around 6,600 ft. From there the route follows the ridgeline north over Pt. 6690, Pt. 7361, and the false summit at Pt. 7547 before finishing west to the true summit (7,640+ ft on USGS maps; 7,673 ft per modern LIDAR). Crestline travel is Class 1-2; the false summit and true summit involve steeper Class 3 rock with moderate exposure. Best done mid-to-late summer once the upper southwest cirque's talus/scree has melted out.",
+  "moves": []
+ },
+ {
+  "id": "wa_mount_prophet_southwest_rib",
+  "beta_new": "From Luna Camp, ford the creek and climb through brush that eases quickly, keeping the main creek on the left, until around 3,800 ft where the slope narrows into a forested rib with easy travel. At about 5,450 ft the route traverses southeast to a wall, descends 5-10 ft onto a downward-sloping ledge past two short Class 4 chimneys and a few arêtes (the technical crux, only about 10-15 vertical feet of Class 4), then continues into the southwest cirque. A cliff band at the top of the cirque (~6,900 ft) is bypassed via a snow ramp on its far right (east) side, leading to a saddle east of the peak at ~7,420 ft. From there the route follows the summit ridge, passing a gendarme on its south side, to the true summit.",
+  "moves": []
+ },
+ {
+  "id": "wa_mount_pulitzer_standard",
+  "beta_new": "Mount Pulitzer is reached almost exclusively as part of the multi-day Bailey Range Traverse, an off-trail alpine route through Olympic National Park's interior. From a camp near Lone Tree Pass, climbers head north along faint game/boot paths on open ridge terrain to the Ferry-Pulitzer col, then scramble the East Ridge on class 3 rock to Pulitzer's false summit. Parties describe this stretch as relaxed, scenic scrambling with time to examine wildflowers and quartz crystals in the rock. The true summit, visible from the false summit as an inviting rock horn, requires crossing a horribly shattered sedimentary ridge with serious exposure that has stopped experienced parties; many groups instead traverse over to nearby Mount Ferry (an easier double-summit peak) from the same camp rather than push for Pulitzer's true top.",
+  "moves": []
+ },
+ {
+  "id": "wa_mount_queets_south",
+  "beta_new": "Mount Queets sits just southwest of the Bailey Range in the interior of Olympic National Park. There is no maintained trail to the summit — reaching it requires a multi-day cross-country wilderness approach, commonly combined with nearby Mount Meany and/or a longer Bailey Range or Queets Basin traverse.",
+  "moves": []
+ },
+ {
+  "id": "wa_mount_rahm_custer_traverse",
+  "beta_new": "Rahm-to-Custer is the easier direction to routefind: follow the crest (exposed on the north side, easier scrambling on flatter rock) to a notch below Custer's final arête, then find a hidden Class 4 gully roughly 50 ft below and left of the notch to bypass the unfeasible Class 5 arête. Custer-to-Rahm is the harder direction to routefind, since the crux gully is difficult to spot from above.",
+  "moves": [
+   {
+    "to": "approach",
+    "action": "covered",
+    "from": "Undertaken as a link between the two peaks (not from a trailhead) after climbing one via another route. "
+   }
+  ]
+ },
+ {
+  "id": "wa_mount_rahm_south_side",
+  "beta_new": "From camp, ascend cross-country to an upper terrace below the Custer-Rahm ridge, then locate a narrow, oblique gully cutting through a roughly 100-ft cliff band — it's hidden until you're right on it, at an inside corner of the cliff. Climb the gully's right-hand fork through its short crux (the left fork dead-ends in a loose, walled amphitheater), then continue up talus/scree and a moderate-angle snowfield in the upper basin to the south spur and the east summit; the west summit, a short ridge walk away, carries the higher mapped contour.",
+  "moves": []
+ },
+ {
+  "id": "wa_mount_rainier_curtis_ridge",
+  "beta_new": "Considered technically harder, more confusing, and more committing than Liberty Ridge or Ptarmigan Ridge; a solid Grade IV climb with roughly 7,000 vertical ft of climbing, with a key rappel and 4th-class scrambling through rock bands.",
+  "moves": []
+ },
+ {
+  "id": "wa_mount_rainier_edmunds_headwall",
+  "beta_new": "First skied in 1997 by Armond DuBuque, Doug Ingersoll, Andrew McLean, and Carl Skoog.",
+  "moves": [
+   {
+    "to": "approach",
+    "action": "add",
+    "value": "The Mowich Lake road, the usual way in, has had no public access since the SR 165 bridge closed in April 2025.",
+    "from": "; historically accessed via the Mowich Lake road, which has had no public access since the SR 165 bridge closed in April 2025"
+   }
+  ]
+ }
+]

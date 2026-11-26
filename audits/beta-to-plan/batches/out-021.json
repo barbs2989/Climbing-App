@@ -1,0 +1,372 @@
+[
+ {
+  "id": "id_rye_crisp",
+  "beta_new": "Dramatic laybacking along a flake that opens leftward, followed by more flakes and some jamming, ends at a bolted anchor. A direct start via the neighbouring crack is possible.",
+  "moves": [
+   {
+    "to": "rack",
+    "action": "add",
+    "from": "Gear to a #4 cam.",
+    "value": {
+     "rows": [
+      {
+       "item": "Cams",
+       "sizes": "to #4"
+      }
+     ],
+     "text": "Gear to a #4 cam."
+    }
+   }
+  ]
+ },
+ {
+  "id": "id_sabbatical",
+  "beta_new": "Begin on the wall beside Humble's Tumble (on its right), work across the overlaps, then two bolts lead up and rightward; medium cams assist.",
+  "moves": []
+ },
+ {
+  "id": "id_siesta",
+  "beta_new": "Begin in Crack of Dung, step out rightward to bolt one; four additional clips then take you along the arete.",
+  "moves": []
+ },
+ {
+  "id": "id_sinsemilla",
+  "beta_new": "Begin like Just Say No, veer right after roughly twenty feet, then continue directly upward by a pair of old bolts and across an overlap.",
+  "moves": [
+   {
+    "to": "bolts",
+    "action": "copy",
+    "from": "a pair of old bolts",
+    "value": 2
+   }
+  ]
+ },
+ {
+  "id": "id_strawberry_jam",
+  "beta_new": "Face climbing leads by a bolt (the crux) into a broad crack and easier ground; if the crux defeats you, sidestep right from that bolt, surmount the little roof, and angle back left into the crack.",
+  "moves": []
+ },
+ {
+  "id": "id_stress_fracture",
+  "beta_new": "A corner crack opening rightward leads past a roof to the summit, optionally broken in half; the crux sits low in the corner partway up to the roof, and large cams protect the roof.",
+  "moves": []
+ },
+ {
+  "id": "id_swiss_cheese",
+  "beta_new": "A steep wall full of holes. The opening is easy ground up to bolt one, and the upper part takes medium cams in the neighbouring crack on the left.",
+  "moves": []
+ },
+ {
+  "id": "id_tarantula",
+  "beta_new": "Steep, thin climbing with a sting; beyond the roof, keep to the left of the bolts.",
+  "moves": []
+ },
+ {
+  "id": "id_testosterone_test",
+  "beta_new": "A direct line straight up the middle of the face.",
+  "moves": [
+   {
+    "to": "rack",
+    "action": "add",
+    "from": "little TCUs and supplementary cams are essential",
+    "value": {
+     "rows": [
+      {
+       "item": "TCUs",
+       "sizes": "small"
+      },
+      {
+       "item": "Cams",
+       "sizes": "supplementary"
+      }
+     ],
+     "text": "Small TCUs and supplementary cams are essential."
+    }
+   }
+  ]
+ },
+ {
+  "id": "id_the_pygmies_got_stoned",
+  "beta_new": "A rounded arete dividing the north face from the east, offering eight bolts of continuous friction and face moves.",
+  "moves": []
+ },
+ {
+  "id": "id_thin_slice",
+  "beta_new": "Follow the sharp finger-width crack through huecos and multi-coloured rock; solid face holds and excellent protection arrive precisely when needed.",
+  "moves": [
+   {
+    "to": "rack",
+    "action": "add",
+    "from": "Little cams, wires and slings are enough.",
+    "value": {
+     "rows": [
+      {
+       "item": "Cams",
+       "sizes": "small"
+      },
+      {
+       "item": "Nuts"
+      },
+      {
+       "item": "Slings"
+      }
+     ],
+     "text": "Small cams, nuts and slings are enough."
+    }
+   }
+  ]
+ },
+ {
+  "id": "id_tow_away_zone",
+  "beta_new": "A tough start in a thin crack, then past a roof with a bolt, then the superb hand crack above; an easy traverse rightward reaches the Pretty Face anchor, and the opening can be backed up with small cams.",
+  "moves": []
+ },
+ {
+  "id": "id_triple_roofs",
+  "beta_new": "Head for the big three-cornered roof, skirt it on its left, step back into the crack on the right and follow that to the top; another finish traverses leftward to the anchors above Something Sporting.",
+  "moves": []
+ },
+ {
+  "id": "id_wheat_thin",
+  "beta_new": "A lovely thin crack that curves up the wall, reached via a scramble over the face just beside the tree on its right.",
+  "moves": [
+   {
+    "to": "rack",
+    "action": "add",
+    "from": "take a full rack",
+    "value": {
+     "rows": [
+      {
+       "item": "Full rack"
+      }
+     ],
+     "text": "A full rack."
+    }
+   }
+  ]
+ },
+ {
+  "id": "il_blue_roof",
+  "beta_new": "First pitch: start with gear placed off someone's shoulders or from a stick, aid until it goes free, then trace the crack leftward and up to the fixed belay.\n\nSecond pitch: traverse rightward under the big roof until you balance on an iron flake the size of a plate, then crank the obvious roof-capped dihedral crack.",
+  "moves": [
+   {
+    "to": "rack",
+    "action": "add",
+    "from": "carry varied natural protection, including TCUs",
+    "value": {
+     "rows": [
+      {
+       "item": "Natural protection",
+       "sizes": "varied"
+      },
+      {
+       "item": "TCUs"
+      }
+     ],
+     "text": "Varied natural protection, including TCUs."
+    }
+   }
+  ]
+ },
+ {
+  "id": "il_devil_s_lake_dreams",
+  "beta_new": "Follow the splitter hand-to-fist crack to its bulging exit moves, then finish by the large cedar tree.",
+  "moves": [
+   {
+    "to": "rack",
+    "action": "add",
+    "from": "varied natural gear",
+    "value": {
+     "rows": [
+      {
+       "item": "Natural gear",
+       "sizes": "varied"
+      }
+     ],
+     "text": "Varied natural gear."
+    }
+   }
+  ]
+ },
+ {
+  "id": "il_settled_controversy",
+  "beta_new": "Layback the large flake to the horn on top and then trend rightward to finish.",
+  "moves": [
+   {
+    "to": "rack",
+    "action": "covered",
+    "from": "protection is a small nut and a mid-size cam"
+   }
+  ]
+ },
+ {
+  "id": "il_suspended_animation",
+  "beta_new": "Follow the line with a central crack; it drifts right near the top, and finishing straight up is the harder variation.",
+  "moves": [
+   {
+    "to": "rack",
+    "action": "add",
+    "from": "Mixed protection: two quickdraws and a mid-size piece.",
+    "value": {
+     "rows": [
+      {
+       "item": "Quickdraws",
+       "qty": 2
+      },
+      {
+       "item": "Mid-size piece",
+       "qty": 1
+      }
+     ],
+     "text": "Two quickdraws and one mid-size piece."
+    }
+   }
+  ]
+ },
+ {
+  "id": "il_the_bolted_one",
+  "beta_new": "Follow the clear-cut dihedral crack at the hallway's main corner; protection is mixed (varied sizes plus a bolt), and wires work nicely high up.",
+  "moves": []
+ },
+ {
+  "id": "il_the_dagger",
+  "beta_new": "Shuffle rightward along the roof edge to the arete, then ascend directly to the ledge using small natural gear.",
+  "moves": []
+ },
+ {
+  "id": "il_the_off_width_exam",
+  "beta_new": "Inhale to stick, exhale and gain an inch, and repeat; it has seen a number of lead ascents since, one using wooden blocks for protection.",
+  "moves": []
+ },
+ {
+  "id": "ky_2_warm_up_wall_techno_destructo",
+  "beta_new": "Start by the tree, just beyond So Low, and climb in much the same vertical edging style as that neighbor.",
+  "moves": []
+ },
+ {
+  "id": "ky_4_madness_cave_pushin_up_daisies",
+  "beta_new": "Leave the old chains with a hard pull off a sloping ledge onto easier ground, then pull a committing deadpoint from two crimps to the top-out jug. Two extra bolts go in beyond Flour Power.",
+  "moves": []
+ },
+ {
+  "id": "ky_8_ball",
+  "beta_new": "Start by a small rhododendron and get through a blank-looking low section, then angle up and left to the prominent right-facing corner. Follow that dihedral to its end and continue over the pocketed wall and on to the chains.",
+  "moves": []
+ },
+ {
+  "id": "ky_a_confederacy_of_dunces",
+  "beta_new": "Opening bolts one through three sit on dirty, fragile rock; once past them, everything above improves somewhat.",
+  "moves": []
+ },
+ {
+  "id": "ky_a_way_of_life",
+  "beta_new": "Start at the right side and work leftward, passing a vintage piton plus three bolts that spin, to reach the top.",
+  "moves": [
+   {
+    "to": "descent",
+    "action": "covered",
+    "from": "Descend by walking off to the right."
+   }
+  ]
+ },
+ {
+  "id": "ky_acrophobiacs_anonymous",
+  "beta_new": "Trend up and to the left across the slab toward the shared anchors.",
+  "moves": []
+ },
+ {
+  "id": "ky_ale_8_one",
+  "beta_new": "Go up the flake until the first bolt is clipped, move rightward and make one hard pull onto a jug. Shake out there and drift back slightly left.\n\nAbove, big moves on the overhanging face lead to a difficult finish using edges and gastons.",
+  "moves": []
+ },
+ {
+  "id": "ky_all_in_a_day_s_work",
+  "beta_new": "Follow the wide crack set in a shallow, narrow dihedral, stemming and grinding upward.",
+  "moves": [
+   {
+    "to": "rack",
+    "action": "add",
+    "from": "large cams suit the crack",
+    "value": {
+     "rows": [
+      {
+       "item": "Cams",
+       "sizes": "large"
+      }
+     ],
+     "text": "Large cams."
+    }
+   }
+  ]
+ },
+ {
+  "id": "ky_anne_s_crack",
+  "beta_new": "The start is mossy, but the crack gets better quickly as you go up.\n\nLarge cams are handy for building the belay at the ledge.",
+  "moves": [
+   {
+    "to": "rack",
+    "action": "copy",
+    "from": "Large cams are handy for building the belay at the ledge.",
+    "value": {
+     "rows": [
+      {
+       "item": "Cams",
+       "sizes": "large"
+      }
+     ],
+     "text": "Large cams."
+    }
+   }
+  ]
+ },
+ {
+  "id": "ky_another_one_fights_the_rust",
+  "beta_new": "The crux comes low and has bolt protection, and you top out onto the ledge above.",
+  "moves": []
+ },
+ {
+  "id": "ky_apoplectic_chick_from_missouri",
+  "beta_new": "Pass through the overhanging lower part to reach a blank face; work out that section, after which larger holds lead the rest of the way to the anchors.",
+  "moves": []
+ },
+ {
+  "id": "ky_aquaduck_pocket",
+  "beta_new": "Start from the ramp that a big boulder forms, pick the correct pockets through the steep part, then cruise up bigger holds until you reach the anchors.",
+  "moves": []
+ },
+ {
+  "id": "ky_avalanche_run",
+  "beta_new": "Positive holds lead to the intimidating roof, which is marked by a fixed draw. Locate the crucial holds, cut your feet loose, and fight the barn-door swing, then hold on until the chains.",
+  "moves": []
+ },
+ {
+  "id": "ky_back_door_to_paris",
+  "beta_new": "Locate the pedestal, then follow the face on its left, clipping bolts up to anchors beneath the bulge.",
+  "moves": []
+ },
+ {
+  "id": "ky_bandolier",
+  "beta_new": "The face leans out a bit and has a pair of cruxes; a hands-free rest lies off to the left if wanted. A steep flake near the top gets very pumpy before the chains.",
+  "moves": []
+ },
+ {
+  "id": "ky_bedtime_for_bonzo",
+  "beta_new": "Pitch one: go up the ramp to a big ledge and belay from bolts.\n\nPitch two: go right via a hallway toward the next start, climb the dihedral that faces right until a hand-sized ledge, shuffle along that ledge into a fist crack angling right, and follow it to the top.",
+  "moves": []
+ },
+ {
+  "id": "ky_beene_material",
+  "beta_new": "A tight corner with a few overhanging steps along the way, ending at a tree anchor.",
+  "moves": []
+ },
+ {
+  "id": "ky_blue_runner",
+  "beta_new": "Head for the roof roughly twenty feet off the ground, then shift leftward and upward into the dihedral.\n\nStem the dihedral through an obvious thin crux into a wide crack, which goes on to the ledge; two very large cams help with that wide part.",
+  "moves": []
+ },
+ {
+  "id": "ky_bob_marley_beeper",
+  "beta_new": "Start from the big boulders at the base, latch the arete and ride it until it becomes a narrow crack, which carries on to the anchors.",
+  "moves": []
+ }
+]
