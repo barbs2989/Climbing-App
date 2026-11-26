@@ -1,0 +1,165 @@
+{
+ "wa_liberty_bell_thin_red_line": {
+  "area": "wa_liberty_bell",
+  "set": {
+   "rappels": "East Face line from M&M Ledge: 4 bolted rappels, but no single-rope station list is known; the summit notch descent is 2 rappels of about 25 m on a single 60 m rope",
+   "rappel_count_note": "The East Face descent works left from M&M Ledge to bolted stations and makes four rappels essentially to the ground. Station lengths are not published, and no intermediate anchors for a single 60 m rope are known, so a party with one rope cannot count on that line. Rappelling from the ledge's own fixed pin-and-wire anchor, which also trends climber's left, makes it five. A party that tops out can instead take the standard Liberty Bell notch descent on one 60 m rope: downclimb east to a two-bolt station, then make two rappels of about 25 m into the Liberty Bell-Concord notch. That leaves you on the opposite side of the mountain from the East Face approach and your pack.",
+   "descent_text": "Two documented options. (1) From the top of the route near M&M Ledge, work climber's left to good bolts and make four rappels essentially to the ground at the base of the East Face — this returns you directly to your pack/the East Face approach, but no station lengths are published and no single-rope station list is known. (2) If you continue to the true summit instead, descend via the standard Liberty Bell notch route: downclimb east ~100 ft through trees/loose rock to the 2-bolt station, then make two roughly 25m rappels (the second off a bolted anchor) down into the Liberty Bell-Concord notch, then hike down the scree/snow gully to the climbers' trail along the base of the west faces — but this leaves you on the opposite (west) side of the mountain from your car at the East Face pullout, requiring a shuttle or road walk back."
+  },
+  "clear_rappels": true,
+  "review": {
+   "confidence": "low",
+   "sources": [
+    "https://mountainproject.com/route/108257819/thin-red-line",
+    "https://www.mountainproject.com/route/113615727/live-free-or-die"
+   ],
+   "single_rope": "The East Face line from M&M Ledge is described as four bolted rappels with no lengths; no single-rope version is documented. The summit notch descent is two ~25 m rappels, which one 60 m rope covers.",
+   "changed": "Removed the double-rope wording and cleared the four-row table (no lengths, all described for the long rope); said plainly that no single-rope East Face list exists and pointed to the notch descent."
+  }
+ },
+ "wa_liberty_crack": {
+  "area": "wa_liberty_bell",
+  "set": {
+   "descent_text": "The standard way off is the two-rappel Beckey-side descent, shared with Liberty Crack (Free), Freedom Rider and the Beckey Route. From the bolted alcove near the summit shoulder where the last pitch ends, traverse third-class ledges climber's left to the two-bolt station - the final few metres to it are exposed - and make the first rappel, under 30 m, down toward Beckey Gully. Do not link this into one long linked rappel to the notch: that variation has a poor reputation for jammed ropes. A second rappel of roughly the same length reaches Beckey Gully and the Liberty Bell-Concord Tower notch, and from there you downclimb and hike the scree and boulder gully below the notch - snow-covered or loose and unpleasant depending on the season - to the climbers' trail and the Blue Lake Trail. Manage the ropes carefully on both: the terrain is steep and snags are the common problem here.\n\nPlan the walk back before you start down. Liberty Crack parties park at the East Face pullout on SR-20 rather than at the Blue Lake Trailhead, so this descent puts you down on the far side of the mountain from the car, meaning either a shuttle or roughly a mile back along the highway shoulder. A rappel line down the east face that returns you directly to your packs at the base of the route has been reported - a bolted line of six stations on the right side of the wall, where a single 60 m rope reaches each station but is tight at a couple of them, so plan a short downclimb where it falls short. The four-rappel line off M&M Ledge is a real descent, but it belongs to Thin Red Line rather than to this route; do not plan on it here."
+  },
+  "review": {
+   "confidence": "high",
+   "sources": [
+    "https://www.summitpost.org/route/309641/liberty-crack.html",
+    "https://www.mountainproject.com/route/106512297/liberty-crack"
+   ],
+   "single_rope": "Already single-rope: two rappels of about 25 m on one 60 m rope into the notch; sources describe it as two single-rope raps.",
+   "changed": "Only descent_text: removed the aside about carrying an extra rope on the east face line; rappels, note and table left as they were."
+  },
+  "rappel_detail": [
+   {
+    "n": 1,
+    "pull": "Under 30 m, single 60 m rope. Do not try to skip this station and reach the notch in one go: that has a poor reputation for jammed ropes.",
+    "notes": "After topping out, traverse third-class ledges climber's left to a bolted anchor in an alcove; first rappel down toward Beckey Gully.",
+    "anchor": "bolted anchor (two-bolt station in an alcove near the topout)",
+    "hazards": [
+     "the last few metres to the anchor cross an exposed sloping ledge",
+     "the station is genuinely hard to spot from above and parties have rappelled past the line or had to climb back up to find it; note it before you commit to going down"
+    ],
+    "lengthM": 25,
+    "station": "Reached by traversing climber's left along the third-class ledges at the top of the route, or by downclimbing the last pitch of the Beckey Route. The anchor is shiny bolts with chains set in a corner or shallow alcove on a steep wall overlooking the Liberty Bell-Concord notch — you have to look down over the edge a little to see it, and it is not visible from the ledge above."
+   },
+   {
+    "n": 2,
+    "pull": "About 25m, single 60m rope reaches the notch.",
+    "notes": "Second rappel reaches Beckey Gully / the Liberty Bell-Concord Tower notch; from there downclimb/hike the gully to the climbers' trail.",
+    "anchor": "bolted anchor (the second station is also described as a tree — judge what is there)",
+    "hazards": [
+     "this last rappel is the one repeatedly reported for stuck ropes, in more than one case costing a party a re-lead of an adjacent route to recover the strand",
+     "you are rappelling over a climbing route and above a busy approach gully, so both your rope and anything you knock loose land on other parties — the notch echoes badly enough that shouted communication is unreliable when it is busy",
+     "the notch below is snow early or loose scree later, and the gully leading down from it sheds rock readily"
+    ],
+    "lengthM": 25,
+    "station": "A second set of bolts and chains, described as sitting in an alcove with a tree beside it, dropping directly into the Liberty Bell-Concord notch."
+   }
+  ],
+  "replace_rappels": true
+ },
+ "wa_live_free_or_die": {
+  "area": "wa_liberty_bell",
+  "set": {
+   "rappel_count_note": "This route finishes on Liberty Bell and takes the standard descent. Three rappels on a single 60 m rope, which is the rope this route recommends and the configuration these three stations describe. The count of two comes from the same station set rather than a different one: the first rappel, off the trees, is optional and replaces a downclimb of the ridge and the 5.6 boulder problem, so a party that downclimbs that section starts at the second station and reaches the ground in two single-rope rappels. Accounts recording two and accounts recording three are describing the same anchors. The two lower rappels are reported at about 25 m each, and a single 60 m rope reaches the first ledge with room to spare. This is the standard descent line shared with the East Face and Northwest Face routes. Parties who stop at M&M Ledge can instead use the bolted East Face rappel line shared with Thin Red Line, but no station lengths are published for a single rope, so a party with one 60 m rope should plan on the summit descent.",
+   "descent_text": "Live Free or Die climbs the East Face for 8 pitches to M&M Ledge (roughly mid-height), then shares its final 3-4 pitches to the summit with the upper section of Thin Red Line. Parties who finish on the summit take the standard Liberty Bell descent. From the summit, downclimb the upper pitch a short way and go left (east) to a tree hung with rappel slings. One single-rope rappel with a 60 m rope reaches a sandy ledge; work right and down to a bolted station, then make two single-rope rappels of about 25 m from bolted anchors into the Liberty Bell-Concord notch at about 7,300 ft. Parties who downclimb the ridge and the 5.6 boulder problem to the first bolts instead of making the tree rappel do two rappels in all. From the notch, downclimb the loose gully back to the climbers’ path and the Blue Lake Trail. Parties who stop at M&M Ledge can instead take the bolted East Face rappel line from the ledge down to the talus at the base of the face, though no single-rope station list is documented for it."
+  },
+  "review": {
+   "confidence": "medium",
+   "sources": [
+    "https://www.mountainproject.com/route/113615727/live-free-or-die",
+    "https://mountainproject.com/route/108257819/thin-red-line"
+   ],
+   "single_rope": "Summit descent is 3 rappels (or 2 if the first section is downclimbed) on one 60 m rope, stations about 25 m. East Face line from M&M Ledge has no single-rope list.",
+   "changed": "Rewrote the closing sentence of the note and descent_text that described the East Face line as a two-rope rappel; table kept (already single-rope)."
+  }
+ },
+ "wa_lincoln_peak_north_ridge": {
+  "area": "wa_lincoln_peak",
+  "set": {
+   "rappels": "Descend the southwest face (X Couloir): downclimbed in good conditions, otherwise about 10 rappels off pickets, a rock sling and existing slings on horns; no single-rope station list is known",
+   "rappel_count_note": "Documented descents of the couloir report about 10 to 11 rappels: pickets or deadmen the party placed and left, a sling around a rock, and existing slings on rock horns lower in the gully. Rappel lengths are not published, so how far a single 60 m rope gets you at each anchor is unknown; build anchors no more than about 30 m apart. In good snow parties downclimb much of the face instead, and in some years nearly all of it. Bring pickets you are willing to leave and spare cord."
+  },
+  "clear_rappels": true,
+  "review": {
+   "confidence": "low",
+   "sources": [
+    "https://cascadeclimbers.com/forum/topic/87349-tr-lincoln-peak-x-couloir-2nd-descent-782012/",
+    "https://turns-all-year.com/trip-reports/lincoln-peak-x-couloir"
+   ],
+   "single_rope": "Sources give 10-11 rappels off pickets and horns with no per-station lengths; no single-rope station list exists. Good conditions allow downclimbing.",
+   "changed": "Cleared the ten-row table that described every rappel for the long rope, removed the rope-pair wording from the summary and note, and said plainly what is unknown for one rope."
+  }
+ },
+ "wa_lincoln_peak_standard": {
+  "area": "wa_lincoln_peak",
+  "set": {
+   "rappels": "About 10 rappels down the X Couloir (four off pickets you place, one off a rock sling, five off existing slings on rock horns); no single-rope station list is known",
+   "rappel_count_note": "Documented descents of the couloir report about 10 to 11 rappels: pickets or deadmen the party placed and left, a sling around a rock, and existing slings on rock horns lower in the gully. Rappel lengths are not published, so how far a single 60 m rope gets you at each anchor is unknown; build anchors no more than about 30 m apart. In good snow parties downclimb much of the face instead, and in some years nearly all of it. Bring pickets you are willing to leave and spare cord.",
+   "descent_text": "Most parties reverse the ascent line, downclimbing and rappelling the same southwest gully/couloir system (the X Couloir) back down into the southwest basin below the face. This is a real rappelling descent, not a walk-off: the most detailed documented descent (a repeat/'2nd descent' trip report) describes about 10 rappels — 4 off pickets placed by the descending party, 1 off a sling around a rock, and 5 off pre-existing slings left around rock horns lower in the gully. Bring a single 60 m rope plus spare cord/webbing for building or backing up anchors, since fixed tat should never be trusted blindly. Anchors are a mix of natural (slung rock horns and blocks) and improvised (snow pickets), not bolted — expect to build some yourself. The exact rappel count is conditions-dependent: earlier-season parties with more continuous snow have gotten down with as few as 3 rappels off deadman/picket anchors and simul-downclimbing between them, while later-season, rockier conditions push the count up toward the 10-rappel figure above; budget for the higher number and extra anchor material. The gully funnels rockfall and is exposed to spindrift/small slides after storms, so descend early and move efficiently through the narrower constrictions. Once off the couloir, re-rope for the bergschrund and any crevassed ground on the way down to the treeline camp, then reverse the approach - down past East Rankin Lake and around Pt. 4481 on the old decommissioned road - back to FR-38. Do not descend north toward Heliotrope Ridge. With a camp in the Rankin Creek basin, going that way puts you on the opposite side of the mountain with a glacier between you and your camp."
+  },
+  "clear_rappels": true,
+  "review": {
+   "confidence": "low",
+   "sources": [
+    "https://cascadeclimbers.com/forum/topic/87349-tr-lincoln-peak-x-couloir-2nd-descent-782012/",
+    "https://turns-all-year.com/trip-reports/lincoln-peak-x-couloir"
+   ],
+   "single_rope": "Sources give 10-11 rappels off pickets and horns with no per-station lengths; no single-rope station list exists. Good conditions allow downclimbing.",
+   "changed": "Cleared the ten-row table written for the long rope, removed rope-pair wording from summary, note and descent_text, and stated what is unknown for one rope."
+  }
+ },
+ "wa_little_sister_south_couloir": {
+  "area": "wa_little_sister",
+  "set": {
+   "rappels": "Two rappels on the descent: one near the top of the line, where whether a single 60 m rope reaches is not documented, and one from the col southeast of the summit, where a single 60 m rope is enough. Anchors are not fixed, so bring cord and tat and expect to build off rock horns or leave a picket or screw.",
+   "rappel_count_note": "Two rappels, from one winter party's account: one near the top of the line and one down from the col southeast of the summit. A single 60 m rope was judged enough for the col rappel; the length of the upper rappel is not documented. Bring cord and tat; nothing is fixed.",
+   "descent_text": "Reverse the line: one winter party made a rappel from near the top, where whether a single 60 m rope reaches is not documented, and a second rappel below the col southeast of the summit, where a single 60 m rope reaches. The couloir has also been skied."
+  },
+  "rappel_detail": [
+   {
+    "n": 1,
+    "notes": "Rappel 1 of 2. Length not documented; whether one 60 m rope reaches is unknown.",
+    "anchor": "no fixed anchors: build off a rock horn, or leave a picket or screw",
+    "lengthM": null,
+    "station": "Near the top of the couloir line."
+   },
+   {
+    "n": 2,
+    "notes": "Rappel 2 of 2, down from the col; a single 60 m rope reaches. Then descend south-side snow and reverse the Green Creek approach.",
+    "anchor": "no fixed anchors: build off a rock horn, or leave a picket or screw",
+    "lengthM": null,
+    "station": "The col southeast of the summit."
+   }
+  ],
+  "replace_rappels": true,
+  "review": {
+   "confidence": "medium",
+   "sources": [
+    "https://stephabegg.com/?p=8849"
+   ],
+   "single_rope": "The col rappel is stated to need only a single 60 m rope; the upper rappel's length is not given, so single-rope reach there is unknown.",
+   "changed": "Removed the rope-pair description of the upper rappel and said plainly what is and is not known for one rope; kept the col rappel and anchors."
+  }
+ },
+ "wa_ellen_pea": {
+  "area": "wa_m_m_wall_aka_supercave_wall",
+  "set": {
+   "rappels": "No single-rope descent is documented: the 4 rappels back down the route run about 15, 55, 50 and 40 m, so one 60 m rope does not reach the long ones; the alternative is to traverse off to a 3rd-class ramp partway down",
+   "rappel_count_note": "The rappel line down the route has four stations of about 15, 55, 50 and 40 m, mostly from bolted anchors below the top trees, and some are diagonal. One 60 m rope does not reach the three long ones, and no intermediate stations are known. Instead of rappelling, you can traverse off to a 3rd-class ramp partway down; that is the single-rope alternative. About an hour from the top to the base.",
+   "descent_text": "Descent by rappelling the route needs stations that a single 60 m rope does not reach, and no intermediate anchors are documented; expect some diagonal-rappel maneuvering to stay on anchors, or traverse off to a 3rd-class ramp partway down. Figure roughly an hour from the summit/top of the route back to the base."
+  },
+  "clear_rappels": true,
+  "review": {
+   "confidence": "low",
+   "sources": [
+    "https://stephabegg.com/?p=8736",
+    "https://mountainproject.com/route/111075283/the-l-h-route-free-variation"
+   ],
+   "single_rope": "Sources say the route is rappelled with long stations (15, 55, 50, 40 m); none describes a one-rope line. The 3rd-class ramp traverse is the only documented alternative.",
+   "changed": "Cleared the station table (three stations exceed 30 m), removed the rope-pair wording, stated plainly that one 60 m rope does not reach, and kept the ramp traverse."
+  }
+ }
+}

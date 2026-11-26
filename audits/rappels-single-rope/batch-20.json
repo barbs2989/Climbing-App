@@ -1,0 +1,83 @@
+{
+ "az_moby_dick": {
+  "area": "az_whale_dome",
+  "set": {
+   "rappels": "One rappel from the summit on a single 70 m rope, with a short easy downclimb at the bottom",
+   "rappel_count_note": "A single 70 m rope reaches nearly to the ground from the summit anchors. Parties report finishing about 10 to 15 ft above the base of the drop, which needs a short easy downclimb, and some land on small ledges instead; a tree lower down can be used if the ledge is too high to downclimb. Do not plan on a 60 m rope reaching. Below the drop, scramble down the drainage to the base."
+  },
+  "rappel_detail": [
+   {
+    "n": 1,
+    "lengthM": null,
+    "anchor": "bolts on west side of summit",
+    "station": "Find the rappel anchors on the west side of the summit.",
+    "hazards": [
+     "free-hanging rappel",
+     "a single 70 m rope ends a few metres short of the ground, so a short downclimb or a tree rappel follows"
+    ],
+    "notes": "Free-hanging drop to the saddle, roughly 140 ft by the route's stated figure. A single 70 m rope gets to within about 10 to 15 ft of the ground; keep the rope end weighted and do not tie knots in it, as a tree below snags it."
+   }
+  ],
+  "replace_rappels": true,
+  "review": {
+   "confidence": "medium",
+   "sources": [
+    "https://mountainproject.com/route/105738239/moby-dick?print=1",
+    "https://www.summitpost.org/view_object.php?object_id=163502"
+   ],
+   "single_rope": "One 70 m rope reaches nearly to the ground (several climbers, 2006-2020); 10-15 ft downclimb or a ledge/tree rappel remains. 60 m would not reach.",
+   "changed": "Removed the two-rope option; station now says single 70 m; lengthM nulled because sources disagree (140 ft stated vs about 33 m estimated)."
+  }
+ },
+ "ab_whiteman_falls_drainage_ice_mixed_whiteman_falls": {
+  "area": "ab_whiteman_falls_drainage_ice_mixed",
+  "set": {
+   "rappels": "One rappel on a single 60 m rope from the top to the easy ice apron, then downclimb; some parties make two rappels",
+   "rappel_count_note": "Parties have reached the low-angle apron at the base with one 60 m rappel from the top, then pulled the rope and downclimbed the easy ice. Others describe two rappels back to the base of the route, then another short rappel down the WI2-3 step below the narrow part of the canyon, using the skier's-left station. Snow and avalanche debris can fill the canyon and hide anchors, so the count varies with conditions. A walk-off via the gully on the approach side is the alternative when anchors are buried."
+  },
+  "review": {
+   "confidence": "medium",
+   "sources": [
+    "https://www.summitpost.org/route/265542/whiteman-falls-iv-wi-6.html",
+    "https://avalanche.ca/resources/ice-climbing/atlas/whiteman-falls",
+    "https://www.mountainproject.com/area/107623997/whiteman-falls-drainage-icemixed"
+   ],
+   "single_rope": "One 60 m rope: one rappel from the top to the apron then downclimb easy ice (one report); other reports give 2-3 shorter rappels; walk-off gully exists.",
+   "changed": "Removed the pair-of-70 m-ropes option; described the single 60 m line, the range and the walk-off."
+  }
+ },
+ "wa_winter_spring_ice_snow_mixed_2_east_face_variation": {
+  "area": "wa_winter_spring_ice_snow_mixed_2",
+  "set": {
+   "rappel_count_note": "Descends via The Tooth's shared South Face rap line; reported as about 4 rappels on a single 60 m rope, combining upper tree and gear anchors with two bolted chain stations lower down near Pineapple Pass (sling anchors on trees and boulders higher up). Individual per-station lengths beyond the roughly 4-rap total on one 60 m rope are not known, so no per-station length is shown."
+  },
+  "review": {
+   "confidence": "medium",
+   "sources": [
+    "https://www.mountainproject.com/route/106378880/south-face",
+    "https://www.mountaineers.org/@@resolveuid/b361b48ac8d54bb0b054209981f2db68",
+    "https://www.summitpost.org/view_object.php?object_id=158870"
+   ],
+   "single_rope": "South Face descent is 4 rappels of about 25-30 m on one 60 m rope from slung trees and a block; two bolted chain stations lie in the east gully off Pineapple Pass.",
+   "changed": "Removed the 'or 2 on twin ropes' clause from the count note; kept the existing four-station table (all null length) and descent_text."
+  }
+ },
+ "wa_winter_spring_ice_snow_mixed_2_northeast_slabs": {
+  "area": "wa_winter_spring_ice_snow_mixed_2",
+  "set": {
+   "rappels": "Standard descent follows the South Face rappel line: 4 rappels of roughly 25-30 m on a single 60 m rope, back to Pineapple Pass.",
+   "rappel_count_note": "Four rappels on a single 60 m rope, each under 30 m, reversing the four pitches of the South Face - this is the standard descent that Northeast Slabs parties join at the summit. A separate two-rappel option exists in the east gully off Pineapple Pass on two bolted chain stations (60 m rope); its second station is not directly below the first, so you rappel out east and may have to scramble a few feet up a rib to reach it - that is a different line, not part of the four-rappel tree sequence above. In winter the gully can hold a cornice and bury the anchors, in which case parties walk around to Pineapple Pass instead. The third rappel has come up short of its station on a single 60 m rope, so knot the ends; a 70 m rope gives margin there.",
+   "descent_text": "From the summit, downclimb a short distance to the tree anchor in the small notch just below the true summit. From there, rappel the South Face line to the notch (Pineapple Pass) between The Tooth and its south sub-summit — four rappels of under 30 m on a single 60 m rope; parties often note the second rappel can pull stiffly, so flake the rope and check your pull direction before committing. Some parties instead rappel off a chockstone lower on the gully, but this is described as less efficient than the tree-anchor line and is not the standard line. From the notch you join the South Face (standard) descent: downclimb/walk the gully and talus down through Great Scott Bowl, then retrace the approach traverse back above Source Lake to the Snow Lake/Source Lake trail and the Alpental lot. In good winter/spring coverage this whole descent from the notch is frequently skied or glissaded — parties report as little as ~10 minutes from the notch back to the car on skis in prime conditions; on foot through talus, plan on more like 45-60 minutes. The same avalanche exposure noted on the approach applies to the descent, and expect possible traffic from parties climbing the South Face route if your lines overlap near Pineapple Pass."
+  },
+  "review": {
+   "confidence": "medium",
+   "sources": [
+    "https://www.mountainproject.com/route/106378880/south-face",
+    "https://www.mountaineers.org/activities/trip-reports/intermediate-alpine-climb-the-tooth-northeast-slab",
+    "https://www.summitpost.org/view_object.php?object_id=158870"
+   ],
+   "single_rope": "Four South Face rappels under 30 m on one 60 m rope; one report says the third station is not reachable on a single 60 m from the one above, and the existing table already notes a short down-scramble at station 2.",
+   "changed": "Removed the linking of long rappels, the 'two long rappels from a tree' winter variant and 'double rappel' wording; kept the existing single-rope table."
+  }
+ }
+}
