@@ -31,18 +31,18 @@ const CASES = [
     says: /SeasonSection\.tsx:\d+: \.toLocaleDateString\("en-US"/ },
   // No argument at all.
   { name: "no-argument-at-all", file: CAL, expect: "fail",
-    find: 'const fSun=d=>d.toLocaleTimeString(DLOCALE,{hour:"numeric",minute:"2-digit"});',
-    repl: 'const fSun=d=>d.toLocaleTimeString();',
-    says: /Calendar\.jsx:\d+: \.toLocaleTimeString\(no argument/ },
+    find: 'return new Date(d+"T12:00:00").toLocaleDateString(DLOCALE,{weekday:"long",month:"short",day:"numeric"});',
+    repl: 'return new Date(d+"T12:00:00").toLocaleDateString();',
+    says: /Calendar\.jsx:\d+: \.toLocaleDateString\(no argument/ },
   // MUST STAY SILENT — the fallback spelling core uses at one site.
   { name: "fallback-spelling", file: CAL, expect: "pass",
-    find: 'const fSun=d=>d.toLocaleTimeString(DLOCALE,{hour:"numeric",minute:"2-digit"});',
-    repl: 'const fSun=d=>d.toLocaleTimeString(DLOCALE||undefined,{hour:"numeric",minute:"2-digit"});',
+    find: 'return new Date(d+"T12:00:00").toLocaleDateString(DLOCALE,{weekday:"long",month:"short",day:"numeric"});',
+    repl: 'return new Date(d+"T12:00:00").toLocaleDateString(DLOCALE||undefined,{weekday:"long",month:"short",day:"numeric"});',
     says: null },
   // MUST STAY SILENT — a number's thousands separator is not the date preference.
   { name: "number-formatting-is-not-a-date", file: CAL, expect: "pass",
-    find: 'const fSun=d=>d.toLocaleTimeString(DLOCALE,{hour:"numeric",minute:"2-digit"});',
-    repl: 'const fSun=d=>d.toLocaleTimeString(DLOCALE,{hour:"numeric",minute:"2-digit"});const _n=(1234).toLocaleString();',
+    find: 'return new Date(d+"T12:00:00").toLocaleDateString(DLOCALE,{weekday:"long",month:"short",day:"numeric"});',
+    repl: 'var _n=(1234).toLocaleString();return new Date(d+"T12:00:00").toLocaleDateString(DLOCALE,{weekday:"long",month:"short",day:"numeric"});',
     says: null },
 ];
 

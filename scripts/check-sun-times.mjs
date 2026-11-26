@@ -1,7 +1,7 @@
 #!/usr/bin/env node
-// check:sun-times — THE CALENDAR'S SUNRISE AND SUNSET MATCH AN EPHEMERIS TO THE MINUTE.
+// check:sun-times — sunRiseSet()'S SUNRISE AND SUNSET MATCH AN EPHEMERIS TO THE MINUTE.
 //
-// The Calendar's Daylight line prints a route's sunrise and sunset for the day of the climb, and
+// Until 2026-11-25 the Calendar's Daylight line printed a route's sunrise and sunset for the day of the climb, and
 // an alpine party sets its start around them. Until 2026-10-07 the number came from "solar noon ±
 // half the day length": no longitude, no equation of time, no daylight saving, no disc or
 // refraction. Measured against Open-Meteo's ephemeris for four Washington points, it was 44–70
@@ -22,7 +22,7 @@
 // described. Unix seconds have no offset to get wrong. Re-fetch with
 // scripts/oneoff/probe-sun-times-vs-open-meteo.mjs, which prints the table in this shape.
 //
-// The solver lays out the DEVICE's local day, as the Calendar does, so this runs with TZ pinned
+// The solver lays out the DEVICE's local day, so this runs with TZ pinned
 // to the zone of the points below: on a box in another zone the "local day" would be a different
 // span of hours and a crossing could belong to a neighbouring date. Set before any Date is made.
 //
@@ -82,17 +82,17 @@ for (const [place, lat, lng, date, riseS, setS] of REF) {
 }
 if (!failures) ok(`all ${REF.length} reference sunrises and sunsets within ${Math.round(worst / 60 * 10) / 10} min (tolerance ${TOLERANCE_S / 60})`);
 
-// ── 2. The polar shapes the Calendar renders are intact ─────────────────────────────────────
+// ── 2. The polar shapes are intact ───────── ─────────────────────────────────────
 const pd = sunRiseSet(80, 0, "2026-06-21"), pn = sunRiseSet(80, 0, "2025-12-21");
 if (!pd || pd.daylight !== 24 || pd.sunrise || pd.sunset) fail(`polar day should be 24 h with no crossings, got ${JSON.stringify(pd)}`);
 if (!pn || pn.daylight !== 0 || pn.sunrise || pn.sunset) fail(`polar night should be 0 h with no crossings, got ${JSON.stringify(pn)}`);
 if (sunRiseSet(47, null, "2026-06-21") !== null || sunRiseSet(47, -122, "not a date") !== null) fail("a missing longitude or an unparseable date must return null, not a number");
 if (failures === 0) ok("polar day, polar night and bad input keep their shapes");
 
-// ── 3. The Calendar reads THIS solver, and the old estimate has not come back under its name ──
-const cal = fs.readFileSync(path.join(ROOT, "lib/Calendar.jsx"), "utf8");
-if (!/import \{[^}]*\bsunRiseSet\b[^}]*\} from "\.\/conditionsScore(\.js)?"/.test(cal)) fail("lib/Calendar.jsx does not import sunRiseSet from ./conditionsScore.js — its Daylight line is reading something else");
-if (!/\bsunRiseSet\(/.test(cal)) fail("lib/Calendar.jsx never calls sunRiseSet — its Daylight line is estimating again");
+// ── 3. The old estimate has not come back under its name ──────────────────────────────────
+// The Calendar's Daylight line, the solver's one reader, was removed with its "Plan the day" panel
+// (owner note, 2026-11-25). The solver stays, held to the ephemeris, for the next screen that
+// prints a sunrise; until one does, nothing in the app calls it and section 3 checks only the name.
 // src/components/ too: App's render moved there (PR61), and a sunTimes declared in a component would
 // otherwise pass unseen. componentFiles walks lib/ and src/components/; .mjs in lib/ is kept as before.
 const APP = [...new Set(["ClimbMatch.jsx", "ClimbMatchCore.jsx", "RouteDetail.jsx", "EnrichmentPanels.jsx", ...fs.readdirSync(path.join(ROOT, "lib")).filter((f) => /\.(jsx?|mjs)$/.test(f)).map((f) => "lib/" + f), ...componentFiles(ROOT, { js: true, guard: "check:sun-times" })])];
@@ -100,9 +100,9 @@ for (const f of APP) {
   const src = fs.readFileSync(path.join(ROOT, f), "utf8");
   // A FUNCTION named sunTimes. Not any binding: scoreForecast keeps a plain map called sunTimes
   // (the forecast's own rise/set per date), which is a value, not an estimate.
-  if (/\bfunction\s+sunTimes\s*\(|\b(?:const|let|var)\s+sunTimes\s*=\s*(?:function\b|\(|[A-Za-z_$][\w$]*\s*=>)/.test(src)) fail(`${f} declares a sunTimes function — the noon ± half-day estimate's name is back; the Calendar must read sunRiseSet`);
+  if (/\bfunction\s+sunTimes\s*\(|\b(?:const|let|var)\s+sunTimes\s*=\s*(?:function\b|\(|[A-Za-z_$][\w$]*\s*=>)/.test(src)) fail(`${f} declares a sunTimes function — the noon ± half-day estimate's name is back; read sunRiseSet`);
 }
-if (failures === 0) ok("the Calendar calls sunRiseSet, and no app file declares a sunTimes of its own");
+if (failures === 0) ok("no app file declares a sunTimes of its own");
 
 if (failures) { console.log(`\ncheck:sun-times: ${failures} failure(s)`); process.exit(1); }
 console.log("ok — check:sun-times");

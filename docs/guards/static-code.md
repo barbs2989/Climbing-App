@@ -1297,7 +1297,7 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     tile and Chevron's doc comment). (2) Every `<Chevron open={live value}>` sits in a control (the
     nearest `<button` / `clickable(` before it) that carries `aria-expanded` — a dropdown that does
     not say it is one escapes rule 1, and the 19 found were the smallest drawn (Calendar's "Plan the
-    day", the area tree's 38px expanders, the crew-member chip, a list's state groups, the hourly
+    day", since removed, the area tree's 38px expanders, the crew-member chip, a list's state groups, the hourly
     forecast, "Show N earlier comments"). A literal `open={true|false}` is a go-there arrow.
   - **Why the drawing and not only #2909's slop**: the slop widens a small control's touch area only
     where nothing else is nearer, and a tap between two stacked toggles TIES and goes to nobody;
@@ -1314,5 +1314,6 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     `scripts/oneoff/probe-dropdowns.mjs` (hand-run, quiet box) measures every dropdown in Chrome on
     every tab, the seed and four real DB routes and every overlay, AND clicks each at its centre to
     prove it opens there.
-  - **Injection-tested**: dropping `aria-expanded` from Calendar's "Plan the day" fails rule 2;
+  - **Injection-tested**: dropping `aria-expanded` from Calendar's "Plan the day" failed rule 2
+    (that toggle was removed 2026-11-25; any other Chevron dropdown serves);
     setting FriendsFeed's "Show all" to `minHeight:40` fails rule 1.
