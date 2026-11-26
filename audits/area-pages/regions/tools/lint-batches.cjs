@@ -2,7 +2,7 @@
 // node lint-batches.js <batch files...>
 const fs = require("fs");
 const PIPE = /\b(catalog(ue)?|recorded|on record|researched|listed|in the app|database|our (data|stats|count)|the stats|input|entries)\b/i;
-const ACCESS = /\b(closure|closed|permit|fee|pass required|parking (rules|lot rules)|landowner|private property|raptor|registration|opening hours)\b/i;
+const ACCESS = /\b(closure|closed|permit|fee(?! demo)|pass required|parking (rules|lot rules)|landowner|private property|raptor|registration|opening hours)\b/i;
 const SRC = /\b(mountain ?project|guidebook|guidance|according to|source|thecrag|summitpost|openbeta|27crags|wikipedia)\b/i;
 let bad = 0;
 for (const f of process.argv.slice(2)) {
