@@ -67,8 +67,13 @@ profile can also open as `FullProfile` and `Resume` overlays from anywhere (part
   two pickers, *Lead* and *Follow*, written by one `put(lead, follow)` into the stored shape: lead set → `grade` is the lead
   grade, `role` "lead", and `climb_grades[k].follow` holds the harder grade they will follow (only when given); follow
   only → `grade` is the followed grade and `role` "follow", no `follow` key; neither → the entry is deleted. Boulder keeps one
-  picker. `profileGradeRows` returns `follow` beside `grade` and `role`, and `gradeRoleText(g)` prints the role with it
-  (*leads · follows 5.11b*) on a climber's profile, the Profile tab and the editor's *How climbers will see you* line;
+  picker. `profileGradeRows` returns `follow` beside `grade` and `role`. The Profile tab's *At a glance* and a climber's
+  *Hardest grades* draw them as ONE grid, `src/components/ProfileGradeGrid.tsx`: a row per discipline under **Leads** and
+  **Follows** column headers, the layout of Mountain Project's partner profile (owner 2026-11-25: the old tile — a bare
+  5.10b over *Sport · leads · follows 5.10d* — made it "hard to tell what your grade is for leading and following"). A
+  follow-only row shows a dash under Leads; a leader with no follow grade, a dash under Follows; Boulder's one grade spans
+  both. `gradeRoleText(g)` names every grade by its role (*leads 5.10b, follows 5.10d* · *follows WI3, doesn’t lead*) for
+  the grid's screen-reader line and the editor's *How climbers will see you* line;
   `profileDiscGrades` (rows, résumé, share card) stays the lead-or-only grade. Match % scores the lead grade and ignores
   `follow` (docs/codebase/algorithms.md).
 - **Add a photo from Profile**: with no photo, the Profile header's avatar carries a **+** and opens the photo picker itself
