@@ -12,7 +12,7 @@ import RealClimberRow from "./RealClimberRow.tsx";
 import EmptyState from "./EmptyState.tsx";
 import ListMeOnRouteBox, { routeListingWindow } from "./ListMeOnRouteBox.tsx";
 import type { MyRouteListing } from "./ListMeOnRouteBox.tsx";
-import type { Dispatch, SetStateAction } from "react";
+import type { Dispatch, SetStateAction, ReactNode } from "react";
 import type { PartnerRow, RealClimberRowProps, ReliabilityRecord } from "./RealClimberRow.tsx";
 
 /** Anyone the buttons act on: an example climber or a real profile projected to the same shape. */
@@ -94,6 +94,8 @@ export interface RoutePartnersTabProps {
   discoverable?: boolean;
   onOpenPrivacy?: (() => void) | null;
   notify?: (msg: string) => void;
+  /** PARTNER REQUIREMENTS (App builds it), drawn under Current crews and above the climbers. */
+  requirements?: ReactNode;
 }
 
 /* tab==="partners"? — the body of that branch of RouteDetail, lifted verbatim by extract-from-parent.mjs (branch mode);
@@ -102,7 +104,7 @@ export interface RoutePartnersTabProps {
    offered "2 spots open · Sep 12" on Baker's North Ridge in November (partner walk, 2026-11-18). An undated crew stays. */
 function upcoming(oc: { date?: string | null }): boolean { if (!oc.date) return true; const t0 = new Date(); t0.setHours(0, 0, 0, 0); return new Date(oc.date + "T12:00:00") >= t0; }
 
-export default function RoutePartnersTab({_listedHere,_raRes,areaLimit,_rpObj,_rpRes,areaPartners,cragOnly,crewsExpand,dbCrews,friendState,mtn,onConnect,onFindPartners,onFindPartnersInArea,onListMe,onPlan,onRequestJoin,onResume,onViewProfile,partners,partnersExpand,realPartners,requested,route,savedNote,setCrewsExpand,setPartnersExpand,who,noun,crewsUnavailable,myCrewsHere,onOpenCrew,onStartCrew,onStartSession,myRouteListings,routeListingsError,routeListingsLoading,discoverable,onOpenPrivacy,notify}: RoutePartnersTabProps){
+export default function RoutePartnersTab({_listedHere,_raRes,areaLimit,_rpObj,_rpRes,areaPartners,cragOnly,crewsExpand,dbCrews,friendState,mtn,onConnect,onFindPartners,onFindPartnersInArea,onListMe,onPlan,onRequestJoin,onResume,onViewProfile,partners,partnersExpand,realPartners,requested,route,savedNote,setCrewsExpand,setPartnersExpand,who,noun,crewsUnavailable,myCrewsHere,onOpenCrew,onStartCrew,onStartSession,myRouteListings,routeListingsError,routeListingsLoading,discoverable,onOpenPrivacy,notify,requirements}: RoutePartnersTabProps){
   /* Level and years (partner_signals) and public climbs / vouches (partner_counts, 0460/0463) for this tab's real cards, one read each. Unknown leaves the line or chip out. */
   const [crewOrder,setCrewOrder]=useState("soon");
   /* One id once: a climber can be in both lists. */const _ids=Array.from(new Set((realPartners||[]).concat(areaPartners||[]).map(function(p){return p.id;})));
@@ -157,6 +159,7 @@ export default function RoutePartnersTab({_listedHere,_raRes,areaLimit,_rpObj,_r
           {crewsUnavailable?<div style={{fontSize:12,color:C.amber,lineHeight:1.5,padding:"2px 2px 9px"}}>Couldn’t load the crews forming here — check your connection and try again.</div>:(!mine.length&&!openHere.length?<div style={{fontSize:12,color:C.textMuted,lineHeight:1.5,padding:"2px 2px 9px"}}>No crews are forming here yet.</div>:null)}
           {startCrew?<button type="button" onClick={startCrew} style={{...BTN,width:"100%",minHeight:44,...SOLID_FILL(C),color:C.onSolid,border:"1px solid "+C.actionSolid}}>{_sessionOk?"Start a crew at "+_an:"Start a crew"}</button>:(USE_DB&&!who?<div style={{fontSize:12,color:C.textMuted,lineHeight:1.5,padding:"2px"}}>Sign in to start a crew.</div>:null)}
         </div>
+        {requirements||null}
         {cragOnly?<div>
           {/* A CRAG route (0300): partners are the climbers listed at this crag, inside it, or across a wider area that contains it — found by AREA, never by this one route. */}
           <SL>{"Climbers at "+_an}</SL>

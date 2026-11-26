@@ -13,6 +13,7 @@ import { useMyContributionStanding, useIsAdmin } from "../../lib/db";
 import { ConfidenceCtx, ConfChip } from "../../lib/confidence.jsx";
 import { _rapEdited, fmtRappels } from "../../lib/rappelEdits.js";
 import { ROAD_KEYS, ACCESS_KEYS, TIMING_KEYS, CROWDS_KEYS, PARTNER_KEYS, SEASONAL_KEYS, EMERGENCY_KEYS, LOGISTICS_KEYS, CLIMATE_KEYS, SEASHAZ_KEYS, cleanMonths, MONTH_NAMES } from "../../lib/objKeys.js";
+import { splitSkillList } from "../../lib/requiredSkills.js";
 import { fmtSlingVal } from "../../lib/slingFormat.js";
 import { tripTrailheadDraft, viaPitchSpans, spanLabel, tripTrailheadMerge } from "../../lib/approaches.js";
 import { ROCK_OPTIONS, routeRock } from "../../lib/rockType";
@@ -791,8 +792,11 @@ export default function SuggestFix({route,onClose,onSubmit,onLog,scrollTo,pendin
    derives the summit time as totalHrs-approachTimeHrs-descentTimeHrs — so a string would
    concatenate instead of subtract, silently. Non-numeric input is dropped rather than stored
    as text, because a bad number is worse here than a missing one: the tile still renders.
-   group_limit keeps its integer parse, now declared on the key rather than hardcoded here. */
-const _pv=(k[3]==="num")?(isFinite(parseFloat(v))?parseFloat(v):undefined):(k[3]==="enum")?((k[4]||[]).some(function(o){return typeof o[0]==="number";})?(isFinite(parseFloat(v))?parseFloat(v):undefined):v):((k[0]==="group_limit"&&/^[0-9]+$/.test(v))?parseInt(v,10):v);if(_pv===undefined)return;/* dotted keys write nested, so `fitnessSpec.hiking` lands inside the object the panel reads */if(String(k[0]).indexOf(".")>=0){_o=_dset(_o,k[0],_pv);}else{_o[k[0]]=_pv;}});return _o;}if(CANON[f.k])return CANON[f.k](filledStr(f));return filledStr(f);};
+   group_limit keeps its integer parse, now declared on the key rather than hardcoded here.
+   A key marked "list" merges back as an ARRAY (partner_requirements.requiredSkills is a list of
+   phrases on every stored row): a typed "crevasse rescue, running belays" stored as one string
+   crashed the Find tab's PARTNER REQUIREMENTS panel, which maps over the list (audit 2026-11-26). */
+const _pv=(k[3]==="list")?(splitSkillList(v).length?splitSkillList(v):undefined):(k[3]==="num")?(isFinite(parseFloat(v))?parseFloat(v):undefined):(k[3]==="enum")?((k[4]||[]).some(function(o){return typeof o[0]==="number";})?(isFinite(parseFloat(v))?parseFloat(v):undefined):v):((k[0]==="group_limit"&&/^[0-9]+$/.test(v))?parseInt(v,10):v);if(_pv===undefined)return;/* dotted keys write nested, so `fitnessSpec.hiking` lands inside the object the panel reads */if(String(k[0]).indexOf(".")>=0){_o=_dset(_o,k[0],_pv);}else{_o[k[0]]=_pv;}});return _o;}if(CANON[f.k])return CANON[f.k](filledStr(f));return filledStr(f);};
   const submit=function(){const dc=discContribs();if(!changedFields.length&&!dc.length)return;changedFields.forEach(function(f){const c={type:"edit",field:f.k,label:f.label,value:structuredVal(f),wasEmpty:(!f.cur||f.cur==="—"),routeId:route.id,note:note,title:route.name,area:mtnOf(route),meta:f.label+": "+(f.cur||"—")+" → "+filledStr(f),status:"review",when:"just now"};if(onSubmit)onSubmit(c);});dc.forEach(function(c){if(onSubmit)onSubmit(c);});setSentN(changedFields.length+dc.length);setSent(true);};
   const _removals=changedFields.filter(function(f){const pg=REMOVABLE_LISTS[f.k];return !!pg&&editRemoves(pg(route),structuredVal(f));});const _needWhy=_removals.length>0&&note.trim().length<10;const totalUpdates=changedFields.length+(discChanged?(disc==="trad"||disc==="sport"?2:1):0);const canSubmit=totalUpdates>0&&!_needWhy;
   const submitLbl=_needWhy?"Say why you’re removing it":!canSubmit?"Fill in any one field to submit":totalUpdates>1?("Submit "+totalUpdates+" updates"):(allEmpty&&!discChanged?"Add to "+climbNoun(route):"Submit update");
