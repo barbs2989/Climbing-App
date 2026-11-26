@@ -34,6 +34,7 @@
 //   node scripts/oneoff/probe-ten-climbers-find-partners-and-crews.mjs [--ui <shot-dir>] [--json out.json]
 import { SUPABASE_URL, anonKey, requireServiceKey } from "../lib/supabase-env.mjs";
 import fs from "node:fs";
+import { assertQuietBox } from "../lib/quiet-box.mjs";
 
 const DOMAIN = "climbmatch-qa.invalid";
 const CRAG = "ut_hellgate_cliffs", CANYON = "ut_little_cottonwood_canyon", RANGE = "ut_wasatch_range";
@@ -217,6 +218,7 @@ async function main() {
 
 // A LOCAL dev server only: test credentials never go into the live site.
 async function uiWalk(Ana, hell) {
+  assertQuietBox("probe-ten-climbers-find-partners-and-crews.mjs");
   console.log("\n8. The screens, signed in as Ana on a local dev server (390px)");
   const { chromium } = await import("playwright-core");
   const { spawn } = await import("node:child_process");
