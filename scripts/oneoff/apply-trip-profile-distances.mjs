@@ -19,7 +19,10 @@ const dry = args.includes("--dry");
 const pi = args.indexOf("--pace");
 const PACE = pi >= 0 ? Number(args[pi + 1]) : 1000;
 const ri = args.indexOf("--report");
-const files = args.filter((a, i) => !a.startsWith("--") && !(pi >= 0 && i === pi + 1) && !(ri >= 0 && i === ri + 1));
+const xi = args.indexOf("--reject");
+const files = args.filter((a, i) => !a.startsWith("--") && !(pi >= 0 && i === pi + 1) && !(ri >= 0 && i === ri + 1) && !(xi >= 0 && i === xi + 1));
+// A reviewed result we decided not to apply (REJECTED.json): every waypoint of a route whose id contains `match`.
+const REJECT = xi >= 0 ? JSON.parse(fs.readFileSync(args[xi + 1], "utf8")).rejected : [];
 const key = requireServiceKey();
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 const R = 6371000, rad = (d) => (d * Math.PI) / 180;
@@ -33,6 +36,8 @@ const rollback = [];
 const rbFile = path.join("scripts", `rollback-trip-profile-distances-${Date.now()}.json`);
 for (const it of items) {
   if (!it || !it.id || !Array.isArray(it.waypoints) || !it.waypoints.length) continue;
+  const rj = REJECT.find((x) => it.id.includes(x.match));
+  if (rj) { report.refused.push({ id: it.id, why: "reviewed and rejected: " + rj.why }); continue; }
   const t0 = Date.now();
   const [row] = await selectAll("routes", "id,waypoints", `id=eq.${it.id}`, { key, pageSize: 10 });
   if (Date.now() - t0 > 10000) { console.error(`read of ${it.id} took ${Date.now() - t0} ms — database slow, stopping`); break; }
