@@ -16,8 +16,8 @@
   states as two-column cards with their climb counts, A to Z (the look of `StatePicker`’s phone cards), and below a
   state the Climbs area page’s own sub-area list (`AreaChildrenList`: every child that holds climbs, A to Z, the same
   Sort, one line a row: name, total climbs, an open arrow). Walking the page ranks nothing; See rankings does, and
-  so do a search hit (`GroupPlaceSearch` → `useCatalogAreaSearch`, signed in only) and a *Your areas* chip (the
-  climber’s partner listings, `useMyPartnerAreas`). **Back to rankings** leaves it unchanged; on a phone the top bar
+  so does a search hit (`GroupPlaceSearch` → `useCatalogAreaSearch`, signed in only). There is no *Your areas*
+  chip row (the climber’s partner listings): the owner had it removed, 2026-11-25. **Back to rankings** leaves it unchanged; on a phone the top bar
   draws that Back (`data-cm-step-back`). Each step starts at the top with the area’s name in focus. *All countries*
   ranks nothing, so it has no See rankings. A failed children read says so rather than drawing an area with nothing
   inside; a wall with nothing inside says that, and keeps its path. Signed out it walks the seed tree, with no search.
