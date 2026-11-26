@@ -40,6 +40,17 @@ whole guide feature on 2026-11-14 (owner). This doc covers the partners mode (`l
 - **Distance defaults to Anywhere in EVERY mode** (owner 2026-11-24, choosing it over the walkthrough rule of 2026-11-14 that kept
   *Near my zip* the default for Everyone and My objectives): with a zip on file Everyone shrank to *within 50 mi*, and a climber
   who saved a zip from the card watched the list they were reading go from 3 climbers to 1. A radius of your zip is one pick away in every mode.
+- **A newcomer opens on Everyone, nearest first** (owner note 2026-11-26: "Go through trying to find a partner like you are new to the app"):
+  My climbs & areas searches the places you listed or saved and the climbs you saved, so a climber with none of the three could only
+  open on an empty card — and Home's *Find partners* and onboarding's last step both land there. Signed in, once the listings and
+  objectives have answered (never on a failed read) and with no saved area, such a climber opens on **Everyone** (`autoEveryone` in
+  `lib/PartnerSearch.jsx`), whose line under the buttons then says why and points to *My areas*; it returns to My climbs & areas the
+  moment they have a place or an objective, unless they picked a choice themselves (`modeTouched`). And **Everyone at Anywhere, with a
+  zip on file, is nearest first**: it also asks `partners_near` across its widest reach (500 mi), so those climbers lead, carrying their
+  distance, then every other listed climber, each once (before, Everyone was the first 24 rows of `profiles` in table order, with no
+  distance). Sort opens on *Nearest* there until the climber picks one; every other list still opens on *Best match*. The list waits
+  for both reads. The walk is `scripts/oneoff/probe-new-climber-finds-a-partner.mjs` (one throwaway account through onboarding and
+  every Find partners choice, deleted at the end).
 - **Area search finds every state** (the Listed areas search behind *My areas*, and Pick an area, whose box now sits above the state dropdowns): partial names,
   mt/mount, apostrophes, climber nicknames (`PLACE_NICKNAMES` in lib/search.js: rrg, jtree, nrg, hcr, lcc, bcc, shawangunks) and, when
   nothing matched, typos via `search_names_fuzzy` ("closest names"). Audit 2026-11-14 (`scripts/oneoff/audit-area-search.mjs`): 67/67
