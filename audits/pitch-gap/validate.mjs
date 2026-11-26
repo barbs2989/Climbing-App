@@ -24,7 +24,7 @@ for (const f of process.argv.slice(2)) {
     const pd = e.pitch_detail || [];
     for (const p of pd) if (!String(p.notes || "").trim()) say(`${id}: pitch ${p.pitch} has no notes`);
     // the app names no source (owner rule): no "the text", book, author or site in anything that renders
-    const SRC = /\b(the text|the source|guide ?book|the book|the author|the description|according to|mountain ?project|summitpost|reportedly|reporter|the party(?! ledge))\b|\b(?:we|our|I|my|us)\b/i;
+    const SRC = /\b(the text|the source|guide ?book|the book|the author|the description|according to|mountain ?project|summitpost|the mountaineers|supertopo|thecrag|reportedly|reporter|the party(?! ledge))\b|\b(?:we|our|I|my|us)\b/i;
     for (const p of [...pd, ...(e.rappel_detail || [])]) for (const v of Object.values(p)) if (typeof v === "string" && SRC.test(v)) say(`${id}: names a source: "${v.match(SRC)[0]}"`);
     for (const p of e.rappel_detail || []) if (!String(p.notes || p.station || "").trim()) say(`${id}: rappel ${p.n} empty`);
     if (pd.length >= 3 && c.row.grade && pd.every((p) => p.grade === c.row.grade)) say(`${id}: every pitch carries the route grade ${c.row.grade}`);
