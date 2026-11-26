@@ -39,6 +39,7 @@ import { RouteProposalQueue, AreaProposalQueue, AreaPlacementQueue } from "../li
 import { AppFeedbackQueue } from "../lib/AppFeedback";
 import { C, DLOCALE, sameEditValue } from "../ClimbMatchCore";
 import { AREA_EDIT_FIELDS } from "../lib/areaFields";
+import { safeHref } from "../lib/safeUrl.js";
 
 const BASE = import.meta.env.BASE_URL;
 const NONE = [];
@@ -135,11 +136,11 @@ export default function ReviewDesk() {
     <header style={{ display: "flex", alignItems: "baseline", gap: 12, flexWrap: "wrap", marginBottom: 12 }}>
       <h1 style={{ fontSize: 20, margin: 0 }}>Review desk</h1>
       <span style={{ fontSize: 12.5, color: C.textMuted }}>Climber flags, suggested edits and wall orders, proposed climbs and areas, wrong place claims, submitted trails and GPS tracks, accessibility reports, and feedback. Edits, flags and proposals are researched by AI every hour: what two independent sources settle it decides for you (each decision is on History, where you can take it back); the rest is marked Needs you. Everything else waits for you.</span>
-      <a href={BASE} style={{ marginLeft: "auto", color: C.blue, fontSize: 12.5, fontWeight: 700, textDecoration: "none" }}>Open ClimbMatch →</a>
+      <a href={safeHref(BASE)} style={{ marginLeft: "auto", color: C.blue, fontSize: 12.5, fontWeight: 700, textDecoration: "none" }}>Open ClimbMatch →</a>
     </header>{body}</div>;
   if (!supabase) return page(<p>This build has no database connection.</p>);
   if (loading || (user && admin.isLoading)) return page(<p style={{ color: C.textMuted }}>Checking who is signed in…</p>);
-  if (!user) return page(<p>Sign in on <a href={BASE} style={{ color: C.blue }}>ClimbMatch</a> with the owner account, then reload this page.</p>);
+  if (!user) return page(<p>Sign in on <a href={safeHref(BASE)} style={{ color: C.blue }}>ClimbMatch</a> with the owner account, then reload this page.</p>);
   if (admin.error) return page(<p role="alert" style={{ color: C.red }}>Could not check your account — {admin.error.message}. Reload to try again.</p>);
   if (!admin.data || !admin.data.reviewer) return page(<p>Owner and reviewers only. This account cannot review edits.</p>);
   return page(<Desk admin={admin.data.admin} />);
@@ -501,7 +502,7 @@ function Detail({ row: r, busy, act, admin, keyCmd }) {
       {needsOwner(ai) && ai.auto_note ? <p style={{ margin: "6px 0", color: C.amber, fontWeight: 700 }}>Left for you: {ai.auto_note}</p> : null}
       <p style={{ margin: "6px 0", color: C.text }}>{ai.reasoning}</p>
       {(ai.sources || []).length ? <ol style={{ margin: 0, paddingLeft: 20, color: C.textSub }}>{ai.sources.map((s, i) => <li key={i} style={{ marginBottom: 4 }}>
-        <a href={s.url} target="_blank" rel="noopener noreferrer" style={{ color: C.blue }}>{s.title || s.url}</a>{s.official ? <span style={{ color: C.green, fontWeight: 700 }}> · official</span> : null}
+        <a href={safeHref(s.url)} target="_blank" rel="noopener noreferrer" style={{ color: C.blue }}>{s.title || s.url}</a>{s.official ? <span style={{ color: C.green, fontWeight: 700 }}> · official</span> : null}
         {s.quote ? <div style={{ fontStyle: "italic" }}>“{s.quote}”</div> : null}
       </li>)}</ol> : <div style={{ color: C.textMuted }}>No sources found.</div>}
     </div> : <div style={{ fontSize: 12.5, color: C.textMuted }}>The AI has not checked this one yet; it runs nightly.</div>}
@@ -534,7 +535,7 @@ function Detail({ row: r, busy, act, admin, keyCmd }) {
         <button className="rd-btn rd-ok" disabled={busy} onClick={() => act(r, () => resolveRouteFlag(r.ids[0], "fixed", note), "marked fixed; the reporter was thanked.")}>{busy ? "Working…" : "Fixed it"}</button>
         <button className="rd-btn" disabled={busy} onClick={() => act(r, () => resolveRouteFlag(r.ids[0], "dismissed", note || (ai && ai.verdict === "disagree" ? ai.reasoning.slice(0, 400) : "")), "dismissed; the reporter was told.")}>No change needed</button>
       </>}
-      {routeHref ? <a href={routeHref} target="_blank" rel="noopener noreferrer" style={{ color: C.blue, fontSize: 12.5, fontWeight: 700, marginLeft: "auto" }}>Open route in ClimbMatch ↗</a> : null}
+      {routeHref ? <a href={safeHref(routeHref)} target="_blank" rel="noopener noreferrer" style={{ color: C.blue, fontSize: 12.5, fontWeight: 700, marginLeft: "auto" }}>Open route in ClimbMatch ↗</a> : null}
     </div>}
   </div>;
 }

@@ -9,9 +9,10 @@
 // review-assets/ so the service worker's per-deploy /assets/ prune and precache never see them.
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
+import { cspPlugin } from "./scripts/lib/vite-csp.mjs";
 
 export default defineConfig({
-  plugins: [react()],
+  plugins: [react(), cspPlugin()],
   base: "/Climbing-App/",
   build: {
     outDir: "dist",

@@ -17,6 +17,7 @@ import {
 } from "../lib/db";
 import { ContributorStandingQueue } from "../lib/RouteQualityQueues";
 import { C, DLOCALE } from "../ClimbMatchCore";
+import { safeHref } from "../lib/safeUrl.js";
 
 const BASE = import.meta.env.BASE_URL;
 const isPrim = (v) => v == null || typeof v !== "object";
@@ -28,7 +29,7 @@ const who = (p, id) => (p ? (p.show_name === false && p.username ? "@" + p.usern
 const box = { whiteSpace: "pre-wrap", wordBreak: "break-word", fontSize: 12.5, lineHeight: 1.5, border: "1px solid " + C.border, borderRadius: 8, padding: "7px 9px", maxHeight: 240, overflowY: "auto", background: C.surface, color: C.textSub };
 const Err = ({ e, what }) => e ? <div role="alert" style={{ color: C.red, fontSize: 13, margin: "8px 0" }}>Could not load {what} — {e.message}. This is not a report that there are none.</div> : null;
 const Msg = ({ m }) => m ? <div role={m.ok ? "status" : "alert"} style={{ background: m.ok ? C.greenBg : C.redBg, color: m.ok ? C.green : C.red, border: "1px solid " + (m.ok ? C.greenDim : C.red), borderRadius: 9, padding: "9px 11px", fontSize: 12.5, margin: "8px 0" }}>{m.text}</div> : null;
-const routeLink = (id) => <a href={BASE + "?route=" + encodeURIComponent(id)} target="_blank" rel="noopener noreferrer" style={{ color: C.blue, fontWeight: 700, textDecoration: "none" }}>open ↗</a>;
+const routeLink = (id) => <a href={safeHref(BASE + "?route=" + encodeURIComponent(id))} target="_blank" rel="noopener noreferrer" style={{ color: C.blue, fontWeight: 700, textDecoration: "none" }}>open ↗</a>;
 function useAct() {
   const [busy, setBusy] = useState(null), [msg, setMsg] = useState(null);
   const act = async (key, fn, ok) => { setBusy(key); setMsg(null); try { await fn(); setMsg({ ok: true, text: ok }); return true; } catch (e) { setMsg({ ok: false, text: (e && e.message) || "That did not go through." }); return false; } finally { setBusy(null); } };
@@ -290,8 +291,8 @@ export function BasePinsSection({ notify }) {
         const rt = byId[r.route_id], p = r.previous || {};
         return <tr key={r.id}><td style={{ whiteSpace: "nowrap" }}>{day(r.created_at)}<div style={{ color: C.textMuted, fontSize: 11.5 }}>{ago(r.created_at)} ago</div></td>
           <td><b>{rt ? rt.name : r.route_id}</b> {routeLink(r.route_id)}{rt && rt.location ? <div style={{ color: C.textSub, fontSize: 12 }}>{clip(rt.location, 200)}</div> : null}</td>
-          <td><a href={mapsAt(r.lat, r.lng)} target="_blank" rel="noopener noreferrer" style={{ color: C.blue }}>{ll(r.lat, r.lng)}</a><div style={{ color: C.textSub, fontSize: 12 }}>{r.climbers} of {r.total} climber{r.total === 1 ? "" : "s"} who checked in</div></td>
-          <td>{p.lat != null && p.lng != null ? <a href={mapsAt(p.lat, p.lng)} target="_blank" rel="noopener noreferrer" style={{ color: C.blue }}>{ll(p.lat, p.lng)}</a> : "none"}<div style={{ color: C.textSub, fontSize: 12 }}>{r.moved_m != null ? Math.round(r.moved_m) + " m away" : ""}{p.name ? " · " + clip(p.name, 60) : ""}</div></td>
+          <td><a href={safeHref(mapsAt(r.lat, r.lng))} target="_blank" rel="noopener noreferrer" style={{ color: C.blue }}>{ll(r.lat, r.lng)}</a><div style={{ color: C.textSub, fontSize: 12 }}>{r.climbers} of {r.total} climber{r.total === 1 ? "" : "s"} who checked in</div></td>
+          <td>{p.lat != null && p.lng != null ? <a href={safeHref(mapsAt(p.lat, p.lng))} target="_blank" rel="noopener noreferrer" style={{ color: C.blue }}>{ll(p.lat, p.lng)}</a> : "none"}<div style={{ color: C.textSub, fontSize: 12 }}>{r.moved_m != null ? Math.round(r.moved_m) + " m away" : ""}{p.name ? " · " + clip(p.name, 60) : ""}</div></td>
           <td style={{ minWidth: 170 }}><div style={{ display: "grid", gap: 4 }}>
             <button className="rd-btn rd-ok" disabled={!!busy} onClick={() => decide(r, true)}>{busy === r.id ? "Working…" : "Move the pin here"}</button>
             <button className="rd-btn" disabled={!!busy} onClick={() => decide(r, false)}>Keep the pin on file</button></div></td></tr>;

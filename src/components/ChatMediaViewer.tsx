@@ -3,6 +3,7 @@ import { createPortal } from "react-dom";
 import { C, photoAlt } from "../../ClimbMatchCore.jsx";
 import { POP_CLOSE_MEDIA } from "../../lib/popupChrome.js";
 import TopoZoomPhoto from "./TopoZoomPhoto.tsx";
+import { safeHref } from "../../lib/safeUrl.js";
 
 /** A photo or video sent in a chat, opened full screen. */
 export interface ChatMedia {
@@ -45,7 +46,7 @@ export default function ChatMediaViewer({ media, onClose }: ChatMediaViewerProps
           {media.by ? <div style={{ fontWeight: 700 }}>{what + " from " + media.by}</div> : null}
           {desc ? <div style={{ opacity: 0.85, overflowWrap: "anywhere" }}>{desc}</div> : null}
         </div>
-        <a href={media.src} download={video ? "climbmatch-video" : "climbmatch-photo"} target="_blank" rel="noreferrer" style={{ flexShrink: 0, minHeight: 40, display: "inline-flex", alignItems: "center", padding: "0 14px", borderRadius: 9, border: "1px solid " + C.blue, background: C.blueBg, color: C.onSolid, fontWeight: 700, textDecoration: "none" }}>{"Save"}</a>
+        <a href={safeHref(media.src)} download={video ? "climbmatch-video" : "climbmatch-photo"} target="_blank" rel="noreferrer" style={{ flexShrink: 0, minHeight: 40, display: "inline-flex", alignItems: "center", padding: "0 14px", borderRadius: 9, border: "1px solid " + C.blue, background: C.blueBg, color: C.onSolid, fontWeight: 700, textDecoration: "none" }}>{"Save"}</a>
       </div>
       <button onClick={onClose} style={Object.assign({}, POP_CLOSE_MEDIA, { position: "absolute", top: 16, right: 16 })} aria-label={"Close " + what.toLowerCase()}>{"✕"}</button>
     </div>

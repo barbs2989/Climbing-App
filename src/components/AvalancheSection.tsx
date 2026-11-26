@@ -4,6 +4,7 @@ import { fetchAvyMap, zoneFor, avyReading, fetchAvyProduct, DANGER_NAME } from "
 import CardHead from "./CardHead.tsx";
 import { HEAD, MUTED, RETRY } from "../../lib/alpineConditionsShared.js";
 import LoadingRows from "./LoadingRows.tsx";
+import { safeHref } from "../../lib/safeUrl.js";
 
 const dangerCol = function (d: number) { return d >= 4 ? C.red : d === 3 ? C.orange : d === 2 ? C.yellow : C.green; };
 /* AVALANCHE TODAY. Off season, no rating published, outside every zone and a failed read are four
@@ -29,7 +30,7 @@ export default function AvalancheSection({ pt }: AvalancheSectionProps) {
   const head = <CardHead style={HEAD}>Avalanche today</CardHead>;
   if (!st) return <div aria-busy="true">{head}<LoadingRows C={C} label="Loading the avalanche forecast…"/></div>;
   if (st.error) return <div>{head}<div style={{ ...MUTED, color: C.amber }}>Couldn’t load the avalanche forecast. This is not a rating.</div><button onClick={function () { setTries(tries + 1); }} style={RETRY}>Try again</button></div>;
-  const r = st.r, link = r.link ? <a href={r.link} target="_blank" rel="noreferrer" style={{ display: "inline-block", marginTop: 4, color: C.blue, fontSize: 12, fontWeight: 700 }}>Full avalanche forecast ↗</a> : null;
+  const r = st.r, link = r.link ? <a href={safeHref(r.link)} target="_blank" rel="noreferrer" style={{ display: "inline-block", marginTop: 4, color: C.blue, fontSize: 12, fontWeight: 700 }}>Full avalanche forecast ↗</a> : null;
   if (r.kind === "outside") return <div>{head}<div style={MUTED}>This climb is outside the avalanche forecast zones the app reads. That is not a rating — check the local forecast before you go.</div></div>;
   if (r.kind === "off") return <div>{head}<div style={MUTED}>{"No avalanche forecast is being issued for " + (r.zone || "this zone") + " right now (off season). That is not a rating — snow can still slide."}</div>{link}</div>;
   if (r.kind === "none") return <div>{head}<div style={MUTED}>{"No danger rating is published for " + (r.zone || "this zone") + " today. That is not a rating."}</div>{link}</div>;

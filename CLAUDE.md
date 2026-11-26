@@ -53,6 +53,7 @@ npm run check:no-left-stripes # no box wears a thick coloured line down its LEFT
 npm run check:no-purple-text # the app draws NO purple text: C has no purple token, and the few purple MAP marks are an allow-list (owner, 2026-11-25) (in build)
 npm run check:no-nul  # no source file git would treat as BINARY, so diffs stay readable (in build)
 npm run check:no-secrets # no Supabase service key, service_role JWT, or literal anon key / project URL in source (in build)
+npm run check:safe-href # no link can run script: every dynamic href goes through safeHref(), and both builds carry the CSP (in build)
 npm run check:script-roots # no script reads the app files of somebody ELSE's worktree (in build)
 npm run check:dup-attrs # a declaration written TWICE: the later wins, the earlier is dead (in build)
 npm run check:field-outline # every text field (input, textarea, select) is outlined in C.field, never C.border — its outline is what shows where it is, so it needs 3:1 (in build)

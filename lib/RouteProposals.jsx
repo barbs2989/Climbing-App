@@ -19,6 +19,7 @@ import { discLabel } from "./discLabels";
 import { C } from "../ClimbMatchCore";
 import LoadingRows from "../src/components/LoadingRows.tsx";
 import { searchCanon, searchBare } from "./search";
+import { safeHref } from "./safeUrl.js";
 
 // Shown here because a reviewer should see everything the climber wrote, not only the part
 // the schema models. Six of these got real columns in 0131 (prot_rating, start_type, landing,
@@ -102,7 +103,7 @@ function AiNote({ v }) {
     {v.reasoning ? <div style={{ color: C.textSub, marginTop: 2 }}>{v.reasoning}</div> : null}
     {v.verdict !== "agree" && v.ai_value && typeof v.ai_value === "object" && !Array.isArray(v.ai_value) && Object.keys(v.ai_value).length
       ? <div style={{ color: C.textSub, marginTop: 2 }}><b>AI would correct:</b> {Object.keys(v.ai_value).map(function (k) { return k + ": " + (typeof v.ai_value[k] === "object" ? JSON.stringify(v.ai_value[k]) : String(v.ai_value[k])); }).join(" · ")}</div> : null}
-    {src.map(function (s, i) { return <div key={i} style={{ color: C.textMuted, wordBreak: "break-word" }}><a href={s.url} target="_blank" rel="noopener noreferrer" style={{ color: C.blue }}>{s.title || s.url}</a>{s.quote ? " — “" + s.quote + "”" : ""}</div>; })}
+    {src.map(function (s, i) { return <div key={i} style={{ color: C.textMuted, wordBreak: "break-word" }}><a href={safeHref(s.url)} target="_blank" rel="noopener noreferrer" style={{ color: C.blue }}>{s.title || s.url}</a>{s.quote ? " — “" + s.quote + "”" : ""}</div>; })}
   </div>;
 }
 

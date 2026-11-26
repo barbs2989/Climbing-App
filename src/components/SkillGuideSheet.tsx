@@ -3,6 +3,7 @@ import { createPortal } from "react-dom";
 import { C, SKILLS } from "../../ClimbMatchCore.jsx";
 import { POP_CLOSE } from "../../lib/popupChrome.js";
 import { COURSES, GUIDE_DISCLAIMER, TIER_LABEL, skillGuide } from "../../lib/skillGuides.js";
+import { safeHref } from "../../lib/safeUrl.js";
 
 export interface SkillGuideSheetProps {
   /** A SKILLS key with a guide in lib/skillGuides.js. */
@@ -21,7 +22,7 @@ export default function SkillGuideSheet({skillKey, onClose}: SkillGuideSheetProp
   const title = skillKey && skillTable[skillKey] ? skillTable[skillKey].label : "Skill guide";
   const H = {fontSize:11,fontWeight:800,color:C.label,textTransform:"uppercase" as const,letterSpacing:0.6,margin:"14px 0 5px"};
   const linkSt = {display:"block",color:C.blue,fontSize:13.5,lineHeight:1.4,padding:"7px 0",textDecoration:"underline"};
-  const links = (ls: {label: string; url: string}[]) => ls.map(l => <a key={l.url+l.label} href={l.url} target="_blank" rel="noopener noreferrer" style={linkSt}>{l.label}</a>);
+  const links = (ls: {label: string; url: string}[]) => ls.map(l => <a key={l.url+l.label} href={safeHref(l.url)} target="_blank" rel="noopener noreferrer" style={linkSt}>{l.label}</a>);
   const note = <div style={{fontSize:12,color:C.textSub,lineHeight:1.5,background:C.amberBg,border:"1px solid "+C.amber,borderRadius:9,padding:"8px 10px",marginTop:4}}>{GUIDE_DISCLAIMER}</div>;
   const body = guide ? <><div style={{fontSize:12,fontWeight:700,color:guide.tier === "G" ? C.amber : C.textMuted,marginTop:2}}>{TIER_LABEL[guide.tier]+(guide.tier === "G" ? " — learn it from a guide" : "")}</div>
       <div style={{fontSize:14,color:C.text,lineHeight:1.5,marginTop:8}}>{guide.what}</div>

@@ -31,6 +31,7 @@ import { TEXT_TAP, SOLID_FILL } from "./buttonStyles.js";
 import { loadLeaflet, applyBaseLayer, BaseLayerToggle, useFollowMe, locateLabel } from "./mapKit";
 import { useActiveFires, useFirePerimeters, useFireWeather, useHeat, useFireAlert, nwsPointPage, HEAT_MIN_ZOOM, HEAT_HOURS, fmtHoursAgo, useSmokeWindow, smokeHours, smokeTileUrl, fmtSmokeHour, SMOKE_BANDS, SMOKE_MAX_NATIVE_ZOOM, fireColor, fireLevel, fmtAcres, fmtContained, fmtDiscovered, fmtEnds, fmtStarts, zoneInEffect, fireDistMi } from "./fire";
 import LoadingRows from "../src/components/LoadingRows.tsx";
+import { safeHref } from "./safeUrl.js";
 
 const Z = 3000;
 // Continental US, the honest default when we have nothing better to centre on.
@@ -714,7 +715,7 @@ function FireAlertSheet({ zone, onClose, C, locale }) {
                 {d.instruction ? <div><div style={{ fontSize: 11, fontWeight: 700, letterSpacing: 0.5, textTransform: "uppercase", color: C.label, marginBottom: 4 }}>What to do</div><div style={para}>{d.instruction}</div></div> : null}
               </>
             )}
-          <a href={nwsPointPage(zone.pt)} target="_blank" rel="noopener noreferrer" style={{ fontSize: 12, fontWeight: 700, color: C.blue, textDecoration: "none", marginTop: 4 }}>Forecast and alerts for this area on weather.gov →</a>
+          <a href={safeHref(nwsPointPage(zone.pt))} target="_blank" rel="noopener noreferrer" style={{ fontSize: 12, fontWeight: 700, color: C.blue, textDecoration: "none", marginTop: 4 }}>Forecast and alerts for this area on weather.gov →</a>
         </div>
       </div>
     </div>

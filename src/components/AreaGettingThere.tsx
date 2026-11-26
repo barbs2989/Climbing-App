@@ -9,6 +9,7 @@ import { fmtTrailLen, trailLenM } from "../../lib/TrailDrawMap.jsx";
 import { MIN_RECORDED_PTS } from "../../lib/track.js";
 import { useCragParkingAbove } from "../../lib/db";
 import type { C as Palette } from "../../ClimbMatchCore.jsx";
+import { safeHref } from "../../lib/safeUrl.js";
 
 // MapLibre is fetched only when a climber asks for 3D, as on the route and area maps.
 // Named apart from NearMePanel's own lazy Route3DView: the guards read both components as one file's code.
@@ -143,8 +144,8 @@ export default function AreaGettingThere({ area, C, onEdit, flat, trailRoute }: 
       {area.coords_approx ? <div style={{ fontSize: 11.5, color: C.amber, lineHeight: 1.45, marginBottom: 6 }}>Coordinates are approximate, so these are rough.</div> : null}
       {/* The mount above is gated on ["crag", "peak", "wall"].includes(area.area_type) — a drive link is offered only where there is somewhere to park. */}
       <div style={{ display: "flex", gap: 8 }}>
-        <a href={"https://www.google.com/maps/dir/?api=1&travelmode=driving&destination=" + ll} target="_blank" rel="noopener noreferrer" aria-label={"Driving directions to the " + to + " in Google Maps" + (area.coords_approx ? " (approximate location)" : "")} style={linkSt}><ActionIcon name="map" size={15} color={C.green} />Google Maps</a>
-        <a href={"https://maps.apple.com/?dirflg=d&daddr=" + ll} target="_blank" rel="noopener noreferrer" aria-label={"Driving directions to the " + to + " in Apple Maps" + (area.coords_approx ? " (approximate location)" : "")} style={linkSt}><ActionIcon name="map" size={15} color={C.green} />Apple Maps</a>
+        <a href={safeHref("https://www.google.com/maps/dir/?api=1&travelmode=driving&destination=" + ll)} target="_blank" rel="noopener noreferrer" aria-label={"Driving directions to the " + to + " in Google Maps" + (area.coords_approx ? " (approximate location)" : "")} style={linkSt}><ActionIcon name="map" size={15} color={C.green} />Google Maps</a>
+        <a href={safeHref("https://maps.apple.com/?dirflg=d&daddr=" + ll)} target="_blank" rel="noopener noreferrer" aria-label={"Driving directions to the " + to + " in Apple Maps" + (area.coords_approx ? " (approximate location)" : "")} style={linkSt}><ActionIcon name="map" size={15} color={C.green} />Apple Maps</a>
       </div>
     </div> : null}
   </div>;
