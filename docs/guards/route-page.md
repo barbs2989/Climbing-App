@@ -70,6 +70,13 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     never on bouldering. The section renders a sentinel gear beta on each and asserts it appears
     **exactly once**, under "Rack beta". Proven against the pre-fix `RouteDetail.jsx`: 4 failures,
     one per crag discipline, alpine still green.
+  **ONE SEASON section (2026-11-25):** it also asserts the Conditions tab has exactly one SEASON heading, none of
+  SEASONAL GUIDANCE / CLIMATE & SEASON / ROCK & SEASON, the season window printed once (the crag's months on a crag,
+  the route's own on alpine), the climate inside SEASON, no Aspect/Sun/Season facts row, and no score-card "Wall faces".
+  ASPECT & SUN is mounted by App (`condPanels`), which this harness does not pass, so its once-ness is held by the
+  facts-row and "Wall faces" absences plus `check:ui`'s route:Conditions marker. The crag-editor pencils for season
+  and aspect cannot be clicked under static render; the check reads their wiring (`seasonEdit`, the `#aspect` autoFix
+  branch) from RouteDetail.jsx.
 - **`check:approach-section`** renders the real `RouteDetail` and pins that the Plan tab has
   **one** APPROACH section. There used to be two: "APPROACHES · N ways in" (`approach_variants`)
   and, under it, a separate APPROACH box holding the `approach` paragraph, which read as a third
