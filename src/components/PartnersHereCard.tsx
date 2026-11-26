@@ -1,5 +1,5 @@
 import { tx } from "../../lib/tapWords.js";
-import { usePartnerAreaCount, usePartnersInArea, removePartnerArea, addPartnerArea, useCragRegular, useMyBlocked, useMatchObjectivesOfUsers } from "../../lib/db";
+import { usePartnerAreaCount, usePartnersInArea, removePartnerArea, addPartnerArea, useCragRegular, useMyBlocked, useMatchObjectivesOfUsers, usePartnerAreasOfUsers } from "../../lib/db";
 import { useState, useEffect } from "react";
 import Chevron from "./Chevron.tsx";
 import Av from "./Av.tsx";
@@ -56,13 +56,16 @@ export default function PartnersHereCard({ area, C, uid, myListings, onListMe, o
   const objQ = useMatchObjectivesOfUsers(on ? (rowsQ.data || []).map((p: PartnerRow) => p.id) : []);
   const blockedIds = new Set(((blockedQ.data || []) as Array<{ blockedId?: string }>).map((b) => String(b.blockedId)));
   const rows = (rowsQ.data || []).filter((p: PartnerRow) => p && p.id && String(p.id) !== String(uid) && !blockedIds.has(String(p.id)));
+  /* THEIR LISTINGS, each with its own climbing types, dates and note (owner note 2026-11-26): the row's own columns merge
+     every listing that matched and carry no note, so the card read the listing here, as Find partners does. */
+  const lstQ = usePartnerAreasOfUsers(on ? rows.map((p: PartnerRow) => p.id) : []);
   const toggle = async () => {
     if (!on || busy) return;
     setBusy(true);
     setOptListed(!listed);
     try {
       if (listed) await removePartnerArea(uid, area.id);
-      else await addPartnerArea(uid, area.id, (area.disciplines || []).filter((d: string) => CRAG_FAMILY.includes(d)));
+      else await addPartnerArea(uid, area.id, []); /* ANY CRAG TYPE, as the other one-tap List me buttons write (ListMeInAreaBox, ListMeSwitch). This one wrote every type the AREA has, so a boulderer's one tap at a trad-and-sport crag listed them for trad and sport and the search's type filter found them under both (2026-11-26). The editor still offers the area's types. */
     } catch (e: unknown) { setOptListed(null); if (notify) notify((listed ? "Couldn’t remove your listing — " : "Couldn’t list you here — ") + ((e && (e as Error).message) || "try again")); }
     finally { setBusy(false); }
   };
@@ -91,7 +94,7 @@ export default function PartnersHereCard({ area, C, uid, myListings, onListMe, o
           {onViewProfile ? <span aria-hidden="true" style={{ display: "flex", flexShrink: 0 }}><Chevron size={16} color={C.textMuted} /></span> : null}
         </div>
       ) : null}
-      {on && rows.length && PartnerRow ? <div style={{ marginTop: 6 }}>{rows.map((p: PartnerRow) => <PartnerRow key={p.id} p={p} objIds={objQ.data ? (objQ.data as Record<string, string[]>)[p.id] || [] : undefined} objErr={objQ.isError} onOpen={onViewProfile} />)}</div> : null}
+      {on && rows.length && PartnerRow ? <div style={{ marginTop: 6 }}>{rows.map((p: PartnerRow) => <PartnerRow key={p.id} p={p} listing={lstQ.data ? (lstQ.data as Record<string, RealClimberRowProps["listing"]>)[p.id] : undefined} objIds={objQ.data ? (objQ.data as Record<string, string[]>)[p.id] || [] : undefined} objErr={objQ.isError} onOpen={onViewProfile} />)}</div> : null}
       {on && (count > 0 || rows.length) ? <button onClick={openAll} style={{ ...BTN_LINK(C), padding: "6px 0 0", fontSize: 12.5 }}>{"See all at " + area.name + " →"}</button> : null}
       {/* ACTIONS (owner 2026-11-23): List me here is a full-width button on its own line, ABOVE Start a crew here / Crews here. */}
       {on || onStartCrew || onCrewsHere ? <div style={{ marginTop: 10, paddingTop: 10, borderTop: "1px solid " + C.border }}>
