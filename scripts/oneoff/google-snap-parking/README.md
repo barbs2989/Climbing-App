@@ -33,7 +33,7 @@ Pipeline (scratch paths are arguments; MP text and OSM extracts are never commit
 8. `apply.mjs` — FILL-ONLY writes guarded on `parking_lat IS NULL`, paced ≥ 1 s, rollback JSON first, `dbslot check`
    every 50, re-read to reconcile.
 
-Records: `../data/google-snap-parking/applied-*.json` (every pin written, with the judge's reason).
+Records: `../data/google-snap-parking/applied.json` (every pin live, with the judge's reason).
 
 ## Result and how to resume
 All 17,384 candidate groups (32,236 areas) were judged: 1,652 `lot`, 857 `roadside` (each with a second opinion;
