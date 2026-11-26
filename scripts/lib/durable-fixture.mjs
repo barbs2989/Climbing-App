@@ -354,10 +354,21 @@ export async function durableFixture(log) {
       const s1 = await asUser(session, "crew_members", { method: "POST", body: JSON.stringify({ crew_id: card.id, user_id: session.user.id, status: "confirmed", invited_by: session.user.id }) });
       assertHealthy(s1, "seating the owner in the durable crew card");
     }
+    // The owner INVITES and the mate ACCEPTS on their own JWT: "Only the climber themselves can accept a
+    // crew invite" (403), so a creator cannot seat anyone else as confirmed. Same path the area crew's
+    // accept below takes, and the path a real invite takes.
     if (!(await alreadySeated(session, card.id, mateSession.user.id))) {
-      const s2 = await asUser(session, "crew_members", { method: "POST", body: JSON.stringify({ crew_id: card.id, user_id: mateSession.user.id, status: "confirmed", invited_by: session.user.id }) });
-      assertHealthy(s2, "seating the mate in the durable crew card");
-      if (s2.status >= 300) throw new Error(`could not seat the mate in the durable crew card (HTTP ${s2.status}): ${(s2.text || "").slice(0, 200)}`);
+      const has = await asUser(session, `crew_members?crew_id=eq.${card.id}&user_id=eq.${mateSession.user.id}&select=status`);
+      assertHealthy(has, "reading the mate's seat in the durable crew card");
+      if (!(Array.isArray(has.json) && has.json.length)) {
+        const inv = await asUser(session, "crew_members", { method: "POST", body: JSON.stringify({ crew_id: card.id, user_id: mateSession.user.id, status: "invited", invited_by: session.user.id }) });
+        assertHealthy(inv, "inviting the mate to the durable crew card");
+        if (inv.status >= 300) throw new Error(`could not invite the mate to the durable crew card (HTTP ${inv.status}): ${(inv.text || "").slice(0, 200)}`);
+      }
+      const acc = await asUser(mateSession, `crew_members?crew_id=eq.${card.id}&user_id=eq.${mateSession.user.id}`, { method: "PATCH", body: JSON.stringify({ status: "confirmed" }) });
+      assertHealthy(acc, "the mate accepting the durable crew card");
+      if (acc.status >= 300 || !Array.isArray(acc.json) || acc.json.length !== 1) throw new Error(`the mate could not accept the durable crew card (HTTP ${acc.status}): ${(acc.text || "").slice(0, 200)}`);
+      log("  the mate accepted the durable crew card's invite — both CONFIRMED");
     }
     const last = (card.dates || []).map((d) => String(d).slice(0, 10)).sort().pop() || "";
     const today = fixtureTripDay(new Date(Date.now() + 86400000));
