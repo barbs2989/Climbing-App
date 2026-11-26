@@ -2,10 +2,10 @@
  "scope_definition": "routes.discipline IN ('alpine','mountaineering') AND routes.id LIKE 'wa_%' AND routes.area_id IN (SELECT id FROM areas WHERE area_type = 'peak'), ordered by routes.id ASC",
  "scope_note": "area_type = 'peak' excludes crags/walls (e.g. The Dikes, Summertime Crag) that carry an alpine/mountaineering discipline tag but are actually short cragging routes, not mountaineering objectives \u2014 out of scope per audit instructions.",
  "pass": 9,
- "last_processed_id": "wa_liberty_bell_nw_face",
+ "last_processed_id": "wa_lichtenberg_mountain_southeast_ridge",
  "total_in_scope_last_count": 751,
  "total_wa_alpine_or_mountaineering_tagged": 857,
- "pass_note": "Checked 10 routes, continuing id-ascending from `wa_lemah_mountain_east_route`: Goatshead Spire (Lemah Two), Let it Burn (Colchuck Balanced Rock), East Face (Lexington Tower), and seven Liberty Bell lines (Liberty and Injustice for All, Beckey Route, Freedom or Death, Freedom Rider, The Girl Next Door, The Independence Route, Northwest Face). 2 confirmed errors fixed -- both gain_ft/loss_ft internal-consistency fills for a true-out-and-back route missing loss_ft (wa_let_it_burn loss_ft NULL -> 4760, wa_liberty_bell_girl_next_door loss_ft NULL -> 2520). 4 flagged for human review: wa_liberty_bell_freedom_rider's fa spelling 'Brian Burdo' vs. Mountain Project's 'Bryan Burdo' (ambiguous due to a conflicting older AAC note) and its missing gain_ft/loss_ft (descent crosses to the opposite-side trailhead, so no safe same-trailhead fill applies); wa_liberty_bell_freedom_or_death's missing high_point_ft/gain_ft/loss_ft (route can be exited below the true summit); wa_lemah_two_goatshead_spire's single-sourced, uncorroborated fa and missing gain_ft/loss_ft; and wa_let_it_burn's fa date not cleanly matching Holsten's own blog post. No sub-scope skips this batch.",
+ "pass_note": "Checked 10 routes, continuing id-ascending from wa_liberty_bell_nw_face: Overexposure, Serpentine Crack, Sidewinder, The Barber Pole, Thin Red Line, Liberty Crack, Liberty Crack (Free), Liberty Traverse, and both Lichtenberg Mountain routes. 1 confirmed error fixed: wa_liberty_crack loss_ft nulled (was wrongly equal to gain_ft on a route that crosses to a different trailhead on descent per its own stored text; its sibling wa_liberty_crack_free already had loss_ft null for the identical reason). 2 flagged for human review: wa_liberty_bell_the_barber_pole (unverifiable FA/grade, almost entirely unenriched) and wa_lichtenberg_mountain_se_route (gain_ft/loss_ft mismatch on a route whose descent_text says \"same line used on the ascent\"; its gpx/elev_pts track also starts well south of and below its own stated trailhead, suggesting a mismatched track). No sub-scope skips this batch.",
  "batches": [
   {
    "batch_number": 1,
@@ -11737,6 +11737,28 @@
    "clean": 4,
    "sql_file": "audits/sql/2026-11-26-batch-589.sql",
    "note": "No sub-scope skips in this batch. 2 gain_ft/loss_ft fills for routes missing loss_ft on a confirmed same-trailhead out-and-back; 4 flagged (fa spelling + cross-side elevation gap on Freedom Rider, missing fields on Freedom or Death, uncorroborated fa on Goatshead Spire, fa-date mismatch on Let it Burn)."
+  },
+  {
+   "batch_number": 590,
+   "date": "2026-11-26",
+   "pass": 9,
+   "route_ids": [
+    "wa_liberty_bell_overexposure",
+    "wa_liberty_bell_serpentine_crack",
+    "wa_liberty_bell_sidewinder",
+    "wa_liberty_bell_the_barber_pole",
+    "wa_liberty_bell_thin_red_line",
+    "wa_liberty_crack",
+    "wa_liberty_crack_free",
+    "wa_liberty_traverse",
+    "wa_lichtenberg_mountain_se_route",
+    "wa_lichtenberg_mountain_southeast_ridge"
+   ],
+   "confirmed_errors_fixed": 1,
+   "flagged_for_human_review": 2,
+   "clean": 7,
+   "sql_file": "audits/sql/2026-11-26-batch-590.sql",
+   "note": "Fixed wa_liberty_crack loss_ft (was wrongly equal to gain_ft; route crosses to a different trailhead on descent, same as its sibling wa_liberty_crack_free which already had loss_ft null for this reason -- nulled rather than guessed). Flagged wa_liberty_bell_the_barber_pole (unverifiable, almost entirely unenriched) and wa_lichtenberg_mountain_se_route (gain/loss mismatch on a stated same-path reversal, and its gpx/elev_pts track starts ~2.5mi south and ~350ft below its own stated trailhead) for human review. Re-confirmed wa_liberty_crack_free fa nuance was already settled 2026-07-09, no new action."
   }
  ],
  "outage_runs": [

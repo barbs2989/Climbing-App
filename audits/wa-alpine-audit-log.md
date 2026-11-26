@@ -40856,3 +40856,70 @@ stephabegg.com trip report exactly; and `wa_liberty_and_injustice_for_all`'s gai
 
 2 confirmed errors fixed, 4 flagged for human review. Next batch continues id-ascending from
 `wa_liberty_bell_nw_face` (pass 9).
+
+## 2026-11-26 — Pass 9, Batch 590
+
+Checked 10 routes, continuing id-ascending from `wa_liberty_bell_nw_face`: Overexposure,
+Serpentine Crack, Sidewinder (Southwest Corner), The Barber Pole, and Thin Red Line (all Liberty
+Bell), Liberty Crack and Liberty Crack (Free) (also Liberty Bell), Liberty Traverse (the 5-summit
+link-up ending on South Early Winter Spire), and both Lichtenberg Mountain routes. No sub-scope
+(crag-type) skips this batch.
+
+1 confirmed error fixed:
+- `wa_liberty_crack` (loss_ft 2546 -> NULL) — stored equal to gain_ft, implying a same-trailhead
+  round trip. But the route's own approach text starts at the SR-20 East Face hairpin pullout
+  (~5200 ft), and its own descent_text says explicitly: "Liberty Crack parties park at the East
+  Face pullout on SR-20 rather than at the Blue Lake Trailhead, so this descent puts you down on
+  the far side of the mountain from the car, meaning either a shuttle or roughly a mile back along
+  the highway shoulder." Its structurally identical sibling `wa_liberty_crack_free` (same approach,
+  same shared Beckey-side descent) already has loss_ft left NULL for this exact reason. No stored
+  waypoint marks the descent's actual exit elevation, so there's no safe number to fill in — nulled
+  the wrong value to match the sibling rather than guessing a replacement.
+
+Flagged for human review, not fixed:
+- `wa_liberty_bell_the_barber_pole`'s `fa` ("Sandy Bill, Cindy Wade, Ron Burgner, Frank Tarver
+  1966") and grade (5.9) have no dedicated source found anywhere (Mountain Project, SummitPost,
+  AAC) — the only hit was an AAC article mentioning the route by name in passing with no grade or
+  FA given. The row is otherwise almost entirely unenriched (no approach, descent, waypoints,
+  season, or hazards stored at all), so this reads as a route that never got a research pass
+  rather than one with a wrong fact on file.
+- `wa_lichtenberg_mountain_se_route`'s gain_ft (2100) and loss_ft (2500) differ by 400 ft despite
+  its own descent_text stating a literal reversal ("Descend by the same line used on the ascent"),
+  which should make the two figures equal. Looking at the stored `gpx`/`elev_pts` track to find the
+  source of the gap: it starts at roughly 47.766°N, -121.077°W, elevation ~3621-3680 ft — about 2.5
+  miles south of, and ~320-380 ft below, the route's own stated Smithbrook Trailhead waypoint
+  (47.8025°N, -121.0766°W, 4000 ft). The track may be sourced from a different start point than the
+  one the route text describes, which would explain the gain/loss mismatch; fixing it needs a
+  trailhead-matched track, not a guessed number.
+
+Already reviewed, no new action: `wa_liberty_crack_free`'s `fa` field mixes a 2016 partial-redpoint
+ascent (Herrington & Hadley) with the 2017 four-person team (Schaefer, Lee, Herrington & Hadley)
+that Mountain Project and the AAC credit for the current bolted free variation — this exact nuance
+was already investigated and deliberately left as-is on 2026-07-09 ("not a clear factual error,
+just incomplete"). Fresh research this round reached the same conclusion (Mountain Project and an
+AAC article both independently credit 2017 to the four-person team; the 2016 sources describe an
+earlier, partial attempt), so not re-flagging.
+
+Clean (checked against Mountain Project / OpenBeta / Wikipedia / SummitPost / PeakVisor):
+`wa_liberty_bell_overexposure`'s `fa` (Ron Burgner & Don McPherson, 1966), grade (5.8), pitch count
+(2) and length_m (61, i.e. 200 ft) — all match Mountain Project and OpenBeta exactly;
+`wa_liberty_bell_serpentine_crack`'s pitch count (4) and grade (5.11+, consistent with Mountain
+Project's "5.11 6c+" alpine rating) match Mountain Project and SummitPost; `wa_liberty_bell_sidewinder`'s
+`fa` (Pete Doorish & Leigh Nason, 1969; variation Bryan Burdo, 1991), pitch count (5), length_m
+(152, i.e. 500 ft) and grade (5.9+) all match Mountain Project exactly; `wa_liberty_bell_thin_red_line`'s
+`fa`/FFA (Jim Madsen & Kim Schmitz, 1967; Kate Rutherford & Mikey Schaefer, Sept 2008) and grade
+(5.12) match Mountain Project, OpenBeta and a Cascade Climbers trip report; `wa_liberty_crack`'s
+length_m (366, i.e. 1200 ft), pitch count (12), grade (5.11a free rating), `fa` (Steve Marts, Fred
+Stanley & Don McPherson, July 1965) and high_point_ft (7720) all match Mountain Project and
+Wikipedia exactly; `wa_liberty_crack_free`'s length_m/pitch count (same 1200 ft/12 pitches),
+original FFA (Brooke Sandahl, 1991) and grade (5.13b) match Mountain Project exactly;
+`wa_liberty_traverse`'s pitch count (26), length_m (610, matching Mountain Project's 606 m within
+rounding), grade (5.9) and high_point_ft (7807) all match Mountain Project/SummitPost/Wikipedia —
+notably its high_point_ft correctly uses South Early Winter Spire's own elevation (7807 ft, the
+traverse's actual final and highest summit) rather than being copy-pasted from Liberty Bell's 7720
+ft, which checks out against both peaks' independently confirmed elevations; and both Lichtenberg
+Mountain routes' high_point_ft (5844) and summit coordinates (47.7882°N, -121.0913°W) match
+Wikipedia and SummitPost within about 100 ft.
+
+1 confirmed error fixed, 2 flagged for human review. Next batch continues id-ascending from
+`wa_lichtenberg_mountain_southeast_ridge` (pass 9).
