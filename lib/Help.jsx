@@ -8,7 +8,7 @@ import { C, HELP_FEATS, PARTNER_NUMBERS } from "../ClimbMatchCore.jsx";
 import { POP_CLOSE, POP_BACK } from "./popupChrome.js";
 import { CONTACT_EMAIL } from "./contact.js";
 
-// `topic` opens the guide at that section, expanded (Ranks' header "?" opens "Ranks").
+// `topic` opens the guide at that section, expanded (e.g. "Ranks"). Nothing passes one today: the Ranks header's "?" was removed (owner note 2026-11-25).
 /* `page` (the website, competitor review batch B, item 19, owner 2026-11-04): drawn as a page in the shell's column with ← Back, like the legal pages, instead of a full-window dialog over a scrim; the phone keeps the dialog. Both end with the CONTACT line (lib/contact.js). */
 export default function Help({onClose,onReplay,topic,page}){
   const [openFaq,setOpenFaq]=useState(null);const [openFeat,setOpenFeat]=useState(()=>{const i=topic?HELP_FEATS.findIndex(f=>f[1]===topic):-1;return i>=0?i:null;});

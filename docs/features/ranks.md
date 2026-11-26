@@ -1,7 +1,7 @@
 # Ranks — the Leaderboards tab
 
-`tab==="ranks"` in `ClimbMatch.jsx`: a `ScreenHero` titled *Leaderboards* whose `?` opens Help at its
-**Ranks** section (`setHelpOpen("Ranks")`), the partner-confirmation queue (`LogTagConfirmations`), then
+`tab==="ranks"` in `ClimbMatch.jsx`: a `ScreenHero` titled *Leaderboards* (no `?` button since 2026-11-25; how Ranks scores is in
+Help & FAQ › **Ranks**), the partner-confirmation queue (`LogTagConfirmations`), then
 `lib/Leaderboards.jsx`, loaded lazily.
 
 ## 1. What it does today
