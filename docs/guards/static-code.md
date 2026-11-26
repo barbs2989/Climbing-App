@@ -249,7 +249,10 @@ Part of the guard notes — see [README.md](README.md) for the full index.
   (`lib/safeUrl.js`) — one rule for EVERY link, because deciding per call site which values are
   climber-written is the judgement that missed the Review desk; `safeHref` refuses javascript:, data:,
   vbscript:, file: (mixed case, leading whitespace, a tab or newline inside the scheme) and keeps
-  https, mailto, sms, tel, geo, blob, relative links and the Gaia GPS app link; both Vite configs carry
+  https, mailto, sms, tel, geo, blob, relative links, the Gaia GPS app link and a RASTER
+  `data:image/…;base64` (a chat photo is stored as one — refusing it broke the photo's Save link
+  until 0552's batch; SVG and every other data: type stay refused, and 0552 holds the columns to the
+  same rule in the database); both Vite configs carry
   `cspPlugin()` (`scripts/lib/vite-csp.mjs`) with no unsafe-inline/unsafe-eval; and no HTML string the
   app writes carries an inline `on…=""` handler, because the CSP refuses those and the control silently
   dies (printSheet's Print and Back buttons were the case; they are wired with addEventListener now).
