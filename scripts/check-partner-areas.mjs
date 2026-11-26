@@ -130,13 +130,29 @@ for (const name of ["match_objectives_of_users", "partners_by_objective"]) {
   }
 }
 
-// ── rule 5: a listing cannot sit on the world or a country (too broad to search); a PEAK is a place since 0456 ──
+// ── rule 5: a listing cannot sit on the world, a country or a STATE/PROVINCE (too broad; the state since 0542, owner
+//    2026-11-25); a PEAK is a place since 0456. The app's List-me controls read ONE set, lib/db.js UNLISTABLE_AREA_TYPES ──
 {
   const f = need("partner_areas_validate");
   if (f) {
     const refusal = (f.body.match(/if\s+t\s+in\s*\(([^)]*)\)/i) || [])[1] || "";
     ((/'world'/.test(refusal) && /'country'/.test(refusal) && /raise\s+exception/i.test(f.body)) ? ok : fail)(`partner_areas_validate refuses a listing at the world or a country`);
+    (/'state'/.test(refusal) ? ok : fail)(`partner_areas_validate refuses a listing at a STATE or province (0542 — owner 2026-11-25: "too broad")`);
     (!/'peak'/.test(refusal) ? ok : fail)(`partner_areas_validate accepts a listing at a PEAK (owner 2026-11-18, 0456) — Partners › A peak reads them`);
+  }
+}
+
+// ── rule 5b: every List-me control refuses what the trigger refuses — one set, no local copies ──
+{
+  const db = fs.readFileSync(path.join(ROOT, "lib", "db.js"), "utf8");
+  const m = db.match(/export const UNLISTABLE_AREA_TYPES = new Set\(\[([^\]]*)\]\)/);
+  const set = m ? m[1] : "";
+  ((m && /"world"/.test(set) && /"country"/.test(set) && /"state"/.test(set) && !/"peak"/.test(set)) ? ok : fail)(`lib/db.js UNLISTABLE_AREA_TYPES is world, country and state (not peak) — the trigger's refusal, client side`);
+  for (const rel of ["lib/MyPartnerAreas.jsx", "src/components/ListMeInAreaBox.tsx", "src/components/LogbookTab.tsx"]) {
+    const src = fs.readFileSync(path.join(ROOT, rel), "utf8");
+    const reads = /UNLISTABLE_AREA_TYPES/.test(src);
+    const ownCopy = /new Set\(\[\s*"world",\s*"country"\s*\]\)|!==\s*"world"\s*&&\s*\w+\.type\s*!==\s*"country"/.test(src);
+    ((reads && !ownCopy) ? ok : fail)(`${rel} reads UNLISTABLE_AREA_TYPES and keeps no world/country-only copy (a copy is how a state stayed listable)`);
   }
 }
 

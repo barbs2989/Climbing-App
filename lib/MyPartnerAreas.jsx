@@ -3,7 +3,7 @@
 // opened from the Menu's "Listed areas" tile as well as from Partners, Crews and an area page.
 //
 // One listing per area: the crag types wanted there (empty = any), ONE optional date window
-// ("free here Oct 18-19") and a short note. Any area but the world or a country (too broad to search),
+// ("free here Oct 18-19") and a short note. Any area but the world, a country or a state/province (too broad, 0542),
 // and since 0456 a PEAK too (owner 2026-11-18) — what you climb there is picked from the alpine family.
 // The server refuses the rest with a readable reason, which this screen relays.
 //
@@ -24,7 +24,7 @@ import { BTN_LG, SOLID_FILL } from "./buttonStyles.js";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { USE_DB } from "./supabase";
 import { POP_BACK, POP_CLOSE, POP_REMOVE } from "./popupChrome.js";
-import { removePartnerArea, removeRouteListing, savePartnerArea, useAreaCardsByIds, useAreaChildren, useCatalogAreaSearch } from "./db";
+import { UNLISTABLE_AREA_TYPES, removePartnerArea, removeRouteListing, savePartnerArea, useAreaCardsByIds, useAreaChildren, useCatalogAreaSearch } from "./db";
 import { discLabel } from "./discLabels.js";
 import { C, CRAG_CATS, DLOCALE, SL, haptic, localYmd } from "../ClimbMatchCore.jsx";
 import { ALPINE_COND_DISCIPLINES } from "./alpineConditions.js";
@@ -35,7 +35,7 @@ const TYPE_LABEL = { state: "State", region: "Region", range: "Range", canyon: "
 const HIT_LIM = 30;
 // A long list of your own listings folds to this many (owner, 2026-11-18): 14 of them put the area finder a screen down.
 const LIST_FOLD = 4;
-const NO_LISTING = new Set(["world", "country"]);
+const NO_LISTING = UNLISTABLE_AREA_TYPES; // world, country, state/province (0542)
 // What a climber can want at a place: crag types at a crag, the alpine family at a peak (0456 allows both).
 const discsFor = (areaType) => areaType === "peak" ? ALPINE_COND_DISCIPLINES : CRAG_CATS;
 const fmtDay = (d) => { if (!d) return ""; try { return new Date(d + "T12:00:00").toLocaleDateString(DLOCALE, { month: "short", day: "numeric" }); } catch (e) { return d; } };
@@ -46,7 +46,7 @@ function weekendFrom(now, weeksOut) { const dow = now.getDay(); const sat = dow 
 
 // THE AREA FINDER (owner, 2026-11-18: "the hierarchy for finding climbs, but for listing areas"). The Climbs tab's own tree,
 // read the same way (useAreaChildren, A to Z): country, state, region, crag. Tapping a row opens what is inside it; the button
-// at its right lists you there, at any level below a country. A climber who does not know a crag's spelling can walk to it.
+// at its right lists you there, at any level below a state (0542). A climber who does not know a crag's spelling can walk to it.
 function AreaFinder({ listed, onPick, chain, setChain }) {
   // `chain` (root-first: the areas opened so far) is the SCREEN's state, not this component's: the listing form replaces the list
   // while it is open, and a finder that kept its own place came back at the country level after every listing saved.
