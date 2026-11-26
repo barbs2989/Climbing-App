@@ -90,5 +90,5 @@ alter table public.areas drop constraint if exists areas_avy_zone_is_a_name;
 alter table public.areas add constraint areas_avy_zone_is_a_name
   check (avy_zone is null or (char_length(avy_zone) <= 50 and avy_zone !~ '[.;:] |—')) not valid;
 -- NOT VALID: every new write is checked; the rows above were listed from the 2026-11-26 snapshot, and a
--- value written after it must not make the merge-time apply fail. Validated by hand once the live
--- table is re-read (see the PR).
+-- value written after it must not make the merge-time apply fail. Applied by hand 2026-11-26 after
+-- a live re-read (32 rows broke the rule, all listed above) and then VALIDATED there.
