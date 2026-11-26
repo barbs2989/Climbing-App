@@ -15,6 +15,7 @@ the architecture, and the working rules. The detail lives in `docs/`:
 | [docs/codebase/research-ledger.md](docs/codebase/research-ledger.md) | research or verify route facts, or touch `route_field_evidence` / the lock rules (skills: `.claude/skills/route-research/`) |
 | [docs/codebase/deploy-and-icons.md](docs/codebase/deploy-and-icons.md) | touch `public/`, the manifest, the icons, or the Pages base path |
 | [docs/codebase/algorithms.md](docs/codebase/algorithms.md) | change the partner match score (`compat()`) |
+| [docs/codebase/maintainability.md](docs/codebase/maintainability.md) | debug something that broke on a climber's phone (`npm run errors:read`), or ask where code lives and why it is shaped the way it is |
 | [docs/refactor-progress.md](docs/refactor-progress.md) | extract a component into `src/components/`, or touch one that already lives there (conventions, the per-PR procedure, and where the last session stopped) |
 | [docs/BACKEND.md](docs/BACKEND.md) | work on the schema or the catalog pipeline (its "still simulated" lists run stale — re-derive from `lib/db.js`) |
 
