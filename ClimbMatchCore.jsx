@@ -2683,7 +2683,7 @@ function useCuratedLists(logs,routeById){
     
     {key:"ca14",icon:"mountain",label:"California 14ers",col:C.amber,scope:"State",total:12,blurb:"California peaks over 14,000 ft",routes:peakObjectives("ca14")||inList("ca14"),doneBy:peakDone},
     
-    {key:"fifty",icon:"award",label:"Fifty Classic Climbs",col:C.amber,scope:"National",total:50,blurb:"Fifty classic North American climbs",routes:inList("fifty")},
+    {key:"fifty",icon:"award",label:"Fifty Classic Climbs",col:C.amber,scope:"National",total:49,blurb:"Fifty classic North American climbs",routes:inList("fifty")},
     
     {key:"desert",icon:"mountain",label:"Desert Towers",col:C.orange,scope:"Regional",total:27,blurb:"Moab & Castle Valley towers",routes:peakObjectives("desert")||inList("desert"),doneBy:peakDone}
   ].filter(function(L){return SEED_OK||(!SEED_ONLY_CARDS.has(L.key)&&(L.key!=="classics"||L.routes.length>0));});
@@ -2691,7 +2691,7 @@ function useCuratedLists(logs,routeById){
      "West Ridge" four times and "East Ridge" four times with no peak, printed "null" where a grade was missing, and
      sorted by a seed-only drive time. Each roster entry names its catalog row (lib/lists.js), so a row now reads
      "Liberty Ridge" over "Mount Rainier · Washington", numbered as Steck & Roper number it. */
-  const fiftyRoutes=()=>{const pool=listedRoutes.concat(uniq);return FIFTY_CLASSICS.filter(e=>e.id).map(e=>{const row=pool.find(r=>r.id===e.id);return Object.assign({},row||{discipline:null,grade:null},{id:e.id,name:e.route,_sub:e.peak+" · "+e.region,_n:e.n,_noOpen:!row});});};
+  const fiftyRoutes=()=>{const pool=listedRoutes.concat(uniq);return FIFTY_CLASSICS.filter(e=>e.id&&!e.closed).map(e=>{const row=pool.find(r=>r.id===e.id);return Object.assign({},row||{discipline:null,grade:null},{id:e.id,name:e.route,_sub:e.peak+" · "+e.region,_n:e.n,_noOpen:!row});});};
   const fiftyL=lists.find(L=>L.key==="fifty");if(fiftyL)fiftyL.routes=fiftyRoutes();
   /* d of t for one list, the same arithmetic the Logbook card draws. A peak list supplies its own test: `got(id)` matches a LOGGED ROUTE id, and a peak objective carries an AREA id, so the default would count zero forever. */
   const listProgress=L=>{const d=L.quiver?discsSent.length:L.routes.filter(L.doneBy||(r=>got(r.id))).length;const t=L.total||(L.quiver?allDiscs.length:L.routes.length);return {d:d,t:t,pct:t?Math.round(d/t*100):0,cpl:!!(t&&d>=t)};};

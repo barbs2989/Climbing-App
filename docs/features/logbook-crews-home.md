@@ -74,7 +74,7 @@ Three top-level `tab` values in `ClimbMatch.jsx` (`tab==="today"`, `tab==="crew"
   The route page shows a *State classic* chip (`LIST_TAGS.state_classics`). `useRoutesWithLists` leaves out rows whose only list is
   `state_classics`, so they cannot crowd its 2,000-row cap; it reads them through the 0419 RPC `routes_with_named_lists`, whose partial index makes it read ~64 rows instead of ~2,300 table pages. Guests on the seed path keep the seed's Regional Classics.
   The **Fifty Classics** rows come from the book's roster (`FIFTY_CLASSICS`, each entry naming its catalog `id`): numbered 1–50, the book's route name
-  over "peak · region", a missing grade left out. All fifty are in the catalog (2026-10-21).
+  over "peak · region", a missing grade left out. All fifty are in the catalog (2026-10-21). **#36 Shiprock is not offered** (`closed: true` on its roster entry, filtered by `fiftyRoutes`): the Navajo Nation has banned climbing there since 1970, so the list counts 49, as the 14ers leave out Mount Bross (2026-11-25).
   Peak lists (2026-10-22): **Colorado Centennials** (`co_cent`, 99 = the 52 fourteeners + 47 thirteeners, Mount Bross excluded as on the
   14ers card), **Adirondack 46** (`adk46`) and **Sierra Peaks Section** (`sps`, 247 active peaks in list order). Their rosters are in
   `lib/lists.js` (`CO_CENTENNIAL_PEAKS`, `ADK_46_PEAKS`, `SPS_PEAKS`); the summits the catalog lacked were ADDED with a standard route by
