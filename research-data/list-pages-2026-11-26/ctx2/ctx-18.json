@@ -1,7 +1,7 @@
 [
  {
   "list": "sps",
-  "peak": "Observation Peak",
+  "peak": "Mount Davis",
   "fill": [
    "description",
    "approach",
@@ -12,8 +12,45 @@
    "hazards"
   ],
   "row": {
-   "id": "ca_observation_peak_standard_route",
-   "area_id": "ca_observation_peak",
+   "id": "ca_mount_davis_southeast_slopes_from_north_glacier_pass",
+   "area_id": "ca_mount_davis",
+   "name": "Southeast Slopes from North Glacier Pass",
+   "grade": "Class 2",
+   "discipline": "scrambling",
+   "overview": null,
+   "description": "Walk to Thousand Island Lake and North Glacier Pass, then up easy slopes. The hard part is picking the true summit among bumps.",
+   "approach": null,
+   "descent_text": null,
+   "season": null,
+   "best_season": null,
+   "hazards": null,
+   "gain_ft": null,
+   "dist_km": null,
+   "high_point_ft": null,
+   "waypoints": [],
+   "areas": {
+    "lat": 37.7149,
+    "lng": -119.2195,
+    "name": "Mount Davis",
+    "elevation_ft": 12303
+   }
+  }
+ },
+ {
+  "list": "sps",
+  "peak": "Rodgers Peak",
+  "fill": [
+   "description",
+   "approach",
+   "descent",
+   "gain",
+   "distance",
+   "season",
+   "hazards"
+  ],
+  "row": {
+   "id": "ca_rodgers_peak_standard_route",
+   "area_id": "ca_rodgers_peak",
    "name": "Standard route",
    "grade": "Class 2",
    "discipline": "scrambling",
@@ -29,16 +66,52 @@
    "high_point_ft": null,
    "waypoints": [],
    "areas": {
-    "lat": 37.0231,
-    "lng": -118.5238,
-    "name": "Observation Peak",
-    "elevation_ft": 12362
+    "lat": 37.725,
+    "lng": -119.2575,
+    "name": "Rodgers Peak",
+    "elevation_ft": 12978
    }
   }
  },
  {
   "list": "sps",
-  "peak": "Giraud Peak",
+  "peak": "Electra Peak",
+  "fill": [
+   "description",
+   "approach",
+   "descent",
+   "distance",
+   "season",
+   "hazards"
+  ],
+  "row": {
+   "id": "ca_electra_peak_standard_route",
+   "area_id": "ca_electra_peak",
+   "name": "Standard route",
+   "grade": "Class 2",
+   "discipline": "scrambling",
+   "overview": null,
+   "description": null,
+   "approach": null,
+   "descent_text": null,
+   "season": null,
+   "best_season": null,
+   "hazards": null,
+   "gain_ft": 7800,
+   "dist_km": null,
+   "high_point_ft": null,
+   "waypoints": [],
+   "areas": {
+    "lat": 37.705,
+    "lng": -119.2601,
+    "name": "Electra Peak",
+    "elevation_ft": 12442
+   }
+  }
+ },
+ {
+  "list": "sps",
+  "peak": "Foerster Peak",
   "fill": [
    "description",
    "approach",
@@ -49,8 +122,8 @@
    "hazards"
   ],
   "row": {
-   "id": "ca_giraud_peak_standard_route",
-   "area_id": "ca_giraud_peak",
+   "id": "ca_foerster_peak_standard_route",
+   "area_id": "ca_foerster_peak",
    "name": "Standard route",
    "grade": "Class 2",
    "discipline": "scrambling",
@@ -66,16 +139,16 @@
    "high_point_ft": null,
    "waypoints": [],
    "areas": {
-    "lat": 37.0774,
-    "lng": -118.5646,
-    "name": "Giraud Peak",
-    "elevation_ft": 12608
+    "lat": 37.6899,
+    "lng": -119.2907,
+    "name": "Foerster Peak",
+    "elevation_ft": 12057
    }
   }
  },
  {
   "list": "sps",
-  "peak": "Devil's Crag #1",
+  "peak": "San Joaquin Mountain",
   "fill": [
    "description",
    "approach",
@@ -85,216 +158,33 @@
    "hazards"
   ],
   "row": {
-   "id": "ca_devils_crag_1_standard_route",
-   "area_id": "ca_devils_crag_1",
-   "name": "Standard route",
-   "grade": "Class 4",
-   "discipline": "mountaineering",
-   "overview": null,
-   "description": null,
-   "approach": null,
-   "descent_text": null,
-   "season": null,
-   "best_season": null,
-   "hazards": null,
-   "gain_ft": 6410,
-   "dist_km": null,
-   "high_point_ft": null,
-   "waypoints": [],
-   "areas": {
-    "lat": 37.0381,
-    "lng": -118.6125,
-    "name": "Devil's Crag #1",
-    "elevation_ft": 12400
-   }
-  }
- },
- {
-  "list": "sps",
-  "peak": "Wheel Mountain",
-  "fill": [
-   "description",
-   "approach",
-   "descent",
-   "gain",
-   "distance",
-   "season",
-   "hazards"
-  ],
-  "row": {
-   "id": "ca_wheel_mountain_standard_route",
-   "area_id": "ca_wheel_mountain",
-   "name": "Standard route",
-   "grade": "Class 3",
-   "discipline": "scrambling",
-   "overview": null,
-   "description": null,
-   "approach": null,
-   "descent_text": null,
-   "season": null,
-   "best_season": null,
-   "hazards": null,
-   "gain_ft": null,
-   "dist_km": null,
-   "high_point_ft": null,
-   "waypoints": [],
-   "areas": {
-    "lat": 37.0467,
-    "lng": -118.6294,
-    "name": "Wheel Mountain",
-    "elevation_ft": 12774
-   }
-  }
- },
- {
-  "list": "sps",
-  "peak": "Mount McDuffie",
-  "fill": [
-   "description",
-   "approach",
-   "descent",
-   "distance",
-   "season",
-   "hazards"
-  ],
-  "row": {
-   "id": "ca_mount_mcduffie_standard_route",
-   "area_id": "ca_mount_mcduffie",
-   "name": "Standard route",
-   "grade": "Class 2",
-   "discipline": "scrambling",
-   "overview": null,
-   "description": null,
-   "approach": null,
-   "descent_text": null,
-   "season": null,
-   "best_season": null,
-   "hazards": null,
-   "gain_ft": 8870,
-   "dist_km": null,
-   "high_point_ft": null,
-   "waypoints": [],
-   "areas": {
-    "lat": 37.0735,
-    "lng": -118.644,
-    "name": "Mount McDuffie",
-    "elevation_ft": 13282
-   }
-  }
- },
- {
-  "list": "sps",
-  "peak": "Black Giant",
-  "fill": [
-   "approach",
-   "descent",
-   "gain",
-   "distance",
-   "season",
-   "hazards"
-  ],
-  "row": {
-   "id": "ca_black_giant_west_slope_from_black_giant_pass",
-   "area_id": "ca_black_giant",
-   "name": "West Slope from Black Giant Pass",
+   "id": "ca_san_joaquin_mountain_san_joaquin_ridge",
+   "area_id": "ca_san_joaquin_mountain",
+   "name": "San Joaquin Ridge",
    "grade": "Class 1",
    "discipline": "scrambling",
    "overview": null,
-   "description": "A remote peak reached off the John Muir Trail near Muir Pass; leave the trail for Black Giant Pass, then walk up about half a mile of loose rock to the summit. The east-side approach over Echo Col from Lake Sabrina adds class 3 and possible snow.",
+   "description": "Follow the jeep road and use trail north along San Joaquin Ridge, with easy navigation and little elevation gain.",
    "approach": null,
    "descent_text": null,
    "season": null,
    "best_season": null,
    "hazards": null,
-   "gain_ft": null,
+   "gain_ft": 2600,
    "dist_km": null,
    "high_point_ft": null,
    "waypoints": [],
    "areas": {
-    "lat": 37.1023,
-    "lng": -118.6486,
-    "name": "Black Giant",
-    "elevation_ft": 13330
+    "lat": 37.7187,
+    "lng": -119.1056,
+    "name": "San Joaquin Mountain",
+    "elevation_ft": 11598
    }
   }
  },
  {
   "list": "sps",
-  "peak": "Charybdis",
-  "fill": [
-   "description",
-   "approach",
-   "descent",
-   "gain",
-   "distance",
-   "season",
-   "hazards"
-  ],
-  "row": {
-   "id": "ca_charybdis_northeast_ridge",
-   "area_id": "ca_charybdis",
-   "name": "Northeast Ridge",
-   "grade": "Class 3",
-   "discipline": "scrambling",
-   "overview": null,
-   "description": "From a high camp, follow the south side of the northeast ridge, crossing snow patches and then rock. Near the top a traverse leads to a narrow chute and a notch below the summit monolith.",
-   "approach": null,
-   "descent_text": null,
-   "season": null,
-   "best_season": null,
-   "hazards": null,
-   "gain_ft": null,
-   "dist_km": null,
-   "high_point_ft": null,
-   "waypoints": [],
-   "areas": {
-    "lat": 37.0867,
-    "lng": -118.6682,
-    "name": "Charybdis",
-    "elevation_ft": 13096
-   }
-  }
- },
- {
-  "list": "sps",
-  "peak": "Scylla",
-  "fill": [
-   "description",
-   "approach",
-   "descent",
-   "gain",
-   "distance",
-   "season",
-   "hazards"
-  ],
-  "row": {
-   "id": "ca_scylla_northwest_slope",
-   "area_id": "ca_scylla",
-   "name": "Northwest Slope",
-   "grade": "Class 2",
-   "discipline": "scrambling",
-   "overview": null,
-   "description": "A non-technical class 2 ascent from the northwest; long approach via Lamarck Col, the John Muir Trail and Ionian Basin.",
-   "approach": null,
-   "descent_text": null,
-   "season": null,
-   "best_season": null,
-   "hazards": null,
-   "gain_ft": null,
-   "dist_km": null,
-   "high_point_ft": null,
-   "waypoints": [],
-   "areas": {
-    "lat": 37.08,
-    "lng": -118.6897,
-    "name": "Scylla",
-    "elevation_ft": 12956
-   }
-  }
- },
- {
-  "list": "sps",
-  "peak": "Mount Goddard",
+  "peak": "Merced Peak",
   "fill": [
    "description",
    "approach",
@@ -304,8 +194,8 @@
    "hazards"
   ],
   "row": {
-   "id": "ca_mount_goddard_standard_route",
-   "area_id": "ca_mount_goddard",
+   "id": "ca_merced_peak_standard_route",
+   "area_id": "ca_merced_peak",
    "name": "Standard route",
    "grade": "Class 2",
    "discipline": "scrambling",
@@ -316,21 +206,21 @@
    "season": null,
    "best_season": null,
    "hazards": null,
-   "gain_ft": 7960,
+   "gain_ft": 6900,
    "dist_km": null,
    "high_point_ft": null,
    "waypoints": [],
    "areas": {
-    "lat": 37.1035,
-    "lng": -118.7195,
-    "name": "Mount Goddard",
-    "elevation_ft": 13568
+    "lat": 37.6348,
+    "lng": -119.3946,
+    "name": "Merced Peak",
+    "elevation_ft": 11726
    }
   }
  },
  {
   "list": "sps",
-  "peak": "Mount Reinstein",
+  "peak": "Red Peak",
   "fill": [
    "description",
    "approach",
@@ -341,8 +231,8 @@
    "hazards"
   ],
   "row": {
-   "id": "ca_mount_reinstein_standard_route",
-   "area_id": "ca_mount_reinstein",
+   "id": "ca_red_peak_standard_route",
+   "area_id": "ca_red_peak",
    "name": "Standard route",
    "grade": "Class 2",
    "discipline": "scrambling",
@@ -358,16 +248,16 @@
    "high_point_ft": null,
    "waypoints": [],
    "areas": {
-    "lat": 37.0794,
-    "lng": -118.7384,
-    "name": "Mount Reinstein",
-    "elevation_ft": 12586
+    "lat": 37.6537,
+    "lng": -119.4095,
+    "name": "Red Peak",
+    "elevation_ft": 11699
    }
   }
  },
  {
   "list": "sps",
-  "peak": "Finger Peak",
+  "peak": "Gray Peak",
   "fill": [
    "description",
    "approach",
@@ -378,11 +268,11 @@
    "hazards"
   ],
   "row": {
-   "id": "ca_finger_peak_affirmation_of_life",
-   "area_id": "ca_finger_peak",
-   "name": "Affirmation of Life",
-   "grade": "5.11-",
-   "discipline": "trad",
+   "id": "ca_gray_peak_standard_route",
+   "area_id": "ca_gray_peak",
+   "name": "Standard route",
+   "grade": "Class 2",
+   "discipline": "scrambling",
    "overview": null,
    "description": null,
    "approach": null,
@@ -395,16 +285,64 @@
    "high_point_ft": null,
    "waypoints": [],
    "areas": {
-    "lat": 37.02998,
-    "lng": -118.73035,
-    "name": "Finger Peak",
+    "lat": 37.6735,
+    "lng": -119.4186,
+    "name": "Gray Peak",
+    "elevation_ft": 11573
+   }
+  }
+ },
+ {
+  "list": "sps",
+  "peak": "Mount Clark",
+  "fill": [
+   "description",
+   "approach",
+   "descent",
+   "season",
+   "hazards"
+  ],
+  "row": {
+   "id": "ca_northwest_arete_2",
+   "area_id": "ca_mt_clark",
+   "name": "Northwest Arete",
+   "grade": "4th",
+   "discipline": "alpine",
+   "overview": "A sweeping, exposed arete of solid, featured rock, with pitons left in place and rap stations along it.",
+   "description": null,
+   "approach": null,
+   "descent_text": null,
+   "season": null,
+   "best_season": null,
+   "hazards": null,
+   "gain_ft": null,
+   "dist_km": null,
+   "high_point_ft": null,
+   "waypoints": [
+    {
+     "name": "Happy Isles Trailhead",
+     "type": "Trailhead",
+     "elev": 4009,
+     "distMi": 0
+    },
+    {
+     "name": "Mount Clark",
+     "type": "Summit",
+     "elev": 11522,
+     "distMi": 13.2
+    }
+   ],
+   "areas": {
+    "lat": 37.69631,
+    "lng": -119.42857,
+    "name": "Mt Clark",
     "elevation_ft": null
    }
   }
  },
  {
   "list": "sps",
-  "peak": "Tunemah Peak",
+  "peak": "Mount Starr King",
   "fill": [
    "description",
    "approach",
@@ -415,13 +353,13 @@
    "hazards"
   ],
   "row": {
-   "id": "ca_tunemah_peak_east_ridge_via_dykeman_pass",
-   "area_id": "ca_tunemah_peak",
-   "name": "East Ridge via Dykeman Pass",
-   "grade": "Class 2",
-   "discipline": "scrambling",
-   "overview": null,
-   "description": "Take the Blue Canyon Trail to its north end, continue up to Dykeman Pass, drop into the Alpine Creek drainage and climb talus to the east ridge. The ridge has some class 3 scrambling.",
+   "id": "ca_southeast_face_6",
+   "area_id": "ca_mount_starr_king_climbs",
+   "name": "Southeast Face",
+   "grade": "5.2",
+   "discipline": "alpine",
+   "overview": "Two pitches on whichever line looks best, with no single set path. From there a class 3 scramble reaches the summit.",
+   "description": null,
    "approach": null,
    "descent_text": null,
    "season": null,
@@ -432,10 +370,94 @@
    "high_point_ft": null,
    "waypoints": [],
    "areas": {
-    "lat": 36.9954,
-    "lng": -118.6883,
-    "name": "Tunemah Peak",
-    "elevation_ft": 11894
+    "lat": 37.70271,
+    "lng": -119.51766,
+    "name": "Mount Starr King Routes",
+    "elevation_ft": null
+   }
+  }
+ },
+ {
+  "list": "sps",
+  "peak": "Half Dome",
+  "fill": [
+   "description",
+   "approach",
+   "descent",
+   "season",
+   "hazards"
+  ],
+  "row": {
+   "id": "ca_d_half_dome_cables_route_cables_route",
+   "area_id": "ca_d_half_dome_cables_route",
+   "name": "Cables Route",
+   "grade": "Class 3",
+   "discipline": "scrambling",
+   "overview": null,
+   "description": null,
+   "approach": null,
+   "descent_text": null,
+   "season": null,
+   "best_season": null,
+   "hazards": null,
+   "gain_ft": 4800,
+   "dist_km": null,
+   "high_point_ft": null,
+   "waypoints": [
+    {
+     "name": "Happy Isles Trailhead",
+     "type": "Trailhead"
+    },
+    {
+     "name": "Cables Route summit",
+     "type": "Summit"
+    }
+   ],
+   "areas": {
+    "lat": 37.7457,
+    "lng": -119.5335,
+    "name": "Cables Route",
+    "elevation_ft": null
+   }
+  }
+ },
+ {
+  "list": "sps",
+  "peak": "Clouds Rest",
+  "fill": [
+   "description",
+   "approach",
+   "descent",
+   "season",
+   "hazards"
+  ],
+  "row": {
+   "id": "ca_a_clouds_rest_trail_clouds_rest_trail",
+   "area_id": "ca_a_clouds_rest_trail",
+   "name": "Clouds Rest Trail",
+   "grade": "Class 1",
+   "discipline": "scrambling",
+   "overview": null,
+   "description": null,
+   "approach": null,
+   "descent_text": null,
+   "season": null,
+   "best_season": null,
+   "hazards": null,
+   "gain_ft": 2300,
+   "dist_km": null,
+   "high_point_ft": null,
+   "waypoints": [
+    {
+     "name": "Clouds Rest Trail summit",
+     "type": "Summit"
+    }
+   ],
+   "areas": {
+    "lat": 37.7677,
+    "lng": -119.4893,
+    "name": "Clouds Rest Trail",
+    "elevation_ft": null
    }
   }
  }

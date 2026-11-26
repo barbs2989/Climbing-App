@@ -10,6 +10,10 @@ const FILL = new Set(["description", "approach", "descent", "season", "hazards",
 const pages = JSON.parse(fs.readFileSync(pagesPath, "utf8"));
 const seen = new Set();
 const todo = [];
+// --skip <dir>: leave out every route already in a ctx-*.json under that dir (researched once; a
+// skipped section there means no page supported it, and re-asking spends tokens for nothing).
+const skipDir = process.argv.includes("--skip") ? process.argv[process.argv.indexOf("--skip") + 1] : null;
+if (skipDir) for (const f of fs.readdirSync(skipDir).filter(f => /^ctx-\d+\.json$/.test(f))) for (const e of JSON.parse(fs.readFileSync(`${skipDir}/${f}`, "utf8"))) seen.add(e.row.id);
 for (const l of ORDER) for (const p of pages) if (p.list === l && p.route && !seen.has(p.route) && p.missing.some(m => FILL.has(m))) { seen.add(p.route); todo.push(p); }
 const key = requireServiceKey();
 const SEL = "id,area_id,name,grade,discipline,overview,description,approach,descent_text,season,best_season,hazards,gain_ft,dist_km,high_point_ft,waypoints,areas(name,elevation_ft,lat,lng)";

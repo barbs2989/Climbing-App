@@ -322,7 +322,10 @@ Part of the guard notes — see [README.md](README.md) for the full index.
   approach (≥ 150 or `approach_variants`), descent (≥ 100), season, hazards, gain, and distance. It
   also reports three it does not fill: gear, a trailhead pin, a summit pin. Gain and distance count as
   present when a recorded track (`elev_pts`/`gpx`) or the pins' `distMi` supply them, as TRIP PROFILE
-  does. First run: 538 of 650 list pages thin, 1 with no route (Liberty Cap, then a Bulger).
+  does. First run: 538 of 650 list pages thin, 1 with no route (Liberty Cap, then a Bulger). Measured
+  by the seven fillable sections: 3,171 of 4,550 missing before the 2026-11-26 research pass, 2,386
+  after its first 192 routes. A page rarely reads "full" because gear and the two pins are not filled
+  by that pass (pins need the ground checks in the waypoint skills).
   `--json out.json` feeds `scripts/oneoff/list-pages-context.mjs`, which writes the research worklists in
   `research-data/list-pages-2026-11-26/`.
 - **`check:list-summit-audit`** (2026-11-14): a peak list ticks only from a route that REACHES THE

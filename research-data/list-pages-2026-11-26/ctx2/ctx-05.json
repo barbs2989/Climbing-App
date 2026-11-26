@@ -1,6 +1,159 @@
 [
  {
   "list": "adk46",
+  "peak": "Basin Mountain",
+  "fill": [
+   "description",
+   "approach",
+   "descent",
+   "gain",
+   "distance",
+   "season",
+   "hazards"
+  ],
+  "row": {
+   "id": "ny_basin_mountain_shoreys_shortcut",
+   "area_id": "ny_basin_mountain",
+   "name": "Shorey's Shortcut",
+   "grade": "Class 1",
+   "discipline": "scrambling",
+   "overview": null,
+   "description": "Long day with ladders and rock slabs; the exposed summit is often combined with Haystack or Saddleback. Path: Phelps Trail and Shorey's Shortcut. Starts at The Garden, Keene Valley.",
+   "approach": null,
+   "descent_text": null,
+   "season": null,
+   "best_season": null,
+   "hazards": null,
+   "gain_ft": null,
+   "dist_km": null,
+   "high_point_ft": null,
+   "waypoints": [],
+   "areas": {
+    "lat": 44.1212,
+    "lng": -73.8863,
+    "name": "Basin Mountain",
+    "elevation_ft": 4827
+   }
+  }
+ },
+ {
+  "list": "adk46",
+  "peak": "Gothics",
+  "fill": [
+   "approach",
+   "descent",
+   "gain",
+   "distance",
+   "season",
+   "hazards"
+  ],
+  "row": {
+   "id": "ny_gothics_beaver_meadow_falls_trail_to_the_range_trail",
+   "area_id": "ny_gothics",
+   "name": "Beaver Meadow Falls Trail to the Range Trail",
+   "grade": "Class 1",
+   "discipline": "scrambling",
+   "overview": null,
+   "description": "Walk Lake Road about 2 miles, then take the Gothics trail past Beaver Meadow Falls, with ladders on the steep section to the Range Trail. Turn left along the ridge to the summit; about 11.4 miles round trip.",
+   "approach": null,
+   "descent_text": null,
+   "season": null,
+   "best_season": null,
+   "hazards": null,
+   "gain_ft": null,
+   "dist_km": null,
+   "high_point_ft": null,
+   "waypoints": [],
+   "areas": {
+    "lat": 44.1258,
+    "lng": -73.8586,
+    "name": "Gothics",
+    "elevation_ft": null
+   }
+  }
+ },
+ {
+  "list": "adk46",
+  "peak": "Mount Colden",
+  "fill": [
+   "description",
+   "approach",
+   "descent",
+   "season",
+   "hazards"
+  ],
+  "row": {
+   "id": "ny_trap_dike_summer",
+   "area_id": "ny_mt_colden",
+   "name": "Trap Dike (summer)",
+   "grade": "4th",
+   "discipline": "scrambling",
+   "overview": null,
+   "description": null,
+   "approach": null,
+   "descent_text": null,
+   "season": null,
+   "best_season": null,
+   "hazards": null,
+   "gain_ft": null,
+   "dist_km": null,
+   "high_point_ft": null,
+   "waypoints": [
+    {
+     "name": "Adirondack Loj (Heart Lake)",
+     "type": "Trailhead"
+    },
+    {
+     "name": "Mt Colden summit",
+     "type": "Summit"
+    }
+   ],
+   "areas": {
+    "lat": 44.12813,
+    "lng": -73.95962,
+    "name": "Mt Colden",
+    "elevation_ft": null
+   }
+  }
+ },
+ {
+  "list": "adk46",
+  "peak": "Giant Mountain",
+  "fill": [
+   "description",
+   "approach",
+   "descent",
+   "distance",
+   "season",
+   "hazards"
+  ],
+  "row": {
+   "id": "ny_giant_mountain_ridge_trail",
+   "area_id": "ny_giant_mountain",
+   "name": "Ridge Trail",
+   "grade": "Class 1",
+   "discipline": "scrambling",
+   "overview": null,
+   "description": "About 5.4 miles round trip with roughly 3,050 ft of gain, the shortest of the main routes. The Roaring Brook Trail (6.6 miles round trip) is the other common option.",
+   "approach": null,
+   "descent_text": null,
+   "season": null,
+   "best_season": null,
+   "hazards": null,
+   "gain_ft": 3050,
+   "dist_km": null,
+   "high_point_ft": null,
+   "waypoints": [],
+   "areas": {
+    "lat": 44.16146,
+    "lng": -73.71989,
+    "name": "Giant Mountain",
+    "elevation_ft": null
+   }
+  }
+ },
+ {
+  "list": "adk46",
   "peak": "Mount Marshall",
   "fill": [
    "description",
@@ -190,6 +343,7 @@
   "list": "adk46",
   "peak": "Lower Wolfjaw Mountain",
   "fill": [
+   "description",
    "approach",
    "descent",
    "gain",
@@ -198,13 +352,13 @@
    "hazards"
   ],
   "row": {
-   "id": "ny_lower_wolfjaw_khyber_s_slide",
+   "id": "ny_lower_wolfjaw_wedge_brook_and_range_trail_from_st_huberts",
    "area_id": "ny_lower_wolfjaw",
-   "name": "Khyber's Slide",
-   "grade": "WI3",
-   "discipline": "ice",
-   "overview": "Tropical Storm Irene created this slide in August 2011. In early season, when lower elevations are too warm, it holds some of the area's most consistent ice. Long runs of ice at a lower angle lie below and above its two steps: a 240' step of grade 2, then a 50' step of grade 3(ish).",
-   "description": null,
+   "name": "Wedge Brook and Range Trail from St. Huberts",
+   "grade": "Class 1",
+   "discipline": "scrambling",
+   "overview": null,
+   "description": "About 8.8 miles round trip with roughly 3,000 ft of gain via West River, Wedge Brook and the State Range Trail. The Garden trailhead via the Phelps and Range trails is the other common approach.",
    "approach": null,
    "descent_text": null,
    "season": null,
@@ -290,154 +444,6 @@
     "lng": -73.9215,
     "name": "Phelps Mountain",
     "elevation_ft": 4161
-   }
-  }
- },
- {
-  "list": "adk46",
-  "peak": "Donaldson Mountain",
-  "fill": [
-   "description",
-   "approach",
-   "descent",
-   "gain",
-   "distance",
-   "season",
-   "hazards"
-  ],
-  "row": {
-   "id": "ny_donaldson_mountain_seward_range_herd_path",
-   "area_id": "ny_donaldson_mountain",
-   "name": "Seward Range herd path",
-   "grade": "Class 2",
-   "discipline": "scrambling",
-   "overview": null,
-   "description": "Summit sits just off the ridge path beyond Seward; normally done as part of the range. Path: Blueberry Trail and Seward Range herd path. Starts at Corey's Road parking area.",
-   "approach": null,
-   "descent_text": null,
-   "season": null,
-   "best_season": null,
-   "hazards": null,
-   "gain_ft": null,
-   "dist_km": null,
-   "high_point_ft": null,
-   "waypoints": [],
-   "areas": {
-    "lat": 44.1539,
-    "lng": -74.211,
-    "name": "Donaldson Mountain",
-    "elevation_ft": 4140
-   }
-  }
- },
- {
-  "list": "adk46",
-  "peak": "Seymour Mountain",
-  "fill": [
-   "approach",
-   "descent",
-   "distance",
-   "season",
-   "hazards"
-  ],
-  "row": {
-   "id": "ny_seymour_mountain_ward_brook_herd_path",
-   "area_id": "ny_seymour_mountain",
-   "name": "Ward Brook herd path",
-   "grade": "Class 2",
-   "discipline": "scrambling",
-   "overview": null,
-   "description": "Cairned herd path leaves the truck trail just past the Ward Brook lean-to; steep and slippery on top. Path: Blueberry Trail, Ward Brook Truck Trail and Seymour herd path. Starts at Corey's Road parking area.",
-   "approach": null,
-   "descent_text": null,
-   "season": null,
-   "best_season": null,
-   "hazards": null,
-   "gain_ft": 4050,
-   "dist_km": null,
-   "high_point_ft": null,
-   "waypoints": [],
-   "areas": {
-    "lat": 44.1582,
-    "lng": -74.1727,
-    "name": "Seymour Mountain",
-    "elevation_ft": 4120
-   }
-  }
- },
- {
-  "list": "adk46",
-  "peak": "Sawteeth",
-  "fill": [
-   "description",
-   "approach",
-   "descent",
-   "distance",
-   "season",
-   "hazards"
-  ],
-  "row": {
-   "id": "ny_sawteeth_weld_trail",
-   "area_id": "ny_sawteeth",
-   "name": "Weld Trail",
-   "grade": "Class 1",
-   "discipline": "scrambling",
-   "overview": null,
-   "description": "Out-and-back on a marked trail with a steep rock slab; the reserve needs a parking reservation in season. Path: Weld Trail. Starts at St. Huberts parking (Adirondack Mountain Reserve).",
-   "approach": null,
-   "descent_text": null,
-   "season": null,
-   "best_season": null,
-   "hazards": null,
-   "gain_ft": 3100,
-   "dist_km": null,
-   "high_point_ft": null,
-   "waypoints": [],
-   "areas": {
-    "lat": 44.1133,
-    "lng": -73.8507,
-    "name": "Sawteeth",
-    "elevation_ft": 4100
-   }
-  }
- },
- {
-  "list": "adk46",
-  "peak": "Cascade Mountain",
-  "fill": [
-   "description",
-   "approach",
-   "descent",
-   "season",
-   "hazards"
-  ],
-  "row": {
-   "id": "ny_cascade_mountain_slide",
-   "area_id": "ny_cascade_mountain",
-   "name": "Cascade Mountain Slide",
-   "grade": "4th",
-   "discipline": "scrambling",
-   "overview": null,
-   "description": null,
-   "approach": null,
-   "descent_text": null,
-   "season": null,
-   "best_season": null,
-   "hazards": null,
-   "gain_ft": null,
-   "dist_km": null,
-   "high_point_ft": null,
-   "waypoints": [
-    {
-     "name": "Cascade Mountain summit",
-     "type": "Summit"
-    }
-   ],
-   "areas": {
-    "lat": 44.21855,
-    "lng": -73.85993,
-    "name": "Cascade Mountain",
-    "elevation_ft": null
    }
   }
  }

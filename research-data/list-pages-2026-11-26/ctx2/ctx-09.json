@@ -1,6 +1,153 @@
 [
  {
   "list": "sps",
+  "peak": "Tunnabora Peak",
+  "fill": [
+   "description",
+   "approach",
+   "descent",
+   "gain",
+   "distance",
+   "season",
+   "hazards"
+  ],
+  "row": {
+   "id": "ca_tunnabora_peak_south_slope_from_tulainyo_lake",
+   "area_id": "ca_tunnabora_peak",
+   "name": "South Slope from Tulainyo Lake",
+   "grade": "Class 2",
+   "discipline": "scrambling",
+   "overview": null,
+   "description": "Climb the Mountaineers Route to the Russell-Carillon plateau, cross the Russell-Carillon pass (class 3 on the north side) to Tulainyo Lake, then walk the sandy south slopes to the summit.",
+   "approach": null,
+   "descent_text": null,
+   "season": null,
+   "best_season": null,
+   "hazards": null,
+   "gain_ft": null,
+   "dist_km": null,
+   "high_point_ft": null,
+   "waypoints": [],
+   "areas": {
+    "lat": 36.6051,
+    "lng": -118.2821,
+    "name": "Tunnabora Peak",
+    "elevation_ft": 13563
+   }
+  }
+ },
+ {
+  "list": "sps",
+  "peak": "Mount Barnard",
+  "fill": [
+   "description",
+   "approach",
+   "descent",
+   "gain",
+   "distance",
+   "season",
+   "hazards"
+  ],
+  "row": {
+   "id": "ca_mount_barnard_standard_route",
+   "area_id": "ca_mount_barnard",
+   "name": "Standard route",
+   "grade": "Class 2",
+   "discipline": "scrambling",
+   "overview": null,
+   "description": null,
+   "approach": null,
+   "descent_text": null,
+   "season": null,
+   "best_season": null,
+   "hazards": null,
+   "gain_ft": null,
+   "dist_km": null,
+   "high_point_ft": null,
+   "waypoints": [],
+   "areas": {
+    "lat": 36.6283,
+    "lng": -118.3218,
+    "name": "Mount Barnard",
+    "elevation_ft": 13990
+   }
+  }
+ },
+ {
+  "list": "sps",
+  "peak": "Trojan Peak",
+  "fill": [
+   "description",
+   "approach",
+   "descent",
+   "gain",
+   "distance",
+   "season",
+   "hazards"
+  ],
+  "row": {
+   "id": "ca_trojan_peak_standard_route",
+   "area_id": "ca_trojan_peak",
+   "name": "Standard route",
+   "grade": "Class 2",
+   "discipline": "scrambling",
+   "overview": null,
+   "description": null,
+   "approach": null,
+   "descent_text": null,
+   "season": null,
+   "best_season": null,
+   "hazards": null,
+   "gain_ft": null,
+   "dist_km": null,
+   "high_point_ft": null,
+   "waypoints": [],
+   "areas": {
+    "lat": 36.6422,
+    "lng": -118.3152,
+    "name": "Trojan Peak",
+    "elevation_ft": 13947
+   }
+  }
+ },
+ {
+  "list": "sps",
+  "peak": "Alta Peak",
+  "fill": [
+   "description",
+   "approach",
+   "descent",
+   "distance",
+   "season",
+   "hazards"
+  ],
+  "row": {
+   "id": "ca_alta_peak_alta_trail",
+   "area_id": "ca_alta_peak",
+   "name": "Alta Trail",
+   "grade": "Class 1",
+   "discipline": "scrambling",
+   "overview": null,
+   "description": "A maintained trail climbs from Wolverton through forest to Panther Gap, then across a meadow and past Tharps Rock to switchbacks on the summit. Long day with about 4,000 feet of gain.",
+   "approach": null,
+   "descent_text": null,
+   "season": null,
+   "best_season": null,
+   "hazards": null,
+   "gain_ft": 4000,
+   "dist_km": null,
+   "high_point_ft": null,
+   "waypoints": [],
+   "areas": {
+    "lat": 36.5905,
+    "lng": -118.6634,
+    "name": "Alta Peak",
+    "elevation_ft": 11204
+   }
+  }
+ },
+ {
+  "list": "sps",
   "peak": "Mount Stanford",
   "fill": [
    "description",
@@ -290,154 +437,6 @@
     "lng": -118.3627,
     "name": "Center Peak",
     "elevation_ft": 12730
-   }
-  }
- },
- {
-  "list": "sps",
-  "peak": "Caltech Peak",
-  "fill": [
-   "description",
-   "approach",
-   "descent",
-   "gain",
-   "distance",
-   "season",
-   "hazards"
-  ],
-  "row": {
-   "id": "ca_caltech_peak_standard_route",
-   "area_id": "ca_caltech_peak",
-   "name": "Standard route",
-   "grade": "Class 2",
-   "discipline": "scrambling",
-   "overview": null,
-   "description": null,
-   "approach": null,
-   "descent_text": null,
-   "season": null,
-   "best_season": null,
-   "hazards": null,
-   "gain_ft": null,
-   "dist_km": null,
-   "high_point_ft": null,
-   "waypoints": [],
-   "areas": {
-    "lat": 36.6889,
-    "lng": -118.3907,
-    "name": "Caltech Peak",
-    "elevation_ft": 13832
-   }
-  }
- },
- {
-  "list": "sps",
-  "peak": "University Peak",
-  "fill": [
-   "description",
-   "approach",
-   "descent",
-   "gain",
-   "distance",
-   "season",
-   "hazards"
-  ],
-  "row": {
-   "id": "ca_university_peak_northwest_shoulder",
-   "area_id": "ca_university_peak",
-   "name": "Northwest Shoulder",
-   "grade": "AI2 Mod. Snow",
-   "discipline": "ice",
-   "overview": null,
-   "description": null,
-   "approach": "Leave the Kearsarge Pass trail near Flower Lake, pass Bench Lake on its west side, and climb open slopes to the start of the route.",
-   "descent_text": "Descend to University Pass, then go down to Robinson Lake.",
-   "season": null,
-   "best_season": null,
-   "hazards": null,
-   "gain_ft": null,
-   "dist_km": null,
-   "high_point_ft": null,
-   "waypoints": [],
-   "areas": {
-    "lat": 36.74794,
-    "lng": -118.36149,
-    "name": "University Peak",
-    "elevation_ft": null
-   }
-  }
- },
- {
-  "list": "sps",
-  "peak": "Independence Peak",
-  "fill": [
-   "description",
-   "approach",
-   "descent",
-   "gain",
-   "distance",
-   "season",
-   "hazards"
-  ],
-  "row": {
-   "id": "ca_north_ridge_12",
-   "area_id": "ca_independence_peak",
-   "name": "North Ridge",
-   "grade": "4th",
-   "discipline": "alpine",
-   "overview": null,
-   "description": null,
-   "approach": null,
-   "descent_text": null,
-   "season": null,
-   "best_season": null,
-   "hazards": null,
-   "gain_ft": null,
-   "dist_km": null,
-   "high_point_ft": null,
-   "waypoints": [],
-   "areas": {
-    "lat": 36.76077,
-    "lng": -118.33232,
-    "name": "Independence Peak",
-    "elevation_ft": null
-   }
-  }
- },
- {
-  "list": "sps",
-  "peak": "Kearsarge Peak",
-  "fill": [
-   "description",
-   "approach",
-   "descent",
-   "gain",
-   "distance",
-   "season",
-   "hazards"
-  ],
-  "row": {
-   "id": "ca_kearsarge_peak_standard_route",
-   "area_id": "ca_kearsarge_peak",
-   "name": "Standard route",
-   "grade": "Class 1",
-   "discipline": "scrambling",
-   "overview": null,
-   "description": null,
-   "approach": null,
-   "descent_text": null,
-   "season": null,
-   "best_season": null,
-   "hazards": null,
-   "gain_ft": null,
-   "dist_km": null,
-   "high_point_ft": null,
-   "waypoints": [],
-   "areas": {
-    "lat": 36.7892,
-    "lng": -118.347,
-    "name": "Kearsarge Peak",
-    "elevation_ft": 12618
    }
   }
  }

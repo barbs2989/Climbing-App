@@ -1,6 +1,152 @@
 [
  {
   "list": "sps",
+  "peak": "Mount Goddard",
+  "fill": [
+   "description",
+   "approach",
+   "descent",
+   "distance",
+   "season",
+   "hazards"
+  ],
+  "row": {
+   "id": "ca_mount_goddard_standard_route",
+   "area_id": "ca_mount_goddard",
+   "name": "Standard route",
+   "grade": "Class 2",
+   "discipline": "scrambling",
+   "overview": null,
+   "description": null,
+   "approach": null,
+   "descent_text": null,
+   "season": null,
+   "best_season": null,
+   "hazards": null,
+   "gain_ft": 7960,
+   "dist_km": null,
+   "high_point_ft": null,
+   "waypoints": [],
+   "areas": {
+    "lat": 37.1035,
+    "lng": -118.7195,
+    "name": "Mount Goddard",
+    "elevation_ft": 13568
+   }
+  }
+ },
+ {
+  "list": "sps",
+  "peak": "Mount Reinstein",
+  "fill": [
+   "description",
+   "approach",
+   "descent",
+   "gain",
+   "distance",
+   "season",
+   "hazards"
+  ],
+  "row": {
+   "id": "ca_mount_reinstein_standard_route",
+   "area_id": "ca_mount_reinstein",
+   "name": "Standard route",
+   "grade": "Class 2",
+   "discipline": "scrambling",
+   "overview": null,
+   "description": null,
+   "approach": null,
+   "descent_text": null,
+   "season": null,
+   "best_season": null,
+   "hazards": null,
+   "gain_ft": null,
+   "dist_km": null,
+   "high_point_ft": null,
+   "waypoints": [],
+   "areas": {
+    "lat": 37.0794,
+    "lng": -118.7384,
+    "name": "Mount Reinstein",
+    "elevation_ft": 12586
+   }
+  }
+ },
+ {
+  "list": "sps",
+  "peak": "Finger Peak",
+  "fill": [
+   "description",
+   "approach",
+   "descent",
+   "distance",
+   "season",
+   "hazards"
+  ],
+  "row": {
+   "id": "ca_finger_peak_standard_route",
+   "area_id": "ca_finger_peak",
+   "name": "Standard route",
+   "grade": "Class 2",
+   "discipline": "scrambling",
+   "overview": null,
+   "description": null,
+   "approach": null,
+   "descent_text": null,
+   "season": null,
+   "best_season": null,
+   "hazards": null,
+   "gain_ft": 7485,
+   "dist_km": null,
+   "high_point_ft": null,
+   "waypoints": [],
+   "areas": {
+    "lat": 37.02998,
+    "lng": -118.73035,
+    "name": "Finger Peak",
+    "elevation_ft": null
+   }
+  }
+ },
+ {
+  "list": "sps",
+  "peak": "Tunemah Peak",
+  "fill": [
+   "description",
+   "approach",
+   "descent",
+   "gain",
+   "distance",
+   "season",
+   "hazards"
+  ],
+  "row": {
+   "id": "ca_tunemah_peak_east_ridge_via_dykeman_pass",
+   "area_id": "ca_tunemah_peak",
+   "name": "East Ridge via Dykeman Pass",
+   "grade": "Class 2",
+   "discipline": "scrambling",
+   "overview": null,
+   "description": "Take the Blue Canyon Trail to its north end, continue up to Dykeman Pass, drop into the Alpine Creek drainage and climb talus to the east ridge. The ridge has some class 3 scrambling.",
+   "approach": null,
+   "descent_text": null,
+   "season": null,
+   "best_season": null,
+   "hazards": null,
+   "gain_ft": null,
+   "dist_km": null,
+   "high_point_ft": null,
+   "waypoints": [],
+   "areas": {
+    "lat": 36.9954,
+    "lng": -118.6883,
+    "name": "Tunemah Peak",
+    "elevation_ft": 11894
+   }
+  }
+ },
+ {
+  "list": "sps",
   "peak": "Temple Crag",
   "fill": [
    "gain",
@@ -280,150 +426,6 @@
     "lng": -118.58594,
     "name": "Mt. Johnson",
     "elevation_ft": null
-   }
-  }
- },
- {
-  "list": "sps",
-  "peak": "Mount Gilbert",
-  "fill": [
-   "descent",
-   "gain",
-   "distance",
-   "season",
-   "hazards"
-  ],
-  "row": {
-   "id": "ca_north_couloir_engram_couloir",
-   "area_id": "ca_mt_gilbert",
-   "name": "North Couloir (Engram Couloir)",
-   "grade": "5.6 AI2 Steep Snow",
-   "discipline": "ice",
-   "overview": "A steep, exposed line through the obvious breach in the north face, with snow and ice at a sustained 60-65 degrees; a contender for steepest couloir of the High Sierra. In some snow years a rock bottleneck midway calls for a handful of easy mixed moves. From the couloir top, either reach the summit by the 5.6 chimney or descend 40 feet onto the opposite side for a well-protected, exposed ramp that looks 3rd class but feels like 4th in mountaineering boots. The descent is via Treasure Col at 2nd/3rd class: walk the cliff edge on Gilbert's east side toward the low point in the ridge to the southeast, then drop to Treasure Lakes. Near the top, 3rd class moves on blocks are possible.",
-   "description": null,
-   "approach": "Start at the Bishop Pass trailhead, but do not follow the trail all the way to Treasure Lakes. Instead cut west under the base of the north ridge and swing around into the bowl below the north face, where the couloir climbs a small glacier on the face.",
-   "descent_text": null,
-   "season": null,
-   "best_season": null,
-   "hazards": null,
-   "gain_ft": null,
-   "dist_km": null,
-   "high_point_ft": null,
-   "waypoints": [],
-   "areas": {
-    "lat": 37.13742,
-    "lng": -118.59774,
-    "name": "Mt. Gilbert",
-    "elevation_ft": null
-   }
-  }
- },
- {
-  "list": "sps",
-  "peak": "Mount Thompson",
-  "fill": [
-   "descent",
-   "gain",
-   "distance",
-   "season",
-   "hazards"
-  ],
-  "row": {
-   "id": "ca_mount_thompson_harrington_couloir",
-   "area_id": "ca_mount_thompson",
-   "name": "Harrington Couloir",
-   "grade": "3rd AI2 Mod. Snow",
-   "discipline": "ice",
-   "overview": "Moderate snow and ice climb. Counting from the left while walking in, take the third obvious couloir; it tops out at around 50 degrees. From the top, walk north about 10 minutes over the plateau to a 3rd class scramble of 20' to the summit.",
-   "description": null,
-   "approach": "From the South Lake parking area take the Bishop Pass trail, fork right onto the Treasure Lakes trail, then leave the trail and climb west over a rock ridge. Beyond it lies the basin below the peak's north side; follow its moraine up to the foot of the face. The couloir is the third of four on the north face, counting Knudtson, Smrz, Harrington and Moynier from the left.",
-   "descent_text": null,
-   "season": null,
-   "best_season": null,
-   "hazards": null,
-   "gain_ft": null,
-   "dist_km": null,
-   "high_point_ft": null,
-   "waypoints": [],
-   "areas": {
-    "lat": 37.14297,
-    "lng": -118.61343,
-    "name": "Mount Thompson",
-    "elevation_ft": null
-   }
-  }
- },
- {
-  "list": "sps",
-  "peak": "Mount Powell",
-  "fill": [
-   "description",
-   "approach",
-   "descent",
-   "gain",
-   "distance",
-   "season",
-   "hazards"
-  ],
-  "row": {
-   "id": "ca_mount_powell_standard_route",
-   "area_id": "ca_mount_powell",
-   "name": "Standard route",
-   "grade": "Class 2",
-   "discipline": "scrambling",
-   "overview": null,
-   "description": null,
-   "approach": null,
-   "descent_text": null,
-   "season": null,
-   "best_season": null,
-   "hazards": null,
-   "gain_ft": null,
-   "dist_km": null,
-   "high_point_ft": null,
-   "waypoints": [],
-   "areas": {
-    "lat": 37.1387,
-    "lng": -118.634,
-    "name": "Mount Powell",
-    "elevation_ft": 13360
-   }
-  }
- },
- {
-  "list": "sps",
-  "peak": "Mount Wallace",
-  "fill": [
-   "description",
-   "approach",
-   "descent",
-   "gain",
-   "distance",
-   "season",
-   "hazards"
-  ],
-  "row": {
-   "id": "ca_mount_wallace_standard_route",
-   "area_id": "ca_mount_wallace",
-   "name": "Standard route",
-   "grade": "Class 4",
-   "discipline": "mountaineering",
-   "overview": null,
-   "description": "Class 2 to the summit block, which is Class 4.",
-   "approach": null,
-   "descent_text": null,
-   "season": null,
-   "best_season": null,
-   "hazards": null,
-   "gain_ft": null,
-   "dist_km": null,
-   "high_point_ft": null,
-   "waypoints": [],
-   "areas": {
-    "lat": 37.1469,
-    "lng": -118.6569,
-    "name": "Mount Wallace",
-    "elevation_ft": 13377
    }
   }
  }

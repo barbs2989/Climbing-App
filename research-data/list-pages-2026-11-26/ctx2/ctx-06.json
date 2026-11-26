@@ -1,5 +1,153 @@
 [
  {
+  "list": "adk46",
+  "peak": "Donaldson Mountain",
+  "fill": [
+   "description",
+   "approach",
+   "descent",
+   "gain",
+   "distance",
+   "season",
+   "hazards"
+  ],
+  "row": {
+   "id": "ny_donaldson_mountain_seward_range_herd_path",
+   "area_id": "ny_donaldson_mountain",
+   "name": "Seward Range herd path",
+   "grade": "Class 2",
+   "discipline": "scrambling",
+   "overview": null,
+   "description": "Summit sits just off the ridge path beyond Seward; normally done as part of the range. Path: Blueberry Trail and Seward Range herd path. Starts at Corey's Road parking area.",
+   "approach": null,
+   "descent_text": null,
+   "season": null,
+   "best_season": null,
+   "hazards": null,
+   "gain_ft": null,
+   "dist_km": null,
+   "high_point_ft": null,
+   "waypoints": [],
+   "areas": {
+    "lat": 44.1539,
+    "lng": -74.211,
+    "name": "Donaldson Mountain",
+    "elevation_ft": 4140
+   }
+  }
+ },
+ {
+  "list": "adk46",
+  "peak": "Seymour Mountain",
+  "fill": [
+   "approach",
+   "descent",
+   "distance",
+   "season",
+   "hazards"
+  ],
+  "row": {
+   "id": "ny_seymour_mountain_ward_brook_herd_path",
+   "area_id": "ny_seymour_mountain",
+   "name": "Ward Brook herd path",
+   "grade": "Class 2",
+   "discipline": "scrambling",
+   "overview": null,
+   "description": "Cairned herd path leaves the truck trail just past the Ward Brook lean-to; steep and slippery on top. Path: Blueberry Trail, Ward Brook Truck Trail and Seymour herd path. Starts at Corey's Road parking area.",
+   "approach": null,
+   "descent_text": null,
+   "season": null,
+   "best_season": null,
+   "hazards": null,
+   "gain_ft": 4050,
+   "dist_km": null,
+   "high_point_ft": null,
+   "waypoints": [],
+   "areas": {
+    "lat": 44.1582,
+    "lng": -74.1727,
+    "name": "Seymour Mountain",
+    "elevation_ft": 4120
+   }
+  }
+ },
+ {
+  "list": "adk46",
+  "peak": "Sawteeth",
+  "fill": [
+   "description",
+   "approach",
+   "descent",
+   "distance",
+   "season",
+   "hazards"
+  ],
+  "row": {
+   "id": "ny_sawteeth_weld_trail",
+   "area_id": "ny_sawteeth",
+   "name": "Weld Trail",
+   "grade": "Class 1",
+   "discipline": "scrambling",
+   "overview": null,
+   "description": "Out-and-back on a marked trail with a steep rock slab; the reserve needs a parking reservation in season. Path: Weld Trail. Starts at St. Huberts parking (Adirondack Mountain Reserve).",
+   "approach": null,
+   "descent_text": null,
+   "season": null,
+   "best_season": null,
+   "hazards": null,
+   "gain_ft": 3100,
+   "dist_km": null,
+   "high_point_ft": null,
+   "waypoints": [],
+   "areas": {
+    "lat": 44.1133,
+    "lng": -73.8507,
+    "name": "Sawteeth",
+    "elevation_ft": 4100
+   }
+  }
+ },
+ {
+  "list": "adk46",
+  "peak": "Cascade Mountain",
+  "fill": [
+   "description",
+   "approach",
+   "descent",
+   "season",
+   "hazards"
+  ],
+  "row": {
+   "id": "ny_cascade_mountain_slide",
+   "area_id": "ny_cascade_mountain",
+   "name": "Cascade Mountain Slide",
+   "grade": "4th",
+   "discipline": "scrambling",
+   "overview": null,
+   "description": null,
+   "approach": null,
+   "descent_text": null,
+   "season": null,
+   "best_season": null,
+   "hazards": null,
+   "gain_ft": null,
+   "dist_km": null,
+   "high_point_ft": null,
+   "waypoints": [
+    {
+     "name": "Cascade Mountain summit",
+     "type": "Summit"
+    }
+   ],
+   "areas": {
+    "lat": 44.21855,
+    "lng": -73.85993,
+    "name": "Cascade Mountain",
+    "elevation_ft": null
+   }
+  }
+ },
+ {
   "list": "fifty",
   "peak": "Fairview Dome",
   "fill": [
@@ -284,152 +432,6 @@
     "lng": -107.6462,
     "name": "Pigeon Peak",
     "elevation_ft": null
-   }
-  }
- },
- {
-  "list": "co_cent",
-  "peak": "Pacific Peak",
-  "fill": [
-   "description",
-   "gain",
-   "distance",
-   "season",
-   "hazards"
-  ],
-  "row": {
-   "id": "co_pacific_peak_north_face_couloirs",
-   "area_id": "co_pacific_peak",
-   "name": "North Face Couloirs",
-   "grade": "AI1-2 Steep Snow",
-   "discipline": "ice",
-   "overview": null,
-   "description": null,
-   "approach": "From Breckenridge, take Spruce Creek Road to the Mohawk Lakes trailhead, parking as high as the road allows, then follow the trail past the abandoned mining works to Lower and Upper Mohawk Lakes. The route is the pair of couloirs on the right side of the north face; it is easiest to pass the lakes on their south ends to avoid marsh on the north. The meadow ends at the foot of the face, and the final climb to its base is a long, steady uphill.",
-   "descent_text": "Descend as for the peak itself, by the east ridge. Cornices overhang the west ridge above the route.",
-   "season": null,
-   "best_season": null,
-   "hazards": null,
-   "gain_ft": null,
-   "dist_km": null,
-   "high_point_ft": null,
-   "waypoints": [],
-   "areas": {
-    "lat": 39.4231,
-    "lng": -106.123,
-    "name": "Pacific Peak",
-    "elevation_ft": null
-   }
-  }
- },
- {
-  "list": "co_cent",
-  "peak": "Ice Mountain",
-  "fill": [
-   "description",
-   "approach",
-   "descent",
-   "gain",
-   "distance",
-   "season",
-   "hazards"
-  ],
-  "row": {
-   "id": "co_ice_mountain_northeast_ridge",
-   "area_id": "co_ice_mountain",
-   "name": "Northeast Ridge",
-   "grade": "Class 3",
-   "discipline": "scrambling",
-   "overview": null,
-   "description": "Rocky ridge scramble that is normally combined with North Apostle.",
-   "approach": null,
-   "descent_text": null,
-   "season": null,
-   "best_season": null,
-   "hazards": null,
-   "gain_ft": null,
-   "dist_km": null,
-   "high_point_ft": null,
-   "waypoints": [],
-   "areas": {
-    "lat": 38.91459,
-    "lng": -106.43694,
-    "name": "Ice Mountain",
-    "elevation_ft": null
-   }
-  }
- },
- {
-  "list": "co_cent",
-  "peak": "Cathedral Peak",
-  "fill": [
-   "description",
-   "approach",
-   "descent",
-   "gain",
-   "distance",
-   "season",
-   "hazards"
-  ],
-  "row": {
-   "id": "co_cathedral_peak_south_ridge_and_couloir",
-   "area_id": "co_cathedral_peak",
-   "name": "South Ridge and Couloir",
-   "grade": "Class 3",
-   "discipline": "scrambling",
-   "overview": null,
-   "description": "Trail to Cathedral Lake, then a loose gully and ridge scramble to the summit above Aspen; rockfall and late-season loose scree are the main concerns.",
-   "approach": null,
-   "descent_text": null,
-   "season": null,
-   "best_season": null,
-   "hazards": null,
-   "gain_ft": null,
-   "dist_km": null,
-   "high_point_ft": null,
-   "waypoints": [],
-   "areas": {
-    "lat": 39.0343,
-    "lng": -106.8591,
-    "name": "Cathedral Peak",
-    "elevation_ft": 13952
-   }
-  }
- },
- {
-  "list": "co_cent",
-  "peak": "Thunder Pyramid",
-  "fill": [
-   "description",
-   "approach",
-   "descent",
-   "gain",
-   "distance",
-   "season",
-   "hazards"
-  ],
-  "row": {
-   "id": "co_thunder_pyramid_west_face_white_couloir",
-   "area_id": "co_thunder_pyramid",
-   "name": "West Face (White Couloir)",
-   "grade": "Class 3",
-   "discipline": "scrambling",
-   "overview": null,
-   "description": "Steep couloir and west-face scrambling reached from the Maroon Lake area; very loose rock makes rockfall a serious hazard, so helmets and small parties matter.",
-   "approach": null,
-   "descent_text": null,
-   "season": null,
-   "best_season": null,
-   "hazards": null,
-   "gain_ft": null,
-   "dist_km": null,
-   "high_point_ft": null,
-   "waypoints": [],
-   "areas": {
-    "lat": 39.0627,
-    "lng": -106.9517,
-    "name": "Thunder Pyramid",
-    "elevation_ft": 13944
    }
   }
  }

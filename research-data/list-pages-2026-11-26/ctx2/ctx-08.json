@@ -1,5 +1,152 @@
 [
  {
+  "list": "co_cent",
+  "peak": "Red Mountain",
+  "fill": [
+   "description",
+   "approach",
+   "descent",
+   "gain",
+   "distance",
+   "season",
+   "hazards"
+  ],
+  "row": {
+   "id": "co_red_mountain_north_ridge_from_culebra_peak",
+   "area_id": "co_red_mountain",
+   "name": "North Ridge (from Culebra Peak)",
+   "grade": "Class 2",
+   "discipline": "scrambling",
+   "overview": null,
+   "description": "Reached only across private ranch land with a permit; it is a ridge walk usually done after Culebra Peak.",
+   "approach": null,
+   "descent_text": null,
+   "season": null,
+   "best_season": null,
+   "hazards": null,
+   "gain_ft": null,
+   "dist_km": null,
+   "high_point_ft": null,
+   "waypoints": [],
+   "areas": {
+    "lat": 37.1122,
+    "lng": -105.1813,
+    "name": "Red Mountain",
+    "elevation_ft": 13911
+   }
+  }
+ },
+ {
+  "list": "co_cent",
+  "peak": "Vermilion Peak",
+  "fill": [
+   "description",
+   "approach",
+   "descent",
+   "distance",
+   "season",
+   "hazards"
+  ],
+  "row": {
+   "id": "co_vermilion_peak_southeast_ridge",
+   "area_id": "co_vermilion_peak",
+   "name": "Southeast Ridge",
+   "grade": "Class 2+",
+   "discipline": "scrambling",
+   "overview": null,
+   "description": "Open ridge and loose talus above Telluride's Ophir area with a short final scramble.",
+   "approach": null,
+   "descent_text": null,
+   "season": null,
+   "best_season": null,
+   "hazards": null,
+   "gain_ft": 3809,
+   "dist_km": null,
+   "high_point_ft": null,
+   "waypoints": [],
+   "areas": {
+    "lat": 37.7993,
+    "lng": -107.8285,
+    "name": "Vermilion Peak",
+    "elevation_ft": 13909
+   }
+  }
+ },
+ {
+  "list": "co_cent",
+  "peak": "Casco Peak",
+  "fill": [
+   "description",
+   "approach",
+   "descent",
+   "gain",
+   "distance",
+   "season",
+   "hazards"
+  ],
+  "row": {
+   "id": "co_casco_peak_north_ridge",
+   "area_id": "co_casco_peak",
+   "name": "North Ridge",
+   "grade": "Class 2+",
+   "discipline": "scrambling",
+   "overview": null,
+   "description": "Rocky ridge scramble that is usually combined with French Mountain and Frasco Benchmark.",
+   "approach": null,
+   "descent_text": null,
+   "season": null,
+   "best_season": null,
+   "hazards": null,
+   "gain_ft": null,
+   "dist_km": null,
+   "high_point_ft": null,
+   "waypoints": [],
+   "areas": {
+    "lat": 39.114,
+    "lng": -106.4939,
+    "name": "Casco Peak",
+    "elevation_ft": 13905
+   }
+  }
+ },
+ {
+  "list": "co_cent",
+  "peak": "Phoenix Peak",
+  "fill": [
+   "description",
+   "approach",
+   "descent",
+   "gain",
+   "distance",
+   "season",
+   "hazards"
+  ],
+  "row": {
+   "id": "co_phoenix_peak_south_ridge_and_slopes",
+   "area_id": "co_phoenix_peak",
+   "name": "South Ridge and Slopes",
+   "grade": "Class 2",
+   "discipline": "scrambling",
+   "overview": null,
+   "description": "Remote tundra walk reached by a rough road near Creede; adds a few miles if the road is not driven.",
+   "approach": null,
+   "descent_text": null,
+   "season": null,
+   "best_season": null,
+   "hazards": null,
+   "gain_ft": null,
+   "dist_km": null,
+   "high_point_ft": null,
+   "waypoints": [],
+   "areas": {
+    "lat": 37.9364,
+    "lng": -106.8664,
+    "name": "Phoenix Peak",
+    "elevation_ft": 13904
+   }
+  }
+ },
+ {
   "list": "sps",
   "peak": "Mount Mallory",
   "fill": [
@@ -111,21 +258,23 @@
   "peak": "Thor Peak",
   "fill": [
    "description",
+   "approach",
+   "descent",
    "gain",
    "distance",
    "season",
    "hazards"
   ],
   "row": {
-   "id": "ca_thor_peak_boy_scout_falls",
+   "id": "ca_the_stemwinder",
    "area_id": "ca_thor_peak",
-   "name": "Boy Scout Falls",
-   "grade": "WI2-3",
-   "discipline": "ice",
-   "overview": "WI2-3 ice formed by drainage from Frog Pond; any line is fair game. The ice is low angle with vertical sections of 10-15 feet. All lines are exposed to wind and spindrift.",
+   "name": "The Stemwinder",
+   "grade": "5.4",
+   "discipline": "alpine",
+   "overview": null,
    "description": null,
-   "approach": "Hike the Whitney Trail until it forks right onto the North Fork Trail toward the Lower and Upper Boy Scout Lakes. The flows form on slabs to the left, and are visible from the lower lake when present. Cross the talus between the two lakes and choose a line up to the ice. Snowshoes can help. Mount Whitney zone permit rules apply.",
-   "descent_text": "Walk off to climber's right, or rappel using V-threads or the anchors on the left side of the flow. Two ropes are needed unless you walk off.",
+   "approach": null,
+   "descent_text": null,
    "season": null,
    "best_season": null,
    "hazards": null,
@@ -286,153 +435,6 @@
     "lng": -118.27794,
     "name": "Mt Carillon",
     "elevation_ft": null
-   }
-  }
- },
- {
-  "list": "sps",
-  "peak": "Tunnabora Peak",
-  "fill": [
-   "description",
-   "approach",
-   "descent",
-   "gain",
-   "distance",
-   "season",
-   "hazards"
-  ],
-  "row": {
-   "id": "ca_tunnabora_peak_south_slope_from_tulainyo_lake",
-   "area_id": "ca_tunnabora_peak",
-   "name": "South Slope from Tulainyo Lake",
-   "grade": "Class 2",
-   "discipline": "scrambling",
-   "overview": null,
-   "description": "Climb the Mountaineers Route to the Russell-Carillon plateau, cross the Russell-Carillon pass (class 3 on the north side) to Tulainyo Lake, then walk the sandy south slopes to the summit.",
-   "approach": null,
-   "descent_text": null,
-   "season": null,
-   "best_season": null,
-   "hazards": null,
-   "gain_ft": null,
-   "dist_km": null,
-   "high_point_ft": null,
-   "waypoints": [],
-   "areas": {
-    "lat": 36.6051,
-    "lng": -118.2821,
-    "name": "Tunnabora Peak",
-    "elevation_ft": 13563
-   }
-  }
- },
- {
-  "list": "sps",
-  "peak": "Mount Barnard",
-  "fill": [
-   "description",
-   "approach",
-   "descent",
-   "gain",
-   "distance",
-   "season",
-   "hazards"
-  ],
-  "row": {
-   "id": "ca_mount_barnard_standard_route",
-   "area_id": "ca_mount_barnard",
-   "name": "Standard route",
-   "grade": "Class 2",
-   "discipline": "scrambling",
-   "overview": null,
-   "description": null,
-   "approach": null,
-   "descent_text": null,
-   "season": null,
-   "best_season": null,
-   "hazards": null,
-   "gain_ft": null,
-   "dist_km": null,
-   "high_point_ft": null,
-   "waypoints": [],
-   "areas": {
-    "lat": 36.6283,
-    "lng": -118.3218,
-    "name": "Mount Barnard",
-    "elevation_ft": 13990
-   }
-  }
- },
- {
-  "list": "sps",
-  "peak": "Trojan Peak",
-  "fill": [
-   "description",
-   "approach",
-   "descent",
-   "gain",
-   "distance",
-   "season",
-   "hazards"
-  ],
-  "row": {
-   "id": "ca_trojan_peak_standard_route",
-   "area_id": "ca_trojan_peak",
-   "name": "Standard route",
-   "grade": "Class 2",
-   "discipline": "scrambling",
-   "overview": null,
-   "description": null,
-   "approach": null,
-   "descent_text": null,
-   "season": null,
-   "best_season": null,
-   "hazards": null,
-   "gain_ft": null,
-   "dist_km": null,
-   "high_point_ft": null,
-   "waypoints": [],
-   "areas": {
-    "lat": 36.6422,
-    "lng": -118.3152,
-    "name": "Trojan Peak",
-    "elevation_ft": 13947
-   }
-  }
- },
- {
-  "list": "sps",
-  "peak": "Alta Peak",
-  "fill": [
-   "description",
-   "approach",
-   "descent",
-   "distance",
-   "season",
-   "hazards"
-  ],
-  "row": {
-   "id": "ca_alta_peak_alta_trail",
-   "area_id": "ca_alta_peak",
-   "name": "Alta Trail",
-   "grade": "Class 1",
-   "discipline": "scrambling",
-   "overview": null,
-   "description": "A maintained trail climbs from Wolverton through forest to Panther Gap, then across a meadow and past Tharps Rock to switchbacks on the summit. Long day with about 4,000 feet of gain.",
-   "approach": null,
-   "descent_text": null,
-   "season": null,
-   "best_season": null,
-   "hazards": null,
-   "gain_ft": 4000,
-   "dist_km": null,
-   "high_point_ft": null,
-   "waypoints": [],
-   "areas": {
-    "lat": 36.5905,
-    "lng": -118.6634,
-    "name": "Alta Peak",
-    "elevation_ft": 11204
    }
   }
  }

@@ -1,6 +1,149 @@
 [
  {
   "list": "sps",
+  "peak": "Mount Hooper",
+  "fill": [
+   "approach",
+   "descent",
+   "gain",
+   "distance",
+   "season",
+   "hazards"
+  ],
+  "row": {
+   "id": "ca_mount_hooper_southwest_ridge_via_tombstone_pass",
+   "area_id": "ca_mount_hooper",
+   "name": "Southwest Ridge via Tombstone Pass",
+   "grade": "Class 4",
+   "discipline": "mountaineering",
+   "overview": null,
+   "description": "Follow Tombstone Creek to Tombstone Pass, traverse to the cirque below the summit and climb the southwest ridge to the summit block. The block itself is a short 5.4 crack on the south side. Class 2 to the summit block, which is Class 4.",
+   "approach": null,
+   "descent_text": null,
+   "season": null,
+   "best_season": null,
+   "hazards": null,
+   "gain_ft": null,
+   "dist_km": null,
+   "high_point_ft": null,
+   "waypoints": [],
+   "areas": {
+    "lat": 37.2924,
+    "lng": -118.8949,
+    "name": "Mount Hooper",
+    "elevation_ft": 12349
+   }
+  }
+ },
+ {
+  "list": "sps",
+  "peak": "Merriam Peak",
+  "fill": [
+   "approach",
+   "descent",
+   "gain",
+   "distance",
+   "season",
+   "hazards"
+  ],
+  "row": {
+   "id": "ca_direct_north_buttress",
+   "area_id": "ca_merriam_peak",
+   "name": "Direct North Buttress",
+   "grade": "5.10b",
+   "discipline": "alpine",
+   "overview": "A varied mix of cracks and faces. Heading left along a ledge below an orange lichen bulge leads to the \"Triple Cracks\", which seemed the hardest physically; the alcove has loose rock beneath it, yet the narrow crack over it is solid. Farther up, a 5.10b dihedral begins stiff before easing, and a big fixed cam sits in the offwidth/chimney past it. Near the top, gendarmes and pillars crowd a ridge where 4th and 5th class mix.",
+   "description": null,
+   "approach": null,
+   "descent_text": null,
+   "season": null,
+   "best_season": null,
+   "hazards": null,
+   "gain_ft": null,
+   "dist_km": null,
+   "high_point_ft": null,
+   "waypoints": [],
+   "areas": {
+    "lat": 37.3088,
+    "lng": -118.7651,
+    "name": "Merriam Peak",
+    "elevation_ft": null
+   }
+  }
+ },
+ {
+  "list": "sps",
+  "peak": "Royce Peak",
+  "fill": [
+   "gain",
+   "distance",
+   "season",
+   "hazards"
+  ],
+  "row": {
+   "id": "ca_royce_peak_north_ridge_direct",
+   "area_id": "ca_royce_peak",
+   "name": "North Ridge Direct",
+   "grade": "5.10-",
+   "discipline": "alpine",
+   "overview": "Three steep pitches reach 5.10-, after which the ridge is fourth-class and easy fifth-class. P1 (160', 5.8): from the left, traverse over ledges to a belay where steep orange cracks begin. P2 (160', 5.10-): hand-width splitter over a steep bulge, ending at a horn belay (#3 and a double sling). P3 (120', 5.10-): finger-width crack on the left cuts the bulge and reaches the ridge. P4: 400' along the ridge, then 800' of easier scrambling (2nd to 3rd class) finishes at the summit.",
+   "description": null,
+   "approach": "From the Pine Creek trailhead, follow the trail past Pine Lake and Upper Pine Lake to Honeymoon Lake, then continue to Granite Park. Above the lake, cut southwest cross-country up and over Royce Pass to reach the Royce Lakes basin. Go around to the west shore of the largest Royce Lake; the orange cracks that lead up to the ridge are easy to pick out and serve as a guide.",
+   "descent_text": "The route finishes on the summit of Royce Peak, after a long stretch of third and fourth class and easy fifth class along the ridge. A walk-off to the south leads down from there.",
+   "season": null,
+   "best_season": null,
+   "hazards": null,
+   "gain_ft": null,
+   "dist_km": null,
+   "high_point_ft": null,
+   "waypoints": [],
+   "areas": {
+    "lat": 37.31697,
+    "lng": -118.77074,
+    "name": "Royce Peak",
+    "elevation_ft": null
+   }
+  }
+ },
+ {
+  "list": "sps",
+  "peak": "Mount Julius Caesar",
+  "fill": [
+   "description",
+   "approach",
+   "descent",
+   "gain",
+   "distance",
+   "season",
+   "hazards"
+  ],
+  "row": {
+   "id": "ca_west_ridge_2",
+   "area_id": "ca_mt_julius_caesar",
+   "name": "West Ridge",
+   "grade": "3rd",
+   "discipline": "alpine",
+   "overview": null,
+   "description": null,
+   "approach": null,
+   "descent_text": null,
+   "season": null,
+   "best_season": null,
+   "hazards": null,
+   "gain_ft": null,
+   "dist_km": null,
+   "high_point_ft": null,
+   "waypoints": [],
+   "areas": {
+    "lat": 37.35681,
+    "lng": -118.78182,
+    "name": "Mt. Julius Caesar",
+    "elevation_ft": null
+   }
+  }
+ },
+ {
+  "list": "sps",
   "peak": "Mount Hilgard",
   "fill": [
    "description",
@@ -205,11 +348,11 @@
    "hazards"
   ],
   "row": {
-   "id": "ca_mount_abbot_warning_shot_nw_face",
+   "id": "ca_north_couloir",
    "area_id": "ca_mount_abbot",
-   "name": "Warning Shot (NW Face)",
-   "grade": "5.5 AI2 Steep Snow PG13",
-   "discipline": "ice",
+   "name": "North Couloir",
+   "grade": "3rd",
+   "discipline": "alpine",
    "overview": null,
    "description": null,
    "approach": null,
@@ -296,152 +439,6 @@
     "lat": 37.40525,
     "lng": -118.7329,
     "name": "Mt Morgan (South)",
-    "elevation_ft": null
-   }
-  }
- },
- {
-  "list": "sps",
-  "peak": "Silver Peak",
-  "fill": [
-   "description",
-   "approach",
-   "descent",
-   "gain",
-   "distance",
-   "season",
-   "hazards"
-  ],
-  "row": {
-   "id": "ca_silver_peak_standard_route",
-   "area_id": "ca_silver_peak",
-   "name": "Standard route",
-   "grade": "Class 2",
-   "discipline": "scrambling",
-   "overview": null,
-   "description": null,
-   "approach": null,
-   "descent_text": null,
-   "season": null,
-   "best_season": null,
-   "hazards": null,
-   "gain_ft": null,
-   "dist_km": null,
-   "high_point_ft": null,
-   "waypoints": [],
-   "areas": {
-    "lat": 37.4697,
-    "lng": -119.0212,
-    "name": "Silver Peak",
-    "elevation_ft": 11878
-   }
-  }
- },
- {
-  "list": "sps",
-  "peak": "Mount Izaak Walton",
-  "fill": [
-   "description",
-   "approach",
-   "descent",
-   "gain",
-   "distance",
-   "season",
-   "hazards"
-  ],
-  "row": {
-   "id": "ca_mount_izaak_walton_east_face",
-   "area_id": "ca_mount_izaak_walton",
-   "name": "East Face",
-   "grade": "Class 2",
-   "discipline": "scrambling",
-   "overview": null,
-   "description": "Hike the Mono Creek trail to Mott Lake, go cross-country to Bighorn Lake, and climb the mostly solid east face. Descend the sandy south face.",
-   "approach": null,
-   "descent_text": null,
-   "season": null,
-   "best_season": null,
-   "hazards": null,
-   "gain_ft": null,
-   "dist_km": null,
-   "high_point_ft": null,
-   "waypoints": [],
-   "areas": {
-    "lat": 37.4699,
-    "lng": -118.89,
-    "name": "Mount Izaak Walton",
-    "elevation_ft": 12077
-   }
-  }
- },
- {
-  "list": "sps",
-  "peak": "Red and White Mountain",
-  "fill": [
-   "description",
-   "approach",
-   "descent",
-   "gain",
-   "distance",
-   "season",
-   "hazards"
-  ],
-  "row": {
-   "id": "ca_red_and_white_mountain_standard_route",
-   "area_id": "ca_red_and_white_mountain",
-   "name": "Standard route",
-   "grade": "Class 2",
-   "discipline": "scrambling",
-   "overview": null,
-   "description": null,
-   "approach": null,
-   "descent_text": null,
-   "season": null,
-   "best_season": null,
-   "hazards": null,
-   "gain_ft": null,
-   "dist_km": null,
-   "high_point_ft": null,
-   "waypoints": [],
-   "areas": {
-    "lat": 37.4797,
-    "lng": -118.8572,
-    "name": "Red and White Mountain",
-    "elevation_ft": 12816
-   }
-  }
- },
- {
-  "list": "sps",
-  "peak": "Red Slate Mountain",
-  "fill": [
-   "descent",
-   "gain",
-   "distance",
-   "season",
-   "hazards"
-  ],
-  "row": {
-   "id": "ca_red_slate_mountain_north_couloir",
-   "area_id": "ca_red_slate_mountain",
-   "name": "North Couloir",
-   "grade": "WI2- Mod. Snow",
-   "discipline": "ice",
-   "overview": "Severe rockfall danger. The couloir reaches about 40 degrees at most and turns left roughly three-quarters of the way up. In late summer and early fall that final section may melt out, giving easy mixed climbing.",
-   "description": null,
-   "approach": "Start at Lake Wit-So-Nah-Pah and walk up to Constance Lake, then climb a moraine to the glacier at the foot of the couloir. Rockfall is a serious hazard here.",
-   "descent_text": "Head northwest over scree slopes to a saddle, then go north back down to Lake Wit-So-Nah-Pah.",
-   "season": null,
-   "best_season": null,
-   "hazards": null,
-   "gain_ft": null,
-   "dist_km": null,
-   "high_point_ft": null,
-   "waypoints": [],
-   "areas": {
-    "lat": 37.5076,
-    "lng": -118.8693,
-    "name": "Red Slate Mountain",
     "elevation_ft": null
    }
   }

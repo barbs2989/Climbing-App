@@ -1,6 +1,150 @@
 [
  {
   "list": "co14",
+  "peak": "Challenger Point",
+  "fill": [
+   "description",
+   "approach",
+   "descent",
+   "distance",
+   "season",
+   "hazards"
+  ],
+  "row": {
+   "id": "co_challenger_point_north_slope",
+   "area_id": "co_challenger_point",
+   "name": "North Slope",
+   "grade": "Class 2",
+   "discipline": "scrambling",
+   "overview": null,
+   "description": null,
+   "approach": null,
+   "descent_text": null,
+   "season": null,
+   "best_season": null,
+   "hazards": null,
+   "gain_ft": 5400,
+   "dist_km": null,
+   "high_point_ft": null,
+   "waypoints": [],
+   "areas": {
+    "lat": 37.9803,
+    "lng": -105.6066,
+    "name": "Challenger Point",
+    "elevation_ft": 14086
+   }
+  }
+ },
+ {
+  "list": "co14",
+  "peak": "Mount Columbia",
+  "fill": [
+   "description",
+   "approach",
+   "descent",
+   "distance",
+   "season",
+   "hazards"
+  ],
+  "row": {
+   "id": "co_mount_columbia_west_slopes",
+   "area_id": "co_mount_columbia",
+   "name": "West Slopes",
+   "grade": "Class 2",
+   "discipline": "scrambling",
+   "overview": null,
+   "description": null,
+   "approach": null,
+   "descent_text": null,
+   "season": null,
+   "best_season": null,
+   "hazards": null,
+   "gain_ft": 4250,
+   "dist_km": null,
+   "high_point_ft": null,
+   "waypoints": [],
+   "areas": {
+    "lat": 38.9039,
+    "lng": -106.2975,
+    "name": "Mount Columbia",
+    "elevation_ft": 14077
+   }
+  }
+ },
+ {
+  "list": "co14",
+  "peak": "Missouri Mountain",
+  "fill": [
+   "description",
+   "approach",
+   "descent",
+   "distance",
+   "season",
+   "hazards"
+  ],
+  "row": {
+   "id": "co_missouri_mountain_northwest_ridge",
+   "area_id": "co_missouri_mountain",
+   "name": "Northwest Ridge",
+   "grade": "Class 2",
+   "discipline": "scrambling",
+   "overview": "The standard way up Missouri Mountain: up Missouri Gulch to its head, west over tundra and talus to a saddle, then along a narrow, somewhat exposed ridge path to the summit.",
+   "description": null,
+   "approach": null,
+   "descent_text": null,
+   "season": null,
+   "best_season": null,
+   "hazards": null,
+   "gain_ft": 4500,
+   "dist_km": null,
+   "high_point_ft": null,
+   "waypoints": [],
+   "areas": {
+    "lat": 38.9476,
+    "lng": -106.3785,
+    "name": "Missouri Mountain",
+    "elevation_ft": 14074
+   }
+  }
+ },
+ {
+  "list": "co14",
+  "peak": "Humboldt Peak",
+  "fill": [
+   "description",
+   "approach",
+   "descent",
+   "distance",
+   "season",
+   "hazards"
+  ],
+  "row": {
+   "id": "co_humboldt_peak_west_ridge",
+   "area_id": "co_humboldt_peak",
+   "name": "West Ridge",
+   "grade": "Class 2",
+   "discipline": "scrambling",
+   "overview": null,
+   "description": null,
+   "approach": null,
+   "descent_text": null,
+   "season": null,
+   "best_season": null,
+   "hazards": null,
+   "gain_ft": 4300,
+   "dist_km": null,
+   "high_point_ft": null,
+   "waypoints": [],
+   "areas": {
+    "lat": 37.9762,
+    "lng": -105.5552,
+    "name": "Humboldt Peak",
+    "elevation_ft": 14070
+   }
+  }
+ },
+ {
+  "list": "co14",
   "peak": "Mount Bierstadt",
   "fill": [
    "description",
@@ -297,162 +441,6 @@
     "lng": -106.1701,
     "name": "Mount Sherman",
     "elevation_ft": 14043
-   }
-  }
- },
- {
-  "list": "co14",
-  "peak": "Redcloud Peak",
-  "fill": [
-   "description",
-   "approach",
-   "descent",
-   "distance",
-   "season",
-   "hazards"
-  ],
-  "row": {
-   "id": "co_redcloud_peak_northeast_ridge",
-   "area_id": "co_redcloud_peak",
-   "name": "Northeast Ridge",
-   "grade": "Class 2",
-   "discipline": "scrambling",
-   "overview": null,
-   "description": null,
-   "approach": null,
-   "descent_text": null,
-   "season": null,
-   "best_season": null,
-   "hazards": null,
-   "gain_ft": 3700,
-   "dist_km": null,
-   "high_point_ft": null,
-   "waypoints": [],
-   "areas": {
-    "lat": 37.941,
-    "lng": -107.4219,
-    "name": "Redcloud Peak",
-    "elevation_ft": 14041
-   }
-  }
- },
- {
-  "list": "co14",
-  "peak": "San Luis Peak",
-  "fill": [
-   "description",
-   "approach",
-   "descent",
-   "distance",
-   "season",
-   "hazards"
-  ],
-  "row": {
-   "id": "co_san_luis_peak_northeast_ridge",
-   "area_id": "co_san_luis_peak",
-   "name": "Northeast Ridge",
-   "grade": "Class 1",
-   "discipline": "scrambling",
-   "overview": null,
-   "description": null,
-   "approach": null,
-   "descent_text": null,
-   "season": null,
-   "best_season": null,
-   "hazards": null,
-   "gain_ft": 3600,
-   "dist_km": null,
-   "high_point_ft": null,
-   "waypoints": [],
-   "areas": {
-    "lat": 37.9868,
-    "lng": -106.9313,
-    "name": "San Luis Peak",
-    "elevation_ft": 14023
-   }
-  }
- },
- {
-  "list": "co14",
-  "peak": "Wetterhorn Peak",
-  "fill": [
-   "description",
-   "approach",
-   "descent",
-   "season",
-   "hazards"
-  ],
-  "row": {
-   "id": "co_wetterhorn_peak_southeast_ridge",
-   "area_id": "co_wetterhorn_peak",
-   "name": "Southeast Ridge",
-   "grade": "Class 3",
-   "discipline": "scrambling",
-   "overview": "Follow the ridge along its east flank, pass through the obvious notch, and finish up the southwest face. The final 400 ft is thrilling, on little sandy ledges that sometimes hold ice.",
-   "description": null,
-   "approach": null,
-   "descent_text": null,
-   "season": null,
-   "best_season": null,
-   "hazards": null,
-   "gain_ft": 3300,
-   "dist_km": null,
-   "high_point_ft": null,
-   "waypoints": [
-    {
-     "name": "Matterhorn Creek Trailhead",
-     "type": "Trailhead",
-     "elev": 10872,
-     "distMi": 0
-    },
-    {
-     "name": "Wetterhorn Peak",
-     "type": "Summit",
-     "elev": 14021,
-     "distMi": 3.4
-    }
-   ],
-   "areas": {
-    "lat": 38.0607,
-    "lng": -107.5109,
-    "name": "Wetterhorn Peak",
-    "elevation_ft": 14021
-   }
-  }
- },
- {
-  "list": "co14",
-  "peak": "Mount of the Holy Cross",
-  "fill": [
-   "approach",
-   "descent",
-   "gain",
-   "distance",
-   "season",
-   "hazards"
-  ],
-  "row": {
-   "id": "co_north_face",
-   "area_id": "co_mount_of_the_holy_cross",
-   "name": "North Face",
-   "grade": "5.8",
-   "discipline": "ice",
-   "overview": "Cross Couloir lies to one side and Angelica Couloir to the other; between them an obvious couloir cuts Holy Cross's north face, and this route takes it. Expect ice and rock at altitude, plus a lengthy chimney pitch (5.8) at the pinch mid-face. Exit by the highest ramp trending right, which has the steepest ice of the route and lands on the crest of the ridge just beneath the top.",
-   "description": null,
-   "approach": null,
-   "descent_text": null,
-   "season": null,
-   "best_season": null,
-   "hazards": null,
-   "gain_ft": null,
-   "dist_km": null,
-   "high_point_ft": null,
-   "waypoints": [],
-   "areas": {
-    "lat": 39.4681,
-    "lng": -106.479,
-    "name": "Mount of the Holy Cross",
-    "elevation_ft": null
    }
   }
  }

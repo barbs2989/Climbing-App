@@ -1,6 +1,162 @@
 [
  {
   "list": "co14",
+  "peak": "Redcloud Peak",
+  "fill": [
+   "description",
+   "approach",
+   "descent",
+   "distance",
+   "season",
+   "hazards"
+  ],
+  "row": {
+   "id": "co_redcloud_peak_northeast_ridge",
+   "area_id": "co_redcloud_peak",
+   "name": "Northeast Ridge",
+   "grade": "Class 2",
+   "discipline": "scrambling",
+   "overview": null,
+   "description": null,
+   "approach": null,
+   "descent_text": null,
+   "season": null,
+   "best_season": null,
+   "hazards": null,
+   "gain_ft": 3700,
+   "dist_km": null,
+   "high_point_ft": null,
+   "waypoints": [],
+   "areas": {
+    "lat": 37.941,
+    "lng": -107.4219,
+    "name": "Redcloud Peak",
+    "elevation_ft": 14041
+   }
+  }
+ },
+ {
+  "list": "co14",
+  "peak": "San Luis Peak",
+  "fill": [
+   "description",
+   "approach",
+   "descent",
+   "distance",
+   "season",
+   "hazards"
+  ],
+  "row": {
+   "id": "co_san_luis_peak_northeast_ridge",
+   "area_id": "co_san_luis_peak",
+   "name": "Northeast Ridge",
+   "grade": "Class 1",
+   "discipline": "scrambling",
+   "overview": null,
+   "description": null,
+   "approach": null,
+   "descent_text": null,
+   "season": null,
+   "best_season": null,
+   "hazards": null,
+   "gain_ft": 3600,
+   "dist_km": null,
+   "high_point_ft": null,
+   "waypoints": [],
+   "areas": {
+    "lat": 37.9868,
+    "lng": -106.9313,
+    "name": "San Luis Peak",
+    "elevation_ft": 14023
+   }
+  }
+ },
+ {
+  "list": "co14",
+  "peak": "Wetterhorn Peak",
+  "fill": [
+   "description",
+   "approach",
+   "descent",
+   "season",
+   "hazards"
+  ],
+  "row": {
+   "id": "co_wetterhorn_peak_southeast_ridge",
+   "area_id": "co_wetterhorn_peak",
+   "name": "Southeast Ridge",
+   "grade": "Class 3",
+   "discipline": "scrambling",
+   "overview": "Follow the ridge along its east flank, pass through the obvious notch, and finish up the southwest face. The final 400 ft is thrilling, on little sandy ledges that sometimes hold ice.",
+   "description": null,
+   "approach": null,
+   "descent_text": null,
+   "season": null,
+   "best_season": null,
+   "hazards": null,
+   "gain_ft": 3300,
+   "dist_km": null,
+   "high_point_ft": null,
+   "waypoints": [
+    {
+     "name": "Matterhorn Creek Trailhead",
+     "type": "Trailhead",
+     "elev": 10872,
+     "distMi": 0
+    },
+    {
+     "name": "Wetterhorn Peak",
+     "type": "Summit",
+     "elev": 14021,
+     "distMi": 3.4
+    }
+   ],
+   "areas": {
+    "lat": 38.0607,
+    "lng": -107.5109,
+    "name": "Wetterhorn Peak",
+    "elevation_ft": 14021
+   }
+  }
+ },
+ {
+  "list": "co14",
+  "peak": "Mount of the Holy Cross",
+  "fill": [
+   "approach",
+   "descent",
+   "gain",
+   "distance",
+   "season",
+   "hazards"
+  ],
+  "row": {
+   "id": "co_north_face",
+   "area_id": "co_mount_of_the_holy_cross",
+   "name": "North Face",
+   "grade": "5.8",
+   "discipline": "ice",
+   "overview": "Cross Couloir lies to one side and Angelica Couloir to the other; between them an obvious couloir cuts Holy Cross's north face, and this route takes it. Expect ice and rock at altitude, plus a lengthy chimney pitch (5.8) at the pinch mid-face. Exit by the highest ramp trending right, which has the steepest ice of the route and lands on the crest of the ridge just beneath the top.",
+   "description": null,
+   "approach": null,
+   "descent_text": null,
+   "season": null,
+   "best_season": null,
+   "hazards": null,
+   "gain_ft": null,
+   "dist_km": null,
+   "high_point_ft": null,
+   "waypoints": [],
+   "areas": {
+    "lat": 39.4681,
+    "lng": -106.479,
+    "name": "Mount of the Holy Cross",
+    "elevation_ft": null
+   }
+  }
+ },
+ {
+  "list": "co14",
   "peak": "Huron Peak",
   "fill": [
    "description",
@@ -218,12 +374,12 @@
    "hazards"
   ],
   "row": {
-   "id": "ca_u_notch_couloir",
+   "id": "ca_north_palisade_clyde_couloir",
    "area_id": "ca_north_palisade",
-   "name": "U-Notch Couloir",
-   "grade": "5.6",
-   "discipline": "ice",
-   "overview": "A broad ice gully rising from the glacier into the wide gap beside the summit. Getting over the bergschrund is the main difficulty. Beyond the gap, a pair of pitches on easy-going cracks reach the summit area. Parties usually take the Clyde variation rather than the chimney variation.",
+   "name": "Clyde Couloir",
+   "grade": "Class 4-5",
+   "discipline": "alpine",
+   "overview": "A narrow snow and ice gully on the east side of the peak that ends at the notch beside the neighbouring summit. Early in the year it is a long steep snow climb; later it thins to a shorter ice pitch between loose walls, and it ranks among the riskier gullies in the range.",
    "description": null,
    "approach": null,
    "descent_text": null,
@@ -319,155 +475,6 @@
     "lat": 36.59,
     "lng": -118.291,
     "name": "Mt. Russell",
-    "elevation_ft": null
-   }
-  }
- },
- {
-  "list": "ca14",
-  "peak": "Split Mountain",
-  "fill": [
-   "descent",
-   "gain",
-   "distance",
-   "season",
-   "hazards"
-  ],
-  "row": {
-   "id": "ca_split_mountain_northeast_couloir",
-   "area_id": "ca_split_mountain",
-   "name": "Northeast Couloir",
-   "grade": "WI3 Easy Snow",
-   "discipline": "ice",
-   "overview": "The big gully that separates Split Mountain from its aretes. It funnels rockfall from many gullies, so approach with caution. The bergschrund can be large, and pitch 1 beyond it is an ice smear, vertical in places, over a bulge. Options then include an ice chimney on the left, the center flow (thin and mixed when poor), or two moderate chossy rock pitches. Next, cross over to the primary flow, which gives up to 600 feet of low-angle ice. A snowfield above ranges from deep facets to hard neve. Rockfall danger is extreme in the late-season upper pitches. From the top turn right on class 3 to the summit.",
-   "description": null,
-   "approach": "From the Red Lakes trailhead, the trail starts a little north of Red Mountain Creek and switchbacks uphill, then turns west and runs above the creek to Red Lake and the foot of Split Mountain. The couloir starts a long way up the slope above Red Lake. The couloir is a funnel for rockfall.",
-   "descent_text": null,
-   "season": null,
-   "best_season": null,
-   "hazards": null,
-   "gain_ft": null,
-   "dist_km": null,
-   "high_point_ft": null,
-   "waypoints": [],
-   "areas": {
-    "lat": 37.0209,
-    "lng": -118.4224,
-    "name": "Split Mountain",
-    "elevation_ft": null
-   }
-  }
- },
- {
-  "list": "ca14",
-  "peak": "Mount Langley",
-  "fill": [
-   "description",
-   "approach",
-   "descent",
-   "season",
-   "hazards"
-  ],
-  "row": {
-   "id": "ca_north_east_couloir",
-   "area_id": "ca_mt_langley",
-   "name": "North east couloir",
-   "grade": "3rd",
-   "discipline": "alpine",
-   "overview": null,
-   "description": null,
-   "approach": null,
-   "descent_text": null,
-   "season": null,
-   "best_season": null,
-   "hazards": null,
-   "gain_ft": 7000,
-   "dist_km": null,
-   "high_point_ft": null,
-   "waypoints": [
-    {
-     "name": "Mount Langley",
-     "type": "Summit",
-     "elev": 13991,
-     "distMi": 5.6
-    }
-   ],
-   "areas": {
-    "lat": 36.5233,
-    "lng": -118.239,
-    "name": "Mt. Langley",
-    "elevation_ft": null
-   }
-  }
- },
- {
-  "list": "ca14",
-  "peak": "Mount Tyndall",
-  "fill": [
-   "approach",
-   "descent",
-   "gain",
-   "distance",
-   "season",
-   "hazards"
-  ],
-  "row": {
-   "id": "ca_northeast_arete_2",
-   "area_id": "ca_mt_tyndall",
-   "name": "Northeast Arete",
-   "grade": "5.8",
-   "discipline": "alpine",
-   "overview": "NE corner route to the summit, which lies southeast along the ridge. Sound rock gives a scramble of 3rd plus 4th class, then a ledge belay 150 feet up. Mid-route has somewhat loose rock where the line bears left at the fork of the Y. Climbers left near the edge has the best exposure. The final 100 feet steepen, with mid 5th directly or easier ground right.",
-   "description": null,
-   "approach": null,
-   "descent_text": null,
-   "season": null,
-   "best_season": null,
-   "hazards": null,
-   "gain_ft": null,
-   "dist_km": null,
-   "high_point_ft": null,
-   "waypoints": [],
-   "areas": {
-    "lat": 36.6556,
-    "lng": -118.3369,
-    "name": "Mt. Tyndall",
-    "elevation_ft": null
-   }
-  }
- },
- {
-  "list": "ca14",
-  "peak": "Mount Muir",
-  "fill": [
-   "approach",
-   "descent",
-   "gain",
-   "distance",
-   "season",
-   "hazards"
-  ],
-  "row": {
-   "id": "ca_from_trail_by_w_n_ridge",
-   "area_id": "ca_mt_muir",
-   "name": "From Trail by W + N ridge",
-   "grade": "5.6",
-   "discipline": "alpine",
-   "overview": "Be ready to down-climb: no rappel anchors are known near the top. Two 5.6 moves, an overhang and a narrow gap, are hard to reverse. Beforehand come sculpted granite (about 5.4), talus and a weakness in a short wall; afterward a slab traverse southward to the Normal route and then a wide crack to the crest.",
-   "description": null,
-   "approach": null,
-   "descent_text": null,
-   "season": null,
-   "best_season": null,
-   "hazards": null,
-   "gain_ft": null,
-   "dist_km": null,
-   "high_point_ft": null,
-   "waypoints": [],
-   "areas": {
-    "lat": 36.5647,
-    "lng": -118.2912,
-    "name": "Mt. Muir",
     "elevation_ft": null
    }
   }

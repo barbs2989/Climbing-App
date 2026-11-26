@@ -1,5 +1,156 @@
 [
  {
+  "list": "ca14",
+  "peak": "Split Mountain",
+  "fill": [
+   "description",
+   "approach",
+   "descent",
+   "gain",
+   "distance",
+   "season",
+   "hazards"
+  ],
+  "row": {
+   "id": "ca_st_jeans_couloir",
+   "area_id": "ca_split_mountain",
+   "name": "St Jeans Couloir",
+   "grade": "4th",
+   "discipline": "alpine",
+   "overview": "The couloir immediately right of the east-central one, steep and slushy, around 1200ft from bottom to top. At its top, bear left over two or so false summits to the summit.",
+   "description": null,
+   "approach": null,
+   "descent_text": null,
+   "season": null,
+   "best_season": null,
+   "hazards": null,
+   "gain_ft": null,
+   "dist_km": null,
+   "high_point_ft": null,
+   "waypoints": [],
+   "areas": {
+    "lat": 37.0209,
+    "lng": -118.4224,
+    "name": "Split Mountain",
+    "elevation_ft": null
+   }
+  }
+ },
+ {
+  "list": "ca14",
+  "peak": "Mount Langley",
+  "fill": [
+   "description",
+   "approach",
+   "descent",
+   "season",
+   "hazards"
+  ],
+  "row": {
+   "id": "ca_north_east_couloir",
+   "area_id": "ca_mt_langley",
+   "name": "North east couloir",
+   "grade": "3rd",
+   "discipline": "alpine",
+   "overview": null,
+   "description": null,
+   "approach": null,
+   "descent_text": null,
+   "season": null,
+   "best_season": null,
+   "hazards": null,
+   "gain_ft": 7000,
+   "dist_km": null,
+   "high_point_ft": null,
+   "waypoints": [
+    {
+     "name": "Mount Langley",
+     "type": "Summit",
+     "elev": 13991,
+     "distMi": 5.6
+    }
+   ],
+   "areas": {
+    "lat": 36.5233,
+    "lng": -118.239,
+    "name": "Mt. Langley",
+    "elevation_ft": null
+   }
+  }
+ },
+ {
+  "list": "ca14",
+  "peak": "Mount Tyndall",
+  "fill": [
+   "approach",
+   "descent",
+   "gain",
+   "distance",
+   "season",
+   "hazards"
+  ],
+  "row": {
+   "id": "ca_northeast_arete_2",
+   "area_id": "ca_mt_tyndall",
+   "name": "Northeast Arete",
+   "grade": "5.8",
+   "discipline": "alpine",
+   "overview": "NE corner route to the summit, which lies southeast along the ridge. Sound rock gives a scramble of 3rd plus 4th class, then a ledge belay 150 feet up. Mid-route has somewhat loose rock where the line bears left at the fork of the Y. Climbers left near the edge has the best exposure. The final 100 feet steepen, with mid 5th directly or easier ground right.",
+   "description": null,
+   "approach": null,
+   "descent_text": null,
+   "season": null,
+   "best_season": null,
+   "hazards": null,
+   "gain_ft": null,
+   "dist_km": null,
+   "high_point_ft": null,
+   "waypoints": [],
+   "areas": {
+    "lat": 36.6556,
+    "lng": -118.3369,
+    "name": "Mt. Tyndall",
+    "elevation_ft": null
+   }
+  }
+ },
+ {
+  "list": "ca14",
+  "peak": "Mount Muir",
+  "fill": [
+   "approach",
+   "descent",
+   "gain",
+   "distance",
+   "season",
+   "hazards"
+  ],
+  "row": {
+   "id": "ca_from_trail_by_w_n_ridge",
+   "area_id": "ca_mt_muir",
+   "name": "From Trail by W + N ridge",
+   "grade": "5.6",
+   "discipline": "alpine",
+   "overview": "Be ready to down-climb: no rappel anchors are known near the top. Two 5.6 moves, an overhang and a narrow gap, are hard to reverse. Beforehand come sculpted granite (about 5.4), talus and a weakness in a short wall; afterward a slab traverse southward to the Normal route and then a wide crack to the crest.",
+   "description": null,
+   "approach": null,
+   "descent_text": null,
+   "season": null,
+   "best_season": null,
+   "hazards": null,
+   "gain_ft": null,
+   "dist_km": null,
+   "high_point_ft": null,
+   "waypoints": [],
+   "areas": {
+    "lat": 36.5647,
+    "lng": -118.2912,
+    "name": "Mt. Muir",
+    "elevation_ft": null
+   }
+  }
+ },
+ {
   "list": "adk46",
   "peak": "Mount Marcy",
   "fill": [
@@ -154,6 +305,7 @@
   "list": "adk46",
   "peak": "Whiteface Mountain",
   "fill": [
+   "description",
    "approach",
    "descent",
    "gain",
@@ -162,13 +314,13 @@
    "hazards"
   ],
   "row": {
-   "id": "ny_whiteface_chiller_pillar",
+   "id": "ny_whiteface_wilmington_trail",
    "area_id": "ny_whiteface",
-   "name": "Chiller Pillar",
-   "grade": "WI4",
-   "discipline": "ice",
-   "overview": "On a cold, sunny mid-season day, this south facing former quarry wall is a good pick, particularly after freezing on Multiplication Gulley. Very straightforward in line, the route heads right up the wall.",
-   "description": null,
+   "name": "Wilmington Trail",
+   "grade": "Class 1",
+   "discipline": "scrambling",
+   "overview": null,
+   "description": "About 5.2 miles one way with roughly 3,600-3,700 ft of gain, passing ski trails and lifts. A short unmarked side path branches off toward Esther Mountain.",
    "approach": null,
    "descent_text": null,
    "season": null,
@@ -199,13 +351,13 @@
    "hazards"
   ],
   "row": {
-   "id": "ny_buttress_slide",
+   "id": "ny_dix_mtn_beckhorn_trail_from_elk_lake",
    "area_id": "ny_dix_mtn",
-   "name": "Buttress Slide",
-   "grade": "5.4",
-   "discipline": "trad",
+   "name": "Beckhorn Trail from Elk Lake",
+   "grade": "Class 1",
+   "discipline": "scrambling",
    "overview": null,
-   "description": null,
+   "description": "About 6.6 miles one way with roughly 3,700 ft of gain. The upper Beckhorn is steep, eroded and exposed on slab, and the longer Hunters Pass Trail is a gentler alternative.",
    "approach": null,
    "descent_text": null,
    "season": null,
@@ -293,160 +445,6 @@
     "lng": -73.9982,
     "name": "Iroquois Peak",
     "elevation_ft": 4840
-   }
-  }
- },
- {
-  "list": "adk46",
-  "peak": "Basin Mountain",
-  "fill": [
-   "description",
-   "approach",
-   "descent",
-   "gain",
-   "distance",
-   "season",
-   "hazards"
-  ],
-  "row": {
-   "id": "ny_basin_mountain_shoreys_shortcut",
-   "area_id": "ny_basin_mountain",
-   "name": "Shorey's Shortcut",
-   "grade": "Class 1",
-   "discipline": "scrambling",
-   "overview": null,
-   "description": "Long day with ladders and rock slabs; the exposed summit is often combined with Haystack or Saddleback. Path: Phelps Trail and Shorey's Shortcut. Starts at The Garden, Keene Valley.",
-   "approach": null,
-   "descent_text": null,
-   "season": null,
-   "best_season": null,
-   "hazards": null,
-   "gain_ft": null,
-   "dist_km": null,
-   "high_point_ft": null,
-   "waypoints": [],
-   "areas": {
-    "lat": 44.1212,
-    "lng": -73.8863,
-    "name": "Basin Mountain",
-    "elevation_ft": 4827
-   }
-  }
- },
- {
-  "list": "adk46",
-  "peak": "Gothics",
-  "fill": [
-   "description",
-   "approach",
-   "descent",
-   "gain",
-   "distance",
-   "season",
-   "hazards"
-  ],
-  "row": {
-   "id": "ny_gothics_arch",
-   "area_id": "ny_gothics",
-   "name": "Gothics Arch",
-   "grade": "5.6",
-   "discipline": "trad",
-   "overview": null,
-   "description": null,
-   "approach": null,
-   "descent_text": null,
-   "season": null,
-   "best_season": null,
-   "hazards": null,
-   "gain_ft": null,
-   "dist_km": null,
-   "high_point_ft": null,
-   "waypoints": [],
-   "areas": {
-    "lat": 44.1258,
-    "lng": -73.8586,
-    "name": "Gothics",
-    "elevation_ft": null
-   }
-  }
- },
- {
-  "list": "adk46",
-  "peak": "Mount Colden",
-  "fill": [
-   "description",
-   "approach",
-   "descent",
-   "season",
-   "hazards"
-  ],
-  "row": {
-   "id": "ny_trap_dike_summer",
-   "area_id": "ny_mt_colden",
-   "name": "Trap Dike (summer)",
-   "grade": "4th",
-   "discipline": "scrambling",
-   "overview": null,
-   "description": null,
-   "approach": null,
-   "descent_text": null,
-   "season": null,
-   "best_season": null,
-   "hazards": null,
-   "gain_ft": null,
-   "dist_km": null,
-   "high_point_ft": null,
-   "waypoints": [
-    {
-     "name": "Adirondack Loj (Heart Lake)",
-     "type": "Trailhead"
-    },
-    {
-     "name": "Mt Colden summit",
-     "type": "Summit"
-    }
-   ],
-   "areas": {
-    "lat": 44.12813,
-    "lng": -73.95962,
-    "name": "Mt Colden",
-    "elevation_ft": null
-   }
-  }
- },
- {
-  "list": "adk46",
-  "peak": "Giant Mountain",
-  "fill": [
-   "description",
-   "approach",
-   "descent",
-   "distance",
-   "season",
-   "hazards"
-  ],
-  "row": {
-   "id": "ny_giant_mountain_ridge_trail",
-   "area_id": "ny_giant_mountain",
-   "name": "Ridge Trail",
-   "grade": "Class 1",
-   "discipline": "scrambling",
-   "overview": null,
-   "description": "About 5.4 miles round trip with roughly 3,050 ft of gain, the shortest of the main routes. The Roaring Brook Trail (6.6 miles round trip) is the other common option.",
-   "approach": null,
-   "descent_text": null,
-   "season": null,
-   "best_season": null,
-   "hazards": null,
-   "gain_ft": 3050,
-   "dist_km": null,
-   "high_point_ft": null,
-   "waypoints": [],
-   "areas": {
-    "lat": 44.16146,
-    "lng": -73.71989,
-    "name": "Giant Mountain",
-    "elevation_ft": null
    }
   }
  }
