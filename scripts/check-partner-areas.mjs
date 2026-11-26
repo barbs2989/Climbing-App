@@ -31,7 +31,7 @@
 
 import fs from "node:fs";
 import path from "node:path";
-import { fileURLToPath } from "node:url";
+import { fileURLToPath, pathToFileURL } from "node:url";
 import { readAppFile, readDbSource } from "./lib/guard-sources.mjs";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
@@ -233,7 +233,7 @@ for (const name of ["match_objectives_of_users", "partners_by_objective"]) {
     const f = fns.get(name); if (!f) continue;
     (/free_to\s*>=\s*current_date\s*-\s*1/.test(f.body) && !/free_to\s*>=\s*current_date\s+then/.test(f.body) ? ok : fail)(`${name} keeps a window until the day after it ends on the database's UTC day — current_date alone dropped a window ending today from about 4 pm Pacific`);
   }
-  const lw = await import(path.join(ROOT, "lib", "listingWindow.js"));
+  const lw = await import(pathToFileURL(path.join(ROOT, "lib", "listingWindow.js")).href);
   const T = "2026-11-26";
   const cases = [
     [lw.discFits([{ disciplines: ["bouldering"] }], "trad", ["trad", "sport"]), false, "a listing for bouldering only is not found by Trad, whatever the profile says"],
