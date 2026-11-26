@@ -130,6 +130,9 @@
          user tabbing into those fields saw no focus indicator at all. */
       :focus-visible { outline: 2px solid #ff8a3d !important; outline-offset: 2px; border-radius: 5px; }
       button:focus:not(:focus-visible), a:focus:not(:focus-visible) { outline: none; }
+      /* A row's ✕ that a SWIPE replaces on a phone (lib/srOnly.js phoneX) is clipped out of sight but kept for a screen
+         reader and a keyboard; while it holds keyboard focus it is drawn again, so a focused control is never invisible. */
+      .cm-sr-focus:focus-visible { position: static !important; width: auto !important; height: auto !important; min-width: 24px; min-height: 24px; padding: 2px 6px !important; margin: 0 !important; clip: auto !important; overflow: visible !important; }
       /* File pickers (WCAG 2.1.1). Every photo/GPX upload is a styled <label> around — or
          beside — a native file input, and those inputs were display:none: a display:none input
          cannot take focus and a label never can, so nobody on a keyboard could attach a photo
