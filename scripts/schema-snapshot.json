@@ -1,6 +1,6 @@
 {
   "note": "Generated from the live database by scripts/refresh-schema-snapshot.mjs. Do not hand-edit.",
-  "generatedAt": "2026-11-24",
+  "generatedAt": "2026-11-26",
   "tables": {
     "accessibility_reports": [
       "assistive",
@@ -446,7 +446,8 @@
       "image_url",
       "moderation",
       "updated_at",
-      "user_id"
+      "user_id",
+      "video_path"
     ],
     "data_requests": [
       "created_at",
@@ -658,7 +659,8 @@
       "moderation",
       "read",
       "recipient_id",
-      "sender_id"
+      "sender_id",
+      "video_path"
     ],
     "moderation_actions": [
       "action",
@@ -684,6 +686,7 @@
       "target_kind"
     ],
     "notification_state": [
+      "deleted_ids",
       "dismissed_ids",
       "prefs",
       "seen_ids",
@@ -705,6 +708,18 @@
       "note",
       "updated_at",
       "user_id"
+    ],
+    "places": [
+      "country",
+      "county",
+      "id",
+      "lat",
+      "lng",
+      "name",
+      "name_canon",
+      "name_search",
+      "pop",
+      "region"
     ],
     "profile_condition_prefs": [
       "prefs",
@@ -745,6 +760,7 @@
       "free_until",
       "gender",
       "hiking_speed_ft_hr",
+      "home_place_id",
       "id",
       "is_admin",
       "is_reviewer",
@@ -785,6 +801,10 @@
     "review_ai_verdicts": [
       "ai_value",
       "area_id",
+      "auto_action",
+      "auto_at",
+      "auto_hash",
+      "auto_note",
       "checked_at",
       "confidence",
       "current_value",
