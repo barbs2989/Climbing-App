@@ -1,0 +1,30 @@
+{
+ "ma_greater_boston": {
+  "_expect": { "name": "Greater Boston", "region": "Massachusetts" },
+  "blurb": "Greater Boston is a loose set of small urban climbing spots in and around the city, and many are reachable by public transit. Bouldering dominates by a wide margin, with some top-rope walls and a scattering of trad and sport lines, mostly at Waitts Mountain. Most problems fall between V0 and V3, with a thin tail rising to about V8, and the roped climbs are mostly moderate. Nira Rock, Franklin Park, the Horatio Harris Boulders and Waitts Mountain are the larger pockets, and none of them is big. This is not a destination trip. It suits a short session after work, offering a bit of urban adventure and a way to get outside without leaving town.",
+  "review": { "sources": ["https://www.mountainproject.com/area/118978590/greater-boston", "https://www.harvardmagazine.com/2019/04/rock-climbing-mountains"] }
+ },
+ "ma_redrocks_and_vicinity": {
+  "_expect": { "name": "Redrocks and Vicinity", "region": "Massachusetts" },
+  "blurb": "Redrocks and Vicinity sits on Cape Ann, on Massachusetts' North Shore near Gloucester. The main crag is made of red granite and offers longer routes than most around Boston, mostly trad with some top-rope and a little sport. Alongside it, a large tract of woodland holds a decent number of boulders, and bouldering accounts for just over half of everything here. Roped routes run from easy fifth class to about 5.11, with 5.8 the most common, while problems range from V0 into the V10s, most of them V3 to V4. Main areas to know are the Redrocks Bouldering tract, the Red Rock Main Area, Down Under and Oz. Cape Ann in general is rich in granite boulders and short cliffs.",
+  "review": { "sources": ["https://www.mountainproject.com/area/105908065/redrocks-and-vicinity", "https://www.mountainproject.com/area/106327854/cape-ann", "https://www.mountainproject.com/area/119559647/redrocks-bouldering"] }
+ },
+ "or_z_lower_gorge": {
+  "_expect": { "name": "Lower Gorge", "region": "Oregon" },
+  "blurb": "Lower Gorge is part of Smith Rock in Central Oregon, a set of vertical basalt columns lining both banks of the Crooked River. Trad climbing dominates, with the rest bolted, and the emphasis is on cracks: there are more excellent crack lines here than bolted ones. Most routes land between 5.10 and 5.12, with fewer easier ones and only a couple harder. The rock is generally high quality, sometimes sharp, with good friction. Even when the main park is busy, only a handful of climbers usually turn up, so it feels like a quiet corner of a sport-focused park. The West Side and East Side make up the two halves. For Smith Rock overall, spring and fall are the best seasons and summers can pass 100 degrees.",
+  "review": { "sources": ["https://www.mountainproject.com/area/105791782/lower-gorge", "https://www.mountainproject.com/area/105788989/smith-rock"] }
+ },
+ "ca_echo_cliffs": {
+  "_expect": { "name": "Echo Cliffs", "region": "California" },
+  "blurb": "Echo Cliffs is one of the main sport-climbing venues in the Santa Monica Mountains of the Los Angeles Basin, reached by a long hike along a trail and across a dry streambed. Nearly all of the roughly two hundred routes are bolted, with fixed anchors, and many are long enough that a 60 meter rope is useful. The walls are vertical to overhanging, with pockets and blocky holds. Grades center on 5.10 to 5.12, with a good group of 5.13s, a few moderates and a handful of 5.14s. The setting is sunny, and fall, winter and spring are the comfortable seasons. Summer is possible but hotter. Easy Street, Tower of Zen and Treasure Towers are among the larger crags.",
+  "review": { "sources": ["https://www.mountainproject.com/area/105825729/echo-cliffs", "https://www.nps.gov/samo/planyourvisit/climbing.htm"] }
+ },
+ "id_q_emilin_park": {
+  "_expect": { "name": "Q'Emiln Park", "region": "Idaho" },
+  "blurb": "Q'Emiln Park is a riverside park in Post Falls, North Idaho, about sixteen miles east of Spokane along the Spokane River. The rock is mostly orthogneiss, which is metamorphosed granite, and the faces are largely vertical with positive holds. Sport routes lead, with a solid helping of trad and a boulder area that includes the Dam Boulders. Grades run mostly from 5.7 to 5.11, with 5.10 the most common, a few 5.12s and boulder problems that are mostly easy to moderate. It is a strong cragging choice for climbers working at 5.10 and below. Larger walls include Lower Fifth Canyon, Upper Fifth Canyon, Post Wall and Outlaw Wall.",
+  "review": { "sources": ["https://www.mountainproject.com/area/105838015/qemilin-park", "https://visitnorthidaho.com/activity/rock-climbing/"] }
+ },
+ "_skipped": {
+  "ut_garth_rocks": "Only one fetched page is about the area and it covers a single sub-area (Central Parking Area, a minority of the climbs); the other candidate pages refused fetching."
+ }
+}
