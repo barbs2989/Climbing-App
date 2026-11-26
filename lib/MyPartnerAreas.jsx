@@ -28,6 +28,10 @@ import { discLabel } from "./discLabels.js";
 import { C, CRAG_CATS, DLOCALE, SL, haptic, localYmd } from "../ClimbMatchCore.jsx";
 import { ALPINE_COND_DISCIPLINES } from "./alpineConditions.js";
 import ActionIcon from "../src/components/ActionIcon.tsx";
+import SwipeRow from "../src/components/SwipeRow.tsx";
+import SwipeHint from "../src/components/SwipeHint.tsx";
+import { phoneX } from "./srOnly.js";
+import { useWideScreen } from "./wideLayout.js";
 
 const TYPE_LABEL = { state: "State", region: "Region", range: "Range", canyon: "Canyon", crag: "Crag", wall: "Wall", peak: "Peak", boulder: "Boulder", sector: "Sector" };
 // How many search hits the box shows; `total` says how many matched, so a cut is never silent.
@@ -107,6 +111,8 @@ export default function MyPartnerAreas({ uid, listings, listingsError, prefill, 
   const pill = (on, disabled) => ({ minHeight: 36, padding: "7px 13px", borderRadius: 20, border: "1px solid " + (on ? C.blueDim : C.border), background: on ? C.blueBg : C.surface, color: disabled ? C.textMuted : on ? "#fff" : C.textSub, fontSize: 13, fontWeight: 700, cursor: disabled ? "default" : "pointer", opacity: disabled ? 0.55 : 1 });
   const field = { width: "100%", boxSizing: "border-box", padding: "11px 12px", borderRadius: 10, border: "1px solid " + C.field, background: C.bg, color: C.text, fontSize: 15 };
   const card = { background: C.card, border: "1px solid " + C.border, borderRadius: 12 };
+  /* SWIPE LEFT TO REMOVE a listing on a phone (owner note 2026-11-26), as Notifications do; the ✕ stays on the website (phoneX). */
+  const wide = useWideScreen(), px = phoneX(wide);
   const searchRef = useRef(null);
   const now = new Date(), today = localYmd(now);
   const wk1 = weekendFrom(now, 0), wk2 = weekendFrom(now, 1);
@@ -197,25 +203,27 @@ export default function MyPartnerAreas({ uid, listings, listingsError, prefill, 
           {/* YOUR LISTINGS COME FIRST (owner, 2026-11-18): what you came to see or change sits right under the search box; the suggestions and the open-ended area finder follow it, so a long state list never pushes your own listings off the screen. */}
           <SL>{listingsN ? "Listed at " + listingsN + " area" + (listingsN === 1 ? "" : "s") : "Your listings"}</SL>
           {listingsError ? <div style={{ fontSize: 12.5, color: C.amber, marginBottom: 10 }}>Couldn’t load your listed areas — try again in a moment.</div> : null}
-          {listingsN ? /* EVERY LISTING, no "Show all N" fold (owner note 2026-11-25: "don't have the button show all dropdown just list all the areas they are listed at"). */(listings || []).map((l) => { const past = l.freeTo && l.freeTo < today; return <div key={l.areaId} style={{ ...card, display: "flex", alignItems: "center", gap: 10, padding: "4px 8px 4px 4px", marginBottom: 8 }}>
+          {listingsN ? <SwipeHint text="Swipe left to remove a listing." /> : null}
+          {listingsN ? /* EVERY LISTING, no "Show all N" fold (owner note 2026-11-25: "don't have the button show all dropdown just list all the areas they are listed at"). */(listings || []).map((l) => { const past = l.freeTo && l.freeTo < today; return <SwipeRow key={l.areaId} radius={12} action="remove" onDelete={() => remove(l)}><div style={{ ...card, display: "flex", alignItems: "center", gap: 10, padding: "4px 8px 4px 4px" }}>
             <button onClick={() => startEdit(l)} aria-label={"Edit " + l.name} style={{ flex: 1, minWidth: 0, textAlign: "left", background: "none", border: "none", padding: "8px 10px", cursor: "pointer", color: C.text }}>
               <span style={{ display: "block", fontSize: 14.5, fontWeight: 700 }}>{l.name}<span style={{ fontSize: 11.5, fontWeight: 700, color: C.textMuted, marginLeft: 7 }}>{TYPE_LABEL[l.areaType] || ""}</span></span>
               <span style={{ display: "block", fontSize: 12.5, color: C.textSub, marginTop: 2 }}>{(l.disciplines && l.disciplines.length ? l.disciplines.map((d) => discLabel(d)).join(", ") : l.areaType === "peak" ? "Any discipline" : "Any crag type") + " · "}<span style={{ color: past ? C.amber : C.textSub }}>{past ? "Window ended " + fmtDay(l.freeTo) + tx(" — tap to update") : windowText(l)}</span></span>
               {l.note ? <span style={{ display: "block", fontSize: 12, color: C.textMuted, marginTop: 2, fontStyle: "italic" }}>{l.note}</span> : null}
             </button>
-            <button onClick={() => remove(l)} aria-label={"Remove " + l.name} style={POP_REMOVE}>✕</button>
-          </div>; }) : !listingsError ? <div style={{ fontSize: 12.5, color: C.textMuted, lineHeight: 1.5, padding: "12px 14px", border: "1px dashed " + C.border, borderRadius: 12 }}>You’re not listed anywhere yet. Search above or browse below{suggestions.length ? tx(", or tap one of the areas from your climbs") : ""}, or use “List me here” on any area page.</div> : null}
+            <button onClick={() => remove(l)} aria-label={"Remove " + l.name} className={px.className} style={{ ...POP_REMOVE, ...px.style }}>✕</button>
+          </div></SwipeRow>; }) : !listingsError ? <div style={{ fontSize: 12.5, color: C.textMuted, lineHeight: 1.5, padding: "12px 14px", border: "1px dashed " + C.border, borderRadius: 12 }}>You’re not listed anywhere yet. Search above or browse below{suggestions.length ? tx(", or tap one of the areas from your climbs") : ""}, or use “List me here” on any area page.</div> : null}
           {routeListingsError ? <div style={{ fontSize: 12.5, color: C.amber, lineHeight: 1.5, padding: "10px 2px 0" }}>Couldn’t load the climbs you’re listed on — check your connection and try again.</div> : (routeListings || []).length ? <div style={{ marginTop: 14 }}>
             <SL>{"Climbs you’re listed on · " + routeListings.length}</SL>
             <div style={{ fontSize: 12, color: C.textMuted, marginBottom: 8, lineHeight: 1.5 }}>Climbers who open one of these can find you on its Find tab. To change the dates or note, open the climb and go to Find.</div>
-            {routeListings.map((l) => <div key={l.routeId} style={{ ...card, display: "flex", alignItems: "center", gap: 6, padding: "4px 6px 4px 4px", marginBottom: 8 }}>
+            <SwipeHint text="Swipe left to take yourself off a climb." />
+            {routeListings.map((l) => <SwipeRow key={l.routeId} radius={12} action="remove" onDelete={() => removeRoute(l)}><div style={{ ...card, display: "flex", alignItems: "center", gap: 6, padding: "4px 6px 4px 4px" }}>
               <div style={{ flex: 1, minWidth: 0, padding: "8px 10px" }}>
                 <span style={{ display: "block", fontSize: 14.5, fontWeight: 700, color: C.text, overflowWrap: "anywhere" }}>{l.name}{l.grade ? <span style={{ fontSize: 11.5, fontWeight: 700, color: C.textMuted, marginLeft: 7 }}>{l.grade}</span> : null}</span>
                 <span style={{ display: "block", fontSize: 12.5, color: C.textSub, marginTop: 2 }}>{l.freeTo && l.freeTo < today ? "Dates ended " + fmtDay(l.freeTo) : windowText(l)}</span>
                 {l.note ? <span style={{ display: "block", fontSize: 12, color: C.textMuted, marginTop: 2, fontStyle: "italic", overflowWrap: "anywhere" }}>{l.note}</span> : null}
               </div>
-              <button onClick={() => removeRoute(l)} aria-label={"Remove your listing on " + l.name} style={POP_REMOVE}>✕</button>
-            </div>)}
+              <button onClick={() => removeRoute(l)} aria-label={"Remove your listing on " + l.name} className={px.className} style={{ ...POP_REMOVE, ...px.style }}>✕</button>
+            </div></SwipeRow>)}
           </div> : null}
           <div aria-hidden="true" style={{ height: 10 }} />
           {!q.trim() && suggestions.length ? <div style={{ marginBottom: 16 }}>
