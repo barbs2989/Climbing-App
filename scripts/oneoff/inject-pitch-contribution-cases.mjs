@@ -38,13 +38,13 @@ const CASES = [
     says: /crux was typed/ },
   // EVERY FIELD CORRECT AND THE ROW STILL VANISHES. Only the length-only case can see this.
   { name: "filter-tests-only-the-old-three", expect: "fail",
-    find: "return p.grade||p.gear||p.note||p.lengthM||p.anchor||p.bolts||p.crux;",
+    find: "return p.grade||p.gear||p.note||p.lengthM||p.anchor||p.bolts||p.crux||p.belay||p.style;",
     repl: "return p.grade||p.gear||p.note;",
     says: /a pitch carrying only a length is discarded/ },
   // MUST STAY SILENT: an empty row must go on being dropped, or every untouched blank pitch in
   // the editor is submitted as a row. A fix that only ever KEPT rows would satisfy the rest.
   { name: "widened-filter-keeps-blank-rows", expect: "fail",
-    find: "return p.grade||p.gear||p.note||p.lengthM||p.anchor||p.bolts||p.crux;",
+    find: "return p.grade||p.gear||p.note||p.lengthM||p.anchor||p.bolts||p.crux||p.belay||p.style;",
     repl: "return true;",
     says: /blank pitch row\(s\) would be submitted/ },
   // MUST STAY SILENT: trimming the anchor is ordinary work, not a change to what is carried.
