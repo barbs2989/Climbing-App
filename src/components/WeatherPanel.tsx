@@ -9,6 +9,7 @@ import WeatherIcon from "./WeatherIcon.tsx";
 import Chevron from "./Chevron.tsx";
 import { clockHr, compass, spanEnding } from "../../lib/HourTiles.jsx";
 import { dayBox, dayLbl, dayVal, daySub } from "../../lib/dayStyles.js";
+import { labelCodeOf } from "../../lib/wxDayLabel.js";
 
 /** A point the forecast is fetched for: a placed waypoint (coordinates as numbers) or the crag/peak fallback. */
 interface WxPoint {
@@ -94,11 +95,14 @@ interface DayBucket {
   winds10: number[];
   gusts: number[];
   pops: number[];
+  /** rain and snow of the hours that BEGAN on this date (precipitation[T] is the hour before T), as the score and the AM/PM/Night parts count them */
   precips: number[];
   snows: number[];
   fz: number[];
   uvs: number[];
   hours: WxHour[];
+  /** the precipitation stamped with the SAME hours as `codes`, for the day's label (lib/wxDayLabel.js) */
+  codeRain: number[];
 }
 /** The arrays collected for one part of a day. */
 interface PartBucket {
@@ -108,6 +112,8 @@ interface PartBucket {
   dirs: number[];
   precips: number[];
   pops: number[];
+  /** the precipitation of the SAME hours as `codes`, so the part's label can follow its rain (lib/wxDayLabel.js) */
+  codeRain: number[];
 }
 /** One NWS grid value (temperature, wind) or weather entry. */
 interface NwsValue {
@@ -251,7 +257,7 @@ export default function WeatherPanel({waypoints,showPlan,fallback,crag}: Weather
         const byDay: Record<string,DayBucket>={},byPart: Record<string,PartBucket>={};
         h.time.forEach(function(t: string,i: number){
           const date=t.slice(0,10),hr=parseInt(t.slice(11,13),10);
-          if(!byDay[date])byDay[date]={temps:[],feels:[],codes:[],winds:[],winds10:[],gusts:[],pops:[],precips:[],snows:[],fz:[],uvs:[],hours:[]};
+          if(!byDay[date])byDay[date]={temps:[],feels:[],codes:[],winds:[],winds10:[],gusts:[],pops:[],precips:[],snows:[],fz:[],uvs:[],hours:[],codeRain:[]};
           const dd=byDay[date];
           dd.temps.push(h.temperature_2m[i]);
           dd.feels.push(h.apparent_temperature[i]);
@@ -260,8 +266,13 @@ export default function WeatherPanel({waypoints,showPlan,fallback,crag}: Weather
           if(h.wind_speed_10m)dd.winds10.push(h.wind_speed_10m[i]);
           dd.gusts.push(h.wind_gusts_10m[i]);
           dd.pops.push(h.precipitation_probability[i]);
-          dd.precips.push(h.precipitation[i]);
-          dd.snows.push(h.snowfall[i]);
+          dd.codeRain.push(h.precipitation[i]);
+          /* RAIN BY DAY, as the conditions score above this panel counts it (audit 2026-11-26): the midnight value is the
+             rain of 11 PM-midnight, so it is the PREVIOUS day's. Counted by its stamp, one heavy evening hour (0.20" at a
+             Connecticut crag) moved between days and the two cards on one tab printed 0.18" and 0.41" for the same day. */
+          const began=hr===0?byDay[prevDayStr(date)]:dd;
+          if(began){began.precips.push(h.precipitation[i]);began.snows.push(h.snowfall[i]);}
+          
           dd.fz.push(h.freezing_level_height[i]);
           dd.uvs.push(h.uv_index[i]);
           /* The HOURLY rows pair the wind with the gust beside it, and the only gust published is at 10 m -- so the hour's
@@ -272,22 +283,22 @@ export default function WeatherPanel({waypoints,showPlan,fallback,crag}: Weather
           const partKey=hr<6?"night":hr<12?"am":hr<18?"pm":"night";
           const partDate=hr<6?prevDayStr(date):date;
           const pk=partDate+"_"+partKey;
-          if(!byPart[pk])byPart[pk]={temps:[],codes:[],winds:[],dirs:[],precips:[],pops:[]};
+          if(!byPart[pk])byPart[pk]={temps:[],codes:[],winds:[],dirs:[],precips:[],pops:[],codeRain:[]};
           /* RAIN BY PART OF THE DAY. precipitation[T] is the rain of the hour BEFORE T, so it belongs to the part that
              hour BEGAN in: the 6 AM value is the night's, the noon value the morning's. */
           const bHr=hr===0?23:hr-1,bDate=hr===0?prevDayStr(date):date;
           const rk=(bHr<6?prevDayStr(bDate):bDate)+"_"+(bHr<6?"night":bHr<12?"am":bHr<18?"pm":"night");
-          if(!byPart[rk])byPart[rk]={temps:[],codes:[],winds:[],dirs:[],precips:[],pops:[]};
+          if(!byPart[rk])byPart[rk]={temps:[],codes:[],winds:[],dirs:[],precips:[],pops:[],codeRain:[]};
           if(h.precipitation[i]!=null)byPart[rk].precips.push(h.precipitation[i]);
           if(h.precipitation_probability[i]!=null)byPart[rk].pops.push(h.precipitation_probability[i]);
           byPart[pk].temps.push(h.temperature_2m[i]);
-          byPart[pk].codes.push(h.weather_code[i]);
+          byPart[pk].codes.push(h.weather_code[i]);byPart[pk].codeRain.push(h.precipitation[i]);
           byPart[pk].winds.push(h.wind_speed_80m[i]);
           byPart[pk].dirs.push(h.wind_direction_80m[i]);
         });
         const sum=function(arr: number[]){return arr.reduce(function(s,v){return s+(v||0);},0);};
         const avg=function(arr: number[]){return arr.length?sum(arr)/arr.length:0;};
-        const buildPart=function(label: string,pk: string){const b=byPart[pk];if(!b||!b.temps.length)return null;const pCode=modeOf(b.codes);return {label:label,temp:Math.round(avg(b.temps)),wx:WX_CODE_LABEL[pCode as number]||null,wxCode:pCode,wind:Math.round(avg(b.winds)),dir:degToCompass(circMeanDeg(b.dirs)),rain:b.precips.length?Math.round(sum(b.precips)*1000)/1000:null,pop:b.pops.length?Math.round(Math.max.apply(null,b.pops)):null};};
+        const buildPart=function(label: string,pk: string){const b=byPart[pk];if(!b||!b.temps.length)return null;const pCode=labelCodeOf(b.codes,b.codeRain);return {label:label,temp:Math.round(avg(b.temps)),wx:WX_CODE_LABEL[pCode as number]||null,wxCode:pCode,wind:Math.round(avg(b.winds)),dir:degToCompass(circMeanDeg(b.dirs)),rain:b.precips.length?Math.round(sum(b.precips)*1000)/1000:null,pop:b.pops.length?Math.round(Math.max.apply(null,b.pops)):null};};
         // Secondary-source extras (wind + one weather label per day) — a
         // lighter read than Open-Meteo's per-part/hourly breakdown, by design.
         const nwsByDay: Record<string,number[]>={},nwsWindByDay: Record<string,number[]>={},nwsWxByDay: Record<string,string[]>={};
@@ -329,7 +340,7 @@ export default function WeatherPanel({waypoints,showPlan,fallback,crag}: Weather
           const nws=(nd&&nd.length>=3)?{adj:nwsShift,lo:Math.round(Math.min.apply(null,nd)),hi:Math.round(Math.max.apply(null,nd)),wind:nwsWindByDay[date]?Math.round(Math.max.apply(null,nwsWindByDay[date])):null,wx:nwsWxLabel(modeOf(nwsWxByDay[date]))}:null;
           const md=metByDay[date];
           const met=(md&&md.length>=3)?{lo:Math.round(Math.min.apply(null,md)),hi:Math.round(Math.max.apply(null,md)),wind:metWindByDay[date]?Math.round(Math.max.apply(null,metWindByDay[date])):null,wx:metWxLabel(modeOf(metWxByDay[date]))}:null;
-          const wxCode=modeOf(d.codes);
+          const wxCode=labelCodeOf(d.codes,d.codeRain);
           return {date:date,tempLo:Math.round(Math.min.apply(null,d.temps)),tempHi:Math.round(Math.max.apply(null,d.temps)),feelsLo:Math.round(Math.min.apply(null,d.feels)),feelsHi:Math.round(Math.max.apply(null,d.feels)),wx:WX_CODE_LABEL[wxCode as number]||null,wxCode:wxCode,windMax:Math.round(Math.max.apply(null,d.winds)),wind10Max:d.winds10.length?Math.round(Math.max.apply(null,d.winds10)):null,gustMax:Math.round(Math.max.apply(null,d.gusts)),popMax:Math.round(Math.max.apply(null,d.pops)),precipIn:Math.round(sum(d.precips)*1000)/1000,snowIn:Math.round(sum(d.snows)*100)/100,freezeMax:Math.round(Math.max.apply(null,d.fz)),uvMax:Math.round(Math.max.apply(null,d.uvs)*10)/10,parts:parts,hours:d.hours,nws:nws,met:met};
         });
         if(!live)return;
