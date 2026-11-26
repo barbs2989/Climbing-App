@@ -71,7 +71,7 @@ function useAiVerdicts(enabled) {
     enabled: !!supabase && !!enabled,
     queryFn: async () => {
       const { data, error } = await supabase.from("review_ai_verdicts")
-        .select("item_kind,item_id,item_hash,ai_value,verdict,confidence,sources,reasoning,model,checked_at").limit(5000);
+        .select("item_kind,item_id,item_hash,ai_value,verdict,confidence,sources,reasoning,model,checked_at,auto_action,auto_note,auto_at,auto_hash").limit(5000);
       if (error) throw error;
       const by = {}; (data || []).forEach((v) => { by[v.item_kind + ":" + v.item_id] = v; });
       return by;
@@ -85,11 +85,18 @@ const VERDICT = {
   unsure: { label: "AI unsure", col: C.textSub, bg: C.surface },
   none: { label: "Not checked yet", col: C.textMuted, bg: "transparent" },
 };
+// THE REVIEW AUTOPILOT (0534, scripts/review-autopilot.mjs; owner 2026-11-25) acts on what two sources settle and
+// leaves the rest here with auto_action 'needs_owner' and a sentence saying why. An item it DID decide has left the
+// queue (approved, turned down or closed), so the only autopilot state a row in this table can carry is "Needs you".
+const needsOwner = (v) => !!(v && v.auto_action === "needs_owner" && (!v.auto_hash || v.auto_hash === v.item_hash));
 function VerdictChip({ v }) {
   const k = v ? v.verdict : "none";
   const s = VERDICT[k] || VERDICT.none;
-  return <span style={{ display: "inline-block", whiteSpace: "nowrap", fontSize: 11.5, fontWeight: 700, color: s.col, background: s.bg, border: "1px solid " + (k === "none" ? C.border : s.col), borderRadius: 12, padding: "2px 8px" }}>
-    {s.label}{v && v.confidence !== "none" ? " · " + v.confidence : ""}
+  return <span style={{ display: "inline-flex", gap: 4, flexWrap: "wrap" }}>
+    <span style={{ display: "inline-block", whiteSpace: "nowrap", fontSize: 11.5, fontWeight: 700, color: s.col, background: s.bg, border: "1px solid " + (k === "none" ? C.border : s.col), borderRadius: 12, padding: "2px 8px" }}>
+      {s.label}{v && v.confidence !== "none" ? " · " + v.confidence : ""}
+    </span>
+    {needsOwner(v) ? <span title={v.auto_note || ""} style={{ display: "inline-block", whiteSpace: "nowrap", fontSize: 11.5, fontWeight: 700, color: C.amber, background: C.amberBg, border: "1px solid " + C.amber, borderRadius: 12, padding: "2px 8px" }}>Needs you</span> : null}
   </span>;
 }
 
@@ -126,7 +133,7 @@ export default function ReviewDesk() {
   const page = (body) => <div style={{ maxWidth: 1400, margin: "0 auto", padding: "16px 16px 60px" }}><style>{CSS}</style>
     <header style={{ display: "flex", alignItems: "baseline", gap: 12, flexWrap: "wrap", marginBottom: 12 }}>
       <h1 style={{ fontSize: 20, margin: 0 }}>Review desk</h1>
-      <span style={{ fontSize: 12.5, color: C.textMuted }}>Climber flags, suggested edits and wall orders, proposed climbs and areas, submitted trails and GPS tracks, and accessibility reports. Edits, flags and proposals are checked by AI overnight. Nothing changes until you act.</span>
+      <span style={{ fontSize: 12.5, color: C.textMuted }}>Climber flags, suggested edits and wall orders, proposed climbs and areas, wrong place claims, submitted trails and GPS tracks, accessibility reports, and feedback. Edits, flags and proposals are researched by AI every hour: what two independent sources settle it decides for you (each decision is on History, where you can take it back); the rest is marked Needs you. Everything else waits for you.</span>
       <a href={BASE} style={{ marginLeft: "auto", color: C.blue, fontSize: 12.5, fontWeight: 700, textDecoration: "none" }}>Open ClimbMatch →</a>
     </header>{body}</div>;
   if (!supabase) return page(<p>This build has no database connection.</p>);
@@ -301,7 +308,7 @@ function EditsTable({ admin }) {
     const q = f.q.trim().toLowerCase();
     const vRank = { disagree: 0, partly: 1, unsure: 2, agree: 3 };
     return rows.filter((r) => (f.type === "all" || r.kind === f.type)
-      && (f.verdict === "all" || (f.verdict === "none" ? !r.ai && r.kind !== "order" : r.ai && r.ai.verdict === f.verdict))
+      && (f.verdict === "all" || (f.verdict === "none" ? !r.ai && r.kind !== "order" : f.verdict === "needs" ? needsOwner(r.ai) : r.ai && r.ai.verdict === f.verdict))
       && (f.state === "all" || r.state === f.state) && (f.field === "all" || r.label === f.field)
       && (!q || (r.name + " " + r.note + " " + fmtVal(r.said)).toLowerCase().includes(q)))
       .sort((a, b) => {
@@ -352,17 +359,18 @@ function EditsTable({ admin }) {
 
   const loadErr = editsQ.error || flagsQ.error || ordersQ.error;
   // A wall order is not sent to the nightly AI checker, so it never counts as "not yet checked".
-  const counts = { edits: rows.filter((r) => r.kind === "edit").length, flags: rows.filter((r) => r.kind === "flag").length, orders: rows.filter((r) => r.kind === "order").length, unchecked: rows.filter((r) => !r.ai && r.kind !== "order").length };
+  const counts = { edits: rows.filter((r) => r.kind === "edit").length, flags: rows.filter((r) => r.kind === "flag").length, orders: rows.filter((r) => r.kind === "order").length, unchecked: rows.filter((r) => !r.ai && r.kind !== "order").length, needs: rows.filter((r) => needsOwner(r.ai)).length };
   const th = (k, label) => <th onClick={() => setSort((s) => ({ k, dir: s.k === k ? -s.dir : 1 }))} aria-sort={sort.k === k ? (sort.dir > 0 ? "ascending" : "descending") : "none"}>{label}{sort.k === k ? (sort.dir > 0 ? " ▲" : " ▼") : ""}</th>;
 
   return <div>
     <div style={{ display: "flex", gap: 8, flexWrap: "wrap", alignItems: "center", marginBottom: 10 }}>
       <span style={{ fontSize: 12.5, color: C.textSub }}>{counts.edits} edit{counts.edits === 1 ? "" : "s"} · {counts.flags} flag{counts.flags === 1 ? "" : "s"}{admin ? " · " + counts.orders + " wall order" + (counts.orders === 1 ? "" : "s") : ""} · {counts.unchecked} not yet checked by AI{aiQ.error ? " (AI verdicts could not load: " + aiQ.error.message + ")" : ""}</span>
+      {counts.needs ? <button className="rd-btn" onClick={() => setF({ ...f, verdict: f.verdict === "needs" ? "all" : "needs" })} style={{ color: C.amber, borderColor: C.amber }}>{f.verdict === "needs" ? "Show everything" : counts.needs + " need" + (counts.needs === 1 ? "s" : "") + " you: the AI could not settle " + (counts.needs === 1 ? "it" : "them") + " online"}</button> : null}
       <span style={{ fontSize: 11.5, color: C.textMuted, marginLeft: "auto" }}>Keys: j / k next and previous · a approve · r turn down · Esc close</span>
     </div>
     <div style={{ display: "flex", gap: 8, flexWrap: "wrap", marginBottom: 12 }}>
       <select aria-label="Type" className="rd-sel" value={f.type} onChange={(e) => setF({ ...f, type: e.target.value })}><option value="all">Everything</option><option value="edit">Suggested edits</option><option value="flag">Flags</option><option value="order">Wall orders</option></select>
-      <select aria-label="AI verdict" className="rd-sel" value={f.verdict} onChange={(e) => setF({ ...f, verdict: e.target.value })}><option value="all">Any AI verdict</option><option value="agree">AI agrees</option><option value="disagree">AI disagrees</option><option value="partly">Partly right</option><option value="unsure">AI unsure</option><option value="none">Not checked yet</option></select>
+      <select aria-label="AI verdict" className="rd-sel" value={f.verdict} onChange={(e) => setF({ ...f, verdict: e.target.value })}><option value="all">Any AI verdict</option><option value="needs">Needs you (AI could not settle it)</option><option value="agree">AI agrees</option><option value="disagree">AI disagrees</option><option value="partly">Partly right</option><option value="unsure">AI unsure</option><option value="none">Not checked yet</option></select>
       <select aria-label="State" className="rd-sel" value={f.state} onChange={(e) => setF({ ...f, state: e.target.value })}><option value="all">All states</option>{states.map((s) => <option key={s} value={s}>{s}</option>)}</select>
       <select aria-label="Field" className="rd-sel" value={f.field} onChange={(e) => setF({ ...f, field: e.target.value })}><option value="all">All fields</option>{fieldsList.map((s) => <option key={s} value={s}>{s}</option>)}</select>
       <input aria-label="Search" className="rd-in" placeholder="Search route, note, value" value={f.q} onChange={(e) => setF({ ...f, q: e.target.value })} style={{ flex: "1 1 180px" }} />
@@ -487,6 +495,7 @@ function Detail({ row: r, busy, act, admin, keyCmd }) {
     {r.field && (r.route_id || r.area_id) ? <FieldHistory routeId={r.route_id} areaId={r.route_id ? null : r.area_id} field={r.field} label={r.label} /> : null}
     {ai ? <div style={{ fontSize: 12.5, lineHeight: 1.55 }}>
       <div><VerdictChip v={ai} /> <span style={{ color: C.textMuted, fontSize: 11.5 }}>checked {when(ai.checked_at)}{ai.model ? " · " + ai.model : ""}</span></div>
+      {needsOwner(ai) && ai.auto_note ? <p style={{ margin: "6px 0", color: C.amber, fontWeight: 700 }}>Left for you: {ai.auto_note}</p> : null}
       <p style={{ margin: "6px 0", color: C.text }}>{ai.reasoning}</p>
       {(ai.sources || []).length ? <ol style={{ margin: 0, paddingLeft: 20, color: C.textSub }}>{ai.sources.map((s, i) => <li key={i} style={{ marginBottom: 4 }}>
         <a href={s.url} target="_blank" rel="noopener noreferrer" style={{ color: C.blue }}>{s.title || s.url}</a>{s.official ? <span style={{ color: C.green, fontWeight: 700 }}> · official</span> : null}

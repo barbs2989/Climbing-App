@@ -2,7 +2,7 @@ import { useEffect, useRef } from "react";
 import { SOLID_FILL } from "../../lib/buttonStyles.js";
 import type { CSSProperties } from "react";
 import { C, MOUNTAINS, ROUTES, inArea } from "../../ClimbMatchCore.jsx";
-import { useMyPartnerAreas, useAreaPath, useAreaChildren, useAreaChildrenDiscCounts } from "../../lib/db.js";
+import { useAreaPath, useAreaChildren, useAreaChildrenDiscCounts } from "../../lib/db.js";
 import { POP_BACK } from "../../lib/popupChrome.js";
 import { scrollAppToTop } from "../../lib/climbsReturn.js";
 import { subdivisionNoun } from "../../lib/countries";
@@ -15,14 +15,11 @@ import ActionIcon from "./ActionIcon.tsx";
 
 /** One area on a trail: its id ("" = the level above the countries) and its name. */
 export interface RankArea { id: string; name: string; }
-/** The slice of a `useMyPartnerAreas` row this picker reads. */
-interface MyArea { areaId: string; name: string; }
 interface RankSeedArea { id: string; name: string; parentId?: string | null; }
 
 export interface RankAreaPickerProps {
-  /** Signed in with the DB on: the catalog, its search and Your areas only exist there. */
+  /** Signed in with the DB on: the catalog and its search only exist there. */
   real: boolean;
-  uid?: string | null;
   /** The area the board is ranking. */
   ranked: RankArea;
   /** The names above it, the country left off. */
@@ -43,16 +40,16 @@ const RANK_ROOT: RankArea = { id: "", name: "All countries" };
    two-column cards with their climb counts (StatePicker's phone cards), and below a state the Climbs
    area page's own sub-area list (AreaChildrenList: A to Z, the same Sort, an open arrow on every
    row), under a header that names the area with its path as links. Walking the page ranks nothing; the
-   header's "See rankings for <area>" does, and so does a search hit or one of Your areas. It replaced
+   header's "See rankings for <area>" does, and so does a search hit. (A row of "Your areas" chips, the
+   climber's partner listings, sat under the search until the owner asked for it gone, 2026-11-25.) It replaced
    an inline list squeezed between the scope row and the board, eight rows at a time, ordered by size,
    one "Up to" step at a time. A failed read of what is inside says so; it is never drawn as an area
    with nothing in it (DbAreaLevel's rule). */
-export default function RankAreaPicker({real,uid,ranked,trail,browseId,onBrowse,onRank}: RankAreaPickerProps){
+export default function RankAreaPicker({real,ranked,trail,browseId,onBrowse,onRank}: RankAreaPickerProps){
   const open=browseId!==null;
   const lvl=browseId||"";
   const pathQ=useAreaPath(real&&open&&lvl?lvl:null);
   const kidsQ=useAreaChildren(lvl||null,{enabled:real&&open});
-  const myQ=useMyPartnerAreas(real&&open?(uid||null):null);
   const seedChain=(): RankArea[]=>{const out: RankArea[]=[];const all=MOUNTAINS as RankSeedArea[];let m=all.find(x=>x.id===lvl);let g=0;while(m&&g++<10){out.unshift({id:m.id,name:m.name});if(m.id==="usa"||!m.parentId||m.parentId==="world")break;const up=m.parentId;m=all.find(x=>x.id===up);}return out;};
   const chain: RankArea[]=!open?[]:real?[RANK_ROOT].concat(lvl?((pathQ.data as RankArea[]|undefined)||[]):[]):seedChain();
   /* How far down the page stands: 0 above the countries, 1 on a country, 2 on a state. Unknown while the path loads
@@ -74,7 +71,6 @@ export default function RankAreaPicker({real,uid,ranked,trail,browseId,onBrowse,
   const kids: AreaChildRow[]=!open?[]:real?((kidsQ.data as AreaChildRow[]|undefined)||[]).filter(a=>(a.route_count||0)>0)
     :(MOUNTAINS as RankSeedArea[]).filter(m=>m.parentId===lvl).map(m=>({id:m.id,name:m.name,route_count:acount(m.id)})).filter(a=>a.route_count>0).sort((a,b)=>a.name.localeCompare(b.name));
   const kidsLoading=real&&(kidsQ.isPending||pathWait),kidsUnavailable=real&&kidsQ.isError;
-  const mine: MyArea[]=((myQ.data as MyArea[]|undefined)||[]).filter(a=>a.areaId!==ranked.id);
   const allPeaks=kids.length>0&&kids.every(a=>a.area_type==="peak");
 
   /* Each step is a new page: it starts at the top with the area's name in focus, as the Climbs tab's pages do; leaving
@@ -100,7 +96,6 @@ export default function RankAreaPicker({real,uid,ranked,trail,browseId,onBrowse,
     <button ref={changeBtn} onClick={()=>onBrowse(ranked.id)} aria-label="Change the area these rankings cover" style={{minHeight:44,minWidth:72,padding:"0 14px",flexShrink:0,borderRadius:10,border:"1px solid "+C.border,background:C.surface,color:C.blue,fontSize:13,fontWeight:700,cursor:"pointer"}}>Change</button>
   </div>;
 
-  const head: CSSProperties={fontSize:11,fontWeight:800,color:C.label,letterSpacing:0.4,textTransform:"uppercase",margin:"12px 0 6px"};
   const box: CSSProperties={background:C.card,border:"1px solid "+C.border,borderRadius:14,padding:"12px 14px"};
   const card: CSSProperties={textAlign:"left",minWidth:0,minHeight:56,background:C.card,border:"1px solid "+C.border,borderRadius:12,padding:"10px 12px",cursor:"pointer",color:C.text,fontFamily:"inherit"};
   const noun=!lvl?"country":subdivisionNoun(lvl);
@@ -110,7 +105,6 @@ export default function RankAreaPicker({real,uid,ranked,trail,browseId,onBrowse,
     <button data-cm-step-back="true" onClick={()=>onBrowse(null)} style={{...POP_BACK,marginBottom:12}}><span aria-hidden="true">{"←"}</span><span>Back to rankings</span></button>
     <div style={{fontSize:12.5,color:C.textMuted,lineHeight:1.45,marginBottom:10}}>{"Choose the area to rank. Now ranking "}<span style={{color:C.amber,fontWeight:700}}>{ranked.name||"this area"}</span>.</div>
     {real?<GroupPlaceSearch label="Search any crag, peak or area" onPick={p=>onRank(p.id)}/>:null}
-    {mine.length?<div><div style={head}>Your areas</div><div style={{display:"flex",gap:6,flexWrap:"wrap"}}>{mine.map(a=><button key={a.areaId} onClick={()=>onRank(a.areaId)} aria-label={"Rank "+a.name} style={{minHeight:40,padding:"8px 12px",borderRadius:14,border:"1px solid "+C.border,background:C.surface,color:C.textSub,fontSize:12.5,fontWeight:600,cursor:"pointer"}}>{a.name}</button>)}</div></div>:null}
 
     {/* THE AREA THIS PAGE STANDS ON, as the Climbs area page heads itself: the name, the path above it as links, and the one button that ranks it. */}
     <div style={{...box,marginTop:14,borderColor:C.borderHi}}>
