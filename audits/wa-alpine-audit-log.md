@@ -41057,3 +41057,54 @@ Clean / no action needed:
 
 2 confirmed errors fixed, 3 flagged for human review. Next batch continues id-ascending from
 `wa_luahna_peak_east_slopes` (pass 9).
+
+
+## Batch 593 (pass 9) — 2026-11-26
+
+Checked 8 routes id-ascending from `wa_luna_glacier` through `wa_magic_mountain_northeast_couloir`,
+spanning Phantom Peak, Lundin Peak and Magic Mountain.
+
+Note on this run's research tooling: WebFetch failed DNS resolution for every secondary-source
+domain tried (en.wikipedia.org, summitpost.org, mountainproject.com, climbing-history.org) — same
+restriction noted in batches 591/592. Relied on WebSearch snippets only.
+
+2 confirmed errors fixed:
+- `wa_lundin_peak_south_face_left` and `wa_lundin_peak_west_ridge` — both store the same hazard
+  claim, "a fatal fall on descent is documented (1980)" / "documented fatal fall, 1980". The only
+  Lundin Peak fatality found in repeated searches is an AAC accident report titled exactly "Fall
+  on Rock, Climbing Unroped, Washington, Lundin Peak"
+  (publications.americanalpineclub.org/articles/13198306002): Agris Moruss, 40, fell roughly 450m
+  to his death on Lundin Peak on May 9, **1982**, leading a Boeing Alpine Club student party. No
+  1980 Lundin Peak fatality turned up anywhere (a separate, later Lundin fatality — Rob Crapo,
+  1997 — is also not 1980). Corrected both routes' hazard text from 1980 to 1982. SQL:
+  `audits/sql/2026-11-26-batch-593.sql` (checked with `check:sql`, both targets exist).
+
+2 flagged for human review:
+- `wa_lundin_peak_northwest_face` — unenriched stub (name, discipline, FA, classic only; no
+  description/approach/hazards). Nothing to fact-check.
+- `wa_lundin_peak_southeast_ridge` — same, unenriched stub (gain_ft and classic only).
+
+Note (not flagged separately, left with the fix above): `wa_lundin_peak_south_face_left`'s FA is
+stored as "Mike Preiss & Don Preiss, 2004". The closest external match found is an OpenBeta page
+for a Lundin Peak "South Face (2001 Variation)" crediting FA as "m.preiss/d.preiss ?" (the source
+itself marks it uncertain) — different year, and unclear whether it's the same line as this row's
+South Face Left. Left the stored FA alone since nothing confirms it's wrong, but a human with a
+guidebook could settle the year.
+
+Clean / no action needed:
+- `wa_luna_glacier` (Phantom Peak) — stored `high_point_ft` 8016 agrees with ListsOfJohn (8023 ft
+  LiDAR) and TopoZone (8015 ft); FA (Fred & Helmy Beckey, 1940) independently confirmed by
+  WebSearch. The Access Creek approach detail (branching off the Big Beaver Trail past Luna Camp)
+  matches independent Picket Range trip reports describing that same creek crossing and cirque
+  approach.
+- `wa_lundin_peak_east_ridge` — `high_point_ft` 6057 matches Wikipedia/Mountain Project/the
+  Alpine Lakes peak list; approach mileage (PCT 2mi + Commonwealth Creek trail ~2.5mi to Red Pass)
+  is internally consistent with the stored `dist_km` (7.24 km ≈ 4.5 mi).
+- `wa_magic_mountain_north_face` and `wa_magic_mountain_northeast_couloir` — `high_point_ft` 7610
+  matches Peakbagger/Library of Congress/Mountain-Forecast; the Yawning Glacier span (6,200-6,800
+  ft) and Magic-Pelton col (~6,480 ft) both match SummitPost exactly; the Northeast Couloir's own
+  "Banana Couloir" name and roughly 2,000 ft length (stored `length_m` 610 ≈ 2,000 ft) are
+  independently confirmed by ski trip reports (turns-all-year.com).
+
+2 confirmed errors fixed, 2 flagged for human review. Next batch continues id-ascending from
+`wa_magic_mountain_northeast_couloir` (pass 9).
