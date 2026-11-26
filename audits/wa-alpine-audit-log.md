@@ -40986,3 +40986,74 @@ Clean / no action needed:
 
 1 confirmed error fixed, 2 flagged for human review. Next batch continues id-ascending from
 `wa_little_annapurna_south_face` (pass 9).
+
+## Batch 592 (pass 9) — 2026-11-26
+
+Checked 10 routes id-ascending from `wa_little_big_chief_mountain_falcon_route` through
+`wa_luahna_peak_east_slopes`.
+
+Note on this run's research tooling: WebFetch could resolve WebSearch's own result pages but
+failed DNS resolution for `publications.americanalpineclub.org` specifically (outside this
+session's allowed network domains) when trying to pull the full AAC Publications writeup on
+Little Mac Spire's Southwest Arête; relied on the WebSearch snippet instead.
+
+2 confirmed errors fixed: `wa_little_sister_north_face` and `wa_little_sister_west_face` both
+stored `high_point_ft` 6526, but the third route up the same peak already in this database,
+`wa_little_sister_southeast_ridge`, stores 6600 for that same true summit — and North Face's
+own overview says it finishes with unroped scrambling *to* that true summit, so its high point
+should agree with the other two routes, not read a lower, false high point. Two independent
+secondary sources corroborate the Southeast Ridge's existing value: SummitPost's Twin Sisters
+Range page gives Little Sister 6,600 ft, and Yellowleaf.org gives 6,620 ft (noting "Little
+Sister" is an unofficial name) — neither supports 6526. Set both to 6600 to agree with the
+peak's own correct route and the sourced elevation. SQL: `audits/sql/2026-11-26-batch-592.sql`
+(checked with `check:sql`, both targets exist).
+
+3 flagged for human review:
+- `wa_little_mac_spire_southwest_route` — its own `corrections` field reads "No route-specific
+  beta found for Little Mac Spire itself; located near Mac Peak in the Deception Lakes area,"
+  which contradicts every other field on the row: the overview, approach, gpx track and
+  coordinates are all specifically and consistently about the Southern Pickets (Terror Basin /
+  Goodell Creek / McMillan Spires, North Cascades NP), nowhere near the Alpine Lakes
+  Wilderness's Deception Lakes. This reads as a stale note left over from an earlier, wrong
+  research pass on a since-corrected row — `corrections` is not rendered to climbers (checked
+  `RouteDetail.jsx`), so it is not a user-facing error, but it is a data-hygiene flag worth a
+  human look, and it means this row's `gear_confidence: "inferred"` and `high_point_ft` (7680)
+  shouldn't be trusted further without a fresh pass. On the elevation specifically: WebSearch
+  turned up a secondary claim that USGS-era maps give Little Mac Spire a shared/undifferentiated
+  height of 7992 ft with neighboring East McMillan Spire, which conflicts with the stored 7680 —
+  but the route's own `data_quality.gaps` already flags "no confirmed GPS coordinates or
+  dedicated topo specific to Little Mac Spire," so this needs a human with a real topo, not a
+  guess from this run.
+- `wa_little_big_chief_mountain_falcon_route` — the only non-null fields are
+  name/grade/pitches/length_m/fa/detailed_rack/approach_logistics; no description, approach,
+  hazards, or waypoints. A Cascade Climbers trip-report thread (2023) confirms the route exists
+  and that Martin Volken named it after a falcon that circled the party near the top, but the
+  thread describes the climbing itself as "200-250m of 4th-low 5th class in a single simul
+  block" — well under this row's stored 549m/15-pitch figure. That trip report may only be
+  describing one section of a longer route rather than the whole thing, so this is not a
+  confirmed contradiction, just inconclusive corroboration; flagging for a deeper research pass
+  rather than guessing at a fix.
+- `wa_little_big_chief_mountain_southwest_face` — effectively an unenriched stub (name only, every
+  other column null); nothing to fact-check, flagging for enrichment prioritization.
+
+Clean / no action needed:
+- `wa_little_sister_southeast_ridge` — this is the route whose own `high_point_ft` (6600) turned
+  out to be the correct value the other two routes on the peak were fixed to match; nothing
+  further to flag here.
+- `wa_little_tahoma_east_shoulder` — FA (J.B. Flett & Henry H. Garrison, August 29, 1894) and
+  `high_point_ft` (11,138 ft) both independently confirmed by multiple sources (Wikipedia,
+  Mountain Project, OpenBeta all agree); approach/descent/permit detail is substantive and
+  internally consistent.
+- `wa_live_free_or_die` — well-documented 2017 Liberty Bell free route (Herrington/Hadley/
+  Keena-Levin); the row's own `data_quality.gaps` already discloses the FA-team-size source
+  dispute, so not re-flagging it here.
+- `wa_lizard_mountain_south_route` — richly enriched Ptarmigan Traverse side-scramble; its own
+  `data_quality.gaps` already discloses the unconfirmed FA and the 7,306-7,420 ft elevation
+  spread across sources, and nothing found this run resolves either gap further.
+- `wa_luahna_peak_east_slopes` — FA (Rodney Glisan, H.H. Prouty, Winthrop Stone, C.W. Whittlesey,
+  Mazamas, August 13, 1911) confirmed by Wikipedia; stored `high_point_ft` 8445 falls within the
+  8,400-8,445 ft range given across that same source's revisions, which is ordinary source
+  variance, not an error.
+
+2 confirmed errors fixed, 3 flagged for human review. Next batch continues id-ascending from
+`wa_luahna_peak_east_slopes` (pass 9).
