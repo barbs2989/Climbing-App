@@ -34,3 +34,17 @@ Pipeline (scratch paths are arguments; MP text and OSM extracts are never commit
    every 50, re-read to reconcile.
 
 Records: `../data/google-snap-parking/applied-*.json` (every pin written, with the judge's reason).
+
+## Result and how to resume
+All 17,384 candidate groups (32,236 areas) were judged: 1,652 `lot`, 857 `roadside` (each with a second opinion;
+~85% of the later ones held), 651 `no`, 14,224 `unsure`. Left out before judging: 4,357 crags more than 1.5 km
+from any road, 5,323 with no lot at the road end and no own text (or > 600 m), 2,204 with nothing to cross-check.
+**4,399 areas get a pin** (3,245 at a mapped lot, 1,154 at the road end), covering ~34,100 climbs.
+
+`../data/google-snap-parking/decisions.json` is the complete list. `applied.json` is what is live (from
+`reconcile.mjs`). To resume the writes (each needs the DB slot, `node ~/dev/db-throttle/dbslot.mjs acquire <name>`):
+
+    node scripts/oneoff/google-snap-parking/apply.mjs scripts/oneoff/data/google-snap-parking/decisions.json
+    node scripts/oneoff/google-snap-parking/reconcile.mjs <tmpDir> scripts/oneoff/data/google-snap-parking/applied.json scripts/oneoff/data/google-snap-parking/decisions.json
+
+apply.mjs skips every area already pinned, and stops itself when `dbslot check` reports the database slow; re-run it.
