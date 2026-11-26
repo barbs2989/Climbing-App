@@ -76,19 +76,19 @@ const CASES = [
     why: "§11 — a failed map throws the whole save away, so a route outside tile coverage cannot be kept",
     find: "packRouteWithSnapshot(routeId, { onMapProgress: setProg }).then(function (res) { say(savedMessage(res)); })",
     repl: "packRouteWithSnapshot(routeId, { onMapProgress: setProg }).then(function (res) { say(savedMessage(res)); if (!res.map) return unpackRouteOffline(routeId); })" },
-  { name: "tracks-fallback-gone", file: DB, must: "fail", expect: "useRouteTracks lost its device fallback",
+  { name: "tracks-fallback-gone", file: "lib/db-logs.js", must: "fail", expect: "useRouteTracks lost its device fallback",
     why: "§11 — tracks are written at save time and never read back",
     find: "queryFn: () => orOfflineExact(() => fetchRouteTracks(routeId, limit), () => offlinePackTracks(routeId)),",
     repl: "queryFn: () => fetchRouteTracks(routeId, limit)," },
-  { name: "siblings-fallback-gone", file: DB, must: "fail", expect: "useAreaRoutes lost its fallback to the saved neighbours",
+  { name: "siblings-fallback-gone", file: "lib/db-catalog.js", must: "fail", expect: "useAreaRoutes lost its fallback to the saved neighbours",
     why: "§11 — the neighbours are stored and NEXT DOOR still goes blank",
     find: "return st.length || full ? st : offlinePackSiblings(areaId);", repl: "return st;" },
-  { name: "photos-not-saved", file: DB, must: "fail", expect: "no longer saves the route's photos and topos",
+  { name: "photos-not-saved", file: "lib/db-logs.js", must: "fail", expect: "no longer saves the route's photos and topos",
     why: "§11 — Help says a saved climb keeps its photos; the save stops writing them",
     find: "try { media = await savePackMedia(routeId, row, photoRows, people, reportRows); } catch (e) { media = null; }", repl: "media = null;" },
   /* THE SILENT HALF. Write, copy and hydration all stay; only the fallback goes. Nothing renders
    * differently, no name moves, and the pack empties the moment there is no signal. */
-  { name: "read-gone", file: DB, must: "fail", expect: "fallback is not offlineRoutesByIds",
+  { name: "read-gone", file: "lib/db-catalog-more.js", must: "fail", expect: "fallback is not offlineRoutesByIds",
     why: "§2 — the row is written and never read back; the defect no render assertion can see",
     // useRoutesByIds reads the device in TWO places (the orOffline fallback and the chunked path's own
     // catch). Replacing one left the other standing, so the guard passed and this case proved nothing.
@@ -101,7 +101,7 @@ const CASES = [
   /* §8's silent half, and the reason that section is in the GUARD rather than only in
    * probe-offline-subtree-search: the reader stays correct, the probe stays green at 29/29, and
    * the in-area finder throws again the moment there is no signal. */
-  { name: "search-fallback-gone", file: DB, must: "fail", expect: "is NOT wrapped in orOfflineExact",
+  { name: "search-fallback-gone", file: "lib/db-catalog-more.js", must: "fail", expect: "is NOT wrapped in orOfflineExact",
     why: "§8 — the downloaded catalog can be browsed and no longer searched",
     find: "() => orOfflineExact(async () => {\n      const { data, error } = await supabase.rpc(\"routes_in_subtree\",",
     repl: "() => (async () => {\n      const { data, error } = await supabase.rpc(\"routes_in_subtree\"," },
@@ -117,17 +117,17 @@ const CASES = [
 
   /* §10 — the readers a downloaded state's reports, corrections and names come back through. Each
    * edit leaves every render and every name intact online; the loss shows only with no signal. */
-  { name: "reports-fallback-gone", file: DB, must: "fail", expect: "useRouteTripReports lost its device fallback",
+  { name: "reports-fallback-gone", file: "lib/db-logs.js", must: "fail", expect: "useRouteTripReports lost its device fallback",
     why: "§10 — a state's reports are downloaded and never read back",
     find: "() => offlinePackReports(routeId)", repl: "() => undefined" },
-  { name: "stamp-lost", file: DB, must: "fail", expect: "useRouteContributions lost its device fallback or its structuralSharing",
+  { name: "stamp-lost", file: "lib/db-contributions.js", must: "fail", expect: "useRouteContributions lost its device fallback or its structuralSharing",
     why: "§10 — structural sharing strips `_packedAt`, so saved corrections render undated",
     find: "    queryKey: [\"contributions\", routeId],\n    enabled: !!supabase && !!routeId,\n    structuralSharing: false,",
     repl: "    queryKey: [\"contributions\", routeId],\n    enabled: !!supabase && !!routeId," },
-  { name: "names-fallback-gone", file: DB, must: "fail", expect: "useProfilesByIds has no device fallback",
+  { name: "names-fallback-gone", file: "lib/db-partners.js", must: "fail", expect: "useProfilesByIds has no device fallback",
     why: "§10 — every saved report reads as an anonymous climber offline",
     find: "() => offlinePackProfiles(ids)", repl: "() => undefined" },
-  { name: "plan-mirror-gone", file: DB, must: "fail", expect: "useMyItineraries no longer mirrors",
+  { name: "plan-mirror-gone", file: "lib/db-lists.js", must: "fail", expect: "useMyItineraries no longer mirrors",
     why: "§10 — the climber's own plan is not on the device at the trailhead",
     find: "cacheItineraries(userId, out).catch(() => {});", repl: "" },
   { name: "undated-reports", file: "src/components/RouteReportsTab.tsx", must: "fail", expect: "stopped dating the saved reports",

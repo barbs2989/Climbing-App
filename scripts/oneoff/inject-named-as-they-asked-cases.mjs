@@ -23,7 +23,7 @@ const PROBE = path.join(ROOT, "scripts/oneoff/probe-a-climber-is-named-the-way-t
 const FILES = {
   core: path.join(ROOT, "ClimbMatchCore.jsx"),
   app: path.join(ROOT, "ClimbMatch.jsx"),
-  db: path.join(ROOT, "lib/db.js"),
+  db: path.join(ROOT, "lib/db-partners.js"), // lib/db.js re-exports it since 2026-11-25
   CrewCard: path.join(ROOT, "lib/CrewCard.jsx"),
 };
 const LOCK = path.join(ROOT, ".inject-named-as-they-asked.lock");

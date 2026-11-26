@@ -21,7 +21,7 @@ const CASES = [
   {
     name: "order",
     why: "delete the storage object BEFORE the array write — a refused write then leaves the profile listing a file that is gone",
-    file: "lib/db.js",
+    file: "lib/db-photos.js",
     find: `  await saveProfilePhotos(userId, next);
   const key = photoStorageKey(url);`,
     repl: `  const key = photoStorageKey(url);
@@ -49,7 +49,7 @@ const CASES = [
   {
     name: "noop",
     why: "a removal that matches nothing writes the array back and reports success",
-    file: "lib/db.js",
+    file: "lib/db-photos.js",
     find: `  if (next.length === before.length) throw new Error("That photo is not on your profile any more`,
     repl: `  if (false) throw new Error("That photo is not on your profile any more`,
     expect: /resolved as success/,

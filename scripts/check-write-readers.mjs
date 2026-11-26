@@ -41,7 +41,8 @@ const DECLARED = {};
 const libDir = path.join(ROOT, "lib");
 const libFiles = fs.readdirSync(libDir).filter((f) => /\.(js|jsx)$/.test(f)).map((f) => "lib/" + f);
 const FILES = libFiles.filter((rel) => { const t = fs.readFileSync(path.join(ROOT, rel), "utf8"); return /\bsupabase\b/.test(t) && (/\buseQuery\s*\(/.test(t) || /\.(insert|update|delete|upsert)\s*\(/.test(t)); });
-if (!FILES.includes("lib/db.js")) { console.error("check:write-readers — lib/db.js not discovered; blind, not clean"); process.exit(1); }
+// The data layer is lib/db-*.js since 2026-11-25 (lib/db.js only re-exports them): those must be found.
+if (FILES.filter((f) => /^lib\/db-[\w-]+\.js$/.test(f)).length < 10) { console.error("check:write-readers — the data layer (lib/db-*.js) was not discovered; blind, not clean"); process.exit(1); }
 
 function tableOf(callNode) {
   let n = callNode;

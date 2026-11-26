@@ -32,7 +32,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
-import { readAppFile } from "./lib/guard-sources.mjs";
+import { readAppFile, readDbSource } from "./lib/guard-sources.mjs";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const MIG = path.join(ROOT, "supabase", "migrations");
@@ -144,7 +144,7 @@ for (const name of ["match_objectives_of_users", "partners_by_objective"]) {
 
 // ── rule 5b: every List-me control refuses what the trigger refuses — one set, no local copies ──
 {
-  const db = fs.readFileSync(path.join(ROOT, "lib", "db.js"), "utf8");
+  const db = readDbSource(ROOT);
   const m = db.match(/export const UNLISTABLE_AREA_TYPES = new Set\(\[([^\]]*)\]\)/);
   const set = m ? m[1] : "";
   ((m && /"world"/.test(set) && /"country"/.test(set) && /"state"/.test(set) && !/"peak"/.test(set)) ? ok : fail)(`lib/db.js UNLISTABLE_AREA_TYPES is world, country and state (not peak) — the trigger's refusal, client side`);
@@ -158,7 +158,7 @@ for (const name of ["match_objectives_of_users", "partners_by_objective"]) {
 
 // ── rule 6: the app reads listings through lib/db.js hooks named here, and objective writes refresh the match reader ──
 {
-  const db = fs.readFileSync(path.join(ROOT, "lib", "db.js"), "utf8");
+  const db = readDbSource(ROOT);
   for (const h of ["useMyPartnerAreas", "savePartnerArea", "removePartnerArea", "usePartnersInArea", "usePartnersForMyAreas", "usePartnerAreaCounts", "usePartnerAreasOfUsers", "useMatchObjectivesOfUsers"]) {
     (new RegExp(`export (?:async )?function ${h}\\b`).test(db) ? ok : fail)(`lib/db.js exports ${h}`);
   }
@@ -212,7 +212,7 @@ for (const name of ["match_objectives_of_users", "partners_by_objective"]) {
       (/\blisted\s+boolean\b/.test(f.head) && /\blisting_note\s+text\b/.test(f.head) ? ok : fail)("partners_by_objective returns listed + listing_note, so a row can say the climber LISTED themselves rather than only saved the route");
     }
   }
-  const db = fs.readFileSync(path.join(ROOT, "lib", "db.js"), "utf8");
+  const db = readDbSource(ROOT);
   for (const h of ["useMyRouteListings", "addRouteListing", "saveRouteListing", "removeRouteListing"]) {
     (new RegExp(`export (?:async )?function ${h}\\b`).test(db) ? ok : fail)(`lib/db.js exports ${h}`);
   }

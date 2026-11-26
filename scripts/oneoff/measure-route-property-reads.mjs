@@ -20,6 +20,7 @@ import path from "path";
 import { fileURLToPath } from "url";
 import { parse } from "@babel/parser";
 import _traverse from "@babel/traverse";
+import { readDbSource } from "../lib/guard-sources.mjs";
 const traverse = _traverse.default || _traverse;
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "../..");
@@ -40,7 +41,7 @@ if (columns.size < 40) {
 }
 
 // 2. Aliases dbRouteToCamel adds on top of the spread.
-const db = fs.readFileSync(path.join(ROOT, "lib/db.js"), "utf8");
+const db = readDbSource();
 const mapStart = db.indexOf("export function dbRouteToCamel");
 if (mapStart < 0) { console.error("ANCHOR LOST — dbRouteToCamel"); process.exit(1); }
 let d = 0, end = mapStart;

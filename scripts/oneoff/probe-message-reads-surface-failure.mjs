@@ -14,9 +14,10 @@
 import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
+import { readDbSource } from "../lib/guard-sources.mjs";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..", "..");
-const db = fs.readFileSync(path.join(ROOT, "lib/db.js"), "utf8");
+const db = readDbSource();
 const app = fs.readFileSync(path.join(ROOT, "ClimbMatch.jsx"), "utf8");
 
 const FNS = ["fetchOlderCrewMessages", "fetchOlderDirectMessages", "fetchMyDirectMessages"];

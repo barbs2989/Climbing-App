@@ -16,6 +16,7 @@
 // real payload literal out of syncLogToDb, so adding a column there without
 // mapping it back fails the check rather than silently losing it.
 import { readFileSync } from "node:fs";
+import { readDbSource } from "./lib/guard-sources.mjs";
 
 // The app is split across ClimbMatch.jsx (App) and ClimbMatchCore.jsx (helpers,
 // seed data, presentational components); markers may live in either. Core is
@@ -293,7 +294,7 @@ console.log("  ok    the route-page hydration drops nothing a reader wants");
 // own route page lost their conditions, and an edit saved the blanks back. This reads the hook App
 // actually calls and fails unless it selects `*` or names every column the hydration reads.
 {
-  const DB = readFileSync(new URL("../lib/db.js", import.meta.url), "utf8");
+  const DB = readDbSource();
   const hookBody = (name) => {
     const at = DB.indexOf("export function " + name + "(");
     if (at < 0) fail(`could not find export function ${name}( in lib/db.js (the hook App's ${name === hookOwn ? "myLogsQ" : "profLogsQ"} calls).`);

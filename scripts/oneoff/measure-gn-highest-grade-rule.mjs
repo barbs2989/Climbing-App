@@ -29,6 +29,7 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { execFileSync } from "node:child_process";
 import { SUPABASE_URL, anonKey, headers } from "../lib/supabase-env.mjs";
+import { readDbSource } from "../lib/guard-sources.mjs";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "../..");
 const argv = process.argv.slice(2);
@@ -59,7 +60,7 @@ for (const k of ["gn", "techHrs", "pitchedFraction", "scarfHrs"]) {
 const { gn, techHrs, scarfHrs } = core;
 
 /* ---- 2. usableGrade, lifted from lib/db.js by text (it is module-local, not exported) -------- */
-const dbSrc = fs.readFileSync(path.join(ROOT, "lib", "db.js"), "utf8");
+const dbSrc = readDbSource();
 const ug = dbSrc.match(/const CRAG_DISC = new Set\([^;]+;\s*const CLASS_GRADE = [^;]+;\s*function usableGrade\(r\) \{[\s\S]*?\n\}/);
 if (!ug) { console.error("FAIL — ANCHOR LOST: could not lift usableGrade from lib/db.js. Refusing to guess at the grade the app actually sees."); process.exit(1); }
 const usableGrade = new Function(`${ug[0]}; return usableGrade;`)();

@@ -30,10 +30,10 @@ function runGuard() {
 const CASES = [
   {
     name: "narrow an embed back to areas(path)",
-    file: "lib/db.js",
+    file: "lib/db-catalog-more.js",
     edit: (s) => s.replace("areas(path,name,area_type", "areas(path____name,area_type"),
-    expect: (r) => r.code !== 0 && /lib\/db\.js:\d+ areas\(path____name/.test(r.out),
-    want: "FAIL naming lib/db.js and the line",
+    expect: (r) => r.code !== 0 && /lib\/db(-[\w-]+)?\.js:\d+ areas\(path____name/.test(r.out),
+    want: "FAIL naming the data-layer file (lib/db-*.js) and the line",
   },
   {
     name: "revert the name-aware header fallback",
@@ -46,7 +46,7 @@ const CASES = [
   },
   {
     name: "a COMMENT mentioning areas(path) — must PASS",
-    file: "lib/db.js",
+    file: "lib/db-catalog-more.js",
     edit: (s) => s.replace("export function useScopedWishlistRoutes",
       "// note: an older revision of this used areas(path) and that is why the guard exists\nexport function useScopedWishlistRoutes"),
     expect: (r) => r.code === 0,

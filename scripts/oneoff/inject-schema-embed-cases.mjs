@@ -15,8 +15,8 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "../..");
-const DB = ROOT + "/lib/db.js";
-const original = fs.readFileSync(DB, "utf8");
+// lib/db.js re-exports lib/db-*.js since 2026-11-25; each case names the domain file its embed lives in.
+const DB = ROOT + "/lib/db-groups.js";
 const sum = (s) => crypto.createHash("sha1").update(s).digest("hex").slice(0, 8);
 
 const CASES = [
@@ -24,16 +24,16 @@ const CASES = [
   // embed went with the guide feature (2026-11-14), so the same shape is restored on a live embed:
   // a plausible-but-absent column at the END of a multi-column embed.
   { name: "a phantom column in a multi-column embed — routes(name, area_id, discipline)",
-    expect: "fail",
+    file: "lib/db-moderation.js", expect: "fail",
     edit: (s) => s.replace("routes(name, area_id, discipline)", "routes(name, area_id, discipline, created_by_name)") },
   { name: "a bad column in a plain embed — groups(name)",
-    expect: "fail",
+    file: "lib/db-groups.js", expect: "fail",
     edit: (s) => s.replace("groups(name)", "groups(name, nickname)") },
   { name: "a bad column in an aliased embed",
-    expect: "fail",
+    file: "lib/db-comments.js", expect: "fail",
     edit: (s) => s.replace("comment_reactions(user_id,reaction)", "comment_reactions(user_id,reaction,emoji_code)") },
   { name: "an aggregate inside an embed is not a column — group_event_rsvps(user_id) -> group_event_rsvps(count)",
-    expect: "pass",
+    file: "lib/db-groups.js", expect: "pass",
     edit: (s) => s.replace("group_event_rsvps(user_id)", "group_event_rsvps(count)") },
   { name: "untouched source",
     expect: "pass",
@@ -41,15 +41,19 @@ const CASES = [
 ];
 
 let failures = 0;
+let allRestored = true;
 for (const c of CASES) {
+  const F = c.file ? ROOT + "/" + c.file : DB;
+  const original = fs.readFileSync(F, "utf8");
   const edited = c.edit(original);
   const landed = c.name === "untouched source" ? true : edited !== original;
   if (!landed) { console.log(`  HARNESS  ${c.name}\n           edit never landed (pattern moved) — not a guard verdict`); failures++; continue; }
-  fs.writeFileSync(DB, edited);
+  fs.writeFileSync(F, edited);
   let out = "", code = 0;
   try { out = execFileSync("node", ["scripts/check-schema-drift.mjs"], { cwd: ROOT, encoding: "utf8" }); }
   catch (e) { code = e.status || 1; out = (e.stdout || "") + (e.stderr || ""); }
-  fs.writeFileSync(DB, original);
+  fs.writeFileSync(F, original);
+  if (fs.readFileSync(F, "utf8") !== original) allRestored = false;
   const got = code === 0 ? "pass" : "fail";
   const okay = got === c.expect;
   if (!okay) failures++;
@@ -57,8 +61,8 @@ for (const c of CASES) {
   if (!okay) console.log("        " + out.split("\n").filter((l) => l.trim()).slice(0, 3).join("\n        "));
 }
 
-const restored = fs.readFileSync(DB, "utf8") === original;
-console.log(`\n  lib/db.js restored: ${restored}`);
+const restored = allRestored;
+console.log(`\n  lib/db-*.js restored: ${restored}`);
 if (!restored) { console.log("  RESTORE FAILED"); failures++; }
 console.log(failures ? `\n${failures} case(s) did not behave` : "\nall injection cases behave");
 process.exit(failures ? 1 : 0);

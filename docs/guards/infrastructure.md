@@ -273,6 +273,23 @@ name their inputs, `assertCovered()` for the ones that walk the tree.
     import/export nodes, which no guard reads. `check:refs` skips identifiers in TS *type*
     positions (`Record<K,V>`, `: Props`) — erased before anything runs — but not inside `x as T`,
     which wraps a value.
+  - **The data layer is `lib/db-*.js` since 2026-11-25; `lib/db.js` only re-exports it.** The 8,000-line
+    file was cut into 18 domain files (`scripts/oneoff/split-db-by-domain.mjs`, maintainability audit). The
+    files are FLAT in `lib/`, on purpose: `componentFiles()` and every hand-rolled `lib/` walker read `lib/`
+    without recursing, so a `lib/db/` subfolder would have been invisible to all of them. A guard that wants the
+    data layer as ONE text reads `readDbSource(root)` (guard-sources): every domain file in the barrel's
+    order, imports merged so it parses as one module, a `// ── lib/db-<domain>.js ──` line where each begins
+    (a line number it reports is in that joined text — search for the marker). `readAppFile("lib/db.js")`
+    returns the same. 17 guards read it that way; per-file walkers (`check:read-failures`,
+    `check:write-readers`, `check:area-name-embed`) now see each domain file and name it, and fail closed
+    if fewer than 10 `lib/db-*.js` are discovered. Traps met doing it: a declaration another domain needs
+    gained `export`, so `export async function fetchArea` began matching `fetchAreaPath` first in
+    `check:offline-claims` (fixed with `\b` — any guard keyed on a name PREFIX has the same hazard);
+    injection suites that edit `lib/db.js` were repointed at the domain file their anchor lives in
+    (`node scripts/oneoff/_whereanchor.mjs`), including the two that snapshot a fixed file map; and
+    `check:field-outline` follows 31 fewer references — non-style identifiers (`networkFn`,
+    IndexedDB calls) it had wandered into through `lib/db.js`'s imports — with its 400 text fields
+    unchanged. `measure:guard-reach` before/after: no guard that passed fails, no count fell to zero.
   - **A parent that still USES what it extracted imports it back** (`DiscBadge`, PR3: core's own
     `DiscBadges` renders it). Stitched verbatim, that import line plus the moved body is a duplicate
     declaration and Babel refuses the WHOLE stitched file — every text guard on core would have gone
