@@ -52,11 +52,12 @@ export interface ApproachPickerProps {
 /* HOW YOU GET THERE — the approach picker (lib/approaches.js). Rendered only when choosing
    CHANGES something: a variant pointing at a sibling route, or carrying its own trip data. The 125
    routes whose ways in are prose cards keep the cards and get no control that would change nothing.
-   It sits UNDER the sub-tab bar, at the top of every tab (owner, 2026-10-21: above the bar it read as
-   part of the header and crowded the top of the page). It stays on every tab but Partners (owner, 2026-11-25: Partners reads nothing from the
-   pick, so RouteDetail does not mount it there) because the pick drives every one of the others — Plan's hours and trip plan, Overview's trailhead and map, the camps — and a
-   control on one tab that silently rewrites another is how a climber ends up reading the Sulphide's
-   camps under a Fisher Chimneys plan.
+   It sits UNDER the sub-tab bar, at the top of the tab (owner, 2026-10-21: above the bar it read as
+   part of the header and crowded the top of the page). RouteDetail mounts it on Overview and Plan
+   only (owner, 2026-11-26: "HOW YOU GET THERE, should only be on overview and plan tabs"; 2026-11-25 had taken it off Partners): those are where the way in
+   is chosen — Overview's trailhead, map and approach card, Plan's hours, trip plan and camps. The pick
+   lives in RouteDetail's state, so the other tabs (Safety's hazards among them) still follow it with
+   the card gone.
    With more than one way in the choice is a RADIO GROUP of full-width rows, each with a radio dot,
    under a heading that says how many there are and that you pick one: as a row of small chips it did
    not read as a choice at all. One way in at a time, all of them visible, one pre-selected (the most
