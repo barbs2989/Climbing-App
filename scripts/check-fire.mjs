@@ -32,7 +32,7 @@
 // browser pass are for. This checks the rules, not the pixels.
 import fs from "node:fs";
 import path from "node:path";
-import { fileURLToPath } from "node:url";
+import { fileURLToPath, pathToFileURL } from "node:url";
 import { assertCovered, readAppFile } from "./lib/guard-sources.mjs";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
@@ -465,7 +465,7 @@ if (/networkMode\s*:\s*["']online["']/.test(code[DATA])) {
   else ok(`${PANEL}: the list is filtered through fireMatters`);
   if (!/\.filter\(\s*fireIsClose\s*\)/.test(p)) fail(`${PANEL}: the red "Active fire nearby" state does not come from fireIsClose`);
   else ok(`${PANEL}: red comes from fireIsClose`);
-  const F = await import(path.join(ROOT, DATA));
+  const F = await import(pathToFileURL(path.join(ROOT, DATA)).href);
   const at = (originMi, acres, contained) => ({ originMi, acres, contained });
   const cases = [
     [at(3, null, null), true, true, "a new fire with no size yet, 3 mi off"],
