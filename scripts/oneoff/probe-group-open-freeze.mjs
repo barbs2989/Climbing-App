@@ -16,6 +16,8 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { createFixture, sessionForStorage, STORAGE_KEY } from "../lib/ui-fixture.mjs";
 import { SUPABASE_URL, requireServiceKey, headers } from "../lib/supabase-env.mjs";
+import { assertQuietBox } from "../lib/quiet-box.mjs";
+assertQuietBox("probe-group-open-freeze.mjs");
 
 // The fixture group, filled like a group people use: posts from both members, a pinned one, reactions, events.
 // Everything here hangs off the group or the fixture accounts, so the fixture's own cleanup cascades it away.
