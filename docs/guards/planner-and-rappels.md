@@ -1199,11 +1199,15 @@ Part of the guard notes — see [README.md](README.md) for the full index.
   - Read-only, anon key, fails closed on an empty read. **Not a build gate** — a property of the DB,
     not the checkout, so no code change can cause or fix it; same reasoning as `check:counts`.
 
-- **`check:sun-times`** asserts that **the Calendar's sunrise and sunset match an ephemeris to the
+- **`check:sun-times`** asserts that **`sunRiseSet()`'s sunrise and sunset match an ephemeris to the
   minute** — sixteen reference instants (four Washington points by four dates, Open-Meteo's daily
   sunrise/sunset) that `sunRiseSet()` in `lib/conditionsScore.js` must land within three minutes
-  of, plus the polar-day, polar-night and bad-input shapes, plus two source checks: `lib/Calendar.jsx`
-  imports and calls `sunRiseSet`, and no app file declares a `sunTimes` of its own. Static, one
+  of, plus the polar-day, polar-night and bad-input shapes, plus one source check: no app file declares a `sunTimes` of its own.
+  - **NO READER SINCE 2026-11-25.** The solver's one reader was the Calendar's Daylight line, inside the
+    *Plan the day* panel on each upcoming climb; the owner's note removed that panel ("Remove the plan
+    the day from your events feature on app for upcoming climbs"). The solver and its numeric check
+    stay for the next screen that prints a sunrise; the old source check that `lib/Calendar.jsx` calls
+    it went with the panel, and so did its injection case (5 cases now). Static, one
   import, so it sits in `npm run build`.
   - **WHY IT EXISTS.** Until 2026-10-07 the Calendar's Daylight line printed "solar noon ± half the
     day length" as clock times — no longitude, no equation of time, no daylight saving, no disc or
@@ -1217,7 +1221,7 @@ Part of the guard notes — see [README.md](README.md) for the full index.
   - **IT IS THE ONLY GATE THAT EXECUTES THE FUNCTION.** Every other guard reads source. A rewrite
     that drops the refraction term, reads longitude wrong, or scans the UTC day instead of the local
     one is valid JS that renders a confident number — so the check is numeric, and the injection
-    suite (`scripts/oneoff/inject-sun-times-cases.mjs`, 6 cases) proves each of those is caught.
+    suite (`scripts/oneoff/inject-sun-times-cases.mjs`) proves each of those is caught.
   - **THE REFERENCE IS ABSOLUTE INSTANTS, NOT CLOCK TIMES — a trap met building it.** The first
     capture asked Open-Meteo for local times and got Seattle's December sunrise as 08:54, an hour
     late: the API stamps the whole response with the offset of the day it is *asked*, so a December

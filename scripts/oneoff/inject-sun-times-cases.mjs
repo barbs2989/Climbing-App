@@ -13,7 +13,7 @@ import { execFileSync } from "node:child_process";
 import { fileURLToPath } from "node:url";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..", "..");
-const SOLVER = "lib/conditionsScore.js", CAL = "lib/Calendar.jsx", CORE = "ClimbMatchCore.jsx";
+const SOLVER = "lib/conditionsScore.js", CORE = "ClimbMatchCore.jsx";
 const sum = (f) => crypto.createHash("sha1").update(fs.readFileSync(f)).digest("hex");
 
 const CASES = [
@@ -27,11 +27,6 @@ const CASES = [
     find: "const above = function (t) { return sunPosition(lat, lng, t).alt + 0.833; };",
     repl: "const above = function (t) { return sunPosition(lat, 0, t).alt + 0.833; };",
     says: /min off the ephemeris/ },
-  // The Calendar stops reading the solver and makes a number of its own.
-  { name: "calendar-estimates-again", file: CAL, expect: "fail",
-    find: "sunRiseSet(mt.lat,mt.lng,x.date)",
-    repl: "{daylight:12,sunrise:null,sunset:null}",
-    says: /never calls sunRiseSet/ },
   // The old function returns under its old name.
   { name: "old-name-returns", file: CORE, expect: "fail",
     find: "/* sunTimes() used to live here:",
@@ -41,9 +36,9 @@ const CASES = [
   { name: "finer-step", file: SOLVER, expect: "pass",
     find: "const STEP = 5 * 60000;", repl: "const STEP = 2 * 60000;", says: null },
   // MUST STAY SILENT — a comment naming the old function is documentation, not a declaration.
-  { name: "comment-naming-the-old-function", file: CAL, expect: "pass",
-    find: "import { sunRiseSet } from \"./conditionsScore.js\";",
-    repl: "import { sunRiseSet } from \"./conditionsScore.js\"; // replaced sunTimes, which was an hour early",
+  { name: "comment-naming-the-old-function", file: CORE, expect: "pass",
+    find: "/* sunTimes() used to live here:",
+    repl: "// sunTimes was an hour early\n/* sunTimes() used to live here:",
     says: null },
 ];
 

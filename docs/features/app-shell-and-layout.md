@@ -174,8 +174,11 @@ room for side-panel ads later. The phone app keeps its own look.
   - **The Calendar has a month view** above its lists (`MonthGrid`): your crews' agreed climbing days and
     group events on a month grid with ‹ › and *Today*; each entry opens what the list would. Crew days and
     events only (owner).
-  - **No emoji in the Calendar** (owner, 2026-10-23): its rows read *Drive from you* and *Daylight* as
-    plain labels, its two notes carry the app's line `info` icon, and the empty state a line `calendar` icon
+  - **No "Plan the day" on an upcoming climb** (owner note, 2026-11-25: "Remove the plan the day from
+    your events feature on app for upcoming climbs"): each climb card in the Calendar is the crew, its
+    day, meet time and place and who is going, and opens the crew; the drive-time, daylight and
+    gear-checklist dropdown under it is gone. The route page's Planner is where a day is planned.
+  - **No emoji in the Calendar** (owner, 2026-10-23): its note carries the app's line `info` icon, and the empty state a line `calendar` icon
     (`lib/Calendar.jsx`). The meeting place keeps its `pin` line icon through `Lbl`.
   - **Crew chats in the rail** (1280px+): from 2026-11-04 to 2026-11-11 a *Chats* card (`RailChats`) held
     two folding sections, *Crews* and *Direct*. Since 2026-11-11 (owner) the crews' chats live in the *Your
