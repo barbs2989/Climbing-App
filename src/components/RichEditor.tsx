@@ -12,6 +12,9 @@ export interface RichEditorProps {
   placeholder?: string;
   /** Pixels; 78 when unset. */
   minHeight?: number;
+  /** No link button: route text refuses links when it is sent (0530, "Links can't go in route text"),
+      so the edit sheet's prose boxes must not offer one. */
+  noLink?: boolean;
 }
 
 const svg={width:14,height:14,viewBox:"0 0 24 24",fill:"none",stroke:"currentColor",strokeWidth:2,strokeLinecap:"round" as const,strokeLinejoin:"round" as const};
@@ -20,7 +23,7 @@ const svg={width:14,height:14,viewBox:"0 0 24 24",fill:"none",stroke:"currentCol
 function inTag(el: HTMLElement | null,sel: string): Element | null{const s=window.getSelection(),n=s?s.anchorNode:null;if(!el||!n||!el.contains(n))return null;const e=n.nodeType===1?(n as Element):n.parentElement;const hit=e?e.closest(sel):null;return hit&&hit!==el&&el.contains(hit)?hit:null;}
 
 /** The markdown-backed rich text box: a bold / italic / strikethrough / list / quote / link toolbar over a contentEditable that round-trips through `mdToEditorHtml` and `editorHtmlToMd`, so the stored text stays markdown. Rendered by the log form and core's comments. */
-export default function RichEditor({value,onChange,elRef,ariaLabel,placeholder,minHeight}: RichEditorProps){
+export default function RichEditor({value,onChange,elRef,ariaLabel,placeholder,minHeight,noLink}: RichEditorProps){
   const ref=useRef<HTMLDivElement | null>(null),last=useRef<string | null>(null);const [act,setAct]=useState<Record<string, boolean>>({});
   const [linkOpen,setLinkOpen]=useState(false);const [url,setUrl]=useState("");const [linkErr,setLinkErr]=useState(false);const saved=useRef<Range | null>(null);const urlRef=useRef<HTMLInputElement | null>(null);
   const setEl=function(el: HTMLDivElement | null){ref.current=el;if(elRef)elRef.current=el;};
@@ -68,12 +71,12 @@ export default function RichEditor({value,onChange,elRef,ariaLabel,placeholder,m
       <button type="button" title="Quote" aria-label="Quote" aria-pressed={!!act.q} onMouseDown={keep} onClick={quote} style={Object.assign({},btn,onB(act.q))}>
         <svg {...svg}><path d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z" fill="currentColor" stroke="none"/></svg>
       </button>
-      {sep}
-      <button type="button" title={act.a?"Remove link":"Add a link"} aria-label="Link" aria-pressed={!!act.a||linkOpen} onMouseDown={keep} onClick={link} style={Object.assign({},btn,onB(act.a||linkOpen))}>
+      {noLink?null:sep}
+      {noLink?null:<button type="button" title={act.a?"Remove link":"Add a link"} aria-label="Link" aria-pressed={!!act.a||linkOpen} onMouseDown={keep} onClick={link} style={Object.assign({},btn,onB(act.a||linkOpen))}>
         <svg {...svg}><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
-      </button>
+      </button>}
     </div>
-    {linkOpen?<div style={{marginBottom:6}}><div style={{display:"flex",alignItems:"center",gap:6}}>
+    {linkOpen&&!noLink?<div style={{marginBottom:6}}><div style={{display:"flex",alignItems:"center",gap:6}}>
       <input ref={urlRef} type="url" inputMode="url" autoCapitalize="none" autoCorrect="off" spellCheck={false} aria-label="Link address" aria-invalid={linkErr} placeholder="Paste a web address" value={url} onChange={function(e){setUrl(e.target.value);setLinkErr(false);}} onKeyDown={function(e){if(e.key==="Enter"){e.preventDefault();addLink();}}} style={{flex:1,minWidth:0,boxSizing:"border-box",padding:"6px 10px",borderRadius:8,border:"1px solid "+(linkErr?C.red:C.field),background:C.card,color:C.text,fontSize:16,outline:"none"}}/>
       <button type="button" onClick={addLink} style={{flexShrink:0,padding:"8px 12px",borderRadius:8,border:"none",...SOLID_FILL(C),color:C.onSolid,fontSize:12,fontWeight:700,cursor:"pointer"}}>Add link</button>
       <button type="button" onClick={function(){setLinkOpen(false);}} style={{flexShrink:0,padding:"8px 10px",borderRadius:8,border:"1px solid "+C.border,background:C.card,color:C.textSub,fontSize:12,fontWeight:700,cursor:"pointer"}}>Cancel</button>
