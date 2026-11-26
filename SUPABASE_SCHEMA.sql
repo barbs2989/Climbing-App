@@ -9,7 +9,7 @@
 -- and commit the result in the same PR. `npm run gen:schema -- --check` exits 1 when this
 -- file has drifted from the live database.
 --
--- Counts: 92 tables, 930 columns, 514 keyed/checked constraints (164 foreign keys), 264 RLS policies.
+-- Counts: 92 tables, 935 columns, 519 keyed/checked constraints (164 foreign keys), 265 RLS policies.
 -- Not covered here: views, functions, triggers, standalone indexes (see supabase/migrations/).
 
 -- ── Foreign keys ───────────────────────────────────────────────────────────────
@@ -349,6 +349,7 @@ CREATE TABLE public.areas (
   CONSTRAINT areas_approach_len CHECK (((approach IS NULL) OR ((char_length(approach) >= 1) AND (char_length(approach) <= 600)))),
   CONSTRAINT areas_approach_min_range CHECK (((approach_min IS NULL) OR ((approach_min >= 0) AND (approach_min <= 600)))),
   CONSTRAINT areas_aspect_check CHECK (((aspect IS NULL) OR (aspect = ANY (ARRAY['N'::text, 'NE'::text, 'E'::text, 'SE'::text, 'S'::text, 'SW'::text, 'W'::text, 'NW'::text, 'varies'::text])))),
+  CONSTRAINT areas_avy_zone_is_a_name CHECK (((avy_zone IS NULL) OR ((char_length(avy_zone) <= 50) AND (avy_zone !~ '[.;:] |—'::text)))),
   CONSTRAINT areas_parking_check CHECK ((((parking_lat IS NULL) AND (parking_lng IS NULL) AND (parking_name IS NULL)) OR (((parking_lat >= ('-90'::integer)::double precision) AND (parking_lat <= (90)::double precision)) AND ((parking_lng >= ('-180'::integer)::double precision) AND (parking_lng <= (180)::double precision)) AND (parking_lat <> (0)::double precision) AND (parking_lng <> (0)::double precision)))),
   CONSTRAINT areas_parking_note_check CHECK (((parking_note IS NULL) OR ((length(parking_note) >= 5) AND (length(parking_note) <= 400)))),
   CONSTRAINT areas_rock_basis_check CHECK ((((rock IS NULL) AND (rock_basis IS NULL)) OR ((rock IS NOT NULL) AND (rock_basis = ANY (ARRAY['stated'::text, 'mapped'::text, 'researched'::text]))))),
@@ -674,6 +675,12 @@ CREATE TABLE public.contributions (
   CONSTRAINT contributions_applied_value_len_ck CHECK (((applied_value IS NULL) OR (length((applied_value)::text) <= 20000))),
   CONSTRAINT contributions_area_field_ck CHECK (((NOT ((area_id IS NOT NULL) AND (route_id IS NULL) AND (kind = 'field'::text))) OR (field = ANY (ARRAY['blurb'::text, 'approach'::text, 'approach_min'::text, 'parking_note'::text, 'parking_pin'::text, 'rock'::text, 'aspect'::text, 'season_months'::text, 'elevation_ft'::text])))),
   CONSTRAINT contributions_pair_shape_ck CHECK (((kind IS DISTINCT FROM 'pair'::text) OR ((route_id IS NOT NULL) AND (jsonb_typeof(value) = 'object'::text) AND (COALESCE((value ->> 'with'::text), ''::text) <> ''::text) AND ((value ->> 'with'::text) <> route_id) AND (length(COALESCE((value ->> 'note'::text), ''::text)) <= 280)))),
+  CONSTRAINT contributions_photo_url_is_https CHECK (((kind IS DISTINCT FROM 'photo'::text) OR
+CASE jsonb_typeof(value)
+    WHEN 'object'::text THEN ((COALESCE((value ->> 'url'::text), ''::text) = ''::text) OR ((value ->> 'url'::text) ~* '^https://'::text))
+    WHEN 'string'::text THEN ((value #>> '{}'::text[]) ~* '^https://'::text)
+    ELSE true
+END)),
   CONSTRAINT contributions_reason_len_ck CHECK (((reason IS NULL) OR (char_length(reason) <= 1000))),
   CONSTRAINT contributions_status_chk CHECK ((status = ANY (ARRAY['pending'::text, 'approved'::text, 'rejected'::text]))),
   CONSTRAINT contributions_value_len_ck CHECK (((value IS NULL) OR (length((value)::text) <= 20000))),
@@ -997,6 +1004,7 @@ CREATE TABLE public.crews_messages (
   moderation text NOT NULL DEFAULT 'visible'::text,
   video_path text,
   CONSTRAINT crews_messages_pkey PRIMARY KEY (id),
+  CONSTRAINT crews_messages_image_url_is_image CHECK (((image_url IS NULL) OR (image_url = ''::text) OR (image_url ~* '^https://'::text) OR (image_url ~* '^data:image/(png|jpe?g|gif|webp|heic|heif|avif);base64,'::text))),
   CONSTRAINT crews_messages_moderation_chk CHECK ((moderation = ANY (ARRAY['visible'::text, 'held'::text, 'removed'::text]))),
   CONSTRAINT crews_messages_video_path_chk CHECK (((video_path IS NULL) OR ((video_path ~ '^[0-9a-f-]{36}/[0-9a-f-]{36}\.(mp4|mov|webm)$'::text) AND (split_part(video_path, '/'::text, 1) = (user_id)::text)))),
   CONSTRAINT crews_messages_crew_id_fkey FOREIGN KEY (crew_id) REFERENCES crews(id) ON DELETE CASCADE,
@@ -1452,6 +1460,7 @@ CREATE TABLE public.messages (
   moderation text NOT NULL DEFAULT 'visible'::text,
   video_path text,
   CONSTRAINT messages_pkey PRIMARY KEY (id),
+  CONSTRAINT messages_image_url_is_image CHECK (((image_url IS NULL) OR (image_url = ''::text) OR (image_url ~* '^https://'::text) OR (image_url ~* '^data:image/(png|jpe?g|gif|webp|heic|heif|avif);base64,'::text))),
   CONSTRAINT messages_moderation_chk CHECK ((moderation = ANY (ARRAY['visible'::text, 'held'::text, 'removed'::text]))),
   CONSTRAINT messages_video_path_chk CHECK (((video_path IS NULL) OR ((video_path ~ '^[0-9a-f-]{36}/[0-9a-f-]{36}\.(mp4|mov|webm)$'::text) AND (split_part(video_path, '/'::text, 1) = (sender_id)::text)))),
   CONSTRAINT messages_recipient_id_fkey FOREIGN KEY (recipient_id) REFERENCES profiles(id) ON DELETE CASCADE,
@@ -1836,11 +1845,16 @@ CREATE TABLE public.route_base_pin_changes (
   moved_m double precision,
   previous jsonb,
   created_at timestamp with time zone NOT NULL DEFAULT now(),
+  resolved_at timestamp with time zone,
+  resolved_by uuid,
+  resolution text,
   CONSTRAINT route_base_pin_changes_pkey PRIMARY KEY (id),
   CONSTRAINT route_base_pin_changes_action_check CHECK ((action = ANY (ARRAY['placed'::text, 'moved'::text, 'held'::text]))),
+  CONSTRAINT route_base_pin_changes_resolution_chk CHECK (((resolution IS NULL) OR ((action = 'held'::text) AND (resolution = ANY (ARRAY['applied'::text, 'kept'::text]))))),
   CONSTRAINT route_base_pin_changes_route_id_fkey FOREIGN KEY (route_id) REFERENCES routes(id) ON DELETE CASCADE
 );
 ALTER TABLE public.route_base_pin_changes ENABLE ROW LEVEL SECURITY;
+CREATE POLICY "admins read base pin changes" ON public.route_base_pin_changes AS PERMISSIVE FOR SELECT TO public USING (is_admin(auth.uid()));
 
 CREATE TABLE public.route_difficulty_ratings (
   id uuid NOT NULL DEFAULT gen_random_uuid(),
@@ -2112,6 +2126,7 @@ CREATE TABLE public.routes (
   glacier_travel text,
   snow_in_season text,
   snow_free_from text,
+  rock_grade_num numeric,
   CONSTRAINT routes_pkey PRIMARY KEY (id),
   CONSTRAINT routes_anchor_len CHECK (((anchor IS NULL) OR ((char_length(anchor) >= 1) AND (char_length(anchor) <= 80)))),
   CONSTRAINT routes_approach_loss_ft_range CHECK (((approach_loss_ft IS NULL) OR ((approach_loss_ft >= 0) AND (approach_loss_ft <= 20000)))),
