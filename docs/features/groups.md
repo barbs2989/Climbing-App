@@ -36,10 +36,13 @@ views under `groupsTab`: For you · Your groups · Your activity · Discover · 
   groups is matched in the browser by the same rule (`searchMatches`, `lib/search.js`).
 - **Discover — explore by state** (reworked 2026-11-13 for scale). Under *Explore by discipline*, at most six state
   chips (`STATE_CHIPS`): your **home** state, then the states of the areas you listed yourself at for partners
-  (`partner_areas`, 0300) — marked *You climb here* — then the states with the most groups. A chip filters the list to
+  (`partner_areas`, 0300) — marked *You climb here* — then **every state you downloaded**, marked *Downloaded*, each
+  with its count even at 0 (owner 2026-11-26: "it only shows Utah for me … I also have Colorado and Idaho downloaded";
+  your own states are never cut by the six), then the states with the most groups. A chip filters the list to
   that whole state and combines with the search box. The list below (*Every state* or one state, alphabetical, with
-  counts) holds every state with a group **and every state you downloaded**, then, in its own *Every other state* section, **every other US state** at 0 (`US_STATES`; owner 2026-11-23, to find groups outside your home state) (`groupMyStates`, the account's pins, else
-  this device's downloads; owner 2026-11-23), a downloaded state with no group yet listed with a 0. It shows whenever
+  counts) holds every state with a group **and every state you downloaded**, then, in its own *Every other state* section, **every other US state** at 0 (`US_STATES`; owner 2026-11-23, to find groups outside your home state) (`groupMyStates`: the account's pins AND
+  this device's downloads, both; owner 2026-11-23, widened 2026-11-26 — signed in it read the pins alone, so a state
+  downloaded on the phone but never pinned to the account was missing), a downloaded state with no group yet listed with a 0. It shows whenever
   it has two or more states; before, it was built only from states that already had a group and hidden when the chips
   covered them, so a climber whose only groups were at home could pick nothing but home. It no longer offers each typed town, which ran to hundreds of spellings. A town is found
   by the search box and a distance by *Near a place*. Results show 20 at a time with *Show more groups*, reset
