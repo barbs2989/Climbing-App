@@ -4,7 +4,7 @@
 // import's exact MP-id maps (_map/<state>.json: { mpRouteId: ourRouteId }), as fill-length-from-mp.mjs reads them.
 //
 //   MP_DIR=~/dev/mp-data/_mp node scripts/pipeline/fill-pitches-from-mp.mjs                 plan only
-//   MP_DIR=~/dev/mp-data/_mp node scripts/pipeline/fill-pitches-from-mp.mjs --apply [--limit N]
+//   MP_DIR=~/dev/mp-data/_mp node scripts/pipeline/fill-pitches-from-mp.mjs --apply [--offset K] [--limit N]   (writes from the saved plan)
 //
 // MP's export prints a count on EVERY route (287,059 of 309,743 read 1, none blank: 1 is MP's default for a
 // route whose submitter gave none, as it is OpenStreetMap's), so only a count ABOVE 1 is information.
@@ -19,6 +19,8 @@
 // through fillBlanks (area_id asserted, re-read reconciled), and stop if the live app's reads slow down.
 import fs from "fs";
 import path from "path";
+import os from "os";
+import { execFileSync } from "child_process";
 import { selectAll, requireServiceKey, SUPABASE_URL, headers, anonKey } from "../lib/supabase-env.mjs";
 import { fillBlanks } from "../enrich-fill-blanks.mjs";
 
@@ -79,7 +81,13 @@ for (const f of fs.readdirSync(MP_DIR).filter((n) => n.endsWith(".csv"))) {
   }
 }
 
-const ids = [...oursToMp.keys()];
+const outDir = path.join(MP_DIR, "_pitches");
+const planFile = path.join(outDir, "plan.json");
+// --apply writes from the saved plan: re-reading ~280k rows before every batch is a bulk read the database
+// does not need. fillBlanks re-reads each row (area asserted, value still blank) before it writes.
+if (APPLY && !fs.existsSync(planFile)) throw new Error(`no ${planFile} — run without --apply first`);
+const PLAN = APPLY ? JSON.parse(fs.readFileSync(planFile, "utf8")).plan : null;
+const ids = APPLY ? [] : [...oursToMp.keys()];
 console.log(`MP ids with a count ${mpP.size}; our routes mapped ${ids.length}`);
 // Read only the mapped rows, by id, in chunks: a keyset scan of the whole table times out under load.
 const live = [];
@@ -91,9 +99,9 @@ for (let i = 0; i < ids.length; i += CH) {
   if (i % (CH * 40) === 0) console.log(`read ${i + CH} / ${ids.length}`);
   await sleep(150);
 }
-const plan = [], conflict = [], differs = [];
+const plan = APPLY ? PLAN : [], conflict = [], differs = [];
 let mpOne = 0, noMp = 0, skipped = 0;
-for (const r of live) {
+for (const r of APPLY ? [] : live) {
   if (SKIP.has(r.discipline)) { skipped++; continue; }
   const counts = new Set();
   for (const id of oursToMp.get(r.id) || []) (mpP.get(id) || []).forEach((v) => counts.add(v));
@@ -108,9 +116,8 @@ const byDisc = {};
 for (const p of plan) byDisc[p.discipline] = (byDisc[p.discipline] || 0) + 1;
 console.log(`rows read ${live.length} | skipped (boulder/scramble) ${skipped}`);
 console.log(`FILL ${plan.length} ${JSON.stringify(byDisc)} | CONFLICT ${conflict.length} | DIFFERS ${differs.length} | MP says 1 ${mpOne} | no MP count ${noMp}`);
-const outDir = path.join(MP_DIR, "_pitches");
 fs.mkdirSync(outDir, { recursive: true });
-fs.writeFileSync(path.join(outDir, "plan.json"), JSON.stringify({ plan, conflict, differs }, null, 1));
+if (!APPLY) fs.writeFileSync(planFile, JSON.stringify({ plan, conflict, differs }, null, 1));
 if (!APPLY) { console.log(`plan written to ${outDir}/plan.json — re-run with --apply to write`); process.exit(0); }
 
 async function healthy() {
@@ -121,13 +128,22 @@ async function healthy() {
   } catch { return false; }
 }
 
-const batch = plan.slice(0, LIMIT);
+// The shared session gate (~/dev/db-throttle): exit 1 means the live app's reads are slow.
+function gateOk() {
+  const gate = path.join(os.homedir(), "dev/db-throttle/dbslot.mjs");
+  if (!fs.existsSync(gate)) return true;
+  try { execFileSync("node", [gate, "check"], { stdio: "ignore" }); return true; } catch { return false; }
+}
+const oi = args.indexOf("--offset");
+const OFFSET = oi >= 0 ? +args[oi + 1] : 0;
+const batch = plan.slice(OFFSET, OFFSET + LIMIT);
 const rbFile = path.join(outDir, `rollback-${Date.now()}.json`);
 fs.writeFileSync(rbFile, JSON.stringify(batch.map((p) => ({ id: p.id, area_id: p.area_id, before: p.before })), null, 1));
 console.log(`rollback ${rbFile}`);
 let written = 0, errors = 0;
 const log = [];
 for (const [i, p] of batch.entries()) {
+  if (i % 200 === 0 && i > 0 && !gateOk()) { console.error(`db gate says slow at ${OFFSET + i} — stopping; resume with --offset ${OFFSET + i}`); break; }
   if (i % 50 === 0 && !(await healthy())) {
     console.error("database slow or failing — backing off 90 s");
     await sleep(90000);
