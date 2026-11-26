@@ -1337,3 +1337,5 @@ draws nothing; the distances path needs no coordinate.
 setting and submit converts them, but they were pre-filled with the stored miles and feet unconverted: opening the
 editor and saving shrank every distance by 1.6x and raised every height by 3.3x. The pre-fill now converts, and an
 untouched box submits the stored number itself (`_o` in `SuggestFix.tsx`).
+
+**Follow-up (same day): the summit sits at the route's own one-way distance.** Of the 463 mountain routes with waypoints but no profile, most lacked only the summit's `distMi`; research agents filled about 1 route in 10 (SummitPost, The Mountaineers and Mountain Project refuse automated reads). The route's stored trailhead-to-summit distance is the end of that leg by definition, so `measureByPins` uses it, refusing when a stated waypoint lies between it and 1.5x it. 343 -> 530 routes (snapshot census, `measure-trip-profile-coverage.mjs --snapshot`, no DB slot).
