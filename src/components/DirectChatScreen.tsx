@@ -6,7 +6,7 @@ import { pubName, C, ME } from "../../ClimbMatchCore.jsx";
 import ActionIcon from "./ActionIcon.tsx";
 import MessageRow from "./MessageRow.tsx";
 import TypingIndicator from "./TypingIndicator.tsx";
-import ChatComposer from "./ChatComposer.tsx";
+import ChatComposer, { type ChatSendOpts } from "./ChatComposer.tsx";
 import type { Dispatch, MutableRefObject, SetStateAction } from "react";
 import type { ChatMessage, ReactKey } from "./MessageRow.tsx";
 
@@ -44,7 +44,7 @@ export interface DirectChatScreenProps {
   reactAt: ReactKey | null;
   reactTimer: MutableRefObject<ReturnType<typeof setTimeout> | undefined>;
   routeById: (id: string | number) => DirectChatScreenRoute | undefined;
-  sendMsg: (climberId: string | number, text: string, opts?: { image: true; alt: string }) => void;
+  sendMsg: (climberId: string | number, text: string, opts?: ChatSendOpts) => void;
   setChatFromInbox: Dispatch<SetStateAction<boolean>>;
   setChatWith: (c: null) => void;
   setInboxOpen: (open: boolean) => void;
