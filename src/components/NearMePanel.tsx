@@ -2,8 +2,8 @@ import { tx } from "../../lib/tapWords.js";
 import { useRef, useState, useLayoutEffect, useEffect, useMemo, useContext, lazy, Suspense } from "react";
 import type { FormEvent } from "react";
 import { useNearbyAreas, useRoutesByIds, useAreaFootprint, useAreaNamesByIds } from "../../lib/db";
-import { layoutRings, ancestorIds, ringHtml, LOCATOR_HTML, areaOutline } from "./ringLayout.ts";
-import type { Box } from "./ringLayout.ts";
+import { layoutRings, ancestorIds, ringHtml, LOCATOR_HTML, areaOutline } from "../ringLayout.ts";
+import type { Box } from "../ringLayout.ts";
 import { ClimberCtx } from "../../lib/climberCtx.js";
 import MapAreaClimbs from "./MapAreaClimbs.tsx";
 import type { RouteRowRoute } from "./RouteRow.tsx";
@@ -70,7 +70,7 @@ export interface NearMePanelProps {
    EVERY RING CARRIES A NAME (owner, 2026-11-26: "some circles don't have names on them. It should always
    show a name"), dark on a white halo as MP labels its map: a single area its own, a cluster the area its
    members share ("Powerline Area"), else its busiest and how many more. Where a name fits nowhere round
-   its ring, that ring joins its nearest neighbour instead of going bare (layoutRings, ringLayout.ts).
+   its ring, that ring joins its nearest neighbour instead of going bare (layoutRings, src/ringLayout.ts).
    An area holding climbs from your list wears a small amber STAR at the ring's shoulder: the amber ring
    it used to wear vanished against the orange one. */
 // A stray coordinate (one crag filed hundreds of miles off) must not stretch the frame over a whole
