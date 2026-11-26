@@ -8,6 +8,9 @@
 // the 16 TEST example reports written under Leavenworth, WA on 2026-11-19 (five sport, four trad,
 // three bouldering, two ice, one top rope, one alpine; nine with a write-up, seven without). If
 // those rows are removed, the counts below are wrong and the walk says so; it is not a build guard.
+// The rows are PUBLIC and marked TEST, so every climber sees them on the Leavenworth pages while they
+// exist: create them, walk, then remove them (area-latest-examples.mjs create / remove). The date filters drift as the rows age (the
+// counts are from 2026-11-19), so a "Last 30 / 90 days" miss on a later day is the calendar, not a bug.
 import { chromium } from "playwright-core";
 import path from "node:path";
 import { assertQuietBox } from "../lib/quiet-box.mjs";

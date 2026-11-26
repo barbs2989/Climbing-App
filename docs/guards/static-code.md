@@ -1126,6 +1126,26 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     0 because `#appscroll` scrolls, not the document — so any downward drag mid-feed grew the
     pull spacer instead of scrolling. It now reads `#appscroll.scrollTop` and ignores touches
     bubbling up (through the React tree) from portalled overlays. No guard covers that one.
+  - **Third rule (2026-11-26): a box NESTED in the edit sheet hands the drag ON.** Owner note: "Edit
+    in a climb, sometimes get stuck when you were trying to scroll". The first rule made every pane
+    declare its overscroll, and the declaration reached for was `"contain"`; on a box inside a sheet
+    that scrolls, that is the stuck sheet. Measured in Chrome at 390x844 with raw touch (CDP
+    `Input.dispatchTouchEvent`): a box with `contain` moved the sheet **0px** under a 200px drag,
+    whether its text was scrolled to its end or was ONE line that fits (a non-overflowing
+    `overflow:auto` box still blocks the chain); with `auto`, 239-329px. `NESTED` lists the edit
+    sheet's three such boxes (RichEditor's editable box, SuggestFix's form body, a field's 260px
+    current-value box), each picked out by a locator that must match ONE pane, and fails unless each
+    declares `overscrollBehavior:"auto"`. The same section pins the card's `calc(100dvh - 106px)`
+    (100vh put Submit under Safari's toolbar) and WaypointMapPicker's `dragging:!coop` on a
+    `(hover: none) and (pointer: coarse)` screen (one finger scrolls the sheet, two move the map, a
+    tap still places the pin; measured: before, a one-finger drag panned the map and the sheet stayed
+    at 0; after, the sheet scrolled 121px, the map stayed put, the tap still fired). Injection-tested:
+    RichEditor back to `contain` fails naming the file.
+    - **Not swept (a worklist, not a caveat):** other nested `contain` boxes elsewhere in the app
+      (GiveVouch's two lists, GroupCrewPicker's list, PlaceMatches, FriendsList, NotifPanel,
+      WeatherPanel's hourly list on the page) are the same shape outside this item's scope.
+      `check:overlay-scroll` now accepts them either way; moving each to `"auto"` and adding it to
+      `NESTED` is the fix.
 - **`check:no-module-scope-core-reads`** replays ESM evaluation order from `main.jsx` over the app's
   static import graph and fails on any **module-scope read of a binding whose module is still
   evaluating** — the shape that took the live site down on 2026-10-23. Static (Babel), so it sits in

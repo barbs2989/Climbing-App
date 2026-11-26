@@ -29,6 +29,7 @@ import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { readCoreSource } from "../lib/guard-sources.mjs";
+import { readDbSource } from "../lib/guard-sources.mjs";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..", "..");
 let bad = 0;
@@ -38,7 +39,7 @@ const fail = (m) => { console.log("  FAIL  " + m); bad++; };
 const strip = (s) => s.replace(/\/\*[\s\S]*?\*\//g, " ");
 // The stitched core (scripts/lib/guard-sources.mjs): RealClimberRow and FullProfile live in src/components now.
 const core = strip(readCoreSource());
-const db = fs.readFileSync(path.join(ROOT, "lib", "db.js"), "utf8");
+const db = readDbSource();
 
 // ---- 1. THE SELECT MUST STILL FETCH IT. Without this the mapping has nothing to carry and the
 // assertions below would be about a field that never arrives.

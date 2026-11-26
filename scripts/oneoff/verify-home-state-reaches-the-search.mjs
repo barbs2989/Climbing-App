@@ -23,9 +23,10 @@ import path from "path";
 import { fileURLToPath } from "url";
 import { SUPABASE_URL, anonKey } from "../lib/supabase-env.mjs";
 import { createFixture } from "../lib/ui-fixture.mjs";
+import { readDbSource } from "../lib/guard-sources.mjs";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "../..");
-const src = fs.readFileSync(path.join(ROOT, "lib/db.js"), "utf8");
+const src = readDbSource();
 function lift(anchor) {
   const start = src.indexOf(anchor);
   if (start < 0) throw new Error(`ANCHOR LOST: \`${anchor}\` is not in lib/db.js — this check would otherwise verify nothing.`);

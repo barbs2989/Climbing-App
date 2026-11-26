@@ -15,7 +15,7 @@ the architecture, and the working rules. The detail lives in `docs/`:
 | [docs/codebase/research-ledger.md](docs/codebase/research-ledger.md) | research or verify route facts, or touch `route_field_evidence` / the lock rules (skills: `.claude/skills/route-research/`) |
 | [docs/codebase/deploy-and-icons.md](docs/codebase/deploy-and-icons.md) | touch `public/`, the manifest, the icons, or the Pages base path |
 | [docs/codebase/algorithms.md](docs/codebase/algorithms.md) | change the partner match score (`compat()`) |
-| [docs/codebase/maintainability.md](docs/codebase/maintainability.md) | debug something that broke on a climber's phone (`npm run errors:read`), or ask where code lives and why it is shaped the way it is |
+| [docs/codebase/maintainability.md](docs/codebase/maintainability.md) | debug something that broke on a climber's phone (`npm run errors:read`), look after the LIVE app (`npm run ops:status`, the post-launch runbook), or ask where code lives and why it is shaped the way it is |
 | [docs/refactor-progress.md](docs/refactor-progress.md) | extract a component into `src/components/`, or touch one that already lives there (conventions, the per-PR procedure, and where the last session stopped) |
 | [docs/BACKEND.md](docs/BACKEND.md) | work on the schema or the catalog pipeline (its "still simulated" lists run stale — re-derive from `lib/db.js`) |
 
@@ -30,6 +30,7 @@ npm run dev        # local dev server with HMR
 npm run build      # production build to dist/ — runs every guard in build:guards first (concurrently), then vite
 npm run preview    # serve the built dist/ locally
 npm run errors:read # what crashed on climbers' phones (app_errors), grouped, each stack frame mapped back to file:line via the build's source maps (service key, DB gate)
+npm run ops:status # is anything on main red, and since WHEN? every workflow's state, how often each cron REALLY ran, open Dependabot + stale PRs (gh only; the Ops status workflow keeps ONE ops-status issue in step)
 npm run clean:worktrees # list worktrees + local branches whose PR merged (idle 24h, nothing untracked or precious); -- --apply removes them
 
 # ── Guard infrastructure — notes: docs/guards/infrastructure.md ──
@@ -116,6 +117,7 @@ npm run check:chunk-reload # a lazy screen whose file a DEPLOY removed reloads o
 # ── Honesty of what the screen claims — notes: docs/guards/honesty-claims.md ──
 npm run check:conditions-score # the crag CONDITIONS SCORE adds up, leaves out what it did not measure, and stays off alpine (in build)
 npm run check:alpine-conditions # the ALPINE Conditions tab: each discipline its own flags, a start counted back from the Planner, nothing it did not read; snow bridges only where a route was REVIEWED as glacier travel (in build)
+npm run audit:conditions-forecast # does the crag SCORE agree with the forecast panel beside it, and with NWS + MET Norway, about RAIN? (many crags, every state; network only, no DB; --selftest needs none)
 npm run audit:glacier-travel -- --state wa # which routes still get snow / glacier warnings on a GUESS? (routes.glacier_travel / snow_in_season not settled; the per-state worklist, read-only)
 npm run check:no-sources  # no screen prints a field named source, or any text about sources or "auto-generated" (in build)
 npm run check:preview-claims # no toast tells a climber the app is a PREVIEW, a demo or a simulation (in build)
@@ -334,7 +336,7 @@ This is **ClimbMatch**, a mobile-first social app for finding climbing partners,
 
 ### A real Supabase backend exists, but most of the app still runs on in-memory seed data
 
-A `USE_DB` flag (`lib/supabase.js`, on when `VITE_SUPABASE_URL`/`VITE_SUPABASE_ANON_KEY`/`VITE_USE_DB=true` are all set) gates a real DB path: `lib/db.js` (`useAreaRoutes`, `submitContribution`, `dbRouteToCamel`) and `lib/DbAreaBrowser.jsx` back the Climbs tab's area browser + route list from Supabase's `areas`/`routes` tables, which hold Washington's full alpine + rock catalog (thousands of routes — see `docs/BACKEND.md` for the schema and pipeline). `lib/auth.js`/`lib/AuthModal.jsx` provide real login. See `docs/BACKEND.md` for the schema and the pipeline — but note that its "still simulated" lists were **over a month stale** when corrected on 2026-09-02, so re-derive what is DB-backed from `lib/db.js` rather than reading it off that page.
+A `USE_DB` flag (`lib/supabase.js`, on when `VITE_SUPABASE_URL`/`VITE_SUPABASE_ANON_KEY`/`VITE_USE_DB=true` are all set) gates a real DB path: `lib/db.js` (the one import path; its code is split by domain into `lib/db-*.js` since 2026-11-25 — `grep -n "function NAME" lib/db-*.js`) (`useAreaRoutes`, `submitContribution`, `dbRouteToCamel`) and `lib/DbAreaBrowser.jsx` back the Climbs tab's area browser + route list from Supabase's `areas`/`routes` tables, which hold Washington's full alpine + rock catalog (thousands of routes — see `docs/BACKEND.md` for the schema and pipeline). `lib/auth.js`/`lib/AuthModal.jsx` provide real login. See `docs/BACKEND.md` for the schema and the pipeline — but note that its "still simulated" lists were **over a month stale** when corrected on 2026-09-02, so re-derive what is DB-backed from `lib/db.js` rather than reading it off that page.
 
 Everything else — crews, messages, connections, vouches, logs, trip reports, and any state outside a DB-backed route's own fields — is still **seeded from module-level `const` arrays/objects at the top of the file and lives only in React state for the session** (refreshing resets everything). Key seed data structures:
 

@@ -16,9 +16,10 @@
 // made that hook look called. Scripts mention these names constantly; only the app can call one.
 import fs from "node:fs";
 import path from "node:path";
+import { readDbSource } from "../lib/guard-sources.mjs";
 
 const ROOT = process.cwd();
-const lib = fs.readFileSync(path.join(ROOT, "lib/db.js"), "utf8");
+const lib = readDbSource();
 const writes = [...lib.matchAll(/export async function ([A-Za-z0-9_]+)/g)].map((m) => m[1]);
 if (writes.length < 20) { console.error(`FAIL-CLOSED: ${writes.length} writes parsed — the scan is broken.`); process.exit(1); }
 

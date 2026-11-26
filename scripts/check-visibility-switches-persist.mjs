@@ -31,7 +31,7 @@
 
 import fs from "node:fs";
 import path from "node:path";
-import { readCoreSource, readAppFile, MOVED } from "./lib/guard-sources.mjs";
+import { readCoreSource, readAppFile, MOVED, readDbSource } from "./lib/guard-sources.mjs";
 import { fileURLToPath } from "node:url";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
@@ -40,7 +40,7 @@ const app = readAppFile(path.join(ROOT, "ClimbMatch.jsx")), rawApp = read("Climb
 // Through readCoreSource(): the profile editor's switch and the partner card's résumé tile moved
 // out of core to load lazily, and a core-only read would stop seeing either.
 const core = readCoreSource();
-const db = read("lib/db.js");
+const db = readDbSource(ROOT);
 const dead = (m) => { console.error("FAIL: " + m); process.exit(1); };
 
 /* Every UNGATED switch, its column, and HOW it reaches the database.

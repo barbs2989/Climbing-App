@@ -12,11 +12,12 @@
 import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
+import { readDbSource } from "./lib/guard-sources.mjs";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const snapshot = JSON.parse(fs.readFileSync(path.join(ROOT, "scripts/schema-snapshot.json"), "utf8"));
 const TABLES = snapshot.tables;
-const src = fs.readFileSync(path.join(ROOT, "lib/db.js"), "utf8");
+const src = readDbSource(ROOT);
 const lineOf = (i) => src.slice(0, i).split("\n").length;
 const problems = [];
 

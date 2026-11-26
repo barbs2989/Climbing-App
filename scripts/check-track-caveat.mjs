@@ -31,7 +31,7 @@ import os from "os";
 import path from "path";
 import { fileURLToPath } from "url";
 import { trackStubCaveat, trackIsJustTheWaypoints, WAYPOINT_LINE_CAVEAT, trackCoverage, recordedTrackPts, withRecordedTrackOnly, exportedTrackNotes, reachesTheSummit, lineIsBuiltFromPins } from "../lib/track.js";
-import { readCoreSource, readAppFile } from "./lib/guard-sources.mjs";
+import { readCoreSource, readAppFile, readDbSource } from "./lib/guard-sources.mjs";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const require_ = createRequire(import.meta.url);
@@ -546,7 +546,7 @@ console.log("\nThe route line is a recorded track or nothing:");
   else ok("GPXMap draws no line from the waypoints");
   if (!/!trackIsJustTheWaypoints\(pts/.test(gpxMap)) fail("GPXMap no longer refuses a stored pin-join 'track' passed in by a caller that skipped the filter");
   else ok("GPXMap refuses a stored pin-join track from any caller");
-  const db = fs.readFileSync(path.join(ROOT, "lib/db.js"), "utf8"), rd = readAppFile(path.join(ROOT, "RouteDetail.jsx")), core = fs.readFileSync(path.join(ROOT, "ClimbMatchCore.jsx"), "utf8");
+  const db = readDbSource(ROOT), rd = readAppFile(path.join(ROOT, "RouteDetail.jsx")), core = fs.readFileSync(path.join(ROOT, "ClimbMatchCore.jsx"), "utf8");
   if (!/recordedTrackPts\(r\.gpx,/.test(db)) fail("dbRouteToCamel no longer drops a pin-join gpx at the read");
   else ok("dbRouteToCamel drops a pin-join gpx at the read");
   if (!/withRecordedTrackOnly\(applyApproach\(/.test(rd)) fail("RouteDetail no longer drops a pin-join line after the approach overlay");

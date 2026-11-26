@@ -10,7 +10,7 @@ const MIG0 = "supabase/migrations/0300_partner_areas.sql";
 const MIG2 = "supabase/migrations/0303_partners_by_objective_alpine_only.sql";
 const DB = "lib/db.js";
 const APP = "ClimbMatch.jsx";
-const files = { [MIG]: fs.readFileSync(MIG, "utf8"), [MIG0]: fs.readFileSync(MIG0, "utf8"), [MIG2]: fs.readFileSync(MIG2, "utf8"), [DB]: fs.readFileSync(DB, "utf8"), [APP]: fs.readFileSync(APP, "utf8") };
+const files = { [MIG]: fs.readFileSync(MIG, "utf8"), [MIG0]: fs.readFileSync(MIG0, "utf8"), [MIG2]: fs.readFileSync(MIG2, "utf8"), [DB]: fs.readFileSync(DB, "utf8"), "lib/db-partners.js": fs.readFileSync("lib/db-partners.js", "utf8"), "lib/db-crews.js": fs.readFileSync("lib/db-crews.js", "utf8"), [APP]: fs.readFileSync(APP, "utf8") };
 
 const CASES = [
   {
@@ -55,12 +55,12 @@ const CASES = [
   },
   {
     name: "10. the raw per-user objectives read comes back",
-    file: DB, expect: "no longer exports useObjectivesOfUsers",
+    file: "lib/db-partners.js", expect: "no longer exports useObjectivesOfUsers",
     edit: (s) => s.replace("export function useMatchObjectivesOfUsers(userIds) {", "export function useObjectivesOfUsers(userIds) { return useMatchObjectivesOfUsers(userIds); }\nexport function useMatchObjectivesOfUsers(userIds) {"),
   },
   {
     name: "7. an objective write no longer refreshes the match reader",
-    file: DB, expect: "saving or removing an objective refreshes",
+    file: "lib/db-crews.js", expect: "saving or removing an objective refreshes",
     edit: (s) => s.replace(', ["match-objectives-of-users"]];', "];"),
   },
 ];

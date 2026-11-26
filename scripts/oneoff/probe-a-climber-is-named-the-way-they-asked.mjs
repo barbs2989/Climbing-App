@@ -29,6 +29,7 @@ import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
 import { readCoreSource } from "../lib/guard-sources.mjs";
+import { readDbSource } from "../lib/guard-sources.mjs";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "../..");
 let bad = 0;
@@ -39,7 +40,7 @@ const dead = (m) => { console.error("\nBROKEN PROBE: " + m); process.exit(2); };
 // Through readCoreSource(): CrewCard, which holds the invite pool and join card, moved to lib/.
 const core = readCoreSource(ROOT);
 const app = fs.readFileSync(path.join(ROOT, "ClimbMatch.jsx"), "utf8");
-const db = fs.readFileSync(path.join(ROOT, "lib/db.js"), "utf8");
+const db = readDbSource();
 // PARTNER_COLS and the column-grant aliases live here since 0434.
 const cols = fs.readFileSync(path.join(ROOT, "lib/profileCols.js"), "utf8");
 

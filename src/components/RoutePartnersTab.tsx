@@ -10,9 +10,9 @@ import { BTN, BTN_SECONDARY, SOLID_FILL } from "../../lib/buttonStyles.js";
 import { useReliabilityOf, usePartnerSignals, usePartnerCounts, usePartnerClimbGrades, useVerifiedUsers, usePartnerAreasOfUsers, usePartnerFreeUntil } from "../../lib/db.js";
 import RealClimberRow from "./RealClimberRow.tsx";
 import EmptyState from "./EmptyState.tsx";
-import ListMeOnRouteBox, { routeListingWindow } from "./ListMeOnRouteBox.tsx";
+import ListMeOnRouteBox from "./ListMeOnRouteBox.tsx";
 import type { MyRouteListing } from "./ListMeOnRouteBox.tsx";
-import type { Dispatch, SetStateAction } from "react";
+import type { Dispatch, SetStateAction, ReactNode } from "react";
 import type { PartnerRow, RealClimberRowProps, ReliabilityRecord } from "./RealClimberRow.tsx";
 
 /** Anyone the buttons act on: an example climber or a real profile projected to the same shape. */
@@ -94,6 +94,8 @@ export interface RoutePartnersTabProps {
   discoverable?: boolean;
   onOpenPrivacy?: (() => void) | null;
   notify?: (msg: string) => void;
+  /** PARTNER REQUIREMENTS (App builds it), drawn under Current crews and above the climbers. */
+  requirements?: ReactNode;
 }
 
 /* tab==="partners"? — the body of that branch of RouteDetail, lifted verbatim by extract-from-parent.mjs (branch mode);
@@ -102,7 +104,7 @@ export interface RoutePartnersTabProps {
    offered "2 spots open · Sep 12" on Baker's North Ridge in November (partner walk, 2026-11-18). An undated crew stays. */
 function upcoming(oc: { date?: string | null }): boolean { if (!oc.date) return true; const t0 = new Date(); t0.setHours(0, 0, 0, 0); return new Date(oc.date + "T12:00:00") >= t0; }
 
-export default function RoutePartnersTab({_listedHere,_raRes,areaLimit,_rpObj,_rpRes,areaPartners,cragOnly,crewsExpand,dbCrews,friendState,mtn,onConnect,onFindPartners,onFindPartnersInArea,onListMe,onPlan,onRequestJoin,onResume,onViewProfile,partners,partnersExpand,realPartners,requested,route,savedNote,setCrewsExpand,setPartnersExpand,who,noun,crewsUnavailable,myCrewsHere,onOpenCrew,onStartCrew,onStartSession,myRouteListings,routeListingsError,routeListingsLoading,discoverable,onOpenPrivacy,notify}: RoutePartnersTabProps){
+export default function RoutePartnersTab({_listedHere,_raRes,areaLimit,_rpObj,_rpRes,areaPartners,cragOnly,crewsExpand,dbCrews,friendState,mtn,onConnect,onFindPartners,onFindPartnersInArea,onListMe,onPlan,onRequestJoin,onResume,onViewProfile,partners,partnersExpand,realPartners,requested,route,savedNote,setCrewsExpand,setPartnersExpand,who,noun,crewsUnavailable,myCrewsHere,onOpenCrew,onStartCrew,onStartSession,myRouteListings,routeListingsError,routeListingsLoading,discoverable,onOpenPrivacy,notify,requirements}: RoutePartnersTabProps){
   /* Level and years (partner_signals) and public climbs / vouches (partner_counts, 0460/0463) for this tab's real cards, one read each. Unknown leaves the line or chip out. */
   const [crewOrder,setCrewOrder]=useState("soon");
   /* One id once: a climber can be in both lists. */const _ids=Array.from(new Set((realPartners||[]).concat(areaPartners||[]).map(function(p){return p.id;})));
@@ -157,6 +159,7 @@ export default function RoutePartnersTab({_listedHere,_raRes,areaLimit,_rpObj,_r
           {crewsUnavailable?<div style={{fontSize:12,color:C.amber,lineHeight:1.5,padding:"2px 2px 9px"}}>Couldn’t load the crews forming here — check your connection and try again.</div>:(!mine.length&&!openHere.length?<div style={{fontSize:12,color:C.textMuted,lineHeight:1.5,padding:"2px 2px 9px"}}>No crews are forming here yet.</div>:null)}
           {startCrew?<button type="button" onClick={startCrew} style={{...BTN,width:"100%",minHeight:44,...SOLID_FILL(C),color:C.onSolid,border:"1px solid "+C.actionSolid}}>{_sessionOk?"Start a crew at "+_an:"Start a crew"}</button>:(USE_DB&&!who?<div style={{fontSize:12,color:C.textMuted,lineHeight:1.5,padding:"2px"}}>Sign in to start a crew.</div>:null)}
         </div>
+        {requirements||null}
         {cragOnly?<div>
           {/* A CRAG route (0300): partners are the climbers listed at this crag, inside it, or across a wider area that contains it — found by AREA, never by this one route. */}
           <SL>{"Climbers at "+_an}</SL>
@@ -166,7 +169,7 @@ export default function RoutePartnersTab({_listedHere,_raRes,areaLimit,_rpObj,_r
         </div>:<SL>{"Find a partner for this "+noun}</SL>}
         {(signedIn&&!cragOnly)?<div style={{marginBottom:12}}>
           <ListMeOnRouteBox routeId={route.id} noun={noun} C={C} uid={String(who)} myListings={myRouteListings} listingsError={routeListingsError} listingsLoading={routeListingsLoading} discoverable={discoverable} onOpenPrivacy={onOpenPrivacy} notify={notify}/>
-          {_rpRes.isLoading?<div style={{fontSize:12,color:C.textMuted,padding:"6px 2px"}}>{"Finding climbers for this "+noun+"…"}</div>:_rpRes.error?<div style={{fontSize:12,color:C.amber,lineHeight:1.5,padding:"6px 2px"}}>{"Couldn’t load the climbers listed for this "+noun+" — check your connection and try again."}</div>:realPartners.length?<div>{realPartners.map(function(p){/* Listed climbers come first (0489), each saying so with their dates and note; a climber who only saved the route follows, as before. Every row can be added, or a crew formed with them. */const c=realRow(p);const win=p.listed?routeListingWindow({freeFrom:p.free_from,freeTo:p.free_to}):"";return <RealClimberRow key={p.id} p={_withCg(p)} verified={_verQ.data?(_verQ.data as Set<string>).has(String(p.id)):undefined} reliability={_relQ.data?(_relQ.data as Record<string, ReliabilityRecord>)[String(p.id)]:undefined} relLoading={_relPending(String(p.id))} objIds={_rpObj.data?_rpObj.data[p.id]:undefined} objErr={_rpObj.isError} onOpen={onViewProfile} friendState={function(id){return friendState(id)||"none";}} onConnect={function(){onConnect(c);}} listing={_listing(p)} tag={p.listed?"Listed for this "+noun+(win?" · f"+win.slice(1):""):"Saved this "+noun} extras={p.listed&&p.listing_note?<div style={{fontSize:12.5,color:C.textSub,lineHeight:1.5,overflowWrap:"anywhere"}}>{"“"+p.listing_note+"”"}</div>:null} action={<button type="button" onClick={()=>onPlan(c)} style={crewBtn}>Form crew</button>} {..._cardExtra(p)}/>;})}{savedNote(savedShown).trim()?<div style={{fontSize:11.5,color:C.textMuted,marginTop:2,lineHeight:1.5}}>{savedNote(savedShown).trim()}</div>:null}</div>:<div style={{fontSize:12,color:C.textMuted,lineHeight:1.5,padding:"6px 2px"}}>{(listedHere?"No one else is listed for this "+noun+" yet.":"Nobody is listed for this "+noun+" yet — list yourself and climbers looking at it can find you.")+(savedNote(0)?" "+savedNote(0):"")}</div>}
+          {_rpRes.isLoading?<div style={{fontSize:12,color:C.textMuted,padding:"6px 2px"}}>{"Finding climbers for this "+noun+"…"}</div>:_rpRes.error?<div style={{fontSize:12,color:C.amber,lineHeight:1.5,padding:"6px 2px"}}>{"Couldn’t load the climbers listed for this "+noun+" — check your connection and try again."}</div>:realPartners.length?<div>{realPartners.map(function(p){/* Listed climbers come first (0489), each saying so with their dates and note; a climber who only saved the route follows, as before. Every row can be added, or a crew formed with them. */const c=realRow(p);return <RealClimberRow key={p.id} p={_withCg(p)} verified={_verQ.data?(_verQ.data as Set<string>).has(String(p.id)):undefined} reliability={_relQ.data?(_relQ.data as Record<string, ReliabilityRecord>)[String(p.id)]:undefined} relLoading={_relPending(String(p.id))} objIds={_rpObj.data?_rpObj.data[p.id]:undefined} objErr={_rpObj.isError} onOpen={onViewProfile} friendState={function(id){return friendState(id)||"none";}} onConnect={function(){onConnect(c);}} listing={_listing(p)} tag={/* The row adds the listing's dates and note itself (RealClimberRow, 2026-11-26), as every search's card now does. */p.listed?"Listed for this "+noun:"Saved this "+noun} action={<button type="button" onClick={()=>onPlan(c)} style={crewBtn}>Form crew</button>} {..._cardExtra(p)}/>;})}{savedNote(savedShown).trim()?<div style={{fontSize:11.5,color:C.textMuted,marginTop:2,lineHeight:1.5}}>{savedNote(savedShown).trim()}</div>:null}</div>:<div style={{fontSize:12,color:C.textMuted,lineHeight:1.5,padding:"6px 2px"}}>{(listedHere?"No one else is listed for this "+noun+" yet.":"Nobody is listed for this "+noun+" yet — list yourself and climbers looking at it can find you.")+(savedNote(0)?" "+savedNote(0):"")}</div>}
         </div>:null}
         {showBackup?<div role="region" aria-label={"Climbers "+_prep+" "+_pn} style={{marginBottom:12}}>
           <SL>{"Also climbing "+_prep+" "+_pn}</SL>

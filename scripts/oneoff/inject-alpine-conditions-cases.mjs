@@ -119,7 +119,7 @@ const CASES = [
     find: '  if (gust && gust[1] - gust[0] >= LIMITS.spreadGust) over.push("gust");\n', repl: "",
     expect: "fail", expectText: "models 45 mph apart on the day's top gust flag it" },
   { name: "21. one model answering reads as the models agreeing", file: LOGIC,
-    find: "return v.length >= 2 ? [Math.min.apply(null, v), Math.max.apply(null, v)] : null;", repl: "return v.length >= 1 ? [Math.min.apply(null, v), Math.max.apply(null, v)] : null;",
+    find: "const range = function (v) { return v.length >= 2 ? [v[0], v[v.length - 1]] : null; };", repl: "const range = function (v) { return v.length >= 1 ? [v[0], v[v.length - 1]] : null; };",
     expect: "fail", expectText: "ONE model answering is no comparison" },
   { name: "22. a start counted back from 'softening' on a night that never froze", file: LOGIC,
     find: "if (snowLegs && softAt != null && !noFreeze) {", repl: "if (snowLegs && softAt != null) {",

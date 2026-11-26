@@ -22,7 +22,7 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "../..");
-const DB = path.join(ROOT, "lib/db.js");
+const DB = path.join(ROOT, "lib/db-catalog-more.js"); // lib/db.js re-exports it since 2026-11-25
 const OFF = path.join(ROOT, "lib/offline.js");
 const PROBE = path.join(ROOT, "scripts/oneoff/probe-offline-area-jump.mjs");
 const LOCK = path.join(ROOT, ".inject-offline-area-jump.lock");

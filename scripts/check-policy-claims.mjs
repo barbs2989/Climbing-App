@@ -537,8 +537,8 @@ for (const [name, src] of masked) for (const m of src.matchAll(accessRe)) render
     else ok("the crews read keeps only YOUR crew_float_filings row (user_id===uid), in one place");
   }
   const walk = (d) => fs.readdirSync(d, { withFileTypes: true }).flatMap((e) => e.isDirectory() ? walk(path.join(d, e.name)) : /\.(jsx?|tsx?)$/.test(e.name) ? [path.join(d, e.name)] : []);
-  const others = [...walk(path.join(ROOT, "lib")), ...walk(path.join(ROOT, "src"))].filter((f) => !/[\\/]lib[\\/]db\.js$/.test(f) && /crew_float_filings/.test(fs.readFileSync(f, "utf8")));
-  if (others.length) bad(`crew_float_filings is named outside lib/db.js and ClimbMatch.jsx's mapping: ${others.map((f) => path.relative(ROOT, f)).join(", ")} — read filings only through crew.myFloatFiling`);
+  const others = [...walk(path.join(ROOT, "lib")), ...walk(path.join(ROOT, "src"))].filter((f) => !/[\\/]lib[\\/]db(-[\w-]+)?\.js$/.test(f) && /crew_float_filings/.test(fs.readFileSync(f, "utf8")));
+  if (others.length) bad(`crew_float_filings is named outside the data layer (lib/db.js, lib/db-*.js) and ClimbMatch.jsx's mapping: ${others.map((f) => path.relative(ROOT, f)).join(", ")} — read filings only through crew.myFloatFiling`);
   else ok("no other lib/ or src/ file names crew_float_filings");
 }
 const planRendered = renderers.length > 0;
