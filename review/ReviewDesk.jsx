@@ -34,6 +34,7 @@ import {
   useAdminQueueCounts,
 } from "../lib/db";
 import { GpsSubmissionQueue } from "../lib/GpsSubmissionQueue";
+import { editRemoves } from "../lib/editRemoves.js";
 import { AccessibilityReportQueue } from "../lib/AccessibilityReports";
 import { RouteProposalQueue, AreaProposalQueue, AreaPlacementQueue } from "../lib/RouteProposals";
 import { AppFeedbackQueue } from "../lib/AppFeedback";
@@ -258,14 +259,17 @@ function EditsTable({ admin }) {
         const route = routes[r0.route_id];
         const areaRow = isArea ? areas[r0.area_id] : null;
         const verdict = g.map((x) => ai["contribution:" + x.id]).find(Boolean) || null;
+        const cur = isArea ? (areaRow && af && af.cur ? af.cur(areaRow) : undefined) : (cf && route ? route[cf.column_name] : undefined);
         out.push({
           key: "e:" + r0.id, kind: "edit", ids: g.map((x) => x.id), route_id: r0.route_id, area_id: isArea ? r0.area_id : null, field: r0.field,
           label: isArea ? ((af && af.label) || r0.field) : ((cf && cf.label) || r0.field),
           name: isArea ? ((r0.areas && r0.areas.name) || r0.area_id) : ((r0.routes && r0.routes.name) || (route && route.name) || r0.route_id),
           state: String(r0.route_id || r0.area_id || "").split("_")[0].toUpperCase(),
-          cur: isArea ? (areaRow && af && af.cur ? af.cur(areaRow) : undefined) : (cf && route ? route[cf.column_name] : undefined),
+          cur,
           said: r0.value, note: g.map((x) => x.reason).filter(Boolean).join(" | "),
-          removes: g.some((x) => x.review_note === REMOVAL_NOTE), climbers: new Set(g.map((x) => x.contributor)).size,
+          // Removal is re-asked against the page AS IT IS NOW, not only read off the note 0351 stamped when the edit was sent:
+          // the page may have gained rows since, and approving a stale edit then wipes them (0553 refuses that from a reviewer).
+          removes: g.some((x) => x.review_note === REMOVAL_NOTE) || (cur !== undefined && editRemoves(cur, r0.value)), climbers: new Set(g.map((x) => x.contributor)).size,
           created_at: r0.created_at, ai: verdict,
         });
       });

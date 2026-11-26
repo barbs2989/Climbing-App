@@ -24,6 +24,7 @@ import fs from "fs";
 import crypto from "crypto";
 import { SUPABASE_URL, requireServiceKey, headers } from "./lib/supabase-env.mjs";
 import { stateFromPath } from "../lib/stateSections.js";
+import { editRemoves } from "../lib/editRemoves.js";
 
 const args = process.argv.slice(2);
 const opt = (k, d) => { const i = args.indexOf(k); return i >= 0 ? args[i + 1] : d; };
@@ -103,7 +104,9 @@ for (const rows of clusters.values()) {
     current_value: !isArea && f && r ? (r[f.column_name] ?? null) : null,
     suggested_value: e.value,
     climber_note: rows.map((x) => x.reason).filter(Boolean).join(" | ") || null,
-    removes_something: rows.some((x) => /^Removes something from the page/.test(String(x.review_note || ""))), // lib/db.js REMOVAL_NOTE (0351)
+    // lib/db.js REMOVAL_NOTE (0351) is stamped once, at SEND time. Re-ask against the page now: an edit sent as an
+    // addition is a removal once the page has gained rows, and the autopilot must leave every removal to the owner.
+    removes_something: rows.some((x) => /^Removes something from the page/.test(String(x.review_note || ""))) || (!isArea && !!f && !!r && editRemoves(pageNow, e.value)),
     also_ids: rows.slice(1).map((x) => x.id),
     climbers: new Set(rows.map((x) => x.contributor)).size,
     created_at: e.created_at,
