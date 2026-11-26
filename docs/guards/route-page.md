@@ -33,14 +33,6 @@ Part of the guard notes — see [README.md](README.md) for the full index.
   pre-#641 file trips 6 assertions, and renaming a UI anchor trips `ANCHOR LOST` rather than
   silently passing. **Effects do not run under `renderToStaticMarkup`**, so anything animated
   (`CountUp`) renders its initial `0` — never assert on those numbers.
-  - **Empty sections on the route page are entries of the "Help fill this in" list since
-    2026-11-24** (`lib/helpFill.js`). Each `EmptySection` registers its row from an EFFECT, which
-    a static render never runs, so the BETA assertion reads the marker the section leaves
-    (`data-help-fill`, `data-help-fill-what`) and a new last section renders `HelpFillList` with
-    rows handed to it: every entry is a row with its section, its reason and its own add button,
-    and no entries draws nothing. **What neither sees:** that the effect ran and the row reached
-    the list in a browser. That was looked at by hand (phone and desktop, Overview and Plan, a
-    row's button opening the edit sheet at its field); no browser walk asserts it yet.
   - It also pins **where the nearby-fire panel lives**: first section of the Safety tab, on every
     route, and nowhere else. That needed a **located** fixture — `bare()`'s area has no `lat`/`lng`
     and `FireNearRoute` renders nothing without a coordinate, so every other render here is of a
@@ -88,10 +80,6 @@ Part of the guard notes — see [README.md](README.md) for the full index.
   `longForm:true`, the paragraph and the route-level numbers hang under IT instead (research found
   ~20 routes whose paragraph describes a way in that is not the most used one). Gated by `npm run build`. Injection-tested: moving the paragraph out of the
   main card, or ignoring `primary`, trips 6 assertions.
-  - **An empty APPROACH is a Help-fill ENTRY since 2026-11-24, not a card in place** (`lib/helpFill.js`).
-    The row is drawn after an effect and `renderToStaticMarkup` runs none, so sections 5 and 6 read
-    the hidden marker the section leaves (`data-help-fill="APPROACH"` with its `-what`), not
-    the visible text. `check:bare` proves the list turns an entry into a row.
   - **The paragraph is never collapsed.** `check:field-renders` proves `approach` reaches a screen
     by server-rendering the page; a "read more" whose tail is behind `useState(false)` is not in that
     markup, so the column would read as unrendered.
@@ -1229,3 +1217,5 @@ Part of the guard notes — see [README.md](README.md) for the full index.
   - Trap met: a sharp summit turnaround is itself a departure from the local average, so even a
     perfect recording's threshold lifts to 20-30 ft for a few samples at the top. The guard asserts
     that honestly (10 ft on the slopes, under 30 at the turnaround) and that the totals stay exact.
+
+- **`check:bare` section 8 (2026-11-25): every discipline's sections, drawn EMPTY, in order.** Owner note: sections that match the discipline must show with no data, in one order per discipline. The section reads headings off two markers added for it, `data-section-head` on SL's divider form (RSL) and `data-card-head` on CardHead and Head (the enrichment panels' title, e.g. SEASON), so a section counts only when its HEADING is drawn. Per discipline and tab it asserts a list in order (other headings may sit between). Built from a census: the three most-filled real routes of each discipline vs the same rows emptied (dbRouteToCamel + SSR, script kept out of the repo). Deliberately NOT required: DESCENT on single-pitch crag lines, RAPPELS on scrambles / Class 1-3, TRIP PROFILE (derived), AVALANCHE FORECAST/TODAY, PRO TIPS. Injection: restoring CLIMBING ROUTE's old `!isPitched` empty gate fails alpine, ice and mixed planner by name. A trad line on a peak uses the mountain layout (`catOf`), so the census's order check compares by layout, not by `discipline`.

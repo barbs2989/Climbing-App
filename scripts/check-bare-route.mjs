@@ -49,13 +49,6 @@ export function render(route, tab, extra) {
         crewsForRoute: [], myStars: {}, presence: null, ...(extra || {}),
       })));
 }
-// The "Help fill this in" list, given rows directly: the route page fills it from an EFFECT (each empty
-// section registers itself), and no effect runs under renderToStaticMarkup.
-import HelpFillList from ${JSON.stringify(path.join(ROOT, "src/components/HelpFillList.tsx"))};
-import { HelpFillRows } from ${JSON.stringify(path.join(ROOT, "lib/helpFill.js"))};
-export function renderHelpFill(rows) {
-  return renderToStaticMarkup(React.createElement(HelpFillRows.Provider, { value: rows }, React.createElement(HelpFillList)));
-}
 `;
 
 const out = path.join(fs.mkdtempSync(path.join(os.tmpdir(), "cm-bare-")), "bundle.cjs");
@@ -65,7 +58,7 @@ await build({
   loader: { ".jsx": "jsx" }, define: { "import.meta.env": "{}" },
   outfile: out, logLevel: "error",
 });
-const { render, renderHelpFill } = require_(out);
+const { render } = require_(out);
 
 // ── The shape 88% of alpine routes and 99.5% of the catalog actually have.
 const bare = (discipline, grade) => ({
@@ -289,20 +282,15 @@ for (const d of [...CRAG, "alpine"]) {
     else if (d !== "bouldering" && !(withItems.includes("quickdraws") && withItems.includes("\u00d712"))) fail(`rack: a ${d} route's rack items lose their quantity`);
     else if (d === "bouldering" && !(withItems.includes("crash pads") && withItems.includes("\u00d73"))) fail("rack: a boulder route's pads do not reach the RACK card");
     else ok(`rack: a ${d} route's own rack reaches the screen with its quantities`);
-    const noneHtml = render(base, "overview");
-    const none = text(noneHtml);
+    const none = text(render(base, "overview"));
     if (/What to bring|ROPEWORK|GEAR & ESSENTIALS|Standard rack for this discipline/.test(none))
       fail(`rack: a ${d} route with no rack of its own still prints a stock gear section — the stock kit is not shown for crag routes`);
     else if (!/No rack listed yet|No quickdraw count yet|No pad count yet/.test(none))
       fail(`rack: a ${d} route with no rack of its own shows no placeholder to add one`);
     else ok(`rack: a ${d} route with no rack of its own shows an add-the-rack placeholder and no stock kit`);
     /* Owner note 2026-10-21, "add back the beta section": an empty crag BETA returned null and
-       left no place for beta at all. It is an EmptySection now; a route WITH beta prints it.
-       Since the "Help fill this in" list (lib/helpFill.js) an empty section on the route page is an
-       ENTRY of that list, not a card in place. Its row is drawn after an effect, which this static
-       render never runs, so the entry is read off the marker the section leaves; section 9 below
-       proves the list turns an entry into a named row with its add button. */
-    if (!noneHtml.includes('data-help-fill="BETA"') || !noneHtml.includes('data-help-fill-what="No beta yet"')) fail(`beta: a ${d} route with no beta leaves no BETA entry for the Help-fill list, so there is no place to add it`);
+       left no place for beta at all. It is an EmptySection now; a route WITH beta prints it. */
+    if (!/BETA/.test(none) || !none.includes("No beta yet")) fail(`beta: a ${d} route with no beta shows no BETA section to add it`);
     else if (!text(render({ ...base, beta: ["Stem the corner to the rest."] }, "overview")).includes("Stem the corner to the rest.")) fail(`beta: a ${d} route's own beta no longer reaches the BETA section`);
     else ok(`beta: a ${d} route shows its BETA section, empty or not`);
   }
@@ -540,24 +528,72 @@ for (const d of [...CRAG, "alpine"]) {
   else if (!bad) ok("bare boulder problem: no tab calls it a route");
 }
 
-// ── The "Help fill this in" list draws every entry: its section, why it matters, and ITS add button.
-// The owner's condition for collapsing the empty cards was that every add entry point stays.
+// 8. EVERY SECTION THE DISCIPLINE HAS, EMPTY OR NOT, IN ONE ORDER (owner note 2026-11-25: "Not all
+//    routes have a description section. We need to show the sections that we decided match the
+//    discipline even if there's no info ... consistent in order of sections too per each
+//    discipline"). The sections a discipline has are the ones its edit sheet offers
+//    (lib/fieldScope.js); each must be drawn on a route that has nothing in it, under its heading,
+//    in the order the filled page draws it. Measured 2026-11-25 against the three most-filled real
+//    routes of each discipline and the same rows emptied: a mountain route lost ROUTE DESCRIPTION,
+//    BETA, CLIMBING ROUTE (pitched), ROUTE BREAKDOWN (unpitched), ACCESS & REGULATIONS, KNOWN
+//    HAZARDS and CLIMATE & SEASON when they were empty (that card is part of SEASON since #4002, whose
+//    empty state already shows); a crag route lost ACCESS & REGULATIONS, KNOWN HAZARDS and (under a crag walk-in) the APPROACH heading. #3908 had
+//    folded every empty section into one "Help fill this in" list the day before, which is what
+//    made the description vanish everywhere; it is reverted.
+//    Headings are read off the markers SL (data-section-head) and CardHead (data-card-head) leave,
+//    and Head (data-card-head, the enrichment panels' title), so a section counts only when its HEADING is
+//    drawn, not when a stray word matches.
+//    Not required, on purpose (a rule, not a gap): DESCENT on a single-pitch crag line, RAPPELS on
+//    a scramble or a Class 1-3 walk-up, TRIP PROFILE (computed from the pins, not a field),
+//    AVALANCHE FORECAST / TODAY (need a forecast zone and snow terrain), PRO TIPS (legacy short beta).
 {
-  let tapped = "";
-  const rows = [
-    { id: "a", title: "BETA", what: "No beta yet", why: "Nothing says how the moves go.", cta: "Add beta", fix: () => { tapped = "beta"; }, mark: null },
-    { id: "b", title: "APPROACH", what: "No approach description", why: null, cta: null, fix: () => { tapped = "approach"; }, mark: null },
-    { id: "c", title: "RAPPELS", what: "No rappel beta", why: null, cta: "Add the rappels", fix: null, mark: null },
-  ];
-  const html = renderHelpFill(rows);
-  const t = text(html);
-  void tapped;
-  if (!/HELP FILL THIS IN/.test(t)) fail("help-fill: the list has no heading");
-  else if (!t.includes("Beta") || !t.includes("Nothing says how the moves go.") || !t.includes("Add beta →")) fail("help-fill: an entry's section, reason or add button is missing from its row");
-  else if (!t.includes("No approach description") || !t.includes("Add what you know →")) fail("help-fill: an entry with no reason or no button words loses its row text or its add button");
-  else if ((html.match(/<button/g) || []).length !== 2) fail("help-fill: expected one add button per entry that can be fixed (2 of 3), found " + (html.match(/<button/g) || []).length);
-  else if (renderHelpFill([]) !== "") fail("help-fill: the list draws something when no section is empty");
-  else ok("help-fill: every entry is a row with its section, its reason and its own add button; no entries, no list");
+  const heads = (html) => {
+    const o = []; const rx = /data-(?:section|card)-head=""/g; let mm;
+    while ((mm = rx.exec(html))) {
+      const seg = html.slice(html.indexOf(">", mm.index) + 1, mm.index + 3000)
+        .replace(/<span aria-hidden="true"[^>]*>[^<]*<\/span>/g, "").replace(/<button[\s\S]*?<\/button>/g, " ").replace(/<[^>]+>/g, "\u0001");
+      const t = seg.split("\u0001").map((s) => s.trim()).filter(Boolean)[0] || "";
+      o.push(t.replace(/&amp;/g, "&").replace(/&#x27;/g, "'").replace(/\s*·.*$/, "").toUpperCase());
+    }
+    return o;
+  };
+  // Is `want` drawn, in this order, among the headings `got` (other headings may sit between)?
+  const inOrder = (got, want) => { let i = 0; const miss = []; for (const w of want) { const j = got.indexOf(w, i); if (j < 0) miss.push(w); else i = j + 1; } return miss; };
+  const CRAG_OV = (desc, mid) => [desc, "TOPO", "BETA", "GEAR & SAFETY", ...mid, "CRAG MAP", "GETTING THERE", "ACCESS & REGULATIONS", "APPROACH", "WHERE IT STARTS"];
+  const PLAN = (raps) => ["GETTING THERE", "ACCESS & REGULATIONS", "ROUTE TRACK", "WAYPOINTS", "APPROACH", "CLIMBING ROUTE", "ROUTE BREAKDOWN", "DESCENT", ...(raps ? ["RAPPELS"] : []), "GEAR", "FULL TRIP TIME", "TRIP PLAN", "CAMPING & BIVY"];
+  const MTN_OV = ["ROUTE DESCRIPTION", "BETA", "TOPO"];
+  const MTN_SAFE = ["KNOWN HAZARDS", "SEASONAL HAZARDS", "FLOAT PLAN"];
+  const WANT = {
+    trad: { overview: CRAG_OV("ROUTE DESCRIPTION", ["ROUTE BREAKDOWN", "DESCENT", "RAPPELS"]), safety: ["KNOWN HAZARDS"], forecast: ["SEASON"] },
+    sport: { overview: CRAG_OV("ROUTE DESCRIPTION", ["ROUTE BREAKDOWN", "DESCENT", "RAPPELS"]), safety: ["KNOWN HAZARDS"], forecast: ["SEASON"] },
+    toprope: { overview: CRAG_OV("ROUTE DESCRIPTION", []), safety: ["KNOWN HAZARDS"], forecast: ["SEASON"] },
+    bouldering: { overview: CRAG_OV("PROBLEM DESCRIPTION", []), safety: ["KNOWN HAZARDS"], forecast: ["SEASON"] },
+    aid: { overview: CRAG_OV("ROUTE DESCRIPTION", ["DESCENT", "SEASON"]), safety: ["KNOWN HAZARDS"] },
+    alpine: { overview: MTN_OV, planner: PLAN(true), safety: MTN_SAFE, forecast: ["SEASON"] },
+    mountaineering: { overview: MTN_OV, planner: PLAN(true), safety: MTN_SAFE, forecast: ["SEASON"] },
+    ice: { overview: MTN_OV, planner: PLAN(true), safety: MTN_SAFE, forecast: ["SEASON"] },
+    mixed: { overview: MTN_OV, planner: PLAN(true), safety: MTN_SAFE, forecast: ["SEASON"] },
+    scrambling: { overview: MTN_OV, planner: PLAN(false), safety: MTN_SAFE, forecast: ["SEASON"] },
+  };
+  let bad = 0;
+  for (const [d, tabs] of Object.entries(WANT)) {
+    for (const [tab, want] of Object.entries(tabs)) {
+      let html = cache.get(d + "/" + tab);
+      if (!html) { try { html = render(bare(d, d === "bouldering" ? "V3" : "5.9"), tab); } catch (e) { fail(`${d}/${tab} threw: ${e.message.split("\n")[0].slice(0, 100)}`); bad++; continue; } }
+      const got = heads(html);
+      if (!got.length) { fail(`ANCHOR LOST: no section heading markers on bare ${d}/${tab} — SL / CardHead lost data-section-head / data-card-head`); bad++; continue; }
+      const miss = inOrder(got, want);
+      if (miss.length) { fail(`bare ${d}/${tab}: section(s) hidden when empty, or out of order: ${miss.join(", ")} (drawn: ${got.join(" | ")})`); bad++; }
+    }
+  }
+  if (!bad) ok("every discipline draws its sections empty, under their headings, in one order");
+  // The filled page uses the same order: a filled description still sits where the empty one does.
+  {
+    const filled = { ...bare("alpine", "5.6"), overview: "Climb the ridge.", beta: ["A long write-up of the climbing, ".repeat(10)] };
+    const miss = inOrder(heads(render(filled, "overview")), MTN_OV);
+    if (miss.length) fail(`filled alpine overview: ${miss.join(", ")} missing or out of order`);
+    else ok("a filled alpine route draws ROUTE DESCRIPTION, BETA, TOPO in the same order");
+  }
 }
 
 fs.rmSync(path.dirname(out), { recursive: true, force: true });
