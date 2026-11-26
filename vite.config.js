@@ -9,6 +9,11 @@ export default defineConfig({
     // The app is a single large component by design (see CLAUDE.md), so the main
     // chunk is intentionally big; raise the limit so the warning reflects reality.
     chunkSizeWarningLimit: 1200,
+    // HIDDEN source maps: written beside each chunk, but the bundle carries no sourceMappingURL, so
+    // no browser fetches them. The deploy moves them OUT of dist/ into the Actions artifact
+    // `sourcemaps-<entry script>` (.github/workflows/deploy.yml), and `npm run errors:read` uses them
+    // to turn a crash filed to app_errors from "index-x.js:1:482113" into a file, line and function.
+    sourcemap: "hidden",
     rollupOptions: {
       output: {
         // Split React + React Query into their own long-cached chunks so the main
