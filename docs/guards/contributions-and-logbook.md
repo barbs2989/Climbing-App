@@ -611,7 +611,11 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     the row), and whether a renderer reads a field only to print nothing.
 - **`check:area-page-honest`** asserts three things about the area page's new sections
   (2026-10-15): every `facts.push` in `AreaFactsCard` sits on a line gated `if (area.<col>` (a
-  fact nobody stored is not printed — `check:untracked-factors`' rule); the CLIMBS HERE chart's
+  fact nobody stored is not printed — `check:untracked-factors`' rule) and, since 2026-11-25 (owner:
+  every area fact shows even when empty, so a climber can add it), carries `else missing.push([label,
+  field])`, with Season's own `if (!season) missing.push(`, and every missing field a key of
+  `AREA_EDIT_FIELDS` (an Add that opened the sheet at nothing would fail); the old "has an empty
+  state" rule was retired with the empty state; the CLIMBS HERE chart's
   headline is the sum of the bars it draws, and a remainder is said in words (`total > sum`) —
   `check:count-matches-its-list`' rule, on one card; and `lib/DbAreaBrowser.jsx` offers
   `maps/dir` exactly once (the GETTING THERE card replaced the bare `Directions` button, and two
