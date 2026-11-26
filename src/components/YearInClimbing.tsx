@@ -47,12 +47,12 @@ export interface YearInClimbingProps {
 /** The three fields that date a log and say whether it is a climb. */
 interface DatedLog { date?: string | null; tickType?: string | null; scoutOnly?: boolean | null }
 /** A log the stats count: what challengeStats counts (not a conditions-only report). */
-const counted = <T extends DatedLog>(l: T | null | undefined): l is T => !!l && !l.scoutOnly && l.tickType !== "Conditions";
+const recapCounted = <T extends DatedLog>(l: T | null | undefined): l is T => !!l && !l.scoutOnly && l.tickType !== "Conditions";
 const yearOf = (l: DatedLog) => String(l.date || "").slice(0, 4);
 /** Every year a climb is logged in, newest first. */
 export function recapYears(logs: ReadonlyArray<DatedLog> | null | undefined): number[] {
   const s: Record<string, 1> = {};
-  (logs || []).forEach(l => { if (!counted(l)) return; const y = yearOf(l); if (/^\d{4}$/.test(y)) s[y] = 1; });
+  (logs || []).forEach(l => { if (!recapCounted(l)) return; const y = yearOf(l); if (/^\d{4}$/.test(y)) s[y] = 1; });
   return Object.keys(s).map(Number).sort((a, b) => b - a);
 }
 /** The year the recap opens on: the most recent one with a climb in it -- so in January, before the first climb of the
@@ -61,13 +61,13 @@ export function recapYear(logs: ReadonlyArray<DatedLog> | null | undefined): num
   const ys = recapYears(logs);
   return ys.length ? ys[0] : null;
 }
-const MONTHS = Array.from({ length: 12 }, (_, i) => i);
+const RECAP_MONTHS = Array.from({ length: 12 }, (_, i) => i);
 const GRADED: Array<[string, string]> = [["sport", "sport"], ["trad", "trad"], ["toprope", "toprope"], ["bouldering", "bouldering"], ["ice", "ice"], ["mixed", "mixed"]];
 const UUID = /^[0-9a-f]{8}-[0-9a-f]{4}-/i;
 const labelOf = (c: string) => ((CAT as Record<string, { label?: string } | undefined>)[c] || {}).label || c;
 const monthName = (m: number, len: "short" | "long") => new Date(Date.UTC(2000, m, 1)).toLocaleDateString(DLOCALE, { month: len, timeZone: "UTC" });
 const dayName = (d: string) => new Date(d.slice(0, 10) + "T00:00:00Z").toLocaleDateString(DLOCALE, { month: "short", day: "numeric", timeZone: "UTC" });
-const areaName = (r: RecapRoute | null | undefined): string | null => {
+const recapAreaName = (r: RecapRoute | null | undefined): string | null => {
   if (!r) return null;
   const m = r.mountainId != null ? MOUNTAINS.find((x: { id: string }) => x.id === r.mountainId) : null;
   /* A DB route's mountainId is an `areas` id, never in the seed MOUNTAINS: its name rides on _dbArea. No default -- the
@@ -92,16 +92,16 @@ export function buildRecap(logs: ReadonlyArray<RecapLog>, routeById: (id: string
   const st = challengeStats(logs, routeById, { year: y });
   const pv = challengeStats(logs, routeById, { year: String(year - 1) });
   const prior = challengeStats(logs, routeById, { before: y });
-  const yl = logs.filter(l => counted(l) && yearOf(l) === y);
+  const yl = logs.filter(l => recapCounted(l) && yearOf(l) === y);
   const best = GRADED.filter(([d]) => st.best[d]).map(([d]) => { const b = st.best[d], p = prior.best[d]; return { disc: d, label: labelOf(d), grade: shortGrade(b.grade) || b.grade, isNew: !!p && b.n > p.n }; });
   const disc: Record<string, Record<string, 1>> = {};
-  const monthDays: Array<Record<string, 1>> = MONTHS.map(() => ({}));
+  const monthDays: Array<Record<string, 1>> = RECAP_MONTHS.map(() => ({}));
   const areaDays: Record<string, Record<string, 1>> = {};
   const partnerDays: Record<string, { name: string; days: Record<string, 1> }> = {};
   yl.forEach(l => {
     const day = String(l.date || "").slice(0, 10), r = routeById(l.routeId);
     const m = parseInt(day.slice(5, 7), 10) - 1; if (m >= 0 && m < 12) monthDays[m][day] = 1;
-    if (r) { const c = catOf(r); (disc[c] = disc[c] || {})[String(r.id)] = 1; const an = areaName(r); if (an) (areaDays[an] = areaDays[an] || {})[day] = 1; }
+    if (r) { const c = catOf(r); (disc[c] = disc[c] || {})[String(r.id)] = 1; const an = recapAreaName(r); if (an) (areaDays[an] = areaDays[an] || {})[day] = 1; }
     (l.partners || []).forEach(p => { const n = String(p || "").trim(); if (!n || UUID.test(n)) return; const k = n.toLowerCase(); (partnerDays[k] = partnerDays[k] || { name: n, days: {} }).days[day] = 1; });
   });
   const months = monthDays.map(o => Object.keys(o).length);
@@ -112,7 +112,7 @@ export function buildRecap(logs: ReadonlyArray<RecapLog>, routeById: (id: string
   Object.keys(partnerDays).forEach(k => { const n = Object.keys(partnerDays[k].days).length; if (!topPartner || n > topPartner.days) topPartner = { name: partnerDays[k].name, days: n }; });
   /* New places: an area first climbed in this year, keyed as challengeStats keys areas (the route's area id). */
   const before: Record<string, 1> = {};
-  logs.forEach(l => { if (!counted(l) || !(yearOf(l) && yearOf(l) < y)) return; const r = routeById(l.routeId); if (r && r.mountainId != null) before[String(r.mountainId)] = 1; });
+  logs.forEach(l => { if (!recapCounted(l) || !(yearOf(l) && yearOf(l) < y)) return; const r = routeById(l.routeId); if (r && r.mountainId != null) before[String(r.mountainId)] = 1; });
   const mine: Record<string, 1> = {};
   yl.forEach(l => { const r = routeById(l.routeId); if (r && r.mountainId != null && !before[String(r.mountainId)]) mine[String(r.mountainId)] = 1; });
   const sorted = yl.filter(l => l.date).slice().sort((a, b) => String(a.date).localeCompare(String(b.date)));
@@ -212,11 +212,11 @@ export default function YearInClimbing({ logs, routeById, onClose, showToast, ro
     {years.length > 1 ? <div className="cm-hscroll" style={{ display: "flex", gap: 7, overflowX: "auto", marginBottom: 14, paddingBottom: 2 }}>{years.map(y => { const on = y === year; return <button key={y} onClick={() => setPick(y)} aria-pressed={on} style={{ flexShrink: 0, minHeight: 36, padding: "7px 14px", borderRadius: 18, border: "1px solid " + (on ? C.blue : C.border), background: on ? C.blueBg : C.surface, color: on ? C.text : C.textSub, fontSize: 13, fontWeight: on ? 800 : 600, cursor: "pointer" }}>{String(y)}</button>; })}</div> : null}
     {routesLoading ? <div style={{ fontSize: 12, color: C.textMuted, marginBottom: 10 }}>Still loading some of your climbs — these numbers may rise.</div> : routesFailed ? <div style={{ fontSize: 12, color: C.amber, marginBottom: 10 }}>Some of your climbs couldn’t load, so these totals may be short.</div> : null}
     {/* CLIMBING DAYS (batch B, item 18): the same grid as Completed, for THIS calendar year (it showed the last 52 weeks whatever the year). */}
-    <div style={{ marginBottom: 16 }}><ClimbDaysHeatmap C={C} year={year} dates={logs.filter(counted).map(l => l.date)} /></div>
+    <div style={{ marginBottom: 16 }}><ClimbDaysHeatmap C={C} year={year} dates={logs.filter(recapCounted).map(l => l.date)} /></div>
     {any ? <>
       <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 10, marginBottom: 14 }}>{tiles.map(([k, many, one]) => { const d = delta(k); return <div key={k} style={{ background: "rgba(255,255,255,0.05)", border: "1px solid " + C.border, borderRadius: 13, padding: "13px 12px" }}><div style={{ fontSize: 26, fontWeight: 800, color: C.text, lineHeight: 1.1 }}>{r[k]}</div><div style={{ fontSize: 11.5, color: C.textSub, marginTop: 3 }}>{r[k] === 1 ? one : many}</div>{d ? <div style={{ fontSize: 11, color: C.textMuted, marginTop: 3 }}>{d}</div> : null}</div>; })}</div>
       {r.best.length ? <div style={box}>{H("Hardest in " + year)}{r.best.map(b => <div key={b.disc} style={{ display: "flex", justifyContent: "space-between", alignItems: "center", gap: 8, fontSize: 13, color: C.text, padding: "3px 0" }}><span>{b.label}</span><span style={{ display: "flex", alignItems: "center", gap: 7, fontWeight: 800 }}>{b.isNew ? <span style={{ fontSize: 10.5, fontWeight: 800, color: C.amber, border: "1px solid " + C.amber, borderRadius: 6, padding: "1px 6px" }}>New best</span> : null}{b.grade}</span></div>)}<div style={{ fontSize: 11, color: C.textMuted, marginTop: 4, lineHeight: 1.4 }}>Climbs you finished, by their catalog grade. A new best beats every year before it.</div></div> : null}
-      <div style={box}>{H("Month by month")}<div role="img" aria-label={"Climbing days per month in " + year + ": " + MONTHS.map(m => monthName(m, "short") + " " + r.months[m]).join(", ")} style={{ display: "flex", alignItems: "flex-end", gap: 4, height: 70 }}>{MONTHS.map(m => <div key={m} style={{ flex: 1, display: "flex", flexDirection: "column", alignItems: "center", gap: 3 }}><div style={{ width: "100%", height: Math.round((r.months[m] / top) * 50), minHeight: r.months[m] ? 3 : 1, background: r.months[m] ? (m === r.busiest ? C.brand : C.blue) : C.border, borderRadius: 2 }} /><div aria-hidden="true" style={{ fontSize: 9.5, color: C.textMuted }}>{monthName(m, "short").slice(0, 1)}</div></div>)}</div>{r.busiest != null ? <div style={{ fontSize: 12, color: C.textSub, marginTop: 6 }}>{"Busiest month: " + monthName(r.busiest, "long") + " · " + r.months[r.busiest] + (r.months[r.busiest] === 1 ? " day" : " days")}</div> : null}</div>
+      <div style={box}>{H("Month by month")}<div role="img" aria-label={"Climbing days per month in " + year + ": " + RECAP_MONTHS.map(m => monthName(m, "short") + " " + r.months[m]).join(", ")} style={{ display: "flex", alignItems: "flex-end", gap: 4, height: 70 }}>{RECAP_MONTHS.map(m => <div key={m} style={{ flex: 1, display: "flex", flexDirection: "column", alignItems: "center", gap: 3 }}><div style={{ width: "100%", height: Math.round((r.months[m] / top) * 50), minHeight: r.months[m] ? 3 : 1, background: r.months[m] ? (m === r.busiest ? C.brand : C.blue) : C.border, borderRadius: 2 }} /><div aria-hidden="true" style={{ fontSize: 9.5, color: C.textMuted }}>{monthName(m, "short").slice(0, 1)}</div></div>)}</div>{r.busiest != null ? <div style={{ fontSize: 12, color: C.textSub, marginTop: 6 }}>{"Busiest month: " + monthName(r.busiest, "long") + " · " + r.months[r.busiest] + (r.months[r.busiest] === 1 ? " day" : " days")}</div> : null}</div>
       {r.homeTurf ? <div style={{ background: C.blueBg, border: "1px solid " + C.blueDim, borderRadius: 13, padding: "13px 14px", marginBottom: 12 }}><div style={{ fontSize: 12, color: C.text, fontWeight: 700, textTransform: "uppercase", letterSpacing: 0.5, marginBottom: 3 }}>Your home turf</div><div style={{ fontSize: 14.5, fontWeight: 700, color: C.text }}>{r.homeTurf.name}</div><div style={{ fontSize: 11.5, color: C.textSub, marginTop: 2 }}>{"Where you climbed on the most days: " + r.homeTurf.days + (r.homeTurf.days === 1 ? " day" : " days") + "."}{r.newAreas ? " " + r.newAreas + (r.newAreas === 1 ? " crag or area" : " crags and areas") + " you climbed at for the first time." : ""}</div></div> : null}
       {r.topPartner ? <div style={box}>{H("Most days out with")}<div style={{ fontSize: 14, fontWeight: 700, color: C.text }}>{r.topPartner.name}</div><div style={{ fontSize: 11.5, color: C.textSub, marginTop: 2 }}>{r.topPartner.days + (r.topPartner.days === 1 ? " day" : " days") + " together. Only you see this; it is left out of what you share."}</div></div> : null}
       {r.byDisc.length ? <div style={{ marginBottom: 12 }}>{H("Logged, by discipline")}<div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>{r.byDisc.map(d => <span key={d.disc} style={{ fontSize: 11.5, fontWeight: 700, color: C.textSub, background: "rgba(255,255,255,0.06)", border: "1px solid " + C.border, borderRadius: 8, padding: "4px 10px" }}>{d.label + " " + d.n}</span>)}</div></div> : null}
