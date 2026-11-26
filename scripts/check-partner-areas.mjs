@@ -31,7 +31,7 @@
 
 import fs from "node:fs";
 import path from "node:path";
-import { fileURLToPath } from "node:url";
+import { fileURLToPath, pathToFileURL } from "node:url";
 import { readAppFile, readDbSource } from "./lib/guard-sources.mjs";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
@@ -219,6 +219,46 @@ for (const name of ["match_objectives_of_users", "partners_by_objective"]) {
   (/routeListingReaders\s*=[^\n]*"partners-by-objective"/.test(db) ? ok : fail)("listing or unlisting on a route refreshes partners-by-objective, so the route page and the finder do not show a stale list");
   const tab = readAppFile(path.join(ROOT, "RouteDetail.jsx"));
   (/<ListMeOnRouteBox\b/.test(tab) ? ok : fail)("the route page's Find tab mounts ListMeOnRouteBox — a route that is not a crag route can be listed on");
+}
+
+// ── rule 6: what a LISTING says reaches the climber searching for it (owner note 2026-11-26) ──
+// "Listing yourself and then selecting the dates and discipline -- does that last part actually work for when people are
+// searching for you?" It did not: the search's type filter read the PROFILE, nothing on the searching side asked about
+// dates, the card gathered the listed types and never printed them, and the note reached no read at all. Each rule
+// below is one of those, pinned where it was fixed.
+{
+  const g = need("partner_areas_of_users");
+  if (g) (/\bnote\s+text\b/.test(g.head) && /\bpa\.note\b/.test(g.body) ? ok : fail)(`partner_areas_of_users (${g.file}) returns the listing's note — the editor's "line for partners" reaches the climbers who find it`);
+  for (const name of ["partners_in_area", "partners_for_my_areas", "partner_areas_of_users"]) {
+    const f = fns.get(name); if (!f) continue;
+    (/free_to\s*>=\s*current_date\s*-\s*1/.test(f.body) && !/free_to\s*>=\s*current_date\s+then/.test(f.body) ? ok : fail)(`${name} keeps a window until the day after it ends on the database's UTC day — current_date alone dropped a window ending today from about 4 pm Pacific`);
+  }
+  const lw = await import(pathToFileURL(path.join(ROOT, "lib", "listingWindow.js")).href);
+  const T = "2026-11-26";
+  const cases = [
+    [lw.discFits([{ disciplines: ["bouldering"] }], "trad", ["trad", "sport"]), false, "a listing for bouldering only is not found by Trad, whatever the profile says"],
+    [lw.discFits([{ disciplines: ["bouldering"] }], "bouldering", ["trad"]), true, "a listing for bouldering is found by Bouldering though the profile lacks it"],
+    [lw.discFits([{ disciplines: [] }], "sport", ["sport"]), true, "an Any-type listing falls back to the profile (has it)"],
+    [lw.discFits([{ disciplines: [] }], "sport", ["trad"]), false, "an Any-type listing falls back to the profile (lacks it)"],
+    [lw.discFits([], "trad", ["trad"]), true, "a climber found with no listing is judged on the profile"],
+    [lw.windowFit([{ freeFrom: "2026-11-28", freeTo: "2026-11-29" }], { from: "2026-11-29", to: "2026-11-29" }, T), "fits", "a window covering the day asked fits"],
+    [lw.windowFit([{ freeFrom: "2026-12-05", freeTo: "2026-12-06" }], { from: "2026-11-28", to: "2026-11-29" }, T), "clash", "a window on other days clashes (left out)"],
+    [lw.windowFit([{ freeFrom: null, freeTo: null }], { from: "2026-11-28", to: "2026-11-29" }, T), "open", "a listing with no dates stays, as open"],
+    [lw.windowFit([{ freeFrom: "2026-11-20", freeTo: "2026-11-25" }], { from: "2026-11-28", to: "2026-11-29" }, T), "open", "an ENDED window reads as no window, not a clash"],
+    [lw.liveWindow("2026-11-25", "2026-11-25", T), null, "the slack day the database sends is dropped on the climber's own day"],
+  ];
+  for (const [got, want, what] of cases) (JSON.stringify(got) === JSON.stringify(want) ? ok : fail)(`lib/listingWindow.js: ${what}`);
+  const ps = readAppFile(path.join(ROOT, "lib", "PartnerSearch.jsx"));
+  const rf = (ps.match(/const _realFits=function\(p\)\{[^\n]*?return true;\};/) || [""])[0];
+  (/discFits\(_matched\(p\),discF,/.test(rf) && !/\.includes\(discF\)/.test(rf) ? ok : fail)("Find partners' type filter reads the LISTING that found a climber (discFits over _matched), not the profile alone");
+  (/_whenFit\(p\)==="clash"\)return false/.test(rf) ? ok : fail)("Find partners' When filter leaves out a climber whose every listed window misses the days asked");
+  (/aria-label="When you want to climb"/.test(ps) ? ok : fail)("Find partners offers a When control on the listing searches");
+  const row = readAppFile(path.join(ROOT, "src", "components", "RealClimberRow.tsx"));
+  (/first\.disciplines[^\n]*discLabel/.test(row) ? ok : fail)("the partner card PRINTS the climbing types of the listing that found them");
+  (/data-listing-note/.test(row) && /_lst\[0\]\.note/.test(row) ? ok : fail)("the partner card prints the listing's note");
+  (/_hit\.indexOf\(l\.areaId\)>=0/.test(row) ? ok : fail)("the partner card leads with the listing the search matched (listed_area_ids), not their first listing anywhere");
+  const db = readDbSource(ROOT);
+  (/note: r\.note \|\| null \}\); \}\);/.test(db) ? ok : fail)("usePartnerAreasOfUsers carries the note onto each listing");
 }
 
 console.log(`\ncheck:partner-areas: ${bad ?"FAILED — " + bad + " of " + ran : "ok — " + ran + " assertion(s)"}`);

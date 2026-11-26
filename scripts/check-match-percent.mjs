@@ -104,7 +104,7 @@ else fail(`COMPAT_MAX is ${COMPAT_MAX} but the term maxima sum to ${summed} — 
 // overshoots and the result clamps below its own maximum, which this catches.
 const DISCS = ["sport", "trad", "alpine"];
 // LISTED AREAS (0300): dotted ltree paths; a shared one, or one inside the other, is the yes of a yes/no term.
-const maxA = { name: "maxA", disciplines: DISCS, sportGrade: "5.11a", objectiveIds: ["o1", "o2", "o3"], verified: true, hikingSpeedFtHr: 1000, availability: ["sat", "sun"], partnerAreaPaths: ["usa.utah.ut_wasatch_range.ut_little_cottonwood_canyon"], reliability: { trips: 200, onTime: 200 } };
+const maxA = { name: "maxA", disciplines: DISCS, sportGrade: "5.11a", objectiveIds: ["o1", "o2", "o3"], verified: true, hikingSpeedFtHr: 1000, availability: ["weekends"], partnerAreaPaths: ["usa.utah.ut_wasatch_range.ut_little_cottonwood_canyon"], reliability: { trips: 200, onTime: 200 } };
 const maxB = { ...maxA, name: "maxB" };
 const topScore = compat(maxA, maxB);
 if (topScore === COMPAT_TOP) ok(`a pair that maxes every signal scores exactly ${COMPAT_TOP}`);
@@ -112,8 +112,8 @@ else fail(`a maximal pair scores ${topScore}, not ${COMPAT_TOP} — the top of t
 
 // A pair that shares nothing. Every term at its floor must land on the base, or the displayed
 // range is narrower than it claims.
-const minA = { name: "minA", disciplines: ["sport"], sportGrade: "5.6", objectiveIds: ["a"], verified: false, hikingSpeedFtHr: 400, availability: ["mon"], partnerAreaPaths: ["usa.utah.ut_wasatch_range"], reliability: { trips: 200, noShow: 200 } };
-const minB = { name: "minB", disciplines: ["ice"], sportGrade: "5.14a", objectiveIds: ["z"], verified: false, hikingSpeedFtHr: 2000, availability: ["tue"], partnerAreaPaths: ["usa.washington.wa_north_cascades"], reliability: { trips: 200, noShow: 200 } };
+const minA = { name: "minA", disciplines: ["sport"], sportGrade: "5.6", objectiveIds: ["a"], verified: false, hikingSpeedFtHr: 400, availability: ["weekday_am"], partnerAreaPaths: ["usa.utah.ut_wasatch_range"], reliability: { trips: 200, noShow: 200 } };
+const minB = { name: "minB", disciplines: ["ice"], sportGrade: "5.14a", objectiveIds: ["z"], verified: false, hikingSpeedFtHr: 2000, availability: ["weekday_pm"], partnerAreaPaths: ["usa.washington.wa_north_cascades"], reliability: { trips: 200, noShow: 200 } };
 const botScore = compat(minA, minB);
 if (botScore === COMPAT_BASE) ok(`a pair that shares nothing scores exactly ${COMPAT_BASE}`);
 else fail(`a pair sharing nothing scores ${botScore}, not ${COMPAT_BASE}`);
@@ -136,7 +136,7 @@ else fail(`the pane shows only ${distinct} distinct values across ${CLIMBERS.len
 // ---- 4. EVERY SIGNAL THE SCREEN NAMES MUST MOVE THE NUMBER.
 // This is the invariant. It is deliberately NOT a check on any weight: a rebalance is allowed, a
 // signal that stops mattering is not.
-const base = { name: "base", disciplines: ["sport", "trad"], sportGrade: "5.11a", objectiveIds: ["o1", "o2"], verified: true, hikingSpeedFtHr: 1000, availability: ["sat", "sun"], partnerAreaPaths: ["usa.utah.ut_wasatch_range.ut_little_cottonwood_canyon.ut_hellgate_cliffs"], reliability: { trips: 10, onTime: 10 } };
+const base = { name: "base", disciplines: ["sport", "trad"], sportGrade: "5.11a", objectiveIds: ["o1", "o2"], verified: true, hikingSpeedFtHr: 1000, availability: ["weekends"], partnerAreaPaths: ["usa.utah.ut_wasatch_range.ut_little_cottonwood_canyon.ut_hellgate_cliffs"], reliability: { trips: 10, onTime: 10 } };
 const withoutSignal = {
   disciplines: { ...base, disciplines: ["ice"] },
   "grade range": { ...base, sportGrade: "5.6" },
@@ -145,7 +145,7 @@ const withoutSignal = {
   // crag would still overlap — that is the two-way reach partners_in_area promises.)
   "listed areas": { ...base, partnerAreaPaths: ["usa.washington.wa_north_cascades"] },
   "verified": { ...base, verified: false },
-  "availability overlap": { ...base, availability: ["wed"] },
+  "availability overlap": { ...base, availability: ["weekday_am"] },
   pace: { ...base, hikingSpeedFtHr: 300 },
   // RELIABILITY (0519): crewmates say they did not show, ten times.
   reliability: { ...base, reliability: { trips: 10, noShow: 10 } },
@@ -348,6 +348,28 @@ else fail(`the browse row no longer explains the missing match % (${JSON.stringi
   else fail(`the card would print ${JSON.stringify(cardWords)} (profile chips: ${JSON.stringify(slotWords)}); AM/PM labels: ${JSON.stringify(amPm)}; card reads availSlotLabels: ${readsSlots}, still reads availLabel: ${readsTags}`);
   if (half.pts > 0 && half.pts < half.max && none.pts === 0) ok("half the smaller schedule shared counts partly; nothing shared counts nothing");
   else fail(`partial overlap scores ${half.pts}/${half.max} and no overlap ${none.pts}/${none.max}`);
+  // IN THE PROFILE'S FOUR BLOCKS (owner note 2026-11-26 audit): weekend mornings and weekend evenings are two different
+  // lit chips on a profile. The coarse tags fold both into "weekends", so the pair read "Both free Weekends" at full marks.
+  const amPmWknd = avOf({ availWeek: ["sat_am", "sun_am"] }, { availWeek: ["sat_pm", "sun_pm"] });
+  if (amPmWknd.known && amPmWknd.pts === 0 && !amPmWknd.shared.length) ok("weekend mornings vs weekend evenings share no time (compared in the profile's four blocks)");
+  else fail(`weekend mornings vs weekend evenings scored ${amPmWknd.pts}/${amPmWknd.max}, shared ${JSON.stringify(amPmWknd.shared)} — availability is compared in coarse tags again`);
+  // A BLANK SAYS WHOSE IT IS (owner note 2026-11-26: "I have set my availability but it still mentions this"). The line read
+  // "Availability: not set by both of you" when only the OTHER climber had left it blank, so a climber who had set theirs
+  // read it as a broken save. Each unknown line names the side: you, they, or neither -- and never blames a side that set it.
+  const fullSide = { id: 0, disciplines: ["trad"], tradGrade: "5.9", availability: ["weekends"], partnerAreaPaths: ["usa.wa.index"], hikingSpeedFtHr: 1500 };
+  const whyOf = (a, b) => Object.fromEntries(M.compatWhy(a, b).map((r) => [r.k, r]));
+  const theirsBlank = whyOf(fullSide, { id: "x" }), mineBlank = whyOf({ id: 0 }, { ...fullSide, id: "x" }), bothBlank = whyOf({ id: 0 }, { id: "x" });
+  const SIDES = ["disc", "grade", "where", "avail", "pace"];
+  const wrong = [];
+  for (const k of SIDES) {
+    if (!/^They have not/.test(theirsBlank[k].text)) wrong.push(`they-blank ${k}: "${theirsBlank[k].text}"`);
+    if (!/^You have not/.test(mineBlank[k].text)) wrong.push(`you-blank ${k}: "${mineBlank[k].text}"`);
+    if (!/^Neither of you/.test(bothBlank[k].text)) wrong.push(`both-blank ${k}: "${bothBlank[k].text}"`);
+  }
+  const allWhy = [theirsBlank, mineBlank, bothBlank].flatMap((o) => Object.values(o).map((r) => r.text));
+  const vague = allWhy.filter((t) => /by both of you|on both profiles|have not both/i.test(t));
+  if (!wrong.length && !vague.length) ok("every unknown How-you-match line says whose side is blank (you, they, or neither)");
+  else fail(`an unknown line does not name the blank side: ${JSON.stringify(wrong.concat(vague))}`);
   // PACE IS KNOWN THE SAME WAY BY BOTH (browser pass 2026-11-18). A signed-in viewer's pace is MY_PACE, not a field on
   // ME (id 0); compatParts reads it through paceOf() and compatUnknown read the bare field, so every signed-in card said
   // "based on limited info" while its pace line had an answer.

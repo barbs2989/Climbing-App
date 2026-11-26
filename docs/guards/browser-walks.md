@@ -1051,6 +1051,13 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     a bounded `max-height` is the latent one — not overflowing with the demo's data, but it
     will the moment a real account has more, and then it chains identically. Requiring
     current overflow would make coverage a function of how much seed data happens to exist.
+  - **A box NESTED in a sheet that contains may chain (2026-11-26).** The rule was "every scroller
+    in an overlay declares contain", and that is what made the edit sheet trap drags: its form body,
+    long-text editors and current-value box all contained, so a finger that landed on one could not
+    scroll the sheet (owner note: "Edit in a climb, sometimes get stuck when you were trying to
+    scroll"). A region now passes when it contains the drag OR a scroll container around it, inside
+    the overlay, does: the drag's chain stops before the page either way. The edit sheet's nested
+    boxes declare `"auto"` and `check:scroll-containment`'s NESTED rule pins them.
   - Overlay discovery and the `?z=` opener are shared with `check:zero` and
     `check:signed-in` via `scripts/lib/overlay-scaffold.mjs`, so the three cannot drift on
     which modals exist. It runs against the **populated** demo, not the zero state: at zero

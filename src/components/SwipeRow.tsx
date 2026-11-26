@@ -18,6 +18,12 @@ export interface SwipeRowProps {
    *  Clear buttons and a notification its ⋯ menu, and beside those the column said the same thing twice
    *  and, in the narrow Notifications drop-down, squeezed the text to a sliver (owner 2026-11-04). */
   hover?: boolean;
+  /** A row inside a divided list (a Saved list, a list's climbs): no gap under it and square corners, so the list's own dividers stay where they were. */
+  flush?: boolean;
+  /** Space under the row, when the list's own rhythm is not the default 8px (Objectives' cards sit 13px apart). */
+  gap?: number;
+  /** The fill the sliding row is drawn on, so the red reveal behind it does not show through a transparent row. */
+  bg?: string;
   children?: ReactNode;
 }
 
@@ -29,7 +35,7 @@ export interface SwipeRowProps {
  * back WITHOUT acting; touchAction pan-y leaves vertical scrolling to the browser and horizontal drags
  * to this. Reads core (`C`) at render time only.
  */
-export default function SwipeRow({ onDelete, radius, action, onArchive, hover, children }: SwipeRowProps) {
+export default function SwipeRow({ onDelete, radius, action, onArchive, hover, flush, gap, bg, children }: SwipeRowProps) {
   const [dx, setDx] = useState(0);
   const sx = useRef(0), sy = useRef(0), act = useRef(false), cur = useRef(0);
   const put = function (v: number) { cur.current = v; setDx(v); };
@@ -58,14 +64,14 @@ export default function SwipeRow({ onDelete, radius, action, onArchive, hover, c
   const Verb = verb.charAt(0).toUpperCase() + verb.slice(1);
   const actBtn = { ...BTN_SM, border: "1px solid " + C.border, background: C.card, color: C.text, whiteSpace: "nowrap" as const };
   return (
-    <div className={wide ? "cm-swipe" : undefined} style={{ position: "relative", overflow: "hidden", borderRadius: radius || 13, marginBottom: 8, display: acts ? "flex" : undefined, alignItems: acts ? "center" : undefined }}>
+    <div className={wide ? "cm-swipe" : undefined} style={{ position: "relative", overflow: "hidden", borderRadius: flush ? 0 : radius || 13, marginBottom: gap != null ? gap : flush ? 0 : 8, display: acts ? "flex" : undefined, alignItems: acts ? "center" : undefined }}>
       <div aria-hidden="true" style={{ position: "absolute", top: 0, right: 0, bottom: 0, left: 0, background: hot ? C.redSolid : C.redBg, display: "flex", alignItems: "center", justifyContent: "flex-end", paddingRight: 18, color: hot ? C.onSolid : C.red, fontWeight: 800, fontSize: 13, opacity: dx < -6 ? 1 : 0, transition: "background .12s" }}>
         {hot ? "Release to " + verb : tx("← Swipe further to ") + verb}
       </div>
       {onArchive ? <div aria-hidden="true" style={{ position: "absolute", top: 0, right: 0, bottom: 0, left: 0, background: hotR ? C.actionSolid : C.blueBg, display: "flex", alignItems: "center", justifyContent: "flex-start", paddingLeft: 18, color: hotR ? C.onSolid : "#fff", fontWeight: 800, fontSize: 13, opacity: dx > 6 ? 1 : 0, transition: "background .12s" }}>
         {hotR ? "Release to archive" : tx("Swipe further to archive →")}
       </div> : null}
-      <div onTouchStart={start} onTouchMove={move} onTouchEnd={end} onTouchCancel={cancel} style={{ transform: "translateX(" + dx + "px)", transition: dx ? "none" : "transform .2s ease", position: "relative", touchAction: "pan-y", flex: acts ? "1 1 0" : undefined, minWidth: 0 }}>
+      <div onTouchStart={start} onTouchMove={move} onTouchEnd={end} onTouchCancel={cancel} style={{ transform: "translateX(" + dx + "px)", transition: dx ? "none" : "transform .2s ease", position: "relative", touchAction: "pan-y", background: bg, flex: acts ? "1 1 0" : undefined, minWidth: 0 }}>
         {children}
       </div>
       {acts ? <div className="cm-swipe-acts" style={{ display: "flex", alignItems: "center", gap: 6, paddingLeft: 8, flexShrink: 0 }}>

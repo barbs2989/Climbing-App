@@ -1688,3 +1688,56 @@ rows. Its build script is gone; new reviews write the column.
     all-climbing range. It never reaches `dayFlags`, a flag level, a day-tab dot, a count or a start time,
     and uses no red or amber. `check:alpine-conditions` section 17 holds each of those. Do not add a
     default range or a preset here without a source that states one.
+
+## The score against the forecast, and against outside forecasts (2026-11-26)
+
+- **`npm run audit:conditions-forecast`** (`scripts/audit-conditions-vs-forecast.mjs`) runs the app's OWN crag
+  read and score (`fetchCragForecastMeasured` + `scoreForecast`, default prefs) and the forecast panel's read
+  (`fetchForecastRaw`, bucketed as `WeatherPanel` buckets it) at a sample of crags and regions from
+  `audits/season/systems-v2.json` (default 3 per state or province), then fetches the NWS gridpoint QPF and MET
+  Norway at the same point. Per crag-day: **C1** the score card and the panel disagree on the day's rain;
+  **C2** the panel's day label reads dry on a 0.10"+ day; **C3** a Good (4+) window both outside sources put rain in;
+  **C4** a rain cap whose causing rain neither outside source has. It also prints wet-day agreement (>= 0.04").
+  No database: coordinates only, so rock is unknown (36 h to dry) and sun is left out — neither moves a rain cap.
+- **Measured 2026-11-26, 166 crags in 59 states and provinces, 1,162 crag-days, before the fixes:** wet-day agreement
+  NWS 90.5%, MET 89.9% (the October audit's figure holds). C2 **192** (17% of days: a 0.46" day read "Overcast",
+  0.25" read "Fog", 0.12" read "Mostly clear" — the label was the most COMMON hourly code); C1 **12**, every one the
+  midnight hour (the rain of 11 PM-midnight) filed under the next day by the panel and the day it fell by the score;
+  C3 **0**; C4 **5**, all light model-only rain 2-5 days out a few hours earlier than NWS/MET (model timing, not score
+  logic). Fixed: `lib/wxDayLabel.js` labels a measurable-rain day by its rain (thunder first), and the panel files
+  the midnight value under the day before. **After, same 166 crags:** C1 0, C2 0, C3 0, C4 5 (light rain only our NBM blend has, 2-5 days out: Devil's Lake WI 0.07", SE Ohio 0.12" — model disagreement the score follows honestly); wet-day agreement NWS 90.9%, MET 89.9%.
+- **Not findings, do not re-derive:** a Good day with rain in its total is correct when the rain falls outside the
+  best window (Overlook Area MA: 0.75" from 5 PM, window 9 AM-noon, dry in all three sources); per-hour codes and
+  rain never disagreed (0 of 469 wet hours carried a dry code — NBM gives no `weather_code`, so codes come from the
+  default model, which still matched).
+- Same audit, alpine: a **scramble** had the wet-rock flag only for rain in the 48 h BEFORE the day, though the
+  October research table says scrambling leads with wet rock; the same-day showers flag now covers scrambles
+  ("downclimbing wet rock"), pinned in `check:alpine-conditions`.
+- **The NWS hourly graph link** (owner note 2026-11-26, "didn't work") opened NWS's Hourly Weather Graph PAGE, which
+  NWS lists as a known issue that "break[s] responsive design on smaller screens such as mobile devices" (962 px wide
+  in a phone window). The row now opens the graph IMAGE (`meteograms/Plotter.php`) once `fetchNwsZone` has the
+  point's office and zone; pinned in `check:conditions-score` section 8.
+
+## The climbs behind a Ranks number add up to it (2026-11-26, `check:rank-breakdown`)
+- **What it holds.** Tapping a number on Ranks opens *How N points add up* (`lib/RankBreakdown.jsx`), which lists
+  the logs `rank_breakdown()` (0357, last 0427) returns with what each adds. The board's number comes from
+  `leaderboard()` (0379, last 0434). The breakdown COPIES the board's counting for one climber; the guard reads the
+  last `create or replace` of each across `supabase/migrations/` (number order), drops comments and short table
+  aliases (`vl.`, `c.`, `ro.`), and requires 14 named rules to match in both: log source, the Conditions exclusion,
+  rock as trad, Vert's height, tier weights, the 365-day window, the grade scale, the not-sent tick list, first-log
+  order, the Top-rope/Follow penalty, the Send and Onsight formulas, which ticks are onsights, and the summit test.
+- **A rule that no longer matches either body FAILS** ("reworded? update RULES"), so rewording the SQL cannot turn
+  the guard blind; update the pattern with the rewording.
+- **It also checks the screen's words**: the sheet's HOW sentences print `8 + grade² × 0.35`, `10 + grade² × 0.3`,
+  `×1 / ×0.75 / ×0.5`, "each letter a quarter" / "one letter lower" (0.25) and "12 months" (365); each is read from
+  the SQL and must appear in the file.
+- **And the board list** (0379's `metric` CTE `d(disc)` and `b(board)` VALUES) against `DISCS` and `B` in
+  `lib/Leaderboards.jsx` (boards with `routes:true` are not ranked by the server). `catches` is declared
+  server-only with its reason; any other difference fails.
+- **What it cannot see**: that each board's VALUE in `scored` maps to the same stat as `B[...].val` (only ids are
+  compared), and the client's own aggregation in `itemsFor()` (best log per route, distinct days, distinct peaks)
+  beyond the type and backed filters. The 8 = 8 live check in #2654 covered those once.
+- **First run (2026-11-26)**: 0 findings in the SQL — 0427 and 0434 each re-created one of the two and kept it in
+  step, which is why the guard reads the LATEST body rather than 0357/0379 (a reader of the feature doc would have
+  checked those). `--selftest` mutates each side in memory (10 cases) and requires every one to fail; it refuses to
+  run on a tree that already fails.

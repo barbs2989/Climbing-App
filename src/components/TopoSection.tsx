@@ -197,7 +197,7 @@ export default function TopoSection({route}: TopoSectionProps){
     {!photos.length?
       <div style={{background:C.card,border:"1px dashed "+C.border,borderRadius:12,padding:"22px 16px",textAlign:"center"}}>
         <div style={{marginBottom:6,opacity:0.75,display:"flex",justifyContent:"center"}}><ActionIcon name="camera" size={24} color={C.textMuted}/></div>
-        <div style={{fontSize:12,fontWeight:700,color:C.textMuted,marginBottom:4}}>{topoCopy.head}</div>
+        <div style={{fontSize:12,fontWeight:700,color:C.label,marginBottom:4}}>{topoCopy.head}</div>
         <div style={{fontSize:12,color:C.textMuted,lineHeight:1.5,marginBottom:11}}>{topoCopy.body}</div>
         <button onClick={pickFile} disabled={busy} style={{padding:"8px 16px",borderRadius:9,border:"1px solid "+C.blueDim,background:busy?C.card:C.blueBg,color:busy?C.textMuted:"#fff",fontSize:12.5,fontWeight:700,cursor:busy?"default":"pointer"}}>{busy?"Uploading…":"Add a topo photo"}</button>
       </div>

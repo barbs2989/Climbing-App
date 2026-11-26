@@ -310,6 +310,13 @@ eq("an inch or more of new snow on a scramble is flagged (it becomes a winter cl
 console.log("\n4. ALPINE ROCK — showers and storms anchor the start of the DESCENT");
 const shw = run(forecast((d, h) => (d === T && h >= 12 && h < 16 ? { pp: 50, fl: 12000 } : { fl: 12000 })), { kind: "alpinerock", terrain: { snow: "no" }, highFt: 8000, legs: LEGS });
 eq("a 50% afternoon chance of rain is a showers caution", keys(shw).includes("showers:caution"), true);
+// A SCRAMBLE IN THE RAIN (audit 2026-11-26): scrambling leads with wet rock, but only the 48 h BEFORE the day was read.
+{
+  const scw = forecast((d, h) => (d === T && h >= 12 && h < 16 ? { pp: 60, rain: 0.1, fl: 12000 } : { fl: 12000 }));
+  const sf = run(scw, { kind: "scramble", terrain: { snow: "no" }, highFt: 8000, legs: LEGS }).flags.find((f) => f.key === "showers");
+  eq("a scramble on a day forecast to rain gets the showers caution too", !!sf && sf.level === "caution", true);
+  eq("...worded for a scramble: downclimbing, not rappelling", sf ? /downclimbing wet rock/.test(A.flagText(sf, scw)) && !/rappelling/.test(A.flagText(sf, scw)) : false, true);
+}
 // THE AMOUNT, NOT ONLY THE CHANCE (owner's note, 2026-10-28: "it usually says a percentage, but not an expected amount of rain").
 {
   const wetFc = forecast((d, h) => (d === T && h >= 13 && h < 16 ? { pp: 60, rain: 0.04, fl: 12000 } : { fl: 12000 }));
@@ -465,11 +472,11 @@ eq("...and with no height on file it asks for none, rather than inventing one", 
 eq("a snow route mounts the season section", /Climate at the top/.test(glHtml), true);
 eq("a failed climate read says it says nothing about the season", /st\.error\) return[\s\S]{0,300}Couldn’t load the climate\. This says nothing about the season\./.test(card), true);
 eq("...and the season says where it was read and that it is a guide, not a forecast", /"Averages for " \+ m\.years \+ " at "[\s\S]{0,160}a guide to the season, not a forecast\./.test(card), true);
-// MODELS DISAGREE. One day, three models, every hour the same value per model.
+// MODELS DISAGREE. One day, three of the six models, every hour the same value per model (three: the range is untrimmed).
 const SPD = (gusts, highs, fls) => {
   const time = [], H = { time }, t0 = Date.UTC(2026, 0, 15) / 1000;
   for (let i = 0; i < 24; i++) time.push(t0 + i * 3600);
-  ["gfs_seamless", "icon_seamless", "ecmwf_ifs025"].forEach((m, j) => { H["wind_gusts_10m_" + m] = time.map(() => gusts[j]); H["temperature_2m_" + m] = time.map(() => highs[j]); H["freezing_level_height_" + m] = time.map(() => fls[j]); });
+  ["gfs_seamless", "icon_seamless", "ecmwf_ifs"].forEach((m, j) => { H["wind_gusts_10m_" + m] = time.map(() => gusts[j]); H["temperature_2m_" + m] = time.map(() => highs[j]); H["freezing_level_height_" + m] = time.map(() => fls[j]); });
   return { utc_offset_seconds: 0, hourly: H };
 };
 const msA = A.modelSpread(SPD([20, 30, 65], [30, 32, 31], [8000, 8500, null]), "2026-01-15");
@@ -480,7 +487,7 @@ const msC = A.modelSpread(SPD([20, 25, 30], [30, 32, 31], [8000, 8500, null]), "
 eq("...and ordinary disagreement (gusts 10 mph apart) flags nothing", msC && msC.over, []);
 {
   // RAIN totals (2026-10-28): Baker's models split 0.04" to 1.56" on one day while NWS sat at 0.06": the amount we print is one model's.
-  const rainy = (per) => { const s = SPD([20, 25, 30], [30, 32, 31], [8000, 8500, 8200]); ["gfs_seamless", "icon_seamless", "ecmwf_ifs025"].forEach((m, j) => { s.hourly["precipitation_" + m] = s.hourly.time.map(() => per[j] / 24); }); return s; };
+  const rainy = (per) => { const s = SPD([20, 25, 30], [30, 32, 31], [8000, 8500, 8200]); ["gfs_seamless", "icon_seamless", "ecmwf_ifs"].forEach((m, j) => { s.hourly["precipitation_" + m] = s.hourly.time.map(() => per[j] / 24); }); return s; };
   const r1 = A.modelSpread(rainy([0.04, 0.9, 1.56]), "2026-01-15"), r2 = A.modelSpread(rainy([1.2, 1.5, 1.8]), "2026-01-15"), r3 = A.modelSpread(rainy([0.05, 0.1, 0.3]), "2026-01-15");
   eq("models 0.04\"-1.56\" apart on the day's rain flag it; 1.2\"-1.8\" (all wet) and 0.05\"-0.3\" (all light) do not", [r1 && r1.over, r2 && r2.over, r3 && r3.over], [["rain"], [], []]);
   // A wet day against a dry one, under the 0.5" gap; and the amount the CARD PRINTS joins the comparison (catalog audit 2026-10-29: Mount Adams 0.29" shown, 0.00-0.09" from the three models).
@@ -489,6 +496,29 @@ eq("...and ordinary disagreement (gusts 10 mph apart) flags nothing", msC && msC
   eq("the card passes the amount it prints into the comparison", /modelSpread\(sp, d\.date, null, daySummary\(fc, d\)\.precip\)/.test(readAppFile(path.join(ROOT, "lib", "AlpineConditionsCard.jsx"))), true);
   eq("...and the flag states the range", /rain 0\.04"–1\.56"/.test(A.flagText({ key: "models-disagree", level: "caution", v: r1 })), true);
   eq("...from a spread read that asks for precipitation", /export function fetchAlpineSpread[\s\S]{0,700}freezing_level_height,precipitation&models=/.test(fs.readFileSync(path.join(ROOT, "lib", "forecast.js"), "utf8")), true);
+}
+{
+  // SIX MODELS (Windy audit 2026-11-25): with four or more answering, one model alone off on its own is an outlier,
+  // not a split -- the range drops the single highest and lowest. Baker 2026-11-30: one model at 64 mph, four at ~20.
+  const SIX = ["ecmwf_ifs", "ecmwf_aifs025_single", "gfs_seamless", "icon_seamless", "gem_seamless", "ukmo_seamless"];
+  const six = (gusts, rain) => {
+    const time = [], H = { time }, t0 = Date.UTC(2026, 0, 15) / 1000;
+    for (let i = 0; i < 24; i++) time.push(t0 + i * 3600);
+    SIX.forEach((m, j) => { H["temperature_2m_" + m] = time.map((_, i) => 30 + (i === 12 ? 2 : 0)); H["precipitation_" + m] = time.map(() => rain[j] / 24); if (gusts[j] != null) H["wind_gusts_10m_" + m] = time.map(() => gusts[j]); });
+    return { utc_offset_seconds: 0, hourly: H };
+  };
+  const lone = A.modelSpread(six([19, null, 20, 21, 20, 64], [0.1, 0.1, 0.1, 0.1, 0.1, 0.1]), "2026-01-15");
+  const split = A.modelSpread(six([15, null, 40, 45, 73, 77], [0.1, 0.1, 0.1, 0.1, 0.1, 0.1]), "2026-01-15");
+  const wetDry = A.modelSpread(six([20, null, 20, 20, 20, 20], [0, 0, 0.01, 0.3, 0.4, 0.5]), "2026-01-15"), oneWet = A.modelSpread(six([20, null, 20, 20, 20, 20], [0, 0, 0, 0, 0.01, 0.5]), "2026-01-15");
+  eq("one model's 64 mph against four at ~20 flags nothing; 40-73 mph across the middle four does", [lone && lone.over, split && split.over, split && split.gust], [[], ["gust"], [40, 73]]);
+  eq("...and rain: two dry models against three wet ones flags, one wet model against five dry does not", [wetDry && wetDry.over, oneWet && oneWet.over], [["rain"], []]);
+  const rows = A.modelDays(six([15, null, 40, 45, 73, 77], [0, 0, 0.01, 0.3, 0.4, 0.5]), "2026-01-15");
+  eq("the FORECAST MODELS table gets one row per model, in order, with a model's missing gusts as null (never 0)", [rows.map((r) => r.model), rows[1].gust, rows[0].hi, rows[0].lo, rows[5].rain.toFixed(2), rows[0].fl], [SIX, null, 32, 30, "0.50", null]);
+  const fc = fs.readFileSync(path.join(ROOT, "lib", "forecast.js"), "utf8");
+  eq("the spread read asks for all six models, ECMWF at 9 km, and names each on screen", [/export const SPREAD_MODELS = \["ecmwf_ifs", "ecmwf_aifs025_single", "gfs_seamless", "icon_seamless", "gem_seamless", "ukmo_seamless"\]/.test(fc), SIX.every((m) => new RegExp("\\b" + m + ": \"").test(fc))], [true, true]);
+  eq("both cards draw the FORECAST MODELS table from that read",
+    [/<ForecastModels head=\{<DayHead title="FORECAST MODELS"[^\n]{0,200}rows=\{sp \? modelDays\(sp, day\.date\) : \[\]\} state=\{sp \? "ok" : spErr \? "error" : "loading"\}/.test(readAppFile(path.join(ROOT, "lib", "AlpineConditionsCard.jsx"))),
+      /sec\("Forecast models",<ForecastModels head=\{null\} rows=\{sp\?modelDays\(sp,day\.date\)/.test(fs.readFileSync(path.join(ROOT, "src", "components", "ConditionsScoreCard.tsx"), "utf8"))], [true, true]);
 }
 {
   // NO STATED HEIGHT (census 2026-10-29: 4,903 of 6,208 alpine-kind routes): the forecast's own ground height stands in, so the summit flags can fire.
@@ -506,7 +536,7 @@ for (const units of ["imperial", "metric"]) {
   eq(`the disagreement flag words itself in ${units} units`, [/undefined|NaN|null/.test(t), units === "metric" ? /\bft\b|mph|°F/.test(t) : /km\/h| m\b/.test(t)], [false, false]);
 }
 A.__set_UNITS("imperial");
-eq("the card adds that flag only to a day the models disagree on, from a second read that adds NOTHING when it fails", /fetchAlpineSpread\([\s\S]{0,200}function \(\) \{ if \(live\) setSp\(null\); \}/.test(card) && /if \(ms && ms\.over\.length\) r = /.test(card), true);
+eq("the card adds that flag only to a day the models disagree on, from a second read that adds NOTHING when it fails", /fetchAlpineSpread\([\s\S]{0,200}function \(\) \{ if \(live\) \{ setSp\(null\); setSpErr\(true\); \} \}/.test(card) && /if \(ms && ms\.over\.length\) r = /.test(card), true);
 eq("a start counted back from STORED legs says they are a fit party's times, so a slower party starts earlier", /P\.legsStored \? "\. Times are this route’s published times for a fit party \(Plan tab\), so a slower party should start earlier\."/.test(card), true);
 const code = card.replace(/\/\*[\s\S]*?\*\//g, "").replace(/(^|[^:])\/\/.*$/gm, "$1");
 eq("no provider is named on screen (comments aside)", code.match(/NWAC|avalanche\.org|SNOTEL|NRCS|CAIC|USDA/g), null);

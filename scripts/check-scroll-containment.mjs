@@ -82,7 +82,7 @@ if (panes < 40) {
 }
 if (bad.length) {
   console.error(`${G} FAILED — ${bad.length} scroll pane(s) with no overscrollBehavior. A drag that reaches the end of one`);
-  console.error(`hands the gesture to the page behind it, and on a phone the pane reads as stuck. Add overscrollBehavior:"contain".\n`);
+  console.error(`hands the gesture to the page behind it, and on a phone the pane reads as stuck. Add overscrollBehavior:"contain" on a sheet's OUTER scroller, "auto" on a box nested inside one (see NESTED below).\n`);
   for (const b of bad) console.error("  " + b);
   process.exit(1);
 }
@@ -142,3 +142,38 @@ if (lockers.length) {
   process.exit(1);
 }
 console.log(`  ok    only ${LOCK_OWNER} writes the page's scroll lock (${scanned.length} files, 5 spellings)`);
+
+// ── A box NESTED in a sheet hands the drag ON; only the sheet contains it ──
+// Owner note 2026-11-26: "Edit in a climb, sometimes get stuck when you were trying to scroll".
+// The rule above says every pane DECLARES its overscroll, and the declaration everyone reached for
+// was "contain". On a box inside a sheet that scrolls, "contain" is the bug: a drag that starts on
+// the box scrolls the box, and at its end (or at once, when its text fits) the sheet does not move.
+// Measured in Chrome at 390x844 with raw touch (CDP Input.dispatchTouchEvent): a description box
+// holding ONE line, "contain", moved the edit sheet 0px under a 200px drag; "auto", 239px. The
+// edit sheet nested three such boxes (its form body, every long-text editor, a field's
+// current-value box). They declare "auto": the sheet's card and backdrop still contain, and
+// lib/dialogA11y.js locks the page, so nothing behind the sheet moves.
+// NESTED: [file, a test that picks out ONE scroll pane's opening tag + style, why it chains].
+const NESTED = [
+  ["src/components/RichEditor.tsx", /role="textbox"/, "the long-text editor: it always sits in a sheet or the page"],
+  ["src/components/SuggestFix.tsx", /ref=\{scrollRef\}/, "the edit sheet's form body: the card around it contains"],
+  ["src/components/SuggestFix.tsx", /maxHeight:260/, "a field's current-value box, inside the form body"],
+];
+const nestedBad = [];
+for (const [f, test, why] of NESTED) {
+  const hits = scan(fs.readFileSync(path.join(ROOT, f), "utf8")).filter((p) => test.test(p.opening));
+  if (hits.length !== 1) { nestedBad.push(`${f}: ${test} should pick out ONE scroll pane and picks out ${hits.length}. Re-point it (${why}).`); continue; }
+  if (!/overscrollBehavior\s*:\s*"auto"/.test(hits[0].body)) nestedBad.push(`${f}: ${why}: declares ${(hits[0].body.match(/overscrollBehavior\s*:\s*"\w+"/) || ["no overscrollBehavior"])[0]}, which TRAPS a drag that lands on it. It must be overscrollBehavior:"auto".`);
+}
+// ...and the sheet fits the VISIBLE screen, so its foot is never under Safari's toolbar where no drag can bring it.
+const sf = fs.readFileSync(path.join(ROOT, "src/components/SuggestFix.tsx"), "utf8");
+if (!/maxHeight:"calc\(100dvh - 106px\)"/.test(sf)) nestedBad.push(`src/components/SuggestFix.tsx: the card's maxHeight is no longer calc(100dvh - 106px). 100vh is taller than the visible screen in Safari, so Submit sat under the toolbar.`);
+// ...and the map in it does not take a one-finger drag on a phone (two fingers move it, a tap still places the pin).
+const wmp = fs.readFileSync(path.join(ROOT, "src/components/WaypointMapPicker.tsx"), "utf8");
+if (!/dragging:!coop\b/.test(wmp) || !/\(hover: none\) and \(pointer: coarse\)/.test(wmp)) nestedBad.push(`src/components/WaypointMapPicker.tsx: the map no longer turns one-finger dragging off on a touch screen, so a drag across it pans the map instead of scrolling the edit sheet.`);
+if (nestedBad.length) {
+  console.error(`${G} FAILED — the edit sheet can trap a drag again:`);
+  for (const b of nestedBad) console.error("  " + b);
+  process.exit(1);
+}
+console.log(`  ok    ${NESTED.length} boxes nested in the edit sheet hand a drag on; the sheet fits the visible screen; its map takes two fingers on a phone`);

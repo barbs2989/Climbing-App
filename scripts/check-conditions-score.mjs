@@ -532,7 +532,7 @@ console.log("check:conditions-score");
   if (/data-dew-until="1"[^\n]{0,200}"Air at its dew point until "\+clockHr\(dewTill\.hr\)/.test(rd2) && /const dewTill=[^\n]*\/dew point\/\.test\(c\.why\)/.test(rd2)) ok("...and a dew-capped morning under a Good day says until when, too (most red mornings were dew, not rain)");
   else fail("the dew-morning line is gone: a dew-capped red morning under a Good day is unexplained again");
   // MODELS DISAGREE ON RAIN at a crag too, by the alpine card's rule, with the printed day total in the comparison; a failed read adds nothing.
-  if (/fetchAlpineSpread\(lat,lng,null\)\.then\(function\(j\)\{_cragSp\[ck\]=j;if\(live\)setSp\(j\);\},function\(\)\{if\(live\)setSp\(null\);\}\)/.test(rd2) && /modelSpread\(sp,d\.date,null,d\.rain\)/.test(rd2) && /data-rain-split="1"/.test(rd2)) ok("a crag day the forecast models split on rain says so, with the printed amount in the comparison");
+  if (/fetchAlpineSpread\(lat,lng,null\)\.then\(function\(j\)\{_cragSp\[ck\]=j;if\(live\)setSp\(j\);\},function\(\)\{if\(live\)\{setSp\(null\);setSpErr\(true\);\}\}\)/.test(rd2) && /modelSpread\(sp,d\.date,null,d\.rain\)/.test(rd2) && /data-rain-split="1"/.test(rd2)) ok("a crag day the forecast models split on rain says so, with the printed amount in the comparison");
   else fail("the crag card lost its models-disagree-on-rain line, or reads it without the printed day total");
 }
 function sN0() { return scoreForecast(fixture(), WALL, null, NOW); }
@@ -562,6 +562,37 @@ function sN0() { return scoreForecast(fixture(), WALL, null, NOW); }
   const ap = readAppFile(path.join(ROOT, "src/components/AreaPage.tsx"));
   if (/fetchCragForecastMeasured\(Number\(area\.lat\), Number\(area\.lng\)\)/.test(ap)) ok("a crag's page starts its climbs' conditions read, so the score is usually back before the Conditions tab opens");
   else fail("the area page no longer starts the conditions read: the score waits for its whole read again after the climb opens");
+}
+
+// 8. ONE TAB AGREES WITH ITSELF ABOUT RAIN (audit 2026-11-26, scripts/audit-conditions-vs-forecast.mjs, 166 crags in 59
+//    states and provinces): the forecast panel under the score labelled 192 of 1,162 crag-days "Overcast", "Mostly clear" or
+//    "Fog" while printing 0.10"+ of rain -- its day label was the most COMMON hourly code -- and counted the midnight hour's
+//    rain into the next day where the score counts it into the day it fell, so the two cards printed 0.18" and 0.41" for one day.
+console.log("\n8. ONE TAB — the forecast panel and the score agree about rain");
+{
+  const { labelCodeOf } = await import("../lib/wxDayLabel.js");
+  const codes = Array(18).fill(3).concat(Array(6).fill(63)), rain = Array(18).fill(0).concat(Array(6).fill(0.077));
+  if (labelCodeOf(codes, rain) === 63) ok("a day with 0.46\" in six rainy hours and eighteen grey ones is labelled by its rain, not \"Overcast\"");
+  else fail(`a wet day is labelled by its most common hour (${labelCodeOf(codes, rain)}), not its rain`);
+  const t = codes.slice(); t[20] = 95;
+  if (labelCodeOf(t, rain) === 95) ok("a thunderstorm hour labels the day, whatever else it holds");
+  else fail("a day with a thunderstorm hour is not labelled a thunderstorm");
+  if (labelCodeOf(Array(20).fill(1).concat(Array(4).fill(51)), Array(20).fill(0).concat([0.002, 0, 0, 0])) === 1) ok("a trace under 0.01\" (NWS's measurable) keeps the day's most common sky");
+  else fail("a trace of drizzle relabels an otherwise clear day");
+  const wp = readAppFile(path.join(ROOT, "src/components/WeatherPanel.tsx"));
+  if (/const wxCode=labelCodeOf\(d\.codes,d\.codeRain\)/.test(wp) && /const pCode=labelCodeOf\(b\.codes,b\.codeRain\)/.test(wp)) ok("the panel's day and part labels both come from labelCodeOf, paired with the same hours' rain");
+  else fail("WeatherPanel labels a day or a part some other way than labelCodeOf(codes, the same hours' rain)");
+  if (/const began=hr===0\?byDay\[prevDayStr\(date\)\]:dd;\s*if\(began\)\{began\.precips\.push\(h\.precipitation\[i\]\)/.test(wp)) ok("the panel counts the midnight hour's rain into the day it fell, as the score does");
+  else fail("WeatherPanel's day rain no longer files the midnight value under the day before: the two cards can disagree by an hour's rain");
+  // THE NWS HOURLY GRAPH (owner note 2026-11-26: "NWS Hourly graph link didn't work"): NWS's own known issue is that the graph PAGE
+  // breaks on a phone, so the row opens the graph IMAGE once the point's office and zone are known.
+  const { nwsGraphUrl } = await import("../lib/forecast.js");
+  const g = nwsGraphUrl(48.52, -121.03, { wfo: "SEW", zone: "WAZ301" }, true);
+  if (/^https:\/\/forecast\.weather\.gov\/meteograms\/Plotter\.php\?lat=48\.5200&lon=-121\.0300&wfo=SEW&zcode=WAZ301&.*unit=1&/.test(g)) ok("the NWS hourly graph is the graph image at the point, with its office and zone, in the climber's units");
+  else fail("nwsGraphUrl no longer builds the Plotter image URL with the point, office, zone and unit: " + g);
+  const rd = readAppFile(path.join(ROOT, "RouteDetail.jsx"));
+  if (/out\.push\(\{n:"NWS hourly graph",u:graph\|\|/.test(rd) && /forecastLinksOf\(route,mtn,showScore,nwsGraph\)/.test(rd) && /fetchNwsZone\(_gLat,_gLng\)\.then/.test(rd)) ok("the NWS hourly graph row opens that image once the zone lookup answers, and the page only until then");
+  else fail("the NWS hourly graph row no longer takes the looked-up graph image: it opens the page NWS says breaks on a phone");
 }
 
 console.log(failed ? `\ncheck:conditions-score: ${failed} FAILED` : "\ncheck:conditions-score: all passed");

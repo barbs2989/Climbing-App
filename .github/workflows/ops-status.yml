@@ -1,0 +1,59 @@
+name: Ops status
+
+# ONE place that says whether anything on main is red, and since when: a single GitHub issue labelled
+# ops-status, opened (with a notification) when a workflow on main goes red, commented on only when the
+# SET of red workflows changes, and closed when everything is green again. scripts/ops-status.mjs does
+# the work; `npm run ops:status` prints the same report locally.
+#
+# Why (maintenance audit, 2026-11-26, docs/codebase/maintainability.md): every failing workflow emailed
+# the owner on its own, nothing said how long it had been red, and four checks sat red on main for 1-5
+# days each before somebody happened to look.
+#
+# TRIGGERED BY OTHER WORKFLOWS FINISHING, not by a clock. GitHub dropped 137 of deploy-drift's 144
+# scheduled runs in the 72 h measured; a workflow_run event is not a scheduled event and is not shed
+# that way. The daily cron is only a backstop for a day when nothing ran at all.
+
+on:
+  workflow_run:
+    workflows:
+      - Area count drift check
+      - Deploy drift check
+      - Deploy to GitHub Pages
+      - Live site check
+      - Rappel length drift check
+      - Render guards
+      - Silent reverts
+      - Offline state files (nightly)
+      - Trailhead direction shape check
+      - Zero state
+    types: [completed]
+    branches: [main]
+  schedule:
+    - cron: "5 16 * * *"
+  workflow_dispatch:
+
+# A superseded run would only post a report that is already out of date.
+concurrency:
+  group: ops-status
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+  actions: read
+  issues: write
+  pull-requests: read
+
+jobs:
+  status:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: 22
+      # No npm ci: the script uses only node built-ins and the gh CLI the runner ships.
+      - name: Update the ops-status issue
+        run: node scripts/ops-status.mjs --issue
+        env:
+          GH_TOKEN: ${{ github.token }}
