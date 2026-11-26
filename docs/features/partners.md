@@ -11,24 +11,31 @@ whole guide feature on 2026-11-14 (owner). This doc covers the partners mode (`l
   reaching down only from below the state since 0311). Under Near my areas and By Area a listed climber's row carries
   *Plan a session at <area>*, which opens the Start-a-crew sheet at that area with them invited. Alpine, mountaineering,
   scrambling, ice and mixed stay route-based through saved objectives. A crag-route objective is a tick list, not a match signal.
-- **Results first** (competitor review item 16, owner 2026-11-04, built 2026-11-05 — Meetup's layout, phone and website): the screen opens with a
-  title that STATES the search ("Climbers who climb where you do", "Climbers in Index", "Climbers who want
-  Liberty Crack"; the distance is on its own pill, not repeated in the title), then — signed in — the **You card**, then ONE wrapping row of pills (`role="group"` *Narrow the list*): **Search by ▾** (the five modes, a native select drawn
-  as a pill), **Distance ▾** (ONE pill: Anywhere · Within 10 / 25 / 50 / 100 / 200 / 500 mi of <zip> · Near me now, then the same radii "of you now" once located),
-  **Discipline ▾**, **Leads ▾** once a roped discipline (sport, trad, alpine, ice, mixed, aid) is picked, and **More filters** in every mode, signed in or not
-  (since 2026-11-18; the non-gender filters were on the example-list modes only). The More filters panel opens right under the row: first **Show only**, one chip per gender
+- **Laid out like Join a crew** (owner note 2026-11-25: "make the partners tab look and resemble closer to what finding a crew looks like visually"):
+  under the name search the screen reads, top to bottom, as `CrewFinder` does: the heading **FIND PARTNERS BY** over a group of buttons
+  (`role="group"` *Find partners by*; the current one says `aria-current`) drawn exactly as *Find a crew by*'s — two across, 10px corners,
+  12.5px semibold, blue while chosen, the odd last one full width — in its order and words; then the picker the choice needs (By Area's
+  *Where to look*, By Route's route search; By Peak's peak search sits at the head of its results); then one line saying what the choice finds
+  (My climbs & areas, Everyone — signed in too, since every filter narrows the real lists); then — signed in — the **You card** (the crew pane's
+  My areas row); then ONE wrapping filter row (`role="group"` *Narrow the list*): **Discipline ▾**, **Distance ▾** (ONE pill: Anywhere · Within
+  10 / 25 / 50 / 100 / 200 / 500 mi of <zip> · Near me now, then the same radii "of you now" once located), **Leads ▾** once a roped discipline
+  (sport, trad, alpine, ice, mixed, aid) is picked, and **Filters** (*Hide filters* while open, as crews' button reads; it was *More filters* with a
+  chevron) in every mode, signed in or not. The panel opens right under the row: first **Show only**, one chip per gender
   (Women · Men · Non-binary · Genderqueer · Genderfluid · Agender · Two-Spirit, `aria-pressed`; tick several; signed in), then **Experience** — Any / Beginner /
-  Intermediate / Advanced / Expert chips, moved in from the row (owner 2026-11-18) — speed match,
-  available to climb, max distance and **Sort** for the examples — Sort only where there are two ways to sort, i.e. a seed coordinate. Its badge
-  counts the panel filters that are on, one per picked gender. The controls are 44px on a phone and 36px on the website (#3156), and since 2026-11-18 (owner) they wear the **Join a crew look** — the *Find a crew by* buttons: two across, 10px corners, 12.5px semibold centred, blue while chosen or set — instead of rounded pills; only the look changed, each is still a dropdown. A dropdown whose longest choice cannot fit half a phone column (Distance with a zip, Leads) takes a row of its own rather than clipping its label, and Discipline sits beside Search by so the short two share a row. Each dropdown draws ONE arrow, the one `index.html` puts on every select (#2585); the row no longer adds a chevron of its own beside it. The name
-  search is an icon pill (*Name*, `aria-expanded`) beside the title that opens the box. Partner cards stay one per row (owner).
-- **The You card — how other climbers find you** (owner, climber walkthrough 2026-11-13): one compact card above the pills holding
+  Intermediate / Advanced / Expert chips — speed match, available to climb, max distance and **Sort** for the examples — Sort only where there are
+  two ways to sort, i.e. a seed coordinate. Its badge counts the panel filters that are on, one per picked gender. The filter-row controls are 44px on
+  a phone and 36px on the website (#3156) and wear the same crew-button look; a dropdown whose longest choice cannot fit half a phone column
+  (Distance with a zip, Leads) takes a row of its own rather than clipping its label. Each dropdown draws ONE arrow, the one `index.html` puts on
+  every select (#2585). Then the results title that STATES the search ("Climbers who climb where you do", "Climbers in Index") and the cards, which
+  already wear the crew card's box (radius 16, padding 16, 24px apart). The *Search by ▾* dropdown that held the five choices until 2026-11-25 is gone.
+  Partner cards stay one per row (owner).
+- **The You card — how other climbers find you** (owner, climber walkthrough 2026-11-13): one compact card above the filter row holding
   everything about YOUR visibility, so the pill row is only "who am I looking for". Its first row is the Join a crew pane's row, word for word
   and at its size (owner 2026-11-24: "it needs to feel consistent"; it replaced, on 2026-11-18, a heading, paragraph, a chip per listed area and a full-width add button that ran a screen deep at 14 areas):
   *You’re listed at N places. Your M saved areas count too.* (or *List the crags and peaks you climb…* with none) beside **My areas** — the label on both screens now (the crew pane's said *Add areas* / *Edit areas*) — which opens
   `MyPartnerAreas` — the only way onto that screen here (the empty card no longer repeats it), and where each listing is changed or removed; then the **I'm free this weekend** switch (`role="switch"`; it writes your own
   `profiles.free_until`, which is why it left the filter row — as a pill there, a tap meant to find free climbers published your status),
-  and at most one hint: listing turned off (*Turn listing on*), the zip read failed (*Couldn’t load your zip code — you can still search near where you are now*), or no gender. With no zip on file, the point-of-use zip form (#3306) sits under the pills in the same card look, as an offer: the lists no longer wait for it (owner 2026-11-24). Ended date windows are NOT flagged here (owner):
+  and at most one hint: listing turned off (*Turn listing on*), the zip read failed (*Couldn’t load your zip code — you can still search near where you are now*), or no gender. With no zip on file, the point-of-use zip form (#3306) sits under the filter row in the same card look, as an offer: the lists no longer wait for it (owner 2026-11-24). Ended date windows are NOT flagged here (owner):
   an ended listing still matches (0311 only drops the dates), and the listing screen already marks it.
 - **Distance defaults to Anywhere in EVERY mode** (owner 2026-11-24, choosing it over the walkthrough rule of 2026-11-14 that kept
   *Near my zip* the default for Everyone and My objectives): with a zip on file Everyone shrank to *within 50 mi*, and a climber
@@ -50,7 +57,7 @@ whole guide feature on 2026-11-14 (owner). This doc covers the partners mode (`l
   compare on `gradeNumFrom`, which reads aid C3 and A3 as the same grade. Changing the discipline clears it; it counts in the clear-filters
   button. Real rows get their `climb_grades` through `usePartnerClimbGrades` (the partner RPCs carry none).
 - **Find someone by name** (DB only): a full-width search bar (min 2 chars) over real profiles, always shown under *Find partners / Join a crew*; the search title sits under the filter pills, above the results (owner 2026-11-14).
-- **Search for partners by** the five choices Join a crew offers, in its order and words (the Search by ▾ pill; owner 2026-11-24, "there's too many
+- **Search for partners by** the five choices Join a crew offers, in its order and words (the *Find partners by* buttons since 2026-11-25, the Search by ▾ pill before; owner 2026-11-24, "there's too many
   options and it's still confusing"): **My climbs & areas**, **By Route**, **By Peak** (signed in), **By Area**, **Everyone** (crews' *Any Crew*).
   **My climbs & areas** (internal mode `mine`, the default) is ONE list, as crews' is: climbers listed where you are listed
   (`usePartnersForMyAreas`), then at your saved areas (`usePartnersInAreas`, at most the first 12, saved peaks too since 0456, a saved country
@@ -78,6 +85,7 @@ whole guide feature on 2026-11-14 (owner). This doc covers the partners mode (`l
 - **Saved vs listed, said where you tap** (owner 2026-11-14): Save area is a private bookmark (`saved_areas`, owner-only); a listing (`partner_areas`) is what other climbers see. The area page's Partners here card says so in one line under its *List me here* button, and the signed-in Save toast reads *Saved — only you see it, in Logbook › Saved* (`src/components/PartnersHereCard.tsx`, `toggleBookmark` in `ClimbMatch.jsx`).
 - **Free this weekend, in Find partners** (owner, Gora audit 2026-10-28): your own *I'm free this weekend* switch sits in the You card (`freeWknd` / `onToggleFreeWknd` from App; `profiles.free_until`; the only place to set it since the Menu card's switch came out 2026-11-25), and climbers who switched it on lead the real list in their existing order, under a line saying how many (`data-free-weekend-count`). Chosen instead of an expiring "climbing today" post.
 - **Join-a-crew cards say size and openings** (owner, Gora audit 2026-10-28): the chip reads "3 of 4 · 1 spot left", or "Full" (`lib/CrewFinder.jsx`).
+- **Join a crew's filters** (`lib/CrewFinder.jsx`, owner 2026-11-25): Discipline, When (incl. *This weekend*: the coming Sat/Sun), Max distance (from the zip), **Grade** (`gradeF`: *I can lead* / *I can lead or follow*, by `crewGradeFit` against `profileGradeRows(ME)`; an area crew or a climb with no single grade is left out while it is on; with no grades on the profile the control is disabled and says to add them), **Open spots** (`spotsF`: room for 2+ / 3+; a crew you already asked to join stays), **Days** (`dayF`: weekends / weekdays; flexible-date crews are left out), and **A friend is in it** (`friendsF`: an organiser or member is a connection, the same test as the card's *N of your friends* line). The badge counts all seven; *Clear filters* resets them. Chosen from Gora (date, discipline, grade on open plans), Meetup (*This weekend*, distance) and Facebook events (friends going).
 - **A crew shared by link** (0381, owner, Gora audit 2026-10-28): `?crew=<share token>` opens Find partners → Join a crew with that crew pinned on top (`CrewShareCard`, `src/components/CrewShareCard.tsx`; not a dialog). It shows the place, the day, "3 of 4 · 1 spot left", and FIRST NAMES ONLY of members who show their name (`crew_share_preview`, callable signed out; everyone else is counted). *Ask to join* files the ordinary pending request (`addCrewMember` as `dbAddCrewMember`); a guest gets *Sign up to join*, and the link is kept on the device (`cm_crew_share`) until joined or dismissed. A link whose crew date has passed, or that the organiser turned off, says so; a failed read never reads as a dead link.
 - **Climbers on ClimbMatch** (signed-in + DB): real, listed climbers (`profiles.discoverable`, on by default since 0195;
   opt out in Settings). Distance chips: Near my zip / Near me now (browser geolocation, rounded to 2 decimals) / Anywhere,
@@ -98,7 +106,7 @@ whole guide feature on 2026-11-14 (owner). This doc covers the partners mode (`l
   **Sending a request** to a real climber without your own photo is refused (`sendReq` in `ClimbMatch.jsx`: *Didn't send
   it — add a profile photo first*) and opens Edit profile on the photo.
 - **Show only these genders** (0359; several at once since 2026-11-18, owner: "they only want to climb with women and non binary"): the
-  *Show only* chips in the *More filters* panel, one per gender a profile can state (`GENDERS` in core), offered to every signed-in
+  *Show only* chips in the *Filters* panel, one per gender a profile can state (`GENDERS` in core), offered to every signed-in
   climber whether or not they have stated their own. With any picked, every real browse list shows only climbers who stated one of
   the picked genders (`usePartnerGenders`, one read of `profiles.gender` for the rows on screen); someone who has not stated one is
   not shown. A loading or failed read shows nobody and says so, never everyone. Name search is not narrowed. Remembered on this
@@ -106,7 +114,7 @@ whole guide feature on 2026-11-14 (owner). This doc covers the partners mode (`l
   climber's own gender until they change the chips. *Clear filters* does not clear it. Pronouns are shown on profiles and filter nothing.
   The You card's hint for a climber with no gender now reads *so climbers who filter by gender can find you*.
 - **Filters** (all narrow the real lists as well as the example profiles): Discipline as a dropdown in the row; Experience (level), Speed match,
-  Available to climb (Weekday mornings / Weekday evenings / Weekend mornings / Weekend evenings / Flexible) and Max distance (examples) behind *More filters*.
+  Available to climb (Weekday mornings / Weekday evenings / Weekend mornings / Weekend evenings / Flexible) and Max distance (examples) behind *Filters*.
   The panel starts CLOSED (its badge counts the active panel filters), on Find partners and on Join a crew alike, so the results come first.
   A filter that empties a list says so; a failed signals read says the list is not narrowed by experience.
 - **ONE partner card** (owner 2026-11-18: "I want you to only have one partner card"; #3416, #3518, #3532): every climber — real or example, on

@@ -47,7 +47,7 @@ function AreaDocTitle({ name }) {
   return null;
 }
 
-export default function DbAreaBrowser({ areaDiscussion, jumpToFinderReq, onSignIn, onLogHere, onOpenRoute, onOpenReport, C, bookmarks, onToggleBookmark, wishlist, profile, completedIds, rankSuggested, discSlots, slotQuery, statedGrades, jumpToStateReq, jumpToAreaReq, jumpToNearReq, uElev, uElevN, uElevUnit, uDistMi, onAreaContext, onFireMap, onAddClimb, onAddArea, TopContributors, rootHeader, onSuggestAreaEdit, myId, PartnerRow, uid, myListings, onListMe, onFindPartnersInArea, onViewProfile, notify, onStartCrew, onCrewsHere, onGroupsHere, openCrewCountAt, onToggleWish, userLists, onToggleListRoute }) {
+export default function DbAreaBrowser({ areaDiscussion, jumpToFinderReq, onSignIn, onLogHere, onOpenRoute, onOpenReport, C, bookmarks, onToggleBookmark, wishlist, profile, completedIds, rankSuggested, discSlots, slotQuery, statedGrades, jumpToStateReq, jumpToAreaReq, jumpToNearReq, uElev, uElevN, uElevUnit, uDistMi, onAreaContext, onFireMap, onAddClimb, onAddArea, TopContributors, rootHeader, onSuggestAreaEdit, myId, PartnerRow, uid, myListings, onListMe, onFindPartnersInArea, onViewProfile, notify, onStartCrew, onCrewsHere, onGroupsHere, openCrewCountAt, onToggleWish, userLists, onToggleListRoute, onCreateListWith }) {
   // Start where the Climbs tab stood when you last left it (lib/climbsReturn.js): picking another tab
   // unmounts this component, and the owner wants Climbs to reopen on the page you were looking at.
   const saved = useRef(getClimbsAreaPos()).current;
@@ -306,7 +306,7 @@ export default function DbAreaBrowser({ areaDiscussion, jumpToFinderReq, onSignI
       ) : !stateNode ? (
         <>{rootHeader || null}<StatePicker onPick={pickState} C={C} /></>
       ) : screen === "finder" ? (
-        <RouteFinderPanel key={current.id + (finderInit ? ":" + finderInit.id : "")} initial={finderInit} scope={current} onOpen={onOpenRoute} onJumpToArea={jumpToArea} C={C} uElevN={uElevN} uElevUnit={uElevUnit} presetDisc={finderDisc} bookmarks={bookmarks} onToggleBookmark={onToggleBookmark} onToggleWish={onToggleWish} userLists={userLists} onToggleListRoute={onToggleListRoute} onAddClimb={onAddClimb} onAddArea={onAddArea} />
+        <RouteFinderPanel key={current.id + (finderInit ? ":" + finderInit.id : "")} initial={finderInit} scope={current} onOpen={onOpenRoute} onJumpToArea={jumpToArea} C={C} uElevN={uElevN} uElevUnit={uElevUnit} presetDisc={finderDisc} bookmarks={bookmarks} onToggleBookmark={onToggleBookmark} onToggleWish={onToggleWish} userLists={userLists} onToggleListRoute={onToggleListRoute} onCreateListWith={onCreateListWith} onAddClimb={onAddClimb} onAddArea={onAddArea} />
       ) : screen === "objectives" ? (
         <ObjectivesPanel area={current} onOpen={onOpenRoute} C={C} />
       ) : (

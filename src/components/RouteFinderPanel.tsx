@@ -36,7 +36,6 @@ type RouteFinderPanelPlace = { name: string; sub: string; lat: number; lng: numb
 type RouteFinderPanelNearSt = { busy: boolean; err: string; hits: RouteFinderPanelPlace[] };
 type RouteFinderPanelAreaHit = { id: string; name: string; area_type: keyof typeof ATYPE; parent_name?: string | null; route_count: number };
 type RouteFinderPanelChip = { k: string; label: string; clear: () => void };
-type RouteFinderPanelSortKey = "name" | "name_desc" | "area" | "lr" | "rl" | "grade_asc" | "grade_desc" | "stars_desc" | "near";
 type RouteFinderPanelList = { id: string; name: string; routeIds?: Array<string | number> };
 type RouteFinderPanelJump = { id: string; name: string };
 export interface RouteFinderPanelProps {
@@ -55,6 +54,8 @@ export interface RouteFinderPanelProps {
   onToggleWish?: ((routeId: string | number) => void) | null;
   userLists?: RouteFinderPanelList[] | null;
   onToggleListRoute?: ((listId: string, routeId: string | number) => void) | null;
+  /** Makes a new custom list holding this one climb (App's createListWithRoute). */
+  onCreateListWith?: ((name: string, routeId: string | number) => void) | null;
   onAddClimb?: AddHereFooterProps["onAddClimb"];
   onAddArea?: AddHereFooterProps["onAddArea"];
   /** Words and filters to open with (the website header's typed search). */
@@ -176,7 +177,6 @@ const gradeSysFor = (discs: string[] | null | undefined, sys: string) => { const
 // Wall order first (owner, 2026-10-21: "grouped by area such as crag or wall so they show up in
 // order"): each wall's climbs together, left to right, under the wall's name.
 const FINDER_SORTS = [["lr", "By wall, left → right"], ["rl", "By wall, right → left"], ["name", "Name A→Z"], ["name_desc", "Name Z→A"], ["stars_desc", "Most starred"]];
-const SORT_PHRASE: Record<string, string> = { name: "name", name_desc: "name (Z→A)", area: "wall", lr: "wall, left to right", rl: "wall, right to left", grade_asc: "easiest", grade_desc: "hardest", stars_desc: "most starred", near: "nearest first" };
 const GROUPED_SORTS: Record<string, number> = { area: 1, lr: 1, rl: 1, near: 1 };
 // A boulder has no left-to-right line on a wall (owner's note, 2026-10-21: "there's no left to right or right to
 // left order ... with bouldering"). With Bouldering the only type picked, the two wall orders become BY BOULDER:
@@ -189,7 +189,17 @@ const NO_WALL_ORDER: Record<string, true> = { bouldering: true, alpine: true, mo
 const noWallOrder = (discs: string[] | null | undefined) => !!discs && discs.length > 0 && discs.every(d => NO_WALL_ORDER[d]);
 const groupWord = (discs: string[] | null | undefined) => boulderOnly(discs) ? "boulder" : discs && discs.length && discs.every(d => d !== "bouldering") ? "peak" : "area";
 const sortsFor = (discs: string[] | null | undefined) => noWallOrder(discs) ? [["area", "By " + groupWord(discs)], ...FINDER_SORTS.slice(2)] : FINDER_SORTS;
-const sortFor = (discs: string[] | null | undefined, s: string) => noWallOrder(discs) && (s === "lr" || s === "rl") ? "area" : s;
+// MORE SORTS (owner's note, 2026-11-25: "you should be able to sort how you want. Find more sorting options"). Mountain
+// Project's Route Finder sorts by popularity, difficulty, name and area; theCrag adds height. Each extra sort here reads
+// a figure the catalog already stores, and only shows where that figure exists, by the same test as its filter
+// (fitsDiscs): no Longest on boulders, no Most pitches on a walk-up, gain only on mountain routes. A climb missing the
+// figure sorts LAST either way (0538). No "Most popular": climb_logs holds a handful of real ascents per state, so it
+// would order by noise. Grade sorts still need a discipline, because grades on two scales do not compare.
+const EXTRA_SORTS: [string, string, string][] = [["classic", "Classics first", ""], ["len_desc", "Longest", "len"], ["len_asc", "Shortest", "len"], ["pitches_desc", "Most pitches", "minPitches"], ["gain_desc", "Most gain", "gain"], ["gain_asc", "Least gain", "gain"]];
+const extraFits = (discs: string[], k: string) => { const e = EXTRA_SORTS.find(x => x[0] === k); return !e || !e[2] || fitsDiscs(discs || [], e[2]); };
+const sortFor = (discs: string[] | null | undefined, s: string): string => noWallOrder(discs) && (s === "lr" || s === "rl") ? "area" : !extraFits(discs || [], s) ? sortFor(discs, "lr") : s;
+// Every sort the finder offers for these disciplines, in the order the sheet and the Sort menu list them.
+const sortChoices = (discs: string[], near: boolean): string[][] => [...(near ? [["near", "Nearest first"]] : []), ...sortsFor(discs), ...(discs.length ? [["grade_asc", "↓ Easiest"], ["grade_desc", "↑ Hardest"]] : []), ...EXTRA_SORTS.filter(e => extraFits(discs, e[0])).map(e => [e[0], e[1]])];
 const finderNoun = (discs: string[] | null | undefined, n: number) => (boulderOnly(discs) ? " problem" : " route") + (n !== 1 ? "s" : "");
 // A whole state (or more) is not listed until an area in it is picked or a name is typed: an
 // unfiltered California list took 3.3 s in the database (2026-10-21), and nobody pages through
@@ -237,7 +247,7 @@ const dropUnfit = (f: RouteFinderPanelFilters): RouteFinderPanelFilters => {
   return out;
 };
 const narrowsAreas = (f: RouteFinderPanelFilters) => !!(f.near || (f.elev && f.elev !== "any") || (f.prom && f.prom !== "any"));
-export default function RouteFinderPanel({ scope, onOpen, onJumpToArea, C, uElevN, uElevUnit, presetDisc, bookmarks, onToggleBookmark, onToggleWish, userLists, onToggleListRoute, onAddClimb, onAddArea, initial }: RouteFinderPanelProps) {
+export default function RouteFinderPanel({ scope, onOpen, onJumpToArea, C, uElevN, uElevUnit, presetDisc, bookmarks, onToggleBookmark, onToggleWish, userLists, onToggleListRoute, onCreateListWith, onAddClimb, onAddArea, initial }: RouteFinderPanelProps) {
   const { wishlist } = useContext(ClimberCtx);
   const DEF: RouteFinderPanelFilters = { discs: [], sortBy: "lr", minStars: 0, minPitches: 0, len: "any", gSys: "", gLo: "", gHi: "", gain: "any", trip: "any", elev: "any", prom: "any", near: null, within: "w2" };
   const metric = isMetric(uElevUnit);
@@ -255,6 +265,9 @@ export default function RouteFinderPanel({ scope, onOpen, onJumpToArea, C, uElev
   useEffect(() => { const t = setTimeout(() => setQD(q), 250); return () => clearTimeout(t); }, [q]);
   const needsAreaFor = (f: RouteFinderPanelFilters) => !!FINDER_NEEDS_AREA[loc.area_type] && !qD.trim() && !narrowsAreas(f);
   const [saveFor, setSaveFor] = useState<RouteFinderPanelSaveFor | null>(null);
+  // A NEW LIST from the save sheet: null while the "+ New list" row is closed, else the name being typed.
+  const [newList, setNewList] = useState<string | null>(null);
+  const openSave = (r: RouteFinderPanelSaveFor | null) => { setNewList(null); setSaveFor(r); };
   const { wrapRef: barWrap, barRef, pin } = usePinnedBar();
   // Routes | Areas. One text box serves both, so switching carries what you typed across.
   const [mode, setMode] = useState("routes");
@@ -338,7 +351,7 @@ export default function RouteFinderPanel({ scope, onOpen, onJumpToArea, C, uElev
   const shownTrailOf = (id: string) => { const t = trailOf(id), i = t.findIndex(c => c.id === loc.id); return i >= 0 ? t.slice(i + 1) : t; };
   const { data: areaHits, isLoading: la, error: ea }: { data?: RouteFinderPanelAreaHit[] | null; isLoading: boolean; error: unknown } = useAreaSearch(scope.id, mode === "areas" ? qD.trim() : "");
 
-  const nF = af.discs.length + (gLoO || gHiO ? 1 : 0) + (af.minStars ? 1 : 0) + (af.minPitches ? 1 : 0) + (af.len !== "any" ? 1 : 0) + (af.sortBy !== DEF.sortBy ? 1 : 0) + ["gain", "trip", "elev", "prom"].filter(k => af[k] && af[k] !== "any").length + (af.near ? 1 : 0);
+  const nF = af.discs.length + (gLoO || gHiO ? 1 : 0) + (af.minStars ? 1 : 0) + (af.minPitches ? 1 : 0) + (af.len !== "any" ? 1 : 0) + ["gain", "trip", "elev", "prom"].filter(k => af[k] && af[k] !== "any").length + (af.near ? 1 : 0);
   const afChips: RouteFinderPanelChip[] = [];
   // One chip per discipline; removing one keeps the grade range only if the disciplines left still
   // share its scale.
@@ -355,7 +368,7 @@ export default function RouteFinderPanel({ scope, onOpen, onJumpToArea, C, uElev
   if (af.elev && af.elev !== "any") afChips.push({ k: "elev", label: "Peak " + minLabel(findB(PEAK_ELEV_MINS, af.elev), metric, eU), clear: () => setAf(a => ({ ...a, elev: "any" })) });
   if (af.prom && af.prom !== "any") afChips.push({ k: "prom", label: minLabel(findB(PROM_MINS, af.prom), metric, eU) + " prominence", clear: () => setAf(a => ({ ...a, prom: "any" })) });
   if (af.near) afChips.push({ k: "near", label: "Within " + withinLabel(findB(WITHIN, af.within) || WITHIN[1], metric, dU) + " of " + af.near.label, clear: () => setAf(a => ({ ...a, near: null, sortBy: a.sortBy === "near" ? DEF.sortBy : a.sortBy })) });
-  if (sortFor(af.discs, af.sortBy) !== sortFor(af.discs, DEF.sortBy)) afChips.push({ k: "sort", label: { name: "A→Z", name_desc: "Z→A", area: "By " + (noWallOrder(af.discs) ? groupWord(af.discs) : "area"), lr: "Left → right", rl: "Right → left", grade_asc: "↓ Easiest", grade_desc: "↑ Hardest", stars_desc: "Most starred", near: "Nearest first" }[af.sortBy as RouteFinderPanelSortKey], clear: () => setAf(a => ({ ...a, sortBy: DEF.sortBy })) });
+  // The order is not a filter: it has its own Sort menu on the count line, so it neither counts on Filters (N) nor wears a chip.
   const inList = (l: RouteFinderPanelList, id: string | number) => (l.routeIds || []).includes(id);
   const customLists = (userLists || []).filter(l => l.id !== "ul_obj");
   const isSaved = (id: string | number) => (wishlist || []).includes(id) || customLists.some(l => inList(l, id));
@@ -395,7 +408,19 @@ export default function RouteFinderPanel({ scope, onOpen, onJumpToArea, C, uElev
         </div>
       ) : null}
       {/* No count after a failed read: "0 routes" above "Couldn't search routes" reads as an empty area. */}
-      {!needsArea && !(error && total == null && !all.length) ? <div style={{ fontSize: 11.5, color: C.textMuted, marginBottom: 6, padding: "0 2px" }}>{/* ONE SENTENCE OF WHAT IS FILTERED (batch B, item 11): the active filters' own chip labels, between the count and the sort, so the header reads "42 climbs · Sport · 5.8–5.10 · 2+ pitches · sorted by …". */nRes.toLocaleString() + finderNoun(af.discs, nRes) + (afChips.length ? " · " + afChips.map(c => c.label).join(" · ") : "") + " · sorted by " + (noWallOrder(af.discs) && sortFor(af.discs, af.sortBy) === "area" ? groupWord(af.discs) : SORT_PHRASE[sortFor(af.discs, af.sortBy)])}</div> : null}
+      {/* ONE SENTENCE OF WHAT IS FILTERED (batch B, item 11): the count and the active filters' own chip labels, "42 climbs ·
+          Sport · 5.8–5.10 · 2+ pitches". SORT IS ONE TAP, beside it (owner's note, 2026-11-25: "after you click on route finder,
+          you should be able to sort how you want"): the order was only inside the Filters sheet, three taps and a Show button
+          away. Mountain Project's Route Finder and theCrag both put the sort on the results header; this is the phone's own
+          picker, applied at once, and the sheet's Sort by row is the same list. */}
+      {!needsArea && !(error && total == null && !all.length) ? <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 6, padding: "0 2px" }}>
+        <div style={{ flex: 1, minWidth: 0, fontSize: 11.5, color: C.textMuted, overflowWrap: "anywhere" }}>{nRes.toLocaleString() + finderNoun(af.discs, nRes) + (afChips.length ? " · " + afChips.map(c => c.label).join(" · ") : "")}</div>
+        <label style={{ flexShrink: 0, display: "inline-flex", alignItems: "center", gap: 6, fontSize: 12, color: C.textSub, fontWeight: 600 }}>Sort
+          <select aria-label="Sort routes" value={sortFor(af.discs, af.sortBy)} onChange={e => { const v = e.target.value; setAf(a => ({ ...a, sortBy: v })); }} style={{ maxWidth: 170, height: 38, boxSizing: "border-box", padding: "0 8px", borderRadius: 9, border: "1px solid " + C.field, background: C.surface, color: C.text, fontSize: 13, fontFamily: "inherit", cursor: "pointer" }}>
+            {sortChoices(af.discs, !!af.near).map(o => <option key={o[0]} value={o[0]}>{o[1]}</option>)}
+          </select>
+        </label>
+      </div> : null}
       </> : null}
       </div>
       </div>
@@ -459,7 +484,7 @@ export default function RouteFinderPanel({ scope, onOpen, onJumpToArea, C, uElev
           ) : null}
           <div style={{ display: "flex", gap: 6, alignItems: "stretch" }}>
             <RouteRow r={r} onOpen={onOpen} C={C} areaName={GROUPED_SORTS[af.sortBy] ? null : [...shownTrailOf(r.area_id).map(c => c.name), wall].filter(Boolean).join(" › ") || null} savedMark={!onToggleWish} dense={wide && compact} />
-            {onToggleWish ? <button onClick={() => setSaveFor({ ...r, wall })} aria-haspopup="dialog" aria-label={"Save " + r.name + (saved ? ", saved" : "")} style={{ ...CHIP, flexShrink: 0, width: 44, marginBottom: 8, padding: 0, fontSize: 17, cursor: "pointer", border: "1px solid " + (saved ? C.blue : C.border), background: saved ? C.blueBg : C.card, color: saved ? C.onSolid : C.textSub }}><span aria-hidden="true">{saved ? "★" : "☆"}</span></button> : null}
+            {onToggleWish ? <button onClick={() => openSave({ ...r, wall })} aria-haspopup="dialog" aria-label={"Save " + r.name + (saved ? ", saved" : "")} style={{ ...CHIP, flexShrink: 0, width: 44, marginBottom: 8, padding: 0, fontSize: 17, cursor: "pointer", border: "1px solid " + (saved ? C.blue : C.border), background: saved ? C.blueBg : C.card, color: saved ? C.onSolid : C.textSub }}><span aria-hidden="true">{saved ? "★" : "☆"}</span></button> : null}
           </div>
         </Fragment>;
       })}
@@ -485,11 +510,11 @@ export default function RouteFinderPanel({ scope, onOpen, onJumpToArea, C, uElev
         <div role="dialog" aria-modal="true" aria-label={"Save " + saveFor.name} style={{ position: "fixed", inset: 0, background:C.scrim, zIndex: 300, display: "flex", alignItems: "flex-end", justifyContent: "center" }}>
           {/* The backdrop is a real button under the sheet, so a tap outside closes it without a
               mouse-only div; the ✕ and Done are the keyboard's way out. */}
-          <button onClick={() => setSaveFor(null)} aria-label="Close" tabIndex={-1} style={{ position: "absolute", inset: 0, background: "transparent", border: "none", padding: 0, cursor: "default" }} />
+          <button onClick={() => openSave(null)} aria-label="Close" tabIndex={-1} style={{ position: "absolute", inset: 0, background: "transparent", border: "none", padding: 0, cursor: "default" }} />
           <div style={{ position: "relative", background: C.bg, width: "100%", maxWidth: 440, borderRadius: "16px 16px 0 0", maxHeight: "80vh", display: "flex", flexDirection: "column" }}>
             <div style={{ borderBottom: "1px solid " + C.border, flexShrink: 0, display: "flex", justifyContent: "space-between", alignItems: "center", gap: 10, padding: "16px 16px 12px" }}>
               <div style={{ fontSize: 16, fontWeight: 700, minWidth: 0, overflowWrap: "anywhere" }}>{"Save " + saveFor.name}</div>
-              <button onClick={() => setSaveFor(null)} aria-label="Close" style={POP_CLOSE}>✕</button>
+              <button onClick={() => openSave(null)} aria-label="Close" style={POP_CLOSE}>✕</button>
             </div>
             <div style={{ padding: "6px 16px 18px", overflowY: "auto", overscrollBehavior: "contain", flex: 1, minHeight: 0 }}>
               {(() => {
@@ -503,10 +528,26 @@ export default function RouteFinderPanel({ scope, onOpen, onJumpToArea, C, uElev
                   {row("obj", "My Objectives", "Climbs you want to do. Partners who want the same climb can find you.", (wishlist || []).includes(saveFor.id), () => (onToggleWish as (routeId: string | number) => void)(saveFor.id))}
                   {onToggleListRoute ? customLists.map(l => row("l-" + l.id, l.name, null, inList(l, saveFor.id), () => onToggleListRoute(l.id, saveFor.id))) : null}
                   {onToggleBookmark && saveFor.area_id ? row("area", "Save the area: " + (saveFor.wall || "this wall"), "Saved areas are listed under Logbook → Saved.", (bookmarks || []).includes(saveFor.area_id), () => onToggleBookmark(saveFor.area_id)) : null}
-                  {!customLists.length ? <div style={{ fontSize: 11.5, color: C.textMuted, marginTop: 12, lineHeight: 1.45 }}>Make your own lists under Logbook → Saved, and they show up here.</div> : null}
+                  {/* MAKE A LIST RIGHT HERE (owner's note, 2026-11-25: "give them an option to create a custom list right there
+                      as well. We only allow them to add to custom lists that were already created"). Google Maps' Save sheet,
+                      AllTrails' Save to list and Mountain Project's To-Do each end their list of lists in "New list", which names
+                      the list and saves the item into it in one step; so does this. A name you already have adds to that list. */}
+                  {onCreateListWith ? (newList == null
+                    ? <button onClick={() => setNewList("")} style={{ ...BTN_LG, width: "100%", display: "flex", alignItems: "center", gap: 10, textAlign: "left", marginTop: 8, border: "1px dashed " + C.border, background: "transparent", color: C.blue, fontSize: 14, fontWeight: 700 }}>+ New list</button>
+                    : (() => {
+                      const nm = newList.trim();
+                      const make = () => { if (!nm) return; const same = customLists.find(l => (l.name || "").trim().toLowerCase() === nm.toLowerCase()); if (same && onToggleListRoute) { if (!inList(same, saveFor.id)) onToggleListRoute(same.id, saveFor.id); } else onCreateListWith(nm, saveFor.id); setNewList(null); };
+                      return <div style={{ marginTop: 8, border: "1px solid " + C.blue, borderRadius: 10, padding: 10, background: C.surface }}>
+                        <input autoFocus aria-label="New list name" value={newList} maxLength={60} onChange={e => setNewList(e.target.value)} onKeyDown={e => { if (e.key === "Enter") make(); }} placeholder="Name the list, e.g. Summer trad" style={{ width: "100%", padding: "11px 12px", borderRadius: 9, border: "1px solid " + C.field, background: C.bg, color: C.text, fontSize: 14, boxSizing: "border-box", outline: "none" }} />
+                        <div style={{ display: "flex", gap: 8, marginTop: 8 }}>
+                          <button onClick={() => setNewList(null)} style={{ ...BTN_SECONDARY(C), flex: 1, minHeight: 44 }}>Cancel</button>
+                          <button onClick={make} disabled={!nm} style={{ ...BTN_LG, flex: 2, minHeight: 44, border: "none", ...SOLID_FILL(C), color: C.onSolid, opacity: nm ? 1 : 0.5, cursor: nm ? "pointer" : "default" }}>Create and add</button>
+                        </div>
+                      </div>;
+                    })()) : null}
                 </>;
               })()}
-              <button onClick={() => setSaveFor(null)} style={{ ...BTN_LG, width: "100%", marginTop: 16, border: "none", ...SOLID_FILL(C), color:C.onSolid }}>Done</button>
+              <button onClick={() => openSave(null)} style={{ ...BTN_LG, width: "100%", marginTop: 16, border: "none", ...SOLID_FILL(C), color:C.onSolid }}>Done</button>
             </div>
           </div>
         </div>, document.body) : null}
@@ -599,9 +640,7 @@ export default function RouteFinderPanel({ scope, onOpen, onJumpToArea, C, uElev
             })()}
             {lab("Sort by")}
             <div style={{ display: "flex", gap: 7, flexWrap: "wrap" }}>
-              {df.near ? chip("Nearest first", df.sortBy === "near", () => setDf(d => ({ ...d, sortBy: "near" }))) : null}
-              {sortsFor(df.discs).map(o => chip(o[1], sortFor(df.discs, df.sortBy) === o[0], () => setDf(d => ({ ...d, sortBy: o[0] }))))}
-              {df.discs.length ? [["grade_asc", "↓ Easiest"], ["grade_desc", "↑ Hardest"]].map(o => chip(o[1], df.sortBy === o[0], () => setDf(d => ({ ...d, sortBy: o[0] })))) : null}
+              {sortChoices(df.discs, !!df.near).map(o => chip(o[1], sortFor(df.discs, df.sortBy) === o[0], () => setDf(d => ({ ...d, sortBy: o[0] }))))}
             </div>
             {!df.discs.length ? <div style={{ fontSize: 11.5, color: C.textMuted, marginTop: 8 }}>Pick a discipline above to sort by grade.</div> : null}
             {lab("Minimum stars")}
