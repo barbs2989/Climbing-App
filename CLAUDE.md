@@ -177,6 +177,7 @@ npm run check:token-boxes  # no element shaped like a chip holds a paragraph
 npm run check:pitch-split # every pitch_detail entry is a row of ROUTE BREAKDOWN, in order (in build)
 npm run check:approach-overlay # the PICKED way in drives the page, nothing from another leaks, edits hit the stored row (in build)
 npm run audit:approach-hazards # does every way in you can pick show its OWN hazard list? (MISSING / IDENTICAL, read-only)
+npm run audit:next-door    # are the climbs NEXT DOOR right? every wall's left/right vs Mountain Project's own order: ties, order, a position from another wall, a climb stored twice, a climb MP places that we leave unplaced (--refresh re-reads the DB)
 npm run audit:rack-items   # does any rack column, in ANY state, file NON-RACK gear (an ice axe, a helmet) where the RACK card reads? (--state wa narrows; --selftest needs no DB)
 
 # ── Camping and bivy — notes: docs/guards/camping.md ──
