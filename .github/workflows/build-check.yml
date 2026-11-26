@@ -67,6 +67,22 @@ jobs:
         if: success() || failure()
         run: node scripts/check-merge-survival.mjs
 
+      # Hand-run only until 2026-11-26, and that is how two migrations shipped broken for guests:
+      # 0501 left state_trip_reports reading a column it had just taken from anon, so the nightly
+      # offline state files built 0 of 61 states for three nights, and 0537 added grade_feel without
+      # granting it to anon, so signed-out trip-report reads were refused. This guard named both. It
+      # replays every migration into PGlite (~40 s, no secrets, no network), so it runs only on a PR
+      # that changes a migration or the app's select lists in lib/db.js.
+      - name: Guests can still read what they should (profiles, climb_logs, invoker functions)
+        if: success() || failure()
+        run: |
+          base="origin/${{ github.base_ref }}"
+          if git diff --name-only "$base"...HEAD | grep -qE '^(supabase/migrations/|lib/db\.js$|lib/profileCols\.js$)'; then
+            node scripts/check-profile-privacy.mjs
+          else
+            echo "no migration or select-list change in this PR; skipped"
+          fi
+
   build:
     runs-on: ubuntu-latest
     steps:
