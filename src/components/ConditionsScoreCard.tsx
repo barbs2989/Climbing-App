@@ -10,7 +10,9 @@ import CardHead from "./CardHead.tsx";
 import ActionIcon from "./ActionIcon.tsx";
 import LoadingRows from "./LoadingRows.tsx";
 import { clockHr } from "../../lib/HourTiles.jsx";
-import { modelSpread } from "../../lib/alpineConditions.js";
+import { modelSpread, modelDays } from "../../lib/alpineConditions.js";
+import ForecastModels from "./ForecastModels.tsx";
+import type { ForecastModelRow } from "./ForecastModels.tsx";
 import { condRow, condNote } from "../../lib/condRows.jsx";
 import { skyWord, wxTempColor, wxWindColor } from "../../lib/wxColors.js";
 import { dayBox, dayLbl, dayVal, daySub } from "../../lib/dayStyles.js";
@@ -118,16 +120,18 @@ export default function ConditionsScoreCard({route,mtn,onAddAspect}: ConditionsS
     fetchCragClimate(lat,lng).then(function(m){_cragClim[ck]=m;if(live)setClim({data:m});},function(){if(live)setClim({error:true});});
     return function(){live=false;};
   },[ck,climTries]); // eslint-disable-line react-hooks/exhaustive-deps -- keyed on the crag coordinate key (ck encodes lat/lng) and retry count; on/hasPt follow the route
-  /* A SECOND READ of three other models' rain (owner, 2026-10-28: the alpine card says when models disagree; a crag
-     never did). Adds a line when they split, and NOTHING when it fails: no read is not agreement, but it is no flag. */
+  /* A SECOND READ of six other forecast models (owner, 2026-10-28: the alpine card says when models disagree; a crag
+     never did; 2026-11-25, Windy audit: six models, and the FORECAST MODELS table shows each one's day). Adds a line
+     when their rain splits, and no flag when it fails: no read is not agreement. */
   const [sp,setSp]=useState<unknown>(function(){return ck&&_cragSp[ck]?_cragSp[ck]:null;});
+  const [spErr,setSpErr]=useState(false),[spTries,setSpTries]=useState(0);
   useEffect(function(){
     if(!hasPt||!on)return;
-    if(_cragSp[ck]){setSp(_cragSp[ck]);return;}
-    let live=true;setSp(null);
-    fetchAlpineSpread(lat,lng,null).then(function(j){_cragSp[ck]=j;if(live)setSp(j);},function(){if(live)setSp(null);});
+    if(_cragSp[ck]){setSp(_cragSp[ck]);setSpErr(false);return;}
+    let live=true;setSp(null);setSpErr(false);
+    fetchAlpineSpread(lat,lng,null).then(function(j){_cragSp[ck]=j;if(live)setSp(j);},function(){if(live){setSp(null);setSpErr(true);}});
     return function(){live=false;};
-  },[ck,hasPt,on,lat,lng]);
+  },[ck,hasPt,on,lat,lng,spTries]);
   useEffect(function(){setDayI(0);setHrI(null);},[route.id]);
   const rk=routeRock(route);
   const aspectText=route.aspect||route.face||(route._dbArea&&route._dbArea.aspect)||null;
@@ -190,7 +194,7 @@ export default function ConditionsScoreCard({route,mtn,onAddAspect}: ConditionsS
      days at 18 crags had red hours before 11 AM, most from the dew-point cap, on dry desert mornings at Vantage and
      Smith Rock). The first hour after the last dew-capped hour before the best 3 hours; null if the best hours are damp too. */
   const dewTill=(function(){if(!day.best)return null;const dew=function(x: {caps: {why: string}[]}){return x.caps.some(function(c){return /dew point/.test(c.why);});};if(hrs.slice(day.best.i,day.best.i+3).some(dew))return null;let last=-1;for(let i=0;i<day.best.i;i++)if(dew(hrs[i]))last=i;return last>=0&&hrs[last+1]?hrs[last+1]:null;})();
-  // The day's rain, the amount this card prints among three other models' (modelSpread, the alpine card's rule): null unless they split.
+  // The day's rain, the amount this card prints among the other models' (modelSpread, the alpine card's rule): null unless they split.
   const rainSplit=function(d: {rain: number | null; date: string}){const m=sp&&d.rain!=null?modelSpread(sp,d.date,null,d.rain):null;return m&&m.over.indexOf("rain")>=0?m.rain:null;};
   const dayRainSplit=rainSplit(day);
   const dryChip=(function(){if(!cur||cur.dryFrac==null||cur.dryFrac>=1||wetSand)return null;const y=dryAfter(cur),hrs=y?Math.max(1,Math.round((y.utc-Date.now())/3600e3)):null;
@@ -276,6 +280,7 @@ export default function ConditionsScoreCard({route,mtn,onAddAspect}: ConditionsS
           </span>
         </button>;})}
     </div>)}
+    {sec("Forecast models",<ForecastModels head={null} rows={sp?modelDays(sp,day.date) as ForecastModelRow[]:[]} state={sp?"ok":spErr?"error":"loading"} showFl={false} shown={{hi:day.hi,lo:day.lo,gust:day.gustMax,rain:day.rain,fl:null}} where="at the crag’s map point" onRetry={function(){setSpTries(spTries+1);}}/>)}
     {sec("Hour by hour",<div style={condBox}>
       <div role="group" aria-label="Day for the hourly charts" style={{display:"flex",gap:5,overflowX:"auto",paddingBottom:4,marginBottom:4}}>{days.slice(0,7).map(function(d,i){const on=i===Math.min(dayI,days.length-1);return <button key={d.date} onClick={function(){setDayI(i);setHrI(null);}} aria-pressed={on} aria-label={dayName(d,i)+", "+dayDate(d)} style={{flex:"0 0 58px",width:58,minHeight:44,boxSizing:"border-box",padding:"6px 2px",borderRadius:9,border:"1px solid "+(on?C.blue:C.border),background:on?C.blueBg:"transparent",color:on?C.onSolid:C.textSub,cursor:"pointer",textAlign:"center"}}><div style={{fontSize:12,fontWeight:on?800:700}}>{dayName(d,i)}</div><div style={{fontSize:10.5,color:on?C.blue:C.textMuted}}>{dayDate(d)}</div></button>;})}</div>
       <HourlyChart all={day.all} selUtc={h?h.utc:null}/>

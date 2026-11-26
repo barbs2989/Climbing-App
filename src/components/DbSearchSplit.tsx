@@ -10,6 +10,7 @@ import type { CSSProperties, RefObject } from "react";
 import { hlMatch } from "../../ClimbMatchCore.jsx";
 import RouteRow from "./RouteRow.tsx";
 import AreaRowArrow from "./AreaRowArrow.tsx";
+import SearchModeHint, { AREAS_PLACEHOLDER, ROUTES_PLACEHOLDER, RoutesInsteadHint, AreasInsteadHint } from "./SearchModeHint.tsx";
 import type { RouteRowRoute } from "./RouteRow.tsx";
 import type { C as Palette } from "../../ClimbMatchCore.jsx";
 
@@ -78,7 +79,7 @@ export default function DbSearchSplit({ scope, onJumpToArea, onOpenRoute, C, onM
         <div {...clickable(() => setMode("areas"))} aria-pressed={mode === "areas"} style={tab(mode === "areas")}>Areas</div>
         <div {...clickable(() => setMode("routes"))} aria-pressed={mode === "routes"} style={tab(mode === "routes")}>Routes</div>
       </div>
-      <input aria-label={mode === "areas" ? "Search areas, crags, peaks" : "Search routes"} value={q} onChange={e => setQ(e.target.value)} placeholder={mode === "areas" ? "Search areas, crags, peaks…" : "Search routes…"} style={{ width: "100%", padding: "10px 12px", borderRadius: 9, border: "1px solid " + C.field, background: C.surface, color: C.text, fontSize: 14, boxSizing: "border-box", outline: "none" }} />
+      <input aria-label={mode === "areas" ? "Search areas, crags, peaks" : "Search routes"} value={q} onChange={e => setQ(e.target.value)} placeholder={mode === "areas" ? AREAS_PLACEHOLDER : ROUTES_PLACEHOLDER} style={{ width: "100%", padding: "10px 12px", borderRadius: 9, border: "1px solid " + C.field, background: C.surface, color: C.text, fontSize: 14, boxSizing: "border-box", outline: "none" }} />
       </div>
       </div>
       {qq ? (
@@ -88,7 +89,7 @@ export default function DbSearchSplit({ scope, onJumpToArea, onOpenRoute, C, onM
           {mode === "areas" ? (
             la ? <LoadingRows C={C} label="Loading…" style={{padding: "14px 4px"}}/>
             : ea ? <div style={{ fontSize: 13, color: C.red, padding: "14px 4px", textAlign: "center" }}>Couldn't search areas.</div>
-            : !areaHits || !areaHits.length ? <EmptyState C={C} icon="search">No areas match.</EmptyState>
+            : !areaHits || !areaHits.length ? <EmptyState C={C} icon="search" action={<RoutesInsteadHint C={C} onSearchRoutes={() => setMode("routes")} />}>No areas match.</EmptyState>
             : <>
               {areaHits.map((a: DbSearchSplitArea) => (
                 <div key={a.id} {...clickable(() => onJumpToArea(a))} style={row}>
@@ -101,16 +102,19 @@ export default function DbSearchSplit({ scope, onJumpToArea, onOpenRoute, C, onM
               ))}
               {areaSearchTotal(areaHits) > areaHits.length ? <div style={{ fontSize: 11.5, color: C.textMuted, padding: "10px 4px", textAlign: "center" }}>{"Closest " + areaHits.length + " of " + areaSearchTotal(areaHits).toLocaleString() + " — keep typing to narrow."}</div> : null}
             </>
-          ) : (
-            lr ? <LoadingRows C={C} label="Loading…" style={{padding: "14px 4px"}}/>
+          ) : <>
+            {/* Which areas these words name, one tap from the Areas tab (owner note 2026-11-26): the Routes tab matches a
+                climb's own name only, so "rainier" here lists no climb on Mount Rainier. */}
+            {!ea && !la ? <SearchModeHint C={C} q={qq} areas={areaHits} total={areaHits ? areaSearchTotal(areaHits) : 0} onSearchAreas={() => setMode("areas")} /> : null}
+            {lr ? <LoadingRows C={C} label="Loading…" style={{padding: "14px 4px"}}/>
             : er ? <div style={{ fontSize: 13, color: C.red, padding: "14px 4px", textAlign: "center" }}>Couldn't search routes.</div>
-            : !routeHits || !routeHits.length ? <EmptyState C={C} icon="search">No routes match.</EmptyState>
+            : !routeHits || !routeHits.length ? <EmptyState C={C} icon="search" action={areaHits && areaHits.length ? undefined : <AreasInsteadHint C={C} onSearchAreas={() => setMode("areas")} />}>No routes match.</EmptyState>
             // The same row every other route list draws (discipline glyph, Classic, your Done/Saved, grade),
             // with the hit's crag as its place and the typed text in bold, as the seed search showed it.
             : routeHits.map((r: DbSearchSplitRoute) => (
               <RouteRow key={r.id} r={r as DbSearchSplitRoute & RouteRowRoute} onOpen={() => onOpenRoute(r)} C={C} highlight={qq} areaName={areaWhere(r.area_id, hitAreaNames, hitAreaTrails, scope.id)} />
-            ))
-          )}
+            ))}
+          </>}
         </div>
       ) : null}
     </div>
