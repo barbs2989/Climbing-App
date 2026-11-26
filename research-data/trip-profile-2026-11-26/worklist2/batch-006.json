@@ -1,0 +1,211 @@
+[
+ {
+  "id": "or_middle_sister_north_ridge_hayden_glacier",
+  "name": "North Ridge (Hayden Glacier)",
+  "where": "Three Sisters Wilderness > Middle Sister",
+  "discipline": "mountaineering",
+  "grade": "Grade II Snow",
+  "why": "no one-way distance",
+  "distKmStored": null,
+  "outingShape": null,
+  "gainFt": null,
+  "waypoints": [
+   {
+    "i": 0,
+    "type": "Trailhead",
+    "name": "Pole Creek Trailhead",
+    "elev": 5313,
+    "distMi": 0
+   },
+   {
+    "i": 1,
+    "type": "Summit",
+    "name": "Middle Sister",
+    "elev": 10033,
+    "distMi": 8.2
+   }
+  ]
+ },
+ {
+  "id": "or_mt_jefferson_southwest_ridge",
+  "name": "Southwest Ridge",
+  "where": "Oregon Volcanoes > Mt. Jefferson",
+  "discipline": "alpine",
+  "grade": "Easy 5th",
+  "why": "no summit waypoint with a distance from the trailhead",
+  "distKmStored": null,
+  "outingShape": "outback",
+  "gainFt": null,
+  "waypoints": [
+   {
+    "i": 0,
+    "type": "Trailhead",
+    "name": "Pamelia Lake Trailhead",
+    "elev": null,
+    "distMi": null
+   },
+   {
+    "i": 1,
+    "type": "Summit",
+    "name": "Mount Jefferson summit",
+    "elev": null,
+    "distMi": null
+   }
+  ]
+ },
+ {
+  "id": "or_mt_jefferson_whitewater_glacier",
+  "name": "Whitewater Glacier",
+  "where": "Oregon Volcanoes > Mt. Jefferson",
+  "discipline": "alpine",
+  "grade": "4th",
+  "why": "no summit waypoint with a distance from the trailhead",
+  "distKmStored": null,
+  "outingShape": "outback",
+  "gainFt": null,
+  "waypoints": [
+   {
+    "i": 0,
+    "type": "Trailhead",
+    "name": "Whitewater Trailhead",
+    "elev": null,
+    "distMi": null
+   },
+   {
+    "i": 1,
+    "type": "Summit",
+    "name": "Mount Jefferson summit",
+    "elev": null,
+    "distMi": null
+   }
+  ]
+ },
+ {
+  "id": "or_mt_mcloughlin_east_ridge",
+  "name": "East Ridge",
+  "where": "Oregon Volcanoes > Mt. McLoughlin",
+  "discipline": "mountaineering",
+  "grade": "Easy Snow",
+  "why": "no summit pin on the track, after the trailhead; no summit waypoint with a distance from the trailhead",
+  "distKmStored": null,
+  "outingShape": null,
+  "gainFt": 3920,
+  "waypoints": [
+   {
+    "i": 0,
+    "type": "Trailhead",
+    "name": "Mount McLoughlin Trailhead",
+    "elev": null,
+    "distMi": null
+   },
+   {
+    "i": 1,
+    "type": "Summit",
+    "name": "Mount McLoughlin summit",
+    "elev": null,
+    "distMi": null
+   }
+  ]
+ },
+ {
+  "id": "or_north_ridge_2",
+  "name": "North Ridge",
+  "where": "Oregon Volcanoes > Mt. Washington",
+  "discipline": "alpine",
+  "grade": "5.3",
+  "why": "no one-way distance",
+  "distKmStored": null,
+  "outingShape": null,
+  "gainFt": null,
+  "waypoints": [
+   {
+    "i": 0,
+    "type": "Trailhead",
+    "name": "PCT trailhead, Old Santiam Wagon Road",
+    "elev": null,
+    "distMi": null
+   },
+   {
+    "i": 1,
+    "type": "Summit",
+    "name": "Mount Washington",
+    "elev": 7751,
+    "distMi": 5.4
+   }
+  ]
+ },
+ {
+  "id": "or_north_sister_southeast_ridge",
+  "name": "Southeast Ridge",
+  "where": "Three Sisters Wilderness > North Sister",
+  "discipline": "alpine",
+  "grade": "4th",
+  "why": "no summit waypoint with a distance from the trailhead",
+  "distKmStored": null,
+  "outingShape": "outback",
+  "gainFt": null,
+  "waypoints": [
+   {
+    "i": 0,
+    "type": "Trailhead",
+    "name": "Pole Creek Trailhead",
+    "elev": null,
+    "distMi": null
+   },
+   {
+    "i": 1,
+    "type": "Summit",
+    "name": "North Sister summit",
+    "elev": null,
+    "distMi": null
+   }
+  ]
+ },
+ {
+  "id": "or_northwest_ridge",
+  "name": "Northwest Ridge",
+  "where": "Three Sisters Wilderness > Broken Top",
+  "discipline": "alpine",
+  "grade": "Easy 5th",
+  "why": "no summit pin on the track, after the trailhead; no summit waypoint with a distance from the trailhead",
+  "distKmStored": null,
+  "outingShape": null,
+  "gainFt": null,
+  "waypoints": [
+   {
+    "i": 0,
+    "type": "Trailhead",
+    "name": "Green Lakes Trailhead",
+    "elev": 5454,
+    "distMi": 0
+   }
+  ]
+ },
+ {
+  "id": "or_south_ridge",
+  "name": "South Ridge",
+  "where": "Three Sisters Wilderness > North Sister",
+  "discipline": "alpine",
+  "grade": "4th",
+  "why": "no summit waypoint with a distance from the trailhead",
+  "distKmStored": null,
+  "outingShape": null,
+  "gainFt": 5000,
+  "waypoints": [
+   {
+    "i": 0,
+    "type": "Trailhead",
+    "name": "Pole Creek Trailhead",
+    "elev": null,
+    "distMi": null
+   },
+   {
+    "i": 1,
+    "type": "Summit",
+    "name": "North Sister summit",
+    "elev": null,
+    "distMi": null
+   }
+  ]
+ }
+]

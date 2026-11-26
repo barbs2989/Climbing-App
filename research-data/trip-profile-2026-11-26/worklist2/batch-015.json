@@ -1,0 +1,386 @@
+[
+ {
+  "id": "wa_northeast_face_direct",
+  "name": "Northeast Face Direct",
+  "where": "North Cascades Core > Mount Formidable",
+  "discipline": "alpine",
+  "grade": "5.6",
+  "why": "no summit waypoint with a distance from the trailhead",
+  "distKmStored": null,
+  "outingShape": null,
+  "gainFt": 6100,
+  "waypoints": [
+   {
+    "i": 0,
+    "type": "Trailhead",
+    "name": "Cascade Pass Trailhead",
+    "elev": 3600,
+    "distMi": 0
+   },
+   {
+    "i": 1,
+    "type": "Junction",
+    "name": "Cascade Pass",
+    "elev": 5393,
+    "distMi": 3.7
+   },
+   {
+    "i": 2,
+    "type": "Junction",
+    "name": "Cache Col",
+    "elev": 6969,
+    "distMi": null
+   },
+   {
+    "i": 3,
+    "type": "Campsite",
+    "name": "Kool-Aid Lake",
+    "elev": 6120,
+    "distMi": null
+   },
+   {
+    "i": 4,
+    "type": "Summit",
+    "name": "Mount Formidable Summit",
+    "elev": 8325,
+    "distMi": null
+   }
+  ]
+ },
+ {
+  "id": "wa_northwest_face_4",
+  "name": "Northwest Face",
+  "where": "Western Alpine Lakes > Little Big Chief Mountain",
+  "discipline": "alpine",
+  "grade": "5.9",
+  "why": "no summit waypoint with a distance from the trailhead",
+  "distKmStored": null,
+  "outingShape": null,
+  "gainFt": 6200,
+  "waypoints": [
+   {
+    "i": 0,
+    "type": "Trailhead",
+    "name": "Dingford Creek / Middle Fork Snoqualmie Trailhead",
+    "elev": 1430,
+    "distMi": null
+   },
+   {
+    "i": 1,
+    "type": "Campsite",
+    "name": "Hardscrabble Horse Camp, Middle Fork Snoqualmie",
+    "elev": 2828,
+    "distMi": null
+   },
+   {
+    "i": 2,
+    "type": "Water",
+    "name": "Hardscrabble Creek crossing",
+    "elev": 2867,
+    "distMi": null
+   },
+   {
+    "i": 3,
+    "type": "Junction",
+    "name": "Steel bridge turnoff",
+    "elev": null,
+    "distMi": null
+   },
+   {
+    "i": 4,
+    "type": "Campsite",
+    "name": "Summit Chief Valley camp",
+    "elev": 4650,
+    "distMi": null
+   },
+   {
+    "i": 5,
+    "type": "Summit",
+    "name": "Little Big Chief Mountain - Summit",
+    "elev": 7225,
+    "distMi": null
+   }
+  ]
+ },
+ {
+  "id": "wa_observation_rock_standard_scramble_route",
+  "name": "Standard scramble route",
+  "where": "Columbia Gorge > Observation Rock",
+  "discipline": "scrambling",
+  "grade": null,
+  "why": "no summit waypoint with a distance from the trailhead",
+  "distKmStored": null,
+  "outingShape": null,
+  "gainFt": 3435,
+  "waypoints": [
+   {
+    "i": 0,
+    "type": "Trailhead",
+    "name": "Mowich Lake trailhead",
+    "elev": null,
+    "distMi": null
+   }
+  ]
+ },
+ {
+  "id": "wa_olympus_summit_block_west_edge",
+  "name": "Summit Block — Northwest Edge Finish (variation)",
+  "where": "Central Olympic Mountains > Mount Olympus (West Peak)",
+  "discipline": "alpine",
+  "grade": "5.4",
+  "why": "no summit waypoint with a distance from the trailhead",
+  "distKmStored": 28,
+  "outingShape": "outback",
+  "gainFt": 7402,
+  "waypoints": [
+   {
+    "i": 0,
+    "type": "Trailhead",
+    "name": "Hoh Rain Forest Visitor Center / Hoh River Trailhead",
+    "elev": null,
+    "distMi": 0
+   },
+   {
+    "i": 1,
+    "type": "Campsite",
+    "name": "Lewis Meadows Camp, Hoh River trail",
+    "elev": 1000,
+    "distMi": null
+   },
+   {
+    "i": 2,
+    "type": "Water",
+    "name": "Hoh River crossing",
+    "elev": 1346,
+    "distMi": null
+   },
+   {
+    "i": 3,
+    "type": "Campsite",
+    "name": "Elk Lake Camp, Hoh River trail",
+    "elev": 2600,
+    "distMi": null
+   },
+   {
+    "i": 4,
+    "type": "Campsite",
+    "name": "Glacier Meadows Camp",
+    "elev": 4175,
+    "distMi": 17.5
+   },
+   {
+    "i": 5,
+    "type": "Summit",
+    "name": "Mount Olympus West Peak (true summit)",
+    "elev": 7980,
+    "distMi": null
+   }
+  ]
+ },
+ {
+  "id": "wa_one_piece_at_a_time",
+  "name": "One Piece at a Time",
+  "where": "Cutthroat Lake Crags > Cutthroat Wall",
+  "discipline": "alpine",
+  "grade": "5.10d",
+  "why": "no summit waypoint with a distance from the trailhead",
+  "distKmStored": 2.8,
+  "outingShape": null,
+  "gainFt": 1620,
+  "waypoints": [
+   {
+    "i": 0,
+    "type": "Campsite",
+    "name": "Klipchuck Campground, with Early Winters nearby",
+    "elev": 2900,
+    "distMi": null
+   },
+   {
+    "i": 1,
+    "type": "Campsite",
+    "name": "Lone Fir Campground",
+    "elev": 3600,
+    "distMi": null
+   },
+   {
+    "i": 2,
+    "type": "Trailhead",
+    "name": "Cutthroat Creek/Lake Trailhead",
+    "elev": 4500,
+    "distMi": 0
+   },
+   {
+    "i": 3,
+    "type": "Campsite",
+    "name": "Cutthroat Creek trailhead",
+    "elev": 4500,
+    "distMi": null
+   },
+   {
+    "i": 4,
+    "type": "Base",
+    "name": "Cutthroat Wall Base",
+    "elev": 6120,
+    "distMi": 1.7
+   }
+  ]
+ },
+ {
+  "id": "wa_plan_9_from_outer_space",
+  "name": "Plan 9 from Outer Space",
+  "where": "Southern Pickets > Ed Wood Memorial Buttress",
+  "discipline": "alpine",
+  "grade": "5.9+",
+  "why": "no summit waypoint with a distance from the trailhead",
+  "distKmStored": null,
+  "outingShape": null,
+  "gainFt": null,
+  "waypoints": [
+   {
+    "i": 0,
+    "type": "Campsite",
+    "name": "Goodell Creek Campground, roadhead staging",
+    "elev": 500,
+    "distMi": null
+   },
+   {
+    "i": 1,
+    "type": "Trailhead",
+    "name": "Goodell Creek / Upper Goodell Group Camp trailhead (SR-20, Newhalem)",
+    "elev": 600,
+    "distMi": null
+   },
+   {
+    "i": 2,
+    "type": "Campsite",
+    "name": "Terror Basin camp",
+    "elev": 5800,
+    "distMi": null
+   },
+   {
+    "i": 3,
+    "type": "Route",
+    "name": "Ed Wood Memorial Buttress / Plan 9 from Outer Space start",
+    "elev": null,
+    "distMi": null
+   },
+   {
+    "i": 4,
+    "type": "Summit",
+    "name": "Ed Wood Memorial Buttress",
+    "elev": 7840,
+    "distMi": null
+   }
+  ]
+ },
+ {
+  "id": "wa_ridge_traverse_from_east_fury",
+  "name": "Ridge Traverse from East Fury",
+  "where": "Northern Pickets > Mount Fury (West Peak)",
+  "discipline": "alpine",
+  "grade": "5.4",
+  "why": "no summit waypoint with a distance from the trailhead",
+  "distKmStored": null,
+  "outingShape": "outback",
+  "gainFt": null,
+  "waypoints": [
+   {
+    "i": 0,
+    "type": "Trailhead",
+    "name": "Ross Dam Trailhead (SR-20) — via Ross Lake water taxi/hike to Big Beaver, then off-trail to Access Creek/Luna Camp",
+    "elev": 2100,
+    "distMi": null
+   },
+   {
+    "i": 1,
+    "type": "Campsite",
+    "name": "Luna Camp, Big Beaver Trail",
+    "elev": 2432,
+    "distMi": null
+   },
+   {
+    "i": 2,
+    "type": "Water",
+    "name": "Big Beaver Creek crossing",
+    "elev": 2460,
+    "distMi": null
+   },
+   {
+    "i": 3,
+    "type": "Junction",
+    "name": "Access Creek Junction",
+    "elev": 2500,
+    "distMi": 15
+   },
+   {
+    "i": 4,
+    "type": "Junction",
+    "name": "Access Col",
+    "elev": 6100,
+    "distMi": 19
+   },
+   {
+    "i": 5,
+    "type": "Junction",
+    "name": "Luna Col",
+    "elev": 7200,
+    "distMi": 22
+   },
+   {
+    "i": 6,
+    "type": "Summit",
+    "name": "East Fury summit",
+    "elev": 8322,
+    "distMi": null
+   },
+   {
+    "i": 7,
+    "type": "Hazard",
+    "name": "Loose Tower Traverse",
+    "elev": 8100,
+    "distMi": 25
+   },
+   {
+    "i": 8,
+    "type": "Summit",
+    "name": "West Fury (Mount Fury, official/USGS-named summit)",
+    "elev": 8301,
+    "distMi": null
+   }
+  ]
+ },
+ {
+  "id": "wa_roan_wall_center_stage",
+  "name": "Roan Wall - Center Stage",
+  "where": "Squire Creek Walls > Waterfall Basin",
+  "discipline": "alpine",
+  "grade": "5.11a",
+  "why": "no summit waypoint with a distance from the trailhead",
+  "distKmStored": null,
+  "outingShape": null,
+  "gainFt": 3800,
+  "waypoints": [
+   {
+    "i": 0,
+    "type": "Campsite",
+    "name": "Squire Creek Park & Campground, Snohomish County",
+    "elev": 463,
+    "distMi": null
+   },
+   {
+    "i": 1,
+    "type": "Trailhead",
+    "name": "Squire Creek Road Trailhead",
+    "elev": 1100,
+    "distMi": 0
+   },
+   {
+    "i": 2,
+    "type": "Base",
+    "name": "Waterfall Basin (base of Roan Wall)",
+    "elev": 2659,
+    "distMi": 3.5
+   }
+  ]
+ }
+]
