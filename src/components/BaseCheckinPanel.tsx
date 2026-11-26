@@ -110,8 +110,10 @@ export default function BaseCheckinPanel({route,who,spots,q}: BaseCheckinPanelPr
   const pinGap=confirmed&&baseWp?distM(top,{lat:+baseWp.lat,lng:+baseWp.lng}):null;const held=pinGap!=null&&pinGap>200;
   const target=confirmed?{lat:top.lat,lng:top.lng,what:"the spot "+top.n+" climbers confirmed on-site"}:baseWp?{lat:+baseWp.lat,lng:+baseWp.lng,what:"the start this route records"}:top?{lat:top.lat,lng:top.lng,what:"the spot "+(top.n===1?"one climber":top.n+" climbers")+" checked in at — not confirmed yet"}
     /* Last, a CRAG's own coordinate: a base pin on a crag sits 0–1 m from it (measured for 0188), so it
-       gets a climber to the wall. Never a PEAK's — that is the summit, kilometres from any start. */
-    :(area.areaType==="crag"&&Number.isFinite(+(area.lat as number))&&Number.isFinite(+(area.lng as number))&&area.lat!=null&&area.lng!=null)?{lat:+(area.lat as number),lng:+(area.lng as number),what:"the crag’s location on file, not this climb’s own start — nobody has marked that yet"}:null;
+       gets a climber to the wall. Never a PEAK's — that is the summit, kilometres from any start. An area with NO type counts as a
+       crag, as check_in_at_route_base() counts it (273 sport/trad/top-rope routes, 2026-11-26, had no
+       "How far am I from the base?" button for want of the word). */
+    :((area.areaType||"crag")==="crag"&&Number.isFinite(+(area.lat as number))&&Number.isFinite(+(area.lng as number))&&area.lat!=null&&area.lng!=null)?{lat:+(area.lat as number),lng:+(area.lng as number),what:"the crag’s location on file, not this climb’s own start — nobody has marked that yet"}:null;
   const startGuide=function(){if(!target)return;const geo=typeof navigator!=="undefined"?navigator.geolocation:null;if(!geo||!geo.watchPosition){setGuide({err:baseCheckinMessage({reason:"unsupported"},_baseDist)});return;}
     stopGuide();setGuide({phase:"locating"});
     guideRef.current=geo.watchPosition(function(pos){const c=pos.coords||{};setGuide({fix:{lat:c.latitude,lng:c.longitude,accuracy:c.accuracy}});},
@@ -136,7 +138,7 @@ export default function BaseCheckinPanel({route,who,spots,q}: BaseCheckinPanelPr
     :top?<div style={{marginBottom:9}}>
       <div style={{fontSize:13,color:C.text,fontWeight:600,marginBottom:3}}>{top.lat.toFixed(5)+", "+top.lng.toFixed(5)}</div>
       <div style={{fontSize:12,color:confirmed?C.green:C.textSub,fontWeight:confirmed?600:400,marginBottom:3}}>{(confirmed?"✓ Confirmed on-site by ":"Checked in on-site by ")+top.n+" climber"+(top.n!==1?"s":"")+(top.mine?", including you":"")+(clusters.length>1?" · "+(clusters.length-1)+" other spot"+(clusters.length-1!==1?"s":"")+" reported":"")}</div>
-      <div style={{fontSize:11.5,color:C.textMuted,lineHeight:1.45,marginBottom:5}}>{confirmed?(held?"That is "+_baseDist(Math.round(pinGap))+" from the start this route records, so ClimbMatch checks it before the Base pin moves.":"The route’s Base pin on the map follows this spot."):(baseWp?"The Base pin on the map is still the start this route records. ":"")+"A spot becomes this route’s Base pin once "+BASE_CONFIRM_MIN+" climbers check in within 25 m of each other and are most of those who checked in."}</div>
+      <div style={{fontSize:11.5,color:C.textMuted,lineHeight:1.45,marginBottom:5}}>{confirmed?(held?"That is "+_baseDist(Math.round(pinGap))+" from the start this route records, so ClimbMatch checks it before the Base pin moves.":"The route’s Base pin on the map follows this spot."):(baseWp?"The Base pin on the map is still the start this route records. ":"")+"A spot becomes this route’s Base pin once "+BASE_CONFIRM_MIN+" climbers check in within 25 m of the same spot and are most of those who checked in."}</div>
       <a href={"https://www.google.com/maps/search/?api=1&query="+top.lat.toFixed(6)+","+top.lng.toFixed(6)} target="_blank" rel="noopener noreferrer" style={{fontSize:12.5,color:C.blue,fontWeight:600,textDecoration:"none"}}>Open the base in maps ›</a>
     </div>
     :q.isPending?<LoadingRows C={C} label="Loading check-ins…" style={{marginBottom:8}}/>
