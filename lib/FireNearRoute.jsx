@@ -24,6 +24,7 @@
 // Severity follows containment and distance together, because neither alone means
 // anything: a 100%-contained fire 5 miles off is smoke, and an uncontained one at 45
 // miles is a road-closure risk tomorrow, not today.
+import { knotHead } from "./accents.js";
 import { useState } from "react";
 import { useFiresNear, NEAR_ROUTE_KM, fireLevel, fireColor, fmtAcres, fmtContained, fmtDiscovered } from "./fire";
 import { TILE_CREDIT } from "./mapKit";
@@ -48,7 +49,7 @@ export default function FireNearRoute({ coord, C, ActionIcon, uDistMi = mi => Ma
   const wrap = { border: "1px solid " + C.border, background: C.surface, borderRadius: 12, padding: "12px 13px", marginBottom: 12 }; // the route page's ROUTE_GAP
   /* = core's CardHead look (12/800, tracked, a 3px bar), so the first card on Safety reads as one of
      the route page's card titles. The fire-level heading below keeps its tone on text and bar. */
-  const hd = { fontSize: 12, fontWeight: 800, letterSpacing: 0.5, textTransform: "uppercase", color: C.text, marginBottom: 8, borderLeft: "3px solid " + C.actionSolid, paddingLeft: 7, lineHeight: 1.1 };
+  const hd = { fontSize: 12, fontWeight: 800, letterSpacing: 0.5, textTransform: "uppercase", color: C.text, marginBottom: 8, ...knotHead(C.brand), lineHeight: 1.1 };
 
   if (q.isLoading) {
     return <div style={wrap}><div role="heading" aria-level={2} style={hd}>Fire &amp; smoke</div><div style={{ fontSize: 12, color: C.textMuted }}>Checking federal fire reports…</div></div>;
@@ -108,7 +109,7 @@ export default function FireNearRoute({ coord, C, ActionIcon, uDistMi = mi => Ma
       <div role="heading" aria-level={2} style={{ margin: 0 }}>
         <button onClick={() => setOpen(!open)} aria-expanded={open} style={{minHeight:44, display: "flex", alignItems: "center", gap: 8, width: "100%", padding: 0, background: "transparent", border: "none", cursor: "pointer", textAlign: "left" }}>
           <span style={{ flex: 1, minWidth: 0 }}>
-            <span style={{ ...hd, color: tone.c, borderLeftColor: tone.c, marginBottom: 3, display: "flex", alignItems: "center", gap: 6 }}>
+            <span style={{ ...hd, color: tone.c, ...knotHead(tone.c), marginBottom: 3, display: "flex", alignItems: "center", gap: 6 }}>
               <ActionIcon name="fire" size={14} color={tone.c} />
               <span>{closeUncontained.length ? "Active fire nearby" : "Active fire in the area"}</span>
             </span>

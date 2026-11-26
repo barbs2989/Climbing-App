@@ -1,3 +1,4 @@
+import { noteBox } from "../../lib/accents.js";
 import { useState, useEffect, useMemo } from "react";
 import { fetchAlpineForecast, fetchAlpineSpread, fetchCragAir, fetchPointAlerts } from "../../lib/forecast.js";
 import { planTimes } from "../../lib/planTimes.js";
@@ -285,7 +286,7 @@ export default function ForecastBox({ route, calc, kind, terrain, pt }: Forecast
     })}</div></div>
     <div style={box}>
     <DayHead title={"CONDITIONS · " + KIND_LABEL[kind].toUpperCase()} dayLabel={dayName(day, di)} nav={nav} />
-    {startEl || sunEl ? <div style={{ borderLeft: "2px solid " + C.border, padding: "2px 0 2px 10px", marginBottom: 12 }}>{startEl}{pubStart ? <div style={{ fontSize: 12, color: C.text, lineHeight: 1.5, marginTop: 6 }}><b>{"This route’s usual start: "}</b>{pubStart}</div> : null}{sunEl}</div> : null}
+    {startEl || sunEl ? <div style={{ ...noteBox(null, C.surface), marginBottom: 12 }}>{startEl}{pubStart ? <div style={{ fontSize: 12, color: C.text, lineHeight: 1.5, marginTop: 6 }}><b>{"This route’s usual start: "}</b>{pubStart}</div> : null}{sunEl}</div> : null}
     <div style={{ display: "flex", flexDirection: "column", gap: 6, marginBottom: 10 }}>
       {day.flags.length ? day.flags.map(function (f: ForecastBoxFlag, i: number) { const col = f.level === "warn" ? C.red : C.amber; return <div key={f.key + i} style={{ display: "flex", gap: 8, alignItems: "flex-start", fontSize: 12.5, color: C.text, lineHeight: 1.45 }}><span aria-hidden="true" style={{ flexShrink: 0, marginTop: 5, width: 8, height: 8, borderRadius: "50%", background: col }} /><span><b style={{ color: col }}>{f.level === "warn" ? "Warning: " : "Caution: "}</b>{flagText(f, fc)}</span></div>; })
         : <div style={{ fontSize: 12.5, color: C.textSub, lineHeight: 1.5 }}>Nothing in the forecast flags this day.</div>}

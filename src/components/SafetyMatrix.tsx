@@ -1,3 +1,4 @@
+import { noteBox } from "../../lib/accents.js";
 import { useState } from "react";
 import { catOf, isRecent, C, enrichRoute, CRAG_CATS } from "../../ClimbMatchCore.jsx";
 import { routeTerrain, saysNotApplicable } from "../../lib/terrain";
@@ -86,7 +87,7 @@ const avyRelevant=["ice","mixed","alpine","mountaineering","scrambling"].include
          and an empty one rendered nothing, so the only way in was hunting through Suggest a fix. Empty,
          it stays a placeholder on the disciplines where exposure, storms and crevasses are the hazard;
          a crag gets nothing rather than a prompt on every sport line. */
-      if(!rows.length)return onEdit&&!CRAG_CATS.includes(cat)?<div style={{background:C.card,borderRadius:12,padding:"12px 14px",marginBottom:12,border:`1px solid ${C.border}`}}><CardHead style={{marginBottom:8}}>SEASONAL HAZARDS</CardHead><div style={{paddingLeft:9,borderLeft:"2px solid "+C.borderLight}}><span style={{fontSize:11.5,color:C.textMuted,lineHeight:1.55}}>No exposure, weather or crevasse notes for this climb yet</span><button onClick={()=>onEdit("seasonalHazards")} style={{display:"block",marginTop:1,padding:"5px 0",border:"none",background:"none",color:C.blue,fontSize:12,fontWeight:700,cursor:"pointer",fontFamily:"inherit"}}>Add seasonal hazards</button></div></div>:null;
+      if(!rows.length)return onEdit&&!CRAG_CATS.includes(cat)?<div style={{background:C.card,borderRadius:12,padding:"12px 14px",marginBottom:12,border:`1px solid ${C.border}`}}><CardHead style={{marginBottom:8}}>SEASONAL HAZARDS</CardHead><div style={{...noteBox(null,C.surface)}}><span style={{fontSize:11.5,color:C.textMuted,lineHeight:1.55}}>No exposure, weather or crevasse notes for this climb yet</span><button onClick={()=>onEdit("seasonalHazards")} style={{display:"block",marginTop:1,padding:"5px 0",border:"none",background:"none",color:C.blue,fontSize:12,fontWeight:700,cursor:"pointer",fontFamily:"inherit"}}>Add seasonal hazards</button></div></div>:null;
       return <div style={{background:C.card,borderRadius:12,padding:"12px 14px",marginBottom:12,border:`1px solid ${C.border}`}}>
         <div style={{display:"flex",justifyContent:"space-between",alignItems:"center",gap:8,marginBottom:8}}><CardHead>SEASONAL HAZARDS</CardHead>{onEdit?<AreaEditIconButton onClick={()=>onEdit("seasonalHazards")} title="Edit seasonal hazards" C={C}/>:null}</div>
         {rows.map(([label,text],i)=><div key={label} style={{marginTop:i?9:0}}>

@@ -1,6 +1,7 @@
 import { catOf, C, DISC, SUB_LABEL } from "../../ClimbMatchCore.jsx";
 import { isMultiDayOuting } from "../../lib/outing.js";
 import CardHead from "./CardHead.tsx";
+import { isNoRopeClass } from "../../lib/rack";
 import EditIconButton from "./EditIconButton.tsx";
 
 /** A stored text field that is a string on some routes and a list on others. */
@@ -25,6 +26,7 @@ export interface RouteGearEssentialsBoxProps {
   onEdit?: (() => void) | null;
 }
 
+const _ROPE_KIT_RE=/^(?:rope|harness|belay)/i;
 const DISC_ASSUMED: Record<string, string[]>={sport:["Rope","Quickdraws","Harness","Belay / rappel device","Personal anchor / sling","Helmet","Climbing shoes","Chalk"],trad:["Rope","Trad rack","Harness","Belay / rappel device","Helmet","Climbing shoes","Chalk","Nut tool"],bouldering:["Climbing shoes","Crash pads","Chalk","Brush"],aid:["Rope","Trad rack","Harness","Belay / rappel device","Helmet","Aiders / etriers","Daisy chains","Ascenders"],ice:["Harness","Belay / rappel device","Helmet","Ice tools","Crampons","Mountaineering boots","Warm layers"],mixed:["Harness","Belay / rappel device","Helmet","Ice tools","Crampons","Warm layers"],alpine:["Harness","Belay / rappel device","Helmet","Ice axe","Crampons","Mountaineering boots","Glacier / crevasse kit","Warm layers","Navigation"],mountaineering:["Ice axe","Crampons","Mountaineering boots","Harness","Helmet","Glacier / crevasse kit","Navigation","Warm layers"],scrambling:["Approach shoes","Helmet","Navigation (map / GPS)"]};
 // Show the snow and glacier items only where the route gives evidence it needs them.
 const _GLACIER_RE=/glacier|crevasse|bergschrund|schrund|icefall|serac/i;
@@ -62,7 +64,9 @@ function _snowEvidence(route: GearEssentialsRoute){
   return {snowy:true,glaciated:glaciated,hedged:hedged,quote:hedged?String(best).trim().replace(/^[;\s]+|[;\s]+$/g,""):null};
 }
 function assumedFor(route: GearEssentialsRoute,disc: string){
-  const base=DISC_ASSUMED[disc]||[];
+  /* A Class 1-3 route that crosses no glacier is not roped (lib/rack.js isNoRopeClass), so the standard kit
+     drops what only a rope needs: the rope, the harness and the belay / rappel device. */
+  const base=(DISC_ASSUMED[disc]||[]).filter(function(item: string){return !(_ROPE_KIT_RE.test(item)&&isNoRopeClass(route));});
   if(disc!=="alpine"&&disc!=="mountaineering")return base;
   const ev=_snowEvidence(route);
   return base.filter(function(item: string){

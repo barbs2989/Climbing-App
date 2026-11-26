@@ -1,3 +1,4 @@
+import { knotHead } from "../../lib/accents.js";
 import { tx } from "../../lib/tapWords.js";
 import { useAreaChildren, useCountries, useAreaSearch, areaSearchTotal } from "../../lib/db";
 import Chevron from "./Chevron.tsx";
@@ -141,7 +142,7 @@ export default function DbAreaTree({ stateRoot, current, ancestorIds, onNavigate
       <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", gap: 10, padding: "14px 16px", borderBottom: "1px solid " + C.border, flexShrink: 0 }}>
         <button onClick={onClose} aria-label="Back" style={POP_BACK}>{"← Back"}</button>
         <div style={{ minWidth: 0, flex: 1 }}>
-          <div style={{ color: C.text, fontSize: 17, fontWeight: 800, borderLeft: "3px solid " + C.blue, paddingLeft: 9 }}>All areas</div>
+          <div style={{ color: C.text, fontSize: 17, fontWeight: 800, ...knotHead(C.brand) }}>All areas</div>
           {/* The subtitle used to read "<state> — tap a name to jump, ▸ to expand", which
               answers "what can I do here" and never "where am I". This screen is opened
               from an area page and covers it completely, so without naming the area you

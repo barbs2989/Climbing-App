@@ -189,7 +189,6 @@ async function create() {
     await insert("profile_zips", { user_id: A.id, zip: "98225" }, "user_id");
     await insert("profile_zips", { user_id: B.id, zip: "98103" }, "user_id");
     await insert("profile_zips", { user_id: C.id, zip: "98826" }, "user_id");
-    await insert("profile_emergency_contacts", { user_id: A.id, name: "Jordan (test contact)", phone: "555-0100" }, "user_id");
     const now = new Date().toISOString();
     for (const u of [A, B]) await insert("verification_records", { user_id: u.id, verification_type: "email", status: "verified", verified_at: now });
     await insert("verification_records", { user_id: A.id, verification_type: "member_club", status: "verified", verified_at: now });

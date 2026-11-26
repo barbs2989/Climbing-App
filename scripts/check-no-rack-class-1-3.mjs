@@ -19,6 +19,12 @@ import { NPX, NPX_PRE } from "./lib/npx.mjs";
 //   - a Class 2 route that records a picket shows the picket under GEAR & ESSENTIALS
 //   - Class 4, "Class 3-4" and a 5.6 alpine route STILL render RACK (the rule must not over-reach)
 //
+// AND NO ROPE (owner, 2026-11-25: "Rope doesn't need to be in class 1 2 or three grade climbs";
+// lib/rack.js isNoRopeClass). The same Class 1-3 routes render no ROPEWORK card and no generic
+// Harness / Belay device in GEAR & ESSENTIALS, and the edit sheet (lib/fieldScope.js) asks them no
+// rope length, rope type or ropework. A Class 1-3 GLACIER walk keeps its rope: it is crossed as a
+// rope team. Pinned both ways, like the rack.
+//
 // Static: one esbuild bundle, no DB, no browser. Fails CLOSED: a render with no GEAR heading or no
 // GEAR & ESSENTIALS card is a broken probe, because every "must NOT contain RACK" assertion passes
 // against a component that rendered nothing.
@@ -49,7 +55,8 @@ console.log("check:no-rack-class-1-3 — Class 1-3 routes and hikes have no RACK
 try {
   fs.writeFileSync(entry, [
     `export { default as RouteGearCheck } from ${JSON.stringify(path.join(ROOT, "src/components/RouteGearCheck.tsx"))};`,
-    `export { isNoRackClass, DISC_RACK } from ${JSON.stringify(path.join(ROOT, "lib/rack.js"))};`,
+    `export { isNoRackClass, isNoRopeClass, DISC_RACK } from ${JSON.stringify(path.join(ROOT, "lib/rack.js"))};`,
+    `export { fieldScope, scopeCtx } from ${JSON.stringify(path.join(ROOT, "lib/fieldScope.js"))};`,
   ].join("\n"));
   // Bundle INSIDE the project: node resolves `react` from the nearest node_modules.
   execFileSync(NPX, [...NPX_PRE, "esbuild", entry,
@@ -66,9 +73,11 @@ if (typeof globalThis.WebSocket === "undefined") {
 
 const mod = await import(fileHref(out + "?t=" + Date.now()));
 clean();
-const { RouteGearCheck, isNoRackClass, DISC_RACK } = mod;
+const { RouteGearCheck, isNoRackClass, isNoRopeClass, DISC_RACK, fieldScope, scopeCtx } = mod;
 if (typeof RouteGearCheck !== "function") dead("RouteGearCheck.tsx has no default export — ANCHOR LOST");
 if (typeof isNoRackClass !== "function") dead("lib/rack.js does not export isNoRackClass — ANCHOR LOST");
+if (typeof isNoRopeClass !== "function") dead("lib/rack.js does not export isNoRopeClass — ANCHOR LOST");
+if (typeof fieldScope !== "function" || typeof scopeCtx !== "function") dead("lib/fieldScope.js lost fieldScope/scopeCtx — ANCHOR LOST");
 
 // Render as RoutePlanTab does: no own rack -> the discipline's generic rack, flagged generic.
 const render = (route, own) => {
@@ -122,6 +131,49 @@ for (const r of KEEP) {
   if (hasRackCard(render(r))) ok(`${r.name}: keeps its RACK card`);
   else fail(`${r.name}: lost its RACK card — the rule over-reaches`);
 }
+
+// ── NO ROPE ON CLASS 1-3 (unless a glacier) ──
+const hasRopework = (html) => />ROPEWORK</.test(html);
+const hasHarness = (html) => />Harness</.test(html) || /Harness/.test(html);
+const NOROPE = [
+  GRAYS,
+  { name: "Class 2 mountaineering walk-up", discipline: "mountaineering", grade: "Class 2", grade_system: "class", overview: "A long trail and talus walk to the summit." },
+  { name: "Class 3 scramble", discipline: "scrambling", grade: "Class 3" },
+  { name: "Class 2-3 mountaineering (top 3)", discipline: "mountaineering", grade: "Class 2-3", overview: "Snow slopes to a rocky summit ridge." },
+  { name: "Class 2 walk-up reviewed glacier-free", discipline: "mountaineering", grade: "Class 2", glacierTravel: "no", overview: "Views of the glacier from the summit." },
+];
+for (const r of NOROPE) {
+  const h = render(r);
+  if (isNoRopeClass(r) && !hasRopework(h)) ok(`${r.name}: no ROPEWORK card`);
+  else fail(`${r.name}: still renders ROPEWORK (or isNoRopeClass says it is roped)`);
+  if (!hasHarness(h)) ok(`${r.name}: no generic Harness in the packing list`);
+  else fail(`${r.name}: still assumes a Harness`);
+  const ctx = scopeCtx(r, r.discipline);
+  const asked = ["ropeNote", "ropeLen", "ropeType"].filter((k) => fieldScope(k, ctx));
+  if (!asked.length) ok(`${r.name}: the edit sheet asks no rope field`);
+  else fail(`${r.name}: the edit sheet still asks ${asked.join(", ")}`);
+}
+const ROPED = [
+  { name: "Class 2 glacier walk (reviewed)", discipline: "mountaineering", grade: "Class 2", glacierTravel: "yes", overview: "Up the Easton Glacier to the summit." },
+  { name: "Class 2 glacier walk (text only)", discipline: "mountaineering", grade: "Class 2", overview: "Rope up at the toe of the glacier and weave through the crevasses." },
+  { name: "Class 4 mountaineering", discipline: "mountaineering", grade: "Class 4" },
+  { name: "Class 3-4 mountaineering (top 4)", discipline: "mountaineering", grade: "Class 3-4" },
+  { name: "5.6 alpine rock", discipline: "alpine", grade: "5.6", rock_grade: "5.6" },
+];
+for (const r of ROPED) {
+  const h = render(r);
+  if (!isNoRopeClass(r) && hasRopework(h)) ok(`${r.name}: keeps its ROPEWORK card`);
+  else fail(`${r.name}: lost its ROPEWORK card — the no-rope rule over-reaches`);
+  if (hasHarness(h)) ok(`${r.name}: keeps the Harness`);
+  else fail(`${r.name}: lost the Harness`);
+  if (fieldScope("ropeNote", scopeCtx(r, r.discipline))) ok(`${r.name}: the edit sheet still asks ropework`);
+  else fail(`${r.name}: the edit sheet stopped asking ropework`);
+}
+// A Class 1-3 route that STORES a rope note is not asked for it either: its page draws no ROPEWORK, so the
+// editor would correct a value nobody sees (106 live routes, nearly all "no rope needed", 2026-11-25).
+const storedNote = { name: "Class 2 walk-up with a stored rope note", discipline: "mountaineering", grade: "Class 2", ropeNote: "No rope needed." };
+if (!fieldScope("ropeNote", scopeCtx(storedNote, "mountaineering")) && !hasRopework(render(storedNote))) ok("a Class 2 route that stores a rope note shows no ROPEWORK and offers no editor for it");
+else fail("a Class 2 route's stored rope note still renders ROPEWORK or still offers its editor");
 
 if (failures) { console.log(`\ncheck:no-rack-class-1-3: ${failures} FAILED`); process.exit(1); }
 console.log("\ncheck:no-rack-class-1-3: ok");

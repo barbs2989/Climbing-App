@@ -1,3 +1,4 @@
+import { knotHead } from "../../lib/accents.js";
 import { createPortal } from "react-dom";
 import { C, SKILLS } from "../../ClimbMatchCore.jsx";
 import { POP_CLOSE } from "../../lib/popupChrome.js";
@@ -29,5 +30,5 @@ export default function SkillGuideSheet({skillKey, onClose}: SkillGuideSheetProp
       <div style={H}>Learn more</div>{links(guide.links)}
       <div style={H}>Learn it in person</div>{links(COURSES[guide.courses] || [])}
       <div style={{marginTop:10}}>{note}</div></> : null;
-  return createPortal(<div onClick={onClose} tabIndex={-1} onKeyDown={e => { if (e.key === "Escape") onClose(); }} role="dialog" aria-modal="true" aria-label={title} style={{position:"fixed",inset:0,background:C.scrim,zIndex:9850,display:"flex",alignItems:"flex-end",justifyContent:"center"}}><div onClick={e => e.stopPropagation()} style={{background:C.bg,width:"100%",maxWidth:520,maxHeight:"88vh",overflowY:"auto",overscrollBehavior:"contain",borderRadius:"16px 16px 0 0",padding:"14px 16px 20px",border:"1px solid "+C.border,borderBottom:"none",boxSizing:"border-box"}}><div style={{display:"flex",justifyContent:"space-between",alignItems:"center",gap:10}}><div style={{color:C.text,fontSize:17,fontWeight:700,borderLeft:"3px solid "+C.blue,paddingLeft:9}}>{title}</div><button aria-label={"Close "+title} onClick={onClose} style={POP_CLOSE}>✕</button></div>{body}</div></div>, document.body);
+  return createPortal(<div onClick={onClose} tabIndex={-1} onKeyDown={e => { if (e.key === "Escape") onClose(); }} role="dialog" aria-modal="true" aria-label={title} style={{position:"fixed",inset:0,background:C.scrim,zIndex:9850,display:"flex",alignItems:"flex-end",justifyContent:"center"}}><div onClick={e => e.stopPropagation()} style={{background:C.bg,width:"100%",maxWidth:520,maxHeight:"88vh",overflowY:"auto",overscrollBehavior:"contain",borderRadius:"16px 16px 0 0",padding:"14px 16px 20px",border:"1px solid "+C.border,borderBottom:"none",boxSizing:"border-box"}}><div style={{display:"flex",justifyContent:"space-between",alignItems:"center",gap:10}}><div style={{color:C.text,fontSize:17,fontWeight:700,...knotHead(C.brand)}}>{title}</div><button aria-label={"Close "+title} onClick={onClose} style={POP_CLOSE}>✕</button></div>{body}</div></div>, document.body);
 }

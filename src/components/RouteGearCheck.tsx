@@ -5,12 +5,11 @@ import { C, RSL as SL } from "../../ClimbMatchCore.jsx";
 import CardHead from "./CardHead.tsx";
 import GapNote from "./GapNote.tsx";
 import EditIconButton from "./EditIconButton.tsx";
-import type { ReactNode } from "react";
 import RouteRackBox from "./RouteRackBox.tsx";
 import type { GearRoute, RouteRackBoxProps } from "./RouteRackBox.tsx";
 import RouteGearEssentialsBox from "./RouteGearEssentialsBox.tsx";
 import type { GearEssentialsRoute } from "./RouteGearEssentialsBox.tsx";
-import { rackLeftovers, isNoRackClass, rackForNoRackClass } from "../../lib/rack";
+import { rackLeftovers, isNoRackClass, rackForNoRackClass, isNoRopeClass } from "../../lib/rack";
 
 /** The route fields the ropework card reads (ropeworkFacts reads the rest). */
 export interface RopeworkRoute {
@@ -35,14 +34,12 @@ export interface RouteGearCheckProps {
   /** The rack shown is the discipline's standard one, not this route's own. */
   rackGeneric?: boolean;
   onEditRopeNote?: (() => void) | null;
-  /** Rendered between the rack and ropework cards. */
-  afterRack?: ReactNode;
 }
 
 /* Moved verbatim from RouteDetail.jsx; only the types were added.
    WALK-IN: the crag's own approach (`areas.approach`, 0247) — the walk from the trail to the base,
    written once per crag and shown on every route there. Never roads, parking, permits or closures. */
-export default function RouteGearCheck({route,activity,onSeeReports,rack,onEditRack,onEditEssentials,essentials,rackGeneric,onEditRopeNote,afterRack}: RouteGearCheckProps){
+export default function RouteGearCheck({route,activity,onSeeReports,rack,onEditRack,onEditEssentials,essentials,rackGeneric,onEditRopeNote}: RouteGearCheckProps){
   /* Mounted only OFF CRAG_CATS (alpine, mountaineering, ice, mixed, scrambling). It used to open with a
      `bouldering` return and a `sport` branch (a computed quickdraw note plus "Rack beta"), and neither
      could run: a crag route draws CragRack instead. The sport branch was also the second of two copies
@@ -92,5 +89,8 @@ function RopeworkBox({route,onEdit}: {route: RopeworkRoute; onEdit?: (() => void
      packing list instead, so nothing it states is dropped. */
   const noRack=isNoRackClass(route);
   const ownRack=noRack?rackForNoRackClass(route):[];
-  return <><SL>GEAR</SL>{noRack?null:<RouteRackBox route={route} activity={activity} onEditRack={onEditRack} rack={rack} onSeeReports={onSeeReports} rackGeneric={rackGeneric}/>}{afterRack}<RopeworkBox route={route} onEdit={onEditRopeNote}/><RouteGearEssentialsBox route={route} essentials={(essentials||[]).concat(rackLeftovers(route)).concat(ownRack)} onEdit={onEditEssentials}/></>;
+  /* No ROPEWORK card on a Class 1-3 route that crosses no glacier (lib/rack.js isNoRopeClass): no rope
+     placeholder, no rope length. A glacier walk keeps it, because it is crossed as a rope team. */
+  const noRope=isNoRopeClass(route);
+  return <><SL>GEAR</SL>{noRack?null:<RouteRackBox route={route} activity={activity} onEditRack={onEditRack} rack={rack} onSeeReports={onSeeReports} rackGeneric={rackGeneric}/>}{noRope?null:<RopeworkBox route={route} onEdit={onEditRopeNote}/>}<RouteGearEssentialsBox route={route} essentials={(essentials||[]).concat(rackLeftovers(route)).concat(ownRack)} onEdit={onEditEssentials}/></>;
 }

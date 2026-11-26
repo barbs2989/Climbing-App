@@ -1170,6 +1170,21 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     deferred, but the call runs at module scope. Not followed on purpose: following calls means
     evaluating the program. Recorded in the suite as a known miss, not a case.
 
+- **`check:no-left-stripes`** asserts that **no box wears a thick coloured line down its left side**
+  (owner, 2026-11-25: "I don't like the thick line on the left side of boxes. Remove all of those and
+  find something more unique"). 82 stripes in 50 files (31 heading bars, 2 bar spans, 13 callout cards,
+  ~20 aside notes and quotes, 2 left-edge inset shadows on a selected row, a calendar chip, a stat tile)
+  were replaced by the three looks in `lib/accents.js`. Static, in `npm run build`.
+  - **What fails**: a `borderLeft` / `borderInlineStart` (or CSS `border-left`) of 2px or more,
+    `borderLeftWidth` ≥ 2, any `borderLeftColor`, an `inset Npx 0 0` shadow (N ≥ 2), and a bar span of
+    the shape `{width:2–5,height:10+,borderRadius,background}`.
+  - **Allowed on purpose**: a **1px** left rule (a column divider between stat cells, a panel's edge —
+    not a stripe; ~20 of them, kept), and the **rope**'s gap segment in the waypoint list, a line
+    BETWEEN two cards marked `data-rope=""` on the same element.
+  - **Cannot see**: a stripe drawn by a gradient background, a pseudo-element in `index.html` CSS, or a
+    bar span whose properties are written in another order. The census that drove the sweep searched
+    for all of those by hand on 2026-11-25 and found none besides the ones the rules cover.
+
 - **`check:no-emoji`** asserts that **the app draws no emoji** (owner, 2026-10-25: "i dont want
   emojis"). Every icon is a line icon (`ActionIcon`) or no icon at all; an emoji is drawn by the
   phone's own colour font, so it changes from device to device, sits at a different size from the

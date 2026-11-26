@@ -1,3 +1,4 @@
+import { glowCard, knotMark } from "../../lib/accents.js";
 import { useState } from "react";
 import { campDetail, campFromTrailhead, campNightsLabel, campWalkHrs, campSleptLine, campFromPrev, campRoleLabel } from "../../lib/camps.js";
 import { uElev, C, ROUTE_GAP } from "../../ClimbMatchCore.jsx";
@@ -77,7 +78,7 @@ export default function CampSite({b,i,first,calc,dayCount,slept,prev}: CampSiteP
   const tone=(b&&{Camp:C.blue,Bivy:C.teal,Hut:C.amber}[b.kind as "Camp"|"Bivy"|"Hut"])||C.blue;
   const DTONE={Capacity:tone,Water:C.blue,Permit:C.amber};
   const chip=function(c: string,bd: string){return {fontSize:11,fontWeight:700,color:c,background:C.surface,border:"1px solid "+bd,borderRadius:20,padding:"2px 9px"};};
-  return <div style={{background:C.card,border:"1px solid "+(open?tone+"66":C.border),borderLeft:"3px solid "+tone,borderRadius:12,marginBottom:ROUTE_GAP,overflow:"hidden"}}>
+  return <div style={{background:C.card,...glowCard(tone,C.card),borderRadius:12,marginBottom:ROUTE_GAP,overflow:"hidden"}}>
     <div {...(more?clickable(function(){setOpen(!open);}):{})} aria-expanded={more?open:undefined} aria-label={more?((open?"Hide":"Show")+" camping detail for "+label):undefined} style={{minHeight:44,boxSizing:"border-box",padding:"11px 13px",cursor:more?"pointer":"default"}}>
       <div style={{display:"flex",alignItems:"flex-start",gap:10}}>
         <div aria-hidden="true" style={{width:30,height:30,borderRadius:8,background:tone+"22",color:tone,display:"flex",alignItems:"center",justifyContent:"center",fontSize:15,flexShrink:0}}>{"☾"}</div>
@@ -101,7 +102,7 @@ export default function CampSite({b,i,first,calc,dayCount,slept,prev}: CampSiteP
       </div>
     </div>
     {open&&more?<div style={{borderTop:"1px solid "+C.borderLight,background:C.surface,padding:"12px 13px 3px"}}>
-      {detail.concat(b.notes?[["Notes",b.notes]]:[]).map(function(r,ri){return <div key={ri} style={{display:"flex",gap:10,marginBottom:11}}><span aria-hidden="true" style={{width:3,borderRadius:2,background:DTONE[r[0] as keyof typeof DTONE]||C.borderHi,flexShrink:0}}/><div style={{minWidth:0}}><div style={{fontSize:10.5,fontWeight:800,color:DTONE[r[0] as keyof typeof DTONE]||C.textMuted,letterSpacing:0.6,marginBottom:3}}>{r[0].toUpperCase()}</div><div style={{fontSize:12.5,color:C.text,lineHeight:1.6,opacity:0.88}}>{r[1]}</div></div></div>;})}
+      {detail.concat(b.notes?[["Notes",b.notes]]:[]).map(function(r,ri){return <div key={ri} style={{display:"flex",gap:10,marginBottom:11}}><span aria-hidden="true" style={{...knotMark(DTONE[r[0] as keyof typeof DTONE]||C.borderHi),marginTop:3}}/><div style={{minWidth:0}}><div style={{fontSize:10.5,fontWeight:800,color:DTONE[r[0] as keyof typeof DTONE]||C.textMuted,letterSpacing:0.6,marginBottom:3}}>{r[0].toUpperCase()}</div><div style={{fontSize:12.5,color:C.text,lineHeight:1.6,opacity:0.88}}>{r[1]}</div></div></div>;})}
     </div>:null}
   </div>;
 }

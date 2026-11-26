@@ -46,6 +46,7 @@ npm run measure:guard-reach -- --out before.json # ...then --out after.json --co
 npm run check:refs # identifiers referenced but never bound (runs in build + CI)
 npm run check:jsx-comments # a comment in JSX children position renders to the USER (in build)
 npm run check:no-emoji # the app draws NO emoji — an ActionIcon or the words alone (owner, 2026-10-25); the one exception is the REACTIONS table (owner, 2026-11-05) (in build)
+npm run check:no-left-stripes # no box wears a thick coloured line down its LEFT side — a knot, a corner glow or a tinted panel instead (owner, 2026-11-25) (in build)
 npm run check:no-purple-text # the app draws NO purple text: C has no purple token, and the few purple MAP marks are an allow-list (owner, 2026-11-25) (in build)
 npm run check:no-nul  # no source file git would treat as BINARY, so diffs stay readable (in build)
 npm run check:no-secrets # no Supabase service key, service_role JWT, or literal anon key / project URL in source (in build)
@@ -153,7 +154,7 @@ npm run check:crew-place # a crew has ONE place, a route or an area, and every s
 # ── The route page — notes: docs/guards/route-page.md ──
 npm run check:bare # renders a route with NO enrichment — the shape 99.5% of them have
 npm run check:access-checked-line # the road/access CHECKED DATE reaches a screen (in build)
-npm run check:no-rack-class-1-3 # RULE: a Class 1-3 route (headline grade, any discipline) or a hike has NO RACK card; its own rack items go to GEAR & ESSENTIALS (in build)
+npm run check:no-rack-class-1-3 # RULE: a Class 1-3 route (headline grade, any discipline) or a hike has NO RACK card; its own rack items go to GEAR & ESSENTIALS; and NO ROPE (ROPEWORK, harness, rope fields) unless it crosses a glacier (in build)
 npm run check:trailhead-directions # ONE way to drive there, coordinates with it, labels that match (in build)
 npm run check:trailhead-direction-shape # ...and those directions END AT THE TRAILHEAD, not a hike narrative (in build; --live daily)
 npm run check:approach-section # ONE approach section; the most-used way in is first, marked, and carries the paragraph (in build)
