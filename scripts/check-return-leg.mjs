@@ -409,7 +409,38 @@ console.log("\na pitch count of 1 beside 100+ m of climb is no pitch count -- no
   eq("no pitch count: a walk-up (mountaineering) is not given a climb from its length", planTimes({ ...noCount, discipline: "mountaineering", routeFt: 1150 }).totalH, planTimes({ ...noCount, discipline: "mountaineering" }).totalH);
 }
 
-const FLOOR = 67;
+console.log("\nPARTY SIZE, PACK WEIGHT AND THE START TIME change the estimate (owner's note, 2026-11-26)");
+{
+  /* PARTY: every leg slows by PARTY_PACE per climber over two, and each roped pitch costs PARTY_PITCH_H more
+     per extra climber. The old rule added a flat 0.4 hr to the way up only, whatever the route. */
+  const walk = { discipline: "mountaineering", distKm: 10, gainM: 1200, lossM: 1200 };
+  const roped = { discipline: "alpine", grade: "5.7", pitches: 10, distKm: 6, gainM: 900, lossM: 900 };
+  const p2 = planTimes(walk, { party: 2 }), p4 = planTimes(walk, { party: 4 }), p1 = planTimes(walk, { party: 1 });
+  eq("party: a party of 4 takes longer than a pair on a walk-up", p4.tripH > p2.tripH, true);
+  eq("party: ...on the way DOWN as well as up (the descent used to carry nothing)", p4.downH > p2.downH && p4.hikeH > p2.hikeH, true);
+  eq("party: ...by 5% a climber over two, on every leg", Math.round((p4.tripH / p2.tripH) * 1000), 1100);
+  eq("party: the tiles add up to the Total, the party included (nothing hidden outside them)", Math.abs(p4.hikeH + p4.techH + p4.downH - p4.tripH) < 1e-9, true);
+  eq("party: partyH names exactly what the party added", Math.abs(p4.partyH - (p4.tripH - p2.tripH)) < 1e-9, true);
+  eq("party: a party of one is timed as a pair, never faster (a solo roped climber is slower)", p1.tripH, p2.tripH);
+  const r2 = planTimes(roped, { party: 2 }), r3 = planTimes(roped, { party: 3 });
+  eq("party: a third climber on 10 roped pitches adds at least 5 min a pitch to the climb", r3.techH - r2.techH >= 10 * 5 / 60 - 1e-9, true);
+  eq("party: a walk-up gets no per-pitch charge (a scramble is not belayed)", Math.round((planTimes({ ...walk, pitches: 4 }, { party: 3 }).techH - planTimes({ ...walk, pitches: 4 }, { party: 2 }).techH * 1.05) * 1000), 0);
+  const stored = { discipline: "mountaineering", timing: { approachTimeHrs: 4, summitTimeHrs: 6, descentTimeHrs: 5 } };
+  eq("party: a route's PUBLISHED legs scale with the party too (they are a pair's times)", planTimes(stored, { party: 4 }).tripH > planTimes(stored, { party: 2 }).tripH, true);
+  /* PACK: the walk slows smoothly with weight. The old tiers left 8-15 kg identical, so 18-33 lb read one time. */
+  const pk = (kg) => planTimes(walk, { pack: kg }).tripH;
+  eq("pack: a heavier pack is slower at EVERY step (9 kg vs 14 kg used to be the same tier)", pk(14) > pk(9), true);
+  eq("pack: ...and there is no cliff (16 kg vs 15 kg moves under 2%)", pk(16) / pk(15) < 1.02, true);
+  eq("pack: the default 10 kg is exactly the pace the route-time audits were calibrated at (0.92)", Math.round(planTimes(walk, { pack: 10 }).walkUpH * 0.92 * 1e6), Math.round(planTimes(walk, { pack: 0 }).walkUpH * 1e6));
+  /* THE PLANNER'S BOXES: the inputs can be emptied without writing a 0, and the start runs from the evening before. */
+  const src = readAppFile("src/components/Calculator.tsx");
+  eq("inputs: pack and party are NumBox, which keeps the TYPED text while editing (no forced leading 0)", /<NumBox label="Pack weight"/.test(src) && /<NumBox label="Party size"/.test(src) && /if\(t\.trim\(\)===""\)return;/.test(src), true);
+  const html = text(render(route({ gainM: 7000 / FT, lossM: 7000 / FT })));
+  eq("start: the Depart list offers 9:00 PM the night before (it began at 2 AM)", /9:00 PM \(night before\)/.test(html), true);
+  eq("start: ...and midnight", /12:00 AM/.test(html), true);
+}
+
+const FLOOR = 100;
 if (ran < FLOOR) {
   console.log(`\nFAIL  only ${ran} assertion(s) ran against a floor of ${FLOOR} — this run proved less than it claims`);
   fail++;

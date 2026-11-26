@@ -27,7 +27,7 @@ const CASES = [
   { name: "1. the real historical defect — a pager swallows its error again",
     file: "lib/db-messaging.js",
     edit: s => s.replace(
-      "if (error) throw error;   // a failed read is not an empty page — see the note above",
+      "if (error) throw error;   // a failed read is not an empty page — see the note above (crew chat)",
       "if (error) return [];"),
     want: r => r.code !== 0 && /fetchOlderCrewMessages/.test(r.out) && /\[\]/.test(r.out) },
 

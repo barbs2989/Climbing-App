@@ -560,7 +560,10 @@ for (const d of [...CRAG, "alpine"]) {
   // Is `want` drawn, in this order, among the headings `got` (other headings may sit between)?
   const inOrder = (got, want) => { let i = 0; const miss = []; for (const w of want) { const j = got.indexOf(w, i); if (j < 0) miss.push(w); else i = j + 1; } return miss; };
   const CRAG_OV = (desc, mid) => [desc, "TOPO", "BETA", "GEAR & SAFETY", ...mid, "CRAG MAP", "GETTING THERE", "ACCESS & REGULATIONS", "APPROACH", "WHERE IT STARTS"];
-  const PLAN = (raps) => ["GETTING THERE", "ACCESS & REGULATIONS", "ROUTE TRACK", "WAYPOINTS", "APPROACH", "CLIMBING ROUTE", "ROUTE BREAKDOWN", "DESCENT", ...(raps ? ["RAPPELS"] : []), "GEAR", "FULL TRIP TIME", "TRIP PLAN", "CAMPING & BIVY"];
+  /* TRIP PROFILE on a route walked to a summit, empty or not (owner note, 2026-11-26: "Is trip profile on all
+     routes that it should be on? Even if there's no data on it?"). Ice and mixed mount it only with legs or a
+     trailhead waypoint (tripProfilePertinent), so their bare page does not draw it. */
+  const PLAN = (raps, profile) => ["GETTING THERE", "ACCESS & REGULATIONS", "ROUTE TRACK", "WAYPOINTS", "APPROACH", "CLIMBING ROUTE", "ROUTE BREAKDOWN", "DESCENT", ...(raps ? ["RAPPELS"] : []), "GEAR", ...(profile ? ["TRIP PROFILE"] : []), "FULL TRIP TIME", "TRIP PLAN", "CAMPING & BIVY"];
   const MTN_OV = ["ROUTE DESCRIPTION", "BETA", "TOPO"];
   const MTN_SAFE = ["KNOWN HAZARDS", "SEASONAL HAZARDS", "FLOAT PLAN"];
   const WANT = {
@@ -569,11 +572,11 @@ for (const d of [...CRAG, "alpine"]) {
     toprope: { overview: CRAG_OV("ROUTE DESCRIPTION", []), safety: ["KNOWN HAZARDS"], forecast: ["SEASON"] },
     bouldering: { overview: CRAG_OV("PROBLEM DESCRIPTION", []), safety: ["KNOWN HAZARDS"], forecast: ["SEASON"] },
     aid: { overview: CRAG_OV("ROUTE DESCRIPTION", ["DESCENT", "SEASON"]), safety: ["KNOWN HAZARDS"] },
-    alpine: { overview: MTN_OV, planner: PLAN(true), safety: MTN_SAFE, forecast: ["SEASON"] },
-    mountaineering: { overview: MTN_OV, planner: PLAN(true), safety: MTN_SAFE, forecast: ["SEASON"] },
+    alpine: { overview: MTN_OV, planner: PLAN(true, true), safety: MTN_SAFE, forecast: ["SEASON"] },
+    mountaineering: { overview: MTN_OV, planner: PLAN(true, true), safety: MTN_SAFE, forecast: ["SEASON"] },
     ice: { overview: MTN_OV, planner: PLAN(true), safety: MTN_SAFE, forecast: ["SEASON"] },
     mixed: { overview: MTN_OV, planner: PLAN(true), safety: MTN_SAFE, forecast: ["SEASON"] },
-    scrambling: { overview: MTN_OV, planner: PLAN(false), safety: MTN_SAFE, forecast: ["SEASON"] },
+    scrambling: { overview: MTN_OV, planner: PLAN(false, true), safety: MTN_SAFE, forecast: ["SEASON"] },
   };
   let bad = 0;
   for (const [d, tabs] of Object.entries(WANT)) {

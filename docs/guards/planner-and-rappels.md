@@ -797,6 +797,27 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     *"0.0 mi"* would call it clean: it derives the expected number of printed legs from the same
     geometry and asserts it exactly. Non-vacuous both ways — 3 of 4 routes fail on the old code,
     and the clean control `wa_mount_baker_coleman_deming` stays green either way.
+- **`audit:rappel-one-rope`** — the RAPPELS section describes ONE rope only (owner note, 2026-11-26).
+  Reads every route carrying `rappels`, `rappel_count_note` or `rappel_detail` (728 on 2026-11-26) and
+  fails on (1) a station longer than one rope reaches (> 37 m, a single 70 m's reach) or a row that
+  states one rope does not reach, and (2) two-rope WORDING in any of the three columns or a station's
+  text: *double-rope*, *two 60 m ropes*, *2 x 60 m*, *two 60s*, *twin ropes*, *a second rope*, *tag
+  line*, *halves it*. Read-only, service key, fails closed on zero rows; `--selftest` needs no DB.
+  - **Its negatives matter as much as its positives**: *a single 70 m rope used doubled* (how every
+    rappel works), *jammed ropes*, *the party ropes up*, *pulling ropes in the gully*, *two single-rope
+    rappels* and *two rope-lengths of downclimbing* are all clean.
+  - **Measured before the pass: 130 of 728 routes failed** (14 by a station length, 129 by wording);
+    6 more were found by a wider hand scan (`two 60s`, `a second rope`, `doubled-up 50m ropes`).
+  - **After the pass: 0 of 763.** The census grew by 35 during the session because a parallel
+    pitch-gap import (#4039) wrote new rappel tables; 17 of them were two-rope and were researched
+    the same way. Re-run this after ANY rappel import.
+  - **The pattern list grew twice from real misses**: *double 60m ropes*, *link two 30 m ropes*,
+    *two shorter ropes joined* — the first cut only knew 50/60/70 m and the word "two".
+  - **A cleared table is not a lost answer.** Where research found no single-rope station list, the
+    two-rope stations were removed (`enrich:apply` `clear_rappels`, refused unless the same entry
+    rewrites `rappels` or `rappel_count_note`) and the prose says what one rope does there: a
+    count, the walk-off, or plainly that one rope does not reach and no intermediate station is known.
+    Halving a two-rope length into "single-rope stations" was forbidden: that invents anchors.
 - **`check:rappel-single-rope`** keeps the headline count honest for the rope most parties carry,
   and it asks the question two ways. `rappelRopeNeed()` decided which rope a descent
   needs from `rappel_detail[].lengthM` **alone** — deliberately, and the reasoning in its own
@@ -1288,3 +1309,31 @@ characters, with hours, miles or gain).
   wraps fine; Bacon Peak's three days have none). Run it after any batch that writes `itinerary`, and
   BEFORE applying 0409: Postgres re-checks a CHECK constraint on every UPDATE of a row, even a
   `NOT VALID` one, so adding it while one prose row remains makes every later edit of that row fail.
+
+## The trip profile is on every mountain route: `check:trip-profile` (2026-11-26)
+
+**Why.** Owner note, 2026-11-26: "Is trip profile on all routes that it should be on? Even if there's no data on
+it? If not add it and audit how one would edit and or add info on one." `TripProfileCard` returned `null` whenever
+`tripProfile()` had no legs, and it had legs only with a RECORDED track carrying both the trailhead and the summit
+pins. Measured over the 12,099 routes that mount the slot (`scripts/oneoff/measure-trip-profile-coverage.mjs`):
+128 drew it, 11,681 had no track. Nothing told a climber the section existed, or that the waypoint editor fills it.
+
+**What changed.** (1) `lib/tripProfile.js` measures the legs from the waypoints' own published `distMi` and `elev`
+when there is no usable track (`measureByPins`, `measuredBy: "distances"`): 128 -> 343 routes draw it. No
+coordinate is read and nothing is drawn, so the map-line rule (a recorded track or nothing) is untouched. (2) A
+mountain route (alpine, mountaineering, scrambling, walk-up, or any route with a trailhead waypoint:
+`tripProfilePertinent`) with no legs draws an EmptySection that says why and opens the waypoint editor (or the
+timing editor, on a car-to-car route). (3) The card has an edit pencil. (4) `check:bare` section 8 requires the
+TRIP PROFILE heading on bare alpine, mountaineering and scrambling routes.
+
+**What it pins.** Distances-only legs add up to the route's own one-way distance and gain; a waypoint with no
+distance has no leg and is counted; the empty state draws its heading and the right editor; a roadside ice line
+draws nothing; the distances path needs no coordinate.
+
+**What it cannot see.** Whether a stored `distMi` is right. `audit:waypoint-distances` catches the impossible case
+(trail shorter than the straight line); a plausible wrong distance passes both.
+
+**Found on the way: the waypoint editor corrupted metric edits.** Its boxes are labelled km and m on the metric
+setting and submit converts them, but they were pre-filled with the stored miles and feet unconverted: opening the
+editor and saving shrank every distance by 1.6x and raised every height by 3.3x. The pre-fill now converts, and an
+untouched box submits the stored number itself (`_o` in `SuggestFix.tsx`).

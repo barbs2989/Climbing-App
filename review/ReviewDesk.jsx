@@ -25,7 +25,8 @@ import { useEffect, useMemo, useState } from "react";
 import { useQuery } from "@tanstack/react-query";
 import { useAuth } from "../src/AuthContext.tsx";
 import { supabase } from "../lib/supabase";
-import { HealthStrip, HistorySection, ClimbersSection, AppealsSection, LocksSection, WorklistSection, FieldHistory, WordDiff } from "./DeskSections";
+import SafetySection from "./SafetySection";
+import { HealthStrip, HistorySection, ClimbersSection, AppealsSection, LocksSection, WorklistSection, BasePinsSection, FieldHistory, WordDiff } from "./DeskSections";
 import {
   useCanReview, useFieldContributions, useOpenRouteFlags, useContributionFields, useRouteRowsByIds,
   useAreaEditRowsByIds, approveFieldContribution, rejectFieldContribution, setRouteFieldConfidence,
@@ -159,7 +160,9 @@ export default function ReviewDesk() {
 // with them here that section, its full-screen sheet and the Menu button's count are gone (owner 2026-11-25: "Is the
 // review section on menu only for me as the owner of the app? If so, remove since we created the admin page").
 // review.html#placements and review.html#feedback open them; Feedback counts open notes, as the Menu tile did.
-const SECTIONS = [["edits", "Edits, flags & wall orders", true], ["proposals", "Proposed climbs & areas"], ["placements", "Wrong place claims"], ["trails", "Trails & GPS tracks"], ["access", "Accessibility reports"],
+// HELD BASE PINS (0547, review.html#basepins): base-of-the-climb check-in spots too far from the route's pin to move it alone.
+// SAFETY (2026-11-26, review.html#safety): reports about climbers and content, reported photos and appeals; admin only.
+const SECTIONS = [["edits", "Edits, flags & wall orders", true], ["safety", "Safety reports"], ["proposals", "Proposed climbs & areas"], ["placements", "Wrong place claims"], ["trails", "Trails & GPS tracks"], ["basepins", "Held base pins"], ["access", "Accessibility reports"],
   ["feedback", "Feedback & ratings"], ["history", "History", true], ["climbers", "Climbers"], ["appeals", "Appeals"], ["locks", "Locks"], ["worklist", "Worklist"]];
 const fromHash = (admin) => { const h = (typeof window !== "undefined" && window.location.hash || "").slice(1); return SECTIONS.some(([k, , rev]) => k === h && (admin || rev)) ? h : "edits"; };
 function Desk({ admin }) {
@@ -191,8 +194,8 @@ function Desk({ admin }) {
     </div> : sec === "feedback" ? <div style={{ maxWidth: 640 }}>
       <p style={{ fontSize: 12.5, color: C.textMuted, lineHeight: 1.5, marginTop: 0 }}>What climbers and visitors sent from Feedback, and ratings that came with a comment. Reply by email if they left an address, then mark it read. Ratings without a comment only count toward the app rating above.</p>
       <AppFeedbackQueue notify={notify} />
-    </div> : sec === "proposals" ? <ProposalsSection /> : sec === "history" ? <HistorySection admin={admin} /> : sec === "climbers" ? <ClimbersSection admin={admin} />
-      : sec === "appeals" ? <AppealsSection /> : sec === "locks" ? <LocksSection /> : sec === "worklist" ? <WorklistSection /> : <EditsTable admin={admin} />}
+    </div> : sec === "safety" ? <SafetySection /> : sec === "proposals" ? <ProposalsSection /> : sec === "history" ? <HistorySection admin={admin} /> : sec === "climbers" ? <ClimbersSection admin={admin} />
+      : sec === "appeals" ? <AppealsSection /> : sec === "locks" ? <LocksSection /> : sec === "worklist" ? <WorklistSection /> : sec === "basepins" ? <BasePinsSection notify={notify} /> : <EditsTable admin={admin} />}
   </div>;
 }
 

@@ -1,0 +1,217 @@
+{
+ "wa_american_border_peak_southeast_face": {
+  "area": "wa_american_border_peak",
+  "set": {
+   "rappel_count_note": "Accounts disagree on the count: some parties made three rappels on the way down, others needed just two, starting at the top of the keyhole. A count of five comes from a party on short ropes rather than from a longer list of fixed stations, which is why its lengths (about 23 m / 75 ft) look so precise. Every station listed here is within reach of a single 60 m rope. That party's final rappel off the southeast rib jammed and they sacrificed a rope; the standard line threads the low keyhole beneath the chockstone for a cleaner pull.",
+   "descent_text": "Descend by reversing the Southeast Face/South Ridge line back down to the South AmBo Saddle \u2014 the terrain is loose and complex enough that there is no clean walk-off alternative. Expect two to four short rappels through the summit chimney/gully system, with the count depending on party size, rope handling, and which chockstone squeeze you take: the standard, recommended line threads the low \"keyhole\"/tunnel beneath a large chockstone (pull packs off, push them through, crawl after), giving a clean, low-angle rappel; parties who instead rig over the lip of the chockstone get a harder, overhanging drop and sometimes add an extra rappel to manage it. A single 60m rope is sufficient for the individual rappels (each reported at around 75 ft/~23 m). Anchors are entirely natural \u2014 slung chockstones and horns with in-place webbing that is often sun-bleached and aged \u2014 there are no bolts on this route, so inspect and back up (or replace) any tat you find and carry your own cord/rap rings; at least one party describes sacrificing a rope that got stuck in a rappel crack, so a pull-cord or a stuck-rope contingency is worth planning for. After the last rappel off the southeast rib, downclimb loose 3rd-class terrain back into the red talus bowl, then reverse the long sidehill traverse below Mt. Larrabee back to Gargett Mine and High Pass, and finish on the High Pass Trail to Twin Lakes. Loose rock remains the dominant hazard for the entire descent \u2014 keep the party tight through the gullies and budget real time for the tedious traverse back across scree and heather, especially late in the day; parties camped at Gargett Basin typically descend only as far as camp the first evening and walk out to the trailhead the next morning."
+  },
+  "rappel_detail": [
+   {
+    "n": 1,
+    "notes": "First rappel off the upper south saddle down the slabby trough, before reaching the Great Chimney.",
+    "anchor": "natural sling/horn",
+    "lengthM": 15
+   },
+   {
+    "n": 2,
+    "pull": "About 75 ft of drop, so a single 60 m rope covers it with room to spare. A party on short ropes was left roughly five metres short and had to break the chimney into two rappels.",
+    "notes": "75-ft rappel through the Great Chimney cannonhole (a narrow squeeze slot).",
+    "anchor": "natural sling on chockstone/horn",
+    "hazards": [
+     "The tunnel is a real squeeze \u2014 packs come off and get pushed through ahead of you, which is exactly why parties take the lip instead",
+     "Going over the lip loads the chockstone edge: a block there has split under rope tension and run down the chimney, striking both climbers of one party",
+     "Anchors through the chimney are aged natural slings, described by more than one party as questionable, and the chimney funnels everything that comes loose"
+    ],
+    "lengthM": 23,
+    "station": "The highest chockstone in the Great Chimney. There are two ways to rig it: through the low keyhole/tunnel under the chockstone, which is the recommended line and gives a low-angle drop, or over the lip of the chockstone, which is overhanging."
+   },
+   {
+    "n": 3,
+    "notes": "75-ft rappel off a mid-chimney chockstone, ending at a narrow ledge; party then traverses back to the high southeast notch.",
+    "anchor": "natural sling on mid-chimney chockstone",
+    "hazards": [
+     "The landing is a narrow exposed ledge, not easy ground, and it is where the descent changes direction",
+     "Anything dislodged in the chimney runs a long way; parties on this face have sent rock all the way down to the glacier below"
+    ],
+    "lengthM": 23,
+    "station": "A slung chockstone partway down the chimney. The rappel ends on a narrow, exposed ledge \u2014 from there parties traverse back to the high southeast notch rather than continuing straight down the chimney line."
+   },
+   {
+    "n": 4,
+    "notes": "Rappel down the snow/rock gully, passing through a snow cannonhole halfway down.",
+    "anchor": "natural sling on chockstone/horn",
+    "hazards": [
+     "Moats are open on both sides of the snow fin at the hole"
+    ],
+    "lengthM": 20,
+    "station": "Rappel down the snow/rock gully from the high southeast notch. Halfway down the line threads a second cannonhole \u2014 this one a hole through a tall snow fin."
+   },
+   {
+    "n": 5,
+    "pull": "Pull from as far out of the cleft as the ground allows, and treat a spare cord or a stuck-rope plan as part of the rack rather than optional.",
+    "notes": "Final rappel through a rock cleft on the southeast rib back to descent terrain; ropes are prone to sticking here (one party sacrificed a rope).",
+    "anchor": "natural sling on chockstone/horn",
+    "hazards": [
+     "This is the documented rope-eater on the route: a party's rope jammed on the pull here, resisted every retrieval attempt, and was left on the mountain \u2014 in the dark, on the way out"
+    ],
+    "lengthM": 20,
+    "station": "The final rappel drops through a cleft in the rock of the southeast rib back onto walking terrain."
+   }
+  ],
+  "replace_rappels": true,
+  "review": {
+   "confidence": "medium",
+   "sources": [
+    "https://cascadeclimbers.com/forum/topic/101978-tr-american-border-peak-se-traverse-chimney-route-07142018",
+    "https://summitpost.org/american-border-peak-southeast-face-route/809144"
+   ],
+   "single_rope": "All five stations are 15-23 m, so one 60 m rope reaches each; a 2018 party did the chimney rappel on a single 40 m rope; counts range 2-5.",
+   "changed": "Removed the short-rope and double-strand wording from the count note, the chimney pull note and descent_text; kept the table, which is already single-rope."
+  }
+ },
+ "wa_argonaut_peak_east_ridge": {
+  "area": "wa_argonaut_peak",
+  "set": {
+   "rappel_count_note": "The climb itself includes two single-rope rappels into the notch behind the southeast spire; their lengths and anchors are not recorded. The descent gully adds one short rappel or belayed downclimb at its chockstone step."
+  },
+  "review": {
+   "confidence": "medium",
+   "sources": [
+    "https://summitpost.org/argonaut-peak/152581",
+    "https://www.mountaineers.org/activities/trip-reports/argonaut-peak-south-route-3"
+   ],
+   "single_rope": "Descent is one ~50 ft rappel (or belayed downclimb) at the South Gully chockstone, well within one rope; the notch rappels are described as single-rope.",
+   "changed": "Dropped the alternate multi-rope aside from the count note; table and descent_text already single-rope."
+  }
+ },
+ "wa_argonaut_peak_northeast_couloir": {
+  "area": "wa_argonaut_peak",
+  "set": {
+   "rappel_count_note": "The stations follow the usual descent: one rappel to the southeast-face ledge, then down the gully east of the couloir\u2019s top, where two or three single-rope rappels reach the snow, so 3-4 rappels in all. Anchors are natural and not guaranteed to be in place; carry webbing and nuts. The other line, two rappels down slabs north of the east gully off slung blocks and a small tree, then a protected wet-ledge traverse into the gully, is an alternative, not a continuation. Rappel lengths here are not recorded, and some of the drops described for this descent are longer than a single 60 m rope covers (about 30 m per rappel), so a party on one rope may need extra stations that are not documented."
+  },
+  "rappel_detail": [
+   {
+    "n": 1,
+    "pull": null,
+    "notes": "This table follows the southeast-face ledge line. The other descent involves two rappels on the slabs directly north of the east gully, followed by a traverse along a wet ledge into it. Choose one line before you leave the summit.",
+    "anchor": "Natural, and not guaranteed to be in place \u2014 you may need to rig the anchor yourself, and one earlier party describes rappelling off a tree with a sling, on the ledge facing southeast. Carry webbing and nuts for this descent.",
+    "hazards": [
+     "No reliable fixed station \u2014 arriving expecting one and finding nothing is the failure mode here",
+     "You are committing off the summit onto a face on the opposite side of the peak from the couloir you climbed"
+    ],
+    "lengthM": null,
+    "station": "Head back down from the summit to the upper rock band; the single rappel from there drops onto the ledge on the southeast face."
+   },
+   {
+    "n": 2,
+    "pull": null,
+    "notes": null,
+    "anchor": "Natural / rigged; an anchor of stoppers has been used midway up the southeast face.",
+    "hazards": [
+     "Gully terrain, loose",
+     "Anchors may have to be built from nuts and left behind"
+    ],
+    "lengthM": null,
+    "station": "First of the rappels down the gully lying east of the top of the Northeast Couloir, entered from the southeast-face ledge."
+   },
+   {
+    "n": 3,
+    "pull": null,
+    "notes": "A third rappel in this gully is described as sometimes necessary, so treat the count as two or three here rather than fixed.",
+    "anchor": "Natural / rigged.",
+    "hazards": [
+     "Loose gully; the transition onto snow at the bottom may need axe and crampons depending on season"
+    ],
+    "lengthM": null,
+    "station": "Continues down the same gully; the sequence ends on the snow slopes below, from which parties traverse toward the Colchuck-Dragontail notch or glissade the Colchuck Glacier."
+   }
+  ],
+  "replace_rappels": true,
+  "review": {
+   "confidence": "low",
+   "sources": [
+    "https://summitpost.org/northeast-couloir/160858",
+    "https://lemkeclimbs.com/?p=2878"
+   ],
+   "single_rope": "Sources describe 2-3 rappels in the east gully plus a ledge rappel; the longest drops (to the southeast-face ledge, about 50 m in one account) exceed one rope and no single-rope intermediate anchors are documented.",
+   "changed": "Removed the older multi-rope aside from station 2 and added a plain note that one rope may not reach the longest drops; counts and descent_text left as they were."
+  }
+ },
+ "wa_bears_breast_mountain_southwest_face": {
+  "area": "wa_bears_breast_mountain",
+  "set": {
+   "rappels": "3 rappels off the summit block on a single rope (a single 50 m rope reaches; a 60 m rope is more comfortable for larger parties)"
+  },
+  "review": {
+   "confidence": "low",
+   "sources": [
+    "https://cascadeclimbers.com/forum/topic/95807-tr-bears-breast-se-mega-slab-972014"
+   ],
+   "single_rope": "Existing text already says three rappels on one 50 m rope; searches found no independent confirmation of this descent.",
+   "changed": "Removed the alternate multi-rope aside from the summary line; table and descent_text unchanged."
+  }
+ },
+ "wa_big_four_mountain_dry_creek_route": {
+  "area": "wa_big_four_mountain",
+  "set": {
+   "rappels": "1 rappel on a single 60 m rope from a notch on the south ridge, then about two rope-lengths of steep downclimbing to the lower basin",
+   "descent_text": "Most parties descend the same Dry Creek line they climbed. From the true summit, reverse the summit ridge over the lower (first) bump, then set up a rappel on a single 60 m rope from a notch on the south ridge -- some parties have found a 60m rope barely reaches the anchor/chockstone. Below the rappel, bypass steep snow and waterfall-moistened rock to the side, then downclimb roughly two more rope-lengths of steep terrain to regain the lower basin before retracing the approach back across the South Fork Stillaguamish and out to the trailhead. In winter/spring, parties instead downclimb the Dry Creek couloir itself, which parties describe as a genuinely dangerous, insecure downclimb."
+  },
+  "rappel_detail": [
+   {
+    "n": 1,
+    "notes": "One rappel on a single 60 m rope; some parties found the rope barely reaches. Below it, bypass steep snow and waterfall-wet rock to the side and downclimb about two more rope-lengths of steep terrain to the lower basin.",
+    "anchor": "tree or chockstone anchor in the notch",
+    "hazards": [
+     "Check that your rope reaches before committing.",
+     "In winter and spring parties downclimb the Dry Creek couloir instead, which is insecure and dangerous."
+    ],
+    "lengthM": null,
+    "station": "A notch on the south ridge, reached by reversing the summit ridge over the lower first bump."
+   }
+  ],
+  "replace_rappels": true,
+  "review": {
+   "confidence": "low",
+   "sources": [
+    "https://summitpost.org/dry-creek-route/160818",
+    "https://www.summitpost.org/the-big-4-on-big-four/900047/c-152569"
+   ],
+   "single_rope": "The one rappel is described as done on a single 60 m rope into the gully below the notch; its exact length is not recorded and some parties found a 60 m rope tight.",
+   "changed": "Replaced the '60 m rappel' length (which would need more than one rope) with 'on a single 60 m rope'; anchor noted as tree or chockstone."
+  }
+ },
+ "wa_soviet_route": {
+  "area": "wa_bonanza_peak",
+  "set": {
+   "rappels": "No single-rope rappel line is documented: the two known rappels are each about 200 ft (60 m)",
+   "rappel_count_note": "One 60 m rope does not reach down either slab (each drop is about 60 m, and a single rope covers about 30 m per rappel), and no intermediate station is known. A nut was left at the top anchor and a piton at the lower one; anchors here are improvised rather than fixed, so carry a small rack and cordage. Some parties finish this descent after dark.",
+   "descent_text": "From the Southwest Peak (route's high point), traverse the Northeast Ridge to the West Peak \u2014 about 2 hours, negotiating a series of gendarmes mostly on 3rd/4th-class ledges, with one short rappel along the way. From the West Peak, descend the northwest side: downclimb talus, then make two rappels of roughly 200 feet each down steep slabs back into the approach basin. Anchors on this descent have historically been improvised rather than fixed \u2014 one documented descent used a nut at the top station and a piton at the lower one \u2014 so carry a small rack/cordage to build or reinforce anchors rather than counting on hardware being in place. Each 200-ft drop is about 60 m, which is more than a single 60 m rope covers (about 30 m per rappel), and no intermediate stations are documented. Parties have finished this descent after dark on long summit days, so budget extra time and bring a headlamp. From the bottom of the raps, continue downclimbing talus back to camp near the 7,100' pass, then reverse the terrace descent to Hart Lake and the Railroad Creek Trail back to Holden."
+  },
+  "clear_rappels": true,
+  "review": {
+   "confidence": "low",
+   "sources": [
+    "https://stephabegg.com/?p=8709"
+   ],
+   "single_rope": "Only one account of the descent exists: two ~200 ft rappels on the northwest slabs of the West Peak; no single-rope stations are documented.",
+   "changed": "Cleared the table (its stations are ~60 m drops), stated the single-rope gap plainly, and rewrote the descent_text sentence that required joined ropes."
+  }
+ },
+ "wa_beckey_tate": {
+  "area": "wa_big_kangaroo",
+  "set": {
+   "rappels": "Descend the West Route gully: one rappel on a single 60 m rope from slung blocks at the notch (some parties instead downclimb the summit slab on a toprope and walk the gully with no rappel). Rappelling the Beckey-Tate line itself is not recommended: loose rock, sling-and-tree anchors and no documented single-rope line.",
+   "descent_text": "Do not plan to rappel the Beckey-Tate line itself \u2014 while rappelling it off slings and trees has been described as possible, no single-rope line is documented, the route wanders and holds a lot of large loose rock, making rope-stuck and rockfall risk high; most parties explicitly avoid it. Instead, from the top of the route scramble about 20 ft up and left to reach the notch that separates the south face from the true summit, which stands a few hundred feet higher. To tag it, drop about 150 ft of scree on the far side, cross north into the West Route gully and climb its short pitches to the unprotected 5.6 summit slab (protected by a single old bolt), which is downclimbed or top-roped; then descend the shared gully: two slung-block anchors get you down with one or two single-rope rappels (a 60m rope is sufficient either way) through the steep/loose upper gully, after which it's a scree-and-snow walk/glissade down the gully back to the approach basin, across Early Winters Creek, and out the climbers' trail to the Hairpin Turn. Expect the full descent to take a couple of hours; keep helmets on throughout given the loose rock in the gully."
+  },
+  "review": {
+   "confidence": "medium",
+   "sources": [
+    "https://stephabegg.com/?p=8708",
+    "https://www.mountainproject.com/route/114423730/beckey-tate"
+   ],
+   "single_rope": "West Route gully descent: at most one or two single-rope rappels at the notch, or none (one account downclimbed the slab on a toprope and walked the scree-and-snow gully to the Hairpin Turn).",
+   "changed": "Removed the multi-rope rappel wording from the summary and descent_text; added the no-rappel alternative."
+  }
+ }
+}

@@ -1051,6 +1051,15 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     That block reads **raw** source, because the discriminator is a string literal
     (`tab==="safety"`) and the blanker wipes string contents, collapsing every branch to
     `tab===""` — the first run failed with "gone blind" for precisely that reason.
+  - **Which fires the panel lists** (owner note 2026-11-26, too-far fires): the panel must filter
+    through `fireMatters` and take red from `fireIsClose`, and the guard IMPORTS `lib/fire.js` and
+    runs nine concrete fires through the pair (a half-acre start 8 mi off is hidden, a 100%-contained
+    fire 6 mi off is hidden, a 100,000-acre fire with its origin 40 mi off is listed, its edge ~33),
+    plus asserts `NEAR_ROUTE_KM` still reaches the widest reach plus a million-acre radius. The
+    thresholds are a judgement from NWCG size classes, spread rates (Bootleg 2021 ran 4-5 mi/day)
+    and spotting (3-10 mi); no competitor publishes a route-alert radius (Watch Duty alerts by
+    county, NSW Fires Near Me lets the user pick 5-50 km). Changing a threshold means changing the
+    expected cases here on purpose.
 
 - **`check:approach-overlay`** (in build) — when a climb has more than one way in, the PICKED one
   drives the whole page and nothing from another leaks under its name.
@@ -1149,6 +1158,13 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     as *neither* rather than as non-rack, so a new kind of kit shows up in the second list, not the
     first. It is a WA audit by scope (`--state`), hand-run, exit 1 on any finding; `--selftest`
     asserts `DISC_RACK` and eight classifier cases with no database.
+  - **Runs DAILY since 2026-11-26** (a step in `.github/workflows/rappel-length-drift.yml`, anon key,
+    whole catalog). Two sweeps had brought it to 0 (#2453, then #2667), and in between **44 routes**
+    imported from eleven states had put helmets, axes and approach shoes back under RACK — found
+    only because the owner's note sent a session to look. The importers that write `detailed_rack`
+    are many (pipeline, one-off research appliers), so the drift is caught where it lands, not at
+    each writer. Not a build gate: no code change causes or fixes it. A red run is fixed by adding
+    the sentence to `scripts/oneoff/rack-rewrites.json` and running `fix-rack-non-rack-items.mjs`.
 
 - **`check:declination`** asserts that **the base-of-the-climb arrow turns a magnetic phone compass
   into TRUE north**. *Point the way with your compass* (`BaseCheckinPanel`, 2026-10-28) rotates an
@@ -1219,3 +1235,41 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     that honestly (10 ft on the slopes, under 30 at the turnaround) and that the totals stay exact.
 
 - **`check:bare` section 8 (2026-11-25): every discipline's sections, drawn EMPTY, in order.** Owner note: sections that match the discipline must show with no data, in one order per discipline. The section reads headings off two markers added for it, `data-section-head` on SL's divider form (RSL) and `data-card-head` on CardHead and Head (the enrichment panels' title, e.g. SEASON), so a section counts only when its HEADING is drawn. Per discipline and tab it asserts a list in order (other headings may sit between). Built from a census: the three most-filled real routes of each discipline vs the same rows emptied (dbRouteToCamel + SSR, script kept out of the repo). Deliberately NOT required: DESCENT on single-pitch crag lines, RAPPELS on scrambles / Class 1-3, TRIP PROFILE (derived), AVALANCHE FORECAST/TODAY, PRO TIPS. Injection: restoring CLIMBING ROUTE's old `!isPitched` empty gate fails alpine, ice and mixed planner by name. A trad line on a peak uses the mountain layout (`catOf`), so the census's order check compares by layout, not by `discipline`.
+
+- **`audit:next-door`** — **are the climbs NEXT DOOR right?** (owner note, 2026-11-26: *"Are routes next door
+  correct? Audit all"*). NEXT DOOR (`WallNeighbours`) shows the climbs either side of a crag climb by
+  `routes.sort_order`; every position came from Mountain Project's area pages (`data-lr`) through
+  `order-from-mp.mjs`. The audit re-reads the SAME cached pages (`~/dev/mp-fresh`, `~/dev/mp-data/_mp`; the
+  later crawl wins) and asks of every wall that draws the card: TIE, ORDER (ours vs MP's left-to-right, outside
+  the longest run they agree on), FOREIGN (a position that is a place on ANOTHER MP wall), MP-UNPLACED,
+  DUPLICATE (ours holds a name MORE times than MP lists it), NO-SOURCE, SPLIT, and **GAP** (a climb MP places
+  that we hold in the area WITHOUT a position, so the card steps over it). Read-only; `--refresh` re-reads the DB
+  (service key, keyset paged, ~4 min), otherwise it uses the cached read.
+  - **First run (2026-11-26): the ORDER was almost entirely right** — 18,807 walls, 172,414 climbs, 153,607
+    left/right pairs, 4 ORDER and 6 FOREIGN findings. **What was wrong was the CLIMBS, not the order: a climb
+    stored twice.** Our first import's row under an older name (*RBF*, *Holy War*, *Webelo*) sat beside the row
+    the wall-order run matched or ADDED under MP's current name (*Resting Belayer Face*, *Holey War*,
+    *[L] Webelo*), so NEXT DOOR named a climb as its own neighbour. 557 name-alike pairs among the 2,075 placed
+    climbs MP no longer lists; each was read against OpenBeta's OLDER copy of MP's list (a rename shows the old
+    name there and the new name on MP, never both) by two Sonnet reviewers, then every SAME read again by hand.
+    **201 merged** (`scripts/pipeline/merge-next-door-twins.mjs`: the MP-listed row keeps its name and position,
+    fills each blank column from its twin, keeps the higher grade; a twin anything points at is SKIPPED, never
+    cascaded — 4 were, each one duplicate `route_field_evidence` row its keeper already held). Record, verdicts
+    and merge log: `audits/next-door-2026-11-26/`.
+  - **Kept apart on purpose, do not re-merge:** placeholder names with different grades (*Unknown*, *N/A*,
+    *Unknown Left* 5.10c/d / 5.10b — owner rule from 0271), *Black Sabbath* / *Black Slabbath*, *Lower Abyss* /
+    *The Abyss*, the 33 UNSURE pairs in `verdict-*.json`, and ice-and-rock pairs of one name (*Centerfold*,
+    *Percolator*, *Discord*: MP files both on the wall).
+  - **Also fixed:** three walls split across two of our areas (The Pit, MN: 6 rock climbs moved off the bouldering
+    copy; Glory Dome North Face, CA: 3 climbs filed under "Glory Dome Routes"; *The Lighthouse*, NV, filed on
+    Spy Cliff — `fix-next-door-walls-2026-11-26*.mjs`), the Praying Monk East Face order, MP re-ordering X-World Wall II after our run, and 11 GAP
+    climbs (Emerald City KY, West Wall WA ×5, Upper Tier, West Face) — `scripts/pipeline/reorder-walls.mjs`,
+    which refuses a plan that is not exactly the wall's placed climbs plus the named additions.
+  - **Its denominator:** 170,334 climbs are checked against MP's own row; **1,883 placed climbs MP does not list**
+    (OpenBeta-anchored older climbs, later adds) are checked only for ties and duplicates — their place is not
+    verified against anything. A full rename with no shared words was searched separately (an unlisted climb
+    next to a climb the run ADDED): 30 candidates, 6 one climb, merged.
+  - **Trap met:** MP lists two climbs called "Project" at Hassler Crag and two "East Face" at the Praying Monk;
+    a name match there pairs the wrong rows. It matches by name only when MP lists that name ONCE on the wall.
+  - **Trap met (the merge tool):** `supabase db query` prints the SQL error on STDOUT and only "Initialising
+    login role..." on stderr; reading stderr turned a refused pair into an unexplained stop.

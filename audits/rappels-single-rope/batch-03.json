@@ -1,0 +1,165 @@
+{
+ "wa_cathedral_rock_standard": {
+  "area": "wa_cathedral_rock",
+  "set": {
+   "rappels": "One rappel on a single 60 m rope from a slung horn at the top of the crux pitch, then downclimb the loose gully; or downclimb the whole route",
+   "rappel_count_note": "One rappel on the standard descent, from a natural horn with slings near the top of the crux pitch. A single 60 m rope doubled through the horn covers it, so no extra rope is needed. Below it the route is downclimbed. Rockfall in the gully is serious, so stagger the party and wear helmets.",
+   "descent_text": "Reverse the ascent line: downclimb from the summit block back to the ridge crest, then descend the southwest face on the same line used to climb it. At the top of the exposed crux pitch (the awkward-angle pitch most parties rope up for on the way up), the standard descent is one rappel — parties describe a rock horn near the top rigged with slings and rap rings from prior parties, used as the anchor (natural horn/sling anchor, not bolted). Bring a single 60m rope doubled through the horn to make the ~30m rappel back down onto the SW face/gully; from there, downclimb the loose gully back to the base of the buttress. A minority of parties instead descend via the Northwest Couloir to avoid re-downclimbing the exposed ascent terrain, but that is a variation rather than the standard descent line, and its rappel/anchor situation is not well known — treat it as an alpine-judgment call, not a known bail route. From the base of the rock, retrace the scramble approach back to the Cathedral Pass/PCT junction and follow the maintained Cathedral Rock Trail back to the trailhead. Primary descent hazards are loose rock, very loose everywhere, and rockfall onto parties below — helmets are essentially mandatory, and stagger the group through the gully."
+  },
+  "rappel_detail": [
+   {
+    "n": 1,
+    "lengthM": null,
+    "anchor": "rock horn with slings and rap rings (natural, not bolted)",
+    "station": "The top of the exposed crux pitch on the southwest face, reached by downclimbing from the summit block to the ridge crest.",
+    "hazards": [
+     "Very loose rock throughout; stagger the party through the gully and wear helmets."
+    ],
+    "notes": "The one standard rappel, on a single 60 m rope, back onto the southwest face gully. Then downclimb the loose gully to the base."
+   }
+  ],
+  "replace_rappels": true,
+  "review": {
+   "confidence": "low",
+   "sources": [
+    "https://www.mountaineers.org/activities/routes-places/cathedral-rock-southwest-face",
+    "https://summitpost.org/mountain/654325"
+   ],
+   "single_rope": "Sources confirm one rappel from the top of the last pitch then downclimbing; none states the rappel length. The existing ~30 m figure is kept, which a single 60 m rope reaches only if it is no longer than that.",
+   "changed": "Removed the two-rope aside from the summary, station notes and descent sentence; wrote the single 60 m rope wording and added a short count note. Length of the rappel was not independently confirmed."
+  }
+ },
+ "wa_east_face_2": {
+  "area": "wa_chablis_spire",
+  "set": {
+   "rappels": "2 rappels from slung horns (summit-area horn to the top of pitch 2, then to the base); no single-rope line is documented",
+   "rappel_count_note": "The descent is two rappels from natural granite horns: first from just below the summit to the horn at the top of pitch 2, then back to the scree at the base. Station lengths are not published and no single-rope line is documented. It is not known whether one 60 m rope reaches either station, so measure or downclimb rather than assume. Both anchors are slung horns rather than fixed hardware, so carry replacement webbing."
+  },
+  "clear_rappels": true,
+  "review": {
+   "confidence": "low",
+   "sources": [
+    "https://cascadeclimbers.com/forum/topic/97726-tr-chablis-spire-east-face-732015",
+    "https://open-tacos-78vuk8cxe-openbeta-dev.vercel.app/climb/542cb449-96bb-54b0-b0a3-a514e41b8b4c/east-face"
+   ],
+   "single_rope": "Sources describe two rappels (the upper one low-angle and prone to snags) and give no lengths or single-rope variant. Nothing found either confirms or denies that one rope reaches.",
+   "changed": "Cleared the two-rope station table, rewrote the summary and note to say plainly that no single-rope line is documented, and reworded the descent sentences that threaded both ropes."
+  }
+ },
+ "wa_chair_peak_north_face": {
+  "area": "wa_chair_peak",
+  "set": {
+   "rappels": "Typically two rappels of about 30 m on a single 60 m rope through the summit gully/notch back into the basin, with downclimbing between; with good steep snow, a single rappel plus downclimbing",
+   "rappel_count_note": "Two rappels on a single 60 m rope go down the south-side gully of the east face. How much you rappel depends on conditions: with good steep snow much of it is downclimbed, and parties describe reaching the base on a single rappel plus downclimbing. Two rappel stations were added in early summer 2023 so that a 60 m rope makes every rappel on the route; several leave under 5 ft of rope spare, so knot the ends.",
+   "descent_text": "From the summit, most parties reverse toward the notch/col below the summit block and descend the south-side gully of the east face (sometimes described as the same gully used by the Northeast Buttress descent). Expect a mix of downclimbing and rappelling: parties commonly do two rappels on a single 60m rope — the first from trees/rock anchors near the head of the gully with some downclimbing to reach the next station, and a second rappel that reaches easier snow near the gully's base — though some parties describe reaching the base with a single rappel plus downclimbing depending on snow coverage. Anchors are a mix of natural gear (trees, rock horns/slings) rather than bolts; bring cord/webbing to back up or replace tattered slings. From the base of the gully, downclimb snow/talus east back into the Chair Peak basin and pick up the approach trail to Source Lake and out. Watch for cornices at the gully lip early season, loose rock in the gully when snow-free, and wet-slide hazard on the descent slopes during warm spring conditions."
+  },
+  "rappel_detail": [
+   {
+    "n": 1,
+    "lengthM": 30,
+    "anchor": "trees/rock horn near head of gully",
+    "notes": "First of two rappels on a single 60 m rope; some downclimbing needed to reach the next station."
+   },
+   {
+    "n": 2,
+    "lengthM": 30,
+    "anchor": null,
+    "notes": "Second rappel reaching easier snow near the gully's base."
+   }
+  ],
+  "replace_rappels": true,
+  "review": {
+   "confidence": "low",
+   "sources": [
+    "https://www.alpineinstitute.com/route-profile-north-face-chair-peak/",
+    "https://www.mountaineers.org/activities/routes-places/chair-peak-n-face-winter"
+   ],
+   "single_rope": "Existing row already listed two ~30 m stations and noted that 2023 stations let a 60 m rope make every rappel. Searches found only general descriptions (a couple of rappels down the south-side gully); no new single-rope detail beyond that.",
+   "changed": "Removed double-rope wording from the summary, both station notes and the descent text, and dropped the sentence contrasting rope setups; kept the 2023 stations and knot-the-ends advice."
+  }
+ },
+ "wa_chair_peak_northeast_buttress": {
+  "area": "wa_chair_peak",
+  "set": {
+   "rappels": "1 rappel on a single 60 m rope through the cornice-prone south-facing exit gully, then downclimb steep snow",
+   "rappel_count_note": "One rappel on the standard descent, from the fixed piton station in the first gully on climber's left. A single 60 m rope gets through the gap in the cornice and leaves roughly 30-40 m of very steep snow to downclimb at the gully mouth, still in the fall line, so parties who go this way should be comfortable downclimbing it. A second descent gully is an alternative rather than a continuation: it carries both an upper and a lower anchor, so one rope is enough there. Rappelling the buttress itself in summer is a separate option, taking four to five shorter rappels.",
+   "descent_text": "From the top of the buttress, scramble back across the flat summit area and drop into the first obvious gully on climber's left — not the gully further along the ridge near the true summit. Old tat on two small trees marks the entrance. The gully runs due south between high rock walls: scramble down it and take the very first left it offers, and the rappel station comes into view as soon as the walls let you out, at roughly 6,000 ft. Parties miss it by carrying on too far down, or too far right, once the gully opens up.\n\nThe station is fixed and old — three rusty pitons tied together with a mass of aging webbing and a pair of aluminium rappel rings. A single 60 m rope gets through the gap in the corniced lip and leaves 30-40 m of very steep snow to downclimb, still fully exposed to whatever comes down the gully. Move to the side of the gully mouth once you are down so the next person cannot drop anything on you.\n\nA second gully further along is an alternative rather than a continuation: it carries both an upper and a lower anchor, so a single rope is enough to get through that one instead. Anchors on this descent are not maintained and may not be where you want them — carry cord and a knife to re-rig, and expect that getting around remaining steep snow at the base may take an extra downclimb or rappel.\n\nBelow the rappel, plunge-step or downclimb 35-40° snow to the base of the east face and traverse east to rejoin the approach. Cornice collapse at the gully lip, sloughing in warm conditions, and rock knocked down by parties above are the main descent hazards.\n\nRappelling the buttress itself is a documented summer alternative, taking four to five shorter rappels off a tree, a second gnarlier tree, an old pair of bolts and a rock horn."
+  },
+  "rappel_detail": [
+   {
+    "n": 1,
+    "lengthM": null,
+    "anchor": "three fixed pitons tied together with aging webbing and two aluminium rappel rings",
+    "station": "Coming off the flat top of the peak, drop into the first obvious gully on climber's left — not the one further along the ridge near the true summit. Old tat on two small trees marks the entrance. The gully runs due south between high rock walls: scramble down and take the very first left it offers, and the anchor comes into view as soon as the walls let you out, at roughly 6,000 ft. Parties miss it by carrying on too far down, or too far right, once the gully opens up.",
+    "hazards": [
+     "The lip is often heavily corniced and the rappel goes through a gap in the cornice.",
+     "Sloughs run the gully in warm conditions and you are exposed to overhead hazard for the whole of it.",
+     "Once down, move to the side of the gully mouth so the next person cannot drop anything on you; close calls from rock knocked down by a party behind are on record here."
+    ],
+    "pull": "Ropes have hung up on retrieval; one party's jammed, they judged the rope had cut into the snow, and freed it only by repeated hauling. Test the pull before the next person commits.",
+    "notes": "The anchor is fixed and old; a knife and 20 ft of cord will let you re-rig it. On a single 60 m rope the rappel clears the cornice but leaves 30-40 m of very steep snow to downclimb, still in the fall line."
+   }
+  ],
+  "replace_rappels": true,
+  "review": {
+   "confidence": "medium",
+   "sources": [
+    "https://www.mountaineers.org/activities/routes-places/chair-peak-northeast-buttress",
+    "https://turns-all-year.com/trip-reports/chair-ne-buttress-w-2-rappels",
+    "https://cascadeclimbers.com/forum/topic/103820-tr-chair-peak-ne-buttress-01172021/"
+   ],
+   "single_rope": "Several trip reports describe one rappel through the cornice gap on a single 60 m rope, with some steep snow downclimbing after, and the alternative gully has upper and lower anchors. A report mentions hearsay of a mid-level station added; not confirmed so not written.",
+   "changed": "Removed the two-rope comparison and the tag line advice, rewrote the note, station and descent paragraph for one 60 m rope; set the station length to null since the old 60 m figure was the two-rope length."
+  }
+ },
+ "wa_chianti_spire_east_face": {
+  "area": "wa_chianti_spire",
+  "set": {
+   "rappels": "Rappel the route on fixed anchors, generally trending climber's right; a single 60 m rope may work, but the number of rappels on one rope is not published",
+   "rappel_count_note": "The descent follows the route on fixed anchors, starting from the summit block, passing the top of the fifth pitch and continuing down slabby ground toward the snow. A single 60 m rope is reported as possible, and a lower anchor has been added at one station for single-rope rappelling, but no station list, count or lengths for one rope have been found. Check each station visually, and expect to find out on the day whether a given rappel reaches."
+  },
+  "clear_rappels": true,
+  "review": {
+   "confidence": "low",
+   "sources": [
+    "https://www.mountainproject.com/v/112157604",
+    "https://www.summitpost.org/route/225411/rebel-yell.html"
+   ],
+   "single_rope": "The route page says a single rope might be possible and its photo captions mention a new single-rope rap and a lower anchor for it; the comments with details were not readable. Other pages recommend a pair of ropes and give no single-rope count.",
+   "changed": "Cleared the four-station table written for two ropes (no lengths were ever given), and wrote an honest single-rope summary and note; rewrote the descent sentence."
+  }
+ },
+ "wa_chianti_spire_lichen_bouquet": {
+  "area": "wa_chianti_spire",
+  "set": {
+   "rappels": "Rappel the neighbouring Rebel Yell line from the two-bolt anchor at the southeast base of the summit block (a single 60 m rope may work; the count on one rope is not published); or reverse to the Burgundy-Chianti notch",
+   "rappel_count_note": "The usual descent rappels the neighbouring Rebel Yell line on fixed anchors, trending to the rappeller's right, from the two-bolt anchor at the southeast base of the summit block to the snow. A single 60 m rope is reported as possible and a lower anchor has been added at one station for single-rope rappelling, but no station list, count or lengths for one rope have been found. Reversing to the Burgundy-Chianti notch avoids the rappels.",
+   "descent_text": "Most parties on the east face descend the way Rebel Yell parties do: from the summit pedestal, scramble to the two-bolt anchor at the southeast base of the summit block and rappel the fixed anchors, using a single 60 m rope (reported as workable, though the number of rappels on one rope is not published), back to the snow at the base of the face, trending generally to the rappeller's right and pulling the rope carefully - the flake and offwidth features snag ropes readily. The alternative, and the one this route's finish naturally suggests, is to reverse to the notch between Burgundy Spire and Chianti and descend from there. Either way, collect gear left at the base, reverse the snow traverse north beneath Burgundy Spire's east face, and regain the 200-300 ft to Burgundy Col - much easier on firm snow than late-day slush or bare sand. Then descend the loose main gully (helmets on), rejoin the trail at the bench, and take the steep path down to Early Winters Creek, finishing with the short loose scramble back up to the highway. The sandy slabs above the bench are the most-cursed section of the whole outing; trekking poles help."
+  },
+  "clear_rappels": true,
+  "review": {
+   "confidence": "low",
+   "sources": [
+    "https://www.mountainproject.com/v/112157604",
+    "https://www.summitpost.org/route/225411/rebel-yell.html"
+   ],
+   "single_rope": "Shares the Rebel Yell descent: a single rope might be possible per the route page and its captions (single-rope rap, lower anchor), but no single-rope station list or count was found.",
+   "changed": "Cleared the four-station two-rope table, rewrote the summary and note, and reworded the descent sentence; the reverse-to-notch alternative is kept."
+  }
+ },
+ "wa_chianti_spire_north_face": {
+  "area": "wa_chianti_spire",
+  "set": {
+   "rappels": "1 short rappel or downclimb off the summit block, from an old bolt, then reverse the route to the Burgundy-Chianti notch"
+  },
+  "review": {
+   "confidence": "medium",
+   "sources": [
+    "https://summitpost.org/chianti-spire/229839",
+    "https://stephabegg.com/?p=8704"
+   ],
+   "single_rope": "The descent is one short rappel or a downclimb off the summit block, well within a single rope; the table and descent text already describe it that way.",
+   "changed": "Removed only the aside about bringing two ropes for the east face descent from the summary; table and descent text left as they were."
+  }
+ }
+}

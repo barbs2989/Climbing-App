@@ -1,0 +1,588 @@
+{
+ "nb_lsr_south_alaska_flaskback": {
+  "area": "nb_lsr_south",
+  "pitch_detail": [
+   {
+    "pitch": "1",
+    "grade": "WI1",
+    "notes": "Easy gully of ice and snow, soloable, leading to the foot of a narrow gap."
+   },
+   {
+    "pitch": "2",
+    "notes": "Climb up and through the gap and belay just under the final steep curtain."
+   },
+   {
+    "pitch": "3",
+    "grade": "WI4",
+    "crux": true,
+    "notes": "Final curtain, easier on the right. It begins at WI4 and drops to WI3 about two thirds of the way up."
+   }
+  ],
+  "replace_pitch_detail": true,
+  "review": {
+   "confidence": "medium",
+   "sources": [
+    "https://www.mountainproject.com/route/112783538"
+   ],
+   "source_texts": {
+    "https://www.mountainproject.com/route/112783538": "/Users/nathanbarber/dev/mp-data/_mp/_pitchtext/nb_lsr_south_alaska_flaskback.txt"
+   },
+   "changed": "Wrote three pitches with stated grades; no lengths. Screw and tree anchors are mentioned for the route overall, so no per-pitch anchor was set.",
+   "pitch_count_found": 3,
+   "other_findings": "none"
+  }
+ },
+ "nb_walton_glen_falls_area_center_face": {
+  "area": "nb_walton_glen_falls_area",
+  "pitch_detail": [
+   {
+    "pitch": "1",
+    "notes": "Easy snow, ice and sometimes rock up to the base of the steep section."
+   },
+   {
+    "pitch": "2",
+    "notes": "Begins easily and quickly becomes steep and sometimes quite technical. Linking it with pitch 3 is straightforward."
+   },
+   {
+    "pitch": "3",
+    "crux": true,
+    "notes": "The crux pitch: the transition from solid ice onto a slab that protects poorly and may rot out in the sun. Tree anchor at the top."
+   }
+  ],
+  "replace_pitch_detail": true,
+  "review": {
+   "confidence": "medium",
+   "sources": [
+    "https://www.mountainproject.com/route/112436559"
+   ],
+   "source_texts": {
+    "https://www.mountainproject.com/route/112436559": "/Users/nathanbarber/dev/mp-data/_mp/_pitchtext/nb_walton_glen_falls_area_center_face.txt"
+   },
+   "changed": "Wrote three pitches; the crux grade of the route is placed on pitch 3 because it is named as the crux. No lengths. No rappel table: only 'rap the route with double ropes' is stated.",
+   "pitch_count_found": 3,
+   "other_findings": "none"
+  }
+ },
+ "nb_walton_glen_falls_area_don_s_pillar": {
+  "area": "nb_walton_glen_falls_area",
+  "pitch_detail": [
+   {
+    "pitch": "1",
+    "notes": "A gentle approach of snow and ice up to where the steepness begins."
+   },
+   {
+    "pitch": "2",
+    "notes": "Traverse well to the right to a thin ribbon of ice that is not always in, and take it up to the same belay ledge Holey Moley uses."
+   },
+   {
+    "pitch": "3",
+    "notes": "Finishes the same way as the last pitch of Holey Moley."
+   }
+  ],
+  "replace_pitch_detail": true,
+  "review": {
+   "confidence": "medium",
+   "sources": [
+    "https://www.mountainproject.com/route/112436787"
+   ],
+   "source_texts": {
+    "https://www.mountainproject.com/route/112436787": "/Users/nathanbarber/dev/mp-data/_mp/_pitchtext/nb_walton_glen_falls_area_don_s_pillar.txt"
+   },
+   "changed": "Wrote three pitches; no grades or lengths. No rappel table: only 'rap the route with double ropes'.",
+   "pitch_count_found": 3,
+   "other_findings": "none"
+  }
+ },
+ "nb_walton_glen_falls_area_holey_moley": {
+  "area": "nb_walton_glen_falls_area",
+  "pitch_detail": [
+   {
+    "pitch": "1",
+    "notes": "Easy ice, snow and rock up to the base of the steep section."
+   },
+   {
+    "pitch": "2",
+    "anchor": "2 bolts",
+    "notes": "The right side of the waterfall holds a left-facing dihedral; climb it to a ledge with a two-bolt anchor, which also works as a rappel station."
+   },
+   {
+    "pitch": "3",
+    "notes": "Go up and left from the anchor, diagonally across the slab to a tree anchor. This is usually the crux because protection is often poor and runout."
+   }
+  ],
+  "replace_pitch_detail": true,
+  "review": {
+   "confidence": "medium",
+   "sources": [
+    "https://www.mountainproject.com/route/112436580"
+   ],
+   "source_texts": {
+    "https://www.mountainproject.com/route/112436580": "/Users/nathanbarber/dev/mp-data/_mp/_pitchtext/nb_walton_glen_falls_area_holey_moley.txt"
+   },
+   "changed": "Wrote three pitches; no grades or lengths. Crux flag not set because the text says 'usually'.",
+   "pitch_count_found": 3,
+   "other_findings": "none"
+  }
+ },
+ "nh_01_main_wall_down_east_dickering": {
+  "area": "nh_01_main_wall",
+  "pitch_detail": [
+   {
+    "pitch": "1",
+    "grade": "5.6",
+    "lengthM": 14,
+    "anchor": "bolted",
+    "notes": "Scramble up the short chimney, follow bolts out right onto a ramp-like face, then go straight up from the fifth bolt with some vertical bushwhacking and loose rock to a bolted anchor."
+   },
+   {
+    "pitch": "2",
+    "grade": "5.9",
+    "lengthM": 24,
+    "crux": true,
+    "notes": "Bolted face on solid rock leading to an overlap, with a crux midway. Higher, climb into an overhang for a second crux at the last two bolts."
+   }
+  ],
+  "replace_pitch_detail": true,
+  "review": {
+   "confidence": "high",
+   "sources": [
+    "https://www.mountainproject.com/route/126908418"
+   ],
+   "source_texts": {
+    "https://www.mountainproject.com/route/126908418": "/Users/nathanbarber/dev/mp-data/_mp/_pitchtext/nh_01_main_wall_down_east_dickering.txt"
+   },
+   "changed": "Wrote both pitches; 45 ft and 80 ft converted. No rappel table: only that the two pitches can be linked and a 70 m rope just reaches the ground from the second anchor.",
+   "pitch_count_found": 2,
+   "other_findings": "none"
+  }
+ },
+ "nh_04_upper_face_upper_tier_thor": {
+  "area": "nh_04_upper_face_upper_tier",
+  "pitch_detail": [
+   {
+    "pitch": "1",
+    "grade": "5.10",
+    "lengthM": 37,
+    "anchor": "2 bolts",
+    "notes": "A tricky move gets you beyond the homemade bolt onto a ledge where good 2 inch gear fits. Work up and left around the arete, passing a bright new bolt, and step into the dihedral. A hollow flake accepts finger-sized gear before some mossy smears lead into the crack, which takes hand jams. When the crack ends, clip two bolts and make a few technical 5.10 moves to a two-bolt anchor on a small ledge. Some lichen below the dihedral."
+   },
+   {
+    "pitch": "2",
+    "lengthM": 15,
+    "notes": "Two options. The original finish may go up and left through a shallow groove, with a bolt about 35 ft up in moss; it looks easier but runout and dirty. The other, about 50 ft, smears right past three new bolts and a 0.5 placement to the anchor shared with the neighbouring route, 5.9+ on semi-crumbly holds."
+   },
+   {
+    "pitch": "3",
+    "lengthM": 15,
+    "notes": "About 50 ft, the same as the second pitch of the neighbouring route to the right. Pitches 2 and 3 can be linked with long runners."
+   }
+  ],
+  "replace_pitch_detail": true,
+  "review": {
+   "confidence": "medium",
+   "sources": [
+    "https://www.mountainproject.com/route/201163439"
+   ],
+   "source_texts": {
+    "https://www.mountainproject.com/route/201163439": "/Users/nathanbarber/dev/mp-data/_mp/_pitchtext/nh_04_upper_face_upper_tier_thor.txt"
+   },
+   "changed": "Wrote three pitches; the 5.9+ and 50 ft figures apply to the right-hand finish of pitch 2 only and are put in notes. Pitch 2 length is for that finish.",
+   "pitch_count_found": 3,
+   "other_findings": "none"
+  }
+ },
+ "nh_06_mt_willard_slab_right_time_bandits": {
+  "area": "nh_06_mt_willard_slab_right",
+  "pitch_detail": [
+   {
+    "pitch": "1",
+    "grade": "5.6",
+    "lengthM": 37,
+    "anchor": "2 bolts",
+    "notes": "Begin at the cliff's lowest point and go up three bolts. Next, either climb straight to the following bolt over a loose, wedged block, or angle right to the fourth bolt and then left to the next. Continue up and a bit left to a weakness that takes a cam, step over the bulge onto the slab, and pass two further bolts to a two-bolt anchor."
+   },
+   {
+    "pitch": "2",
+    "grade": "5.6",
+    "lengthM": 43,
+    "anchor": "2 bolts",
+    "notes": "Angle up and to the left past one bolt and some gear to a ledge about 50 ft up. Above, climb on angular holds to a gritty bulge with more bolts, ending at a two-bolt anchor. The grade is given as 5.6 with a question mark."
+   },
+   {
+    "pitch": "3",
+    "grade": "5.4",
+    "lengthM": 30,
+    "anchor": "2 bolts",
+    "notes": "Straight up the white line past two bolts and gear to a two-bolt anchor."
+   }
+  ],
+  "replace_pitch_detail": true,
+  "review": {
+   "confidence": "medium",
+   "sources": [
+    "https://www.mountainproject.com/route/201402038"
+   ],
+   "source_texts": {
+    "https://www.mountainproject.com/route/201402038": "/Users/nathanbarber/dev/mp-data/_mp/_pitchtext/nh_06_mt_willard_slab_right_time_bandits.txt"
+   },
+   "changed": "Wrote three pitches with stated lengths (converted from feet) and grades. No rappel table: only 'rappel the route with 2 ropes'.",
+   "pitch_count_found": 3,
+   "other_findings": "none"
+  }
+ },
+ "nh_4_mt_webster_winter_ice_mixed_unknown": {
+  "area": "nh_4_mt_webster_winter_ice_mixed",
+  "pitch_detail": [
+   {
+    "pitch": "1",
+    "lengthM": 37,
+    "notes": "Long 120 ft pitch of thin ice and awkward gear to a large comfortable ledge."
+   },
+   {
+    "pitch": "2",
+    "notes": "Ledgy rock and ice up to the main flow. If it is formed it goes easily; if not, climb the rock on the right with some difficulty. A fixed rappel anchor sits on the right finish."
+   }
+  ],
+  "replace_pitch_detail": true,
+  "review": {
+   "confidence": "medium",
+   "sources": [
+    "https://www.mountainproject.com/route/106664629"
+   ],
+   "source_texts": {
+    "https://www.mountainproject.com/route/106664629": "/Users/nathanbarber/dev/mp-data/_mp/_pitchtext/nh_4_mt_webster_winter_ice_mixed_unknown.txt"
+   },
+   "changed": "Wrote two pitches; no grades per pitch. Pitch 1 converted from 120 ft.",
+   "pitch_count_found": 2,
+   "other_findings": "none"
+  }
+ },
+ "nh_big_wall_2_one_drop_of_water_v": {
+  "area": "nh_big_wall_2",
+  "pitch_detail": [
+   {
+    "pitch": "1",
+    "lengthM": 49,
+    "notes": "Begin in dike-type rock just right of VMC. Free climb about 90 ft, then aid up to a corner on the left; the belay is on the right after a swing into a second short corner."
+   },
+   {
+    "pitch": "2",
+    "lengthM": 37,
+    "notes": "Continue up the dike, free and aid, to a short right-leaning arch. Climb it, move left about 6 ft after three bolts and belay in the large crack on VMC."
+   },
+   {
+    "pitch": "3",
+    "lengthM": 49,
+    "notes": "Follow VMC, which goes right after about 80 ft. Continue up the roof with nuts and pins in a crack that leads a few feet left, then over the roof to a large flake."
+   },
+   {
+    "pitch": "4",
+    "lengthM": 49,
+    "notes": "Start just right of the belay by mantling into a crack. Excellent climbing runs through a gap in an awkward vertical wall to a slab with a good horizontal crack below the big upper overhangs. A bivy spot here."
+   },
+   {
+    "pitch": "5",
+    "lengthM": 30,
+    "notes": "Escape left by the slab, aid back right about 20 ft, then go directly up the overhangs. The belay is over a short jam crack, under the twin cracks."
+   },
+   {
+    "pitch": "6",
+    "lengthM": 50,
+    "notes": "One pin in the twin cracks gains a beautiful slab; climb its cracks to ledges."
+   },
+   {
+    "pitch": "7",
+    "lengthM": 46,
+    "notes": "Easy climbing to the summit."
+   }
+  ],
+  "replace_pitch_detail": true,
+  "review": {
+   "confidence": "medium",
+   "sources": [
+    "https://www.mountainproject.com/route/107700304"
+   ],
+   "source_texts": {
+    "https://www.mountainproject.com/route/107700304": "/Users/nathanbarber/dev/mp-data/_mp/_pitchtext/nh_big_wall_2_one_drop_of_water_v.txt"
+   },
+   "changed": "Wrote all seven pitches with lengths converted from feet; no per-pitch grades since the text mixes free and aid climbing without grading each. No rappel table.",
+   "pitch_count_found": 7,
+   "other_findings": "none"
+  }
+ },
+ "nh_big_wall_2_the_ghost": {
+  "area": "nh_big_wall_2",
+  "pitch_detail": [
+   {
+    "pitch": "1",
+    "grade": "5.7",
+    "anchor": "2 bolts",
+    "notes": "Begin from the top of the Triple S Buttress. A right-facing corner system leads to the top of the pedestal; alternatively skirt the pedestal and take the first pitch of the neighbouring route up to it. Two-bolt belay."
+   },
+   {
+    "pitch": "2",
+    "anchor": "2 bolts",
+    "notes": "A right-arching crack leads into a bolt ladder; hook between bolts along the rightmost ladder to a two-bolt anchor."
+   },
+   {
+    "pitch": "3",
+    "notes": "Ancient rivet ladder to a belay of several bolts below the large overlap."
+   },
+   {
+    "pitch": "4",
+    "notes": "Break out left under the overlap, where hand-sized and larger pieces help. At the corner clip a bolt, then continue on heads or ball nuts to bolts at a good foot ledge. Some intimidating loose blocks."
+   },
+   {
+    "pitch": "5",
+    "grade": "5.9+",
+    "notes": "Free grade is 5.9+. Leave the belay and climb a weakness in a stem-box feature to a massive ledge with a bolted anchor under the roof. Protection is sparse; bring hooks and small cams if aiding."
+   },
+   {
+    "pitch": "6-8",
+    "notes": "Two choices: the roof, rated either old-school A4 or 5.12 R, or finish by the neighbouring route over scary 5.7 R pitches."
+   }
+  ],
+  "replace_pitch_detail": true,
+  "review": {
+   "confidence": "medium",
+   "sources": [
+    "https://www.mountainproject.com/route/113453648"
+   ],
+   "source_texts": {
+    "https://www.mountainproject.com/route/113453648": "/Users/nathanbarber/dev/mp-data/_mp/_pitchtext/nh_big_wall_2_the_ghost.txt"
+   },
+   "changed": "Wrote pitches 1-5 individually and 6-8 as one entry since the finishing options are not split pitch by pitch. No rappel table: only that two 60 m ropes rap from the top of pitch 5.",
+   "pitch_count_found": 6,
+   "other_findings": "none"
+  }
+ },
+ "nh_huntington_ravine_winter_ice_misty": {
+  "area": "nh_huntington_ravine_winter_ice",
+  "pitch_detail": [
+   {
+    "pitch": "1",
+    "grade": "M6/7",
+    "crux": true,
+    "notes": "Follow the big left-leaning crack to pitons on a ledge, clip them, and continue up steeper ground past another fixed pin worth backing up. A few steep, difficult moves lead to easier but poorly protected terrain. Belay in the obvious alcove, where small and finger-sized cams help."
+   },
+   {
+    "pitch": "2",
+    "grade": "M3",
+    "notes": "Easy romp up a neve-filled corner."
+   },
+   {
+    "pitch": "3",
+    "notes": "A turf-filled groove, followed by a series of awkward moves up a muted arete and over a small roof, leads to easier ground. Protection is tricky."
+   }
+  ],
+  "replace_pitch_detail": true,
+  "review": {
+   "confidence": "medium",
+   "sources": [
+    "https://www.mountainproject.com/route/127306319"
+   ],
+   "source_texts": {
+    "https://www.mountainproject.com/route/127306319": "/Users/nathanbarber/dev/mp-data/_mp/_pitchtext/nh_huntington_ravine_winter_ice_misty.txt"
+   },
+   "changed": "Wrote three pitches with stated grades. No rappel table: only 'rappel the route'.",
+   "pitch_count_found": 3,
+   "other_findings": "none"
+  }
+ },
+ "nh_huntington_ravine_winter_ice_the_resistance": {
+  "area": "nh_huntington_ravine_winter_ice",
+  "pitch_detail": [
+   {
+    "pitch": "1",
+    "notes": "The first pitch of Pinnacle Gully, up to its pin belay."
+   },
+   {
+    "pitch": "2",
+    "grade": "M7",
+    "anchor": "2 bolts",
+    "notes": "Down the gully 10 ft from the pin belay brings you to a left-leaning flake and an overhanging 0.2-0.3 seam. Make big reaches, mantle onto the face, follow the left crack over some poor rock (watch for climbers below), and step left to a two-bolt belay under the huge roof."
+   },
+   {
+    "pitch": "3",
+    "grade": "M10",
+    "crux": true,
+    "notes": "Step back into the crack and climb the offwidth roof. Belay in the next roof. A size 5 cam helps if aiding."
+   },
+   {
+    "pitch": "4",
+    "grade": "M6",
+    "notes": "Over the roof, then through easier ground to join the northeast ridge of the Pinnacle."
+   },
+   {
+    "pitch": "5",
+    "notes": "Take the easiest line to the top of Pinnacle Buttress; it can be climbed with tools stowed."
+   }
+  ],
+  "replace_pitch_detail": true,
+  "review": {
+   "confidence": "medium",
+   "sources": [
+    "https://www.mountainproject.com/route/122378145"
+   ],
+   "source_texts": {
+    "https://www.mountainproject.com/route/122378145": "/Users/nathanbarber/dev/mp-data/_mp/_pitchtext/nh_huntington_ravine_winter_ice_the_resistance.txt"
+   },
+   "changed": "Wrote five pitches; the first is the Pinnacle Gully pitch used as the approach lead. Pitch 5 grade stated vaguely so omitted. The bolt belay beneath the roof is the only new fixed gear; a couple of nuts remain at the start of pitch 4.",
+   "pitch_count_found": 5,
+   "other_findings": "none"
+  }
+ },
+ "nh_huntington_ravine_winter_ice_turf_war": {
+  "area": "nh_huntington_ravine_winter_ice",
+  "pitch_detail": [
+   {
+    "pitch": "1",
+    "grade": "WI3-4",
+    "notes": "Start at the base of the waterfall or ice bulge of Central Gully and climb it directly to a grassy ledge. Alternatively, go on up Central Gully and traverse back left to the ledge."
+   },
+   {
+    "pitch": "2",
+    "grade": "M6",
+    "anchor": "fixed",
+    "crux": true,
+    "notes": "From the middle of the ledge, climb the obvious corner on steep terrain and exit left onto a sloping ledge with a fixed belay."
+   },
+   {
+    "pitch": "3",
+    "grade": "M4-5",
+    "notes": "Follow the obvious turf seam on small pound-in placements, around a block on the right, into a small alcove where a horizontal crack and some fixed pins are found."
+   }
+  ],
+  "replace_pitch_detail": true,
+  "review": {
+   "confidence": "medium",
+   "sources": [
+    "https://www.mountainproject.com/route/127306237"
+   ],
+   "source_texts": {
+    "https://www.mountainproject.com/route/127306237": "/Users/nathanbarber/dev/mp-data/_mp/_pitchtext/nh_huntington_ravine_winter_ice_turf_war.txt"
+   },
+   "changed": "Wrote three pitches with stated grades. No rappel table: only 'rappel the route'.",
+   "pitch_count_found": 3,
+   "other_findings": "none"
+  }
+ },
+ "nh_mt_lafayette_summer_slide": {
+  "area": "nh_mt_lafayette",
+  "pitch_detail": [
+   {
+    "pitch": "1",
+    "notes": "Choose your own way up the slide path toward small rocky outcrops on the left and a big pine lying across the whole slide. Build an anchor around there."
+   },
+   {
+    "pitch": "2-3",
+    "notes": "Mostly a snow slope with a few ice bulges; belay as needed in the snow. Near the end a steeper bulge can be skirted on the left or climbed on the right through a slot. Then a ramp and a move right onto a platform below the steeper ice headwall."
+   },
+   {
+    "pitch": "4",
+    "grade": "WI2+/3-",
+    "notes": "Many ways up the headwall. The left side is generally easier at about WI2+/3-. The right side is sustained and probably WI3+/4- depending on conditions, starting with a short headwall, then snow to the main one. Finish by building an anchor on a tree."
+   }
+  ],
+  "replace_pitch_detail": true,
+  "review": {
+   "confidence": "medium",
+   "sources": [
+    "https://www.mountainproject.com/route/118174103"
+   ],
+   "source_texts": {
+    "https://www.mountainproject.com/route/118174103": "/Users/nathanbarber/dev/mp-data/_mp/_pitchtext/nh_mt_lafayette_summer_slide.txt"
+   },
+   "changed": "Wrote pitch 1, linked 2-3 and 4. The grade for 4 is the left-side grade; the right-side grade is in notes. No rappel table: descent is not a defined route and the described raps are not a station list. Avalanche origin of the slide is known in the text.",
+   "pitch_count_found": 3,
+   "other_findings": "Stored pitches=4, text describes pitches 1, 2&3 as one block, and 4."
+  }
+ },
+ "nh_tuckerman_ravine_headwall_pillars": {
+  "area": "nh_tuckerman_ravine",
+  "pitch_detail": [
+   {
+    "pitch": "1",
+    "notes": "Begins on the ravine floor over gentle ice and bulges; snow or rock may show instead, depending on conditions."
+   },
+   {
+    "pitch": "2",
+    "notes": "Harder ice, with pillars and curtains that may or may not be formed. They can be avoided by working over bulges to the left or right."
+   },
+   {
+    "pitch": "3",
+    "notes": "Last pitch is snow or gentler ice onto the rim of the ravine. Either walk off rightward or go along the rim to Lions Head and descend by the hiking trail."
+   }
+  ],
+  "replace_pitch_detail": true,
+  "review": {
+   "confidence": "medium",
+   "sources": [
+    "https://www.mountainproject.com/route/120054673"
+   ],
+   "source_texts": {
+    "https://www.mountainproject.com/route/120054673": "/Users/nathanbarber/dev/mp-data/_mp/_pitchtext/nh_tuckerman_ravine_headwall_pillars.txt"
+   },
+   "changed": "Wrote three pitches; no grades or lengths.",
+   "pitch_count_found": 3,
+   "other_findings": "Stored length_m 18 for 3 pitches looks wrong (too short)."
+  }
+ },
+ "nl_cholesterol_wall_apocalypse_now_direct": {
+  "area": "nl_cholesterol_wall",
+  "pitch_detail": [
+   {
+    "pitch": "1",
+    "notes": "Simul-climb roughly 80 to 100 m (range as stated) on ice at the right of the central rock buttress in the Carry-out Couloir to a protected ice ledge just left of the base of the continuous corner of Apocalypse Now."
+   },
+   {
+    "pitch": "2",
+    "notes": "Long pitch of classic dry-tooling, much like the sixth pitch of Apocalypse Now, ending where the route joins the fifth belay of the original. Pitons and beaks are left in place."
+   }
+  ],
+  "replace_pitch_detail": true,
+  "review": {
+   "confidence": "medium",
+   "sources": [
+    "https://www.mountainproject.com/route/200368819"
+   ],
+   "source_texts": {
+    "https://www.mountainproject.com/route/200368819": "/Users/nathanbarber/dev/mp-data/_mp/_pitchtext/nl_cholesterol_wall_apocalypse_now_direct.txt"
+   },
+   "changed": "Wrote two pitches; no per-pitch grades stated so none added.",
+   "pitch_count_found": 2,
+   "other_findings": "none"
+  }
+ },
+ "nl_south_wall_unnamed": {
+  "area": "nl_south_wall",
+  "pitch_detail": [
+   {
+    "pitch": "1",
+    "notes": "Bulge of ice, then snow, leading to the base of the steeper ice. Length depends on the start point, roughly 50 m."
+   },
+   {
+    "pitch": "2",
+    "notes": "Steeper ice to a top-out and trees for rappelling, roughly 30 m depending on the start point."
+   }
+  ],
+  "replace_pitch_detail": true,
+  "review": {
+   "confidence": "medium",
+   "sources": [
+    "https://www.mountainproject.com/route/202499039"
+   ],
+   "source_texts": {
+    "https://www.mountainproject.com/route/202499039": "/Users/nathanbarber/dev/mp-data/_mp/_pitchtext/nl_south_wall_unnamed.txt"
+   },
+   "changed": "Wrote two pitches; lengths are only approximate so left in notes. No rappel table.",
+   "pitch_count_found": 2,
+   "other_findings": "none"
+  }
+ },
+ "skip_reasons": {
+  "nh_7_garfield_crag_2_the_big_one": "Pitches are narrative, not labeled P1/P2; no clear belay-by-belay description.",
+  "nh_duet_area_etc_sextet": "Narrative first-ascent history with pitches renumbered after a rockslide; not a clear per-pitch list.",
+  "nh_moby_grape_area_dark_hallow": "Narrative aid route, pitches not itemized."
+ }
+}

@@ -55,6 +55,10 @@ export interface BaseCheckinPanelProps {
   spots?: BaseSpot[] | null;
   /** The query behind `spots`. */
   q: {refetch?: (() => unknown) | null; isError?: boolean; isPending?: boolean};
+  /** Opens the log form for this route; with `logged` false, a climber who checked in is offered it. */
+  onLogClimb?: (() => void) | null;
+  /** This climb is already in the signed-in climber's logbook. */
+  logged?: boolean;
 }
 
 /* A distance in the climber's units, switching to mi/km past a kilometre so "1,998 m" reads as "1.2 mi". */
@@ -76,7 +80,7 @@ function _isNoSignal(e: {message?: string} | null | undefined){if(typeof navigat
    stops pointing and shows the route's own LOCATION note (0243), because that, not GPS, is what tells
    two neighbouring lines apart.
    Moved verbatim from RouteDetail.jsx (PR58); only the types were added. */
-export default function BaseCheckinPanel({route,who,spots,q}: BaseCheckinPanelProps){
+export default function BaseCheckinPanel({route,who,spots,q,onLogClimb,logged}: BaseCheckinPanelProps){
   const [st,setSt]=useState<CheckinState>({phase:"idle"});const [prog,setProg]=useState<{good:number}|null>(null);
   const [guide,setGuide]=useState<Guide|null>(null);const guideRef=useRef<number|null>(null);
   const stopGuide=useCallback(function(){if(guideRef.current!=null){try{navigator.geolocation.clearWatch(guideRef.current);}catch(e){/* nothing to clear */}guideRef.current=null;}},[]);
@@ -172,6 +176,9 @@ export default function BaseCheckinPanel({route,who,spots,q}: BaseCheckinPanelPr
       <button onClick={go} disabled={busy} aria-busy={busy?"true":undefined} style={{padding:"8px 12px",background:busy?C.border:C.actionSolid,boxShadow:(busy)?"none":SOLID_LEDGE(C),color:C.onSolid,border:"none",borderRadius:9,fontSize:12.5,fontWeight:700,cursor:busy?"default":"pointer"}}>{mineAny?"I’m at the base — check in again":"I’m at the base — check in"}</button>
       {mineAny?<button onClick={function(){askConfirm({title:"Remove your check-in?",body:"Checking in again means being back at the base of the climb.",confirmLabel:"Remove check-in"}).then(function(ok){if(ok)withdraw();});}} disabled={busy} style={{padding:"8px 12px",background:C.surface,color:C.textSub,border:`1px solid ${C.border}`,borderRadius:9,fontSize:12.5,fontWeight:600,cursor:busy?"default":"pointer"}}>Remove my check-in</button>:null}
     </div>:<div style={{fontSize:12,color:C.textMuted}}>Sign in to check in when you’re standing at the start of the climb.</div>}
+    {/* WHAT HAPPENS AFTER (audit 2026-11-26): a check-in marks the START, not an ascent, so it never ticks
+        the climb by itself; the climber who checked in and has not logged it is offered the log form here. */}
+    {who&&onLogClimb&&!logged&&(st.phase==="done"||mineAny)?<button onClick={onLogClimb} style={{marginTop:8,padding:0,background:"none",border:"none",color:C.blue,fontSize:12.5,fontWeight:600,cursor:"pointer",minHeight:32}}>Back down? Log this climb ›</button>:null}
     {who?<div style={{fontSize:11.5,color:C.textMuted,lineHeight:1.45,marginTop:8}}>Uses your phone’s GPS, and only works at the start of the climb: your position is checked against where this climb is on file. Other climbers see the spot and how many climbers stood there — never who, or when.</div>:null}
   </div>;
 }

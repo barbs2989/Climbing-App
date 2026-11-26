@@ -82,10 +82,16 @@ async function main() {
   for (const u of [A, B, C, E, F]) await setDiscoverable(u, true);
   await setDiscoverable(D, false);
 
+  // REAL climbers list in the Wasatch too (one at Water Crest Wall since 2026-11-20), so the counts below are read
+  // against what was there BEFORE the fixtures, not against an empty range.
+  const base0 = await rpc(A, "partner_area_counts", { p_area_ids: [CRAG, RANGE, CANYON, STATE] });
+  const base = Object.fromEntries((base0.body || []).map((r) => [r.area_id, Number(r.listed_count) || 0]));
   // ---- the table is the owner's alone
-  const bl = await listAt(B, CANYON, { disciplines: ["sport", "trad"] });
+  // 0548: a window that ended YESTERDAY on the database's (UTC) day is still sent -- the app drops it on the climber's own day.
+  const _y = new Date(Date.now() - 86400000).toISOString().slice(0, 10);
+  const bl = await listAt(B, CANYON, { disciplines: ["sport", "trad"], free_from: _y, free_to: _y });
   check(bl.status < 300 && Array.isArray(bl.body) && bl.body.length === 1, "an owner lists themselves at a canyon", JSON.stringify(bl.body));
-  const cl = await listAt(C, CRAG, { disciplines: ["sport"], free_from: "2030-06-01", free_to: "2030-06-02" });
+  const cl = await listAt(C, CRAG, { disciplines: ["sport"], free_from: "2030-06-01", free_to: "2030-06-02", note: "QA fixture note" });
   check(cl.status < 300 && Array.isArray(cl.body) && cl.body.length === 1, "an owner lists themselves at a crag with a date window", JSON.stringify(cl.body));
   const dl = await listAt(D, CRAG, {});
   check(dl.status < 300, "an unlisted (discoverable=false) climber can still hold a listing row", JSON.stringify(dl.body));
@@ -97,12 +103,15 @@ async function main() {
   check(Array.isArray(peek.body) && peek.body.length === 0, "another climber reads NOTHING of the table directly", JSON.stringify(peek.body));
   const forge = await as(A, "/rest/v1/partner_areas", { method: "POST", body: JSON.stringify({ user_id: C.id, area_id: RANGE }) });
   check(forge.status >= 400, "a climber cannot list somebody else", "status " + forge.status);
+  // A PEAK is listable since 0456 (owner 2026-11-18); the row is removed again so A stays a climber with NO listings below.
   const atPeak = await listAt(A, PEAK, {});
-  check(atPeak.status >= 400 && /peak/i.test(JSON.stringify(atPeak.body)), "a listing at a PEAK is refused, naming the reason", JSON.stringify(atPeak.body));
+  check(atPeak.status < 300 && Array.isArray(atPeak.body) && atPeak.body.length === 1, "a listing at a PEAK is accepted (0456)", JSON.stringify(atPeak.body));
+  await as(A, "/rest/v1/partner_areas?area_id=eq." + encodeURIComponent(PEAK), { method: "DELETE" });
   const atCountry = await listAt(A, "usa", {});
   check(atCountry.status >= 400, "a listing at a country is refused", JSON.stringify(atCountry.body));
-  const badDisc = await listAt(A, CRAG, { disciplines: ["alpine"] });
-  check(badDisc.status >= 400, "a non-crag discipline is refused by the CHECK", JSON.stringify(badDisc.body));
+  // The CHECK takes the crag AND alpine families since 0456; a word outside both is refused.
+  const badDisc = await listAt(A, CRAG, { disciplines: ["yoga"] });
+  check(badDisc.status >= 400, "a discipline outside the CHECK's list is refused", JSON.stringify(badDisc.body));
 
   // ---- signed out
   for (const fn of ["partners_in_area", "partners_for_my_areas", "partner_area_counts", "partner_areas_of_users", "match_objectives_of_users"]) {
@@ -125,6 +134,10 @@ async function main() {
   check(cR && cR.free_from === "2030-06-01" && cR.free_to === "2030-06-02", "a live date window is returned", JSON.stringify(cR && [cR.free_from, cR.free_to]));
   check(eR && eR.free_from === null && eR.free_to === null, "an EXPIRED window reads back as no window, the listing stays", JSON.stringify(eR && [eR.free_from, eR.free_to]));
   check(cR && Array.isArray(cR.listed_disciplines) && cR.listed_disciplines.join() === "sport", "the listing's disciplines come back", JSON.stringify(cR && cR.listed_disciplines));
+  check(bR && bR.free_to === _y, "a window that ended yesterday (UTC) is still sent — one day of slack (0548)", JSON.stringify(bR && [bR.free_from, bR.free_to]));
+  const ofC = await rpc(A, "partner_areas_of_users", { p_ids: [C.id, B.id] });
+  const cL = (ofC.body || []).find((r) => r.user_id === C.id);
+  check(cL && cL.note === "QA fixture note" && cL.disciplines.join() === "sport" && cL.free_to === "2030-06-02", "partner_areas_of_users returns the listing's NOTE, types and window to another climber (0548)", JSON.stringify(cL));
   check(cR && !("zip" in cR) && !("lat" in cR) && !("lng" in cR) && cR.dist_mi === null, "no zip or coordinate; dist_mi is null without an origin", JSON.stringify(cR && Object.keys(cR)));
   check(cR && typeof cR.show_name === "boolean", "show_name is carried (the PARTNER_COLS contract)");
   const atRange = await rpc(A, "partners_in_area", { p_area_id: RANGE });
@@ -151,7 +164,7 @@ async function main() {
 
   // ---- counts
   const counts = await rpc(A, "partner_area_counts", { p_area_ids: [CRAG, RANGE, CANYON, STATE] });
-  const cnt = Object.fromEntries((counts.body || []).map((r) => [r.area_id, r.listed_count]));
+  const cnt = Object.fromEntries((counts.body || []).map((r) => [r.area_id, (Number(r.listed_count) || 0) - (base[r.area_id] || 0)]));
   check(cnt[CRAG] === 3, "the crag counts the crag, canyon and sub-area climbers (3), not the unlisted one or the caller", JSON.stringify(cnt));
   check(cnt[RANGE] === 3 && cnt[CANYON] === 3, "the range and canyon count the same three — the state listing is not among them (0311)", JSON.stringify(cnt));
   check(cnt[STATE] === 3, "the STATE counts the same three — a state listing cannot exist (0542)", JSON.stringify(cnt));

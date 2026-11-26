@@ -143,9 +143,16 @@ Hand-run probes: `scripts/oneoff/probe-ranks-anti-padding.sql`, `probe-ranks-ant
 - **True top 100 (0379)**: the 500-climber cap is gone; every board is ranked on the server, and your standing comes with your row.
 
 ## 8. Known gaps
-- `rank_breakdown()` copies `leaderboard()`'s counting rather than sharing it; a change to the scoring must
-  change both (no guard holds them equal yet).
-- The board values `leaderboard()` ranks (0379's `scored` CTE) mirror the `val` of each board in `B` in
-  `lib/Leaderboards.jsx`; a new board, or a board whose value changes, must change both (no guard holds them equal).
+- `rank_breakdown()` copies `leaderboard()`'s counting rather than sharing it (a shared per-log helper would add a
+  function call per log to the board query every Ranks open runs); a change to the scoring must change both.
+  **`check:rank-breakdown` holds them equal** (2026-11-26): it reads the latest definition of each from
+  `supabase/migrations/`, extracts 14 scoring rules from both and fails on any difference; it also fails when
+  `RankBreakdown`'s sentences (HOW, TIER) state a constant the SQL no longer uses, and when the boards and types in
+  0379's `metric` CTE are not `B`'s and `DISCS`' in `lib/Leaderboards.jsx`. `--selftest` proves each rule can fail.
+- The server still ranks a `catches` board, left over from the Belay board (removed 2026-11-05, #3202). It is
+  harmless — a climber in its top 100 comes back with true values and sits below every board's own top 100 — and
+  `check:rank-breakdown` lists it as server-only. Drop it the next time `leaderboard()` is rewritten.
+- The per-board VALUE mapping (`scored`'s CASE against each `B[...].val`) is not compared, only the board ids;
+  the browser probes and the live 8 = 8 check cover the values.
 - Grade conversions between systems are approximate by nature (theCrag and 8a.nu publish their own tables).
 - A Peaks count is per summit AREA; two faces of one peak filed as two areas count twice.

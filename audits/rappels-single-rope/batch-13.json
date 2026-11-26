@@ -1,0 +1,181 @@
+{
+ "wa_mount_torment_torment_forbidden_traverse": {
+  "area": "wa_mount_torment",
+  "set": {
+   "rappels": "About 9 rappels on a single 60 m rope: roughly 3 down the West Ridge to the notch, then about 6 down the Cat Scratch Gullies (parties report 5 to 10 overall)",
+   "rappel_count_note": "The descent from Forbidden's summit back to the glacier remnant takes about nine rappels on a single 60 m rope: roughly three along the West Ridge crest to the notch, with simul-downclimbing between them, then about six down the arete beside the gully system. The count varies between parties (5 to 10) with snow cover and how much is downclimbed. Most stations in the gullies are a half rope length or less, so a single 60 m rope folded in half works; anything shorter than 60 m is ill-advised. Per-rappel lengths are not published for this descent, so the table gives none."
+  },
+  "review": {
+   "confidence": "medium",
+   "sources": [
+    "https://www.mountaineers.org/activities/trip-reports/intermediate-alpine-climb-forbidden-peak-west-ridge-6",
+    "https://www.summitpost.org/route/224484/torment-forbidden-traverse.html",
+    "https://www.mountainproject.com/route/106450596/west-ridge"
+   ],
+   "single_rope": "Single 60 m rope is the standard: 3 ridge rappels (some with simul-downclimbing) plus a series of about 6 gully rappels on 30 m folded-rope stations; one recent report counts 6 from the notch.",
+   "changed": "Removed the aside that two ropes roughly halve the count and reworded the note and summary around a single 60 m rope; kept the existing 10-station table, which is already single-rope with no lengths."
+  }
+ },
+ "wa_mount_triumph_northeast_ridge": {
+  "area": "wa_mount_triumph",
+  "set": {
+   "rappels": "About 7 to 11 rappels on a single 60 m rope back down the ridge to the bivy col, interspersed with downclimbing; existing slings and rap rings are present at most stations but should be inspected or backed up",
+   "descent_text": "From the summit, downclimb roughly 30 ft off the north side of the notch to easier rock, then reverse the ridge via a long string of rappels on a single 60 m rope interspersed with downclimbing — accounts report anywhere from about 7 to 11 rappels total, including one down the crux crack pitch — back down to the bivy col. Existing slings and rap rings are present at most stations but the rock is loose, so back up or replace suspect anchors. From the col, reverse the approach gully and climbers' path back around Thornton Lake and out the Thornton Lakes Trail to the trailhead. On a late-September descent the third rappel used nearly all of a 60 m rope (a 57 m rope fell short), and some of the older anchors needed to be cut away and replaced; carry spare cord and full-length ropes.",
+   "rappel_count_note": "Parties descend the ridge with a single 60 m rope and report 7 to 11 rappels, depending on how much is downclimbed. A few stations are just out of reach of a 60 m rope, so a short downclimb of 5 to 10 ft to the next anchor is sometimes needed. No station-by-station list is published."
+  },
+  "clear_rappels": true,
+  "review": {
+   "confidence": "medium",
+   "sources": [
+    "https://www.nps.gov/noca/blogs/mt-triumph-ne-ridge-7-24-16.htm",
+    "https://www.mountaineers.org/activities/routes-places/north-cascades-national-park-cross-country-zones/mount-triumph-northeast-ridge",
+    "https://cascadeclimbers.com/forum/topic/88007-tr-mt-triumph-ne-ridge-8192012"
+   ],
+   "single_rope": "A single 60 m rope is used by parties for the whole descent: 10 or 11 rappels reported by a park ranger, 7 to 9 in a route description; some stations need a short downclimb.",
+   "changed": "Replaced the mixed single/double-rope summary and descent sentence with single 60 m rope wording, added a count note; table was empty."
+  }
+ },
+ "wa_mount_triumph_west_route": {
+  "area": "wa_mount_triumph",
+  "set": {
+   "rappels": "A series of rappels reversing the southeast ramp and west-side benches; count and rope length not documented",
+   "rappel_count_note": "The descent reverses the southeast ramp and west-side benches with a series of rappels. No count or station list is published for a single 60 m rope, and no station distances are known, so none are given. Carry spare cord for anchors."
+  },
+  "review": {
+   "confidence": "low",
+   "sources": [
+    "https://www.mountainproject.com/route/113446829/west-ridge",
+    "https://www.mountaineers.org/activities/routes-places/north-cascades-national-park-cross-country-zones/mount-triumph-northeast-ridge"
+   ],
+   "single_rope": "Nothing found documents a single-rope count for this route; rappels elsewhere on the peak are done on a single 60 m rope.",
+   "changed": "Removed double-rope wording and the advice to carry two ropes; said plainly that count and distances are unknown."
+  }
+ },
+ "wa_mount_washington_olympic_winter_direct": {
+  "area": "wa_mount_washington_olympic",
+  "set": {
+   "rappels": "A few rappels off trees or snow anchors on the steep snow below the summit ridge on a single 60 m rope, with face-in downclimbing elsewhere; count not documented",
+   "descent_text": "The winter descent is long and largely on snow; carry a 60 m rope for rappels down the steepest slopes, supplemented by face-in downclimbing on lower-angle sections. In late February the steep, hard snow below the summit ridge called for a couple of rappels, using trees or snow anchors, before the angle eased.",
+   "rappel_count_note": "Rappels are short and few: the steep, hard snow just below the summit ridge is rappelled from trees or snow anchors on a single 60 m rope, and the rest of the descent is downclimbed or walked. No station list or per-rappel distance is published."
+  },
+  "review": {
+   "confidence": "low",
+   "sources": [
+    "https://www.mountainproject.com/route/122000159/winter-direct",
+    "https://mountaineers.org/activities/trip-reports/intermediate-alpine-climb-mount-ellinor-mount-washington",
+    "https://www.summitpost.org/view_object.php?object_id=289434"
+   ],
+   "single_rope": "Sources describe a handful of rappels on snow slopes plus much downclimbing; rope length per rappel is not stated, so a single 60 m rope is the working assumption.",
+   "changed": "Removed double-rope wording from both columns and the descent sentence; added a short count note."
+  }
+ },
+ "wa_nooksack_tower_beckey_route": {
+  "area": "wa_nooksack_tower",
+  "set": {
+   "rappels": "About 10 rappels down the north-side couloir to the bergschrund, anchored on the rock walls flanking the couloir; fewer where the lower couloir can be downclimbed. Whether a single 60 m rope reaches each station is not documented",
+   "rappel_count_note": "Parties describe about ten rappels from the summit to the glacier, with anchors built on the rock walls flanking the couloir; the count drops when the lower couloir is in condition to downclimb. No station-by-station distances are published, so it is not known whether every station is within a single 60 m rope. Plan to find or build anchors rather than to follow a fixed list."
+  },
+  "clear_rappels": true,
+  "review": {
+   "confidence": "low",
+   "sources": [
+    "https://publications.americanalpineclub.org/articles/12194743602",
+    "https://publications.americanalpineclub.org/articles/12198315301/North-America-United-States-WashingtonCascade-Mountains-Nooksack-Tower-Northeast-Couloir-and-East-Ridge",
+    "https://cascadeclimbers.com/forum/topic/107495-tr-nooksack-tower-beckey-schmidtke-07232023"
+   ],
+   "single_rope": "About 10 rappels reported; no source says what rope reaches each station, so single-rope reach is unverified.",
+   "changed": "Cleared the table, which was written as double-rope stations with no distances or distinct positions; rewrote the summary and note without two-rope wording."
+  }
+ },
+ "wa_nooksack_tower_south_face": {
+  "area": "wa_nooksack_tower",
+  "set": {
+   "rappels": "About 4 rappels to the col; reports range from 4 to 10 or more. Single-rope reach is not documented",
+   "rappel_count_note": "The one first-hand account of this descent records four rappels, ending at the col rather than continuing to the glacier, with one station off a fixed titanium knifeblade equalised with a stopper. Other reports vary from four to ten or more depending on the line taken and how much snow is on it. No per-station distance is published and no station positions are documented, so it is not known whether a single 60 m rope reaches each one; plan to find or build anchors rather than to work down a fixed list."
+  },
+  "review": {
+   "confidence": "low",
+   "sources": [
+    "https://summitpost.org/south-face/additions-corrections/158794",
+    "https://summitpost.org/beckey-schmidtke/163780",
+    "https://cascadeclimbers.com/forum/topic/107495-tr-nooksack-tower-beckey-schmidtke-07232023"
+   ],
+   "single_rope": "Nothing found documents a single-rope descent; counts of 4 to 10 reported with no distances.",
+   "changed": "Removed the two-rope setup from the note and added a plain statement of what is unknown; added a short summary line."
+  }
+ },
+ "wa_labor_pains": {
+  "area": "wa_north_early_winters_spire",
+  "set": {
+   "rappels": "Many parties now descend a separate bolted rappel line down the West Face, between the West Face route and Labor Pains. The Chockstone line is the original descent down the south side: three single-rope rappels to the notch, a largely free-hanging rappel past the giant chockstone, and a short rappel off a tree to the ground. Its second gully rappel comes up about 5 ft short on a 60 m rope and is finished with a downclimb.",
+   "rappel_count_note": "These five stations are the original chockstone and notch descent down the south side: three rappels on a single 60 m rope to the notch, then the free-hanging rappel past the giant chockstone and a short tree rappel. Accounts give up to five rappels depending on conditions. The second gully rappel comes up about 5 ft short on a 60 m rope. Many Labor Pains parties now use a different descent: a separate bolted rappel line down the West Face, between the West Face route and Labor Pains itself, which shares only the first anchor with the chockstone descent. It has six stations on bolts and chains ending a minute from the base of the routes, and one rappel is a full 30 m, so tie knots in the rope ends; parties carry a 70 m rope for it. The last anchor is hard to find, on a rib below some shrubs and skier's left as you walk down loose dirt from the fifth station. Some parties still rappel from a nearby dead tree carrying no slings, which is not the anchor. Do not blend the two lines: the station list shown is the chockstone line."
+  },
+  "rappel_detail": [
+   {
+    "n": 1,
+    "notes": "First of three single-rope rappels down the south side toward the notch between North and South Early Winters Spire.",
+    "anchor": "fixed/natural station",
+    "hazards": [
+     "Rope drag and route-finding after the slab traverse make this a confusing place to arrive; the anchor is above where most parties stop",
+     "The descent is repeatedly described as windy, which throws a tossed rope off line"
+    ],
+    "lengthM": 30,
+    "station": "About 30 m down from where the route tops out and on the skier's right, not on the summit itself. The top station is a bolted anchor - reached, from the West Face finish, by continuing about 50 ft above the top of that route's last pitch. It is worth noting where this anchor is on the way up: parties descending at dusk say knowing where the first anchors are is what makes a late descent reasonable."
+   },
+   {
+    "n": 2,
+    "notes": "Second single-rope rappel continuing toward the notch/gully.",
+    "anchor": "fixed station",
+    "hazards": [
+     "This is the rappel reported as coming up about 5 ft short on a 60 m rope, finished with a short downclimb. Expect it rather than discovering it at the ends",
+     "The gully is loose and chossy, and snow-covered well into the season"
+    ],
+    "lengthM": 30,
+    "station": "Second of the three single-rope rappels, down into the gully."
+   },
+   {
+    "n": 3,
+    "notes": "Third single-rope rappel reaching the notch.",
+    "anchor": "fixed station at notch/gully",
+    "hazards": [
+     "The gully here is the one parties mistakenly ascend when route-finding up the chasm; on the way down it is loose and often snow-filled",
+     "Rockfall onto anyone still on the rappel above"
+    ],
+    "lengthM": 30,
+    "station": "Third single-rope rappel, landing in the notch between North and South Early Winters Spire - often snow-covered. There is a tree at the notch that parties use as the landmark for the anchors here. A few minutes of class-3 scrambling and downclimbing links this to the chockstone station."
+   },
+   {
+    "n": 4,
+    "notes": "Largely free-hanging rappel past the giant chockstone (about 50 ft of air) from bolts on top of the chockstone. Its full length is not published, so it is not known whether one 60 m rope reaches the next stance: tie knots in the ends and look before you commit.",
+    "anchor": "bolted anchor on top of the chockstone",
+    "hazards": [
+     "Fully free-hanging with no way to reach rock once you are on it",
+     "You arrive at this station from above by scrambling loose gully ground, which is where material gets knocked onto anyone below"
+    ],
+    "lengthM": null,
+    "station": "The rappel this descent is known for. Below the notch, a short scramble leads to the giant chockstone in the gully; the station is a bolted rap anchor on top of the chockstone - not tat, and the same bolts parties belay from on the way up when climbing the Chockstone Route. The rappel goes off the chockstone and hangs completely free for around 50 ft, and is routinely described as the longest free-hanging rappel the party has done."
+   },
+   {
+    "n": 5,
+    "notes": "Final short (about 30 ft) rappel, or downclimb/scramble alternative, back to the base.",
+    "anchor": "tree anchor",
+    "hazards": [
+     "Loose, steep gully walking either way"
+    ],
+    "lengthM": 10,
+    "station": "A few more minutes of class-3 scrambling and downclimbing below the chockstone, then a last short rappel of about 30 ft off a tree to the ground. Some parties downclimb this instead of rigging it."
+   }
+  ],
+  "replace_rappels": true,
+  "review": {
+   "confidence": "medium",
+   "sources": [
+    "https://cascadeclimbers.com/forum/topic/92196-west-face-news-rappel-route",
+    "https://www.mountainproject.com/route/111959715/chockstone-route",
+    "https://www.mountainproject.com/route/105847147/the-west-face"
+   ],
+   "single_rope": "Upper three rappels are single 60 m rope (30 m each, one comes up about 5 ft short); chockstone rappel is about 50 ft free-hanging, full length unpublished; West Face bolted line has a full 30 m rappel and 4 to 6 stations.",
+   "changed": "Removed two-rope wording from summary, note and station 4; set station 4 lengthM to null (35 was not sourced) and dropped the block-and-extend-a-strand remark."
+  }
+ }
+}

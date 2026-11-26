@@ -1,0 +1,796 @@
+{
+ "skip_reasons": {
+  "ab_edge_of_the_world_edge_of_the_world": "Text describes only rappelling the two short ice pitches (about 20 m each), no per-pitch climbing text and no station list beyond two anchors."
+ },
+ "ab_bow_falls_area_aimless_gully": {
+  "area": "ab_bow_falls_area",
+  "pitch_detail": [
+   {
+    "pitch": "1",
+    "grade": "WI3-4",
+    "anchor": "bolts",
+    "notes": "Opening ice curtain, roughly 35 to 40 m. The right side is the more technical way. Belay from bolts on the right where the route pinches through a rock choke."
+   },
+   {
+    "pitch": "2",
+    "grade": "WI2",
+    "lengthM": 30,
+    "anchor": "bolts",
+    "notes": "Easy ice for about 30 m up to a broad, fairly flat amphitheater. Bolted anchor on the left. Can be skipped by linking past it."
+   },
+   {
+    "pitch": "3",
+    "grade": "WI4",
+    "crux": true,
+    "anchor": "bolts",
+    "notes": "Short vertical step leads to mellower ice at the top out. The belay is a bolted anchor reached after a few metres of snow walking."
+   }
+  ],
+  "replace_pitch_detail": true,
+  "review": {
+   "confidence": "high",
+   "sources": [
+    "https://www.mountainproject.com/route/202194854"
+   ],
+   "source_texts": {
+    "https://www.mountainproject.com/route/202194854": "/Users/nathanbarber/dev/mp-data/_mp/_pitchtext/ab_bow_falls_area_aimless_gully.txt"
+   },
+   "changed": "3 pitches written with grades and lengths where stated. No rappel table: descent given as a count only.",
+   "pitch_count_found": 3
+  }
+ },
+ "ab_castle_mountain_red_moon_rising": {
+  "area": "ab_castle_mountain",
+  "pitch_detail": [
+   {
+    "pitch": "1",
+    "grade": "5.6/5.7",
+    "lengthM": 37,
+    "notes": "Follows an obvious left-leaning crack starting about 15 m right of a neighbouring line. Rock is mediocre. Belay on a small ledge shared with the neighbouring route."
+   },
+   {
+    "pitch": "2",
+    "grade": "5.8",
+    "lengthM": 30,
+    "notes": "Exit left from the belay into an obvious crack with superb rock, ending in an alcove. Largely 5.6, with one brief harder sequence."
+   },
+   {
+    "pitch": "3",
+    "grade": "5.8",
+    "lengthM": 40,
+    "notes": "Move far to the right (a move or two of downclimbing) to find the vertical cracks. About 15 m up through a 5.8 chimney, then the angle eases to a jug-hauling 5.4 stretch for another 25 m. Sheltered belay below a broken corner."
+   },
+   {
+    "pitch": "4",
+    "grade": "5.6",
+    "lengthM": 40,
+    "notes": "Head toward the broken corner, start up it, then move onto the face. At the top an alley trends left onto a terrace of broken rock. Belay before a short crack that starts wide and becomes a perfect hand crack."
+   },
+   {
+    "pitch": "5",
+    "grade": "5.8+",
+    "lengthM": 40,
+    "notes": "Climb the crack to reach the ridge crest (5.8+), then follow the crest at 5.4. Belay on gear in a hollow along the ridge's right flank, short of the ramp below the next headwall."
+   },
+   {
+    "pitch": "6",
+    "grade": "5.7",
+    "lengthM": 40,
+    "notes": "Go up the ramp and take the right-most of three crack systems, a fist crack. Belay to the right in a gully filled with chokestones."
+   },
+   {
+    "pitch": "7",
+    "grade": "5.5",
+    "lengthM": 40,
+    "notes": "Up the chimney or gully to a diagonal crack leaning left. At its top, cross toward the ridge's right flank and reach a scree ledge fronting two large caves."
+   },
+   {
+    "pitch": "8",
+    "grade": "5.7",
+    "lengthM": 32,
+    "notes": "Cross the scree ledge and enter the left-hand cave. An improbable crack on the left wall, water-polished and excellent, gains a ledge inside the cave beneath the huge chokestones. Belay there before the blind corner and roof."
+   },
+   {
+    "pitch": "9",
+    "grade": "5.9",
+    "lengthM": 65,
+    "crux": true,
+    "notes": "Pull around the blind corner and roof into a gully (5.7). Climb the left wall of the gully (5.5) to stay on the ridge, take a vertical crack (5.9) to a ledge, then a short wall at the far side (5.7) to the top."
+   }
+  ],
+  "replace_pitch_detail": true,
+  "review": {
+   "confidence": "high",
+   "sources": [
+    "https://www.mountainproject.com/route/203591491"
+   ],
+   "source_texts": {
+    "https://www.mountainproject.com/route/203591491": "/Users/nathanbarber/dev/mp-data/_mp/_pitchtext/ab_castle_mountain_red_moon_rising.txt"
+   },
+   "changed": "All 9 pitches written with lengths and grades. Anchors not stated except pitch 5 (gear anchor) so left out elsewhere.",
+   "pitch_count_found": 9
+  }
+ },
+ "ab_castle_mountain_the_moat": {
+  "area": "ab_castle_mountain",
+  "pitch_detail": [
+   {
+    "pitch": "1",
+    "grade": "5.10",
+    "lengthM": 20,
+    "notes": "Begins where the prominent prow meets the ground, on the tier under the neighbouring multipitch. Unusual, awkward rock."
+   },
+   {
+    "pitch": "2",
+    "grade": "5.11c",
+    "lengthM": 30,
+    "crux": true,
+    "notes": "Holds are hard to read and feet are spaced widely. The clear 5.11+ crux spans three to four bolts and offers little rest. The first jug sits two bolts below the anchor; it looks loose but is solid."
+   },
+   {
+    "pitch": "3",
+    "grade": "5.11c",
+    "lengthM": 30,
+    "crux": true,
+    "notes": "Steep. Incut holds from the belay lead to a traverse beneath a roof, then stretch up and around onto a decent crack splitting a somewhat flawed tower where bolts are about 5 m apart. A harder but more solid line goes slightly right. Move to the arete, side-pull crux to a no-hands alcove rest, then a final 5.11+ move to a sharp tooth and slopers into a roof of hollow rock."
+   },
+   {
+    "pitch": "4",
+    "notes": "Best rock of the route. First bolts are about 5.11-, then a run of long moves, the first to a crescent-shaped hold facing right. Crimps and underclings lead onto the overhanging prow, then hard moves to the ledge. Belay from the upper anchor."
+   }
+  ],
+  "replace_pitch_detail": true,
+  "review": {
+   "confidence": "high",
+   "sources": [
+    "https://www.mountainproject.com/route/123339526"
+   ],
+   "source_texts": {
+    "https://www.mountainproject.com/route/123339526": "/Users/nathanbarber/dev/mp-data/_mp/_pitchtext/ab_castle_mountain_the_moat.txt"
+   },
+   "changed": "4 pitches written. Pitch 4 has no stated grade or length; left blank. Descent is a ledge traverse, not a rappel list.",
+   "pitch_count_found": 4
+  }
+ },
+ "ab_cinquefoil_right_multi_pass": {
+  "area": "ab_cinquefoil_right",
+  "pitch_detail": [
+   {
+    "pitch": "1",
+    "grade": "5.6",
+    "lengthM": 30,
+    "notes": "First bolted pitch, about 30 m."
+   },
+   {
+    "pitch": "2",
+    "grade": "5.7",
+    "lengthM": 25,
+    "notes": "Second bolted pitch, about 25 m."
+   },
+   {
+    "pitch": "3",
+    "grade": "5.5",
+    "lengthM": 25,
+    "notes": "Final bolted pitch, about 25 m, easier than those below."
+   }
+  ],
+  "replace_pitch_detail": true,
+  "review": {
+   "confidence": "medium",
+   "sources": [
+    "https://www.mountainproject.com/route/203798696"
+   ],
+   "source_texts": {
+    "https://www.mountainproject.com/route/203798696": "/Users/nathanbarber/dev/mp-data/_mp/_pitchtext/ab_cinquefoil_right_multi_pass.txt"
+   },
+   "changed": "3 pitches with grade and length only; notes are minimal because nothing else is described.",
+   "pitch_count_found": 3
+  }
+ },
+ "ab_cinquefoil_right_odyssey": {
+  "area": "ab_cinquefoil_right",
+  "pitch_detail": [
+   {
+    "pitch": "1",
+    "grade": "5.7",
+    "lengthM": 30,
+    "notes": "First bolted pitch, about 30 m."
+   },
+   {
+    "pitch": "2",
+    "grade": "5.7",
+    "lengthM": 25,
+    "notes": "Second bolted pitch, about 25 m."
+   },
+   {
+    "pitch": "3",
+    "grade": "5.5",
+    "lengthM": 25,
+    "notes": "Final bolted pitch, about 25 m, the easiest of the three."
+   }
+  ],
+  "replace_pitch_detail": true,
+  "review": {
+   "confidence": "medium",
+   "sources": [
+    "https://www.mountainproject.com/route/203798668"
+   ],
+   "source_texts": {
+    "https://www.mountainproject.com/route/203798668": "/Users/nathanbarber/dev/mp-data/_mp/_pitchtext/ab_cinquefoil_right_odyssey.txt"
+   },
+   "changed": "3 pitches with grade and length only; notes are minimal because nothing else is described.",
+   "pitch_count_found": 3
+  }
+ },
+ "ab_daisy_duke_s_wall_daisy_duke": {
+  "area": "ab_daisy_duke_s_wall",
+  "pitch_detail": [
+   {
+    "pitch": "1",
+    "grade": "5.6",
+    "lengthM": 50,
+    "notes": "Begin on the face to the left of the fractured corner system, pass a number of ledges and stop at a belay on the corner's right."
+   },
+   {
+    "pitch": "2",
+    "grade": "5.7",
+    "lengthM": 50,
+    "notes": "Return into the corner and follow it up. Small ledges beneath a large roof offer belays."
+   },
+   {
+    "pitch": "3",
+    "grade": "5.7",
+    "lengthM": 45,
+    "notes": "Main corner steepens; leave it on the arete near the end and scramble to a belay on the left."
+   },
+   {
+    "pitch": "4",
+    "grade": "5.7",
+    "lengthM": 60,
+    "crux": true,
+    "notes": "Small right-facing corner to a big roof, then traverse left beneath it onto a face, passing a piton. This roof traverse is the crux. Next comes a dark slab and another small roof, ending at a belay on a little scree-covered ledge. Expect heavy rope drag."
+   },
+   {
+    "pitch": "5",
+    "grade": "5.7",
+    "lengthM": 35,
+    "notes": "Straight up a short hand crack onto a large ledge, trending slightly right."
+   },
+   {
+    "pitch": "6",
+    "grade": "5.5",
+    "lengthM": 35,
+    "notes": "Left-facing corner to another very large ledge. Belay a few metres under the headwall."
+   },
+   {
+    "pitch": "7",
+    "grade": "5.6",
+    "lengthM": 50,
+    "notes": "Work right along a ramp of blocks, then bend left aiming at a new right-facing corner. Small belay ledge just below it."
+   },
+   {
+    "pitch": "8",
+    "grade": "5.7",
+    "lengthM": 45,
+    "notes": "Climb the corner and exit left when feasible to a treed ledge. Belay right of a big tree close to the wall."
+   },
+   {
+    "pitch": "9",
+    "grade": "5.7",
+    "lengthM": 50,
+    "notes": "Steep right-facing corner, then a slab with a vegetated corner to a spot just under a very steep wall. Traverse left on the slab to a large yellow block where the wall overhangs, cross the steep but juggy section, walk the narrow ledge left to a small corner and exit left onto the headwall ridge. Small grassy ledge belay."
+   },
+   {
+    "pitch": "10",
+    "grade": "5.6",
+    "lengthM": 45,
+    "notes": "Left of the belay then straight up; ledges multiply and the climbing eases. Scramble past the tree holding the rappel anchor to belay on a ledge before the wall steepens again."
+   }
+  ],
+  "replace_pitch_detail": true,
+  "rappel_detail": [
+   {
+    "n": 1,
+    "lengthM": 35,
+    "anchor": "bolted chain",
+    "station": "Big tree with a webbing-backed chain anchor",
+    "notes": "Descend from the tree anchor to a bolted chain."
+   },
+   {
+    "n": 2,
+    "lengthM": 35,
+    "anchor": "bolted station",
+    "station": "Bolted station on a ledge",
+    "notes": "Goes down past a large roof."
+   },
+   {
+    "n": 3,
+    "lengthM": 35,
+    "anchor": "station",
+    "station": "Comfortable grassy ledge",
+    "notes": "Straight down to a station on the ledge."
+   },
+   {
+    "n": 4,
+    "lengthM": 30,
+    "anchor": "tree chain",
+    "station": "Big grassy ledge",
+    "notes": "Down to a chain on a tree on the ledge."
+   },
+   {
+    "n": 5,
+    "lengthM": 35,
+    "station": "Large treed ledge",
+    "notes": "Ends on a large treed ledge. Next, walk about 5 minutes toward climber's left through the trees, past a gully and along a rock wall. Near the wall end a 5 m downclimb leads to the next bolted station just below you."
+   },
+   {
+    "n": 6,
+    "lengthM": 35,
+    "anchor": "bolted station",
+    "station": "Station under a roof to the left",
+    "notes": "Rappel a slab to a bolted station beneath a roof."
+   },
+   {
+    "n": 7,
+    "lengthM": 35,
+    "anchor": "tree",
+    "station": "Trees above the gully",
+    "notes": "Down to trees; a tree anchor here allows one more rappel, or scramble into the gully on climber's left."
+   },
+   {
+    "n": 8,
+    "lengthM": 30,
+    "station": "Optional last rappel",
+    "notes": "Optional; afterwards walk a few hundred metres down scree to a cliff and follow its base back to the route start."
+   }
+  ],
+  "review": {
+   "confidence": "high",
+   "sources": [
+    "https://www.mountainproject.com/route/203709849"
+   ],
+   "source_texts": {
+    "https://www.mountainproject.com/route/203709849": "/Users/nathanbarber/dev/mp-data/_mp/_pitchtext/ab_daisy_duke_s_wall_daisy_duke.txt"
+   },
+   "changed": "All 10 pitches written. Rappel table written from the listed stations in order; walk between rap 5 and 6 recorded in notes.",
+   "pitch_count_found": 10
+  }
+ },
+ "ab_dune_wall_bodhisatva": {
+  "area": "ab_dune_wall",
+  "pitch_detail": [
+   {
+    "pitch": "1",
+    "anchor": "chain",
+    "notes": "Pass a treed ledge to reach a left-facing corner, then follow that to a chain anchor."
+   },
+   {
+    "pitch": "2",
+    "notes": "Keep following the corner, going past a small roof."
+   }
+  ],
+  "replace_pitch_detail": true,
+  "review": {
+   "confidence": "medium",
+   "sources": [
+    "https://www.mountainproject.com/route/124644311"
+   ],
+   "source_texts": {
+    "https://www.mountainproject.com/route/124644311": "/Users/nathanbarber/dev/mp-data/_mp/_pitchtext/ab_dune_wall_bodhisatva.txt"
+   },
+   "changed": "2 pitches written; no grades or lengths stated.",
+   "pitch_count_found": 2
+  }
+ },
+ "ab_dune_wall_long_forgotten": {
+  "area": "ab_dune_wall",
+  "pitch_detail": [
+   {
+    "pitch": "1",
+    "grade": "5.5R",
+    "lengthM": 55,
+    "notes": "Begin on an obvious ramp angling up and right toward the main corner system. This pitch protects poorly."
+   },
+   {
+    "pitch": "2",
+    "grade": "5.6",
+    "lengthM": 30,
+    "anchor": "2 bolts",
+    "notes": "Keep angling up and right toward the corner. A two-bolt anchor sits just below and right of the crux pitch."
+   },
+   {
+    "pitch": "3",
+    "grade": "5.10a",
+    "lengthM": 30,
+    "crux": true,
+    "anchor": "2 bolts",
+    "notes": "Crux. Left-facing corner until it closes, then thin face holds up and left to another steep finger and hand crack with a layback corner. Over the top, go up and left about 5 m to the anchor."
+   },
+   {
+    "pitch": "4",
+    "grade": "5.9",
+    "lengthM": 60,
+    "notes": "Several variations. The main line follows fun, sometimes hollow cracks and flakes on the left wall of the dihedral. Alternatives: go up and right for two more pitches (5.9, 40 m and 5.8, 30 m), or take the finger crack left of the main line, about 5.10a unconfirmed, 55 m."
+   }
+  ],
+  "replace_pitch_detail": true,
+  "review": {
+   "confidence": "medium",
+   "sources": [
+    "https://www.mountainproject.com/route/119562534"
+   ],
+   "source_texts": {
+    "https://www.mountainproject.com/route/119562534": "/Users/nathanbarber/dev/mp-data/_mp/_pitchtext/ab_dune_wall_long_forgotten.txt"
+   },
+   "changed": "4 pitches written; pitch 4 describes the main-line variation with others in notes. Text says 4 or 5 pitches.",
+   "pitch_count_found": 4
+  }
+ },
+ "ab_first_wall_daisy_head_maisey": {
+  "area": "ab_first_wall",
+  "pitch_detail": [
+   {
+    "pitch": "1",
+    "notes": "Start up a pinnacle, onto a short slab that can use a big flake on the right. Branch right through a brief steeper bit to the anchor and rappel station."
+   },
+   {
+    "pitch": "2",
+    "notes": "Straight up easier ground to the anchors."
+   }
+  ],
+  "replace_pitch_detail": true,
+  "review": {
+   "confidence": "medium",
+   "sources": [
+    "https://www.mountainproject.com/route/119487282"
+   ],
+   "source_texts": {
+    "https://www.mountainproject.com/route/119487282": "/Users/nathanbarber/dev/mp-data/_mp/_pitchtext/ab_first_wall_daisy_head_maisey.txt"
+   },
+   "changed": "2 pitches written; no grades or lengths given.",
+   "pitch_count_found": 2
+  }
+ },
+ "ab_first_wall_eurosport": {
+  "area": "ab_first_wall",
+  "pitch_detail": [
+   {
+    "pitch": "1",
+    "notes": "Aim for the first bolt on the steep lower end of the ramp, leading to an offwidth that you do not actually have to climb as such. Get onto easier-angled ground and continue up and left to the belay and rappel station."
+   },
+   {
+    "pitch": "2",
+    "crux": true,
+    "notes": "Continue straight toward the short, steeper band bounding the ramp on its right. Getting through that bolted steep part is the crux; an easy slab then leads to the anchors."
+   }
+  ],
+  "replace_pitch_detail": true,
+  "review": {
+   "confidence": "medium",
+   "sources": [
+    "https://www.mountainproject.com/route/119487167"
+   ],
+   "source_texts": {
+    "https://www.mountainproject.com/route/119487167": "/Users/nathanbarber/dev/mp-data/_mp/_pitchtext/ab_first_wall_eurosport.txt"
+   },
+   "changed": "2 pitches written; no grades given per pitch.",
+   "pitch_count_found": 2
+  }
+ },
+ "ab_first_wall_eurotrad": {
+  "area": "ab_first_wall",
+  "pitch_detail": [
+   {
+    "pitch": "1",
+    "notes": "Aim for the first bolt on the steep lower end of the ramp, leading to an offwidth that you do not actually have to climb as such. Get onto easier-angled ground and continue up and left to the belay and rappel station."
+   },
+   {
+    "pitch": "2",
+    "crux": true,
+    "notes": "Continue straight toward the short, steeper band bounding the ramp on its right. Crossing right through that bolted steep part is the crux; an easy slab then leads to the anchors."
+   }
+  ],
+  "replace_pitch_detail": true,
+  "review": {
+   "confidence": "medium",
+   "sources": [
+    "https://www.mountainproject.com/route/119487183"
+   ],
+   "source_texts": {
+    "https://www.mountainproject.com/route/119487183": "/Users/nathanbarber/dev/mp-data/_mp/_pitchtext/ab_first_wall_eurotrad.txt"
+   },
+   "changed": "2 pitches written; no grades given per pitch.",
+   "pitch_count_found": 2
+  }
+ },
+ "ab_first_wall_fluff": {
+  "area": "ab_first_wall",
+  "pitch_detail": [
+   {
+    "pitch": "1",
+    "notes": "Dihedral with creative, elegant movement. First bolt is high but the moves to it are easy. The better of the two pitches; stopping at the first anchor is reasonable."
+   },
+   {
+    "pitch": "2",
+    "notes": "Easier slab climbing, less interesting."
+   }
+  ],
+  "replace_pitch_detail": true,
+  "review": {
+   "confidence": "medium",
+   "sources": [
+    "https://www.mountainproject.com/route/119487312"
+   ],
+   "source_texts": {
+    "https://www.mountainproject.com/route/119487312": "/Users/nathanbarber/dev/mp-data/_mp/_pitchtext/ab_first_wall_fluff.txt"
+   },
+   "changed": "2 pitches written; no grades or lengths given.",
+   "pitch_count_found": 2
+  }
+ },
+ "ab_first_wall_lower_ramp": {
+  "area": "ab_first_wall",
+  "pitch_detail": [
+   {
+    "pitch": "1",
+    "grade": "4th class",
+    "anchor": "2 pitons joined by cord",
+    "notes": "Scramble mostly fourth class with a bit of very low fifth to a belay on two pitons tied together with cord. Loose and hard to protect but easy."
+   },
+   {
+    "pitch": "2",
+    "grade": "5.5",
+    "notes": "From the pitons either cross the gully and pull on big loose holds through a weakness in the steeper rock (a frightening 5.5), otherwise stay on the ramp and tackle the steeper rock wherever suits you (5.3), finishing at a belay station."
+   }
+  ],
+  "replace_pitch_detail": true,
+  "review": {
+   "confidence": "medium",
+   "sources": [
+    "https://www.mountainproject.com/route/119487047"
+   ],
+   "source_texts": {
+    "https://www.mountainproject.com/route/119487047": "/Users/nathanbarber/dev/mp-data/_mp/_pitchtext/ab_first_wall_lower_ramp.txt"
+   },
+   "changed": "2 pitches written; pitch 2 grade is the harder of two options in the text (5.3 alternative in notes).",
+   "pitch_count_found": 2
+  }
+ },
+ "ab_first_wall_the_ramp": {
+  "area": "ab_first_wall",
+  "pitch_detail": [
+   {
+    "pitch": "1",
+    "notes": "Aim for the first bolt on the steep lower end of the ramp, leading to an offwidth that you do not actually have to climb as such. Get onto easier-angled ground and continue up and left to the belay and rappel station."
+   },
+   {
+    "pitch": "2",
+    "notes": "Run up the ramp toward the tree. Hook right to the neighbouring anchors for the rappel, or go straight on to other anchors. Could be done as one pitch."
+   }
+  ],
+  "replace_pitch_detail": true,
+  "review": {
+   "confidence": "medium",
+   "sources": [
+    "https://www.mountainproject.com/route/119487107"
+   ],
+   "source_texts": {
+    "https://www.mountainproject.com/route/119487107": "/Users/nathanbarber/dev/mp-data/_mp/_pitchtext/ab_first_wall_the_ramp.txt"
+   },
+   "changed": "2 pitches written; no grades given.",
+   "pitch_count_found": 2
+  }
+ },
+ "ab_maligne_lake_platform_nine_and_three_quarters": {
+  "area": "ab_maligne_lake",
+  "pitch_detail": [
+   {
+    "pitch": "1",
+    "grade": "5.6",
+    "lengthM": 40,
+    "notes": "Start straight in the corner; the first few metres are the only serious runout and are usually damp, though small nuts may help. Step across a slab to good gear, step over a roof with pockets, and continue in the corner to a small stance with a deep slot for a small-cam anchor."
+   },
+   {
+    "pitch": "2",
+    "grade": "5.5",
+    "lengthM": 30,
+    "notes": "Traverse pitch with drag. Scramble to a slabby ledge, walk right to a short right-facing corner, climb it to another ledge and follow it right as it widens beneath a roof into a good belay. A submerged horn low down takes smaller cams plus a 1 inch piece."
+   },
+   {
+    "pitch": "3",
+    "grade": "5.6",
+    "lengthM": 30,
+    "notes": "Pass the roof on the belay's left to enter the big break above, which tightens into a pocketed seam taking good gear. Continue up the crack to a ledge whose slot below the roof takes small cams."
+   },
+   {
+    "pitch": "4",
+    "grade": "5.7",
+    "lengthM": 55,
+    "notes": "Start left of the belay up shallow runnels past three bolts, then aim for the deep runnel above, which wants tricky 0.5 and 0.75 cams. Go left of a small prow to low-angle ground and a good corner anchor on a shallow slab; scramble a few metres to the balcony ledge below the steeper section."
+   },
+   {
+    "pitch": "5",
+    "grade": "5.7",
+    "lengthM": 50,
+    "anchor": "bolts",
+    "notes": "Start in the corner, step right onto a wide crack until it ends, then back into the corner for the last moves to a ledge. Avoid dark chossy overlaps on layback flakes to the right before returning to the corner. Drag is a concern. Bolted anchor at a ledge."
+   },
+   {
+    "pitch": "6",
+    "grade": "5.8",
+    "lengthM": 50,
+    "notes": "Thin cracks straight up from the belay, then right to thin flakes with small nuts. Return to the corner and follow it on excellent rock with plenty of gear, easier than it appears. Build an anchor deep in the corner at the second big pool ledge."
+   },
+   {
+    "pitch": "7",
+    "grade": "5.6",
+    "lengthM": 45,
+    "notes": "Ledgy ground to a huge runnel; climb inside it with good gear in the corner. Above, pass large chockstones and belay in the corner or on a small horseshoe-shaped ledge on the slab. About 150 m of easier ground remains above."
+   }
+  ],
+  "replace_pitch_detail": true,
+  "review": {
+   "confidence": "high",
+   "sources": [
+    "https://www.mountainproject.com/route/203333015"
+   ],
+   "source_texts": {
+    "https://www.mountainproject.com/route/203333015": "/Users/nathanbarber/dev/mp-data/_mp/_pitchtext/ab_maligne_lake_platform_nine_and_three_quarters.txt"
+   },
+   "changed": "7 pitches written, matching stored count. Descent is a scree walk, not rappels; no rappel table.",
+   "pitch_count_found": 7
+  }
+ },
+ "ab_maligne_lake_the_neverending_story": {
+  "area": "ab_maligne_lake",
+  "pitch_detail": [
+   {
+    "pitch": "1",
+    "grade": "5.9",
+    "lengthM": 25,
+    "bolts": 7,
+    "notes": "Easy ground leftward and upward from the belay bolt reaches a high first bolt, which should be extended. Vertical moves with crimps and big reaches on jugs cross loose rock. Climb deliberately."
+   },
+   {
+    "pitch": "2",
+    "grade": "5.10c",
+    "lengthM": 30,
+    "bolts": 10,
+    "notes": "Use the big block to the belay's right to reach the first bolt. Well-protected low crux to the second bolt, a short runout on jugs to a ledge, then easier interesting climbing. Some deliberately uncleaned holds steer you off loose rock high on the pitch to the big belay ledge."
+   },
+   {
+    "pitch": "3",
+    "grade": "5.11d",
+    "lengthM": 33,
+    "bolts": 13,
+    "notes": "Through the corner, then an exposed exit left. Rest on the big ledge before non-stop cruxes on great rock, with a final steep crux to the belay ledge. Very exposed."
+   },
+   {
+    "pitch": "4",
+    "grade": "5.12d",
+    "lengthM": 22,
+    "bolts": 10,
+    "crux": true,
+    "notes": "Hard start past the first bolt. From the slabby ledge halfway, about 10 m of bouldery power endurance make up the 5.12+ climbing: a dyno off the ledge to a jug, another crux over the final roof, then a mandatory boulder problem to the lip. Clip the last bolt from below or at the lip; the fall is clean."
+   }
+  ],
+  "replace_pitch_detail": true,
+  "review": {
+   "confidence": "high",
+   "sources": [
+    "https://www.mountainproject.com/route/203364407"
+   ],
+   "source_texts": {
+    "https://www.mountainproject.com/route/203364407": "/Users/nathanbarber/dev/mp-data/_mp/_pitchtext/ab_maligne_lake_the_neverending_story.txt"
+   },
+   "changed": "4 pitches written with grade, length and bolt count. No rappel table: only a general description of the descent.",
+   "pitch_count_found": 4
+  }
+ },
+ "ab_medicine_slab_the_nutcracker_ball_aka_clark_s_corner": {
+  "area": "ab_medicine_slab",
+  "pitch_detail": [
+   {
+    "pitch": "1",
+    "grade": "5.8",
+    "lengthM": 30,
+    "anchor": "bolted station",
+    "notes": "Pull the roof behind the tree and follow the thin jagged corner to a ledge with a bolt; clip it to protect the second. Traverse the ledge right as it becomes a rising slabby ramp to a bolted station."
+   },
+   {
+    "pitch": "2",
+    "grade": "5.6",
+    "lengthM": 25,
+    "anchor": "bolted station",
+    "notes": "Finger crack up and right until it closes, then easy loose ground to a big ledge. Continue up ledges following a crack with good gear to a large treed ledge with a bolted station left of the left-most tree. Cross the ledge to a belay bolt where the pitch 3 corner begins."
+   },
+   {
+    "pitch": "3",
+    "grade": "5.10b",
+    "lengthM": 32,
+    "crux": true,
+    "anchor": "bolted",
+    "notes": "The main pitch. Out the chimney, then stem and layback a sustained corner. Gear is good in the corner or in thin cracks on the right face, with some tricky placements and loose blocks mid-pitch. Save a #4 for the top. Anchor is bolted, on a ledge off to the corner's left."
+   },
+   {
+    "pitch": "4",
+    "grade": "5.10a",
+    "lengthM": 20,
+    "bolts": 8,
+    "notes": "Fully bolted rising traverse across the slab and runnel to the top of the wall, with technical slab moves."
+   }
+  ],
+  "replace_pitch_detail": true,
+  "review": {
+   "confidence": "high",
+   "sources": [
+    "https://www.mountainproject.com/route/203439847"
+   ],
+   "source_texts": {
+    "https://www.mountainproject.com/route/203439847": "/Users/nathanbarber/dev/mp-data/_mp/_pitchtext/ab_medicine_slab_the_nutcracker_ball_aka_clark_s_corner.txt"
+   },
+   "changed": "4 pitches written. Rappel text is a general instruction, no table.",
+   "pitch_count_found": 4
+  }
+ },
+ "ab_morro_bluffs_a_route_for_brent": {
+  "area": "ab_morro_bluffs",
+  "pitch_detail": [
+   {
+    "pitch": "1",
+    "grade": "5.8",
+    "lengthM": 34,
+    "notes": "Bolted, with a small runout to the first bolt."
+   },
+   {
+    "pitch": "2",
+    "grade": "5.9",
+    "lengthM": 18,
+    "notes": "Well bolted through the crux."
+   }
+  ],
+  "replace_pitch_detail": true,
+  "review": {
+   "confidence": "medium",
+   "sources": [
+    "https://www.mountainproject.com/route/122768956"
+   ],
+   "source_texts": {
+    "https://www.mountainproject.com/route/122768956": "/Users/nathanbarber/dev/mp-data/_mp/_pitchtext/ab_morro_bluffs_a_route_for_brent.txt"
+   },
+   "changed": "2 pitches written; source text is terse and partly garbled so only the legible facts are used.",
+   "pitch_count_found": 2
+  }
+ },
+ "ab_morro_bluffs_arco_boleino": {
+  "area": "ab_morro_bluffs",
+  "pitch_detail": [
+   {
+    "pitch": "1",
+    "grade": "5.7",
+    "lengthM": 23,
+    "bolts": 7,
+    "notes": "Bolted beginner-friendly pitch with seven bolts."
+   },
+   {
+    "pitch": "2",
+    "grade": "5.8",
+    "lengthM": 20,
+    "bolts": 8,
+    "notes": "Eight bolts in the middle line. Alternatives exist: a 5.9 on the far left and a 5.9 on the far right."
+   }
+  ],
+  "replace_pitch_detail": true,
+  "review": {
+   "confidence": "medium",
+   "sources": [
+    "https://www.mountainproject.com/route/120727308"
+   ],
+   "source_texts": {
+    "https://www.mountainproject.com/route/120727308": "/Users/nathanbarber/dev/mp-data/_mp/_pitchtext/ab_morro_bluffs_arco_boleino.txt"
+   },
+   "changed": "2 pitches written. Pitches can be linked with 15 draws and a 60 m rope.",
+   "pitch_count_found": 2
+  }
+ }
+}

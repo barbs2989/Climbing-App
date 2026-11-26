@@ -109,6 +109,17 @@ empty field fill at once and two agreeing climbers change one; the owner withdre
   *Wrong place claims* (`AreaPlacementQueue`, 0372; `review.html#placements`) and *Feedback & ratings* (`AppFeedbackQueue`, 0365;
   `review.html#feedback`, counted by open notes) followed on 2026-11-25, the last of the Menu's admin Review tiles: the app's Menu
   has no Review section, no review sheet and no count on its button any more (owner: "remove since we created the admin page").
+- **Safety reports on the desk (2026-11-26, `review.html#safety`, `review/SafetySection.jsx`, admin only)**: the owner
+  asked for reports to be "pushed to my admin dashboard". The in-app queues #2727 removed come back here, not in the app:
+  *Waiting* (`useSafetyReports`: `user_reports` open/reviewing, severe reasons first then oldest, red from 20 h, the
+  server's copy of what was reported, images blurred until opened, how many reports name the person and their standing),
+  *Reported photos* (`usePhotoReports`, `content_reports`), *Appeals* (`useSafetyAppeals`, every kind but `contributing`,
+  which stays in *Appeals*), *Closed*, and *How to decide* (the written enforcement rules, NCMEC procedure included).
+  Buttons: `moderateContent` (remove / hide / keep), `reviewUserReport`, `setAccountStanding` (suspend 1-365 days / ban,
+  optionally removing everything they posted / reinstate), `takeDownReportedPhoto`, `dismissPhotoReport`, `decideAppeal`.
+  `useAdminQueueCounts` counts them as `safety` (+ `safetyOldestAt`). **0550** puts a `safety_report` notice in every
+  admin's bell for each new report, reported photo or appeal; its link `{desk}` opens `review.html#<desk>` (`goSpecial`).
+  The audit and store checklist: [docs/APP-STORE-READINESS-AUDIT.md](../APP-STORE-READINESS-AUDIT.md).
 - **The nightly AI checker**: `scripts/review-queue-export.mjs` (service key, read-only) lists items with
   no verdict or whose content changed since (`item_hash`); `.claude/workflows/review-flags-nightly.js`
   researches each (open web only; no AllTrails/Gaia/CalTopo/Strava/Wikiloc/Peakbagger/Mountain Project)
@@ -392,7 +403,7 @@ Deferred by the owner (2026-10-15): CAPTCHA on sign-up.
 | `scripts/review-queue-export.mjs`, `scripts/review-verdicts-write.mjs`, `.claude/workflows/review-flags-nightly.js` | The nightly AI checker: export → research + verify → write verdicts |
 | `supabase/migrations/0436_review_ai_verdicts.sql`, `scripts/oneoff/verify-0436-review-ai-verdicts-pglite.mjs` | The verdicts table (admin read, service-key write) and its RLS check |
 | `lib/RouteQualityQueues.jsx` | `ContributorStandingQueue` (rendered on the Review desk's Climbers section) |
-| `review/DeskSections.jsx` | `HealthStrip`, `HistorySection`, `FieldHistory`, `ClimbersSection`, `AppealsSection`, `LocksSection`, `WorklistSection`, `WordDiff` (2026-11-24) |
+| `review/DeskSections.jsx` | `HealthStrip`, `HistorySection`, `FieldHistory`, `ClimbersSection`, `AppealsSection`, `LocksSection`, `WorklistSection`, `WordDiff` (2026-11-24), `BasePinsSection` (0547: base-of-the-climb check-in spots held > 200 m from the route's Base pin, `review.html#basepins`, Move the pin here / Keep the pin on file via the resolve_base_pin_hold RPC) |
 | `supabase/migrations/0530_route_edits_private_checked_undoable.sql`, `scripts/oneoff/verify-0530-route-edits-pglite.mjs` | the read policy, `_field_value_problem`, `withdraw_approval`, `prior_value`, `can_review` / `set_reviewer`, `review_worklist`; and its offline proof |
 | `scripts/review-worklist-load.mjs` | fills `review_worklist` from the data audits |
 | `scripts/oneoff/probe-route-edit-gates.mjs` | every gate a climber meets, against the live database, with no admin needed |

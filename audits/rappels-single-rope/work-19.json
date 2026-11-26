@@ -1,0 +1,336 @@
+[
+ {
+  "id": "wa_slippery_slab_tower_ne_face",
+  "name": "Slippery Slab Tower NE Face",
+  "area": "wa_thunder_mountain_and_slippery_slab_tower",
+  "area_name": "Thunder Mountain and Slippery Slab Tower",
+  "area_parent": "wa_stevens_pass_region",
+  "discipline": "alpine",
+  "grade": "5.4",
+  "pitches": 2,
+  "current": {
+   "rappels": "2 rappels down the climbing route off webbing-wrapped tree and boulder anchors, or one long double-rope rappel from the upper tree. Per-station lengths are not published: parties use a 60 m rope doubled for each rappel, or shorter single-strand raps. Watch for loose, pointy rock on the way down.",
+   "rappel_count_note": "Only overall rope usage is known (60m double-strand, or multiple 30-50m single-strand raps) rather than an exact per-rap length.",
+   "rappel_detail": [
+    {
+     "n": 1,
+     "notes": "First of two rappels down the climbing route from the summit; watch for loose, pointy rock.",
+     "anchor": null,
+     "lengthM": 30
+    },
+    {
+     "n": 2,
+     "notes": "Second rappel reaching the base of the tower; climbers use a 60m rope doubled or shorter single-strand raps.",
+     "anchor": null,
+     "lengthM": 30
+    }
+   ],
+   "descent_text": "From the summit, make two rappels down the climbing route to return to the base of the tower. Climbers typically use a 60m rope doubled for each rappel, or make multiple 30-50m single-strand rappels. Be mindful of loose, pointy rocks during the descent. Once back at the base, scramble back through the pass terrain to Trap Pass, then reverse the PCT and Tunnel Creek Trail descent."
+  }
+ },
+ {
+  "id": "wa_flight_of_the_falcon",
+  "name": "Flight of the Falcon",
+  "area": "wa_waterfall_basin",
+  "area_name": "Waterfall Basin",
+  "area_parent": "wa_squire_creek_walls",
+  "discipline": "alpine",
+  "grade": "5.10c",
+  "pitches": 9,
+  "current": {
+   "rappels": "5 double-rope rappels on two 60 m ropes from fixed stations, starting from the anchor atop pitch 7; or continue to the summit and walk off west, about 40 minutes",
+   "rappel_count_note": "Five double-rope rappels on two 60 m ropes from fixed stations, starting atop pitch 7. Parties who continue to the summit can walk off to the west instead, about 40 minutes of brushy, low-angle terrain back to the packs.",
+   "rappel_detail": [
+    {
+     "n": 1,
+     "notes": "Rappel 1 of 5, double-rope (two 60 m ropes).",
+     "anchor": "fixed station",
+     "lengthM": null,
+     "station": "The anchor atop pitch 7 (Falcon’s Perch)."
+    },
+    {
+     "n": 2,
+     "notes": "Rappel 2 of 5, double-rope (two 60 m ropes).",
+     "anchor": "fixed station",
+     "lengthM": null,
+     "station": "The next fixed station down the route."
+    },
+    {
+     "n": 3,
+     "notes": "Rappel 3 of 5, double-rope (two 60 m ropes).",
+     "anchor": "fixed station",
+     "lengthM": null,
+     "station": "The next fixed station down the route."
+    },
+    {
+     "n": 4,
+     "notes": "Rappel 4 of 5, double-rope (two 60 m ropes).",
+     "anchor": "fixed station",
+     "lengthM": null,
+     "station": "The next fixed station down the route."
+    },
+    {
+     "n": 5,
+     "notes": "Rappel 5 of 5, double-rope (two 60 m ropes), to the base and the packs.",
+     "anchor": "fixed station",
+     "lengthM": null,
+     "station": "The next fixed station down the route."
+    }
+   ],
+   "descent_text": "Two descent options exist. Most parties rappel from the anchor atop Pitch 7 ('Falcon's Perch') using double 60m ropes back down the route. Parties who continue to the summit can instead walk off to the left (west), a descent that takes about 40 minutes from the summit back down to packs at the base, navigating brushy, low-angle terrain."
+  }
+ },
+ {
+  "id": "wa_roan_wall_center_stage",
+  "name": "Roan Wall - Center Stage",
+  "area": "wa_waterfall_basin",
+  "area_name": "Waterfall Basin",
+  "area_parent": "wa_squire_creek_walls",
+  "discipline": "alpine",
+  "grade": "5.11a",
+  "pitches": 10,
+  "current": {
+   "rappels": "Rappel the route on bolted anchors, 2 x 60m ropes recommended",
+   "rappel_count_note": "No published rappel tally or station lengths exist for this wall. Every belay on the route carries a new double-ring stainless anchor, so the descent simply reverses the route's own stations - about eight down the main wall on double 60 m ropes. The two disconnected approach pitches below it (an 80 ft bolted slab and a low-5th-class groove) are normally scrambled or downclimbed rather than rappelled. The station lengths listed here follow the pitch lengths and are not measured rappels, so check each one before committing to it.",
+   "rappel_detail": [
+    {
+     "n": 1,
+     "notes": "Rappel 1 of 8 on double 60 m ropes, from the double-ring anchor at the top of pitch 10 to the top of pitch 9.",
+     "anchor": "2-bolt double-ring stainless-steel anchor",
+     "lengthM": null
+    },
+    {
+     "n": 2,
+     "notes": "Rappel 2 of 8 on double 60 m ropes, from the double-ring anchor at the top of pitch 9 to the top of pitch 8.",
+     "anchor": "2-bolt double-ring stainless-steel anchor",
+     "lengthM": null
+    },
+    {
+     "n": 3,
+     "notes": "Rappel 3 of 8 on double 60 m ropes, from the double-ring anchor at the top of pitch 8 to the top of pitch 7.",
+     "anchor": "2-bolt double-ring stainless-steel anchor",
+     "lengthM": null
+    },
+    {
+     "n": 4,
+     "notes": "Rappel 4 of 8 on double 60 m ropes, from the double-ring anchor at the top of pitch 7 to the top of pitch 6.",
+     "anchor": "2-bolt double-ring stainless-steel anchor",
+     "lengthM": null
+    },
+    {
+     "n": 5,
+     "notes": "Rappel 5 of 8 on double 60 m ropes, from the double-ring anchor at the top of pitch 6 to the top of pitch 5.",
+     "anchor": "2-bolt double-ring stainless-steel anchor",
+     "lengthM": null
+    },
+    {
+     "n": 6,
+     "notes": "Rappel 6 of 8 on double 60 m ropes, from the double-ring anchor at the top of pitch 5 to the top of pitch 4.",
+     "anchor": "2-bolt double-ring stainless-steel anchor",
+     "lengthM": null
+    },
+    {
+     "n": 7,
+     "notes": "Rappel 7 of 8 on double 60 m ropes, from the double-ring anchor at the top of pitch 4 to the top of pitch 3.",
+     "anchor": "2-bolt double-ring stainless-steel anchor",
+     "lengthM": null
+    },
+    {
+     "n": 8,
+     "notes": "Rappel 8 of 8, from the anchor at the top of pitch 3 (the first main-wall pitch) to the foot of the main face. The two approach pitches below are usually downclimbed or scrambled rather than rappelled.",
+     "anchor": "2-bolt double-ring stainless-steel anchor",
+     "lengthM": null
+    }
+   ],
+   "descent_text": "Descend by rappelling the route itself, using the new double-ring stainless-steel bolted anchors present at each belay station; bring double ropes."
+  }
+ },
+ {
+  "id": "wa_roan_wall_stage_right",
+  "name": "Roan Wall - Stage Right",
+  "area": "wa_waterfall_basin",
+  "area_name": "Waterfall Basin",
+  "area_parent": "wa_squire_creek_walls",
+  "discipline": "alpine",
+  "grade": "5.10b",
+  "pitches": 10,
+  "current": {
+   "rappels": "Traverse to the top of Center Stage, then rappel that route's bolted anchors with 2 x 60m ropes",
+   "rappel_count_note": "No published rappel tally for this line. Stage Right tops out onto a narrow ledge that leads left and slightly down to the top of Center Stage, and the descent from there is Center Stage's own bolted double-ring anchors - about eight rappels down the main wall on double 60 m ropes. That initial traverse is a walk and a downclimb, not a rappel, so it is not counted here. The station lengths listed follow Center Stage's pitch lengths rather than measured rappels, so check each one before committing to it.",
+   "rappel_detail": [
+    {
+     "n": 1,
+     "notes": "After traversing a narrow ledge left and slightly down to the top of Center Stage, the first rappel of Center Stage’s descent, from its top anchor.",
+     "anchor": "2-bolt double-ring stainless-steel anchor (Center Stage's top anchor)",
+     "lengthM": null
+    },
+    {
+     "n": 2,
+     "notes": "Rappel 2 of 8 on double 60 m ropes, from the double-ring anchor at the top of pitch 9 to the top of pitch 8.",
+     "anchor": "2-bolt double-ring stainless-steel anchor",
+     "lengthM": null
+    },
+    {
+     "n": 3,
+     "notes": "Rappel 3 of 8 on double 60 m ropes, from the double-ring anchor at the top of pitch 8 to the top of pitch 7.",
+     "anchor": "2-bolt double-ring stainless-steel anchor",
+     "lengthM": null
+    },
+    {
+     "n": 4,
+     "notes": "Rappel 4 of 8 on double 60 m ropes, from the double-ring anchor at the top of pitch 7 to the top of pitch 6.",
+     "anchor": "2-bolt double-ring stainless-steel anchor",
+     "lengthM": null
+    },
+    {
+     "n": 5,
+     "notes": "Rappel 5 of 8 on double 60 m ropes, from the double-ring anchor at the top of pitch 6 to the top of pitch 5.",
+     "anchor": "2-bolt double-ring stainless-steel anchor",
+     "lengthM": null
+    },
+    {
+     "n": 6,
+     "notes": "Rappel 6 of 8 on double 60 m ropes, from the double-ring anchor at the top of pitch 5 to the top of pitch 4.",
+     "anchor": "2-bolt double-ring stainless-steel anchor",
+     "lengthM": null
+    },
+    {
+     "n": 7,
+     "notes": "Rappel 7 of 8 on double 60 m ropes, from the double-ring anchor at the top of pitch 4 to the top of pitch 3.",
+     "anchor": "2-bolt double-ring stainless-steel anchor",
+     "lengthM": null
+    },
+    {
+     "n": 8,
+     "notes": "Rappel 8 of 8, from the anchor at the top of pitch 3 (the first main-wall pitch) to the foot of the main face. The two approach pitches below are usually downclimbed or scrambled rather than rappelled.",
+     "anchor": "2-bolt double-ring stainless-steel anchor",
+     "lengthM": null
+    }
+   ],
+   "descent_text": "From the top of Stage Right, find a narrow ledge and work left and slightly downward to reach the top of the Center Stage route. From there, rappel Center Stage's bolted double-ring anchors (the face is described as clean and open) using double ropes."
+  }
+ },
+ {
+  "id": "wa_waterfall_buttress",
+  "name": "Waterfall Buttress",
+  "area": "wa_waterfall_basin",
+  "area_name": "Waterfall Basin",
+  "area_parent": "wa_squire_creek_walls",
+  "discipline": "alpine",
+  "grade": "5.9+",
+  "pitches": 6,
+  "current": {
+   "rappels": "6 rappels on two 60 m ropes down the route, one per pitch, from bolted anchors",
+   "rappel_count_note": "One rappel per pitch from the bolted belays, on two 60 m ropes. Rappel lengths are not published.",
+   "rappel_detail": [
+    {
+     "n": 1,
+     "notes": "Rappel 1 of 6 on two 60 m ropes, down pitch 6 to the anchor at the top of pitch 5.",
+     "anchor": "bolted anchor",
+     "lengthM": null,
+     "station": "The anchor at the top of pitch 6."
+    },
+    {
+     "n": 2,
+     "notes": "Rappel 2 of 6 on two 60 m ropes, down pitch 5 to the anchor at the top of pitch 4.",
+     "anchor": "bolted anchor",
+     "lengthM": null,
+     "station": "The anchor at the top of pitch 5."
+    },
+    {
+     "n": 3,
+     "notes": "Rappel 3 of 6 on two 60 m ropes, down pitch 4 to the anchor at the top of pitch 3.",
+     "anchor": "bolted anchor",
+     "hazards": [
+      "Down the lower-angle part of pitch 4, stay skier’s right so you are not pulled left into the gully."
+     ],
+     "lengthM": null,
+     "station": "The anchor at the top of pitch 4."
+    },
+    {
+     "n": 4,
+     "notes": "Rappel 4 of 6 on two 60 m ropes, down pitch 3 to the anchor at the top of pitch 2.",
+     "anchor": "bolted anchor",
+     "lengthM": null,
+     "station": "The anchor at the top of pitch 3."
+    },
+    {
+     "n": 5,
+     "notes": "Rappel 5 of 6 on two 60 m ropes, down pitch 2 to the anchor at the top of pitch 1.",
+     "anchor": "bolted anchor",
+     "lengthM": null,
+     "station": "The anchor at the top of pitch 2."
+    },
+    {
+     "n": 6,
+     "notes": "Rappel 6 of 6 on two 60 m ropes, down pitch 1 to the ground.",
+     "anchor": "bolted anchor",
+     "hazards": [
+      "Keep the ropes out of the creek at the base."
+     ],
+     "lengthM": null,
+     "station": "The anchor at the top of pitch 1."
+    }
+   ],
+   "descent_text": "Descend by rappelling the route with double 60m ropes. On the lower-angle section, stay skier's-right to avoid dropping into the adjacent gully and creek below the slab waterfall."
+  }
+ },
+ {
+  "id": "wa_wild_wild_west",
+  "name": "Wild Wild West",
+  "area": "wa_west_face_6",
+  "area_name": "West Face",
+  "area_parent": "wa_pinto_rock",
+  "discipline": "sport",
+  "grade": "5.8",
+  "pitches": 4,
+  "current": {
+   "rappels": "2 rappels with a 60 m rope from the anchor near a stand of fir trees at the north end of the formation, down the East Face (one long rappel with two ropes)",
+   "rappel_count_note": "Can be done as 1 rappel instead with two ropes tied together",
+   "rappel_detail": [
+    {
+     "n": 1,
+     "notes": "First of two rappels using a single 60m rope; tie stopper knots since the rappel is close to the rope's max length.",
+     "anchor": "bolted anchor",
+     "lengthM": 30
+    },
+    {
+     "n": 2,
+     "notes": "Second rappel reaches the base of the formation.",
+     "anchor": "bolted anchor near tree, north end",
+     "lengthM": 30
+    }
+   ],
+   "descent_text": "From the top, descend by rappelling; head up and left along the back side of the formation near the fir trees to find the rappel anchor at the north end of the formation, which descends the East Face."
+  }
+ },
+ {
+  "id": "wa_west_twin_needle_south_route",
+  "name": "South Route",
+  "area": "wa_west_twin_needle",
+  "area_name": "West Twin Needle",
+  "area_parent": "wa_southern_pickets",
+  "discipline": "alpine",
+  "grade": "5.7",
+  "pitches": 3,
+  "current": {
+   "rappels": "Up to 2 rappels through a left-hand gully below the Himmelhorn-West Twin Needle col on descent are reported; consult current conditions/anchors.",
+   "rappel_count_note": "Two rappels on doubled 60 m ropes get you past the band of vertical slabs below the Himmelhorn–West Twin Needle notch. No per-station distance is published for either, so none is given here — carry the two 60 m ropes the gear list names and judge each station on the ground. Both anchors are natural rather than fixed: bring cord and rap rings.",
+   "rappel_detail": [
+    {
+     "n": 1,
+     "notes": "First of two rappels below the Himmelhorn-West Twin Needle notch (~7400 ft) past a band of vertical slabs, using doubled 60m ropes. Treat as a natural/gear anchor, not fixed hardware — bring cord/rap rings.",
+     "anchor": "Protruding rock/horn angled upward (to keep the rap sling from walking off)",
+     "lengthM": null
+    },
+    {
+     "n": 2,
+     "notes": "Second rappel landing near grassy benches around 6800 ft; be prepared for stuck ropes on retrieval (reported by at least one party).",
+     "anchor": "Anchor set above boulders in the south gully",
+     "lengthM": null
+    }
+   ],
+   "descent_text": "Rather than reversing the ascent gully to the Eye Col, descend the class 2–3 west face to the Himmelhorn–West Twin Needle notch on the far side of the peak. Below that, plan on 2 rappels using doubled 60m ropes to get past a band of vertical slabs — parties report the first anchor built on a protruding rock angled upward (to keep a rappel sling from walking off) and a second anchor set above boulders in the south gully; treat these as natural/gear anchors rather than fixed bolted stations; bring cord/rap rings since existing tat should not be counted on. From the base of the rappels, grassy benches sit around 6800 ft; from there traverse east and climb back up roughly 200 ft to regain the 'left gully,' which is then downclimbed/scrambled to the base near the buttress that splits the approach gullies. From there, retrace the south-route approach line back down through Crescent Creek Basin to camp. Where conditions and the exact line allow, some parties instead reverse the east-face gully (class 2–3) directly into Crescent Creek Basin, avoiding the technical col rappels entirely but at the cost of more sustained loose, exposed scrambling — this is the non-technical walk-off alternative referenced in older route notes. Watch for loose blocks throughout and be prepared for stuck ropes on retrieval (reported by at least one party, freed with a hard tug) — a real risk on this kind of low-angle-slab rappel line."
+  }
+ }
+]
