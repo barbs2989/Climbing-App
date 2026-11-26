@@ -154,7 +154,7 @@ Shared map plumbing is `lib/mapKit.jsx`. The route page is documented in `docs/f
   area holds no climbs itself (areas hold sub-areas OR climbs — Mountain Project's rule, and `trg_areas_leaf_xor`), and never on a country.
   Since 2026-11-18 its location can be tapped on a map (*Pick it on the map*, `WaypointMapPicker`), not only taken from the device,
   and Add a climb's *not in the catalog* box opens this sheet with the typed name (`defaultName`).
-- **Route finder on the website** (competitor review batch B, item 11, owner 2026-11-04): the results header reads the active filters as one line (*42 climbs · Sport · 5.8–5.10 · 2+ pitches · sorted by …*, the chips' own labels); at 1024px+ a **Compact rows** toggle (remembered on the device, `cm_finder_compact`; it draws `RouteRow`'s `dense` one-line row, the same one the website's classics list uses) and **Export CSV** of the loaded results (`lib/csv.js` `downloadCsv`: climb, grade, discipline, pitches, stars, wall or area). The phone keeps its cards.
+- **Route finder on the website** (competitor review batch B, item 11, owner 2026-11-04): the results header reads the active filters as one line (*42 climbs · Sport · 5.8–5.10 · 2+ pitches*, the chips' own labels, then the Sort select); at 1024px+ a **Compact rows** toggle (remembered on the device, `cm_finder_compact`; it draws `RouteRow`'s `dense` one-line row, the same one the website's classics list uses) and **Export CSV** of the loaded results (`lib/csv.js` `downloadCsv`: climb, grade, discipline, pitches, stars, wall or area). The phone keeps its cards.
 - **Route finder** (`RouteFinderPanel`): filters over the area's whole subtree - disciplines, grade (system + low/high),
   min stars, min pitches, length band, sort (`DEF = { discs, sortBy, minStars, minPitches, len, gSys, gLo, gHi, gain, trip, elev, prom, near, within }`). Active filters show as chips.
   A wall heading's grey line is `shownTrailOf`: only the levels BELOW the area being searched (the CSV keeps the whole trail). The search bar pins through `usePinnedBar`, which never pins a hidden bar (a route page covering the finder) and re-measures when the bar is shown.
@@ -195,7 +195,17 @@ Shared map plumbing is `lib/mapKit.jsx`. The route page is documented in `docs/f
   - **Pinned search bar** (`usePinnedBar`): Routes | Areas, the box, Filters and the chips pin under the app's top bar once you scroll
     past them. Fixed-position with a placeholder, not CSS sticky: on a phone the document scrolls while `#appscroll` (overflow:auto) only grows.
   - **Save from the list**: a ☆ beside each row opens a save sheet: My Objectives (`toggleWish`), your own lists (`toggleListRoute` in
-    App, the same `onUpdateList` write ListsManager makes) and the climb's wall (`toggleBookmark`).
+    App, the same `onUpdateList` write ListsManager makes) and the climb's wall (`toggleBookmark`). The lists end in **+ New list**
+    (owner note 2026-11-25; Google Maps, AllTrails and Mountain Project's save sheets all end that way): a name box and *Create and
+    add* make a custom list holding this climb in one step (`onCreateListWith` → App's `createListWithRoute`, the same local-first
+    `onCreateList` write as ListsManager's New list). A name you already have adds the climb to that list instead.
+  - **Sort is on the results line** (owner note 2026-11-25: "you should be able to sort how you want. Find more sorting options"):
+    a *Sort* select beside the count applies at once; the Filters sheet's *Sort by* row is the same list (`sortChoices`). The order is
+    not counted on *Filters (N)* and wears no chip. Beyond the wall / name / stars / grade orders, **0538** adds *Classics first*
+    (`classic`, then `classic_score`, then stars), *Longest* / *Shortest* (`length_m`), *Most pitches* and *Most gain* / *Least gain*
+    (`route_gain_ft`, the gain filter's figure), each offered only where its filter is (`EXTRA_SORTS` / `extraFits`, the `fitsDiscs`
+    test), a missing figure last in either direction; a sort that stops fitting the ticked disciplines falls back to the wall order
+    (`sortFor`). No *Most popular*: `climb_logs` holds too few real ascents to order by.
   Mirrors Mountain Project's set, nothing extra (standing decision), except the sort, which offers **Left → right** / **Right → left**
   in place of *By area* (owner, 2026-10-21): `routes_in_subtree` `sort_by` `lr` / `rl` (0332) group the climbs by wall and order each wall
   by `sort_order`, no position last; `area` is still accepted. The offline twin is `subtreeComparer` in `lib/offline.js`.
