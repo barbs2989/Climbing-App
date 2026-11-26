@@ -1,4 +1,4 @@
-import { RSL as SL, C } from "../../ClimbMatchCore.jsx";
+import { RSL as SL, C, renderProse } from "../../ClimbMatchCore.jsx";
 import EditIconButton from "./EditIconButton.tsx";
 
 /** One section of the climbing, as the contribute form and the catalog store it. */
@@ -38,7 +38,7 @@ export default function ClimbingRouteTable({route,onEdit}: ClimbingRouteTablePro
           <span style={{fontSize:13,fontWeight:700,color:C.text,minWidth:0,wordBreak:"break-word"}}>{s.label||("Section "+s._n)}</span>
           {s.class?<span style={{flexShrink:0,fontSize:11,fontWeight:800,color:C.amber,background:C.amberBg,border:"1px solid "+C.amber+"55",borderRadius:20,padding:"2px 9px",whiteSpace:"nowrap"}}>{s.class}</span>:null}
         </div>
-        {s.notes?<div style={{fontSize:12,color:C.textSub,lineHeight:1.55}}>{s.notes}</div>:null}
+        {s.notes?renderProse(s.notes,{fontSize:12,color:C.textSub,lineHeight:1.55}):null}
       </div>
     </div>)}
   </div></>;
