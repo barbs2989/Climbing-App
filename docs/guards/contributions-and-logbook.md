@@ -147,6 +147,13 @@ Part of the guard notes — see [README.md](README.md) for the full index.
   2026-10-16: `commaOf` joined `linesOf` there — the comma split `altNames`/`variations` use on
   both paths (0327). The trap: the guard passed locally in a batch whose exit code was `tail`'s,
   and only CI's build job surfaced the FAIL. A guard piped to `tail -1` reports nothing.
+  2026-11-26 (Find tab audit): a second section anchors OBJECT sub-keys that are lists. The edit
+  sheet's `*_KEYS` rows are text boxes, and `partner_requirements.requiredSkills` (an array on all 469
+  rows) came back from a Skills edit as one STRING; `PartnerRequirementsPanel` mapped over it and the
+  Find tab fell to its error boundary. It checks `PARTNER_KEYS` marks the key `"list"`, SuggestFix
+  splits a `"list"` row with `splitSkillList`, and the panel reads the key through that function.
+  Three injections (drop each) all FAIL. **What it cannot see:** a NEW object sub-key whose reader
+  wants an array — only `requiredSkills` is anchored.
 - **`check:edit-scope` (2026-11-18): the edit sheet offers, per discipline, only what that
   discipline's PAGE draws.** The owner opened a section pencil on a trad route and got Trip shape,
   Published times, Camping & bivy and a full waypoint editor. Measured that day (every chip × all 76

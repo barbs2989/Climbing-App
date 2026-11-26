@@ -279,6 +279,26 @@ for (const [key, expr] of nrPairs) {
 }
 if (!nrChecked) die("checked 0 array-only fields on AddRoute's local path. `beta` is one, so the walk or the reader scan broke.");
 
+// OBJECT SUB-KEYS THAT ARE LISTS (audit of the Find tab's PARTNER REQUIREMENTS, 2026-11-26).
+// The edit sheet's object rows (lib/objKeys.js *_KEYS) are text boxes, and a text box submits a
+// STRING. partner_requirements.requiredSkills is a list of phrases on every stored row, and the
+// panel mapped over it: a climber's "crevasse rescue, running belays" reached the route as one
+// string and the whole Find tab fell to its error boundary. Three anchors, each failing closed:
+//   (a) PARTNER_KEYS marks requiredSkills "list";
+//   (b) SuggestFix turns a "list" row into an array with splitSkillList;
+//   (c) the panel reads requiredSkills through splitSkillList, never raw.
+{
+  const OK = read("lib/objKeys.js"), SF = read("src/components/SuggestFix.tsx"), PRP = read("src/components/PartnerRequirementsPanel.tsx");
+  const a = /\["requiredSkills",[^\]]*,"list"\]/.test(OK);
+  const b = /k\[3\]==="list"\)\?\(?splitSkillList\(/.test(SF);
+  const c = /=\s*splitSkillList\(\s*route\.partnerRequirements\.requiredSkills\s*\)/.test(PRP) && !/\{[^}]*\brequiredSkills\b[^}]*\}\s*=\s*route\.partnerRequirements/.test(PRP);
+  const checks = [[a, "lib/objKeys.js", "PARTNER_KEYS does not mark requiredSkills \"list\""], [b, "SuggestFix.tsx", "a \"list\" object row is not split with splitSkillList"], [c, "PartnerRequirementsPanel.tsx", "requiredSkills is read raw, not through splitSkillList"]];
+  for (const [ok, file, why] of checks) {
+    if (ok) console.log(`  ok    ${file} — partner_requirements.requiredSkills stays a list`);
+    else { console.log(`  FAIL  ${file}: ${why} — a typed edit arrives as a STRING and the panel's .map throws`); fails++; }
+  }
+}
+
 if (fails) {
   console.error(`\n${GUARD} FAILED — ${fails} field(s) submit a value their own reader throws away.`);
   console.error("Add a CONV entry that produces the shape the reader expects, next to whatToBring/watchOut in ClimbMatch.jsx.\n");
@@ -287,7 +307,8 @@ if (fails) {
 }
 console.log(`${GUARD}: ok — all ${rows.length} array-only readers are fed a converter, and ${nrChecked} on AddRoute's local path build the shape directly.`);
 
-// Injection-tested, 5 cases:
+// Injection-tested, 5 cases (+3 for the requiredSkills section, 2026-11-26: drop "list" from
+// PARTNER_KEYS, drop the list branch from SuggestFix, destructure requiredSkills raw -- each FAILS):
 //   1. delete the `beta` CONV entry          -> FAILS naming beta (the shipped defect)
 //   2. rename `var CONV={`                   -> ANCHOR LOST, never a pass
 //   3. rename `var SS={`                     -> ANCHOR LOST
