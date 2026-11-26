@@ -62,6 +62,13 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     never on bouldering. The section renders a sentinel gear beta on each and asserts it appears
     **exactly once**, under "Rack beta". Proven against the pre-fix `RouteDetail.jsx`: 4 failures,
     one per crag discipline, alpine still green.
+  **ONE SEASON section (2026-11-25):** it also asserts the Conditions tab has exactly one SEASON heading, none of
+  SEASONAL GUIDANCE / CLIMATE & SEASON / ROCK & SEASON, the season window printed once (the crag's months on a crag,
+  the route's own on alpine), the climate inside SEASON, no Aspect/Sun/Season facts row, and no score-card "Wall faces".
+  ASPECT & SUN is mounted by App (`condPanels`), which this harness does not pass, so its once-ness is held by the
+  facts-row and "Wall faces" absences plus `check:ui`'s route:Conditions marker. The crag-editor pencils for season
+  and aspect cannot be clicked under static render; the check reads their wiring (`seasonEdit`, the `#aspect` autoFix
+  branch) from RouteDetail.jsx.
 - **`check:approach-section`** renders the real `RouteDetail` and pins that the Plan tab has
   **one** APPROACH section. There used to be two: "APPROACHES · N ways in" (`approach_variants`)
   and, under it, a separate APPROACH box holding the `approach` paragraph, which read as a third
@@ -1211,4 +1218,4 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     perfect recording's threshold lifts to 20-30 ft for a few samples at the top. The guard asserts
     that honestly (10 ft on the slopes, under 30 at the turnaround) and that the totals stay exact.
 
-- **`check:bare` section 8 (2026-11-25): every discipline's sections, drawn EMPTY, in order.** Owner note: sections that match the discipline must show with no data, in one order per discipline. The section reads headings off two markers added for it, `data-section-head` on SL's divider form (RSL) and `data-card-head` on CardHead, so a section counts only when its HEADING is drawn. Per discipline and tab it asserts a list in order (other headings may sit between). Built from a census: the three most-filled real routes of each discipline vs the same rows emptied (dbRouteToCamel + SSR, script kept out of the repo). Deliberately NOT required: DESCENT on single-pitch crag lines, RAPPELS on scrambles / Class 1-3, TRIP PROFILE (derived), AVALANCHE FORECAST/TODAY, PRO TIPS. Injection: restoring CLIMBING ROUTE's old `!isPitched` empty gate fails alpine, ice and mixed planner by name. A trad line on a peak uses the mountain layout (`catOf`), so the census's order check compares by layout, not by `discipline`.
+- **`check:bare` section 8 (2026-11-25): every discipline's sections, drawn EMPTY, in order.** Owner note: sections that match the discipline must show with no data, in one order per discipline. The section reads headings off two markers added for it, `data-section-head` on SL's divider form (RSL) and `data-card-head` on CardHead and Head (the enrichment panels' title, e.g. SEASON), so a section counts only when its HEADING is drawn. Per discipline and tab it asserts a list in order (other headings may sit between). Built from a census: the three most-filled real routes of each discipline vs the same rows emptied (dbRouteToCamel + SSR, script kept out of the repo). Deliberately NOT required: DESCENT on single-pitch crag lines, RAPPELS on scrambles / Class 1-3, TRIP PROFILE (derived), AVALANCHE FORECAST/TODAY, PRO TIPS. Injection: restoring CLIMBING ROUTE's old `!isPitched` empty gate fails alpine, ice and mixed planner by name. A trad line on a peak uses the mountain layout (`catOf`), so the census's order check compares by layout, not by `discipline`.

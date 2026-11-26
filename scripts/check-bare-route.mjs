@@ -333,13 +333,16 @@ for (const d of [...CRAG, "alpine"]) {
 {
   const FACT_LABELS = ["Reputation", "Bolts", "Descent", "Aspect", "Season", "Also called", "Variations", "First Free Ascent", "First Winter Ascent", "Sun", "Wet", "Rock quality", "Fixed gear"];
   const segs = (h) => h.replace(/<style[\s\S]*?<\/style>/g, " ").replace(/<[^>]+>/g, "\n").split("\n").map((x) => x.trim()).filter(Boolean);
-  // ROCK & SEASON, the old CONDITIONS section (Aspect, Sun, Season, Wet, Rock quality) sits on the CONDITIONS TAB on a discipline that has one
+  // ROCK, the old CONDITIONS section (Wet, Rock quality) sits on the CONDITIONS TAB on a discipline that has one
   // (owner, 2026-11-14: "remove the CONDITIONS section, we already have a conditions subtab"). Aid has no
   // Conditions tab (CRAG_SCORE_DISCIPLINES), so it keeps the section on Overview.
   const COND_TAB = ["sport", "trad", "toprope", "bouldering"];
-  const COND_FACTS = ["Aspect", "Season", "Rock quality", "Wet"];
-  // Its heading is ROCK & SEASON (owner, 2026-11-14): "CONDITIONS" repeated the name of the tab it sits on.
-  const COND_HEAD = "ROCK &amp; SEASON";
+  // Aspect, Sun and Season left it on 2026-11-25 (owner note: "season is redundant in some sections on conditions tab?
+  // Same with sun aspect? Can we combine"): ASPECT & SUN and the one SEASON section state them, so a facts row would
+  // say them again. FACT_LABELS still lists them, so a row that comes back is a STRAY.
+  const COND_FACTS = ["Rock quality", "Wet"];
+  // Its heading was ROCK & SEASON (owner, 2026-11-14: "CONDITIONS" repeated the tab's name); ROCK since its season left.
+  const COND_HEAD = "ROCK";
   // Where a crag route's facts render: Overview, plus the Conditions tab where the ROCK & SEASON section lives.
   const factsHtml = (r, d, extra) => render(r, "overview", extra) + (COND_TAB.includes(d) ? render(r, "forecast", extra) : "");
   const condSegs = (r, d, extra) => { const s = segs(render(r, COND_TAB.includes(d) ? "forecast" : "overview", extra)); const i = s.indexOf(COND_HEAD); return i < 0 ? s : s.slice(i); };
@@ -350,11 +353,11 @@ for (const d of [...CRAG, "alpine"]) {
     const factsHead = d === "bouldering" ? "PROBLEM FACTS" : "ROUTE FACTS";
     if (!t.includes(factsHead)) fail(`ANCHOR LOST: ${d} overview no longer titles its facts card ${factsHead} — this section checked nothing`);
     if (d === "bouldering" && t.includes("ROUTE FACTS")) fail("bare bouldering problem: its facts card is titled ROUTE FACTS — a boulder line is a PROBLEM");
-    const WANT = { bouldering: ["Location", "Landing", "Crash pads", "Start", "Aspect", "Season", "Rock quality", "Wet"],
-      sport: ["Location", "Bolts", "Protection", "Anchor", "Aspect", "Season", "Rock quality", "Wet"],
-      trad: ["Location", "Protection", "Anchor", "Aspect", "Season", "Rock quality", "Wet", "Fixed gear"],
-      toprope: ["Location", "Anchor", "Aspect", "Season", "Rock quality", "Wet"],
-      aid: ["Location", "Anchor", "Aspect", "Season", "Rock quality", "Wet", "Fixed gear"] }[d];
+    const WANT = { bouldering: ["Location", "Landing", "Crash pads", "Start", "Rock quality", "Wet"],
+      sport: ["Location", "Bolts", "Protection", "Anchor", "Rock quality", "Wet"],
+      trad: ["Location", "Protection", "Anchor", "Rock quality", "Wet", "Fixed gear"],
+      toprope: ["Location", "Anchor", "Rock quality", "Wet"],
+      aid: ["Location", "Anchor", "Rock quality", "Wet", "Fixed gear"] }[d];
     if (!WANT) fail(`ANCHOR LOST: no expected fact list for crag discipline ${d} — add one`);
     const onTab = COND_TAB.includes(d);
     const WANT_OV = (WANT || []).filter((l) => !onTab || !COND_FACTS.includes(l));
@@ -370,41 +373,50 @@ for (const d of [...CRAG, "alpine"]) {
     if (missing.length) fail(`bare ${d} route: these discipline facts have no "+ <Fact>" button on a Not-on-file-yet line: ${missing.join(", ")}`);
     else if (stray.length) fail(`bare ${d} route: ROUTE FACTS offers facts that are not this discipline's (${stray.join(", ")})`);
     else if (oldRows.length) fail(`bare ${d} route: ${oldRows.join(", ")} still render as a "Not on file yet" ROW each — they belong on the section's one line`);
-    else if (lines > 5) fail(`bare ${d} route: ${lines} "Not on file yet" lines — expected at most one per place (the card, WHERE IT STARTS, RACK, GEAR & SAFETY, ROCK & SEASON)`);
+    else if (lines > 5) fail(`bare ${d} route: ${lines} "Not on file yet" lines — expected at most one per place (the card, WHERE IT STARTS, RACK, GEAR & SAFETY, ROCK)`);
     else if (!OV_HEADS.every((h) => sg.includes(h))) fail(`ANCHOR LOST: ${d} overview lacks a ${OV_HEADS.join(" / ").replace("&amp;", "&")} section heading`);
-    else if (onTab && (sg.includes(COND_HEAD) || sg.includes("CONDITIONS"))) fail(`bare ${d} route: Overview still has a ROCK & SEASON (formerly CONDITIONS) section — it belongs on the Conditions tab`);
+    else if (onTab && (sg.includes(COND_HEAD) || sg.includes("CONDITIONS"))) fail(`bare ${d} route: Overview still has a ROCK (formerly ROCK & SEASON, CONDITIONS) section — it belongs on the Conditions tab`);
     else if ([["Location", "WHERE IT STARTS"], [d === "bouldering" ? "Landing" : "Anchor", "GEAR &amp; SAFETY"]].concat(onTab ? [] : [["Rock quality", COND_HEAD]]).some(([l, h]) => add(l) < sg.indexOf(h)))
-      fail(`bare ${d} route: a fact renders outside its section (Location under WHERE IT STARTS, Anchor under GEAR & SAFETY, Rock quality under ROCK & SEASON)`);
+      fail(`bare ${d} route: a fact renders outside its section (Location under WHERE IT STARTS, Anchor under GEAR & SAFETY, Rock quality under ROCK)`);
     else ok(`bare ${d} route: every ${d} fact is a "+ <Fact>" on its section's one Not-on-file-yet line, and nothing else`);
     if (onTab) {
       const cg = segs(cache.get(d + "/forecast") || render(bare(d, "5.9"), "forecast"));
       const h = cg.indexOf(COND_HEAD);
       const off = COND_FACTS.filter((l) => cg.indexOf("+ " + l) < 0 || cg.indexOf("+ " + l) < h);
-      if (h < 0) fail(`ANCHOR LOST: bare ${d} route's Conditions tab has no ROCK & SEASON section heading`);
-      else if (off.length) fail(`bare ${d} route: the Conditions tab's ROCK & SEASON section lacks a "+ <Fact>" for ${off.join(", ")}`);
-      else ok(`bare ${d} route: ROCK & SEASON (${COND_FACTS.join(", ")}) is on the Conditions tab, not Overview`);
+      if (h < 0) fail(`ANCHOR LOST: bare ${d} route's Conditions tab has no ROCK section heading`);
+      else if (off.length) fail(`bare ${d} route: the Conditions tab's ROCK section lacks a "+ <Fact>" for ${off.join(", ")}`);
+      else ok(`bare ${d} route: ROCK (${COND_FACTS.join(", ")}) is on the Conditions tab, not Overview`);
     }
     if (t.includes("Season TBD")) fail(`bare ${d} route: header strap says "Season TBD" — a crag route states a season only when it has one`);
   }
   // CRAG-WIDE FACTS (owner, 2026-11-13: consolidate to the crag, sub-area or peak). A route with no season of its
   // own shows its area's (or an ancestor's); and where the page can open the area's editor, the missing
-  // Season and Aspect are added to the AREA ("+ Season · crag"), while a route fact (Location) stays the route's.
+  // Season and Aspect are added to the AREA, while a route fact (Location) stays the route's.
   {
     const withSeason = { ...bare("sport", "5.10a"), _dbArea: { ...bare("sport", "5.10a")._dbArea, seasonMonths: [4, 5, 6, 7, 8, 9, 10] } };
-    const sg1 = condSegs(withSeason, "sport");
-    const si = sg1.indexOf("Season");
-    if (si < 0 || !/\(the crag(?:'|&#x27;)s season\)/.test(sg1[si + 1] || "")) fail(`crag season: a route on a crag with season_months Apr-Oct shows Season as ${JSON.stringify(si < 0 ? null : sg1[si + 1])} — expected the crag's season`);
-    else if (sg1.includes("+ Season")) fail("crag season: Season is still offered as missing although the crag states one");
-    else ok("crag season: a route with no season of its own shows its crag's, marked as the crag's");
+    // Since 2026-11-25 the season is stated in the ONE SEASON section, not a ROCK & SEASON row (owner note: "season is
+    // redundant in some sections on conditions tab ... combine").
+    const seasonSegs = (r, d) => { const x = segs(render(r, ["sport", "trad", "toprope", "bouldering"].includes(d) ? "forecast" : "overview")); const i = x.indexOf("SEASON"); return i < 0 ? [] : x.slice(i, i + 4); };
+    const sg1 = seasonSegs(withSeason, "sport");
+    const l1 = sg1.find((x) => /\(the crag(?:'|&#x27;)s season\)/.test(x));
+    if (!l1 || !/Apr/.test(l1)) fail(`crag season: a route on a crag with season_months Apr-Oct shows ${JSON.stringify(sg1)} under SEASON — expected the crag's season`);
+    else if (segs(render(withSeason, "forecast")).includes("No season information for this climb yet")) fail("crag season: SEASON says it has nothing although the crag states a season");
+    else ok("crag season: a route with no season of its own shows its crag's in SEASON, marked as the crag's");
     const ancestor = { ...bare("trad", "5.9"), _dbArea: { ...bare("trad", "5.9")._dbArea, areaType: "wall", seasonMonths: null, ancestorSeasonMonths: [5, 6, 7, 8, 9] } };
-    const sg2 = condSegs(ancestor, "trad");
-    const ai = sg2.indexOf("Season");
-    if (ai < 0 || !/\(the area(?:'|&#x27;)s season\)/.test(sg2[ai + 1] || "")) fail(`crag season: a wall with no season under a crag that has one shows ${JSON.stringify(ai < 0 ? null : sg2[ai + 1])} — expected the ancestor's season`);
+    const sg2 = seasonSegs(ancestor, "trad");
+    if (!sg2.some((x) => /\(the area(?:'|&#x27;)s season\)/.test(x))) fail(`crag season: a wall with no season under a crag that has one shows ${JSON.stringify(sg2)} under SEASON — expected the ancestor's season`);
     else ok("crag season: a wall with none inherits its parent area's season");
-    const sg3 = segs(factsHtml(bare("sport", "5.10a"), "sport", { onSuggestAreaEdit: () => {} }));
-    if (!sg3.includes("+ Season · crag") || !sg3.includes("+ Aspect · crag")) fail(`crag-wide Add: with the area editor wired, Season/Aspect are not offered for the whole crag (${sg3.filter((x) => /^\+ (Season|Aspect)/.test(x)).join(", ") || "neither found"})`);
-    else if (!sg3.includes("+ Location") || sg3.includes("+ Location · crag")) fail("crag-wide Add: Location is a fact of the ROUTE (where it starts) and must stay the route's own Add");
-    else ok("crag-wide Add: Season and Aspect go to the crag's editor; Location stays the route's");
+    // An ice or mixed line never inherits: an area's season is researched for its rock (lib/seasonText.js).
+    const ice = { ...bare("ice", "WI3"), _dbArea: { ...bare("ice", "WI3")._dbArea, seasonMonths: [6, 7, 8] } };
+    if (/the crag(?:'|&#x27;)s season/.test(render(ice, "forecast"))) fail("crag season: an ICE route printed its crag's rock season as its own");
+    else ok("crag season: an ice route does not inherit its crag's rock season");
+    // The Season and Aspect Adds still go to the CRAG's editor when the route states none (owner, 2026-11-13). They
+    // moved off the facts rows into SEASON's and ASPECT & SUN's pencils; under static render no click runs, so the
+    // wiring is read from RouteDetail.jsx itself.
+    const rd = fs.readFileSync(path.join(ROOT, "RouteDetail.jsx"), "utf8");
+    if (!/const seasonEdit=function\(\)\{if\(String\(route\.season\|\|""\)\.trim\(\)\|\|!areaFactEdit\)openFix\("season"\);else areaFactEdit\("season_months"\);\};/.test(rd)) fail("crag-wide Add: SEASON's pencil no longer opens the crag's editor for a route with no season of its own");
+    else if (!/if\(_k==="aspect"&&areaFactEdit&&!String\(route\.aspect\|\|""\)\.trim\(\)\)areaFactEdit\("aspect"\)/.test(rd)) fail("crag-wide Add: ASPECT & SUN's pencil no longer opens the crag's editor for a route with no facing of its own");
+    else ok("crag-wide Add: SEASON's and ASPECT & SUN's pencils open the crag's editor when the route states none");
     const sg4 = segs(factsHtml({ ...bare("sport", "5.10a"), _dbArea: { ...bare("sport", "5.10a")._dbArea, areaType: "area" } }, "sport", { onSuggestAreaEdit: () => {} }));
     if (sg4.some((x) => / · (crag|area)$/.test(x))) fail("crag-wide Add: an area the area page does not let climbers edit (area_type 'area') still sends Season/Aspect to its editor");
     else ok("crag-wide Add: on a non-editable area type, Season/Aspect fall back to the route's own Add");
@@ -414,9 +426,12 @@ for (const d of [...CRAG, "alpine"]) {
       altNames: ["ZZALTNAMEZZ"], variations: ["ZZVARIATIONZZ 5.11a"], fa: "A. Climber 1970", ffa: "B. Free 1980", fwa: "C. Winter 1990" };
     const html = factsHtml(r, d);
     const t = text(html), sg = segs(html);
-    const want = ["Reputation", "Bolts", "Descent", "Aspect", "Season", "Also called", "Variations", "First Free Ascent", "First Winter Ascent"].filter((l) => !sg.includes(l));
+    const want = ["Reputation", "Bolts", "Descent", "Also called", "Variations", "First Free Ascent", "First Winter Ascent"].filter((l) => !sg.includes(l));
+    // Aspect and Season are NOT facts rows (2026-11-25): ASPECT & SUN and SEASON state them, once.
+    const dupRows = ["Aspect", "Season", "Sun"].filter((l) => sg.includes(l));
     if (want.length) fail(`enriched ${d} route: ROUTE FACTS is missing ${want.join(", ")}`);
-    else if (!t.includes("★★★☆") || !t.includes("ZZALTNAMEZZ") || !t.includes("ZZVARIATIONZZ 5.11a") || !t.includes("SW-facing") || !t.includes("B. Free 1980") || !t.includes("C. Winter 1990"))
+    else if (dupRows.length) fail(`enriched ${d} route: ${dupRows.join(", ")} is a facts row again — ASPECT & SUN / SEASON state it`);
+    else if (!t.includes("★★★☆") || !t.includes("ZZALTNAMEZZ") || !t.includes("ZZVARIATIONZZ 5.11a") || !t.includes("B. Free 1980") || !t.includes("C. Winter 1990"))
       fail(`enriched ${d} route: a ROUTE FACTS label rendered without its value`);
     else ok(`enriched ${d} route: every ROUTE FACTS row renders with its value`);
     if (!t.includes("Apr-Oct")) fail(`enriched ${d} route: season missing`);
@@ -449,20 +464,42 @@ for (const d of [...CRAG, "alpine"]) {
     const n1 = (withPlan.match(/ZZPITCHONEZZ/g) || []).length;
     if (n1 !== 1) fail(`crag route with an approach: breakdown x${n1} on Overview — must render exactly once`);
     else ok("crag route with an approach: breakdown renders once, on Overview");
-    // CLIMATE & SEASON: exactly once across the whole page, and that once on Conditions.
+    // The climate (part of the one SEASON section since 2026-11-25): exactly once across the whole page, and that once on Conditions.
     for (const [d, g, plan] of [["trad", "5.9", "overview"], ["alpine", "5.6", "planner"]]) {
       const rr = { ...bare(d, g), approach: "Walk the trail.", climate: { typical: "ZZCLIMATEZZ dry summers." } };
       const onCond = (text(render(rr, "forecast")).match(/ZZCLIMATEZZ/g) || []).length;
       const elsewhere = (text(render(rr, plan)).match(/ZZCLIMATEZZ/g) || []).length;
       if (onCond !== 1 || elsewhere !== 0) fail(`${d}: CLIMATE & SEASON x${onCond} on Conditions, x${elsewhere} on ${plan} — it belongs once, on Conditions`);
-      else ok(`${d}: CLIMATE & SEASON renders once, on the Conditions tab`);
+      else ok(`${d}: climate (in SEASON) renders once, on the Conditions tab`);
     }
-    // AID has no Conditions tab: it keeps CLIMATE & SEASON on Overview rather than losing it.
+    // AID has no Conditions tab: it keeps the SEASON section (and its climate) on Overview rather than losing it.
     {
       const rr = { ...bare("aid", "C2"), climate: { typical: "ZZCLIMATEZZ dry summers." } };
       const n = (text(render(rr, "overview")).match(/ZZCLIMATEZZ/g) || []).length;
       if (n !== 1) fail(`aid (no Conditions tab): CLIMATE & SEASON x${n} on Overview — it must not vanish`);
-      else ok("aid (no Conditions tab): CLIMATE & SEASON stays on Overview");
+      else ok("aid (no Conditions tab): SEASON and its climate stay on Overview");
+    }
+    // ONE SEASON SECTION (owner note 2026-11-25: "season is redundant in some sections on conditions tab? Same with sun
+    // aspect? Can we combine if so"). The Conditions tab said the season three times (SEASONAL GUIDANCE, the Season row
+    // of ROCK & SEASON, CLIMATE & SEASON) and the score card titled its climate chart "Season" too. Now: ONE heading
+    // SEASON, the old three headings gone, the crag's season printed once, and its window, calendar and climate inside it.
+    for (const [d, g] of [["trad", "5.9"], ["bouldering", "V3"], ["alpine", "5.6"]]) {
+      const rr = { ...bare(d, g), season: d === "alpine" ? "ZZSEASONZZ July to September" : undefined,
+        climate: { typical: "ZZCLIMATEZZ dry summers." },
+        _dbArea: { ...bare(d, g)._dbArea, seasonMonths: [4, 5, 9, 10], aspect: "SW" } };
+      const cs = segs(render(rr, "forecast"));
+      const heads = cs.filter((x) => x === "SEASON").length;
+      const old = ["SEASONAL GUIDANCE", "CLIMATE &amp; SEASON", "ROCK &amp; SEASON"].filter((h) => cs.includes(h));
+      const t = text(render(rr, "forecast"));
+      const seasonOnce = d === "alpine" ? (t.match(/ZZSEASONZZ/g) || []).length : (t.match(/Apr–May, Sep–Oct|Apr-May, Sep-Oct/g) || []).length;
+      const si = cs.indexOf("SEASON"), ci = cs.findIndex((x) => /ZZCLIMATEZZ/.test(x));
+      if (heads !== 1) fail(`${d}: the Conditions tab has ${heads} SEASON section headings — expected exactly one`);
+      else if (old.length) fail(`${d}: the Conditions tab still has ${old.join(", ").replace(/&amp;/g, "&")} beside the one SEASON section`);
+      else if (seasonOnce !== 1) fail(`${d}: the season window prints x${seasonOnce} on the Conditions tab — expected once, in SEASON`);
+      else if (!(ci > si)) fail(`${d}: the climate does not sit inside the SEASON section`);
+      else if (/\b(Aspect|Sun|Season)\b/.test(cs.slice(cs.indexOf(COND_HEAD)).join("\n").split("\n").filter((x) => x === "Aspect" || x === "Sun" || x === "Season" || x === "+ Aspect" || x === "+ Season").join(" "))) fail(`${d}: an Aspect, Sun or Season facts row is back beside ASPECT & SUN and SEASON`);
+      else if (cs.includes("Wall faces")) fail(`${d}: the score card states the wall's facing again ("Wall faces"); ASPECT & SUN states it`);
+      else ok(`${d}: ONE SEASON section on the Conditions tab — the window once, its calendar and climate inside, no older season heading`);
     }
   }
 }
@@ -499,12 +536,13 @@ for (const d of [...CRAG, "alpine"]) {
 //    in the order the filled page draws it. Measured 2026-11-25 against the three most-filled real
 //    routes of each discipline and the same rows emptied: a mountain route lost ROUTE DESCRIPTION,
 //    BETA, CLIMBING ROUTE (pitched), ROUTE BREAKDOWN (unpitched), ACCESS & REGULATIONS, KNOWN
-//    HAZARDS and CLIMATE & SEASON when they were empty; a crag route lost ACCESS & REGULATIONS,
-//    KNOWN HAZARDS, CLIMATE & SEASON and (under a crag walk-in) the APPROACH heading. #3908 had
+//    HAZARDS and CLIMATE & SEASON when they were empty (that card is part of SEASON since #4002, whose
+//    empty state already shows); a crag route lost ACCESS & REGULATIONS, KNOWN HAZARDS and (under a crag walk-in) the APPROACH heading. #3908 had
 //    folded every empty section into one "Help fill this in" list the day before, which is what
 //    made the description vanish everywhere; it is reverted.
 //    Headings are read off the markers SL (data-section-head) and CardHead (data-card-head) leave,
-//    so a section counts only when its HEADING is drawn, not when a stray word matches.
+//    and Head (data-card-head, the enrichment panels' title), so a section counts only when its HEADING is
+//    drawn, not when a stray word matches.
 //    Not required, on purpose (a rule, not a gap): DESCENT on a single-pitch crag line, RAPPELS on
 //    a scramble or a Class 1-3 walk-up, TRIP PROFILE (computed from the pins, not a field),
 //    AVALANCHE FORECAST / TODAY (need a forecast zone and snow terrain), PRO TIPS (legacy short beta).
@@ -526,16 +564,16 @@ for (const d of [...CRAG, "alpine"]) {
   const MTN_OV = ["ROUTE DESCRIPTION", "BETA", "TOPO"];
   const MTN_SAFE = ["KNOWN HAZARDS", "SEASONAL HAZARDS", "FLOAT PLAN"];
   const WANT = {
-    trad: { overview: CRAG_OV("ROUTE DESCRIPTION", ["ROUTE BREAKDOWN", "DESCENT", "RAPPELS"]), safety: ["KNOWN HAZARDS"], forecast: ["CLIMATE & SEASON"] },
-    sport: { overview: CRAG_OV("ROUTE DESCRIPTION", ["ROUTE BREAKDOWN", "DESCENT", "RAPPELS"]), safety: ["KNOWN HAZARDS"], forecast: ["CLIMATE & SEASON"] },
-    toprope: { overview: CRAG_OV("ROUTE DESCRIPTION", []), safety: ["KNOWN HAZARDS"], forecast: ["CLIMATE & SEASON"] },
-    bouldering: { overview: CRAG_OV("PROBLEM DESCRIPTION", []), safety: ["KNOWN HAZARDS"], forecast: ["CLIMATE & SEASON"] },
-    aid: { overview: CRAG_OV("ROUTE DESCRIPTION", ["DESCENT", "CLIMATE & SEASON"]), safety: ["KNOWN HAZARDS"] },
-    alpine: { overview: MTN_OV, planner: PLAN(true), safety: MTN_SAFE, forecast: ["CLIMATE & SEASON"] },
-    mountaineering: { overview: MTN_OV, planner: PLAN(true), safety: MTN_SAFE, forecast: ["CLIMATE & SEASON"] },
-    ice: { overview: MTN_OV, planner: PLAN(true), safety: MTN_SAFE, forecast: ["CLIMATE & SEASON"] },
-    mixed: { overview: MTN_OV, planner: PLAN(true), safety: MTN_SAFE, forecast: ["CLIMATE & SEASON"] },
-    scrambling: { overview: MTN_OV, planner: PLAN(false), safety: MTN_SAFE, forecast: ["CLIMATE & SEASON"] },
+    trad: { overview: CRAG_OV("ROUTE DESCRIPTION", ["ROUTE BREAKDOWN", "DESCENT", "RAPPELS"]), safety: ["KNOWN HAZARDS"], forecast: ["SEASON"] },
+    sport: { overview: CRAG_OV("ROUTE DESCRIPTION", ["ROUTE BREAKDOWN", "DESCENT", "RAPPELS"]), safety: ["KNOWN HAZARDS"], forecast: ["SEASON"] },
+    toprope: { overview: CRAG_OV("ROUTE DESCRIPTION", []), safety: ["KNOWN HAZARDS"], forecast: ["SEASON"] },
+    bouldering: { overview: CRAG_OV("PROBLEM DESCRIPTION", []), safety: ["KNOWN HAZARDS"], forecast: ["SEASON"] },
+    aid: { overview: CRAG_OV("ROUTE DESCRIPTION", ["DESCENT", "SEASON"]), safety: ["KNOWN HAZARDS"] },
+    alpine: { overview: MTN_OV, planner: PLAN(true), safety: MTN_SAFE, forecast: ["SEASON"] },
+    mountaineering: { overview: MTN_OV, planner: PLAN(true), safety: MTN_SAFE, forecast: ["SEASON"] },
+    ice: { overview: MTN_OV, planner: PLAN(true), safety: MTN_SAFE, forecast: ["SEASON"] },
+    mixed: { overview: MTN_OV, planner: PLAN(true), safety: MTN_SAFE, forecast: ["SEASON"] },
+    scrambling: { overview: MTN_OV, planner: PLAN(false), safety: MTN_SAFE, forecast: ["SEASON"] },
   };
   let bad = 0;
   for (const [d, tabs] of Object.entries(WANT)) {
