@@ -64,8 +64,6 @@ const GEAR_CATS=[
  {label:"Aiders / ascenders",kw:["aider","etrier","ascender","jumar"]},
  {label:"Trekking poles",kw:["trekking pole","poles"]},
  {label:"Microspikes",kw:["microspike","spike"]},
- {label:"Navigation (map / GPS)",kw:["map","gps","navigation","compass"]},
- {label:"Insulating layers & shell",kw:["layer","shell","insulation","puffy","down jacket"]},
  {label:"Satellite communicator",kw:["communicator","inreach","satellite","plb"]},
  {label:"Footwear (shoes / boots)",kw:["shoe","footwear","boot"]},
  {label:"Crash pad(s)",kw:["crash pad","crashpad"]},

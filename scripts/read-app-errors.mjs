@@ -15,6 +15,8 @@
 //   npm run errors:read                       last 7 days, grouped, newest group first
 //   npm run errors:read -- --days 30          a longer window
 //   npm run errors:read -- --all              every row, not grouped
+//   npm run errors:read -- --dev              include builds named "dev" (npm run dev on a developer's or a
+//                                             guard's machine) — left out by default, they are not climbers
 //   npm run errors:read -- --maps dist/assets one local build's maps (after `npm run build`), not the artifact
 //   npm run errors:read -- --stack "<pasted stack>" --build index-x.js   decode one stack, no DB
 //   npm run errors:read -- --selftest         proves the source-map decoder on a known mapping; no DB, no network
@@ -149,7 +151,11 @@ const since = new Date(Date.now() - days * 864e5).toISOString();
 const url = `${SUPABASE_URL}/rest/v1/app_errors?select=kind,message,stack,component_stack,path,build,user_agent,created_at,user_id&created_at=gte.${since}&order=created_at.desc&limit=1000`;
 const res = await fetch(url, { headers: headers(requireServiceKey()), signal: AbortSignal.timeout(30000) });
 if (!res.ok) { console.error(`app_errors -> HTTP ${res.status} ${(await res.text()).slice(0, 200)}`); process.exit(1); }
-const rows = await res.json();
+const all = await res.json();
+// "dev" is what lib/errorReport.js files from `npm run dev` (a developer, or a browser guard on a CI or
+// home machine): mostly half-edited code, never a climber. Counted, not shown, unless --dev.
+const rows = has("--dev") ? all : all.filter((r) => r.build !== "dev");
+if (rows.length < all.length) console.log(`(${all.length - rows.length} row(s) from dev builds left out; --dev shows them)`);
 console.log(`app_errors: ${rows.length} row(s) in the last ${days} day(s)${rows.length === 1000 ? " (capped at 1000)" : ""}\n`);
 
 const groups = new Map();
