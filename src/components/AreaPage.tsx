@@ -26,7 +26,9 @@ import CommentMenu from "./CommentMenu.tsx";
 import { discLabel } from "../../lib/areaDiscLabel.js";
 import { gradeNumFor, gradeSystemForDiscipline } from "../../lib/grade.js";
 import RouteRow from "./RouteRow.tsx";
-import { DISC_GRADE_SCALES } from "./RouteFinderPanel.tsx";
+import { DISC_GRADE_SCALES, FINDER_DEF, FinderFilterSheet, FinderChipLine, finderArgs, finderChips, finderFilterCount, dropUnfit, isFinderMetric } from "./RouteFinderPanel.tsx";
+import type { RouteFinderPanelFilters } from "./RouteFinderPanel.tsx";
+import { finderRowFilter } from "../../lib/offline.js";
 import AddHereFooter from "./AddHereFooter.tsx";
 import AreaWrongSpot from "../../lib/AreaWrongSpot";
 import { fetchCragForecastMeasured } from "../../lib/forecast";
@@ -145,6 +147,9 @@ export interface AreaPageProps {
   area: AreaPageArea;
   onSignIn?: () => void;
   uElev?: ((ft: number) => string) | null;
+  /** The finder's number-and-unit pair, for the climb list's Filters sheet (length labels in the climber's units). */
+  uElevN: (ft: number | null | undefined) => number | null;
+  uElevUnit: () => string;
   uDistMi?: (mi: number) => string;
   /** Whether this area is in Saved. */
   booked?: boolean;
@@ -191,7 +196,7 @@ export interface AreaPageProps {
 // THE HEADER CARD'S BUTTONS: Save area, Area tree and Fire map are ONE size (owner, 2026-11-18: "fire map needs to be
 // the same size as save area") -- 34px, the height Save was given on 2026-11-14 -- and one width; only the colour differs.
 const HEAD_BTN: CSSProperties = { flexShrink: 0, boxSizing: "border-box", display: "inline-flex", alignItems: "center", justifyContent: "center", gap: 5, height: 34, minWidth: 100, padding: "0 12px", borderRadius: 9, fontSize: 12, fontWeight: 800, cursor: "pointer", lineHeight: 1, whiteSpace: "nowrap" };
-export default function AreaPage({ area: areaRow, onSignIn, uElev, uDistMi, booked, onToggleSave, onToggleWish, onLog, onDrill, onFinder, onNear, onObjectives, onAllAreas, onOpenRoute, onOpenReport, onJumpToArea, C, onAddClimb, onAddArea, TopContributors, onViewContributor, onFireMap, onSuggestAreaEdit, myId, PartnerRow, uid, myListings, onListMe, onFindPartnersInArea, onViewProfile, notify, onStartCrew, onCrewsHere, onGroupsHere, openCrewCountAt, headerNav}: AreaPageProps) {
+export default function AreaPage({ area: areaRow, onSignIn, uElev, uElevN, uElevUnit, uDistMi, booked, onToggleSave, onToggleWish, onLog, onDrill, onFinder, onNear, onObjectives, onAllAreas, onOpenRoute, onOpenReport, onJumpToArea, C, onAddClimb, onAddArea, TopContributors, onViewContributor, onFireMap, onSuggestAreaEdit, myId, PartnerRow, uid, myListings, onListMe, onFindPartnersInArea, onViewProfile, notify, onStartCrew, onCrewsHere, onGroupsHere, openCrewCountAt, headerNav}: AreaPageProps) {
   const [wrongOpen, setWrongOpen] = useState(false);
   // The Log button's choice sheet: Quick log or Full log, then the climb.
   const [logChoice, setLogChoice] = useState(false);
@@ -199,13 +204,12 @@ export default function AreaPage({ area: areaRow, onSignIn, uElev, uDistMi, book
   const [orderOpen, setOrderOpen] = useState(false);
   const listEndRef = useRef(null);
   const [listSort, setListSort] = useState("lr");
-  // Filters on a WALL's own climb list (owner note, 2026-10-25): discipline and a star minimum,
-  // applied to the rows already loaded — no query. Unrated climbs stay in, as the finder keeps them.
-  const [wallFilterOpen, setWallFilterOpen] = useState(false);
-  const [wallDisc, setWallDisc] = useState("");
-  const [wallStars, setWallStars] = useState(0);
-  // Single pitch / multi-pitch: the seed wall list's Multipitch filter. Read off the stored pitch count.
-  const [wallPitch, setWallPitch] = useState("");
+  // Filters on a WALL's own climb list: since the owner's note of 2026-11-25 ("the filters button isn't showing all the
+  // filters like we have on the route finder ... If so add it") the SAME sheet and the same test as the Route finder —
+  // discipline, grade, stars, pitches, length, gain, round trip — applied to the rows already loaded, so no query and it
+  // works offline. `wf` is applied, `wd` the open sheet's draft (null while closed).
+  const [wf, setWf] = useState<RouteFinderPanelFilters>(FINDER_DEF);
+  const [wd, setWd] = useState<RouteFinderPanelFilters | null>(null);
   // The row in the drill stack is a snapshot of a CHILD row read when its parent was opened. An
   // agreed edit rewrites the areas row on the server (0304) and refreshes ["area", id] — so the
   // page reads the live row over the snapshot, or a climber's own fill would never show.
@@ -372,32 +376,24 @@ export default function AreaPage({ area: areaRow, onSignIn, uElev, uDistMi, book
                 const placed = routes.filter(r => r.sort_order != null && r.discipline !== "bouldering").length;
                 const opts = placed ? AREA_LIST_SORTS : AREA_LIST_SORTS.filter(o => o[0] !== "lr" && o[0] !== "rl");
                 const key = opts.some(o => o[0] === listSort) ? listSort : opts[0][0];
-                const discsHere = [...new Set(routes.map(r => r.discipline).filter(Boolean))];
-                // A climb with no stored pitch count is never guessed into either side of the pitch filter.
-                const pitchOk = (r: AreaPageRoute) => !wallPitch || (wallPitch === "multi" ? r.pitches > 1 : r.pitches === 1);
-                const roped = routes.filter(r => r.discipline !== "bouldering" && r.discipline !== "scrambling");
-                const pitchChoice = roped.some(r => r.pitches > 1) && roped.some(r => r.pitches === 1);
-                const shownAll = routes.filter(r => (!wallDisc || r.discipline === wallDisc) && (!wallStars || !(r.stars > 0) || r.stars >= wallStars) && pitchOk(r));
+                const discsHere = [...new Set(routes.map(r => r.discipline).filter(Boolean))] as string[];
+                const metric = isFinderMetric(uElevUnit);
+                const passes = (f: RouteFinderPanelFilters) => { const t = finderRowFilter(finderArgs("", f, metric)); return routes.filter(r => t(r)); };
+                const shownAll = finderFilterCount(wf) ? passes(wf) : routes;
                 const unplaced = (key === "lr" || key === "rl") ? shownAll.filter(r => r.sort_order == null && r.discipline !== "bouldering").length : 0;
-                const filtersOn = (wallDisc ? 1 : 0) + (wallStars ? 1 : 0) + (wallPitch ? 1 : 0);
-                const wallChip = (on: boolean) => ({ ...CHIP, flexShrink: 0, border: "1px solid " + (on ? C.blue : C.border), background: on ? C.blueBg : C.surface, color: on ? "#fff" : C.textSub, fontSize: 12.5, fontWeight: 700, cursor: "pointer", whiteSpace: "nowrap" });
+                const filtersOn = finderFilterCount(wf);
+                const wallChips = finderChips(wf, setWf, uElevN, uElevUnit);
+                const draftN = wd ? passes(dropUnfit(wd)).length : 0;
+                const noun = (n: number) => (discsHere.length === 1 && discsHere[0] === "bouldering" ? " problem" : " climb") + (n !== 1 ? "s" : "");
                 return <>
                   {routes.length > 1 ? <div style={{ marginBottom: 8 }}>
                     {/* Drawn as the Route finder draws its own Filters button (BTN_LG, the text colour, a
                         turning chevron), not as one more chip: as a chip in the muted colour it was the same
                         size and shade as the sort chips under it, and the owner could not find it (2026-11-05). */}
-                    <button onClick={() => setWallFilterOpen(o => !o)} aria-expanded={wallFilterOpen} style={{ ...BTN_LG, width: "100%", minHeight: 44, display: "flex", alignItems: "center", justifyContent: "space-between", gap: 8, border: "1px solid " + (filtersOn ? C.blue : C.border), background: filtersOn ? C.blueBg : C.surface, color: filtersOn ? C.onSolid : C.text }}>{"Filters" + (filtersOn ? " (" + filtersOn + ")" : "")}<span aria-hidden="true" style={{ display: "flex", flexShrink: 0 }}><Chevron open={wallFilterOpen} size={16} color={"currentColor"} /></span></button>
-                    {wallFilterOpen ? <div style={{ marginTop: 8, padding: "10px 11px", background: C.card, borderRadius: 10, border: "1px solid " + C.border }}>
-                      <div id="wall-filter-disc" style={{ fontSize: 11.5, color: C.textMuted, marginBottom: 6 }}>Discipline</div>
-                      <div role="group" aria-labelledby="wall-filter-disc" className="cm-hscroll" style={{ display: "flex", gap: 6, overflowX: "auto", paddingBottom: 3, marginBottom: 10 }}>{[["", "All"], ...discsHere.map(d => [d, discLabel(d)])].map(o => <button key={o[0] || "all"} onClick={() => setWallDisc(o[0])} aria-pressed={wallDisc === o[0]} style={wallChip(wallDisc === o[0])}>{o[1]}</button>)}</div>
-                      <div id="wall-filter-stars" style={{ fontSize: 11.5, color: C.textMuted, marginBottom: 6 }}>Stars</div>
-                      <div role="group" aria-labelledby="wall-filter-stars" className="cm-hscroll" style={{ display: "flex", gap: 6, overflowX: "auto", paddingBottom: 3 }}>{[[0, "Any"] as [number, string], [2, "2+ stars"] as [number, string], [3, "3+ stars"] as [number, string]].map(o => <button key={o[0]} onClick={() => setWallStars(o[0])} aria-pressed={wallStars === o[0]} style={wallChip(wallStars === o[0])}>{o[1]}</button>)}</div>
-                      {pitchChoice || wallPitch ? <>
-                        <div id="wall-filter-pitch" style={{ fontSize: 11.5, color: C.textMuted, margin: "10px 0 6px" }}>Pitches</div>
-                        <div role="group" aria-labelledby="wall-filter-pitch" className="cm-hscroll" style={{ display: "flex", gap: 6, overflowX: "auto", paddingBottom: 3 }}>{[["", "Any"], ["single", "Single pitch"], ["multi", "Multi-pitch"]].map(o => <button key={o[0] || "any"} onClick={() => setWallPitch(o[0])} aria-pressed={wallPitch === o[0]} style={wallChip(wallPitch === o[0])}>{o[1]}</button>)}</div>
-                      </> : null}
-                      <div style={{ fontSize: 11.5, color: C.textMuted, marginTop: 8, lineHeight: 1.45 }}>{"Climbs nobody has rated yet stay in the list when a star minimum is set."}</div>
-                    </div> : null}
+                    <button onClick={() => setWd(wf)} aria-haspopup="dialog" style={{ ...BTN_LG, width: "100%", minHeight: 44, display: "flex", alignItems: "center", justifyContent: "center", gap: 8, border: "1px solid " + (filtersOn ? C.blue : C.border), background: filtersOn ? C.blueBg : C.surface, color: filtersOn ? C.onSolid : C.text }}><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}><path d="M4 6h16M7 12h10M10 18h4" /></svg>{"Filters" + (filtersOn ? " (" + filtersOn + ")" : "")}</button>
+                    {wallChips.length ? <div style={{ marginTop: 8 }}><FinderChipLine chips={wallChips} onClearAll={() => setWf(FINDER_DEF)} C={C} /></div> : null}
+                    {filtersOn ? <div style={{ fontSize: 11.5, color: C.textMuted, lineHeight: 1.45 }}>{shownAll.length + " of " + routes.length + noun(routes.length) + " match" + (wf.minStars ? ". Climbs nobody has rated yet stay in." : ".")}</div> : null}
+                    {wd ? <FinderFilterSheet title={"Filter " + (area.name || "climbs")} df={wd} setDf={fn => setWd(d => d && fn(d))} onClose={() => setWd(null)} onApply={() => { setWf(dropUnfit(wd)); setWd(null); }} showLabel={"Show " + draftN + noun(draftN)} discOptions={discsHere} onePlace uElevN={uElevN} uElevUnit={uElevUnit} C={C} /> : null}
                   </div> : null}
                   {routes.length > 1 ? <div role="group" aria-label="Sort climbs" className="cm-hscroll" style={{ display: "flex", gap: 6, overflowX: "auto", paddingBottom: 3, marginBottom: 8 }}>{opts.map(o => <button key={o[0]} onClick={() => setListSort(o[0])} aria-pressed={key === o[0]} style={{ ...CHIP, flexShrink: 0, border: "1px solid " + (key === o[0] ? C.blue : C.border), background: key === o[0] ? C.blueBg : C.surface, color: key === o[0] ? "#fff" : C.textSub, fontSize: 12.5, fontWeight: 700, cursor: "pointer", whiteSpace: "nowrap" }}>{o[1]}</button>)}</div> : null}
                   {unplaced ? <div style={{ fontSize: 11.5, color: C.textMuted, marginBottom: 8, lineHeight: 1.45 }}>{unplaced + (unplaced !== 1 ? " climbs have" : " climb has") + " no position on the wall yet, so " + (unplaced !== 1 ? "they are" : "it is") + " listed last, by name."}</div> : null}
@@ -423,7 +419,7 @@ export default function AreaPage({ area: areaRow, onSignIn, uElev, uDistMi, book
                       </div> : <RouteRow key={r.id} r={r} onOpen={onOpenRoute} C={C} />);
                     });
                     return out;
-                  })() : <div style={{ fontSize: 12.5, color: C.textMuted, lineHeight: 1.5 }}>{"No climb on this wall matches these filters. "}<button onClick={() => { setWallDisc(""); setWallStars(0); }} style={{ ...BTN, border: "none", background: "transparent", color: C.blue, padding: 0, fontWeight: 700, textDecoration: "underline" }}>Clear filters</button></div>}
+                  })() : <div style={{ fontSize: 12.5, color: C.textMuted, lineHeight: 1.5 }}>{"No climb on this wall matches these filters. "}<button onClick={() => setWf(FINDER_DEF)} style={{ ...BTN, border: "none", background: "transparent", color: C.blue, padding: 0, fontWeight: 700, textDecoration: "underline" }}>Clear filters</button></div>}
                 </>;
               })()}
             </>

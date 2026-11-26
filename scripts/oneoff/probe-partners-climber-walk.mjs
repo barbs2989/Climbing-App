@@ -145,7 +145,7 @@ try {
   await cardLook(box, "the Climb in Utah box");
   ok(/Climb in Utah\?/.test(boxTxt) && /List me in Utah/.test(boxTxt), "it reads \"in Utah\", not \"at Utah\"");
   const yOf = (l) => l.first().boundingBox().then((b) => b && b.y).catch(() => null);
-  const firstResultY = (await yOf(page.locator("[data-partner-empty]"))) ?? (await yOf(page.locator("text=/^Listed here or inside first/"))) ?? (await yOf(page.locator("text=/^No one is listed in Utah/")));
+  const firstResultY = (await yOf(page.locator("[data-partner-empty]"))) ?? (await yOf(page.locator("text=/^(Best match|Nearest|Most [a-z ]+) first/"))) ?? (await yOf(page.locator("text=/^No one is listed in Utah/")));
   const boxY = (await box.boundingBox()).y;
   ok(firstResultY != null && boxY < firstResultY, "the list-me box comes before the results (or the empty card)");
   await shot(page, "5-utah");

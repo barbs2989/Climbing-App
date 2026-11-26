@@ -693,6 +693,9 @@ Part of the guard notes — see [README.md](README.md) for the full index.
 - **`check:match-percent`** asserts that **the partner Match % blends what the screen says it
   blends**. Static (one esbuild bundle of core, no browser and no database), so it sits in
   `npm run build`.
+  - **`_cand` LIVES IN `realCandOf` (2026-11-25, PR #3990).** Find partners' Sort ranks by the same % the card prints, so the
+    projection moved into `realCandOf()` beside `RealClimberRow`, which the row calls as `_cand=realCandOf(p,objIds,listing,verified,reliability)`.
+    Section 6a lifts the literal from that function, and is `ANCHOR LOST` if the row stops building `_cand` through it.
   - **SECTION 7: "HOW YOU MATCH" EXPLAINS THE NUMBER IT SITS UNDER.** `compat()` is now the rescaled
     sum of `compatParts()`'s rows, and the guard lifts BOTH bodies (a `compat()` that stops calling
     `compatParts` is `ANCHOR LOST`, not a pass). It asserts the rows' maxima sum to `COMPAT_MAX`, every
