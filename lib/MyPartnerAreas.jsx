@@ -31,9 +31,14 @@ import ActionIcon from "../src/components/ActionIcon.tsx";
 import SwipeRow from "../src/components/SwipeRow.tsx";
 import SwipeHint from "../src/components/SwipeHint.tsx";
 import { phoneX } from "./srOnly.js";
+import Chevron from "../src/components/Chevron.tsx";
 import { useWideScreen } from "./wideLayout.js";
 
 const TYPE_LABEL = { state: "State", region: "Region", range: "Range", canyon: "Canyon", crag: "Crag", wall: "Wall", peak: "Peak", boulder: "Boulder", sector: "Sector" };
+// How many SUGGESTED areas the dropdown offers (it is folded, so a long list costs nothing until opened).
+const SUGGEST_LIM = 20;
+// Why an area is suggested, in words: "2 logged climbs · 1 saved climb · Saved area".
+export const suggestWhy = (s) => [s.logged ? s.logged + " logged climb" + (s.logged === 1 ? "" : "s") : "", s.saved ? s.saved + " saved climb" + (s.saved === 1 ? "" : "s") : "", s.area ? "Saved area" : ""].filter(Boolean).join(" · ");
 // How many search hits the box shows; `total` says how many matched, so a cut is never silent.
 const HIT_LIM = 30;
 const NO_LISTING = UNLISTABLE_AREA_TYPES; // world, country, state/province (0542)
@@ -79,7 +84,7 @@ function AreaFinder({ listed, onPick, chain, setChain }) {
   </div>;
 }
 
-export default function MyPartnerAreas({ uid, listings, listingsError, prefill, discoverable, onOpenPrivacy, onClose, notify, suggestIds, routeListings, routeListingsError }) {
+export default function MyPartnerAreas({ uid, listings, listingsError, prefill, discoverable, onOpenPrivacy, onClose, notify, suggestFrom, routeListings, routeListingsError }) {
   /* OPENED ON ONE LISTING (a chip under Partners › My areas, review 2026-11-18): Back, Escape and Save return to Partners, where you came from. They used to drop you on the full Listed areas list, one more screen to leave. */
   const direct = !!(prefill && prefill.areaId);
   const leaveDraft = () => { if (direct) onClose(); else setDraft(null); };
@@ -93,21 +98,26 @@ export default function MyPartnerAreas({ uid, listings, listingsError, prefill, 
   const hitTotal = (searchQ.data && searchQ.data.total) || 0;
   const qOk = q.trim().length >= 2;
   const listed = useMemo(() => new Set((listings || []).map((l) => l.areaId)), [listings]);
-  // Suggestions: where the climber's own logged/saved crag climbs and saved areas sit. A wall is too
-  // fine a place to find a partner at, so it is offered as its crag; a peak is offered as itself (0456).
-  const cardsQ = useAreaCardsByIds(USE_DB ? (suggestIds || []).slice(0, 60) : []);
+  // SUGGESTED FROM YOUR CLIMBS: the areas the climber's own logged and saved climbs sit in, and the areas they saved,
+  // each carrying WHY (suggestWhy). A wall is too fine a place to find a partner at, so it is offered as its crag (its
+  // reasons merged into the crag's); a peak is offered as itself (0456). An area already listed is not offered again.
+  const suggestIds = useMemo(() => (suggestFrom || []).map((x) => x && x.id).filter(Boolean), [suggestFrom]);
+  const cardsQ = useAreaCardsByIds(USE_DB ? suggestIds.slice(0, 60) : []);
   const suggestions = useMemo(() => {
-    const m = cardsQ.data || {}, out = [], seen = new Set();
-    for (const id of suggestIds || []) {
-      const a = m[id]; if (!a) continue;
+    const m = cardsQ.data || {}, out = [], byId = {};
+    for (const x of suggestFrom || []) {
+      const a = x && m[x.id]; if (!a) continue;
       const up = a.type === "wall" && a.parentId;
-      const s = up ? { areaId: a.parentId, name: a.parentName || "", areaType: null, parentName: null } : { areaId: id, name: a.name, areaType: a.type, parentName: a.parentName };
-      if (!s.name || seen.has(s.areaId) || listed.has(s.areaId) || NO_LISTING.has(s.areaType)) continue;
-      seen.add(s.areaId); out.push(s);
-      if (out.length >= 8) break;
+      const s = up ? { areaId: a.parentId, name: a.parentName || "", areaType: null, parentName: null } : { areaId: x.id, name: a.name, areaType: a.type, parentName: a.parentName };
+      if (!s.name || listed.has(s.areaId) || NO_LISTING.has(s.areaType)) continue;
+      const have = byId[s.areaId];
+      if (have) { have.logged += x.logged || 0; have.saved += x.saved || 0; have.area = have.area || !!x.area; continue; }
+      if (out.length >= SUGGEST_LIM) continue;
+      byId[s.areaId] = { ...s, logged: x.logged || 0, saved: x.saved || 0, area: !!x.area }; out.push(byId[s.areaId]);
     }
     return out;
-  }, [cardsQ.data, suggestIds, listed]);
+  }, [cardsQ.data, suggestFrom, listed]);
+  const [suggestOpen, setSuggestOpen] = useState(false);
   const pill = (on, disabled) => ({ minHeight: 36, padding: "7px 13px", borderRadius: 20, border: "1px solid " + (on ? C.blueDim : C.border), background: on ? C.blueBg : C.surface, color: disabled ? C.textMuted : on ? "#fff" : C.textSub, fontSize: 13, fontWeight: 700, cursor: disabled ? "default" : "pointer", opacity: disabled ? 0.55 : 1 });
   const field = { width: "100%", boxSizing: "border-box", padding: "11px 12px", borderRadius: 10, border: "1px solid " + C.field, background: C.bg, color: C.text, fontSize: 15 };
   const card = { background: C.card, border: "1px solid " + C.border, borderRadius: 12 };
@@ -211,7 +221,7 @@ export default function MyPartnerAreas({ uid, listings, listingsError, prefill, 
               {l.note ? <span style={{ display: "block", fontSize: 12, color: C.textMuted, marginTop: 2, fontStyle: "italic" }}>{l.note}</span> : null}
             </button>
             <button onClick={() => remove(l)} aria-label={"Remove " + l.name} className={px.className} style={{ ...POP_REMOVE, ...px.style }}>✕</button>
-          </div></SwipeRow>; }) : !listingsError ? <div style={{ fontSize: 12.5, color: C.textMuted, lineHeight: 1.5, padding: "12px 14px", border: "1px dashed " + C.border, borderRadius: 12 }}>You’re not listed anywhere yet. Search above or browse below{suggestions.length ? tx(", or tap one of the areas from your climbs") : ""}, or use “List me here” on any area page.</div> : null}
+          </div></SwipeRow>; }) : !listingsError ? <div style={{ fontSize: 12.5, color: C.textMuted, lineHeight: 1.5, padding: "12px 14px", border: "1px dashed " + C.border, borderRadius: 12 }}>You’re not listed anywhere yet. Search above or browse below{suggestions.length ? tx(", or open Suggested from your climbs") : ""}, or use “List me here” on any area page.</div> : null}
           {routeListingsError ? <div style={{ fontSize: 12.5, color: C.amber, lineHeight: 1.5, padding: "10px 2px 0" }}>Couldn’t load the climbs you’re listed on — check your connection and try again.</div> : (routeListings || []).length ? <div style={{ marginTop: 14 }}>
             <SL>{"Climbs you’re listed on · " + routeListings.length}</SL>
             <div style={{ fontSize: 12, color: C.textMuted, marginBottom: 8, lineHeight: 1.5 }}>Climbers who open one of these can find you on its Find tab. To change the dates or note, open the climb and go to Find.</div>
@@ -226,9 +236,22 @@ export default function MyPartnerAreas({ uid, listings, listingsError, prefill, 
             </div></SwipeRow>)}
           </div> : null}
           <div aria-hidden="true" style={{ height: 10 }} />
+          {/* SUGGESTED FROM YOUR CLIMBS, folded (owner note 2026-11-26: "it is confusing to me what that means. It should also be a
+              drop-down instead of listing them all at once"). It was a heading "From your climbs" over a wrap of up to eight "+ Name" pills,
+              which said neither what the places were nor what a tap would do. Now one closed row names it and counts it; opened, a line
+              says what listing does, and each row names the place, its type and parent, and WHY it is offered. */}
           {!q.trim() && suggestions.length ? <div style={{ marginBottom: 16 }}>
-            <SL>From your climbs</SL>
-            <div style={{ display: "flex", gap: 7, flexWrap: "wrap" }}>{suggestions.map((s) => <button key={s.areaId} onClick={() => startEdit(s)} aria-label={"Add " + s.name} style={pill(false)}>{"+ " + s.name}</button>)}</div>
+            <button type="button" onClick={() => setSuggestOpen((o) => !o)} aria-expanded={suggestOpen} aria-controls="suggested-areas" style={{ ...card, width: "100%", minHeight: 52, display: "flex", alignItems: "center", gap: 10, padding: "10px 14px", cursor: "pointer", textAlign: "left", color: C.text }}>
+              <span style={{ flex: 1, minWidth: 0 }}><span style={{ display: "block", fontSize: 14.5, fontWeight: 800 }}>{"Suggested from your climbs · " + suggestions.length}</span><span style={{ display: "block", fontSize: 12, color: C.textMuted, marginTop: 2 }}>Areas you’ve logged or saved climbs in, or saved</span></span>
+              <Chevron open={suggestOpen} color={C.textMuted} />
+            </button>
+            {suggestOpen ? <div id="suggested-areas" style={{ marginTop: 8 }}>
+              <div style={{ fontSize: 12, color: C.textMuted, lineHeight: 1.5, marginBottom: 8 }}>You aren’t listed at these yet. List yourself at one and climbers looking for a partner there will find you.</div>
+              {suggestions.map((s) => <div key={s.areaId} style={{ ...card, display: "flex", alignItems: "center", gap: 8, padding: "4px 8px 4px 4px", marginBottom: 6 }}>
+                <span style={{ flex: 1, minWidth: 0, padding: "6px 10px" }}><span style={{ display: "block", fontSize: 14, fontWeight: 700, color: C.text, overflowWrap: "anywhere" }}>{s.name}</span><span style={{ display: "block", fontSize: 12, color: C.textMuted, overflowWrap: "anywhere" }}>{[TYPE_LABEL[s.areaType] || "", s.parentName || "", suggestWhy(s)].filter(Boolean).join(" · ")}</span></span>
+                <button type="button" onClick={() => startEdit(s)} aria-label={"List me at " + s.name} style={{ flexShrink: 0, minHeight: 44, padding: "8px 12px", borderRadius: 9, border: "1px solid " + C.blueDim, background: C.blueBg, color: C.onSolid, fontSize: 12.5, fontWeight: 800, cursor: "pointer" }}>+ List</button>
+              </div>)}
+            </div> : null}
           </div> : null}
           {!q.trim() && USE_DB ? <AreaFinder listed={listed} chain={finderChain} setChain={setFinderChain} onPick={(a, parent) => startEdit(listed.has(a.id) ? (listings || []).find((l) => l.areaId === a.id) : { areaId: a.id, name: a.name, areaType: a.area_type, parentName: parent ? parent.name : null, disciplines: [] })} /> : null}
         </div>}
