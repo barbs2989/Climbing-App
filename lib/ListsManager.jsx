@@ -12,6 +12,7 @@ import { usePaneTop } from "./usePaneTop.js";
 import { C, CRAG_CATS, MOUNTAINS, ROUTES, SZ3, catOf, gradeLabel, inArea, routeLoc, routeLocText, isReady, listShareText, listSheetHtml, printSheet, routeCompleted, shareOrCopy } from "../ClimbMatchCore.jsx";
 import ShareExportRow from "../src/components/ShareExportRow.tsx";
 import DiscIcon from "../src/components/DiscIcon.tsx";
+import { DISC_LABELS } from "./discLabels";
 import ActionIcon from "../src/components/ActionIcon.tsx";
 import Lbl from "../src/components/Lbl.tsx";
 import { gradeNumFor } from "./grade.js";
@@ -56,7 +57,7 @@ var stateOf=function(r){return routeLoc(r).state||UNKNOWN_STATE;};var MN=["","Ja
       {/* gradeLabel(), not raw `r.grade`: grades run to 77 characters in the live catalog, and a
           paragraph in a pill is the `season`/`grade` defect CLAUDE.md records. gradeLabel also reads
           the per-discipline grade fields, which raw `.grade` misses on an ice or alpine route. */}
-      <span style={{fontSize:12,color:C.textMuted,display:"inline-flex",alignItems:"center",gap:5,minWidth:0}}><DiscIcon d={catOf(r)} size={14}/>{gradeLabel(r)}</span>
+      <span style={{fontSize:12,color:C.textMuted,display:"inline-flex",alignItems:"center",gap:5,minWidth:0}}>{/* The discipline as a WORD before the grade ("Trad · 5.8"), as Mountain Project's lists write it, not a bare 14px glyph, which the owner read as "a little weird icon" beside the grade (owner note, 2026-10). */}{[DISC_LABELS[catOf(r)]||"",gradeLabel(r)].filter(Boolean).join(" · ")}</span>
       {_sv?<span style={{fontSize:12,color:C.textMuted,marginLeft:"auto"}}>{"Added "+fmtDay(_sv)}</span>:null}
     </div>
     {(routeLocText(r))?<div style={{display:"flex",alignItems:"center",gap:4,fontSize:12,color:C.textSub,marginTop:5,minWidth:0}}><span style={{flexShrink:0,display:"inline-flex"}}><ActionIcon name="pin" size={12} color={C.textMuted}/></span><span style={{overflowWrap:"anywhere"}}>{routeLocText(r)}</span></div>:null}
