@@ -258,7 +258,7 @@ try {
   //    It used to render on the CLIMBS tab, which a new climber has no reason to open first; the
   //    evidence that Home was always the intent is its own dismiss state's name -- `homeDismiss`,
   //    keyed "climbsetup" -- so on Climbs its dismiss button wrote to a list nothing there reads.
-  // 3. Settings -> "Edit areas, disciplines & grades" opens it too, and that is the path walked
+  // 3. Settings -> "Edit climbing & grades" opens it too, and that is the path walked
   //    below, because the walk deliberately SKIPPED the sheet in order to check the Home card.
   let entered = "settings";
   if (await clickText("Set up my profile")) {
@@ -275,10 +275,10 @@ try {
     });
     if (!openedPage) dead("Settings did not list a 'Your data & account' page");
     await settledText(page);
-    if (!(await clickText("Edit areas, disciplines & grades"))) {
+    if (!(await clickText("Edit climbing & grades"))) {
       const seen = await page.evaluate(() => [...document.querySelectorAll("button,a,[role=button]")]
         .map((e) => (e.innerText || "").trim()).filter(Boolean).slice(0, 40));
-      dead("Settings did not offer 'Edit areas, disciplines & grades'. Controls: " + JSON.stringify(seen));
+      dead("Settings did not offer 'Edit climbing & grades'. Controls: " + JSON.stringify(seen));
     }
     await settledText(page);
     if (!(await clickText("Set up my profile"))) {
