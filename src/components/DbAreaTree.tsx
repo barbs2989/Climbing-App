@@ -4,7 +4,7 @@ import { useAreaChildren, useCountries, useAreaSearch, areaSearchTotal } from ".
 import Chevron from "./Chevron.tsx";
 import AreaRowArrow from "./AreaRowArrow.tsx";
 import LoadingRows from "./LoadingRows.tsx";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 import { POP_BACK, POP_CLOSE } from "../../lib/popupChrome.js";
 import { clickable } from "../../lib/clickable";
@@ -23,7 +23,7 @@ interface DbAreaTreeNodeProps {
   area: DbAreaTreeArea;
   depth: number;
   currentId: string;
-  /** Ids listed first among their siblings (the state and the country above it). */
+  /** Ids listed first among their siblings: the whole path you are on (country, state, every area drilled through, the current one). */
   pinIds?: string[] | null;
   expanded: Set<string>;
   onToggle: (id: string) => void;
@@ -58,6 +58,16 @@ export interface DbAreaTreeProps {
 // siblings. The tree opens with the country expanded, and its states are alphabetical,
 // so Washington used to sit halfway down a list of fifty — the one row you came from was
 // the one you had to scroll to find. Everything else keeps its order.
+//
+// The same holds at EVERY level of the path, not only the top two (owner note
+// 2026-11-26: on a sub-area, "the drop-down in the area that I am on or just clicked from
+// is in the middle ... I often have to scroll way down the page to find out where I am at
+// in the hierarchy tree"). Only the country and the state were pinned, so below the state
+// each area drilled through sat alphabetically among its siblings, its open drop-down in
+// the middle of the list, and "You are here" could be hundreds of rows down. Every area
+// on the path is now pinned first among its siblings, so the tree opens reading straight
+// down — country, state, region, ..., the area you are on, what is inside it — and the
+// siblings of each level follow. The sort is stable: every other row keeps its order.
 const pinFirst = (list: DbAreaTreeArea[], pinIds?: string[] | null) => pinIds && pinIds.length ? [...list].sort((a, b) => (pinIds.includes(b.id) ? 1 : 0) - (pinIds.includes(a.id) ? 1 : 0)) : list;
 function DbAreaTreeNode({ area, depth, currentId, pinIds, expanded, onToggle, onNavigate, C }: DbAreaTreeNodeProps) {
   const isOpen = expanded.has(area.id);
@@ -77,7 +87,7 @@ function DbAreaTreeNode({ area, depth, currentId, pinIds, expanded, onToggle, on
   const pad = 12 + Math.min(depth, 4) * 12 + Math.max(depth - 4, 0) * 6;
   return (
     <div>
-      <div style={{ display: "flex", alignItems: "center", gap: 8, padding: "12px 12px 12px " + pad + "px", borderBottom: "1px solid " + C.borderLight, background: cur ? C.blueBg : "transparent" }}>
+      <div data-tree-current={cur ? "true" : undefined} style={{ display: "flex", alignItems: "center", gap: 8, padding: "12px 12px 12px " + pad + "px", borderBottom: "1px solid " + C.borderLight, background: cur ? C.blueBg : "transparent" }}>
         <button onClick={() => onToggle(area.id)} aria-label={(isOpen ? "Collapse " : "Expand ") + area.name} aria-expanded={isOpen} style={{ flexShrink: 0, width: 44, height: 44, minHeight: 44, borderRadius: 10, border: "1.5px solid " + C.blue, background: C.blueBg, color:C.onSolid, fontSize: 18, fontWeight: 800, cursor: "pointer", display: "flex", alignItems: "center", justifyContent: "center" }}><Chevron open={isOpen} color={C.blue} /></button>
         {/* One target opens the area: the name, its count and the chevron. The chevron used
             to be a separate 16px span and the name was cut to one line, so the only ways in
@@ -132,6 +142,30 @@ export default function DbAreaTree({ stateRoot, current, ancestorIds, onNavigate
   // eslint-disable-next-line @typescript-eslint/no-unused-expressions -- original ternary statement, kept verbatim
   const toggle = (id: string) => setExpanded(s => { const n = new Set(s); n.has(id) ? n.delete(id) : n.add(id); return n; });
   const total = areaSearchTotal(results);
+  const pathIds = [stateRoot.parent_id, stateRoot.id, ...(ancestorIds || []), current ? current.id : null].filter((x): x is string => !!x);
+  // Pinning puts the path at the top, but each level loads on its own, so bring the
+  // "You are here" row into view once it has rendered — once only, so a climber who then
+  // scrolls or opens other branches is never yanked back. "nearest" leaves the list alone
+  // when the row is already on screen (the usual case, keeping the path above it in view)
+  // and scrolls only when the row would land below the fold, as on a deep path.
+  const scrollRef = useRef<HTMLDivElement | null>(null);
+  const revealed = useRef(false);
+  useEffect(() => {
+    const box = scrollRef.current;
+    if (q.trim() || revealed.current || !box) return;
+    const reveal = () => {
+      const row = box.querySelector<HTMLElement>("[data-tree-current]");
+      if (!row) return false;
+      revealed.current = true;
+      if (typeof row.scrollIntoView === "function") row.scrollIntoView({ block: "nearest" });
+      return true;
+    };
+    if (reveal()) return;
+    const mo = new MutationObserver(() => { if (reveal()) mo.disconnect(); });
+    mo.observe(box, { childList: true, subtree: true });
+    const stop = window.setTimeout(() => mo.disconnect(), 15000);
+    return () => { mo.disconnect(); window.clearTimeout(stop); };
+  }, [q]);
 
   // Portal to <body> — this component mounts deep inside the tab content tree,
   // and an ancestor there creates its own stacking context, which traps a plain
@@ -167,7 +201,7 @@ export default function DbAreaTree({ stateRoot, current, ancestorIds, onNavigate
             : tx("Tap a name to open that area and its climbs · the boxed arrow on the left just shows what’s inside it")}
         </div>
       </div>
-      <div style={{ flex: 1, minHeight: 0, overflowY: "auto", overscrollBehavior: "contain", paddingBottom: 30 }}>
+      <div ref={scrollRef} style={{ flex: 1, minHeight: 0, overflowY: "auto", overscrollBehavior: "contain", paddingBottom: 30 }}>
         {q.trim() ? (
           searching ? <LoadingRows C={C} label="Loading…" style={{padding: "26px 16px"}}/>
           : searchError ? <div style={{ padding: "26px 16px", textAlign: "center", color: C.red, fontSize: 13 }}>Couldn't search areas — check your connection and try again.</div>
@@ -197,7 +231,7 @@ export default function DbAreaTree({ stateRoot, current, ancestorIds, onNavigate
             ) : null}
           </>
         ) : (
-          <DbAreaTreeRoots currentId={current.id} pinIds={[stateRoot.parent_id, stateRoot.id].filter(Boolean)} expanded={expanded} onToggle={toggle} onNavigate={onNavigate} C={C} />
+          <DbAreaTreeRoots currentId={current.id} pinIds={pathIds} expanded={expanded} onToggle={toggle} onNavigate={onNavigate} C={C} />
         )}
       </div>
     </div>,
