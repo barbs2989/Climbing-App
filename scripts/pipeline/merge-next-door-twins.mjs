@@ -31,10 +31,15 @@ function sql(text) {
   for (let t = 0; ; t++) {
     try {
       const out = execFileSync(NPX, [...NPX_PRE, "supabase", "db", "query", "--linked", "--output-format", "json", text], { encoding: "utf8", maxBuffer: 1 << 28, stdio: ["ignore", "pipe", "pipe"] });
-      const at = out.indexOf("{"); return at >= 0 ? JSON.parse(out.slice(at)) : null;
+      const at = out.indexOf("{"), j = at >= 0 ? JSON.parse(out.slice(at)) : null;
+      // the CLI can print an Error object on stdout; never read that as success
+      if (j && j._tag === "Error") throw Object.assign(new Error("cli error"), { stdout: out, stderr: "" });
+      return j;
     } catch (e) {
-      const msg = String(e.stderr || e.message);
-      if (t >= 2 || !/timeout|57014|5\d\d|ECONN|terminated/i.test(msg)) throw new Error(msg.slice(0, 600));
+      // the CLI puts the SQL error on STDOUT and only "Initialising login role..." on stderr
+      const msg = [e.stdout, e.stderr, e.message].filter(Boolean).map(String).join(" ").replace(/Initialising login role\.\.\.\s*/g, "");
+      // a RAISEd SKIP is a decision, never a transient: do not retry it
+      if (/SKIP /.test(msg) || t >= 2 || !/timeout|57014|HTTP 5\d\d|status 5\d\d|ECONN|terminated/i.test(msg)) throw new Error(msg.slice(0, 600));
       execFileSync("sleep", ["90"]);
     }
   }
@@ -90,7 +95,7 @@ for (let i = 0; i < plan.length; i += BATCH) {
   for (const p of part) {
     if (!APPLY) { console.log("would merge", p.drop, "->", p.keep, "|", p.dropName, "->", p.keepName); continue; }
     try { sql(pairSql(p)); done++; appendFileSync(LOG, JSON.stringify({ ...p, status: "merged" }) + "\n"); console.log("merged", p.drop, "->", p.keep); }
-    catch (e) { const m = (e.message.match(/SKIP[^\\"]*/) || [e.message.slice(0, 300)])[0]; skipped++; appendFileSync(LOG, JSON.stringify({ ...p, status: "skipped", why: m }) + "\n"); console.log("skipped", p.drop, "—", m); if (!/SKIP/.test(m)) { console.error("unexpected failure — stopping"); process.exit(1); } }
+    catch (e) { const m = (e.message.match(/SKIP[^\\"]*/) || [e.message.replace(/Initialising login role\.\.\.\s*/g, "").slice(0, 600)])[0]; skipped++; appendFileSync(LOG, JSON.stringify({ ...p, status: "skipped", why: m }) + "\n"); console.log("skipped", p.drop, "—", m); if (!/SKIP/.test(m)) { console.error("unexpected failure — stopping"); process.exit(1); } }
     await sleep(1500);
   }
   if (APPLY) {
@@ -99,6 +104,10 @@ for (let i = 0; i < plan.length; i += BATCH) {
     const have = new Set(back.map(x => x.id)), log = readFileSync(LOG, "utf8").split("\n").filter(Boolean).map(l => JSON.parse(l));
     for (const p of part) { const st = log.filter(x => x.drop === p.drop).pop()?.status; if (!have.has(p.keep) || (st === "merged" && have.has(p.drop)) || (st === "skipped" && !have.has(p.drop))) { console.error("RECONCILE FAILED", p); process.exit(1); } }
     await sleep(PAUSE);
+    // the shared database gate (~/dev/db-throttle): stop the moment the live app's reads slow down
+    const gate = process.env.HOME + "/dev/db-throttle/dbslot.mjs";
+    try { execFileSync("node", [gate, "check"], { stdio: "ignore" }); }
+    catch (e) { if (e.status === 1) { console.error(`database slow — stopped after ${done} merged; re-run with the same plan (merged pairs are skipped as "moved or renamed")`); process.exit(2); } }
   }
 }
 console.log(`${APPLY ? "merged" : "planned"} ${APPLY ? done : plan.length}, skipped ${skipped}; rollback rows in ${ROLLBACK}`);
