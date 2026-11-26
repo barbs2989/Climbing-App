@@ -6,11 +6,14 @@
 //
 // Per row: read fresh with the service key, save it to a rollback file, set each path, patchRow
 // (exactly one row or it throws), pause 1 s, re-read and compare. --dry prints the diff only.
+// --data=<file in scripts/data> applies another batch: partner-requirements-skills-2026-11-26.json
+// turned Mojo Rising's "Required skills" (a pitch list and a rack line) into the skills they ask for.
 import { readFileSync, writeFileSync } from "node:fs";
 import { requireServiceKey, selectAll, patchRow } from "./lib/supabase-env.mjs";
 
 const DRY = process.argv.includes("--dry");
-const EDITS = JSON.parse(readFileSync(new URL("./data/partner-requirements-voice-2026-11-26.json", import.meta.url), "utf8"));
+const DATA = (process.argv.find((a) => a.startsWith("--data=")) || "").slice(7) || "partner-requirements-voice-2026-11-26.json";
+const EDITS = JSON.parse(readFileSync(new URL(`./data/${DATA}`, import.meta.url), "utf8"));
 const key = requireServiceKey();
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
