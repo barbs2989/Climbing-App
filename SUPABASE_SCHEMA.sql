@@ -2263,7 +2263,7 @@ CREATE TABLE public.user_notices (
   read_at timestamp with time zone,
   CONSTRAINT user_notices_pkey PRIMARY KEY (id),
   CONSTRAINT user_notices_body_check CHECK (((body IS NULL) OR (char_length(body) <= 2000))),
-  CONSTRAINT user_notices_kind_check CHECK ((kind = ANY (ARRAY['contribution_approved'::text, 'contribution_rejected'::text, 'contribution_warning'::text, 'contribution_restricted'::text, 'contribution_banned'::text, 'contribution_reinstated'::text, 'flag_resolved'::text, 'contribution_withdrawn'::text]))),
+  CONSTRAINT user_notices_kind_check CHECK ((kind = ANY (ARRAY['contribution_approved'::text, 'contribution_rejected'::text, 'contribution_warning'::text, 'contribution_restricted'::text, 'contribution_banned'::text, 'contribution_reinstated'::text, 'flag_resolved'::text, 'contribution_withdrawn'::text, 'safety_report'::text]))),
   CONSTRAINT user_notices_title_check CHECK (((char_length(title) >= 1) AND (char_length(title) <= 200))),
   CONSTRAINT user_notices_user_id_fkey FOREIGN KEY (user_id) REFERENCES auth.users(id) ON DELETE CASCADE
 );

@@ -2632,7 +2632,7 @@ function notifTarget(n){
   if(!n)return null;
   if(n.writeup||n.crewlog||n.crew!=null||n.logfocus||n.fix||n.myreport||n.myvouches||n.belay||n.objreport||n.tripReply)return {kind:"go",to:n};
   if(n.group)return {kind:"go",to:{group:n.group}};
-  /* A notice to an ADMIN that a safety report or appeal is waiting (0550): it opens that section of the Review desk (review.html). */
+  /* A notice to an ADMIN that a safety report or appeal is waiting (0551): it opens that section of the Review desk (review.html). */
   if(n.desk)return {kind:"go",to:{desk:n.desk}};
   if(n.recap)return {kind:"go",to:{recap:n.recap}};
   if(n.goto)return {kind:"go",to:{tab:"crew",view:n.goto}};
