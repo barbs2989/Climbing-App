@@ -38,6 +38,10 @@ const di = args.indexOf("--disc");
 const DISCS = di >= 0 ? args[di + 1].split(",").filter(Boolean) : ["alpine", "mountaineering"];
 if (!DISCS.length || DISCS.some((d) => !/^[a-z_]+$/.test(d))) throw new Error("--disc takes a comma list of disciplines");
 const BULK = args.includes("--bulk");
+// --max-ft N: an MP length above N ft goes to OUTLIER, not FILL (sport, 2026-11-26: 1,209,575 ft and 6,000-8,000 ft
+// one-pitch "sport" climbs are typos in the export, not routes).
+const mi = args.indexOf("--max-ft");
+const MAX_FT = mi >= 0 ? Number(args[mi + 1]) : Infinity;
 const PACE_MS = 1000;
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
@@ -93,7 +97,7 @@ for (const f of fs.readdirSync(MP_DIR).filter((n) => n.endsWith(".csv"))) {
 
 const live = await selectAll("routes", "id,name,area_id,discipline,length_m,pitches",
   `discipline=in.(${DISCS.join(",")})`, { pageSize: 1000, key: requireServiceKey() });
-const plan = [], conflict = [], noMp = [];
+const plan = [], conflict = [], noMp = [], outlier = [];
 for (const r of live) {
   if (r.length_m != null) continue;
   const mps = [...(oursToMp.get(r.id) || [])].filter((id) => mpLen.has(id));
@@ -102,17 +106,18 @@ for (const r of live) {
   if (!lens.size) { noMp.push(r.id); continue; }
   if (lens.size > 1) { conflict.push({ id: r.id, lens: [...lens] }); continue; }
   const ft = [...lens][0];
+  if (ft > MAX_FT) { outlier.push({ id: r.id, ft }); continue; }
   const fields = { length_m: Math.round(ft / 3.28084) };
   if (r.pitches == null && pitches.size === 1) fields.pitches = [...pitches][0];
   plan.push({ id: r.id, area_id: r.area_id, name: r.name, mp: mps, ft, fields, before: { length_m: r.length_m, pitches: r.pitches } });
 }
 
 console.log(`${DISCS.join("+")} rows ${live.length}; blank length ${live.filter((r) => r.length_m == null).length}`);
-console.log(`FILL ${plan.length} (with pitches ${plan.filter((p) => p.fields.pitches).length}) | CONFLICT ${conflict.length} | NO MP ${noMp.length}`);
+console.log(`FILL ${plan.length} (with pitches ${plan.filter((p) => p.fields.pitches).length}) | CONFLICT ${conflict.length} | NO MP ${noMp.length} | OUTLIER ${outlier.length}`);
 console.log("longest:", plan.slice().sort((a, b) => b.ft - a.ft).slice(0, 5).map((p) => `${p.id} ${p.ft} ft`).join(", "));
 const outDir = path.join(MP_DIR, "_length");
 fs.mkdirSync(outDir, { recursive: true });
-fs.writeFileSync(path.join(outDir, `plan-${DISCS.join("-")}.json`), JSON.stringify({ plan, conflict, noMp }, null, 1));
+fs.writeFileSync(path.join(outDir, `plan-${DISCS.join("-")}.json`), JSON.stringify({ plan, conflict, noMp, outlier }, null, 1));
 if (!APPLY) { console.log(`plan written to ${outDir}/plan-${DISCS.join("-")}.json — re-run with --apply to write`); process.exit(0); }
 
 // A point read the app itself makes; if it slows or fails the database is struggling, and a bulk job stops.
