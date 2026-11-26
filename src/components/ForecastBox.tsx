@@ -3,7 +3,7 @@ import { useState, useEffect, useMemo } from "react";
 import { fetchAlpineForecast, fetchAlpineSpread, fetchCragAir, fetchPointAlerts } from "../../lib/forecast.js";
 import { planTimes } from "../../lib/planTimes.js";
 import { isMultiDayOuting } from "../../lib/outing.js";
-import { wholeDayLegs, hasSnowLegs, bridgeWord, snowFloorFt, localDays, todayOf, dayFlags, modelSpread, daySummary, alertsForDay, normAlerts, alertLevel, fogHours, airDay, smokeFlag, localAt, LIMITS } from "../../lib/alpineConditions.js";
+import { wholeDayLegs, hasSnowLegs, bridgeWord, snowFloorFt, localDays, todayOf, dayFlags, modelSpread, modelDays, daySummary, alertsForDay, normAlerts, alertLevel, fogHours, airDay, smokeFlag, localAt, LIMITS } from "../../lib/alpineConditions.js";
 import { sunFace, groundFt, windowLabel, clockOf, floorQ, KIND_LABEL, flagText } from "../../lib/alpineConditionsShared.js";
 import { catOf, C, ROUTE_GAP, DLOCALE, uElev, uTemp, uWind, uSnowfall } from "../../ClimbMatchCore.jsx";
 import { shadeGrid, gridPx, highestNear, SUMMIT_SNAP_M, faceSunBands } from "../../lib/terrainShade.js";
@@ -19,6 +19,7 @@ import HourByHour from "./HourByHour.tsx";
 import SnowfallSection from "./SnowfallSection.tsx";
 import AirSection from "./AirSection.tsx";
 import SunShadeSection from "./SunShadeSection.tsx";
+import ForecastModels from "./ForecastModels.tsx";
 
 /** One flag on a day: `level` is "warn" or "caution"; `v` carries the figures flagText prints. */
 export interface ForecastBoxFlag { key: string; level: string; v?: object }
@@ -94,13 +95,14 @@ export default function ForecastBox({ route, calc, kind, terrain, pt }: Forecast
   }, [ck, tries, kind]); // eslint-disable-line react-hooks/exhaustive-deps -- refetch only when the point key (ck) changes; pt is a fresh object each render and ck already encodes it
   // The models' spread: a second, optional read. Failing, it adds nothing -- never "they agree".
   const [sp, setSp] = useState<object | null>(function () { return ck && _alpSp[ck] ? _alpSp[ck] : null; });
+  const [spErr, setSpErr] = useState(false), [spTries, setSpTries] = useState(0);
   useEffect(function () {
     if (!pt || !kind) return;
-    if (_alpSp[ck]) { setSp(_alpSp[ck]); return; }
-    let live = true; setSp(null);
-    fetchAlpineSpread(pt.lat, pt.lng, pt.elevFt).then(function (j) { _alpSp[ck] = j; if (live) setSp(j); }, function () { if (live) setSp(null); });
+    if (_alpSp[ck]) { setSp(_alpSp[ck]); setSpErr(false); return; }
+    let live = true; setSp(null); setSpErr(false);
+    fetchAlpineSpread(pt.lat, pt.lng, pt.elevFt).then(function (j) { _alpSp[ck] = j; if (live) setSp(j); }, function () { if (live) { setSp(null); setSpErr(true); } });
     return function () { live = false; };
-  }, [ck, kind]); // eslint-disable-line react-hooks/exhaustive-deps -- refetch only when the point key (ck) changes; pt is a fresh object each render and ck already encodes it
+  }, [ck, kind, spTries]); // eslint-disable-line react-hooks/exhaustive-deps -- refetch only when the point key (ck) changes; pt is a fresh object each render and ck already encodes it
   // Air quality: a third, optional read. A failed one is "not measured" -- never "clean air".
   const [air, setAir] = useState<ForecastBoxRead<object> | null>(function () { return ck && _alpAir[ck] ? { data: _alpAir[ck] } : null; });
   const [airTries, setAirTries] = useState(0);
@@ -299,6 +301,8 @@ export default function ForecastBox({ route, calc, kind, terrain, pt }: Forecast
   </div>
   <DayByDay days={days} di={di} pick={setDayI} dayName={dayName} nWarn={nWarn} nCaution={nCaution} fc={fc} legs={legs} startOn={kind !== "waterfall" && kind !== "cragmixed"} />
   <AlertsSection day={day} dayLabel={dayName(day, Math.min(dayI, days.length - 1))} nav={nav} alerts={alerts} fc={fc} onRetry={function () { setAlertTries(alertTries + 1); }} />
+  <ForecastModels head={<DayHead title="FORECAST MODELS" dayLabel={dayName(day, di)} nav={nav} />} rows={sp ? modelDays(sp, day.date) : []} state={sp ? "ok" : spErr ? "error" : "loading"} showFl={true}
+    shown={{ hi: s.hi, lo: s.lo, gust: s.gust, rain: s.precip, fl: s.flMean }} where={"at " + (pt.elevFt != null ? uElev(pt.elevFt) : "the ground height at the map point") + (pt.pinned ? " at " + pt.name : " over " + pt.name)} onRetry={function () { setSpTries(spTries + 1); }} />
   <HourByHour key={day.date} fc={fc} day={day} dayLabel={dayName(day, Math.min(dayI, days.length - 1))} nav={nav} pt={pt} floor={floor} legs={legs} snowLegs={snowLegs} />
   <SnowfallSection fc={fc} day={day} dayLabel={dayName(day, Math.min(dayI, days.length - 1))} nav={nav} />
   <AirSection day={day} dayLabel={dayName(day, Math.min(dayI, days.length - 1))} nav={nav} air={air} onRetry={function () { setAirTries(airTries + 1); }} />

@@ -532,7 +532,7 @@ console.log("check:conditions-score");
   if (/data-dew-until="1"[^\n]{0,200}"Air at its dew point until "\+clockHr\(dewTill\.hr\)/.test(rd2) && /const dewTill=[^\n]*\/dew point\/\.test\(c\.why\)/.test(rd2)) ok("...and a dew-capped morning under a Good day says until when, too (most red mornings were dew, not rain)");
   else fail("the dew-morning line is gone: a dew-capped red morning under a Good day is unexplained again");
   // MODELS DISAGREE ON RAIN at a crag too, by the alpine card's rule, with the printed day total in the comparison; a failed read adds nothing.
-  if (/fetchAlpineSpread\(lat,lng,null\)\.then\(function\(j\)\{_cragSp\[ck\]=j;if\(live\)setSp\(j\);\},function\(\)\{if\(live\)setSp\(null\);\}\)/.test(rd2) && /modelSpread\(sp,d\.date,null,d\.rain\)/.test(rd2) && /data-rain-split="1"/.test(rd2)) ok("a crag day the forecast models split on rain says so, with the printed amount in the comparison");
+  if (/fetchAlpineSpread\(lat,lng,null\)\.then\(function\(j\)\{_cragSp\[ck\]=j;if\(live\)setSp\(j\);\},function\(\)\{if\(live\)\{setSp\(null\);setSpErr\(true\);\}\}\)/.test(rd2) && /modelSpread\(sp,d\.date,null,d\.rain\)/.test(rd2) && /data-rain-split="1"/.test(rd2)) ok("a crag day the forecast models split on rain says so, with the printed amount in the comparison");
   else fail("the crag card lost its models-disagree-on-rain line, or reads it without the printed day total");
 }
 function sN0() { return scoreForecast(fixture(), WALL, null, NOW); }
