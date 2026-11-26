@@ -46,8 +46,7 @@ whole guide feature on 2026-11-14 (owner). This doc covers the partners mode (`l
   corpus places found, against 22/67 for the old one-state box.
 - **No dead ends** (owner, 2026-11-13): every empty real list (My climbs & areas, By Area, By Peak, By Route, Everyone within a radius)
   is one card (`emptyCard`, `data-partner-empty`) of one-tap next steps, each shown only when it changes the list —
-  *Search anywhere*, *Within <next radius>*, *Pick an area*, *See everyone*, *Invite a climbing friend* (inline `ShareVia`, a link to the
-  app). The *Meanwhile, climbers near you / on ClimbMatch* list that sat under it was removed (owner 2026-11-18, #3416): it read as a second copy of the results.
+  *Search anywhere*, *Within <next radius>*, *Pick an area*, *See everyone*. *Invite a climbing friend* (an inline share link to the app) was removed from it (owner note 2026-11-25). The *Meanwhile, climbers near you / on ClimbMatch* list that sat under it was removed (owner 2026-11-18, #3416): it read as a second copy of the results.
 - **ⓘ How matching and listing work**: one `<details>` above the safety note holds the fine print that used to be five paragraphs down
   the list — what Match % blends, how an area listing reaches, how distance is rounded, who appears, and what the example climbers are.
   The result footers keep only the ordering ("Most areas in common first.", "Nearest first.").

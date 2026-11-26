@@ -15,7 +15,7 @@ import { useRecentRouteIds } from "./recent";
 import { useEffect, useMemo, useState } from "react";
 import { discLabel } from "./discLabels.js";
 import { crewGradeFit, crewFitLabel, crewCanInvite, crewInviteRadiusMi, FIT_RANK } from "./crewFit.js";
-import { PROFILE_GRADES, profileGradeRows, resumeClimbCount, localYmd, ALL_CLIMBERS, AVAIL_FILTER_OPTS, CRAG_CATS, GENDERS, C, DB_UID, DLOCALE, ME, MOUNTAINS, ROUTES, SZ6, areaPathNames, availFits, availMatch, availOf, catOf, compat, crewPlace, condRep,routePlace, crewAskedToJoin, crewSize, distMiles, fuzzyMatchAny, haveMyLoc, inArea, mutualCount, mutualFirstNames, mutualLabel, paceOf, pubName, appLink, uApproxDist, uDistMi, uDistMiUnitLong } from "../ClimbMatchCore.jsx";
+import { PROFILE_GRADES, profileGradeRows, resumeClimbCount, localYmd, ALL_CLIMBERS, AVAIL_FILTER_OPTS, CRAG_CATS, GENDERS, C, DB_UID, DLOCALE, ME, MOUNTAINS, ROUTES, SZ6, areaPathNames, availFits, availMatch, availOf, catOf, compat, crewPlace, condRep,routePlace, crewAskedToJoin, crewSize, distMiles, fuzzyMatchAny, haveMyLoc, inArea, mutualCount, mutualFirstNames, mutualLabel, paceOf, pubName, uApproxDist, uDistMi, uDistMiUnitLong } from "../ClimbMatchCore.jsx";
 import RealClimberRow from "../src/components/RealClimberRow.tsx";
 import AreaRegionSelect from "../src/components/AreaRegionSelect.tsx";
 import ListMeInAreaBox from "../src/components/ListMeInAreaBox.tsx";
@@ -27,7 +27,6 @@ import ActionIcon from "../src/components/ActionIcon.tsx";
 import DbClimbPicker from "../src/components/DbClimbPicker.tsx";
 import Chevron from "../src/components/Chevron.tsx";
 import LoadingRows from "../src/components/LoadingRows.tsx";
-import ShareVia from "../src/components/ShareVia.tsx";
 
 // Partners › Saved areas searches at most this many saved areas at once: one read each.
 const SAVED_SEARCH_LIM = 12;
@@ -37,7 +36,6 @@ const RADII = [10, 25, 50, 100, 200, 500];
 export default function PartnerSearch({mutuals,onConnect,onViewProfile,onPlan,onPlanArea,initialClimb,onConsumeInitial,initialArea,onConsumeInitialArea,myAreas,myAreasError,onListMe,savedAreaIds,onOpenSaved,friendState,blocked,objDates,crews,onInvite,onResume,onShowMutuals,routeById,onOpenCrew,inviteCrew,onInvitePicked,onEndInvite,meListed,onOpenPrivacy,objectivesLoading,objectiveRowsFailed,objectiveRowsLoading,objectivesUnavailable,myGender,freeWknd,onToggleFreeWknd,notify}){
   /* NEAR MY AREAS is the signed-in default (0300, owner decision): crag partners are found by the areas a climber lists, and the first thing the tab should show is who climbs where you do. The demo keeps My Objectives. */
   const [mode,setMode]=useState("mine"),[levelF,setLevelF]=useState("All"),[maxMiles,setMaxMiles]=useState(200),[selectedRoute,setSelectedRoute]=useState(""),[climbQuery,setClimbQuery]=useState(""),[speedMatch,setSpeedMatch]=useState(false),[showFilters,setShowFilters]=useState(false),[areaId,setAreaId]=useState(""),[areaPath,setAreaPath]=useState([]),[areaName,setAreaName]=useState(""),[areaTypeOf,setAreaTypeOf]=useState({}),[areaPicked,setAreaPicked]=useState(false),[areaCountry,setAreaCountry]=useState("usa"),[areaState,setAreaState]=useState(""),[sortBy,setSortBy]=useState("match"),[discF,setDiscF]=useState("All"),[leadF,setLeadF]=useState(""),[availF,setAvailF]=useState([]),[shown,setShown]=useState(8),[objOpen,setObjOpen]=useState({}),[crewInviteOpen,setCrewInviteOpen]=useState({});
-  const [inviteOpen,setInviteOpen]=useState(false);
   const [selClimbObj,setSelClimbObj]=useState(null),[climbBrowse,setClimbBrowse]=useState(false),[openPlace,setOpenPlace]=useState(null),[allObjPicks,setAllObjPicks]=useState(false),[allRecentPicks,setAllRecentPicks]=useState(false);
   /* Find a REAL climber by name. Until now every partner shown here came from ALL_CLIMBERS,
      which is seed data (5 hardcoded people, FILLER_CLIMBERS off in production) — so two real
@@ -268,7 +266,7 @@ const filtered=ALL_CLIMBERS.filter(c=>{
       {_hint?<div style={{display:"flex",alignItems:"center",gap:8,flexWrap:"wrap",fontSize:11.5,color:C.textMuted,lineHeight:1.45}}><span>{_hint[0]}</span>{_hint[1]}</div>:null}
     </section>;
   })():null;
-  /* NO DEAD ENDS (owner, 2026-11-13): an empty search was a grey "Try a wider radius, or Anywhere." nobody could tap, in every mode. Now it is one card of one-tap next steps -- each shown only when it would change the list. The "Meanwhile, climbers …" list that sat under it is gone (owner, 2026-11-18): it read as a second version of the results. */
+  /* NO DEAD ENDS (owner, 2026-11-13): an empty search was a grey "Try a wider radius, or Anywhere." nobody could tap, in every mode. Now it is one card of one-tap next steps -- each shown only when it would change the list. Invite a climbing friend is gone from it (owner note 2026-11-25): the card is for finding a partner already on the app. The "Meanwhile, climbers …" list that sat under it is gone (owner, 2026-11-18): it read as a second version of the results. */
   const _nextR=RADII.find(function(m){return m>nearMi;});
   const emptyCard=function(title,o){o=o||{};var _b=function(t,fn,primary){return <button type="button" onClick={fn} style={{...(primary?BTN_PRIMARY(C):BTN_SECONDARY(C)),minHeight:40}}>{t}</button>;};return <div>
     <div data-partner-empty="" style={{...CARD(C),marginBottom:14}}><div style={EYEBROW(C.blue)}>Ways to find a partner</div>
@@ -279,9 +277,7 @@ const filtered=ALL_CLIMBERS.filter(c=>{
         {_nearBy!=="any"&&_nextR?_b("Within "+uApproxDist(_nextR),function(){setNearMiDraft(_nextR);setNearMi(_nextR);}):null}
         {o.area?_b("Pick an area",function(){setMode("area");}):null}
         {mode!=="anyone"&&browsePeople.length?_b("See everyone",function(){setMode("anyone");setNearBy("any");}):null}
-        {_b(inviteOpen?"Hide invite":"Invite a climbing friend",function(){setInviteOpen(function(v){return !v;});})}
       </div>
-      {inviteOpen?<div style={{marginTop:10}}><ShareVia title="Climb with me on ClimbMatch" text={"I’m looking for climbing partners on ClimbMatch — come find me: "+appLink("")} link={appLink("")} onToast={function(m){if(notify)notify(m);}}/></div>:null}
     </div>
   </div>;};
   /* The title states the SEARCH; how far is on the Distance pill, so it is not said twice (owner, 2026-11-13). */
