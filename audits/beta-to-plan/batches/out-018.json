@@ -1,0 +1,498 @@
+[
+ {
+  "id": "co_sibling_rivalry",
+  "beta_new": "Begin where the roof band ends on its right, at a stepped section of roof, and climb any thin crack or flake to reach the roof. Clip a bolt under the roof and turn it.",
+  "moves": []
+ },
+ {
+  "id": "co_silver_spoon_2",
+  "beta_new": "A friction slab leads into easy traversing beneath the obvious roof, ending at a perch in the gully. Four bolts and pins protect the pitch.",
+  "moves": []
+ },
+ {
+  "id": "co_simon",
+  "beta_new": "The first pitch jams the right-hand crack at hand size to a comfortable terrace; the second takes a gentle, grassy crack up to a perch under the big roof, off to its right.\n\nThe third climbs a steep crack taking hands and fists on the roof's right side to a ledge shared with its companion route; the last two pitches angle up and right through broken cracks, corners and slabs.",
+  "moves": [
+   {
+    "to": "rack",
+    "action": "add",
+    "from": "A standard rack plus a #4 cam is advised.",
+    "value": {
+     "rows": [
+      {
+       "item": "Standard rack"
+      },
+      {
+       "item": "Cams",
+       "sizes": "#4",
+       "qty": 1
+      }
+     ],
+     "text": "A standard rack plus a #4 cam."
+    }
+   }
+  ]
+ },
+ {
+  "id": "co_simple_mind",
+  "beta_new": "Start up on the square boulder-like block and go up and rightward on the face, clipping five bolts, to a perch with two-bolt anchors.",
+  "moves": []
+ },
+ {
+  "id": "co_skid_marks",
+  "beta_new": "Start along the west flank of the obvious arete, step onto its edge, and clip five bolts to the twin anchors at the top.",
+  "moves": []
+ },
+ {
+  "id": "co_skunk_crack",
+  "beta_new": "Pick the leftmost of two neighbouring cracks. Bouldery moves lead into a shallow chimney and the crack beside it, after which the rock eases off to a two-bolt anchor. The start is a slippery layback up an inside corner to a flaring slot.",
+  "moves": []
+ },
+ {
+  "id": "co_skyline_pig",
+  "beta_new": "A steep line up a faint crack to a small stance, then finish via a prominent open corner onto the slanting south face. Bring thin to medium gear and mind the odd old pitons.",
+  "moves": [
+   {
+    "to": "rack",
+    "action": "copy",
+    "from": "Bring thin to medium gear",
+    "value": {
+     "rows": [
+      {
+       "item": "Gear",
+       "sizes": "thin to medium"
+      }
+     ],
+     "text": "Thin to medium gear."
+    }
+   }
+  ]
+ },
+ {
+  "id": "co_slab_happy_7",
+  "beta_new": "A fine slab that curves up and rightward past four bolts. Reaching the anchors feels exposed unless you carry a big tricam.",
+  "moves": [
+   {
+    "to": "rack",
+    "action": "copy",
+    "from": "unless you carry a big tricam",
+    "value": {
+     "rows": [
+      {
+       "item": "Tricam",
+       "sizes": "big",
+       "qty": 1
+      }
+     ],
+     "text": "A big tricam for the exposed finish to the anchors."
+    }
+   }
+  ]
+ },
+ {
+  "id": "co_slippery_when_dry",
+  "beta_new": "A variation on the neighbouring route that climbs thin flakes straight up the headwall rather than traversing. The many quarter-inch bolts on the route deserve caution.",
+  "moves": []
+ },
+ {
+  "id": "co_slippery_when_wet",
+  "beta_new": "Start up the easy first corner of the neighbouring route, then veer to the right across a blank slab. Small bolts and 5.9 moves carry you leftward above a roof, then traverse diagonally leftward across the 5.11a wall above, clipping five bolts, to a belay ledge. Treat the many quarter-inch bolts with care.",
+  "moves": []
+ },
+ {
+  "id": "co_slot_machine_3",
+  "beta_new": "Take the lower two pitches of a neighbouring route, then drive through the steep section toward an outrageous mantle, after which the climbing eases. Eight bolts lead to the anchor.",
+  "moves": []
+ },
+ {
+  "id": "co_sorcerer",
+  "beta_new": "Start from a vegetated shelf under a handsome corner system that heads nearly to the top. Climb the corner at an easy grade into a recess, then move rightward on a good flake to a stance level with a roof off to the left.\n\nThe following pitch runs long with sparse protection, staying in the corner overhead and ending beneath another flake and roof.",
+  "moves": []
+ },
+ {
+  "id": "co_south_face_direct_2",
+  "beta_new": "Four pitches on steep, water-streaked slabs and grooves. The opening pitch is a steep bolted slab, and the second moves up slab with one 5.8 spot to another bolted belay.\n\nThe third is easy ground to a ledge under the big summit roof; the last pitch crosses that roof on bolts, with a few wires useful for the upper crack.",
+  "moves": []
+ },
+ {
+  "id": "co_south_slabs_the_climb_on_my_face",
+  "beta_new": "Delicate edging gets you to the first bolt, then enjoyable face moves drift left through two more bolts to the anchors of a neighboring route, where you can lower or rap.\n\nTo keep going, head directly above that point through two more bolts, swing rightward below an overhanging headwall and jam a crack to a comfortable belay ledge for a long pitch.",
+  "moves": []
+ },
+ {
+  "id": "co_south_slabs_the_flirty_dove",
+  "beta_new": "Start like the roofed route beside it, but from under the roof move rightward up onto a sharply tilted slab. Edge to a bolt, follow faint cracks to the small overhang, then traverse leftward over the lip and finish in the neighboring dihedral.",
+  "moves": []
+ },
+ {
+  "id": "co_south_slabs_the_testicle_traverse",
+  "beta_new": "Face climb to the roof, then hand-traverse and undercling leftward under smaller roofs to reach a steep slab. A bolt protects the harder variation straight above; the alternative swings right for the easier way.\n\nBoth versions end at a stance by a horizontal crack. Small and medium cams plus long slings help on the traverse.",
+  "moves": [
+   {
+    "to": "descent",
+    "action": "covered",
+    "from": ", where you can rap or carry on up the easy slab above"
+   },
+   {
+    "to": "rack",
+    "action": "copy",
+    "from": "Small and medium cams plus long slings help on the traverse.",
+    "value": {
+     "rows": [
+      {
+       "item": "Cams",
+       "sizes": "small and medium"
+      },
+      {
+       "item": "Slings",
+       "sizes": "long"
+      }
+     ],
+     "text": "Small and medium cams plus long slings for the traverse."
+    }
+   }
+  ]
+ },
+ {
+  "id": "co_southern_arete",
+  "beta_new": "The lower pitches work cracks and chimneys in a slim buttress, while the upper pitches tackle the steep headwall that caps the arete.\n\nThe line meanders, so choose whatever looks best as you go.",
+  "moves": [
+   {
+    "to": "rack",
+    "action": "add",
+    "from": "A normal trad rack is enough, with extras sized for offwidth cracks.",
+    "value": {
+     "rows": [
+      {
+       "item": "Standard trad rack"
+      },
+      {
+       "item": "Offwidth-size gear",
+       "sizes": "extras"
+      }
+     ],
+     "text": "A normal trad rack, with extras sized for offwidth cracks."
+    }
+   }
+  ]
+ },
+ {
+  "id": "co_southern_comfort",
+  "beta_new": "Start left of a wide crack and jam a thin, tight finger crack up to a ledge inside the wide crack. Next, head up and right through a shallow leaning corner, then traverse onto knobs and into a recess in the wide crack system.\n\nBelay on a shelf up that crack. The final pitch is easier-angle but offers no protection.",
+  "moves": [
+   {
+    "to": "rack",
+    "action": "add",
+    "from": "The useful gear is small nuts and tiny cams.",
+    "value": {
+     "rows": [
+      {
+       "item": "Nuts",
+       "sizes": "small"
+      },
+      {
+       "item": "Cams",
+       "sizes": "tiny"
+      }
+     ],
+     "text": "Small nuts and tiny cams."
+    }
+   }
+  ]
+ },
+ {
+  "id": "co_sphinx_rock_plinth",
+  "beta_new": "A friction climb up the striking slab that slants right and cuts the face. Easy ground leads to a belay platform, then bolts guide you up in one or two pitches.",
+  "moves": [
+   {
+    "to": "rack",
+    "action": "add",
+    "from": "small gear and quickdraws are what to bring",
+    "value": {
+     "rows": [
+      {
+       "item": "Small gear"
+      },
+      {
+       "item": "Quickdraws"
+      }
+     ],
+     "text": "Small gear and quickdraws."
+    }
+   }
+  ]
+ },
+ {
+  "id": "co_stemasaurus",
+  "beta_new": "Easier moves past two bolts reach a big ledge, then the leaning corner above is climbed by bridging, protected by two further bolts. Nothing is fitted at the top, so lower and clean from the final bolt backed by a mid-size cam.",
+  "moves": []
+ },
+ {
+  "id": "co_stepped_on",
+  "beta_new": "Follow two cracks side by side immediately left of the arete.",
+  "moves": [
+   {
+    "to": "rack",
+    "action": "add",
+    "from": "protected with RPs and stoppers",
+    "value": {
+     "rows": [
+      {
+       "item": "RPs"
+      },
+      {
+       "item": "Nuts",
+       "sizes": "stoppers"
+      }
+     ],
+     "text": "RPs and stoppers."
+    }
+   }
+  ]
+ },
+ {
+  "id": "co_steppenwolf",
+  "beta_new": "A hand crack that many rate the best on the crag, finishing with face moves on top. Bring extended slings and a full 60 m rope to manage rope drag.",
+  "moves": [
+   {
+    "to": "rack",
+    "action": "copy",
+    "from": "Bring extended slings and a full 60 m rope to manage rope drag.",
+    "value": {
+     "rows": [
+      {
+       "item": "Slings",
+       "sizes": "extended"
+      },
+      {
+       "item": "Rope",
+       "sizes": "full 60 m",
+       "qty": 1
+      }
+     ],
+     "text": "Extended slings and a full 60 m rope to manage rope drag."
+    }
+   }
+  ]
+ },
+ {
+  "id": "co_straw_turkey",
+  "beta_new": "The first pitch jams a string of cracks to a belay on a diagonal crack. Next, angle leftward into an extended crack with some offwidth, then belay high at a sloping ledge.\n\nThe final pitch moves right and finishes by a mellow crack.",
+  "moves": [
+   {
+    "to": "rack",
+    "action": "add",
+    "from": "Wires and medium cams are the rack.",
+    "value": {
+     "rows": [
+      {
+       "item": "Nuts",
+       "sizes": "wires"
+      },
+      {
+       "item": "Cams",
+       "sizes": "medium"
+      }
+     ],
+     "text": "Wires and medium cams."
+    }
+   }
+  ]
+ },
+ {
+  "id": "co_stretch_marks",
+  "beta_new": "Take the seam leaving the left end of the ledge, then finish via a notch to the rappel station.",
+  "moves": [
+   {
+    "to": "rack",
+    "action": "add",
+    "from": "A rack of RPs up to a number 2 cam suits it.",
+    "value": {
+     "rows": [
+      {
+       "item": "RPs"
+      },
+      {
+       "item": "Cams",
+       "sizes": "up to #2"
+      }
+     ],
+     "text": "RPs up to a #2 cam."
+    }
+   }
+  ]
+ },
+ {
+  "id": "co_swinging_sirloin",
+  "beta_new": "Deceptively tricky for how it looks: the steep face beside a ramp is climbed diagonally leftward past four bolts that carry homemade hangers, ending at twin anchors.",
+  "moves": []
+ },
+ {
+  "id": "co_take_the_power_back",
+  "beta_new": "Start roughly two meters right of the previous route, follow a solid crack up and over a bulge, and continue to the same lowering anchor that route uses.",
+  "moves": []
+ },
+ {
+  "id": "co_talus_food_crack",
+  "beta_new": "A slab with some doubtful rock opens the route, with two bolts protecting its hardest moves. After that, jam a crack that widens from hands to fists, trending up and to the right.",
+  "moves": []
+ },
+ {
+  "id": "co_the_damage_done",
+  "beta_new": "Powerful moves through a steep overhang open the route, which then drifts toward the right-hand portion of the face where precise footwork takes over. Five bolts protect it.",
+  "moves": []
+ },
+ {
+  "id": "co_the_diamond_gear_and_clothing",
+  "beta_new": "The first pitch goes through a slot onto a ledge, then leftward on a thin crack to a belay by a good horn. Next come a crack and a right-facing dihedral, a roof and a chimney, to a bivy-friendly shelf on the left.\n\nAfter that a large ramp trends right to a thin crack leading up to a hanging belay anchored by two bolts below a big roof.",
+  "moves": []
+ },
+ {
+  "id": "co_the_dragon",
+  "beta_new": "Nineteen pitches climb the left part of the wall, then six traversing pitches slant rightward and upward to the Dragon Chimneys, and five final pitches follow those chimneys out to the rim.\n\nPitch 25 is the crux, a descending traverse that finishes at the lip of a corner rated 5.11. Pack small-to-mid gear plus a few big pieces for the wide upper cracks, and consider two skinny ropes to tame drag on the traverses.",
+  "moves": [
+   {
+    "to": "rack",
+    "action": "copy",
+    "from": "Pack small-to-mid gear plus a few big pieces for the wide upper cracks, and consider two skinny ropes to tame drag on the traverses.",
+    "value": {
+     "rows": [
+      {
+       "item": "Gear",
+       "sizes": "small to mid"
+      },
+      {
+       "item": "Big pieces",
+       "sizes": "for the wide upper cracks"
+      },
+      {
+       "item": "Skinny ropes",
+       "qty": 2
+      }
+     ],
+     "text": "Small-to-mid gear plus a few big pieces for the wide upper cracks; two skinny ropes help with drag on the traverses."
+    }
+   }
+  ]
+ },
+ {
+  "id": "co_the_fabulous_flying_carrs_route",
+  "beta_new": "Five bolts lead to lowering anchors. If you want a tougher outing, avoid the corner down low and stay left of it.",
+  "moves": []
+ },
+ {
+  "id": "co_the_fixer_2",
+  "beta_new": "Smear up a steep friction slab beside the steep gully, climbing easy ground to a piton roughly forty feet up. Continue leftward, clipping several additional pitons while friction stays thin.\n\nThe top section is easy and unprotected, ending at a high alcove where the belay and rappel anchors sit beneath the headwall.",
+  "moves": []
+ },
+ {
+  "id": "co_the_ground_doesn_t_lie",
+  "beta_new": "A brief line tucked in a shallow alcove. Pull hard on steep rock with reasonable holds, passing three bolts, finishing at a hook-shaped opening plus a cold shut that was never welded.",
+  "moves": []
+ },
+ {
+  "id": "co_the_nose_5",
+  "beta_new": "Take the same opening as its neighbor, then leave that route after about fifty feet to jam the right flank of a detached pillar. Next, lieback a flake that faces right, step out left onto a broad crack, then belay from bolts.\n\nAbove, follow a crack out left to the margin of the enormous roof band, face climb up to a stance with big exposure, then work through the crux, a thin diagonal slash over a bulge, onto a slab. Finish via a groove and gentle ground up to the buttress summit.",
+  "moves": []
+ },
+ {
+  "id": "co_the_spectacle",
+  "beta_new": "Start from a flake that faces left and climb up and rightward past two bolts, where the hardest moves are, then stretch the rope to a third bolt, then belay beneath a chimney. The second pitch climbs the chimney into the gap behind the balanced-rock summit.",
+  "moves": []
+ },
+ {
+  "id": "co_the_sting_2",
+  "beta_new": "Walk around the dome's flank to the slab, then follow six quarter-inch bolts up it and stretch the rope over easy ground beyond two huge flakes. Extra medium cams help up there, and a 200 ft rope is the safest choice for this extended pitch.",
+  "moves": [
+   {
+    "to": "rack",
+    "action": "copy",
+    "from": "Extra medium cams help up there, and a 200 ft rope is the safest choice for this extended pitch.",
+    "value": {
+     "rows": [
+      {
+       "item": "Cams",
+       "sizes": "medium, extra"
+      },
+      {
+       "item": "Rope",
+       "sizes": "200 ft",
+       "qty": 1
+      }
+     ],
+     "text": "Extra medium cams for the upper section; a 200 ft rope is the safest choice for the extended pitch."
+    }
+   }
+  ]
+ },
+ {
+  "id": "co_the_yellow_traverse",
+  "beta_new": "From the belay on the pedestal, descend a little leftward to a tiny ledge, then traverse upward and left under a dark groove, finishing at a belay beside a small tree.",
+  "moves": []
+ },
+ {
+  "id": "co_theodore",
+  "beta_new": "The first pitch goes up a fine hand crack, the center one of three obvious cracks, ending on a terrace; the crack on its left makes an alternate start. Next, a crack at a gentler angle slants left to a stance beneath a jutting roof.\n\nSimple cracks past a block lead to good ledges, and the last two pitches keep slanting left through gentle cracks and corners to the summit.",
+  "moves": [
+   {
+    "to": "rack",
+    "action": "add",
+    "from": "A standard rack is all it needs.",
+    "value": {
+     "rows": [
+      {
+       "item": "Standard rack"
+      }
+     ],
+     "text": "A standard rack."
+    }
+   }
+  ]
+ },
+ {
+  "id": "co_thindependence_2",
+  "beta_new": "Two thin cracks run side by side up the wall; begin them from the crest of the leaning flake.",
+  "moves": [
+   {
+    "to": "rack",
+    "action": "add",
+    "from": "Small gear down to a 1.5 cam and RPs is the rack.",
+    "value": {
+     "rows": [
+      {
+       "item": "Small gear",
+       "sizes": "to a 1.5 cam"
+      },
+      {
+       "item": "RPs"
+      }
+     ],
+     "text": "Small gear up to a 1.5 cam, and RPs."
+    }
+   }
+  ]
+ },
+ {
+  "id": "co_thinstone",
+  "beta_new": "Follow the narrow crack in the open book up to the slot.",
+  "moves": [
+   {
+    "to": "rack",
+    "action": "add",
+    "from": "taking RPs and cams up to a number 2",
+    "value": {
+     "rows": [
+      {
+       "item": "RPs"
+      },
+      {
+       "item": "Cams",
+       "sizes": "up to #2"
+      }
+     ],
+     "text": "RPs and cams up to #2."
+    }
+   }
+  ]
+ }
+]

@@ -1,0 +1,243 @@
+[
+ {
+  "id": "wa_clean_break",
+  "beta_new": "The route is characterized by sustained hand crack climbing through the first ten pitches, with notable splitter cracks throughout. Pitches 11-15 step down to mid-5th class terrain and can be simul-climbed from a ledge system. Route-finding requires care on the lower pitches in the talus approach section.",
+  "moves": []
+ },
+ {
+  "id": "wa_cobbles_101",
+  "beta_new": "Ground-up bolted route established by Jim Yoder and Brenden Sullivan; 5 pitches of sustained 5.6–5.8 climbing on knobby, cobble-textured welded-tuff breccia, including a hand traverse and a stepped 'spine' feature, finishing through the same basalt band and summit chute as Bowling Alley.",
+  "moves": []
+ },
+ {
+  "id": "wa_colchuck_balanced_rock_west_face",
+  "beta_new": "The West Face is one of the best sustained alpine rock routes in the North Cascades, offering nearly 1000 feet of climbing with memorable pitches including an enduro corner, wild roof traverse, protected crux, and the region's hardest 5.8 chimney. The route culminates in an exposed V1 boulder problem topping out the balanced rock. Traditional protection is required throughout with natural gear placements and in-situ slings for rappel anchors.",
+  "moves": []
+ },
+ {
+  "id": "wa_colchuck_peak_colchuck_glacier",
+  "beta_new": "Beckey's 'East Route,' almost universally known today as the Colchuck Glacier Route. From the base of the glacier, ascend easy snow on the left (east) lobe past the base of Dragontail's Serpentine and Backbone Ridge routes. The angle increases near the Colchuck-Dragontail saddle to roughly 100 ft of 40-degree snow, then eases into 3rd-class sandy scrambling to the 8,500 ft summit plateau and on to the true 8,705 ft summit. With good snow cover it's an easy 3-4 hour climb from a camp at Colchuck Lake, or is readily done car-to-car in a long day.",
+  "moves": []
+ },
+ {
+  "id": "wa_colchuck_peak_north_buttress_couloir",
+  "beta_new": "From the far side of Colchuck Lake, hike uphill to gain the moraine, follow it to the right, and drop into the large couloir at the edge of the Colchuck Glacier. In winter and early season it is continuous snow the entire way; later in summer, Class 4 rock can be exposed in a few short steps. The route can be climbed minimalist and fast, or fully protected with rock gear, pickets, and screws.",
+  "moves": [
+   {
+    "to": "descent",
+    "action": "covered",
+    "from": "Descent is via the Colchuck Glacier route on the peak's far side."
+   }
+  ]
+ },
+ {
+  "id": "wa_colchuck_peak_northeast_couloir",
+  "beta_new": "Follow the couloir off the Colchuck Glacier as it winds upward and steepens; the gully hits a steep wall, so continue along the base of this wall to climber's left to find the exit, finishing on steep snow/ice to 60+ degrees that gains the summit ridge. It is usually rated roughly Grade II with an elevation gain of about 1,500 ft from the glacier to the ridge; some grade it up to Grade III depending on conditions.",
+  "moves": [
+   {
+    "to": "rack",
+    "action": "covered",
+    "from": "Protection is a mix of snow gear and a small alpine rock rack including pitons."
+   }
+  ]
+ },
+ {
+  "id": "wa_colfax_peak_cosley_houston",
+  "beta_new": "Approach via the Coleman Glacier to the base of Colfax Peak's north face. Start just above the bergschrund with a low-angle ice ramp trending up to the base of the crux pillar. The crux pillar is short and steep, slightly overhung, with approximately 30-40 feet of dead vertical or slightly overhanging water ice. After the crux, continue up a steep snow gully trending right, then simul-climb upper snow slopes to the summit ridge. A working knowledge of ice screw placement and anchor construction is essential.",
+  "moves": []
+ },
+ {
+  "id": "wa_colfax_peak_fords_theatre",
+  "beta_new": "Occupies a hidden cleft on the right side of a buttress on the north face, offering three pitches of steep ice before the angle eases into steep snow gullies; the route finishes by joining the final ~100 ft of the Cosley-Houston Couloir to reach the summit. Belay options are limited after the opening pitch — an experienced party could consider combining the second and third pitches to avoid intermediate ice-screw anchors.",
+  "moves": []
+ },
+ {
+  "id": "wa_colfax_peak_kimchi_suicide_volcano",
+  "beta_new": "Climbs an independent line to the left of the Polish Route on Colfax's north face, following steep ice interspersed with rock steps that offer plentiful face holds, though protection isn't always straightforward. Regarded by its first ascensionists as one of the highest-quality alpine climbs they'd done in the Cascades, alongside the Cosley-Houston and Polish Route.",
+  "moves": []
+ },
+ {
+  "id": "wa_colfax_peak_polish_route",
+  "beta_new": "Approach via Coleman Glacier to the base of Colfax Peak's north face, directly below the middle of the face. Ascend the initial bergschrund crossing (may require traversal from the right if overhanging). Pitch 1: Long pitch of WI4+ to a snow slope. Pitch 2 (crux): Steep ice for approximately 30 feet, easing briefly, then rising to a free-hanging ice dagger grading WI6. This is the technical and psychological crux requiring bold movement and precise tool placement. Above the dagger: additional steep ice steps in a right-side gully. Final pitches: Upper snowfield with occasional blue ice patches, traversing between rock buttresses to gain the summit snowfield.",
+  "moves": []
+ },
+ {
+  "id": "wa_colonial_peak_west_ridge",
+  "beta_new": "West Ridge via the Colonial Glacier. From the Pyramid Lake Trailhead on SR-20, follow the trail to Pyramid Lake, then a steep climbers' path up the forested rib to camps near the edge of the Colonial Glacier (~6,000 ft). Cross the glacier toward the Colonial-Snowfield col, gain the west ridge through a notch, and follow the exposed ridge (class 3-4 with short low-5th steps) to the summit; many parties rappel the summit block on descent. Crevasse hazard on the glacier; loose rock and exposure on the ridge. Best July-September. No confirmed public GPS track for this route; navigation skills required.",
+  "moves": [
+   {
+    "to": "rack",
+    "action": "add",
+    "from": "Ice axe, crampons, rope, and glacier kit required.",
+    "value": {
+     "rows": [
+      {
+       "item": "Ice axe"
+      },
+      {
+       "item": "Crampons"
+      },
+      {
+       "item": "Rope"
+      },
+      {
+       "item": "Glacier travel kit"
+      }
+     ],
+     "text": "Ice axe, crampons, rope and glacier travel kit."
+    }
+   }
+  ]
+ },
+ {
+  "id": "wa_columbia_peak_scramble",
+  "beta_new": "From a high camp at Twin Lakes (or Silver Lake near Poodle Dog Pass), climbers head cross-country toward Columbia Peak's west spur, working up boulder fields and heather benches onto the connecting ridge, staying low on the ridge rather than crossing its crest. A class 3 scramble leads to a roughly 5-ft class 4 chimney/crack move near a buttress, after which the route crosses onto the southwest face - slabby but increasingly loose rock higher up - before a final cliff band is bypassed via class 3 terrain to the summit. Sustained scrambling above the Twin Lakes saddle totals roughly 800 vertical feet. The peak is often linked with neighboring Monte Cristo Peak and Kyes Peak in a Monte Cristo-group traverse.",
+  "moves": []
+ },
+ {
+  "id": "wa_complete_south_buttress",
+  "beta_new": "This route picks up the South Buttress ridge system far below the standard start, following easy, ledgy 3rd/4th-class slabs at the toe of the buttress for many pitches before the terrain steepens and merges with the standard South Buttress's wandering 5.6-5.8 climbing described in that route's beta. Two rappels of roughly half-rope length descend into gaps/notches along the lower ridge crest as part of the route (either ascending past or reversing them on descent), from fixed tat anchors that sources flag as dated.",
+  "moves": []
+ },
+ {
+  "id": "wa_concerto_in_c_for_drill_and_hammer",
+  "beta_new": "Begins on a wide granite apron with pleasant knobs and good crack protection low down; the crux 'Middle C' section (roughly pitches 7-10) climbs sustained 5.8 friction slab, including a runout quartz-dike pitch with small stair-step edges. Above, the route passes the 'Bubba Compactor' ledge and an 'Inverted Prow' dihedral before ridge-running to the top, with views over Buckeye Basin to Darrington.",
+  "moves": []
+ },
+ {
+  "id": "wa_concord_tower_north_face",
+  "beta_new": "This Grade II alpine rock climb starts at the Liberty Bell-Concord Tower notch and follows a clear crack system with minimal route-finding required. The route can be easily combined with Liberty Bell's Beckey Route as both start from the same approach gully. Moderate protection and gear-handling experience required.",
+  "moves": []
+ },
+ {
+  "id": "wa_copper_peak_south_route",
+  "beta_new": "Copper Peak is most often climbed out of a Copper Basin camp above Holden Village, frequently paired with neighboring Mount Fernow (the two are connected by a rugged, 'contrived' ridge traverse with significant elevation loss/regain that is not generally recommended as a link-up). The route is a long, remote approach — boat, shuttle, and trail — followed by moderate but exposed scrambling rather than sustained technical climbing; the crux is routefinding among several ridge notches and a short 4th-class step near the top. A Mountaineers trip report combining Copper Peak and Mount Fernow in one outing logged roughly 9.7 miles round trip and just under 6,000 ft of cumulative gain by GPS, though that figure spans both summits, not Copper Peak alone, so it is not used here as a route-specific stat.",
+  "moves": []
+ },
+ {
+  "id": "wa_cosho_peak_scramble",
+  "beta_new": "Cosho Peak (aka 'Ragged End') is the westernmost of four consecutive 8,000+ ft summits on Ragged Ridge along with Mesahchie, Katsuk, and Kimtah, and is typically the farthest point climbers reach via the Easy Pass approach. No technical rock climbing or serious glacier travel is strictly required for the standard route, but the terrain is very rough: miles of talus, sidehill traversing, and gully scrambling connect Easy Pass to the peak. Most parties combine Cosho with neighboring Kimtah Peak, descending Kimtah's south gully to the connecting saddle before making the final push up Cosho.",
+  "moves": []
+ },
+ {
+  "id": "wa_courtney_peak_scramble",
+  "beta_new": "From the West Fork Buttermilk Trailhead, follow maintained Trail #411 through forest, across several fords, and around a large washout to Fish Creek Pass (7,480 ft). Leave the trail there and climb the open southeast ridge directly to the summit on a boot path that becomes class 2 boulders in the last few hundred feet — about 0.4 mile and 900 ft of gain from the pass.",
+  "moves": []
+ },
+ {
+  "id": "wa_crater_mountain_standard_route",
+  "beta_new": "Widely regarded as a fun, non-technical but sustained 3rd-class scramble; the crux is a short, loose, exposed gully section below the true summit that is marked with painted yellow X's/arrows and requires careful route-finding among several cliff bands. Most parties do it as one very long day (~15 miles RT) or split it with a camp at Crater Lake.",
+  "moves": []
+ },
+ {
+  "id": "wa_crescendo_of_the_sarcophagus_breathing",
+  "beta_new": "Single pitch sport climb featuring increasingly overhanging jugs leading to a crux mantle move. After a no-hands rest ledge, a second mini crux around 5.10c difficulty, followed by easier slab climbing to anchor on a large ledge. Route passes through some orange-streaked rock.",
+  "moves": []
+ },
+ {
+  "id": "wa_crooked_thumb_peak_south_route",
+  "beta_new": "This classic Beckey-era first ascent combines a roughly 46-50 mile round-trip backpacking approach with technical alpine climbing. The route is accessed via the Hannegan Trailhead system, passing through the Chilliwack River drainage to Whatcom Pass, then crossing Whatcom Glacier and the heavily crevassed Crooked Thumb Glacier to reach the moraine basecamp. The summit push ascends the obvious northwest couloir with simul-climbing on 40-45 degree snow using snow flukes for protection, transitioning to Class 4-5 scrambling and exposed ledges on the narrow snow-and-rock gully accessing the north ridge. The route requires strong alpine climbing and scrambling skills, efficient rope management, and excellent route-finding in complex terrain.",
+  "moves": []
+ },
+ {
+  "id": "wa_cutthroat_the_swarm",
+  "beta_new": "Eight pitches of varied climbing culminate in four headwall pitches rated 5.10-5.11, protected by natural gear from bolted anchors (anchors placed on lead for everything above 5.9; the route's only protection bolt is on pitch 6), with natural gear protecting the lower and upper pitches. Notable pitches include \"The Gem\" (a splitter finger crack, pitch 3) and a sustained dihedral-jamming crux pitch (pitch 6).",
+  "moves": []
+ },
+ {
+  "id": "wa_cutthroat_west_ridge",
+  "beta_new": "Grade II, 5th-class climbing to about 5.6 (harder direct variations reach 5.7). Short approach from highway. Rock improves significantly higher on ridge. Fair granite in approach, improves on ridge. Moderate exposure. Quick alpine climb from a pullout on SR 20 west of Washington Pass. Uncrowded route.",
+  "moves": []
+ },
+ {
+  "id": "wa_czech_it_out",
+  "beta_new": "Crimpy, slightly overhanging start leads to great holds and a nice outlook; 7 bolts to two anchor stations.",
+  "moves": []
+ },
+ {
+  "id": "wa_dark_peak_dark_glacier_route",
+  "beta_new": "Dark Peak is regarded as an adventure/remoteness objective more than a technically hard one. After a boat-and-shuttle approach into the roadless Stehekin Valley, parties hike the Agnes Creek Trail (PCT) to a high camp, then leave the trail for a long, routefinding-heavy cross-country push -- either up the historically brushy, officially abandoned Swamp Creek climbers' path, or via a newer variant farther south on the PCT to Hemlock Camp -- gaining a basin below \"Dark Fin Col.\" From the col, parties rope up, descend a loose slope onto the crevassed Dark Glacier, pick a line across it (the right side of the glacier is reported as a good line), and finish with a belayed crossing of the summit moat/bergschrund onto the rock ridge leading to the top. Reported early-to-mid-summer conditions give firm, well-bridged snow with minimal crevasse danger; by late summer more crevasses are exposed and the glacier becomes less stable.",
+  "moves": []
+ },
+ {
+  "id": "wa_davis_peak_nc_north_face",
+  "beta_new": "From a bivouac at about 4,000 ft at the foot of the glacier, climb the glacier to the bergschrund and simul-climb the compact lower rock band (mid-fifth class in summer, hard to protect) to the right side of the large snowfield. Traverse left across the snowfield to the couloir, belay the crux pitches over iced slabs and a steep chockstone, and continue up the long, exposed upper couloir to the cornices where it meets the summit ridge at about 6,700 ft. The summit is a short way along the ridge.",
+  "moves": []
+ },
+ {
+  "id": "wa_davis_peak_nc_south_slope_and_ridge",
+  "beta_new": "Almost all the difficulty here is brush, steepness and route-finding rather than climbing. The rock is rated Class 4, but that grade comes from a January ascent, when good snow may have covered the harder steps; the bare-rock difficulty and the number of pitches, if any, are not known.\n\nFrom the Gorge Creek bridge at 1,096 ft the slope is sustained from the first step, gaining roughly 1,800 ft in the first half mile through small evergreens with a salal and brush understory. There is no trail, and numerous rock outcrops make navigation important. One recorded line: from near the highway curve, hike due north to about 2,800 ft, turn northeast and ascend to the 4,920+ ft point, then go straight uphill on a bearing of about 340 degrees true to Point 5872, where the south ridge becomes obvious. A party approaching via Gorge Creek instead took the South Buttress, turning cliff bands at about 2,400 ft and 2,800 ft on the right, moving through open timber and alpine snowfields, and reaching the South Davis saddle at 5,700 ft in 4.4 hours from the car; they described Class 2-3 scrambling on the buttress with slime-coated rock slabs near the top. A third account has the granite slabs starting around 4,850 ft after a brushy gully at 3,600 ft, bypassing Point 5872 to the north, and reaching a south-ridge viewpoint at 6,300 ft.\n\nFrom the 5,720+ ft saddle, climb 200 ft of slab to the sharp ridge that leads to the summit. In good snow this is step-kicking; bare it is class 4 slab. In snow this is where the route's steepest ground is — the notch on the old standard south ridge line is reported at 65 degrees, which is precisely why skiers pushed a variation onto the southwest face. Above it the crest broadens into an almost level, wide-open ridge to the summit, one of the great walkable viewpoints in the range and simultaneously the top of the largest cornices most people will ever stand near. In summer that broad snow crest may instead be a scramble among rocks with steep drops on both sides.\n\nThere is also a variation that its climber did not rate: from the saddle, drop east into the basin under the east side of the south ridge, traverse up and north as far as possible, then turn west and climb beside the cliff edge. The turn involves a ten-foot step that looked trivial and was not — iced-in cracks and wrong-feeling holds, passed with ice-axe belays. The direct ridge, descended on the return, offered every ledge needed to get down. Take the ridge.\n\nThe southwest face is now the more popular finish, especially on snow. The whole lower mountain is shared with the ridge route; near the 5,700 ft saddle, leave the south ridge and traverse west into the main southwest-face gully and bowl, then climb it to the summit crest. It avoids the 65-degree notch on the old ridge line, and its steepest snow is about 40 degrees. Skiers worked it out as a descent, and with good snow cover it makes the peak a non-technical objective.",
+  "moves": []
+ },
+ {
+  "id": "wa_deep_blue",
+  "beta_new": "Deep Blue begins on a fin-like flake right off the ground — mount the flake and pull a small bulge into easier climbing. Lower/mid pitches include an overhang leading into face climbing to a small ledge below a roof, a pitch through a roof with technical edges to a ledge, and a stretch of 5.11 climbing to a higher ledge below the crux. Higher up, steep 5.10+ lieback flakes lead to an alcove, then a roof with a bouldery V6 crux on perfect edges (~25m pitch), before steep, sequential climbing on good holds leads toward the 5.13c crux pitch itself (~35m, sustained overhanging climbing to a vertical-face crux) and a further 5.12 pitch (~35m) through another roof. The route was developed over several years and finished in 2020; it climbs in 12 pitches with link-up options for parties wanting to move faster, and multiple parties have completed it car-to-car in a day without simul-climbing.",
+  "moves": []
+ },
+ {
+  "id": "wa_denny_mountain_north_slopes",
+  "beta_new": "From the Alpental base area, ascend barren lower slopes to snowline, then follow the Lower International run and the steep, double-black-diamond Upper International run. From the top of Upper International, a wide ramp leads to a clump of alpine fir below the summit block; a steel cable protects a down-sloping, exposed rock-ledge traverse, followed by a short Class 2-3 scramble to the summit, which carries a radio tower and marker pole.",
+  "moves": [
+   {
+    "to": "descent",
+    "action": "covered",
+    "from": "Many parties descend a counterclockwise loop through Edelweiss Bowl and Midway Saddle, glissading Debbie's Gold back to the base."
+   }
+  ]
+ },
+ {
+  "id": "wa_devore_peak_west_ridge",
+  "beta_new": "From Bird Creek Camp (~4,200 ft) on the Devore Creek Trail, traverse to open meadows and a waterfall cirque, then climb semi-open slopes and snow ramps into the ~7,000 ft basin between Wy'North Peak and Devore Peak (the Bird Lakes basin). Cross Bird Creek at the northern lake and hike southeast up talus/scree to a col at roughly 7,500 ft on Devore's southeast ridge. From the col, scramble west along Class 3 terrain, working past a false summit block, to an unavoidable ~20-ft rock step (Class 5.0-5.4) just below the true summit; a short final Class 3-4 pitch tops out at the 1940 first-ascent register.",
+  "moves": []
+ },
+ {
+  "id": "wa_direct_southwest_buttress",
+  "beta_new": "8-pitch, III 5.10a alpine rock route on Dorado Needle's southwest buttress, sharing the standard Southwest Buttress approach and lower gully but taking a steeper, more sustained direct start.",
+  "moves": []
+ },
+ {
+  "id": "wa_dirty_sanchez",
+  "beta_new": "Multi-pitch alpine rock route with run-out sections requiring careful route-finding. Loose rock throughout with minimal protection on upper pitches, particularly the exposed Jenga Traverse on the final pitch. The route starts on the second obvious rib and is mostly gear-protected, with two bolted pitches (the second and sixth) and gear climbing through corners.",
+  "moves": []
+ },
+ {
+  "id": "wa_django",
+  "beta_new": "P1 climbs left past several bolts (pinch a peanut-shaped hold and step up and right into a dish); the crux reaches right up a buttress-like feature past more bolts to chains. P2 is a shorter ~50 ft 5.10 pitch above the belay to a ledge with more chains.",
+  "moves": []
+ },
+ {
+  "id": "wa_dome_peak_dome_glacier",
+  "beta_new": "This classic 3-4 day alpine climb involves a long backpack approach followed by technical glacier travel and exposed rock scrambling on the famous Cheval crux. The route is best suited for experienced mountaineers comfortable with crevasse rescue, glacier navigation, and exposed Class 4-5 rock.",
+  "moves": []
+ },
+ {
+  "id": "wa_doorway_flake",
+  "beta_new": "Pitch 1 (5.8) climbs sculpted knobs to a hanging flake with stemming and crack moves. Pitch 2 (5.9) is the crux — bolt-protected face climbing. Pitch 3 (5.7) follows a clean crack system, and pitches 4-5 (5.6) ease through dihedrals and slab to the top.",
+  "moves": []
+ },
+ {
+  "id": "wa_dorado_needle_east_ridge",
+  "beta_new": "From the Eldorado East Ridge high camp (~7,400 ft), rope up and cross the Inspiration and McAllister Glaciers to the col between Pt. 8386 and Dorado Needle. The route starts with a loose, thinly-protected 5.5 pitch off the col, eases into several ropelengths of class 3-4 ridge terrain (with a glacier traverse and moat crossing to regain the ridge partway up), then several ropelengths of 3rd-to-low-5th-class climbing to a sub-summit tower. Two short rappels drop into a notch below the true summit, followed by two sustained, high-quality 5.7 pitches to the top. Most parties take 8-12 hours round trip from high camp to summit and back, descending via the technical Northwest Ridge.",
+  "moves": []
+ },
+ {
+  "id": "wa_dot_mountain_scramble",
+  "beta_new": "Dot Mountain is almost never climbed as a standalone objective — it is reached via a multi-day wilderness backpack, typically combined with Ptarmigan Peak, Tatoosh Buttes, and/or Mount Lago. From a high camp on Tamarack Ridge or near Dot Lakes, parties gain the Ptarmigan-Dot saddle and walk up talus/scree to the summit; the descent (or an alternate ascent) can be made via the south ridge, which stays Class 3 but has real exposure on its narrow, blocky crest.",
+  "moves": []
+ },
+ {
+  "id": "wa_dragontail_peak_serpentine_arete",
+  "beta_new": "Climbs an obvious dihedral system past two trees with webbing to a large terrace, then crack systems and a small dihedral to the crux — two consecutive 5.8 pitches (a finger crack into a splitter hand crack, then a dihedral with bomber finger locks) that can be linked with a 70m rope. Above the crux the route stays on the ridge crest with mostly 3rd-4th class/low-5th scrambling, a short downclimb, and a sandy gully to the summit area. All of the technical climbing is on solid rock even though the low-5th-class sections are loose.",
+  "moves": []
+ },
+ {
+  "id": "wa_drews_magical_wonderland",
+  "beta_new": "Easy jugs with close bolts, making it an accessible, confidence-building climb for developing climbers.",
+  "moves": []
+ },
+ {
+  "id": "wa_drilling_me_softly",
+  "beta_new": "Fully bolted 5.10b/c sport pitch on Sofa King Buttress, positioned as the leftmost route on the wall. The line (FA party Wylie Moreshead) is known for the sheer variety of technique packed into one pitch rather than a single hard crux — 3D stemming, backstepping, flagging, a roof, laybacking, jugs, crimps and underclings. Protected by 12 bolts to chain anchors at the top; photos of the route show the crux section and a rest stance before an upper bulge.",
+  "moves": []
+ }
+]

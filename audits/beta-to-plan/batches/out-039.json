@@ -1,0 +1,280 @@
+[
+ {
+  "id": "wa_mount_appleton_standard",
+  "beta_new": "This is a non-technical (Class 3) scramble, not a roped climb. Approach on trail to either Boulder Lake (north of the peak) or Appleton Pass (just southeast of the peak), then leave the trail and scramble cross-country up open, steep terrain to the summit ridge and the 6,017-ft high point; the sub-summit South Appleton lies a third of a mile further south along the same ridge.",
+  "moves": []
+ },
+ {
+  "id": "wa_mount_arriva_scramble",
+  "beta_new": "This is a remoteness-and-navigation objective more than a technical one — the documented 'easiest route' is class 3 (YDS) scrambling with no reported roped climbing, but it sits far off any maintained trail. No other named technical route (rock face, ridge, or couloir line) is documented on this peak; the subsidiary East Peak (8,160+ ft) was reached separately in 1940 by Fred Beckey's party, likely by a similar approach but not confirmed as the same exact line.",
+  "moves": []
+ },
+ {
+  "id": "wa_mount_baker_boulder_glacier",
+  "beta_new": "From high camp on Boulder Ridge (about 5,500-5,900 ft), traverse slightly west-southwest onto the Boulder Glacier and climb the glacier itself, south of and below the Boulder-Park Cleaver, rather than the cleaver. Gain the first 500-1,000 ft working around small crevasses, bear north around a small rock buttress, then head west straight up the glacier; crevasses are the main obstacle on this line and grow more broken through the summer. Above about 9,200 ft the glacier line and the cleaver line merge. Near 9,500 ft, traverse south-southwest about a quarter mile to get around the big rock buttress, watching for rockfall and crevasses, then deal with the bergschrund near 9,800 ft, whose crossing changes through the season. Keep angling west and up to stay clear of the rock band directly below Grant Peak, and finish up a steep snow slope, about the last 500 ft, to the summit plateau beside Grant Peak.",
+  "moves": []
+ },
+ {
+  "id": "wa_mount_baker_boulder_park_cleaver",
+  "beta_new": "It crosses the lower Boulder Glacier northwest to the base of the cleaver (~6,800 ft), following the cleaver as the climbing steepens, becomes icy, and grows exposed to rockfall near crevasses, before joining the upper mountain near the Boulder Glacier's summit approach.",
+  "moves": [
+   {
+    "to": "approach",
+    "action": "covered",
+    "from": "The route follows the Boulder Ridge Trail to its end, then climbs steep heather and a short class 3 rock step onto the ridge, reaching a high camp around 5,700 ft. From there it"
+   }
+  ]
+ },
+ {
+  "id": "wa_mount_baker_cockscomb_ridge",
+  "beta_new": "Grade: 4th class YDS, AI2-3 ice, M1b mixed, PG-13. Technical: 3,000 ft vertical gain over 5 pitches on the ridge itself. Hazards: Extremely loose and unstable rock (especially late season), bergschrunds, extensive crevassing, icefall terrain. Route: From the Heliotrope Ridge trailhead, cross Coleman and Roosevelt Glaciers northeastward, climb low-moderate snow ramps to ridge at ~7,500 ft, bypass Cockscomb Tower on left via steep snow, continue ridge to summit. Required: Ice climbing competency, crevasse rescue skills, glacier travel experience, rock scrambling ability. Best season: Spring or early summer (late season loose rock creates high hazard). First ascent: July 4, 1961 (Murley, Musser, Vielbig).",
+  "moves": [
+   {
+    "to": "descent",
+    "action": "covered",
+    "from": " Descent: Coleman-Deming Route (easy-moderate glacier)."
+   },
+   {
+    "to": "rack",
+    "action": "covered",
+    "from": " Protection: Few ice screws/pickets, glacier gear essential."
+   }
+  ]
+ },
+ {
+  "id": "wa_mount_baker_coleman_deming",
+  "beta_new": "From Heliotrope Ridge Trailhead, hike through forest and meadow to the Hogsback moraine, then rope up and cross the lower Coleman Glacier, navigating crevasses and seracs, before climbing the Roman Wall (the route's steepest section) and crossing the flat summit plateau to the true summit.",
+  "moves": []
+ },
+ {
+  "id": "wa_mount_baker_coleman_headwall",
+  "beta_new": "From a Coleman Glacier camp, climb a lower section of firm steep snow (up to 50°) onto an upper 800-foot band of ~60° ice, crossing two bergschrunds along the way; conditions and exact line vary by year and can involve up to a dozen or more short ice pitches.",
+  "moves": []
+ },
+ {
+  "id": "wa_mount_baker_easton_glacier",
+  "beta_new": "The glacier itself is moderately angled with one steeper section on the Roman Wall just below the summit plateau.",
+  "moves": [
+   {
+    "to": "approach",
+    "action": "covered",
+    "from": "From the Park Butte/Schriebers Meadow trailhead, approach through forest and meadow, then follow the Railroad Grade lateral moraine up to the toe of the Easton Glacier. "
+   }
+  ]
+ },
+ {
+  "id": "wa_mount_baker_north_ridge",
+  "beta_new": "From a Coleman Glacier camp, ascend the west slope of the North Ridge, then continue up the ridge as it steepens below an ice wall at about 9,600 ft — the route's crux, offering left, center, or right-side options through the serac band (the right side involves 70-80° ice with semi-hanging belays). Above the ice wall, moderate snow leads to the summit plateau.",
+  "moves": []
+ },
+ {
+  "id": "wa_mount_baker_park_glacier_headwall",
+  "beta_new": "Glacier travel with crevasse rescue below a steep ice headwall. Longest climb of the northern approaches. From Camp Kiser, primitive boot path leads to Park Glacier and climbing terrain. High exposure with extensive glacier and numerous crevasses. 100+ km² of glaciers and permanent snowfields; iciest mountain in Cascade Range.",
+  "moves": []
+ },
+ {
+  "id": "wa_mount_baker_squak_glacier",
+  "beta_new": "A moderate glacier climb from the same general trailhead area as Easton Glacier but via the Scott Paul Trail and a separate high camp; skirts the rock Prow and traverses toward Sherman Crater rim before finishing on the Easton/Roman Headwall line to the summit.",
+  "moves": []
+ },
+ {
+  "id": "wa_mount_ballard_south",
+  "beta_new": "Mount Ballard's south side is a Class 3 scramble from a camp at the old Azurite Mine on Mill Creek. Above camp the climb is steep, rocky ground with two cruxes: a band of brush low on the mountain and, higher up, picking the gully that actually leads to the summit block, where a few short steps need hands. The higher of Ballard's two summits is the southern one. The east ridge from the Slate Creek side is a separate, harder line described under its own approach.",
+  "moves": [
+   {
+    "to": "approach",
+    "action": "covered",
+    "from": " The approach is the hard part: about six miles up Canyon Creek on trail that is washed out in places past Boulder Creek, then roughly five miles on the Mill Creek trail, most of it buried in slide alder and deadfall."
+   }
+  ]
+ },
+ {
+  "id": "wa_mount_barnes_scramble",
+  "beta_new": "There is no maintained trail on Mount Barnes itself. Parties reach it either along the Bailey Range crest from the Sol Duc to a camp near Bear Pass, or via the long Elwha River Trail to a camp in or near Elwha Basin, then leave the trail entirely and travel cross-country up open slopes/heather benches toward the summit ridge, following the class 2 line. No rope or rack is used on the standard line; the challenge is routefinding and the length/remoteness of the approach, not technical difficulty.",
+  "moves": []
+ },
+ {
+  "id": "wa_mount_bigelow_tribute_to_richard",
+  "beta_new": "Recorded by its first-ascent party only as a new, relatively short route on the East Face of Mt Bigelow, climbed at 5.10c on August 23, 2011. No pitch count, protection details, or topo are available.",
+  "moves": []
+ },
+ {
+  "id": "wa_mount_blum_south_ridge",
+  "beta_new": "From the Baker River Trailhead, cross the Baker River suspension bridge and leave the maintained trail near Blum Creek to pick up a faint, flagged climbers' path through dense valley brush and forest, gaining the crest of a rib around 3,300 ft and following it up to the Blum Lakes basin at treeline. From the lakes, climbers traverse counter-clockwise around the upper lake, ascend a steep snow gully/couloir into a snow bowl below the south ridge, cross scree, and follow class 3 (with an exposed class 4 bypass some parties encounter near a notch) blocky ridge terrain to the broad summit plateau. A grassy ledge trending right from the upper snowfield toward the southwest ridge is reported as one of the easier finishes; parties who stray onto the exposed east face have hit sustained class 4 terrain.",
+  "moves": []
+ },
+ {
+  "id": "wa_mount_buckindy_scramble",
+  "beta_new": "The standard (and only non-technical) line on Buckindy climbs class 4 terrain on the north slopes, close by glacier remnants on the mountain's north and east flanks. Separate class 5 rock climbing exists on the southwest-facing 'Buckindy Crags,' outside the scope of this standard scramble route.",
+  "moves": [
+   {
+    "to": "approach",
+    "action": "covered",
+    "from": " There is no maintained trail to the peak itself — parties reach it via a multi-day, largely cross-country ridge traverse, most commonly starting from the Green Mountain Trailhead to the south via Suiattle River Road, or alternatively via the Kindy Ridge climbers' trail off Cascade River Road to the north, following the connecting ridgeline of the Buckindy Range."
+   }
+  ]
+ },
+ {
+  "id": "wa_mount_cameron_standard",
+  "beta_new": "Mount Cameron is a remote, triple-summited peak well off any maintained trail. The standard way up is a long, mostly-easy ridge scramble gained from Cameron Pass via the Grand Pass/Badger Valley trail system out of Obstruction Point (or, on a longer approach, via Deer Park and the Cameron Creek Trail). From the pass, climbers leave the trail and follow the broad ridge, crossing numerous false summits on mostly Class 1-2 terrain to the true summit; the Class 3-4 spots come only for parties who continue the traverse along the crest to Cameron's other tops. Remnant patches of the Cameron Glaciers and old snow can linger on the ridge's north side into mid-summer.",
+  "moves": []
+ },
+ {
+  "id": "wa_mount_challenger_challenger_glacier",
+  "beta_new": "The route gains the glacier via Easy Ridge or Wiley Ridge, then traverses moderate snowfields, crosses a bergschrund, and finishes with a Class 5 rock pitch on the summit horn. Fixed anchors exist for protection and rappels. The route sees relatively stable conditions July through early September; later season snowbridge degradation can make the bergshrund impassable.",
+  "moves": [
+   {
+    "to": "approach",
+    "action": "covered",
+    "from": "Access via Hannegan Pass or Big Beaver Creek trailheads with multi-day approach through remote wilderness. "
+   }
+  ]
+ },
+ {
+  "id": "wa_mount_chaval_scramble",
+  "beta_new": "Classified a 'Basic Alpine' climb, roughly 10 miles round trip with about 4,600 ft of elevation gain from the historic Grade Creek Road trailhead; a detailed account of a camp-based west-ridge/northwest-face variation logged 14 miles and 6,400 ft round trip. The crux is not technical difficulty but the arduous, often overgrown approach; the final few hundred feet to the summit involve a steep snow ramp/gully flanked by rock bands, commonly climbed with an ice axe and crampons in early-to-mid season.",
+  "moves": []
+ },
+ {
+  "id": "wa_mount_christie_west",
+  "beta_new": "This is a remote, multi-day approach-plus-climb rather than a roadside route. Crampons and axe are used on the couloir to a north-ridge saddle (~5,600 ft), then the route dips down to and ropes up across the Christie Glacier (steep enough in places that parties rope up even without visible crevasses). A high col just left (east) of the true summit has been reported as unexpectedly difficult — a chossy, eroded, sometimes-overhanging short cliff with a rotten, exposed ledge traverse (class 4) — harder than it used to be, with at least one large rockfall changing the crux between recent seasons. Above the col, dense krummholz gives way to the southeast summit ridge for class 2-3 scrambling to the top.",
+  "moves": [
+   {
+    "to": "approach",
+    "action": "covered",
+    "from": " Parties backpack in via the North Fork Quinault River Trail to Low Divide, then continue cross-country past Martins Park to the base of a couloir on Christie's north side."
+   }
+  ]
+ },
+ {
+  "id": "wa_mount_clark_standard",
+  "beta_new": "From Upper Royal Basin, ascend heather/talus to the moraine rim, drop to snowfields and climb to the ~6,900 ft col between Clark and Mount Johnson. From the col, ascend talus to the cliff base and skirt right on a wide, low-angle (Class 2) southwest-facing ledge — exposed-looking but easy. Where the cliffs split into a Y-shaped gully, go straight up to a boulder then right to a notch on the SE ridge (Class 2-3), descend the ridge to an east ledge via a diagonal crack system (Class 3, exposed but solid), follow the ledge north, then climb a loose gully (Class 3) to a dihedral ramp (Class 4, or a Class 3 broken face alternative on the left) and finally a shallow slot through the north face of the summit block (Class 3-4, good holds). Route-finding is the main difficulty; published descriptions are described by multiple parties as sketchy, and several climbers have produced their own route sketches after the fact.",
+  "moves": [
+   {
+    "to": "descent",
+    "action": "covered",
+    "from": " Descend by reversing the route with one short rappel off the summit block."
+   }
+  ]
+ },
+ {
+  "id": "wa_mount_claywood_standard",
+  "beta_new": "Claywood has no maintained summit trail. This line starts at Obstruction Point and follows the Grand Pass Trail over Grand Pass, down into Cameron Basin and steeply up over Cameron Pass, then drops into Lost Basin at the head of the Lost River below Lost Pass. From Lost Pass (5,570 ft) the route leaves the trail and heads west-southwest over heather benches, talus and loose shale to the 6,836 ft summit. It is often combined with Lost Peak, Mount Fromme or Sentinel Peak from the same camp. The southern way in, a long valley walk up the Dosewallips to Dose Meadows and then the short, very steep path to Lost Pass, reaches the same pass.",
+  "moves": []
+ },
+ {
+  "id": "wa_mount_constance_west_arete",
+  "beta_new": "From Crystal Pass (base of the West Arête), begin a rising traverse on the right side of the ridge crest at ~10:30 AM (typical timing). Terrain involves fairly broken Class 2 and 3 with occasional 4th or low 5th steps. Bypass towers via a ledge on the right side. Reach the crux step on the arête proper—traverse up and right on a groove (5.4), clip existing pitons, move straight up (5.4) then back left to a small alcove below a chimney. Anchor and ascend the chimney leftward to a sloping ledge, then traverse left to easier ground. Continue to ridge crest with talus climbing above, then cross to east side following the standard route descent to summit horn.",
+  "moves": []
+ },
+ {
+  "id": "wa_mount_crowder_northeast_ridge",
+  "beta_new": "Downclimbed from Crowder's summit toward Pickell Pass in 2012, the ridge is a winding line of grassy 3rd class ledges with an occasional 4th class move and one or two short 5th class downclimbing moves — slow, tedious going where a slip is not an option. A several-hundred-foot-long chasm (possibly a fault) cuts across the lower ridge, and the party ultimately had to find a break in a final cliff band and a scree slope to reach Pickell Pass; one partner chose to rappel sections that the other downclimbed.",
+  "moves": []
+ },
+ {
+  "id": "wa_mount_crowder_southwest_route",
+  "beta_new": "Once through the approach, the SW Flank itself is a moderate 3rd/4th-class scramble on open slopes and ledges to the summit — no technical rock climbing required.",
+  "moves": [
+   {
+    "to": "descent",
+    "action": "covered",
+    "from": " Parties doing a standalone ascent typically descend the way they came; parties continuing a larger Pickets traverse instead descend the far more serious NE Ridge toward Pickell Pass."
+   }
+  ]
+ },
+ {
+  "id": "wa_mount_cruiser_nw_face_corner",
+  "beta_new": "A 5.7 trad route (multi-grade string '5.7 / 5a / 15 / V+ / 13 / MVS / 4b') with a PG13 hazard rating, indicating some sparse/serious protection; detailed pitch-by-pitch beta has not been published anywhere accessible, unlike the well-recorded South Corner.",
+  "moves": []
+ },
+ {
+  "id": "wa_mount_cruiser_south_corner",
+  "beta_new": "From a high camp at Flapjack Lakes (or Mildred Lakes), climbers traverse toward Gladys Divide, ascend a snow/scree gully to Needle Pass, and follow a boot-marked but exposed Class 3 ridge crest north to the base of Mt. Cruiser's south side. A Class 4 gully leads past the cannon-hole chockstone to a platform, and from there a short low-5th-class face pitch, protected by small cams/nuts plus a bolt and reportedly an old piton partway up, reaches a bolted belay on the ridge crest; an easy but very exposed ridge-crest pitch then reaches the true summit. Rock quality is good for the Olympics but protection is sparse and runout in places.",
+  "moves": []
+ },
+ {
+  "id": "wa_mount_custer_standard",
+  "beta_new": "This is the most frequently ascended route. Start from Ouzel Lake (~5,700 ft) and head eastward up the west slopes, which are semi-open initially and transition to alpine terrain around 6,200 ft. Minor cliffbands require Class 3 scrambling to navigate around. Climb to the obvious SW basin (~7,700 ft), continue to the 8,260-ft notch immediately south of the summit, then traverse the final chossy South Ridge to the summit. The peak is known for exceptionally loose, fractured volcanic rock throughout.",
+  "moves": [
+   {
+    "to": "descent",
+    "action": "covered",
+    "from": " Descent is more technical than ascent and may require roped sections."
+   }
+  ]
+ },
+ {
+  "id": "wa_mount_dana_scramble",
+  "beta_new": "Mount Dana is a class 2 scramble with no pitch-by-pitch detail published. The line with a described approach leaves the Elwha Basin way trail beyond Happy Hollow, climbs steeply north through brush and timber to the ridge joining Mount Barnes and Mount Wilder, and follows that crest high, past Wilder, to Dana's summit. Treat it as a route-finding, self-sufficient objective rather than a beta-rich one.",
+  "moves": []
+ },
+ {
+  "id": "wa_mount_deception_standard",
+  "beta_new": "Approach via Upper Dungeness Trailhead. Follow Upper Dungeness Trail 1 mile to Royal Basin Trail junction. Continue about 6 more miles to Royal Lake (5,100 ft; 7.2 miles from the trailhead) and 0.8 miles more to Upper Royal Basin (5,600 ft). From Upper Basin camp, climb southwest over glacial moraine ~1 mile to base of northeast face. Ascend steep slope (30-50 degrees) to ridge crest, then follow ridge to summit. Class 2-3 scrambling with extreme loose rock. 5+ hours from camp. Helmet mandatory. Descent reverses route with rockfall watch.",
+  "moves": []
+ },
+ {
+  "id": "wa_mount_despair_east_route",
+  "beta_new": "This is the peak's normal route and the line most parties use, climbed via the Despair Lakes basin and the southeast face. Terrain ranges from 3rd-class scrambling on the lower face to short sections of low-5th-class rock (to about 5.0) on the final summit block, including a vertical dihedral typically protected and climbed with a half-length rope. The bigger challenge is the approach itself: a long, remote, largely off-trail traverse over two passes with real route-finding difficulty and brush.",
+  "moves": []
+ },
+ {
+  "id": "wa_mount_despair_northeast_buttress",
+  "beta_new": "The route climbs the northeast buttress of Mt. Despair's north summit, starting low in the green, rugged Goodell Creek valley. It opens with roughly 1,300 ft of 5.6 climbing up an open-book corner on the lower buttress, followed by scenic but progressively technical scrambling over a series of notches that require short rappels to pass. The crux is a deep cleft (several hundred feet) near the top of the upper buttress; the first-ascent party found a 70m, 5.9 pitch up a right-trending ramp through it after judging the opposite wall too steep, loose, and hard to access. A shorter technical pitch and more moderate climbing follow, then a final 70m steep rock pitch gains the upper north ridge, which is followed via a snow ridge to the summit. It is technically rewarding, but the good climbing is reached only through serious effort over rough, unpleasant ground.",
+  "moves": []
+ },
+ {
+  "id": "wa_mount_ellinor_standard",
+  "beta_new": "From the upper trailhead the trail climbs almost immediately via stacked switchbacks for about 0.3 mile before merging with the longer lower-trailhead trail at roughly 3,900 ft. From there it continues at a steady, 'character-building' grade through forest, breaks out of the trees into rock-strewn slopes and gravelly meadows, passes through a notch, and finishes with a short scramble to the true summit. It is a non-technical trail/scramble (no rope or rack needed in summer conditions) but is consistently steep with minimal flat ground. This is the standard, most direct route.",
+  "moves": [
+   {
+    "to": "approach",
+    "action": "covered",
+    "from": "; a longer alternative starts from the lower trailhead (2,600 ft, no fee) and joins the same trail at the 3,900 ft merge point"
+   }
+  ]
+ },
+ {
+  "id": "wa_mount_fairchild_standard",
+  "beta_new": "Mount Fairchild is the second-highest peak in the Bailey Range. Both ways in involve significant glacier travel with crevasse hazards and require proper alpine mountaineering skills. The peak stands at the head of Fairchild Creek with the Fairchild Glacier on its east slope.",
+  "moves": [
+   {
+    "to": "approach",
+    "action": "add",
+    "value": "A second way in leaves from the Elwha River and crosses over Mount Fitzhenry, instead of using the High Divide approach via Sol Duc and Mount Carrie.",
+    "from": " and is accessed via two primary routes: (1) the High Divide approach via Sol Duc and Mount Carrie, or (2) from the Elwha River over Mount Fitzhenry"
+   }
+  ]
+ },
+ {
+  "id": "wa_mount_fernow_southeast_face",
+  "beta_new": "The standard route follows the Phelps Creek Trail to Leroy Basin, then goes cross-country north across a ridge saddle, descends roughly 700-1,000 ft to cross a small glacier/snowfield beneath Fernow's north/east side (informally called Gloomy Glacier), then climbs loose gullies and ridge terrain to a saddle south of the summit before a short, exposed scramble to the top. It is generally rated Class 3-4 with brief class 5 moves reported near the summit, and is one of the longer, more remote scrambles among Washington's highest peaks. Alternate approaches exist via the Entiat River/Cottonwood trailhead (less avalanche exposure, favored in winter) and via the Holden Village ferry and Copper Creek/east ridge.",
+  "moves": []
+ },
+ {
+  "id": "wa_mount_ferry_standard",
+  "beta_new": "No maintained trail reaches Mount Ferry. The peak's easiest line is rated class 2 hiking and is approached entirely off-trail, staged from a camp at Ferry Basin (also called Ferry Glacial Lake or Ice Lake) in the cirque of the now-vanished Ferry Glacier. Nearly all ascents happen mid-traverse on the classic Bailey Range Traverse, a remote, mostly-unmarked alpine route connecting the Sol Duc and Elwha drainages.",
+  "moves": []
+ },
+ {
+  "id": "wa_mount_formidable_south_face",
+  "beta_new": "Starting from Spider-Formidable Col (7,380 ft), this route descends east then contours across the south and southeast faces via a system of ledges and slabs. Multiple gullies offer access; climbers must identify the correct gully system to summit as other lines lead to false summits or dead ends. The route involves steep, exposed fourth and low fifth-class scrambling with loose rock throughout, typically requiring a rope and protection. This is the primary summit route and only practical descent.",
+  "moves": []
+ },
+ {
+  "id": "wa_mount_fury_east_north_buttress",
+  "beta_new": "The route rises straight out of Luna Cirque above Lousy Lake on the north side of Fury, starting from around 5,600 ft near the cirque floor. Begin on steep snow, then work into a couloir system - a bergschrund at the base often forces a rock bypass, and in late season that bypass has been reported as dirty 5.6 - and follow it toward the buttress crest, crossing snowfields exposed to rockfall from hanging glaciers above. Higher up, snow, rock and moats alternate and the route-finding is tricky, with protection not always where you want it; near the crest a slabby step of about 5.9 is the technical crux, after which an airy but easier traverse around the right side of the ridge leads to a snow arete running to the summit. One party reached the ridge crest in about 4.5 hours from a camp at 4,000 ft in Luna Cirque. Alan Kearney, who repeated it in September 1992 with Mark Price, noted that the late season made for much more rock climbing down low, since Beckey and Davis in July 1962 climbed a lot of snow and avoided most of the rock.",
+  "moves": []
+ },
+ {
+  "id": "wa_mount_fury_east_southeast_glaciers",
+  "beta_new": "This is the standard approach to East Fury via Luna Peak traverse. The route is not technical climbing in the traditional sense but requires solid alpine skills, glacier travel proficiency, and exposure management on exposed scrambling. The terrain is predominantly Class 3–4 scrambling with one short Class 5.0 rock step (~25 feet, unroped passage is feasible). The glacier ascent is the crux: moderate 30–40 degree slopes steepen to 50+ degrees near summit with a large bergschrund requiring direct ascent. Route finding is straightforward following the ridge line and glacier, though descent via alternate terrain saves significant time over ascent route. Weather deterioration is the primary hazard—morning fog/clouds common at Luna Pass, clearing by midday.",
+  "moves": []
+ },
+ {
+  "id": "wa_mount_goode_northeast_buttress",
+  "beta_new": "Grade III-IV alpine rock route with 5.4-5.5 climbing. Approach via 10-mile PCT descent to Bridge Creek junction, then 3-4 miles up North Fork Bridge Creek to base camp. Route ascends the Northeast Buttress with glacier travel, scrambling (3rd-4th class), and rock pitches up to 5.5. Total trip: 3-4 days recommended.",
+  "moves": []
+ }
+]

@@ -1,0 +1,309 @@
+[
+ {
+  "id": "va_lower_god_s_area_assemblage_point",
+  "beta_new": "Begin beside a grungy-looking crack on its left, then work up the slab with four bolts.",
+  "moves": []
+ },
+ {
+  "id": "va_lower_god_s_area_vanishing_act",
+  "beta_new": "Ascend the conspicuous grey buttress, clipping seven or eight bolts to the anchors.",
+  "moves": []
+ },
+ {
+  "id": "va_mae_day",
+  "beta_new": "Begin under the roof's right-hand portion at the foot of a large corner, pull out the roof with an undercling (a stick clip helps with the first bolt), then tiptoe up delicate moves ending in a brief crack.",
+  "moves": []
+ },
+ {
+  "id": "va_mosaic",
+  "beta_new": "Start atop some blocks beneath a shallow corner that leans leftward, follow it until it finishes, then head upward and rightward to the anchors.",
+  "moves": []
+ },
+ {
+  "id": "va_oh_my_god_dihedral",
+  "beta_new": "Climb a short crack of about fifteen feet to a comfortable ledge at the foot of the main corner and belay there.\n\nThen climb the huge corner above.",
+  "moves": [
+   {
+    "to": "rack",
+    "action": "covered",
+    "from": "carry every cam size from one to four inches"
+   }
+  ]
+ },
+ {
+  "id": "va_pincer_perfect",
+  "beta_new": "Follow Crab Walk's lower portion up to its horizontal crack, then fire up the wall with four bolts; the protection is a mixture of gear and bolts.",
+  "moves": []
+ },
+ {
+  "id": "va_praying_mantle",
+  "beta_new": "Past the second bolt, keep to the right of the big flake and go directly up the wall, passing a succession of little flakes toward slings threaded through fixed pins.",
+  "moves": []
+ },
+ {
+  "id": "va_scared_seamless",
+  "beta_new": "Ascend the slab beside the ledge's left end, clipping a pair of bolts en route to a flake; stay on the flake, clip one further bolt and set up the belay on slings.",
+  "moves": [
+   {
+    "to": "rack",
+    "action": "add",
+    "from": "A handful of small nuts and cams helps.",
+    "value": {
+     "rows": [
+      {
+       "item": "Nuts",
+       "sizes": "small"
+      },
+      {
+       "item": "Cams",
+       "sizes": "small"
+      }
+     ],
+     "text": "A handful of small nuts and cams."
+    }
+   }
+  ]
+ },
+ {
+  "id": "va_sunset_gun",
+  "beta_new": "Muscle up a brief corner leaning leftward, blast across a bulge, and bear right to the anchors.",
+  "moves": []
+ },
+ {
+  "id": "va_super_sunset_crack",
+  "beta_new": "Follow the slender crack slanting leftward to the anchors; technical and strenuous.\n\nCarry a handful of little cams (roughly half an inch to an inch) for the start and the end, as placements are scarce at the crux, where the seam seals shut.",
+  "moves": [
+   {
+    "to": "rack",
+    "action": "copy",
+    "from": "Carry a handful of little cams (roughly half an inch to an inch) for the start and the end",
+    "value": {
+     "rows": [
+      {
+       "item": "Cams",
+       "sizes": "0.5 to 1 in"
+      }
+     ],
+     "text": "A handful of little cams, roughly half an inch to an inch."
+    }
+   }
+  ]
+ },
+ {
+  "id": "va_thar_she_blows",
+  "beta_new": "Boulder through sporty moves from a short corner up to bolt one (a lengthy stick clip, or gear in the neighbouring Crab Walk flake, can help), then continue to a horizontal break, clip three more bolts, and step left to finish across a flake then slab.",
+  "moves": []
+ },
+ {
+  "id": "va_the_ally",
+  "beta_new": "From the right part of the raised ledge on the face's left side, go by a bolt toward a pin set in an angled seam, pass a flake and reach a second bolt, then take the face with two more clips to the top.",
+  "moves": []
+ },
+ {
+  "id": "va_the_eagle_s_gift",
+  "beta_new": "Begin in a short corner opening rightward, then meander up the face clipping four widely spaced bolts.",
+  "moves": []
+ },
+ {
+  "id": "va_the_latest_trick",
+  "beta_new": "Tackle the very thin central stretch of the wall with four bolts to a horizontal break, then clip a fifth bolt and continue to the top.",
+  "moves": []
+ },
+ {
+  "id": "va_the_streak",
+  "beta_new": "Use the good holds beside the streak, then shift left toward anchors above a big ledge.",
+  "moves": []
+ },
+ {
+  "id": "va_the_unchained",
+  "beta_new": "On the right part of the gentle buttress, tackle a few difficult moves to reach bolt one (or stick-clip it), after which a much easier flake leads to the anchors.",
+  "moves": []
+ },
+ {
+  "id": "va_the_untamed",
+  "beta_new": "Climb the centre of the face clipping three bolts, and complete the route via a flake to the anchors; carry a slim rack of tiny wires and cams, mainly for the start and the end.",
+  "moves": [
+   {
+    "to": "rack",
+    "action": "copy",
+    "from": "carry a slim rack of tiny wires and cams, mainly for the start and the end",
+    "value": {
+     "rows": [
+      {
+       "item": "Nuts",
+       "sizes": "tiny"
+      },
+      {
+       "item": "Cams",
+       "sizes": "tiny"
+      }
+     ],
+     "text": "A slim rack of tiny wires and cams."
+    }
+   }
+  ]
+ },
+ {
+  "id": "va_whale_s_lip_crab_walk",
+  "beta_new": "Start as Thar She Blows does but bear right straight away to the evident flake, climb it to the horizontal break, then follow that break far across to the right until slab climbing takes you to the top.",
+  "moves": [
+   {
+    "to": "rack",
+    "action": "add",
+    "from": "Carry a middling rack of mostly smaller protection.",
+    "value": {
+     "rows": [
+      {
+       "item": "Protection",
+       "sizes": "mid-sized rack, mostly smaller pieces"
+      }
+     ],
+     "text": "A mid-sized rack, mostly smaller pieces."
+    }
+   }
+  ]
+ },
+ {
+  "id": "va_z_slash",
+  "beta_new": "Climb the face while roughly tracing the lightning-bolt-shaped crack system, with a vicious move leaving the horizontal.",
+  "moves": []
+ },
+ {
+  "id": "rainier_north_mowich_headwall",
+  "beta_new": "Grade IV, WI3 Moderate Snow. Steep hourglass rock/ice section (40-50 ft), ~45° snow slope, 5th class rock band, ~4,000 ft of climbing from the bivy to Liberty Cap. Rockfall hazard (climb early). Crevasses, avalanche debris. Two-day approach recommended. Best June-August.",
+  "moves": [
+   {
+    "to": "bivy",
+    "action": "add",
+    "from": "Bivouac at 9,600 ft between North Mowich and Edmunds Glaciers.",
+    "value": {
+     "name": "High bivy between the North Mowich and Edmunds glaciers",
+     "elev": 9600,
+     "type": "bivy",
+     "notes": "The usual bivouac before the headwall, on the divide between the two glaciers."
+    }
+   }
+  ]
+ },
+ {
+  "id": "wa_a_little_something",
+  "beta_new": "Short, straightforward climbing to a bolted anchor.",
+  "moves": []
+ },
+ {
+  "id": "wa_a_servant_to_liberty",
+  "beta_new": "Follows Freedom or Death for its first three pitches (5.10, 5.11, 5.11), then takes a right-leaning overlap (P4, 5.12-) into a traverse with layback flakes and a mantle (P5, 5.12-), an arete with a big hand-rail traverse (P6, 5.12), a 165 ft 'mega slab' pitch with 14 bolts and 4 crux moves (P7, 5.12+), and a razor-thin slab crux (P8, 5.13-) before easing off through P9-P11 (5.10-5.10+).",
+  "moves": []
+ },
+ {
+  "id": "wa_abernathy_peak_north_ridge",
+  "beta_new": "Rather than the popular Scatter Lake approach, this line reaches Abernathy from Gardner Meadows to the north, climbing a spur ridge from a small tarn onto the main north ridge, then scrambling the crest — weaving around or over gendarmes — to the top. Route-finding is loose and 'pick-your-own-adventure' in spots; parties report it as noticeably harder and slower than the standard route.",
+  "moves": []
+ },
+ {
+  "id": "wa_accendo_lunae_lib_west_face_var",
+  "beta_new": "The standard Let It Burn line covers P1-P4 and most of P5; two further pitches (5.12- and 5.11-) then lead into the West Face finish. P1 (5.8): ramp to a thin splitter crack, tree belay. P2 (5.10+): another brief splitter; shift left to a second belay at a tree. P3 (5.12-): a few 5.10 cracks go past a 5.11 slot, where the old fixed pin has been removed and a good cam placement remains; the crux is two bolts while moving left; belay at a two-bolt anchor. P4 (5.11a): a crack in hands and fingers leads to knobs and then a double crack; belay at a bolt and a fixed pin. P5 (5.11+): a flaring crack turns into a lieback; belay on 1\" gear at a bench that trends right. P6 (5.12-): a hard flake/crack sequence; belay in the chimney to the right of a razor flake. P7 (5.11-): go up a tips V-slot, reaching a roof, then a corner. P8 (5.11+): hand crack to a roof. P9 (5.10): chimneys that overhang lead to a big ledge. P10 (5.6): 300 feet of easy ground to the summit.",
+  "moves": []
+ },
+ {
+  "id": "wa_action_potential",
+  "beta_new": "Eight pitches of flakes and cracks of all sizes — including a fun roof-pull/lieback P1, a finger-crack P2, a steep lichen-covered finger-crack crux P3 (5.10c), 4th-class terrain, a fun chimney P5, a poor-rock corner P6, a heads-up, minimal-gear P7 (5.10), and rambling 5.7 terrain to the summit — make for a varied, tough outing that tests route-finding as much as climbing.",
+  "moves": [
+   {
+    "to": "approach",
+    "action": "covered",
+    "from": "From Burgundy Col, the route starts below a clean splitter flake a few minutes below the col."
+   }
+  ]
+ },
+ {
+  "id": "wa_agnes_mountain_south_ridge",
+  "beta_new": "Described as the recommended route: gain Asa Peak's Northeast Ridge, traverse to Agnes's south ridge, and climb short technical sections up to 5.6-5.8. From a high camp near Icy-Spruce Pass, parties make a rising traverse over snow, talus, and slabs to the south ridge crest south of Point 7760, then rope up and climb Class 4-5 rock over several pitches, on or to the left of the crest. Where the crest gets too craggy, downclimb one pitch to a ledge system and traverse to a whaleback with views of the summit block. From the 7,480-ft south col, traverse a high snowpatch and ascend a broad Class 2-3 ramp just left of a snow-filled gully, dog-legging right to a headwall; a 5.8 chimney (the crux) and one more roped pitch lead to a final ~100-ft Class 2-3 scramble to the summit.",
+  "moves": []
+ },
+ {
+  "id": "wa_ahoot",
+  "beta_new": "Bolts lead to a summit anchor; often used as an intro multi-pitch route since it can also be toproped in one long stretch with a 60m rope.",
+  "moves": []
+ },
+ {
+  "id": "wa_alice_in_wonderland",
+  "beta_new": "From the top of Summertime P1, continue up a seam/crack with small gear, then move up and right past a flake with bolts and over a roof (5.11c) to the anchor.",
+  "moves": []
+ },
+ {
+  "id": "wa_alpine_lookout_round_mountain_trail",
+  "beta_new": "The standard and shortest approach to Alpine Lookout starts at the Round Mountain Trailhead off FR 6910 east of Stevens Pass. Round Mountain Trail #1529 climbs steeply for about the first 1.6 miles through forest and an older burn area, then joins Nason Ridge Trail #1583. The trail undulates along the crest of Nason Ridge, crosses the exposed 'Ninemile Saddle' knife-edge around mile 4.5, and a final 0.3-mile summit spur leads to the staffed fire lookout at 6,237 ft. A longer alternative approaches from the west via Merritt Lake Trail #1588 to Nason Ridge Trail #1583 (about 11.5-12 miles one-way between trailheads, ~4,400 ft gain from that side), used mainly for through-hikes or when the Round Mountain side is inaccessible.",
+  "moves": []
+ },
+ {
+  "id": "wa_alta_mountain_scramble",
+  "beta_new": "From the Rachel Lake / Lila Lake trail junction, an unsigned 'climber's path' marked by a cairn leaves the maintained trail and climbs Alta Mountain's south ridge. The initial section is steep with loose rock and large steps and no shade; the grade then moderates onto a knife-edge ridge with sustained exposure. There are several class 2-3 moves, at least one 6-8 ft near-vertical step with good holds but serious exposure, a class 3 downclimb crux near the top, and multiple false summits before the true summit is reached. The route is non-technical (no rope typically used) but is exposed enough to be unsuitable for anyone uneasy with heights or for dogs.",
+  "moves": []
+ },
+ {
+  "id": "wa_amphitheater_mountain_west_route",
+  "beta_new": "From Upper Cathedral Lake, follow a boot path southeast onto the west ridge/basin, then hike scree and grassy slopes northeasterly into a basin around 8,000 ft before a final walk to the summit. Alternatively, from the Cathedral Peak side a gully/col can be used to reach the same upper basin. The route is Class 2 throughout, with brief Class 3 sections depending on line choice; no rope or technical gear is used by most parties. Frequently combined with Cathedral Peak (Class 3, about one mile away) on the same trip. The true (south) summit has one short mantle move onto a block; otherwise it's a walk.",
+  "moves": []
+ },
+ {
+  "id": "wa_argonaut_peak_east_ridge",
+  "beta_new": "Climbs the southeast ridge in about eight pitches up to 5.6 to the southeast spire, a false summit and the lowest of Argonaut's three summits, then carries on to the true summit on the west spire. The lower pitches are blocky and awkward, carry a lot of lichen and are somewhat hard to protect. The line includes two single-rope rappels, or one double-rope rappel, into the notch. The main summit needs a short, non-exposed Class 4 move to its highest block after Class 3 ridge traversing.",
+  "moves": [
+   {
+    "to": "approach",
+    "action": "conflict-resolved",
+    "from": "The Colchuck Col side is the better way to the base; the Ingalls Creek side means a long, strenuous bushwhack.",
+    "evidence": "mountaineers.org Argonaut South Route (Beverly/Fourth Creek/Ingalls) + NW Arete (Colchuck col alternative); mountainproject.com/area/114795615 (south approach via Ingalls/Beverly, bushwhack above the Fourth Creek junction); WTA trip report 2024-09-23 (trail easy, 4300-5700 ft bushwhack tough). No source ranks Colchuck as better.",
+    "replace": false,
+    "value": "A second way in comes from Colchuck Lake over the Argonaut-Colchuck col. On the Ingalls Creek side the trails are easy to follow, but the off-trail climb above the creek is a tough bushwhack."
+   }
+  ]
+ },
+ {
+  "id": "wa_artic_rose",
+  "beta_new": "Well-bolted with good natural gear opportunities. Ideal first route on the crag. South-facing provides good sun exposure.",
+  "moves": []
+ },
+ {
+  "id": "wa_astral_projection",
+  "beta_new": "Bolted and naturally protected route with good flow. Ideal warm-up climb on the crag. South-facing with reliable protection points.",
+  "moves": []
+ },
+ {
+  "id": "wa_astroglide",
+  "beta_new": "Excellent mix of bolted anchors and natural protection points. Slab features positive holds and consistent climbing angle. South-facing receives good sun exposure.",
+  "moves": []
+ },
+ {
+  "id": "wa_asymptotic",
+  "beta_new": "Predominantly bolted with mixed trad protection. South-facing provides good sun exposure.",
+  "moves": [
+   {
+    "to": "rack",
+    "action": "covered",
+    "from": "Single 60m rope adequate."
+   }
+  ]
+ },
+ {
+  "id": "wa_austera_peak",
+  "beta_new": "From Eldorado camp, traverse the Inspiration Glacier to Klawatti Col, go through the col, then follow the north ridge beside the McAllister Glacier to a break at about 7,900 ft, where climbers rappel 75 ft down to the Klawatti Glacier. From there, about 150 ft of 4th and easy 5th class climbing takes you to the sub-summit; a further short pitch (roughly 50 ft of contrived low 5th class climbing on loose rock) on the summit tower reaches the true summit.",
+  "moves": []
+ },
+ {
+  "id": "wa_austera_peak_southwest_ridge",
+  "beta_new": "This is the standard route to Austera Peak, involving glacier travel through some of the most scenic terrain in the North Cascades. From Eldorado Camp, rope up early and traverse multiple glaciers, passing two major cols (one technical) before reaching the summit tower. Most of the route is scrambling and glacier travel with only minimal technical rock climbing.",
+  "moves": []
+ },
+ {
+  "id": "wa_bachelor_party",
+  "beta_new": "Vertical (crux) start with great bolt placement, transitioning into a slabby upper section.",
+  "moves": []
+ },
+ {
+  "id": "wa_bacon_peak_diobsud",
+  "beta_new": "This is a committing multi-day alpine objective requiring glacier travel, crevasse rescue skills, and strong route-finding ability. The route is accessed via heavily forested terrain with significant deadfall obstacles, followed by steep snow and glacier travel to a 6,250 ft saddle camp. The final summit push is relatively short from camp but requires careful navigation in potentially whiteout conditions. Expect to negotiate around cliff bands, navigate through avalanche terrain, and manage steep gully sections.",
+  "moves": []
+ }
+]

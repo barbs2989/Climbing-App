@@ -1,0 +1,260 @@
+[
+ {
+  "id": "wv_doer_not_a_critic",
+  "beta_new": "Begin where the low roof ends on its right, then follow the six bolts upward to the anchors.",
+  "moves": []
+ },
+ {
+  "id": "wv_dracula_aka_dracula_beach",
+  "beta_new": "Easy rock leads to a trio of bolts that lead leftward above a big, boxy roof; the line then bears left to anchors it shares with Muscle Beach.",
+  "moves": []
+ },
+ {
+  "id": "wv_dreams_of_white_horsts",
+  "beta_new": "The right flank of the brilliant white arete holds the hard part, protected by three bolts and ending at a stance with a well-earned rest. The upper half is easier but still enjoyable, with a bolt and a pin before the cold shuts.",
+  "moves": []
+ },
+ {
+  "id": "wv_early_retirement",
+  "beta_new": "Launch off boulders under the ceiling's right end, step up carefully to that lofty first clip, then angle left over the smooth orange wall to a stance with anchors.",
+  "moves": []
+ },
+ {
+  "id": "wv_exoduster",
+  "beta_new": "A flake that faces left, heavily chalked, begins the route, then pockets and slots lead to the anchors beneath the roof.",
+  "moves": []
+ },
+ {
+  "id": "wv_fearless_symmetry",
+  "beta_new": "Launch from a little boulder, take the right-hand edge of the small arete, then continue up the striped wall to the anchors.",
+  "moves": []
+ },
+ {
+  "id": "wv_fierce_face",
+  "beta_new": "This variation begins in a squat corner and angles left to the first bolt, then rises straight to the top clipping two bolts, then a pin.",
+  "moves": []
+ },
+ {
+  "id": "wv_fine_young_cannibals",
+  "beta_new": "The cave's left side offers a slim crack and a shallow corner with three bolts and some old pins up to cold shuts, which marks the lower grade. Three more bolts angle up toward the left and finish at the anchors above the cave lip.",
+  "moves": []
+ },
+ {
+  "id": "wv_fly_girls",
+  "beta_new": "Start just beside a large tree on its left, then move dynamically up the steep wall, clipping five bolts to the anchors.",
+  "moves": []
+ },
+ {
+  "id": "wv_free_flow",
+  "beta_new": "Stand on the flat block, pull the overhang, and follow the bolts leftward and upward to the anchors.",
+  "moves": []
+ },
+ {
+  "id": "wv_frosted_flake",
+  "beta_new": "Scramble across a ledge, then a block, to the small tree where the flake begins, then enjoy the lovely flake and crack, bypassing an overhang on its right and returning leftward to a ledge with anchors.\n\nThe second pitch works rightward into a corner, follows it briefly, then goes left onto the wall and climbs bulges to Summit Ledge.",
+  "moves": []
+ },
+ {
+  "id": "wv_g_diamond_point_this_sport_needs_an_enema",
+  "beta_new": "The opening is a slab with two bolts leading to a stance; four further bolts protect a mildly leaning orange wall and left-facing flakes, ending at anchors under a roof.",
+  "moves": []
+ },
+ {
+  "id": "wv_golden_escalator",
+  "beta_new": "Fifteen feet over from the big corner, a block starts you off, and three bolts protect the pocketed wall up to the anchors.",
+  "moves": []
+ },
+ {
+  "id": "wv_green_envy",
+  "beta_new": "Seven bolts protect the line, which goes through a low roof's left portion and then follows the face's center.",
+  "moves": []
+ },
+ {
+  "id": "wv_grit_and_bear_it",
+  "beta_new": "Step off the big ledgy block and ascend the center of the pale wall on five bolts to the anchors.",
+  "moves": []
+ },
+ {
+  "id": "wv_gun_lust",
+  "beta_new": "A dihedral leaning left leads you boulder-style to the far-off first bolt; steep moves then continue past three more to the lower-off.",
+  "moves": []
+ },
+ {
+  "id": "wv_harbinger_scarab",
+  "beta_new": "Work up the flake to bolt one, then follow nine more through the enormous roof and the bulging upper wall. Small cams or wires help at the start, and two ropes cut down drag.",
+  "moves": [
+   {
+    "to": "rack",
+    "action": "copy",
+    "from": "Small cams or wires help at the start, and two ropes cut down drag.",
+    "value": {
+     "rows": [
+      {
+       "item": "Cams",
+       "sizes": "small"
+      },
+      {
+       "item": "Wires"
+      },
+      {
+       "item": "Ropes",
+       "qty": 2
+      }
+     ],
+     "text": "Small cams or wires, and two ropes."
+    }
+   }
+  ]
+ },
+ {
+  "id": "wv_hidden_treasure",
+  "beta_new": "Start beneath the ledge, about twenty-five feet up, and climb past three bolts to reach it. Then blast up the steep wall that faces downstream, eight bolts in all, to the anchors.",
+  "moves": []
+ },
+ {
+  "id": "wv_high_test",
+  "beta_new": "Climb to the small ledge, optionally belaying, then step right and take the corner that faces left until you can shift right to discontinuous cracks. Cracks and a thin face lead to an overhang, after which the obvious corner (facing right) and a crack system run to the anchors.\n\nDouble ropes reduce drag, or you can break the route in half with a belay.",
+  "moves": [
+   {
+    "to": "rack",
+    "action": "copy",
+    "from": "Double ropes reduce drag, or you can break the route in half with a belay.",
+    "value": {
+     "rows": [
+      {
+       "item": "Ropes",
+       "qty": 2
+      }
+     ],
+     "text": "Double ropes."
+    }
+   }
+  ]
+ },
+ {
+  "id": "wv_hippie_dreams",
+  "beta_new": "Start from the right portion of a lower shelf and angle up and right, clipping seven bolts to the anchors.",
+  "moves": []
+ },
+ {
+  "id": "wv_homer",
+  "beta_new": "Start by the right end of a squat overhanging wall; scale up by bouldering to a solid jug, then crank across the bulge, following a crack.",
+  "moves": []
+ },
+ {
+  "id": "wv_homer_erectus",
+  "beta_new": "Start five feet over from a big corner-with-chimney combination and climb the wall, clipping nine bolts to the anchors.",
+  "moves": [
+   {
+    "to": "bolts",
+    "action": "copy",
+    "from": "clipping nine bolts to the anchors",
+    "value": 9
+   }
+  ]
+ },
+ {
+  "id": "wv_hydroman",
+  "beta_new": "Locate the bolt line thirty feet to the left of the big corner, pass through the roof, then continue upward and leftward to the anchors.",
+  "moves": []
+ },
+ {
+  "id": "wv_immaculate_combustion",
+  "beta_new": "Start in a squat corner facing right and angle left toward a bolt, continuing diagonally leftward to a ledge; finish directly up the white wall with one more bolt and a pin.",
+  "moves": []
+ },
+ {
+  "id": "wv_impact_zone_wasp_stop",
+  "beta_new": "Start in a blocky corner and climb the wall on the right up to a stance, then blast up the steep upper wall to the anchors, five bolts in all.",
+  "moves": []
+ },
+ {
+  "id": "wv_in_the_flat_field",
+  "beta_new": "Follow the main roof line as far as bolt seven, then cut left past three further bolts to the anchors.",
+  "moves": [
+   {
+    "to": "bolts",
+    "action": "copy",
+    "from": "Follow the main roof line as far as bolt seven, then cut left past three further bolts to the anchors.",
+    "value": 10
+   }
+  ]
+ },
+ {
+  "id": "wv_inflatable_forearms",
+  "beta_new": "Zigzag through thin, sustained moves along the green, right-hand part of that corridor, clipping four bolts to the anchors.",
+  "moves": []
+ },
+ {
+  "id": "wv_inject_the_venom",
+  "beta_new": "Start under the slim crack and head up twenty feet to a bolt, then keep following the crack beyond it to a corner that finishes the route.",
+  "moves": []
+ },
+ {
+  "id": "wv_intruder_alert",
+  "beta_new": "Start under the left pair of anchors, face climb past the overlap, then finish the knobby wall. A 5.7 variation begins on Alien Autopsy and moves left once past the overlap's right edge.",
+  "moves": []
+ },
+ {
+  "id": "wv_jeff_s_bunny_hop",
+  "beta_new": "Start just right of the Narcissus Cave and follow the wildly featured wall, clipping six bolts to the anchors.",
+  "moves": []
+ },
+ {
+  "id": "wv_jesus_and_tequila",
+  "beta_new": "Clip bolt one with a stick, then jump off the belay block from its right end and follow the curving arete, clipping nine bolts to the cold shuts.",
+  "moves": []
+ },
+ {
+  "id": "wv_journey_to_the_center_of_the_brain",
+  "beta_new": "Boulder up and to the left, reach a rest, then wander straight up the middle of the wall to the anchors.",
+  "moves": []
+ },
+ {
+  "id": "wv_le_futuriste",
+  "beta_new": "Boulder up to bolt one, step over to the right, and then work the arete's left edge, seven bolts altogether, to the anchors.",
+  "moves": []
+ },
+ {
+  "id": "wv_legacy",
+  "beta_new": "Start behind the tree and move up the wall toward the bolted crack, follow it through the roof, and drift a bit right to the lower-off. Traversing left above the roof gives a harder sequence ending at a different anchor.",
+  "moves": []
+ },
+ {
+  "id": "wv_likm",
+  "beta_new": "Start beneath the left part of the colorful wall and meander along the five-bolt line.",
+  "moves": []
+ },
+ {
+  "id": "wv_michelin_man",
+  "beta_new": "Eight bolts mark the line beside a large offwidth, going up rolling bulges of sandstone to the anchors.",
+  "moves": []
+ },
+ {
+  "id": "wv_mo_betta_holds",
+  "beta_new": "From a squat corner with blocks beneath it, follow six bolts out across the huge roof to the anchors.",
+  "moves": []
+ },
+ {
+  "id": "wv_modern_primitive",
+  "beta_new": "Tie in some twenty-five feet from the big offwidth, then go up four bolts to the anchors under a roof.",
+  "moves": []
+ },
+ {
+  "id": "wv_moon_child_posse",
+  "beta_new": "Begin beside a low ceiling and take the steep wall, with eight bolts, as it relaxes toward the anchors.",
+  "moves": [
+   {
+    "to": "bolts",
+    "action": "copy",
+    "from": "with eight bolts",
+    "value": 8
+   }
+  ]
+ },
+ {
+  "id": "wv_narcissus",
+  "beta_new": "Pull out through the roof at its left side, clipping six bolts to the anchors. The direct start begins farther left and adds difficult moves before it merges with the main route.",
+  "moves": []
+ }
+]
