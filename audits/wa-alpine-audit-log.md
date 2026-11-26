@@ -41143,3 +41143,53 @@ Flagged for human review:
 0 confirmed errors fixed, 1 flagged for human review, 7 clean. WebFetch was unavailable this run
 (DNS blocked for secondary-source domains, consistent with recent batches); relied on WebSearch
 snippets only. Next batch continues id-ascending from `wa_mesahchie_peak_west_ridge` (pass 9).
+
+## Batch 595 (2026-11-26, pass 9)
+
+Checked `wa_middle_peak_north_face` through `wa_monte_cristo_peak_standard_route_variation_1`
+(8 routes). 1 confirmed error fixed.
+
+Fixed (SQL in `audits/sql/2026-11-26-batch-595.sql`):
+- `wa_monte_cristo_peak_standard_route_variation_1` — `fa` spelled the first ascensionist
+  "James K. Keyes"; Wikipedia's Monte Cristo Peak entry (citing Beckey's Cascade Alpine Guide)
+  and this DB's own sibling route on the same peak, `wa_monte_cristo_peak_scramble` ("North Col"),
+  both give "James M. Keyes". Corrected the initial to match.
+
+Clean / no action needed:
+- `wa_middle_peak` (area) — `elevation_ft` 8185 and the summit coordinate (48.30639, -120.99403)
+  match ListsOfJohn's "Gunsight Peak" entry (8,184 ft LiDAR / 8,198 ft map, 48.30654/-120.99427)
+  almost exactly — LoJ tracks this as the single named summit of the Gunsight Range's three
+  sub-peaks (North/Middle/South), which Mountain Project lists separately; Middle Peak is
+  described there as the range's highest point, consistent with the coordinate match.
+- `wa_mixup_peak` (area) — `elevation_ft` 7440 matches the Peakbagger-sourced figure Wikipedia
+  cites for Mix-up Peak (other secondary sources give 7450-7460, within normal survey variance).
+- `wa_colchuck_balanced_rock` (area) — `elevation_ft` 8240 and coordinates (47.4914, -120.8188)
+  match Wikipedia/ListsOfJohn's LiDAR figure and 47°29'29"N 120°49'08"W exactly.
+- `wa_monte_cristo_peak` (area) — `elevation_ft` 7136 matches Wikipedia; FA "James M. Keyes and
+  W. Zerum — 1923" on `wa_monte_cristo_peak_scramble` matches Wikipedia/Beckey exactly.
+- `wa_south_early_winters_spire` (area) — `elevation_ft` 7807 and coordinates (48.512275,
+  -120.655395) match Wikipedia/SummitPost closely.
+- `wa_mojo_rising` — FA "Mark Allen, Tom Smith, Joel Kauffman, 2006" matches a 2006
+  cascadeclimbers.com first-ascent trip report by Mark Allen naming the same three climbers and
+  year (III 5.11 A1 then, later freed to the stored 5.11b).
+- `wa_milk_n_honey` — FA date (August 24, 2010) and two of three partners (Craig Rankin, Abe
+  Traven) corroborated by a cascadeclimbers.com trip report dated the same day; the report's
+  author (likely the third partner, "Thomas Ramier") refers to themself only as "myself," so
+  that name is uncontradicted but not independently confirmed.
+
+Checked but inconclusive (not flagged — no source contradicts the stored data, just none found
+to confirm it either):
+- `wa_middle_peak_north_face` FA "Doug Klewin and Dan McNerthney, December 1978" — no source
+  found either way.
+- `wa_mix_up_peak_east_face` FA "Wesley Grande and Jack Kendrick, 1947" — AAJ/Mountaineers hits
+  for Wes Grande place him on other 1948 Cascades first ascents, but nothing on Mix-up Peak
+  itself; Jack Kendrick doesn't appear in any source found.
+- `wa_mixup_peak_pbs_late_night_special` — a 2026 route with essentially no other stored data;
+  too new/obscure to find a corroborating source this run.
+- `wa_middle_peak_traverse_route` — minimal stored data (no `fa`, no elevation/coordinate fields
+  of its own); nothing to check beyond the area-level elevation above, which is clean.
+
+1 confirmed error fixed, 0 flagged for human review, 6 clean, 1 route (PBS Late Night Special)
+with too little data/too recent to check, plus the inconclusive FA checks noted above. WebSearch
+only this run (no WebFetch attempted). Next batch continues id-ascending from
+`wa_monte_cristo_peak_standard_route_variation_1` (pass 9).
