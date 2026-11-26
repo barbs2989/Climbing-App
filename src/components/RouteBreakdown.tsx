@@ -1,3 +1,4 @@
+import { noteBox } from "../../lib/accents.js";
 import { useState, useEffect } from "react";
 import { breakdownRows } from "../../lib/breakdownRows.js";
 import { pitchAnchorSummary, pitchShortfall } from "../../lib/pitchAnchors.js";
@@ -133,7 +134,7 @@ export default function RouteBreakdown({route,focus,onEdit,comments,commentsUnav
           <div style={{fontSize:12,color:C.onSolid,lineHeight:1.5,marginBottom:8}}>{_noBelay.length+(_noBelay.length===1?" pitch has":" pitches have")+" no belay station yet. Say where you belayed, and the next party will find it."}</div>
           <button onClick={function(){onEdit(_noBelay[0]._i);}} style={{...BTN_SM,...SOLID_FILL(C),color:C.onSolid,border:"none"}}>Add belay stations</button>
         </div>;})()}
-      {_anchors?<div data-pitch-anchors="" style={{fontSize:12,color:C.textSub,lineHeight:1.5,marginBottom:10,padding:"2px 0 2px 10px",borderLeft:"2px solid "+C.border}}><span style={{fontWeight:700,color:C.text}}>{"Anchors change by pitch: "}</span>{_anchors.map(function(x,i){return <span key={x[0]}>{i?" · ":""}<span style={{fontWeight:700,color:x[0]==="Bolted"?C.green:C.blue}}>{x[0]}</span>{" "+x[1]}</span>;})}</div>:null}
+      {_anchors?<div data-pitch-anchors="" style={{fontSize:12,color:C.textSub,lineHeight:1.5,marginBottom:10,...noteBox(null,C.surface)}}><span style={{fontWeight:700,color:C.text}}>{"Anchors change by pitch: "}</span>{_anchors.map(function(x,i){return <span key={x[0]}>{i?" · ":""}<span style={{fontWeight:700,color:x[0]==="Bolted"?C.green:C.blue}}>{x[0]}</span>{" "+x[1]}</span>;})}</div>:null}
       {rows.map(function(r,idx){
         const isOpen=open===r._i;
         const isPitch=r._kind==="pitch";

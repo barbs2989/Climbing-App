@@ -22,6 +22,7 @@ import DbSearchSplit from "./DbSearchSplit.tsx";
 import SummitBriefing from "./SummitBriefing.tsx";
 import LoadingRows from "./LoadingRows.tsx";
 import EmptyState from "./EmptyState.tsx";
+import CommentMenu from "./CommentMenu.tsx";
 import { discLabel } from "../../lib/areaDiscLabel.js";
 import { gradeNumFor, gradeSystemForDiscipline } from "../../lib/grade.js";
 import RouteRow from "./RouteRow.tsx";
@@ -148,6 +149,10 @@ export interface AreaPageProps {
   /** Whether this area is in Saved. */
   booked?: boolean;
   onToggleSave: () => void;
+  /** Saves or unsaves ONE climb on My Objectives (App toggleWish): the star at the end of each row of this wall's climb list. Absent hides it. */
+  onToggleWish?: ((id: string | number) => void) | null;
+  /** The header's ONE Log button: the climb picker opened at this area, for a quick or a full log. Absent hides it. */
+  onLog?: ((area: AreaPageArea, mode: "quick" | "full") => void) | null;
   onDrill: (a: AreaPageArea) => void;
   /** Opens the route finder, optionally preset to a discipline. */
   onFinder: (disc?: unknown) => void;
@@ -186,8 +191,10 @@ export interface AreaPageProps {
 // THE HEADER CARD'S BUTTONS: Save area, Area tree and Fire map are ONE size (owner, 2026-11-18: "fire map needs to be
 // the same size as save area") -- 34px, the height Save was given on 2026-11-14 -- and one width; only the colour differs.
 const HEAD_BTN: CSSProperties = { flexShrink: 0, boxSizing: "border-box", display: "inline-flex", alignItems: "center", justifyContent: "center", gap: 5, height: 34, minWidth: 100, padding: "0 12px", borderRadius: 9, fontSize: 12, fontWeight: 800, cursor: "pointer", lineHeight: 1, whiteSpace: "nowrap" };
-export default function AreaPage({ area: areaRow, onSignIn, uElev, uDistMi, booked, onToggleSave, onDrill, onFinder, onNear, onObjectives, onAllAreas, onOpenRoute, onOpenReport, onJumpToArea, C, onAddClimb, onAddArea, TopContributors, onViewContributor, onFireMap, onSuggestAreaEdit, myId, PartnerRow, uid, myListings, onListMe, onFindPartnersInArea, onViewProfile, notify, onStartCrew, onCrewsHere, onGroupsHere, openCrewCountAt, headerNav}: AreaPageProps) {
+export default function AreaPage({ area: areaRow, onSignIn, uElev, uDistMi, booked, onToggleSave, onToggleWish, onLog, onDrill, onFinder, onNear, onObjectives, onAllAreas, onOpenRoute, onOpenReport, onJumpToArea, C, onAddClimb, onAddArea, TopContributors, onViewContributor, onFireMap, onSuggestAreaEdit, myId, PartnerRow, uid, myListings, onListMe, onFindPartnersInArea, onViewProfile, notify, onStartCrew, onCrewsHere, onGroupsHere, openCrewCountAt, headerNav}: AreaPageProps) {
   const [wrongOpen, setWrongOpen] = useState(false);
+  // The Log button's choice sheet: Quick log or Full log, then the climb.
+  const [logChoice, setLogChoice] = useState(false);
   // ORDER WRONG? (0485): the sheet where a climber puts this wall's climbs in left-to-right order. A suggestion only.
   const [orderOpen, setOrderOpen] = useState(false);
   const listEndRef = useRef(null);
@@ -406,7 +413,14 @@ export default function AreaPage({ area: areaRow, onSignIn, uElev, uDistMi, book
                     sortAreaRoutes(shownAll, key).forEach(r => {
                       if (key === "disc" && r.discipline !== last) out.push(<SL key={"h-" + r.discipline} C={C}>{discLabel(r.discipline)}</SL>);
                       last = r.discipline;
-                      out.push(<RouteRow key={r.id} r={r} onOpen={onOpenRoute} C={C} />);
+                      // SAVE FROM THE WALL'S LIST (owner note, 2026-11-25: "Add another save to objectives"): one tap puts the
+                      // climb on My Objectives, or takes it off, without opening it. The route finder's rows already had a star;
+                      // the wall's own list, where a crag is browsed, did not. Same toggle as the route page's header Save.
+                      const onList = (wishlist || []).includes(r.id as string | number);
+                      out.push(onToggleWish && r.id != null ? <div key={r.id} style={{ display: "flex", gap: 6, alignItems: "stretch" }}>
+                        <RouteRow r={r} onOpen={onOpenRoute} C={C} savedMark={false} />
+                        <button onClick={() => onToggleWish(r.id as string | number)} aria-pressed={onList} aria-label={onList ? "Remove " + (r.name || "this climb") + " from My Objectives" : "Save " + (r.name || "this climb") + " to My Objectives"} title={onList ? "On My Objectives, tap to remove" : "Save to My Objectives"} style={{ ...CHIP, flexShrink: 0, width: 44, minHeight: 44, marginBottom: 8, padding: 0, fontSize: 17, cursor: "pointer", border: "1px solid " + (onList ? C.amber : C.border), background: onList ? C.amberBg : C.card, color: onList ? C.amber : C.textSub }}><span aria-hidden="true">{onList ? "★" : "☆"}</span></button>
+                      </div> : <RouteRow key={r.id} r={r} onOpen={onOpenRoute} C={C} />);
                     });
                     return out;
                   })() : <div style={{ fontSize: 12.5, color: C.textMuted, lineHeight: 1.5 }}>{"No climb on this wall matches these filters. "}<button onClick={() => { setWallDisc(""); setWallStars(0); }} style={{ ...BTN, border: "none", background: "transparent", color: C.blue, padding: 0, fontWeight: 700, textDecoration: "underline" }}>Clear filters</button></div>}
@@ -457,16 +471,31 @@ export default function AreaPage({ area: areaRow, onSignIn, uElev, uDistMi, book
               {"Area tree"}
             </button>
           ) : null;
+          // SAVE STANDS OUT (owner note, 2026-11-25: "Save area blends in too well"): it was the grey of the card with a
+          // grey rim, the one button of the row with no colour and no icon. Unsaved it is now the amber of Saved, as an
+          // outline with a bookmark; saved, the solid amber it always was.
           const save = area.area_type !== "country" && area.area_type !== "state" ? (
-            <button onClick={onToggleSave} aria-label={booked ? "Remove from Saved" : area.area_type === "peak" ? "Save this peak" : "Save this area"} style={{ ...HEAD_BTN, background: booked ? C.amber : "rgba(255,255,255,0.08)", border: "1px solid " + (booked ? C.amber : C.border), color: booked ? "#1a1200" : C.text }}>{booked ? "Saved" : area.area_type === "peak" ? "Save peak" : "Save area"}</button>
+            <button onClick={onToggleSave} aria-label={booked ? "Remove from Saved" : area.area_type === "peak" ? "Save this peak" : "Save this area"} style={{ ...HEAD_BTN, background: booked ? C.amber : C.amberBg, border: (booked ? "1px solid " : "1.5px solid ") + C.amber, color: booked ? "#1a1200" : C.text }}>
+              <svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill={booked ? "currentColor" : "none"} stroke={booked ? "currentColor" : C.amber} strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"><path d="M6 3h12v18l-6-4.5L6 21z" /></svg>
+              {booked ? "Saved" : area.area_type === "peak" ? "Save peak" : "Save area"}
+            </button>
           ) : null;
-          if (!fire && !tree && !save && !headerNav) return null;
+          // ONE LOG BUTTON (owner note, 2026-11-25: "have log button there too. Make it just 1 log button and when they
+          // click that they can choose full log or quick log"): it asks which, then opens the climb picker AT this area.
+          const log = onLog && area.route_count > 0 ? (
+            <button onClick={() => setLogChoice(true)} aria-haspopup="dialog" aria-label={"Log a climb at " + area.name} style={{ ...HEAD_BTN, background: C.greenBg, border: "1px solid " + C.greenDim, color: C.text }}>
+              <svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke={C.green} strokeWidth="2.6" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5" /></svg>
+              {"Log"}
+            </button>
+          ) : null;
+          if (!fire && !tree && !save && !log && !headerNav) return null;
           // Three 100px buttons (and the website's Back) outgrow a small phone's card, so the row WRAPS, right-aligned,
           // rather than running off the edge.
           return (
             <div style={{ display: "flex", flexWrap: "wrap", alignItems: "center", gap: 8, marginTop: 12, paddingTop: 12, borderTop: "1px solid " + C.border }}>
               {headerNav ? headerNav.back : null}
-              <div style={{ marginLeft: "auto", display: "flex", flexWrap: "wrap", justifyContent: "flex-end", gap: 8, minWidth: 0 }}>{save}{tree}{fire}</div>
+              <div style={{ marginLeft: "auto", display: "flex", flexWrap: "wrap", justifyContent: "flex-end", gap: 8, minWidth: 0 }}>{save}{log}{tree}{fire}</div>
+              {logChoice && onLog ? <CommentMenu label={"Log a climb at " + area.name} items={[["Quick log: tick, date and stars", () => onLog(area, "quick")], ["Full log: partners, notes and a report", () => onLog(area, "full")]]} onClose={() => setLogChoice(false)} /> : null}
             </div>
           );
         })()}

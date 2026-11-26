@@ -1,3 +1,4 @@
+import { knotHead } from "../../lib/accents.js";
 import { useMemo, useState } from "react";
 import { BTN_SM, CHIP } from "../../lib/buttonStyles.js";
 import { C, SL, pubName, climberLine } from "../../ClimbMatchCore.jsx";
@@ -59,7 +60,7 @@ export default function GroupCrewPicker({groupName,groupPrivate,people,meId,bloc
     <div onClick={e=>e.stopPropagation()} style={{background:C.surface,borderRadius:"18px 18px 0 0",border:"1px solid "+C.border,width:"100%",maxWidth:520,padding:16,boxSizing:"border-box",maxHeight:"90%",overflowY:"auto",overscrollBehavior:"contain"}}>
       <div style={{display:"flex",alignItems:"center",gap:10,marginBottom:10}}>
         <div style={{flex:1,minWidth:0}}>
-          <div style={{fontSize:16,fontWeight:700,color:C.text,borderLeft:"3px solid "+C.blue,paddingLeft:9}}>Form a crew</div>
+          <div style={{fontSize:16,fontWeight:700,color:C.text,...knotHead(C.brand)}}>Form a crew</div>
           <div style={{fontSize:12,color:C.textMuted,marginTop:2,paddingLeft:12,overflowWrap:"anywhere"}}>From {groupName}. Everyone you pick gets an invite to accept or decline.</div>
         </div>
         <button onClick={onClose} aria-label="Close" style={POP_CLOSE}>✕</button>

@@ -1,3 +1,4 @@
+import { noteBox } from "../../lib/accents.js";
 import { C, ROUTE_GAP } from "../../ClimbMatchCore.jsx";
 
 export interface VerifNoteProps {
@@ -15,5 +16,5 @@ export default function VerifNote({route}: VerifNoteProps){
   const st=String(v.status||"").toLowerCase();
   if(!st||st==="verified")return null;
   const note=st==="community"?"Community-reported":"Unverified";
-  return <div style={{margin:ROUTE_GAP+"px 0",paddingLeft:9,borderLeft:"2px solid "+C.amber+"66"}}><span style={{fontSize:11.5,color:C.textMuted,lineHeight:1.55}}><b style={{color:C.amber,fontWeight:700}}>{note}</b></span></div>;
+  return <div style={{margin:ROUTE_GAP+"px 0",...noteBox(C.amber,C.surface)}}><span style={{fontSize:11.5,color:C.textMuted,lineHeight:1.55}}><b style={{color:C.amber,fontWeight:700}}>{note}</b></span></div>;
 }

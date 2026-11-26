@@ -1,5 +1,6 @@
 // Moved out of ClimbMatchCore.jsx verbatim so it can load lazily, off the first-paint
 // bundle. It is rendered only from App (ClimbMatch.jsx) behind React.lazy + Suspense.
+import { knotHead } from "./accents.js";
 import { FONT_DISPLAY } from "./fonts.js";
 import { SOLID_FILL } from "./buttonStyles.js";
 import { tx } from "./tapWords.js";
@@ -49,7 +50,7 @@ export default function GiveVouch({friend,onClose,onSave,suggest,initial,routeBy
      since nothing on the résumé opens it; the toast (99999) stays above it. The header STICKS, so the ✕ is
      in reach wherever the long form is scrolled to. */
   return createPortal(<div onClick={onClose} role="dialog" aria-label={initial?"Edit your vouch":"Vouch for a climber"} aria-modal="true" style={{position:"fixed",inset:0,background:C.scrim,zIndex:9850,display:"flex",alignItems:"flex-end",justifyContent:"center"}}><div onClick={e=>e.stopPropagation()} style={{background:C.bg,width:"100%",maxWidth:440,borderRadius:"16px 16px 0 0",padding:18,maxHeight:"88vh",overflowY:"auto",overscrollBehavior:"contain",border:"1px solid "+C.borderHi,borderBottom:"none",boxShadow:"0 -12px 40px rgba(0,0,0,0.55)",boxSizing:"border-box"}}>
-    <div style={{display:"flex",justifyContent:"space-between",alignItems:"center",gap:10,position:"sticky",top:-18,zIndex:2,background:C.bg,margin:"-18px -18px 6px",padding:"14px 18px 8px"}}><div style={{color:C.text,fontSize:17,fontWeight:700,borderLeft:"3px solid "+C.blue,paddingLeft:9}}>{initial?"Edit your vouch for "+fn:"Vouch for "+fn}</div><button onClick={onClose} style={POP_CLOSE} aria-label="Close">✕</button></div>
+    <div style={{display:"flex",justifyContent:"space-between",alignItems:"center",gap:10,position:"sticky",top:-18,zIndex:2,background:C.bg,margin:"-18px -18px 6px",padding:"14px 18px 8px"}}><div style={{color:C.text,fontSize:17,fontWeight:700,...knotHead(C.brand)}}>{initial?"Edit your vouch for "+fn:"Vouch for "+fn}</div><button onClick={onClose} style={POP_CLOSE} aria-label="Close">✕</button></div>
     <div style={{fontSize:13,color:C.textSub,marginBottom:15,lineHeight:1.5}}>A vouch is a public reference for someone you’ve actually climbed with. Every part is optional — only say what you saw.</div>
 
     {H("Climb you did together")}

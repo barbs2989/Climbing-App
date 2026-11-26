@@ -1,3 +1,4 @@
+import { glowCard } from "../../lib/accents.js";
 import { EMPTY_ARR } from "../../lib/emptyArr.js";
 import { viaPitchSpans, wholeLine, spanLabel } from "../../lib/approaches.js";
 import { C, ROUTE_GAP } from "../../ClimbMatchCore.jsx";
@@ -52,8 +53,8 @@ export interface ApproachPickerProps {
    CHANGES something: a variant pointing at a sibling route, or carrying its own trip data. The 125
    routes whose ways in are prose cards keep the cards and get no control that would change nothing.
    It sits UNDER the sub-tab bar, at the top of every tab (owner, 2026-10-21: above the bar it read as
-   part of the header and crowded the top of the page). It stays on every tab because the pick drives
-   every one of them — Plan's hours and trip plan, Overview's trailhead and map, the camps — and a
+   part of the header and crowded the top of the page). It stays on every tab but Partners (owner, 2026-11-25: Partners reads nothing from the
+   pick, so RouteDetail does not mount it there) because the pick drives every one of the others — Plan's hours and trip plan, Overview's trailhead and map, the camps — and a
    control on one tab that silently rewrites another is how a climber ends up reading the Sulphide's
    camps under a Fisher Chimneys plan.
    With more than one way in the choice is a RADIO GROUP of full-width rows, each with a radio dot,
@@ -83,7 +84,7 @@ export default function ApproachPicker({route,opts,sel,onSel,sibs,sibsErr,finish
   /* The picker is the page's first decision, so it reads as one: a blue rail and the section's own CardHead
      heading, a tighter box than the cards below it. A box as loud as a card made the choice look like a
      footnote of the title, and a padded box made the page feel as if it had two headers. */
-  const card={background:C.card,border:"1px solid "+C.border,borderLeft:"4px solid "+C.blue,borderRadius:12,padding:"11px 12px",marginBottom:ROUTE_GAP};
+  const card={background:C.card,...glowCard(C.blue,C.card),borderRadius:12,padding:"11px 12px",marginBottom:ROUTE_GAP};
   const head={fontSize:13.5,fontWeight:800,color:C.text,marginBottom:4};
   const chip=function(r: ApproachRouteRef,label: string,key: string){return <button key={key} onClick={function(){if(onOpenRoute)onOpenRoute(r);}} aria-label={"Open "+r.name} style={{display:"inline-flex",alignItems:"center",gap:4,padding:"7px 12px",minHeight:36,background:"transparent",color:C.blue,border:"1px solid "+C.blueDim,borderRadius:20,fontSize:12.5,fontWeight:700,cursor:"pointer",maxWidth:"100%",textAlign:"left"}}>{label} ›</button>;};
   return <>

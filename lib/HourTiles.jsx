@@ -8,6 +8,7 @@
 // and the 10 m GUST are the sum / probability / maximum of the PRECEDING hour (T-1 to T). One label for
 // both -- "2 PM" -- is wrong for half of the numbers beside it, so the boxes carry `at(T)` or
 // `spanEnding(T)` and never share a time.
+import { knotHead } from "./accents.js";
 import { useRef, useEffect } from "react";
 import { C } from "../ClimbMatchCore.jsx";
 import { boxZoom } from "./wideLayout.js";
@@ -36,8 +37,8 @@ export function whenText(when) {
 }
 /** @param {{label: string, when?: string|null, value?: import("react").ReactNode, sub?: import("react").ReactNode, tone?: string|null, wide?: boolean}} props */
 export function Tile({ label, when, value, sub, tone, wide }) {
-  return <div style={{ borderLeft: "3px solid " + (tone || C.borderHi), padding: "2px 0 2px 10px", margin: "3px 0", minWidth: 0, gridColumn: wide ? "1 / -1" : undefined }}>
-    <div style={{ fontSize: 12, fontWeight: 800, color: C.label, textTransform: "uppercase", letterSpacing: 0.5 }}>{label}</div>
+  return <div style={{ padding: "2px 0", margin: "3px 0", minWidth: 0, gridColumn: wide ? "1 / -1" : undefined }}>
+    <div style={{ fontSize: 12, fontWeight: 800, color: C.label, textTransform: "uppercase", letterSpacing: 0.5, ...knotHead(tone || C.borderHi) }}>{label}</div>
     {when ? <div style={{ fontSize: 11.5, fontWeight: 600, color: C.textMuted, marginTop: 2 }}>{whenText(when)}</div> : null}
     <div style={{ fontSize: 21, fontWeight: 800, color: tone || C.text, marginTop: 5, lineHeight: 1.15, overflowWrap: "anywhere" }}>{value}</div>
     {sub ? <div style={{ fontSize: 12, color: C.textSub, marginTop: 3, lineHeight: 1.4 }}>{sub}</div> : null}

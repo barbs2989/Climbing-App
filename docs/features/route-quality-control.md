@@ -115,6 +115,39 @@ empty field fill at once and two agreeing climbers change one; the owner withdre
   and a separate skeptic re-opens every cited source; `scripts/review-verdicts-write.mjs` validates
   (2-source = two different sites, or one .gov/.us/.gc.ca page) and upserts. Writes NOTHING if any row
   is malformed.
+- **The review autopilot** (owner 2026-11-25: "ai will automatically check that feedback and accept and decline …
+  if you can't find the information online, flag it on the admin page and I will review it myself"; migration 0534):
+  `scripts/review-autopilot.mjs` researches what is due (the same export, then `claude -p` twice per item, a
+  researcher and a skeptic, with only WebSearch/WebFetch allowed and the verdict JSON schema), stores the verdicts
+  through `review-verdicts-write.mjs`, and then ACTS on every verdict two independent sources settle, signed in as
+  the AI reviewer account (`review-bot@climbmatch.app`, "ClimbMatch AI review", made once by
+  `scripts/review-bot-setup.mjs`, hidden from partner search). It calls the same RPCs as the desk's buttons, so
+  each decision is a History row with *Take back*. The rules are `decide()` in `scripts/lib/review-ai.mjs`
+  (`--selftest` proves all 26 branches plus the source ledger):
+    - an edit two sources confirm is approved (with the sources' exact value when it differs); an edit they
+      contradict is turned down, NEVER as a strike, or, when the page is also wrong, approved with their value;
+    - a flag is fixed with the sources' value (filed as the AI reviewer's own edit, approved, flag marked fixed)
+      or closed as "no change needed" when the sources match the page;
+    - a proposed climb or area the sources confirm is approved unless `catalog_find_route` / `catalog_find_area`
+      returns a possible duplicate. One the AI cannot confirm is NEVER turned down by it (a climb missing from the
+      web is not evidence it does not exist; small crags are often unpublished): it goes to the owner;
+    - a value the AI would write is checked first: no links, a grade must parse (`gradeNumFor`), coordinates on
+      the map; a failure goes to the owner;
+    - a verdict is acted on only while it matches the item's CURRENT content, page value included (`item_hash`
+      covers the climber's value, the clustered ids and the page value); a new verdict clears the old decision,
+      and a timeout or server error is retried next run rather than recorded;
+    - EVERYTHING ELSE stays for the owner with `review_ai_verdicts.auto_action = 'needs_owner'` and a sentence in
+      `auto_note`: one source or none ("The AI could not find this online"), unsure, an edit that removes
+      something, a possible duplicate, partly-right proposals, a value whose shape does not fit the field, a flag
+      about the whole route, or a database refusal. The desk shows these as an amber **Needs you** chip, a
+      *N need you* button that filters to them, the filter option *Needs you*, and *Left for you: …* in the row;
+      proposal cards say *Needs you: …*.
+  Wall orders, wrong-place claims, trails, accessibility reports and app feedback are not web-checkable facts
+  (a line on a map, an area move, a bug report) and stay with the owner. The climber's note is DATA in the prompt;
+  the model returns a verdict and nothing else, and only `decide()` turns that into an action.
+  **Schedule:** `scripts/review-autopilot.plist` (launchd, hourly) runs `scripts/review-autopilot-cron.sh` from
+  `origin/main`, in its own worktree `~/dev/climbmatch-review-autopilot`; it takes a dbslot and spaces writes a
+  second apart. Without the AI reviewer account it still marks *Needs you* and acts on nothing.
 - **Contributor standing** moved off the Menu on 2026-11-24, to the bottom of the Review desk's *Climbers* section
   (`ContributorStandingQueue` in `lib/RouteQualityQueues.jsx`): reset, warn, restrict 90 days, ban, each with a reason.
 - **The Review desk's other sections (2026-11-24, `review/DeskSections.jsx`)**: a health strip (oldest waiting item,
