@@ -449,7 +449,10 @@ export default function AreaPage({ area: areaRow, onSignIn, uElev, uElevN, uElev
           {chips.map((t, i) => <span key={i} style={{ fontSize: 11.5, fontWeight: 600, color: C.text, background: "rgba(255,255,255,0.12)", border: "1px solid " + C.border, borderRadius: 7, padding: "3px 9px" }}>{t}</span>)}
         </div>
         <div style={{ fontSize: 13, color: C.textSub, marginTop: 9, lineHeight: 1.45 }}>
-          <span style={{ color: C.text, fontWeight: 800 }}>{children && children.length ? children.length + " " + noun + " · " + area.route_count.toLocaleString() + " climb" + (area.route_count !== 1 ? "s" : "") : area.route_count.toLocaleString() + " climb" + (area.route_count !== 1 ? "s" : "")}</span>
+          {/* A jump from the Route finder's wall heading hands over { id, name } and hydrates the full row first; when
+              that read FAILS the narrow row arrives with no route_count, and this line threw ("This section hit a bug",
+              2026-11-26). An unknown count is left out, never printed as 0. */}
+          <span style={{ color: C.text, fontWeight: 800 }}>{[children && children.length ? children.length + " " + noun : "", typeof area.route_count === "number" ? area.route_count.toLocaleString() + " climb" + (area.route_count !== 1 ? "s" : "") : ""].filter(Boolean).join(" · ")}</span>
           {metaParts.length ? " · " + metaParts.join(" · ") : null}
         </div>
         {parentPeak ? <div style={{ fontSize: 12, color: C.textMuted, marginTop: 3 }}>{"Parent peak — " + parentPeak}</div> : null}

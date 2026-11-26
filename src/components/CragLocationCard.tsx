@@ -4,6 +4,7 @@ import { trailheadDirectionProblem } from "../../lib/trailheadDirectionShape.js"
 import CopyCoordButton from "./CopyCoordButton.tsx";
 import EditIconButton from "./EditIconButton.tsx";
 import { parkingOf } from "../../lib/areaInherit.js";
+import { safeHref } from "../../lib/safeUrl.js";
 
 export interface CragLocationCardProps {
   route: {
@@ -63,8 +64,8 @@ export default function CragLocationCard({route,mtn,onEditParking,onEditRoutePin
       <div style={{...SUB_LABEL,marginBottom:5}}>{park?"DIRECTIONS TO PARKING":"DIRECTIONS"}</div>
       {park?null:<div style={{fontSize:11.5,color:C.textMuted,lineHeight:1.45,marginBottom:6}}>{note?"No parking pin on file yet, so these go to the crag itself — the note above says where climbers park.":"No parking spot on file, so these go to the crag itself — your maps app will stop at the nearest road, which may not be where climbers park."}</div>}
       <div style={{display:"flex",gap:8}}>
-        <a href={"https://www.google.com/maps/dir/?api=1&travelmode=driving&destination="+ll} target="_blank" rel="noreferrer" aria-label={"Driving directions to the "+(park?"parking":"crag")+" in Google Maps"} style={linkSt}>Google Maps</a>
-        <a href={"https://maps.apple.com/?dirflg=d&daddr="+ll} target="_blank" rel="noreferrer" aria-label={"Driving directions to the "+(park?"parking":"crag")+" in Apple Maps"} style={linkSt}>Apple Maps</a>
+        <a href={safeHref("https://www.google.com/maps/dir/?api=1&travelmode=driving&destination="+ll)} target="_blank" rel="noreferrer" aria-label={"Driving directions to the "+(park?"parking":"crag")+" in Google Maps"} style={linkSt}>Google Maps</a>
+        <a href={safeHref("https://maps.apple.com/?dirflg=d&daddr="+ll)} target="_blank" rel="noreferrer" aria-label={"Driving directions to the "+(park?"parking":"crag")+" in Apple Maps"} style={linkSt}>Apple Maps</a>
       </div>
     </div>:null}
   </div>;

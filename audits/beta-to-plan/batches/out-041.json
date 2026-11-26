@@ -1,0 +1,290 @@
+[
+ {
+  "id": "wa_mount_rainier_fuhrer_thumb",
+  "beta_new": "Grade II alpine climb (50° snow/ice couloir); 5-7 hours summit day from camp (~9,000 ft); requires prior glacier travel experience, cramponing on firm ice, two ice tools competency; hazards include ice fall from Kautz Ice Cliff, rockfall, avalanche danger (early start essential), crevasses on Wilson and Nisqually Glaciers; best season April-June; technical skills: rope team travel, secure belay placement, avalanche awareness",
+  "moves": []
+ },
+ {
+  "id": "wa_mount_rainier_kautz_glacier",
+  "beta_new": "No guide-maintained trail or fixed protection; requires proficiency in ice climbing, short-pitching, and crevasse rescue. The technical ice pitches occur near 12,000 ft, adding fatigue to the difficulty.",
+  "moves": []
+ },
+ {
+  "id": "wa_mount_rainier_kautz_headwall",
+  "beta_new": "Shares the Kautz Glacier's long approach to Wapowety Cleaver, then diverges onto a more direct, sustained line up the Kautz ice headwall instead of the standard ice-chute crux; airy traverse pitches above the headwall are typically protected with long pickets.",
+  "moves": []
+ },
+ {
+  "id": "wa_mount_rainier_sunset_ridge",
+  "beta_new": "Primarily a snow/ice climb rather than a rock route, with roughly 6,400 ft of gain over about 5 miles from the base of the route; climbers traverse the Puyallup and South Mowich Glaciers to reach a bivy around 8,500 ft below the ridge.",
+  "moves": []
+ },
+ {
+  "id": "wa_mount_rainier_tahoma_glacier",
+  "beta_new": "Grade II-III alpine glacier route. Climb the southern side of the glacier with multiple diagonal traverses.",
+  "moves": [
+   {
+    "to": "approach",
+    "action": "covered",
+    "from": "Approach via Westside Road to Tahoma Creek Trail (listed as closed by the park: washed out and exposed to debris flows), ascending Wonderland Trail to ~5,600 ft, then "
+   }
+  ]
+ },
+ {
+  "id": "wa_mount_rainier_willis_wall",
+  "beta_new": "Mixed alpine terrain; multiple lines/linkups exist (e.g., the East Rib, and 'Traverse of the Angels' style link-ups), but the wall as a whole is rarely climbed given the objective danger.",
+  "moves": [
+   {
+    "to": "rack",
+    "action": "covered",
+    "from": " requiring pins, screws, nuts, and cams"
+   }
+  ]
+ },
+ {
+  "id": "wa_mount_roosevelt_standard",
+  "beta_new": "From Gem Lake, leave the maintained trail and traverse southwest up the ridge toward the peak. A cairn-marked traverse below cliffs near 5,400 ft leads into a small basin below the summit block, from which a class 2-3 gully of steep dirt and heather (often partly snow-filled) gains the final ~400+ ft to the 5,835 ft summit. Round trip is roughly 13 miles with about 2,700 ft of gain, commonly taking around 7 hours car-to-car; the crux is route-finding on the cairned traverse and footing in the gully when wet or snow-covered.",
+  "moves": [
+   {
+    "to": "approach",
+    "action": "covered",
+    "from": "From the Alpental/Snow Lake trailhead (~3,100 ft), follow the Snow Lake Trail past Snow Lake to Gem Lake, then "
+   }
+  ]
+ },
+ {
+  "id": "wa_mount_saul_se_route",
+  "beta_new": "The east side above Airplane Lake is Mount Saul's standard (and effectively only well-documented) route: a long approach with a short technical finish. From the White River Trailhead, follow Indian Creek Trail #1502 up the valley, then pick up an unofficial, unmarked path that climbs steeply to Airplane Lake, directly below the east side of the peak. From the lake, either kick up the east slope and east face (a snow climb early in the season) or gain the ridge north of the lake through a saddle and follow it to the summit, finishing with class 3 scrambling on rock that is solid in places and loose in others. It is typically done unroped, either as a very long day or as an overnight with a camp along Indian Creek.",
+  "moves": []
+ },
+ {
+  "id": "wa_mount_seattle_noyes_basin",
+  "beta_new": "Grade I, Class 3 via Noyes Basin — an off-trail scramble approach with no glacier travel, distinct from the Low Divide and Seattle Creek Basin lines on the same peak.",
+  "moves": []
+ },
+ {
+  "id": "wa_mount_seattle_seattle_creek",
+  "beta_new": "Grade I, Class 3 via Seattle Creek Basin — an off-trail scramble approach with no glacier travel, distinct from the Low Divide and Noyes Basin lines on the same peak.",
+  "moves": []
+ },
+ {
+  "id": "wa_mount_seattle_south",
+  "beta_new": "Most parties base-camp at Seattle Meadows (~4,550 ft), reached via a multi-day approach up the North Fork Quinault River to Low Divide and then west into Seattle Creek Basin. From camp, climb scree slopes on the mountain's western side, cross over a ridge, and continue up scree and talus on the eastern side, finishing with a class 2-3 scramble on the east ridge/side to the craggy summit. Two other approach variants exist (via Noyes Basin, and a more direct line up Seattle Creek Basin itself), converging on the same upper-mountain scramble.",
+  "moves": []
+ },
+ {
+  "id": "wa_mount_sefrit_southeast_ridge",
+  "beta_new": "The standard/easiest and most commonly climbed route on Sefrit. From Ruth Creek, climbers cross the creek and bushwhack up through slide alder to the base of the 'Wall Street' couloir, a roughly 1,500-vertical-foot snow gully about 50 feet wide at 30-35 degrees. The couloir tops out on the Northwest Glacier at about 5,000 ft, crossed (roped, with pickets/flukes for crevasse hazard) to a broad saddle at 6,500 ft just west of the summit. From the saddle, parties either climb a steep, narrow chute due south to a notch just west of the summit pinnacle, or traverse southeast across a shallow snow bowl beneath the summit — the traverse exposes climbers to cornices and is usually roped with snow protection. The route finishes on the southeast ridge: a straightforward Class 2 scramble broken by about 100 ft of exposed Class 3 traversing near the middle.",
+  "moves": [
+   {
+    "to": "none",
+    "action": "drop",
+    "from": "routeFt here (3,691 ft) is a computed total combining the couloir, glacier crossing, and final ridge scramble, since no aggregate route length is known.",
+    "note": "pipeline talk, not climbing beta"
+   }
+  ]
+ },
+ {
+  "id": "wa_mount_sefrit_southwest_ridge",
+  "beta_new": "The Southwest Ridge approach offers an alternative to the more commonly documented Northwest Glacier-Southeast Ridge route. This line ascends the southwestern side of the peak through mixed climbing and scrambling terrain.",
+  "moves": []
+ },
+ {
+  "id": "wa_mount_shuksan_hanging_glacier",
+  "beta_new": "Features nice mix of glacier travel and ice climbing up to 65 degrees. Connected to Crystal Glacier at upper margins.",
+  "moves": [
+   {
+    "to": "approach",
+    "action": "covered",
+    "from": "Via North Face approach or from Fisher Chimneys route (drop down White Salmon Glacier approximately 1,000 feet). Cross the NW Rib route to gain Hanging Glacier. "
+   }
+  ]
+ },
+ {
+  "id": "wa_mount_shuksan_northeast_ridge",
+  "beta_new": "Moderate rock climbing between 4th class and 5.7 gains the exposed summit block; it requires additional ice climbing lower down to reach the base of the ridge and complex alpine rock-finding higher up. It is generally regarded as an alternate finish rather than a fully independent line from base to summit.",
+  "moves": []
+ },
+ {
+  "id": "wa_mount_shuksan_sulphide_glacier",
+  "beta_new": "From the campsites (about 6,200 ft for the lower camp), head north up the west side of the Sulphide Glacier up rolling steps. At approximately 7,600 feet, terrain flattens and route continues northeast toward summit pyramid. The finish climbs the 3rd-4th class central gully up the south face of the summit pyramid.",
+  "moves": []
+ },
+ {
+  "id": "wa_mount_skokomish_standard",
+  "beta_new": "Beyond Lake of the Angels, skirt the north/west shore and climb alpine slopes and a scree-and-snow gully (climber's-right gully) to a roughly 5,800 ft saddle at the peak's northeast/east side. From the saddle, cross scree, grass, and rock slopes southwest and scramble the southeast slope/south ridge on generally rotten, loose rock (Class 2, locally 3 to 3+) to the summit. The route has three summit horns; parties have mistaken a lower false summit for the true (south) high point. Snow lingers on the gully and saddle well into summer and is reported as firm/frail, so an ice axe is commonly carried into July.",
+  "moves": [
+   {
+    "to": "approach",
+    "action": "covered",
+    "from": "From the Putvin Trailhead on Hamma Hamma River Road, the Putvin Trail climbs about 3,400 ft in roughly 3.5 miles to Lake of the Angels, including a very steep, sometimes near-vertical headwall requiring hand-and-foot scrambling on roots and rock. "
+   }
+  ]
+ },
+ {
+  "id": "wa_mount_spickard_silver_glacier",
+  "beta_new": "Classed as advanced scrambling with glacier travel followed by a short Class 4 rock step. Parties rope up for the glaciated section (crevasses and a bergschrund are noted) and carry a small rock rack/runners for the final step, which is on loose, lichen-covered rock.",
+  "moves": [
+   {
+    "to": "approach",
+    "action": "covered",
+    "from": " It can be approached from a camp at Silver Lake (via Silver Creek) or from Ouzel Lake (via Depot Creek and over the Custer-Spickard saddle)."
+   }
+  ]
+ },
+ {
+  "id": "wa_mount_spickard_southwest",
+  "beta_new": "From Ouzel Lake basecamp at 5,640 ft, ascend northeast up broad talus gully toward 7,360 ft pass between Ouzel and Silver Lakes. Veer right onto talus to reach Southwest Glacier; cross glacier carefully avoiding crevasses. Reach 8,000 ft col on south ridge, descend 40 feet, and traverse rightward across open slopes to obvious snow and rock gully. Final approach follows south ridge on right-side until final 100 feet, then cross left for summit. Snow slopes steepen to 35-40 degrees near top.",
+  "moves": []
+ },
+ {
+  "id": "wa_mount_st_helens_monitor_ridge",
+  "beta_new": "Begin at Climbers' Bivouac (3,700 ft) on Ptarmigan Trail #216A. Hike 2.1 miles through forest and meadows to the Loowit Trail junction at approximately 4,800 feet, gaining 1,000 feet. Above timberline, follow wooden cairn markers up rocky Monitor Ridge through boulder fields covered in abrasive ash pumice. The final section features sandy terrain nicknamed the 'Vertical Beach' before reaching the crater rim at 8,363 feet.",
+  "moves": []
+ },
+ {
+  "id": "wa_mount_steel_standard",
+  "beta_new": "From Marmot Lake Camp (~4,400 ft) leave the maintained trail and follow a small creek up into an amphitheater on the west side of the peak; easy Class 1 slopes lead from the amphitheater to the summit. The multi-day approach up the Duckabush valley (roughly 21-23 trail miles one-way to Marmot Lake) is the real crux of the trip, not the summit scramble itself.",
+  "moves": [
+   {
+    "to": "approach",
+    "action": "covered",
+    "from": " An alternate approach from the Staircase/North Fork Skokomish side reaches First Divide, drops into a basin with an unnamed lake, and climbs the saddle between Mount Duckabush and Mount Steel before turning north along the ridge to the summit block; the park lists that trail closed between the Staircase Rapids Loop and Home Sweet Home since the 2025 Bear Gulch Fire, with no reopening date on the park's fire-conditions page updated September 18, 2026, which leaves the Duckabush/Marmot Lake line as the open approach."
+   }
+  ]
+ },
+ {
+  "id": "wa_mount_stuart_cascadian_couloir",
+  "beta_new": "Class 3 rock when melted out in summer; a popular snow climb/ski descent in winter and spring. Bypasses several small cliff bands low in the gully.",
+  "moves": []
+ },
+ {
+  "id": "wa_mount_stuart_girth_pillar",
+  "beta_new": "The named pillar sits high on the northeast face above the Ice Cliff Glacier icefall. After the glacier approach and four easy pitches, three engaging crack pitches form the crux; large loose blocks are noted near the top of the pillar.",
+  "moves": []
+ },
+ {
+  "id": "wa_mount_teneriffe_kamikaze_trail",
+  "beta_new": "Popular with scramblers and trail runners seeking a harder version of the peak. Features Class 2-3 rock steps, steep root/dirt tread, and minor exposure, with lingering snow near the ridge crest into early summer.",
+  "moves": [
+   {
+    "to": "descent",
+    "action": "covered",
+    "from": " Many parties ascend via Kamikaze and descend the standard trail through Rachor Pass to make a ~10-mile loop rather than retracing the steep boot track."
+   }
+  ]
+ },
+ {
+  "id": "wa_mount_thomson_west_ridge",
+  "beta_new": "The West Ridge is Mount Thomson's most technical and aesthetic alpine climbing objective. The route ascends 4-5 pitches of low to mid-fifth-class rock on the west ridge crest, with the crux being a well-featured chimney on pitch 1 and a 5.6 bulge pull on pitch 2. Route-finding is generally straightforward once established on the ridge proper. Multiple belay options exist on comfortable ledges with solid natural anchors. The descent via the East Ridge (Class 3-4) balances the upclimb and includes one optional 20-foot Class 4 rappel.",
+  "moves": []
+ },
+ {
+  "id": "wa_mount_torment_south_ridge",
+  "beta_new": "The South Ridge begins with an approach via the Taboo Glacier from Boston Basin high camp. After a short glacier crossing, climbers traverse under a spur ridge and ascend slabby terrain to reach the south ridge notch. The route follows the left side of the ridge via short dihedrals, ledges, and chimneys for roughly 1,000 feet to the summit. The final sections circumnavigate the peak via the southeast face with brief class 4 scrambling before reaching the airy northeast ridge summit.",
+  "moves": []
+ },
+ {
+  "id": "wa_mount_torment_torment_forbidden_traverse",
+  "beta_new": "The Torment-Forbidden Traverse is a multi-day alpine adventure combining Mount Torment's South Ridge approach with a mile-long exposed ridge traverse to neighboring Forbidden Peak (8,815 ft), finishing via the famous Forbidden West Ridge (5.7, 50 classic). The route crosses the Taboo Glacier, climbs to Mount Torment's summit via the south ridge, then descends and traverses the Forbidden Glacier before ascending the knife-edge ridge with exposure on both sides. Climbers must move quickly, efficiently protect themselves, and be capable of 5.6 rock climbing with a medium pack over 12+ continuous hours.",
+  "moves": []
+ },
+ {
+  "id": "wa_mount_townsend_standard",
+  "beta_new": "From the Upper Trailhead the trail switchbacks up through old-growth hemlock/fir with a rhododendron understory, crosses a couple of seasonal streams in the first 1.5 miles, then eases into ridge walking with early views. Around 2.5 miles it reaches Camp Windy/Windy Lake amid wildflower meadows, then climbs a final steady, switchbacked pitch above treeline to the open, windswept summit plateau. There is no scrambling or hands-on terrain on the standard route; the only technical consideration is wind/weather exposure once above Camp Windy.",
+  "moves": [
+   {
+    "to": "approach",
+    "action": "add",
+    "value": "Starting from the Lower Trailhead instead adds about 2 round-trip miles and roughly 500 ft of gain along the same trail corridor.",
+    "from": " The Lower Trailhead adds about 2 extra round-trip miles and roughly 500 extra feet of gain via the same trail corridor."
+   }
+  ]
+ },
+ {
+  "id": "wa_mount_triumph_northeast_ridge",
+  "beta_new": "The Northeast Ridge is the one genuinely 'moderate' way up an otherwise defended peak. From a col/bivy site above Thornton Lakes, the route crosses a shrinking glacier remnant and a loose gully to gain the ridge crest, then follows roughly 9-12 belayed pitches (mostly easy 5th class, with a runout 5.6 traverse and the signature 5.7 offwidth crux) plus short simul-climbed/scrambled sections along an exposed, towered ridge to the summit.",
+  "moves": [
+   {
+    "to": "descent",
+    "action": "covered",
+    "from": " The descent reverses the ridge with a long series of rappels and downclimbing back to the col."
+   }
+  ]
+ },
+ {
+  "id": "wa_mount_triumph_west_route",
+  "beta_new": "In 1938, Sigurd Hall's first-ascent party found a bench on the west side with a roughly 35-degree longitudinal dip that led up onto Triumph's south face; a ledge then crosses the face to the southeast shoulder, from which easier ground leads to the summit. A more recent trip report describing a similar 'West Face-Southeast Face' line notes angling up rock/heather benches alongside the 'Great White Slabs' to a broad talus shoulder, then Class 4 rock and heather to a large southeast-slanting ramp, and a final Class 5 gully/slot (poor rock, minimal protection) to the summit crest.",
+  "moves": []
+ },
+ {
+  "id": "wa_mount_watson_scramble",
+  "beta_new": "From a base camp or day-hike start at Watson Lakes, leave the maintained trail and work up open slopes on the mountain's north side toward the notch between the lower East Peak and the true (western) summit. Cross a short but steep snow finger / remnant glacier apron in the notch (ice axe and crampons or microspikes advisable for most of the season), then scramble loose, mossy class 3 terrain west along the south side of the ridge and along a narrow, knife-edge ridge crest to the true summit.",
+  "moves": [
+   {
+    "to": "descent",
+    "action": "add",
+    "value": "Some parties instead drop east onto the shrinking Watson Glacier as a shortcut back toward the lakes.",
+    "from": " Most parties descend the same way; some instead drop east onto the shrinking Watson Glacier to shortcut back toward the lakes."
+   }
+  ]
+ },
+ {
+  "id": "wa_mount_worthington_standard",
+  "beta_new": "Above the lake the route leaves the trail, climbing through avalanche-damaged timber to treeline near 5,800 ft, then ascending loose scree and talus -- either angling toward the roughly 6,420-ft saddle between Iron Mountain and Worthington, or straight up a wide gully south of the lake -- to the peak's open summit plateau. A final short scramble up a rock fin, with some exposure, gains the true summit. Overall the route is Class 2 with a Class 3 summit block, but loose rock and off-trail routefinding make it feel harder than the grade suggests to many parties.",
+  "moves": [
+   {
+    "to": "approach",
+    "action": "covered",
+    "from": "From the Tubal Cain Trailhead, a well-graded trail leads about 6 miles to Buckhorn Lake, the last water source and jumping-off point for the summit. "
+   }
+  ]
+ },
+ {
+  "id": "wa_mushroom_tower_standard",
+  "beta_new": "From the base of the tower, a single pitch of mid-5th-class (roughly 5.5) climbing leads directly to Mushroom Tower's small, exposed, lopsided summit block. It is commonly combined with nearby Big Kangaroo and/or Melted Tower, which share the same Kangaroo Ridge approach, for a bigger day out.",
+  "moves": []
+ },
+ {
+  "id": "wa_mutchler_peak_scramble",
+  "beta_new": "Mutchler Peak sits at the east end of the long southeast ridge that runs off Snowking Mountain, above the Kindy Creek/Mutchler Creek drainage. Terrain is a mix of steep heather, talus, snow/glacier remnants, and low-class rock; one documented traverse rappelled over a cornice to reach the peak.",
+  "moves": [
+   {
+    "to": "approach",
+    "action": "add",
+    "value": "Other ways in: continue the Kindy Ridge approach used for Snowking's East Ridge (3rd class, Grade II) past that summit and along the connecting ridge and snowfields toward the Buckindy group, or come from the south on the longer Green Mountain, Mount Misch and Mount Buckindy traverse, camping at the pass between Kindy and Buck Creeks before crossing to Mutchler.",
+    "from": " Parties reach it either by continuing the Kindy Ridge approach used for Snowking's East Ridge (3rd class, Grade II) past the summit and along the connecting ridge/snowfields toward the Buckindy group, or from the south on the longer Green Mountain–Mount Misch–Mount Buckindy traverse, camping at the pass between Kindy and Buck Creeks before crossing to Mutchler."
+   }
+  ]
+ },
+ {
+  "id": "wa_natures_way",
+  "beta_new": "Pitch 1 climbs easy granite ramps and blocks up a V-gully to a large ledge; pitch 2 works through a series of ledges to a crux rightward-slanting seam at the fourth bolt; pitch 3 is the route's namesake objective - a sustained hand crack with lieback/stem moves to a knob and roughly 12 feet of continuous undercling to chains atop a flake.",
+  "moves": []
+ },
+ {
+  "id": "wa_ne_chimney",
+  "beta_new": "The climbing is hard, sustained 5.9. Whether chockstones in the chimney offer protection every 20-30 ft through the crux has been debated since at least 2004 without a clear answer, so treat it as a serious, sparsely-protected lead. Pitch count and length are not recorded.",
+  "moves": []
+ },
+ {
+  "id": "wa_ne_couloir",
+  "beta_new": "A sustained snow climb with a crux at the upper narrow section. Approximately 5-hour round trip from trailhead depending on conditions. Route requires good snow conditions and avalanche awareness.",
+  "moves": []
+ },
+ {
+  "id": "wa_needle_peak_north_ridge",
+  "beta_new": "On August 19, 2006, Blake Herrington and Tim Haider left the Agnes Creek Trail at Swamp Creek and climbed Needle Peak via its North Ridge, then continued along the connecting ridgeline, making the first ascents of the North and South Anonymity Towers, before climbing the Dark Glacier to a bivouac atop Dark Peak. The next day they continued the ridge crest to Bonanza Peak's west and main summits. The overall linkup was rated Grade V, 5.8, with rock along the crest that is wild and highly variable in quality; no separate grade, pitch count, or length is available for the Needle Peak segment alone.",
+  "moves": []
+ },
+ {
+  "id": "wa_new_york_gully",
+  "beta_new": "A popular Seattle-area winter mixed testpiece: a short approach off I-90 leads to a moderate lower gully, then progressively steeper mixed ground (up to M5-) through slabby, sometimes loose rock, finishing at a splitter 5.8 corner crack that was historically aided (A1-2) and has since been free-climbed. Conditions vary widely year to year — some seasons build fat ice through the gully, dry years leave it mostly rock/mixed with minimal screw placements. It sits on the edge of the Phantom Slide avalanche path, so timing relative to snowpack stability is as important as the climbing itself.",
+  "moves": []
+ },
+ {
+  "id": "wa_news_nw_corner",
+  "beta_new": "The Northwest Corner is a well-established four-to-five pitch route that ascends the natural corner system on the northwest aspect of North Early Winters Spire. This is one of the most popular routes on the peak, known for reliable rock quality and manageable protection requirements. The route follows a clear line with sustained climbing throughout.",
+  "moves": []
+ }
+]

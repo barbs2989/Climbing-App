@@ -1,0 +1,232 @@
+[
+ {
+  "id": "ca_mt_shasta_avalanche_gulch",
+  "name": "Avalanche Gulch",
+  "where": "Mount Shasta Area > Mt. Shasta",
+  "discipline": "mountaineering",
+  "grade": "2nd",
+  "why": "no summit pin on the track, after the trailhead; no summit waypoint with a distance from the trailhead",
+  "distKmStored": 8.5,
+  "outingShape": "outback",
+  "gainFt": 7300,
+  "waypoints": [
+   {
+    "i": 0,
+    "type": "Trailhead",
+    "name": "Bunny Flat Trailhead",
+    "elev": 6926,
+    "distMi": 0
+   },
+   {
+    "i": 1,
+    "type": "Campsite",
+    "name": "Horse Camp",
+    "elev": 7900,
+    "distMi": 1.6
+   },
+   {
+    "i": 2,
+    "type": "Campsite",
+    "name": "Helen Lake",
+    "elev": 10400,
+    "distMi": 3.2
+   }
+  ]
+ },
+ {
+  "id": "ca_north_arete_4",
+  "name": "North Arete",
+  "where": "Little Lakes Valley & Mono Recesses > Bear Creek Spire",
+  "discipline": "alpine",
+  "grade": "5.8",
+  "why": "no one-way distance",
+  "distKmStored": null,
+  "outingShape": null,
+  "gainFt": null,
+  "waypoints": [
+   {
+    "i": 0,
+    "type": "Trailhead",
+    "name": "Mosquito Flat Trailhead",
+    "elev": 10224,
+    "distMi": 0
+   },
+   {
+    "i": 1,
+    "type": "Summit",
+    "name": "Bear Creek Spire",
+    "elev": 13720,
+    "distMi": 6.1
+   }
+  ]
+ },
+ {
+  "id": "ca_north_arete_6",
+  "name": "North Arete",
+  "where": "The Sawtooth Ridge > Matterhorn Peak",
+  "discipline": "alpine",
+  "grade": "5.7",
+  "why": "no one-way distance",
+  "distKmStored": null,
+  "outingShape": null,
+  "gainFt": null,
+  "waypoints": [
+   {
+    "i": 0,
+    "type": "Trailhead",
+    "name": "Twin Lakes (Mono Village) Trailhead",
+    "elev": 7133,
+    "distMi": 0
+   },
+   {
+    "i": 1,
+    "type": "Summit",
+    "name": "Matterhorn Peak",
+    "elev": 12279,
+    "distMi": 6.2
+   }
+  ]
+ },
+ {
+  "id": "ca_north_ridge_4",
+  "name": "North Ridge",
+  "where": "Whitney & Surrounding Peaks > Lone Pine Peak",
+  "discipline": "alpine",
+  "grade": "5.6",
+  "why": "no summit pin on the track, after the trailhead; no summit waypoint with a distance from the trailhead",
+  "distKmStored": null,
+  "outingShape": null,
+  "gainFt": null,
+  "waypoints": [
+   {
+    "i": 0,
+    "type": "Trailhead",
+    "name": "Meysan Lakes Trailhead",
+    "elev": 7946,
+    "distMi": 0
+   },
+   {
+    "i": 1,
+    "type": "Summit",
+    "name": "Lone Pine Peak summit",
+    "elev": null,
+    "distMi": null
+   }
+  ]
+ },
+ {
+  "id": "ca_northwest_arete_2",
+  "name": "Northwest Arete",
+  "where": "Southern Yosemite > Mt Clark",
+  "discipline": "alpine",
+  "grade": "4th",
+  "why": "no one-way distance",
+  "distKmStored": null,
+  "outingShape": null,
+  "gainFt": null,
+  "waypoints": [
+   {
+    "i": 0,
+    "type": "Trailhead",
+    "name": "Happy Isles Trailhead",
+    "elev": 4009,
+    "distMi": 0
+   },
+   {
+    "i": 1,
+    "type": "Summit",
+    "name": "Mount Clark",
+    "elev": 11522,
+    "distMi": 13.2
+   }
+  ]
+ },
+ {
+  "id": "ca_northwest_buttress_2",
+  "name": "Northwest Buttress",
+  "where": "Cathedral Range > Tenaya Peak",
+  "discipline": "alpine",
+  "grade": "5.5",
+  "why": "no one-way distance",
+  "distKmStored": null,
+  "outingShape": null,
+  "gainFt": null,
+  "waypoints": [
+   {
+    "i": 0,
+    "type": "Trailhead",
+    "name": "Tenaya Lake Northeast Shore Pullout",
+    "elev": 8151,
+    "distMi": 0
+   },
+   {
+    "i": 1,
+    "type": "Summit",
+    "name": "Tenaya Peak",
+    "elev": 10260,
+    "distMi": 1.1
+   }
+  ]
+ },
+ {
+  "id": "ca_northwest_chute",
+  "name": "Northwest Chute",
+  "where": "Hoover Wilderness > Tower Peak",
+  "discipline": "alpine",
+  "grade": "3rd",
+  "why": "no one-way distance",
+  "distKmStored": null,
+  "outingShape": null,
+  "gainFt": null,
+  "waypoints": [
+   {
+    "i": 0,
+    "type": "Trailhead",
+    "name": "Leavitt Meadows Trailhead",
+    "elev": 7135,
+    "distMi": 0
+   },
+   {
+    "i": 1,
+    "type": "Campsite",
+    "name": "Tower Lake",
+    "elev": 9532,
+    "distMi": null
+   },
+   {
+    "i": 2,
+    "type": "Summit",
+    "name": "Tower Peak",
+    "elev": 11755,
+    "distMi": 15.7
+   }
+  ]
+ },
+ {
+  "id": "ca_southeast_face_aka_the_waterfall_route",
+  "name": "Southeast Face (aka the Waterfall Route)",
+  "where": "Humphreys Basin, Pine Creek & Granite Park > Mt. Emerson",
+  "discipline": "alpine",
+  "grade": "5.4",
+  "why": "no one-way distance",
+  "distKmStored": null,
+  "outingShape": null,
+  "gainFt": null,
+  "waypoints": [
+   {
+    "i": 0,
+    "type": "Trailhead",
+    "name": "North Lake (Piute Pass) Trailhead",
+    "elev": 9404,
+    "distMi": 0
+   },
+   {
+    "i": 1,
+    "type": "Summit",
+    "name": "Mount Emerson",
+    "elev": 13204,
+    "distMi": 2.8
+   }
+  ]
+ }
+]

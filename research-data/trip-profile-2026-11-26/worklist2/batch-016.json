@@ -1,0 +1,267 @@
+[
+ {
+  "id": "wa_roan_wall_stage_right",
+  "name": "Roan Wall - Stage Right",
+  "where": "Squire Creek Walls > Waterfall Basin",
+  "discipline": "alpine",
+  "grade": "5.10b",
+  "why": "no summit waypoint with a distance from the trailhead",
+  "distKmStored": null,
+  "outingShape": null,
+  "gainFt": 3800,
+  "waypoints": [
+   {
+    "i": 0,
+    "type": "Campsite",
+    "name": "Squire Creek Park & Campground, Snohomish County",
+    "elev": 463,
+    "distMi": null
+   },
+   {
+    "i": 1,
+    "type": "Trailhead",
+    "name": "Squire Creek Road Trailhead",
+    "elev": 1100,
+    "distMi": 0
+   },
+   {
+    "i": 2,
+    "type": "Base",
+    "name": "Waterfall Basin (base of Roan Wall)",
+    "elev": 2659,
+    "distMi": 3.5
+   }
+  ]
+ },
+ {
+  "id": "wa_sherpa_balanced_rock_ne_couloir",
+  "name": "Northeast Couloir",
+  "where": "Stuart-Enchantments > Sherpa Peak",
+  "discipline": "alpine",
+  "grade": "5.0",
+  "why": "no summit waypoint with a distance from the trailhead",
+  "distKmStored": null,
+  "outingShape": null,
+  "gainFt": 5000,
+  "waypoints": [
+   {
+    "i": 0,
+    "type": "Trailhead",
+    "name": "Stuart Lake Trailhead (Trail #1599)",
+    "elev": null,
+    "distMi": null
+   },
+   {
+    "i": 1,
+    "type": "Water",
+    "name": "Mountaineer Creek crossing",
+    "elev": 3945,
+    "distMi": null
+   },
+   {
+    "i": 2,
+    "type": "Summit",
+    "name": "Sherpa Peak / Balanced Rock summit",
+    "elev": 8630,
+    "distMi": null
+   }
+  ]
+ },
+ {
+  "id": "wa_silver_star_northwest_face",
+  "name": "Northwest Face",
+  "where": "Silver Star and Wine spires > Silver Star Mountain",
+  "discipline": "ice",
+  "grade": "WI4+",
+  "why": "no summit waypoint with a distance from the trailhead",
+  "distKmStored": null,
+  "outingShape": null,
+  "gainFt": null,
+  "waypoints": [
+   {
+    "i": 0,
+    "type": "Trailhead",
+    "name": "SR-20 pullout near milepost 165-166 (Silver Star / Wine Spires)",
+    "elev": null,
+    "distMi": null
+   }
+  ]
+ },
+ {
+  "id": "wa_silver_star_west_face_couloir",
+  "name": "West Face Couloir",
+  "where": "Silver Star and Wine spires > Silver Star Mountain",
+  "discipline": "ice",
+  "grade": "AI2",
+  "why": "no summit waypoint with a distance from the trailhead",
+  "distKmStored": null,
+  "outingShape": null,
+  "gainFt": null,
+  "waypoints": [
+   {
+    "i": 0,
+    "type": "Trailhead",
+    "name": "SR-20 pullout near milepost 165-166 (Silver Star / Wine Spires)",
+    "elev": null,
+    "distMi": null
+   }
+  ]
+ },
+ {
+  "id": "wa_skeena26",
+  "name": "Skeena26",
+  "where": "Squire Creek Walls > South Face",
+  "discipline": "alpine",
+  "grade": "5.9",
+  "why": "no summit waypoint with a distance from the trailhead",
+  "distKmStored": null,
+  "outingShape": null,
+  "gainFt": 2200,
+  "waypoints": [
+   {
+    "i": 0,
+    "type": "Campsite",
+    "name": "Squire Creek Park & Campground, Snohomish County",
+    "elev": 463,
+    "distMi": null
+   },
+   {
+    "i": 1,
+    "type": "Trailhead",
+    "name": "Squire Creek Road washout parking (FS Rd 2040)",
+    "elev": 1170,
+    "distMi": null
+   },
+   {
+    "i": 2,
+    "type": "Base/bivy",
+    "name": "Grassy saddle (South Face routes)",
+    "elev": 3249,
+    "distMi": 3
+   }
+  ]
+ },
+ {
+  "id": "wa_smears_jugs_and_rock_roll",
+  "name": "Smears, Jugs, and Rock & Roll",
+  "where": "Stuart-Enchantments > Viviane Campsite",
+  "discipline": "alpine",
+  "grade": "5.10a",
+  "why": "no summit waypoint with a distance from the trailhead",
+  "distKmStored": null,
+  "outingShape": null,
+  "gainFt": 6400,
+  "waypoints": [
+   {
+    "i": 0,
+    "type": "Trailhead",
+    "name": "Snow Lakes Trailhead (Trail #1553)",
+    "elev": 1300,
+    "distMi": null
+   },
+   {
+    "i": 1,
+    "type": "Water",
+    "name": "Snow Lakes",
+    "elev": 5415,
+    "distMi": 6
+   },
+   {
+    "i": 2,
+    "type": "Campsite",
+    "name": "Viviane Campsite (Lake Viviane)",
+    "elev": 6788,
+    "distMi": 9.3
+   },
+   {
+    "i": 3,
+    "type": "Base",
+    "name": "Base of Prusik Peak south face (approximate)",
+    "elev": 6788,
+    "distMi": null
+   },
+   {
+    "i": 4,
+    "type": "Crag",
+    "name": "Viviane Campsite (route base)",
+    "elev": 6802,
+    "distMi": null
+   },
+   {
+    "i": 5,
+    "type": "Summit",
+    "name": "Viviane Campsite crag",
+    "elev": 6802,
+    "distMi": null
+   }
+  ]
+ },
+ {
+  "id": "wa_snoqualmie_mountain_the_snostril",
+  "name": "The Snostril",
+  "where": "Snoqualmie Pass Area > Winter-Spring (ice, snow",
+  "discipline": "ice",
+  "grade": "WI4+ M5+",
+  "why": "no summit waypoint with a distance from the trailhead",
+  "distKmStored": null,
+  "outingShape": null,
+  "gainFt": null,
+  "waypoints": [
+   {
+    "i": 0,
+    "type": "Trailhead",
+    "name": "Alpental / Snow Lake Trailhead (I-90 Exit 52)",
+    "elev": null,
+    "distMi": null
+   },
+   {
+    "i": 1,
+    "type": "route",
+    "name": "The Snostril (NW Face)",
+    "elev": null,
+    "distMi": null
+   }
+  ]
+ },
+ {
+  "id": "wa_south_face",
+  "name": "South Face",
+  "where": "Silver Star and Wine spires > Vasiliki Tower",
+  "discipline": "alpine",
+  "grade": "5.6",
+  "why": "no summit waypoint with a distance from the trailhead",
+  "distKmStored": 4.8,
+  "outingShape": null,
+  "gainFt": 3700,
+  "waypoints": [
+   {
+    "i": 0,
+    "type": "Trailhead",
+    "name": "SR-20 Wine Spires pullout (milepost 166)",
+    "elev": 4300,
+    "distMi": null
+   },
+   {
+    "i": 1,
+    "type": "Campsite",
+    "name": "The Ledge Bivy",
+    "elev": null,
+    "distMi": 2
+   },
+   {
+    "i": 2,
+    "type": "Junction",
+    "name": "Burgundy Col",
+    "elev": 7800,
+    "distMi": 3
+   },
+   {
+    "i": 3,
+    "type": "Summit",
+    "name": "Vasiliki Tower",
+    "elev": 8062,
+    "distMi": null
+   }
+  ]
+ }
+]

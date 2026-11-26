@@ -38,6 +38,7 @@ const NEVER = {
   mixed_grade_num: "derived from the grade columns",
   aid_grade_num: "derived from the grade columns",
   snow_grade_num: "derived from the grade columns",
+  rock_grade_num: "derived from the grade columns (the 5.x free grade beside another headline, 0550)",
   disciplines: "derived from discipline (0280 trigger)",
   verif: "never climber-writable (docs/guards/contributions-and-logbook.md)",
   corrections: "never climber-writable (docs/guards/contributions-and-logbook.md)",

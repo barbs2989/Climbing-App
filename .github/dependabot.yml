@@ -1,7 +1,13 @@
 # Dependency update PRs. Minor and patch bumps arrive as ONE grouped PR a week, so the queue
 # stays readable; each MAJOR bump arrives alone, because a major is a decision (see the notes in
 # scripts/check-action-versions.mjs) and needs its own build to prove it. Security fixes are
-# opened as soon as GitHub publishes the advisory, whatever the schedule.
+# opened as soon as GitHub publishes the advisory, whatever the schedule (automated security
+# updates were switched ON for the repo in the 2026-11-26 security audit).
+#
+# COOLDOWN (security audit 2026-11-26): a version-update PR waits until a release is 7 days old
+# (majors 14). The 2025 npm worms (Shai-Hulud, the chalk/debug hijack) were live for hours to a
+# couple of days before the registry pulled them; a week's wait means a hijacked release is gone
+# before we are ever offered it. Security-fix PRs are NOT delayed by a cooldown.
 version: 2
 updates:
   - package-ecosystem: npm
@@ -10,6 +16,9 @@ updates:
       interval: weekly
       day: monday
     open-pull-requests-limit: 5
+    cooldown:
+      default-days: 7
+      semver-major-days: 14
     groups:
       npm-minor-and-patch:
         update-types: [minor, patch]
@@ -18,6 +27,8 @@ updates:
     directory: /
     schedule:
       interval: monthly
+    cooldown:
+      default-days: 7
     groups:
       actions-minor-and-patch:
         update-types: [minor, patch]

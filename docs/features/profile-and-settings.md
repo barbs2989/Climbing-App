@@ -121,7 +121,10 @@ profile can also open as `FullProfile` and `Resume` overlays from anywhere (part
   it, so closing or posting returns you to where you vouched from; App prefetches its chunk when a profile opens.
   (It used to draw at z 220, under most overlays, so callers closed theirs first and whatever else was open, such as
   the résumé, showed instead.) Its climb picker searches the DB catalog (`useRouteSearch`) and stores the route NAME
-  in the vouch's `reason` JSON. Skills come from `SKILLS`/`SKILL_GROUPS` in core (32 in six groups since
+  in the vouch's `reason` JSON, and since 2026-11-26 its catalog id as `routeId` too (no column). `VouchCard` draws
+  that climb as a link when `routeId` is set, on a climber's Vouches tab (`FullProfile`) and on your own *Vouches
+  you've received* page (`MeTab`); a climb this visit has not loaded opens as a `_thin` stub that loads on open. An
+  older vouch, which holds only the name, keeps it as plain text, and a vouch that names no climb prints no line. Skills come from `SKILLS`/`SKILL_GROUPS` in core (32 in six groups since
   2026-10-21; keys are never renamed or reused), the same list the profile editor's *Safety skills* uses.
 - **Safety skills**: one list, `SKILLS` grouped by `SKILL_GROUPS` in `ClimbMatchCore.jsx`, is what Edit profile offers and what a vouch can name. *Partner checks* was removed (2026-10-21, shipped 2026-10-28); `liveSkills()` drops it from any profile or vouch that saved it, so it never shows as an "other" skill.
 - **The ✕ on another climber's profile** sticks to the top while the profile scrolls (zero-height sticky row,
@@ -250,7 +253,7 @@ profile can also open as `FullProfile` and `Resume` overlays from anywhere (part
 | `lib/GiveVouch.jsx` | vouch sheet |
 | `lib/Onboarding.jsx` | `Onboarding` (first-run setup) |
 | `lib/homeFromDevice.js` | `homeFromDevice` (onboarding's *Use my current location*) |
-| `lib/LegalView.jsx` | `LegalView` (Terms, Privacy, Guidelines, Accessibility), `AccessReportForm`, `ACCESS_UPDATED` |
+| `lib/LegalView.jsx` | `LegalView` (Terms, Privacy, Guidelines, Accessibility, Delete your account), `AccessReportForm`, `ACCESS_UPDATED`. Each opens from a public URL, signed in or out: `?legal=terms|privacy|guidelines|accessibility|delete` (`?legal=child-safety` = the Guidelines), for the store listings (2026-11-26) |
 | `lib/AppFeedback.jsx` | `FeedbackForm`, `RateForm` (the Menu's Feedback and Rate app sheets), `AppFeedbackQueue` (the Review desk's *Feedback & ratings*, `review.html#feedback`), `devicePlatform`, `storeListing`, `APP_VERSION` |
 | `lib/AccessibilityReports.jsx` | `AccessibilityReportQueue` — the owner's queue of accessibility reports, a section of the Review desk (`review.html#access`) |
 | `supabase/functions/notify-accessibility-report/index.ts` | emails the owner when a report is filed (needs `RESEND_API_KEY`) |

@@ -30,6 +30,15 @@ empty field fill at once and two agreeing climbers change one; the owner withdre
   restricted, 5 → banned). Modelled on theCrag (no delete of a referenced route; merge instead),
   Mountain Project (deletions go to the regional admin) and OpenStreetMap's OSMCha (mass deletions
   flagged for review).
+- **...and a removal is re-checked when it is APPROVED, against the page as it is then (0553,
+  2026-11-26).** 0351 asks once, at send time, so an edit sent as an addition (3 waypoints onto a page of 2)
+  becomes a silent removal if the page gains rows before it is approved (approving it then replaces 4 with 3).
+  The desk's red banner (`review/ReviewDesk.jsx`) and the autopilot's export (`scripts/review-queue-export.mjs`,
+  so `decide()` leaves it to the owner) re-ask `editRemoves` (`lib/editRemoves.js`, the JS copy of
+  `_edit_removes`) against the page now, and `guard_contribution_status` refuses the approval (42501) unless
+  the approver is an admin who is not `review-bot@climbmatch.app` (`_is_review_bot`) — so neither a
+  0530 reviewer nor the autopilot can approve a removal; the owner still can. `check:edit-removes` holds
+  the cases and the wiring.
 - **Approved edits reach the page**, as the owner applied them (`applied_value` when the owner
   adjusted the value, else `value`), through the same client-side overlay the page always used.
   An approved field becomes **high confidence**. A `grade` approval also writes `routes.grade`
@@ -109,6 +118,17 @@ empty field fill at once and two agreeing climbers change one; the owner withdre
   *Wrong place claims* (`AreaPlacementQueue`, 0372; `review.html#placements`) and *Feedback & ratings* (`AppFeedbackQueue`, 0365;
   `review.html#feedback`, counted by open notes) followed on 2026-11-25, the last of the Menu's admin Review tiles: the app's Menu
   has no Review section, no review sheet and no count on its button any more (owner: "remove since we created the admin page").
+- **Safety reports on the desk (2026-11-26, `review.html#safety`, `review/SafetySection.jsx`, admin only)**: the owner
+  asked for reports to be "pushed to my admin dashboard". The in-app queues #2727 removed come back here, not in the app:
+  *Waiting* (`useSafetyReports`: `user_reports` open/reviewing, severe reasons first then oldest, red from 20 h, the
+  server's copy of what was reported, images blurred until opened, how many reports name the person and their standing),
+  *Reported photos* (`usePhotoReports`, `content_reports`), *Appeals* (`useSafetyAppeals`, every kind but `contributing`,
+  which stays in *Appeals*), *Closed*, and *How to decide* (the written enforcement rules, NCMEC procedure included).
+  Buttons: `moderateContent` (remove / hide / keep), `reviewUserReport`, `setAccountStanding` (suspend 1-365 days / ban,
+  optionally removing everything they posted / reinstate), `takeDownReportedPhoto`, `dismissPhotoReport`, `decideAppeal`.
+  `useAdminQueueCounts` counts them as `safety` (+ `safetyOldestAt`). **0551** puts a `safety_report` notice in every
+  admin's bell for each new report, reported photo or appeal; its link `{desk}` opens `review.html#<desk>` (`goSpecial`).
+  The audit and store checklist: [docs/APP-STORE-READINESS-AUDIT.md](../APP-STORE-READINESS-AUDIT.md).
 - **The nightly AI checker**: `scripts/review-queue-export.mjs` (service key, read-only) lists items with
   no verdict or whose content changed since (`item_hash`); `.claude/workflows/review-flags-nightly.js`
   researches each (open web only; no AllTrails/Gaia/CalTopo/Strava/Wikiloc/Peakbagger/Mountain Project)
@@ -412,6 +432,8 @@ Deferred by the owner (2026-10-15): CAPTCHA on sign-up.
 | `lib/db.js` | `submitContribution`, `useRouteContributions`, `useRouteFieldConfidence`, `setRouteFieldConfidence`, `useFieldContributions`, `approveFieldContribution`, `rejectFieldContribution`, `useMyContributionStanding`, `useContributionStandings`, `setContributionStanding`, `fileRouteFlag`, `useOpenRouteFlags`, `resolveRouteFlag`, `useMyNotices`, `markNoticeRead`, `useAdminQueueCounts`, `useContributionFields`, `useRouteRowsByIds` |
 | `scripts/check-contrib-field-columns.mjs` | the guard that keeps `contribution_fields` equal to the form |
 | `supabase/migrations/0307_route_quality_control_tables.sql` | `contribution_fields`, `route_field_confidence`, `contribution_standing`, `route_flags`, `user_notices`, `applied_value` |
+| `supabase/migrations/0553_a_removal_is_rechecked_at_approval.sql` | `_is_review_bot`, `guard_contribution_status` refusing a removal (against the page now) from a reviewer or the autopilot |
+| `lib/editRemoves.js` | `editRemoves`, the JS copy of `_edit_removes` the desk and the autopilot's export use |
 | `supabase/migrations/0351_a_removal_waits_for_the_owner.sql` | `contributions.reason`, `route_field_page_value`, `_edit_removes`, `contribution_consensus` with the removal exit |
 | `supabase/migrations/0308_field_confidence_and_edit_guards.sql` | `route_field_level`, `route_field_confidence_map`, `can_contribute_fields`, `can_flag`, `guard_field_contribution` |
 | `supabase/migrations/0406_discipline_is_locked.sql` | `_route_field_level_for` with `discipline` / `rockStyle` high once on file |

@@ -1,0 +1,16 @@
+[
+ {"id":"bc_ossa_mountain_east_ridge","waypoints":[],"unresolved":"No trailhead waypoint to measure from; no distance searched."},
+ {"id":"bc_wedge_mountain_northeast_arete","waypoints":[],"unresolved":"No trailhead waypoint to measure from; no distance searched."},
+ {"id":"ca_a_clouds_rest_trail_clouds_rest_trail","waypoints":[
+  {"i":0,"name":"Clouds Rest Trail summit","elev":9926,"sources":["https://www.nps.gov/places/000/sunrise-lakes-trailhead.htm","https://americansouthwest.net/california/yosemite/clouds-rest.html"],"note":"NPS 9,926 ft (Wikipedia 9,930)"}
+ ],"unresolved":"No trailhead waypoint, and trailhead options (Sunrise Lakes vs Tenaya Lake) give differing distances; distMi omitted."},
+ {"id":"ca_castle_dome_4th_class_route","waypoints":[],"unresolved":"Nothing null; nothing to fill."},
+ {"id":"ca_d_half_dome_cables_route_cables_route","waypoints":[
+  {"i":1,"name":"Cables Route summit","elev":8839,"sources":["https://www.citrusmilo.com/yosemiteguide/halfdome.php"],"note":"Summit 8,839 ft (NPS rounds to 8,800)"}
+ ],"unresolved":"One-way distance not stated; sources only give round trips of 14-16 mi (NPS) or 16.4 mi (loop up Mist, down JMT), so not halved. Happy Isles trailhead elev about 4,000 ft per one source, left out."},
+ {"id":"ca_east_arete_3","waypoints":[],"unresolved":"Nothing null; nothing to fill."},
+ {"id":"ca_jobs_peak_east_gully","waypoints":[],"unresolved":"No reliable one-way distance (FKT page 3.6 mi looks like a straight-line figure, another log reports 17 mi round trip with 9,440 ft gain); no published summit elevation read."},
+ {"id":"ca_mount_tallac_trail_mount_tallac_trail","waypoints":[
+  {"i":1,"name":"Mount Tallac Trail summit","distMi":5.0,"elev":9735,"sources":["https://www.americansouthwest.net/california/lake_tahoe/mount-tallac-trail.html","https://climber.org/driving/FallenLeaf.html"],"note":"Both state 5 mi one way from Mount Tallac trailhead; summit 9,735 ft"}
+ ],"unresolved":"Trailhead elevation not stated by a source."}
+]

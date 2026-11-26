@@ -239,6 +239,42 @@ Part of the guard notes — see [README.md](README.md) for the full index.
   - Fails **closed**: finding no bottom-anchored panel at all is a broken scan, and a declared panel
     that no longer exists fails as **stale**. Injection-tested **5/5**; **case 3 must PASS** (a
     full-screen overlay is out of scope) and case 1 is the real revert.
+- **`check:safe-href`** (security audit 2026-11-26) asserts that no link in the app can run script.
+  React 18 renders `href="javascript:…"` as written, and several links are built from text another
+  climber wrote straight into the database through the public API: `messages.image_url` (the chat
+  photo's Save link), a photo contribution's `value.url` and a reported item's `snapshot_media` (both
+  opened by the **Review desk**, where the owner is signed in as admin — the worst place for it), and a
+  group's links. supabase-js keeps the session in localStorage, so one tap was an account takeover.
+  Four rules: every JSX `href={…}` that is not a string literal is `href={safeHref(…)}`
+  (`lib/safeUrl.js`) — one rule for EVERY link, because deciding per call site which values are
+  climber-written is the judgement that missed the Review desk; `safeHref` refuses javascript:, data:,
+  vbscript:, file: (mixed case, leading whitespace, a tab or newline inside the scheme) and keeps
+  https, mailto, sms, tel, geo, blob, relative links, the Gaia GPS app link and a RASTER
+  `data:image/…;base64` (a chat photo is stored as one — refusing it broke the photo's Save link
+  until 0552's batch; SVG and every other data: type stay refused, and 0552 holds the columns to the
+  same rule in the database); both Vite configs carry
+  `cspPlugin()` (`scripts/lib/vite-csp.mjs`) with no unsafe-inline/unsafe-eval; and no HTML string the
+  app writes carries an inline `on…=""` handler, because the CSP refuses those and the control silently
+  dies (printSheet's Print and Back buttons were the case; they are wired with addEventListener now).
+  Fails closed under 100 files or under 40 wrapped links (50 on 2026-11-26). Injection-tested:
+  unwrapping `GroupAboutTab`'s `l.url` fails it at the line. **What it cannot see:** a link built with
+  `document.createElement("a")` (all such today are blob: downloads) and `src=` (an `<img>` or `<video>`
+  does not run a javascript: URL). **The CSP** is the second wall: `script-src 'self'` + the boot
+  script's SHA-256 (computed from the built HTML, so it cannot go stale) + cdnjs (Leaflet, MapLibre,
+  each SRI-pinned) + Cloudflare Turnstile; `worker-src 'self' blob:` for MapLibre's worker; `object-src
+  'none'`, `base-uri 'self'`, `form-action 'self'`; build only, since the dev server injects inline HMR
+  script. Verified in Chrome against the built app: the app, a route page and the Review desk boot with
+  zero violations, Leaflet, MapLibre (a map reaching `load`) and Turnstile load, and a `javascript:` link
+  is refused. With AdSense on (`VITE_ADSENSE_CLIENT`) script-src is dropped, as AdSense cannot run
+  under a host list. A `<meta>` policy cannot set `frame-ancestors`, and Pages sends no
+  X-Frame-Options, so **rule 5** holds the substitute: `main.jsx` and `review/main.jsx` ask
+  `framedByAnotherSite()` (`lib/frameGuard.js`) before mounting, and inside another site's frame draw
+  only an *Open ClimbMatch* link (OWASP's clickjacking cheat sheet). Verified: a page on another port
+  framing the app and the Review desk got the notice; a direct load drew the app. **Trap met:** the
+  wrap moved an anchor in `inject-trailhead-directions-cases.mjs` case 7 (`TrailheadCard`'s Google
+  Maps link), which `check:injection-anchors` caught on CI — any case that quotes a JSX `href={…}` must
+  quote it wrapped. And do not run `check:injection-anchors` while an injection suite is running in
+  the same tree: the suite edits files in place, so the anchor guard reports its cases as ROTTED.
 - **`check:no-secrets`** asserts that no tracked or untracked file holds a Supabase credential or the
   project's own URL as a literal. The repo is **public**, and a `service_role` key was once committed
   in a checklist doc and as a `process.env.X || '<key>'` fallback. It stayed in git history after the

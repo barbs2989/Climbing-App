@@ -53,6 +53,7 @@ npm run check:no-left-stripes # no box wears a thick coloured line down its LEFT
 npm run check:no-purple-text # the app draws NO purple text: C has no purple token, and the few purple MAP marks are an allow-list (owner, 2026-11-25) (in build)
 npm run check:no-nul  # no source file git would treat as BINARY, so diffs stay readable (in build)
 npm run check:no-secrets # no Supabase service key, service_role JWT, or literal anon key / project URL in source (in build)
+npm run check:safe-href # no link can run script: every dynamic href goes through safeHref(), and both builds carry the CSP (in build)
 npm run check:script-roots # no script reads the app files of somebody ELSE's worktree (in build)
 npm run check:dup-attrs # a declaration written TWICE: the later wins, the earlier is dead (in build)
 npm run check:field-outline # every text field (input, textarea, select) is outlined in C.field, never C.border — its outline is what shows where it is, so it needs 3:1 (in build)
@@ -196,6 +197,7 @@ npm run check:sun-times # the Calendar's sunrise and sunset match an ephemeris t
 npm run check:itinerary-shape # a trip plan is day by day or NOTHING, never prose (lib/itineraryShape.js), and every pipeline loader and trip-plan apply script still refuses prose (in build)
 npm run audit:itinerary-shape # does every LIVE trip plan follow that rule? fails on prose; reports gap days (service key)
 npm run check:return-leg      # the walk is split at the summit, a route's stored legs win, the descent is the longer of stored and walked, and each red warning names the DAY it lands on (in build)
+npm run check:trip-profile # every route walked to a summit draws TRIP PROFILE, empty or not, and its legs split the route's own figures (in build)
 npm run check:leg-loss-regain # the leg cards print the downhill on the way up (Loss) and the uphill on the way back (Regain) from PUBLISHED figures only (0449), never measured; a loop's whole-outing gain is not printed as a leg (in build)
 npm run audit:gain         # is a route gaining LESS than its own waypoints demand?
 npm run check:rappel-lengths # can the rope a route describes actually reach the rappel it states?
@@ -275,6 +277,7 @@ npm run check:route-tags # real list prose still reaches a list key, and each ke
 npm run check:list-summit-audit # a peak list ticks only from a route that reaches the SUMMIT; every list peak was audited (in build)
 npm run check:contrib-shapes # what the contribute form SUBMITS is the shape its readers READ (in build)
 npm run check:consensus-clustering # three climbers who agree must be COUNTED as agreeing (in build)
+npm run check:edit-removes # an edit that takes something OFF the page (waypoints, pins, rows, a field) is re-checked at APPROVAL against the page now; only the owner approves one (in build)
 npm run check:add-route-fields # add-a-climb asks what the discipline needs, and nothing unstorable (in build)
 npm run check:edit-scope # the route EDIT SHEET offers, per discipline, only fields that discipline's page draws — one rule, lib/fieldScope.js (in build)
 npm run check:route-prose-format # a route field the edit sheet FORMATS (description, approach, descent, location) is READ as formatting: RichEditor in, renderProse out (in build)

@@ -20,7 +20,7 @@ import { POP_CLOSE, POP_REMOVE } from "./popupChrome.js";
    seed ROUTES are never offered (see the comment on seedMs below). */
 export default function GiveVouch({friend,onClose,onSave,suggest,initial,routeById}){
   // `initial` is the vouch you already gave this climber: the form opens on YOUR earlier answers, so editing a one-tap vouch adds to it rather than starting over.
-  const [route,setRoute]=useState(initial&&initial.route&&initial.route!=="Climbed together"?{name:initial.route,sub:initial.date?"Vouched "+initial.date:""}:null);
+  const [route,setRoute]=useState(initial&&initial.route&&initial.route!=="Climbed together"?{name:initial.route,id:initial.routeId,sub:initial.date?"Vouched "+initial.date:""}:null);
   const [q,setQ]=useState("");
   // EMPTY, not five stars each: a default rating is a rating the voucher never gave, published as theirs.
   const [ratings,setRatings]=useState(initial?Object.assign({},initial.ratings):{});
@@ -40,7 +40,7 @@ export default function GiveVouch({friend,onClose,onSave,suggest,initial,routeBy
   const dbVouchSearch=useRouteSearch(USE_DB?q:"");
   const H=(t,m)=><div style={{fontFamily:FONT_DISPLAY,fontSize:18,lineHeight:1.15,fontWeight:600,color:C.text,textTransform:"uppercase",letterSpacing:0.7,margin:m||"0 0 6px"}}>{t}</div>;
   const sub={fontSize:12,color:C.textSub,lineHeight:1.45,marginBottom:10};
-  const pick=(r)=>{setRoute({name:r.name,sub:[r.grade,routePlace(r)].filter(Boolean).join(" · ")});setQ("");};
+  const pick=(r)=>{setRoute({name:r.name,id:r.id,sub:[r.grade,routePlace(r)].filter(Boolean).join(" · ")});setQ("");};
   const row=(r,ix,tag)=><div key={r.id} {...clickable(()=>pick(r))} aria-label={"Choose "+r.name} style={{display:"flex",alignItems:"center",gap:9,padding:"9px 10px",borderTop:ix?"1px solid "+C.borderLight:"none",cursor:"pointer"}}><div style={{flex:1,minWidth:0}}><div style={{fontSize:13,fontWeight:600,color:C.text,overflowWrap:"anywhere"}}>{r.name}</div><div style={{fontSize:11,color:C.textMuted,marginTop:1,overflowWrap:"anywhere"}}>{tag?<span style={{color:C.blue,fontWeight:700}}>{tag+" · "}</span>:null}{/* a crew climb handed over from the card has no mountainId; name its peak, never "undefined" */[r.grade,routePlace(r)||r.parentName].filter(Boolean).join(" · ")}</div></div><DiscBadges route={r} sm/><span style={{flexShrink:0,fontSize:12,fontWeight:700,color:C.blue,border:"1px solid "+C.blueDim,borderRadius:7,padding:"3px 9px"}}>Choose</span></div>;
   /* Portalled, and ABOVE a climber's profile (9800), which stays open underneath: the sheet was drawn at
      z 220, under the profile, the résumé (9900) and most overlays, so every caller had to close what it was
@@ -90,6 +90,6 @@ export default function GiveVouch({friend,onClose,onSave,suggest,initial,routeBy
     {H("A few words","18px 0 8px")}
     <textarea aria-label="A few words (optional)" value={text} onChange={e=>setText(e.target.value)} placeholder={"What was it like climbing with "+fn+"?"} style={{width:"100%",minHeight:62,padding:"10px 11px",borderRadius:10,border:`1px solid ${C.field}`,background:C.surface,color:C.text,fontSize:13,marginBottom:13,boxSizing:"border-box",resize:"vertical",fontFamily:"inherit"}}/>
     <label style={{display:"flex",alignItems:"center",gap:11,marginBottom:16,cursor:"pointer",fontSize:15,fontWeight:700,color:again?C.green:C.text,background:again?C.greenBg:C.surface,border:"1px solid "+(again?C.green:C.border),borderRadius:11,padding:"12px 14px"}}><input type="checkbox" checked={again} onChange={e=>setAgain(e.target.checked)} style={{width:20,height:20,accentColor:C.green,cursor:"pointer",flexShrink:0}}/><span>I&rsquo;d climb with {fn} again</span></label>
-    <button onClick={()=>onSave({_targetId:friend.id,from:ME.name,avatar:ME.avatar,route:(route&&route.name)||"Climbed together",date:initial&&initial.date?initial.date:"Today",ratings:ratings,skills:skills,text:text||"",wouldClimbAgain:again,practicedOn:practiced&&skills.length&&/^\d{4}-\d{2}-\d{2}$/.test(practicedOn)?practicedOn:undefined})} style={{width:"100%",padding:12,...SOLID_FILL(C),color:C.onSolid,border:"1px solid rgba(0,0,0,0.22)",boxSizing:"border-box",borderRadius:10,fontSize:15,fontWeight:700,cursor:"pointer"}}>{initial?"Save changes":"Post vouch"}</button>
+    <button onClick={()=>onSave({_targetId:friend.id,from:ME.name,avatar:ME.avatar,route:(route&&route.name)||"Climbed together",routeId:route&&typeof route.id==="string"&&route.id?route.id:undefined,date:initial&&initial.date?initial.date:"Today",ratings:ratings,skills:skills,text:text||"",wouldClimbAgain:again,practicedOn:practiced&&skills.length&&/^\d{4}-\d{2}-\d{2}$/.test(practicedOn)?practicedOn:undefined})} style={{width:"100%",padding:12,...SOLID_FILL(C),color:C.onSolid,border:"1px solid rgba(0,0,0,0.22)",boxSizing:"border-box",borderRadius:10,fontSize:15,fontWeight:700,cursor:"pointer"}}>{initial?"Save changes":"Post vouch"}</button>
   </div></div>,document.body);
 }

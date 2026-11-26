@@ -1,0 +1,211 @@
+[
+ {
+  "id": "or_south_ridge_2",
+  "name": "South Ridge",
+  "where": "Oregon Volcanoes > Mt. Jefferson",
+  "discipline": "alpine",
+  "grade": "4th",
+  "why": "no one-way distance",
+  "distKmStored": null,
+  "outingShape": null,
+  "gainFt": null,
+  "waypoints": [
+   {
+    "i": 0,
+    "type": "Trailhead",
+    "name": "Pamelia Lake Trailhead",
+    "elev": null,
+    "distMi": null
+   },
+   {
+    "i": 1,
+    "type": "Summit",
+    "name": "Mount Jefferson summit",
+    "elev": null,
+    "distMi": null
+   }
+  ]
+ },
+ {
+  "id": "or_south_ridge_route",
+  "name": "South Ridge Route",
+  "where": "Oregon Volcanoes > Three Fingered Jack",
+  "discipline": "alpine",
+  "grade": "5.2",
+  "why": "no one-way distance",
+  "distKmStored": null,
+  "outingShape": null,
+  "gainFt": 3000,
+  "waypoints": [
+   {
+    "i": 0,
+    "type": "Trailhead",
+    "name": "Santiam Pass PCT Trailhead",
+    "elev": 4888,
+    "distMi": 0
+   },
+   {
+    "i": 1,
+    "type": "Summit",
+    "name": "Three Fingered Jack",
+    "elev": 7821,
+    "distMi": 6.2
+   }
+  ]
+ },
+ {
+  "id": "or_south_sister_south_side_route",
+  "name": "South Side Route",
+  "where": "Three Sisters Wilderness > South Sister",
+  "discipline": "mountaineering",
+  "grade": "Easy Snow",
+  "why": "no one-way distance",
+  "distKmStored": null,
+  "outingShape": null,
+  "gainFt": 4900,
+  "waypoints": [
+   {
+    "i": 0,
+    "type": "Trailhead",
+    "name": "Devils Lake",
+    "elev": null,
+    "distMi": null
+   },
+   {
+    "i": 1,
+    "type": "Summit",
+    "name": "South Sister summit",
+    "elev": null,
+    "distMi": null
+   }
+  ]
+ },
+ {
+  "id": "rainier_central_mowich_face",
+  "name": "Central Mowich Face",
+  "where": "Southwest Cascades > Mount Rainier",
+  "discipline": "alpine",
+  "grade": null,
+  "why": "no summit waypoint with a distance from the trailhead",
+  "distKmStored": null,
+  "outingShape": null,
+  "gainFt": 6200,
+  "waypoints": [
+   {
+    "i": 0,
+    "type": "Trailhead",
+    "name": "Mowich Lake Trailhead",
+    "elev": 4955,
+    "distMi": null
+   }
+  ]
+ },
+ {
+  "id": "ut_kings_peak_anderson_pass",
+  "name": "Anderson Pass",
+  "where": "Uinta Mountains > Kings Peak",
+  "discipline": "mountaineering",
+  "grade": "Easy Snow",
+  "why": "no summit pin on the track, after the trailhead; no summit waypoint with a distance from the trailhead",
+  "distKmStored": null,
+  "outingShape": null,
+  "gainFt": null,
+  "waypoints": [
+   {
+    "i": 0,
+    "type": "Trailhead",
+    "name": "Henrys Fork",
+    "elev": null,
+    "distMi": null
+   }
+  ]
+ },
+ {
+  "id": "wa_agnes_mountain_south_ridge",
+  "name": "South Ridge (via Asa Peak NE Ridge)",
+  "where": "Stehekin > Agnes Mountain",
+  "discipline": "alpine",
+  "grade": "5.8",
+  "why": "no summit waypoint with a distance from the trailhead",
+  "distKmStored": null,
+  "outingShape": null,
+  "gainFt": 6515,
+  "waypoints": [
+   {
+    "i": 0,
+    "type": "Trailhead",
+    "name": "High Bridge (PCT/Stehekin Valley Road)",
+    "elev": 1576,
+    "distMi": 0
+   },
+   {
+    "i": 1,
+    "type": "Summit",
+    "name": "Agnes Mountain summit",
+    "elev": 8119,
+    "distMi": null
+   }
+  ]
+ },
+ {
+  "id": "wa_cardinal_peak_nw_couloir_north_ridge",
+  "name": "Northwest Couloir–North Ridge",
+  "where": "Sawtooth / Lake Chelan > Cardinal Peak",
+  "discipline": "mountaineering",
+  "grade": "Class 4",
+  "why": "no summit waypoint with a distance from the trailhead",
+  "distKmStored": null,
+  "outingShape": null,
+  "gainFt": null,
+  "waypoints": [
+   {
+    "i": 0,
+    "type": "Trailhead",
+    "name": "North Fork Entiat Trailhead",
+    "elev": null,
+    "distMi": null
+   },
+   {
+    "i": 1,
+    "type": "Summit",
+    "name": "Cardinal Peak summit",
+    "elev": null,
+    "distMi": null
+   }
+  ]
+ },
+ {
+  "id": "wa_cashmere_mountain_northeast_ridge",
+  "name": "Northeast Ridge",
+  "where": "Stuart-Enchantments > Cashmere Mountain",
+  "discipline": "scrambling",
+  "grade": "Class 3",
+  "why": "no summit waypoint with a distance from the trailhead",
+  "distKmStored": null,
+  "outingShape": null,
+  "gainFt": null,
+  "waypoints": [
+   {
+    "i": 0,
+    "type": "Trailhead",
+    "name": "Eightmile Lake Trailhead",
+    "elev": 3303,
+    "distMi": 0
+   },
+   {
+    "i": 1,
+    "type": "waypoint",
+    "name": "Northeast Ridge route (low point on ridge)",
+    "elev": null,
+    "distMi": null
+   },
+   {
+    "i": 2,
+    "type": "Summit",
+    "name": "Cashmere Mountain Summit",
+    "elev": 8514,
+    "distMi": null
+   }
+  ]
+ }
+]

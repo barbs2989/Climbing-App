@@ -11,6 +11,8 @@ export interface TopoCaptionBoxProps {
   style?: CSSProperties;
   /** Written with the caption typed but not yet saved (null when there is none), so the sheet around the box can save it too. */
   draftRef?: { current: string | null } | null;
+  /** What the caption sits on, for the label: "topo" (default) or "photo". */
+  noun?: string;
 }
 
 /**
@@ -18,7 +20,8 @@ export interface TopoCaptionBoxProps {
  * announced (status on success, alert on failure). Reads `C` at render time. Moved verbatim from
  * RouteDetail.jsx; only the types were added.
  */
-export default function TopoCaptionBox({initial,onSave,style,draftRef}: TopoCaptionBoxProps){
+export default function TopoCaptionBox({initial,onSave,style,draftRef,noun}: TopoCaptionBoxProps){
+  const _on=noun||"topo";
   const [v,setV]=useState(initial||"");const [busy,setBusy]=useState(false);const [msg,setMsg]=useState<{ok:boolean,t:string}|null>(null);
   /* What is stored: `initial`, until a save lands here. Where `initial` never changes (the box over a photo just posted is given null), Save caption used to stay awake after saving, as if the text were still unsaved. */
   const [saved,setSaved]=useState(initial||"");
@@ -26,8 +29,8 @@ export default function TopoCaptionBox({initial,onSave,style,draftRef}: TopoCapt
   /* A caption typed and not saved, for the sheet around the box: Save topo sends it with the line, so it is not lost to a climber who never pressed Save caption. null when there is nothing unsaved. */
   useEffect(function(){if(draftRef)draftRef.current=dirty?String(v||"").trim():null;},[draftRef,dirty,v]);
   return <div style={Object.assign({background:C.surface,border:"1px solid "+C.border,borderRadius:12,padding:"10px 12px"},style||{})}>
-    <label style={{display:"block",fontSize:12,fontWeight:700,color:C.text,marginBottom:3}}>{"Caption"}<span style={{fontWeight:400,color:C.textMuted}}>{" — everyone who opens this topo reads it"}</span>
-      <textarea aria-label="Caption — everyone who opens this topo reads it" value={v} onChange={function(e){setV(e.target.value);setMsg(null);}} rows={3} placeholder="Add context — which face this is, when you took it, where the line goes or what to watch for" style={{display:"block",width:"100%",boxSizing:"border-box",marginTop:6,padding:"8px 10px",borderRadius:8,border:"1px solid "+C.field,background:C.card,color:C.text,fontSize:13,fontWeight:400,lineHeight:1.45,fontFamily:"inherit",resize:"vertical",outline:"none"}}/>
+    <label style={{display:"block",fontSize:12,fontWeight:700,color:C.text,marginBottom:3}}>{"Caption"}<span style={{fontWeight:400,color:C.textMuted}}>{" — everyone who opens this "+_on+" reads it"}</span>
+      <textarea aria-label={"Caption — everyone who opens this "+_on+" reads it"} value={v} onChange={function(e){setV(e.target.value);setMsg(null);}} rows={3} placeholder={_on==="topo"?"Add context — which face this is, when you took it, where the line goes or what to watch for":"Add context — what it shows, which pitch or face, when you took it, what to watch for"} style={{display:"block",width:"100%",boxSizing:"border-box",marginTop:6,padding:"8px 10px",borderRadius:8,border:"1px solid "+C.field,background:C.card,color:C.text,fontSize:13,fontWeight:400,lineHeight:1.45,fontFamily:"inherit",resize:"vertical",outline:"none"}}/>
     </label>
     <div style={{display:"flex",alignItems:"center",gap:10,marginTop:8}}>
       <button disabled={!dirty||busy} onClick={function(){setBusy(true);setMsg(null);const t=String(v||"").trim();Promise.resolve(onSave(t)).then(function(){setSaved(t);setMsg({ok:true,t:"Caption saved"});},function(e: {message?: string}|null){setMsg({ok:false,t:"Couldn’t save the caption — "+((e&&e.message)||"try again")});}).finally(function(){setBusy(false);});}} style={{padding:"7px 14px",borderRadius:8,border:"none",background:dirty&&!busy?C.actionSolid:C.border,boxShadow:(dirty&&!busy)?SOLID_LEDGE(C):"none",color:dirty&&!busy?C.onSolid:C.textSub,fontSize:12.5,fontWeight:700,cursor:dirty&&!busy?"pointer":"default"}}>{busy?"Saving…":"Save caption"}</button>

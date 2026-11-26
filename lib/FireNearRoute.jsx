@@ -21,20 +21,17 @@
 //   3. **A failed fetch is an error, not silence.** Same rule as the map: on a hazard
 //      surface, "nothing found" and "we could not look" must never render alike.
 //
-// Severity follows containment and distance together, because neither alone means
-// anything: a 100%-contained fire 5 miles off is smoke, and an uncontained one at 45
-// miles is a road-closure risk tomorrow, not today.
+// WHICH fires it lists, and when it turns red, is one rule in lib/fire.js (`fireMatters`,
+// `fireIsClose`, owner note 2026-11-26): contained fires are left out, a fire counts out to
+// 5 miles of its likely edge when small and up to 35 when it is among the largest, and it
+// is red when an uncontained fire's edge is within 10 miles.
 import { knotHead } from "./accents.js";
 import { useState } from "react";
-import { useFiresNear, NEAR_ROUTE_KM, fireLevel, fireColor, fmtAcres, fmtContained, fmtDiscovered } from "./fire";
+import { useFiresNear, NEAR_ROUTE_KM, fireMatters, fireIsClose, fireColor, fmtAcres, fmtContained, fmtDiscovered } from "./fire";
 import { TILE_CREDIT } from "./mapKit";
 import Chevron from "../src/components/Chevron.tsx";
 import { TEXT_TAP } from "./buttonStyles.js";
 
-const MI_PER_KM = 0.621371;
-
-// Uncontained ground inside this radius is the "change your plans" case.
-const CLOSE_MI = 25;
 
 export default function FireNearRoute({ coord, C, ActionIcon, uDistMi = mi => Math.round(mi) + " mi", onOpenFireMap }) {
   const q = useFiresNear(coord, NEAR_ROUTE_KM);
@@ -44,8 +41,9 @@ export default function FireNearRoute({ coord, C, ActionIcon, uDistMi = mi => Ma
   // claim; an empty state would.
   if (!coord || !Number.isFinite(coord.lat) || !Number.isFinite(coord.lng)) return null;
 
-  const fires = (q.data && q.data.fires) || [];
-  const radiusMi = Math.round(NEAR_ROUTE_KM * MI_PER_KM);
+  // Only the fires close enough to matter, by size and containment (the rule and its evidence
+  // are in lib/fire.js, at FIRE_REACH_MI). The Fire map still draws every one.
+  const fires = ((q.data && q.data.fires) || []).filter(fireMatters);
   const wrap = { border: "1px solid " + C.border, background: C.surface, borderRadius: 12, padding: "12px 13px", marginBottom: 12 }; // the route page's ROUTE_GAP
   /* = core's CardHead look (12/800, tracked, a 3px bar), so the first card on Safety reads as one of
      the route page's card titles. The fire-level heading below keeps its tone on text and bar. */
@@ -76,7 +74,7 @@ export default function FireNearRoute({ coord, C, ActionIcon, uDistMi = mi => Ma
     );
   }
 
-  const closeUncontained = fires.filter(f => f.originMi <= CLOSE_MI && fireLevel(f) !== "contained");
+  const closeUncontained = fires.filter(fireIsClose);
   const tone = closeUncontained.length ? { c: C.red, bg: C.redBg } : fires.length ? { c: C.amber, bg: C.amberBg } : null;
 
   // The genuine empty state: the query succeeded, over a known point, and found none.
@@ -134,7 +132,7 @@ export default function FireNearRoute({ coord, C, ActionIcon, uDistMi = mi => Ma
           </div>
         ))}
         {fires.length > 4 ? (
-          <div style={{ fontSize: 11.5, color: C.textMuted }}>and {fires.length - 4} more within {uDistMi(radiusMi)}</div>
+          <div style={{ fontSize: 11.5, color: C.textMuted }}>and {fires.length - 4} more nearby</div>
         ) : null}
       </div>
 
@@ -142,6 +140,8 @@ export default function FireNearRoute({ coord, C, ActionIcon, uDistMi = mi => Ma
       <div style={{ fontSize: 11, color: C.textMuted, lineHeight: 1.55, marginTop: 9, borderTop: "1px solid " + C.border, paddingTop: 8 }}>
         Distances are to each fire&apos;s <b>reported point of origin</b>. A large fire&apos;s edge can be
         far closer than that — open the map to see mapped perimeters.
+        Listed here: fires not yet contained whose edge is likely within {uDistMi(5)} for a new or small
+        fire, up to {uDistMi(35)} for the largest. The map shows every fire.
       </div>
 
       <Foot C={C} coord={coord} ActionIcon={ActionIcon} onOpenFireMap={onOpenFireMap} />

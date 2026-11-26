@@ -1,0 +1,1629 @@
+[
+ {
+  "id": "wa_flora_mountain_southwest_slope",
+  "name": "Southwest Slope (Standard Route)",
+  "state": "Washington",
+  "discipline": "mountaineering",
+  "pitches": null,
+  "crag": false,
+  "topics": [
+   "camp",
+   "gear",
+   "approach"
+  ],
+  "beta": "The standard route leaves the trail system at Bird Creek Camp (4,200 ft) on the Devore Creek Trail and goes cross-country: through open forest and meadow to a saddle just south of Enigma Peak (~6,400 ft), down a scree gully to cross upper Castle Creek, then up Flora's southwest ridge on talus and scree to the summit. It is rated the least difficult of the Stehekin-area 'Top 100' peaks (compare neighboring Devore, Tupshin, and Riddle) and requires no rope, rack, or technical rock climbing — just sturdy boots, off-trail navigation, and tolerance for loose rock. The peak's namesake first ascent (Leuthold/Metzger, 1940) is attested for the mountain overall, but no published account gives it used this specific southwest line, so it is not attributed to the route here. An alternate, longer approach reaches the same southwest slope/west cirque from Holden Village via Railroad Creek Road and Tenmile Pass, used mainly by parties combining Flora with Riddle Peak and Black Tower.",
+  "overview": "An unroped Class 2 talus and scree walk up Flora's southwest ridge/slope — the peak's easiest line and by far its most commonly climbed route, reached via a multi-day off-trail approach from the Devore Creek Trail out of Stehekin.",
+  "current": {
+   "approach": "From Chelan, take the Lady of the Lake ferry (or a floatplane) to Stehekin Landing. Ride the NPS shuttle bus 4.4 miles up Stehekin Valley Road to Harlequin Bridge ($5 fare), cross the bridge, and follow the road past Harlequin Camp and the Stehekin Airport to pick up the Stehekin River Trail. Follow this mostly flat trail southeastward about 3 miles to the signed Devore Creek Trail junction. The Devore Creek Trail then climbs steeply through rock bluffs and open forest for about 1 mile, enters the Glacier Peak Wilderness, and traverses brushy, dry hillside for roughly 3 more miles to Bird Creek Camp (4,200 ft) — the only designated camp in the area, with room for about three tents. From Bird Creek Camp, most parties do Flora as a long day round trip: bushwhack through open forest (spiderwebs, chest-high brush, and blowdown reported) toward the saddle south of Enigma Peak, then follow the route description above to the summit.",
+   "area_walk_in": null,
+   "approach_variant_names": [
+    "Devore Creek Trail from Bird Creek Camp over the Enigma saddle",
+    "Holden Village over Tenmile Pass"
+   ],
+   "descent": "Down-climb the southwest ridge/slope on the same loose talus and scree used for the ascent, back to the saddle south of Enigma Peak, then drop and re-cross upper Castle Creek before regaining the bushwhack corridor down to Bird Creek Camp. The loose, sometimes football-sized talus is reported as noticeably more tedious and unstable on descent than ascent — expect slower travel and watch for rock knocked loose onto climbers below.",
+   "rack_items": null,
+   "detailed_rack": "None needed — the standard route is an unroped Class 2 talus/scree scramble with no technical rock, ice, or aid climbing.",
+   "rack": null,
+   "pro_needs": "No rope or rack is used on the standard route. In early season, an ice axe may be worth carrying for lingering snow on the approach or upper slopes.",
+   "bolts": null,
+   "anchor": null,
+   "location": null,
+   "bivy": [
+    "Bird Creek Camp",
+    "Purple Point and Harlequin — the landing camps, and the boat that decides the trip"
+   ],
+   "rope_note": null
+  },
+  "allowed_targets": [
+   "approach",
+   "descent",
+   "rack",
+   "bivy"
+  ],
+  "_descCol": "descent_text"
+ },
+ {
+  "id": "wa_flycatcher_buttress",
+  "name": "Flycatcher Buttress",
+  "state": "Washington",
+  "discipline": "alpine",
+  "pitches": 10,
+  "crag": false,
+  "topics": [
+   "pro"
+  ],
+  "beta": "Ten pitches of varied terrain: straightforward gear climbing low down, a full-rope-length rightward traverse, easy walking/scrambling sections, awkward corner moves, hand-crack options, a sustained pitch, exposed traverses (with an optional wide-crack variant), and an easy finish to the summit plateau.",
+  "overview": "Flycatcher Buttress (IV 5.10b) is a 10-pitch, roughly 1,100 ft (333 m) route on North Early Winters Spire, first climbed (with aid) by Steve Marts, Don McPherson, and King McPherson in 1965, with Bryan Burdo making the first free ascent — an onsight free solo — in 1990. The climbing is sustained but not continuously hard; both leader and follower should be solid on 5.8 terrain throughout.",
+  "current": {
+   "approach": "Start from the hairpin turn used for other Liberty Bell Group routes; stay right of the gully dividing the two spires and scramble up to the route's start ledge.",
+   "area_walk_in": null,
+   "approach_variant_names": [
+    "The hairpin pullout on the east side, staying right of the gully that divides the two spires"
+   ],
+   "descent": "From the summit, descend by traversing to the west side of the peak and rappelling either the Chockstone Route (60m rope) or the bolted West Face anchors (70m rope) - both require crossing over from the east-side climbing line to the west-side descent infrastructure.",
+   "rack_items": null,
+   "detailed_rack": "Gear to #3 with a single #4 cam; an optional #5 is suggested for a wide-crack option on pitch 9, though most parties skip it.",
+   "rack": [
+    "Cams to #3 Camalot",
+    "Single #4 Camalot (optional #5 for wide sections)",
+    "60cm and 120cm webbing for anchors",
+    "Cordelette",
+    "Single dynamic rope (60m via Chockstone raps, 70m via the bolted West Face line)"
+   ],
+   "pro_needs": "Adequate but not overbolted; the length and remoteness of the line mean a leader should be comfortable running it out on easier sections between gear.",
+   "bolts": null,
+   "anchor": null,
+   "location": null,
+   "bivy": [
+    "Blue Lake trailhead roadside bivy",
+    "Lone Fir Campground",
+    "Klipchuck Campground",
+    "Liberty Bell basin dispersed sites"
+   ],
+   "rope_note": "60m is sufficient if descending via the neighboring Chockstone Route's rappels; 70m is required if using the newer bolted West Face rappel line. Pick one descent option before starting."
+  },
+  "allowed_targets": [
+   "approach",
+   "descent",
+   "rack",
+   "bivy"
+  ],
+  "_descCol": "descent_text"
+ },
+ {
+  "id": "wa_forbidden_peak_east_ledges",
+  "name": "East Ledges",
+  "state": "Washington",
+  "discipline": "mountaineering",
+  "pitches": null,
+  "crag": false,
+  "topics": [
+   "descent",
+   "gear",
+   "time"
+  ],
+  "beta": "From the East Ridge saddle beside the Solitary Gendarme, downclimb the dirty gully on the north side for roughly 100 ft and exit left (northwest) onto the ledges - going lower runs into cliffs. Traverse northwest across roughly five rock ribs on sandy, grassy ledges and down-sloping slabs, mostly 3rd class with short 4th-class moves at each rib, staying close to the level at which the gully was left: too low meets the cliffs above the Boston Glacier, too high the steeper, corrugated ribs. Cairns mark the easiest line across most rib crossings (a higher and lower cairn at each rib). Where the North Ridge stops the traverse, climb the small northeast face below the summit: 3rd-class ledges, a short grassy traverse west to the next rib, then steepening Class 4 to the summit rocks. The face is lined with slung rappel stations that can double as belays; many parties belay the upper part. Carry a single 50-60 m rope, a few small cams and nuts, and runners. Allow about 2 hours from the saddle to the summit, more if belaying.",
+  "overview": "The East Ledges (also called the 'NE Ledge' in older and casual usage - a naming overlap that has caused confusion with the distinct, genuinely technical Northeast Face ice route on the same aspect) is technically the easiest route to the summit of Forbidden Peak, at Class 4. From the East Ridge saddle beside the Solitary Gendarme it drops briefly onto the north side, traverses a long band of grassy, rubbly ledges across about five rock ribs, then climbs the small northeast face directly below the summit. What it lacks in difficulty it makes up in consequence: most of the ground is exposed, sloping and cannot reliably be protected, so a slip on the ledges is likely to be fatal, and a party must be comfortable moving unroped on 3rd- and 4th-class terrain. The same line, reversed with rappels on the upper face, is the most commonly used descent off the summit for parties who climbed the West Ridge, East Ridge Direct, North Ridge or Northeast Face.",
+  "current": {
+   "approach": "Start at the Boston Basin trailhead off the Cascade River Road. A steep climbers' trail with several creek crossings (Boston Creek can run high on warm afternoons) climbs to the camps in Boston Basin; overnight stays there need a park backcountry permit. From the upper basin, head north toward Forbidden's South Face and climb the snow slopes and loose gully below and right of it to the East Ridge saddle just northwest of the Solitary Gendarme, about 8,300–8,400 ft. Allow about 4 hours from the trailhead to the saddle, or about 2 hours from the basin camps. Axe and crampons are usually needed for this snow; late in the season they can be left at the saddle.",
+   "area_walk_in": null,
+   "approach_variant_names": [],
+   "descent": "The usual descent is the ascent line reversed. From a horn near the summit, make the first of five single-rope rappels (roughly 400 ft total) down the northeast side to a series of ledges, then follow the ledges east - mostly 3rd class with short 4th-class moves at rib crossings - across roughly five rock ribs before a short gully leads back up to the East Ridge crest near the solitary gendarme. There is no easy way off Forbidden Peak - this line is unprotectable in places and has had a fatality (1975) on the ledge traverse. Cairns (a higher and lower option at most rib crossings) mark the easiest line; recent parties describe the terrain as more straightforward than its reputation suggests when the cairned line is followed carefully, but conditions and route-finding difficulty vary by party experience and weather. From the gendarme, continue down the East Ridge's standard gully system to Boston Basin.",
+   "rack_items": null,
+   "detailed_rack": "A single 60m rope for the rappels, a rappel device, a few slings to back up or extend natural horn/block anchors, and a lightweight rack is optional (this is not a route most parties protect while traversing).",
+   "rack": null,
+   "pro_needs": "Minimal gear placed while moving - this is fundamentally an unprotected scramble/traverse between rappels; a rope and natural anchors handle the vertical sections.",
+   "bolts": null,
+   "anchor": null,
+   "location": null,
+   "bivy": [
+    "Boston Basin upper (high) camp",
+    "Boston Basin lower camp",
+    "Informal snow and rock bivouacs above the basins"
+   ],
+   "rope_note": null
+  },
+  "allowed_targets": [
+   "approach",
+   "descent",
+   "rack",
+   "bivy"
+  ],
+  "_descCol": "descent_text"
+ },
+ {
+  "id": "wa_forbidden_peak_east_ridge",
+  "name": "East Ridge Direct",
+  "state": "Washington",
+  "discipline": "alpine",
+  "pitches": 6,
+  "crag": false,
+  "topics": [
+   "descent"
+  ],
+  "beta": "From a notch on the East Ridge, climb the crest and both flanks of the ridge for 6-8 pitches, bypassing several gendarmes on ledges or short rappels into notches; the crux is a well-protected ~40 ft 5.8 section on the last gendarme, followed by easier simul-climbing to the summit.",
+  "overview": "This is Forbidden's East Ridge Direct, the second of the peak's two classic ridge lines and longer/more sustained than the West Ridge. It climbs a series of gendarmes and a knife-edge granite crest to a 5.8 crux pitch near the top; sources consistently grade the technical difficulty at 5.8 rather than 5.6.",
+  "current": {
+   "approach": "Same trailhead and Boston Basin climbers' trail as the West Ridge (old Diamond Mine roadbed for ~1 mile, then a steep climbers' path with several creek crossings to treeline around 5,300 ft, then talus/heather to the usual high camp at 6,300–6,600 ft, roughly 4–5 miles / 3–4 hours from the car). From camp, rather than crossing toward the south-face couloir, traverse climber's-left/east around the basin and gain the ridges and gullies flanking the glacier on Forbidden's east side (sometimes loosely called the 'Unnamed Glacier'). This leg is notably loose and slower going than the West Ridge approach: expect a few hours of travel over choss-covered slabs, loose rock and seepage, and several small stream crossings, often finishing with a snow gully that wants crampons/microspikes to gain the upper benches below the ridge. Continue up broken rock and snow slopes to the notch that marks the start of the technical East Ridge climbing — roughly 5–6 hours and 5,000+ ft above the trailhead, noticeably longer and more route-finding-intensive than reaching the West Ridge notch.",
+   "area_walk_in": null,
+   "approach_variant_names": [
+    "East around the basin and up the loose gullies to the notch below the Solitary Gendarme"
+   ],
+   "descent": "The East Ridge is not reversed as a rappel line in its own right; two descents are used instead. The standard one is the East Ledges, dropping climber's-right/northeast directly off the summit: three rappels trend northeast from the summit area, then a short, exposed grassy traverse east to the next rock rib, followed by two more rappels onto the East Ledges proper, about 5 rappels in all. From there, several hundred metres of loose, sandy and grassy class 3–4 ledges and slabs, marked by intermittent and sometimes doubled cairn lines, lead east above the cliffs over the crevassed Boston Glacier to a gully about 100 ft below the Solitary Gendarme; go up and over the East Ridge through it, then down snow slopes on the south side to the small glacier below Forbidden's south face and the walk back across Boston Basin. The alternative is to reverse along the ridge crest past the gendarmes to the West Ridge notch and descend the West Ridge line: about three rappels on the ridge and about five down the Cat Scratch gullies, roughly eight on a single 60 m rope. It is longer, but it is more travelled and easier to follow, and many parties prefer it to the East Ledges, which are faster but loose, exposed, rockfall-prone and easy to lose. Either way, expect mostly natural slung-horn and block anchors with some tat and a handful of fixed or bolted stations, and carry a 60 m rope. In August and September the West Ridge can be mostly downclimbed, needing at most one rappel.",
+   "rack_items": null,
+   "detailed_rack": "A single rack of cams from 0.4 to 2 inches, a set of nuts, about 8 alpine draws with doubles for the towers, and a 60m rope.",
+   "rack": null,
+   "pro_needs": "The crest protects well on the steeper steps with cracks and horns, with run-out moderate climbing between. Slinging gendarmes speeds protection on the long ridge.",
+   "bolts": null,
+   "anchor": null,
+   "location": null,
+   "bivy": [
+    "Boston Basin upper (high) camp",
+    "Boston Basin lower camp",
+    "Informal snow and rock bivouacs above the basins",
+    "Boston Basin"
+   ],
+   "rope_note": null
+  },
+  "allowed_targets": [
+   "approach",
+   "descent",
+   "rack",
+   "bivy"
+  ],
+  "_descCol": "descent_text"
+ },
+ {
+  "id": "wa_forbidden_peak_north_ridge",
+  "name": "North Ridge",
+  "state": "Washington",
+  "discipline": "alpine",
+  "pitches": 8,
+  "crag": false,
+  "topics": [
+   "descent",
+   "camp"
+  ],
+  "beta": "Grade III, with the hardest ridge moves about 5.6. From Boston Basin high camp, cross the Quien Sabe Glacier to Sharkfin Col (a short 5.7 step and a class 3 gully), rappel to the Boston Glacier, and join the north ridge near 7,700 ft for an exposed run of moderate granite to the summit.",
+  "overview": "A long, elegant alpine rock ridge on the north side of Forbidden Peak. Sustained, exposed ridge climbing on solid North Cascades rock, accessed over the Boston Glacier, makes this one of the area's coveted ridgelines.",
+  "current": {
+   "approach": "North-northeast via glacier traversals. From Boston Basin parking, hike to Boston Basin high camp (~6400 ft). Traverse moraine and west edge of Quien Sabe Glacier to 7,500 ft. Climb to Sharkfin Col (7,720 ft).",
+   "area_walk_in": null,
+   "approach_variant_names": [
+    "Quien Sabe Glacier to Sharkfin Col, rappel onto the Boston Glacier, then north to the foot of the ridge"
+   ],
+   "descent": "The North Ridge finishes on the summit, and the way off is the West Ridge. Downclimb and rappel the West Ridge to the notch (one rope is enough for the rappels, and several anchors exist, so the mix is a matter of choice), then downclimb or rappel the snow couloir below the notch into Boston Basin; the Cat Scratch Gully to the climber's left is a rappel alternative. Allow more time than expected, because mixed downclimbing and rappelling takes most parties longer than the ascent suggests, and carry an axe for the couloir.",
+   "rack_items": null,
+   "detailed_rack": "Light single rack through hand size, a set of nuts.",
+   "rack": null,
+   "pro_needs": "Medium alpine rack; glacier kit for the approach.",
+   "bolts": null,
+   "anchor": null,
+   "location": null,
+   "bivy": [
+    "Boston Basin upper (high) camp",
+    "Boston Basin lower camp",
+    "Informal snow and rock bivouacs above the basins",
+    "Boston Basin High Camp"
+   ],
+   "rope_note": null
+  },
+  "allowed_targets": [
+   "approach",
+   "descent",
+   "rack",
+   "bivy"
+  ],
+  "_descCol": "descent_text"
+ },
+ {
+  "id": "wa_fortress_mountain_east_ridge",
+  "name": "East Ridge",
+  "state": "Washington",
+  "discipline": "mountaineering",
+  "pitches": null,
+  "crag": false,
+  "topics": [
+   "camp",
+   "approach"
+  ],
+  "beta": "Also known as the \"Chiwawa River route,\" this line is frequently combined with an ascent of neighboring Chiwawa Mountain from the same high camp at the ~7,200 ft col. Rock quality is notably better on the East Ridge itself than in the approach gully or on Fortress's southwest face.",
+  "overview": "A cross-country approach via the Chiwawa River drainage to the col between Chiwawa Mountain and Fortress, then a loose gully gaining Fortress's East Ridge, followed by better-quality class 3-4 ridge scrambling, with a chimney step partway along, to the summit.",
+  "current": {
+   "approach": "From Trinity Trailhead, hike the Buck Creek Trail about 1.4 mi to the Chiwawa River Trail (#1550), then follow it north up the valley, staying left at the Red Mountain junction near 5 mi, to a ford of the Chiwawa River; beyond it a faint path leads to an avalanche chute, and open forest climbs cross-country to a basin near 5,500 ft and a bench near 6,300 ft, then traverse diagonally up toward Chiwawa Mountain's east ridge, descending to the roughly 7,200 ft col between Chiwawa and Fortress (or continuing over Chiwawa's summit first). Some parties instead approach via the Red Mountain Trail and Chiwawa Basin. From the col, a loose class 3-4 gully gains the crest of Fortress's East Ridge. The Chiwawa River has no usable bridge at the 4,800 ft meadow camp; in July parties wade it barefoot or in camp shoes, then bushwhack briefly before snow.",
+   "area_walk_in": null,
+   "approach_variant_names": [
+    "Trinity and the Chiwawa River Trail to the Chiwawa-Fortress col",
+    "Red Mountain Trail into Chiwawa Basin, then up to the Chiwawa-Fortress col"
+   ],
+   "descent": "From the summit, follow the East Ridge crest back, down-climbing the chimney step partway along it, to the head of the loose gully, descending it carefully to the ~7,200 ft col. From the col, either continue on to Chiwawa Mountain (a common combined objective) or drop back to the ~6,300 ft bench and retrace the cross-country line down to the Chiwawa River Trail, then out via the Buck Creek Trail to Trinity Trailhead.",
+   "rack_items": null,
+   "detailed_rack": "No rack beyond a light alpine kit is typically carried; most parties climb the exposed 4th-class summit step unroped, though a rope and a few slings can be worthwhile insurance for less experienced scramblers on that final step.",
+   "rack": null,
+   "pro_needs": "Minimal fixed protection; this is unroped alpine scrambling with one genuinely exposed 4th-class move near the summit.",
+   "bolts": null,
+   "anchor": null,
+   "location": null,
+   "bivy": [
+    "Chiwawa Basin bench",
+    "Phelps Creek Campground and the Chiwawa River road campgrounds"
+   ],
+   "rope_note": null
+  },
+  "allowed_targets": [
+   "approach",
+   "descent",
+   "rack",
+   "bivy"
+  ],
+  "_descCol": "descent_text"
+ },
+ {
+  "id": "wa_fortress_mountain_northeast_face",
+  "name": "Northeast Face",
+  "state": "Washington",
+  "discipline": "alpine",
+  "pitches": null,
+  "crag": false,
+  "topics": [
+   "gear"
+  ],
+  "beta": "Start at the Fortress-Chiwawa col. The rock band directly above is the only real climbing: a slabby move is the crux, then a chimney on the left breaks through. Above it a long snow slope steepens gradually toward the Southeast Ridge. Aim for the crest to the left of the point that looks like the summit, which is not the top, and follow the ridge to the high point. It is a mixed rock-and-snow route rather than a scramble, so bring a rope for the rock band.",
+  "overview": "Fortress's technical line from the col it shares with Chiwawa Mountain: a short band of rock with a slabby crux and a chimney, then a snow slope that steepens as it climbs to the Southeast Ridge, and a ridge finish to the true summit.",
+  "current": {
+   "approach": "Same Trinity Trailhead approach as the East Ridge (via Buck Creek/Chiwawa River Trails); this line is normally climbed or descended as part of a link-up with the East Ridge or Southwest Slope rather than approached independently.",
+   "area_walk_in": null,
+   "approach_variant_names": [],
+   "descent": "Follow the ridge crest down from the summit; locate the chimney carefully, as at least one party missed it near an 8,500' col where the direct line was too steep and crossed onto the east face instead. In winter/spring the ridge can be corniced in places and holds steep snow requiring careful downclimbing or a short rope.",
+   "rack_items": null,
+   "detailed_rack": "A short rope and a few slings are recommended for the 4th-class chimney, especially with a pack or in winter conditions; not typically climbed as a fully-roped technical route.",
+   "rack": null,
+   "pro_needs": "Minimal — natural rock features (horns, chockstones) in the chimney if protection is desired; no fixed gear reported.",
+   "bolts": null,
+   "anchor": null,
+   "location": null,
+   "bivy": [
+    "Chiwawa Basin bench",
+    "Phelps Creek Campground and the Chiwawa River road campgrounds"
+   ],
+   "rope_note": null
+  },
+  "allowed_targets": [
+   "approach",
+   "descent",
+   "rack",
+   "bivy"
+  ],
+  "_descCol": "descent_text"
+ },
+ {
+  "id": "wa_fortress_mountain_southwest_face",
+  "name": "Southwest Face",
+  "state": "Washington",
+  "discipline": "mountaineering",
+  "pitches": null,
+  "crag": false,
+  "topics": [
+   "camp",
+   "time"
+  ],
+  "beta": "Also referred to as the \"Buck Creek route\" or simply the standard/south ridge route. From the alpine basin below Pass No Pass, ascend green slopes and scree that steepen into class 2-3 talus and slab; the direct gully up the face is the loosest ground on the mountain, and many parties angle right onto slabbier rock or follow the south ridge crest instead. Reported ascent time from a high camp in the Pass No Pass basin is roughly 3.5-4 hours, with about 2.5-3 hours back down.",
+  "overview": "The standard route: a long trail approach over Buck Creek Pass and Pass No Pass, followed by an unroped scramble up grass, scree, and blocky class 2-3 rock on Fortress's broad southwest face / south ridge to the summit.",
+  "current": {
+   "approach": "From Trinity Trailhead (2,800 ft) at the end of Chiwawa River Road/FR 6200, follow the Buck Creek Trail (#1513) roughly 9-9.5 miles, climbing through forest, an old avalanche debris field (~4,500 ft), and past an unmarked junction with the Pass No Pass way-trail (bears right, ~5,800 ft). Continue up the way-trail to Pass No Pass (~6,400 ft) and the alpine camping benches beyond, from which Fortress's southwest face and south ridge come into view. Note: storm damage has closed FR 6200 to vehicles beyond Atkinson Flat Campground (about mile 16), adding roughly 7 miles of road-walking each way before even reaching the trailhead; check its status with the Wenatchee River Ranger District.",
+   "area_walk_in": null,
+   "approach_variant_names": [
+    "Buck Creek Trail #1513 and the Pass No Pass way-trail"
+   ],
+   "descent": "From the summit, retrace the ascent line down the south ridge / upper southwest face. The direct gully is the loosest ground on the mountain; a 2015 party found and cairned an alternate class 3 line over more solid, blocky terrain to skier's right of the gully that later parties have followed. Continue down through scree and talus to the grassy benches above Pass No Pass, back over the pass, and down the Buck Creek Trail to Trinity Trailhead. Descending the southwest face to Pass No Pass is easy until the burned forest on Buck Creek, where blowdowns and a high-log river crossing near 3,300 ft slow the walk out.",
+   "rack_items": null,
+   "detailed_rack": "No technical rock rack is needed for the standard class 2-3 line; a light rope, a few slings, and a couple of small cams/nuts are worth carrying for an optional hand-line on the loose gully, but most parties travel unroped.",
+   "rack": null,
+   "pro_needs": "Minimal protection needs -- this is an unroped scramble for competent parties in summer conditions. Carry an ice axe (and crampons early season) for the snow sections below Pass No Pass; helmets are essential given constant rockfall potential.",
+   "bolts": null,
+   "anchor": null,
+   "location": null,
+   "bivy": [
+    "Basin below Pass No Pass",
+    "Buck Creek Pass",
+    "Phelps Creek Campground and the Chiwawa River road campgrounds"
+   ],
+   "rope_note": null
+  },
+  "allowed_targets": [
+   "approach",
+   "descent",
+   "rack",
+   "bivy"
+  ],
+  "_descCol": "descent_text"
+ },
+ {
+  "id": "wa_free_mojo",
+  "name": "Free Mojo",
+  "state": "Washington",
+  "discipline": "alpine",
+  "pitches": 6,
+  "crag": false,
+  "topics": [
+   "pro"
+  ],
+  "beta": "P1 (10+/11-, ~100 ft) climbs a nondescript crack to a two-piece fixed anchor on a pedestal. P2 (mid-11, ~82 ft) follows obvious double incipient cracks to a sweet final move and a series of ledges. P3 (10-, ~40 ft) is short with a tricky start then easy climbing. P4 (5.9, ~164 ft) climbs a beautiful right-facing corner. P5 and P6 (5.easy, ~262 ft and ~25 ft) trend right to join the South Arete and finish to the summit.",
+  "overview": "A free variation eliminating the aid on Mojo Rising, giving a continuously free 5.11- line up this part of the Northwest Face.",
+  "current": {
+   "approach": "Same basin approach as Mojo Rising and the Northwest Face: Blue Lake Trailhead, Blue Lake Trail to the NW-side clearing, climber's path up talus into the basin below the west face. Free Mojo starts roughly 40 ft down and right of the large chockstone-filled chimney between the two spire formations, on a nondescript crack that leads to a two-piece fixed anchor on a pedestal (end of pitch 1); pitch 2 climbs obvious double incipient cracks up to a series of ledges.",
+   "area_walk_in": null,
+   "approach_variant_names": [
+    "Blue Lake Trail to the basin below the west face, then 40 ft down and right of the chockstone chimney"
+   ],
+   "descent": "Only pitch 1 ends at a fixed anchor (a two-piece nut-and-cam anchor on a pedestal); the belay atop pitch 2 is built from gear on ledges, so a party retreating from above pitch 1 must leave gear for an anchor to get back down to the pitch 1 anchor, then rappel from it to the ground. For the full route to the summit (6 pitches), finish via the standard South Arete descent: downclimb the arete to the Rabbit Ears, then 3 single-rope rappels (60m) from bolted anchors/chains down the gully to the base.",
+   "rack_items": null,
+   "detailed_rack": "Triples of small cams (through yellow Alien-sized), doubles of cams to #1, a single #2 and #3 Camalot, plus a set of small wires.",
+   "rack": [
+    "Triples of small cams up to yellow Alien-size",
+    "Doubles of cams to #1 Camalot",
+    "Single #2 and #3 Camalot",
+    "Small wire set",
+    "12 alpine quickdraws",
+    "Single 60m rope"
+   ],
+   "pro_needs": "Good gear throughout the crack pitches; small-to-mid cams see the most use.",
+   "bolts": null,
+   "anchor": null,
+   "location": null,
+   "bivy": [
+    "Blue Lake trailhead roadside bivy",
+    "Lone Fir Campground",
+    "Klipchuck Campground",
+    "Liberty Bell basin dispersed sites"
+   ],
+   "rope_note": "6-pitch 5.11- testpiece on SEWS; trad protection throughout, with small cams seeing the most use."
+  },
+  "allowed_targets": [
+   "approach",
+   "descent",
+   "rack",
+   "bivy"
+  ],
+  "_descCol": "descent_text"
+ },
+ {
+  "id": "wa_gardner_mountain_west_ridge",
+  "name": "South Slopes",
+  "state": "Washington",
+  "discipline": "scrambling",
+  "pitches": null,
+  "crag": false,
+  "topics": [
+   "descent"
+  ],
+  "beta": "From Gardner Meadows (~10.5 mi in), leave the trail and ascend the grassy/brushy west side of the small stream draining south off Gardner Mountain, aiming for a small meadow basin around 6,200-7,100 ft. From there the route climbs a long, tedious slope of loose, marble-sized scree over sand (roughly 1,400 ft of gain in about half a mile) to reach the upper ridge/summit plateau, then finishes with a short, easier ridge scramble (some hand-holds, brief exposure) to the true summit. A faint climber's path exists on the scree in places but is easy to lose. Parties continuing to North Gardner Mountain descend west along the summit ridge to a false summit, then drop and scramble through loose rock/scree (and snow in early season) to a saddle near Point 8487, from which the ridge continues north over Point 8487 to North Gardner. Taken along the crest, the stretch between Gardner and Point 8487 is notably harder than the ascent of Gardner itself (class 3-4 around gendarmes and pinnacles; a lower line below the cliffs avoids the hardest of it), while the ridge from Point 8487 on to North Gardner stays mostly class 2.",
+  "overview": "Gardner Mountain (8,898–8,902 ft) is the second-highest summit in the Methow Mountains — a North Cascades subrange — after neighboring North Gardner Mountain (~8,956 ft, the Okanogan County highpoint), about a mile to the northwest; Gardner itself is the highest point in the Lake Chelan–Sawtooth Wilderness. The standard route is a long, non-technical Class 2 scree/talus ascent via the Wolf Creek Trail and Gardner Meadows, almost always done as a 2–3 day backpack rather than a day trip. This route (West Ridge / Saddle Traverse) links Gardner to North Gardner via the connecting ridge over Point 8,487, which steps up to loose Class 2–3 terrain with real exposure.",
+  "current": {
+   "approach": "From the Wolf Creek Trailhead (large parking area at the end of FS Road 5505 above Winthrop; Northwest Forest Pass required) follow Wolf Creek Trail #527 up-valley into the Lake Chelan-Sawtooth Wilderness. The trail drops roughly 250 ft in the first stretch, then settles into a long, gently-graded valley-bottom walk. About 90% of this corridor burned in the 2021 Cedar Creek Fire, so expect standing dead snags and blackened deadfall the entire way in — a real overhead-hazard concern in wind, and the cause of at least one reported tree-fall near camp. At roughly 2.6 miles the trail fords the North Fork of Wolf Creek (can run high in early season) — treat this as your last easy, reliable water source if you're moving fast. The Abernathy Lake trail splits off around 7.6 miles; continue straight up the Wolf Creek valley. The trail opens into Gardner Meadows around 9.5–10.3 miles (roughly 2,400–2,800 ft of cumulative gain from the trailhead), a broad, wildflower-and-lupine-filled basin at about 5,700 ft that serves as the standard base camp, with running water and (in season) avalanche lilies. From the meadows, leave the maintained trail and climb cross-country up the west side of the small stream draining south off Gardner Mountain, staying on its west bank; terrain shifts from broad grassy benches to scree and talus. Around 6,200 ft you reach a small meadow basin below the peak — from there work up toward the summit ridge, threading a few short cliff bands and gullies. This stretch is the route-finding crux of the approach: loose rock underfoot, and into early summer, lingering snow patches that can warrant an ice axe. The final approach to Gardner's 8,902 ft summit is class 2–3 scrambling on broken rock and scree.",
+   "area_walk_in": null,
+   "approach_variant_names": [
+    "Gardner Meadows: west bank of the stream to the scree"
+   ],
+   "descent": "This is a non-technical alpine scramble — the standard West Ridge / Saddle Traverse descent involves no rappelling (0 rappels). From Gardner's summit the route continues west along the summit ridge over a false summit, then descends steeply through loose scree and (early-season) snow to a saddle below Point 8487. From that saddle, the crest up to Point 8487 has gendarmes and cliff bands that go at class 3-4 if taken direct, while the ridge from Point 8487 on to North Gardner Mountain is generally class 2; if conditions look sketchy (wet rock, verglas, or lingering snow), the safer line is to drop off the ridge to about 7,400–7,500 ft and side-traverse around the cliff bands before regaining the ridge near Point 8487. Most parties climb Gardner first and North Gardner second, then reverse the route: descend North Gardner's scree back toward the saddle and drop Gardner's south-facing scree/talus slopes back to the small stream basin and Gardner Meadows — trip reports specifically recommend this order, since Gardner's scree descends quickly and pleasantly (good scree-skiing when dry, glissade potential when snow-covered), whereas doing it in reverse is reportedly 'miserable.' From Gardner Meadows, retrace Wolf Creek Trail #527 roughly 10.3 miles back to the trailhead, including a final, easy-to-underestimate ~200 ft climb right near the trailhead. Carry an ice axe into early July for the one or two snow patches typically encountered high on the traverse, and watch for burned/standing dead timber the entire way, especially in wind.",
+   "rack_items": null,
+   "detailed_rack": "No technical rock rack is needed for the standard scramble to Gardner's summit; it is unroped class 2-3 terrain. Parties extending onto the harder Gardner-North Gardner connecting ridge sometimes carry a light rope for the occasional exposed class 4 move, though this section is not commonly protected with fixed gear.",
+   "rack": null,
+   "pro_needs": null,
+   "bolts": null,
+   "anchor": null,
+   "location": null,
+   "bivy": [
+    "Gardner Meadows, Wolf Creek trail",
+    "High basin camp above Gardner Meadows",
+    "Gardner Meadows"
+   ],
+   "rope_note": "The saddle traverse is Class 2-3 on the lower line below the cliff bands and Class 3-4 only if taken along the crest; snow-covered sections call for an ice axe rather than a rope."
+  },
+  "allowed_targets": [
+   "approach",
+   "descent",
+   "rack",
+   "bivy"
+  ],
+  "_descCol": "descent_text"
+ },
+ {
+  "id": "wa_garfield_mountain_infinite_bliss",
+  "name": "Infinite Bliss",
+  "state": "Washington",
+  "discipline": "alpine",
+  "pitches": 23,
+  "crag": false,
+  "topics": [
+   "pro"
+  ],
+  "beta": "Low-angle, runout slab climbing for the first ~12 pitches (soloable for confident 5.8 climbers early on), a very runout, fair-quality middle section (pitches 13-18, with 15-17 hard to protect), and a harder, well-bolted finish (pitches 19-23) with two 5.10 pitches.",
+  "overview": "A long, mostly bolt-protected trad/slab line up 23 pitches on Garfield's West Peaks (Infinite Peak), one of the longest sport-oriented routes in the Cascades foothills.",
+  "current": {
+   "approach": "Park at the gravel pull-off (~47.54604, -121.52151, ~1,174 ft). Walk 100-200 yards farther east along the road to the climbers' path leaving on the left at a cairn, then hike about 45 minutes, mostly uphill through forest switchbacks, to the route start near 47.549, -121.5137.",
+   "area_walk_in": null,
+   "approach_variant_names": [
+    "Middle Fork Road pulloff to the base of the west peak slab"
+   ],
+   "descent": "Rappel the line. Two 60 m ropes are required — a single 70 m or 80 m is not long enough for some stations. Reported rappel times run 2.5 to 4 hours. The stations are chained; one station 10 m above the crux anchor lets two 60 m ropes reach the base of the crux pitch in one rappel. Carrying over the top and descending the far side of the mountain has been done but risks an extra night out in brushy, cliffy terrain, and is not recommended. Knot your rope ends: a climber died here on September 7, 2014 after deliberately bypassing a station in fading light, running out of rope, and falling roughly three pitches. Start the rappels with real daylight in hand, and watch for parties still climbing beneath you.",
+   "rack_items": null,
+   "detailed_rack": "17+ quickdraws (up to 30 if simul-climbing), a few extendable trad draws to reduce rope drag, an optional light set of nuts for the rare slab placement, and two 60m ropes.",
+   "rack": null,
+   "pro_needs": "Mostly bolt-protected; bolts on the lower pitches show bent hangers from historical rockfall. Pitches 15-17 in the runout middle section are notably hard to protect.",
+   "bolts": null,
+   "anchor": null,
+   "location": null,
+   "bivy": [],
+   "rope_note": null
+  },
+  "allowed_targets": [
+   "approach",
+   "descent",
+   "rack",
+   "bivy"
+  ],
+  "_descCol": "descent_text"
+ },
+ {
+  "id": "wa_garfield_mountain_preiss_route",
+  "name": "Preiss Route",
+  "state": "Washington",
+  "discipline": "alpine",
+  "pitches": 13,
+  "crag": false,
+  "topics": [
+   "pro"
+  ],
+  "beta": "Moderate trad climbing up to 5.9 with good protection on most pitches; the crux-adjacent middle slabs are serious (R/X-rated) with real rockfall/fall exposure.",
+  "overview": "A 13-pitch, Grade IV trad line up a sub-summit rock near Garfield's West Peak, established solo in 1999.",
+  "current": {
+   "approach": "Hike basically straight up, taking a line of least resistance for roughly 1,500 ft while staying left of the lower rocky slabs, with up to 3rd-class scrambling. A 20 ft dirty downclimb leads to the base of the first pitch.",
+   "area_walk_in": null,
+   "approach_variant_names": [],
+   "descent": "From the sub-summit, walk down and left through the small gap in the trees onto the gentle northern slope, then go up and over the main West Peak summit and descend the west ridge. Do NOT head straight down the northwest backside slope — the first ascensionist flags this specifically. The alternative, if you have carried two 60 m ropes, is to rappel Infinite Bliss (about 20 rappels off the chain stations); a single 70 m or 80 m is not long enough for those stations. Either way this is a long descent on brushy, disorienting terrain and should be started with hours of daylight in hand.",
+   "rack_items": null,
+   "detailed_rack": "Small-to-medium rack with cams up to 3 inches, a set of nuts, tricams, a few pins, a rock hammer, and 8-10 runners.",
+   "rack": null,
+   "pro_needs": "Protection was reported good on the moderate pitches; the middle slab sections are R- or X-rated (serious/no fall) despite easier grades.",
+   "bolts": null,
+   "anchor": null,
+   "location": null,
+   "bivy": [],
+   "rope_note": null
+  },
+  "allowed_targets": [
+   "approach",
+   "descent",
+   "rack",
+   "bivy"
+  ],
+  "_descCol": "descent_text"
+ },
+ {
+  "id": "wa_garfield_mountain_south_route",
+  "name": "South Route (Main Peak)",
+  "state": "Washington",
+  "discipline": "alpine",
+  "pitches": 9,
+  "crag": false,
+  "topics": [
+   "approach",
+   "camp"
+  ],
+  "beta": "The old sketch landmarks are still the way people navigate it: dirt gully, slab, canyon edge, tiny notch, razorback, glade saddle, key ledge traverse, Y notch, #2 gully. Walk up the dry creek bed from the road; partway up the route leaves the streambed into the woods on faint trail and flagging. At about 2,200 ft you reach the dirt gully — fill water at the creek here, it is the last certain water on the route. Four hundred vertical feet of loose dirt and rock, then the trail exits left into brush-free timber for another 400 ft, then the slab, which is two pitches of comfortable soloing on intersecting dikes. Above the slab continue in dirt along its upper left edge, traverse under a rock outcrop, over the razorback and tiny notch to the Glade Saddle, where there is a tight, well-used two-person bivy site. The wooded ramp above has a sporty 20-foot step. The Key Ledge Traverse is the most overstated part of the description — after the dirt gully it feels like a walk. It ends at the Y Notch, the confluence of #1 and #2 Gullies at the head of the Great Canyon. A short exposed step around a rock band, then several hundred yards of very steep brush and brush-tunnel on faint trail, brings you to the base of #2 Gully. The gully is a nightmarish mix of impossibly loose rock on one side and polished mossy rock on the other — do not attempt it unless bone dry. Simulclimb the lower section with short belayed steps, then pitch out the harder ground; a fixed ring piton partway up may date to the 1940 first ascent. The 'Chimney Variation' (two leads of easy class 5 above the chimney, a good idea if the chimney is wet) rejoins the standard line at the top of #2 Gully around 5,200 ft, from where easy slabs and steep heather lead to the summit.",
+  "overview": "The standard line to Garfield's true 5,519 ft summit and the one Beckey called 'a hazardous enigma': 4,400 feet of dirt gully, brush, slab and ledge navigation from the Middle Fork road to the Y Notch, then four or five pitches of loose, barely protectable low-5th climbing up #2 Gully to the summit slabs. Under two miles horizontally and a minimum of twelve hours.",
+  "current": {
+   "approach": "I-90 Exit 34 near North Bend, then the Middle Fork Snoqualmie Road (FR 56) past the Taylor River bridge junction to a pullout roughly 2.6 miles further on, by a gravel wash. From the car the whole route is only about 1.5 miles horizontally, but 4,400 vertical feet. Start up the dry creek bed and leave it partway up into the woods, following a mix of flagging tape and faint trail up steep pine-needle slopes — 'scrumbling', pulling on whatever vegetation is at hand. About an hour in, at roughly 2,200 ft, you reach the dirt gully. Note that the pine-needle slopes above the slab run about 40 degrees on loose duff; huckleberry stems make good handholds.",
+   "area_walk_in": null,
+   "approach_variant_names": [
+    "Gravel wash pullout on FR 56, dry creekbed and dirt gully"
+   ],
+   "descent": "From the summit scramble down to the top of the easy slab and rig a single-rope rappel to the col at the top of #2 Gully. From there scramble to a bolted rappel station and make the first of about four double-rope rappels with two 60 m ropes, traversing 100-yard stretches of slab between stations on the east side of the gully; the lower stations are on trees and chockstones with slings dating back to the 1990s. Pack the ropes near the base of the gully and downclimb — this is where the west-side rock is loosest and where a party member was struck by a 500-pound block that cut loose under hand pressure in 2001. Cross back over the Y Notch and the Key Ledge Traverse, make a single-rope rappel off the steep section of the wooded ramp, and continue down past the Glade Saddle. Two more double-rope rappels land you at the base of the slab at 2,900 ft; from there it is the wooded ridge, then the dirt gully to the creek at 2,100 ft, then the faint trail and the dry creek bed to the car. Expect to lose the trail in the dark at least once.",
+   "rack_items": null,
+   "detailed_rack": "Two 60 m ropes (an 8.1 mm twin/half pair was used and appreciated on the classic 2001 ascent) — you need doubles for the double-rope rappels down #2 Gully and the slab. Carry a modest alpine rack: a set of stoppers, small-to-mid cams, and plenty of slings, since most of your anchors will be trees, horns and chockstones rather than placements. Expect marginal gear in the gully — one leader described his best placement on the summit slab traverse as a bad micro-nut.",
+   "rack": null,
+   "pro_needs": "Poor. #2 Gully and the ground above it offer sparse, often marginal protection on loose or unprotectable rock; the summit slab is essentially unprotectable and the crux move there is a slopey finger traverse with bad feet. Slung trees and krumholtz are the practical protection for much of the upper route.",
+   "bolts": null,
+   "anchor": null,
+   "location": null,
+   "bivy": [],
+   "rope_note": null
+  },
+  "allowed_targets": [
+   "approach",
+   "descent",
+   "rack",
+   "bivy"
+  ],
+  "_descCol": "descent_text"
+ },
+ {
+  "id": "wa_gato_negro",
+  "name": "Gato Negro",
+  "state": "Washington",
+  "discipline": "alpine",
+  "pitches": 12,
+  "crag": false,
+  "topics": [
+   "pro"
+  ],
+  "beta": "Gato Negro is a full-day alpine rock climb with fairly sustained 5.10a/b climbing spread across 12 long pitches. Most pitches span 180-190 feet with none shorter than 150 feet. The route features a spectacular hand-crack first pitch, bolted 5.10a face climbing on fragile flakes, rising traverses under roofs, and splitter cracks on the final headwall. Route-finding is somewhat challenging; avoid a clean blocky chimney to the right of the route that looks good but is not as good as it appears. Cruxes are mostly well-protected, but a few slightly runout 5.8 sections on loose granite and a 5.9+ offwidth chimney section present additional challenges.",
+  "overview": "Gato Negro is a newer alpine rock route on Whine Spire, a sub-peak of Silver Star Mountain. This big, sustained 1,500-foot climb features impressive granite pitches with mostly solid rock, though loose sections and tricky route-finding require careful attention.",
+  "current": {
+   "approach": "From the pullout, find a faint boot path descending loose talus/scree to the east into the trees, passing a trail register, then crossing Early Winters Creek on a log (~4,080 ft). The trail climbs the timbered rib north of Burgundy Creek, steeply gaining elevation to a basin/camp bench around 6,500 ft (roughly 2 hours from the car), where the trail continues on up to Burgundy Col (~7,720 ft). Whine Spire, just south of the Wine Spires, is reached from the bench rather than the col: branch right toward Silver Star and climb to the toe of the middle of the three rock masses to the right of the col. Good camping and a late-season spring are near 6,400-6,500 ft.",
+   "area_walk_in": null,
+   "approach_variant_names": [
+    "Burgundy Creek bench to the base of Whine Spire"
+   ],
+   "descent": "The descent does not reverse the route. Make a few rappels over the top of the spire into the steep gully between Whine Spire and the west summit of Silver Star, then work down the gully with long sections of loose 4th-class downclimbing and a few more rappels. The gully is extremely loose, with rock coming down through it constantly, so keep the party out of one another's fall line and clear of the ropes. Do not attempt it in rock shoes. Plan on 2.5 to 3 hours in good conditions; parties benighted here describe about three hours of complex route-finding in the dark, and advise against starting it after dark.",
+   "rack_items": null,
+   "detailed_rack": "Bring a full set of cams ranging from sizes 0 through 5, with an additional half set of small cams. Stoppers and nuts have limited utility on this route but one small nut may be useful to avoid plugging a lock on the crux. Standard alpine rock gear package.",
+   "rack": [
+    "Full set of cams 0-5, doubles 0-2in, single 3in and 4in",
+    "Additional small cams (light set)",
+    "Light nut/stopper set (limited utility)",
+    "6 single + 2 double-length slings",
+    "2 alpine quickdraws",
+    "Single 60m rope"
+   ],
+   "pro_needs": "Cruxes are mostly well-protected with good placements. Some slightly runout 5.8 sections on loose granite require careful lead climbing. The 5.9+ offwidth chimney section requires solid technique and protection skills.",
+   "bolts": null,
+   "anchor": null,
+   "location": null,
+   "bivy": [
+    "Burgundy Col high camp — west side, the Wine Spires",
+    "Burgundy Creek bench camp — west side",
+    "Lone Fir Campground, SR 20",
+    "Upper scree benches below Burgundy Col — west side"
+   ],
+   "rope_note": "Confirmed 12-pitch route on Whine Spire (west face of Silver Star), sustained 5.10a/b with a 5.9+ offwidth/chimney section and some runout on loose 'kitty litter' granite; full day for most parties."
+  },
+  "allowed_targets": [
+   "approach",
+   "descent",
+   "rack",
+   "bivy"
+  ],
+  "_descCol": "descent_text"
+ },
+ {
+  "id": "wa_ghost_peak_south_route",
+  "name": "South Route",
+  "state": "Washington",
+  "discipline": "mountaineering",
+  "pitches": null,
+  "crag": false,
+  "topics": [
+   "camp"
+  ],
+  "beta": "Ghost Peak is normally climbed as an add-on from a high camp shared with neighboring Crooked Thumb Peak and Phantom Peak, since all three summits are within a few tenths of a mile of one another in the Northern Pickets. The way from camp is obvious once you're established there. The first-ascent party climbed from the notch south of the peak, reaching it from the west, then kept to the south and west sides of the mountain along obvious weaknesses — easy-to-moderate 4th/low-5th-class climbing on comparatively solid Pickets rock.",
+  "overview": "Ghost Peak is a Northern Pickets summit near Crooked Thumb and Challenger, completing the spectral naming theme of the range. Its infrequent ascents make it a quiet objective for those deep in the Pickets.",
+  "current": {
+   "approach": "Ghost Peak sits deep in the Northern Pickets, just south of Crooked Thumb Peak and about 0.3 mi NNE of Phantom Peak, so this is a multi-day wilderness approach, not a day hike to a base. Standard access is from the Hannegan Pass Trailhead at the end of Ruth Creek Road (FR 32, ~3,100 ft); the alternative from Ross Lake, up Big Beaver Creek and Wiley Ridge, also reaches the Challenger end of the Northern Pickets. From the Hannegan Trailhead, follow the Ruth Creek Trail over Hannegan Pass (5,066 ft, ~4 mi in) and drop into the Chilliwack River valley to a forest camp near Copper Creek/Graybeal Camp (~8 mi in). Day two crosses the Chilliwack River on the cable car and climbs the steep, brushy Brush Creek Trail to Whatcom Pass (~5,210 ft, ~16 mi in) - the last maintained trailbed before the range proper. From Whatcom Pass the route leaves the trail: rope up for glacier travel across the Whatcom Glacier (or go up and over Whatcom Peak's north ridge) to Perfect Pass (6,300 ft), then continue over the Challenger Glacier and Solar Pass to a moraine high camp on the Crooked Thumb Glacier, directly below Ghost Peak's south face - roughly 23-24 mi and three days in. From that camp, a roped glacier crossing reaches the base of the peak, where the original 1970 line climbs low-5th/Class 4 rock up the south face and south arete before finishing on the west face; route-finding here is the crux in poor visibility, since Ghost Peak, Crooked Thumb, and Phantom Peak all crowd the same skyline. Overall hazards: early-season fords on the Chilliwack River, real crevasse risk on the Whatcom and Challenger Glaciers, and loose, exposed ground near the high camp that's easy to lose in cloud.",
+   "area_walk_in": null,
+   "approach_variant_names": [
+    "Crooked Thumb Glacier camp to the notch south of the peak"
+   ],
+   "descent": "Descend by reversing the ascent line: downclimb the south face/south arete/west-face traverse used on the first-ascent route back to the notch below the summit horn, then continue down snow and talus to the high camp on the Crooked Thumb Glacier. Ghost is a small, generally solid rock horn; expect to downclimb the way you came, with no fixed or bolted anchors anywhere in this remote sub-range. Carry a rope and a small rack of slings/nuts in case the exposure or wet/icy rock make a short rappel preferable off a natural anchor (slung horn or chockstone) near the top of the arete; a single 30m rappel would be more than enough to protect the steepest section if needed. Treat this as a walk-off/downclimb route with a possible single natural-anchor rappel in reserve, not a route with a defined multi-rappel descent. Once back at camp, reverse the full approach: back over Solar Pass and the Challenger Glacier, over Perfect Pass/Whatcom Glacier or Whatcom Peak's north ridge to Whatcom Pass, then down the Brush Creek Trail, back across the Chilliwack River and over Hannegan Pass to the Hannegan trailhead.",
+   "rack_items": null,
+   "detailed_rack": "Only a light rock rack is needed for the class 4/low-5th climbing itself (small-to-medium cams, a few nuts, and slings for natural anchors); the more consequential kit is full glacier-travel gear for the Whatcom and Challenger Glacier crossings on approach.",
+   "rack": [
+    "Light rack of small-to-medium cams and a few nuts",
+    "Slings for natural anchors",
+    "Single dynamic rope for class 4 climbing/rappels"
+   ],
+   "pro_needs": "Minimal protection is needed on the peak's easy fifth-class terrain; prioritize glacier rescue gear (rope, prusiks/mechanical ascenders, pickets) over a large rock rack.",
+   "bolts": null,
+   "anchor": null,
+   "location": null,
+   "bivy": [
+    "Luna Cirque high camp (near Lousy Lake)",
+    "Whatcom Camp, Brush Creek below Whatcom Pass",
+    "Perfect Pass, Perfect Pass cross-country zone",
+    "Improvised bivouacs on the Challenger Glacier and the crest south of Challenger",
+    "Whatcom Pass",
+    "Perfect Pass"
+   ],
+   "rope_note": "Rope and rack for a Grade III, Class 4 route in the remote North Cascades National Park (Picket Range vicinity): a rope for the Class 4 climbing and any rappels, plus a light rack for occasional protection/anchors."
+  },
+  "allowed_targets": [
+   "approach",
+   "descent",
+   "rack",
+   "bivy"
+  ],
+  "_descCol": "descent_text"
+ },
+ {
+  "id": "wa_gilbert_peak_conrad_glacier",
+  "name": "Conrad Glacier",
+  "state": "Washington",
+  "discipline": "mountaineering",
+  "pitches": null,
+  "crag": false,
+  "topics": [
+   "approach",
+   "time"
+  ],
+  "beta": "From the South Tieton Creek/Conrad Meadows trailhead, this route climbs the east side of Conrad Glacier to a saddle around 7,200 ft, then traverses onto Meade Glacier before a final push over boulders, scree, and a summit snowfield to the top. It is a summer and fall climb, not a spring or winter one, and is usually done car-to-car over two or more days.",
+  "overview": "A longer, more adventurous mountaineering line that climbs the peak's north-side Conrad Glacier to a saddle before traversing onto Meade Glacier and finishing over boulders, scree and a summit snowfield — a less-traveled alternative to the standard Meade Glacier ascent.",
+  "current": {
+   "approach": "From the South Tieton Creek/Conrad Meadows Trailhead, approach the north side of the peak and ascend the east side of Conrad Glacier to a saddle around 7,200 ft.",
+   "area_walk_in": null,
+   "approach_variant_names": [
+    "Conrad Meadows to the north side, the Conrad Glacier and the 7,200 ft saddle"
+   ],
+   "descent": "Retrace the ascent: from the summit scramble down the west side of the south ridge to the Meade Glacier, then cross it back toward the saddle at about 7,200 ft. The crossing drops slightly on the way out, so stay high on the return to avoid regaining elevation. From the saddle go down the east side of the Conrad Glacier, roped for the crevassed section, pass Barren Lake, and follow the trail back to Conrad Meadows.",
+   "rack_items": null,
+   "detailed_rack": "No technical rock rack; carry a rope for glacier travel on Conrad Glacier.",
+   "rack": null,
+   "pro_needs": "Glacier travel kit (axe, crampons, rope, harness, crevasse-rescue gear) for the Conrad Glacier crossing to the saddle, then boulder/scree/snowfield travel to the summit.",
+   "bolts": null,
+   "anchor": null,
+   "location": null,
+   "bivy": [
+    "Conrad Meadows and Surprise Lake, South Fork Tieton"
+   ],
+   "rope_note": null
+  },
+  "allowed_targets": [
+   "approach",
+   "descent",
+   "rack",
+   "bivy"
+  ],
+  "_descCol": "descent_text"
+ },
+ {
+  "id": "wa_gilbert_peak_meade_glacier",
+  "name": "Meade Glacier",
+  "state": "Washington",
+  "discipline": "mountaineering",
+  "pitches": null,
+  "crag": false,
+  "topics": [
+   "approach"
+  ],
+  "beta": "From the Conrad Meadows / South Fork Tieton Trailhead, follow Trail #1120 through Conrad Meadows to the Surprise Lake loop and take its right fork to the trail's high point. Leave the trail there, climb west into a basin, pass between a pair of big mounds and drop briefly to the foot of the Meade Glacier. Climb the glacier (now largely a series of persistent snowfields rather than a crevassed glacier) near the center of the cirque, right of the rock band that splits the upper and lower sections, then right of the snow dome to gain the ridge. A rough goat and boot path on the usually snow-free southwest side leads to a small saddle just east of the true summit, and a short, loose class 3 scramble finishes it. Popular and the most straightforward line up the peak, though it is a long outing (~20 miles round trip) with real elevation gain.",
+  "overview": "The standard, most straightforward ascent: a long approach through Conrad Meadows and up the Surprise Lake loop trail, then cross-country to the foot of the Meade Glacier on the peak's southeast side, up its snowfields to the ridge, and a short class 3 scramble to the summit.",
+  "current": {
+   "approach": "Drive to the Conrad Meadows / South Fork Tieton Trailhead (Trail #1120, elev. ~4,044 ft): from Naches, WA take US-12 W about 22 miles, turn onto Forest Road 1200 (Tieton Reservoir Road) for 4.5 miles, then onto Forest Road 1000 (South Fork Tieton Road) for 12.6 miles to the trailhead at road's end (last ~7 miles gravel, generally in good condition). Hike Trail #1120 through Conrad Meadows (crossing Conrad Creek) into the Goat Rocks Wilderness, continuing to the Surprise Lake loop. Take the loop's right fork to the trail's high point, then leave the trail and climb west into a basin; pass between a pair of big mounds and descend briefly to the foot of the Meade Glacier.",
+   "area_walk_in": null,
+   "approach_variant_names": [
+    "Conrad Meadows and the Surprise Lake loop to the Meade Glacier"
+   ],
+   "descent": "From the summit, downclimb the short, loose scramble to the small saddle and follow the goat and boot path on the southwest side back to the ridge. Descend the Meade Glacier snowfields past the rock band that splits the upper and lower glacier; glissading is common in early and mid season when the snow is consolidated (self-arrest gear required). Recross the basin to the trail's high point, then follow the Surprise Lake loop and Trail #1120 back through Conrad Meadows to the trailhead.",
+   "rack_items": null,
+   "detailed_rack": "Not a roped/protected climb for most parties; essential gear is glacier/snow travel kit rather than a rock rack.",
+   "rack": null,
+   "pro_needs": "No fixed protection or technical rock gear needed on the standard glacier line; an ice axe (and crampons if the snow is firm or icy) is the core requirement.",
+   "bolts": null,
+   "anchor": null,
+   "location": null,
+   "bivy": [
+    "Conrad Meadows and Surprise Lake, South Fork Tieton"
+   ],
+   "rope_note": null
+  },
+  "allowed_targets": [
+   "approach",
+   "descent",
+   "rack",
+   "bivy"
+  ],
+  "_descCol": "descent_text"
+ },
+ {
+  "id": "wa_gilbert_peak_west_route",
+  "name": "West Route",
+  "state": "Washington",
+  "discipline": "mountaineering",
+  "pitches": null,
+  "crag": false,
+  "topics": [
+   "camp"
+  ],
+  "beta": "From Cispus Basin (reached from a camp in the timber below Snowgrass Flats, or camped in the basin itself, by following the PCT southbound), climbers go up to the saddle at the basin's northeast end and traverse a series of rock ribs and shallow gullies (the 'Goat Ledges' and 'Goat Ribs') at roughly 7,400-7,600 ft toward Gilbert Peak. The key navigational feature is a band of solid, abrasive white pyroclastic aggregate that points toward a notch behind a prominent dark rock tower nicknamed the 'black prow'; staying on this band (rather than the looser rock above or below it) is described as the safest line. A lower variation holds a consistent ~7,500 ft traverse elevation to reduce exposure to party-induced rockfall. The route is regarded by some as loose and dangerous, but careful route-finding along the white band and goat paths allows a safer Class 2-3 passage to the summit.",
+  "overview": "A longer, looser, more adventurous line up Gilbert Peak's west side from Cispus Basin, traversing the exposed 'Goat Ledges/Goat Ribs' and a band of solid white volcanic aggregate to a notch behind a dark rock tower ('the black prow') before a Class 2-3 finish to the summit.",
+  "current": {
+   "approach": "Drive to the Berry Patch or Snowgrass Flat Trailhead (Chambers Lake area) off Forest Road 21/2150 on the west side of the Goat Rocks: turn east onto FR 21, continue about 13 miles, turn at the Snowgrass Trail/Chambers Lake sign onto FR 2150, then follow signs to the Snowgrass Flat Trailhead (elev. ~4,650 ft). Hike Trail #96 (Snowgrass) roughly 4 miles and ~2,000 ft of gain along Goat Creek toward Snowgrass Flats, a large subalpine meadow that is closed to camping (use the established sites below it); from there reach the PCT (via Trail #96 or the cutoff Trail #97) and follow it southbound about 2 miles to Cispus Basin, which has an established camp in the trees just above the PCT's Cispus River crossing. Climb to the saddle at the basin's northeast end, then scramble east across the Goat Ledges/Goat Ribs traverse toward Gilbert Peak (often combined with Old Snowy Mountain and Ives Peak in one traverse day).",
+   "area_walk_in": null,
+   "approach_variant_names": [
+    "Snowgrass Flats and the Goat Ledges traverse to the black prow"
+   ],
+   "descent": "Downclimb the Class 2-3 summit section back through the notch behind the black prow, then carefully retrace the white aggregate band across the Goat Ribs/Goat Ledges at the same ~7,500 ft traverse elevation used on ascent to minimize rockfall exposure to teammates below. From the saddle, descend into Cispus Basin, follow the PCT back to Trail #96 (or the cutoff Trail #97), and descend Trail #96 to the trailhead.",
+   "rack_items": null,
+   "detailed_rack": "No fixed protection or roped pitches reported; parties travel unroped over class 3-4 terrain.",
+   "rack": null,
+   "pro_needs": "No fixed or removable protection is placed on this route — the class 3-4 summit block section is climbed unroped and rated runout (R).",
+   "bolts": null,
+   "anchor": null,
+   "location": null,
+   "bivy": [
+    "Snowgrass Flat area backcountry camps",
+    "Chambers Lake Campground"
+   ],
+   "rope_note": null
+  },
+  "allowed_targets": [
+   "approach",
+   "descent",
+   "rack",
+   "bivy"
+  ],
+  "_descCol": "descent_text"
+ },
+ {
+  "id": "wa_glacier_peak_frostbite_ridge",
+  "name": "Frostbite Ridge",
+  "state": "Washington",
+  "discipline": "alpine",
+  "pitches": null,
+  "crag": false,
+  "topics": [
+   "camp",
+   "pro"
+  ],
+  "beta": "From a high camp near Glacier Ridge/Kennedy Glacier, climb the ridge on snow or loose rock with occasional protection to the top, where the 'Rabbit Ears' notch requires descending class 3 rock for about 150 feet to a saddle. From the saddle, climb an alpine ice face (roughly two pitches, up to ~60° in recent conditions, AI1-2 to AI2) to reach the crater rim and summit. Conditions vary significantly by year and season — early-season snow climbing has increasingly given way to exposed glacier ice even in June/July per recent trip reports.",
+  "overview": "Frostbite Ridge is the classic alpine route on Glacier Peak — a long, aesthetic ridge on the north/northwest side that links snow, ice, and a short mixed crux past the 'Rabbit Ears' gendarmes. Combined with the peak's deep remoteness, it's a committing Grade II outing and one of the great moderate alpine traverses in the North Cascades.",
+  "current": {
+   "approach": "Two approaches are used, both longer and more involved than the standard Sitkum route. (1) Via the White Chuck River, no longer usable since a 2003 flood destroyed the trail and road: the old line followed the White Chuck River Trail (FST 643) about 6 miles to the Kennedy Ridge Trail (FST 639) junction, then Kennedy Ridge Trail 1.7 miles up to the PCT. Head north on the PCT past the Glacier Creek crossing (water) to an unmarked climbers' path leaving the PCT on Glacier Ridge about 0.7 miles beyond the creek, which climbs snow and pumice to the standard high camp near 7,200 ft on the Kennedy Ridge shoulder. (2) Via North Fork Sauk Trailhead: North Fork Sauk Trail to White Pass (~9 miles, ~5,900 ft), then a long traverse north on/near the PCT to the same Kennedy Ridge camp area — a 20-mile-plus approach day used by some parties. From high camp, the route proper begins by traversing the upper southwest slopes of the Ptarmigan Glacier just below the ridgeline to about 8,000 ft, rounding Kennedy Peak to an 8,000 ft saddle between the Vista and Kennedy Glaciers. Ascend the Kennedy Glacier — a 'crumbling mess' of loose moraine and boulders low down — to an 8,800 ft saddle where Frostbite Ridge proper begins. The ridge itself mixes loose pumice/dust scrambling on narrow, exposed steps with sections of steep snow (45–50°) protected with pickets or ice screws, passing directly beneath/through the Rabbit Ears — twin eroded lava pinnacles — where loose rock is a real hazard, especially in warm, dry conditions (cold, snowy conditions lock the rock in place and make the scramble more manageable). Above the Rabbit Ears the route steepens further into a section of alpine ice, anywhere from a single ~40-foot ice step to roughly 200 feet of AI2, typically simul-climbed with ice screw protection, before crossing the crater rim and descending briefly into the crater to reach the 10,550 ft summit.",
+   "area_walk_in": null,
+   "approach_variant_names": [
+    "White Chuck River and Kennedy Ridge to the 7,200 ft camp",
+    "Suiattle River Road and the PCT via Milk Creek",
+    "North Fork Sauk to White Pass, then north"
+   ],
+   "descent": "Frostbite Ridge is essentially a one-way, committing line — once on the ridge there is no turning back — and virtually all parties descend a different, easier route rather than reversing the ridge. The standard descent is down the Sitkum Glacier: from the summit, descend the gully east of the summit into the upper Sitkum Glacier, traverse and descend to a saddle at roughly 8,000 ft, then continue down the lower Sitkum Glacier to Boulder Basin, picking up the climbers' path back to the PCT, then south on the PCT to White Pass and down the North Fork Sauk Trail to the North Fork Sauk Trailhead (some parties instead reverse to the Cool Glacier/Gerdine Ridge side if that's where their car is staged). The single rappel belongs to the ridge itself rather than to this walk-off descent: there is a natural belay-horn anchor (a rock horn, typically backed by old slings — inspect before trusting) just above the steep ice north of the Rabbit Ears, used to lower one pitch of steep ice into a notch referred to as the 'doorway gap' in the summit rib. This is a single-pitch rappel — a 30m single-strand rope is sufficient for the drop described — encountered while working through the crux ice/rock step near the Rabbit Ears (i.e., on the way up for most parties, since the standard descent avoids the ridge entirely); some parties simul-climb this step with screw/picket protection instead of rappelling, depending on ice conditions. Carry 3–4 ice screws and/or pickets for this section and for the steep snow/ice above the Rabbit Ears regardless of whether you end up rappelling it.",
+   "rack_items": null,
+   "detailed_rack": "Per team: 30–60 m rope, 4–6 ice screws, 2–4 pickets, small rock rack (nuts/small cams) and slings for the notch/gendarmes, rappel/V-thread kit.",
+   "rack": null,
+   "pro_needs": "Mixed: screws and pickets for steep snow/ice, a light rock rack for the Rabbit Ears/notch, plus rappel gear for the notch.",
+   "bolts": null,
+   "anchor": null,
+   "location": null,
+   "bivy": [
+    "Kennedy Ridge high camp",
+    "Vista-Kennedy saddle",
+    "8,800 ft saddle at the foot of Frostbite Ridge",
+    "Ledge near 9,900 ft below the ridge crux"
+   ],
+   "rope_note": null
+  },
+  "allowed_targets": [
+   "approach",
+   "descent",
+   "rack",
+   "bivy"
+  ],
+  "_descCol": "descent_text"
+ },
+ {
+  "id": "wa_glacier_peak_kennedy_glacier",
+  "name": "Kennedy Glacier",
+  "state": "Washington",
+  "discipline": "mountaineering",
+  "pitches": null,
+  "crag": false,
+  "topics": [
+   "descent",
+   "camp",
+   "approach"
+  ],
+  "beta": "From a camp near Glacier Creek, follow a climbers' trail up a gully to the top of Kennedy Ridge, then descend (right) to the foot of the Kennedy Glacier. Ascend the lower glacier keeping right, then the center of the upper glacier. Approach the bergschrund at the head of the glacier by ascending left to the top of a snow dome, find a snow bridge to cross it, then climb the center of a roughly 40° headwall, staying left of but close to prominent rock outcrops, to the crater rim.",
+  "overview": "The Kennedy Glacier ascends Glacier Peak's northwest flank and offers a more glaciated, slightly steeper alternative to the standard routes. It is a popular ski-mountaineering descent and a fine summer climb when crevasses are well bridged.",
+  "current": {
+   "approach": "Standard historical approach: from the White Chuck River Trailhead (FS-23, closed to vehicles at milepost 3.7 after flood damage; check status), follow trail #643 about 4 miles, then Kennedy Ridge Trail #639 for 1.7 miles to the PCT; turn left (north) and follow the PCT about 2 miles to the Glacier Creek crossing and campsites (pack-in time 4-5 hours). An alternate approach via the North Fork Sauk Trail and PCT over Red Pass to Glacier Creek is also used and is the open option while FS-23 stays closed.",
+   "area_walk_in": null,
+   "approach_variant_names": [
+    "White Chuck River and Kennedy Ridge to the Glacier Creek camps",
+    "North Fork Sauk and the crest trail north"
+   ],
+   "descent": "Besides reversing the ascent line, the standard alternate descent goes via Frostbite Ridge: traverse past the distinctive 'Rabbit Ears' rock formation, then descend the (separate) Vista Glacier back down to the lower Kennedy Glacier and Kennedy Ridge camp, watching for opened crevasses and softening snow bridges throughout.",
+   "rack_items": null,
+   "detailed_rack": "Rope, pickets, and about 4 ice screws are typically carried for the bergschrund crossing and headwall.",
+   "rack": null,
+   "pro_needs": "Screws and pickets for the headwall/bergschrund section; standard glacier crevasse-rescue protection below that.",
+   "bolts": null,
+   "anchor": null,
+   "location": null,
+   "bivy": [
+    "Kennedy Ridge and the Glacier Creek camps, Suiattle side"
+   ],
+   "rope_note": null
+  },
+  "allowed_targets": [
+   "approach",
+   "descent",
+   "rack",
+   "bivy"
+  ],
+  "_descCol": "descent_text"
+ },
+ {
+  "id": "wa_glacier_view_palace",
+  "name": "Glacier View Palace",
+  "state": "Washington",
+  "discipline": "trad",
+  "pitches": 1,
+  "crag": true,
+  "topics": [
+   "pro"
+  ],
+  "beta": "Dirty jugs and white-stained rock; unlike the 5.10 to the left, this route's bolts are in noticeably better shape. Note: published descriptions reportedly mis-locate this route further right than its actual position.",
+  "overview": "Dirty jugs on white-stained rock atop Enchanting Puller Blind, with notably better bolt condition than its harder neighbor.",
+  "current": {
+   "approach": "Hike up, around and above Glacier View Temple to reach the route, which sits atop Enchanting Puller Blind.",
+   "area_walk_in": null,
+   "approach_variant_names": [],
+   "descent": "Single lower from the top; short route within any standard rope length.",
+   "rack_items": null,
+   "detailed_rack": "Fully bolted: 5 bolts to a chain anchor, in better condition than some neighboring harder routes.",
+   "rack": null,
+   "pro_needs": "Sport rack of 5 quickdraws.",
+   "bolts": null,
+   "anchor": null,
+   "location": null,
+   "bivy": [],
+   "rope_note": null
+  },
+  "allowed_targets": [
+   "approach",
+   "descent",
+   "rack",
+   "bolts",
+   "anchor",
+   "location"
+  ],
+  "_descCol": "descent_text"
+ },
+ {
+  "id": "wa_glacier_view_temple",
+  "name": "Glacier View Temple",
+  "state": "Washington",
+  "discipline": "sport",
+  "pitches": 1,
+  "crag": true,
+  "topics": [
+   "pro"
+  ],
+  "beta": "Short scramble up to a belay area, then a brief but engaging climb; the crux is moving up onto a ledge right before the anchor, with a view toward Mt. Rainier in the distance. Located just past the first set of bolts belonging to the adjacent route Enchanting Puller Blind (5.10c).",
+  "overview": "A brief, easy East Face pitch with an outsized view -- climbers get a glimpse of Mt. Rainier from the crux ledge move.",
+  "current": {
+   "approach": "From Seattle, drive east on I-90 to Snoqualmie Pass and take Exit 54, crossing to the north side of the freeway before turning onto FR 4832, then following it onto FR 4934 to the small trailhead pullout. On foot, cross the road and hike up a spur road for about 15 minutes to a flat bench, then pick up a cairned trail heading north into the forest to a rocky area, staying on the main climber's trail through a short, steeper forest section to reach the crag — roughly 25-30 minutes total from the car. A Northwest Forest Pass is generally expected for parking at national forest trailheads in this corridor.",
+   "area_walk_in": null,
+   "approach_variant_names": [],
+   "descent": "From the top of the route, lower directly off the fixed chain anchor to the ground with a single rope (30 m is enough for this 12 m pitch); no walk-off descent is needed for this single-pitch line.",
+   "rack_items": null,
+   "detailed_rack": "Fully bolted: 4 bolts to a chain anchor.",
+   "rack": null,
+   "pro_needs": "4 bolts, chain anchor.",
+   "bolts": null,
+   "anchor": null,
+   "location": null,
+   "bivy": [],
+   "rope_note": "A single-pitch bolted sport line on blocky andesite, about 40 ft (12 m) with four bolts to a chain anchor; a 30 m rope is enough to lower off."
+  },
+  "allowed_targets": [
+   "approach",
+   "descent",
+   "rack",
+   "bolts",
+   "anchor",
+   "location"
+  ],
+  "_descCol": "descent_text"
+ },
+ {
+  "id": "wa_golden_age",
+  "name": "Golden Age",
+  "state": "Washington",
+  "discipline": "trad",
+  "pitches": 7,
+  "crag": true,
+  "topics": [
+   "pro"
+  ],
+  "beta": "A sinuous line up the upper wall with bolted belays throughout; rock quality varies, with the crux 4th pitch offering the best stone on the route.",
+  "overview": "The fourth full-length free route on M&M Wall, established by Colin Moorhead and Tom Wright over two weekends in 2016, linking intermittent crack systems and face climbing up the upper half of the wall with sustained 5.11 climbing and one pitch of 5.12.",
+  "current": {
+   "approach": "Hike directly up the gully below the wall; after about an hour, leave it on a narrow ledge that leads back right to the start, a prominent 4–5 in left-arching corner. Alternatively, reach the base by climbing the early pitches of either The Tiger or Ellen Pea to the shared midway ledge system, then traverse left to the start; a two-bolt anchor sits on the ledge below the trees.",
+   "area_walk_in": null,
+   "approach_variant_names": [
+    "Up the gully to its own ledge",
+    "Via the centre route's lower pitches",
+    "Via the right-hand cave route's lower pitches"
+   ],
+   "descent": "All belays are bolted, and the route can be rappelled directly with one 70 m rope; the second rappel anchor from the top sits off to the left of the line.",
+   "rack_items": null,
+   "detailed_rack": "Double set of cams from thin fingers to #1, single #2, #3, #4, and #5 cams, a set of wires, and quickdraws.",
+   "rack": null,
+   "pro_needs": "Bolted belays throughout with gear-protected leads between them; watch for loose chockstones and deteriorating rock on a couple of pitches.",
+   "bolts": null,
+   "anchor": null,
+   "location": null,
+   "bivy": [],
+   "rope_note": null
+  },
+  "allowed_targets": [
+   "approach",
+   "descent",
+   "rack",
+   "bolts",
+   "anchor",
+   "location"
+  ],
+  "_descCol": "descent_text"
+ },
+ {
+  "id": "wa_golden_horn_east_face",
+  "name": "East Face",
+  "state": "Washington",
+  "discipline": "alpine",
+  "pitches": 11,
+  "crag": false,
+  "topics": [
+   "pro"
+  ],
+  "beta": "The route's crux is a technical 5.10+ third pitch on comparatively good rock, followed by a harder and more dangerous fourth-pitch 'true crux' — an expanding, sandy crack with poor protection and disintegrating holds (5.10 R). A roughly 20-foot runout section over extremely rotten rock earned the nickname 'the Pitch of Terror.' Bands of loose, decomposing 'kitty litter' rock alternate with sections of solid granite throughout the face.",
+  "overview": "An 11-pitch, roughly 1,000-foot IV 5.10+ R alpine rock route up Golden Horn's east face, climbed ground-up and onsight with no bolts or fixed gear by its first ascensionists in June 2015. The first-ascent party humorously nicknamed the line after a comedic song title; the face has a reputation for inconsistent rock quality.",
+  "current": {
+   "approach": "From a camp at Snowy Lakes (reached either on the PCT from Rainy Pass or, as the first-ascent party did, off-trail up Swamp Creek), the first-ascent party scrambled the ridge and traversed a scree field on the mountain's southwest side, then descended to the base of the east face before roping up.",
+   "area_walk_in": null,
+   "approach_variant_names": [],
+   "descent": "The snow couloir on Golden Horn's east side belongs to the approach: from the ridge above Snowy Lakes it drops to the foot of the east face and is easy going with crampons and an axe. It is not the way off the route, so work out the descent from the top before committing to the face.",
+   "rack_items": null,
+   "detailed_rack": "A standard alpine trad rack for sustained 5.10 crack and face climbing; no bolts or fixed gear exist anywhere on the route, so a full self-sufficient rack (including small-to-mid cams for the sandy, expanding crux crack) is essential.",
+   "rack": null,
+   "pro_needs": "The route has no fixed protection or bolts; the crux fourth pitch in particular offers poor, marginal placements in an expanding sandy crack, and one ~20-foot section ('the Pitch of Terror') is essentially unprotectable rotten rock.",
+   "bolts": null,
+   "anchor": null,
+   "location": null,
+   "bivy": [],
+   "rope_note": null
+  },
+  "allowed_targets": [
+   "approach",
+   "descent",
+   "rack",
+   "bivy"
+  ],
+  "_descCol": "descent_text"
+ },
+ {
+  "id": "wa_golden_horn_northeast_arete",
+  "name": "Northeast Arête",
+  "state": "Washington",
+  "discipline": "alpine",
+  "pitches": 5,
+  "crag": false,
+  "topics": [
+   "pro"
+  ],
+  "beta": "A moderate, multi-pitch line following the arête on the mountain's northeast side. The rock looks classic but climbs 'shaky,' with numerous fragile flakes of dubious stability and protection that is sometimes insecure.",
+  "overview": "A five-pitch, III 5.8 alpine rock route up Golden Horn's northeast arête, first climbed by Gordy Skoog and Jim Walseth in 1979.",
+  "current": {
+   "approach": "Same general Snowy Lakes basecamp approach as the standard route (PCT from Rainy Pass), continuing to the base of the northeast side of the peak; expect to find your own way from there.",
+   "area_walk_in": null,
+   "approach_variant_names": [],
+   "descent": "The arete ends on the summit, and the way off is the standard Southwest Route. A short rappel of roughly 35 to 40 ft down the summit block, from slings in the notch between the summit pillars, returns you to the ridge; a 30 m rope is plenty. Below that, loose scree and talus on the southwest side leads back toward Snowy Lakes, and plunge-stepping makes it quick. From camp, retrace the Pacific Crest Trail over Granite Pass and Cutthroat Pass to Rainy Pass.",
+   "rack_items": null,
+   "detailed_rack": null,
+   "rack": null,
+   "pro_needs": "Protection can be insecure on fragile flakes — a standard alpine rock rack with an emphasis on small-to-medium cams/nuts and care in placement selection is implied by route descriptions.",
+   "bolts": null,
+   "anchor": null,
+   "location": null,
+   "bivy": [],
+   "rope_note": null
+  },
+  "allowed_targets": [
+   "approach",
+   "descent",
+   "rack",
+   "bivy"
+  ],
+  "_descCol": "descent_text"
+ },
+ {
+  "id": "wa_golden_horn_southwest_route",
+  "name": "Southwest Route",
+  "state": "Washington",
+  "discipline": "alpine",
+  "pitches": 2,
+  "crag": false,
+  "topics": [
+   "camp"
+  ],
+  "beta": "The standard and by far most-climbed route on Golden Horn. From camp at Snowy Lakes, climbers ascend loose scree and talus on the mountain's southwest side to the summit ridge, then negotiate a short, exposed low-5th-class step — commonly described as a stem or mantle across a gap — to reach the small summit block. Many parties belay or protect the final move with a short rope despite its brevity, given the exposure below.",
+  "overview": "A long, scenic PCT approach to a camp at Snowy Lakes, followed by an easy scree-and-talus scramble that ends in one short, exposed low-5th-class move to the true summit.",
+  "current": {
+   "approach": "Drive SR-20 (North Cascades Highway) to Rainy Pass (4,880 ft) near milepost 158, about 35 miles west of Winthrop or 51 miles east of Marblemount. Park at the Rainy Pass North (PCT) trailhead. Hike north on the Pacific Crest Trail through forest and switchbacks to Cutthroat Pass (~6,800 ft), continue past Granite Pass (~6.25 miles in, where snowfields can linger into August) and along a cliff-cut trail toward Methow Pass. About a mile before Methow Pass, a small, unsigned spur trail switchbacks up to Lower and then Upper Snowy Lake (~6,700–7,000 ft) — roughly 10–11 miles and 2,700 ft of gain one-way from the trailhead. Good campsites sit in the meadow near the lakes.",
+   "area_walk_in": null,
+   "approach_variant_names": [
+    "Rainy Pass PCT over Cutthroat and Granite Passes to the Snowy Lakes spur"
+   ],
+   "descent": "From the summit, most parties make a single short rappel (roughly 40 ft; a 30m rope is plenty) off the summit block to regain the ridge, then downclimb/scramble class 2–3 scree and talus back toward Snowy Lakes — plunge-stepping the loose scree speeds this considerably. From camp, retrace the PCT approach back over Granite and Cutthroat Passes to Rainy Pass.",
+   "rack_items": null,
+   "detailed_rack": "Gear is minimal. Most parties carry a short/light rope (a 30m glacier or 'rad' line is common) purely to protect or rappel the short low-5th-class step at the summit block, plus a sling or two for a hasty rappel anchor.",
+   "rack": null,
+   "pro_needs": "No fixed protection exists on the route; the crux is short enough that many parties simply spot or hip-belay it. A rope, a sling, and a way to build a quick anchor are enough for those who want to protect or rappel the final move.",
+   "bolts": null,
+   "anchor": null,
+   "location": null,
+   "bivy": [],
+   "rope_note": null
+  },
+  "allowed_targets": [
+   "approach",
+   "descent",
+   "rack",
+   "bivy"
+  ],
+  "_descCol": "descent_text"
+ },
+ {
+  "id": "wa_goode_mountain_southwest_couloir",
+  "name": "Southwest Couloir",
+  "state": "Washington",
+  "discipline": "alpine",
+  "pitches": 6,
+  "crag": false,
+  "topics": [
+   "camp"
+  ],
+  "beta": "From high camp, ascend to the saddle/notch and climb the steep, loose gully of the Southwest Couloir (class 4 at the top); a line of more solid darker rock on the left ('the black stairs') offers easier scrambling than the center of the gully.",
+  "overview": "The Southwest Couloir is the standard, least-technical route up Goode and the line of the 1936 first ascent. From the base, the route climbs a narrow couloir of snow, scree, and short rock steps, crosses through the Black Tooth Notch, then traverses across the upper Northeast Face before a short, exposed final section to the summit — even the 'easy' route on Goode involves real exposure near the top.",
+  "current": {
+   "approach": "From the Bridge Creek/PCT trailhead on SR-20 near milepost 159 (just over a mile east of Rainy Pass, ~4,400 ft), follow the Pacific Crest Trail southbound along Bridge Creek. This stretch loses elevation steadily — roughly 1,600 ft over about 9.5-9.6 miles — down through forest to the North Fork Camp junction, where the PCT crosses Bridge Creek (a footbridge here has been washed out in past years; check current NPS conditions before counting on it). At the junction, turn onto the North Fork Bridge Creek Trail and head upstream (north); this climber's/stock trail is roughly 7 miles long and regains about 1,700 ft, but grows progressively brushier and less maintained the farther up-valley you go, with alder and overgrowth becoming a real time sink in late summer. The trail eventually peters out in the big cirque below Goode, Storm King, and Mount Logan — most parties leave the maintained tread around mile 13-14 of the approach to ford the North Fork (a cold, sometimes knee-deep crossing; easier a short way upstream near a cairn) and pick up an intermittent boot path/cairns through talus and alder ('tunnel' sections of brush) toward the toe of the Goode Glacier. From there it's off-trail travel over moraine and glacier remnants (light crampons/axe useful if there's residual snow or open crevasses) to a rotten, blocky ridge that accesses the base of the couloir proper — expect loose, moving rock underfoot on this last stretch. Reasonable bivy options exist near the glacier toe (~6,400-6,800 ft, limited flat tent sites) or higher on ledges closer to the couloir base. Total approach is commonly done as a long day-plus-camp, on the order of 15-16 miles and 4,000-4,800 ft of gain to high camp; water is generally available at regular intervals along Bridge Creek and its tributaries but can be scarce higher up near camp, so fill up at the last reliable stream.",
+   "area_walk_in": null,
+   "approach_variant_names": [
+    "The cairned ledge into the gully, and the black stairs inside it"
+   ],
+   "descent": "Descend the same Southwest Couloir used on ascent, after rappelling into it from the summit. From the summit area, downclimb broad class 3-4 terrain in the couloir, staying alert for a band of more solid darker rock on the left side (locally called the 'black stairs') which offers cleaner downclimbing than the surrounding rotten rock; the couloir is otherwise loose and rockfall-prone, so groups should descend close together or one at a time through narrows. Lower down, if snow still fills the gully (common into mid-summer), this is a fast plunge-step or glissade; late-season parties will instead pick through talus and scree for several hundred feet. The couloir's mouth opens onto cliffy ground above a waterfall, so exit left (climber's left) onto easier heather benches rather than continuing straight down into the cliffs — this is the one real route-finding crux of the descent. Below that, drop into heather meadows around 7,700 ft where running water is usually found, then retrace the approach line back down through the brush and along the North Fork Bridge Creek Trail and PCT to the Bridge Creek trailhead. The top of the descent is a rappel line, not a downclimb: from the summit, three single-rope rappels reach Black Tooth Notch, and three more drop straight down the fall line into the couloir; a 60 m rope is enough. Below those, the couloir is the scramble and downclimb described above.",
+   "rack_items": null,
+   "detailed_rack": "A light rack for the short rock steps, and a rope for the exposed sections.",
+   "rack": null,
+   "pro_needs": "Minimal — a light rack and a rope for the summit block and any snow.",
+   "bolts": null,
+   "anchor": null,
+   "location": null,
+   "bivy": [
+    "5,500 ft bivy below the slabs",
+    "Goode Glacier toe",
+    "5,200 ft camp to the west",
+    "West Tower ledge, upper mountain",
+    "Lateral moraine camp above Goode Glacier"
+   ],
+   "rope_note": null
+  },
+  "allowed_targets": [
+   "approach",
+   "descent",
+   "rack",
+   "bivy"
+  ],
+  "_descCol": "descent_text"
+ },
+ {
+  "id": "wa_gray_wolf_ridge_se_slopes",
+  "name": "Southeast Slopes (Standard Scramble)",
+  "state": "Washington",
+  "discipline": "mountaineering",
+  "pitches": null,
+  "crag": false,
+  "topics": [
+   "descent"
+  ],
+  "beta": "A long, view-packed off-trail ridge walk rather than a technical climb. Hikers gain the ridge via the steep, unswitchbacked Baldy Trail, cross Baldy's summit (6,827 ft), descend roughly 600 ft to a saddle, cross an intermediate bump, then follow open tundra and talus along the ridge crest to a short Class 2-3 scramble up loose rock to Gray Wolf Ridge's true summit.",
+  "overview": "Gray Wolf Ridge is a long, dry, rain-shadow alpine ridge in the northeastern Olympic Mountains, straddling the boundary between the Buckhorn Wilderness (Olympic National Forest, Quilcene Ranger District) and Olympic National Park. The ridge carries six rocky, alpine-meadow-fringed summits — Maynard Peak (5,065'), Tyler Peak (6,364'), Baldy (6,797'), Gray Wolf (the 7,218-ft high point, first climbed in 1928), and Gray Wolf South — and is a classic if little-visited objective prized for sweeping views of Mount Olympus, the Needles, and Mount Deception. The standard Southeast Slopes route follows the historic Upper Maynard Burn Trail to treeline, then stays on or near the open ridge crest — Class 2 the whole way — over Baldy to the Gray Wolf summit.",
+  "current": {
+   "approach": "The Southeast Slopes route is approached via the Upper Dungeness/Maynard Burn trail system, not by any direct road-side access - the drive only gets you to the trailhead at the end of FR-2860-120 (off FR-2870/Lost Mountain Rd, itself off Palo Alto Rd south of US-101 near Sequim). From the trailhead, the Lower Maynard Burn Trail #816 crosses Mueller Creek right away (the last easy, reliable water for a while) and follows an old roadbed before narrowing to single-track around 0.3 mile in. From there the trail turns and stays steep, gaining roughly 3,000 ft in a bit over 2 miles on tread that narrows to barely a boot-width across eroded, crumbly ravine crossings and packed-dirt/shattered-shale slopes - a legitimate climber's-path pitch, not a graded trail. Around the 2.7-mile mark (about 6,200 ft) the trail tops out on the saddle/ridge crest between Tyler Peak and Baldy; a short, steep side path drops off the ridge here to the last dependable water (snowmelt-fed) before the high traverse. From the saddle it's roughly a mile more, past Pt. 6537, to Baldy's summit (reported as 6,797-6,827 ft). For the Gray Wolf Ridge extension, continue past Baldy: drop about 600 ft off its far side, then follow the long, open, mostly-unmarked ridge crest - packed dirt, shattered shale, and short talus/scree sections - over intermediate high points (including Pt. 7076) to Gray Wolf Peak's 7,218-ft summit, roughly 6-7 miles and up to 7,000 cumulative ft of gain from the trailhead depending on how much re-ascent the ridge undulations add. Because the line stays on or near an exposed above-treeline crest for miles, wind, afternoon thunderstorms, and lingering snow patches into July (which can bury the intermittent boot path and warrant an axe) are the main approach-specific hazards. There is no reliable water once you commit to the ridge crest past the Baldy saddle, so tank up at Mueller Creek and the saddle spring beforehand. Expect to detour briefly around occasional gendarmes and false summits along the ridge crest, and carry a map or GPS since long stretches of the crest are unmarked and off-trail.",
+   "area_walk_in": null,
+   "approach_variant_names": [
+    "Lower Maynard Burn Trail #816 over Baldy and along the crest",
+    "Royal Basin and the east face, for a traverse rather than an out-and-back"
+   ],
+   "descent": "The standard descent simply reverses the ascent ridge: back over Pt. 7076 and the connecting crest, back up-and-over Baldy, then down the Upper/Lower Maynard Burn Trail #816 to the trailhead. This is a walk/scramble reversal with no technical downclimbing and no rappelling required on the standard line (rappels: 0). A known alternative exists for parties continuing the traverse rather than backtracking: dropping directly off Gray Wolf Ridge's east face into Royal Basin, losing roughly 3,000 ft to intersect the Royal Basin Trail, then exiting via Royal Basin/Dosewalips or looping back to Lower Maynard Burn. This east-face variant is steep, loose, and only lightly traveled - parties describe packed dirt and shattered shale, brushy notches, and picking through timber to find blazes/cairns, with some parties scree-skiing the looser upper sections instead of roping up at all. It is not a bolted or standardized rappel line: where parties do rope down a short cliffy step, anchors are improvised from trees or natural rock horns/slings, not fixed hardware. Expect at most one or two short rappels (well under 60m each) if a party chooses to rope through a cliff band, rather than a sustained multi-pitch rappel descent - most groups downclimb or scree-ski through instead. Treat this variant as route-finding-dependent and confirm current conditions before relying on it, since little is known about it and there is no fixed, repeatable rappel count.",
+   "rack_items": null,
+   "detailed_rack": "No technical rock rack is needed for the standard Class 2 line -- it's a steep trail hike followed by an off-trail ridge walk and short talus/rock scramble.",
+   "rack": null,
+   "pro_needs": "No fixed or removable protection is used; the route is unroped Class 2 terrain.",
+   "bolts": null,
+   "anchor": null,
+   "location": null,
+   "bivy": [],
+   "rope_note": "Class 2 scree/talus walk-up; no rope needed on the standard route. Early-season snowfields may warrant an ice axe."
+  },
+  "allowed_targets": [
+   "approach",
+   "descent",
+   "rack",
+   "bivy"
+  ],
+  "_descCol": "descent_text"
+ },
+ {
+  "id": "wa_greenwood_mountain_west_ridge",
+  "name": "West Ridge",
+  "state": "Washington",
+  "discipline": "scrambling",
+  "pitches": null,
+  "crag": false,
+  "topics": [
+   "camp",
+   "approach"
+  ],
+  "beta": "From a camp in upper Phelps Basin, climb scree/talus below Dumbell's south side to a 7,900 ft notch on Dumbell's southeast ridge (the final 100 ft to the notch is loose Class 2+), where a long, narrow, airy ledge wraps around Dumbell's east face to the Dumbell-Greenwood col. From the col, an easy Class 2 talus walk up the West Ridge leads to the summit, which has a summit register (kept in a Boy Scouts of America can on the south summit). The route is unroped scrambling throughout, but the connecting ledge is in places only about a foot wide with steep exposure, passes under a small overhang requiring a crawl in one spot, and can hold snow and require an ice axe/crampons into mid-August.",
+  "overview": "Greenwood Mountain's standard line follows its West Ridge, reached via a long, exposed connecting ledge from neighboring Dumbell Mountain; it is an unroped talus-and-scree scramble almost always climbed together with Dumbell in a single trip staged from upper Phelps Basin.",
+  "current": {
+   "approach": "From the Phelps Creek Trailhead (3,500 ft, Wenatchee River Ranger District), follow Phelps Creek Trail #1511 north, entering the Glacier Peak Wilderness at 2.6 miles, to Spider Meadow (about 4.5-5 miles from the trailhead). Continue past Spider Meadow on the climbers' path, staying right of the tumbling creek to scramble up slabs past waterfalls, then continue up grass, talus, and heather slopes trending northeast into upper Phelps Basin. A commonly used bivy sits around 5,700-5,800 ft near treeline with stream access (the basin above 6,000 ft often has only snow-patch camping). In upper Phelps Basin the trail fades; in late July staying climbers-left to about 5,800 ft, then turning right toward the main drainage under Dumbell, worked well, and a bootpath beside that gully shows in early September. The access road is rocky, so bring some clearance.",
+   "area_walk_in": null,
+   "approach_variant_names": [],
+   "descent": "Descend the West Ridge talus back to the Dumbell-Greenwood col, then carefully reverse the narrow connecting ledge around Dumbell's east face to the ~7,900 ft notch above the south-side gully. Downclimb the loose Class 2-3 gully/ledges back into upper Phelps Basin; on snow, plunge-stepping or glissading speeds this section when conditions allow. There is no rappel route commonly described for this line — the ledge and gullies are downclimbed. Do not attempt the ledge crossing in the wet; several parties have retreated rather than cross it in rain.",
+   "rack_items": null,
+   "detailed_rack": "This is an unroped scramble, not a technical rope route — no rock rack is needed for the standard West Ridge line. Some parties carry a short rope as a personal safety margin for the exposed ledge traverse, though it is not commonly protected and no fixed anchors are described.",
+   "rack": null,
+   "pro_needs": "No fixed protection exists on this route. It is Class 2-3 scrambling with one notably exposed, narrow ledge traverse; parties uncomfortable with unprotected exposure sometimes carry a rope to hand-line the ledge crossing, though most climb it unroped.",
+   "bolts": null,
+   "anchor": null,
+   "location": null,
+   "bivy": [],
+   "rope_note": null
+  },
+  "allowed_targets": [
+   "approach",
+   "descent",
+   "rack",
+   "bivy"
+  ],
+  "_descCol": "descent_text"
+ },
+ {
+  "id": "wa_groove_thang",
+  "name": "Groove Thang",
+  "state": "Washington",
+  "discipline": "sport",
+  "pitches": 1,
+  "crag": true,
+  "topics": [
+   "descent",
+   "gear",
+   "pro"
+  ],
+  "beta": "Climbs the big, blocky groove between Just Enough and Notta Slab. Shares its start with Notta Slab, then breaks left into a wide, chimney-like feature after the 2nd bolt. 16 bolts to chain anchors; a 70m rope is needed to lower/toprope the full length, and walkers can also descend from the summit.",
+  "overview": "One of the newest and longest routes at Megadike North, following the large blocky groove between Just Enough and Notta Slab.",
+  "current": {
+   "approach": "From Middle Point Ridge Trailhead, continue ~1.1-1.2 mi to the Megadike North pull-out and approach trail near the culvert.",
+   "area_walk_in": null,
+   "approach_variant_names": [],
+   "descent": "A 70m rope is required to lower the full 105 ft in one stretch; alternatively, climbers reaching the anchor can walk off the ridge crest back down to the base.",
+   "rack_items": null,
+   "detailed_rack": "18 quickdraws, 70m rope.",
+   "rack": null,
+   "pro_needs": "16 bolts to a chain anchor; this is the longest single pitch in the area, so bring a full rack and a 70m rope.",
+   "bolts": null,
+   "anchor": null,
+   "location": null,
+   "bivy": [],
+   "rope_note": null
+  },
+  "allowed_targets": [
+   "approach",
+   "descent",
+   "rack",
+   "bolts",
+   "anchor",
+   "location"
+  ],
+  "_descCol": "descent_text"
+ },
+ {
+  "id": "wa_gunn_peak_southeast_route",
+  "name": "Southeast Route",
+  "state": "Washington",
+  "discipline": "scrambling",
+  "pitches": null,
+  "crag": false,
+  "topics": [
+   "approach"
+  ],
+  "beta": "Serious alpine scramble requiring climbing experience and high mountain skills. Follows overgrown logging roads and climbers' trails from Barclay Lake, ascending steeply through forest to boulder field approach. Technical crux is an exposed class 3-4 hidden ramp with loose rock and significant exposure. A narrow ledge on north side of summit requires careful foot placement, especially in wet or icy conditions. Multiple search and rescue incidents have occurred on this peak.",
+  "overview": "Gunn Peak is an extraordinarily prominent summit above the Sultan Basin and Skykomish valley — the highest point in the Wild Sky Wilderness and the 29th-most prominent peak in Washington, its 3,600-plus feet of prominence making it a coveted objective. First climbed July 18, 1915 by Dr. Harry B. Hinman, Walter Eriksen, and Louis Lesh. The standard route climbs from Barclay Lake Trailhead over Tailgunner Pass into Gunn Basin, then up the southwest corner of the summit block via a hidden, often-wet Class 3 ramp through a lower cliff band (the 'hidden ramp'), squeezing through a notch east of the true summit to exposed heather ledges on the north side leading to the top. Few parties climb it each year, largely due to the brushy, easy-to-lose approach and short but serious summit-block exposure; many combine it with neighboring Tailgunner Peak.",
+  "current": {
+   "approach": "From the Barclay Lake Trailhead (~2,200 ft, end of FS Rd 6024 out of Baring) do not follow the maintained Barclay Lake Trail #1055; instead walk back down the access road roughly a quarter mile and pick up the old, deactivated Barclay Creek spur road (parties who know the route often park directly at the spur's gated start rather than the main Barclay Lake lot). Follow the old roadbed about 100-200 yards to a fire-pit clearing, turn right, and pick up the unmarked but well-trodden 'Gunn climbers' path.' The path drops to Barclay Creek and crosses via a log-jam/rock-hop near the downstream tip of a small mid-channel island — this ford is the approach's main early-season hazard, since the crossing can run high and slick with spring runoff. On the far bank the boot path swings west then turns north and starts climbing in earnest: about 200 ft of easier grade gives way to sustained, tight switchbacks gaining roughly 1,500 ft through second-growth timber with generally good tree/root holds underfoot but a steep, sometimes loose tread. Around 3,600-3,800 ft the path forks near a band of exposed rock — stay right and do not scramble the outcrop straight ahead, a known route-finding trap; the correct line keeps traversing climber's-left beneath a cliff band in partial shade. A usually-dry waterfall ravine is crossed around 4,400 ft (can carry meltwater and be slick in early season). The trail continues switchbacking up brushy, sometimes slide-alder-choked terrain for another ~1,500 ft to gain the ridge crest at roughly 5,400 ft — call it 3-4 hours and about 3,200 ft of gain above the creek crossing for a fit party. From the ridge crest, drop about 100 ft off the crest to skirt a cliff band, then boulder-hop roughly 500 ft up a talus basin to the upper tree benches directly below the peak's south face, which marks the base of the summit scrambling. There is no reliable water above Barclay Creek/the waterfall ravine in late summer, so fill up early. Cairns thin out badly above treeline and the boot path fades in the talus, so route-finding (not technical difficulty) is the main hazard on the upper approach — carrying a GPS track or recent trip-report beta is strongly recommended. In early October the creek is crossed on logs, one of which was rotting at its far end.",
+   "area_walk_in": null,
+   "approach_variant_names": [
+    "Barclay Creek climbers' path — summer line",
+    "Tailgunner couloir — snow-season line"
+   ],
+   "descent": "Descend by reversing the ascent line — essentially every accessible way off Gunn's summit block funnels back through the same notch, ledge, and ramp used going up, so this is fundamentally a downclimb/walk-off rather than a rappel route, with one optional short rappel commonly used at the crux. From the summit, downclimb the short class 3 blocks back to the notch between the peak's two summit 'horns,' then reverse the narrow, roughly one-foot-wide dirt/heather ledge traversing the north face — this exposed traverse is the route's crux in both directions and is meaningfully more dangerous descending when wet, icy, or snow-covered; less experienced parties should consider a handline here. Below the ledge, downclimb back through the class 3-4 notch move to the 'hidden ramp,' a roughly 10-ft, near-vertical step in the cliff band with two options: a chockstone-choked gully (near class 5) on the left, or a more exposed class 3-4 line to the right. This ramp is the one spot on the peak where parties commonly rappel instead of downclimbing — parties describe a sling/rappel station left on a horn or chockstone here (a natural anchor, not bolted; inspect and back it up before trusting it), and a single rappel of roughly 15-20 m clears the step, so a 30 m rope doubled is more than sufficient. Confident scramblers frequently downclimb this section unroped instead, and some parties opt to rappel the steeper gully just right of the ramp when it is wet, icy, or holding snow rather than the ramp itself. Below the ramp, re-cross the talus basin, regain the boot path, and climb back up to the ridge crest (~5,400 ft) before dropping down the switchbacking forest trail, re-crossing Barclay Creek at the log jam, and following the old spur road back to the Barclay Lake Trailhead.",
+   "rack_items": null,
+   "detailed_rack": "No rock protection needed as this is a scramble, not a rock climbing route. However, carry 1-2 runners/slings and carabiners if planning to use rappel station above hidden ramp section. A 30 m rope is optional but recommended for groups with inexperienced members, as a handline or for the one short rappel at the hidden ramp.",
+   "rack": null,
+   "pro_needs": "No technical protection required for ascent (scramble), but some parties install slings and anchors at hidden ramp crux to facilitate safe descent via rappel. If descending by rappel, ensure anchor integrity before committing weight.",
+   "bolts": null,
+   "anchor": null,
+   "location": null,
+   "bivy": [
+    "Money Creek Campground"
+   ],
+   "rope_note": "Standard route is unroped Class 3-4 for competent scramblers; a hand line is sometimes rigged on the exposed 'hidden ramp' descent, and the narrow summit ledge is consequential if wet/icy."
+  },
+  "allowed_targets": [
+   "approach",
+   "descent",
+   "rack",
+   "bivy"
+  ],
+  "_descCol": "descent_text"
+ },
+ {
+  "id": "wa_gunnshy_peak_standard_route",
+  "name": "Gunnshy Peak Standard Route (Barclay Lake Approach)",
+  "state": "Washington",
+  "discipline": "mountaineering",
+  "pitches": null,
+  "crag": false,
+  "topics": [
+   "approach"
+  ],
+  "beta": "There is no official trail to Gunnshy Peak. From a spur road near the Barclay Lake Trailhead, a faint but generally followable climber's path heads east into the forest and leads most of the way to the summit. Along the way parties cross Barclay Creek (log crossing), climb a steep forested headwall to roughly 3,600 ft, drop into and cross a waterfall/stream gully (dry by late summer, medium-to-large flow possible in winter/spring), work through brush and talus past Point 5,760+ near a saddle around 5,360-5,400 ft below Tailgunner (Peak 5,842') and Wing Peak, then either traverse via the Gunn Lake basin (summer/fall) or bypass a rocky buttress on open slopes (winter/spring) to reach the final Class 2-3 summit scramble. Total round trip is roughly 9 miles with 4,300-5,000+ ft of cumulative elevation gain depending on route-finding and how much of the ridge is regained. The route is non-technical but should not be taken for granted — genuine mountaineering skills (route-finding, brush travel, exposed scrambling) are required.",
+  "overview": "Gunnshy Peak (Peak 6218), the second-highest summit in the Wild Sky Wilderness, is reached by an unmaintained climber's path that leaves the Barclay Lake trailhead spur, crosses Barclay Creek, climbs a steep forested headwall and a seasonal waterfall gully, then follows brushy ridge and basin terrain past the Tailgunner/Wing saddle to a short, exposed Class 2-3 scramble on the summit block.",
+  "current": {
+   "approach": "From Monroe, drive east on US-2 to the town of Baring. Near milepost 41-42, across from a convenience store, turn left (north) onto 635th Place NE. Cross the railroad tracks and continue about 0.3 mile to a junction; keep left on 635th Place NE for another 0.1 mile, where the road becomes Forest Road 6024 (Barclay Creek Road). Continue roughly 3.9-4.3 miles of gravel forest road (watch for potholes and rough patches; AWD/4x4 recommended after wet weather) to the Barclay Lake Trailhead (vault toilet on site, parking for roughly 20 vehicles, Northwest Forest Pass required). From a spur road near the trailhead, follow the spur toward an old fire pit, where a faint, mostly-unmarked climber's path heads east into the forest and begins the ascent proper. Partway up the steep forested section the path can seem to stop at a gully; the continuing bootpath leaves to the climber's left, and the gully itself goes only at greater difficulty.",
+   "area_walk_in": null,
+   "approach_variant_names": [
+    "Barclay Lake spur road to the east ridge"
+   ],
+   "descent": "There is no separate descent route; parties retrace the ascent. The steep, brushy headwall and the waterfall gully crossing are the two sections most worth downclimbing carefully and in daylight — wet rock in the gully and loose footing on the headwall are the main hazards on the way down. In early season or after fresh snow, the open slopes above the saddle and the bypass around Point 5,760+ can be icy or avalanche-prone; reversing this section requires the same care as the ascent.",
+   "rack_items": null,
+   "detailed_rack": "This is a non-technical scramble route; no roped protection rack is used or needed on the standard line.",
+   "rack": null,
+   "pro_needs": "No technical protection is placed on the standard route — it is a Class 2-3 scramble typically climbed without a rope. A helmet for rockfall/loose rock, sturdy scrambling boots, and trekking poles for the steep brushy sections are the essential kit rather than any rack.",
+   "bolts": null,
+   "anchor": null,
+   "location": null,
+   "bivy": [
+    "Money Creek Campground"
+   ],
+   "rope_note": null
+  },
+  "allowed_targets": [
+   "approach",
+   "descent",
+   "rack",
+   "bivy"
+  ],
+  "_descCol": "descent_text"
+ },
+ {
+  "id": "wa_gunrunner",
+  "name": "Gunrunner",
+  "state": "Washington",
+  "discipline": "alpine",
+  "pitches": 18,
+  "crag": false,
+  "topics": [
+   "descent"
+  ],
+  "beta": "Traverse all four major summits on north-facing ascents and south-facing descents. Features 18 pitches of mostly new climbing: three pitches of 5.10 crack climbing with one aid point used to escape a dead-end fist crack near North Peak summit. Rappel descent includes free-hanging rappel over moat onto Blue Glacier in darkness.",
+  "overview": "A major traverse connecting all four Gunsight peaks (Northeast, North, Middle, South), offering sustained alpine crack climbing on excellent granite with breathtaking remote alpine positioning.",
+  "current": {
+   "approach": "Middle Peak shares the same approach as South Peak: from Downey Creek Trailhead, follow the southern Ptarmigan Traverse cross-country route (Itswoot Ridge/Cub Lake, Bachelor Creek) to reach the range's ridge. Expect a multi-day glaciated approach with route-finding and bushwhacking, not a drive-up or short-trail access.",
+   "area_walk_in": null,
+   "approach_variant_names": [
+    "Downey Creek, Bachelor Creek and Itswoot Ridge",
+    "Stehekin, Agnes Creek and the Blue Glacier"
+   ],
+   "descent": "The traverse climbs the north faces of the four Gunsight summits and rappels their south sides. From South Peak, a rappel descent leads to the Blue Glacier; the last rappel is free-hanging over a gaping moat onto the glacier, so look for the line that clears it. Check every rappel anchor on the granite thoroughly before trusting it. Parties often finish this descent in darkness. The rappels land on the east side of the range: a party camped below the Blue Glacier walks down to camp, while one based at the Dome-Chickamin col must work south below the peaks, cross the Blizzard-Gunsight col back onto the Chickamin Glacier, and recross the glacier to the col. Allow 3-4 hours, depending on snow and crevasse conditions on the glacier.",
+   "rack_items": null,
+   "detailed_rack": "Full range of cracks and aid rack recommended: 1-2x each of 0.3-1.5 inch Alien or TC Pro cams, complete medium-sized stopper set, hexes for medium-sized placements, 0.5-1 inch pitons for aid, 2-3 slings of various sizes, 2-3 quickdraws, carabiners, cordelette for rappel anchors.",
+   "rack": [
+    "Cams 0.3-3in, doubles in crack-climbing sizes",
+    "Small-to-mid nut set",
+    "5-6 slings plus tat/webbing for sparse fixed anchors",
+    "5 alpine quickdraws",
+    "Single dynamic rope for climbing; carry two ropes for the rappel descent (per route beta)"
+   ],
+   "pro_needs": "Full trad rack required. Splitter cracks on north faces provide excellent natural protection. Anchors are typically solid granite with bomber placements. Rappel anchors should be redundant and well-tested before weighting. No fixed anchors remain on route.",
+   "bolts": null,
+   "anchor": null,
+   "location": null,
+   "bivy": [
+    "Dome Glacier and Dome-Chickamin col high bivouacs",
+    "Bachelor Creek forest and meadow camps",
+    "Cub Lake",
+    "Itswoot Ridge"
+   ],
+   "rope_note": "Part of the Gunsight Peaks Traverse (IV 5.10 A1) crossing all four Gunsight summits; encounters three pitches of 5.10 crack climbing on remote, rarely-visited rock. Confirmed via a trip report (FA by Blake Herrington and Dan Hilden)."
+  },
+  "allowed_targets": [
+   "approach",
+   "descent",
+   "rack",
+   "bivy"
+  ],
+  "_descCol": "descent_text"
+ },
+ {
+  "id": "wa_guye_peak_improbable_traverse",
+  "name": "Improbable Traverse",
+  "state": "Washington",
+  "discipline": "alpine",
+  "pitches": 6,
+  "crag": false,
+  "topics": [
+   "approach",
+   "pro"
+  ],
+  "beta": "Start from Alpental parking lot and reach the talus cone by a line that avoids the private Strasse roads (no established path). Scramble ~200 feet of loose, mossy, dirty slabs to reach first anchor. Climb 6 pitches of mixed alpine rock through crumbly terrain to Lunch Ledge at ~300 feet. The iconic traverse (pitches 4-5) traverses right on good ledges with old fixed pitons; now requires careful downclimbing due to 2021 damage. Upper pitches climb Class 4 ramp terrain with trees and exposure to summit. Route is sustained and exposed throughout; not a beginner alpine rock climb.",
+  "overview": "A technical alpine rock climb on Guye Peak's prominent west face offering a classic 5.8 traverse pitch with stellar views from Interstate 90. Once popular, the route was heavily damaged by rockfall in November 2021; current conditions are marginal and downclimbing on the traverse is now required.",
+  "current": {
+   "approach": "From Alpental Ski Area parking lot (3,120 ft), reach the talus cone below the west face by a line that stays off the private Alpental Community Club roads; the 'Strasse' roads off the access road are closed to walking and driving, and no established path exists. Approach time ~30 minutes to 1 hour from parking. In early August a public roadside pullout just past the private Strasse entrance serves as parking; keep to the left side of the talus where the rock is less loose.",
+   "area_walk_in": null,
+   "approach_variant_names": [
+    "Talus cone below the west face"
+   ],
+   "descent": "After summiting via Improbable Traverse, most climbers traverse north over Guye's north and middle summits to descend via established gully systems. A climbers' trail descends from the Guye-Snoqualmie saddle area. For faster/safer descent, fixed anchors (tree with rap tatters) provide rappel opportunity on east side of summit to bypass exposure. Southeast Couloir descent toward Cave Ridge parking is viable alternative.",
+   "rack_items": null,
+   "detailed_rack": "Mid-size alpine rock rack with 6-8 cams and nuts (mostly cams for Guye's crumbly rock); 60-meter rope minimum (bring two ropes for safe rappel options); full rack of medium to large chocks; several double runners or slings for extending placements around flakes.",
+   "rack": null,
+   "pro_needs": "Protection is generally intermittent and poor-quality due to loose flakes and crumbly rock. Many dirt-filled cracks yield marginal placements. Several old fixed pitons remain on the traverse pitch itself. Plan for lots of sling extensions around features rather than clean gear placements. Tree anchors available for rappel.",
+   "bolts": null,
+   "anchor": null,
+   "location": null,
+   "bivy": [
+    "Denny Creek Campground, I-90 exit 47",
+    "Tinkham Campground, I-90 exit 42"
+   ],
+   "rope_note": null
+  },
+  "allowed_targets": [
+   "approach",
+   "descent",
+   "rack",
+   "bivy"
+  ],
+  "_descCol": "descent_text"
+ },
+ {
+  "id": "wa_guye_peak_r1",
+  "name": "West Face",
+  "state": "Washington",
+  "discipline": "alpine",
+  "pitches": null,
+  "crag": false,
+  "topics": [
+   "approach"
+  ],
+  "beta": "From Alpental parking, make a rising traverse up talus to the far left (north) side of the west face (note private road access restrictions as of 2021). Ascend a very large ramp that traverses the entire face from north to south. The climbing starts up a steep crack/face (crux) for approximately 30 feet of low 5th class, then transitions to Class 4 for about half a rope length through rocks and alpine trees with exposure. Climbing continues via mixed scrambling and rock sections to the summit. Route involves significant high-consequence scrambling.",
+  "overview": "Guye Peak's west face rises above the Alpental valley at Snoqualmie Pass. This is its easiest line and a short, close-to-the-road alpine outing: from the north end of the talus it follows a huge tree-covered ramp that climbs across the whole face from north to south, then a short step of Class 4 to low fifth onto a second grassy ramp, and a final low-fifth crack and face that eases through rock and alpine trees to the south summit. The rock is often dirty and loose. The harder Improbable Traverse on the same face is a separate climb.",
+  "current": {
+   "approach": "From the Alpental/Snow Lake trailhead (~3,100-3,120 ft, I-90 Exit 52), make your way to the talus cone below the west face. There is no established path to it: the old direct line up through the houses on the 'Strasse' roads crosses private land the Alpental Community Club has closed to walkers since 2021, so pick a line that stays off those roads. On the talus, make a rising traverse toward the north end of the large, unstable talus field below the west face — helmet on here, since climber-triggered rockfall is a real hazard on this talus, both from your own party and anyone above. Near the north end of the talus you'll cross a rocky streambed that's often dry by mid-to-late summer (your last realistic water before the climb). From there it's a short scramble up broken rock/slab to the base of the West Face route proper. Total approach is around 1.5 miles and 1,500-2,000 ft of gain, roughly 45 minutes to 1.5 hours depending on conditions and pace.",
+   "area_walk_in": null,
+   "approach_variant_names": [
+    "Talus cone below the west face"
+   ],
+   "descent": "West Face tops out on Guye's south summit (where the route tops out and the register sits; GPS surveys suggest the north summit may be marginally higher) at ~5,169-5,172 ft alongside the middle and north summits, and the descent is a scramble/rappel traverse north along the connecting ridge rather than a reversal of the climbing line. From the south summit, follow the climber's path around the east (right) side of the middle summit to the notch beyond the middle summit. The drop into the gully here is loose, mossy class 3/4 slab; most parties rappel rather than downclimb it. The total rappelling on this route comes to roughly 100 ft, enough that many groups get by with an arm-wrap/hip rappel off a sling rather than a full rap setup, though bringing a rope and device is still the sane default. Important: there is a tree at the top of the gully between the south and middle summits that climbers should specifically NOT rappel from (flagged as unsound/inadvisable in route notes) — use the established sling/anchor lower or to the side instead. Past the middle-summit notch, descend the gully and slabs to the right (east side) to go around the north summit, then scramble up an easy gully to the notch on the north summit's north side. From there, a well-defined scrambler's trail leads down past a small pond, then west (left) back to the Alpental parking lot. Bring a single 30m+ rope and rap device even though the raps are short — anchor tat and rock quality are inconsistent year to year, and the loose gully rock is a real hazard for parties above/below each other. Expect 1 rappel as the norm on this route (occasionally a short second one depending on exact line through the middle/north notch), well short of full pitch length.",
+   "rack_items": null,
+   "detailed_rack": "Light rack of nuts and small to mid-size cams for the short low-fifth crux, plus slings for tree and block anchors",
+   "rack": null,
+   "pro_needs": "Light alpine rack for one short low-fifth crux; slings for tree and block anchors",
+   "bolts": null,
+   "anchor": null,
+   "location": null,
+   "bivy": [
+    "Denny Creek Campground, I-90 exit 47",
+    "Tinkham Campground, I-90 exit 42"
+   ],
+   "rope_note": null
+  },
+  "allowed_targets": [
+   "approach",
+   "descent",
+   "rack",
+   "bivy"
+  ],
+  "_descCol": "descent_text"
+ },
+ {
+  "id": "wa_guye_peak_r2",
+  "name": "North Route (\"Hidden Ridge\" variation)",
+  "state": "Washington",
+  "discipline": "alpine",
+  "pitches": 4,
+  "crag": false,
+  "topics": [
+   "approach",
+   "descent"
+  ],
+  "beta": "Park at Alpental near the Snow Lake Trailhead and start up the unsigned Cave Ridge/Snoqualmie Mountain climbers' trail beginning about 100 ft south of the Snow Lake Trail. From a large clearing around 4000-4200 ft, climb to the saddle between Cave Ridge and Guye Peak, then turn right (south) and follow the ridge to Guye's north summit — class 3 in summer. The 'Hidden Ridge' variation continues from the north summit around an outcropping to a hidden ridge with one 5.4 move (otherwise class 4), rappelling ~30 ft off a slung horn to the notch between the north and middle summits; this was found to be a more direct, more enjoyable line than the standard gully descent in winter/spring conditions.",
+  "overview": "The north side of Guye Peak is reached via the separate Cave Ridge Trail rather than the West Face talus approach, and is best known as the 'North Route' — a class 3-4 scramble to the north summit that is also run as a scrambling-course objective, not a sustained roped rock climb. A short optional 'Hidden Ridge' variation near the north/middle notch adds one 5.4 move protected by a single ~30 ft rappel off a slung horn. This is measurably easier, and approached differently, than the 5.6-5.8 technical rib route on Guye Peak; the class 3-4 scramble description is consistent across accounts.",
+  "current": {
+   "approach": "The documented north-side line to Guye Peak leaves from the Alpental/Snow Lake trailhead (~3,080-3,120 ft) via the separate, unsigned Cave Ridge/Snoqualmie Mountain boot path, which splits off about 100 ft south of the Snow Lake Trail sign — this is a different trailhead path than the West Face/Improbable Traverse talus approach. Follow it up to the saddle between Cave Ridge and Guye Peak (roughly 1.5 miles, reported around 4,500-4,600 ft). From the saddle, turn right (south) and follow the ridge toward Guye's north summit; the standard line follows a steep gully system rated class 3 in summer. Climber-triggered rockfall is common on the talus and gully sections, so a helmet is worth wearing once off-trail. A short 'Hidden Ridge' variation near the north summit traverses right to an outcropping where a horn can be slung for a single ~30 ft rappel into the north/middle notch, adding one 5.4 move of class 4/low-5th climbing.",
+   "area_walk_in": null,
+   "approach_variant_names": [
+    "Cave Ridge saddle from Alpental"
+   ],
+   "descent": "The North Route tops out on the same summit ridge system as Guye's other routes, so the descent is the standard south-to-north traverse/rappel sequence rather than a reversal of the climbing line. From the summit reached, scramble/downclimb toward the notch between the middle and north summits, where fixed rappel rings are already slung/bolted into the rock — enough parties found the step steep enough to rig it permanently that a rope-assisted descent (roughly 30-40 ft, single strand or doubled off a shorter rope) is the norm rather than the exception. If your line tops out further south, you'll first need to negotiate the notch between the south and middle summits, which is loose mossy class 3/4 slab commonly rappelled off tree-sling anchors (30-60 ft). A related variation sometimes climbed on this side of the peak, the 'Hidden Ridge' line, itself uses a short 30-40 ft rappel mid-route (leaving the rope in place and top-roping back up), which can add confusion about anchor locations if you're relying on other parties' beta — the rap rings at the middle/north notch are the ones relevant to a normal summit-to-car descent. From the north summit, follow the well-defined scrambler's trail down past a small pond, then swing west back to the Alpental lot. Carry a single 30m+ rope, rap device, and a prussik/cordelette to back up any weathered slings; expect climber-triggered rockfall risk in the gullies, worse when snow patches remain into early summer (the steep gullies here can hold snow into a normal season and feel considerably more serious with snow in them than the bare-rock class 3 of summer conditions).",
+   "rack_items": null,
+   "detailed_rack": "No rack needed for the standard scramble; webbing/cordelette to sling a horn and a rope for the optional single ~30 ft rappel.",
+   "rack": null,
+   "pro_needs": "No technical rack for the scramble line; webbing to back up the rappel horn on the optional 5.4 variation.",
+   "bolts": null,
+   "anchor": null,
+   "location": null,
+   "bivy": [
+    "Denny Creek Campground, I-90 exit 47",
+    "Tinkham Campground, I-90 exit 42"
+   ],
+   "rope_note": null
+  },
+  "allowed_targets": [
+   "approach",
+   "descent",
+   "rack",
+   "bivy"
+  ],
+  "_descCol": "descent_text"
+ },
+ {
+  "id": "wa_guye_peak_southeast_gully",
+  "name": "Southeast Gully",
+  "state": "Washington",
+  "discipline": "alpine",
+  "pitches": null,
+  "crag": false,
+  "topics": [
+   "pro"
+  ],
+  "beta": "A Grade II snow climb and the steepest of Guye's gully lines. The angle runs about 45 degrees for the first few hundred feet, then gets progressively steeper the higher you go, reaching roughly 70 degrees near the top. It finishes at the ridge separating the true and false summits. About half the gully sits in shade and half in sun, which the first-ascent party found gave pretty solid snow under the surface - a useful characteristic that also means conditions can differ markedly between the two halves on a warm day. Protection is minimal: an ice axe is mandatory and crampons are required, a picket and rope are suggested (a 50m is preferred over a 30m), rock protection is scarce in peak season, and slung trees provide occasional belays. This is a route where good snow makes it straightforward and bad snow makes it seriously exposed.",
+  "overview": "A 1,400-foot snow gully on Guye's southeast side that starts at a mellow 45 degrees and steepens steadily to about 70 degrees before topping out on the ridge between the true and false summits.",
+  "current": {
+   "approach": "Start from the Pacific Crest Trail North (Snoqualmie Pass North) trailhead, just off I-90 exit 52. Follow the old Commonwealth Basin trail north for approximately 1.4 miles, until Guye Peak lies directly west or northwest of you. From there head straight upslope - the gully initiates directly above. The approach is on maintained trail or, in winter, on whatever bootpack exists, and is short by Cascade standards; the difficulty is judging the snow on the slope between the trail and the base of the gully, which is itself avalanche terrain on a loaded day.",
+   "area_walk_in": null,
+   "approach_variant_names": [
+    "Old Commonwealth Basin trail to a bearing of 290 degrees, then straight up"
+   ],
+   "descent": "Do not plan on downclimbing the gully; at 70 degrees near the top with minimal protection it is a bad retreat. From the ridge between the true and false summits, the standard exit is over the top and out on foot. Going west, drop from the Guye / Cave Ridge saddle onto the climbers' trail down to the Alpental parking area, which then leaves a road walk of roughly a mile back to a car parked on the Commonwealth side. Going east, reverse the Commonwealth Basin approach back to the PCT North trailhead, which is the natural choice if that is where you left the car. In winter both descents cross avalanche terrain of their own, and the west-side bootpath is easily lost under snow - carry a track or a bearing.",
+   "rack_items": null,
+   "detailed_rack": "Deliberately light. A picket and a rope are suggested - a 50m is preferred over a 30m - and slung trees provide the occasional belay on the flanks. Rock protection is minimal during peak season, so do not plan a rack around it: bring a few slings and a couple of nuts if you want them; most of this route is climbed with the axe and your feet.",
+   "rack": null,
+   "pro_needs": "Minimal. A picket, a few slings for trees, and the acceptance that much of the 70-degree upper gully is effectively unprotected.",
+   "bolts": null,
+   "anchor": null,
+   "location": null,
+   "bivy": [
+    "Denny Creek Campground, I-90 exit 47",
+    "Tinkham Campground, I-90 exit 42"
+   ],
+   "rope_note": null
+  },
+  "allowed_targets": [
+   "approach",
+   "descent",
+   "rack",
+   "bivy"
+  ],
+  "_descCol": "descent_text"
+ },
+ {
+  "id": "wa_hadley_peak_cougar_divide",
+  "name": "Cougar Divide Route",
+  "state": "Washington",
+  "discipline": "mountaineering",
+  "pitches": null,
+  "crag": false,
+  "topics": [
+   "approach"
+  ],
+  "beta": "From the Cougar Divide Trailhead (~4,900 ft), the unmaintained Cougar Divide Trail #601 climbs along a ridge crest through meadows and old growth to its high point near 5,920 ft (about 3.1 miles in). From there the route continues cross-country along the open ridge, crossing toward Dobbs Cleaver/Chowder Ridge, to merge with the Skyline Divide approach below Hadley Peak's northwest ridge. The final push to the summit is Class 2 with a brief Class 3 step over loose scree, with generally mild exposure for experienced scramblers.",
+  "overview": "A shorter, higher-starting alternative to the Skyline Divide approach, climbing the Cougar Divide ridge trail from the end of FS Road 33 to Chowder Ridge before joining the same Class 2 scramble to Hadley Peak's summit.",
+  "current": {
+   "approach": "From Glacier, WA, drive Mt. Baker Highway (SR 542) east and turn onto Forest Service Road 33; follow roughly 11 miles of gravel road (rough in sections, high-clearance/SUV recommended, sedans passable with care) to its end at the Cougar Divide Trailhead/parking (room for 8-10 vehicles). Note the true trailhead may be roughly another kilometer past where online mapping apps route. Hike Cougar Divide Trail #601 along the ridge to its high point (~5,920 ft), then continue cross-country south along the open ridge to Chowder Ridge and the base of Hadley Peak's final scramble.",
+   "area_walk_in": null,
+   "approach_variant_names": [
+    "Cougar Divide Trail #601 and the open ridge south to Chowder Ridge"
+   ],
+   "descent": "From the summit, downclimb the short Class 3 step and loose scree back onto the connecting ridge, then retrace the cross-country ridge traverse back to the Cougar Divide Trail's high point (~5,920 ft). Follow the unmaintained Cougar Divide Trail #601 back down through meadows and forest to the trailhead.",
+   "rack_items": null,
+   "detailed_rack": "None — this is a non-technical class 2-3 scramble with no roped climbing; no rack, rope, or protection is used.",
+   "rack": null,
+   "pro_needs": "No fixed protection or rope is used on the standard scramble line; an ice axe is the main security item carried, useful for residual snow on the ridge in early or late season.",
+   "bolts": null,
+   "anchor": null,
+   "location": null,
+   "bivy": [
+    "Cougar Divide meadow camps",
+    "Deadhorse Creek basin, below Chowder Ridge"
+   ],
+   "rope_note": null
+  },
+  "allowed_targets": [
+   "approach",
+   "descent",
+   "rack",
+   "bivy"
+  ],
+  "_descCol": "descent_text"
+ },
+ {
+  "id": "wa_hadley_peak_skyline_divide",
+  "name": "Skyline Divide Route",
+  "state": "Washington",
+  "discipline": "mountaineering",
+  "pitches": null,
+  "crag": false,
+  "topics": [
+   "approach"
+  ],
+  "beta": "From the Skyline Divide Trailhead, a rugged, eroded trail switchbacks through forest to the ridge crest at about 2 miles, then rolls over a series of knolls along the open crest to the trail's high point (~6,563 ft) at about 4.5 miles. From there the maintained tread fades into a boot-packed path that continues along the open ridge crest for roughly another 3 miles, crossing minor ups and downs on Chowder Ridge, before reaching the base of Hadley Peak's final scramble. The last push is Class 2 with a short Class 3 step, climbing loose scree and talus to the summit; exposure is generally minimal for experienced parties.",
+  "overview": "The more popular of Hadley Peak's two standard approaches, following the well-known Skyline Divide trail up onto the ridge crest and then continuing cross-country along Chowder Ridge to the base of Hadley's summit block for a long, scenic ridge-walk scramble.",
+  "current": {
+   "approach": "From Glacier, WA, drive Mt. Baker Highway (SR 542) east about 1 mile past the Glacier Public Service Center to Glacier Creek Road (FS 39); turn right, then take an immediate left onto Deadhorse Road (FS 37). FS 37 normally continues 12.7 miles to the Skyline Divide Trailhead. FS 37 has been closed by the 2021 flood washout at milepost 3.1, and during the repair work it is gated near its start (mile 0.03), so the trailhead is not reachable by vehicle; check the road's status before planning around it. When open, hike Skyline Divide Trail #678 through old-growth forest switchbacks and into meadows on the ridge crest (~2 mi), follow the crest to the trail's high point (~6,563 ft, ~4.5 mi), then continue cross-country along the open ridge to Chowder Ridge and the base of Hadley Peak.",
+   "area_walk_in": null,
+   "approach_variant_names": [
+    "Skyline Divide Trail #678 and the long open ridge south to Chowder Ridge"
+   ],
+   "descent": "From the summit, carefully downclimb the short Class 3 step and the loose scree/talus below it back to the base of the summit block. Retrace the boot-packed path along Chowder Ridge and the open ridge crest (roughly 3 miles) back to the trail's high point (~6,563 ft), then descend the maintained Skyline Divide Trail #678 through meadows and forest switchbacks to the trailhead.",
+   "rack_items": null,
+   "detailed_rack": "None — this is a non-technical class 2-3 scramble with no roped climbing; no rack, rope, or protection is used.",
+   "rack": null,
+   "pro_needs": "No fixed protection or rope is used on the standard scramble line; the main 'gear' concern is footing on loose rock and residual snow, for which an ice axe is recommended in early or late season.",
+   "bolts": null,
+   "anchor": null,
+   "location": null,
+   "bivy": [
+    "Skyline Divide crest camps",
+    "Deadhorse Creek basin, below Chowder Ridge"
+   ],
+   "rope_note": null
+  },
+  "allowed_targets": [
+   "approach",
+   "descent",
+   "rack",
+   "bivy"
+  ],
+  "_descCol": "descent_text"
+ },
+ {
+  "id": "wa_hail_satan",
+  "name": "Hail Satan",
+  "state": "Washington",
+  "discipline": "sport",
+  "pitches": 1,
+  "crag": true,
+  "topics": [
+   "pro"
+  ],
+  "beta": "Fully bolted (8 bolts) single-pitch sport route starting from a ledge about 25 feet off the ground; features small intrusions used as footholds/handholds on otherwise blank-looking granite. Low traffic and lightly documented — expect an adventurous, quiet outing.",
+  "overview": "A short, punchy single-pitch sport line up balancy friction and face holds on the broad arete forming the right side of the Mamie Peak crag.",
+  "current": {
+   "approach": "This crag's coordinates correspond to the Hannegan Pass/Ruth Creek Valley area near Mt. Baker, sometimes referenced as 'Ellation Crags,' a minor, lightly-developed granite cragging/multipitch area. The general access is from I-5 Exit 255, east on SR-542 (Mt. Baker Highway) about 46 miles, then a left onto Forest Road 32 (Hannegan Pass Road) for about 4 miles to the Hannegan Pass Trailhead. Beyond that trailhead, published approach details for the crag itself are sparse and inconsistent, so the exact on-foot route and distance are not confirmed.",
+   "area_walk_in": null,
+   "approach_variant_names": [],
+   "descent": "Descend by rappelling the single pitch back to the base of the crag; a standard single rope reaches the ground from the anchor. Retrace the brushy climbers' path back down to the Hannegan Pass Trail and out to the trailhead.",
+   "rack_items": null,
+   "detailed_rack": "Fully bolted; no natural gear required.",
+   "rack": null,
+   "pro_needs": "8 bolts to a fixed anchor — bring 8-10 quickdraws.",
+   "bolts": null,
+   "anchor": null,
+   "location": null,
+   "bivy": [],
+   "rope_note": null
+  },
+  "allowed_targets": [
+   "approach",
+   "descent",
+   "rack",
+   "bolts",
+   "anchor",
+   "location"
+  ],
+  "_descCol": "descent_text"
+ }
+]

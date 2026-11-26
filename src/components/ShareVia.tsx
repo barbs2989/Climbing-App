@@ -1,5 +1,6 @@
 import type { CSSProperties } from "react";
 import { C } from "../../ClimbMatchCore.jsx";
+import { safeHref } from "../../lib/safeUrl.js";
 
 export interface ShareViaProps {
   /** The subject line of an email, and the share sheet's title. */
@@ -34,9 +35,9 @@ export default function ShareVia({ title, text, link, onToast, facebook }: Share
   return (
     <div style={facebook ? { display: "grid", gridTemplateColumns: "repeat(3,minmax(0,1fr))", gap: 7 } : { display: "flex", gap: 7 }}>
       {/* `sms:?&body=` is the form both iOS and Android Messages read. */}
-      <a href={"sms:?&body=" + encodeURIComponent(text)} aria-label={"Send " + title + " by text message"} style={tile}>{"Text"}</a>
-      <a href={"mailto:?subject=" + encodeURIComponent(title) + "&body=" + encodeURIComponent(text)} aria-label={"Send " + title + " by email"} style={tile}>{"Email"}</a>
-      {facebook ? <a href={"https://www.facebook.com/sharer/sharer.php?u=" + encodeURIComponent(link)} target="_blank" rel="noopener noreferrer" onClick={toFacebook} aria-label={"Share " + title + " on Facebook"} style={tile}>{"Facebook"}</a> : null}
+      <a href={safeHref("sms:?&body=" + encodeURIComponent(text))} aria-label={"Send " + title + " by text message"} style={tile}>{"Text"}</a>
+      <a href={safeHref("mailto:?subject=" + encodeURIComponent(title) + "&body=" + encodeURIComponent(text))} aria-label={"Send " + title + " by email"} style={tile}>{"Email"}</a>
+      {facebook ? <a href={safeHref("https://www.facebook.com/sharer/sharer.php?u=" + encodeURIComponent(link))} target="_blank" rel="noopener noreferrer" onClick={toFacebook} aria-label={"Share " + title + " on Facebook"} style={tile}>{"Facebook"}</a> : null}
       <button onClick={copy} aria-label={"Copy the link to " + title} style={tile}>{"Copy link"}</button>
       {canShare ? <button onClick={more} aria-label={"More ways to share " + title} style={tile}>{"More…"}</button> : null}
     </div>

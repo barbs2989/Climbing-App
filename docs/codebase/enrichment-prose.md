@@ -192,3 +192,24 @@ right.
 
 `npm run audit:partner-grade` lists rows that ask for more than one step above the route, less than
 its crux, or a 5.x lead on a route with no 5.x grade. Read each row before rewriting it.
+
+## `beta` is how the climb goes; a plan fact goes to its own section
+
+**`routes.beta` is the BETA card**: how the moves go, the crux, rests, route-finding on the climb.
+What a party needs to *plan* has its own section in the Plan body (the Plan tab on a peak route,
+lower on Overview on a crag), and a fact filed in beta instead is either printed twice or missing
+from the section a climber looks in (owner note 2026-11-26: "Audit the beta section and see where
+things might overlap to the plan section and move to the plan section").
+
+| what the sentence says | where it goes |
+|---|---|
+| getting from the car / trailhead / camp to the base | `approach` (APPROACH) |
+| getting off after the top | the longer of `descent` / `descent_text` (DESCENT) — **but not on a single-pitch crag line**: it has no DESCENT section (owner, 2026-11-11/18), so "lower off" stays in beta |
+| what to bring (cams, nuts, sizes, draws, slings, ropes) | the RACK source the card already reads: `rack_items` rows, else `detailed_rack`, else `rack` (never add `rack_items` to a route whose rack is `detailed_rack` / `pro_needs` text: rows replace it on the card) |
+| a whole-route bolt count / the anchor / where on the wall | `bolts` / `anchor` (≤ 80) / `location` (≤ 160) — COPIED, the beta sentence stays when it says where |
+| a named camp | a `bivy` site |
+
+Keep in beta: a sentence that mixes the fact with the climbing ("climb past six bolts to a roof"),
+a gear sentence that gives a reason or a place on the climb, a camp named as a starting point, and
+time figures. The 2026-11-26 pass (`audits/beta-to-plan/`, `scripts/oneoff/apply-beta-to-plan.mjs`)
+read all 3,928 routes that store beta; its counts and decisions are in that folder's README.

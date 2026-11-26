@@ -19,6 +19,8 @@ interface WxPoint {
   lng: number;
   elev?: number | null;
   distMi?: number | null;
+  /** Where on the route this point sits, as the switch and the card name it: "Trailhead", "Camp", "Midpoint", "Summit", "Top". Absent on the crag/peak fallback. */
+  role?: string | null;
 }
 /** A waypoint as the route stores it (coordinates may still be strings). */
 interface WxWaypoint {
@@ -185,7 +187,19 @@ function pickForecastWaypoints(waypoints: WxWaypoint[] | null | undefined){
       return sa-sb;
     })[0]; // no camp on the route — fall back to whichever waypoint sits closest to the trailhead/summit midpoint
   }
-  return [trailhead,mid,summit].filter(Boolean) as WxPoint[];
+  /* EACH POINT SAYS WHERE IT IS (owner note, 2026-11-26: "at each waypoint selection give more context, for example the elevation and maybe say trailhead, midpoint, and Summit"): the switch used to name the waypoints themselves, so a climber had to know that "Lake Ann" was the low point and "Sahale Glacier Camp" the middle one. */
+  const roled=function(w: WxPoint|null,role: string){return w?{...w,role:role}:null;};
+  return [roled(trailhead,"Trailhead"),roled(mid,mid&&wpIs(mid,"Campsite")?"Camp":"Midpoint"),roled(summit,summit&&wpIs(summit,"Summit")?"Summit":"Top")].filter(Boolean) as WxPoint[];
+}
+/** The context line under the chosen point's name: where it sits, the height its forecast is computed for (the
+ *  Open-Meteo and MET reads pass this elevation, lib/forecast.js), and how far above the trailhead that is. */
+function pointContext(w: WxPoint, points: WxPoint[]): string{
+  const th=points.find(function(p){return p.role==="Trailhead";});
+  const bits: string[]=[];
+  if(w.role&&String(w.name||"").trim().toLowerCase()!==w.role.toLowerCase())bits.push(w.role); // a pin already NAMED "Trailhead" is not told so twice
+  if(w.elev!=null)bits.push("forecast for "+uElev(w.elev));
+  if(w!==th&&th&&th.elev!=null&&w.elev!=null&&w.elev>th.elev)bits.push(uElev(w.elev-th.elev)+" above the trailhead");
+  return bits.join(" · ");
 }
 /** The points the panel forecasts, from the same props it takes. Exported so the route page can START those reads
  *  when a climb opens (RouteDetail.jsx), before the climber reaches Conditions; the panel then joins them. */
@@ -358,11 +372,11 @@ export default function WeatherPanel({waypoints,showPlan,fallback,crag}: Weather
      Reads from the shared WP_STYLE now, like everything else. */
   return <div style={{marginBottom:ROUTE_GAP}}>
     <SL>{crag?"Forecast at the crag":"Forecast at key points"}</SL>
-    {!crag&&points.length>1?<div role="group" aria-label="Forecast point" data-cm-scroll-x="" style={{display:"flex",gap:6,flexWrap:"nowrap",overflowX:"auto",paddingBottom:4,marginBottom:6}}>{points.map(function(w,i){const on=i===Math.min(ptSel,points.length-1);const col=wpColor(wpType(w));return <button key={w.type+"_"+w.name} onClick={function(){setPtSel(i);}} aria-pressed={on} style={{display:"inline-flex",alignItems:"center",gap:6,flexShrink:0,whiteSpace:"nowrap",padding:"7px 12px",borderRadius:16,border:"1px solid "+(on?C.blueDim:C.border),background:on?C.blueBg:C.surface,color:on?C.onSolid:C.textSub,fontSize:12.5,fontWeight:700,cursor:"pointer"}}><span aria-hidden="true" style={{color:col,fontSize:12}}>{wpGlyph(wpType(w))}</span>{w.name+(w.elev!=null?" · "+uElev(w.elev):"")}</button>;})}</div>:null}
+    {!crag&&points.length>1?<div role="group" aria-label="Forecast point" data-cm-scroll-x="" style={{display:"flex",gap:6,flexWrap:"nowrap",overflowX:"auto",paddingBottom:4,marginBottom:6}}>{points.map(function(w,i){const on=i===Math.min(ptSel,points.length-1);const col=wpColor(wpType(w));return <button key={w.type+"_"+w.name} onClick={function(){setPtSel(i);}} aria-pressed={on} style={{display:"inline-flex",alignItems:"center",gap:6,flexShrink:0,whiteSpace:"nowrap",padding:"7px 12px",borderRadius:16,border:"1px solid "+(on?C.blueDim:C.border),background:on?C.blueBg:C.surface,color:on?C.onSolid:C.textSub,fontSize:12.5,fontWeight:700,cursor:"pointer"}}><span aria-hidden="true" style={{color:col,fontSize:12}}>{wpGlyph(wpType(w))}</span>{(w.role||w.name)+(w.elev!=null?" · "+uElev(w.elev):"")}</button>;})}</div>:null}
     <div style={{display:"flex",flexDirection:"column",gap:ROUTE_GAP}}>{(!crag&&points.length>1?[points[Math.min(ptSel,points.length-1)]]:points).map(function(w){const k=w.type+"_"+w.name;const d=data[k];const allHourly=!!hourlyOpen[k];const _wty=wpType(w);const wCol=wpColor(_wty);return <div key={k} style={{background:C.card,border:"1px solid "+C.border,borderRadius:12,padding:"13px 14px"}}>
       <div style={{display:"flex",alignItems:"center",gap:9,marginBottom:10}}>
         <div style={{width:28,height:28,borderRadius:"50%",background:wCol+"22",border:"1.5px solid "+wCol,display:"flex",alignItems:"center",justifyContent:"center",fontSize:13,color:wCol,flexShrink:0}}>{wpGlyph(_wty)}</div>
-        <div style={{fontSize:13.5,fontWeight:700,color:C.text}}>{w.name+(w.elev!=null?" · "+uElev(w.elev):"")}</div>
+        {w.role?<div style={{minWidth:0}}><div style={{fontSize:13.5,fontWeight:700,color:C.text}}>{w.name||w.role}</div><div style={{fontSize:11.5,color:C.textSub,marginTop:1}}>{pointContext(w,points)}</div></div>:<div style={{fontSize:13.5,fontWeight:700,color:C.text}}>{w.name+(w.elev!=null?" · "+uElev(w.elev):"")}</div>}
       </div>
       {!d?<LoadingRows C={C} label="Loading forecast…"/>:d.error?<div style={{fontSize:12,color:C.textMuted}}>Forecast unavailable — check your connection.</div>:<>{/* data-cm-scroll-x: the website wraps every other sideways row (lib/wideLayout.js, CHIP ROWS WRAP); the week stays ONE row that scrolls to the right there too (owner, 2026-11-23: "those should not be stacked on top of each other, they should scroll to the right"). */}<div data-cm-scroll-x="" style={{display:"flex",gap:9,overflowX:"auto",paddingBottom:3}}>{(d.days as WxDay[]).map(function(dy,di){
         const dt=new Date(dy.date+"T12:00:00");

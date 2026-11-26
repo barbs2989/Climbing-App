@@ -1,0 +1,5 @@
+const fs=require("fs");const D=__dirname+"/batches/";let routes=0,changed=0,withMoves=0,emptied=0;const by={};const held=[];const bad=[];
+for(let k=0;k<51;k++){const n=String(k).padStart(3,"0");const o=JSON.parse(fs.readFileSync(D+"out-"+n+".json"));const i=new Map(JSON.parse(fs.readFileSync(D+"in-"+n+".json")).map(p=>[p.id,p]));
+ if(o.length!==i.size)bad.push(n+" count");for(const d of o){const p=i.get(d.id);if(!p){bad.push(n+" "+d.id);continue;}routes++;const ch=d.beta_new.trim()!==p.beta.trim();if(ch)changed++;if(ch&&!d.beta_new.trim())emptied++;if(d.moves.length)withMoves++;
+  for(const m of d.moves){const key=m.to+"/"+m.action;by[key]=(by[key]||0)+1;if(m.action==="conflict-held")held.push([n,d.id,m.to,m.from]);if(m.action!=="covered"&&m.action!=="conflict-held"&&!p.allowed_targets.includes(m.to))bad.push(n+" "+d.id+" disallowed "+m.to);}}}
+console.log({routes,changed,emptied,withMoves});console.log(Object.entries(by).sort((a,b)=>b[1]-a[1]));console.log("held",held);console.log("bad",bad);

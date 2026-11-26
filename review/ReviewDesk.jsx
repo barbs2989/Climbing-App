@@ -25,6 +25,7 @@ import { useEffect, useMemo, useState } from "react";
 import { useQuery } from "@tanstack/react-query";
 import { useAuth } from "../src/AuthContext.tsx";
 import { supabase } from "../lib/supabase";
+import SafetySection from "./SafetySection";
 import { HealthStrip, HistorySection, ClimbersSection, AppealsSection, LocksSection, WorklistSection, BasePinsSection, FieldHistory, WordDiff } from "./DeskSections";
 import {
   useCanReview, useFieldContributions, useOpenRouteFlags, useContributionFields, useRouteRowsByIds,
@@ -33,11 +34,13 @@ import {
   useAdminQueueCounts,
 } from "../lib/db";
 import { GpsSubmissionQueue } from "../lib/GpsSubmissionQueue";
+import { editRemoves } from "../lib/editRemoves.js";
 import { AccessibilityReportQueue } from "../lib/AccessibilityReports";
 import { RouteProposalQueue, AreaProposalQueue, AreaPlacementQueue } from "../lib/RouteProposals";
 import { AppFeedbackQueue } from "../lib/AppFeedback";
 import { C, DLOCALE, sameEditValue } from "../ClimbMatchCore";
 import { AREA_EDIT_FIELDS } from "../lib/areaFields";
+import { safeHref } from "../lib/safeUrl.js";
 
 const BASE = import.meta.env.BASE_URL;
 const NONE = [];
@@ -134,11 +137,11 @@ export default function ReviewDesk() {
     <header style={{ display: "flex", alignItems: "baseline", gap: 12, flexWrap: "wrap", marginBottom: 12 }}>
       <h1 style={{ fontSize: 20, margin: 0 }}>Review desk</h1>
       <span style={{ fontSize: 12.5, color: C.textMuted }}>Climber flags, suggested edits and wall orders, proposed climbs and areas, wrong place claims, submitted trails and GPS tracks, accessibility reports, and feedback. Edits, flags and proposals are researched by AI every hour: what two independent sources settle it decides for you (each decision is on History, where you can take it back); the rest is marked Needs you. Everything else waits for you.</span>
-      <a href={BASE} style={{ marginLeft: "auto", color: C.blue, fontSize: 12.5, fontWeight: 700, textDecoration: "none" }}>Open ClimbMatch →</a>
+      <a href={safeHref(BASE)} style={{ marginLeft: "auto", color: C.blue, fontSize: 12.5, fontWeight: 700, textDecoration: "none" }}>Open ClimbMatch →</a>
     </header>{body}</div>;
   if (!supabase) return page(<p>This build has no database connection.</p>);
   if (loading || (user && admin.isLoading)) return page(<p style={{ color: C.textMuted }}>Checking who is signed in…</p>);
-  if (!user) return page(<p>Sign in on <a href={BASE} style={{ color: C.blue }}>ClimbMatch</a> with the owner account, then reload this page.</p>);
+  if (!user) return page(<p>Sign in on <a href={safeHref(BASE)} style={{ color: C.blue }}>ClimbMatch</a> with the owner account, then reload this page.</p>);
   if (admin.error) return page(<p role="alert" style={{ color: C.red }}>Could not check your account — {admin.error.message}. Reload to try again.</p>);
   if (!admin.data || !admin.data.reviewer) return page(<p>Owner and reviewers only. This account cannot review edits.</p>);
   return page(<Desk admin={admin.data.admin} />);
@@ -160,7 +163,8 @@ export default function ReviewDesk() {
 // review section on menu only for me as the owner of the app? If so, remove since we created the admin page").
 // review.html#placements and review.html#feedback open them; Feedback counts open notes, as the Menu tile did.
 // HELD BASE PINS (0547, review.html#basepins): base-of-the-climb check-in spots too far from the route's pin to move it alone.
-const SECTIONS = [["edits", "Edits, flags & wall orders", true], ["proposals", "Proposed climbs & areas"], ["placements", "Wrong place claims"], ["trails", "Trails & GPS tracks"], ["basepins", "Held base pins"], ["access", "Accessibility reports"],
+// SAFETY (2026-11-26, review.html#safety): reports about climbers and content, reported photos and appeals; admin only.
+const SECTIONS = [["edits", "Edits, flags & wall orders", true], ["safety", "Safety reports"], ["proposals", "Proposed climbs & areas"], ["placements", "Wrong place claims"], ["trails", "Trails & GPS tracks"], ["basepins", "Held base pins"], ["access", "Accessibility reports"],
   ["feedback", "Feedback & ratings"], ["history", "History", true], ["climbers", "Climbers"], ["appeals", "Appeals"], ["locks", "Locks"], ["worklist", "Worklist"]];
 const fromHash = (admin) => { const h = (typeof window !== "undefined" && window.location.hash || "").slice(1); return SECTIONS.some(([k, , rev]) => k === h && (admin || rev)) ? h : "edits"; };
 function Desk({ admin }) {
@@ -192,7 +196,7 @@ function Desk({ admin }) {
     </div> : sec === "feedback" ? <div style={{ maxWidth: 640 }}>
       <p style={{ fontSize: 12.5, color: C.textMuted, lineHeight: 1.5, marginTop: 0 }}>What climbers and visitors sent from Feedback, and ratings that came with a comment. Reply by email if they left an address, then mark it read. Ratings without a comment only count toward the app rating above.</p>
       <AppFeedbackQueue notify={notify} />
-    </div> : sec === "proposals" ? <ProposalsSection /> : sec === "history" ? <HistorySection admin={admin} /> : sec === "climbers" ? <ClimbersSection admin={admin} />
+    </div> : sec === "safety" ? <SafetySection /> : sec === "proposals" ? <ProposalsSection /> : sec === "history" ? <HistorySection admin={admin} /> : sec === "climbers" ? <ClimbersSection admin={admin} />
       : sec === "appeals" ? <AppealsSection /> : sec === "locks" ? <LocksSection /> : sec === "worklist" ? <WorklistSection /> : sec === "basepins" ? <BasePinsSection notify={notify} /> : <EditsTable admin={admin} />}
   </div>;
 }
@@ -255,14 +259,17 @@ function EditsTable({ admin }) {
         const route = routes[r0.route_id];
         const areaRow = isArea ? areas[r0.area_id] : null;
         const verdict = g.map((x) => ai["contribution:" + x.id]).find(Boolean) || null;
+        const cur = isArea ? (areaRow && af && af.cur ? af.cur(areaRow) : undefined) : (cf && route ? route[cf.column_name] : undefined);
         out.push({
           key: "e:" + r0.id, kind: "edit", ids: g.map((x) => x.id), route_id: r0.route_id, area_id: isArea ? r0.area_id : null, field: r0.field,
           label: isArea ? ((af && af.label) || r0.field) : ((cf && cf.label) || r0.field),
           name: isArea ? ((r0.areas && r0.areas.name) || r0.area_id) : ((r0.routes && r0.routes.name) || (route && route.name) || r0.route_id),
           state: String(r0.route_id || r0.area_id || "").split("_")[0].toUpperCase(),
-          cur: isArea ? (areaRow && af && af.cur ? af.cur(areaRow) : undefined) : (cf && route ? route[cf.column_name] : undefined),
+          cur,
           said: r0.value, note: g.map((x) => x.reason).filter(Boolean).join(" | "),
-          removes: g.some((x) => x.review_note === REMOVAL_NOTE), climbers: new Set(g.map((x) => x.contributor)).size,
+          // Removal is re-asked against the page AS IT IS NOW, not only read off the note 0351 stamped when the edit was sent:
+          // the page may have gained rows since, and approving a stale edit then wipes them (0553 refuses that from a reviewer).
+          removes: g.some((x) => x.review_note === REMOVAL_NOTE) || (cur !== undefined && editRemoves(cur, r0.value)), climbers: new Set(g.map((x) => x.contributor)).size,
           created_at: r0.created_at, ai: verdict,
         });
       });
@@ -499,7 +506,7 @@ function Detail({ row: r, busy, act, admin, keyCmd }) {
       {needsOwner(ai) && ai.auto_note ? <p style={{ margin: "6px 0", color: C.amber, fontWeight: 700 }}>Left for you: {ai.auto_note}</p> : null}
       <p style={{ margin: "6px 0", color: C.text }}>{ai.reasoning}</p>
       {(ai.sources || []).length ? <ol style={{ margin: 0, paddingLeft: 20, color: C.textSub }}>{ai.sources.map((s, i) => <li key={i} style={{ marginBottom: 4 }}>
-        <a href={s.url} target="_blank" rel="noopener noreferrer" style={{ color: C.blue }}>{s.title || s.url}</a>{s.official ? <span style={{ color: C.green, fontWeight: 700 }}> · official</span> : null}
+        <a href={safeHref(s.url)} target="_blank" rel="noopener noreferrer" style={{ color: C.blue }}>{s.title || s.url}</a>{s.official ? <span style={{ color: C.green, fontWeight: 700 }}> · official</span> : null}
         {s.quote ? <div style={{ fontStyle: "italic" }}>“{s.quote}”</div> : null}
       </li>)}</ol> : <div style={{ color: C.textMuted }}>No sources found.</div>}
     </div> : <div style={{ fontSize: 12.5, color: C.textMuted }}>The AI has not checked this one yet; it runs nightly.</div>}
@@ -532,7 +539,7 @@ function Detail({ row: r, busy, act, admin, keyCmd }) {
         <button className="rd-btn rd-ok" disabled={busy} onClick={() => act(r, () => resolveRouteFlag(r.ids[0], "fixed", note), "marked fixed; the reporter was thanked.")}>{busy ? "Working…" : "Fixed it"}</button>
         <button className="rd-btn" disabled={busy} onClick={() => act(r, () => resolveRouteFlag(r.ids[0], "dismissed", note || (ai && ai.verdict === "disagree" ? ai.reasoning.slice(0, 400) : "")), "dismissed; the reporter was told.")}>No change needed</button>
       </>}
-      {routeHref ? <a href={routeHref} target="_blank" rel="noopener noreferrer" style={{ color: C.blue, fontSize: 12.5, fontWeight: 700, marginLeft: "auto" }}>Open route in ClimbMatch ↗</a> : null}
+      {routeHref ? <a href={safeHref(routeHref)} target="_blank" rel="noopener noreferrer" style={{ color: C.blue, fontSize: 12.5, fontWeight: 700, marginLeft: "auto" }}>Open route in ClimbMatch ↗</a> : null}
     </div>}
   </div>;
 }
