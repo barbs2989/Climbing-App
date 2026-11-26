@@ -1,7 +1,8 @@
 import { useMemo, useState } from "react";
 import { useAreaLatestReports, useAreaLatestReportRows, useProfilesByIds, useRoutesByIds } from "../../lib/db";
 import { tripRowToActivity } from "../../lib/tripReportRow.js";
-import { isHazardTag, normTag, RECENT_DAYS } from "../../ClimbMatchCore.jsx";
+import { isHazardTag, RECENT_DAYS, DLOCALE } from "../../ClimbMatchCore.jsx";
+import { CardHead } from "../../lib/areaBrowserParts.jsx";
 import { clickable } from "../../lib/clickable";
 import { BTN, BTN_SM } from "../../lib/buttonStyles.js";
 import { discLabel } from "../../lib/discLabels.js";
@@ -33,8 +34,15 @@ const sinceOf = (days: number) => (days ? new Date(Date.now() - days * 86400000)
 
 // The notes come from the rich editor: a preview line shows their words, not their markup.
 const plain = (s: string) => String(s || "").replace(/<[^>]*>/g, " ").replace(/[*_#>`]+/g, "").replace(/&nbsp;/g, " ").replace(/\s+/g, " ").trim();
-const MN = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
-const fmtDate = (d?: string | null) => { if (!d) return ""; const q = String(d).split("-"); const m = MN[parseInt(q[1], 10) - 1]; return m ? m + " " + parseInt(q[2] || "1", 10) + (q[0] !== String(new Date().getFullYear()) ? ", " + q[0] : "") : ""; };
+// The day climbed in the climber's own date order (Settings > Date format: "Nov 15" or "15 Nov"), with the
+// year only when it is not this one. Hand-built month names ignored that setting (audit 2026-11-26).
+const fmtDate = (d?: string | null) => {
+  if (!d) return "";
+  const dt = new Date(String(d).slice(0, 10) + "T12:00:00");
+  if (isNaN(dt.getTime())) return "";
+  const yr = dt.getFullYear() !== new Date().getFullYear();
+  try { return dt.toLocaleDateString(DLOCALE, yr ? { month: "short", day: "numeric", year: "numeric" } : { month: "short", day: "numeric" }); } catch { return ""; }
+};
 
 /* LATEST FROM THIS AREA (seed-vs-real audit, 2026-11-11): the seed area page's four newest reports and
    red "N hazard reports · last N days" badge, on real data. The reports are the newest PUBLIC ones
@@ -63,7 +71,7 @@ export default function AreaLatestReports({ area, onOpenRoute, onOpenReport, C }
   const refs = (q.data && q.data.refs) as LatestRef[] | null | undefined;
   const rowsQ = useAreaLatestReportRows(ids);
   const rows = useMemo(() => (ids.length ? (rowsQ.data || []) as unknown as LatestRow[] : []), [ids, rowsQ.data]);
-  const recentTags = ((q.data && q.data.recentTags) || []) as string[][];
+  const recentTags = useMemo(() => ((q.data && q.data.recentTags) || []) as string[][], [q.data]);
   const refSource = useMemo((): { user_id?: string | null; route_id?: string | null }[] => refs || rows, [refs, rows]);
   const userIds = useMemo(() => [...new Set(refSource.map(r => r.user_id).filter((x): x is string => !!x))], [refSource]);
   const routeIds = useMemo(() => [...new Set(refSource.map(r => r.route_id).filter((x): x is string => !!x))], [refSource]);
@@ -71,7 +79,12 @@ export default function AreaLatestReports({ area, onOpenRoute, onOpenReport, C }
   const routesQ = useRoutesByIds(routeIds);
   const profById = useMemo(() => { const m: Record<string, unknown> = {}; ((profQ.data || []) as { id: string }[]).forEach(p => { m[p.id] = p; }); return m; }, [profQ.data]);
   const routeById = useMemo(() => { const m: Record<string, LatestRoute> = {}; ((routesQ.data || []) as LatestRoute[]).forEach(r => { m[r.id] = r; }); return m; }, [routesQ.data]);
-  const hazardCount = recentTags.filter(tags => tags.some(t => isHazardTag(normTag(t)))).length;
+  // Tested as stored, not re-cased: normTag turned the app's "Avy: Low" chip into "Avy: low", which missed
+  // NOT_HAZARD_TAGS and matched the keyword net, so a LOW avalanche rating raised the red badge (audit 2026-11-26).
+  const hazardCount = recentTags.filter(tags => tags.some(t => isHazardTag(String(t)))).length;
+  // WHICH hazards, so the badge can be acted on: each hazard tag and how many recent logs carry it. These are the
+  // anonymous recent_tags (private logs included), so they name no climber and no climb.
+  const hazardTags = useMemo(() => { const m = new Map<string, number>(); recentTags.forEach(tags => { new Set(tags.map(String).filter(t => isHazardTag(t))).forEach(t => m.set(t, (m.get(t) || 0) + 1)); }); return [...m.entries()].sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0])); }, [recentTags]);
   const total = (q.data && q.data.total) || 0;
   const totalAll = (q.data && q.data.totalAll) || 0;
   const discCounts = ((q.data && q.data.discs) || {}) as Record<string, number>;
@@ -94,7 +107,7 @@ export default function AreaLatestReports({ area, onOpenRoute, onOpenReport, C }
   const row = (r: LatestRow) => {
     const a = tripRowToActivity(r, (r.user_id && profById[r.user_id]) || null) as LatestActivity;
     const rt = routeById[r.route_id];
-    const haz = (a.condTags || []).some(t => isHazardTag(normTag(t)));
+    const haz = (a.condTags || []).some(t => isHazardTag(String(t)));
     const outcome = a.summited ? "Summit" : a.tickType || null;
     // The same line the database draws for "Trip reports only": a write-up makes it a trip report.
     const isReport = !!String(a.text || "").trim();
@@ -126,10 +139,14 @@ export default function AreaLatestReports({ area, onOpenRoute, onOpenReport, C }
 
   return (
     <section aria-label={"Latest from " + (area.name || "this area")} style={{ marginTop: 14, background: C.card, borderRadius: 12, border: "1px solid " + (hazardCount ? C.red + "55" : C.border), padding: "12px 13px" }}>
-      <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", gap: 8, flexWrap: "wrap", marginBottom: rows.length || totalAll > FIRST ? 8 : 0 }}>
-        <div style={{ fontSize: 12, fontWeight: 800, color: C.label, textTransform: "uppercase", letterSpacing: 0.4 }}>Latest from this area</div>
+      <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", gap: 8, flexWrap: "wrap", marginBottom: rows.length || totalAll > FIRST || hazardTags.length ? 8 : 0 }}>
+        <CardHead C={C} style={{}}>Latest from this area</CardHead>
         {hazardCount ? <span style={{ display: "inline-flex", alignItems: "center", gap: 5, fontSize: 11.5, fontWeight: 700, color: C.red, background: C.redBg, borderRadius: 999, padding: "2px 9px" }}><span aria-hidden="true" style={{ display: "inline-flex" }}><ActionIcon name="alert" size={12} color="currentColor" /></span>{hazardCount + " hazard report" + (hazardCount !== 1 ? "s" : "") + " · last " + RECENT_DAYS + " days"}</span> : null}
       </div>
+      {hazardTags.length ? <div style={{ fontSize: 12, color: C.textSub, lineHeight: 1.45, marginBottom: 8, overflowWrap: "anywhere" }}>
+        <span style={{ color: C.text, fontWeight: 700 }}>{"Hazards reported: "}</span>
+        {hazardTags.map(([t, n]) => t + (n > 1 ? " (" + n + ")" : "")).join(" · ")}
+      </div> : null}
       {/* Sorting or filtering four rows or fewer would be controls for nothing. */}
       {totalAll > FIRST ? <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(140px, 1fr))", gap: 8, marginBottom: 8 }}>
         <select value={sort} onChange={e => { setSort(e.target.value); reset(); }} aria-label="Sort the latest reports" style={sel}>
