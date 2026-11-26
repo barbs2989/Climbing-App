@@ -9,6 +9,7 @@ import { installTapSlop } from "./lib/tapSlop.js";
 import { installErrorReporting } from "./lib/errorReport.js";
 import { refreshProfileReadsOnSignIn } from "./lib/auth.js";
 import { noteReloadPending } from "./lib/chunkReload.js";
+import { framedByAnotherSite, showFramedNotice } from "./lib/frameGuard.js";
 
 // networkMode "always" is load-bearing, not a tuning knob. React Query's default is
 // "online": when the browser reports itself offline it sets fetchStatus "paused" and
@@ -105,7 +106,9 @@ installTapSlop();
 installErrorReporting();
 setQueryClient(queryClient);
 refreshProfileReadsOnSignIn();
-restoreQueryCache(queryClient).finally(() => {
+// Framed by another site (clickjacking): no app at all, a link out instead — lib/frameGuard.js.
+if (framedByAnotherSite()) showFramedNotice();
+else restoreQueryCache(queryClient).finally(() => {
   persistQueryCache(queryClient);
   createRoot(document.getElementById("root")).render(
     <AppErrorBoundary>

@@ -114,7 +114,7 @@ const CASES = [
   {
     file: CARD,
     name: "7. SILENT: a handler-only button is still a control (no href to count)",
-    find: '<a href={"https://www.google.com/maps/dir/?api=1&destination="+lat+","+lng} target="_blank" rel="noreferrer" aria-label="Driving directions to the trailhead in Google Maps" style={thLink}>Google Maps</a>',
+    find: '<a href={safeHref("https://www.google.com/maps/dir/?api=1&destination="+lat+","+lng)} target="_blank" rel="noreferrer" aria-label="Driving directions to the trailhead in Google Maps" style={thLink}>Google Maps</a>',
     repl: '<button onClick={()=>window.open("https://www.google.com/maps/dir/?api=1&destination="+lat+","+lng,"_blank")} style={thLink}>Google Maps</button>',
     expect: "pass",
   },

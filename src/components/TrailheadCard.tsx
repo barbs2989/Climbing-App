@@ -3,6 +3,7 @@ import { wpIs, trailheadPoint, distMiles, C, WP_STYLE, SUB_LABEL } from "../../C
 import { trailheadDirectionProblem } from "../../lib/trailheadDirectionShape";
 import EditIconButton from "./EditIconButton.tsx";
 import CopyCoordButton from "./CopyCoordButton.tsx";
+import { safeHref } from "../../lib/safeUrl.js";
 
 export interface TrailheadCardProps {
   /** The route; only the fields the card reads are typed. */
@@ -101,8 +102,8 @@ export default function TrailheadCard({route,onEdit}: TrailheadCardProps){
         CragLocationCard already is: a full-width copy row, then two equal 44px buttons. */}
     {hasCoord?<><CopyCoordButton lat={lat as number} lng={lng as number} what="trailhead"/>
     <div style={{display:"flex",gap:8,marginTop:8}}>
-      <a href={"https://www.google.com/maps/dir/?api=1&destination="+lat+","+lng} target="_blank" rel="noreferrer" aria-label="Driving directions to the trailhead in Google Maps" style={thLink}>Google Maps</a>
-      <a href={"https://maps.apple.com/?dirflg=d&daddr="+lat+","+lng} target="_blank" rel="noreferrer" aria-label="Driving directions to the trailhead in Apple Maps" style={thLink}>Apple Maps</a>
+      <a href={safeHref("https://www.google.com/maps/dir/?api=1&destination="+lat+","+lng)} target="_blank" rel="noreferrer" aria-label="Driving directions to the trailhead in Google Maps" style={thLink}>Google Maps</a>
+      <a href={safeHref("https://maps.apple.com/?dirflg=d&daddr="+lat+","+lng)} target="_blank" rel="noreferrer" aria-label="Driving directions to the trailhead in Apple Maps" style={thLink}>Apple Maps</a>
     </div></>:<div style={{fontSize:11.5,color:C.textMuted,lineHeight:1.45}}>No trailhead coordinates on file yet.</div>}
   </div>;
 }

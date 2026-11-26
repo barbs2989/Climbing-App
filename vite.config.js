@@ -1,9 +1,10 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
+import { cspPlugin } from "./scripts/lib/vite-csp.mjs";
 
 // base must match your repo name so links work on GitHub Pages
 export default defineConfig({
-  plugins: [react()],
+  plugins: [react(), cspPlugin()],
   base: "/Climbing-App/",
   build: {
     // The app is a single large component by design (see CLAUDE.md), so the main
