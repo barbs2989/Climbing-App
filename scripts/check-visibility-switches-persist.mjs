@@ -88,6 +88,8 @@ const SWITCHES = {
 /* Rendered switches that are NOT a visibility claim. An entry here is a CLAIM about the control,
  * and it fails if the control stops existing. */
 const NOT_VISIBILITY = {
+  friendsF: "Join a crew's 'A friend is in it' FILTER (lib/CrewFinder.jsx, 2026-11-25). It narrows "
+    + "which open crews THIS viewer's list shows; it says nothing about what other climbers can see.",
   on: "the notification-preference toggles, rendered from a .map over notifPrefs. A per-device "
     + "preference about what THIS phone shows its owner, not a statement about what other "
     + "climbers can see, so a column is not what makes it honest. (It does not persist either; "
