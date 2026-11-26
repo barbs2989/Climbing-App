@@ -1,7 +1,7 @@
 // One-off: drive Ranks › By area (src/components/RankAreaPicker.tsx) SIGNED IN, at 390px, against a running dev
 // server. Asserts: the card names the area; Change opens the Choose-an-area PAGE in place of the board, laid out as
 // the Climbs tab is (state cards A to Z, then the area page’s own sub-area list with its Sort); walking it ranks
-// nothing until See rankings; the path links jump up; a search hit and a Your areas chip rank at once; Back leaves
+// nothing until See rankings; the path links jump up; a search hit ranks at once; no Your areas chip row (owner 2026-11-25); Back leaves
 // it unchanged; nothing runs off the phone. Creates a throwaway account (service key) and deletes it.
 //   node scripts/oneoff/probe-ranks-area-picker.mjs http://localhost:5287/Climbing-App/ [shotDir]
 import { chromium } from "playwright-core";
@@ -31,12 +31,12 @@ const SHOTS = process.argv[3] || null;
 const fails = [];
 const ok = (c, m) => { console.log((c ? "  ok   " : "  FAIL ") + m); if (!c) fails.push(m); };
 const fixture = await createFixture(() => {});
-// One partner listing, written AS the account (RLS: owner-only), so "Your areas" has something to show.
+// One partner listing, written AS the account (RLS: owner-only), so the absence of a "Your areas" row is a real test.
 const uid = fixture.session.user.id;
 const asMe = { apikey: anonKey(), Authorization: "Bearer " + fixture.session.access_token, "Content-Type": "application/json", Prefer: "return=representation" };
 const ins = await fetch(`${SUPABASE_URL}/rest/v1/partner_areas`, { method: "POST", headers: asMe, body: JSON.stringify({ user_id: uid, area_id: "wa_world_wall", disciplines: ["sport"] }) });
 const insRows = await ins.json().catch(() => null);
-if (!Array.isArray(insRows) || insRows.length !== 1) console.log("  note: partner listing not stored (" + ins.status + "), Your areas will be skipped");
+if (!Array.isArray(insRows) || insRows.length !== 1) console.log("  note: partner listing not stored (" + ins.status + "), the Your-areas absence check will be skipped");
 const browser = await chromium.launch({ channel: "chrome", headless: true, timeout: 120000 });
 try {
   const page = await browser.newPage({ viewport: { width: 390, height: 900 }, deviceScaleFactor: 2 });
@@ -77,8 +77,8 @@ try {
   ok(await seeBtn("United States").count() === 1, "the page's header offers See rankings for United States");
   const mineChip = page.getByRole("button", { name: "Rank World Wall" });
   if (Array.isArray(insRows) && insRows.length === 1) {
-    await mineChip.waitFor({ timeout: 30000 }).catch(() => {});
-    ok(await mineChip.count() === 1, "Your areas offers the climber's partner listing (World Wall)");
+    await page.waitForTimeout(5000);
+    ok(await mineChip.count() === 0 && await page.getByText("Your areas", { exact: true }).count() === 0, "no Your areas chip row, though the climber has a partner listing (owner 2026-11-25)");
   }
   await page.getByRole("heading", { name: "Pick a state" }).waitFor({ timeout: 30000 });
   const cardNames = () => page.evaluate(() => [...document.querySelectorAll("button")].filter((b) => /\d climbs?$/.test((b.textContent || "").trim()) && b.children.length === 2).map((b) => b.children[0].textContent));
@@ -152,16 +152,6 @@ try {
   await page.locator("button", { hasText: /^United States[\d,]+ climbs$/ }).waitFor({ timeout: 30000 });
   ok(await page.getByRole("button", { name: /^See rankings for/ }).count() === 0, "All countries lists the countries and offers no See rankings (it ranks nothing)");
   await shot("5-all-countries");
-  if (Array.isArray(insRows) && insRows.length === 1) {
-    await mineChip.click();
-    await ranking("World Wall");
-    ok(true, "tapping the Your areas chip ranks World Wall");
-    await change.click();
-    await onLevel("World Wall");
-    await page.getByText(/No smaller areas inside World Wall/).waitFor({ timeout: 30000 });
-    ok(true, "a wall with nothing inside says so, and still offers See rankings and its path");
-    await shot("6-leaf");
-  }
   ok(errs.length === 0, "no page errors" + (errs.length ? ": " + errs.join(" | ") : ""));
 } finally {
   await browser.close();
