@@ -126,7 +126,9 @@ for (const disc of ["trad", "sport", "aid"]) {
     catch (e) { if (t >= 3) throw e; }
   }
   if (!row) { problems.push(`synthetic: no single-pitch ${disc} row to test with`); continue; }
-  const base = dbRouteToCamel(row);
+  // A short climb: a long stated length is now its own multi-pitch signal (below), so the 1-pitch base is
+  // pinned under a rope length.
+  const base = { ...dbRouteToCamel(row), routeFt: 100 };
   const t1 = text(render(base, "overview"));
   if (HAS_BREAKDOWN.test(t1)) problems.push(`synthetic ${base.id}: a 1-pitch ${disc} route already shows ROUTE BREAKDOWN`);
   if (HAS_RAPPELS.test(t1)) problems.push(`synthetic ${base.id}: a 1-pitch ${disc} route already shows RAPPELS (it lowers off)`);
@@ -134,6 +136,16 @@ for (const disc of ["trad", "sport", "aid"]) {
   const t3 = text(render({ ...base, pitches: 0, pitchDetail: [{ pitch: 1, grade: "5.8", lengthM: 30 }, { pitch: 2, grade: "5.9", lengthM: 35 }] }, "overview"));
   if (!HAS_RAPPELS.test(t3)) problems.push(`synthetic ${base.id}: pitches=0 with 2 contributed pitches shows no RAPPELS`);
   if (!HAS_BREAKDOWN.test(t3)) problems.push(`synthetic ${base.id}: pitches=0 with 2 contributed pitches shows no ROUTE BREAKDOWN`);
+  // NO PITCH COUNT (owner note 2026-11-25): a blank count (0, or a placeholder 1) on a climb longer than a rope
+  // reaches is multi-pitch (lib/pitchCount.js multiPitchByLength); one under it stays a single pitch.
+  for (const p of [0, 1]) {
+    const tl = text(render({ ...base, pitches: p, routeFt: 600 }, "overview"));
+    if (!HAS_BREAKDOWN.test(tl)) problems.push(`synthetic ${base.id}: pitches=${p} at 600 ft shows no ROUTE BREAKDOWN`);
+    if (!HAS_RAPPELS.test(tl)) problems.push(`synthetic ${base.id}: pitches=${p} at 600 ft shows no RAPPELS`);
+    if (!/longer than one rope reaches/.test(tl)) problems.push(`synthetic ${base.id}: pitches=${p} at 600 ft does not say why it is multi-pitch`);
+    const ts = text(render({ ...base, pitches: p, routeFt: 200 }, "overview"));
+    if (HAS_BREAKDOWN.test(ts) || HAS_RAPPELS.test(ts)) problems.push(`synthetic ${base.id}: pitches=${p} at 200 ft shows a multi-pitch section`);
+  }
 }
 
 console.log(`routes with pitches >= 2: ${rows.length} ${JSON.stringify(byDisc)}`);
