@@ -97,6 +97,8 @@ function AiNote({ v }) {
   const src = Array.isArray(v.sources) ? v.sources : [];
   return <div style={{ border: "1px solid " + C.border, borderRadius: 8, padding: "7px 9px", marginTop: 7, fontSize: 12, lineHeight: 1.5 }}>
     <div style={{ fontWeight: 700, color: col }}>{(AI_LABEL[v.verdict] || v.verdict) + (v.confidence && v.confidence !== "none" ? " · " + v.confidence : "")}</div>
+    {/* The review autopilot (0534) left this one for the owner, and says why. */}
+    {v.auto_action === "needs_owner" && v.auto_note ? <div style={{ color: C.amber, fontWeight: 700, marginTop: 2 }}>Needs you: {v.auto_note}</div> : null}
     {v.reasoning ? <div style={{ color: C.textSub, marginTop: 2 }}>{v.reasoning}</div> : null}
     {v.verdict !== "agree" && v.ai_value && typeof v.ai_value === "object" && !Array.isArray(v.ai_value) && Object.keys(v.ai_value).length
       ? <div style={{ color: C.textSub, marginTop: 2 }}><b>AI would correct:</b> {Object.keys(v.ai_value).map(function (k) { return k + ": " + (typeof v.ai_value[k] === "object" ? JSON.stringify(v.ai_value[k]) : String(v.ai_value[k])); }).join(" · ")}</div> : null}

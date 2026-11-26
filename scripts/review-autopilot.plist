@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!-- The review autopilot, hourly. Install and stop: see scripts/review-autopilot-cron.sh. launchd never
+     starts a second copy while one is still running, so a slow run (waiting for a database slot, or
+     researching) simply delays the next. -->
+<plist version="1.0">
+<dict>
+  <key>Label</key><string>com.climbmatch.review-autopilot</string>
+  <key>ProgramArguments</key>
+  <array>
+    <string>/bin/bash</string>
+    <string>-c</string>
+    <!-- always the MERGED runner: fetched, then read straight out of origin/main -->
+    <string>git -C "$HOME/dev/Climbing-App" fetch -q origin main; git -C "$HOME/dev/Climbing-App" show origin/main:scripts/review-autopilot-cron.sh | /bin/bash</string>
+  </array>
+  <key>EnvironmentVariables</key>
+  <dict>
+    <key>PATH</key><string>/Users/nathanbarber/.local/bin:/Users/nathanbarber/.local/nodejs/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin</string>
+    <key>HOME</key><string>/Users/nathanbarber</string>
+  </dict>
+  <key>StartInterval</key><integer>3600</integer>
+  <key>RunAtLoad</key><false/>
+  <key>StandardOutPath</key><string>/Users/nathanbarber/dev/climbmatch-review-autopilot.log</string>
+  <key>StandardErrorPath</key><string>/Users/nathanbarber/dev/climbmatch-review-autopilot.log</string>
+</dict>
+</plist>
