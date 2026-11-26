@@ -54,3 +54,11 @@ route_count, `stats` (our own climb counts by discipline and grade over the whol
 - A rock or style you name must hold for the part you name it for: if a region mixes rock (granite boulders,
   tuff gorge), say which sub-area has which, or name none. Never generalise one sub-area's rock to the region.
 - A season sentence needs a fetched page that says it.
+
+## Lessons from wave 2
+- If you would list a sentence as "unsure" in your reply, it does not go in the blurb. Leave it out instead.
+  A shorter, fully supported blurb (60+ words) beats a longer one with guesses.
+- Landscape framing ("from the foothills up to high domes", "below the valley floor") is not inferred from
+  sub-area names or coordinates; only a fetched page can supply it.
+- A sub-region whose only pages are about its PARENT is skipped (the parent will get its own text).
+- No lodging, camping or cabin mentions (they read as access/visitor text).
