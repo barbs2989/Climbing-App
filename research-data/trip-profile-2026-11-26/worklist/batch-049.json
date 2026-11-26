@@ -1,0 +1,337 @@
+[
+ {
+  "id": "wa_raven_ridge_standard_route",
+  "name": "Raven Ridge Standard Route (Libby Lake Gully-Ridge)",
+  "where": "Sawtooth / Lake Chelan > Raven Ridge",
+  "discipline": "scrambling",
+  "grade": "Class 3",
+  "why": "no summit waypoint with a distance from the trailhead",
+  "distKmStored": 10.5,
+  "outingShape": null,
+  "gainFt": 4200,
+  "waypoints": [
+   {
+    "i": 0,
+    "type": "Trailhead",
+    "name": "Libby Lake Trailhead",
+    "elev": 4430,
+    "distMi": 0
+   },
+   {
+    "i": 1,
+    "type": "Campsite",
+    "name": "Libby Lake",
+    "elev": 7618,
+    "distMi": null
+   },
+   {
+    "i": 2,
+    "type": "Summit",
+    "name": "Raven Ridge summit (true/east summit)",
+    "elev": 8572,
+    "distMi": null
+   }
+  ]
+ },
+ {
+  "id": "wa_remmel_mountain_nw_ridge",
+  "name": "NW Ridge",
+  "where": "Pasayten Wilderness > Remmel Mountain",
+  "discipline": "alpine",
+  "grade": "5.2",
+  "why": "no summit waypoint with a distance from the trailhead",
+  "distKmStored": 28.2,
+  "outingShape": null,
+  "gainFt": 5265,
+  "waypoints": [
+   {
+    "i": 0,
+    "type": "Trailhead",
+    "name": "Andrews Creek Trailhead",
+    "elev": 3050,
+    "distMi": 0
+   },
+   {
+    "i": 1,
+    "type": "Water",
+    "name": "Four Point Lake",
+    "elev": 6846,
+    "distMi": null
+   },
+   {
+    "i": 2,
+    "type": "Water",
+    "name": "Remmel Lake",
+    "elev": 6868,
+    "distMi": null
+   },
+   {
+    "i": 3,
+    "type": "Campsite",
+    "name": "NW Ridge Camp",
+    "elev": 7500,
+    "distMi": null
+   },
+   {
+    "i": 4,
+    "type": "Summit",
+    "name": "Remmel Mountain",
+    "elev": 8685,
+    "distMi": null
+   }
+  ]
+ },
+ {
+  "id": "wa_remmel_mountain_southeast_slope",
+  "name": "Southeast Slope (Standard Route)",
+  "where": "Pasayten Wilderness > Remmel Mountain",
+  "discipline": "mountaineering",
+  "grade": "Class 1",
+  "why": "no summit pin on the track, after the trailhead; no summit waypoint with a distance from the trailhead",
+  "distKmStored": 25.7,
+  "outingShape": null,
+  "gainFt": 5600,
+  "waypoints": [
+   {
+    "i": 0,
+    "type": "Trailhead",
+    "name": "Thirtymile Trailhead",
+    "elev": 3400,
+    "distMi": null
+   },
+   {
+    "i": 1,
+    "type": "Campsite",
+    "name": "Four Point Lake",
+    "elev": 6846,
+    "distMi": null
+   },
+   {
+    "i": 2,
+    "type": "Junction",
+    "name": "Unofficial summit trail junction (off abandoned Coleman Ridge Trail)",
+    "elev": null,
+    "distMi": null
+   },
+   {
+    "i": 3,
+    "type": "Summit",
+    "name": "Remmel Mountain Summit",
+    "elev": 8685,
+    "distMi": null
+   }
+  ]
+ },
+ {
+  "id": "wa_ridge_traverse_from_east_fury",
+  "name": "Ridge Traverse from East Fury",
+  "where": "Northern Pickets > Mount Fury (West Peak)",
+  "discipline": "alpine",
+  "grade": "5.4",
+  "why": "no summit waypoint with a distance from the trailhead",
+  "distKmStored": null,
+  "outingShape": "outback",
+  "gainFt": null,
+  "waypoints": [
+   {
+    "i": 0,
+    "type": "Trailhead",
+    "name": "Ross Dam Trailhead (SR-20) — via Ross Lake water taxi/hike to Big Beaver, then off-trail to Access Creek/Luna Camp",
+    "elev": 2100,
+    "distMi": null
+   },
+   {
+    "i": 1,
+    "type": "Campsite",
+    "name": "Luna Camp, Big Beaver Trail",
+    "elev": 2432,
+    "distMi": null
+   },
+   {
+    "i": 2,
+    "type": "Water",
+    "name": "Big Beaver Creek crossing",
+    "elev": 2460,
+    "distMi": null
+   },
+   {
+    "i": 3,
+    "type": "Junction",
+    "name": "Access Creek Junction",
+    "elev": 2500,
+    "distMi": 15
+   },
+   {
+    "i": 4,
+    "type": "Junction",
+    "name": "Access Col",
+    "elev": 6100,
+    "distMi": 19
+   },
+   {
+    "i": 5,
+    "type": "Junction",
+    "name": "Luna Col",
+    "elev": 7200,
+    "distMi": 22
+   },
+   {
+    "i": 6,
+    "type": "Summit",
+    "name": "East Fury summit",
+    "elev": 8322,
+    "distMi": null
+   },
+   {
+    "i": 7,
+    "type": "Hazard",
+    "name": "Loose Tower Traverse",
+    "elev": 8100,
+    "distMi": 25
+   },
+   {
+    "i": 8,
+    "type": "Summit",
+    "name": "West Fury (Mount Fury, official/USGS-named summit)",
+    "elev": 8301,
+    "distMi": null
+   }
+  ]
+ },
+ {
+  "id": "wa_rimrock_ridge_scramble",
+  "name": "Standard Scramble",
+  "where": "Darrington and Mountain Loop Hwy > Rimrock Ridge",
+  "discipline": "scrambling",
+  "grade": "Class 3",
+  "why": "no summit waypoint with a distance from the trailhead",
+  "distKmStored": null,
+  "outingShape": null,
+  "gainFt": null,
+  "waypoints": [
+   {
+    "i": 0,
+    "type": "Trailhead",
+    "name": "Cascade Pass Trailhead",
+    "elev": 3600,
+    "distMi": 0
+   },
+   {
+    "i": 1,
+    "type": "Campsite",
+    "name": "Kool-Aid Lake",
+    "elev": 6120,
+    "distMi": null
+   },
+   {
+    "i": 2,
+    "type": "Campsite",
+    "name": "Yang Yang Lakes",
+    "elev": 5830,
+    "distMi": null
+   },
+   {
+    "i": 3,
+    "type": "Summit",
+    "name": "Rimrock Ridge summit",
+    "elev": 7255,
+    "distMi": null
+   }
+  ]
+ },
+ {
+  "id": "wa_roan_wall_center_stage",
+  "name": "Roan Wall - Center Stage",
+  "where": "Squire Creek Walls > Waterfall Basin",
+  "discipline": "alpine",
+  "grade": "5.11a",
+  "why": "no summit waypoint with a distance from the trailhead",
+  "distKmStored": null,
+  "outingShape": null,
+  "gainFt": 3800,
+  "waypoints": [
+   {
+    "i": 0,
+    "type": "Campsite",
+    "name": "Squire Creek Park & Campground, Snohomish County",
+    "elev": 463,
+    "distMi": null
+   },
+   {
+    "i": 1,
+    "type": "Trailhead",
+    "name": "Squire Creek Road Trailhead",
+    "elev": 1100,
+    "distMi": 0
+   },
+   {
+    "i": 2,
+    "type": "Base",
+    "name": "Waterfall Basin (base of Roan Wall)",
+    "elev": 2659,
+    "distMi": 3.5
+   }
+  ]
+ },
+ {
+  "id": "wa_roan_wall_stage_right",
+  "name": "Roan Wall - Stage Right",
+  "where": "Squire Creek Walls > Waterfall Basin",
+  "discipline": "alpine",
+  "grade": "5.10b",
+  "why": "no summit waypoint with a distance from the trailhead",
+  "distKmStored": null,
+  "outingShape": null,
+  "gainFt": 3800,
+  "waypoints": [
+   {
+    "i": 0,
+    "type": "Campsite",
+    "name": "Squire Creek Park & Campground, Snohomish County",
+    "elev": 463,
+    "distMi": null
+   },
+   {
+    "i": 1,
+    "type": "Trailhead",
+    "name": "Squire Creek Road Trailhead",
+    "elev": 1100,
+    "distMi": 0
+   },
+   {
+    "i": 2,
+    "type": "Base",
+    "name": "Waterfall Basin (base of Roan Wall)",
+    "elev": 2659,
+    "distMi": 3.5
+   }
+  ]
+ },
+ {
+  "id": "wa_ruby_mountain_happy_creek",
+  "name": "Happy Creek Route",
+  "where": "North Cascades Core > Ruby Mountain",
+  "discipline": "mountaineering",
+  "grade": "Class 3",
+  "why": "no summit pin on the track, after the trailhead; no summit waypoint with a distance from the trailhead",
+  "distKmStored": null,
+  "outingShape": null,
+  "gainFt": null,
+  "waypoints": [
+   {
+    "i": 0,
+    "type": "Trailhead",
+    "name": "Happy Creek trailhead (Happy Creek Forest Walk lot, SR 20)",
+    "elev": null,
+    "distMi": null
+   },
+   {
+    "i": 1,
+    "type": "Summit",
+    "name": "Ruby Mountain summit",
+    "elev": 7408,
+    "distMi": null
+   }
+  ]
+ }
+]

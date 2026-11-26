@@ -1,0 +1,323 @@
+[
+ {
+  "id": "wa_east_ridge_3",
+  "name": "East Ridge",
+  "where": "Silver Star and Wine spires > Silver Star Mountain",
+  "discipline": "alpine",
+  "grade": "5.9+",
+  "why": "no summit waypoint with a distance from the trailhead",
+  "distKmStored": null,
+  "outingShape": null,
+  "gainFt": 4400,
+  "waypoints": [
+   {
+    "i": 0,
+    "type": "Campsite",
+    "name": "Klipchuck Campground",
+    "elev": 2900,
+    "distMi": null
+   },
+   {
+    "i": 1,
+    "type": "Trailhead",
+    "name": "Cedar Creek Trailhead",
+    "elev": 2985,
+    "distMi": null
+   },
+   {
+    "i": 2,
+    "type": "Summit",
+    "name": "Silver Star Mountain - East/Main Summit",
+    "elev": 8876,
+    "distMi": null
+   },
+   {
+    "i": 3,
+    "type": "Trailhead",
+    "name": "Hwy 20 pullout near MP 166 (descent finish)",
+    "elev": 4300,
+    "distMi": null
+   }
+  ]
+ },
+ {
+  "id": "wa_east_ridge_8",
+  "name": "East Ridge",
+  "where": "Tatoosh Range > Pinnacle Peak",
+  "discipline": "alpine",
+  "grade": "5.5",
+  "why": "no summit waypoint with a distance from the trailhead",
+  "distKmStored": null,
+  "outingShape": null,
+  "gainFt": 2150,
+  "waypoints": [
+   {
+    "i": 0,
+    "type": "Campsite",
+    "name": "Reflection Lakes area winter snow camp",
+    "elev": 4858,
+    "distMi": null
+   },
+   {
+    "i": 1,
+    "type": "Trailhead",
+    "name": "Reflection Lakes Trailhead (Pinnacle Saddle Trail)",
+    "elev": 4880,
+    "distMi": null
+   },
+   {
+    "i": 2,
+    "type": "Summit",
+    "name": "Pinnacle Peak",
+    "elev": 6562,
+    "distMi": null
+   }
+  ]
+ },
+ {
+  "id": "wa_east_twin_needle_south_route",
+  "name": "South Route",
+  "where": "Southern Pickets > East Twin Needle",
+  "discipline": "alpine",
+  "grade": "5.7",
+  "why": "no summit waypoint with a distance from the trailhead",
+  "distKmStored": 31.4,
+  "outingShape": null,
+  "gainFt": 7268,
+  "waypoints": [
+   {
+    "i": 0,
+    "type": "Campsite",
+    "name": "Goodell Creek Campground, roadhead staging",
+    "elev": 500,
+    "distMi": null
+   },
+   {
+    "i": 1,
+    "type": "Trailhead",
+    "name": "Goodell Creek Trailhead (Cross-Country Zone Access, Upper Goodell Creek)",
+    "elev": 600,
+    "distMi": null
+   },
+   {
+    "i": 2,
+    "type": "Water",
+    "name": "Terror Creek logjam crossing",
+    "elev": 2100,
+    "distMi": 3.8
+   },
+   {
+    "i": 3,
+    "type": "Campsite",
+    "name": "Terror Basin camp",
+    "elev": 5800,
+    "distMi": null
+   },
+   {
+    "i": 4,
+    "type": "Campsite",
+    "name": "Crescent Creek Basin camp",
+    "elev": 6050,
+    "distMi": null
+   },
+   {
+    "i": 5,
+    "type": "Junction",
+    "name": "The Barrier ridge crossing",
+    "elev": 6100,
+    "distMi": 6.3
+   },
+   {
+    "i": 6,
+    "type": "Campsite",
+    "name": "Chopping Block saddle camp (above Crescent Creek Basin)",
+    "elev": 6400,
+    "distMi": 7
+   },
+   {
+    "i": 7,
+    "type": "Junction",
+    "name": "Eye Col",
+    "elev": null,
+    "distMi": 8.5
+   },
+   {
+    "i": 8,
+    "type": "Summit",
+    "name": "East Twin Needle",
+    "elev": 7840,
+    "distMi": null
+   }
+  ]
+ },
+ {
+  "id": "wa_east_twin_needle_thread_of_ice",
+  "name": "Thread of Ice",
+  "where": "Southern Pickets > East Twin Needle",
+  "discipline": "alpine",
+  "grade": "AI3",
+  "why": "no trailhead waypoint",
+  "distKmStored": null,
+  "outingShape": null,
+  "gainFt": null,
+  "waypoints": [
+   {
+    "i": 0,
+    "type": "Water",
+    "name": "Goodell Creek crossing",
+    "elev": 478,
+    "distMi": null
+   },
+   {
+    "i": 1,
+    "type": "Campsite",
+    "name": "Goodell Creek Campground, roadhead staging",
+    "elev": 500,
+    "distMi": null
+   },
+   {
+    "i": 2,
+    "type": "Campsite",
+    "name": "Terror Basin camp",
+    "elev": 5800,
+    "distMi": null
+   },
+   {
+    "i": 3,
+    "type": "Campsite",
+    "name": "Crescent Creek Basin camp",
+    "elev": 6050,
+    "distMi": null
+   }
+  ]
+ },
+ {
+  "id": "wa_easy_getaway",
+  "name": "Easy Getaway",
+  "where": "Cutthroat Lake Crags > Cutthroat Wall",
+  "discipline": "alpine",
+  "grade": "5.10-",
+  "why": "no summit waypoint with a distance from the trailhead",
+  "distKmStored": 2.8,
+  "outingShape": null,
+  "gainFt": 1620,
+  "waypoints": [
+   {
+    "i": 0,
+    "type": "Campsite",
+    "name": "Klipchuck Campground, with Early Winters nearby",
+    "elev": 2900,
+    "distMi": null
+   },
+   {
+    "i": 1,
+    "type": "Campsite",
+    "name": "Lone Fir Campground",
+    "elev": 3600,
+    "distMi": null
+   },
+   {
+    "i": 2,
+    "type": "Trailhead",
+    "name": "Cutthroat Creek/Lake Trailhead",
+    "elev": 4500,
+    "distMi": 0
+   },
+   {
+    "i": 3,
+    "type": "Campsite",
+    "name": "Cutthroat Creek trailhead",
+    "elev": 4500,
+    "distMi": null
+   },
+   {
+    "i": 4,
+    "type": "Base",
+    "name": "Cutthroat Wall Base",
+    "elev": 6120,
+    "distMi": 1.7
+   }
+  ]
+ },
+ {
+  "id": "wa_ellen_pea",
+  "name": "Ellen Pea",
+  "where": "Washington Pass > M&M wall (AKA \"Supercave Wall\")",
+  "discipline": "alpine",
+  "grade": "5.11c",
+  "why": "no summit waypoint with a distance from the trailhead",
+  "distKmStored": null,
+  "outingShape": null,
+  "gainFt": 1900,
+  "waypoints": [
+   {
+    "i": 0,
+    "type": "Trailhead",
+    "name": "SR-20 pullout near milepost 166 (Washington Pass)",
+    "elev": 4360,
+    "distMi": 0
+   },
+   {
+    "i": 1,
+    "type": "Junction",
+    "name": "Upper ledge, M&M Wall",
+    "elev": 5895,
+    "distMi": 1.2
+   },
+   {
+    "i": 2,
+    "type": "Base",
+    "name": "M&M Wall (Supercave) base area",
+    "elev": 5895,
+    "distMi": null
+   }
+  ]
+ },
+ {
+  "id": "wa_emerald_peak_west_route",
+  "name": "West Route",
+  "where": "Sawtooth / Lake Chelan > Emerald Peak",
+  "discipline": "scrambling",
+  "grade": "Class 3",
+  "why": "no summit waypoint with a distance from the trailhead",
+  "distKmStored": null,
+  "outingShape": null,
+  "gainFt": 5272,
+  "waypoints": [
+   {
+    "i": 0,
+    "type": "Trailhead",
+    "name": "North Fork Entiat Trailhead",
+    "elev": 3940,
+    "distMi": 0
+   },
+   {
+    "i": 1,
+    "type": "Summit",
+    "name": "Emerald Peak",
+    "elev": null,
+    "distMi": null
+   }
+  ]
+ },
+ {
+  "id": "wa_enchantment_peak_east_ridge",
+  "name": "East Ridge (Prusik Pass)",
+  "where": "Stuart-Enchantments > Enchantment Peak",
+  "discipline": "scrambling",
+  "grade": "Class 3",
+  "why": "no trailhead waypoint",
+  "distKmStored": null,
+  "outingShape": null,
+  "gainFt": 6100,
+  "waypoints": [
+   {
+    "i": 0,
+    "type": "Summit",
+    "name": "Enchantment Peak summit",
+    "elev": 8538,
+    "distMi": null
+   }
+  ]
+ }
+]

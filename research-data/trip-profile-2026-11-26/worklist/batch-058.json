@@ -1,0 +1,212 @@
+[
+ {
+  "id": "wa_whistler_mountain_north_ridge",
+  "name": "North Ridge",
+  "where": "Washington Pass > Whistler Mountain",
+  "discipline": "alpine",
+  "grade": "5.4",
+  "why": "no trailhead waypoint",
+  "distKmStored": null,
+  "outingShape": "outback",
+  "gainFt": null,
+  "waypoints": [
+   {
+    "i": 0,
+    "type": "Summit",
+    "name": "Whistler Mountain summit",
+    "elev": 7790,
+    "distMi": null
+   }
+  ]
+ },
+ {
+  "id": "wa_witches_tower_southwest_corner",
+  "name": "Southwest Corner",
+  "where": "Stuart-Enchantments > Witches Tower",
+  "discipline": "alpine",
+  "grade": "5.5",
+  "why": "no summit waypoint with a distance from the trailhead",
+  "distKmStored": null,
+  "outingShape": null,
+  "gainFt": 5400,
+  "waypoints": [
+   {
+    "i": 0,
+    "type": "Trailhead",
+    "name": "Stuart Lake/Colchuck Lake Trailhead",
+    "elev": 3400,
+    "distMi": 0
+   },
+   {
+    "i": 1,
+    "type": "Water",
+    "name": "Colchuck Lake",
+    "elev": 5570,
+    "distMi": 4.3
+   },
+   {
+    "i": 2,
+    "type": "pass",
+    "name": "Aasgard Pass",
+    "elev": 7841,
+    "distMi": null
+   },
+   {
+    "i": 3,
+    "type": "Summit",
+    "name": "Witches Tower Summit",
+    "elev": 8566,
+    "distMi": null
+   }
+  ]
+ },
+ {
+  "id": "wa_wright_pond",
+  "name": "Wright-Pond",
+  "where": "Cutthroat Lake Crags > Cutthroat Creek Wall or Little Liberty Bell",
+  "discipline": "alpine",
+  "grade": "5.11b",
+  "why": "no summit waypoint with a distance from the trailhead",
+  "distKmStored": 2.5,
+  "outingShape": null,
+  "gainFt": 1312,
+  "waypoints": [
+   {
+    "i": 0,
+    "type": "Trailhead",
+    "name": "Cutthroat Creek Trailhead",
+    "elev": 4500,
+    "distMi": null
+   },
+   {
+    "i": 1,
+    "type": "Water",
+    "name": "Early Winters Creek crossing",
+    "elev": 4058,
+    "distMi": null
+   },
+   {
+    "i": 2,
+    "type": "Campsite",
+    "name": "Cutthroat Creek trailhead",
+    "elev": 4500,
+    "distMi": null
+   },
+   {
+    "i": 3,
+    "type": "Base",
+    "name": "Base of the wall (shoulder at its right-hand side)",
+    "elev": null,
+    "distMi": 1.2
+   }
+  ]
+ },
+ {
+  "id": "wy_owen_spalding",
+  "name": "Owen Spalding",
+  "where": "Grand Teton National Park > Grand Teton",
+  "discipline": "alpine",
+  "grade": "5.4",
+  "why": "no one-way distance",
+  "distKmStored": null,
+  "outingShape": null,
+  "gainFt": 7000,
+  "waypoints": [
+   {
+    "i": 0,
+    "type": "Trailhead",
+    "name": "Lupine Meadows Trailhead",
+    "elev": 6736,
+    "distMi": 0
+   },
+   {
+    "i": 1,
+    "type": "Summit",
+    "name": "Grand Teton",
+    "elev": 13775,
+    "distMi": 8
+   }
+  ]
+ },
+ {
+  "id": "wy_southwest_couloir_3",
+  "name": "Southwest Couloir",
+  "where": "Grand Teton National Park > Middle Teton",
+  "discipline": "alpine",
+  "grade": "3rd",
+  "why": "no one-way distance",
+  "distKmStored": null,
+  "outingShape": null,
+  "gainFt": 6000,
+  "waypoints": [
+   {
+    "i": 0,
+    "type": "Trailhead",
+    "name": "Lupine Meadows Trailhead",
+    "elev": 6736,
+    "distMi": 0
+   },
+   {
+    "i": 1,
+    "type": "Summit",
+    "name": "Middle Teton",
+    "elev": 12803,
+    "distMi": 6.7
+   }
+  ]
+ },
+ {
+  "id": "wy_southwest_slope",
+  "name": "Southwest Slope",
+  "where": "Titcomb Basin Area > Fremont Peak",
+  "discipline": "alpine",
+  "grade": "3rd",
+  "why": "no one-way distance",
+  "distKmStored": null,
+  "outingShape": null,
+  "gainFt": null,
+  "waypoints": [
+   {
+    "i": 0,
+    "type": "Trailhead",
+    "name": "Elkhart Park trailhead",
+    "elev": null,
+    "distMi": null
+   },
+   {
+    "i": 1,
+    "type": "Summit",
+    "name": "Fremont Peak summit",
+    "elev": 13745,
+    "distMi": null
+   }
+  ]
+ },
+ {
+  "id": "wy_west_face_2",
+  "name": "West Face",
+  "where": "Dinwoody Glacier Area. > Gannett Peak",
+  "discipline": "alpine",
+  "grade": "4th",
+  "why": "no one-way distance",
+  "distKmStored": null,
+  "outingShape": null,
+  "gainFt": null,
+  "waypoints": [
+   {
+    "i": 0,
+    "type": "Trailhead",
+    "name": "Green River Lakes",
+    "elev": null,
+    "distMi": null
+   },
+   {
+    "i": 1,
+    "type": "Summit",
+    "name": "Gannett Peak summit",
+    "elev": null,
+    "distMi": null
+   }
+  ]
+ }
+]

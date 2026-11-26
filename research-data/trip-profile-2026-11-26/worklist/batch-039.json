@@ -1,0 +1,372 @@
+[
+ {
+  "id": "wa_mount_index_bluebell",
+  "name": "Bluebell",
+  "where": "Middle Peak > North Norwegian Buttress",
+  "discipline": "alpine",
+  "grade": "5.13-",
+  "why": "no summit waypoint with a distance from the trailhead",
+  "distKmStored": 5.8,
+  "outingShape": null,
+  "gainFt": null,
+  "waypoints": [
+   {
+    "i": 0,
+    "type": "Trailhead",
+    "name": "Lake Serene Trailhead (Trail #1068)",
+    "elev": 600,
+    "distMi": null
+   },
+   {
+    "i": 1,
+    "type": "Water",
+    "name": "Lake Serene",
+    "elev": 2525,
+    "distMi": 3.6
+   },
+   {
+    "i": 2,
+    "type": "Summit",
+    "name": "Mount Index Middle Peak",
+    "elev": 5527,
+    "distMi": null
+   }
+  ]
+ },
+ {
+  "id": "wa_mount_index_north_face",
+  "name": "North Face (North Peak)",
+  "where": "Mount Index > North Peak",
+  "discipline": "alpine",
+  "grade": "5.7",
+  "why": "no summit waypoint with a distance from the trailhead",
+  "distKmStored": 5.8,
+  "outingShape": "outback",
+  "gainFt": 4692,
+  "waypoints": [
+   {
+    "i": 0,
+    "type": "Trailhead",
+    "name": "Lake Serene Trailhead",
+    "elev": 566,
+    "distMi": 0
+   },
+   {
+    "i": 1,
+    "type": "landmark",
+    "name": "Lake Serene",
+    "elev": 2525,
+    "distMi": 3.6
+   }
+  ]
+ },
+ {
+  "id": "wa_mount_johnson_standard",
+  "name": "Standard Route",
+  "where": "North-Central Olympic Mountains (Deception–Gray Wolf) > Mount Johnson",
+  "discipline": "scrambling",
+  "grade": "Class 4",
+  "why": "no summit waypoint with a distance from the trailhead",
+  "distKmStored": 30.9,
+  "outingShape": "outback",
+  "gainFt": 5180,
+  "waypoints": [
+   {
+    "i": 0,
+    "type": "Trailhead",
+    "name": "Upper Dungeness Trailhead",
+    "elev": 2500,
+    "distMi": 0
+   },
+   {
+    "i": 1,
+    "type": "Junction",
+    "name": "Royal Basin Trail junction",
+    "elev": 2650,
+    "distMi": 1
+   },
+   {
+    "i": 2,
+    "type": "Campsite",
+    "name": "Royal Creek Camp",
+    "elev": 3500,
+    "distMi": 3
+   },
+   {
+    "i": 3,
+    "type": "Campsite",
+    "name": "Royal Lake",
+    "elev": 5100,
+    "distMi": 7.2
+   },
+   {
+    "i": 4,
+    "type": "Junction",
+    "name": "Upper Royal Basin",
+    "elev": 5720,
+    "distMi": 8
+   },
+   {
+    "i": 5,
+    "type": "Junction",
+    "name": "Clark-Johnson col",
+    "elev": 6900,
+    "distMi": null
+   },
+   {
+    "i": 6,
+    "type": "Hazard",
+    "name": "Narrow ledge traverse",
+    "elev": null,
+    "distMi": null
+   },
+   {
+    "i": 7,
+    "type": "Summit",
+    "name": "Mount Johnson",
+    "elev": 7680,
+    "distMi": null
+   }
+  ]
+ },
+ {
+  "id": "wa_mount_la_crosse_scramble",
+  "name": "Mount La Crosse Scramble",
+  "where": "Mount Anderson / Dosewallips-Duckabush > Mount La Crosse",
+  "discipline": "mountaineering",
+  "grade": "Class 2",
+  "why": "no summit waypoint with a distance from the trailhead",
+  "distKmStored": 76.6,
+  "outingShape": null,
+  "gainFt": 7000,
+  "waypoints": [
+   {
+    "i": 0,
+    "type": "Trailhead",
+    "name": "Duckabush Trailhead",
+    "elev": 410,
+    "distMi": 0
+   },
+   {
+    "i": 1,
+    "type": "Campsite",
+    "name": "Five Mile Camp",
+    "elev": 1100,
+    "distMi": 5
+   },
+   {
+    "i": 2,
+    "type": "Campsite",
+    "name": "Ten Mile Camp",
+    "elev": 1400,
+    "distMi": 10.7
+   },
+   {
+    "i": 3,
+    "type": "Junction",
+    "name": "La Crosse Pass Trail Junction",
+    "elev": 2650,
+    "distMi": 16.7
+   },
+   {
+    "i": 4,
+    "type": "Junction",
+    "name": "La Crosse Pass",
+    "elev": 5566,
+    "distMi": 19.6
+   },
+   {
+    "i": 5,
+    "type": "Summit",
+    "name": "Mount La Crosse",
+    "elev": 6417,
+    "distMi": null
+   }
+  ]
+ },
+ {
+  "id": "wa_mount_lago_south_slope_south_face",
+  "name": "South Slope - South Face (Standard Route)",
+  "where": "Pasayten Wilderness > Mount Lago",
+  "discipline": "mountaineering",
+  "grade": "Class 3",
+  "why": "no summit waypoint with a distance from the trailhead",
+  "distKmStored": 25.7,
+  "outingShape": "outback",
+  "gainFt": 2800,
+  "waypoints": [
+   {
+    "i": 0,
+    "type": "Trailhead",
+    "name": "Robinson Creek Trailhead",
+    "elev": 2500,
+    "distMi": null
+   },
+   {
+    "i": 1,
+    "type": "Water",
+    "name": "Fred's Lake",
+    "elev": 6507,
+    "distMi": null
+   },
+   {
+    "i": 2,
+    "type": "Campsite",
+    "name": "The high bench southwest of Shellrock Pass",
+    "elev": 7500,
+    "distMi": null
+   },
+   {
+    "i": 3,
+    "type": "Campsite",
+    "name": "Shellrock Basin camp area",
+    "elev": null,
+    "distMi": null
+   },
+   {
+    "i": 4,
+    "type": "Summit",
+    "name": "Mount Lago Summit",
+    "elev": 8745,
+    "distMi": null
+   }
+  ]
+ },
+ {
+  "id": "wa_mount_lawson_standard",
+  "name": "Standard Scramble",
+  "where": "Central Olympic Mountains > Mount Lawson",
+  "discipline": "mountaineering",
+  "grade": "Class 2",
+  "why": "no summit waypoint with a distance from the trailhead",
+  "distKmStored": 30.58,
+  "outingShape": null,
+  "gainFt": 4700,
+  "waypoints": [
+   {
+    "i": 0,
+    "type": "Trailhead",
+    "name": "North Fork Quinault Trailhead",
+    "elev": 519,
+    "distMi": 0
+   },
+   {
+    "i": 1,
+    "type": "Campsite",
+    "name": "Wolf Bar",
+    "elev": 560,
+    "distMi": 2.5
+   },
+   {
+    "i": 2,
+    "type": "Hazard",
+    "name": "Wild Rose Creek Ford",
+    "elev": 750,
+    "distMi": 4.9
+   },
+   {
+    "i": 3,
+    "type": "Campsite",
+    "name": "Halfway House",
+    "elev": 780,
+    "distMi": 5.1
+   },
+   {
+    "i": 4,
+    "type": "Campsite",
+    "name": "Elip Creek Camp",
+    "elev": 870,
+    "distMi": 6.5
+   },
+   {
+    "i": 5,
+    "type": "Campsite",
+    "name": "Sixteen Mile Camp — the base directly under Mount Lawson",
+    "elev": 2021,
+    "distMi": null
+   },
+   {
+    "i": 6,
+    "type": "Junction",
+    "name": "North Fork Quinault River Ford / Leave Trail",
+    "elev": null,
+    "distMi": null
+   },
+   {
+    "i": 7,
+    "type": "Hazard",
+    "name": "North Ridge Gully",
+    "elev": 4000,
+    "distMi": null
+   },
+   {
+    "i": 8,
+    "type": "Summit",
+    "name": "Mount Lawson",
+    "elev": 5401,
+    "distMi": null
+   }
+  ]
+ },
+ {
+  "id": "wa_mount_lincoln_harniss_chute",
+  "name": "Harniss Chute",
+  "where": "Southern Olympic Mountains (Mount Skokomish Wilderness) > Mount Lincoln",
+  "discipline": "scrambling",
+  "grade": "Class 3",
+  "why": "no trailhead waypoint",
+  "distKmStored": null,
+  "outingShape": null,
+  "gainFt": null,
+  "waypoints": [
+   {
+    "i": 0,
+    "type": "Campsite",
+    "name": "Flapjack Lakes — the base camp for the whole Sawtooth Ridge",
+    "elev": 3900,
+    "distMi": null
+   },
+   {
+    "i": 1,
+    "type": "Summit",
+    "name": "Mount Lincoln Summit",
+    "elev": 5868,
+    "distMi": null
+   }
+  ]
+ },
+ {
+  "id": "wa_mount_logan_r1",
+  "name": "Banded Glacier",
+  "where": "North Cascades Core > Mount Logan",
+  "discipline": "mountaineering",
+  "grade": "Class 4",
+  "why": "no summit pin on the track, after the trailhead; no summit waypoint with a distance from the trailhead",
+  "distKmStored": 16.1,
+  "outingShape": null,
+  "gainFt": 12500,
+  "waypoints": [
+   {
+    "i": 0,
+    "type": "Trailhead",
+    "name": "Easy Pass Trailhead (SR 20, milepost 151)",
+    "elev": 3700,
+    "distMi": 0
+   },
+   {
+    "i": 1,
+    "type": "Campsite",
+    "name": "Lake camp below the Banded Glacier",
+    "elev": 5188,
+    "distMi": null
+   },
+   {
+    "i": 2,
+    "type": "Summit",
+    "name": "Mount Logan summit",
+    "elev": 9087,
+    "distMi": null
+   }
+  ]
+ }
+]

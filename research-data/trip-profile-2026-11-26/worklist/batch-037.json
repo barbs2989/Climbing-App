@@ -1,0 +1,414 @@
+[
+ {
+  "id": "wa_mount_crowder_northeast_ridge",
+  "name": "Northeast Ridge",
+  "where": "Picket Range > Mount Crowder",
+  "discipline": "alpine",
+  "grade": "5.0",
+  "why": "no trailhead waypoint",
+  "distKmStored": null,
+  "outingShape": null,
+  "gainFt": null,
+  "waypoints": [
+   {
+    "i": 0,
+    "type": "Summit",
+    "name": "Mount Crowder Summit",
+    "elev": 7082,
+    "distMi": null
+   }
+  ]
+ },
+ {
+  "id": "wa_mount_crowder_southwest_route",
+  "name": "Southwest Route",
+  "where": "Picket Range > Mount Crowder",
+  "discipline": "mountaineering",
+  "grade": "Class 4",
+  "why": "no summit waypoint with a distance from the trailhead",
+  "distKmStored": null,
+  "outingShape": null,
+  "gainFt": null,
+  "waypoints": [
+   {
+    "i": 0,
+    "type": "Trailhead",
+    "name": "Hannegan Pass Trailhead",
+    "elev": 3100,
+    "distMi": 0
+   },
+   {
+    "i": 1,
+    "type": "Junction",
+    "name": "Hannegan Pass",
+    "elev": 5100,
+    "distMi": 4
+   },
+   {
+    "i": 2,
+    "type": "Hazard",
+    "name": "Chilliwack River ford / Easy Ridge climbers' path",
+    "elev": 2800,
+    "distMi": 7
+   },
+   {
+    "i": 3,
+    "type": "Campsite",
+    "name": "Perfect Pass",
+    "elev": 6278,
+    "distMi": null
+   },
+   {
+    "i": 4,
+    "type": "Junction",
+    "name": "Col between Phantom Peak and Crowder",
+    "elev": null,
+    "distMi": null
+   },
+   {
+    "i": 5,
+    "type": "Hazard",
+    "name": "NE Ridge chasm (avoid)",
+    "elev": null,
+    "distMi": null
+   },
+   {
+    "i": 6,
+    "type": "Summit",
+    "name": "Mount Crowder",
+    "elev": 7082,
+    "distMi": null
+   }
+  ]
+ },
+ {
+  "id": "wa_mount_cruiser_nw_face_corner",
+  "name": "Northwest Face/Corner",
+  "where": "Southern Olympic Mountains (Mount Skokomish Wilderness) > Mount Cruiser",
+  "discipline": "alpine",
+  "grade": "5.7",
+  "why": "no summit waypoint with a distance from the trailhead",
+  "distKmStored": 12.4,
+  "outingShape": null,
+  "gainFt": 5250,
+  "waypoints": [
+   {
+    "i": 0,
+    "type": "Trailhead",
+    "name": "Staircase Ranger Station",
+    "elev": 900,
+    "distMi": 0
+   },
+   {
+    "i": 1,
+    "type": "Campsite",
+    "name": "Flapjack Lakes — the base camp for the whole Sawtooth Ridge",
+    "elev": 3900,
+    "distMi": null
+   },
+   {
+    "i": 2,
+    "type": "Junction",
+    "name": "Needle Pass",
+    "elev": null,
+    "distMi": null
+   },
+   {
+    "i": 3,
+    "type": "Summit",
+    "name": "Mount Cruiser",
+    "elev": 6104,
+    "distMi": null
+   }
+  ]
+ },
+ {
+  "id": "wa_mount_custer_standard",
+  "name": "Standard Route / South Side",
+  "where": "Chilliwack Range > Mount Custer",
+  "discipline": "mountaineering",
+  "grade": "Class 3",
+  "why": "no summit waypoint with a distance from the trailhead",
+  "distKmStored": 31.4,
+  "outingShape": null,
+  "gainFt": 6480,
+  "waypoints": [
+   {
+    "i": 0,
+    "type": "Trailhead",
+    "name": "Depot Creek Road turnout, Chilliwack Lake Road",
+    "elev": 2041,
+    "distMi": 0
+   },
+   {
+    "i": 1,
+    "type": "Junction",
+    "name": "Depot Creek Road washout",
+    "elev": 2600,
+    "distMi": 1.7
+   },
+   {
+    "i": 2,
+    "type": "Junction",
+    "name": "US/Canada border marker",
+    "elev": 2752,
+    "distMi": 3.3
+   },
+   {
+    "i": 3,
+    "type": "Hazard",
+    "name": "Depot Creek Falls handline crossing",
+    "elev": 3801,
+    "distMi": null
+   },
+   {
+    "i": 4,
+    "type": "Campsite",
+    "name": "Ouzel Lake camp",
+    "elev": 5659,
+    "distMi": null
+   },
+   {
+    "i": 5,
+    "type": "Junction",
+    "name": "Redoubt Glacier access / flying-buttress col",
+    "elev": 7800,
+    "distMi": null
+   },
+   {
+    "i": 6,
+    "type": "Hazard",
+    "name": "Crux gully below Custer-Spickard col",
+    "elev": 8300,
+    "distMi": null
+   },
+   {
+    "i": 7,
+    "type": "Summit",
+    "name": "Mount Custer summit",
+    "elev": 8630,
+    "distMi": null
+   }
+  ]
+ },
+ {
+  "id": "wa_mount_dana_scramble",
+  "name": "Mount Dana Scramble",
+  "where": "Central Olympic Mountains > Mount Dana",
+  "discipline": "scrambling",
+  "grade": "Class 3",
+  "why": "no summit waypoint with a distance from the trailhead",
+  "distKmStored": 56.33,
+  "outingShape": null,
+  "gainFt": 5414,
+  "waypoints": [
+   {
+    "i": 0,
+    "type": "Trailhead",
+    "name": "Whiskey Bend Trailhead",
+    "elev": 1250,
+    "distMi": 0
+   },
+   {
+    "i": 1,
+    "type": "Junction",
+    "name": "Lillian River Trail junction",
+    "elev": 1612,
+    "distMi": 4.2
+   },
+   {
+    "i": 2,
+    "type": "Campsite",
+    "name": "Mary's Falls Camp",
+    "elev": 1296,
+    "distMi": 8.8
+   },
+   {
+    "i": 3,
+    "type": "Water",
+    "name": "Lillian River crossing",
+    "elev": 1301,
+    "distMi": null
+   },
+   {
+    "i": 4,
+    "type": "Water",
+    "name": "Chicago Camp (Elwha ford)",
+    "elev": 1900,
+    "distMi": 25.3
+   },
+   {
+    "i": 5,
+    "type": "Campsite",
+    "name": "Chicago Camp — the last established camp in the upper Elwha",
+    "elev": 2195,
+    "distMi": null
+   },
+   {
+    "i": 6,
+    "type": "Summit",
+    "name": "Mount Dana",
+    "elev": 6214,
+    "distMi": null
+   }
+  ]
+ },
+ {
+  "id": "wa_mount_daniel_lynch_glacier",
+  "name": "Lynch Glacier",
+  "where": "Western Alpine Lakes > Mount Daniel",
+  "discipline": "mountaineering",
+  "grade": "Class 3",
+  "why": "no summit waypoint with a distance from the trailhead",
+  "distKmStored": null,
+  "outingShape": null,
+  "gainFt": 5000,
+  "waypoints": [
+   {
+    "i": 0,
+    "type": "Trailhead",
+    "name": "Tucquala Meadows Trailhead",
+    "elev": 3370,
+    "distMi": 0
+   },
+   {
+    "i": 1,
+    "type": "Campsite",
+    "name": "Peggy's Pond, below Cathedral Rock",
+    "elev": 5560,
+    "distMi": null
+   },
+   {
+    "i": 2,
+    "type": "Summit",
+    "name": "Mount Daniel summit",
+    "elev": 7960,
+    "distMi": null
+   }
+  ]
+ },
+ {
+  "id": "wa_mount_deception_standard",
+  "name": "Standard Scramble (Royal Basin)",
+  "where": "North-Central Olympic Mountains (Deception–Gray Wolf) > Mount Deception",
+  "discipline": "mountaineering",
+  "grade": "Class 2",
+  "why": "no summit pin on the track, after the trailhead; no summit waypoint with a distance from the trailhead",
+  "distKmStored": 16.1,
+  "outingShape": null,
+  "gainFt": 5500,
+  "waypoints": [
+   {
+    "i": 0,
+    "type": "Trailhead",
+    "name": "Upper Dungeness Trailhead",
+    "elev": 2477,
+    "distMi": 0
+   },
+   {
+    "i": 1,
+    "type": "Campsite",
+    "name": "Royal Creek",
+    "elev": 3830,
+    "distMi": 3.7
+   },
+   {
+    "i": 2,
+    "type": "Campsite",
+    "name": "Lower Royal Meadow",
+    "elev": 4695,
+    "distMi": 5.9
+   },
+   {
+    "i": 3,
+    "type": "Campsite",
+    "name": "Royal Lake",
+    "elev": 5091,
+    "distMi": 7.2
+   },
+   {
+    "i": 4,
+    "type": "Campsite",
+    "name": "Upper Royal Basin",
+    "elev": 5727,
+    "distMi": 8
+   },
+   {
+    "i": 5,
+    "type": "Summit",
+    "name": "Mount Deception",
+    "elev": 7788,
+    "distMi": null
+   }
+  ]
+ },
+ {
+  "id": "wa_mount_despair_east_route",
+  "name": "East Route / Standard",
+  "where": "Picket Range > Mount Despair",
+  "discipline": "alpine",
+  "grade": "5.0",
+  "why": "no summit waypoint with a distance from the trailhead",
+  "distKmStored": 38.62,
+  "outingShape": null,
+  "gainFt": 12000,
+  "waypoints": [
+   {
+    "i": 0,
+    "type": "Trailhead",
+    "name": "Thornton Lakes Trailhead",
+    "elev": 2500,
+    "distMi": 0
+   },
+   {
+    "i": 1,
+    "type": "Water",
+    "name": "Thornton Creek hanging meadow",
+    "elev": 3800,
+    "distMi": null
+   },
+   {
+    "i": 2,
+    "type": "Junction",
+    "name": "Thornton Ridge",
+    "elev": 5300,
+    "distMi": null
+   },
+   {
+    "i": 3,
+    "type": "Campsite",
+    "name": "Thornton Pass (camp knob)",
+    "elev": 6050,
+    "distMi": null
+   },
+   {
+    "i": 4,
+    "type": "Junction",
+    "name": "Triumph Pass",
+    "elev": 5520,
+    "distMi": null
+   },
+   {
+    "i": 5,
+    "type": "Hazard",
+    "name": "Lake Regret",
+    "elev": 4788,
+    "distMi": null
+   },
+   {
+    "i": 6,
+    "type": "Campsite",
+    "name": "Upper Despair Lake",
+    "elev": 5100,
+    "distMi": null
+   },
+   {
+    "i": 7,
+    "type": "Summit",
+    "name": "Mount Despair summit",
+    "elev": 7296,
+    "distMi": null
+   }
+  ]
+ }
+]

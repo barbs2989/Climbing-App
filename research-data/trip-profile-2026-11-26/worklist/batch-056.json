@@ -1,0 +1,295 @@
+[
+ {
+  "id": "wa_the_tipping_point",
+  "name": "The Tipping Point",
+  "where": "Stuart-Enchantments > Colchuck Balanced Rock",
+  "discipline": "alpine",
+  "grade": "5.12",
+  "why": "no summit waypoint with a distance from the trailhead",
+  "distKmStored": 8,
+  "outingShape": null,
+  "gainFt": 4760,
+  "waypoints": [
+   {
+    "i": 0,
+    "type": "Trailhead",
+    "name": "Stuart Lake Trailhead (end of FR 7601)",
+    "elev": 3400,
+    "distMi": 0
+   },
+   {
+    "i": 1,
+    "type": "Junction",
+    "name": "Colchuck Lake (outlet / north dam crossing)",
+    "elev": 5561,
+    "distMi": 4
+   },
+   {
+    "i": 2,
+    "type": "Summit",
+    "name": "Colchuck Balanced Rock summit block",
+    "elev": 8240,
+    "distMi": null
+   }
+  ]
+ },
+ {
+  "id": "wa_the_west_face",
+  "name": "The West Face",
+  "where": "Liberty Bell Group > North Early Winters Spire",
+  "discipline": "alpine",
+  "grade": "5.11a",
+  "why": "no summit waypoint with a distance from the trailhead",
+  "distKmStored": null,
+  "outingShape": null,
+  "gainFt": 2372,
+  "waypoints": [
+   {
+    "i": 0,
+    "type": "Trailhead",
+    "name": "Blue Lake TH",
+    "elev": 5400,
+    "distMi": 0
+   },
+   {
+    "i": 1,
+    "type": "Junction",
+    "name": "Base of West Face",
+    "elev": 6900,
+    "distMi": null
+   },
+   {
+    "i": 2,
+    "type": "Summit",
+    "name": "North Early Winters Spire",
+    "elev": 7760,
+    "distMi": null
+   }
+  ]
+ },
+ {
+  "id": "wa_three_fingers_r2",
+  "name": "Middle Peak (South Face)",
+  "where": "Darrington and Mountain Loop Hwy > Three Fingers",
+  "discipline": "mountaineering",
+  "grade": "Class 4",
+  "why": "no summit waypoint with a distance from the trailhead",
+  "distKmStored": null,
+  "outingShape": null,
+  "gainFt": 6500,
+  "waypoints": [
+   {
+    "i": 0,
+    "type": "Trailhead",
+    "name": "Three Fingers / Goat Flats Trailhead (Tin Can Gap approach)",
+    "elev": 3030,
+    "distMi": 0
+   },
+   {
+    "i": 1,
+    "type": "Water",
+    "name": "Saddle Lake",
+    "elev": 3785,
+    "distMi": null
+   },
+   {
+    "i": 2,
+    "type": "Campsite",
+    "name": "Goat Flats",
+    "elev": 5200,
+    "distMi": null
+   },
+   {
+    "i": 3,
+    "type": "Campsite",
+    "name": "Tin Can Gap high camp",
+    "elev": 5600,
+    "distMi": null
+   },
+   {
+    "i": 4,
+    "type": "Summit",
+    "name": "Three Fingers - Middle Peak summit",
+    "elev": 6797,
+    "distMi": null
+   }
+  ]
+ },
+ {
+  "id": "wa_three_queens_middle_peak",
+  "name": "Middle Peak via South Face - South Chimney",
+  "where": "Western Alpine Lakes > Three Queens",
+  "discipline": "mountaineering",
+  "grade": "Class 4",
+  "why": "no summit waypoint with a distance from the trailhead",
+  "distKmStored": 4.3,
+  "outingShape": null,
+  "gainFt": 4600,
+  "waypoints": [
+   {
+    "i": 0,
+    "type": "Trailhead",
+    "name": "Mineral Creek Trailhead",
+    "elev": null,
+    "distMi": null
+   },
+   {
+    "i": 1,
+    "type": "Campsite",
+    "name": "Park Lakes Basin",
+    "elev": 4880,
+    "distMi": null
+   }
+  ]
+ },
+ {
+  "id": "wa_three_queens_west_peak",
+  "name": "West Peak via West Ridge - West Face",
+  "where": "Western Alpine Lakes > Three Queens",
+  "discipline": "alpine",
+  "grade": "5.7",
+  "why": "no trailhead waypoint",
+  "distKmStored": 12.8,
+  "outingShape": null,
+  "gainFt": 5300,
+  "waypoints": [
+   {
+    "i": 0,
+    "type": "landmark",
+    "name": "Spectacle Lake",
+    "elev": 4265,
+    "distMi": null
+   },
+   {
+    "i": 1,
+    "type": "Campsite",
+    "name": "Park Lakes Basin",
+    "elev": 4880,
+    "distMi": null
+   }
+  ]
+ },
+ {
+  "id": "wa_thunder_mountain_north_face",
+  "name": "Thunder Mountain North Face",
+  "where": "Skykomish Valley > Thunder Mountain and Slippery Slab Tower",
+  "discipline": "alpine",
+  "grade": "5.0",
+  "why": "no trailhead waypoint",
+  "distKmStored": null,
+  "outingShape": null,
+  "gainFt": null,
+  "waypoints": [
+   {
+    "i": 0,
+    "type": "Campsite",
+    "name": "Trap Lake",
+    "elev": 5143,
+    "distMi": null
+   }
+  ]
+ },
+ {
+  "id": "wa_tooth_chair_traverse",
+  "name": "Tooth - Chair Traverse",
+  "where": "The Tooth > Summer-Fall (rock)",
+  "discipline": "alpine",
+  "grade": "5.4",
+  "why": "no summit waypoint with a distance from the trailhead",
+  "distKmStored": 4.8,
+  "outingShape": "outback",
+  "gainFt": null,
+  "waypoints": [
+   {
+    "i": 0,
+    "type": "Trailhead",
+    "name": "Alpental / Snow Lake Trailhead",
+    "elev": 3100,
+    "distMi": 0
+   },
+   {
+    "i": 1,
+    "type": "Campsite",
+    "name": "Source Lake basin, Alpental valley",
+    "elev": 3780,
+    "distMi": null
+   },
+   {
+    "i": 2,
+    "type": "Summit",
+    "name": "The Tooth summit (traverse start point)",
+    "elev": 5606,
+    "distMi": null
+   },
+   {
+    "i": 3,
+    "type": "Hazard",
+    "name": "Bryant Peak (rappel)",
+    "elev": 5801,
+    "distMi": null
+   },
+   {
+    "i": 4,
+    "type": "Summit",
+    "name": "Chair Peak",
+    "elev": 6238,
+    "distMi": null
+   }
+  ]
+ },
+ {
+  "id": "wa_trapper_mountain_north_couloir",
+  "name": "North Couloir",
+  "where": "North Cascades Core > Trapper Mountain",
+  "discipline": "mountaineering",
+  "grade": "Class 3",
+  "why": "no summit waypoint with a distance from the trailhead",
+  "distKmStored": null,
+  "outingShape": null,
+  "gainFt": null,
+  "waypoints": [
+   {
+    "i": 0,
+    "type": "Trailhead",
+    "name": "Cascade Pass Trailhead (Cascade River Road)",
+    "elev": null,
+    "distMi": null
+   },
+   {
+    "i": 1,
+    "type": "Junction",
+    "name": "Cascade Pass",
+    "elev": 5392,
+    "distMi": 3.7
+   },
+   {
+    "i": 2,
+    "type": "Water",
+    "name": "Trapper Lake",
+    "elev": 4170,
+    "distMi": null
+   },
+   {
+    "i": 3,
+    "type": "Campsite",
+    "name": "Trapper Lake",
+    "elev": 4170,
+    "distMi": null
+   },
+   {
+    "i": 4,
+    "type": "Campsite",
+    "name": "Pelton Basin Camp",
+    "elev": 4770,
+    "distMi": null
+   },
+   {
+    "i": 5,
+    "type": "Topout",
+    "name": "Top of the North Couloir",
+    "elev": null,
+    "distMi": null
+   }
+  ]
+ }
+]

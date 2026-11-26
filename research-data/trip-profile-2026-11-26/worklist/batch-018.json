@@ -1,0 +1,337 @@
+[
+ {
+  "id": "wa_booker_mountain_northwest_route",
+  "name": "Northwest Route",
+  "where": "North Cascades Core > Booker Mountain",
+  "discipline": "scrambling",
+  "grade": "Class 3",
+  "why": "no trailhead waypoint",
+  "distKmStored": null,
+  "outingShape": null,
+  "gainFt": null,
+  "waypoints": [
+   {
+    "i": 0,
+    "type": "Campsite",
+    "name": "Neve Camp",
+    "elev": 1350,
+    "distMi": null
+   },
+   {
+    "i": 1,
+    "type": "Campsite",
+    "name": "Skagit Queen Camp",
+    "elev": 3093,
+    "distMi": null
+   },
+   {
+    "i": 2,
+    "type": "Campsite",
+    "name": "Junction Camp",
+    "elev": 3200,
+    "distMi": null
+   },
+   {
+    "i": 3,
+    "type": "Campsite",
+    "name": "Five Mile Camp, Park Creek trail",
+    "elev": 3921,
+    "distMi": null
+   },
+   {
+    "i": 4,
+    "type": "Campsite",
+    "name": "Thunder Basin Hiker Camp",
+    "elev": 5108,
+    "distMi": null
+   },
+   {
+    "i": 5,
+    "type": "Summit",
+    "name": "Booker Mountain summit",
+    "elev": 8284,
+    "distMi": null
+   }
+  ]
+ },
+ {
+  "id": "wa_borrowed_time",
+  "name": "Borrowed Time",
+  "where": "Henry M. Jackson Wilderness > Sloan Peak",
+  "discipline": "ice",
+  "grade": "WI5",
+  "why": "no summit waypoint with a distance from the trailhead",
+  "distKmStored": null,
+  "outingShape": null,
+  "gainFt": null,
+  "waypoints": [
+   {
+    "i": 0,
+    "type": "Trailhead",
+    "name": "Bedal Creek Trailhead",
+    "elev": 2800,
+    "distMi": 0
+   },
+   {
+    "i": 1,
+    "type": "Summit",
+    "name": "Sloan Peak summit",
+    "elev": 7835,
+    "distMi": null
+   }
+  ]
+ },
+ {
+  "id": "wa_boston_peak_southeast_face",
+  "name": "Southeast Face",
+  "where": "Boston Basin > Boston Peak",
+  "discipline": "mountaineering",
+  "grade": "Class 4",
+  "why": "no summit waypoint with a distance from the trailhead",
+  "distKmStored": 4,
+  "outingShape": "outback",
+  "gainFt": 5600,
+  "waypoints": [
+   {
+    "i": 0,
+    "type": "Trailhead",
+    "name": "Boston Basin Trailhead",
+    "elev": 3200,
+    "distMi": null
+   },
+   {
+    "i": 1,
+    "type": "Campsite",
+    "name": "Boston Basin low camp",
+    "elev": 5299,
+    "distMi": null
+   },
+   {
+    "i": 2,
+    "type": "Campsite",
+    "name": "Boston Basin",
+    "elev": 5395,
+    "distMi": 3
+   },
+   {
+    "i": 3,
+    "type": "Campsite",
+    "name": "Boston Basin high camp",
+    "elev": 6401,
+    "distMi": null
+   },
+   {
+    "i": 4,
+    "type": "col",
+    "name": "Sahale-Boston col",
+    "elev": 8200,
+    "distMi": 4.2
+   },
+   {
+    "i": 5,
+    "type": "Summit",
+    "name": "Boston Peak summit",
+    "elev": 8894,
+    "distMi": null
+   }
+  ]
+ },
+ {
+  "id": "wa_buckner_mountain_north_face",
+  "name": "North Face",
+  "where": "Boston Basin > Buckner Mountain",
+  "discipline": "alpine",
+  "grade": "AI2",
+  "why": "no trailhead pin on the track; no summit waypoint with a distance from the trailhead",
+  "distKmStored": 29.93,
+  "outingShape": null,
+  "gainFt": 7000,
+  "waypoints": [
+   {
+    "i": 0,
+    "type": "Trailhead",
+    "name": "Boston Basin Trailhead",
+    "elev": 3210,
+    "distMi": 0
+   },
+   {
+    "i": 1,
+    "type": "Junction",
+    "name": "Cascade Pass",
+    "elev": 5392,
+    "distMi": null
+   },
+   {
+    "i": 2,
+    "type": "Campsite",
+    "name": "Sahale Glacier Camp",
+    "elev": 7686,
+    "distMi": null
+   },
+   {
+    "i": 3,
+    "type": "Junction",
+    "name": "Sahale-Boston col",
+    "elev": 8200,
+    "distMi": null
+   },
+   {
+    "i": 4,
+    "type": "Summit",
+    "name": "Buckner Mountain (southwest summit)",
+    "elev": 9114,
+    "distMi": null
+   }
+  ]
+ },
+ {
+  "id": "wa_bulls_tooth_standard",
+  "name": "Standard Scramble",
+  "where": "Chiwaukum Range > Bulls Tooth",
+  "discipline": "scrambling",
+  "grade": "Class 3",
+  "why": "no summit waypoint with a distance from the trailhead",
+  "distKmStored": 44,
+  "outingShape": null,
+  "gainFt": 7800,
+  "waypoints": [
+   {
+    "i": 0,
+    "type": "Trailhead",
+    "name": "PCT Trailhead at Stevens Pass (Hwy 2)",
+    "elev": 4061,
+    "distMi": null
+   },
+   {
+    "i": 1,
+    "type": "Waypoint",
+    "name": "Josephine Lake",
+    "elev": 4685,
+    "distMi": null
+   },
+   {
+    "i": 2,
+    "type": "Campsite",
+    "name": "Chain Lakes",
+    "elev": 5676,
+    "distMi": null
+   },
+   {
+    "i": 3,
+    "type": "Summit",
+    "name": "Bulls Tooth Summit",
+    "elev": 6840,
+    "distMi": null
+   }
+  ]
+ },
+ {
+  "id": "wa_burnt_boot_peak_north_ridge",
+  "name": "North Ridge",
+  "where": "Western Alpine Lakes > Burnt Boot Peak",
+  "discipline": "alpine",
+  "grade": "5.0",
+  "why": "no summit waypoint with a distance from the trailhead",
+  "distKmStored": null,
+  "outingShape": null,
+  "gainFt": null,
+  "waypoints": [
+   {
+    "i": 0,
+    "type": "Trailhead",
+    "name": "Dutch Miller Gap Trailhead (Dingford Creek gate)",
+    "elev": 1433,
+    "distMi": null
+   },
+   {
+    "i": 1,
+    "type": "Campsite",
+    "name": "Hardscrabble Horse Camp, Middle Fork Snoqualmie",
+    "elev": 2828,
+    "distMi": null
+   },
+   {
+    "i": 2,
+    "type": "Water",
+    "name": "Hardscrabble Creek crossing",
+    "elev": 2867,
+    "distMi": null
+   },
+   {
+    "i": 3,
+    "type": "Summit",
+    "name": "Burnt Boot Peak",
+    "elev": 6540,
+    "distMi": null
+   }
+  ]
+ },
+ {
+  "id": "wa_cannon_mountain_northwest_ridge",
+  "name": "Northwest Ridge",
+  "where": "Stuart-Enchantments > Cannon Mountain",
+  "discipline": "scrambling",
+  "grade": "Class 3",
+  "why": "no summit waypoint with a distance from the trailhead",
+  "distKmStored": null,
+  "outingShape": null,
+  "gainFt": null,
+  "waypoints": [
+   {
+    "i": 0,
+    "type": "Trailhead",
+    "name": "Stuart Lake Trailhead",
+    "elev": 3404,
+    "distMi": null
+   },
+   {
+    "i": 1,
+    "type": "Summit",
+    "name": "Cannon Mountain summit",
+    "elev": 8638,
+    "distMi": null
+   }
+  ]
+ },
+ {
+  "id": "wa_cannon_mountain_south_slopes",
+  "name": "South Slopes",
+  "where": "Stuart-Enchantments > Cannon Mountain",
+  "discipline": "scrambling",
+  "grade": "Class 3",
+  "why": "no summit waypoint with a distance from the trailhead",
+  "distKmStored": 22.1,
+  "outingShape": null,
+  "gainFt": 8600,
+  "waypoints": [
+   {
+    "i": 0,
+    "type": "Trailhead",
+    "name": "Snow Lakes Trailhead",
+    "elev": 1300,
+    "distMi": null
+   },
+   {
+    "i": 1,
+    "type": "Water",
+    "name": "Perfection Lake",
+    "elev": 7100,
+    "distMi": null
+   },
+   {
+    "i": 2,
+    "type": "Junction",
+    "name": "Prusik Pass",
+    "elev": 7497,
+    "distMi": null
+   },
+   {
+    "i": 3,
+    "type": "Summit",
+    "name": "Cannon Mountain summit",
+    "elev": 8638,
+    "distMi": null
+   }
+  ]
+ }
+]

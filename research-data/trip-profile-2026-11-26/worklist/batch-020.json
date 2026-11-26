@@ -1,0 +1,323 @@
+[
+ {
+  "id": "wa_castle_peak_tatoosh_southeast_face",
+  "name": "Southeast Face (Standard Route)",
+  "where": "Tatoosh Range > The Castle",
+  "discipline": "alpine",
+  "grade": "5.0",
+  "why": "no summit pin on the track, after the trailhead; no summit waypoint with a distance from the trailhead",
+  "distKmStored": 3.2,
+  "outingShape": null,
+  "gainFt": 1600,
+  "waypoints": [
+   {
+    "i": 0,
+    "type": "Campsite",
+    "name": "Snow Lake Camp",
+    "elev": 4685,
+    "distMi": null
+   },
+   {
+    "i": 1,
+    "type": "Trailhead",
+    "name": "Pinnacle Peak Trailhead (Reflection Lakes, Stevens Canyon Road)",
+    "elev": 4950,
+    "distMi": null
+   },
+   {
+    "i": 2,
+    "type": "Summit",
+    "name": "The Castle summit (true/northernmost ridge)",
+    "elev": 6440,
+    "distMi": null
+   }
+  ]
+ },
+ {
+  "id": "wa_cathedral_peak_last_rites",
+  "name": "Last Rites",
+  "where": "Pasayten Wilderness > Cathedral Peak",
+  "discipline": "alpine",
+  "grade": "5.11+",
+  "why": "no trailhead waypoint",
+  "distKmStored": 27.4,
+  "outingShape": null,
+  "gainFt": 6000,
+  "waypoints": [
+   {
+    "i": 0,
+    "type": "Summit",
+    "name": "Cathedral Peak Summit",
+    "elev": 8606,
+    "distMi": null
+   }
+  ]
+ },
+ {
+  "id": "wa_cathedral_peak_pasayten_se_buttress",
+  "name": "Southeast Buttress",
+  "where": "Pasayten Wilderness > Cathedral Peak",
+  "discipline": "alpine",
+  "grade": "5.10a",
+  "why": "no trailhead pin on the track; no summit waypoint with a distance from the trailhead",
+  "distKmStored": 29,
+  "outingShape": null,
+  "gainFt": 4700,
+  "waypoints": [
+   {
+    "i": 0,
+    "type": "Trailhead",
+    "name": "Andrews Creek Trailhead",
+    "elev": 3050,
+    "distMi": 0
+   },
+   {
+    "i": 1,
+    "type": "Water",
+    "name": "Andrews Creek (burn-zone crossings)",
+    "elev": 4200,
+    "distMi": 4
+   },
+   {
+    "i": 2,
+    "type": "Junction",
+    "name": "Peepsight Trail junction",
+    "elev": 6200,
+    "distMi": 5.5
+   },
+   {
+    "i": 3,
+    "type": "Junction",
+    "name": "Andrews Pass",
+    "elev": 6700,
+    "distMi": 12
+   },
+   {
+    "i": 4,
+    "type": "Campsite",
+    "name": "Upper Cathedral Lake camp",
+    "elev": 7400,
+    "distMi": 18
+   },
+   {
+    "i": 5,
+    "type": "Junction",
+    "name": "Cathedral Pass",
+    "elev": 7600,
+    "distMi": null
+   },
+   {
+    "i": 6,
+    "type": "Hazard",
+    "name": "Cathedral–Monk gully approach",
+    "elev": 7750,
+    "distMi": null
+   },
+   {
+    "i": 7,
+    "type": "Summit",
+    "name": "Cathedral Peak summit",
+    "elev": 8606,
+    "distMi": null
+   }
+  ]
+ },
+ {
+  "id": "wa_cathedral_peak_southwest_route",
+  "name": "Southwest Route",
+  "where": "Pasayten Wilderness > Cathedral Peak",
+  "discipline": "scrambling",
+  "grade": "Class 4",
+  "why": "no summit waypoint with a distance from the trailhead",
+  "distKmStored": 27.4,
+  "outingShape": null,
+  "gainFt": 6000,
+  "waypoints": [
+   {
+    "i": 0,
+    "type": "Trailhead",
+    "name": "Andrews Creek Trailhead (Trail #504, end of pavement on FS 51)",
+    "elev": 3050,
+    "distMi": 0
+   },
+   {
+    "i": 1,
+    "type": "Summit",
+    "name": "Cathedral Peak summit",
+    "elev": 8606,
+    "distMi": null
+   }
+  ]
+ },
+ {
+  "id": "wa_cathedral_rock_northeast_buttress",
+  "name": "Northeast Buttress",
+  "where": "Western Alpine Lakes > Cathedral Rock",
+  "discipline": "alpine",
+  "grade": "5.7",
+  "why": "no summit waypoint with a distance from the trailhead",
+  "distKmStored": 6.4,
+  "outingShape": null,
+  "gainFt": 3400,
+  "waypoints": [
+   {
+    "i": 0,
+    "type": "Trailhead",
+    "name": "Cathedral Rock Trailhead (Trail #1345)",
+    "elev": 3350,
+    "distMi": 0
+   },
+   {
+    "i": 1,
+    "type": "Water",
+    "name": "Nosh Nosh Wahtum (formerly Squaw Lake) — water and campsites",
+    "elev": 4850,
+    "distMi": 2.5
+   },
+   {
+    "i": 2,
+    "type": "Junction",
+    "name": "Cathedral Pass / Pacific Crest Trail junction — leave the trail here for the meadow and gear cache",
+    "elev": 5591,
+    "distMi": 4
+   },
+   {
+    "i": 3,
+    "type": "Summit",
+    "name": "Cathedral Rock summit",
+    "elev": 6724,
+    "distMi": null
+   }
+  ]
+ },
+ {
+  "id": "wa_cathedral_rock_northeast_ridge_2003_variation",
+  "name": "Northeast Ridge (2003 Variation)",
+  "where": "Western Alpine Lakes > Cathedral Rock",
+  "discipline": "alpine",
+  "grade": "5.9",
+  "why": "no summit waypoint with a distance from the trailhead",
+  "distKmStored": 6.4,
+  "outingShape": null,
+  "gainFt": 3400,
+  "waypoints": [
+   {
+    "i": 0,
+    "type": "Trailhead",
+    "name": "Cathedral Rock Trailhead (Trail #1345)",
+    "elev": 3350,
+    "distMi": 0
+   },
+   {
+    "i": 1,
+    "type": "Water",
+    "name": "Nosh Nosh Wahtum (formerly Squaw Lake) — water and campsites",
+    "elev": 4850,
+    "distMi": 2.5
+   },
+   {
+    "i": 2,
+    "type": "Junction",
+    "name": "Cathedral Pass / Pacific Crest Trail junction — leave the trail here for the northeast side",
+    "elev": 5591,
+    "distMi": 4
+   },
+   {
+    "i": 3,
+    "type": "Summit",
+    "name": "Cathedral Rock summit",
+    "elev": 6724,
+    "distMi": null
+   }
+  ]
+ },
+ {
+  "id": "wa_cathedral_rock_northwest_couloir",
+  "name": "Northwest Couloir",
+  "where": "Western Alpine Lakes > Cathedral Rock",
+  "discipline": "scrambling",
+  "grade": "Class 3",
+  "why": "no summit waypoint with a distance from the trailhead",
+  "distKmStored": 7.2,
+  "outingShape": null,
+  "gainFt": 3400,
+  "waypoints": [
+   {
+    "i": 0,
+    "type": "Trailhead",
+    "name": "Cathedral Rock Trailhead (Trail #1345)",
+    "elev": 3350,
+    "distMi": 0
+   },
+   {
+    "i": 1,
+    "type": "Water",
+    "name": "Nosh Nosh Wahtum (formerly Squaw Lake) — water and campsites",
+    "elev": 4850,
+    "distMi": 2.5
+   },
+   {
+    "i": 2,
+    "type": "Junction",
+    "name": "Cathedral Pass / Pacific Crest Trail junction",
+    "elev": 5591,
+    "distMi": 4
+   },
+   {
+    "i": 3,
+    "type": "Campsite",
+    "name": "Peggy's Pond — standard base camp and water source",
+    "elev": 5600,
+    "distMi": 5
+   },
+   {
+    "i": 4,
+    "type": "Summit",
+    "name": "Cathedral Rock summit",
+    "elev": 6724,
+    "distMi": null
+   }
+  ]
+ },
+ {
+  "id": "wa_cathedral_rock_southeast_face_chimney",
+  "name": "Southeast Face Chimney",
+  "where": "Western Alpine Lakes > Cathedral Rock",
+  "discipline": "alpine",
+  "grade": "5.6",
+  "why": "no summit waypoint with a distance from the trailhead",
+  "distKmStored": 6.4,
+  "outingShape": null,
+  "gainFt": 3400,
+  "waypoints": [
+   {
+    "i": 0,
+    "type": "Trailhead",
+    "name": "Cathedral Rock Trailhead (Trail #1345)",
+    "elev": 3350,
+    "distMi": 0
+   },
+   {
+    "i": 1,
+    "type": "Water",
+    "name": "Nosh Nosh Wahtum (formerly Squaw Lake)",
+    "elev": 4850,
+    "distMi": 2.5
+   },
+   {
+    "i": 2,
+    "type": "Junction",
+    "name": "Cathedral Pass / Pacific Crest Trail junction",
+    "elev": 5550,
+    "distMi": 4
+   },
+   {
+    "i": 3,
+    "type": "Summit",
+    "name": "Cathedral Rock summit",
+    "elev": 6724,
+    "distMi": null
+   }
+  ]
+ }
+]

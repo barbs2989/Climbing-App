@@ -1,0 +1,323 @@
+[
+ {
+  "id": "wa_amphitheater_mountain_north_ridge",
+  "name": "North Ridge",
+  "where": "Pasayten Wilderness > Amphitheater Mountain",
+  "discipline": "alpine",
+  "grade": "5.5",
+  "why": "no summit waypoint with a distance from the trailhead",
+  "distKmStored": 27.4,
+  "outingShape": "outback",
+  "gainFt": 4800,
+  "waypoints": [
+   {
+    "i": 0,
+    "type": "Trailhead",
+    "name": "Andrews Creek Trailhead",
+    "elev": 3050,
+    "distMi": 0
+   },
+   {
+    "i": 1,
+    "type": "Junction",
+    "name": "Cathedral Pass (foot of the North Ridge)",
+    "elev": 7573,
+    "distMi": null
+   },
+   {
+    "i": 2,
+    "type": "Summit",
+    "name": "Amphitheater Mountain summit",
+    "elev": 8358,
+    "distMi": null
+   }
+  ]
+ },
+ {
+  "id": "wa_amphitheater_mountain_pilgrimage_to_mecca",
+  "name": "Pilgrimage to Mecca",
+  "where": "Pasayten Wilderness > Amphitheater Mountain",
+  "discipline": "alpine",
+  "grade": "5.9",
+  "why": "no summit waypoint with a distance from the trailhead",
+  "distKmStored": 27.4,
+  "outingShape": "outback",
+  "gainFt": 4800,
+  "waypoints": [
+   {
+    "i": 0,
+    "type": "Trailhead",
+    "name": "Andrews Creek Trailhead",
+    "elev": 3050,
+    "distMi": 0
+   },
+   {
+    "i": 1,
+    "type": "Climbing area",
+    "name": "Ka'aba Buttress / Amphitheatre Mountain routes area",
+    "elev": null,
+    "distMi": null
+   },
+   {
+    "i": 2,
+    "type": "Summit",
+    "name": "Amphitheater Mountain summit",
+    "elev": 8358,
+    "distMi": null
+   }
+  ]
+ },
+ {
+  "id": "wa_amphitheater_mountain_west_route",
+  "name": "West Route",
+  "where": "Pasayten Wilderness > Amphitheater Mountain",
+  "discipline": "mountaineering",
+  "grade": "Class 3",
+  "why": "no summit waypoint with a distance from the trailhead",
+  "distKmStored": 29,
+  "outingShape": null,
+  "gainFt": 3000,
+  "waypoints": [
+   {
+    "i": 0,
+    "type": "Trailhead",
+    "name": "Andrews Creek Trailhead",
+    "elev": 3050,
+    "distMi": null
+   },
+   {
+    "i": 1,
+    "type": "Campsite",
+    "name": "Andrews Pass",
+    "elev": 6700,
+    "distMi": null
+   },
+   {
+    "i": 2,
+    "type": "Campsite",
+    "name": "Upper Cathedral Lake basin",
+    "elev": 7400,
+    "distMi": null
+   },
+   {
+    "i": 3,
+    "type": "Summit",
+    "name": "Amphitheater Mountain Summit",
+    "elev": 8358,
+    "distMi": null
+   }
+  ]
+ },
+ {
+  "id": "wa_andersons_thumb_standard",
+  "name": "Standard Route",
+  "where": "Central Olympic Mountains > Anderson's Thumb",
+  "discipline": "alpine",
+  "grade": "5.0",
+  "why": "no summit waypoint with a distance from the trailhead",
+  "distKmStored": 31.38,
+  "outingShape": null,
+  "gainFt": 6400,
+  "waypoints": [
+   {
+    "i": 0,
+    "type": "Trailhead",
+    "name": "Dosewallips Road washout parking (FR-2610)",
+    "elev": 530,
+    "distMi": null
+   },
+   {
+    "i": 1,
+    "type": "Water",
+    "name": "Honeymoon Meadows",
+    "elev": 3527,
+    "distMi": 14.15
+   },
+   {
+    "i": 2,
+    "type": "Campsite",
+    "name": "Honeymoon Meadows",
+    "elev": 3527,
+    "distMi": null
+   },
+   {
+    "i": 3,
+    "type": "Water",
+    "name": "West Fork Dosewallips River crossing",
+    "elev": 3538,
+    "distMi": null
+   },
+   {
+    "i": 4,
+    "type": "Junction",
+    "name": "Anderson Pass",
+    "elev": 4464,
+    "distMi": 16
+   },
+   {
+    "i": 5,
+    "type": "Campsite",
+    "name": "Anderson Tarn high camp",
+    "elev": 5100,
+    "distMi": 17
+   },
+   {
+    "i": 6,
+    "type": "Summit",
+    "name": "Anderson's Thumb summit",
+    "elev": 6700,
+    "distMi": null
+   }
+  ]
+ },
+ {
+  "id": "wa_argonaut_peak_east_ridge",
+  "name": "Southeast Ridge",
+  "where": "Stuart-Enchantments > Argonaut Peak",
+  "discipline": "alpine",
+  "grade": "5.6",
+  "why": "no summit pin on the track, after the trailhead; no summit waypoint with a distance from the trailhead",
+  "distKmStored": null,
+  "outingShape": "outback",
+  "gainFt": 4853,
+  "waypoints": [
+   {
+    "i": 0,
+    "type": "Trailhead",
+    "name": "Beverly Turnpike Trailhead (#1391)",
+    "elev": 3647,
+    "distMi": null
+   },
+   {
+    "i": 1,
+    "type": "Water",
+    "name": "Ingalls Creek crossing",
+    "elev": 4223,
+    "distMi": null
+   },
+   {
+    "i": 2,
+    "type": "Junction",
+    "name": "East end of ridge",
+    "elev": null,
+    "distMi": null
+   },
+   {
+    "i": 3,
+    "type": "Summit",
+    "name": "Argonaut Peak summit (true/west summit)",
+    "elev": 8453,
+    "distMi": null
+   }
+  ]
+ },
+ {
+  "id": "wa_around_the_cave_we_go",
+  "name": "Around the Cave We Go",
+  "where": "Liberty Bell Group > Concord Tower",
+  "discipline": "alpine",
+  "grade": "5.6",
+  "why": "no summit waypoint with a distance from the trailhead",
+  "distKmStored": null,
+  "outingShape": null,
+  "gainFt": null,
+  "waypoints": [
+   {
+    "i": 0,
+    "type": "Trailhead",
+    "name": "Blue Lake Trailhead",
+    "elev": null,
+    "distMi": null
+   },
+   {
+    "i": 1,
+    "type": "Summit",
+    "name": "Concord Tower summit",
+    "elev": 7611,
+    "distMi": null
+   }
+  ]
+ },
+ {
+  "id": "wa_bacon_peak_diobsud",
+  "name": "Diobsud Creek Glacier",
+  "where": "Bellingham and Mt Baker Hwy > Bacon Peak",
+  "discipline": "mountaineering",
+  "grade": "Class 2",
+  "why": "no summit pin on the track, after the trailhead; no summit waypoint with a distance from the trailhead",
+  "distKmStored": 23,
+  "outingShape": null,
+  "gainFt": 6261,
+  "waypoints": [
+   {
+    "i": 0,
+    "type": "Trailhead",
+    "name": "Watson Lakes Trailhead",
+    "elev": 4300,
+    "distMi": null
+   },
+   {
+    "i": 1,
+    "type": "Junction",
+    "name": "Wilderness-boundary saddle",
+    "elev": 4700,
+    "distMi": 1.5
+   },
+   {
+    "i": 2,
+    "type": "Campsite",
+    "name": "Diobsud basin",
+    "elev": 4900,
+    "distMi": 5
+   },
+   {
+    "i": 3,
+    "type": "Hazard",
+    "name": "Access gully to Diobsud Creek Glacier",
+    "elev": 5800,
+    "distMi": 7
+   },
+   {
+    "i": 4,
+    "type": "Hazard",
+    "name": "Diobsud Creek Glacier crossing",
+    "elev": 6400,
+    "distMi": 8
+   },
+   {
+    "i": 5,
+    "type": "Summit",
+    "name": "Bacon Peak",
+    "elev": 7070,
+    "distMi": null
+   }
+  ]
+ },
+ {
+  "id": "wa_baring_mountain_east_face",
+  "name": "East Face",
+  "where": "Baring Mountain > Main Peak",
+  "discipline": "alpine",
+  "grade": "5.10d",
+  "why": "no summit waypoint with a distance from the trailhead",
+  "distKmStored": null,
+  "outingShape": null,
+  "gainFt": null,
+  "waypoints": [
+   {
+    "i": 0,
+    "type": "Trailhead",
+    "name": "Barclay Lake Trailhead (end of FS Road 6024)",
+    "elev": 2280,
+    "distMi": 0
+   },
+   {
+    "i": 1,
+    "type": "Summit",
+    "name": "Baring Mountain north (main) summit",
+    "elev": 6127,
+    "distMi": null
+   }
+  ]
+ }
+]

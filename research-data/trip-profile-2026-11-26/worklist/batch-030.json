@@ -1,0 +1,204 @@
+[
+ {
+  "id": "wa_hozomeen_mountain_northeast_buttress",
+  "name": "Northeast Buttress (North Peak)",
+  "where": "Hwy 20 and North Cascades National Park > Hozomeen Mountain",
+  "discipline": "scrambling",
+  "grade": "Class 4",
+  "why": "no trailhead waypoint",
+  "distKmStored": 16.9,
+  "outingShape": null,
+  "gainFt": 6266,
+  "waypoints": [
+   {
+    "i": 0,
+    "type": "Summit",
+    "name": "Hozomeen Mountain, North Peak",
+    "elev": 8071,
+    "distMi": null
+   }
+  ]
+ },
+ {
+  "id": "wa_hozomeen_mountain_west_face",
+  "name": "West Face (North Peak)",
+  "where": "Hwy 20 and North Cascades National Park > Hozomeen Mountain",
+  "discipline": "alpine",
+  "grade": "5.9",
+  "why": "no trailhead waypoint",
+  "distKmStored": 17.7,
+  "outingShape": null,
+  "gainFt": null,
+  "waypoints": [
+   {
+    "i": 0,
+    "type": "Summit",
+    "name": "Hozomeen Mountain, North Peak",
+    "elev": 8071,
+    "distMi": null
+   }
+  ]
+ },
+ {
+  "id": "wa_huckleberry_mountain_south_face",
+  "name": "South Face",
+  "where": "Western Alpine Lakes > Huckleberry Mountain",
+  "discipline": "alpine",
+  "grade": "5.7",
+  "why": "no summit waypoint with a distance from the trailhead",
+  "distKmStored": 15.3,
+  "outingShape": null,
+  "gainFt": null,
+  "waypoints": [
+   {
+    "i": 0,
+    "type": "Trailhead",
+    "name": "PCT North Trailhead (Snoqualmie Pass)",
+    "elev": 3000,
+    "distMi": 0
+   },
+   {
+    "i": 1,
+    "type": "Summit",
+    "name": "Huckleberry Mountain summit",
+    "elev": 6320,
+    "distMi": null
+   }
+  ]
+ },
+ {
+  "id": "wa_indian_head_peak_southwest_slopes",
+  "name": "Southwest Slopes (Standard Route)",
+  "where": "Darrington and Mountain Loop Hwy > Indian Head Peak",
+  "discipline": "mountaineering",
+  "grade": "Class 3",
+  "why": "no summit pin on the track, after the trailhead; no summit waypoint with a distance from the trailhead",
+  "distKmStored": 17.7,
+  "outingShape": null,
+  "gainFt": 5900,
+  "waypoints": [
+   {
+    "i": 0,
+    "type": "Trailhead",
+    "name": "North Fork Sauk Trailhead",
+    "elev": 2070,
+    "distMi": null
+   },
+   {
+    "i": 1,
+    "type": "Summit",
+    "name": "Indian Head Peak summit",
+    "elev": null,
+    "distMi": null
+   }
+  ]
+ },
+ {
+  "id": "wa_ingalls_peak_east_ne_ridge_route",
+  "name": "East Peak (Northeast Ridge to East Face)",
+  "where": "Stuart-Enchantments > Ingalls Peak - East Peak",
+  "discipline": "alpine",
+  "grade": "5.6",
+  "why": "no trailhead waypoint",
+  "distKmStored": null,
+  "outingShape": null,
+  "gainFt": null,
+  "waypoints": [
+   {
+    "i": 0,
+    "type": "Summit",
+    "name": "Ingalls Peak - East Peak",
+    "elev": 7480,
+    "distMi": null
+   }
+  ]
+ },
+ {
+  "id": "wa_inner_constance_northwest_buttress",
+  "name": "Northwest Buttress",
+  "where": "Eastern Olympic Mountains > Inner Constance",
+  "discipline": "alpine",
+  "grade": null,
+  "why": "no summit waypoint with a distance from the trailhead",
+  "distKmStored": 15,
+  "outingShape": null,
+  "gainFt": null,
+  "waypoints": [
+   {
+    "i": 0,
+    "type": "Trailhead",
+    "name": "Upper Dungeness Trailhead (Trail #833.2, FR-2870)",
+    "elev": null,
+    "distMi": null
+   },
+   {
+    "i": 1,
+    "type": "Campsite",
+    "name": "Boulder Shelter — the last camp outside the national park",
+    "elev": 4950,
+    "distMi": null
+   },
+   {
+    "i": 2,
+    "type": "Campsite",
+    "name": "Home Lake",
+    "elev": 5325,
+    "distMi": 9.3
+   },
+   {
+    "i": 3,
+    "type": "Summit",
+    "name": "Inner Constance summit",
+    "elev": 7670,
+    "distMi": null
+   }
+  ]
+ },
+ {
+  "id": "wa_inner_constance_seans_route",
+  "name": "Sean's Route/Second Wind",
+  "where": "Eastern Olympic Mountains > Inner Constance",
+  "discipline": "alpine",
+  "grade": "5.8+",
+  "why": "no summit waypoint with a distance from the trailhead",
+  "distKmStored": 15,
+  "outingShape": "outback",
+  "gainFt": null,
+  "waypoints": [
+   {
+    "i": 0,
+    "type": "Trailhead",
+    "name": "Upper Dungeness Trailhead (Trail #833.2, FS 2870)",
+    "elev": null,
+    "distMi": 0
+   },
+   {
+    "i": 1,
+    "type": "Summit",
+    "name": "Inner Constance summit",
+    "elev": 7670,
+    "distMi": null
+   }
+  ]
+ },
+ {
+  "id": "wa_jack_mountain_east_ridge",
+  "name": "East Ridge",
+  "where": "North Cascades Core > Jack Mountain",
+  "discipline": "alpine",
+  "grade": "5.0",
+  "why": "no trailhead waypoint",
+  "distKmStored": null,
+  "outingShape": null,
+  "gainFt": null,
+  "waypoints": [
+   {
+    "i": 0,
+    "type": "Summit",
+    "name": "Jack Mountain summit",
+    "elev": 9075,
+    "distMi": null
+   }
+  ]
+ }
+]

@@ -1,0 +1,225 @@
+[
+ {
+  "id": "wa_mount_seattle_noyes_basin",
+  "name": "Noyes Basin Route",
+  "where": "Central Olympic Mountains > Mount Seattle",
+  "discipline": "scrambling",
+  "grade": "Class 3",
+  "why": "no trailhead waypoint",
+  "distKmStored": null,
+  "outingShape": null,
+  "gainFt": null,
+  "waypoints": [
+   {
+    "i": 0,
+    "type": "Campsite",
+    "name": "Chicago Camp — the last established camp in the upper Elwha",
+    "elev": 2195,
+    "distMi": null
+   },
+   {
+    "i": 1,
+    "type": "Summit",
+    "name": "Mount Seattle Summit",
+    "elev": 6246,
+    "distMi": null
+   }
+  ]
+ },
+ {
+  "id": "wa_mount_seattle_seattle_creek",
+  "name": "Seattle Creek Basin Route",
+  "where": "Central Olympic Mountains > Mount Seattle",
+  "discipline": "scrambling",
+  "grade": "Class 3",
+  "why": "no trailhead waypoint",
+  "distKmStored": null,
+  "outingShape": null,
+  "gainFt": null,
+  "waypoints": [
+   {
+    "i": 0,
+    "type": "Summit",
+    "name": "Mount Seattle Summit",
+    "elev": 6246,
+    "distMi": null
+   }
+  ]
+ },
+ {
+  "id": "wa_mount_sefrit_bloody_head_couloir",
+  "name": "Bloody Head Couloir",
+  "where": "Bellingham and Mt Baker Hwy > Mount Sefrit",
+  "discipline": "mountaineering",
+  "grade": "Class 4",
+  "why": "no summit waypoint with a distance from the trailhead",
+  "distKmStored": null,
+  "outingShape": null,
+  "gainFt": null,
+  "waypoints": [
+   {
+    "i": 0,
+    "type": "Trailhead",
+    "name": "Hannegan Pass Trailhead (Trail #674, FR-32)",
+    "elev": null,
+    "distMi": null
+   },
+   {
+    "i": 1,
+    "type": "Campsite",
+    "name": "Hannegan trailhead, end of the Ruth Creek road",
+    "elev": 3100,
+    "distMi": null
+   },
+   {
+    "i": 2,
+    "type": "Junction",
+    "name": "Leave the Hannegan Pass Trail",
+    "elev": 3450,
+    "distMi": 1.5
+   },
+   {
+    "i": 3,
+    "type": "Junction",
+    "name": "Base of Bloody Head Couloir",
+    "elev": 4000,
+    "distMi": null
+   }
+  ]
+ },
+ {
+  "id": "wa_mount_sefrit_southeast_ridge",
+  "name": "Southeast Ridge",
+  "where": "Bellingham and Mt Baker Hwy > Mount Sefrit",
+  "discipline": "mountaineering",
+  "grade": "Class 3",
+  "why": "no trailhead waypoint",
+  "distKmStored": null,
+  "outingShape": null,
+  "gainFt": 4500,
+  "waypoints": [
+   {
+    "i": 0,
+    "type": "Campsite",
+    "name": "Hannegan trailhead, end of the Ruth Creek road",
+    "elev": 3100,
+    "distMi": null
+   },
+   {
+    "i": 1,
+    "type": "Summit",
+    "name": "Mount Sefrit",
+    "elev": null,
+    "distMi": null
+   }
+  ]
+ },
+ {
+  "id": "wa_mount_shuksan_hanging_glacier",
+  "name": "Hanging Glacier",
+  "where": "Mount Shuksan > Mount Shuksan Routes",
+  "discipline": "alpine",
+  "grade": "5.6",
+  "why": "no summit waypoint with a distance from the trailhead",
+  "distKmStored": 20.12,
+  "outingShape": null,
+  "gainFt": 6000,
+  "waypoints": [
+   {
+    "i": 0,
+    "type": "Trailhead",
+    "name": "White Salmon Road (hairpin) TH",
+    "elev": 3573,
+    "distMi": null
+   },
+   {
+    "i": 1,
+    "type": "Junction",
+    "name": "Hanging Glacier",
+    "elev": null,
+    "distMi": null
+   },
+   {
+    "i": 2,
+    "type": "Summit",
+    "name": "Mount Shuksan summit pyramid",
+    "elev": 9127,
+    "distMi": null
+   }
+  ]
+ },
+ {
+  "id": "wa_mount_shuksan_northeast_ridge",
+  "name": "Northeast Ridge",
+  "where": "Mount Shuksan > Mount Shuksan Routes",
+  "discipline": "alpine",
+  "grade": "5.7",
+  "why": "no trailhead waypoint",
+  "distKmStored": null,
+  "outingShape": null,
+  "gainFt": null,
+  "waypoints": [
+   {
+    "i": 0,
+    "type": "Summit",
+    "name": "Mount Shuksan summit",
+    "elev": 9131,
+    "distMi": null
+   }
+  ]
+ },
+ {
+  "id": "wa_mount_shuksan_northwest_arete",
+  "name": "Northwest Arete",
+  "where": "Mount Shuksan > Mount Shuksan Routes",
+  "discipline": "alpine",
+  "grade": "5.7",
+  "why": "no summit waypoint with a distance from the trailhead",
+  "distKmStored": null,
+  "outingShape": null,
+  "gainFt": 6980,
+  "waypoints": [
+   {
+    "i": 0,
+    "type": "Trailhead",
+    "name": "White Salmon Road (hairpin) TH / lower White Salmon lodge",
+    "elev": 3573,
+    "distMi": 0
+   },
+   {
+    "i": 1,
+    "type": "Summit",
+    "name": "Mount Shuksan summit pyramid",
+    "elev": 9127,
+    "distMi": null
+   }
+  ]
+ },
+ {
+  "id": "wa_mount_si_trail",
+  "name": "Mount Si Trail",
+  "where": "North Bend & Vicinity > Mount Si",
+  "discipline": "mountaineering",
+  "grade": "Class 1",
+  "why": "no summit waypoint with a distance from the trailhead",
+  "distKmStored": 6.4,
+  "outingShape": "outback",
+  "gainFt": 3150,
+  "waypoints": [
+   {
+    "i": 0,
+    "type": "Trailhead",
+    "name": "Mount Si Trailhead",
+    "elev": 668,
+    "distMi": 0
+   },
+   {
+    "i": 1,
+    "type": "Summit",
+    "name": "Mount Si summit",
+    "elev": 4167,
+    "distMi": null
+   }
+  ]
+ }
+]

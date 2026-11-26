@@ -1,0 +1,309 @@
+[
+ {
+  "id": "wa_chimney_peak_standard",
+  "name": "Standard Route",
+  "where": "Mount Anderson / Dosewallips-Duckabush > Chimney Peak",
+  "discipline": "scrambling",
+  "grade": "Class 3",
+  "why": "no summit waypoint with a distance from the trailhead",
+  "distKmStored": 22.4,
+  "outingShape": null,
+  "gainFt": 7400,
+  "waypoints": [
+   {
+    "i": 0,
+    "type": "Trailhead",
+    "name": "Graves Creek Trailhead",
+    "elev": 550,
+    "distMi": 0
+   },
+   {
+    "i": 1,
+    "type": "Water",
+    "name": "Pony Bridge",
+    "elev": 700,
+    "distMi": 2.5
+   },
+   {
+    "i": 2,
+    "type": "Campsite",
+    "name": "O'Neil Creek Camp",
+    "elev": 950,
+    "distMi": 6.7
+   },
+   {
+    "i": 3,
+    "type": "Campsite",
+    "name": "Pyrites Creek Camp",
+    "elev": 1500,
+    "distMi": 9.5
+   },
+   {
+    "i": 4,
+    "type": "Hazard",
+    "name": "Quinault River Bridge",
+    "elev": 1950,
+    "distMi": 13
+   },
+   {
+    "i": 5,
+    "type": "Junction",
+    "name": "Enchanted Valley Chalet",
+    "elev": 2000,
+    "distMi": 13.5
+   },
+   {
+    "i": 6,
+    "type": "Hazard",
+    "name": "Southwest Ridge Class 4 Step",
+    "elev": 6700,
+    "distMi": null
+   },
+   {
+    "i": 7,
+    "type": "Summit",
+    "name": "Chimney Peak",
+    "elev": 6917,
+    "distMi": null
+   }
+  ]
+ },
+ {
+  "id": "wa_chimney_peak_the_chimney",
+  "name": "The Chimney",
+  "where": "Mount Anderson / Dosewallips-Duckabush > Chimney Peak",
+  "discipline": "alpine",
+  "grade": "5.3",
+  "why": "no summit waypoint with a distance from the trailhead",
+  "distKmStored": 22.4,
+  "outingShape": null,
+  "gainFt": 8600,
+  "waypoints": [
+   {
+    "i": 0,
+    "type": "Trailhead",
+    "name": "Graves Creek Trailhead",
+    "elev": 550,
+    "distMi": 0
+   },
+   {
+    "i": 1,
+    "type": "Campsite",
+    "name": "Enchanted Valley Chalet (emergency shelter and camp area beneath the peak)",
+    "elev": 2000,
+    "distMi": 13.9
+   },
+   {
+    "i": 2,
+    "type": "Topout",
+    "name": "Top of The Chimney",
+    "elev": null,
+    "distMi": null
+   }
+  ]
+ },
+ {
+  "id": "wa_chimney_rock_east_face_direct",
+  "name": "East Face Direct",
+  "where": "Western Alpine Lakes > Chimney Rock",
+  "discipline": "alpine",
+  "grade": "5.6",
+  "why": "no summit waypoint with a distance from the trailhead",
+  "distKmStored": null,
+  "outingShape": null,
+  "gainFt": 4900,
+  "waypoints": [
+   {
+    "i": 0,
+    "type": "Trailhead",
+    "name": "Pete Lake Trailhead (Trail #1323, FR-4616)",
+    "elev": null,
+    "distMi": null
+   },
+   {
+    "i": 1,
+    "type": "route start",
+    "name": "East Face Direct - base of climb",
+    "elev": null,
+    "distMi": null
+   },
+   {
+    "i": 2,
+    "type": "Summit",
+    "name": "Chimney Rock (Main/Central Summit)",
+    "elev": 7727,
+    "distMi": null
+   }
+  ]
+ },
+ {
+  "id": "wa_clean_break",
+  "name": "Clean Break",
+  "where": "Silver Star and Wine spires > Juno Tower",
+  "discipline": "alpine",
+  "grade": "5.10c",
+  "why": "no one-way distance",
+  "distKmStored": null,
+  "outingShape": null,
+  "gainFt": 4500,
+  "waypoints": [
+   {
+    "i": 0,
+    "type": "Trailhead",
+    "name": "Silver Star Creek pullout (SR-20, milepost 171)",
+    "elev": 3450,
+    "distMi": 0
+   },
+   {
+    "i": 1,
+    "type": "Campsite",
+    "name": "Bench Camp — larch bench above the Wine Spires pullout",
+    "elev": 6450,
+    "distMi": null
+   },
+   {
+    "i": 2,
+    "type": "Summit",
+    "name": "Juno Tower - Summit",
+    "elev": 7920,
+    "distMi": null
+   }
+  ]
+ },
+ {
+  "id": "wa_colchuck_peak_holsten_hilden",
+  "name": "Holsten-Hilden",
+  "where": "Stuart-Enchantments > Colchuck Peak",
+  "discipline": "alpine",
+  "grade": "AI3",
+  "why": "no summit waypoint with a distance from the trailhead",
+  "distKmStored": 8,
+  "outingShape": null,
+  "gainFt": 5300,
+  "waypoints": [
+   {
+    "i": 0,
+    "type": "Trailhead",
+    "name": "Stuart Lake Trailhead",
+    "elev": 3400,
+    "distMi": 0
+   },
+   {
+    "i": 1,
+    "type": "Campsite",
+    "name": "Colchuck Lake designated campsites",
+    "elev": 5570,
+    "distMi": null
+   },
+   {
+    "i": 2,
+    "type": "Junction",
+    "name": "Colchuck Lake",
+    "elev": 5574,
+    "distMi": 4.1
+   },
+   {
+    "i": 3,
+    "type": "Summit",
+    "name": "Colchuck Peak summit",
+    "elev": 8705,
+    "distMi": null
+   }
+  ]
+ },
+ {
+  "id": "wa_colfax_peak_fords_theatre",
+  "name": "Ford's Theatre",
+  "where": "Bellingham and Mt Baker Hwy > Colfax Peak",
+  "discipline": "ice",
+  "grade": "AI4+",
+  "why": "no summit waypoint with a distance from the trailhead",
+  "distKmStored": null,
+  "outingShape": null,
+  "gainFt": 5790,
+  "waypoints": [
+   {
+    "i": 0,
+    "type": "Trailhead",
+    "name": "Heliotrope Ridge Trailhead (Trail #677, FR-39)",
+    "elev": null,
+    "distMi": null
+   }
+  ]
+ },
+ {
+  "id": "wa_colfax_peak_kimchi_suicide_volcano",
+  "name": "Kimchi Suicide Volcano",
+  "where": "Bellingham and Mt Baker Hwy > Colfax Peak",
+  "discipline": "alpine",
+  "grade": "AI4+",
+  "why": "no summit waypoint with a distance from the trailhead",
+  "distKmStored": null,
+  "outingShape": null,
+  "gainFt": 5790,
+  "waypoints": [
+   {
+    "i": 0,
+    "type": "Trailhead",
+    "name": "Heliotrope Ridge Trailhead (Trail #677, FR-39)",
+    "elev": null,
+    "distMi": null
+   },
+   {
+    "i": 1,
+    "type": "Campsite",
+    "name": "Hogsback Camp",
+    "elev": 6000,
+    "distMi": null
+   },
+   {
+    "i": 2,
+    "type": "Summit",
+    "name": "Colfax Peak",
+    "elev": null,
+    "distMi": null
+   }
+  ]
+ },
+ {
+  "id": "wa_complete_south_buttress",
+  "name": "Complete South Buttress",
+  "where": "Washington Pass > Cutthroat Peak",
+  "discipline": "alpine",
+  "grade": "5.8",
+  "why": "no summit waypoint with a distance from the trailhead",
+  "distKmStored": 6.44,
+  "outingShape": null,
+  "gainFt": 3300,
+  "waypoints": [
+   {
+    "i": 0,
+    "type": "Trailhead",
+    "name": "Cutthroat Peak Climbers Trail Pullout (Hwy 20, ~1.5 mi W of Washington Pass)",
+    "elev": 4947,
+    "distMi": 0
+   },
+   {
+    "i": 1,
+    "type": "Water",
+    "name": "State Creek crossing",
+    "elev": 4983,
+    "distMi": null
+   },
+   {
+    "i": 2,
+    "type": "Junction",
+    "name": "Toe of the lower ridge (start of the Complete South Buttress)",
+    "elev": null,
+    "distMi": null
+   },
+   {
+    "i": 3,
+    "type": "Summit",
+    "name": "Cutthroat Peak Summit",
+    "elev": 8066,
+    "distMi": null
+   }
+  ]
+ }
+]

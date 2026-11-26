@@ -1,0 +1,211 @@
+[
+ {
+  "id": "ca_northwest_arete_2",
+  "name": "Northwest Arete",
+  "where": "Southern Yosemite > Mt Clark",
+  "discipline": "alpine",
+  "grade": "4th",
+  "why": "no one-way distance",
+  "distKmStored": null,
+  "outingShape": null,
+  "gainFt": null,
+  "waypoints": [
+   {
+    "i": 0,
+    "type": "Trailhead",
+    "name": "Happy Isles Trailhead",
+    "elev": 4009,
+    "distMi": 0
+   },
+   {
+    "i": 1,
+    "type": "Summit",
+    "name": "Mount Clark",
+    "elev": 11522,
+    "distMi": 13.2
+   }
+  ]
+ },
+ {
+  "id": "ca_northwest_buttress_2",
+  "name": "Northwest Buttress",
+  "where": "Cathedral Range > Tenaya Peak",
+  "discipline": "alpine",
+  "grade": "5.5",
+  "why": "no one-way distance",
+  "distKmStored": null,
+  "outingShape": null,
+  "gainFt": null,
+  "waypoints": [
+   {
+    "i": 0,
+    "type": "Trailhead",
+    "name": "Tenaya Lake Northeast Shore Pullout",
+    "elev": 8151,
+    "distMi": 0
+   },
+   {
+    "i": 1,
+    "type": "Summit",
+    "name": "Tenaya Peak",
+    "elev": 10260,
+    "distMi": 1.1
+   }
+  ]
+ },
+ {
+  "id": "ca_northwest_chute",
+  "name": "Northwest Chute",
+  "where": "Hoover Wilderness > Tower Peak",
+  "discipline": "alpine",
+  "grade": "3rd",
+  "why": "no one-way distance",
+  "distKmStored": null,
+  "outingShape": null,
+  "gainFt": null,
+  "waypoints": [
+   {
+    "i": 0,
+    "type": "Trailhead",
+    "name": "Leavitt Meadows Trailhead",
+    "elev": 7135,
+    "distMi": 0
+   },
+   {
+    "i": 1,
+    "type": "Campsite",
+    "name": "Tower Lake",
+    "elev": 9532,
+    "distMi": null
+   },
+   {
+    "i": 2,
+    "type": "Summit",
+    "name": "Tower Peak",
+    "elev": 11755,
+    "distMi": 15.7
+   }
+  ]
+ },
+ {
+  "id": "ca_sierra_buttes_lookout_trail",
+  "name": "Lookout Trail",
+  "where": "Northern Sierra > Sierra Buttes",
+  "discipline": "scrambling",
+  "grade": "Class 1",
+  "why": "no trailhead pin on the track; no trailhead waypoint",
+  "distKmStored": null,
+  "outingShape": null,
+  "gainFt": 1590,
+  "waypoints": [
+   {
+    "i": 0,
+    "type": "Summit",
+    "name": "Sierra Buttes summit",
+    "elev": 8591,
+    "distMi": null
+   }
+  ]
+ },
+ {
+  "id": "ca_southeast_face_aka_the_waterfall_route",
+  "name": "Southeast Face (aka the Waterfall Route)",
+  "where": "Humphreys Basin, Pine Creek & Granite Park > Mt. Emerson",
+  "discipline": "alpine",
+  "grade": "5.4",
+  "why": "no one-way distance",
+  "distKmStored": null,
+  "outingShape": null,
+  "gainFt": null,
+  "waypoints": [
+   {
+    "i": 0,
+    "type": "Trailhead",
+    "name": "North Lake (Piute Pass) Trailhead",
+    "elev": 9404,
+    "distMi": 0
+   },
+   {
+    "i": 1,
+    "type": "Summit",
+    "name": "Mount Emerson",
+    "elev": 13204,
+    "distMi": 2.8
+   }
+  ]
+ },
+ {
+  "id": "ca_southwest_slope_and_northwest_face",
+  "name": "Southwest Slope and Northwest Face",
+  "where": "Humphreys Basin, Pine Creek & Granite Park > Mt. Humphreys",
+  "discipline": "alpine",
+  "grade": "4th",
+  "why": "no one-way distance",
+  "distKmStored": null,
+  "outingShape": null,
+  "gainFt": null,
+  "waypoints": [
+   {
+    "i": 0,
+    "type": "Trailhead",
+    "name": "North Lake (Piute Pass) Trailhead",
+    "elev": 9401,
+    "distMi": 0
+   },
+   {
+    "i": 1,
+    "type": "Summit",
+    "name": "Mount Humphreys",
+    "elev": 13986,
+    "distMi": 9
+   }
+  ]
+ },
+ {
+  "id": "ca_the_mountaineer_s_route",
+  "name": "The Mountaineer's Route",
+  "where": "Whitney & Surrounding Peaks > Mt. Whitney",
+  "discipline": "alpine",
+  "grade": "3rd",
+  "why": "no one-way distance",
+  "distKmStored": null,
+  "outingShape": null,
+  "gainFt": null,
+  "waypoints": [
+   {
+    "i": 0,
+    "type": "Trailhead",
+    "name": "Whitney Portal",
+    "elev": 8355,
+    "distMi": 0
+   },
+   {
+    "i": 1,
+    "type": "Summit",
+    "name": "Mount Whitney",
+    "elev": 14505,
+    "distMi": 4.7
+   }
+  ]
+ },
+ {
+  "id": "ca_tinker_knob_via_the_pacific_crest_trail",
+  "name": "Via the Pacific Crest Trail",
+  "where": "Lake Tahoe > Tinker Knob",
+  "discipline": "scrambling",
+  "grade": "Class 1",
+  "why": "no trailhead pin on the track; no trailhead waypoint",
+  "distKmStored": null,
+  "outingShape": null,
+  "gainFt": null,
+  "waypoints": [
+   {
+    "i": 0,
+    "type": "Summit",
+    "name": "Tinker Knob summit",
+    "elev": 8949,
+    "distMi": null
+   }
+  ]
+ }
+]

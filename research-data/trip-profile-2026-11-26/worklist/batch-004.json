@@ -1,0 +1,197 @@
+[
+ {
+  "id": "bc_ossa_mountain_east_ridge",
+  "name": "East Ridge",
+  "where": "Tantalus Range > Ossa Mountain",
+  "discipline": "scrambling",
+  "grade": "4th",
+  "why": "no trailhead pin on the track; no trailhead waypoint",
+  "distKmStored": null,
+  "outingShape": "outback",
+  "gainFt": null,
+  "waypoints": [
+   {
+    "i": 0,
+    "type": "Summit",
+    "name": "Ossa Mountain summit",
+    "elev": 7418,
+    "distMi": null
+   }
+  ]
+ },
+ {
+  "id": "bc_wedge_mountain_northeast_arete",
+  "name": "Northeast Arete",
+  "where": "Sea to Sky (North of Whistler) > Wedge Mountain",
+  "discipline": "mountaineering",
+  "grade": "Mod. Snow",
+  "why": "no trailhead pin on the track; no trailhead waypoint",
+  "distKmStored": null,
+  "outingShape": null,
+  "gainFt": null,
+  "waypoints": [
+   {
+    "i": 0,
+    "type": "Summit",
+    "name": "Wedge Mountain summit",
+    "elev": 9498,
+    "distMi": null
+   }
+  ]
+ },
+ {
+  "id": "ca_a_clouds_rest_trail_clouds_rest_trail",
+  "name": "Clouds Rest Trail",
+  "where": "Clouds Rest > Clouds Rest Trail",
+  "discipline": "scrambling",
+  "grade": "Class 1",
+  "why": "no trailhead pin on the track; no trailhead waypoint",
+  "distKmStored": null,
+  "outingShape": null,
+  "gainFt": 2300,
+  "waypoints": [
+   {
+    "i": 0,
+    "type": "Summit",
+    "name": "Clouds Rest Trail summit",
+    "elev": null,
+    "distMi": null
+   }
+  ]
+ },
+ {
+  "id": "ca_castle_dome_4th_class_route",
+  "name": "Castle Dome - 4th class route",
+  "where": "Castle Crags > Castle Dome",
+  "discipline": "scrambling",
+  "grade": "4th",
+  "why": "no one-way distance",
+  "distKmStored": null,
+  "outingShape": null,
+  "gainFt": null,
+  "waypoints": [
+   {
+    "i": 0,
+    "type": "Trailhead",
+    "name": "Vista Point Trailhead",
+    "elev": 2611,
+    "distMi": 0
+   },
+   {
+    "i": 1,
+    "type": "Summit",
+    "name": "Castle Dome",
+    "elev": 4939,
+    "distMi": 2.4
+   }
+  ]
+ },
+ {
+  "id": "ca_d_half_dome_cables_route_cables_route",
+  "name": "Cables Route",
+  "where": "Half Dome > Cables Route",
+  "discipline": "scrambling",
+  "grade": "Class 3",
+  "why": "no one-way distance",
+  "distKmStored": null,
+  "outingShape": null,
+  "gainFt": 4800,
+  "waypoints": [
+   {
+    "i": 0,
+    "type": "Trailhead",
+    "name": "Happy Isles Trailhead",
+    "elev": null,
+    "distMi": null
+   },
+   {
+    "i": 1,
+    "type": "Summit",
+    "name": "Cables Route summit",
+    "elev": null,
+    "distMi": null
+   }
+  ]
+ },
+ {
+  "id": "ca_east_arete_3",
+  "name": "East Arete",
+  "where": "Whitney & Surrounding Peaks > Mt. Russell",
+  "discipline": "alpine",
+  "grade": "3rd",
+  "why": "no one-way distance",
+  "distKmStored": null,
+  "outingShape": null,
+  "gainFt": null,
+  "waypoints": [
+   {
+    "i": 0,
+    "type": "Trailhead",
+    "name": "Whitney Portal",
+    "elev": 8371,
+    "distMi": 0
+   },
+   {
+    "i": 1,
+    "type": "Summit",
+    "name": "Mount Russell",
+    "elev": 14088,
+    "distMi": 4.5
+   }
+  ]
+ },
+ {
+  "id": "ca_jobs_peak_east_gully",
+  "name": "East Gully",
+  "where": "South Shore > Jobs Peak",
+  "discipline": "mountaineering",
+  "grade": "Mod. Snow",
+  "why": "no one-way distance",
+  "distKmStored": null,
+  "outingShape": null,
+  "gainFt": null,
+  "waypoints": [
+   {
+    "i": 0,
+    "type": "Trailhead",
+    "name": "Fay-Luther Trailhead",
+    "elev": null,
+    "distMi": null
+   },
+   {
+    "i": 1,
+    "type": "Summit",
+    "name": "Jobs Peak summit",
+    "elev": null,
+    "distMi": null
+   }
+  ]
+ },
+ {
+  "id": "ca_mount_tallac_trail_mount_tallac_trail",
+  "name": "Mount Tallac Trail",
+  "where": "Mount Tallac > Mount Tallac Trail",
+  "discipline": "scrambling",
+  "grade": "Class 1",
+  "why": "no one-way distance",
+  "distKmStored": null,
+  "outingShape": null,
+  "gainFt": 3500,
+  "waypoints": [
+   {
+    "i": 0,
+    "type": "Trailhead",
+    "name": "Mount Tallac Trailhead",
+    "elev": null,
+    "distMi": null
+   },
+   {
+    "i": 1,
+    "type": "Summit",
+    "name": "Mount Tallac Trail summit",
+    "elev": null,
+    "distMi": null
+   }
+  ]
+ }
+]

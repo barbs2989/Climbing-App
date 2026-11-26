@@ -1,0 +1,246 @@
+[
+ {
+  "id": "adams_northwest_ridge",
+  "name": "North Face of the Northwest Ridge",
+  "where": "Southwest Cascades > Mount Adams",
+  "discipline": "alpine",
+  "grade": "AI2-3 Mod. Snow PG13",
+  "why": "no summit waypoint with a distance from the trailhead",
+  "distKmStored": null,
+  "outingShape": null,
+  "gainFt": 7680,
+  "waypoints": [
+   {
+    "i": 0,
+    "type": "Trailhead",
+    "name": "Killen Creek Trailhead",
+    "elev": 4600,
+    "distMi": 0
+   },
+   {
+    "i": 1,
+    "type": "Campsite",
+    "name": "High Camp",
+    "elev": 6866,
+    "distMi": 4.1
+   },
+   {
+    "i": 2,
+    "type": "Summit",
+    "name": "Mount Adams summit",
+    "elev": 12276,
+    "distMi": null
+   }
+  ]
+ },
+ {
+  "id": "ak_denali_west_buttress",
+  "name": "West Buttress",
+  "where": "Denali National Park > Denali",
+  "discipline": "mountaineering",
+  "grade": "Mod. Snow",
+  "why": "no one-way distance",
+  "distKmStored": null,
+  "outingShape": null,
+  "gainFt": null,
+  "waypoints": [
+   {
+    "i": 0,
+    "type": "Trailhead",
+    "name": "Kahiltna Glacier base camp",
+    "elev": null,
+    "distMi": null
+   },
+   {
+    "i": 1,
+    "type": "Summit",
+    "name": "Denali summit",
+    "elev": 20310,
+    "distMi": null
+   }
+  ]
+ },
+ {
+  "id": "ak_south_pioneer_peak_pioneer_ridge",
+  "name": "Pioneer Ridge",
+  "where": "Anchorage & South Central Alaska > South Pioneer Peak",
+  "discipline": "scrambling",
+  "grade": "3rd",
+  "why": "no one-way distance",
+  "distKmStored": null,
+  "outingShape": "outback",
+  "gainFt": 6900,
+  "waypoints": [
+   {
+    "i": 0,
+    "type": "Trailhead",
+    "name": "Pioneer Ridge Trailhead",
+    "elev": null,
+    "distMi": null
+   },
+   {
+    "i": 1,
+    "type": "Summit",
+    "name": "South Pioneer Peak summit",
+    "elev": 6299,
+    "distMi": null
+   }
+  ]
+ },
+ {
+  "id": "bc_black_tusk_standard_route",
+  "name": "Standard Route from Rubble Creek",
+  "where": "Garibaldi Park > Black Tusk",
+  "discipline": "scrambling",
+  "grade": "3rd",
+  "why": "no one-way distance",
+  "distKmStored": null,
+  "outingShape": "outback",
+  "gainFt": 5700,
+  "waypoints": [
+   {
+    "i": 0,
+    "type": "Trailhead",
+    "name": "Rubble Creek trailhead",
+    "elev": null,
+    "distMi": null
+   },
+   {
+    "i": 1,
+    "type": "Summit",
+    "name": "Black Tusk summit",
+    "elev": 7608,
+    "distMi": null
+   }
+  ]
+ },
+ {
+  "id": "bc_brunswick_mountain_lions_bay_trail",
+  "name": "Lions Bay Trail",
+  "where": "North Shore Mountains > Brunswick Mountain",
+  "discipline": "scrambling",
+  "grade": "3rd",
+  "why": "no one-way distance",
+  "distKmStored": null,
+  "outingShape": "outback",
+  "gainFt": 5100,
+  "waypoints": [
+   {
+    "i": 0,
+    "type": "Trailhead",
+    "name": "Lions Bay trailhead",
+    "elev": null,
+    "distMi": null
+   },
+   {
+    "i": 1,
+    "type": "Summit",
+    "name": "Brunswick Mountain summit",
+    "elev": 5866,
+    "distMi": null
+   }
+  ]
+ },
+ {
+  "id": "bc_golden_hinde_phillips_ridge_route",
+  "name": "Phillips Ridge Route",
+  "where": "Strathcona Provincial Park > Golden Hinde",
+  "discipline": "mountaineering",
+  "grade": "4th",
+  "why": "no one-way distance",
+  "distKmStored": null,
+  "outingShape": "outback",
+  "gainFt": null,
+  "waypoints": [
+   {
+    "i": 0,
+    "type": "Trailhead",
+    "name": "Westmin Mine trailhead",
+    "elev": null,
+    "distMi": null
+   },
+   {
+    "i": 1,
+    "type": "Summit",
+    "name": "Golden Hinde summit",
+    "elev": 7201,
+    "distMi": null
+   }
+  ]
+ },
+ {
+  "id": "bc_mount_begbie_north_ridge",
+  "name": "North Ridge via North Glacier",
+  "where": "Revelstoke > Mount Begbie",
+  "discipline": "mountaineering",
+  "grade": "4th",
+  "why": "no one-way distance",
+  "distKmStored": null,
+  "outingShape": "outback",
+  "gainFt": 5757,
+  "waypoints": [
+   {
+    "i": 0,
+    "type": "Trailhead",
+    "name": "Begbie Creek trailhead",
+    "elev": null,
+    "distMi": null
+   },
+   {
+    "i": 1,
+    "type": "Summit",
+    "name": "Mount Begbie summit",
+    "elev": 8957,
+    "distMi": null
+   }
+  ]
+ },
+ {
+  "id": "bc_mount_robson_emperor_ridge",
+  "name": "Emperor Ridge",
+  "where": "Canadian Rockies > Mount Robson",
+  "discipline": "ice",
+  "grade": "5.7 AI3 Steep Snow",
+  "why": "no summit waypoint with a distance from the trailhead",
+  "distKmStored": null,
+  "outingShape": null,
+  "gainFt": null,
+  "waypoints": [
+   {
+    "i": 0,
+    "type": "Trailhead",
+    "name": "Berg Lake Trailhead",
+    "elev": 2782,
+    "distMi": 0
+   },
+   {
+    "i": 1,
+    "type": "Campsite",
+    "name": "Kinney Lake Campground",
+    "elev": 3209,
+    "distMi": 4.3
+   },
+   {
+    "i": 2,
+    "type": "Campsite",
+    "name": "Whitehorn Campground",
+    "elev": 3671,
+    "distMi": 6.8
+   },
+   {
+    "i": 3,
+    "type": "Junction",
+    "name": "Berg Lake Campground",
+    "elev": 5430,
+    "distMi": 12.2
+   },
+   {
+    "i": 4,
+    "type": "Summit",
+    "name": "Mount Robson Summit",
+    "elev": 12972,
+    "distMi": null
+   }
+  ]
+ }
+]

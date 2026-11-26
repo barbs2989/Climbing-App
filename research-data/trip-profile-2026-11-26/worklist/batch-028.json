@@ -1,0 +1,344 @@
+[
+ {
+  "id": "wa_golden_horn_north_face",
+  "name": "North Face",
+  "where": "Washington Pass > Golden Horn",
+  "discipline": "alpine",
+  "grade": null,
+  "why": "no summit waypoint with a distance from the trailhead",
+  "distKmStored": null,
+  "outingShape": null,
+  "gainFt": 3500,
+  "waypoints": [
+   {
+    "i": 0,
+    "type": "Trailhead",
+    "name": "Rainy Pass North Trailhead (PCT)",
+    "elev": 4875,
+    "distMi": 0
+   },
+   {
+    "i": 1,
+    "type": "Campsite",
+    "name": "Snowy Lakes basin",
+    "elev": 6700,
+    "distMi": null
+   },
+   {
+    "i": 2,
+    "type": "Summit",
+    "name": "Golden Horn summit",
+    "elev": 8366,
+    "distMi": null
+   }
+  ]
+ },
+ {
+  "id": "wa_golden_horn_southwest_route",
+  "name": "Southwest Route",
+  "where": "Washington Pass > Golden Horn",
+  "discipline": "alpine",
+  "grade": "5.0",
+  "why": "no summit waypoint with a distance from the trailhead",
+  "distKmStored": 18.5,
+  "outingShape": null,
+  "gainFt": 2700,
+  "waypoints": [
+   {
+    "i": 0,
+    "type": "Trailhead",
+    "name": "Rainy Pass North Trailhead (PCT)",
+    "elev": 4880,
+    "distMi": 0
+   },
+   {
+    "i": 1,
+    "type": "Summit",
+    "name": "Golden Horn summit",
+    "elev": 8366,
+    "distMi": null
+   }
+  ]
+ },
+ {
+  "id": "wa_goode_mountain_megalodon_ridge",
+  "name": "Megalodon Ridge",
+  "where": "North Cascades Core > Mount Goode",
+  "discipline": "alpine",
+  "grade": "5.10",
+  "why": "no summit waypoint with a distance from the trailhead",
+  "distKmStored": 18,
+  "outingShape": null,
+  "gainFt": 7500,
+  "waypoints": [
+   {
+    "i": 0,
+    "type": "Campsite",
+    "name": "Walker Park Camp",
+    "elev": 3086,
+    "distMi": null
+   },
+   {
+    "i": 1,
+    "type": "Trailhead",
+    "name": "Bridge Creek Trailhead",
+    "elev": 4400,
+    "distMi": null
+   },
+   {
+    "i": 2,
+    "type": "Water",
+    "name": "Bridge Creek crossing",
+    "elev": 4514,
+    "distMi": null
+   },
+   {
+    "i": 3,
+    "type": "Summit",
+    "name": "Goode Mountain Summit",
+    "elev": 9220,
+    "distMi": null
+   }
+  ]
+ },
+ {
+  "id": "wa_goode_mountain_northeast_face",
+  "name": "Northeast Face",
+  "where": "North Cascades Core > Mount Goode",
+  "discipline": "alpine",
+  "grade": "5.8",
+  "why": "no summit waypoint with a distance from the trailhead",
+  "distKmStored": 25.7,
+  "outingShape": null,
+  "gainFt": 4799,
+  "waypoints": [
+   {
+    "i": 0,
+    "type": "Campsite",
+    "name": "Walker Park Camp",
+    "elev": 3086,
+    "distMi": null
+   },
+   {
+    "i": 1,
+    "type": "Campsite",
+    "name": "Grizzly Creek Camp",
+    "elev": 3163,
+    "distMi": null
+   },
+   {
+    "i": 2,
+    "type": "Trailhead",
+    "name": "Bridge Creek Trailhead",
+    "elev": 4400,
+    "distMi": null
+   },
+   {
+    "i": 3,
+    "type": "Water",
+    "name": "Bridge Creek crossing",
+    "elev": 4514,
+    "distMi": null
+   },
+   {
+    "i": 4,
+    "type": "Summit",
+    "name": "Goode Mountain Summit",
+    "elev": 9220,
+    "distMi": null
+   }
+  ]
+ },
+ {
+  "id": "wa_gothic_peak_standard",
+  "name": "Standard Scramble (from Foggy Lake)",
+  "where": "Darrington and Mountain Loop Hwy > Gothic Peak",
+  "discipline": "scrambling",
+  "grade": "Class 3",
+  "why": "no summit pin on the track, after the trailhead; no summit waypoint with a distance from the trailhead",
+  "distKmStored": 7.4,
+  "outingShape": null,
+  "gainFt": 3850,
+  "waypoints": [
+   {
+    "i": 0,
+    "type": "Trailhead",
+    "name": "Barlow Pass Trailhead",
+    "elev": 2360,
+    "distMi": 0
+   },
+   {
+    "i": 1,
+    "type": "Junction",
+    "name": "Foggy Lake",
+    "elev": 5220,
+    "distMi": null
+   },
+   {
+    "i": 2,
+    "type": "Campsite",
+    "name": "Foggy Lake, Gothic Basin",
+    "elev": 5220,
+    "distMi": null
+   },
+   {
+    "i": 3,
+    "type": "Water",
+    "name": "Weeden Creek crossing",
+    "elev": 5510,
+    "distMi": null
+   },
+   {
+    "i": 4,
+    "type": "Summit",
+    "name": "Gothic Peak Summit",
+    "elev": 6213.5,
+    "distMi": null
+   }
+  ]
+ },
+ {
+  "id": "wa_greenwood_mountain_west_ridge",
+  "name": "West Ridge",
+  "where": "Entiat Mountain Range > Greenwood Mountain",
+  "discipline": "scrambling",
+  "grade": "Class 3",
+  "why": "no summit pin on the track, after the trailhead; no summit waypoint with a distance from the trailhead",
+  "distKmStored": null,
+  "outingShape": null,
+  "gainFt": null,
+  "waypoints": [
+   {
+    "i": 0,
+    "type": "Trailhead",
+    "name": "Phelps Creek Trailhead",
+    "elev": 3500,
+    "distMi": null
+   },
+   {
+    "i": 1,
+    "type": "landmark",
+    "name": "Dumbell Mountain summit (adjacent, shared-approach peak)",
+    "elev": 8416,
+    "distMi": null
+   },
+   {
+    "i": 2,
+    "type": "Summit",
+    "name": "Greenwood Mountain summit",
+    "elev": 8413,
+    "distMi": null
+   }
+  ]
+ },
+ {
+  "id": "wa_gunnshy_peak_standard_route",
+  "name": "Gunnshy Peak Standard Route (Barclay Lake Approach)",
+  "where": "Skykomish Valley > Gunnshy Peak",
+  "discipline": "mountaineering",
+  "grade": "Class 3",
+  "why": "no summit waypoint with a distance from the trailhead",
+  "distKmStored": 7.2,
+  "outingShape": "outback",
+  "gainFt": 4295,
+  "waypoints": [
+   {
+    "i": 0,
+    "type": "Trailhead",
+    "name": "Barclay Lake Trailhead (FR-6024)",
+    "elev": null,
+    "distMi": 0
+   },
+   {
+    "i": 1,
+    "type": "Junction",
+    "name": "Ridge Junction (Gunn-Barclay Divide, above waterfall gully)",
+    "elev": null,
+    "distMi": null
+   },
+   {
+    "i": 2,
+    "type": "Summit",
+    "name": "Gunnshy Peak Summit",
+    "elev": 6218,
+    "distMi": null
+   }
+  ]
+ },
+ {
+  "id": "wa_gunsight_peak_standard",
+  "name": "Standard Route",
+  "where": "Gunsight Range, The > Middle Peak",
+  "discipline": "alpine",
+  "grade": "5.6",
+  "why": "no summit waypoint with a distance from the trailhead",
+  "distKmStored": 27.35,
+  "outingShape": null,
+  "gainFt": 14000,
+  "waypoints": [
+   {
+    "i": 0,
+    "type": "Trailhead",
+    "name": "Downey Creek Trailhead",
+    "elev": 1400,
+    "distMi": 0
+   },
+   {
+    "i": 1,
+    "type": "Junction",
+    "name": "Bachelor Creek crossing",
+    "elev": 2441,
+    "distMi": 6.6
+   },
+   {
+    "i": 2,
+    "type": "Campsite",
+    "name": "Bachelor Flats / Bachelor Meadows",
+    "elev": 4500,
+    "distMi": 8.9
+   },
+   {
+    "i": 3,
+    "type": "Water",
+    "name": "Cub Lake",
+    "elev": 5343,
+    "distMi": null
+   },
+   {
+    "i": 4,
+    "type": "Junction",
+    "name": "Cub Pass (above Cub Lake)",
+    "elev": 5900,
+    "distMi": 11
+   },
+   {
+    "i": 5,
+    "type": "Campsite",
+    "name": "Itswoot Ridge camp",
+    "elev": 6400,
+    "distMi": 12.5
+   },
+   {
+    "i": 6,
+    "type": "Hazard",
+    "name": "Dome Glacier crossing",
+    "elev": 7500,
+    "distMi": 14
+   },
+   {
+    "i": 7,
+    "type": "Junction",
+    "name": "Chikamin-Dome Col",
+    "elev": 8500,
+    "distMi": 15
+   },
+   {
+    "i": 8,
+    "type": "Summit",
+    "name": "Gunsight Peak summit",
+    "elev": 8198,
+    "distMi": null
+   }
+  ]
+ }
+]

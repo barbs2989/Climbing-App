@@ -1,0 +1,351 @@
+[
+ {
+  "id": "wa_mount_skokomish_standard",
+  "name": "Standard Scramble (Putvin Trail / Lake of the Angels approach)",
+  "where": "Southern Olympic Mountains (Mount Skokomish Wilderness) > Mount Skokomish",
+  "discipline": "scrambling",
+  "grade": "Class 3",
+  "why": "no summit waypoint with a distance from the trailhead",
+  "distKmStored": 5.2,
+  "outingShape": null,
+  "gainFt": 5100,
+  "waypoints": [
+   {
+    "i": 0,
+    "type": "Trailhead",
+    "name": "Putvin Trailhead (Trail #813, FR-25/Hamma Hamma Rd)",
+    "elev": 1590,
+    "distMi": 0
+   },
+   {
+    "i": 1,
+    "type": "Campsite",
+    "name": "Lake of the Angels",
+    "elev": 4950,
+    "distMi": 3.5
+   },
+   {
+    "i": 2,
+    "type": "Summit",
+    "name": "Mount Skokomish (South Peak, true summit)",
+    "elev": 6434,
+    "distMi": null
+   }
+  ]
+ },
+ {
+  "id": "wa_mount_spickard_silver_glacier",
+  "name": "Silver Glacier",
+  "where": "Chilliwack Range > Mount Spickard",
+  "discipline": "mountaineering",
+  "grade": "Class 4",
+  "why": "no trailhead waypoint",
+  "distKmStored": null,
+  "outingShape": null,
+  "gainFt": null,
+  "waypoints": [
+   {
+    "i": 0,
+    "type": "Campsite",
+    "name": "Ouzel Lake camp",
+    "elev": 5665,
+    "distMi": null
+   },
+   {
+    "i": 1,
+    "type": "pass",
+    "name": "Custer-Spickard Saddle",
+    "elev": 7380,
+    "distMi": null
+   },
+   {
+    "i": 2,
+    "type": "Summit",
+    "name": "Mount Spickard Summit",
+    "elev": 8979,
+    "distMi": null
+   }
+  ]
+ },
+ {
+  "id": "wa_mount_steel_first_divide",
+  "name": "First Divide Route (North Fork Skokomish / Staircase approach)",
+  "where": "North-Central Olympic Mountains (Deception–Gray Wolf) > Mount Steel",
+  "discipline": "mountaineering",
+  "grade": "Class 1",
+  "why": "no summit waypoint with a distance from the trailhead",
+  "distKmStored": 20.4,
+  "outingShape": null,
+  "gainFt": 5440,
+  "waypoints": [
+   {
+    "i": 0,
+    "type": "Trailhead",
+    "name": "Staircase Trailhead (North Fork Skokomish, Olympic NP)",
+    "elev": null,
+    "distMi": null
+   },
+   {
+    "i": 1,
+    "type": "Campsite",
+    "name": "Camp Pleasant — mid-valley staging on the North Fork Skokomish",
+    "elev": 1550,
+    "distMi": null
+   },
+   {
+    "i": 2,
+    "type": "Campsite",
+    "name": "Nine Stream — last low camp before the First Divide climb",
+    "elev": 2040,
+    "distMi": null
+   },
+   {
+    "i": 3,
+    "type": "Summit",
+    "name": "Mount Steel",
+    "elev": null,
+    "distMi": null
+   }
+  ]
+ },
+ {
+  "id": "wa_mount_stuart_ice_cliff_glacier",
+  "name": "Ice Cliff Glacier",
+  "where": "Stuart-Enchantments > Mount Stuart",
+  "discipline": "alpine",
+  "grade": "AI3",
+  "why": "no summit waypoint with a distance from the trailhead",
+  "distKmStored": null,
+  "outingShape": null,
+  "gainFt": 6015,
+  "waypoints": [
+   {
+    "i": 0,
+    "type": "Trailhead",
+    "name": "Stuart Lake Trailhead",
+    "elev": 3400,
+    "distMi": 0
+   },
+   {
+    "i": 1,
+    "type": "Junction",
+    "name": "Climbers' trail junction (east of Mountaineers Ridge)",
+    "elev": null,
+    "distMi": null
+   },
+   {
+    "i": 2,
+    "type": "Campsite",
+    "name": "Ice Cliff Glacier base bivy",
+    "elev": 5384,
+    "distMi": null
+   },
+   {
+    "i": 3,
+    "type": "Summit",
+    "name": "Mount Stuart Summit",
+    "elev": 9415,
+    "distMi": null
+   }
+  ]
+ },
+ {
+  "id": "wa_mount_terror_southeast_face",
+  "name": "East Ridge",
+  "where": "Southern Pickets > Mount Terror",
+  "discipline": "alpine",
+  "grade": "5.8",
+  "why": "no summit waypoint with a distance from the trailhead",
+  "distKmStored": 32.99,
+  "outingShape": null,
+  "gainFt": 6000,
+  "waypoints": [
+   {
+    "i": 0,
+    "type": "Campsite",
+    "name": "Goodell Creek Campground, roadhead staging",
+    "elev": 500,
+    "distMi": null
+   },
+   {
+    "i": 1,
+    "type": "Trailhead",
+    "name": "Goodell Creek Trailhead",
+    "elev": 600,
+    "distMi": null
+   },
+   {
+    "i": 2,
+    "type": "Campsite",
+    "name": "Terror Basin camp",
+    "elev": 5800,
+    "distMi": null
+   },
+   {
+    "i": 3,
+    "type": "Campsite",
+    "name": "Crescent Creek Basin camp",
+    "elev": 6050,
+    "distMi": null
+   },
+   {
+    "i": 4,
+    "type": "Summit",
+    "name": "Mount Terror summit",
+    "elev": 8151,
+    "distMi": null
+   }
+  ]
+ },
+ {
+  "id": "wa_mount_terror_stoddard_buttress",
+  "name": "Stoddard Buttress",
+  "where": "Southern Pickets > Mount Terror",
+  "discipline": "alpine",
+  "grade": "5.8",
+  "why": "no summit waypoint with a distance from the trailhead",
+  "distKmStored": null,
+  "outingShape": null,
+  "gainFt": 6000,
+  "waypoints": [
+   {
+    "i": 0,
+    "type": "Trailhead",
+    "name": "Goodell Creek / Upper Goodell Group Camp trailhead (SR-20, Newhalem)",
+    "elev": null,
+    "distMi": null
+   },
+   {
+    "i": 1,
+    "type": "Summit",
+    "name": "Mount Terror summit",
+    "elev": 8151,
+    "distMi": null
+   }
+  ]
+ },
+ {
+  "id": "wa_mount_terror_west_ridge",
+  "name": "West Ridge",
+  "where": "Southern Pickets > Mount Terror",
+  "discipline": "alpine",
+  "grade": "5.6",
+  "why": "no one-way distance",
+  "distKmStored": null,
+  "outingShape": null,
+  "gainFt": 6000,
+  "waypoints": [
+   {
+    "i": 0,
+    "type": "Trailhead",
+    "name": "Goodell Creek / Upper Goodell Group Camp trailhead (SR-20, Newhalem)",
+    "elev": null,
+    "distMi": null
+   },
+   {
+    "i": 1,
+    "type": "Campsite",
+    "name": "Terror Basin camp",
+    "elev": 5800,
+    "distMi": 7.8
+   },
+   {
+    "i": 2,
+    "type": "Campsite",
+    "name": "Crescent Creek Basin camp",
+    "elev": 6050,
+    "distMi": 10
+   },
+   {
+    "i": 3,
+    "type": "Campsite",
+    "name": "Chopping Block saddle camp",
+    "elev": 6401,
+    "distMi": 9.2
+   },
+   {
+    "i": 4,
+    "type": "Summit",
+    "name": "Mount Terror summit",
+    "elev": 8151,
+    "distMi": null
+   }
+  ]
+ },
+ {
+  "id": "wa_mount_tom_scramble",
+  "name": "Glacier/Scramble Route",
+  "where": "Central Olympic Mountains > Mount Tom",
+  "discipline": "mountaineering",
+  "grade": "Class 3",
+  "why": "no summit waypoint with a distance from the trailhead",
+  "distKmStored": 33.8,
+  "outingShape": null,
+  "gainFt": 7100,
+  "waypoints": [
+   {
+    "i": 0,
+    "type": "Trailhead",
+    "name": "Hoh River Trailhead (Hoh Rain Forest Visitor Center)",
+    "elev": 578,
+    "distMi": 0
+   },
+   {
+    "i": 1,
+    "type": "Water",
+    "name": "Five Mile Island",
+    "elev": 900,
+    "distMi": 5.6
+   },
+   {
+    "i": 2,
+    "type": "Water",
+    "name": "Hoh River crossing",
+    "elev": 1346,
+    "distMi": null
+   },
+   {
+    "i": 3,
+    "type": "Campsite",
+    "name": "Elk Lake camp",
+    "elev": 2600,
+    "distMi": 15.3
+   },
+   {
+    "i": 4,
+    "type": "Campsite",
+    "name": "Glacier Meadows high camp",
+    "elev": 4300,
+    "distMi": 17.6
+   },
+   {
+    "i": 5,
+    "type": "Junction",
+    "name": "Top of Blue Glacier lateral moraine",
+    "elev": 5100,
+    "distMi": 18.4
+   },
+   {
+    "i": 6,
+    "type": "Hazard",
+    "name": "Blue Glacier crossing to Snow Dome",
+    "elev": 6786,
+    "distMi": 20
+   },
+   {
+    "i": 7,
+    "type": "Hazard",
+    "name": "White/Hubert Glacier traverse to Tom-Olympus col",
+    "elev": 6800,
+    "distMi": null
+   },
+   {
+    "i": 8,
+    "type": "Summit",
+    "name": "Mount Tom summit",
+    "elev": 7076,
+    "distMi": null
+   }
+  ]
+ }
+]

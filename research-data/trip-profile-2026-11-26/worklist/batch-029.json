@@ -1,0 +1,288 @@
+[
+ {
+  "id": "wa_hagan_mountain_north_slopes_blum_lakes",
+  "name": "North Slopes via Blum Lakes",
+  "where": "Bellingham and Mt Baker Hwy > Hagan Mountain",
+  "discipline": "alpine",
+  "grade": "Class 3",
+  "why": "no summit waypoint with a distance from the trailhead",
+  "distKmStored": null,
+  "outingShape": "outback",
+  "gainFt": null,
+  "waypoints": [
+   {
+    "i": 0,
+    "type": "Trailhead",
+    "name": "Baker River Trailhead",
+    "elev": null,
+    "distMi": null
+   },
+   {
+    "i": 1,
+    "type": "Campsite",
+    "name": "Upper Blum Lake",
+    "elev": 5024,
+    "distMi": null
+   },
+   {
+    "i": 2,
+    "type": "Summit",
+    "name": "Hagan Mountain summit",
+    "elev": 7067,
+    "distMi": null
+   }
+  ]
+ },
+ {
+  "id": "wa_hagan_mountain_south",
+  "name": "South Slopes",
+  "where": "Bellingham and Mt Baker Hwy > Hagan Mountain",
+  "discipline": "mountaineering",
+  "grade": "Class 3",
+  "why": "no trailhead pin on the track; no summit waypoint with a distance from the trailhead",
+  "distKmStored": 31.38,
+  "outingShape": null,
+  "gainFt": 6600,
+  "waypoints": [
+   {
+    "i": 0,
+    "type": "Trailhead",
+    "name": "Baker River Trailhead",
+    "elev": 800,
+    "distMi": 0
+   },
+   {
+    "i": 1,
+    "type": "Campsite",
+    "name": "Upper Watson Lake",
+    "elev": 4415,
+    "distMi": 3
+   },
+   {
+    "i": 2,
+    "type": "Junction",
+    "name": "~5,300-ft saddle below Mt. Watson",
+    "elev": 5300,
+    "distMi": null
+   },
+   {
+    "i": 3,
+    "type": "Campsite",
+    "name": "Uppermost Diobsud Lake",
+    "elev": null,
+    "distMi": null
+   },
+   {
+    "i": 4,
+    "type": "Water",
+    "name": "Hidden Lake (Bacon-Hagan saddle)",
+    "elev": 4553,
+    "distMi": null
+   },
+   {
+    "i": 5,
+    "type": "Water",
+    "name": "Blum Lakes",
+    "elev": 5024,
+    "distMi": null
+   },
+   {
+    "i": 6,
+    "type": "Hazard",
+    "name": "Cliff-band forest slopes, south flank of Hagan",
+    "elev": null,
+    "distMi": null
+   },
+   {
+    "i": 7,
+    "type": "Hazard",
+    "name": "Scree/talus couloir col, SW end of Hagan",
+    "elev": null,
+    "distMi": null
+   },
+   {
+    "i": 8,
+    "type": "Summit",
+    "name": "Hagan Mountain summit",
+    "elev": 7067,
+    "distMi": null
+   }
+  ]
+ },
+ {
+  "id": "wa_helmet_butte_standard_route",
+  "name": "Helmet Butte Standard Route",
+  "where": "Chiwawa Ridge / DaKobed Range > Helmet Butte",
+  "discipline": "mountaineering",
+  "grade": "Class 3",
+  "why": "no summit waypoint with a distance from the trailhead",
+  "distKmStored": 15.5,
+  "outingShape": null,
+  "gainFt": 4648,
+  "waypoints": [
+   {
+    "i": 0,
+    "type": "Trailhead",
+    "name": "Trinity Trailhead",
+    "elev": 2800,
+    "distMi": 0
+   },
+   {
+    "i": 1,
+    "type": "Summit",
+    "name": "Helmet Butte Summit",
+    "elev": 7420,
+    "distMi": null
+   }
+  ]
+ },
+ {
+  "id": "wa_himmelhorn_stonehenge",
+  "name": "Stonehenge",
+  "where": "Southern Pickets > Himmelhorn",
+  "discipline": "alpine",
+  "grade": "5.10-",
+  "why": "no trailhead waypoint",
+  "distKmStored": null,
+  "outingShape": null,
+  "gainFt": null,
+  "waypoints": [
+   {
+    "i": 0,
+    "type": "Summit",
+    "name": "Himmelhorn summit",
+    "elev": 7880,
+    "distMi": null
+   }
+  ]
+ },
+ {
+  "id": "wa_himmelhorn_wild_hair_crack",
+  "name": "Wild Hair Crack",
+  "where": "Southern Pickets > Himmelhorn",
+  "discipline": "alpine",
+  "grade": "5.7",
+  "why": "no trailhead waypoint",
+  "distKmStored": null,
+  "outingShape": null,
+  "gainFt": null,
+  "waypoints": [
+   {
+    "i": 0,
+    "type": "route-start",
+    "name": "Wild Hair Crack start (Himmelhorn-Ottohorn col area)",
+    "elev": null,
+    "distMi": null
+   },
+   {
+    "i": 1,
+    "type": "Summit",
+    "name": "Himmelhorn summit",
+    "elev": 7880,
+    "distMi": null
+   }
+  ]
+ },
+ {
+  "id": "wa_honeymoon_route",
+  "name": "Honeymoon Route",
+  "where": "North-Central Olympic Mountains (Deception–Gray Wolf) > Mount Deception",
+  "discipline": "alpine",
+  "grade": "Class 3",
+  "why": "no summit pin on the track, after the trailhead; no summit waypoint with a distance from the trailhead",
+  "distKmStored": 13.2,
+  "outingShape": null,
+  "gainFt": 7861,
+  "waypoints": [
+   {
+    "i": 0,
+    "type": "Trailhead",
+    "name": "Upper Dungeness Trailhead",
+    "elev": 2550,
+    "distMi": null
+   },
+   {
+    "i": 1,
+    "type": "Campsite",
+    "name": "Royal Lake",
+    "elev": 5100,
+    "distMi": 7.2
+   },
+   {
+    "i": 2,
+    "type": "Campsite",
+    "name": "Upper Royal Basin",
+    "elev": 5600,
+    "distMi": null
+   },
+   {
+    "i": 3,
+    "type": "Summit",
+    "name": "Mount Deception Summit",
+    "elev": 7788,
+    "distMi": null
+   }
+  ]
+ },
+ {
+  "id": "wa_hozomeen_mountain_north_peak_north_route",
+  "name": "North Route (North Peak)",
+  "where": "Hwy 20 and North Cascades National Park > Hozomeen Mountain",
+  "discipline": "scrambling",
+  "grade": "Class 4",
+  "why": "no summit waypoint with a distance from the trailhead",
+  "distKmStored": 12.1,
+  "outingShape": null,
+  "gainFt": 6800,
+  "waypoints": [
+   {
+    "i": 0,
+    "type": "Trailhead",
+    "name": "Hozomeen Campground / Hozomeen Lake Trailhead (upper loop)",
+    "elev": 1650,
+    "distMi": 0
+   },
+   {
+    "i": 1,
+    "type": "Campsite",
+    "name": "Hozomeen Campground, north end of Ross Lake",
+    "elev": 1650,
+    "distMi": null
+   },
+   {
+    "i": 2,
+    "type": "Summit",
+    "name": "Hozomeen Mountain, North Peak",
+    "elev": 8071,
+    "distMi": null
+   }
+  ]
+ },
+ {
+  "id": "wa_hozomeen_mountain_north_peak_south_ridge",
+  "name": "South Ridge (North Peak)",
+  "where": "Hwy 20 and North Cascades National Park > Hozomeen Mountain",
+  "discipline": "scrambling",
+  "grade": "Class 4",
+  "why": "no trailhead waypoint",
+  "distKmStored": null,
+  "outingShape": null,
+  "gainFt": null,
+  "waypoints": [
+   {
+    "i": 0,
+    "type": "Campsite",
+    "name": "Hozomeen Campground, north end of Ross Lake",
+    "elev": 1650,
+    "distMi": null
+   },
+   {
+    "i": 1,
+    "type": "Campsite",
+    "name": "Hozomeen Lake camp",
+    "elev": 2827,
+    "distMi": null
+   }
+  ]
+ }
+]

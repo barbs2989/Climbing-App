@@ -1,0 +1,344 @@
+[
+ {
+  "id": "wa_lizard_mountain_south_route",
+  "name": "South Route",
+  "where": "Darrington and Mountain Loop Hwy > Lizard Mountain",
+  "discipline": "mountaineering",
+  "grade": "Class 2",
+  "why": "no trailhead pin on the track; no summit waypoint with a distance from the trailhead",
+  "distKmStored": 56.3,
+  "outingShape": "outback",
+  "gainFt": 11200,
+  "waypoints": [
+   {
+    "i": 0,
+    "type": "Trailhead",
+    "name": "Cascade Pass Trailhead",
+    "elev": 3600,
+    "distMi": 0
+   },
+   {
+    "i": 1,
+    "type": "Junction",
+    "name": "Cascade Pass",
+    "elev": 5392,
+    "distMi": 3.7
+   },
+   {
+    "i": 2,
+    "type": "Junction",
+    "name": "Cache Col",
+    "elev": 6903,
+    "distMi": 5.7
+   },
+   {
+    "i": 3,
+    "type": "Campsite",
+    "name": "Kool-Aid Lake",
+    "elev": 6119,
+    "distMi": 6.7
+   },
+   {
+    "i": 4,
+    "type": "Hazard",
+    "name": "Middle Cascade Glacier crossing",
+    "elev": 7200,
+    "distMi": 9
+   },
+   {
+    "i": 5,
+    "type": "Campsite",
+    "name": "Yang Yang Lakes",
+    "elev": 5852,
+    "distMi": 10.5
+   },
+   {
+    "i": 6,
+    "type": "Campsite",
+    "name": "White Rock Lakes",
+    "elev": 6197,
+    "distMi": null
+   },
+   {
+    "i": 7,
+    "type": "Summit",
+    "name": "Lizard Mountain",
+    "elev": 7420,
+    "distMi": null
+   }
+  ]
+ },
+ {
+  "id": "wa_luahna_peak_southwest_slope_southeast_ridge",
+  "name": "Southwest Slope - Southeast Ridge",
+  "where": "Chiwawa Ridge / DaKobed Range > Luahna Peak",
+  "discipline": "scrambling",
+  "grade": "Class 3",
+  "why": "no summit waypoint with a distance from the trailhead",
+  "distKmStored": 24.15,
+  "outingShape": "outback",
+  "gainFt": 9400,
+  "waypoints": [
+   {
+    "i": 0,
+    "type": "Trailhead",
+    "name": "White River Trailhead (FR-6400, Lake Wenatchee)",
+    "elev": 2320,
+    "distMi": null
+   },
+   {
+    "i": 1,
+    "type": "Summit",
+    "name": "Luahna Peak",
+    "elev": 8450,
+    "distMi": null
+   }
+  ]
+ },
+ {
+  "id": "wa_luna_glacier",
+  "name": "Luna Glacier",
+  "where": "Northern Pickets > Phantom Peak",
+  "discipline": "alpine",
+  "grade": "5.0",
+  "why": "no summit waypoint with a distance from the trailhead",
+  "distKmStored": 61.15,
+  "outingShape": null,
+  "gainFt": 7800,
+  "waypoints": [
+   {
+    "i": 0,
+    "type": "Trailhead",
+    "name": "Ross Dam / Big Beaver Trailhead (Hwy 20)",
+    "elev": 2150,
+    "distMi": 0
+   },
+   {
+    "i": 1,
+    "type": "Campsite",
+    "name": "Luna Camp, Big Beaver Trail",
+    "elev": 2432,
+    "distMi": null
+   },
+   {
+    "i": 2,
+    "type": "Summit",
+    "name": "Phantom Peak summit",
+    "elev": 8016,
+    "distMi": null
+   }
+  ]
+ },
+ {
+  "id": "wa_lundin_peak_east_ridge",
+  "name": "East Ridge",
+  "where": "Snoqualmie Pass Area > Lundin Peak",
+  "discipline": "alpine",
+  "grade": "5.0",
+  "why": "no summit pin on the track, after the trailhead; no summit waypoint with a distance from the trailhead",
+  "distKmStored": 7.24,
+  "outingShape": null,
+  "gainFt": null,
+  "waypoints": [
+   {
+    "i": 0,
+    "type": "Trailhead",
+    "name": "PCT North (Snoqualmie Pass) Trailhead",
+    "elev": null,
+    "distMi": null
+   },
+   {
+    "i": 1,
+    "type": "Summit",
+    "name": "Lundin Peak summit",
+    "elev": null,
+    "distMi": null
+   }
+  ]
+ },
+ {
+  "id": "wa_martin_peak_west_ridge",
+  "name": "West Ridge",
+  "where": "Entiat Mountain Range > Martin Peak",
+  "discipline": "mountaineering",
+  "grade": "Class 4",
+  "why": "no trailhead pin on the track; no summit waypoint with a distance from the trailhead",
+  "distKmStored": null,
+  "outingShape": null,
+  "gainFt": 5300,
+  "waypoints": [
+   {
+    "i": 0,
+    "type": "Trailhead",
+    "name": "Holden Village (Railroad Creek Trail)",
+    "elev": 3212,
+    "distMi": 0
+   },
+   {
+    "i": 1,
+    "type": "Campsite",
+    "name": "Holden Ballpark Campground",
+    "elev": 3300,
+    "distMi": null
+   },
+   {
+    "i": 2,
+    "type": "Water",
+    "name": "Holden Lake",
+    "elev": 5253,
+    "distMi": 5
+   },
+   {
+    "i": 3,
+    "type": "Campsite",
+    "name": "Holden Lake",
+    "elev": 5278,
+    "distMi": null
+   },
+   {
+    "i": 4,
+    "type": "Campsite",
+    "name": "Holden Pass",
+    "elev": 6357,
+    "distMi": null
+   },
+   {
+    "i": 5,
+    "type": "Summit",
+    "name": "Martin Peak Summit",
+    "elev": 8509,
+    "distMi": null
+   }
+  ]
+ },
+ {
+  "id": "wa_massie_peak_west_route",
+  "name": "West Route",
+  "where": "Entiat Mountain Range > Massie Peak",
+  "discipline": "scrambling",
+  "grade": "Class 3",
+  "why": "no summit waypoint with a distance from the trailhead",
+  "distKmStored": 20.28,
+  "outingShape": null,
+  "gainFt": 5400,
+  "waypoints": [
+   {
+    "i": 0,
+    "type": "Campsite",
+    "name": "Trinity trailhead roadhead",
+    "elev": 2764,
+    "distMi": null
+   },
+   {
+    "i": 1,
+    "type": "Trailhead",
+    "name": "Trinity Trailhead",
+    "elev": 2800,
+    "distMi": 0
+   },
+   {
+    "i": 2,
+    "type": "Junction",
+    "name": "Massie Lake junction ('M' tree marker)",
+    "elev": 3300,
+    "distMi": 4.2
+   },
+   {
+    "i": 3,
+    "type": "Hazard",
+    "name": "Chiwawa River ford",
+    "elev": 3320,
+    "distMi": 4.2
+   },
+   {
+    "i": 4,
+    "type": "Campsite",
+    "name": "Massie Lake",
+    "elev": 5936,
+    "distMi": null
+   },
+   {
+    "i": 5,
+    "type": "Junction",
+    "name": "Ridge gain off the Massie Lake High Route",
+    "elev": null,
+    "distMi": null
+   },
+   {
+    "i": 6,
+    "type": "Summit",
+    "name": "Massie Peak summit",
+    "elev": 7534,
+    "distMi": null
+   }
+  ]
+ },
+ {
+  "id": "wa_mcmillan_spire_west_southwest_ridge",
+  "name": "Southwest Ridge",
+  "where": "Southern Pickets > McMillan Spire (West)",
+  "discipline": "alpine",
+  "grade": "5.8-",
+  "why": "no summit waypoint with a distance from the trailhead",
+  "distKmStored": 12.9,
+  "outingShape": null,
+  "gainFt": 9800,
+  "waypoints": [
+   {
+    "i": 0,
+    "type": "Campsite",
+    "name": "Goodell Creek Campground, roadhead staging",
+    "elev": 500,
+    "distMi": null
+   },
+   {
+    "i": 1,
+    "type": "Trailhead",
+    "name": "Goodell Creek / Upper Goodell Group Camp trailhead (SR-20, Newhalem)",
+    "elev": 600,
+    "distMi": null
+   },
+   {
+    "i": 2,
+    "type": "Campsite",
+    "name": "Terror Basin camp",
+    "elev": 5800,
+    "distMi": 5.4
+   },
+   {
+    "i": 3,
+    "type": "Summit",
+    "name": "West McMillan Spire",
+    "elev": 8000,
+    "distMi": null
+   }
+  ]
+ },
+ {
+  "id": "wa_mount_adams_lava_glacier_headwall",
+  "name": "Lava Glacier Headwall",
+  "where": "Southwest Cascades > Mount Adams",
+  "discipline": "mountaineering",
+  "grade": "Class 3",
+  "why": "no summit waypoint with a distance from the trailhead",
+  "distKmStored": 26.55,
+  "outingShape": null,
+  "gainFt": 7800,
+  "waypoints": [
+   {
+    "i": 0,
+    "type": "Trailhead",
+    "name": "Killen Creek Trailhead #113",
+    "elev": 4600,
+    "distMi": null
+   },
+   {
+    "i": 1,
+    "type": "Summit",
+    "name": "Mount Adams summit",
+    "elev": 12276,
+    "distMi": null
+   }
+  ]
+ }
+]

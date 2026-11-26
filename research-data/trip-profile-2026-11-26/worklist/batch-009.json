@@ -1,0 +1,204 @@
+[
+ {
+  "id": "co_mount_shavano_east_slopes",
+  "name": "East Slopes",
+  "where": "Sawatch Range > Mount Shavano",
+  "discipline": "scrambling",
+  "grade": "Class 2",
+  "why": "no trailhead pin on the track; no trailhead waypoint",
+  "distKmStored": null,
+  "outingShape": null,
+  "gainFt": 4500,
+  "waypoints": [
+   {
+    "i": 0,
+    "type": "Summit",
+    "name": "Mount Shavano summit",
+    "elev": 14231,
+    "distMi": null
+   }
+  ]
+ },
+ {
+  "id": "co_mount_sherman_southwest_ridge",
+  "name": "Southwest Ridge",
+  "where": "Mosquito Range > Mount Sherman",
+  "discipline": "scrambling",
+  "grade": "Class 1",
+  "why": "no trailhead pin on the track; no trailhead waypoint",
+  "distKmStored": null,
+  "outingShape": null,
+  "gainFt": 2100,
+  "waypoints": [
+   {
+    "i": 0,
+    "type": "Summit",
+    "name": "Mount Sherman summit",
+    "elev": 14043,
+    "distMi": null
+   }
+  ]
+ },
+ {
+  "id": "co_mount_silverheels_north_spur_from_hoosier_pass",
+  "name": "North Spur from Hoosier Pass",
+  "where": "Front Range > Mount Silverheels",
+  "discipline": "scrambling",
+  "grade": "Class 2",
+  "why": "no one-way distance",
+  "distKmStored": null,
+  "outingShape": null,
+  "gainFt": null,
+  "waypoints": [
+   {
+    "i": 0,
+    "type": "Trailhead",
+    "name": "Hoosier Pass Trailhead",
+    "elev": null,
+    "distMi": null
+   },
+   {
+    "i": 1,
+    "type": "Summit",
+    "name": "Mount Silverheels summit",
+    "elev": 13828,
+    "distMi": null
+   }
+  ]
+ },
+ {
+  "id": "co_mt_bierstadt_standard_route_west_slopes",
+  "name": "West Slopes",
+  "where": "Mt. Bierstadt > Standard Route",
+  "discipline": "scrambling",
+  "grade": "Class 2",
+  "why": "no one-way distance",
+  "distKmStored": null,
+  "outingShape": null,
+  "gainFt": 2850,
+  "waypoints": [
+   {
+    "i": 0,
+    "type": "Trailhead",
+    "name": "Guanella Pass Trailhead",
+    "elev": null,
+    "distMi": null
+   },
+   {
+    "i": 1,
+    "type": "Summit",
+    "name": "Standard Route summit",
+    "elev": null,
+    "distMi": null
+   }
+  ]
+ },
+ {
+  "id": "co_north_ridge_2",
+  "name": "North Ridge",
+  "where": "Glacier Gorge > Spearhead",
+  "discipline": "alpine",
+  "grade": "5.6",
+  "why": "no one-way distance",
+  "distKmStored": null,
+  "outingShape": null,
+  "gainFt": null,
+  "waypoints": [
+   {
+    "i": 0,
+    "type": "Trailhead",
+    "name": "Glacier Gorge trailhead",
+    "elev": null,
+    "distMi": null
+   },
+   {
+    "i": 1,
+    "type": "Summit",
+    "name": "Spearhead summit",
+    "elev": null,
+    "distMi": null
+   }
+  ]
+ },
+ {
+  "id": "co_pikes_peak_east_slopes",
+  "name": "East Slopes",
+  "where": "Pike's Peak > Pike's Peak Routes",
+  "discipline": "scrambling",
+  "grade": "Class 1",
+  "why": "no one-way distance",
+  "distKmStored": null,
+  "outingShape": null,
+  "gainFt": 7600,
+  "waypoints": [
+   {
+    "i": 0,
+    "type": "Trailhead",
+    "name": "Barr Trail (Manitou Springs)",
+    "elev": null,
+    "distMi": null
+   },
+   {
+    "i": 1,
+    "type": "Summit",
+    "name": "Pike's Peak Routes summit",
+    "elev": null,
+    "distMi": null
+   }
+  ]
+ },
+ {
+  "id": "co_quandary_peak_standard_route_east_ridge",
+  "name": "East Ridge",
+  "where": "Quandary Peak > Standard Route",
+  "discipline": "scrambling",
+  "grade": "Class 1",
+  "why": "no one-way distance",
+  "distKmStored": null,
+  "outingShape": null,
+  "gainFt": 3450,
+  "waypoints": [
+   {
+    "i": 0,
+    "type": "Trailhead",
+    "name": "Quandary Peak Trailhead",
+    "elev": null,
+    "distMi": null
+   },
+   {
+    "i": 1,
+    "type": "Summit",
+    "name": "Standard Route summit",
+    "elev": null,
+    "distMi": null
+   }
+  ]
+ },
+ {
+  "id": "co_rio_grande_pyramid_east_slope_ridge",
+  "name": "East Slope/Ridge",
+  "where": "San Juans > Rio Grande Pyramid",
+  "discipline": "scrambling",
+  "grade": "Class 2",
+  "why": "no one-way distance",
+  "distKmStored": null,
+  "outingShape": null,
+  "gainFt": null,
+  "waypoints": [
+   {
+    "i": 0,
+    "type": "Trailhead",
+    "name": "Thirty Mile Trailhead",
+    "elev": null,
+    "distMi": null
+   },
+   {
+    "i": 1,
+    "type": "Summit",
+    "name": "Rio Grande Pyramid summit",
+    "elev": 13825,
+    "distMi": null
+   }
+  ]
+ }
+]

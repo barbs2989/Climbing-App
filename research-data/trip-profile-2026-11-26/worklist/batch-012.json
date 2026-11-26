@@ -1,0 +1,211 @@
+[
+ {
+  "id": "or_diamond_peak_southwest_ridge",
+  "name": "Southwest Ridge",
+  "where": "Oregon Volcanoes > Diamond Peak",
+  "discipline": "mountaineering",
+  "grade": "Easy Snow",
+  "why": "no trailhead waypoint",
+  "distKmStored": null,
+  "outingShape": null,
+  "gainFt": null,
+  "waypoints": [
+   {
+    "i": 0,
+    "type": "Summit",
+    "name": "Diamond Peak summit",
+    "elev": null,
+    "distMi": null
+   }
+  ]
+ },
+ {
+  "id": "or_krag_peak_southeast_ridge_from_crater_lake",
+  "name": "Southeast Ridge from Crater Lake",
+  "where": "Wallowa Mountains > Krag Peak",
+  "discipline": "scrambling",
+  "grade": "Class 3",
+  "why": "no summit waypoint with a distance from the trailhead",
+  "distKmStored": null,
+  "outingShape": "outback",
+  "gainFt": null,
+  "waypoints": [
+   {
+    "i": 0,
+    "type": "Trailhead",
+    "name": "East Eagle Equestrian Trailhead",
+    "elev": null,
+    "distMi": null
+   },
+   {
+    "i": 1,
+    "type": "Summit",
+    "name": "Krag Peak",
+    "elev": 9092,
+    "distMi": null
+   }
+  ]
+ },
+ {
+  "id": "or_matterhorn_wallowas_east_ridge_from_ice_lake",
+  "name": "East Ridge from Ice Lake",
+  "where": "Wallowa Mountains > Matterhorn",
+  "discipline": "scrambling",
+  "grade": "Class 2",
+  "why": "no summit waypoint with a distance from the trailhead",
+  "distKmStored": null,
+  "outingShape": "outback",
+  "gainFt": null,
+  "waypoints": [
+   {
+    "i": 0,
+    "type": "Trailhead",
+    "name": "Wallowa Lake Trailhead",
+    "elev": null,
+    "distMi": null
+   },
+   {
+    "i": 1,
+    "type": "Summit",
+    "name": "Matterhorn",
+    "elev": 9834,
+    "distMi": null
+   }
+  ]
+ },
+ {
+  "id": "or_middle_sister_north_ridge_hayden_glacier",
+  "name": "North Ridge (Hayden Glacier)",
+  "where": "Three Sisters Wilderness > Middle Sister",
+  "discipline": "mountaineering",
+  "grade": "Grade II Snow",
+  "why": "no one-way distance",
+  "distKmStored": null,
+  "outingShape": null,
+  "gainFt": null,
+  "waypoints": [
+   {
+    "i": 0,
+    "type": "Trailhead",
+    "name": "Pole Creek Trailhead",
+    "elev": 5313,
+    "distMi": 0
+   },
+   {
+    "i": 1,
+    "type": "Summit",
+    "name": "Middle Sister",
+    "elev": 10033,
+    "distMi": 8.2
+   }
+  ]
+ },
+ {
+  "id": "or_mt_jefferson_southwest_ridge",
+  "name": "Southwest Ridge",
+  "where": "Oregon Volcanoes > Mt. Jefferson",
+  "discipline": "alpine",
+  "grade": "Easy 5th",
+  "why": "no summit waypoint with a distance from the trailhead",
+  "distKmStored": null,
+  "outingShape": "outback",
+  "gainFt": null,
+  "waypoints": [
+   {
+    "i": 0,
+    "type": "Trailhead",
+    "name": "Pamelia Lake Trailhead",
+    "elev": null,
+    "distMi": null
+   },
+   {
+    "i": 1,
+    "type": "Summit",
+    "name": "Mount Jefferson summit",
+    "elev": null,
+    "distMi": null
+   }
+  ]
+ },
+ {
+  "id": "or_mt_jefferson_whitewater_glacier",
+  "name": "Whitewater Glacier",
+  "where": "Oregon Volcanoes > Mt. Jefferson",
+  "discipline": "alpine",
+  "grade": "4th",
+  "why": "no summit waypoint with a distance from the trailhead",
+  "distKmStored": null,
+  "outingShape": "outback",
+  "gainFt": null,
+  "waypoints": [
+   {
+    "i": 0,
+    "type": "Trailhead",
+    "name": "Whitewater Trailhead",
+    "elev": null,
+    "distMi": null
+   },
+   {
+    "i": 1,
+    "type": "Summit",
+    "name": "Mount Jefferson summit",
+    "elev": null,
+    "distMi": null
+   }
+  ]
+ },
+ {
+  "id": "or_mt_mcloughlin_east_ridge",
+  "name": "East Ridge",
+  "where": "Oregon Volcanoes > Mt. McLoughlin",
+  "discipline": "mountaineering",
+  "grade": "Easy Snow",
+  "why": "no summit pin on the track, after the trailhead; no summit waypoint with a distance from the trailhead",
+  "distKmStored": null,
+  "outingShape": null,
+  "gainFt": 3920,
+  "waypoints": [
+   {
+    "i": 0,
+    "type": "Trailhead",
+    "name": "Mount McLoughlin Trailhead",
+    "elev": null,
+    "distMi": null
+   },
+   {
+    "i": 1,
+    "type": "Summit",
+    "name": "Mount McLoughlin summit",
+    "elev": null,
+    "distMi": null
+   }
+  ]
+ },
+ {
+  "id": "or_north_ridge_2",
+  "name": "North Ridge",
+  "where": "Oregon Volcanoes > Mt. Washington",
+  "discipline": "alpine",
+  "grade": "5.3",
+  "why": "no one-way distance",
+  "distKmStored": null,
+  "outingShape": null,
+  "gainFt": null,
+  "waypoints": [
+   {
+    "i": 0,
+    "type": "Trailhead",
+    "name": "PCT trailhead, Old Santiam Wagon Road",
+    "elev": null,
+    "distMi": null
+   },
+   {
+    "i": 1,
+    "type": "Summit",
+    "name": "Mount Washington",
+    "elev": 7751,
+    "distMi": 5.4
+   }
+  ]
+ }
+]
