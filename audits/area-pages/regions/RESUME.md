@@ -16,4 +16,9 @@ strip are formation-only, so a region needs only `blurb`.
 - Verify: re-read `blurb` for every written id.
 
 ## Status
-- Tier >=100 climbs: 1,494 regions = r001–r249.
+- Tier >=100 climbs: 1,494 regions = r001–r249 (inputs rebuilt by `tools/build-regions.cjs 100 1000000000`,
+  split 6 per batch in route_count order; the job tmp copy is gone with the job).
+- Research: r001–r012 done and reviewed (71 written, 1 skipped); r013–r018 in flight.
+- Review step per batch: `node tools/lint-batches.cjs batch-rNNN.json`, then read every sentence the agent says
+  it is unsure of and cut it (fix scripts `tools/fix-wave1.cjs`, `tools/fix-wave2.cjs` record each cut).
+- DB writes: r001–r006 queued via `tools/apply-regions.sh` (job tmp regions.done / regions.log); r007+ not yet.
