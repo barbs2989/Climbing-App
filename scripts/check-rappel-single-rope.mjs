@@ -60,9 +60,24 @@ eq("no lengths -> no verdict", rappelRopeNeed({ rappelDetail: [{ n: 1 }] }), nul
 eq("no table -> no verdict", rappelRopeNeed({ rappelDetail: null }), null);
 
 console.log("\nsingle-rope warning fires only when it must");
-eq("warns on a two-rope station list", /does not reach the longest station here \(55 m\)/.test(rappelSingleRopeWarning(T(55, 30)) || ""), true);
+eq("warns on a station one rope cannot reach", rappelSingleRopeWarning(T(55, 30)), "Rappel 1 is 55 m, longer than one 60 m rope reaches (about 30 m).");
+eq("...naming the RIGHT rappel", rappelSingleRopeWarning(T(40, 43, 46, 21)), "Rappel 3 is 46 m, longer than one 60 m rope reaches (about 30 m).");
+eq("...the longest one, by its own number", rappelSingleRopeWarning(T(40, 43, 21, 46)), "Rappel 4 is 46 m, longer than one 60 m rope reaches (about 30 m).");
 eq("silent when one rope reaches", rappelSingleRopeWarning(T(30, 28)), null);
-eq("header says two ropes", rappelHeaderLabel(T(55, 30)), "RAPPELS · 2 stations · two ropes (longest 55 m)");
+
+/* ONE ROPE IS THE DEFAULT (owner, 2026-11-26). The warning used to promise "roughly twice this
+   many rappels, using intermediate anchors that are not listed below" — a guess about anchors
+   nobody described. No line in the section may speak of a second rope or guess at anchors. */
+console.log("\none rope is the default: no two-rope wording, no guessed anchors");
+const TWO_ROPE_WORDS = /two ropes|double[- ]rope|second rope|twice this many|intermediate anchors/i;
+for (const [label, r] of [["measured", T(55, 30)], ["stated", { rappelDetail: [{ n: 1, lengthM: 30, notes: "a single rope will not link these two stations." }] }]]) {
+  eq(`${label}: warning says nothing of two ropes`, TWO_ROPE_WORDS.test(rappelSingleRopeWarning(r) || ""), false);
+  eq(`${label}: header says nothing of two ropes`, TWO_ROPE_WORDS.test(rappelHeaderLabel(r) || ""), false);
+}
+eq("header names the single rope a measured list fits", rappelHeaderLabel(T(30, 25, 28)), "RAPPELS · 3 rappels · one 60 m rope");
+eq("...a 70 m when a station needs it", rappelHeaderLabel(T(30, 35)), "RAPPELS · 2 rappels · one 70 m rope");
+eq("...and no rope when a station is unmeasured", rappelHeaderLabel({ rappelDetail: [{ n: 1, lengthM: 25 }, { n: 2, lengthM: null }] }), "RAPPELS · 2 rappels");
+eq("header for a list one rope cannot do", rappelHeaderLabel(T(55, 30)), "RAPPELS · 2 stations · longer than one rope reaches");
 
 /* STATED, not measured. The length rule above is silent when a row's recorded lengths fit one
    rope, and a row can say outright that they do not. wa_east_face_2 is the catalog case: two
@@ -93,10 +108,10 @@ eq("two ropes merely recommended is not a requirement", rappelRopeNeed(S("Two 60
 eq("escape does not cross a sentence boundary", rappelRopeNeed(S("A single rope will not link these stations. Elsewhere, or two single-rope rappels work.", 30)).needs, "double");
 
 console.log("\nstated requirement reaches the reader without a metre figure");
-eq("warning names no distance it does not have", /states that a single 60 m rope will not link its stations/.test(rappelSingleRopeWarning(S("a single rope will not link these two stations.", 30)) || ""), true);
+eq("warning names no distance it does not have", /states that one 60 m rope does not reach between its stations/.test(rappelSingleRopeWarning(S("a single rope will not link these two stations.", 30)) || ""), true);
 eq("warning invents no metres", /\(\d+ m\)/.test(rappelSingleRopeWarning(S("a single rope will not link these two stations.", 30)) || ""), false);
-eq("header omits the distance too", rappelHeaderLabel(S("a single rope will not link these two stations.", 30)), "RAPPELS \u00b7 1 station \u00b7 two ropes");
-eq("measured rows keep their distance", rappelHeaderLabel(T(55, 30)), "RAPPELS \u00b7 2 stations \u00b7 two ropes (longest 55 m)");
+eq("header omits the distance too", rappelHeaderLabel(S("a single rope will not link these two stations.", 30)), "RAPPELS \u00b7 1 station \u00b7 longer than one rope reaches");
+eq("measured rows keep their distance in the warning", /\(55 m\)|55 m,/.test(rappelSingleRopeWarning(T(55, 30)) || ""), true);
 
 console.log("\nrappelNumbersIn still bounded");
 eq("a year is not a rappel count", rappelNumbersIn("bolted in 2023, 4 rappels").join(","), "4");

@@ -1,0 +1,190 @@
+{
+ "wa_mix_up_peak_east_face": {
+  "area": "wa_mixup_peak",
+  "set": {
+   "rappels": "4-5 rappels on a single 60 m rope; one lower rappel is overhanging",
+   "rappel_count_note": "Parties report four to five rappels on one 60 m rope: a rappel from a ledge just below the summit, a single-rope rappel from the bottom of the shoulder to the top of pitch 2, then the overhanging drop to below Gunsight Notch in two rappels. The count differs by party depending on where the rappelling starts and how much is downclimbed. Anchors are natural slings and cord; parties report adding cord to one and rebuilding another.",
+   "descent_text": "Descend by reversing the final scramble pitches/downclimbing back to the top of the technical face (the uppermost section is a downclimb/scramble to the top of the East Face), then begin a rappel sequence rather than trying to downclimb the buttress itself — the rock is loose enough that down-climbing the route is not recommended. From a small ledge/anchor on the east side just below the summit, a rappel gets you down the steepest upper wall (rockfall-prone — the next rappeller should move off to the side immediately, not straight down, to avoid anyone above). Below that, from the bottom of the shoulder, one rappel on a single 60 m rope reaches the belay atop the second pitch. From there the line drops over an overhanging section to just below the north side of Gunsight Notch in two rappels on a single 60 m rope. Anchors are fixed natural slings and cord rather than bolts, and parties regularly add cord or rebuild one, so carry some. Move off the fall line as soon as you are down each rappel; rockfall knocked loose by the party above is a recognized hazard here. Below the notch, re-descend the glacier and snowfield and Mixup Arm to Cascade Pass."
+  },
+  "rappel_detail": [
+   {
+    "n": 1,
+    "lengthM": null,
+    "anchor": "anchor on a small ledge, east side just below the summit",
+    "station": "A little east-side ledge just under the summit, reached by downclimbing the final scramble.",
+    "hazards": [
+     "Rockfall-prone: the next rappeller should move off to the side at the bottom, not straight down, since others may be rappelling above."
+    ],
+    "notes": "Down the steepest upper wall to the shoulder."
+   },
+   {
+    "n": 2,
+    "lengthM": 30,
+    "anchor": "belay/anchor stance at the bottom of the shoulder",
+    "station": "The bottom of the shoulder.",
+    "hazards": [
+     "The buttress rock is loose enough that downclimbing this section is not recommended."
+    ],
+    "notes": "A single 60 m rope doubled, to the belay atop the second pitch."
+   },
+   {
+    "n": 3,
+    "lengthM": null,
+    "anchor": "belay station at the top of pitch 2 (fixed natural slings)",
+    "station": "The belay atop the second pitch, a tree at the top of the drop overlooking the V-notch.",
+    "hazards": [
+     "The rappel is overhanging. Knot the rope ends."
+    ],
+    "notes": "The first half of the overhanging drop, to an intermediate stance."
+   },
+   {
+    "n": 4,
+    "lengthM": null,
+    "anchor": "intermediate anchor (natural slings or cord; carry cord to rebuild)",
+    "station": "Intermediate stance partway down the overhanging section.",
+    "hazards": [
+     "Anchors here have been found needing extra cord or a rebuild."
+    ],
+    "notes": "To just below the north side of Gunsight Notch."
+   }
+  ],
+  "replace_rappels": true,
+  "review": {
+   "confidence": "medium",
+   "sources": [
+    "https://www.mountaineers.org/activities/routes-places/mixup-peak-e-face",
+    "https://www.mountainproject.com/area/110928479/mix-up-peak"
+   ],
+   "single_rope": "Sources give four to five rappels on one 60 m rope; the first-station 50 m figure in the old text was dropped because it cannot be a single-rope drop.",
+   "changed": "Removed the two-rope aside and the 50 m figure, made the count a 4-5 range, kept the four-station table with fixed notes."
+  }
+ },
+ "wa_mile_high_club": {
+  "area": "wa_morning_star_peak",
+  "set": {
+   "rappels": "8 rappels on a single 60 m rope (a 70 m gives more margin) down a rap line just left of the climb, from bolted anchors; do not miss the intermediate anchor partway down pitch 3.",
+   "rappel_count_note": "Eight single-strand rappels off fixed bolted anchors, and a single 60 m rope is documented as sufficient for every one of them (a 70 m gives more margin). The one place a single rope can fail you is rap 5: if you miss the intermediate anchor in the nook below the small tree and continue down the vertical face, one rope cannot reach the next anchors, so find that nook anchor before committing. The rap line is not the climbing line - it stays roughly 3-5 m skier's left of the bolts for the whole descent, so anchors are found left of where you climbed and pulls are never plumb.",
+   "descent_text": "Descend by rappelling the route itself, back down the same line you climbed — do not try to walk off. Eight single-strand rappels, all off bolted, fixed anchors (this is a sport-bolted line, so no natural gear or v-threads needed): rap 1 from the P7/summit anchor down to the anchor at the foot of pitch 7; the second rappel runs down the face to an anchor set left and above the dihedral; rap 3 is a short drop to a ledge-side anchor beside the dihedral; rap 4 goes to one of two anchors at the pitch 4 stance (favor the left one); rap 5 is a short, free-hanging rap off an upper-P3 anchor aimed at a ~10 ft tree left of the line, with an intermediate anchor in a nook below it; rap 6 is a vertical face rappel down lower P3 to a large ledge at the pitch 2 anchors; rap 7 drops to the pitch 1 anchor (10–15 ft left of the original belay); rap 8 finishes at the base. A single 60 m rope is enough for all 8 rappels, and a 70 m rope gives more margin. Because you rappel the entire route back to the start, many parties leave approach shoes and packs stashed at the base. Descent hazards: loose rock sitting on several of the belay ledges (manage ropes and stack carefully to avoid kicking debris onto the party below), some rope-stretch/rope-snag potential given the zigzagging (not straight-down) line of anchors, and lingering steep snow in the approach gully in spring that can complicate the walk back to the Sunrise Mine Trail after the last rappel."
+  },
+  "rappel_detail": [
+   {
+    "n": 1,
+    "pull": "Nothing on this descent pulls plumb, because the anchors zigzag left of the bolts. Flick the strands clear of the bolt line before pulling or they hang up on hardware.",
+    "notes": "Drops to the anchor at the base of pitch 7.",
+    "anchor": "P7/summit bolted anchor",
+    "hazards": [
+     "There is an edge right at the start. It has since been ground down, but put the rope over the least sharp part of it anyway.",
+     "Loose rock sits on several of the belay ledges on this route; stack ropes so you are not sweeping it off onto the party below."
+    ],
+    "lengthM": 30,
+    "station": "Rap rings set back from the summit at the top of pitch 7. The rappel runs diagonally down to the anchor at the base of pitch 7, which is the pattern for the whole descent: the rap line sits roughly 3-5 m (10-15 ft) skier's left of the bolted climbing line the entire way down."
+   },
+   {
+    "n": 2,
+    "notes": "Face rappel.",
+    "anchor": "Bolted anchor left and above the dihedral",
+    "hazards": [
+     "Throw the rope slightly left of the bolt line: climbers coming up are directly beneath, and rope thrown down the line takes loose rock with it."
+    ],
+    "lengthM": 30,
+    "station": "Rappel down the face to an anchor set about 3 m left of and 3 m above the top of the dihedral. Do not stop at the top of the dihedral itself — the anchor you want is above and left of it."
+   },
+   {
+    "n": 3,
+    "notes": "Short drop to a ledge.",
+    "anchor": "Ledge-side bolted anchor beside the dihedral",
+    "hazards": [
+     "Free-hanging finish onto a ledge — control the swing rather than arriving sideways.",
+     "Loose rock on the ledge."
+    ],
+    "lengthM": 15,
+    "station": "A short rappel to the anchor on the ledge beside the dihedral pitch. The last part of it hangs free above the ledge, so expect a spin before your feet find anything."
+   },
+   {
+    "n": 4,
+    "notes": "Two anchor options exist at this stance.",
+    "anchor": "One of two bolted anchors at the pitch 4 stance",
+    "hazards": [
+     "Choosing the right-hand anchor drops your ropes onto anyone climbing, which is why the left is the published preference."
+    ],
+    "lengthM": 30,
+    "station": "Two anchors exist at the pitch 4 stance. Take the skier's-left one; the right-hand option puts your ropes across the climbing line."
+   },
+   {
+    "n": 5,
+    "pull": "On a single rope, missing the nook and continuing down the vertical face leaves you unable to reach the next anchors, so find the nook anchor before committing.",
+    "notes": "Short, free-hanging rappel aimed at a ~10ft tree left of the line.",
+    "anchor": "Upper-pitch-3 bolted anchor",
+    "hazards": [
+     "Missing this station and continuing down the vertical face below it leaves a party on a single rope unable to reach the next anchors. This is the one place on the descent where a route-finding error strands you mid-face, and the route description flags it explicitly.",
+     "The cedar bushes hide both the anchor and the rope; do not rappel past on autopilot because the terrain is low-angle here."
+    ],
+    "lengthM": 15,
+    "station": "The station people miss, and the one that matters most. Push through the cedar bushes directly below the anchor above, rappel the low-angle upper part of pitch 3, and aim for a tree about 3 m tall standing roughly 5 m skier's left of the climbing line. The intermediate anchor sits in a small recess just under that tree."
+   },
+   {
+    "n": 6,
+    "notes": "Vertical face rappel down lower pitch 3.",
+    "anchor": "Bolted anchor at a large ledge, pitch 2 anchors",
+    "hazards": [
+     "This is the steep face the previous warning is about — you are now committed below the nook.",
+     "Loose rock on the large ledge."
+    ],
+    "lengthM": 30,
+    "station": "From the nook anchor, down the vertical face of lower pitch 3 to the large ledge at the pitch 2 anchors. Take the left anchor if it is free."
+   },
+   {
+    "n": 7,
+    "notes": "Drops to the pitch 1 station.",
+    "anchor": "Pitch 1 bolted anchor",
+    "hazards": [
+     "Easy to arrive at the belay rather than the rap station and burn time traversing across on a slabby stance."
+    ],
+    "lengthM": 30,
+    "station": "Drops to the pitch 1 rappel anchor, which is about 3 m below and 3-5 m skier's left of the pitch 1 belay bolts — not the belay itself."
+   },
+   {
+    "n": 8,
+    "notes": "Final rappel to the ground; a single 60 m rope is enough for the whole sequence.",
+    "anchor": "Base bolted anchor",
+    "hazards": [
+     "The base ledge is exposed above a long drop. Stay roped, walk back to the belay bolt and pull the rope from there rather than coming off the system on the ledge.",
+     "Keep helmets on: on a route this popular there is usually still a party above you when you land.",
+     "In spring the approach gully below still holds steep snow, which complicates the walk back to the Sunrise Mine Trail after the last rappel."
+    ],
+    "lengthM": 30,
+    "station": "Last rappel to the start of the route. The ledge you start from sits several hundred feet up and is truly exposed, so this is not a place to untie casually."
+   }
+  ],
+  "replace_rappels": true,
+  "review": {
+   "confidence": "high",
+   "sources": [
+    "https://www.mountainproject.com/route/112553808/mile-high-club",
+    "https://stephabegg.com/?p=8689",
+    "https://cascadeclimbers.com/forum/topic/98174-tr-mile-high-club-new-route-near-vesper/?page=3"
+   ],
+   "single_rope": "A single 60 m rope does all 8 rappels on the dedicated rap line (developer added it so one 60 works); a 70 m is more comfortable.",
+   "changed": "Removed the two-60 m-ropes recommendation and the two-rope pull line on rap 5, and the two-rope clause in descent text; made the single 60 m the stated default; table kept (all stations 30 m or less)."
+  }
+ },
+ "wa_mount_torment_south_ridge": {
+  "area": "wa_mount_torment",
+  "set": {
+   "rappels": "About 6 short rappels, with some downclimbing, on a single 60 m rope down the South Ridge itself; clip existing stations and back up old webbing.",
+   "rappel_count_note": "Reversing the South Ridge takes about 6 rappels with some downclimbing: a traverse skier's left to a gully, then about 4 more in a more direct line, ending back on the glacier. Stations are often slung horns in poor shape, so add a sling or cord at nearly every one and test each before weighting it. The Southeast Face is the other way down; its rappels end in a moat or bergschrund above the snowfield and no single-rope station list is documented for it, so a party on one rope should expect the ridge. Per-station distances are not published and are recorded as unknown.",
+   "descent_text": "Three options exist, and the choice depends on party speed and whether you're continuing to Forbidden Peak. (1) Reverse the South Ridge: downclimb interspersed with numerous short, traversing rappels off fixed slings/anchors that are 'in abundance' along the ridge — a single rope is generally sufficient for these short raps, but carry extra webbing/cord to back up or replace tat, since stations are alpine-style (slung horns, chockstones, occasional old fixed gear) rather than bolted. This option is slower but avoids the moat problems of the SE Face line. (2) Descend the Southeast Face: downclimb from the summit area to the top rappel station, then make 5-6 rappels down the SE Face gully/slab system back toward the Taboo Glacier (no single-rope line is documented for this face, so one rope may not reach between stations) — the second station is on climber's left, the rest are straight down or climber's right. The crux of this option is the final rappel, where you must cross a moat/bergschrund to reach the snowfield below; this can be genuinely difficult and its condition can't be scoped from above, so the first person down need a picket, an ice axe and crampons to get out of the moat if needed. (3) Continue over the summit and descend via the Torment-Forbidden Traverse toward Forbidden Peak (sustained exposure, a 5.6 step and ~45-degree snow/ice) if that's the day's objective — this is a full traverse, not a simple descent, and commits you to exiting via Forbidden's West Ridge/Boston Basin instead of returning the way you came."
+  },
+  "clear_rappels": true,
+  "review": {
+   "confidence": "low",
+   "sources": [
+    "https://www.mountainproject.com/route/112057303/south-ridge?print=1",
+    "https://www.mountaineers.org/activities/routes-places/mount-torment-forbidden-peak-traverse",
+    "https://summitpost.org/mount-torment-se-face/223232"
+   ],
+   "single_rope": "South Ridge reversal: about 6 short rappels plus downclimbing; sources do not give a rope length but describe the rappels as short. SE Face single-rope line not documented.",
+   "changed": "Cleared the SE Face table (it was the two-rope line), rewrote the count as the South Ridge single-rope descent, removed double-rope wording from note and descent text."
+  }
+ }
+}

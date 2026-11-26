@@ -1,0 +1,209 @@
+{
+ "wa_accidental_discharge_east_face": {
+  "area": "wa_south_peak",
+  "set": {
+   "rappels": "2 rappels off the shared summit on a single 70 m rope: about 35 m north to the notch, then east onto the Blue Glacier",
+   "rappel_count_note": "The summit's shared descent is two rappels: about 35 m north to the notch, then east onto the Blue Glacier. A single 60 m rope does not reach on the first one; a single 70 m rope does. The second rappel's length is not documented and can hang free over the moat, so land beyond the lip. Carry cord to build or back up anchors rather than relying on fixed gear.",
+   "descent_text": "Rappel off the summit by the same line as the peak's other routes: about 35 m north on a single 70 m rope, then a second rappel east onto the Blue Glacier. The last rappel can hang free over the moat at the foot of the face, so land beyond the lip and carry cord to build or back up anchors rather than relying on fixed gear. Do not plan on reversing the loose line of ascent."
+  },
+  "rappel_detail": [
+   {
+    "n": 1,
+    "lengthM": 35,
+    "anchor": "summit anchor (build or back up with cord)",
+    "station": "The summit, shared by every route on the peak.",
+    "hazards": [
+     "Do not plan on reversing the loose line of ascent."
+    ],
+    "notes": "Rappel 1 of 2, about 35 m north to the notch. This is the one station over 30 m, so it needs a single 70 m rope."
+   },
+   {
+    "n": 2,
+    "lengthM": null,
+    "anchor": "anchor at the notch (build or back up with cord)",
+    "station": "The notch north of the summit.",
+    "hazards": [
+     "The last rappel can hang free over the moat at the foot of the face. Land beyond the lip."
+    ],
+    "notes": "Rappel 2 of 2, east onto the Blue Glacier. Its length is not documented, so one rope may not clear the moat; carry cord to build an intermediate anchor."
+   }
+  ],
+  "replace_rappels": true,
+  "review": {
+   "confidence": "low",
+   "sources": [
+    "https://publications.americanalpineclub.org/articles/12200813000/North-America-United-States-Gunsight-Peaks-Traverse-Gunrunner",
+    "https://alpinist.com/?p=56505"
+   ],
+   "single_rope": "The shared summit descent is two rappels, the first about 35 m, which is beyond a single 60 m rope; no source gives a shorter-station single-rope line, and the second rappel length is unstated.",
+   "changed": "Removed the two-rope wording, stated that the 35 m rappel needs a single 70 m rope, kept the existing stations and hazards."
+  }
+ },
+ "wa_south_ridge": {
+  "area": "wa_south_peak",
+  "set": {
+   "rappels": "2 rappels off the shared summit on a single 70 m rope: about 35 m north to the notch, then east onto the Blue Glacier",
+   "rappel_count_note": "The summit's shared descent is two rappels: about 35 m north to the notch, then east onto the Blue Glacier. A single 60 m rope does not reach on the first one; a single 70 m rope does. The second rappel's length is not documented and can hang free over the moat, so land beyond the lip. Carry cord to build or back up anchors rather than relying on fixed gear.",
+   "descent_text": "Do not reverse the ridge. Rappel about 35 m north off the summit, then make a second rappel east onto the Blue Glacier; a moat usually separates rock from ice at the bottom. Carry a single 70 m rope, since the first rappel is about 35 m and a 60 m rope falls short, and cord to leave an anchor."
+  },
+  "rappel_detail": [
+   {
+    "n": 1,
+    "lengthM": 35,
+    "anchor": "summit anchor (build or back up with cord)",
+    "station": "The summit, shared by every route on the peak.",
+    "hazards": [
+     "Do not plan on reversing the loose line of ascent."
+    ],
+    "notes": "Rappel 1 of 2, about 35 m north to the notch. This is the one station over 30 m, so it needs a single 70 m rope."
+   },
+   {
+    "n": 2,
+    "lengthM": null,
+    "anchor": "anchor at the notch (build or back up with cord)",
+    "station": "The notch north of the summit.",
+    "hazards": [
+     "The last rappel can hang free over the moat at the foot of the face. Land beyond the lip."
+    ],
+    "notes": "Rappel 2 of 2, east onto the Blue Glacier. Its length is not documented, so one rope may not clear the moat; carry cord to build an intermediate anchor."
+   }
+  ],
+  "replace_rappels": true,
+  "review": {
+   "confidence": "low",
+   "sources": [
+    "https://publications.americanalpineclub.org/articles/12200813000/North-America-United-States-Gunsight-Peaks-Traverse-Gunrunner",
+    "https://alpinist.com/?p=56505"
+   ],
+   "single_rope": "The shared summit descent is two rappels, the first about 35 m, which is beyond a single 60 m rope; no source gives a shorter-station single-rope line, and the second rappel length is unstated.",
+   "changed": "Removed the two-rope wording, stated that the 35 m rappel needs a single 70 m rope, kept the existing stations and hazards."
+  }
+ },
+ "wa_west_face": {
+  "area": "wa_south_peak",
+  "set": {
+   "rappels": "2 rappels off the shared summit on a single 70 m rope: about 35 m north to the notch, then east onto the Blue Glacier",
+   "rappel_count_note": "The summit's shared descent is two rappels: about 35 m north to the notch, then east onto the Blue Glacier. A single 60 m rope does not reach on the first one; a single 70 m rope does. The second rappel's length is not documented and can hang free over the moat, so land beyond the lip. Carry cord to build or back up anchors rather than relying on fixed gear."
+  },
+  "rappel_detail": [
+   {
+    "n": 1,
+    "lengthM": 35,
+    "anchor": "summit anchor (build or back up with cord)",
+    "station": "The summit, shared by every route on the peak.",
+    "hazards": [
+     "Do not plan on reversing the loose line of ascent."
+    ],
+    "notes": "Rappel 1 of 2, about 35 m north to the notch. This is the one station over 30 m, so it needs a single 70 m rope."
+   },
+   {
+    "n": 2,
+    "lengthM": null,
+    "anchor": "anchor at the notch (build or back up with cord)",
+    "station": "The notch north of the summit.",
+    "hazards": [
+     "The last rappel can hang free over the moat at the foot of the face. Land beyond the lip."
+    ],
+    "notes": "Rappel 2 of 2, east onto the Blue Glacier. Its length is not documented, so one rope may not clear the moat; carry cord to build an intermediate anchor."
+   }
+  ],
+  "replace_rappels": true,
+  "review": {
+   "confidence": "low",
+   "sources": [
+    "https://publications.americanalpineclub.org/articles/12200813000/North-America-United-States-Gunsight-Peaks-Traverse-Gunrunner",
+    "https://alpinist.com/?p=56505"
+   ],
+   "single_rope": "The shared summit descent is two rappels, the first about 35 m, which is beyond a single 60 m rope; no source gives a shorter-station single-rope line, and the second rappel length is unstated.",
+   "changed": "Removed the two-rope wording, stated that the 35 m rappel needs a single 70 m rope, kept the existing stations and hazards."
+  }
+ },
+ "nv_cat_in_the_hat": {
+  "area": "nv_southeast_buttress",
+  "set": {
+   "rappels": "4 rappels on a single 70 m rope; a single 60 m rope works with some downclimbing",
+   "rappel_count_note": "Parties report the descent goes on a single 70 m rope with no downclimbing, and on a single 60 m rope with a little downclimbing. The long rappels (about 130 to 150 ft) can be split at intermediate bolted anchors, which also makes a stuck rope easier to fix. Heavy rope drag is common on the full-length rappels. It is not known whether a single 60 m rope reaches the ground from the intermediate anchor on the last rappel; a 70 m rope does."
+  },
+  "clear_rappels": true,
+  "review": {
+   "confidence": "medium",
+   "sources": [
+    "https://www.mountainproject.com/forum/message/200435988",
+    "https://www.mountainproject.com/forum/message/108729242"
+   ],
+   "single_rope": "Commenters did the rappels on one 70 m rope without trouble, or on one 60 m rope with some downclimbing; one said no second rope is needed. No per-station single-rope list was found.",
+   "changed": "Cleared the table (its stations of 40 to 46 m are beyond one rope) and wrote the single-rope count and options in the summary."
+  }
+ },
+ "wa_southeast_mox_peak_se_rib": {
+  "area": "wa_southeast_mox_peak",
+  "set": {
+   "rappels": "3 rappels on a single 60 m rope from the summit to the high notch; below it, shorter improvised rappels and downclimbing down the gully",
+   "rappel_count_note": "Typical late-summer, snow-free count is about 3 single-rope rappels of roughly 30 m to the notch, then downclimbing and short improvised rappels or lowers in the gully (6 to 7 when snow lingers). With a lingering snow finger, parties have needed up to 9 or 10 shorter rappels interspersed with downclimbing. A second station partway down the first summit rappel, visible from the north side, keeps that rappel within one 60 m rope.",
+   "descent_text": "Descend by reversing the ascent line rather than any independent walk-off. From the true summit, most parties make three single-rope (30 m) rappels down the tower to a small, exposed high notch, then shorter rappels and downclimbing from that notch down the gully toward the glacier below — roughly three rappels to the notch in typical late-summer, snow-free conditions. Anchors along this line are almost entirely improvised rather than bolted: slung boulders, horns and pedestals wrapped with tat/cord, and the occasional jammed knot in a crack; a couple of the stations have accumulated enough old cord to look semi-permanent, but none should be trusted blindly and back-up/extend as needed. Bring a single 60 m rope; below the notch, expect to downclimb part of the gully. In seasons or conditions where a snow finger lingers in the descent gully, parties have needed far more — up to 9-10 shorter single-rope rappels interspersed with downclimbing to get through the same 400-ft gully system, because a lingering snow patch prevents a clean full-length pull; budget extra time and a plan B if you find snow still choking the gully. Known hazards on this descent: persistently loose, choss-prone rock (the Southeast Spire's rock quality is poor, and at least one incident involved a slab breaking loose during rope retrieval at the notch and striking a climber), ropes getting stuck when pulled through the loose gully, high exposure along the east ledges near the Ridge of Gendarmes, and fatigue/darkness on the lower-angle terrain given how long this climb runs. After reaching the glacier below the Col of the Wild, reverse the approach traverse back to your high camp (Redoubt Col/Ouzel Lake), then descend the Depot Creek climbers path past the falls — using the fixed handline again on the steep slab section — back to the trailhead."
+  },
+  "rappel_detail": [
+   {
+    "n": 1,
+    "lengthM": 30,
+    "anchor": "slung boulder/horn/pedestal (improvised)",
+    "notes": "First of three single-rope rappels down the summit tower toward a small, exposed high notch."
+   },
+   {
+    "n": 2,
+    "lengthM": 30,
+    "anchor": "slung boulder/horn/pedestal (improvised)",
+    "notes": "Second single-rope rappel continuing down the tower."
+   },
+   {
+    "n": 3,
+    "lengthM": 30,
+    "anchor": "slung boulder/horn/pedestal or jammed knot",
+    "notes": "Third single-rope rappel reaching the small exposed high notch. Below the notch one rope is used for short rappels and downclimbing in the gully; all anchors on this route are improvised, not fixed bolts."
+   }
+  ],
+  "replace_rappels": true,
+  "review": {
+   "confidence": "medium",
+   "sources": [
+    "https://www.mountainproject.com/route/124368565/beckey-route-west-ridge",
+    "https://summitpost.org/west-ridge-2nd-gully/667806",
+    "https://www.summitpost.org/sergio-rappels-the-first-of/28152/c-28152"
+   ],
+   "single_rope": "Sources describe three single-rope rappels off the West Ridge summit tower, done with a single 60 m rope; the gully below the notch is short rappels and downclimbing.",
+   "changed": "Dropped the 60 m double-rope station and the two-rope aside; kept the three 30 m single-rope stations and the snow-conditions count."
+  }
+ },
+ "wa_the_devils_club": {
+  "area": "wa_southeast_mox_peak",
+  "set": {
+   "rappels": "Rappel the East Face on its own line, about a dozen or more rappels, every anchor built from slung horns, chockstones and gear: there are no bolts anywhere on the route. No single-rope count or station list is published.",
+   "rappel_count_note": "The only documented descent rappelled the face top to bottom on natural anchors, roughly a dozen-plus rappels. No single-rope count or station list is known, so none is shown; a single 60 m rope would mean at least that many, shorter, rappels. On that descent the first rappel hung up and had to be freed by climbing back to the top, and the anchors were angled toward the northeast ridge to find sounder rock than the ascent line.",
+   "descent_text": "The East Face is rappelled top to bottom on its own line — there is no walk-off, and no fixed/bolted rappel stations exist anywhere on the route; every anchor is natural (slung horns, chockstones/gear anchors) built on the spot, so a party needs full natural-anchor-building skill and a rack sufficient to leave gear behind. The FA party (Layton/Wolfe) rappelled the entire 2,400-2,500 ft face on natural anchors, angling the line closer to the northeast ridge than their ascent line, especially on the lower half, to find sounder anchor rock and avoid the loosest terrain in the direct fall line. Their first rappel hung up and forced a strenuous full return to the top to free it before they could continue; from there, roughly a dozen more rappels (about 13 total) got them to the ground, finishing around 3:30 a.m. after an 18-hour continuous push from the base. At the bottom they waded back across the creek chest-deep rather than re-entering the alder/devil's club to reach their tent. A party with a single 60 m rope should expect at least as many rappels, and likely more of them shorter, but no single-rope count is documented, so treat any number as an estimate — anchor placement is judgment-call and can shift the rappel line and count. Expect loose, sometimes rotten rock the entire way (a defining hazard of the route), real risk of stuck ropes given the wandering natural-anchor line, and likely a night finish if the climb runs long, so headlamps and a plan for rope work in the dark should be assumed."
+  },
+  "review": {
+   "confidence": "low",
+   "sources": [
+    "https://www.klipsunmagazine.com/spring-2019-authenticity/2019/03/20/after-hours-one-of-the-last-unclimbed-peaks-in-the-north-cascades",
+    "https://cascadeclimbers.com/forum/ubbthreads.php/topics/836613/TR_Lemolo_Peak_erstwhile_Harde"
+   ],
+   "single_rope": "No source documents a single-rope descent or station list for this face; only the first descent's dozen-plus natural-anchor rappels is on record.",
+   "changed": "Removed doubled-rope wording from the summary, note and descent text; stated that no single-rope count is known. Table was already empty."
+  }
+ },
+ "wa_spectre_peak_south_route": {
+  "area": "wa_spectre_peak",
+  "set": {
+   "rappel_count_note": "The lower rappel can reportedly be avoided or downclimbed in some conditions; a single 60 m rope covers both rappels (about 25 m and 30 m)."
+  },
+  "review": {
+   "confidence": "medium",
+   "sources": [
+    "https://cascadeclimbers.com/forum/topic/108156-tr-spectre-peak-spirited-away-iv-59-~2000-ft-10-pitches-07072025",
+    "https://cascadeclimbers.com/forum/topic/104491-tr-spectre-peak-%E2%80%9Cspirited-away%E2%80%9D-fa-of-the-s-ridge-of-spectre-peak-2000%E2%80%99-58-07262022/"
+   ],
+   "single_rope": "Both rappels (about 25 m and 30 m) fit a single 60 m rope; they are made on the way up and the descent is not by rappel. Trip reports could not be fetched, so this rests on the existing row.",
+   "changed": "Removed the 'or two ropes' aside from the note; table, summary and descent text kept."
+  }
+ }
+}

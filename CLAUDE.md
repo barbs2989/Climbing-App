@@ -200,6 +200,7 @@ npm run audit:gain         # is a route gaining LESS than its own waypoints dema
 npm run check:rappel-lengths # can the rope a route describes actually reach the rappel it states?
 npm run audit:rappel-claims  # does `rappels` claim raps the route's own descent_text denies?
 npm run audit:rappels      # do a route's rappel fields agree with each other?
+npm run audit:rappel-one-rope # does the RAPPELS section describe ONE rope only — no station past one rope's reach, no two-rope wording? (--selftest needs no DB)
 
 # ── Waypoints and tracks — notes: docs/guards/waypoints-and-tracks.md ──
 npm run check:wp-styles    # the app can DRAW every waypoint type it recognises (in build)

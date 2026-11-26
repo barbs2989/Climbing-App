@@ -1,0 +1,78 @@
+{
+ "wa_mount_index_north_face": {
+  "area": "wa_north_peak_2",
+  "rappels": "Descend by rappelling the route on existing slung and natural anchors (trees, roots, blocks), many hung with old slings; multiple double-rope rappels are needed, so carry extra webbing/cord.",
+  "rappel_count_note": "Reported as 4-5 rappels of roughly 30-50 ft each on existing (sometimes old) anchors; exact station-by-station beta beyond the total count and length range isn't published — inspect and back up any worn anchors with extra webbing/rap rings."
+ },
+ "wa_west_face_2": {
+  "area": "wa_north_peak",
+  "rappel_detail": [
+   {
+    "n": 1,
+    "notes": "From the north end of the flat terrace below the summit block, descending the North Ridge.",
+    "anchor": "rap station on the North Ridge (natural anchor/tat)",
+    "lengthM": 50
+   },
+   {
+    "n": 2,
+    "notes": "Either continue down the North Ridge to a small notch, or rappel straight down the face to this anchor.",
+    "anchor": "flake with tat (black tat reported; often reinforced by parties)",
+    "lengthM": 50
+   },
+   {
+    "n": 3,
+    "notes": "Terrain eases toward the packs below.",
+    "anchor": "horn with tat (red tat reported) or a party-built anchor",
+    "lengthM": 50
+   },
+   {
+    "n": 4,
+    "notes": "Short final rappel reaching packs at the base of the route.",
+    "anchor": "natural anchor near the base",
+    "lengthM": 20
+   }
+  ],
+  "rappels": "4 double-rope rappels down the West Face",
+  "rappel_count_note": "Four rappels, and they are double-rope rappels: the published descent is roughly 50 m, 50 m, 50 m and a short 20 m, so two 60 m ropes are needed and one rope will not complete it. Two independent accounts describe the descent as double-rope throughout. The stations are the north-ridge line down to the packs at the base of the route.",
+  "descent_text": "Rappel down the center of the West Face via four consecutive double-rope rappels of roughly 50 m, 50 m, 50 m and 20 m, using natural anchor features and existing bolt/gear anchors established on the granite. Ensure proper rope management to avoid tangling on the steep granite face. Once back at the base of the route, climb back up to the Chikamin-Dome Col via the Chickamin Glacier approach, watching carefully for crevasses and potential moat crossings. From the col, descend the cross-country route back to Bachelor Flats (taking approximately 8-10 hours depending on snow coverage and conditions). From Bachelor Flats, follow the Downey Creek trail back to the trailhead (6-8 hours depending on fitness and pack weight). Plan on getting back to the col the day you climb, then two days out to the car."
+ },
+ "wa_northwest_mox_peak_standard": {
+  "area": "wa_northwest_mox_peak",
+  "rappel_detail": [
+   {
+    "n": 1,
+    "notes": "First of two single-rope rappels descending the ridge toward its low point.",
+    "anchor": "ridge terrain (anchor type not specified)",
+    "lengthM": 30
+   },
+   {
+    "n": 2,
+    "notes": "Second single-rope rappel continuing down to the ridge's low point.",
+    "anchor": "ridge terrain (anchor type not specified)",
+    "lengthM": 30
+   },
+   {
+    "n": 3,
+    "notes": "Long double-rope rappel from the ridge low point back onto the Redoubt Glacier; remote/serious retreat, rappels must be managed carefully.",
+    "anchor": "station at ridge low point",
+    "lengthM": 60
+   }
+  ],
+  "rappels": "3 rappels: 2 single-rope off the summit tower, then one double-rope (~60 m) from the ridge saddle to the Redoubt Glacier — two ropes required for the last",
+  "rappel_count_note": "The stored count of 2 was a partial count of the same sequence. The full descent is three rappels: two single-rope rappels to the wide ledge, then from the saddle one double-rope rappel off the highest anchor, which just reaches the glacier below. No single-rope way off the saddle is documented, so plan on two ropes.",
+  "descent_text": "Downclimb/reverse the ridge to the headwall, then rappel: parties commonly make several rappels down to the ridge's low point followed by a long double-rope rappel back onto Redoubt Glacier, then reverse the approach to camp."
+ },
+ "wa_prey": {
+  "area": "wa_osprey_wall",
+  "rappel_detail": null,
+  "rappels": "Double-rope (60m) rappels from fixed tree anchors, trending left tree-to-tree back to lower ledges.",
+  "rappel_count_note": "The number of rappels is not published. The descent starts from a tree anchor on climber's left of the final belay and continues tree to tree on two 60 m ropes, trending slightly left to each lower ledge. Inspect the fixed slings before use; damage from pikas has been reported at the anchors.",
+  "descent_text": "From the top of the wall, double-rope rappels (two 60 m ropes) from tree anchors on climber's left lead back down, trending slightly left to the next ledge — inspect any fixed gear before trusting it due to reported pika damage at anchors. Alternatively, descend the scree slope, using the full rope length as a handline/backup if downclimbing."
+ },
+ "wa_pernod_spire_standard": {
+  "area": "wa_pernod_spire",
+  "rappels": "Several: from the summit back to the Pernod–Chianti notch, then long rappels down the east side to the glacier edge (no published count)",
+  "rappel_count_note": "No published count: rappels lead from the summit back to the notch between Pernod and Chianti, then long rappels on double ropes descend the east side to the glacier edge.",
+  "descent_text": "This is a rappel descent, not a walk-off. Rappel from the summit block back to the notch between Pernod and Chianti, then make long rappels down the east side to the snow and névé at the edge of the Silver Star Glacier basin. No rappel count is published for this line; carry double ropes, and cord to back up or replace old slings and bolts. From the glacier edge, traverse back north below Chianti and climb a few hundred feet to regain Burgundy Col, then descend the climbers' trail (scree, the bench, then the timbered rib) to the SR-20 pullout. Watch for moats along the rock late in the season, and budget real time for the loose scree below the col."
+ }
+}

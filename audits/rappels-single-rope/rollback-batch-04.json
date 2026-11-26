@@ -1,0 +1,142 @@
+{
+ "wa_the_tipping_point": {
+  "area": "wa_colchuck_balanced_rock",
+  "rappels": "Over the top by the standard Colchuck Balanced Rock descent: one rappel of about 30 m east off a slung horn on the summit block, then scree clockwise around the peak. To retreat from the lower half instead, two rappels of about 40 m from the bolted Sky Lounge anchors reach the approach gully; 40 m rappels need two ropes or an 80 m rope.",
+  "descent_text": "After topping out via Let it Burn’s upper pitches, take the standard summit descent: an optional single rappel of about 30 m from a slung horn, then scree or snow clockwise around the peak back to the base. To retreat from the lower half instead, rappel to the Sky Lounge, the two-bolt ledge atop pitch 3, stopping first at the Kerwin’s Crack anchor if your rope does not reach it in one; from the Sky Lounge, two rappels of about 40 m each return to the approach gully. Those need two ropes or an 80 m rope; a single 60 m rope folded double reaches only 30 m."
+ },
+ "wa_concord_tower_north_face": {
+  "area": "wa_concord_tower",
+  "rappel_detail": [
+   {
+    "n": 1,
+    "pull": "Set the middle mark carefully if you are running the full double-rope version — parties who combine the top two rappels report it as a full-length pull with nothing spare.",
+    "notes": "First rappel from the summit down the upper North Face.",
+    "anchor": "summit double-bolt chains (a small tree is also reported at the top anchor)",
+    "hazards": [
+     "The move from the summit onto the anchor is short but exposed and clumsy in boots or with a pack on.",
+     "This face stays wet after rain and can be icy early and late in the season, and the rappel stances are where that is felt."
+    ],
+    "lengthM": 30,
+    "station": "Rap chains on the summit, reached from the true summit by a short, awkward step and slither over the top of the summit block; a small tree is reported beside the top anchor as well. On two ropes this becomes one double-rope rappel that reaches the ledge above pitch 1 in a single go, which is why the same descent is described as three rappels by some parties and two by others."
+   },
+   {
+    "n": 2,
+    "notes": "Rappel to the bushy, tree-dotted ledge atop pitch 1.",
+    "anchor": "bolted chain anchor",
+    "hazards": [
+     "The landing ledge is vegetated and the brush catches rope ends on both the throw and the pull.",
+     "Slab above the station stays greasy after rain."
+    ],
+    "lengthM": 20,
+    "station": "Bolted chain anchor on the climbing line just below the 5.0 slab section of pitch 3. The rappel from it drops to the bushy, tree-dotted ledge at the top of pitch 1."
+   },
+   {
+    "n": 3,
+    "pull": "Pull well out from the notch so the strands come down clear of the brush on the ledge above.",
+    "notes": "Final rappel from the ledge back to the base of the climb at the notch.",
+    "anchor": "tree or bush with webbing, not fixed hardware",
+    "hazards": [
+     "A tree or bush anchor rather than fixed hardware — this is the one station on the descent where you may have to build or replace, so carry webbing and a rap ring.",
+     "The rappel lands at the notch, which is the top of the loose approach gully every party climbing Liberty Bell and Concord walks up. Anything dislodged goes straight down it."
+    ],
+    "lengthM": 25,
+    "station": "The station on the bushy pitch-1 ledge, from which the last rappel returns you to the base of the climb at the Liberty Bell-Concord notch. Do not plan on this one being fixed hardware: the published claim that the whole line is bolts and chains with no natural gear needed is contradicted by parties on the ground, one of whom recorded rappelling off webbing on the tree here, and another whose anchor at this level was a small bush that held under testing but was plainly not bomber."
+   }
+  ],
+  "rappels": "3",
+  "rappel_count_note": "Three single-rope rappels on one 60 m rope is the standard North Face descent and is what these stations describe; parties carrying two ropes combine the top two into one double-rope rappel and reach the notch in two, which is the same line with a different rope setup rather than a different descent. The claim that the whole line is bolts and chains with no natural gear required is not accurate: the last station, on the pitch-1 ledge, is webbing on a tree or a small bush, so carry webbing and a ring. Keep this distinct from the South Face descent used when linking Concord with Lexington — that is a separate two-rappel line of roughly 30 m each with its own bolted mid-face station, and its stations must not be mixed with these."
+ },
+ "wa_north_face_var_right_directisimo": {
+  "area": "wa_concord_tower",
+  "rappels": "2 single-rope rappels of about 30 m down the south face from the summit chains to the Concord-Lexington notch, the second from a bolted mid-face station (two ropes make it one). The north face also goes, in three stages, but ropes tend to stick there."
+ },
+ "wa_south_face_3": {
+  "area": "wa_concord_tower",
+  "rappels": "2 single-rope rappels of about 30 m down the south face to the Concord-Lexington notch, the second from a bolted mid-face station; two ropes make it one rappel",
+  "descent_text": "Downclimb or make one full double-rope rappel from the summit back to the notch; with a single rope, use two shorter rappels off intermediate anchor stations partway down the south face instead."
+ },
+ "wa_south_face_center": {
+  "area": "wa_concord_tower",
+  "rappel_detail": [
+   {
+    "n": 1,
+    "notes": "First single-rope rappel from the summit to an intermediate anchor station near the corners. Plan on about half the full double-rope rappel some parties use instead.",
+    "anchor": "summit anchor",
+    "lengthM": null
+   },
+   {
+    "n": 2,
+    "notes": "Second single-rope rappel from the intermediate station down to the notch; carry a spare rappel device.",
+    "anchor": "intermediate anchor station near the corners",
+    "lengthM": 30
+   }
+  ],
+  "rappels": "2 single-rope raps from the south side of the summit",
+  "rappel_count_note": "Two single-rope rappels is the standard count. Parties carrying two ropes do it instead as one full double-rope rappel. Individual station lengths are not documented.",
+  "descent_text": "Downclimb or make one full double-rope rappel from the summit back to the notch; with a single rope, use two shorter rappels off intermediate anchor stations instead."
+ },
+ "wa_the_cave_route": {
+  "area": "wa_concord_tower",
+  "rappel_detail": [
+   {
+    "n": 1,
+    "notes": "Rappel 1 of 3 on a single 60 m rope, to the mid-height station. Two ropes reach the ledge in one.",
+    "anchor": "summit anchor, west side",
+    "lengthM": null,
+    "station": "The summit, on the west side."
+   },
+   {
+    "n": 2,
+    "notes": "Rappel 2 of 3, to a ledge. Move right along the ledge.",
+    "anchor": "mid-height station",
+    "lengthM": null,
+    "station": "The mid-height station on the west side."
+   },
+   {
+    "n": 3,
+    "notes": "Rappel 3 of 3, down pitch 1’s north face to the Liberty Bell-Concord notch.",
+    "anchor": "anchor on the ledge above pitch 1",
+    "lengthM": null,
+    "station": "The ledge, after moving right along it."
+   }
+  ],
+  "rappels": "3 rappels on a single 60 m rope: two down the summit’s west side, breaking at the mid-height station (two ropes make it one), then one down pitch 1’s north face to the notch",
+  "rappel_count_note": null,
+  "descent_text": "Rappel off the summit's west side, stopping at the mid-height station if you carry a single 60 m rope, to a ledge; move right along it and make one more rappel down the north face to the notch."
+ },
+ "wa_crooked_thumb_peak_south_route": {
+  "area": "wa_crooked_thumb_peak",
+  "rappel_detail": [
+   {
+    "n": 1,
+    "pull": null,
+    "notes": "Rappelled on a single strand; a 30-40 m rope reaches the ledge below. Climbed on the ascent, this same step went at about 5.8+ free, or 5.2 with a point of aid. A distinctive cannonhole chockstone in the boulder band just above is a landmark, though it was plugged with snow when last recorded.",
+    "anchor": "gear anchor (crack)",
+    "hazards": "The three other crossings do not go — the ridge-crest line would need several hundred feet of traversing out on the sheer east face. The ledges below are very exposed and covered in sand and pebbles, so footing is insecure, and the summit ridge and ledges above are loose enough that running belays and rock protection were used to downclimb them.",
+    "lengthM": null,
+    "station": "At the top of the headwall that bars the upper west face, immediately beyond the band of giant boulders. The headwall runs from the ridge crest down to a lower cliff band and forms a near-impasse; the crossing is the roughly 10-ft vertical crack, the third of four lines evaluated across it — the ridge crest, a high catwalk ledge, this crack, and the bottom nose. Reached on the way down after downclimbing the summit ridge and the loose ledges below it."
+   },
+   {
+    "n": 2,
+    "pull": "Two ropes of different lengths were knotted together for this rappel, so expect a knot to pass and a knotted pull. The party recorded that working out how to tie the two together was a hard call when tired.",
+    "notes": "The longer of the two rappels made from this point down into the northwest couloir. The one recorded descent joined a 40 m and a 30 m 6.9 mm alpine rope; a single 60 m doubled, or two 30 m ropes, substitutes.",
+    "anchor": "natural anchor (rock horn draped with old slings — back up before trusting)",
+    "hazards": "The traverse out of the north-ridge notch to reach the horn is exposed and on loose class 4-5 ledges. The horn already carries several old rappel slings of unknown age.",
+    "lengthM": null,
+    "station": "A small horn draped with several rappel slings, on the exposed traverse around the north ridge's pinnacles. It is passed on the way UP, between the notch at the top of the couloir and the easier ground beyond, on loose class 4-5 ledges — note it on the ascent, because it is the descent anchor."
+   },
+   {
+    "n": 3,
+    "pull": null,
+    "notes": "The shorter of the two rappels from the north-ridge area, ending at an exit ledge above the northwest couloir. Nothing is recorded about what this one hangs from — expect to find or build your own anchor. From the exit ledge, downclimb the couloir, protecting with snow flukes or pickets if it is firm or icy.",
+    "anchor": null,
+    "hazards": null,
+    "lengthM": null,
+    "station": null
+   }
+  ],
+  "rappels": "Party-dependent. The one recorded descent made 3 rappels — one single-strand down the headwall crack, then a long one and a short one from the north-ridge horn on doubled ropes to an exit ledge — but the route has also been downclimbed with no rappels at all, on a low-angle southeast wall that bypasses the summit cliffs.",
+  "rappel_count_note": "Three rappels on the one recorded descent — one at the headwall crack, then a long one and a short one from the north-ridge horn. That party carried a 40 m and a 30 m rope. The count is not a property of the route: a soloist who found a low-angle, barely-fifth-class wall on the southeast side bypassing the summit cliffs downclimbed the whole thing with no rappels at all, and a traverse party crossed the peak without a rope. No per-station distance is published, and the two lower rappels are explicitly a long one and a short one rather than a matched pair.",
+  "descent_text": "Reverse the climbing route from the summit rather than continuing over the north ridge. Down-climb the loose, exposed class 4-5 summit ridge and ledges just south of the true summit using running belays and gear placements — this terrain is horribly loose, so treat every hold as suspect and keep the rope short between placements. At the top of the crux headwall, make one single-strand rappel down the ~10-ft near-vertical crack (roughly 5.8+ or 5.2/A1); a single 30-40m rope reaches the ledge below. Continue down and along the loose class 4-5 ledges around the north ridge's pinnacles to a rock horn draped with old rappel slings (do not trust weathered fixed tat — back it up with your own cord); from this horn, make two rappels on doubled ropes (the one party to record this descent joined a 40m and a 30m 6.9mm alpine rope) to reach an exit ledge above the couloir — a single 60m rope doubled, or two 30m ropes, works as a substitute. From the exit ledge, down-climb the 40-45° northwest snow couloir, placing snow pickets or flukes as protection if conditions are firm or icy, back to the saddle just north of the peak and down to camp on the Crooked Thumb Glacier moraine. From camp, reverse the full glaciated approach (Challenger Glacier, West Challenger Notch, Perfect Pass, Whatcom Glacier traverse, Whatcom Pass, Brush Creek Trail, Chilliwack River Trail and cable car, Hannegan Pass) back to the Hannegan Trailhead. All anchors encountered are natural/fixed-sling (horn or gear) — there is no bolted rappel line on this route. Total rappel count on the one recorded descent: 3 (one at the headwall crack, two from the north-ridge horn) — a long rappel and a short one from the horn, not a matched pair. This is not fixed: a soloist who found a low-angle, barely-fifth-class wall on the southeast side bypassing the summit cliffs downclimbed the whole route with no rappels at all, and a traverse party crossed the peak without a rope."
+ }
+}

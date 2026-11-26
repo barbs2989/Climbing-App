@@ -1,0 +1,152 @@
+{
+ "wa_zool_patch": {
+  "area": "wa_juno_tower",
+  "set": {
+   "rappels": "2 rappels straight down the route from the bail trees; no single-rope count is known",
+   "rappel_count_note": "The descent is two rappels straight down the line of the route from the slung bail trees at the top of pitch 4, with an intermediate station partway down. Rappel lengths are not published, so it is not known whether one 60 m rope reaches from the top of pitch 4 to the intermediate station, or from there to the base. A single 60 m rope reaches 30 m per rappel.",
+   "descent_text": "From the anchors at the top of pitch 4 (double bail trees), rappel straight down the line of the route back to the base in two rappels; whether a single rope reaches each station is not documented."
+  },
+  "clear_rappels": true,
+  "review": {
+   "confidence": "low",
+   "sources": [
+    "https://www.mountainproject.com/area/109232031/juno-tower",
+    "https://stephabegg.com/trip-reports/washington/juno-tower-clean-break/"
+   ],
+   "single_rope": "No source found that describes this route's descent at all, let alone a single-rope line; only the existing row's 2-rappel account is available.",
+   "changed": "Removed the two-rope wording, cleared the table (its stations carried two-rope notes and no lengths), and stated plainly that the single-rope reach is unknown."
+  }
+ },
+ "wa_kangaroo_temple_north_face": {
+  "area": "wa_kangaroo_temple",
+  "set": {
+   "rappel_count_note": "Three rappels on a single 60 m rope is the common sequence. No per-station distances are published, so none are listed: a 60 m rope folded in half reaches 30 m, which bounds every rappel here, and a 50 m rope has been found to only just reach the second station, so that one is nearer 25 m. Accounts disagree on the top anchor, with some describing three bolts with hangers and no chains and others describing chains. It was most likely rebuilt, so judge what is actually in place."
+  },
+  "review": {
+   "confidence": "high",
+   "sources": [
+    "https://www.mountaineers.org/activities/routes-places/kangaroo-temple-north-face",
+    "https://summitpost.org/north-face/822029"
+   ],
+   "single_rope": "Three single-length rappels down a series of ledges with slung or bolted anchors; a 60 m rope is the standard and works. Sources agree on the count of three.",
+   "changed": "Dropped the aside about combining the stations on longer rope setups from the count note; table, rappels line and descent_text were already single-rope and are kept."
+  }
+ },
+ "wa_lane_peak_r1": {
+  "area": "wa_lane_peak",
+  "set": {
+   "rappels": "1 rappel of just over 100 ft from a slung tree back into the couloir, on a single 70 m rope in a high-snow year; a single 60 m rope does not reach",
+   "rappel_count_note": "The only rappel is just over 100 ft (roughly 31 m), so it needs a single 70 m rope folded in half, and even then only when deep snow has raised the base of the couloir, with some downclimbing to finish. A single 60 m rope does not reach. Parties without a 70 m rope, or in a lean snow year, can instead continue to the true summit and take the South Face walk-off, which avoids the rappel entirely.",
+   "descent_text": "Two descent options are used depending on conditions and whether the party continues to the true summit. Direct reversal (the usual bail line): from the dead-tree notch atop the couloir, downclimb a short stretch of exposed terrain to the tree, which carries fixed rappel slings (a natural, sling-on-tree anchor — not bolted), and make one rappel back down into the Zipper. The rappel is typically just over 100 ft (roughly 30+ m), so it takes a single 70 m rope in a high-snow year, with some downclimbing to finish; a single 60 m rope does not reach. From the bottom of the rappel, downclimb/plunge-step the remaining couloir and the debris apron back into the basin and reverse the approach to Tatoosh Creek and the road. Summit-and-walk-off option: instead of rappelling, many parties traverse climber's left from the top of the couloir until the summit slopes come into view and continue to Lane Peak's true summit (a running belay or short pitch on the last 200-300 ft is sometimes prudent), then descend via the standard South Face gully/saddle walk-off shared with the Classic Route (down to the 5,440 ft Lane-Denman saddle, through the timber, down the talus to Tatoosh Creek, and back to the road) — longer, but avoids the rappel entirely. Hazards: rockfall/spindrift funneling into the couloir from above, a real chance of a stuck rope on rock features during the rappel, and avalanche/wet-slide hazard in the basin and lower couloir on both the approach and the descent, particularly once the sun hits the face."
+  },
+  "rappel_detail": [
+   {
+    "n": 1,
+    "lengthM": null,
+    "anchor": "fixed slings on a tree (not bolted)",
+    "station": "From the dead-tree notch atop the couloir, downclimb a short, exposed stretch to the tree carrying fixed rappel slings.",
+    "notes": "The one rappel, just over 100 ft back down into the Zipper. A single 70 m rope folded in half reaches in a high-snow year, with some downclimbing to finish.",
+    "hazards": [
+     "A single 60 m rope folded in half does not reach the base."
+    ]
+   }
+  ],
+  "replace_rappels": true,
+  "review": {
+   "confidence": "medium",
+   "sources": [
+    "https://mountaineers.org/activities/routes-places/lane-peak-zipper-lovers-lane",
+    "https://mountaineers.org/activities/trip-reports/intermediate-alpine-climb-lane-peak-zipper-lovers-lane-2"
+   ],
+   "single_rope": "One rappel of just over 100 ft; a single 70 m rope has been reported to make it in a high-snow year with some downclimbing; 60 m does not. Walk-off via the South Face is the no-rappel alternative.",
+   "changed": "Rewrote the rappels line, added a note, replaced the table with one single-rope 70 m station (length left null as only 'just over 100 ft' is stated), and rewrote only the two-rope sentence of descent_text."
+  }
+ },
+ "wa_lane_peak_r3": {
+  "area": "wa_lane_peak",
+  "set": {
+   "rappels": "One roughly 100+ ft rappel from the ridge top into the adjacent Zipper couloir, made on the way up and best done on a single 70 m rope; on the descent, a rappel from a tree just below the summit is used unless the snow allows downclimbing",
+   "rappel_count_note": "Two rappels in all: one of 100+ ft into the Zipper couloir on the way up, and one from a tree just below the summit on the way down, which good snow lets parties skip. A single 70 m rope is the one to carry for the first rappel, since a 60 m rope folded in half falls short of 100+ ft; moderate snow lets a party downclimb part of it first.",
+   "descent_text": "From the summit, downclimb to a large tree a few feet below it and rappel from the tree unless the snow is good enough to downclimb. Then plunge-step down moderate slopes toward the Lane–Denman saddle; at the saddle, go to its far left side and descend a steep gully, then retrace the approach. The 100+ ft rappel from the ridge top into the adjacent Zipper couloir (best on a single 70 m rope, which allows some downclimbing on moderate snow first) is part of the ascent, not the descent."
+  },
+  "rappel_detail": [
+   {
+    "n": 1,
+    "lengthM": null,
+    "anchor": "not described; bring slings",
+    "station": "The ridge top between Lover's Lane and the Zipper couloir, reached on the way up.",
+    "notes": "Made on the ascent, not the descent: a rappel of 100+ ft into the adjacent Zipper couloir. A single 70 m rope folded in half allows some downclimbing on moderate snow first."
+   },
+   {
+    "n": 2,
+    "lengthM": null,
+    "anchor": "a big tree just under the summit",
+    "station": "Just below the summit, on the descent.",
+    "notes": "Rappel from the tree unless the snow is good enough to downclimb, then plunge-step toward the Lane-Denman saddle and descend the steep gully on its far left side."
+   }
+  ],
+  "replace_rappels": true,
+  "review": {
+   "confidence": "medium",
+   "sources": [
+    "https://mountaineers.org/activities/routes-places/lane-peak-zipper-lovers-lane",
+    "https://www.mountainproject.com/route/114089121/lovers-lane"
+   ],
+   "single_rope": "The 100+ ft rappel into the Zipper is the same one as on the Zipper route: a single 70 m rope works, a 60 m does not. The tree rappel below the summit is short and optional in good snow.",
+   "changed": "Removed the double-rope recommendation from rappels, note, table and descent_text, reworded for a single 70 m rope."
+  }
+ },
+ "wa_tooth_and_claw": {
+  "area": "wa_lexington_tower",
+  "set": {
+   "rappels": "Most parties walk off: an exposed 4th-class traverse west from the East Shoulder into the East Face descent gully. No single-rope rappel line down the route is documented.",
+   "rappel_count_note": "Walking off is the single-rope descent: top out on the East Shoulder and take the very exposed 4th-class traverse west into the descent gully, which many parties keep the rope on for despite poor protection. No source publishes a rappel total or a station list for rappelling the route on one rope, and the top station, a bolted anchor roughly 20-30 ft above the old pitch-6 slung-block anchor, is farther from the pitch-5 anchor than one 60 m rope reaches. Lower down the stations are obvious, good-quality anchors on trees or bolts.",
+   "descent_text": "Most parties take the walk-off: from the East Shoulder, make an exposed, somewhat sketchy 4th-class traverse west (it borders on unprotected 5th-class slab in spots, so many parties stay roped) to gain the same descent gully used off the East Face. Downclimb the gully, then traverse north (right) to pick up the climbers'/cattle trail that runs up to Liberty Bell, which drops you onto the Blue Lake Trail; a faint climbers' path cuts off a final stretch of trail before the highway. Rappelling the route is the alternative, and no single-rope line down it is documented: the first anchor is a bolted station roughly 20-30 feet above the old P6 slung-block anchor, and a single 60 m rope does not reach the next station from it. Lower down, the rappel stations are obvious, good-quality anchors on trees or bolts. Hardware is mixed vintage: some original 1989 5/16\" bolts remain despite a post-2016 rebolting push, and at least one older fixed-nut/sling anchor is noted as aging — back up or inspect any anchor you didn't place yourself before weighting it."
+  },
+  "review": {
+   "confidence": "low",
+   "sources": [
+    "https://www.mountainproject.com/area/106482003/lexington-tower",
+    "https://stg.openbeta.io/climb/477e80c6-881e-56af-baff-2d382db1df6b/tooth-and-claw"
+   ],
+   "single_rope": "No single-rope rappel line is documented; the walk-off down the East Face gully is the single-rope descent. The existing row says doubled 60s do not reach the top station, so one 60 m rope cannot either.",
+   "changed": "Removed the 70 m lead plus tag line and doubled-60 wording from all three text columns; kept the walk-off and anchor facts. Table was already null."
+  }
+ },
+ "wa_a_servant_to_liberty": {
+  "area": "wa_liberty_bell",
+  "set": {
+   "rappels": "No single-rope rappel line down the East Face is documented; the standard Liberty Bell descent has two rappels of about 25 m",
+   "rappel_count_note": "Rappelling this route means joining the Thin Red Line descent at M&M Ledge: four bolted rappels, reached by working climber's left from the ledge, with a fifth if you first rappel from the ledge's own fixed pin-and-wire anchor. Station lengths are not published, so it is not known whether one 60 m rope reaches each station, and no one-rope option is described for this line. The documented one-rope descent is the standard Liberty Bell notch route: scramble to the summit roped, downclimb east to a two-bolt station and make two rappels of about 25 m into the Liberty Bell-Concord notch. That fits a single 60 m rope, but it lands on the opposite side of the mountain from the East Face approach and from your pack.",
+   "descent_text": "From the top, either scramble to the summit roped and take the standard Liberty Bell descent (two rappels of about 25 m, which a single 60 m rope covers), or rappel Thin Red Line's line: off M&M Ledge (fixed pin/wire anchor), then move climber's-left to bolted anchors for four more rappels back to the base — five in all, all on bolted stations after the first. Station lengths on that line are not published, so whether one rope reaches each station is not known."
+  },
+  "clear_rappels": true,
+  "review": {
+   "confidence": "low",
+   "sources": [
+    "https://mountainproject.com/route/108257819/thin-red-line",
+    "https://mountaineers.org/explore/trip-reports/liberty-bell-southwest-face-5"
+   ],
+   "single_rope": "East Face rappels are described only as near-full-length stations; no single-rope station list found. The standard notch descent has two roughly 25 m rappels and works on one 60 m rope.",
+   "changed": "Removed two-rope wording, cleared the table (generic stations with no lengths, written for two ropes), and stated the one-rope alternative."
+  }
+ },
+ "wa_liberty_and_injustice_for_all": {
+  "area": "wa_liberty_bell",
+  "set": {
+   "rappels": "Rappel the route from the two-bolt anchors; no single-rope count or rappel lengths are documented",
+   "rappel_count_note": "Every station on the route is a two-bolt anchor with fixed biners, but pitch lengths are not published, so it is not known how many rappels one 60 m rope needs or whether the stretch from the pitch-3 anchor past the pitch-2 anchor to the pitch-1 anchor is within a single 60 m rope (30 m per rappel). Parties who stop after pitch 3 have a shorter descent. The alternative is to continue climbing on Thin Red Line from the top of pitch 5 to the summit and take the standard Liberty Bell descent, which has two rappels of about 25 m that a single 60 m rope covers.",
+   "descent_text": "Rappel the route from the two-bolt anchors with fixed biners; the descent is straightforward. From the top of pitch 5, where the route joins the top of pitch 7 on Thin Red Line, rappel to the pitch-4 anchor and then to pitch 3, and continue down through the pitch-1 anchor to the ground. Rappel lengths are not published, so check that your single rope reaches the next station before committing. Parties who stop after pitch 3 start the descent from that anchor. Alternatively, continue climbing on Thin Red Line from the top of pitch 5."
+  },
+  "clear_rappels": true,
+  "review": {
+   "confidence": "low",
+   "sources": [
+    "https://mountainproject.com/route/108257819/thin-red-line",
+    "https://www.mountainproject.com/route/109460263/freedom-or-death"
+   ],
+   "single_rope": "No source found for this route's descent length; stations are all bolted two-bolt anchors at the top of each pitch, but pitch lengths and the skip-P2 rappel length are unknown.",
+   "changed": "Removed two-rope wording everywhere, cleared the table, and kept the anchor facts in prose; stated plainly that one-rope reach is unverified."
+  }
+ }
+}

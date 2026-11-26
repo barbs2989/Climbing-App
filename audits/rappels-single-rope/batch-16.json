@@ -1,0 +1,126 @@
+{
+ "wa_bowling_alley_aka_regular_route": {
+  "area": "wa_south_face_3",
+  "set": {
+   "rappels": "2 rappels on a single 60 m rope from an anchor near a tree at the north end of the East Face (full rope-stretchers)",
+   "rappel_count_note": "Two rappels on a single 60 m rope reach the ground. Both are close to the rope's length, so tie stopper knots in the ends.",
+   "descent_text": "From the top, move to the rappel anchor near a tree at the north end of the formation. With a single 60m rope, two rappels down bolted anchors return climbers to the base. Tie stopper knots in the rope ends — the rappels can otherwise run the ends off the rock."
+  },
+  "review": {
+   "confidence": "high",
+   "sources": [
+    "https://mountainproject.com/route/109342321/bowling-alley-aka-regular-route",
+    "https://www.mountaineers.org/activities/trip-reports/basic-rock-climb-pinto-rock-bowling-alley"
+   ],
+   "single_rope": "Two rappels on a single 60 m rope from the north end of the East Face; trip reports note the long single-rappel option tends to snag, so parties choose the two-rappel line.",
+   "changed": "Removed the aside about a long single rappel on tied ropes from rappels, note and descent_text; kept the existing 2-station single-rope table (both 30 m)."
+  }
+ },
+ "wa_cobbles_101": {
+  "area": "wa_south_face_3",
+  "set": {
+   "rappels": "2 rappels on a single 60 m rope from a tree-anchored station at the north end of the East Face",
+   "rappel_count_note": "Cobbles 101 finishes on the Bowling Alley, so the descent is the same: two rappels on a single 60 m rope reach the ground. Both are close to the rope's length, so tie stopper knots in the ends.",
+   "descent_text": "From the top, move to the rappel anchor near a tree at the north end of the formation. With a single 60m rope, two rappels down bolted anchors return climbers to the base. Tie stopper knots in the rope ends — the rappels can otherwise run the ends off the rock."
+  },
+  "review": {
+   "confidence": "medium",
+   "sources": [
+    "https://mountainproject.com/route/109342321/bowling-alley-aka-regular-route",
+    "https://www.mountaineers.org/activities/trip-reports/basic-alpine-climb-pinto-rock-bowling-alley"
+   ],
+   "single_rope": "Same descent as Bowling Alley: two rappels on a single 60 m rope from the north end of the East Face. No separate descent page for Cobbles 101 itself.",
+   "changed": "Removed the aside about a long single rappel on tied ropes; kept the existing 2-station single-rope table."
+  }
+ },
+ "wa_concerto_in_c_for_drill_and_hammer": {
+  "area": "wa_south_face",
+  "set": {
+   "rappels": "Rappel the line of ascent on its fixed Fixe chain anchors, one rappel per belay (14 pitches); some stretches are a full 60 m",
+   "rappel_count_note": "The descent is the line of ascent, one rappel per belay, and no total is published. Some of these rappels are a full 60 m, so one 60 m rope does not reach between those belays, and no intermediate anchors are known. Where a belay is more than 30 m below the one above, one rope cannot reach it; a party on a single rope should expect to need a 70 m rope or to stop at any anchor that is within half a rope. The upper pitches share anchors with Primal Scream.",
+   "descent_text": "Rappel the line of ascent on fixed chain/bolt anchors; parties typically rappel to the Pitch 13 chain anchor near the summit before continuing down."
+  },
+  "clear_rappels": true,
+  "review": {
+   "confidence": "low",
+   "sources": [
+    "https://www.mountainproject.com/route/118299770/concerto-in-c-for-drill-and-hammer",
+    "https://www.mountainproject.com/forum/topic/118564925/concerto-in-c-for-drill-and-hammer"
+   ],
+   "single_rope": "No source documents a single-rope line. Sources say the descent follows the route with some rappels a full 60 m; no per-station lengths or intermediate anchors were found.",
+   "changed": "Cleared the 14-row table (every row was written for a long-rope setup with no lengths) and removed the carry-extra-rope wording; stated plainly what one rope does and does not reach."
+  }
+ },
+ "wa_doorway_flake": {
+  "area": "wa_south_face",
+  "set": {
+   "rappels": "5 rappels down the line of ascent, one per pitch, from bolted Fixe chain anchors",
+   "rappel_count_note": "One rappel per pitch from the bolted chain belays. Rappel lengths are not published, so it is not documented whether a single 60 m rope reaches each belay, and no intermediate anchors are known. Judge each rappel against the pitch length you climbed: one 60 m rope reaches only about 30 m.",
+   "descent_text": "Rappel the line of ascent using the fixed hand-drilled bolt and Fixe chain anchors."
+  },
+  "clear_rappels": true,
+  "review": {
+   "confidence": "low",
+   "sources": [
+    "https://www.mountainproject.com/area/108546487/squire-creek-wall",
+    "https://www.mountainproject.com/route/118299770/concerto-in-c-for-drill-and-hammer"
+   ],
+   "single_rope": "Nothing found on a single-rope descent; the only documented descent is rappelling the route off chain anchors. No page for this route could be found.",
+   "changed": "Cleared the 5-row table written for a long-rope setup; removed the long-rope recommendation from rappels, note and descent_text; stated what is unknown for one rope."
+  }
+ },
+ "wa_primal_scream": {
+  "area": "wa_south_face",
+  "set": {
+   "rappels": "Rappel the line of ascent on the 2023 bolted anchors, one rappel per belay (12 pitches); the upper three share anchors with Concerto in C for Drill and Hammer",
+   "rappel_count_note": "The descent is the line of ascent, one rappel per belay, and no total is published. The upper three pitches share anchors with Concerto in C for Drill and Hammer, where some rappels are a full 60 m, which one 60 m rope does not reach. No intermediate anchors are known for a single rope.",
+   "descent_text": "Rappel the line of ascent using the 2023-installed modern bolted anchors; the upper three pitches share anchors with Concerto in C for Drill and Hammer."
+  },
+  "clear_rappels": true,
+  "review": {
+   "confidence": "low",
+   "sources": [
+    "https://www.mountainproject.com/route/118299770/concerto-in-c-for-drill-and-hammer",
+    "https://www.mountainproject.com/area/108546487/squire-creek-wall"
+   ],
+   "single_rope": "No single-rope line documented; the shared upper anchors with Concerto include full 60 m rappels.",
+   "changed": "Cleared the 12-row table written for a long-rope setup; removed the carry-extra-rope wording; stated what one rope does not reach."
+  }
+ },
+ "wa_skeena26": {
+  "area": "wa_south_face",
+  "set": {
+   "rappels": "Not a single-rope descent: the 12 rappels down the line of ascent are each close to 50 m, longer than one rope reaches",
+   "rappel_count_note": "The route was built around 50 m pitches, so most belays are close to 50 m apart. One 60 m rope reaches only about 30 m of rappel, so it does not reach from belay to belay, and no intermediate anchors are known.",
+   "descent_text": "Rappel the line of ascent, one rappel per pitch. The belays are close to 50 m apart, which is beyond what one 60 m rope reaches, and no intermediate anchors are known."
+  },
+  "clear_rappels": true,
+  "review": {
+   "confidence": "low",
+   "sources": [
+    "https://www.mountainproject.com/area/108546487/squire-creek-wall",
+    "https://cascadeclimbers.com/forum/topic/89650-tr-squire-creek-wall-skeena26-iii-59-fa-9172012"
+   ],
+   "single_rope": "Sources say the descent is to rappel the route and that pitches run near 50 m; no single-rope station list or intermediate anchors found.",
+   "changed": "Cleared the 12-row table written for 50 m ropes used as a pair; removed the pair-of-ropes wording; stated what one rope does not reach."
+  }
+ },
+ "wa_western_dihedral": {
+  "area": "wa_south_face",
+  "set": {
+   "rappels": "5 rappels down the line of ascent, one per pitch, from bolted Fixe chain anchors",
+   "rappel_count_note": "One rappel per pitch from the bolted chain belays. Rappel lengths are not published, so it is not documented whether a single 60 m rope reaches each belay, and no intermediate anchors are known. Judge each rappel against the pitch length you climbed: one 60 m rope reaches only about 30 m.",
+   "descent_text": "Descend by rappelling the line of ascent using the fixed hand-drilled bolt anchors."
+  },
+  "clear_rappels": true,
+  "review": {
+   "confidence": "low",
+   "sources": [
+    "https://open-tacos-8ce0i2ery-openbeta-dev.vercel.app/climb/52651ee0-b9b1-5112-a07d-9f9a43240114/western-dihedral",
+    "https://www.mountainproject.com/area/108546487/squire-creek-wall"
+   ],
+   "single_rope": "Only documented descent is rappelling the route; no single-rope station list or lengths found.",
+   "changed": "Cleared the 5-row table written for a long-rope setup; removed the long-rope recommendation; stated what is unknown for one rope."
+  }
+ }
+}
