@@ -154,6 +154,7 @@ npm run check:mutual-friends # a mutual friend is real, named as they asked, and
 npm run check:crew  # guards the crew "Ready" calculation (in build)
 npm run check:partner-areas # crag partners are found by AREA both ways up the tree, and a crag-route objective is a tick list, not a match signal (in build)
 npm run check:crew-place # a crew has ONE place, a route or an area, and every surface that names it resolves it through crewPlace() (in build)
+npm run check:rank-breakdown # the climbs behind a Ranks number ADD UP to it: leaderboard() and rank_breakdown() count the same way, and the sheet's sentences state the SQL's constants (in build)
 
 # ── The route page — notes: docs/guards/route-page.md ──
 npm run check:bare # renders a route with NO enrichment — the shape 99.5% of them have
