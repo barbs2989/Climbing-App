@@ -50,8 +50,9 @@ Read the row, then the source text file (Description / Protection / Location sec
   lengths. Never split a lead the text describes as one to reach the stored count. A route the text describes as
   unfinished (a pitch not yet climbed or freed) is a skip.
 - Every entry has non-empty `notes`: what the climbing is, where it goes, crux and protection, where the belay is.
-- If the row ALREADY has pitch_detail: keep every existing `pitch` label and every stored fact the text does
-  not contradict, improve thin notes, add the missing pitches, set `"replace_pitch_detail": true`. If the stored
+- If the row ALREADY has pitch_detail: keep every existing `pitch` label and EVERY stored grade, length, bolt count
+  and anchor exactly as stored, even where the text disagrees (stored values may come from a guidebook; report the
+  disagreement in other_findings instead), improve thin notes, add the missing pitches, set `"replace_pitch_detail": true`. If the stored
   table is already as good as the text allows, omit `pitch_detail` for that route.
 - `rappel_detail` ONLY when the text lists the rappels station by station, in order, top to bottom. "Rap the
   route with two ropes" or "3 raps with a 70" is not a station list: write no table (say so in `changed`).
