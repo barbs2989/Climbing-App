@@ -5,7 +5,7 @@ What enrichment wrote and where it landed: approach scope, the climbing_route sw
 Part of the guard notes — see [README.md](README.md) for the full index.
 
 - **`audit:optimal-season`** asks whether a route page says ONE thing about when to go: the header
-  strap (`routeSeasonShort`), the SEASONAL GUIDANCE *Optimal window* and its 12-month calendar.
+  strap (`routeSeasonShort`), the SEASON section's *Optimal window* and its 12-month calendar.
   Report-only; it cannot say which side is right. First run (owner note "Audit optimal season",
   2026-11-18): 9 headers contradicted both window and calendar, every one a snow/ice line with a
   summer header or the reverse; 4 windows read as research notes. Two headers (Park Glacier

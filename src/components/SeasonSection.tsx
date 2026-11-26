@@ -20,7 +20,7 @@ export default function SeasonSection({ pt }: SeasonSectionProps) {
     fetchAlpineClimate(pt.lat, pt.lng, pt.elevFt).then(function (m) { if (live) setSt({ m }); }, function () { if (live) setSt({ error: true }); });
     return function () { live = false; };
   }, [pt.lat, pt.lng, pt.elevFt, tries]);
-  const head = <CardHead style={HEAD}>Season at the top</CardHead>;
+  const head = <CardHead style={HEAD}>Climate at the top</CardHead>;
   if (!st) return <div aria-busy="true">{head}<LoadingRows C={C} label="Loading the climate at the top…"/></div>;
   if (st.error) return <div>{head}<div style={{ ...MUTED, color: C.amber }}>Couldn’t load the climate. This says nothing about the season.</div><button onClick={function () { setTries(tries + 1); }} style={RETRY}>Try again</button></div>;
   const m = st.m, now = new Date().getMonth();

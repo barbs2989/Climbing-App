@@ -162,7 +162,7 @@ Part of the guard notes — see [README.md](README.md) for the full index.
   own code — no Plan-tab-only field on a crag, crag fact rows only on crags, boulder rows only on
   boulders, DESCENT on multi-pitch sport/trad and a crag line that stores a descent, but not single-pitch
   ones; the sections every page draws offered everywhere; (5) 7 injection cases. Section 3b (third PR)
-  anchors the page side: the TRIP SHAPE row gated on the same rule, the PUBLISHED TIMES / CLIMATE & SEASON /
+  anchors the page side: the TRIP SHAPE row gated on the same rule, the PUBLISHED TIMES / SEASON-section climate /
   PARTNER REQUIREMENTS pencils (the last is App's, so it reads ClimbMatch.jsx too), and the header cells drawn
   only with a value where dist/gain are not editable. Fourth PR: add-a-climb's `sf()` must gate on fieldScope per
   climb TYPE (anchor), and the merged fields (proTips→beta, bestSeason/condWindow→seasonalGuidance,
