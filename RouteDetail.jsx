@@ -65,6 +65,7 @@ import { routeKw, hazardCategory } from "./lib/routeKw.js";
 import { seasonTidy, seasonShort } from "./lib/seasonText.js";
 import { splitProtection } from "./lib/grade.js";
 import { avyCenterFor } from "./lib/avyCenter.js";
+import { headerValue } from "./lib/headerValue.js";
 import { topoEmptyCopy } from "./lib/topoEmptyCopy.js";
 import TopoDrawer from "./src/components/TopoDrawer.tsx";
 import TopoSection from "./src/components/TopoSection.tsx";
@@ -643,7 +644,7 @@ function forecastLinksOf(route,mtn,crag,graph){const lp=forecastLinkPoint(route,
   out.push({n:"Mountain-Forecast.com",u:pt?"https://www.mountain-forecast.com/location_search?lat="+la+"&lon="+lo:"https://www.mountain-forecast.com/"});
   out.push({n:"Fire & smoke — AirNow",u:pt?"https://fire.airnow.gov/#9/"+la+"/"+lo:"https://fire.airnow.gov/"});
   if(us){const stn=usStateNameOf(route,mtn);out.push({n:"Active fires — InciWeb",u:stn?"https://inciweb.wildfire.gov/accessible-view?field_state_target_id="+encodeURIComponent(stn):"https://inciweb.wildfire.gov/"});}
-  if(mtn.avyZone)out.push({n:"Avalanche forecast ("+mtn.avyZone+")",u:avyCenterFor(mtn)[2]});
+  if(headerValue(mtn.avyZone))out.push({n:"Avalanche forecast ("+headerValue(mtn.avyZone)+")",u:avyCenterFor(mtn)[2]});
   return out;}
 function wxFallbackOf(route,mtn){const pt=forecastPoint(route,mtn);if(!pt||pt.pinned)return null;const a=route._dbArea||mtn||{};return {type:a.areaType==="peak"?"Summit":"Topout",name:pt.name,lat:pt.lat,lng:pt.lng,elev:pt.elevFt};}
 /* A CRAG route (sport, trad, top-rope, bouldering) has no trailhead-to-summit line to forecast along,

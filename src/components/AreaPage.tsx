@@ -13,6 +13,7 @@ import { Pill, SL } from "../../lib/areaBrowserParts.jsx";
 import { PendingAreaEdits, AboutCard, AreaFactsCard, GradeSpreadDisclosure, gradeFinderFilters, areaSheet } from "../../lib/AreaPageSections";
 import { useWideScreen, useFullWidth } from "../../lib/wideLayout.js";
 import { ClimberCtx } from "../../lib/climberCtx.js";
+import { headerValue } from "../../lib/headerValue.js";
 import ClassicsList from "./ClassicsList.tsx";
 import { BTN_LG, CHIP, BTN } from "../../lib/buttonStyles.js";
 import Chevron from "./Chevron.tsx";
@@ -280,7 +281,9 @@ export default function AreaPage({ area: areaRow, onSignIn, uElev, uElevN, uElev
   // browser was missing a chip the seed browser has always shown. Same gate as seed:
   // it only means something on a formation, not on a range/state/country.
   const domDisc = ["peak", "crag", "wall"].includes(area.area_type) ? area.dominant_discipline : null;
-  const chips = [domDisc ? DL[domDisc] || domDisc : null, area.avy_zone].filter(Boolean);
+  // The avalanche zone is a bare name ("West Slopes North"), so its chip says what it is; a paragraph is not a chip (lib/headerValue.js).
+  const _avyChip = headerValue(area.avy_zone);
+  const chips = [domDisc ? DL[domDisc] || domDisc : null, _avyChip ? "Avalanche zone: " + _avyChip : null].filter(Boolean);
   const noun = childNoun(children).toLowerCase();
   // parent_peak is stored two ways: 67 areas hold a display name (sometimes with a
   // trailing "— …per…" note), 28 hold a raw area id. Resolve the ids to names rather
