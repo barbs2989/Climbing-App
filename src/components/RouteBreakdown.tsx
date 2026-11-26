@@ -9,6 +9,10 @@ import { uLen } from "../../lib/uLen.js";
 import { clickable } from "../../lib/clickable";
 import Chevron from "./Chevron.tsx";
 import { FONT_MONO } from "../../lib/fonts.js";
+import { splitProtection } from "../../lib/grade.js";
+/* A pitch's protection rating, split off its grade and drawn as the route header draws one: PG13 amber, R / X red. */
+function ProtPill({prot}: {prot: string}){const pg=prot==="PG13"||prot==="PG";return <span data-pitch-prot="" style={{fontSize:10.5,fontWeight:700,color:pg?C.amber:C.red,background:pg?C.amberBg:C.redBg,border:"1px solid "+(pg?C.amber:C.red)+"55",borderRadius:6,padding:"1px 6px",marginLeft:6,whiteSpace:"nowrap"}}>{prot}</span>;}
+function pitchStyles(r: BreakdownRow): string[]{return Array.isArray(r.style)?r.style.filter(function(x){return typeof x==="string"&&!!x.trim();}):[];}
 import { editBtnStyle, EditPencil } from "../../lib/areaChrome";
 import PitchConsensus from "./PitchConsensus.tsx";
 import CardHead from "./CardHead.tsx";
@@ -41,6 +45,8 @@ interface BreakdownRow {
   bolts?: number | null;
   belay?: string | null;
   anchor?: string | null;
+  /** What kind of climbing the pitch is ("Crack", "Corner"), from the pitch editor's fixed list. */
+  style?: string[] | null;
 }
 /** A route photo as the page lists it; `_pitch` ties it to a pitch label. */
 type PitchTaggedPhoto = PhotoRowItem & {_pitch?: string | number | null};
@@ -73,6 +79,7 @@ export interface RouteBreakdownProps {
 function pitchRowName(p: BreakdownRow){
   const bits=["Pitch "+p._badge];
   if(p.grade)bits.push(String(p.grade));
+  const st=pitchStyles(p);if(st.length)bits.push(st.join(" and ").toLowerCase());
   if(p.crux)bits.push("crux");
   if(p._title)bits.push(String(p._title));
   return bits.join(", ");
@@ -161,7 +168,7 @@ export default function RouteBreakdown({route,focus,onEdit,comments,commentsUnav
             <div {...(hasMore?clickable(function(){setOpen(isOpen?null:r._i);}):{})} aria-expanded={hasMore?isOpen:undefined} aria-label={hasMore?(isPitch?pitchRowName(r):stageRowName(r)):undefined} style={{padding:"9px 11px",minHeight:44,boxSizing:"border-box",display:"flex",flexDirection:"column",justifyContent:"center",cursor:hasMore?"pointer":"default"}}>
               {(isPitch&&r._title)?<div style={{fontSize:12.5,fontWeight:700,color:C.text,marginBottom:3,wordBreak:"break-word",overflowWrap:"anywhere"}}>{r._title}</div>:null}
               <div style={{display:"flex",justifyContent:"space-between",alignItems:"flex-start",gap:8,flexWrap:"wrap",marginBottom:(r._note&&!longTerrain)?5:0}}>
-                <span style={{fontSize:13,fontWeight:700,color:isPitch?C.amber:C.text,minWidth:0,wordBreak:"break-word",overflowWrap:"anywhere"}}>{isPitch?(r.grade||("Pitch "+r._badge)):r._label}{r.crux?<span style={{...SUB_LABEL,color:C.red,marginLeft:6,whiteSpace:"nowrap"}}>CRUX</span>:null}</span>
+                <span style={{fontSize:13,fontWeight:700,color:isPitch?C.amber:C.text,minWidth:0,wordBreak:"break-word",overflowWrap:"anywhere"}}>{isPitch?(r.grade?(function(){const sp=splitProtection(r.grade);return <>{sp.grade}{sp.prot?<ProtPill prot={sp.prot}/>:null}</>;})():("Pitch "+r._badge)):r._label}{r.crux?<span style={{...SUB_LABEL,color:C.red,marginLeft:6,whiteSpace:"nowrap"}}>CRUX</span>:null}</span>
                 {/* A stage's `grade` is TERRAIN PROSE, not a grade token: measured across the
                     live catalog it runs to 51 characters ("Class 2-3 rock scramble (easy snow
                     ridge in winter)", "Glacier travel to a bergschrund/moat"). Drawn as a
@@ -177,6 +184,7 @@ export default function RouteBreakdown({route,focus,onEdit,comments,commentsUnav
                   {hasMore?<Chevron open={isOpen} size={16} color={C.blue}/>:null}
                 </span>
               </div>
+              {(isPitch&&pitchStyles(r).length)?<div data-pitch-style="" style={{fontSize:11.5,fontWeight:600,color:C.textSub,margin:"1px 0 "+(r._note?"4px":"0")}}>{pitchStyles(r).join(" · ")}</div>:null}
               {longTerrain?<div data-terrain="" style={{fontSize:11.5,fontWeight:600,color:C.amber,lineHeight:1.45,margin:"3px 0 "+(r._note?"4px":"0"),wordBreak:"break-word",overflowWrap:"break-word"}}>{r.grade}</div>:null}
               {r._note?<div style={{fontSize:12,color:C.textSub,lineHeight:1.5,wordBreak:"break-word",overflowWrap:"break-word"}}>{r._note}</div>:null}
             </div>

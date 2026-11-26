@@ -8,7 +8,8 @@
 //   1. A FACT WITH NO VALUE. The facts grid is a list of `facts.push([label, value])`; a push
 //      that is not gated on its own column prints "Rock — undefined" or "Walk-in — about 0 min"
 //      at a climber (check:untracked-factors: a factor nobody measured must not read as zero).
-//      Rule: every push sits on a line that begins `if (area.<col>`.
+//      Rule: every push sits on a line that begins `if (area.<col>`, and (since 2026-11-25) carries an
+//      `else missing.push([label, field])`, so an empty fact still shows, as an Add, rather than vanishing.
 //   2. A HEADLINE THAT IS NOT THE SUM OF ITS BARS. The chart's title count must be computed
 //      from the rows it draws, and a remainder the bars cannot show must be said in words
 //      (check:count-matches-its-list: a count and the list under it agree, on ONE screen).
@@ -36,10 +37,17 @@ const factsBody = (sections.match(/export function AreaFactsCard[\s\S]*?\n\}/) |
 const pushes = factsBody.split("\n").filter((l) => /facts\.push\(/.test(l));
 if (!pushes.length) fail("AreaFactsCard has no `facts.push(` — ANCHOR LOST");
 for (const l of pushes) {
-  if (!/^\s*if \(area\.[a-z_]+/.test(l)) fail(`a fact is pushed without a gate on its own column: ${l.trim().slice(0, 90)}`);
+  if (!/^\s*if \(\(?area\.[a-z_]+/.test(l)) fail(`a fact is pushed without a gate on its own column: ${l.trim().slice(0, 90)}`);
+  // EVERY FACT IS LISTED, on file or not (owner note 2026-11-25: "It should show all even if there's no data for it
+  // so that we can allow users to add that information via the edit"). A fact with no `else missing.push(` would
+  // vanish from the card when its column is empty, so a climber could not see that it can be added.
+  else if (!/\belse missing\.push\(\["[A-Za-z -]+", "[a-z_]+"\]\)/.test(l)) fail(`a fact has no "Not on file yet" branch — it disappears when empty: ${l.trim().slice(0, 90)}`);
 }
-if (pushes.length && !fails) ok(`${pushes.length} facts, each gated on the column it prints`);
-if (!/if \(!facts\.length && !season\)/.test(factsBody)) fail("AreaFactsCard no longer has an empty state — a card with nothing stored would render an empty grid");
+if (pushes.length && !fails) ok(`${pushes.length} facts, each gated on the column it prints, each listed as missing when empty`);
+if (!/if \(!season\) missing\.push\(\["Season", "season_months"\]\)/.test(factsBody)) fail("AreaFactsCard does not list a missing SEASON as an Add");
+// Every missing fact's key must be a field the area editor offers, or its Add opens the sheet at nothing.
+const editKeys = [...read("lib/areaFields.js").matchAll(/\{ k: "([a-z_]+)"/g)].map((m) => m[1]);
+for (const m of factsBody.matchAll(/missing\.push\(\["([^"]+)", "([a-z_]+)"\]\)/g)) if (!editKeys.includes(m[2])) fail(`AreaFactsCard's missing "${m[1]}" opens field "${m[2]}", which lib/areaFields.js does not offer`);
 
 // ── 2. the chart's headline is the sum of its bars ──
 const chartBody = (sections.match(/export function ClimbsChart[\s\S]*?\n\}/) || [""])[0];
