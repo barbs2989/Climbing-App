@@ -192,6 +192,10 @@ export const gradeRangesOf = (f: RouteFinderPanelFilters): RouteFinderPanelGrade
   if ((f.gLo || f.gHi) && ok.length) { const s = gradeSysFor(f.discs, f.gSys), lo = known(s, f.gLo), hi = known(s, f.gHi); if (!out[s] && (lo || hi)) out[s] = [lo, hi]; }
   return out;
 };
+/** A scale's options for these disciplines. Class 5 IS roped rock climbing, so a search of only mountaineering and
+    scrambling (never roped, no 5.x) stops at Class 4; alpine keeps it. */
+const UNROPED: Record<string, true> = { mountaineering: true, scrambling: true };
+const scaleOptions = (s: string, discs: string[]) => { const sc = GRADE_SCALES[s] || []; return s === "class" && discs.length && discs.every(d => UNROPED[d]) ? sc.filter(o => o[1] <= 4) : sc; };
 /** A filter state with these ranges, written to `gr` alone so the two spellings never disagree. */
 const withRanges = (f: RouteFinderPanelFilters, gr: RouteFinderPanelGradeRanges): RouteFinderPanelFilters => ({ ...f, gr, gSys: "", gLo: "", gHi: "" });
 /** New disciplines keep only the ranges on scales they still offer. */
@@ -650,7 +654,7 @@ export function FinderFilterSheet({ title, df, setDf, onClose, onApply, showLabe
               return (
                 <div>
                   {rows.map((s, i) => {
-                    const sc = GRADE_SCALES[s] || [], cur = rs[s] || ["", ""];
+                    const sc = scaleOptions(s, df.discs), cur = rs[s] || ["", ""];
                     const iLo = cur[0] ? sc.findIndex(o => o[0] === cur[0]) : -1, iHi = cur[1] ? sc.findIndex(o => o[0] === cur[1]) : -1;
                     return <div key={s} style={{ marginTop: i ? 12 : 0 }}>
                       {scales.length > 1 ? <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: 6 }}>
