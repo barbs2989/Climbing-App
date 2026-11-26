@@ -1,0 +1,317 @@
+{
+ "co_pacific_peak_east_slopes": {
+  "area": "co_pacific_peak",
+  "set": {
+   "dist_km": 8.45
+  },
+  "ledger": [
+   {
+    "field": "dist_km",
+    "value": 8.45,
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/peaks/10838/13er-pacific-peak",
+      "retrieved_at": "2026-11-26",
+      "fact": "East Slopes listed at 10.5 mi round trip, 3,650 ft gain; one way 5.25 mi = 8.45 km"
+     }
+    ]
+   }
+  ],
+  "review": {
+   "sources": [
+    "https://www.14ers.com/peaks/10838/13er-pacific-peak",
+    "https://www.climb13ers.com/colorado-13ers/pacific-peak"
+   ],
+   "confidence": "low",
+   "notes": "Only a stats table found for the East Slopes; no page describing the line, so approach, descent and season skipped. Hazards rest on the table's ratings (rockfall high, route-finding and exposure considerable) plus the row's own gully note. Other sources gave 11-12.6 mi figures that include Crystal Peak or other lines."
+  }
+ },
+ "co_ice_mountain_northeast_ridge": {
+  "area": "co_ice_mountain",
+  "set": {
+   "overview": "A Class 3 ridge scramble that leaves the summit of North Apostle and follows the connecting crest over to Ice Mountain. The crux is a very narrow, steep stretch of ridge near 13,800 ft, which parties usually avoid by dropping into a steep couloir on the west side, climbing back to the crest, and walking the final easy ground to the top. Expect loose rubble and talus throughout.",
+   "approach": "Start from the Clear Creek trailhead near Winfield, at about 10,880 ft. Four-wheel drive is needed to reach it; a regular car can park a short way past the Clear Creek crossing. This route is normally climbed in sequence after North Apostle, so the walk to the start of the connecting ridge is the North Apostle ascent, and the Ice Mountain climbing proper begins from that summit.",
+   "descent_text": "Come off the summit by the northeast ridge, working over rock and ledges. Avoid reversing the couloir; instead follow a rib that runs parallel to it and rejoin near the original entry point. The more conservative option is to go back to the saddle and drop into the basin beneath Ice Mountain and North Apostle.",
+   "hazards": [
+    "Very narrow, steep ridge crest near 13,800 ft with moderate exposure",
+    "Loose rubble and talus on the ridge and in the couloir, with falling-rock risk",
+    "Steep couloir that may hold snow and call for an ice axe and crampons"
+   ]
+  },
+  "review": {
+   "sources": [
+    "https://www.climb13ers.com/colorado-13ers/ice-mountain",
+    "https://www.14ers.com/peaks/10694/13er-ice-mountain"
+   ],
+   "confidence": "medium",
+   "notes": "Gain and distance skipped: every published figure (8.4 mi/3,820 ft; 9 mi/3,500 ft) is for the combined outing with North Apostle. Season skipped: nothing stated as a window."
+  }
+ },
+ "co_cathedral_peak_south_ridge_and_couloir": {
+  "area": "co_cathedral_peak",
+  "set": {
+   "overview": "The standard line up Cathedral Peak above Aspen: a walk to Cathedral Lake, then west across willow and tundra into a rubble basin, up the northernmost of several possible couloirs to a saddle south of the summit, and north along the crest. Cliff bands and a notch may force a detour west. The final ridge is never hard but slow because of loose, broken rock. Class 3, for experienced parties only.",
+   "approach": "Park at the Cathedral Lake trailhead, about 9,910 ft, at the end of a gravel road roughly a half mile long. Parking is limited and fills early on summer weekends. Follow the trail to Cathedral Lake, pass the primitive campsites, then leave the lake's north outlet and climb west through willows and tundra into the rubble basin southeast of the summit.",
+   "descent_text": "Go back down the way you came. The couloir is steep, so descending it can feel intimidating, especially when it holds snow; an ice axe and crampons help then.",
+   "hazards": [
+    "Steep couloir that may be snow-filled early in the season, needing an ice axe and crampons",
+    "Loose choss, scree and talus, with falling rock on the couloir and ridge",
+    "Severe exposure along the upper crest",
+    "A cornice can form at the top of the couloir"
+   ],
+   "dist_km": 6.92
+  },
+  "ledger": [
+   {
+    "field": "dist_km",
+    "value": 6.92,
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://www.climb13ers.com/colorado-13ers/cathedral-peak",
+      "retrieved_at": "2026-11-26",
+      "fact": "full round trip from the trailhead 8.6 mi; one way 4.3 mi = 6.92 km"
+     }
+    ]
+   }
+  ],
+  "review": {
+   "sources": [
+    "https://www.climb13ers.com/colorado-13ers/cathedral-peak",
+    "https://www.14ers.com/peaks/10084/13er-cathedral-peak"
+   ],
+   "confidence": "medium",
+   "notes": "Gain skipped: the page's 4,025 ft is below summit minus trailhead (13,952 - 9,910 = 4,042). A second source (SummitPost, about 9 mi) was blocked so distance is single-source. Season skipped."
+  }
+ },
+ "co_fletcher_mountain_southeast_ridge": {
+  "area": "co_fletcher_mountain",
+  "set": {
+   "overview": "A short Class 2 climb to the 13,943 ft summit from the Blue Lakes road: a trail past the dam and into a high basin west of Quandary Peak, a steep gully, a climb over slabs out of the basin, then rubbly slopes along the southeast ridge. The route often holds snow into early summer, and the east side of the ridge drops away seriously.",
+   "approach": "Drive south from Breckenridge on Colorado 9, then turn west onto the Blue Lakes road and climb to the gate near 1.4 miles; if closed, park and walk the remaining stretch of about three quarters of a mile to the dam. Pass the dam, follow the lakeshore trail, then a cairned trail up the steep slope on the right and west on a larger path. Near 12,100 ft turn northwest into the basin.",
+   "hazards": [
+    "Serious drop-offs on the east side of the southeast ridge",
+    "Loose rock in the rust-stained gully near 12,500 ft and on the steeper ridge above 13,600 ft",
+    "Snow lingering on the slabs and ridge into early summer"
+   ],
+   "gain_ft": 2250,
+   "dist_km": 3.42
+  },
+  "ledger": [
+   {
+    "field": "gain_ft",
+    "value": 2250,
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=flet1",
+      "retrieved_at": "2026-11-26",
+      "fact": "2,250 ft gain from 11,700 ft trailhead"
+     }
+    ]
+   },
+   {
+    "field": "dist_km",
+    "value": 3.42,
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=flet1",
+      "retrieved_at": "2026-11-26",
+      "fact": "round trip 4.25 mi; one way 2.125 mi = 3.42 km"
+     }
+    ]
+   }
+  ],
+  "review": {
+   "sources": [
+    "https://www.14ers.com/route.php?route=flet1",
+    "https://www.climb13ers.com/colorado-13ers/fletcher-mountain"
+   ],
+   "confidence": "medium",
+   "notes": "A second page gives 5 mi/2,250 ft but for the SW ridge, so not counted as agreement. Descent and season not stated for this line; skipped."
+  }
+ },
+ "co_french_mountain_southeast_ridge": {
+  "area": "co_french_mountain",
+  "set": {
+   "overview": "A Class 2 climb of mostly grassy tundra to the rockier summit of French Mountain above the South Halfmoon drainage. After the creek crossings and a long walk up the road and trail, the route winds through willows to about 12,300 ft and then reaches the southeast ridge, which is rubbly. Routefinding is easy and there is no real exposure, but the uphill is stiff.",
+   "approach": "Start at the South Halfmoon Creek trailhead at about 10,290 ft; the crossing of the creek on the forest road stops many vehicles, so parking near Halfmoon Creek and walking is common. Walk the road about 1.1 miles to the South Halfmoon crossing, continue to roughly 11,725 ft (about 3.6 miles in total), then push west-northwest through willows toward 12,300 ft.",
+   "hazards": [
+    "Halfmoon Creek low-water crossing can be dangerous during snowmelt runoff",
+    "Rough South Halfmoon crossing, with old bridge logs",
+    "Dense willows in several places slow the way above the trail"
+   ]
+  },
+  "review": {
+   "sources": [
+    "https://www.climb13ers.com/colorado-13ers/french-mountain"
+   ],
+   "confidence": "medium",
+   "notes": "Gain (3,650) and distance (10 mi) skipped: the page does not say whether they include Frasco/Casco, and 3,650 is below summit minus trailhead. Descent not described; season not stated."
+  }
+ },
+ "co_mount_hope_east_ridge": {
+  "area": "co_mount_hope",
+  "set": {
+   "overview": "A Difficult Class 2 route up the east ridge of Mount Hope, reached by the Colorado Trail to Hope Pass and then straight up the crest. The crux is a roughly 300 ft band of jumbled rock near 13,400 ft, bypassed on its left, followed by a gully back to the ridge, the Hopeful Couloir, a false summit and the top. Rubble and talus cover the upper ridge.",
+   "approach": "Use the Sheep Gulch trailhead at 9,850 ft on the Chaffee County 390 road, about 1.6 miles beyond the Missouri Gulch trailhead. Hike the Colorado Trail north up Sheep Gulch, cross to the east side of the drainage near 11,300 ft, and continue to Hope Pass at about 12,550 ft, the saddle between Hope and Quail Mountain. There the climb leaves the trail and heads west up the ridge.",
+   "descent_text": "Return along the east ridge to Hope Pass and follow the Colorado Trail back down Sheep Gulch to the trailhead. It is a long, steep descent on tired legs.",
+   "hazards": [
+    "Loose jumbled rock in the 300 ft crux band near 13,400 ft",
+    "Loose rubble and talus on the upper ridge",
+    "A snow cornice can sit along the upper ridge"
+   ]
+  },
+  "review": {
+   "sources": [
+    "https://www.14ers.com/route.php?route=201408141940373&type=13ers",
+    "https://www.climb13ers.com/colorado-13ers/mount-hope"
+   ],
+   "confidence": "medium",
+   "notes": "Descent is the reverse of the stated ascent (the second page says return to the saddle then trail). Season skipped: only a 1994 snow note, not a window."
+  }
+ },
+ "co_mount_adams_west_ridge_via_willow_creek": {
+  "area": "co_mount_adams",
+  "set": {
+   "overview": "The classic route up Mount Adams in the Sangre de Cristo Range, climbing from Willow Creek past Willow Lake into the upper basin, up grass to the saddle with the neighbouring 13,546 ft point, then east along the west ridge. A rock block and grassy ridge lead to a gully beneath the summit cap that is an easy Class 3 scramble when dry, followed by an exposed Class 2+/3 finish.",
+   "approach": "Take the dirt Forest Service road out of Crestone, about 2 miles beyond the end of pavement, to the Willow Creek trailhead at 8,850 ft. Follow the trail up Willow Creek to Willow Lake, with campsites below it. Pass the north side of the lake, turn sharply north and climb the hill into the upper basin, staying right of the big boulders at its entrance.",
+   "descent_text": "The safest way off the upper mountain is back to the Adams saddle. The grassy ridge above the upper basin, linked to a faint trail, may be the easiest line down from there.",
+   "hazards": [
+    "Moderate rockfall potential on the upper basin and summit gully",
+    "Cliffs along the ridge limit escape routes, so retreat is back to the saddle",
+    "Confusing boulder and brush belt in the basin where route-finding is hardest",
+    "Exposed footing on the ridge near the summit cap"
+   ],
+   "gain_ft": 5300,
+   "dist_km": 9.25
+  },
+  "ledger": [
+   {
+    "field": "gain_ft",
+    "value": 5300,
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=201007315116754&type=13ers",
+      "retrieved_at": "2026-11-26",
+      "fact": "5,300 ft gain from 8,850 ft trailhead to 13,937 ft summit"
+     }
+    ]
+   },
+   {
+    "field": "dist_km",
+    "value": 9.25,
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=201007315116754&type=13ers",
+      "retrieved_at": "2026-11-26",
+      "fact": "round trip 11.5 mi; one way 5.75 mi = 9.25 km"
+     }
+    ]
+   }
+  ],
+  "review": {
+   "sources": [
+    "https://www.14ers.com/route.php?route=201007315116754&type=13ers",
+    "https://www.climb13ers.com/colorado-13ers/mount-adams"
+   ],
+   "confidence": "medium",
+   "notes": "Second page gave only a different route (ESE face), so gain and distance are single-source. Page last updated 2010. Season not stated; skipped."
+  }
+ },
+ "co_gladstone_peak_north_ridge": {
+  "area": "co_gladstone_peak",
+  "set": {
+   "overview": "A long Class 3 route to the 13,913 ft summit of Gladstone Peak by way of Bilk Basin, leaving the trail below a lake at about 12,063 ft to reach a low point on the broad ridge near 12,600 ft, then following the north ridge crest. Obstacles are bypassed on the east side. The ridge is loose and exposed, so it is no place for inexperienced climbers.",
+   "approach": "Start at the Sunshine Mesa trailhead at 9,780 ft, which a passenger car can reach. Follow the Bilk Basin trail up to the lake at about 12,063 ft, leaving the trail there and heading for the low point on the broad ridge near 12,600 ft. From there turn onto the north ridge and keep to its crest to the summit.",
+   "descent_text": "Go down the way you came, retracing the ridge and dropping back toward the lake and trail before the walk out to Sunshine Mesa.",
+   "hazards": [
+    "Severe exposure along the north ridge crest",
+    "Loose boulder talus with falling-rock risk",
+    "Late-lying snow on Bilk Basin's northern slopes can cut off part of the exposed ridge traverse"
+   ],
+   "gain_ft": 4320,
+   "dist_km": 10.06
+  },
+  "ledger": [
+   {
+    "field": "gain_ft",
+    "value": 4320,
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://www.climb13ers.com/colorado-13ers/gladstone-peak",
+      "retrieved_at": "2026-11-26",
+      "fact": "12.5 mi / 4,320 ft round trip from Sunshine Mesa TH (9,780 ft)"
+     }
+    ]
+   },
+   {
+    "field": "dist_km",
+    "value": 10.06,
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://www.climb13ers.com/colorado-13ers/gladstone-peak",
+      "retrieved_at": "2026-11-26",
+      "fact": "12.5 mi round trip; one way 6.25 mi = 10.06 km"
+     }
+    ]
+   }
+  ],
+  "review": {
+   "sources": [
+    "https://www.climb13ers.com/colorado-13ers/gladstone-peak"
+   ],
+   "confidence": "medium",
+   "notes": "Single source. The row's existing text says about 11.25 miles, which is roughly 10% shorter than this figure, so the two disagree. Season skipped."
+  }
+ },
+ "co_horseshoe_mountain_east_slopes": {
+  "area": "co_horseshoe_mountain",
+  "set": {
+   "overview": "An easy Class 1 walk-up in the Mosquito Range, following an old mining road from the Fourmile Creek area to the saddle between Horseshoe and Peerless Mountain at 13,200 ft, then turning south up a trail on the northeast ridge for the last 800 ft or so to the 13,918 ft summit. Mine ruins line the road. Peerless Mountain is a short optional addition.",
+   "approach": "From Fairplay take County Road 18 and drive about 10 miles to the old Leavick site, then roughly 2 more miles to a gate and small lot. A 4WD road turns off about 0.75 mile past Leavick near 11,600 ft; a regular car can park there, or drive a half mile higher. Walk the road, passing mine ruins near 12,600 ft, to the saddle at 13,200 ft.",
+   "descent_text": "Return the way you came: back down the northeast ridge trail to the saddle and then down the mining road to the trailhead.",
+   "hazards": [
+    "Moderate rockfall rating on the upper slopes"
+   ],
+   "dist_km": 6.44
+  },
+  "ledger": [
+   {
+    "field": "dist_km",
+    "value": 6.44,
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=201208120738083&type=13ers",
+      "retrieved_at": "2026-11-26",
+      "fact": "round trip 8 mi from the 11,600 ft trailhead; one way 4 mi = 6.44 km"
+     }
+    ]
+   }
+  ],
+  "review": {
+   "sources": [
+    "https://www.14ers.com/route.php?route=201208120738083&type=13ers",
+    "https://www.climb13ers.com/colorado-13ers/horseshoe-mountain"
+   ],
+   "confidence": "medium",
+   "notes": "Gain skipped: 2,300 ft is just under summit minus trailhead (13,918 - 11,600). The other page covers the NE ridge from Leavick (9.3 mi/2,650 ft), a longer start, so not agreement. Wind remark comes from that second page about the range. Season skipped."
+  }
+ }
+}

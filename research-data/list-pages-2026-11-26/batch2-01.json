@@ -1,0 +1,318 @@
+{
+ "co_gash_ridge": {
+  "area": "co_blanca_peak",
+  "set": {
+   "approach": "Drive the Huerfano Road from CO 69 to the upper Huerfano trailhead near 10,600 feet; a high-clearance two-wheel-drive vehicle manages it in summer. Walk the Lily Lake trail up the valley until the trees thin out, then leave it and turn left to climb steeply through the basin toward the ridge. The side trail is easy to miss, so a map or GPS track helps. The way ends at a notch around 12,580 feet above Winchell Lakes, and the climbing begins at once from that notch.",
+   "descent_text": "Going back down the ridge is possible: the gash needs a short downclimb of roughly 20 to 30 feet at about 5.6 to 5.7, and it is also marked with rappel anchors. Most parties instead keep going over the summit to Ellingwood Point and drop its north ridge, then follow a trail down on the Lake Como or South Zapata side. That finish ends at a different road, so plan a shuttle or a long road walk back.",
+   "hazards": [
+    "Loose, rotten rock on many holds along the whole ridge",
+    "Sustained exposure with some fourth-class to low fifth-class moves",
+    "Awkward downclimb or rappel at the gash itself, with no easy way to back off",
+    "Steep, loose couloir on the Ellingwood north-ridge descent",
+    "Long, tiring day with a trailless stretch on the South Zapata side"
+   ]
+  },
+  "ledger": [],
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/113342484/gash-ridge",
+    "https://www.14ers.com/php14ers/tripreport.php?trip=15096",
+    "https://www.bradsnider.com/gash-ridge-to-blanca-peak/",
+    "https://www.mountainproject.com/area/105746400"
+   ],
+   "confidence": "medium",
+   "notes": "Gain, distance and season skipped: only user-logged GPS figures (and a summit page giving 9 mi / 3,665 ft that I could not open, 403) exist, none from an independent route page; no season stated anywhere. Descent options are drawn from two trip reports plus the route page's reverse-the-gash note."
+  }
+ },
+ "co_quandary_peak_standard_route_east_ridge": {
+  "area": "co_quandary_peak_standard_route",
+  "set": {
+   "overview": "The standard way up Quandary is a Class 1 walk along a broad east ridge, climbing about 3,450 feet over roughly 6.75 miles round trip to a 14,272-foot summit. It starts in forest, then spends nearly all of its length above treeline on a well-worn trail with no real scrambling. It is one of the most-climbed fourteeners in the state and is often skied in spring.",
+   "approach": "The trailhead sits near 10,850 feet off the Blue Lakes road, about 8 miles south of Breckenridge on CO 9; turn west onto the 850 road and the lot is just past the highway. In summer, parking is by reservation or by shuttle from Breckenridge, and roadside parking nearby is not allowed. From the kiosk, walk a short way to the McCullough Gulch road, turn right for a quarter mile, then left onto the signed Quandary trail. It climbs through forest to reach the east ridge crest near 11,600 feet.",
+   "descent_text": "Retrace the ascent trail down the east ridge to the trailhead. Above treeline the path is obvious, but in the forest the old mining roads cross it, so follow the signs. In winter, take the crest rather than the summer trail on the south side, which crosses avalanche terrain between about 11,800 and 13,000 feet.",
+   "hazards": [
+    "Afternoon thunderstorms with lightning above treeline; start early and be down before they build",
+    "A right turn just above 11,000 feet near a large boulder is easy to miss when snow hides the trail",
+    "Old mining roads crossing the forest trail can send walkers the wrong way",
+    "Winter avalanche terrain on the south-side summer trail between roughly 11,800 and 13,000 feet"
+   ]
+  },
+  "ledger": [],
+  "review": {
+   "sources": [
+    "https://www.14ers.com/route.php?route=quan1",
+    "https://www.fs.usda.gov/r02/whiteriver/recreation/quandary-peak-th-47",
+    "https://www.cmc.org/education-adventure/trips/routes-places/quandary-peak"
+   ],
+   "confidence": "high",
+   "notes": "Season skipped: pages say year-round or nothing. Descent is the same out-and-back trail (stated implicitly: the other ridge routes descend by it)."
+  }
+ },
+ "co_mt_belford_northwest_ridge": {
+  "area": "co_mt_belford",
+  "set": {
+   "overview": "Belford's northwest ridge is the standard Class 2 trail to a 14,197-foot summit in the Collegiate Peaks Wilderness. It climbs about 4,500 feet over roughly 4 miles each way: forest and a gulch first, then a long run of switchbacks up the ridge with some rocky ground near the start and again close to the top. It is a steady, sustained grind rather than a technical outing, and Oxford is often added from its summit.",
+   "approach": "Take CR 390 (Clear Creek Road) west from US 24, about 7.5 miles to the Missouri Gulch trailhead at 9,650 feet; the large lot has restrooms. The trail crosses the Clear Creek bridge, enters the forest and switchbacks steeply, then follows Missouri Gulch south, crossing the stream on a log bridge near 10,800 feet. At the junction near 11,600 feet, bear left on the Belford trail rather than right toward Elkhead Pass. The ridge itself starts at the base of the slope after a small stream crossing.",
+   "descent_text": "Return the way you came: down the ridge trail and its many switchbacks, left at the junction with the Elkhead Pass trail, then back along Missouri Gulch to the log bridge and the lot. The upper switchbacks are rocky, and the creek crossing near the bottom needs care when the water is high.",
+   "hazards": [
+    "Afternoon thunderstorms build quickly on the open ridge; get below timberline at the first sign",
+    "Moderate rockfall potential and loose rocky sections on the ridge",
+    "Log-bridge stream crossing in Missouri Gulch, tricky when the creek runs high",
+    "Trail washouts near the base of the ridge and a faint path close to the summit"
+   ],
+   "dist_km": 6.44
+  },
+  "ledger": [
+   {
+    "field": "dist_km",
+    "value": 6.44,
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=belf1",
+      "retrieved_at": "2026-11-26",
+      "fact": "8 miles round trip, so about 4 miles one way (Missouri Gulch trailhead to summit)"
+     },
+     {
+      "url": "https://www.fs.usda.gov/r02/psicc/recreation/mount-belford-fourteener",
+      "retrieved_at": "2026-11-26",
+      "fact": "Missouri Gulch Trail 2.2 mi plus Belford Trail 1.8 mi to the summit = 4.0 mi one way"
+     }
+    ]
+   }
+  ],
+  "review": {
+   "sources": [
+    "https://www.14ers.com/route.php?route=belf1",
+    "https://www.fs.usda.gov/r02/psicc/recreation/mount-belford-fourteener",
+    "https://trails.colorado.gov/routes/164828"
+   ],
+   "confidence": "medium",
+   "notes": "Distance: 4.0 mi one way = 6.44 km; the 14ers page's 8 mi round trip is 'rounded', other listings give 8.5 to 11 mi round trip, so treat the distance as slightly uncertain. Season skipped (not stated). Descent is the out-and-back reverse."
+  }
+ },
+ "co_mount_oxford_via_mount_belford": {
+  "area": "co_mount_oxford",
+  "set": {
+   "approach": "Start at the Missouri Gulch trailhead at 9,650 feet, reached by CR 390 from US 24 (about 7.5 miles in, restrooms at the lot). Follow Missouri Gulch south to the junction near 11,600 feet and bear left for Belford, then climb Belford first by its northwest ridge or southwest slopes. Oxford lies about 1.5 miles east of Belford's summit. From the top, head southeast on the trail for a quarter mile, staying above 14,000 feet, then turn left to drop Belford's east ridge to the saddle near 13,500 feet.",
+   "descent_text": "There is no shortcut back: climb out of the saddle and return over Belford, then go down either of its two standard routes into Missouri Gulch and out to the trailhead. The regain over Belford adds about 1,500 feet to the day. Skip the trail toward Elkhead Pass that branches off before the turn to the saddle unless you intend to take that longer way down.",
+   "hazards": [
+    "Moderate rockfall and several rocky stretches on the ridge between the two summits",
+    "A steep descent into the saddle and a long regain over Belford at the end of the day",
+    "Afternoon thunderstorms on the high, open ridge; start early",
+    "Wrong-trail risk at the Elkhead Pass branch just below Belford's summit"
+   ]
+  },
+  "ledger": [],
+  "review": {
+   "sources": [
+    "https://www.14ers.com/route.php?route=oxfo2",
+    "https://www.14ers.com/route.php?route=belf1",
+    "https://www.fs.usda.gov/r02/psicc/recreation/mount-belford-fourteener"
+   ],
+   "confidence": "medium",
+   "notes": "Season, gain and distance skipped (not in fill / combined-peak figures only; gain 5,900 ft and 11 mi RT are for the Belford-plus-Oxford day). Thunderstorm line drawn from the Belford forest-service page for the same ridge."
+  }
+ },
+ "co_mount_democrat_east_slope": {
+  "area": "co_mount_democrat",
+  "set": {
+   "overview": "Democrat's east slope is a short Class 2 climb of about 2,150 feet from Kite Lake at 12,000 feet, one of the lowest starts of any fourteener. The trail passes an old mine, climbs rugged ground and switchbacks to the Democrat-Cameron saddle, then traverses a long slope and steepens to the summit ridge before the last pitch to 14,154 feet. It is about 4 miles round trip and is commonly combined with its neighbours.",
+   "approach": "Drive from Alma up the signed road to Kite Lake, about 6 miles, with a rougher final mile; good-clearance two-wheel-drive can usually get close when dry. The lot at 12,000 feet has restrooms, camping and a fee. From the lot, follow the blocked road north past the lake to the Kentucky Belle mine near 12,400 feet, then take the trail up Democrat's east slopes. Near 13,000 feet it turns north across the slope to the saddle at 13,400 feet, where the route turns left up the ridge.",
+   "descent_text": "Go back the way you came: down the long southwest traverse and the final slope to the saddle, then retrace the trail past the mine to Kite Lake. Take care on the loose scree on the upper slope, where footing is unstable and it is easy to dislodge rock onto people below.",
+   "hazards": [
+    "Moderate rockfall and loose scree on the steep upper slope",
+    "Rugged slope near 12,600 feet and a steep final section below the summit ridge",
+    "Strong winds and fast-changing weather above treeline; summit early",
+    "A false summit before the true top, which is a few minutes farther"
+   ],
+   "dist_km": 3.22
+  },
+  "ledger": [
+   {
+    "field": "dist_km",
+    "value": 3.22,
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=demo1",
+      "retrieved_at": "2026-11-26",
+      "fact": "4 mi round trip from Kite Lake, 2,150 ft gain (2 mi one way)"
+     },
+     {
+      "url": "https://www.theoutbound.com/colorado/hiking/hike-mt-democrat",
+      "retrieved_at": "2026-11-26",
+      "fact": "4 mi out-and-back, 2,150 ft gain (2 mi one way)"
+     }
+    ]
+   }
+  ],
+  "review": {
+   "sources": [
+    "https://www.14ers.com/route.php?route=demo1",
+    "https://www.theoutbound.com/colorado/hiking/hike-mt-democrat",
+    "https://www.14ers.com/php14ers/trailheadsview.php?start=15&thparm=mr01"
+   ],
+   "confidence": "medium",
+   "notes": "Season skipped. ACCESS: the Kite Lake road and the Democrat/Lincoln/Cameron/Bross area have had landowner-permission closures, a Forest Service closure in 2025 and a closed Bross; current status unconfirmed and deliberately left out of prose. The outbound page may be a re-listing of the 14ers figure, so the 'agree-2' lock is weaker than usual."
+  }
+ },
+ "co_capitol_snowmass_traverse": {
+  "area": "co_capitol_peak",
+  "set": {
+   "approach": "Park at the Snowmass Creek trailhead at the end of Snowmass Creek Road above Snowmass on Highway 82. Follow the Snowmass Creek trail about 1.7 miles to the signed West Snowmass Creek fork on the right, then climb that trail for three to four steep miles until you can contour east of Mount Daly into the basin northeast of K2. Moon Lake there is the water source. From the basin the traverse starts by climbing Capitol by its northeast ridge, the Knife Edge.",
+   "descent_text": "From North Snowmass, walk to the summit of Snowmass, which is third class, and go down its East Face route to Snowmass Lake. From the lake, an 8-mile walk on the Snowmass Creek trail returns to the trailhead.",
+   "hazards": [
+    "Extremely loose rock almost the whole way, with unstable gendarmes and falling blocks",
+    "Serious exposure and fourth- and fifth-class downclimbs on the ridge",
+    "Difficult route-finding; the crest often forces you to drop west",
+    "Rope drag and rockfall risk for a team, so keep roughly 50 feet apart"
+   ]
+  },
+  "ledger": [],
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/105763659/capitol-snowmass-traverse",
+    "http://www.hikingintherockies.com/fourteeners/snowcap/snowcapmain.htm"
+   ],
+   "confidence": "medium",
+   "notes": "Approach, descent and hazards from a single route page (the SummitPost page returned 403). Gain and distance skipped: no figure for this line (the ridge is about 2.5 mi; the only totals found are for a different loop). Last hazard wording is a mild paraphrase of the page's partner-spacing advice."
+  }
+ },
+ "co_pikes_peak_east_slopes": {
+  "area": "co_pike_s_peak_2",
+  "set": {
+   "overview": "The Barr Trail is Pikes Peak's classic walk-up from Manitou Springs, a Class 1 trail of roughly 12 to 13 miles one way and several thousand feet of gain. It starts with steep switchbacks, passes Barr Camp about halfway, runs below and then above treeline to the A-Frame shelter, and ends on the 14,115-foot summit. Most of the effort is the distance and the sustained climb; there is no technical ground.",
+   "descent_text": "Return on the same trail, the way you came: down from the summit past the A-Frame shelter and Barr Camp to Manitou Springs. Stay on the switchbacks rather than cutting them, since loose rock shed from a shortcut can hit people below.",
+   "hazards": [
+    "The summit can turn stormy fast; aim to reach it by noon and watch the sky",
+    "Rock dislodged onto hikers below when switchbacks are cut",
+    "A steep first climb out of Manitou Springs that sets a hard pace for a very long day",
+    "Snow on the upper trail in spring, with complex avalanche terrain rated in the higher sections"
+   ]
+  },
+  "ledger": [],
+  "review": {
+   "sources": [
+    "https://www.cmc.org/education-adventure/trips/routes-places/pikes-peak-barr-trail",
+    "https://www.14ers.org/?p=386"
+   ],
+   "confidence": "medium",
+   "notes": "Season skipped: one page says year-round, another gives no window. Distances differ across pages (12 vs 13 mi one way; Barr Camp at 6.5-7 mi), so prose is deliberately approximate; the A-Frame 'little over two miles above' is a difference of the pages (mile 9 vs Barr Camp mile 7) and may be shaky."
+  }
+ },
+ "co_snowmass_mountain_east_slopes": {
+  "area": "co_snowmass_mountain",
+  "set": {
+   "overview": "Snowmass Mountain's east slopes are the standard Class 3 route, a long day or, more usually, an overnight from Snowmass Lake. It follows the Snowmass Creek trail to the lake, crosses a boulder field and climbs through ledges and willows to the broad snowfield area, then reaches the ridge crest near 13,700 feet. A short, loose scramble leads to the summit, with real exposure and rockfall on the final pitch.",
+   "approach": "Drive Snowmass Creek Road from Highway 82 in Snowmass, about 11 miles with dirt after mile 7, to the trailhead at 8,400 feet. Hike south on the Snowmass Creek trail through the gates, staying left at the West Snowmass junction about 2.5 miles in. Past 6 miles, cross the log jam at the north end of the ponds, switchback up the slope, and continue to the outlet of Snowmass Lake near 11,000 feet. From there the trail circles the lake's south side to a boulder field.",
+   "descent_text": "Come down the same route: from the ridge crest back through the ledges and willows to the boulder field at the lake's west end, then follow the lake and the Snowmass Creek trail out. Many parties camp at the lake and walk out the next morning.",
+   "hazards": [
+    "Class 3 scrambling with high exposure and loose rock near the summit; a helmet is wise",
+    "Steep loose pitch near 11,600 feet that is better avoided by crossing the stream",
+    "Eroded, braided trail between the lake and the plateau makes the way easy to lose",
+    "Log-jam crossing at the ponds, worse after spring melt",
+    "Snow lingers well into summer and a cornice can form at the upper notch"
+   ]
+  },
+  "ledger": [],
+  "review": {
+   "sources": [
+    "https://www.14ers.com/route.php?route=snow1",
+    "https://www.14ers.org/?p=565",
+    "https://www.cmc.org/education-adventure/trips/routes-places/snowmass-mountain-east-slopes"
+   ],
+   "confidence": "medium",
+   "notes": "Distance SKIPPED: 14ers.com and CMC give 22 mi round trip (11 one way) but another page gives 8.5 mi one way, which disagrees beyond 10%. Season skipped: CMC says May-Sep but 14ers.org says snow persists into July - one source only. Descent is reverse of the ascent; the 'many parties camp' line comes from the route notes about an overnight."
+  }
+ },
+ "co_windom_peak_west_ridge": {
+  "area": "co_windom_peak",
+  "set": {
+   "overview": "Windom's west ridge is an easy Class 3 climb to 14,089 feet in the Needle Mountains, reached from a camp in Chicago Basin. From Twin Lakes basin you head east and cut up onto the ridge, with Peak Eighteen at the ridge's western end. Expect route-finding above the basin, then about 650 feet of ridge climbing, a notch near 13,800 feet and a last easy Class 3 break to the summit blocks. Most parties arrive on the narrow-gauge train.",
+   "approach": "There is no road to Chicago Basin. Ride the Durango and Silverton train to the Needleton stop and hike about 6 miles up to the basin, where dispersed sites lie between 10,800 and 11,100 feet. Turn left at the signed junction near 11,200 feet toward Twin Lakes, climb forest and slabs by cairns, cross two streams, and reach Twin Lakes at 12,500 feet. East of the lakes follow cairns to the saddle between Windom and Peak Eighteen near 13,450 feet.",
+   "descent_text": "Backtrack down the west ridge to the saddle, then retrace the cairned route west past Twin Lakes and down through the slabs and forest to Chicago Basin, and out to the train stop. Do not cross to Sunlight by the steep, loose northwest face; return to the saddle first.",
+   "hazards": [
+    "Route-finding above Chicago Basin where no continuous trail exists",
+    "Loose rock and rockfall on the ridge and the traverse below the saddle",
+    "Exposure along the west ridge, with notch and boulder navigation near 13,800 feet",
+    "Steep, loose northwest face when crossing to Sunlight is dangerous"
+   ],
+   "dist_km": 14.48
+  },
+  "ledger": [
+   {
+    "field": "dist_km",
+    "value": 14.48,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=wind1",
+      "retrieved_at": "2026-11-26",
+      "fact": "18 mi round trip from the Needleton dropoff (9 mi one way); 6 mi round trip from Chicago Basin"
+     },
+     {
+      "url": "https://www.cmc.org/education-adventure/trips/routes-places/windom-peak",
+      "retrieved_at": "2026-11-26",
+      "fact": "Chicago Basin approach 12 mi round trip plus West Ridge 6 mi round trip = 18 mi round trip, 9 mi one way"
+     }
+    ]
+   }
+  ],
+  "review": {
+   "sources": [
+    "https://www.14ers.com/route.php?route=wind1",
+    "https://www.cmc.org/education-adventure/trips/routes-places/windom-peak"
+   ],
+   "confidence": "medium",
+   "notes": "Distance is Needleton to summit by this route, 9 mi one way. Season skipped (year-round on CMC)."
+  }
+ },
+ "co_mount_eolus_northeast_ridge": {
+  "area": "co_mount_eolus",
+  "set": {
+   "overview": "Eolus's northeast ridge is a Class 3 route to a 14,087-foot summit in Chicago Basin. From camp you climb past Twin Lakes to a ramp and boulder field, gain the ridge at a notch near 13,850 feet, cross the narrow Catwalk and finish up ledges on the east face. It is short from the basin, about 6 miles round trip and 3,100 feet, but exposure is high and the route-finding needs care.",
+   "approach": "No road reaches Chicago Basin. Ride the Durango and Silverton train to the Needleton stop and hike roughly 6 miles to the basin, where dispersed camps lie between 10,800 and 11,100 feet. Turn left at the signed junction near 11,200 feet toward Twin Lakes, climb forest and slabs by cairns, cross two streams and reach the lakes at 12,500 feet. Near the first lake the Eolus trail branches left; cross at the outlet and traverse west beneath cliffs until the east face appears.",
+   "descent_text": "Return the same way: back down the east-face ledges, across the Catwalk, down the green chute or slabs from the notch, then the ramp and boulder field and the trail past Twin Lakes to Chicago Basin. The narrow ledges near the top need care even when dry, and the way out to the train stop is the full 6 miles.",
+   "season": "Jul-Sep",
+   "hazards": [
+    "High exposure on the Catwalk and the narrow ledges near the summit",
+    "Considerable rockfall on the east face and the steep terrain near the top",
+    "Difficult route-finding through the boulder field and up the ramp to the notch",
+    "Stream crossings below Twin Lakes"
+   ],
+   "dist_km": 14.48
+  },
+  "ledger": [
+   {
+    "field": "dist_km",
+    "value": 14.48,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=eolu3",
+      "retrieved_at": "2026-11-26",
+      "fact": "18 mi round trip from Needleton dropoff (9 mi one way); 6 mi round trip from Chicago Basin"
+     },
+     {
+      "url": "https://www.cmc.org/@@resolveuid/429a1c457e3743c9abff8195fbfba82b",
+      "retrieved_at": "2026-11-26",
+      "fact": "Northeast Ridge route 6 mi plus the 12 mi Needleton approach = 18 mi round trip"
+     }
+    ]
+   }
+  ],
+  "review": {
+   "sources": [
+    "https://www.14ers.com/route.php?route=eolu3",
+    "https://www.cmc.org/@@resolveuid/429a1c457e3743c9abff8195fbfba82b"
+   ],
+   "confidence": "medium",
+   "notes": "Distance 9 mi one way from Needleton (agree-2). Season Jul-Sep is from CMC only (one source)."
+  }
+ }
+}
