@@ -55,6 +55,14 @@ room for side-panel ads later. The phone app keeps its own look.
     are hidden and the bar taps the innermost, so it closes the questionnaire first. A step Back that can sit below the top
     of the column is marked `data-cm-step-back` (`STEP_BACK_ATTR`, on `SafetyTab`'s) and taken over wherever it is; a
     wizard's Back beside Next at the foot of a step (`Questionnaire`) is not marked and stays on the page.
+  - **Back at the far left as an arrow alone, the ☰ at the far right, smaller squares** (owner 2026-11-25: "make back
+    button top left and remove the back text, just have an arrow. This is for phone only. Menu on top right? Make those
+    buttons boxes smaller at the very very top smaller too"). The phone bar reads ← · · · ★ bell calendar messages ☰: the
+    pinned Back is a 36px `POP_BACK` circle holding only "←" (no "Back" word at any width; its accessible name is still
+    the screen's), in the corner where iOS and Android put Back; the Menu (`_menuBtn` in `ClimbMatch.jsx`, one element the
+    website draws first and the phone draws last) is the last square on the right. All five squares are 36px (were 44),
+    9px corners, icons 17px and the ☰ 20px, the same size as a popup's ✕; `lib/tapSlop.js` gives a near touch the 44px
+    box. The website's header is unchanged (its ☰ stays at the far left, its squares 44px).
 - **Desktop (1024px and wider) — the website shell:**
   - A full-width fixed **header** of two rows (112px). First the **top bar** (64px): a bare ☰ at the far left (no box, no "Menu" label on
     desktop — owner 2026-11-04; its accessible name is still "Menu"), the logo (the app mark beside a
