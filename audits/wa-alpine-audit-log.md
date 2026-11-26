@@ -40731,3 +40731,64 @@ Coordinates for all 10 routes fell within a plausible bounding box for their nam
 
 1 confirmed error fixed, 10 flagged for human review. Next batch continues id-ascending from
 `wa_kololo_peaks_standard` (pass 9).
+
+## 2026-11-26 — Pass 9, Batch 588
+
+Checked 10 routes, continuing id-ascending from `wa_kololo_peaks_standard`: Glaciated Scramble
+and Northeast Ridge (both Kyes Peak), Labor Pains (North Early Winters Spire), Standard Scramble
+(Lake Mountain, Pasayten), The Zipper / The Fly / Lover's Lane (all three couloirs on Lane Peak),
+Northern Aspect (Le Conte Mountain), Leche La Vaca (Colchuck Balanced Rock), and East Route /
+Main Peak (Lemah Mountain). No sub-scope skips this batch.
+
+4 confirmed errors fixed, all gain_ft/loss_ft internal-consistency fixes against each route's own
+stored itinerary (the same recurring pattern as prior batches):
+- `wa_kyes_peak_glaciated_scramble` (6500/6023 → 6000/6000) — its own itinerary day and totalNote
+  both say ~6,000 ft for this out-and-back line.
+- `wa_labor_pains` (loss_ft NULL → 2400) — its own itinerary already carried 2400/2400.
+- `wa_lane_peak_r2`, The Fly (2000/2000 → 1500/1500) — stored figures looked copied from its
+  sibling couloirs (The Zipper, Lover's Lane), but The Fly's own itinerary day and totalNote
+  independently and explicitly state 1,500 ft, consistent with its own description of topping
+  out at a lower west-ridge notch rather than the summit.
+- `wa_le_conte_mountain_northern_aspect` (NULL/NULL → 17700/17700) — its own 3-day itinerary
+  breakdown (9000/6800, 1900/1900, 6800/9000) already summed to a consistent round-trip figure
+  that was never copied up to the top-level columns.
+
+Flagged for human review, not fixed:
+- `wa_kyes_peak_northeast_ridge` has no gain_ft/loss_ft, and its own itinerary's single day entry
+  is an empty template (no hours/miles/gainFt filled in) — no authoritative source found giving a
+  specific cumulative-gain figure for this exact line to fill it with confidently. Separately, the
+  stored approach text says the Quartz Creek Trail runs "about 4 miles" to Curry Gap, while the
+  primary 1968 American Alpine Journal first-ascent account (Mike Heath, confirmed as the FA source)
+  describes "two miles" from the road end to Curry Gap — this may simply reflect a trailhead/road
+  that has moved or lengthened since 1968 (common in the Cascades), so not treated as a contradiction,
+  but worth a human check against a current trail description (e.g. WTA) if anyone revisits this route.
+- `wa_le_conte_mountain_northern_aspect`'s `fa` names "Ray W. Clough" as the second climber, but the
+  only source found (Wikipedia, with several mirrors of the same article) names him "Ralph W. Clough"
+  instead — a real discrepancy, but from a single source (the mirrors aren't independent), and a
+  separate GPT-derived knowledge-graph snippet names an entirely different, less-reliable party
+  (Beckey, Beckey, Crooks) for the same peak — not corrected without stronger corroboration (e.g.
+  Beckey's Cascade Alpine Guide, which Wikipedia itself cites).
+- `wa_leche_la_vaca`'s `fa` ("Tom Ramier, Abe Traven and Craig Rankin") is single-sourced with no
+  corroborating or disputing source found. Separately, Mountain Project's own route page describes
+  this climb as 4 pitches at 5.10a/b, while our stored row has 5 pitches at 5.10b — the grades are
+  close enough to be a rounding difference, but the pitch-count mismatch (4 vs. 5) deserves a second
+  look from a human, since Mountain Project is normally authoritative for pitch counts on a route
+  this well-documented.
+
+Clean: `wa_kyes_peak_northeast_ridge`'s `fa` ("Mike Heath, September 14, 1968" — confirmed by a
+primary-source 1968 American Alpine Journal report of this exact ascent); `wa_labor_pains`'s `fa`
+("Steve Risse and Donna McBain, September 1988" — a Cascade Climbers trip-report thread names the
+same pair, consistent with Mountain Project's stored 1988 year); `wa_lake_mountain_pasayten_scramble`'s
+`high_point_ft` (8371, matching SummitPost exactly) and its gain_ft/loss_ft (7300/7300, matching the
+sum of its own 3-day itinerary exactly); `wa_lane_peak_r1` (The Zipper) and `wa_lane_peak_r3`
+(Lover's Lane), whose gain_ft/loss_ft (2000/2000 each) match their own itinerary entries exactly;
+`wa_lemah_mountain_east_route`'s `fa` ("Wallace Burr and party, July 7, 1923" — confirmed by
+Wikipedia and its mirrors) and its gain_ft/loss_ft (4680/4680, within rounding of its own
+itinerary's 4700/4700 sum); and `wa_le_conte_mountain_northern_aspect`'s `high_point_ft` (7762,
+matching Wikipedia exactly). All 10 routes store their coordinates in `waypoints` rather than
+top-level `lat`/`lng`; every summit waypoint checked fell within a plausible location for its
+named peak, and summit-waypoint elevations were within a few feet of each route's stored
+`high_point_ft` throughout.
+
+4 confirmed errors fixed, 3 flagged for human review. Next batch continues id-ascending from
+`wa_lemah_mountain_east_route` (pass 9).
