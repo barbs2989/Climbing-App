@@ -7,7 +7,7 @@ import { clickable } from "../../lib/clickable";
 import type { C as Palette } from "../../ClimbMatchCore.jsx";
 
 /** An area_photos row (0411, 0541) with its public URL: a topo (storage_path) or a Photos-tab route photo (url). */
-export interface AreaFeedPhoto { id: string; url: string | null; storage_path?: string | null; alt?: string | null; route_id?: string | null; route_name?: string | null; area_id: string; area_name?: string | null; created_at: string }
+export interface AreaFeedPhoto { id: string; url: string | null; storage_path?: string | null; alt?: string | null; /** The uploader's caption (topos.caption 0362, a route photo's value->caption 0554). */ caption?: string | null; route_id?: string | null; route_name?: string | null; area_id: string; area_name?: string | null; created_at: string }
 export interface AreaPhotoStripProps {
   area: { id: string; name: string };
   C: typeof Palette;
@@ -68,7 +68,8 @@ export default function AreaPhotoStrip({ area, C, signedIn, onSignIn, onOpenRout
       {fd && !photos.length ? <div style={{ alignSelf: "center", fontSize: 12, color: C.textMuted, paddingLeft: 4 }}>{"No photos here yet."}</div> : null}
     </div>
     {view ? createPortal(<div role="dialog" aria-label="Photo viewer" aria-modal="true" data-sheet="viewer" style={{ position: "fixed", inset: 0, background: C.scrimStrong, zIndex: 99999, display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", padding: 20, gap: 12 }}>
-      <img src={view.url as string} alt={view.alt || "Photo of " + (view.route_name || view.area_name || area.name)} style={{ maxWidth: "100%", maxHeight: "78%", borderRadius: 12, objectFit: "contain" }} />
+      <img src={view.url as string} alt={view.alt || "Photo of " + (view.route_name || view.area_name || area.name)} style={{ maxWidth: "100%", maxHeight: view.caption ? "60%" : "78%", borderRadius: 12, objectFit: "contain" }} />
+      {view.caption ? <div style={{ maxWidth: 480, width: "100%", maxHeight: "22vh", overflowY: "auto", overscrollBehavior: "contain", color: "#fff", fontSize: 13, lineHeight: 1.5, whiteSpace: "pre-wrap", overflowWrap: "anywhere" }}>{view.caption}</div> : null}
       <div style={{ display: "flex", alignItems: "center", gap: 10, flexWrap: "wrap", justifyContent: "center", color: "#fff", fontSize: 13 }}>
         <span>{view.route_name ? view.route_name + (view.area_name ? " · " + view.area_name : "") : view.area_name || area.name}</span>
         {view.route_id && onOpenRoute ? <button onClick={() => { const r = { id: view.route_id as string, name: view.route_name || undefined }; setView(null); onOpenRoute(r); }} style={{ minHeight: 40, padding: "0 14px", borderRadius: 9, border: "1px solid " + C.blue, background: C.blueBg, color: C.onSolid, fontWeight: 700, cursor: "pointer" }}>Open climb</button> : null}
