@@ -6,6 +6,15 @@ views under `groupsTab`: For you · Your groups · Your activity · Discover · 
 (owner 2026-11-23: a photo someone posts already shows in the Discussion).
 
 ## 1. What it does today
+- **The Discussion draws 10 posts at a time** (`GROUP_POSTS_PAGE` in `GroupDiscussionTab`; owner note 2026-11-26,
+  "the screen freezes when I click on groups that I have joined"). Pinned posts always show; under the rest,
+  *Show more posts (N more)* adds the next 10. Before, every post was drawn at once: at 150 posts the tab built ~5,000
+  elements and 729 buttons in one go and held the screen 1.6 + 1.3 s; now 662 elements and one 343 ms task
+  (`scripts/oneoff/probe-group-open-freeze.mjs`, which signs in a fixture member of a filled group, opens it over and
+  over and times every tap, on a phone or `--desktop`). A shared post link past the first page still lands: the page
+  grows to include that post (`focusPostId`) and keeps it. No permanent freeze could be made to happen on any path
+  (phone and desktop at 1280-1920 wide, guest and signed in, the nav strip, the page lock), so a stall of 2 s or more
+  is now written to `app_errors` (`lib/errorReport.js`) for the next time.
 - **Who may change what.** Only a group's **managers** (the owner and its moderators) can change its settings,
   including **public / private**. The *Make private / Make public* switch and the *Edit group* button render only
   for a manager (`isMod`, which also requires an active membership), and the server refuses anyone else:
