@@ -1149,6 +1149,13 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     as *neither* rather than as non-rack, so a new kind of kit shows up in the second list, not the
     first. It is a WA audit by scope (`--state`), hand-run, exit 1 on any finding; `--selftest`
     asserts `DISC_RACK` and eight classifier cases with no database.
+  - **Runs DAILY since 2026-11-26** (a step in `.github/workflows/rappel-length-drift.yml`, anon key,
+    whole catalog). Two sweeps had brought it to 0 (#2453, then #2667), and in between **44 routes**
+    imported from eleven states had put helmets, axes and approach shoes back under RACK — found
+    only because the owner's note sent a session to look. The importers that write `detailed_rack`
+    are many (pipeline, one-off research appliers), so the drift is caught where it lands, not at
+    each writer. Not a build gate: no code change causes or fixes it. A red run is fixed by adding
+    the sentence to `scripts/oneoff/rack-rewrites.json` and running `fix-rack-non-rack-items.mjs`.
 
 - **`check:declination`** asserts that **the base-of-the-climb arrow turns a magnetic phone compass
   into TRUE north**. *Point the way with your compass* (`BaseCheckinPanel`, 2026-10-28) rotates an
