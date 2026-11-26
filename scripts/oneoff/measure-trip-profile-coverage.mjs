@@ -22,9 +22,25 @@ await build({ entryPoints: [entry], bundle: true, format: "cjs", platform: "node
   loader: { ".js": "jsx", ".jsx": "jsx" }, logLevel: "silent", define: { "import.meta.env": "{}" } });
 const M = createRequire(import.meta.url)(bundle);
 const CRAG = M.CRAG_CATS;
-const key = requireServiceKey();
-const peaks = new Set((await selectAll("areas", "id", "area_type=eq.peak", { key, pageSize: 1000 })).map((a) => a.id));
-const rows = await selectAll("routes", "*", "discipline=not.in.(sport,toprope,bouldering)", { key, pageSize: 500 });
+// --snapshot reads the nightly static snapshot (<pages>/states/) instead of the database: no DB slot needed.
+let peaks, rows;
+if (process.argv.includes("--snapshot")) {
+  const PAGES = "https://barbs2989.github.io/Climbing-App/states/";
+  const zlib = await import("zlib");
+  const index = await (await fetch(PAGES + "index.json")).json();
+  peaks = new Set(); rows = [];
+  for (const st of Object.values(index.states)) for (const part of st.parts) {
+    const buf = Buffer.from(await (await fetch(PAGES + part.file)).arrayBuffer());
+    let txt; try { txt = zlib.gunzipSync(buf).toString("utf8"); } catch { txt = buf.toString("utf8"); }
+    const j = JSON.parse(txt);
+    for (const a of j.areas || []) if (a.area_type === "peak") peaks.add(a.id);
+    for (const r of j.routes || []) if (!["sport", "toprope", "bouldering"].includes(r.discipline)) rows.push(r);
+  }
+} else {
+  const key = requireServiceKey();
+  peaks = new Set((await selectAll("areas", "id", "area_type=eq.peak", { key, pageSize: 1000 })).map((a) => a.id));
+  rows = await selectAll("routes", "*", "discipline=not.in.(sport,toprope,bouldering)", { key, pageSize: 500 });
+}
 const byReason = {}, byDisc = {}, drawn = [], sample = {}, perRoute = [];
 let mounted = 0;
 for (const r of rows) {
