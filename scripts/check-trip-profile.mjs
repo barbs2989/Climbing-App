@@ -78,8 +78,9 @@ ok("no waypoints: the TRIP PROFILE heading still draws", /TRIP PROFILE/.test(tex
 ok("...with an empty state that offers the waypoint editor", /No leg-by-leg profile yet/.test(text(nh)) && /Add waypoints and distances/.test(text(nh)), text(nh));
 const c2c = { ...base, timing: { totalHrs: 12 } };
 const c2cP = tp(c2c);
-if (c2cP.reason === "car to car") ok("car to car: the empty state offers the timing editor", /Add the time up and down/.test(text(A.render(c2c, { onEditWaypoints: () => {}, onEditTiming: () => {} }))), text(A.render(c2c, { onEditWaypoints: () => {}, onEditTiming: () => {} })));
-else ok("car to car fixture reads as car to car", false, c2cP.reason);
+const c2cTxt = text(A.render(c2c, { onEditWaypoints: () => {}, onEditTiming: () => {} }));
+ok("car to car: the legs still draw, with distance and climb", !!c2cP.legs && c2cP.legs.up.length === 3 && c2cP.wholeDayH > 0 && c2cP.legs.up.every(l => l.timeH == null), JSON.stringify(c2cP.reason || c2cP.wholeDayH));
+ok("...with no Time per leg, and the whole-day time stated", !/Time/.test(c2cTxt) && /known only for the whole day, about 12\.0 hr car to car/.test(c2cTxt), c2cTxt);
 
 // 5.
 const ice = { ...none, discipline: "ice", grade: "WI4", gainFt: null, gainM: null, lossFt: null, lossM: null };
@@ -91,6 +92,11 @@ const nt = tp(noTopDist);
 ok("a summit with no distance sits at the route's one-way figure, and the legs still split", !!nt.legs && nt.legs.up.length === 3 && Math.abs(nt.legs.up.reduce((s, l) => s + l.km, 0) - KM) < 1e-9, nt.reason);
 const clash = { ...noTopDist, distKm: 4.5 * 1.609344 };
 ok("...but not when a stated waypoint lies past that figure (the two records disagree)", !tp(clash).legs, JSON.stringify(tp(clash).legs && tp(clash).legs.up.map(l => l.to.name)));
+
+// 8. No Trailhead waypoint, but stated distances: the legs start at the route's own trailhead at 0.
+const noTh = { ...base, waypoints: wps.slice(1), approachLogistics: { trailhead: "Lake Road End" } };
+const nth = tp(noTh);
+ok("no trailhead waypoint: the legs start at the route's trailhead, at 0", !!nth.legs && nth.legs.up.length === 3 && nth.legs.up[0].from.name === "Lake Road End", nth.reason || (nth.legs && nth.legs.up[0].from.name));
 
 // 6.
 const nocoord = { ...base, waypoints: wps.map(w => ({ ...w, lat: null, lng: null })) };

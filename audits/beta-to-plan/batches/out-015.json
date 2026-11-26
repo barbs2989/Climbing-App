@@ -1,0 +1,381 @@
+[
+ {
+  "id": "co_driving_over_stella",
+  "beta_new": "Climb the steep slab beside the neighbouring arete, clipping five bolts before reaching a pair of anchors. The hardest moment is a lengthy stretch across a thin bulge.",
+  "moves": []
+ },
+ {
+  "id": "co_drumstick_direct",
+  "beta_new": "Start to the right of a neighbouring route. Climb an easy flake, then trend leftward into the inner corner of an enormous cleft, and fight up the overhanging crack above with strenuous fist jams to a ledge higher and to the right.\n\nThe second pitch trends rightward into an easier corner.",
+  "moves": [
+   {
+    "to": "rack",
+    "action": "add",
+    "from": "Rack mostly medium wired nuts and plenty of cams up to four inches.",
+    "value": {
+     "rows": [
+      {
+       "item": "Nuts",
+       "sizes": "medium, wired"
+      },
+      {
+       "item": "Cams",
+       "sizes": "up to 4 in"
+      }
+     ],
+     "text": "Mostly medium wired nuts and plenty of cams up to 4 in."
+    }
+   }
+  ]
+ },
+ {
+  "id": "co_dumb_waiter",
+  "beta_new": "Clip the bolts up the face to the right of the chimney, finishing at the lowering anchors.",
+  "moves": [
+   {
+    "to": "anchor",
+    "action": "copy",
+    "from": "finishing at the lowering anchors",
+    "value": "Lowering anchors"
+   }
+  ]
+ },
+ {
+  "id": "co_earth_voyage",
+  "beta_new": "On pitch one, climb as far as the first bolt of the neighbouring route, then veer left under the bulges, where the crux sits, reach a hand crack, and angle up rightward to a belay on slings beside a band of roofs. Pitch two crosses the roof band toward the left, then works rightward across a slab.",
+  "moves": []
+ },
+ {
+  "id": "co_el_camino_real",
+  "beta_new": "Start up the huge neighbouring dihedral route, then bridge outward toward the right to arrive at the foot of a slender crack in the dihedral's right wall. Constant finger jams and laybacks lead to a tiny perch with a pair of shuts; the crux comes about midway up the crack.\n\nFrom there, rappel or press on past an old knifeblade to link with another route.",
+  "moves": []
+ },
+ {
+  "id": "co_elephant_rock_safari_land",
+  "beta_new": "It shares a start with Trunk Line, but above the roof you shift right to reach a bolt.",
+  "moves": []
+ },
+ {
+  "id": "co_end_of_an_era",
+  "beta_new": "Airy face moves follow a sharp, attractive bolted edge to the right of a neighbouring route, up to lowering anchors about 70 feet off the ground. A second pitch carries on up and leftward over easier ground.",
+  "moves": []
+ },
+ {
+  "id": "co_facial_hair",
+  "beta_new": "Start right of a neighbouring route, get up onto a flake and sling it for gear. A short crack leads to a mantle, then three bolts take you up the face, finishing in an easier corner.",
+  "moves": []
+ },
+ {
+  "id": "co_falls_wall_building_bottrell",
+  "beta_new": "Follow the leaning edge at the face's southern extreme, beside the big fir. Hardest is the third clip, and four cold shuts lead to paired chains.",
+  "moves": []
+ },
+ {
+  "id": "co_fascist_drill_in_the_west",
+  "beta_new": "Work up into the leftward-facing dihedral, sharing the start of its harder neighbour, then at the roof pull out right and follow the line of bolts up the face. Long runners help with the early clips. The belay is a slanting shelf where slings are needed.",
+  "moves": []
+ },
+ {
+  "id": "co_fast_draw",
+  "beta_new": "The first lead takes the obvious crack that starts as fingers and widens to hands, up the face's right flank. Thin finger jams past a few old bolts are the crux; mid-size cams protect the hands section.\n\nNear its end, a piton-protected face traverse heads left into a second crack, which squeezes awkwardly to a bolted belay ledge. Going straight up that upper crack is an alternative to the traverse.",
+  "moves": []
+ },
+ {
+  "id": "co_fields_of_dreams_growing_wild",
+  "beta_new": "Mostly bolt-protected friction up the central buttress of this big slab, with the runouts coming higher up on the easier-angled ground.",
+  "moves": []
+ },
+ {
+  "id": "co_final_exam",
+  "beta_new": "Fingertip laybacks up a short, steep bulge beside the big overhang make the whole problem. Above it, slabs continue: finish through the roof or cross rightward into the neighbouring crack system.",
+  "moves": [
+   {
+    "to": "descent",
+    "action": "covered",
+    "from": ", or descend the slabs on the left by downclimbing"
+   }
+  ]
+ },
+ {
+  "id": "co_finger_lickin_good_3",
+  "beta_new": "Begin on a thin crack slanting rightward, where the opening moves of dicey face climbing are the hardest. Stop on a little perch under the finger crack; splitting the route in two keeps rope drag down. Jam the crack to a flake belay, then rappel.",
+  "moves": [
+   {
+    "to": "rack",
+    "action": "add",
+    "from": "Bring small gear.",
+    "value": {
+     "rows": [
+      {
+       "item": "Small gear"
+      }
+     ],
+     "text": "Small gear."
+    }
+   }
+  ]
+ },
+ {
+  "id": "co_finger_tripping",
+  "beta_new": "Start lower and farther left than a neighbouring dihedral route. Climb a smooth slab clipping three newer bolts to the shared belay, then carry on over another slab with one more bolt, right of that dihedral, to gain the ledge used for walking off.",
+  "moves": []
+ },
+ {
+  "id": "co_flash_dihedral_knapp_version",
+  "beta_new": "The line is the shallow dihedral in the northwest face, started from a broken pile of blocks.",
+  "moves": [
+   {
+    "to": "rack",
+    "action": "add",
+    "from": "Bring long slings.",
+    "value": {
+     "rows": [
+      {
+       "item": "Slings",
+       "sizes": "long"
+      }
+     ],
+     "text": "Long slings."
+    }
+   }
+  ]
+ },
+ {
+  "id": "co_flat_earth_society",
+  "beta_new": "Edge up the thin slab past two bolts, then take the crack that angles left, hand-traversing leftward along it. Thin face moves back right past two more bolts lead to the anchors; veering right at the last bolt gives an easier finish.",
+  "moves": []
+ },
+ {
+  "id": "co_flight_for_life",
+  "beta_new": "Begin from the ledge halfway up the face, at its left side. Climb a handful of bolts, heading left initially and then right as you near the overhang. Pull over the lip, clip one last bolt, then finish up to the anchors.",
+  "moves": [
+   {
+    "to": "descent",
+    "action": "covered",
+    "from": "; a rappel returns you to the ground"
+   }
+  ]
+ },
+ {
+  "id": "co_forrest_solo",
+  "beta_new": "Climb two rope-lengths of steep, overhanging rock up the west face.",
+  "moves": [
+   {
+    "to": "approach",
+    "action": "add",
+    "from": "Approach the spire from its north side, then",
+    "value": "Come at the spire from its north side."
+   }
+  ]
+ },
+ {
+  "id": "co_get_a_life",
+  "beta_new": "The first lead goes up a loose groove into the dihedral, stemming and jamming to a two-inch crack and a niche belay. The second works the same dihedral to a roomy ledge with bolts.\n\nThe crux is a short, strenuous, overhanging finger crack in the corner above that ledge. After that, jam a crack along an arete, traverse right beneath a big roof, then face climb leftward past bolts toward a drilled pin and steady face moves to the anchors.",
+  "moves": []
+ },
+ {
+  "id": "co_give_the_dog_a_bone",
+  "beta_new": "Follow an arching corner past a pair of bolts. Where the corner curves to the right, break out left over the roof and carry on up steep terrain, ending at a shelf with a two-bolt anchor.",
+  "moves": []
+ },
+ {
+  "id": "co_good_timing",
+  "beta_new": "Tackle the slab and overhang just as a neighbouring route does, then shift left along a ledge to a belay of two bolts.\n\nHead up and a touch left past the bolts, which hold the crux, to reach a crack and a good stance; a final crack lead goes to a tree.",
+  "moves": []
+ },
+ {
+  "id": "co_grey_rat_rocksicle",
+  "beta_new": "Start from high on the ramp and work left into a flared slot, then step out right and climb corners and disconnected cracks toward the roof's right side. Bring small gear and be ready to improvise placements.",
+  "moves": [
+   {
+    "to": "rack",
+    "action": "copy",
+    "from": "Bring small gear",
+    "value": {
+     "rows": [
+      {
+       "item": "Small gear"
+      }
+     ],
+     "text": "Small gear."
+    }
+   }
+  ]
+ },
+ {
+  "id": "co_heaven_can_wait_2",
+  "beta_new": "Jam cracks up the corner that faces left to the tree standing on a roomy shelf. An optional second pitch climbs easy rock leftward beneath the arch before retracing the same moves back to the ledge.",
+  "moves": [
+   {
+    "to": "descent",
+    "action": "covered",
+    "from": ", from which a walk-off heads right"
+   }
+  ]
+ },
+ {
+  "id": "co_heavenly_journey",
+  "beta_new": "The line blazes over the featureless slab left of the Right Dihedral. The first pitch is a finger crack curving like a sickle, ending at a belay of two bolts.\n\nThe second, a friction pitch, angles leftward with little to clip until the final belay.",
+  "moves": []
+ },
+ {
+  "id": "co_hollow_flake",
+  "beta_new": "A big flake rests against the face. Ascend the middle of it, or along its right edge, to a ledge with a tree.",
+  "moves": [
+   {
+    "to": "descent",
+    "action": "covered",
+    "from": ", then rappel to the ground"
+   }
+  ]
+ },
+ {
+  "id": "co_hot_licks",
+  "beta_new": "Start up the neighbouring Great Dihedral, then peel off leftward onto a hand-sized crack a short way above the ground. Follow that crack for about a rope-length, stopping wherever is comfortable. Expect an offwidth section and bring plenty of big cams.",
+  "moves": [
+   {
+    "to": "rack",
+    "action": "copy",
+    "from": "bring plenty of big cams",
+    "value": {
+     "rows": [
+      {
+       "item": "Cams",
+       "sizes": "big, plenty"
+      }
+     ],
+     "text": "Plenty of big cams."
+    }
+   }
+  ]
+ },
+ {
+  "id": "co_hot_rize",
+  "beta_new": "Clip a series of bolts to gain the rounded arete, then keep climbing upward along it.",
+  "moves": []
+ },
+ {
+  "id": "co_hurricane_gloria",
+  "beta_new": "Begin beside an enormous flake and follow the line of bolts to the steep headwall, where the moves reach 5.12. The two-bolt hanging stance sits within the crux section, so it works as a rest.\n\nFrom the stance, trend up and left onto a crack that ends the route.",
+  "moves": [
+   {
+    "to": "rack",
+    "action": "add",
+    "from": "Take gear up to about three inches.",
+    "value": {
+     "rows": [
+      {
+       "item": "Gear",
+       "sizes": "up to about 3 in"
+      }
+     ],
+     "text": "Gear up to about 3 in."
+    }
+   }
+  ]
+ },
+ {
+  "id": "co_iron_cross",
+  "beta_new": "A dihedral that zigs right, left and right again passes a pin and ends at a belay on a pair of ring bolts; from there the route moves left and follows bolts.",
+  "moves": []
+ },
+ {
+  "id": "co_ivory_coast",
+  "beta_new": "Work a grubby crack that angles rightward up into the east-side corner, then fight through the roof with hard jamming.",
+  "moves": [
+   {
+    "to": "rack",
+    "action": "add",
+    "from": "Bring mid-size to big protection.",
+    "value": {
+     "rows": [
+      {
+       "item": "Protection",
+       "sizes": "mid-size to big"
+      }
+     ],
+     "text": "Mid-size to big protection."
+    }
+   }
+  ]
+ },
+ {
+  "id": "co_j_crack_2",
+  "beta_new": "First pitch: friction rightward off the start of a neighbouring route to reach a groove under the crack, finishing via a short slot to a belay on the narrowing ledge.\n\nSecond pitch: make a bold foot-shuffle leftward into the foot of the J, then jam flawless finger-width crack for roughly 140 feet to a cramped pod. A harder alternate start uses a bolt and a piton.",
+  "moves": []
+ },
+ {
+  "id": "co_jackpot_2",
+  "beta_new": "Climb the dark groove, then pull onto devious overhanging rock using good holds before some tricky moves higher up. Fourteen bolts keep it well protected.",
+  "moves": []
+ },
+ {
+  "id": "co_jackson_creek_dome_face_the_face",
+  "beta_new": "Start by a big tree right of the west-leaning ramp. Steep face past three bolts, then easier ground and two more bolts lead to the anchors.",
+  "moves": []
+ },
+ {
+  "id": "co_jackson_creek_dome_lego_land",
+  "beta_new": "Start from boulders and follow a water streak across the central slab; protection is sparse low down, so expect a runout on easier ground. Five bolts guard the steeper top section, which has a little friction climbing near the finish.",
+  "moves": []
+ },
+ {
+  "id": "co_jackson_creek_dome_mythical_kings_and_iguanas",
+  "beta_new": "Scamper up easy ground from the gully, then weave through a series of overlaps in the steep centre of the slab. Five bolts; small wired nuts can add protection.",
+  "moves": [
+   {
+    "to": "rack",
+    "action": "copy",
+    "from": "small wired nuts can add protection",
+    "value": {
+     "rows": [
+      {
+       "item": "Nuts",
+       "sizes": "small, wired"
+      }
+     ],
+     "text": "Small wired nuts as extra protection."
+    }
+   }
+  ]
+ },
+ {
+  "id": "co_jackson_creek_dome_nervous_disorder",
+  "beta_new": "Smooth, steep slab beside a blunt arete, protected by seven bolts, steepens into a headwall below the anchors.",
+  "moves": []
+ },
+ {
+  "id": "co_jackson_creek_dome_tease",
+  "beta_new": "Scramble the ramp in the gully to a belay on top of a boulder. Start at the cold shut, then three further bolts carry you up the easier-angled slab to the anchors.",
+  "moves": []
+ },
+ {
+  "id": "co_javelin",
+  "beta_new": "A strenuous overhanging crack taken with a mix of finger-sized and hand-sized jams, right of its neighbour Cello. Finish at the fixed anchors or traverse off left to a tree.",
+  "moves": []
+ },
+ {
+  "id": "co_jazzman_a_k_a_turdland",
+  "beta_new": "Go to the first bolt of the neighbouring Birdland, then face-climb beside a blunt edge on its left.",
+  "moves": [
+   {
+    "to": "rack",
+    "action": "add",
+    "from": "Pack big nuts plus small cams for protection.",
+    "value": {
+     "rows": [
+      {
+       "item": "Nuts",
+       "sizes": "big"
+      },
+      {
+       "item": "Cams",
+       "sizes": "small"
+      }
+     ],
+     "text": "Big nuts plus small cams."
+    }
+   }
+  ]
+ }
+]

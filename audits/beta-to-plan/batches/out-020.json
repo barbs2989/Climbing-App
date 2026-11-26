@@ -1,0 +1,366 @@
+[
+ {
+  "id": "ct_merimere_face_mission_impossible",
+  "beta_new": "Usually toproped, though gear can be found. Follow the neighboring route to its first overhang, then step onto the face to the right and work upward in that direction.",
+  "moves": []
+ },
+ {
+  "id": "ct_reflections_of_fall",
+  "beta_new": "Reach the starting ledge via the simple dihedral beneath it or by crossing an inclined shelf from the right side. Rope drag can be a problem on the old traverse start, so plan your belays and slings with that in mind.",
+  "moves": []
+ },
+ {
+  "id": "ct_vector",
+  "beta_new": "The start is deceptively simple, but the finish is stinging. The upper crack has a reputation for being frightening, so arrive with your cams sorted and your head ready.",
+  "moves": []
+ },
+ {
+  "id": "ga_four_bravo",
+  "beta_new": "Climb the crack to the corner, then shift across the little slab, clipping bolts, to the overhanging crack and follow it up.",
+  "moves": []
+ },
+ {
+  "id": "ga_two_man_party_green",
+  "beta_new": "Climb the slab following the green bolts, seven on the first pitch and four on the second, up to the ledge with the tree.",
+  "moves": [
+   {
+    "to": "bolts",
+    "action": "copy",
+    "from": "seven on the first pitch and four on the second",
+    "value": 11
+   }
+  ]
+ },
+ {
+  "id": "id_batwings",
+  "beta_new": "Link the cracks: begin up the corner, drift right where it bulges, then carry on up the dihedral above, finishing on easier ground.",
+  "moves": [
+   {
+    "to": "rack",
+    "action": "add",
+    "from": "Take a full rack up to 3 inches plus doubled cams between 1.5 and 3.",
+    "value": {
+     "rows": [
+      {
+       "item": "Cams",
+       "sizes": "to 3 in"
+      },
+      {
+       "item": "Cams",
+       "sizes": "1.5 to 3 in",
+       "qty": 2
+      }
+     ],
+     "text": "A full rack of cams to 3 in, with doubles between 1.5 and 3 in."
+    }
+   }
+  ]
+ },
+ {
+  "id": "id_batwings_direct",
+  "beta_new": "Instead of the usual start, begin on the wall slightly rightward and ascend the slabby wall with two bolts up to the upper dihedral.",
+  "moves": []
+ },
+ {
+  "id": "id_beware_of_nesting_egos",
+  "beta_new": "Begin up the flake that faces left, trend up and leftward by an aging bolt, then follow narrow cracks plus two more bolts (the crux) up to the anchor.",
+  "moves": [
+   {
+    "to": "rack",
+    "action": "add",
+    "from": "Wires, TCUs and small cams are recommended in quantity.",
+    "value": {
+     "rows": [
+      {
+       "item": "Nuts"
+      },
+      {
+       "item": "TCUs"
+      },
+      {
+       "item": "Cams",
+       "sizes": "small"
+      }
+     ],
+     "text": "Nuts, TCUs and small cams, in quantity."
+    }
+   }
+  ]
+ },
+ {
+  "id": "id_bombs_over_tripoli",
+  "beta_new": "Begin up among the boughs of a tree, reach the tips crack, and layback desperately to the anchors.",
+  "moves": []
+ },
+ {
+  "id": "id_catwalk",
+  "beta_new": "Begin in an inside corner at the foot of the Descent Route, go up and leftward to a curving flake, shift right using underclings, then keep climbing the wall to the finish.",
+  "moves": []
+ },
+ {
+  "id": "id_coffee_and_cornflakes",
+  "beta_new": "Steep wall, solid holds, enjoyable moves; the upper half carries three bolts, and the long gap can be eased by clipping Gemini's first bolt and putting a medium cam in the large holes.",
+  "moves": []
+ },
+ {
+  "id": "id_coyote_corner",
+  "beta_new": "Follow the corner crack; the climbing is smooth until difficulty arrives near the top.",
+  "moves": [
+   {
+    "to": "rack",
+    "action": "add",
+    "from": "Carry a complete rack, with additional pieces between 2 and 4 inches.",
+    "value": {
+     "rows": [
+      {
+       "item": "Full rack"
+      },
+      {
+       "item": "Cams",
+       "sizes": "extra, 2 to 4 in"
+      }
+     ],
+     "text": "A complete rack, with extra pieces between 2 and 4 in."
+    }
+   }
+  ]
+ },
+ {
+  "id": "id_delay_of_game",
+  "beta_new": "Follow the airy, extended wall beside the prominent chimney, beginning from the ledge at its foot and heading up and leftward to bolt one.",
+  "moves": []
+ },
+ {
+  "id": "id_diamond_peak_east_ridge",
+  "beta_new": "Climb steeply up the ridge to around 10,200 ft, where it bends northwest, and continue up to about 10,800 ft. From here the ridge narrows and the scrambling becomes sustained: a series of short rock steps, roughly 10-30 ft high, around 11,000 ft form the crux, followed by long stretches of easier Class 2-3 scrambling to the summit. Stay on or very close to the crest, dropping just left of it when needed; the faces on either side quickly turn into Class 4-5 terrain.",
+  "moves": [
+   {
+    "to": "approach",
+    "action": "add",
+    "from": "From the parking area, follow the remains of an old jeep track and then a worn climbers' path up grassy slopes to a saddle on the ridge at about 9,300-9,400 ft.",
+    "value": "From the parking area, follow the remains of an old jeep track and then a worn climbers' path up grassy slopes to a saddle on the ridge at about 9,300 to 9,400 ft."
+   }
+  ]
+ },
+ {
+  "id": "id_donini_s_crack",
+  "beta_new": "A lovely hand crack weaving past a bulge. Protect the awkward entry moves by slotting a medium cam into a hole.",
+  "moves": []
+ },
+ {
+  "id": "id_dressed_to_kill",
+  "beta_new": "Start where the obvious diagonal crack, slanting rightward, begins mid-wall, then follow bolts up and rightward across the bulging wall to an anchor beneath the top.",
+  "moves": []
+ },
+ {
+  "id": "id_easy_corner",
+  "beta_new": "Just follow the huge corner, a fun romp with good rock and good protection.",
+  "moves": []
+ },
+ {
+  "id": "id_expect_no_mercy",
+  "beta_new": "Start inside the evident box-shaped cave, left of its centre, climb directly up the middle to the slender crack overhead, then either lower off the anchors or continue by the crack at upper right to the top.",
+  "moves": []
+ },
+ {
+  "id": "id_finer_niner",
+  "beta_new": "Climb the centre of the enormous, white-rimmed flake; alternatively begin in the crack beside the corner on the right, protect it with small cams, and eventually work left to bolt one.",
+  "moves": []
+ },
+ {
+  "id": "id_firewater",
+  "beta_new": "Begin in the alcove, pass the roof using the flake, then follow the steep thin holds directly up; the crux is at the second-to-last bolt.",
+  "moves": []
+ },
+ {
+  "id": "id_flesh_for_fantasy",
+  "beta_new": "Ascend the bolted wall over the stairway-style start of Divine Decadence; bring mid-to-large cams for the opening moves and for building an anchor.",
+  "moves": [
+   {
+    "to": "rack",
+    "action": "copy",
+    "from": "bring mid-to-large cams for the opening moves and for building an anchor",
+    "value": {
+     "rows": [
+      {
+       "item": "Cams",
+       "sizes": "mid to large"
+      }
+     ],
+     "text": "Mid-size to large cams."
+    }
+   }
+  ]
+ },
+ {
+  "id": "id_funky_bolt",
+  "beta_new": "Layback the flake, then the crack for hands overhead, to reach a V-shaped slot guarded by two questionable bolts; stem through it and top out on easy ground.",
+  "moves": [
+   {
+    "to": "rack",
+    "action": "add",
+    "from": "Carry a full rack plus extra hand-sized gear.",
+    "value": {
+     "rows": [
+      {
+       "item": "Full rack"
+      },
+      {
+       "item": "Cams",
+       "sizes": "extra, hand-sized"
+      }
+     ],
+     "text": "A full rack plus extra hand-sized gear."
+    }
+   }
+  ]
+ },
+ {
+  "id": "id_good_times",
+  "beta_new": "Begin behind a tree under the small alcove that two crossing cracks divide, trend left past a bolt to the farthest-left of three parallel cracks, and ascend it to a ledge with an anchor on the right.",
+  "moves": []
+ },
+ {
+  "id": "id_holding_out_for_a_hero",
+  "beta_new": "Start low, mount a ledge, follow the slender crack over it reaching a horizontal crack, then keep going over face and cracks; choose between clipping the lone bolt or placing gear in the crack at right (mid-sized cams suit the finish).",
+  "moves": []
+ },
+ {
+  "id": "id_humble_s_tumble",
+  "beta_new": "A long, classic chimney.",
+  "moves": [
+   {
+    "to": "rack",
+    "action": "add",
+    "from": "bring extra cams in the 3 to 4 sizes",
+    "value": {
+     "rows": [
+      {
+       "item": "Cams",
+       "sizes": "extra, sizes 3 to 4"
+      }
+     ],
+     "text": "Extra cams in sizes 3 to 4."
+    }
+   }
+  ]
+ },
+ {
+  "id": "id_hyperspuds",
+  "beta_new": "Track the line of bolts along the left side of a prominent dark streak.",
+  "moves": [
+   {
+    "to": "rack",
+    "action": "add",
+    "from": "TCUs plus small cams supplement them",
+    "value": {
+     "rows": [
+      {
+       "item": "TCUs"
+      },
+      {
+       "item": "Cams",
+       "sizes": "small"
+      }
+     ],
+     "text": "TCUs and small cams to supplement the bolts."
+    }
+   }
+  ]
+ },
+ {
+  "id": "id_jet_lag",
+  "beta_new": "Start right of a little tree below a shallow corner, then climb directly up that corner, clipping many bolts, with a desperate crux about a third of the way up.",
+  "moves": []
+ },
+ {
+  "id": "id_just_another_pretty_face",
+  "beta_new": "Climbs in four stages: a hard bouldery opening, slabby underclings beneath the roof, killer friction above it, and a steep wall to the anchor. If unsure, traverse.",
+  "moves": []
+ },
+ {
+  "id": "id_just_say_go",
+  "beta_new": "Take the route on the right side of the fat pedestal to a big shelf and a sharp, steep arete; small gear covers the long gap between bolts three and four. Taller climbers find it easier.",
+  "moves": []
+ },
+ {
+  "id": "id_just_say_no",
+  "beta_new": "Keep right and swing back left solely to clip; heading straight up the arete between bolts is much harder.",
+  "moves": []
+ },
+ {
+  "id": "id_norma_s_book",
+  "beta_new": "Climb the chimney; protection and rock quality are both good and the climbing is enjoyable.",
+  "moves": [
+   {
+    "to": "anchor",
+    "action": "add",
+    "from": "Belay from gear on top.",
+    "value": "Build a belay from gear on top"
+   }
+  ]
+ },
+ {
+  "id": "id_one_step_beyond",
+  "beta_new": "Climb the cave's right wall beyond the roof, blending with the crack right under the anchors.",
+  "moves": []
+ },
+ {
+  "id": "id_prepare_for_soaring_seagulls",
+  "beta_new": "Begin centrally on the fat pedestal, taking the left one of its two routes, make thin moves up to a ledge, then tackle the steep headwall, which has good holds; extra small cams or tricams augment the bolts up high.",
+  "moves": []
+ },
+ {
+  "id": "id_pretzel_logic",
+  "beta_new": "Climb the face right of Rye Crisp; mid-size cams cover the long stretch up high on the flake, before a spectacular, steep finish.",
+  "moves": []
+ },
+ {
+  "id": "id_psycho_driller",
+  "beta_new": "A big cam supplements the bolts down low; difficult moves beyond bolt two lead to chickenheads higher, which you tie off with slings.",
+  "moves": []
+ },
+ {
+  "id": "id_pure_pleasure",
+  "beta_new": "Begin behind a tree under the small alcove that two crossing cracks divide, trend left past a bolt to the middle one of three parallel cracks, and ascend it to a ledge with an anchor on the right.",
+  "moves": []
+ },
+ {
+  "id": "id_quest_for_fire",
+  "beta_new": "Begin in the alcove under the roof; the opening clip is less frightening than it appears, and little cams or nuts back it up. Pull the roof on great jugs, then go at the steeper wall overhead.",
+  "moves": []
+ },
+ {
+  "id": "id_redtail",
+  "beta_new": "Sustained climbing for the whole length, with good rests along the way; the first bolt sits very high, so two different methods exist for reaching it.",
+  "moves": []
+ },
+ {
+  "id": "id_reservations",
+  "beta_new": "Two bolts guard this route of pockets, edges and cracks, ten feet right of Tribal Boundaries; wires and little cams provide the other protection.",
+  "moves": [
+   {
+    "to": "rack",
+    "action": "copy",
+    "from": "wires and little cams provide the other protection",
+    "value": {
+     "rows": [
+      {
+       "item": "Nuts"
+      },
+      {
+       "item": "Cams",
+       "sizes": "small"
+      }
+     ],
+     "text": "Nuts and small cams."
+    }
+   }
+  ]
+ },
+ {
+  "id": "id_riding_on_an_incline",
+  "beta_new": "A vicious crux right after clipping the initial bolt gives access to steep climbing on the greenish rock's left flank.",
+  "moves": []
+ }
+]

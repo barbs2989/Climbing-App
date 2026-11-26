@@ -1,0 +1,96 @@
+[
+ {
+  "batch": "011",
+  "id": "ca_silent_scream_aka_shock_the_monkey",
+  "problem": "bolts must be a copy (sentence stays in beta); beta emptied",
+  "fix": "edit",
+  "beta_new": "Four bolts protect it.",
+  "moves": [
+   {
+    "to": "bolts",
+    "action": "copy",
+    "from": "Four bolts protect it",
+    "value": 4
+   },
+   {
+    "to": "rack",
+    "action": "add",
+    "from": "a few small pieces of gear are worth carrying",
+    "value": {
+     "rows": [
+      {
+       "item": "Small gear"
+      }
+     ],
+     "text": "A few small pieces of gear."
+    }
+   }
+  ]
+ },
+ {
+  "batch": "012",
+  "id": "co_air_voyage",
+  "problem": "big tri-cams / tube chocks detail lost; target says only wide-crack pieces",
+  "fix": "revert"
+ },
+ {
+  "batch": "013",
+  "id": "co_bob_s_rock_wire_man",
+  "problem": "two-bolt anchor detail lost from the descent; target says only rappel from the anchor",
+  "fix": "revert"
+ },
+ {
+  "batch": "026",
+  "id": "ky_vector_trouble",
+  "problem": "beta says rappel off the ledge, current descent says lower: not the same fact",
+  "fix": "revert"
+ },
+ {
+  "batch": "028",
+  "id": "ny_april_showers",
+  "problem": "beta says lower from there, current descent says rappel: not the same fact",
+  "fix": "revert"
+ },
+ {
+  "batch": "037",
+  "id": "wa_klawatti_peak_southeast_face",
+  "problem": "removed rack text states crampons/ice axe/pickets that the current rack lacks",
+  "fix": "revert"
+ },
+ {
+  "batch": "039",
+  "id": "wa_mount_claywood_standard",
+  "problem": "southern Dosewallips/Dose Meadows way in to Lost Pass is not in the current approach",
+  "fix": "revert"
+ },
+ {
+  "batch": "039",
+  "id": "wa_mount_fernow_southeast_face",
+  "problem": "Entiat/Cottonwood and Holden Village alternate approaches are not in the current approach",
+  "fix": "revert"
+ },
+ {
+  "batch": "039",
+  "id": "wa_mount_goode_northeast_buttress",
+  "problem": "removed approach gives 10-mile PCT and 3-4 mile distances the current approach lacks",
+  "fix": "revert"
+ },
+ {
+  "batch": "042",
+  "id": "wa_north_ridge_7",
+  "problem": "lower 5,300 ft camp is not in the current approach",
+  "fix": "revert"
+ },
+ {
+  "batch": "043",
+  "id": "wa_raven_ridge_standard_route",
+  "problem": "removed approach gives Libby Lake trail distance/gain (5.1-5.5 mi, ~3,200 ft) the current approach lacks",
+  "fix": "revert"
+ },
+ {
+  "batch": "044",
+  "id": "wa_south_ridge_6",
+  "problem": "low camp 5,300 ft not stated in the current approach",
+  "fix": "revert"
+ }
+]

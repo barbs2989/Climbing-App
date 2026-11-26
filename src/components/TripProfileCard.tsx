@@ -8,13 +8,13 @@ import EmptySection from "./EmptySection.tsx";
 /** A waypoint at the end of a leg; its name, else its type, is printed. */
 interface TpPin { name?: string | null; type?: string | null }
 /** One leg of the profile. A way up carries gainFt and a way down dropFt, and only when a climb was measured. */
-interface TpLeg { from?: TpPin | null; to?: TpPin | null; km: number; timeH: number; gainFt?: number | null; dropFt?: number | null }
+interface TpLeg { from?: TpPin | null; to?: TpPin | null; km: number; timeH: number | null; gainFt?: number | null; dropFt?: number | null }
 /** The total of one direction. */
-interface TpTotal { km: number; timeH: number; gainFt?: number | null; dropFt?: number | null; floor: boolean }
+interface TpTotal { km: number; timeH: number | null; gainFt?: number | null; dropFt?: number | null; floor: boolean }
 /** What tripProfile() returns: no legs (and a reason) or the legs with their totals. */
 type TripProfile =
-  | { legs: null; totals: null; climbBy: null; measuredBy: null; offTrack: number; unplaced: number; reason: string }
-  | { legs: { up: TpLeg[]; down: TpLeg[] }; totals: { up: TpTotal; down: TpTotal }; climbBy: string | null; measuredBy: string; offTrack: number; unplaced: number; reason: null };
+  | { legs: null; totals: null; climbBy: null; measuredBy: null; offTrack: number; unplaced: number; wholeDayH: null; reason: string }
+  | { legs: { up: TpLeg[]; down: TpLeg[] }; totals: { up: TpTotal; down: TpTotal }; climbBy: string | null; measuredBy: string; offTrack: number; unplaced: number; wholeDayH: number | null; reason: null };
 export interface TripProfileCardProps {
   route: Parameters<typeof tripLegGeometry>[0];
   /** The Full trip time settings (pace, pack, party, departure). */
@@ -70,11 +70,13 @@ export default function TripProfileCard({route,calc,onEditWaypoints,onEditTiming
   const section=function(heading: string,legs: TpLeg[],_tot: TpTotal,gainOf: (l: TpLeg)=>number | null | undefined,gainLabel: string,hasGain: boolean,timeFloor: boolean){
     const km=apportion(legs.map(function(l){return dispKm(l.km);}),0.1);
     const gn=hasGain?apportion(legs.map(function(l){return dispFt(gainOf(l)||0);}),1):null;
-    const tm=apportion(legs.map(function(l){return l.timeH;}),0.1);
+    /* A car-to-car day has no time per leg (tripProfile: wholeDayH), so the Time column is left out. */
+    const timed=legs.every(function(l){return l.timeH!=null;});
+    const tm=timed?apportion(legs.map(function(l){return l.timeH||0;}),0.1):legs.map(function(){return 0;});
     const sum=function(a: number[]){return a.reduce(function(s: number,x: number){return s+x;},0);};
     const tKm=sum(km), tT=sum(tm), tG=gn?sum(gn):0;
-    const rows=legs.map(function(l,i){return {from:l.from,to:l.to,items:[cell("Distance",fmtD(km[i]))].concat(gn?[cell(gainLabel,(gainLabel==="Drop"?"↓ ":"↑ ")+fmtG(gn[i]))]:[]).concat([cell("Time",(timeFloor?"≥":"")+tm[i].toFixed(1)+"hr")])};});
-    const totItems=[cell("Distance",fmtD(tKm))].concat(gn?[cell(gainLabel,(gainLabel==="Drop"?"↓ ":"↑ ")+fmtG(tG))]:[]).concat([cell("Time",(timeFloor?"≥":"")+tT.toFixed(1)+"hr")]);
+    const rows=legs.map(function(l,i){return {from:l.from,to:l.to,items:[cell("Distance",fmtD(km[i]))].concat(gn?[cell(gainLabel,(gainLabel==="Drop"?"↓ ":"↑ ")+fmtG(gn[i]))]:[]).concat(timed?[cell("Time",(timeFloor?"≥":"")+tm[i].toFixed(1)+"hr")]:[])};});
+    const totItems=[cell("Distance",fmtD(tKm))].concat(gn?[cell(gainLabel,(gainLabel==="Drop"?"↓ ":"↑ ")+fmtG(tG))]:[]).concat(timed?[cell("Time",(timeFloor?"≥":"")+tT.toFixed(1)+"hr")]:[]);
     return <div key={heading} style={{padding:"6px 0 2px"}}>
       <div style={{...SUB_LABEL,marginBottom:2}}>{heading}</div>
       {rows.map(function(r,i){return <div key={i} style={{padding:"7px 0",borderTop:"1px solid "+C.borderLight}}>
@@ -95,6 +97,7 @@ export default function TripProfileCard({route,calc,onEditWaypoints,onEditTiming
     <div style={{background:C.surface,borderRadius:10,padding:"4px 12px 11px",border:"1px solid "+C.border,marginBottom:12}}>
       {upLegs}{dnLegs}
       {tp.unplaced?<div style={{fontSize:11.5,color:C.textMuted,lineHeight:1.45,marginTop:6}}>{tp.unplaced+(tp.unplaced===1?" waypoint has":" waypoints have")+" no distance from the trailhead, so "+(tp.unplaced===1?"it has":"they have")+" no leg of "+(tp.unplaced===1?"its":"their")+" own."}</div>:null}
+      {tp.wholeDayH!=null?<div style={{fontSize:11.5,color:C.textMuted,lineHeight:1.45,marginTop:6}}>{"This route's time is known only for the whole day"+(tp.wholeDayH>0?", about "+tp.wholeDayH.toFixed(1)+" hr car to car":"")+", so no leg has a time of its own."}</div>:null}
       {tp.offTrack?<div style={{fontSize:11.5,color:C.textMuted,lineHeight:1.45,marginTop:6}}>{tp.offTrack+(tp.offTrack===1?" waypoint sits":" waypoints sit")+" off the recorded track, so "+(tp.offTrack===1?"it has":"they have")+" no leg of "+(tp.offTrack===1?"its":"their")+" own."}</div>:null}
     </div>
   </div>;

@@ -1,0 +1,421 @@
+[
+ {
+  "id": "co_joint_venture",
+  "beta_new": "Reach the first bolted anchor, then work up and leftward along the corner, clipping bolts, finishing at a second anchor high on the wall.",
+  "moves": []
+ },
+ {
+  "id": "co_jules_verne",
+  "beta_new": "Launch from the T-2 start but dodge the old pegged crack; instead free the roof by borrowing T-2 handholds, then step left once over the lip. A slim, slanting roof comes next: tuck beneath it and pass it near its high end on the right.\n\nEasy-angled 5.9 slab leads to a belay. Above, a thin flake bending right then left takes you up the vertical wall. Gear is hard to arrange here.",
+  "moves": []
+ },
+ {
+  "id": "co_kansas_honey",
+  "beta_new": "The opening pitch is a steep, five-bolt slab ending beneath a conspicuous arch.\n\nNext comes a bold leftward traverse with nothing to clip, around the arch and back right to a stance under the summit arch. A hand crack on the north side of that stance finishes the climb.",
+  "moves": []
+ },
+ {
+  "id": "co_kor_s_korner",
+  "beta_new": "Start up some chopped footholds below a pointed buttress. The first pitch swings rightward around the buttress clipping old pitons, then enters a thin vertical crack where you jam the scars left by removed pins to a hanging stance.\n\nLowering off there is an option; otherwise head up and right via bolted-in pegs up to the top of the pillar.",
+  "moves": [
+   {
+    "to": "rack",
+    "action": "add",
+    "from": "A modest rack of stoppers and small cams supplements the fixed gear.",
+    "value": {
+     "rows": [
+      {
+       "item": "Nuts",
+       "sizes": "stoppers"
+      },
+      {
+       "item": "Cams",
+       "sizes": "small"
+      }
+     ],
+     "text": "A modest rack of stoppers and small cams to supplement the fixed gear."
+    }
+   }
+  ]
+ },
+ {
+  "id": "co_la_chaim",
+  "beta_new": "Either use a groove beside a neighbouring route or layback up the boulder's left flank and cut left. Climb a flake to its crest, then trace a pale dike to a blocky stance; the bottom is run out over easy face climbing with little protection.\n\nThe upper pitch is a lovely thin crack to the ledge where you walk off.",
+  "moves": [
+   {
+    "to": "rack",
+    "action": "add",
+    "from": "Cams up to #2.5 are plenty.",
+    "value": {
+     "rows": [
+      {
+       "item": "Cams",
+       "sizes": "up to #2.5"
+      }
+     ],
+     "text": "Cams up to #2.5."
+    }
+   }
+  ]
+ },
+ {
+  "id": "co_labor_of_lust",
+  "beta_new": "Start with a pair of flared parallel cracks to a bolted stance, then go up the rounded prow that sits to the left of Mariner. The upper part is a runout, serious lead.",
+  "moves": []
+ },
+ {
+  "id": "co_left_out_3",
+  "beta_new": "Begin on a block or flake on the slab's south side and wander up and to the left, clipping a handful of old quarter-inch bolts, up to a belay beneath the arch.\n\nCarry mid-size cams and large nuts to build the belay.",
+  "moves": [
+   {
+    "to": "descent",
+    "action": "covered",
+    "from": "Then either rappel with two ropes or simply scramble to the top and walk down."
+   },
+   {
+    "to": "rack",
+    "action": "copy",
+    "from": "Carry mid-size cams and large nuts to build the belay.",
+    "value": {
+     "rows": [
+      {
+       "item": "Cams",
+       "sizes": "mid-size"
+      },
+      {
+       "item": "Nuts",
+       "sizes": "large"
+      }
+     ],
+     "text": "Mid-size cams and large nuts for building the belay."
+    }
+   }
+  ]
+ },
+ {
+  "id": "co_left_out_aka_lost_crack",
+  "beta_new": "Find the smooth slab beneath the Book's Isis Buttress and follow thin cracks (the crux) toward a faint dihedral right of centre. After that, ease leftward over simpler terrain, onto a series of ledges, and traverse them to the descent chimneys.",
+  "moves": []
+ },
+ {
+  "id": "co_lens_rock_ellipse",
+  "beta_new": "Reach the base through an easy groove or chimney left of the lens. Begin in the gully by the low point: pull up and leftward over two bolts for the first hard moves, trace a seam till it fades, then finish on the beautiful rounded arete, which has another hard section by bolt four.\n\nA much easier dihedral is an optional finish, accessible by stepping left at bolt three.",
+  "moves": []
+ },
+ {
+  "id": "co_lightning_rock_meltdown",
+  "beta_new": "Start on Short Circuit and reach the treed ledge and belay. The second pitch ascends a slim crack that leads into the lightning-shaped feature, where only three old bolts, far apart, offer protection; the crux is here and a fall would be serious.\n\nA shorter, easier final pitch gains the top.",
+  "moves": []
+ },
+ {
+  "id": "co_living_in_america",
+  "beta_new": "Stick-clip the first couple of bolts. Entering from the crack gives the easier start; going direct to the first clip is much harder. Six bolts lead to the anchors.",
+  "moves": []
+ },
+ {
+  "id": "co_long_dong_wall_aka_bell_tower",
+  "beta_new": "Begin beneath the saddle separating the main tower from its small southern sibling. Jam a finger-to-hand crack as far as a drilled piton, then shuffle leftward on steep face holds (the hardest moves of the route) to a stance with chains. An obvious chimney with a couple of easier spots follows.\n\nHigher, an awkward off-width leads into another chimney that ends inside the Belfry, a see-through hole. The big final chimney demands full-body stemming and bridging past two bolts and feels harder on shorter climbers. A brief tunnel finishes at the summit.",
+  "moves": []
+ },
+ {
+  "id": "co_loose_ends",
+  "beta_new": "The line opens on the edge of a shallow flake that faces left, then trends up and leftward to a belay on the neighbouring buttress.\n\nNext, tackle the leftmost of a pair of long finger cracks up to a perch on top of a flake, then a leaning dihedral reaches a large terrace. Scramble onward to the cave region and choose any finish.",
+  "moves": [
+   {
+    "to": "rack",
+    "action": "add",
+    "from": "Bring a cam up to 3.5.",
+    "value": {
+     "rows": [
+      {
+       "item": "Cams",
+       "sizes": "up to 3.5",
+       "qty": 1
+      }
+     ],
+     "text": "One cam up to 3.5."
+    }
+   }
+  ]
+ },
+ {
+  "id": "co_lycra_bikers_from_hell",
+  "beta_new": "Scramble a ramp to a leaning block beneath the arch's left end, then trend rightward on a thin seam past two old pins into a finger crack. Tip-jam leftward past three bolts and move delicately to the last bolt under the roof of the arch.\n\nThe roof pull is the crux. Rappel from anchors there, or add a short bolted face pitch to reach the summit.",
+  "moves": []
+ },
+ {
+  "id": "co_main_wall_5_golddigger_s_corner",
+  "beta_new": "Work cracks inside a corner that faces right using finger and hand jams plus stemming, arriving at the first belay ledge of the neighbouring Honey Pot route.",
+  "moves": [
+   {
+    "to": "descent",
+    "action": "covered",
+    "from": "Then rappel down to the broad terrace."
+   }
+  ]
+ },
+ {
+  "id": "co_main_wall_5_undecided",
+  "beta_new": "Pitch one is an easy ramp scramble, up and to the left, to a stance beneath the corner. Pitch two climbs the corner briefly, crosses toward an arete on the right, and resumes up the corner to another stance.",
+  "moves": [
+   {
+    "to": "descent",
+    "action": "covered",
+    "from": "Walk off westward via ramps and slabs, or rappel from a conifer on the west side."
+   }
+  ]
+ },
+ {
+  "id": "co_malign",
+  "beta_new": "Varied moves with good protection: follow a broken corner system angling rightward, staying clear on the right side of the painted peace symbol and the steeper wall, to reach an open book near the top.",
+  "moves": []
+ },
+ {
+  "id": "co_mark_finds_bob_bolting",
+  "beta_new": "A white face leads up to anchors underneath a conspicuous horizontal break. Five bolts protect it, and a few clips are awkward.",
+  "moves": []
+ },
+ {
+  "id": "co_mcgregor_slab_lubrication",
+  "beta_new": "Friction up a gorgeous slab, clipping two bolts, to a tree belay. Then slant along the sloping, water-streaked groove toward a slick bulge, where protection is poor, and carry on to a comfortable terrace.\n\nA runout, easier variation uses the slab below the groove, and a rightward traverse is possible to join Direct. Above the terrace, cross two bands of roof.",
+  "moves": []
+ },
+ {
+  "id": "co_men_at_work",
+  "beta_new": "One long pitch beginning midway up the slanting flake beneath Borghoff's Blunder. Trend rightward to a dynamic move that forms the crux, then keep going past pockets and further hard bits. Fixed pitons protect the line.",
+  "moves": [
+   {
+    "to": "rack",
+    "action": "covered",
+    "from": "; carry two ropes for the descent"
+   }
+  ]
+ },
+ {
+  "id": "co_mes_amis",
+  "beta_new": "Get over a bulging prow, then clip bolts up the smooth, bald slab toward an anchor in the upper left corner, nine clips altogether.",
+  "moves": []
+ },
+ {
+  "id": "co_mirror_wall_queasy_street",
+  "beta_new": "Pitch one is free climbing to a ledge belay. Pitch two mixes free and aid up the crescent arch to a hanging sling belay, and the third hooks out and follows seams.",
+  "moves": [
+   {
+    "to": "rack",
+    "action": "covered",
+    "from": "Thin aid gear, RPs and hooks are the tools"
+   },
+   {
+    "to": "descent",
+    "action": "covered",
+    "from": "descend by rappel"
+   }
+  ]
+ },
+ {
+  "id": "co_mission_accomplished_2",
+  "beta_new": "Begin on Mission Impossible, but keep going straight up the thin dihedral rather than angling away, and tie into Fascist Drill by its last bolt. Protection is sparse, so RPs are worth carrying.",
+  "moves": [
+   {
+    "to": "rack",
+    "action": "copy",
+    "from": "RPs are worth carrying",
+    "value": {
+     "rows": [
+      {
+       "item": "RPs"
+      }
+     ],
+     "text": "RPs, since protection is sparse."
+    }
+   }
+  ]
+ },
+ {
+  "id": "co_monkey_gone_to_heaven",
+  "beta_new": "Start beside a dead snag under a white dike, then climb directly up the steepening face to the ledge with its single bolt, continuing on bolts above.",
+  "moves": []
+ },
+ {
+  "id": "co_morrocan_roll",
+  "beta_new": "The opening moves to the first bolt are runout, so be ready for it; four bolts then lead to the anchors.",
+  "moves": []
+ },
+ {
+  "id": "co_mr_gone",
+  "beta_new": "Pitch one is thin face moves past three bolts that ease into an excellent finger crack in a steep slab. The short second pitch crosses an easy slab with nothing to clip, ending at the prow's foot.\n\nPitch three climbs the prow itself to a bolt; trend right for easier cracks or stay on the line and reach a bolted perch beside a stepped band of roofs. The last pitch stems an easy big dihedral to the top.",
+  "moves": []
+ },
+ {
+  "id": "co_musical_partners",
+  "beta_new": "Start by slanting up left across a slab to a broken finger crack, then continue onto a slender, elongated shelf. The second pitch is a sustained crack taking fingers then hands, the best of the route.\n\nHigher, a chimney leads into an awkward, hard-to-protect slot, and the exit works left on runout face with some poor rock. Broken, bushy ground follows before the line joins a neighbouring route's groove.",
+  "moves": []
+ },
+ {
+  "id": "co_new_era",
+  "beta_new": "Follow the big obvious dihedral in two or three pitches. The hard part is a layback directly under the top belay ledge.",
+  "moves": [
+   {
+    "to": "rack",
+    "action": "add",
+    "from": "Medium to large gear supplements the few existing pins.",
+    "value": {
+     "rows": [
+      {
+       "item": "Gear",
+       "sizes": "medium to large"
+      }
+     ],
+     "text": "Medium to large gear to supplement the few existing pins."
+    }
+   }
+  ]
+ },
+ {
+  "id": "co_night_vision",
+  "beta_new": "Clip the bolts as directionals when toproping, which keeps you from taking a long swing.",
+  "moves": []
+ },
+ {
+  "id": "co_nobody_here_but_us_chickens",
+  "beta_new": "A short dihedral leaning left gets you to a desperate slab above; finish by stepping right to the anchor.",
+  "moves": []
+ },
+ {
+  "id": "co_north_face_10",
+  "beta_new": "Traverse an exposed ridge to reach the pinnacle's steep north side, finishing on an easy slab. Much of it is sideways movement and reversing moves, so carry slings for prusiks.",
+  "moves": [
+   {
+    "to": "rack",
+    "action": "copy",
+    "from": "carry slings for prusiks",
+    "value": {
+     "rows": [
+      {
+       "item": "Slings",
+       "sizes": "for prusiks"
+      }
+     ],
+     "text": "Slings for prusiks."
+    }
+   }
+  ]
+ },
+ {
+  "id": "co_not_long_for_this_world",
+  "beta_new": "Usually toproped. Step into the shallow corner facing right on the dihedral's northern side.",
+  "moves": [
+   {
+    "to": "rack",
+    "action": "add",
+    "from": "wired nuts and small cams are what the line takes",
+    "value": {
+     "rows": [
+      {
+       "item": "Nuts",
+       "sizes": "wired"
+      },
+      {
+       "item": "Cams",
+       "sizes": "small"
+      }
+     ],
+     "text": "Wired nuts and small cams."
+    }
+   }
+  ]
+ },
+ {
+  "id": "co_notchtop_pessimismus",
+  "beta_new": "Share the opening lead with Topnotch, then keep following the corner system to a ledge under a giant gaping flake. Next, angle left and upward into a grey open-book that faces right, ending on a bolted stance.\n\nThe crux is the steep face above with two bolts, reaching a seam that tops out The Shield; a leaning flake-crack finishes it.",
+  "moves": []
+ },
+ {
+  "id": "co_nuclear_polka",
+  "beta_new": "Ascend the open book that leans left, going past the large roof near the face's right edge, which is the crux; a crack holding two pins then ends at a belay perched on a sloping stance.\n\nHigher, shift left, jam a crack about two inches wide and exit rightward.",
+  "moves": [
+   {
+    "to": "rack",
+    "action": "add",
+    "from": "RPs and TCUs belong on the rack.",
+    "value": {
+     "rows": [
+      {
+       "item": "RPs"
+      },
+      {
+       "item": "TCUs"
+      }
+     ],
+     "text": "RPs and TCUs."
+    }
+   }
+  ]
+ },
+ {
+  "id": "co_obscura_direct",
+  "beta_new": "The first lead is a simple hand-width crack to a tiny stance under an upper corner. The second edges up that narrow corner on a thin crack, steps left onto an unprotected slab, and goes over the arch.",
+  "moves": [
+   {
+    "to": "rack",
+    "action": "covered",
+    "from": "A selection of nuts and one large cam protect the arch moves."
+   }
+  ]
+ },
+ {
+  "id": "co_one_for_the_road_2",
+  "beta_new": "Start on the face to the east of Twin Cracks and follow broken seams past four bolts to a lowering anchor. A #2 cam covers the runout before the first bolt.",
+  "moves": []
+ },
+ {
+  "id": "co_ophir_broke",
+  "beta_new": "A hard, overhanging crack on the east flank of the wall. It also goes as an easy aid line.",
+  "moves": [
+   {
+    "to": "rack",
+    "action": "covered",
+    "from": "Carry two full sets of cams;"
+   }
+  ]
+ },
+ {
+  "id": "co_optic_nerve",
+  "beta_new": "Start by a small tree with a brief finger crack, angle up rightward onto a flake, after which smear directly up the slab to finish.",
+  "moves": []
+ },
+ {
+  "id": "co_optical_illusions",
+  "beta_new": "Face climb up and rightward past six bolts, with the hardest move right before the final one, then work left onto a ledge and belay.\n\nAbove, three bolts lead into a finger-width crack; jam it to the top ledge. TCUs and small cams help there.",
+  "moves": [
+   {
+    "to": "rack",
+    "action": "copy",
+    "from": "TCUs and small cams help there.",
+    "value": {
+     "rows": [
+      {
+       "item": "TCUs"
+      },
+      {
+       "item": "Cams",
+       "sizes": "small"
+      }
+     ],
+     "text": "TCUs and small cams for the upper crack."
+    }
+   }
+  ]
+ },
+ {
+  "id": "co_original_sin",
+  "beta_new": "Climb the large corner system leaning right in the wall's bottom right.",
+  "moves": [
+   {
+    "to": "descent",
+    "action": "covered",
+    "from": " and descend by rappelling from a tree"
+   }
+  ]
+ }
+]
