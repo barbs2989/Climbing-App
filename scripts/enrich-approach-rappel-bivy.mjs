@@ -17,7 +17,7 @@
 //     0122 migration exists for, so it must not drift into being a second `notes`.
 //
 // Usage:  node scripts/enrich-approach-rappel-bivy.mjs [--dry] [--only <routeId>]
-//                                                     [--from batch.json] (repeatable)
+//                                                     [--from batch.json] (repeatable) [--pace MS]
 //
 // A batch entry may also carry a whole `pitch_detail` table (the ROUTE BREAKDOWN section). That
 // path is RESEARCH, not re-homing, so check:enrichment-traceable does not apply to it; its guards
@@ -32,6 +32,7 @@ import { validateEntry, lockViolations, ledgerValueMatches, nextLedgerRow } from
 
 const args = process.argv.slice(2);
 const DRY = args.includes("--dry");
+const PACE_MS = args.includes("--pace") ? Number(args[args.indexOf("--pace") + 1]) || 1000 : 0;
 const ONLY = (() => { const i = args.indexOf("--only"); return i >= 0 ? args[i + 1] : null; })();
 
 // ── Content ──────────────────────────────────────────────────────────────────────────────
@@ -582,6 +583,8 @@ for (const id of ids) {
     fs.writeFileSync(ROLLBACK, JSON.stringify(rollback, null, 1) + "\n");
   }
   await patchRow("routes", id, body);
+  // --pace MS: the owner's bulk-write rule (a few hundred writes or more pace at >= 1000 ms each).
+  if (PACE_MS) await new Promise((r) => setTimeout(r, PACE_MS));
 
   // Re-read and reconcile. A 200 is not evidence the data changed.
   const after = await readRoute(id);
