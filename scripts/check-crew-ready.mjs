@@ -16,6 +16,7 @@
 // so this fails if either is edited into a wrong shape.
 import { readFileSync } from "node:fs";
 import * as MEETPIN from "../lib/meetPin.js";
+import { readDbSource } from "./lib/guard-sources.mjs";
 
 // The app is split across ClimbMatch.jsx (App) and ClimbMatchCore.jsx (helpers,
 // seed data, presentational components); markers may live in either. Core is
@@ -256,7 +257,7 @@ console.log(`  ${crew.members.length === 2 ? "ok  " : "FAIL"}  hydration carries
   }
   // The wiring: the card offers a place per day you can make, and the pick is WRITTEN (crew_rank_day).
   const card = readOpt(new URL("../lib/CrewCard.jsx", import.meta.url));
-  const db = readOpt(new URL("../lib/db.js", import.meta.url));
+  const db = readDbSource();
   const wired = [
     ["the Day sheet offers as many places as the days you can make (not two fixed chips)", /Array\.from\(\{length:myDayN\}/.test(card) && /dayRankLabel\(n\)/.test(card) && !/\[\[1,"1st choice"\],\[2,"Backup"\]\]/.test(card)],
     ["the card reads the order through dayRankPos, never crew.dayRanks raw", /dayRankPos\(crew\)/.test(card) && !/crew\.dayRanks/.test(card)],
@@ -331,7 +332,7 @@ console.log(`  ${crew.members.length === 2 ? "ok  " : "FAIL"}  hydration carries
     console.log(`  ${ok ? "ok  " : "FAIL"}  meet-up pin: crews.meet_lat/meet_lng hydrate as numbers, and as null when unset`);
   }
   const card = readOpt(new URL("../lib/CrewCard.jsx", import.meta.url));
-  const db = readOpt(new URL("../lib/db.js", import.meta.url));
+  const db = readDbSource();
   const fn = readOpt(new URL("../supabase/functions/resolve-map-link/index.ts", import.meta.url));
   const wired = [
     ["the pin is WRITTEN: updateCrew maps meetLat/meetLng to crews.meet_lat/meet_lng, as a pair, null included", /patch\.meetLat!==undefined\|\|patch\.meetLng!==undefined[^\n]*dbPatch\.meet_lat=_pin\?patch\.meetLat:null;dbPatch\.meet_lng=_pin\?patch\.meetLng:null/.test(SRC)],

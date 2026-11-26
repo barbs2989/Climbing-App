@@ -32,7 +32,7 @@ import { fileURLToPath } from "node:url";
 import { execFileSync } from "node:child_process";
 import { parse } from "@babel/parser";
 import _traverse from "@babel/traverse";
-import { readAppFile } from "./lib/guard-sources.mjs";
+import { readAppFile, readDbSource } from "./lib/guard-sources.mjs";
 
 const traverse = _traverse.default || _traverse;
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
@@ -64,7 +64,7 @@ try {
 
 const appSrc = read("ClimbMatch.jsx");
 const coreSrc = read("ClimbMatchCore.jsx");
-const dbSrc = read("lib/db.js");
+const dbSrc = readDbSource(ROOT);
 
 // ── 1. THE HELPERS, EXECUTED ───────────────────────────────────────────────────────────────
 console.log("\n1. the pure helpers, run rather than read\n");

@@ -39,7 +39,7 @@ import { fileURLToPath } from "node:url";
 
 import fs from "fs";
 import path from "path";
-import { readCoreSource } from "./lib/guard-sources.mjs";
+import { readCoreSource, readDbSource } from "./lib/guard-sources.mjs";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(new URL(import.meta.url))), "..");
 const MIGRATIONS = path.join(ROOT, "supabase", "migrations");
@@ -204,7 +204,7 @@ if (live.size !== 1) {
 
 // ── rule 3: the client's argument names match the surviving signature ────────
 let dbjs;
-try { dbjs = fs.readFileSync(DB_JS, "utf8"); } catch (e) {
+try { dbjs = readDbSource(ROOT); } catch (e) {
   console.error(`FAIL  cannot read ${DB_JS}: ${e.message}`);
   process.exit(1);
 }

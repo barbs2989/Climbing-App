@@ -15,6 +15,7 @@ import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { SUPABASE_URL, requireServiceKey, headers } from "../lib/supabase-env.mjs";
+import { readDbSource } from "../lib/guard-sources.mjs";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..", "..");
 const N = +process.argv[2] || 12;
@@ -43,7 +44,7 @@ const SRC = ["ClimbMatch.jsx", "lib/db.js", "lib/offline.js", "RouteDetail.jsx"]
 // to one and not the others shows when browsing and vanishes from a link — the walk-in did, #2236/#2237.
 // Every embed in the app source is replayed below, and the REAL fetchRouteArea runs against a stub client.
 const EMBEDS = [...new Set([...SRC.matchAll(/\*, areas\([^"`]*?parent:parent_id\(name\)\)/g)].map((m) => m[0]))];
-const FRA = (() => { const m = fs.readFileSync(path.join(ROOT, "lib/db.js"), "utf8").match(/export async function fetchRouteArea\(routeId\) \{[\s\S]*?\n\}/); if (!m) throw new Error("fetchRouteArea not found in lib/db.js"); return m[0].replace(/^export /, ""); })();
+const FRA = (() => { const m = readDbSource().match(/export async function fetchRouteArea\(routeId\) \{[\s\S]*?\n\}/); if (!m) throw new Error("fetchRouteArea not found in lib/db.js"); return m[0].replace(/^export /, ""); })();
 
 const key = requireServiceKey();
 const SEL = "*, areas(name,area_type,region,lat,lng,elevation_ft,prominence_ft,avy_zone,blurb,approach,approach_min,rock,rock_basis,aspect,parking_lat,parking_lng,parking_name,parking_note,parent:parent_id(name))";

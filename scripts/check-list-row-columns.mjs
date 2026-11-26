@@ -25,7 +25,7 @@ import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { createRequire } from "node:module";
-import { readAppFile } from "./lib/guard-sources.mjs";
+import { readAppFile, readDbSource } from "./lib/guard-sources.mjs";
 
 const require_ = createRequire(import.meta.url);
 const { parse } = require_("@babel/parser");
@@ -76,7 +76,7 @@ for (const rel of FILES) {
 function reg(rel, name, p) { if (!fns[name]) fns[name] = { rel, path: p }; }
 
 // ── the select literal, from useAreaRoutes ──
-const dbSrc = fs.readFileSync(path.join(ROOT, "lib/db.js"), "utf8");
+const dbSrc = readDbSource(ROOT);
 const selM = dbSrc.match(/export function useAreaRoutes[\s\S]*?\.from\("routes"\)\.select\("([^"]+)"\)[\s\S]*?\n\}/);
 const selLit = selM && selM[1].includes("areas(") ? selM[1] : null;
 if (!selLit) { console.error(`${GUARD}: useAreaRoutes' thin select literal was not found in lib/db.js — the guard is blind, not clean`); process.exit(1); }

@@ -25,14 +25,14 @@ function run() {
 
 const CASES = [
   { name: "1. the real historical defect — a pager swallows its error again",
-    file: DB,
+    file: "lib/db-messaging.js",
     edit: s => s.replace(
       "if (error) throw error;   // a failed read is not an empty page — see the note above",
       "if (error) return [];"),
     want: r => r.code !== 0 && /fetchOlderCrewMessages/.test(r.out) && /\[\]/.test(r.out) },
 
   { name: "2. the inbox swallow returns, and is named",
-    file: DB,
+    file: "lib/db-messaging.js",
     edit: s => s.replace(
       "if (error) throw error;   // a failed read is not an empty inbox — see the note above",
       "if (error) return [];"),
@@ -44,7 +44,7 @@ const CASES = [
     want: r => r.code !== 0 && /STALE/.test(r.out) && /noSuchReadFn/.test(r.out) },
 
   { name: "4. a COMMENT describing the forbidden shape must NOT trip it (must pass)",
-    file: DB,
+    file: "lib/db-messaging.js",
     edit: s => s.replace("export async function fetchMyDirectMessages",
       "// Never write `if (error) return [];` here — see check:read-failures.\nexport async function fetchMyDirectMessages"),
     want: r => r.code === 0 },

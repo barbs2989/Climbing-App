@@ -47,7 +47,7 @@ const FILES = ["ClimbMatch.jsx", "ClimbMatchCore.jsx", "RouteDetail.jsx"];
 // The vocabulary comes from lib/db.js itself, exactly as check:write-feedback derives it, so a
 // new write is covered without editing this file. Restating it here would be the second copy
 // this repo already records four times over.
-const dbSrc = fs.readFileSync(path.join(ROOT, "lib", "db.js"), "utf8");
+const dbSrc = readDbSource();
 const WRITES = new Set(
   [...dbSrc.matchAll(/export\s+async\s+function\s+(\w+)/g)]
     .map((m) => m[1])
@@ -124,6 +124,7 @@ function handled(p) {
 // which is the finding, and a self-test drawn from the code under test cannot show that.
 const FIXTURE = `
 import { createClimbLog, updateClimbLog } from "./lib/db.js";
+import { readDbSource } from "../lib/guard-sources.mjs";
 function handledThen(){ createClimbLog(1, 2, {}).then(function(r){ return r; }); }
 function handledViaVar(){ var op = createClimbLog(1, 2, {}); op.catch(function(){}); return op; }
 function bareWithSetter(){ setLogs(function(p){ return p; }); createClimbLog(1, 2, {}); }

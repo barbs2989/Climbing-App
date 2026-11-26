@@ -28,6 +28,7 @@ import path from "node:path";
 import fs from "node:fs";
 import os from "node:os";
 import { fileURLToPath } from "node:url";
+import { readDbSource } from "../lib/guard-sources.mjs";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..", "..");
 const require_ = createRequire(import.meta.url);
@@ -46,7 +47,7 @@ let bad = 0;
 const ok = (m) => console.log("  ok    " + m);
 const fail = (m) => { console.log("  FAIL  " + m); bad++; };
 
-const db = fs.readFileSync(path.join(ROOT, "lib", "db.js"), "utf8");
+const db = readDbSource();
 
 // ---- 1. THE HOOK MUST SELECT WHAT pubName NEEDS. Without `username`, pubName derives a handle
 // from the real name, which is not the climber's handle.

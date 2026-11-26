@@ -9,9 +9,10 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { createClient } from "@supabase/supabase-js";
 import { SUPABASE_URL, anonKey } from "../lib/supabase-env.mjs";
+import { readDbSource } from "../lib/guard-sources.mjs";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..", "..");
-const db = fs.readFileSync(path.join(ROOT, "lib", "db.js"), "utf8");
+const db = readDbSource();
 const m = db.match(/: supabase\.from\("routes"\)\.select\("([^"]+)"\);\n\s+const rows = await allRows/);
 if (!m) { console.log("FAIL: the thin select literal was not found in lib/db.js useAreaRoutes"); process.exit(1); }
 const THIN = m[1];

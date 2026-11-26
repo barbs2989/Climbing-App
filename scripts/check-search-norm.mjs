@@ -26,6 +26,7 @@ import { fileHref } from "./lib/file-href.mjs";
 import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
+import { readDbSource } from "./lib/guard-sources.mjs";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const S = await import(fileHref(path.join(ROOT, "lib/search.js")));
@@ -143,7 +144,7 @@ for (const fn of SEARCH_FNS) {
 // same order, or "Home" names a state no group is filed under.
 let regionRows = 0;
 {
-  const dbSrc = fs.readFileSync(path.join(ROOT, "lib/db.js"), "utf8");
+  const dbSrc = readDbSource(ROOT);
   const lit = dbSrc.match(/const REGION_ABBR = \{([^}]+)\}/);
   const jsRows = lit ? [...lit[1].matchAll(/([A-Z]{2}): "([^"]+)"/g)].map((m) => m[1] + "=" + m[2]) : [];
   const regDef = migFiles.filter((f) => /create or replace function (public\.)?place_regions\s*\(/i.test(fs.readFileSync(path.join(MIG, f), "utf8")));

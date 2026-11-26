@@ -37,6 +37,7 @@ import path from "path";
 import { fileURLToPath } from "url";
 import { parse } from "@babel/parser";
 import _traverse from "@babel/traverse";
+import { readDbSource } from "../lib/guard-sources.mjs";
 
 const traverse = _traverse.default || _traverse;
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..", "..");
@@ -45,7 +46,7 @@ if (!FILES.length) { console.error("give one or more files"); process.exit(1); }
 
 // Names that go to the network or the database. Derived from lib/db.js's own exports plus the
 // fetch/supabase primitives, so a new db function is covered without editing this list.
-const dbSrc = fs.readFileSync(path.join(ROOT, "lib/db.js"), "utf8");
+const dbSrc = readDbSource();
 const DB_FNS = new Set([...dbSrc.matchAll(/export\s+async\s+function\s+([A-Za-z0-9_]+)/g)].map(m => m[1]));
 if (DB_FNS.size < 50) throw new Error(`only ${DB_FNS.size} db exports parsed — the scan is broken, not the file clean`);
 

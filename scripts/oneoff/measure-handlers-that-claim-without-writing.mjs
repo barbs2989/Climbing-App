@@ -24,10 +24,11 @@ import fs from "node:fs";
 import path from "node:path";
 import { parse } from "@babel/parser";
 import _traverse from "@babel/traverse";
+import { readDbSource } from "../lib/guard-sources.mjs";
 const traverse = _traverse.default || _traverse;
 
 const ROOT = process.cwd();
-const lib = fs.readFileSync(path.join(ROOT, "lib/db.js"), "utf8");
+const lib = readDbSource();
 // Every db write, plus the alias each is imported under -- `addCrewMember as dbAddCrewMember`.
 // Scanning for the raw name alone calls every aliased write absent, which is one of the two bugs
 // audit-write-feedback-gaps records from its own first draft.

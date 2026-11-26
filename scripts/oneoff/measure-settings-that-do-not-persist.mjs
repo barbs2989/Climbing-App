@@ -22,11 +22,12 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { parse } from "@babel/parser";
 import _traverse from "@babel/traverse";
+import { readDbSource } from "../lib/guard-sources.mjs";
 
 const traverse = _traverse.default || _traverse;
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..", "..");
 const src = fs.readFileSync(path.join(ROOT, "ClimbMatch.jsx"), "utf8");
-const dbSrc = src + fs.readFileSync(path.join(ROOT, "lib", "db.js"), "utf8");
+const dbSrc = src + readDbSource();
 const ast = parse(src, { sourceType: "module", plugins: ["jsx"] });
 
 // ── The Settings overlay's extent, by balancing braces from its own gate.

@@ -49,7 +49,7 @@ import _traverse from "@babel/traverse";
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
-import { readAppFile } from "./lib/guard-sources.mjs";
+import { readAppFile, readDbSource } from "./lib/guard-sources.mjs";
 
 const traverse = _traverse.default || _traverse;
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
@@ -64,7 +64,7 @@ let cm, rd, core, help, db, off, snap;
 try {
   cm = readAppFile(path.join(ROOT, "ClimbMatch.jsx")); rd = readAppFile(path.join(ROOT, "RouteDetail.jsx")); core = read("ClimbMatchCore.jsx");
   help = read("lib/Help.jsx");
-  db = read("lib/db.js"); off = read("lib/offline.js");
+  db = readDbSource(ROOT); off = read("lib/offline.js");
   snap = read("scripts/build-state-snapshots.mjs");
 } catch (e) { dead("could not read a source file — nothing was checked. " + e.message); }
 
@@ -309,7 +309,7 @@ const JUMP = [
   ["fetchAreaBreadcrumb", "offlineAreasByIds", "its breadcrumb, which jumpToArea needs a state from"],
 ];
 for (const [fnName, reader, what] of JUMP) {
-  const body = dbS.match(new RegExp("export async function " + fnName + "[\\s\\S]*?\\n}"));
+  const body = dbS.match(new RegExp("export async function " + fnName + "\\b[\\s\\S]*?\\n}"));
   if (!body) { dead("ANCHOR LOST: " + fnName + " is gone from lib/db.js — " + what + " is unchecked"); continue; }
   if (/orOffline\(/.test(body[0])) ok(fnName + " falls back to the device");
   else fail(fnName + " has no offline fallback — with no signal " + what + " throws, and\n"

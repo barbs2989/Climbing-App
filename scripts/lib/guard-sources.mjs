@@ -428,6 +428,8 @@ export function coreModuleEntry(root = OWN_ROOT) {
 // files and must keep reading the parent raw.)
 export function readAppFile(abs) {
   const name = path.basename(abs);
+  // lib/db.js is a re-export list since 2026-11-25; its code is in lib/db-*.js (readDbSource below).
+  if (path.relative(OWN_ROOT, abs).replace(/\\/g, "/") === "lib/db.js") return readDbSource(OWN_ROOT);
   if (MOVED[name] && MOVED[name].length) return readParentSource(path.dirname(abs), name);
   // A parent inside lib/ (lib/DbAreaBrowser.jsx, PR65 on) is keyed by its path from the checkout root.
   const rel = path.relative(OWN_ROOT, abs).replace(/\\/g, "/");
@@ -464,4 +466,49 @@ export function readParentSource(root = OWN_ROOT, parent = "ClimbMatchCore.jsx",
 }
 export function readCoreSource(root = OWN_ROOT, guard = "a guard") {
   return readParentSource(root, "ClimbMatchCore.jsx", guard);
+}
+
+// ── The data layer, as ONE text (maintainability audit, 2026-11-25) ─────────────────────────────
+// lib/db.js used to be one 8,000-line file; it is now a re-export list, and the code lives in
+// lib/db-<domain>.js. Dozens of guards read "lib/db.js" as TEXT (a regex over a hook, an AST walk
+// for every .from("table")), and reading the re-export list would leave each of them looking at
+// no code at all — blind, not red. So they read it through here: every lib/db-*.js in the order
+// lib/db.js re-exports them, with their imports merged into one header (a domain's import of
+// another domain dropped, since that code is inline below) so the result parses as one module,
+// exactly as the old file did. A `// ── lib/db-x.js ──` line marks where each file starts, so a
+// line a guard reports can be found: search for the marker, then the code.
+//
+//   readDbSource(root)   → the joined text
+//   DB_DOMAIN_FILES(root) → the domain files, in order
+export function dbDomainFiles(root = OWN_ROOT, guard = "a guard") {
+  const barrel = path.join(root, "lib/db.js");
+  if (!fs.existsSync(barrel)) bail(guard, "lib/db.js is missing");
+  const text = fs.readFileSync(barrel, "utf8");
+  const files = [...text.matchAll(/^\} from "\.\/(db-[\w-]+\.js)";$/gm)].map((m) => "lib/" + m[1]);
+  // Fail closed: a barrel that re-exports nothing from a domain file means this reader sees no code.
+  if (files.length < 10) bail(guard, `lib/db.js re-exports from only ${files.length} lib/db-*.js file(s) — the data layer cannot be read as one text`);
+  const onDisk = fs.readdirSync(path.join(root, "lib")).filter((f) => /^db-[\w-]+\.js$/.test(f)).map((f) => "lib/" + f);
+  const unlisted = onDisk.filter((f) => !files.includes(f));
+  // A domain file with no public name is still code a guard must see; append it after the rest.
+  return files.concat(unlisted.sort());
+}
+export function readDbSource(root = OWN_ROOT, guard = "a guard") {
+  const files = dbDomainFiles(root, guard);
+  const imports = new Map(); // source -> { def, named:Set }
+  const bodies = [];
+  for (const f of files) {
+    const text = fs.readFileSync(path.join(root, f), "utf8");
+    const body = text.replace(/^import\s+(?:(\w+)\s*,?\s*)?(?:\{([^}]*)\})?\s*from\s*"([^"]+)";?[ \t]*\n/gm, (_, def, named, src) => {
+      if (/^\.\/db-[\w-]+\.js$/.test(src)) return "";
+      if (!imports.has(src)) imports.set(src, { def: null, named: new Set() });
+      const e = imports.get(src);
+      if (def) e.def = def;
+      for (const n of (named || "").split(",").map((s) => s.trim()).filter(Boolean)) e.named.add(n);
+      return "";
+    });
+    bodies.push(`// ── ${f} ──\n` + body);
+  }
+  const head = [...imports].map(([src, e]) => `import ${[e.def, e.named.size ? `{ ${[...e.named].join(", ")} }` : null].filter(Boolean).join(", ")} from ${JSON.stringify(src)};`);
+  const reexports = (fs.readFileSync(path.join(root, "lib/db.js"), "utf8").match(/^export \{[^}]*\} from "\.\/(?!db-)[^"]+";$/gm) || []);
+  return head.join("\n") + "\n" + reexports.join("\n") + "\n" + bodies.join("\n");
 }

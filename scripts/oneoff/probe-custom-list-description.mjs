@@ -20,6 +20,7 @@ const ENTRY = `
 import React from "react";
 import { renderToStaticMarkup } from "react-dom/server";
 import ListsManager from ${JSON.stringify(path.join(ROOT, "lib", "ListsManager.jsx"))};
+import { readDbSource } from "../lib/guard-sources.mjs";
 export function render(props) { return renderToStaticMarkup(React.createElement(ListsManager, props)); }`;
 const dir = fs.mkdtempSync(path.join(os.tmpdir(), "cm-lists-"));
 process.on("exit", () => { try { fs.rmSync(dir, { recursive: true, force: true }); } catch (_e) {} });
@@ -63,7 +64,7 @@ ok(src.includes("No climbs on this list yet — add some below."), "an opened em
 ok(/aria-label="List description"/.test(src), "the create sheet asks for a description");
 ok(/onCreateList\(\{localId:_newId,name:_newName,description:_newDesc/.test(src), "a new list's description is handed to the write");
 ok(/onUpdateList\(ul\._dbId,\{description:t\}\)/.test(src), "an edited description is persisted");
-const db = fs.readFileSync(path.join(ROOT, "lib/db.js"), "utf8");
+const db = readDbSource();
 ok(/select\("id, name, icon, description,/.test(db), "useMyLists reads the column back");
 ok(/patch\.description =/.test(db) && /description: \(fields\.description/.test(db), "create and update both write it");
 
