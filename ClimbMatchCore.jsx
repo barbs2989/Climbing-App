@@ -1658,7 +1658,7 @@ function agreedDate(c){if(!c)return null;const ds=(c.dates&&c.dates.length)?c.da
    rule once is what removes that too. Every caller is a crew YOU are in ("one of your crews",
    "crews you run"), which is what makes counting yourself in correct. */
 function crewInCrew(c){return ((c&&c.members)||[]).filter(function(m){return m&&m.status!=="pending";});}
-function crewSize(c){return 1+crewInCrew(c).filter(function(m){return m.climberId!==0;}).length;}
+/* A DECLINE GIVES THE SEAT BACK (ten-climber probe 2026-11-25): the database holds a seat for confirmed and invited members only (0415/0499 held_members), but this counted a declined one too, so one "no thanks" made a 3-of-4 crew read Full -- no spot left on Join a crew, and no "+ Invite <name>" on any partner card. */function crewSize(c){return 1+crewInCrew(c).filter(function(m){return m.climberId!==0&&m.status!=="declined";}).length;}
 /* THE ONE "is this crew full?" test: every accept, invite and "Crew full" label asks it, so they cannot disagree. A climber who already holds a spot (`id` invited or confirmed) is never kept out by it. A crew with no cap has no limit. The database enforces the same rule (0415), counting email invites too. */
 function crewIsFull(c,id){return !!(c&&c.cap&&crewSize(c)>=c.cap&&!(id!=null&&crewInCrew(c).some(function(m){return m.climberId===id;})));}
 /* The database's refusal (0415's cap triggers), so a save the app thought fit can say why it did not. */

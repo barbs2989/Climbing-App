@@ -72,6 +72,8 @@ async function createUser(tag, name) {
 const as = (u, path, opts) => api(path, opts || {}, anonKey(), u && u.jwt);
 const rpc = (u, fn, a) => as(u, "/rest/v1/rpc/" + fn, { method: "POST", body: JSON.stringify(a) });
 const ins = (u, table, row) => as(u, "/rest/v1/" + table, { method: "POST", headers: { Prefer: "return=representation" }, body: JSON.stringify(row) });
+// A request to join cannot read the crew back yet (crew_visible_to_me), so RETURNING would be refused: the app sends it without one.
+const insMin = (u, table, row) => as(u, "/rest/v1/" + table, { method: "POST", headers: { Prefer: "return=minimal" }, body: JSON.stringify(row) });
 const must = (r, what) => { if (r.status >= 300) throw new Error(what + " failed (" + r.status + "): " + JSON.stringify(r.body).slice(0, 300)); return r.body; };
 const names = (rows, cast) => (Array.isArray(rows) ? rows.map((x) => (cast.find((c) => c.id === x.id) || { tag: null }).tag).filter(Boolean).sort() : ["ERR " + JSON.stringify(rows).slice(0, 120)]);
 
@@ -104,7 +106,7 @@ async function main() {
     const u = await createUser(tag, name);
     cast.push(u);
     const un = (tag.toLowerCase() + stamp).slice(0, 20);
-    must(await as(u, "/rest/v1/profiles?id=eq." + u.id, { method: "PATCH", headers: { Prefer: "return=representation" }, body: JSON.stringify({ name, username: un, show_name: true, location: zip && zip.startsWith("98") ? "Bellingham, WA" : "Salt Lake City, UT", bio: "Test climber for the partner audit (deleted after the run).", ...prof }) }), "profile " + tag);
+    must(await as(u, "/rest/v1/profiles?id=eq." + u.id, { method: "PATCH", headers: { Prefer: "return=minimal" }, body: JSON.stringify({ name, username: un, show_name: true, location: zip && zip.startsWith("98") ? "Bellingham, WA" : "Salt Lake City, UT", bio: "Test climber for the partner audit (deleted after the run).", ...prof }) }), "profile " + tag);
     if (zip) must(await ins(u, "profile_zips", { user_id: u.id, zip }), "zip " + tag);
   }
   const by = Object.fromEntries(cast.map((u) => [u.tag, u]));
@@ -119,7 +121,7 @@ async function main() {
   must(await ins(Faye, "partner_areas", { user_id: Faye.id, area_id: PEAK, disciplines: ["alpine", "mountaineering"] }), "Faye lists the peak");
   must(await ins(Jo, "partner_areas", { user_id: Jo.id, area_id: CRAG, disciplines: ["sport"] }), "Jo lists Hellgate");
   must(await ins(Ivo, "partner_areas", { user_id: Ivo.id, area_id: CRAG, disciplines: ["sport"] }), "Ivo lists Hellgate");
-  must(await as(Ivo, "/rest/v1/profiles?id=eq." + Ivo.id, { method: "PATCH", headers: { Prefer: "return=representation" }, body: JSON.stringify({ discoverable: false }) }), "Ivo unlists");
+  must(await as(Ivo, "/rest/v1/profiles?id=eq." + Ivo.id, { method: "PATCH", headers: { Prefer: "return=minimal" }, body: JSON.stringify({ discoverable: false }) }), "Ivo unlists");
   must(await ins(Jo, "blocked_users", { blocker: Jo.id, blocked: Ana.id }), "Jo blocks Ana");
   ok("ten accounts made, each set up on its own session");
 
@@ -188,7 +190,7 @@ async function main() {
   console.log("\n5. Join a crew: Hana finds Ana's crew and asks to join");
   const listing = await as(Hana, "/rest/v1/crew_listings?select=id,area_id,discipline,cap&id=eq." + hell.id);
   check(Array.isArray(listing.body) && listing.body.length === 1, "Hana sees the Hellgate crew in Join a crew's listing", JSON.stringify(listing.body).slice(0, 200));
-  const req = await ins(Hana, "crew_members", { crew_id: hell.id, user_id: Hana.id, status: "requested" });
+  const req = await insMin(Hana, "crew_members", { crew_id: hell.id, user_id: Hana.id, status: "pending" });
   check(req.status < 300, "Hana's ask-to-join is filed", req.status + " " + JSON.stringify(req.body).slice(0, 200));
   const aAcc = await as(Ana, "/rest/v1/crew_members?crew_id=eq." + hell.id + "&user_id=eq." + Hana.id + "&select=status", { method: "PATCH", headers: { Prefer: "return=representation" }, body: JSON.stringify({ status: "confirmed" }) });
   check(Array.isArray(aAcc.body) && aAcc.body[0] && aAcc.body[0].status === "confirmed", "Ana (organiser) accepts Hana", JSON.stringify(aAcc.body));
@@ -235,8 +237,8 @@ async function uiWalk(Ana, hell) {
     const shot = (n) => page.screenshot({ path: path.join(UI, n + ".png"), fullPage: false });
     const openEveryone = async () => {
       await page.goto(base, { waitUntil: "domcontentloaded", timeout: 180000 }); await page.waitForTimeout(10000);
-      await page.locator('button[aria-label="Partners"], button:has-text("Partners")').first().click(); await page.waitForTimeout(5000);
-      await page.locator('[role="group"][aria-label="Find partners by"] button', { hasText: /^Everyone$/ }).click(); await page.waitForTimeout(7000);
+      await page.locator('button[aria-label="Partners"], button:has-text("Partners")').first().click({ timeout: 180000 }); await page.waitForTimeout(5000);
+      try { await page.locator('[role="group"][aria-label="Find partners by"] button', { hasText: /^Everyone$/ }).click({ timeout: 180000 }); } catch (e) { await shot("fail-open-everyone"); throw e; } await page.waitForTimeout(12000);
     };
     // Ana's crew already exists by now (the DB half ran first), so take it away for the "no crew" look and put it back after.
     await as(Ana, "/rest/v1/crews?id=eq." + hell.id, { method: "PATCH", headers: { Prefer: "return=representation" }, body: JSON.stringify({ dates: ["2020-01-01"] }) });
@@ -258,9 +260,14 @@ async function uiWalk(Ana, hell) {
     await openEveryone();
     const benInv = page.locator("button", { hasText: /^\+ Invite Ben to / });
     const benStart = page.locator('[data-partner-start="crew"]', { hasText: "Start a crew with Ben" });
-    say("Ben's card: invite-to-existing " + (await benInv.count()) + ", start-a-crew " + (await benStart.count()));
+    say("Ben's card: invite-to-existing " + (await benInv.count()) + " (0 expected: Ben already declined that crew, so it is not offered again), start-a-crew " + (await benStart.count()));
     check(await benStart.count() === 1, "with a crew, Ben's card still offers 'Start a crew with Ben' (a new crew is always one tap away)");
     if (await benStart.count()) { await benStart.scrollIntoViewIfNeeded(); await shot("03-everyone-ben-with-crew"); }
+    // Cleo climbs sport and was never asked: her card offers BOTH the existing crew and a new one.
+    const cleoInv = page.locator("button", { hasText: /^\+ Invite Cleo to / });
+    const cleoStart = page.locator('[data-partner-start="crew"]', { hasText: "Start a crew with Cleo" });
+    check(await cleoInv.count() === 1 && await cleoStart.count() === 1, "with a crew, Cleo's card offers '+ Invite Cleo to <the crew>' AND 'Start a crew with Cleo'", "invite " + (await cleoInv.count()) + ", start " + (await cleoStart.count()));
+    if (await cleoInv.count()) { await cleoInv.scrollIntoViewIfNeeded(); await shot("04-everyone-cleo-invite-or-start"); }
   } finally {
     if (browser) await browser.close().catch(() => {});
     server.kill();
