@@ -87,8 +87,8 @@ const CASES = [
 
   // The size must normalise YOU, or the two stored shapes disagree again.
   { name: "size-double-counts-you", file: "core", expect: "the two conventions still disagree",
-    find: 'function crewSize(c){return 1+crewInCrew(c).filter(function(m){return m.climberId!==0;}).length;}',
-    repl: 'function crewSize(c){return 1+crewInCrew(c).length;}' },
+    find: 'function crewSize(c){return 1+crewInCrew(c).filter(function(m){return m.climberId!==0&&m.status!=="declined";}).length;}',
+    repl: 'function crewSize(c){return 1+crewInCrew(c).filter(function(m){return m.status!=="declined";}).length;}' },
 
   // SILENT: documentation naming the forbidden shape is not the forbidden shape.
   { name: "SILENT-comment-quotes-the-old-expression", file: "core", silent: true,
