@@ -181,12 +181,19 @@ function pickForecastWaypoints(waypoints: WxWaypoint[] | null | undefined){
   }
   return [trailhead,mid,summit].filter(Boolean) as WxPoint[];
 }
+/** The points the panel forecasts, from the same props it takes. Exported so the route page can START those reads
+ *  when a climb opens (RouteDetail.jsx), before the climber reaches Conditions; the panel then joins them. */
+export function forecastPointsOf(waypoints: WxWaypoint[] | null | undefined, fallback: WxPoint | null | undefined, crag: boolean | undefined): WxPoint[]{
+  const picked=crag?[]:pickForecastWaypoints(waypoints);
+  return picked.length||!fallback?picked:[fallback];
+}
+type WxRaw=Awaited<ReturnType<typeof fetchForecastRaw>>;
+type WxMore=Awaited<WxRaw["more"]>;
 /* Moved verbatim from RouteDetail.jsx (PR58); only the types were added. */
 export default function WeatherPanel({waypoints,showPlan,fallback,crag}: WeatherPanelProps){
   /* ONE POINT AT A TIME (competitor review batch B, item 14, owner 2026-11-04, the website; the phone too since 2026-11-23, owner: "allow them to click on the key waypoint that is all on one line to show the forecast"): with three or four key points each carrying seven day tiles, the section ran four screens long; a switch names the points (trailhead, camp, summit…) on ONE line that scrolls sideways, and the chosen one's week shows as a row of tiles with the others a tap away. */
   const [ptSel,setPtSel]=useState(0);
-  const _picked=crag?[]:pickForecastWaypoints(waypoints);
-  const points=_picked.length||!fallback?_picked:[fallback];
+  const points=forecastPointsOf(waypoints,fallback,crag);
   const [data,setData]=useState<Record<string,WxEntry>>({});
   /* HOURLY OPENS FOR EVERY DAY AT ONCE (owner, 2026-11-14: "When you click on hourly forecast, it should open up for all days at once"): one open/closed flag per point, so any day's button opens (or hides) the hour-by-hour list on all of that point's days together. */
   const [hourlyOpen,setHourlyOpen]=useState<Record<string,boolean>>({});
@@ -223,9 +230,11 @@ export default function WeatherPanel({waypoints,showPlan,fallback,crag}: Weather
       // (a forbidden fetch header), so this relies on the browser's own UA —
       // fine at this request volume, but MET Norway's own guidance prefers an
       // identifying one for high-traffic server-side use.
-      fetchForecastRaw(w).then(function(res){return {res:res};}).then(function(o){
-        const res=o.res;
-        const json=res[0],nwsJson=res[1],metJson=res[2];
+      /* DRAWN TWICE AT MOST (owner note, 2026-11-25: "Forecast still takes a while to load"): once from Open-Meteo
+         alone, the moment it lands, and again with the NWS and MET second opinions once they are in. Those only add
+         a "differs" line under a day, so a slow NWS no longer holds the whole week. The read itself is shared and
+         started when the climb opens (lib/forecast.js fetchForecastRaw). */
+      const draw=function(json: WxRaw["om"],nwsJson: WxMore[0],metJson: WxMore[1]){
         const h=json&&json.hourly;
         if(!h||!h.temperature_2m||!h.time)throw new Error("no data");
         const offsetSec=json.utc_offset_seconds||0;
@@ -325,7 +334,8 @@ export default function WeatherPanel({waypoints,showPlan,fallback,crag}: Weather
         });
         if(!live)return;
         setData(function(p){return Object.assign({},p,{[k]:{days:days}});});
-      }).catch(function(){if(!live)return;setData(function(p){return Object.assign({},p,{[k]:{error:true}});});});
+      };
+      fetchForecastRaw(w).then(function(f){draw(f.om,null,null);return f.more.then(function(r){if(r[0]||r[1])draw(f.om,r[0],r[1]);});}).catch(function(){if(!live)return;setData(function(p){return Object.assign({},p,{[k]:{error:true}});});});
     });
     return function(){live=false;};
   },[key]); // eslint-disable-line react-hooks/exhaustive-deps -- key is derived from points; refetch only when the point set changes, not on array identity
@@ -357,7 +367,8 @@ export default function WeatherPanel({waypoints,showPlan,fallback,crag}: Weather
         const metDiverges=metMid!=null&&Math.abs(metMid-omMid)>=6;
         const isExpanded=allHourly;
         const condColor=wxCondColor(dy.wxCode);
-        return <div key={dy.date} style={{flexShrink:0,width:272,display:"flex",flexDirection:"column",background:C.surface,borderRadius:12,padding:"12px 13px",border:"1px solid "+C.border,borderTop:"3px solid "+wxTempColor(dy.tempLo)}}>
+        /* Days three to sixteen sit off to the right of a 390 px phone until the row is scrolled, so the browser skips laying them out until then (content-visibility; their text stays in the page for search and screen readers). Measured 2026-11-25 at a phone's CPU speed: the Conditions tab drew ~12% sooner. The placeholder height is low on purpose: the row stretches every tile to its tallest drawn one, so a placeholder never makes the row taller. */
+        return <div key={dy.date} style={{contentVisibility:di>1?"auto":undefined,containIntrinsicSize:di>1?"272px 300px":undefined,flexShrink:0,width:272,display:"flex",flexDirection:"column",background:C.surface,borderRadius:12,padding:"12px 13px",border:"1px solid "+C.border,borderTop:"3px solid "+wxTempColor(dy.tempLo)}}>
           <div>
           <div style={{display:"flex",justifyContent:"space-between",alignItems:"flex-start",marginBottom:9}}>
             <div>
