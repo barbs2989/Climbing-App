@@ -276,9 +276,9 @@ name their inputs, `assertCovered()` for the ones that walk the tree.
   - **The data layer is `lib/db-*.js` since 2026-11-25; `lib/db.js` only re-exports it.** The 8,000-line
     file was cut into 18 domain files (`scripts/oneoff/split-db-by-domain.mjs`, maintainability audit). The
     files are FLAT in `lib/`, on purpose: `componentFiles()` and every hand-rolled `lib/` walker read `lib/`
-    without recursing, so `lib/db/x.js` would have been invisible to all of them. A guard that wants the
+    without recursing, so a `lib/db/` subfolder would have been invisible to all of them. A guard that wants the
     data layer as ONE text reads `readDbSource(root)` (guard-sources): every domain file in the barrel's
-    order, imports merged so it parses as one module, a `// ── lib/db-x.js ──` line where each begins
+    order, imports merged so it parses as one module, a `// ── lib/db-<domain>.js ──` line where each begins
     (a line number it reports is in that joined text — search for the marker). `readAppFile("lib/db.js")`
     returns the same. 17 guards read it that way; per-file walkers (`check:read-failures`,
     `check:write-readers`, `check:area-name-embed`) now see each domain file and name it, and fail closed
