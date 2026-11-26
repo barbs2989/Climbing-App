@@ -161,7 +161,7 @@ else bad("lib/db.js calls the mutual_connections RPC");
 if (!hookRange) dead("useMutualConnections not found in lib/db.js — ANCHOR LOST");
 // Sliced by NODE RANGE, so this reads the function and nothing around it.
 const hookText = dbSrc.slice(hookRange[0], hookRange[1]);
-if (/if\s*\(\s*error\s*\)\s*throw\s+error/.test(hookText)) ok("...and a failed read throws rather than resolving empty");
+if (/if\s*\(\s*(error|failed)\s*\)\s*throw\s+(error|failed\.error)/.test(hookText)) ok("...and a failed read throws rather than resolving empty");
 else bad("...and a failed read throws rather than resolving empty");
 
 // SEED IDS MUST NEVER REACH A uuid[] RPC. PostgREST answers a type mismatch with a 400, so an
@@ -231,6 +231,31 @@ for (const name of ["FullProfile", "FriendsList", "PartnerSearch"]) {
   else bad("App hands " + name + " the map");
 }
 
+// ── 2b. WHO IS ASKED ───────────────────────────────────────────────────────────────────────
+// Handing a screen the map is not enough: the map only holds climbers somebody ASKED about. Until
+// the 2026-11-25 audit the ask set was friends, incoming requests and the open profile, so the
+// partner cards and the People-you-may-know cards drew "N mutual friends" for strangers nobody had
+// asked about -- every check above was green while the row could never draw for the one person
+// it is for. Each surface that draws a row for a climber outside your friends feeds the ask set.
+console.log("\n2b. every climber a row is drawn for is asked about\n");
+// Read as a SOURCE (`(x||[]).forEach`), not a mention: the useMemo dependency array names both,
+// and an injection that deleted the source stayed green against the bare-name version.
+if (/\(\s*mutualExtra\s*\|\|\s*\[\s*\]\s*\)\s*\.forEach/.test(askText)) ok("the ask set takes the ids a screen reports (mutualExtra)");
+else bad("the ask set takes the ids a screen reports (mutualExtra)", "partner-search strangers are never asked about");
+if (/\(\s*pymkQ\.data\s*\|\|\s*\[\s*\]\s*\)\s*\.forEach/.test(askText)) ok("...and the People-you-may-know candidates");
+else bad("...and the People-you-may-know candidates", "a suggestion card can name none of its mutual friends");
+const psSrc = read("lib/PartnerSearch.jsx");
+const psFn = psSrc.match(/export default function PartnerSearch\(\{([^}]*)\}/);
+if (psFn && /\bonAskMutuals\b/.test(psFn[1]) && /onAskMutuals\(\s*_mutualKey/.test(psSrc) && /_mutualKey\s*=\s*\[\.\.\.new Set\(_cardIds/.test(psSrc)) ok("PartnerSearch reports the real cards it shows (_cardIds) through onAskMutuals");
+else bad("PartnerSearch reports the real cards it shows (_cardIds) through onAskMutuals");
+const dtSrc = read("src/components/DiscoverTab.tsx");
+if (/onAskMutuals=\{askMutualsFor\}/.test(dtSrc) && /askMutualsFor=\{askMutualsFor\}/.test(appSrc)) ok("...and App's askMutualsFor reaches it through DiscoverTab");
+else bad("...and App's askMutualsFor reaches it through DiscoverTab");
+// THE SQL ANSWERS NOTHING FOR AN ASK OVER 64, so a client that SLICES to 64 silently drops whoever
+// sorts last -- and with partner cards in the set, 64 is reachable without a big friends list.
+if (!/\]\s*\.slice\(\s*0\s*,\s*64\s*\)/.test(hookText) && /i\s*\+=\s*64/.test(hookText)) ok("the hook asks in chunks of 64 rather than cutting the list at 64");
+else bad("the hook asks in chunks of 64 rather than cutting the list at 64");
+
 // ── 3. THE DEFINER FUNCTION ────────────────────────────────────────────────────────────────
 console.log("\n3. the definer function, as written\n");
 
@@ -299,6 +324,21 @@ else bad("the column is NOT NULL DEFAULT true, so there is no absent case for th
 // the day the policy is widened. It means more here than it did there -- widen that select and
 // the definer stops being necessary AND the disclosure written into the privacy documents has
 // to be re-derived, because the intersection would no longer need anyone's elevated rights.
+// THE SUGGESTION'S COUNT IS THE SAME LIST (0545). people_you_may_know() counts the mutual friends a
+// suggestion card prints, and it counted through EVERY friend while mutual_connections() leaves out
+// one who switched mutuals off -- "2 mutual friends" on the card, one name on the profile a tap
+// later, and a number that counted the friend who asked not to be shown. Newest definition wins.
+const pymkMigs = fs.readdirSync(path.join(ROOT, "supabase/migrations"))
+  .filter((f) => /\.sql$/.test(f))
+  .filter((f) => /create\s+or\s+replace\s+function\s+(public\.)?people_you_may_know/i.test(sqlNoComments(readRaw("supabase/migrations/" + f))))
+  .sort();
+if (!pymkMigs.length) dead("no migration defining people_you_may_know — ANCHOR LOST");
+const pymk = sqlNoComments(read("supabase/migrations/" + pymkMigs[pymkMigs.length - 1]));
+const fofCte = pymk.match(/fof\s+as\s*\(([\s\S]*?)\n\s*\),/i);
+if (!fofCte) dead("people_you_may_know (" + pymkMigs[pymkMigs.length - 1] + ") has no fof CTE — ANCHOR LOST");
+if (/join\s+profiles\s+(\w+)\s+on\s+\1\.id\s*=\s*f\.f/i.test(fofCte[1]) && /\.mutuals_visible/.test(fofCte[1])) ok("People you may know counts a mutual only through a friend who lets themselves be shown (" + pymkMigs[pymkMigs.length - 1] + ")");
+else bad("People you may know counts a mutual only through a friend who lets themselves be shown", pymkMigs[pymkMigs.length - 1] + "'s fof CTE counts every friend, so the card's number is not the sheet's list");
+
 const pol = read("supabase/migrations/00870_connections.sql");
 const sel = pol.match(/create policy "connections read own"[\s\S]*?;/);
 if (!sel) dead('0087 no longer declares a "connections read own" select policy — ANCHOR LOST');
@@ -336,7 +376,7 @@ for (const [file, text, label] of [["ClimbMatchCore.jsx", coreSrc, "the Privacy 
 // A floor two below a clean run, the convention this repo holds: a floor set to the exact total
 // cannot see its own newest section stop asking.
 
-const FLOOR = 30;
+const FLOOR = 36;
 if (ran < FLOOR) {
   console.error("\ncheck:mutual-friends: only " + ran + " assertions ran (floor " + FLOOR + ") — this run proved less than it claims.\n");
   process.exit(1);

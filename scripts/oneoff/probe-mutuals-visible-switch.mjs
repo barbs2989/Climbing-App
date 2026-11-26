@@ -89,16 +89,30 @@ async function mutuals(caller, others) {
   return { status, rows: Array.isArray(body) ? body : [], body };
 }
 
+// People you may know (0545): its "N mutual friends" must be the count the sheet lists, so a
+// friend who hid is not counted. Returns B's row from A's suggestions, or null.
+async function pymkRow(caller, target) {
+  const { status, body } = await api("/rest/v1/rpc/people_you_may_know", {
+    method: "POST", body: JSON.stringify({ p_limit: 50 }),
+  }, anonKey(), caller.jwt);
+  if (status >= 300) throw new Error("people_you_may_know failed (" + status + "): " + JSON.stringify(body));
+  return (Array.isArray(body) ? body : []).find((r) => r.id === target.id) || null;
+}
+
 // THE CLIMBER'S OWN JWT, not the service key: whether a climber can set their own preference at
 // all is part of what is under test. A service-key write would prove nothing about RLS.
 async function setVisible(u, value) {
+  // THE APP'S OWN PATH (lib/auth.js saveProfile, then my_profile()). profiles has column-level
+  // grants since 0434, so a return=representation PATCH asks for columns a climber cannot select
+  // and is refused 42501 -- this probe failed that way on 2026-11-25 until it wrote as the app does.
   const { status, body } = await api("/rest/v1/profiles?id=eq." + u.id, {
     method: "PATCH",
-    headers: { Prefer: "return=representation" },
+    headers: { Prefer: "return=minimal" },
     body: JSON.stringify({ mutuals_visible: value }),
   }, anonKey(), u.jwt);
   if (status >= 300) throw new Error("set mutuals_visible=" + value + " for " + u.tag + " failed (" + status + "): " + JSON.stringify(body));
-  const row = Array.isArray(body) ? body[0] : body;
+  const back = await api("/rest/v1/rpc/my_profile", { method: "POST", body: "{}" }, anonKey(), u.jwt);
+  const row = Array.isArray(back.body) ? back.body[0] : back.body;
   if (!row || row.mutuals_visible !== value) {
     throw new Error("read-back for " + u.tag + " says " + JSON.stringify(row && row.mutuals_visible) + ", not " + value);
   }
@@ -143,7 +157,18 @@ async function main() {
   if (!sees(cHidden, C)) ok("...and C is no longer named to A as a mutual with B");
   else bad("C is no longer named to A", JSON.stringify(cHidden.rows));
 
+  // THE SUGGESTION'S COUNT IS THE SAME FACT (0545). C is A's only route to B, so with C hidden B
+  // must not be suggested as a friend-of-a-friend at all -- before 0545 the card said "1 mutual
+  // friend" while the sheet a tap away listed nobody. Sandwiched: shown before C hid is asserted
+  // after C comes back, so a suggestion missing for some other reason cannot pass this.
+  const pHidden = await pymkRow(A, B);
+  if (!pHidden || pHidden.mutuals === 0) ok("...and People you may know no longer counts C toward B");
+  else bad("People you may know no longer counts C", JSON.stringify(pHidden));
+
   await setVisible(C, true);
+  const pBack = await pymkRow(A, B);
+  if (pBack && pBack.mutuals === 1) ok("...and counts C again once C turns it back on (the control: B is suggested, with 1)");
+  else bad("People you may know counts C again", JSON.stringify(pBack));
   const cBack = await mutuals(A, [B]);
   if (sees(cBack, C)) ok("...and turning it back on restores them, so the flag is what did it");
   else bad("turning it back on restores C", JSON.stringify(cBack.rows));
