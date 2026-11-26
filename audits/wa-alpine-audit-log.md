@@ -40923,3 +40923,66 @@ Wikipedia and SummitPost within about 100 ft.
 
 1 confirmed error fixed, 2 flagged for human review. Next batch continues id-ascending from
 `wa_lichtenberg_mountain_southeast_ridge` (pass 9).
+
+## Batch 591 (pass 9) — 2026-11-26
+
+Checked 8 routes id-ascending from `wa_lichtenberg_mountain_west_face` through
+`wa_little_annapurna_south_face`.
+
+Note on this run's research tooling: WebFetch could not resolve any of the usual secondary
+sources (americanalpineclub.org publications, summitpost.org, lemkeclimbs.com,
+cascadeclimbers.com, even en.wikipedia.org) — every URL failed DNS resolution as outside this
+session's allowed network domains. Only WebSearch (which runs server-side, not from this
+container) was reachable. Findings below rely on WebSearch result snippets rather than full
+page reads; nothing here required the deeper reads WebFetch would normally allow, but a future
+run should flag this to the user if it blocks something that does.
+
+1 confirmed error fixed: `wa_lincoln_peak_standard`'s `pitches` was stored as 2, contradicted by
+the route's own `climbing_route` and `pitch_detail` arrays, which both independently break the
+climb into the same 5 roped sections (southwest basin/bergschrund approach, the bergschrund/serac
+crux, the lower basin and hidden gully, snow arêtes and traverses, and the X Couloir finish to the
+summit) — and by its own `rappel_detail`, which documents up to 10 rappels on the descent. 2
+pitches is not plausible for a route with that much roped terrain; it reads as a stale value never
+reconciled when the detailed breakdown was written. Set to 5 to match the route's own breakdown.
+
+2 flagged for human review:
+- `wa_lincoln_peak_north_ridge` (name: "Wilkes-Booth (Northwest Face)") — the route's own `name`,
+  `aspect` ("NW") and full description all agree it is a *northwest face* ice route, but its `id`
+  says `north_ridge`. FA (Daniel Coltrane & Michal Rynkiewicz, March 13 2015), grade (WI4,
+  matching the AAC's "IV WI4"), and length (610 m ≈ 2,000 ft, matching the AAC publication's
+  "2,000 feet" exactly) all check out — only the id itself looks mismatched to what the row
+  describes, the same kind of id/content mismatch flagged for `wa_big_kangaroo_southwest_rib` in
+  batch 3. Per route-identity.md this needs a human rename decision, not an auto-fix.
+- `wa_little_annapurna_boola_boola_buttress`, `wa_little_annapurna_northeast_face` and
+  `wa_little_annapurna_northwest_buttress` — all three are effectively unenriched stubs (just
+  `name`/`grade`/`grade_system`, one with `commitment`); nothing stored to fact-check. Flagging
+  for enrichment prioritization rather than auditing further.
+
+Clean / no action needed:
+- `wa_lichtenberg_mountain_west_face` (5.9+, aspect W, dist_km 5.6) — approach, access, hazards
+  and waypoints are all substantive and consistent with the Smithbrook Trailhead → Lake Valhalla
+  approach confirmed by WebSearch results (Lake Valhalla at 4,836 ft, summit 5,844 ft). The route
+  already honestly discloses its own biggest gap in its stored `descent_text` ("No descent is
+  described anywhere for this route"); that is a known gap, not a factual error, so nothing to fix.
+- `wa_lichtenberg_mountain_west_face_west_rib` (Class 4, high_point_ft 5800 on "The Lichtenhorn"
+  west sub-peak, below Lichtenberg's confirmed main-summit elevation of 5,844 ft) — internally
+  consistent, and a lower sub-summit reading below the true summit is expected, not a conflict.
+- `wa_lincoln_peak_north_ridge` / `wa_lincoln_peak_standard` — both store `high_point_ft` 9085 for
+  Lincoln Peak's summit; SummitPost and Wikipedia both give ~9,080 ft. A 5 ft gap is ordinary
+  survey/source variance, not flagged.
+- `wa_lincoln_peak_standard`'s FA (Fred Beckey, Wesley Grande, Herb Staley, John Rupley, July 22
+  1956) matches the same four names and July 1956 date given independently by Lemke Climbs and an
+  AAC publications snippet for Lincoln Peak's first ascent (the AAC snippet names the peak "West
+  Black Butte, Mount Lincoln" without confirming the exact line climbed, so the specific
+  attribution to the X Couloir/SW Face line is plausible but not independently nailed down —
+  noting this but not flagging it, since nothing contradicts it).
+- `wa_little_annapurna_south_face` (5.5, 3 pitches, 151 m, FA Eiichi Fukushima & Laurence
+  Campbell, Sept 6 1969) — grade matches trip-report consensus (~5.5/5.6) found via WebSearch; the
+  approach via Ingalls Creek is geographically consistent with reaching the peak's south side. The
+  specific FA could not be independently corroborated online, but the route is otherwise
+  substantively enriched and the names given (Fukushima in particular) are a known, real pairing
+  from that era of Cascades alpine rock climbing — not flagging an unenrichment-pattern finding
+  here the way the stub Little Annapurna routes above warranted it.
+
+1 confirmed error fixed, 2 flagged for human review. Next batch continues id-ascending from
+`wa_little_annapurna_south_face` (pass 9).
