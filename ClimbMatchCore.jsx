@@ -53,6 +53,9 @@ const useEnrichmentDb = () => {
   const [loaded, setLoaded] = useState(false);
   useEffect(() => {
     _loadEnrichmentDb().then(m => {
+      // undefined while main.jsx reloads for a deploy that removed this chunk (lib/chunkReload.js):
+      // Vite resolves the import to nothing then. Filed to app_errors 2026-11-25 as "reading 'enrichedRoutes'".
+      if (!m) { _enrichmentDbCache = null; return; }
       enrichedRoutes = m.enrichedRoutes;
       getEnrichment = m.getEnrichment;
       determineTier = m.determineTier;
