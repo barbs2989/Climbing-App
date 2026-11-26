@@ -9,7 +9,7 @@
 -- and commit the result in the same PR. `npm run gen:schema -- --check` exits 1 when this
 -- file has drifted from the live database.
 --
--- Counts: 91 tables, 911 columns, 500 keyed/checked constraints (163 foreign keys), 263 RLS policies.
+-- Counts: 91 tables, 918 columns, 505 keyed/checked constraints (163 foreign keys), 263 RLS policies.
 -- Not covered here: views, functions, triggers, standalone indexes (see supabase/migrations/).
 
 -- ── Foreign keys ───────────────────────────────────────────────────────────────
@@ -993,8 +993,10 @@ CREATE TABLE public.crews_messages (
   created_at timestamp with time zone DEFAULT now(),
   updated_at timestamp with time zone DEFAULT now(),
   moderation text NOT NULL DEFAULT 'visible'::text,
+  video_path text,
   CONSTRAINT crews_messages_pkey PRIMARY KEY (id),
   CONSTRAINT crews_messages_moderation_chk CHECK ((moderation = ANY (ARRAY['visible'::text, 'held'::text, 'removed'::text]))),
+  CONSTRAINT crews_messages_video_path_chk CHECK (((video_path IS NULL) OR ((video_path ~ '^[0-9a-f-]{36}/[0-9a-f-]{36}\.(mp4|mov|webm)$'::text) AND (split_part(video_path, '/'::text, 1) = (user_id)::text)))),
   CONSTRAINT crews_messages_crew_id_fkey FOREIGN KEY (crew_id) REFERENCES crews(id) ON DELETE CASCADE,
   CONSTRAINT crews_messages_user_id_fkey FOREIGN KEY (user_id) REFERENCES profiles(id) ON DELETE CASCADE
 );
@@ -1446,8 +1448,10 @@ CREATE TABLE public.messages (
   read boolean DEFAULT false,
   created_at timestamp with time zone DEFAULT now(),
   moderation text NOT NULL DEFAULT 'visible'::text,
+  video_path text,
   CONSTRAINT messages_pkey PRIMARY KEY (id),
   CONSTRAINT messages_moderation_chk CHECK ((moderation = ANY (ARRAY['visible'::text, 'held'::text, 'removed'::text]))),
+  CONSTRAINT messages_video_path_chk CHECK (((video_path IS NULL) OR ((video_path ~ '^[0-9a-f-]{36}/[0-9a-f-]{36}\.(mp4|mov|webm)$'::text) AND (split_part(video_path, '/'::text, 1) = (sender_id)::text)))),
   CONSTRAINT messages_recipient_id_fkey FOREIGN KEY (recipient_id) REFERENCES profiles(id) ON DELETE CASCADE,
   CONSTRAINT messages_sender_id_fkey FOREIGN KEY (sender_id) REFERENCES profiles(id) ON DELETE CASCADE
 );
@@ -2177,7 +2181,7 @@ CREATE TABLE public.topos (
 ALTER TABLE public.topos ENABLE ROW LEVEL SECURITY;
 CREATE POLICY "moderation hides taken-down content" ON public.topos AS RESTRICTIVE FOR SELECT TO public USING (((moderation = 'visible'::text) OR (created_by = ( SELECT auth.uid() AS uid)) OR is_admin(( SELECT auth.uid() AS uid))));
 CREATE POLICY "restricted accounts cannot post" ON public.topos AS RESTRICTIVE FOR INSERT TO public WITH CHECK (is_active_user(( SELECT auth.uid() AS uid)));
-CREATE POLICY "topos authed insert" ON public.topos AS PERMISSIVE FOR INSERT TO public WITH CHECK (((( SELECT auth.uid() AS uid) IS NOT NULL) AND (( SELECT auth.uid() AS uid) = created_by) AND ((route_id IS NOT NULL) OR area_photo)));
+CREATE POLICY "topos authed insert" ON public.topos AS PERMISSIVE FOR INSERT TO public WITH CHECK (((( SELECT auth.uid() AS uid) IS NOT NULL) AND (( SELECT auth.uid() AS uid) = created_by) AND ((route_id IS NOT NULL) OR (area_photo AND area_takes_photos(area_id)))));
 CREATE POLICY "topos own delete" ON public.topos AS PERMISSIVE FOR DELETE TO public USING ((( SELECT auth.uid() AS uid) = created_by));
 CREATE POLICY "topos own update" ON public.topos AS PERMISSIVE FOR UPDATE TO public USING ((( SELECT auth.uid() AS uid) = created_by)) WITH CHECK ((( SELECT auth.uid() AS uid) = created_by));
 CREATE POLICY "topos public read" ON public.topos AS PERMISSIVE FOR SELECT TO public USING (true);
