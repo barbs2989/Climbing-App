@@ -1286,7 +1286,7 @@ async function runPitches() {
 //
 //   FullProfile header             {dist.toFixed(1)} mi away
 //   FullProfile compatibility card {dist.toFixed(1)} miles away
-//   FireNearRoute overflow line    and N more within {radiusMi} miles
+//   FireNearRoute reach line       up to {radiusMi} miles for the largest (was "and N more within")
 //
 // EACH HAD A CORRECT SIBLING BESIDE IT, which is what makes them misses rather than a missing
 // convention: the partner card has always written `uDistMi(+dist.toFixed(1))+" away"`, and
@@ -1358,8 +1358,9 @@ async function runProfile() {
 
   // ── FireNearRoute: the overflow line, whose sibling two lines up was always correct.
   const fire = fs.readFileSync(path.join(ROOT, "lib", "FireNearRoute.jsx"), "utf8");
-  if (/more within \{uDistMi\(/.test(fire)) ok("the fire panel's radius converts");
-  else fail('the fire panel prints its radius unconverted ("and N more within X miles") while converting every fire beside it');
+  // The panel's reach line (owner note 2026-11-26) names two distances; both must convert.
+  if (/likely within \{uDistMi\(5\)\}[\s\S]{0,120}up to \{uDistMi\(35\)\}/.test(fire)) ok("the fire panel's reach distances convert");
+  else fail('the fire panel prints its reach unconverted ("within 5 miles ... up to 35 miles") while converting every fire beside it');
 
   // -- THE STATIC HALF ABOVE PROVES THE HELPER IS CALLED; IT CANNOT PROVE WHAT THE SCREEN SAYS,
   //    AND THE GAP IS MEASURED RATHER THAN ASSERTED. Injecting `uDistMi(dist)` in place of

@@ -250,7 +250,7 @@ profile can also open as `FullProfile` and `Resume` overlays from anywhere (part
 | `lib/GiveVouch.jsx` | vouch sheet |
 | `lib/Onboarding.jsx` | `Onboarding` (first-run setup) |
 | `lib/homeFromDevice.js` | `homeFromDevice` (onboarding's *Use my current location*) |
-| `lib/LegalView.jsx` | `LegalView` (Terms, Privacy, Guidelines, Accessibility), `AccessReportForm`, `ACCESS_UPDATED` |
+| `lib/LegalView.jsx` | `LegalView` (Terms, Privacy, Guidelines, Accessibility, Delete your account), `AccessReportForm`, `ACCESS_UPDATED`. Each opens from a public URL, signed in or out: `?legal=terms|privacy|guidelines|accessibility|delete` (`?legal=child-safety` = the Guidelines), for the store listings (2026-11-26) |
 | `lib/AppFeedback.jsx` | `FeedbackForm`, `RateForm` (the Menu's Feedback and Rate app sheets), `AppFeedbackQueue` (the Review desk's *Feedback & ratings*, `review.html#feedback`), `devicePlatform`, `storeListing`, `APP_VERSION` |
 | `lib/AccessibilityReports.jsx` | `AccessibilityReportQueue` — the owner's queue of accessibility reports, a section of the Review desk (`review.html#access`) |
 | `supabase/functions/notify-accessibility-report/index.ts` | emails the owner when a report is filed (needs `RESEND_API_KEY`) |

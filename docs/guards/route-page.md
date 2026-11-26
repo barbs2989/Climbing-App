@@ -1051,6 +1051,15 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     That block reads **raw** source, because the discriminator is a string literal
     (`tab==="safety"`) and the blanker wipes string contents, collapsing every branch to
     `tab===""` — the first run failed with "gone blind" for precisely that reason.
+  - **Which fires the panel lists** (owner note 2026-11-26, too-far fires): the panel must filter
+    through `fireMatters` and take red from `fireIsClose`, and the guard IMPORTS `lib/fire.js` and
+    runs nine concrete fires through the pair (a half-acre start 8 mi off is hidden, a 100%-contained
+    fire 6 mi off is hidden, a 100,000-acre fire with its origin 40 mi off is listed, its edge ~33),
+    plus asserts `NEAR_ROUTE_KM` still reaches the widest reach plus a million-acre radius. The
+    thresholds are a judgement from NWCG size classes, spread rates (Bootleg 2021 ran 4-5 mi/day)
+    and spotting (3-10 mi); no competitor publishes a route-alert radius (Watch Duty alerts by
+    county, NSW Fires Near Me lets the user pick 5-50 km). Changing a threshold means changing the
+    expected cases here on purpose.
 
 - **`check:approach-overlay`** (in build) — when a climb has more than one way in, the PICKED one
   drives the whole page and nothing from another leaks under its name.
