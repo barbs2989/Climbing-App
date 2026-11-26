@@ -29,6 +29,7 @@ npm install        # install deps (React 18 + Vite)
 npm run dev        # local dev server with HMR
 npm run build      # production build to dist/ — runs every guard in build:guards first (concurrently), then vite
 npm run preview    # serve the built dist/ locally
+npm run errors:read # what crashed on climbers' phones (app_errors), grouped, each stack frame mapped back to file:line via the build's source maps (service key, DB gate)
 npm run clean:worktrees # list worktrees + local branches whose PR merged (idle 24h, nothing untracked or precious); -- --apply removes them
 
 # ── Guard infrastructure — notes: docs/guards/infrastructure.md ──
@@ -364,7 +365,7 @@ Everything else — crews, messages, connections, vouches, logs, trip reports, a
 - `crew` — your crews and direct/crew messaging (`crewView`). Friends and Requests are `crewView`s opened from the Menu's tiles; the tab's own view is crews only.
 - `groups` — the Groups screen, Facebook-style: For you · Your groups · Your activity · Discover · Events (`groupsTab`). **Not on the bottom bar**: NAV marks it `bar:false`, and it opens from the Menu's Groups tile. A group opens as the `openGroupId` overlay over it.
 - `logbook` — your objectives, completed climbs, trip reports.
-- `me` — profile, verification, trust score. The bottom bar's **right-most tab** (back since 2026-10-24; it left the bar in #2074), and the **Menu** (the avatar button at the top left, `menuOpen`) still leads here too, from its "You" card. The Menu also holds what used to be the footer strip (How ClimbMatch works, Feedback, Rate app, Settings, Privacy, About us), shortcut tiles and sign in/out. Browser walks reach Profile and Menu rows through `scripts/lib/menu-screens.mjs`.
+- `me` — profile, verification, trust score. The bottom bar's **right-most tab** (back since 2026-10-24; it left the bar in #2074), and the **Menu** (the three-line button at the top right, `menuOpen`) still leads here too, from its "You" card. The Menu also holds what used to be the footer strip (How ClimbMatch works, Feedback, Rate app, Settings, Privacy, About us), shortcut tiles and sign in/out. Browser walks reach Profile and Menu rows through `scripts/lib/menu-screens.mjs`.
 
 `openRoute(x)` is the standard way to navigate into a route (sets `routeFrom`, `selRoute`, and `tab="routes"`).
 
