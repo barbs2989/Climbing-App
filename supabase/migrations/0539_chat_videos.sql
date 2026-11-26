@@ -1,4 +1,4 @@
--- 0538: a chat can carry a VIDEO, and a video is as private as the chat it was sent in.
+-- 0539: a chat can carry a VIDEO, and a video is as private as the chat it was sent in.
 --
 -- Owner's note (2026-11-25): "Do we have the option of sending videos too?" We did not. A chat photo is a
 -- data URL in image_url (00420); a phone video is tens of megabytes, far too large for a row, so a video

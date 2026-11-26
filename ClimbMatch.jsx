@@ -1398,7 +1398,7 @@ if(prev!=null){setVerified(false);setCrews(function(cs){return cs.filter(functio
     const crew=crews.find(c=>c.id===cid);if(!crew)return;
     const _imgAlt=(isImage||isVideo)?String((opts&&opts.alt)||"").trim().slice(0,300):"";const myMsg=isVideo?{from:"me",name:"You",video:text,text:_imgAlt||undefined,ts:Date.now()}:isImage?{from:"me",name:"You",image:text,text:_imgAlt||undefined,ts:Date.now()}:{from:"me",name:"You",text,ts:Date.now()};
     setCrewMsgs(m=>({...m,[cid]:[...(m[cid]||[]),myMsg]}));
-    /* A VIDEO is uploaded to the private chat-videos bucket first (0538), then the row names it; a refused row takes the file down again (sendCrewMessage). */
+    /* A VIDEO is uploaded to the private chat-videos bucket first (0539), then the row names it; a refused row takes the file down again (sendCrewMessage). */
     if(isVideo){if(uid&&isDbId(crew._dbId)){uploadChatVideo(opts.file).then(function(path){return sendCrewMessage(crew._dbId,uid,_imgAlt,null,path);}).catch(function(e){showToast(chatSendRefusal(e)||"Couldn’t send that video — it’s on your screen but not saved. Try again.",4200);});}return;}
     if(uid&&isDbId(crew._dbId)){sendCrewMessage(crew._dbId,uid,isImage?_imgAlt:text,isImage?text:null).catch(function(){showToast("Couldn’t save that message — it’s on your screen but not saved. Try again.");});}
   };
