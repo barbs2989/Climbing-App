@@ -1,0 +1,746 @@
+{
+ "ab_triangle_peak_big_corona": {
+  "area": "ab_triangle_peak",
+  "pitch_detail": [
+   {
+    "pitch": "6",
+    "grade": "M7 WI5",
+    "lengthM": 50,
+    "anchor": "rock belay under a roof",
+    "crux": true,
+    "notes": "Starts on a few ice mushrooms, then trends up and left on rock for about 30 m to reach the ice. The first 20 m is rotten but takes decent gear. The crux moves above are poorly protected, with the last piece well below behind a doubtful flake; a piton may fit higher. A strenuous pull over a small roof lands on a thin ice strip, which leads to a rock belay under a roof."
+   },
+   {
+    "pitch": "7",
+    "grade": "M5 WI5+",
+    "lengthM": 35,
+    "anchor": "small perch",
+    "notes": "Step back onto a very steep iced-up arete and climb it to the top of the ice. A steep, exciting chimney then leads to a stance just big enough to belay from."
+   },
+   {
+    "pitch": "8",
+    "grade": "A0 WI4",
+    "lengthM": 55,
+    "notes": "Lower or downclimb right, then pendulum across to the main ice flow. Good WI4 ice follows until the rope runs out."
+   },
+   {
+    "pitch": "9",
+    "grade": "WI4",
+    "lengthM": 60,
+    "notes": "Follow the ice flow straight to the top."
+   }
+  ],
+  "replace_pitch_detail": true,
+  "review": {
+   "confidence": "medium",
+   "sources": [
+    "https://www.mountainproject.com/route/118799433"
+   ],
+   "source_texts": {
+    "https://www.mountainproject.com/route/118799433": "/Users/nathanbarber/dev/mp-data/_mp/_pitchtext/ab_triangle_peak_big_corona.txt"
+   },
+   "changed": "Wrote the four upper-cliff pitches, labelled 6-9 because the text puts them after five lower pitches (to 5.8) that it does not describe one by one; those five are not written. No rappel station list.",
+   "pitch_count_found": 4,
+   "other_findings": "Stored grade WI5+ M7 A0 matches; none contradicted."
+  }
+ },
+ "ab_unsorted_ice_routes_amadeus": {
+  "area": "ab_unsorted_ice_routes",
+  "pitch_detail": [
+   {
+    "pitch": "1",
+    "grade": "M5",
+    "lengthM": 20,
+    "anchor": "fixed belay",
+    "notes": "Work leftward and up the rock on fixed gear until you reach the ice; scratches from crampons show the line. A lead below this gets you to a one-bolt belay under the left-facing corner."
+   },
+   {
+    "pitch": "2",
+    "grade": "WI4",
+    "lengthM": 35,
+    "anchor": "bolted belay",
+    "notes": "Starting from the fixed stance at the far left side of the flow, go directly up ice of changing quality and finish at a bolted belay by the same wall. Avalanche danger can threaten from above."
+   }
+  ],
+  "replace_pitch_detail": true,
+  "review": {
+   "confidence": "high",
+   "sources": [
+    "https://www.mountainproject.com/route/117950554"
+   ],
+   "source_texts": {
+    "https://www.mountainproject.com/route/117950554": "/Users/nathanbarber/dev/mp-data/_mp/_pitchtext/ab_unsorted_ice_routes_amadeus.txt"
+   },
+   "changed": "Wrote both pitches. Rappel is only described as double 60s from the top of P2, so no rappel table.",
+   "pitch_count_found": 2,
+   "other_findings": "none"
+  }
+ },
+ "ab_upper_norquay_slab_calamari_crack": {
+  "area": "ab_upper_norquay_slab",
+  "pitch_detail": [
+   {
+    "pitch": "1",
+    "grade": "5.7",
+    "lengthM": 60,
+    "notes": "Follow the corner to the right of a neighbouring route."
+   },
+   {
+    "pitch": "2",
+    "grade": "5.5",
+    "lengthM": 20,
+    "notes": "Continue up the same corner to where it ends on a ledge."
+   },
+   {
+    "pitch": "3",
+    "grade": "5.9",
+    "lengthM": 40,
+    "crux": true,
+    "notes": "Climb the corner until it steepens at overlaps, then break left around the arete and traverse, run out, to flakes. Continue up to a face crack."
+   },
+   {
+    "pitch": "4",
+    "grade": "5.8",
+    "lengthM": 60,
+    "notes": "Follow a fine crack to its end, go left up a flake, then cross delicate slab holds to the next solid crack and belay inside it."
+   },
+   {
+    "pitch": "5",
+    "grade": "5.7",
+    "lengthM": 60,
+    "notes": "Climb a good hand crack to some loose black rock, then head right and up another crack and a right-facing crack to a ledge."
+   },
+   {
+    "pitch": "6",
+    "grade": "5.7",
+    "lengthM": 50,
+    "notes": "Go up a right-facing crack to a ledge, then traverse left to the upper chimney and follow it to the top."
+   }
+  ],
+  "replace_pitch_detail": true,
+  "review": {
+   "confidence": "high",
+   "sources": [
+    "https://www.mountainproject.com/route/123339245"
+   ],
+   "source_texts": {
+    "https://www.mountainproject.com/route/123339245": "/Users/nathanbarber/dev/mp-data/_mp/_pitchtext/ab_upper_norquay_slab_calamari_crack.txt"
+   },
+   "changed": "Wrote all six pitches. Rack note: two 60 m ropes.",
+   "pitch_count_found": 6,
+   "other_findings": "none"
+  }
+ },
+ "ab_vacation_wall_limestone_vacation": {
+  "area": "ab_vacation_wall",
+  "pitch_detail": [
+   {
+    "pitch": "1",
+    "grade": "5.9",
+    "lengthM": 25,
+    "crux": true,
+    "notes": "Good rock with a mix of bolts and gear placements."
+   },
+   {
+    "pitch": "2",
+    "grade": "5.8",
+    "lengthM": 25,
+    "notes": "A steep crack protected by both bolts and gear."
+   },
+   {
+    "pitch": "3",
+    "grade": "5.7",
+    "lengthM": 20,
+    "notes": "An awkward chimney, again with bolts plus gear."
+   }
+  ],
+  "replace_pitch_detail": true,
+  "review": {
+   "confidence": "high",
+   "sources": [
+    "https://www.mountainproject.com/route/124760372"
+   ],
+   "source_texts": {
+    "https://www.mountainproject.com/route/124760372": "/Users/nathanbarber/dev/mp-data/_mp/_pitchtext/ab_vacation_wall_limestone_vacation.txt"
+   },
+   "changed": "Wrote three pitches. Descent is just \"rappel\", no station list.",
+   "pitch_count_found": 3,
+   "other_findings": "Text lengths sum to 70 m vs stored 64."
+  }
+ },
+ "ak_3rd_4th_the_curtain_inside_passage": {
+  "area": "ak_3rd_4th_the_curtain",
+  "pitch_detail": [
+   {
+    "pitch": "1",
+    "grade": "5.10+",
+    "lengthM": 20,
+    "notes": "Cross the moat, then climb a splitter left-facing corner that becomes a large right-facing corner past two roofs, the first on hand jams and the second on fingers. Belay on a small good ledge."
+   },
+   {
+    "pitch": "2",
+    "grade": "5.9+",
+    "lengthM": 20,
+    "notes": "Layback steeply off the belay, then pull over an overhanging feature into a wide slot and top it out. Step right to a small ledge, find gear, and traverse the slab to an alcove with a good ledge belay."
+   },
+   {
+    "pitch": "3",
+    "grade": "5.6 R",
+    "lengthM": 30,
+    "notes": "Go out left through blocky ground with little gear. Once the main dihedral above is in sight, continue on moderate but runout ground to the base of a left-facing corner."
+   },
+   {
+    "pitch": "4",
+    "grade": "5.10+",
+    "lengthM": 40,
+    "notes": "A stemming corner with interesting moves that tapers to fingers. Top it, face climb about a body length, then reach left into a face splitter and follow it to a ledge belay."
+   },
+   {
+    "pitch": "5",
+    "grade": "5.9",
+    "lengthM": 50,
+    "notes": "A wide, mossy trough pitch that climbs reasonably well. Long, finishing on a ledge below another left-facing corner."
+   },
+   {
+    "pitch": "6",
+    "grade": "5.10",
+    "lengthM": 25,
+    "notes": "Similar in style to pitch 4 but a notch less good. You can hang a belay high in the corner, or run it together with the next pitch."
+   },
+   {
+    "pitch": "7",
+    "grade": "5.10+",
+    "lengthM": 35,
+    "notes": "Exit the corner using face holds going up and left to a 0.75-size crack. A few tricky moves get you set in it, then it runs to a wide ledge beneath the last headwall."
+   },
+   {
+    "pitch": "8",
+    "lengthM": 60,
+    "notes": "Follow an obvious wide splitter that tapers to fingers. A large block on it looks suspect; a face traverse around it is harder, near 5.11. Continue up easier ground to a belay near the summit."
+   }
+  ],
+  "replace_pitch_detail": true,
+  "review": {
+   "confidence": "high",
+   "sources": [
+    "https://www.mountainproject.com/route/126856488"
+   ],
+   "source_texts": {
+    "https://www.mountainproject.com/route/126856488": "/Users/nathanbarber/dev/mp-data/_mp/_pitchtext/ak_3rd_4th_the_curtain_inside_passage.txt"
+   },
+   "changed": "Wrote all eight pitches; pitch 8 has no stated grade. An alternate crack system to the right is mentioned as about 5.11 but not written.",
+   "pitch_count_found": 8,
+   "other_findings": "none"
+  }
+ },
+ "ak_3rd_4th_the_curtain_the_mammoth": {
+  "area": "ak_3rd_4th_the_curtain",
+  "pitch_detail": [
+   {
+    "pitch": "1",
+    "grade": "5.10",
+    "lengthM": 30,
+    "notes": "Climb under a roof, traverse right, then return left onto wide cracks. Traverse left among pinnacles and belay below the splitter of the next pitch."
+   },
+   {
+    "pitch": "2",
+    "grade": "5.11+",
+    "lengthM": 30,
+    "anchor": "2 bolts",
+    "crux": true,
+    "notes": "Fine finger-size splitter in a corner with crux moves before the crack widens. Belay on a large ledge."
+   },
+   {
+    "pitch": "3",
+    "grade": "5.9",
+    "lengthM": 20,
+    "anchor": "gear",
+    "notes": "Enjoyable, meandering corner climbing with plenty of ledges; stop at any of the higher ones."
+   },
+   {
+    "pitch": "4",
+    "grade": "5.10+",
+    "lengthM": 35,
+    "anchor": "2 bolts",
+    "notes": "Follow the corner system as it steepens, choosing among many splitter variations. The belay sits under a roof that has a hand crack cutting through."
+   },
+   {
+    "pitch": "5",
+    "grade": "5.11",
+    "notes": "A roof split by a hand crack; follow it as it narrows and the angle eases. Many pieces from 0.3 to 0.4 are useful. A ledge on the right about 20 m up takes small gear for an anchor, and it may link with the next pitch."
+   },
+   {
+    "pitch": "6",
+    "grade": "5.9",
+    "lengthM": 30,
+    "notes": "Follow a corner crack through a bulge, then keep rambling up to a nice ledge."
+   },
+   {
+    "pitch": "7",
+    "grade": "5.9",
+    "lengthM": 20,
+    "anchor": "2 bolts",
+    "notes": "Easier climbing continues to the top."
+   }
+  ],
+  "replace_pitch_detail": true,
+  "review": {
+   "confidence": "high",
+   "sources": [
+    "https://www.mountainproject.com/route/203880863"
+   ],
+   "source_texts": {
+    "https://www.mountainproject.com/route/203880863": "/Users/nathanbarber/dev/mp-data/_mp/_pitchtext/ak_3rd_4th_the_curtain_the_mammoth.txt"
+   },
+   "changed": "Wrote all seven pitches. Rappel line described only as one single 30 m rope rap then double 60 m raps, so no rappel table. P5 grade 5.11 given without length.",
+   "pitch_count_found": 7,
+   "other_findings": "P2 stated 5.11+/12-; text says it may get easier."
+  }
+ },
+ "ak_4th_of_july_ridge": {
+  "area": "ak_1st_tower_west_tower",
+  "pitch_detail": [
+   {
+    "pitch": "1",
+    "grade": "5-",
+    "lengthM": 50,
+    "notes": "Blocky ground to the base of a gully. This pitch and the next one share their line with the standard mountaineering route."
+   },
+   {
+    "pitch": "2",
+    "grade": "5-",
+    "lengthM": 60,
+    "notes": "Climb the gully, then walk up and left."
+   },
+   {
+    "pitch": "3",
+    "grade": "5.6",
+    "lengthM": 100,
+    "notes": "Walk left to the ridge base (class 2), then go up ledgy terrain."
+   },
+   {
+    "pitch": "4",
+    "grade": "5.7",
+    "lengthM": 55,
+    "notes": "The terrain steepens slightly and finishes with a hand crack."
+   },
+   {
+    "pitch": "5",
+    "grade": "5.8",
+    "lengthM": 40,
+    "notes": "Hand crack in a corner. Beware a hollow flake on the left part way up; going left to finish works, as does straight up."
+   },
+   {
+    "pitch": "6",
+    "grade": "5.8",
+    "lengthM": 60,
+    "notes": "Up a corner or groove to regain the ridge, then continue. The groove is dirtier than what comes before and after; going straight up is thought to be no harder than 5.8 as well."
+   },
+   {
+    "pitch": "7",
+    "grade": "5.9",
+    "lengthM": 60,
+    "notes": "Three chimneys: the first two are easy, the third has a block on top needing wide moves to get around. Traversing right avoids it and is easier."
+   },
+   {
+    "pitch": "8-10",
+    "grade": "5-",
+    "notes": "Exposed, fun but lichenous ridge climbing."
+   },
+   {
+    "pitch": "11",
+    "grade": "4th class",
+    "notes": "Short traverse around the north side of the summit, with a snow patch when climbed. Belay just north of the top."
+   }
+  ],
+  "replace_pitch_detail": true,
+  "review": {
+   "confidence": "medium",
+   "sources": [
+    "https://www.mountainproject.com/route/117349825"
+   ],
+   "source_texts": {
+    "https://www.mountainproject.com/route/117349825": "/Users/nathanbarber/dev/mp-data/_mp/_pitchtext/ak_4th_of_july_ridge.txt"
+   },
+   "changed": "Wrote 9 entries covering 11 pitches (8-10 are one undivided entry). Descent options are not a station list so no rappel table.",
+   "pitch_count_found": 9,
+   "other_findings": "Stored grade 5.8 but P7 chimney is 5.9; stored length 366 m vs text pitch lengths."
+  }
+ },
+ "ak_5390_west_face_all_that_for_a_hand_crack": {
+  "area": "ak_5390_west_face",
+  "pitch_detail": [
+   {
+    "pitch": "1",
+    "anchor": "built anchor below the roof",
+    "notes": "The line follows twin cracks slanting up to the left, just right of a neighbouring route. The pitch is a sea of loose rock and ledges with real rockfall danger. Anchor about 15 feet below the hand-crack roof of the next pitch."
+   },
+   {
+    "pitch": "2",
+    "anchor": "cave ledge",
+    "notes": "More loose rock leads to the roof crack. Place an easy #1 under it and reach high for jams. After the crack, exit right and traverse into a cave formed by two walls, with a ledge to anchor on. Extend your gear to reduce drag. A mantel above the anchor puts you on the snow and the descent line."
+   }
+  ],
+  "replace_pitch_detail": true,
+  "review": {
+   "confidence": "medium",
+   "sources": [
+    "https://www.mountainproject.com/route/202007166"
+   ],
+   "source_texts": {
+    "https://www.mountainproject.com/route/202007166": "/Users/nathanbarber/dev/mp-data/_mp/_pitchtext/ak_5390_west_face_all_that_for_a_hand_crack.txt"
+   },
+   "changed": "Wrote both pitches; no grades or lengths given, so none written.",
+   "pitch_count_found": 2,
+   "other_findings": "none"
+  }
+ },
+ "ak_5390_west_face_f_tea_parties": {
+  "area": "ak_5390_west_face",
+  "pitch_detail": [
+   {
+    "pitch": "1",
+    "grade": "5.9",
+    "anchor": "bolt anchor",
+    "notes": "The pitch opens in a dihedral whose left wall holds a crack; use jams, stems and face holds. Go straight through a notch above to a ledge out left. A little loose rock in the notch."
+   },
+   {
+    "pitch": "2",
+    "grade": "5.7 PG13",
+    "anchor": "trad anchor",
+    "notes": "The route wanders back and forth, drifting a little left, with very sparse gear, hollow flakes and loose rock; pick your line with care. Belay on a trad anchor below the snowy ridge crest, then scramble 5-10 ft to the top."
+   }
+  ],
+  "replace_pitch_detail": true,
+  "review": {
+   "confidence": "high",
+   "sources": [
+    "https://www.mountainproject.com/route/122655950"
+   ],
+   "source_texts": {
+    "https://www.mountainproject.com/route/122655950": "/Users/nathanbarber/dev/mp-data/_mp/_pitchtext/ak_5390_west_face_f_tea_parties.txt"
+   },
+   "changed": "Wrote both pitches. Descent is a walk-off.",
+   "pitch_count_found": 2,
+   "other_findings": "none"
+  }
+ },
+ "ak_5390_west_face_fossilized_potential": {
+  "area": "ak_5390_west_face",
+  "pitch_detail": [
+   {
+    "pitch": "1",
+    "grade": "5.9",
+    "anchor": "built anchor at the gully",
+    "notes": "Follow a diagonal crack through several small roofs, with finger jams, hand jams and an offwidth move or two. Rock is mostly solid but sandy on ledges early on. Where the cracks run out at a small dirty gully, build an anchor and give your partner a short belay across."
+   },
+   {
+    "pitch": "2",
+    "grade": "5.9 PG13",
+    "notes": "Small-cam moves get you onto a golden slab that can be runout. Traverse back and forth using small holds and horizontal cracks for gear. Loose rock near the top; belay just below it and bring your second past you to the snow."
+   }
+  ],
+  "replace_pitch_detail": true,
+  "review": {
+   "confidence": "high",
+   "sources": [
+    "https://www.mountainproject.com/route/200396453"
+   ],
+   "source_texts": {
+    "https://www.mountainproject.com/route/200396453": "/Users/nathanbarber/dev/mp-data/_mp/_pitchtext/ak_5390_west_face_fossilized_potential.txt"
+   },
+   "changed": "Wrote both pitches. Descent is a snow walk, not a rappel.",
+   "pitch_count_found": 2,
+   "other_findings": "none"
+  }
+ },
+ "ak_5390_west_face_four_amigos_aka_5_hours_to_freedom_big_anime_titties_se": {
+  "area": "ak_5390_west_face",
+  "pitch_detail": [
+   {
+    "pitch": "1",
+    "anchor": "ledge belay, no fixed anchor",
+    "notes": "Pick a way up past the bergschrund to a stem box at the start of a right-leaning corner that leads toward the next pitch headwall. Keep climbing around 50 feet, staying in and just outside the corner crack. Several belay spots exist; one ledge was used roughly 150 feet up."
+   },
+   {
+    "pitch": "2",
+    "anchor": "seated belay",
+    "notes": "Go up from the belay to the base of a low-angle, runout scramble that leads to a vertical crack finish. The slab is easy but delicate and unprotected for 30+ feet; a shallow crack then gives the first good gear where it steepens. A crack that gradually widens finishes with a small mantle onto a spot where you belay seated."
+   }
+  ],
+  "replace_pitch_detail": true,
+  "review": {
+   "confidence": "medium",
+   "sources": [
+    "https://www.mountainproject.com/route/201975196"
+   ],
+   "source_texts": {
+    "https://www.mountainproject.com/route/201975196": "/Users/nathanbarber/dev/mp-data/_mp/_pitchtext/ak_5390_west_face_four_amigos_aka_5_hours_to_freedom_big_anime_titties_se.txt"
+   },
+   "changed": "Wrote both pitches; no grades or lengths stated, so none written. Text says it can be broken into 3 pitches.",
+   "pitch_count_found": 2,
+   "other_findings": "none"
+  }
+ },
+ "ak_afternoon_shadow_boxing": {
+  "area": "ak_sunny_side_the",
+  "pitch_detail": [
+   {
+    "pitch": "1",
+    "grade": "5.7",
+    "lengthM": 29,
+    "bolts": 6,
+    "anchor": "2-bolt chain",
+    "notes": "Scramble up about 25 feet to clip the first bolt below a ledge, then climb on good rock before cutting right to the chain anchor."
+   },
+   {
+    "pitch": "2",
+    "grade": "5.6",
+    "lengthM": 29,
+    "anchor": "2-bolt chain",
+    "notes": "Leaving the anchor, go up and leftward to a system of cracks in a band of darker stone. Gear is optional on the moderate moves to the anchor."
+   }
+  ],
+  "replace_pitch_detail": true,
+  "review": {
+   "confidence": "high",
+   "sources": [
+    "https://www.mountainproject.com/route/112361068"
+   ],
+   "source_texts": {
+    "https://www.mountainproject.com/route/112361068": "/Users/nathanbarber/dev/mp-data/_mp/_pitchtext/ak_afternoon_shadow_boxing.txt"
+   },
+   "changed": "Wrote both pitches. Descent is two rappels, with no per-station detail, so no rappel table.",
+   "pitch_count_found": 2,
+   "other_findings": "none"
+  }
+ },
+ "ak_an_icefield_pirates_life": {
+  "area": "ak_split_thumb",
+  "pitch_detail": [
+   {
+    "pitch": "1",
+    "lengthM": 40,
+    "notes": "Several variations: splitter 0.75-size cracks, wide laybacks into a squeeze chimney, or 0.3 pieces in a corner to hands pulling a lip, ending on a lower-angle scree slope."
+   },
+   {
+    "pitch": "2",
+    "grade": "5th class",
+    "notes": "Fifth-class scrambling past ledges and slabs toward a large tower; pass it on the left or tunnel through from the right."
+   },
+   {
+    "pitch": "3",
+    "lengthM": 15,
+    "notes": "Anchor on an excellent ledge beneath a left-facing corner. The steep, varied cracks run between projecting rock fins. After a mantle, fourth-class climbing reaches the southeast ridge."
+   }
+  ],
+  "replace_pitch_detail": true,
+  "review": {
+   "confidence": "medium",
+   "sources": [
+    "https://www.mountainproject.com/route/119567157"
+   ],
+   "source_texts": {
+    "https://www.mountainproject.com/route/119567157": "/Users/nathanbarber/dev/mp-data/_mp/_pitchtext/ak_an_icefield_pirates_life.txt"
+   },
+   "changed": "Wrote all three pitches; grade given only for P2. Descent: rappel the route, no station list.",
+   "pitch_count_found": 3,
+   "other_findings": "none"
+  }
+ },
+ "ak_anchor_man": {
+  "area": "ak_sunny_side_the",
+  "pitch_detail": [
+   {
+    "pitch": "1",
+    "grade": "5.9",
+    "lengthM": 27,
+    "bolts": 6,
+    "anchor": "2-bolt chain",
+    "crux": true,
+    "notes": "Starts six feet right of a big rotten dihedral. Scramble to the technical base and clip a bolt 10 feet up. Climb a series of bulges, then move right at the top to the chain anchor."
+   },
+   {
+    "pitch": "2",
+    "grade": "5.6",
+    "lengthM": 32,
+    "bolts": 2,
+    "anchor": "2 bolts",
+    "notes": "From the belay ledge go up and right past perfect steps, then easy scrambling on smooth rock to the upper anchor."
+   }
+  ],
+  "replace_pitch_detail": true,
+  "review": {
+   "confidence": "high",
+   "sources": [
+    "https://www.mountainproject.com/route/112361643"
+   ],
+   "source_texts": {
+    "https://www.mountainproject.com/route/112361643": "/Users/nathanbarber/dev/mp-data/_mp/_pitchtext/ak_anchor_man.txt"
+   },
+   "changed": "Wrote both pitches. Descent: walk left 30 ft to a chain anchor and rappel twice; no station list.",
+   "pitch_count_found": 2,
+   "other_findings": "none"
+  }
+ },
+ "ak_artic_oven_lovin": {
+  "area": "ak_sunny_side_the",
+  "pitch_detail": [
+   {
+    "pitch": "1",
+    "grade": "5.6",
+    "lengthM": 29,
+    "anchor": "2-bolt chain",
+    "notes": "Get onto a ledge by scrambling, then take a crack that angles gently rightward. Halfway up, break left onto a new crack to the anchor ledge. Good for learning to place gear."
+   },
+   {
+    "pitch": "2",
+    "grade": "5th class",
+    "lengthM": 30,
+    "anchor": "2 bolts",
+    "notes": "From the chain anchor go up and right to a nut placement, then follow sparse gear to the anchor."
+   }
+  ],
+  "replace_pitch_detail": true,
+  "review": {
+   "confidence": "high",
+   "sources": [
+    "https://www.mountainproject.com/route/112360689"
+   ],
+   "source_texts": {
+    "https://www.mountainproject.com/route/112360689": "/Users/nathanbarber/dev/mp-data/_mp/_pitchtext/ak_artic_oven_lovin.txt"
+   },
+   "changed": "Wrote both pitches. Descent: walk left 25 ft to a chain anchor, two rappels; no table.",
+   "pitch_count_found": 2,
+   "other_findings": "none"
+  }
+ },
+ "ak_balaclava_joy": {
+  "area": "ak_sunny_side_the",
+  "pitch_detail": [
+   {
+    "pitch": "1",
+    "grade": "5.6",
+    "lengthM": 30,
+    "bolts": 2,
+    "anchor": "2-bolt chain",
+    "notes": "About 22 feet of broken ground before the first bolt. The upper half takes excellent gear going straight up to the anchor ledge."
+   },
+   {
+    "pitch": "2",
+    "grade": "5th class",
+    "lengthM": 30,
+    "bolts": 2,
+    "anchor": "2 bolts",
+    "notes": "The first bolt is 20 feet above the belay, reached by trending up and left; then go directly up to the anchor."
+   }
+  ],
+  "replace_pitch_detail": true,
+  "review": {
+   "confidence": "high",
+   "sources": [
+    "https://www.mountainproject.com/route/112360723"
+   ],
+   "source_texts": {
+    "https://www.mountainproject.com/route/112360723": "/Users/nathanbarber/dev/mp-data/_mp/_pitchtext/ak_balaclava_joy.txt"
+   },
+   "changed": "Wrote both pitches. Descent: walk left 25 ft to a chain anchor, two rappels; no table.",
+   "pitch_count_found": 2,
+   "other_findings": "none"
+  }
+ },
+ "ak_balancing_act_west_tower": {
+  "area": "ak_1st_tower_west_tower",
+  "pitch_detail": [
+   {
+    "pitch": "1",
+    "grade": "5.7",
+    "notes": "Climb a gully on 5.7 terrain to an intermediate ledge."
+   },
+   {
+    "pitch": "2",
+    "grade": "5.10",
+    "notes": "Go through an offwidth to a low-angle gully system leading to the upper faces; scramble the gully to the base of the upper faces."
+   },
+   {
+    "pitch": "3",
+    "grade": "5.8",
+    "notes": "Climb to the base of a razor-edge flake that leads up and left."
+   },
+   {
+    "pitch": "4",
+    "grade": "5.9",
+    "notes": "Follow the razor-edge flake up and left toward a prominent red arete two pitches away."
+   },
+   {
+    "pitch": "5",
+    "grade": "5.11",
+    "notes": "Boulder moves off the belay reach a large flake toward the red corner system. Climb a thin right-facing corner, then traverse right under a roof to the belay."
+   },
+   {
+    "pitch": "6",
+    "grade": "5.11",
+    "notes": "A thin crack with face moves climbs the red wall inside a big right-facing corner; traverse left to the arete when possible, climb it into a shallow corner, and belay below the final roof."
+   },
+   {
+    "pitch": "7",
+    "grade": "5.10",
+    "notes": "Climb the final roof around a chockstone to easier ridge terrain; likely links with pitch 6."
+   }
+  ],
+  "replace_pitch_detail": true,
+  "review": {
+   "confidence": "high",
+   "sources": [
+    "https://www.mountainproject.com/route/111623732"
+   ],
+   "source_texts": {
+    "https://www.mountainproject.com/route/111623732": "/Users/nathanbarber/dev/mp-data/_mp/_pitchtext/ak_balancing_act_west_tower.txt"
+   },
+   "changed": "Wrote all seven pitches; no lengths, bolts or anchors given. Descent is down the face left of the route, no rappels listed.",
+   "pitch_count_found": 7,
+   "other_findings": "none"
+  }
+ },
+ "ak_breaching": {
+  "area": "ak_whale_beak_buttress",
+  "pitch_detail": [
+   {
+    "pitch": "1",
+    "grade": "5.6",
+    "anchor": "2 bolts",
+    "notes": "Rated 5.6 and nicknamed for its looseness, so expect poor rock. Ends at a two-bolt anchor."
+   },
+   {
+    "pitch": "2",
+    "grade": "5.8",
+    "anchor": "2 bolts",
+    "notes": "Rated 5.8 and nicknamed for cramped climbing. Ends at a two-bolt anchor."
+   },
+   {
+    "pitch": "3",
+    "grade": "5.10",
+    "anchor": "2 bolts",
+    "crux": true,
+    "notes": "The hardest pitch at 5.10, with two bolts noted. Ends at a two-bolt anchor."
+   }
+  ],
+  "replace_pitch_detail": true,
+  "review": {
+   "confidence": "medium",
+   "sources": [
+    "https://www.mountainproject.com/route/113367331"
+   ],
+   "source_texts": {
+    "https://www.mountainproject.com/route/113367331": "/Users/nathanbarber/dev/mp-data/_mp/_pitchtext/ak_breaching.txt"
+   },
+   "changed": "Wrote three pitches from a very brief text; notes are thin. The 2 bolts on P3 might be the anchor, so no bolt count written.",
+   "pitch_count_found": 3,
+   "other_findings": "none"
+  }
+ },
+ "skip_reasons": {
+  "ak_6th_tower_accidental_alpinism": "no per-pitch text (only P1 start and an overall pitch/rappel count)",
+  "ak_747_peak_kuriositeten": "narrative trip report; only two pitches plus simul blocks, cannot map to the stored 4 pitches"
+ }
+}
