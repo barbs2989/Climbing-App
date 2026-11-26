@@ -1,387 +1,984 @@
 {
-  "co_wheeler_mountain_proper_dose": {
-    "area": "co_wheeler_mountain",
-    "pitch_detail": [
-      {"pitch": "1", "notes": "Starts as a slabby face with some cracks, heading for the small roof about halfway up. Protect with micro nuts and small cams."},
-      {"pitch": "2", "notes": "Pass the roof on its climber's-right side and join the ice flow. Reach a ledge, then keep following the thin ice to the top. A stubby ice screw can help when the ice is in mid-season shape."}
-    ],
-    "replace_pitch_detail": true,
-    "review": {
-      "confidence": "medium",
-      "sources": ["https://www.mountainproject.com/route/118691891"],
-      "source_texts": {"https://www.mountainproject.com/route/118691891": "/Users/nathanbarber/dev/mp-data/_mp/_pitchtext/co_wheeler_mountain_proper_dose.txt"},
-      "changed": "Wrote both pitches with notes only; no per-pitch grades, lengths or anchors are stated so none were added. No rappel table (descent is a walk or downclimb).",
-      "pitch_count_found": 2,
-      "other_findings": "none"
-    }
-  },
-  "id_beehive_lake_area_the_dodgy_selkirk_boys": {
-    "area": "id_beehive_lake_area",
-    "pitch_detail": [
-      {"pitch": "1", "grade": "5.7/5.8 R", "lengthM": 45, "notes": "Opening lead of about 45 m, mostly 5.7 with a sketchy, poorly protected 5.8 stretch. Belay from a bolted station."},
-      {"pitch": "2", "grade": "5.0", "lengthM": 10, "notes": "Short easy traverse across a detached block, about 10 m, to the next belay."},
-      {"pitch": "3", "grade": "5.8 PG", "lengthM": 45, "anchor": "bolts", "notes": "Main pitch of the route. Go up and right from the belay and put a #2 behind an undercling flake, continuing right past water streaks that are wet in June and dry by mid-July. Find the in-cut right-hand edge near the little sapling and pull straight up the bulge; it is runout until you are over it. A good rest with small gear follows. Then work back left with many slings into the main dihedral: mostly 5.7, with one thin section, then a hand crack through a notch to the belay. The anchor sits high, which helps pull the rope when rappelling."},
-      {"pitch": "4", "grade": "5.8", "lengthM": 20, "notes": "Move up and slightly left from the belay to a stance with plenty of good gear, then pass a bulge to the top."}
-    ],
-    "replace_pitch_detail": true,
-    "review": {
-      "confidence": "high",
-      "sources": ["https://www.mountainproject.com/route/126597975"],
-      "source_texts": {"https://www.mountainproject.com/route/126597975": "/Users/nathanbarber/dev/mp-data/_mp/_pitchtext/id_beehive_lake_area_the_dodgy_selkirk_boys.txt"},
-      "changed": "Wrote 4 pitches with stated grades and lengths. No rappel table: the text only gives 3 rappels with double ropes, not station by station. A bolted runnel variation and the offwidth attempt were left out.",
-      "pitch_count_found": 4,
-      "other_findings": "none"
-    }
-  },
-  "id_bighorn_crags_litner_group_of_peaks_pace_setter": {
-    "area": "id_bighorn_crags_litner_group_of_peaks",
-    "pitch_detail": [
-      {"pitch": "1", "grade": "5.7", "notes": "Climb good rock left of the dike to a small tree at the dike. Can be linked with pitch 2 as one 60 m lead."},
-      {"pitch": "2", "grade": "5.8", "notes": "Follow the dike to a big ledge, then move left to a large tree with better rock for an anchor."},
-      {"pitch": "3", "grade": "5.9", "notes": "Pull a boulder move off the ledge and go through the roof at 5.9. Can be linked with pitch 4 for a 60 m lead."},
-      {"pitch": "4", "grade": "5.9", "notes": "Boulder-style finger crack to a belay at a huge tree and ledge."},
-      {"pitch": "5", "grade": "5.8", "notes": "Chimney and dihedral to a ledge. Can be linked with pitch 6 for a 60 m lead."},
-      {"pitch": "6", "grade": "5.6", "notes": "Easy ramble up to a broken chimney."},
-      {"pitch": "7", "grade": "5.7", "notes": "Blocky gully to the lower col."},
-      {"pitch": "8", "grade": "5.8", "lengthM": 40, "notes": "Hand crack on the east side of the tower, to the upper col. Can be combined with pitch 9 for a 60 m lead."},
-      {"pitch": "9", "grade": "5.9", "lengthM": 20, "notes": "Summit block with hands and fingers. No protection is available on the very top."}
-    ],
-    "replace_pitch_detail": true,
-    "rappel_detail": [
-      {"n": 1, "lengthM": 60, "anchor": "fixed anchor just below the summit", "station": "2 m below the top", "notes": "Downclimb from the summit to the anchor, then rappel to a large tree in the east gully."},
-      {"n": 2, "lengthM": 60, "anchor": "large tree", "station": "east gully", "notes": "Rappel off a big tree in the gully."},
-      {"n": 3, "lengthM": 60, "anchor": "large tree", "station": "east gully", "notes": "Rappel off another big tree."},
-      {"n": 4, "lengthM": 60, "anchor": "large tree", "station": "east gully", "notes": "Rappel off another big tree."},
-      {"n": 5, "lengthM": 60, "anchor": "large tree", "station": "east gully", "notes": "Last rappel off a tree, reaching the base."}
-    ],
-    "review": {
-      "confidence": "medium",
-      "sources": ["https://www.mountainproject.com/route/124699414"],
-      "source_texts": {"https://www.mountainproject.com/route/124699414": "/Users/nathanbarber/dev/mp-data/_mp/_pitchtext/id_bighorn_crags_litner_group_of_peaks_pace_setter.txt"},
-      "changed": "Wrote 9 pitches; lengths only where stated (pitches 8 and 9). Rappels: first from the fixed anchor, then 4 more 60 m rappels off trees; no per-rappel anchor details beyond tree.",
-      "pitch_count_found": 9,
-      "other_findings": "none"
-    }
-  },
-  "id_blue_rock_dome_probable_prow_variation": {
-    "area": "id_blue_rock_dome",
-    "pitch_detail": [
-      {"pitch": "1", "grade": "5.10", "lengthM": 40, "notes": "Begin in a right-leaning crack that goes up, hard right, then straight up. Of the two traverse options, the higher one was used. Belay on a comfortable spot above the big flake; an old fixed nut and some webbing sit near this anchor."},
-      {"pitch": "2", "grade": "5.9", "lengthM": 20, "notes": "Straight-up options are harder than 5.11 or very dirty, so go right over loose rock and traverse back left. The hardest moves are fairly clean. Build a belay on a comfortable ledge."},
-      {"pitch": "3", "grade": "5.11-", "lengthM": 40, "crux": true, "notes": "Traverse hard left from the belay, then trend up and left to the top of an offwidth roof; no offwidth moves are needed. Climb a left-facing corner to a bulge with the crux over small gear. Gear placements may need cleaning with a nut tool. Belay is uncomfortable, below the next bulge."},
-      {"pitch": "4", "grade": "5.11", "lengthM": 20, "notes": "Of four corners above the belay, take the second from the left. The slab cruxes in a right-facing corner go with pull-up style moves over small gear. Harder than pitch 3 but shorter, with more small-gear options. Belay on a slab with gear in the corner."},
-      {"pitch": "5", "grade": "5.10", "lengthM": 30, "notes": "Climb the middle crack to a chockstone right above the belay; it is more solid than it looks. Continue on easier ground to a ledge with a bush. Some holds need clearing."},
-      {"pitch": "6", "grade": "5.8", "lengthM": 35, "notes": "Go straight up to a tombstone block, climb a right-facing corner, traverse left where easy around a second tombstone, then up to another slab. Belay where comfortable."},
-      {"pitch": "7", "grade": "5.10", "lengthM": 50, "notes": "Climb the crack, with some loose spots, to the left side of the Mohawk feature. Continue up a splitter corner to a ledge with another tombstone, then a 10 ft step to a roomy ledge scattered with rocks."},
-      {"pitch": "8", "grade": "5.5", "lengthM": 20, "notes": "Cut around the right side of the false summit to reach the main summit."}
-    ],
-    "replace_pitch_detail": true,
-    "review": {
-      "confidence": "high",
-      "sources": ["https://www.mountainproject.com/route/122908926"],
-      "source_texts": {"https://www.mountainproject.com/route/122908926": "/Users/nathanbarber/dev/mp-data/_mp/_pitchtext/id_blue_rock_dome_probable_prow_variation.txt"},
-      "changed": "Wrote 8 pitches with stated grades and lengths. No rappel table; descent is a walk-off.",
-      "pitch_count_found": 8,
-      "other_findings": "Stored descent_text is null but the text gives a walk-off down the east side of the dome."
-    }
-  },
-  "id_east_face_kaniksu_jiu_jitsu": {
-    "area": "id_east_face",
-    "pitch_detail": [
-      {"pitch": "1", "grade": "5.8/5.9", "lengthM": 60, "anchor": "bolts", "notes": "Nearly all bolted, with singles in .75, .3 and .1 helpful. Start on a low-angle slab, enter a left-facing corner after the second bolt (a .75 protects the exit), then trend right to a layback flake where a .3 or small totem fits. Layback up it to the juniper ledge, then go right clipping bolts to the belay. A bolted rappel station sits on the left of the ledge."},
-      {"pitch": "2", "grade": "5.10c", "lengthM": 7, "notes": "All bolted. Go left from the belay, then traverse slightly back right to a position above the leader and clip the first bolt. Clip the second from a knob, make a thin move onto a stance, then trend right and finish with a hard mantel."},
-      {"pitch": "3", "grade": "5.10d-5.11c", "lengthM": 65, "crux": true, "notes": "Hardest pitch; the grade is undecided, between 5.10d and 5.11c. A 70 m rope is needed, though a gear anchor can be built partway for a 60 m rope. Traverse up and right on a thin seam to a pedestal stance, clip a high bolt, and face the crux, which probably depends on height: layback to the undercling and deadpoint to a bucket, or stem up and pounce. Rest after the jug with two good .3/.4 cams, then go up to a clip stance and make a tricky move left into the chimney alcove. Finish with trad gear: chimney up, jam out the roof, then 5.8/5.9 to the top."}
-    ],
-    "replace_pitch_detail": true,
-    "review": {
-      "confidence": "high",
-      "sources": ["https://www.mountainproject.com/route/201359912"],
-      "source_texts": {"https://www.mountainproject.com/route/201359912": "/Users/nathanbarber/dev/mp-data/_mp/_pitchtext/id_east_face_kaniksu_jiu_jitsu.txt"},
-      "changed": "Wrote 3 pitches. No rappel table: text says double-rope rappel only, not station by station.",
-      "pitch_count_found": 3,
-      "other_findings": "Stored grade 5.11a; text gives the crux pitch as undecided 5.10d to 5.11c."
-    }
-  },
-  "id_east_face_of_gunsight_peak_winchester": {
-    "area": "id_east_face_of_gunsight_peak",
-    "pitch_detail": [
-      {"pitch": "1", "crux": true, "notes": "Steep, clean climbing with a mantel crux. Place gear high, downclimb a little, then edge out into the leftward traverse and make the mantel. Belay at the base of the right-slanting roof after you crawl up and straddle the large flake."},
-      {"pitch": "2", "notes": "Go through a dirty roof using good in-cut holds on its right side. Above is lower-angle ground broken by steep moves with so-so protection and some shrubbery. Parties have linked this and the next section as one simul pitch, but the climbing is insecure, so a belayed lead is better."}
-    ],
-    "replace_pitch_detail": true,
-    "review": {
-      "confidence": "medium",
-      "sources": ["https://www.mountainproject.com/route/126362945"],
-      "source_texts": {"https://www.mountainproject.com/route/126362945": "/Users/nathanbarber/dev/mp-data/_mp/_pitchtext/id_east_face_of_gunsight_peak_winchester.txt"},
-      "changed": "Wrote the 2 pitches the text describes; no grades, lengths or anchors stated per pitch. A third pitch is not described so none was added.",
-      "pitch_count_found": 2,
-      "other_findings": "Stored pitches=3 but text describes 2 pitches (and mentions doing the route in two by simuling)."
-    }
-  },
-  "id_east_face_the_royal_wilder": {
-    "area": "id_east_face",
-    "pitch_detail": [
-      {"pitch": "1", "notes": "Starts below an arch. Climb up, place gear where you can, clip the first bolt and move left, then go up clipping two more bolts. The third bolt is around the slab crux; read the features carefully since the line sometimes traverses nearly downward. Ramps with lichen lead to a belay below a roof with a crack out its right side. Bolted on lead."},
-      {"pitch": "2", "crux": true, "notes": "Belay on the starting ledge with a bolt and a piece in the roof. Climb to the roof and out its right side, then up a corner. The crux is a rightward mantel out of the corner onto a small ledge, followed by a step right into a second corner that takes tiny TCUs or ballnuts and is easy. The pitch can be split at the base of that second corner, using thin pieces. With a 60 m rope and good slinging it reaches the top in one lead. The last 50 ft are steep, with a #2-3 cam for the bulge and finger to off-hand pieces above. Belay off a horn on the cirque crest."}
-    ],
-    "replace_pitch_detail": true,
-    "rappel_detail": [
-      {"n": 1, "anchor": "horn on the cirque crest", "station": "top of the route", "notes": "Carry 8 to 10 ft of cord or sling for the horn; sun damage wears it out each season. Double ropes are preferred. Rappelling east lands on the top of pitch 1."},
-      {"n": 2, "station": "top of pitch 1", "notes": "Second rappel on the east side reaches the ground."}
-    ],
-    "review": {
-      "confidence": "medium",
-      "sources": ["https://www.mountainproject.com/route/201360080"],
-      "source_texts": {"https://www.mountainproject.com/route/201360080": "/Users/nathanbarber/dev/mp-data/_mp/_pitchtext/id_east_face_the_royal_wilder.txt"},
-      "changed": "Wrote 2 pitches without grades or lengths (none stated per pitch). Rappel table has 2 stations for the east-side descent; no anchor type for the top-of-P1 station, no lengths.",
-      "pitch_count_found": 2,
-      "other_findings": "none"
-    }
-  },
-  "id_elephant_s_perch_the_pandemonium_palace": {
-    "area": "id_elephant_s_perch_the",
-    "pitch_detail": [
-      {"pitch": "1", "grade": "5.9", "notes": "Hand crack in a left-facing corner, then an unprotected 5.9 chimney to a decent stance. The topo puts the belay near the bolts on the second pitch, but a belay in the crack system to the right, atop the squeeze chimney and about 25 ft below the bolts, saves your #3 and #4 cams for the next pitch."},
-      {"pitch": "2-3", "grade": "5.11", "crux": true, "notes": "Follow the left-arching hand and fist crack to two bolts; the first is good, the second is not. The awkward offwidth section here is the crux: work through until a #4 can go above your head, layback the crack, make one more hard sequence back into the corner and follow the crack under the roof. Rock beneath the roof is poor, so link into the next 5.9 pitch to the bolted belay. The bolts are bad, so a gear belay in the crack is better. Three #3 cams help here."},
-      {"pitch": "4-5", "grade": "5.10+", "notes": "Climb the crack above and traverse left on ledges to a small roof. Place a piece and face climb sloping edges to a big ledge. Continue left to a roof with a tree beneath it, go out the small roof and up the crack to a large ledge."},
-      {"pitch": "6-7", "grade": "5.9 R", "notes": "Go right from the belay with no gear, 5.7 face moves up a shallow left-facing corner to a ledge. Place pieces at your feet and commit to slab moves where a fall is serious. Clip a poor bolt, more moves, another poor bolt, then big pockets with some gear and a dirty left-facing corner to a ledge. You can stop here or climb 60 more feet of easy crack to the top."}
-    ],
-    "replace_pitch_detail": true,
-    "review": {
-      "confidence": "medium",
-      "sources": ["https://www.mountainproject.com/route/124897467"],
-      "source_texts": {"https://www.mountainproject.com/route/124897467": "/Users/nathanbarber/dev/mp-data/_mp/_pitchtext/id_elephant_s_perch_the_pandemonium_palace.txt"},
-      "changed": "Text uses topo pitch numbers but groups them into 4 linked leads (1, 2-3, 4-5, 6-7); wrote those 4 entries, not 8. No lengths stated. No rappel table (none described).",
-      "pitch_count_found": 4,
-      "other_findings": "Stored pitches=8 (topo count); the text recommends 4 or 5 leads. Text says 5 of the 6 bolts on the route are unreliable."
-    }
-  },
-  "id_harkness_canyon_herald_angels_sing": {
-    "area": "id_harkness_canyon",
-    "pitch_detail": [
-      {"pitch": "1", "grade": "5.8", "notes": "Climb the left side of the low-angle ramp to the tree. Rock is somewhat loose until the hand crack, where it turns good with solid cam placements. Continue to a wide section with a chockstone, a pitch of about 70 to 80 ft. Belay there, or put a #2 on a long sling and step about 5 ft right to a ledge. Loose rock around the belay ledge: watch for falling debris."},
-      {"pitch": "2", "grade": "5.9", "crux": true, "notes": "Varied pitch of roughly 90 to 100 ft. Work through the wide part and follow the crack as it angles left, hand-jamming with great protection on clean rock. The crux comes just before the top-out and is well protected. Belay from trees with long slings."}
-    ],
-    "replace_pitch_detail": true,
-    "rappel_detail": [
-      {"n": 1, "anchor": "large pine with slings and quick links", "station": "north of the top", "notes": "Walk north to the pine and make a single rappel with a 60 m rope."}
-    ],
-    "review": {
-      "confidence": "high",
-      "sources": ["https://www.mountainproject.com/route/121746697"],
-      "source_texts": {"https://www.mountainproject.com/route/121746697": "/Users/nathanbarber/dev/mp-data/_mp/_pitchtext/id_harkness_canyon_herald_angels_sing.txt"},
-      "changed": "Wrote 2 pitches; lengths are stated as ranges in feet so left in notes only. One rappel station written.",
-      "pitch_count_found": 2,
-      "other_findings": "none"
-    }
-  },
-  "id_harrison_peak_gendarme_east": {
-    "area": "id_harrison_peak",
-    "pitch_detail": [
-      {"pitch": "1", "grade": "5.7", "notes": "Scramble about 30 ft up the slab and right to place gear in the big left-facing flake. At the first break, climb past vegetation onto the flake, up a dirty finger crack to a vegetated ledge (you may be able to stay on the flake). Protection is a bit thin. Follow the ledge left to a large snag and giant hollow flake; the snag is a solid anchor and can be backed up. The pitch is long, perhaps 160 ft, near 50 m, so a rope-stretching lead."},
-      {"pitch": "2", "grade": "5.8", "crux": true, "notes": "Meander up flakes and slab to a left-leaning corner crack, then make balancy, awkward moves around the bulge, which is the crux and protects well, to reach the ridge. Belay from a tree or boulder. Roughly 60 ft."}
-    ],
-    "replace_pitch_detail": true,
-    "review": {
-      "confidence": "medium",
-      "sources": ["https://www.mountainproject.com/route/123230194"],
-      "source_texts": {"https://www.mountainproject.com/route/123230194": "/Users/nathanbarber/dev/mp-data/_mp/_pitchtext/id_harrison_peak_gendarme_east.txt"},
-      "changed": "Wrote 2 pitches; lengths are hedged estimates in the text (marked with question marks) so kept in notes only. No rappel table: only a suggestion to rap the route, double-rope if needed.",
-      "pitch_count_found": 2,
-      "other_findings": "Stored length 67 m total; text estimates about 160 ft + 60 ft which is about 67 m, consistent."
-    }
-  },
-  "id_mt_idaho_east_face_mountaineer_s_route": {
-    "area": "id_mt_idaho",
-    "pitch_detail": [
-      {"pitch": "1", "notes": "Climb past a short slab to a large crack that leads to a roof. Build the anchor below the roof."},
-      {"pitch": "2", "notes": "Traverse right beneath the roof and around to the dark band of rock, which is the best rock on the route: black limestone with great edges and exposure. Then traverse left and up a small gully to the start of pitch 3; watch for rockfall."},
-      {"pitch": "3", "notes": "Climb the crack to a large chimney with two big chockstones. Go through the chimney or on the cleaner face just right of it."},
-      {"pitch": "4", "notes": "Trend left to avoid the steep roof and reach the narrow gully that leads to the summit of the east face."},
-      {"pitch": "5", "notes": "Climb the narrow chimney to the east-face summit, taking care not to knock rocks down the gully onto your partner. The true summit lies along the ridge, which is tricky; staying low on it avoids big cliff-outs."}
-    ],
-    "replace_pitch_detail": true,
-    "review": {
-      "confidence": "medium",
-      "sources": ["https://www.mountainproject.com/route/123019189"],
-      "source_texts": {"https://www.mountainproject.com/route/123019189": "/Users/nathanbarber/dev/mp-data/_mp/_pitchtext/id_mt_idaho_east_face_mountaineer_s_route.txt"},
-      "changed": "Wrote 5 pitches with notes only; no per-pitch grades or lengths are given (overall mostly 5.5-5.7 with a few 5.8 moves). No rappel table (walk-off descent).",
-      "pitch_count_found": 5,
-      "other_findings": "none"
-    }
-  },
-  "id_north_face_elephant_graveyard": {
-    "area": "id_north_face",
-    "pitch_detail": [
-      {"pitch": "1", "grade": "A1/C2", "lengthM": 50, "anchor": "2 bolts", "notes": "Shallow dihedral just right of the main left-facing corner system in the center of the wall. About 30 m of easy C1, passing a couple of older anchor bolts, then 20 m more past an awkward flared chimney. Just before the chimney the crack pinches and a beak keeps it relaxed. Belay on a small ledge with 2 bolts."},
-      {"pitch": "2", "grade": "A2", "lengthM": 45, "anchor": "2 bolts", "notes": "Follow the crack above the bolts; it gets cleaner and cuts diagonally up and left with great gear to a big comfortable ledge at mid-pitch. Some nailing and small cams lead through the face to a left-trending roof feature. A crux step around a corner or arete gives way to easier chimney climbing, ending at a 2-bolt anchor on the left."},
-      {"pitch": "3", "grade": "C1, low 5th", "lengthM": 25, "anchor": "2 bolts", "notes": "Step right back into the corner and flare; a few awkward moves lead to a low fifth-class ramp. Go up it to the apex behind the triangular tower and down the other side to a ledge with 2 bolts. When hauling, flip the haul line over the tower and lower the bags out about 60-70 ft."},
-      {"pitch": "4", "grade": "C1", "lengthM": 30, "anchor": "3 bolts", "notes": "Step right around the corner and down to a ledge, then follow the main corner system up through a roof and into a small alcove. A right step, 20 more feet, then a break right at a horizontal into the next corner system. Follow it to the top of the second tower and a comfortable 3-bolt belay."},
-      {"pitch": "5", "grade": "A2", "lengthM": 30, "anchor": "2 bolts", "notes": "From the tower, make an airy step left to a bolt above the roof (long reach); two more bolts and 2 rivets reach a nailing crack. Beaks, pins and small cams lead up and left, then onto a sloping ledge (a rivet helps) and a bolt. A rivet ladder crosses the face, with 1 bolt midway, to a corner system leading back left to the anchor."},
-      {"pitch": "6", "grade": "A2+", "lengthM": 20, "crux": true, "anchor": "2 bolts", "notes": "Sustained, steep and exposed. Clip the fixed LA and traverse the roof right, using thin nailing and a cam hook to a rivet; a big blind reach gains the crack above. Traverse left on pins and small cams (plus 1 rivet), then step into thin seams on the orange headwall with many beaks and 3 rivets, up to a bolt, then 2 rivets to a 2-bolt anchor below the lip."}
-    ],
-    "replace_pitch_detail": true,
-    "rappel_detail": [
-      {"n": 1, "anchor": "triangular tower anchor", "station": "base of pitch 5", "notes": "Double-rope rappel from the top of the route. Leave one rope end fixed at the bottom of pitch 5 so you can get back in to the face."},
-      {"n": 2, "lengthM": 50, "anchor": "anchor bolts off route", "station": "ledge right of the route", "notes": "Double-rope rappel to bolts on a steep face above a ledge, 50 m straight down and to the right of the route."},
-      {"n": 3, "anchor": "bolts halfway up pitch 1", "station": "mid pitch 1", "notes": "Double-rope rappel to the bolts passed halfway through pitch 1."},
-      {"n": 4, "lengthM": 30, "station": "ground", "notes": "Single-rope rappel to the ground. Alternatively, from the base of pitch 5 rappel 30 m to the base of pitch 4 (swing left to reach it), then a double-rope rappel to the top of pitch 1, then one to the ground."}
-    ],
-    "review": {
-      "confidence": "high",
-      "sources": ["https://www.mountainproject.com/route/126753178"],
-      "source_texts": {"https://www.mountainproject.com/route/126753178": "/Users/nathanbarber/dev/mp-data/_mp/_pitchtext/id_north_face_elephant_graveyard.txt"},
-      "changed": "Wrote 6 pitches and 4 rappel stations from the stated descent.",
-      "pitch_count_found": 6,
-      "other_findings": "Stored descent_text lists two stops; the text has 4 rappels including an off-route anchor 50 m down and a single-rope rap to the ground. Stored length 198 m; pitch lengths sum to 200 m."
-    }
-  },
-  "id_north_face_gunsight_peak_chore_of_enchantment": {
-    "area": "id_north_face_gunsight_peak",
-    "pitch_detail": [
-      {"pitch": "1", "grade": "5.10a", "lengthM": 70, "notes": "About 70 m, climbable with a 60 m rope by simuling a short easy stretch. The first bolt is placed high. Start at an arch in the middle of the face, tracing the right-leaning diagonal crack down; climb on the right side of the shallow corner system. A tightly spaced pair of bolts sits at the hardest spot, added because a fall there could hit the slab below."},
-      {"pitch": "2", "grade": "5.10d/5.11a", "lengthM": 30, "notes": "The pitch with the most tricky sequence. After the first bolt, pull around the corner onto the face to a right-hand side pull and clip the second bolt. Ignore the third bolt until past the crux. Instead, move right to a bulbous feature with a horizontal pinch and side pull, shift a little further right to a good side pull, and deadpoint to a bucket edge. Then stand on the bulbous feature, clip the third bolt and traverse back left."},
-      {"pitch": "3", "grade": "5.7", "lengthM": 18, "notes": "Route-finding is a little tricky, so go slowly. Leads to a belay under the huge roof across the middle of the face."},
-      {"pitch": "4", "grade": "5.10c", "notes": "Traverse pitch of 40 to 100 ft, often wet, with close, solid bolts. The hard part is reaching a locking finger jam in the corner above the slab traverse and pulling into the corner, then right. An optional belay is at the end of the traverse. To link on to the long ledge, back-clean the easy bolts; a weaker party should stop at the stance, since the rope runs over a sharp roof edge and back-cleaning could swing the second."},
-      {"pitch": "5", "grade": "5.10b/c", "lengthM": 37, "notes": "From the horizontal ledge, move right to the first bolt below an undercling flake and back-clean the first two draws. Undercling, then go up the left-facing flake; a spare bolt at its top can be slung or skipped by stemming left through a burly bulge. Traverse left to a small roof and 5.8 flakes to an optional belay. Continue: exit right, traverse left, then move right onto two flakes; clip the high bolt at the second flake for a big left-hand deadpoint, then a jug and an alcove belay."},
-      {"pitch": "6", "grade": "5.10c", "lengthM": 30, "notes": "Go right from the belay: a high right-hand pinch and a left-hand side pull, clip the second bolt and move left around the bulge. Physical, sometimes slightly overhanging climbing leads to the belay ledge just below the summit."}
-    ],
-    "replace_pitch_detail": true,
-    "review": {
-      "confidence": "high",
-      "sources": ["https://www.mountainproject.com/route/203877262"],
-      "source_texts": {"https://www.mountainproject.com/route/203877262": "/Users/nathanbarber/dev/mp-data/_mp/_pitchtext/id_north_face_gunsight_peak_chore_of_enchantment.txt"},
-      "changed": "Wrote 6 pitches, lengths converted from feet where given. No crux flags: the text names hard moves per pitch but not one route crux. No rappel table: only 'four double-rope rappels' is stated, not station by station.",
-      "pitch_count_found": 6,
-      "other_findings": "Stored discipline is sport but protection list is draws only, which fits. Pitch lengths sum to roughly 235 m."
-    }
-  },
-  "id_north_face_rafiki_s_wisdom": {
-    "area": "id_north_face",
-    "pitch_detail": [
-      {"pitch": "1", "grade": "A1/C2", "lengthM": 55, "anchor": "2 bolts", "notes": "Climb the left-facing corner toward the roof, getting harder higher up. After a fixed pin, step down and left onto a ledge, walk it left 15 ft, then climb up and slightly right (5.7) to the roof. Traverse left out the roof to turn the lip, continue up the angling corner to the edge of the big roof where a thin nailing seam appears, then make an awkward step left into the large left-facing dihedral. Ten more feet reaches a small stance at 2 bolts."},
-      {"pitch": "2", "grade": "A1/C1+", "lengthM": 50, "anchor": "2 bolts", "notes": "Follow the big left-facing corner into an alcove, where the crack pinches and small nuts or good pins help. Traverse out the roof on good gear, then easy crack and corner to a flat ledge with 2 bolts. A good ledge."},
-      {"pitch": "3", "grade": "A2/C1", "lengthM": 25, "notes": "Top-step the anchor bolt and place a pin in the seam above; more pins or tricky free gear reach another ledge. Go up and right, back left to a roof, traverse it, and turn the lip into another left-facing corner with a few hollow, loose blocks. Above a small ledge the loose rock ends. Continue up the corner to a small stance below a big horizontal break."},
-      {"pitch": "4", "grade": "A2/C2", "lengthM": 30, "notes": "The only sustained nailing on the route. Climb the left-facing corner above the overlap, follow the steep crack up and left to an alcove, then step up the crack until it fades. Reach high left to clip a bolt, work left along the ledge, and finish with a few easy aid moves to a large ledge under the eyebrow roof."},
-      {"pitch": "5", "grade": "A0/C1", "lengthM": 35, "notes": "Carry only rivet hangers, quickdraws and a single #1 and #2. Step up and left to a bolt, make a couple of high 5.8 steps without good hands, and follow bolts and rivets up and right into the alcove (a #1 fits at its back). Continue up the overhanging face on bolts and rivets; the angle eases after 30 ft. A #2 can go in just before the anchor bolts if the last rivet is out of reach."}
-    ],
-    "replace_pitch_detail": true,
-    "rappel_detail": [
-      {"n": 1, "station": "top of pitch 4", "notes": "A short rappel to the top of pitch 4. Leave a rope tied at the pitch 4 anchor so you can pull yourself back into the belay; it is steeper than it looks."},
-      {"n": 2, "station": "top of pitch 2", "notes": "Long double-rope rappel to the top of pitch 2."},
-      {"n": 3, "station": "intermediate station", "notes": "Double-rope rappel; anchor cord and a carabiner were left in place."},
-      {"n": 4, "station": "ground", "notes": "Last double-rope rappel to the ground. Another option is to walk across the summit to the standard rappel stations on the southeast side of Lion's Head."}
-    ],
-    "review": {
-      "confidence": "medium",
-      "sources": ["https://www.mountainproject.com/route/201635018"],
-      "source_texts": {"https://www.mountainproject.com/route/201635018": "/Users/nathanbarber/dev/mp-data/_mp/_pitchtext/id_north_face_rafiki_s_wisdom.txt"},
-      "changed": "Wrote 5 pitches with stated A/C grades and lengths; anchors only where bolts are stated. Rappel table has 4 entries; stations 3 and 4 are not individually described so no anchor details.",
-      "pitch_count_found": 5,
-      "other_findings": "Stored descent_text omits the two final double-rope rappels to the ground, which the text includes."
-    }
-  },
-  "id_north_face_shadowlands": {
-    "area": "id_north_face",
-    "pitch_detail": [
-      {"pitch": "1", "grade": "5.10", "anchor": "bolts", "notes": "Start past a couple of ledges into a shallow dihedral. The crack weaves up the rock between vertical and less steep, with plenty of face holds to stem. Pass 2 older bolts midway (a previous party's mid-pitch anchor), then a few holds out right lead to a small ledge before an awkward but not hard flare; it eases above to a small ledge at the anchor."},
-      {"pitch": "2", "grade": "5.11+", "crux": true, "anchor": "bolts", "notes": "Two short but separate cruxes. Pull into a finger crack with stems and laybacks, step right into the next crack at a small ledge and clip the bolt before the first crux, where the crack pinches to almost nothing and thin edges appear. A second bolt comes just before the technical move. Continue up the corner at 5.10 and rest before the upper bulge, the second crux, through a finger crack for another 10 ft to a big ledge. Angle up and right, then walk the ledge right 15 ft to the anchor."},
-      {"pitch": "3", "grade": "5.10+", "anchor": "bolts", "notes": "Step up and left from the anchor to a large ledge at the start of a hand crack. Jam or layback the corner crack as it turns into a chimney, then step back right to a large ledge under several wide cracks. Take the left corner system to a hand-and-fist roof, traverse it (stemming helps), and turn the lip into a short offwidth, which is the hardest part. In the alcove above, step right, then up and right toward Pride Rock; easier, good climbing leads to the tower."}
-    ],
-    "replace_pitch_detail": true,
-    "review": {
-      "confidence": "high",
-      "sources": ["https://www.mountainproject.com/route/201571022"],
-      "source_texts": {"https://www.mountainproject.com/route/201571022": "/Users/nathanbarber/dev/mp-data/_mp/_pitchtext/id_north_face_shadowlands.txt"},
-      "changed": "Wrote 3 pitches. The Lion Tamer link-up pitches (4-6) are a different route and were left out. No lengths stated. No rappel table (rap the route, not station by station).",
-      "pitch_count_found": 3,
-      "other_findings": "none"
-    }
-  },
-  "id_pillar_pandemicas_pillar_pandemicas": {
-    "area": "id_pillar_pandemicas",
-    "pitch_detail": [
-      {"pitch": "1", "anchor": "single bolt with quick link", "notes": "Scramble to the notch at the base of the pillar, then go straight up the middle of the 15 ft wide south face. Avoid the large blocky corner midway: do not use it for protection or holds. Clip the good bolts and climb the right edge, step up and left above the block, then move right near the top to finish in a corner with a fun pull onto the summit. Loose rocks on top. Rappel from the single bolt anchor; an extension on this anchor allows a rappel into the notch."},
-      {"pitch": "2", "grade": "5.8", "lengthM": 15, "anchor": "single bolt", "notes": "Rappel about 30 ft into the notch to a ledge with a single bolt anchor and small gear. Climb the front of the next pillar, watching for loose blocks on the left near the start. Gear to 1 inch and a couple of bolts lead to a single bolt belay below the summit block."}
-    ],
-    "replace_pitch_detail": true,
-    "review": {
-      "confidence": "medium",
-      "sources": ["https://www.mountainproject.com/route/120421697"],
-      "source_texts": {"https://www.mountainproject.com/route/120421697": "/Users/nathanbarber/dev/mp-data/_mp/_pitchtext/id_pillar_pandemicas_pillar_pandemicas.txt"},
-      "changed": "Wrote the 2 pitches the text describes; a third pitch is mentioned only in passing (5.8, no description) so none was added. No grade stated for pitch 1.",
-      "pitch_count_found": 2,
-      "other_findings": "Stored pitches=3 but only 2 are described; stored grade 5.7+ R while text gives 5.8 for the added pitch."
-    }
-  },
-  "id_sacajawea_peak_north_face_routes_grand_central_couloir": {
-    "area": "id_sacajawea_peak_north_face_routes",
-    "pitch_detail": [
-      {"pitch": "1", "grade": "M5", "lengthM": 70, "crux": true, "notes": "About three chockstones to pass; the first is roughly M5, and a tight squeeze is needed to get under another."},
-      {"pitch": "2", "grade": "M3", "lengthM": 80, "notes": "Long steep snowfield with one large but fairly easy chockstone. Few anchor spots exist, so the first ascent simul-climbed parts."},
-      {"pitch": "3", "grade": "WI3-4", "lengthM": 70, "notes": "Narrow ice chimney going under and over assorted chockstones."},
-      {"pitch": "4", "grade": "WI3-4", "lengthM": 90, "notes": "Steep snow and more narrow ice chimney. Anchors are scarce, so expect a lot of simul-climbing."},
-      {"pitch": "5", "lengthM": 20, "notes": "Short steep snow slope to the base of pitch 6."},
-      {"pitch": "6", "grade": "WI4-5 M3", "lengthM": 50, "notes": "Steep narrow ice chimney under a chockstone, then face climbing around another large chockstone. Hard and awkward, with good stances for deep ice screws, which keep it near WI4 rather than WI5+. Anchors are about 15 m up the steep snow after the technical part ends."},
-      {"pitch": "7", "lengthM": 30, "notes": "Steep snow to the top of the route, well protected, then a short walk to the summit."}
-    ],
-    "replace_pitch_detail": true,
-    "review": {
-      "confidence": "high",
-      "sources": ["https://www.mountainproject.com/route/113182234"],
-      "source_texts": {"https://www.mountainproject.com/route/113182234": "/Users/nathanbarber/dev/mp-data/_mp/_pitchtext/id_sacajawea_peak_north_face_routes_grand_central_couloir.txt"},
-      "changed": "Wrote 7 pitches with stated grades and lengths (pitch 1 given crux as it carries the route's M5). No rappel table: descent is a walk-off.",
-      "pitch_count_found": 7,
-      "other_findings": "Pitch lengths sum to 410 m versus stored 427 m."
-    }
-  },
-  "id_siwashing_wall_the_yukon_super_cub": {
-    "area": "id_siwashing_wall",
-    "pitch_detail": [
-      {"pitch": "1", "grade": "5.8 A3", "lengthM": 30, "bolts": 1, "anchor": "gear belay", "crux": true, "notes": "Hardest aid on the route. Finger cams, many beaks, small nuts and a cam hook leading to a bat hook, then a half-inch bolt. Two small equalized beaks go behind a flake that is easy to over-hammer. A free move leads to a finger cam used for aid; the last hard move is free off a talon hook before moderate free climbing. Ledge fall potential."},
-      {"pitch": "2", "grade": "5.9 C1", "lengthM": 35, "anchor": "1 bolt", "notes": "Belay from a single stainless half-inch bolt."},
-      {"pitch": "3", "grade": "5.9 A2", "lengthM": 35, "anchor": "gear belay", "notes": "Mostly aid with a gear belay."},
-      {"pitch": "4", "grade": "5.10", "lengthM": 20, "bolts": 1, "anchor": "gear belay", "notes": "Short pitch because route-finding created rope drag. One protection bolt, gear belay."},
-      {"pitch": "5", "grade": "5.9", "lengthM": 15, "anchor": "gear belay", "notes": "Traverse left and exit through a notch in the roof on good holds with good gear."}
-    ],
-    "replace_pitch_detail": true,
-    "review": {
-      "confidence": "medium",
-      "sources": ["https://www.mountainproject.com/route/126713709"],
-      "source_texts": {"https://www.mountainproject.com/route/126713709": "/Users/nathanbarber/dev/mp-data/_mp/_pitchtext/id_siwashing_wall_the_yukon_super_cub.txt"},
-      "changed": "Wrote 5 pitches with stated grades, lengths and belays. Text suggests the route would clean up with scrubbing. No rappel table (none described).",
-      "pitch_count_found": 5,
-      "other_findings": "Pitch lengths sum to 135 m versus stored 152 m."
-    }
-  },
-  "id_south_dome_cosmo_canyon": {
-    "area": "id_south_dome",
-    "pitch_detail": [
-      {"pitch": "1", "grade": "5.1", "lengthM": 61, "anchor": "2 bolts", "notes": "From the 2-bolt anchor with black hangers, follow a low-angle left-facing overlap and crack with good natural protection into the lime-colored alcove and belay on the wall to the left."},
-      {"pitch": "2", "grade": "5.9+", "lengthM": 23, "anchor": "chains", "notes": "Fully bolted. Climb out the left side of the lime alcove to chain anchors at the top of its crest."},
-      {"pitch": "3", "grade": "5.5", "lengthM": 61, "notes": "Fully bolted low-angle friction slab going diagonally up and right. Easy but with wide bolt spacing. Belay from a rounded ledge and scoop just right of and below an island of trees."},
-      {"pitch": "4", "grade": "5.2", "lengthM": 61, "notes": "Two options at the start: go up to stay on Cosmo Canyon, since the rightward traverse goes to another route. Fully bolted friction climbing through two rocky ledges to an anchor at the end of the lower slabs, below the steepening headwall."},
-      {"pitch": "5", "grade": "5.6", "lengthM": 30, "notes": "Walk left and step up through low vegetation onto the slab left of the cave and roof. Climb slabs to the big right-facing corner system, go up it (stepping right onto slabs as needed) to a large overhanging flake with a bolted anchor."},
-      {"pitch": "6", "grade": "5.7", "lengthM": 30, "notes": "Above the anchor, friction slab with thin horizontal breaks for 15-25 ft back to the right-facing corner. Follow the corner another 75 ft to a large ledge cutting across much of the dome."},
-      {"pitch": "7", "grade": "5.9-", "lengthM": 30, "notes": "Go left then up blocky terrain (5.7) or straight up unprotected slab at 5.10, to a short grassy ledge traverse right, then to a slab with a single bolt. Climb it direct (5.10-) or left (5.9-) toward a right-facing corner and flake with good gear, to a semi-hanging bolted stance. Can link with pitch 8, managing rope drag."},
-      {"pitch": "8", "grade": "5.8+", "lengthM": 30, "notes": "Follow the right-facing overlap with large wedged flakes, taking the leftmost line through baggy hands and fists, or escape right onto technical face. Pass a large bush to the massive right-facing dihedral and climb its thin part to a small ledge below the roof."},
-      {"pitch": "9", "grade": "5.9", "lengthM": 46, "notes": "Traverse out and right along the roof, clipping a bolt to keep the rope out of the corner; this may be the crux for some. Easier ground with okay gear leads to a slab with two bolts, then excellent hands and a layback to a thin ledge stance about 15 ft below the next roof. From here you are committed to topping out."},
-      {"pitch": "10", "grade": "5.9", "lengthM": 52, "notes": "Sustained right-arching, right-facing dihedral under a roof; some call this the crux. Do not place too much gear early or rope drag will build. Follow the dihedral to where it becomes a rightward traverse, along the roof until it tapers, then straight up to the belay at the next overlap."},
-      {"pitch": "11", "grade": "5.5", "lengthM": 37, "notes": "Traverse right under the roof on good gear to a ledgy weakness and go straight up toward a bushy tree. Escape left onto unprotected slab, or take the well-protected brushy mini-corner. Continue diagonally left to a belay at a crack below the next ledgy weakness."},
-      {"pitch": "12", "grade": "5.4", "lengthM": 30, "notes": "Go up and right through shorter overlapping ledges, then straight up on lower-angle ground to a large cave-like alcove; belay on its left wall."},
-      {"pitch": "13", "grade": "5.2", "lengthM": 24, "notes": "Up and left out of the alcove on low-angle slab to the final belay below the forest."}
-    ],
-    "replace_pitch_detail": true,
-    "review": {
-      "confidence": "high",
-      "sources": ["https://www.mountainproject.com/route/203706300"],
-      "source_texts": {"https://www.mountainproject.com/route/203706300": "/Users/nathanbarber/dev/mp-data/_mp/_pitchtext/id_south_dome_cosmo_canyon.txt"},
-      "changed": "Wrote 13 pitches, feet converted to metres. No crux flags: the text only says pitches 9 and 10 might be the crux for some. No rappel table: descent is via top-out and the Lion King rappels, and the text gives only a single-70 m option from the top of pitch 8.",
-      "pitch_count_found": 13,
-      "other_findings": "Stored grade 5.9- but text gives pitch 2 as 5.9+ and pitches 9 and 10 as 5.9. Stored descent_text is null."
-    }
-  },
-  "skip_reasons": {
-    "id_south_dome_aerosmear": "Pitch breakdown is unclear: text says the corner is about two pitches and gives no clear split for the stored 3 pitches."
+ "co_wheeler_mountain_proper_dose": {
+  "area": "co_wheeler_mountain",
+  "pitch_detail": [
+   {
+    "pitch": "1",
+    "notes": "Starts as a slabby face with some cracks, heading for the small roof about halfway up. Protect with micro nuts and small cams."
+   },
+   {
+    "pitch": "2",
+    "notes": "Pass the roof on its climber's-right side and join the ice flow. Reach a ledge, then keep following the thin ice to the top. A stubby ice screw can help when the ice is in mid-season shape."
+   }
+  ],
+  "replace_pitch_detail": true,
+  "review": {
+   "confidence": "medium",
+   "sources": [
+    "https://www.mountainproject.com/route/118691891"
+   ],
+   "source_texts": {
+    "https://www.mountainproject.com/route/118691891": "/Users/nathanbarber/dev/mp-data/_mp/_pitchtext/co_wheeler_mountain_proper_dose.txt"
+   },
+   "changed": "Wrote both pitches with notes only; no per-pitch grades, lengths or anchors are stated so none were added. No rappel table (descent is a walk or downclimb).",
+   "pitch_count_found": 2,
+   "other_findings": "none"
   }
+ },
+ "id_beehive_lake_area_the_dodgy_selkirk_boys": {
+  "area": "id_beehive_lake_area",
+  "pitch_detail": [
+   {
+    "pitch": "1",
+    "grade": "5.7/5.8 R",
+    "lengthM": 45,
+    "notes": "Opening lead of about 45 m, mostly 5.7 with a sketchy, poorly protected 5.8 stretch. Belay from a bolted station."
+   },
+   {
+    "pitch": "2",
+    "grade": "5.0",
+    "lengthM": 10,
+    "notes": "Short easy traverse across a detached block, about 10 m, to the next belay."
+   },
+   {
+    "pitch": "3",
+    "grade": "5.8 PG",
+    "lengthM": 45,
+    "anchor": "bolts",
+    "notes": "Main pitch of the route. Go up and right from the belay and put a #2 behind an undercling flake, continuing right past water streaks that are wet in June and dry by mid-July. Find the in-cut right-hand edge near the little sapling and pull straight up the bulge; it is runout until you are over it. A good rest with small gear follows. Then work back left with many slings into the main dihedral: mostly 5.7, with one thin section, then a hand crack through a notch to the belay. The anchor sits high, which helps pull the rope when rappelling."
+   },
+   {
+    "pitch": "4",
+    "grade": "5.8",
+    "lengthM": 20,
+    "notes": "Final lead of about 20 m: angle slightly left and up from the belay to a stance with plenty of good gear, pass a bulge, and reach the top."
+   }
+  ],
+  "replace_pitch_detail": true,
+  "review": {
+   "confidence": "high",
+   "sources": [
+    "https://www.mountainproject.com/route/126597975"
+   ],
+   "source_texts": {
+    "https://www.mountainproject.com/route/126597975": "/Users/nathanbarber/dev/mp-data/_mp/_pitchtext/id_beehive_lake_area_the_dodgy_selkirk_boys.txt"
+   },
+   "changed": "Wrote 4 pitches with stated grades and lengths. No rappel table: the text only gives 3 rappels with double ropes, not station by station. A bolted runnel variation and the offwidth attempt were left out.",
+   "pitch_count_found": 4,
+   "other_findings": "none"
+  }
+ },
+ "id_bighorn_crags_litner_group_of_peaks_pace_setter": {
+  "area": "id_bighorn_crags_litner_group_of_peaks",
+  "pitch_detail": [
+   {
+    "pitch": "1",
+    "grade": "5.7",
+    "notes": "Good rock on the left of the dike leads to a small tree beside the dike. Can be linked with pitch 2 as one 60 m lead."
+   },
+   {
+    "pitch": "2",
+    "grade": "5.8",
+    "notes": "Follow the dike to a big ledge, then move left to a large tree with better rock for an anchor."
+   },
+   {
+    "pitch": "3",
+    "grade": "5.9",
+    "notes": "Pull a boulder move off the ledge and go through the roof at 5.9. Can be linked with pitch 4 for a 60 m lead."
+   },
+   {
+    "pitch": "4",
+    "grade": "5.9",
+    "notes": "Boulder-style finger crack to a belay at a huge tree and ledge."
+   },
+   {
+    "pitch": "5",
+    "grade": "5.8",
+    "notes": "Chimney and dihedral to a ledge. Can be linked with pitch 6 for a 60 m lead."
+   },
+   {
+    "pitch": "6",
+    "grade": "5.6",
+    "notes": "Easy ramble up to a broken chimney."
+   },
+   {
+    "pitch": "7",
+    "grade": "5.7",
+    "notes": "Blocky gully to the lower col."
+   },
+   {
+    "pitch": "8",
+    "grade": "5.8",
+    "lengthM": 40,
+    "notes": "Hand crack on the east side of the tower, to the upper col. Can be combined with pitch 9 for a 60 m lead."
+   },
+   {
+    "pitch": "9",
+    "grade": "5.9",
+    "lengthM": 20,
+    "notes": "Summit block with hands and fingers. No protection is available on the very top."
+   }
+  ],
+  "replace_pitch_detail": true,
+  "rappel_detail": [
+   {
+    "n": 1,
+    "lengthM": 60,
+    "anchor": "fixed anchor just below the summit",
+    "station": "2 m below the top",
+    "notes": "Downclimb from the summit to the anchor, then rappel into the east gully to a big tree."
+   },
+   {
+    "n": 2,
+    "lengthM": 60,
+    "anchor": "large tree",
+    "station": "east gully",
+    "notes": "Rappel off a big tree in the gully."
+   },
+   {
+    "n": 3,
+    "lengthM": 60,
+    "anchor": "large tree",
+    "station": "east gully",
+    "notes": "Rappel off another big tree."
+   },
+   {
+    "n": 4,
+    "lengthM": 60,
+    "anchor": "large tree",
+    "station": "east gully",
+    "notes": "Rappel off another big tree."
+   },
+   {
+    "n": 5,
+    "lengthM": 60,
+    "anchor": "large tree",
+    "station": "east gully",
+    "notes": "Last rappel off a tree, reaching the base."
+   }
+  ],
+  "review": {
+   "confidence": "medium",
+   "sources": [
+    "https://www.mountainproject.com/route/124699414"
+   ],
+   "source_texts": {
+    "https://www.mountainproject.com/route/124699414": "/Users/nathanbarber/dev/mp-data/_mp/_pitchtext/id_bighorn_crags_litner_group_of_peaks_pace_setter.txt"
+   },
+   "changed": "Wrote 9 pitches; lengths only where stated (pitches 8 and 9). Rappels: first from the fixed anchor, then 4 more 60 m rappels off trees; no per-rappel anchor details beyond tree.",
+   "pitch_count_found": 9,
+   "other_findings": "none"
+  }
+ },
+ "id_blue_rock_dome_probable_prow_variation": {
+  "area": "id_blue_rock_dome",
+  "pitch_detail": [
+   {
+    "pitch": "1",
+    "grade": "5.10",
+    "lengthM": 40,
+    "notes": "Begin in a right-leaning crack that goes up, hard right, then straight up. Of the two traverse options, the higher one was used. Belay on a comfortable spot above the big flake; an old fixed nut and some webbing sit near this anchor."
+   },
+   {
+    "pitch": "2",
+    "grade": "5.9",
+    "lengthM": 20,
+    "notes": "Straight-up options are harder than 5.11 or very dirty, so go right over loose rock and traverse back left. The hardest moves are fairly clean. Build a belay on a comfortable ledge."
+   },
+   {
+    "pitch": "3",
+    "grade": "5.11-",
+    "lengthM": 40,
+    "crux": true,
+    "notes": "Move hard left off the belay, then angle up and left to the top of an offwidth roof; no offwidth technique is required. A corner facing left leads to a bulge where the crux sits above small gear. Placements may need cleaning with a nut tool. The belay is cramped, under the next bulge."
+   },
+   {
+    "pitch": "4",
+    "grade": "5.11",
+    "lengthM": 20,
+    "notes": "Four corners rise above the belay; choose the second from the left. A right-facing corner holds the slab cruxes, passed with pull-up style moves over small gear. Harder than pitch 3 but shorter, with more small gear. Belay on a slab, with protection in the corner."
+   },
+   {
+    "pitch": "5",
+    "grade": "5.10",
+    "lengthM": 30,
+    "notes": "Climb the middle crack to a chockstone right above the belay; it is more solid than it looks. Continue on easier ground to a ledge with a bush. Some holds need clearing."
+   },
+   {
+    "pitch": "6",
+    "grade": "5.8",
+    "lengthM": 35,
+    "notes": "Go straight up to a tombstone block, climb a right-facing corner, traverse left where easy around a second tombstone, then up to another slab. Belay where comfortable."
+   },
+   {
+    "pitch": "7",
+    "grade": "5.10",
+    "lengthM": 50,
+    "notes": "Follow the crack, with a few choss patches, to the left end of the Mohawk. Then take a splitter corner up to a ledge holding another tombstone, and step over a 10 ft block to a roomy ledge littered with loose rocks. Belay there."
+   },
+   {
+    "pitch": "8",
+    "grade": "5.5",
+    "lengthM": 20,
+    "notes": "Skirt the false summit on its right and reach the real summit."
+   }
+  ],
+  "replace_pitch_detail": true,
+  "review": {
+   "confidence": "high",
+   "sources": [
+    "https://www.mountainproject.com/route/122908926"
+   ],
+   "source_texts": {
+    "https://www.mountainproject.com/route/122908926": "/Users/nathanbarber/dev/mp-data/_mp/_pitchtext/id_blue_rock_dome_probable_prow_variation.txt"
+   },
+   "changed": "Wrote 8 pitches with stated grades and lengths. No rappel table; descent is a walk-off.",
+   "pitch_count_found": 8,
+   "other_findings": "Stored descent_text is null but the text gives a walk-off down the east side of the dome."
+  }
+ },
+ "id_east_face_kaniksu_jiu_jitsu": {
+  "area": "id_east_face",
+  "pitch_detail": [
+   {
+    "pitch": "1",
+    "grade": "5.8/5.9",
+    "lengthM": 60,
+    "anchor": "bolts",
+    "notes": "Nearly all bolted, with singles in .75, .3 and .1 helpful. Start on a low-angle slab, enter a left-facing corner after the second bolt (a .75 protects the exit), then trend right to a layback flake where a .3 or small totem fits. Layback up it to the juniper ledge, then go right clipping bolts to the belay. A bolted rappel station sits on the left of the ledge."
+   },
+   {
+    "pitch": "2",
+    "grade": "5.10c",
+    "lengthM": 7,
+    "notes": "All bolted. Go left from the belay, then traverse slightly back right to a position above the leader and clip the first bolt. Clip the second from a knob, make a thin move onto a stance, then trend right and finish with a hard mantel."
+   },
+   {
+    "pitch": "3",
+    "grade": "5.10d-5.11c",
+    "lengthM": 65,
+    "crux": true,
+    "notes": "Hardest pitch; the grade is undecided, between 5.10d and 5.11c. A 70 m rope is needed, though a gear anchor can be built partway for a 60 m rope. Traverse up and right on a thin seam to a pedestal stance, clip a high bolt, and face the crux, which probably depends on height: layback to the undercling and deadpoint to a bucket, or stem up and pounce. Rest after the jug with two good .3/.4 cams, then go up to a clip stance and make a tricky move left into the chimney alcove. Finish with trad gear: chimney up, jam out the roof, then 5.8/5.9 to the top."
+   }
+  ],
+  "replace_pitch_detail": true,
+  "review": {
+   "confidence": "high",
+   "sources": [
+    "https://www.mountainproject.com/route/201359912"
+   ],
+   "source_texts": {
+    "https://www.mountainproject.com/route/201359912": "/Users/nathanbarber/dev/mp-data/_mp/_pitchtext/id_east_face_kaniksu_jiu_jitsu.txt"
+   },
+   "changed": "Wrote 3 pitches. No rappel table: text says double-rope rappel only, not station by station.",
+   "pitch_count_found": 3,
+   "other_findings": "Stored grade 5.11a; text gives the crux pitch as undecided 5.10d to 5.11c."
+  }
+ },
+ "id_east_face_of_gunsight_peak_winchester": {
+  "area": "id_east_face_of_gunsight_peak",
+  "pitch_detail": [
+   {
+    "pitch": "1",
+    "crux": true,
+    "notes": "Steep, clean climbing with a mantel crux. Place protection high, downclimb a little, then edge out along the leftward traverse to make the mantel. The belay sits at the foot of the roof that slants right, once you have crawled up and straddled the big flake."
+   },
+   {
+    "pitch": "2",
+    "notes": "Go through a dirty roof using good in-cut holds on its right side. Above is lower-angle ground broken by steep moves with so-so protection and some shrubbery. Parties have linked this and the next section as one simul pitch, but the climbing is insecure, so a belayed lead is better."
+   }
+  ],
+  "replace_pitch_detail": true,
+  "review": {
+   "confidence": "medium",
+   "sources": [
+    "https://www.mountainproject.com/route/126362945"
+   ],
+   "source_texts": {
+    "https://www.mountainproject.com/route/126362945": "/Users/nathanbarber/dev/mp-data/_mp/_pitchtext/id_east_face_of_gunsight_peak_winchester.txt"
+   },
+   "changed": "Wrote the 2 pitches the text describes; no grades, lengths or anchors stated per pitch. A third pitch is not described so none was added.",
+   "pitch_count_found": 2,
+   "other_findings": "Stored pitches=3 but text describes 2 pitches (and mentions doing the route in two by simuling)."
+  }
+ },
+ "id_east_face_the_royal_wilder": {
+  "area": "id_east_face",
+  "pitch_detail": [
+   {
+    "pitch": "1",
+    "notes": "Starts below an arch. Climb up, place gear where you can, clip the first bolt and move left, then go up clipping two more bolts. The third bolt is around the slab crux; read the features carefully since the line sometimes traverses nearly downward. Ramps with lichen lead to a belay below a roof with a crack out its right side. Bolted on lead."
+   },
+   {
+    "pitch": "2",
+    "crux": true,
+    "notes": "Belay on the starting ledge with a bolt and a piece in the roof. Climb to the roof and out its right side, then up a corner. The crux is a rightward mantel out of the corner onto a small ledge, followed by a step right into a second corner that takes tiny TCUs or ballnuts and is easy. The pitch can be split at the base of that second corner, using thin pieces. With a 60 m rope and good slinging it reaches the top in one lead. The last 50 ft are steep, with a #2-3 cam for the bulge and finger to off-hand pieces above. Belay off a horn on the cirque crest."
+   }
+  ],
+  "replace_pitch_detail": true,
+  "rappel_detail": [
+   {
+    "n": 1,
+    "anchor": "horn on the cirque crest",
+    "station": "top of the route",
+    "notes": "Carry 8 to 10 ft of cord or sling for the horn; sun damage wears it out each season. Double ropes are preferred. Rappelling east lands on the top of pitch 1."
+   },
+   {
+    "n": 2,
+    "station": "top of pitch 1",
+    "notes": "Second rappel on the east side reaches the ground."
+   }
+  ],
+  "review": {
+   "confidence": "medium",
+   "sources": [
+    "https://www.mountainproject.com/route/201360080"
+   ],
+   "source_texts": {
+    "https://www.mountainproject.com/route/201360080": "/Users/nathanbarber/dev/mp-data/_mp/_pitchtext/id_east_face_the_royal_wilder.txt"
+   },
+   "changed": "Wrote 2 pitches without grades or lengths (none stated per pitch). Rappel table has 2 stations for the east-side descent; no anchor type for the top-of-P1 station, no lengths.",
+   "pitch_count_found": 2,
+   "other_findings": "none"
+  }
+ },
+ "id_elephant_s_perch_the_pandemonium_palace": {
+  "area": "id_elephant_s_perch_the",
+  "pitch_detail": [
+   {
+    "pitch": "1",
+    "grade": "5.9",
+    "notes": "Hand crack in a left-facing corner, then an unprotected 5.9 squeeze chimney to a decent stance. The topo puts the belay by the bolts on the next pitch, but stopping instead in the crack system on the right, about 25 ft under those bolts and above the squeeze, keeps your #3 and #4 cams free for the pitch above."
+   },
+   {
+    "pitch": "2-3",
+    "grade": "5.11",
+    "crux": true,
+    "notes": "A left-arching hand and fist crack runs to two bolts; the first is good, the second is not. The awkward offwidth here is the crux: work up until a #4 can be placed overhead, layback the crack, and make one more hard sequence back to the corner, then follow the crack beneath the roof. Rock under the roof is poor, so link into the next 5.9 topo pitch to the bolted belay. Those bolts are bad, so build a gear belay in the crack. Three #3 cams help."
+   },
+   {
+    "pitch": "4-5",
+    "grade": "5.10+",
+    "notes": "Climb the crack above and traverse left on ledges to a small roof. Place a piece and face climb sloping edges to a big ledge. Continue left to a roof with a tree beneath it, go out the small roof and up the crack to a large ledge."
+   },
+   {
+    "pitch": "6-7",
+    "grade": "5.9 R",
+    "notes": "Leave the belay heading right with no protection: 5.7 face moves lead up a shallow corner that faces left, ending on a ledge. Set a couple of pieces by your feet, then commit to slab moves where a fall would be serious. Clip a poor bolt, continue, clip another poor bolt, use big pockets for gear, and finish up a dirty left-facing corner to a ledge. Belay there, or continue up about 60 ft of easy crack to the summit."
+   }
+  ],
+  "replace_pitch_detail": true,
+  "review": {
+   "confidence": "medium",
+   "sources": [
+    "https://www.mountainproject.com/route/124897467"
+   ],
+   "source_texts": {
+    "https://www.mountainproject.com/route/124897467": "/Users/nathanbarber/dev/mp-data/_mp/_pitchtext/id_elephant_s_perch_the_pandemonium_palace.txt"
+   },
+   "changed": "Text uses topo pitch numbers but groups them into 4 linked leads (1, 2-3, 4-5, 6-7); wrote those 4 entries, not 8. No lengths stated. No rappel table (none described).",
+   "pitch_count_found": 4,
+   "other_findings": "Stored pitches=8 (topo count); the text recommends 4 or 5 leads. Text says 5 of the 6 bolts on the route are unreliable."
+  }
+ },
+ "id_harkness_canyon_herald_angels_sing": {
+  "area": "id_harkness_canyon",
+  "pitch_detail": [
+   {
+    "pitch": "1",
+    "grade": "5.8",
+    "notes": "Take the left side of the shallow ramp up to the tree. Rock is a bit loose at first but improves once you reach the hand crack, with solid cam placements. Keep going to a wide section with a chockstone; the pitch is about 70 to 80 ft. Belay there, or sling a #2 and move about 5 ft right to a ledge. Loose rock lingers around the belay ledge, so watch your belayer."
+   },
+   {
+    "pitch": "2",
+    "grade": "5.9",
+    "crux": true,
+    "notes": "Varied pitch of roughly 90 to 100 ft. Work through the wide part and follow the crack as it angles left, hand-jamming with great protection on clean rock. The crux comes just before the top-out and is well protected. Belay from trees with long slings."
+   }
+  ],
+  "replace_pitch_detail": true,
+  "rappel_detail": [
+   {
+    "n": 1,
+    "anchor": "large pine with slings and quick links",
+    "station": "north of the top",
+    "notes": "Walk north to the pine and make a single rappel with a 60 m rope."
+   }
+  ],
+  "review": {
+   "confidence": "high",
+   "sources": [
+    "https://www.mountainproject.com/route/121746697"
+   ],
+   "source_texts": {
+    "https://www.mountainproject.com/route/121746697": "/Users/nathanbarber/dev/mp-data/_mp/_pitchtext/id_harkness_canyon_herald_angels_sing.txt"
+   },
+   "changed": "Wrote 2 pitches; lengths are stated as ranges in feet so left in notes only. One rappel station written.",
+   "pitch_count_found": 2,
+   "other_findings": "none"
+  }
+ },
+ "id_harrison_peak_gendarme_east": {
+  "area": "id_harrison_peak",
+  "pitch_detail": [
+   {
+    "pitch": "1",
+    "grade": "5.7",
+    "notes": "Scramble about 30 ft up the slab and right, then place gear in the large left-facing flake. At the first gap in the flake, step past the vegetation onto it and follow a dirty finger crack to a vegetated ledge; staying on the flake may also work. Protection is slightly thin. Walk the ledge left to a big snag beside a giant hollow flake, which makes a solid anchor with backup placements available. The pitch is long, perhaps 160 ft, close to 50 m."
+   },
+   {
+    "pitch": "2",
+    "grade": "5.8",
+    "crux": true,
+    "notes": "Meander up fun flakes and slab to a left-leaning corner crack. Balancy, awkward moves around the bulge are the crux and protect well. Reach the ridge and belay off a tree or boulder. Roughly 60 ft."
+   }
+  ],
+  "replace_pitch_detail": true,
+  "review": {
+   "confidence": "medium",
+   "sources": [
+    "https://www.mountainproject.com/route/123230194"
+   ],
+   "source_texts": {
+    "https://www.mountainproject.com/route/123230194": "/Users/nathanbarber/dev/mp-data/_mp/_pitchtext/id_harrison_peak_gendarme_east.txt"
+   },
+   "changed": "Wrote 2 pitches; lengths are hedged estimates in the text (marked with question marks) so kept in notes only. No rappel table: only a suggestion to rap the route, double-rope if needed.",
+   "pitch_count_found": 2,
+   "other_findings": "Stored length 67 m total; text estimates about 160 ft + 60 ft which is about 67 m, consistent."
+  }
+ },
+ "id_mt_idaho_east_face_mountaineer_s_route": {
+  "area": "id_mt_idaho",
+  "pitch_detail": [
+   {
+    "pitch": "1",
+    "notes": "Climb past a short slab to a large crack that leads to a roof. Build the anchor below the roof."
+   },
+   {
+    "pitch": "2",
+    "notes": "Traverse right beneath the roof and round onto a dark band of black limestone, the best rock on the route, with great edges and exposure. Then cross left and climb a small gully to where pitch 3 starts. Rockfall is a hazard here."
+   },
+   {
+    "pitch": "3",
+    "notes": "Climb the crack to a large chimney with two big chockstones. Go through the chimney or on the cleaner face just right of it."
+   },
+   {
+    "pitch": "4",
+    "notes": "Trend left to dodge the steep roof, then enter the narrow gully that takes you up to the top of the east face."
+   },
+   {
+    "pitch": "5",
+    "notes": "Climb the narrow chimney to the east-face summit, taking care not to knock rocks down the gully onto your partner. The true summit lies along the ridge, which is tricky; staying low on it avoids big cliff-outs."
+   }
+  ],
+  "replace_pitch_detail": true,
+  "review": {
+   "confidence": "medium",
+   "sources": [
+    "https://www.mountainproject.com/route/123019189"
+   ],
+   "source_texts": {
+    "https://www.mountainproject.com/route/123019189": "/Users/nathanbarber/dev/mp-data/_mp/_pitchtext/id_mt_idaho_east_face_mountaineer_s_route.txt"
+   },
+   "changed": "Wrote 5 pitches with notes only; no per-pitch grades or lengths are given (overall mostly 5.5-5.7 with a few 5.8 moves). No rappel table (walk-off descent).",
+   "pitch_count_found": 5,
+   "other_findings": "none"
+  }
+ },
+ "id_north_face_elephant_graveyard": {
+  "area": "id_north_face",
+  "pitch_detail": [
+   {
+    "pitch": "1",
+    "grade": "A1/C2",
+    "lengthM": 50,
+    "anchor": "2 bolts",
+    "notes": "The line follows a shallow dihedral immediately right of the central left-facing corner system; do not confuse it with the arching corner at the wall's far left end. About 30 m of easy C1 goes past a couple of older anchor bolts from an earlier party, then another 20 m passes an awkward flared chimney. The crack pinches just below it, and a beak keeps it relaxed. Belay on a small ledge with 2 bolts."
+   },
+   {
+    "pitch": "2",
+    "grade": "A2",
+    "lengthM": 45,
+    "anchor": "2 bolts",
+    "notes": "Follow the crack directly above the bolts; a few metres up it cleans up and cuts diagonally up and left with great gear, reaching a large comfortable ledge near mid-pitch. Nailing and small cams get you across the face to a roof feature trending left. A crux step around a corner or arete, then easier chimney climbing, finishes at a 2-bolt anchor on the left."
+   },
+   {
+    "pitch": "3",
+    "grade": "C1, low 5th",
+    "lengthM": 25,
+    "anchor": "2 bolts",
+    "notes": "Step right back into the corner and flare; a few awkward moves lead to a low fifth-class ramp. Go up it to the apex behind the triangular tower and down the other side to a ledge with 2 bolts. When hauling, flip the haul line over the tower and lower the bags out about 60-70 ft."
+   },
+   {
+    "pitch": "4",
+    "grade": "C1",
+    "lengthM": 30,
+    "anchor": "3 bolts",
+    "notes": "From the belay, go around the corner on the right and down to a ledge. Climb the main corner system through a roof to a small alcove, step right, climb 20 ft more, and break right at a horizontal break into the next corner system. Follow that all the way to the top of the second tower, with a comfortable 3-bolt belay. The line sounds tangled but is obvious when climbing, and the tower stays visible."
+   },
+   {
+    "pitch": "5",
+    "grade": "A2",
+    "lengthM": 30,
+    "anchor": "2 bolts",
+    "notes": "From the tower top, make an airy step out left (long reach) to a bolt over the roof, then clip two more bolts and 2 rivets to reach a nailing crack. Beaks, pins and small cams go up and left, ending at a sloping ledge (a rivet helps) and a bolt. A rivet ladder crosses the face with 1 bolt partway, then you enter a corner system that leads back left to the 2-bolt anchor."
+   },
+   {
+    "pitch": "6",
+    "grade": "A2+",
+    "lengthM": 20,
+    "crux": true,
+    "anchor": "2 bolts",
+    "notes": "Sustained, steep and exposed. Clip the fixed LA and traverse the roof rightward on thin nailing and a cam hook to a rivet; a big blind reach lands in the crack above. Wild traverse left on pins and small cams (one rivet), then step into the thin seams of the orange headwall, using many beaks and 3 rivets to a bolt, then 2 more rivets to the 2-bolt anchor under the lip. Rappelling the route from here is the recommended way down."
+   }
+  ],
+  "replace_pitch_detail": true,
+  "rappel_detail": [
+   {
+    "n": 1,
+    "anchor": "triangular tower anchor",
+    "station": "base of pitch 5",
+    "notes": "Double-rope rappel from the top of the route. Keep one rope end fixed at the bottom of pitch 5, otherwise you cannot get back to the face and end up hanging in space."
+   },
+   {
+    "n": 2,
+    "lengthM": 50,
+    "anchor": "anchor bolts off route",
+    "station": "ledge right of the route",
+    "notes": "Double-rope rappel to bolts on a steep face above a ledge, 50 m straight down and to the right of the route."
+   },
+   {
+    "n": 3,
+    "anchor": "bolts halfway up pitch 1",
+    "station": "mid pitch 1",
+    "notes": "Double-rope rappel to the bolts passed halfway through pitch 1."
+   },
+   {
+    "n": 4,
+    "lengthM": 30,
+    "station": "ground",
+    "notes": "Single-rope rappel to the ground. Alternatively, from the base of pitch 5 rappel 30 m to the base of pitch 4 (swing left to reach it), then a double-rope rappel to the top of pitch 1, then one to the ground."
+   }
+  ],
+  "review": {
+   "confidence": "high",
+   "sources": [
+    "https://www.mountainproject.com/route/126753178"
+   ],
+   "source_texts": {
+    "https://www.mountainproject.com/route/126753178": "/Users/nathanbarber/dev/mp-data/_mp/_pitchtext/id_north_face_elephant_graveyard.txt"
+   },
+   "changed": "Wrote 6 pitches and 4 rappel stations from the stated descent.",
+   "pitch_count_found": 6,
+   "other_findings": "Stored descent_text lists two stops; the text has 4 rappels including an off-route anchor 50 m down and a single-rope rap to the ground. Stored length 198 m; pitch lengths sum to 200 m."
+  }
+ },
+ "id_north_face_gunsight_peak_chore_of_enchantment": {
+  "area": "id_north_face_gunsight_peak",
+  "pitch_detail": [
+   {
+    "pitch": "1",
+    "grade": "5.10a",
+    "lengthM": 70,
+    "notes": "About 70 m, climbable with a 60 m rope by simuling a short easy stretch. The first bolt is placed high. Start at an arch in the middle of the face, tracing the right-leaning diagonal crack down; climb on the right side of the shallow corner system. A tightly spaced pair of bolts sits at the hardest spot, added because a fall there could hit the slab below."
+   },
+   {
+    "pitch": "2",
+    "grade": "5.10d/5.11a",
+    "lengthM": 30,
+    "notes": "The pitch with the most tricky sequence. After the first bolt, pull around the corner onto the face to a right-hand side pull and clip the second bolt. Ignore the third bolt until past the crux. Instead, move right to a bulbous feature with a horizontal pinch and side pull, shift a little further right to a good side pull, and deadpoint to a bucket edge. Then stand on the bulbous feature, clip the third bolt and traverse back left."
+   },
+   {
+    "pitch": "3",
+    "grade": "5.7",
+    "lengthM": 18,
+    "notes": "Route-finding is a little tricky, so go slowly. Leads to a belay under the huge roof across the middle of the face."
+   },
+   {
+    "pitch": "4",
+    "grade": "5.10c",
+    "notes": "Often damp traverse of 40 to 100 ft with close, solid bolts. The hard part is getting a locking finger jam up in the corner over the slab traverse, then pulling in and heading right. A belay stance sits at the end of the traverse. A strong party can clip the bolts at the jam and the arete pinch moves, back-clean the rest and link to the long flat ledge; less experienced parties should stop at the stance, because the rope runs over a sharp roof edge and back-cleaning risks a pendulum for the second."
+   },
+   {
+    "pitch": "5",
+    "grade": "5.10b/c",
+    "lengthM": 37,
+    "notes": "From the horizontal ledge, move right to the first bolt below an undercling flake and back-clean the first two draws. Undercling, then go up the left-facing flake; a spare bolt at its top can be slung or skipped by stemming left through a burly bulge. Traverse left to a small roof and 5.8 flakes to an optional belay. Continue: exit right, traverse left, then move right onto two flakes; clip the high bolt at the second flake for a big left-hand deadpoint, then a jug and an alcove belay."
+   },
+   {
+    "pitch": "6",
+    "grade": "5.10c",
+    "lengthM": 30,
+    "notes": "Go right off the belay: high right-hand pinch, left-hand side pull, second bolt, then swing left round the bulge. Physical, at times slightly overhanging climbing ends on the belay ledge below the summit."
+   }
+  ],
+  "replace_pitch_detail": true,
+  "review": {
+   "confidence": "high",
+   "sources": [
+    "https://www.mountainproject.com/route/203877262"
+   ],
+   "source_texts": {
+    "https://www.mountainproject.com/route/203877262": "/Users/nathanbarber/dev/mp-data/_mp/_pitchtext/id_north_face_gunsight_peak_chore_of_enchantment.txt"
+   },
+   "changed": "Wrote 6 pitches, lengths converted from feet where given. No crux flags: the text names hard moves per pitch but not one route crux. No rappel table: only 'four double-rope rappels' is stated, not station by station.",
+   "pitch_count_found": 6,
+   "other_findings": "Stored discipline is sport but protection list is draws only, which fits. Pitch lengths sum to roughly 235 m."
+  }
+ },
+ "id_north_face_rafiki_s_wisdom": {
+  "area": "id_north_face",
+  "pitch_detail": [
+   {
+    "pitch": "1",
+    "grade": "A1/C2",
+    "lengthM": 55,
+    "anchor": "2 bolts",
+    "notes": "Climb the left-facing corner toward the roof, getting harder higher up. After a fixed pin, step down and left onto a ledge, walk it left 15 ft, then climb up and slightly right (5.7) to the roof. Traverse left out the roof to turn the lip, continue up the angling corner to the edge of the big roof where a thin nailing seam appears, then make an awkward step left into the large left-facing dihedral. Ten more feet reaches a small stance at 2 bolts."
+   },
+   {
+    "pitch": "2",
+    "grade": "A1/C1+",
+    "lengthM": 50,
+    "anchor": "2 bolts",
+    "notes": "Follow the big left-facing corner into an alcove, where the crack pinches and small nuts or good pins help. Traverse out the roof on good gear, then easy crack and corner to a flat ledge with 2 bolts. A good ledge."
+   },
+   {
+    "pitch": "3",
+    "grade": "A2/C1",
+    "lengthM": 25,
+    "notes": "Step over the anchor bolt and put a pin into the seam above. More pins, or tricky free gear, reach another ledge. Go up and right, then back left to a roof and traverse it to its end. Round the lip into a different left-facing corner with a few hollow, loose blocks; above a small ledge the rock firms up. Follow the corner system to a small stance below a long horizontal break, with white dikes just to the right."
+   },
+   {
+    "pitch": "4",
+    "grade": "A2/C2",
+    "lengthM": 30,
+    "notes": "The only sustained nailing on the route. Climb the left-facing corner above the overlap, follow the steep crack up and left to an alcove, then step up the crack until it fades. Reach high left to clip a bolt, work left along the ledge, and finish with a few easy aid moves to a large ledge under the eyebrow roof."
+   },
+   {
+    "pitch": "5",
+    "grade": "A0/C1",
+    "lengthM": 35,
+    "notes": "Leave the main rack at the belay and carry rivet hangers, draws and one #1 and #2 only. Step up and left to a bolt, make a couple of high 5.8 steps with poor hands, then follow the bolts and rivets up and right to an alcove where a #1 fits in the back. The face above is overhanging, with bolts and rivets for 30 ft before the angle eases for the last 20 ft to the lip. A #2 can go in before the anchor bolts if the last rivet leaves you short."
+   }
+  ],
+  "replace_pitch_detail": true,
+  "rappel_detail": [
+   {
+    "n": 1,
+    "station": "top of pitch 4",
+    "notes": "A short rappel to the top of pitch 4. Leave a rope tied at the pitch 4 anchor so you can pull yourself back into the belay; it is steeper than it looks."
+   },
+   {
+    "n": 2,
+    "station": "top of pitch 2",
+    "notes": "Long double-rope rappel to the top of pitch 2."
+   },
+   {
+    "n": 3,
+    "station": "intermediate station",
+    "notes": "Double-rope rappel; anchor cord and a carabiner were left in place."
+   },
+   {
+    "n": 4,
+    "station": "ground",
+    "notes": "Last double-rope rappel to the ground. Another option is to walk across the summit to the standard rappel stations on the southeast side of Lion's Head."
+   }
+  ],
+  "review": {
+   "confidence": "medium",
+   "sources": [
+    "https://www.mountainproject.com/route/201635018"
+   ],
+   "source_texts": {
+    "https://www.mountainproject.com/route/201635018": "/Users/nathanbarber/dev/mp-data/_mp/_pitchtext/id_north_face_rafiki_s_wisdom.txt"
+   },
+   "changed": "Wrote 5 pitches with stated A/C grades and lengths; anchors only where bolts are stated. Rappel table has 4 entries; stations 3 and 4 are not individually described so no anchor details.",
+   "pitch_count_found": 5,
+   "other_findings": "Stored descent_text omits the two final double-rope rappels to the ground, which the text includes."
+  }
+ },
+ "id_north_face_shadowlands": {
+  "area": "id_north_face",
+  "pitch_detail": [
+   {
+    "pitch": "1",
+    "grade": "5.10",
+    "anchor": "bolts",
+    "notes": "Begin past a few ledges and work into a shallow dihedral. The crack weaves up the rock, alternating between vertical and easier angles, with lots of face holds to stem. Two older bolts mark a previous party's mid-pitch anchor. A few holds out right reach a small ledge below an awkward flare, which is more clumsy than difficult, and the climbing eases to the anchor ledge."
+   },
+   {
+    "pitch": "2",
+    "grade": "5.11+",
+    "crux": true,
+    "anchor": "bolts",
+    "notes": "Two short but separate cruxes. Pull into a finger crack with stems and laybacks, step right into the next crack at a small ledge and clip the bolt before the first crux, where the crack pinches to almost nothing and thin edges appear. A second bolt comes just before the technical move. Continue up the corner at 5.10 and rest before the upper bulge, the second crux, through a finger crack for another 10 ft to a big ledge. Angle up and right, then walk the ledge right 15 ft to the anchor."
+   },
+   {
+    "pitch": "3",
+    "grade": "5.10+",
+    "anchor": "bolts",
+    "notes": "Step up and left from the anchor onto a big ledge where a hand crack starts. Jam or layback the corner crack until it becomes a chimney, then step back right onto easy ground to a big ledge below several wide cracks. Take the left corner system to a hand-and-fist roof, traverse it (stemming helps) and turn the lip into a short offwidth, the hardest part. In the alcove, make an airy step right, then go up and right toward Pride Rock; easier, good climbing leads into the corner system."
+   }
+  ],
+  "replace_pitch_detail": true,
+  "review": {
+   "confidence": "high",
+   "sources": [
+    "https://www.mountainproject.com/route/201571022"
+   ],
+   "source_texts": {
+    "https://www.mountainproject.com/route/201571022": "/Users/nathanbarber/dev/mp-data/_mp/_pitchtext/id_north_face_shadowlands.txt"
+   },
+   "changed": "Wrote 3 pitches. The Lion Tamer link-up pitches (4-6) are a different route and were left out. No lengths stated. No rappel table (rap the route, not station by station).",
+   "pitch_count_found": 3,
+   "other_findings": "none"
+  }
+ },
+ "id_pillar_pandemicas_pillar_pandemicas": {
+  "area": "id_pillar_pandemicas",
+  "pitch_detail": [
+   {
+    "pitch": "1",
+    "anchor": "single bolt with quick link",
+    "notes": "Scramble to the notch at the pillar base, then head up the center of the south face, only about 15 ft wide down low. Skip the big blocky corner midway: it is not good for gear or holds. Clip the bolts beside it and stay on the right edge, then step up and left over that feature and move right near the top to finish in a corner and pull onto the summit. Loose rocks sit on top. A single bolt anchor with a quick link is used for rappelling, and an extension on it allows a rappel into the notch."
+   },
+   {
+    "pitch": "2",
+    "grade": "5.8",
+    "lengthM": 15,
+    "anchor": "single bolt",
+    "notes": "Rappel about 30 ft into the notch to a good ledge with one bolt anchor and room for small gear. Climb the front face of the next pillar; scary blocks sit on its left side low down. Gear to 1 inch plus a couple of bolts lead to a one-bolt belay under the summit block."
+   }
+  ],
+  "replace_pitch_detail": true,
+  "review": {
+   "confidence": "medium",
+   "sources": [
+    "https://www.mountainproject.com/route/120421697"
+   ],
+   "source_texts": {
+    "https://www.mountainproject.com/route/120421697": "/Users/nathanbarber/dev/mp-data/_mp/_pitchtext/id_pillar_pandemicas_pillar_pandemicas.txt"
+   },
+   "changed": "Wrote the 2 pitches the text describes; a third pitch is mentioned only in passing (5.8, no description) so none was added. No grade stated for pitch 1.",
+   "pitch_count_found": 2,
+   "other_findings": "Stored pitches=3 but only 2 are described; stored grade 5.7+ R while text gives 5.8 for the added pitch."
+  }
+ },
+ "id_sacajawea_peak_north_face_routes_grand_central_couloir": {
+  "area": "id_sacajawea_peak_north_face_routes",
+  "pitch_detail": [
+   {
+    "pitch": "1",
+    "grade": "M5",
+    "lengthM": 70,
+    "crux": true,
+    "notes": "About three chockstones to pass; the first is roughly M5, and a tight squeeze is needed to get under another."
+   },
+   {
+    "pitch": "2",
+    "grade": "M3",
+    "lengthM": 80,
+    "notes": "Long steep snowfield with one big but fairly easy chockstone. Anchor options are few, so some simul-climbing is likely."
+   },
+   {
+    "pitch": "3",
+    "grade": "WI3-4",
+    "lengthM": 70,
+    "notes": "Narrow ice chimney going under and over assorted chockstones."
+   },
+   {
+    "pitch": "4",
+    "grade": "WI3-4",
+    "lengthM": 90,
+    "notes": "Steep snow and more narrow ice chimney. Anchors are scarce, so expect a lot of simul-climbing."
+   },
+   {
+    "pitch": "5",
+    "lengthM": 20,
+    "notes": "Brief, steep snow slope leading to where pitch 6 begins."
+   },
+   {
+    "pitch": "6",
+    "grade": "WI4-5 M3",
+    "lengthM": 50,
+    "notes": "Steep narrow ice chimney under a chockstone, then face climbing around another large chockstone. Hard and awkward, with good stances for deep ice screws, which keep it near WI4 rather than WI5+. Anchors are about 15 m up the steep snow after the technical part ends."
+   },
+   {
+    "pitch": "7",
+    "lengthM": 30,
+    "notes": "Steep snow up to the finish of the route, well protected, followed by a brief walk to the summit."
+   }
+  ],
+  "replace_pitch_detail": true,
+  "review": {
+   "confidence": "high",
+   "sources": [
+    "https://www.mountainproject.com/route/113182234"
+   ],
+   "source_texts": {
+    "https://www.mountainproject.com/route/113182234": "/Users/nathanbarber/dev/mp-data/_mp/_pitchtext/id_sacajawea_peak_north_face_routes_grand_central_couloir.txt"
+   },
+   "changed": "Wrote 7 pitches with stated grades and lengths (pitch 1 given crux as it carries the route's M5). No rappel table: descent is a walk-off.",
+   "pitch_count_found": 7,
+   "other_findings": "Pitch lengths sum to 410 m versus stored 427 m."
+  }
+ },
+ "id_siwashing_wall_the_yukon_super_cub": {
+  "area": "id_siwashing_wall",
+  "pitch_detail": [
+   {
+    "pitch": "1",
+    "grade": "5.8 A3",
+    "lengthM": 30,
+    "bolts": 1,
+    "anchor": "gear belay",
+    "crux": true,
+    "notes": "Hardest aid on the route. Finger cams, many beaks, small nuts and a cam hook leading to a bat hook, then a half-inch bolt. Two small equalized beaks go behind a flake that is easy to over-hammer. A free move leads to a finger cam used for aid; the last hard move is free off a talon hook before moderate free climbing. Ledge fall potential."
+   },
+   {
+    "pitch": "2",
+    "grade": "5.9 C1",
+    "lengthM": 35,
+    "anchor": "1 bolt",
+    "notes": "Belay from a single stainless half-inch bolt."
+   },
+   {
+    "pitch": "3",
+    "grade": "5.9 A2",
+    "lengthM": 35,
+    "anchor": "gear belay",
+    "notes": "Mostly aid with a gear belay."
+   },
+   {
+    "pitch": "4",
+    "grade": "5.10",
+    "lengthM": 20,
+    "bolts": 1,
+    "anchor": "gear belay",
+    "notes": "Short pitch because route-finding created rope drag. One protection bolt, gear belay."
+   },
+   {
+    "pitch": "5",
+    "grade": "5.9",
+    "lengthM": 15,
+    "anchor": "gear belay",
+    "notes": "Exit by traversing left and passing through a gap in the roof, on solid holds with good gear."
+   }
+  ],
+  "replace_pitch_detail": true,
+  "review": {
+   "confidence": "medium",
+   "sources": [
+    "https://www.mountainproject.com/route/126713709"
+   ],
+   "source_texts": {
+    "https://www.mountainproject.com/route/126713709": "/Users/nathanbarber/dev/mp-data/_mp/_pitchtext/id_siwashing_wall_the_yukon_super_cub.txt"
+   },
+   "changed": "Wrote 5 pitches with stated grades, lengths and belays. Text suggests the route would clean up with scrubbing. No rappel table (none described).",
+   "pitch_count_found": 5,
+   "other_findings": "Pitch lengths sum to 135 m versus stored 152 m."
+  }
+ },
+ "id_south_dome_cosmo_canyon": {
+  "area": "id_south_dome",
+  "pitch_detail": [
+   {
+    "pitch": "1",
+    "grade": "5.1",
+    "lengthM": 61,
+    "anchor": "2 bolts",
+    "notes": "From the 2-bolt anchor with black hangers, follow a low-angle left-facing overlap and crack with good natural protection into the lime-colored alcove and belay on the wall to the left."
+   },
+   {
+    "pitch": "2",
+    "grade": "5.9+",
+    "lengthM": 23,
+    "anchor": "chains",
+    "notes": "Fully bolted. Climb up and out of the left side of the lime alcove to chain anchors on its crest."
+   },
+   {
+    "pitch": "3",
+    "grade": "5.5",
+    "lengthM": 61,
+    "notes": "Fully bolted, low-angle friction slab that angles up and right for most of its length. Easy climbing, but bolts are far apart. Belay on a rounded ledge and scoop just below and right of a clump of trees."
+   },
+   {
+    "pitch": "4",
+    "grade": "5.2",
+    "lengthM": 61,
+    "notes": "At the anchors you can go up, which stays on Cosmo Canyon, or right, which is a horizontal traverse onto a different route. Take the fully bolted line up over two rock-strewn ledges of low-angle friction to the anchor below where the headwall starts to steepen."
+   },
+   {
+    "pitch": "5",
+    "grade": "5.6",
+    "lengthM": 30,
+    "notes": "Walk left and step up through sparse vegetation to the slab beside the cave and roof. Climb slabs into the big right-facing corner system and follow it, stepping right onto slabs as needed, to a large overhanging flake with a bolted anchor."
+   },
+   {
+    "pitch": "6",
+    "grade": "5.7",
+    "lengthM": 30,
+    "notes": "Above the anchor, friction slab with thin horizontal breaks for 15-25 ft back to the right-facing corner. Follow the corner another 75 ft to a large ledge cutting across much of the dome."
+   },
+   {
+    "pitch": "7",
+    "grade": "5.9-",
+    "lengthM": 30,
+    "notes": "Go left then up blocky terrain (5.7) or straight up unprotected slab at 5.10, to a short grassy ledge traverse right, then to a slab with a single bolt. Climb it direct (5.10-) or left (5.9-) toward a right-facing corner and flake with good gear, to a semi-hanging bolted stance. Can link with pitch 8, managing rope drag."
+   },
+   {
+    "pitch": "8",
+    "grade": "5.8+",
+    "lengthM": 30,
+    "notes": "Follow the right-facing overlap with large wedged flakes, taking the leftmost line through baggy hands and fists, or escape right onto technical face. Pass a large bush to the massive right-facing dihedral and climb its thin part to a small ledge below the roof."
+   },
+   {
+    "pitch": "9",
+    "grade": "5.9",
+    "lengthM": 46,
+    "notes": "Traverse out right along the roof, clipping a bolt so the rope stays out of the corner; for some this is the route's hardest moment. Easier ground with okay gear leads to a slab with two bolts, then excellent hand jams and a layback to a thin ledge stance about 15 ft below the next roof. From here you are committed to topping out."
+   },
+   {
+    "pitch": "10",
+    "grade": "5.9",
+    "lengthM": 52,
+    "notes": "Sustained right-arching, right-facing dihedral under a roof; some call this the crux. Do not place too much gear early or rope drag will build. Follow the dihedral to where it becomes a rightward traverse, along the roof until it tapers, then straight up to the belay at the next overlap."
+   },
+   {
+    "pitch": "11",
+    "grade": "5.5",
+    "lengthM": 37,
+    "notes": "Traverse right under the roof on good gear to a ledgy weakness and head straight up toward a bushy tree. You can bail left onto unprotected slab or stay on the well-protected brushy mini-corner. Angle up and left to a belay at a crack under the next ledgy break."
+   },
+   {
+    "pitch": "12",
+    "grade": "5.4",
+    "lengthM": 30,
+    "notes": "Go up and right through shorter overlapping ledges, then straight up on lower-angle ground to a large cave-like alcove; belay on its left wall."
+   },
+   {
+    "pitch": "13",
+    "grade": "5.2",
+    "lengthM": 24,
+    "notes": "Go up and left from the alcove on low-angle slab to the last belay at the edge of the forest."
+   }
+  ],
+  "replace_pitch_detail": true,
+  "review": {
+   "confidence": "high",
+   "sources": [
+    "https://www.mountainproject.com/route/203706300"
+   ],
+   "source_texts": {
+    "https://www.mountainproject.com/route/203706300": "/Users/nathanbarber/dev/mp-data/_mp/_pitchtext/id_south_dome_cosmo_canyon.txt"
+   },
+   "changed": "Wrote 13 pitches, feet converted to metres. No crux flags: the text only says pitches 9 and 10 might be the crux for some. No rappel table: descent is via top-out and the Lion King rappels, and the text gives only a single-70 m option from the top of pitch 8.",
+   "pitch_count_found": 13,
+   "other_findings": "Stored grade 5.9- but text gives pitch 2 as 5.9+ and pitches 9 and 10 as 5.9. Stored descent_text is null."
+  }
+ },
+ "skip_reasons": {
+  "id_south_dome_aerosmear": "Pitch breakdown is unclear: text says the corner is about two pitches and gives no clear split for the stored 3 pitches."
+ }
 }
