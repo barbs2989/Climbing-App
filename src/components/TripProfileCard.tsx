@@ -38,6 +38,10 @@ export function tripProfilePertinent(route: Parameters<typeof catOf>[0]): boolea
 export function tripProfileEmptyCopy(reason: string): { why: string; cta: string; fix: "waypoints" | "timing" } {
   if (reason === "car to car") return { why: "This route's time is known only as one car-to-car figure, so there is nothing to split between legs. A time up and a time down would let each leg carry its share.", cta: "Add the time up and down", fix: "timing" };
   if (reason === "not an out and back") return { why: "This route does not come back the way it goes, so the legs up and the legs down are different walks, and the profile splits only a route walked back the way it came.", cta: "Edit the waypoints", fix: "waypoints" };
+  /* Name the missing piece when it is one waypoint (walk-through, 2026-11-26: American Border Peak has six of its seven
+     distances and read the same generic advice as a route with none). */
+  if (/no summit (pin|waypoint)/.test(reason) && !/no waypoints/.test(reason)) return { why: "The summit waypoint has no distance from the trailhead, so the legs have nowhere to end. Add the summit's distance, and that of any camp, pass or junction on the way that has none.", cta: "Add the missing distances", fix: "waypoints" };
+  if (/no trailhead (pin|waypoint)/.test(reason)) return { why: "There is no trailhead waypoint for the legs to start from. Add the trailhead, then each camp, pass or junction on the way and the summit, each with its distance from the trailhead.", cta: "Add the trailhead", fix: "waypoints" };
   return { why: "Each leg runs between two of the route's waypoints: the trailhead, the camps, passes and junctions on the way, and the summit. A leg needs each end's distance from the trailhead, and its height for the climb.", cta: "Add waypoints and distances", fix: "waypoints" };
 }
 
