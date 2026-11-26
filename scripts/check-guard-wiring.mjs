@@ -89,11 +89,6 @@ const EXCLUDED = {
     "replays every migration into PGlite (~40s of WASM, like check:profile-privacy) and drives 0519's trip-report " +
     "rules as each climber. Hand-run before pushing a change to crew_trip_reports, crew_trip_replies, " +
     "crew_departures, their functions, or the reliability reads in lib/db.js. No credential and no network.",
-  "check-profile-privacy.mjs":
-    "replays every migration into PGlite (~40s, an extra WASM dependency) and then queries profiles " +
-    "as the anon and authenticated roles — the same hand-run cost and trigger as " +
-    "check:migration-replay: run it before pushing a change to profiles' grants or to a profiles " +
-    "select list in lib/. No credential and no network.",
   "check-migration-replay.mjs":
     "replays supabase/migrations into an empty PGlite database — the local copy of what the " +
     "Supabase GitHub integration's 'Supabase Preview' check already runs on EVERY PR that touches " +
