@@ -1,6 +1,8 @@
 import { useReliabilityOf } from "../../lib/db.js";
 import { C, DB_UID, DLOCALE, ME, availOf, profileDiscGrades, compat, compatSummary, compatUnknown, localYmd, pubNameRow, uApproxDist, uRate, availSlotLabels } from "../../ClimbMatchCore.jsx";
 import { clickable } from "../../lib/clickable";
+import { liveWindow } from "../../lib/listingWindow.js";
+import { discLabel } from "../../lib/discLabels.js";
 import { tx } from "../../lib/tapWords.js";
 import type { ReactNode } from "react";
 import Av from "./Av.tsx";
@@ -31,6 +33,7 @@ export interface PartnerRow {
   avail_week?: string[] | null;
   hiking_speed_ft_hr?: number | string | null;
   dist_mi?: number | null;
+  listed_area_ids?: string[] | null;
   listed_area_paths?: string[] | null;
   listed_area_names?: string[] | null;
   listed_disciplines?: string[] | null;
@@ -45,7 +48,10 @@ export interface PartnerRow {
 }
 /** One listed area (0300), from the list's `partner_areas_of_users` read or built from the row's own `listed_*` columns. */
 export interface PartnerListing {
+  areaId?: string | null;
   name?: string | null;
+  /** The listing's "line for partners" (partner_areas.note, 140 chars), from partner_areas_of_users (0548). */
+  note?: string | null;
   path?: string | null;
   disciplines?: string[] | null;
   freeFrom?: string | null;
@@ -165,8 +171,18 @@ export default function RealClimberRow({p,distFrom,onOpen,objIds,objErr,verified
   const _cand=realCandOf(p,objIds,listing,verified,reliability);
   const _c=(cand||_cand) as typeof _cand;
   const _nm=pubNameRow(p)||"Climber";/* Held until their objectives AND both climbers' reliability have landed (review 2026-11-24): scoring with the neutral prior first and the real record a moment later moved the % under the reader, and disagreed with the profile, which waits. */const _objReady=Array.isArray(objIds)&&!relLoading&&!_myRelQ.isLoading;/* The viewer's side of the score: mountain objectives only (crag objectives are a tick list, not a match signal) plus their listed areas. */const _me=matchViewer(DB_UID&&_myRelQ.data?_myRelQ.data[DB_UID]:null);const _unk=compatUnknown(_me,_c),_pct=compat(_me,_c);
-  const _lst: PartnerListing[] | null=Array.isArray(listing)?listing:(Array.isArray(p.listed_area_names)?p.listed_area_names.map(function(n,i){return {name:n,path:(p.listed_area_paths||[])[i],disciplines:p.listed_disciplines||[],freeFrom:p.free_from||null,freeTo:p.free_to||null,above:!!p.listed_above};}):null);
-  const _lstLine=(function(){if(!_lst||!_lst.length)return null;const names=_lst.slice(0,2).map(function(l){return l.name;}).filter(Boolean);const more=_lst.length>2?" +"+(_lst.length-2):"";const discs: string[]=[];_lst.forEach(function(l){(l.disciplines||[]).forEach(function(d){if(discs.indexOf(d)<0)discs.push(d);});});const win=_lst.find(function(l){return l.freeFrom&&l.freeTo;});const fmt=function(d: string){try{return new Date(d+"T12:00:00").toLocaleDateString(DLOCALE,{month:"short",day:"numeric"});}catch{return d;}};return (_lst[0].above?"Listed across ":"Listed at ")+names.join(", ")+more+(win?" · free "+(win.freeFrom===win.freeTo?fmt(win.freeFrom||""):fmt(win.freeFrom||"")+"–"+fmt(win.freeTo||"")):"");})();
+  const _lst0: PartnerListing[] | null=Array.isArray(listing)?listing:(Array.isArray(p.listed_area_names)?p.listed_area_names.map(function(n,i){return {areaId:(p.listed_area_ids||[])[i]||null,name:n,path:(p.listed_area_paths||[])[i],disciplines:p.listed_disciplines||[],freeFrom:p.free_from||null,freeTo:p.free_to||null,above:!!p.listed_above};}):null);
+  /* THE LISTING THAT FOUND THEM COMES FIRST (owner note 2026-11-26: "does that last part [the dates and discipline] actually work for when people are searching for you"). The line used to name their first two listings in depth order and the first window found among ALL of them, so a search at Index read "Listed at Smith Rock, Index · free Dec 6-7" with Smith Rock's dates; and the climbing types the climber picked were gathered and never printed. Now the listings the search matched (listed_area_ids) lead, and the line says what they listed to climb there and when, from THAT listing. A window that has ended reads as no window (lib/listingWindow.js), as the listing editor and the search treat it. */
+  const _hit=Array.isArray(p.listed_area_ids)?p.listed_area_ids:[];
+  const _lst: PartnerListing[] | null=_lst0&&_hit.length?_lst0.filter(function(l){return !!l.areaId&&_hit.indexOf(l.areaId)>=0;}).concat(_lst0.filter(function(l){return !l.areaId||_hit.indexOf(l.areaId)<0;})):_lst0;
+  const _today=localYmd();
+  const _fmtDay=function(d: string){try{return new Date(d+"T12:00:00").toLocaleDateString(DLOCALE,{month:"short",day:"numeric"});}catch{return d;}};
+  const _winWords=function(from: string | null | undefined,to: string | null | undefined){const w=liveWindow(from,to,_today);return w?"free "+(w.from===w.to?_fmtDay(w.from):_fmtDay(w.from)+"–"+_fmtDay(w.to)):"";};
+  const _lstLine=(function(){if(!_lst||!_lst.length)return null;const first=_lst[0];const names=_lst.slice(0,2).map(function(l){return l.name;}).filter(Boolean);const more=_lst.length>2?" +"+(_lst.length-2):"";const ds=(first.disciplines||[]).map(function(d){return discLabel(d);});const win=_winWords(first.freeFrom,first.freeTo);return (first.above?"Listed across ":"Listed at ")+names.join(", ")+more+(ds.length?" · "+ds.join(", "):"")+(win?" · "+win:"");})();
+  /* Their line for partners: the route listing's when a route search found them by it (0489), else the area listing the line above leads with. */
+  const _lstNote: string | null=(p.listed&&p.listing_note?p.listing_note:null)||(_lst&&_lst.length?(_lst[0].note||null):null);
+  /* A ROUTE LISTING (0489) says its dates too: the tag alone read "Listed as a partner for a climb". */
+  const _tagLine: string | null=tag?(tag+(p.listed?(function(){const w=_winWords(p.free_from,p.free_to);return w?" · "+w:"";})():"")):null;
   /* THE MATCH IN WORDS (2026-11-23): one sentence of what the two of you share, from the rows the % is summed from. Their listed-area names let it name the shared area. Held until their objectives have landed, like the %, so it does not change under the reader. */
   const _sumNames: Record<string, string>={};(_lst||[]).forEach(function(l){if(l.path&&l.name)_sumNames[l.path]=l.name;});const _sum: string | null=_objReady?compatSummary(_me,_c,_sumNames):null;
   /* Both sides through availOf(), which reads the week grid when there is one, as the card's "Usually free" line and the match % do. */const _myAv=availOf(meView) as string[];const _overlap=!!(_myAv.length&&(availOf(_c) as string[]).filter(function(x: string){return x!=="flexible"&&_myAv.indexOf(x)>=0;}).length);
@@ -185,7 +201,7 @@ export default function RealClimberRow({p,distFrom,onOpen,objIds,objErr,verified
         <div style={{display:"flex",alignItems:"center",gap:6,flexWrap:"wrap",marginBottom:2}}><span {...(_open?clickable(_open):{})} style={{display:"inline-flex",alignItems:"center",minHeight:24,fontWeight:700,fontSize:15,cursor:_open?"pointer":"default",overflowWrap:"anywhere"}}>{_nm}</span>{verified===true?<span title="Verified climber" style={{color:C.green,fontSize:12,fontWeight:700}}>✓</span>:null}</div>
         {/* @handle (when the name shows instead), level and years on ONE line, as the example card read "Expert · 18yr". */(function(){const sub=[(p.username&&_nm!=="@"+p.username)?"@"+p.username:null,level||null,years?years+"yr":null].filter(Boolean);return sub.length?<div style={{fontSize:12,color:C.text,marginBottom:4,overflowWrap:"anywhere"}}>{sub.join(" · ")}</div>:null;})()}
         {_free?<div style={{fontSize:11.5,fontWeight:800,color:C.green,marginBottom:3}}>{"● Free this weekend"}</div>:null}
-        {_lstLine?<div style={{fontSize:11.5,color:C.blue,fontWeight:700,overflowWrap:"anywhere"}}>{_lstLine}</div>:(tag?<span style={{fontSize:11.5,fontWeight:700,color:C.blue}}>{tag}</span>:null)}
+        {/* A route listing that found them is said first, with its dates; their area listings follow. Without one, the tag stands in only when they list no area (as before). */(_tagLine&&(p.listed||!_lstLine))?<div data-listing-line="" style={{fontSize:11.5,fontWeight:700,color:C.blue,overflowWrap:"anywhere"}}>{_tagLine}</div>:null}{_lstLine?<div data-listing-line="" style={{fontSize:11.5,color:C.blue,fontWeight:700,overflowWrap:"anywhere"}}>{_lstLine}</div>:null}{_lstNote?<div data-listing-note="" style={{fontSize:12,color:C.textSub,fontStyle:"italic",marginTop:2,overflowWrap:"anywhere"}}>{"“"+_lstNote+"”"}</div>:null}
       </div>
       {!_objReady?<div style={{flexShrink:0,maxWidth:96,textAlign:"center",fontSize:11,color:objErr?C.amber:C.textSub,lineHeight:1.35}}>{objErr?"Couldn’t load their objectives to score a match":"Scoring match…"}</div>:_unk>=3?<div style={{flexShrink:0,maxWidth:96,textAlign:"center",fontSize:11,color:C.textSub,lineHeight:1.35}}>Not enough shared info to score a match</div>:<div title={"Match % blends where you climb (shared objectives or listed areas), grade range, disciplines, availability overlap, reliability and whether each of you is verified"+(_unk?" · based on limited info":"")} style={{flexShrink:0,textAlign:"center",background:_band.bg,borderRadius:13,padding:"7px 10px",border:"1px solid "+_band.bd,minWidth:52}}><div style={{fontSize:18,fontWeight:800,color:_band.fg,lineHeight:1}}>{_sc}%</div><div style={{fontSize:10.5,color:_band.fg,marginTop:3,textTransform:"uppercase",letterSpacing:0.6}}>match</div></div>}
     </div>

@@ -835,6 +835,18 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     do not cover. Read `routine_privileges` for EVERY function a migration creates, not just the
     ones it grants on. Injection suite: `scripts/oneoff/inject-partner-areas-cases.mjs` (7 cases).
 
+  - **RULE 6 — WHAT A LISTING SAYS REACHES THE SEARCH AND THE CARD (`0548`, owner note 2026-11-26).**
+    A listing stored its climbing types, its window and its note, and the searching side read none of
+    them: the discipline filter read the PROFILE, nothing asked about dates, the card computed the listed
+    types into a variable it never printed, and no cross-climber read returned the note. Every one of those
+    reads as finished from the listing editor, which is where it was always tested. The rule pins:
+    `partner_areas_of_users` returns `note`; the three listing reads keep a window through
+    `current_date - 1` (UTC slack, as 0502 gave crew days); `lib/listingWindow.js` is exercised on ten
+    cases (no DB); `_realFits` filters with `discFits(_matched(p),…)` and drops a `"clash"` window; the
+    When control exists; `RealClimberRow` prints the matched listing's types and note and leads with
+    `listed_area_ids`. **Cannot see:** whether a browser actually draws the When pill on each mode (the
+    modes are a `_whenOn` expression it does not evaluate), or the live database's function bodies
+    (`check:function-drift` does).
 - **A CREW HAS ONE PLACE — A ROUTE OR AN AREA (`0302`).** The crews half of the 2026-10-15 decision:
   a crag session ("Hellgate Saturday, sport") is the party, not a route. `crews.area_id` (FK to
   `areas`, no cascade) + `crews.discipline` (stored, never inferred — `areas.disciplines` exists only
