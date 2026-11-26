@@ -11,8 +11,8 @@
 //   1. Every JSX `href={…}` that is not a plain string literal is `href={safeHref(…)}` (lib/safeUrl.js).
 //      One rule for every link, rather than a judgement per call site about which values are
 //      climber-written: that judgement is what missed the Review desk.
-//   2. safeHref itself refuses javascript:, data:, vbscript: and file: (in any case, behind
-//      whitespace or a tab the URL parser strips) and keeps https, mailto, sms, tel and a relative link.
+//   2. safeHref itself refuses javascript:, data:, vbscript:, file: and an SVG or non-image data: URL (in any case, behind
+//      whitespace or a tab the URL parser strips) and keeps https, mailto, sms, tel, a relative link and a raster data:image (a chat photo IS one).
 //   3. Both builds (vite.config.js, vite.review.config.js) carry cspPlugin() — the policy that refuses
 //      inline and javascript: script even if a link slipped past rule 1.
 //   4. No HTML string the app writes carries an inline on…="" handler: the policy refuses those too,
@@ -67,8 +67,8 @@ if (wrapped < 40) fail.push(`only ${wrapped} safeHref-wrapped links found (were 
 
 // Rule 2. The helper's own behaviour.
 const { safeHref } = await import(pathToFileURL(path.join(ROOT, "lib/safeUrl.js")).href);
-const refuse = ["javascript:alert(1)", "JavaScript:alert(1)", " javascript:alert(1)", "java\tscript:alert(1)", "java\nscript:alert(1)", "data:text/html,<script>alert(1)</script>", "vbscript:msgbox(1)", "file:///etc/passwd", "\u0001javascript:alert(1)"];
-const keep = ["https://www.nps.gov/mora/", "http://example.com/", "mailto:a@b.c", "sms:?&body=hi", "tel:+15555550123", "?route=abc", "/Climbing-App/?list=1", "geo:47.1,-121.2"];
+const refuse = ["javascript:alert(1)", "JavaScript:alert(1)", " javascript:alert(1)", "java\tscript:alert(1)", "java\nscript:alert(1)", "data:text/html,<script>alert(1)</script>", "vbscript:msgbox(1)", "file:///etc/passwd", "data:image/svg+xml;base64,PHN2Zz4=", "data:image/svg+xml,<svg onload=alert(1)>", "\u0001javascript:alert(1)"];
+const keep = ["https://www.nps.gov/mora/", "http://example.com/", "mailto:a@b.c", "sms:?&body=hi", "tel:+15555550123", "?route=abc", "/Climbing-App/?list=1", "geo:47.1,-121.2", "data:image/jpeg;base64,/9j/4AAQ", "data:image/png;base64,iVBORw0K"];
 for (const u of refuse) if (safeHref(u) !== undefined) fail.push(`safeHref(${JSON.stringify(u)}) should be refused, returned ${JSON.stringify(safeHref(u))}`);
 for (const u of keep) if (safeHref(u) !== u.trim()) fail.push(`safeHref(${JSON.stringify(u)}) should be kept, returned ${JSON.stringify(safeHref(u))}`);
 if (safeHref(null) !== undefined || safeHref("") !== undefined) fail.push("safeHref of nothing must be undefined");

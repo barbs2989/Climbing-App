@@ -9,7 +9,7 @@
 -- and commit the result in the same PR. `npm run gen:schema -- --check` exits 1 when this
 -- file has drifted from the live database.
 --
--- Counts: 92 tables, 935 columns, 516 keyed/checked constraints (164 foreign keys), 265 RLS policies.
+-- Counts: 92 tables, 935 columns, 519 keyed/checked constraints (164 foreign keys), 265 RLS policies.
 -- Not covered here: views, functions, triggers, standalone indexes (see supabase/migrations/).
 
 -- ── Foreign keys ───────────────────────────────────────────────────────────────
@@ -675,6 +675,12 @@ CREATE TABLE public.contributions (
   CONSTRAINT contributions_applied_value_len_ck CHECK (((applied_value IS NULL) OR (length((applied_value)::text) <= 20000))),
   CONSTRAINT contributions_area_field_ck CHECK (((NOT ((area_id IS NOT NULL) AND (route_id IS NULL) AND (kind = 'field'::text))) OR (field = ANY (ARRAY['blurb'::text, 'approach'::text, 'approach_min'::text, 'parking_note'::text, 'parking_pin'::text, 'rock'::text, 'aspect'::text, 'season_months'::text, 'elevation_ft'::text])))),
   CONSTRAINT contributions_pair_shape_ck CHECK (((kind IS DISTINCT FROM 'pair'::text) OR ((route_id IS NOT NULL) AND (jsonb_typeof(value) = 'object'::text) AND (COALESCE((value ->> 'with'::text), ''::text) <> ''::text) AND ((value ->> 'with'::text) <> route_id) AND (length(COALESCE((value ->> 'note'::text), ''::text)) <= 280)))),
+  CONSTRAINT contributions_photo_url_is_https CHECK (((kind IS DISTINCT FROM 'photo'::text) OR
+CASE jsonb_typeof(value)
+    WHEN 'object'::text THEN ((COALESCE((value ->> 'url'::text), ''::text) = ''::text) OR ((value ->> 'url'::text) ~* '^https://'::text))
+    WHEN 'string'::text THEN ((value #>> '{}'::text[]) ~* '^https://'::text)
+    ELSE true
+END)),
   CONSTRAINT contributions_reason_len_ck CHECK (((reason IS NULL) OR (char_length(reason) <= 1000))),
   CONSTRAINT contributions_status_chk CHECK ((status = ANY (ARRAY['pending'::text, 'approved'::text, 'rejected'::text]))),
   CONSTRAINT contributions_value_len_ck CHECK (((value IS NULL) OR (length((value)::text) <= 20000))),
@@ -998,6 +1004,7 @@ CREATE TABLE public.crews_messages (
   moderation text NOT NULL DEFAULT 'visible'::text,
   video_path text,
   CONSTRAINT crews_messages_pkey PRIMARY KEY (id),
+  CONSTRAINT crews_messages_image_url_is_image CHECK (((image_url IS NULL) OR (image_url = ''::text) OR (image_url ~* '^https://'::text) OR (image_url ~* '^data:image/(png|jpe?g|gif|webp|heic|heif|avif);base64,'::text))),
   CONSTRAINT crews_messages_moderation_chk CHECK ((moderation = ANY (ARRAY['visible'::text, 'held'::text, 'removed'::text]))),
   CONSTRAINT crews_messages_video_path_chk CHECK (((video_path IS NULL) OR ((video_path ~ '^[0-9a-f-]{36}/[0-9a-f-]{36}\.(mp4|mov|webm)$'::text) AND (split_part(video_path, '/'::text, 1) = (user_id)::text)))),
   CONSTRAINT crews_messages_crew_id_fkey FOREIGN KEY (crew_id) REFERENCES crews(id) ON DELETE CASCADE,
@@ -1453,6 +1460,7 @@ CREATE TABLE public.messages (
   moderation text NOT NULL DEFAULT 'visible'::text,
   video_path text,
   CONSTRAINT messages_pkey PRIMARY KEY (id),
+  CONSTRAINT messages_image_url_is_image CHECK (((image_url IS NULL) OR (image_url = ''::text) OR (image_url ~* '^https://'::text) OR (image_url ~* '^data:image/(png|jpe?g|gif|webp|heic|heif|avif);base64,'::text))),
   CONSTRAINT messages_moderation_chk CHECK ((moderation = ANY (ARRAY['visible'::text, 'held'::text, 'removed'::text]))),
   CONSTRAINT messages_video_path_chk CHECK (((video_path IS NULL) OR ((video_path ~ '^[0-9a-f-]{36}/[0-9a-f-]{36}\.(mp4|mov|webm)$'::text) AND (split_part(video_path, '/'::text, 1) = (sender_id)::text)))),
   CONSTRAINT messages_recipient_id_fkey FOREIGN KEY (recipient_id) REFERENCES profiles(id) ON DELETE CASCADE,
