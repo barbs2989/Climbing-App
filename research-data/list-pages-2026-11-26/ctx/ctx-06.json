@@ -1,0 +1,514 @@
+[
+ {
+  "list": "ca14",
+  "peak": "Middle Palisade",
+  "fill": [
+   "description",
+   "approach",
+   "descent",
+   "gain",
+   "distance",
+   "season",
+   "hazards"
+  ],
+  "row": {
+   "id": "ca_northeast_face_4",
+   "area_id": "ca_middle_palisade",
+   "name": "Northeast Face",
+   "grade": "3rd",
+   "discipline": "alpine",
+   "overview": null,
+   "description": null,
+   "approach": null,
+   "descent_text": null,
+   "season": null,
+   "best_season": null,
+   "hazards": null,
+   "gain_ft": null,
+   "dist_km": null,
+   "high_point_ft": null,
+   "waypoints": [],
+   "areas": {
+    "lat": 37.07,
+    "lng": -118.47,
+    "name": "Middle Palisade",
+    "elevation_ft": null
+   }
+  }
+ },
+ {
+  "list": "cascade",
+  "peak": "Mount Jefferson",
+  "fill": [
+   "gain",
+   "distance",
+   "hazards"
+  ],
+  "row": {
+   "id": "or_mt_jefferson_whitewater_glacier",
+   "area_id": "or_mt_jefferson",
+   "name": "Whitewater Glacier",
+   "grade": "4th",
+   "discipline": "alpine",
+   "overview": "Jefferson's most-climbed line. From a Jefferson Park camp it crosses the moderately crevassed Whitewater Glacier to the southeast ridge, climbs loose scree to the Red Saddle, and crosses a steep snow-and-ice traverse where pickets are usual. The summit pinnacle is a short, exposed fourth-class finish of about 30 ft. Rope and glacier gear are standard.",
+   "description": null,
+   "approach": "From the end of the gravel Whitewater road, hike the Whitewater and Jefferson Park trails to the Pacific Crest Trail and into Jefferson Park, about 4.5 miles. Leave the trail by the moraine and climb to a bench near 7,100 ft where the glacier starts. A wilderness permit is needed from mid-June to mid-October.",
+   "descent_text": "Reverse the route: downclimb or rappel the pinnacle, cross back over the Red Saddle traverse, then descend the scree and the glacier. Rockfall above the traverse increases once the afternoon sun warms the face.",
+   "season": "Jun-Sep",
+   "best_season": "June through September; early summer gives better snow on the Red Saddle traverse, while late summer opens more crevasses on the glacier.",
+   "hazards": null,
+   "gain_ft": null,
+   "dist_km": null,
+   "high_point_ft": null,
+   "waypoints": [
+    {
+     "name": "Whitewater Trailhead",
+     "type": "Trailhead"
+    },
+    {
+     "name": "Mount Jefferson summit",
+     "type": "Summit"
+    }
+   ],
+   "areas": {
+    "lat": 44.676,
+    "lng": -121.7996,
+    "name": "Mt. Jefferson",
+    "elevation_ft": null
+   }
+  }
+ },
+ {
+  "list": "cascade",
+  "peak": "Three Fingered Jack",
+  "fill": [
+   "approach",
+   "descent",
+   "season",
+   "hazards"
+  ],
+  "row": {
+   "id": "or_south_ridge_route",
+   "area_id": "or_three_fingered_jack",
+   "name": "South Ridge Route",
+   "grade": "5.2",
+   "discipline": "alpine",
+   "overview": "Scrambles up a loose ridge from the saddle. A gendarme about 200 ft below the top is bypassed by a thin, airy ledge on its east side, and a concave wall with a shallow chimney finishes on the top spire.",
+   "description": null,
+   "approach": null,
+   "descent_text": null,
+   "season": null,
+   "best_season": null,
+   "hazards": null,
+   "gain_ft": 3000,
+   "dist_km": null,
+   "high_point_ft": null,
+   "waypoints": [
+    {
+     "name": "Santiam Pass PCT Trailhead",
+     "type": "Trailhead",
+     "elev": 4888,
+     "distMi": 0
+    },
+    {
+     "name": "Three Fingered Jack",
+     "type": "Summit",
+     "elev": 7821,
+     "distMi": 6.2
+    }
+   ],
+   "areas": {
+    "lat": 44.47776,
+    "lng": -121.84332,
+    "name": "Three Fingered Jack",
+    "elevation_ft": null
+   }
+  }
+ },
+ {
+  "list": "cascade",
+  "peak": "Mount Washington",
+  "fill": [
+   "approach",
+   "descent",
+   "season",
+   "hazards"
+  ],
+  "row": {
+   "id": "or_north_ridge_2",
+   "area_id": "or_mt_washington",
+   "name": "North Ridge",
+   "grade": "5.3",
+   "discipline": "alpine",
+   "overview": "The approach, fairly easy but about 11 miles out and back, is the crux. Where the climbers trail leaves the PCT, follow it east, slightly north, to timberline on the north ridge, then follow the ridge-top trail over scree and loose boulders to the notch before the summit plug. Climb crumbly, very loose pseudo-chimney rock and belay where convenient; two rap stations (the first and the second) should be in view. Easier ground continues to a spot beyond the second station, where the second belay goes. Pitch three goes up the steepest rock on the right, then a short scramble reaches the top rap station and summit. Three raps descend. Beware rockfall; helmets are needed. Pro may be runout or suspect.",
+   "description": null,
+   "approach": null,
+   "descent_text": null,
+   "season": null,
+   "best_season": null,
+   "hazards": null,
+   "gain_ft": null,
+   "dist_km": null,
+   "high_point_ft": null,
+   "waypoints": [
+    {
+     "name": "PCT trailhead, Old Santiam Wagon Road",
+     "type": "Trailhead"
+    },
+    {
+     "name": "Mount Washington",
+     "type": "Summit",
+     "elev": 7751,
+     "distMi": 5.4
+    }
+   ],
+   "areas": {
+    "lat": 44.33229,
+    "lng": -121.83839,
+    "name": "Mt. Washington",
+    "elevation_ft": null
+   }
+  }
+ },
+ {
+  "list": "cascade",
+  "peak": "North Sister",
+  "fill": [
+   "gain",
+   "distance",
+   "hazards"
+  ],
+  "row": {
+   "id": "or_north_sister_southeast_ridge",
+   "area_id": "or_north_sister",
+   "name": "Southeast Ridge",
+   "grade": "4th",
+   "discipline": "alpine",
+   "overview": "A long ridge of loose scree and rock on North Sister's southeast side, often preferred to the northwest ridge in summer. About 2,000 ft of unstable ground leads to a cluster of pinnacles, after which the route joins the South Ridge finish up the Bowling Alley gully to the summit. Rocks knocked down by your own party are the main danger.",
+   "description": null,
+   "approach": "From the Pole Creek trailhead take the trail toward Soap Creek, then leave it and travel west through forest to the foot of the ridge near 7,800 ft. There is no path; navigate by map and terrain.",
+   "descent_text": "Reverse the climb: downclimb or rappel the Bowling Alley, where rappel slings are usually in place, pass the pinnacles on their south side, and descend the ridge. Scree continues down to about 7,000 ft.",
+   "season": "Jul-Sep",
+   "best_season": null,
+   "hazards": null,
+   "gain_ft": null,
+   "dist_km": null,
+   "high_point_ft": null,
+   "waypoints": [
+    {
+     "name": "Pole Creek Trailhead",
+     "type": "Trailhead"
+    },
+    {
+     "name": "North Sister summit",
+     "type": "Summit"
+    }
+   ],
+   "areas": {
+    "lat": 44.16662,
+    "lng": -121.77214,
+    "name": "North Sister",
+    "elevation_ft": null
+   }
+  }
+ },
+ {
+  "list": "cascade",
+  "peak": "Middle Sister",
+  "fill": [
+   "description",
+   "approach",
+   "descent",
+   "season",
+   "hazards"
+  ],
+  "row": {
+   "id": "or_middle_sister_north_ridge_hayden_glacier",
+   "area_id": "or_middle_sister",
+   "name": "North Ridge (Hayden Glacier)",
+   "grade": "Grade II Snow",
+   "discipline": "mountaineering",
+   "overview": "The north ridge, reached from the Pole Creek side and crossing the Hayden glacier.",
+   "description": null,
+   "approach": null,
+   "descent_text": null,
+   "season": null,
+   "best_season": null,
+   "hazards": null,
+   "gain_ft": null,
+   "dist_km": null,
+   "high_point_ft": null,
+   "waypoints": [
+    {
+     "name": "Pole Creek Trailhead",
+     "type": "Trailhead",
+     "elev": 5313,
+     "distMi": 0
+    },
+    {
+     "name": "Middle Sister",
+     "type": "Summit",
+     "elev": 10033,
+     "distMi": 8.2
+    }
+   ],
+   "areas": {
+    "lat": 44.14849,
+    "lng": -121.78406,
+    "name": "Middle Sister",
+    "elevation_ft": null
+   }
+  }
+ },
+ {
+  "list": "cascade",
+  "peak": "South Sister",
+  "fill": [
+   "hazards"
+  ],
+  "row": {
+   "id": "or_south_sister_south_side_route",
+   "area_id": "or_south_sister",
+   "name": "South Side Route",
+   "grade": "Easy Snow",
+   "discipline": "mountaineering",
+   "overview": "Graded as a scramble (or easy snow), it totals 12.5 miles round trip. Start from Devils Lake campground and follow the South Climb Trail (signed); a permit, self-issued, is filled out at the beginning. The path crosses loose volcanic scree all the way up. A Northwest Forest Pass is required.",
+   "description": null,
+   "approach": "Start at the Devils Lake trailhead on the Cascade Lakes Highway and take the signed South Sister Climbers Trail, filling out the self-issued wilderness permit at the start. The trail crosses a footbridge over Tyee Creek, crosses the highway and climbs steeply through hemlock forest to a sandy plateau, where you go straight at the four-way junction. It passes the Moraine Lake valley and continues over loose cinder to a sandy saddle at the Lewis Glacier moraine. The round trip is roughly 11 to 12 miles.",
+   "descent_text": "Descend the way you came, down the South Sister Climbers Trail to the Devils Lake trailhead. The upper trail is loose volcanic scree and cinder that slides underfoot, and with snow cover an ice axe and crampons may be needed. Parties who loop through Moraine Lake instead face a steep, slippery trail into the canyon, with a rugged first stretch that needs hands.",
+   "season": "Jul-Sep",
+   "best_season": null,
+   "hazards": null,
+   "gain_ft": 4900,
+   "dist_km": null,
+   "high_point_ft": null,
+   "waypoints": [
+    {
+     "name": "Devils Lake",
+     "type": "Trailhead"
+    },
+    {
+     "name": "South Sister summit",
+     "type": "Summit"
+    }
+   ],
+   "areas": {
+    "lat": 44.1023,
+    "lng": -121.7714,
+    "name": "South Sister",
+    "elevation_ft": null
+   }
+  }
+ },
+ {
+  "list": "cascade",
+  "peak": "Broken Top",
+  "fill": [
+   "approach",
+   "descent",
+   "hazards"
+  ],
+  "row": {
+   "id": "or_northwest_ridge",
+   "area_id": "or_broken_top",
+   "name": "Northwest Ridge",
+   "grade": "Easy 5th",
+   "discipline": "alpine",
+   "overview": "The only way up Broken Top that avoids glacier travel, and the choice for anyone who simply wants the summit. Rock across the peak is loose and falling stone is a genuine worry on every route, so a helmet is strongly advised.",
+   "description": null,
+   "approach": null,
+   "descent_text": null,
+   "season": "Jul-Sep",
+   "best_season": null,
+   "hazards": null,
+   "gain_ft": null,
+   "dist_km": null,
+   "high_point_ft": null,
+   "waypoints": [
+    {
+     "name": "Green Lakes Trailhead",
+     "type": "Trailhead",
+     "elev": 5454,
+     "distMi": 0
+    }
+   ],
+   "areas": {
+    "lat": 44.0796,
+    "lng": -121.7,
+    "name": "Broken Top",
+    "elevation_ft": null
+   }
+  }
+ },
+ {
+  "list": "cascade",
+  "peak": "Mount Bachelor",
+  "fill": [
+   "description",
+   "descent",
+   "hazards"
+  ],
+  "row": {
+   "id": "or_mt_bachelor_trail",
+   "area_id": "or_mt_bachelor",
+   "name": "Mt. Bachelor Trail",
+   "grade": "Class 1",
+   "discipline": "scrambling",
+   "overview": null,
+   "description": null,
+   "approach": "Start at the West Village base and head east along the bottom of the slope to a service road with a signed turnoff for the summit trail; above that the path is clear and keeps mostly off the ski runs.",
+   "descent_text": null,
+   "season": "Jul-Oct",
+   "best_season": null,
+   "hazards": null,
+   "gain_ft": 2664,
+   "dist_km": null,
+   "high_point_ft": null,
+   "waypoints": [
+    {
+     "name": "West Village Lodge",
+     "type": "Trailhead",
+     "elev": 6416,
+     "distMi": 0
+    },
+    {
+     "name": "Mount Bachelor",
+     "type": "Summit",
+     "elev": 9047,
+     "distMi": 2.6
+    }
+   ],
+   "areas": {
+    "lat": 43.9794,
+    "lng": -121.6885,
+    "name": "Mt. Bachelor",
+    "elevation_ft": 9068
+   }
+  }
+ },
+ {
+  "list": "cascade",
+  "peak": "Mount Thielsen",
+  "fill": [
+   "description",
+   "approach",
+   "descent",
+   "season",
+   "hazards"
+  ],
+  "row": {
+   "id": "or_west_ridge_2",
+   "area_id": "or_mt_thielsen",
+   "name": "West Ridge",
+   "grade": "4th",
+   "discipline": "alpine",
+   "overview": null,
+   "description": null,
+   "approach": null,
+   "descent_text": null,
+   "season": null,
+   "best_season": null,
+   "hazards": null,
+   "gain_ft": 3302,
+   "dist_km": null,
+   "high_point_ft": null,
+   "waypoints": [
+    {
+     "name": "Mt. Thielsen Trailhead",
+     "type": "Trailhead",
+     "elev": 5460,
+     "distMi": 0
+    },
+    {
+     "name": "Mount Thielsen",
+     "type": "Summit",
+     "elev": 9182,
+     "distMi": 4.4
+    }
+   ],
+   "areas": {
+    "lat": 43.15208,
+    "lng": -122.06641,
+    "name": "Mt. Thielsen",
+    "elevation_ft": null
+   }
+  }
+ },
+ {
+  "list": "cascade",
+  "peak": "Mount McLoughlin",
+  "fill": [
+   "descent",
+   "hazards"
+  ],
+  "row": {
+   "id": "or_mt_mcloughlin_east_ridge",
+   "area_id": "or_mt_mcloughlin",
+   "name": "East Ridge",
+   "grade": "Easy Snow",
+   "discipline": "mountaineering",
+   "overview": "A well-established trail leads from the parking lot, meeting the PCT after 1.1 miles. Continue on the climbers trail past a second PCT junction (heading north) by staying straight. About 3 miles of good flowing trail precede the technical ground, where rocky footing, big step-ups and big drops lead to the East Ridge. Plod up the ridge to the last 600ft, a scree (or snow) slope ending at a large, pointed summit.",
+   "description": null,
+   "approach": "From the trailhead parking lot a good trail runs about a mile to the first Pacific Crest Trail junction. Stay on the McLoughlin climbers trail, go straight past a second PCT junction that leads north, and follow smooth trail for a few miles before the footing turns rocky, with large step-ups. The well-worn trail leads to the East Ridge itself, and the final slope to the pointed summit is scree or snow. The trailhead charges a fee and has no camping.",
+   "descent_text": null,
+   "season": "Jun-Oct",
+   "best_season": null,
+   "hazards": null,
+   "gain_ft": 3920,
+   "dist_km": null,
+   "high_point_ft": null,
+   "waypoints": [
+    {
+     "name": "Mount McLoughlin Trailhead",
+     "type": "Trailhead"
+    },
+    {
+     "name": "Mount McLoughlin summit",
+     "type": "Summit"
+    }
+   ],
+   "areas": {
+    "lat": 42.4445,
+    "lng": -122.3156,
+    "name": "Mt. McLoughlin",
+    "elevation_ft": 9493
+   }
+  }
+ },
+ {
+  "list": "cascade",
+  "peak": "Lassen Peak",
+  "fill": [
+   "description",
+   "approach",
+   "descent",
+   "distance",
+   "season",
+   "hazards"
+  ],
+  "row": {
+   "id": "ca_lassen_peak_trail",
+   "area_id": "ca_lassen_peak",
+   "name": "Lassen Peak Trail",
+   "grade": "Class 1",
+   "discipline": "scrambling",
+   "overview": null,
+   "description": null,
+   "approach": null,
+   "descent_text": null,
+   "season": null,
+   "best_season": null,
+   "hazards": null,
+   "gain_ft": 1957,
+   "dist_km": null,
+   "high_point_ft": null,
+   "waypoints": [],
+   "areas": {
+    "lat": 40.4881,
+    "lng": -121.505,
+    "name": "Lassen Peak",
+    "elevation_ft": 10457
+   }
+  }
+ }
+]

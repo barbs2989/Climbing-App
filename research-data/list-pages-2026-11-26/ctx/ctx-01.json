@@ -1,0 +1,486 @@
+[
+ {
+  "list": "co14",
+  "peak": "Mount Elbert",
+  "fill": [
+   "approach",
+   "descent",
+   "season",
+   "hazards"
+  ],
+  "row": {
+   "id": "co_mount_elbert_northeast_ridge",
+   "area_id": "co_mount_elbert",
+   "name": "Northeast Ridge",
+   "grade": "Class 1",
+   "discipline": "scrambling",
+   "overview": "The usual trail route up the state's highest summit, climbing onto the long northeast ridge from the north trailhead and following it on a good path to the top. It is a busy hike in summer and the ridge is often wind-scoured in winter.",
+   "description": null,
+   "approach": null,
+   "descent_text": null,
+   "season": null,
+   "best_season": null,
+   "hazards": null,
+   "gain_ft": 4500,
+   "dist_km": null,
+   "high_point_ft": null,
+   "waypoints": [
+    {
+     "name": "North Mount Elbert Trailhead",
+     "type": "Trailhead",
+     "elev": 10066,
+     "distMi": 0
+    },
+    {
+     "name": "Mount Elbert",
+     "type": "Summit",
+     "elev": 14440,
+     "distMi": 4.7
+    }
+   ],
+   "areas": {
+    "lat": 39.1178,
+    "lng": -106.4454,
+    "name": "Mount Elbert",
+    "elevation_ft": 14440
+   }
+  }
+ },
+ {
+  "list": "co14",
+  "peak": "Mount Massive",
+  "fill": [
+   "description",
+   "approach",
+   "descent",
+   "distance",
+   "season",
+   "hazards"
+  ],
+  "row": {
+   "id": "co_mount_massive_east_slopes",
+   "area_id": "co_mount_massive",
+   "name": "East Slopes",
+   "grade": "Class 2",
+   "discipline": "scrambling",
+   "overview": "The standard hike up Massive: a long, nontechnical trail route up the broad east side, finishing along the crest from the 13,900-ft col that separates the main summit from South Massive.",
+   "description": null,
+   "approach": null,
+   "descent_text": null,
+   "season": null,
+   "best_season": null,
+   "hazards": null,
+   "gain_ft": 4500,
+   "dist_km": null,
+   "high_point_ft": null,
+   "waypoints": [],
+   "areas": {
+    "lat": 39.1875,
+    "lng": -106.4756,
+    "name": "Mount Massive",
+    "elevation_ft": 14427
+   }
+  }
+ },
+ {
+  "list": "co14",
+  "peak": "Mount Harvard",
+  "fill": [
+   "description",
+   "approach",
+   "descent",
+   "distance",
+   "season",
+   "hazards"
+  ],
+  "row": {
+   "id": "co_mount_harvard_south_slopes",
+   "area_id": "co_mount_harvard",
+   "name": "South Slopes",
+   "grade": "Class 2",
+   "discipline": "scrambling",
+   "overview": null,
+   "description": null,
+   "approach": null,
+   "descent_text": null,
+   "season": null,
+   "best_season": null,
+   "hazards": null,
+   "gain_ft": 4600,
+   "dist_km": null,
+   "high_point_ft": null,
+   "waypoints": [],
+   "areas": {
+    "lat": 38.9244,
+    "lng": -106.3207,
+    "name": "Mount Harvard",
+    "elevation_ft": 14421
+   }
+  }
+ },
+ {
+  "list": "co14",
+  "peak": "Blanca Peak",
+  "fill": [
+   "description",
+   "gain",
+   "distance",
+   "season",
+   "hazards"
+  ],
+  "row": {
+   "id": "co_mount_blanca_rocky_mountain_hypergoulotte",
+   "area_id": "co_blanca_peak",
+   "name": "Rocky Mountain Hypergoulotte",
+   "grade": "WI3 M5",
+   "discipline": "ice",
+   "overview": null,
+   "description": null,
+   "approach": "Follow the Lily Lake trail to the first switchback, then cross snow to the base. The route is a narrow couloir on the north wall between Blanca and Ellingwood, which runs up to the col between the two peaks. The climb uses the lower section, then veers left into a somewhat broader gully that stays in shade.",
+   "descent_text": "One way down is to rappel off the ridge back onto the snow ramp, downclimb the ramp to the fixed pin and rappel from it onto steep alpine ice, which can be downclimbed or rappelled to the ramp. Next, move right along the ramp to a point beneath Ellingwood and glissade down into the bowl under the face.",
+   "season": null,
+   "best_season": null,
+   "hazards": null,
+   "gain_ft": null,
+   "dist_km": null,
+   "high_point_ft": null,
+   "waypoints": [],
+   "areas": {
+    "lat": 37.57771,
+    "lng": -105.48544,
+    "name": "Blanca Peak",
+    "elevation_ft": null
+   }
+  }
+ },
+ {
+  "list": "co14",
+  "peak": "La Plata Peak",
+  "fill": [
+   "description",
+   "approach",
+   "descent",
+   "season",
+   "hazards"
+  ],
+  "row": {
+   "id": "co_ellingwood_ridge",
+   "area_id": "co_la_plata",
+   "name": "Ellingwood Ridge",
+   "grade": "4th",
+   "discipline": "alpine",
+   "overview": "A long, jagged, exposed ridge on the far side of La Plata Basin, with fractured rock along its crest; talus and scree lead to its start.",
+   "description": null,
+   "approach": null,
+   "descent_text": null,
+   "season": null,
+   "best_season": null,
+   "hazards": null,
+   "gain_ft": null,
+   "dist_km": null,
+   "high_point_ft": null,
+   "waypoints": [
+    {
+     "name": "La Plata Peak Trailhead (Highway 82)",
+     "type": "Trailhead"
+    },
+    {
+     "name": "La Plata summit",
+     "type": "Summit"
+    }
+   ],
+   "areas": {
+    "lat": 39.0294,
+    "lng": -106.473,
+    "name": "La Plata",
+    "elevation_ft": null
+   }
+  }
+ },
+ {
+  "list": "co14",
+  "peak": "Uncompahgre Peak",
+  "fill": [
+   "approach",
+   "descent",
+   "season",
+   "hazards"
+  ],
+  "row": {
+   "id": "co_uncompahgre_peak_south_ridge",
+   "area_id": "co_uncompahgre_peak",
+   "name": "South Ridge",
+   "grade": "Class 2",
+   "discipline": "scrambling",
+   "overview": "The usual way up the peak. You reach the crest around 13,800 ft just beyond a notable notch, after which a track skirts the ridge's west flank with a couple of scrambly spots before arriving at a wide summit plateau.",
+   "description": null,
+   "approach": null,
+   "descent_text": null,
+   "season": null,
+   "best_season": null,
+   "hazards": null,
+   "gain_ft": 3000,
+   "dist_km": null,
+   "high_point_ft": null,
+   "waypoints": [
+    {
+     "name": "Uncompahgre Peak",
+     "type": "Summit",
+     "elev": 14302,
+     "distMi": 7.6
+    }
+   ],
+   "areas": {
+    "lat": 38.0717,
+    "lng": -107.4621,
+    "name": "Uncompahgre Peak",
+    "elevation_ft": 14318
+   }
+  }
+ },
+ {
+  "list": "co14",
+  "peak": "Crestone Peak",
+  "fill": [
+   "approach",
+   "descent",
+   "distance",
+   "season",
+   "hazards"
+  ],
+  "row": {
+   "id": "co_crestone_peak_south_face",
+   "area_id": "co_crestone_peak",
+   "name": "South Face",
+   "grade": "Class 3",
+   "discipline": "scrambling",
+   "overview": "Depending on the year, possibly the gentlest, most secure line up the peak: tidy scrambling plus moderate snow in place of the northwest gully's ice and rubble. A lengthy couloir facing south leads to the red notch between the twin summits, and reaching its base takes more walking and route-finding.",
+   "description": null,
+   "approach": null,
+   "descent_text": null,
+   "season": null,
+   "best_season": null,
+   "hazards": null,
+   "gain_ft": 6200,
+   "dist_km": null,
+   "high_point_ft": null,
+   "waypoints": [],
+   "areas": {
+    "lat": 37.9669,
+    "lng": -105.5854,
+    "name": "Crestone Peak",
+    "elevation_ft": 14299
+   }
+  }
+ },
+ {
+  "list": "co14",
+  "peak": "Mount Lincoln",
+  "fill": [
+   "description",
+   "approach",
+   "descent",
+   "distance",
+   "season",
+   "hazards"
+  ],
+  "row": {
+   "id": "co_mount_lincoln_west_ridge",
+   "area_id": "co_mount_lincoln",
+   "name": "West Ridge",
+   "grade": "Class 2",
+   "discipline": "scrambling",
+   "overview": null,
+   "description": null,
+   "approach": null,
+   "descent_text": null,
+   "season": null,
+   "best_season": null,
+   "hazards": null,
+   "gain_ft": 2600,
+   "dist_km": null,
+   "high_point_ft": null,
+   "waypoints": [],
+   "areas": {
+    "lat": 39.3515,
+    "lng": -106.1116,
+    "name": "Mount Lincoln",
+    "elevation_ft": 14293
+   }
+  }
+ },
+ {
+  "list": "co14",
+  "peak": "Castle Peak",
+  "fill": [
+   "description",
+   "approach",
+   "season",
+   "hazards"
+  ],
+  "row": {
+   "id": "co_castle_peak_northeast_ridge",
+   "area_id": "co_castle_peak",
+   "name": "Northeast Ridge",
+   "grade": "Class 2",
+   "discipline": "scrambling",
+   "overview": "Walk up the upper Montezuma Basin valley, then cut south onto the northeast ridge and follow its crest to the top.",
+   "description": null,
+   "approach": null,
+   "descent_text": null,
+   "season": null,
+   "best_season": null,
+   "hazards": null,
+   "gain_ft": 4600,
+   "dist_km": null,
+   "high_point_ft": null,
+   "waypoints": [
+    {
+     "name": "Castle Creek Road (end of pavement)",
+     "type": "Trailhead",
+     "elev": 9678,
+     "distMi": 0
+    },
+    {
+     "name": "Castle Peak",
+     "type": "Summit",
+     "elev": 14265,
+     "distMi": 6
+    }
+   ],
+   "areas": {
+    "lat": 39.0097,
+    "lng": -106.8614,
+    "name": "Castle Peak",
+    "elevation_ft": 14274
+   }
+  }
+ },
+ {
+  "list": "co14",
+  "peak": "Grays Peak",
+  "fill": [
+   "description",
+   "approach",
+   "descent",
+   "season",
+   "hazards"
+  ],
+  "row": {
+   "id": "co_grays_peak_north_slopes",
+   "area_id": "co_grays_peak",
+   "name": "North Slopes",
+   "grade": "Class 1",
+   "discipline": "scrambling",
+   "overview": null,
+   "description": null,
+   "approach": null,
+   "descent_text": null,
+   "season": null,
+   "best_season": null,
+   "hazards": null,
+   "gain_ft": null,
+   "dist_km": null,
+   "high_point_ft": null,
+   "waypoints": [
+    {
+     "name": "Grays Peak Trailhead",
+     "type": "Trailhead",
+     "elev": 11241,
+     "distMi": 0
+    },
+    {
+     "name": "Grays Peak",
+     "type": "Summit",
+     "elev": 14256,
+     "distMi": 3.6
+    }
+   ],
+   "areas": {
+    "lat": 39.6338,
+    "lng": -105.8176,
+    "name": "Grays Peak",
+    "elevation_ft": 14275
+   }
+  }
+ },
+ {
+  "list": "co14",
+  "peak": "Mount Antero",
+  "fill": [
+   "description",
+   "approach",
+   "descent",
+   "season",
+   "hazards"
+  ],
+  "row": {
+   "id": "co_mount_antero_west_slopes",
+   "area_id": "co_mount_antero",
+   "name": "West Slopes",
+   "grade": "Class 2",
+   "discipline": "scrambling",
+   "overview": null,
+   "description": null,
+   "approach": null,
+   "descent_text": null,
+   "season": null,
+   "best_season": null,
+   "hazards": null,
+   "gain_ft": 5200,
+   "dist_km": null,
+   "high_point_ft": null,
+   "waypoints": [
+    {
+     "name": "Baldwin Gulch / Chalk Creek Road",
+     "type": "Trailhead"
+    },
+    {
+     "name": "Mount Antero summit",
+     "type": "Summit",
+     "elev": 14276
+    }
+   ],
+   "areas": {
+    "lat": 38.6741,
+    "lng": -106.2462,
+    "name": "Mount Antero",
+    "elevation_ft": 14276
+   }
+  }
+ },
+ {
+  "list": "co14",
+  "peak": "Torreys Peak",
+  "fill": [
+   "descent",
+   "distance",
+   "season",
+   "hazards"
+  ],
+  "row": {
+   "id": "co_torrey_s_peak_north_face_aka_tuning_fork",
+   "area_id": "co_torrey_s_peak",
+   "name": "North Face (aka Tuning Fork)",
+   "grade": "Mod. Snow R",
+   "discipline": "mountaineering",
+   "overview": "Easily spotted by drivers on the interstate near Bakersville, a wide ribbon of snow dropping about 1,000 m, also known as the Tuning Fork. To ski it, take the Grizzly Creek road to the Grays Peak trailhead, climb by skin or boot, cross the Grays-Torreys saddle, and gain the summit by the southeast ridge. Descend the ridge toward Grizzly Peak until the line appears; loose talus leads down to snow, with nowhere to stop and click in. A few easy turns come before the steep choke, 40+ degrees, that sets the difficulty. Booting up the face is a good workout, but rockfall makes that unwise.",
+   "description": null,
+   "approach": "Use the Grays Peak trailhead and follow the trail toward the Grays and Torreys route; in winter the road is gated at the I-70 exit, making for a long day. Roughly a mile up, at the Grays Peak sign, turn west down Grizzly Gulch to reach the Tuning Fork, a long strip of snow on Torreys' northwest face, visible from the interstate. The standard route to the saddle and summit crosses avalanche paths, and the face can be climbed directly as a difficult Class 2 snow climb. These are steep snow slopes in avalanche terrain, so check the avalanche forecast first.",
+   "descent_text": null,
+   "season": null,
+   "best_season": null,
+   "hazards": null,
+   "gain_ft": 4500,
+   "dist_km": null,
+   "high_point_ft": null,
+   "waypoints": [],
+   "areas": {
+    "lat": 39.6428,
+    "lng": -105.821,
+    "name": "Torrey's Peak",
+    "elevation_ft": null
+   }
+  }
+ }
+]

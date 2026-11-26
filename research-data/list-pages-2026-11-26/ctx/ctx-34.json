@@ -1,0 +1,449 @@
+[
+ {
+  "list": "sps",
+  "peak": "Mount Hilgard",
+  "fill": [
+   "description",
+   "approach",
+   "descent",
+   "distance",
+   "season",
+   "hazards"
+  ],
+  "row": {
+   "id": "ca_mount_hilgard_standard_route",
+   "area_id": "ca_mount_hilgard",
+   "name": "Standard route",
+   "grade": "Class 2",
+   "discipline": "scrambling",
+   "overview": null,
+   "description": null,
+   "approach": null,
+   "descent_text": null,
+   "season": null,
+   "best_season": null,
+   "hazards": null,
+   "gain_ft": 7760,
+   "dist_km": null,
+   "high_point_ft": null,
+   "waypoints": [],
+   "areas": {
+    "lat": 37.3605,
+    "lng": -118.8268,
+    "name": "Mount Hilgard",
+    "elevation_ft": 13361
+   }
+  }
+ },
+ {
+  "list": "sps",
+  "peak": "Recess Peak",
+  "fill": [
+   "description",
+   "approach",
+   "descent",
+   "gain",
+   "distance",
+   "season",
+   "hazards"
+  ],
+  "row": {
+   "id": "ca_recess_peak_standard_route",
+   "area_id": "ca_recess_peak",
+   "name": "Standard route",
+   "grade": "Class 2",
+   "discipline": "scrambling",
+   "overview": null,
+   "description": null,
+   "approach": null,
+   "descent_text": null,
+   "season": null,
+   "best_season": null,
+   "hazards": null,
+   "gain_ft": null,
+   "dist_km": null,
+   "high_point_ft": null,
+   "waypoints": [],
+   "areas": {
+    "lat": 37.3823,
+    "lng": -118.8555,
+    "name": "Recess Peak",
+    "elevation_ft": 12813
+   }
+  }
+ },
+ {
+  "list": "sps",
+  "peak": "Mount Gabb",
+  "fill": [
+   "approach",
+   "descent",
+   "gain",
+   "distance",
+   "season",
+   "hazards"
+  ],
+  "row": {
+   "id": "ca_mount_gabb_north_face",
+   "area_id": "ca_mount_gabb",
+   "name": "North Face",
+   "grade": "4th AI2",
+   "discipline": "ice",
+   "overview": "Follows the prominent couloir up the middle of the peak. The first ascent stayed mostly on the rock walls, crossing between them to avoid snow and ice. After heavy winters snow persists in the couloir into fall and turns to blue alpine ice at about 50 degrees. The top-out squeezes via a natural bridge and lands near the summit. The way down depends on the approach. If returning to Cox Col or Lake Italy, take the south slopes (loose, class 2). If returning to Second Recess, take the Northwest ridge, also called the Glacier Route (class 2). The approach is one of the longest walk-ins for ice in the Sierra.",
+   "description": null,
+   "approach": null,
+   "descent_text": null,
+   "season": null,
+   "best_season": null,
+   "hazards": null,
+   "gain_ft": null,
+   "dist_km": null,
+   "high_point_ft": null,
+   "waypoints": [],
+   "areas": {
+    "lat": 37.37663,
+    "lng": -118.8038,
+    "name": "Mount Gabb",
+    "elevation_ft": null
+   }
+  }
+ },
+ {
+  "list": "sps",
+  "peak": "Bear Creek Spire",
+  "fill": [
+   "approach",
+   "descent",
+   "season",
+   "hazards"
+  ],
+  "row": {
+   "id": "ca_north_arete_4",
+   "area_id": "ca_bear_creek_spire",
+   "name": "North Arete",
+   "grade": "5.8",
+   "discipline": "alpine",
+   "overview": "P1 (5.6): slab cracks, depending on snowline. P2 (5.8): flake crack on the left. P3 (5.7): flakes up and right; the way may be hard to find. Pitches 4 and 5 (easy 5th): crest to a ledge under the final steep offwidth. P6 (5.8, crux): the awkward crack. P7 (easy 5th): a tunnel to the other side. Then either join the Northeast Ridge or keep to the arete crest to the summit ridge, a pitch or two of scrambling. Mantle the summit block.",
+   "description": null,
+   "approach": null,
+   "descent_text": null,
+   "season": null,
+   "best_season": null,
+   "hazards": null,
+   "gain_ft": null,
+   "dist_km": null,
+   "high_point_ft": null,
+   "waypoints": [
+    {
+     "name": "Mosquito Flat Trailhead",
+     "type": "Trailhead",
+     "elev": 10224,
+     "distMi": 0
+    },
+    {
+     "name": "Bear Creek Spire",
+     "type": "Summit",
+     "elev": 13720,
+     "distMi": 6.1
+    }
+   ],
+   "areas": {
+    "lat": 37.3681,
+    "lng": -118.767,
+    "name": "Bear Creek Spire",
+    "elevation_ft": null
+   }
+  }
+ },
+ {
+  "list": "sps",
+  "peak": "Mount Dade",
+  "fill": [
+   "description",
+   "approach",
+   "descent",
+   "gain",
+   "distance",
+   "season",
+   "hazards"
+  ],
+  "row": {
+   "id": "ca_north_face_18",
+   "area_id": "ca_mount_dade",
+   "name": "North Face",
+   "grade": "Easy 5th",
+   "discipline": "alpine",
+   "overview": null,
+   "description": null,
+   "approach": null,
+   "descent_text": null,
+   "season": null,
+   "best_season": null,
+   "hazards": null,
+   "gain_ft": null,
+   "dist_km": null,
+   "high_point_ft": null,
+   "waypoints": [],
+   "areas": {
+    "lat": 37.3821,
+    "lng": -118.7799,
+    "name": "Mount Dade",
+    "elevation_ft": null
+   }
+  }
+ },
+ {
+  "list": "sps",
+  "peak": "Mount Abbot",
+  "fill": [
+   "description",
+   "approach",
+   "descent",
+   "gain",
+   "distance",
+   "season",
+   "hazards"
+  ],
+  "row": {
+   "id": "ca_mount_abbot_warning_shot_nw_face",
+   "area_id": "ca_mount_abbot",
+   "name": "Warning Shot (NW Face)",
+   "grade": "5.5 AI2 Steep Snow PG13",
+   "discipline": "ice",
+   "overview": null,
+   "description": null,
+   "approach": null,
+   "descent_text": null,
+   "season": null,
+   "best_season": null,
+   "hazards": null,
+   "gain_ft": null,
+   "dist_km": null,
+   "high_point_ft": null,
+   "waypoints": [],
+   "areas": {
+    "lat": 37.38632,
+    "lng": -118.78485,
+    "name": "Mount Abbot",
+    "elevation_ft": null
+   }
+  }
+ },
+ {
+  "list": "sps",
+  "peak": "Mount Mills",
+  "fill": [
+   "gain",
+   "distance",
+   "season",
+   "hazards"
+  ],
+  "row": {
+   "id": "ca_mount_mills_north_face",
+   "area_id": "ca_mount_mills",
+   "name": "North Face",
+   "grade": "4th AI1",
+   "discipline": "ice",
+   "overview": "A trail to the trailhead via Ruby Lake is the way out: descend the East Couloir route, passing Mills Lake. The climb crosses the glacier to a clear couloir centered on the north face, ascends it (about 40 degrees) until a solid rock cap stops it, then veers right onto gentler terrain, mostly 3rd class, to reach the flat top before the summit itself.",
+   "description": null,
+   "approach": "Start at Mosquito Flat and hike the trail toward Mono Pass. From the pass go left (west) up an easy slope to the ridge top and scramble down the far side into the Fourth Recess, the trickiest part of the approach. Descend a broad, low-angle scree chute, turn south and go up the recess, passing Snow Lakes, to reach the glacier under the north face.",
+   "descent_text": "The route ends on the summit plateau, crossed to the summit. The normal way off is the East Couloir route, passing Mills Lake to Ruby Lake where the trail back to the trailhead is picked up. Parties camped in the Fourth Recess can instead go back down the north face.",
+   "season": null,
+   "best_season": null,
+   "hazards": null,
+   "gain_ft": null,
+   "dist_km": null,
+   "high_point_ft": null,
+   "waypoints": [],
+   "areas": {
+    "lat": 37.39253,
+    "lng": -118.78903,
+    "name": "Mount Mills",
+    "elevation_ft": null
+   }
+  }
+ },
+ {
+  "list": "sps",
+  "peak": "Mount Morgan (S)",
+  "fill": [
+   "description",
+   "approach",
+   "descent",
+   "gain",
+   "distance",
+   "season",
+   "hazards"
+  ],
+  "row": {
+   "id": "ca_sw_ridge_direct",
+   "area_id": "ca_mt_morgan_south",
+   "name": "SW Ridge direct",
+   "grade": "5.5",
+   "discipline": "alpine",
+   "overview": null,
+   "description": null,
+   "approach": null,
+   "descent_text": null,
+   "season": null,
+   "best_season": null,
+   "hazards": null,
+   "gain_ft": null,
+   "dist_km": null,
+   "high_point_ft": null,
+   "waypoints": [],
+   "areas": {
+    "lat": 37.40525,
+    "lng": -118.7329,
+    "name": "Mt Morgan (South)",
+    "elevation_ft": null
+   }
+  }
+ },
+ {
+  "list": "sps",
+  "peak": "Silver Peak",
+  "fill": [
+   "description",
+   "approach",
+   "descent",
+   "gain",
+   "distance",
+   "season",
+   "hazards"
+  ],
+  "row": {
+   "id": "ca_silver_peak_standard_route",
+   "area_id": "ca_silver_peak",
+   "name": "Standard route",
+   "grade": "Class 2",
+   "discipline": "scrambling",
+   "overview": null,
+   "description": null,
+   "approach": null,
+   "descent_text": null,
+   "season": null,
+   "best_season": null,
+   "hazards": null,
+   "gain_ft": null,
+   "dist_km": null,
+   "high_point_ft": null,
+   "waypoints": [],
+   "areas": {
+    "lat": 37.4697,
+    "lng": -119.0212,
+    "name": "Silver Peak",
+    "elevation_ft": 11878
+   }
+  }
+ },
+ {
+  "list": "sps",
+  "peak": "Mount Izaak Walton",
+  "fill": [
+   "description",
+   "approach",
+   "descent",
+   "gain",
+   "distance",
+   "season",
+   "hazards"
+  ],
+  "row": {
+   "id": "ca_mount_izaak_walton_east_face",
+   "area_id": "ca_mount_izaak_walton",
+   "name": "East Face",
+   "grade": "Class 2",
+   "discipline": "scrambling",
+   "overview": null,
+   "description": "Hike the Mono Creek trail to Mott Lake, go cross-country to Bighorn Lake, and climb the mostly solid east face. Descend the sandy south face.",
+   "approach": null,
+   "descent_text": null,
+   "season": null,
+   "best_season": null,
+   "hazards": null,
+   "gain_ft": null,
+   "dist_km": null,
+   "high_point_ft": null,
+   "waypoints": [],
+   "areas": {
+    "lat": 37.4699,
+    "lng": -118.89,
+    "name": "Mount Izaak Walton",
+    "elevation_ft": 12077
+   }
+  }
+ },
+ {
+  "list": "sps",
+  "peak": "Red and White Mountain",
+  "fill": [
+   "description",
+   "approach",
+   "descent",
+   "gain",
+   "distance",
+   "season",
+   "hazards"
+  ],
+  "row": {
+   "id": "ca_red_and_white_mountain_standard_route",
+   "area_id": "ca_red_and_white_mountain",
+   "name": "Standard route",
+   "grade": "Class 2",
+   "discipline": "scrambling",
+   "overview": null,
+   "description": null,
+   "approach": null,
+   "descent_text": null,
+   "season": null,
+   "best_season": null,
+   "hazards": null,
+   "gain_ft": null,
+   "dist_km": null,
+   "high_point_ft": null,
+   "waypoints": [],
+   "areas": {
+    "lat": 37.4797,
+    "lng": -118.8572,
+    "name": "Red and White Mountain",
+    "elevation_ft": 12816
+   }
+  }
+ },
+ {
+  "list": "sps",
+  "peak": "Red Slate Mountain",
+  "fill": [
+   "descent",
+   "gain",
+   "distance",
+   "season",
+   "hazards"
+  ],
+  "row": {
+   "id": "ca_red_slate_mountain_north_couloir",
+   "area_id": "ca_red_slate_mountain",
+   "name": "North Couloir",
+   "grade": "WI2- Mod. Snow",
+   "discipline": "ice",
+   "overview": "Severe rockfall danger. The couloir reaches about 40 degrees at most and turns left roughly three-quarters of the way up. In late summer and early fall that final section may melt out, giving easy mixed climbing.",
+   "description": null,
+   "approach": "Start at Lake Wit-So-Nah-Pah and walk up to Constance Lake, then climb a moraine to the glacier at the foot of the couloir. Rockfall is a serious hazard here.",
+   "descent_text": "Head northwest over scree slopes to a saddle, then go north back down to Lake Wit-So-Nah-Pah.",
+   "season": null,
+   "best_season": null,
+   "hazards": null,
+   "gain_ft": null,
+   "dist_km": null,
+   "high_point_ft": null,
+   "waypoints": [],
+   "areas": {
+    "lat": 37.5076,
+    "lng": -118.8693,
+    "name": "Red Slate Mountain",
+    "elevation_ft": null
+   }
+  }
+ }
+]

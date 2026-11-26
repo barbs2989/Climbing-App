@@ -1,0 +1,447 @@
+[
+ {
+  "list": "sps",
+  "peak": "Mount Lyell",
+  "fill": [
+   "description",
+   "approach",
+   "descent",
+   "gain",
+   "distance",
+   "season",
+   "hazards"
+  ],
+  "row": {
+   "id": "ca_lyell_glacier",
+   "area_id": "ca_mt_lyell",
+   "name": "Lyell Glacier",
+   "grade": "3rd",
+   "discipline": "alpine",
+   "overview": null,
+   "description": null,
+   "approach": null,
+   "descent_text": null,
+   "season": null,
+   "best_season": null,
+   "hazards": null,
+   "gain_ft": null,
+   "dist_km": null,
+   "high_point_ft": null,
+   "waypoints": [],
+   "areas": {
+    "lat": 37.7394,
+    "lng": -119.2716,
+    "name": "Mt. Lyell",
+    "elevation_ft": null
+   }
+  }
+ },
+ {
+  "list": "sps",
+  "peak": "Koip Peak",
+  "fill": [
+   "approach",
+   "descent",
+   "distance",
+   "season",
+   "hazards"
+  ],
+  "row": {
+   "id": "ca_koip_peak_via_parker_pass_and_koip_peak_pass",
+   "area_id": "ca_koip_peak",
+   "name": "Via Parker Pass and Koip Peak Pass",
+   "grade": "Class 1",
+   "discipline": "scrambling",
+   "overview": null,
+   "description": "Follow the Mono Pass trail to the Parker Pass junction, cross Parker Pass, and climb switchbacks on Parker Peak's north flank to Koip Peak Pass. From there, a short walk-up over talus leads to the summit.",
+   "approach": null,
+   "descent_text": null,
+   "season": null,
+   "best_season": null,
+   "hazards": null,
+   "gain_ft": 3005,
+   "dist_km": null,
+   "high_point_ft": null,
+   "waypoints": [],
+   "areas": {
+    "lat": 37.8135,
+    "lng": -119.2018,
+    "name": "Koip Peak",
+    "elevation_ft": 12962
+   }
+  }
+ },
+ {
+  "list": "sps",
+  "peak": "Mount Gibbs",
+  "fill": [
+   "description",
+   "approach",
+   "descent",
+   "distance",
+   "season",
+   "hazards"
+  ],
+  "row": {
+   "id": "ca_mount_gibbs_standard_route",
+   "area_id": "ca_mount_gibbs",
+   "name": "Standard route",
+   "grade": "Class 1",
+   "discipline": "scrambling",
+   "overview": null,
+   "description": null,
+   "approach": null,
+   "descent_text": null,
+   "season": null,
+   "best_season": null,
+   "hazards": null,
+   "gain_ft": 3195,
+   "dist_km": null,
+   "high_point_ft": null,
+   "waypoints": [],
+   "areas": {
+    "lat": 37.877,
+    "lng": -119.2117,
+    "name": "Mount Gibbs",
+    "elevation_ft": 12773
+   }
+  }
+ },
+ {
+  "list": "sps",
+  "peak": "Mount Dana",
+  "fill": [
+   "description",
+   "approach",
+   "descent",
+   "gain",
+   "distance",
+   "season",
+   "hazards"
+  ],
+  "row": {
+   "id": "ca_mount_dana_2_dana_couloir",
+   "area_id": "ca_mount_dana_2",
+   "name": "Dana Couloir",
+   "grade": "AI2 Mod. Snow",
+   "discipline": "ice",
+   "overview": "Roughly 1,000 ft of 40-degree snow and ice, a friendly introduction to gully ice. Near the top, a brief section of crumbly rock gains a notch on the southeast crest, which you follow to the summit.",
+   "description": null,
+   "approach": null,
+   "descent_text": null,
+   "season": null,
+   "best_season": null,
+   "hazards": null,
+   "gain_ft": null,
+   "dist_km": null,
+   "high_point_ft": null,
+   "waypoints": [],
+   "areas": {
+    "lat": 37.89996,
+    "lng": -119.221,
+    "name": "Mount Dana",
+    "elevation_ft": null
+   }
+  }
+ },
+ {
+  "list": "sps",
+  "peak": "Mount Warren",
+  "fill": [
+   "description",
+   "approach",
+   "descent",
+   "gain",
+   "distance",
+   "season",
+   "hazards"
+  ],
+  "row": {
+   "id": "ca_mount_warren_warren_canyon",
+   "area_id": "ca_mount_warren",
+   "name": "Warren Canyon",
+   "grade": "Class 1",
+   "discipline": "scrambling",
+   "overview": null,
+   "description": "Follow the creek trail up Warren Canyon, then easy talus to the plateau and a short ridge to the top.",
+   "approach": null,
+   "descent_text": null,
+   "season": null,
+   "best_season": null,
+   "hazards": null,
+   "gain_ft": null,
+   "dist_km": null,
+   "high_point_ft": null,
+   "waypoints": [],
+   "areas": {
+    "lat": 37.9897,
+    "lng": -119.2234,
+    "name": "Mount Warren",
+    "elevation_ft": 12327
+   }
+  }
+ },
+ {
+  "list": "sps",
+  "peak": "Mount Conness",
+  "fill": [
+   "description",
+   "approach",
+   "descent",
+   "season",
+   "hazards"
+  ],
+  "row": {
+   "id": "ca_west_ridge_5",
+   "area_id": "ca_mt_conness",
+   "name": "West Ridge",
+   "grade": "5.6",
+   "discipline": "alpine",
+   "overview": "Fun backcountry ridge route. The best granite and climbing lie along the crest, so hold to it where possible. Much of it can be soloed or simul-climbed at easy to moderate 5th class.",
+   "description": null,
+   "approach": null,
+   "descent_text": null,
+   "season": null,
+   "best_season": null,
+   "hazards": null,
+   "gain_ft": null,
+   "dist_km": null,
+   "high_point_ft": null,
+   "waypoints": [
+    {
+     "name": "Saddlebag Lake Trailhead",
+     "type": "Trailhead",
+     "elev": 10100,
+     "distMi": 0
+    },
+    {
+     "name": "Mount Conness",
+     "type": "Summit",
+     "elev": 12594,
+     "distMi": 6.1
+    }
+   ],
+   "areas": {
+    "lat": 37.96688,
+    "lng": -119.32128,
+    "name": "Mt. Conness",
+    "elevation_ft": null
+   }
+  }
+ },
+ {
+  "list": "sps",
+  "peak": "North Peak",
+  "fill": [
+   "gain",
+   "distance",
+   "season",
+   "hazards"
+  ],
+  "row": {
+   "id": "ca_north_peak_north_face_north_couloir_right_couloir",
+   "area_id": "ca_north_peak",
+   "name": "North Face North Couloir (right couloir)",
+   "grade": "AI2 Steep Snow",
+   "discipline": "ice",
+   "overview": "A steep ice route with a fairly short approach: steep snow, then ice at 50-55 degrees, across 6 continuous pitches. It is the farthest-right and largest chute on the north face. Stay on the right side, because rock and ice are channeled down the left, but either side goes. Conditions range between steep neve over ice and bulletproof blue ice. At the notch atop the ice, scale easy 5th class rock on the right to the summit, or descend south to Conness Lake.",
+   "description": null,
+   "approach": "Start at the Saddlebag Lake trailhead, drop below the dam and cross the stream, then follow the west shore of the lake, passing Greenstone Lake on its north side. Continue along a shallow slot valley beyond Wasco Lake, leave the main trail to the left and go round the east and north shores of Cascade Lake. A climbers' trail climbs the rocky, grassy slope on Cascade Lake's north side to a shelf and talus field. Turn left and head south to the foot of the North Peak snowfield, and climb it to the couloir.",
+   "descent_text": "The ice ends at a notch. From there a low fifth-class scramble to climbers' right reaches the summit, or you can descend south toward Conness Lake.",
+   "season": null,
+   "best_season": null,
+   "hazards": null,
+   "gain_ft": null,
+   "dist_km": null,
+   "high_point_ft": null,
+   "waypoints": [],
+   "areas": {
+    "lat": 37.98218,
+    "lng": -119.31462,
+    "name": "North Peak",
+    "elevation_ft": null
+   }
+  }
+ },
+ {
+  "list": "sps",
+  "peak": "Excelsior Mountain",
+  "fill": [
+   "description",
+   "approach",
+   "descent",
+   "distance",
+   "season",
+   "hazards"
+  ],
+  "row": {
+   "id": "ca_excelsior_mountain_standard_route",
+   "area_id": "ca_excelsior_mountain",
+   "name": "Standard route",
+   "grade": "Class 1",
+   "discipline": "scrambling",
+   "overview": null,
+   "description": null,
+   "approach": null,
+   "descent_text": null,
+   "season": null,
+   "best_season": null,
+   "hazards": null,
+   "gain_ft": 2995,
+   "dist_km": null,
+   "high_point_ft": null,
+   "waypoints": [],
+   "areas": {
+    "lat": 38.0246,
+    "lng": -119.3052,
+    "name": "Excelsior Mountain",
+    "elevation_ft": 12446
+   }
+  }
+ },
+ {
+  "list": "sps",
+  "peak": "Dunderberg Peak",
+  "fill": [
+   "description",
+   "approach",
+   "descent",
+   "gain",
+   "distance",
+   "season",
+   "hazards"
+  ],
+  "row": {
+   "id": "ca_dunderberg_peak_southeast_slopes_from_virginia_lakes",
+   "area_id": "ca_dunderberg_peak",
+   "name": "Southeast Slopes from Virginia Lakes",
+   "grade": "Class 2",
+   "discipline": "scrambling",
+   "overview": null,
+   "description": "Leave the parking area cross-country up the southeast slopes, cross low scrub, then slog talus to the broad plateau and the summit. Easy terrain overall but the talus is loose.",
+   "approach": null,
+   "descent_text": null,
+   "season": null,
+   "best_season": null,
+   "hazards": null,
+   "gain_ft": null,
+   "dist_km": null,
+   "high_point_ft": null,
+   "waypoints": [],
+   "areas": {
+    "lat": 38.0645,
+    "lng": -119.2743,
+    "name": "Dunderberg Peak",
+    "elevation_ft": 12374
+   }
+  }
+ },
+ {
+  "list": "sps",
+  "peak": "Virginia Peak",
+  "fill": [
+   "description",
+   "approach",
+   "descent",
+   "gain",
+   "distance",
+   "season",
+   "hazards"
+  ],
+  "row": {
+   "id": "ca_virginia_peak_standard_route",
+   "area_id": "ca_virginia_peak",
+   "name": "Standard route",
+   "grade": "Class 2",
+   "discipline": "scrambling",
+   "overview": null,
+   "description": null,
+   "approach": null,
+   "descent_text": null,
+   "season": null,
+   "best_season": null,
+   "hazards": null,
+   "gain_ft": null,
+   "dist_km": null,
+   "high_point_ft": null,
+   "waypoints": [],
+   "areas": {
+    "lat": 38.0658,
+    "lng": -119.3579,
+    "name": "Virginia Peak",
+    "elevation_ft": 12001
+   }
+  }
+ },
+ {
+  "list": "sps",
+  "peak": "Twin Peaks",
+  "fill": [
+   "description",
+   "approach",
+   "descent",
+   "gain",
+   "distance",
+   "season",
+   "hazards"
+  ],
+  "row": {
+   "id": "ca_twin_peaks_sierra_standard_route",
+   "area_id": "ca_twin_peaks_sierra",
+   "name": "Standard route",
+   "grade": "Class 2",
+   "discipline": "scrambling",
+   "overview": null,
+   "description": null,
+   "approach": null,
+   "descent_text": null,
+   "season": null,
+   "best_season": null,
+   "hazards": null,
+   "gain_ft": null,
+   "dist_km": null,
+   "high_point_ft": null,
+   "waypoints": [],
+   "areas": {
+    "lat": 38.0836,
+    "lng": -119.3588,
+    "name": "Twin Peaks",
+    "elevation_ft": 12323
+   }
+  }
+ },
+ {
+  "list": "sps",
+  "peak": "Whorl Mountain",
+  "fill": [
+   "gain",
+   "distance",
+   "season",
+   "hazards"
+  ],
+  "row": {
+   "id": "ca_whorl_mt_north_ridge",
+   "area_id": "ca_whorl_mt",
+   "name": "North Ridge",
+   "grade": "5.6",
+   "discipline": "alpine",
+   "overview": "A long route along the north ridge of the middle summit of Whorl Mountain. From the notch, scrambling for several hundred feet between Whorl's middle and north summits lead to a squeeze chimney, then the ridge itself gives ten pitches, mostly 50-60 meters each. One way in goes over the North Peak, starting at Matterhorn Pass, with some class 4, then down the ridge and across to the saddle from the west. Protection is scarce at cruxes and the terrain loose, so both climbers must be solid. Some pitches cross exposed knife-edge blocks. Halfway along is the earliest big notch; past it, small towers are bypassed on the west. The rock is gritty; prefer orange rock. Descend the Cl.3-4 SE Chute.",
+   "description": null,
+   "approach": "Whorl Mountain's north ridge begins at the low point between the middle and north peaks. One way is to scramble up directly from the east, from the hiking bench below. The other is to cross Matterhorn Pass, go up and over the north peak (some class 4 on the summit rocks), pick down the ridge, and traverse into the saddle from the west side. The climb starts from a ledge at the base of a short squeeze chimney.",
+   "descent_text": "The last pitch finishes directly on the summit. Descend by the popular class 3-4 southeast chute, the southeast face route.",
+   "season": null,
+   "best_season": null,
+   "hazards": null,
+   "gain_ft": null,
+   "dist_km": null,
+   "high_point_ft": null,
+   "waypoints": [],
+   "areas": {
+    "lat": 38.07386,
+    "lng": -119.38355,
+    "name": "Whorl Mt.",
+    "elevation_ft": null
+   }
+  }
+ }
+]

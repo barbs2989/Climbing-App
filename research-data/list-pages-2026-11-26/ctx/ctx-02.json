@@ -1,0 +1,451 @@
+[
+ {
+  "list": "co14",
+  "peak": "Quandary Peak",
+  "fill": [
+   "gain",
+   "distance",
+   "season",
+   "hazards"
+  ],
+  "row": {
+   "id": "co_mccullough_gulch_blue_gold",
+   "area_id": "co_mccullough_gulch",
+   "name": "Blue Gold",
+   "grade": "WI3+ M4",
+   "discipline": "ice",
+   "overview": "One pitch, adequately protected. Ice smeared on a slab angles leftward across ledges to a dihedral shaped like an opened book, where the pitch tops out; belay from a bulge of ice. The small roof is the crux, and turf takes picks well. To get down, go left and take the couloir. Because a WI2 pitch was present there, the party rappelled 60 m off a v-thread instead.",
+   "description": null,
+   "approach": "Use the approach for the neighboring Claim Jumper: the McCullough Gulch trailhead, the road past the private mining claims, then the beaver ponds and the talus slope beyond. Blue Gold is on the steep face partway up the couloir, left of Claim Jumper. Check the avalanche forecast.",
+   "descent_text": "Walk off to the left and go down the couloir. Some seasons leave a short ice step in the couloir, which is bypassed with a V-thread rappel back to the base.",
+   "season": null,
+   "best_season": null,
+   "hazards": null,
+   "gain_ft": null,
+   "dist_km": null,
+   "high_point_ft": null,
+   "waypoints": [],
+   "areas": {
+    "lat": 39.40501,
+    "lng": -106.09613,
+    "name": "McCullough Gulch",
+    "elevation_ft": null
+   }
+  }
+ },
+ {
+  "list": "co14",
+  "peak": "Mount Blue Sky",
+  "fill": [
+   "gain",
+   "distance",
+   "season",
+   "hazards"
+  ],
+  "row": {
+   "id": "co_mt_blue_sky_formerly_mount_evans_mixed_couloirs_iration",
+   "area_id": "co_mt_blue_sky_formerly_mount_evans_mixed_couloirs",
+   "name": "Iration",
+   "grade": "WI3+ M3-4",
+   "discipline": "ice",
+   "overview": "A brief WI2 step opens onto a snow bowl with abundant belay options. WI3 M3-4 makes up the crux pitch, protected by a Lost Arrow. After that the route passes beneath a chockstone, then easy mixed ground, about two hundred feet or so, reaches the buttress top and the trail.",
+   "description": null,
+   "approach": "The summit road (Highway 5) is seasonal and closed in winter, so in the cold months the approach adds a long walk up the road or in from Echo Lake via the Chicago Lakes basin. From the Summit Lake parking area, walk out to the Chicago Lakes overlook, then descend west into the valley below. Iration is the first obvious gully or couloir you reach on the way toward Snorkmaiden's Surprise and the Micro Goulotte. The walk in is short, well under an hour. These are steep snow slopes in avalanche terrain, so check the avalanche forecast first.",
+   "descent_text": "The route finishes at the top of the buttress, at the trail. Follow the trail back along the rim toward the overlook and Summit Lake. Knife blades and small pins are the key gear, and the exit ground is easy mixed terrain.",
+   "season": null,
+   "best_season": null,
+   "hazards": null,
+   "gain_ft": null,
+   "dist_km": null,
+   "high_point_ft": null,
+   "waypoints": [],
+   "areas": {
+    "lat": 39.5886,
+    "lng": -105.643,
+    "name": "Mt. Blue Sky (formerly Mount Evans)",
+    "elevation_ft": null
+   }
+  }
+ },
+ {
+  "list": "co14",
+  "peak": "Longs Peak",
+  "fill": [
+   "approach",
+   "descent",
+   "season",
+   "hazards"
+  ],
+  "row": {
+   "id": "co_longs_peak_keyhole_route",
+   "area_id": "co_longs_peak",
+   "name": "Keyhole Route",
+   "grade": "Class 3",
+   "discipline": "scrambling",
+   "overview": "Most-travelled and gentlest line on Longs, wrapping almost around the peak via the Trough, Narrows and Homestretch. A long, committing day that turns far more serious in poor weather; snow generally lingers in the Trough until mid-July.",
+   "description": null,
+   "approach": null,
+   "descent_text": null,
+   "season": null,
+   "best_season": null,
+   "hazards": null,
+   "gain_ft": 5100,
+   "dist_km": null,
+   "high_point_ft": null,
+   "waypoints": [
+    {
+     "name": "Longs Peak Trailhead",
+     "type": "Trailhead",
+     "elev": 9386,
+     "distMi": 0
+    },
+    {
+     "name": "Longs Peak",
+     "type": "Summit",
+     "elev": 14259,
+     "distMi": 6.7
+    }
+   ],
+   "areas": {
+    "lat": 40.255,
+    "lng": -105.6151,
+    "name": "Long's Peak Other Climbs",
+    "elevation_ft": 14259
+   }
+  }
+ },
+ {
+  "list": "co14",
+  "peak": "Mount Wilson",
+  "fill": [
+   "description",
+   "approach",
+   "descent",
+   "distance",
+   "season",
+   "hazards"
+  ],
+  "row": {
+   "id": "co_mount_wilson_southwest_slopes",
+   "area_id": "co_mount_wilson",
+   "name": "Southwest Slopes",
+   "grade": "Class 3",
+   "discipline": "scrambling",
+   "overview": null,
+   "description": null,
+   "approach": null,
+   "descent_text": null,
+   "season": null,
+   "best_season": null,
+   "hazards": null,
+   "gain_ft": 4400,
+   "dist_km": null,
+   "high_point_ft": null,
+   "waypoints": [],
+   "areas": {
+    "lat": 37.8391,
+    "lng": -107.9916,
+    "name": "Mount Wilson",
+    "elevation_ft": 14256
+   }
+  }
+ },
+ {
+  "list": "co14",
+  "peak": "Mount Shavano",
+  "fill": [
+   "approach",
+   "descent",
+   "season",
+   "hazards"
+  ],
+  "row": {
+   "id": "co_mount_shavano_east_slopes",
+   "area_id": "co_mount_shavano",
+   "name": "East Slopes",
+   "grade": "Class 2",
+   "discipline": "scrambling",
+   "overview": "The easiest way up Shavano: a trail climbs through forest and above tree line, staying on the north edge of the basin below the Angel snowfield, to the 13,330-ft col below the top; 0.6 mile of talus then leads north to the summit.",
+   "description": null,
+   "approach": null,
+   "descent_text": null,
+   "season": null,
+   "best_season": null,
+   "hazards": null,
+   "gain_ft": 4500,
+   "dist_km": null,
+   "high_point_ft": null,
+   "waypoints": [
+    {
+     "name": "Mount Shavano summit",
+     "type": "Summit",
+     "elev": 14231
+    }
+   ],
+   "areas": {
+    "lat": 38.6192,
+    "lng": -106.2393,
+    "name": "Mount Shavano",
+    "elevation_ft": 14231
+   }
+  }
+ },
+ {
+  "list": "co14",
+  "peak": "Mount Princeton",
+  "fill": [
+   "description",
+   "approach",
+   "descent",
+   "season",
+   "hazards"
+  ],
+  "row": {
+   "id": "co_mount_princeton_east_slopes",
+   "area_id": "co_mount_princeton",
+   "name": "East Slopes",
+   "grade": "Class 2",
+   "discipline": "scrambling",
+   "overview": null,
+   "description": null,
+   "approach": null,
+   "descent_text": null,
+   "season": null,
+   "best_season": null,
+   "hazards": null,
+   "gain_ft": 5400,
+   "dist_km": null,
+   "high_point_ft": null,
+   "waypoints": [
+    {
+     "name": "Mount Princeton",
+     "type": "Summit",
+     "elev": 14173,
+     "distMi": 6.6
+    }
+   ],
+   "areas": {
+    "lat": 38.7492,
+    "lng": -106.2424,
+    "name": "Mount Princeton",
+    "elevation_ft": 14204
+   }
+  }
+ },
+ {
+  "list": "co14",
+  "peak": "Mount Belford",
+  "fill": [
+   "description",
+   "approach",
+   "descent",
+   "gain",
+   "distance",
+   "season",
+   "hazards"
+  ],
+  "row": {
+   "id": "co_mt_belford_mt_belford_falls",
+   "area_id": "co_mt_belford",
+   "name": "Mt. Belford Falls",
+   "grade": "WI2-3",
+   "discipline": "ice",
+   "overview": null,
+   "description": null,
+   "approach": null,
+   "descent_text": null,
+   "season": null,
+   "best_season": null,
+   "hazards": null,
+   "gain_ft": null,
+   "dist_km": null,
+   "high_point_ft": null,
+   "waypoints": [],
+   "areas": {
+    "lat": 39.25143,
+    "lng": -106.2953,
+    "name": "Mt. Belford",
+    "elevation_ft": null
+   }
+  }
+ },
+ {
+  "list": "co14",
+  "peak": "Crestone Needle",
+  "fill": [
+   "description",
+   "descent",
+   "gain",
+   "distance",
+   "hazards"
+  ],
+  "row": {
+   "id": "co_ellingwood_ledges",
+   "area_id": "co_crestone_needle",
+   "name": "Ellingwood Ledges",
+   "grade": "5.7",
+   "discipline": "alpine",
+   "overview": null,
+   "description": null,
+   "approach": "A talus cone sits beneath the wall by the upper lake; scale it via grass on its left flank or rock on its right flank. Three or more separate starts are spread out above the second-highest lake, so decide which you want ahead of time. Expect about 2.5 hours from the upper trailhead to the first pitch.",
+   "descent_text": null,
+   "season": null,
+   "best_season": "September suits alpine climbing well, ahead of the arrival of real snow and ice. Begin at dawn to be down before afternoon thunderstorms build.",
+   "hazards": null,
+   "gain_ft": null,
+   "dist_km": null,
+   "high_point_ft": null,
+   "waypoints": [],
+   "areas": {
+    "lat": 37.9647,
+    "lng": -105.5767,
+    "name": "Crestone Needle",
+    "elevation_ft": 14196
+   }
+  }
+ },
+ {
+  "list": "co14",
+  "peak": "Mount Yale",
+  "fill": [
+   "description",
+   "approach",
+   "descent",
+   "distance",
+   "season",
+   "hazards"
+  ],
+  "row": {
+   "id": "co_mount_yale_southwest_slopes",
+   "area_id": "co_mount_yale",
+   "name": "Southwest Slopes",
+   "grade": "Class 2",
+   "discipline": "scrambling",
+   "overview": null,
+   "description": null,
+   "approach": null,
+   "descent_text": null,
+   "season": null,
+   "best_season": null,
+   "hazards": null,
+   "gain_ft": 4300,
+   "dist_km": null,
+   "high_point_ft": null,
+   "waypoints": [],
+   "areas": {
+    "lat": 38.8442,
+    "lng": -106.3138,
+    "name": "Mount Yale",
+    "elevation_ft": 14200
+   }
+  }
+ },
+ {
+  "list": "co14",
+  "peak": "Kit Carson Mountain",
+  "fill": [
+   "description",
+   "approach",
+   "descent",
+   "distance",
+   "season",
+   "hazards"
+  ],
+  "row": {
+   "id": "co_north_ridge_of_kit_carson",
+   "area_id": "co_kit_carson_peak",
+   "name": "North Ridge of Kit Carson",
+   "grade": "4th",
+   "discipline": "alpine",
+   "overview": "Less intimidating than its appearance, running directly up the peak's tall north ridge to the top. Firm rock tilted around 45 degrees; mostly Class 3 moves, with a few Class 4 steps thrown in.",
+   "description": null,
+   "approach": null,
+   "descent_text": null,
+   "season": null,
+   "best_season": null,
+   "hazards": null,
+   "gain_ft": 5315,
+   "dist_km": null,
+   "high_point_ft": null,
+   "waypoints": [],
+   "areas": {
+    "lat": 37.9797,
+    "lng": -105.6025,
+    "name": "Kit Carson Peak",
+    "elevation_ft": 14167
+   }
+  }
+ },
+ {
+  "list": "co14",
+  "peak": "Maroon Peak",
+  "fill": [
+   "approach",
+   "descent",
+   "distance",
+   "season",
+   "hazards"
+  ],
+  "row": {
+   "id": "co_maroon_peak_south_ridge",
+   "area_id": "co_maroon_peak",
+   "name": "South Ridge",
+   "grade": "Class 3",
+   "discipline": "scrambling",
+   "overview": "Maroon Peak's easiest way up, yet long and very loose: a 2,800 ft grind up ledgy Class 3 slopes to the south ridge, a tiring traverse beneath Point 13,753, a scree gully and ledge onto the southwest face, then a choice of lines to the top.",
+   "description": null,
+   "approach": null,
+   "descent_text": null,
+   "season": null,
+   "best_season": null,
+   "hazards": null,
+   "gain_ft": 4800,
+   "dist_km": null,
+   "high_point_ft": null,
+   "waypoints": [],
+   "areas": {
+    "lat": 39.0708,
+    "lng": -106.989,
+    "name": "Maroon Peak",
+    "elevation_ft": 14163
+   }
+  }
+ },
+ {
+  "list": "co14",
+  "peak": "Tabeguache Peak",
+  "fill": [
+   "description",
+   "approach",
+   "descent",
+   "gain",
+   "distance",
+   "season",
+   "hazards"
+  ],
+  "row": {
+   "id": "co_tabeguache_peak_via_mount_shavano",
+   "area_id": "co_tabeguache_peak",
+   "name": "Via Mt. Shavano",
+   "grade": "Class 2",
+   "discipline": "scrambling",
+   "overview": null,
+   "description": null,
+   "approach": null,
+   "descent_text": null,
+   "season": null,
+   "best_season": null,
+   "hazards": null,
+   "gain_ft": null,
+   "dist_km": null,
+   "high_point_ft": null,
+   "waypoints": [],
+   "areas": {
+    "lat": 38.6255,
+    "lng": -106.2508,
+    "name": "Tabeguache Peak",
+    "elevation_ft": 14158
+   }
+  }
+ }
+]

@@ -1,0 +1,461 @@
+[
+ {
+  "list": "sps",
+  "peak": "Freel Peak",
+  "fill": [
+   "description",
+   "approach",
+   "descent",
+   "gain",
+   "distance",
+   "season",
+   "hazards"
+  ],
+  "row": {
+   "id": "ca_freel_peak_south_ridge_via_tahoe_rim_trail",
+   "area_id": "ca_freel_peak",
+   "name": "South Ridge via Tahoe Rim Trail",
+   "grade": "Class 1",
+   "discipline": "scrambling",
+   "overview": null,
+   "description": "Hike up toward Armstrong Pass, join the Tahoe Rim Trail, and follow the Freel Peak trail up the sandy ridge to the summit. Several trail approaches exist, all non-technical.",
+   "approach": null,
+   "descent_text": null,
+   "season": null,
+   "best_season": null,
+   "hazards": null,
+   "gain_ft": null,
+   "dist_km": null,
+   "high_point_ft": null,
+   "waypoints": [],
+   "areas": {
+    "lat": 38.8575,
+    "lng": -119.9003,
+    "name": "Freel Peak",
+    "elevation_ft": 10881
+   }
+  }
+ },
+ {
+  "list": "sps",
+  "peak": "Pyramid Peak",
+  "fill": [
+   "description",
+   "approach",
+   "descent",
+   "distance",
+   "season",
+   "hazards"
+  ],
+  "row": {
+   "id": "ca_pyramid_peak_north_rocky_canyon",
+   "area_id": "ca_pyramid_peak_north",
+   "name": "Rocky Canyon",
+   "grade": "Class 2",
+   "discipline": "scrambling",
+   "overview": null,
+   "description": "Follow the Rocky Canyon use trail to the broad area below the south ridge, then climb the ridge to the summit. The trail can be hard to follow where snow lingers.",
+   "approach": null,
+   "descent_text": null,
+   "season": null,
+   "best_season": null,
+   "hazards": null,
+   "gain_ft": 4083,
+   "dist_km": null,
+   "high_point_ft": null,
+   "waypoints": [],
+   "areas": {
+    "lat": 38.8451,
+    "lng": -120.158,
+    "name": "Pyramid Peak",
+    "elevation_ft": 9983
+   }
+  }
+ },
+ {
+  "list": "sps",
+  "peak": "Dicks Peak",
+  "fill": [
+   "description",
+   "approach",
+   "descent",
+   "gain",
+   "distance",
+   "season",
+   "hazards"
+  ],
+  "row": {
+   "id": "ca_dicks_peak_standard_route",
+   "area_id": "ca_dicks_peak",
+   "name": "Standard route",
+   "grade": "Class 2",
+   "discipline": "scrambling",
+   "overview": null,
+   "description": null,
+   "approach": null,
+   "descent_text": null,
+   "season": null,
+   "best_season": null,
+   "hazards": null,
+   "gain_ft": null,
+   "dist_km": null,
+   "high_point_ft": null,
+   "waypoints": [],
+   "areas": {
+    "lat": 38.9006,
+    "lng": -120.1509,
+    "name": "Dicks Peak",
+    "elevation_ft": 9974
+   }
+  }
+ },
+ {
+  "list": "sps",
+  "peak": "Mount Tallac",
+  "fill": [
+   "description",
+   "approach",
+   "descent",
+   "season",
+   "hazards"
+  ],
+  "row": {
+   "id": "ca_mount_tallac_trail_mount_tallac_trail",
+   "area_id": "ca_mount_tallac_trail",
+   "name": "Mount Tallac Trail",
+   "grade": "Class 1",
+   "discipline": "scrambling",
+   "overview": null,
+   "description": null,
+   "approach": null,
+   "descent_text": null,
+   "season": null,
+   "best_season": null,
+   "hazards": null,
+   "gain_ft": 3500,
+   "dist_km": null,
+   "high_point_ft": null,
+   "waypoints": [
+    {
+     "name": "Mount Tallac Trailhead",
+     "type": "Trailhead"
+    },
+    {
+     "name": "Mount Tallac Trail summit",
+     "type": "Summit"
+    }
+   ],
+   "areas": {
+    "lat": 38.906,
+    "lng": -120.0989,
+    "name": "Mount Tallac Trail",
+    "elevation_ft": null
+   }
+  }
+ },
+ {
+  "list": "sps",
+  "peak": "Granite Chief",
+  "fill": [
+   "description",
+   "approach",
+   "descent",
+   "gain",
+   "distance",
+   "season",
+   "hazards"
+  ],
+  "row": {
+   "id": "ca_granite_chief_granite_chief_trail_from_olympic_valley",
+   "area_id": "ca_granite_chief",
+   "name": "Granite Chief Trail from Olympic Valley",
+   "grade": "Class 1",
+   "discipline": "scrambling",
+   "overview": null,
+   "description": "Take the trail from behind the fire station along the ski area boundary to the Pacific Crest Trail, then follow the northeast ridge to the summit.",
+   "approach": null,
+   "descent_text": null,
+   "season": null,
+   "best_season": null,
+   "hazards": null,
+   "gain_ft": null,
+   "dist_km": null,
+   "high_point_ft": null,
+   "waypoints": [],
+   "areas": {
+    "lat": 39.1982,
+    "lng": -120.2871,
+    "name": "Granite Chief",
+    "elevation_ft": 9006
+   }
+  }
+ },
+ {
+  "list": "sps",
+  "peak": "Tinker Knob",
+  "fill": [
+   "description",
+   "approach",
+   "descent",
+   "season",
+   "hazards"
+  ],
+  "row": {
+   "id": "ca_tinker_knob_via_the_pacific_crest_trail",
+   "area_id": "ca_tinker_knob",
+   "name": "Via the Pacific Crest Trail",
+   "grade": "Class 1",
+   "discipline": "scrambling",
+   "overview": null,
+   "description": "Reach the Pacific Crest Trail and follow it to the saddle just southeast of the peak, then walk a short distance to the summit. A longer, easier approach comes along the crest trail from Donner Pass.",
+   "approach": null,
+   "descent_text": null,
+   "season": null,
+   "best_season": null,
+   "hazards": null,
+   "gain_ft": null,
+   "dist_km": null,
+   "high_point_ft": null,
+   "waypoints": [
+    {
+     "name": "Tinker Knob summit",
+     "type": "Summit",
+     "elev": 8949
+    }
+   ],
+   "areas": {
+    "lat": 39.2447,
+    "lng": -120.2851,
+    "name": "Tinker Knob",
+    "elevation_ft": 8949
+   }
+  }
+ },
+ {
+  "list": "sps",
+  "peak": "Castle Peak",
+  "fill": [
+   "approach",
+   "descent",
+   "gain",
+   "distance",
+   "season",
+   "hazards"
+  ],
+  "row": {
+   "id": "ca_castle_peak_summit_via_castle_pass",
+   "area_id": "ca_castle_peak_summit",
+   "name": "Via Castle Pass",
+   "grade": "Class 3",
+   "discipline": "scrambling",
+   "overview": null,
+   "description": "Take the Pacific Crest Trail under I-80 to Castle Pass, then follow the ridge northeast to the top of the northwest turret. The last bit is a loose, steep scramble. Class 2 to the summit block, which is Class 3.",
+   "approach": null,
+   "descent_text": null,
+   "season": null,
+   "best_season": null,
+   "hazards": null,
+   "gain_ft": null,
+   "dist_km": null,
+   "high_point_ft": null,
+   "waypoints": [],
+   "areas": {
+    "lat": 39.3655,
+    "lng": -120.3492,
+    "name": "Castle Peak",
+    "elevation_ft": 9103
+   }
+  }
+ },
+ {
+  "list": "sps",
+  "peak": "Mount Rose",
+  "fill": [
+   "description",
+   "approach",
+   "descent",
+   "season",
+   "hazards"
+  ],
+  "row": {
+   "id": "nv_mount_rose_mount_rose_trail",
+   "area_id": "nv_mount_rose",
+   "name": "Mount Rose Trail",
+   "grade": "Class 1",
+   "discipline": "scrambling",
+   "overview": null,
+   "description": "A well-defined trail from the highway pass climbs about 2,000 feet over roughly five miles to a saddle and the summit.",
+   "approach": null,
+   "descent_text": null,
+   "season": null,
+   "best_season": null,
+   "hazards": null,
+   "gain_ft": null,
+   "dist_km": null,
+   "high_point_ft": null,
+   "waypoints": [
+    {
+     "name": "Mount Rose summit",
+     "type": "Summit",
+     "elev": 10776
+    }
+   ],
+   "areas": {
+    "lat": 39.3437,
+    "lng": -119.9177,
+    "name": "Mount Rose",
+    "elevation_ft": 10776
+   }
+  }
+ },
+ {
+  "list": "sps",
+  "peak": "Mount Lola",
+  "fill": [
+   "description",
+   "approach",
+   "descent",
+   "distance",
+   "season",
+   "hazards"
+  ],
+  "row": {
+   "id": "ca_mount_lola_lola_trail",
+   "area_id": "ca_mount_lola",
+   "name": "Lola Trail",
+   "grade": "Class 1",
+   "discipline": "scrambling",
+   "overview": null,
+   "description": "A well-defined trail climbs through forest and Cold Stream Meadow toward the south ridge and summit. Easy and non-technical.",
+   "approach": null,
+   "descent_text": null,
+   "season": null,
+   "best_season": null,
+   "hazards": null,
+   "gain_ft": 1405,
+   "dist_km": null,
+   "high_point_ft": null,
+   "waypoints": [],
+   "areas": {
+    "lat": 39.4329,
+    "lng": -120.3647,
+    "name": "Mount Lola",
+    "elevation_ft": 9148
+   }
+  }
+ },
+ {
+  "list": "sps",
+  "peak": "English Mountain",
+  "fill": [
+   "description",
+   "approach",
+   "descent",
+   "distance",
+   "season",
+   "hazards"
+  ],
+  "row": {
+   "id": "ca_english_mountain_standard_route",
+   "area_id": "ca_english_mountain",
+   "name": "Standard route",
+   "grade": "Class 2",
+   "discipline": "scrambling",
+   "overview": null,
+   "description": null,
+   "approach": null,
+   "descent_text": null,
+   "season": null,
+   "best_season": null,
+   "hazards": null,
+   "gain_ft": 2200,
+   "dist_km": null,
+   "high_point_ft": null,
+   "waypoints": [],
+   "areas": {
+    "lat": 39.4465,
+    "lng": -120.5512,
+    "name": "English Mountain",
+    "elevation_ft": 8373
+   }
+  }
+ },
+ {
+  "list": "sps",
+  "peak": "Sierra Buttes",
+  "fill": [
+   "description",
+   "approach",
+   "descent",
+   "season",
+   "hazards"
+  ],
+  "row": {
+   "id": "ca_sierra_buttes_lookout_trail",
+   "area_id": "ca_sierra_buttes",
+   "name": "Lookout Trail",
+   "grade": "Class 1",
+   "discipline": "scrambling",
+   "overview": null,
+   "description": "A steady trail climbs about 1,500 ft in 2.5 miles, crossing the Pacific Crest Trail. It ends with a long metal staircase up to the lookout.",
+   "approach": null,
+   "descent_text": null,
+   "season": null,
+   "best_season": null,
+   "hazards": null,
+   "gain_ft": 1590,
+   "dist_km": null,
+   "high_point_ft": null,
+   "waypoints": [
+    {
+     "name": "Sierra Buttes summit",
+     "type": "Summit",
+     "elev": 8591
+    }
+   ],
+   "areas": {
+    "lat": 39.5936,
+    "lng": -120.6468,
+    "name": "Sierra Buttes",
+    "elevation_ft": 8591
+   }
+  }
+ },
+ {
+  "list": "sps",
+  "peak": "Mount Elwell",
+  "fill": [
+   "description",
+   "approach",
+   "descent",
+   "gain",
+   "distance",
+   "season",
+   "hazards"
+  ],
+  "row": {
+   "id": "ca_mount_elwell_mt_elwell_trail",
+   "area_id": "ca_mount_elwell",
+   "name": "Mt. Elwell Trail",
+   "grade": "Class 1",
+   "discipline": "scrambling",
+   "overview": null,
+   "description": "A trail leads up from the Lakes Basin to the summit. Other access points also exist.",
+   "approach": null,
+   "descent_text": null,
+   "season": null,
+   "best_season": null,
+   "hazards": null,
+   "gain_ft": null,
+   "dist_km": null,
+   "high_point_ft": null,
+   "waypoints": [],
+   "areas": {
+    "lat": 39.7082,
+    "lng": -120.6891,
+    "name": "Mount Elwell",
+    "elevation_ft": 7818
+   }
+  }
+ }
+]

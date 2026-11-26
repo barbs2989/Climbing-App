@@ -285,6 +285,7 @@ npm run check:contrib-field-columns # every editable field has a DB row naming t
 npm run check:editable-coverage # every routes column a climber can SEE has an editor, or a written reason it has none (in build)
 npm run audit:fifty-classics # which Fifty Classics does the catalog hold, and are they tagged?
 npm run audit:list-coverage # how full is each named tick-list against the total it advertises?
+npm run audit:list-pages # ...and does every climb on those lists have a FULL route page? (description, approach, descent, season, hazards, gain, distance)
 npm run audit:list-summit-routes -- --check # DB slot: any route on a list peak with no summit verdict yet?
 
 # ── Grades — notes: docs/guards/grades.md ──

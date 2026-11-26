@@ -21,7 +21,7 @@ import { exportedTrackNotes, waypointCaveat, recordedTrackPts } from "./lib/trac
 import {usePartnerSignals,useVerifiedUsers,useRoutesWithLists,useStateClassics,useMyHomeStatePaths,useStates} from "./lib/db";
 import {searchClean, searchNorm} from "./lib/search";
 import { clickable } from "./lib/clickable"
-import { routeInList, listPeaks, peakClimbed, FIFTY_CLASSICS } from "./lib/lists";
+import { routeInList, listPeaks, peakClimbed, FIFTY_CLASSICS, listNumberKey } from "./lib/lists";
 
 import { splitParagraphs, seasonWindowMonths } from "./EnrichmentPanels";
 import { renderToStaticMarkup } from "react-dom/server";
@@ -2690,8 +2690,10 @@ function useCuratedLists(logs,routeById){
      list peak -- a desert tower, a face route on Half Dome -- has no Summit tick and counts when sent. */
   const topped=(l,r)=>!!l&&!!r&&(tickTypesFor(r).indexOf("Summit")>=0?summitedLog(l):routeCompleted(l.routeId,[l]));
   const summitRoutes=uniq.filter(r=>logs.some(l=>l&&l.routeId===r.id&&topped(l,r)));
+  /* Each peak carries the number its LIST gives it (lib/lists.js listNumber), and a numbered list is drawn in that order: the SPS roster is stored by catalog id, not by the list's region.peak codes. */
   const peakObjectives=k=>{const roster=listPeaks(k);if(!roster)return null;
-    return roster.map(p=>({id:p.id,name:p.name,ft:p.ft,mountainId:p.id,also:p.also,_peak:true}));};
+    const rows=roster.map(p=>({id:p.id,name:p.name,ft:p.ft,mountainId:p.id,also:p.also,_peak:true,_n:p.n||null}));
+    return rows.some(r=>r._n)?rows.slice().sort((a,b)=>listNumberKey(a._n)-listNumberKey(b._n)):rows;};
   const peakDone=p=>peakClimbed(p,summitRoutes);
   const classicRoutes=SEED_OK?ROUTES.filter(r=>r.classic).concat(uniq.filter(r=>r.classic&&!ROUTES.some(s=>s.id===r.id))):((stateClassicsQ.data)||[]);const cDone=classicRoutes.filter(r=>got(r.id)).length;
   // These four build their objectives from the seed ROUTES demo set rather than from the
