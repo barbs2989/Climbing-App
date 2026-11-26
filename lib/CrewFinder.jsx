@@ -5,7 +5,7 @@ import { SOLID_LEDGE } from "./buttonStyles.js";
 import { tx } from "./tapWords.js";
 import { USE_DB } from "./supabase";
 import { clickable } from "./clickable";
-import { ROUTE_PICK_LIM, useAreaCardsByIds, useAreaPaths, useMyZip, useRouteSearch } from "./db";
+import { ROUTE_PICK_LIM, useAreaCardsByIds, useAreaPath, useAreaPaths, useMyZip, useRouteSearch } from "./db";
 import { useEffect, useState } from "react";
 import { C, CAT, CLIMBERS, DB_UID, DLOCALE, FALLBACK_COVER, ME, MOUNTAINS, OPEN_CREWS, ROUTES, catOf, climberLine, crewPlace, routePlace, profileGradeRows, distMiles, fuzzyMatchAny, haveMyLoc, inArea, onImgErr, placeSub, placeTrip, pubFirst, seedRoutesOn, uDistMi, uDistMiUnitLong, uImp } from "../ClimbMatchCore.jsx";
 import { crewGradeFit } from "./crewFit.js";
@@ -61,7 +61,13 @@ export default function CrewFinder({onRequestJoin,requested,onViewProfile,connec
   const savedPeaks=(savedAreaIds||[]).map(id=>{const a=(_savedCards.data||{})[id];if(a)return a.type==="peak"?{id:id,name:a.name||id}:null;const m=MOUNTAINS.find(x=>x.id===id);return m&&m.areaType==="peak"?{id:String(id),name:m.name}:null;}).filter(Boolean);
   const onPeak=(pl,pk)=>{if(!pl||!pl.areaId||!pk)return false;if(String(pl.areaId)===String(pk))return true;const p=_crewPaths[pl.areaId];if(p)return p.some(a=>String(a.id)===String(pk));return MOUNTAINS.some(m=>m.id===pl.areaId)&&inArea(pl.areaId,pk);};
   /* Opened ON an area (the area page's "Crews here"): By Area, that area. */
-  useEffect(()=>{if(initialArea&&initialArea.id){setMode("area");setAreaId(initialArea.id);if(onConsumeInitialArea)onConsumeInitialArea();}},[initialArea]); // eslint-disable-line react-hooks/exhaustive-deps -- fire only when a new initialArea arrives; onConsumeInitialArea is an unmemoized parent callback
+  /* ...and the Country, State and area boxes SAY that area (owner note 2026-11-25: "it says by area, but that area is not already inputted. It is just the general United States"). Setting areaId alone filtered the list to the area while the boxes still read United States / All states, because AreaRegionSelect's chain is the path BELOW the state and nothing had filled it. The area's ancestry (country > state > region > ... > it) fills all three, the way Mountain Project's and theCrag's area pickers open on the area you came from. */
+  const [initPathId,setInitPathId]=useState(null);
+  const _initPathQ=useAreaPath(USE_DB?initPathId:null);
+  const _seedChain=id=>{const out=[];let m=MOUNTAINS.find(x=>x.id===id),g=0;while(m&&g++<12){out.unshift({id:m.id,name:m.name,areaType:m.areaType||null});m=m.parentId?MOUNTAINS.find(x=>x.id===m.parentId):null;}return out.filter(a=>a.areaType!=="world");};
+  const _applyChain=ch=>{if(!ch||!ch.length)return;setAreaCountry(String(ch[0].id));setAreaState(ch[1]?String(ch[1].id):"");setAreaPath(ch.slice(2).map(a=>({id:String(a.id),name:a.name||"",areaType:a.areaType||null})));setAreaId(String(ch[ch.length-1].id));};
+  useEffect(()=>{if(initialArea&&initialArea.id){setMode("area");setAreaId(initialArea.id);if(MOUNTAINS.some(m=>m.id===initialArea.id))_applyChain(_seedChain(initialArea.id));else setInitPathId(initialArea.id);if(onConsumeInitialArea)onConsumeInitialArea();}},[initialArea]); // eslint-disable-line react-hooks/exhaustive-deps -- fire only when a new initialArea arrives; onConsumeInitialArea is an unmemoized parent callback
+  useEffect(()=>{const ch=_initPathQ.data;if(!initPathId||!ch||!ch.length)return;if(String(ch[ch.length-1].id)===String(initPathId))_applyChain(ch);setInitPathId(null);},[_initPathQ.data,initPathId]);
   /* WHERE DISTANCE IS MEASURED FROM. A signed-in climber has no coordinate on ME (the sign-in reset clears ME.lat/lng) and the city they typed is display text nothing can place, so every distance control here read "Needs your location" to a climber who had given one. Their zip is the place the app CAN put on a map (0189's Census centroid, the same origin Partners' "Near my zip" searches from); the seed ME is the signed-out demo's. With neither, the distance controls are not drawn rather than drawn dead. */
   const myZipQ=useMyZip(USE_DB?DB_UID:null);const _zip=myZipQ.data&&myZipQ.data.lat!=null&&myZipQ.data.lng!=null?myZipQ.data:null;
   const origin=_zip||(haveMyLoc()?ME:null);
