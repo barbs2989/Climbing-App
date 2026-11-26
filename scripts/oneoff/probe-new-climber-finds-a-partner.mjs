@@ -26,7 +26,7 @@ const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "../..")
 const LOCAL = process.argv.includes("--local");
 const OUT = process.argv.slice(2).find((a) => !a.startsWith("--")) || path.join(ROOT, "probe-out", "new-climber");
 fs.mkdirSync(OUT, { recursive: true });
-const PORT = 5288, base = LOCAL ? `http://127.0.0.1:${PORT}/Climbing-App/` : "https://barbs2989.github.io/Climbing-App/";
+const PORT = 5288, base = process.env.BASE || (LOCAL ? `http://127.0.0.1:${PORT}/Climbing-App/` : "https://barbs2989.github.io/Climbing-App/");
 const KEY = requireServiceKey();
 const auth = async (p, opts = {}) => { const r = await fetch(SUPABASE_URL + "/auth/v1/" + p, { ...opts, headers: { apikey: KEY, Authorization: "Bearer " + KEY, "Content-Type": "application/json", ...(opts.headers || {}) } }); const t = await r.text(); let b; try { b = JSON.parse(t); } catch { b = t; } return { status: r.status, body: b }; };
 const rest = async (p, opts = {}) => { const r = await fetch(SUPABASE_URL + "/rest/v1/" + p, { ...opts, headers: headers(KEY, { "Content-Type": "application/json", Prefer: "return=representation", ...(opts.headers || {}) }) }); const t = await r.text(); let b; try { b = JSON.parse(t); } catch { b = t; } return { status: r.status, body: b }; };
@@ -51,6 +51,7 @@ try {
   await page.addInitScript(({ key, value }) => { try { window.localStorage.setItem(key, value); } catch {} }, { key: STORAGE_KEY, value: JSON.stringify(sessionForStorage(s)) });
   await page.goto(base, { waitUntil: "domcontentloaded" });
   await sleep(10000);
+  for (let i = 0; i < 10 && !/Welcome to Climb/.test(await page.evaluate(() => document.body.innerText)); i++) await sleep(2000);
   let n = 0;
   const snap = async (name) => {
     n++; const tag = String(n).padStart(2, "0") + "-" + name;
@@ -68,13 +69,13 @@ try {
     const t = await page.evaluate(() => document.body.innerText);
     if (/Welcome to Climb/.test(t) && /Set up my profile/.test(t)) { await tap(/^Set up my profile/); }
     else if (/Choose your username|Username/.test(t) && await page.$('input[placeholder="yourname"]')) { await page.fill('input[placeholder="yourname"]', user.username); await sleep(2500); await tap(/^Continue$/, "dialog") || await tap(/^Continue$/); }
-    else if (await page.$('input[aria-label="Your home town or city"]')) { await page.fill('input[aria-label="Your home town or city"]', "Seattle"); await sleep(3000); const picked = await page.evaluate(() => { const l = document.querySelector('[aria-label="Matching towns"]'); const b = l && l.querySelector("button,[role=option]"); if (b) { b.click(); return b.textContent; } return null; }); log("  town: " + picked); await sleep(1500); await snap("onb-home"); await tap(/^Continue$/); }
-    else if (await page.$('[aria-label="Disciplines"]') && !/Your grades/.test(t)) { await page.evaluate(() => { const g = document.querySelector('[aria-label="Disciplines"]'); for (const b of g.querySelectorAll("button")) if (/^(Sport|Trad)/.test(b.textContent.trim()) && b.getAttribute("aria-pressed") !== "true") b.click(); }); await sleep(800); await snap("onb-climb"); await tap(/^Continue$/); }
-    else if (/Your grades/.test(t)) { await page.evaluate(() => { for (const s of document.querySelectorAll("select")) { const o = [...s.options].find((o) => /^5\.9$|^5\.10a$/.test(o.value || o.textContent)); if (o) { s.value = o.value; s.dispatchEvent(new Event("change", { bubbles: true })); } } }); await sleep(800); await snap("onb-grades"); await tap(/^Continue$/); }
+    else if (await page.$('input[aria-label="Your home town or city"]')) { await page.fill('input[aria-label="Your home town or city"]', "Seattle"); await sleep(3000); const picked = await page.evaluate(() => { const l = document.querySelector('[aria-label="Matching towns"]'); const b = l && l.querySelector("button,[role=option]"); if (b) { b.click(); return b.textContent; } return null; }); log("  town: " + picked); await sleep(1500); const zb = await page.$('input[placeholder="e.g. 98101"]'); if (zb) { await zb.fill("98103"); log("  typed zip 98103"); } await sleep(800); await snap("onb-home"); await tap(/^Continue$/); }
+    else if (await page.$('[aria-label="Disciplines"]') && !/Your grades/i.test(t)) { await page.evaluate(() => { const g = document.querySelector('[aria-label="Disciplines"]'); for (const b of g.querySelectorAll("button")) if (/^(Rock|Alpine)/.test(b.textContent.trim()) && b.getAttribute("aria-pressed") !== "true") b.click(); }); await sleep(800); await snap("onb-climb"); await tap(/^Continue$/); }
+    else if (/Your grades/i.test(t)) { await page.evaluate(() => { for (const s of document.querySelectorAll("select")) { const o = [...s.options].find((o) => /^5\.9$|^5\.10a$/.test(o.value || o.textContent)); if (o) { s.value = o.value; s.dispatchEvent(new Event("change", { bubbles: true })); } } }); await sleep(800); await snap("onb-grades"); await tap(/^Continue$/); }
     else if (await page.$('[aria-label="Experience level"]')) { await page.evaluate(() => { const g = document.querySelector('[aria-label="Experience level"]'); const b = [...g.querySelectorAll("button")].find((b) => /Intermediate/.test(b.textContent)); b && b.click(); const gg = document.querySelector('[aria-label="Gender"]'); const w = gg && [...gg.querySelectorAll("button")].find((b) => /^Woman|^Women|^Female/.test(b.textContent.trim())); w && w.click(); }); await sleep(800); await snap("onb-about"); (await tap(/^Continue$/)) || (await tap(/^Finish setup$/)); }
     else if (/You’re all set/.test(t)) { await snap("onb-done"); break; }
     else { const w = await tap(/^(Continue|Skip for now|Finish setup|Next)$/); log("  onboarding step: " + (w || "nothing to tap")); if (!w) { await snap("onb-stuck"); break; } }
-    await sleep(2500);
+    await sleep(4500);
   }
   // ── The "Find partners" next step, or the tab itself ──
   const np = await tap(/[Ff]ind (a )?(climbing )?partner/);

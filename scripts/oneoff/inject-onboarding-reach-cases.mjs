@@ -52,7 +52,7 @@ const sum = (s) => crypto.createHash("sha256").update(s).digest("hex").slice(0, 
 const read = (f) => fs.readFileSync(f, "utf8");
 
 // Since 2026-11-14 a signed-in account's setup is required and reopens on every load; a guest's stays once per device.
-const EFFECT = "useEffect(()=>{if(!accountNeedsOnboarding)return;if(!(realAuthGate&&signedIn)){if(onboardPrompted())return;markOnboardPrompted();}setOnboardOpen(true);},[accountNeedsOnboarding]);";
+const EFFECT = "useEffect(()=>{if(!accountNeedsOnboarding)return;if(!(realAccount&&signedIn)){if(onboardPrompted())return;markOnboardPrompted();}setOnboardOpen(true);},[accountNeedsOnboarding]);";
 const CARD = '(accountNeedsOnboarding&&!homeDismiss.includes("climbsetup"))';
 
 const CASES = [
