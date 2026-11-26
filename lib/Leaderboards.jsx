@@ -139,8 +139,8 @@ export default function Leaderboards({meLive,onView,onClimb,logs,connections,sho
   const B={
     vouched:{id:"vouched",label:"Vouched",val:pp=>real?(pp._vouches||0):(pp.vouches?pp.vouches.length:0),suffix:"vouches",note:"Peer references from partners they’ve climbed with — reputation in their partners’ own words."},
     active:{id:"active",label:"Logged",val:pp=>loggedOf(pp),suffix:"logged",note:"Climbs logged, attempts included. Rewards getting out."},points:{id:"points",label:"Send points",val:pp=>perfPts(pp),disp:pp=>perfPts(pp).toLocaleString(),suffix:"pts"},
-    peaksYr:{id:"peaksYr",label:"Peaks 1yr",val:pp=>peaksOf(pp,"yr"),suffix:"peaks · 12mo",note:"Different summits logged as Summit in the last 12 months."},
-    peaksLife:{id:"peaksLife",label:"Peaks all-time",val:pp=>peaksOf(pp,"life"),suffix:"summits",note:"Different summits logged as Summit, all time."},
+    peaksYr:{id:"peaksYr",label:"Peaks 1yr",val:pp=>peaksOf(pp,"yr"),suffix:"peaks · 12mo",note:"Different summits in the last 12 months: a Summit tick, or a climb you topped out on."},
+    peaksLife:{id:"peaksLife",label:"Peaks all-time",val:pp=>peaksOf(pp,"life"),suffix:"summits",note:"Different summits, all time: a Summit tick, or a climb you topped out on."},
     sendsYr:{id:"sendsYr",label:"Sends 1yr",val:pp=>sendsOf(pp,dn,"yr"),suffix:"sends · 12mo",note:"Routes sent in this discipline over the last 12 months."},
     sendsLife:{id:"sendsLife",label:"Total sends",val:pp=>sendsOf(pp,dn,"life"),suffix:"sends",note:"All sends logged in this discipline."},
     vert:{id:"vert",label:"Vert 1yr",val:pp=>vertOf(pp),disp:pp=>uElev(vertOf(pp)),suffix:"climbed · 12mo",note:"Height of the climbs you finished in the last 12 months — a peak’s gain from the trailhead, a crag route’s length."},

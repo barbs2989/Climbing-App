@@ -1717,3 +1717,27 @@ rows. Its build script is gone; new reviews write the column.
   NWS lists as a known issue that "break[s] responsive design on smaller screens such as mobile devices" (962 px wide
   in a phone window). The row now opens the graph IMAGE (`meteograms/Plotter.php`) once `fetchNwsZone` has the
   point's office and zone; pinned in `check:conditions-score` section 8.
+
+## The climbs behind a Ranks number add up to it (2026-11-26, `check:rank-breakdown`)
+- **What it holds.** Tapping a number on Ranks opens *How N points add up* (`lib/RankBreakdown.jsx`), which lists
+  the logs `rank_breakdown()` (0357, last 0427) returns with what each adds. The board's number comes from
+  `leaderboard()` (0379, last 0434). The breakdown COPIES the board's counting for one climber; the guard reads the
+  last `create or replace` of each across `supabase/migrations/` (number order), drops comments and short table
+  aliases (`vl.`, `c.`, `ro.`), and requires 14 named rules to match in both: log source, the Conditions exclusion,
+  rock as trad, Vert's height, tier weights, the 365-day window, the grade scale, the not-sent tick list, first-log
+  order, the Top-rope/Follow penalty, the Send and Onsight formulas, which ticks are onsights, and the summit test.
+- **A rule that no longer matches either body FAILS** ("reworded? update RULES"), so rewording the SQL cannot turn
+  the guard blind; update the pattern with the rewording.
+- **It also checks the screen's words**: the sheet's HOW sentences print `8 + grade² × 0.35`, `10 + grade² × 0.3`,
+  `×1 / ×0.75 / ×0.5`, "each letter a quarter" / "one letter lower" (0.25) and "12 months" (365); each is read from
+  the SQL and must appear in the file.
+- **And the board list** (0379's `metric` CTE `d(disc)` and `b(board)` VALUES) against `DISCS` and `B` in
+  `lib/Leaderboards.jsx` (boards with `routes:true` are not ranked by the server). `catches` is declared
+  server-only with its reason; any other difference fails.
+- **What it cannot see**: that each board's VALUE in `scored` maps to the same stat as `B[...].val` (only ids are
+  compared), and the client's own aggregation in `itemsFor()` (best log per route, distinct days, distinct peaks)
+  beyond the type and backed filters. The 8 = 8 live check in #2654 covered those once.
+- **First run (2026-11-26)**: 0 findings in the SQL — 0427 and 0434 each re-created one of the two and kept it in
+  step, which is why the guard reads the LATEST body rather than 0357/0379 (a reader of the feature doc would have
+  checked those). `--selftest` mutates each side in memory (10 cases) and requires every one to fail; it refuses to
+  run on a tree that already fails.
