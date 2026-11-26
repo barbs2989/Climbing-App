@@ -85,6 +85,13 @@ else ok("car to car fixture reads as car to car", false, c2cP.reason);
 const ice = { ...none, discipline: "ice", grade: "WI4", gainFt: null, gainM: null, lossFt: null, lossM: null };
 ok("a roadside ice line with no waypoints draws nothing", A.render(ice, { onEditWaypoints: () => {} }) === "", A.render(ice));
 
+// 7. A summit with no stated distance sits at the route's own one-way distance; a stated pin past it refuses.
+const noTopDist = { ...base, waypoints: wps.map(w => (w.type === "Summit" ? { ...w, distMi: null } : w)) };
+const nt = tp(noTopDist);
+ok("a summit with no distance sits at the route's one-way figure, and the legs still split", !!nt.legs && nt.legs.up.length === 3 && Math.abs(nt.legs.up.reduce((s, l) => s + l.km, 0) - KM) < 1e-9, nt.reason);
+const clash = { ...noTopDist, distKm: 4.5 * 1.609344 };
+ok("...but not when a stated waypoint lies past that figure (the two records disagree)", !tp(clash).legs, JSON.stringify(tp(clash).legs && tp(clash).legs.up.map(l => l.to.name)));
+
 // 6.
 const nocoord = { ...base, waypoints: wps.map(w => ({ ...w, lat: null, lng: null })) };
 ok("the distances path needs no coordinate", !!tp(nocoord).legs && tp(nocoord).legs.up.length === 3, tp(nocoord).reason);
