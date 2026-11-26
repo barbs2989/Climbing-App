@@ -16,6 +16,7 @@ import { clickable } from "../../lib/clickable";
 import { ATYPE, DISCIPLINES } from "../../lib/areaBrowserShared.js";
 import RouteRow from "./RouteRow.tsx";
 import AddHereFooter from "./AddHereFooter.tsx";
+import SearchModeHint, { AREAS_PLACEHOLDER, ROUTES_PLACEHOLDER, RoutesInsteadHint } from "./SearchModeHint.tsx";
 import { createPortal } from "react-dom";
 import type { C as Palette } from "../../ClimbMatchCore.jsx";
 import type { RouteRowRoute, RouteRowProps } from "./RouteRow.tsx";
@@ -358,7 +359,9 @@ export default function RouteFinderPanel({ scope, onOpen, onJumpToArea, C, uElev
   // Wenatchee & Leavenworth › Leavenworth › Icicle Creek" over every wall, two to four lines on a phone, repeating the
   // path the climber is already in (2026-11-18). The export keeps the whole trail.
   const shownTrailOf = (id: string) => { const t = trailOf(id), i = t.findIndex(c => c.id === loc.id); return i >= 0 ? t.slice(i + 1) : t; };
-  const { data: areaHits, isLoading: la, error: ea }: { data?: RouteFinderPanelAreaHit[] | null; isLoading: boolean; error: unknown } = useAreaSearch(scope.id, mode === "areas" ? qD.trim() : "");
+  const { data: areaHits, isLoading: la, error: ea }: { data?: RouteFinderPanelAreaHit[] | null; isLoading: boolean; error: unknown } = useAreaSearch(scope.id, qD.trim());
+  // Asked on the Routes tab too (owner note 2026-11-26: say which box finds a peak). One query for both tabs, so the
+  // Routes tab can name the areas the words match (SearchModeHint) and switching to Areas shows them from the cache.
 
   const nF = finderFilterCount(af);
   const afChips = finderChips(af, setAf, uElevN, uElevUnit);
@@ -395,7 +398,7 @@ export default function RouteFinderPanel({ scope, onOpen, onJumpToArea, C, uElev
           below the search box so that the search box fills the screen more ... put the filter button right next to the sort
           button ... remove the sorting options on the filter page"). The pair is the phone shop's Filter | Sort bar (Amazon,
           Zillow, Airbnb): Sort is the phone's own picker, applied at once, and the Filters sheet no longer repeats it. */}
-      <input aria-label={mode === "areas" ? "Search areas, crags, peaks" : "Search routes"} value={q} onChange={e => setQ(e.target.value)} placeholder={mode === "areas" ? "Search areas, crags, peaks…" : "Search routes in " + loc.name + "…"} style={{ display: "block", width: "100%", minWidth: 0, padding: "11px 13px", borderRadius: 10, border: "1px solid " + C.field, background: C.surface, color: C.text, fontSize: 14, boxSizing: "border-box", outline: "none", marginBottom: 8 }} />
+      <input aria-label={mode === "areas" ? "Search areas, crags, peaks" : "Search routes"} value={q} onChange={e => setQ(e.target.value)} placeholder={mode === "areas" ? AREAS_PLACEHOLDER : ROUTES_PLACEHOLDER} style={{ display: "block", width: "100%", minWidth: 0, padding: "11px 13px", borderRadius: 10, border: "1px solid " + C.field, background: C.surface, color: C.text, fontSize: 14, boxSizing: "border-box", outline: "none", marginBottom: 8 }} />
       {mode === "routes" ? <>
       <div style={{ display: "flex", gap: 8, marginBottom: 8 }}>
         <button onClick={() => { setDf(af); setSheet(true); }} style={{ ...rowBtn(nF), flex: 1, minWidth: 0, justifyContent: "center" }}><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}><path d="M4 6h16M7 12h10M10 18h4" /></svg>{"Filters" + (nF ? " (" + nF + ")" : "")}</button>
@@ -430,7 +433,7 @@ export default function RouteFinderPanel({ scope, onOpen, onJumpToArea, C, uElev
         !qD.trim() ? <div style={{ fontSize: 13, color: C.textMuted, textAlign: "center", padding: "22px 12px", lineHeight: 1.5 }}>{"Type a name to find any area, crag or peak in " + scope.name + "."}</div>
         : la ? <LoadingRows C={C} label="Loading…"/>
         : ea ? <div style={{ color: C.red, fontSize: 12.5 }}>Couldn't search areas — check your connection and try again.</div>
-        : !areaHits || !areaHits.length ? <EmptyState C={C} icon="search">No areas match.</EmptyState>
+        : !areaHits || !areaHits.length ? <EmptyState C={C} icon="search" action={<RoutesInsteadHint C={C} onSearchRoutes={() => setMode("routes")} />}>No areas match.</EmptyState>
         : <>
           {areaHits.map(a => (
             <div key={a.id} {...clickable(() => onJumpToArea(a))} style={{ display: "flex", alignItems: "center", gap: 10, background: C.card, border: "1px solid " + C.border, borderRadius: 12, padding: "11px 13px", marginBottom: 8, cursor: "pointer" }}>
@@ -459,6 +462,7 @@ export default function RouteFinderPanel({ scope, onOpen, onJumpToArea, C, uElev
         ))}
       </> : <>
       {af.minStars ? <div style={{ fontSize: 11.5, color: C.textMuted, margin: "8px 2px", lineHeight: 1.45 }}>{"Unrated climbs still show."}</div> : null}
+      {qD.trim() && !ea ? <SearchModeHint C={C} q={qD} areas={areaHits} total={areaHits ? areaSearchTotal(areaHits) : 0} onSearchAreas={() => setMode("areas")} /> : null}
       {error && !all.length ? <div style={{ color: C.red, fontSize: 12.5 }}>Couldn't search routes — check your connection and try again.</div> : null}
       {error && all.length ? <div style={{ color: C.textMuted, fontSize: 12.5 }}>Couldn't refresh just now — showing the results from your last load.</div> : null}
       {/* GROUPED BY WALL on a wall sort: a heading opens the wall's page and saves it; the rows under

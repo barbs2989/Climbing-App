@@ -28,17 +28,17 @@ const CASES = [
     repl: "  const stars = r.stars ? Math.round(r.stars) : 0;\n  const _injLen = r.length_m;\n",
     says: /column "length_m" is read but useAreaRoutes' thin select does not include it/ },
   // The select loses a column a reader still reads.
-  { name: "select-drops-a-column", file: DB, expect: "fail",
+  { name: "select-drops-a-column", file: "lib/db-catalog.js", expect: "fail",
     find: ",stars,guide_stars,",
     repl: ",guide_stars,",
     says: /column "stars" is read but useAreaRoutes' thin select does not include it/ },
   // The select carries a column nobody renders — the bytes the trim exists to stop.
-  { name: "select-carries-dead-weight", file: DB, expect: "fail",
+  { name: "select-carries-dead-weight", file: "lib/db-catalog.js", expect: "fail",
     find: ",approach_variants,areas(name,area_type)",
     repl: ",approach_variants,descent_text,areas(name,area_type)",
     says: /column "descent_text" is selected but no list reader reads it/ },
   // The embed loses the column climbsAPeak() reads on a sibling row.
-  { name: "embed-loses-area-type", file: DB, expect: "fail",
+  { name: "embed-loses-area-type", file: "lib/db-catalog.js", expect: "fail",
     find: "areas(name,area_type)\");",
     repl: "areas(name)\");",
     says: /embed lacks "area_type"/ },

@@ -148,6 +148,11 @@ const REVIEWED = new Map([
     "#2578 (desktop phase 2a) turned lib/wideLayout.js's WIDE_CSS constant into wideCss(g), because " +
     "the page-view rules need the shell geometry. Deliberate rename; verified nothing in the tree " +
     "still references WIDE_CSS."],
+  ["6e063cdf1f4033e71d67b27db678e39907d55a34",
+    "#4007 (owner note 2026-11-25: draw every section a discipline has, even empty) reverted #3908's " +
+    "\"Help fill this in\" list on purpose — its message says \"Revert #3908's 'Help fill this in' list\" — " +
+    "but names the module's exports HelpFillApi, HelpFillRows and renderHelpFill only through the PR " +
+    "number. Deliberate; verified 2026-11-26 that nothing in the tree still references any of the three."],
 ]);
 
 /* One printer for both gate exits. The file-finding exit used to print the findings and NO repair,

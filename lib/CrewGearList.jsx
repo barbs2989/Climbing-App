@@ -16,6 +16,10 @@ import { useEffect, useState } from "react";
 import { C } from "../ClimbMatchCore.jsx";
 import { useCrewGearSync } from "./db";
 import { POP_REMOVE } from "./popupChrome.js";
+import SwipeRow from "../src/components/SwipeRow.tsx";
+import SwipeHint from "../src/components/SwipeHint.tsx";
+import { phoneX } from "./srOnly.js";
+import { useWideScreen } from "./wideLayout.js";
 
 const MAX_ITEM = 80; // the crew-gear functions refuse anything longer
 const MAX_QTY = 999; // ...and any quantity above this (0328)
@@ -35,6 +39,7 @@ function Stepper({ label, value, min, onChange }) {
 
 export default function CrewGearList({ crew, roster, onUpdateCrew }) {
   const [newItem, setNewItem] = useState("");
+  const px = phoneX(useWideScreen());
   const [newQty, setNewQty] = useState("");
   const [note, setNote] = useState("");
   const [editing, setEditing] = useState(null);
@@ -131,6 +136,7 @@ export default function CrewGearList({ crew, roster, onUpdateCrew }) {
     </div>
     <div style={{ fontSize: 11.5, color: C.textMuted, lineHeight: 1.45, marginBottom: 10 }}>Add what your crew is bringing, with how many if it matters, then mark who's bringing it. More than one of you can bring the same thing.</div>
     {items.length ? null : <div style={{ fontSize: 12.5, color: C.textSub, lineHeight: 1.5, padding: "4px 0 6px" }}>Nothing on the list yet.</div>}
+    {items.some(g => canRemove(g)) ? <SwipeHint text="Swipe left to remove an item you added." /> : null}
     {items.map(g => {
       const ids = claims[g] || [];
       const my = has(g, 0);
@@ -141,7 +147,8 @@ export default function CrewGearList({ crew, roster, onUpdateCrew }) {
       /* One row: the item and how many the crew wants, who is bringing how many; then "I'll bring it",
          Edit (who brings it, and how many) and remove. "Nobody yet" is said HERE and nowhere else; the
          header's "N of M covered" is the count, so no footer repeats it. */
-      return <div key={g} style={{ padding: "6px 0", borderTop: "1px solid " + C.borderLight }}>
+      /* SWIPE LEFT TO REMOVE an item you added (owner note 2026-11-26), as Notifications do; the Undo line below brings it back. The ✕ stays on the website (phoneX). */
+      return <SwipeRow key={g} flush bg={C.surface /* CrewStepSheet's fill */} action="remove" onDelete={canRemove(g) ? () => remove(g) : undefined}><div style={{ padding: "6px 0", borderTop: "1px solid " + C.borderLight }}>
         <div style={{ display: "flex", alignItems: "center", gap: 6 }}>
           <div style={{ flex: 1, minWidth: 0 }}>
             <div style={{ fontSize: 13, color: C.text, overflowWrap: "anywhere" }}>{g}{want ? <span style={{ color: C.textSub, fontWeight: 700 }}>{" · " + want + " wanted"}</span> : null}</div>
@@ -149,7 +156,7 @@ export default function CrewGearList({ crew, roster, onUpdateCrew }) {
           </div>
           <button onClick={() => toggle(g, 0)} aria-pressed={my} aria-label={"I'll bring it: " + g} style={{ flexShrink: 0, minHeight: 44, padding: "8px 10px", borderRadius: 9, border: "1px solid " + (my ? C.green : C.border), background: my ? C.greenBg : C.surface, color: my ? C.green : C.textSub, fontSize: 12, fontWeight: 700, cursor: "pointer" }}>{my ? <span aria-hidden="true">{"✓ "}</span> : null}{"I'll bring it"}</button>
           <button onClick={() => setEditing(open ? null : g)} aria-expanded={open} aria-label={open ? "Done editing " + g : "Edit who brings " + g + " and how many"} style={{ flexShrink: 0, minHeight: 44, padding: "8px 10px", borderRadius: 9, border: "1px solid " + (open ? C.blueDim : C.border), background: open ? C.blueBg : C.surface, color: open ? "#fff" : C.blue, fontSize: 12, fontWeight: 700, cursor: "pointer" }}>{open ? "Done" : "Edit"}</button>
-          {canRemove(g) ? <button onClick={() => remove(g)} aria-label={"Remove " + g} title={"Remove " + g} style={POP_REMOVE}>✕</button> : null}
+          {canRemove(g) ? <button onClick={() => remove(g)} aria-label={"Remove " + g} title={"Remove " + g} className={px.className} style={{ ...POP_REMOVE, ...px.style }}>✕</button> : null}
         </div>
         {open ? <div style={{ display: "flex", flexDirection: "column", gap: 6, padding: "8px 0 2px" }}>
           {confirmedMe ? <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", gap: 8 }}>
@@ -165,7 +172,7 @@ export default function CrewGearList({ crew, roster, onUpdateCrew }) {
             </div>;
           })}
         </div> : null}
-      </div>;
+      </div></SwipeRow>;
     })}
     {undo ? <div role="status" style={{ display: "flex", alignItems: "center", justifyContent: "space-between", gap: 8, fontSize: 12, color: C.textSub, margin: "8px 0 2px" }}><span style={{ overflowWrap: "anywhere" }}>{"Removed “" + undo.item + "”."}</span><button onClick={restore} style={{ minHeight: 44, padding: "4px 12px", background: "none", border: "none", color: C.blue, fontSize: 12, fontWeight: 700, cursor: "pointer", flexShrink: 0 }}>Undo</button></div> : null}
     <div style={{ display: "flex", gap: 6, marginTop: 10 }}>

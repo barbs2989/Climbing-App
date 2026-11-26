@@ -11,6 +11,7 @@ import LoadingRows from "./LoadingRows.tsx";
 import EmptyState from "./EmptyState.tsx";
 import { POP_REMOVE } from "../../lib/popupChrome.js";
 import RouteRow from "./RouteRow.tsx";
+import SearchModeHint, { AREAS_PLACEHOLDER, ROUTES_PLACEHOLDER } from "./SearchModeHint.tsx";
 import type { RouteRowRoute } from "./RouteRow.tsx";
 
 export interface DownloadedSearchArea { id: string; name: string; area_type: keyof typeof ATYPE; route_count?: number | null; where?: string }
@@ -46,7 +47,8 @@ export default function DownloadedSearch({ C, downloaded, onOpenArea, onOpenRout
   const qq = q.trim();
   const salt = downloaded.slice().sort().join("|");
   const scopeQ = useDeviceSearchScope(salt);
-  const areasQ = useDeviceSearch("areas", mode === "areas" ? qq : "", salt);
+  // On the Routes tab too: it is read off this phone, and the Routes tab names the areas the words match (SearchModeHint).
+  const areasQ = useDeviceSearch("areas", qq, salt);
   const routesQ = useDeviceSearch("routes", mode === "routes" ? qq : "", salt);
   // Read the names into memory before the first keystroke, so the first search does not wait on it.
   useEffect(() => { if (downloaded.length) warmDeviceSearch(); }, [salt]); // eslint-disable-line react-hooks/exhaustive-deps -- salt IS the downloaded list, as one comparable string
@@ -97,7 +99,7 @@ export default function DownloadedSearch({ C, downloaded, onOpenArea, onOpenRout
       </div>
       <div style={{ position: "relative" }}>
         <span aria-hidden="true" style={{ position: "absolute", left: 12, top: 0, height: 44, display: "flex", alignItems: "center", pointerEvents: "none" }}><ActionIcon name="search" size={18} color={C.textMuted}/></span>
-        <input type="search" enterKeyHint="search" value={q} onChange={e => setQ(e.target.value)} aria-label={mode === "areas" ? "Search your downloaded areas" : "Search your downloaded routes"} placeholder={mode === "areas" ? "Search areas, crags, peaks…" : "Search routes…"} style={{ width: "100%", height: 44, boxSizing: "border-box", padding: "0 40px 0 38px", borderRadius: 12, border: "1px solid " + C.field, background: C.card, color: C.text, fontSize: 15, outline: "none" }}/>
+        <input type="search" enterKeyHint="search" value={q} onChange={e => setQ(e.target.value)} aria-label={mode === "areas" ? "Search your downloaded areas" : "Search your downloaded routes"} placeholder={mode === "areas" ? AREAS_PLACEHOLDER : ROUTES_PLACEHOLDER} style={{ width: "100%", height: 44, boxSizing: "border-box", padding: "0 40px 0 38px", borderRadius: 12, border: "1px solid " + C.field, background: C.card, color: C.text, fontSize: 15, outline: "none" }}/>
         {q ? <button type="button" onClick={() => setQ("")} aria-label="Clear search" style={{ ...POP_REMOVE, position: "absolute", right: 10, top: 22, transform: "translateY(-50%)" }}>✕</button> : null}
       </div>
       {/* What it covers, and the way to change that: with a state downloaded nothing else on this screen leads to Manage areas. */}
@@ -105,6 +107,7 @@ export default function DownloadedSearch({ C, downloaded, onOpenArea, onOpenRout
       {!qq ? nearMe : (
         // The hits run down the page, as the area page's do: no inner scroll box.
         <div style={{ marginTop: 6 }} aria-busy={busy || undefined}>
+          {mode === "routes" && areasQ.data && !areasQ.isPlaceholderData ? <SearchModeHint C={C} q={qq} areas={areasQ.data.rows as DownloadedSearchArea[]} total={areasQ.data.total} onSearchAreas={() => setMode("areas")} /> : null}
           {q0.isError ? <div role="alert" style={{ fontSize: 13, color: C.red, padding: "14px 4px", textAlign: "center" }}>{mode === "areas" ? "Couldn’t search your downloaded areas — try again." : "Couldn’t search your downloaded routes — try again."}</div>
             // An EMPTY answer held from the last words is not an answer for these: still searching, say so.
             : !res || (busy && !res.rows.length) ? <LoadingRows C={C} label="Searching your downloads…" style={{ padding: "14px 4px" }}/>

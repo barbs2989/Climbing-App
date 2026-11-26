@@ -45,7 +45,7 @@ const CASES = [
   { name: "partner-cols", file: "lib/profileCols.js", must: "fail", why: "rule 2 — partner search stops carrying resume_public",
     find: "boulder_grade,show_name,resume_public", repl: "boulder_grade,show_name" },
 
-  { name: "conn-select", file: DB, must: "fail", why: "rule 2 — the connections select forgets it",
+  { name: "conn-select", file: "lib/db-social.js", must: "fail", why: "rule 2 — the connections select forgets it",
     find: 'profileCols("id,name,username,avatar,location,show_name,resume_public"',
     repl: 'profileCols("id,name,username,avatar,location,show_name"' },
 

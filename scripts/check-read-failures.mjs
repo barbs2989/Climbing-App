@@ -25,6 +25,7 @@ import path from "path";
 import { fileURLToPath } from "url";
 import { parse } from "@babel/parser";
 import _traverse from "@babel/traverse";
+import { readDbSource } from "./lib/guard-sources.mjs";
 
 const traverse = _traverse.default || _traverse;
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
@@ -62,15 +63,19 @@ for (const f of libFiles) {
 
 // Fails closed. Discovery returning little is a broken walk, not a clean tree — and lib/db.js is
 // the one file whose absence would make every number below meaningless.
-if (!READ_FILES.includes("lib/db.js") || !QUERY_FILES.includes("lib/db.js")) {
-  console.error("check:read-failures — lib/db.js was not discovered by either scan; the walk is broken");
+// Since 2026-11-25 the data layer is lib/db-*.js (lib/db.js only re-exports them), so it is THOSE
+// files the scans must find: all but a few (db-shared.js and db-route-row.js hold helpers that never
+// call supabase) that read, and at least one that queries.
+const DB_DOMAIN = libFiles.filter((f) => /^db-[\w-]+\.js$/.test(f)).map((f) => "lib/" + f);
+if (DB_DOMAIN.length < 10 || DB_DOMAIN.filter((f) => READ_FILES.includes(f)).length < DB_DOMAIN.length - 3 || !DB_DOMAIN.some((f) => QUERY_FILES.includes(f))) {
+  console.error(`check:read-failures — the data layer (lib/db-*.js, ${DB_DOMAIN.length} file(s)) was not discovered by both scans; the walk is broken`);
   process.exit(1);
 }
 if (READ_FILES.length < 3 || QUERY_FILES.length < 2) {
   console.error(`check:read-failures — discovery found ${READ_FILES.length} read file(s) and ${QUERY_FILES.length} query file(s); too few to be real`);
   process.exit(1);
 }
-const dbSrc = fs.readFileSync(path.join(ROOT, "lib/db.js"), "utf8");
+const dbSrc = readDbSource(ROOT);
 if (dbSrc.length < 10000) { console.error("check:read-failures — lib/db.js is implausibly short; refusing to report on it"); process.exit(1); }
 
 /* Swallows that are correct, each with the reason it is correct. A stale entry — declared but no
@@ -79,7 +84,7 @@ if (dbSrc.length < 10000) { console.error("check:read-failures — lib/db.js is 
    Keyed "file:function" now that the scan spans files, so two same-named exports in different
    files cannot excuse each other. */
 const DECLARED = {
-  "lib/db.js:claimMyCrewEmailInvites":
+  "lib/db-crews.js:claimMyCrewEmailInvites":
     "returns 0 for PGRST202 specifically — an unapplied migration, not a failed query. Degrading " +
     "there is deliberate so the app runs against a database that predates the RPC. Noted as a " +
     "known cost: a broken deploy and an empty invite list are the same number.",

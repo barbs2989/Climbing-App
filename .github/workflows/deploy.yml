@@ -159,6 +159,27 @@ jobs:
           else
             echo "no offline state files in the cache yet — the app will use the live database path"
           fi
+      # Source maps (vite.config.js builds them HIDDEN). They leave dist/ before Pages sees it, so the
+      # site ships exactly what it did, and are kept as an artifact named for the build's entry script
+      # — the `build` app_errors stores — for 90 days, app_errors' own retention. `npm run errors:read`
+      # fetches them by that name to turn a minified crash stack into file:line in the source.
+      - id: maps
+        name: Move the source maps out of the site
+        if: steps.tip_early.outputs.current == 'true'
+        run: |
+          entry=$(grep -o 'src="[^"]*/assets/[^"]*\.js"' dist/index.html | head -1 | sed 's#.*/##; s#"$##')
+          mkdir -p sourcemaps
+          find dist -name '*.map' -exec mv {} sourcemaps/ \;
+          echo "entry=$entry" >> "$GITHUB_OUTPUT"
+          echo "build $entry: $(ls sourcemaps | wc -l) source map(s) moved out of dist/"
+      - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        if: steps.tip_early.outputs.current == 'true' && steps.maps.outputs.entry != ''
+        with:
+          name: sourcemaps-${{ steps.maps.outputs.entry }}
+          path: sourcemaps
+          retention-days: 90
+          overwrite: true
+          if-no-files-found: warn
       # The run_attempt suffix is required — artifact names must be unique within
       # a run, so a bare "github-pages" collides on the second attempt. It does
       # mean this workflow must be re-run WHOLE:

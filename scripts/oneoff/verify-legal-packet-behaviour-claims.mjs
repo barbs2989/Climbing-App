@@ -25,9 +25,10 @@
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import { readDbSource } from "../lib/guard-sources.mjs";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "../..");
-const db = fs.readFileSync(path.join(ROOT, "lib", "db.js"), "utf8");
+const db = readDbSource();
 if (db.length < 20000) { console.error(`lib/db.js is only ${db.length} chars — refusing to report`); process.exit(1); }
 
 // `.from("table")` then the first chained verb decides read vs write. Look ahead a bounded window

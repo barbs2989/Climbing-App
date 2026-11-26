@@ -35,7 +35,7 @@ import _traverse from "@babel/traverse";
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
-import { assertCovered } from "./lib/guard-sources.mjs";
+import { assertCovered, readDbSource } from "./lib/guard-sources.mjs";
 
 const traverse = _traverse.default || _traverse;
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
@@ -58,7 +58,7 @@ const walk = (dir, out = []) => {
 
 // The write vocabulary comes from lib/db.js itself, so a new write function is covered
 // without editing this file.
-const dbSrc = fs.readFileSync(path.join(ROOT, "lib", "db.js"), "utf8");
+const dbSrc = readDbSource(ROOT);
 const WRITES = new Set(
   [...dbSrc.matchAll(/export\s+async\s+function\s+(\w+)/g)]
     .map((m) => m[1])

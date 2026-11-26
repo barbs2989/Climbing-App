@@ -19,17 +19,17 @@ const sum = (f) => crypto.createHash("sha1").update(fs.readFileSync(f)).digest("
 
 const CASES = [
   // The 2026-10-08 shape: a writer that updates its own screen and refreshes nothing.
-  { name: "writer-drops-its-refresh", file: DB, expect: "fail",
+  { name: "writer-drops-its-refresh", file: "lib/db-social.js", expect: "fail",
     find: "  invalidateKeys(blockedUsersReaders);\n  return data || null;\n",
     repl: "  return data || null;\n",
     says: /blockUser\(\) writes blocked_users and does not refresh: my-blocked/ },
   // A reader list that forgets one of the table's readers — the objectives list did (objectives-of-users).
-  { name: "list-forgets-a-reader", file: DB, expect: "fail",
+  { name: "list-forgets-a-reader", file: "lib/db-logs.js", expect: "fail",
     find: 'const kudosReaders = [["kudos-given"], ["kudos-received"]];',
     repl: 'const kudosReaders = [["kudos-given"]];',
     says: /giveKudosRow\(\) writes kudos and does not refresh: kudos-received/ },
   // A NEW writer of a table with readers, added with no refresh at all.
-  { name: "new-writer-no-refresh", file: DB, expect: "fail",
+  { name: "new-writer-no-refresh", file: "lib/db-social.js", expect: "fail",
     find: 'const routeBaseCheckinsReaders = [["route-base-checkins"], ["route-row"]];',
     repl: 'export async function _injDropVouch(id) { const { error } = await supabase.from("vouches").delete().eq("id", id); if (error) throw error; return true; }\nconst routeBaseCheckinsReaders = [["route-base-checkins"], ["route-row"]];',
     says: /_injDropVouch\(\) writes vouches and does not refresh: user-vouches, climber-vouches/ },
@@ -39,12 +39,12 @@ const CASES = [
     repl: 'const DECLARED = { noSuchWriter: "a reason" };',
     says: /DECLARED names noSuchWriter, which no lib\/ file declares/ },
   // MUST STAY SILENT — an extra name (an RPC-backed reader, stated by hand) is accepted.
-  { name: "extra-name-in-list", file: DB, expect: "pass",
+  { name: "extra-name-in-list", file: "lib/db-logs.js", expect: "pass",
     find: 'const kudosReaders = [["kudos-given"], ["kudos-received"]];',
     repl: 'const kudosReaders = [["kudos-given"], ["kudos-received"], ["leaderboard"]];',
     says: null },
   // MUST STAY SILENT — a writer that refreshes through one other writer it calls.
-  { name: "refresh-through-a-callee", file: DB, expect: "pass",
+  { name: "refresh-through-a-callee", file: "lib/db-social.js", expect: "pass",
     find: 'const routeBaseCheckinsReaders = [["route-base-checkins"], ["route-row"]];',
     repl: 'export async function _injRegiveKudos(giver, receiver, id) { const { error } = await supabase.from("kudos").delete().eq("id", id); if (error) throw error; return giveKudosRow(giver, receiver, null, null); }\nconst routeBaseCheckinsReaders = [["route-base-checkins"], ["route-row"]];',
     says: null },

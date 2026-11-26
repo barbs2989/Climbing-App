@@ -7,9 +7,15 @@ room for side-panel ads later. The phone app keeps its own look.
 
 ## 1. What it does today
 - **Phone (under 1024px wide):** one 520px column, centred, with the bottom tab bar (Home · Climbs ·
-  Partners · Crews · Logbook · Ranks · Profile). The bar is soft: see-through with a blur, a faint shadow instead
-  of a hard top line, and the selected tab marked only by its pill. Inside an open chat thread the bar
-  steps aside for the composer.
+  Partners · Crews · Logbook · Ranks · Profile). The bar **floats** (owner's note, 2026-11-26): a rounded
+  island (24px radius) inset `clamp(4px,2vw,8px)` from the screen's sides and 8px above the home indicator,
+  with an **opaque** `C.surface` fill (no see-through blur) and a soft drop shadow. The selected tab is marked only by
+  its pill. It **hides while you scroll down** and comes back on any scroll up, at the top and at the end of
+  the page, on a tab change, and when keyboard focus (`:focus-visible`) reaches it (`useHideOnScroll`,
+  `lib/hideOnScroll.js`); it never hides over the policy notice, and under reduced motion it moves without
+  sliding. The outer `[data-cm-tabbar]` box stays sticky and keeps its layout slot; only its paint
+  translates, so the last row of a page is never out of reach. Inside an open chat thread the bar
+  steps aside for the composer. `scripts/oneoff/probe-tab-bar-hide.mjs` drives it at 390px and 320px.
   - **Popups fill the screen** (owner 2026-10-23): every popup that used to slide up as a bottom sheet
     (a form, a list, a share screen, a photo — 27 of them) opens full screen, clear of the notch and the
     home bar, with its ✕ at the top. One rule in `index.html` does it, matched on the sheets' serialised
@@ -308,6 +314,7 @@ taken focus from it by the time the hook looks.
 ## 3. Files
 | File | Key symbols |
 |---|---|
+| `lib/hideOnScroll.js` | `useHideOnScroll` |
 | `lib/wideLayout.js` | `useWideScreen`, `useFullWidth`, `useAdSideWidth`, `wideGeom`, `wideColumn`, `wideRail`, `wideTopBar`, `wideTopRow`, `wideNavStrip`, `wideCss`, `WIDE_MIN`, `FULL_MIN`, `AD_SIDE_MIN`, `TOP_H`, `NAV_H`, `HEAD_H` |
 | `lib/MonthGrid.jsx` | `MonthGrid` |
 | `lib/DesktopShell.jsx` | `WideSearch`, `WideRail`, `AvatarMenu`, `WideFooter`, `DocTitle` |

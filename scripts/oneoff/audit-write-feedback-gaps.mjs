@@ -32,12 +32,13 @@
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import { readDbSource } from "../lib/guard-sources.mjs";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "../..");
 const FILES = ["ClimbMatch.jsx", "ClimbMatchCore.jsx", "RouteDetail.jsx",
   ...fs.readdirSync(path.join(ROOT, "lib")).filter(f => /\.jsx?$/.test(f) && f !== "db.js").map(f => "lib/" + f)];
 
-const db = fs.readFileSync(path.join(ROOT, "lib/db.js"), "utf8");
+const db = readDbSource();
 const WRITES = [...db.matchAll(/^export async function ([a-zA-Z0-9_]+)/gm)].map(m => m[1])
   .filter(n => !/^(fetch|get|count)/.test(n));
 if (WRITES.length < 20) { console.error("REFUSING — parsed too few writes; the scan broke"); process.exit(1); }

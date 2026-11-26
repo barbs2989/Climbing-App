@@ -130,6 +130,9 @@
          user tabbing into those fields saw no focus indicator at all. */
       :focus-visible { outline: 2px solid #ff8a3d !important; outline-offset: 2px; border-radius: 5px; }
       button:focus:not(:focus-visible), a:focus:not(:focus-visible) { outline: none; }
+      /* A row's ✕ that a SWIPE replaces on a phone (lib/srOnly.js phoneX) is clipped out of sight but kept for a screen
+         reader and a keyboard; while it holds keyboard focus it is drawn again, so a focused control is never invisible. */
+      .cm-sr-focus:focus-visible { position: static !important; width: auto !important; height: auto !important; min-width: 24px; min-height: 24px; padding: 2px 6px !important; margin: 0 !important; clip: auto !important; overflow: visible !important; }
       /* File pickers (WCAG 2.1.1). Every photo/GPX upload is a styled <label> around — or
          beside — a native file input, and those inputs were display:none: a display:none input
          cannot take focus and a label never can, so nobody on a keyboard could attach a photo
@@ -254,6 +257,7 @@
       @media (prefers-reduced-motion: reduce) {
         *, *::before, *::after { animation: none !important; }
         [role="switch"] > * { transition: none; }
+        [data-cm-tabbar] { transition: none !important; }
         button:not(:disabled):active, [style*="cursor: pointer"]:active, [role="button"]:not([aria-disabled="true"]):active, [role="tab"]:active, [role="switch"]:active, [role="checkbox"]:not([aria-disabled="true"]):active, [role="option"]:active, [role="menuitem"]:active { transform: none; }
       }
       /* 16px inputs so iOS doesn't auto-zoom the page when a field is focused. Forced on every TOUCH screen,
@@ -323,8 +327,10 @@
       #cm-boot .b-icons i { width: 36px; height: 36px; border-radius: 10px; border: 1px solid #514a41; background: #221f1b; display: block; }
       #cm-boot .b-mark { font-size: 35px; font-weight: 800; letter-spacing: -0.7px; text-align: center; color: #f1ede6; line-height: 1.1; }
       #cm-boot .b-mark span { color: #ff8a3d; }
-      #cm-boot .b-nav { display: flex; background: rgba(26,25,22,0.82); -webkit-backdrop-filter: saturate(160%) blur(16px); backdrop-filter: saturate(160%) blur(16px); box-shadow: 0 -1px 0 rgba(241,237,230,0.06), 0 -10px 30px rgba(0,0,0,0.35); position: sticky; bottom: 0; padding-bottom: env(safe-area-inset-bottom); }
-      #cm-boot .b-nav div { flex: 1; min-width: 0; padding: 11px 2px 8px; display: flex; flex-direction: column; align-items: center; gap: 3px; font-size: min(12.5px, 2.95vw); font-weight: 600; color: #c9c1b5; }
+      /* The floating, rounded, opaque phone bar (owner 2026-11-26), drawn as ClimbMatch.jsx draws it: 8px in from the
+         edges and above the home indicator, a 24px radius, C.surface. The desktop rules below put the strip back square. */
+      #cm-boot .b-nav { display: flex; background: #1a1916; border: 1px solid rgba(241,237,230,0.09); border-radius: 24px; box-shadow: 0 10px 30px rgba(0,0,0,0.55), 0 2px 8px rgba(0,0,0,0.35); position: sticky; bottom: calc(8px + env(safe-area-inset-bottom)); margin: 0 clamp(4px, 2vw, 8px) calc(8px + env(safe-area-inset-bottom)); }
+      #cm-boot .b-nav div { flex: 1; min-width: 0; padding: 9px 1px 7px; display: flex; flex-direction: column; align-items: center; gap: 3px; font-size: min(12.5px, 2.8vw); font-weight: 600; color: #c9c1b5; }
       #cm-boot .b-nav div:first-child { color: #ff8a3d; font-weight: 800; }
       #cm-boot .b-nav b { width: 24px; height: 24px; border-radius: 6px; background: #433e37; margin: 3px 13px; display: block; }
       #cm-boot .b-nav div:first-child b { background: #18262e; }
@@ -353,7 +359,7 @@
       @media (min-width: 1024px) {
         #cm-boot { max-width: none; width: min(700px, calc(100vw - 40px)); margin-left: max(12px, calc((100vw - 16px) / 2 - min(700px, calc(100vw - 40px)) / 2)); margin-right: 0; padding-top: 112px; box-sizing: border-box; box-shadow: -1px 0 0 #514a41, 1px 0 0 #514a41; }
         #cm-boot .b-bar { position: fixed; top: 0; left: 0; right: 0; height: 64px; box-sizing: border-box; padding: 0 16px; flex-direction: row; align-items: center; z-index: 2; border-bottom: none; }
-        #cm-boot .b-nav { position: fixed; top: 64px; bottom: auto; left: 0; right: 0; height: 48px; box-sizing: border-box; flex-direction: row; align-items: stretch; gap: 2px; padding: 0 28px 0 calc(max(284px, calc((100vw - 16px) / 2 - min(700px, calc(100vw - 40px)) / 2)) - 12px); background: #1a1916; box-shadow: none; -webkit-backdrop-filter: none; backdrop-filter: none; border-top: 1px solid #514a41; border-bottom: 1px solid #514a41; z-index: 2; }
+        #cm-boot .b-nav { position: fixed; top: 64px; bottom: auto; left: 0; right: 0; height: 48px; box-sizing: border-box; flex-direction: row; align-items: stretch; gap: 2px; padding: 0 28px 0 calc(max(284px, calc((100vw - 16px) / 2 - min(700px, calc(100vw - 40px)) / 2)) - 12px); background: #1a1916; box-shadow: none; -webkit-backdrop-filter: none; backdrop-filter: none; border-radius: 0; margin: 0; border-left: none; border-right: none; border-top: 1px solid #514a41; border-bottom: 1px solid #514a41; z-index: 2; }
         #cm-boot .b-nav div { flex: none; flex-direction: row; align-items: center; gap: 8px; padding: 0 12px; font-size: 15px; white-space: nowrap; }
         #cm-boot .b-nav div:first-child { color: #f1ede6; box-shadow: inset 0 -3px 0 #ff8a3d; }
         #cm-boot .b-nav div:last-child { display: none; }

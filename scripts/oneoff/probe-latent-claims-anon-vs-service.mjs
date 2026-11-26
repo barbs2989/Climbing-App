@@ -29,6 +29,7 @@ import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { SUPABASE_URL, anonKey, requireServiceKey, headers } from "../lib/supabase-env.mjs";
+import { readDbSource } from "../lib/guard-sources.mjs";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..", "..");
 const svc = requireServiceKey();
@@ -55,7 +56,7 @@ const TABLES = [
 
 // Derived, not declared: what does the app actually read? A name absent from this set is stale
 // bookkeeping and fails the run.
-const dbSrc = fs.readFileSync(path.join(ROOT, "lib", "db.js"), "utf8");
+const dbSrc = readDbSource();
 const READ = new Set([...dbSrc.matchAll(/\.from\("([a-z_]+)"\)/g)].map((m) => m[1]));
 if (READ.size < 20) {
   console.error(`FAIL — parsed only ${READ.size} table reads out of lib/db.js. That is a broken`);

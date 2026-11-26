@@ -20,6 +20,7 @@ import _traverse from "@babel/traverse";
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import { readDbSource } from "../lib/guard-sources.mjs";
 
 const traverse = _traverse.default || _traverse;
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..", "..");
@@ -27,7 +28,7 @@ const FILES = ["ClimbMatch.jsx", "ClimbMatchCore.jsx", "RouteDetail.jsx", "Enric
   ...fs.readdirSync(path.join(ROOT, "lib")).filter((f) => /\.jsx$/.test(f)).map((f) => "lib/" + f),
   ...fs.readdirSync(path.join(ROOT, "src/components")).filter((f) => /\.tsx?$/.test(f)).map((f) => "src/components/" + f)];
 
-const dbSrc = fs.readFileSync(path.join(ROOT, "lib", "db.js"), "utf8");
+const dbSrc = readDbSource();
 const WRITES = new Set([...dbSrc.matchAll(/export\s+async\s+function\s+(\w+)/g)].map((m) => m[1])
   .filter((n) => /^(create|update|delete|add|remove|log|give|revoke|submit|insert|set|mark|ack|unack|invite|claim|verify|upload|approve|save|toggle|join|leave|rsvp|react|send|accept|decline|block|unblock|follow|unfollow|cancel|like|unlike|vote|withdraw|dismiss|pin|unpin|report|request|respond|confirm|reject|edit|post|clear|move|rename|reorder|transfer|upsert|hide|unhide|mute|unmute|flag|resolve|close|reopen|archive|restore)/i.test(n)));
 if (WRITES.size < 40) { console.error(`FAIL: only ${WRITES.size} write names parsed from lib/db.js`); process.exit(1); }

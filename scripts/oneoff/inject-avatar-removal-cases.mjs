@@ -22,7 +22,7 @@ const run = () => {
 
 const CASES = [
   {
-    file: "lib/db.js", name: "order-reversed",
+    file: "lib/db-photos.js", name: "order-reversed",
     why: "deletes the storage object BEFORE clearing the column. A refused write then destroys the " +
          "file while profiles.avatar still points at it — a broken image, and an unrecoverable one",
     edit: (s) => s.replace(
@@ -37,14 +37,14 @@ const CASES = [
     expect: "fail", must: /FAILED avatar removal deleted/,
   },
   {
-    file: "lib/db.js", name: "payload-widened",
+    file: "lib/db-photos.js", name: "payload-widened",
     why: "the removal sends a second column. saveProfile PATCHes whatever object it is handed, and " +
          "check:profile-edit-gate exists because a caller once sent fields it had never loaded",
     edit: (s) => s.replace('.update({ avatar: null }).eq("id", userId)', '.update({ avatar: null, bio: null }).eq("id", userId)'),
     expect: "fail", must: /the write sent \d+ column/,
   },
   {
-    file: "lib/db.js", name: "refusal-swallowed",
+    file: "lib/db-photos.js", name: "refusal-swallowed",
     why: "a refused write resolves instead of throwing, so the editor clears the photo on a write " +
          "that never landed — the swallowed-write-failure shape this repo keeps finding",
     edit: (s) => s.replace(
@@ -77,7 +77,7 @@ const CASES = [
     expect: "fail", must: /App no longer passes uid/,
   },
   {
-    file: "lib/db.js", name: "SILENT-comment-naming-the-shape",
+    file: "lib/db-photos.js", name: "SILENT-comment-naming-the-shape",
     why: "MUST STAY SILENT — a comment quoting the forbidden ordering is documentation, and a guard " +
          "that failed on it would forbid explaining itself",
     edit: (s) => s.replace("export async function removeProfileAvatar(userId, url) {",

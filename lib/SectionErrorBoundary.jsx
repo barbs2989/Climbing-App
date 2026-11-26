@@ -2,6 +2,7 @@ import { Component } from "react";
 import { SOLID_FILL } from "./buttonStyles.js";
 import { C } from "../ClimbMatchCore.jsx";
 import { swallowedChunk } from "./chunkReload.js";
+import { reportError } from "./errorReport.js";
 
 // A section-level error boundary. AppErrorBoundary (main.jsx) is the last resort: any throw
 // reaching it replaces the WHOLE app with a full-screen card. This one wraps a single section
@@ -22,8 +23,12 @@ export default class SectionErrorBoundary extends Component {
   constructor(props) { super(props); this.state = { err: null }; this.retry = this.retry.bind(this); }
   static getDerivedStateFromError(err) { return { err }; }
   componentDidCatch(err, info) {
-    // Console only: there is no reporting endpoint, so nothing here claims the error was sent anywhere.
-    console.error("[ClimbMatch] section error (" + (this.props.name || "section") + "):", err, info && info.componentStack);
+    // Filed to app_errors like a whole-app crash (AppErrorBoundary): until 2026-11-25 this boundary only
+    // logged to the console, so a crash it caught — the common case, since it wraps every tab and the
+    // route page — reached nobody but the climber. Best effort; the copy below still claims nothing.
+    const where = "[section: " + (this.props.name || "section") + "]";
+    console.error("[ClimbMatch] section error " + where + ":", err, info && info.componentStack);
+    reportError("render", err, where + ((info && info.componentStack) || ""));
   }
   retry() { this.setState({ err: null }); }
   render() {

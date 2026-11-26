@@ -20,12 +20,19 @@ export default function WaypointMapPicker({waypoints,activeIdx,onPick,peakCoord,
   const mapDiv=useRef<HTMLDivElement | null>(null),mapRef=useRef<LeafletAny>(null),markersRef=useRef<LeafletAny[]>([]),tileRef=useRef<LeafletAny>(null);
   const [ready,setReady]=useState(false),[mapFail,setMapFail]=useState(false);
   const [baseLayer,setBaseLayer]=useState("sat");
+  const coop=typeof window!=="undefined"&&typeof window.matchMedia==="function"&&window.matchMedia("(hover: none) and (pointer: coarse)").matches;
   const pickRef=useRef(onPick);pickRef.current=onPick;
   useEffect(function(){
     let cancelled=false;
     const init=function(){
       if(cancelled||!mapDiv.current||mapRef.current||!window.L)return;
-      const L=window.L;const map=L.map(mapDiv.current,{attributionControl:false});
+      const L=window.L;
+      /* ONE FINGER SCROLLS THE SHEET, TWO MOVE THE MAP, on a touch screen (owner note 2026-11-26: "Edit in a
+         climb, sometimes get stuck when you were trying to scroll"). The map is a 190px band across the edit
+         sheet, and a one-finger drag that landed on it panned the map instead of the form. Google Maps calls
+         this "cooperative" gesture handling and uses it for every map inside a scrolling page; Mapbox has
+         cooperativeGestures. A TAP still places the pin, and a mouse still drags. */
+      const map=L.map(mapDiv.current,{attributionControl:false,dragging:!coop});
       applyBaseLayer(map,tileRef,baseLayer);
       const withCoords=(waypoints||[]).filter(function(w){return wpPlaced(w)&&w.lng!=null&&!isNaN(Number(w.lat))&&!isNaN(w.lng);});
       if(withCoords.length){map.fitBounds(L.latLngBounds(withCoords.map(function(w){return [w.lat,w.lng];})).pad(0.35),{maxZoom:layerSharpZoom(baseLayer)});}
@@ -60,6 +67,6 @@ export default function WaypointMapPicker({waypoints,activeIdx,onPick,peakCoord,
     <div ref={mapDiv} style={{height:190,borderRadius:9,border:"1px solid "+C.border,overflow:"hidden",background:"#0e0d0b",cursor:"crosshair"}}/>
     {!ready?<div style={{position:"absolute",inset:0,display:"flex",alignItems:"center",justifyContent:"center",color:C.textMuted,fontSize:12,pointerEvents:"none",textAlign:"center",padding:16}}>{mapFail?"Map couldn't load — enter coordinates manually below.":"Loading map…"}</div>:null}
     {ready?<div style={{position:"absolute",top:7,left:7,zIndex:1000,display:"flex",gap:4}}>{[["street","Street"],["sat","Satellite"],["topo","Topo"]].map(([k,lbl])=><button key={k} onClick={()=>setBaseLayer(k)} aria-current={baseLayer===k?"true":undefined} style={{padding:"8px 10px",minHeight:34,borderRadius:7,border:"1px solid "+(baseLayer===k?C.blue:C.border),background:baseLayer===k?C.blueBg:C.surface,color:baseLayer===k?"#fff":C.textSub,fontSize:11.5,fontWeight:700,cursor:"pointer",boxShadow:"0 2px 6px rgba(0,0,0,0.4)"}}>{lbl}</button>)}</div>:null}
-    {ready?<div style={{position:"absolute",bottom:7,left:7,right:7,background:"rgba(18,17,15,0.85)",borderRadius:7,padding:"4px 8px",fontSize:11,color:C.text,textAlign:"center",pointerEvents:"none"}}>{tapHint||(tx("Tap the map to place Waypoint ")+((activeIdx!=null?activeIdx:0)+1))}</div>:null}
+    {ready?<div style={{position:"absolute",bottom:7,left:7,right:7,background:"rgba(18,17,15,0.85)",borderRadius:7,padding:"4px 8px",fontSize:11,color:C.text,textAlign:"center",pointerEvents:"none"}}>{(tapHint||(tx("Tap the map to place Waypoint ")+((activeIdx!=null?activeIdx:0)+1)))+(coop?" · two fingers move the map":"")}</div>:null}
   </div>;
 }

@@ -22,6 +22,7 @@ import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
 import { SUPABASE_URL, anonKey } from "../lib/supabase-env.mjs";
+import { readDbSource } from "../lib/guard-sources.mjs";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "../..");
 const arg = (n, d) => (process.argv.find(a => a.startsWith(`--${n}=`)) || `--${n}=${d}`).split("=")[1];
@@ -31,7 +32,7 @@ const TESTS = QUERIES.length ? QUERIES
   : ["washington pass", "leavenworth", "smith rock", "stuart", "index", "rainier", "liberty bell"];
 
 // --- lift routeSearchScore out of lib/db.js -------------------------------------------------
-const src = fs.readFileSync(path.join(ROOT, "lib/db.js"), "utf8");
+const src = readDbSource();
 const start = src.indexOf("function routeSearchScore(");
 if (start < 0) throw new Error("ANCHOR LOST: `function routeSearchScore(` is not in lib/db.js — it was renamed or moved, and this probe would otherwise measure nothing.");
 let depth = 0, end = -1;

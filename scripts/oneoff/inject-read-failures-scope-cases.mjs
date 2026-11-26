@@ -45,7 +45,7 @@ const CASES = [
     // revert is invisible to sections 1 and 2: no `error` is bound, so there is nothing to test,
     // and the query key is untouched.
     name: "4. the filed-reports session read discards its error again (the real defect)",
-    file: "lib/db.js", expect: "fail", needs: /discard the supabase `error` inside a queryFn/,
+    file: "lib/db-moderation.js", expect: "fail", needs: /discard the supabase `error` inside a queryFn/,
     find: '      const { data: sess, error: sessErr } = await supabase.auth.getSession();\n'
       + '      if (sessErr) throw sessErr;\n',
     repl: '      const { data: sess } = await supabase.auth.getSession();\n',

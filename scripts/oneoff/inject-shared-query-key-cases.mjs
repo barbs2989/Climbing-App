@@ -13,7 +13,7 @@ import { execFileSync } from "child_process";
 import { fileURLToPath } from "url";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "../..");
-const DB = path.join(ROOT, "lib/db.js");
+const DB = path.join(ROOT, "lib/db-search.js"); // lib/db.js re-exports it since 2026-11-25
 const GUARD = path.join(ROOT, "scripts/check-read-failures.mjs");
 const sum = () => crypto.createHash("sha1").update(fs.readFileSync(DB)).digest("hex").slice(0, 12);
 

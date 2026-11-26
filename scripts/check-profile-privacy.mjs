@@ -26,6 +26,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import { pathToFileURL } from "node:url";
+import { readDbSource } from "./lib/guard-sources.mjs";
 
 const ROOT = process.cwd();
 const DIR = path.join(ROOT, "supabase", "migrations");
@@ -299,7 +300,7 @@ const sqlCols = (list) => list.split(",").map((c) => c.trim()).filter(Boolean).m
   const star = await as("anon", null, `select * from climb_logs limit 1`);
   if (!star.error) fail("signed out, select * on climb_logs works — partners comes with it"); else ok("signed out: select * on climb_logs is refused");
 
-  const db_js = fs.readFileSync(path.join(ROOT, "lib", "db.js"), "utf8");
+  const db_js = readDbSource(ROOT);
   const base = (db_js.match(/const TRIP_REPORT_COLS = "([^"]+)"/) || [])[1];
   const extra = (db_js.match(/TRIP_REPORT_COLS \+ "([^"]+)"/) || [])[1];
   if (!base) fail("lib/db.js: TRIP_REPORT_COLS not found — this section can no longer test the trip-report reads");
@@ -308,7 +309,8 @@ const sqlCols = (list) => list.split(",").map((c) => c.trim()).filter(Boolean).m
   const srcFiles = [path.join(ROOT, "lib", "db.js")];
   for (const f of fs.readdirSync(ROOT)) if (/\.jsx$/.test(f)) srcFiles.push(path.join(ROOT, f));
   for (const f of srcFiles) {
-    const s = fs.readFileSync(f, "utf8"), rel = path.relative(ROOT, f);
+    // lib/db.js is a re-export list since 2026-11-25: its code is read as one text (lib/db-*.js joined).
+    const rel = path.relative(ROOT, f), s = rel === path.join("lib", "db.js") ? readDbSource(ROOT) : fs.readFileSync(f, "utf8");
     for (const m of s.matchAll(/from\("climb_logs"\)\s*\.select\("([^"]*)"/g)) {
       if (/^\s*\*?\s*$/.test(m[1])) { fail(`${rel}: .from("climb_logs").select("${m[1]}") — select * is refused signed out since 0501; name the columns`); continue; }
       // `partners` is the author's own: ONE reader may name it, useMyLogs (your own logs, keyed on

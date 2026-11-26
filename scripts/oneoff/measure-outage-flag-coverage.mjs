@@ -17,9 +17,10 @@
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import { readDbSource } from "../lib/guard-sources.mjs";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "../..");
-const db = fs.readFileSync(path.join(ROOT, "lib/db.js"), "utf8");
+const db = readDbSource();
 
 // The read hooks lib/db.js exports. A handle is only a "query handle" if it comes from one.
 const hooks = new Set([...db.matchAll(/export function (use[A-Z]\w*)/g)].map((m) => m[1]));
