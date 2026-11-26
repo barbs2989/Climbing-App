@@ -109,6 +109,17 @@ empty field fill at once and two agreeing climbers change one; the owner withdre
   *Wrong place claims* (`AreaPlacementQueue`, 0372; `review.html#placements`) and *Feedback & ratings* (`AppFeedbackQueue`, 0365;
   `review.html#feedback`, counted by open notes) followed on 2026-11-25, the last of the Menu's admin Review tiles: the app's Menu
   has no Review section, no review sheet and no count on its button any more (owner: "remove since we created the admin page").
+- **Safety reports on the desk (2026-11-26, `review.html#safety`, `review/SafetySection.jsx`, admin only)**: the owner
+  asked for reports to be "pushed to my admin dashboard". The in-app queues #2727 removed come back here, not in the app:
+  *Waiting* (`useSafetyReports`: `user_reports` open/reviewing, severe reasons first then oldest, red from 20 h, the
+  server's copy of what was reported, images blurred until opened, how many reports name the person and their standing),
+  *Reported photos* (`usePhotoReports`, `content_reports`), *Appeals* (`useSafetyAppeals`, every kind but `contributing`,
+  which stays in *Appeals*), *Closed*, and *How to decide* (the written enforcement rules, NCMEC procedure included).
+  Buttons: `moderateContent` (remove / hide / keep), `reviewUserReport`, `setAccountStanding` (suspend 1-365 days / ban,
+  optionally removing everything they posted / reinstate), `takeDownReportedPhoto`, `dismissPhotoReport`, `decideAppeal`.
+  `useAdminQueueCounts` counts them as `safety` (+ `safetyOldestAt`). **0550** puts a `safety_report` notice in every
+  admin's bell for each new report, reported photo or appeal; its link `{desk}` opens `review.html#<desk>` (`goSpecial`).
+  The audit and store checklist: [docs/APP-STORE-READINESS-AUDIT.md](../APP-STORE-READINESS-AUDIT.md).
 - **The nightly AI checker**: `scripts/review-queue-export.mjs` (service key, read-only) lists items with
   no verdict or whose content changed since (`item_hash`); `.claude/workflows/review-flags-nightly.js`
   researches each (open web only; no AllTrails/Gaia/CalTopo/Strava/Wikiloc/Peakbagger/Mountain Project)
