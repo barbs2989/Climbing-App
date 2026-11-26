@@ -126,22 +126,6 @@
   "beta_new": "Classed as advanced scrambling with glacier travel followed by a short Class 4 rock step. Parties rope up for the glaciated section (crevasses and a bergschrund are noted) and carry a small rock rack/runners for the final step, which is on loose, lichen-covered rock.",
   "moves": [
    {
-    "to": "rack",
-    "action": "copy",
-    "value": {
-     "rows": [
-      {
-       "item": "Small rock rack"
-      },
-      {
-       "item": "Runners"
-      }
-     ],
-     "text": "A small rock rack and runners for the final Class 4 step."
-    },
-    "from": "carry a small rock rack/runners for the final step, which is on loose, lichen-covered rock"
-   },
-   {
     "to": "approach",
     "action": "covered",
     "from": " It can be approached from a camp at Silver Lake (via Silver Creek) or from Ouzel Lake (via Depot Creek and over the Custer-Spickard saddle)."

@@ -22,26 +22,7 @@
   "moves": [
    {
     "to": "rack",
-    "action": "add",
-    "value": {
-     "rows": [
-      {
-       "item": "Rope",
-       "sizes": "single, 50-60 m"
-      },
-      {
-       "item": "Cams",
-       "sizes": "a few small"
-      },
-      {
-       "item": "Nuts"
-      },
-      {
-       "item": "Runners"
-      }
-     ],
-     "text": "A single 50-60 m rope, a few small cams and nuts, and runners."
-    },
+    "action": "covered",
     "from": " Carry a single 50-60 m rope, a few small cams and nuts, and runners."
    }
   ]

@@ -123,28 +123,6 @@
     "to": "descent",
     "action": "covered",
     "from": " Exit via notch, descend west gully."
-   },
-   {
-    "to": "rack",
-    "action": "copy",
-    "value": {
-     "rows": [
-      {
-       "item": "Cams",
-       "sizes": "doubles to #3"
-      },
-      {
-       "item": "Cams",
-       "sizes": "#4"
-      },
-      {
-       "item": "Cams",
-       "sizes": "single #5 or #6 for the short wide sections"
-      }
-     ],
-     "text": "Cams in doubles to #3, a #4, and a single #5 or #6 for the short wide sections."
-    },
-    "from": "doubles to #3 plus a #4, with a single #5 or #6 useful for the short wide sections"
    }
   ]
  },
@@ -203,25 +181,7 @@
  {
   "id": "wa_liberty_traverse",
   "beta_new": "Grade V alpine, 5.9 YDS, 26 pitches, approximately 2,000 ft (606 m) of climbing. Route composition: Beckey Route on Liberty Bell (5.3-5.6), North Face of Concord Tower, North Face of Lexington Tower, Northwest Corner of North Early Winter Spire (5.9+), Southwest Rib of South Early Winter Spire. Hazards include significant rockfall danger in the approach gully, which funnels falling rock like a bowling alley, exposed alpine terrain, route finding challenges. Requires excellent trad climbing skills, solid alpine rock climbing experience, and good protection/anchor placement ability. Standard rack with couple bigger pieces for North Early Winter Spire. Short rappel descent from summits. The individual summits, the Beckey Route above all, are busy on summer weekends, though few parties do the full traverse. Best season: July-August during optimal weather windows. Typically done as 1-2 day alpine climb with experienced parties.",
-  "moves": [
-   {
-    "to": "rack",
-    "action": "copy",
-    "value": {
-     "rows": [
-      {
-       "item": "Standard rack"
-      },
-      {
-       "item": "Cams",
-       "sizes": "a couple of bigger pieces for North Early Winter Spire"
-      }
-     ],
-     "text": "A standard rack with a couple of bigger pieces for North Early Winter Spire."
-    },
-    "from": "Standard rack with couple bigger pieces for North Early Winter Spire."
-   }
-  ]
+  "moves": []
  },
  {
   "id": "wa_lichtenberg_mountain_se_route",

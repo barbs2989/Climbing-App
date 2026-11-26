@@ -99,24 +99,8 @@
    },
    {
     "to": "rack",
-    "action": "add",
-    "from": "Trad protection: doubles to a #3 Camalot, weighted toward small cams and wires, with RPs for thin seams.",
-    "value": {
-     "rows": [
-      {
-       "item": "Cams",
-       "sizes": "doubles to #3 Camalot, weighted toward small sizes"
-      },
-      {
-       "item": "Wires"
-      },
-      {
-       "item": "RPs",
-       "sizes": "for thin seams"
-      }
-     ],
-     "text": "Cams in doubles to a #3 Camalot, weighted toward small sizes, plus wires and RPs for thin seams."
-    }
+    "action": "covered",
+    "from": "Trad protection: doubles to a #3 Camalot, weighted toward small cams and wires, with RPs for thin seams."
    }
   ]
  },

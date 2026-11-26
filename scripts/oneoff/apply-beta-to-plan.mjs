@@ -50,11 +50,15 @@ function lint(s, where) {
 }
 const words = (s) => String(s || "").toLowerCase().match(/[a-z0-9.#'-]+/g) || [];
 const joinProse = (a, b) => { a = String(a || "").trim(); b = String(b || "").trim(); if (!a) return b; if (!b) return a; return /[.!?)"]$/.test(a) ? a + " " + b : a + ". " + b; };
+const canon = (v) => JSON.stringify(v, (k, x) => (x && typeof x === "object" && !Array.isArray(x)) ? Object.fromEntries(Object.keys(x).sort().map((q) => [q, x[q]])) : x);
 const hasText = (v) => v != null && String(v).trim() !== "";
 
 const stamp = Date.now();
 const rollback = [], report = { written: [], skipped: [], held: [], resolved: [] };
 const rbPath = path.join("scripts", `rollback-beta-to-plan-${stamp}.json`);
+// A route already written by an earlier run (its id is in a rollback file) is never written twice:
+// a rack append is not idempotent.
+const done = new Set(fs.readdirSync("scripts").filter((f) => /^rollback-beta-to-plan-\d+\.json$/.test(f)).flatMap((f) => JSON.parse(fs.readFileSync(path.join("scripts", f), "utf8")).map((x) => x.id)));
 
 for (const f of files) {
   const decisions = JSON.parse(fs.readFileSync(f, "utf8"));
@@ -62,6 +66,7 @@ for (const f of files) {
   const packets = new Map(JSON.parse(fs.readFileSync(inF, "utf8")).map((p) => [p.id, p]));
   for (const d of decisions) {
     const p = packets.get(d.id);
+    if (done.has(d.id)) { report.skipped.push([d.id, "already written by an earlier run"]); continue; }
     if (!p) { report.skipped.push([d.id, "no packet"]); continue; }
     const moves = (d.moves || []).filter((m) => m && m.to);
     for (const m of moves) if (m.action === "conflict-held") report.held.push([d.id, m.to, m.from, m.evidence || ""]);
@@ -136,7 +141,7 @@ for (const f of files) {
     if (!APPLY) { report.written.push([d.id, patch]); continue; }
     fs.writeFileSync(rbPath, JSON.stringify(rollback, null, 1));
     const after = await patchRow("routes", d.id, patch);
-    for (const k of Object.keys(patch)) if (JSON.stringify(after[k] ?? null) !== JSON.stringify(patch[k] ?? null)) throw new Error(`${d.id}.${k} did not land`);
+    for (const k of Object.keys(patch)) if (canon(after[k] ?? null) !== canon(patch[k] ?? null)) throw new Error(`${d.id}.${k} did not land`);
     report.written.push([d.id, patch]);
     await sleep(200);
   }
