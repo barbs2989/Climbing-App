@@ -7,12 +7,13 @@
 //   AppealsSection  — appeals against a contributing restriction or ban (decide_appeal)
 //   LocksSection    — the hand-set confidence levels, with Unlock (back to the computed level)
 //   WorklistSection — the data audits' findings (review_worklist, filled by scripts/review-worklist-load.mjs)
+//   BasePinsSection — base-of-the-climb check-in spots held because they are > 200 m from the route's Base pin (0547)
 //   WordDiff        — a word-level diff of the page's text against the climber's
 // Every write is an is_admin() / can_review() RPC in lib/db.js (0530). Nothing here writes a table directly.
 import { useMemo, useState } from "react";
 import {
   useModerationHistory, useFieldHistory, useDeskClimbers, useDeskClimber, setReviewer, withdrawApproval,
-  useContributingAppeals, decideAppeal, useFieldLocks, setRouteFieldConfidence, useReviewWorklist, resolveWorklistItem, useDeskHealth,
+  useContributingAppeals, decideAppeal, useFieldLocks, setRouteFieldConfidence, useReviewWorklist, resolveWorklistItem, useDeskHealth, useHeldBasePins, resolveBasePinHold, useRouteRowsByIds,
 } from "../lib/db";
 import { ContributorStandingQueue } from "../lib/RouteQualityQueues";
 import { C, DLOCALE } from "../ClimbMatchCore";
@@ -261,5 +262,39 @@ export function WorklistSection() {
             <div style={{ display: "flex", gap: 6 }}><button className="rd-btn rd-ok" disabled={!!busy} onClick={async () => { if (await act(r.id, () => resolveWorklistItem(r.id, "done", notes[r.id]), "Marked done.")) q.refetch(); }}>Done</button>
               <button className="rd-btn" disabled={!!busy} onClick={async () => { if (await act(r.id, () => resolveWorklistItem(r.id, "ignored", notes[r.id]), "Ignored; the loader will not reopen it.")) q.refetch(); }}>Ignore</button></div></div>
             : <button className="rd-btn" disabled={!!busy} onClick={async () => { if (await act(r.id, () => resolveWorklistItem(r.id, "open", null), "Reopened.")) q.refetch(); }}>Reopen</button>}</td></tr>)}</tbody></table>}
+  </div>;
+}
+
+// ── held base pins ─────────────────────────────────────────────────────────────────────────────────
+// 0363 moves a route's Base pin to the spot climbers CONFIRMED by checking in at the base (3+ climbers
+// within 25 m, a majority of the route's check-ins), unless that spot is more than 200 m from the pin on
+// file: then it is held here, because a different place is not a correction (Google Maps holds a pin
+// move of that size for a moderator too). The route page tells climbers "ClimbMatch checks it before the
+// Base pin moves"; until 0547 nothing read the hold. Move re-reads the consensus and refuses if it changed.
+const mapsAt = (lat, lng) => "https://www.google.com/maps/search/?api=1&query=" + (+lat).toFixed(6) + "," + (+lng).toFixed(6);
+const ll = (lat, lng) => (+lat).toFixed(5) + ", " + (+lng).toFixed(5);
+export function BasePinsSection({ notify }) {
+  const q = useHeldBasePins(true);
+  const rows = q.data || [];
+  const routesQ = useRouteRowsByIds([...new Set(rows.map((r) => r.route_id))]);
+  const byId = routesQ.data || {};
+  const { busy, msg, act } = useAct();
+  const decide = async (r, apply) => {
+    if (await act(r.id, () => resolveBasePinHold(r.id, apply), apply ? "Moved the Base pin to the spot climbers confirmed." : "Kept the Base pin on file.")) { q.refetch(); if (notify) notify(null); }
+  };
+  return <div style={{ maxWidth: 760 }}>
+    <p style={{ fontSize: 12.5, color: C.textMuted, lineHeight: 1.5, marginTop: 0 }}>Climbers checked in at the base of these climbs and agree on a spot (at least 3 of them, within 25 m, and most of everyone who checked in), but it is more than 200 m from the Base pin the route records, so the pin did not move on its own. Open both on a map. Move the pin when the climbers are right (a wrong pin, a different wall); keep it when the route is right (a popular belay ledge, another line’s start). Moving drops the pin’s stored height, which described the old spot; the change is logged with the pin as it was.</p>
+    <Msg m={msg} /><Err e={q.error} what="held base pins" />
+    {q.isLoading ? <p style={{ color: C.textMuted }}>Loading…</p> : !rows.length ? <p style={{ color: C.textMuted }}>No held base pins. Every confirmed check-in spot is within 200 m of its route’s Base pin, and has moved it.</p>
+      : <table className="rd-table"><thead><tr><th>HELD</th><th>CLIMB</th><th>CLIMBERS’ SPOT</th><th>PIN ON FILE</th><th></th></tr></thead><tbody>{rows.map((r) => {
+        const rt = byId[r.route_id], p = r.previous || {};
+        return <tr key={r.id}><td style={{ whiteSpace: "nowrap" }}>{day(r.created_at)}<div style={{ color: C.textMuted, fontSize: 11.5 }}>{ago(r.created_at)} ago</div></td>
+          <td><b>{rt ? rt.name : r.route_id}</b> {routeLink(r.route_id)}{rt && rt.location ? <div style={{ color: C.textSub, fontSize: 12 }}>{clip(rt.location, 200)}</div> : null}</td>
+          <td><a href={mapsAt(r.lat, r.lng)} target="_blank" rel="noopener noreferrer" style={{ color: C.blue }}>{ll(r.lat, r.lng)}</a><div style={{ color: C.textSub, fontSize: 12 }}>{r.climbers} of {r.total} climber{r.total === 1 ? "" : "s"} who checked in</div></td>
+          <td>{p.lat != null && p.lng != null ? <a href={mapsAt(p.lat, p.lng)} target="_blank" rel="noopener noreferrer" style={{ color: C.blue }}>{ll(p.lat, p.lng)}</a> : "none"}<div style={{ color: C.textSub, fontSize: 12 }}>{r.moved_m != null ? Math.round(r.moved_m) + " m away" : ""}{p.name ? " · " + clip(p.name, 60) : ""}</div></td>
+          <td style={{ minWidth: 170 }}><div style={{ display: "grid", gap: 4 }}>
+            <button className="rd-btn rd-ok" disabled={!!busy} onClick={() => decide(r, true)}>{busy === r.id ? "Working…" : "Move the pin here"}</button>
+            <button className="rd-btn" disabled={!!busy} onClick={() => decide(r, false)}>Keep the pin on file</button></div></td></tr>;
+      })}</tbody></table>}
   </div>;
 }

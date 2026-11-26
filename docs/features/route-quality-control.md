@@ -392,7 +392,7 @@ Deferred by the owner (2026-10-15): CAPTCHA on sign-up.
 | `scripts/review-queue-export.mjs`, `scripts/review-verdicts-write.mjs`, `.claude/workflows/review-flags-nightly.js` | The nightly AI checker: export → research + verify → write verdicts |
 | `supabase/migrations/0436_review_ai_verdicts.sql`, `scripts/oneoff/verify-0436-review-ai-verdicts-pglite.mjs` | The verdicts table (admin read, service-key write) and its RLS check |
 | `lib/RouteQualityQueues.jsx` | `ContributorStandingQueue` (rendered on the Review desk's Climbers section) |
-| `review/DeskSections.jsx` | `HealthStrip`, `HistorySection`, `FieldHistory`, `ClimbersSection`, `AppealsSection`, `LocksSection`, `WorklistSection`, `WordDiff` (2026-11-24) |
+| `review/DeskSections.jsx` | `HealthStrip`, `HistorySection`, `FieldHistory`, `ClimbersSection`, `AppealsSection`, `LocksSection`, `WorklistSection`, `WordDiff` (2026-11-24), `BasePinsSection` (0547: base-of-the-climb check-in spots held > 200 m from the route's Base pin, `review.html#basepins`, Move the pin here / Keep the pin on file via the resolve_base_pin_hold RPC) |
 | `supabase/migrations/0530_route_edits_private_checked_undoable.sql`, `scripts/oneoff/verify-0530-route-edits-pglite.mjs` | the read policy, `_field_value_problem`, `withdraw_approval`, `prior_value`, `can_review` / `set_reviewer`, `review_worklist`; and its offline proof |
 | `scripts/review-worklist-load.mjs` | fills `review_worklist` from the data audits |
 | `scripts/oneoff/probe-route-edit-gates.mjs` | every gate a climber meets, against the live database, with no admin needed |
