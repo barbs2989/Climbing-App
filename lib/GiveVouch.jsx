@@ -67,7 +67,7 @@ export default function GiveVouch({friend,onClose,onSave,suggest,initial,routeBy
          with them and climbs you logged alone, so a vouch could cite a climb they were not on. Your other climbs stay offered -- a partner is
          not always tagged in a log -- under a heading that says to pick one only if they were there. */
       var _tog=items.filter(function(it){return it.logged&&it.together;}),_rest=items.filter(function(it){return _tog.indexOf(it)<0;});
-      var _hd=function(t){return <div style={{fontSize:11.5,fontWeight:700,color:C.textMuted,letterSpacing:0.4,margin:"2px 0 5px"}}>{t}</div>;};
+      var _hd=function(t){return <div style={{fontSize:11.5,fontWeight:700,color:C.label,letterSpacing:0.4,margin:"2px 0 5px"}}>{t}</div>;};
       var _box=function(list,off){return <div style={{maxHeight:208,overflowY:"auto",overscrollBehavior:"contain",border:"1px solid "+C.border,borderRadius:10,marginBottom:10}}>{list.map(function(it,ix){return row(it.r,ix+off,it.tag);})}</div>;};
       if(items.length)return <>{_tog.length?<>{_hd(("Climbed with "+fn).toUpperCase())}{_box(_tog.slice(0,12),0)}</>:null}{_rest.length?<>{_hd(_tog.length?("YOUR OTHER CLIMBS — ONLY IF "+fn.toUpperCase()+" WAS THERE"):(_rest.every(function(it){return it.logged;})?("FROM YOUR LOGBOOK — ONLY IF "+fn.toUpperCase()+" WAS THERE"):_rest.some(function(it){return it.logged;})?"SUGGESTED":"SHARED OBJECTIVES"))}{_box(_rest.slice(0,12),_tog.length)}</>:null}</>;
     }

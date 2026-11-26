@@ -91,7 +91,7 @@ const avyRelevant=["ice","mixed","alpine","mountaineering","scrambling"].include
       return <div style={{background:C.card,borderRadius:12,padding:"12px 14px",marginBottom:12,border:`1px solid ${C.border}`}}>
         <div style={{display:"flex",justifyContent:"space-between",alignItems:"center",gap:8,marginBottom:8}}><CardHead>SEASONAL HAZARDS</CardHead>{onEdit?<AreaEditIconButton onClick={()=>onEdit("seasonalHazards")} title="Edit seasonal hazards" C={C}/>:null}</div>
         {rows.map(([label,text],i)=><div key={label} style={{marginTop:i?9:0}}>
-          <div style={{fontSize:11.5,fontWeight:700,color:C.textMuted,marginBottom:2}}>{label}</div>
+          <div style={{fontSize:11.5,fontWeight:700,color:C.label,marginBottom:2}}>{label}</div>
           <div style={{fontSize:12.5,color:C.textSub,lineHeight:1.5}}>{String(text)}</div>
         </div>)}
       </div>;})()}
