@@ -40792,3 +40792,67 @@ named peak, and summit-waypoint elevations were within a few feet of each route'
 
 4 confirmed errors fixed, 3 flagged for human review. Next batch continues id-ascending from
 `wa_lemah_mountain_east_route` (pass 9).
+
+## 2026-11-26 — Pass 9, Batch 589
+
+Checked 10 routes, continuing id-ascending from `wa_lemah_mountain_east_route`: Goatshead Spire
+(Lemah Two), Let it Burn (Colchuck Balanced Rock), East Face (Lexington Tower), and seven Liberty
+Bell lines (Liberty and Injustice for All, Beckey Route, Freedom or Death, Freedom Rider, The Girl
+Next Door, The Independence Route, Northwest Face). `wa_lichen_rock_*` and later ids were not
+reached this batch, so no sub-scope (crag-type) skips applied.
+
+2 confirmed errors fixed, both the same recurring gain_ft/loss_ft pattern (missing field, same
+trailhead both ways):
+- `wa_let_it_burn` (loss_ft NULL -> 4760) — true out-and-back from the Stuart Lake Trailhead;
+  descent_text returns to "the base of the climb" before reversing the same approach.
+- `wa_liberty_bell_girl_next_door` (loss_ft NULL -> 2520) — its own descent_text says it rejoins
+  the Beckey Route's descent back to the same Blue Lake Trailhead its approach starts from.
+
+Flagged for human review, not fixed:
+- `wa_liberty_bell_freedom_rider`'s `fa` names "Brian Burdo"; Mountain Project's current route
+  page spells it "Bryan Burdo," but a 1992 AAC note using "Brian" for what may be a different
+  Liberty Bell route (not clearly the same climb) muddies a clean correction, and no source
+  confirms the stored 1988 date either way. Also missing gain_ft/loss_ft despite a stored
+  high_point_ft=7720 — the route's own descent_text crosses from the East Face pond pullout
+  (approach) to the Blue Lake Trailhead on the opposite side of the mountain (descent), so the
+  usual "same trailhead both ways" fill does not apply and no confident number was computed.
+- `wa_liberty_bell_freedom_or_death` is missing high_point_ft/gain_ft/loss_ft, and its only
+  waypoint is the Liberty Bell summit — but this route can be rappelled from the top of pitch 3
+  without reaching the true summit, so there's no safe way to fill those fields without guessing
+  which exit a given ascent used.
+- `wa_lemah_two_goatshead_spire`'s `fa` ("Donald Goodman and John Mason, August 8, 1982") has no
+  corroborating or conflicting source found anywhere — consistent with it being an obscure,
+  effectively unrepeated tower. Also missing gain_ft/loss_ft with no itinerary or other stored
+  figure on the row to derive them from.
+- `wa_let_it_burn`'s FA date ("late August to early September") doesn't cleanly match Jens
+  Holsten's own blog post (climbed "September 22nd," year inferred ~2010 from the post's URL,
+  vs. our stored "reported in 2011") — close enough to be the same event reported a year later,
+  but not a clean enough match to correct confidently.
+
+Clean (checked against Mountain Project / OpenBeta / AAC / Mountaineers / guidebook-derived
+sources): `wa_liberty_bell_beckey_route`'s `fa` (Fred Beckey, Jerry O'Neil, Charles Welsh,
+September 27, 1946 — matches the 1948 AAC notice and Wikipedia exactly); its gain_ft/loss_ft
+(2520/2546, a ~1% difference on a true out-and-back, within the GPS-jitter tolerance
+`check:profile-gain` already allows, not corrected without a source to prefer one figure over the
+other); `wa_liberty_bell_nw_face`'s `fa`/FFA (Hans Kraus & John Rupley, 1956; Sandy Bill, Ron
+Burgner, Ian Martin & Frank Tarver, 1966 — matches OpenBeta and the Mountaineers' route page
+exactly, including pitch count and grade); `wa_liberty_bell_independence_route`'s `fa`/FFA (Alex
+Bertulis & Don McPherson, 1966; Steve Risse & Keith Hertel, 1991 — matches the 1992 AAJ report and
+Mountain Project exactly) and its gain_ft (2500) vs. loss_ft (2400) difference, which is not an
+error: its own descent_text funnels into the standard Liberty Bell descent that ends at the Blue
+Lake Trailhead (~5400 ft), the opposite side from the East Face pond pullout (~5160-5200 ft) this
+route approaches from, so a different up-elevation and down-elevation is expected and both figures
+check out against each endpoint; `wa_liberty_bell_girl_next_door`'s `fa` (Goldie & Butler, 2011),
+grade (5.9), pitch count (3) and length_m (152, i.e. 500 ft) — all four match Mountain Project and
+OpenBeta exactly; `wa_liberty_bell_freedom_or_death`'s `fa` (Eli Helmuth), grade (5.12a) and pitch
+count (4) — all match Mountain Project exactly; `wa_lexington_tower_east_face`'s `fa` (Steve Marts
+& Don McPherson, 1966) confirmed, and its pitch count (10) and grade (5.9+) match Mountain
+Project's route page exactly (an older SummitPost page instead gives 8 pitches with an A3 section —
+a real source conflict, but Mountain Project's agreement with our own stored figures was treated as
+the stronger match, not independently corrected); `wa_let_it_burn`'s `fa` names (Jens Holsten, Max
+Hasson) confirmed via Holsten's own blog, and its grade (5.12-) and pitch count (9) match a
+stephabegg.com trip report exactly; and `wa_liberty_and_injustice_for_all`'s gain_ft/loss_ft
+(2400/2400, consistent with its own out-and-back East Face approach/descent).
+
+2 confirmed errors fixed, 4 flagged for human review. Next batch continues id-ascending from
+`wa_liberty_bell_nw_face` (pass 9).
