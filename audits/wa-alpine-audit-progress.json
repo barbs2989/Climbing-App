@@ -2,10 +2,10 @@
   "scope_definition": "routes.discipline IN ('alpine','mountaineering') AND routes.id LIKE 'wa_%' AND routes.area_id IN (SELECT id FROM areas WHERE area_type = 'peak'), ordered by routes.id ASC",
   "scope_note": "area_type = 'peak' excludes crags/walls (e.g. The Dikes, Summertime Crag) that carry an alpine/mountaineering discipline tag but are actually short cragging routes, not mountaineering objectives \u2014 out of scope per audit instructions.",
   "pass": 9,
-  "last_processed_id": "wa_mount_adams_northwest_ridge",
+  "last_processed_id": "wa_mount_baker_coleman_deming",
   "total_in_scope_last_count": 751,
   "total_wa_alpine_or_mountaineering_tagged": 857,
-  "pass_note": "Checked 8 routes, continuing id-ascending from wa_middle_peak_north_face through wa_monte_cristo_peak_standard_route_variation_1. 1 confirmed error fixed: wa_monte_cristo_peak_standard_route_variation_1's fa had the first ascensionist's middle initial wrong ('James K. Keyes' vs the correct 'James M. Keyes', confirmed via Wikipedia/Beckey and matching this DB's own sibling route on the same peak). Verified clean: area-level elevation/coordinates for wa_middle_peak (matches ListsOfJohn's 'Gunsight Peak' entry for the same summit almost exactly), wa_mixup_peak (7440 ft matches Peakbagger/Wikipedia), wa_colchuck_balanced_rock (8240 ft and coordinates match Wikipedia/ListsOfJohn exactly), wa_monte_cristo_peak (7136 ft matches Wikipedia; FA on wa_monte_cristo_peak_scramble matches exactly), and wa_south_early_winters_spire (7807 ft and coordinates match Wikipedia/SummitPost closely); plus FA corroboration for wa_mojo_rising (2006 cascadeclimbers.com FA trip report, same three climbers and year) and wa_milk_n_honey (cascadeclimbers.com TR confirms date and 2 of 3 partners; third name uncontradicted but not independently confirmed). Checked but inconclusive (no source found either way, not flagged): wa_middle_peak_north_face FA (Klewin/McNerthney 1978), wa_mix_up_peak_east_face FA (Grande/Kendrick 1947), and wa_mixup_peak_pbs_late_night_special (too new/obscure -- a 2026 route with almost no other stored data). wa_middle_peak_traverse_route has no fa or route-level coordinate data to check. WebSearch only this run; WebFetch was not attempted.",
+  "pass_note": "Checked 8 routes, continuing id-ascending from wa_mount_adams_pinnacle_glacier_headwall through wa_mount_baker_coleman_deming. 0 confirmed errors fixed. Flagged for human review: wa_mount_baker_boulder_glacier (fa 'LaConnor Expedition, 1891' -- a first climb of the glacier on that date is documented but no source names this party), wa_mount_baker_cockscomb_ridge (fa date 1961 vs a SummitPost page's 1960 for the same climb), and an area-vs-route elevation mismatch on Mount Anderson (areas.elevation_ft 7323 vs routes.high_point_ft 7330 on wa_mount_anderson_eel_glacier, neither matching external sources cleanly). Verified clean: wa_mount_baker_coleman_deming fa (Coleman/Tennant/Stratton/Ogilvy, Aug 17 1868, confirmed via Wikipedia/HistoryLink/USGS CVO), wa_mount_adams_pinnacle_glacier_headwall fa (Faulkes/Lizee 1965, Mountain Project), wa_mount_anderson_eel_glacier fa (Fairman B. Lee + party of 13, 1920, Wikipedia + Mountaineers), and wa_mount_adams_south_climb's permit text/group cap (matches Recreation.gov's current Mt. Adams Climbing Pass listing) plus its gain/loss arithmetic. Checked but inconclusive (not flagged): wa_mount_baker_boulder_park_cleaver fa (Morovits party, 1894 -- single-source MP, his well-known ascent was a different solo 1892 climb) and wa_mount_adams_wilson_glacier_headwall's suspiciously-round identical gain_ft/loss_ft (6700/6700) for an asymmetric loop. WebSearch only this run; WebFetch was not attempted.",
   "batches": [
     {
       "batch_number": 1,
@@ -11881,6 +11881,26 @@
       "clean": 2,
       "sql_file": "audits/sql/2026-11-26-batch-596.sql",
       "note": "wa_monte_cristo_peak_standard_route_variation_2: same fa fix as variation_1 in batch 595 (James K. Keyes -> James M. Keyes). Flagged for human review: wa_mount_adams_lyman_glacier (fa Molenaar/Craig Sept 1948 -- same pair has a well-documented joint FA the same year on a different mountain, Mount Rainier's Nisqually Icefall, July 1948; suspicious but not contradicted) and wa_mount_adams_northwest_ridge (name/fa are verbatim-correct for Mountain Project's distinct 'North Ridge (West Face)' route, but the row's id implies a different, separate 'Northwest Ridge' route that Mount Adams also has -- a route-identity mismatch, not a fact error, left for human resolution via route-identity.md rather than SQL'd here). Clean: wa_mount_adams_adams_glacier (fa confirmed via Mountain Project + Beckey's own 1946 AAJ article + Wikipedia) and wa_mount_adams_north_ridge (fa names match the majority-sourced USGS/CVO account of Mount Adams' 1854 FA; one historical account disputes the third climber's identity but that's a genuine historical dispute, not a DB error). Inconclusive, not flagged: wa_mount_adams_lava_glacier_headwall, wa_mount_adams_avalanche_white_salmon_glaciers, wa_mount_adams_mazama_glacier_headwall (fa null). WebSearch only this run; WebFetch to usgs.gov/wikipedia.org/summitpost.org/americanalpineclub.org was blocked by this session's network allowlist."
+    },
+    {
+      "batch_number": 597,
+      "date": "2026-11-26",
+      "pass": 9,
+      "route_ids": [
+        "wa_mount_adams_pinnacle_glacier_headwall",
+        "wa_mount_adams_south_climb",
+        "wa_mount_adams_wilson_glacier_headwall",
+        "wa_mount_anderson_eel_glacier",
+        "wa_mount_baker_boulder_glacier",
+        "wa_mount_baker_boulder_park_cleaver",
+        "wa_mount_baker_cockscomb_ridge",
+        "wa_mount_baker_coleman_deming"
+      ],
+      "confirmed_errors_fixed": 0,
+      "flagged_for_human_review": 3,
+      "clean": 4,
+      "sql_file": null,
+      "note": "No confirmed errors with a sourced correct replacement this batch, so no SQL file. 3 flagged (Boulder Glacier fa party name unsupported; Cockscomb Ridge fa year has a one-source one-year conflict; Mount Anderson elevation disagrees between the areas row and the routes row and neither matches external consensus cleanly). 4 clean (Coleman-Deming fa, Pinnacle Glacier Headwall fa, Eel Glacier fa, South Climb permit text + gain/loss math). 2 inconclusive not flagged (Boulder-Park Cleaver fa single-source; Wilson Glacier Headwall gain/loss suspiciously round for an asymmetric loop)."
     }
   ],
   "outage_runs": [

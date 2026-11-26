@@ -41255,3 +41255,64 @@ WebSearch only this run (WebFetch to usgs.gov/wikipedia.org/summitpost.org/
 americanalpineclub.org was blocked by this session's network allowlist; relied on
 search-engine snippets of those pages). Next batch continues id-ascending from
 `wa_mount_adams_northwest_ridge` (pass 9).
+
+## 2026-11-26 — batch 597 (pass 9): Mount Adams Pinnacle Glacier Headwall through Mount Baker Coleman–Deming
+
+Checked: `wa_mount_adams_pinnacle_glacier_headwall`, `wa_mount_adams_south_climb`,
+`wa_mount_adams_wilson_glacier_headwall`, `wa_mount_anderson_eel_glacier`,
+`wa_mount_baker_boulder_glacier`, `wa_mount_baker_boulder_park_cleaver`,
+`wa_mount_baker_cockscomb_ridge`, `wa_mount_baker_coleman_deming`.
+
+Flagged for human review (not fixed — no source confirms a specific correct replacement,
+but each is worth a second look):
+- `wa_mount_baker_boulder_glacier` `fa` "LaConnor Expedition, 1891" — a first climb of the
+  Boulder Glacier on Aug 24, 1891 is independently documented, but no source anywhere names
+  a "LaConnor Expedition," and the only other 1891 Mount Baker ascent found in sources (the
+  mountain's second overall ascent, Valentine Lowe + 8 men via Glacier Creek) was a
+  different route. The party name looks fabricated or garbled from another record; left
+  unfixed since no source gives who the Boulder Glacier climbers actually were.
+- `wa_mount_baker_cockscomb_ridge` `fa` "Chuck Murley, John Musser, and Klindt Vielbig, July
+  4, 1961 (first complete ascent)" — an OpenBeta/climbing-database entry matches this
+  exactly, but a SummitPost page dates the ridge's first complete ascent to July 4, 1960
+  (same day/month, no names given, one year off). Could be the same climb misdated by one
+  source or a separate claim; not clean enough to pick a side.
+- Area-vs-route elevation mismatch: `areas` row `wa_mount_anderson` stores
+  `elevation_ft` 7323, while its own route `wa_mount_anderson_eel_glacier` stores
+  `high_point_ft` 7330 — the two DB rows disagree with each other, and neither value is the
+  clean consensus figure externally either (Wikipedia: 7330; ListsOfJohn: 7326 LiDAR / 7321
+  map; SummitPost/Mountaineers: 7321). Left for a human to pick and reconcile both rows
+  rather than guessed here.
+
+Clean / no action needed:
+- `wa_mount_baker_coleman_deming` `fa` "Edmund Coleman and party, August 17, 1868 (first
+  ascent of Mount Baker)" — confirmed by Wikipedia and HistoryLink (Coleman, John Tennant,
+  Thomas Stratton, David Ogilvy, summit 4pm Aug 17, 1868); USGS CVO agrees on date/roster
+  with minor spelling variants.
+- `wa_mount_adams_pinnacle_glacier_headwall` `fa` "Gary Faulkes, Phil Lizee, 1965" —
+  matches Mountain Project (June 1965), uncontradicted elsewhere.
+- `wa_mount_anderson_eel_glacier` `fa` "1920 by Fairman B. Lee and party of 13" — confirmed
+  by Wikipedia and Mountaineers materials (Aug 5, 1920, Fairman B. Lee, party of 13; "Eel"
+  is "Lee" spelled backward). One SummitPost comment's "party of 20" looks like a minority
+  outlier against two independent confirming sources.
+- `wa_mount_adams_south_climb` stored permit text ($20/person 16+, required above 7,000 ft
+  May 1–Sep 30, group cap 12) matches Recreation.gov's current Mt. Adams Climbing Pass
+  listing and the standard Forest Service wilderness group-size rule exactly. gain_ft
+  6600 / loss_ft 6700 against high_point 12276 and the 5,600 ft trailhead check out
+  arithmetically (the ~100 ft gain/loss spread is explained by the route's own stated
+  up-and-over of Piker's Peak on both legs).
+
+Checked but inconclusive (not flagged — no source contradicts the stored data):
+- `wa_mount_baker_boulder_park_cleaver` `fa` "Joe Morovits and party, July 2, 1894" —
+  Mountain Project is the only source for this exact date/attribution. Morovits's famous,
+  well-documented ascent of Mount Baker was a *solo* 1892 trip (usually tied to Park
+  Glacier), so a separate 1894 ascent "with a party" on this line is plausible as a distinct,
+  lesser-known trip but not independently corroborated.
+- `wa_mount_adams_wilson_glacier_headwall` gain_ft/loss_ft both stored as exactly 6700/6700
+  for a loop that climbs one side of the mountain and descends a different, easier line —
+  directionally plausible (same start/end elevation) but identical-to-the-foot figures for
+  an asymmetric route read more like a placeholder than two independently measured numbers.
+  Not contradicted by anything concrete, so left as a soft note rather than flagged.
+
+0 confirmed errors fixed, 3 flagged for human review, 4 clean, 2 inconclusive (not
+flagged). WebSearch only this run; WebFetch was not attempted. Next batch continues
+id-ascending from `wa_mount_baker_coleman_deming` (pass 9).
