@@ -67,7 +67,7 @@ const LOGO = (size) => <svg width={size} height={size} viewBox="0 0 24 24" aria-
 
 export default function Onboarding({onFinish,onSkip,onSignOut,onUsernameSaved,onDone,initial,onHelp,uid,googlePhoto,avatarNow,onAvatarChange,notifPrefs,onNotifChange}){
   const wide=useWideScreen();
-  const [home,setHome]=useState(initial&&initial.homeArea||"");const [disc,setDisc]=useState(initial&&initial.disciplines||[]);
+  const [home,setHome]=useState(initial&&(initial.homeArea||initial.location)||"");const [disc,setDisc]=useState(initial&&initial.disciplines||[]);
   const [sg,setSg]=useState(initial&&initial.sportGrade||"N/A");const [tg,setTg]=useState(initial&&initial.tradGrade||"N/A");const [bg,setBg]=useState(initial&&initial.boulderGrade||"N/A");
   /* Ice, mixed and aid have no grade column: their grade lives in `climb_grades` (0237), as the profile
      editor writes it. An emptied grade is DELETED from the map, keeping any lead/follow role. */
@@ -161,7 +161,7 @@ export default function Onboarding({onFinish,onSkip,onSignOut,onUsernameSaved,on
     body=<div style={{textAlign:wide?"left":"center"}}>
       <div aria-hidden="true" style={{width:wide?52:64,height:wide?52:64,borderRadius:32,background:C.greenBg,border:"1px solid "+C.green,display:"flex",alignItems:"center",justifyContent:"center",margin:wide?"0 0 12px":"8px auto 16px"}}><ActionIcon name="check" size={wide?26:30} color={C.green}/></div>
       <div role="heading" aria-level={2} style={{fontSize:wide?28:26,fontWeight:800,letterSpacing:-0.4,color:C.text}}>You’re all set</div>
-      <div style={{fontSize:14,color:C.textSub,lineHeight:1.55,marginTop:7}}>{required?"This is how other climbers will see you.":"Your setup is saved on this device."}</div>
+      <div style={{fontSize:14,color:C.textSub,lineHeight:1.55,marginTop:7}}>{required?"This is how other climbers will see you.":(uid?"Your setup is saved.":"Your setup is saved on this device — sign in to keep it.")}</div>
       <div style={{display:"flex",alignItems:"center",gap:14,textAlign:"left",background:C.card,border:"1px solid "+C.border,borderRadius:16,padding:"14px 16px",margin:wide?"14px 0 16px":"18px 0 22px"}}>
         <Av src={ava||""} size={56}/>
         <div style={{minWidth:0,flex:1}}>
@@ -225,7 +225,7 @@ export default function Onboarding({onFinish,onSkip,onSignOut,onUsernameSaved,on
       <div style={{display:"flex",alignItems:"center",gap:10,margin:"0 0 12px",color:C.textMuted,fontSize:12,fontWeight:700}}><span style={{flex:1,height:1,background:C.border}}/>or type it<span style={{flex:1,height:1,background:C.border}}/></div>
       <div style={{position:"relative",marginBottom:10}}>
         <div style={{display:"flex",gap:8}}>
-          <input aria-label="Search a range, canyon, or peak" value={homeQ} onChange={e=>{setHomeQ(e.target.value);setHome("");setZip("");setHomeOkd(false);setHomePlaceId(null);setHomeTyped(true);setTownErr("");}} onKeyDown={e=>{if(e.key==="Enter")lookUp();}} placeholder={USE_DB?"Town or city — e.g. Leavenworth":"Search a range, canyon, or peak..."} style={{...field,flex:1,minWidth:0,border:"1.5px solid "+(homeOkd||home?C.green:homeQ?C.blue:C.field)}}/>
+          <input aria-label={USE_DB?"Your home town or city":"Search a range, canyon, or peak"} value={homeQ} onChange={e=>{setHomeQ(e.target.value);setHome("");setZip("");setHomeOkd(false);setHomePlaceId(null);setHomeTyped(true);setTownErr("");}} onKeyDown={e=>{if(e.key==="Enter")lookUp();}} placeholder={USE_DB?"Town or city — e.g. Leavenworth":"Search a range, canyon, or peak..."} style={{...field,flex:1,minWidth:0,border:"1.5px solid "+(homeOkd||home?C.green:homeQ?C.blue:C.field)}}/>
           {USE_DB?<button onClick={lookUp} disabled={townBusy||(homeQ||"").trim().length<2} aria-label="Look up this town" style={{flexShrink:0,width:48,minHeight:48,borderRadius:12,border:"1px solid "+C.border,background:C.surface,display:"flex",alignItems:"center",justifyContent:"center",cursor:townBusy?"default":"pointer"}}><ActionIcon name="search" size={18} color={(homeQ||"").trim().length<2?C.textMuted:C.blue}/></button>:null}
         </div>
         {!USE_DB&&homeQ&&!home?(()=>{const ms=areas.filter(a=>fuzzyMatch(homeQ,a.name)).slice(0,7);return <div style={{position:"absolute",top:"100%",left:0,right:0,background:C.card,border:"1px solid "+C.border,borderRadius:10,marginTop:4,maxHeight:210,overflowY:"auto",overscrollBehavior:"contain",zIndex:5,boxShadow:"0 12px 30px rgba(0,0,0,0.5)"}}>{ms.length?ms.map(a=><div key={a.id} {...clickable(()=>{setHome(a.id);setHomeQ(a.name);})} style={{padding:"9px 11px",fontSize:13.5,fontWeight:700,cursor:"pointer",borderBottom:"1px solid "+C.borderLight,color:C.text}}>{a.name}</div>):<div style={{padding:"9px 11px",fontSize:12.5,color:C.textMuted}}>No match — keep typing</div>}</div>;})():null}
