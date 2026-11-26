@@ -24,13 +24,18 @@ import { fileURLToPath } from "node:url";
 //   node scripts/oneoff/fix-rack-non-rack-items.mjs            # dry: prints every planned change
 //   node scripts/oneoff/fix-rack-non-rack-items.mjs --apply    # writes, then re-reads and reconciles
 import fs from "node:fs";
+import os from "node:os";
+import { spawnSync } from "node:child_process";
 import path from "node:path";
 import { SUPABASE_URL, headers, requireServiceKey, patchRow } from "../lib/supabase-env.mjs";
 import { rackFromText, isRackEntry, isNonRackGear } from "../../lib/rack.js";
 
 const APPLY = process.argv.includes("--apply");
 const here = path.dirname(fileURLToPath(new URL(import.meta.url)));
-const REWRITES = JSON.parse(fs.readFileSync(path.join(here, "rack-rewrites.json"), "utf8"));
+/* rack-rewrites.json: non-rack GEAR filed as rack (2026-10-15 onward). rack-rewrites-neither.json: the
+   2026-11-26 pass over sentences that are neither rack nor gear (rock quality, the descent, the landing),
+   each read and sent to `beta` (toBeta), the DESCENT section (toDescent) or dropped (an empty fragment). */
+const REWRITES = ["rack-rewrites.json", "rack-rewrites-neither.json"].flatMap(f => fs.existsSync(path.join(here, f)) ? JSON.parse(fs.readFileSync(path.join(here, f), "utf8")) : []);
 
 /* pro_needs is a protection STATEMENT; the clause advising non-rack kit moves out of it. */
 const PRO_NEEDS = {
@@ -104,7 +109,7 @@ const ids = new Set([...byId.keys(), ...Object.keys(PRO_NEEDS)]);
 async function fetchRows(filter) {
   const out = []; let last = "";
   for (;;) {
-    const res = await fetch(`${SUPABASE_URL}/rest/v1/routes?select=id,name,detailed_rack,pro_needs,rack,what_to_bring,beta,overview,approach&${filter}${last ? `&id=gt.${encodeURIComponent(last)}` : ""}&order=id.asc&limit=1000`, { headers: headers(key) });
+    const res = await fetch(`${SUPABASE_URL}/rest/v1/routes?select=id,name,detailed_rack,pro_needs,rack,what_to_bring,beta,overview,approach,descent_text&${filter}${last ? `&id=gt.${encodeURIComponent(last)}` : ""}&order=id.asc&limit=1000`, { headers: headers(key) });
     const t = await res.text(); if (!res.ok) throw new Error(`GET -> ${res.status} ${t.slice(0, 200)}`);
     const rows = JSON.parse(t); if (!rows.length) break; out.push(...rows); last = rows[rows.length - 1].id; if (rows.length < 1000) break;
   }
@@ -125,7 +130,7 @@ if (gone.length) console.log(`${gone.length} rewrite id(s) no longer in routes (
 
 const plans = []; let skipped = 0;
 for (const id of idList) {
-  const r = rows.get(id); if (!r) continue; const patch = {}; const why = []; let adds = []; const betaAdds = [];
+  const r = rows.get(id); if (!r) continue; const patch = {}; const why = []; let adds = []; const betaAdds = []; const descentAdds = [];
   // detailed_rack: replace each flagged sentence by its rewrite, in place.
   if (byId.has(id)) {
     /* rackFromText appends a period to a sentence that lacks one; the rewrites were keyed on
@@ -136,7 +141,7 @@ for (const id of idList) {
        whose sentence is no longer stored is DONE (an earlier --apply pass), not an error. */
     const sentences = rackFromText(r.detailed_rack); const same = (a, x) => a === x.s || a === x.s + "." || (x.prefix && a.startsWith(x.s));
     const rw = byId.get(id).filter(x => sentences.some(s => same(s, x)));
-    const kept = sentences.map(s => { const x = rw.find(y => same(s, y)); if (!x) return s; adds = adds.concat(x.add); if (x.toBeta) { const said = [r.overview, r.approach, r.beta].filter(Boolean).join(" ").toLowerCase(); if (!said.includes(String(s).replace(/\.$/, "").slice(0, 40).toLowerCase())) betaAdds.push(x.beta || s); } return x.keep; }).filter(Boolean);
+    const kept = sentences.map(s => { const x = rw.find(y => same(s, y)); if (!x) return s; adds = adds.concat(x.add); if (x.toDescent) { const said = String(r.descent_text || "").toLowerCase(); if (!said.includes(String(x.descent || s).replace(/\.$/, "").slice(0, 40).toLowerCase())) descentAdds.push(x.descent || s); } else if (x.toBeta) { const said = [r.overview, r.approach, r.beta].filter(Boolean).join(" ").toLowerCase(); if (!said.includes(String(s).replace(/\.$/, "").slice(0, 40).toLowerCase())) betaAdds.push(x.beta || s); } return x.keep; }).filter(Boolean);
     const next = (DETAILED_RACK_OVERRIDE[id] && !kept.length) ? DETAILED_RACK_OVERRIDE[id] : kept.join(" ").trim();
     if (next !== String(r.detailed_rack || "").trim()) { patch.detailed_rack = next || null; why.push(`detailed_rack ${sentences.length}->${kept.length} sentences`); }
   }
@@ -150,6 +155,7 @@ for (const id of idList) {
     if (moved.length) { patch.rack = rack.filter(e => !moved.includes(e)); if (!patch.rack.length) patch.rack = null; adds = adds.concat(moved); why.push(`rack -${moved.length}`); }
   }
   if (betaAdds.length) { const b = r.beta == null ? "" : (Array.isArray(r.beta) ? r.beta.join(" ") : String(r.beta)); patch.beta = (b ? b.replace(/\s+$/, "") + " " : "") + betaAdds.join(" "); why.push(`beta +${betaAdds.length} sentence(s)`); }
+  if (descentAdds.length) { const d = String(r.descent_text || "").replace(/\s+$/, ""); patch.descent_text = (d ? d + " " : "") + descentAdds.join(" "); why.push(`descent_text +${descentAdds.length} sentence(s)`); }
   const wtb = toArr(r.what_to_bring); const nextWtb = addEntries(wtb, adds);
   if (nextWtb.length !== wtb.length) { patch.what_to_bring = nextWtb; why.push(`what_to_bring +${nextWtb.length - wtb.length}`); }
   if (Object.keys(patch).length) plans.push({ id, name: r.name, patch, why, before: r });
@@ -161,17 +167,24 @@ for (const p of plans) {
   if ("pro_needs" in p.patch) console.log(`  pro_needs: ${p.patch.pro_needs}`);
   if ("rack" in p.patch) console.log(`  rack: ${JSON.stringify(p.patch.rack)}`);
   if ("beta" in p.patch) console.log(`  beta +: ${p.patch.beta.slice(p.before.beta ? String(p.before.beta).length : 0)}`);
+  if ("descent_text" in p.patch) console.log(`  descent_text +: ${p.patch.descent_text.slice(p.before.descent_text ? String(p.before.descent_text).length : 0)}`);
   if ("what_to_bring" in p.patch) console.log(`  what_to_bring +: ${JSON.stringify(p.patch.what_to_bring.slice(toArr(p.before.what_to_bring).length))}`);
 }
 if (!APPLY) { console.log("\nDry run. Re-run with --apply to write."); process.exit(0); }
 
-const rollback = plans.map(p => ({ id: p.id, detailed_rack: p.before.detailed_rack, pro_needs: p.before.pro_needs, rack: p.before.rack, what_to_bring: p.before.what_to_bring, beta: p.before.beta }));
+const rollback = plans.map(p => ({ id: p.id, detailed_rack: p.before.detailed_rack, pro_needs: p.before.pro_needs, rack: p.before.rack, what_to_bring: p.before.what_to_bring, beta: p.before.beta, descent_text: p.before.descent_text }));
 const rbPath = path.join(here, "..", `rollback-rack-non-rack-${Date.now()}.json`);
 fs.writeFileSync(rbPath, JSON.stringify(rollback, null, 1));
 console.log(`\nrollback written: ${rbPath}`);
 let ok = 0, bad = 0;
-for (const p of plans) {
-  try { await patchRow("routes", p.id, p.patch); ok++; } catch (e) { bad++; console.error(`FAILED ${p.id}: ${e.message}`); }
+/* Bulk writes to production are throttled (owner's rule): one write a second past 50 rows, and every
+   100 writes the DB gate's health probe must pass or the run stops (re-run it: a done rewrite is skipped). */
+const PACE = plans.length > 50 ? 1000 : 0;
+for (let i = 0; i < plans.length; i++) {
+  const p = plans[i];
+  try { await patchRow("routes", p.id, p.patch); ok++; } catch (e) { bad++; console.error(`FAILED ${p.id}: ${e.message}`); if (/57014|50[0234]|timeout/i.test(e.message)) { console.error("database struggling — backing off 90 s"); await new Promise(r => setTimeout(r, 90000)); } }
+  if (PACE) await new Promise(r => setTimeout(r, PACE));
+  if (PACE && (i + 1) % 100 === 0) { const h = spawnSync(process.execPath, [path.join(os.homedir(), "dev/db-throttle/dbslot.mjs"), "check"], { encoding: "utf8" }); console.log(`  ${i + 1}/${plans.length} written; ${String(h.stdout).trim()}`); if (h.status === 1) { console.error("DB health check failed — stopping; re-run later to finish"); plans.length = i + 1; break; } }
 }
 console.log(`wrote ${ok}, failed ${bad}`);
 // Reconcile: a 200 is not evidence the data changed.
