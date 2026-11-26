@@ -81,7 +81,7 @@ export default function Inbox({restrictedIds,dmUnavailable,crewUnavailable,dmLoa
   const _archN=(itab==="crews"?crewArch:dmArch).length;useEffect(function(){if(!_archN)setArchOpen(false);},[_archN,itab]);
 
   const friendsNoDM=(connections||[]).filter(f=>dmIds.indexOf(String(f.id))<0);
-  const lastTxt=m=>m?((m.from==="me"?"You: ":"")+(m.image?"Photo":m.text)):null;
+  const lastTxt=m=>m?((m.from==="me"?"You: ":"")+(m.image?"Photo":(m.video||m.videoPath)?"Video":m.text)):null;
   const row={padding:"11px 4px 11px 12px",marginBottom:0,background:C.card,border:"1px solid "+C.border,borderRadius:12};
   const rowTop={display:"flex",alignItems:"center",gap:10};
   const lbl={fontSize:12,color:C.label,textTransform:"uppercase",letterSpacing:0.4,marginBottom:7,fontWeight:700};
