@@ -198,6 +198,14 @@ Part of the guard notes — see [README.md](README.md) for the full index.
   `boulder` only, so `crux` is demanded of every non-boulder type. Measured when written: every one
   of the ten types had gaps, 3–17 keys each; also found the gear steppers wrote only `routes.gear`,
   an object `gearArr()` reads as empty — no guard asked whether that column reaches a screen.
+- **`check:edit-removes`** (static, no DB; in build) runs `lib/editRemoves.js` — the JS copy of the
+  database's `_edit_removes` (0351) — over ten cases, including the STALE one (a 3-waypoint edit sent onto a
+  page of 2, judged after the page grew to 4: a removal), and asserts the wiring: the Review desk's
+  `removes:` and the autopilot export's `removes_something:` both re-ask it against the page NOW, `decide()`
+  hands every removal to the owner, and the latest migration defining `guard_contribution_status` still
+  calls `_edit_removes` (0553's refusal of a removal approved by a reviewer or the review bot). It cannot
+  see whether the JS and SQL copies drift apart beyond those cases, nor whether the live function matches
+  the migration (`check:function-drift` asks that).
 - **`check:consensus-clustering`** asserts that three climbers who agree can actually be **counted**
   as agreeing. **Since 2026-10-15 (0307–0309, the owner's route quality control) the merge no
   longer applies a value on agreement**: every field edit is held `pending` until the owner

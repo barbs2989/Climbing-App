@@ -277,6 +277,7 @@ npm run check:route-tags # real list prose still reaches a list key, and each ke
 npm run check:list-summit-audit # a peak list ticks only from a route that reaches the SUMMIT; every list peak was audited (in build)
 npm run check:contrib-shapes # what the contribute form SUBMITS is the shape its readers READ (in build)
 npm run check:consensus-clustering # three climbers who agree must be COUNTED as agreeing (in build)
+npm run check:edit-removes # an edit that takes something OFF the page (waypoints, pins, rows, a field) is re-checked at APPROVAL against the page now; only the owner approves one (in build)
 npm run check:add-route-fields # add-a-climb asks what the discipline needs, and nothing unstorable (in build)
 npm run check:edit-scope # the route EDIT SHEET offers, per discipline, only fields that discipline's page draws — one rule, lib/fieldScope.js (in build)
 npm run check:route-prose-format # a route field the edit sheet FORMATS (description, approach, descent, location) is READ as formatting: RichEditor in, renderProse out (in build)
