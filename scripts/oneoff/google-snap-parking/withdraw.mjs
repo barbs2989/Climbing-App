@@ -8,6 +8,9 @@ import { patchRow, SUPABASE_URL, requireServiceKey, headers } from '../../lib/su
 const [REC, CUR] = process.argv.slice(2); const dry = process.argv.includes('--dry');
 const rec = JSON.parse(fs.readFileSync(REC)); const cur = new Set(JSON.parse(fs.readFileSync(CUR)).map((d) => d.id));
 const gone = rec.filter((d) => !cur.has(d.id));
+// A withdrawal is rare (a second opinion reversing a pin). More than 10% of the record at once means the decision list
+// is wrong, not the pins: refuse.
+if (gone.length > Math.max(20, rec.length * 0.1)) { console.error('REFUSED: ' + gone.length + ' of ' + rec.length + ' would be withdrawn — the decision list is incomplete'); process.exit(2); }
 console.log('record', rec.length, 'withdrawn by a second opinion', gone.length, gone.map((d) => d.id).slice(0, 20));
 if (dry || !gone.length) process.exit(0);
 const key = requireServiceKey();

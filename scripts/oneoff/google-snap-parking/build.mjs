@@ -85,6 +85,10 @@ const queued = new Set(); for (const f of fs.readdirSync(W + '/batches')) for (c
 const fresh = out.filter((g) => !judged.has(g.gid) && !queued.has(g.gid));
 let bn = fs.readdirSync(W + '/batches').length;
 const strip = (g) => ({ ...g, areas: g.areas.map(({ lat, lng, ...r }) => r), road_point: { ...g.road_point, lat: undefined, lng: undefined }, cands: g.cands.map(({ _lat, _lng, _osm, ...r }) => r) });
-const B = 50; for (let i = 0; i < fresh.length; i += B) fs.writeFileSync(W + '/batches/b' + String(bn++).padStart(4, '0') + '.json', JSON.stringify(fresh.slice(i, i + B).map(strip), null, 1));
+// Compact layout (valid JSON): one line per group's header, per candidate and per text item — about half the tokens
+// of the pretty-printed file a judge used to read.
+const compact = (gs) => '[\n' + gs.map((g) => { const { cands, text, ...h } = g;
+  return JSON.stringify(h).slice(0, -1) + ',\n"cands":[\n' + cands.map((c) => JSON.stringify(Object.fromEntries(Object.entries(c).filter(([, v]) => v != null)))).join(',\n') + '],\n"text":[\n' + text.map((t) => JSON.stringify(t)).join(',\n') + ']}'; }).join(',\n') + '\n]\n';
+const B = 50; for (let i = 0; i < fresh.length; i += B) fs.writeFileSync(W + '/batches/b' + String(bn++).padStart(4, '0') + '.json', compact(fresh.slice(i, i + B).map(strip)));
 const st = {}; for (const l of ledger) st[l.status] = (st[l.status] || 0) + 1;
 console.log({ groups: out.length, areasInGroups: out.reduce((n, g) => n + g.areas.length, 0), withLotAtRoad: out.filter((g) => g.lots_at_road_point).length, withText: out.filter((g) => g.text.length).length, ledger: st, newGroups: fresh.length, batches: bn });
