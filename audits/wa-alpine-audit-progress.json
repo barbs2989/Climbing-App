@@ -2,10 +2,10 @@
  "scope_definition": "routes.discipline IN ('alpine','mountaineering') AND routes.id LIKE 'wa_%' AND routes.area_id IN (SELECT id FROM areas WHERE area_type = 'peak'), ordered by routes.id ASC",
  "scope_note": "area_type = 'peak' excludes crags/walls (e.g. The Dikes, Summertime Crag) that carry an alpine/mountaineering discipline tag but are actually short cragging routes, not mountaineering objectives — out of scope per audit instructions.",
  "pass": 9,
- "last_processed_id": "wa_magic_mountain_northeast_couloir",
+ "last_processed_id": "wa_mesahchie_peak_west_ridge",
  "total_in_scope_last_count": 751,
  "total_wa_alpine_or_mountaineering_tagged": 857,
- "pass_note": "Checked 8 routes, continuing id-ascending from wa_luna_glacier through wa_magic_mountain_northeast_couloir. 2 confirmed errors fixed (wa_lundin_peak_south_face_left and wa_lundin_peak_west_ridge hazards text corrected 1980 -> 1982 to match the one documented AAJ accident report for Lundin Peak -- no 1980 Lundin fatality found in repeated searches). 2 flagged for human review: wa_lundin_peak_northwest_face and wa_lundin_peak_southeast_ridge (both unenriched stubs, nothing to audit). wa_lundin_peak_south_face_left also carries an unresolved FA question (stored as Mike Preiss & Don Preiss, 2004; the closest external match is an uncertain \"m.preiss/d.preiss ?\" credit on a 2001-dated variation) noted but not changed, since neither year/attribution could be confirmed against the other. WebFetch was unavailable this run (DNS blocked for every secondary-source domain tried, same as 2026-11-26 batch 591/592); relied on WebSearch snippets only.",
+ "pass_note": "Checked 8 routes, continuing id-ascending from wa_magic_mountain_south_ridge through wa_mesahchie_peak_west_ridge. No confirmed errors. Verified clean: wa_magic_mountain_south_ridge and wa_magic_mountain_west_ridge (7,610 ft summit matches Wikipedia/SummitPost; 1938 FA party -- Bressler, Clough, Cox, Myers -- on the first Ptarmigan Traverse corroborates), wa_main_peak_tepeh_towers (no authoritative elevation found for the towers themselves beyond what's already flagged in data_quality; nothing else contradicted), wa_martin_peak_west_ridge (8,509 ft and the unusual 1936 solo FA by Ida Zacher Darr both confirmed via Wikipedia/ListsOfJohn; summit coordinate 48.2416775/-120.8159911 matches Wikipedia's 48.241679N/120.815844W almost exactly; the stored FSR 8301/Lucerne closure note was cross-checked against Holden Village's own Dec 2025 release and is accurate and current), wa_marvin_s_ear (AAJ's own Zentler trip report confirms the Sept 16, 2017 FA date/party, resolving the AAJ-vs-OpenBeta year conflict in the stored data's favor), wa_mcmillan_spire_west_southwest_ridge (8,004/8,000 ft summit and Terror Basin approach corroborate), and wa_mesahchie_peak_west_ridge (8,795 ft and summit coordinate 48.57845/-120.88044 match ListsOfJohn/mountain-forecast's 48.58N/120.88W exactly). Flagged for human review: wa_mcmillan_spire_west_west_ridge -- the stored FA 'Fred Beckey and Helmy Beckey, August 29, 1940' has an unverifiable exact date and a disputed party: Wikipedia and Peakbagger credit only Fred Beckey, while one trip-report source (Eric's Base Camp) names both brothers; no source confirms the August 29 date. Not changed since neither version could be confirmed against an authoritative source (Beckey's own guidebook or AAJ were not reachable this run). WebFetch was unavailable this run (DNS blocked for secondary-source domains, same as recent batches); relied on WebSearch snippets only.",
  "batches": [
   {
    "batch_number": 1,
@@ -11821,6 +11821,26 @@
    "clean": 4,
    "sql_file": "audits/sql/2026-11-26-batch-593.sql",
    "note": "Fixed wa_lundin_peak_south_face_left and wa_lundin_peak_west_ridge hazards (1980 -> 1982 for the documented fatal-fall year; the one AAJ accident report titled \"Fall on Rock, Climbing Unroped, Washington, Lundin Peak\" dates the Agris Moruss fatality to May 9, 1982, and no 1980 Lundin Peak fatality turned up). Verified clean: wa_luna_glacier (Phantom Peak FA/elevation corroborate -- 8016ft agrees with ListsOfJohn/TopoZone 8015-8023ft LiDAR figures; Access Creek approach matches independent trip reports), wa_lundin_peak_east_ridge (elevation + approach mileage check out), wa_magic_mountain_north_face and wa_magic_mountain_northeast_couloir (elevation 7610ft, Yawning Glacier 6200-6800ft span, Magic-Pelton col ~6480ft, and the Northeast Couloir/Banana Couloir ~2000ft length all corroborate external sources). Flagged wa_lundin_peak_northwest_face and wa_lundin_peak_southeast_ridge as unenriched stubs with nothing to audit. WebFetch was unavailable this run (DNS blocked for every secondary-source domain); relied on WebSearch snippets only."
+  },
+  {
+   "batch_number": 594,
+   "date": "2026-11-26",
+   "pass": 9,
+   "route_ids": [
+    "wa_magic_mountain_south_ridge",
+    "wa_magic_mountain_west_ridge",
+    "wa_main_peak_tepeh_towers",
+    "wa_martin_peak_west_ridge",
+    "wa_marvin_s_ear",
+    "wa_mcmillan_spire_west_southwest_ridge",
+    "wa_mcmillan_spire_west_west_ridge",
+    "wa_mesahchie_peak_west_ridge"
+   ],
+   "confirmed_errors_fixed": 0,
+   "flagged_for_human_review": 1,
+   "clean": 7,
+   "sql_file": null,
+   "note": "Checked 8 routes, continuing id-ascending from wa_magic_mountain_south_ridge through wa_mesahchie_peak_west_ridge. No confirmed errors. Verified clean: wa_magic_mountain_south_ridge and wa_magic_mountain_west_ridge (7,610 ft summit matches Wikipedia/SummitPost; 1938 FA party -- Bressler, Clough, Cox, Myers -- on the first Ptarmigan Traverse corroborates), wa_main_peak_tepeh_towers (no authoritative elevation found for the towers themselves beyond what's already flagged in data_quality; nothing else contradicted), wa_martin_peak_west_ridge (8,509 ft and the unusual 1936 solo FA by Ida Zacher Darr both confirmed via Wikipedia/ListsOfJohn; summit coordinate 48.2416775/-120.8159911 matches Wikipedia's 48.241679N/120.815844W almost exactly; the stored FSR 8301/Lucerne closure note was cross-checked against Holden Village's own Dec 2025 release and is accurate and current), wa_marvin_s_ear (AAJ's own Zentler trip report confirms the Sept 16, 2017 FA date/party, resolving the AAJ-vs-OpenBeta year conflict in the stored data's favor), wa_mcmillan_spire_west_southwest_ridge (8,004/8,000 ft summit and Terror Basin approach corroborate), and wa_mesahchie_peak_west_ridge (8,795 ft and summit coordinate 48.57845/-120.88044 match ListsOfJohn/mountain-forecast's 48.58N/120.88W exactly). Flagged for human review: wa_mcmillan_spire_west_west_ridge -- the stored FA 'Fred Beckey and Helmy Beckey, August 29, 1940' has an unverifiable exact date and a disputed party: Wikipedia and Peakbagger credit only Fred Beckey, while one trip-report source (Eric's Base Camp) names both brothers; no source confirms the August 29 date. Not changed since neither version could be confirmed against an authoritative source (Beckey's own guidebook or AAJ were not reachable this run). WebFetch was unavailable this run (DNS blocked for secondary-source domains, same as recent batches); relied on WebSearch snippets only."
   }
  ],
  "outage_runs": [

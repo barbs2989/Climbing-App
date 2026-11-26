@@ -41108,3 +41108,38 @@ Clean / no action needed:
 
 2 confirmed errors fixed, 2 flagged for human review. Next batch continues id-ascending from
 `wa_magic_mountain_northeast_couloir` (pass 9).
+
+## Batch 594 (2026-11-26, pass 9)
+
+Checked `wa_magic_mountain_south_ridge` through `wa_mesahchie_peak_west_ridge` (8 routes).
+No confirmed errors — nothing wrong found this run.
+
+Clean / no action needed:
+- `wa_magic_mountain_south_ridge` / `wa_magic_mountain_west_ridge` — `high_point_ft` 7610 matches
+  Wikipedia/SummitPost; the 1938 FA party (Bressler, Clough, Cox, Myers, on the first Ptarmigan
+  Traverse) is independently corroborated.
+- `wa_main_peak_tepeh_towers` — no authoritative elevation exists for the towers themselves
+  (already flagged in the route's own `data_quality`); nothing else contradicted by sources.
+- `wa_martin_peak_west_ridge` — `high_point_ft` 8509 and the unusual 1936 solo FA by Ida Zacher
+  Darr both confirmed via Wikipedia/ListsOfJohn; the summit waypoint (48.2416775, -120.8159911)
+  matches Wikipedia's coordinate (48.241679, -120.815844) almost exactly. The stored FSR
+  8301/Lucerne-dock closure note was cross-checked against Holden Village's own December 2025
+  release and remains accurate and current.
+- `wa_marvin_s_ear` — the AAJ's own Zentler trip report confirms the September 16, 2017 FA
+  date/party, resolving in the stored data's favor a year conflict with an OpenBeta listing
+  (which says 2016).
+- `wa_mcmillan_spire_west_southwest_ridge` — 8,004/8,000 ft summit and Terror Basin approach
+  corroborate.
+- `wa_mesahchie_peak_west_ridge` — `high_point_ft` 8795 and the summit waypoint (48.57845,
+  -120.88044) match ListsOfJohn/mountain-forecast's 48.58N/120.88W exactly.
+
+Flagged for human review:
+- `wa_mcmillan_spire_west_west_ridge` — stored FA "Fred Beckey and Helmy Beckey, August 29, 1940"
+  has an unverifiable exact date and a disputed party: Wikipedia and Peakbagger credit only Fred
+  Beckey, while one trip-report source (Eric's Base Camp) names both brothers; no source confirms
+  the August 29 date. Left unchanged — neither version could be confirmed against an authoritative
+  source (Beckey's own guidebook or the AAJ archive were not reachable this run).
+
+0 confirmed errors fixed, 1 flagged for human review, 7 clean. WebFetch was unavailable this run
+(DNS blocked for secondary-source domains, consistent with recent batches); relied on WebSearch
+snippets only. Next batch continues id-ascending from `wa_mesahchie_peak_west_ridge` (pass 9).
