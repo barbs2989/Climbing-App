@@ -40634,3 +40634,100 @@ named peak/area.
 
 6 confirmed errors fixed, 9 flagged for human review. Next batch continues id-ascending from
 `wa_johannesburg_mountain_cj_couloir` (pass 9).
+
+## 2026-11-26 — Pass 9, Batch 587
+
+Checked 10 routes, continuing id-ascending from `wa_johannesburg_mountain_cj_couloir`:
+Northeast Buttress and Northeast Rib (1951 Route) (both Johannesburg Mountain), North Face
+and Koala Krack (both Kangaroo Temple), Southwest Slopes / Gully (Kimtah Peak), King Kong -
+Gorillas Direct Direct (Mount Stuart), North Ridge / Southeast Face / SW Buttress (all
+Klawatti Peak), and the Standard Route (Kololo Peaks). No sub-scope routes were skipped in
+this batch's id range.
+
+1 confirmed error fixed:
+- `wa_kololo_peaks_standard`: `loss_ft` (9500) contradicted the route's own `gain_ft` (6150)
+  and its own `descent_text`, which states the descent reverses the ascent line back to the
+  same trailhead with no technical descent ("rappels: None typically needed") — a true
+  out-and-back on one line cannot lose more than it gains. mountaineers.org's own route page
+  for this exact line (North Fork Sauk -> White Chuck Glacier -> Kololo) independently states
+  "6,150 feet of gain," confirming 6150 as the sourced figure and `loss_ft`, not `gain_ft`, as
+  the wrong one. Corrected `loss_ft` to 6150.
+
+Flagged for human review, not fixed:
+- `wa_klawatti_peak_southeast_face` and `wa_klawatti_peak_sw_buttress` both store the identical
+  `fa` claim — "Lloyd Anderson, Karl Boyer, Tom Gorton, July 7, 1940 (also the peak's first
+  ascent)" — but only one route can actually be the line that 1940 party climbed. SW
+  Buttress's low-5th-class/"Easy Snow" character is a circumstantially better fit for 1940-era
+  technology than Southeast Face's glacier/bergschrund line, but no source found explicitly
+  names which named route follows the historical ascent (stephabegg.com and
+  publications.americanalpineclub.org were both unreachable this pass). Needs a human with
+  guidebook access (Beckey's Cascade Alpine Guide covers this peak) to resolve which row keeps
+  the "first ascent of the peak" claim.
+- `wa_klawatti_peak_north_ridge` has no `gain_ft` stored while its two siblings on the same
+  peak do (6900 and 6400) — a completeness gap from the same ~2164 ft Eldorado trailhead, not
+  a wrong fact; no authoritative figure was found to fill it with.
+- `wa_king_kong_gorillas_direct_direct`'s `grade` (5.12a) conflicts with first-ascensionist Sol
+  Wertkin's own 2016 blog post for this route, which states 5.11d — a genuine two-source
+  conflict with no tiebreaker found.
+- `wa_king_kong_gorillas_direct_direct`'s `high_point_ft` (9415, Mount Stuart's true summit) is
+  unconfirmed as this specific line's actual high point — a 2012 trip report on the parent
+  route (Gorillas in the Mist) notes parties can optionally continue "low 5th class to the
+  summit" or rappel the wall instead, implying the wall top and the true summit may not be the
+  same point, and no source confirms which this route's stored figure describes.
+- `wa_king_kong_gorillas_direct_direct`'s `watch_out` is stored as a single string with
+  embedded newlines instead of a JSON array like every other route's `watch_out` field — a
+  data-shape inconsistency, not a wrong fact; left alone since it's outside this audit's
+  write-targets-only SQL approach.
+- `wa_kololo_peaks_standard`'s `grade` (Class 2) sits next to a `hazards`/`watch_out` list
+  describing roped glacier travel, crevasse rescue gear and blue ice — SummitPost does call
+  the scrambling itself Class 2 with "the real challenges" being the glacier, so this isn't
+  necessarily wrong, but may read as misleadingly easy on its own; a presentation call for a
+  human, not a sourced factual error.
+- `wa_johannesburg_mountain_northeast_rib_1951_route`'s `grade` (5.7) vs. a stephabegg.com page
+  titled "Northeast Rib (1951 Route) (Class 4-5)" is unresolved — that site wasn't reachable
+  this pass to see whether it gives a more specific technical grade underneath the class
+  rating, so this may not actually be a conflict.
+- `wa_johannesburg_mountain_northeast_rib_1951_route` has `gain_ft` (4600) but no `loss_ft` for
+  a route that returns to the same 3600 ft trailhead — incomplete, no sourced figure found to
+  fill it.
+- `wa_kangaroo_temple_north_face`'s `fa` ("Crain, Gordon, McGowan & Miller, 1954") is
+  single-sourced to Mountain Project; no second source found either confirming or disputing it.
+- `wa_kangaroo_temple_north_face` / `wa_koala_krack` share a possible `access`/`permit`
+  ambiguity: the text says parking at the Hairpin Turnout is free, but also says a Northwest
+  Forest Pass is needed "at developed trailheads" — Forest Service sources confirm a pass
+  requirement at the nearby Washington Pass Overlook (0.4 mi away) but say nothing about the
+  hairpin pullout itself, so it's unclear which applies.
+- `wa_kimtah_peak_scramble`'s `fa` party names ("John Roper and Jerry Swanson") are
+  unconfirmed — a first-ascents index corroborates the year, exact date and former peak name
+  ("Gendarmes Peak," June 7 1970) but doesn't name the climbers.
+
+Clean: `wa_johannesburg_mountain_northeast_buttress`'s `high_point_ft` (8200, the dominant
+figure across Wikipedia/SummitPost/NPS), `fa` ("1957, by the Western Rib start; the 1951 rib
+is a separate route" — matches a cascadeclimbers.com thread literally titled "51, or 57
+route?" and Steph Abegg's/AAJ's description of two distinct, commonly-confused lines),
+`permit`/`access` fee text (matches NPS's current per-person backcountry fee structure), and
+trailhead coordinates (48.476, -121.076, matching the real Cascade Pass Trailhead);
+`wa_johannesburg_mountain_northeast_rib_1951_route`'s `high_point_ft` (8200), `fa` ("1951,
+party not identified" — an AAJ 1952 article describes only a 1951 attempt/exploration of this
+line, so "not identified" is the honest framing), trailhead coordinates, and permit/access
+text; `wa_kangaroo_temple_north_face`'s `high_point_ft` (7572, matching Mountaineers.org),
+`grade`/`pitches` (5.6 / 3, matching Mountain Project and SummitPost exactly), and descent
+(chain-anchor rappels, corroborated by Mountaineers.org trip reports); `wa_koala_krack`'s `fa`
+("William Kamens and Andrea Bedlington, July 2020," matching Mountain Project exactly);
+`wa_kimtah_peak_scramble`'s `high_point_ft` (8649, matching listsofjohn's LiDAR figure
+exactly) and approach distance/gain to Easy Pass (3.5-3.6 mi, 2800 ft to ~6550 ft, matching
+WTA's own figures); `wa_king_kong_gorillas_direct_direct`'s `pitches` (8, matching Mountain
+Project exactly) and `fa` text (reconciles Mountain Project's unnamed FFA partner with
+Wertkin's own blog naming Jon Gleason — not actually a conflict once read closely);
+`wa_kololo_peaks_standard`'s `high_point_ft` (8240, within the normal 8200-8243 ft cluster)
+and permit text (free self-issue Glacier Peak Wilderness permit, matching how that wilderness
+is generally administered); `wa_klawatti_peak_north_ridge`'s `high_point_ft` (8485) and summit
+coordinate (48.5544, -121.1044, matching Mountain-Forecast's published figure almost exactly);
+`wa_klawatti_peak_southeast_face`'s `high_point_ft`, coordinates and permit/fee text (matches
+current NPS/Recreation.gov figures exactly); and `wa_klawatti_peak_sw_buttress`'s
+`high_point_ft`, coordinates, permit/fee text, and grade ("5.3 Easy Snow" / 3 pitches,
+consistent with OpenBeta's description of the line as moderate low-5th-class rock).
+Coordinates for all 10 routes fell within a plausible bounding box for their named peak/area.
+
+1 confirmed error fixed, 10 flagged for human review. Next batch continues id-ascending from
+`wa_kololo_peaks_standard` (pass 9).

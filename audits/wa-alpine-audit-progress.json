@@ -2,10 +2,10 @@
  "scope_definition": "routes.discipline IN ('alpine','mountaineering') AND routes.id LIKE 'wa_%' AND routes.area_id IN (SELECT id FROM areas WHERE area_type = 'peak'), ordered by routes.id ASC",
  "scope_note": "area_type = 'peak' excludes crags/walls (e.g. The Dikes, Summertime Crag) that carry an alpine/mountaineering discipline tag but are actually short cragging routes, not mountaineering objectives \u2014 out of scope per audit instructions.",
  "pass": 9,
- "last_processed_id": "wa_johannesburg_mountain_cj_couloir",
+ "last_processed_id": "wa_kololo_peaks_standard",
  "total_in_scope_last_count": 751,
  "total_wa_alpine_or_mountaineering_tagged": 857,
- "pass_note": "Checked 10 routes, continuing id-ascending from `wa_inner_constance_northwest_buttress`: Sean's Route/Second Wind and the Standard Route (both Inner Constance), West Ridge (Inspiration Peak), Standard Scramble (Iron Peak), East Ridge / Nohokomeen Glacier and Headwall / Northeast Glacier / South Face / Southeast Ridge Direct (all Jack Mountain), and the Cascade-Johannesburg Couloir (East Ridge) on Johannesburg Mountain. Two sub-scope routes encountered in id order were skipped as out of scope (crag-type parent area): wa_inspiration_traverse and wa_j_tnar. 6 confirmed errors fixed, all gain_ft/loss_ft/permit fixes -- wa_inner_constance_seans_route (NULL/NULL -> 2800/2800, matching its own itinerary sum), wa_iron_peak_teanaway_scramble (gain_ft 2543 -> 2710 to match loss_ft and external sources for this out-and-back), wa_jack_mountain_nohokomeen_headwall (loss_ft NULL -> 10000, matching the already-sourced gain_ft for this out-and-back), wa_jack_mountain_northeast_glacier (gain_ft 4501, confirmed impossible given the route's own pins, cleared to NULL pending a sourced replacement), wa_jack_mountain_southeast_ridge_direct (permit NULL -> copied from its South-Face sibling's sourced NPS permit text, since the two share an approach), and wa_johannesburg_mountain_cj_couloir (gain_ft/loss_ft 4900/4600 -> 5200/5200, matching the route's own waypoints reversed as an out-and-back). 9 flagged for human review (see audits/wa-alpine-audit-log.md batch 586 for detail): wa_inner_constance_standard's itinerary day gainFt/lossFt figures are mutually inconsistent and don't match its own pins; its high_point_ft (7672) differs 2ft from its sibling route and Wikipedia (7670); wa_inspiration_peak_west_ridge's itinerary day-sum (7800/7800) exceeds its own already-correct, pin-matching top-level gain_ft/loss_ft (7291/7291) by 509ft; wa_jack_mountain_east_ridge's NULL gain_ft/loss_ft has only an unsourced itinerary figure (9600/9600) to go on; wa_jack_mountain_south_face's high_point_ft (9075) disagrees with its own summit waypoint (9069) and with external sources that don't converge either (9066/9069/9070); its gain_ft/loss_ft (11500/11500) run ~1400ft above a strict pin sum, plausibly explained by undulating terrain the pins don't capture; wa_jack_mountain_southeast_ridge_direct's gain_ft (11450) vs its own itinerary (8800/8800) is unresolved (sources unreachable this pass), loss_ft still NULL, and its fa could not be confirmed or refuted; wa_johannesburg_mountain_cj_couloir's itinerary day totals need rework to agree with the corrected top-level gain/loss, and its 'Johannesburg Camp' waypoint looks like it may be a stray pin belonging to the Northeast Buttress route sharing the same trailhead; wa_inner_constance_seans_route's fa (Sean Allen and Peter Darragh, August 2021) is unverified, not disconfirmed. Next batch continues id-ascending from `wa_johannesburg_mountain_cj_couloir` (pass 9).",
+ "pass_note": "Checked 10 routes, continuing id-ascending from `wa_johannesburg_mountain_cj_couloir`: Northeast Buttress and Northeast Rib (1951 Route) (both Johannesburg Mountain), North Face (Kangaroo Temple), Southwest Slopes/Gully (Kimtah Peak), King Kong - Gorillas Direct Direct (Mount Stuart), North Ridge / Southeast Face / SW Buttress (all Klawatti Peak), Koala Krack (Kangaroo Temple), and Standard Route (Kololo Peaks). 1 confirmed error fixed -- wa_kololo_peaks_standard (loss_ft 9500 -> 6150, to match its own gain_ft and out-and-back descent, sourced against mountaineers.org's 6,150 ft gain figure for this exact line). No sub-scope skips this batch (wa_lichen_rock_* routes encountered just past this batch's range are crag-type, out of scope, and will be skipped on the next run).",
  "batches": [
   {
    "batch_number": 1,
@@ -11672,6 +11672,27 @@
    "clean": 9,
    "sql_file": "audits/sql/2026-11-26-batch-586.sql",
    "note": "Two sub-scope routes skipped (crag-type parent area, not a peak): wa_inspiration_traverse, wa_j_tnar."
+  },
+  {
+   "batch_number": 587,
+   "date": "2026-11-26",
+   "route_ids": [
+    "wa_johannesburg_mountain_northeast_buttress",
+    "wa_johannesburg_mountain_northeast_rib_1951_route",
+    "wa_kangaroo_temple_north_face",
+    "wa_kimtah_peak_scramble",
+    "wa_king_kong_gorillas_direct_direct",
+    "wa_klawatti_peak_north_ridge",
+    "wa_klawatti_peak_southeast_face",
+    "wa_klawatti_peak_sw_buttress",
+    "wa_koala_krack",
+    "wa_kololo_peaks_standard"
+   ],
+   "confirmed_errors_fixed": 1,
+   "flagged_for_human_review": 10,
+   "clean": 31,
+   "sql_file": "audits/sql/2026-11-26-batch-587.sql",
+   "note": "No sub-scope skips in this batch."
   }
  ],
  "outage_runs": [
