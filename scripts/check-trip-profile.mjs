@@ -93,6 +93,11 @@ ok("a summit with no distance sits at the route's one-way figure, and the legs s
 const clash = { ...noTopDist, distKm: 4.5 * 1.609344 };
 ok("...but not when a stated waypoint lies past that figure (the two records disagree)", !tp(clash).legs, JSON.stringify(tp(clash).legs && tp(clash).legs.up.map(l => l.to.name)));
 
+// 8. No Trailhead waypoint, but stated distances: the legs start at the route's own trailhead at 0.
+const noTh = { ...base, waypoints: wps.slice(1), approachLogistics: { trailhead: "Lake Road End" } };
+const nth = tp(noTh);
+ok("no trailhead waypoint: the legs start at the route's trailhead, at 0", !!nth.legs && nth.legs.up.length === 3 && nth.legs.up[0].from.name === "Lake Road End", nth.reason || (nth.legs && nth.legs.up[0].from.name));
+
 // 6.
 const nocoord = { ...base, waypoints: wps.map(w => ({ ...w, lat: null, lng: null })) };
 ok("the distances path needs no coordinate", !!tp(nocoord).legs && tp(nocoord).legs.up.length === 3, tp(nocoord).reason);
