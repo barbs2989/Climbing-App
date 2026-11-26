@@ -1,0 +1,305 @@
+{
+ "ca_northeast_face_4": {
+  "area": "ca_middle_palisade",
+  "set": {
+   "overview": "The most-used way up Middle Palisade, a third-class line of roughly 1,000 ft on the peak's northeast side in the Palisades of the High Sierra. From the moraine beside the Middle Palisade Glacier, the route crosses a red rock band, enters a long gully and works up broken granite to the summit crest. The summit block sits just along the ridge. Expect loose rock low down and a glacier that has shrunk, so late-season trips lean on the moraine instead.",
+   "approach": "Start at the Big Pine Creek trailhead and follow the South Fork Big Pine Creek trail up an old dirt road, then switchbacks, into the John Muir Wilderness. The trail passes above Willow Lake and ends at Brainerd Lake, about 5 miles and 2,700 ft up; many parties camp here. A rough social path continues past Finger Lake onto a broad moraine, about 2 miles and 2,000 ft more, which leads toward the Middle Palisade Glacier and the base of the face.",
+   "descent_text": "Downclimb the way you came up: the main gully, then the red rock band and the moraine, and back down the South Fork Big Pine Creek trail to the trailhead. The gully feels easier going down than up. Fix a prominent tower in your mind on the way up and drop to its left on the return so you do not wander into steeper side gullies.",
+   "hazards": [
+    "Loose, rough rock on the red band that starts the route",
+    "Bergschrund crossing at the base when snow and ice remain on the glacier",
+    "Sustained exposure on the upper granite scramble, with little room for error",
+    "Slow route-finding over boulders and talus on the moraine"
+   ],
+   "dist_km": 11.51
+  },
+  "ledger": [
+   {
+    "field": "dist_km",
+    "value": 11.51,
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://stavislost.com/hikes/trail/middle-palisade-via-south-fork-big-pine-creek/",
+      "retrieved_at": "2026-11-26",
+      "fact": "14.3 mi round trip, halved to 7.15 mi one way (11.51 km)"
+     }
+    ]
+   }
+  ],
+  "review": {
+   "sources": [
+    "https://stavislost.com/hikes/trail/middle-palisade-via-south-fork-big-pine-creek/",
+    "https://www.mountainproject.com/route/106846447/northeast-face",
+    "https://fresnoclimber.blogspot.com/2019/10/middle-palisade-14012-ne-face-ii-class-3.html"
+   ],
+   "confidence": "medium",
+   "notes": "Gain and distance are one report each (a second blog gives piecewise gains summing to about 6,000 ft, no total, so no agreement). Route is the red-band / main-gully NE face. Season skipped: no page states a window (late July and late October trips only). Mountain Project page gives route steps only."
+  }
+ },
+ "or_mt_jefferson_whitewater_glacier": {
+  "area": "or_mt_jefferson",
+  "set": {
+   "hazards": [
+    "Crevasses on the Whitewater Glacier, more open as the season advances",
+    "Steep snow and ice traverse below Red Saddle with a severe runout, where parties usually place pickets",
+    "Steep loose boulders and scree on the ridge leading to Red Saddle",
+    "Exposed scrambling near the north ridge and an airy class 4 summit pitch with a small summit"
+   ],
+   "gain_ft": 6500
+  },
+  "ledger": [
+   {
+    "field": "gain_ft",
+    "value": 6500,
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://www.willhiteweb.com/oregon_climbing/mount_jefferson/whitewater_glacier_266.htm",
+      "retrieved_at": "2026-11-26",
+      "fact": "about 6,500 ft gain, summit 10,497 ft"
+     }
+    ]
+   }
+  ],
+  "review": {
+   "sources": [
+    "https://www.willhiteweb.com/oregon_climbing/mount_jefferson/whitewater_glacier_266.htm",
+    "https://www.oregonhikers.org/field_guide/Jefferson_Park_from_Whitewater_Trailhead_Hike",
+    "https://pages.uoregon.edu/dbelitz/db_virtual/db_climbing/peaks/mt_jefferson.html"
+   ],
+   "confidence": "medium",
+   "notes": "Source page does not say whether 8.5 mi is one way; I read it as one way from the trail legs it lists. Other search summaries mention 19 mi / 7,000 ft round trip but I did not open that page. Rockfall not stated by any opened page for this route, so left out."
+  }
+ },
+ "or_south_ridge_route": {
+  "area": "or_three_fingered_jack",
+  "set": {
+   "approach": "Start at the Pacific Crest Trail trailhead at Santiam Pass on US 20 and hike north on the PCT through the burned forest. After roughly two hours, a climbers' path leaves the trail and climbs to a notch on the south ridge, where the scrambling begins. Carry water and a Northwest Forest Pass for the parking lot; the total to the summit is about 6 miles one way.",
+   "descent_text": "Reverse the route. Downclimb the short steep Crawl section, often with a handline, then follow the ridge and scree slopes back down to the Pacific Crest Trail and walk out to Santiam Pass. The summit block has a rappel anchor that some parties use, but its condition is doubtful, so judge it before trusting it.",
+   "season": "Jul-Oct",
+   "hazards": [
+    "Poor, loose rock across the ridge, including doubtful holds on the summit block",
+    "Verglas or water ice on the Crawl after freezing fog or icicle melt",
+    "Snow lingering late in the year, which turns the scree slopes icy",
+    "A narrow knife-edge summit block with little room for a large party"
+   ]
+  },
+  "ledger": [],
+  "review": {
+   "sources": [
+    "https://pages.uoregon.edu/dbelitz/db_virtual/db_climbing/peaks/three_fingered_jack.html"
+   ],
+   "confidence": "medium",
+   "notes": "Mountaineers page blocked (403) so only one opened page; the 6 mi figure comes from the row's own waypoint. Season window from trip reports late July to late October. Party-size remark dropped as unverified."
+  }
+ },
+ "or_north_ridge_2": {
+  "area": "or_mt_washington",
+  "set": {
+   "approach": "Drive to the Pacific Crest Trail trailhead near Big Lake, reached by the Santiam Wagon Road, which branches off the Big Lake road just before the lake. Hike the PCT for about 3.5 miles; at a junction a climbers' trail heads left (east) and leads to treeline and the defined north ridge. From there the path winds on to the upper rock pinnacles and the notch below the summit block, where most parties rope up.",
+   "descent_text": "Descend by rappelling from the fixed stations on the upper pitches, with a 50 or 60 meter rope depending on the stations used. Below the first pitch the terrain eases to scree, which can be glissaded, to a descent trail through meadows that rejoins the PCT. Allow roughly three to four and a half hours from the summit back to the trailhead.",
+   "season": "Jul-Oct",
+   "hazards": [
+    "Friable volcanic rock with unreliable protection; a leader fall would be serious",
+    "Loose gully before the final pinnacle",
+    "Ice and rime on the upper rock, which makes holds wet and slick",
+    "Wet downclimbing at the second-pitch step after ice melts"
+   ]
+  },
+  "ledger": [],
+  "review": {
+   "sources": [
+    "https://pages.uoregon.edu/dbelitz/db_virtual/db_climbing/peaks/mt_washington.html",
+    "https://www.willhiteweb.com/oregon_climbing/mount_washington/trail_280.htm"
+   ],
+   "confidence": "medium",
+   "notes": "Rappel count left out: one page says three, the other says the first pitch only. Season from trip reports July to October."
+  }
+ },
+ "or_north_sister_southeast_ridge": {
+  "area": "or_north_sister",
+  "set": {
+   "hazards": [
+    "Loose, crumbly rock on the ridge in summer, with rocks easily knocked onto the party below",
+    "The Bowling Alley gully, steep snow when cold, guards the summit",
+    "The traverse to the Bowling Alley is hard to find even in good conditions"
+   ]
+  },
+  "ledger": [],
+  "review": {
+   "sources": [
+    "https://www.oregonhikers.org/field_guide/North_Sister",
+    "https://pages.uoregon.edu/dbelitz/db_virtual/db_climbing/peaks/north_sister.html"
+   ],
+   "confidence": "medium",
+   "notes": "Gain and distance skipped: only figures found are for the North Ridge via Hayden Glacier (7 mi one way, 5,000 ft), a different line. Hazards are peak-level statements, not specifically about the SE Ridge."
+  }
+ },
+ "or_middle_sister_north_ridge_hayden_glacier": {
+  "area": "or_middle_sister",
+  "set": {
+   "overview": "A Grade II snow climb up Middle Sister from the Pole Creek side, about 7 miles one way with roughly 5,000 ft of gain. The line crosses burned forest and snowfields to the foot of the Hayden Glacier, climbs the ridge toward Prouty Point, then traverses west to a saddle beneath the north ridge. The final 900 ft or so follow that ridge, where the rock rib is better defined than the scree beside it. Ice axe and crampons are standard, and many parties camp near treeline.",
+   "approach": "From the Pole Creek trailhead, follow the Pole Creek trail through burned forest to a climbers' trail junction just below treeline, which needs a recreation pass for parking and a self-issued permit. Continue up snowfields and rock ridges toward Middle Sister to the foot of the Hayden Glacier. Climb the obvious ridge toward Prouty Point, then traverse west beneath it to a saddle below the north ridge.",
+   "hazards": [
+    "Steep snow slopes of 35 degrees or more on the final ridge, where fixed lines or belays may be needed",
+    "Glacier travel on the Hayden Glacier, needing an ice axe and crampons"
+   ]
+  },
+  "ledger": [],
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/117135436/north-ridge-hayden-glacier"
+   ],
+   "confidence": "low",
+   "notes": "Single page (Mountain Project). Descent and season skipped: no page opened states either. 7 mi / 5,000 ft quoted in overview only as a single-source figure; gain_ft and dist_km not in fill."
+  }
+ },
+ "or_south_sister_south_side_route": {
+  "area": "or_south_sister",
+  "set": {
+   "hazards": [
+    "Afternoon thunderstorms and fast squalls from the west, with exposure at the summit",
+    "Icy patches near the crater rim, where boots are safer than sneakers",
+    "Long tiring scree slog on loose cinder later in the season",
+    "Inconsistent snow cover that can leave wet feet early in the season"
+   ]
+  },
+  "ledger": [],
+  "review": {
+   "sources": [
+    "https://pages.uoregon.edu/dbelitz/db_virtual/db_climbing/peaks/south_sister.html"
+   ],
+   "confidence": "medium",
+   "notes": "One opened page; hazards are general to the South Side route. Rockfall and crevasses not mentioned, left out."
+  }
+ },
+ "or_northwest_ridge": {
+  "area": "or_broken_top",
+  "set": {
+   "approach": "Start at the Green Lakes trailhead; a recreation.gov day-use permit is needed in season. Hike the trail to the Green Lakes basin, about an hour and a quarter, then leave it and climb to the notch on the northwest ridge. The ridge leads to the summit pinnacle. Round trip is about 13.5 miles with roughly 3,900 ft of gain, car to car.",
+   "descent_text": "Return by the same ridge. From the notch you can run down to the Green Lakes trail, or downclimb the full ridge to the spring that feeds Green Lakes and walk back to the car, which adds about two hours. Take care on the crumbly rock and watch for partners below.",
+   "hazards": [
+    "Very crumbly rock everywhere except the steep northwest end of the summit pinnacle",
+    "Rime and verglas on the summit rocks and snow and ice on the upper ridge in autumn",
+    "Weather that can turn quickly on the exposed ridge"
+   ]
+  },
+  "ledger": [],
+  "review": {
+   "sources": [
+    "https://stephabegg.com/?p=66129",
+    "https://pages.uoregon.edu/dbelitz/db_virtual/db_climbing/peaks/broken_top.html"
+   ],
+   "confidence": "medium",
+   "notes": "Gain/distance not in fill so kept in prose only. Helmet advice was in the row already."
+  }
+ },
+ "or_mt_bachelor_trail": {
+  "area": "or_mt_bachelor",
+  "set": {
+   "overview": "The summer hiking trail to the top of Mount Bachelor, a volcanic cone in the Cascades near Bend, starting from the West Village base area. It is about 7 miles round trip with roughly 2,700 ft of gain. The path climbs a grassy slope, follows a signed dirt road, then turns up steep switchbacks. Trees thin out near the Sunrise Express lift building and the terrain turns rocky past the summit lift and several false summits. The top has 360-degree views.",
+   "descent_text": "Retrace the same trail down. Near the upper Sunrise Express lift the path re-enters the trees and continues steeply to the West Village base area. The loose, rocky upper section is slow underfoot, so take care to stay on the signed path rather than cutting across the ski slopes."
+  },
+  "review": {
+   "sources": [
+    "https://www.onxmaps.com/hiking/3g8zlkd1761w/mt-bachelor",
+    "https://traveloregon.com/things-to-do/outdoor-recreation/hiking/hiking-mt-bachelors-summer-trails/"
+   ],
+   "confidence": "medium",
+   "notes": "Descent is just retrace-with-landmark; no page gives a distinct descent. Hazards are generic hiking cautions from the resort page, not route-specific, kept to four stated ones."
+  }
+ },
+ "or_west_ridge_2": {
+  "area": "or_mt_thielsen",
+  "set": {
+   "overview": "The standard route up Mount Thielsen, a jagged volcanic spire east of Diamond Lake that is nicknamed the Lightning Rod of the Cascades. A maintained trail leads to the Pacific Crest Trail, then the West Ridge climbs scree to the base of the summit horn. The last roughly 80 ft is an exposed scramble, usually fourth class with a few low fifth-class moves, and many climbers bring a rope. The round trip is about 9 miles with roughly 3,300 ft of gain.",
+   "approach": "Park at the Mt. Thielsen trailhead beside Highway 138 just east of Diamond Lake; a Northwest Forest Pass is required. Follow trail 1456 up gentle switchbacks for 3.5 to 4 miles to the Pacific Crest Trail. Cross it and climb a rocky social path up the West Ridge, then a tiring, shadeless scree slope, to reach the foot of the summit horn about 4.5 miles from the car.",
+   "descent_text": "Reverse the route: downclimb the short summit scramble, then descend the scree slopes of the West Ridge to the Pacific Crest Trail and follow trail 1456 back to the trailhead. In snow the upper slopes can be skied or snowshoed, but the final pinnacle itself usually needs downclimbing.",
+   "season": "Jun-Oct",
+   "hazards": [
+    "Lightning: the summit horn is among the most-struck points in the Cascades",
+    "Exposed final pitch with drops of 1,000 ft or more; avoid it when icy or snowy",
+    "Loose, unstable scree below the summit horn and crumbling rock above",
+    "No shade or water on the upper route"
+   ]
+  },
+  "ledger": [],
+  "review": {
+   "sources": [
+    "https://www.gaiagps.com/hike/4699/mount-thielsen-via-mt-thielsen-trail-1456",
+    "https://www.theoutbound.com/oregon/hiking/summit-the-lightning-rod-of-the-cascades",
+    "https://willhiteweb.com/oregon_climbing/mount_thielsen/trail_026.htm",
+    "https://pages.uoregon.edu/dbelitz/db_virtual/db_climbing/peaks/mt_thielsen.html"
+   ],
+   "confidence": "medium",
+   "notes": "Season window inferred: one page recommends early summer, trip reports run to early October. One page says 5 miles round trip; two others and the row waypoint say about 9, so I used 9. Class of the last pitch varies (4 to 5.1) by source."
+  }
+ },
+ "or_mt_mcloughlin_east_ridge": {
+  "area": "or_mt_mcloughlin",
+  "set": {
+   "descent_text": "Retrace the climbing route. Keep the old telephone poles along the ridge in sight and watch for blazes and landmarks, because the upper slopes look alike on the way down. Avoid the sandy cinder slope on the south side, which drops well away from the trail. If you lose the path, heading east or southeast leads to the Pacific Crest Trail or Highway 140.",
+   "hazards": [
+    "Disorientation on the descent, especially in fading light or when leaving the climbing route",
+    "Steep snow and scree slopes that can carry descending hikers off the trail",
+    "Cold wind, lightning, heavy rain or snow at the summit even when the base is mild",
+    "No water along the trail"
+   ]
+  },
+  "ledger": [],
+  "review": {
+   "sources": [
+    "https://www.oregonreel.com/mount-mcloughlin/"
+   ],
+   "confidence": "low",
+   "notes": "Single page for descent and hazards; its distance figures were internally inconsistent so I set none."
+  }
+ },
+ "ca_lassen_peak_trail": {
+  "area": "ca_lassen_peak",
+  "set": {
+   "overview": "The marked trail to the summit of Lassen Peak, the highest point in Lassen Volcanic National Park and a large plug-dome volcano. It starts near 8,500 ft and climbs about 2,000 ft in roughly 2.5 miles, through hemlock and whitebark pine on cinders and then steep switchbacks on a rocky ridge. A false summit offers a rest before a short final stretch over boulders with easy scrambling. Views reach Lake Helen, Brokeoff Mountain and, on clear days, Mount Shasta.",
+   "approach": "Park at the large Lassen Peak lot on Highway 89 inside the national park; a park entrance pass is required. The trail has no junctions and the summit stays in view for most of the climb. It crosses sandy cinder under trees, which give the only shade in the first mile, then switchbacks up the rocky ridge. Plan on an early start for the afternoon weather.",
+   "descent_text": "Return the way you came, down the same switchbacks to the parking lot. The steep stretch just below the false summit is slick with loose gravel, so keep your hands free and your footing careful, and give uphill hikers the right of way. Aim to be off the summit by early afternoon, before storms build.",
+   "season": "Jul-Oct",
+   "hazards": [
+    "Afternoon thunderstorms and lightning, with weather that can change fast",
+    "Snow and ice lingering on the trail into summer",
+    "Loose rock and gravel on the steep upper switchbacks",
+    "Strong sun and wind with almost no shade above the first mile, and altitude effects"
+   ],
+   "dist_km": 4.02
+  },
+  "ledger": [
+   {
+    "field": "dist_km",
+    "value": 4.02,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.nps.gov/thingstodo/hikelassenpeak.htm",
+      "retrieved_at": "2026-11-26",
+      "fact": "about 5 mi round trip, 2.5 mi one way"
+     },
+     {
+      "url": "https://www.earthtrekkers.com/lassen-peak-trail/",
+      "retrieved_at": "2026-11-26",
+      "fact": "4.84 mi round trip, 2.42 mi one way"
+     }
+    ]
+   }
+  ],
+  "review": {
+   "sources": [
+    "https://www.nps.gov/thingstodo/hikelassenpeak.htm",
+    "https://www.earthtrekkers.com/lassen-peak-trail/"
+   ],
+   "confidence": "high",
+   "notes": "Distance is half the round trip. Season from one guide (mid-July to October) plus NPS summer and fall. Existing gain 1,957 ft unchanged."
+  }
+ }
+}

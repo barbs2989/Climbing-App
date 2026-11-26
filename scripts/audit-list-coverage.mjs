@@ -18,7 +18,7 @@
 // check:overlay-discovery finding 22 modals no guard could open.
 import fs from "node:fs";
 import { SUPABASE_URL, headers, anonKey, requireServiceKey } from "./lib/supabase-env.mjs";
-import { LIST_ALIASES, routeInList, listPeaks } from "../lib/lists.js";
+import { LIST_ALIASES, routeInList, listPeaks, FIFTY_CLASSICS } from "../lib/lists.js";
 
 // ---- Parse the cards the screen actually renders ------------------------------------------
 // Scoped to the `lists=[...]` array by balancing brackets over RAW source. Not a whole-file
@@ -103,6 +103,11 @@ const areaExists = await readIn("areas", "id", rosterIds);
 const holdsRoute = await readIn("routes", "area_id", rosterIds);
 // Fails closed: an empty read would report every roster as unfillable.
 if (rosterIds.size && !areaExists.size) { console.error("FAIL: none of the roster areas came back — refusing to report."); process.exit(1); }
+// The Fifty Classics card draws its rows from FIFTY_CLASSICS by route id (ClimbMatchCore fiftyRoutes),
+// not from tags. Counting tags here read "33 of 49" (2026-11-26) because the tag read above stops at
+// PostgREST's 1,000-row cap; the screen showed 49. Count what the screen counts: roster ids that exist.
+const fiftyLive = FIFTY_CLASSICS.filter(e => e.id && !e.closed);
+const fiftyHave = await readIn("routes", "id", new Set(fiftyLive.map(e => e.id)));
 const tickable = p => areaExists.has(p.id) && [p.id].concat(p.also || []).some(id => holdsRoute.has(id));
 
 console.log(`\n=== named list coverage ===`);
@@ -113,7 +118,7 @@ console.log(`${cards.length} cards on the Challenges screen; ${rows.length} rout
 // i.e. this audit would disagree with the screen it exists to measure.
 const out = cards.map(c => {
   const roster = c.roster ? listPeaks(c.k) : null;
-  const tagged = rows.filter(r => routeInList(r, c.k)).length;
+  const tagged = c.k === "fifty" ? fiftyLive.filter(e => fiftyHave.has(e.id)).length : rows.filter(r => routeInList(r, c.k)).length;
   const have = roster ? roster.filter(tickable).length : tagged;
   const untickable = roster ? roster.filter(p => !tickable(p)).map(p => p.id + (areaExists.has(p.id) ? " (no route)" : " (no such area)")) : [];
   const demoOnly = DEMO_ONLY.has(c.k);

@@ -87,6 +87,15 @@ Three top-level `tab` values in `ClimbMatch.jsx` (`tab==="today"`, `tab==="crew"
   on faces (Half Dome, Cathedral Peak); `peakClimbed` and `routeInList` count a log on any of them.
   0347 gave four fourteeners (Handies, Bierstadt, Blue Sky, Quandary) a walk-up; the 14ers, Bulgers and Cascade rosters had four dead ids
   and six faces-only peaks re-pointed the same day, and `audit:list-coverage` now counts only peaks that can be ticked.
+  **List numbers** (2026-11-26, owner note: "should we give a number for how they are usually ranked?"): each peak on a list that
+  numbers itself carries the list's OWN number (`n` on the roster entry; `listNumber()`, `listNumberKey()` in `lib/lists.js`), and the
+  card draws its peaks in that order, "12. Mount Logan": Bulgers rank 1-100, Colorado 14ers 1-53 and Centennials 1-100 (Bross's #22
+  left as a gap), Adirondack 46 rank 1-46, and the Sierra Peaks Section's region.peak codes ("1.2 Owens Peak", ordered region by
+  region). California 14ers, Cascade volcanoes and Desert Towers have no conventional numbering and show none. The route page's list
+  chip reads the same number (`routeTags` `rankFor`, ahead of any rank written into `routes.lists` prose). The **Bulgers roster is the
+  published list** since the same day: it had been derived from catalog elevations, which put 9 non-Bulgers on it and left 9 Bulgers
+  off (`research-data/list-pages-2026-11-26/bulgers-reconciled.json`). `audit:list-pages` measures whether each list climb's route
+  page is full.
   `Challenges` (`src/components/Challenges.tsx`) has three parts: personal challenges, curated lists, badges.
   **Personal challenges count THIS CALENDAR YEAR** (owner 2026-11-23: *Your challenges · 2026*, starting again on January 1; the
   badges count all time). Every count comes from ONE helper, `challengeStats(logs, routeById, {year})` over `challengeKeys(log, route)`

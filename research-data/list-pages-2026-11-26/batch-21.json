@@ -1,0 +1,327 @@
+{
+ "ca_crag_peak_via_clover_meadow": {
+  "area": "ca_crag_peak",
+  "set": {
+   "approach": "Start at the north end of Kennedy Meadows Campground and follow the Pacific Crest Trail north. Roughly two miles in, a footbridge crosses the South Fork Kern; keep going about three more miles to Clover Meadow. Leave the trail there, head west into the trees and climb about 3,000 feet of steep, brushy slope to the crest, then work north along the ridge to the northern rock group that holds the true high point.",
+   "descent_text": "Retrace the ascent: back down the ridge and the brushy slope to the Pacific Crest Trail, then walk south about five miles to the campground. The manzanita is harder to push through going down than coming up, so leave generous daylight for the return.",
+   "hazards": [
+    "Dense manzanita on the climb to the crest slows travel and is worse on the way down",
+    "Rattlesnakes in the brush near the river",
+    "No dependable water once off the river; carry plenty on a warm day",
+    "The true high point is a rock knife-edge with class 3 moves"
+   ],
+   "gain_ft": 4158,
+   "dist_km": 11.83
+  },
+  "ledger": [
+   {
+    "field": "gain_ft",
+    "value": 4158,
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://ladyonarock.com/crag-peak/",
+      "retrieved_at": "2026-11-26",
+      "fact": "14.7 miles out and back, 4,158 ft gain, from Kennedy Meadows Campground; another report estimates about 3,000 ft from the PCT to the summit"
+     }
+    ]
+   },
+   {
+    "field": "dist_km",
+    "value": 11.83,
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://ladyonarock.com/crag-peak/",
+      "retrieved_at": "2026-11-26",
+      "fact": "14.7 miles round trip from the campground; halved to 7.35 miles one way = 11.83 km"
+     }
+    ]
+   }
+  ],
+  "review": {
+   "sources": [
+    "https://ladyonarock.com/crag-peak/",
+    "https://climber.org/reports/2006/1478.html",
+    "https://climber.org/reports/2002/863.html"
+   ],
+   "confidence": "medium",
+   "notes": "Gain and distance single-source (a February low-snow outing, GPS style figures). Other reports say about 5 miles on the PCT then about 3,000 ft climb; those do not give a clean total so no second agreement. Season skipped: no page gives a window."
+  }
+ },
+ "ca_smith_mountain_albanita_trail_and_northeast_ridge": {
+  "area": "ca_smith_mountain",
+  "set": {
+   "approach": "Drive Blackrock Road off Sherman Pass Road and turn onto Monache Jeep Road about 3.5 miles beyond the Blackrock ranger station, continuing to the signed end of the dirt road. Walk the old road signed as the Albanita Trail, fork left where the trail leaves it, and turn right at the next junction onto the motorized Albanita Trail to a saddle on the northeast ridge. The off-trail climbing starts at that saddle.",
+   "descent_text": "Go back down the way you came, passing the granite crag and following the old skid road to the saddle. For a partial loop, drop onto the western Albanita Trail and climb back to the parking area on the dirt road.",
+   "hazards": [
+    "Route above the saddle is sparsely cairned and easy to lose",
+    "Final scramble to the summit is a short steep step on rock",
+    "The trail is shared with motorcycles and dirt bikes below the saddle"
+   ]
+  },
+  "review": {
+   "sources": [
+    "https://www.kernriversierra.com/hike/Smith_Mountain_Hike.html",
+    "https://climber.org/reports/2002/863.html"
+   ],
+   "confidence": "low",
+   "notes": "The 3.3 miles is not labelled one-way or round trip on the page; existing row text calls it round trip, so one-way is half. Season skipped."
+  }
+ },
+ "ca_kern_peak_kern_peak_trail_east_face": {
+  "area": "ca_kern_peak",
+  "set": {
+   "overview": "Kern Peak is a broad, high summit in the Golden Trout Wilderness, climbed from the Kern Plateau by a long walk on gentle forest and meadow trail. After the trail reaches Redrock Meadows, a short cross-country finish goes up the grassy and boulder-strewn east face, which is class 1 to easy class 2. The summit holds the ruins of an old fire lookout. The effort is the distance, not the terrain.",
+   "approach": "Start at the Blackrock trailhead, reached by a long paved drive from US 395 on Nine Mile Canyon Road. The trail rolls through forest and meadows, passing Casa Vieja Meadows and Beer Keg Meadow, to Redrock Meadows about three hours out. At the junction there, go north to a shallow saddle near 10,200 feet, then leave the trail and head west across open slope to the east face.",
+   "descent_text": "The gentle south ridge makes a good way down, looping back to Redrock Meadows in about an hour and a half; from there the trail leads back out through the meadows to Blackrock. Retracing the east face also works.",
+   "hazards": [
+    "Very long day on trail; start before dawn and plan for a headlamp return",
+    "Cattle grazing fouls springs and braids the trail; treat all water",
+    "Remains of the lookout platform on the summit are unsound",
+    "Frozen ground or leftover snow patches late in the season"
+   ]
+  },
+  "review": {
+   "sources": [
+    "https://sites.google.com/view/wacziarg-climbing/2021-11-15-kern-peak",
+    "https://www.snwburd.com/bob/trip_reports/kern_1.html",
+    "https://valhikes.blogspot.com/2014/09/kern-peak.html"
+   ],
+   "confidence": "medium",
+   "notes": "Second source (Burd) gives no distance or gain. The measured loop returned over the south ridge so the total may differ slightly from an out-and-back. Season skipped."
+  }
+ },
+ "ca_angora_mountain_standard_route": {
+  "area": "ca_angora_mountain",
+  "set": {
+   "overview": "Angora Mountain is a remote summit above the Little Kern River in the Golden Trout Wilderness, rated class 2. The usual way follows trail to the Little Kern, then goes cross-country up Deep Creek and a ridge to a final stretch of boulders and talus. The challenge is the length of the approach and the brush rather than any technical ground.",
+   "approach": "From the Lewis Camp trailhead, reached by Route 190, hike past Jerky Meadows and descend about 1,000 feet to the Little Kern River bridge. Leave the trail and go cross-country up to Deep Creek, bypassing a long switchback. Follow the creek, then cut through brush to the ridge running off the peak and follow it to the summit. The last few hundred feet are boulder-hopping and easy scrambling.",
+   "descent_text": "Retrace the ridge and Deep Creek down to the Little Kern bridge, then climb the trail back out, roughly 4.5 miles and 1,800 feet to the trailhead. A ridge line down tends to be quicker than the creek bed.",
+   "hazards": [
+    "Burn scar brush from the 2020 Castle Fire: thorny buckthorn, wild rose and sage",
+    "Trail overgrown or erased in places; carry a GPS track",
+    "Water is scarce; the reliable source is Deep Creek",
+    "Rattlesnakes and heat on a very long day"
+   ]
+  },
+  "ledger": [],
+  "review": {
+   "sources": [
+    "https://themtsarecalling.com/angora/",
+    "https://sites.google.com/view/wacziarg-climbing/2023-11-angora-mountain-coyote-peaks"
+   ],
+   "confidence": "medium",
+   "notes": "Gain and distance skipped: both reports include other peaks or camping beyond the summit (30.8 mi combined loop; 19.16 mi day). Search-engine snippets of a one-way table not opened (SummitPost blocked). Season skipped."
+  }
+ },
+ "ca_north_maggie_mountain_saddle_route_from_long_meadow": {
+  "area": "ca_north_maggie_mountain",
+  "set": {
+   "approach": "Start at the Shake Camp trailhead in Mountain Home State Forest, near Balch Park. The trail heads north through the 2020 burn scar, drops to a fork of the Tule River and passes the Middle Tule sequoia grove. Cross the river, leave the trail and climb toward the saddle by point 10,113, staying clear of the worst brush, then go to the true summit.",
+   "descent_text": "Retrace the route: down from the summit and saddle, back across the river and up the trail through the grove to Shake Camp. Expect brushy, bouldery ground with little visible trail where new growth has covered the burn.",
+   "hazards": [
+    "Dense manzanita and scrub on the slopes, especially around the granite domes",
+    "Loose talus and steep drops below the summit",
+    "New growth after the fire hides the trail; fallen sequoias block it in places",
+    "Monsoon thunderstorms in late summer"
+   ]
+  },
+  "ledger": [],
+  "review": {
+   "sources": [
+    "https://themtsarecalling.com/maggie/"
+   ],
+   "confidence": "medium",
+   "notes": "Only trip report found climbs the west face from Shake Camp (11.1 mi, 5,700 ft round trip), not the Long Meadow saddle line, so gain and distance skipped. Approach follows that report's trail section plus the row's own saddle description. Season skipped."
+  }
+ },
+ "ca_moses_mountain_standard_route": {
+  "area": "ca_moses_mountain",
+  "set": {
+   "overview": "Moses Mountain is a forested granite summit on the western edge of the Golden Trout Wilderness, beside Mountain Home State Forest. A trail through the sequoias leads to the base, then a cross-country climb through brush and talus reaches a gully and the summit ridge. The ridge finishes on solid class 3 rock, with a few steeper steps on the way.",
+   "approach": "Take the trail from Shake Camp in Mountain Home State Forest along the Tule River, through sequoia forest toward Redwood Crossing. Cross the river, then leave the trail and climb cross-country through big trees, thick brush and a talus field to a gully rising diagonally north to the summit ridge. A short, easy stretch south along the ridge finishes the climb.",
+   "descent_text": "Retrace the line down the ridge and gully, across the steep slope, through the brush and talus and back into the sequoia forest to the trail. Cliffs sit east of the summit, so stay on the ascent line rather than guessing a new one.",
+   "hazards": [
+    "Thick manzanita and brush on the lower slopes",
+    "A few steeper class 3 to 4 steps near the ridge",
+    "Steep talus and cliff bands make off-route descents risky",
+    "Snow lingers in shaded chutes in late fall, and forest gates may be locked out of season"
+   ]
+  },
+  "ledger": [],
+  "review": {
+   "sources": [
+    "https://www.snwburd.com/bob/trip_reports/moses_1.html",
+    "https://sites.google.com/view/wacziarg-climbing/2025-07-harrington-moses"
+   ],
+   "confidence": "medium",
+   "notes": "Gain already in row (3510); a 2025 log reports 3,419 ft which agrees. Distance skipped: the one log (5.59 mi round trip) does not name its trailhead. Season skipped."
+  }
+ },
+ "ca_homers_nose_standard_route": {
+  "area": "ca_homers_nose",
+  "set": {
+   "overview": "Homers Nose is a rounded summit on Salt Creek Ridge, in the far southwest corner of Sequoia National Park. It is a long, lonely day on an old, partly vanished trail and cross-country travel, climbing from the foothills of the South Fork Kaweah. The summit itself is only a walk, but the brush and the length make it a full day.",
+   "approach": "Start at South Fork Campground and the Ladybug trailhead, about 14 miles above Three Rivers. Take the Ladybug Trail, then turn up the Pigeon Creek drainage to the overgrown old trail that crosses grassy slopes to a ridge near 5,700 feet. It traverses into the Bennett Creek drainage to Surprise Camp. From there climb steeply to Salt Creek Ridge and follow a use trail along its south side to the summit.",
+   "descent_text": "Go back the same way: the ridge to Surprise Camp, the old trail to Pigeon Creek, then the steep drainage down to the Ladybug Trail. The junction is unmarked and hard to spot, so a GPS track helps. Direct shortcuts off the ridge run into deadfall and cliff bands.",
+   "hazards": [
+    "Poison oak and ticks on the lower slopes",
+    "Heavy deadfall and manzanita in the Bennett Creek section",
+    "Unmarked junction with the old trail; easy to miss in either direction",
+    "Granite cliff bands and steep sand slides off the ridge",
+    "Water runs short on a hot day"
+   ],
+   "dist_km": 11
+  },
+  "ledger": [
+   {
+    "field": "dist_km",
+    "value": 11,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://themtsarecalling.com/homersnose/",
+      "retrieved_at": "2026-11-26",
+      "fact": "13.6 miles round trip from Ladybug trailhead, halved = 10.94 km"
+     },
+     {
+      "url": "https://sites.google.com/view/wacziarg-climbing/2022-11-30-homers-nose",
+      "retrieved_at": "2026-11-26",
+      "fact": "13.71 miles round trip, halved = 11.03 km"
+     }
+    ]
+   }
+  ],
+  "review": {
+   "sources": [
+    "https://themtsarecalling.com/homersnose/",
+    "https://sites.google.com/view/wacziarg-climbing/2022-11-30-homers-nose"
+   ],
+   "confidence": "medium",
+   "notes": "Gain skipped: sources disagree by more than 10% (7,380 ft vs 6,232 ft). Season skipped."
+  }
+ },
+ "ca_vandever_mountain_south_slope_from_farewell_gap": {
+  "area": "ca_vandever_mountain",
+  "set": {
+   "overview": "Vandever Mountain is a broad talus peak above Mineral King, with an easy class 1 to 2 route from Farewell Gap. It is a moderate day for a high Sierra summit: a steady trail walk to the gap, then a short climb up loose rock. The views take in the peaks of the Great Western Divide and Florence Peak.",
+   "approach": "Park at the Mineral King trailhead at the end of the road and walk south down the valley on the Farewell Gap trail. The junction for Franklin Pass is about 3.5 miles in. Continue up the switchbacks to Farewell Gap, then leave the trail and climb the talus slopes above the gap to the summit.",
+   "descent_text": "Retrace your steps down the talus to Farewell Gap and follow the trail back down the valley to the road end. Experienced parties sometimes drop west toward White Chief, but the gap is the straightforward way back.",
+   "hazards": [
+    "Strong wind funnels through Farewell Gap",
+    "Leftover snow on the trail and talus early in the season",
+    "Loose talus on the climb above the gap"
+   ],
+   "gain_ft": 4500,
+   "dist_km": 9.66
+  },
+  "ledger": [
+   {
+    "field": "gain_ft",
+    "value": 4500,
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://fresnoclimber.blogspot.com/2017/09/vandever-mountain-11947.html",
+      "retrieved_at": "2026-11-26",
+      "fact": "about 12 miles round trip and about 4,500 ft gain from Mineral King via Farewell Gap"
+     }
+    ]
+   },
+   {
+    "field": "dist_km",
+    "value": 9.66,
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://fresnoclimber.blogspot.com/2017/09/vandever-mountain-11947.html",
+      "retrieved_at": "2026-11-26",
+      "fact": "about 12 miles round trip, halved = 6 mi = 9.66 km"
+     }
+    ]
+   }
+  ],
+  "review": {
+   "sources": [
+    "https://fresnoclimber.blogspot.com/2017/09/vandever-mountain-11947.html",
+    "https://themtsarecalling.com/vandever/",
+    "https://www.snwburd.com/bob/trip_reports/vandever_1.html",
+    "https://sites.google.com/view/wacziarg-climbing/2025-07-mineral-king-peaks"
+   ],
+   "confidence": "medium",
+   "notes": "Other reports combine Vandever with several peaks, so no independent figure for this line. Trip is about 4,150 ft net, which the gain respects. Season skipped."
+  }
+ },
+ "ca_variation_to_the_great_chimney": {
+  "area": "ca_florence_peak",
+  "set": {
+   "approach": "Start at the closed gate at the end of Mineral King Road and take the Franklin Pass trail as far as lower Franklin Lake, where there are bear boxes and campsites. Leave the trail before it switchbacks toward the pass and go cross-country toward upper Franklin Lake, skirting its high eastern shore toward the large cleft of the Great Chimney. The walk to the base is about 6.5 miles with roughly 4,000 feet of gain.",
+   "descent_text": "Scramble class 2 and 3 ground down the northeast ridge, staying south of the crest, to sandy slopes and the trail at Franklin Pass. Return past the Franklin Lakes to Mineral King, about 8 miles from the summit to the trailhead.",
+   "hazards": [
+    "Ledges carry debris and several large blocks are loose; keep the belayer out of the fall line",
+    "The loose chimney on pitch two is poor rock",
+    "Long approach and descent put the party far from the road"
+   ]
+  },
+  "ledger": [],
+  "review": {
+   "sources": [
+    "https://mountainproject.com/route/114073707/variation-to-the-great-chimney"
+   ],
+   "confidence": "medium",
+   "notes": "Gain and distance skipped: the approach figure is to the base, not the summit, and no second source. Single published page for the approach and descent. Season skipped."
+  }
+ },
+ "ca_northwest_ridge_7": {
+  "area": "ca_sawtooth_peak",
+  "set": {
+   "overview": "Sawtooth Peak is a serrated summit in Mineral King, reached from Sawtooth Pass by its northwest ridge. The ridge is a sandy, blocky scramble of class 2 to 3 on boulders along the crest, ending at a fin-shaped summit block that takes a few steeper moves. It is often combined with neighbouring Needham Mountain.",
+   "approach": "From the Mineral King area, drive the winding road about 25 miles from Three Rivers to the Monarch Lakes and Sawtooth Pass trailhead. The trail climbs past Monarch Lakes, or a steeper shortcut goes up talus and slabs, to Sawtooth Pass. From the pass, scramble northwest up the ridge, bypassing a false summit, to the summit block.",
+   "descent_text": "Reverse the ridge to Sawtooth Pass and take the trail back down past the lakes. A longer option traverses on to Needham Mountain and drops west to Amphitheater Lake and over a pass to Monarch Lakes.",
+   "hazards": [
+    "Afternoon thunderstorms build early; lightning has struck near the pass",
+    "Loose sand and scree on the slopes below the ridge",
+    "The summit fin takes stemming and steep footholds and is loose"
+   ]
+  },
+  "ledger": [],
+  "review": {
+   "sources": [
+    "https://themtsarecalling.com/needham/",
+    "https://sites.google.com/view/wacziarg-climbing/2025-07-mineral-king-peaks"
+   ],
+   "confidence": "medium",
+   "notes": "Gain and distance skipped: both logs combine Sawtooth with Needham. Season skipped."
+  }
+ },
+ "ca_needham_mountain_standard_route": {
+  "area": "ca_needham_mountain",
+  "set": {
+   "overview": "Needham Mountain is a high summit on the Great Western Divide near Sawtooth Peak, with a class 2 sand and scree approach to a cluster of summit blocks that need class 3 moves. Two candidate high points sit close together, so check which one is highest. Most parties pair it with Sawtooth Peak from Mineral King.",
+   "approach": "From the Mineral King trailhead, take the Monarch Lakes and Sawtooth Pass route, or go by Crystal Lake and Crystal Pass, then traverse to the peak. Climb the sandy southwest slopes toward the summit blocks, going around towers near 11,500 feet, and finish by scrambling the east and north sides of the blocks.",
+   "descent_text": "Descend the loose, sandy southwest slope to Amphitheater Lake, then cross the pass to the west of the lake to Crystal Lake and the trail down. A second option goes to Upper Monarch Lake, a class 3 crossing.",
+   "hazards": [
+    "Tedious loose sand and scree on the southwest slope",
+    "Two candidate high points on steep class 3 pinnacles",
+    "Afternoon thunderstorms with lightning over the Divide",
+    "Pass crossing between lakes is steep and slick when wet"
+   ]
+  },
+  "ledger": [],
+  "review": {
+   "sources": [
+    "https://themtsarecalling.com/needham/",
+    "https://sites.google.com/view/wacziarg-climbing/2025-07-mineral-king-peaks",
+    "https://climber.org/reports/2002/990.html"
+   ],
+   "confidence": "medium",
+   "notes": "Distance skipped: logs are combined with Sawtooth. Gain already in row. Season skipped."
+  }
+ }
+}

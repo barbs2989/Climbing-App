@@ -1,0 +1,61 @@
+{
+ "wa_martin_peak_methow_north_ridge": {
+  "area": "wa_martin_peak_methow",
+  "set": {
+   "gain_ft": 4400,
+   "dist_km": 12.9
+  },
+  "ledger": [
+   {
+    "field": "gain_ft",
+    "value": 4400,
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://trailcatjim.com/martin-peak-via-north-ridge/",
+      "retrieved_at": "2026-11-26",
+      "fact": "About 4,400 ft gained on a roughly 16-mile round trip from Crater Creek trailhead"
+     },
+     {
+      "url": "https://www.wta.org/go-hiking/hikes/martin-lakes",
+      "retrieved_at": "2026-11-26",
+      "fact": "Trail to Martin Lakes alone is 14.6 mi round trip with 2,440 ft gain, so the peak adds more climbing (consistent, not independent)"
+     }
+    ]
+   },
+   {
+    "field": "dist_km",
+    "value": 12.9,
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://trailcatjim.com/martin-peak-via-north-ridge/",
+      "retrieved_at": "2026-11-26",
+      "fact": "About 16 miles round trip, so about 8 miles (12.9 km) one way"
+     },
+     {
+      "url": "https://www.wta.org/go-hiking/hikes/martin-lakes",
+      "retrieved_at": "2026-11-26",
+      "fact": "Lower lake 7.0 mi, upper lake 7.3 mi one way"
+     }
+    ]
+   }
+  ],
+  "review": {
+   "sources": [
+    "https://en.wikipedia.org/wiki/Martin_Peak_(Methow_Mountains)",
+    "https://www.wta.org/go-hiking/hikes/martin-lakes",
+    "https://www.wta.org/go-hiking/hikes/eagle-lakes",
+    "https://trailcatjim.com/martin-peak-via-north-ridge/",
+    "https://www.go-washington.com/Martin-Creek-Trail-429-Washington/",
+    "https://adminonly.wta.org/go-hiking/hikes/martin-peak",
+    "https://www.summitpost.org/view_object.php?object_id=154731",
+    "https://peakvisor.com/peak/martin-peak-18zxwj7vb.html"
+   ],
+   "confidence": "medium",
+   "notes": "new Bulger peak added 2026-11-26; figures single-source"
+  }
+ }
+}

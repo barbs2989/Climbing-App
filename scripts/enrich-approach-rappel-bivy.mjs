@@ -237,18 +237,18 @@ for (const f of FROM) {
 const key = anonKey();
 // Named so the settable-column assertion below can check itself against them rather than against a
 // string somebody has to remember to keep in step.
-const readSelect = "id,name,area_id,discipline,pitches,pitch_detail,rappel_detail,rappel_count_note,rappels,descent_text,approach,waypoints,overview,beta,hazards,pro_tips,watch_out,pro_needs,bail,road,face,approach_variants,climbing_route,bivy,approach_logistics,fa,gain_ft,approach_loss_ft,return_gain_ft";
+const readSelect = "id,name,area_id,discipline,pitches,pitch_detail,rappel_detail,rappel_count_note,rappels,descent_text,approach,waypoints,overview,beta,hazards,pro_tips,watch_out,pro_needs,bail,road,face,approach_variants,climbing_route,bivy,approach_logistics,fa,gain_ft,approach_loss_ft,return_gain_ft,dist_km,season";
 // `face` is prose describing the wall, the same class as `overview` — NOT a classification column.
 // It is settable because it is where a wrong route NAME leaves its residue: a row renamed in the
 // catalog keeps a `face` written to justify the old name, and four rows in the 2026-08-14
 // name-vs-aspect research carry exactly that (Cameron's "North ridge" on a ridge gained due west,
 // Tye's backwards "(west side)"). `aspect` stays OUT — it drives the sun/shade readout and is a
 // classification, so it goes through SQL a human runs.
-const VERIFY_SCALAR = ["rappel_count_note", "rappels", "descent_text", "approach", "overview", "beta", "pro_needs", "bail", "face", "fa", "gain_ft", "approach_loss_ft", "return_gain_ft"];
+const VERIFY_SCALAR = ["rappel_count_note", "rappels", "descent_text", "approach", "overview", "beta", "pro_needs", "bail", "face", "fa", "gain_ft", "approach_loss_ft", "return_gain_ft", "season"];
 const VERIFY_JSON = ["hazards", "pro_tips", "watch_out", "road", "approach_logistics"];
 // `waypoints` and `rappel_detail` are compared entry by entry further down rather than whole, so
 // they are verified — just not by either list.
-const VERIFY_CUSTOM = ["waypoints", "rappel_detail"];
+const VERIFY_CUSTOM = ["waypoints", "rappel_detail", "dist_km"];
 // The allow-list for `set`. See the long note at its use site for where the line is drawn and why.
 const SETTABLE = new Set([
   "rappel_count_note", "rappels", "descent_text", "approach", "waypoints", "road",
@@ -267,6 +267,12 @@ const SETTABLE = new Set([
   // information should be online"): gain_ft, and the approach's downhill / the way back's uphill (0449)
   // that the leg cards print. Integers only (checked below), each carried with `ledger` evidence.
   "gain_ft", "approach_loss_ft", "return_gain_ft",
+  // The named tick-lists' thin pages (audit:list-pages, 2026-11-26): a peak's standard route with no
+  // distance and no season. `dist_km` is ONE-WAY km (the app prints round trip as distKm * 2; see
+  // docs/codebase/route-identity.md — never normalise the column, only fill a null) and carries ledger
+  // evidence like the feet columns. `season` is a WINDOW for the header strap ("Jul–Sep"), never an
+  // explanation (docs/codebase/enrichment-prose.md), so it is length-capped below.
+  "dist_km", "season",
 ]);
 const SET_INT_FT = new Set(["gain_ft", "approach_loss_ft", "return_gain_ft"]);
 // A settable column is coupled to TWO other places, and getting either wrong is SILENT: it must be
@@ -528,6 +534,10 @@ for (const id of ids) {
       if (!SETTABLE.has(k)) { console.error(`REFUSING ${id} — set.${k} is not an allowed column`); process.exitCode = 1; body._refuse = true; continue; }
       if (SET_INT_FT.has(k) && !(v === null || (Number.isInteger(v) && v >= 0 && v <= 20000))) { console.error(`REFUSING ${id} — set.${k} must be whole feet 0-20000 or null (got ${JSON.stringify(v)})`); process.exitCode = 1; body._refuse = true; continue; }
       if (SET_INT_FT.has(k) && !(Array.isArray(spec.ledger) && spec.ledger.some(e => e && e.field === k))) { console.error(`REFUSING ${id} — set.${k} is a published figure and needs a ledger entry with its sources`); process.exitCode = 1; body._refuse = true; continue; }
+      if (k === "dist_km" && !(v === null || (typeof v === "number" && v > 0 && v <= 120))) { console.error(`REFUSING ${id} — set.dist_km must be one-way km 0-120 or null (got ${JSON.stringify(v)})`); process.exitCode = 1; body._refuse = true; continue; }
+      if (k === "dist_km" && v !== null && before.dist_km != null) { console.error(`REFUSING ${id} — set.dist_km only fills an empty distance; the stored ${before.dist_km} may be the other convention`); process.exitCode = 1; body._refuse = true; continue; }
+      if (k === "dist_km" && !(Array.isArray(spec.ledger) && spec.ledger.some(e => e && e.field === k))) { console.error(`REFUSING ${id} — set.dist_km is a published figure and needs a ledger entry with its sources`); process.exitCode = 1; body._refuse = true; continue; }
+      if (k === "season" && !(typeof v === "string" && v.length <= 24 && !/[(.;]/.test(v))) { console.error(`REFUSING ${id} — set.season is a header WINDOW ("Jul–Sep"), at most 24 characters, no sentence (got ${JSON.stringify(v)})`); process.exitCode = 1; body._refuse = true; continue; }
       body[k] = v;
     }
     if (body._refuse) { delete body._refuse; continue; }
@@ -634,6 +644,8 @@ for (const id of ids) {
   // identities and is false for a write that landed perfectly. A settable column added to the
   // allow-list and not to one of these two lines is verified by nothing at all.
   for (const k of VERIFY_JSON) if (k in body) checks.push(JSON.stringify(after[k]) === JSON.stringify(body[k]));
+  // numeric(…) comes back from PostgREST as a number or a numeric string, so compare as numbers.
+  if ("dist_km" in body) checks.push(body.dist_km === null ? after.dist_km == null : Math.abs(Number(after.dist_km) - body.dist_km) < 0.005);
   // waypoints is an array of objects, so compare length plus each entry's name and coordinate —
   // a string compare would fail on jsonb key order, which is not stable.
   if (body.waypoints) {

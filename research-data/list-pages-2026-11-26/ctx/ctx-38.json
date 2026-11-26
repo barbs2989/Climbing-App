@@ -1,0 +1,470 @@
+[
+ {
+  "list": "sps",
+  "peak": "Matterhorn Peak",
+  "fill": [
+   "description",
+   "approach",
+   "descent",
+   "season",
+   "hazards"
+  ],
+  "row": {
+   "id": "ca_north_arete_6",
+   "area_id": "ca_matterhorn_peak",
+   "name": "North Arete",
+   "grade": "5.7",
+   "discipline": "alpine",
+   "overview": null,
+   "description": null,
+   "approach": null,
+   "descent_text": null,
+   "season": null,
+   "best_season": null,
+   "hazards": null,
+   "gain_ft": null,
+   "dist_km": null,
+   "high_point_ft": null,
+   "waypoints": [
+    {
+     "name": "Twin Lakes (Mono Village) Trailhead",
+     "type": "Trailhead",
+     "elev": 7133,
+     "distMi": 0
+    },
+    {
+     "name": "Matterhorn Peak",
+     "type": "Summit",
+     "elev": 12279,
+     "distMi": 6.2
+    }
+   ],
+   "areas": {
+    "lat": 38.09267,
+    "lng": -119.3819,
+    "name": "Matterhorn Peak",
+    "elevation_ft": null
+   }
+  }
+ },
+ {
+  "list": "sps",
+  "peak": "Pettit Peak",
+  "fill": [
+   "description",
+   "approach",
+   "descent",
+   "gain",
+   "distance",
+   "season",
+   "hazards"
+  ],
+  "row": {
+   "id": "ca_pettit_peak_standard_route",
+   "area_id": "ca_pettit_peak",
+   "name": "Standard route",
+   "grade": "Class 2",
+   "discipline": "scrambling",
+   "overview": null,
+   "description": null,
+   "approach": null,
+   "descent_text": null,
+   "season": null,
+   "best_season": null,
+   "hazards": null,
+   "gain_ft": null,
+   "dist_km": null,
+   "high_point_ft": null,
+   "waypoints": [],
+   "areas": {
+    "lat": 37.9856,
+    "lng": -119.4804,
+    "name": "Pettit Peak",
+    "elevation_ft": 10788
+   }
+  }
+ },
+ {
+  "list": "sps",
+  "peak": "Volunteer Peak",
+  "fill": [
+   "description",
+   "approach",
+   "descent",
+   "gain",
+   "distance",
+   "season",
+   "hazards"
+  ],
+  "row": {
+   "id": "ca_volunteer_peak_standard_route",
+   "area_id": "ca_volunteer_peak",
+   "name": "Standard route",
+   "grade": "Class 2",
+   "discipline": "scrambling",
+   "overview": null,
+   "description": null,
+   "approach": null,
+   "descent_text": null,
+   "season": null,
+   "best_season": null,
+   "hazards": null,
+   "gain_ft": null,
+   "dist_km": null,
+   "high_point_ft": null,
+   "waypoints": [],
+   "areas": {
+    "lat": 38.0061,
+    "lng": -119.4883,
+    "name": "Volunteer Peak",
+    "elevation_ft": 10481
+   }
+  }
+ },
+ {
+  "list": "sps",
+  "peak": "Piute Mountain",
+  "fill": [
+   "description",
+   "approach",
+   "descent",
+   "gain",
+   "distance",
+   "season",
+   "hazards"
+  ],
+  "row": {
+   "id": "ca_piute_mountain_northeast_ridge",
+   "area_id": "ca_piute_mountain",
+   "name": "Northeast Ridge",
+   "grade": "Class 2",
+   "discipline": "scrambling",
+   "overview": null,
+   "description": "A very long trip from Twin Lakes through Kerrick Canyon to Seavey Pass, then up the northeast ridge to a saddle. Drop to a north-side cirque and take a talus chute to the north ridge.",
+   "approach": null,
+   "descent_text": null,
+   "season": null,
+   "best_season": null,
+   "hazards": null,
+   "gain_ft": null,
+   "dist_km": null,
+   "high_point_ft": null,
+   "waypoints": [],
+   "areas": {
+    "lat": 38.0335,
+    "lng": -119.548,
+    "name": "Piute Mountain",
+    "elevation_ft": 10541
+   }
+  }
+ },
+ {
+  "list": "sps",
+  "peak": "Tower Peak",
+  "fill": [
+   "description",
+   "descent",
+   "season",
+   "hazards"
+  ],
+  "row": {
+   "id": "ca_northwest_chute",
+   "area_id": "ca_tower_peak",
+   "name": "Northwest Chute",
+   "grade": "3rd",
+   "discipline": "alpine",
+   "overview": null,
+   "description": null,
+   "approach": "Walk through Leavitt Meadows Campground, cross the West Walker River on the footbridge and follow the West Walker River Trail south past Lower and Upper Piute Meadows, turning at the signed junction in Upper Piute Meadows to climb to Tower Lake, about 13 to 15 miles in. From the lake go up gravel, talus and grass to Tower Pass, where the peak comes into view, cross the basin beyond, and climb slabs beside a lingering snow patch to the northwest ridge. Leave the ridge onto its west side and traverse into the Northwest Chute, scrambling class 3 to the summit, about 2,250 ft above the lake.",
+   "descent_text": null,
+   "season": null,
+   "best_season": null,
+   "hazards": null,
+   "gain_ft": null,
+   "dist_km": null,
+   "high_point_ft": null,
+   "waypoints": [
+    {
+     "name": "Leavitt Meadows Trailhead",
+     "type": "Trailhead",
+     "elev": 7135,
+     "distMi": 0
+    },
+    {
+     "name": "Tower Lake",
+     "type": "Campsite",
+     "elev": 9532,
+     "distMi": null
+    },
+    {
+     "name": "Tower Peak",
+     "type": "Summit",
+     "elev": 11755,
+     "distMi": 15.7
+    }
+   ],
+   "areas": {
+    "lat": 38.14518,
+    "lng": -119.54654,
+    "name": "Tower Peak",
+    "elevation_ft": null
+   }
+  }
+ },
+ {
+  "list": "sps",
+  "peak": "Black Hawk Mountain",
+  "fill": [
+   "description",
+   "approach",
+   "descent",
+   "gain",
+   "distance",
+   "season",
+   "hazards"
+  ],
+  "row": {
+   "id": "ca_black_hawk_mountain_via_summit_creek_and_mosquito_pass",
+   "area_id": "ca_black_hawk_mountain",
+   "name": "Via Summit Creek and Mosquito Pass",
+   "grade": "Class 2",
+   "discipline": "scrambling",
+   "overview": null,
+   "description": "Follow Summit Creek trail about 10 miles to Lunch Meadow, leave the trail before Mosquito Pass, and climb a drainage to the summit ridge.",
+   "approach": null,
+   "descent_text": null,
+   "season": null,
+   "best_season": null,
+   "hazards": null,
+   "gain_ft": null,
+   "dist_km": null,
+   "high_point_ft": null,
+   "waypoints": [],
+   "areas": {
+    "lat": 38.206,
+    "lng": -119.7089,
+    "name": "Black Hawk Mountain",
+    "elevation_ft": 10348
+   }
+  }
+ },
+ {
+  "list": "sps",
+  "peak": "Leavitt Peak",
+  "fill": [
+   "description",
+   "approach",
+   "descent",
+   "gain",
+   "distance",
+   "season",
+   "hazards"
+  ],
+  "row": {
+   "id": "ca_leavitt_peak_pacific_crest_trail_and_east_shoulder",
+   "area_id": "ca_leavitt_peak",
+   "name": "Pacific Crest Trail and East Shoulder",
+   "grade": "Class 1",
+   "discipline": "scrambling",
+   "overview": null,
+   "description": "Follow the PCT south from Sonora Pass, leave it at a notch on the ridge, and continue up the talus ridge to the broad summit area.",
+   "approach": null,
+   "descent_text": null,
+   "season": null,
+   "best_season": null,
+   "hazards": null,
+   "gain_ft": null,
+   "dist_km": null,
+   "high_point_ft": null,
+   "waypoints": [],
+   "areas": {
+    "lat": 38.2861,
+    "lng": -119.6511,
+    "name": "Leavitt Peak",
+    "elevation_ft": 11569
+   }
+  }
+ },
+ {
+  "list": "sps",
+  "peak": "Stanislaus Peak",
+  "fill": [
+   "approach",
+   "descent",
+   "gain",
+   "distance",
+   "season",
+   "hazards"
+  ],
+  "row": {
+   "id": "ca_stanislaus_peak_southeast_face_from_st_marys_pass",
+   "area_id": "ca_stanislaus_peak",
+   "name": "Southeast Face from St. Marys Pass",
+   "grade": "Class 1",
+   "discipline": "scrambling",
+   "overview": null,
+   "description": "Take the trail to St. Marys Pass, then north along the broad ridge until the trail fades at the saddle before the peak. Climb the south face of dirt, sand and scree, with some class 2 rock near the top.",
+   "approach": null,
+   "descent_text": null,
+   "season": null,
+   "best_season": null,
+   "hazards": null,
+   "gain_ft": null,
+   "dist_km": null,
+   "high_point_ft": null,
+   "waypoints": [],
+   "areas": {
+    "lat": 38.3841,
+    "lng": -119.6671,
+    "name": "Stanislaus Peak",
+    "elevation_ft": 11233
+   }
+  }
+ },
+ {
+  "list": "sps",
+  "peak": "Disaster Peak",
+  "fill": [
+   "description",
+   "approach",
+   "descent",
+   "gain",
+   "distance",
+   "season",
+   "hazards"
+  ],
+  "row": {
+   "id": "ca_disaster_peak_southwest_ridge",
+   "area_id": "ca_disaster_peak",
+   "name": "Southwest Ridge",
+   "grade": "Class 2",
+   "discipline": "scrambling",
+   "overview": null,
+   "description": "Follow the trail past two meadows to a faint side trail, then leave it near 8,800 ft and go cross-country over sage slopes to the southwest ridge. The summit hump is steep talus.",
+   "approach": null,
+   "descent_text": null,
+   "season": null,
+   "best_season": null,
+   "hazards": null,
+   "gain_ft": null,
+   "dist_km": null,
+   "high_point_ft": null,
+   "waypoints": [],
+   "areas": {
+    "lat": 38.4485,
+    "lng": -119.7336,
+    "name": "Disaster Peak",
+    "elevation_ft": 10047
+   }
+  }
+ },
+ {
+  "list": "sps",
+  "peak": "Highland Peak",
+  "fill": [
+   "description",
+   "approach",
+   "descent",
+   "gain",
+   "distance",
+   "season",
+   "hazards"
+  ],
+  "row": {
+   "id": "ca_highland_peak_via_noble_lake",
+   "area_id": "ca_highland_peak",
+   "name": "Via Noble Lake",
+   "grade": "Class 2",
+   "discipline": "scrambling",
+   "overview": null,
+   "description": "Follow the Pacific Crest Trail to Noble Lake, then a use trail to the saddle and class 2 sand to the summits.",
+   "approach": null,
+   "descent_text": null,
+   "season": null,
+   "best_season": null,
+   "hazards": null,
+   "gain_ft": null,
+   "dist_km": null,
+   "high_point_ft": null,
+   "waypoints": [],
+   "areas": {
+    "lat": 38.5438,
+    "lng": -119.7555,
+    "name": "Highland Peak",
+    "elevation_ft": 10935
+   }
+  }
+ },
+ {
+  "list": "sps",
+  "peak": "Mokelumne Peak",
+  "fill": [
+   "description",
+   "approach",
+   "descent",
+   "distance",
+   "season",
+   "hazards"
+  ],
+  "row": {
+   "id": "ca_mokelumne_peak_standard_route",
+   "area_id": "ca_mokelumne_peak",
+   "name": "Standard route",
+   "grade": "Class 2",
+   "discipline": "scrambling",
+   "overview": null,
+   "description": null,
+   "approach": null,
+   "descent_text": null,
+   "season": null,
+   "best_season": null,
+   "hazards": null,
+   "gain_ft": 3950,
+   "dist_km": null,
+   "high_point_ft": null,
+   "waypoints": [],
+   "areas": {
+    "lat": 38.5378,
+    "lng": -120.094,
+    "name": "Mokelumne Peak",
+    "elevation_ft": 9334
+   }
+  }
+ },
+ {
+  "list": "sps",
+  "peak": "Round Top",
+  "fill": [
+   "approach",
+   "descent",
+   "gain",
+   "distance",
+   "season",
+   "hazards"
+  ],
+  "row": {
+   "id": "ca_round_top_north_ridge",
+   "area_id": "ca_round_top",
+   "name": "North Ridge",
+   "grade": "Mod. Snow",
+   "discipline": "mountaineering",
+   "overview": "The route wanders across the low flanks of the peak, close to the East Ridge, then gains the sharp, obvious North Ridge. That ridge runs into a rock band on the East Buttress, which is where roped climbing starts. Climbers can hold left on the crest itself, or aim toward the Crescent Moon Couloir, then curve up and across bare, exposed rock. Either way you exit onto the East Buttress. The summit is reached along the ridge, and the descent is by the West Ridge. Snow cover matters: without it the loose rock band is likely unsafe.",
+   "description": null,
+   "approach": null,
+   "descent_text": null,
+   "season": null,
+   "best_season": null,
+   "hazards": null,
+   "gain_ft": null,
+   "dist_km": null,
+   "high_point_ft": null,
+   "waypoints": [],
+   "areas": {
+    "lat": 38.66362,
+    "lng": -120.00157,
+    "name": "Round Top",
+    "elevation_ft": null
+   }
+  }
+ }
+]

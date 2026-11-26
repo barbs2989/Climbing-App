@@ -1,0 +1,385 @@
+{
+ "co_longs_peak_keyhole_route": {
+  "area": "co_longs_peak",
+  "set": {
+   "approach": "Start at the Longs Peak Trailhead, at about 9,400 feet, reached by the ranger station road that leaves Colorado 7 and runs a mile west. The trail climbs through forest to Chasm Junction at roughly 11,550 feet, where you turn right and cross the northeast slope of Mt. Lady Washington toward Granite Pass. Past the junction the trail enters the Boulder Field near 12,400 feet and fades out, so follow cairns to the Keyhole notch. The technical part of the day begins there, on the far side of the ridge.",
+   "descent_text": "Reverse the route: down the Homestretch, across the Narrows, down the Trough, along the Ledges, back through the Keyhole and over the Boulder Field to the trail. Follow the painted bull's-eyes the whole way, since losing them means you are off the line. Most accidents on this route happen on the way down, when tired climbers relax after the summit, so keep the same focus you had going up and start back early enough to be below treeline before afternoon storms.",
+   "season": "Jul-Sep",
+   "hazards": [
+    "Afternoon lightning storms above treeline, so be below the Boulder Field by early afternoon",
+    "Fatal exposure on the Ledges and Narrows, where an unroped fall is likely deadly",
+    "Rockfall in the Trough from parties above, so wear a helmet",
+    "Loose rock and steep cliffs past the Keyhole, and snow or ice lingering in the Trough into midsummer",
+    "Fatigue-driven falls on the descent"
+   ]
+  },
+  "review": {
+   "sources": [
+    "https://www.14ers.com/route.php?route=long1",
+    "https://www.nps.gov/romo/planyourvisit/longspeak.htm",
+    "https://www.nps.gov/romo/planyourvisit/longs_peak_faq.htm"
+   ],
+   "confidence": "medium",
+   "notes": "Season is the mid-July to mid-September snow-free window; hazard list from route risk ratings and park safety pages. No distance set (not in fill)."
+  },
+  "ledger": []
+ },
+ "co_mount_wilson_southwest_slopes": {
+  "area": "co_mount_wilson",
+  "set": {
+   "overview": "The standard line up Mount Wilson, a 14,256-foot summit in the Lizard Head Wilderness of the San Juan Mountains. It climbs the long Kilpacker Basin, then picks a way through loose gullies and over a rock rib on Class 3 scrambling to a notch in the south ridge. A short, exposed final pitch of about 150 feet is the crux and can be held to Class 3 with careful line choice. Route-finding matters more than difficulty here.",
+   "approach": "Start at the Kilpacker trailhead, near 10,100 feet, on a 2WD dirt forest road that leaves Colorado 145 south of Lizard Head Pass. Follow the trail up the basin to about 12,600 feet, where the El Diente south slopes route turns off at small cairns and the trail ends. From there contour eastward across the basin's northern flank, then turn northeast up a drainage toward the peak, climbing to about 13,200 feet before heading for a large talus pile and moving onto rocks below the connecting ridge.",
+   "descent_text": "Retrace the ascent. The critical point is the rock rib you crossed between the two gullies: note where you crossed it on the way up and look for it before dropping far, and avoid the loose gully on the left. Go slowly on the final pitch, then expect a long walk out over talus and trail back down Kilpacker Basin.",
+   "dist_km": 10.06,
+   "season": "Jul-Sep",
+   "hazards": [
+    "Loose rock in the gullies and a traverse beneath cliffs near 13,800 feet, with rockfall from parties above",
+    "Missing the rock rib crossover, which leads into harder terrain",
+    "Exposed final 150-foot pitch",
+    "Afternoon thunderstorms in July and August",
+    "Snow lingering in the upper gullies early in the season"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "dist_km",
+    "value": 10.06,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/peaks/10016/mount-wilson?t=routes",
+      "retrieved_at": "2026-11-26",
+      "fact": "Southwest Slopes 12.5 mi round trip, halved to 6.25 mi one way"
+     },
+     {
+      "url": "https://thenextsummit.org/colorado-14ers/climbing-mount-wilson/",
+      "retrieved_at": "2026-11-26",
+      "fact": "about 12.5 miles round trip from Kilpacker, halved"
+     }
+    ]
+   }
+  ],
+  "review": {
+   "sources": [
+    "https://www.14ers.com/route.php?route=mwil6",
+    "https://www.14ers.com/peaks/10016/mount-wilson?t=routes",
+    "https://thenextsummit.org/colorado-14ers/climbing-mount-wilson/",
+    "https://www.cmc.org/education-adventure/trips/routes-places/mount-wilson"
+   ],
+   "confidence": "medium",
+   "notes": "Distance is round trip halved. Season Jul-Sep from one guide; a club page says Jun-Oct, so window is conservative."
+  }
+ },
+ "co_mount_shavano_east_slopes": {
+  "area": "co_mount_shavano",
+  "set": {
+   "approach": "Park at the Shavano and Tabeguache trailhead, near 9,750 feet, at the end of a rough forest road that climbs from US 285 near Poncha Springs through CR 140, CR 250 and FR 252. A high-clearance vehicle helps on the last rocky miles. From the lot turn right onto the Colorado Trail, then left onto the Mt. Shavano trail, which heads north and west through trees with log steps. Near 11,800 feet it swings southwest along the treeline, and near 12,650 feet a rock-stair section of newer trail zigzags up the slope.",
+   "descent_text": "Retrace the ascent to the defined trail. Above the saddle area do not drop directly south toward the low point between Shavano and Esprit Point; follow the boulders back the way you came. The long forest section at the bottom goes faster on the way down, but the talus is hard on tired legs, so poles help.",
+   "season": "Jun-Sep",
+   "hazards": [
+    "Afternoon thunderstorms above treeline, so be off the summit by midday",
+    "Rockfall and loose boulders on the rugged upper mountain",
+    "Wrong turn south toward the Esprit Point saddle on the descent",
+    "Snow lingering in the upper couloirs into mid-June"
+   ]
+  },
+  "review": {
+   "sources": [
+    "https://www.14ers.com/route.php?route=shav1",
+    "https://www.coloradounited.com/blog/mount-shavano-complete-guide"
+   ],
+   "confidence": "medium",
+   "notes": "Season from one guide."
+  },
+  "ledger": []
+ },
+ "co_mount_princeton_east_slopes": {
+  "area": "co_mount_princeton",
+  "set": {
+   "overview": "The standard route up Mount Princeton, a 14,197-foot peak in the Sawatch Range above Buena Vista. It follows the upper road to a trail, traverses a rocky basin, then climbs a steep, loose talus slope to the connecting ridge and the summit ridge. Class 2 and not technical, but long, strenuous and tiring on the loose footing.",
+   "approach": "Start at the lower Mt. Princeton Road trailhead at about 8,900 feet, reached from Buena Vista on County Roads 306, 321 and 322, or drive the rough upper road in a high-clearance vehicle to the radio towers near 10,800 feet to shorten the day. Walk the road past the east side of Tigger Peak to a trail near 11,800 feet, cross the north side of Tigger, then traverse west over rocky ground and gullies into the basin.",
+   "descent_text": "Reverse the route: down the summit ridge, across the traverse through the basin, and back to the road cut, then down the road to the towers or trailhead. Sliding scree makes the descent slower than the climb, so poles help. Rock movement can hide the trail in places, so follow it carefully.",
+   "season": "Jun-Sep",
+   "hazards": [
+    "Afternoon thunderstorms above treeline, so be off the summit by midday",
+    "Loose talus and scree on the steep upper slope",
+    "Snow in the gullies of the traverse in spring and early summer",
+    "Avalanche danger on the north side of Tigger Peak in winter"
+   ]
+  },
+  "review": {
+   "sources": [
+    "https://www.14ers.com/route.php?route=prin1",
+    "https://www.coloradounited.com/blog/mount-princeton-complete-guide"
+   ],
+   "confidence": "medium",
+   "notes": "Season Jun-Sep; one guide says late June."
+  },
+  "ledger": []
+ },
+ "co_mount_yale_southwest_slopes": {
+  "area": "co_mount_yale",
+  "set": {
+   "overview": "The standard route up Mount Yale, a 14,196-foot Class 2 summit in the Collegiate Peaks Wilderness. It follows a forest trail up Delaney Gulch, crosses an alpine basin and a rocky shoulder, then climbs steep talus to a saddle on the northwest ridge and follows the boulder-strewn summit ridge. Mostly a long steady walk with a rough final stretch.",
+   "approach": "Start at the Denny Creek trailhead at 9,900 feet, about 12 miles west of Buena Vista on paved County Road 306 toward Cottonwood Pass. Follow the broad trail north into forest, crossing Denny Creek on a log bridge about a mile in, and bear right at the junction near 1.3 miles for Mt. Yale rather than Hartenstein Lake. Continue up the Delaney Gulch drainage and past meadows toward treeline above 12,100 feet.",
+   "descent_text": "Reverse the route: down the talus ridge to the saddle at about 13,950 feet, then the shoulder and basin, and the forest trail back to Denny Creek. Plan three to four hours; the talus is hard on tired knees, and in the forest watch for the junction back toward the trailhead rather than the lake trail.",
+   "dist_km": 7.64,
+   "season": "Jun-Sep",
+   "hazards": [
+    "Afternoon thunderstorms above treeline, so be off the summit by midday",
+    "Loose, large talus on the final ridge",
+    "Early-season snow on the upper talus in June",
+    "No reliable water above treeline"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "dist_km",
+    "value": 7.64,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=yale1",
+      "retrieved_at": "2026-11-26",
+      "fact": "9.5 miles round trip, halved to 4.75 mi one way"
+     },
+     {
+      "url": "https://www.coloradounited.com/colorado-14ers/mount-yale",
+      "retrieved_at": "2026-11-26",
+      "fact": "9.5 miles round trip, halved"
+     }
+    ]
+   }
+  ],
+  "review": {
+   "sources": [
+    "https://www.14ers.com/route.php?route=yale1",
+    "https://www.coloradounited.com/colorado-14ers/mount-yale",
+    "https://fs.usda.gov/r02/psicc/recreation/mount-yale-fourteener"
+   ],
+   "confidence": "medium",
+   "notes": "Distance is round trip halved."
+  }
+ },
+ "co_north_ridge_of_kit_carson": {
+  "area": "co_kit_carson_peak",
+  "set": {
+   "overview": "A Class 4 line up the north ridge of Kit Carson Mountain in the Sangre de Cristo Range, a harder alternative to the standard Kit Carson Avenue route. From the Willow Lake basin it climbs a grassy-ledge system to the ridge, then follows a steep, exposed ridge to a final steep pitch onto the summit plateau. Serious exposure and a committing descent make it best for experienced scramblers who can climb unroped or who carry a rope.",
+   "approach": "Start at the Willow Creek trailhead at 8,850 feet, on the Forest Service road that leaves the end of South Crestone Road, about 2 miles from town. Follow the Willow Lake trail to the lake and pass along its north side. Continue up the valley beneath the cliff bands to the Outward Bound Couloir, climb the rocks on its west side, then take Class 3 grassy ledges to reach the north ridge.",
+   "descent_text": "The preferred way down is over Challenger Point and along Kit Carson Avenue back to Willow Lake. The Outward Bound Couloir is an option with the right gear, while retracing the north ridge would likely need at least one rappel.",
+   "dist_km": 9.17,
+   "season": "Jul-Oct",
+   "hazards": [
+    "High exposure along the Class 4 ridge",
+    "Rockfall, so wear a helmet",
+    "Route-finding on the grassy ledges below the ridge",
+    "Commitment: the easiest descent is the long way around, and downclimbing the ridge needs a rappel"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "dist_km",
+    "value": 9.17,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=kitc4",
+      "retrieved_at": "2026-11-26",
+      "fact": "11.4 miles round trip, halved to 5.7 mi one way"
+     },
+     {
+      "url": "https://www.cmc.org/education-adventure/trips/routes-places/kit-carson-and-challenger-point",
+      "retrieved_at": "2026-11-26",
+      "fact": "North Ridge listed at 11.4 miles, halved"
+     }
+    ]
+   }
+  ],
+  "review": {
+   "sources": [
+    "https://www.14ers.com/route.php?route=kitc4",
+    "https://www.cmc.org/education-adventure/trips/routes-places/kit-carson-and-challenger-point"
+   ],
+   "confidence": "medium",
+   "notes": "The two distance figures match exactly, possibly a shared origin. Distance is round trip halved. Season from club page."
+  }
+ },
+ "co_maroon_peak_south_ridge": {
+  "area": "co_maroon_peak",
+  "set": {
+   "approach": "Start at the Maroon Lake trailhead at 9,590 feet at the end of Maroon Creek Road above Aspen; summer parking is by reservation and the road is closed to private cars during the day. Walk past Maroon Lake onto the Crater Lake trail and, after about 1.75 miles, take the West Maroon Creek trail past Crater Lake. Continue south to a cairned junction near 10,400 feet, where the climbers' trail climbs the east slopes about 2,800 feet to the south ridge.",
+   "descent_text": "Retrace the ascent, and take your time because tiredness causes errors here. Do not try the gullies as shortcuts; if you lose the cairns, go back to the last point you were sure of. The descent from the summit to the notch near 13,250 feet is where parties most often wander off line.",
+   "dist_km": 9.66,
+   "season": "Jul-Sep",
+   "hazards": [
+    "Loose, rotten rock where holds and ledges break",
+    "Rockfall from parties above in the gullies, so wear a helmet",
+    "Extreme route-finding on the upper south ridge, especially descending",
+    "Afternoon thunderstorms with no quick escape from the ridge",
+    "Lingering snow and ice on north-facing slopes early and late in the season"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "dist_km",
+    "value": 9.66,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=maro1",
+      "retrieved_at": "2026-11-26",
+      "fact": "12 miles round trip, halved to 6 mi one way"
+     },
+     {
+      "url": "https://thenextsummit.org/colorado-14ers/climbing-maroon-peak/",
+      "retrieved_at": "2026-11-26",
+      "fact": "about 12 miles round trip, halved"
+     }
+    ]
+   }
+  ],
+  "review": {
+   "sources": [
+    "https://www.14ers.com/route.php?route=maro1",
+    "https://thenextsummit.org/colorado-14ers/climbing-maroon-peak/",
+    "https://www.cmc.org/education-adventure/trips/routes-places/maroon-peak"
+   ],
+   "confidence": "medium",
+   "notes": "Distance is round trip halved."
+  }
+ },
+ "co_tabeguache_peak_via_mount_shavano": {
+  "area": "co_tabeguache_peak",
+  "set": {
+   "overview": "The standard way up Tabeguache Peak, a 14,158-foot Class 2 summit in the Sawatch Range, climbs Mount Shavano first and then crosses its long northwest ridge to the saddle and up Tabeguache's east ridge. The terrain is stable talus with trail segments, but the day is long and the only way home is back over Shavano, so the return is the hard part.",
+   "approach": "Start at the Shavano and Tabeguache trailhead near 9,750 feet, reached from US 285 near Poncha Springs by County Road 140, County Road 250 and Forest Road 252, the last miles being rocky. Follow the Shavano East Slopes trail: onto the Colorado Trail, then the Mt. Shavano trail north and west through forest, then along the treeline and up the zigzags to Shavano's summit before dropping toward Tabeguache.",
+   "descent_text": "Return the same way: back up Tabeguache's east ridge side to the saddle, then re-climb Shavano's northwest ridge, and down the Shavano trail to the trailhead. Set a firm turnaround time at Shavano's summit and skip Tabeguache if storms build. Do not use the old Jennings Creek route to the west, which is closed.",
+   "gain_ft": 5600,
+   "dist_km": 9.25,
+   "season": "Jul-Sep",
+   "hazards": [
+    "Loose rock either side of the saddle, where most slips occur on the tired return",
+    "Afternoon thunderstorms above treeline with a long exposed ridge",
+    "No water on the ridge",
+    "Re-climbing Shavano at the end of the day when tired"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "gain_ft",
+    "value": 5600,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=tabe2",
+      "retrieved_at": "2026-11-26",
+      "fact": "5,600 ft total gain"
+     },
+     {
+      "url": "https://www.cmc.org/education-adventure/trips/routes-places/shavano-tabeguache",
+      "retrieved_at": "2026-11-26",
+      "fact": "5600 ft gain for the combination"
+     }
+    ]
+   },
+   {
+    "field": "dist_km",
+    "value": 9.25,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=tabe2",
+      "retrieved_at": "2026-11-26",
+      "fact": "12 miles round trip"
+     },
+     {
+      "url": "https://www.cmc.org/education-adventure/trips/routes-places/shavano-tabeguache",
+      "retrieved_at": "2026-11-26",
+      "fact": "11.5 miles round trip; halved is about 5.75 mi one way"
+     }
+    ]
+   }
+  ],
+  "review": {
+   "sources": [
+    "https://www.14ers.com/route.php?route=tabe2",
+    "https://www.cmc.org/education-adventure/trips/routes-places/shavano-tabeguache",
+    "https://www.coloradounited.com/colorado-14ers/tabeguache-peak"
+   ],
+   "confidence": "medium",
+   "notes": "Distance is round trip (11.5-12 mi) halved, set at 5.75 mi. Season from one guide; club page says year-round."
+  }
+ },
+ "co_mt_belford_mt_belford_falls": {
+  "area": "co_mt_belford",
+  "set": {
+   "overview": "A low-angle ice route in the Leadville area, WI2-3, on a stack of short flows below Mt. Belford. The first tier splits into three flows, each roughly 45 to 105 feet long at WI2+ to WI3, and above it come shorter WI2 steps and a final gully. Nothing is vertical, the site stays shaded and wet, and the ice is more about a cold day out than a hard number.",
+   "approach": "Drive Clear Creek Canyon Road (FR 390) west for about 5.7 miles from US 24 to a clearing. Drop into the river basin, taking care on pools with thin ice, then hike up and angle right to a rock outcrop 300 to 500 feet above. Move about 100 yards right to a drainage holding water or ice and follow its left side. About 800 feet up the ground opens to a wide band of blue ice. Allow roughly an hour; the trees are dense, so take bearings.",
+   "descent_text": "Rappel from the trees. Lower or rappel the upper tiers, downclimb the short second tier, traverse to the anchor above the center flow and rappel it. Bring extra slings and rap rings, since anchors are few, and a single 60 m rope is likely to reach the ground.",
+   "hazards": [
+    "Open water pools and thin ice at the base of the center flow and along the river",
+    "Hollow ice early in the season",
+    "Few fixed anchors, so bring slings and rap rings",
+    "Dense trees make the approach hard to follow"
+   ]
+  },
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/v/mt-belford-falls/105747610"
+   ],
+   "confidence": "low",
+   "notes": "Single page. Skipped gain, distance (no figures), season (not stated)."
+  },
+  "ledger": []
+ },
+ "co_ellingwood_ledges": {
+  "area": "co_crestone_needle",
+  "set": {
+   "overview": "A classic long alpine rock route on the east face of Crestone Needle in the Sangre de Cristo Range, rated 5.7 and Grade III. It begins with easy slabs and ledges, climbs the arete and continues on mostly third-class ground for about 1,500 feet, then tackles an upper headwall of three crack and chimney pitches at 5.6 to 5.7. A final third-class scramble leads to the 14,197-foot summit. A direct start adds about three pitches of 5.6 to 5.7 at the base.",
+   "descent_text": "Descend the standard Needle walk-up route. Follow the cairns southeast, go down a gully to the south, then traverse a ledge east to Broken Hand Pass and take the trail down to the lower lake. It is mostly third and fourth class down-climbing and the place where most route-finding errors happen, especially in poor visibility. Avoid the cliffed-out gully.",
+   "hazards": [
+    "Afternoon thunderstorms, so start before dawn and move fast",
+    "Route-finding errors on the descent to Broken Hand Pass, especially in poor visibility",
+    "Falling rock and snow debris on the final scramble when snow is melting",
+    "A steep early-season snowfield below the pass that may call for crampons",
+    "Old pitons and fixed nuts of uncertain quality on the headwall"
+   ]
+  },
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/v/110834118",
+    "https://stephabegg.com/?p=11874"
+   ],
+   "confidence": "medium",
+   "notes": "Skipped gain and distance: no figure for the climb from the trailhead was found, only a roughly 5-mile approach to the lower lake."
+  },
+  "ledger": []
+ },
+ "co_mt_blue_sky_formerly_mount_evans_mixed_couloirs_iration": {
+  "area": "co_mt_blue_sky_formerly_mount_evans_mixed_couloirs",
+  "set": {
+   "season": "Jun-Sep",
+   "hazards": [
+    "Summer thunderstorms and lightning on the exposed bowl",
+    "Avalanche terrain on the steep snow slopes of the approach",
+    "Road closure outside summer, which adds a long walk",
+    "Limited protection on the crux, relying on knife blades and Lost Arrows"
+   ]
+  },
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/107692292/iration",
+    "https://www.mountainproject.com/area/105747005/mt-blue-sky-formerly-mount-evans-mixed-couloirs"
+   ],
+   "confidence": "low",
+   "notes": "Season is the road-open window, not an ice window. Skipped gain and distance: only a 20-40 minute walk is stated."
+  },
+  "ledger": []
+ }
+}

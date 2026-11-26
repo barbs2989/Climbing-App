@@ -1,0 +1,460 @@
+[
+ {
+  "list": "sps",
+  "peak": "Cathedral Peak",
+  "fill": [
+   "approach",
+   "descent",
+   "season",
+   "hazards"
+  ],
+  "row": {
+   "id": "ca_southeast_buttress_2",
+   "area_id": "ca_southeast_slopes",
+   "name": "Southeast Buttress",
+   "grade": "5.7",
+   "discipline": "alpine",
+   "overview": "The Eichhorn pinnacle base is where the descent leads, staying high on climber's right over 3rd class with some exposure. Up the buttress, almost anywhere goes; its lowest middle point gives the most. A start higher and right loses vertical, with a poor first pitch. The lower three pitches grow harder (5.3 up to 5.6) and likely end in a chimney that jams with people and catches packs; left of it is smooth. Passing is easy for the competent.",
+   "description": null,
+   "approach": null,
+   "descent_text": null,
+   "season": null,
+   "best_season": null,
+   "hazards": null,
+   "gain_ft": null,
+   "dist_km": null,
+   "high_point_ft": null,
+   "waypoints": [
+    {
+     "name": "Cathedral Lakes Trailhead",
+     "type": "Trailhead",
+     "elev": 8588,
+     "distMi": 0
+    },
+    {
+     "name": "Cathedral Peak",
+     "type": "Summit",
+     "elev": 10911,
+     "distMi": 2.7
+    }
+   ],
+   "areas": {
+    "lat": 37.84736,
+    "lng": -119.4045,
+    "name": "Southeast Slopes",
+    "elevation_ft": null
+   }
+  }
+ },
+ {
+  "list": "sps",
+  "peak": "Vogelsang Peak",
+  "fill": [
+   "description",
+   "approach",
+   "descent",
+   "gain",
+   "distance",
+   "season",
+   "hazards"
+  ],
+  "row": {
+   "id": "ca_nightingale_arete",
+   "area_id": "ca_vogelsang_peak",
+   "name": "Nightingale Arete",
+   "grade": "5.9+",
+   "discipline": "alpine",
+   "overview": "The north ridge of Vogelsang Peak's western sub-peak.",
+   "description": null,
+   "approach": null,
+   "descent_text": null,
+   "season": null,
+   "best_season": null,
+   "hazards": null,
+   "gain_ft": null,
+   "dist_km": null,
+   "high_point_ft": null,
+   "waypoints": [],
+   "areas": {
+    "lat": 37.77711,
+    "lng": -119.34955,
+    "name": "Vogelsang Peak",
+    "elevation_ft": null
+   }
+  }
+ },
+ {
+  "list": "sps",
+  "peak": "Mount Florence",
+  "fill": [
+   "description",
+   "approach",
+   "descent",
+   "distance",
+   "season",
+   "hazards"
+  ],
+  "row": {
+   "id": "ca_mount_florence_standard_route",
+   "area_id": "ca_mount_florence",
+   "name": "Standard route",
+   "grade": "Class 2",
+   "discipline": "scrambling",
+   "overview": null,
+   "description": null,
+   "approach": null,
+   "descent_text": null,
+   "season": null,
+   "best_season": null,
+   "hazards": null,
+   "gain_ft": 5050,
+   "dist_km": null,
+   "high_point_ft": null,
+   "waypoints": [],
+   "areas": {
+    "lat": 37.7398,
+    "lng": -119.3161,
+    "name": "Mount Florence",
+    "elevation_ft": 12561
+   }
+  }
+ },
+ {
+  "list": "sps",
+  "peak": "Mount Maclure",
+  "fill": [
+   "description",
+   "approach",
+   "descent",
+   "distance",
+   "season",
+   "hazards"
+  ],
+  "row": {
+   "id": "ca_mount_maclure_standard_route",
+   "area_id": "ca_mount_maclure",
+   "name": "Standard route",
+   "grade": "Class 3",
+   "discipline": "scrambling",
+   "overview": null,
+   "description": null,
+   "approach": null,
+   "descent_text": null,
+   "season": null,
+   "best_season": null,
+   "hazards": null,
+   "gain_ft": 4280,
+   "dist_km": null,
+   "high_point_ft": null,
+   "waypoints": [],
+   "areas": {
+    "lat": 37.7436,
+    "lng": -119.2804,
+    "name": "Mount Maclure",
+    "elevation_ft": 12880
+   }
+  }
+ },
+ {
+  "list": "sps",
+  "peak": "Mount Lyell",
+  "fill": [
+   "description",
+   "approach",
+   "descent",
+   "gain",
+   "distance",
+   "season",
+   "hazards"
+  ],
+  "row": {
+   "id": "ca_lyell_glacier",
+   "area_id": "ca_mt_lyell",
+   "name": "Lyell Glacier",
+   "grade": "3rd",
+   "discipline": "alpine",
+   "overview": null,
+   "description": null,
+   "approach": null,
+   "descent_text": null,
+   "season": null,
+   "best_season": null,
+   "hazards": null,
+   "gain_ft": null,
+   "dist_km": null,
+   "high_point_ft": null,
+   "waypoints": [],
+   "areas": {
+    "lat": 37.7394,
+    "lng": -119.2716,
+    "name": "Mt. Lyell",
+    "elevation_ft": null
+   }
+  }
+ },
+ {
+  "list": "sps",
+  "peak": "Koip Peak",
+  "fill": [
+   "approach",
+   "descent",
+   "distance",
+   "season",
+   "hazards"
+  ],
+  "row": {
+   "id": "ca_koip_peak_via_parker_pass_and_koip_peak_pass",
+   "area_id": "ca_koip_peak",
+   "name": "Via Parker Pass and Koip Peak Pass",
+   "grade": "Class 1",
+   "discipline": "scrambling",
+   "overview": null,
+   "description": "Follow the Mono Pass trail to the Parker Pass junction, cross Parker Pass, and climb switchbacks on Parker Peak's north flank to Koip Peak Pass. From there, a short walk-up over talus leads to the summit.",
+   "approach": null,
+   "descent_text": null,
+   "season": null,
+   "best_season": null,
+   "hazards": null,
+   "gain_ft": 3005,
+   "dist_km": null,
+   "high_point_ft": null,
+   "waypoints": [],
+   "areas": {
+    "lat": 37.8135,
+    "lng": -119.2018,
+    "name": "Koip Peak",
+    "elevation_ft": 12962
+   }
+  }
+ },
+ {
+  "list": "sps",
+  "peak": "Mount Gibbs",
+  "fill": [
+   "description",
+   "approach",
+   "descent",
+   "distance",
+   "season",
+   "hazards"
+  ],
+  "row": {
+   "id": "ca_mount_gibbs_standard_route",
+   "area_id": "ca_mount_gibbs",
+   "name": "Standard route",
+   "grade": "Class 1",
+   "discipline": "scrambling",
+   "overview": null,
+   "description": null,
+   "approach": null,
+   "descent_text": null,
+   "season": null,
+   "best_season": null,
+   "hazards": null,
+   "gain_ft": 3195,
+   "dist_km": null,
+   "high_point_ft": null,
+   "waypoints": [],
+   "areas": {
+    "lat": 37.877,
+    "lng": -119.2117,
+    "name": "Mount Gibbs",
+    "elevation_ft": 12773
+   }
+  }
+ },
+ {
+  "list": "sps",
+  "peak": "Mount Dana",
+  "fill": [
+   "description",
+   "approach",
+   "descent",
+   "distance",
+   "season",
+   "hazards"
+  ],
+  "row": {
+   "id": "ca_mount_dana_2_standard_route",
+   "area_id": "ca_mount_dana_2",
+   "name": "Standard route",
+   "grade": "Class 1",
+   "discipline": "scrambling",
+   "overview": null,
+   "description": null,
+   "approach": null,
+   "descent_text": null,
+   "season": null,
+   "best_season": null,
+   "hazards": null,
+   "gain_ft": 3440,
+   "dist_km": null,
+   "high_point_ft": null,
+   "waypoints": [],
+   "areas": {
+    "lat": 37.89996,
+    "lng": -119.221,
+    "name": "Mount Dana",
+    "elevation_ft": null
+   }
+  }
+ },
+ {
+  "list": "sps",
+  "peak": "Mount Warren",
+  "fill": [
+   "description",
+   "approach",
+   "descent",
+   "gain",
+   "distance",
+   "season",
+   "hazards"
+  ],
+  "row": {
+   "id": "ca_mount_warren_warren_canyon",
+   "area_id": "ca_mount_warren",
+   "name": "Warren Canyon",
+   "grade": "Class 1",
+   "discipline": "scrambling",
+   "overview": null,
+   "description": "Follow the creek trail up Warren Canyon, then easy talus to the plateau and a short ridge to the top.",
+   "approach": null,
+   "descent_text": null,
+   "season": null,
+   "best_season": null,
+   "hazards": null,
+   "gain_ft": null,
+   "dist_km": null,
+   "high_point_ft": null,
+   "waypoints": [],
+   "areas": {
+    "lat": 37.9897,
+    "lng": -119.2234,
+    "name": "Mount Warren",
+    "elevation_ft": 12327
+   }
+  }
+ },
+ {
+  "list": "sps",
+  "peak": "Mount Conness",
+  "fill": [
+   "description",
+   "approach",
+   "descent",
+   "season",
+   "hazards"
+  ],
+  "row": {
+   "id": "ca_west_ridge_5",
+   "area_id": "ca_mt_conness",
+   "name": "West Ridge",
+   "grade": "5.6",
+   "discipline": "alpine",
+   "overview": "Fun backcountry ridge route. The best granite and climbing lie along the crest, so hold to it where possible. Much of it can be soloed or simul-climbed at easy to moderate 5th class.",
+   "description": null,
+   "approach": null,
+   "descent_text": null,
+   "season": null,
+   "best_season": null,
+   "hazards": null,
+   "gain_ft": null,
+   "dist_km": null,
+   "high_point_ft": null,
+   "waypoints": [
+    {
+     "name": "Saddlebag Lake Trailhead",
+     "type": "Trailhead",
+     "elev": 10100,
+     "distMi": 0
+    },
+    {
+     "name": "Mount Conness",
+     "type": "Summit",
+     "elev": 12594,
+     "distMi": 6.1
+    }
+   ],
+   "areas": {
+    "lat": 37.96688,
+    "lng": -119.32128,
+    "name": "Mt. Conness",
+    "elevation_ft": null
+   }
+  }
+ },
+ {
+  "list": "sps",
+  "peak": "North Peak",
+  "fill": [
+   "description",
+   "approach",
+   "descent",
+   "gain",
+   "distance",
+   "season",
+   "hazards"
+  ],
+  "row": {
+   "id": "ca_northwest_ridge",
+   "area_id": "ca_north_peak",
+   "name": "Northwest Ridge",
+   "grade": "Easy 5th",
+   "discipline": "alpine",
+   "overview": null,
+   "description": null,
+   "approach": null,
+   "descent_text": null,
+   "season": null,
+   "best_season": null,
+   "hazards": null,
+   "gain_ft": null,
+   "dist_km": null,
+   "high_point_ft": null,
+   "waypoints": [],
+   "areas": {
+    "lat": 37.98218,
+    "lng": -119.31462,
+    "name": "North Peak",
+    "elevation_ft": null
+   }
+  }
+ },
+ {
+  "list": "sps",
+  "peak": "Excelsior Mountain",
+  "fill": [
+   "description",
+   "approach",
+   "descent",
+   "distance",
+   "season",
+   "hazards"
+  ],
+  "row": {
+   "id": "ca_excelsior_mountain_standard_route",
+   "area_id": "ca_excelsior_mountain",
+   "name": "Standard route",
+   "grade": "Class 1",
+   "discipline": "scrambling",
+   "overview": null,
+   "description": null,
+   "approach": null,
+   "descent_text": null,
+   "season": null,
+   "best_season": null,
+   "hazards": null,
+   "gain_ft": 2995,
+   "dist_km": null,
+   "high_point_ft": null,
+   "waypoints": [],
+   "areas": {
+    "lat": 38.0246,
+    "lng": -119.3052,
+    "name": "Excelsior Mountain",
+    "elevation_ft": 12446
+   }
+  }
+ }
+]

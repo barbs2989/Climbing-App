@@ -312,6 +312,22 @@ Part of the guard notes — see [README.md](README.md) for the full index.
   Proved by re-pointing one id at a dead row: co14 and co_cent each dropped to "1 missing" naming it.
   `also` is the fix for containers: list ONLY the peak's own faces, never a neighbouring formation
   filed under it (Eldorado's Dorado Needle, McClellan's Nightmare Needles must not tick the peak).
+- **`audit:list-coverage` counted the Fifty Classics by TAG, capped at 1,000 rows (fixed 2026-11-26).**
+  It read "33 of 49" while the card showed 49: the card draws its rows from `FIFTY_CLASSICS` by route
+  id, and the tag read stops at PostgREST's 1,000-row cap. It now counts the roster ids that exist.
+- **`audit:list-pages`** (2026-11-26, owner note "do an audit on all lists to see if we have full pages
+  for all of them"): read-only. For each list peak it takes the peak's FULLEST route (a peak with one
+  full standard route and thin variations is not a gap), for the Fifty Classics each route, and
+  checks seven sections a party plans from: description (`overview`/`description` ≥ 200 chars),
+  approach (≥ 150 or `approach_variants`), descent (≥ 100), season, hazards, gain, and distance. It
+  also reports three it does not fill: gear, a trailhead pin, a summit pin. Gain and distance count as
+  present when a recorded track (`elev_pts`/`gpx`) or the pins' `distMi` supply them, as TRIP PROFILE
+  does. First run: 538 of 650 list pages thin, 1 with no route (Liberty Cap, then a Bulger). Measured
+  by the seven fillable sections: 3,171 of 4,550 missing before the 2026-11-26 research pass, 2,386
+  after its first 192 routes. A page rarely reads "full" because gear and the two pins are not filled
+  by that pass (pins need the ground checks in the waypoint skills).
+  `--json out.json` feeds `scripts/oneoff/list-pages-context.mjs`, which writes the research worklists in
+  `research-data/list-pages-2026-11-26/`.
 - **`check:list-summit-audit`** (2026-11-14): a peak list ticks only from a route that REACHES THE
   SUMMIT. The 2026-11-14 census found 1,496 routes able to tick a list peak, including a V1 boulder
   filed under Castleton Tower, crags on Pikes Peak and Mt Evans attached through `also`, and gulch ice

@@ -1,0 +1,461 @@
+[
+ {
+  "list": "sps",
+  "peak": "Emerald Peak",
+  "fill": [
+   "approach",
+   "descent",
+   "gain",
+   "distance",
+   "season",
+   "hazards"
+  ],
+  "row": {
+   "id": "ca_emerald_peak_west_gully_to_north_ridge",
+   "area_id": "ca_emerald_peak",
+   "name": "West Gully to North Ridge",
+   "grade": "Class 2",
+   "discipline": "scrambling",
+   "overview": null,
+   "description": "Reach the Evolution Meadow area via the John Muir Trail, then climb the broad west-face gully to the north ridge and follow it to the top. Rock is loose; exit the gully to the south after the second tower to avoid class 3.",
+   "approach": null,
+   "descent_text": null,
+   "season": null,
+   "best_season": null,
+   "hazards": null,
+   "gain_ft": null,
+   "dist_km": null,
+   "high_point_ft": null,
+   "waypoints": [],
+   "areas": {
+    "lat": 37.1653,
+    "lng": -118.7639,
+    "name": "Emerald Peak",
+    "elevation_ft": 12546
+   }
+  }
+ },
+ {
+  "list": "sps",
+  "peak": "Mount Henry",
+  "fill": [
+   "description",
+   "approach",
+   "descent",
+   "gain",
+   "distance",
+   "season",
+   "hazards"
+  ],
+  "row": {
+   "id": "ca_mount_henry_west_ridge",
+   "area_id": "ca_mount_henry",
+   "name": "West Ridge",
+   "grade": "Class 2",
+   "discipline": "scrambling",
+   "overview": null,
+   "description": "Follow the trail past Post Corral Creek to Fleming and Lower Indian lakes, then go cross-country up grassy slopes to the west ridge and along it to the top. About 2 miles and 2,000 ft past the lake.",
+   "approach": null,
+   "descent_text": null,
+   "season": null,
+   "best_season": null,
+   "hazards": null,
+   "gain_ft": null,
+   "dist_km": null,
+   "high_point_ft": null,
+   "waypoints": [],
+   "areas": {
+    "lat": 37.1832,
+    "lng": -118.8273,
+    "name": "Mount Henry",
+    "elevation_ft": 12196
+   }
+  }
+ },
+ {
+  "list": "sps",
+  "peak": "Mount Goethe",
+  "fill": [
+   "description",
+   "approach",
+   "descent",
+   "distance",
+   "season",
+   "hazards"
+  ],
+  "row": {
+   "id": "ca_mount_goethe_standard_route",
+   "area_id": "ca_mount_goethe",
+   "name": "Standard route",
+   "grade": "Class 1",
+   "discipline": "scrambling",
+   "overview": null,
+   "description": null,
+   "approach": null,
+   "descent_text": null,
+   "season": null,
+   "best_season": null,
+   "hazards": null,
+   "gain_ft": 6025,
+   "dist_km": null,
+   "high_point_ft": null,
+   "waypoints": [],
+   "areas": {
+    "lat": 37.20613,
+    "lng": -118.70253,
+    "name": "Mount Goethe",
+    "elevation_ft": null
+   }
+  }
+ },
+ {
+  "list": "sps",
+  "peak": "Mount Emerson",
+  "fill": [
+   "description",
+   "approach",
+   "descent",
+   "season",
+   "hazards"
+  ],
+  "row": {
+   "id": "ca_southeast_face_aka_the_waterfall_route",
+   "area_id": "ca_mt_emerson",
+   "name": "Southeast Face (aka the Waterfall Route)",
+   "grade": "5.4",
+   "discipline": "alpine",
+   "overview": null,
+   "description": null,
+   "approach": null,
+   "descent_text": null,
+   "season": null,
+   "best_season": null,
+   "hazards": null,
+   "gain_ft": null,
+   "dist_km": null,
+   "high_point_ft": null,
+   "waypoints": [
+    {
+     "name": "North Lake (Piute Pass) Trailhead",
+     "type": "Trailhead",
+     "elev": 9404,
+     "distMi": 0
+    },
+    {
+     "name": "Mount Emerson",
+     "type": "Summit",
+     "elev": 13204,
+     "distMi": 2.8
+    }
+   ],
+   "areas": {
+    "lat": 37.242,
+    "lng": -118.653,
+    "name": "Mt. Emerson",
+    "elevation_ft": null
+   }
+  }
+ },
+ {
+  "list": "sps",
+  "peak": "Mount Humphreys",
+  "fill": [
+   "description",
+   "approach",
+   "descent",
+   "season",
+   "hazards"
+  ],
+  "row": {
+   "id": "ca_southwest_slope_and_northwest_face",
+   "area_id": "ca_mt_humphreys",
+   "name": "Southwest Slope and Northwest Face",
+   "grade": "4th",
+   "discipline": "alpine",
+   "overview": null,
+   "description": null,
+   "approach": null,
+   "descent_text": null,
+   "season": null,
+   "best_season": null,
+   "hazards": null,
+   "gain_ft": null,
+   "dist_km": null,
+   "high_point_ft": null,
+   "waypoints": [
+    {
+     "name": "North Lake (Piute Pass) Trailhead",
+     "type": "Trailhead",
+     "elev": 9401,
+     "distMi": 0
+    },
+    {
+     "name": "Mount Humphreys",
+     "type": "Summit",
+     "elev": 13986,
+     "distMi": 9
+    }
+   ],
+   "areas": {
+    "lat": 37.27049,
+    "lng": -118.673,
+    "name": "Mt. Humphreys",
+    "elevation_ft": null
+   }
+  }
+ },
+ {
+  "list": "sps",
+  "peak": "Basin Mountain",
+  "fill": [
+   "description",
+   "approach",
+   "descent",
+   "gain",
+   "distance",
+   "season",
+   "hazards"
+  ],
+  "row": {
+   "id": "ca_east_couloir",
+   "area_id": "ca_basin_mountain",
+   "name": "East Couloir",
+   "grade": "4th",
+   "discipline": "alpine",
+   "overview": null,
+   "description": null,
+   "approach": null,
+   "descent_text": null,
+   "season": null,
+   "best_season": null,
+   "hazards": null,
+   "gain_ft": null,
+   "dist_km": null,
+   "high_point_ft": null,
+   "waypoints": [],
+   "areas": {
+    "lat": 37.29654,
+    "lng": -118.65904,
+    "name": "Basin Mountain",
+    "elevation_ft": null
+   }
+  }
+ },
+ {
+  "list": "sps",
+  "peak": "Four Gables",
+  "fill": [
+   "approach",
+   "descent",
+   "gain",
+   "distance",
+   "season",
+   "hazards"
+  ],
+  "row": {
+   "id": "ca_direct_east_face",
+   "area_id": "ca_four_gables_peak_12_801_peak_12_808",
+   "name": "Direct East Face",
+   "grade": "5.10+",
+   "discipline": "alpine",
+   "overview": "Ten pitches directly up the middle of Four Gables South (Peak 12,801'), on the east side. Rock is grainy and loose. Pitches 1-4 are easy and simul-climbed, about 500'. Sandy ledges and cracks form the 200' fifth (5.10-). Hardest is the 150' sixth pitch, 5.10+: corner crack, then a roof that is strenuous. The seventh, 5.10 and 100', passes stacked blocks that are serious: push softly, never pull, since the belayer stands directly below. Pitches 8-9, about 250' at 5.6, reach a cave; a tunnel then leads out for the 5.7 final pitch of 100'.",
+   "description": null,
+   "approach": null,
+   "descent_text": null,
+   "season": null,
+   "best_season": null,
+   "hazards": null,
+   "gain_ft": null,
+   "dist_km": null,
+   "high_point_ft": null,
+   "waypoints": [],
+   "areas": {
+    "lat": 37.30601,
+    "lng": -118.69538,
+    "name": "Four Gables, Peak 12,801' & Peak 12,808'",
+    "elevation_ft": null
+   }
+  }
+ },
+ {
+  "list": "sps",
+  "peak": "Mount Tom",
+  "fill": [
+   "description",
+   "approach",
+   "descent",
+   "distance",
+   "season",
+   "hazards"
+  ],
+  "row": {
+   "id": "ca_north_ridge_6",
+   "area_id": "ca_mt_tom",
+   "name": "North Ridge",
+   "grade": "3rd",
+   "discipline": "alpine",
+   "overview": null,
+   "description": null,
+   "approach": null,
+   "descent_text": null,
+   "season": null,
+   "best_season": null,
+   "hazards": null,
+   "gain_ft": 7700,
+   "dist_km": null,
+   "high_point_ft": null,
+   "waypoints": [],
+   "areas": {
+    "lat": 37.33904,
+    "lng": -118.65688,
+    "name": "Mt. Tom",
+    "elevation_ft": null
+   }
+  }
+ },
+ {
+  "list": "sps",
+  "peak": "Pilot Knob",
+  "fill": [
+   "description",
+   "approach",
+   "descent",
+   "gain",
+   "distance",
+   "season",
+   "hazards"
+  ],
+  "row": {
+   "id": "ca_pilot_knob_east_ridge_from_piute_pass",
+   "area_id": "ca_pilot_knob",
+   "name": "East Ridge from Piute Pass",
+   "grade": "Class 2",
+   "discipline": "scrambling",
+   "overview": null,
+   "description": "Hike over Piute Pass, cross Humphreys Basin to the saddle on the east ridge, then scramble boulders to the summit.",
+   "approach": null,
+   "descent_text": null,
+   "season": null,
+   "best_season": null,
+   "hazards": null,
+   "gain_ft": null,
+   "dist_km": null,
+   "high_point_ft": null,
+   "waypoints": [],
+   "areas": {
+    "lat": 37.2733,
+    "lng": -118.7573,
+    "name": "Pilot Knob",
+    "elevation_ft": 12245
+   }
+  }
+ },
+ {
+  "list": "sps",
+  "peak": "Gemini",
+  "fill": [
+   "description",
+   "approach",
+   "descent",
+   "distance",
+   "season",
+   "hazards"
+  ],
+  "row": {
+   "id": "ca_gemini_standard_route",
+   "area_id": "ca_gemini",
+   "name": "Standard route",
+   "grade": "Class 2",
+   "discipline": "scrambling",
+   "overview": null,
+   "description": null,
+   "approach": null,
+   "descent_text": null,
+   "season": null,
+   "best_season": null,
+   "hazards": null,
+   "gain_ft": 6380,
+   "dist_km": null,
+   "high_point_ft": null,
+   "waypoints": [],
+   "areas": {
+    "lat": 37.2977,
+    "lng": -118.8181,
+    "name": "Gemini",
+    "elevation_ft": 12880
+   }
+  }
+ },
+ {
+  "list": "sps",
+  "peak": "Seven Gables",
+  "fill": [
+   "approach",
+   "descent",
+   "gain",
+   "distance",
+   "season",
+   "hazards"
+  ],
+  "row": {
+   "id": "ca_east_buttress_3",
+   "area_id": "ca_seven_gables",
+   "name": "East Buttress",
+   "grade": "5.9+",
+   "discipline": "alpine",
+   "overview": "Ten pitches of mostly moderate climbing with some steeper crack cruxes, on generally good rock. Pitch 1 is an approach pitch (5.6, 30m) up a dike. Pitches 2-4 run 5.7 to 5.8 up flakes, corners and a V groove to the crest. Pitches 5 and 6 (both 5.9+) are steep cracks. Pitches 7 and 8 get past a small tower on loose ground. Pitch 9 (5.8) is a corner by the prow; pitch 10 (5.7) traverses left to the top.",
+   "description": null,
+   "approach": null,
+   "descent_text": null,
+   "season": null,
+   "best_season": null,
+   "hazards": null,
+   "gain_ft": null,
+   "dist_km": null,
+   "high_point_ft": null,
+   "waypoints": [],
+   "areas": {
+    "lat": 37.31155,
+    "lng": -118.83383,
+    "name": "Seven Gables",
+    "elevation_ft": null
+   }
+  }
+ },
+ {
+  "list": "sps",
+  "peak": "Mount Senger",
+  "fill": [
+   "approach",
+   "descent",
+   "gain",
+   "distance",
+   "season",
+   "hazards"
+  ],
+  "row": {
+   "id": "ca_mount_senger_via_sallie_keyes_lakes",
+   "area_id": "ca_mount_senger",
+   "name": "Via Sallie Keyes Lakes",
+   "grade": "Class 2",
+   "discipline": "scrambling",
+   "overview": null,
+   "description": "Hike the trail around Florence Lake and across the San Joaquin, take the cutoff use trail toward Selden Pass, and climb to Sallie Keyes Lakes. Continue over boulders and a bench below the summit; the final slopes are easier than they look.",
+   "approach": null,
+   "descent_text": null,
+   "season": null,
+   "best_season": null,
+   "hazards": null,
+   "gain_ft": null,
+   "dist_km": null,
+   "high_point_ft": null,
+   "waypoints": [],
+   "areas": {
+    "lat": 37.2777,
+    "lng": -118.8584,
+    "name": "Mount Senger",
+    "elevation_ft": 12286
+   }
+  }
+ }
+]
