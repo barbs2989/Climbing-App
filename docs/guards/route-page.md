@@ -1251,8 +1251,9 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     *Unknown Left* 5.10c/d / 5.10b — owner rule from 0271), *Black Sabbath* / *Black Slabbath*, *Lower Abyss* /
     *The Abyss*, the 33 UNSURE pairs in `verdict-*.json`, and ice-and-rock pairs of one name (*Centerfold*,
     *Percolator*, *Discord*: MP files both on the wall).
-  - **Also fixed:** two walls split across two of our areas (The Pit, MN: 6 rock climbs moved off the bouldering
-    copy; *The Lighthouse*, NV, filed on Spy Cliff), MP re-ordering X-World Wall II after our run, and 11 GAP
+  - **Also fixed:** three walls split across two of our areas (The Pit, MN: 6 rock climbs moved off the bouldering
+    copy; Glory Dome North Face, CA: 3 climbs filed under "Glory Dome Routes"; *The Lighthouse*, NV, filed on
+    Spy Cliff — `fix-next-door-walls-2026-11-26*.mjs`), the Praying Monk East Face order, MP re-ordering X-World Wall II after our run, and 11 GAP
     climbs (Emerald City KY, West Wall WA ×5, Upper Tier, West Face) — `scripts/pipeline/reorder-walls.mjs`,
     which refuses a plan that is not exactly the wall's placed climbs plus the named additions.
   - **Its denominator:** 170,334 climbs are checked against MP's own row; **1,883 placed climbs MP does not list**
