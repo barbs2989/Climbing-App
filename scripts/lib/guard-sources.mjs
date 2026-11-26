@@ -249,6 +249,7 @@ export const MOVED = {
     "src/components/PartnerRequirementsPanel.tsx",
   ],
   "ClimbMatch.jsx": [
+    "src/components/YearInClimbing.tsx",
     "src/components/CrewRequestsView.tsx",
     "src/components/CrewFriendsView.tsx",
     "src/components/CrewListView.tsx",
