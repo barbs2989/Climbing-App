@@ -1688,3 +1688,32 @@ rows. Its build script is gone; new reviews write the column.
     all-climbing range. It never reaches `dayFlags`, a flag level, a day-tab dot, a count or a start time,
     and uses no red or amber. `check:alpine-conditions` section 17 holds each of those. Do not add a
     default range or a preset here without a source that states one.
+
+## The score against the forecast, and against outside forecasts (2026-11-26)
+
+- **`npm run audit:conditions-forecast`** (`scripts/audit-conditions-vs-forecast.mjs`) runs the app's OWN crag
+  read and score (`fetchCragForecastMeasured` + `scoreForecast`, default prefs) and the forecast panel's read
+  (`fetchForecastRaw`, bucketed as `WeatherPanel` buckets it) at a sample of crags and regions from
+  `audits/season/systems-v2.json` (default 3 per state or province), then fetches the NWS gridpoint QPF and MET
+  Norway at the same point. Per crag-day: **C1** the score card and the panel disagree on the day's rain;
+  **C2** the panel's day label reads dry on a 0.10"+ day; **C3** a Good (4+) window both outside sources put rain in;
+  **C4** a rain cap whose causing rain neither outside source has. It also prints wet-day agreement (>= 0.04").
+  No database: coordinates only, so rock is unknown (36 h to dry) and sun is left out — neither moves a rain cap.
+- **Measured 2026-11-26, 166 crags in 59 states and provinces, 1,162 crag-days, before the fixes:** wet-day agreement
+  NWS 90.5%, MET 89.9% (the October audit's figure holds). C2 **192** (17% of days: a 0.46" day read "Overcast",
+  0.25" read "Fog", 0.12" read "Mostly clear" — the label was the most COMMON hourly code); C1 **12**, every one the
+  midnight hour (the rain of 11 PM-midnight) filed under the next day by the panel and the day it fell by the score;
+  C3 **0**; C4 **5**, all light model-only rain 2-5 days out a few hours earlier than NWS/MET (model timing, not score
+  logic). Fixed: `lib/wxDayLabel.js` labels a measurable-rain day by its rain (thunder first), and the panel files
+  the midnight value under the day before. **After, same 166 crags:** C1 0, C2 0, C3 0, C4 5 (light rain only our NBM blend has, 2-5 days out: Devil's Lake WI 0.07", SE Ohio 0.12" — model disagreement the score follows honestly); wet-day agreement NWS 90.9%, MET 89.9%.
+- **Not findings, do not re-derive:** a Good day with rain in its total is correct when the rain falls outside the
+  best window (Overlook Area MA: 0.75" from 5 PM, window 9 AM-noon, dry in all three sources); per-hour codes and
+  rain never disagreed (0 of 469 wet hours carried a dry code — NBM gives no `weather_code`, so codes come from the
+  default model, which still matched).
+- Same audit, alpine: a **scramble** had the wet-rock flag only for rain in the 48 h BEFORE the day, though the
+  October research table says scrambling leads with wet rock; the same-day showers flag now covers scrambles
+  ("downclimbing wet rock"), pinned in `check:alpine-conditions`.
+- **The NWS hourly graph link** (owner note 2026-11-26, "didn't work") opened NWS's Hourly Weather Graph PAGE, which
+  NWS lists as a known issue that "break[s] responsive design on smaller screens such as mobile devices" (962 px wide
+  in a phone window). The row now opens the graph IMAGE (`meteograms/Plotter.php`) once `fetchNwsZone` has the
+  point's office and zone; pinned in `check:conditions-score` section 8.
