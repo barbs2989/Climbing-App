@@ -350,7 +350,7 @@ Shared map plumbing is `lib/mapKit.jsx`. The route page is documented in `docs/f
 | `lib/areaBrowserShared.js` | `rowGrade`, `placeOf`, `haversineMi`, `ATYPE`, `DISCIPLINES` (shared by the area browser's components) |
 | `lib/mapKit.jsx` | `MAP_TILE_URLS`, `TILE_CREDIT`, `loadLeaflet`, `baseTileLayer`, `applyBaseLayer`, `BaseLayerToggle`, `ViewToggle`, `pinHtml`, `useFollowMe`, `acceptFix`, `searchPlaces` |
 | `lib/AreaPageSections.jsx` | `AboutCard`, `AreaFactsCard`, `ClimbsChart`, `GradeSpread`, `GradeSpreadDisclosure`, `gradeFinderFilters`, `areaSheet`, `MonthStrip`, `PendingAreaEdits`, `bucketLabel` |
-| `src/components/ManageAreasSheet.tsx` | `ManageAreasSheet`, Manage areas (pin and download a state; lifted from App, PR62) |
+| `src/components/ManageAreasSheet.tsx` | `ManageAreasSheet`, Manage areas (pin and download a state; lifted from App, PR62). No intro paragraph for a signed-in climber (owner 2026-11-25); a guest sees one line on what a download saves and that signing in pins it |
 | `src/components/RoutesTab.tsx` | `RoutesTab`, the Climbs tab body (the live `DbAreaBrowser` and the seed-path browser), lifted from App in PR61 |
 | `lib/AddArea.jsx` | default export `AddArea` (mounted by App from its addAreaParent state in `ClimbMatch.jsx`) |
 | `lib/AreaSuggestFix.jsx` | default export `AreaSuggestFix` (mounted by App from its areaFixOpen / areaFixArea / areaFixField state in `ClimbMatch.jsx`) |
