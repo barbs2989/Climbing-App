@@ -162,6 +162,24 @@ Shared map plumbing is `lib/mapKit.jsx`. The route page is documented in `docs/f
   A wall heading's grey line is `shownTrailOf`: only the levels BELOW the area being searched (the CSV keeps the whole trail). The search bar pins through `usePinnedBar`, which never pins a hidden bar (a route page covering the finder) and re-measures when the bar is shown.
   A PEAK heading adds the peak's elevation (`useAreaPeakElevationsByIds`: `areas.elevation_ft` of peak areas only, in the climber's units). The title (`ScreenHero quiet`) is a hidden <h1> on a phone and drawn on the website; on a phone the path bar puts *Area tree* beside the path, since its Back is drawn in the top bar.
   Grade ranges use `GRADE_SCALES`, where a d is +0.9 (5.10d = 10.9, 0464), so *5.10a–5.10d* is exactly the grade chart's 5.10 bar and no longer takes in a bare 5.11.
+  **One grade range per scale, all at once (0550, owner note 2026-11-26: "they want to climb 5.7 to 5.9 YDS and only want easy snow").**
+  The Grade section shows the first scale the ticked disciplines offer (`DISC_GRADE_SCALES`) as a From/To pair and the rest as
+  *Add another grade* chips (*+ Snow*, *+ WI / AI ice*, *+ Commitment (Grade I–VI)*…); each opened scale is its own row with *Remove*.
+  Ranges live in the filter state's `gr` (`{ yds: ["5.7", "5.9"], snow: ["", "Easy Snow"] }`, read through `gradeRangesOf`, which
+  still folds in the one-range `gSys`/`gLo`/`gHi` a chart bar or typed search hands over) and reach both RPCs as `grade_ranges`
+  (jsonb, one `[min, max]` per scale). The rule (`route_grade_fits` in SQL, `routeGradeFits` in `lib/grade.js` for the offline finder
+  and the area page's list): a climb must carry a grade on at least one scale searched, every searched scale it carries must be
+  inside its range, and a range with a MINIMUM must be carried. So a range left at *From: Any* is a cap — *up to Easy Snow* keeps
+  a climb with no snow grade, as long as it fits another range (64 of 4,313 alpine routes carry a snow grade, so the strict reading
+  would empty the owner's search). One range alone is the old rule exactly. Each range is its own chip.
+  Scales per discipline (measured on the 2026-11-26 static snapshot): **mountaineering** Class · Snow · WI/AI · Commitment, NO 5.x
+  (a roped rock grade makes a climb alpine; 0 of 419 rows carry one); **scrambling** Class only; **alpine** 5.x · Class · Snow ·
+  WI/AI · M · A/C · Commitment; **ice** WI/AI · M · 5.x · Snow; **mixed** M · 5.x · Snow; **aid** A/C · 5.x; rock disciplines 5.x, bouldering V.
+  The 5.x range reads `grade_num` on a 5.x row and **`rock_grade_num`** (new column, 0550) elsewhere: the free grade beside another
+  headline ("5.7 WI3 Easy Snow", an aid route whose `rock_grade` is 5.8), filled by `scripts/oneoff/backfill-rock-grade-num.mjs`
+  with `gradeNumFrom`, which also filled `grade_num` on ~280 Class rows that had none ("Class 2" scrambles every Class range dropped).
+  Re-run that script after importing ice, mixed, aid or alpine routes. Commitment reads `commitment_num(commitment)` (the roman numeral
+  the column opens with; "II-III" counts as III).
   The website header's typed search opens the finder through `jumpToFinderReq` with `initial` words and filters (there is no *Save search* any more; saved searches were removed 2026-11-05).
   **Since 0369 (2026-10-24)** it also filters by **Elevation gain** and **Round trip** (ranges), **Peak elevation** and
   **Prominence** (minimums), as AllTrails does gain and length and Peakbagger does elevation and prominence. Buckets are round

@@ -27,8 +27,10 @@ type RouteFinderPanelLen = [string, number | null, number | null, number | null,
 type RouteFinderPanelRange = [string, ...RouteFinderPanelPair[]];
 type RouteFinderPanelMin = [string, ...number[]];
 type RouteFinderPanelGrade = [string, number, number];
+/** One grade range per scale, by label: { yds: ["5.7", "5.9"], snow: ["", "Easy Snow"] }. "" is an open end. */
+export type RouteFinderPanelGradeRanges = Record<string, [string, string]>;
 /** One filter state: the sheet's draft (`df`) and the applied filters (`af`) share this shape. */
-export type RouteFinderPanelFilters = { discs: string[]; sortBy: string; minStars: number; minPitches: number; len: string; gSys: string; gLo: string; gHi: string; gain: string; trip: string; elev: string; prom: string } & Record<string, unknown>;
+export type RouteFinderPanelFilters = { discs: string[]; sortBy: string; minStars: number; minPitches: number; len: string; gSys: string; gLo: string; gHi: string; gr?: RouteFinderPanelGradeRanges; gain: string; trip: string; elev: string; prom: string } & Record<string, unknown>;
 type RouteFinderPanelRow = RouteRowRoute & { id: string | number; name: string; area_id: string };
 type RouteFinderPanelSaveFor = RouteFinderPanelRow & { wall?: string | null };
 type RouteFinderPanelAreaHit = { id: string; name: string; area_type: keyof typeof ATYPE; parent_name?: string | null; route_count: number };
@@ -142,9 +144,11 @@ export const GRADE_SCALES: Record<string, RouteFinderPanelGrade[]> = (() => {
   const ints = (pre: string, a: number, z: number) => { const o: RouteFinderPanelGrade[] = []; for (let i = a; i <= z; i++) o.push([pre + i, i, i]); return o; };
   // A/C: aid and clean-aid grades share one number (A2 and C2 are both 2), so one option covers both.
   const aid: RouteFinderPanelGrade[] = []; for (let i = 0; i <= 5; i++) aid.push(["A" + i + "/C" + i, i, i]);
-  return { yds, v: [["VB", -1, -1], ...ints("V", 0, 17)], class: ints("Class ", 1, 5), wi: ints("WI", 1, 7), m: ints("M", 1, 14), aid, snow: [["Easy Snow", 1, 1], ["Mod. Snow", 2, 2], ["Steep Snow", 3, 3]] };
+  return { yds, v: [["VB", -1, -1], ...ints("V", 0, 17)], class: ints("Class ", 1, 5), wi: ints("WI", 1, 7), m: ints("M", 1, 14), aid, snow: [["Easy Snow", 1, 1], ["Mod. Snow", 2, 2], ["Steep Snow", 3, 3]],
+    // The NCCS commitment grade (0550 commitment_num): how long and serious the day is, I to VI.
+    nccs: [["Grade I", 1, 1], ["Grade II", 2, 2], ["Grade III", 3, 3], ["Grade IV", 4, 4], ["Grade V", 5, 5], ["Grade VI", 6, 6]] };
 })();
-const SCALE_NAMES: Record<string, string> = { yds: "5.x rock", v: "V", class: "Class", wi: "WI ice", m: "M mixed", aid: "A/C aid", snow: "Snow" };
+const SCALE_NAMES: Record<string, string> = { yds: "5.x rock", v: "V", class: "Class", wi: "WI / AI ice", m: "M mixed", aid: "A/C aid", snow: "Snow", nccs: "Commitment (Grade I–VI)" };
 // AN ALLOW-LIST, each entry MEASURED rather than assumed (2026-09-24, all 205,543 routes —
 // scripts/oneoff/measure-grade-num-coverage-by-discipline.mjs and measure-typed-grade-columns.mjs).
 //   sport / trad / toprope / bouldering: 100% graded on one scale; scrambling 90.6% on Class.
@@ -158,19 +162,47 @@ const SCALE_NAMES: Record<string, string> = { yds: "5.x rock", v: "V", class: "C
 //     (an ice final also fills ice_grade_num, which the WI range reads). Both also offer Snow:
 //     Mountain Project's Easy / Mod. / Steep Snow, read from snow_grade_num (0246), which a route
 //     carries BESIDE its Class or 5.x grade — the owner wanted both (2026-10-04).
-export const DISC_GRADE_SCALES: Record<string, string[]> = { sport: ["yds"], trad: ["yds"], toprope: ["yds"], bouldering: ["v"], scrambling: ["class", "yds"], mountaineering: ["class", "snow", "yds", "wi"], alpine: ["yds", "class", "wi", "snow"], aid: ["aid", "yds"], mixed: ["m", "yds"], ice: ["wi", "yds"] };
-// The disciplines whose grade_system says which scale grade_num is on, so a range there passes it
-// as grade_sys: ice/mixed/aid since 0196, and the three mountain disciplines since their labels
-// were corrected (above). The rock disciplines keep #1811's behaviour — one scale each, no label
-// needed.
-const GRADE_SYS_FILTERED: Record<string, number> = { ice: 1, mixed: 1, aid: 1, mountaineering: 1, alpine: 1, scrambling: 1 };
+// EVERY SCALE A DISCIPLINE'S CLIMBS ARE GRADED ON, AT ONCE (owner note, 2026-11-26: "they want to climb 5.7 to 5.9 YDS
+// and only want easy snow grade ... when I clicked on the mountaineering discipline, we should not be offering a rock
+// rate"). Each scale is its own range, and a climb must fit all of them (0550 route_grade_fits). Measured on the
+// 2026-11-26 static snapshot, and checked against Mountain Project's grade types and 14ers.com's class scale:
+//   mountaineering: Class, Snow, WI/AI and the commitment grade. NO 5.x: a roped rock grade makes a climb alpine
+//     (the catalog's own rule, audit:mountaineering-rule; 0 of 419 mountaineering rows carry one).
+//   scrambling: Class only. A scramble is never roped, so it has no 5.x grade (4 stray rows of 565).
+//   alpine: 5.x, Class, Snow, WI/AI, M, A/C and commitment: 3,846 of 4,313 on 5.x, 85 with an aid grade,
+//     76 with an ice grade, 64 with snow, 22 with M, 452 with a commitment grade.
+//   ice: WI/AI, M (1,136 of 5,482 also carry one), the 5.x free grade, Snow (283).  mixed: M, 5.x, Snow (63).
+export const DISC_GRADE_SCALES: Record<string, string[]> = { sport: ["yds"], trad: ["yds"], toprope: ["yds"], bouldering: ["v"], scrambling: ["class"], mountaineering: ["class", "snow", "wi", "nccs"], alpine: ["yds", "class", "snow", "wi", "m", "aid", "nccs"], aid: ["aid", "yds"], mixed: ["m", "yds", "snow"], ice: ["wi", "m", "yds", "snow"] };
+// Which number each scale reads on a row (the label on 5.x, Class and V rows; the per-scale columns;
+// rock_grade_num for a 5.x free grade beside another headline) is 0550's route_grade_fits.
 // SEVERAL DISCIPLINES can be picked at once (0334), as Mountain Project ticks Trad, Sport and Toprope
 // together. A range is then offered on the scales EVERY picked discipline shares — sport + trad on
 // 5.x, ice + mixed on 5.x, bouldering + sport on none — because one number means one grade only
 // within one scale.
 const gradeScalesFor = (discs: string[] | null | undefined) => { const ls = (discs || []).map(d => DISC_GRADE_SCALES[d] || []); return ls.length ? ls[0].filter(s => ls.every(l => l.indexOf(s) >= 0)) : []; };
-const gradeScaleFor = (discs: string[] | null | undefined, sys: string) => { const ss = gradeScalesFor(discs); if (!ss.length) return null; return GRADE_SCALES[ss.indexOf(sys) >= 0 ? sys : ss[0]] || null; };
 const gradeSysFor = (discs: string[] | null | undefined, sys: string) => { const ss = gradeScalesFor(discs); return ss.indexOf(sys) >= 0 ? sys : (ss[0] || ""); };
+/** The grade ranges a filter state holds, on the scales its disciplines offer, each bound a label of that scale. The
+    one-range fields (gSys / gLo / gHi) are still read, because a chart bar, a typed search ("5.9 trad") and a saved
+    search hand the finder a single range that way. */
+export const gradeRangesOf = (f: RouteFinderPanelFilters): RouteFinderPanelGradeRanges => {
+  const ok = gradeScalesFor(f.discs), out: RouteFinderPanelGradeRanges = {};
+  const known = (s: string, l: string) => !!l && (GRADE_SCALES[s] || []).some(o => o[0] === l) ? l : "";
+  const gr = f.gr || {};
+  for (const s of ok) { const r = gr[s]; if (!r) continue; const lo = known(s, r[0]), hi = known(s, r[1]); if (lo || hi) out[s] = [lo, hi]; }
+  if ((f.gLo || f.gHi) && ok.length) { const s = gradeSysFor(f.discs, f.gSys), lo = known(s, f.gLo), hi = known(s, f.gHi); if (!out[s] && (lo || hi)) out[s] = [lo, hi]; }
+  return out;
+};
+/** A filter state with these ranges, written to `gr` alone so the two spellings never disagree. */
+const withRanges = (f: RouteFinderPanelFilters, gr: RouteFinderPanelGradeRanges): RouteFinderPanelFilters => ({ ...f, gr, gSys: "", gLo: "", gHi: "" });
+/** New disciplines keep only the ranges on scales they still offer. */
+const withDiscs = (f: RouteFinderPanelFilters, discs: string[]): RouteFinderPanelFilters => { const n = { ...f, discs }; return withRanges(n, gradeRangesOf({ ...f, discs })); };
+const hasGradeRange = (f: RouteFinderPanelFilters) => Object.keys(gradeRangesOf(f)).length > 0;
+/** The RPC's grade_ranges (0550): each label resolved to its number, [min, max], null for an open end. */
+const gradeRangesArg = (f: RouteFinderPanelFilters) => {
+  const rs = gradeRangesOf(f), out: Record<string, [number | null, number | null]> = {};
+  for (const s of Object.keys(rs)) { const sc = GRADE_SCALES[s] || [], lo = sc.find(o => o[0] === rs[s][0]), hi = sc.find(o => o[0] === rs[s][1]); out[s] = [lo ? lo[1] : null, hi ? hi[2] : null]; }
+  return Object.keys(out).length ? out : null;
+};
 // Wall order first (owner, 2026-10-21: "grouped by area such as crag or wall so they show up in
 // order"): each wall's climbs together, left to right, under the wall's name.
 const FINDER_SORTS = [["lr", "By wall, left → right"], ["rl", "By wall, right → left"], ["name", "Name A→Z"], ["name_desc", "Name Z→A"], ["stars_desc", "Most starred"]];
@@ -208,12 +240,10 @@ const gradeRangeLabel = (lo: string | null | undefined, hi: string | null | unde
 // `metric` decides which of a bucket's two bound sets is meant; the RPC always takes feet and km.
 export const finderArgs = (q: string, f: RouteFinderPanelFilters, metric: boolean) => {
   const len = LEN_BUCKETS.find(l => l[0] === f.len) || LEN_BUCKETS[0];
-  const sc = gradeScaleFor(f.discs, f.gSys);
-  const lo = sc && f.gLo ? sc.find(o => o[0] === f.gLo) : null, hi = sc && f.gHi ? sc.find(o => o[0] === f.gHi) : null;
   const g = findB(GAIN_BUCKETS, f.gain), t = findB(TRIP_BUCKETS, f.trip), e = findB(PEAK_ELEV_MINS, f.elev), p = findB(PROM_MINS, f.prom);
   const gr = g && g[1] ? (metric ? g[2].map(v => v == null ? null : Math.round(v * FT_PER_M)) : g[1]) : [null, null];
   const tr = t && t[1] ? (metric ? t[2] : t[1].map(v => v == null ? null : v * KM_PER_MI)) : [null, null];
-  return { q, disc: f.discs.join(","), gradeSys: (lo || hi) && f.discs.some(d => GRADE_SYS_FILTERED[d]) ? gradeSysFor(f.discs, f.gSys) : null, minGrade: lo ? lo[1] : null, maxGrade: hi ? hi[2] : null, minStars: f.minStars || null, minPitches: f.minPitches || null, minLengthM: len[3], maxLengthM: len[4], sortBy: sortFor(f.discs, f.sortBy),
+  return { q, disc: f.discs.join(","), gradeRanges: gradeRangesArg(f), minStars: f.minStars || null, minPitches: f.minPitches || null, minLengthM: len[3], maxLengthM: len[4], sortBy: sortFor(f.discs, f.sortBy),
     minGainFt: gr[0], maxGainFt: gr[1], minTripKm: tr[0], maxTripKm: tr[1],
     minElevFt: e && e[1] ? (metric ? Math.round(e[2] * FT_PER_M) : e[1]) : null, minPromFt: p && p[1] ? (metric ? Math.round(p[2] * FT_PER_M) : p[1]) : null };
 };
@@ -247,18 +277,17 @@ const narrowsAreas = (f: RouteFinderPanelFilters) => !!((f.elev && f.elev !== "a
 export const FINDER_DEF: RouteFinderPanelFilters = { discs: [], sortBy: "lr", minStars: 0, minPitches: 0, len: "any", gSys: "", gLo: "", gHi: "", gain: "any", trip: "any", elev: "any", prom: "any" };
 export const isFinderMetric = isMetric;
 /** How many filters are set (the order is not one). */
-export const finderFilterCount = (af: RouteFinderPanelFilters) => af.discs.length + (af.gLo || af.gHi ? 1 : 0) + (af.minStars ? 1 : 0) + (af.minPitches ? 1 : 0) + (af.len !== "any" ? 1 : 0) + ["gain", "trip", "elev", "prom"].filter(k => af[k] && af[k] !== "any").length;
+export const finderFilterCount = (af: RouteFinderPanelFilters) => af.discs.length + Object.keys(gradeRangesOf(af)).length + (af.minStars ? 1 : 0) + (af.minPitches ? 1 : 0) + (af.len !== "any" ? 1 : 0) + ["gain", "trip", "elev", "prom"].filter(k => af[k] && af[k] !== "any").length;
 /** One removable chip per applied filter. The applied-filter chip is a second label site, so length goes through
     lenLabel like the sheet's own chips, or the two disagree about units. Removing a discipline keeps the grade range
     only while the disciplines left share its scale. Shared by the Route finder and the area page's list. */
 export function finderChips(af: RouteFinderPanelFilters, setAf: (fn: (a: RouteFinderPanelFilters) => RouteFinderPanelFilters) => void, uElevN: RouteFinderPanelProps["uElevN"], uElevUnit: RouteFinderPanelProps["uElevUnit"]): RouteFinderPanelChip[] {
   const metric = isMetric(uElevUnit), eU = uElevUnit(), dU = metric ? "km" : "mi";
-  const gScale = gradeScaleFor(af.discs, af.gSys);
-  const gLoO = gScale && af.gLo ? gScale.find(o => o[0] === af.gLo) : null;
-  const gHiO = gScale && af.gHi ? gScale.find(o => o[0] === af.gHi) : null;
+  const ranges = gradeRangesOf(af);
   const out: RouteFinderPanelChip[] = [];
-  af.discs.forEach(d => out.push({ k: "d-" + d, label: discLabel(d), clear: () => setAf(a => { const discs = a.discs.filter(x => x !== d); const keep = discs.length && gradeSysFor(discs, a.gSys) === gradeSysFor(a.discs, a.gSys); return { ...a, discs, ...(keep ? {} : { gSys: "", gLo: "", gHi: "" }), sortBy: !discs.length && (a.sortBy === "grade_asc" || a.sortBy === "grade_desc") ? FINDER_DEF.sortBy : a.sortBy }; }) }));
-  if (gLoO || gHiO) out.push({ k: "g", label: gradeRangeLabel(gLoO && gLoO[0], gHiO && gHiO[0]), clear: () => setAf(a => ({ ...a, gLo: "", gHi: "" })) });
+  af.discs.forEach(d => out.push({ k: "d-" + d, label: discLabel(d), clear: () => setAf(a => { const discs = a.discs.filter(x => x !== d); return { ...withDiscs(a, discs), sortBy: !discs.length && (a.sortBy === "grade_asc" || a.sortBy === "grade_desc") ? FINDER_DEF.sortBy : a.sortBy }; }) }));
+  // One chip per scale's range, so "5.7–5.9" and "Up to Easy Snow" each come off on their own.
+  Object.keys(ranges).forEach(s => out.push({ k: "g-" + s, label: gradeRangeLabel(ranges[s][0], ranges[s][1]), clear: () => setAf(a => { return withRanges(a, Object.fromEntries(Object.entries(gradeRangesOf(a)).filter(e => e[0] !== s))); }) }));
   if (af.minStars) out.push({ k: "s", label: af.minStars + "★+", clear: () => setAf(a => ({ ...a, minStars: 0 })) });
   if (af.minPitches) out.push({ k: "p", label: af.minPitches + "+ pitches", clear: () => setAf(a => ({ ...a, minPitches: 0 })) });
   if (af.len !== "any") out.push({ k: "len", label: lenLabel(LEN_BUCKETS.find(l => l[0] === af.len) || LEN_BUCKETS[0], uElevN, uElevUnit), clear: () => setAf(a => ({ ...a, len: "any" })) });
@@ -315,11 +344,9 @@ export default function RouteFinderPanel({ scope, onOpen, onJumpToArea, C, uElev
   const [compact, setCompact] = useState(() => { try { return localStorage.getItem("cm_finder_compact") === "1"; } catch { return false; } });
   const toggleCompact = () => setCompact(c => { try { localStorage.setItem("cm_finder_compact", c ? "0" : "1"); } catch { /* private mode: the toggle still works for this visit */ } return !c; });
   const [all, setAll] = useState<RouteFinderPanelRow[]>([]);
-  // Resolved against the APPLIED discipline's scale, so a label saved under one discipline can
+  // Resolved against the APPLIED disciplines' scales, so a label saved under one discipline can
   // never be read on another's number line (a "V5" bound is not a 5.5 bound).
-  const gScale = gradeScaleFor(af.discs, af.gSys);
-  const gLoO = gScale && af.gLo ? gScale.find(o => o[0] === af.gLo) : null;
-  const gHiO = gScale && af.gHi ? gScale.find(o => o[0] === af.gHi) : null;
+  const gradeOn = hasGradeRange(af);
   const queryArgs = { ...finderArgs(qD, af, metric), page };
   const { data: batch, isLoading: lr0, error } = useSubtreeRoutes(needsArea ? null : loc.id, queryArgs);
   const { data: total } = useSubtreeRouteCount(needsArea ? null : loc.id, queryArgs);
@@ -491,7 +518,7 @@ export default function RouteFinderPanel({ scope, onOpen, onJumpToArea, C, uElev
       )}
       {/* A star minimum no longer empties a search (0334: unrated climbs stay in), so the
           explanation left is the grade range's: a route with no readable grade fails it. */}
-      {!isLoading && !error && !all.length && <div style={{ fontSize: 13, color: C.textMuted, textAlign: "center", padding: "26px 12px", lineHeight: 1.5 }}>{(gLoO || gHiO) ? "No routes match these filters. Routes without a readable grade are hidden while a grade range is set — try widening it or setting it back to Any." : ["gain", "trip", "elev", "prom"].some(k => af[k] && af[k] !== "any") ? "No routes match these filters. Climbs missing the figure are hidden." : "No routes match these filters."}</div>}
+      {!isLoading && !error && !all.length && <div style={{ fontSize: 13, color: C.textMuted, textAlign: "center", padding: "26px 12px", lineHeight: 1.5 }}>{gradeOn ? "No routes match these filters. A climb must fit every grade range set, and one with no grade on the scales you picked is hidden — try widening a range or setting it back to Any." : ["gain", "trip", "elev", "prom"].some(k => af[k] && af[k] !== "any") ? "No routes match these filters. Climbs missing the figure are hidden." : "No routes match these filters."}</div>}
       </>}
       </>}
 
@@ -594,36 +621,56 @@ export function FinderFilterSheet({ title, df, setDf, onClose, onApply, showLabe
             {lab("Discipline")}
             <div style={{ display: "flex", gap: 7, flexWrap: "wrap" }}>
               {/* Tick as many as you like; a range stays only while every ticked discipline shares its scale. */}
-              {DISCIPLINES.filter(d => d[0] && (!discOptions || discOptions.includes(d[0]) || df.discs.includes(d[0]))).map(d => chip(d[1], df.discs.includes(d[0]), () => setDf(x => { const discs = x.discs.includes(d[0]) ? x.discs.filter(v => v !== d[0]) : [...x.discs, d[0]]; const keep = discs.length && gradeSysFor(discs, x.gSys) === gradeSysFor(x.discs, x.gSys) && gradeScalesFor(discs).length; return { ...x, discs, ...(keep ? {} : { gSys: "", gLo: "", gHi: "" }), sortBy: !discs.length && (x.sortBy === "grade_asc" || x.sortBy === "grade_desc") ? FINDER_DEF.sortBy : x.sortBy }; })))}
+              {DISCIPLINES.filter(d => d[0] && (!discOptions || discOptions.includes(d[0]) || df.discs.includes(d[0]))).map(d => chip(d[1], df.discs.includes(d[0]), () => setDf(x => { const discs = x.discs.includes(d[0]) ? x.discs.filter(v => v !== d[0]) : [...x.discs, d[0]]; return { ...withDiscs(x, discs), sortBy: !discs.length && (x.sortBy === "grade_asc" || x.sortBy === "grade_desc") ? FINDER_DEF.sortBy : x.sortBy }; })))}
             </div>
             {df.discs.length > 1 ? <div style={{ fontSize: 11.5, color: C.textMuted, marginTop: 8 }}>{"Showing " + df.discs.map(discLabel).join(" + ") + " climbs."}</div> : null}
             {lab("Grade")}
             {(() => {
-              const sc = gradeScaleFor(df.discs, df.gSys);
+              const scales = gradeScalesFor(df.discs);
               if (!df.discs.length) return <div style={{ fontSize: 12.5, color: C.textMuted }}>Pick a discipline above to filter by grade — grades aren't comparable across climbing types.</div>;
-              if (!sc) return <div style={{ fontSize: 12.5, color: C.textMuted, lineHeight: 1.45 }}>{df.discs.map(discLabel).join(" and ") + " are graded on different scales, so a grade range can't cover them together. Pick disciplines that share a scale, such as Sport and Trad."}</div>;
-              const scales = gradeScalesFor(df.discs), curSys = gradeSysFor(df.discs, df.gSys);
-              const iLo = df.gLo ? sc.findIndex(o => o[0] === df.gLo) : -1, iHi = df.gHi ? sc.findIndex(o => o[0] === df.gHi) : -1;
-              const sel = (label: string, val: string, opts: RouteFinderPanelGrade[], set: (v: string) => void) => (
+              if (!scales.length) return <div style={{ fontSize: 12.5, color: C.textMuted, lineHeight: 1.45 }}>{df.discs.map(discLabel).join(" and ") + " are graded on different scales, so a grade range can't cover them together. Pick disciplines that share a scale, such as Sport and Trad."}</div>;
+              // ONE RANGE PER SCALE, all at once (0550): an alpine climber sets 5.7–5.9 on rock AND "up to Easy" on snow.
+              // The first scale is always shown; the others open from "+ Snow", "+ WI / AI ice"… so a sport climber
+              // still sees one From/To pair. A row opened and left at Any/Any is kept in `gr` as ["", ""] so it stays
+              // on screen, and gradeRangesOf ignores it.
+              const rs = gradeRangesOf(df), raw = df.gr || {};
+              const rows = scales.filter((s, i) => i === 0 || !!rs[s] || !!raw[s]), more = scales.filter(s => rows.indexOf(s) < 0);
+              const opened = (d: RouteFinderPanelFilters): RouteFinderPanelGradeRanges => { const o: RouteFinderPanelGradeRanges = {}, ok = gradeScalesFor(d.discs), r0 = d.gr || {}; for (const k of ok) if (r0[k]) o[k] = ["", ""]; return { ...o, ...gradeRangesOf(d) }; };
+              const setRange = (s: string, lo: string, hi: string) => setDf(d => { const o = opened(d); o[s] = [lo, hi]; return withRanges(d, o); });
+              const dropRow = (s: string) => setDf(d => { return withRanges(d, Object.fromEntries(Object.entries(opened(d)).filter(e => e[0] !== s))); });
+              const sel = (label: string, scale: string, val: string, opts: RouteFinderPanelGrade[], set: (v: string) => void) => (
                 <label style={{ flex: 1, display: "flex", flexDirection: "column", gap: 5, fontSize: 11.5, color: C.textMuted, fontWeight: 700 }}>{label}
-                  <select aria-label={label + " grade"} value={val} onChange={e => set(e.target.value)} style={{ padding: "10px 10px", borderRadius: 10, border: "1px solid " + (val ? C.blue : C.field), background: val ? C.blueBg : C.surface, color: val ? C.onSolid : C.text, fontSize: 14, fontWeight: 700 }}>
+                  <select aria-label={label + " " + (scales.length > 1 ? (SCALE_NAMES[scale] || scale) + " " : "") + "grade"} value={val} onChange={e => set(e.target.value)} style={{ padding: "10px 10px", borderRadius: 10, border: "1px solid " + (val ? C.blue : C.field), background: val ? C.blueBg : C.surface, color: val ? C.onSolid : C.text, fontSize: 14, fontWeight: 700 }}>
                     <option value="">Any</option>
                     {opts.map(o => <option key={o[0]} value={o[0]}>{o[0]}</option>)}
                   </select>
                 </label>
               );
+              const setN = Object.keys(rs).length;
               return (
                 <div>
-                  {/* Ice is graded on two scales in this catalog, so the range is set on one at a
-                      time; switching scale clears the bounds, which belong to the old one. */}
-                  {scales.length > 1 ? <div style={{ display: "flex", gap: 7, flexWrap: "wrap", marginBottom: 10 }}>{scales.map(s => chip(SCALE_NAMES[s] || s, curSys === s, () => setDf(d => ({ ...d, gSys: s, gLo: "", gHi: "" }))))}</div> : null}
-                  {/* Each end only offers grades on its own side of the other, so the pair can never
-                      describe an empty range. */}
-                  <div style={{ display: "flex", gap: 10 }}>
-                    {sel("From", df.gLo, iHi >= 0 ? sc.slice(0, iHi + 1) : sc, v => setDf(d => ({ ...d, gLo: v })))}
-                    {sel("To", df.gHi, iLo >= 0 ? sc.slice(iLo) : sc, v => setDf(d => ({ ...d, gHi: v })))}
-                  </div>
-                  {df.gLo || df.gHi ? <div style={{ fontSize: 11.5, color: C.textMuted, marginTop: 8 }}>{"Routes without a readable grade are hidden while a grade range is set." + (df.discs.some(d => GRADE_SYS_FILTERED[d]) ? " So are routes graded only on a different scale." : "")}</div> : null}
+                  {rows.map((s, i) => {
+                    const sc = GRADE_SCALES[s] || [], cur = rs[s] || ["", ""];
+                    const iLo = cur[0] ? sc.findIndex(o => o[0] === cur[0]) : -1, iHi = cur[1] ? sc.findIndex(o => o[0] === cur[1]) : -1;
+                    return <div key={s} style={{ marginTop: i ? 12 : 0 }}>
+                      {scales.length > 1 ? <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: 6 }}>
+                        <span style={{ fontSize: 12.5, fontWeight: 700, color: C.textSub }}>{SCALE_NAMES[s] || s}</span>
+                        {i ? <button onClick={() => dropRow(s)} aria-label={"Remove the " + (SCALE_NAMES[s] || s) + " grade"} style={{ ...BTN_LINK(C), fontSize: 12, color: C.textMuted, textDecoration: "underline", padding: "6px 4px" }}>Remove</button> : null}
+                      </div> : null}
+                      {/* Each end only offers grades on its own side of the other, so the pair can never
+                          describe an empty range. */}
+                      <div style={{ display: "flex", gap: 10 }}>
+                        {sel("From", s, cur[0], iHi >= 0 ? sc.slice(0, iHi + 1) : sc, v => setRange(s, v, cur[1]))}
+                        {sel("To", s, cur[1], iLo >= 0 ? sc.slice(iLo) : sc, v => setRange(s, cur[0], v))}
+                      </div>
+                    </div>;
+                  })}
+                  {more.length ? <div style={{ marginTop: 12 }}>
+                    <div style={{ fontSize: 11.5, color: C.textMuted, fontWeight: 700, marginBottom: 6 }}>Add another grade</div>
+                    <div style={{ display: "flex", gap: 7, flexWrap: "wrap" }}>{more.map(s => chip("+ " + (SCALE_NAMES[s] || s), false, () => setDf(d => { const o = opened(d); o[s] = ["", ""]; return withRanges(d, o); })))}</div>
+                  </div> : null}
+                  {setN > 1 ? <div style={{ fontSize: 11.5, color: C.textMuted, marginTop: 8, lineHeight: 1.45 }}>A climb must fit every grade you set. A grade left at From: Any is a limit, so “up to Easy Snow” also keeps climbs with no snow grade, as long as they fit another grade you set.</div>
+                    : setN === 1 ? <div style={{ fontSize: 11.5, color: C.textMuted, marginTop: 8, lineHeight: 1.45 }}>{"Routes with no " + (scales.length > 1 ? (SCALE_NAMES[Object.keys(rs)[0]] || "") + " " : "readable ") + "grade are hidden while a grade range is set."}</div> : null}
                 </div>
               );
             })()}
