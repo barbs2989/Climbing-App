@@ -462,7 +462,7 @@ await A.fetchAlpineClimate(48.7768, -121.8144, null).catch(() => null);
 globalThis.fetch = realFetch;
 eq("the season is read at the TOP of the climb: 10,781 ft asks the archive for 3,286 m, with snowfall", [/&elevation=3286&/.test(asked[0] || ""), /snowfall_sum/.test(asked[0] || "")], [true, true]);
 eq("...and with no height on file it asks for none, rather than inventing one", /elevation=/.test(asked[1] || "elevation="), false);
-eq("a snow route mounts the season section", /Season at the top/.test(glHtml), true);
+eq("a snow route mounts the season section", /Climate at the top/.test(glHtml), true);
 eq("a failed climate read says it says nothing about the season", /st\.error\) return[\s\S]{0,300}Couldn’t load the climate\. This says nothing about the season\./.test(card), true);
 eq("...and the season says where it was read and that it is a guide, not a forecast", /"Averages for " \+ m\.years \+ " at "[\s\S]{0,160}a guide to the season, not a forecast\./.test(card), true);
 // MODELS DISAGREE. One day, three models, every hour the same value per model.

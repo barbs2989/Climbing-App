@@ -81,7 +81,7 @@ if (!fieldScope("draws", scopeCtx({}, "sport")) || fieldScope("rack", scopeCtx({
 const PAGE_SIDE = [
   [/fieldScope\("outingShape",scopeCtx\(route,catOf\(route\)\)\)\?\(\(\)=>\{const _shp=recShapeOf\(route\)/, "the Plan tab's TRIP SHAPE row, shown exactly where the sheet offers Trip shape (RoutePlanTab)"],
   [/<Calculator route=\{route\}[^>]*onEditTiming=\{\(\)=>\{openFix\("timing"\);\}\}/, "the PUBLISHED TIMES pencil (RoutePlanTab → Calculator)"],
-  [/<ClimateSeasonCard route=\{route\} onEdit=\{\(\)=>\{openFix\("climate"\);\}\}\/>/, "the CLIMATE & SEASON pencil (RouteDetail)"],
+  [/<SeasonalGuidancePanel route=\{enrichRoute\(route\)\}[^>]*onEditClimate=\{\(\)=>\{openFix\("climate"\);\}\}\/>/, "the climate pencil in the one SEASON section (RouteDetail)"],
   [/<PartnerRequirementsPanel [^>]*onEdit=\{\(\)=>setAutoFix\(selRoute\.id\+"#partnerRequirements"\)\}\/>/, "the PARTNER REQUIREMENTS pencil (ClimbMatch)"],
   [/_hd\?\["Approach",effDistKm\(route\)/, "the boulder header's Approach cell, drawn only with a value (RouteDetail)"],
   [/protOf\(route\)\|\|\(cragOnly&&routeAscentFt\(route\)==null\)\?null:\["Gain"/, "the crag header's Gain cell, drawn only with a value (RouteDetail)"],

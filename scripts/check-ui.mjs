@@ -97,8 +97,8 @@ const FORBIDDEN = [
 const LANDMARKS = {
   "route:Overview": ["Overview"],
   "route:Plan": ["GETTING THERE", "APPROACH", "RACK"],
-  // ASPECT & SUN and SEASONAL GUIDANCE moved from Plan to the Conditions tab (owner, 2026-10-23).
-  "route:Conditions": ["ASPECT & SUN", "SEASONAL GUIDANCE"],
+  // ASPECT & SUN and SEASON (one section since 2026-11-25) moved from Plan to the Conditions tab (owner, 2026-10-23).
+  "route:Conditions": ["ASPECT & SUN", "SEASON"],
   // The Year in Climbing banner is the ONLY opener of that modal, and until #713 it was
   // gated on MY_CLIMBS.length — a constant DEMO_FILLERS empties — so the whole modal was
   // unreachable and nothing said so. check:dead-flag-gates catches a re-gating onto a dead
