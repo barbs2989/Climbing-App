@@ -1,0 +1,281 @@
+[
+ {
+  "id": "wa_jack_mountain_southwest_ridge",
+  "name": "Southwest Ridge",
+  "where": "North Cascades Core > Jack Mountain",
+  "discipline": "scrambling",
+  "grade": "Class 4",
+  "why": "no summit waypoint with a distance from the trailhead",
+  "distKmStored": null,
+  "outingShape": null,
+  "gainFt": null,
+  "waypoints": [
+   {
+    "i": 0,
+    "type": "Trailhead",
+    "name": "Panther Creek / East Bank Trailhead (SR 20, milepost 138)",
+    "elev": 1800,
+    "distMi": 0
+   },
+   {
+    "i": 1,
+    "type": "Junction",
+    "name": "Little Jack summit (ridge crest en route to Jack)",
+    "elev": 6745,
+    "distMi": 6
+   },
+   {
+    "i": 2,
+    "type": "Summit",
+    "name": "Jack Mountain summit",
+    "elev": 9075,
+    "distMi": null
+   }
+  ]
+ },
+ {
+  "id": "wa_kendall_peak_cliff_north_face",
+  "name": "Kendall Cliff – North Face",
+  "where": "Snoqualmie Pass Area > Kendall Peak",
+  "discipline": "ice",
+  "grade": "WI3+",
+  "why": "no summit waypoint with a distance from the trailhead",
+  "distKmStored": null,
+  "outingShape": null,
+  "gainFt": null,
+  "waypoints": [
+   {
+    "i": 0,
+    "type": "Trailhead",
+    "name": "PCT North Trailhead",
+    "elev": 3020,
+    "distMi": null
+   },
+   {
+    "i": 1,
+    "type": "base",
+    "name": "Kendall Cliff (North Face base)",
+    "elev": null,
+    "distMi": null
+   }
+  ]
+ },
+ {
+  "id": "wa_klawatti_peak_sw_buttress",
+  "name": "Klawatti Peak SW Buttress",
+  "where": "North Cascades Core > Klawatti Peak",
+  "discipline": "alpine",
+  "grade": "5.3 Easy Snow",
+  "why": "no summit waypoint with a distance from the trailhead",
+  "distKmStored": null,
+  "outingShape": null,
+  "gainFt": 6400,
+  "waypoints": [
+   {
+    "i": 0,
+    "type": "Trailhead",
+    "name": "Eldorado Creek trailhead (Cascade River Road mile 20)",
+    "elev": 2164,
+    "distMi": 0
+   },
+   {
+    "i": 1,
+    "type": "Campsite",
+    "name": "Eldorado (East Ridge) camp",
+    "elev": 7600,
+    "distMi": 5.5
+   },
+   {
+    "i": 2,
+    "type": "Junction",
+    "name": "Klawatti camp / col",
+    "elev": 7900,
+    "distMi": 6.9
+   },
+   {
+    "i": 3,
+    "type": "Summit",
+    "name": "Klawatti Peak",
+    "elev": 8485,
+    "distMi": null
+   }
+  ]
+ },
+ {
+  "id": "wa_labor_pains",
+  "name": "Labor Pains",
+  "where": "Liberty Bell Group > North Early Winters Spire",
+  "discipline": "alpine",
+  "grade": "5.11a",
+  "why": "no summit waypoint with a distance from the trailhead",
+  "distKmStored": null,
+  "outingShape": null,
+  "gainFt": 2400,
+  "waypoints": [
+   {
+    "i": 0,
+    "type": "Trailhead",
+    "name": "Blue Lake TH",
+    "elev": 5200,
+    "distMi": 0
+   },
+   {
+    "i": 1,
+    "type": "Junction",
+    "name": "Chockstone Route start (shared)",
+    "elev": 6900,
+    "distMi": null
+   },
+   {
+    "i": 2,
+    "type": "Summit",
+    "name": "North Early Winters Spire",
+    "elev": 7760,
+    "distMi": null
+   }
+  ]
+ },
+ {
+  "id": "wa_lemah_two_goatshead_spire",
+  "name": "Goatshead Spire",
+  "where": "Western Alpine Lakes > Lemah Two",
+  "discipline": "alpine",
+  "grade": "5.0",
+  "why": "no summit waypoint with a distance from the trailhead",
+  "distKmStored": 16.1,
+  "outingShape": null,
+  "gainFt": null,
+  "waypoints": [
+   {
+    "i": 0,
+    "type": "Trailhead",
+    "name": "Pete Lake Trailhead (Trail #1323, FR-4616)",
+    "elev": null,
+    "distMi": null
+   }
+  ]
+ },
+ {
+  "id": "wa_lichtenberg_mountain_west_face",
+  "name": "West Face (5.9+ rock route)",
+  "where": "Stevens Pass / Lake Valhalla > Lichtenberg Mountain",
+  "discipline": "alpine",
+  "grade": "5.9+",
+  "why": "no summit waypoint with a distance from the trailhead",
+  "distKmStored": 5.6,
+  "outingShape": null,
+  "gainFt": null,
+  "waypoints": [
+   {
+    "i": 0,
+    "type": "Trailhead",
+    "name": "Smithbrook Trailhead (FR 6700, Smithbrook Trail #1590)",
+    "elev": 4000,
+    "distMi": 0
+   },
+   {
+    "i": 1,
+    "type": "Junction",
+    "name": "Lake Valhalla — directly beneath the west face; scope the line from here",
+    "elev": 4836,
+    "distMi": 3.5
+   },
+   {
+    "i": 2,
+    "type": "Summit",
+    "name": "Lichtenberg Mountain summit",
+    "elev": 5844,
+    "distMi": null
+   }
+  ]
+ },
+ {
+  "id": "wa_lichtenberg_mountain_west_face_west_rib",
+  "name": "West Face - West Rib (Lichtenhorn / West Peak)",
+  "where": "Stevens Pass / Lake Valhalla > Lichtenberg Mountain",
+  "discipline": "mountaineering",
+  "grade": "Class 4",
+  "why": "no summit waypoint with a distance from the trailhead",
+  "distKmStored": 5.63,
+  "outingShape": null,
+  "gainFt": 2000,
+  "waypoints": [
+   {
+    "i": 0,
+    "type": "Trailhead",
+    "name": "Smithbrook Trailhead (FR 6700, Smithbrook Trail #1590)",
+    "elev": 4000,
+    "distMi": 0
+   },
+   {
+    "i": 1,
+    "type": "Junction",
+    "name": "Lichtenberg Boulders (granitic boulder field off the Valhalla trail)",
+    "elev": 4683,
+    "distMi": 2.5
+   },
+   {
+    "i": 2,
+    "type": "Junction",
+    "name": "Lake Valhalla (below the west face; camping, no campfires)",
+    "elev": 4836,
+    "distMi": 3.5
+   },
+   {
+    "i": 3,
+    "type": "Campsite",
+    "name": "Lake Valhalla",
+    "elev": 4838,
+    "distMi": null
+   },
+   {
+    "i": 4,
+    "type": "Water",
+    "name": "Smith Brook crossing",
+    "elev": 4975,
+    "distMi": null
+   },
+   {
+    "i": 5,
+    "type": "Summit",
+    "name": "Lichtenberg Mountain main summit (5,844 ft; the route tops out on the west peak at ~5,800 ft)",
+    "elev": 5844,
+    "distMi": null
+   },
+   {
+    "i": 6,
+    "type": "Junction",
+    "name": "Lichtenwasser Lake (Northeast Slope descent basin)",
+    "elev": 4708,
+    "distMi": null
+   }
+  ]
+ },
+ {
+  "id": "wa_mount_adams_northwest_ridge",
+  "name": "North Ridge (West Face)",
+  "where": "Southwest Cascades > Mount Adams",
+  "discipline": "alpine",
+  "grade": "AI2",
+  "why": "no summit waypoint with a distance from the trailhead",
+  "distKmStored": null,
+  "outingShape": null,
+  "gainFt": null,
+  "waypoints": [
+   {
+    "i": 0,
+    "type": "Trailhead",
+    "name": "Killen Creek Trailhead (Trail #113, FR-2329)",
+    "elev": null,
+    "distMi": null
+   },
+   {
+    "i": 1,
+    "type": "Water",
+    "name": "Killen Creek crossing",
+    "elev": 4424,
+    "distMi": null
+   }
+  ]
+ }
+]

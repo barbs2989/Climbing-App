@@ -1,0 +1,17 @@
+[
+ {"id": "adams_northwest_ridge", "waypoints": [], "unresolved": "No published trailhead-to-summit mileage found for the Killen Creek approach; only an informal GitHub note, not used."},
+ {"id": "ak_denali_west_buttress", "waypoints": [], "unresolved": "Search snippets give about 15.5-16.6 mi from the 7,200 ft landing to the summit, but the pages (NOVA, UKClimbing, SummitPost) could not be fetched, so nothing is filled."},
+ {"id": "ak_south_pioneer_peak_pioneer_ridge", "waypoints": [
+  {"i": 0, "name": "Pioneer Ridge Trailhead", "elev": 200, "sources": ["https://www.adn.com/outdoors/article/more-6000-feet-pioneer-peak-punishing-worthwhile-hike/2015/08/19/", "https://alaskahikesearch.com/hikes/pioneer-ridge/"], "note": "Both list the trailhead at 200 ft."},
+  {"i": 1, "name": "South Pioneer Peak summit", "distMi": 6.0, "sources": ["https://www.adn.com/outdoors/article/more-6000-feet-pioneer-peak-punishing-worthwhile-hike/2015/08/19/", "https://alaskahikesearch.com/hikes/pioneer-ridge/"], "note": "ADN: 4.5 mi to top of Pioneer Ridge Trail plus 1.5 mi to south summit = 6.0; Alaska Hike Search lists 6 mi. ADN gives the summit as 6,398 ft; the stored 6,299 differs, left unchanged."}
+ ], "unresolved": ""},
+ {"id": "bc_black_tusk_standard_route", "waypoints": [
+  {"i": 1, "name": "Black Tusk summit", "distMi": 8.8, "sources": ["https://besthikesbc.ca/hiking-the-black-tusk-in-whistler/"], "note": "Best Hikes BC lists 28.5 km round trip; halved = 14.25 km = 8.85 mi. Other guides in search results cite 27-29 km round trip."}
+ ], "unresolved": "Trailhead elevation not stated by a source read."},
+ {"id": "bc_brunswick_mountain_lions_bay_trail", "waypoints": [
+  {"i": 1, "name": "Brunswick Mountain summit", "distMi": 4.7, "sources": ["https://besthikesbc.ca/hiking-brunswick-mountain-near-lions-bay/"], "note": "Best Hikes BC lists 15.1 km as the out-and-back; halved = 7.55 km = 4.7 mi. Other guides list 14-15 km round trip."}
+ ], "unresolved": "Trailhead elevation not stated (near sea level only)."},
+ {"id": "bc_golden_hinde_phillips_ridge_route", "waypoints": [], "unresolved": "Only a GaiaGPS user track (15.9 mi one way, start unnamed) and trip-report totals; no published figure tied to the Westmin Mine trailhead, so left blank."},
+ {"id": "bc_mount_begbie_north_ridge", "waypoints": [], "unresolved": "No published one-way distance to the summit; round-trip figures range 12-22 km and are for different endpoints."},
+ {"id": "bc_mount_robson_emperor_ridge", "waypoints": [], "unresolved": "No published trail distance from Berg Lake Trailhead to the summit; Emperor Ridge is a climbing route with no stated mileage."}
+]

@@ -1,0 +1,218 @@
+[
+ {
+  "id": "co_mt_bierstadt_standard_route_west_slopes",
+  "name": "West Slopes",
+  "where": "Mt. Bierstadt > Standard Route",
+  "discipline": "scrambling",
+  "grade": "Class 2",
+  "why": "no one-way distance",
+  "distKmStored": null,
+  "outingShape": null,
+  "gainFt": 2850,
+  "waypoints": [
+   {
+    "i": 0,
+    "type": "Trailhead",
+    "name": "Guanella Pass Trailhead",
+    "elev": null,
+    "distMi": null
+   },
+   {
+    "i": 1,
+    "type": "Summit",
+    "name": "Standard Route summit",
+    "elev": null,
+    "distMi": null
+   }
+  ]
+ },
+ {
+  "id": "co_north_ridge_2",
+  "name": "North Ridge",
+  "where": "Glacier Gorge > Spearhead",
+  "discipline": "alpine",
+  "grade": "5.6",
+  "why": "no one-way distance",
+  "distKmStored": null,
+  "outingShape": null,
+  "gainFt": null,
+  "waypoints": [
+   {
+    "i": 0,
+    "type": "Trailhead",
+    "name": "Glacier Gorge trailhead",
+    "elev": null,
+    "distMi": null
+   },
+   {
+    "i": 1,
+    "type": "Summit",
+    "name": "Spearhead summit",
+    "elev": null,
+    "distMi": null
+   }
+  ]
+ },
+ {
+  "id": "co_pikes_peak_east_slopes",
+  "name": "East Slopes",
+  "where": "Pike's Peak > Pike's Peak Routes",
+  "discipline": "scrambling",
+  "grade": "Class 1",
+  "why": "no one-way distance",
+  "distKmStored": null,
+  "outingShape": null,
+  "gainFt": 7600,
+  "waypoints": [
+   {
+    "i": 0,
+    "type": "Trailhead",
+    "name": "Barr Trail (Manitou Springs)",
+    "elev": null,
+    "distMi": null
+   },
+   {
+    "i": 1,
+    "type": "Summit",
+    "name": "Pike's Peak Routes summit",
+    "elev": null,
+    "distMi": null
+   }
+  ]
+ },
+ {
+  "id": "co_quandary_peak_standard_route_east_ridge",
+  "name": "East Ridge",
+  "where": "Quandary Peak > Standard Route",
+  "discipline": "scrambling",
+  "grade": "Class 1",
+  "why": "no one-way distance",
+  "distKmStored": null,
+  "outingShape": null,
+  "gainFt": 3450,
+  "waypoints": [
+   {
+    "i": 0,
+    "type": "Trailhead",
+    "name": "Quandary Peak Trailhead",
+    "elev": null,
+    "distMi": null
+   },
+   {
+    "i": 1,
+    "type": "Summit",
+    "name": "Standard Route summit",
+    "elev": null,
+    "distMi": null
+   }
+  ]
+ },
+ {
+  "id": "co_rio_grande_pyramid_east_slope_ridge",
+  "name": "East Slope/Ridge",
+  "where": "San Juans > Rio Grande Pyramid",
+  "discipline": "scrambling",
+  "grade": "Class 2",
+  "why": "no one-way distance",
+  "distKmStored": null,
+  "outingShape": null,
+  "gainFt": null,
+  "waypoints": [
+   {
+    "i": 0,
+    "type": "Trailhead",
+    "name": "Thirty Mile Trailhead",
+    "elev": null,
+    "distMi": null
+   },
+   {
+    "i": 1,
+    "type": "Summit",
+    "name": "Rio Grande Pyramid summit",
+    "elev": 13825,
+    "distMi": null
+   }
+  ]
+ },
+ {
+  "id": "co_solo_flight",
+  "name": "Solo Flight",
+  "where": "Indian Peaks > Lone Eagle Peak",
+  "discipline": "alpine",
+  "grade": "4th",
+  "why": "no one-way distance",
+  "distKmStored": null,
+  "outingShape": null,
+  "gainFt": null,
+  "waypoints": [
+   {
+    "i": 0,
+    "type": "Trailhead",
+    "name": "Monarch Trailhead",
+    "elev": null,
+    "distMi": null
+   },
+   {
+    "i": 1,
+    "type": "Summit",
+    "name": "Lone Eagle Peak summit",
+    "elev": null,
+    "distMi": null
+   }
+  ]
+ },
+ {
+  "id": "co_south_ramp",
+  "name": "South Ramp",
+  "where": "Glacier Gorge > Arrowhead",
+  "discipline": "alpine",
+  "grade": "Easy 5th",
+  "why": "no one-way distance",
+  "distKmStored": null,
+  "outingShape": null,
+  "gainFt": null,
+  "waypoints": [
+   {
+    "i": 0,
+    "type": "Trailhead",
+    "name": "Bear Lake Trailhead",
+    "elev": 9475,
+    "distMi": 0
+   },
+   {
+    "i": 1,
+    "type": "Summit",
+    "name": "Arrowhead",
+    "elev": 12633,
+    "distMi": 5.5
+   }
+  ]
+ },
+ {
+  "id": "co_spiral_route",
+  "name": "Spiral Route",
+  "where": "Rocky Mountain National Park > Notchtop",
+  "discipline": "alpine",
+  "grade": "5.4",
+  "why": "no one-way distance",
+  "distKmStored": null,
+  "outingShape": null,
+  "gainFt": null,
+  "waypoints": [
+   {
+    "i": 0,
+    "type": "Trailhead",
+    "name": "Bear Lake Trailhead",
+    "elev": 9451,
+    "distMi": 0
+   },
+   {
+    "i": 1,
+    "type": "Summit",
+    "name": "Notchtop Mountain",
+    "elev": 12146,
+    "distMi": 4
+   }
+  ]
+ }
+]
