@@ -138,7 +138,7 @@ export default function Onboarding({onFinish,onSkip,onSignOut,onUsernameSaved,on
   const chip=(on)=>({padding:"10px 15px",minHeight:44,boxSizing:"border-box",borderRadius:12,border:"1.5px solid "+(on?C.blue:C.border),background:on?C.blueBg:C.surface,color:on?C.onSolid:C.textSub,fontSize:14,fontWeight:700,cursor:"pointer"});
   const primaryStyle=(ok)=>({width:wide?"auto":"100%",minWidth:wide?220:0,minHeight:50,padding:"13px 22px",boxSizing:"border-box",background:ok?C.actionSolid:C.border,boxShadow:ok?SOLID_LEDGE(C):"none",color:ok?C.onSolid:C.textSub,border:"none",borderRadius:12,fontSize:15.5,cursor:ok?"pointer":"default",fontWeight:800,display:"inline-flex",alignItems:"center",justifyContent:"center",gap:8});
   const linkBtn={background:"none",border:"none",color:C.textSub,fontSize:14,fontWeight:700,cursor:"pointer",padding:"12px 8px",minHeight:44};
-  const label={display:"block",fontSize:12,color:C.textMuted,fontWeight:800,marginBottom:8,letterSpacing:0.5,textTransform:"uppercase"};
+  const label={display:"block",fontSize:12,color:C.label,fontWeight:800,marginBottom:8,letterSpacing:0.5,textTransform:"uppercase"};
   const field={width:"100%",minHeight:48,padding:"12px 14px",borderRadius:12,border:"1px solid "+C.field,background:C.card,color:C.text,fontSize:16,boxSizing:"border-box",outline:"none"};
 
   /* The footer: ONE primary action, and "Skip for now" as a text link where the step is optional. A plain

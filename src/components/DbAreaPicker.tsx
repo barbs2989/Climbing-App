@@ -116,7 +116,7 @@ export default function DbAreaPicker({chain,onChain,sel,fld,seedAreaId,isLeaf,se
           {hitTotal>hits.length?<div style={{padding:"8px 12px",fontSize:11.5,color:C.textMuted}}>{"Showing the top "+hits.length+" of "+hitTotal+" — keep typing to narrow it."}</div>:null}</div>
         :(searchTokens(q).join("").length>=2&&!searchQ.isLoading)?<div style={{fontSize:12,color:C.textMuted,marginTop:5,lineHeight:1.45}}>{"Nothing in the catalog matches that. Browse the tree below, or add it as a new crag at the bottom."}</div>:null}
     </div>
-    <div style={{fontSize:11.5,fontWeight:700,color:C.textMuted,margin:"0 0 5px"}}>{"Or browse: country → state → area → crag or peak"}</div>
+    <div style={{fontSize:11.5,fontWeight:700,color:C.label,margin:"0 0 5px"}}>{"Or browse: country → state → area → crag or peak"}</div>
     {noCountryStep?null:<div style={{position:"relative",marginBottom:7}}>
       <select aria-label="Country" value={countryId} onChange={e=>{setCountryPick(e.target.value);setResolveId(null);onChain([]);setQ("");}} style={sel}>
         <option value="">{countriesQ.isLoading?"Loading countries…":"Choose a country"}</option>

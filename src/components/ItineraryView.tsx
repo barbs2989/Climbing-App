@@ -143,7 +143,7 @@ function DayCard({n,title,objective,figures,note,steps,schedule,onContribute,las
   const restDay=travel.length>0&&travel.every(v=>Number(v)===0);
   return <div style={{...CARD,position:"relative",padding:"11px 13px 12px",marginBottom:ROUTE_GAP}}>{/* THE ROPE: it leaves under the DAY knot and crosses the gap to the next day's knot; the card itself has no left stripe (owner 2026-11-25). */last?null:<span aria-hidden="true" data-rope="" style={{position:"absolute",left:37,bottom:-(ROUTE_GAP+1),width:2,height:ROUTE_GAP+1,background:C.brand}}/>}
     <div style={{display:"flex",alignItems:"flex-start",gap:9,marginBottom:objective?4:9}}><DayTag n={n}/>{title?<div style={{fontSize:14,fontWeight:700,lineHeight:1.3,minWidth:0}}>{title}</div>:null}</div>
-    {objective?<div style={{fontSize:12,color:C.textSub,lineHeight:1.45,marginBottom:9}}><span style={{color:C.textMuted,fontWeight:700}}>Goal: </span>{objective}</div>:null}
+    {objective?<div style={{fontSize:12,color:C.textSub,lineHeight:1.45,marginBottom:9}}><span style={{color:C.label,fontWeight:700}}>Goal: </span>{objective}</div>:null}
     {restDay?<div style={{fontSize:11.5,color:C.textMuted,background:C.surface,borderRadius:9,padding:"7px 10px",marginBottom:(note||steps)?9:0}}>No travel planned this day.</div>:f&&anyFig?<div style={{display:"flex",gap:4,marginBottom:(note||steps)?9:0}}>
       <Tile label="Gain" value={has(f.gainFt)?uElev(f.gainFt as number):null} color={C.green}/>
       <Tile label="Loss" value={has(f.lossFt)?uElev(f.lossFt as number):null} color={C.amber}/>
