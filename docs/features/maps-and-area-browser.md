@@ -324,7 +324,7 @@ Shared map plumbing is `lib/mapKit.jsx`. The route page is documented in `docs/f
 | `src/components/AreaGettingThere.tsx` | `AreaGettingThere`, an area's Getting there card (`flat` in the area sheet: words, then the map) |
 | `src/components/AreaActionRow.tsx` | `AreaActionRow`, the Route finder · Objectives · Map row: three equal 48px buttons in the palette's blue (dark `blueBg` fill, light-blue `blue` edge), not the `actionSolid` fill, which the warm palette made orange (owner 2026-11-24) |
 | `src/components/AreaChildrenList.tsx` | `AreaChildrenList`, every sub-area: on the website (1280px+) portalled by the area page into App's left panel (`#cm-left-panel`; map thumbnail — centred on the area, with an orange C pin ONLY on a crag or wall, never on a state, region, range or peak (owner 2026-11-18) — and ★ objectives, no grade bars), otherwise the phone section |
-| `src/components/AreaPhotoStrip.tsx` | `AreaPhotoStrip`, the thin photo strip: area photos and every route photo under the area (0411) |
+| `src/components/AreaPhotoStrip.tsx` | `AreaPhotoStrip`, the thin photo strip: area photos, every topo and every Photos-tab route photo under the area (0411, 0538); drawn only where `area_takes_photos` says the area is one place, through its `wrap` prop |
 | `src/components/AddHereFooter.tsx` | `AddHereFooter`, the add-a-climb footer |
 | `lib/nearbyPeaks.js` | `nearbyPeaksBounds`, `nearbyPeaksRows`, `nearbyPeaksLive` |
 | `lib/areaBrowserShared.js` | `rowGrade`, `placeOf`, `haversineMi`, `ATYPE`, `DISCIPLINES` (shared by the area browser's components) |
@@ -383,7 +383,9 @@ A place filed twice is refused at insert by `refuse_duplicate_area` (0216/0218, 
 Notes: `docs/guards/README.md`.
 
 ## 7. Last significant change
-Area lists, one line a row (owner 2026-11-25): the phone sub-area list drops its per-discipline line and keeps the total climbs, and the solid blue *View area* pill on every area-opening row becomes a plain right arrow (`AreaRowArrow`).
+Area photos only on a specific place, and route photos reach it (owner note 2026-11-25, 0538): `area_takes_photos(id)` decides which area pages draw the PHOTOS strip. A peak always does. A crag or region does when nothing under it sits more than 2 km from its own point; with no coordinates, when nothing sits two levels under it. A state, range, country or untyped row never does. So Lower Town Wall, Snow Creek Area and a crag show photos, and North Cascades, Leavenworth, Icicle Creek, Index and a state show none, not even the Add tile. `area_photos(id, limit)` answers `{ place, photos }`. It replaces 0411's `area_photo_feed` and now includes Photos-tab route photos (`contributions` of kind `photo`, pitch photos too) as well as topos, so a photo posted on a route page appears on its crag or peak page. The topos insert rule refuses an area photo where `area_takes_photos` is false. Mountain Project and OpenBeta show photos at every level, rolled up to the state. Here a general area shows none, as the owner asked, and its crags and peaks carry the photos.
+
+Before it — Area lists, one line a row (owner 2026-11-25): the phone sub-area list drops its per-discipline line and keeps the total climbs, and the solid blue *View area* pill on every area-opening row becomes a plain right arrow (`AreaRowArrow`).
 
 Before it — *View area* button (owner 2026-11-18): one solid blue `ViewAreaPill` ends every row that opens an area — sub-area list, All areas tree, area searches and the top search's Places — so opening an area no longer depends on knowing that the name is tappable.
 

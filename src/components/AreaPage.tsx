@@ -536,7 +536,9 @@ export default function AreaPage({ area: areaRow, onSignIn, uElev, uDistMi, book
         {classicsEl ? section(classicsEl) : null}
         {suggestedEl}
       </>}
-      {area.area_type !== "world" && area.area_type !== "country" ? section(<AreaPhotoStrip area={{ id: String(area.id), name: area.name }} C={C} signedIn={!!(myId || uid)} onSignIn={onSignIn} onOpenRoute={r => onOpenRoute(r as unknown as RouteRowRoute)} />) : null}
+      {/* PHOTOS only on a specific place (0538): the strip asks the database and draws its card through `section`
+          only when this area takes photos, so a general area (North Cascades, a state) shows no empty card. */}
+      {area.area_type !== "world" && area.area_type !== "country" ? <AreaPhotoStrip area={{ id: String(area.id), name: area.name }} C={C} signedIn={!!(myId || uid)} onSignIn={onSignIn} onOpenRoute={r => onOpenRoute(r as unknown as RouteRowRoute)} wrap={section} /> : null}
       {/* GETTING THERE -- the one drive control on the area page: the words first, then the map. ONLY where a
           destination is actionable: "Directions to Colorado" routes you to a state centroid. A crag, peak or
           wall has somewhere you can actually park (check:area-surfaces reads this gate). */}
