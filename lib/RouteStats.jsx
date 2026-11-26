@@ -99,6 +99,11 @@ export default function RouteStats({ routeId, cragOnly, onOpenPartners, live }) 
   const ticks = countRows(s.tick_counts), topTick = Math.max(1, ...ticks.map((t) => t[1]));
   const reasons = countRows(s.turnback_reasons), topReason = Math.max(1, ...reasons.map((t) => t[1]));
   const sumAns = Number(s.summit_answers) || 0, sums = Number(s.summits) || 0;
+  /* 0537: how the shown grade felt to the climbers who answered (UKC's grade-vote spread, theCrag's grade opinion).
+     Relative to the grade on the page, so it never reads as a vote that changed it. */
+  const gf = s.grade_feel && typeof s.grade_feel === "object" ? s.grade_feel : {};
+  const feel = [["Soft", Number(gf.soft) || 0], ["About right", Number(gf.right) || 0], ["Stiff", Number(gf.stiff) || 0]];
+  const feelN = feel.reduce((a, t) => a + t[1], 0), topFeel = Math.max(1, ...feel.map((t) => t[1]));
   const typical = [];
   if (sumAns) typical.push(["Reached the summit", n(sums) + " of " + plural(sumAns, "climb", "climbs") + " · " + Math.round(sums / sumAns * 100) + "%"]);
   if (s.c2c_median_min != null) typical.push(["Typical car-to-car", hrMin(s.c2c_median_min) + " · median of " + plural(s.c2c_n, "climb", "climbs")]);
@@ -124,6 +129,10 @@ export default function RouteStats({ routeId, cragOnly, onOpenPartners, live }) 
         <span style={{ flex: 1, height: 8, background: C.surface, borderRadius: 4, overflow: "hidden" }}><span style={{ display: "block", height: "100%", width: (stars[k - 1] / topStar * 100) + "%", background: C.amber, borderRadius: 4 }} /></span>
         <span style={{ width: 28, textAlign: "right", fontSize: 12, color: C.textSub, flexShrink: 0 }}>{n(stars[k - 1])}</span>
       </div>)}
+    </div> : null}
+    {feelN ? <div data-grade-feel="" style={{ marginTop: 12 }}>
+      <div style={{ ...SUB_LABEL, marginBottom: 5 }}>How the grade felt · {plural(feelN, "answer", "answers")}</div>
+      {feel.map(([k, v]) => <BarRow key={k} label={k} value={v} top={topFeel} color={C.amber} labelWidth={96} />)}
     </div> : null}
     {ticks.length ? <div style={{ marginTop: 12 }}>
       <div style={{ ...SUB_LABEL, marginBottom: 5 }}>How it was climbed · {plural(ticks.reduce((a, t) => a + t[1], 0), "climb", "climbs")}</div>
