@@ -1,0 +1,18 @@
+[
+ {"id": "ab_mount_athabasca_aa_col", "waypoints": [], "unresolved": "No trailhead waypoint in the list, so nothing to measure from."},
+ {"id": "ab_mount_birdwood_northwest_ridge", "waypoints": [
+  {"i": 1, "name": "Mount Birdwood summit", "distMi": 5.97,
+   "sources": ["https://fastestknowntime.com/route/mt-birdwood-nw-ridge"],
+   "note": "FKT out-and-back from Smutwood Peak trailhead is 19.23 km round trip, halved to 9.6 km = 5.97 mi. One source only; GPS-track based."}
+ ], "unresolved": "No second source or guidebook one-way figure found; trailhead elevation not found."},
+ {"id": "ab_mount_cline_southwest_ridge", "waypoints": [
+  {"i": 1, "name": "Mount Cline summit", "distMi": 7.74,
+   "sources": ["https://fastestknowntime.com/route/mt-cline-ab-canada", "https://www.theoutbound.com/canada/backpacking/hike-mount-cline"],
+   "note": "FKT 24.9 km round trip from Thompson Creek PRA via SW Ridge, halved = 12.45 km = 7.74 mi; Outbound lists 14.56 mi round trip (7.28 mi one way). Within ~6%."}
+ ], "unresolved": "Trailhead elevation not found."},
+ {"id": "ab_mount_lefroy_west_face", "waypoints": [], "unresolved": "Nothing read that states a distance from the Lake O'Hara Road parking to the summit; not searched in depth."},
+ {"id": "ab_mount_northover_south_ridge", "waypoints": [], "unresolved": "Only loop totals (32-35 km) found; no one-way figure from Interlakes lot to the summit."},
+ {"id": "ab_mount_smuts_south_ridge", "waypoints": [], "unresolved": "FKT gives 21.8 km car-to-car but does not name the trailhead, and a SummitPost page was blocked (403); left out rather than assume it is the Smutwood Peak trailhead."},
+ {"id": "ab_storelk_mountain_east_face", "waypoints": [], "unresolved": "Sources disagree (Spirko 5.2 km round trip on a different line, FKT 9.4 km with unnamed trailhead); no clear Highwood Pass figure."},
+ {"id": "adams_avalanche_glacier", "waypoints": [], "unresolved": "No published trail distance from a trailhead to Morrison Creek Campground or the creek crossing found, and no trailhead waypoint present."}
+]

@@ -1,0 +1,316 @@
+[
+ {
+  "id": "wa_southeast_face",
+  "name": "Southeast Face",
+  "where": "Boston Basin > Sharkfin Tower",
+  "discipline": "alpine",
+  "grade": "5.10-",
+  "why": "no summit waypoint with a distance from the trailhead",
+  "distKmStored": 9.3,
+  "outingShape": null,
+  "gainFt": 4870,
+  "waypoints": [
+   {
+    "i": 0,
+    "type": "Trailhead",
+    "name": "Boston Basin Trailhead (Cascade River Road)",
+    "elev": 3200,
+    "distMi": 0
+   },
+   {
+    "i": 1,
+    "type": "Campsite",
+    "name": "Boston Basin lower camp",
+    "elev": 5300,
+    "distMi": null
+   },
+   {
+    "i": 2,
+    "type": "Campsite",
+    "name": "Boston Basin upper (high) camp",
+    "elev": 6400,
+    "distMi": null
+   },
+   {
+    "i": 3,
+    "type": "Route",
+    "name": "Sharkfin Tower Southeast Face",
+    "elev": 7950,
+    "distMi": null
+   },
+   {
+    "i": 4,
+    "type": "Summit",
+    "name": "Sharkfin Tower summit",
+    "elev": 8120,
+    "distMi": 0
+   }
+  ]
+ },
+ {
+  "id": "wa_spider_mountain_north_face",
+  "name": "North Face (Kloke-Tindall Route)",
+  "where": "North Cascades Core > Spider Mountain",
+  "discipline": "mountaineering",
+  "grade": "Class 3",
+  "why": "no summit waypoint with a distance from the trailhead",
+  "distKmStored": null,
+  "outingShape": null,
+  "gainFt": null,
+  "waypoints": [
+   {
+    "i": 0,
+    "type": "Trailhead",
+    "name": "Cascade Pass Trailhead (Cascade River Road)",
+    "elev": 3650,
+    "distMi": null
+   },
+   {
+    "i": 1,
+    "type": "Junction",
+    "name": "Cascade Pass",
+    "elev": 5393,
+    "distMi": 3.7
+   },
+   {
+    "i": 2,
+    "type": "Junction",
+    "name": "Cache Col",
+    "elev": 6969,
+    "distMi": 5.2
+   },
+   {
+    "i": 3,
+    "type": "Campsite",
+    "name": "Kool-Aid Lake",
+    "elev": 6120,
+    "distMi": 6
+   },
+   {
+    "i": 4,
+    "type": "Junction",
+    "name": "Art's Knoll",
+    "elev": 7231,
+    "distMi": 6.5
+   },
+   {
+    "i": 5,
+    "type": "Summit",
+    "name": "Spider Mountain summit",
+    "elev": 8317,
+    "distMi": null
+   }
+  ]
+ },
+ {
+  "id": "wa_storm_king_southwest_scramble",
+  "name": "Southwest Scramble",
+  "where": "North Cascades Core > Storm King",
+  "discipline": "scrambling",
+  "grade": "Class 4",
+  "why": "no summit waypoint with a distance from the trailhead",
+  "distKmStored": null,
+  "outingShape": null,
+  "gainFt": 6800,
+  "waypoints": [
+   {
+    "i": 0,
+    "type": "Trailhead",
+    "name": "Colonial Creek Campground Trailhead",
+    "elev": 1200,
+    "distMi": null
+   },
+   {
+    "i": 1,
+    "type": "Campsite",
+    "name": "Neve Camp",
+    "elev": 1350,
+    "distMi": null
+   },
+   {
+    "i": 2,
+    "type": "Campsite",
+    "name": "Skagit Queen Camp",
+    "elev": 3089,
+    "distMi": 13.8
+   },
+   {
+    "i": 3,
+    "type": "Campsite",
+    "name": "Junction Camp",
+    "elev": 3200,
+    "distMi": null
+   },
+   {
+    "i": 4,
+    "type": "Campsite",
+    "name": "Five Mile Camp, Park Creek trail",
+    "elev": 3921,
+    "distMi": null
+   },
+   {
+    "i": 5,
+    "type": "Campsite",
+    "name": "Thunder Basin Hiker Camp",
+    "elev": 5108,
+    "distMi": null
+   },
+   {
+    "i": 6,
+    "type": "Junction",
+    "name": "Park Creek Pass",
+    "elev": 6100,
+    "distMi": 19.6
+   },
+   {
+    "i": 7,
+    "type": "Hazard",
+    "name": "North-side exposed ledge traverse",
+    "elev": 8400,
+    "distMi": null
+   },
+   {
+    "i": 8,
+    "type": "Hazard",
+    "name": "Summit crux crack",
+    "elev": 8550,
+    "distMi": null
+   },
+   {
+    "i": 9,
+    "type": "Summit",
+    "name": "Storm King summit",
+    "elev": 8520,
+    "distMi": null
+   }
+  ]
+ },
+ {
+  "id": "wa_summertime",
+  "name": "Summertime",
+  "where": "Washington Pass > Summertime Crag",
+  "discipline": "alpine",
+  "grade": "5.11c",
+  "why": "no summit waypoint with a distance from the trailhead",
+  "distKmStored": null,
+  "outingShape": null,
+  "gainFt": 500,
+  "waypoints": [
+   {
+    "i": 0,
+    "type": "Trailhead",
+    "name": "Highway 20 pullout near Mazama (below Spires Gully)",
+    "elev": null,
+    "distMi": 0
+   },
+   {
+    "i": 1,
+    "type": "Crag",
+    "name": "Summertime Crag",
+    "elev": 5231,
+    "distMi": null
+   }
+  ]
+ },
+ {
+  "id": "wa_superalpine",
+  "name": "Superalpine",
+  "where": "Henry M. Jackson Wilderness > Sloan Peak",
+  "discipline": "ice",
+  "grade": "WI4",
+  "why": "no summit waypoint with a distance from the trailhead",
+  "distKmStored": null,
+  "outingShape": null,
+  "gainFt": null,
+  "waypoints": [
+   {
+    "i": 0,
+    "type": "Trailhead",
+    "name": "Bedal Creek Trailhead",
+    "elev": 2800,
+    "distMi": 0
+   },
+   {
+    "i": 1,
+    "type": "Summit",
+    "name": "Sloan Peak summit",
+    "elev": 7835,
+    "distMi": null
+   }
+  ]
+ },
+ {
+  "id": "wa_swiss_peak_standard_route",
+  "name": "Standard Route (Southwest Face)",
+  "where": "Northern Pickets > Swiss Peak",
+  "discipline": "mountaineering",
+  "grade": "Class 3",
+  "why": "no summit waypoint with a distance from the trailhead",
+  "distKmStored": null,
+  "outingShape": null,
+  "gainFt": null,
+  "waypoints": [
+   {
+    "i": 0,
+    "type": "Trailhead",
+    "name": "Ross Dam Trailhead (SR 20, MP 134)",
+    "elev": null,
+    "distMi": null
+   }
+  ]
+ },
+ {
+  "id": "wa_the_exorcism_of_mark_hanna",
+  "name": "The Exorcism of Mark Hanna",
+  "where": "Washington Pass > M&M wall (AKA \"Supercave Wall\")",
+  "discipline": "alpine",
+  "grade": "5.11a",
+  "why": "no summit waypoint with a distance from the trailhead",
+  "distKmStored": null,
+  "outingShape": null,
+  "gainFt": 1900,
+  "waypoints": [
+   {
+    "i": 0,
+    "type": "Trailhead",
+    "name": "SR-20 pullout near milepost 166 (Washington Pass)",
+    "elev": 4360,
+    "distMi": 0
+   },
+   {
+    "i": 1,
+    "type": "Base",
+    "name": "M&M Wall (Supercave) base area",
+    "elev": 5895,
+    "distMi": null
+   }
+  ]
+ },
+ {
+  "id": "wa_the_l_h_route_free_variation",
+  "name": "The L & H Route (Free Variation)",
+  "where": "Washington Pass > M&M wall (AKA \"Supercave Wall\")",
+  "discipline": "alpine",
+  "grade": "5.12",
+  "why": "no summit waypoint with a distance from the trailhead",
+  "distKmStored": null,
+  "outingShape": null,
+  "gainFt": 1900,
+  "waypoints": [
+   {
+    "i": 0,
+    "type": "Trailhead",
+    "name": "SR-20 pullout near milepost 166 (Washington Pass)",
+    "elev": 4360,
+    "distMi": 0
+   },
+   {
+    "i": 1,
+    "type": "Base",
+    "name": "M&M Wall (Supercave) base area",
+    "elev": 5895,
+    "distMi": null
+   }
+  ]
+ }
+]

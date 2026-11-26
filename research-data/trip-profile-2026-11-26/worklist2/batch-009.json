@@ -1,0 +1,323 @@
+[
+ {
+  "id": "wa_clean_break",
+  "name": "Clean Break",
+  "where": "Silver Star and Wine spires > Juno Tower",
+  "discipline": "alpine",
+  "grade": "5.10c",
+  "why": "no one-way distance",
+  "distKmStored": null,
+  "outingShape": null,
+  "gainFt": 4500,
+  "waypoints": [
+   {
+    "i": 0,
+    "type": "Trailhead",
+    "name": "Silver Star Creek pullout (SR-20, milepost 171)",
+    "elev": 3450,
+    "distMi": 0
+   },
+   {
+    "i": 1,
+    "type": "Campsite",
+    "name": "Bench Camp — larch bench above the Wine Spires pullout",
+    "elev": 6450,
+    "distMi": null
+   },
+   {
+    "i": 2,
+    "type": "Summit",
+    "name": "Juno Tower - Summit",
+    "elev": 7920,
+    "distMi": null
+   }
+  ]
+ },
+ {
+  "id": "wa_colfax_peak_fords_theatre",
+  "name": "Ford's Theatre",
+  "where": "Bellingham and Mt Baker Hwy > Colfax Peak",
+  "discipline": "ice",
+  "grade": "AI4+",
+  "why": "no summit waypoint with a distance from the trailhead",
+  "distKmStored": null,
+  "outingShape": null,
+  "gainFt": 5790,
+  "waypoints": [
+   {
+    "i": 0,
+    "type": "Trailhead",
+    "name": "Heliotrope Ridge Trailhead (Trail #677, FR-39)",
+    "elev": null,
+    "distMi": null
+   }
+  ]
+ },
+ {
+  "id": "wa_concerto_in_c_for_drill_and_hammer",
+  "name": "Concerto in C for Drill and Hammer",
+  "where": "Squire Creek Walls > South Face",
+  "discipline": "alpine",
+  "grade": "5.8+",
+  "why": "no summit waypoint with a distance from the trailhead",
+  "distKmStored": null,
+  "outingShape": null,
+  "gainFt": 2200,
+  "waypoints": [
+   {
+    "i": 0,
+    "type": "Campsite",
+    "name": "Squire Creek Park & Campground, Snohomish County",
+    "elev": 463,
+    "distMi": null
+   },
+   {
+    "i": 1,
+    "type": "Trailhead",
+    "name": "Squire Creek Trailhead (Trail #654, end of FS Rd 2040)",
+    "elev": 1900,
+    "distMi": null
+   },
+   {
+    "i": 2,
+    "type": "Base/bivy",
+    "name": "Grassy saddle (South Face routes)",
+    "elev": 3249,
+    "distMi": 3
+   },
+   {
+    "i": 3,
+    "type": "Summit",
+    "name": "Squire Creek Wall (true summit/high point)",
+    "elev": 4958,
+    "distMi": null
+   }
+  ]
+ },
+ {
+  "id": "wa_crooked_thumb_peak_east_face",
+  "name": "East Face",
+  "where": "Northern Pickets > Crooked Thumb Peak",
+  "discipline": "mountaineering",
+  "grade": "Class 4",
+  "why": "no summit waypoint with a distance from the trailhead",
+  "distKmStored": null,
+  "outingShape": null,
+  "gainFt": null,
+  "waypoints": [
+   {
+    "i": 0,
+    "type": "Trailhead",
+    "name": "Hannegan Pass Trailhead",
+    "elev": 3100,
+    "distMi": null
+   },
+   {
+    "i": 1,
+    "type": "Water",
+    "name": "Brush Creek crossing",
+    "elev": 4556,
+    "distMi": null
+   },
+   {
+    "i": 2,
+    "type": "Junction",
+    "name": "Hannegan Pass",
+    "elev": 5072,
+    "distMi": null
+   },
+   {
+    "i": 3,
+    "type": "Junction",
+    "name": "Whatcom Pass",
+    "elev": 5239,
+    "distMi": null
+   },
+   {
+    "i": 4,
+    "type": "Campsite",
+    "name": "Whatcom Camp, Brush Creek below Whatcom Pass",
+    "elev": 5286,
+    "distMi": null
+   },
+   {
+    "i": 5,
+    "type": "Junction",
+    "name": "Perfect Pass",
+    "elev": 6278,
+    "distMi": null
+   },
+   {
+    "i": 6,
+    "type": "Summit",
+    "name": "Crooked Thumb Peak",
+    "elev": 8129,
+    "distMi": null
+   }
+  ]
+ },
+ {
+  "id": "wa_davis_peak_nc_north_face",
+  "name": "Northeast Face Couloir",
+  "where": "Picket Range > Davis Peak",
+  "discipline": "alpine",
+  "grade": "5.6",
+  "why": "no summit waypoint with a distance from the trailhead",
+  "distKmStored": null,
+  "outingShape": null,
+  "gainFt": null,
+  "waypoints": [
+   {
+    "i": 0,
+    "type": "Trailhead",
+    "name": "Stetattle Creek Trailhead, Diablo (approach; closed for post-fire hazards, check status)",
+    "elev": null,
+    "distMi": 0
+   },
+   {
+    "i": 1,
+    "type": "Summit",
+    "name": "Davis Peak summit",
+    "elev": 7054,
+    "distMi": null
+   },
+   {
+    "i": 2,
+    "type": "Junction",
+    "name": "Gorge Creek bridge, SR 20 (~MP 123) — descent exit and shuttle car",
+    "elev": 1096,
+    "distMi": null
+   }
+  ]
+ },
+ {
+  "id": "wa_direct_north_buttress",
+  "name": "Direct North Buttress",
+  "where": "Chilliwack Range > Bear Mountain",
+  "discipline": "alpine",
+  "grade": "5.10-",
+  "why": "no summit waypoint with a distance from the trailhead",
+  "distKmStored": null,
+  "outingShape": null,
+  "gainFt": 11950,
+  "waypoints": [
+   {
+    "i": 0,
+    "type": "Campsite",
+    "name": "US Cabin Camp, Chilliwack River",
+    "elev": 2608,
+    "distMi": null
+   },
+   {
+    "i": 1,
+    "type": "Trailhead",
+    "name": "Hannegan Trailhead",
+    "elev": 3100,
+    "distMi": null
+   },
+   {
+    "i": 2,
+    "type": "Campsite",
+    "name": "Boundary Camp",
+    "elev": 4400,
+    "distMi": null
+   },
+   {
+    "i": 3,
+    "type": "Campsite",
+    "name": "Hannegan Camp, below Hannegan Pass",
+    "elev": 4663,
+    "distMi": null
+   },
+   {
+    "i": 4,
+    "type": "Summit",
+    "name": "Bear Mountain summit",
+    "elev": 7931,
+    "distMi": null
+   }
+  ]
+ },
+ {
+  "id": "wa_doorway_flake",
+  "name": "Doorway Flake",
+  "where": "Squire Creek Walls > South Face",
+  "discipline": "alpine",
+  "grade": "5.9",
+  "why": "no summit waypoint with a distance from the trailhead",
+  "distKmStored": null,
+  "outingShape": null,
+  "gainFt": 2200,
+  "waypoints": [
+   {
+    "i": 0,
+    "type": "Campsite",
+    "name": "Squire Creek Park & Campground, Snohomish County",
+    "elev": 463,
+    "distMi": null
+   },
+   {
+    "i": 1,
+    "type": "Trailhead",
+    "name": "Squire Creek Road washout parking (FS Rd 2040)",
+    "elev": 1170,
+    "distMi": null
+   },
+   {
+    "i": 2,
+    "type": "Base/bivy",
+    "name": "Grassy saddle (South Face routes)",
+    "elev": 3249,
+    "distMi": 3
+   },
+   {
+    "i": 3,
+    "type": "Topout",
+    "name": "Top of Doorway Flake (chain anchor)",
+    "elev": null,
+    "distMi": null
+   }
+  ]
+ },
+ {
+  "id": "wa_east_ridge_3",
+  "name": "East Ridge",
+  "where": "Silver Star and Wine spires > Silver Star Mountain",
+  "discipline": "alpine",
+  "grade": "5.9+",
+  "why": "no summit waypoint with a distance from the trailhead",
+  "distKmStored": null,
+  "outingShape": null,
+  "gainFt": 4400,
+  "waypoints": [
+   {
+    "i": 0,
+    "type": "Campsite",
+    "name": "Klipchuck Campground",
+    "elev": 2900,
+    "distMi": null
+   },
+   {
+    "i": 1,
+    "type": "Trailhead",
+    "name": "Cedar Creek Trailhead",
+    "elev": 2985,
+    "distMi": null
+   },
+   {
+    "i": 2,
+    "type": "Summit",
+    "name": "Silver Star Mountain - East/Main Summit",
+    "elev": 8876,
+    "distMi": null
+   },
+   {
+    "i": 3,
+    "type": "Trailhead",
+    "name": "Hwy 20 pullout near MP 166 (descent finish)",
+    "elev": 4300,
+    "distMi": null
+   }
+  ]
+ }
+]
