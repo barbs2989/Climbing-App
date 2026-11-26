@@ -5,6 +5,7 @@ import { SOLID_FILL } from "./buttonStyles.js";
 import { C, HERO_BG, HERO_SHEEN, profileGradeRows, pubName } from "../ClimbMatchCore.jsx";
 import Av from "../src/components/Av.tsx";
 import { POP_CLOSE } from "./popupChrome.js";
+import { safeHref } from "./safeUrl.js";
 
 export default function ShareCard({climber,selfUid,onClose,logsUnavailable}){
   const [copied,setCopied]=useState("");
@@ -39,9 +40,9 @@ export default function ShareCard({climber,selfUid,onClose,logsUnavailable}){
         <div style={{display:"flex",gap:7,marginBottom:14}}><div style={{flex:1,background:C.card,border:`1px solid ${C.border}`,borderRadius:9,padding:"9px 11px",fontSize:13,color:C.blue,overflowWrap:"anywhere"}}>{link}</div><button onClick={()=>copy("https://"+link,"link")} style={{padding:"9px 14px",background:C.blueChip,color:C.onSolid,border:"none",borderRadius:9,fontSize:13,cursor:"pointer",fontWeight:700,whiteSpace:"nowrap"}}>{copied==="link"?"✓ Copied":copied==="fail:link"?"Couldn’t copy":"Copy"}</button></div>
         <div style={{fontSize:12,color:C.label,fontWeight:700,marginBottom:5,letterSpacing:0.4}}>SHARE VIA</div>
         <div style={{display:"flex",gap:7,marginBottom:14}}>
-          <a href={mailto} style={{flex:1,textDecoration:"none",textAlign:"center",padding:"10px 6px",background:C.card,border:`1px solid ${C.border}`,borderRadius:10,fontSize:13,color:C.text}}>Email</a>
-          <a href={sms} style={{flex:1,textDecoration:"none",textAlign:"center",padding:"10px 6px",background:C.card,border:`1px solid ${C.border}`,borderRadius:10,fontSize:13,color:C.text}}>Text</a>
-          <a href={tweet} target="_blank" rel="noreferrer" style={{flex:1,textDecoration:"none",textAlign:"center",padding:"10px 6px",background:C.card,border:`1px solid ${C.border}`,borderRadius:10,fontSize:13,color:C.text}}>Post to X</a>
+          <a href={safeHref(mailto)} style={{flex:1,textDecoration:"none",textAlign:"center",padding:"10px 6px",background:C.card,border:`1px solid ${C.border}`,borderRadius:10,fontSize:13,color:C.text}}>Email</a>
+          <a href={safeHref(sms)} style={{flex:1,textDecoration:"none",textAlign:"center",padding:"10px 6px",background:C.card,border:`1px solid ${C.border}`,borderRadius:10,fontSize:13,color:C.text}}>Text</a>
+          <a href={safeHref(tweet)} target="_blank" rel="noreferrer" style={{flex:1,textDecoration:"none",textAlign:"center",padding:"10px 6px",background:C.card,border:`1px solid ${C.border}`,borderRadius:10,fontSize:13,color:C.text}}>Post to X</a>
         </div>
         <div style={{fontSize:12,color:C.label,fontWeight:700,marginBottom:5,letterSpacing:0.4}}>COPY SUMMARY</div>
         <textarea aria-label="Copy summary" readOnly value={summary} onFocus={e=>e.target.select()} style={{width:"100%",height:124,overscrollBehavior:"contain",background:C.card,border:`1px solid ${C.field}`,borderRadius:9,padding:"9px 11px",fontSize:12,color:C.textSub,boxSizing:"border-box",resize:"none",outline:"none",lineHeight:1.5,fontFamily:"inherit"}}/>

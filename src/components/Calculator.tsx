@@ -73,6 +73,25 @@ export interface CalculatorProps {
   onEditTiming?: (() => void) | null;
 }
 
+/* A NUMBER BOX THAT CAN BE EMPTIED (owner's note, 2026-11-26: "when I try to put a number in the first
+   number is always zero"). The two boxes were bound straight to the number in state, so clearing one wrote
+   Number("") = 0 back into it: the box showed 0 under the cursor and the next digit typed read "03". The
+   box now keeps what is TYPED while it has focus, commits each whole number within [min, max], and shows
+   the committed value again when it loses focus. */
+function NumBox({label,value,min,max,onCommit}: {label: string; value: number; min: number; max: number; onCommit: (n: number)=>void}){
+  const [draft,setDraft]=useState<string|null>(null);
+  return <input aria-label={label} type="number" inputMode="numeric" min={min} max={max} step={1} value={draft!=null?draft:String(value)}
+    onFocus={e=>{setDraft(String(value));e.currentTarget.select();}}
+    onChange={e=>{const t=e.target.value;setDraft(t);if(t.trim()==="")return;const n=Math.round(Number(t));if(Number.isFinite(n)&&n>=min&&n<=max)onCommit(n);}}
+    onBlur={()=>setDraft(null)}
+    style={{width:"100%",padding:"7px 8px",borderRadius:8,border:`1px solid ${C.field}`,background:C.surface,color:C.text,fontSize:13,boxSizing:"border-box",outline:"none"}}/>;
+}
+/* START TIMES FROM 9:00 PM THE NIGHT BEFORE (owner's note, 2026-11-26: "the earliest we are showing is 2 AM").
+   Big glaciated summits leave camp in the night: on Rainier's Disappointment Cleaver parties leave Camp Muir
+   between about 10 PM and 2 AM (the NPS route brief, SummitPost, Mountaineers trip reports), so 2 AM was the
+   LATE end of the real window. A value below 0 is that hour of the evening before; the clocks below count
+   on from it unchanged. */
+const START_HOURS=Array.from({length:35},(_,i)=>-3+i*0.5);
 const uGain=(m: number)=>uImp()?Math.round(m*3.28084).toLocaleString()+" ft":Math.round(m).toLocaleString()+" m";
 /* THE PLANNER PRINTED ITS DAY PLAN TWICE, AND THE SECOND COPY WAS THE WORSE ONE.
    `timing.sectionBreakdown[i]` is `{section, fromTo, note, hrs}` and `itinerary.days[i]` is
@@ -170,7 +189,7 @@ export default function Calculator({route,activity,fit:fitProp,setFit:setFitProp
      count estimated from the length (owner, 2026-11-23). */
   const hasAnyEstimate=P.anyTimed;
   const {hikeH,techH,sumH,retH,storedApproachH}=P;
-  const dayOf=(h: number)=>Math.floor(Math.round(h*60)/1440);const fmt=(h: number)=>{let total=Math.round(h*60);const day=dayOf(h);total=total%1440;const hr=Math.floor(total/60),mn=total%60,ap=hr>=12?"PM":"AM",h12=hr%12||12;return `${h12}:${String(mn).padStart(2,"0")} ${ap}${day>0?" (+"+day+"d)":""}`;};
+  const dayOf=(h: number)=>Math.floor(Math.round(h*60)/1440);const fmt=(h: number)=>{let total=Math.round(h*60);const day=dayOf(h);total=((total%1440)+1440)%1440;const hr=Math.floor(total/60),mn=total%60,ap=hr>=12?"PM":"AM",h12=hr%12||12;return `${h12}:${String(mn).padStart(2,"0")} ${ap}${day>0?" (+"+day+"d)":day<0?" (night before)":""}`;};
   /* THE TWO RED LABELS BELOW ARE COMPARED AGAINST A CLOCK HOUR, AND sumH/retH ARE UNBOUNDED.
      Both are absolute hours from midnight of the DEPARTURE day, so an estimate that crosses
      midnight passes 18.5 (6:30 PM) and 13 (1:00 PM) permanently -- while `fmt`, declared one line
@@ -280,14 +299,14 @@ export default function Calculator({route,activity,fit:fitProp,setFit:setFitProp
         ("Scarf's Rule + exponential technical grade penalty") and told a climber nothing
         they could act on — the inputs below already say what it responds to. */}
       {(route.timing?"Or estimate for your party":"Estimate for your party")+" · approach, climb and descent, car to car"}</div>
-    {P.legsStored?<div data-fit-party="1" style={{fontSize:12,color:C.textSub,lineHeight:1.5,marginTop:-8,marginBottom:12}}>{(publishedIsWholeDay?"The car-to-car time is this route’s published time":storedApproachH!=null?"The approach and climb are this route’s published times":"The climb is this route’s published time")+" for a fit party, so fitness and pack don’t change "+(publishedIsWholeDay||storedApproachH==null?"it":"them")+". Allow more if your party is slower."}</div>:null}
+    {P.legsStored?<div data-fit-party="1" style={{fontSize:12,color:C.textSub,lineHeight:1.5,marginTop:-8,marginBottom:12}}>{(publishedIsWholeDay?"The car-to-car time is this route’s published time":storedApproachH!=null?"The approach and climb are this route’s published times":"The climb is this route’s published time")+" for a fit party, so fitness and pack don’t change "+(publishedIsWholeDay||storedApproachH==null?"it":"them")+"; party size does. Allow more if your party is slower."}</div>:null}
     {multiDay?<div data-multiday={itinDayCount(route)} style={{background:C.amberBg,borderRadius:9,padding:"9px 11px",marginBottom:12,border:`1px solid ${C.amber}44`,fontSize:12,color:C.textSub,lineHeight:1.5}}>{"This route is typically done over "+itinDayCount(route)+" days. "+(sd&&sd.timed?"The estimate below times the summit day from camp; the ":"The times below are totals for the whole trip; the ")}<b style={{color:C.amber}}>Trip plan</b>{" below has each day."}</div>:null}
     <div style={{display:"grid",gridTemplateColumns:"1fr 1fr",gap:9,marginBottom:12}}>
       <div><div style={{...SUB_LABEL,marginBottom:3}}>FITNESS</div><select aria-label="Your fitness level" value={fit} onChange={e=>setFit(e.target.value)} style={{width:"100%",padding:"7px 8px",borderRadius:8,border:`1px solid ${C.field}`,background:C.surface,color:C.text,fontSize:13}}>{["beginner","intermediate","advanced","expert"].map(f=><option key={f} value={f}>{f[0].toUpperCase()+f.slice(1)}</option>)}</select></div>
       {/* `pack` is kilograms because scarfHrs' penalty tiers are kg (>8, >15), but this was the one input in the app that ignored the unit setting — hardcoded "PACK (KG)" while UNITS defaults to imperial. A US climber typing 30 for a 30 lb pack had it read as 30 kg and got the heaviest slowdown applied to a planning estimate. Show and accept the reader's unit; keep kg in state. */}
-      <div><div style={{fontSize:12,color:C.label,marginBottom:3,fontWeight:700}}>{uImp()?"PACK (LB)":"PACK (KG)"}</div><input aria-label="Pack weight" type="number" value={uImp()?Math.round(pack/0.4536):pack} onChange={e=>{const n=Number(e.target.value);if(isNaN(n))return;setPack(uImp()?n*0.4536:n);}} style={{width:"100%",padding:"7px 8px",borderRadius:8,border:`1px solid ${C.field}`,background:C.surface,color:C.text,fontSize:13,boxSizing:"border-box",outline:"none"}}/></div>
-      <div><div style={{...SUB_LABEL,marginBottom:3}}>PARTY SIZE</div><input aria-label="Party size" type="number" value={party} onChange={e=>setParty(Number(e.target.value))} style={{width:"100%",padding:"7px 8px",borderRadius:8,border:`1px solid ${C.field}`,background:C.surface,color:C.text,fontSize:13,boxSizing:"border-box",outline:"none"}}/></div>
-      <div><div style={{...SUB_LABEL,marginBottom:3}}>{sd&&sd.timed?"LEAVE CAMP":"DEPART"}</div><select aria-label={sd&&sd.timed?"Time you leave camp on the summit day":"Departure time"} value={sd&&sd.timed?camp:depart} onChange={e=>(sd&&sd.timed?setCamp:setDepart)(Number(e.target.value))} style={{width:"100%",padding:"7px 8px",borderRadius:8,border:`1px solid ${C.field}`,background:C.surface,color:C.text,fontSize:13}}>{Array.from({length:25},(_,i)=>2+i*0.5).map(h=><option key={h} value={h}>{fmt(h)}</option>)}</select></div>
+      <div><div style={{fontSize:12,color:C.label,marginBottom:3,fontWeight:700}}>{uImp()?"PACK (LB)":"PACK (KG)"}</div><NumBox label="Pack weight" value={uImp()?Math.round(pack/0.4536):Math.round(pack)} min={0} max={uImp()?100:45} onCommit={n=>setPack(uImp()?n*0.4536:n)}/></div>
+      <div><div style={{...SUB_LABEL,marginBottom:3}}>PARTY SIZE</div><NumBox label="Party size" value={party} min={1} max={12} onCommit={n=>setParty(n)}/></div>
+      <div><div style={{...SUB_LABEL,marginBottom:3}}>{sd&&sd.timed?"LEAVE CAMP":"DEPART"}</div><select aria-label={sd&&sd.timed?"Time you leave camp on the summit day":"Departure time"} value={sd&&sd.timed?camp:depart} onChange={e=>(sd&&sd.timed?setCamp:setDepart)(Number(e.target.value))} style={{width:"100%",padding:"7px 8px",borderRadius:8,border:`1px solid ${C.field}`,background:C.surface,color:C.text,fontSize:13}}>{START_HOURS.map(h=><option key={h} value={h}>{fmt(h)}</option>)}</select></div>
     </div>
     <div style={{background:C.surface,borderRadius:10,padding:"12px 14px",marginBottom:10}}>
       {sd?(function(){
@@ -332,8 +351,8 @@ export default function Calculator({route,activity,fit:fitProp,setFit:setFitProp
         {/* N/A, like the Approach tile beside it, when nothing describes the way down: no stored descent, no walk out (distance or gain) and no rappels (#2336 printed "≥0.0hr"). */}
         <div><div style={{fontSize:17,fontWeight:700,color:C.blue}}>{P.descentTimed?((walkOutKnown||P.storedDescentH!=null)?"":"≥")+P.downH.toFixed(1)+"hr":"N/A"}</div><div style={{fontSize:12,color:C.textMuted}}>Descent</div></div>
         <div><div style={{fontSize:17,fontWeight:700,color:C.amber}}>{hasAnyEstimate?(lowerBound?"≥":"")+P.tripH.toFixed(1)+"hr":"N/A"}</div><div style={{fontSize:12,color:C.textMuted}}>Total trip</div></div>
-        {/* A party over two adds time to the Total that no tile holds; named, so the four tiles add up to it. */}
-        {hasAnyEstimate&&P.partyH>0?<div style={{gridColumn:"1 / -1",fontSize:12,color:C.textMuted,lineHeight:1.5}}>{"Total includes + "+P.partyH.toFixed(1)+" hr for a party of "+party+"."}</div>:null}
+        {/* Each tile already holds its share of the party's time (lib/planTimes.js, PARTY_PACE); named, so a climber sees what the party size did. */}
+        {hasAnyEstimate&&P.partyH>0.05?<div data-party-note="1" style={{gridColumn:"1 / -1",fontSize:12,color:C.textMuted,lineHeight:1.5}}>{"Includes + "+P.partyH.toFixed(1)+" hr for a party of "+party+" over a pair."}</div>:null}
       </div>}
       <Hr/>
       <div style={{display:"grid",gridTemplateColumns:"1fr 1fr",gap:9}}>

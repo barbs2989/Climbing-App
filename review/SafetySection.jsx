@@ -9,7 +9,7 @@
 //   Closed         — the last 100 decided reports, so a decision can be found again
 // Actions: remove / hide / keep the content (moderate_content), mark the report, suspend / ban / reinstate the
 // account (set_account_standing), and decide an appeal (decide_appeal). Each new report, reported photo or appeal
-// also puts a notice in every admin's bell (0550). The "How to decide" panel is the written policy the
+// also puts a notice in every admin's bell (0551). The "How to decide" panel is the written policy the
 // App Store and Google Play reviewers expect a developer to follow (docs/APP-STORE-READINESS-AUDIT.md).
 import { useState } from "react";
 import {
@@ -17,6 +17,7 @@ import {
   takeDownReportedPhoto, useSafetyAppeals, decideAppeal, isAccountId, useAdminQueueCounts,
 } from "../lib/db";
 import { C, DLOCALE } from "../ClimbMatchCore";
+import { safeHref } from "../lib/safeUrl.js";
 
 const BASE = import.meta.env.BASE_URL;
 const KIND = {
@@ -113,7 +114,7 @@ function ReportCard({ r, open }) {
       <div style={{ fontSize: 10.5, fontWeight: 800, color: C.textMuted, letterSpacing: 0.4, marginBottom: 3 }}>WHAT WAS REPORTED (copied by the server{r.snapshot_at ? " " + day(r.snapshot_at) : ""})</div>
       {r.snapshot ? <div style={box}>{r.snapshot}</div> : null}
       {Array.isArray(r.snapshot_media) && r.snapshot_media.length ? <div style={{ display: "flex", gap: 6, flexWrap: "wrap", marginTop: 6 }}>{r.snapshot_media.filter((u) => typeof u === "string" && u).slice(0, 8).map((u, i) =>
-        <a key={i} href={u} target="_blank" rel="noopener noreferrer"><img src={u} alt={"Reported image " + (i + 1)} loading="lazy" style={{ width: 72, height: 72, objectFit: "cover", borderRadius: 7, border: "1px solid " + C.border, filter: "blur(6px)" }} /></a>)}
+        <a key={i} href={safeHref(u)} target="_blank" rel="noopener noreferrer"><img src={u} alt={"Reported image " + (i + 1)} loading="lazy" style={{ width: 72, height: 72, objectFit: "cover", borderRadius: 7, border: "1px solid " + C.border, filter: "blur(6px)" }} /></a>)}
         <span style={small}>Blurred; open one to see it full size.</span></div> : null}
     </div> : null}
     {r.detail ? <div style={{ fontSize: 12.5, color: C.textSub, marginTop: 6, whiteSpace: "pre-wrap" }}><b>Reporter’s note:</b> {r.detail}</div> : null}
@@ -164,11 +165,11 @@ function PhotoList({ q }) {
       const url = v && typeof v === "object" ? v.url : typeof v === "string" ? v : null;
       const w = waited(r.created_at);
       return <div key={r.id} style={{ ...card, display: "flex", gap: 10 }}>
-        {url ? <a href={url} target="_blank" rel="noopener noreferrer"><img src={url} alt="Reported photo" loading="lazy" style={{ width: 84, height: 84, objectFit: "cover", borderRadius: 8, filter: "blur(6px)" }} /></a>
+        {url ? <a href={safeHref(url)} target="_blank" rel="noopener noreferrer"><img src={url} alt="Reported photo" loading="lazy" style={{ width: 84, height: 84, objectFit: "cover", borderRadius: 8, filter: "blur(6px)" }} /></a>
           : <div style={{ width: 84, height: 84, borderRadius: 8, background: C.surface, ...small, display: "flex", alignItems: "center", justifyContent: "center", textAlign: "center" }}>photo missing</div>}
         <div style={{ flex: 1, minWidth: 0 }}>
           <div style={{ display: "flex", gap: 8 }}><b style={{ fontSize: 13.5 }}>{PHOTO_REASON[r.reason] || r.reason}</b><span style={{ marginLeft: "auto", fontSize: 12, color: w.late ? C.red : C.textMuted, fontWeight: w.late ? 700 : 400 }}>{w.text}</span></div>
-          <div style={small}>{r.route_id ? <a href={BASE + "?route=" + encodeURIComponent(r.route_id)} target="_blank" rel="noopener noreferrer" style={{ color: C.blue }}>{r.route_id} ↗</a> : "route unknown"} · blurred; open it to see it full size</div>
+          <div style={small}>{r.route_id ? <a href={safeHref(BASE + "?route=" + encodeURIComponent(r.route_id))} target="_blank" rel="noopener noreferrer" style={{ color: C.blue }}>{r.route_id} ↗</a> : "route unknown"} · blurred; open it to see it full size</div>
           {r.detail ? <div style={{ fontSize: 12.5, color: C.textSub, marginTop: 4 }}>{r.detail}</div> : null}
           <div style={{ display: "flex", gap: 8, marginTop: 8, flexWrap: "wrap" }}>
             <button className="rd-btn rd-ok" disabled={!!busy} onClick={() => act(r.id, () => dismissPhotoReport(r.id), "Kept up; report dismissed.")}>Keep it up</button>

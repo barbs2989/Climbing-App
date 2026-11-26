@@ -188,12 +188,14 @@ async function hold(supabase: any, kind: string, id: string, category: string, r
   if (error) { console.error("screening_hold failed:", error.message); return false; }
   return !!data;
 }
-// The database signs each hook call (0429, _shared/hooksig.ts). With SCREEN_HOOK_SECRET unset this
-// accepts unsigned calls, as before 0429, so the code can ship before the secret does; the rollout
-// steps are in 0429_sign_screen_hook.sql.
+// The database signs each hook call (0429, _shared/hooksig.ts). FAILS CLOSED since the security audit
+// of 2026-11-26: with SCREEN_HOOK_SECRET unset it once accepted unsigned calls (the 0429 rollout
+// window), and the function is deployed without gateway JWT checks, so an unset secret would let
+// anyone on the internet spend the screening quota. The secret has been set since 0429; if it is
+// ever lost, screening stops (the insert-time floor still runs) instead of opening up.
 async function verifyHook(req: Request, kind: string, id: string): Promise<string> {
   const secret = Deno.env.get("SCREEN_HOOK_SECRET");
-  if (!secret) return "ok";
+  if (!secret) return "unsigned";
   return await checkHook(secret, req.headers.get("x-screen-timestamp"), req.headers.get("x-screen-signature"), kind, id);
 }
 async function sha(s: string) {

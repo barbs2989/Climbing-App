@@ -1,5 +1,6 @@
 import { C, SUB_LABEL } from "../../ClimbMatchCore.jsx";
 import { overnightPermitOf } from "../../lib/overnightPermit.js";
+import { safeHref } from "../../lib/safeUrl.js";
 
 export interface OvernightPermitProps {
   route: Parameters<typeof overnightPermitOf>[0];
@@ -13,6 +14,6 @@ export default function OvernightPermit({route}: OvernightPermitProps){
     <div style={{...SUB_LABEL,marginBottom:3}}>{"OVERNIGHT PERMIT"}</div>
     {p.what?<div style={{fontSize:12.5,fontWeight:700,color:C.text,lineHeight:1.45}}>{p.what}</div>:null}
     {p.where?<div style={{fontSize:12,color:C.textSub,lineHeight:1.55,marginTop:3}}>{p.where}</div>:null}
-    {p.url?<a href={p.url} target="_blank" rel="noopener noreferrer" style={{display:"block",marginTop:8,padding:"8px 12px",background:C.blueBg,border:"1px solid "+C.blueDim,borderRadius:9,color:C.onSolid,fontSize:12.5,fontWeight:700,textDecoration:"none",textAlign:"center"}}>{"Get the permit →"}</a>:null}
+    {p.url?<a href={safeHref(p.url)} target="_blank" rel="noopener noreferrer" style={{display:"block",marginTop:8,padding:"8px 12px",background:C.blueBg,border:"1px solid "+C.blueDim,borderRadius:9,color:C.onSolid,fontSize:12.5,fontWeight:700,textDecoration:"none",textAlign:"center"}}>{"Get the permit →"}</a>:null}
   </div>;
 }

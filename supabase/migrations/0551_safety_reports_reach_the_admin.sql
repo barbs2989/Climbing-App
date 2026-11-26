@@ -1,4 +1,4 @@
--- 0550: a safety report, a reported photo or an appeal tells every admin, in the app's own bell.
+-- 0551: a safety report, a reported photo or an appeal tells every admin, in the app's own bell.
 --
 -- Owner, 2026-11-26: reports should be "pushed to my admin dashboard so that I can review it" and act on
 -- them, to meet App Store guideline 1.2 ("timely responses") and Google Play's UGC policy. The Review desk
@@ -14,6 +14,12 @@
 --
 -- A failure to notify must never refuse the report itself, so the body is wrapped in an exception block.
 -- The notice names the reason and who it is about, not what was said: the words stay on the desk.
+
+-- user_notices.kind is a closed list (0307 onward); the admin's notice is a kind of its own.
+alter table user_notices drop constraint if exists user_notices_kind_check;
+alter table user_notices add constraint user_notices_kind_check check (kind = any (array[
+  'contribution_approved', 'contribution_rejected', 'contribution_warning', 'contribution_restricted',
+  'contribution_banned', 'contribution_reinstated', 'flag_resolved', 'contribution_withdrawn', 'safety_report']));
 
 create or replace function _notify_admins_safety() returns trigger
 language plpgsql security definer set search_path = public, pg_temp as $$
