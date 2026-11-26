@@ -219,9 +219,13 @@ if (row.length < 400) dead(`RealClimberRow lifted only ${row.length} chars — e
 
 // 6a. THE STRUCTURAL FACT, executed rather than read. A hand-typed copy of `_cand` would agree
 // with itself whatever the row does, which is the whole question.
-// The row lives in src/components/RealClimberRow.tsx (reached through readCoreSource's MOVED stitch) and declares
-// the projection with const; the literal itself is unchanged and still executed below.
-const candSrc = (row.match(/(?:var|const) _cand=\{([\s\S]*?)\};/) || [])[1];
+// The row lives in src/components/RealClimberRow.tsx (reached through readCoreSource's MOVED stitch). Since the
+// partner list's Sort (2026-11-25) ranks by the same %, the projection is `realCandOf`, exported beside the row and
+// called by it (`const _cand=realCandOf(...)`), so the literal is lifted from THAT function; the row must still call it.
+const candFnStart = stripped.indexOf("function realCandOf(");
+if (candFnStart < 0) dead("ANCHOR LOST: `function realCandOf(` — the projection the row and the list's Sort share could not be found");
+if (!/_cand=realCandOf\(p,objIds,listing,verified,reliability\)/.test(row)) dead("ANCHOR LOST: RealClimberRow no longer builds `_cand` through realCandOf(p,objIds,listing,verified,reliability) — the literal lifted below would not be the one the row scores");
+const candSrc = (stripped.slice(candFnStart).match(/(?:var|const) _cand=\{([\s\S]*?)\};/) || [])[1];
 if (!candSrc) dead("ANCHOR LOST: _cand's object literal could not be lifted from RealClimberRow");
 // eslint-disable-next-line no-new-func
 // `listing` is the row's listed areas (0300); undefined here means "not read", exactly as the row sees it.

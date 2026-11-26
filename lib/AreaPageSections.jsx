@@ -19,6 +19,7 @@ import { EditIconButton } from "./areaChrome";
 import { CHIP } from "./buttonStyles.js";
 import ActionIcon from "../src/components/ActionIcon.tsx";
 import EmptyState from "../src/components/EmptyState.tsx";
+import Chevron from "../src/components/Chevron.tsx";
 
 const card = C => ({ background: C.card, borderRadius: 12, padding: "12px 14px", border: "1px solid " + C.border, marginBottom: 12 });
 // THE AREA SHEET (owner, 2026-11-11: "create borders between each section so it reads nicely"): the area page's
@@ -356,7 +357,10 @@ export function GradeSpreadDisclosure({ stats, loading, error, C, discOptions, o
     {rows.length ? <button onClick={() => setOpen(!open)} aria-expanded={open} style={{ marginTop: spread ? 8 : 0, width: "100%", textAlign: "left", minHeight: 44, display: "flex", alignItems: "center", gap: 8, background: "none", border: "none", borderTop: spread ? "1px dashed " + C.border : "none", padding: "8px 0 0", cursor: "pointer", color: C.text }}>
       <span style={{ flex: 1, textAlign: "left", fontSize: 12.5, fontWeight: 700 }}>{"Climbs here by type"}</span>
       {open ? null : <span style={{ fontSize: 12.5, color: C.textSub, fontWeight: 700, fontVariantNumeric: "tabular-nums" }}>{typed.toLocaleString() + " climb" + (typed !== 1 ? "s" : "")}</span>}
-      <span aria-hidden="true" style={{ display: "inline-block", color: C.blue, fontSize: 12, transform: open ? "rotate(180deg)" : "none" }}>{"▾"}</span>
+      {/* RIGHT WHEN CLOSED, DOWN WHEN OPEN, and big enough to read as the button (owner, 2026-11-25: "make the
+          dropdown button on the right larger ... the collapsed view to point right at all times"). It was a 12px
+          "▾" that pointed DOWN while closed: under the Grade spread chart it read as already open. */}
+      <span aria-hidden="true" style={{ flexShrink: 0, width: 32, height: 32, borderRadius: "50%", background: C.blueBg, border: "1px solid " + C.blueDim, display: "flex", alignItems: "center", justifyContent: "center" }}><Chevron open={open} size={20} color={C.blue} /></span>
     </button> : stats && !spread ? <EmptyState C={C} icon="chart" style={{ padding: "12px 14px 6px" }}>No climbs filed here yet.</EmptyState> : null}
     {open && rows.length ? <ClimbsChart stats={stats} loading={loading} error={error} C={C} discOptions={discOptions} onDisc={onDisc} bare>{null}</ClimbsChart> : null}
   </div>;

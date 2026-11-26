@@ -1,4 +1,4 @@
-import { uImp, wpPlaced, wpType, C, ROUTE_GAP } from "../../ClimbMatchCore.jsx";
+import { uImp, wpPlaced, wpType, C, ROUTE_GAP, renderProse, proseHasMarkup } from "../../ClimbMatchCore.jsx";
 import { _shortDist } from "../../lib/shortDist.js";
 import { useState, useRef, useCallback, useEffect } from "react";
 import { USE_DB } from "../../lib/supabase";
@@ -146,7 +146,7 @@ export default function BaseCheckinPanel({route,who,spots,q}: BaseCheckinPanelPr
       :<div><div role="status" aria-live="polite">
         <div style={{fontSize:13,color:guide.err?C.amber:g&&g.arrived?C.green:C.text,fontWeight:600,lineHeight:1.45}}>{guide.err?guide.err:g?g.line:"Finding you — this works best out in the open…"}</div>
         {g?<div style={{fontSize:11.5,color:C.textMuted,lineHeight:1.45,marginTop:3}}>{"Measured to "+target.what+". Updates as you walk."}</div>:null}
-        {g&&locNote&&g.d<=100?<div style={{fontSize:12.5,color:C.textSub,lineHeight:1.5,marginTop:6}}><span style={{fontWeight:700,color:C.text}}>Where it starts: </span>{locNote}</div>:null}
+        {g&&locNote&&g.d<=100?<div style={{fontSize:12.5,color:C.textSub,lineHeight:1.5,marginTop:6}}><span style={{fontWeight:700,color:C.text}}>Where it starts: </span>{proseHasMarkup(locNote)?renderProse(locNote,{marginTop:2}):locNote}</div>:null}
         </div>
         {/* Outside the live region: the arrow's words change with every turn of the phone, and announcing each would drown out the distance. */}
         {g&&!g.arrived?(!compass?<button onClick={startCompass} style={{...BTN,width:"100%",marginTop:8,background:"transparent",color:C.blue,border:`1px solid ${C.blueDim}`}}>Point the way with your compass</button>

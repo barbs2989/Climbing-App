@@ -1,10 +1,9 @@
 import { noteBox } from "../../lib/accents.js";
 import { approachKeyOf } from "../../lib/approaches.js";
 import { primaryApproachIndex, longFormApproachIndex, approachHasCrossing } from "../../lib/approachIndex.js";
-import { catOf, routeAscentFt, uDist, uElev, gainCoversWholeOuting, uDistMi, C, ROUTE_GAP, RSL as SL } from "../../ClimbMatchCore.jsx";
+import { renderProse, catOf, routeAscentFt, uDist, uElev, gainCoversWholeOuting, uDistMi, C, ROUTE_GAP, RSL as SL } from "../../ClimbMatchCore.jsx";
 import { effDistKm, effDistIsWholeTrip } from "../../lib/outing.js";
 import ActionIcon from "./ActionIcon.tsx";
-import { splitParagraphs } from "../../EnrichmentPanels";
 import EditIconButton from "./EditIconButton.tsx";
 
 /** One way in, as stored in `approach_variants`; only the fields its card reads. */
@@ -111,13 +110,13 @@ export default function ApproachVariants({route,onEdit,onEditProse}: ApproachVar
         <div style={{fontSize:12.5,color:C.text,lineHeight:1.55}}>{why}</div>
       </div>:null}
       {facts.length||crossing?<div style={{display:"flex",flexWrap:"wrap",gap:10,alignItems:"center",marginBottom:7}}>{facts.map((f,fi)=><span key={fi} style={{fontSize:11.5,color:C.textSub}}>{f}</span>)}{crossing?<span style={{display:"inline-flex",alignItems:"center",gap:4,fontSize:11,fontWeight:700,color:C.amber,background:C.amberBg,border:"1px solid "+C.amber+"55",borderRadius:20,padding:"1px 8px"}}><ActionIcon name="alert" size={11} color={C.amber}/>Stream crossing</span>:null}</div>:null}
-      {v.notes?splitParagraphs(v.notes).map((p,pi)=><p key={pi} style={{fontSize:12.5,color:C.textSub,lineHeight:1.6,margin:pi===0?"0 0 7px":"7px 0 0"}}>{p}</p>):null}
+      {v.notes?renderProse(v.notes,{fontSize:12.5,color:C.textSub,lineHeight:1.6}):null}
       {/* The full account renders IN FULL, never behind a "read more": check:field-renders proves
           this column reaches a screen by server-rendering the page, and a collapsed paragraph is
           not in that markup. It is labelled only when a summary sits above it. */}
       {own&&prose?<div style={{marginTop:v.notes?9:0}}>
         {v.notes?<div style={{display:"flex",alignItems:"center",justifyContent:"space-between",gap:8,marginBottom:4}}><div style={{fontSize:9.5,fontWeight:800,color:C.label,textTransform:"uppercase",letterSpacing:0.5}}>Full description</div>{onEditProse?<EditIconButton onClick={onEditProse} title="Edit the full approach description"/>:null}</div>:null}
-        {splitParagraphs(prose).map((p,pi)=><p key={pi} style={{fontSize:13,color:C.textSub,lineHeight:1.7,margin:pi===0?"0 0 8px":"8px 0 0"}}>{p}</p>)}
+        {renderProse(prose,{fontSize:13,color:C.textSub,lineHeight:1.7})}
       </div>:null}
       {v.baseFinding?<div style={{marginTop:7,background:C.greenBg,border:"1px solid "+C.greenDim,borderRadius:9,padding:"8px 10px"}}>
         <div style={{fontSize:9.5,fontWeight:800,color:C.green,textTransform:"uppercase",letterSpacing:0.5,marginBottom:3}}>Finding the base of the climbing</div>

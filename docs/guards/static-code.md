@@ -1314,6 +1314,14 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     `scripts/oneoff/probe-dropdowns.mjs` (hand-run, quiet box) measures every dropdown in Chrome on
     every tab, the seed and four real DB routes and every overlay, AND clicks each at its centre to
     prove it opens there.
+  - **Rule 3, DIRECTION** (owner note 2026-11-25, *"I would like the collapsed view to point right when
+    collapsed at all times"*): `Chevron` points right when closed and down when open, and three dropdowns
+    escaped it: a text glyph `▾`/`▴`/`⌄`/`⌃` in code (the area page's *Climbs here by type* pointed DOWN while
+    closed), `<Chevron open>` with no value (frozen down) or a Chevron in a `<span` whose `transform` rotates on
+    a condition (Suggest a fix's field rows: down closed, up open), and a `rotate(45deg)` "+" turning to "x"
+    (Help's FAQ). Comments are blanked first, since they still name the old glyphs. Sort arrows (▲/▼ on the
+    review desk) and map glyphs are not matched. **Injection-tested** by restoring all three old files: four
+    failures, one per shape (SuggestFix trips two).
   - **Injection-tested**: dropping `aria-expanded` from Calendar's "Plan the day" failed rule 2
     (that toggle was removed 2026-11-25; any other Chevron dropdown serves);
     setting FriendsFeed's "Show all" to `minHeight:40` fails rule 1.

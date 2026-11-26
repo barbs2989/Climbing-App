@@ -111,7 +111,7 @@ room for side-panel ads later. The phone app keeps its own look.
     *See all alerts · N more ›*; the header still folds it. It is the **same list as
     Home's Alerts button** (`_alerts` in `ClimbMatch.jsx`, built once for both): what waits on you first (requests,
     invites, unread chats, a day or a climb to confirm, amber), then unread notifications not already one
-    of those, and the SAME count. Every row is the SAME 55px card in the same `SwipeRow` (owner 2026-11-18):
+    of those, and the SAME count. No row has a dot beside it (owner 2026-11-25); only the header keeps its dot. Every row is the SAME 55px card in the same `SwipeRow` (owner 2026-11-18):
     a row that waits on you archives (swipe right, or the website's hover Archive) or clears (swipe left / Clear)
     like a notification; its id (`dmu_`, `cun_`, `cday_`… on each `_alerts.waiting` item) carries what would
     make it new again, so a new message or newly proposed days bring it back. Only a log-tag row (*Were you

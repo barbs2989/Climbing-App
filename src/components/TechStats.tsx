@@ -1,4 +1,4 @@
-import { catOf, routeAscentFt, gainCoversWholeOuting, wpIs, uElev, shapeOf, uDist, uDistMi, C, CRAG_CATS, sunReadout, SUB_LABEL } from "../../ClimbMatchCore.jsx";
+import { renderProse, proseHasMarkup, catOf, routeAscentFt, gainCoversWholeOuting, wpIs, uElev, shapeOf, uDist, uDistMi, C, CRAG_CATS, sunReadout, SUB_LABEL } from "../../ClimbMatchCore.jsx";
 import { effDistKm, recShapeOf, effDistIsWholeTrip, roadWalkMi } from "../../lib/outing.js";
 import { uLen } from "../../lib/uLen.js";
 import { cruxGrade, displayGrade, gradeConversions, gradeDetail, gradeRangeNote, singleGrade, splitProtection, withProtection } from "../../lib/grade";
@@ -237,7 +237,7 @@ export default function TechStats({route,onEdit,part,onEditArea}: TechStatsProps
     const _anc=String(route.anchor||"").trim();const _pAnc=disc!=="bouldering"?pitchAnchorSummary(route):null;const _ancOk=!!_anc&&(_factSec||_anc.length<=80);if(disc!=="bouldering"&&(_ancOk||_pAnc))facts.push(["Anchor",_pAnc?((_ancOk?_anc+" at the top · ":"")+"by pitch: "+pitchAnchorText(_pAnc)):_anc]);const _longOnFile: string[]=[];if(!_factSec&&_anc.length>80)_longOnFile.push("Anchor");
     /* LOCATION is `location` (0243): where the line starts on its wall, which is how a climber finds it
        at the base. First among the facts, because it is the first thing needed at the crag. */
-    const _loc=String(route.location||"").trim();const _locAll=CRAG_CATS.includes(disc);/* on a crag it has a section of its own, so it is never too long to show */if(_loc&&(_locAll||_loc.length<=160))facts.unshift(["Location",_loc]);if(!_locAll&&_loc.length>160)_longOnFile.push("Location");
+    const _loc=String(route.location||"").trim();const _locAll=CRAG_CATS.includes(disc);/* on a crag it has a section of its own, so it is never too long to show */if(_loc&&(_locAll||_loc.length<=160))facts.unshift(["Location",proseHasMarkup(_loc)?renderProse(_loc,{}):_loc]);if(!_locAll&&_loc.length>160)_longOnFile.push("Location");
     /* A short descent is a fact line only where the page draws no DESCENT section (a boulder): wherever the
        section renders (lib/fieldScope.js, as RoutePlanTab gates it) it carries the descent whole, at any length. */
     const _dsc=String(route.descent||"").trim();if(_dsc&&_dsc.length<=140&&!fieldScope("descentText",scopeCtx(route,disc)))facts.push(["Descent",_dsc]);
