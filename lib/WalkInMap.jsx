@@ -18,14 +18,18 @@ export const walkInPts = (gpx) => (Array.isArray(gpx) ? gpx : []).map((p) => (Ar
 // `expandable` (the crag page's Getting there, owner 2026-11-24: "getting there map needs to allow you to expand full
 // screen"): the Street / Satellite / Topo row the route map has, with 3D at its end, and a ⤢ that opens the same map
 // full screen, where it can be zoomed to read the mapped trails. `title` names that full-screen view.
-/** @param {{ pts: any, park: any, crag: any, center?: { lat: number, lng: number } | null, height?: number, zoom?: number, label?: string, on3d?: () => void, expandable?: boolean, title?: string }} props */
-export default function WalkInMap({ pts, park, crag, center = null, height = 200, zoom, label, on3d, expandable = false, title }) {
+// `summit`: the place pin is a PEAK's summit, drawn "S" and keyed "Summit" (owner note 2026-11-26: "Getting there
+// section on peaks map shows c for crag when it's a peak not a crag"). A peak's own coordinate is its top, the way
+// Peakbagger, CalTopo and our own route map (WP_STYLES "Summit") mark it; every other caller's pin is a crag or wall.
+/** @param {{ pts: any, park: any, crag: any, center?: { lat: number, lng: number } | null, height?: number, zoom?: number, label?: string, on3d?: () => void, expandable?: boolean, title?: string, summit?: boolean }} props */
+export default function WalkInMap({ pts, park, crag, center = null, height = 200, zoom, label, on3d, expandable = false, title, summit = false }) {
+  const [destLetter, destWords] = summit ? ["S", "Summit"] : ["C", "The crag"];
   const div = useRef(null), roRef = useRef(null), mapRef = useRef(null), tileRef = useRef(null), dialogRef = useRef(null), expandBtn = useRef(null);
   const [fail, setFail] = useState(false);
   const [fullscreen, setFullscreen] = useState(false);
   const [baseLayer, setBaseLayer] = useState("topo");
   // Each build reads these; the map is rebuilt only when it moves into or out of full screen (its box changes).
-  const init = useRef({ pts, park, crag, center, zoom });
+  const init = useRef({ pts, park, crag, center, zoom, destLetter });
   const layerNow = useRef(baseLayer);
   layerNow.current = baseLayer;
   useEffect(() => {
@@ -33,14 +37,14 @@ export default function WalkInMap({ pts, park, crag, center = null, height = 200
     loadLeaflet(() => {
       if (cancelled || !div.current || mapRef.current || !window.L) return;
       const L = window.L, map = L.map(div.current, { attributionControl: false, zoomControl: fullscreen });
-      const { pts: p0, park: k0, crag: c0, center: m0, zoom: z0 } = init.current;
+      const { pts: p0, park: k0, crag: c0, center: m0, zoom: z0, destLetter: d0 } = init.current;
       applyBaseLayer(map, tileRef, layerNow.current);
       // P is drawn ABOVE C (owner note 2026-11-25: a crag whose parking sits a stone's throw from its own coordinate showed
       // only the C, the P hidden underneath it, though the editor's map and Google Maps both showed the parking).
       const pin = (p, label, color, z) => L.marker([p.lat, p.lng], { keyboard: false, interactive: false, zIndexOffset: z || 0, icon: L.divIcon({ className: "", iconSize: [22, 22], iconAnchor: [11, 11], html: '<div style="width:22px;height:22px;border-radius:50%;background:' + color + ';border:2px solid #fff;color:#fff;font:700 11px/18px system-ui;text-align:center">' + label + "</div>" }) }).addTo(map);
       const bounds = p0.slice();
       if (k0) { pin(k0, "P", C.blue, 1000); bounds.push([k0.lat, k0.lng]); }
-      if (c0) { pin(c0, "C", C.orange); bounds.push([c0.lat, c0.lng]); }
+      if (c0) { pin(c0, d0, C.orange); bounds.push([c0.lat, c0.lng]); }
       if (m0 && !bounds.length) bounds.push([m0.lat, m0.lng]);
       if (p0.length > 1) L.polyline(p0, { color: C.orange, weight: 4 }).addTo(map);
       // FRAME AGAIN ONCE THE BOX HAS ITS SIZE. Framed at build time, while the page was still laying the map out, the
@@ -64,7 +68,7 @@ export default function WalkInMap({ pts, park, crag, center = null, height = 200
   // Full screen takes focus, so Escape and a screen reader start inside it; leaving hands it back to the ⤢.
   useEffect(() => { if (fullscreen) { try { dialogRef.current && dialogRef.current.focus({ preventScroll: true }); } catch (e) { /* not focusable yet */ } } }, [fullscreen]);
   const exitFullscreen = () => { setFullscreen(false); setTimeout(() => { try { expandBtn.current && expandBtn.current.focus({ preventScroll: true }); } catch (e) { /* the page moved on */ } }, 0); };
-  const name = label || "Map of the walk in from the parking pin (P) to the crag (C)";
+  const name = label || "Map of the walk in from the parking pin (P) to the " + (summit ? "summit (S)" : "crag (C)");
   const mapDiv = <div ref={div} role="img" aria-label={name} style={fullscreen ? { flex: "1 1 auto", minHeight: 160, borderRadius: 9, border: "1px solid " + C.border, overflow: "hidden", background: C.surface } : { height, borderRadius: 9, border: "1px solid " + C.border, overflow: "hidden", background: C.surface }} />;
   const layers = expandable && !fail ? <BaseLayerToggle baseLayer={baseLayer} setBaseLayer={setBaseLayer} C={C} on3d={on3d} /> : null;
   const failEl = fail ? <div style={{ position: "absolute", inset: 0, display: "flex", alignItems: "center", justifyContent: "center", fontSize: 12, color: C.textMuted }}>The map couldn't load.</div> : null;
@@ -72,7 +76,7 @@ export default function WalkInMap({ pts, park, crag, center = null, height = 200
   // way 27 Crags and theCrag mark a crag's parking with a P, but each letter is now named beside a copy of its pin.
   const dot = (bg, t) => <span aria-hidden="true" style={{ width: 18, height: 18, borderRadius: 9, background: bg, border: "2px solid #fff", color: "#fff", font: "700 10px/14px system-ui", textAlign: "center", flexShrink: 0, boxSizing: "border-box" }}>{t}</span>;
   const keyItem = (bg, t, words) => <span style={{ display: "inline-flex", alignItems: "center", gap: 5 }}>{dot(bg, t)}{words}</span>;
-  const legend = park || crag ? <div style={{ display: "flex", flexWrap: "wrap", gap: "4px 14px", marginTop: 6, fontSize: 11.5, color: C.textSub, lineHeight: 1.4 }}>{park ? keyItem(C.blue, "P", "Parking") : null}{crag ? keyItem(C.orange, "C", "The crag") : null}</div> : null;
+  const legend = park || crag ? <div style={{ display: "flex", flexWrap: "wrap", gap: "4px 14px", marginTop: 6, fontSize: 11.5, color: C.textSub, lineHeight: 1.4 }}>{park ? keyItem(C.blue, "P", "Parking") : null}{crag ? keyItem(C.orange, destLetter, destWords) : null}</div> : null;
   if (fullscreen) {
     return createPortal(<div ref={dialogRef} tabIndex={-1} role="dialog" aria-modal="true" aria-label={title || "Map"} onKeyDown={(e) => { if (e.key === "Escape") { e.stopPropagation(); exitFullscreen(); } }} style={{ position: "fixed", inset: 0, zIndex: 9700, background: C.bg, padding: 12, display: "flex", flexDirection: "column", boxSizing: "border-box", overscrollBehavior: "contain", outline: "none" }}>
       <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", gap: 10, marginBottom: 9 }}>

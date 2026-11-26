@@ -1,5 +1,5 @@
 import { foldKeepingPlace } from "../../lib/keepPlace.js";
-import { EditIconButton, CopyCoordButton, NO_PARKING_PIN_BUT_NOTE_LINE, NO_PARKING_PIN_LINE } from "../../lib/areaChrome";
+import { EditIconButton, CopyCoordButton, noParkingPinButNoteLine, noParkingPinLine } from "../../lib/areaChrome";
 import { lazy, Suspense, useState } from "react";
 import { createPortal } from "react-dom";
 import type { CSSProperties, ReactNode } from "react";
@@ -82,6 +82,10 @@ export default function AreaGettingThere({ area, C, onEdit, flat, trailRoute }: 
   const parkName = ownPark || ownNote ? area.parking_name : up ? up.pinName : null;
   const crag = area.lat != null && area.lng != null ? { lat: Number(area.lat), lng: Number(area.lng) } : null;
   const dest = park || crag;
+  // A PEAK's own coordinate is its summit, not a crag (owner note 2026-11-26: "Getting there section on peaks map shows c
+  // for crag when it's a peak not a crag"), so its pin, key, 3D pin and fallback wording say summit.
+  const isPeak = area.area_type === "peak";
+  const place = isPeak ? "summit" : "crag";
   // The same recorded-track-or-nothing floor the climbs' maps apply (MIN_RECORDED_PTS).
   const trailPts = walkInPts(area.walkin_gpx);
   const trail = trailPts.length >= MIN_RECORDED_PTS ? trailPts : null;
@@ -89,7 +93,7 @@ export default function AreaGettingThere({ area, C, onEdit, flat, trailRoute }: 
   const linkSt: CSSProperties = { flex: "1 1 0", display: "flex", alignItems: "center", justifyContent: "center", gap: 7, boxSizing: "border-box", minHeight: 44, padding: "8px 10px", borderRadius: 10, border: "1px solid " + C.greenDim, background: C.greenBg, color: C.green, fontSize: 12.5, fontWeight: 700, textDecoration: "none", whiteSpace: "nowrap" };
   const chipSt: CSSProperties = { display: "inline-flex", alignItems: "center", gap: 4, padding: "2px 8px", borderRadius: 999, background: C.surface, border: "1px solid " + C.borderLight, color: C.textSub, fontSize: 11.5, fontWeight: 700, maxWidth: "100%", overflowWrap: "anywhere" };
   const ll = dest ?dest.lat + "," + dest.lng : "";
-  const to = park ? "parking" : "crag";
+  const to = park ? "parking" : place;
   // The crag-wide parking pin is a suggestable field (0378), so the page offers it where it is missing and where it sits.
   const pinLink = { display: "inline-flex", alignItems: "center", minHeight: 44, background: "none", border: "none", padding: 0, color: C.blue, fontSize: 12, fontWeight: 700, cursor: "pointer" };
   const long = !!flat && ((note || "").length + (walk || "").length) > FLAT_CLAMP_CHARS;
@@ -116,11 +120,11 @@ export default function AreaGettingThere({ area, C, onEdit, flat, trailRoute }: 
     </Step> : null}
     </div>
     {long ? <button onClick={(e) => foldKeepingPlace(e, () => setMore(m => !m), more)} aria-expanded={more} style={{ minHeight: 44, display: "inline-flex", alignItems: "center", background: "none", border: "none", padding: "0 0 6px 41px", color: C.blue, fontSize: 12.5, fontWeight: 700, cursor: "pointer" }}>{more ? "Show less" : "Show more"}</button> : null}
-    {pinMap && dest ? <div style={{ marginTop: 4, marginBottom: 12 }}><WalkInMap pts={[]} park={park} crag={crag} height={180} zoom={14} label={"Map of " + area.name + (park ? " with the parking pin (P)" : "")} on3d={() => setView3d(true)} expandable title={"Getting to " + area.name} /></div> : null}
+    {pinMap && dest ? <div style={{ marginTop: 4, marginBottom: 12 }}><WalkInMap pts={[]} park={park} crag={crag} summit={isPeak} height={180} zoom={14} label={"Map of " + area.name + (park ? " with the parking pin (P)" : "")} on3d={() => setView3d(true)} expandable title={"Getting to " + area.name} /></div> : null}
     {trail ? <div style={{ marginTop: 4, marginBottom: 12 }}>
-      <div style={lbl}>{"Trail to the crag · " + fmtTrailLen(trailLenM(trail))}</div>
-      <WalkInMap pts={trail} park={park} crag={crag} on3d={() => setView3d(true)} expandable title={"Trail to " + area.name} />
-      <div style={{ fontSize: 11.5, color: C.textMuted, lineHeight: 1.45, marginTop: 6 }}>{"From the parking (P) to the crag (C). " + (area.walkin_kind === "traced" ? "A climber traced it on the map; it is not a GPS recording. " : "") + "Every climb here shows it on its crag map."}</div>
+      <div style={lbl}>{"Trail to the " + place + " · " + fmtTrailLen(trailLenM(trail))}</div>
+      <WalkInMap pts={trail} park={park} crag={crag} summit={isPeak} on3d={() => setView3d(true)} expandable title={"Trail to " + area.name} />
+      <div style={{ fontSize: 11.5, color: C.textMuted, lineHeight: 1.45, marginTop: 6 }}>{"From the parking (P) to the " + (isPeak ? "summit (S)" : "crag (C)") + ". " + (area.walkin_kind === "traced" ? "A climber traced it on the map; it is not a GPS recording. " : "") + (isPeak ? "" : "Every climb here shows it on its crag map.")}</div>
     </div> : null}
     {canDraw ? <div style={{ display: "flex", alignItems: "center", flexWrap: "wrap", gap: "0 10px", marginTop: trail || pinMap ? -6 : 4, marginBottom: 10 }}>
       {trail ? null : <span style={{ fontSize: 12, color: C.textMuted, lineHeight: 1.45 }}>No trail to the crag on file yet.</span>}
@@ -129,13 +133,13 @@ export default function AreaGettingThere({ area, C, onEdit, flat, trailRoute }: 
     {canDraw && drawOpen && trailRoute ? createPortal(<Suspense fallback={null}><CragTrailForm routeId={String(trailRoute.id)} routeName={area.name} crag parkAt={park} cragAt={crag} initialPts={null} initialShape={null} onClose={() => setDrawOpen(false)} onSuccess={() => { /* the form shows its own receipt; its Done closes it */ }} /></Suspense>, document.body) : null}
     {/* The crag over the terrain: the same pins as the flat map above, and the walk in where one is on file, with the
         same caveat when the line was traced rather than recorded. No crag has a walk in on file yet (2026-11-18), so the
-        pin map is the one climbers meet. "P" and "C" are fixed letters, not data. */}
-    {(trail || pinMap) && view3d ? <Suspense fallback={null}><WalkIn3DView title={trail ? area.name + " walk in" : area.name} kind={trail ? "walk-in map" : "crag map"} maxZoom={trail || (park && crag) ? 17.5 : 16} exaggeration={1} onClose={() => setView3d(false)}
-      tracks={trail ? [{ id: "walkin", color: C.orange, label: "Trail to the crag" + (area.walkin_kind === "traced" ? " (traced on the map, not a GPS recording)" : ""), pts: trail }] : []}
-      waypoints={(park ? [{ lat: park.lat, lng: park.lng, name: parkName && parkName !== "Trailhead" ? parkName : "Parking", color: C.blue, iconHtml: "P" }] : []).concat(crag ? [{ lat: crag.lat, lng: crag.lng, name: area.name, color: C.orange, iconHtml: "C" }] : [])} /></Suspense> : null}
+        pin map is the one climbers meet. "P" and "C" (a peak's "S") are fixed letters, not data. */}
+    {(trail || pinMap) && view3d ? <Suspense fallback={null}><WalkIn3DView title={trail ? area.name + " walk in" : area.name} kind={trail ? "walk-in map" : place + " map"} maxZoom={trail || (park && crag) ? 17.5 : 16} exaggeration={1} onClose={() => setView3d(false)}
+      tracks={trail ? [{ id: "walkin", color: C.orange, label: "Trail to the " + place + (area.walkin_kind === "traced" ? " (traced on the map, not a GPS recording)" : ""), pts: trail }] : []}
+      waypoints={(park ? [{ lat: park.lat, lng: park.lng, name: parkName && parkName !== "Trailhead" ? parkName : "Parking", color: C.blue, iconHtml: "P" }] : []).concat(crag ? [{ lat: crag.lat, lng: crag.lng, name: area.name, color: C.orange, iconHtml: isPeak ? "S" : "C" }] : [])} /></Suspense> : null}
     {dest ? <div style={{ padding: "10px 12px 12px", borderRadius: 10, background: C.surface, border: "1px solid " + C.borderLight }}>
       <div style={{ ...lbl, display: "flex", alignItems: "center", gap: 6, marginBottom: 8 }}><ActionIcon name="nav" size={13} color={C.label} />{park ? "Directions to parking" : "Directions"}</div>
-      {park ? null : <div style={{ fontSize: 11.5, color: C.textMuted, lineHeight: 1.45, marginBottom: 6 }}>{note ? NO_PARKING_PIN_BUT_NOTE_LINE : NO_PARKING_PIN_LINE}{onEdit ? <>{" "}<button onClick={() => onEdit("parking_pin")} style={pinLink}>Add the parking pin</button></> : null}</div>}
+      {park ? null : <div style={{ fontSize: 11.5, color: C.textMuted, lineHeight: 1.45, marginBottom: 6 }}>{note ? noParkingPinButNoteLine(place) : noParkingPinLine(place)}{onEdit ? <>{" "}<button onClick={() => onEdit("parking_pin")} style={pinLink}>Add the parking pin</button></> : null}</div>}
       {area.coords_approx ? <div style={{ fontSize: 11.5, color: C.amber, lineHeight: 1.45, marginBottom: 6 }}>Coordinates are approximate, so these are rough.</div> : null}
       {/* The mount above is gated on ["crag", "peak", "wall"].includes(area.area_type) — a drive link is offered only where there is somewhere to park. */}
       <div style={{ display: "flex", gap: 8 }}>
