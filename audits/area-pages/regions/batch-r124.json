@@ -1,0 +1,14 @@
+{
+ "wa_bouldering_at_index": {
+  "_expect": { "name": "Bouldering at Index", "region": "Washington" },
+  "blurb": "Boulder problems scattered through the forest around the town of Index, below the town's big cliffs, across the North Fork of the Skykomish River and along the river to the west. Every climb here is a boulder problem, from easy V0 slabs through a deep middle band at V1 to V5, up to a handful of V10 and harder testpieces. The rock is fine-grained granite, and the movement leans toward thin edges, small crimps, balance and careful footwork rather than raw power. River Boulders, Sasquatch Boulders and Zelda Boulders hold the largest clusters. Fall brings the stickiest friction; spring is cool but often damp, summer is dry and best early or late in the day, and winter is hit or miss with snow and ice.",
+  "review": { "sources": ["https://blog.kayaclimb.com/?p=713", "https://washingtonclimbers.org/index.php/wp-json/wp/v2/posts/12221"] }
+ },
+ "_skipped": {
+  "az_granite_gardens": "Only search snippets were available; every page about the Granite Dells (Mountain Project, Wikipedia, tourism sites) was refused by the fetch tool, so no fetched page exists.",
+  "ma_quincy_quarries": "Only one page about the place could be fetched; every other candidate (Mountain Project, state agency, magazines, SummitPost) was refused or timed out in the fetch tool.",
+  "nv_first_creek_canyon": "The only fetched pages were a general Red Rock overview that never mentions First Creek and a topo site page with no climbing detail; every other candidate was refused by the fetch tool.",
+  "nt_yellowknife": "Only search snippets were available; every candidate page (Mountain Project, theCrag, tourism) was refused or timed out in the fetch tool.",
+  "wv_furnace_road_areas": "Only one page about Coopers Rock could be fetched, and it covers the whole forest rather than the Furnace Road boulders; every other candidate was refused by the fetch tool."
+ }
+}

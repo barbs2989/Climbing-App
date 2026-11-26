@@ -1,0 +1,18 @@
+{
+ "bc_revelstoke": {
+  "_expect": { "name": "Revelstoke", "region": "British Columbia" },
+  "blurb": "Revelstoke sits in the Columbia Mountains of interior British Columbia, with the Selkirk and Monashee ranges as its backdrop. The climbing is overwhelmingly single-pitch sport, with a smaller block of waterfall ice, mostly WI3 to WI5, and only a handful of trad lines. Sport grades run from about 5.6 up through 5.12, with the heaviest concentration around 5.10 and a solid supply of 5.8 and 5.9 for building up. Roadside cragging on quartzite is the staple, and Begbie Bluffs is the biggest and most varied cliff, ranging from very easy terrain to the low 5.13 range, though rock quality there is uneven. Shaketown, The Shire and Blanket Canyon are other names worth knowing. Alpine granite routes also exist higher in the mountains.",
+  "review": { "sources": ["https://sendage.com/area/revelstoke-bc-canada", "https://sendage.com/area/begbie-bluffs-revelstoke-bc-canada"] }
+ },
+ "md_patapsco_valley_state_park": {
+  "_expect": { "name": "Patapsco Valley State Park", "region": "Maryland" },
+  "blurb": "Patapsco Valley State Park follows the Patapsco River for roughly 32 miles, southwest and west of Baltimore, and its climbing is scattered between several separate sections of the park rather than gathered in one place. Bouldering makes up most of it, followed by top-rope lines and a smaller number of trad and sport routes. Boulder problems run from very easy up to about V10, with the bulk between V0 and V6, while the roped climbs mostly fall between 5.6 and 5.11. Sub-areas to know include Alberton, Woodstock Rock and Ilchester, plus boulder clusters such as Gorsuch Switch and the Bloede Dam Boulders. It is a modest, local-scale destination rather than a big-name crag region.",
+  "review": { "sources": ["https://www.patapsco.org/?p=843", "https://en.wikipedia.org/wiki/Patapsco_Valley_State_Park"] }
+ },
+ "_skipped": {
+  "bc_nelson": "Fetch tool refused the climbing sites (domain verification); only one Nelson-wide page (granite bouldering article) and one Whitewater Rocks page (6 climbs) were fetched, not two matching the region",
+  "mt_east_side": "Fetch tool refused Mountain Project and outsidebozeman; only one page (whole Gallatin Canyon, not East Side specifically) was fetched",
+  "ca_mickey_s_beach": "Fetch tool refused every Mickey's Beach page (domain verification); no fetched page about the area, only Stinson Beach town page",
+  "ab_jasper_national_park": "Fetch tool refused nearly all Jasper pages; only one sub-area page (Morro Slabs) fetched, no second page covering the park"
+}
+}
