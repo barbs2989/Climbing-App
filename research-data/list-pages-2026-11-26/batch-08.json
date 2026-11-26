@@ -1,0 +1,424 @@
+{
+ "ny_nipple_top_elk_pass_trail": {
+  "area": "ny_nipple_top",
+  "set": {
+   "approach": "Park at the St. Huberts lot on Route 73 in Keene Valley, across the road from the Roaring Brook Falls trailhead, with an Adirondack Mountain Reserve parking reservation in hand; one is needed for every visitor from May 1 to October 31, walkers included. Follow the road about half a mile, turn left onto Lake Road Way to the entrance station and gate, then walk roughly 2.5 miles of dirt road to the foot trail for Elk Pass. The summit lies about 1.7 miles of steep climbing past the beaver ponds.",
+   "descent_text": "The usual way down makes this a loop over Dial. From the summit, return to the junction a tenth of a mile below, then continue about 2.1 miles along the ridge to the top of Dial. From there the Leach Trail drops about 3.8 miles to Lake Road, and the gate and parking lot are a further stretch of dirt road and pavement beyond.",
+   "hazards": [
+    "Steep, sustained climbing for the last 1.7 miles, and the descent over Dial is also long and steep",
+    "Long day on a private-land approach: a parking reservation is required May 1 to October 31 and dogs are not allowed",
+    "Winter ascents need snowshoes and traction, and the summit can run 20 F colder than the trailhead"
+   ]
+  },
+  "ledger": [],
+  "review": {
+   "sources": [
+    "https://www.lakeplacid.com/hiking/nippletop",
+    "https://www.onxmaps.com/hiking/jy368y3xoqgm/nippletop-and-dial-via-elk-pass"
+   ],
+   "confidence": "medium",
+   "notes": "Gain, distance: both published figures (13 mi, 4,300-4,388 ft) are for the whole Nippletop-Dial loop, not trailhead to summit, so skipped. Season: no page states a window (hikeable year round), skipped."
+  }
+ },
+ "ny_santanoni_peak_santanoni_express": {
+  "area": "ny_santanoni_peak",
+  "set": {
+   "overview": "The Santanoni Express is the direct herd path to the summit of Santanoni Peak, one of the highest and most remote of the Adirondack 46. A gravel road and a marked trail carry you to a cairn near some cascades, and from there an unmarked path crosses Santanoni Brook and climbs steeply, finally very steeply over eroded ground, to the ridge just north of the summit. It is a strenuous Class 2 day with route-finding and no maintained tread above the cairn.",
+   "approach": "Start at the Santanoni Road trailhead near the Upper Works parking area outside Newcomb. Walk the old gravel road for 1.8 miles, then bear sharply right onto the foot trail, which crosses several footbridges. Continue to a brook with cascades, about 3.4 miles from the car; a cairn at the end of a flat section on the left marks the start of the Express herd path. The path crosses Santanoni Brook early, then climbs to a T on the ridge, where left leads a tenth of a mile to the summit.",
+   "descent_text": "Retrace the herd path from the ridge T down to the cairn, then follow the marked trail and the gravel road back to the trailhead. The upper section is steep and eroded, so descend carefully, and recross Santanoni Brook with care if it has risen. Parties combining peaks can instead go right at the T toward Times Square and Panther Peak and drop to the Bradley Pond trail.",
+   "hazards": [
+    "Very steep, eroded and loose footing on the herd path above the cairn",
+    "Santanoni Brook crossing can be hard in wet weather or at the start and end of winter",
+    "Easy-to-miss turnoffs: unmarked above the cairn, so a map and compass are needed",
+    "Slippery, high footbridges on the lower trail and no cell service"
+   ],
+   "gain_ft": 2860,
+   "dist_km": 7.72
+  },
+  "ledger": [
+   {
+    "field": "gain_ft",
+    "value": 2860,
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://pureadirondacks.com/blogs/adirondack-hiking/santanoni-peak",
+      "retrieved_at": "2026-11-26",
+      "fact": "2,860 ft total gain, summit 4,607 ft"
+     }
+    ]
+   },
+   {
+    "field": "dist_km",
+    "value": 7.72,
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://pureadirondacks.com/blogs/adirondack-hiking/santanoni-peak",
+      "retrieved_at": "2026-11-26",
+      "fact": "9.6 mi round trip, halved to 4.8 mi one way = 7.72 km; turnoffs at 1.8 and about 3.4 mi match the route page of another site"
+     }
+    ]
+   }
+  ],
+  "review": {
+   "sources": [
+    "https://pureadirondacks.com/blogs/adirondack-hiking/santanoni-peak",
+    "https://www.adirondackhub.com/hiking/the-santanoni-range"
+   ],
+   "confidence": "medium",
+   "notes": "Gain and distance are one source only (other pages give range-loop figures). Season skipped: no page states a window."
+  }
+ },
+ "ny_mount_redfield_uphill_brook_herd_path": {
+  "area": "ny_mount_redfield",
+  "set": {
+   "approach": "Begin at the Upper Works parking area at the end of the road beyond Newcomb. Follow the Calamity Brook trail on an old woods road, then footpath, past Flowed Lands and Lake Colden toward the Uphill Brook lean-to. A small cairn on the right marks the start of the unmarked herd path, which follows the brook past small waterfalls. A second cairn splits the path: straight ahead goes to Redfield, and the right branch goes to Cliff Mountain.",
+   "descent_text": "Retrace the herd path along Uphill Brook to the cairn at the lean-to, then follow the marked trail past Lake Colden and Flowed Lands and back down Calamity Brook to Upper Works. The route is out and back, so allow for the full return of roughly eight miles. Adding Cliff on the same day lengthens the round trip by about 1.8 miles.",
+   "hazards": [
+    "Unmarked, cairned herd path above the lean-to demands careful navigation",
+    "Water crossings along the trail can be dangerous, especially at the start and end of winter",
+    "Very long out-and-back day of roughly 17 miles, with ladders and bridges on the approach",
+    "Winter needs snowshoes plus microspikes or crampons for steeper pitches"
+   ],
+   "dist_km": 13.52
+  },
+  "ledger": [
+   {
+    "field": "dist_km",
+    "value": 13.52,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.adirondackhub.com/hiking/mount-redfield",
+      "retrieved_at": "2026-11-26",
+      "fact": "16.8 mi round trip from Upper Works"
+     },
+     {
+      "url": "https://www.komoot.com/highlight/5642873",
+      "retrieved_at": "2026-11-26",
+      "fact": "16-18 mi round trip from Upper Works"
+     }
+    ]
+   }
+  ],
+  "review": {
+   "sources": [
+    "https://www.adirondackhub.com/hiking/mount-redfield",
+    "https://www.komoot.com/highlight/5642873",
+    "https://www.lakeplacid.com/hiking/mount-redfield"
+   ],
+   "confidence": "medium",
+   "notes": "Distance is 16.8 mi round trip halved (8.4 mi = 13.52 km); the second source gives only a 16-18 mi range. Season skipped. Neither page describes a descent separately; written as the reverse of an out-and-back."
+  }
+ },
+ "ny_saddleback_mountain_ore_bed_trail": {
+  "area": "ny_saddleback_mountain",
+  "set": {
+   "overview": "Saddleback is reached by the Ore Bed Trail, a marked trail that climbs from Johns Brook Valley to the col between Gothics and Saddleback. The upper part of the trail uses steps and ladders, and from the col a short, steep climb over a false summit leads to the exposed true summit. The Class 1 route avoids the Saddleback Cliffs on the Basin side, which are a serious hands-on scramble of their own.",
+   "approach": "Park at the Garden trailhead at the end of Johns Brook Lane in Keene Valley; there is a fee and the small lot fills early on summer weekends. The trail rolls over low hills, then drops steeply into Johns Brook Valley at about 3 miles and passes Johns Brook Lodge. Cross Johns Brook and Ore Bed Brook, which can be tricky in high water, to the five-corner junction and take the Ore Bed Trail to the col, then turn right for the summit.",
+   "descent_text": "Return the way you came: down the steep summit slope and false summit to the col, down the Ore Bed Trail with its steps and ladders, and out the Johns Brook Valley to the Garden. Do not descend the Saddleback Cliffs, as they are very steep and not a sound way down.",
+   "hazards": [
+    "Johns Brook and Ore Bed Brook crossings are tricky in high water and dangerous at the start and end of winter",
+    "Steps and ladders on the upper Ore Bed Trail, and an exposed summit",
+    "The Saddleback Cliffs beside the route are very steep; do not descend them",
+    "Winter ascents need snowshoes and traction, and many carry an ice axe"
+   ],
+   "dist_km": 10.46
+  },
+  "ledger": [
+   {
+    "field": "dist_km",
+    "value": 10.46,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.lakeplacid.com/hiking/saddleback-mountain",
+      "retrieved_at": "2026-11-26",
+      "fact": "12.6 mi round trip from the Garden"
+     },
+     {
+      "url": "https://pureadirondacks.com/blogs/adirondack-hiking/saddleback-mountain",
+      "retrieved_at": "2026-11-26",
+      "fact": "13.4 mi round trip from the Garden"
+     }
+    ]
+   }
+  ],
+  "review": {
+   "sources": [
+    "https://www.lakeplacid.com/hiking/saddleback-mountain",
+    "https://pureadirondacks.com/blogs/adirondack-hiking/saddleback-mountain"
+   ],
+   "confidence": "medium",
+   "notes": "Distance 13.0 mi round trip (mean) halved = 6.5 mi = 10.46 km. Season skipped. Descent is the reverse (out-and-back page)."
+  }
+ },
+ "ny_panther_peak_panther_brook_herd_path": {
+  "area": "ny_panther_peak",
+  "set": {
+   "overview": "Panther Peak is climbed by the Panther Brook herd path, an unmarked track that leaves the Bradley Pond trail at a cairn. It runs mostly flat past Bradley Pond, steepens, drops briefly to Panther Brook and follows the brook up to the ridge. The summit is a short walk to the right. It is a Class 2 day, often paired with Santanoni, with muddy ground and a swampy stretch near the top.",
+   "approach": "Start at the Santanoni Road trailhead near Upper Works, Newcomb. Walk the gravel road 1.8 miles, then bear sharply right onto the marked foot trail and cross Santanoni Brook on a footbridge. Pass the Santanoni turnoff and continue to a cairn about 4.3 miles from the start that marks the Panther Brook herd path. Follow it past Bradley Pond, up to the ridge junction, and turn right for the final 0.4 mile to the summit.",
+   "descent_text": "Go back down the herd path to the ridge-side brook, past Bradley Pond to the cairn, then follow the marked trail and the gravel road to the trailhead. Parties linking Santanoni can instead go left at the ridge junction toward Times Square and drop down the Santanoni side, though that needs a separate plan for the return.",
+   "hazards": [
+    "No maintained trail beyond the cairn; turnoffs are easy to miss",
+    "Muddy sections and a swamp near the top where logs serve as crossings",
+    "Remote with no reliable cell coverage, and weather changes quickly"
+   ],
+   "dist_km": 9.86
+  },
+  "ledger": [
+   {
+    "field": "dist_km",
+    "value": 9.86,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://pureadirondacks.com/blogs/adirondack-hiking/panther-peak",
+      "retrieved_at": "2026-11-26",
+      "fact": "12.5 mi round trip"
+     },
+     {
+      "url": "https://mountain-hiking.com/panther-peak-adirondacks",
+      "retrieved_at": "2026-11-26",
+      "fact": "12.0 mi round trip"
+     }
+    ]
+   }
+  ],
+  "review": {
+   "sources": [
+    "https://pureadirondacks.com/blogs/adirondack-hiking/panther-peak",
+    "https://mountain-hiking.com/panther-peak-adirondacks"
+   ],
+   "confidence": "medium",
+   "notes": "Distance 12.25 mi mean halved = 6.125 mi = 9.86 km. Gain skipped: sources give 3,762 ft and 3,300 ft (over 10% apart). Season skipped. The Santanoni-link sentence in the descent is thin; trim if the reviewer prefers."
+  }
+ },
+ "ny_table_top_mountain_herd_path_from_the_van_hoevenberg_trail": {
+  "area": "ny_table_top_mountain",
+  "set": {
+   "overview": "Table Top is reached by a short, unmarked herd path that leaves the Van Hoevenberg (Marcy) trail near Indian Falls. The path is narrow and eroded, with water running down it in most months, and climbs about 0.7 mile to a wooded summit. A short stroll just beyond the signed top reaches an outlook over the Great Range. It is a Class 2 outing, frequently done in a day with Phelps.",
+   "approach": "Park at Adirondak Loj on Adirondack Loj Road beside Heart Lake; there is a parking fee and the lot fills early on weekends. Follow the Van Hoevenberg trail 2.3 miles to Marcy Dam, then along Phelps Brook past the Phelps junction at about 3.2 miles. The signed herd path leaves on the left at roughly 4 miles, a little before Indian Falls, and the summit is about 0.7 mile beyond.",
+   "descent_text": "Return down the herd path to the Van Hoevenberg trail, turn right, and walk back past the Phelps junction and Marcy Dam to Adirondak Loj. The route is out and back, and the herd path is steep and eroded, with running water, so footing is the main concern on the way down.",
+   "hazards": [
+    "Phelps Brook and Marcy Brook crossings can be dangerous, especially at the start and end of winter",
+    "Narrow, heavily eroded herd path with running water, and no maintained trail",
+    "Treed summit; map and compass needed because the weather turns fast and help is far away"
+   ],
+   "dist_km": 7.72
+  },
+  "ledger": [
+   {
+    "field": "dist_km",
+    "value": 7.72,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.lakeplacid.com/hiking/tabletop-mountain",
+      "retrieved_at": "2026-11-26",
+      "fact": "9.5 mi round trip from the Loj"
+     },
+     {
+      "url": "https://pureadirondacks.com/blogs/adirondack-hiking/tabletop-mountain",
+      "retrieved_at": "2026-11-26",
+      "fact": "9.8 mi round trip from the Loj"
+     }
+    ]
+   }
+  ],
+  "review": {
+   "sources": [
+    "https://www.lakeplacid.com/hiking/tabletop-mountain",
+    "https://pureadirondacks.com/blogs/adirondack-hiking/tabletop-mountain"
+   ],
+   "confidence": "high",
+   "notes": "Distance mean 9.65 mi halved = 4.8 mi = 7.72 km. Season skipped."
+  }
+ },
+ "ny_rocky_peak_ridge_via_giant_mountain": {
+  "area": "ny_rocky_peak_ridge",
+  "set": {
+   "overview": "Rocky Peak Ridge is most often climbed over its neighbour Giant Mountain. The Roaring Brook trail climbs to the Giant summit area, where a spur trail leaves for the ridge. It is a Class 1 hiking route but steep and strenuous, with ladders, steep rock slabs and exposed ground on the ridge crest, and it makes a long day best suited to experienced hikers.",
+   "approach": "Park at the Roaring Brook Falls trailhead on Route 73, about 22 miles east of Lake Placid, across the road from the Adirondack Mountain Reserve lot; parking fills quickly in summer and roadside parking is not allowed. The trail is level for the first tenth of a mile to a spur to the falls, climbs steeply with a wooden ladder near 1.4 miles, reaches the Ridge Trail junction at about 2.5 miles, and continues to the Giant summit. The Rocky Peak Ridge trail splits off about 0.1 mile before the summit.",
+   "descent_text": "Return the way you came along the ridge trail to the Giant junction, then descend the Roaring Brook trail past the ladder and the top of the falls to the parking lot. Take care near the top of the falls, where the rock edge is dangerous when wet.",
+   "hazards": [
+    "Steep rock slabs and exposed sections on the ridge with a ladder on the Roaring Brook trail",
+    "Top of Roaring Brook Falls is dangerous, especially when the rock is wet",
+    "Winter ascents need snowshoes and spikes or crampons on the exposed upper ridge"
+   ]
+  },
+  "ledger": [],
+  "review": {
+   "sources": [
+    "https://lakeplacid.com/hiking/giant-mountain",
+    "https://www.lakeplacid.com/hiking/rocky-peak-ridge"
+   ],
+   "confidence": "low",
+   "notes": "No page found that gives a Roaring Brook over Giant to Rocky Peak Ridge distance or gain (published figures are for Giant alone, or for the East Trail traverse), so gain and distance skipped. Descent is inferred as the reverse; no page states it. Season skipped."
+  }
+ },
+ "ny_macomb_mountain_macomb_slide": {
+  "area": "ny_macomb_mountain",
+  "set": {
+   "approach": "Park at the Elk Lake trailhead near the end of Elk Lake Road, reached from Blue Ridge Road off I-87 exit 29. Take the Elk Lake-Dix trail about 2.3 miles to Slide Brook, then follow the brook for just over a mile to the base of the slide on the right. Climb the slide, then follow a ridge path about 0.3 mile to the summit. The first stretch crosses private land; the gate closes seasonally, and the trail closes in hunting season, adding about 4.6 miles round trip if you must park at the Upper Elk Lake Road lot.",
+   "descent_text": "Return down the ridge path to the top of the slide and descend the slide itself, taking care on its loose rock and dirt, then follow Slide Brook back to the Elk Lake-Dix trail and out to the trailhead. The route is out and back with no separate descent line.",
+   "hazards": [
+    "Macomb slide is steep with loose rock, rubble and sand, and its upper exit is difficult",
+    "No maintained trail above the slide: map and compass skills are needed",
+    "Elk Lake Road gate and hunting-season closures can add several miles to the day",
+    "Weather changes quickly and help can be hours away"
+   ],
+   "gain_ft": 2460,
+   "dist_km": 6.28
+  },
+  "ledger": [
+   {
+    "field": "gain_ft",
+    "value": 2460,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://pureadirondacks.com/blogs/adirondack-hiking/macomb-mountain",
+      "retrieved_at": "2026-11-26",
+      "fact": "2,344 ft total gain"
+     },
+     {
+      "url": "https://hiiker.app/hikes/new-york/essex-county/macomb-mountain-from-elk-lake-road-out-and-back",
+      "retrieved_at": "2026-11-26",
+      "fact": "751 m (about 2,460 ft) gain"
+     }
+    ]
+   },
+   {
+    "field": "dist_km",
+    "value": 6.28,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://pureadirondacks.com/blogs/adirondack-hiking/macomb-mountain",
+      "retrieved_at": "2026-11-26",
+      "fact": "8 mi round trip"
+     },
+     {
+      "url": "https://hiiker.app/hikes/new-york/essex-county/macomb-mountain-from-elk-lake-road-out-and-back",
+      "retrieved_at": "2026-11-26",
+      "fact": "12.2 km round trip"
+     }
+    ]
+   }
+  ],
+  "review": {
+   "sources": [
+    "https://pureadirondacks.com/blogs/adirondack-hiking/macomb-mountain",
+    "https://hiiker.app/hikes/new-york/essex-county/macomb-mountain-from-elk-lake-road-out-and-back",
+    "https://www.lakeplacid.com/hiking/the-dix-range"
+   ],
+   "confidence": "medium",
+   "notes": "Distance: mean 7.8 mi round trip halved = 3.9 mi = 6.28 km. Gain uses the higher figure, which is consistent with the trailhead near 2,000 ft. Season skipped."
+  }
+ },
+ "ny_armstrong_mountain_great_range_trail_from_the_lake_road": {
+  "area": "ny_armstrong_mountain",
+  "set": {
+   "overview": "Armstrong Mountain is reached from the Lake Road side by the Gothics access trail and the Beaver Meadow Falls trail up to the Great Range Trail. Ladders beside the falls and steep sections make the climb demanding, though the route stays on marked trail. From the junction, a short dip into a col and a final climb lead to a broad rock platform summit. A walk through private Adirondack Mountain Reserve land begins the day.",
+   "approach": "Park at the St. Huberts lot on Route 73, with an Adirondack Mountain Reserve reservation if hiking between May 1 and October 31. Follow the dirt road to the paved road by the golf course, turn left at about half a mile between the tennis courts on Lake Road Way, and continue to the reserve gate. Walk the dirt road about 2 miles to the Gothics access trail on the right, cross the Ausable River bridge, and reach the base of Beaver Meadow Falls. Climb beside the falls to the Great Range Trail and turn right for Armstrong.",
+   "descent_text": "Go back along the Great Range Trail to the junction near the top of Beaver Meadow Falls, then descend the steep trail and ladders beside the falls to the Gothics access trail and the Lake Road. The same route leads back along the dirt road to the lot. The drop into the col below the summit is steep in both directions.",
+   "hazards": [
+    "Slippery rock and a ladder beside Beaver Meadow Falls, plus further ladders and steep ledges",
+    "Steep drop into the col before the final climb to the summit",
+    "Reservation required May 1 to October 31 on reserve land, and dogs are prohibited",
+    "Winter ascents need snowshoes and spikes or crampons"
+   ],
+   "gain_ft": 3500,
+   "dist_km": 9.01
+  },
+  "ledger": [
+   {
+    "field": "gain_ft",
+    "value": 3500,
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://www.lakeplacid.com/hiking/armstrong-mountain",
+      "retrieved_at": "2026-11-26",
+      "fact": "3,500 ft gain, Beaver Meadow Falls out and back"
+     }
+    ]
+   },
+   {
+    "field": "dist_km",
+    "value": 9.01,
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://www.lakeplacid.com/hiking/armstrong-mountain",
+      "retrieved_at": "2026-11-26",
+      "fact": "11.2 mi round trip halved = 5.6 mi = 9.01 km"
+     }
+    ]
+   }
+  ],
+  "review": {
+   "sources": [
+    "https://www.lakeplacid.com/hiking/armstrong-mountain",
+    "https://pureadirondacks.com/blogs/adirondack-hiking/armstrong-mountain"
+   ],
+   "confidence": "medium",
+   "notes": "Second source for this line not found (the other page describes the Upper Wolfjaw approach). Season skipped."
+  }
+ },
+ "ny_hough_peak_dix_range_herd_path": {
+  "area": "ny_hough_peak",
+  "set": {
+   "overview": "Hough Peak is a stop on the Dix Range crest, reached by an unmarked herd path that links Elk Lake to the other Dix summits. The footing is tight brush and rock scrambling, and it is one of the tougher sections of the range. Most parties take Hough as part of a long day with Dix Mountain rather than on its own, so plan for a full day of route-finding.",
+   "approach": "Start at the Elk Lake trailhead near the end of Elk Lake Road, off Blue Ridge Road at I-87 exit 29. Follow the Elk Lake trail to the Slide Brook lean-to and camp area, cross Slide Brook, and continue over the range crest by herd path through Macomb, Carson and Grace to Hough, or reach Hough from the Dix side. In winter the Elk Lake lot is closed and the walk starts at Clear Pond, adding about 4 miles round trip.",
+   "descent_text": "From Hough the herd path continues to the summit of Dix Mountain. Descend from there to the Elk Lake lot by the marked Beckhorn Trail, which is steeper, or by the longer, slightly gentler Hunter's Pass trail. Both end on the Elk Lake trail.",
+   "hazards": [
+    "Tight herd path with rock scrambling, among the toughest parts of the range",
+    "Unmarked travel between Hough and Dix; steep, slippery rock and route-finding needed",
+    "Very long day, and the Elk Lake lot is closed in winter, adding 4 miles round trip"
+   ]
+  },
+  "ledger": [],
+  "review": {
+   "sources": [
+    "https://www.lakeplacid.com/hiking/the-dix-range"
+   ],
+   "confidence": "low",
+   "notes": "Only the whole-range figures exist (15 mi, 5,350 ft), not Hough alone, so distance skipped. Season skipped. Descent and approach describe the range traverse as the page does; the ordering of peaks is as stated there."
+  }
+ },
+ "ny_seward_mountain_seward_herd_path": {
+  "area": "ny_seward_mountain",
+  "set": {
+   "overview": "Seward Mountain is the first and southernmost of the Seward Range, climbed by a herd path that leaves the marked Blueberry Trail near the Blueberry lean-to. After about five miles of easy trail, the unmarked path climbs steeply, bypasses a cliff on the left, and follows the ridge southwest to a summit with a wooden sign. It is a long Class 2 day through remote country with map-and-compass route-finding.",
+   "approach": "Park at the end of Corey's Road (Ampersand Road), outside Tupper Lake. Follow the marked Blueberry Trail with red DEC markers about 5 miles, using the foot trail rather than the wetter horse trail. Pass the trail to Shattuck Clearing at 1.2 miles, cross several brooks, and reach the Blueberry lean-to at about 4.5 miles. Turn right onto the Ward Brook Truck Trail; the Seward herd path begins near 4.7 miles at a cairn by a brook crossing.",
+   "descent_text": "Reverse the herd path down the ridge, past the cliff bypass and the steep section, then walk the Blueberry Trail the remaining miles back to Corey's Road. Some parties continue south over Donaldson and Emmons and return by the Calkins Brook herd path, a longer option that requires a separate plan.",
+   "hazards": [
+    "Unmarked herd path with blowdown and eroded steep ground, with a cliff to bypass and a steep rock slab",
+    "Several brook crossings on the way in, the largest about 3.5 miles from the start",
+    "Corey's Road may be closed in winter, adding substantial mileage",
+    "Map and compass needed, and winter needs snowshoes and traction on Seward's icy southern rock"
+   ]
+  },
+  "review": {
+   "sources": [
+    "https://www.lakeplacid.com/hiking/seward-range",
+    "https://pureadirondacks.com/blogs/adirondack-hiking/seward-mountain"
+   ],
+   "confidence": "medium",
+   "notes": "Distance single-source; the page's route text also covers Donaldson and Emmons, so 15.8 mi may include more than Seward, though its 4,050 ft gain is close to the stored 3,950. The other page gives 18 mi for all three peaks. Season skipped."
+  }
+ }
+}

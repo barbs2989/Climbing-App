@@ -1,0 +1,341 @@
+{
+ "co_cronin_peak_north_ridge": {
+  "area": "co_cronin_peak",
+  "set": {
+   "overview": "A Class 2 walk to the 13,872-foot summit of Cronin Peak at the southern end of the Sawatch Range, reached by way of the Baldwin Creek drainage above Alpine. The day is mostly tundra and then talus and rubble, ending on the rocky crest of the north ridge. The loose rock near the top makes the final stretch harder than ordinary Class 2 walking, and the route is a stiff uphill grind with moderate route-finding.",
+   "approach": "Drive Chalk Creek Drive west to Alpine and turn up the Baldwin Creek road, which needs a high-clearance four-wheel-drive vehicle; the lower trailhead sits near 9,540 feet and has little parking. The road climbs about three miles to a junction near 10,870 feet where the climbing walk begins. Cross Baldwin Creek and follow the side road up to treeline near 12,000 feet, then angle west through the forest to a clearing above the East Fork, losing about 300 feet. Cross the creek and willows, head up the drainage, then climb tundra westward to the last trees, traverse a bench south and reach a minor ridge that leads up to the north ridge near 13,400 feet.",
+   "descent_text": "Reverse the route: follow the north ridge back down to the minor ridge near 13,400 feet, drop the tundra bench to the creek, cross the willows and clearing, and climb the short rise back to the treeline road before walking down to the junction and the vehicle.",
+   "hazards": [
+    "Loose rock and rubble on the upper north ridge",
+    "Willows and a creek crossing in the East Fork drainage",
+    "Rough high-clearance road to the trailhead",
+    "Moderate route-finding through forest and tundra benches"
+   ]
+  },
+  "ledger": [],
+  "review": {
+   "sources": [
+    "https://www.climb13ers.com/colorado-13ers/cronin-peak_north-ridge"
+   ],
+   "confidence": "medium",
+   "notes": "Single source, which itself says its directions were not field-tested. Skipped gain and distance: sources give 3,000 ft / 6.6 mi RT from the upper trailhead and about 4,500 ft RT from lower start; the start point conflicts. Skipped season (none stated)."
+  }
+ },
+ "co_mount_buckskin_northeast_slope": {
+  "area": "co_mount_buckskin",
+  "set": {
+   "overview": "A short Class 2 climb of Mount Buckskin from Kite Lake in the Mosquito Range, mostly tundra that gives way to talus and scree near the ridge. The northeast slope steepens through the middle section before easing, and a gentle ridge walk leads to the true summit, the southeast one of two tops. It is a common half day, and is often paired with its neighbors in the same basin.",
+   "approach": "From Alma, follow the Kite Lake road about six miles on graded gravel; the last mile is rough and higher clearance helps, and there is a parking fee at the lake lot. From the trailhead near 12,000 feet, take the Lake Emma trail west for roughly 0.4 mile into the basin. Around 12,200 to 12,300 feet leave the trail to the south, cross Buckskin Creek while avoiding the willows, and start up the northeast slope.",
+   "descent_text": "Return the way you came: drop back along the summit ridge and down the northeast slope to the creek crossing, then rejoin the Lake Emma trail to the Kite Lake lot. Tying in Mount Democrat is possible but its descent is the harder part of that link.",
+   "hazards": [
+    "Loose rock and scree on the northeast slope and ridge",
+    "Steep section between about 12,500 and 12,700 feet",
+    "Willows and stream crossings in the basin",
+    "Rough last mile of the access road"
+   ],
+   "gain_ft": 1900,
+   "dist_km": 2.49
+  },
+  "ledger": [
+   {
+    "field": "gain_ft",
+    "value": 1900,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=buck1",
+      "retrieved_at": "2026-11-26",
+      "fact": "about 1,950 ft gain, 3 mi round trip from Kite Lake"
+     },
+     {
+      "url": "https://www.climb13ers.com/colorado-13ers/mount-buckskin",
+      "retrieved_at": "2026-11-26",
+      "fact": "about 1,850 ft gain, 3.2 mi round trip"
+     }
+    ]
+   },
+   {
+    "field": "dist_km",
+    "value": 2.49,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=buck1",
+      "retrieved_at": "2026-11-26",
+      "fact": "3 mi round trip, so 1.5 mi one way"
+     },
+     {
+      "url": "https://www.climb13ers.com/colorado-13ers/mount-buckskin",
+      "retrieved_at": "2026-11-26",
+      "fact": "3.2 mi round trip, so 1.6 mi one way; value is the 1.55 mi midpoint"
+     }
+    ]
+   }
+  ],
+  "review": {
+   "sources": [
+    "https://www.14ers.com/route.php?route=buck1",
+    "https://www.climb13ers.com/colorado-13ers/mount-buckskin"
+   ],
+   "confidence": "high",
+   "notes": "Skipped season: neither page states one."
+  }
+ },
+ "co_north_apostle_southwest_ridge": {
+  "area": "co_north_apostle",
+  "set": {
+   "overview": "A Class 2 route up North Apostle in the Collegiate Peaks, started from the Winfield area. The way crosses a meadow and a tarn basin, climbs tundra and boulders to the saddle with Ice Mountain, and finishes on the rubbly southwest ridge through small sandy gullies. Exposure is minimal, but the route-finding in the basin is the most involved part and the upper ridge is steep and loose.",
+   "approach": "Drive from Leadville or Buena Vista to Winfield and continue southwest on the rough road toward the Apostles; low-clearance cars park just past the Clear Creek crossing, while a four-wheel-drive vehicle can reach the trailhead near 10,880 feet about 2.25 miles farther. Walk south along the old roadbed and follow the trail toward the Apostles. Near the old Hamilton townsite take the side trail across the South Clear Creek forks to a meadow near 11,360 feet, then head southeast into the basin between North Apostle and Ice Mountain, passing a tarn near 12,100 feet.",
+   "descent_text": "Go back down the southwest ridge to the saddle with Ice Mountain, descend the boulders and tundra into the basin past the tarn, and retrace the approach through the meadow and along the old road to the trailhead.",
+   "hazards": [
+    "Steep loose rubble on the upper southwest ridge",
+    "Early-season snow in the upper basin that can call for an ice axe",
+    "Complicated route-finding in the basin below the saddle",
+    "Rough four-wheel-drive road to the trailhead"
+   ],
+   "gain_ft": 3320,
+   "dist_km": 6.44
+  },
+  "ledger": [
+   {
+    "field": "gain_ft",
+    "value": 3320,
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://www.climb13ers.com/colorado-13ers/north-apostle",
+      "retrieved_at": "2026-11-26",
+      "fact": "3,320 ft gain, 8 mi round trip from the Winfield trailhead"
+     }
+    ]
+   },
+   {
+    "field": "dist_km",
+    "value": 6.44,
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://www.climb13ers.com/colorado-13ers/north-apostle",
+      "retrieved_at": "2026-11-26",
+      "fact": "8 mi round trip, halved to 4 mi one way (6.44 km)"
+     }
+    ]
+   }
+  ],
+  "review": {
+   "sources": [
+    "https://www.climb13ers.com/colorado-13ers/north-apostle"
+   ],
+   "confidence": "medium",
+   "notes": "Single source for gain/distance; no independent second page found. Skipped season (not stated). Descent is the reverse of the approach; page gives no separate descent."
+  }
+ },
+ "co_wham_ridge": {
+  "area": "co_vestal_peak",
+  "set": {
+   "approach": "From the Molas trailhead the trail drops about 1,700 feet over roughly four miles to the Animas River and crosses a bridge. Climb along the Colorado Trail for about 1.5 miles to the beaver ponds, then follow the steep, well-worn trail about two miles up into Vestal Basin, where a few fallen trees lie between roughly 10,000 and 10,300 feet. Many parties camp in the basin and climb from there; the climbing starts at the base of the north face above the basin.",
+   "descent_text": "Do not take the first trail leading off the summit; it is loose, with kitty-litter ledges and 15-foot Class 3 downclimbs. Instead go off the back of the subsummit down a loose gully that stays at Class 3 or easier, use the cairned break in the rock rib on the right, then reach the saddle trail and the moraines that lead back to the basin camp.",
+   "hazards": [
+    "Loose scree and kitty litter on the wrong descent trail",
+    "Exposed Class 3 downclimbs off the summit",
+    "Easy fifth-class upper ridge with a steep slab that is best bypassed",
+    "Long approach with a 1,700-foot climb back out at the end of the day"
+   ]
+  },
+  "ledger": [],
+  "review": {
+   "sources": [
+    "https://www.14ers.com/php14ers/tripreport.php?trip=21260"
+   ],
+   "confidence": "medium",
+   "notes": "Approach and descent come from one detailed report of the route; the approach is written as facts of the trail, not as a report. Skipped season (no page stated one). Gain/distance not in fill."
+  }
+ },
+ "co_jones_mountain_northeast_ridge": {
+  "area": "co_jones_mountain",
+  "set": {
+   "overview": "A Class 2 ridge walk to Jones Mountain in the San Juans near Silverton, normally taken as the second summit after American Peak. The route follows a talus crest, drops to a saddle near 13,340 feet, and climbs past a ridge step that is the hardest move, roughly Class 2 and possibly 2+. Loose talus, scree and dirt slow progress, and the north side of the ridge falls away steeply.",
+   "approach": "Start at the Burns Gulch trailhead near 10,790 feet on the Animas River road northeast of Silverton; most crossover SUVs reach it, and a high-clearance four-wheel drive can go farther up the gulch and save about two miles and 900 feet each way. Walk about 0.2 mile to the Burns Gulch road and climb southeast to a fork near 11,680 feet. Continue on tundra into the northeast fork, pass a small lake near 12,520 feet, and scramble talus to the saddle on American Peak's west ridge before heading onto the ridge toward Jones.",
+   "descent_text": "Retrace the ridge east-southeast back toward American Peak and the saddle, then drop down the northeast fork past the small lake to the Burns Gulch road and the trailhead.",
+   "hazards": [
+    "Unstable talus, scree and loose dirt along the ridge",
+    "Steep drops on the north side of the crest",
+    "Ridge step above the Jones saddle that can feel like Class 2+",
+    "Ice axe advised when snow lingers"
+   ]
+  },
+  "ledger": [],
+  "review": {
+   "sources": [
+    "https://www.climb13ers.com/colorado-13ers/jones-mountain-2"
+   ],
+   "confidence": "medium",
+   "notes": "Skipped gain and distance: the page measures Jones from American's summit (1.2 mi / 540 ft one way) and gives a three-summit total (9.6 mi / 4,150 ft); no figure for Jones alone from the trailhead. Skipped season. Descent inferred as the reverse of the route."
+  }
+ },
+ "co_half_peak_northwest_ridge": {
+  "area": "co_half_peak",
+  "set": {
+   "overview": "A remote Class 3 climb of Half Peak near the Continental Divide in the San Juans. The northwest ridge steepens over tundra and rubble, and near 13,650 feet a short, roughly 100-foot Class 3 section of spires and couloirs leads to the tilted summit plateau. The outing is long and its distance depends on how far a high-clearance vehicle can drive, with the route usually taken after Quarter Peak.",
+   "approach": "Reach the Carson Pass trailhead near 12,370 feet by the rough four-wheel-drive Wager Gulch road beyond Lake San Cristobal. Walk west on the Continental Divide trail across easy tundra to a pass near 12,900 feet, then descend southwest to the Cataract Gulch trail junction. From there climb Quarter Peak by its north ridge, drop its north ridge into the east basin, and traverse to the south side to a saddle near 12,940 feet where the northwest ridge of Half Peak begins.",
+   "descent_text": "Either downclimb the northwest ridge to the saddle, which can feel harder than going up, or take the south ridge past a short bottleneck with some scrambling. Then follow the drainage down the south-facing slope to the Colorado Trail near 12,450 feet and return along the trail to Cataract Lake or camp.",
+   "hazards": [
+    "Class 3 section near 13,650 feet with about 30 feet of exposed hand-over-hand climbing",
+    "Steep loose terrain on Quarter Peak and the upper northwest ridge",
+    "Exposed downclimb if the ridge is retraced",
+    "Rough four-wheel-drive road and boggy willows if the line drops too low"
+   ]
+  },
+  "review": {
+   "sources": [
+    "https://www.climb13ers.com/colorado-13ers/half-peak"
+   ],
+   "confidence": "medium",
+   "notes": "Single source; the figures include Quarter Peak and the round trip is not symmetric, so halving is approximate. Skipped season. If reviewer prefers, drop gain/dist."
+  }
+ },
+ "co_clinton_peak_south_slope": {
+  "area": "co_clinton_peak",
+  "set": {
+   "overview": "A Class 2 walk up the south slope of Clinton Peak in the Mosquito Range, starting from the Montgomery Reservoir road south of Hoosier Pass. The route crosses a basin of water, mud and willows, then climbs tundra and talus with little exposure and easy route-finding. It is often done with the neighboring McNamee and Traver, which are reached along the ridge.",
+   "approach": "From Colorado 9 just south of Hoosier Pass, turn west on County Road 4 and follow it to the west end of Montgomery Reservoir, where passenger cars park near 10,970 feet. Past that point the road is a rough four-wheel-drive track with rock slabs, deep mud and water crossings, so most parties walk it. Follow it west along the Middle Fork of the South Platte toward Wheeler Lake, then head up into the basin below Clinton, McNamee and Traver, and climb the south slope from there.",
+   "descent_text": "Return the way you came: come down the south slope into the basin, cross the central stream, and walk the track out past Wheeler Lake to the reservoir. Descending the ridge toward McNamee and Traver is the alternative if linking peaks.",
+   "hazards": [
+    "Dense willows, water and mud on the road and in the basin",
+    "Loose talus and rubble on the slopes",
+    "Rough four-wheel-drive road with rock slabs and a steep step",
+    "Snow in the basin early in the season can call for an ice axe"
+   ]
+  },
+  "ledger": [],
+  "review": {
+   "sources": [
+    "https://www.climb13ers.com/colorado-13ers/clinton-peak",
+    "https://www.14ers.com/route.php?route=clin9"
+   ],
+   "confidence": "medium",
+   "notes": "Source pages describe the Traver-McNamee-Clinton combination (about 10-12.8 mi, 3,200-3,300 ft), not the south slope alone, so distance left out. Skipped season. Descent for Clinton alone is inferred as retracing the climb."
+  }
+ },
+ "co_dyer_mountain_southeast_slopes": {
+  "area": "co_dyer_mountain",
+  "set": {
+   "overview": "A short Class 2 climb of Dyer Mountain from upper Iowa Gulch above Leadville. An old mining road leads to the Iowa Amphitheatre, then the slope steepens through a meadow under power lines and climbs scree to the summit. It is a compact half day and is often linked with West Dyer, Gemini or Mount Sherman.",
+   "approach": "Take County Road 2B up Iowa Gulch from the south end of Leadville, about a 20-minute drive on dirt; passenger cars can usually get through if careful with rocks and ruts. Park by the road, walk past the Mount Sherman parking area to the concrete barriers at the end of the upper gulch, and follow the old road, crossing creeks that can run high in runoff. The road fades after about a mile, and a crossing leads up to the amphitheatre and mine ruins where the climbing slope begins.",
+   "descent_text": "Come down the scree and the meadow under the power lines, return through the Iowa Amphitheatre, and follow the old road back to the barriers. Longer options continue to West Dyer, Gemini or Mount Sherman before descending.",
+   "hazards": [
+    "Creek crossings that can be difficult during high runoff",
+    "Steep loose scree on the upper slope",
+    "Seasonal or winter closures of the gulch road",
+    "Rocky, rutted road for low-clearance cars"
+   ],
+   "dist_km": 2.74
+  },
+  "ledger": [
+   {
+    "field": "dist_km",
+    "value": 2.74,
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://www.hikingproject.com/trail/7102935/dyer-mountain",
+      "retrieved_at": "2026-11-26",
+      "fact": "about 3.4 mi round trip in the description (3.1 in the stats), so about 1.7 mi one way"
+     }
+    ]
+   }
+  ],
+  "review": {
+   "sources": [
+    "https://www.hikingproject.com/trail/7102935/dyer-mountain",
+    "https://www.climb13ers.com/colorado-13ers/dyer-mountain_se-ridge"
+   ],
+   "confidence": "low",
+   "notes": "Hiking Project figures conflict internally (gain 1,700 vs 1,563 ft; start 12,120 ft would need 1,741 ft), so gain skipped. climb13ers page covers a long Sherman-Gemini route, not used for this route. Skipped season. Distance is single source."
+  }
+ },
+ "co_crystal_peak_northeast_ridge": {
+  "area": "co_crystal_peak",
+  "set": {
+   "dist_km": 7.64
+  },
+  "ledger": [
+   {
+    "field": "dist_km",
+    "value": 7.64,
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://14ers.com/peaks/10840/13er-crystal-peak-a",
+      "retrieved_at": "2026-11-26",
+      "fact": "Northeast Ridge listed at 9.5 mi round trip, 3,500 ft gain; one way 4.75 mi (7.64 km)"
+     }
+    ]
+   }
+  ],
+  "review": {
+   "sources": [
+    "https://14ers.com/peaks/10840/13er-crystal-peak-a"
+   ],
+   "confidence": "medium",
+   "notes": "Only the stats listing could be opened; no page found with the trailhead, approach or descent for the northeast ridge (climb13ers describes the southwest ridge via McCullough Gulch instead). Skipped description, approach, descent, season, hazards. Existing gain 3,500 matches the same listing."
+  }
+ },
+ "co_atlantic_peak_north_ridge": {
+  "area": "co_atlantic_peak",
+  "set": {
+   "overview": "A Class 2 climb of Atlantic Peak in the Tenmile Range by way of McCullough Gulch, finishing on the north ridge or the northeast slope. The trail passes waterfalls and a lake, then crosses a talus basin to a headwall below the Atlantic-Pacific saddle; the headwall is the crux, loose and difficult Class 2 when dry. Snow on that slope turns it into an ice axe and crampon climb.",
+   "approach": "From Breckenridge drive about eight miles south on Colorado 9, turn onto the Blue Lakes road and then the McCullough Gulch road, and follow it about 1.4 miles to a small parking area near 11,100 feet; parking here is restricted. Walk 0.3 mile past a gate and follow the trail signs up the gulch past a building and over a stream bridge. The trail passes waterfalls near 11,600 feet (stay on the main trail rather than social paths), climbs a rocky hill to a lake near 12,000 feet, then goes around its north side into the upper basin toward the saddle.",
+   "descent_text": "Reverse the route: descend the north ridge or northeast slope to the base of the headwall, pick down the easiest central line, cross the talus basin back to the lake, and follow the gulch trail past the waterfalls to the road and parking area.",
+   "hazards": [
+    "Loose rock on the headwall when it is snow-free",
+    "Snow on the headwall needing an ice axe and crampons",
+    "Confusing social trails near the waterfalls",
+    "Heavy summer traffic on the lower trail and restricted parking"
+   ],
+   "gain_ft": 2900,
+   "dist_km": 5.63
+  },
+  "ledger": [
+   {
+    "field": "gain_ft",
+    "value": 2900,
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=atla1",
+      "retrieved_at": "2026-11-26",
+      "fact": "about 2,900 ft gain, 7 mi round trip from McCullough Gulch (northeast slope option, finishing on the north ridge)"
+     }
+    ]
+   },
+   {
+    "field": "dist_km",
+    "value": 5.63,
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=atla1",
+      "retrieved_at": "2026-11-26",
+      "fact": "7 mi round trip, halved to 3.5 mi one way (5.63 km)"
+     }
+    ]
+   }
+  ],
+  "review": {
+   "sources": [
+    "https://www.14ers.com/route.php?route=atla1"
+   ],
+   "confidence": "medium",
+   "notes": "Single source; the page names the northeast slope as its route with the north ridge as the option for the last 500 ft, so figures are for the shared route. Skipped season (not stated); descent is inferred as the reverse."
+  }
+ }
+}

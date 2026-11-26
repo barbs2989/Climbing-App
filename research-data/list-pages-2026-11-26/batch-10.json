@@ -1,0 +1,282 @@
+{
+ "ny_south_dix_dix_range_herd_path": {
+  "area": "ny_south_dix",
+  "set": {
+   "overview": "South Dix, also known as Carson Peak, is the first summit past Macomb on the Dix Range crest, reached by an unmarked, unblazed herd path. The path crosses the summit area, drops steeply, then climbs over a broad sweep of bare rock. It is a long, strenuous day in the wilderness with no maintained trail beyond the Macomb turnoff.",
+   "approach": "Start at the Elk Lake trailhead at the end of Elk Lake Road. The last stretch of road is closed to cars, so parking is at Clear Pond, which adds about 2 miles each way on foot. A marked trail leads to the Slide Brook campsites and lean-to, where the Macomb herd path begins. Cross the brook, climb the steep loose slide to Macomb, then follow the crest path onward to South Dix.",
+   "descent_text": "Retrace the herd path back over Macomb and down its slide to the marked trail, then walk out to Elk Lake and the road. Parties who continue along the range to Hough and Dix usually come down the marked Beckhorn Trail instead, which is steeper but shorter than the Hunter's Pass option.",
+   "hazards": [
+    "Unmarked herd path that needs map and compass navigation",
+    "Steep, loose rock and scree on the Macomb slide",
+    "Steep drop and bare-rock climb near the summit area",
+    "Long day with a road walk at each end; high ground can run 20 degrees colder than the trailhead"
+   ]
+  },
+  "ledger": [],
+  "review": {
+   "sources": [
+    "https://www.lakeplacid.com/hiking/the-dix-range"
+   ],
+   "confidence": "medium",
+   "notes": "Gain and distance skipped: the only figures found are for the whole five-peak loop (15 mi, 5,350 ft), not this line. Season skipped: no page gives a window."
+  }
+ },
+ "ny_porter_mountain_cascade_mountain_trail_to_porter_spur": {
+  "area": "ny_porter_mountain",
+  "set": {
+   "overview": "Porter is reached by a short spur from the popular Cascade Mountain trail, off Route 73 near Cascade Lakes. The trail dips to the register, stays moderate, then climbs steeply over rocky ground and slabs. The summit is a large open rock with views of the Great Range and back to Cascade, and it is one of the easier High Peaks.",
+   "approach": "Park along Route 73 toward Keene on the right before the Cascade Lakes. In summer the lot fills early and a road walk of a few hundred yards may be needed. The trail drops to the register, then climbs about 2 miles to a junction. Turn right there and follow the spur roughly 0.7 miles to the summit rock.",
+   "descent_text": "Return along the spur to the junction and then down the Cascade trail to the highway. It is the same trail in both directions, so the way down is mostly steep rock slabs followed by easy ground.",
+   "hazards": [
+    "Steep rock slabs that are slick when wet or icy",
+    "Very busy trail and crowded roadside parking in summer",
+    "Winter needs snowshoes and snow spikes on the slabs; summit can be 20 degrees colder than the trailhead"
+   ],
+   "dist_km": 4.35
+  },
+  "ledger": [
+   {
+    "field": "dist_km",
+    "value": 4.35,
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://www.lakeplacid.com/hiking/porter-mountain",
+      "retrieved_at": "2026-11-26",
+      "fact": "about 2 miles to the junction plus 0.7 miles to the summit, so roughly 2.7 miles one way (5 miles round trip); 2.7 mi = 4.35 km"
+     }
+    ]
+   }
+  ],
+  "review": {
+   "sources": [
+    "https://www.lakeplacid.com/hiking/porter-mountain"
+   ],
+   "confidence": "medium",
+   "notes": "One-way distance is derived from the stated junction and spur lengths; a second page gives 6.2 mi round trip only for Cascade plus Porter, so no agreement. Season skipped. Gain already stored (1960); page lists 2,235 for the same line, left alone as gain was not in fill."
+  }
+ },
+ "ny_mount_colvin_gill_brook_trail": {
+  "area": "ny_mount_colvin",
+  "set": {
+   "overview": "Colvin is climbed from the St. Huberts side by a long road walk on private reserve land and then the Gill Brook Trail. The trail starts moderate and steepens, with a steep slab and one particularly hard move near the top. The summit overlooks Lower Ausable Lake, and the peak is often combined with Blake.",
+   "approach": "Park on Route 73 across from the Roaring Brook Falls trailhead near St. Huberts. Walk the road past the golf course, turn left between the tennis courts onto Lake Road Way, and register at the entrance station about 0.6 miles in. Continue past the wooden gate on dirt road for 2.5 more miles, then turn left onto the Gill Brook Trail. A reservation is required May 1 to October 31 and dogs are not allowed.",
+   "descent_text": "Return the way you came: down the Gill Brook Trail to Lake Road, then the long road walk back to the parking area. Take care on the steep slab and the hard spot near the summit going down.",
+   "hazards": [
+    "Steep rock slab and a particularly hard section just below the summit",
+    "Long road walk at each end through private land with reservations required",
+    "Winter needs snowshoes and microspikes on the upper mountain"
+   ],
+   "dist_km": 9.25
+  },
+  "ledger": [
+   {
+    "field": "dist_km",
+    "value": 9.25,
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://www.lakeplacid.com/hiking/mount-colvin",
+      "retrieved_at": "2026-11-26",
+      "fact": "11.5 miles round trip out-and-back; one way 5.75 mi = 9.25 km (halved)"
+     }
+    ]
+   }
+  ],
+  "review": {
+   "sources": [
+    "https://www.lakeplacid.com/hiking/mount-colvin"
+   ],
+   "confidence": "medium",
+   "notes": "Gain skipped: the page lists 2,900 ft round trip with a mis-typed summit elevation (4,507); 2,900 is below summit (4,057) minus St. Huberts base, so it is implausible. Season skipped."
+  }
+ },
+ "ny_mount_emmons_seward_range_herd_path": {
+  "area": "ny_mount_emmons",
+  "set": {
+   "overview": "Emmons is the last and lowest of the three Seward Range peaks, reached by unmarked herd path along the ridge from Donaldson. Most parties do it on a long loop with Seward and Donaldson. The ridge can be very muddy, and there is no official trail to any of the three summits.",
+   "approach": "Park at the end of the gravel Ampersand Road off Coreys Road, near Tupper Lake. Follow the marked Blueberry Trail for about 5 miles with red markers, passing the lean-to at 4.5 miles, to the Seward herd path, usually marked by a cairn and bridge. Climb steeply up Seward, then follow the ridge to Donaldson. Emmons is a roughly 300-foot drop into a col and a 200-foot climb beyond.",
+   "descent_text": "From Emmons, go back along the ridge toward Donaldson and about 0.2 miles before its summit take the Calkins Brook herd path, a 2.5-mile unmarked descent. Turn right on the marked trail for 2.2 miles to the original trail, then 1.5 miles to the parking area.",
+   "hazards": [
+    "Unmarked herd paths needing map and compass skills",
+    "Very muddy ridge between peaks and blowdown to detour around",
+    "Steep eroded ground and a cliff to bypass on the Seward ascent",
+    "Winter road closure adds mileage; ice on the steep south side of Seward"
+   ]
+  },
+  "ledger": [],
+  "review": {
+   "sources": [
+    "https://www.lakeplacid.com/hiking/seward-range"
+   ],
+   "confidence": "medium",
+   "notes": "Gain and distance skipped: only loop figures for all three peaks (15.8 mi, 4,050 ft). Season skipped."
+  }
+ },
+ "ny_dial_mountain_via_bear_den": {
+  "area": "ny_dial_mountain",
+  "set": {
+   "overview": "Dial is reached from the St. Huberts side by a long walk on Lake Road and a rolling trail over Bear Den Mountain, which crosses the site of a 1999 forest fire. The summit is a large boulder facing the Great Range. It is a long, steep day on private reserve land.",
+   "approach": "Park on Route 73 across from the Roaring Brook Falls trailhead. Walk 0.5 miles to a left turn between the tennis courts onto Lake Road Way and register at the entrance station. Pass the wooden gate and follow the dirt road for 2.5 miles to the foot trail. The Bear Den trail rises and falls for about 3.6 miles from Lake Road to the summit of Dial.",
+   "descent_text": "Return over Bear Den Mountain on the same trail to Lake Road, then walk the road back to the parking area. Others loop it by going up Elk Pass and Nippletop and coming down this way.",
+   "hazards": [
+    "Long road walk with an AMR reservation required May 1 to October 31",
+    "Rolling ridge adds extra climbing on the way back",
+    "Steep pitches on Elk Pass side icy in winter; snow spikes or crampons advised"
+   ]
+  },
+  "ledger": [],
+  "review": {
+   "sources": [
+    "https://www.lakeplacid.com/hiking/dial-mountain"
+   ],
+   "confidence": "medium",
+   "notes": "Gain and distance skipped: the page's 13 mi / 4,300 ft is the Elk Pass loop through Nippletop, not the Bear Den line. Season skipped."
+  }
+ },
+ "ny_grace_peak_dix_range_herd_path": {
+  "area": "ny_grace_peak",
+  "set": {
+   "overview": "Grace Peak, formerly East Dix, is a pointed rock summit with nearly full views, reached by unmarked herd path heading roughly east from Carson Peak. It sits slightly off the main Dix Range circuit and is usually added to a long day over Macomb and South Dix.",
+   "approach": "Begin at the Elk Lake trailhead; the road is closed short of it, so you park at Clear Pond and walk about 2 miles in. Follow the marked trail to the Slide Brook campsites and lean-to, cross the brook and climb the steep Macomb slide. Continue along the herd path over South Dix, then head straight east to the Grace summit.",
+   "descent_text": "Return west along the herd path to South Dix and Macomb, then down the Macomb slide to the marked trail and out to Elk Lake. Longer parties may continue to Hough and Dix and descend the Beckhorn Trail.",
+   "hazards": [
+    "Unmarked, unblazed herd path requiring navigation",
+    "Steep loose rock and scree on the Macomb slide",
+    "Tight paths and rock scrambling on the Dix Range crest",
+    "Very long day; high elevations can be 20 degrees colder than the start"
+   ]
+  },
+  "ledger": [],
+  "review": {
+   "sources": [
+    "https://www.lakeplacid.com/hiking/the-dix-range"
+   ],
+   "confidence": "medium",
+   "notes": "Gain and distance skipped: no opened page gives figures for this out-and-back. Season skipped."
+  }
+ },
+ "ny_blake_peak_via_mount_colvin": {
+  "area": "ny_blake_peak",
+  "set": {
+   "overview": "Blake is climbed over Colvin from the St. Huberts side, since the reserve approach leaves no practical way around it. The route drops steeply into the col between the two peaks, then climbs out on a steep, poorly kept path with ladders and slabs. The wooded summit has no view.",
+   "approach": "Park on Route 73 across from the Roaring Brook Falls trailhead near St. Huberts. Walk past the golf course to the entrance station, register, pass the wooden gate and follow the dirt road about 2 miles before the Gill Brook Trail. Climb to Colvin first, then descend into the col and climb to Blake. A reservation is needed May 1 to October 31; no dogs.",
+   "descent_text": "Go back through the col and over Colvin, then down the Gill Brook Trail to Lake Road and the road walk out. The climb out of the col is steep both ways, so budget for it on a long day.",
+   "hazards": [
+    "Steep ladders and rock slabs on the Colvin side",
+    "Steep, poorly maintained climb out of the col",
+    "Long road walk with reservations required in season",
+    "Icy steeper sections in winter; microspikes and crampons needed"
+   ],
+   "dist_km": 11.1
+  },
+  "ledger": [
+   {
+    "field": "dist_km",
+    "value": 11.1,
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://www.lakeplacid.com/hiking/blake-peak",
+      "retrieved_at": "2026-11-26",
+      "fact": "13.8 miles round trip out and back; one way 6.9 mi = 11.10 km (halved)"
+     }
+    ]
+   }
+  ],
+  "review": {
+   "sources": [
+    "https://www.lakeplacid.com/hiking/blake-peak"
+   ],
+   "confidence": "medium",
+   "notes": "Gain skipped: 4,100 ft is a round-trip total and one search listing says 2,677, so they do not agree. Season skipped."
+  }
+ },
+ "ny_cliff_mountain_uphill_brook_herd_path": {
+  "area": "ny_cliff_mountain",
+  "set": {
+   "approach": "Start at the Upper Works parking area near the MacNaughton Cottage. Follow the Calamity Brook Trail, which begins on an old woods road, narrows to a foot trail and rises modestly to Flowed Lands. Go left around the lake, reach Lake Colden and its dam about a mile later, and continue toward the Uphill lean-to. A small cairn on the right marks the start of the herd path to Cliff.",
+   "descent_text": "Retrace the herd path down the slippery cliff band to the Uphill lean-to, then return on the Calamity Brook Trail past Lake Colden and Flowed Lands to Upper Works.",
+   "hazards": [
+    "Steep, slippery cliff band on the herd path",
+    "False summit before the true one",
+    "Muddy, wet unmarked path and water crossings dangerous around freeze-up and thaw",
+    "Very long day from Upper Works"
+   ]
+  },
+  "ledger": [],
+  "review": {
+   "sources": [
+    "https://adirondackhub.com/hiking/cliff-mountain",
+    "https://www.lakeplacid.com/hiking/cliff-mountain"
+   ],
+   "confidence": "medium",
+   "notes": "Gain and distance skipped: the Upper Works page lists 15.5 mi / 3,450 ft, identical to the Adirondak Loj page's numbers, and another listing says nearly 19 miles round trip, so none trusted. Season skipped."
+  }
+ },
+ "ny_nye_mountain_via_indian_pass_brook": {
+  "area": "ny_nye_mountain",
+  "set": {
+   "overview": "Nye follows the old ski trail from Adirondak Loj, then a short unmaintained herd path to a wooded summit with only a slight view just below the top. The walk is moderate with a couple of steeper bits, and the same junction serves Street Mountain, so the two are usually done together. The brook crossing is the main obstacle.",
+   "approach": "Start at the High Peaks Information Center at Adirondak Loj, where parking has a fee. Take the gravel path along Heart Lake, then just past the register turn right at the signs for the Old Nye Ski Trail. Follow it to Indian Pass Brook, which has no bridge, cross, and continue to the herd path junction. Nye is about 0.2 miles to the right.",
+   "descent_text": "Return the same way: down the short herd path to the junction, back across Indian Pass Brook, and along the ski trail to Adirondak Loj. Check the water level before leaving, since the brook can rise quickly while you are on the mountain.",
+   "hazards": [
+    "Unbridged Indian Pass Brook crossing that can be hard or dangerous at high water",
+    "Unmaintained herd path with eroded ground",
+    "Winter needs snowshoes and microspikes; avoid thaw spells because of the crossing"
+   ]
+  },
+  "ledger": [],
+  "review": {
+   "sources": [
+    "https://www.lakeplacid.com/hiking/street-and-nye-mountains"
+   ],
+   "confidence": "medium",
+   "notes": "Gain and distance skipped: the page gives only the combined Street and Nye round trip (8.4 mi, 2,725 ft). Season skipped."
+  }
+ },
+ "ny_couchsachraga_peak_via_santanoni_ridge": {
+  "area": "ny_couchsachraga_peak",
+  "set": {
+   "overview": "Couchsachraga is the most remote of the Adirondack High Peaks, reached by trailless herd paths along the ridge beyond Santanoni. The last stretch dips to a typically muddy col before the wooded summit, which has no view. It is a long day with careful route finding and usually combined with Santanoni.",
+   "approach": "Start at the Santanoni trailhead on Upper Works Road near Newcomb. Walk 1.8 miles of gravel road, take a sharp right onto the trail, and continue 1.6 miles to the cascades. About 200 yards on is the cairn for the Santanoni herd path; follow it to the ridge, bear left toward Santanoni and Couchsachraga, and continue along the ridge to the col below the summit.",
+   "descent_text": "Retrace the herd path back along the ridge toward Santanoni, then down to the cairn and the marked trail, and out the gravel road to Upper Works. Plan the descent for daylight, since the path is hard to follow in the dark.",
+   "hazards": [
+    "Trailless route where map, compass and cairn watching are essential",
+    "Soggy col just below the summit that is typically muddy",
+    "Weather can change fast and help may be hours away; cell service is unreliable"
+   ]
+  },
+  "ledger": [],
+  "review": {
+   "sources": [
+    "https://pureadirondacks.com/blogs/adirondack-hiking/couchsachraga-peak"
+   ],
+   "confidence": "medium",
+   "notes": "Gain and distance skipped: the one page figure (17 mi, 3,140 ft) includes Santanoni and Panther. Season skipped."
+  }
+ },
+ "ak_mount_saint_elias_abruzzi_ridge": {
+  "area": "ak_mount_saint_elias",
+  "set": {
+   "hazards": [
+    "Icefall and avalanches from the northeast face over the approach",
+    "Crevasses and snow bridges on the long glacier travel",
+    "Whiteouts, high wind and severe cold at height",
+    "Glaciers change from year to year, so the historic line may no longer be passable"
+   ]
+  },
+  "ledger": [],
+  "review": {
+   "sources": [
+    "https://mountainfieldguide.com/mount-saint-elias/",
+    "https://en.wikipedia.org/wiki/Abruzzi_Ridge_(Mount_Saint_Elias)"
+   ],
+   "confidence": "medium",
+   "notes": "Descent, gain, distance and season skipped: no opened page states them for this line. Sources disagree on approach details (Malaspina base vs Seward/Newton glaciers); wrote only the glacier chain stated by the one page."
+  }
+ }
+}

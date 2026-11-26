@@ -47,6 +47,8 @@ least one real page you opened, leave the column out. Skipping is fine and is be
 - Desert towers and crag-style Fifty Classics: gain and distance are optional (a short walk-in), but
   approach, descent (the rappel line) and hazards matter.
 
+Only these keys may appear in `set`: overview, approach, descent_text, season, hazards, gain_ft, dist_km (the description goes in `overview`, never `description`).
+
 ## Batch format
 
 ```json
