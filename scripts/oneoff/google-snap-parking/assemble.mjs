@@ -22,6 +22,9 @@ for (const f of fs.readdirSync(W + '/out').filter((x) => x.endsWith('.json'))) {
     const v = over.get(v0.gid) || v0;
     stats.verdicts++; stats[v.v] = (stats[v.v] || 0) + 1;
     if (v.v !== 'lot' && v.v !== 'roadside') continue;
+    // A roadside pin is written only after its second opinion (recheck.mjs) agreed: the first pass's roadside
+    // verdicts were the weakest (17 of the first 33 were downgraded).
+    if (v.v === 'roadside' && !over.has(v.gid)) { stats.roadsidePendingRecheck = (stats.roadsidePendingRecheck || 0) + 1; continue; }
     const g = groups.get(v.gid); if (!g) { stats.missingGroup++; continue; }
     const name = String(v.name || '').trim().replace(/\s+/g, ' ');
     const bad = (why) => { stats.refused++; refused.push({ gid: v.gid, why, name }); };

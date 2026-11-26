@@ -20,7 +20,10 @@ Decide ONE verdict per group:
 - `lot` — pin mapped lot `c`. Give it when the lot is at or very near the road point (normally one of the first
   `lots_at_road_point`) AND either (a) the text/note names or plainly describes that lot, its road, pullout or
   trailhead, or (b) there is no text about parking, nothing contradicts it, and the lot is plainly the crag's own
-  (named after the crag/its trail/park, a trailhead, or the only lot there and ≤ 800 m from the crag). You MAY choose
+  NAMED after the crag, its trail, canyon or park, or mapped as a TRAILHEAD (kind `trailhead`). Being the only lot
+  nearby is NOT enough (against audited pins it was right only 63% of the time; named lots 92%, trailheads 85%).
+  "Text about parking" means the area's own text or our note; a neighbour's text counts only when it plainly
+  describes the same lot. You MAY choose
   a lot from the alternatives instead when the text clearly names it (that is MP correcting Google); say so in `why`.
 - `roadside` — pin the road point itself. Only when no mapped lot fits, the text clearly describes parking on that
   road's shoulder / a pullout / road end right where the walk starts (the road name or an unmistakable description
@@ -35,6 +38,9 @@ Decide ONE verdict per group:
 - `unsure` — anything else. Do not guess; unsure is a fine answer.
 
 Rules:
+- `coord_shared_by_parents` ≥ 3 means the crag's coordinate is shared with areas under other parents: it is a
+  placeholder (a canyon's or a town's point), so the road point says nothing about this crag. Give `lot`/`roadside`
+  only when the TEXT names the place; never on "no text, only lot nearby".
 - Parking lots that are private, customers-only or for a business (a store, restaurant, church, school) are `no`
   unless the text says climbers park there.
 - A residential street is `no` unless the text says to park on it.

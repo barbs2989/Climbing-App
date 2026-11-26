@@ -35,6 +35,7 @@ console.log(`rollback: ${rb}`);
 let n = 0;
 for (const d of todo) {
   await patchRow('areas', d.id, { parking_lat: d.new.lat, parking_lng: d.new.lng, parking_name: d.new.name }, { filter: 'parking_lat=is.null' });
+  await new Promise((r) => setTimeout(r, 1000)); // 2 s a write in all: the first run tripped dbslot's slow probe at 100
   if (++n % 50 === 0) {
     console.log(`${new Date().toISOString()} ${n}/${todo.length}`);
     try { execFileSync('node', [`${process.env.HOME}/dev/db-throttle/dbslot.mjs`, 'check'], { stdio: 'inherit' }); }

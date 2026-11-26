@@ -41,6 +41,9 @@ const PARK = /\b(park|parks|parked|parking|lot|pull[- ]?out|pull[- ]?off|turn[- 
 const sents = (t) => String(t || '').replace(/\s+/g, ' ').split(/(?<=[.!?])\s+(?=[A-Z0-9"(])/).filter((s) => PARK.test(s)).map((s) => s.slice(0, 300));
 const mpText = (id) => { const out = []; for (const m of areaMp[id] || []) { try { const j = JSON.parse(fs.readFileSync(MPT + m + '.json')); if (j['Getting There']) out.push(j['Getting There'].replace(/\s+/g, ' ').slice(0, 900)); out.push(...sents(j.Description).slice(0, 4)); } catch { /* none */ } } return out; };
 const crumb = (a) => { const n = []; for (let p = byId.get(a.parent_id), d = 0; p && d < 3; d++, p = byId.get(p.parent_id)) n.unshift(p.name); return n.join(' > '); };
+// A coordinate several unrelated areas share is a placeholder (a canyon's or a town's), not the crag's own spot.
+const coordParents = new Map(); for (const a of areas) { if (a.lat == null) continue; const k = (+a.lat).toFixed(4) + ',' + (+a.lng).toFixed(4); if (!coordParents.has(k)) coordParents.set(k, new Set()); coordParents.get(k).add(a.parent_id); }
+const shared = (a) => coordParents.get((+a.lat).toFixed(4) + ',' + (+a.lng).toFixed(4))?.size || 1;
 const ledger = []; const groups = new Map();
 for (const t of targets) {
   const s = snap[t.id], a = byId.get(t.id);
@@ -73,7 +76,7 @@ for (const [gkey, g] of groups) {
   const gid = 'g' + createHash('sha1').update(gkey).digest('hex').slice(0, 10);
   out.push({ gid, areas: g.members.map((m) => ({ id: m.id, name: m.name, type: m.area_type, under: crumb(m), lat: m.lat, lng: m.lng })),
     road_point: { road: s.road || '(unnamed road)', m_from_crag: s.m, dir_from_crag: brg(a0.lat, a0.lng, s.lat, s.lng), lat: s.lat, lng: s.lng },
-    lots_at_road_point: cands.filter((c) => atIds.has(c._osm)).length, cands, our_note: notes, text });
+    lots_at_road_point: cands.filter((c) => atIds.has(c._osm)).length, coord_shared_by_parents: shared(a0), cands, our_note: notes, text });
 }
 fs.writeFileSync(W + '/groups.json', JSON.stringify(out));
 fs.writeFileSync(W + '/ledger.json', JSON.stringify(ledger));
