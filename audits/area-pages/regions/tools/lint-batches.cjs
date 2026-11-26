@@ -17,5 +17,13 @@ for (const f of process.argv.slice(2)) {
     if (!e._expect || !e._expect.name) probs.push("no _expect");
     if (probs.length) { bad++; console.log(`${f.split("/").pop()} ${id}: ${probs.join("; ")}`); }
   }
+  // Coverage: with INR=<input dir>, every input region must be written or skipped, and nothing else may appear.
+  const m = f.match(/batch-(r\d+)\.json$/);
+  if (process.env.INR && m) {
+    const inp = JSON.parse(fs.readFileSync(`${process.env.INR}/in-${m[1]}.json`, "utf8")).map(a => a.id);
+    const seen = new Set([...Object.keys(b).filter(k => !k.startsWith("_")), ...Object.keys(b._skipped || {})]);
+    const miss = inp.filter(i => !seen.has(i)), extra = [...seen].filter(i => !inp.includes(i));
+    if (miss.length || extra.length) { bad++; console.log(`${m[1]}: missing ${miss.join(",") || "-"}; extra ${extra.join(",") || "-"}`); }
+  }
 }
 console.log(bad ? `${bad} problem(s)` : "clean");
