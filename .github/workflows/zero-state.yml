@@ -92,8 +92,23 @@ jobs:
           fi
           google-chrome --version
 
+      # A DEPENDABOT PR IS GIVEN NO ACTIONS SECRETS (GitHub runs it with the separate Dependabot
+      # secret store), so the walk saw an empty URL, fell back to seed data, and failed on
+      # "Loading your crews..." -- every dependency PR carried a red check that said nothing about
+      # the dependency, and none was merged (#3661 sat from 2026-11-23). Skip, loudly, only there;
+      # anywhere else a missing secret is a real fault and still fails. Once the two values are
+      # added under Settings > Secrets > Dependabot this branch never runs.
       - name: Zero state
-        run: node scripts/ci-db-inconclusive.mjs npm run check:zero -- --dump zero-state.json
+        run: |
+          if [ -z "$VITE_SUPABASE_URL" ]; then
+            if [ "$GITHUB_ACTOR" = "dependabot[bot]" ]; then
+              echo "::warning::No Dependabot secrets for the database, so check:zero did NOT run on this dependency PR. Add VITE_SUPABASE_URL and VITE_SUPABASE_ANON_KEY under Settings > Secrets and variables > Dependabot."
+              exit 0
+            fi
+            echo "::error::VITE_SUPABASE_URL is empty, so check:zero would walk seed data and prove nothing."
+            exit 1
+          fi
+          node scripts/ci-db-inconclusive.mjs npm run check:zero -- --dump zero-state.json
         env:
           # Match build-check.yml and deploy.yml. Without these USE_DB is off and the
           # Climbs tab renders AreaView instead of DbAreaBrowser — a different app than

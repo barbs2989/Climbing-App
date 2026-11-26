@@ -14,6 +14,7 @@
     "check:jsx-comments": "node scripts/check-jsx-comments.mjs",
     "check:screen-lists": "node scripts/check-screen-lists.mjs",
     "errors:read": "node scripts/read-app-errors.mjs",
+    "ops:status": "node scripts/ops-status.mjs",
     "check:refs": "node scripts/check-undefined-refs.mjs",
     "check:hooks": "node scripts/check-hooks-rules.mjs",
     "check:back-button": "node scripts/check-back-button.mjs",
