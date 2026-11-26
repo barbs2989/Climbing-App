@@ -40524,3 +40524,113 @@ Face, both otherwise unenriched — no further stored facts to contradict.
 
 6 confirmed errors fixed, 1 addition, 3 flagged for human review. Next batch continues
 id-ascending from `wa_inner_constance_northwest_buttress` (pass 9).
+
+## 2026-11-26 — Pass 9, Batch 586
+
+Checked 10 routes, continuing id-ascending from `wa_inner_constance_northwest_buttress`:
+Sean's Route/Second Wind and the Standard Route (both Inner Constance), West Ridge
+(Inspiration Peak), Standard Scramble (Iron Peak), East Ridge / Nohokomeen Glacier and
+Headwall / Northeast Glacier / South Face / Southeast Ridge Direct (all Jack Mountain), and
+the Cascade-Johannesburg Couloir (East Ridge) on Johannesburg Mountain. Two sub-scope routes
+encountered in id order were skipped as out of scope per the audit's standing definition
+(`area_type = 'peak'` only): `wa_inspiration_traverse` (filed under the crag-type area
+"Alpine and Technical Traverses") and `wa_j_tnar` (filed under the crag-type "Jötunheim").
+
+6 confirmed errors fixed, all `gain_ft`/`loss_ft`/`permit` fixes:
+- `wa_inner_constance_seans_route`: `gain_ft`/`loss_ft` were both NULL despite the route's own
+  stored itinerary already giving a day-by-day breakdown (hike-in +2800 ft, hike-out -2800 ft,
+  the climbing day itself contributing no net change). Filled the top-level scalars from that
+  sum — the same recurring pattern as several prior batches.
+- `wa_iron_peak_teanaway_scramble`: a simple out-and-back (trailhead ~3800 ft to summit 6510
+  ft, no loop), so `gain_ft` should equal `loss_ft` — `loss_ft` (2710) already matched that
+  pin-derived delta, but `gain_ft` was stored as 2543. Wenatchee Outdoors, SummitPost and the
+  Mountaineers all cluster their quoted gain figures (2600-3300 ft) around 2710, not 2543.
+- `wa_jack_mountain_nohokomeen_headwall`: `loss_ft` was NULL. `gain_ft` (10000) is
+  independently corroborated by mountaineers.org's own route page (30 mi round trip, 10,000
+  ft gain) — the lower pin-derived and itinerary figures undercount because they miss the long
+  flat/bushwhack approach a straight-line calc can't see. Filled `loss_ft` to match the
+  already-correct `gain_ft` for this out-and-back.
+- `wa_jack_mountain_northeast_glacier`: `gain_ft` (4501) is confirmed impossible independent of
+  any external source — this route's own stored waypoints (trailhead 1880 ft -> summit 9075
+  ft) already require a one-way net gain of ~7195 ft, more than the stored round-trip total.
+  No authoritative sourced replacement was found (the itinerary's own 9400/9400 is plausible
+  but unsourced, and Beckey's Cascade Alpine Guide Vol. 2, cited by Wikipedia for this route,
+  wasn't accessible to confirm a number), so the known-wrong value was cleared to NULL rather
+  than guessed — needs human research to refill it.
+- `wa_jack_mountain_southeast_ridge_direct`: `permit` was NULL, but this route's own approach
+  text says its overnight camps/approach are shared with the South Face route on the same
+  peak, whose row already documents the required NPS backcountry permit. Copied that text over
+  rather than leaving this route silent about it.
+- `wa_johannesburg_mountain_cj_couloir`: `gain_ft`/`loss_ft` (4900/4600) undercounted the round
+  trip — this route's own waypoints (trailhead 3600 ft -> couloir base 3300 ft -> east-ridge
+  col 6765 ft -> summit 8200 ft, reversed on the way out) sum to 5200 ft of gain and 5200 ft of
+  loss, not 4900/4600, which dropped the final ~300 ft re-gain back up to the trailhead.
+
+Flagged for human review, not fixed:
+- `wa_inner_constance_standard`'s itinerary day-by-day `gainFt`/`lossFt` figures are mutually
+  inconsistent (day sums: 6000 ft gain vs 6172 ft loss, which should be equal for an
+  out-and-back) and don't match the route's own waypoint elevations either (day 1's stated
+  3800 ft vs a ~4100 ft pin-implied gain; day 2's stated 2200 ft vs a ~2872 ft pin-implied
+  camp-to-summit gain). The top-level `gain_ft`/`loss_ft` (7300/7300) looks plausible on its
+  own and was left untouched. Fixing the itinerary means rewriting multiple nested day objects
+  inside a JSONB array, and it isn't clear which day's number(s) are actually wrong — a human
+  call, not a safe scalar UPDATE.
+- `wa_inner_constance_standard`'s `high_point_ft` (7672) differs by 2 ft from its sibling
+  `wa_inner_constance_seans_route`'s 7670 and from Wikipedia's 7670 — the row's own prose
+  attributes 7672 to "LiDAR," a plausibly more precise source, so this is noted rather than
+  corrected.
+- `wa_inspiration_peak_west_ridge`'s itinerary day-sum (7800/7800) exceeds its own already-
+  correct, pin-matching top-level `gain_ft`/`loss_ft` (7291/7291, exactly `7891 - 600`) by 509
+  ft on both sides. Low priority since the rendered top-level stat is already right — the
+  itinerary, not the stat, would need the fix.
+- `wa_jack_mountain_east_ridge`'s `gain_ft`/`loss_ft` are NULL; the itinerary's own 9600/9600
+  is plausible by rough geometry (trailhead ~1800-1900 ft to the 9075 ft summit plus pass-
+  crossing terrain) but no route-specific sourced figure was found to confirm it before
+  writing it to the top level.
+- `wa_jack_mountain_south_face`'s `high_point_ft` (9075) disagrees with this same row's own
+  summit waypoint (9069), and outside sources don't converge either — SummitPost/WTA give
+  9066 ft, listsofjohn's LiDAR estimate gives 9070 ft, explore.com gives 9069 ft. Needs a
+  human to pick a canonical figure, not an audit-run guess.
+- `wa_jack_mountain_south_face`'s `gain_ft`/`loss_ft` (11500/11500, matching its own itinerary)
+  run about 1400 ft above a strict sum of this row's own waypoints reversed as an out-and-back
+  (~10089/10089) — plausibly explained by undulating glacier/ledge terrain the coarse pin list
+  doesn't capture, but not verifiable to the foot, so left as-is.
+- `wa_jack_mountain_southeast_ridge_direct`'s `gain_ft` (11450) vs. its own itinerary sum
+  (8800/8800) is unresolved — no reachable trip report or guidebook source confirmed either
+  number (Mountain Project and a Beckey-citing third-party site were both unreachable from
+  this run); `loss_ft` is NULL and wasn't filled with a guess either. Its `fa` ("John Anderson
+  and Alan Kearney, August 1977") likewise couldn't be independently confirmed or refuted this
+  pass.
+- `wa_johannesburg_mountain_cj_couloir`'s itinerary day totals (day 1 gain 3200/loss 0; day 2
+  gain 1400/loss 4600) should move toward roughly 3465/300 and 1735/4900 to agree with the
+  corrected top-level total fixed above — not patched here, since itinerary edits are
+  shape-guarded (`check:itinerary-shape`) and better made through the project's itinerary
+  tooling than a raw JSONB `UPDATE`.
+- `wa_johannesburg_mountain_cj_couloir`'s "Johannesburg Camp" waypoint (3400 ft) is never
+  visited by this route's own approach/itinerary text, which starts and ends at the Cascade
+  Pass trailhead (3600 ft) and bivvies at the 6765 ft col — looks like it may be a stray pin
+  belonging to the Northeast Buttress route, which the approach text says shares this same
+  trailhead. Needs a human to confirm whether it belongs on this route at all.
+- `wa_inner_constance_seans_route`'s `fa` ("Sean Allen and Peter Darragh, August 2021") could
+  not be corroborated against any source found this pass — not disconfirmed, just unverified.
+
+Clean: `wa_inner_constance_standard`'s `fa` ("Unknown; first ascent of peak 1939 by David
+Harrah party," matching Wikipedia); `wa_inspiration_peak_west_ridge`'s `fa` (Fred & Helmy
+Beckey, Aug 29 1940, matching Mountaineers.org and Mountain Project), `grade`/`pitches` (5.7 /
+14, matching Mountain Project) and `high_point_ft` (7891, matching Wikipedia and PeakVisor
+exactly); `wa_iron_peak_teanaway_scramble`'s `grade` (Class 2, matching SummitPost and the
+Mountaineers); `wa_jack_mountain_east_ridge`'s `fa` (Carl & Gordon Skoog, July 16 1984,
+matching Wikipedia/SummitPost) and `high_point_ft` (9075, within the normal 9066-9075 ft
+cluster cited across sources — noise, not an error); `wa_jack_mountain_nohokomeen_headwall`'s
+`grade` (Class 3, matching its description as a non-technical spring snow climb) and waypoint
+elevations (internally consistent with the sourced approach); `wa_jack_mountain_northeast_
+glacier`'s `fa` (Fred Beckey, Dallas Kloke & Reed Tindall, July 19 1978, matching Wikipedia's
+citation of Cascade Alpine Guide Vol. 2) and `grade` (Class 4, matching its description);
+`wa_jack_mountain_south_face`'s `grade` (Class 4, matching mountaineers.org's own route page);
+and `wa_johannesburg_mountain_cj_couloir`'s `fa` (Calder Bressler, Bill Cox, Ray W. Clough &
+Tom Myers, July 26 1938 — also the peak's own first ascent, matching an American Alpine Club
+publication). Coordinates for all 10 routes fell within a plausible bounding box for their
+named peak/area.
+
+6 confirmed errors fixed, 9 flagged for human review. Next batch continues id-ascending from
+`wa_johannesburg_mountain_cj_couloir` (pass 9).
