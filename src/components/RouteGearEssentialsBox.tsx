@@ -27,7 +27,7 @@ export interface RouteGearEssentialsBoxProps {
 }
 
 const _ROPE_KIT_RE=/^(?:rope|harness|belay)/i;
-const DISC_ASSUMED: Record<string, string[]>={sport:["Rope","Quickdraws","Harness","Belay / rappel device","Personal anchor / sling","Helmet","Climbing shoes","Chalk"],trad:["Rope","Trad rack","Harness","Belay / rappel device","Helmet","Climbing shoes","Chalk","Nut tool"],bouldering:["Climbing shoes","Crash pads","Chalk","Brush"],aid:["Rope","Trad rack","Harness","Belay / rappel device","Helmet","Aiders / etriers","Daisy chains","Ascenders"],ice:["Harness","Belay / rappel device","Helmet","Ice tools","Crampons","Mountaineering boots","Warm layers"],mixed:["Harness","Belay / rappel device","Helmet","Ice tools","Crampons","Warm layers"],alpine:["Harness","Belay / rappel device","Helmet","Ice axe","Crampons","Mountaineering boots","Glacier / crevasse kit","Warm layers","Navigation"],mountaineering:["Ice axe","Crampons","Mountaineering boots","Harness","Helmet","Glacier / crevasse kit","Navigation","Warm layers"],scrambling:["Approach shoes","Helmet","Navigation (map / GPS)"]};
+const DISC_ASSUMED: Record<string, string[]>={sport:["Rope","Quickdraws","Harness","Belay / rappel device","Personal anchor / sling","Helmet","Climbing shoes","Chalk"],trad:["Rope","Trad rack","Harness","Belay / rappel device","Helmet","Climbing shoes","Chalk","Nut tool"],bouldering:["Climbing shoes","Crash pads","Chalk","Brush"],aid:["Rope","Trad rack","Harness","Belay / rappel device","Helmet","Aiders / etriers","Daisy chains","Ascenders"],ice:["Harness","Belay / rappel device","Helmet","Ice tools","Crampons","Mountaineering boots"],mixed:["Harness","Belay / rappel device","Helmet","Ice tools","Crampons"],alpine:["Harness","Belay / rappel device","Helmet","Ice axe","Crampons","Mountaineering boots","Glacier / crevasse kit"],mountaineering:["Ice axe","Crampons","Mountaineering boots","Harness","Helmet","Glacier / crevasse kit"],scrambling:["Approach shoes","Helmet"]};
 // Show the snow and glacier items only where the route gives evidence it needs them.
 const _GLACIER_RE=/glacier|crevasse|bergschrund|schrund|icefall|serac/i;
 const _SNOW_RE=/\bsnow|\bcouloir|\bnev[\u00e9e]|\bice\b|ice axe|crampon|posthol|cornice|glissad|\bfirn\b|\bmoat\b/i;
@@ -128,10 +128,13 @@ function conditionalFor(route: GearEssentialsRoute,disc: string){
    cautious tier, so the default view left out a first aid kit's companions: the headlamp, the
    emergency shelter, the spare food and water. The essentials are now part of the list itself:
    the core set on every climb, and the rest of the Ten Essentials wherever the climb is in the
-   backcountry. mergeGearList still dedupes them against the discipline kit ("Warm layers",
-   "Navigation") and the route's own entries. */
+   backcountry. mergeGearList still dedupes them against the discipline kit and the route's own entries. */
 const GEAR_ESSENTIALS_CORE=["Water","Food / snacks","First aid kit","Headlamp + spare batteries","Sun protection (sunscreen, sunglasses)"];
-const GEAR_ESSENTIALS_BACKCOUNTRY=["Rain shell","Warm layers","Navigation (map, compass / GPS)","Emergency bivy / space blanket","Knife / repair kit","Fire starter","Emergency food (beyond what you plan to eat)"];
+/* NO LAYERS, SHELL OR NAVIGATION (owner's note, 2026-11-25): "they should already know that. I only want to provide
+   unique information for the route. Same with navigation and gps." Warm layers, a rain shell and a map / GPS are
+   left out of this list and of the discipline kits above; a route whose OWN essentials name one (a whiteout-prone
+   glacier that wants a GPS track) still lists it, since mergeGearList keeps the route's entries. */
+const GEAR_ESSENTIALS_BACKCOUNTRY=["Emergency bivy / space blanket","Knife / repair kit","Fire starter","Emergency food (beyond what you plan to eat)"];
 const GEAR_BACKCOUNTRY_DISCS: Record<string, number>={hiking:1,alpine:1,mountaineering:1,ice:1,mixed:1,aid:1,scrambling:1};
 function essentialsFor(disc: string){return GEAR_ESSENTIALS_CORE.concat(GEAR_BACKCOUNTRY_DISCS[disc]?GEAR_ESSENTIALS_BACKCOUNTRY:[]);}
 /* Moved verbatim from RouteDetail.jsx; only the types were added.
