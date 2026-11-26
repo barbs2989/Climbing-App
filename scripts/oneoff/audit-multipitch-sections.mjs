@@ -58,7 +58,7 @@ const _err = console.error; console.error = (...a) => { if (!/useLayoutEffect/.t
 const { render, dbRouteToCamel, catOf } = require_(out);
 const CRAG = ["trad", "sport", "toprope", "aid", "bouldering"];
 const text = (html) => html.replace(/<style[\s\S]*?<\/style>/g, " ").replace(/<[^>]+>/g, "\n").replace(/&#x27;/g, "'").replace(/&amp;/g, "&").split("\n").map((s) => s.trim()).filter(Boolean).join(" | ");
-// A section is HEADED when its heading is followed by the pencil: "ROUTE BREAKDOWN | ✎ Edit" or, filled,
+// A section is HEADED when its heading comes just before the empty line (the pencil is an icon since the no-emoji rule, so up to two short cells may sit between): "ROUTE BREAKDOWN | ✎ Edit" or, filled,
 // "ROUTE BREAKDOWN" after its Tap-for-detail chip; RAPPELS may read "RAPPELS · 3 rappels" or "3 RAPPELS".
 const HAS_BREAKDOWN = /(^|\| )ROUTE BREAKDOWN( \||$)/;
 const HAS_RAPPELS = /(^|\| )[^|]*RAPPELS[^|]*( \||$)/;
@@ -77,8 +77,8 @@ function check(route, label, problems, counts) {
     if (WALKOFF.test(String(route.rappels || "")) || /^0x?$/.test(String(route.rappels || "").trim())) counts.walkoff++;
     else problems.push(`${label} ${route.id} (${route.discipline}, ${route.pitches}p, ${tab}): no RAPPELS section`);
   }
-  if (/\| No pitch-by-pitch breakdown/.test(t) && !/ROUTE BREAKDOWN \| ✎ Edit \| No pitch-by-pitch breakdown/.test(t)) problems.push(`${label} ${route.id}: empty breakdown is a bare note, not a headed section`);
-  if (/\| No rappel information/.test(t) && !/RAPPELS \| ✎ Edit \| No rappel information/.test(t)) problems.push(`${label} ${route.id}: empty rappels is a bare note, not a headed section`);
+  if (/\| No pitch-by-pitch breakdown/.test(t) && !/ROUTE BREAKDOWN(?: \| [^|]{0,40}){0,2} \| No pitch-by-pitch breakdown/.test(t)) problems.push(`${label} ${route.id}: empty breakdown is a bare note, not a headed section`);
+  if (/\| No rappel information/.test(t) && !/RAPPELS(?: \| [^|]{0,40}){0,2} \| No rappel information/.test(t)) problems.push(`${label} ${route.id}: empty rappels is a bare note, not a headed section`);
 }
 
 const key = requireServiceKey();

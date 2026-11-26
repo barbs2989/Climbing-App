@@ -67,4 +67,17 @@ was never saved; 1,064 have a saved description that does not go pitch by pitch.
 (the existing licensed crawler); then run `build-worklist.mjs` again and continue the batches.
 
 ## Apply log
-(see below)
+
+`apply-all.sh` (enrich:apply `--pace 1000`, one batch at a time, `dbslot check` before each): 2026-11-26 06:17-06:41
+b001-b038, stopped once when the DB gate read 1.9 s, resumed after the back-off; 08:08-08:14 b039-b049. **All 893 routes
+written and verified on re-read** (`applied.txt`, `logs/`, rollbacks in `audits/route-breakdown/rollback-17957*.json`).
+Three notes were refused by the apply's own source rule (an organisation named, and "Beckey" inside a route name),
+reworded and re-applied; `scan-sources.mjs` now runs that rule over a batch first.
+
+Rappel tables: 43 written, then 2 not applied (40 m stations need two ropes; owner ruling 2026-11-26 that RAPPELS
+describes one rope, carried by PR #4033's session, which is rewriting 17 already-applied tables for one rope).
+
+Afterwards `scripts/oneoff/audit-multipitch-sections.mjs --ids=<the 893>`: every route renders, shows ROUTE BREAKDOWN
+and RAPPELS as headed sections, and the synthetic "a route that gains pitches gains both sections" pass holds. Its
+empty-section regex expected a pencil glyph the no-emoji rule removed, so it flagged every empty section on every
+route; fixed to accept the icon.

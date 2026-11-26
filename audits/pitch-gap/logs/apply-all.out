@@ -124,3 +124,37 @@ healthy: HTTP 200 in 431 ms
   verified lines: 20
 SLOW/FAILING: HTTP 200 in 1944 ms — back off, release your slot, re-acquire
 STOP before b039: DB gate says slow
+healthy: HTTP 200 in 553 ms
+=== b039 08:08:41
+  verified lines: 19
+healthy: HTTP 200 in 925 ms
+=== b040 08:09:21
+  verified lines: 17
+healthy: HTTP 200 in 566 ms
+=== b041 08:09:55
+  verified lines: 17
+healthy: HTTP 200 in 491 ms
+=== b042 08:10:29
+  verified lines: 17
+healthy: HTTP 200 in 395 ms
+=== b043 08:11:03
+  verified lines: 13
+healthy: HTTP 200 in 434 ms
+=== b044 08:11:30
+  verified lines: 13
+healthy: HTTP 200 in 338 ms
+=== b045 08:11:56
+  verified lines: 17
+healthy: HTTP 200 in 457 ms
+=== b046 08:12:31
+  verified lines: 18
+healthy: HTTP 200 in 578 ms
+=== b047 08:13:06
+  verified lines: 17
+healthy: HTTP 200 in 360 ms
+=== b048 08:13:40
+  verified lines: 19
+healthy: HTTP 200 in 558 ms
+=== b049 08:14:18
+  verified lines: 17
+ALL APPLIED
