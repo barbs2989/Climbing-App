@@ -46,6 +46,9 @@ Read the row, then the source text file (Description / Protection / Location sec
   NEVER copy the route's overall grade onto a pitch the text does not grade.
   `lengthM` (feet -> metres, rounded), `bolts`, `anchor`, `crux`: ONLY when the text states it. `crux: true` only
   where the text names that pitch as the crux (or gives it the route's top grade outright), never inferred.
+- A stated range ("35-40 m", "5.7 or 5.8") goes in the notes, never as a single number: no midpoints, no "estimated"
+  lengths. Never split a lead the text describes as one to reach the stored count. A route the text describes as
+  unfinished (a pitch not yet climbed or freed) is a skip.
 - Every entry has non-empty `notes`: what the climbing is, where it goes, crux and protection, where the belay is.
 - If the row ALREADY has pitch_detail: keep every existing `pitch` label and every stored fact the text does
   not contradict, improve thin notes, add the missing pitches, set `"replace_pitch_detail": true`. If the stored
