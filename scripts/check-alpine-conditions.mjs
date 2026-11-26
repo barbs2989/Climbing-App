@@ -310,6 +310,13 @@ eq("an inch or more of new snow on a scramble is flagged (it becomes a winter cl
 console.log("\n4. ALPINE ROCK — showers and storms anchor the start of the DESCENT");
 const shw = run(forecast((d, h) => (d === T && h >= 12 && h < 16 ? { pp: 50, fl: 12000 } : { fl: 12000 })), { kind: "alpinerock", terrain: { snow: "no" }, highFt: 8000, legs: LEGS });
 eq("a 50% afternoon chance of rain is a showers caution", keys(shw).includes("showers:caution"), true);
+// A SCRAMBLE IN THE RAIN (audit 2026-11-26): scrambling leads with wet rock, but only the 48 h BEFORE the day was read.
+{
+  const scw = forecast((d, h) => (d === T && h >= 12 && h < 16 ? { pp: 60, rain: 0.1, fl: 12000 } : { fl: 12000 }));
+  const sf = run(scw, { kind: "scramble", terrain: { snow: "no" }, highFt: 8000, legs: LEGS }).flags.find((f) => f.key === "showers");
+  eq("a scramble on a day forecast to rain gets the showers caution too", !!sf && sf.level === "caution", true);
+  eq("...worded for a scramble: downclimbing, not rappelling", sf ? /downclimbing wet rock/.test(A.flagText(sf, scw)) && !/rappelling/.test(A.flagText(sf, scw)) : false, true);
+}
 // THE AMOUNT, NOT ONLY THE CHANCE (owner's note, 2026-10-28: "it usually says a percentage, but not an expected amount of rain").
 {
   const wetFc = forecast((d, h) => (d === T && h >= 13 && h < 16 ? { pp: 60, rain: 0.04, fl: 12000 } : { fl: 12000 }));
