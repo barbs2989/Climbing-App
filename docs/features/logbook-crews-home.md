@@ -42,6 +42,9 @@ Three top-level `tab` values in `ClimbMatch.jsx` (`tab==="today"`, `tab==="crew"
   on open through `useLogTrack` (`lib/db.js`), since the route page's report read leaves `gpx_track` out. The descent section draws
   the three logged legs as a proportional bar with the total; an avalanche rating below Considerable files under On the route as a
   reading, Considerable and above under Hazards. The form says, under typed partner names, that a typed name cannot confirm the climb.
+  **Pack weight** (audit 2026-11-25): a report shows one only when the reporter typed it, per day, in the log form's *+ Add your
+  day-by-day plan* (alpine, mountaineering, ice, mixed, scrambling; stored in `climb_logs.itinerary`, converted from kg on save);
+  the write-up's *How X paced it* labels it *35 lb pack*. Nothing prefills it: not the route's plan, the Planner, or the profile.
   `LogAscent` also offers *Add topo photo* (signed in, DB on): the climber draws the route line with the route page's
   `TopoDrawer` (lazy import from `RouteDetail.jsx`, which re-exports it from `src/components/TopoDrawer.tsx`) and on save App's `addLogTopo` files the photo under the climb
   (`uploadTopoPhoto`, `topos.route_id`, 0364) and the line on the route (`submitTopoLine`), so it reaches that climb's Photos tab for everyone, and no other climb's.
