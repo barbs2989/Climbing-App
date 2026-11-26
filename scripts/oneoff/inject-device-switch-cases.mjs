@@ -80,8 +80,8 @@ const CASES = [
     name: "enforcement-broken",
     why: "the consumer receives the flag and broadcasts the name anyway",
     file: PRES,
-    find: "{ id: m.id, visible: false }",
-    repl: "{ id: m.id, name: m.name, visible: false }",
+    find: "{ id: anonRef.current, visible: false }",
+    repl: "{ id: anonRef.current, name: m.name, visible: false }",
     expect: "does not OMIT the climber's identity",
   },
   {
