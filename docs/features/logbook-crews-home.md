@@ -321,12 +321,26 @@ Three top-level `tab` values in `ClimbMatch.jsx` (`tab==="today"`, `tab==="crew"
    (`downloadedStates`, `dlLoaded`, `lib/offline.js`: `downloadStateOffline`, `removeStateOffline`, `packRouteOffline`).
    Home's pinned card (`TodayTab`) lists the pins A to Z, one row each: the name on the left, and on the right the
    device copy's age from `dlTimes` ("Last updated 3h ago") with an Update button (`updateState`), or Download for a pin
-   not on this device yet.
+   not on this device yet. Until this device's downloads are read (`dlLoaded`) a row shows neither, so a saved
+   state never flashes "Not on this device · Download".
+   **Update all** (owner note 2026-11-25): a small button beside the card's heading, and beside the *N on this
+   device* line on Manage areas, runs `updateAllStates` in `App`: every state on this device, then every pinned state
+   not on it yet, one at a time, reading *Updating 2 of 5…*, with one toast at the end naming any that failed.
+   **One queue** (`runDl`, `dlChainRef`): a download, an Update, Update all, a removal and the quiet once-a-session
+   refresh run one after another, never two on the same state at once.
+   **A refresh never loses the saved copy** (2026-11-25): `downloadStateFromSnapshot` and `downloadStateLive` write
+   the new rows over a COMPLETE copy and prune what the catalog dropped only at the end (`idbPruneState`,
+   `completeMeta`), keeping the state marked complete throughout; a refresh that fails or is cut off leaves the old
+   copy readable. They used to mark it incomplete and delete it first, so an app closed mid-refresh came back with
+   the state gone and Home offering Download for it. Proven by `scripts/oneoff/probe-state-refresh-keeps-copy.mjs`.
    A download lives in IndexedDB, asks the browser to keep it (`navigator.storage.persist()`), and is read back by
    `offlineDownloads()` on every launch, so it survives closing the app; a pin made on another device downloads here.
    It comes from the nightly state file (`scripts/build-state-snapshots.mjs`) when that file is under 3 days old, else
    live from the database (`downloadStateLive`), which reads routes BY AREA id (`AREA_BATCH`): the old path-join read
    timed out on every state. A state the nightly build cannot read is left out of that night's file, not the whole set.
+   The build reads trip reports through `state_trip_reports` with the ANON key, so that function must read only
+   columns anon holds: 0501 took `climb_logs.partners` from anon and the function's `select l.*` failed every state
+   for three nights (2026-11-23 to 25), until 0540 named its columns.
    A downloaded state answers the Climbs tab from the device first (`deviceFirst` in `lib/db.js`), except the Route finder's
    list and count over more than 2,000 climbs (`deviceFirstScan`, `DEVICE_SCAN_MAX_ROUTES`): the device has no index to filter
    or sort on, so a whole pinned state scanned all its climbs and the Washington page's Suggested climbs waited seconds for it.
