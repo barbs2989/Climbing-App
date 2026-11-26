@@ -54,3 +54,18 @@ The plan, rollbacks and apply logs are kept beside the MP crawl in `~/dev/mp-dat
 ## 4. Apply log
 
 (see below; each batch re-reads every row through `fillBlanks`, area asserted)
+- 2026-11-26: **nothing written yet.** The DB slot was granted twice, but `dbslot.mjs check` read 2.1-4.2 s
+  each time, so the job backed off without writing. A 20-row pilot started once after a failed check. The
+  session stopped it before any write: no rollback file was created.
+
+### How to resume
+1. Symlink `.env`, `.env.local` and `supabase/.temp` from the main checkout. Then `node ~/dev/db-throttle/dbslot.mjs acquire <id>`,
+   and only continue once `node ~/dev/db-throttle/dbslot.mjs check` exits 0.
+2. Pilot: `MP_DIR=~/dev/mp-data/_mp node scripts/pipeline/fill-pitches-from-mp.mjs --apply --limit 20`.
+   It writes from the saved `~/dev/mp-data/_mp/_pitches/plan.json` (no catalog re-read). Then re-read those 20 ids.
+3. Batches: `--apply --offset K --limit 2000` (K = 20, 2020, 4020 ... up to 13,007). Run `dbslot check` between
+   batches. The script stops by itself when the gate says slow, and prints the offset to resume from. Each write
+   goes through `fillBlanks` (area asserted, the value must still be blank or 0, re-read reconciled), and the
+   rollback is written before the first write.
+4. Afterwards: `node scripts/oneoff/audit-multipitch-sections.mjs` (renders every `pitches >= 2` route, plus
+   the new length cases). Pass `--ids=FILE` if the paged scan times out.
