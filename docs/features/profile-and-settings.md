@@ -239,7 +239,7 @@ profile can also open as `FullProfile` and `Resume` overlays from anywhere (part
 ## 5. Connections
 - **Partners**: `discoverable`, zip, `avail_week`, `hiking_speed_ft_hr` and verification feed `lib/PartnerSearch.jsx` and `compat()`.
 - **Logbook**: résumé Experience is built from logged climbs; trip-report visibility is set here and ONLY here (the log form has no chooser since 2026-10-21). A non-public report still feeds the route's conditions anonymously (0329).
-- **Crews / social**: `FullProfile` actions (connect, message, form crew, vouch); blocks hide profiles. **No emergency contact** (owner, 2026-11-25): the app no longer asks for or keeps one; a float plan's own contact line is typed per trip and stays on the device. Contacts saved before then still sit, unread, in `profile_emergency_contacts` (0237) until that table is dropped.
+- **Crews / social**: `FullProfile` actions (connect, message, form crew, vouch); Vouch is ONE button, in the action row under the name (*Vouch*, spoken *Vouch for <first name>*, or *✓ Vouched* to withdraw) — the second, *Vouch for X* bar at the foot of the profile was removed (owner 2026-11-25); blocks hide profiles. **No emergency contact** (owner, 2026-11-25): the app no longer asks for or keeps one; a float plan's own contact line is typed per trip and stays on the device. Contacts saved before then still sit, unread, in `profile_emergency_contacts` (0237) until that table is dropped.
 - **Leaderboards**: `lib/Leaderboards.jsx` reads `meLive`; ranking visibility (0177). How Ranks scores: `docs/features/ranks.md`.
 - **Whole app**: `UNITS`/`DLOCALE` change every distance, elevation and date formatter.
 
