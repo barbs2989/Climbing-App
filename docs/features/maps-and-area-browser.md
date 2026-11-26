@@ -101,7 +101,7 @@ Shared map plumbing is `lib/mapKit.jsx`. The route page is documented in `docs/f
   kept the old order for up to 15 minutes, across reloads, because the list is saved on the device (`lib/query-persist.js`) and fresh for
   `CATALOG_STALE_MS`. Another climber's device still shows the new order on its next read of the list (up to 15 minutes); a state downloaded to the device keeps its packed order until downloaded again.
   A signed-out climber gets a sign-in button and no write.
-- **Filters on a wall's list** (owner note, 2026-10-25): **Filters** over a leaf area's climb list narrows it by discipline (the disciplines the wall holds, plus All) and a star minimum (Any / 2+ / 3+ stars; a climb nobody has rated stays in). The button is drawn as the Route finder draws its Filters button (full width, `BTN_LG`, the text colour, a turning chevron), not as a chip -- as a muted chip it matched the sort chips under it and was missed (owner, 2026-11-05). It filters the rows `useAreaRoutes` already loaded, so it costs no query. The sort adds **By discipline** (one heading per discipline, in `DISCIPLINES` order, A → Z under each). Grade is deliberately NOT a sort key: `grade_num` is only comparable within one scale.
+- **Filters on a wall's list** (owner notes 2026-10-25 and 2026-11-25): **Filters** over a leaf area's climb list opens the Route finder's OWN sheet (`FinderFilterSheet`, exported from `RouteFinderPanel.tsx`), so the two can no longer offer different filters (the area page had only discipline, stars and single/multi pitch): Discipline (only the disciplines the wall holds, any number), Grade (scale + From/To once a discipline is ticked), Minimum stars (unrated climbs stay in), Pitches, Length, Elevation gain and Round trip, each shown only where the ticked disciplines use it (`fitsDiscs`). Peak elevation and Prominence are left out (`onePlace`): every climb on one area's list stands on that one peak or crag, so they would keep all or none. The test is the Route finder's own, run over the rows `useAreaRoutes` already loaded (`finderRowFilter` in `lib/offline.js`, the offline finder's `routeMatches`, fed `finderArgs`), so it costs no query, works offline, and *Show N climbs* is counted on the spot; the thin row carries `grade_num` and the per-scale `ice/mixed/aid/snow_grade_num` for it. Applied filters show as the finder's one-line chip strip (`FinderChipLine`, each removable, *Clear all*) and an *N of M climbs match* line. The button is drawn as the Route finder draws its Filters button (full width, `BTN_LG`, the filter glyph), not as a chip -- as a muted chip it matched the sort chips under it and was missed (owner, 2026-11-05). The sort adds **By discipline** (one heading per discipline, in `DISCIPLINES` order, A → Z under each). Grade is deliberately NOT a sort key: `grade_num` is only comparable within one scale.
 - **Where the wall order comes from** (`scripts/pipeline/order-from-mp.mjs`, one area per run; the owner's reference is **Mountain Project**,
   which holds more routes than OpenBeta). Each row of an MP area page's route table carries `data-lr`, its left-to-right index
   (999999 = MP does not place it); the cached tree walk kept the rows but not that attribute, so the page is read again (paced by
@@ -161,16 +161,19 @@ Shared map plumbing is `lib/mapKit.jsx`. The route page is documented in `docs/f
   A PEAK heading adds the peak's elevation (`useAreaPeakElevationsByIds`: `areas.elevation_ft` of peak areas only, in the climber's units). The title (`ScreenHero quiet`) is a hidden <h1> on a phone and drawn on the website; on a phone the path bar puts *Area tree* beside the path, since its Back is drawn in the top bar.
   Grade ranges use `GRADE_SCALES`, where a d is +0.9 (5.10d = 10.9, 0464), so *5.10a–5.10d* is exactly the grade chart's 5.10 bar and no longer takes in a bare 5.11.
   The website header's typed search opens the finder through `jumpToFinderReq` with `initial` words and filters (there is no *Save search* any more; saved searches were removed 2026-11-05).
-  **Since 0369 (2026-10-24)** it also filters by **Distance away** (second in the sheet, under Discipline: *Use my location* or a town / zip through
-  `searchPlaces`, then Within 10/25/50/100 mi or 15/40/80/150 km, plus a *Nearest first* sort grouped by wall), **Elevation gain**
-  and **Round trip** (ranges), **Peak elevation** and **Prominence** (minimums), as AllTrails does gain, length and Distance
-  away and Peakbagger does elevation and prominence. Buckets are round numbers in BOTH unit systems (`GAIN_BUCKETS`,
-  `TRIP_BUCKETS`, `PEAK_ELEV_MINS`, `PROM_MINS`, `WITHIN`). Gain and round trip are the route page's own figures (SQL
-  `route_gain_ft` / `route_trip_km`, mirrored in `lib/offline.js`; `scripts/oneoff/parity-route-finder-0369.mjs` found 0 of 950
-  rows differing); elevation and prominence are the climb's area's; distance is to the area's coordinate. Recorded mostly on
-  mountain routes (gain 885 climbs, prominence 996), so a climb without the figure is hidden while that filter is set, and the
-  sheet says so. Distance away, peak elevation and prominence narrow the AREAS first, so they lift *pick an area first* on a
-  state (`narrowsAreas`); gain and round trip alone do not (3.6 s cold over California).
+  **Since 0369 (2026-10-24)** it also filters by **Elevation gain** and **Round trip** (ranges), **Peak elevation** and
+  **Prominence** (minimums), as AllTrails does gain and length and Peakbagger does elevation and prominence. Buckets are round
+  numbers in BOTH unit systems (`GAIN_BUCKETS`, `TRIP_BUCKETS`, `PEAK_ELEV_MINS`, `PROM_MINS`). Gain and round trip are the route
+  page's own figures (SQL `route_gain_ft` / `route_trip_km`, mirrored in `lib/offline.js`; `scripts/oneoff/parity-route-finder-0369.mjs`
+  found 0 of 950 rows differing); elevation and prominence are the climb's area's. Recorded mostly on mountain routes (gain 885
+  climbs, prominence 996), so a climb without the figure is hidden while that filter is set, and the sheet says so. Peak elevation
+  and prominence narrow the AREAS first, so they lift *pick an area first* on a state (`narrowsAreas`); gain and round trip alone
+  do not (3.6 s cold over California).
+  **No Distance away** (owner note, 2026-11-25: "we shouldn't have distance away be a part of any filters for finding climbs"):
+  0369's *Distance away* block (your location or a town/zip, a radius) and its *Nearest first* sort are gone from the sheet, the
+  chips and the Sort menu. Where to look is the finder's Location (an area), as on Mountain Project's Route Finder; climbs near
+  you are the Climbs map's job (`NearMePanel`). `routes_in_subtree` keeps its `near_*` arguments, never passed; an old `near` sort
+  falls back to the wall order (`sortFor`).
   The **Filters** sheet is a full-height screen (since 2026-10-21; it was an 88vh bottom sheet, which on iOS overflowed off the
   top and hid the title, ✕ and Discipline row): title row clears the notch, the list scrolls, and **Clear all / Show N routes**
   are pinned at the bottom. N is the DRAFT's count (`finderArgs()` builds the RPC args for both the draft and the applied query, so
@@ -192,8 +195,11 @@ Shared map plumbing is `lib/mapKit.jsx`. The route page is documented in `docs/f
     which no index matches, in both branches of both RPCs; the 12 largest regions now answer in 0.1–0.8 s (list) and ~0.1 s (count).
     `grade_num` is the only finder filter column with a btree index on `routes`. **Time any change to these RPCs as `anon`**
     (`set local role anon` in `supabase db query`, or the REST endpoint), never only as postgres.
-  - **Pinned search bar** (`usePinnedBar`): Routes | Areas, the box, Filters and the chips pin under the app's top bar once you scroll
-    past them. Fixed-position with a placeholder, not CSS sticky: on a phone the document scrolls while `#appscroll` (overflow:auto) only grows.
+  - **Pinned search bar** (`usePinnedBar`): the box, Filters | Sort and the chips pin under the app's top bar once you scroll
+    past them. **Kept short on a phone** (owner note 2026-11-25: with filters applied "the list of climbs on the screen isn't large
+    enough as the top parts take a lot of the screen up"): *Routes | Areas* sits above the bar and scrolls away; the applied chips are
+    ONE line that scrolls sideways (`FinderChipLine`, as AllTrails and Airbnb keep theirs) instead of wrapping onto two or three rows;
+    and the count line under them says only *N routes* on a phone (the website still repeats the filters there, batch B item 11). Fixed-position with a placeholder, not CSS sticky: on a phone the document scrolls while `#appscroll` (overflow:auto) only grows.
   - **Save from the list**: a ☆ beside each row opens a save sheet: My Objectives (`toggleWish`), your own lists (`toggleListRoute` in
     App, the same `onUpdateList` write ListsManager makes) and the climb's wall (`toggleBookmark`). The lists end in **+ New list**
     (owner note 2026-11-25; Google Maps, AllTrails and Mountain Project's save sheets all end that way): a name box and *Create and
