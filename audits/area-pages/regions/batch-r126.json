@@ -1,10 +1,84 @@
 {
- "_skipped": {
-  "az_4_windy_point_west": "Fetch tool refused all Mountain Project / thecrag pages (domain verification); no page fetched about this area",
-  "ca_ebbets_pass_highway_4": "Fetch tool refused all pages found (domain verification); no page fetched about this area",
-  "ca_foreplay_area": "Fetch tool refused all pages found (domain verification); no page fetched about this area",
-  "ca_tuolumne_bouldering": "Fetch tool refused all pages found (domain verification); no page fetched about this area",
-  "il_hagler_road": "Fetch tool refused all pages found (domain verification); no page fetched about this area",
-  "nv_keyhole_canyon": "Fetch tool refused all pages found (domain verification); no page fetched about this area"
-}
+ "_skipped": {},
+ "az_4_windy_point_west": {
+  "_expect": {
+   "name": "Windy Point West",
+   "region": "Arizona"
+  },
+  "blurb": "Windy Point is a vista high on the Catalina Highway on Mount Lemmon above Tucson, and the crags west of it are a dense cluster of walls and fins that mix sport, trad and mixed climbing in nearly equal parts. Grades center on 5.10 and 5.11, with a decent supply of 5.8 and 5.9 and a hard top end into 5.13 and 5.14. North Fin is the largest sector, with excellent rock and a high concentration of quality lines from 5.7 up to 5.13, mostly east-facing and shaded later in the day. Beaver Wall holds most of the hardest routes on the mountain. South Fin, Mean Mistreater Wall and Swim Fin round out the bigger crags. Crags across the highway are spread over different elevations and aspects, so climbing is possible year round.",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/area/106824256/4-windy-point-west",
+    "https://www.mountainproject.com/area/105738053/north-fin",
+    "https://www.mountainproject.com/area/106822703/mount-lemmon-catalina-highway"
+   ]
+  }
+ },
+ "ca_ebbets_pass_highway_4": {
+  "_expect": {
+   "name": "Ebbets Pass Highway (4)",
+   "region": "California"
+  },
+  "blurb": "A quiet stretch of the Sierra along State Highway 4 as it climbs toward Ebbets Pass, centred on Bear Valley at roughly 7,000 feet. Nearly all of the climbing is bouldering, spread over small scattered clusters instead of one big crag, with a modest set of sport routes at True Value Crag and a few trad lines. Problems run mostly from very easy to V3, with a steady tail of harder ones up to V7 and a couple beyond; the bolted routes sit around 5.9 to 5.12. The Hell's Kitchen boulders are granite, firm and textured, and they reward friction and careful footwork. Union Reservoir and the Ronin Boulder add variety. Expect a lightly visited, self-reliant feel; at Hell's Kitchen the comfortable window is late spring to early fall.",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/area/114330086/ebbets-pass-highway-4",
+    "https://www.mountainproject.com/area/114330091/bear-valley",
+    "https://app.advcollective.com/climbing/exploring-hells-kitchen-granite-bouldering-off-ebbets-pass-california"
+   ]
+  }
+ },
+ "ca_foreplay_area": {
+  "_expect": {
+   "name": "Foreplay Area",
+   "region": "California"
+  },
+  "blurb": "A boulder-heavy corner of Fairview Mountain, in the High Desert near Apple Valley at around 3,500 feet. Most of the climbing is bouldering on a hillside circuit that starts near the parking area at the toe of the mountain and works uphill past dozens of named blocs. Problems cover everything from V0 up, with the heart of the grade range between V1 and V3, a healthy number of V4 and V5 problems, and a thin tail of much harder lines. A smaller number of sport routes, plus a few trad lines, sit on small crags such as Foreplay Pinnacle and the Parking Lot Crags. Landings are a recognised concern here and the local custom is to build them up. It is the easiest-reached and most developed bouldering on the mountain.",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/area/120334884/foreplay-bouldering",
+    "https://www.mountainproject.com/area/202433593/fairview-mountain-bouldering"
+   ]
+  }
+ },
+ "ca_tuolumne_bouldering": {
+  "_expect": {
+   "name": "Tuolumne Bouldering",
+   "region": "California"
+  },
+  "blurb": "A collection of small, scattered boulder areas in the high country of Yosemite National Park around Tuolumne Meadows, at roughly 8,500 feet. The rock is granite, and the movement runs from technical to powerful. Almost everything here is bouldering, from the easiest problems up to the high V-grades, with a broad spread: plenty of V0 to V4 for newcomers, a deep middle around V5 to V8, and a real selection of V9 and harder. Individual areas are small and each has its own character; most are a short walk from the main road. Puppy Boulders, The Knobs, Tenaya East Boulders and May Lake are among the larger zones. Summer is the recommended season, when lower Sierra boulders are too hot.",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/area/107694496",
+    "https://www.madboulder.org/tuolumne_meadows"
+   ]
+  }
+ },
+ "il_hagler_road": {
+  "_expect": {
+   "name": "Hagler Road",
+   "region": "Illinois"
+  },
+  "blurb": "A cluster of boulders in southern Illinois on Shawnee National Forest land, just north of the Holy Boulders and close to them in character. Almost everything is bouldering, with a handful of sport routes tucked in at one end. Problems range from easy V0 and V1 warm-ups through a thick middle of V3 to V5, with a good number of V6 and V7 and a harder tail reaching into the V10s. The biggest zones are the Creek Boulders and the Farside Boulders, and Hagler Roof holds many of the best-regarded problems. Hagler Road South has a large central boulder with problems on every side plus a few short cliffline problems. It sits at low elevation, so cool weather suits it best.",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/area/125536678/hagler-road",
+    "https://www.mountainproject.com/area/125677977/hagler-road-south",
+    "https://madboulder.org/holy-boulders"
+   ]
+  }
+ },
+ "nv_keyhole_canyon": {
+  "_expect": {
+   "name": "Keyhole Canyon",
+   "region": "Nevada"
+  },
+  "blurb": "A remote desert canyon in the Eldorado Mountains of southern Nevada, between Boulder City and Searchlight, at about 2,900 feet. It has long been mainly a traditional climbing area, with few sport routes, though it also holds a solid number of boulder problems. Most routes are single pitch and short, from 5.0 to 5.13, with the weight of them between 5.8 and 5.11; the boulder problems run from easy up to V10, mostly in the lower grades. In the Lower Canyon the rock is quartz monzonite, small-grained and heavily varnished on the faces outside the wash, a little like Joshua Tree. Bolts are sparse and protection can be subtle, so bring a thorough rack. The area runs hot for roughly half the year.",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/area/105941578/keyhole-canyon",
+    "https://www.mountainproject.com/area/110918279/lower-canyon"
+   ]
+  }
+ }
 }
