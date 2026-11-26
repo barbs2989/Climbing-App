@@ -30,7 +30,7 @@ const sum = (f) => crypto.createHash("sha256").update(fs.readFileSync(f)).digest
 // A REAL climber's distance prints approximately ("~X" / "under 5"); the seed path still prints uDistMi to 1dp.
 const HEADER = '<span style={{color:C.blue}}>{(climber._real?(dist<=5?"under "+uApproxDist(5):"~"+uApproxDist(dist)):uDistMi(+dist.toFixed(1)))+" away"}</span>';
 const CARD = '"Limited overlap")+(_unkN?" · based on limited info":"")+(dist!=null&&isFinite(dist)?" · "+(climber._real?(dist<=5?"under "+uApproxDist(5):"~"+uApproxDist(dist)):uDistMi(+dist.toFixed(1)))+" away":"")';
-const FIRELINE = "and {fires.length - 4} more within {uDistMi(radiusMi)}";
+const FIRELINE = "up to {uDistMi(35)} for the largest";
 
 const CASES = [
   {
@@ -53,8 +53,8 @@ const CASES = [
     name: "3-fire-panel-radius-prints-bare-miles",
     why: "REAL DEFECT: the wildfire panel converted every fire and not its own radius",
     file: FIRE, find: FIRELINE,
-    repl: "and {fires.length - 4} more within {radiusMi} miles",
-    targets: { guard: /hardcoded unit|radius unconverted/ },
+    repl: "up to 35 miles for the largest",
+    targets: { guard: /hardcoded unit|reach unconverted/ },
   },
   {
     name: "4-a-unit-word-swapped-with-NO-conversion",
