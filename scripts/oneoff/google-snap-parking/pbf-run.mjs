@@ -3,10 +3,11 @@
 // Usage: node pbf-run.mjs <workDir> <pbfDir>
 import fs from 'node:fs';
 import { execFileSync } from 'node:child_process';
+import { fileURLToPath } from 'node:url';
 const [W, D] = process.argv.slice(2);
 const states = Object.keys(JSON.parse(fs.readFileSync(W + '/us-states.json')));
 fs.mkdirSync(W + '/pbf-lots', { recursive: true });
-const here = new URL('.', import.meta.url).pathname;
+const here = fileURLToPath(new URL('.', import.meta.url));
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 for (;;) {
   const left = states.filter((s) => !fs.existsSync(W + '/pbf-lots/' + s + '.json'));
