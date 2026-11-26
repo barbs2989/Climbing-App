@@ -41193,3 +41193,65 @@ to confirm it either):
 with too little data/too recent to check, plus the inconclusive FA checks noted above. WebSearch
 only this run (no WebFetch attempted). Next batch continues id-ascending from
 `wa_monte_cristo_peak_standard_route_variation_1` (pass 9).
+
+## Batch 596 (2026-11-26, pass 9)
+
+Checked `wa_monte_cristo_peak_standard_route_variation_2` through
+`wa_mount_adams_northwest_ridge` (8 routes, all but the first on Mount Adams). 1 confirmed
+error fixed, 2 flagged for human review.
+
+Fixed (SQL in `audits/sql/2026-11-26-batch-596.sql`):
+- `wa_monte_cristo_peak_standard_route_variation_2` — same "James K. Keyes" -> "James M.
+  Keyes" `fa` typo already fixed on its sibling `_variation_1` in batch 595. Same sources
+  (Wikipedia/Beckey, and this DB's own `wa_monte_cristo_peak_scramble`).
+
+Flagged for human review (not fixed — no clean source either confirms or contradicts
+cleanly enough to write a correction, but each is worth a second look):
+- `wa_mount_adams_lyman_glacier` — `fa` "Cornelius Molenaar and Robert W. Craig, September
+  1948." Both climbers have a well-documented joint first ascent the same year, but on a
+  *different* mountain: the Nisqually Icefall on Mount Rainier, dated July 15, 1948 (AAJ
+  1949). No source ties either climber to Mount Adams' Lyman Glacier specifically. This
+  doesn't prove the DB is wrong — the same pair could plausibly have climbed both in one
+  season — but the same-pair/same-year/different-peak coincidence is suspicious enough to
+  flag rather than leave silently as "clean."
+- `wa_mount_adams_northwest_ridge` — `name` ("North Ridge (West Face)") and `fa`
+  ("Molenaar, Johnson, Ostro, and Startzell, September 1960") are internally correct and
+  verbatim-match Mountain Project's own distinct route of that exact name
+  (mountainproject.com/route/119565020). The problem is the row's **id**: Mount Adams also
+  has a separate, differently-named "Northwest Ridge" route (summitpost.org/158220) and a
+  third "North Face of Northwest Ridge" ice route (summitpost.org/158222, FA credited there
+  to Givler/LeBlond/McGowan 1967) — neither of which this row's id should be aliasing. This
+  is a route-identity mismatch (wrong id attached to otherwise-correct name/fa content), not
+  a wrong fact shown to a climber, so it's out of scope for a simple UPDATE under this
+  audit's SQL-fix pattern and is left for a human to resolve via the route-identity
+  procedure (`docs/codebase/route-identity.md`) rather than renamed here.
+
+Clean / no action needed:
+- `wa_mount_adams_adams_glacier` — `fa` "Fred Beckey, Dave Lind, and Robert Mulhall, July
+  1945" confirmed independently by Mountain Project, Beckey's own 1946 AAJ article ("Cascade
+  Climbs, 1945"), and Wikipedia's Adams Glacier article — all three climbers and the month
+  agree. `elevation_ft`/coordinates consistent with the rest of the Mount Adams rows.
+- `wa_mount_adams_north_ridge` — `fa` "A.G. Aiken, Edward J. Allen, and Andrew J. Burge,
+  1854" (credited as the first ascent of Mount Adams itself) uses the spelling and party
+  most sources give (USGS/CVO's historical account, citing Aiken's own 1907 account to
+  historian George Himes); one 1913 secondary account names a different third climber
+  (Col. B.F. Shaw instead of Burge), a genuine historical dispute rather than a DB error, so
+  left as-is. No source places the 1854 ascent itself on the south side instead of the
+  north/North Ridge side the DB attaches it to, so the route attribution is not contradicted.
+
+Checked but inconclusive (not flagged — no source contradicts the stored data, just none
+found to confirm it either):
+- `wa_mount_adams_lava_glacier_headwall` `fa` "Edward Cooper and Mike Swayne, July 3, 1961"
+  — an AAJ note places Mike Swayne on Mount Adams' east side via Killen Creek in early July
+  1961, consistent with but short of confirming the exact headwall FA and Cooper's name.
+- `wa_mount_adams_avalanche_white_salmon_glaciers` `fa` "Angus, Moreau, 1957" — no source
+  found naming either climber in connection with Mount Adams.
+- `wa_mount_adams_mazama_glacier_headwall` — `fa` is null in the DB; nothing to check.
+  Approach/permit text (Yakama Nation tribal permit at Bird Creek Meadows) reads plausibly
+  but wasn't independently re-verified this run.
+
+1 confirmed error fixed, 2 flagged for human review, 2 clean, 3 inconclusive (not flagged).
+WebSearch only this run (WebFetch to usgs.gov/wikipedia.org/summitpost.org/
+americanalpineclub.org was blocked by this session's network allowlist; relied on
+search-engine snippets of those pages). Next batch continues id-ascending from
+`wa_mount_adams_northwest_ridge` (pass 9).
