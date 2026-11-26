@@ -19,7 +19,7 @@ strip are formation-only, so a region needs only `blurb`.
 - Tier >=100 climbs: 1,494 regions = r001–r249 (inputs rebuilt by `tools/build-regions.cjs 100 1000000000`,
   split 6 per batch in route_count order; the job tmp copy is gone with the job).
 - Research: r001–r128 done and reviewed (752 written, 16 skipped); the 17 fetch-outage skips were redone (redo/) and merged back. Next: r129–r249. r001–r006 applied 2026-11-26 13:19 (36/36 written, 0 refused) and verified live (`tools/verify-regions.mjs 1 6`).
-- REDO (fetch outage, ~13:40 2026-11-26: WebFetch "unable to verify domain" on most sites): every `_skipped`
+- REDO DONE: the 17 r123–r126 skips caused by a WebFetch outage (~13:40 2026-11-26) were redone and merged. Old note: every `_skipped`
   entry in r123–r126 whose reason says "fetch tool refused", "only search snippets" or "only one page could be
   fetched" is a tool failure, not a judgement — re-research those once fetching works (list them with
   `grep -h -A20 _skipped batch-r12[3-6].json`).
