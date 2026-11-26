@@ -212,6 +212,7 @@ for (const f of FROM) {
       || (Array.isArray(spec.rappel_lengths) && spec.rappel_lengths.length > 0)
       || (Array.isArray(spec.pitch_detail) && spec.pitch_detail.length > 0)
       || (spec.set && Object.keys(spec.set).length > 0)
+      || spec.clear_rappels === true
       || (Array.isArray(spec.ledger) && spec.ledger.length > 0);
     if (!hasContent) { console.log(`skip ${id} — ${spec.skip_reason || "nothing to write"}`); continue; }
     if (!spec.area) { console.error(`skip ${id} — batch entry has no area to assert against`); process.exitCode = 1; continue; }
@@ -419,6 +420,17 @@ for (const id of ids) {
       process.exitCode = 1; continue;
     }
     body.rappel_detail = spec.rappel_detail;
+  } else if (spec.clear_rappels === true) {
+    // REMOVE a station table that describes a descent no single-rope party can make (owner,
+    // 2026-11-26: the RAPPELS section speaks of ONE rope only). Used where research found no
+    // single-rope station list to replace it with; the prose beside it then says what one rope
+    // does there. Refused unless the batch also rewrites that prose, so a table never vanishes
+    // and leaves the old two-rope sentences behind.
+    if (!spec.set || !("rappels" in spec.set || "rappel_count_note" in spec.set)) {
+      console.error(`REFUSING ${id} — clear_rappels needs set.rappels or set.rappel_count_note to say what one rope does instead`);
+      process.exitCode = 1; continue;
+    }
+    body.rappel_detail = null;
   } else if (spec.rappel_add && Array.isArray(before.rappel_detail)) {
     body.rappel_detail = before.rappel_detail.map((r, i) => {
       const n = r.n != null ? r.n : i + 1;
@@ -573,9 +585,10 @@ for (const id of ids) {
     continue;
   }
 
-  if (body.pitch_detail || (body.climbing_route && (before.climbing_route || []).length) || spec.set) {
+  if (body.pitch_detail || (body.climbing_route && (before.climbing_route || []).length) || spec.set || ("rappel_detail" in body && (before.rappel_detail || []).length)) {
     rollback[id] = { area: before.area_id };
     if (body.pitch_detail) rollback[id].pitch_detail = before.pitch_detail;
+    if ("rappel_detail" in body) rollback[id].rappel_detail = before.rappel_detail;
     if (body.climbing_route) rollback[id].climbing_route = before.climbing_route;
     // A `set` correction replaces a whole prose value, so the value it replaced is kept too.
     if (spec.set) for (const k of Object.keys(spec.set)) rollback[id][k] = before[k];
@@ -599,6 +612,7 @@ for (const id of ids) {
   // worse, a batch that changed nothing at all would have passed on stations written months ago.
   // Key-by-key because jsonb does not preserve key ORDER, so stringifying the whole array
   // compares formatting as well as content.
+  if (body.rappel_detail === null) checks.push(after.rappel_detail == null);
   if (body.rappel_detail) {
     const got = after.rappel_detail || [];
     checks.push(got.length === body.rappel_detail.length && body.rappel_detail.every((want, i) =>

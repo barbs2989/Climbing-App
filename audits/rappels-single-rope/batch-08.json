@@ -1,0 +1,531 @@
+{
+ "wa_ingalls_peak_east_ne_ridge_route": {
+  "area": "wa_ingalls_peak_east",
+  "set": {
+   "rappels": "The first two rappels go on a single rope; the last, down to the notch, is longer than one rope reaches. On one rope, downclimb from the summit block to the South Ridge descent instead",
+   "rappel_count_note": "Two of the three rappels go on a single rope; the third, the last one down toward the notch, is longer than one rope reaches and no intermediate station is known, so one 60 m or 70 m rope does not complete the line as rappels. A handline protects the short scramble from the summit block down to the top station, and there is a further rappel station in the approach gully at the bottom. A short 4th-class downclimb from the summit block to the South Ridge descent line is the other way down. No per-station distance is published."
+  },
+  "rappel_detail": [
+   {
+    "n": 1,
+    "pull": null,
+    "notes": "A single rope reaches the next station.",
+    "anchor": "sling around chockstone/horn",
+    "hazards": null,
+    "lengthM": null,
+    "station": "You do not rappel from the summit block. It sits above the highest anchor, and parties protect the short scramble back down to that anchor with a handline, so the first rappel proper starts one station below the summit."
+   },
+   {
+    "n": 2,
+    "pull": null,
+    "notes": "Also a single-rope rappel. Nothing published describes where this anchor sits or how to find it. Below it, the final rappel is longer than one rope reaches.",
+    "anchor": "sling around chockstone/horn",
+    "hazards": null,
+    "lengthM": null,
+    "station": null
+   }
+  ],
+  "replace_rappels": true,
+  "review": {
+   "confidence": "low",
+   "sources": [
+    "https://mountainproject.com/route/120932106/east-peak-southwest-face",
+    "https://mountaineers.org/activities/trip-reports/basic-alpine-climb-ingalls-peak-east-peak-southwest-face"
+   ],
+   "single_rope": "First two rappels are single-rope; the last is longer than one rope reaches and no intermediate station is described.",
+   "changed": "Removed two-rope wording; kept the two single-rope stations, dropped the long third station and said plainly what one rope does not cover."
+  }
+ },
+ "wa_ingalls_peak_east_route": {
+  "area": "wa_ingalls_peak_east",
+  "set": {
+   "rappels": "The first two rappels go on a single rope; the last, down to the notch, is longer than one rope reaches. On one rope, downclimb from the summit block to the South Ridge descent instead",
+   "rappel_count_note": "Two of the three rappels go on a single rope; the third, the last one down toward the notch, is longer than one rope reaches and no intermediate station is known, so one 60 m or 70 m rope does not complete the line as rappels. A handline protects the short scramble from the summit block down to the top station, and there is a further rappel station in the approach gully at the bottom. A short 4th-class downclimb from the summit block to the South Ridge descent line is the other way down. No per-station distance is published.",
+   "descent_text": "The Southwest Face (East Peak's low-fifth-class line) is short — 2 pitches — and the standard descent is to rappel the route itself: three rappel stations are encountered descending the line, using natural anchors (slings around the chockstone/horns typical of this rock, not bolts) rather than fixed hardware. You do not rappel from the summit block itself: parties protect the short scramble down from it to the top station with a handline, and there is a further rappel station down in the approach gully used to regain packs. The first two rappels go on a single rope, but the last is longer than one rope reaches and no intermediate station is known, so one rope does not complete this descent as rappels; on one rope, take the downclimb to the South Ridge line described below. Bring an extra sling or two since anchor material on featureless granite here tends to be climber-placed webbing that may need refreshing. The final rappel lands back past the chockstone into the North-East Peak notch/gully, from which you downclimb and scramble the loose gully back down to the basin above Lake Ingalls, retracing the approach. Watch for loose rock in this gully on the way down, especially if other parties are above. As an alternative some climbers skip rappelling the direct line and instead do a short 4th-class downclimb from the East Peak summit block to link into the main peak's South Ridge descent/rappel line (shared with the standard Ingalls Peak South Ridge route), then talus back to Lake Ingalls."
+  },
+  "rappel_detail": [
+   {
+    "n": 1,
+    "pull": null,
+    "notes": "A single rope reaches the next station.",
+    "anchor": "sling around chockstone/horn",
+    "hazards": null,
+    "lengthM": null,
+    "station": "You do not rappel from the summit block. It sits above the highest anchor, and parties protect the short scramble back down to that anchor with a handline, so the first rappel proper starts one station below the summit."
+   },
+   {
+    "n": 2,
+    "pull": null,
+    "notes": "Also a single-rope rappel. Nothing published describes where this anchor sits or how to find it. Below it, the final rappel is longer than one rope reaches.",
+    "anchor": "sling around chockstone/horn",
+    "hazards": null,
+    "lengthM": null,
+    "station": null
+   }
+  ],
+  "replace_rappels": true,
+  "review": {
+   "confidence": "low",
+   "sources": [
+    "https://mountainproject.com/route/120932106/east-peak-southwest-face",
+    "https://mountaineers.org/activities/trip-reports/basic-alpine-climb-ingalls-peak-east-peak-southwest-face"
+   ],
+   "single_rope": "First two rappels are single-rope; the last is longer than one rope reaches and no intermediate station is described.",
+   "changed": "Removed two-rope wording; kept the two single-rope stations, dropped the long third station and said plainly what one rope does not cover."
+  }
+ },
+ "wa_inner_constance_seans_route": {
+  "area": "wa_inner_constance",
+  "set": {
+   "rappels": "No fixed anchors — every rappel station must be built and left. Carry cord and spare nuts specifically for retreat. The normal descent is a scramble off the north side, not a rappel line.",
+   "rappel_count_note": "No retreat rappel line is described, so how many rappels one 60 m rope would need from any point on the route is not known."
+  },
+  "review": {
+   "confidence": "low",
+   "sources": [],
+   "single_rope": "Nothing found about a rappel descent; the normal way down is a scramble, so no single-rope rappel line is known.",
+   "changed": "Removed the aside about a different rope setup; added a plain statement that no retreat rappel count is known. Searches found no page for this route."
+  }
+ },
+ "wa_inspiration_peak_west_ridge": {
+  "area": "wa_inspiration_peak",
+  "set": {
+   "rappels": "About 14 rappels on a single 60-70 m rope: 5 down the upper West Ridge, a scramble down to a notch, then 9 down the South Face to the Terror Glacier. Parties that downclimb more have made about 8.",
+   "rappel_count_note": "Counted for one 60-70 m rope, which is what most parties now carry: 5 rappels on the upper West Ridge and 9 on the South Face below the notch. The stations are spaced for a single rope, about every 30 m on the ridge. Counts differ because some parties downclimb part of the ridge or drop into the gully, which already has stations, and make about 8 rappels in all. Anchors on the ridge were reported rebuilt in June 2024, but stations vary and some are tattered, so carry cord to back them up.",
+   "descent_text": "The standard descent from the summit goes down the West Ridge crest itself, then finishes down Inspiration's South Face — it is not a walk-off. Most recent parties (e.g. a well-documented July 2024 ascent) report roughly 5 rappels down the upper West Ridge on a single 60-70m rope, using a mix of fixed slings/rap rings left by prior parties (quality varies — some stations have been found tattered and worth backing up or replacing) and natural nut/cam anchors built on the spot. After the ridge raps, parties briefly stow the rope and downclimb/scramble 3rd-4th class terrain to a notch, from which roughly 9 more single-rope rappels descend the South Face to the Terror Glacier, for a total in the neighborhood of 12-14 rappels overall — the final rappel often takes nearly the full rope to reach flat glacier snow. Some parties downclimb more of the ridge and drop into the gully, which already has stations, and make about 8 rappels in all. Watch for loose, rockfall-prone rock on the traversing stations (some raps go sideways, not straight down, to reach the next anchor and to dodge fall lines), stay alert for hard-to-spot anchor stations, and re-rope for glacier travel the instant you're back on the Terror Glacier at the bottom. From the glacier, reverse the approach: back across the crevassed glacier and slabs to Terror Basin camp, then down the steep boot path and Goodell Creek Trail to the trailhead — parties frequently finish this exit in the dark, with some trip reports noting arrival at camp or the car well after nightfall."
+  },
+  "rappel_detail": [
+   {
+    "n": 1,
+    "notes": "West Ridge rappel 1 of 5 on a single 60-70 m rope.",
+    "anchor": "fixed slings and rap rings, or a nut anchor built on the spot",
+    "hazards": [
+     "Back up or replace any tattered tat: carry extra cord and a knife."
+    ],
+    "lengthM": null,
+    "station": "Summit area, at the top of the West Ridge crest. The fixed stations here have been found both freshly rebuilt and badly tattered, so inspect each one."
+   },
+   {
+    "n": 2,
+    "notes": "West Ridge rappel 2 of 5 on a single 60-70 m rope.",
+    "anchor": "fixed slings and rap rings of varying quality, or natural nut and cam anchors",
+    "hazards": [
+     "Some rappels traverse sideways to reach the next anchor. Loose, rockfall-prone rock sits on these traversing lines, so move one at a time and keep the rope out of the fall line."
+    ],
+    "lengthM": null,
+    "station": "Next station down the upper West Ridge crest. Some stations sit off to the side rather than straight below the last, to keep you out of the fall line."
+   },
+   {
+    "n": 3,
+    "notes": "West Ridge rappel 3 of 5 on a single 60-70 m rope.",
+    "anchor": "fixed slings and rap rings of varying quality, or natural nut and cam anchors",
+    "hazards": [],
+    "lengthM": null,
+    "station": "Next station down the upper West Ridge crest. Some stations sit off to the side rather than straight below the last, to keep you out of the fall line."
+   },
+   {
+    "n": 4,
+    "notes": "West Ridge rappel 4 of 5 on a single 60-70 m rope.",
+    "anchor": "fixed slings and rap rings of varying quality, or natural nut and cam anchors",
+    "hazards": [],
+    "lengthM": null,
+    "station": "Next station down the upper West Ridge crest. Some stations sit off to the side rather than straight below the last, to keep you out of the fall line."
+   },
+   {
+    "n": 5,
+    "notes": "West Ridge rappel 5 of 5 on a single 60-70 m rope. Below it, coil the rope and downclimb 3rd-4th class terrain to the notch at the top of the South Face.",
+    "anchor": "fixed slings and rap rings of varying quality, or natural nut and cam anchors",
+    "hazards": [],
+    "lengthM": null,
+    "station": "Next station down the upper West Ridge crest, the last one before the ridge eases. Some stations sit off to the side rather than straight below the last, to keep you out of the fall line."
+   },
+   {
+    "n": 6,
+    "notes": "South Face rappel 1 of 9.",
+    "anchor": "fixed slings and rap rings, or natural anchors",
+    "hazards": [],
+    "lengthM": null,
+    "station": "The notch at the top of the South Face, reached by the downclimb from the last ridge station."
+   },
+   {
+    "n": 7,
+    "notes": "South Face rappel 2 of 9.",
+    "anchor": "fixed slings and rap rings, or natural anchors",
+    "hazards": [
+     "Several South Face rappels need a hard traverse one way or the other to reach the next anchor. Weight the rope before you swing, and watch for rock knocked loose by the rope."
+    ],
+    "lengthM": null,
+    "station": "Next station down the South Face. Stations here often lie well to one side of the last one, not straight down, so look left and right before committing."
+   },
+   {
+    "n": 8,
+    "notes": "South Face rappel 3 of 9.",
+    "anchor": "fixed slings and rap rings, or natural anchors",
+    "hazards": [],
+    "lengthM": null,
+    "station": "Next station down the South Face. Stations here often lie well to one side of the last one, not straight down, so look left and right before committing."
+   },
+   {
+    "n": 9,
+    "notes": "South Face rappel 4 of 9.",
+    "anchor": "fixed slings and rap rings, or natural anchors",
+    "hazards": [],
+    "lengthM": null,
+    "station": "Next station down the South Face. Stations here often lie well to one side of the last one, not straight down, so look left and right before committing."
+   },
+   {
+    "n": 10,
+    "notes": "South Face rappel 5 of 9.",
+    "anchor": "fixed slings and rap rings, or natural anchors",
+    "hazards": [],
+    "lengthM": null,
+    "station": "Next station down the South Face. Stations here often lie well to one side of the last one, not straight down, so look left and right before committing."
+   },
+   {
+    "n": 11,
+    "notes": "South Face rappel 6 of 9.",
+    "anchor": "fixed slings and rap rings, or natural anchors",
+    "hazards": [],
+    "lengthM": null,
+    "station": "Next station down the South Face. Stations here often lie well to one side of the last one, not straight down, so look left and right before committing."
+   },
+   {
+    "n": 12,
+    "notes": "South Face rappel 7 of 9.",
+    "anchor": "fixed slings and rap rings, or natural anchors",
+    "hazards": [],
+    "lengthM": null,
+    "station": "Next station down the South Face. Stations here often lie well to one side of the last one, not straight down, so look left and right before committing."
+   },
+   {
+    "n": 13,
+    "notes": "South Face rappel 8 of 9.",
+    "anchor": "fixed slings and rap rings, or natural anchors",
+    "hazards": [],
+    "lengthM": null,
+    "station": "Next station down the South Face. Stations here often lie well to one side of the last one, not straight down, so look left and right before committing."
+   },
+   {
+    "n": 14,
+    "notes": "South Face rappel 9 of 9. This one often takes nearly the full length of the rope to reach flat glacier snow; knot the ends. Rope up for glacier travel as soon as you are down.",
+    "anchor": "fixed slings and rap rings, or natural anchors",
+    "hazards": [
+     "Crevasses on the Terror Glacier start right at the bottom of the rappel."
+    ],
+    "lengthM": null,
+    "station": "Lowest station on the South Face, above the Terror Glacier."
+   }
+  ],
+  "replace_rappels": true,
+  "review": {
+   "confidence": "medium",
+   "sources": [
+    "https://www.summitpost.org/route/321118/south-face.html",
+    "https://stephabegg.com/?p=8949",
+    "https://cascadeclimbers.com/forum/topic/107840-tr-inspiration-peak-south-face-07142024"
+   ],
+   "single_rope": "West Ridge is rappelled on one 60 m rope with stations about every 30 m (about 5 raps, or 4 then a gully downclimb); the South Face below the notch adds about 9 more on one 60-70 m rope.",
+   "changed": "Removed the seven-rappel option from the summary, note and descent text; kept the single-rope station table, trimming the last note's wording."
+  }
+ },
+ "wa_east_ridge_4": {
+  "area": "wa_inspiration_peak",
+  "set": {
+   "rappels": "There is no East Ridge descent. About 14 rappels on a single 60-70 m rope: 5 down the upper West Ridge, a scramble down to a notch, then 9 down the South Face to the Terror Glacier.",
+   "rappel_count_note": "Counted for one 60-70 m rope, which is what most parties now carry: 5 rappels on the upper West Ridge and 9 on the South Face below the notch. The stations are spaced for a single rope, about every 30 m on the ridge. Counts differ because some parties downclimb part of the ridge or drop into the gully, which already has stations, and make about 8 rappels in all. Anchors on the ridge were reported rebuilt in June 2024, but stations vary and some are tattered, so carry cord to back them up. Two landmarks on the ridge part of the line: a large horn anchor, and a fixed three-pin anchor where the rappel goes down and climber’s right off a large overhang and hangs free, with the next station offset rather than straight below.",
+   "descent_text": "There is no established East Ridge descent — the standard way down combines two other routes: parties downclimb/rappel the upper West Ridge crest, then continue down Inspiration's South Face to regain the Terror Glacier, essentially the same descent used by West Ridge climbers (the East Ridge is reported as distinctly poorer, looser rock for descending, so nobody down-climbs it). Parties describe on the order of 5 rappels down the upper West Ridge followed by a scramble to a notch and roughly 9 more rappels down the South Face (about 12-14 total), typically on a single 60-70m rope, using a mix of fixed slings/rap stations of variable quality (back these up) and natural gear anchors. Some parties downclimb more of the ridge and drop into the gully, which already has stations, and make about 8 rappels in all. Expect a long free-hanging rappel or two, rockfall-prone traversing stations, and the need to re-rope for glacier travel immediately upon reaching the Terror Glacier at the bottom before reversing the approach back to camp and out the Goodell Creek boot path/trail — this exit is long enough that parties commonly finish it after dark."
+  },
+  "rappel_detail": [
+   {
+    "n": 1,
+    "notes": "West Ridge rappel 1 of 5 on a single 60-70 m rope.",
+    "anchor": "fixed slings and rap rings, or a nut anchor built on the spot",
+    "hazards": [
+     "Back up or replace any tattered tat: carry extra cord and a knife."
+    ],
+    "lengthM": null,
+    "station": "Summit area, at the top of the West Ridge crest. The fixed stations here have been found both freshly rebuilt and badly tattered, so inspect each one."
+   },
+   {
+    "n": 2,
+    "notes": "West Ridge rappel 2 of 5 on a single 60-70 m rope.",
+    "anchor": "fixed slings and rap rings of varying quality, or natural nut and cam anchors",
+    "hazards": [
+     "Some rappels traverse sideways to reach the next anchor. Loose, rockfall-prone rock sits on these traversing lines, so move one at a time and keep the rope out of the fall line."
+    ],
+    "lengthM": null,
+    "station": "Next station down the upper West Ridge crest. Some stations sit off to the side rather than straight below the last, to keep you out of the fall line."
+   },
+   {
+    "n": 3,
+    "notes": "West Ridge rappel 3 of 5 on a single 60-70 m rope.",
+    "anchor": "fixed slings and rap rings of varying quality, or natural nut and cam anchors",
+    "hazards": [],
+    "lengthM": null,
+    "station": "Next station down the upper West Ridge crest. Some stations sit off to the side rather than straight below the last, to keep you out of the fall line."
+   },
+   {
+    "n": 4,
+    "notes": "West Ridge rappel 4 of 5 on a single 60-70 m rope.",
+    "anchor": "fixed slings and rap rings of varying quality, or natural nut and cam anchors",
+    "hazards": [],
+    "lengthM": null,
+    "station": "Next station down the upper West Ridge crest. Some stations sit off to the side rather than straight below the last, to keep you out of the fall line."
+   },
+   {
+    "n": 5,
+    "notes": "West Ridge rappel 5 of 5 on a single 60-70 m rope. Below it, coil the rope and downclimb 3rd-4th class terrain to the notch at the top of the South Face.",
+    "anchor": "fixed slings and rap rings of varying quality, or natural nut and cam anchors",
+    "hazards": [],
+    "lengthM": null,
+    "station": "Next station down the upper West Ridge crest, the last one before the ridge eases. Some stations sit off to the side rather than straight below the last, to keep you out of the fall line."
+   },
+   {
+    "n": 6,
+    "notes": "South Face rappel 1 of 9.",
+    "anchor": "fixed slings and rap rings, or natural anchors",
+    "hazards": [],
+    "lengthM": null,
+    "station": "The notch at the top of the South Face, reached by the downclimb from the last ridge station."
+   },
+   {
+    "n": 7,
+    "notes": "South Face rappel 2 of 9.",
+    "anchor": "fixed slings and rap rings, or natural anchors",
+    "hazards": [
+     "Several South Face rappels need a hard traverse one way or the other to reach the next anchor. Weight the rope before you swing, and watch for rock knocked loose by the rope."
+    ],
+    "lengthM": null,
+    "station": "Next station down the South Face. Stations here often lie well to one side of the last one, not straight down, so look left and right before committing."
+   },
+   {
+    "n": 8,
+    "notes": "South Face rappel 3 of 9.",
+    "anchor": "fixed slings and rap rings, or natural anchors",
+    "hazards": [],
+    "lengthM": null,
+    "station": "Next station down the South Face. Stations here often lie well to one side of the last one, not straight down, so look left and right before committing."
+   },
+   {
+    "n": 9,
+    "notes": "South Face rappel 4 of 9.",
+    "anchor": "fixed slings and rap rings, or natural anchors",
+    "hazards": [],
+    "lengthM": null,
+    "station": "Next station down the South Face. Stations here often lie well to one side of the last one, not straight down, so look left and right before committing."
+   },
+   {
+    "n": 10,
+    "notes": "South Face rappel 5 of 9.",
+    "anchor": "fixed slings and rap rings, or natural anchors",
+    "hazards": [],
+    "lengthM": null,
+    "station": "Next station down the South Face. Stations here often lie well to one side of the last one, not straight down, so look left and right before committing."
+   },
+   {
+    "n": 11,
+    "notes": "South Face rappel 6 of 9.",
+    "anchor": "fixed slings and rap rings, or natural anchors",
+    "hazards": [],
+    "lengthM": null,
+    "station": "Next station down the South Face. Stations here often lie well to one side of the last one, not straight down, so look left and right before committing."
+   },
+   {
+    "n": 12,
+    "notes": "South Face rappel 7 of 9.",
+    "anchor": "fixed slings and rap rings, or natural anchors",
+    "hazards": [],
+    "lengthM": null,
+    "station": "Next station down the South Face. Stations here often lie well to one side of the last one, not straight down, so look left and right before committing."
+   },
+   {
+    "n": 13,
+    "notes": "South Face rappel 8 of 9.",
+    "anchor": "fixed slings and rap rings, or natural anchors",
+    "hazards": [],
+    "lengthM": null,
+    "station": "Next station down the South Face. Stations here often lie well to one side of the last one, not straight down, so look left and right before committing."
+   },
+   {
+    "n": 14,
+    "notes": "South Face rappel 9 of 9. This one often takes nearly the full length of the rope to reach flat glacier snow; knot the ends. Rope up for glacier travel as soon as you are down.",
+    "anchor": "fixed slings and rap rings, or natural anchors",
+    "hazards": [
+     "Crevasses on the Terror Glacier start right at the bottom of the rappel."
+    ],
+    "lengthM": null,
+    "station": "Lowest station on the South Face, above the Terror Glacier."
+   }
+  ],
+  "replace_rappels": true,
+  "review": {
+   "confidence": "medium",
+   "sources": [
+    "https://www.summitpost.org/route/321118/south-face.html",
+    "https://stephabegg.com/?p=8949",
+    "https://cascadeclimbers.com/forum/topic/107840-tr-inspiration-peak-south-face-07142024"
+   ],
+   "single_rope": "West Ridge is rappelled on one 60 m rope with stations about every 30 m (about 5 raps, or 4 then a gully downclimb); the South Face below the notch adds about 9 more on one 60-70 m rope.",
+   "changed": "Removed the seven-rappel option from the summary, note and descent text; kept the single-rope station table, trimming the last note's wording."
+  }
+ },
+ "wa_south_face_5": {
+  "area": "wa_inspiration_peak",
+  "set": {
+   "rappels": "About 14 rappels on a single 60-70 m rope: 5 down the upper West Ridge, a scramble down to a notch, then 9 down the South Face to the Terror Glacier. Parties that downclimb more have made about 8.",
+   "rappel_count_note": "Counted for one 60-70 m rope, which is what most parties now carry: 5 rappels on the upper West Ridge and 9 on the South Face below the notch. The stations are spaced for a single rope, about every 30 m on the ridge. Counts differ because some parties downclimb part of the ridge or drop into the gully, which already has stations, and make about 8 rappels in all. Anchors on the ridge were reported rebuilt in June 2024, but stations vary and some are tattered, so carry cord to back them up. Two landmarks on the ridge part of the line: a large horn anchor, and a fixed three-pin anchor where the rappel goes down and climber’s right off a large overhang and hangs free, with the next station offset rather than straight below.",
+   "descent_text": "Standard descent rappels the upper West Ridge to a notch, then continues down the South Face to the glacier rather than reversing the Great Gash. From the summit, downclimb/scramble a few hundred feet toward a notch on the ridge, then begin rappelling. It is a sustained multi-rappel descent through a gully/notch system with no bolts; the stations are fixed pins, nuts and cord of variable quality, slung horns, or anchors built from gear (nuts, small-to-medium cams), so carry a rack sufficient for both the climb and for leaving/building rappel anchors, plus some cord or rap tat. A party on a single 70 m rope counted roughly 5 rappels down the upper West Ridge to a notch followed by about 9 more down through the gully and South Face terrain to the glacier, with several rappels traversing hard to one side to reach the next station and the final rappel using nearly the full rope length to reach a flat spot on the ice. A single 70 m rope doubled reaches only about 35 m, so expect about 14 rappels of 30-35 m. Expect loose rock in the gully and real risk of the rope hanging up on the traversing raps, so back up rappels and check pulls carefully. The descent ends back on the Terror Glacier at the base of the West Ridge/South Face, from which you re-cross the icefall (same crevasse hazard as the approach, now on tired legs and possibly softer afternoon snow) to regain camp, then reverse the Terror Basin boot path and Goodell Creek Trail to the trailhead."
+  },
+  "rappel_detail": [
+   {
+    "n": 1,
+    "notes": "West Ridge rappel 1 of 5 on a single 60-70 m rope.",
+    "anchor": "fixed slings and rap rings, or a nut anchor built on the spot",
+    "hazards": [
+     "Back up or replace any tattered tat: carry extra cord and a knife."
+    ],
+    "lengthM": null,
+    "station": "Summit area, at the top of the West Ridge crest. The fixed stations here have been found both freshly rebuilt and badly tattered, so inspect each one."
+   },
+   {
+    "n": 2,
+    "notes": "West Ridge rappel 2 of 5 on a single 60-70 m rope.",
+    "anchor": "fixed slings and rap rings of varying quality, or natural nut and cam anchors",
+    "hazards": [
+     "Some rappels traverse sideways to reach the next anchor. Loose, rockfall-prone rock sits on these traversing lines, so move one at a time and keep the rope out of the fall line."
+    ],
+    "lengthM": null,
+    "station": "Next station down the upper West Ridge crest. Some stations sit off to the side rather than straight below the last, to keep you out of the fall line."
+   },
+   {
+    "n": 3,
+    "notes": "West Ridge rappel 3 of 5 on a single 60-70 m rope.",
+    "anchor": "fixed slings and rap rings of varying quality, or natural nut and cam anchors",
+    "hazards": [],
+    "lengthM": null,
+    "station": "Next station down the upper West Ridge crest. Some stations sit off to the side rather than straight below the last, to keep you out of the fall line."
+   },
+   {
+    "n": 4,
+    "notes": "West Ridge rappel 4 of 5 on a single 60-70 m rope.",
+    "anchor": "fixed slings and rap rings of varying quality, or natural nut and cam anchors",
+    "hazards": [],
+    "lengthM": null,
+    "station": "Next station down the upper West Ridge crest. Some stations sit off to the side rather than straight below the last, to keep you out of the fall line."
+   },
+   {
+    "n": 5,
+    "notes": "West Ridge rappel 5 of 5 on a single 60-70 m rope. Below it, coil the rope and downclimb 3rd-4th class terrain to the notch at the top of the South Face.",
+    "anchor": "fixed slings and rap rings of varying quality, or natural nut and cam anchors",
+    "hazards": [],
+    "lengthM": null,
+    "station": "Next station down the upper West Ridge crest, the last one before the ridge eases. Some stations sit off to the side rather than straight below the last, to keep you out of the fall line."
+   },
+   {
+    "n": 6,
+    "notes": "South Face rappel 1 of 9.",
+    "anchor": "fixed slings and rap rings, or natural anchors",
+    "hazards": [],
+    "lengthM": null,
+    "station": "The notch at the top of the South Face, reached by the downclimb from the last ridge station."
+   },
+   {
+    "n": 7,
+    "notes": "South Face rappel 2 of 9.",
+    "anchor": "fixed slings and rap rings, or natural anchors",
+    "hazards": [
+     "Several South Face rappels need a hard traverse one way or the other to reach the next anchor. Weight the rope before you swing, and watch for rock knocked loose by the rope."
+    ],
+    "lengthM": null,
+    "station": "Next station down the South Face. Stations here often lie well to one side of the last one, not straight down, so look left and right before committing."
+   },
+   {
+    "n": 8,
+    "notes": "South Face rappel 3 of 9.",
+    "anchor": "fixed slings and rap rings, or natural anchors",
+    "hazards": [],
+    "lengthM": null,
+    "station": "Next station down the South Face. Stations here often lie well to one side of the last one, not straight down, so look left and right before committing."
+   },
+   {
+    "n": 9,
+    "notes": "South Face rappel 4 of 9.",
+    "anchor": "fixed slings and rap rings, or natural anchors",
+    "hazards": [],
+    "lengthM": null,
+    "station": "Next station down the South Face. Stations here often lie well to one side of the last one, not straight down, so look left and right before committing."
+   },
+   {
+    "n": 10,
+    "notes": "South Face rappel 5 of 9.",
+    "anchor": "fixed slings and rap rings, or natural anchors",
+    "hazards": [],
+    "lengthM": null,
+    "station": "Next station down the South Face. Stations here often lie well to one side of the last one, not straight down, so look left and right before committing."
+   },
+   {
+    "n": 11,
+    "notes": "South Face rappel 6 of 9.",
+    "anchor": "fixed slings and rap rings, or natural anchors",
+    "hazards": [],
+    "lengthM": null,
+    "station": "Next station down the South Face. Stations here often lie well to one side of the last one, not straight down, so look left and right before committing."
+   },
+   {
+    "n": 12,
+    "notes": "South Face rappel 7 of 9.",
+    "anchor": "fixed slings and rap rings, or natural anchors",
+    "hazards": [],
+    "lengthM": null,
+    "station": "Next station down the South Face. Stations here often lie well to one side of the last one, not straight down, so look left and right before committing."
+   },
+   {
+    "n": 13,
+    "notes": "South Face rappel 8 of 9.",
+    "anchor": "fixed slings and rap rings, or natural anchors",
+    "hazards": [],
+    "lengthM": null,
+    "station": "Next station down the South Face. Stations here often lie well to one side of the last one, not straight down, so look left and right before committing."
+   },
+   {
+    "n": 14,
+    "notes": "South Face rappel 9 of 9. This one often takes nearly the full length of the rope to reach flat glacier snow; knot the ends. Rope up for glacier travel as soon as you are down.",
+    "anchor": "fixed slings and rap rings, or natural anchors",
+    "hazards": [
+     "Crevasses on the Terror Glacier start right at the bottom of the rappel."
+    ],
+    "lengthM": null,
+    "station": "Lowest station on the South Face, above the Terror Glacier."
+   }
+  ],
+  "replace_rappels": true,
+  "review": {
+   "confidence": "medium",
+   "sources": [
+    "https://www.summitpost.org/route/321118/south-face.html",
+    "https://stephabegg.com/?p=8949",
+    "https://cascadeclimbers.com/forum/topic/107840-tr-inspiration-peak-south-face-07142024"
+   ],
+   "single_rope": "West Ridge is rappelled on one 60 m rope with stations about every 30 m (about 5 raps, or 4 then a gully downclimb); the South Face below the notch adds about 9 more on one 60-70 m rope.",
+   "changed": "Removed the seven-rappel option from the summary, note and descent text; kept the single-rope station table, trimming the last note's wording."
+  }
+ },
+ "wa_j_tnar": {
+  "area": "wa_j_tunheim",
+  "set": {
+   "rappels": "No single-rope descent is documented: the route is rappelled pitch by pitch (about 16 rappels from bolted anchors on all pitches but P15), and most pitches are longer than one 60 m rope reaches",
+   "rappel_count_note": "Rappel the route, one rappel per pitch: every pitch has a bolted stainless-steel anchor except pitch 15, whose gear belay has a bolted rappel anchor along the ledge to the right. Pitches run from about 25 m to 70 m, most between 35 and 55 m, so one 60 m rope doubled (about 30 m per rappel) does not reach from station to station, and no intermediate anchors are known. Much of the wall overhangs, so plan on directional pieces or swinging in to reach stations, and on fixing or down-aiding pitch 7. The first-ascent party descended unconventionally, one climber riding the haul bags down roughly 1,000-1,200 ft before the rest rappelled, which is not a plan for a repeat.",
+   "descent_text": "The descent is accomplished by rappelling the route in full. Due to the sustained overhanging terrain throughout most pitches, careful anchor placement is critical, particularly on pitches with significant roofs. One 60 m rope does not reach between most of the stations, and no intermediate anchors are known. The first ascent team used an unconventional technique where one climber managed haul bags on a very long rappel before the remaining climbers rappelled in pairs off stainless steel anchors. Plan to remove fixed lines during descent to preserve the rock."
+  },
+  "clear_rappels": true,
+  "review": {
+   "confidence": "low",
+   "sources": [
+    "https://www.mountainproject.com/route/120300835/jotnar",
+    "https://publications.americanalpineclub.org/articles/13201215809"
+   ],
+   "single_rope": "Pitches are about 25-70 m with bolted anchors on each; a single 60 m rope (about 30 m per rappel) does not reach between most stations and no intermediate anchors are described.",
+   "changed": "Cleared the 16-row table (rows assumed a longer rope setup); stated plainly that no single-rope line is known; removed two-rope wording."
+  }
+ }
+}

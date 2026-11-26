@@ -1,0 +1,177 @@
+{
+  "wa_narcos": {
+    "area": "wa_cutthroat_creek_wall_or_little_liberty_bell",
+    "set": {
+      "rappels": "No single-rope rappel line is documented; the descent is the Wright-Pond line on bolted anchors",
+      "rappel_count_note": "The descent follows the bolted anchors of the Wright-Pond line, which the last Narcos pitch joins. Those stations are spaced for the full rope-length pitches of the climb (the first Wright-Pond pitch alone is about 55 m), so a single 60 m rope may not reach between them, and no intermediate stations for one rope are known. Plan the descent before committing, and carry a way to add anchors.",
+      "descent_text": "Because P4-P5 merge into Wright-Pond's corner and final pitch, the standard descent is to rappel down the Wright-Pond line on its bolted anchors back to the base. How many rappels that takes on a single 60 m rope is not documented."
+    },
+    "clear_rappels": true,
+    "review": {
+      "confidence": "low",
+      "sources": [
+        "https://www.mountainproject.com/route/119269320/narcos",
+        "https://www.alpineinstitute.com/first-ascent-wright-pond-route/",
+        "https://stg.openbeta.io/climb/7270095a-83a9-58f2-acdf-110a2036edce/wright-pond"
+      ],
+      "single_rope": "No source describes a single-rope descent for the Wright-Pond line; the pitches are full rope length (P1 about 55 m) so one rope may fall short and no intermediate stations are documented.",
+      "changed": "Removed the double-rope wording and the four-rappel table (which assumed two ropes); stated plainly that a single-rope line is unknown. The count of four came from the old two-rope wording and was not confirmed."
+    }
+  },
+  "wa_wright_pond": {
+    "area": "wa_cutthroat_creek_wall_or_little_liberty_bell",
+    "set": {
+      "rappels": "No single-rope rappel line is documented; the descent is down the route on its bolted anchors",
+      "rappel_count_note": "The route is descended on its own bolted belay anchors. They are spaced for full rope-length pitches (the first pitch is about 55 m), so a single 60 m rope may not reach between them, and no intermediate stations for one rope are known. Plan the descent before committing, and carry a way to add anchors.",
+      "descent_text": "From the top, descend the Wright-Pond line on its bolted belay anchors. How many rappels that takes on a single 60 m rope is not documented."
+    },
+    "clear_rappels": true,
+    "review": {
+      "confidence": "low",
+      "sources": [
+        "https://www.alpineinstitute.com/first-ascent-wright-pond-route/",
+        "https://www.mountainproject.com/route/119269320/narcos",
+        "https://stg.openbeta.io/climb/7270095a-83a9-58f2-acdf-110a2036edce/wright-pond"
+      ],
+      "single_rope": "Nothing found documents a single-rope descent; first pitch is about 55 m, so one rope likely cannot do pitch-length rappels and intermediate stations are unknown.",
+      "changed": "Removed the double-rope wording and the four-station table built on it; stated the single-rope unknown plainly. The route was bolted for anchors only, ground up."
+    }
+  },
+  "wa_easy_getaway": {
+    "area": "wa_cutthroat_wall",
+    "set": {
+      "rappels": "One rappel from the notch over a chockstone tunnel to a ramp, on a single 70 m rope (a single 60 m can fall short), then a traverse back around to the base",
+      "rappel_count_note": null,
+      "descent_text": "The descent has real potential to ruin your day if you don't study it beforehand. From the topout, reach the notch marked by a slung horn/tree between the westernmost and higher central buttress, make one rappel on a single 70 m rope (a single 60 m can fall short) over a chockstone tunnel to a dirty ramp with a small cave, then find the upward-trending gully/ledge system on skier's left (not the loose gully directly below) and follow it around back to the base."
+    },
+    "rappel_detail": [
+      {
+        "n": 1,
+        "pull": "The chockstone tunnel can snag the rope on the pull.",
+        "notes": "The one rappel, angling right over a chockstone tunnel to a dirty ramp with a small cave. Use a single 70 m rope; a single 60 m can fall short. Then follow the upward-trending gully and ledge system on skier’s left around to the base.",
+        "anchor": "slung horn or tree at the notch",
+        "hazards": [
+          "Do not descend the obvious gully directly below the notch: it is loose and hazardous."
+        ],
+        "lengthM": null,
+        "station": "Walk 100-200 ft along the ridge from the topout to the minor notch between the westernmost buttress and the higher central buttress, marked by a slung horn or tree."
+      }
+    ],
+    "replace_rappels": true,
+    "review": {
+      "confidence": "medium",
+      "sources": [
+        "https://www.mountainproject.com/area/113436052/cutthroat-wall",
+        "https://www.mountainproject.com/route/115311402/easy-getaway"
+      ],
+      "single_rope": "One rappel at the notch on a single 70 m rope; the area page notes a 70 m was welcome, and a single 60 m can fall short.",
+      "changed": "Dropped the 'two 60s' alternative in the summary, note and descent text; kept the station, hazards and pull."
+    }
+  },
+  "wa_one_piece_at_a_time": {
+    "area": "wa_cutthroat_wall",
+    "set": {
+      "rappels": "No single-rope line down the route is documented; use the shared Cutthroat Wall walk-off",
+      "rappel_count_note": "Parties have rappelled the route itself through trees in three long rappels of about 60 m each, starting from a tree up and left of the pitch 5 belay, and found that faster than the walk-off. A single 60 m rope doubled reaches only about 30 m, and no intermediate stations are described, so one rope does not do these. With one rope, take the shared Cutthroat Wall descent: one rappel from the notch on a single 70 m rope, then the skier's-left gully and ledge system back to the base.",
+      "descent_text": "Climbers have found it faster to rappel the route itself rather than use the shared walk-off descent: three full 60m rappels reach the ground, beginning from a tree slightly up and left of the belay atop pitch 5. These are too long for a single 60 m rope; with one rope use the shared walk-off."
+    },
+    "clear_rappels": true,
+    "review": {
+      "confidence": "low",
+      "sources": [
+        "https://www.mountainproject.com/route/120102674/one-piece-at-a-time",
+        "https://www.mountainproject.com/area/113436052/cutthroat-wall"
+      ],
+      "single_rope": "Sources give only three full 60 m rappels from a tree near the P5 belay; no intermediate stations. One rope's alternative is the shared walk-off (notch rappel on a 70 m, then gully).",
+      "changed": "Removed the two-rope setup wording and the table of three 60 m stations (too long for one rope); pointed to the walk-off as the one-rope descent."
+    }
+  },
+  "wa_the_perfect_crime_with_variations": {
+    "area": "wa_cutthroat_wall",
+    "set": {
+      "rappels": "One rappel from the notch over a chockstone tunnel to a ramp, on a single 70 m rope (a single 60 m can fall short), then a traverse back around to the base",
+      "rappel_count_note": null
+    },
+    "rappel_detail": [
+      {
+        "n": 1,
+        "pull": "The chockstone tunnel can snag the rope on the pull.",
+        "notes": "The one rappel, angling right over a chockstone tunnel to a dirty ramp with a small cave. Use a single 70 m rope; a single 60 m can fall short. Then follow the upward-trending gully and ledge system on skier’s left around to the base.",
+        "anchor": "slung horn or tree at the notch",
+        "hazards": [
+          "Do not descend the obvious gully directly below the notch: it is loose and hazardous."
+        ],
+        "lengthM": null,
+        "station": "Walk 100-200 ft along the ridge from the topout to the minor notch between the westernmost buttress and the higher central buttress, marked by a slung horn or tree."
+      }
+    ],
+    "replace_rappels": true,
+    "review": {
+      "confidence": "medium",
+      "sources": [
+        "https://www.mountainproject.com/area/113436052/cutthroat-wall",
+        "https://www.mountainproject.com/route/115311402/easy-getaway"
+      ],
+      "single_rope": "One rappel at the notch on a single 70 m rope; a single 60 m can fall short. descent_text already says single rope and 70 m, so left unchanged.",
+      "changed": "Removed the 'or two 60s' alternative from the summary and the station note; descent_text left as is."
+    }
+  },
+  "wa_direct_southwest_buttress": {
+    "area": "wa_dorado_needle",
+    "set": {
+      "rappels": "One rappel on a single 60 m rope from the top of the approach gully to the snow below",
+      "rappel_count_note": "One rappel on a single 60 m rope from the head of the approach gully. An open moat at the bottom may need climbing out of; one party slung a horn above the moat to avoid that. The fixed-ring rappel off the ridge boulder north of the summit is not documented for one rope, so use the gully.",
+      "descent_text": "The Direct start rejoins the standard Southwest Buttress after its first two pitches, so the descent is the same as the standard route's: from the top, return to the head of the approach gully and make a single-rope rappel (climbers may need to downclimb or work around an open moat at the bottom). From the bottom of the rappel, descend the glacier back down to the notch/col where you left the McAllister Glacier on approach, then reverse the glacier crossing back to high camp. Because this is a mixed rock/snow/glacier descent, carry standard rappel backup material (a few slings/cord) in case the anchor needs supplementing, and reassess the moat/snow-bridge crossing each trip since it is snow-condition dependent and can deteriorate later in the season."
+    },
+    "rappel_detail": [
+      {
+        "n": 1,
+        "notes": "The one rappel, on a single 60 m rope. Then descend the glacier to the notch at the base of the route.",
+        "anchor": "natural anchor at the top of the approach gully; a slung horn above the moat has been used",
+        "hazards": [
+          "An open moat at the bottom may need climbing out of or working around."
+        ],
+        "lengthM": null,
+        "station": "Head of the approach gully."
+      }
+    ],
+    "replace_rappels": true,
+    "review": {
+      "confidence": "medium",
+      "sources": [
+        "https://www.mountainproject.com/route/111927639/dorado-needle-sw-buttress?print=1"
+      ],
+      "single_rope": "Route page describes a single-rope rappel from the top of the gully; a climber reported doing it on a single 60 m rope from a slung horn above the moat. Length not stated.",
+      "changed": "Dropped the ridge-boulder ring rappel (described only for a doubled-rope setup) and made the gully rappel the one rappel; rewrote the descent_text sentences about it."
+    }
+  },
+  "wa_southwest_buttress": {
+    "area": "wa_dorado_needle",
+    "set": {
+      "rappels": "One rappel on a single 60 m rope from the top of the approach gully to the snow below",
+      "rappel_count_note": "One rappel on a single 60 m rope from the head of the approach gully. An open moat at the bottom may need climbing out of; one party slung a horn above the moat to avoid that. The fixed-ring rappel off the ridge boulder north of the summit is not documented for one rope, so use the gully.",
+      "descent_text": "From the summit, return to the head of the approach gully and make one rappel on a single 60 m rope to the snow below; an open moat at the bottom may need downclimbing or working around, and a slung horn above it has been used to avoid climbing out. From the bottom of the rappel, descend the glacier back to the notch at the base of the route - the same notch used on the approach - and reverse the glacier travel back toward camp. The rest of the descent is downclimbing, scrambling, and glacier travel rather than a multi-pitch rappel sequence. The main descent hazard is the moat at the base of the route staying open or widening late in the season, which can complicate reconnecting with the glacier."
+    },
+    "rappel_detail": [
+      {
+        "n": 1,
+        "notes": "The one rappel, on a single 60 m rope. Then descend the glacier to the notch at the base of the route.",
+        "anchor": "natural anchor at the top of the approach gully; a slung horn above the moat has been used",
+        "hazards": [
+          "An open moat at the bottom may need climbing out of or working around."
+        ],
+        "lengthM": null,
+        "station": "Head of the approach gully."
+      }
+    ],
+    "replace_rappels": true,
+    "review": {
+      "confidence": "medium",
+      "sources": [
+        "https://www.mountainproject.com/route/111927639/dorado-needle-sw-buttress?print=1"
+      ],
+      "single_rope": "Route page describes a single-rope rappel from the top of the gully; a climber reported it on a single 60 m rope. Length not stated.",
+      "changed": "Dropped the ridge-boulder ring rappel (doubled-rope setup) and rewrote the descent_text around the single-rope gully rappel; removed the v-thread and rope-length asides."
+    }
+  }
+}
