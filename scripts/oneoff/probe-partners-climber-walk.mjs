@@ -82,14 +82,11 @@ try {
   const emptyTxt = await empty.innerText().catch(() => "");
   await cardLook(empty, "the empty card");
   note("empty card: " + emptyTxt.replace(/\n/g, " / "));
-  ok(!/Add an area|Choose my areas/.test(emptyTxt) && /Invite a climbing friend/.test(emptyTxt), "it offers Invite (the You card above has + Add an area)");
+  ok(!/Add an area|Choose my areas/.test(emptyTxt), "no Add an area in the card (the You card above has + Add an area)");
   const meanwhile = await page.locator("text=/^Meanwhile, climbers/i").count();
   ok(meanwhile === 0, "no Meanwhile list under the empty card (removed 2026-11-18)");
   await shot(page, "1-myareas-unlisted");
-  await empty.locator("button", { hasText: /^Invite a climbing friend$/ }).click(); await page.waitForTimeout(600);
-  ok(await empty.locator("text=/Copy link/i").count() > 0, "Invite opens the share buttons (Copy link)");
-  await shot(page, "1b-invite");
-  await empty.locator("button", { hasText: /^Hide invite$/ }).click(); await page.waitForTimeout(300);
+  ok(!/Invite a climbing friend/.test(emptyTxt), "no Invite a climbing friend in the card (removed, owner note 2026-11-25)");
 
   // 2. See everyone.
   const seeAll = empty.locator("button", { hasText: /^See everyone$/ });

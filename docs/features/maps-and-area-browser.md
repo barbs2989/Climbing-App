@@ -154,7 +154,7 @@ Shared map plumbing is `lib/mapKit.jsx`. The route page is documented in `docs/f
   area holds no climbs itself (areas hold sub-areas OR climbs — Mountain Project's rule, and `trg_areas_leaf_xor`), and never on a country.
   Since 2026-11-18 its location can be tapped on a map (*Pick it on the map*, `WaypointMapPicker`), not only taken from the device,
   and Add a climb's *not in the catalog* box opens this sheet with the typed name (`defaultName`).
-- **Route finder on the website** (competitor review batch B, item 11, owner 2026-11-04): the results header reads the active filters as one line (*42 climbs · Sport · 5.8–5.10 · 2+ pitches*, the chips' own labels, then the Sort select); at 1024px+ a **Compact rows** toggle (remembered on the device, `cm_finder_compact`; it draws `RouteRow`'s `dense` one-line row, the same one the website's classics list uses) and **Export CSV** of the loaded results (`lib/csv.js` `downloadCsv`: climb, grade, discipline, pitches, stars, wall or area). The phone keeps its cards.
+- **Route finder on the website** (competitor review batch B, item 11, owner 2026-11-04): the results header reads the active filters as one line (*42 climbs · Sport · 5.8–5.10 · 2+ pitches*, the chips' own labels; the order is the Sort button beside Filters); at 1024px+ a **Compact rows** toggle (remembered on the device, `cm_finder_compact`; it draws `RouteRow`'s `dense` one-line row, the same one the website's classics list uses) and **Export CSV** of the loaded results (`lib/csv.js` `downloadCsv`: climb, grade, discipline, pitches, stars, wall or area). The phone keeps its cards.
 - **Route finder** (`RouteFinderPanel`): filters over the area's whole subtree - disciplines, grade (system + low/high),
   min stars, min pitches, length band, sort (`DEF = { discs, sortBy, minStars, minPitches, len, gSys, gLo, gHi, gain, trip, elev, prom, near, within }`). Active filters show as chips.
   A wall heading's grey line is `shownTrailOf`: only the levels BELOW the area being searched (the CSV keeps the whole trail). The search bar pins through `usePinnedBar`, which never pins a hidden bar (a route page covering the finder) and re-measures when the bar is shown.
@@ -199,9 +199,13 @@ Shared map plumbing is `lib/mapKit.jsx`. The route page is documented in `docs/f
     (owner note 2026-11-25; Google Maps, AllTrails and Mountain Project's save sheets all end that way): a name box and *Create and
     add* make a custom list holding this climb in one step (`onCreateListWith` → App's `createListWithRoute`, the same local-first
     `onCreateList` write as ListsManager's New list). A name you already have adds the climb to that list instead.
-  - **Sort is on the results line** (owner note 2026-11-25: "you should be able to sort how you want. Find more sorting options"):
-    a *Sort* select beside the count applies at once; the Filters sheet's *Sort by* row is the same list (`sortChoices`). The order is
-    not counted on *Filters (N)* and wears no chip. Beyond the wall / name / stars / grade orders, **0538** adds *Classics first*
+  - **Sort sits beside Filters, under a full-width search box** (owner notes 2026-11-25: "you should be able to sort how you want. Find
+    more sorting options", then "the filter needs to be below the search box so that the search box fills the screen more ... put the
+    filter button right next to the sort button ... remove the sorting options on the filter page"): the box takes the whole width, and
+    under it a *Filters (N)* | *Sort: <order>* pair of equal 44px buttons (the phone shop's Filter | Sort bar). The Sort button is a
+    native select laid invisibly over the drawn label, so a tap anywhere opens the phone's picker and the choice applies at once
+    (`sortChoices`). The Filters sheet has **no Sort by row**; its *Clear all*, and the chip line's, clear the filters and keep the
+    order (only *Nearest first* goes, with the place). The order is not counted on *Filters (N)* and wears no chip. Beyond the wall / name / stars / grade orders, **0538** adds *Classics first*
     (`classic`, then `classic_score`, then stars), *Longest* / *Shortest* (`length_m`), *Most pitches* and *Most gain* / *Least gain*
     (`route_gain_ft`, the gain filter's figure), each offered only where its filter is (`EXTRA_SORTS` / `extraFits`, the `fitsDiscs`
     test), a missing figure last in either direction; a sort that stops fitting the ticked disciplines falls back to the wall order
@@ -334,7 +338,7 @@ Shared map plumbing is `lib/mapKit.jsx`. The route page is documented in `docs/f
 | `src/components/AreaGettingThere.tsx` | `AreaGettingThere`, an area's Getting there card (`flat` in the area sheet: words, then the map) |
 | `src/components/AreaActionRow.tsx` | `AreaActionRow`, the Route finder · Objectives · Map row: three equal 48px buttons in the palette's blue (dark `blueBg` fill, light-blue `blue` edge), not the `actionSolid` fill, which the warm palette made orange (owner 2026-11-24) |
 | `src/components/AreaChildrenList.tsx` | `AreaChildrenList`, every sub-area: on the website (1280px+) portalled by the area page into App's left panel (`#cm-left-panel`; map thumbnail — centred on the area, with an orange C pin ONLY on a crag or wall, never on a state, region, range or peak (owner 2026-11-18) — and ★ objectives, no grade bars), otherwise the phone section |
-| `src/components/AreaPhotoStrip.tsx` | `AreaPhotoStrip`, the thin photo strip: area photos and every route photo under the area (0411) |
+| `src/components/AreaPhotoStrip.tsx` | `AreaPhotoStrip`, the thin photo strip: area photos, every topo and every Photos-tab route photo under the area (0411, 0541); drawn only where `area_takes_photos` says the area is one place, through its `wrap` prop |
 | `src/components/AddHereFooter.tsx` | `AddHereFooter`, the add-a-climb footer |
 | `lib/nearbyPeaks.js` | `nearbyPeaksBounds`, `nearbyPeaksRows`, `nearbyPeaksLive` |
 | `lib/areaBrowserShared.js` | `rowGrade`, `placeOf`, `haversineMi`, `ATYPE`, `DISCIPLINES` (shared by the area browser's components) |
@@ -393,7 +397,9 @@ A place filed twice is refused at insert by `refuse_duplicate_area` (0216/0218, 
 Notes: `docs/guards/README.md`.
 
 ## 7. Last significant change
-Area lists, one line a row (owner 2026-11-25): the phone sub-area list drops its per-discipline line and keeps the total climbs, and the solid blue *View area* pill on every area-opening row becomes a plain right arrow (`AreaRowArrow`).
+Area photos only on a specific place, and route photos reach it (owner note 2026-11-25, 0541): `area_takes_photos(id)` decides which area pages draw the PHOTOS strip. A peak always does. A crag or region does when nothing under it sits more than 2 km from its own point; with no coordinates, when nothing sits two levels under it. A state, range, country or untyped row never does. So Lower Town Wall, Snow Creek Area and a crag show photos, and North Cascades, Leavenworth, Icicle Creek, Index and a state show none, not even the Add tile. `area_photos(id, limit)` answers `{ place, photos }`. It replaces 0411's `area_photo_feed` and now includes Photos-tab route photos (`contributions` of kind `photo`, pitch photos too) as well as topos, so a photo posted on a route page appears on its crag or peak page. The topos insert rule refuses an area photo where `area_takes_photos` is false. Mountain Project and OpenBeta show photos at every level, rolled up to the state. Here a general area shows none, as the owner asked, and its crags and peaks carry the photos.
+
+Before it — Area lists, one line a row (owner 2026-11-25): the phone sub-area list drops its per-discipline line and keeps the total climbs, and the solid blue *View area* pill on every area-opening row becomes a plain right arrow (`AreaRowArrow`).
 
 Before it — *View area* button (owner 2026-11-18): one solid blue `ViewAreaPill` ends every row that opens an area — sub-area list, All areas tree, area searches and the top search's Places — so opening an area no longer depends on knowing that the name is tappable.
 

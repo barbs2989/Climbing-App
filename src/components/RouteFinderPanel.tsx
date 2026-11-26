@@ -396,31 +396,35 @@ export default function RouteFinderPanel({ scope, onOpen, onJumpToArea, C, uElev
       <div style={{ display: "flex", gap: 4, background: C.surface, border: "1px solid " + C.border, borderRadius: 9, padding: 3, marginBottom: 8 }}>
         {[["routes", "Routes"], ["areas", "Areas"]].map(([k, l]) => <button key={k} onClick={() => setMode(k)} aria-pressed={mode === k} style={{ flex: 1, padding: "8px 0", border: "none", borderRadius: 7, background: mode === k ? C.blueBg : "transparent", boxShadow: mode === k ? "inset 0 0 0 1px " + C.blue : "none", color: mode === k ? C.onSolid : C.textSub, fontSize: 13.5, fontWeight: 700, cursor: "pointer" }}>{l}</button>)}
       </div>
-      <div style={{ display: "flex", gap: 8, marginBottom: 8 }}>
-      <input aria-label={mode === "areas" ? "Search areas, crags, peaks" : "Search routes"} value={q} onChange={e => setQ(e.target.value)} placeholder={mode === "areas" ? "Search areas, crags, peaks…" : "Search routes in " + loc.name + "…"} style={{ flex: 1, minWidth: 0, padding: "11px 13px", borderRadius: 10, border: "1px solid " + C.field, background: C.surface, color: C.text, fontSize: 14, boxSizing: "border-box", outline: "none" }} />
-      {mode === "routes" ? <button onClick={() => { setDf(af); setSheet(true); }} style={rowBtn(nF)}><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"><path d="M4 6h16M7 12h10M10 18h4" /></svg>{"Filters" + (nF ? " (" + nF + ")" : "")}</button> : null}
-      </div>
+      {/* THE BOX HAS THE WHOLE WIDTH, and Filters sits under it BESIDE SORT (owner note, 2026-11-25: "the filter needs to be
+          below the search box so that the search box fills the screen more ... put the filter button right next to the sort
+          button ... remove the sorting options on the filter page"). The pair is the phone shop's Filter | Sort bar (Amazon,
+          Zillow, Airbnb): Sort is the phone's own picker, applied at once, and the Filters sheet no longer repeats it. */}
+      <input aria-label={mode === "areas" ? "Search areas, crags, peaks" : "Search routes"} value={q} onChange={e => setQ(e.target.value)} placeholder={mode === "areas" ? "Search areas, crags, peaks…" : "Search routes in " + loc.name + "…"} style={{ display: "block", width: "100%", minWidth: 0, padding: "11px 13px", borderRadius: 10, border: "1px solid " + C.field, background: C.surface, color: C.text, fontSize: 14, boxSizing: "border-box", outline: "none", marginBottom: 8 }} />
       {mode === "routes" ? <>
+      <div style={{ display: "flex", gap: 8, marginBottom: 8 }}>
+        <button onClick={() => { setDf(af); setSheet(true); }} style={{ ...rowBtn(nF), flex: 1, minWidth: 0, justifyContent: "center" }}><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}><path d="M4 6h16M7 12h10M10 18h4" /></svg>{"Filters" + (nF ? " (" + nF + ")" : "")}</button>
+        {/* The select COVERS the box, so a tap anywhere on "Sort: Left → right" opens the phone's picker; the words under it
+            say what the order is (the bare select read "Left → right" with nothing naming what it orders). */}
+        <span style={{ ...rowBtn(false), flex: 1, minWidth: 0, position: "relative", justifyContent: "center" }}>
+          <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}><path d="M7 4v16M3 16l4 4 4-4M17 20V4M13 8l4-4 4 4" /></svg>
+          <span aria-hidden="true" style={{ minWidth: 0, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>{"Sort: " + ((sortChoices(af.discs, !!af.near).find(o => o[0] === sortFor(af.discs, af.sortBy)) || ["", ""])[1])}</span>
+          <select aria-label="Sort routes" value={sortFor(af.discs, af.sortBy)} onChange={e => { const v = e.target.value; setAf(a => ({ ...a, sortBy: v })); }} style={{ position: "absolute", inset: 0, width: "100%", height: "100%", opacity: 0, cursor: "pointer", fontSize: 16, border: "none", margin: 0 }}>
+            {sortChoices(af.discs, !!af.near).map(o => <option key={o[0]} value={o[0]}>{o[1]}</option>)}
+          </select>
+        </span>
+      </div>
       {afChips.length ? (
         <div style={{ display: "flex", gap: 6, flexWrap: "wrap", alignItems: "center", marginBottom: 8 }}>
           {afChips.map(c => <button key={c.k} onClick={c.clear} aria-label={"Remove filter: " + c.label} style={{ ...CHIP, display: "inline-flex", alignItems: "center", gap: 5, padding: "7px 10px 7px 12px", border: "1px solid " + C.blueDim, background: C.blueBg, color:C.onSolid }}>{c.label}<span aria-hidden="true" style={POP_CHIP_X}>✕</span></button>)}
-          <button onClick={() => setAf(DEF)} style={{ ...BTN_LINK(C), padding: "7px 8px", color: C.textMuted, textDecoration: "underline" }}>Clear all</button>
+          {/* Clears the FILTERS; the order is not a filter, so it stays (only "Nearest first" goes, with the place). */}
+          <button onClick={() => setAf(a => ({ ...DEF, sortBy: a.sortBy === "near" ? DEF.sortBy : a.sortBy }))} style={{ ...BTN_LINK(C), padding: "7px 8px", color: C.textMuted, textDecoration: "underline" }}>Clear all</button>
         </div>
       ) : null}
       {/* No count after a failed read: "0 routes" above "Couldn't search routes" reads as an empty area. */}
       {/* ONE SENTENCE OF WHAT IS FILTERED (batch B, item 11): the count and the active filters' own chip labels, "42 climbs ·
-          Sport · 5.8–5.10 · 2+ pitches". SORT IS ONE TAP, beside it (owner's note, 2026-11-25: "after you click on route finder,
-          you should be able to sort how you want"): the order was only inside the Filters sheet, three taps and a Show button
-          away. Mountain Project's Route Finder and theCrag both put the sort on the results header; this is the phone's own
-          picker, applied at once, and the sheet's Sort by row is the same list. */}
-      {!needsArea && !(error && total == null && !all.length) ? <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 6, padding: "0 2px" }}>
-        <div style={{ flex: 1, minWidth: 0, fontSize: 11.5, color: C.textMuted, overflowWrap: "anywhere" }}>{nRes.toLocaleString() + finderNoun(af.discs, nRes) + (afChips.length ? " · " + afChips.map(c => c.label).join(" · ") : "")}</div>
-        <label style={{ flexShrink: 0, display: "inline-flex", alignItems: "center", gap: 6, fontSize: 12, color: C.textSub, fontWeight: 600 }}>Sort
-          <select aria-label="Sort routes" value={sortFor(af.discs, af.sortBy)} onChange={e => { const v = e.target.value; setAf(a => ({ ...a, sortBy: v })); }} style={{ maxWidth: 170, height: 38, boxSizing: "border-box", padding: "0 8px", borderRadius: 9, border: "1px solid " + C.field, background: C.surface, color: C.text, fontSize: 13, fontFamily: "inherit", cursor: "pointer" }}>
-            {sortChoices(af.discs, !!af.near).map(o => <option key={o[0]} value={o[0]}>{o[1]}</option>)}
-          </select>
-        </label>
-      </div> : null}
+          Sport · 5.8–5.10 · 2+ pitches". The order is on the Sort button above it. */}
+      {!needsArea && !(error && total == null && !all.length) ? <div style={{ fontSize: 11.5, color: C.textMuted, marginBottom: 6, padding: "0 2px", overflowWrap: "anywhere" }}>{nRes.toLocaleString() + finderNoun(af.discs, nRes) + (afChips.length ? " · " + afChips.map(c => c.label).join(" · ") : "")}</div> : null}
       </> : null}
       </div>
       </div>
@@ -521,7 +525,7 @@ export default function RouteFinderPanel({ scope, onOpen, onJumpToArea, C, uElev
                 const row = (key: string, label: string, sub: string | null, on: boolean, fn: () => void) => (
                   <button key={key} onClick={fn} aria-pressed={on} style={{ ...BTN_LG, width: "100%", display: "flex", alignItems: "center", gap: 10, textAlign: "left", marginTop: 8, border: "1px solid " + (on ? C.blue : C.border), background: on ? C.blueBg : C.surface, color: C.text }}>
                     <span style={{ flex: 1, minWidth: 0 }}><span style={{ display: "block", fontSize: 14, fontWeight: 700 }}>{label}</span>{sub ? <span style={{ display: "block", fontSize: 11.5, color: C.textMuted, fontWeight: 500, marginTop: 2, lineHeight: 1.4 }}>{sub}</span> : null}</span>
-                    <span aria-hidden="true" style={{ flexShrink: 0, fontSize: 12.5, fontWeight: 700, color: on ? C.blue : C.textSub }}>{on ? "✓ Saved" : "+ Add"}</span>
+                    <span aria-hidden="true" style={{ flexShrink: 0, fontSize: 12.5, fontWeight: 700, color: on ? C.green : C.textSub }}>{on ? "✓ Saved" : "+ Add"}</span>
                   </button>
                 );
                 return <>
@@ -638,11 +642,8 @@ export default function RouteFinderPanel({ scope, onOpen, onJumpToArea, C, uElev
                 </div>
               );
             })()}
-            {lab("Sort by")}
-            <div style={{ display: "flex", gap: 7, flexWrap: "wrap" }}>
-              {sortChoices(df.discs, !!df.near).map(o => chip(o[1], sortFor(df.discs, df.sortBy) === o[0], () => setDf(d => ({ ...d, sortBy: o[0] }))))}
-            </div>
-            {!df.discs.length ? <div style={{ fontSize: 11.5, color: C.textMuted, marginTop: 8 }}>Pick a discipline above to sort by grade.</div> : null}
+            {/* No Sort by row here (owner note, 2026-11-25: "remove the sorting options on the filter page"): the order is
+                the Sort button beside Filters, applied at once. A sheet that also held it set the order twice. */}
             {lab("Minimum stars")}
             <div style={{ display: "flex", gap: 7, flexWrap: "wrap" }}>{([[0, "Any"], [2, "★★+"], [3, "★★★+"], [4, "★★★★+"]] as [number, string][]).map(o => chip(o[1], df.minStars === o[0], () => setDf(d => ({ ...d, minStars: o[0] }))))}</div>
             {/* 0334: an unrated climb is not ruled out. 2 of 90,084 sport climbs had a rating when this
@@ -671,7 +672,7 @@ export default function RouteFinderPanel({ scope, onOpen, onJumpToArea, C, uElev
             </> : null}
             </div>
             <div style={{ flexShrink: 0, display: "flex", gap: 8, padding: "12px 16px calc(env(safe-area-inset-bottom) + 12px)", borderTop: "1px solid " + C.border, background: C.bg }}>
-              <button onClick={() => setDf(DEF)} style={{ ...BTN_LG, flex: 1, border: "1px solid " + C.border, background: C.surface, color: C.textSub }}>Clear all</button>
+              <button onClick={() => setDf(d => ({ ...DEF, sortBy: d.sortBy === "near" ? DEF.sortBy : d.sortBy }))} style={{ ...BTN_LG, flex: 1, border: "1px solid " + C.border, background: C.surface, color: C.textSub }}>Clear all</button>
               <button onClick={() => { setAf(dropUnfit(df)); setSheet(false); }} style={{ ...BTN_LG, flex: 2, border: "none", ...SOLID_FILL(C), color:C.onSolid }}>{draftTotal == null || draftCounting ? "Show" + finderNoun(df.discs, 2) : "Show " + draftTotal.toLocaleString() + finderNoun(df.discs, draftTotal)}</button>
             </div>
           </div>

@@ -260,7 +260,7 @@ is false none is applied, so phone styles are unchanged. Inline styles cannot ta
 CLAUDE.md rules out a styling library, so the breakpoints are decided in JS. The two things inline styles
 cannot do — hover, and re-shaping every existing bottom sheet and full-screen view — are `wideCss(g)`, a stylesheet App mounts
 only while `wide`; the sheet rule matches the sheets' own serialised inline style
-(`align-items: flex-end`). `navBadge(id,right)` is the one reader of the tab counts, used by the phone's bottom bar (the desktop nav strip draws no counts).
+(`align-items: flex-end`). Neither nav draws a count: the desktop nav strip has had none since 2026-11-11, and the phone's bottom bar lost its last one (Crews: requests + invites + unread chats + days to confirm, `navBadge`) on 2026-11-25 (owner: "remove the numbers from the bottom sticky thing ... so it's totally off the app"). Each tab's accessible name is its label alone. Those counts still show where they belong: unread on the Messages icon, requests and invites on the bell and in Requests, days to confirm on the crew card.
 `index.html` repeats the numbers in `@media (min-width: 1024px)` / `(min-width: 1280px)` blocks so the
 boot shell already has the website's shape.
 
@@ -316,7 +316,7 @@ taken focus from it by the time the hook looks.
 | `lib/dialogA11y.js` | `coveringLayer`, `pinDismiss`, `pinLayers`, `findPageBacks`, `PAGE_BACK_ATTR`, `STEP_BACK_ATTR` |
 | `lib/pageBack.js` | `usePageBack` |
 | `lib/tapSlop.js` | `installTapSlop`, `slopTarget`, `TAP_MIN` |
-| `ClimbMatch.jsx` | `NAV`, `goTab`, `navBadge`, `_inChat`, `_known`, `_openMe`, `_closePages`, `_pageView`, `_isAdPage`, `_avatarItems` |
+| `ClimbMatch.jsx` | `NAV`, `goTab`, `_inChat`, `_known`, `_openMe`, `_closePages`, `_pageView`, `_isAdPage`, `_avatarItems` |
 | `index.html` | `#cm-boot`, `.b-nav`, `#cm-splash` |
 | `lib/BootSplash.jsx` | `BootSplash` |
 | `lib/ScreenHero.jsx` | `ScreenHero`, `HERO_BG`, `HERO_SHEEN`, `HOME_GLOW` |

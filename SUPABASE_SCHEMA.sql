@@ -9,7 +9,7 @@
 -- and commit the result in the same PR. `npm run gen:schema -- --check` exits 1 when this
 -- file has drifted from the live database.
 --
--- Counts: 91 tables, 911 columns, 500 keyed/checked constraints (163 foreign keys), 263 RLS policies.
+-- Counts: 92 tables, 930 columns, 514 keyed/checked constraints (164 foreign keys), 264 RLS policies.
 -- Not covered here: views, functions, triggers, standalone indexes (see supabase/migrations/).
 
 -- ── Foreign keys ───────────────────────────────────────────────────────────────
@@ -133,6 +133,7 @@
 -- profile_tracked_lists (profile_tracked_lists_user_id_fkey): FOREIGN KEY (user_id) REFERENCES profiles(id) ON DELETE CASCADE
 -- profile_zips (profile_zips_user_id_fkey): FOREIGN KEY (user_id) REFERENCES profiles(id) ON DELETE CASCADE
 -- profile_zips (profile_zips_zip_fkey): FOREIGN KEY (zip) REFERENCES zip_centroids(zip)
+-- profiles (profiles_home_place_id_fkey): FOREIGN KEY (home_place_id) REFERENCES places(id) ON DELETE SET NULL
 -- profiles (profiles_id_fkey): FOREIGN KEY (id) REFERENCES auth.users(id) ON DELETE CASCADE
 -- profiles (profiles_primary_account_id_fkey): FOREIGN KEY (primary_account_id) REFERENCES auth.users(id) ON DELETE CASCADE
 -- restricted_users (restricted_users_restricted_fkey): FOREIGN KEY (restricted) REFERENCES auth.users(id) ON DELETE CASCADE
@@ -993,8 +994,10 @@ CREATE TABLE public.crews_messages (
   created_at timestamp with time zone DEFAULT now(),
   updated_at timestamp with time zone DEFAULT now(),
   moderation text NOT NULL DEFAULT 'visible'::text,
+  video_path text,
   CONSTRAINT crews_messages_pkey PRIMARY KEY (id),
   CONSTRAINT crews_messages_moderation_chk CHECK ((moderation = ANY (ARRAY['visible'::text, 'held'::text, 'removed'::text]))),
+  CONSTRAINT crews_messages_video_path_chk CHECK (((video_path IS NULL) OR ((video_path ~ '^[0-9a-f-]{36}/[0-9a-f-]{36}\.(mp4|mov|webm)$'::text) AND (split_part(video_path, '/'::text, 1) = (user_id)::text)))),
   CONSTRAINT crews_messages_crew_id_fkey FOREIGN KEY (crew_id) REFERENCES crews(id) ON DELETE CASCADE,
   CONSTRAINT crews_messages_user_id_fkey FOREIGN KEY (user_id) REFERENCES profiles(id) ON DELETE CASCADE
 );
@@ -1446,8 +1449,10 @@ CREATE TABLE public.messages (
   read boolean DEFAULT false,
   created_at timestamp with time zone DEFAULT now(),
   moderation text NOT NULL DEFAULT 'visible'::text,
+  video_path text,
   CONSTRAINT messages_pkey PRIMARY KEY (id),
   CONSTRAINT messages_moderation_chk CHECK ((moderation = ANY (ARRAY['visible'::text, 'held'::text, 'removed'::text]))),
+  CONSTRAINT messages_video_path_chk CHECK (((video_path IS NULL) OR ((video_path ~ '^[0-9a-f-]{36}/[0-9a-f-]{36}\.(mp4|mov|webm)$'::text) AND (split_part(video_path, '/'::text, 1) = (sender_id)::text)))),
   CONSTRAINT messages_recipient_id_fkey FOREIGN KEY (recipient_id) REFERENCES profiles(id) ON DELETE CASCADE,
   CONSTRAINT messages_sender_id_fkey FOREIGN KEY (sender_id) REFERENCES profiles(id) ON DELETE CASCADE
 );
@@ -1504,7 +1509,9 @@ CREATE TABLE public.notification_state (
   dismissed_ids text[] NOT NULL DEFAULT '{}'::text[],
   updated_at timestamp with time zone NOT NULL DEFAULT now(),
   prefs jsonb NOT NULL DEFAULT '{}'::jsonb,
+  deleted_ids text[] NOT NULL DEFAULT '{}'::text[],
   CONSTRAINT notification_state_pkey PRIMARY KEY (user_id),
+  CONSTRAINT notification_state_deleted_ids_check CHECK (((cardinality(deleted_ids) <= 300) AND (pg_column_size(deleted_ids) < 40000))),
   CONSTRAINT notification_state_dismissed_ids_check CHECK (((cardinality(dismissed_ids) <= 300) AND (pg_column_size(dismissed_ids) < 40000))),
   CONSTRAINT notification_state_prefs_check CHECK (((jsonb_typeof(prefs) = 'object'::text) AND (pg_column_size(prefs) < 2000))),
   CONSTRAINT notification_state_seen_ids_check CHECK (((cardinality(seen_ids) <= 300) AND (pg_column_size(seen_ids) < 40000))),
@@ -1550,6 +1557,28 @@ CREATE POLICY "owner lists own partner areas" ON public.partner_areas AS PERMISS
 CREATE POLICY "owner reads own partner areas" ON public.partner_areas AS PERMISSIVE FOR SELECT TO public USING ((( SELECT auth.uid() AS uid) = user_id));
 CREATE POLICY "owner removes own partner areas" ON public.partner_areas AS PERMISSIVE FOR DELETE TO public USING ((( SELECT auth.uid() AS uid) = user_id));
 CREATE POLICY "owner updates own partner areas" ON public.partner_areas AS PERMISSIVE FOR UPDATE TO public USING ((( SELECT auth.uid() AS uid) = user_id)) WITH CHECK ((( SELECT auth.uid() AS uid) = user_id));
+
+CREATE TABLE public.places (
+  id text NOT NULL,
+  name text NOT NULL,
+  region text NOT NULL,
+  country text NOT NULL,
+  county text,
+  pop integer,
+  lat double precision NOT NULL,
+  lng double precision NOT NULL,
+  name_search text,
+  name_canon text,
+  CONSTRAINT places_pkey PRIMARY KEY (id),
+  CONSTRAINT places_country_check CHECK ((country = ANY (ARRAY['US'::text, 'CA'::text]))),
+  CONSTRAINT places_id_check CHECK ((id ~ '^(us|ca)-[a-z0-9-]+$'::text)),
+  CONSTRAINT places_lat_check CHECK (((lat >= ('-90'::integer)::double precision) AND (lat <= (90)::double precision))),
+  CONSTRAINT places_lng_check CHECK (((lng >= ('-180'::integer)::double precision) AND (lng <= (180)::double precision))),
+  CONSTRAINT places_name_check CHECK (((length(name) >= 1) AND (length(name) <= 120))),
+  CONSTRAINT places_region_check CHECK ((region ~ '^[A-Z]{2}$'::text))
+);
+ALTER TABLE public.places ENABLE ROW LEVEL SECURITY;
+CREATE POLICY "places are public" ON public.places AS PERMISSIVE FOR SELECT TO public USING (true);
 
 CREATE TABLE public.profile_condition_prefs (
   user_id uuid NOT NULL,
@@ -1669,6 +1698,7 @@ END) STORED,
   skill_practiced jsonb,
   pronouns text[],
   is_reviewer boolean NOT NULL DEFAULT false,
+  home_place_id text,
   CONSTRAINT profiles_pkey PRIMARY KEY (id),
   CONSTRAINT profiles_username_key UNIQUE (username),
   CONSTRAINT profiles_account_type_check CHECK ((account_type = ANY (ARRAY['primary'::text, 'secondary'::text]))),
@@ -1682,6 +1712,7 @@ END) STORED,
   CONSTRAINT profiles_pronouns_known CHECK (((pronouns IS NULL) OR (((cardinality(pronouns) >= 1) AND (cardinality(pronouns) <= 4)) AND (pronouns <@ ARRAY['she_her'::text, 'he_him'::text, 'they_them'::text, 'ze_hir'::text, 'ze_zir'::text, 'xe_xem'::text, 'ey_em'::text, 'fae_faer'::text, 'any'::text])))),
   CONSTRAINT profiles_requests_from_chk CHECK ((requests_from = ANY (ARRAY['everyone'::text, 'friends_of_friends'::text, 'nobody'::text]))),
   CONSTRAINT profiles_trip_reports_default_check CHECK ((trip_reports_default = ANY (ARRAY['public'::text, 'friends'::text, 'private'::text]))),
+  CONSTRAINT profiles_home_place_id_fkey FOREIGN KEY (home_place_id) REFERENCES places(id) ON DELETE SET NULL,
   CONSTRAINT profiles_id_fkey FOREIGN KEY (id) REFERENCES auth.users(id) ON DELETE CASCADE,
   CONSTRAINT profiles_primary_account_id_fkey FOREIGN KEY (primary_account_id) REFERENCES auth.users(id) ON DELETE CASCADE
 );
@@ -2177,7 +2208,7 @@ CREATE TABLE public.topos (
 ALTER TABLE public.topos ENABLE ROW LEVEL SECURITY;
 CREATE POLICY "moderation hides taken-down content" ON public.topos AS RESTRICTIVE FOR SELECT TO public USING (((moderation = 'visible'::text) OR (created_by = ( SELECT auth.uid() AS uid)) OR is_admin(( SELECT auth.uid() AS uid))));
 CREATE POLICY "restricted accounts cannot post" ON public.topos AS RESTRICTIVE FOR INSERT TO public WITH CHECK (is_active_user(( SELECT auth.uid() AS uid)));
-CREATE POLICY "topos authed insert" ON public.topos AS PERMISSIVE FOR INSERT TO public WITH CHECK (((( SELECT auth.uid() AS uid) IS NOT NULL) AND (( SELECT auth.uid() AS uid) = created_by) AND ((route_id IS NOT NULL) OR area_photo)));
+CREATE POLICY "topos authed insert" ON public.topos AS PERMISSIVE FOR INSERT TO public WITH CHECK (((( SELECT auth.uid() AS uid) IS NOT NULL) AND (( SELECT auth.uid() AS uid) = created_by) AND ((route_id IS NOT NULL) OR (area_photo AND area_takes_photos(area_id)))));
 CREATE POLICY "topos own delete" ON public.topos AS PERMISSIVE FOR DELETE TO public USING ((( SELECT auth.uid() AS uid) = created_by));
 CREATE POLICY "topos own update" ON public.topos AS PERMISSIVE FOR UPDATE TO public USING ((( SELECT auth.uid() AS uid) = created_by)) WITH CHECK ((( SELECT auth.uid() AS uid) = created_by));
 CREATE POLICY "topos public read" ON public.topos AS PERMISSIVE FOR SELECT TO public USING (true);

@@ -340,5 +340,28 @@ const sqlCols = (list) => list.split(",").map((c) => c.trim()).filter(Boolean).m
   if (failures === before) ok(`${lists.size} app climb_logs select lists run signed out`);
 }
 
+// ── 8. every function a GUEST can call that reads climb_logs AS THE CALLER still runs (0540) ────────
+// 0501 took climb_logs.partners from anon. state_trip_reports was SECURITY INVOKER and read `l.*`, so
+// every signed-out call was refused, and the nightly offline state files (built with the anon key)
+// published 0 of 61 states for three nights before anyone saw it. Each SECURITY INVOKER read-only
+// function anon may execute whose body names climb_logs is called here as anon with NULL arguments:
+// nothing matches, but Postgres checks column privileges before it reads a row, so a whole-row or
+// a hidden-column read fails exactly as it does in production.
+{
+  const fns = (await db.query(`select p.oid::regprocedure::text as sig, p.proname, p.pronargs,
+       coalesce((select string_agg(format_type(t, null), ',') from unnest(p.proargtypes) t), '') as args
+     from pg_proc p join pg_namespace n on n.oid = p.pronamespace
+    where n.nspname = 'public' and not p.prosecdef and p.prokind = 'f' and p.provolatile in ('s', 'i')
+      and p.prosrc ~* 'climb_logs' and has_function_privilege('anon', p.oid, 'execute')`)).rows;
+  const before = failures;
+  for (const f of fns) {
+    const nulls = f.args ? f.args.split(",").map((t) => `null::${t}`).join(", ") : "";
+    const r = await as("anon", null, `select * from public.${f.proname}(${nulls}) limit 1`);
+    if (r.error && /permission denied/i.test(r.error)) fail(`${f.sig} signed out: ${r.error} — a SECURITY INVOKER reader must name only columns anon holds (0540 did this for state_trip_reports)`);
+  }
+  if (!fns.some((f) => f.proname === "state_trip_reports")) fail("state_trip_reports is no longer an invoker read-only function anon can call — the nightly offline build calls it with the anon key; re-read 0540");
+  if (failures === before) ok(`${fns.length} invoker function(s) a guest can call that read climb_logs run signed out`);
+}
+
 if (failures) { console.error(`\ncheck:profile-privacy FAILED — ${failures} problem(s).`); process.exit(1); }
 console.log("\ncheck:profile-privacy: every check passed.");

@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { SOLID_LEDGE } from "../../lib/buttonStyles.js";
-import { addPartnerArea, removePartnerArea } from "../../lib/db";
+import { UNLISTABLE_AREA_TYPES, addPartnerArea, removePartnerArea } from "../../lib/db";
 import { tx } from "../../lib/tapWords.js";
 import Chevron from "./Chevron.tsx";
 import { CARD, EYEBROW } from "../../lib/cardStyles.js";
@@ -8,7 +8,7 @@ import type { C as Palette } from "../../ClimbMatchCore.jsx";
 
 export interface ListMeInAreaBoxListing { areaId?: string; [column: string]: unknown }
 export interface ListMeInAreaBoxProps {
-  /** The place chosen in Partners › By Area: a crag, canyon, range, or a whole state/country. */
+  /** The place chosen in Partners › By Area: a crag, canyon, range, or a whole state/country (those two are searchable, not listable). */
   areaId: string;
   areaName: string;
   /** The area's type when the pick knew it (crag search, deep link); null for the region dropdown's regions and states. */
@@ -28,9 +28,9 @@ export interface ListMeInAreaBoxProps {
    neither on the screen where a climber has just picked the place they want partners at. This box sits
    right under the picker, so the climber who is looking can be found by the next one with one tap.
    Same write as the area page's card (addPartnerArea / removePartnerArea), optimistic the same way. */
-/* The DB refuses a listing at these (0300 `partner_areas` trigger, narrowed by 0456; My areas' NO_LISTING): too broad
-   to search. A PEAK is listable since 0456 (owner 2026-11-18). The box steps aside rather than offer a tap that fails. */
-const NO_LISTING = new Set(["world", "country"]);
+/* The DB refuses a listing at these (the `partner_areas` trigger: 0300, narrowed by 0456, a STATE added by 0542): too broad.
+   A PEAK is listable since 0456 (owner 2026-11-18). The box steps aside rather than offer a tap that fails. */
+const NO_LISTING = UNLISTABLE_AREA_TYPES;
 /* "List me AT Bad Bananas" but "IN Utah": a spot you stand at takes "at"; a state, region, canyon or range takes "in".
    The region dropdown passes no type, and what it offers is always a region or a state. */
 const AT_SPOT = new Set(["crag", "wall", "boulder", "sector", "peak"]);
@@ -42,6 +42,9 @@ export default function ListMeInAreaBox({ areaId, areaName, areaType, C, uid, my
   const listed = optListed == null ? serverListed : optListed;
   const name = areaName || "this area";
   const prep = areaType && AT_SPOT.has(areaType) ? "at" : "in";
+  /* A STATE is searchable but not listable (0542): say where a listing goes instead of offering nothing, since this is
+     the box a climber who has just picked "Utah" would look to. A country or the world needs no note. */
+  if (areaType === "state") return <div style={{ fontSize: 12.5, color: C.textSub, lineHeight: 1.5, marginTop: 12, overflowWrap: "anywhere" }}>{"To list yourself, pick a region, crag or peak inside " + name + " — a whole state or province is too broad."}</div>;
   if (areaType && NO_LISTING.has(areaType)) return null;
   const toggle = async () => {
     if (busy) return;

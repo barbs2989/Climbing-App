@@ -10,6 +10,10 @@ export interface TopoZoomPhotoProps {
   photo: { url: string; alt?: string | null };
   /** The line drawn over the photo (the latest, or the alternative picked); none draws the photo alone. */
   active: TopoLine | null;
+  /** What a screen reader calls the frame and the photo; the topo's own wording when unset. */
+  label?: string;
+  /** The tallest the frame may be drawn, as a CSS length; the topo sheet's 58vh when unset. */
+  maxHeight?: string;
 }
 /** The frame's position and size: z is the zoom, (tx, ty) the layer's offset, W and H the frame's pixels. */
 interface ZoomView { z: number; tx: number; ty: number; W: number; H: number }
@@ -33,7 +37,7 @@ type Gesture =
  *
  * Moved verbatim from RouteDetail.jsx; only the types were added. `local` reads the frame's ref where the original did, so it throws the same TypeError before the frame has mounted.
  */
-export default function TopoZoomPhoto({photo,active}: TopoZoomPhotoProps){
+export default function TopoZoomPhoto({photo,active,label,maxHeight}: TopoZoomPhotoProps){const _mh=maxHeight||"58vh";
   const [ar,setAr]=useState<number | null>(null);
   const [view,setViewState]=useState<ZoomView>({z:1,tx:0,ty:0,W:0,H:0});
   const viewRef=useRef<ZoomView>(view);
@@ -94,10 +98,10 @@ export default function TopoZoomPhoto({photo,active}: TopoZoomPhotoProps){
   const zoomed=view.z>1.001;
   const zb={minWidth:34,height:32,padding:"0 10px",borderRadius:8,border:"1px solid rgba(255,255,255,0.35)",background:"rgba(0,0,0,0.6)",color:"#fff",fontSize:14,fontWeight:700,cursor:"pointer"};
   return <div style={{background:"#000",position:"relative"}}>
-    <div ref={vpRef} tabIndex={0} role="group" aria-label="Topo photo. Plus and minus zoom in and out; arrow keys move around once zoomed" onKeyDown={onKey} onPointerDown={onDown} onPointerMove={onMove} onPointerUp={onUp} onPointerCancel={onUp}
-      style={{position:"relative",overflow:"hidden",width:"100%",maxWidth:ar?"calc(58vh * "+ar+")":"100%",aspectRatio:ar?String(ar):"4 / 3",margin:"0 auto",touchAction:zoomed?"none":"pan-y",cursor:zoomed?"grab":"zoom-in",userSelect:"none",WebkitUserSelect:"none"}}>
+    <div ref={vpRef} tabIndex={0} role="group" aria-label={(label||"Topo photo")+". Plus and minus zoom in and out; arrow keys move around once zoomed"} onKeyDown={onKey} onPointerDown={onDown} onPointerMove={onMove} onPointerUp={onUp} onPointerCancel={onUp}
+      style={{position:"relative",overflow:"hidden",width:"100%",maxWidth:ar?"calc("+_mh+" * "+ar+")":"100%",aspectRatio:ar?String(ar):"4 / 3",margin:"0 auto",touchAction:zoomed?"none":"pan-y",cursor:zoomed?"grab":"zoom-in",userSelect:"none",WebkitUserSelect:"none"}}>
       <div style={zoomed?{position:"absolute",left:view.tx,top:view.ty,width:view.W*view.z,height:view.H*view.z}:{position:"absolute",inset:0}}>
-        <MediaImg decoding="async" draggable={false} src={photo.url} alt={photoAlt(photo.alt,"Topo photo, enlarged")} onLoad={function(e: SyntheticEvent<HTMLImageElement>){const t=e.currentTarget;if(t&&t.naturalWidth&&t.naturalHeight)setAr(t.naturalWidth/t.naturalHeight);}} style={TOPO_IMG}/>
+        <MediaImg decoding="async" draggable={false} src={photo.url} alt={photoAlt(photo.alt,label?label+", enlarged":"Topo photo, enlarged")} onLoad={function(e: SyntheticEvent<HTMLImageElement>){const t=e.currentTarget;if(t&&t.naturalWidth&&t.naturalHeight)setAr(t.naturalWidth/t.naturalHeight);}} style={TOPO_IMG}/>
         {active?<TopoLineOverlay points={active.points} variants={active.variants} pins={active.pins} pinSize={15} numbered/>:null}
       </div>
     </div>

@@ -607,11 +607,9 @@ try {
   if (connBefore.length === 1) ok("the owner and the mate are connected — 1 row in `connections`");
   else bad(`expected exactly 1 connection row before removal, found ${connBefore.length} — every assertion below would be vacuous`);
 
-  // THE CREW NAV BUTTON CARRIES A BADGE, so an exact-text click misses it. crewBadgeN renders an
-  // unread/invite count INSIDE the button, and this fixture seats the owner as INVITED in a second
-  // crew -- so innerText is not "Crews" for exactly the account this walk uses. The aria-label is
-  // authored and does not move with the count, which is what tapByName's anchoring is for. Same
-  // lesson as the Crew SUB-tab bar one line down, one level up the nav.
+  // BY ACCESSIBLE NAME. The Crew nav button carried a count badge INSIDE it until 2026-11-25
+  // (crewBadgeN, removed with every bottom-bar count); tapByName's anchoring still accepts either
+  // name, so a returning badge would not blind this step.
   if (!(await tapByName(page, "Crews"))) dead("no Crew tab");
   await settledText(page);
   // BY ACCESSIBLE NAME, never by text: the Crew sub-tab buttons render their badge count INSIDE
