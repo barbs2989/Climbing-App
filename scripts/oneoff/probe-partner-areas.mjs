@@ -7,7 +7,7 @@
 // What must hold (the 0300 header, as assertions):
 //   * a listing is readable and writable by its owner and by NOBODY else through the table;
 //   * a listing at a PEAK is refused; at world/country too;
-//   * REACHABILITY IS TWO-WAY, CAPPED AT THE STATE (0311): a state listing answers a search at the state only;
+//   * a listing at a STATE/province is refused (0542); a state stays searchable and finds what is listed inside it;
 //   * listed at the canyon surfaces at a crag inside it (listed_above=true);
 //     listed at the crag surfaces at the canyon and the range above it (listed_above=false);
 //   * the caller is never returned; an UNLISTED (discoverable=false) climber is never returned;
@@ -92,7 +92,7 @@ async function main() {
   const el = await listAt(E, "ut_hellgate_condos", { free_from: "2020-01-01", free_to: "2020-01-02" });
   check(el.status < 300, "a listing with an EXPIRED window is accepted", JSON.stringify(el.body));
   const fl = await listAt(F, STATE, {});
-  check(fl.status < 300, "a listing at the STATE is accepted (a state is not a peak, world or country)", JSON.stringify(fl.body));
+  check(fl.status >= 400 && /too broad/i.test(JSON.stringify(fl.body)), "a listing at the STATE is refused as too broad (0542)", JSON.stringify(fl.body));
   const peek = await as(A, "/rest/v1/partner_areas?select=user_id");
   check(Array.isArray(peek.body) && peek.body.length === 0, "another climber reads NOTHING of the table directly", JSON.stringify(peek.body));
   const forge = await as(A, "/rest/v1/partner_areas", { method: "POST", body: JSON.stringify({ user_id: C.id, area_id: RANGE }) });
@@ -134,7 +134,7 @@ async function main() {
   check(!ids(atRange).includes(F.id), "...nor at the range (0311)");
   const atState = await rpc(A, "partners_in_area", { p_area_id: STATE });
   const fS = row(atState, F.id);
-  check(fS && fS.listed_above === false && ids(atState).includes(C.id) && ids(atState).includes(B.id), "searching the STATE itself still finds the state listing (not \"above\") and everything inside it", JSON.stringify(ids(atState)));
+  check(!fS && ids(atState).includes(C.id) && ids(atState).includes(B.id), "searching the STATE still finds everything listed inside it, and no state listing", JSON.stringify(ids(atState)));
   const unknown = await rpc(A, "partners_in_area", { p_area_id: "no_such_area_xyz" });
   check(unknown.status >= 400, "an unknown area is refused");
 
@@ -154,7 +154,7 @@ async function main() {
   const cnt = Object.fromEntries((counts.body || []).map((r) => [r.area_id, r.listed_count]));
   check(cnt[CRAG] === 3, "the crag counts the crag, canyon and sub-area climbers (3), not the unlisted one or the caller", JSON.stringify(cnt));
   check(cnt[RANGE] === 3 && cnt[CANYON] === 3, "the range and canyon count the same three — the state listing is not among them (0311)", JSON.stringify(cnt));
-  check(cnt[STATE] === 4, "the STATE counts those three plus the state listing (4)", JSON.stringify(cnt));
+  check(cnt[STATE] === 3, "the STATE counts the same three — a state listing cannot exist (0542)", JSON.stringify(cnt));
 
   // ---- listings of the climbers on screen
   const of = await rpc(A, "partner_areas_of_users", { p_ids: [B.id, C.id, D.id, A.id] });
