@@ -14,7 +14,8 @@ import { foldKeepingPlace } from "./keepPlace.js";
 import { tx } from "./tapWords.js";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { createPortal } from "react-dom";
-import { AREA_EDIT_FIELDS, ASPECTS, MONTH_ABBR, PIN_NAME_MAX, myPendingAreaEdits, monthsLabel, pinLabel, pinProblem } from "./areaFields";
+import { AREA_EDIT_FIELDS, ASPECTS, MONTH_ABBR, PIN_NAME_MAX, elevFtLabel, myPendingAreaEdits, monthsLabel, pinLabel, pinProblem } from "./areaFields";
+import { uImp, uElev } from "../ClimbMatchCore.jsx";
 import WaypointMapPicker from "../src/components/WaypointMapPicker.tsx";
 import { ROCK_OPTIONS } from "./rockType";
 import { POP_CLOSE } from "./popupChrome.js";
@@ -84,6 +85,15 @@ export default function AreaSuggestFix({ area, field, rows, myId, C, onClose, on
       if (!Number.isInteger(n) || n < f.min || n > f.max) { problems[f.k] = "A whole number of minutes, " + f.min + " to " + f.max + "."; continue; }
       if (cur === n + " min") continue;
       edits.push({ field: f.k, value: n, wasEmpty: !cur });
+    } else if (f.type === "elev") {
+      // Typed in the climber's unit (Settings > Units), stored in whole feet.
+      const s = String(v).replace(/,/g, "").trim();
+      if (!s) continue;
+      const n = Number(s);
+      const ft = Number.isFinite(n) ? Math.round(uImp() ? n : n * 3.28084) : NaN;
+      if (!Number.isFinite(ft) || ft < f.min || ft > f.max) { problems[f.k] = uImp() ? "A height in feet, " + f.min.toLocaleString("en-US") + " to " + f.max.toLocaleString("en-US") + "." : "A height in metres, " + Math.round(f.min / 3.28084) + " to " + Math.round(f.max / 3.28084).toLocaleString("en-US") + "."; continue; }
+      if (elevFtLabel(ft) === cur) continue;
+      edits.push({ field: f.k, value: ft, wasEmpty: !cur });
     } else {
       const s = String(v).trim();
       if (!s) continue;
@@ -126,16 +136,18 @@ export default function AreaSuggestFix({ area, field, rows, myId, C, onClose, on
       </div> : <div style={{ display: "contents" }}><div ref={scrollRef} style={{ position: "relative", minHeight: 0, padding: 16, overflowY: "auto", overscrollBehavior: "contain", flex: 1 }}>
         <div style={{ fontSize: 12.5, color: C.textSub, lineHeight: 1.55, padding: "0 2px", marginBottom: 12 }}>{"Spotted something wrong or missing about "}<b>{a.name || "this area"}</b>{"? Fill in any fields below — leave the rest blank. Every edit is checked before it shows on the page."}</div>
         {AREA_EDIT_FIELDS.map(f => {
-          const cur = f.cur(a);
+          // The elevation is stored in feet; "Now:" reads in the climber's own unit.
+          const cur = f.type === "elev" && f.cur(a) ? uElev(Number(a.elevation_ft)) : f.cur(a);
           const pend = myPendingAreaEdits(rows, myId).filter(r => r.field === f.k).sort((x, y) => String(y.created_at).localeCompare(String(x.created_at)))[0];
           const v = vals[f.k];
           return <div key={f.k} id={"af-section-" + f.k} style={{ marginBottom: 10, scrollMarginTop: 8, background: C.card, border: "1px solid " + (f.k === field ? C.blue : C.border), borderRadius: 12, padding: "11px 12px" }}>
             <div style={lbl}>{f.label}</div>
             <div style={{ fontSize: 11.5, color: C.textMuted, lineHeight: 1.45, marginBottom: 6 }}>{cur ? <>{"Now: "}<span style={{ color: C.textSub, whiteSpace: "pre-wrap", overflowWrap: "anywhere" }}>{cur.length > 140 && !fullCur[f.k] ? cur.slice(0, 140).trim() + "…" : cur}</span>{cur.length > 140 ? <button type="button" onClick={(e) => foldKeepingPlace(e, () => setFullCur(o => ({ ...o, [f.k]: !o[f.k] })), !!fullCur[f.k])} aria-expanded={!!fullCur[f.k]} style={{minHeight:44, background: "none", border: "none", padding: "0 0 0 6px", color: C.blue, fontSize: 11.5, fontWeight: 700, cursor: "pointer" }}>{fullCur[f.k] ? "Show less" : "Show all"}</button> : null}</> : "Not on file yet."}</div>
-            {pend ? <div style={{ fontSize: 11.5, color: C.text, background: C.amberBg, border: "1px solid " + C.amber + "55", borderRadius: 8, padding: "6px 9px", marginBottom: 6 }}>{"Awaiting review: "}<b>{f.type === "months" ? monthsLabel(pend.value) : f.fmt ? f.fmt(pend.value) : String(pend.value)}</b></div> : null}
+            {pend ? <div style={{ fontSize: 11.5, color: C.text, background: C.amberBg, border: "1px solid " + C.amber + "55", borderRadius: 8, padding: "6px 9px", marginBottom: 6 }}>{"Awaiting review: "}<b>{f.type === "months" ? monthsLabel(pend.value) : f.type === "elev" ? uElev(Number(pend.value)) : f.fmt ? f.fmt(pend.value) : String(pend.value)}</b></div> : null}
             {f.type === "long" ? <textarea value={v || ""} onChange={e => set(f.k, e.target.value)} rows={3} maxLength={f.max} placeholder={tx(f.hint)} aria-label={f.label} style={{ ...input, resize: "vertical", minHeight: 76 }} /> : null}
             {f.type === "text" ? <><input value={v || ""} onChange={e => set(f.k, e.target.value)} maxLength={f.max} placeholder={tx(f.hint)} aria-label={f.label} style={input} list={"af-opts-" + f.k} />{f.k === "rock" ? <datalist id={"af-opts-" + f.k}>{ROCK_OPTIONS.map(o => <option key={o} value={o} />)}</datalist> : null}</> : null}
             {f.type === "int" ? <input value={v || ""} onChange={e => set(f.k, e.target.value)} inputMode="numeric" placeholder={tx(f.hint)} aria-label={f.label + " (minutes)"} style={input} /> : null}
+            {f.type === "elev" ? <input value={v || ""} onChange={e => set(f.k, e.target.value)} inputMode="numeric" placeholder={(uImp() ? "In feet: " : "In metres: ") + tx(f.hint).replace(/^The h/, "the h")} aria-label={f.label + (uImp() ? " (feet)" : " (metres)")} style={input} /> : null}
             {f.type === "aspect" ? <div style={{ display: "flex", gap: 5, flexWrap: "wrap" }}>{f.opts.map(o => <button key={o} onClick={() => set(f.k, v === o ? "" : o)} aria-pressed={v === o} style={{ ...CHIP, border: "1px solid " + (v === o ? C.blue : C.border), background: v === o ? C.blueBg : C.card, color: v === o ? C.onSolid : C.textSub }}>{o === "varies" ? "Varies" : o}</button>)}</div> : null}
             {f.type === "months" ? <div style={{ display: "flex", gap: 3 }}>{MONTH_ABBR.map((m, i) => { const on = Array.isArray(v) && v.includes(i + 1); return <button key={m} onClick={() => set(f.k, on ? (v || []).filter(x => x !== i + 1) : [...(v || []), i + 1])} aria-pressed={on} aria-label={m} style={{ flex: 1, minWidth: 0, minHeight: 36, padding: 0, borderRadius: 7, border: "1px solid " + (on ? C.green : C.border), background: on ? C.greenBg : C.card, color: on ? C.green : C.textSub, fontSize: 10.5, fontWeight: 700, cursor: "pointer" }}>{m[0]}</button>; })}</div> : null}
             {f.type === "pin" ? <div>

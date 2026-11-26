@@ -87,7 +87,7 @@ export function loggedTopMonths(counts) {
 // Each fact is a tile: an icon in a tinted square, the label, then the value (owner, 2026-11-23: "make the area facts
 // look nicer"). The icon and tint are keyed by the label and are decoration only -- the label still says what it is.
 // `loggedMonths`: the twelve counts from useAreaLoggedMonths, or null to draw no MOST LOGGED strip.
-const FACT_LOOK = { Rock: ["rock", "orange"], Faces: ["explore", "teal"], Elevation: ["mountain", "blue"], "Walk-in": ["clock", "green"], Parking: ["car", "amber"] };
+const FACT_LOOK = { Rock: ["rock", "orange"], Faces: ["explore", "teal"], Elevation: ["mountain", "blue"], "Walk-in": ["clock", "green"], Parking: ["car", "amber"], Season: ["calendar", "green"] };
 const factLbl = C => ({ fontSize: 10.5, fontWeight: 700, color: C.label, letterSpacing: 0.3, textTransform: "uppercase" });
 function FactTile({ label, value, C }) {
   const [icon, tone] = FACT_LOOK[label] || ["info", "teal"];
@@ -105,30 +105,51 @@ function MonthBlock({ title, summary, tone, first, children, C }) {
     {children}
   </div>;
 }
+// A fact this area does not have on file yet: the same tile, muted, saying so -- and, where the climber can edit the
+// area, a button that opens the editor AT that field (owner note 2026-11-25: "It should show all even if there's no
+// data for it so that we can allow users to add that information via the edit"). Mountain Project and theCrag both
+// print an area's empty fields as an invitation to add them rather than hiding the row.
+function MissingFactTile({ label, field, onEdit, C }) {
+  const [icon] = FACT_LOOK[label] || ["info"];
+  const inner = <>
+    <span aria-hidden="true" style={{ width: 32, height: 32, flexShrink: 0, borderRadius: 9, display: "flex", alignItems: "center", justifyContent: "center", background: C.card, border: "1px dashed " + C.border }}><ActionIcon name={icon} size={17} color={C.textMuted} /></span>
+    <div style={{ minWidth: 0, flex: 1, textAlign: "left" }}><div style={factLbl(C)}>{label}</div><div style={{ fontSize: 13, fontStyle: "italic", color: C.textMuted, lineHeight: 1.3 }}>Not on file yet</div></div>
+    {onEdit ? <span aria-hidden="true" style={{ flexShrink: 0, fontSize: 12.5, fontWeight: 700, color: C.blue }}>+ Add</span> : null}
+  </>;
+  const st = { display: "flex", alignItems: "center", gap: 10, minWidth: 0, minHeight: 52, padding: "9px 10px", borderRadius: 10, background: C.surface, border: "1px dashed " + C.border, width: "100%", font: "inherit" };
+  return onEdit
+    ? <button type="button" onClick={() => onEdit(field)} aria-label={"Add " + label.toLowerCase() + " — not on file yet"} style={{ ...st, cursor: "pointer" }}>{inner}</button>
+    : <div style={st}>{inner}</div>;
+}
+// Parking names that are the import's placeholders, not a name: a pin under one of these reads as "pinned".
+const PLACEHOLDER_PARKING = ["Trailhead", "Parking"];
 export function AreaFactsCard({ area, C, uElev, onEdit, loggedMonths }) {
-  const facts = [];
+  // facts: [label, value, field] on file. missing: [label, field] -- EVERY fact the card knows is listed, on file or
+  // not (owner, 2026-11-25), each with the AREA_EDIT_FIELDS key its Add opens. check:area-page-honest reads both.
+  const facts = [], missing = [];
   const logged = Array.isArray(loggedMonths) && loggedMonths.length === 12 && loggedMonths.some(n => Number(n) > 0) ? loggedMonths.map(Number) : null;
   const loggedTotal = logged ? logged.reduce((a, n) => a + n, 0) : 0;
-  if (area.rock) facts.push(["Rock", String(area.rock).replace(/^./, s => s.toUpperCase()), "rock"]);
-  if (area.aspect) facts.push(["Faces", area.aspect === "varies" ? "Varies" : area.aspect, "aspect"]);
-  if (area.elevation_ft) facts.push(["Elevation", uElev ? uElev(area.elevation_ft) : area.elevation_ft.toLocaleString() + " ft", null]);
-  if (area.approach_min != null && area.approach_min > 0) facts.push(["Walk-in", "about " + area.approach_min + " min", "approach_min"]);
-  if (area.parking_name && area.parking_name !== "Trailhead") facts.push(["Parking", area.parking_name, null]);
+  if (area.rock) facts.push(["Rock", String(area.rock).replace(/^./, s => s.toUpperCase()), "rock"]); else missing.push(["Rock", "rock"]);
+  if (area.aspect) facts.push(["Faces", area.aspect === "varies" ? "Varies" : area.aspect, "aspect"]); else missing.push(["Faces", "aspect"]);
+  if (area.elevation_ft) facts.push(["Elevation", uElev ? uElev(area.elevation_ft) : area.elevation_ft.toLocaleString() + " ft", "elevation_ft"]); else missing.push(["Elevation", "elevation_ft"]);
+  if (area.approach_min != null && area.approach_min > 0) facts.push(["Walk-in", "about " + area.approach_min + " min", "approach_min"]); else missing.push(["Walk-in", "approach_min"]);
+  const parkName = area.parking_name && !PLACEHOLDER_PARKING.includes(area.parking_name) ? area.parking_name : null;
+  if ((area.parking_lat != null && area.parking_lng != null) || parkName) facts.push(["Parking", parkName || "Pinned on the map", "parking_pin"]); else missing.push(["Parking", "parking_pin"]);
   const season = Array.isArray(area.season_months) && area.season_months.length ? area.season_months : null;
-  // Nothing stored and nothing logged: the invitation, never an empty grid (check:area-page-honest reads this gate).
-  if (!facts.length && !season) if (!logged) {
-    return <div style={card(C)}>
-      <div style={headRow}><Head C={C}>Area facts</Head>{onEdit ? <EditIconButton C={C} onClick={() => onEdit("rock")} title={"Add facts about " + area.name} /> : null}</div>
-      <div style={{ fontSize: 12.5, color: C.textMuted, lineHeight: 1.5 }}>{"Nothing on file yet — rock, which way it faces, the walk-in, the season. Know it? Add it."}</div>
-    </div>;
-  }
+  if (!season) missing.push(["Season", "season_months"]);
+  // The pencil opens at the first fact still missing, else at the first one on file.
+  const pencilAt = missing.length ? missing[0][1] : facts[0][2];
   return <div style={card(C)}>
-    <div style={headRow}><Head C={C}>Area facts</Head>{onEdit ? <EditIconButton C={C} onClick={() => onEdit(facts.find(f => f[2]) ? facts.find(f => f[2])[2] : "rock")} title={"Edit the facts about " + area.name} /> : null}</div>
+    <div style={headRow}><Head C={C}>Area facts</Head>{onEdit ? <EditIconButton C={C} onClick={() => onEdit(pencilAt)} title={"Edit the facts about " + area.name} /> : null}</div>
     {facts.length ? <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(140px, 1fr))", gap: 8 }}>
       {facts.map(([l, v]) => <FactTile key={l} label={l} value={v} C={C} />)}
     </div> : null}
     {season ? <MonthBlock title="Season" summary={monthsLabel(season)} tone="green" first={!facts.length} C={C}><MonthStrip months={season} C={C} /></MonthBlock> : null}
     {logged ? <MonthBlock title="Most logged here" summary={monthsLabel(loggedTopMonths(logged)) + " · " + loggedTotal.toLocaleString() + " log" + (loggedTotal !== 1 ? "s" : "")} tone="blue" first={!facts.length && !season} C={C}><LoggedMonthStrip counts={logged} C={C} /></MonthBlock> : null}
+    {/* What is on file comes first; the facts still missing follow it, each one an Add. */}
+    {missing.length ? <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(140px, 1fr))", gap: 8, marginTop: facts.length || season || logged ? 10 : 0 }}>
+      {missing.map(([l, k]) => <MissingFactTile key={l} label={l} field={k} onEdit={onEdit} C={C} />)}
+    </div> : null}
   </div>;
 }
 
