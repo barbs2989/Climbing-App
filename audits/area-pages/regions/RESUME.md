@@ -18,9 +18,9 @@ strip are formation-only, so a region needs only `blurb`.
 ## Status
 - Tier >=100 climbs: 1,494 regions = r001–r249 (inputs rebuilt by `tools/build-regions.cjs 100 1000000000`,
   split 6 per batch in route_count order; the job tmp copy is gone with the job).
-- Research: r001–r064 done and reviewed (380 written, 4 skipped); r065–r080 in flight (8 agents x 2 batches).
+- Research: r001–r096 done and reviewed (568 written, 8 skipped). r001–r006 applied 2026-11-26 13:19 (36/36 written, 0 refused) and verified live (`tools/verify-regions.mjs 1 6`).
 - Skip rule settled: a region whose only pages are about ONE minority sub-area is skipped (Southern WV); one whose
   pages cover several sub-areas, or a sub-area holding most of its climbs, is kept (Highway 38, SD Desert/Culp).
 - Review step per batch: `node tools/lint-batches.cjs batch-rNNN.json`, then read every sentence the agent says
   it is unsure of and cut it (fix scripts `tools/fix-wave1.cjs`, `tools/fix-wave2.cjs` record each cut).
-- DB writes: r001–r006 queued via `tools/apply-regions.sh` (job tmp regions.done / regions.log); r007+ not yet.
+- DB writes: r001–r006 queued via `tools/apply-regions.sh` (job tmp regions.done / regions.log); r007–r096 chained to start after it (same DONE file). Lint with INR=<input dir> also checks coverage.
