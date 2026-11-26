@@ -70,7 +70,7 @@ export default function RouteRow({ r, onOpen, C, areaName, dense, savedMark = tr
   const chip = (col: string, bg: string): CSSProperties => ({ fontSize: 10.5, fontWeight: 800, color: col, background: bg, borderRadius: 999, padding: "1px 7px", flexShrink: 0, whiteSpace: "nowrap", lineHeight: 1.5 });
   const marks = <>
     {classicMark && r.classic ? <span style={chip(C.amber, C.amberBg)}>Classic</span> : null}
-    {done ? <span style={chip(C.green, C.greenBg)}>✓ Done</span> : saved ? <span style={chip(C.blue, C.blueBg)}>★ Saved</span> : null}
+    {done ? <span style={chip(C.green, C.greenBg)}>✓ Done</span> : saved ? <span style={chip(C.amber, C.amberBg)}>★ Saved</span> : null}
   </>;
   const icon = r.discipline ? <span aria-hidden="true" style={{ display: "inline-flex", flexShrink: 0 }}><DiscIcon d={r.discipline} size={dense ? 13 : 15} /></span> : null;
   if (dense) return (

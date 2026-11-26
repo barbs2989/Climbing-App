@@ -292,7 +292,7 @@ export default function ConditionsScoreCard({route,mtn,onAddAspect}: ConditionsS
     {sec("Sun on the wall",<div style={condBox}>
       {day.sun?condRow("Sunrise",clockAt(score,day.sun.rise)):null}
       {day.sun&&day.sun.set!=null?condRow("Sunset",clockAt(score,day.sun.set)):null}
-      {score.bearing!=null?condRow("Wall faces",DIR8[Math.round(score.bearing/45)%8]):null}
+      {/* No "Wall faces" row: ASPECT & SUN, right under this card, states the facing once (owner note 2026-11-25, "same with sun aspect? can we combine"). */}
       {score.bearing!=null&&day.wallSun?condRow("Sun on the wall",day.wallSun.on!=null?"Hits the wall at "+clockAt(score,day.wallSun.on)+" · leaves at "+clockAt(score,day.wallSun.off):"No direct sun on this wall today",day.wallSun.on!=null?C.yellow:C.textSub):null}
       {score.bearing==null?condRow("Sun on the wall",(score.aspectVaries?"The wall faces several ways, so when the sun reaches it isn’t worked out, and sun isn’t scored":"No wall direction on file for this climb, so when the sun reaches it isn’t worked out")+". The shade map below shows where the terrain casts shadow.",C.textMuted):null}
     </div>)}
@@ -305,7 +305,7 @@ export default function ConditionsScoreCard({route,mtn,onAddAspect}: ConditionsS
         <div style={condNote}>{"Above AQI "+score.aqLimits[0]+" the score is held to 2 ★, above "+score.aqLimits[1]+" to 1 ★ — smoke makes hard breathing the day’s real hazard."+(cp.aq?" (Your air-quality setting.)":"")}</div>
       </div>}
     </div>)}
-    {sec("Season",<div style={condBox}>
+    {/* "Climate by month", not "Season": this is the climber's OWN best months from five years of weather, and the route's stated season has its one SEASON section below (owner note 2026-11-25). */}{sec("Climate by month",<div style={condBox}>
       {!clim?<LoadingRows C={C} label="Loading the climate history…"/>:clim.error?<div><div style={{fontSize:12.5,color:C.amber,lineHeight:1.5,marginBottom:8}}>Couldn’t load the climate history for this crag. This says nothing about its season.</div><button onClick={function(){setClimTries(climTries+1);}} style={{background:C.surface,color:C.blue,border:"1px solid "+C.border,borderRadius:8,padding:"7px 12px",fontSize:12.5,fontWeight:700,cursor:"pointer"}}>Try again</button></div>:<SeasonChart clim={clim.data as ScoreClimate} band={score.band}/>}
     </div>)}
   </div>;

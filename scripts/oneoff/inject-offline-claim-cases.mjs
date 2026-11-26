@@ -108,7 +108,7 @@ const CASES = [
 
   { name: "killreal", file: "src/components/ManageAreasSheet.tsx", must: "fail", expect: "is gone. A downloaded state IS on the device",
     why: "§6 — deleting the state download's TRUE claim to satisfy a rule about routes",
-    find: "is saved on this device and keeps working with no signal", repl: "is downloaded" },
+    find: "on this device so it keeps working with no signal", repl: "on download" },
 
   { name: "bookmarks-gone", file: CM, must: "fail", expect: "nothing calls saveAreaIds",
     why: "§7 — saved areas go back to being lost on every reload",
@@ -156,8 +156,8 @@ const CASES = [
 
   /* §5 — one live claim per scanned surface. */
   { name: "claims-photos-manage", file: "src/components/ManageAreasSheet.tsx", must: "fail", expect: "claims something is on the device",
-    why: "§5 — Manage areas promises photos and map tiles the download never stores",
-    find: "\" downloads it: the full catalog — areas,", repl: "\" downloads it with every photo and map tile to this device: the full catalog — areas," },
+    why: "§5 — Manage areas promises photos and map tiles the download never stores (the guest line; the signed-in intro was removed 2026-11-25)",
+    find: "\" saves the full catalog — areas,", repl: "\" saves every photo and map tile to this device, and the full catalog — areas," },
   { name: "claims-photos-home", file: TODAY, must: "fail", expect: "claims something is on the device",
     why: "§5 — Home's Pinned states card (the guest line; the signed-in one was removed 2026-11-18) promises photos",
     find: "\" you download are saved in this browser and open in one tap", repl: "\" you download are saved with their photos on this device and open in one tap" },

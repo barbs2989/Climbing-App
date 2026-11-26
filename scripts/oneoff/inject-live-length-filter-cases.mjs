@@ -42,7 +42,7 @@ const CASES = [
     name: "applied-chip-reverted",
     why: "the bucket chips convert and the APPLIED-FILTER chip goes back to a baked string, so the " +
          "filter bar and the chip saying what you filtered by disagree about units",
-    edit: (s) => s.replace("label: lenLabel(lenRange, uElevN, uElevUnit)", 'label: "200–600 ft"'),
+    edit: (s) => s.replace("label: lenLabel(LEN_BUCKETS.find(l => l[0] === af.len) || LEN_BUCKETS[0], uElevN, uElevUnit)", 'label: "200–600 ft"'),
     expect: "fail",
     must: /both live label sites go through lenLabel/,
   },
