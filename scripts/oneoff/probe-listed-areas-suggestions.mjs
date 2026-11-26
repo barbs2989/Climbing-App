@@ -16,6 +16,9 @@ import { chromium } from "playwright-core";
 import { SUPABASE_URL, anonKey, requireServiceKey, headers } from "../lib/supabase-env.mjs";
 import { sessionForStorage, STORAGE_KEY } from "../lib/ui-fixture.mjs";
 import { tapMenuItem } from "../lib/menu-screens.mjs";
+import { assertQuietBox } from "../lib/quiet-box.mjs";
+
+assertQuietBox("probe-listed-areas-suggestions.mjs");
 
 const BASE = process.argv[2] || "http://localhost:5173/Climbing-App/";
 const ACC = JSON.parse(readFileSync(process.argv[3] || "manual-test-accounts.local", "utf8")).accounts[0];
