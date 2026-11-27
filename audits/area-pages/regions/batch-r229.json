@@ -1,0 +1,60 @@
+{
+  "ut_provo_canyon": {
+    "_expect": {
+      "name": "Provo Canyon",
+      "region": "Utah"
+    },
+    "blurb": "Provo Canyon cuts through the Southern Wasatch east of Orem, and its climbing is winter ice and mixed. Ice lines run along both sides of the canyon, with the thickest flows mostly on the south side, which sees less sun. Mixed routes are mostly M6 to M8, and the ice is mostly WI4 and WI5, with a few easier lines. Provo Canyon Ice holds the most climbs, followed by Bridal Veil Falls Area, where two-pitch ice routes share the zone with older bolted mixed lines on the first band of rock; avalanches can be serious across that whole zone. Upper Provo Falls adds longer, alpine-style ice, and Fitness Den is mostly mixed. Conditions change from year to year.",
+    "review": {
+      "sources": [
+        "https://mountainproject.com/area/105739347/provo-canyon-ice",
+        "https://www.mountainproject.com/area/120025085/bridal-veil-falls-area",
+        "https://www.ksl.com/article/42860256/where-to-go-ice-climbing-along-the-wasatch-front"
+      ]
+    }
+  },
+  "ut_swett_hills": {
+    "_expect": {
+      "name": "Swett Hills",
+      "region": "Utah"
+    },
+    "blurb": "Swett Hills is a bouldering area a short drive from Cedar City in southwest Utah, at about 5,800 feet. The rock is welded tuff, which takes some getting used to but offers good friction and is solid. Problems run from the easiest grades up to V9, with many around V3 and V4 and a steady supply of harder ones. The Wash holds the most climbs by a wide margin, followed by Sarsen Blocks, while The Mound is a cluster of boulders on top of a hill. The area is well developed, with plenty of unrecorded potential still left.",
+    "review": {
+      "sources": [
+        "https://mountainproject.com/area/109408400/swett-hills",
+        "https://www.mountainproject.com/area/118671811/the-mound?print=1",
+        "https://www.suu.edu/blog/2017/05/climbing-spots-in-southern-utah.html"
+      ]
+    }
+  },
+  "va_pinnacle_rock_area": {
+    "_expect": {
+      "name": "Pinnacle Rock Area",
+      "region": "Virginia"
+    },
+    "blurb": "Pinnacle Rock Area is part of Breaks Interstate Park in Dickenson County, southwest Virginia, where a large sandstone outcrop looks out over the Russell Fork river valley. The climbing here is sandstone, mostly sport with a smaller share of trad. Grades sit mostly between 5.10 and 5.12, with a handful of easier lines and a few at 5.13. Froopy Land, Pinnacle Left and Pinnacle Overlook share the most climbs, with Desert Pony Buttress close behind and Ginger Wall smaller.",
+    "review": {
+      "sources": [
+        "https://michael-harr-mbd7.squarespace.com/latest/2020/9/11/pinnacle-rock-at-breaks-interstate-park",
+        "https://www.mountainproject.com/area/111742350/breaks-interstate-park"
+      ]
+    }
+  },
+  "wy_granite_the": {
+    "_expect": {
+      "name": "Granite, The",
+      "region": "Wyoming"
+    },
+    "blurb": "The Granite is the granite section of Sinks Canyon near Lander, Wyoming, far up the canyon from the limestone, at about 7,500 feet. The rock gives crisp edges, pegmatite intrusions, pinches and bucket jugs, a varied set of holds. Sport routes make up most of the climbing, with some trad, and the grades run hard: mostly 5.11 to 5.13, with a smaller number of moderates from 5.6 to 5.10. The Joint holds the most climbs, followed by The Sanctuary, while Granite Buttress and Granite Buttress West Flank are smaller crags.",
+    "review": {
+      "sources": [
+        "https://www.mountainproject.com/area/118196021/the-granite",
+        "https://mountainproject.com/area/105827053/sinks-canyon"
+      ]
+    }
+  },
+  "_skipped": {
+    "ut_1_roadside_boulders": "Only one fetched page is about Roadside Boulders itself; the second available page is its parent (Big Water Boulders), and the Roadside search hit on thetopo was a different place (St George granite).",
+    "wi_west_bluff_south": "No fetched page mentions West Bluff South; the only pages are its parent (West Bluff) and grandparent (Devil's Lake Bouldering)."
+  }
+}
