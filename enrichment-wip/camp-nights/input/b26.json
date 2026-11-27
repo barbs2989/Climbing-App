@@ -1,0 +1,1381 @@
+[
+ {
+  "id": "wa_mount_christie_west",
+  "name": "North Couloir / Christie Glacier",
+  "discipline": "mountaineering",
+  "peak": "Mount Christie",
+  "area_id": "wa_mount_christie",
+  "path": "usa.washington.wa_olympics.wa_olympic_np.wa_central_olympics.wa_mount_christie",
+  "trip_plan": {
+   "totalNote": "A serious 5-day backcountry trip: ~2 days and 16 miles to reach Low Divide camp, a long 14-hour glacier/scramble summit day (~3,000 ft gain, Class 4 step), then 2 days back out the same trail — roughly 41 miles and 8,000+ ft round trip.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Trailhead to Halfway House Camp",
+     "objective": "Reach Halfway House (or Elip Creek) camp",
+     "miles": 5.1,
+     "gainFt": 600,
+     "note": "An easy warm-up day up the North Fork Quinault River trail through old-growth rainforest. Most parties start in the afternoon and camp at Halfway House; Elip Creek (~6.5 mi) is a slightly farther alternative that shortens day 2."
+    },
+    {
+     "n": 2,
+     "title": "Halfway House to Low Divide",
+     "objective": "Establish base camp at Low Divide",
+     "miles": 11,
+     "gainFt": 3300,
+     "note": "The long haul of the trip: steady climbing up the valley to Low Divide, including a thigh-deep ford near Sixteenmile Camp. Real trip reports clock this leg at 9-11 hours with a full pack; plan an early start and expect to arrive in the evening."
+    },
+    {
+     "n": 3,
+     "title": "Summit push via North Couloir - Christie Glacier - SE Ridge",
+     "objective": "Climb Mount Christie (6,182 ft) and return to Low Divide",
+     "miles": 9,
+     "gainFt": 3000,
+     "note": "From Low Divide, head up through Martins Park to the North Couloir, a snow/rock gully to a 5,600 ft saddle on Christie's north side, then rope up to cross the Christie Glacier and moat, surmount a short loose Class 4 step above the East Col, fight through krummholz, and finish on a Class 2-3 southeast ridge scramble to…"
+    },
+    {
+     "n": 4,
+     "title": "Low Divide back to Halfway House",
+     "objective": "Retrace the trail out of the high country",
+     "miles": 11,
+     "gainFt": 100,
+     "note": "Reverse the Day 2 route back down the valley, re-fording near Sixteenmile Camp. Mostly downhill and noticeably faster than the way in."
+    },
+    {
+     "n": 5,
+     "title": "Halfway House to Trailhead",
+     "objective": "Hike out to the North Fork Quinault trailhead",
+     "miles": 5.1,
+     "gainFt": 0,
+     "note": "A short, easy final morning back through the rainforest to the car."
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Low Divide — the pass camp for Mount Seattle and Mount Christie",
+    "elev_ft": 3600,
+    "type": "camp",
+    "role": "main",
+    "notes": "Low Divide is the saddle between Mount Seattle and Mount Christie and the obvious base for both, and by all accounts it is the most comfortable camp in the interior — flat, watered, with a toilet and a bear hang. Mount Seattle has three established scramble lines from here, by Noyes Basin, by Seattle Creek Basin and by…"
+   }
+  ],
+  "campsite_pins": [
+   {
+    "name": "Wolf Bar",
+    "elev": 1020,
+    "distMi": 2.5
+   },
+   {
+    "name": "Halfway House Camp",
+    "elev": 780,
+    "distMi": 5.1
+   },
+   {
+    "name": "Trapper Shelter",
+    "elev": 1210,
+    "distMi": 8.1
+   }
+  ]
+ },
+ {
+  "id": "wa_mount_dana_scramble",
+  "name": "Mount Dana Scramble",
+  "discipline": "scrambling",
+  "peak": "Mount Dana",
+  "area_id": "wa_mount_dana",
+  "path": "usa.washington.wa_olympics.wa_olympic_np.wa_central_olympics.wa_mount_dana",
+  "trip_plan": {
+   "totalNote": "A six-day out-and-back up the Elwha: two days of trail walking to Chicago Camp, a steep off-trail climb from the Elwha Basin way trail to the Barnes–Wilder ridge, a day along the crest to Dana and back, and two days out.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Madison Falls and Whiskey Bend up the Elwha",
+     "objective": "Camp in the mid-valley, around Hayes River",
+     "note": "Walk or ride the closed road from Madison Falls to Whiskey Bend, then follow the Elwha River Trail upstream through old-growth forest past Lillian River, Mary's Falls and Elkhorn. The camps around Hayes River make a sensible first night with a full week's food on your back."
+    },
+    {
+     "n": 2,
+     "title": "Up the Elwha to Chicago Camp",
+     "objective": "Reach Chicago Camp, the last camp on the main trail",
+     "note": "Continue up the valley past Camp Wilder to Chicago Camp. The Elwha ford here is the crossing to check before the trip; the main trail turns south for Low Divide, and everything beyond is on the fainter way trail or off-trail."
+    },
+    {
+     "n": 3,
+     "title": "Past Happy Hollow and up to the Barnes–Wilder ridge",
+     "objective": "Camp on the ridge between Mount Barnes and Mount Wilder",
+     "note": "Take the way trail west up the Elwha toward Elwha Basin, past Happy Hollow camp. Beyond it, leave the path and climb north, steeply and through brush and timber, to the crest of the ridge joining Mount Barnes and Mount Wilder. Carry water for the night: the ridge has little."
+    },
+    {
+     "n": 4,
+     "title": "Along the crest to Mount Dana and back",
+     "objective": "Summit Mount Dana (6,213 ft)",
+     "note": "With light packs, follow the crest east toward Mount Wilder and on northeast to Dana, finishing with class 2 scrambling to the summit, then return along the ridge to camp. It is a long day for its distance, and Mount Wilder can be taken in on the way back."
+    },
+    {
+     "n": 5,
+     "title": "Down to the valley and back down the Elwha",
+     "objective": "Regain the trail and walk out to the mid-valley camps",
+     "note": "Descend the steep, brushy slope to the Elwha Basin way trail near Happy Hollow, walk back to Chicago Camp, re-ford the Elwha, and continue down the Elwha River Trail to a camp around Hayes River or Elkhorn."
+    },
+    {
+     "n": 6,
+     "title": "Out to Whiskey Bend and Madison Falls",
+     "objective": "Return to the car",
+     "note": "An easy trail walk down the lower Elwha to Whiskey Bend, then the road walk or ride back to Madison Falls."
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Elwha Basin, Queets Basin and the upper cross-country bivy zones",
+    "elev_ft": null,
+    "type": "bivy",
+    "role": "main",
+    "notes": "This is the working base for the Elwha Basin peaks and the only sensible way to reach the Bailey Range from the south. From Chicago Camp the route into Elwha Basin is a notorious bushwhack in low snow years, then the Elwha Snowfinger leads to Dodwell-Rixon Pass at 4,763 ft and over into Queets Basin. From a basin camp,…"
+   },
+   {
+    "name": "Chicago Camp — the last established camp in the upper Elwha",
+    "elev_ft": null,
+    "type": "camp",
+    "role": "main",
+    "notes": "Chicago Camp is where the trail effectively ends and the cross-country begins, roughly twenty-five miles from Whiskey Bend at the confluence of the Elwha and Delabarre Creek. It is the standard last-trail-camp for Mount Barnes, Mount Meany, Mount Noyes, Mount Queets and Mount Wilder, all of which are reached by pushing…"
+   },
+   {
+    "name": "Lillian River and Mary's Falls — the first night out of Whiskey Bend",
+    "elev_ft": null,
+    "type": "camp",
+    "role": "route",
+    "notes": "The whole Elwha approach now begins with a road walk, and it is the single biggest change to planning in this valley. Vehicles stop at the Madison Falls parking area; the Olympic Hot Springs Road and then the Whiskey Bend Road are closed by a washout that has stood for years with no repair date, which puts the old Whis…"
+   },
+   {
+    "name": "Hayes River and Elkhorn — the mid-valley camps, and the base for Mount Norton",
+    "elev_ft": null,
+    "type": "camp",
+    "role": "route",
+    "notes": "Elkhorn sits about eleven miles up the Elwha from Whiskey Bend and Hayes River about sixteen, both on level ground and both far more pleasant than Canyon Camp between them, which has been badly hit by treefall and is worth walking past. Hayes River is the camp for Mount Norton: the peak's east side rises roughly 3,200 …"
+   }
+  ],
+  "campsite_pins": [
+   {
+    "name": "Mary's Falls Camp",
+    "elev": 1296,
+    "distMi": 8.8
+   },
+   {
+    "name": "Chicago Camp — the last established camp in the upper Elwha",
+    "elev": 2195,
+    "distMi": null
+   }
+  ]
+ },
+ {
+  "id": "wa_mount_ferry_standard",
+  "name": "South Slopes (Bailey Range)",
+  "discipline": "mountaineering",
+  "peak": "Mount Ferry",
+  "area_id": "wa_mount_ferry",
+  "path": "usa.washington.wa_olympics.wa_olympic_np.wa_central_olympics.wa_mount_ferry",
+  "trip_plan": {
+   "totalNote": "A 5-day, ~44-mile off-trail traverse of the Bailey Range with Mount Ferry summited as a side trip from Ferry Basin on day 2; most parties enter via Sol Duc and exit via Low Divide/North Fork Quinault (or reverse), with 3 nights of true wilderness camping.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Approach to Heart Lake",
+     "objective": "Establish first camp below High Divide",
+     "miles": 8,
+     "gainFt": 2844,
+     "note": "A moderate approach day up the maintained Sol Duc trail (or Boulder Creek/Appleton Pass if starting from Elwha/Madison Falls) to a camp at Heart Lake, staging for the cross-country push over High Divide the next day. Trail is well graded and shaded through old growth and meadow."
+    },
+    {
+     "n": 2,
+     "title": "High Divide, the Catwalk, and Mount Ferry",
+     "objective": "Cross into the Bailey Range and tag Mount Ferry's summit",
+     "miles": 12,
+     "gainFt": 4500,
+     "note": "The big cross-country day: up onto High Divide, over/around Cat Peak, across the exposed Catwalk arete to Mount Carrie's shoulder, then down into Ferry Basin. Most parties drop packs at a flat near Ferry Basin and do Mount Ferry as a side excursion via the southeast ridge (loose 'dagger' scree), descending the easier s…"
+    },
+    {
+     "n": 3,
+     "title": "Ferry Basin to Queets Basin",
+     "objective": "Traverse the southern Bailey crest to Dodwell-Rixon Pass",
+     "miles": 10,
+     "gainFt": 3000,
+     "note": "Continue south along the Bailey Range crest over Lone Tree Pass and Bear Pass, dropping into the alpine bowls of Queets Basin. This is arguably the most scenic and remote stretch, entirely off-trail with intermittent snowfields."
+    },
+    {
+     "n": 4,
+     "title": "Dodwell-Rixon Pass to Low Divide",
+     "objective": "Descend the Elwha Snowfinger to the Low Divide trail network",
+     "miles": 9,
+     "gainFt": 400,
+     "note": "From Dodwell-Rixon Pass, descend the Elwha Snowfinger gully, now largely melted out into a steep-sided canyon of banks, boulders and stream crossings, to reach the maintained Elwha River trail near Chicago Camp, then climb to Low Divide and a trail camp. Elevation loss dominates this day after three days of off-trail t…"
+    },
+    {
+     "n": 5,
+     "title": "Exit to trailhead",
+     "objective": "Hike out via the North Fork Quinault (or Elwha) trail",
+     "miles": 5,
+     "gainFt": 0,
+     "note": "An easy, well-graded final day of maintained trail descending along the river to the trailhead, closing the loop/traverse."
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Ferry Basin",
+    "elev_ft": null,
+    "type": "camp",
+    "role": "main",
+    "notes": ""
+   }
+  ],
+  "campsite_pins": [
+   {
+    "name": "Deer Lake",
+    "elev": 3550,
+    "distMi": 3.4
+   },
+   {
+    "name": "Ferry Basin",
+    "elev": 5565,
+    "distMi": null
+   }
+  ]
+ },
+ {
+  "id": "wa_mount_lawson_standard",
+  "name": "Standard Scramble",
+  "discipline": "mountaineering",
+  "peak": "Mount Lawson",
+  "area_id": "wa_mount_lawson",
+  "path": "usa.washington.wa_olympics.wa_olympic_np.wa_central_olympics.wa_mount_lawson",
+  "trip_plan": {
+   "totalNote": "A fast, committing 2-day round trip: roughly 25 miles and 4,500+ ft of gain/loss total, anchored by a single camp near the river crossing and a big 10-12 hour summit day that finishes with the entire hike back to the car.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Approach to river camp",
+     "objective": "Hike in to a riverside camp near the base of Lawson's north-side gullies",
+     "miles": 12,
+     "gainFt": 700,
+     "note": "From the North Fork Quinault trailhead, follow the North Fork Quinault River Trail roughly 12 miles through old-growth forest and past frequent blowdown, passing the Wolf Bar (~2.5 mi) and Elip Creek (~6.5 mi) camps along the way. Continue to a riverside site near the short switchbacks below Lawson's north-face avalanc…"
+    },
+    {
+     "n": 2,
+     "title": "Summit push and full hike-out",
+     "objective": "Climb the north gully system to the summit, then hike all the way back to the trailhead",
+     "miles": 13,
+     "gainFt": 4000,
+     "note": "Cross the North Fork Quinault before or at dawn and climb roughly 3,800-4,000 ft up the 'hidden gully' system on Lawson's north side (steep snow/scree and one awkward Class 3-4 step depending on season) to the ridge and broad summit plateau. Retrace the route back down to camp, then break camp and hike the full ~12 mil…"
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Sixteen Mile Camp — the base directly under Mount Lawson",
+    "elev_ft": 2021,
+    "type": "camp",
+    "role": "main",
+    "notes": "This is the camp for Mount Lawson and effectively the only one. The peak rises about 3,800 ft above the river in a mile and a third, straight out of the drainage the camp sits in, and the climb is a class 2 slog on steep forest and open slope rather than anything technical — the work is the approach, not the summit. Th…"
+   }
+  ],
+  "campsite_pins": [
+   {
+    "name": "Wolf Bar",
+    "elev": 560,
+    "distMi": 2.5
+   },
+   {
+    "name": "Halfway House",
+    "elev": 780,
+    "distMi": 5.1
+   },
+   {
+    "name": "Elip Creek Camp",
+    "elev": 870,
+    "distMi": 6.5
+   },
+   {
+    "name": "Sixteen Mile Camp — the base directly under Mount Lawson",
+    "elev": 2021,
+    "distMi": null
+   }
+  ]
+ },
+ {
+  "id": "wa_mount_meany_standard",
+  "name": "Standard Route",
+  "discipline": "alpine",
+  "peak": "Mount Meany",
+  "area_id": "wa_mount_meany",
+  "path": "usa.washington.wa_olympics.wa_olympic_np.wa_central_olympics.wa_mount_meany",
+  "trip_plan": {
+   "totalNote": "A 6-day, ~42-mile round-trip backpack (roughly 9,300 ft of cumulative gain and loss) via the North Fork Quinault River and Seattle Basin, with a single long, technical summit day involving a low-5th-class pitch and two rappels.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Hike in to Francis/Elip Creek Camp",
+     "objective": "Reach Francis/Elip Creek Camp",
+     "miles": 4.8,
+     "gainFt": 800,
+     "note": "An afternoon-start hike up the North Fork Quinault River trail through old-growth forest to the first night's camp. Easy grade, mostly flat river-valley walking."
+    },
+    {
+     "n": 2,
+     "title": "Push up-valley to Low Divide",
+     "objective": "Reach Low Divide Camp",
+     "miles": 10,
+     "gainFt": 2850,
+     "note": "The longest day of the approach: steady climbing up the North Fork Quinault valley to Low Divide, including a mandatory ford of the river. Parties note a long lunch/swim break at the ford and afternoon heat as the main slow-down factors."
+    },
+    {
+     "n": 3,
+     "title": "Climb to Seattle Basin high camp",
+     "objective": "Establish basecamp in Seattle Basin (~4,900 ft)",
+     "miles": 6,
+     "gainFt": 1600,
+     "note": "A shorter, deliberately easy day to arrive at basecamp with time to rest before the summit push. Trail switchbacks into Seattle Meadows, then cross-country through heather meadows to a gravelly camp rib as high in the basin as possible."
+    },
+    {
+     "n": 4,
+     "title": "Summit day",
+     "objective": "Climb Mount Meany via the Noyes-Meany col and NE face, return to camp",
+     "miles": 5,
+     "gainFt": 1950,
+     "note": "The technical crux day: an early start, a scree traverse to the Noyes-Meany col, and a short low Class 5 roped pitch with loose rock but good gear on the final push to the summit. Two rappels and a long scree/talus descent bring the party back to camp after dark."
+    },
+    {
+     "n": 5,
+     "title": "Descend toward Sixteenmile Camp",
+     "objective": "Reach Sixteenmile Camp",
+     "miles": 6,
+     "gainFt": 0,
+     "note": "A relaxed, later-starting day after the long summit push — sleep in, then descend back through Low Divide toward Sixteenmile Camp with leisurely stream-crossing breaks."
+    },
+    {
+     "n": 6,
+     "title": "Hike out to trailhead",
+     "objective": "Return to the North Fork Quinault trailhead",
+     "miles": 12,
+     "gainFt": 0,
+     "note": "A long final day retracing the valley trail back to the car, often in showery weather; the biggest mileage day of the trip but on easy, well-graded tread."
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Elwha Basin",
+    "elev_ft": null,
+    "type": "camp",
+    "role": "main",
+    "notes": ""
+   },
+   {
+    "name": "Low Divide — the pass camp for Mount Seattle and Mount Christie",
+    "elev_ft": 3600,
+    "type": "camp",
+    "role": "main",
+    "notes": "Low Divide is the saddle between Mount Seattle and Mount Christie and the obvious base for both, and by all accounts it is the most comfortable camp in the interior — flat, watered, with a toilet and a bear hang. Mount Seattle has three established scramble lines from here, by Noyes Basin, by Seattle Creek Basin and by…"
+   },
+   {
+    "name": "Lillian River and Mary's Falls — the first night out of Whiskey Bend",
+    "elev_ft": null,
+    "type": "camp",
+    "role": "route",
+    "notes": "The whole Elwha approach now begins with a road walk, and it is the single biggest change to planning in this valley. Vehicles stop at the Madison Falls parking area; the Olympic Hot Springs Road and then the Whiskey Bend Road are closed by a washout that has stood for years with no repair date, which puts the old Whis…"
+   },
+   {
+    "name": "Hayes River and Elkhorn — the mid-valley camps, and the base for Mount Norton",
+    "elev_ft": null,
+    "type": "camp",
+    "role": "route",
+    "notes": "Elkhorn sits about eleven miles up the Elwha from Whiskey Bend and Hayes River about sixteen, both on level ground and both far more pleasant than Canyon Camp between them, which has been badly hit by treefall and is worth walking past. Hayes River is the camp for Mount Norton: the peak's east side rises roughly 3,200 …"
+   },
+   {
+    "name": "Chicago Camp — the last established camp in the upper Elwha",
+    "elev_ft": null,
+    "type": "camp",
+    "role": "route",
+    "notes": "Chicago Camp is where the trail effectively ends and the cross-country begins, roughly twenty-five miles from Whiskey Bend at the confluence of the Elwha and Delabarre Creek. It is the standard last-trail-camp for Mount Barnes, Mount Meany, Mount Noyes, Mount Queets and Mount Wilder, all of which are reached by pushing…"
+   },
+   {
+    "name": "Elwha Basin, Queets Basin and the upper cross-country bivy zones",
+    "elev_ft": null,
+    "type": "bivy",
+    "role": "route",
+    "notes": "This is the working base for the Elwha Basin peaks and the only sensible way to reach the Bailey Range from the south. From Chicago Camp the route into Elwha Basin is a notorious bushwhack in low snow years, then the Elwha Snowfinger leads to Dodwell-Rixon Pass at 4,763 ft and over into Queets Basin. From a basin camp,…"
+   }
+  ],
+  "campsite_pins": [
+   {
+    "name": "Chicago Camp — the last established camp in the upper Elwha",
+    "elev": 2195,
+    "distMi": null
+   },
+   {
+    "name": "Seattle Basin high camp",
+    "elev": 4900,
+    "distMi": null
+   }
+  ]
+ },
+ {
+  "id": "wa_mount_norton_scramble",
+  "name": "Mount Norton Scramble",
+  "discipline": "mountaineering",
+  "peak": "Mount Norton",
+  "area_id": "wa_mount_norton",
+  "path": "usa.washington.wa_olympics.wa_olympic_np.wa_central_olympics.wa_mount_norton",
+  "trip_plan": {
+   "totalNote": "A remote 4-day trip, roughly 38 miles and ~5,000+ ft round trip: two long valley-trail days in, one steep off-trail summit day from a Hayes River camp, and one long day out.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Backpack in to lower Elwha camp",
+     "objective": "Reach the Elkhorn area",
+     "miles": 18,
+     "gainFt": 900,
+     "note": "Walk or bike the closed 6.5 miles of Olympic Hot Springs Road from the Madison Falls lot to the Whiskey Bend trailhead first. From the trailhead (Madison Falls, since flood damage in November 2017 washed out the Olympic Hot Springs Road and closed it to vehicles beyond there) follow the old road bed and then the Elwha …"
+    },
+    {
+     "n": 2,
+     "title": "Continue to Hayes River",
+     "objective": "Camp near Hayes River Guard Station",
+     "miles": 5.3,
+     "gainFt": 500,
+     "note": "A shorter day continuing up-valley along the Elwha River Trail to the Hayes River patrol cabin/camp area, the closest trail camp to Mount Norton. Check current NPS trail-condition reports first — sections between Elkhorn and Hayes River have had flood/landslide damage in recent years."
+    },
+    {
+     "n": 3,
+     "title": "Summit push",
+     "objective": "Climb Mount Norton and return to camp",
+     "miles": 4.2,
+     "gainFt": 3400,
+     "note": "Leave the heavy gear at Hayes River camp and climb steep, brushy off-trail ground to the upper ridge, then follow class 2 talus/heather slopes to the summit. Out-and-back to the same camp same day."
+    },
+    {
+     "n": 4,
+     "title": "Hike out",
+     "objective": "Return to trailhead",
+     "miles": 23.3,
+     "gainFt": 300,
+     "note": "Retrace the Elwha River Trail (and road-walk/bike section from Madison Falls if the road closure is still in effect) all the way back to the car. A long but flat-grade day."
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Hayes River and Elkhorn — the mid-valley camps, and the base for Mount Norton",
+    "elev_ft": null,
+    "type": "camp",
+    "role": "main",
+    "notes": "Elkhorn sits about eleven miles up the Elwha from Whiskey Bend and Hayes River about sixteen, both on level ground and both far more pleasant than Canyon Camp between them, which has been badly hit by treefall and is worth walking past. Hayes River is the camp for Mount Norton: the peak's east side rises roughly 3,200 …"
+   },
+   {
+    "name": "Lillian River and Mary's Falls — the first night out of Whiskey Bend",
+    "elev_ft": null,
+    "type": "camp",
+    "role": "route",
+    "notes": "The whole Elwha approach now begins with a road walk, and it is the single biggest change to planning in this valley. Vehicles stop at the Madison Falls parking area; the Olympic Hot Springs Road and then the Whiskey Bend Road are closed by a washout that has stood for years with no repair date, which puts the old Whis…"
+   }
+  ],
+  "campsite_pins": [
+   {
+    "name": "Elkhorn Guard Station",
+    "elev": 1437,
+    "distMi": 18.5
+   }
+  ]
+ },
+ {
+  "id": "wa_mount_olson_standard",
+  "name": "Standard Scramble",
+  "discipline": "scrambling",
+  "peak": "Mount Olson",
+  "area_id": "wa_mount_olson",
+  "path": "usa.washington.wa_olympics.wa_olympic_np.wa_central_olympics.wa_mount_olson",
+  "trip_plan": {
+   "totalNote": "A rugged ~3-day round trip via Sundown Pass and the primitive Six Ridge/Mount Olson Way Trail, with a high camp near McGravey Lakes/Camp Bellevue and a steep class 2-3 scramble to the 5,289 ft summit — not a car-to-car day trip.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Approach to high camp near McGravey Lakes / Camp Bellevue",
+     "objective": "Reach a high camp below Mount Olson via Sundown Pass and the primitive Six Ridge Trail",
+     "miles": 10,
+     "gainFt": 2700,
+     "note": "From the Upper South Fork Skokomish trailhead, climb the South Fork Skokomish River Trail over Sundown Pass to Sundown Lake, then pick up the primitive, largely unmaintained Six Ridge Trail over Six Ridge Pass to McGravey Lakes. Parties describe near-constant route-finding through overgrown meadows, faded cairns, and r…"
+    },
+    {
+     "n": 2,
+     "title": "Summit push via the Mount Olson Way Trail and boot path",
+     "objective": "Climb Mount Olson (5,289 ft) via the tarn and SE-face boot path",
+     "miles": 3.5,
+     "gainFt": 1300,
+     "note": "From camp, sidehill the faint Mount Olson Way Trail across broken, exposed ground to a small tarn at the base of the peak, then scramble roughly 1,000 ft up steep meadow and heather (55-60 degrees in spots, hands-on rock, rated class 3 in the published description) to the summit block. Descend the same way back to camp…"
+    },
+    {
+     "n": 3,
+     "title": "Hike out to the trailhead",
+     "objective": "Return to the Upper South Fork Skokomish trailhead",
+     "miles": 10,
+     "gainFt": 300,
+     "note": "Reverse the Six Ridge / Sundown Pass approach back to the car. It's mostly net downhill, but the primitive tread, brush, and repeated ridge undulations still make it a full day."
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Lake Sundown",
+    "elev_ft": null,
+    "type": "camp",
+    "role": "main",
+    "notes": ""
+   },
+   {
+    "name": "Belview and the Six Ridge camps — for Mount Olson only",
+    "elev_ft": null,
+    "type": "camp",
+    "role": "route",
+    "notes": "This camp serves Mount Olson and nothing else in the zone. Olson is a scree, boulder and brush scramble at about 5,290 ft on the crest of Six Ridge, reached by a way trail that runs along the ridge top. Six Ridge itself is a primitive, unmaintained route linking the North Fork and South Fork Skokomish over roughly ten …"
+   }
+  ],
+  "campsite_pins": [
+   {
+    "name": "Lake Sundown",
+    "elev": 3810,
+    "distMi": 7.6
+   },
+   {
+    "name": "Tarn below Olson's summit block",
+    "elev": 5100,
+    "distMi": null
+   }
+  ]
+ },
+ {
+  "id": "wa_mount_olympus_2_north_ridge_via_blue_glacier",
+  "name": "North Ridge via Blue Glacier",
+  "discipline": "alpine",
+  "peak": "Mount Olympus (West Peak)",
+  "area_id": "wa_mount_olympus",
+  "path": "usa.washington.wa_olympics.wa_olympic_np.wa_central_olympics.wa_mount_olympus",
+  "trip_plan": {
+   "totalNote": "Three days is the common minimum: a long, mostly flat walk up the Hoh valley to Elk Lake, a big summit day across the Blue Glacier, over the Snow Dome and up the West Peak's short rock summit block, then the walk out. Many parties add a day by camping higher at Glacier Meadows or on the Snow Dome.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Hoh trailhead to Elk Lake",
+     "objective": "Walk the Hoh River Trail to a camp at Elk Lake",
+     "miles": 15,
+     "gainFt": null,
+     "note": "The first 13 miles follow the valley floor with little climbing; past the footbridge the trail starts to climb into the hanging valley that holds Elk Lake. Glacier Meadows, where the trail ends about 17.4 miles in, is the higher option and shortens the summit day. No camping is allowed between Glacier Meadows and the g…"
+    },
+    {
+     "n": 2,
+     "title": "Blue Glacier and the West Peak",
+     "objective": "Cross the Blue Glacier and Snow Dome to the West Peak summit and return to camp",
+     "miles": null,
+     "gainFt": null,
+     "note": "Above Glacier Meadows the climbers' path reaches the lateral moraine, where crampons go on for the lower glacier. Cross to the Snow Dome, climb loose scree and then snow to the upper ice, and rope up there for the crevassed ground below the summit. Skirt the bergschrund to reach the West Peak's summit block, where one …"
+    },
+    {
+     "n": 3,
+     "title": "Walk out the Hoh",
+     "objective": "Return from Elk Lake to the Hoh trailhead",
+     "miles": 15,
+     "gainFt": null,
+     "note": "Descend out of the Elk Lake valley and follow the long, flat valley trail back to the trailhead."
+    }
+   ]
+  },
+  "camps_on_file": [],
+  "campsite_pins": []
+ },
+ {
+  "id": "wa_mount_olympus_blue_glacier",
+  "name": "Blue Glacier (Standard Route)",
+  "discipline": "alpine",
+  "peak": "Mount Olympus (West Peak)",
+  "area_id": "wa_mount_olympus",
+  "path": "usa.washington.wa_olympics.wa_olympic_np.wa_central_olympics.wa_mount_olympus",
+  "trip_plan": {
+   "totalNote": "A 4-day round trip (~41-44 mi, ~7,400 ft gain to the 7,980 ft summit): two days up the Hoh River to Glacier Meadows, one long summit day via the Blue Glacier/Snow Dome/Crystal Pass, one day to hike all the way out.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Hoh River Trail to Olympus Guard Station",
+     "objective": "Reach Lewis Meadow / Olympus Guard Station camp",
+     "miles": 9,
+     "gainFt": 1600,
+     "note": "An easy, flat old-growth valley walk along the Hoh River. Most parties leave the trailhead by mid-morning and are in camp well before dark."
+    },
+    {
+     "n": 2,
+     "title": "Guard Station to Glacier Meadows high camp",
+     "objective": "Establish high camp at Glacier Meadows",
+     "miles": 8.3,
+     "gainFt": 4500,
+     "note": "The trail steepens above Elk Lake and works through the infamous washed-out ladder section before breaking into the open meadows below the Blue Glacier moraine. Rope/glacier gear gets sorted and rehearsed here."
+    },
+    {
+     "n": 3,
+     "title": "Summit day via Blue Glacier, Snow Dome and Crystal Pass",
+     "objective": "Summit and return to Glacier Meadows",
+     "miles": 9.5,
+     "gainFt": 3800,
+     "note": "An alpine-start round trip from camp: descend to and rope up on the Blue Glacier, climb Snow Dome, cross toward Crystal Pass around the Five Fingers, then scramble/short-rope the summit pyramid to the final block."
+    },
+    {
+     "n": 4,
+     "title": "Hike out to trailhead",
+     "objective": "Return to the Hoh River trailhead",
+     "miles": 17.3,
+     "gainFt": 300,
+     "note": "Strong parties hike the full 17+ miles back to the car in one push; guided/slower groups split this into two days via Happy Four Camp."
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Glacier Meadows",
+    "elev_ft": 4200,
+    "type": null,
+    "role": "main",
+    "notes": "The standard base camp at roughly 17 miles in, shaded and comfortable, with shelters, a bear wire and two working privies — the last toilets before the glacier. It sits about 4,175 to 4,300 ft depending on which part of the meadow you are in. From here the climbers' path runs about 0.8 mile up onto the lateral moraine …"
+   },
+   {
+    "name": "Snow Dome",
+    "elev_ft": 6600,
+    "type": null,
+    "role": "main",
+    "notes": "A high camp rather than an emergency bivy, and the reason parties use it is that it removes the glacier's lower miles from summit day. Reaching it means roped crevasse travel from the glacier toe, so it is not a place you retreat to casually in poor visibility. It is fully exposed on a broad snow dome — wind and weathe…"
+   },
+   {
+    "name": "Elk Lake",
+    "elev_ft": 2500,
+    "type": null,
+    "role": "route",
+    "notes": "About 15 miles in, where the Hoh River Trail stops being flat and starts climbing. It is the standard place to break the approach for parties who cannot make Glacier Meadows in a day, and the fallback if the snow slopes above it turn out to need axe and crampons, which they often do in early season. Sheltered forest ca…"
+   }
+  ],
+  "campsite_pins": [
+   {
+    "name": "Elk Lake",
+    "elev": 2500,
+    "distMi": null
+   },
+   {
+    "name": "Glacier Meadows",
+    "elev": 4300,
+    "distMi": 17.5
+   },
+   {
+    "name": "Snow Dome",
+    "elev": 6600,
+    "distMi": null
+   }
+  ]
+ },
+ {
+  "id": "wa_mount_olympus_west_ridge",
+  "name": "West Ridge",
+  "discipline": "alpine",
+  "peak": "Mount Olympus (West Peak)",
+  "area_id": "wa_mount_olympus",
+  "path": "usa.washington.wa_olympics.wa_olympic_np.wa_central_olympics.wa_mount_olympus",
+  "trip_plan": {
+   "totalNote": "A 4-day trip on the standard Blue Glacier approach, with one long technical summit day pitching out the ~7-pitch West Ridge (variable rock, 5.4 on route) and descending via the easier standard route instead of the ridge.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Hoh River Trail to Olympus Guard Station",
+     "objective": "Reach Lewis Meadow / Olympus Guard Station camp",
+     "miles": 9,
+     "gainFt": 1600,
+     "note": "Flat old-growth valley approach along the Hoh River."
+    },
+    {
+     "n": 2,
+     "title": "Guard Station to Glacier Meadows high camp",
+     "objective": "Establish high camp at Glacier Meadows",
+     "miles": 8.3,
+     "gainFt": 4500,
+     "note": "Climb through Elk Lake and the washed-out ladder section; this trip carries a full rock rack for the ridge in addition to glacier gear."
+    },
+    {
+     "n": 3,
+     "title": "West Ridge summit day, descend via standard route",
+     "objective": "Climb the ~7-pitch West Ridge, descend via Snow Dome/Crystal Pass",
+     "miles": 8,
+     "gainFt": 3900,
+     "note": "From Snow Dome, cross the Blue Glacier southwest, gaining roughly 500 ft and using Crystal Pass and Five Fingers as landmarks, to a moat at the ridge's low point (~7,260 ft). The ridge is climbed in roughly 7 pitches of variable-quality rock, never harder than 5.4 on route (the crest itself is loose 5.6-5.7), with high…"
+    },
+    {
+     "n": 4,
+     "title": "Hike out to trailhead",
+     "objective": "Return to the Hoh River trailhead",
+     "miles": 17.3,
+     "gainFt": 300,
+     "note": "Long hike-out day back to the car; some parties add a rest day given the technical summit day."
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Glacier Meadows — the standard Blue Glacier base camp",
+    "elev_ft": 4300,
+    "type": "camp",
+    "role": "main",
+    "notes": "The standard base camp, roughly seventeen miles from the Hoh trailhead and the last established camp before the Blue Glacier — the park does not permit camping between here and the ice. From the meadows you climb the moraine, drop onto the glacier and work up past the Snow Dome to the summit rock, generally quoted as f…"
+   },
+   {
+    "name": "Lewis Meadows Camp, Hoh River trail",
+    "elev_ft": 1000,
+    "type": "camp",
+    "role": "route",
+    "notes": "The last low-elevation river camp on the Hoh before the trail leaves the valley floor, roughly ten miles in from the Hoh Rain Forest visitor centre. Climbers use it mainly to break the walk in when they cannot get a permit for Elk Lake or Glacier Meadows, or when a late start makes the full seventeen miles unrealistic.…"
+   },
+   {
+    "name": "Elk Lake Camp, Hoh River trail",
+    "elev_ft": 2600,
+    "type": "camp",
+    "role": "route",
+    "notes": "Elk Lake sits about fifteen miles up the Hoh, where the trail finally starts climbing hard, and it is the fallback base for parties who miss out on Glacier Meadows. From here the summit day is long — you still have the switchbacks to Glacier Meadows, the lateral moraine and the whole Blue Glacier ahead before any climb…"
+   },
+   {
+    "name": "Snow Dome / Caltech Rocks high bivy, on the Blue Glacier",
+    "elev_ft": null,
+    "type": "bivy",
+    "role": "route",
+    "notes": "Strong parties skip the pre-dawn start from Glacier Meadows by carrying a light camp onto the ice, either into the rocks below the Snow Dome or onto the dome near the old weather station. It turns a brutal summit day into a short one and puts you above most of the morning cloud, at the cost of a much heavier pack up th…"
+   }
+  ],
+  "campsite_pins": [
+   {
+    "name": "Lewis Meadows Camp, Hoh River trail",
+    "elev": 1000,
+    "distMi": 9.8
+   },
+   {
+    "name": "Elk Lake Camp, Hoh River trail",
+    "elev": 2600,
+    "distMi": 13.7
+   },
+   {
+    "name": "Glacier Meadows — the standard Blue Glacier base camp",
+    "elev": 4300,
+    "distMi": 15.6
+   }
+  ]
+ },
+ {
+  "id": "wa_olympus_summit_block_north_face",
+  "name": "Summit Block — North Face Direct Finish (variation)",
+  "discipline": "alpine",
+  "peak": "Mount Olympus (West Peak)",
+  "area_id": "wa_mount_olympus",
+  "path": "usa.washington.wa_olympics.wa_olympic_np.wa_central_olympics.wa_mount_olympus",
+  "trip_plan": {
+   "totalNote": "Same 4-day Hoh River/Blue Glacier trip as the standard route; the only difference is choosing the steeper North Face Direct pitch to finish the summit block instead of the easy scramble.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Hoh River Trail to Olympus Guard Station",
+     "objective": "Reach Lewis Meadow / Olympus Guard Station camp",
+     "miles": 9,
+     "gainFt": 1600,
+     "note": "Flat old-growth valley approach along the Hoh River."
+    },
+    {
+     "n": 2,
+     "title": "Guard Station to Glacier Meadows high camp",
+     "objective": "Establish high camp at Glacier Meadows",
+     "miles": 8.3,
+     "gainFt": 4500,
+     "note": "Climb through Elk Lake and the washed-out ladder section to the moraine-edge camp; sort rock rack for the summit block pitch tonight."
+    },
+    {
+     "n": 3,
+     "title": "Summit day via Blue Glacier, Snow Dome and the North Face Direct finish",
+     "objective": "Summit via the 1-pitch North Face direct finish, return to camp",
+     "miles": 7,
+     "gainFt": 3800,
+     "note": "Standard glacier approach to the base of the summit block, then a single roped pitch straight up the north face instead of the easier scramble finish — carry a small rack (a few cams/nuts) for this pitch."
+    },
+    {
+     "n": 4,
+     "title": "Hike out to trailhead",
+     "objective": "Return to the Hoh River trailhead",
+     "miles": 17.3,
+     "gainFt": 300,
+     "note": "Long hike-out day back to the car."
+    }
+   ]
+  },
+  "camps_on_file": [],
+  "campsite_pins": []
+ },
+ {
+  "id": "wa_olympus_traverse",
+  "name": "Mount Olympus Traverse (West–Middle–East Peaks)",
+  "discipline": "alpine",
+  "peak": "Mount Olympus (West Peak)",
+  "area_id": "wa_mount_olympus",
+  "path": "usa.washington.wa_olympics.wa_olympic_np.wa_central_olympics.wa_mount_olympus",
+  "trip_plan": {
+   "totalNote": "A 5-day trip: 2 days up to Glacier Meadows, one very long day linking West, Middle and East peaks via Glacier Pass, a built-in buffer day, and a day to hike out — matching the advice to plan an extra day versus the standard single-summit climb.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Hoh River Trail to Olympus Guard Station",
+     "objective": "Reach Lewis Meadow / Olympus Guard Station camp",
+     "miles": 9,
+     "gainFt": 500,
+     "note": "Flat old-growth valley approach along the Hoh River."
+    },
+    {
+     "n": 2,
+     "title": "Guard Station to Glacier Meadows high camp",
+     "objective": "Establish high camp at Glacier Meadows",
+     "miles": 8.3,
+     "gainFt": 3400,
+     "note": "Climb through Elk Lake and the washed-out ladder section to camp; this is base for the multi-peak traverse."
+    },
+    {
+     "n": 3,
+     "title": "Traverse West, Middle and East Peaks",
+     "objective": "Link all three Olympus summits and descend to Glacier Pass",
+     "miles": 10,
+     "gainFt": 4300,
+     "note": "A long linkup day: climb the West Peak via the standard Blue Glacier/Snow Dome/Crystal Pass line, descend and re-ascend to Middle Peak, continue to East Peak, then descend to Glacier Meadows via Glacier Pass. Deep moats and icefall hazard near Glacier Pass are commonly reported."
+    },
+    {
+     "n": 4,
+     "title": "Weather/rest buffer day",
+     "objective": "Contingency day at Glacier Meadows",
+     "miles": 0,
+     "gainFt": 0,
+     "note": "Because the three-peak linkup is long and conditions-dependent (moats, icefall near Glacier Pass), most parties plan a spare day here — used for rest, bad weather, or to finish the traverse if Day 3 ran long."
+    },
+    {
+     "n": 5,
+     "title": "Hike out to trailhead",
+     "objective": "Return to the Hoh River trailhead",
+     "miles": 17.3,
+     "gainFt": 300,
+     "note": "Full hike back down the Hoh River Trail to the car."
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Glacier Meadows — the standard Blue Glacier base camp",
+    "elev_ft": 4300,
+    "type": "camp",
+    "role": "main",
+    "notes": "The standard base camp, roughly seventeen miles from the Hoh trailhead and the last established camp before the Blue Glacier — the park does not permit camping between here and the ice. From the meadows you climb the moraine, drop onto the glacier and work up past the Snow Dome to the summit rock, generally quoted as f…"
+   },
+   {
+    "name": "Snow Dome / Caltech Rocks high bivy, on the Blue Glacier",
+    "elev_ft": null,
+    "type": "bivy",
+    "role": "main",
+    "notes": "Strong parties skip the pre-dawn start from Glacier Meadows by carrying a light camp onto the ice, either into the rocks below the Snow Dome or onto the dome near the old weather station. It turns a brutal summit day into a short one and puts you above most of the morning cloud, at the cost of a much heavier pack up th…"
+   },
+   {
+    "name": "Lewis Meadows Camp, Hoh River trail",
+    "elev_ft": 1000,
+    "type": "camp",
+    "role": "route",
+    "notes": "The last low-elevation river camp on the Hoh before the trail leaves the valley floor, roughly ten miles in from the Hoh Rain Forest visitor centre. Climbers use it mainly to break the walk in when they cannot get a permit for Elk Lake or Glacier Meadows, or when a late start makes the full seventeen miles unrealistic.…"
+   },
+   {
+    "name": "Elk Lake Camp, Hoh River trail",
+    "elev_ft": 2600,
+    "type": "camp",
+    "role": "route",
+    "notes": "Elk Lake sits about fifteen miles up the Hoh, where the trail finally starts climbing hard, and it is the fallback base for parties who miss out on Glacier Meadows. From here the summit day is long — you still have the switchbacks to Glacier Meadows, the lateral moraine and the whole Blue Glacier ahead before any climb…"
+   }
+  ],
+  "campsite_pins": [
+   {
+    "name": "Lewis Meadows Camp, Hoh River trail",
+    "elev": 1000,
+    "distMi": 9.8
+   },
+   {
+    "name": "Elk Lake Camp, Hoh River trail",
+    "elev": 2600,
+    "distMi": 13.7
+   },
+   {
+    "name": "Glacier Meadows",
+    "elev": 4204,
+    "distMi": 17.4
+   }
+  ]
+ },
+ {
+  "id": "wa_mount_pulitzer_standard",
+  "name": "Standard Scramble",
+  "discipline": "scrambling",
+  "peak": "Mount Pulitzer",
+  "area_id": "wa_mount_pulitzer",
+  "path": "usa.washington.wa_olympics.wa_olympic_np.wa_central_olympics.wa_mount_pulitzer",
+  "trip_plan": {
+   "totalNote": "A 5-day, roughly 47-mile point-to-point traverse (Sol Duc to Whiskey Bend) with Mount Pulitzer climbed as an optional early-morning side summit on day 3 from a Ferry Basin or Queets Basin camp — not a car-to-car day climb given the remote approach.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Approach to Heart Lake",
+     "objective": "Reach Heart Lake camp below the Catwalk",
+     "miles": 7.5,
+     "gainFt": 3300,
+     "note": "A well-graded trail climb from the Sol Duc trailhead up the Sol Duc River and High Divide trails to Heart Lake, the last established camp before the Bailey Range cross-country section begins. Most parties treat this as an easy warm-up day."
+    },
+    {
+     "n": 2,
+     "title": "Cross the Catwalk to Ferry Basin",
+     "objective": "Reach Upper Ferry Basin camp",
+     "miles": 9,
+     "gainFt": 2600,
+     "note": "The signature exposed section: an undulating, off-trail traverse across the Catwalk between Cat Peak and Mt. Carrie, then a long sidehill below Mt. Carrie and Mt. Ruth, a steep drop to Cream Lake, and a climb back up into Upper Ferry Basin. Trip reports consistently flag this as the longest, most tiring day of the trip…"
+    },
+    {
+     "n": 3,
+     "title": "Mount Pulitzer and on to Queets Basin",
+     "objective": "Summit Mount Pulitzer, then reach Queets Basin camp",
+     "miles": 8,
+     "gainFt": 2500,
+     "note": "From Ferry Basin, most parties tag Mt. Ferry and/or Mt. Pulitzer as an early-morning side scramble before continuing the traverse south past Lone Tree Pass and over Bear Pass, dropping into Queets Basin to camp. This is widely described as the most scenic day of the traverse."
+    },
+    {
+     "n": 4,
+     "title": "Exit via the Elwha Snowfinger",
+     "objective": "Descend Bear Pass/Queets Basin drainage to the Elwha valley",
+     "miles": 11,
+     "gainFt": 800,
+     "note": "From Queets Basin the traditional exit climbs back toward Bear Pass then drops steeply via the Elwha Snowfinger permanent snowfield into the headwaters of the Elwha River, losing most of the day's elevation. Parties camp somewhere along the upper Elwha River Trail once back on maintained trail."
+    },
+    {
+     "n": 5,
+     "title": "Elwha River Trail out to Whiskey Bend",
+     "objective": "Hike out to the Whiskey Bend trailhead",
+     "miles": 18.5,
+     "gainFt": 200,
+     "note": "A long but gentle trail walk down the Elwha River Trail to the Whiskey Bend trailhead, ending the traverse. Some parties split this into two shorter days if legs are trashed from the cross-country sections. Then walk or bike the 6.5 closed miles of Olympic Hot Springs Road from Whiskey Bend down to the Madison Falls pa…"
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Ferry Basin",
+    "elev_ft": null,
+    "type": "camp",
+    "role": "main",
+    "notes": "Meadow basin with tarns below Mount Ferry on the Bailey Range traverse. The usual camp for Pulitzer and Ferry, reached by off-trail travel from High Divide."
+   }
+  ],
+  "campsite_pins": [
+   {
+    "name": "Heart Lake",
+    "elev": 4784,
+    "distMi": null
+   },
+   {
+    "name": "Ferry Basin",
+    "elev": 5565,
+    "distMi": 14.4
+   },
+   {
+    "name": "Upper Ferry Basin camp",
+    "elev": null,
+    "distMi": null
+   }
+  ]
+ },
+ {
+  "id": "wa_mount_queets_south",
+  "name": "North Ridge",
+  "discipline": "scrambling",
+  "peak": "Mount Queets",
+  "area_id": "wa_mount_queets",
+  "path": "usa.washington.wa_olympics.wa_olympic_np.wa_central_olympics.wa_mount_queets",
+  "trip_plan": {
+   "totalNote": "A serious 5-day, ~70-mile round-trip wilderness expedition to one of the most remote summits in Washington: two long days of trail approach up the Elwha River to a high camp in upper Elwha Basin, a long cross-country summit push to Dodwell-Rixon Pass and up the ridge from the pass, then two days back out.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Approach up the Elwha River Trail",
+     "objective": "Reach a mid-trail camp (Elkhorn/Stony Point area)",
+     "miles": 18.5,
+     "gainFt": 1500,
+     "note": "Walk or bike the closed 6.5 miles of Olympic Hot Springs Road from the Madison Falls lot to the Whiskey Bend trailhead first. Start at Whiskey Bend trailhead (or Madison Falls if the road is still washed out) and follow the Elwha River Trail south through old-growth forest and historic homestead sites. This is a long b…"
+    },
+    {
+     "n": 2,
+     "title": "Push to a high camp in upper Elwha Basin",
+     "objective": "Establish high camp near Elwha Basin / Dodwell-Rixon Pass approach",
+     "miles": 14,
+     "gainFt": 1800,
+     "note": "Continue up the Elwha River Trail past Elkhorn, Hayes River, and Camp Wilder to Chicago Camp, then leave the maintained trail and work up into upper Elwha Basin (the brushy, route-finding terrain locals call \"the maze\"). Camp gives a shorter summit push the next day."
+    },
+    {
+     "n": 3,
+     "title": "Summit push via Dodwell-Rixon Pass",
+     "objective": "Climb the north ridge to the 6,476 ft summit and return to high camp",
+     "miles": 10,
+     "gainFt": 3200,
+     "note": "Drop the overnight gear at camp and go light. Climb cross-country up to Dodwell-Rixon Pass, then follow the ridge from the pass to the summit, bypassing a cliff band on a scree traverse, before reversing the entire route back to camp. Mostly Class 2 walking/scrambling with route-finding through brush and moraine."
+    },
+    {
+     "n": 4,
+     "title": "Hike back down the Elwha",
+     "objective": "Retrace the approach toward the trailhead",
+     "miles": 14,
+     "gainFt": 200,
+     "note": "Break camp and descend out of Elwha Basin back to the maintained Elwha River Trail, retracing the route past Camp Wilder and Hayes River toward the Elkhorn area."
+    },
+    {
+     "n": 5,
+     "title": "Exit to the trailhead",
+     "objective": "Return to Whiskey Bend",
+     "miles": 18.5,
+     "gainFt": 300,
+     "note": "Finish the descent of the Elwha River Trail back to the trailhead (plus the extra road walk/bike-out if Whiskey Bend Road is still closed to vehicles)."
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Elwha Basin, Queets Basin and the upper cross-country bivy zones",
+    "elev_ft": null,
+    "type": "bivy",
+    "role": "main",
+    "notes": "This is the working base for the Elwha Basin peaks and the only sensible way to reach the Bailey Range from the south. From Chicago Camp the route into Elwha Basin is a notorious bushwhack in low snow years, then the Elwha Snowfinger leads to Dodwell-Rixon Pass at 4,763 ft and over into Queets Basin. From a basin camp,…"
+   },
+   {
+    "name": "Lillian River and Mary's Falls — the first night out of Whiskey Bend",
+    "elev_ft": null,
+    "type": "camp",
+    "role": "route",
+    "notes": "The whole Elwha approach now begins with a road walk, and it is the single biggest change to planning in this valley. Vehicles stop at the Madison Falls parking area; the Olympic Hot Springs Road and then the Whiskey Bend Road are closed by a washout that has stood for years with no repair date, which puts the old Whis…"
+   },
+   {
+    "name": "Hayes River and Elkhorn — the mid-valley camps, and the base for Mount Norton",
+    "elev_ft": null,
+    "type": "camp",
+    "role": "route",
+    "notes": "Elkhorn sits about eleven miles up the Elwha from Whiskey Bend and Hayes River about sixteen, both on level ground and both far more pleasant than Canyon Camp between them, which has been badly hit by treefall and is worth walking past. Hayes River is the camp for Mount Norton: the peak's east side rises roughly 3,200 …"
+   },
+   {
+    "name": "Chicago Camp — the last established camp in the upper Elwha",
+    "elev_ft": null,
+    "type": "camp",
+    "role": "route",
+    "notes": "Chicago Camp is where the trail effectively ends and the cross-country begins, roughly twenty-five miles from Whiskey Bend at the confluence of the Elwha and Delabarre Creek. It is the standard last-trail-camp for Mount Barnes, Mount Meany, Mount Noyes, Mount Queets and Mount Wilder, all of which are reached by pushing…"
+   }
+  ],
+  "campsite_pins": [
+   {
+    "name": "Chicago Camp — the last established camp in the upper Elwha",
+    "elev": 2195,
+    "distMi": null
+   },
+   {
+    "name": "Elwha Basin",
+    "elev": 3400,
+    "distMi": 31
+   }
+  ]
+ },
+ {
+  "id": "wa_mount_seattle_south",
+  "name": "South Slopes (Standard)",
+  "discipline": "scrambling",
+  "peak": "Mount Seattle",
+  "area_id": "wa_mount_seattle",
+  "path": "usa.washington.wa_olympics.wa_olympic_np.wa_central_olympics.wa_mount_seattle",
+  "trip_plan": {
+   "totalNote": "A multi-day wilderness backpack (about 5 days / 4 nights) up the North Fork Quinault River, 16 trail miles to Low Divide, then on to a high camp at Seattle Meadows, with a half-day scramble to the 6,246 ft summit and the same trail back out.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Up the North Fork Quinault River Trail",
+     "objective": "Reach a river camp such as Elip Creek",
+     "miles": 6.5,
+     "gainFt": 700,
+     "note": "From the North Fork Quinault trailhead at road's end, the trail follows the valley floor through old-growth forest past Wolf Bar and Halfway House. Wild Rose Creek and Elip Creek are fords that can run fast in heavy rain or peak snowmelt. Full packs, modest grade — this is mileage-banking, not climbing."
+    },
+    {
+     "n": 2,
+     "title": "Over the Sixteen Mile ford to Low Divide and high camp",
+     "objective": "Reach a high camp at Seattle Meadows",
+     "miles": 10.2,
+     "gainFt": 3600,
+     "note": "Ford the North Fork at Sixteen Mile (normally knee- to thigh-deep and swift, and hazardous or impassable in heavy rain or snowmelt), then make the steep, loose climb to Low Divide (3,602 ft), the pass between the Quinault and Elwha drainages. Continue into Seattle Creek Basin and up to a meadow camp near 4,550 ft at Se…"
+    },
+    {
+     "n": 3,
+     "title": "Summit day",
+     "objective": "Climb Mount Seattle via the south-side talus/scree slopes",
+     "miles": 4,
+     "gainFt": 1700,
+     "note": "Leave the tent at camp and go light. Climb scree on the peak's western side, cross over the ridge and ascend talus on the eastern side to the east ridge, then Class 2-3 scrambling to the 6,246 ft summit; reverse the same line back to camp."
+    },
+    {
+     "n": 4,
+     "title": "Back down to the North Fork",
+     "objective": "Return to a river camp below Low Divide",
+     "miles": 10.2,
+     "gainFt": 200,
+     "note": "Drop back to Low Divide, descend the steep trail to the Sixteen Mile ford and continue down the North Fork valley as far as is reasonable with a full pack after a summit day."
+    },
+    {
+     "n": 5,
+     "title": "Hike out to the trailhead",
+     "objective": "Return to the North Fork Quinault trailhead",
+     "miles": 6.5,
+     "gainFt": 150,
+     "note": "Finish down the North Fork Quinault valley to the cars, re-crossing the Elip Creek and Wild Rose Creek fords. A long but easy-grade final day."
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Low Divide — the pass camp for Mount Seattle and Mount Christie",
+    "elev_ft": 3600,
+    "type": "camp",
+    "role": "main",
+    "notes": "Low Divide is the saddle between Mount Seattle and Mount Christie and the obvious base for both, and by all accounts it is the most comfortable camp in the interior — flat, watered, with a toilet and a bear hang. Mount Seattle has three established scramble lines from here, by Noyes Basin, by Seattle Creek Basin and by…"
+   },
+   {
+    "name": "Seattle Meadows",
+    "elev_ft": null,
+    "type": "camp",
+    "role": "main",
+    "notes": ""
+   },
+   {
+    "name": "Lillian River and Mary's Falls — the first night out of Whiskey Bend",
+    "elev_ft": null,
+    "type": "camp",
+    "role": "route",
+    "notes": "The whole Elwha approach now begins with a road walk, and it is the single biggest change to planning in this valley. Vehicles stop at the Madison Falls parking area; the Olympic Hot Springs Road and then the Whiskey Bend Road are closed by a washout that has stood for years with no repair date, which puts the old Whis…"
+   },
+   {
+    "name": "Hayes River and Elkhorn — the mid-valley camps, and the base for Mount Norton",
+    "elev_ft": null,
+    "type": "camp",
+    "role": "route",
+    "notes": "Elkhorn sits about eleven miles up the Elwha from Whiskey Bend and Hayes River about sixteen, both on level ground and both far more pleasant than Canyon Camp between them, which has been badly hit by treefall and is worth walking past. Hayes River is the camp for Mount Norton: the peak's east side rises roughly 3,200 …"
+   },
+   {
+    "name": "Chicago Camp — the last established camp in the upper Elwha",
+    "elev_ft": null,
+    "type": "camp",
+    "role": "route",
+    "notes": "Chicago Camp is where the trail effectively ends and the cross-country begins, roughly twenty-five miles from Whiskey Bend at the confluence of the Elwha and Delabarre Creek. It is the standard last-trail-camp for Mount Barnes, Mount Meany, Mount Noyes, Mount Queets and Mount Wilder, all of which are reached by pushing…"
+   }
+  ],
+  "campsite_pins": [
+   {
+    "name": "Chicago Camp — the last established camp in the upper Elwha",
+    "elev": 2195,
+    "distMi": null
+   },
+   {
+    "name": "Seattle Meadows",
+    "elev": 4550,
+    "distMi": null
+   }
+  ]
+ },
+ {
+  "id": "wa_mount_tom_scramble",
+  "name": "Glacier/Scramble Route",
+  "discipline": "mountaineering",
+  "peak": "Mount Tom",
+  "area_id": "wa_mount_tom",
+  "path": "usa.washington.wa_olympics.wa_olympic_np.wa_central_olympics.wa_mount_tom",
+  "trip_plan": {
+   "totalNote": "A remote 5-day glacier expedition, not a single-day scramble: roughly 42-43 miles round trip via the Hoh River Trail, with one long summit day crossing the Blue Glacier and traversing the Olympus massif to Mount Tom. The steep, loose descent to the White Glacier below the summit is the technical crux and a common turnaround point.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Hoh River Trail to Lewis Meadow / Olympus Guard Station",
+     "objective": "Establish first camp along the Hoh River",
+     "miles": 9.3,
+     "gainFt": 400,
+     "note": "Long, gentle rainforest walk following the Hoh River upstream. Grade is easy but the miles add up; most parties treat this as a warm-up day and camp around the Olympus Guard Station / Lewis Meadow area."
+    },
+    {
+     "n": 2,
+     "title": "Up to Glacier Meadows high camp",
+     "objective": "Reach Glacier Meadows (4,200 ft) below the Blue Glacier",
+     "miles": 8.2,
+     "gainFt": 3400,
+     "note": "Trail steepens and switchbacks up the canyon wall above the Hoh, including the exposed ladder/rope section near the old Jemrod Gully slide about a quarter mile below camp. Camp at Glacier Meadows, practice glacier-travel and rope skills, and sign the climbers' register at the ranger yurt."
+    },
+    {
+     "n": 3,
+     "title": "Summit push: Blue Glacier - Snow Dome - Mount Tom",
+     "objective": "Climb Mount Tom via the Blue Glacier and Snow Dome traverse",
+     "miles": 7,
+     "gainFt": 3300,
+     "note": "The crux day. Rope up and cross the Blue Glacier at first light, climb to Snow Dome, then make a horizontal, mostly-easy traverse across the snowy Olympus massif toward Mount Tom before dropping to the White Glacier side. The descent off the massif to the White Glacier is steep, loose, and the route's real difficulty; …"
+    },
+    {
+     "n": 4,
+     "title": "Descend to lower camp",
+     "objective": "Retreat from Glacier Meadows toward the trailhead",
+     "miles": 8.2,
+     "gainFt": 0,
+     "note": "Pack up camp and head back down the canyon and along the Hoh River to a lower camp (Lewis Meadow / Olympus Guard Station area), reversing Day 2 and most of Day 1's terrain."
+    },
+    {
+     "n": 5,
+     "title": "Hike out",
+     "objective": "Return to the Hoh River trailhead",
+     "miles": 9.3,
+     "gainFt": 0,
+     "note": "Final flat rainforest miles back to the Hoh Rain Forest Visitor Center and the cars."
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Glacier Meadows — the standard Blue Glacier base camp",
+    "elev_ft": 4300,
+    "type": "camp",
+    "role": "main",
+    "notes": "The standard base camp, roughly seventeen miles from the Hoh trailhead and the last established camp before the Blue Glacier — the park does not permit camping between here and the ice. From the meadows you climb the moraine, drop onto the glacier and work up past the Snow Dome to the summit rock, generally quoted as f…"
+   },
+   {
+    "name": "Lewis Meadows Camp, Hoh River trail",
+    "elev_ft": 1000,
+    "type": "camp",
+    "role": "route",
+    "notes": "The last low-elevation river camp on the Hoh before the trail leaves the valley floor, roughly ten miles in from the Hoh Rain Forest visitor centre. Climbers use it mainly to break the walk in when they cannot get a permit for Elk Lake or Glacier Meadows, or when a late start makes the full seventeen miles unrealistic.…"
+   },
+   {
+    "name": "Elk Lake Camp, Hoh River trail",
+    "elev_ft": 2600,
+    "type": "camp",
+    "role": "route",
+    "notes": "Elk Lake sits about fifteen miles up the Hoh, where the trail finally starts climbing hard, and it is the fallback base for parties who miss out on Glacier Meadows. From here the summit day is long — you still have the switchbacks to Glacier Meadows, the lateral moraine and the whole Blue Glacier ahead before any climb…"
+   }
+  ],
+  "campsite_pins": [
+   {
+    "name": "Elk Lake camp",
+    "elev": 2600,
+    "distMi": 15.3
+   },
+   {
+    "name": "Glacier Meadows high camp",
+    "elev": 4300,
+    "distMi": 17.6
+   }
+  ]
+ },
+ {
+  "id": "wa_mount_wilder_scramble",
+  "name": "Mount Wilder Scramble",
+  "discipline": "mountaineering",
+  "peak": "Mount Wilder",
+  "area_id": "wa_mount_wilder",
+  "path": "usa.washington.wa_olympics.wa_olympic_np.wa_central_olympics.wa_mount_wilder",
+  "trip_plan": {
+   "totalNote": "A genuine wilderness backpack, not a day trip: roughly 40 trail miles round trip up the Elwha valley to Camp Wilder plus a steep, off-trail summit scramble, typically done in 5 days by parties visiting this remote, rarely-climbed interior Olympics summit — usually as a side trip from Bailey Range/Elwha travel rather than for peak-list credit; Mount Wilder is not on Washington's Bulger List (100 highest peaks), whose lowest-ranked entries sit above 8,300 ft, far above Wilder's 5,939 ft.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Up the lower Elwha valley",
+     "objective": "Reach Mary's Falls Camp",
+     "miles": 15.5,
+     "gainFt": 800,
+     "note": "Walk or bike the closed 6.5 miles of Olympic Hot Springs Road from the Madison Falls lot to the Whiskey Bend trailhead first. Easy, well-graded river-valley trail from the Whiskey Bend trailhead through old-growth forest and the Geyser Valley area. Gentle warm-up day with a full multi-day pack."
+    },
+    {
+     "n": 2,
+     "title": "Long push to Camp Wilder",
+     "objective": "Reach Camp Wilder, base camp for the peak",
+     "miles": 11,
+     "gainFt": 1400,
+     "note": "The biggest mileage day of the trip, continuing up the Elwha River Trail past Elkhorn and Hayes River toward the head of the valley. Camp Wilder sits near the base of Mount Wilder's steep south/east flank, just below Chicago Camp and Low Divide."
+    },
+    {
+     "n": 3,
+     "title": "Summit day: Mount Wilder",
+     "objective": "Climb Mount Wilder and return to Camp Wilder",
+     "miles": 4.5,
+     "gainFt": 3300,
+     "note": "Leave camp with a light day pack and climb cross-country up steep heather, scree and brushy rock bands on Wilder's south/east aspect — no maintained trail, expect route-finding and Olympic-style bushwhacking low down giving way to open class 2-3 slopes near the ridge and summit."
+    },
+    {
+     "n": 4,
+     "title": "Retreat down the valley",
+     "objective": "Return to Mary's Falls Camp",
+     "miles": 11,
+     "gainFt": 200,
+     "note": "Reverse Day 2's route back down the Elwha River Trail. Mostly downhill/flat but long, with tired legs from the summit push the day before."
+    },
+    {
+     "n": 5,
+     "title": "Out to the trailhead",
+     "objective": "Hike out to Whiskey Bend",
+     "miles": 15.5,
+     "gainFt": 200,
+     "note": "Easy final morning back down the lower valley trail to the car (or the current end-of-road walk if the Elwha Road closure is still in effect)."
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Chicago Camp — the last established camp in the upper Elwha",
+    "elev_ft": null,
+    "type": "camp",
+    "role": "main",
+    "notes": "Chicago Camp is where the trail effectively ends and the cross-country begins, roughly twenty-five miles from Whiskey Bend at the confluence of the Elwha and Delabarre Creek. It is the standard last-trail-camp for Mount Barnes, Mount Meany, Mount Noyes, Mount Queets and Mount Wilder, all of which are reached by pushing…"
+   },
+   {
+    "name": "Lillian River and Mary's Falls — the first night out of Whiskey Bend",
+    "elev_ft": null,
+    "type": "camp",
+    "role": "route",
+    "notes": "The whole Elwha approach now begins with a road walk, and it is the single biggest change to planning in this valley. Vehicles stop at the Madison Falls parking area; the Olympic Hot Springs Road and then the Whiskey Bend Road are closed by a washout that has stood for years with no repair date, which puts the old Whis…"
+   },
+   {
+    "name": "Hayes River and Elkhorn — the mid-valley camps, and the base for Mount Norton",
+    "elev_ft": null,
+    "type": "camp",
+    "role": "route",
+    "notes": "Elkhorn sits about eleven miles up the Elwha from Whiskey Bend and Hayes River about sixteen, both on level ground and both far more pleasant than Canyon Camp between them, which has been badly hit by treefall and is worth walking past. Hayes River is the camp for Mount Norton: the peak's east side rises roughly 3,200 …"
+   }
+  ],
+  "campsite_pins": [
+   {
+    "name": "Mary's Falls Camp",
+    "elev": 1296,
+    "distMi": 8.8
+   },
+   {
+    "name": "Hayes River Guard Station",
+    "elev": 2000,
+    "distMi": 16.1
+   },
+   {
+    "name": "Chicago Camp — the last established camp in the upper Elwha",
+    "elev": 2195,
+    "distMi": null
+   },
+   {
+    "name": "Camp Wilder",
+    "elev": 2300,
+    "distMi": 19.8
+   }
+  ]
+ }
+]

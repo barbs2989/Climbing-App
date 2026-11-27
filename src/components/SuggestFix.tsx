@@ -52,9 +52,9 @@ interface SFStoredWp { type?: string | null; name?: string | null; lat?: SFNum |
 /** A waypoint row as the editor holds it (coordinates and figures are the text boxes' strings). */
 interface SFWpRow { type: string; name: string; lat: string; lng: string; elev: string; distMi: string; note: string; directions?: string; _o?: { elev: SFNum | null; distMi: SFNum | null; elevTxt: string; distTxt: string } }
 /** A stored camp or bivy. */
-interface SFStoredBivy { name?: string | null; type?: string | null; role?: string | null; elev?: SFNum | null; elevM?: number | null; capacity?: string | null; water?: string | null; permit?: string | null; notes?: string | null }
-/** A camp row as the editor holds it. */
-interface SFBivyRow { name: string; type: string; role: string; elev: string; capacity: string; water: string; permit: string; notes: string }
+interface SFStoredBivy { name?: string | null; type?: string | null; role?: string | null; elev?: SFNum | null; elevM?: number | null; capacity?: string | null; water?: string | null; permit?: string | null; notes?: string | null; nights?: number[] | null; why?: string | null }
+/** A camp row as the editor holds it (`nights` is the box's text, e.g. "1, 2"; 0 = the night before day 1). */
+interface SFBivyRow { name: string; type: string; role: string; elev: string; capacity: string; water: string; permit: string; notes: string; nights: string; why: string }
 /** A stored CLIMBING ROUTE section. */
 interface SFStoredSec { n?: number | null; label?: string | null; class?: string | null; notes?: string | null }
 /** A section row as the editor holds it. */
@@ -441,12 +441,12 @@ export default function SuggestFix({route,onClose,onSubmit,onLog,scrollTo,pendin
       /* The track's first point IS where it starts: fill the trailhead pin from it only when the climber left it blank. */
       if(!o.thLat&&!o.thLng){o.thLat=String(+keep[0][0].toFixed(5));o.thLng=String(+keep[0][1].toFixed(5));}return o;});});};
     rd.readAsText(file);};
-  const blankBivy=function(): SFBivyRow{return {name:"",type:"camp",role:"",elev:"",capacity:"",water:"",permit:"",notes:""};};
+  const blankBivy=function(): SFBivyRow{return {name:"",type:"camp",role:"",elev:"",capacity:"",water:"",permit:"",notes:"",nights:"",why:""};};
   /* The box is typed in the READER's units (its caption says ft or m) and structuredVal converts it back to feet, so a stored height is shown in those units too. It was prefilled in FEET for everyone: a metric climber who touched any camp saved every site's height 3.28x too high. */
   const _bivyElevBox=function(b: SFStoredBivy){const ft=b.elev!=null&&b.elev!==""?parseFloat(b.elev as string):(b.elevM!=null?b.elevM*3.28084:NaN);return isNaN(ft)?"":String(Math.round(uImp()?ft:ft/3.28084));};
   const _bivyShown=(Array.isArray(route.bivy)?route.bivy:[]).filter(function(b){return !(b&&b.role==="hidden");});
   const routeBivy=_bivyShown.length
-    ? _bivyShown.map(function(b){return {name:b.name||"",type:b.type||"camp",role:b.role||"",elev:_bivyElevBox(b),capacity:b.capacity||"",water:b.water||"",permit:b.permit||"",notes:b.notes||""};})
+    ? _bivyShown.map(function(b){return {name:b.name||"",type:b.type||"camp",role:b.role||"",elev:_bivyElevBox(b),capacity:b.capacity||"",water:b.water||"",permit:b.permit||"",notes:b.notes||"",nights:Array.isArray(b.nights)?(b.nights.length?b.nights.join(", "):"none"):"",why:b.why||""};})
     :[blankBivy()];
   const bivies=vals.bivy||routeBivy;
   const setBivies=function(fn: (p: SFBivyRow[])=>SFBivyRow[]){setVals(function(v){return Object.assign({},v,{bivy:fn(v.bivy||routeBivy)});});};
@@ -714,6 +714,8 @@ export default function SuggestFix({route,onClose,onSubmit,onLog,scrollTo,pendin
       <label style={{display:"block",marginBottom:7}}>{bivyCap("Used for")}<select aria-label={"Site "+(idx+1)+" role"} value={b.role||""} onChange={function(e){setBivy(idx,"role",e.target.value);}} style={Object.assign({},fld,{width:"100%",marginBottom:0})}>
           <option value="">{"Not sure"}</option><option value="main">{"Where most parties sleep"}</option><option value="route">{"Other option (slow day, weather, emergency)"}</option>
         </select></label>
+      <label style={{display:"block"}}>{bivyCap("Nights of the trip plan slept here")}<input aria-label={"Site "+(idx+1)+" nights"} inputMode="numeric" value={b.nights} onChange={function(e){setBivy(idx,"nights",e.target.value);}} placeholder="e.g. 1, 2 (0 = the night before day 1; none = not on a normal trip)" style={fld}/></label>
+      <label style={{display:"block"}}>{bivyCap("Why camp here")}<input aria-label={"Site "+(idx+1)+" why"} value={b.why} onChange={function(e){setBivy(idx,"why",e.target.value);}} placeholder="What it gives you over the other camps" style={fld}/></label>
       <label style={{display:"block"}}>{bivyCap("Water")}<input aria-label={"Site "+(idx+1)+" water"} value={b.water} onChange={function(e){setBivy(idx,"water",e.target.value);}} placeholder="Is there any, and is it reliable?" style={fld}/></label>
       <label style={{display:"block"}}>{bivyCap("Capacity")}<input aria-label={"Site "+(idx+1)+" capacity"} value={b.capacity} onChange={function(e){setBivy(idx,"capacity",e.target.value);}} placeholder="e.g. 3 tents on gravel" style={fld}/></label>
       <label style={{display:"block"}}>{bivyCap("Permit")}<input aria-label={"Site "+(idx+1)+" permit"} value={b.permit} onChange={function(e){setBivy(idx,"permit",e.target.value);}} placeholder="Which agency, and is it a quota?" style={fld}/></label>
@@ -791,7 +793,9 @@ export default function SuggestFix({route,onClose,onSubmit,onLog,scrollTo,pendin
      Only `elevM` is never written here — the read side converts the legacy spelling, and the
      write side should not add to it. */
   const _e=String(b.elev||"").trim();const _n=_e?parseInt(_e,10):null;
-  return {name:String(b.name).trim(),type:b.type||"camp",role:(b.role==="main"||b.role==="route")?b.role:"",elev:(_n!=null&&!isNaN(_n))?(uImp()?_n:Math.round(_n*3.28084)):null,capacity:(b.capacity||"").trim(),water:(b.water||"").trim(),permit:(b.permit||"").trim(),notes:(b.notes||"").trim()};
+  return {name:String(b.name).trim(),type:b.type||"camp",role:(b.role==="main"||b.role==="route")?b.role:"",elev:(_n!=null&&!isNaN(_n))?(uImp()?_n:Math.round(_n*3.28084)):null,capacity:(b.capacity||"").trim(),water:(b.water||"").trim(),permit:(b.permit||"").trim(),notes:(b.notes||"").trim(),why:(b.why||"").trim(),
+    /* Blank nights box -> no `nights` key, so the site falls back to the trip plan's wording rather than claiming "no nights". */
+    ...(String(b.nights||"").trim()?{nights:[...new Set(String(b.nights).split(/[^0-9]+/).filter(Boolean).map(Number).filter(function(n){return n>=0&&n<=30;}))].sort(function(x,y){return x-y;})}:{})};
 /* The form never shows the role:"hidden" stubs (they name Campsite PINS the camping list skips), so
    they are carried through untouched — otherwise one climber's edit would bring every hidden pin back. */
 }).concat((Array.isArray(route.bivy)?route.bivy:[]).filter(function(b){return b&&b.role==="hidden"&&b.name;}).map(function(b){return {name:b.name,role:"hidden"};}) as never[]);if(OBJ_KEYS[f.type]){const _ks=OBJ_KEYS[f.type],_src=vals[f.k]||{};let _o: SFObj={};_ks.forEach(function(k){let v=_dget(_src,k[0]) as string | null | undefined;if(v==null)return;if(k[3]==="months"){const _cm=cleanMonths(v);if(_cm)_o=_dset(_o,k[0],_cm);return;}v=String(v).trim();if(!v)return;

@@ -1,0 +1,417 @@
+[
+ {
+  "id": "wa_mount_berge_east_ridge",
+  "camps": [],
+  "new_camps": [
+   {
+    "name": "Buck-Berge basin bench camp",
+    "elev_ft": 5800,
+    "type": "camp",
+    "role": "main",
+    "nights": [1, 2],
+    "why": "A bench above Buck Creek at the foot of the east ridge: flat ground a short scramble from the start of the climb, so summit day begins fresh and you sleep here both nights.",
+    "water": "Creek and snowmelt in the basin; confirm late in the season.",
+    "capacity": "A few tents on the bench.",
+    "permit": "Glacier Peak Wilderness: free self-issue permit at the trailhead; Northwest Forest Pass for parking.",
+    "notes": "Reached by leaving the Buck Creek Trail near the big clearing about 4-6 miles in and bushwhacking up toward the Cleator-Berge area. Most parties base here for the climb and walk out on day 3."
+   }
+  ],
+  "confidence": "medium",
+  "plan_conflict": null,
+  "sources": ["https://climberkyle.com/2019/08/25/mt-berge-e-ridge-5-8/", "https://summitpost.org/failed-attempt-from-trinity/650313", "https://turns-all-year.com/trip-reports/june-18-2012-mount-berge"]
+ },
+ {
+  "id": "wa_mount_berge_southwest_route",
+  "camps": [
+   {
+    "name": "Buck Creek Pass and the High Pass camps",
+    "nights": [],
+    "role": "route",
+    "why": "Belongs to the Buck Creek side of the peak, not the Napeequa approach this plan uses; only a party switching to the east-side approach would sleep here."
+   }
+  ],
+  "new_camps": [
+   {
+    "name": "Treeline camp on Berge's southwest side",
+    "elev_ft": null,
+    "type": "camp",
+    "role": "main",
+    "nights": [1, 2],
+    "why": "The plan's one camp: flat ground at treeline above the Napeequa that shortens the summit day to a loose scramble, then you drop back and sleep before hiking out.",
+    "water": "Creek draining Berge's southwest side.",
+    "capacity": "A few tents on flat spots.",
+    "permit": "Glacier Peak Wilderness: free self-issue permit at the trailhead; Northwest Forest Pass for parking.",
+    "notes": "Reached after Little Giant Pass and the Napeequa Valley by a steep intermittent boot track beside the creek. Parties on other Berge routes have camped in larch-dotted bowls around 6,600 ft."
+   }
+  ],
+  "confidence": "low",
+  "plan_conflict": "The camp on file (Buck Creek Pass and the High Pass camps) serves the Buck Creek approach; this plan's route sleeps at a treeline camp on the southwest side, so it is not slept at here.",
+  "sources": ["https://summitpost.org/mount-berge/664777", "https://adminonly.wta.org/go-hiking/trip-reports/trip_report-2025-08-22.235215321644", "https://countryhighpoints.com/buck-mountain-mt-berge-and-berge-north"]
+ },
+ {
+  "id": "wa_north_face_of_the_mole",
+  "camps": [],
+  "new_camps": [
+   {
+    "name": "Upper Hook Creek basin camp below The Mole",
+    "elev_ft": null,
+    "type": "camp",
+    "role": "main",
+    "nights": [1, 2],
+    "why": "Roughly 40 minutes from the base of the north face, so summit day is short and you sleep here again before the walk down.",
+    "water": "Hook Creek and snowmelt in the upper basin.",
+    "capacity": "A handful of tent sites in the basin and on Edward Mesa.",
+    "permit": "Alpine Lakes Wilderness: free self-issue permit at the trailhead.",
+    "notes": "The approach is a brutal, trailless slog of 5,000+ ft through alder and blowdown, so parties carry in and stay put. Ticks have been reported at the sites in early summer."
+   }
+  ],
+  "confidence": "low",
+  "plan_conflict": null,
+  "sources": ["https://cascadeclimbers.com/forum/topic/74289-tr-the-mole-north-face-652010", "https://www.mountainproject.com/route/107618236/north-face-of-the-mole", "https://natureofmotion.blogspot.com/2012/08/the-mole-and-shrew.html"]
+ },
+ {
+  "id": "wa_rock_mountain_northeast_ridge",
+  "camps": [
+   {
+    "name": "Crescent Lake",
+    "nights": [1],
+    "role": "main",
+    "why": "The natural halfway camp once Mastiff and Howard are behind you: lake water, and it leaves a short morning to the Howard-Rock col and the Rock Mountain summit."
+   },
+   {
+    "name": "Merritt Lake",
+    "nights": [],
+    "role": "route",
+    "why": "The easy eastern camp with a big site and privy; sleep here only if you start late, then carry over Mastiff and Howard the next morning. Water is scarce east of it."
+   },
+   {
+    "name": "Mount Howard summit-area bivouac",
+    "nights": [],
+    "role": "route",
+    "why": "A dry crest bivy for sunset and dawn views; you haul water and gear 2,000 ft above Crescent Lake, so it is a choice rather than a plan."
+   },
+   {
+    "name": "Rock Lake",
+    "nights": [],
+    "role": "route",
+    "why": "Pleasant sites 1.3 miles west of Crescent Lake and close under Rock Mountain; used from the US-2 side or by parties who push past Crescent on day 1."
+   }
+  ],
+  "new_camps": [],
+  "confidence": "low",
+  "plan_conflict": "The plan puts night 1 in the Upper Canaan Lake basin (about 6,050 ft); no camp by that name is on file and parties are described camping at Crescent Lake, so the plan's camp could not be confirmed.",
+  "sources": ["https://www.wta.org/go-hiking/hikes/nason-ridge", "https://adminonly.wta.org/go-hiking/trip-reports/trip_report-2025-09-14.085447376729", "https://wenatcheeoutdoors.org/?p=4114"]
+ },
+ {
+  "id": "wa_abernathy_peak_north_ridge",
+  "camps": [
+   {
+    "name": "Gardner Meadows",
+    "nights": [1],
+    "role": "main",
+    "why": "End of the Wolf Creek trail among pines with creek water; it puts the tarn and spur ridge to Abernathy's north ridge a half-day from camp."
+   }
+  ],
+  "new_camps": [],
+  "confidence": "medium",
+  "plan_conflict": null,
+  "sources": ["https://www.summitpost.org/abernathy-peak/152230", "https://www.countryhighpoints.com/abernathy-and-the-gardners/", "https://turns-all-year.com/trip-reports/abernathy-peak-ne-face-6-30-7-01"]
+ },
+ {
+  "id": "wa_cardinal_peak_se_slopes",
+  "camps": [
+   {
+    "name": "West-side basin camp below Cardinal Peak",
+    "nights": [1, 2],
+    "role": "main",
+    "why": "A meadow near 6,800 ft under the peak: the closest flat camp to the snow approach, so summit day is short and you sleep here both nights."
+   },
+   {
+    "name": "The basin between Emerald and Saska, and Milham Pass",
+    "nights": [],
+    "role": "route",
+    "why": "A mile and a half past the usual camp, better placed if you are adding Emerald, Saska or the crest traverse; otherwise it is extra carrying."
+   },
+   {
+    "name": "Cottonwood Camp and the Entiat River road campgrounds",
+    "nights": [0],
+    "role": "route",
+    "why": "Drive-up campgrounds on the long Entiat road; sleep here the night before to start the 9-mile walk in early after the long drive."
+   },
+   {
+    "name": "Fox Camp, North Fork Entiat trail",
+    "nights": [],
+    "role": "route",
+    "why": "Eight miles in with water by the trail; a gentler day 1 if you are slow, leaving the climb to the following morning."
+   }
+  ],
+  "new_camps": [],
+  "confidence": "medium",
+  "plan_conflict": "The Emerald-Saska basin camp is filed as main on the route page, but the plan sleeps in the basin beneath Cardinal (about 6,800-7,000 ft), so it is demoted to an alternative.",
+  "sources": ["https://climberkyle.com/2017/05/27/saska-emerald-and-cardinal-peaks/", "https://summitpost.org/standard-west-route/159926", "https://adminonly.wta.org/go-hiking/trip-reports/trip_report.2023-08-27.7645404826"]
+ },
+ {
+  "id": "wa_courtney_peak_scramble",
+  "camps": [
+   {
+    "name": "Star Lake",
+    "nights": [1],
+    "role": "main",
+    "why": "Larch basin half a mile past Fish Creek Pass with reliable outlet water; the near-universal camp, and it leaves a short, easy walk out the next day."
+   }
+  ],
+  "new_camps": [],
+  "confidence": "high",
+  "plan_conflict": null,
+  "sources": ["https://www.mountaineers.org/activities/trip-reports/overnight-scramble-star-and-courtney-peaks", "https://www.wta.org/go-hiking/trip-reports/trip_report-2021-10-06-5970201649", "https://www.mountaineers.org/activities/routes-places/oval-star-peaks"]
+ },
+ {
+  "id": "wa_devore_peak_west_ridge",
+  "camps": [
+   {
+    "name": "Bird Creek Camp, Devore Creek trail",
+    "nights": [1, 2],
+    "role": "main",
+    "why": "The first workable camp up the Devore Creek trail, about four hours from the lake; parties base here for Devore, Tupshin and Flora and avoid hauling up the brush."
+   }
+  ],
+  "new_camps": [],
+  "confidence": "high",
+  "plan_conflict": null,
+  "sources": ["https://countryhighpoints.com/tupshin-peak-devore-peak-and-flora-mountain", "https://www.wta.org/go-hiking/hikes/devore-creek", "https://www.summitpost.org/devore-peak/154223"]
+ },
+ {
+  "id": "wa_emerald_peak_se_ridge",
+  "camps": [
+   {
+    "name": "The basin between Emerald and Saska, and Milham Pass",
+    "nights": [1, 2],
+    "role": "main",
+    "why": "Larch meadows at 6,800-6,900 ft right beneath the peak; the shared base for Emerald, Saska and Cardinal, so the summit push is short."
+   },
+   {
+    "name": "Cottonwood Camp and the Entiat River road campgrounds",
+    "nights": [0],
+    "role": "route",
+    "why": "Road campgrounds on the way up the Entiat; sleep here before the walk in to avoid arriving at the trailhead after the long drive."
+   },
+   {
+    "name": "Fox Camp, North Fork Entiat trail",
+    "nights": [],
+    "role": "route",
+    "why": "A shorter day 1 with water at the trail junction; you then carry up to the basin and its climbs the next morning."
+   }
+  ],
+  "new_camps": [],
+  "confidence": "high",
+  "plan_conflict": null,
+  "sources": ["https://climberkyle.com/2017/05/27/saska-emerald-and-cardinal-peaks/", "https://adminonly.wta.org/go-hiking/trip-reports/trip_report.2023-08-27.7645404826", "https://wenatcheeoutdoors.org/?p=4118"]
+ },
+ {
+  "id": "wa_emerald_peak_west_route",
+  "camps": [
+   {
+    "name": "The basin between Emerald and Saska, and Milham Pass",
+    "nights": [1, 2],
+    "role": "main",
+    "why": "Meadow camp near 6,800 ft below the peak; one carry in, then Emerald (and often Saska and Cardinal) as light day trips before the walk out."
+   },
+   {
+    "name": "Cottonwood Camp and the Entiat River road campgrounds",
+    "nights": [0],
+    "role": "route",
+    "why": "Roadside campgrounds in the Entiat valley; useful the night before since the drive in is long and the trail day is big."
+   },
+   {
+    "name": "Fox Camp, North Fork Entiat trail",
+    "nights": [],
+    "role": "route",
+    "why": "A shorter first day with creek water; the cost is a steeper, longer carry up to the climbing basin the next morning."
+   }
+  ],
+  "new_camps": [],
+  "confidence": "high",
+  "plan_conflict": null,
+  "sources": ["https://climberkyle.com/2017/05/27/saska-emerald-and-cardinal-peaks/", "https://adminonly.wta.org/go-hiking/trip-reports/trip_report.2023-08-27.7645404826", "https://wenatcheeoutdoors.org/?p=4118"]
+ },
+ {
+  "id": "wa_fifth_of_july_mountain_scramble",
+  "camps": [
+   {
+    "name": "Cow Creek Meadows",
+    "nights": [1, 2],
+    "role": "main",
+    "why": "Meadow and small lakes with water, about two miles farther than Myrtle Lake but cutting about 1,400 ft off summit day."
+   },
+   {
+    "name": "Larch Lakes meadow camps",
+    "nights": [],
+    "role": "route",
+    "why": "The highest base, near 5,700 ft, for the shortest summit day; it needs a much longer day 1 carry than the plan describes."
+   },
+   {
+    "name": "Cottonwood Camp and the Entiat River road campgrounds",
+    "nights": [0],
+    "role": "route",
+    "why": "Car campgrounds near the trailhead; handy the night before for an early start on the gentle river walk."
+   },
+   {
+    "name": "Myrtle Lake",
+    "nights": [1, 2],
+    "role": "route",
+    "why": "The easy half-day camp on the south shore: a short pack in, but it leaves the full 3,950 ft of gain for summit day."
+   }
+  ],
+  "new_camps": [],
+  "confidence": "low",
+  "plan_conflict": "The Larch Lakes camp is filed as main, but the plan's short day 1 ends at Myrtle Lake or Cow Creek Meadows, so Larch Lakes is not slept at on this plan.",
+  "sources": ["https://adminonly.wta.org/go-hiking/trip-reports/trip_report-2021-08-17-9951808288", "https://adminonly.wta.org/go-hiking/trip-reports/trip_report.2023-08-17.6089157594", "https://www.wta.org/go-hiking/trip-reports/trip_report-2025-05-26.112923939278"]
+ },
+ {
+  "id": "wa_mount_bigelow_scramble",
+  "camps": [
+   {
+    "name": "Upper Eagle Lake and Horsehead Pass",
+    "nights": [1],
+    "role": "main",
+    "why": "Lakeside sites at 7,110 ft, two hours below the Bigelow finish, with a horse camp and toilet; mosquitoes are heavy at dusk in summer."
+   },
+   {
+    "name": "Eagle Lakes Trail backcountry camp",
+    "nights": [],
+    "role": "route",
+    "why": "A trail camp about three miles in with a small stream; a shorter first day, but it adds a long summit day with the whole walk out."
+   }
+  ],
+  "new_camps": [],
+  "confidence": "high",
+  "plan_conflict": null,
+  "sources": ["https://mountaineers.org/activities/routes-places/mount%20bigelow-switchback-peak-martin-peak", "https://www.wta.org/go-hiking/hikes/eagle-lakes", "https://www.wta.org/go-hiking/trip-reports/trip_report-2025-09-24.184506584771"]
+ },
+ {
+  "id": "wa_mount_bigelow_tribute_to_richard",
+  "camps": [],
+  "new_camps": [
+   {
+    "name": "Upper Eagle Lake",
+    "elev_ft": 7110,
+    "type": "camp",
+    "role": "main",
+    "nights": [1],
+    "why": "Lakeside camp below the East Face: you can study the cracks from the shore that evening and start the talus to the base at first light.",
+    "water": "Lake and its outlet stream.",
+    "capacity": "A horse camp plus four or five tent sites farther along.",
+    "permit": "Northwest Forest Pass for the trailhead; Lake Chelan-Sawtooth Wilderness rules apply.",
+    "notes": "The Upper Eagle Lake spur is hard to follow among social trails. Mosquitoes are heavy at dusk in summer; a pit toilet stands at the horse camp."
+   }
+  ],
+  "confidence": "high",
+  "plan_conflict": null,
+  "sources": ["https://mountaineers.org/activities/routes-places/mount%20bigelow-switchback-peak-martin-peak", "https://www.wta.org/go-hiking/hikes/eagle-lakes", "https://adminonly.wta.org/go-hiking/trip-reports/trip_report-2025-07-20.191920072299"]
+ },
+ {
+  "id": "wa_north_gardner_mountain_southwest",
+  "camps": [
+   {
+    "name": "Gardner Meadows, Wolf Creek trail",
+    "nights": [1],
+    "role": "main",
+    "why": "End of the trail with water and flat ground, about 10 miles in; the base most parties use, but it makes for a longer summit day than the high basin."
+   },
+   {
+    "name": "High basin camp above Gardner Meadows",
+    "nights": [],
+    "role": "route",
+    "why": "A small meadow basin near 6,250 ft that cuts summit-day gain, at the cost of a steep off-trail carry and less certain water."
+   }
+  ],
+  "new_camps": [],
+  "confidence": "low",
+  "plan_conflict": "The plan sleeps at a high camp in Wolf Creek Basin (about 6,200-6,400 ft), but the route page and other peaks' reports have most parties staying at Gardner Meadows.",
+  "sources": ["https://www.summitpost.org/abernathy-peak/152230", "https://www.countryhighpoints.com/abernathy-and-the-gardners/", "https://www.mountaineers.org/activities/trip-reports/gardner-mountain-north-gardner-mountain"]
+ },
+ {
+  "id": "wa_oval_peak_scramble",
+  "camps": [
+   {
+    "name": "Oval Lakes basin - West and Middle Oval",
+    "nights": [1],
+    "role": "main",
+    "why": "Middle Oval has the best sites: larch meadows and lake water at the head of the maintained trail, leaving the South Ridge as a half-day light climb."
+   }
+  ],
+  "new_camps": [],
+  "confidence": "high",
+  "plan_conflict": null,
+  "sources": ["https://www.wta.org/go-hiking/trip-reports/trip_report.2023-10-16.8757952654", "https://adminonly.wta.org/go-hiking/hikes/oval-lakes", "https://www.wta.org/go-hiking/trip-reports/trip_report-2021-10-06-5970201649"]
+ },
+ {
+  "id": "wa_pinnacle_mountain_entiat_scramble",
+  "camps": [
+   {
+    "name": "The basin between Emerald and Saska, and Milham Pass",
+    "nights": [1, 2],
+    "role": "main",
+    "why": "The high basin camp near 6,900 ft below Saska Pass; it makes the Saska Pass reclimb the sting in a long summit day, but it is the established camp."
+   },
+   {
+    "name": "Cottonwood Camp and the Entiat River road campgrounds",
+    "nights": [0],
+    "role": "route",
+    "why": "Road campgrounds in the valley; sleep here the night before so the 9-mile walk in starts early."
+   },
+   {
+    "name": "Fox Camp, North Fork Entiat trail",
+    "nights": [],
+    "role": "route",
+    "why": "A lower, shorter first day with water at hand; summit day then starts about 1,000 ft lower and is that much longer."
+   }
+  ],
+  "new_camps": [],
+  "confidence": "medium",
+  "plan_conflict": null,
+  "sources": ["https://wenatcheeoutdoors.org/?p=2339", "https://thewildoutsiders.squarespace.com/adventure-journal/chelan-slam", "https://adminonly.wta.org/go-hiking/trip-reports/trip_report.2023-08-27.7645404826"]
+ },
+ {
+  "id": "wa_raven_ridge_southeast_ridge_crater_lake",
+  "camps": [
+   {
+    "name": "Crater Lakes, Crater Creek trail",
+    "nights": [1],
+    "role": "main",
+    "why": "The lake basin at the foot of the southeast ridge, under 4 miles in; early season, tent sites may be snow-covered, so expect to camp on snow."
+   }
+  ],
+  "new_camps": [],
+  "confidence": "medium",
+  "plan_conflict": null,
+  "sources": ["https://www.wta.org/go-hiking/trip-reports/trip_report-2022-06-12-3058093680", "https://www.mountaineers.org/activities/activities/alpine-scramble-raven-ridge", "https://countryhighpoints.com/raven-ridge-winter-ascent"]
+ },
+ {
+  "id": "wa_saska_peak_emerald_saska_col",
+  "camps": [
+   {
+    "name": "The basin between Emerald and Saska, and Milham Pass",
+    "nights": [1, 2],
+    "role": "main",
+    "why": "Meadow camp at 6,800-7,100 ft beneath the col; summit day is a short light push and you return to the same tents for the second night."
+   },
+   {
+    "name": "Cottonwood Camp and the Entiat River road campgrounds",
+    "nights": [0],
+    "role": "route",
+    "why": "Road campgrounds on the Entiat; spend the night before here so the long approach day starts early after the drive."
+   },
+   {
+    "name": "Fox Camp, North Fork Entiat trail",
+    "nights": [],
+    "role": "route",
+    "why": "Eight miles in at the Pyramid trail junction with water; shorter first day, but the carry up to the basin is still waiting."
+   }
+  ],
+  "new_camps": [],
+  "confidence": "high",
+  "plan_conflict": null,
+  "sources": ["https://climberkyle.com/2017/05/27/saska-emerald-and-cardinal-peaks/", "https://adminonly.wta.org/go-hiking/trip-reports/trip_report.2023-08-27.7645404826", "https://wenatcheeoutdoors.org/?p=4118"]
+ }
+]

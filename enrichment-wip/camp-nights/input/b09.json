@@ -1,0 +1,1152 @@
+[
+ {
+  "id": "wa_summit_chief_mountain_north_face",
+  "name": "North Face",
+  "discipline": "ice",
+  "peak": "Summit Chief Mountain",
+  "area_id": "wa_summit_chief_mountain",
+  "path": "usa.washington.wa_centralwest.wa_western_alpine_lakes.wa_summit_chief_mountain",
+  "trip_plan": {
+   "totalNote": "Two days: approach up the Middle Fork Snoqualmie valley to camp below the north face, then climb the ~2,000 ft ice line, descend and hike out.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Approach to camp below the north face",
+     "objective": "Establish camp below the north face",
+     "miles": null,
+     "gainFt": null,
+     "note": "Bike or hike into the Middle Fork Snoqualmie valley, then continue on foot along the valley trail, fording the braids of the Middle Fork Snoqualmie River. Establish camp below the north face; the first-ascent party took about 6.5 hours from the vehicle."
+    },
+    {
+     "n": 2,
+     "title": "Climb the north face and hike out",
+     "objective": "Climb the ice line and return to the car",
+     "miles": null,
+     "gainFt": null,
+     "note": "Make an alpine start around 6 AM and climb the roughly 2,000 ft ice line. Descend the southwest-side gully with two 30 m rappels and hike back out."
+    }
+   ]
+  },
+  "camps_on_file": [],
+  "campsite_pins": []
+ },
+ {
+  "id": "wa_summit_chief_mountain_south_route",
+  "name": "South Route",
+  "discipline": "scrambling",
+  "peak": "Summit Chief Mountain",
+  "area_id": "wa_summit_chief_mountain",
+  "path": "usa.washington.wa_centralwest.wa_western_alpine_lakes.wa_summit_chief_mountain",
+  "trip_plan": {
+   "totalNote": "A classic 3-day/2-night backpack: roughly 25 miles and ~5,000 ft round trip, with one long, technical summit day from Vista Lakes camp (~11 hr camp-to-camp).",
+   "days": [
+    {
+     "n": 1,
+     "title": "Approach to Vista Lakes camp",
+     "objective": "Reach Vista Lakes basecamp (~5,500 ft)",
+     "miles": 10,
+     "gainFt": 2800,
+     "note": "From the Pete Lake Trailhead on Cooper Lake, hike the flat Pete Lake Trail to Pete Lake (4.5 mi), then join the PCT and climb a long series of switchbacks up to the Vista Lakes tarns just off the trail. It's a long but non-technical day with a full overnight pack."
+    },
+    {
+     "n": 2,
+     "title": "Summit push via Summit Chief Pass and Southeast Face",
+     "objective": "Climb to the summit (7,466 ft) and return to Vista Lakes camp",
+     "miles": 4.5,
+     "gainFt": 2200,
+     "note": "Climb from camp to Summit Chief Pass (about 5,750 ft), traverse above Summit Chief Lake staying below the ridge/cliffs on the west side, then climb through a high snow basin and up the Southeast Face to a notch on the south ridge. The final ~100 ft is loose Class 2-3 scrambling on untrustworthy rock. Parties describe t…"
+    },
+    {
+     "n": 3,
+     "title": "Hike out",
+     "objective": "Return to Pete Lake Trailhead",
+     "miles": 10,
+     "gainFt": 0,
+     "note": "Break camp and reverse the approach: down the PCT switchbacks, past Pete Lake, and out along the Cooper River to the trailhead. Straightforward but long with a lighter pack."
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Vista Lakes (upper lake)",
+    "elev_ft": null,
+    "type": "camp",
+    "role": "main",
+    "notes": ""
+   },
+   {
+    "name": "Pete Lake and the Lemah Meadows camps",
+    "elev_ft": 2986,
+    "type": "camp",
+    "role": "route",
+    "notes": "The workhorse camp of the entire western half of this zone. From the trailhead at the north end of Cooper Lake the trail runs about four gentle miles along the Cooper River to Pete Lake, and roughly two and a half more to the Lemah Meadows area and the Pacific Crest Trail junction. Parties bound for Lemah Mountain and …"
+   }
+  ],
+  "campsite_pins": [
+   {
+    "name": "Vista Lakes (upper lake)",
+    "elev": 5600,
+    "distMi": 10.1
+   }
+  ]
+ },
+ {
+  "id": "wa_three_queens_west_peak",
+  "name": "West Peak via West Ridge - West Face",
+  "discipline": "alpine",
+  "peak": "Three Queens",
+  "area_id": "wa_three_queens",
+  "path": "usa.washington.wa_centralwest.wa_western_alpine_lakes.wa_three_queens",
+  "trip_plan": {
+   "totalNote": "Hike via the Kachess River, Mineral Creek and Park Lakes to Spectacle Point camp, then climb the West Ridge and return to the trailhead, about 16 miles and 5,300 ft total.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Hike to Spectacle Point camp",
+     "objective": "Camp at Spectacle Point",
+     "miles": null,
+     "gainFt": 3400,
+     "note": "Hike from the trailhead to Spectacle Point camp via the Kachess River, Mineral Creek and Park Lakes."
+    },
+    {
+     "n": 2,
+     "title": "Climb the West Ridge and hike out",
+     "objective": "Summit West Peak",
+     "miles": null,
+     "gainFt": 1900,
+     "note": "Climb the West Ridge and West Face to the summit, then return to camp and on to the trailhead. The accounts report 16 miles and 5,300 ft of gain and loss for the whole trip."
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Spectacle Point high camp",
+    "elev_ft": 5800,
+    "type": "bivy",
+    "role": "main",
+    "notes": "High camp on the ridge above Park Lakes, used as the base for the West Peak."
+   },
+   {
+    "name": "Park Lakes Basin",
+    "elev_ft": 4880,
+    "type": "camp",
+    "role": "route",
+    "notes": "The base for Three Queens, and the reason that peak sits in this zone at all — it shares the Cooper River road with Pete Lake and nothing else. Drive the Cooper River road past Cooper Lake and over Cooper Pass to the Mineral Creek trailhead at around 2,375 ft, then follow the Mineral Creek trail roughly four and a half…"
+   }
+  ],
+  "campsite_pins": [
+   {
+    "name": "Park Lakes Basin",
+    "elev": 4880,
+    "distMi": null
+   }
+  ]
+ },
+ {
+  "id": "wa_concerto_in_c_for_drill_and_hammer",
+  "name": "Concerto in C for Drill and Hammer",
+  "discipline": "alpine",
+  "peak": "South Face",
+  "area_id": "wa_south_face",
+  "path": "usa.washington.wa_northwest.wa_glacier_peak_region.wa_darrington.wa_squire_creek_walls.wa_south_face",
+  "trip_plan": {
+   "totalNote": "Two days: about 2-3 hours to the grassy-saddle bivy, then 14 pitches (1,800 ft) of mostly bolted slab and ridge, rappels back down the route, and the hike out.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Squire Creek to the grassy saddle",
+     "objective": "Reach the bivy at the base of the route",
+     "miles": null,
+     "gainFt": 1349,
+     "note": "Walk the old road past the Trail #654 sign to two cut logs with old cable, take the boot track down and ford Squire Creek, then follow the climbers' track downstream and up through old growth and two gullies. The top of the second gully is steep and dirty and opens onto the grassy saddle, which has good bivy sites near…"
+    },
+    {
+     "n": 2,
+     "title": "Climb Concerto and rappel, hike out",
+     "objective": "Climb 14 pitches to the summit crest and descend to the car",
+     "miles": null,
+     "gainFt": 1800,
+     "note": "From the saddle, scramble down ramps for 20-30 m and cross the granite apron to a two-bolt anchor. The route has sustained 5.8 friction on pitches 2 and 7-10, and the last four pitches follow the Primal Scream ridge to a summit chain. Rappel the route on chain anchors; some rappels need a full 60 m rope. Carry a single…"
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Squire Creek Park & Campground, Snohomish County",
+    "elev_ft": 463,
+    "type": "camp",
+    "role": "main",
+    "notes": "Sits in old-growth timber near where Squire Creek meets the North Fork Stillaguamish, a few miles west of Darrington on SR 530 — not on the Mountain Loop Highway, and not up the Squire Creek road itself. It is the most comfortable base for a weekend on the Darrington granite, with flush toilets and a swimmable creek, a…"
+   },
+   {
+    "name": "Squire Creek road end / trailhead bivouac",
+    "elev_ft": null,
+    "type": "bivy",
+    "role": "main",
+    "notes": "The Squire Creek road out of the west end of old Darrington has been cut by a washout well short of its historic end for many years, so the drivable road end is A moving target and the walk in to Squire Creek Wall is longer than older descriptions suggest. Parties sleeping in the car or under a tarp at the closure are …"
+   },
+   {
+    "name": "Squire Creek Wall on-route ledges",
+    "elev_ft": null,
+    "type": "bivy",
+    "role": "route",
+    "notes": "The long routes on Squire Creek Wall have a couple of usable ledges high on the face, the better-known ones roughly a third and two-thirds of the way up, and parties moving slowly on the full-length lines have used them to split the climb. This is genuine bivouac ground rather than camping — a ledge, a rope, and whatev…"
+   }
+  ],
+  "campsite_pins": [
+   {
+    "name": "Squire Creek Park & Campground, Snohomish County",
+    "elev": 463,
+    "distMi": null
+   }
+  ]
+ },
+ {
+  "id": "wa_dome_peak_dome_glacier",
+  "name": "Dome Glacier",
+  "discipline": "mountaineering",
+  "peak": "Dome Peak",
+  "area_id": "wa_dome_peak",
+  "path": "usa.washington.wa_northwest.wa_glacier_peak_region.wa_dome_peak",
+  "trip_plan": {
+   "totalNote": "A 3-day round trip is the norm: ~29 miles and roughly 7,900-8,400 ft of cumulative gain, with one alpine-start summit day from a high camp near Cub Lake/Itswoot Ridge (~6,200 ft); very strong parties have done the whole thing in one continuous push, and some link it into a longer 4-6 day trip by continuing north on the Ptarmigan Traverse over Cache Col.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Approach to high camp",
+     "objective": "Reach Itswoot Ridge / Cub Lake camp (~6,200 ft)",
+     "miles": 20,
+     "gainFt": 4800,
+     "note": "Walk or bike the 8 closed miles of Suiattle River Road from the milepost 12 gate to the Downey Creek trailhead first. From the Downey Creek trailhead (~1,450 ft), follow Downey Creek Trail then Bachelor Creek Trail (expect brush and downed trees) to Cub Lake, then continue up talus and snow to a camp on Itswoot Ridge w…"
+    },
+    {
+     "n": 2,
+     "title": "Summit day",
+     "objective": "Climb the Dome Glacier to the summit (8,926 ft)",
+     "miles": 5,
+     "gainFt": 2700,
+     "note": "An alpine start to cross the basin and gain the Dome Glacier while the snow is firm, then rope up for the crevassed glacier crossing on roughly a 115° bearing to the notch at 8,560 ft, finishing with a short snow slope and a 500 ft rock arête to the summit. Trip reports agree this round trip from camp typically runs 6-…"
+    },
+    {
+     "n": 3,
+     "title": "Hike out",
+     "objective": "Return to the Downey Creek trailhead",
+     "miles": 20,
+     "gainFt": 400,
+     "note": "Reverse Day 1: down off Itswoot Ridge past Cub Lake, then out Bachelor Creek and Downey Creek trails and the 8 closed miles of road to the car at the milepost 12 gate. Parties commonly do this in one long push, sometimes leaving at first light if weather is moving in."
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Itswoot Ridge",
+    "elev_ft": 5880,
+    "type": "camp",
+    "role": "main",
+    "notes": "The camp parties call the best on this approach, on the ridge crest roughly 900 ft above Cub Lake, with the lakes below and the Ptarmigan country opening out. Water is at hand and the ground is good. Expect mosquitoes. Moving up here from the lake costs about an hour but is the sensible split, since the published figur…"
+   },
+   {
+    "name": "Dome-Dana col",
+    "elev_ft": 7300,
+    "type": "bivy",
+    "role": "main",
+    "notes": "A high perch around 7,300 ft used by parties who want to shorten summit day or who are linking the Ptarmigan Traverse. It puts you above the traverse and its route-finding, with the upper Dome Glacier — which parties describe as mellow — immediately above. The trade is no running water and full exposure; the ridge camp…"
+   },
+   {
+    "name": "Bachelor Creek forest camp",
+    "elev_ft": null,
+    "type": "camp",
+    "role": "route",
+    "notes": "A timbered camp on the creek partway up the Bachelor Creek leg, used by parties who lose the day to the brush, blowdown and washed-out sections below. It is a bail-out night rather than a plan: car to Cub Lake is commonly reported at 9-11 hours, and the section above Bachelor Creek climbs steeply and crosses avalanche …"
+   },
+   {
+    "name": "Cub Lake",
+    "elev_ft": 5338,
+    "type": "camp",
+    "role": "route",
+    "notes": "The lake camp at the top of the Bachelor Creek climb, reached after a drop of several hundred feet into the basin that most parties find unwelcome at the end of a long day. Water and flat ground are easy, which is why it gets used, but the meadows show it and the better-positioned option is the ridge another 900 ft abo…"
+   }
+  ],
+  "campsite_pins": [
+   {
+    "name": "Bachelor Meadows",
+    "elev": 4800,
+    "distMi": 9.5
+   },
+   {
+    "name": "Cub Lake",
+    "elev": 5338,
+    "distMi": null
+   },
+   {
+    "name": "Itswoot Ridge camp",
+    "elev": 6200,
+    "distMi": 14.5
+   }
+  ]
+ },
+ {
+  "id": "wa_glacier_peak_cool_glacier_gerdine",
+  "name": "Disappointment Peak Cleaver (Gerdine Ridge / Cool Glacier)",
+  "discipline": "mountaineering",
+  "peak": "Glacier Peak",
+  "area_id": "wa_glacier_peak",
+  "path": "usa.washington.wa_northwest.wa_glacier_peak_region.wa_glacier_peak",
+  "trip_plan": {
+   "totalNote": "A 3-day trip for most parties (~36-37 miles RT, ~9,000-9,400 ft gain); fast/fit or ski-equipped parties have done it car-to-car-plus-camp in 2 days.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Approach to Glacier Gap camp",
+     "objective": "Reach high camp at Glacier Gap (~7,200 ft)",
+     "miles": 15,
+     "gainFt": 5600,
+     "note": "From the North Fork Sauk Trailhead, hike through old-growth to Mackinaw Shelter, climb steeply to the PCT at White Pass, then traverse and climb to a rocky camp at Glacier Gap with views south to Rainier."
+    },
+    {
+     "n": 2,
+     "title": "Summit via Gerdine Ridge / Cool Glacier",
+     "objective": "Summit Glacier Peak (10,541 ft) and return to camp",
+     "miles": 7,
+     "gainFt": 3450,
+     "note": "Alpine start from Glacier Gap, drop to rocky Gerdine Ridge, then rope up on the Gerdine Glacier where it's reached (~8,500 ft), following it to a bend where it merges with the Cool Glacier and climbing to the Disappointment/Glacier Peak saddle and the summit. Move briskly under the rockfall-prone cliffs of Disappointme…"
+    },
+    {
+     "n": 3,
+     "title": "Hike out",
+     "objective": "Return to trailhead",
+     "miles": 15,
+     "gainFt": 350,
+     "note": "Break camp and reverse the full approach back to the North Fork Sauk Trailhead."
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Glacier Gap",
+    "elev_ft": 7300,
+    "type": "camp",
+    "role": "main",
+    "notes": "This is the high camp for Glacier Peak by the Cool Glacier and Gerdine Ridge, and the single most-used climbing camp on the mountain. It sits at about 7,300 feet at the head of the basin, reached by crossing what is left of the White Chuck Glacier northeast from the White Pass area — and what is left is the point, beca…"
+   },
+   {
+    "name": "Mackinaw Shelter camp, North Fork Sauk",
+    "elev_ft": 2950,
+    "type": "camp",
+    "role": "route",
+    "notes": "This is the first night for a Glacier Peak climb by the Cool Glacier and Gerdine Ridge, which is the route most parties use now that the western approaches have gone. It sits about five flat miles up the North Fork Sauk trail through genuinely large old-growth, and the walk in is easy enough that a party arriving late …"
+   },
+   {
+    "name": "White Pass and the Foam Creek benches under White Mountain",
+    "elev_ft": 5900,
+    "type": "camp",
+    "role": "route",
+    "notes": "White Pass at about 5,900 feet is the second night for a Glacier Peak climb, or the first if a strong party pushes the whole eight and a half miles and three thousand feet from the road in one go. It is the point where the North Fork Sauk trail meets the long-distance crest trail and where the climbing approach turns e…"
+   }
+  ],
+  "campsite_pins": [
+   {
+    "name": "Mackinaw Shelter (former shelter site)",
+    "elev": 2950,
+    "distMi": 5
+   },
+   {
+    "name": "Glacier Gap",
+    "elev": 7300,
+    "distMi": 15
+   }
+  ]
+ },
+ {
+  "id": "wa_glacier_peak_frostbite_ridge",
+  "name": "Frostbite Ridge",
+  "discipline": "alpine",
+  "peak": "Glacier Peak",
+  "area_id": "wa_glacier_peak",
+  "path": "usa.washington.wa_northwest.wa_glacier_peak_region.wa_glacier_peak",
+  "trip_plan": {
+   "totalNote": "A 4-day traverse (~41-43 miles including 11 miles of closed road at the start, ~9,200 ft gain) — long approach in from Milk Creek, technical ridge climbing with a class-3/ice crux, and a descent to a different trailhead than the one you started from.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Approach toward Milk Creek basin",
+     "objective": "Get most of the way to the northwest-side base camp",
+     "miles": 19,
+     "gainFt": 3000,
+     "note": "Drive the Suiattle River Road to the vehicle closure at milepost 12 and walk or bike the last 11 closed miles to its end, then follow the Suiattle Pass Trail to a bridge over the Suiattle River and pick up the PCT southbound, covering most of the ~16-mile trail approach on day one."
+    },
+    {
+     "n": 2,
+     "title": "Reach base camp",
+     "objective": "Establish base camp in the East Fork Milk Creek basin",
+     "miles": 6,
+     "gainFt": 1500,
+     "note": "Finish the PCT approach to a base camp in the East Fork Milk Creek basin on the mountain's north/northwest side, staging for the ridge climb."
+    },
+    {
+     "n": 3,
+     "title": "Frostbite Ridge to the summit, descend to a western camp",
+     "objective": "Summit Glacier Peak (10,550 ft) via Frostbite Ridge, descend the Sitkum to a Boulder-Basin-area camp",
+     "miles": 8,
+     "gainFt": 4000,
+     "note": "Climb Frostbite Ridge over the Rabbit Ears (a class-3 downclimb of roughly 150 ft) and steep snow/ice sections to the summit, then descend the non-technical Sitkum Glacier to a different camp on the west side — this is a traverse, not an out-and-back."
+    },
+    {
+     "n": 4,
+     "title": "Hike out",
+     "objective": "Return to a trailhead (different from the approach)",
+     "miles": 10,
+     "gainFt": 0,
+     "note": "Hike out on the PCT south to White Pass and down the North Fork Sauk Trail to the North Fork Sauk Trailhead — logistically a point-to-point trip requiring a car shuttle or long road walk back."
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Kennedy Ridge high camp",
+    "elev_ft": 7200,
+    "type": null,
+    "role": "main",
+    "notes": "Planned camp and the standard high camp for the route, on an open ridge crest of snow and pumice reached by a climbers' path leaving the PCT. Pumice takes stakes poorly — bring something to anchor to snow or rock. Fully open to weather in every direction, with a straight view up at the mountain. Everything above this i…"
+   },
+   {
+    "name": "Vista-Kennedy saddle",
+    "elev_ft": 8000,
+    "type": null,
+    "role": "main",
+    "notes": "Planned intermediate camp on the saddle where the route rounds Kennedy Peak and steps onto the Kennedy Glacier. Bivy sites exist here and it is used to shorten summit day, but it puts you above the last easy ground with nothing to hide behind."
+   },
+   {
+    "name": "8,800 ft saddle at the foot of Frostbite Ridge",
+    "elev_ft": 8800,
+    "type": null,
+    "role": "route",
+    "notes": "Planned high camp and the last dependable bivy before the crater. Rocky ridge ground at the top of the Kennedy Glacier's loose moraine, and it is exposed enough to cost you the night — one party was battered by wind here until dawn and concluded afterwards that a platform cut into the lee snow would have been the right…"
+   },
+   {
+    "name": "Ledge near 9,900 ft below the ridge crux",
+    "elev_ft": 9900,
+    "type": null,
+    "role": "route",
+    "notes": "Emergency only. A spot has been reported at about this height below the steep sections, and the party who found it said plainly they would not count on it being there. No shelter, extreme exposure, and immediately below the loose rock of the Rabbit Ears where warm dry conditions turn the ground overhead into a rockfall…"
+   }
+  ],
+  "campsite_pins": [
+   {
+    "name": "Kennedy Ridge high camp",
+    "elev": 7200,
+    "distMi": null
+   }
+  ]
+ },
+ {
+  "id": "wa_glacier_peak_kennedy_glacier",
+  "name": "Kennedy Glacier",
+  "discipline": "mountaineering",
+  "peak": "Glacier Peak",
+  "area_id": "wa_glacier_peak",
+  "path": "usa.washington.wa_northwest.wa_glacier_peak_region.wa_glacier_peak",
+  "trip_plan": {
+   "totalNote": "A 3-day trip (~51 miles, roughly 15,900 ft gain) from the North Fork Sauk start, and every day of it is very long; plan a 4th or 5th day to split the walk in and the walk out.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Approach to Kennedy Creek Bench camp",
+     "objective": "Reach camp at ~6,200 ft",
+     "miles": 21,
+     "gainFt": 7800,
+     "note": "From the North Fork Sauk trailhead (the White Chuck trailhead is cut off by the FR 23 closure at milepost 3.7), take the North Fork Sauk Trail to the PCT and follow it north over Red Pass to the Glacier Creek camps, then up to a camp on Kennedy Creek Bench near the toe of the Kennedy Glacier moraine."
+    },
+    {
+     "n": 2,
+     "title": "Summit via Kennedy Glacier, descend via Frostbite Ridge",
+     "objective": "Summit Glacier Peak (10,541 ft) and loop back to camp via a different glacier",
+     "miles": 9,
+     "gainFt": 4350,
+     "note": "A long, full-value day: climb the wide, moderately-crevassed Kennedy Glacier to the summit, then descend via Frostbite Ridge and the Vista Glacier back down to the lower Kennedy Glacier, regaining camp in the evening."
+    },
+    {
+     "n": 3,
+     "title": "Hike out",
+     "objective": "Return to trailhead",
+     "miles": 21,
+     "gainFt": 3700,
+     "note": "Break camp and hike back down to the trailhead."
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Kennedy Ridge and the Glacier Creek camps, Suiattle side",
+    "elev_ft": null,
+    "type": "camp",
+    "role": "main",
+    "notes": "This is the base for Glacier Peak's Kennedy Glacier and for the Frostbite Ridge line above it, and since the White Chuck approach died it is the only practical way at the mountain's north and west sides. The walk in is long even when the road is open — the Suiattle River trail runs about seven miles to the river bridge…"
+   }
+  ],
+  "campsite_pins": []
+ },
+ {
+  "id": "wa_glacier_peak_sitkum_glacier",
+  "name": "Sitkum Glacier",
+  "discipline": "mountaineering",
+  "peak": "Glacier Peak",
+  "area_id": "wa_glacier_peak",
+  "path": "usa.washington.wa_northwest.wa_glacier_peak_region.wa_glacier_peak",
+  "trip_plan": {
+   "totalNote": "A 4-day trip at minimum. The walk in from the North Fork Sauk trailhead is far longer than the old White Chuck approach and crosses Red Pass in both directions, so many parties allow an extra day.",
+   "days": [
+    {
+     "n": 1,
+     "title": "North Fork Sauk Trail to the PCT and over Red Pass",
+     "objective": "Reach the PCT and cross Red Pass",
+     "miles": 10.5,
+     "gainFt": 4350,
+     "note": "Up North Fork Sauk Trail #649 through old-growth forest and a long set of switchbacks to the Pacific Crest Trail, then north on the PCT over Red Pass into the upper White Chuck valley."
+    },
+    {
+     "n": 2,
+     "title": "Down the PCT to Sitkum Creek and up to Boulder Basin",
+     "objective": "Reach Boulder Basin (5,500-6,000 ft)",
+     "miles": 9.5,
+     "gainFt": 2000,
+     "note": "Follow the PCT down the upper White Chuck valley to Sitkum Creek, then take the steep, unsigned climbers' path up the ridge south of the creek to the high camp at Boulder Basin."
+    },
+    {
+     "n": 3,
+     "title": "Summit via the Sitkum Glacier",
+     "objective": "Summit Glacier Peak (10,541 ft) and return to camp",
+     "miles": 7,
+     "gainFt": 4650,
+     "note": "Rope up from Boulder Basin, climb the heavily crevassed Sitkum Glacier to a saddle near Sitkum Spire (~9,500 ft), then follow the pumice/scree ridge (with one short snow traverse) to the summit before reversing back to camp."
+    },
+    {
+     "n": 4,
+     "title": "Hike out",
+     "objective": "Return to trailhead",
+     "miles": 20,
+     "gainFt": 2600,
+     "note": "Break camp, descend the climbers' path to the PCT, and walk back up the White Chuck valley and over Red Pass to the North Fork Sauk Trail and the trailhead."
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Boulder Basin",
+    "elev_ft": 5500,
+    "type": null,
+    "role": "main",
+    "notes": "The standard planned high camp, in an open meadow basin at the treeline with the glacier toe above. It is a pleasant place — flowers, waterfalls, and correspondingly aggressive marmots and bugs — but earning it means a long approach and then a steep, unmaintained climbers' path straight up a forested ridge with a full …"
+   },
+   {
+    "name": "Kennedy Guard Station area",
+    "elev_ft": 3300,
+    "type": null,
+    "role": "route",
+    "notes": "Not on the current approach: this site is on the White Chuck River Trail below its junction with the PCT, and that trail has been listed as inaccessible since the 2003 flood. Do not plan on soaking: the historic hot pool, lodge and guard station here were buried by the 2003 flood and debris flow and were never rebuilt.…"
+   },
+   {
+    "name": "Sitkum Creek / PCT junction camp",
+    "elev_ft": 4100,
+    "type": null,
+    "role": "route",
+    "notes": "A lower fallback for parties who run out of daylight on the long walk in, sitting where the climbers' path leaves the maintained trail. Below treeline, so it is sheltered and out of the weather, but it leaves the entire steep climbers' path plus 1,500 ft of gain before you are even at the standard camp."
+   }
+  ],
+  "campsite_pins": []
+ },
+ {
+  "id": "wa_east_face",
+  "name": "East Face",
+  "discipline": "alpine",
+  "peak": "Middle Peak",
+  "area_id": "wa_middle_peak",
+  "path": "usa.washington.wa_northwest.wa_glacier_peak_region.wa_glacier_peak_wilderness.wa_gunsight_range_the.wa_middle_peak",
+  "trip_plan": {
+   "totalNote": "A five-day trip from the Downey Creek Trailhead via Bachelor Flats to a Dome-Chickamin Col base camp, a climb of Middle Gunsight's East Face, and the same route back out.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Hike in to Bachelor Flats",
+     "objective": "Reach camp at Bachelor Flats",
+     "miles": 6,
+     "gainFt": 3100,
+     "note": "Hike from the Downey Creek Trailhead to camp at Bachelor Flats, about 6 miles and 3,100 ft of gain."
+    },
+    {
+     "n": 2,
+     "title": "Move up to the Dome-Chickamin Col",
+     "objective": "Establish base camp at the Dome-Chickamin Col",
+     "miles": 3.2,
+     "gainFt": 2600,
+     "note": "Continue from Bachelor Flats to a base camp at the Dome-Chickamin Col, about 3.2 miles and 2,600 ft of gain."
+    },
+    {
+     "n": 3,
+     "title": "Climb the East Face of Middle Gunsight",
+     "objective": "Climb the East Face and return to base camp",
+     "miles": null,
+     "gainFt": 600,
+     "note": "Climb the East Face of Middle Gunsight, about 4-6 hours of climbing and 600 ft of gain. Descend back to base camp in 3-4 hours."
+    },
+    {
+     "n": 4,
+     "title": "Return to Bachelor Flats",
+     "objective": "Descend from base camp to Bachelor Flats",
+     "miles": 3.2,
+     "gainFt": null,
+     "note": "Return from base camp to Bachelor Flats, which takes 5-6 hours."
+    },
+    {
+     "n": 5,
+     "title": "Hike out to the trailhead",
+     "objective": "Return to the Downey Creek Trailhead",
+     "miles": 6,
+     "gainFt": 0,
+     "note": "Hike out from Bachelor Flats to the trailhead, about 6 miles."
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Dome Glacier and Dome-Chickamin col high bivouacs",
+    "elev_ft": null,
+    "type": "bivy",
+    "role": "main",
+    "notes": "These are the camps that put the eastern peaks in range, and they are the reason parties carry a full glacier kit past Itswoot Ridge. The col between the Dana and Dome glaciers holds a couple of rock rings around 7,470 ft, and further east the Dome-Chickamin col is a genuine high camp with figures around 8,000 ft and a…"
+   },
+   {
+    "name": "Bachelor Creek forest and meadow camps",
+    "elev_ft": 4500,
+    "type": "camp",
+    "role": "route",
+    "notes": "This exists because of the brush, and the brush is the single most important thing to understand about the south end. From the Downey Creek trailhead at 1,440 ft the Downey Creek trail runs about six easy forested miles to Sixmile Camp; after that the abandoned Bachelor Creek trail deteriorates badly. The first two mil…"
+   },
+   {
+    "name": "Cub Lake",
+    "elev_ft": 5338,
+    "type": "camp",
+    "role": "route",
+    "notes": "Roughly 12 miles and about 3,900 ft of gain from the Downey Creek trailhead, reached by a steep switchbacking descent off the Bachelor Creek meadows and a walk around the north shore. Parties report anywhere from six hours to eleven getting here, which is a fair measure of how much the brush and the pack weight vary. I…"
+   },
+   {
+    "name": "Itswoot Ridge",
+    "elev_ft": 5880,
+    "type": "bivy",
+    "role": "route",
+    "notes": "This is the working base for the southern peaks and the camp most parties coming in from Downey Creek actually use. Camps are quoted anywhere between roughly 5,900 and 6,400 ft depending on which bench you take, so the number here describes the lower, wetter end of the ridge rather than a single spot. From the benches …"
+   }
+  ],
+  "campsite_pins": [
+   {
+    "name": "Cub Lake",
+    "elev": 5338,
+    "distMi": null
+   }
+  ]
+ },
+ {
+  "id": "wa_gunrunner",
+  "name": "Gunrunner",
+  "discipline": "alpine",
+  "peak": "Middle Peak",
+  "area_id": "wa_middle_peak",
+  "path": "usa.washington.wa_northwest.wa_glacier_peak_region.wa_glacier_peak_wilderness.wa_gunsight_range_the.wa_middle_peak",
+  "trip_plan": {
+   "totalNote": "Five days: hike in via Bachelor Flats to a Dome-Chickamin Col base camp, climb the four-peak Gunrunner traverse, and return the same way.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Downey Creek to Bachelor Flats",
+     "objective": "Reach the Bachelor Flats camp",
+     "miles": 6,
+     "gainFt": 3100,
+     "note": "Hike from the Downey Creek Trailhead to the Bachelor Flats camp, about 6 miles with 3,100 ft of gain."
+    },
+    {
+     "n": 2,
+     "title": "Bachelor Flats to Dome-Chickamin Col",
+     "objective": "Establish base camp at the col",
+     "miles": 3.2,
+     "gainFt": 2600,
+     "note": "Climb from Bachelor Flats to the Dome-Chickamin Col base camp, about 3.2 miles with 2,600 ft of gain."
+    },
+    {
+     "n": 3,
+     "title": "Climb the Gunrunner traverse",
+     "objective": "Traverse four peaks of the Gunsight Range",
+     "miles": null,
+     "gainFt": 1500,
+     "note": "Climb the Gunrunner traverse of four peaks, with 11-13 hours of climbing time and about 1,500 ft of gain."
+    },
+    {
+     "n": 4,
+     "title": "Return to Bachelor Flats",
+     "objective": "Descend to base camp and continue to Bachelor Flats",
+     "miles": 3.2,
+     "gainFt": null,
+     "note": "Descend to base camp, then return to Bachelor Flats, which takes about 5-6 hours."
+    },
+    {
+     "n": 5,
+     "title": "Hike out to Downey Creek",
+     "objective": "Return to the trailhead",
+     "miles": 6,
+     "gainFt": null,
+     "note": "Return to the trailhead, about 6 miles with 4,500 ft of loss."
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Dome Glacier and Dome-Chickamin col high bivouacs",
+    "elev_ft": null,
+    "type": "bivy",
+    "role": "main",
+    "notes": "These are the camps that put the eastern peaks in range, and they are the reason parties carry a full glacier kit past Itswoot Ridge. The col between the Dana and Dome glaciers holds a couple of rock rings around 7,470 ft, and further east the Dome-Chickamin col is a genuine high camp with figures around 8,000 ft and a…"
+   },
+   {
+    "name": "Bachelor Creek forest and meadow camps",
+    "elev_ft": 4500,
+    "type": "camp",
+    "role": "route",
+    "notes": "This exists because of the brush, and the brush is the single most important thing to understand about the south end. From the Downey Creek trailhead at 1,440 ft the Downey Creek trail runs about six easy forested miles to Sixmile Camp; after that the abandoned Bachelor Creek trail deteriorates badly. The first two mil…"
+   },
+   {
+    "name": "Cub Lake",
+    "elev_ft": 5338,
+    "type": "camp",
+    "role": "route",
+    "notes": "Roughly 12 miles and about 3,900 ft of gain from the Downey Creek trailhead, reached by a steep switchbacking descent off the Bachelor Creek meadows and a walk around the north shore. Parties report anywhere from six hours to eleven getting here, which is a fair measure of how much the brush and the pack weight vary. I…"
+   },
+   {
+    "name": "Itswoot Ridge",
+    "elev_ft": 5880,
+    "type": "bivy",
+    "role": "route",
+    "notes": "This is the working base for the southern peaks and the camp most parties coming in from Downey Creek actually use. Camps are quoted anywhere between roughly 5,900 and 6,400 ft depending on which bench you take, so the number here describes the lower, wetter end of the ridge rather than a single spot. From the benches …"
+   }
+  ],
+  "campsite_pins": [
+   {
+    "name": "Cub Lake",
+    "elev": 5338,
+    "distMi": null
+   }
+  ]
+ },
+ {
+  "id": "wa_gunsight_peak_standard",
+  "name": "Standard Route",
+  "discipline": "alpine",
+  "peak": "Middle Peak",
+  "area_id": "wa_middle_peak",
+  "path": "usa.washington.wa_northwest.wa_glacier_peak_region.wa_glacier_peak_wilderness.wa_gunsight_range_the.wa_middle_peak",
+  "trip_plan": {
+   "totalNote": "A demanding 6-day, ~34-mile backpack-and-climb loop with roughly 14,000 ft of cumulative gain/loss: two days approaching to a high camp at the Chikamin-Dome col, two big days summiting Gunsight and Sinister Peaks with a glacier bench camp between them, and two days exiting.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Approach to Bachelor Flats",
+     "objective": "Reach Bachelor Flats camp",
+     "miles": 16,
+     "gainFt": 3800,
+     "note": "Walk or bike the 8 closed miles of Suiattle River Road from the milepost 12 gate to the Downey Creek trailhead first. From the Downey Creek Trailhead (~1,400 ft), follow the Downey Creek Trail then the Bachelor Creek Trail, crossing Bachelor Creek on foot logs and pushing through brushy, overgrown tread. Camp in the fl…"
+    },
+    {
+     "n": 2,
+     "title": "Over Itswoot Ridge to high camp",
+     "objective": "Reach Chikamin-Dome col high camp",
+     "miles": 5.5,
+     "gainFt": 5000,
+     "note": "Climb through Bachelor Meadows, over Cub Pass, past Cub Lake, and up Itswoot Ridge onto the Dome Glacier, then traverse to the Chikamin-Dome col (~8,500 ft). This is the longest, most sustained climbing day of the approach and typically involves some glacier travel."
+    },
+    {
+     "n": 3,
+     "title": "Descend to the Chikamin Glacier and climb Gunsight Peak",
+     "objective": "Summit Gunsight Peak",
+     "miles": 3.5,
+     "gainFt": 2100,
+     "note": "Descend from the col to a bench camp on the Chikamin Glacier (~7,000 ft), drop overnight gear, then push for the summit via the bergschrund, a basalt dike, and an exposed ridge crest with a short 5.6 crux. Many parties top out in the evening and return to camp after dark."
+    },
+    {
+     "n": 4,
+     "title": "Climb Sinister Peak, move camp to Cub Lake",
+     "objective": "Summit Sinister Peak, relocate to Cub Lake Meadows",
+     "miles": 6,
+     "gainFt": 2200,
+     "note": "Climb Sinister Peak via the southwest snowfield, southwest gully, and upper/lower west ridge, then break camp, regain the Chikamin-Dome col, and descend back over Itswoot Ridge to Cub Lake Meadows. A long, full day combining a second summit with a camp move."
+    },
+    {
+     "n": 5,
+     "title": "Exit toward the trailhead",
+     "objective": "Reach a forest camp near Downey Creek",
+     "miles": 8,
+     "gainFt": 800,
+     "note": "Reverse the approach from Cub Lake Meadows over Cub Pass and down through Bachelor Meadows. Many parties use the improved north-side boot path along Bachelor Creek rather than the original brushy route, camping a few miles above the trailhead."
+    },
+    {
+     "n": 6,
+     "title": "Hike out",
+     "objective": "Return to Downey Creek Trailhead",
+     "miles": 11,
+     "gainFt": 100,
+     "note": "A short final push down the Downey Creek Trail to the trailhead, then the 8 closed miles of road back to the car at the milepost 12 gate."
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Chikamin-Dome col",
+    "elev_ft": 8500,
+    "type": null,
+    "role": "main",
+    "notes": "Planned high camp and the one most parties use for Gunsight — an established site on the col reached by roping up at Itswoot Pass and crossing the Dome Glacier. Room is genuinely tight: one party spent half an hour of earthwork levelling ground for a four-person tent. It is a col, so it funnels wind, but it is reported…"
+   },
+   {
+    "name": "Itswoot Ridge camp",
+    "elev_ft": null,
+    "type": "camp",
+    "role": "main",
+    "notes": ""
+   },
+   {
+    "name": "Bachelor Flats / Bachelor Meadows",
+    "elev_ft": 4500,
+    "type": null,
+    "role": "route",
+    "notes": "Planned camp, the standard first night after leaving maintained trail at the Bachelor Creek crossing. An informal but heavily used forest camp in a clearing — sheltered, buggy, and low. Most parties stop here because the unmaintained climbers' path above eats time and the day from the car is already long."
+   },
+   {
+    "name": "Cub Lake meadows",
+    "elev_ft": null,
+    "type": null,
+    "role": "route",
+    "notes": "Planned camp in heather meadow past Cub Pass, and the busiest ground on the approach — a summer weekend has been described with a dozen or more parties spread through these meadows and several more on Itswoot Ridge above. Comfortable and well watered, but it leaves the glacier travel and the col for the following day."
+   },
+   {
+    "name": "Chikamin Glacier bench below the west face",
+    "elev_ft": 7000,
+    "type": null,
+    "role": "route",
+    "notes": "Planned advanced camp, about ninety minutes of descending traverse below the col and directly under Gunsight's west face. Parties move here to shorten summit day rather than day-climbing from the col. It is a glacier bench: rope up moving to and from it, site the tent clear of the fall line off the face, and expect a c…"
+   }
+  ],
+  "campsite_pins": [
+   {
+    "name": "Bachelor Flats / Bachelor Meadows",
+    "elev": 4500,
+    "distMi": 8.9
+   },
+   {
+    "name": "Itswoot Ridge camp",
+    "elev": 6400,
+    "distMi": 12.5
+   }
+  ]
+ },
+ {
+  "id": "wa_sw_ridge",
+  "name": "Southwest Ridge",
+  "discipline": "alpine",
+  "peak": "Middle Peak",
+  "area_id": "wa_middle_peak",
+  "path": "usa.washington.wa_northwest.wa_glacier_peak_region.wa_glacier_peak_wilderness.wa_gunsight_range_the.wa_middle_peak",
+  "trip_plan": {
+   "totalNote": "A four-day trip by ferry and shuttle from Stehekin to a high camp below the Gunsight peaks, climbing the SW Ridge on day three.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Ferry, shuttle, and hike to a creek camp",
+     "objective": "Reach a streamside camp",
+     "miles": null,
+     "gainFt": null,
+     "note": "Take the ferry and shuttle, then hike to a streamside camp."
+    },
+    {
+     "n": 2,
+     "title": "Approach to high camp below the glacier",
+     "objective": "Reach high camp above the Blue Glacier",
+     "miles": null,
+     "gainFt": null,
+     "note": "Continue to a high camp below the glacier, which sits on an exposed rock ridge directly below the east side of the Gunsight peaks."
+    },
+    {
+     "n": 3,
+     "title": "Climb the Southwest Ridge",
+     "objective": "Summit Middle Gunsight",
+     "miles": null,
+     "gainFt": null,
+     "note": "Climb the SW Ridge, often paired with another route the same trip. Rappel south from near the summit to the notch with South Gunsight and into the moat at its base."
+    },
+    {
+     "n": 4,
+     "title": "Descend and hike out",
+     "objective": "Return to High Bridge",
+     "miles": 10,
+     "gainFt": null,
+     "note": "Descend from high camp and hike out."
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "High camp above the Blue Glacier",
+    "elev_ft": null,
+    "type": "bivy",
+    "role": "main",
+    "notes": "Reached from Stehekin by the shuttle to High Bridge, about ten miles up the Agnes Creek trail, a log crossing of Agnes Creek and a long bushwhack into the upper Blue basin. Camp sits on an exposed rock ridge above the Blue Glacier, directly below the east side of the Gunsight peaks."
+   }
+  ],
+  "campsite_pins": []
+ },
+ {
+  "id": "wa_west_face_2",
+  "name": "West Face",
+  "discipline": "alpine",
+  "peak": "North Peak",
+  "area_id": "wa_north_peak",
+  "path": "usa.washington.wa_northwest.wa_glacier_peak_region.wa_glacier_peak_wilderness.wa_gunsight_range_the.wa_north_peak",
+  "trip_plan": {
+   "totalNote": null,
+   "days": [
+    {
+     "n": 1,
+     "title": "Day 1",
+     "objective": "",
+     "miles": null,
+     "gainFt": null,
+     "note": "Hike the Downey Creek Trail and the brushy Bachelor Creek path to camp at Bachelor Flats (about 4,500 ft), or push on to Cub Lake (long day with significant brush and blowdown on Bachelor Creek)."
+    },
+    {
+     "n": 2,
+     "title": "Day 2",
+     "objective": "",
+     "miles": null,
+     "gainFt": null,
+     "note": "Over the pass to Cub Lake, up Itswoot Ridge and across the Dome Glacier to a high camp at the Dome-Chickamin col (about 8,500 ft)."
+    },
+    {
+     "n": 3,
+     "title": "Day 3",
+     "objective": "",
+     "miles": null,
+     "gainFt": null,
+     "note": "Cross the Chickamin Glacier to the base of the West Face, climb the route (5-6 pitches), rappel, and return to the col. Carry a spare day for weather."
+    },
+    {
+     "n": 4,
+     "title": "Day 4",
+     "objective": "",
+     "miles": null,
+     "gainFt": null,
+     "note": "Pack up the high camp and head back over Itswoot Ridge and past Cub Lake to a camp along Bachelor Creek."
+    },
+    {
+     "n": 5,
+     "title": "Day 5",
+     "objective": "",
+     "miles": null,
+     "gainFt": null,
+     "note": "Finish down the Bachelor Creek path and the Downey Creek Trail to the car."
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Dome Glacier and Dome-Chickamin col high bivouacs",
+    "elev_ft": null,
+    "type": "bivy",
+    "role": "main",
+    "notes": "These are the camps that put the eastern peaks in range, and they are the reason parties carry a full glacier kit past Itswoot Ridge. The col between the Dana and Dome glaciers holds a couple of rock rings around 7,470 ft, and further east the Dome-Chickamin col is a genuine high camp with figures around 8,000 ft and a…"
+   },
+   {
+    "name": "Bachelor Creek forest and meadow camps",
+    "elev_ft": 4500,
+    "type": "camp",
+    "role": "route",
+    "notes": "This exists because of the brush, and the brush is the single most important thing to understand about the south end. From the Downey Creek trailhead at 1,440 ft the Downey Creek trail runs about six easy forested miles to Sixmile Camp; after that the abandoned Bachelor Creek trail deteriorates badly. The first two mil…"
+   },
+   {
+    "name": "Cub Lake",
+    "elev_ft": 5338,
+    "type": "camp",
+    "role": "route",
+    "notes": "Roughly 12 miles and about 3,900 ft of gain from the Downey Creek trailhead, reached by a steep switchbacking descent off the Bachelor Creek meadows and a walk around the north shore. Parties report anywhere from six hours to eleven getting here, which is a fair measure of how much the brush and the pack weight vary. I…"
+   },
+   {
+    "name": "Itswoot Ridge",
+    "elev_ft": 5880,
+    "type": "bivy",
+    "role": "route",
+    "notes": "This is the working base for the southern peaks and the camp most parties coming in from Downey Creek actually use. Camps are quoted anywhere between roughly 5,900 and 6,400 ft depending on which bench you take, so the number here describes the lower, wetter end of the ridge rather than a single spot. From the benches …"
+   }
+  ],
+  "campsite_pins": [
+   {
+    "name": "Bachelor Flats (Camp 1)",
+    "elev": 4542,
+    "distMi": 9.7
+   },
+   {
+    "name": "Cub Lake",
+    "elev": 5338,
+    "distMi": null
+   },
+   {
+    "name": "Chikamin-Dome Col (Camp 2/High Camp)",
+    "elev": 8500,
+    "distMi": null
+   }
+  ]
+ },
+ {
+  "id": "wa_accidental_discharge_east_face",
+  "name": "Accidental Discharge (East Face)",
+  "discipline": "alpine",
+  "peak": "South Peak",
+  "area_id": "wa_south_peak",
+  "path": "usa.washington.wa_northwest.wa_glacier_peak_region.wa_glacier_peak_wilderness.wa_gunsight_range_the.wa_south_peak",
+  "trip_plan": {
+   "totalNote": "A 5-day expedition from Downey Creek over Itswoot Ridge to a high camp near the Dome-Chickamin col, a climbing day on the East Face from the Blue Glacier, and two days to reverse the approach.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Downey Creek to Itswoot Ridge",
+     "objective": "Reach a camp on Itswoot Ridge",
+     "miles": 12.5,
+     "gainFt": 5700,
+     "note": "Hike from the Downey Creek trailhead via Bachelor Creek to a camp on Itswoot Ridge, about 12-13 miles and 5,700 ft of gain."
+    },
+    {
+     "n": 2,
+     "title": "Move to the Dome-Chickamin col camp",
+     "objective": "Reach a high camp near the Dome-Chickamin col",
+     "miles": 3,
+     "gainFt": 2500,
+     "note": "Continue about 3 miles and 2,500 ft to a high camp near the Dome-Chickamin col at about 8,500 ft."
+    },
+    {
+     "n": 3,
+     "title": "Climb the East Face",
+     "objective": "Climb Accidental Discharge and return to high camp",
+     "miles": null,
+     "gainFt": null,
+     "note": "Reach the base of the East Face on the Blue Glacier and climb the route. Return to high camp."
+    },
+    {
+     "n": 4,
+     "title": "Reverse the approach to Itswoot Ridge",
+     "objective": "Return toward Itswoot Ridge",
+     "miles": 3,
+     "gainFt": null,
+     "note": "Break high camp and begin reversing the approach."
+    },
+    {
+     "n": 5,
+     "title": "Hike out to Downey Creek",
+     "objective": "Return to the Downey Creek trailhead",
+     "miles": 12.5,
+     "gainFt": null,
+     "note": "Finish reversing the approach via Bachelor Creek to the Downey Creek trailhead."
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Dome Glacier and Dome-Chickamin col high bivouacs",
+    "elev_ft": null,
+    "type": "bivy",
+    "role": "main",
+    "notes": "These are the camps that put the eastern peaks in range, and they are the reason parties carry a full glacier kit past Itswoot Ridge. The col between the Dana and Dome glaciers holds a couple of rock rings around 7,470 ft, and further east the Dome-Chickamin col is a genuine high camp with figures around 8,000 ft and a…"
+   },
+   {
+    "name": "Bachelor Creek forest and meadow camps",
+    "elev_ft": 4500,
+    "type": "camp",
+    "role": "route",
+    "notes": "This exists because of the brush, and the brush is the single most important thing to understand about the south end. From the Downey Creek trailhead at 1,440 ft the Downey Creek trail runs about six easy forested miles to Sixmile Camp; after that the abandoned Bachelor Creek trail deteriorates badly. The first two mil…"
+   },
+   {
+    "name": "Cub Lake",
+    "elev_ft": 5338,
+    "type": "camp",
+    "role": "route",
+    "notes": "Roughly 12 miles and about 3,900 ft of gain from the Downey Creek trailhead, reached by a steep switchbacking descent off the Bachelor Creek meadows and a walk around the north shore. Parties report anywhere from six hours to eleven getting here, which is a fair measure of how much the brush and the pack weight vary. I…"
+   },
+   {
+    "name": "Itswoot Ridge",
+    "elev_ft": 5880,
+    "type": "bivy",
+    "role": "route",
+    "notes": "This is the working base for the southern peaks and the camp most parties coming in from Downey Creek actually use. Camps are quoted anywhere between roughly 5,900 and 6,400 ft depending on which bench you take, so the number here describes the lower, wetter end of the ridge rather than a single spot. From the benches …"
+   }
+  ],
+  "campsite_pins": [
+   {
+    "name": "Cub Lake",
+    "elev": 5338,
+    "distMi": null
+   }
+  ]
+ },
+ {
+  "id": "wa_gothic_peak_standard",
+  "name": "Standard Scramble (from Foggy Lake)",
+  "discipline": "scrambling",
+  "peak": "Gothic Peak",
+  "area_id": "wa_gothic_peak",
+  "path": "usa.washington.wa_northwest.wa_glacier_peak_region.wa_gothic_peak",
+  "trip_plan": {
+   "totalNote": "A relaxed overnight trip (~9-10 total miles, ~3,600-3,800 ft gain) with a comfortable camp at Foggy Lake between the approach and the summit day; strong parties instead do Gothic alone as a single 6-9 hour car-to-car day (adding Del Campo extends that to 10-12 hours).",
+   "days": [
+    {
+     "n": 1,
+     "title": "Backpack in to Foggy Lake",
+     "objective": "Establish camp at Foggy Lake",
+     "miles": 4.2,
+     "gainFt": 2700,
+     "note": "From the Barlow Pass trailhead, follow the Weden Creek Trail #724 through 1.5 easy miles of old-growth forest, then a steeper mile of switchbacks up into Gothic Basin before the final push to the Foggy Lake basin. Most parties take it easy on this day, arriving with time to swim, fish, or just enjoy the cirque below Go…"
+    },
+    {
+     "n": 2,
+     "title": "Summit Gothic Peak and hike out",
+     "objective": "Scramble Gothic Peak, then pack up and hike out to Barlow Pass",
+     "miles": 5.6,
+     "gainFt": 1100,
+     "note": "An early start lets you scramble the southeast ridge/gully to Gothic's summit block in good rock conditions before the day heats up (many parties tag Del Campo Peak too, adding roughly 2 hours and 1.5 miles round trip). Break camp after returning, then reverse the Weden Creek Trail back to the car."
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Foggy Lake, Gothic Basin",
+    "elev_ft": null,
+    "type": "camp",
+    "role": "main",
+    "notes": "The usual camp for Gothic Peak and Del Campo Peak, at the top of the Gothic Basin trail beneath both summits. The basin is fragile, so keep off the meadows and heather."
+   },
+   {
+    "name": "Weden Creek trail junction, one mile up the Monte Cristo road",
+    "elev_ft": null,
+    "type": "bivy",
+    "role": "route",
+    "notes": "This is for the party that runs long rather than the party that plans well. The walk out from Gothic Basin is a steep descent on greasy slab in fading light and it is where people get hurt on this approach, so a known flat spot at the bottom of the climbing — before the last mile of road back to Barlow Pass — is worth …"
+   },
+   {
+    "name": "Lower Gothic Basin — the slab benches and tarns short of Foggy Lake",
+    "elev_ft": null,
+    "type": "camp",
+    "role": "route",
+    "notes": "The basin lip, where the climbers' trail finally stops climbing and opens out among tarns and slabs, sits about a mile below Foggy Lake and is the quieter alternative to it. For Gothic Peak this costs almost nothing — Gothic's ordinary line goes up from the basin side and the extra mile to the lake buys no advantage — …"
+   }
+  ],
+  "campsite_pins": [
+   {
+    "name": "Foggy Lake, Gothic Basin",
+    "elev": 5220,
+    "distMi": null
+   }
+  ]
+ }
+]

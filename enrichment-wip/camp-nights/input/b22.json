@@ -1,0 +1,732 @@
+[
+ {
+  "id": "wa_lincoln_peak_standard",
+  "name": "X Couloir (Southwest Face) / Standard Route",
+  "discipline": "alpine",
+  "peak": "Lincoln Peak",
+  "area_id": "wa_lincoln_peak",
+  "path": "usa.washington.wa_northwest.wa_shuksan_baker_neighbors.wa_lincoln_peak",
+  "trip_plan": {
+   "totalNote": "A 2-day trip: ~7 mi and 3,350 ft up to a 6,100 ft basin camp on day 1, then a 1:45-3 AM alpine start, bergschrund crux, and X Couloir to the 9,085 ft summit on day 2, descending via roughly ten rappels back to camp and hiking out the same evening.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Approach to basin camp",
+     "objective": "Reach the ~6,100 ft camp near Rankin Creek/Rankin Lake basin",
+     "miles": 12.5,
+     "gainFt": 3350,
+     "note": "Walk or bike the closed stretch of FR 38 from the washout up to the mile-12.5 switchback before the basin approach. Drive FR-38 to around the mile-12.5 switchback, then hike/bushwhack the old decommissioned road around Pt. 4481 toward Rankin Creek. Snow travel (often bike or snowshoes on the lower stretch) leads past E…"
+    },
+    {
+     "n": 2,
+     "title": "Summit day: X Couloir",
+     "objective": "Climb the SW basin / bergschrund / X Couloir to the 9,085 ft summit and return to the trailhead",
+     "miles": 15,
+     "gainFt": 3150,
+     "note": "An alpine start gets the team into the SW basin and across the bergschrund crux while it's still cold and firm, up ~1,500 ft of 30-40° snow and a steep serac step to the summit. Descent reverses the route with roughly ten double-rope rappels off pickets and rock-horn anchors, then camp is broken and the party hikes out…"
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Wallace Creek basin ridge camp",
+    "elev_ft": 6100,
+    "type": "camp",
+    "role": "main",
+    "notes": "This is the established high camp for Lincoln and the one nearly every ascent uses. It sits on the ridge overlooking the Wallace Creek basin, right at the last stand of trees, with the Black Buttes and the summit block in view above. Reaching it means walking the road to about the seventh switchback, picking up the old…"
+   },
+   {
+    "name": "Middle Fork Nooksack road switchbacks",
+    "elev_ft": null,
+    "type": "bivy",
+    "role": "route",
+    "notes": "Sleeping at the vehicle the night before is the normal way to start this climb, because the approach is long and parties want to be walking in the dark. The switchbacks above the road's lower section give rough pullouts around 2,650 to 3,420 ft depending on how far the surface lets you drive; past the first switchback …"
+   },
+   {
+    "name": "East Rankin Lake",
+    "elev_ft": 5120,
+    "type": "camp",
+    "role": "route",
+    "notes": "The lower of the two natural stopping places on the approach, in the Rankin Creek basin below the saddle. It is the sensible camp for a party that started late, that is walking extra road miles because of the washout, or that wants an easier carry on day one and a longer summit day on day two. From here the route conti…"
+   },
+   {
+    "name": "Saddle tarns above Rankin Creek",
+    "elev_ft": 5480,
+    "type": "bivy",
+    "role": "route",
+    "notes": "The small saddle north of the Rankin basin, with a pair of tarns beside it, sitting between east Rankin Lake and the climb east into the upper basin below Seward. It is a stopgap rather than a destination: only a few hundred feet above the lake and still well short of the ridge camp, so it is chosen mostly by parties c…"
+   }
+  ],
+  "campsite_pins": []
+ },
+ {
+  "id": "wa_little_sister_north_face",
+  "name": "North Face",
+  "discipline": "alpine",
+  "peak": "Little Sister",
+  "area_id": "wa_little_sister",
+  "path": "usa.washington.wa_northwest.wa_shuksan_baker_neighbors.wa_little_sister",
+  "trip_plan": {
+   "totalNote": "Hike in and camp below the Green Creek Glacier, then climb the four-pitch North Face, descend, and walk out on day two.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Hike in to the Green Creek basin",
+     "objective": "Camp below the Green Creek Glacier",
+     "miles": 5,
+     "gainFt": 4000,
+     "note": "Cross the Middle Fork Nooksack on the log, hike the Elbow Lake Trail and the Green Creek climbers' path, and camp below the Green Creek Glacier."
+    },
+    {
+     "n": 2,
+     "title": "Climb the North Face and walk out",
+     "objective": "Summit via the North Face, break camp and exit",
+     "miles": 5,
+     "gainFt": 1000,
+     "note": "Make an early start onto the glacier, climb steep snow to the base, cross the moat, and climb the four pitches of the North Face. Descend either by rappelling the lookers-right side or by downclimbing the Southeast Ridge, then break camp and walk out."
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Green Creek cirque dispersed camp",
+    "elev_ft": null,
+    "type": "bivy",
+    "role": "main",
+    "notes": "This basin under the Green Creek glacier is ringed by Skookum, Little Sister and Cinderella and sits directly below the south end of the traverse, which makes it the natural base for all three of those summits and for the circuit that links them to South Twin. It is reached by branching off the Elbow Lake trail at a sw…"
+   }
+  ],
+  "campsite_pins": []
+ },
+ {
+  "id": "wa_little_sister_southeast_ridge",
+  "name": "Southeast Ridge",
+  "discipline": "alpine",
+  "peak": "Little Sister",
+  "area_id": "wa_little_sister",
+  "path": "usa.washington.wa_northwest.wa_shuksan_baker_neighbors.wa_little_sister",
+  "trip_plan": {
+   "totalNote": "Hike in and camp in the upper Green Creek basin, then climb the three-pitch Southeast Ridge, descend, and walk out on day two.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Hike in to the upper Green Creek basin",
+     "objective": "Camp below the Green Creek Glacier",
+     "miles": 5,
+     "gainFt": 4000,
+     "note": "Cross the Middle Fork on the log, hike the Elbow Lake Trail and the Green Creek climbers' path, and camp in the upper Green Creek basin below the glacier."
+    },
+    {
+     "n": 2,
+     "title": "Climb the Southeast Ridge and walk out",
+     "objective": "Summit via the Southeast Ridge, break camp and exit",
+     "miles": 5,
+     "gainFt": 1000,
+     "note": "Make an early start onto the Green Creek Glacier, cross the moat at the Cinderella-Little Sister col, and climb the three pitches of the Southeast Ridge and the fourth-class finish to the summit. Either downclimb the ridge or rappel the North Face to the glacier, then break camp and walk out."
+    }
+   ]
+  },
+  "camps_on_file": [],
+  "campsite_pins": []
+ },
+ {
+  "id": "wa_little_sister_west_face",
+  "name": "West Face",
+  "discipline": "alpine",
+  "peak": "Little Sister",
+  "area_id": "wa_little_sister",
+  "path": "usa.washington.wa_northwest.wa_shuksan_baker_neighbors.wa_little_sister",
+  "trip_plan": {
+   "totalNote": "Hike in to a camp below the Green Creek Glacier at about 4,500-5,000 ft, then climb the 1,000 ft west face, descend the westernmost rib, and walk out on day two.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Hike in to the upper Green Creek basin",
+     "objective": "Camp below the glacier at about 4,500-5,000 ft",
+     "miles": 5,
+     "gainFt": 4000,
+     "note": "Cross the Middle Fork on the log and hike the Elbow Lake Trail and the Green Creek climbers' path to camp in the upper Green Creek basin below the glacier, at around 4,500-5,000 ft."
+    },
+    {
+     "n": 2,
+     "title": "Climb the west face and walk out",
+     "objective": "Summit via the west face, break camp and exit",
+     "miles": 5,
+     "gainFt": 1000,
+     "note": "Cross the divide early and climb the 1,000 ft west face, soloing or simul-climbing the fourth and low fifth class, to tag the summit. Reverse the westernmost rib to the second lower notch, regain the glacier, then break camp and walk out."
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Green Creek cirque dispersed camp",
+    "elev_ft": null,
+    "type": "bivy",
+    "role": "main",
+    "notes": "This basin under the Green Creek glacier is ringed by Skookum, Little Sister and Cinderella and sits directly below the south end of the traverse, which makes it the natural base for all three of those summits and for the circuit that links them to South Twin. It is reached by branching off the Elbow Lake trail at a sw…"
+   }
+  ],
+  "campsite_pins": []
+ },
+ {
+  "id": "wa_mount_baker_boulder_glacier",
+  "name": "Boulder Glacier",
+  "discipline": "mountaineering",
+  "peak": "Mount Baker",
+  "area_id": "wa_mount_baker",
+  "path": "usa.washington.wa_northwest.wa_shuksan_baker_neighbors.wa_mount_baker",
+  "trip_plan": {
+   "totalNote": "A quieter, longer approach than the standard routes: 4-5 hrs to camp, then a 5-7 hr summit push followed by the full hike out, for roughly 16 miles and 8,100 ft round trip.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Approach to high camp",
+     "objective": "Boulder Ridge trailhead to high camp where the ridge meets the glacier",
+     "miles": 6.5,
+     "gainFt": 3000,
+     "note": "A long, arduous east-side approach through clearcut and timber onto Boulder Ridge; most parties camp where the ridge meets the glacier at about 5,500-5,900 ft; a sheltered site near 7,500 ft beside the cleaver shortens the summit day for those who carry higher."
+    },
+    {
+     "n": 2,
+     "title": "Summit and hike out",
+     "objective": "Climb the Boulder Glacier/Cleaver to the summit, descend to the car",
+     "miles": 9.5,
+     "gainFt": 5100,
+     "note": "From camp, climb the glacier south of the cleaver, negotiating crevasses and a bergschrund, then finish up steep snow for the last ~500 ft to the summit. Reverse the route back to camp and continue out to the trailhead."
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Boulder Ridge high camp",
+    "elev_ft": null,
+    "type": "camp",
+    "role": "main",
+    "notes": "The usual camp at the top of the Boulder Ridge boot path, at roughly 5,500 to 5,700 ft just below the Boulder Glacier. Fully exposed to wind."
+   }
+  ],
+  "campsite_pins": []
+ },
+ {
+  "id": "wa_mount_baker_boulder_park_cleaver",
+  "name": "Boulder–Park Cleaver",
+  "discipline": "mountaineering",
+  "peak": "Mount Baker",
+  "area_id": "wa_mount_baker",
+  "path": "usa.washington.wa_northwest.wa_shuksan_baker_neighbors.wa_mount_baker",
+  "trip_plan": {
+   "totalNote": "Hike the Boulder Ridge Trail to a high camp on day one, then cross the lower Boulder Glacier, climb the cleaver to the summit, and descend all the way out on day two.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Hike Boulder Ridge to high camp",
+     "objective": "Reach high camp at about 5,700 ft",
+     "miles": null,
+     "gainFt": 3000,
+     "note": "Hike the Boulder Ridge Trail and climb to a high camp at about 5,700 ft."
+    },
+    {
+     "n": 2,
+     "title": "Climb the cleaver to the summit and out",
+     "objective": "Summit Mount Baker and return to the trailhead",
+     "miles": null,
+     "gainFt": 5080,
+     "note": "Cross the lower Boulder Glacier northwest to the cleaver, climb it, and reach the 10,781 ft summit. Descend to camp and continue out to the trailhead."
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Boulder Ridge high camp",
+    "elev_ft": null,
+    "type": "camp",
+    "role": "main",
+    "notes": "The usual camp at the top of the Boulder Ridge boot path, at roughly 5,500 to 5,700 ft just below the Boulder Glacier. Fully exposed to wind."
+   }
+  ],
+  "campsite_pins": []
+ },
+ {
+  "id": "wa_mount_baker_cockscomb_ridge",
+  "name": "Cockscomb Ridge",
+  "discipline": "mountaineering",
+  "peak": "Mount Baker",
+  "area_id": "wa_mount_baker",
+  "path": "usa.washington.wa_northwest.wa_shuksan_baker_neighbors.wa_mount_baker",
+  "trip_plan": {
+   "totalNote": "A serious, lightly-traveled grade III-IV alpine route; most modern parties do it as a 2-day trip with a Coleman Glacier camp rather than the historic 9,500 ft bivy, treating ridge day as a long 12-14 hour push.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Approach to Coleman/Hogsback camp",
+     "objective": "Establish glacier camp via Heliotrope Ridge",
+     "miles": 3,
+     "gainFt": 2900,
+     "note": "Standard Heliotrope Ridge approach to a Coleman Glacier camp near the Hogsback (~6,000 ft), the same camp used for Coleman-Deming and North Ridge parties. This positions you for the long, technical ridge day ahead."
+    },
+    {
+     "n": 2,
+     "title": "Climb the ridge and descend",
+     "objective": "Gain Cockscomb Ridge, turn the tower, summit, descend Coleman-Deming",
+     "miles": 9,
+     "gainFt": 4600,
+     "note": "An early, roped start to cross the Coleman/Roosevelt glaciers and reach the ridge crest around 7,500 ft, threading thin snow bridges through a maze of crevasses and contouring east around a bergschrund. Turn the crux Cockscomb Tower on its east side via steep snow (or drop onto the Park Glacier's AI3 headwall late-seas…"
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Park Glacier camp near the Portals",
+    "elev_ft": null,
+    "type": "bivy",
+    "role": "main",
+    "notes": "Beyond Camp Kiser, across the Rainbow Glacier and onto the Park Glacier. This is where most parties sleep before the Park Glacier Headwall or the Cockscomb."
+   },
+   {
+    "name": "Camp Kiser, Ptarmigan Ridge",
+    "elev_ft": null,
+    "type": "camp",
+    "role": "route",
+    "notes": "About five miles out Ptarmigan Ridge where the maintained trail ends. A good first night, with the glaciers still to cross."
+   }
+  ],
+  "campsite_pins": [
+   {
+    "name": "Hogsback Camp",
+    "elev": 5900,
+    "distMi": 3
+   }
+  ]
+ },
+ {
+  "id": "wa_mount_baker_coleman_deming",
+  "name": "Coleman–Deming Glacier",
+  "discipline": "mountaineering",
+  "peak": "Mount Baker",
+  "area_id": "wa_mount_baker",
+  "path": "usa.washington.wa_northwest.wa_shuksan_baker_neighbors.wa_mount_baker",
+  "trip_plan": {
+   "totalNote": "The standard 2-day glacier climb on Baker: ~10-12 miles round trip and 6,900-7,300 ft gain, most parties camp one night at the Hogsback.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Approach to Hogsback camp",
+     "objective": "Heliotrope Ridge trailhead to Hogsback camp",
+     "miles": 2.9,
+     "gainFt": 2200,
+     "note": "A straightforward forested and moraine approach to the Hogsback camp around 5,800-6,000 ft, the standard staging point for Baker's most popular route."
+    },
+    {
+     "n": 2,
+     "title": "Summit and hike out",
+     "objective": "Climb the Coleman and Deming Glaciers to the summit, descend to the car",
+     "miles": 8.4,
+     "gainFt": 4700,
+     "note": "Early alpine start, crampons on at camp, roped travel up the Coleman Glacier to the Colfax saddle and up the Roman Wall to the summit; descend the same way back to camp, break down camp, and hike out the same day."
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Hogsback Camp",
+    "elev_ft": 6000,
+    "type": null,
+    "role": "main",
+    "notes": "The standard planned high camp, two to three hours up from the trailhead on the moraine beside the Coleman Glacier. It is above the trees, so there is nothing to hang food from and nothing to break the wind coming off the glacier; the rock-walled spots are there for a reason. Reach it early in the day if you can — the …"
+   },
+   {
+    "name": "Kulshan Cabin site",
+    "elev_ft": 5000,
+    "type": null,
+    "role": "route",
+    "notes": "A lower fallback just below treeline where the cabin used to stand. Nothing remains of the structure, but there are trees for shelter and for hanging food, which Hogsback does not have. Worth knowing about as a foul-weather retreat rather than as a first choice, since it leaves another thousand feet of climbing before …"
+   }
+  ],
+  "campsite_pins": [
+   {
+    "name": "Kulshan Cabin site",
+    "elev": 5000,
+    "distMi": 1.9
+   },
+   {
+    "name": "Hogsback Camp",
+    "elev": 5897,
+    "distMi": 3
+   }
+  ]
+ },
+ {
+  "id": "wa_mount_baker_coleman_headwall",
+  "name": "Coleman Headwall",
+  "discipline": "alpine",
+  "peak": "Mount Baker",
+  "area_id": "wa_mount_baker",
+  "path": "usa.washington.wa_northwest.wa_shuksan_baker_neighbors.wa_mount_baker",
+  "trip_plan": {
+   "totalNote": "A committing 2-day ice route (guided trips sometimes run 3 days for a rest/buffer day); very strong parties occasionally push it car-to-car in a single ~14 hr day.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Approach to high camp",
+     "objective": "Heliotrope Ridge trailhead to Coleman Glacier camp (~6,700 ft)",
+     "miles": 3.5,
+     "gainFt": 3000,
+     "note": "Same approach as Coleman-Deming and North Ridge, pushed slightly higher to stage below the headwall. Some parties scout the glacier approach the afternoon before to speed up the alpine start."
+    },
+    {
+     "n": 2,
+     "title": "Climb the headwall and hike out",
+     "objective": "Climb the Coleman Headwall to the summit, descend Coleman-Deming, hike out",
+     "miles": 9.5,
+     "gainFt": 4100,
+     "note": "A very early alpine start (1-2 AM) to travel up the center of the broken Coleman Glacier to the base of the headwall (~8,500 ft), then climb roughly 12 pitches of 45-50 degree ice with short steeper steps and a bergschrund crossing. Descend the non-technical Coleman-Deming route back to camp and hike out; this is a lon…"
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Hogsback Camp, Heliotrope Ridge",
+    "elev_ft": 6000,
+    "type": "camp",
+    "role": "main",
+    "notes": "The default first night for parties on the Coleman-Deming and the usual staging point for the North Ridge, on the moraine bench above the trail's stream crossings about 2.5 to 3 miles in. Glacier Creek Road, the only driving approach, washed out in the December 2025 floods; the repairs were finished and vehicles could …"
+   },
+   {
+    "name": "North Ridge glacier bivy, upper Coleman",
+    "elev_ft": 6800,
+    "type": "bivy",
+    "role": "main",
+    "notes": "North Ridge parties generally carry from the Hogsback out onto the Coleman and bivy somewhere around 6,800 to 7,000 ft to shorten the approach to the base of the ridge, which itself rises around 4,000 ft to the summit. Where exactly that camp sits is decided by crevasse conditions on the day rather than by any fixed lo…"
+   },
+   {
+    "name": "Kulshan Cabin site and Harrison Camp",
+    "elev_ft": 5000,
+    "type": "camp",
+    "role": "route",
+    "notes": "The cabin itself is long gone, and the name now marks a cluster of sites around 4,800 to 5,000 ft with Harrison Camp on the moraine above the lower Coleman. These suit a party arriving late, anyone who wants trees around them in bad weather, or a group that would rather climb from lower down than share the Hogsback. Th…"
+   },
+   {
+    "name": "Upper Coleman Glacier snow camps, below the Black Buttes",
+    "elev_ft": 7000,
+    "type": "bivy",
+    "role": "route",
+    "notes": "Pushing camp onto the glacier below the Black Buttes cuts a real chunk out of summit day and puts you above most of the weather that sits on the moraine. It costs you a fully exposed camp on snow, so platforms need walls, and everything about the site depends on that year's crevasse pattern — what was a flat bench one …"
+   },
+   {
+    "name": "Colfax-Grant saddle bivy",
+    "elev_ft": 9000,
+    "type": "bivy",
+    "role": "route",
+    "notes": "The saddle between Colfax Peak and the main summit is occasionally used as a very high bivy by strong parties shortening summit day, and more often as an emergency stop by parties caught out by weather or a slow descent. It is fully exposed to wind and to whatever the mountain is doing, with no shelter of any kind, and…"
+   }
+  ],
+  "campsite_pins": [
+   {
+    "name": "Heliotrope Ridge Camp",
+    "elev": 5900,
+    "distMi": 3
+   }
+  ]
+ },
+ {
+  "id": "wa_mount_baker_coleman_ski_descent",
+  "name": "Coleman Ski Descent",
+  "discipline": "mountaineering",
+  "peak": "Mount Baker",
+  "area_id": "wa_mount_baker",
+  "path": "usa.washington.wa_northwest.wa_shuksan_baker_neighbors.wa_mount_baker",
+  "trip_plan": {
+   "totalNote": "Two days: skin/hike to a camp near 6,000 ft at the edge of the Coleman Glacier, then climb the Coleman-Deming to the summit, ski the route back to camp in corn, and continue out to the car.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Hike and skin to the Hogsback camp",
+     "objective": "Reach camp near 6,000 ft at the Coleman Glacier",
+     "miles": 3,
+     "gainFt": 2300,
+     "note": "Trail 677 from the Heliotrope Ridge trailhead (~3,700 ft) past the old Kulshan Cabin site, then the climbers' trail up the Hogsback to the glacier edge near 6,000 ft; one party took about 1.5 hours walking and 45 minutes skinning. Gain derived from trailhead to camp elevations."
+    },
+    {
+     "n": 2,
+     "title": "Climb the Coleman-Deming and ski out",
+     "objective": "Summit Mount Baker, ski the route, and return to the car",
+     "miles": 8,
+     "gainFt": 4800,
+     "note": "Skin up the Coleman Glacier to the Coleman-Deming col, then usually boot-pack the Roman Wall with crampons and axe to the summit. Ski parties start later than climbers so the Roman Wall and glacier soften to corn; one May party left camp at 8 AM, summited about 12:30 PM and found the Roman Wall still firm at 1 PM. Gain…"
+    }
+   ]
+  },
+  "camps_on_file": [],
+  "campsite_pins": []
+ },
+ {
+  "id": "wa_mount_baker_easton_glacier",
+  "name": "Easton Glacier",
+  "discipline": "mountaineering",
+  "peak": "Mount Baker",
+  "area_id": "wa_mount_baker",
+  "path": "usa.washington.wa_northwest.wa_shuksan_baker_neighbors.wa_mount_baker",
+  "trip_plan": {
+   "totalNote": "A classic 2-day glacier climb: ~14 miles round trip with about 7,400-7,600 ft of gain, camp-to-summit-to-car in one long second day.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Approach to high camp",
+     "objective": "Reach Railroad Grade / Sandy Camp high camp",
+     "miles": 3.8,
+     "gainFt": 2600,
+     "note": "Hike the Railroad Grade moraine from Schriebers Meadow up to one of the established high camps near 5,900-6,500 ft, leaving a long summit day for tomorrow. Flat sandy tent sites are available at several spots along the ridge, but running water is unreliable, so plan to melt snow."
+    },
+    {
+     "n": 2,
+     "title": "Summit push and hike out",
+     "objective": "Climb the Easton Glacier to Grant Peak, then descend to the trailhead",
+     "miles": 10.2,
+     "gainFt": 5000,
+     "note": "Alpine start well before dawn to be off the upper glacier before the sun softens the snow. Rope up on the Easton Glacier, trend past Sherman Peak and along the base of the Roman Wall, then climb steep snow to the summit plateau and Grant Peak; reverse the route back to camp and continue out to the trailhead the same da…"
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Sandy Camp, top of the Railroad Grade",
+    "elev_ft": 6000,
+    "type": "camp",
+    "role": "main",
+    "notes": "The standard Easton Glacier high camp, reached by following the Railroad Grade moraine up from Schriebers Meadow and Morovitz Meadow. The basin gives real wind protection, which is why it is preferred over the more scenic but more exposed ground on the moraine crest itself. The gravel road in is snowbound into June in …"
+   },
+   {
+    "name": "Railroad Grade and Morovitz Meadow camps",
+    "elev_ft": 5500,
+    "type": "camp",
+    "role": "route",
+    "notes": "These lower sites suit parties arriving in the evening, anyone wanting shelter from wind, and low-snow years when the higher ground has no water at all. They are meadow and subalpine terrain, so camp on durable surfaces and off the vegetation, which is slow to recover here. Summit day from this elevation is long, and m…"
+   }
+  ],
+  "campsite_pins": [
+   {
+    "name": "Sandy Camp / Railroad Grade Camp",
+    "elev": 5900,
+    "distMi": 4
+   }
+  ]
+ },
+ {
+  "id": "wa_mount_baker_north_ridge",
+  "name": "North Ridge",
+  "discipline": "alpine",
+  "peak": "Mount Baker",
+  "area_id": "wa_mount_baker",
+  "path": "usa.washington.wa_northwest.wa_shuksan_baker_neighbors.wa_mount_baker",
+  "trip_plan": {
+   "totalNote": "A 2-3 day technical alpine route: approach and camp on day 1, a long (10-14 hr) technical summit day on day 2, with day 3 out reserved for parties that don't push straight through.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Approach to Hogsback camp",
+     "objective": "Heliotrope Ridge trailhead to Coleman Glacier camp",
+     "miles": 2.9,
+     "gainFt": 2300,
+     "note": "A well-trodden approach through forest and moraine to camp scattered between 6,000-6,200 ft along the edge of the Coleman Glacier, the standard staging camp for both the North Ridge and Coleman-Deming."
+    },
+    {
+     "n": 2,
+     "title": "Climb the North Ridge",
+     "objective": "Climb the Coleman Glacier and North Ridge ice headwall to the summit, return to camp",
+     "miles": 6.5,
+     "gainFt": 4600,
+     "note": "Alpine start to cross the Coleman Glacier and gain the North Ridge, then climb the AI3 ice headwall (about 4 pitches) to the summit plateau. Descend the non-technical Coleman-Deming route back to the Hogsback camp; this is the technical crux day and can run long if the icefall is broken up."
+    },
+    {
+     "n": 3,
+     "title": "Hike out",
+     "objective": "Return to trailhead",
+     "miles": 2.9,
+     "gainFt": 0,
+     "note": "Pack up camp and descend the Heliotrope Ridge trail back to the car; parties strong or fast enough sometimes combine this with day 2 instead."
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Hogsback",
+    "elev_ft": 6000,
+    "type": "camp",
+    "role": "main",
+    "notes": "Shared with the Coleman-Deming route and reached by branching off Trail 677 at the old Kulshan Cabin site and climbing the moraine crest. There are no trees at this elevation, so food has to go in a bear canister or Ursack — the nearest suitable trees for hanging are lower, at Harrison Camp. Human waste goes out in blu…"
+   }
+  ],
+  "campsite_pins": [
+   {
+    "name": "Hogsback Camp",
+    "elev": 5900,
+    "distMi": 3
+   }
+  ]
+ },
+ {
+  "id": "wa_mount_baker_park_glacier_headwall",
+  "name": "Park Glacier Headwall",
+  "discipline": "alpine",
+  "peak": "Mount Baker",
+  "area_id": "wa_mount_baker",
+  "path": "usa.washington.wa_northwest.wa_shuksan_baker_neighbors.wa_mount_baker",
+  "trip_plan": {
+   "totalNote": "A 2-day glacier/ice route with one night at a high camp below the headwall; the summit day is long (12+ hrs) and very sun/timing-sensitive.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Approach to the Portals camp",
+     "objective": "Artist Point trailhead to high camp below the Park Glacier",
+     "miles": 5.5,
+     "gainFt": 1800,
+     "note": "Climb over the Table Mountain shoulder and past the saddle near Coleman Pinnacle to reach the Portals camp, a sandy, sheltered site tucked among the glaciers where the only water is snowmelt."
+    },
+    {
+     "n": 2,
+     "title": "Climb the headwall and hike out",
+     "objective": "Climb the Park Glacier headwall to the summit, descend, and drive out",
+     "miles": 8.5,
+     "gainFt": 5000,
+     "note": "An early start is essential to beat the sun on this northeast-facing headwall, which turns to mush once the sky clears. Cross a crevassed moat/bergschrund near 9,500 ft, then make a long rising traverse up the headwall (several sustained ice pitches) to the summit ridge; descend back to camp and hike out the same day."
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Park Glacier camp near the Portals",
+    "elev_ft": null,
+    "type": "bivy",
+    "role": "main",
+    "notes": "Beyond Camp Kiser, across the Rainbow Glacier and onto the Park Glacier. This is where most parties sleep before the Park Glacier Headwall or the Cockscomb."
+   },
+   {
+    "name": "Camp Kiser, Ptarmigan Ridge",
+    "elev_ft": null,
+    "type": "camp",
+    "role": "route",
+    "notes": "About five miles out Ptarmigan Ridge where the maintained trail ends. A good first night, with the glaciers still to cross."
+   }
+  ],
+  "campsite_pins": []
+ },
+ {
+  "id": "wa_mount_baker_squak_glacier",
+  "name": "Squak Glacier",
+  "discipline": "mountaineering",
+  "peak": "Mount Baker",
+  "area_id": "wa_mount_baker",
+  "path": "usa.washington.wa_northwest.wa_shuksan_baker_neighbors.wa_mount_baker",
+  "trip_plan": {
+   "totalNote": "The classic 2-day Squak: hike and climb to Crag View camp (~6,500 ft) on day one, then summit via the Squak Glacier and Roman Wall early on day two and descend all the way to the car the same afternoon.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Hike in to Crag View camp",
+     "objective": "Reach camp at Crag View (~6,500 ft)",
+     "miles": 3.5,
+     "gainFt": 3300,
+     "note": "Scott Paul trail from Schriebers Meadow, leaving the trail near 4,600 ft on the climbers' path up the moraine to Crag View, about 3.5 miles and 3,300 ft. Parties report arriving around 4 PM after a late-morning start; tent spots are usually available. Gain derived from the 3,200 ft trailhead to the 6,498 ft camp."
+    },
+    {
+     "n": 2,
+     "title": "Summit via the Squak and hike out",
+     "objective": "Climb to Grant Peak and descend to the trailhead",
+     "miles": 6.5,
+     "gainFt": 4300,
+     "note": "Rope up at camp and climb the Squak Glacier east of the Crag View camps, past Sherman Crater, then up the Roman Wall to the summit; camp to summit runs about 2-5 hours depending on crevasse route-finding. Descent back to camp is quick (3-4 hours from the summit), then pack up and hike out. Gain derived from 6,498 ft ca…"
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Crag View Camp",
+    "elev_ft": null,
+    "type": "camp",
+    "role": "main",
+    "notes": ""
+   }
+  ],
+  "campsite_pins": [
+   {
+    "name": "Crag View Camp",
+    "elev": 6498,
+    "distMi": 3.5
+   }
+  ]
+ },
+ {
+  "id": "wa_mount_blum_south_ridge",
+  "name": "South Ridge / Southeast Slopes",
+  "discipline": "scrambling",
+  "peak": "Mount Blum",
+  "area_id": "wa_mount_blum",
+  "path": "usa.washington.wa_northwest.wa_shuksan_baker_neighbors.wa_mount_blum",
+  "trip_plan": {
+   "totalNote": "A 3-day backpacking trip is the standard, comfortable way to do it (about 9 miles and 7,000 ft round trip); strong parties compress it to 2 days by summiting the afternoon they hike in, and very fit parties have pushed it car-to-car in a single very long day (8-15 hrs reported).",
+   "days": [
+    {
+     "n": 1,
+     "title": "Approach to Blum Lakes camp",
+     "objective": "Reach Blum Lakes camp (~5,000 ft)",
+     "miles": 4,
+     "gainFt": 4200,
+     "note": "From the Baker River Trailhead (774 ft), cross the Baker River suspension bridge and quickly leave the maintained trail to pick up the unmarked, brushy climber's path along Blum Creek. It's faint, blowdown-choked in spots, and easy to lose — budget extra time for routefinding. Camp near the outlet of the middle/lower B…"
+    },
+    {
+     "n": 2,
+     "title": "Summit day",
+     "objective": "Climb the South Ridge / Southeast Slopes to the summit",
+     "miles": 1.5,
+     "gainFt": 2700,
+     "note": "An alpine start up a sandy gully leads to the upper Blum Lake (5,700 ft); cross the outlet and climb granite slabs to gain the south ridge, then follow blocky Class 3 terrain up the southeast slopes to the 7,685 ft summit. Return the same way to camp, then rest for the hike out tomorrow."
+    },
+    {
+     "n": 3,
+     "title": "Hike out",
+     "objective": "Return to the trailhead",
+     "miles": 4,
+     "gainFt": 0,
+     "note": "Break camp and retrace the climber's path back down through the forest to the Baker River suspension bridge and trailhead. Expect the descent to feel just as slow as the way in due to the brush and deadfall."
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Middle Blum Lake",
+    "elev_ft": 5000,
+    "type": "camp",
+    "role": "main",
+    "notes": "A few hundred yards and a hundred feet of gain above the lower lake, and the more common choice for parties who want to shorten summit day on Blum. The ground is heather and slab, so tent sites are where the rock is, not where the flat grass is. It holds snow later than the lower lake and it catches more wind, which is…"
+   },
+   {
+    "name": "Lower Blum Lake",
+    "elev_ft": 4900,
+    "type": "camp",
+    "role": "main",
+    "notes": "This is the base camp for both peaks and effectively the only one. Getting here is the whole difficulty of the trip: leave trail 606 a short distance past the Baker River suspension bridge, before Blum Creek, and find the faint path that works away from the creek through old timber. The first section is genuine devil's…"
+   },
+   {
+    "name": "Blum Creek spur ridge, forest bivy",
+    "elev_ft": null,
+    "type": "bivy",
+    "role": "route",
+    "notes": "There is no established camp on this approach, said plainly rather than recommending a place that does not exist. The 4,000 ft of steep forest between the Baker River and the Blum Lakes has no benches worth the name, no water on the crest and no clearings; parties who run out of daylight here flatten a spot among the t…"
+   },
+   {
+    "name": "Upper Blum tarn, southeast of the main lakes",
+    "elev_ft": 5700,
+    "type": "bivy",
+    "role": "route",
+    "notes": "The highest practical ground on the Blum side, on the way from the main lakes toward the gullies and snow slopes leading to Blum's east ridge. It buys perhaps an hour on summit day and costs an extra 700 ft of carrying at the end of an already brutal approach day, so most parties leave it to those going on to Hagan or …"
+   }
+  ],
+  "campsite_pins": [
+   {
+    "name": "Blum Lakes (Middle Blum Lake)",
+    "elev": 5003,
+    "distMi": 4.5
+   }
+  ]
+ }
+]

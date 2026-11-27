@@ -52,8 +52,8 @@ const ENTRY = `
 import React from "react";
 import { renderToStaticMarkup } from "react-dom/server";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import RouteDetail, { campDetail, campFromTrailhead, campingGate, climbsAPeak, campRouteOrder, campRoleLabel, campFromPrev, campOrderNote, overnightPermitOf, samePlaceCamp, campNightsOf, campNightsLabel, campWalkHrs, campReportsOf, campSleptLine } from ${JSON.stringify(path.join(ROOT, "RouteDetail.jsx"))};
-export { campDetail, campFromTrailhead, campingGate, climbsAPeak, campRouteOrder, campRoleLabel, campFromPrev, campOrderNote, overnightPermitOf, samePlaceCamp, campNightsOf, campNightsLabel, campWalkHrs, campReportsOf, campSleptLine };
+import RouteDetail, { campDetail, campFromTrailhead, campingGate, climbsAPeak, campRouteOrder, campRoleLabel, campFromPrev, campOrderNote, overnightPermitOf, samePlaceCamp, campNightsOf, campNightsLabel, campWalkHrs, campReportsOf, campSleptLine, campSites, campPrimaryIndex, campNightPlan, campNightRowLabel, campStoredNights } from ${JSON.stringify(path.join(ROOT, "RouteDetail.jsx"))};
+export { campDetail, campFromTrailhead, campingGate, climbsAPeak, campRouteOrder, campRoleLabel, campFromPrev, campOrderNote, overnightPermitOf, samePlaceCamp, campNightsOf, campNightsLabel, campWalkHrs, campReportsOf, campSleptLine, campSites, campPrimaryIndex, campNightPlan, campNightRowLabel, campStoredNights };
 const qc = new QueryClient({ defaultOptions: { queries: { retry: false } } });
 const noop = () => {};
 export function render(route, tab) {
@@ -75,7 +75,7 @@ await build({
   loader: { ".jsx": "jsx" }, define: { "import.meta.env": "{}" },
   outfile: out, logLevel: "error",
 });
-const { render, campDetail, campFromTrailhead, campingGate, climbsAPeak, campRouteOrder, campRoleLabel, campFromPrev, campOrderNote, overnightPermitOf, samePlaceCamp, campNightsOf, campNightsLabel, campWalkHrs, campReportsOf, campSleptLine } = require_(out);
+const { render, campDetail, campFromTrailhead, campingGate, climbsAPeak, campRouteOrder, campRoleLabel, campFromPrev, campOrderNote, overnightPermitOf, samePlaceCamp, campNightsOf, campNightsLabel, campWalkHrs, campReportsOf, campSleptLine, campSites, campPrimaryIndex, campNightPlan, campNightRowLabel, campStoredNights } = require_(out);
 
 // renderToStaticMarkup ESCAPES: "CAMPING & BIVY" is emitted as "CAMPING &amp; BIVY".
 // Un-escape before matching, or the heading reads as absent and a false NO looks like a
@@ -598,6 +598,41 @@ else fail("a Campsite waypoint does not reach CAMPING & BIVY — the two stores 
   else fail("a trip report's camp did not reach the CAMPING & BIVY card");
   if (t.includes("NAMED IN TRIP REPORTS") && t.includes("Hidden Lake")) ok("an unlisted reported camp is offered on the Planner");
   else fail("an unlisted camp from a trip report was not offered to add");
+}
+
+// ── 14. NIGHT BY NIGHT, and the camp that opens is the one most parties sleep at (owner note
+//    2026-11-26: "it's not always the main campsite where people mostly camp"). The first camp in
+//    walking order is often a valley campground; the open card must be the main camp, and NIGHT BY
+//    NIGHT must be built from RESEARCHED nights only (bivy[].nights), never the trip plan's wording.
+{
+  const itin = { days: [{ n: 1, title: "Hike in" }, { n: 2, title: "Summit" }, { n: 3, title: "Out" }] };
+  const valley = { name: "Valley Campground", elev: 2000, type: "camp", role: "route", nights: [0], why: "Car camp by the trailhead for an early start on day one." };
+  const high = { name: "High Basin", elev: 6500, type: "camp", role: "main", nights: [1, 2], why: "Running water and flat tent sites one long day from the summit.", notes: "Rock walls on the knoll." };
+  const mid = { name: "Mid Lake", elev: 4500, type: "camp", role: "route", nights: [1], why: "Halfway in; a late start or a slow party stops here." };
+  const r = { itinerary: itin, bivy: [valley, mid, high] };
+  const sites = campSites(r);
+  const pi = campPrimaryIndex(sites, new Map());
+  if (sites[pi] && sites[pi].name === "High Basin") ok("the main camp opens, not the first in walking order");
+  else fail(`campPrimaryIndex chose ${sites[pi] && sites[pi].name} (want High Basin)`);
+  const many = campPrimaryIndex([{ name: "A", role: "main" }, { name: "B", role: "main" }], new Map([[1, { n: 3 }]]));
+  if (many === 1) ok("between two main camps, the one trip reports name most opens");
+  else fail(`two main camps: chose ${many} (want 1, the reported one)`);
+  const plan = campNightPlan(sites, 3);
+  const sig = plan.map(p => campNightRowLabel(p.nights) + ":" + (p.main ? p.main.name : "-") + "/" + p.alts.map(a => a.name).join(",")).join(" | ");
+  if (sig === "Night before:-/Valley Campground | Night 1:High Basin/Mid Lake | Night 2:High Basin/") ok("night plan: the night before, each night's usual camp and its options");
+  else fail("night plan read " + sig);
+  if (!campNightPlan(campSites({ itinerary: itin, bivy: [{ name: "Hike in", role: "main" }] }), 3).length) ok("no night plan from the trip plan's wording alone");
+  else fail("a night plan was built with no researched nights");
+  if (JSON.stringify(campStoredNights({ nights: [5, 1, 1, "2"] }, 3)) === "[1,2]") ok("stored nights are integers inside the plan, deduped and sorted");
+  else fail("campStoredNights: " + JSON.stringify(campStoredNights({ nights: [5, 1, 1, "2"] }, 3)));
+  const t = text(render(route("alpine", { itinerary: itin, bivy: [valley, mid, high] }), "planner"));
+  const slice = t.slice(t.indexOf(HEAD));
+  if (slice.includes("NIGHT BY NIGHT") && slice.includes("Running water and flat tent sites") && slice.includes("OTHER OPTIONS")) ok("NIGHT BY NIGHT reaches the Planner with each camp's reason");
+  else fail("NIGHT BY NIGHT did not render on the Planner");
+  if (slice.split("Running water and flat tent sites").length === 2) ok("a planned camp's reason is printed once, not again on its open card");
+  else { fail("the main camp's reason printed twice"); if (process.env.DBG) console.log(slice.slice(0, 3000)); }
+  if (slice.indexOf("Hide camping detail for High Basin") >= 0 || /aria-expanded="true"[^>]*High Basin/.test(render(route("alpine", { itinerary: itin, bivy: [valley, mid, high] }), "planner"))) ok("High Basin's card is the one rendered open");
+  else fail("the open card is not the main camp");
 }
 
 console.log(failures

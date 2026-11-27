@@ -1,0 +1,1291 @@
+[
+ {
+  "id": "wa_mount_challenger_challenger_glacier",
+  "name": "Challenger Glacier",
+  "discipline": "alpine",
+  "peak": "Mount Challenger",
+  "area_id": "wa_mount_challenger",
+  "path": "usa.washington.wa_northwest.wa_hwy20_ncnp.wa_north_cascades.wa_picket_range.wa_northern_pickets.wa_mount_challenger",
+  "trip_plan": {
+   "totalNote": "A remote 4-day trip via Easy Ridge (add a spare day for weather), with camps on Easy Ridge and at Perfect Pass and one glacier summit day from Perfect Pass.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Hannegan Pass and the Chilliwack to Easy Ridge",
+     "objective": "Camp on the crest of Easy Ridge",
+     "miles": 12,
+     "gainFt": 4800,
+     "note": "From the Hannegan Pass trailhead climb about 2,000 ft in 4 miles to Hannegan Pass, drop past Boundary Camp into the Chilliwack valley, and leave the trail where the faint, unsigned climbers' path for Easy Ridge fords the Chilliwack (log crossings here are unreliable). Climb steeply onto Easy Ridge and camp near the tar…"
+    },
+    {
+     "n": 2,
+     "title": "Easy Ridge over the Impasse to Perfect Pass",
+     "objective": "Camp at Perfect Pass (about 6,300 ft)",
+     "miles": 3.5,
+     "gainFt": 2000,
+     "note": "Follow the faint path along the crest over Easy Peak, which has more tent sites and a tarn, to the notch called the Impasse. Where the direct crossing is unsafe, drop off the crest around it and re-climb an exposed class 4 step beyond, then cross the snowfields to Perfect Pass. In fog, keep away from Whatcom Peak's sum…"
+    },
+    {
+     "n": 3,
+     "title": "Summit day via the Challenger Glacier",
+     "objective": "Climb Mount Challenger via the Challenger Glacier and return to camp",
+     "miles": 3.5,
+     "gainFt": 2100,
+     "note": "Get down from Perfect Pass onto the Challenger Glacier (depending on melt-out, about 200 ft of wet class 4 downclimbing and sometimes a short rappel across a moat), rope up, cross the bergschrund and climb steepening snow to the summit rocks, watching for the moat below them. A class 3 scramble leads to the 50 ft, 5.5-…"
+    },
+    {
+     "n": 4,
+     "title": "Exit to trailhead",
+     "objective": "Hike back out to the Hannegan Pass trailhead",
+     "miles": 15.5,
+     "gainFt": 3500,
+     "note": "Reverse the approach: back along Easy Ridge, down to the Chilliwack ford, and up the long climb to Hannegan Pass before the easy descent to the car."
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Perfect Pass",
+    "elev_ft": 6278,
+    "type": null,
+    "role": "main",
+    "notes": "The planned high camp for this route and the one everything else is scheduled around. Ground is limited: early in the season much of the pass is still snow-covered and parties either camp on the snow or scout the sandy patches slightly higher on the ridge. It is a pass, so it is windy and weather-exposed with no shelte…"
+   },
+   {
+    "name": "Copper Creek camp",
+    "elev_ft": 3146,
+    "type": null,
+    "role": "route",
+    "notes": "About 7.5 miles in on the valley approach, with reliable water and a pit toilet. It is a trail camp, not a mountain one, and it exists on this list because the approach to Challenger is long enough that most parties sleep low at least once in each direction. It is also the sensible retreat target if the Chilliwack ford…"
+   },
+   {
+    "name": "Whatcom Pass camp",
+    "elev_ft": 5210,
+    "type": null,
+    "role": "route",
+    "notes": "The last established camp before the committing ground, used by parties coming in on the Chilliwack River approach. From here you still have to get around Whatcom Peak to reach Perfect Pass — the direct north ridge is loose and very exposed and is not the way most parties go, while the standard workaround crosses the W…"
+   }
+  ],
+  "campsite_pins": [
+   {
+    "name": "Boundary Camp",
+    "elev": 4410,
+    "distMi": 5.3
+   },
+   {
+    "name": "Copper Creek camp",
+    "elev": 3146,
+    "distMi": 6.5
+   },
+   {
+    "name": "Whatcom Pass camp",
+    "elev": 5210,
+    "distMi": 14.6
+   },
+   {
+    "name": "Perfect Pass",
+    "elev": 6278,
+    "distMi": null
+   }
+  ]
+ },
+ {
+  "id": "wa_poltergeist_pinnacle",
+  "name": "Poltergeist Pinnacle",
+  "discipline": "alpine",
+  "peak": "Mount Challenger",
+  "area_id": "wa_mount_challenger",
+  "path": "usa.washington.wa_northwest.wa_hwy20_ncnp.wa_north_cascades.wa_picket_range.wa_northern_pickets.wa_mount_challenger",
+  "trip_plan": {
+   "totalNote": "Three days: a full day in to Perfect Pass, a glacier-and-rock summit day on Poltergeist Pinnacle and Mount Challenger, and a day out.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Hike in to Perfect Pass",
+     "objective": "Reach camp at Perfect Pass",
+     "miles": 16,
+     "gainFt": 7000,
+     "note": "Hike roughly 16 miles from the Hannegan Pass Trailhead via Hannegan Pass, the Chilliwack River ford, Easy Ridge and the Imperfect Impasse to camp at Perfect Pass. It is a full day with about 7,000 ft of gain."
+    },
+    {
+     "n": 2,
+     "title": "Climb Poltergeist Pinnacle and Challenger",
+     "objective": "Summit Poltergeist Pinnacle and Mount Challenger",
+     "miles": 6,
+     "gainFt": 1900,
+     "note": "Rope up and cross the Challenger Glacier to the base of Poltergeist Pinnacle, roughly 3 hours from camp per the first-ascent account. Climb the East Face route (3 technical pitches plus about 800 ft of simul-climbed ridge) and traverse to Mount Challenger's summit. Descend the Challenger Glacier back to camp at Perfect…"
+    },
+    {
+     "n": 3,
+     "title": "Hike out to the trailhead",
+     "objective": "Return to the Hannegan Pass Trailhead",
+     "miles": 16,
+     "gainFt": 3800,
+     "note": "Hike out from Perfect Pass to the trailhead, reversing the approach over Easy Ridge, the Chilliwack River and Hannegan Pass."
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Challenger Arm camp",
+    "elev_ft": 6800,
+    "type": "camp",
+    "role": "main",
+    "notes": "A rock cleaver at the eastern edge of the Challenger Glacier, reached at around 6,700 ft up a steep rock field, and the working high camp for anyone who has come in over Wiley Ridge rather than over Whatcom Pass. It is the closest bed to Poltergeist Pinnacle, which is the south subsummit of Challenger itself and needs …"
+   },
+   {
+    "name": "Perfect Pass, Perfect Pass cross-country zone",
+    "elev_ft": 6300,
+    "type": "bivy",
+    "role": "main",
+    "notes": "The classic high camp for Mount Challenger and for Whatcom Peak, on benches at the western edge of the Challenger Glacier. It is reached either over Whatcom Pass from the Brush Creek side or along Easy Ridge, the latter demanding a substantial descent and reclimb to get around the gap short of the pass. Reported elevat…"
+   },
+   {
+    "name": "Luna Camp, Big Beaver Trail",
+    "elev_ft": 2432,
+    "type": "camp",
+    "role": "route",
+    "notes": "The standard staging camp for the Access Creek side of the Northern Pickets — Mount Fury's west peak and the Luna Cirque generally. Most parties take the Ross Lake water taxi to the Big Beaver landing near 1,600 ft and then walk eight to ten miles of nearly flat old-growth trail, so it functions as a first night rather…"
+   },
+   {
+    "name": "Beaver Pass Camp",
+    "elev_ft": 3620,
+    "type": "camp",
+    "role": "route",
+    "notes": "A broad forested saddle about thirteen miles up from Ross Lake, and the jumping-off point for Wiley Ridge, which is the walking line onto the Challenger Glacier from the east. It is the largest camp on this side, with group and stock capacity, so it absorbs parties too big for the four-person camps below. A 1938 log sh…"
+   },
+   {
+    "name": "Eiley Lake benches, lower Wiley Ridge",
+    "elev_ft": null,
+    "type": "bivy",
+    "role": "route",
+    "notes": "The first real camp on the eastern walking approach to Mount Challenger, roughly six hours along the ridge from Beaver Pass. Parties climbing Challenger from this side commonly use it for two nights, going to the summit and back on the middle day rather than moving camp, because the ridge is slow going in both directio…"
+   },
+   {
+    "name": "East Wiley Basin and the Wiley Lake benches, upper Wiley Ridge",
+    "elev_ft": 6100,
+    "type": "bivy",
+    "role": "route",
+    "notes": "The upper half of Wiley Ridge, on the south-facing side, and the last bivouac ground before the glacier. A party that gets this far on the second day has a genuinely short summit day left: the ridge rolls over a gentle knoll near 7,100 ft past Wiley Lake and then reaches Challenger Gap at the edge of the Challenger Gla…"
+   }
+  ],
+  "campsite_pins": [
+   {
+    "name": "Beaver Pass Camp",
+    "elev": 3620,
+    "distMi": null
+   },
+   {
+    "name": "Boundary Camp",
+    "elev": 4410,
+    "distMi": 5.1
+   }
+  ]
+ },
+ {
+  "id": "wa_mount_fury_east_direct_east_ridge",
+  "name": "Direct East Ridge",
+  "discipline": "alpine",
+  "peak": "Mount Fury (East Peak)",
+  "area_id": "wa_mount_fury_east",
+  "path": "usa.washington.wa_northwest.wa_hwy20_ncnp.wa_north_cascades.wa_picket_range.wa_northern_pickets.wa_mount_fury_east",
+  "trip_plan": {
+   "totalNote": "Four days: water taxi and Big Beaver trail to Access Creek Basin, over Access Col to a Luna Col high camp, a 12-15 hour summit day on the Direct East Ridge, and a long exit to an evening water taxi.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Water taxi and hike to Access Creek Basin",
+     "objective": "Camp in Access Creek Basin at 4,300 ft",
+     "miles": 11.5,
+     "gainFt": 2700,
+     "note": "Take the water taxi from the Ross Dam trailhead to Big Beaver Landing, then hike 11-12 miles past Luna Camp, the Big Beaver log crossing and the Access Creek bushwhack to camp in Access Creek Basin at 4,300 ft. Nine or more hours from the landing is typical."
+    },
+    {
+     "n": 2,
+     "title": "Over Access Col to Luna Col",
+     "objective": "Set up high camp at Luna Col",
+     "miles": null,
+     "gainFt": 2900,
+     "note": "Climb the scree chute to Access Col at 6,100 ft and make the steep heather traverse to Luna Col at about 7,200 ft (4-5 hours), then set up high camp. Luna Peak, the finest viewpoint in Washington, is an easy Class 2-3 bonus summit that afternoon."
+    },
+    {
+     "n": 3,
+     "title": "Climb the Direct East Ridge",
+     "objective": "Summit East Fury and return to Luna Col",
+     "miles": null,
+     "gainFt": 2950,
+     "note": "Make an alpine start, traverse to the 6,300 ft basin, and climb the Direct East Ridge to the summit before returning to Luna Col. It is a full 12-15 hour day."
+    },
+    {
+     "n": 4,
+     "title": "Hike out to the water taxi",
+     "objective": "Reach the pre-booked evening boat",
+     "miles": null,
+     "gainFt": null,
+     "note": "Break camp, traverse back over Access Col, drop into Access Basin, reverse the bushwhack, and hike the Big Beaver trail to a pre-booked evening water taxi. Expect 10-17 hours."
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Access Creek Basin",
+    "elev_ft": 4301,
+    "type": "camp",
+    "role": "main",
+    "notes": "Where the Access Creek bushwhack finally lets go of you and opens onto talus, roughly 1,900 ft above the Big Beaver crossing. Parties reaching it late on day one commonly reported arriving around 7pm. It is the last water before the long, shadeless scree chute to Access Col, and the usual place to stash bushwhacking ge…"
+   },
+   {
+    "name": "Luna Col (Luna Pass)",
+    "elev_ft": 7200,
+    "type": "bivy",
+    "role": "main",
+    "notes": "The high camp for summit day, reached after the notorious steep heather-and-talus traverse from Access Col. The ground is glacier-polished slab with very little truly flat tent space, so most parties bivy rather than pitch. Being a saddle, it takes wind from either side with nothing to hide behind — one party woke at m…"
+   }
+  ],
+  "campsite_pins": [
+   {
+    "name": "Access Creek Basin",
+    "elev": 4301,
+    "distMi": null
+   },
+   {
+    "name": "Luna Col (Luna Pass)",
+    "elev": 7200,
+    "distMi": null
+   }
+  ]
+ },
+ {
+  "id": "wa_mount_fury_east_north_buttress",
+  "name": "North Buttress",
+  "discipline": "alpine",
+  "peak": "Mount Fury (East Peak)",
+  "area_id": "wa_mount_fury_east",
+  "path": "usa.washington.wa_northwest.wa_hwy20_ncnp.wa_north_cascades.wa_picket_range.wa_northern_pickets.wa_mount_fury_east",
+  "trip_plan": {
+   "totalNote": "Five days: Big Beaver trail to Access Creek Basin, over to Luna Col, down into Luna Cirque, a pre-dawn climb of the North Buttress with a descent back to Luna Col, and the exit to a booked water taxi.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Water taxi and hike to Access Creek Basin",
+     "objective": "Camp in Access Creek Basin at 4,300 ft",
+     "miles": 11.5,
+     "gainFt": 2700,
+     "note": "From the Ross Dam trailhead, take the water taxi and hike the Big Beaver Trail and the Access Creek bushwhack to Access Creek Basin at 4,300 ft."
+    },
+    {
+     "n": 2,
+     "title": "Over Access Col to Luna Col",
+     "objective": "Camp at Luna Col",
+     "miles": null,
+     "gainFt": 2900,
+     "note": "Climb to Access Col at 6,100 ft and make the heather traverse to Luna Col at about 7,200 ft."
+    },
+    {
+     "n": 3,
+     "title": "Descend into Luna Cirque",
+     "objective": "Camp at the foot of the North Buttress",
+     "miles": null,
+     "gainFt": 0,
+     "note": "Descend about 2,400 ft into Luna Cirque, past Luna Lake at 4,800 ft, and establish a cirque camp at the foot of the buttress."
+    },
+    {
+     "n": 4,
+     "title": "Climb the North Buttress",
+     "objective": "Summit East Fury and descend to Luna Col",
+     "miles": null,
+     "gainFt": 3520,
+     "note": "Make a pre-dawn start and climb the North Buttress; about 4.5 hours of climbing gets you to the ridge crest, with the 5.9 crux and the summit snow arete above. Descend the Southeast Glacier and the northeast ridge to Luna Col, or bivouac high."
+    },
+    {
+     "n": 5,
+     "title": "Exit to the water taxi",
+     "objective": "Hike out to a booked boat",
+     "miles": null,
+     "gainFt": null,
+     "note": "Exit from Luna Col to Access Basin, reverse the bushwhack, and hike the Big Beaver Trail to a booked water taxi."
+    }
+   ]
+  },
+  "camps_on_file": [],
+  "campsite_pins": []
+ },
+ {
+  "id": "wa_mount_fury_east_southeast_glaciers",
+  "name": "Southeast Glaciers (Standard)",
+  "discipline": "mountaineering",
+  "peak": "Mount Fury (East Peak)",
+  "area_id": "wa_mount_fury_east",
+  "path": "usa.washington.wa_northwest.wa_hwy20_ncnp.wa_north_cascades.wa_picket_range.wa_northern_pickets.wa_mount_fury_east",
+  "trip_plan": {
+   "totalNote": "A remote 4-day round trip (~35-40 mi, ~13,000 ft of cumulative gain/loss) built around a big 13-14 hour summit push from a high camp near Luna Pass.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Boat + hike to Access Basin",
+     "objective": "Reach camp at Access Basin (~4,300 ft)",
+     "miles": 12,
+     "gainFt": 2700,
+     "note": "Water taxi across Ross Lake to Big Beaver Landing, then 11-12 miles up the Big Beaver Trail followed by a short bushwhack up Access Creek to a camp at the base of Access Col. Long day, mostly flat-to-moderate trail."
+    },
+    {
+     "n": 2,
+     "title": "Over Access Col to a high camp at Luna Pass",
+     "objective": "Establish high camp near Luna Pass",
+     "miles": 3,
+     "gainFt": 2700,
+     "note": "Steep scree and heather slopes up to Access Col (~6,100 ft), then down and across to Luna Pass where most parties pitch high camp for the summit push. Ice axe useful on the col's heather in early season."
+    },
+    {
+     "n": 3,
+     "title": "Summit day — East Peak via the Southeast Glacier",
+     "objective": "Climb East Fury's summit and return to camp",
+     "miles": 5,
+     "gainFt": 1500,
+     "note": "Long alpine day: traverse below the Luna/East Fury ridge, gain the Southeast Glacier, and scramble/snow-climb to the summit before reversing the whole thing back to camp. Expect a 25-ft rock step and glacier slopes to ~40-50° near the top."
+    },
+    {
+     "n": 4,
+     "title": "Hike out",
+     "objective": "Return to Ross Lake and the trailhead",
+     "miles": 15,
+     "gainFt": 0,
+     "note": "Reverse the whole approach: down to Access Basin, out the Big Beaver Trail, and back to the landing in time for the water taxi. A long, tiring exit day after three hard days."
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Luna Camp",
+    "elev_ft": null,
+    "type": "camp",
+    "role": "main",
+    "notes": ""
+   },
+   {
+    "name": "Access Basin",
+    "elev_ft": null,
+    "type": "camp",
+    "role": "main",
+    "notes": ""
+   },
+   {
+    "name": "Luna Col (Luna Pass)",
+    "elev_ft": 7200,
+    "type": null,
+    "role": "main",
+    "notes": "The standard high camp and the base for summit day on Fury, reached after a long steep heather-and-talus traverse from Access Col. It is a planned camp but a rough one — glacially polished slabs with very few genuinely flat tent spots, so most parties bivy rather than pitch. Being a saddle it is fully wind-exposed with…"
+   }
+  ],
+  "campsite_pins": [
+   {
+    "name": "Luna Camp",
+    "elev": 2432,
+    "distMi": 15.9
+   },
+   {
+    "name": "Access Basin",
+    "elev": 4300,
+    "distMi": 18.4
+   },
+   {
+    "name": "Luna Col (Luna Pass)",
+    "elev": 7200,
+    "distMi": null
+   }
+  ]
+ },
+ {
+  "id": "wa_mount_fury_east_mongo_ridge",
+  "name": "Mongo Ridge (Southwest Buttress)",
+  "discipline": "alpine",
+  "peak": "Mount Fury (West Peak)",
+  "area_id": "wa_mount_fury_west",
+  "path": "usa.washington.wa_northwest.wa_hwy20_ncnp.wa_north_cascades.wa_picket_range.wa_northern_pickets.wa_mount_fury_west",
+  "trip_plan": {
+   "totalNote": "A serious 6-day expedition (~40-48 mi, roughly 10,000+ ft of cumulative gain each way): two days to reach the ridge, two-plus days of technical ridge climbing with a dozen-odd rappels and four major gendarmes, a summit day, and a full day to hike out.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Boat + hike to Access Basin",
+     "objective": "Reach camp at Access Basin (~4,300 ft)",
+     "miles": 13,
+     "gainFt": 2700,
+     "note": "Water taxi to Big Beaver Landing, then the Big Beaver Trail and a bushwhack up Access Creek to a base camp below Access Col. Heavy packs with rock rack, ropes, and 5-6 days of food."
+    },
+    {
+     "n": 2,
+     "title": "Over Access Col and up East Fury to a ridge-start camp",
+     "objective": "Camp high on/near East Fury, poised to drop onto Mongo Ridge",
+     "miles": 4,
+     "gainFt": 4000,
+     "note": "Climb Access Col and traverse to Luna Pass, then continue up East Fury's Southeast Glacier to a bivy near its summit — the jumping-off point for the ridge traverse to West Fury. This is the hardest approach day: steep scree, heather, and glacier travel back to back."
+    },
+    {
+     "n": 3,
+     "title": "Onto Mongo Ridge — first gendarmes",
+     "objective": "Descend from East Fury to the toe of the ridge and start the technical climb",
+     "miles": 1.5,
+     "gainFt": 1500,
+     "note": "Descend from East Fury into the upper Goodell Creek basin to the toe of the ridge and begin working through the first of the route's gendarmes, mixing 5th-class pitches with rappels. Slow, technical ground — a fraction of a mile of actual progress for a full day's effort. Bivy on the ridge."
+    },
+    {
+     "n": 4,
+     "title": "Deeper into the ridge — the Pole of Remoteness",
+     "objective": "Continue past the ridge's most remote, hardest pitches",
+     "miles": 1,
+     "gainFt": 1200,
+     "note": "More of the same: pitches up to 5.10/5.11, exposed scrambling between towers, and rappels off loose rock in one of the most remote sections of the lower 48. Rockfall is a real hazard on rappels here. Bivy again on the ridge."
+    },
+    {
+     "n": 5,
+     "title": "Summit West Fury, descend to Luna Col",
+     "objective": "Finish the ridge to West Fury's summit, then retreat toward Luna Col",
+     "miles": 3,
+     "gainFt": 600,
+     "note": "A final ~500 ft of class 4 terrain gains West Fury's summit, typically reached by mid-morning. From there it's hours of connecting-ridge scrambling back past East Fury toward a camp at Luna Col."
+    },
+    {
+     "n": 6,
+     "title": "Hike out",
+     "objective": "Return to Ross Lake and the trailhead",
+     "miles": 16,
+     "gainFt": 0,
+     "note": "Reverse the full approach from Luna Col down through Access Basin and out the Big Beaver Trail to the landing for the water taxi — a long final day after five hard ones."
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Access Creek headwaters basin",
+    "elev_ft": null,
+    "type": "camp",
+    "role": "main",
+    "notes": "Open basin at the top of the Access Creek bushwhack above Luna Camp. The usual first night before climbing past Luna Col to East Fury."
+   },
+   {
+    "name": "East Fury summit bivy",
+    "elev_ft": 8280,
+    "type": "bivy",
+    "role": "main",
+    "notes": "Flat rock on the summit of East Fury used as the second night. The long descent to the base of the ridge starts here, and the bivy is often left in place for the return."
+   },
+   {
+    "name": "Luna Camp, Big Beaver Trail",
+    "elev_ft": 2432,
+    "type": "camp",
+    "role": "route",
+    "notes": "The standard staging camp for the Access Creek side of the Northern Pickets — Mount Fury's west peak and the Luna Cirque generally. Most parties take the Ross Lake water taxi to the Big Beaver landing near 1,600 ft and then walk eight to ten miles of nearly flat old-growth trail, so it functions as a first night rather…"
+   },
+   {
+    "name": "Luna Col bivy, Luna cross-country zone",
+    "elev_ft": 7200,
+    "type": "bivy",
+    "role": "route",
+    "notes": "Open bivy ground on the col above the Luna Cirque, reached by leaving the Big Beaver trail near Access Creek and climbing trackless ground to Access Col. It is the working high camp for Mount Fury's west peak and for Luna Peak, with no established site — you camp on rock, heather or snow and pack everything out. The br…"
+   }
+  ],
+  "campsite_pins": [
+   {
+    "name": "Luna Camp, Big Beaver Trail",
+    "elev": 2432,
+    "distMi": null
+   }
+  ]
+ },
+ {
+  "id": "wa_mount_fury_west_west_ridge",
+  "name": "West Ridge / Northwest Route",
+  "discipline": "alpine",
+  "peak": "Mount Fury (West Peak)",
+  "area_id": "wa_mount_fury_west",
+  "path": "usa.washington.wa_northwest.wa_hwy20_ncnp.wa_north_cascades.wa_picket_range.wa_northern_pickets.wa_mount_fury_west",
+  "trip_plan": {
+   "totalNote": "A 3-day trip (some guided groups take 4): ~41 miles round trip with roughly 9,000+ ft of cumulative gain, one night in at Luna Col and a single massive summit-traverse day covering both East and West Fury.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Water taxi + approach to Luna Col",
+     "objective": "Reach high camp at Luna Col (~7,200 ft)",
+     "miles": 18,
+     "gainFt": 5600,
+     "note": "Take the Ross Lake water taxi from Ross Dam to Big Beaver Landing to cut several miles of road-walk, then follow the Big Beaver Trail roughly 9-10 miles to Luna Camp. Leave the trail there, bushwhack across Big Beaver Creek and up the notorious Access Creek drainage (devil's club, slide alder, then scree/heather), and …"
+    },
+    {
+     "n": 2,
+     "title": "Traverse to East and West Fury",
+     "objective": "Climb East Fury, traverse to West Fury, and return to Luna Col",
+     "miles": 4.5,
+     "gainFt": 3200,
+     "note": "From Luna Col, cross over Point 7360 and down a red ledge system to a low-5th-class crux tower, then up the East Mount Fury Glacier/arete to East Fury's summit. Continue the exposed ridge traverse over three towers (short rappels/downclimbs between them) to reach West Fury's summit, then reverse the entire traverse bac…"
+    },
+    {
+     "n": 3,
+     "title": "Exit to trailhead",
+     "objective": "Return to Ross Dam / water taxi dock",
+     "miles": 18,
+     "gainFt": 300,
+     "note": "Reverse the Access Creek descent and Big Beaver Trail back to Big Beaver Landing to catch the water taxi to Ross Dam. Legs are tired from the previous day's traverse, so this out day often takes as long or longer than the approach."
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Luna Col bivy, Luna cross-country zone",
+    "elev_ft": 7200,
+    "type": "bivy",
+    "role": "main",
+    "notes": "Open bivy ground on the col above the Luna Cirque, reached by leaving the Big Beaver trail near Access Creek and climbing trackless ground to Access Col. It is the working high camp for Mount Fury's west peak and for Luna Peak, with no established site — you camp on rock, heather or snow and pack everything out. The br…"
+   },
+   {
+    "name": "Luna Camp, Big Beaver Trail",
+    "elev_ft": 2432,
+    "type": "camp",
+    "role": "main",
+    "notes": "The standard staging camp for the Access Creek side of the Northern Pickets — Mount Fury's west peak and the Luna Cirque generally. Most parties take the Ross Lake water taxi to the Big Beaver landing near 1,600 ft and then walk eight to ten miles of nearly flat old-growth trail, so it functions as a first night rather…"
+   },
+   {
+    "name": "Luna Cirque floor",
+    "elev_ft": null,
+    "type": "bivy",
+    "role": "route",
+    "notes": "The floor of the great bowl beneath Luna Peak, walled on three sides, and the low point of the traverse that enters by Access Creek and Luna Pass and leaves over Challenger Gap onto Wiley Ridge. It sits directly under the eastern side of the crest that carries Spectre Peak, and parties coming off Challenger sometimes d…"
+   }
+  ],
+  "campsite_pins": [
+   {
+    "name": "Luna Camp",
+    "elev": 2432,
+    "distMi": 17
+   },
+   {
+    "name": "Access Creek headwaters basin",
+    "elev": 5800,
+    "distMi": 20.5
+   },
+   {
+    "name": "Luna Col",
+    "elev": 7200,
+    "distMi": 22
+   }
+  ]
+ },
+ {
+  "id": "wa_ridge_traverse_from_east_fury",
+  "name": "Ridge Traverse from East Fury",
+  "discipline": "alpine",
+  "peak": "Mount Fury (West Peak)",
+  "area_id": "wa_mount_fury_west",
+  "path": "usa.washington.wa_northwest.wa_hwy20_ncnp.wa_north_cascades.wa_picket_range.wa_northern_pickets.wa_mount_fury_west",
+  "trip_plan": {
+   "totalNote": "Four days: water taxi and Big Beaver valley to Luna Camp, up Access Creek to Luna Col, an East-to-West Fury traverse day, and the walk out.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Water taxi and hike to Luna Camp",
+     "objective": "Reach Luna Camp",
+     "miles": 9.4,
+     "gainFt": null,
+     "note": "Take the water taxi from Ross Dam to the Big Beaver landing, then hike 9.4 miles up the Big Beaver Trail to Luna Camp."
+    },
+    {
+     "n": 2,
+     "title": "Climb Access Creek to Luna Col",
+     "objective": "Reach high camp at Luna Col",
+     "miles": null,
+     "gainFt": 4770,
+     "note": "Climb Access Creek and over Access Col to a high camp at Luna Col (about 7,200 ft)."
+    },
+    {
+     "n": 3,
+     "title": "Traverse East Fury to West Fury",
+     "objective": "Summit East and West Fury",
+     "miles": null,
+     "gainFt": null,
+     "note": "From Luna Col, ascend East Fury, traverse to West Fury, and return over East Fury to Luna Col."
+    },
+    {
+     "n": 4,
+     "title": "Hike out to Ross Lake",
+     "objective": "Catch the water taxi back",
+     "miles": null,
+     "gainFt": null,
+     "note": "Descend Access Creek and the Big Beaver Trail to Ross Lake for the water taxi return."
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Luna Col bivy, Luna cross-country zone",
+    "elev_ft": 7200,
+    "type": "bivy",
+    "role": "main",
+    "notes": "Open bivy ground on the col above the Luna Cirque, reached by leaving the Big Beaver trail near Access Creek and climbing trackless ground to Access Col. It is the working high camp for Mount Fury's west peak and for Luna Peak, with no established site — you camp on rock, heather or snow and pack everything out. The br…"
+   },
+   {
+    "name": "Luna Camp, Big Beaver Trail",
+    "elev_ft": 2432,
+    "type": "camp",
+    "role": "main",
+    "notes": "The standard staging camp for the Access Creek side of the Northern Pickets — Mount Fury's west peak and the Luna Cirque generally. Most parties take the Ross Lake water taxi to the Big Beaver landing near 1,600 ft and then walk eight to ten miles of nearly flat old-growth trail, so it functions as a first night rather…"
+   }
+  ],
+  "campsite_pins": [
+   {
+    "name": "Luna Camp, Big Beaver Trail",
+    "elev": 2432,
+    "distMi": null
+   }
+  ]
+ },
+ {
+  "id": "wa_luna_glacier",
+  "name": "Luna Glacier",
+  "discipline": "alpine",
+  "peak": "Phantom Peak",
+  "area_id": "wa_phantom_peak",
+  "path": "usa.washington.wa_northwest.wa_hwy20_ncnp.wa_north_cascades.wa_picket_range.wa_northern_pickets.wa_phantom_peak",
+  "trip_plan": {
+   "totalNote": "A remote 6-day expedition, roughly 38-40 miles round trip with one 4-pitch technical summit day via the Luna Glacier; most parties spend two nights in Luna Basin plus a lighter advance camp for the push.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Ross Lake to Luna Camp",
+     "objective": "Reach Luna Camp on the Big Beaver Trail",
+     "miles": 11,
+     "gainFt": 1800,
+     "note": "Water-taxi across Ross Lake to the Big Beaver trailhead, then an easy but long trail day up Big Beaver Creek to Luna Camp, carrying 5-6 days of food."
+    },
+    {
+     "n": 2,
+     "title": "Access Creek to Luna Cirque high camp",
+     "objective": "Establish high camp near the Luna Glacier",
+     "miles": 6,
+     "gainFt": 3500,
+     "note": "Continue on the trail to the Access Creek confluence, cross Big Beaver Creek and leave the trail up the Access Creek drainage, then go cross-country into Luna Cirque below the glacier. Slow, route-finding-heavy travel through slide alder and boulder fields."
+    },
+    {
+     "n": 3,
+     "title": "Move to advanced glacier camp",
+     "objective": "Position below the Luna Glacier icefall",
+     "miles": 2,
+     "gainFt": 1000,
+     "note": "A short technical day gaining the moraine and glacier margin, roping up for crevassed terrain to place an advance camp within striking distance of the route."
+    },
+    {
+     "n": 4,
+     "title": "Summit via the Luna Glacier",
+     "objective": "Climb Phantom Peak's Luna Glacier route (4 pitches)",
+     "miles": 2,
+     "gainFt": 1200,
+     "note": "Alpine start onto the glacier, crossing crevasses and a bergschrund to the base of the route, then four pitches of moderate alpine rock/ice to the summit ridge before reversing the entire route back to advance camp."
+    },
+    {
+     "n": 5,
+     "title": "Descend to Luna Camp",
+     "objective": "",
+     "miles": 8,
+     "gainFt": 300,
+     "note": "Break camp and reverse the cross-country route out of Luna Cirque and down Access Creek to the Big Beaver Trail, then walk back to Luna Camp."
+    },
+    {
+     "n": 6,
+     "title": "Hike out to trailhead",
+     "objective": "",
+     "miles": 11,
+     "gainFt": 0,
+     "note": "Easy trail miles back down Big Beaver Creek to Ross Lake and the water taxi/trailhead."
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Luna Cirque floor",
+    "elev_ft": null,
+    "type": "bivy",
+    "role": "main",
+    "notes": "The floor of the great bowl beneath Luna Peak, walled on three sides, and the low point of the traverse that enters by Access Creek and Luna Pass and leaves over Challenger Gap onto Wiley Ridge. It sits directly under the eastern side of the crest that carries Spectre Peak, and parties coming off Challenger sometimes d…"
+   },
+   {
+    "name": "Luna Camp, Big Beaver Trail",
+    "elev_ft": 2432,
+    "type": "camp",
+    "role": "main",
+    "notes": "The standard staging camp for the Access Creek side of the Northern Pickets — Mount Fury's west peak and the Luna Cirque generally. Most parties take the Ross Lake water taxi to the Big Beaver landing near 1,600 ft and then walk eight to ten miles of nearly flat old-growth trail, so it functions as a first night rather…"
+   }
+  ],
+  "campsite_pins": [
+   {
+    "name": "Luna Camp, Big Beaver Trail",
+    "elev": 2432,
+    "distMi": null
+   }
+  ]
+ },
+ {
+  "id": "wa_phantom_peak_south_route",
+  "name": "South Route",
+  "discipline": "mountaineering",
+  "peak": "Phantom Peak",
+  "area_id": "wa_phantom_peak",
+  "path": "usa.washington.wa_northwest.wa_hwy20_ncnp.wa_north_cascades.wa_picket_range.wa_northern_pickets.wa_phantom_peak",
+  "trip_plan": {
+   "totalNote": "A 5-day, ~44 mile round trip via Whatcom Pass with one long (~13 hr) technical summit day; matches how real Northern Pickets parties climb Phantom Peak from a Crooked Thumb Glacier camp.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Hannegan TH to Whatcom Pass",
+     "objective": "Reach Whatcom Pass and camp above it",
+     "miles": 16,
+     "gainFt": 2500,
+     "note": "Trail hike from the Hannegan Trailhead over Hannegan Pass and down to the Chilliwack River, then up to Whatcom Pass. Whatcom Camp and Graybeal Camp below the pass are closed after fire damage, so the first night goes in a cross-country zone above the pass, such as Tapto Lakes; confirm current status with the park befor…"
+    },
+    {
+     "n": 2,
+     "title": "Whatcom Pass to high camp",
+     "objective": "Cross the Whatcom/Challenger Glacier to a high camp near Phantom Peak",
+     "miles": 5,
+     "gainFt": 3000,
+     "note": "Climb onto the Whatcom Glacier, cross Perfect Pass and the Challenger Glacier, then descend to a moraine camp near the Crooked Thumb Glacier at roughly 6,800 ft — the standard staging camp for Phantom Peak."
+    },
+    {
+     "n": 3,
+     "title": "Summit via the South Route",
+     "objective": "Climb Phantom Peak (8,016 ft) via the southwest glacier, south couloir, and southwest ridge",
+     "miles": 2,
+     "gainFt": 2400,
+     "note": "A long round-trip summit day: descend across snow below Phantom Peak's west face, cross a pocket glacier and bergschrund, climb a moderate snow finger to the southwest ridge, then follow exposed but solid granite along the ridge crest — including a hand-lined traverse past the false summit — to the true summit."
+    },
+    {
+     "n": 4,
+     "title": "Descend to Whatcom Pass",
+     "objective": "",
+     "miles": 5,
+     "gainFt": 300,
+     "note": "Reverse the Challenger Glacier / Perfect Pass crossing back down to a cross-country camp above Whatcom Pass."
+    },
+    {
+     "n": 5,
+     "title": "Hike out to trailhead",
+     "objective": "",
+     "miles": 16,
+     "gainFt": 200,
+     "note": "Trail miles back over Hannegan Pass to the Hannegan trailhead."
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Luna Cirque floor",
+    "elev_ft": null,
+    "type": "bivy",
+    "role": "main",
+    "notes": "The floor of the great bowl beneath Luna Peak, walled on three sides, and the low point of the traverse that enters by Access Creek and Luna Pass and leaves over Challenger Gap onto Wiley Ridge. It sits directly under the eastern side of the crest that carries Spectre Peak, and parties coming off Challenger sometimes d…"
+   },
+   {
+    "name": "Crooked Thumb Glacier moraine high camp",
+    "elev_ft": null,
+    "type": "camp",
+    "role": "main",
+    "notes": ""
+   },
+   {
+    "name": "Luna Camp, Big Beaver Trail",
+    "elev_ft": 2432,
+    "type": "camp",
+    "role": "route",
+    "notes": "The standard staging camp for the Access Creek side of the Northern Pickets — Mount Fury's west peak and the Luna Cirque generally. Most parties take the Ross Lake water taxi to the Big Beaver landing near 1,600 ft and then walk eight to ten miles of nearly flat old-growth trail, so it functions as a first night rather…"
+   },
+   {
+    "name": "Whatcom Camp, Brush Creek below Whatcom Pass",
+    "elev_ft": 5286,
+    "type": "camp",
+    "role": "route",
+    "notes": "The last trail camp beneath Whatcom Pass and the one that serves the Hannegan Pass and Chilliwack River approach to Whatcom Peak and Mount Challenger. Parties coming that way typically chain Boundary, Copper Creek or US Cabin, then Graybeal on Brush Creek, then here — three or four days of walking before any climbing b…"
+   },
+   {
+    "name": "Perfect Pass, Perfect Pass cross-country zone",
+    "elev_ft": 6300,
+    "type": "bivy",
+    "role": "route",
+    "notes": "The classic high camp for Mount Challenger and for Whatcom Peak, on benches at the western edge of the Challenger Glacier. It is reached either over Whatcom Pass from the Brush Creek side or along Easy Ridge, the latter demanding a substantial descent and reclimb to get around the gap short of the pass. Reported elevat…"
+   }
+  ],
+  "campsite_pins": [
+   {
+    "name": "Whatcom Camp, Brush Creek below Whatcom Pass",
+    "elev": 5286,
+    "distMi": null
+   },
+   {
+    "name": "Crooked Thumb Glacier moraine high camp",
+    "elev": 6800,
+    "distMi": null
+   }
+  ]
+ },
+ {
+  "id": "wa_poltergeist_pinnacle_north_route",
+  "name": "East Face",
+  "discipline": "alpine",
+  "peak": "Poltergeist Pinnacle",
+  "area_id": "wa_poltergeist_pinnacle",
+  "path": "usa.washington.wa_northwest.wa_hwy20_ncnp.wa_north_cascades.wa_picket_range.wa_northern_pickets.wa_poltergeist_pinnacle",
+  "trip_plan": {
+   "totalNote": "A remote 4-day expedition (~35 mi round trip, ~10,000+ ft cumulative gain) out of the Hannegan Pass trailhead; Poltergeist Pinnacle itself is a single technical add-on day climbed from a Perfect Pass high camp during a broader Mount Challenger trip.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Hannegan Pass to Easy Ridge camp",
+     "objective": "Reach a bivy on Easy Ridge",
+     "miles": 11,
+     "gainFt": 5000,
+     "note": "From the Hannegan Pass Trailhead (3,110 ft), a good trail climbs to Hannegan Pass (5,066 ft) then drops to the Chilliwack River crossing (~2,750 ft, 9 mi in). From there it's a steep, viewless climb back up onto Easy Ridge to a camp near 5,800-6,000 ft with big Picket Range views."
+    },
+    {
+     "n": 2,
+     "title": "Easy Ridge to Perfect Pass high camp",
+     "objective": "Establish base camp at Perfect Pass",
+     "miles": 5,
+     "gainFt": 1600,
+     "note": "Traverse Easy Ridge past the old lookout site, then drop through the notch known as 'imperfect pass' near Whatcom Peak and fight back up talus/heather to Perfect Pass (6,300 ft) - one of the best bivy sites in the range and the standard staging camp for both Mount Challenger and Poltergeist Pinnacle."
+    },
+    {
+     "n": 3,
+     "title": "Climb Poltergeist Pinnacle via the Challenger Glacier",
+     "objective": "Tag the Poltergeist Pinnacle summit (8,198 ft)",
+     "miles": 7,
+     "gainFt": 2200,
+     "note": "An early alpine start to cross the Challenger Glacier (~3 mi) to the base of the pinnacle's dike-streaked shield, then 4 pitches of rock (5.9, 5.8, 5.8, 5.7) up the face and ridge crest to the summit, before continuing along the connecting ridge over Mount Challenger's main summit and descending its glacier route back …"
+    },
+    {
+     "n": 4,
+     "title": "Hike out to the trailhead",
+     "objective": "Return to Hannegan Pass Trailhead",
+     "miles": 15,
+     "gainFt": 2300,
+     "note": "Break camp at Perfect Pass and reverse the entire approach in one long push - back over imperfect pass, along Easy Ridge, down to the Chilliwack River, back up over Hannegan Pass, and down to the cars."
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Perfect Pass, Perfect Pass cross-country zone",
+    "elev_ft": 6300,
+    "type": "bivy",
+    "role": "main",
+    "notes": "The classic high camp for Mount Challenger and for Whatcom Peak, on benches at the western edge of the Challenger Glacier. It is reached either over Whatcom Pass from the Brush Creek side or along Easy Ridge, the latter demanding a substantial descent and reclimb to get around the gap short of the pass. Reported elevat…"
+   },
+   {
+    "name": "Easy Ridge bivouac ground below Easy Peak",
+    "elev_ft": null,
+    "type": "bivy",
+    "role": "route",
+    "notes": "This is the Hannegan Pass approach rather than a Ross Lake one, and it is how Spectre Peak is actually reached — in past ascents parties bivouacked near the summit of Easy Peak, dropped to the Imperfect Impasse and climbed through to the western slope of the range. From the trailhead you go over Hannegan Pass and down …"
+   }
+  ],
+  "campsite_pins": [
+   {
+    "name": "Perfect Pass",
+    "elev": 6198,
+    "distMi": null
+   },
+   {
+    "name": "Perfect Pass (high camp)",
+    "elev": 6198,
+    "distMi": null
+   }
+  ]
+ },
+ {
+  "id": "wa_spectre_peak_south_route",
+  "name": "South Ridge (\"Spirited Away\")",
+  "discipline": "alpine",
+  "peak": "Spectre Peak",
+  "area_id": "wa_spectre_peak",
+  "path": "usa.washington.wa_northwest.wa_hwy20_ncnp.wa_north_cascades.wa_picket_range.wa_northern_pickets.wa_spectre_peak",
+  "trip_plan": {
+   "totalNote": "A grueling 4-day round trip (46 mi, ~46 hrs of moving time): two days approaching via Hannegan Pass and Easy Ridge to a bivy below Phantom Peak's south ridge, a 15-hour day climbing all 12 pitches of the IV 5.9 South Ridge to the 7,952 ft summit, and a marathon 16-hour descent-and-hike-out back to the car.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Approach to a bivy beyond Easy Peak",
+     "objective": "Reach a bivy site beyond Easy Peak via Hannegan Pass and Easy Ridge",
+     "miles": 13,
+     "gainFt": 4300,
+     "note": "Hike from the Hannegan Pass Trailhead over Hannegan Pass and out along the Easy Ridge boundary trail/climbers' path, continuing past Easy Peak to a bivy. Long day on trail and open ridge with a big pack; water can be scarce late-season on the ridge crest."
+    },
+    {
+     "n": 2,
+     "title": "Cross-country traverse to camp below Phantom Peak's south ridge",
+     "objective": "Reach a bivy near the base of Phantom Peak's south ridge (Spectre's approach camp)",
+     "miles": 10,
+     "gainFt": 1600,
+     "note": "Off-trail traverse dropping to Imperfect Impasse, up and over Challenger Col, then cross-country to a second bivy positioned below the west/south ridge of Phantom Peak, at the base of Spectre's South Ridge. Route-finding and some exposed scrambling on this leg."
+    },
+    {
+     "n": 3,
+     "title": "Climb the South Ridge (\"Spirited Away\", IV 5.9)",
+     "objective": "Climb all 12 pitches of the South Ridge to Spectre's 7,952 ft summit",
+     "miles": 1,
+     "gainFt": 1500,
+     "note": "Alpine start from camp at first light, racking up at the base of the ridge. Twelve pitches of climbing (about 1,800 ft of pitched climbing plus 600 ft of simul-climbing) through a crux overhanging 5.9 choss section low on the route and a memorable band of narrow, hoodoo-like rock towers requiring an intermediate rappel…"
+    },
+    {
+     "n": 4,
+     "title": "Descend and hike all the way out",
+     "objective": "Reverse the route and hike back to the Hannegan Pass Trailhead",
+     "miles": 23,
+     "gainFt": 700,
+     "note": "Finish the descent down Spectre's east-side slopes back to the approach camp, break camp, then reverse the entire two-day approach in a single marathon push back to the trailhead. The FA party found fat snowpack made the upper descent quick but the long hike-out hot and dehydrating."
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Easy Ridge bivouac ground below Easy Peak",
+    "elev_ft": null,
+    "type": "bivy",
+    "role": "main",
+    "notes": "This is the Hannegan Pass approach rather than a Ross Lake one, and it is how Spectre Peak is actually reached — in past ascents parties bivouacked near the summit of Easy Peak, dropped to the Imperfect Impasse and climbed through to the western slope of the range. From the trailhead you go over Hannegan Pass and down …"
+   },
+   {
+    "name": "Improvised bivouacs on the Challenger Glacier and the crest south of Challenger",
+    "elev_ft": null,
+    "type": "bivy",
+    "role": "main",
+    "notes": "Spectre Peak sits well down the crest south of Challenger and Poltergeist Pinnacle is a multi-pitch rock climb off the glacier, so parties working the far end of the chain sometimes take a night out on the ice rather than commit to a very long day from Perfect Pass or Challenger Arm. These are made rather than found — …"
+   },
+   {
+    "name": "Perfect Pass, Perfect Pass cross-country zone",
+    "elev_ft": 6300,
+    "type": "bivy",
+    "role": "route",
+    "notes": "The classic high camp for Mount Challenger and for Whatcom Peak, on benches at the western edge of the Challenger Glacier. It is reached either over Whatcom Pass from the Brush Creek side or along Easy Ridge, the latter demanding a substantial descent and reclimb to get around the gap short of the pass. Reported elevat…"
+   }
+  ],
+  "campsite_pins": [
+   {
+    "name": "Bivy beyond Easy Peak",
+    "elev": 6600,
+    "distMi": 14.5
+   }
+  ]
+ },
+ {
+  "id": "wa_swiss_peak_standard_route",
+  "name": "Standard Route (Southwest Face)",
+  "discipline": "mountaineering",
+  "peak": "Swiss Peak",
+  "area_id": "wa_swiss_peak",
+  "path": "usa.washington.wa_northwest.wa_hwy20_ncnp.wa_north_cascades.wa_picket_range.wa_northern_pickets.wa_swiss_peak",
+  "trip_plan": {
+   "totalNote": null,
+   "days": [
+    {
+     "n": 1,
+     "title": "Day 1",
+     "objective": "",
+     "miles": null,
+     "gainFt": null,
+     "note": "Ross Dam TH, water taxi across Ross Lake, Big Beaver Trail to Luna Camp/Access Creek."
+    },
+    {
+     "n": 2,
+     "title": "Day 2",
+     "objective": "",
+     "miles": null,
+     "gainFt": null,
+     "note": "Climb Access Creek drainage to the Luna Cirque basin, gain Luna Col, camp near Luna Col or continue toward East/West Fury."
+    },
+    {
+     "n": 3,
+     "title": "Day 3",
+     "objective": "",
+     "miles": null,
+     "gainFt": null,
+     "note": "Traverse East Fury, West Fury, cross the glacier/snowfield to the Swiss-Fury saddle, climb Swiss Peak's southwest face, continue toward Spectre Plateau."
+    },
+    {
+     "n": 4,
+     "title": "Day 4",
+     "objective": "",
+     "miles": null,
+     "gainFt": null,
+     "note": "5 — continue over Phantom Peak, Crooked Thumb, to Mt. Challenger and Whatcom Pass, exiting via Chilliwack River or Little Beaver trails. (A southern variant instead approaches via Bacon Creek/Porkbelly/Mystery Ridge over 4-5 days to Pickell Pass, climbs Swiss's south side in a 2.5-hour round trip from camp, then contin…"
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Luna Col bivy, Luna cross-country zone",
+    "elev_ft": 7200,
+    "type": "bivy",
+    "role": "main",
+    "notes": "Open bivy ground on the col above the Luna Cirque, reached by leaving the Big Beaver trail near Access Creek and climbing trackless ground to Access Col. It is the working high camp for Mount Fury's west peak and for Luna Peak, with no established site — you camp on rock, heather or snow and pack everything out. The br…"
+   },
+   {
+    "name": "Luna Camp, Big Beaver Trail",
+    "elev_ft": 2432,
+    "type": "camp",
+    "role": "main",
+    "notes": "The standard staging camp for the Access Creek side of the Northern Pickets — Mount Fury's west peak and the Luna Cirque generally. Most parties take the Ross Lake water taxi to the Big Beaver landing near 1,600 ft and then walk eight to ten miles of nearly flat old-growth trail, so it functions as a first night rather…"
+   },
+   {
+    "name": "Luna Cirque floor",
+    "elev_ft": null,
+    "type": "bivy",
+    "role": "route",
+    "notes": "The floor of the great bowl beneath Luna Peak, walled on three sides, and the low point of the traverse that enters by Access Creek and Luna Pass and leaves over Challenger Gap onto Wiley Ridge. It sits directly under the eastern side of the crest that carries Spectre Peak, and parties coming off Challenger sometimes d…"
+   }
+  ],
+  "campsite_pins": []
+ },
+ {
+  "id": "wa_castle_in_the_sky",
+  "name": "Castle in the Sky",
+  "discipline": "alpine",
+  "peak": "Whatcom Peak",
+  "area_id": "wa_whatcom_peak",
+  "path": "usa.washington.wa_northwest.wa_hwy20_ncnp.wa_north_cascades.wa_picket_range.wa_northern_pickets.wa_whatcom_peak",
+  "trip_plan": {
+   "totalNote": "Hike from Hannegan Trailhead to a bivy on Easy Peak, cross the Imperfect Impasse to Perfect Pass and climb the 12-pitch route on day two, then descend and hike out on day three.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Hannegan Trailhead to Easy Peak bivy",
+     "objective": "Reach the Easy Peak bivy",
+     "miles": null,
+     "gainFt": null,
+     "note": "Hike up the Hannegan Pass Trail, drop to the Chilliwack River, and climb Easy Ridge to a bivy on Easy Peak."
+    },
+    {
+     "n": 2,
+     "title": "Cross the Impasse and climb the route",
+     "objective": "Reach Perfect Pass and climb Castle in the Sky",
+     "miles": null,
+     "gainFt": null,
+     "note": "Follow Easy Ridge across the Imperfect Impasse to the Perfect Pass area, then cross or skirt the Challenger Glacier to the base of the south buttress, about 45 minutes from a high camp. It is a long day of 12 pitches plus about 1,000 ft of scrambling, and the descent is by snow and 3rd-class scrambling on the south sid…"
+    },
+    {
+     "n": 3,
+     "title": "Descend and hike out",
+     "objective": "Return to Hannegan Trailhead",
+     "miles": null,
+     "gainFt": null,
+     "note": "Descend and hike all the way back out to Hannegan Trailhead."
+    }
+   ]
+  },
+  "camps_on_file": [],
+  "campsite_pins": [
+   {
+    "name": "Easy Peak bivy",
+    "elev": 6623,
+    "distMi": null
+   }
+  ]
+ },
+ {
+  "id": "wa_north_ridge_2",
+  "name": "North Ridge",
+  "discipline": "scrambling",
+  "peak": "Whatcom Peak",
+  "area_id": "wa_whatcom_peak",
+  "path": "usa.washington.wa_northwest.wa_hwy20_ncnp.wa_north_cascades.wa_picket_range.wa_northern_pickets.wa_whatcom_peak",
+  "trip_plan": {
+   "totalNote": "A 3-day/2-night out-and-back via a Whatcom Pass base camp: roughly 36 mi round trip (the approach alone runs close to 16 miles each way) with about 7,500-8,000 ft of cumulative gain. The ridge climb itself is short (a few hours round trip from camp) but trip reports disagree sharply on how easy it is, so budget generously.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Trailhead to Whatcom Pass camp",
+     "objective": "Establish base camp at Whatcom Pass",
+     "miles": 16,
+     "gainFt": 3600,
+     "note": "From the Hannegan Trailhead, cross Hannegan Pass, drop about 2,500 ft to the Chilliwack River drainage, and climb the Brush Creek Trail to camp at Whatcom Pass. Start early (by 6-7 AM) — a party that left near noon didn't reach camp until 9 PM."
+    },
+    {
+     "n": 2,
+     "title": "North Ridge summit day",
+     "objective": "Climb the North Ridge to the summit and back",
+     "miles": 4,
+     "gainFt": 2400,
+     "note": "Head south from camp toward the ridge and scramble the loose, exposed 3rd-class North Ridge to the summit. Some parties find it a quick, fun scramble; others describe it as loose and committing — go early, move carefully on the choss, and give yourself more time than the published description suggests."
+    },
+    {
+     "n": 3,
+     "title": "Out to the trailhead",
+     "objective": "Hike out via Whatcom Pass and Hannegan Pass",
+     "miles": 16,
+     "gainFt": 1700,
+     "note": "Reverse the approach: down Brush Creek to the Chilliwack, back up to Hannegan Pass, and out to the trailhead. A leisurely exit day took one party 7.5 hours with breaks."
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Whatcom Camp, Brush Creek below Whatcom Pass",
+    "elev_ft": 5286,
+    "type": "camp",
+    "role": "main",
+    "notes": "The last trail camp beneath Whatcom Pass and the one that serves the Hannegan Pass and Chilliwack River approach to Whatcom Peak and Mount Challenger. Parties coming that way typically chain Boundary, Copper Creek or US Cabin, then Graybeal on Brush Creek, then here — three or four days of walking before any climbing b…"
+   },
+   {
+    "name": "Twin Rocks and Stillwell Camps, Little Beaver",
+    "elev_ft": null,
+    "type": "camp",
+    "role": "route",
+    "notes": "These two sit at the hinge between the Little Beaver and Big Beaver trails and are what make the water-taxi loop practical: get dropped at the Little Beaver landing, walk up to Whatcom Pass for Whatcom Peak and Challenger, and exit over Beaver Pass and down Big Beaver, or run it the other way. For the Northern Pickets …"
+   }
+  ],
+  "campsite_pins": [
+   {
+    "name": "Whatcom Camp, Brush Creek below Whatcom Pass",
+    "elev": 5286,
+    "distMi": null
+   }
+  ]
+ },
+ {
+  "id": "wa_south_spur",
+  "name": "South Spur",
+  "discipline": "scrambling",
+  "peak": "Whatcom Peak",
+  "area_id": "wa_whatcom_peak",
+  "path": "usa.washington.wa_northwest.wa_hwy20_ncnp.wa_north_cascades.wa_picket_range.wa_northern_pickets.wa_whatcom_peak",
+  "trip_plan": {
+   "totalNote": "A 4-day/3-night loop via Easy Ridge in and Whatcom Pass out — essentially the same approach as the Southwest Route, but the summit day climbs the exposed Class 3-4 south ridge crest directly rather than traversing the glacier. Roughly 37-39 mi round trip with over 10,000 ft of cumulative gain.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Trailhead to Easy Ridge camp",
+     "objective": "Reach a camp near Easy Saddle on Easy Ridge",
+     "miles": 9,
+     "gainFt": 4600,
+     "note": "From the Hannegan Trailhead, cross Hannegan Pass, ford the Chilliwack River, and climb the old climbers' trail onto Easy Ridge to camp near Easy Saddle."
+    },
+    {
+     "n": 2,
+     "title": "Easy Ridge to Perfect Pass, climb the South Spur",
+     "objective": "Bypass the Imperfect Impasse, reach Perfect Pass, and climb the south ridge to the summit",
+     "miles": 7,
+     "gainFt": 3200,
+     "note": "Traverse Easy Ridge, bypass the Imperfect Impasse cliff band (drop to ~4,400 ft and re-climb), and continue to Perfect Pass. From there, a long straightforward snowfield on the south face leads to the base of the south ridge, followed by an exposed but enjoyable Class 3-4 scramble along the ridge crest to the summit."
+    },
+    {
+     "n": 3,
+     "title": "Perfect Pass to US Cabin Camp",
+     "objective": "Descend to Whatcom Pass and out toward the Chilliwack River",
+     "miles": 11,
+     "gainFt": 300,
+     "note": "Descend from Perfect Pass toward Whatcom Pass (via the low east-side traverse or the Whatcom Glacier if conditions allow), then follow the Brush Creek/Chilliwack River Trail, crossing the river by cable car, to camp near US Cabin."
+    },
+    {
+     "n": 4,
+     "title": "Out to the trailhead",
+     "objective": "Hike out via Hannegan Pass",
+     "miles": 9,
+     "gainFt": 2900,
+     "note": "Climb back up to Hannegan Pass and descend Ruth Creek to the trailhead."
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Perfect Pass, Perfect Pass cross-country zone",
+    "elev_ft": 6300,
+    "type": "bivy",
+    "role": "main",
+    "notes": "The classic high camp for Mount Challenger and for Whatcom Peak, on benches at the western edge of the Challenger Glacier. It is reached either over Whatcom Pass from the Brush Creek side or along Easy Ridge, the latter demanding a substantial descent and reclimb to get around the gap short of the pass. Reported elevat…"
+   },
+   {
+    "name": "Easy Ridge bivouac ground below Easy Peak",
+    "elev_ft": null,
+    "type": "bivy",
+    "role": "route",
+    "notes": "This is the Hannegan Pass approach rather than a Ross Lake one, and it is how Spectre Peak is actually reached — in past ascents parties bivouacked near the summit of Easy Peak, dropped to the Imperfect Impasse and climbed through to the western slope of the range. From the trailhead you go over Hannegan Pass and down …"
+   },
+   {
+    "name": "Whatcom Camp, Brush Creek below Whatcom Pass",
+    "elev_ft": 5286,
+    "type": "camp",
+    "role": "route",
+    "notes": "The last trail camp beneath Whatcom Pass and the one that serves the Hannegan Pass and Chilliwack River approach to Whatcom Peak and Mount Challenger. Parties coming that way typically chain Boundary, Copper Creek or US Cabin, then Graybeal on Brush Creek, then here — three or four days of walking before any climbing b…"
+   }
+  ],
+  "campsite_pins": [
+   {
+    "name": "Whatcom Camp, Brush Creek below Whatcom Pass",
+    "elev": 5286,
+    "distMi": null
+   }
+  ]
+ },
+ {
+  "id": "wa_east_mcmillan_spire_west_ridge",
+  "name": "West Ridge / Southwest Face",
+  "discipline": "mountaineering",
+  "peak": "East McMillan Spire",
+  "area_id": "wa_east_mcmillan_spire",
+  "path": "usa.washington.wa_northwest.wa_hwy20_ncnp.wa_north_cascades.wa_picket_range.wa_southern_pickets.wa_east_mcmillan_spire",
+  "trip_plan": {
+   "totalNote": "A 3-day trip: ~7 mi and 5,700+ ft to a Terror Basin high camp, a long summit day up the snow gully to the West-East McMillan col and along the exposed 3rd-class ridge to East McMillan Spire (one short rappel on the way down), and a 7-mile hike out.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Approach to Terror Basin high camp",
+     "objective": "Establish camp in Terror Basin (~5,800 ft)",
+     "miles": 7,
+     "gainFt": 5700,
+     "note": "Trailless approach from the Upper Goodell Creek trailhead: flat brushy trail for ~4 miles, then a steep, unmaintained climber's path gains ~4,000 ft up a forested ridge to heather benches, then descends slightly into Terror Basin. No water or reliable trail markers on the upper section — cairns and flagging only."
+    },
+    {
+     "n": 2,
+     "title": "East McMillan Spire from the West-East col",
+     "objective": "Climb East McMillan Spire by its west ridge from the West-East col",
+     "miles": 4,
+     "gainFt": 2600,
+     "note": "From camp, cross benches to the outlet of the glacial lake, then climb snow/slabs and the Terror Glacier to the steep snow gully (or the reddish ledges and 4th-class rib beside it) that leads to the col between West and East McMillan Spires. From the col, exposed 3rd-class scrambling east along the ridge crest reaches …"
+    },
+    {
+     "n": 3,
+     "title": "Hike out",
+     "objective": "Return to Goodell Creek trailhead",
+     "miles": 7,
+     "gainFt": 200,
+     "note": "Break camp and reverse the Day 1 approach: climb back out of Terror Basin to the heather benches, then descend the steep forested ridge and flat trail to the trailhead."
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Terror Basin camp",
+    "elev_ft": 5800,
+    "type": "camp",
+    "role": "main",
+    "notes": "The standard base for the south side of the range, and the place the Terror Creek climbers' path is trying to reach. From the flat gravel the basin runs up to a notch on its eastern rim near 6,200 ft, and the Chopping Block, Degenhardt, the Pyramid and the west side of Terror are all workable from here. Whether a party…"
+   },
+   {
+    "name": "Goodell Creek Campground, roadhead staging",
+    "elev_ft": 500,
+    "type": "camp",
+    "role": "route",
+    "notes": "The pavement-level staging camp rather than a mountain camp, and most parties use it to get a few hours of sleep before starting the approach in the dark. Bear boxes, tables and vault toilets mean food and rubbish can be dealt with before you leave the car. Sleeping here advances you toward the peaks not at all, but it…"
+   },
+   {
+    "name": "Old Goodell Creek roadbed near the Terror Creek crossing",
+    "elev_ft": 2000,
+    "type": "bivy",
+    "role": "route",
+    "notes": "The roughly four miles of overgrown roadbed to the cairn near the Terror Creek crossing is walking rather than climbing, and a party leaving the car late often ends the first day somewhere near here. That is defensible, because the ground above is where the day gets expensive and nobody wants to be finding the path by …"
+   }
+  ],
+  "campsite_pins": [
+   {
+    "name": "Terror Basin Camp",
+    "elev": 5800,
+    "distMi": 7.4
+   }
+  ]
+ }
+]

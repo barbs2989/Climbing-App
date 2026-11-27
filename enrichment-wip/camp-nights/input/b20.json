@@ -1,0 +1,1200 @@
+[
+ {
+  "id": "wa_ottohorn_southeast_route",
+  "name": "Southeast Route",
+  "discipline": "alpine",
+  "peak": "Ottohorn",
+  "area_id": "wa_ottohorn",
+  "path": "usa.washington.wa_northwest.wa_hwy20_ncnp.wa_north_cascades.wa_picket_range.wa_southern_pickets.wa_ottohorn",
+  "trip_plan": {
+   "totalNote": "A standard 3-day trip: roughly 9 hrs / 5,800 ft to establish high camp in Crescent Creek Basin, a technical summit day over the Ottohorn-Himmelhorn col (often combined with Frenzel Spitz), and a 7-8 hr exit; only very fast, committed parties compress this to 2 days.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Approach to Crescent Creek Basin",
+     "objective": "Establish high camp below the Ottohorn-Himmelhorn col",
+     "miles": 7.5,
+     "gainFt": 5800,
+     "note": "From the Goodell Creek trailhead, follow the old roadbed and climbers' path up Terror Creek to gain the Barrier ridge crest, then cross the Barrier notch and drop into Stump Hollow and Crescent Creek Basin. Most parties camp on the heather/slab bench around 6,300-6,600 ft below the Chopping Block-Ottohorn massif."
+    },
+    {
+     "n": 2,
+     "title": "Ottohorn via the Ottohorn-Himmelhorn col",
+     "objective": "Summit Ottohorn (and often Frenzel Spitz) from high camp",
+     "miles": 2.5,
+     "gainFt": 1900,
+     "note": "Climb steep snow/talus from camp to the Ottohorn-Himmelhorn col, then scramble the class 3-4 east ridge/southeast side to the Ottohorn summit; parties report roughly an hour round trip from the col to the summit and back. Many groups use the same col to tag Frenzel Spitz and/or Himmelgeisterhorn (Düsseldorfspitz) the s…"
+    },
+    {
+     "n": 3,
+     "title": "Exit to trailhead",
+     "objective": "Pack out via the Barrier and Terror Creek",
+     "miles": 7.5,
+     "gainFt": 300,
+     "note": "Break camp and reverse the approach: recross the Barrier, descend the Terror Creek drainage, and follow the roadbed back to the Goodell Creek trailhead."
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Crescent Creek Basin camp",
+    "elev_ft": 6050,
+    "type": "camp",
+    "role": "main",
+    "notes": "Crescent Creek Basin sits on the north side of the crest and is what you cross the Barrier for, reached over the roughly 6,400 ft saddle northeast of the Chopping Block. It is the working base for East and West McMillan Spire, Inspiration, the Twin Needles, and for the Ottohorn and Himmelhorn by way of the col between …"
+   },
+   {
+    "name": "Goodell Creek Campground, roadhead staging",
+    "elev_ft": 500,
+    "type": "camp",
+    "role": "route",
+    "notes": "The pavement-level staging camp rather than a mountain camp, and most parties use it to get a few hours of sleep before starting the approach in the dark. Bear boxes, tables and vault toilets mean food and rubbish can be dealt with before you leave the car. Sleeping here advances you toward the peaks not at all, but it…"
+   },
+   {
+    "name": "Old Goodell Creek roadbed near the Terror Creek crossing",
+    "elev_ft": 2000,
+    "type": "bivy",
+    "role": "route",
+    "notes": "The roughly four miles of overgrown roadbed to the cairn near the Terror Creek crossing is walking rather than climbing, and a party leaving the car late often ends the first day somewhere near here. That is defensible, because the ground above is where the day gets expensive and nobody wants to be finding the path by …"
+   },
+   {
+    "name": "Terror Basin camp",
+    "elev_ft": 5800,
+    "type": "camp",
+    "role": "route",
+    "notes": "The standard base for the south side of the range, and the place the Terror Creek climbers' path is trying to reach. From the flat gravel the basin runs up to a notch on its eastern rim near 6,200 ft, and the Chopping Block, Degenhardt, the Pyramid and the west side of Terror are all workable from here. Whether a party…"
+   },
+   {
+    "name": "Stump Hollow bench",
+    "elev_ft": 6000,
+    "type": "camp",
+    "role": "route",
+    "notes": "Stump Hollow is the open slabby heather ground at timberline between the Barrier ridge and the Chopping Block, and the first place after the forest where a tent actually goes down comfortably. Parties heading for the north side use it as the intermediate camp, because an easy rising traverse reaches the saddle northeas…"
+   },
+   {
+    "name": "High bivouacs at the western end of the crest",
+    "elev_ft": null,
+    "type": "bivy",
+    "role": "route",
+    "notes": "The western summits — the Twin Needles, Ottohorn, Himmelhorn and Frenzel Spitz — are far enough along the crest that a party working from a basin camp faces a very long day, so some take a bivouac high on the traverse instead. These are improvised spots rather than established sites, and quality varies from a decent gr…"
+   }
+  ],
+  "campsite_pins": [
+   {
+    "name": "Goodell Creek Campground, roadhead staging",
+    "elev": 500,
+    "distMi": null
+   },
+   {
+    "name": "Terror Basin camp",
+    "elev": 5800,
+    "distMi": 7.2
+   },
+   {
+    "name": "Crescent Creek Basin camp",
+    "elev": 6200,
+    "distMi": 7.5
+   }
+  ]
+ },
+ {
+  "id": "wa_the_chopping_block_northwest_route",
+  "name": "Northwest Route",
+  "discipline": "alpine",
+  "peak": "The Chopping Block",
+  "area_id": "wa_the_chopping_block",
+  "path": "usa.washington.wa_northwest.wa_hwy20_ncnp.wa_north_cascades.wa_picket_range.wa_southern_pickets.wa_the_chopping_block",
+  "trip_plan": {
+   "totalNote": "Three days: a steep, brushy carry from Goodell Creek up the Barrier to the Chopping Block ridge camp, a short Class 4 summit day, then the long descent out.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Goodell Creek to Chopping Block ridge camp",
+     "objective": "Carry to the ridge camp near 6,400 ft",
+     "miles": null,
+     "gainFt": 5800,
+     "note": "Follow the old roadbed up Goodell Creek, cross Terror Creek on a log near 2,000 ft, then take the climbers' path up the Barrier crest above timberline to the camp overlooking Crescent Creek Basin. One party leaving at 3 am reached camp well before noon. The alternative is to camp in Terror Basin (about 7 h from the car…"
+    },
+    {
+     "n": 2,
+     "title": "Climb the Northwest Route",
+     "objective": "Summit the Chopping Block and return to camp",
+     "miles": null,
+     "gainFt": 420,
+     "note": "Scramble Class 3 partway up the NE Ridge, make the exposed Class 4 ledge traverse across the north face (the route-finding is tricky), then go up easy Class 3 on the NW Ridge to the summit. Descend the NE Ridge with a few single-rope rappels."
+    },
+    {
+     "n": 3,
+     "title": "Descend the Barrier to Goodell Creek",
+     "objective": "Return to the trailhead",
+     "miles": null,
+     "gainFt": 0,
+     "note": "Go down snow, slabs and heather to the Barrier crest at about 5,600 ft. A faint path follows the crest to about 3,600 ft, then the descent to the Terror Creek log is steep, brushy and cliffy. Back on the Goodell Creek path at 1,700 ft, follow it out to the trailhead at 600 ft. This took about 7 hours."
+    }
+   ]
+  },
+  "camps_on_file": [],
+  "campsite_pins": []
+ },
+ {
+  "id": "wa_the_chopping_block_south_route",
+  "name": "Southeast Face",
+  "discipline": "alpine",
+  "peak": "The Chopping Block",
+  "area_id": "wa_the_chopping_block",
+  "path": "usa.washington.wa_northwest.wa_hwy20_ncnp.wa_north_cascades.wa_picket_range.wa_southern_pickets.wa_the_chopping_block",
+  "trip_plan": {
+   "totalNote": "A 3-day Southern Pickets trip (~6.5 mi and ~5,700 ft each way to camp); the Chopping Block itself is a moderate scramble/rappel day out of high camp and is commonly tacked on as a warm-up alongside another Southern Pickets objective.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Approach to Southern Pickets high camp",
+     "objective": "Reach camp on the Chopping Block ridge above Stump Hollow",
+     "miles": 6.5,
+     "gainFt": 5700,
+     "note": "From the Goodell Creek trailhead near Newhalem, follow the old logging road then the climbers' path across Terror Creek (on a log or wading, around 2,000 ft) and steeply up to the crest of the Barrier, then follow the brushy crest to timberline near 5,600 ft and climb the snow, slabs and heather of Stump Hollow to camp…"
+    },
+    {
+     "n": 2,
+     "title": "Chopping Block summit via Southeast Face",
+     "objective": "Climb the Chopping Block and return to camp",
+     "miles": 3,
+     "gainFt": 1400,
+     "note": "From camp, climb south-side slabs and heather to the base of the peak. The route is a rambly scramble with a 200-ft chimney and a slabby face with a few low-5th-class moves below the summit; parties typically make one short rappel (fixed-line/anchor reported at the top) to regain the south-side ledges on descent rather…"
+    },
+    {
+     "n": 3,
+     "title": "Descend to Goodell Creek trailhead",
+     "objective": "Hike out",
+     "miles": 6.5,
+     "gainFt": 400,
+     "note": "Reverse the approach: descend Stump Hollow and the crest of the Barrier, then the steep climbers' path to Terror Creek and the old logging road back to the car. Loose scree/dirt and brush make the descent slow and hard on the knees despite being downhill."
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Stump Hollow bench",
+    "elev_ft": 6000,
+    "type": "camp",
+    "role": "main",
+    "notes": "Stump Hollow is the open slabby heather ground at timberline between the Barrier ridge and the Chopping Block, and the first place after the forest where a tent actually goes down comfortably. Parties heading for the north side use it as the intermediate camp, because an easy rising traverse reaches the saddle northeas…"
+   },
+   {
+    "name": "Goodell Creek Campground, roadhead staging",
+    "elev_ft": 500,
+    "type": "camp",
+    "role": "route",
+    "notes": "The pavement-level staging camp rather than a mountain camp, and most parties use it to get a few hours of sleep before starting the approach in the dark. Bear boxes, tables and vault toilets mean food and rubbish can be dealt with before you leave the car. Sleeping here advances you toward the peaks not at all, but it…"
+   },
+   {
+    "name": "Old Goodell Creek roadbed near the Terror Creek crossing",
+    "elev_ft": 2000,
+    "type": "bivy",
+    "role": "route",
+    "notes": "The roughly four miles of overgrown roadbed to the cairn near the Terror Creek crossing is walking rather than climbing, and a party leaving the car late often ends the first day somewhere near here. That is defensible, because the ground above is where the day gets expensive and nobody wants to be finding the path by …"
+   },
+   {
+    "name": "Terror Basin camp",
+    "elev_ft": 5800,
+    "type": "camp",
+    "role": "route",
+    "notes": "The standard base for the south side of the range, and the place the Terror Creek climbers' path is trying to reach. From the flat gravel the basin runs up to a notch on its eastern rim near 6,200 ft, and the Chopping Block, Degenhardt, the Pyramid and the west side of Terror are all workable from here. Whether a party…"
+   }
+  ],
+  "campsite_pins": [
+   {
+    "name": "Stump Hollow",
+    "elev": 5600,
+    "distMi": 6.3
+   },
+   {
+    "name": "Terror Basin camp",
+    "elev": 5800,
+    "distMi": 6.2
+   }
+  ]
+ },
+ {
+  "id": "wa_the_pyramid_picket_south_route",
+  "name": "South Route",
+  "discipline": "alpine",
+  "peak": "The Pyramid",
+  "area_id": "wa_the_pyramid_picket",
+  "path": "usa.washington.wa_northwest.wa_hwy20_ncnp.wa_north_cascades.wa_picket_range.wa_southern_pickets.wa_the_pyramid_picket",
+  "trip_plan": {
+   "totalNote": "A 3-day trip: roughly 7 miles and 5,200 ft up to a Terror Basin high camp, a long summit day crossing the Barrier to tag Pyramid's 7,920 ft top (commonly combined with Degenhardt), then a full reversal back out — about 17 miles and ~7,500 ft of gain round trip.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Approach to Terror Basin",
+     "objective": "Reach high camp in lower Terror Basin",
+     "miles": 7,
+     "gainFt": 5200,
+     "note": "From the Goodell Creek trailhead, follow the old logging road for about an hour, then pick up the well-worn (but unmaintained and brushy) Terror Creek climbers' trail marked by a cairn and rock arrow. The trail climbs steeply through timber before breaking out into open heather and talus below the basin; most parties c…"
+    },
+    {
+     "n": 2,
+     "title": "Cross the Barrier, tag Pyramid",
+     "objective": "Climb Pyramid Peak (7,920 ft) via the South Route/West Ridge and return to camp",
+     "miles": 3,
+     "gainFt": 2300,
+     "note": "Leave camp early to cross the Barrier while snow is firm, dropping to and crossing the glacier below Inspiration/Degenhardt, then climbing loose class 3 terrain to the notch south of Degenhardt. From there a 3rd/4th-class ridge traverse leads to Pyramid's summit; many parties tag Degenhardt on the same push since it si…"
+    },
+    {
+     "n": 3,
+     "title": "Hike out",
+     "objective": "Return to Goodell Creek trailhead",
+     "miles": 7,
+     "gainFt": 0,
+     "note": "Reverse the approach: descend the climbers' trail through the basin and timber back to the old logging road and out to the trailhead. Downhill and lighter packs make this notably faster than the hike in."
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Terror Basin camp",
+    "elev_ft": 5800,
+    "type": "camp",
+    "role": "main",
+    "notes": "The standard base for the south side of the range, and the place the Terror Creek climbers' path is trying to reach. From the flat gravel the basin runs up to a notch on its eastern rim near 6,200 ft, and the Chopping Block, Degenhardt, the Pyramid and the west side of Terror are all workable from here. Whether a party…"
+   },
+   {
+    "name": "Goodell Creek Campground, roadhead staging",
+    "elev_ft": 500,
+    "type": "camp",
+    "role": "route",
+    "notes": "The pavement-level staging camp rather than a mountain camp, and most parties use it to get a few hours of sleep before starting the approach in the dark. Bear boxes, tables and vault toilets mean food and rubbish can be dealt with before you leave the car. Sleeping here advances you toward the peaks not at all, but it…"
+   },
+   {
+    "name": "Old Goodell Creek roadbed near the Terror Creek crossing",
+    "elev_ft": 2000,
+    "type": "bivy",
+    "role": "route",
+    "notes": "The roughly four miles of overgrown roadbed to the cairn near the Terror Creek crossing is walking rather than climbing, and a party leaving the car late often ends the first day somewhere near here. That is defensible, because the ground above is where the day gets expensive and nobody wants to be finding the path by …"
+   }
+  ],
+  "campsite_pins": [
+   {
+    "name": "Goodell Creek Campground, roadhead staging",
+    "elev": 500,
+    "distMi": null
+   },
+   {
+    "name": "Terror Basin camp",
+    "elev": 5800,
+    "distMi": 7
+   }
+  ]
+ },
+ {
+  "id": "wa_the_rake_traverse_route",
+  "name": "Ridge Traverse Route",
+  "discipline": "alpine",
+  "peak": "The Rake",
+  "area_id": "wa_the_rake",
+  "path": "usa.washington.wa_northwest.wa_hwy20_ncnp.wa_north_cascades.wa_picket_range.wa_southern_pickets.wa_the_rake",
+  "trip_plan": {
+   "totalNote": "A 3-day trip: one day backpacking into Crescent Creek Basin camp, a long technical day climbing The Rake's ridge crest and rappelling back to camp, and a day hiking out — roughly 16 miles and ~8,100 ft of gain round trip.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Approach to Crescent Creek Basin",
+     "objective": "Reach the Crescent Creek Basin high camp",
+     "miles": 7.2,
+     "gainFt": 5800,
+     "note": "A steep, sweaty climb out of the Goodell Creek trailhead through forest and heather slopes over the Barrier into Crescent Creek Basin, gaining nearly 6,000 ft to a camp a little over 6,000 ft below the Southern Pickets crest. Parties carry a full multi-day rack, rope, and several days of food, since the route is entire…"
+    },
+    {
+     "n": 2,
+     "title": "Climb The Rake, ridge traverse route",
+     "objective": "Summit The Rake and return to Crescent Creek Basin camp",
+     "miles": 2,
+     "gainFt": 1600,
+     "note": "An alpine-start day climbing from camp to the Terror-Rake col, then following the crest on mixed 4th/5th-class terrain (to roughly 5.9) to the summit at 7,869 ft. The descent reverses the ridge with a series of rappels back to the col and down to camp, so the rope stays on for most of the day."
+    },
+    {
+     "n": 3,
+     "title": "Exit to trailhead",
+     "objective": "Hike out to Goodell Creek trailhead",
+     "miles": 7.2,
+     "gainFt": 300,
+     "note": "Break camp and descend the approach route in reverse — steep heather and forest back down to the highway. Knees take the brunt of it; most parties are back at the car by mid-afternoon."
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Crescent Creek Basin camp",
+    "elev_ft": 6050,
+    "type": "camp",
+    "role": "main",
+    "notes": "Crescent Creek Basin sits on the north side of the crest and is what you cross the Barrier for, reached over the roughly 6,400 ft saddle northeast of the Chopping Block. It is the working base for East and West McMillan Spire, Inspiration, the Twin Needles, and for the Ottohorn and Himmelhorn by way of the col between …"
+   },
+   {
+    "name": "Goodell Creek Campground, roadhead staging",
+    "elev_ft": 500,
+    "type": "camp",
+    "role": "route",
+    "notes": "The pavement-level staging camp rather than a mountain camp, and most parties use it to get a few hours of sleep before starting the approach in the dark. Bear boxes, tables and vault toilets mean food and rubbish can be dealt with before you leave the car. Sleeping here advances you toward the peaks not at all, but it…"
+   },
+   {
+    "name": "Old Goodell Creek roadbed near the Terror Creek crossing",
+    "elev_ft": 2000,
+    "type": "bivy",
+    "role": "route",
+    "notes": "The roughly four miles of overgrown roadbed to the cairn near the Terror Creek crossing is walking rather than climbing, and a party leaving the car late often ends the first day somewhere near here. That is defensible, because the ground above is where the day gets expensive and nobody wants to be finding the path by …"
+   },
+   {
+    "name": "Terror Basin camp",
+    "elev_ft": 5800,
+    "type": "camp",
+    "role": "route",
+    "notes": "The standard base for the south side of the range, and the place the Terror Creek climbers' path is trying to reach. From the flat gravel the basin runs up to a notch on its eastern rim near 6,200 ft, and the Chopping Block, Degenhardt, the Pyramid and the west side of Terror are all workable from here. Whether a party…"
+   },
+   {
+    "name": "Stump Hollow bench",
+    "elev_ft": 6000,
+    "type": "camp",
+    "role": "route",
+    "notes": "Stump Hollow is the open slabby heather ground at timberline between the Barrier ridge and the Chopping Block, and the first place after the forest where a tent actually goes down comfortably. Parties heading for the north side use it as the intermediate camp, because an easy rising traverse reaches the saddle northeas…"
+   },
+   {
+    "name": "High bivouacs at the western end of the crest",
+    "elev_ft": null,
+    "type": "bivy",
+    "role": "route",
+    "notes": "The western summits — the Twin Needles, Ottohorn, Himmelhorn and Frenzel Spitz — are far enough along the crest that a party working from a basin camp faces a very long day, so some take a bivouac high on the traverse instead. These are improvised spots rather than established sites, and quality varies from a decent gr…"
+   }
+  ],
+  "campsite_pins": [
+   {
+    "name": "Terror Creek Basin Camp",
+    "elev": 5800,
+    "distMi": 6.5
+   },
+   {
+    "name": "Terror Basin camp",
+    "elev": 5800,
+    "distMi": 6.2
+   },
+   {
+    "name": "Crescent Creek Basin High Camp",
+    "elev": 6200,
+    "distMi": 7.5
+   }
+  ]
+ },
+ {
+  "id": "wa_west_twin_needle_south_route",
+  "name": "South Route",
+  "discipline": "alpine",
+  "peak": "West Twin Needle",
+  "area_id": "wa_west_twin_needle",
+  "path": "usa.washington.wa_northwest.wa_hwy20_ncnp.wa_north_cascades.wa_picket_range.wa_southern_pickets.wa_west_twin_needle",
+  "trip_plan": {
+   "totalNote": "A 3-day, car-to-car trip of roughly 19.5 miles RT with about 7,300 ft between the trailhead (~600 ft) and the summit (7,936 ft); one long approach day in, one full technical summit day, one long day out.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Approach to Crescent Creek Camp",
+     "objective": "Reach climbing camp below Mount Terror / West Twin Needle",
+     "miles": 9.5,
+     "gainFt": 5800,
+     "note": "A long, hard approach day: from the Goodell Creek Cross-Country trailhead, follow the old roadbed and boot path up through Terror Creek drainage, over The Barrier (steep class 2-3 scrambling), and across Crescent Creek Basin to a flat camp spot with water below Mount Terror at ~6,050 ft. Most parties go straight to thi…"
+    },
+    {
+     "n": 2,
+     "title": "Summit push via South Route / East Face 5.7 Direct",
+     "objective": "Climb West Twin Needle and return to camp",
+     "miles": 2.5,
+     "gainFt": 2400,
+     "note": "A full technical day from camp: descend to the head of Crescent Creek, traverse below the Eye Col gully, then climb chockstone-filled terrain into class 5 ground and the East Face 5.7 Direct to the summit. Descend via two 60m rappels through the Himmelhorn-West Twin notch back toward camp, aiming to be off the rock bef…"
+    },
+    {
+     "n": 3,
+     "title": "Hike out",
+     "objective": "Return to Goodell Creek trailhead",
+     "miles": 9.5,
+     "gainFt": 800,
+     "note": "Reverse the approach: back across Crescent Creek Basin, over The Barrier, down through the Terror Creek drainage and old roadbed to the trailhead. Water can be scarce on this leg in late summer, so plan refill stops."
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Crescent Creek Basin camp",
+    "elev_ft": 6050,
+    "type": "camp",
+    "role": "main",
+    "notes": "Crescent Creek Basin sits on the north side of the crest and is what you cross the Barrier for, reached over the roughly 6,400 ft saddle northeast of the Chopping Block. It is the working base for East and West McMillan Spire, Inspiration, the Twin Needles, and for the Ottohorn and Himmelhorn by way of the col between …"
+   },
+   {
+    "name": "Goodell Creek Campground, roadhead staging",
+    "elev_ft": 500,
+    "type": "camp",
+    "role": "route",
+    "notes": "The pavement-level staging camp rather than a mountain camp, and most parties use it to get a few hours of sleep before starting the approach in the dark. Bear boxes, tables and vault toilets mean food and rubbish can be dealt with before you leave the car. Sleeping here advances you toward the peaks not at all, but it…"
+   },
+   {
+    "name": "Old Goodell Creek roadbed near the Terror Creek crossing",
+    "elev_ft": 2000,
+    "type": "bivy",
+    "role": "route",
+    "notes": "The roughly four miles of overgrown roadbed to the cairn near the Terror Creek crossing is walking rather than climbing, and a party leaving the car late often ends the first day somewhere near here. That is defensible, because the ground above is where the day gets expensive and nobody wants to be finding the path by …"
+   },
+   {
+    "name": "Terror Basin camp",
+    "elev_ft": 5800,
+    "type": "camp",
+    "role": "route",
+    "notes": "The standard base for the south side of the range, and the place the Terror Creek climbers' path is trying to reach. From the flat gravel the basin runs up to a notch on its eastern rim near 6,200 ft, and the Chopping Block, Degenhardt, the Pyramid and the west side of Terror are all workable from here. Whether a party…"
+   },
+   {
+    "name": "Stump Hollow bench",
+    "elev_ft": 6000,
+    "type": "camp",
+    "role": "route",
+    "notes": "Stump Hollow is the open slabby heather ground at timberline between the Barrier ridge and the Chopping Block, and the first place after the forest where a tent actually goes down comfortably. Parties heading for the north side use it as the intermediate camp, because an easy rising traverse reaches the saddle northeas…"
+   },
+   {
+    "name": "High bivouacs at the western end of the crest",
+    "elev_ft": null,
+    "type": "bivy",
+    "role": "route",
+    "notes": "The western summits — the Twin Needles, Ottohorn, Himmelhorn and Frenzel Spitz — are far enough along the crest that a party working from a basin camp faces a very long day, so some take a bivouac high on the traverse instead. These are improvised spots rather than established sites, and quality varies from a decent gr…"
+   }
+  ],
+  "campsite_pins": [
+   {
+    "name": "Goodell Creek Campground, roadhead staging",
+    "elev": 500,
+    "distMi": null
+   },
+   {
+    "name": "Terror Basin camp",
+    "elev": 5800,
+    "distMi": null
+   },
+   {
+    "name": "Crescent Creek Basin camp (below Mt. Terror)",
+    "elev": 6050,
+    "distMi": 7.5
+   }
+  ]
+ },
+ {
+  "id": "wa_snowfield_peak_neve_glacier",
+  "name": "Neve Glacier / Standard Route",
+  "discipline": "mountaineering",
+  "peak": "Snowfield Peak",
+  "area_id": "wa_snowfield_peak",
+  "path": "usa.washington.wa_northwest.wa_hwy20_ncnp.wa_north_cascades.wa_snowfield_peak",
+  "trip_plan": {
+   "totalNote": "A 2-day/1-night weekend trip is the norm: ~15-16 mi and ~7,300 ft gain round trip, with about 11.5 hours camp-to-car on summit day; very fit parties occasionally push it car-to-car in a single long day.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Approach to high camp",
+     "objective": "Reach treeline/Colonial Basin camp (~5,800-6,000 ft)",
+     "miles": 5.5,
+     "gainFt": 4750,
+     "note": "From the Pyramid Lake Trailhead (1,150 ft) on SR-20, a well-graded trail climbs 1,500 ft in 2.1 mi to Pyramid Lake. From there a brushy, unmaintained climbers' trail continues up the ridge above the lake to treeline, with camps at ~5,400 ft, ~5,900 ft (on snow), or in Colonial Basin. Most parties budget 6-8 hours for t…"
+    },
+    {
+     "n": 2,
+     "title": "Summit day and hike out",
+     "objective": "Climb Snowfield Peak via the Colonial and Neve Glaciers, then descend to the car",
+     "miles": 10.5,
+     "gainFt": 2650,
+     "note": "An early start crosses the col into the Colonial Glacier basin, ascends to the ~6,800 ft pass, and traverses the Neve Glacier (roped, watch for crevasses that open by midsummer around 6,600 ft) to the west ridge. A short class 3 scramble up a gully/arete system gains the 8,351 ft summit. Most parties reverse the whole …"
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Colonial-Neve col",
+    "elev_ft": 6801,
+    "type": "camp",
+    "role": "main",
+    "notes": "The high camp, on the col between the Colonial and Neve glaciers, and the one most parties push to if they have the legs. Dry ground, better sheltered than the basin below, and it puts the Neve Glacier and the west ridge within a short morning. Getting here involves glacier travel, so it is a rope-up-before-camp propos…"
+   },
+   {
+    "name": "Colonial Basin",
+    "elev_ft": 5899,
+    "type": "camp",
+    "role": "main",
+    "notes": "Reached by the steep, narrow climbers' path above Pyramid Lake; you break out of trees near 5,600 ft and the basin opens below Colonial and Pyramid. It is a spectacular spot and a genuinely windy one — parties have needed several people and a pile of rocks to get a tent up. A few sites tucked into alcoves shelter far b…"
+   },
+   {
+    "name": "Lower camp below the basin",
+    "elev_ft": 5400,
+    "type": "camp",
+    "role": "route",
+    "notes": "The bail-out option around 5,400 ft, just below where the climbers' path leaves the trees, used by parties who run out of daylight or energy on the steep section above Pyramid Lake. It leaves a long second day to the summit and back."
+   }
+  ],
+  "campsite_pins": [
+   {
+    "name": "Colonial Glacier moraine camp",
+    "elev": 5900,
+    "distMi": 4.4
+   }
+  ]
+ },
+ {
+  "id": "wa_azurite_peak_southeast",
+  "name": "South Ridge / Southwest Gully",
+  "discipline": "scrambling",
+  "peak": "Azurite Peak",
+  "area_id": "wa_azurite_peak",
+  "path": "usa.washington.wa_northwest.wa_hwy20_ncnp.wa_north_cascades.wa_sub_wapass.wa_azurite_peak",
+  "trip_plan": {
+   "totalNote": "A 3-day backpack: about 25 miles round trip with 6,700 ft cumulative gain/loss, one night in and one night out of Horse Heaven Camp, with a long (10-11 hr) class 3-4 summit day from camp.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Approach to Horse Heaven Camp",
+     "objective": "Reach base camp at Horse Heaven Camp",
+     "miles": 9.5,
+     "gainFt": 1650,
+     "note": "From the West Fork Methow River trailhead (River Bend Campground, ~2,700 ft), hike the West Fork Methow River Trail roughly 8 miles to the PCT junction at Brush Creek, then south on the PCT about 1.5 miles to Horse Heaven Camp (4,350 ft). Trail can be brushy/overgrown in the lower miles, which slows parties down."
+    },
+    {
+     "n": 2,
+     "title": "Summit day via Azurite Pass, South Ridge and Southwest Gully",
+     "objective": "Climb Azurite Peak and return to camp",
+     "miles": 8,
+     "gainFt": 4100,
+     "note": "From camp, follow the Mill Creek/Azurite Pass Trail up to Azurite Pass (~6,700 ft), then work north/northeast along the south ridge, finishing through class 3 gullies just southwest of the summit tower to reach the 8,445 ft summit. Descend the same gullies and ridge back to the pass and camp."
+    },
+    {
+     "n": 3,
+     "title": "Hike out",
+     "objective": "Return to trailhead",
+     "miles": 9.5,
+     "gainFt": 0,
+     "note": "Break camp and hike back down the PCT and West Fork Methow River Trail to the trailhead, reversing day 1's route."
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Horse Heaven Camp, West Fork Methow",
+    "elev_ft": 4350,
+    "type": "camp",
+    "role": "main",
+    "notes": "This is the natural first night on the eastern approach to Azurite Pass and it breaks a walk that is otherwise too long to enjoy. From the trailhead near two thousand seven hundred feet the trail follows the West Fork Methow past Trout Creek and Brush Creek toward Jet Creek, and the camp sits partway along at about fou…"
+   },
+   {
+    "name": "Azurite Pass",
+    "elev_ft": 6713,
+    "type": "bivy",
+    "role": "main",
+    "notes": "This is the hinge of the whole zone and the only camp that serves both summits well. Azurite Peak rises directly north of the pass and Mount Ballard stands about two miles further north again along the same ridge, so a party camped here can take Azurite by its south ridge and south-west gully and then continue to Balla…"
+   },
+   {
+    "name": "River Bend and Ballard campgrounds, Lost River Road",
+    "elev_ft": null,
+    "type": "camp",
+    "role": "route",
+    "notes": "These are the staging camps for the eastern approach and the comfortable answer to the night before. From Winthrop the drive runs west on SR 20 and then up the Lost River Road through Mazama to the end of the pavement, continuing a mile and a half or so on the gravel of the Harts Pass road. The West Fork Methow trailhe…"
+   }
+  ],
+  "campsite_pins": [
+   {
+    "name": "Horse Heaven Camp",
+    "elev": 4350,
+    "distMi": 10
+   }
+  ]
+ },
+ {
+  "id": "wa_black_peak_northeast_ridge",
+  "name": "Northeast Ridge",
+  "discipline": "alpine",
+  "peak": "Black Peak",
+  "area_id": "wa_black_peak",
+  "path": "usa.washington.wa_northwest.wa_hwy20_ncnp.wa_north_cascades.wa_sub_wapass.wa_black_peak",
+  "trip_plan": {
+   "totalNote": "Commonly a 2-3 day trip: hike in to Wing Lake, climb the Northeast Ridge and descend the South Ridge to camp, and hike out the next day if camping two nights.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Hike in to Wing Lake",
+     "objective": "Camp at Wing Lake",
+     "miles": 4.6,
+     "gainFt": 2460,
+     "note": "Hike from Rainy Pass via Heather Pass and Lewis Lake to camp at Wing Lake at about 6,900 ft."
+    },
+    {
+     "n": 2,
+     "title": "Climb the Northeast Ridge",
+     "objective": "Summit via the Northeast Ridge and return to camp",
+     "miles": 2.2,
+     "gainFt": 2050,
+     "note": "Climb the Northeast Ridge to the summit and descend via the South Ridge back to camp. This is a long day."
+    },
+    {
+     "n": 3,
+     "title": "Hike out",
+     "objective": "Return to Rainy Pass",
+     "miles": 4.6,
+     "gainFt": 390,
+     "note": "Hike out to the trailhead if camping two nights."
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Wing Lake",
+    "elev_ft": 6900,
+    "type": "camp",
+    "role": "main",
+    "notes": "This is the working climbers' camp for Black Peak and the natural first night for Corteo as well. From the Rainy Pass west lot the loop trail is followed for a little over a mile, then a right fork leads to Heather Pass; from there a boot path crosses a boulder field and drops to Lewis Lake, and a further climb of abou…"
+   },
+   {
+    "name": "Rainy Pass trailhead lots, and the quarter-mile camping closures",
+    "elev_ft": 4860,
+    "type": "camp",
+    "role": "route",
+    "notes": "This is the door to Black Peak and Corteo and the reason both are approachable in a weekend. It is also where the Pacific Crest Trail heads north, so the lots serve two entirely different sets of objectives and are busier than their size suggests. The closures above exist because the loop is one of the most walked trai…"
+   },
+   {
+    "name": "Lewis Lake",
+    "elev_ft": 5700,
+    "type": "camp",
+    "role": "route",
+    "notes": "Lewis sits in the bowl below Wing, reached by dropping off Heather Pass and picking a way through talus on goat paths around the left-hand shore. Most parties treat it as a waypoint rather than a destination, but it is a genuine camp and a sensible one for a late start, a heavy pack or a party that wants a shorter firs…"
+   }
+  ],
+  "campsite_pins": [
+   {
+    "name": "Rainy Pass trailhead lots, and the quarter-mile camping closures",
+    "elev": 4860,
+    "distMi": null
+   },
+   {
+    "name": "Lewis Lake",
+    "elev": 5705,
+    "distMi": null
+   },
+   {
+    "name": "Wing Lake camp",
+    "elev": 6923,
+    "distMi": null
+   }
+  ]
+ },
+ {
+  "id": "wa_south_ridge_3",
+  "name": "South Ridge",
+  "discipline": "scrambling",
+  "peak": "Black Peak",
+  "area_id": "wa_black_peak",
+  "path": "usa.washington.wa_northwest.wa_hwy20_ncnp.wa_north_cascades.wa_sub_wapass.wa_black_peak",
+  "trip_plan": {
+   "totalNote": "A 2-day, 1-night trip is standard (~12 mi round trip, ~5,100 ft total gain): an approach day to Wing Lake, then a summit day combining a 4-7 hour South Ridge round trip with the full hike back to the trailhead. Very fit parties skip the overnight and do the whole route car-to-car in about 10-12 hours.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Approach to Wing Lake camp",
+     "objective": "Reach Wing Lake high camp",
+     "miles": 5,
+     "gainFt": 2150,
+     "note": "From the Rainy Pass trailhead, follow the Lake Ann trail past Heather Pass, cross the talus basin below Lewis Lake, and continue about 2.5 miles farther to camp at Wing Lake (~6,900 ft). Allow 4-6 hours."
+    },
+    {
+     "n": 2,
+     "title": "South Ridge summit push, then hike out",
+     "objective": "Climb the South Ridge to the summit, then hike all the way out",
+     "miles": 7,
+     "gainFt": 2150,
+     "note": "From camp, ascend a talus/snow gully to the south col, then follow cairns along the South Ridge (class 3-4, with a loose gully section staying just west of the crest) to the summit — a 4-7 hour round trip to camp. Most parties then break camp and hike straight out to the trailhead the same day, making for a long but co…"
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Wing Lake",
+    "elev_ft": 6900,
+    "type": "camp",
+    "role": "main",
+    "notes": "The standard base camp for Black Peak, roughly 6,900 ft in a basin of scree and boulders directly beneath the peak, with larches around the shore that turn gold in late September. It sits about 1,200 ft above Lewis Lake, reached by a rough boot path over a boulder field with one steep step. Nights are cold — near freez…"
+   },
+   {
+    "name": "Lewis Lake",
+    "elev_ft": 5700,
+    "type": "camp",
+    "role": "route",
+    "notes": "About 5,700 ft, the first lake past Heather Pass and the lower fallback if the light goes or the boulder field above looks unappealing. It is a legitimate base — parties do summit and return from here — but it adds 1,200 ft each way to summit day, and the bugs are worse than higher up."
+   }
+  ],
+  "campsite_pins": [
+   {
+    "name": "Lewis Lake",
+    "elev": 5700,
+    "distMi": 3.5
+   },
+   {
+    "name": "Wing Lake camp",
+    "elev": 6900,
+    "distMi": 5
+   }
+  ]
+ },
+ {
+  "id": "wa_corteo_peak_southwest_ridge",
+  "name": "Southwest Ridge / Standard Route",
+  "discipline": "mountaineering",
+  "peak": "Corteo Peak",
+  "area_id": "wa_corteo_peak",
+  "path": "usa.washington.wa_northwest.wa_hwy20_ncnp.wa_north_cascades.wa_sub_wapass.wa_corteo_peak",
+  "trip_plan": {
+   "totalNote": "A classic one-night trip: ~11 miles and 5,100 ft gain/loss round trip, with an easy approach afternoon followed by a long (~11 hr) summit-and-hike-out day; strong parties can also do it car-to-car in a single 10-13 hr push.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Approach to high camp above Lewis Lake",
+     "objective": "Reach the larch-bench camp above Lewis Lake",
+     "miles": 4.5,
+     "gainFt": 1550,
+     "note": "From the Rainy Pass/Maple Pass trailhead, follow the Maple Pass/Heather Pass trail up to Heather Pass, then drop off-trail on snow/talus into the Lewis Lake basin. Most parties camp on a larch bench above the lake to set up for an early glacier start the next morning."
+    },
+    {
+     "n": 2,
+     "title": "Lewis Glacier, summit push, and hike out",
+     "objective": "Climb the Southwest Ridge to the summit, then descend and hike out to the trailhead",
+     "miles": 6.5,
+     "gainFt": 3550,
+     "note": "Leave camp early to cross the Lewis Glacier while it's still firm, gain the ridge notch at about 7,500 ft, down-climb into the West Face cirque, then scramble (exposed Class 3, occasional Class 4) to the summit. Reverse the route back to camp, break camp, and hike out the same day for a long but standard single overnig…"
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Wing Lake",
+    "elev_ft": 6900,
+    "type": "camp",
+    "role": "main",
+    "notes": "This is the working climbers' camp for Black Peak and the natural first night for Corteo as well. From the Rainy Pass west lot the loop trail is followed for a little over a mile, then a right fork leads to Heather Pass; from there a boot path crosses a boulder field and drops to Lewis Lake, and a further climb of abou…"
+   },
+   {
+    "name": "Lewis Lake",
+    "elev_ft": 5700,
+    "type": "camp",
+    "role": "main",
+    "notes": "Lewis sits in the bowl below Wing, reached by dropping off Heather Pass and picking a way through talus on goat paths around the left-hand shore. Most parties treat it as a waypoint rather than a destination, but it is a genuine camp and a sensible one for a late start, a heavy pack or a party that wants a shorter firs…"
+   },
+   {
+    "name": "Rainy Pass trailhead lots, and the quarter-mile camping closures",
+    "elev_ft": 4860,
+    "type": "camp",
+    "role": "route",
+    "notes": "This is the door to Black Peak and Corteo and the reason both are approachable in a weekend. It is also where the Pacific Crest Trail heads north, so the lots serve two entirely different sets of objectives and are busier than their size suggests. The closures above exist because the loop is one of the most walked trai…"
+   }
+  ],
+  "campsite_pins": [
+   {
+    "name": "Rainy Pass trailhead lots, and the quarter-mile camping closures",
+    "elev": 4860,
+    "distMi": null
+   },
+   {
+    "name": "Lewis Lake larch bench",
+    "elev": 5707,
+    "distMi": 4.5
+   }
+  ]
+ },
+ {
+  "id": "wa_north_ridge_west_side",
+  "name": "North Ridge - West Side",
+  "discipline": "alpine",
+  "peak": "Molar Tooth",
+  "area_id": "wa_molar_tooth",
+  "path": "usa.washington.wa_northwest.wa_hwy20_ncnp.wa_north_cascades.wa_sub_wapass.wa_cutthroat_lake_crags.wa_molar_tooth",
+  "trip_plan": {
+   "totalNote": "Hike to the base of Molar Tooth and camp if needed, then climb the North Ridge - West Side and descend in a 6-8 hour day.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Approach to the base and camp",
+     "objective": "Reach the base of the North Ridge",
+     "miles": 2,
+     "gainFt": 2100,
+     "note": "Hike to the base of the route, 3-4 hours via the Cutthroat Lake route or 2-3 hours via the PCT. Scout the route and camp if needed."
+    },
+    {
+     "n": 2,
+     "title": "Climb North Ridge - West Side",
+     "objective": "Climb the route, descend, and hike out",
+     "miles": 2.5,
+     "gainFt": 400,
+     "note": "Climb the North Ridge - West Side, allowing 6-8 hours total from the base for the approach, climb, and descent. Conclude the descent by mid-afternoon to avoid scrambling in the dark."
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Cutthroat Creek trailhead",
+    "elev_ft": 4500,
+    "type": "camp",
+    "role": "main",
+    "notes": "The lot sits a mile up the forest road from SR 20 and has a vault toilet but no water. It is the start for Cutthroat Wall and for the Cutthroat Lake trail toward Cutthroat Pass, and some parties sleep here or in a pullout on the road in before a pre-dawn start, though the lot itself is signed for day use and how strict…"
+   },
+   {
+    "name": "Cutthroat Lake basin, outside the quarter-mile closure",
+    "elev_ft": 4945,
+    "type": "camp",
+    "role": "route",
+    "notes": "The lake sits about 1.8 miles in with roughly 500 ft of gain, in the basin under the peak's north and east sides. It is a pleasant place to stage, but the quarter-mile closure exists because the shoreline was being loved to death and it is enforced rather than advisory. It does not serve Cutthroat Peak's south-side rou…"
+   }
+  ],
+  "campsite_pins": [
+   {
+    "name": "Cutthroat Creek trailhead",
+    "elev": 4500,
+    "distMi": null
+   },
+   {
+    "name": "Cutthroat Lake basin, outside the quarter-mile closure",
+    "elev": 4945,
+    "distMi": null
+   }
+  ]
+ },
+ {
+  "id": "wa_gardner_mountain_west_ridge",
+  "name": "South Slopes",
+  "discipline": "scrambling",
+  "peak": "Gardner Mountain",
+  "area_id": "wa_gardner_mountain",
+  "path": "usa.washington.wa_northwest.wa_hwy20_ncnp.wa_north_cascades.wa_sub_wapass.wa_gardner_mountain",
+  "trip_plan": {
+   "totalNote": "A 3-day, ~25-mile round trip with roughly 7,300-8,000 ft of total gain/loss - backpack in to Gardner Meadows (~5,700 ft) or the basin camp above it (~6,200 ft), a long summit day linking Gardner and North Gardner over the connecting ridge/saddle, then hike out. Very fit parties have done both peaks car-to-car in one very long day, but the standard, comfortable plan is 2-3 days.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Approach to Gardner Meadows / Wolf Creek Basin",
+     "objective": "Backpack in to high camp below Gardner's west ridge",
+     "miles": 10,
+     "gainFt": 3300,
+     "note": "From the Wolf Creek Trailhead (~2,950 ft), follow the maintained Wolf Creek Trail #527 roughly 10 miles to Gardner Meadows, then continue off-trail on grassy slopes to a basin camp around 6,000-6,250 ft. Parties note little shade on this stretch (old burn) and occasional blowdown near the meadows, so an early start and…"
+    },
+    {
+     "n": 2,
+     "title": "Gardner Mountain via West Ridge, saddle traverse to North Gardner",
+     "objective": "Summit Gardner Mountain and (optionally) North Gardner via the connecting ridge/saddle",
+     "miles": 5,
+     "gainFt": 3900,
+     "note": "Leave camp pre-dawn and climb the grassy/scree slopes west of the outlet stream to a small basin around 6,200 ft, then work up the west ridge (class 2-3, loose in spots) to Gardner's summit. Strong parties continue the connecting ridge over Point 8,487 - dropping onto snow/scree below cliff bands to bypass exposed sect…"
+    },
+    {
+     "n": 3,
+     "title": "Hike out",
+     "objective": "Return to Wolf Creek Trailhead",
+     "miles": 10,
+     "gainFt": 200,
+     "note": "Break camp and reverse the approach: off-trail down to Gardner Meadows and out the Wolf Creek Trail to the trailhead. Mostly descending with minor undulation."
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Gardner Meadows, Wolf Creek trail",
+    "elev_ft": null,
+    "type": "camp",
+    "role": "main",
+    "notes": "This is the basecamp for both peaks and the way the great majority of parties climb them. The Wolf Creek trail runs roughly ten miles up the valley bottom from the trailhead near Winthrop to meadows sitting directly beneath Gardner Mountain, with North Gardner a mile further northwest along the connecting ridge. From h…"
+   },
+   {
+    "name": "High basin camp above Gardner Meadows",
+    "elev_ft": 6250,
+    "type": "bivy",
+    "role": "main",
+    "notes": "The higher option for a party that wants to shorten summit day rather than take both peaks in one long push from the meadows. Heading north out of Gardner Meadows the ground rises to a small meadow basin at about 6,200 ft, and an old boot path leaves the main trail a few hundred feet west of the small stream to reach i…"
+   }
+  ],
+  "campsite_pins": [
+   {
+    "name": "Gardner Meadows",
+    "elev": 5700,
+    "distMi": 10.4
+   }
+  ]
+ },
+ {
+  "id": "wa_golden_horn_east_face",
+  "name": "East Face",
+  "discipline": "alpine",
+  "peak": "Golden Horn",
+  "area_id": "wa_golden_horn",
+  "path": "usa.washington.wa_northwest.wa_hwy20_ncnp.wa_north_cascades.wa_sub_wapass.wa_golden_horn",
+  "trip_plan": {
+   "totalNote": "Three days from Rainy Pass: hike the PCT to a Snowy Lakes camp, drop to the base of the 1,000 ft, 11-pitch east face and climb it, then walk out.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Rainy Pass to Snowy Lakes",
+     "objective": "Hike the PCT to camp at Snowy Lakes",
+     "miles": 11,
+     "gainFt": null,
+     "note": "Follow the PCT north over Cutthroat and Granite passes to the meadows below Tower Mountain, then take the steep climbers' trail up to the Snowy Lakes; the saddle above Upper Snowy Lake (about 6,900 ft) makes a good camp. The first-ascent party came up Swamp Creek instead."
+    },
+    {
+     "n": 2,
+     "title": "Climb the East Face of Golden Horn",
+     "objective": "Reach the base of the east face and climb to the summit",
+     "miles": null,
+     "gainFt": 1470,
+     "note": "Scramble up the ridge and scree on Golden Horn's southwest side, then drop down the east-side snow couloir (crampons and axe) to the foot of the face. The 11 pitches (5.8-5.10+, with a poorly protected 5.10 R expanding crack and some rotten rock) took the first-ascent team 11 hours; come down the standard southwest-sid…"
+    },
+    {
+     "n": 3,
+     "title": "Hike out to Rainy Pass",
+     "objective": "Return to the trailhead",
+     "miles": 11,
+     "gainFt": null,
+     "note": "Reverse the PCT to Rainy Pass, about 5.5 hours."
+    }
+   ]
+  },
+  "camps_on_file": [],
+  "campsite_pins": []
+ },
+ {
+  "id": "wa_golden_horn_southwest_route",
+  "name": "Southwest Route",
+  "discipline": "alpine",
+  "peak": "Golden Horn",
+  "area_id": "wa_golden_horn",
+  "path": "usa.washington.wa_northwest.wa_hwy20_ncnp.wa_north_cascades.wa_sub_wapass.wa_golden_horn",
+  "trip_plan": {
+   "totalNote": "Hike the PCT from Rainy Pass to camp at Snowy Lakes, then climb Golden Horn and hike out the next day.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Hike the PCT to Snowy Lakes",
+     "objective": "Make camp at Snowy Lakes",
+     "miles": 10.5,
+     "gainFt": 2700,
+     "note": "Hike about 10-11 miles from the Rainy Pass trailhead on the PCT over Cutthroat and Granite passes to Snowy Lakes, and make camp."
+    },
+    {
+     "n": 2,
+     "title": "Climb Golden Horn and hike out",
+     "objective": "Summit via the 5th-class block, then return to the car",
+     "miles": 12.5,
+     "gainFt": 2000,
+     "note": "Make an alpine start from camp and scramble scree and talus to the summit ridge, then negotiate the short 5th-class summit block. Rappel or downclimb, return to camp, then hike out."
+    }
+   ]
+  },
+  "camps_on_file": [],
+  "campsite_pins": []
+ },
+ {
+  "id": "wa_mcgregor_mountain_scramble",
+  "name": "Summit Block Scramble (from Stehekin)",
+  "discipline": "scrambling",
+  "peak": "McGregor Mountain",
+  "area_id": "wa_mcgregor_mountain",
+  "path": "usa.washington.wa_northwest.wa_hwy20_ncnp.wa_north_cascades.wa_sub_wapass.wa_mcgregor_mountain",
+  "trip_plan": {
+   "totalNote": "A ~15-mile round trip with about 6,600 ft of gain to the true summit; most parties backpack in to Heaton Camp and treat the exposed, rope-suggested summit scramble plus the full hike out as one long second day, though very fit trail runners do the whole thing car-to-car in a single 10-14 hr push.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Approach to Heaton Camp",
+     "objective": "Backpack from High Bridge trailhead to Heaton Camp",
+     "miles": 6.8,
+     "gainFt": 5100,
+     "note": "From the High Bridge trailhead (reached via the Lady of the Lake ferry to Stehekin and the NPS shuttle), follow the PCT north to Howard Lake, then turn onto the McGregor Mountain Trail and grind up roughly 100 switchbacks through forest and into larches. Camp and get water at Heaton Camp (~6,700 ft), the only establish…"
+    },
+    {
+     "n": 2,
+     "title": "Summit scramble and hike out",
+     "objective": "Scramble the summit block, then break camp and hike all the way out to High Bridge",
+     "miles": 8.1,
+     "gainFt": 1450,
+     "note": "Leave camp early with a light pack (helmet, light rope/harness optional) for the final quarter-to-half mile of exposed, technical scrambling above the Sandalee Glacier snowfield, following faded red arrows and cairns to the summit block. Return to camp, break it down, and hike the full ~6.8 miles back out to High Bridg…"
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Heaton Camp",
+    "elev_ft": null,
+    "type": "camp",
+    "role": "main",
+    "notes": ""
+   },
+   {
+    "name": "High Bridge Camp — the shuttle terminus and the base for McGregor Mountain",
+    "elev_ft": 1600,
+    "type": "camp",
+    "role": "main",
+    "notes": "The bus stops here and the walking starts here, so almost every trip in this zone passes through it. Its own summit is McGregor Mountain, whose trail leaves the valley road near the guard station a mile or so from the bridge and is one of the biggest sustained climbs in the state: about 7.7 miles and 6,400 ft of gain t…"
+   },
+   {
+    "name": "Purple Point and Harlequin — the landing camps, and the boat that decides the trip",
+    "elev_ft": null,
+    "type": "camp",
+    "role": "route",
+    "notes": "Read this before any other site in the zone. Stehekin has no road to it. The only practical way in is the scheduled passenger boat up Lake Chelan from Chelan or Fields Point Landing, and the timetable, not your fitness, sets the shape of the trip. The slow boat takes roughly four hours each way and the express about tw…"
+   }
+  ],
+  "campsite_pins": [
+   {
+    "name": "Heaton Camp",
+    "elev": 7000,
+    "distMi": 6.8
+   }
+  ]
+ },
+ {
+  "id": "wa_mount_arriva_scramble",
+  "name": "Southwest Slopes",
+  "discipline": "scrambling",
+  "peak": "Mount Arriva",
+  "area_id": "wa_mount_arriva",
+  "path": "usa.washington.wa_northwest.wa_hwy20_ncnp.wa_north_cascades.wa_sub_wapass.wa_mount_arriva",
+  "trip_plan": {
+   "totalNote": "A 3-day, roughly 14-16 mile round trip: about 5,600 ft of cumulative approach gain to a Silent Lakes camp at 7,000 ft, a short ~5 hr summit day on Arriva's south ridge (1,900 ft round trip), and a full day to hike back out; strong parties sometimes compress the summit push and exit into one long day, or extend the trip to also tag Fisher Peak.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Approach to Silent Lakes camp",
+     "objective": "Reach Upper Silent Lakes camp (~7,000 ft)",
+     "miles": 7.2,
+     "gainFt": 5600,
+     "note": "Hike the Easy Pass Trail to the pass (~2.3 hr, +2,800 ft), then drop about 1,300 ft into Fisher Creek Basin where the trail fades into cross-country travel through meadows past a big waterfall. Continue up the obvious gully to camp at Upper Silent Lake, with views across to Black Peak."
+    },
+    {
+     "n": 2,
+     "title": "Summit day: Mount Arriva, South Ridge",
+     "objective": "Climb Mount Arriva (8,215 ft) via the south ridge and return to camp",
+     "miles": 2.5,
+     "gainFt": 1900,
+     "note": "A short but exposed scramble day from camp: gain the south ridge/gully-ledge system, cross a notch around 7,800 ft, and finish on loose class 3 (occasional class 4) terrain to the true (west) summit. Reverse the same line back to camp."
+    },
+    {
+     "n": 3,
+     "title": "Exit to trailhead",
+     "objective": "Hike out to the Easy Pass Trailhead",
+     "miles": 7.2,
+     "gainFt": 2400,
+     "note": "Break camp and reverse the approach: down through Fisher Creek Basin, back up and over Easy Pass, then down to the trailhead. Parties exiting from a lower Fisher Overlook camp report this leg in as little as 4.3 hours; expect longer from the higher Silent Lakes camp."
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Silent Lakes",
+    "elev_ft": null,
+    "type": "camp",
+    "role": "main",
+    "notes": "Alpine lakes between Mount Arriva and Fisher Peak, reached off-trail from upper Fisher Creek basin below Easy Pass. The upper lake sits near 7,000 ft and is the usual base for Arriva's south side."
+   },
+   {
+    "name": "Easy Pass trailhead, SR 20",
+    "elev_ft": 3700,
+    "type": "camp",
+    "role": "route",
+    "notes": "This is the only practical trailhead for Mesahchie, Katsuk, Kimtah and Mount Arriva, and it is worth understanding what the walk in costs before committing to it. The trail climbs roughly three thousand feet in a little under four miles, gently through forest at first and then in steep switchbacks up a headwall of loos…"
+   }
+  ],
+  "campsite_pins": [
+   {
+    "name": "Upper Silent Lake",
+    "elev": 6997,
+    "distMi": 6.2
+   },
+   {
+    "name": "Easy Pass trailhead, SR 20",
+    "elev": 3700,
+    "distMi": 0
+   }
+  ]
+ },
+ {
+  "id": "wa_mount_hardy_snow_scramble",
+  "name": "Southeast Slope via Methow Pass",
+  "discipline": "mountaineering",
+  "peak": "Mount Hardy",
+  "area_id": "wa_mount_hardy",
+  "path": "usa.washington.wa_northwest.wa_hwy20_ncnp.wa_north_cascades.wa_sub_wapass.wa_mount_hardy",
+  "trip_plan": {
+   "totalNote": "A moderate 3-day, ~24-mile round trip with about 5,100-6,000 ft of cumulative gain, based at a Snowy Lakes camp; fit parties sometimes compress the summit push and hike-out into one long Day 2, making it a 2-day trip.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Approach to Snowy Lakes camp",
+     "objective": "Reach base camp at Upper Snowy Lake via Cutthroat & Granite Passes",
+     "miles": 9.5,
+     "gainFt": 2900,
+     "note": "From the Rainy Pass PCT-northbound trailhead, climb steadily to Cutthroat Pass, then roll over Granite Pass and down into Snowy Creek Meadow before a short side-trail climb to a camp on the rocky bench above Upper Snowy Lake. This is the long approach day; most of the trip's mileage is banked here."
+    },
+    {
+     "n": 2,
+     "title": "Summit push via Methow Pass",
+     "objective": "Climb Mount Hardy's southeast slope and return to camp",
+     "miles": 7.5,
+     "gainFt": 2200,
+     "note": "Head back to Snowy Creek Meadow and up the PCT to Methow Pass, then leave the trail and traverse open terrain to the peak's east ridge. Moderate sand, scree and talus slopes lead to the summit saddle and a short final scramble to the top; reverse the same line back to camp."
+    },
+    {
+     "n": 3,
+     "title": "Hike out",
+     "objective": "Return to Rainy Pass trailhead",
+     "miles": 9.5,
+     "gainFt": 850,
+     "note": "Break camp and reverse Day 1's route over Granite and Cutthroat Passes back down to the highway. Downhill and familiar ground makes this noticeably faster than the approach."
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Rainy Pass PCT north trailhead",
+    "elev_ft": 4860,
+    "type": "camp",
+    "role": "main",
+    "notes": "Everything starts from this lot. It is also the start of Whistler Mountain, which is unlike the rest: head east from the parking area into the second gully and follow it to the summit, about four miles round trip and three thousand feet of gain, and no camp helps in the slightest. There is a toilet and no water. Partie…"
+   },
+   {
+    "name": "Methow Pass and the PCT meadow camps below Snowy Lakes",
+    "elev_ft": null,
+    "type": "camp",
+    "role": "main",
+    "notes": "Methow Pass is where the PCT crosses from the Granite Creek side into the head of the West Fork Methow, and the camps just beyond it are the sheltered alternative to Snowy Lakes for anyone who does not want a night in the open at six thousand seven hundred feet. They cost a little climbing back up on summit morning and…"
+   },
+   {
+    "name": "Cutthroat Pass, PCT crest camps",
+    "elev_ft": 6800,
+    "type": "camp",
+    "role": "route",
+    "notes": "Cutthroat Pass is about five miles north of Rainy Pass by a steadily graded trail and is the first natural stop for anyone heading for Golden Horn or Tower Mountain, though a fit party carrying enough water will push straight past it toward Granite Pass or the lakes. It is not a climbers' camp for any peak — nothing is…"
+   },
+   {
+    "name": "Granite Pass",
+    "elev_ft": 6300,
+    "type": "camp",
+    "role": "route",
+    "notes": "Granite Pass sits a couple of miles beyond Cutthroat Pass as the trail swings north-west and begins the long traverse under Tower Mountain. Its value is position rather than comfort: it breaks the walk from Rainy Pass to Snowy Lakes into two manageable halves and it puts a party on the right side of the exposed travers…"
+   }
+  ],
+  "campsite_pins": [
+   {
+    "name": "Rainy Pass PCT north trailhead",
+    "elev": 4860,
+    "distMi": null
+   },
+   {
+    "name": "Upper Snowy Lake basin",
+    "elev": 6900,
+    "distMi": null
+   }
+  ]
+ }
+]

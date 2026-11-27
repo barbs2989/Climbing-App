@@ -1,0 +1,754 @@
+[
+ {
+  "id": "wa_baring_mountain_oatmeal_man",
+  "name": "Oatmeal Man",
+  "discipline": "alpine",
+  "peak": "Main Peak",
+  "area_id": "wa_main_peak_3",
+  "path": "usa.washington.wa_centralwest.wa_stevens_pass_region.wa_baring_mountain.wa_main_peak_3",
+  "trip_plan": {
+   "totalNote": "A 2-day outing: walk in to bivy at Barclay Lake, then brush-bash to the north face, climb fourteen pitches and descend the northwest-ridge trail to the trailhead.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Walk in to Barclay Lake",
+     "objective": "Bivy near Barclay Lake",
+     "miles": 2.2,
+     "gainFt": 140,
+     "note": "Drive to the Barclay Lake trailhead the night before, hike the 2.2 miles to Barclay Lake in the evening, and bivy near the lake at established sites."
+    },
+    {
+     "n": 2,
+     "title": "Climb Oatmeal Man and descend",
+     "objective": "Climb the north face and descend to the trailhead",
+     "miles": null,
+     "gainFt": 3707,
+     "note": "Leave camp before first light, brush-bash to the base of the north face, climb the fourteen pitches and top out. Descend the northwest-ridge trail all the way to the trailhead; you will not return to the lake, so carry everything over the top or accept a walk back in to retrieve it."
+    }
+   ]
+  },
+  "camps_on_file": [],
+  "campsite_pins": []
+ },
+ {
+  "id": "wa_baring_mountain_r1",
+  "name": "North Face",
+  "discipline": "alpine",
+  "peak": "Main Peak",
+  "area_id": "wa_main_peak_3",
+  "path": "usa.washington.wa_centralwest.wa_stevens_pass_region.wa_baring_mountain.wa_main_peak_3",
+  "trip_plan": {
+   "totalNote": "Historically this was a multi-year siege climb with fixed ropes and multiple camps; the modern standard plan is a 2-day round trip with one bivy atop the crux step — roughly 7 hours of approach/lower climbing plus 8 hours to finish and descend (15 hours of combined movement). Very strong, fast parties have compressed the whole route into a single long day car-to-car (documented in a 2013 trip report), but this requires exceptional fitness, dry/stable conditions, and prior route knowledge; most parties should plan for 2 days minimum given the loose rock and difficult retreat.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Approach and climb the lower two steps to a high bivy",
+     "objective": "Hike in from Barclay Lake Trailhead, climb Steps 1 and 2 (including the crux), and bivy atop the crux step",
+     "miles": 1.8,
+     "gainFt": 3220,
+     "note": "From the Barclay Lake Trailhead, follow the old logging road to the climbers'-trail cairn, then the boot path and creek bed upstream through steep brush, forest, and loose dirt to Couloir Camp (~4,300 ft). Continue between the two parallel rock ribs flanking the summit couloir to the base of the wall, then climb Step 1…"
+    },
+    {
+     "n": 2,
+     "title": "Finish the face and descend the south side",
+     "objective": "Climb Steps 3 and 4 to the summit, then descend the non-technical walk-off",
+     "miles": 3.1,
+     "gainFt": 630,
+     "note": "From the high bivy, climb Step 3 (220 ft, Grade V) and Step 4 (250 ft, Grade V, the final vertical step) to the summit ridge, then finish easier terrain to Baring's true summit. Descend the non-technical south-side walk-off back to the Barclay Lake Trailhead, carrying a rope and rack in case a rappel is needed if you f…"
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Couloir Camp",
+    "elev_ft": null,
+    "type": "camp",
+    "role": "main",
+    "notes": ""
+   },
+   {
+    "name": "Barclay Lake",
+    "elev_ft": 2420,
+    "type": "camp",
+    "role": "main",
+    "notes": "This is the one genuinely established camp in the zone and the obvious base for the Barclay Creek peaks. It sits at 2,420 ft in a narrow trench with Baring Mountain's north face rising straight out of the south shore and Merchant Peak and Gunn Peak on the north side, so nearly every objective on that road starts from h…"
+   },
+   {
+    "name": "Dolomite Camp",
+    "elev_ft": null,
+    "type": "camp",
+    "role": null,
+    "notes": "Camp at the base of the first of the four vertical steps, after the brush-fighting approach."
+   }
+  ],
+  "campsite_pins": [
+   {
+    "name": "Couloir Camp",
+    "elev": 4300,
+    "distMi": 1.4
+   }
+  ]
+ },
+ {
+  "id": "wa_iron_cap_mountain_south_route",
+  "name": "West Ridge / North Ridge via Chetwoot Lake",
+  "discipline": "scrambling",
+  "peak": "Iron Cap Mountain",
+  "area_id": "wa_iron_cap_mountain",
+  "path": "usa.washington.wa_centralwest.wa_stevens_pass_region.wa_iron_cap_mountain",
+  "trip_plan": {
+   "totalNote": "A 3-day backpack of about 24 miles round trip: a trail day to Big Heart Lake and cross-country to Chetwoot Lake, a summit day of about five hours from camp, and a day out. Strong parties sometimes do it in two days.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Backpack in to Chetwoot Lake",
+     "objective": "Reach camp at Chetwoot Lake below Iron Cap's west side",
+     "miles": 10,
+     "gainFt": 4000,
+     "note": "From the West Fork Foss trailhead, follow Trail 1064 past Trout, Copper and Little Heart lakes to Big Heart Lake, where the trail ends, then go cross-country over the south end of Atrium Ridge, past Little Chetwoot Lake, to camp at Chetwoot Lake. The trail miles are steady; the off-trail leg is slow."
+    },
+    {
+     "n": 2,
+     "title": "Climb Iron Cap Mountain",
+     "objective": "Summit Iron Cap Mountain by the west and north ridges",
+     "miles": 4,
+     "gainFt": 1700,
+     "note": "Climb from Chetwoot Lake with a light pack: talus and heather toward Point 6077, around it on the east, onto the west ridge, down into the notch, across the ramp to the north ridge and up to the summit. Return the same way or loop down the north ridge past Iron Cap Lake."
+    },
+    {
+     "n": 3,
+     "title": "Hike out",
+     "objective": "Return to the West Fork Foss trailhead",
+     "miles": 10,
+     "gainFt": 700,
+     "note": "Break camp, cross Atrium Ridge back to Big Heart Lake, and walk out the West Fork Foss trail to the trailhead."
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Chetwoot Lake",
+    "elev_ft": null,
+    "type": "camp",
+    "role": "main",
+    "notes": "The base for the climb: reached off-trail from Big Heart Lake over the south end of Atrium Ridge, past small tarns and Little Chetwoot Lake. Much quieter than Big Heart. The climb to Iron Cap's west ridge starts from here."
+   },
+   {
+    "name": "Big Heart Lake",
+    "elev_ft": null,
+    "type": "camp",
+    "role": "route",
+    "notes": "The end of the maintained West Fork Foss trail, about 7.3 miles and 3,300 ft from the trailhead; popular and often crowded, but a reasonable first-night stop for slower parties."
+   }
+  ],
+  "campsite_pins": [
+   {
+    "name": "Big Heart Lake (trail end)",
+    "elev": 4730,
+    "distMi": 7.3
+   },
+   {
+    "name": "Chetwoot Lake camp",
+    "elev": 4900,
+    "distMi": null
+   }
+  ]
+ },
+ {
+  "id": "wa_la_bohn_peak_southwest_slopes",
+  "name": "East Ridge",
+  "discipline": "scrambling",
+  "peak": "La Bohn Peak",
+  "area_id": "wa_la_bohn_peak",
+  "path": "usa.washington.wa_centralwest.wa_stevens_pass_region.wa_la_bohn_peak",
+  "trip_plan": {
+   "totalNote": "A 2-day / 1-night backpack: ~20 mi round trip with ~5,200 ft of total gain, camping at Jade Lake and day-tripping the short summit scramble from La Bohn Gap before hiking all the way out. Very fit parties occasionally push the whole thing car-to-car in one long day (~9-10 hrs), but most parties overnight at Jade/La Bohn Lakes given the long, steep approach.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Backpack in to Jade Lake / La Bohn Lakes",
+     "objective": "Reach high camp below La Bohn Gap",
+     "miles": 8.2,
+     "gainFt": 3200,
+     "note": "From the East Fork Foss trailhead (~1,650 ft) the Necklace Valley trail is gentle for about 5 miles along the river, then kicks up hard for the final ~2-3 miles, gaining roughly 2,500 ft to Jade Lake (~4,600 ft) — the standard base camp for La Bohn Gap. Most parties treat this as a full but straightforward backpacking …"
+    },
+    {
+     "n": 2,
+     "title": "Climb La Bohn Peak and hike out",
+     "objective": "Tag La Bohn Peak via La Bohn Gap, then pack out to the trailhead",
+     "miles": 11.8,
+     "gainFt": 2000,
+     "note": "Break camp early and day-pack up boulder/talus slopes to La Bohn Gap (~5,900 ft), then follow the east ridge/face on solid rock to the summit block — a short, straightforward Class 2-3 scramble near the top. After tagging the summit, most parties return to camp, pack up, and hike the full distance back to the trailhead…"
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Necklace Valley — Jade, Emerald and Opal Lakes",
+    "elev_ft": 4600,
+    "type": "camp",
+    "role": "main",
+    "notes": "The main basecamp for La Bohn Peak, which stands directly at the head of this valley, and the first night of the standard west-side approach to Mount Hinman. Drive the Foss River road off Highway 2 a short way east of Skykomish and turn into the Necklace Valley trailhead about four miles up. The trail is famously two-f…"
+   },
+   {
+    "name": "La Bohn Lakes, La Bohn Gap and the Chain Lakes benches",
+    "elev_ft": 5515,
+    "type": "camp",
+    "role": "main",
+    "notes": "The high camp for La Bohn Peak and the launching point for the west route on Mount Hinman, and the single most useful piece of ground in this zone for a climber. La Bohn Gap is a broad boulder-covered saddle at roughly 6,000 ft on the crest between the Foss and Snoqualmie drainages, with the tarns of the La Bohn Lakes …"
+   },
+   {
+    "name": "Money Creek and Miller River campgrounds, Foss River roadhead",
+    "elev_ft": null,
+    "type": "camp",
+    "role": "route",
+    "notes": "The valley-bottom staging option for every Foss River objective, and worth a line of its own because of what the road has been doing. The Foss River road leaves Highway 2 just east of Skykomish and has been running weekday construction delays of about half an hour through the summer, with damage further up that has at …"
+   }
+  ],
+  "campsite_pins": [
+   {
+    "name": "Jade Lake",
+    "elev": 4650,
+    "distMi": 7.4
+   }
+  ]
+ },
+ {
+  "id": "wa_hourglass_gully_winter",
+  "name": "Hourglass Gully (Winter)",
+  "discipline": "alpine",
+  "peak": "Main Peak",
+  "area_id": "wa_main_peak_2",
+  "path": "usa.washington.wa_centralwest.wa_stevens_pass_region.wa_mount_index.wa_main_peak_2",
+  "trip_plan": {
+   "totalNote": "Hike to Lake Serene and camp, then climb Hourglass Gully and the East Ridge to Main Peak and hike all the way out the next day.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Hike in to Lake Serene",
+     "objective": "Camp at Lake Serene",
+     "miles": 4.1,
+     "gainFt": 2000,
+     "note": "Drive 1-2 hours from the Puget Sound region to the Lake Serene trailhead, then hike the Lake Serene trail to the lake in 2-3 hours. Camp at Lake Serene if doing this as a two-day climb."
+    },
+    {
+     "n": 2,
+     "title": "Climb Hourglass Gully to Main Peak",
+     "objective": "Summit Main Peak and hike out to the car",
+     "miles": null,
+     "gainFt": 3500,
+     "note": "Start at about 4:30 AM from the lake camp and approach the saddle in about 2 hours, climb Hourglass Gully in about 2 hours, then traverse the East Ridge in about 1.5 hours to the summit. Descend via rappels and the gully in about 2 hours, return to Lake Serene in about 1.5 hours, pack up, and hike out in about 1.5 hour…"
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Lake Serene basin and the talus under the Norwegian Buttresses",
+    "elev_ft": null,
+    "type": "bivy",
+    "role": "route",
+    "notes": "This is the honest awkward centre of the zone. Everything on Mount Index — the Main Peak's north approach, the Hourglass Gully in winter, the North Peak's Northeast Buttress, and the whole Jotunheim cirque with the Norwegian Buttresses — starts from this trailhead at 600 ft and climbs about 2,000 ft in under four miles…"
+   }
+  ],
+  "campsite_pins": []
+ },
+ {
+  "id": "wa_traverse_of_mount_index",
+  "name": "Traverse of Mount Index",
+  "discipline": "alpine",
+  "peak": "Main Peak",
+  "area_id": "wa_main_peak_2",
+  "path": "usa.washington.wa_centralwest.wa_stevens_pass_region.wa_mount_index.wa_main_peak_2",
+  "trip_plan": {
+   "totalNote": "Climb Index's North Face to the North Peak and bivy, then traverse Middle and Main Peaks and rappel to Lake Serene.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Lake Serene and the North Face",
+     "objective": "Reach North Peak and bivy",
+     "miles": 4,
+     "gainFt": 4740,
+     "note": "Hike to Lake Serene in 1.5-2 hours, then climb the North Face section to the North Peak summit in 8-9 hours. Camp or bivy on North Peak."
+    },
+    {
+     "n": 2,
+     "title": "Traverse to Main Peak and descend",
+     "objective": "Summit Middle and Main Peaks",
+     "miles": 4,
+     "gainFt": 650,
+     "note": "Traverse to Middle Peak in 1-2 hours and continue to Main Peak in another 1-2 hours. Descend via rappels to Lake Serene in 2-3 hours and exit to the trailhead in about 1 hour."
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Middle Peak crest bivouac, Mount Index traverse",
+    "elev_ft": null,
+    "type": "bivy",
+    "role": "main",
+    "notes": "The traverse of Mount Index's three peaks is the one objective in this zone that is genuinely an overnight rather than a long day, and this is where parties sleep. The line links South, Middle and North Peaks along a crest of loose ridges and gullies with rappels between them, and the recorded practice is a flat spot r…"
+   },
+   {
+    "name": "Lake Serene basin and the talus under the Norwegian Buttresses",
+    "elev_ft": null,
+    "type": "bivy",
+    "role": "route",
+    "notes": "This is the honest awkward centre of the zone. Everything on Mount Index — the Main Peak's north approach, the Hourglass Gully in winter, the North Peak's Northeast Buttress, and the whole Jotunheim cirque with the Norwegian Buttresses — starts from this trailhead at 600 ft and climbs about 2,000 ft in under four miles…"
+   }
+  ],
+  "campsite_pins": []
+ },
+ {
+  "id": "wa_j_tnar",
+  "name": "Jötnar",
+  "discipline": "alpine",
+  "peak": "Jötunheim",
+  "area_id": "wa_j_tunheim",
+  "path": "usa.washington.wa_centralwest.wa_stevens_pass_region.wa_mount_index.wa_middle_peak_2.wa_j_tunheim",
+  "trip_plan": {
+   "totalNote": "About four days for a repeat party: a day to the base, two days on the wall and a day to rappel and walk out. The first ascent took seven.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Lake Serene to the base of the wall",
+     "objective": "Bivy below the wall",
+     "miles": 4.5,
+     "gainFt": 2000,
+     "note": "Hike the Lake Serene trail, about 4 miles and 2,000 ft in 2-2.5 hours, cross to the cirque below the wall in about half an hour, then scout the line and the bivy site."
+    },
+    {
+     "n": 2,
+     "title": "Lower wall",
+     "objective": "Portaledge camp on the lower wall",
+     "miles": null,
+     "gainFt": null,
+     "note": "Climb the lower pitches and set up the portaledge; the first ascent party slept on pitch 3."
+    },
+    {
+     "n": 2,
+     "title": "Upper wall to the summit",
+     "objective": "Reach the summit",
+     "miles": null,
+     "gainFt": null,
+     "note": "Climb through the hard aid of the crux pitch and the roof higher up, then finish the upper pitches to the top."
+    },
+    {
+     "n": 2,
+     "title": "Rappel and hike out",
+     "objective": "Back to the Lake Serene trailhead",
+     "miles": 4.5,
+     "gainFt": 0,
+     "note": "Rappel the full route, most of the day with haul bags, then walk back down the Lake Serene trail."
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "On-wall ledges, Jotunheim and the Norwegian Buttresses",
+    "elev_ft": null,
+    "type": "bivy",
+    "role": "main",
+    "notes": "These are the only walls in this zone big enough that a party sleeps on them. The Jotunheim cirque holds the North and South Norwegian Buttresses, separated by a deep cleft, and the long free lines up the north buttress run to well over a dozen pitches of sustained climbing. Ledges are scarce and small — the establishe…"
+   },
+   {
+    "name": "Lake Serene basin and the talus under the Norwegian Buttresses",
+    "elev_ft": null,
+    "type": "bivy",
+    "role": "main",
+    "notes": "This is the honest awkward centre of the zone. Everything on Mount Index — the Main Peak's north approach, the Hourglass Gully in winter, the North Peak's Northeast Buttress, and the whole Jotunheim cirque with the Norwegian Buttresses — starts from this trailhead at 600 ft and climbs about 2,000 ft in under four miles…"
+   }
+  ],
+  "campsite_pins": []
+ },
+ {
+  "id": "wa_mount_index_bluebell",
+  "name": "Bluebell",
+  "discipline": "alpine",
+  "peak": "North Norwegian Buttress",
+  "area_id": "wa_north_norwegian_buttress",
+  "path": "usa.washington.wa_centralwest.wa_stevens_pass_region.wa_mount_index.wa_middle_peak_2.wa_north_norwegian_buttress",
+  "trip_plan": {
+   "totalNote": "Two-day wall climb: hike to Lake Serene and the base, climb to a portaledge bivy at the top of pitch 10 (or 12), then finish all 17 pitches, rappel the route on one 70 m rope and walk out.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Approach and climb to the bivy",
+     "objective": "Reach the base and climb pitches 1-10",
+     "miles": 3.8,
+     "gainFt": 3000,
+     "note": "Lake Serene Trail is about 3.6 miles and 2,000 ft to the lake; fill water there, then traverse the talus west of the lake to the toe of the buttress, about 200 ft left of an old fixed line. The ledge atop P10 has extra bolts for portaledges; the ledge above P12 is narrow and sloping, maybe a bivy for one. Gain is the t…"
+    },
+    {
+     "n": 2,
+     "title": "Top out, rappel the route, hike out",
+     "objective": "Finish to P17, rappel to the talus, walk out",
+     "miles": 3.8,
+     "gainFt": 900,
+     "note": "The headwall holds the crux overhang (P12, 5.13-), and P14-15 may need a stick clip; P16-17 ease to 5.8-5.9. Every anchor is rigged for rappel, with dedicated stations that skip belays on the overhanging headwall, and there is no walk-off from the top."
+    }
+   ]
+  },
+  "camps_on_file": [],
+  "campsite_pins": []
+ },
+ {
+  "id": "wa_mount_index_north_face",
+  "name": "North Face (North Peak)",
+  "discipline": "alpine",
+  "peak": "North Peak",
+  "area_id": "wa_north_peak_2",
+  "path": "usa.washington.wa_centralwest.wa_stevens_pass_region.wa_mount_index.wa_north_peak_2",
+  "trip_plan": {
+   "totalNote": "Hike in to Lake Serene, then make a pre-dawn start on the North Face, descend and rappel back to the lake, and hike out that evening.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Hike in to Lake Serene",
+     "objective": "Bivy at Lake Serene or the talus basin",
+     "miles": 3.6,
+     "gainFt": 1920,
+     "note": "Hike the Lake Serene Trail 3.6 miles and roughly 1,920 ft to Lake Serene (about 1.5-2 hours). Bivy at the lake or in the talus basin below the route."
+    },
+    {
+     "n": 2,
+     "title": "Climb the North Face and hike out",
+     "objective": "Summit North Peak and return to the car",
+     "miles": null,
+     "gainFt": 2830,
+     "note": "Make a pre-dawn start and climb the North Face, roughly a full day with the approach. Descend and rappel back to the lake, then hike out that evening."
+    }
+   ]
+  },
+  "camps_on_file": [],
+  "campsite_pins": []
+ },
+ {
+  "id": "wa_wing_peak_northwest_ridge",
+  "name": "Northwest Ridge (Standard Route)",
+  "discipline": "scrambling",
+  "peak": "Wing Peak",
+  "area_id": "wa_wing_peak",
+  "path": "usa.washington.wa_centralwest.wa_stevens_pass_region.wa_wing_peak",
+  "trip_plan": {
+   "totalNote": "Hike and bushwhack to camp near Tailgunner Pass, then climb Wing Peak's northwest ridge and descend to the Barclay Lake trailhead.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Bushwhack to Tailgunner Pass camp",
+     "objective": "Camp near Tailgunner Pass",
+     "miles": null,
+     "gainFt": 3300,
+     "note": "Hike and bushwhack from the Barclay Lake Trailhead to camp near Tailgunner Pass, about 3,200-3,400 ft of gain and roughly 6-7 hours."
+    },
+    {
+     "n": 2,
+     "title": "Climb Wing Peak and descend",
+     "objective": "Summit Wing Peak",
+     "miles": null,
+     "gainFt": 600,
+     "note": "Climb Wing Peak's northwest ridge from camp in about 2.5 hours, then descend all the way to the trailhead in about 4 hours."
+    }
+   ]
+  },
+  "camps_on_file": [],
+  "campsite_pins": []
+ },
+ {
+  "id": "wa_bears_breast_mountain_infinite_beauty",
+  "name": "Infinite Beauty",
+  "discipline": "alpine",
+  "peak": "Bears Breast Mountain",
+  "area_id": "wa_bears_breast_mountain",
+  "path": "usa.washington.wa_centralwest.wa_western_alpine_lakes.wa_bears_breast_mountain",
+  "trip_plan": {
+   "totalNote": "A 3-day trip: backpack about 12 miles to the Waptus River bridge, climb the Mega Slab and 5.6+ summit block, then hike out.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Backpack to the Waptus River bridge",
+     "objective": "Camp near the Waptus River PCT bridge",
+     "miles": 12,
+     "gainFt": null,
+     "note": "Backpack in on the Waptus River Trail and the PCT to a camp near the Waptus River bridge, about 12 miles."
+    },
+    {
+     "n": 2,
+     "title": "Climb Infinite Beauty",
+     "objective": "Climb the Mega Slab and summit block",
+     "miles": null,
+     "gainFt": null,
+     "note": "Hike to the lowest point of the Mega Slab, climb the shallow-rib start and merge with Timeless Treasure's line, then finish with 3 pitches of 5.6+ on the summit block. Descend via Shovel Lake or the ascent line."
+    },
+    {
+     "n": 3,
+     "title": "Hike out",
+     "objective": "Return to the Salmon La Sac trailhead",
+     "miles": 12,
+     "gainFt": null,
+     "note": "Pack up and hike out to the trailhead."
+    }
+   ]
+  },
+  "camps_on_file": [],
+  "campsite_pins": []
+ },
+ {
+  "id": "wa_bears_breast_mountain_southwest_face",
+  "name": "Southwest Face",
+  "discipline": "alpine",
+  "peak": "Bears Breast Mountain",
+  "area_id": "wa_bears_breast_mountain",
+  "path": "usa.washington.wa_centralwest.wa_western_alpine_lakes.wa_bears_breast_mountain",
+  "trip_plan": {
+   "totalNote": "A 3-day trip: hike about 15 miles up the Middle Fork Snoqualmie to Dutch Miller Gap and a camp below the face, climb the SW Face, then hike out.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Hike to Dutch Miller Gap",
+     "objective": "Camp below the SW Face",
+     "miles": 15,
+     "gainFt": null,
+     "note": "Hike about 15 miles up the Middle Fork Snoqualmie on the Dutch Miller Gap Trail to Dutch Miller Gap, then continue to a camp below the SW Face."
+    },
+    {
+     "n": 2,
+     "title": "Climb the SW Face",
+     "objective": "Summit via the SW Face and return to camp",
+     "miles": null,
+     "gainFt": null,
+     "note": "Climb about 1,000 ft of gully scrambling and then the 3-pitch summit block, roughly 6 hours from camp to summit. Descend by rappels and downclimbing back to camp, a little under 5 hours."
+    },
+    {
+     "n": 3,
+     "title": "Hike out",
+     "objective": "Return to the trailhead",
+     "miles": 15,
+     "gainFt": null,
+     "note": "Hike back out to the trailhead."
+    }
+   ]
+  },
+  "camps_on_file": [],
+  "campsite_pins": []
+ },
+ {
+  "id": "wa_bears_breast_mountain_timeless_treasure",
+  "name": "Timeless Treasure",
+  "discipline": "alpine",
+  "peak": "Bears Breast Mountain",
+  "area_id": "wa_bears_breast_mountain",
+  "path": "usa.washington.wa_centralwest.wa_western_alpine_lakes.wa_bears_breast_mountain",
+  "trip_plan": {
+   "totalNote": "A 3-day trip: backpack about 12 miles to the Waptus River bridge, climb ~3,000 ft of 4th-class slab and the 5.6+ summit block, then hike out.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Backpack to the Waptus River bridge",
+     "objective": "Camp near the Waptus River PCT bridge",
+     "miles": 12,
+     "gainFt": null,
+     "note": "Backpack in on the Waptus River Trail and the PCT to a camp near the Waptus River bridge, about 12 miles."
+    },
+    {
+     "n": 2,
+     "title": "Climb Timeless Treasure",
+     "objective": "Climb the Mega Slab and summit block",
+     "miles": null,
+     "gainFt": null,
+     "note": "Hike the old track along Shovel Creek to the slab base, roughly 4-4.5 hours from the trailhead, and climb about 3,000 ft of 4th-class slab to the summit block. Finish with 3 pitches of 5.6+ and descend via Shovel Lake or the ascent line."
+    },
+    {
+     "n": 3,
+     "title": "Hike out",
+     "objective": "Return to the Salmon La Sac trailhead",
+     "miles": 12,
+     "gainFt": null,
+     "note": "Pack up and hike out to the trailhead."
+    }
+   ]
+  },
+  "camps_on_file": [],
+  "campsite_pins": []
+ },
+ {
+  "id": "wa_big_snow_mountain_east_ridge_hardscrabble_route",
+  "name": "East Ridge (Hardscrabble) Route",
+  "discipline": "mountaineering",
+  "peak": "Big Snow Mountain",
+  "area_id": "wa_big_snow_mountain",
+  "path": "usa.washington.wa_centralwest.wa_western_alpine_lakes.wa_big_snow_mountain",
+  "trip_plan": {
+   "totalNote": "Typically an overnight: walk the long approach to camp at Hardscrabble Lakes, then summit by the east ridge and return, about 25 miles round trip.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Hike in to Hardscrabble Lakes",
+     "objective": "Camp at upper Hardscrabble Lake",
+     "miles": 8.6,
+     "gainFt": 3200,
+     "note": "Walk or bike about 7 miles up the old road to the Hardscrabble Lakes boot path and follow it through forest and talus to camp at upper Hardscrabble Lake."
+    },
+    {
+     "n": 2,
+     "title": "Summit and hike out",
+     "objective": "Summit via the East Ridge and return to the trailhead",
+     "miles": 16.4,
+     "gainFt": 2080,
+     "note": "Climb from the lakes via the talus gully and east ridge to the summit. Return to camp and make the long walk back out to the trailhead."
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Upper Hardscrabble Lake",
+    "elev_ft": 4598,
+    "type": "camp",
+    "role": "main",
+    "notes": "The high camp for Big Snow Mountain's east ridge, which is the easier and much less confusing of that peak's two routes. From the boot path junction on the old road the trail climbs steeply and roughly to lower Hardscrabble Lake at about 4,060 ft, and the upper lake is another half mile and 500 ft above it. The path is…"
+   },
+   {
+    "name": "Hardscrabble Horse Camp, Middle Fork Snoqualmie",
+    "elev_ft": 2828,
+    "type": "camp",
+    "role": "route",
+    "notes": "The staging camp for the whole Middle Fork half of this zone, and the answer to the question of what to do with a seven-mile road walk. Forest Road 56 is rough — potholes, ruts and washed river-rock sections that want high clearance — and it is gated at Dingford Creek, so the last roughly seven miles to the horse camp …"
+   }
+  ],
+  "campsite_pins": [
+   {
+    "name": "Hardscrabble Horse Camp, Middle Fork Snoqualmie",
+    "elev": 2828,
+    "distMi": null
+   }
+  ]
+ },
+ {
+  "id": "wa_burnt_boot_peak_north_route",
+  "name": "North Route",
+  "discipline": "scrambling",
+  "peak": "Burnt Boot Peak",
+  "area_id": "wa_burnt_boot_peak",
+  "path": "usa.washington.wa_centralwest.wa_western_alpine_lakes.wa_burnt_boot_peak",
+  "trip_plan": {
+   "totalNote": "A 3-day backpack: ~7.5 mi/~1,400 ft each way to camp near Hardscrabble Horse Camp, bookending a ~4.3-mile, ~3,600 ft round-trip summit day via the north gully.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Approach to Hardscrabble camp",
+     "objective": "Reach camp near Hardscrabble Horse Camp / the river ford",
+     "miles": 7.5,
+     "gainFt": 1400,
+     "note": "Drive FS-56 to the Dingford Creek/Dutch Miller Gap trailhead (check current road-closure point) and follow the Dutch Miller Gap Trail up the Middle Fork Snoqualmie valley — a gradual first 4.5 miles followed by a steeper final push — to a camp near Hardscrabble Horse Camp. Most parties camp here rather than pushing fur…"
+    },
+    {
+     "n": 2,
+     "title": "Burnt Boot Peak via the North Route",
+     "objective": "Climb Burnt Boot Peak (6,483–6,540 ft) and return to camp",
+     "miles": 4.3,
+     "gainFt": 3640,
+     "note": "Ford the river, ascend boulder/gully terrain to about 5,200 ft, then follow the key snow gully up to the Point-5,841 pass — parties describe steep snow in the final 200-300 ft where an ice axe (and often crampons/microspikes) is needed, plus a bergschrund/moat near the top that sometimes requires dropping into the moat…"
+    },
+    {
+     "n": 3,
+     "title": "Hike out",
+     "objective": "Return to trailhead",
+     "miles": 7.5,
+     "gainFt": 100,
+     "note": "Break camp and retrace the Dutch Miller Gap Trail back down to the trailhead/road."
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Hardscrabble Horse Camp, Middle Fork Snoqualmie",
+    "elev_ft": 2828,
+    "type": "camp",
+    "role": "main",
+    "notes": "The staging camp for the whole Middle Fork half of this zone, and the answer to the question of what to do with a seven-mile road walk. Forest Road 56 is rough — potholes, ruts and washed river-rock sections that want high clearance — and it is gated at Dingford Creek, so the last roughly seven miles to the horse camp …"
+   }
+  ],
+  "campsite_pins": [
+   {
+    "name": "Hardscrabble Horse Camp, Middle Fork Snoqualmie",
+    "elev": 2828,
+    "distMi": null
+   }
+  ]
+ },
+ {
+  "id": "wa_cathedral_rock_northwest_couloir",
+  "name": "Northwest Couloir",
+  "discipline": "scrambling",
+  "peak": "Cathedral Rock",
+  "area_id": "wa_cathedral_rock",
+  "path": "usa.washington.wa_centralwest.wa_western_alpine_lakes.wa_cathedral_rock",
+  "trip_plan": {
+   "totalNote": "Hike about 5 miles to camp at Peggy's Pond, then climb the Northwest Couloir in a half day and walk out the same day.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Hike in to Peggy's Pond",
+     "objective": "Set up base camp at Peggy's Pond",
+     "miles": 5,
+     "gainFt": 2300,
+     "note": "Hike about 5 miles to Peggy's Pond, gaining about 2,300 ft, and camp. Going counter-clockwise around the pond reaches the rock field by a path."
+    },
+    {
+     "n": 2,
+     "title": "Climb the couloir and walk out",
+     "objective": "Summit via the couloir and hike out",
+     "miles": null,
+     "gainFt": 1100,
+     "note": "Climb the Northwest Couloir in a half day from camp; a party leaving camp with two hours of light left can summit before dusk and be back at the pond before dark. Downclimb or rappel the couloir past the chockstone, then pack up and walk out the same day."
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Peggy's Pond — standard base camp and water source",
+    "elev_ft": null,
+    "type": "camp",
+    "role": "main",
+    "notes": ""
+   }
+  ],
+  "campsite_pins": [
+   {
+    "name": "Peggy's Pond — standard base camp and water source",
+    "elev": 5600,
+    "distMi": 5
+   }
+  ]
+ },
+ {
+  "id": "wa_cathedral_rock_southeast_face_chimney",
+  "name": "Southeast Face Chimney",
+  "discipline": "alpine",
+  "peak": "Cathedral Rock",
+  "area_id": "wa_cathedral_rock",
+  "path": "usa.washington.wa_centralwest.wa_western_alpine_lakes.wa_cathedral_rock",
+  "trip_plan": {
+   "totalNote": "Hike in and camp near Cathedral Pass, climb the four-pitch chimney early on day two, and hike out the same afternoon.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Hike in to Cathedral Pass",
+     "objective": "Camp at Nosh Nosh Wahtum or Cathedral Pass",
+     "miles": 4,
+     "gainFt": 2200,
+     "note": "Sign the free self-issue wilderness permit at the register and hike Trail #1345 through old-growth forest past Nosh Nosh Wahtum at 2.5 miles to Cathedral Pass and the PCT junction at about 4 miles. Camp at Nosh Nosh Wahtum, Cathedral Pass, or Peggy's Pond; trailhead to the pass takes roughly 2.5-3 hours."
+    },
+    {
+     "n": 2,
+     "title": "Climb the chimney and hike out",
+     "objective": "Summit Cathedral Rock and hike out",
+     "miles": null,
+     "gainFt": 1200,
+     "note": "Climb early: work up the broken south and southeast slopes to the base of the tower, then climb the chimney system on the face above, left of the ordinary Southwest Face route. Downclimb and rappel the Southwest Face route back to Cathedral Pass, then hike out the same afternoon."
+    }
+   ]
+  },
+  "camps_on_file": [],
+  "campsite_pins": []
+ }
+]

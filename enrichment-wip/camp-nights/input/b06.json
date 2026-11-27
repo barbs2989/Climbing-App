@@ -1,0 +1,948 @@
+[
+ {
+  "id": "wa_beckey_davis",
+  "name": "Beckey-Davis",
+  "discipline": "alpine",
+  "peak": "Prusik Peak",
+  "area_id": "wa_prusik_peak",
+  "path": "usa.washington.wa_centraleast.wa_stuart_range.wa_prusik_peak",
+  "trip_plan": {
+   "totalNote": "A 3-day trip (~19.5 mi, ~6,050 ft round-trip estimated) around a sustained 7-pitch 5.9 line just right of Stanley-Burgner on the south face.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Approach to Gnome Tarn camp",
+     "objective": "Reach camp below Prusik Peak",
+     "miles": 8.8,
+     "gainFt": 4600,
+     "note": "Hike past Colchuck Lake and up Aasgard Pass into the core Enchantments basin, then camp at Gnome Tarn below Prusik's south face."
+    },
+    {
+     "n": 2,
+     "title": "Climb Beckey-Davis",
+     "objective": "Send the Beckey-Davis route (5.9, 7 pitches)",
+     "miles": 1.4,
+     "gainFt": 750,
+     "note": "Starts just right of Stanley-Burgner; the lower pitches are unremarkable but the upper half above Snafflehound Ledge gives sustained, steep 5.9 cracks to a laybacking crux at P5. Descend by rappel/downclimb back toward camp."
+    },
+    {
+     "n": 3,
+     "title": "Hike out",
+     "objective": "Return to the trailhead",
+     "miles": 8.8,
+     "gainFt": 700,
+     "note": "Break camp and hike back out over Aasgard Pass and past Colchuck Lake to the trailhead."
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Perfection Lake and Inspiration Lake basin camps",
+    "elev_ft": 7190,
+    "type": "camp",
+    "role": "main",
+    "notes": "The natural base for Prusik Peak's West Ridge and South Face, putting the approach at well under an hour of walking and scrambling to Prusik Pass. Most parties reach it over Aasgard Pass from Colchuck Lake, which is a steep loose grind with a heavy pack rather than a trail in any real sense. Camp on rock, sand or grave…"
+   },
+   {
+    "name": "Gnome Tarn",
+    "elev_ft": 7372,
+    "type": "camp",
+    "role": "main",
+    "notes": "The tarn sits almost directly under Prusik's south side and gives the shortest approach of anywhere to the South Face routes and the West Ridge. Getting there means leaving the main basin route and scrambling up from around Perfection Lake toward Prusik Pass on a faint, easily lost path over granite. It is exposed and …"
+   },
+   {
+    "name": "Colchuck Lake designated campsites",
+    "elev_ft": 5570,
+    "type": "camp",
+    "role": "route",
+    "notes": "This is the working basecamp for Backbone Ridge, Serpentine Arete and Colchuck Balanced Rock, and it cuts an hour or more off the pre-dawn walk-in. Access is the Stuart Lake trailhead at the end of FR 7601, off Icicle Creek Road out of Leavenworth; the last few miles are rough dirt, washboarded by late summer, and the …"
+   }
+  ],
+  "campsite_pins": [
+   {
+    "name": "Colchuck Lake designated campsites",
+    "elev": 5570,
+    "distMi": 4.2
+   },
+   {
+    "name": "Gnome Tarn",
+    "elev": 7361,
+    "distMi": 8
+   }
+  ]
+ },
+ {
+  "id": "wa_boving_christensen",
+  "name": "Boving-Christensen",
+  "discipline": "alpine",
+  "peak": "Prusik Peak",
+  "area_id": "wa_prusik_peak",
+  "path": "usa.washington.wa_centraleast.wa_stuart_range.wa_prusik_peak",
+  "trip_plan": {
+   "totalNote": "A 3-day trip (~19.5 mi, ~5,800 ft round-trip estimated) around a shorter, moderate 4-pitch 5.10 line on the south face — one of the quicker technical days on Prusik.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Approach to Gnome Tarn camp",
+     "objective": "Reach camp below Prusik Peak",
+     "miles": 8.8,
+     "gainFt": 4600,
+     "note": "Hike past Colchuck Lake and up Aasgard Pass into the core Enchantments basin, then camp at Gnome Tarn below Prusik's south face."
+    },
+    {
+     "n": 2,
+     "title": "Climb Boving-Christensen",
+     "objective": "Send the Boving-Christensen route (5.10, 4 pitches)",
+     "miles": 1.1,
+     "gainFt": 500,
+     "note": "The shortest of Prusik's moderate south-face lines at roughly 450 ft -- one of the quicker technical days on the peak, leaving time to explore or climb a second route. Descend with one rappel down the north side and a short scramble back to the base."
+    },
+    {
+     "n": 3,
+     "title": "Hike out",
+     "objective": "Return to the trailhead",
+     "miles": 8.8,
+     "gainFt": 700,
+     "note": "Break camp and hike back out over Aasgard Pass and past Colchuck Lake to the trailhead."
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Perfection Lake and Inspiration Lake basin camps",
+    "elev_ft": 7190,
+    "type": "camp",
+    "role": "main",
+    "notes": "The natural base for Prusik Peak's West Ridge and South Face, putting the approach at well under an hour of walking and scrambling to Prusik Pass. Most parties reach it over Aasgard Pass from Colchuck Lake, which is a steep loose grind with a heavy pack rather than a trail in any real sense. Camp on rock, sand or grave…"
+   },
+   {
+    "name": "Gnome Tarn",
+    "elev_ft": 7372,
+    "type": "camp",
+    "role": "main",
+    "notes": "The tarn sits almost directly under Prusik's south side and gives the shortest approach of anywhere to the South Face routes and the West Ridge. Getting there means leaving the main basin route and scrambling up from around Perfection Lake toward Prusik Pass on a faint, easily lost path over granite. It is exposed and …"
+   },
+   {
+    "name": "Colchuck Lake designated campsites",
+    "elev_ft": 5570,
+    "type": "camp",
+    "role": "route",
+    "notes": "This is the working basecamp for Backbone Ridge, Serpentine Arete and Colchuck Balanced Rock, and it cuts an hour or more off the pre-dawn walk-in. Access is the Stuart Lake trailhead at the end of FR 7601, off Icicle Creek Road out of Leavenworth; the last few miles are rough dirt, washboarded by late summer, and the …"
+   }
+  ],
+  "campsite_pins": [
+   {
+    "name": "Colchuck Lake designated campsites",
+    "elev": 5570,
+    "distMi": 4.2
+   },
+   {
+    "name": "Gnome Tarn",
+    "elev": 7372,
+    "distMi": 7.1
+   }
+  ]
+ },
+ {
+  "id": "wa_energizer_bunny",
+  "name": "Energizer Bunny",
+  "discipline": "alpine",
+  "peak": "Prusik Peak",
+  "area_id": "wa_prusik_peak",
+  "path": "usa.washington.wa_centraleast.wa_stuart_range.wa_prusik_peak",
+  "trip_plan": {
+   "totalNote": "A 3-day trip (~19.5 mi, ~5,800 ft round-trip estimated) around a striking 5-pitch 5.10+ line that finishes by joining Solid Gold near the top of the wall.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Approach to Gnome Tarn camp",
+     "objective": "Reach camp below Prusik Peak",
+     "miles": 8.8,
+     "gainFt": 4600,
+     "note": "Hike past Colchuck Lake and up Aasgard Pass into the core Enchantments basin, then camp at Gnome Tarn just below Prusik's south face."
+    },
+    {
+     "n": 2,
+     "title": "Climb Energizer Bunny",
+     "objective": "Send the Energizer Bunny route (5.10+, 5 pitches)",
+     "miles": 1.1,
+     "gainFt": 500,
+     "note": "A striking crack line on the south face named for the bunny-ear cracks near the top, where it joins Solid Gold. Pitch 1 is a bit burly and dirty; the cracks above are clean splitters with one short 5.11+/12- section some parties aid through."
+    },
+    {
+     "n": 3,
+     "title": "Hike out",
+     "objective": "Return to the trailhead",
+     "miles": 8.8,
+     "gainFt": 700,
+     "note": "Break camp and retrace the approach back over Aasgard Pass to the trailhead."
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Perfection Lake and Inspiration Lake basin camps",
+    "elev_ft": 7190,
+    "type": "camp",
+    "role": "main",
+    "notes": "The natural base for Prusik Peak's West Ridge and South Face, putting the approach at well under an hour of walking and scrambling to Prusik Pass. Most parties reach it over Aasgard Pass from Colchuck Lake, which is a steep loose grind with a heavy pack rather than a trail in any real sense. Camp on rock, sand or grave…"
+   },
+   {
+    "name": "Gnome Tarn",
+    "elev_ft": 7372,
+    "type": "camp",
+    "role": "main",
+    "notes": "The tarn sits almost directly under Prusik's south side and gives the shortest approach of anywhere to the South Face routes and the West Ridge. Getting there means leaving the main basin route and scrambling up from around Perfection Lake toward Prusik Pass on a faint, easily lost path over granite. It is exposed and …"
+   },
+   {
+    "name": "Colchuck Lake designated campsites",
+    "elev_ft": 5570,
+    "type": "camp",
+    "role": "route",
+    "notes": "This is the working basecamp for Backbone Ridge, Serpentine Arete and Colchuck Balanced Rock, and it cuts an hour or more off the pre-dawn walk-in. Access is the Stuart Lake trailhead at the end of FR 7601, off Icicle Creek Road out of Leavenworth; the last few miles are rough dirt, washboarded by late summer, and the …"
+   }
+  ],
+  "campsite_pins": [
+   {
+    "name": "Gnome Tarn",
+    "elev": 7415,
+    "distMi": 8
+   },
+   {
+    "name": "Colchuck Lake designated campsites",
+    "elev": 5570,
+    "distMi": 4.2
+   }
+  ]
+ },
+ {
+  "id": "wa_prusik_peak_alpine_craggers_delight",
+  "name": "Alpine Cragger's Delight",
+  "discipline": "alpine",
+  "peak": "Prusik Peak",
+  "area_id": "wa_prusik_peak",
+  "path": "usa.washington.wa_centraleast.wa_stuart_range.wa_prusik_peak",
+  "trip_plan": {
+   "totalNote": "A three-day Enchantments trip: over Aasgard Pass to Gnome Tarn, the one-pitch finger crack linked into Stanley-Burgner to the summit, and out the Snow Lakes trail.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Hike over Aasgard Pass to Gnome Tarn",
+     "objective": "Reach the Gnome Tarn bivy below the south face",
+     "miles": 8,
+     "gainFt": 4500,
+     "note": "From the Stuart Lake trailhead go to Colchuck Lake (about 4 mi, 2,300 ft), then grind up Aasgard Pass (about 2,200 ft in under a mile) to 7,800 ft and cross the Core past Isolation and Tranquil lakes to Gnome Tarn. Total is roughly 8 mi and about 4,500 ft of gain to the pass, then a short drop to the tarn."
+    },
+    {
+     "n": 2,
+     "title": "Climb the finger crack and Stanley-Burgner",
+     "objective": "Climb the pitch, link into Stanley-Burgner and summit",
+     "miles": 1,
+     "gainFt": 900,
+     "note": "The 80 ft 5.10+ finger crack starts about 20 ft left of the normal Stanley-Burgner start and tops out at the same belay, so most parties link it into Stanley-Burgner P2 and continue to the summit. One party climbed Stanley-Burgner in 4.5 hours base to summit and took about an hour to rappel the north side and walk back…"
+    },
+    {
+     "n": 3,
+     "title": "Hike out via the Snow Lakes",
+     "objective": "Descend past Viviane, Snow and Nada lakes",
+     "miles": 10,
+     "gainFt": 300,
+     "note": "The Snow Lakes trail is about 10 mi from the Prusik area and loses more than a mile of elevation; reports run from about 4 hours (light) to about 6 hours (loaded) from the base of Prusik to the car. This needs a car or shuttle at the Snow Lakes trailhead; reversing Aasgard Pass is the alternative."
+    }
+   ]
+  },
+  "camps_on_file": [],
+  "campsite_pins": []
+ },
+ {
+  "id": "wa_prusik_peak_der_sportsman",
+  "name": "Der Sportsman",
+  "discipline": "alpine",
+  "peak": "Prusik Peak",
+  "area_id": "wa_prusik_peak",
+  "path": "usa.washington.wa_centraleast.wa_stuart_range.wa_prusik_peak",
+  "trip_plan": {
+   "totalNote": "A serious 3-day outing (~19.5 mi, ~6,000 ft round-trip) for one of the Enchantments' hardest testpieces -- a 7-hour, 6-pitch 5.11+/12- climb best done fresh from camp.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Approach to Gnome Tarn camp",
+     "objective": "Reach camp below Prusik Peak",
+     "miles": 8.8,
+     "gainFt": 4600,
+     "note": "Hike past Colchuck Lake and up Aasgard Pass (one strong party climbed the 2,200 ft pass in 59 min) into the core Enchantments. Camp at Gnome Tarn, about 20 minutes from the base of Prusik's south face."
+    },
+    {
+     "n": 2,
+     "title": "Climb Der Sportsman",
+     "objective": "Send Der Sportsman (5.11+/12-, 6 pitches) base to summit",
+     "miles": 1.3,
+     "gainFt": 700,
+     "note": "One of the Enchantments' hardest and most sustained testpieces -- real trip reports log about 7 hours base-to-summit for strong parties climbing fix-and-follow with a haul bag. Descend the north side with 5 single-rope rappels."
+    },
+    {
+     "n": 3,
+     "title": "Hike out",
+     "objective": "Return to the trailhead",
+     "miles": 8.8,
+     "gainFt": 700,
+     "note": "Break camp and hike out via Aasgard Pass, or via the Snow Lakes Trail if a car shuttle is arranged (as the source trip report did)."
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Perfection Lake and Inspiration Lake basin camps",
+    "elev_ft": 7190,
+    "type": "camp",
+    "role": "main",
+    "notes": "The natural base for Prusik Peak's West Ridge and South Face, putting the approach at well under an hour of walking and scrambling to Prusik Pass. Most parties reach it over Aasgard Pass from Colchuck Lake, which is a steep loose grind with a heavy pack rather than a trail in any real sense. Camp on rock, sand or grave…"
+   },
+   {
+    "name": "Gnome Tarn",
+    "elev_ft": 7372,
+    "type": "camp",
+    "role": "main",
+    "notes": "The tarn sits almost directly under Prusik's south side and gives the shortest approach of anywhere to the South Face routes and the West Ridge. Getting there means leaving the main basin route and scrambling up from around Perfection Lake toward Prusik Pass on a faint, easily lost path over granite. It is exposed and …"
+   },
+   {
+    "name": "Colchuck Lake designated campsites",
+    "elev_ft": 5570,
+    "type": "camp",
+    "role": "route",
+    "notes": "This is the working basecamp for Backbone Ridge, Serpentine Arete and Colchuck Balanced Rock, and it cuts an hour or more off the pre-dawn walk-in. Access is the Stuart Lake trailhead at the end of FR 7601, off Icicle Creek Road out of Leavenworth; the last few miles are rough dirt, washboarded by late summer, and the …"
+   }
+  ],
+  "campsite_pins": [
+   {
+    "name": "Colchuck Lake designated campsites",
+    "elev": 5570,
+    "distMi": 4.5
+   },
+   {
+    "name": "Gnome Tarn",
+    "elev": 7399,
+    "distMi": null
+   }
+  ]
+ },
+ {
+  "id": "wa_prusik_peak_prayer_for_a_friend",
+  "name": "Prayer for a Friend",
+  "discipline": "alpine",
+  "peak": "Prusik Peak",
+  "area_id": "wa_prusik_peak",
+  "path": "usa.washington.wa_centraleast.wa_stuart_range.wa_prusik_peak",
+  "trip_plan": {
+   "totalNote": "A minimum three-day trip: in over Aasgard Pass to Gnome Tarn, a climbing day on the seven-pitch south-face line, and out. The free ascent took ten days of effort across two seasons.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Colchuck Lake and Aasgard Pass to Gnome Tarn",
+     "objective": "Reach the Gnome Tarn bivy",
+     "miles": null,
+     "gainFt": 4200,
+     "note": "Go up the Colchuck Lake trail, round the lake to the boulders at its south end, and climb the loose, cairned Aasgard Pass, which gains about 1,900-2,200 ft in under a mile. Cross the upper Enchantments past Isolation and Perfection lakes, then go cross-country from near the Prusik Pass junction to Gnome Tarn, about 20 …"
+    },
+    {
+     "n": 2,
+     "title": "Climb Prayer for a Friend",
+     "objective": "Climb the route and descend the West Ridge",
+     "miles": null,
+     "gainFt": 600,
+     "note": "Start in the easy corner left of Der Sportsman. Five pitches of 5.9 to 5.12- lead to the 5.14a finger-splitter headwall, which ends on the West Ridge. Scramble to the summit and descend by the West Ridge rappels. On the free ascent the climber used a second day to rap in to the crux pitch from the West Ridge."
+    },
+    {
+     "n": 3,
+     "title": "Hike out over Aasgard or via Snow Lakes",
+     "objective": "Return to the trailhead",
+     "miles": null,
+     "gainFt": 0,
+     "note": "Reverse Aasgard Pass to Colchuck Lake, or take the longer Snow Lakes trail out and arrange a car shuttle."
+    }
+   ]
+  },
+  "camps_on_file": [],
+  "campsite_pins": []
+ },
+ {
+  "id": "wa_prusik_peak_sail_away",
+  "name": "Sail Away",
+  "discipline": "alpine",
+  "peak": "Prusik Peak",
+  "area_id": "wa_prusik_peak",
+  "path": "usa.washington.wa_centraleast.wa_stuart_range.wa_prusik_peak",
+  "trip_plan": {
+   "totalNote": "A three-day Enchantments trip: over Aasgard Pass to Gnome Tarn, an 8-9 hour day on the six-pitch Sail Away, and out the Snow Lakes trail.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Hike over Aasgard Pass to Gnome Tarn",
+     "objective": "Reach the Gnome Tarn bivy below the south face",
+     "miles": 8,
+     "gainFt": 4500,
+     "note": "From the Stuart Lake trailhead go to Colchuck Lake (about 4 mi, 2,300 ft), then grind up Aasgard Pass (about 2,200 ft in under a mile) to 7,800 ft and cross the Core past Isolation and Tranquil lakes to Gnome Tarn. Total is roughly 8 mi and about 4,500 ft of gain to the pass, then a short drop to the tarn."
+    },
+    {
+     "n": 2,
+     "title": "Climb Sail Away",
+     "objective": "Climb six pitches to the Sail headwall and rappel",
+     "miles": 1,
+     "gainFt": 700,
+     "note": "From Gnome Tarn walk about 20 minutes to the south face and find the large right-facing dihedral about 20 yards left of Solid Gold. The first-ascent party took about 8 hours unhurried for six pitches (403 ft) of 5.5 to 5.11 cracks, finishing on the off-width-widening Sail headwall; descend with two rappels from the Sol…"
+    },
+    {
+     "n": 3,
+     "title": "Hike out via the Snow Lakes",
+     "objective": "Descend past Viviane, Snow and Nada lakes",
+     "miles": 10,
+     "gainFt": 300,
+     "note": "The Snow Lakes trail is about 10 mi from the Prusik area and loses more than a mile of elevation; one party took just under 6 hours from the base of Prusik to the car. This needs a car or shuttle at the Snow Lakes trailhead; reversing Aasgard Pass is the alternative."
+    }
+   ]
+  },
+  "camps_on_file": [],
+  "campsite_pins": []
+ },
+ {
+  "id": "wa_prusik_peak_solid_gold",
+  "name": "Solid Gold",
+  "discipline": "alpine",
+  "peak": "Prusik Peak",
+  "area_id": "wa_prusik_peak",
+  "path": "usa.washington.wa_centraleast.wa_stuart_range.wa_prusik_peak",
+  "trip_plan": {
+   "totalNote": "A 3-day trip (~19.5 mi, ~5,800 ft round-trip) centered on a sustained 5-pitch 5.11a rock climb on Prusik's south face.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Approach to Gnome Tarn camp",
+     "objective": "Reach camp below Prusik Peak",
+     "miles": 8.8,
+     "gainFt": 4600,
+     "note": "From the Stuart Lake/Colchuck trailhead, hike past Colchuck Lake then up the steep talus gully of Aasgard Pass into the core Enchantments basin. Camp at Gnome Tarn, a small pool right below Prusik's south face."
+    },
+    {
+     "n": 2,
+     "title": "Climb Solid Gold",
+     "objective": "Send Solid Gold (5.11a, 5 pitches, south face)",
+     "miles": 1.2,
+     "gainFt": 500,
+     "note": "A sustained, well-protected ~450 ft crack-and-corner line on the shorter west side of the south face, topping out on the West Ridge rather than the true summit. Make one rappel down the north side and scramble (~30 min with no traffic) back to the base."
+    },
+    {
+     "n": 3,
+     "title": "Hike out via Aasgard Pass",
+     "objective": "Return to the Stuart Lake trailhead",
+     "miles": 8.8,
+     "gainFt": 700,
+     "note": "Break camp and retrace the route back over Aasgard Pass and down past Colchuck Lake to the trailhead."
+    }
+   ]
+  },
+  "camps_on_file": [],
+  "campsite_pins": [
+   {
+    "name": "Core Enchantments",
+    "elev": 7000,
+    "distMi": 7
+   }
+  ]
+ },
+ {
+  "id": "wa_prusik_peak_south_face_burgner_stanley",
+  "name": "South Face (Burgner-Stanley)",
+  "discipline": "alpine",
+  "peak": "Prusik Peak",
+  "area_id": "wa_prusik_peak",
+  "path": "usa.washington.wa_centraleast.wa_stuart_range.wa_prusik_peak",
+  "trip_plan": {
+   "totalNote": "A 3-day trip (~19.5 mi, ~6,000 ft round-trip) around Prusik's classic 6-pitch 5.9+ south-face line, descending by rappel down the north face.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Approach to Gnome Tarn camp",
+     "objective": "Reach camp below Prusik Peak",
+     "miles": 8.8,
+     "gainFt": 4600,
+     "note": "Hike past Colchuck Lake and up Aasgard Pass into the core Enchantments, passing Tranquil, Isolation, and Perfection Lakes. Camp at Gnome Tarn, close to the south face."
+    },
+    {
+     "n": 2,
+     "title": "Climb the South Face (Burgner-Stanley)",
+     "objective": "Send the Burgner-Stanley route (5.9+/5.10a, 6 pitches)",
+     "miles": 1.4,
+     "gainFt": 700,
+     "note": "Chimneys and corner systems for 6 pitches (~650 ft); pitches 1-2 and 3-4 link easily with a 60m rope. Car-to-car parties log about 5 hrs of pure climbing, then descend by rappelling the north face."
+    },
+    {
+     "n": 3,
+     "title": "Hike out",
+     "objective": "Return to the trailhead",
+     "miles": 8.8,
+     "gainFt": 700,
+     "note": "Break camp and hike back out over Aasgard Pass and past Colchuck Lake to the trailhead."
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Perfection Lake and Inspiration Lake basin camps",
+    "elev_ft": 7190,
+    "type": "camp",
+    "role": "main",
+    "notes": "The natural base for Prusik Peak's West Ridge and South Face, putting the approach at well under an hour of walking and scrambling to Prusik Pass. Most parties reach it over Aasgard Pass from Colchuck Lake, which is a steep loose grind with a heavy pack rather than a trail in any real sense. Camp on rock, sand or grave…"
+   },
+   {
+    "name": "Gnome Tarn",
+    "elev_ft": 7372,
+    "type": "camp",
+    "role": "main",
+    "notes": "The tarn sits almost directly under Prusik's south side and gives the shortest approach of anywhere to the South Face routes and the West Ridge. Getting there means leaving the main basin route and scrambling up from around Perfection Lake toward Prusik Pass on a faint, easily lost path over granite. It is exposed and …"
+   },
+   {
+    "name": "Colchuck Lake designated campsites",
+    "elev_ft": 5570,
+    "type": "camp",
+    "role": "route",
+    "notes": "This is the working basecamp for Backbone Ridge, Serpentine Arete and Colchuck Balanced Rock, and it cuts an hour or more off the pre-dawn walk-in. Access is the Stuart Lake trailhead at the end of FR 7601, off Icicle Creek Road out of Leavenworth; the last few miles are rough dirt, washboarded by late summer, and the …"
+   }
+  ],
+  "campsite_pins": [
+   {
+    "name": "Colchuck Lake designated campsites",
+    "elev": 5570,
+    "distMi": 4.5
+   },
+   {
+    "name": "Gnome Tarn",
+    "elev": 7372,
+    "distMi": 7.5
+   }
+  ]
+ },
+ {
+  "id": "wa_prusik_peak_taylor_wood_route",
+  "name": "Taylor-Wood Route",
+  "discipline": "alpine",
+  "peak": "Prusik Peak",
+  "area_id": "wa_prusik_peak",
+  "path": "usa.washington.wa_centraleast.wa_stuart_range.wa_prusik_peak",
+  "trip_plan": {
+   "totalNote": "A three-day Enchantments trip: over Aasgard Pass to Gnome Tarn, a long day on the 8-10 pitch Taylor-Wood (about 10 hours for the first ascent), and out the Snow Lakes trail.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Hike over Aasgard Pass to Gnome Tarn",
+     "objective": "Reach the Gnome Tarn bivy below the south face",
+     "miles": 8,
+     "gainFt": 4500,
+     "note": "From the Stuart Lake trailhead go to Colchuck Lake (about 4 mi, 2,300 ft), then grind up Aasgard Pass (about 2,200 ft in under a mile) to 7,800 ft and cross the Core past Isolation and Tranquil lakes to Gnome Tarn. Total is roughly 8 mi and about 4,500 ft of gain to the pass, then a short drop to the tarn."
+    },
+    {
+     "n": 2,
+     "title": "Climb the Taylor-Wood Route",
+     "objective": "Climb 8-10 pitches to the east summit and rappel",
+     "miles": 1,
+     "gainFt": 900,
+     "note": "Walk 20 minutes from Gnome Tarn to the south face, pass the Beckey-Davis start and continue right past the big tilted slab. The first-ascent party took about 10 hours for roughly 670 ft of 5.9+; descend by five rappels down the couloir to the right with easy scrambling to the base, or by the Stanley-Burgner north-side …"
+    },
+    {
+     "n": 3,
+     "title": "Hike out via the Snow Lakes",
+     "objective": "Descend past Viviane, Snow and Nada lakes",
+     "miles": 10,
+     "gainFt": 300,
+     "note": "The Snow Lakes trail is about 10 mi from the Prusik area and loses more than a mile of elevation; one party took just under 6 hours from the base of Prusik to the car. This needs a car or shuttle at the Snow Lakes trailhead; reversing Aasgard Pass is the alternative."
+    }
+   ]
+  },
+  "camps_on_file": [],
+  "campsite_pins": []
+ },
+ {
+  "id": "wa_prusik_peak_west_ridge",
+  "name": "West Ridge",
+  "discipline": "alpine",
+  "peak": "Prusik Peak",
+  "area_id": "wa_prusik_peak",
+  "path": "usa.washington.wa_centraleast.wa_stuart_range.wa_prusik_peak",
+  "trip_plan": {
+   "totalNote": "A relaxed 3-day trip (~20.5 mi, ~5,900 ft round-trip) built around a quick, popular 4-pitch 5.7 climb; strong parties without a permit often compress it into one ~15-16 hr car-to-car day instead.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Approach to Gnome Tarn camp",
+     "objective": "Reach camp below Prusik Peak",
+     "miles": 9.3,
+     "gainFt": 4600,
+     "note": "From the Stuart Lake/Colchuck trailhead (~3,400 ft), hike past Colchuck Lake (5,570 ft) then grind up the steep talus gully of Aasgard Pass -- about 2,200 ft in under a mile -- into the core Enchantments basin. Drop toward Prusik Pass and camp at Gnome Tarn, a small pool right below Prusik's south face and 15-20 minute…"
+    },
+    {
+     "n": 2,
+     "title": "Climb the West Ridge",
+     "objective": "Summit via the West Ridge (5.7, II-III, 4 pitches)",
+     "miles": 1.4,
+     "gainFt": 600,
+     "note": "The classic, easiest technical route on Prusik -- moving parties often simulclimb the low-5th-class ridge in about 90 minutes. Descend by rappelling the north side and walking back over Prusik Pass, leaving the afternoon free to explore the basin."
+    },
+    {
+     "n": 3,
+     "title": "Hike out via Aasgard Pass",
+     "objective": "Return to the Stuart Lake trailhead",
+     "miles": 9.3,
+     "gainFt": 700,
+     "note": "Break camp, climb back up to Aasgard Pass, then descend the long way back past Colchuck Lake to the trailhead. Efficient parties sometimes skip this third day and hike all the way out the same evening after climbing, making it a 2-day trip."
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Inspiration and Perfection Lakes",
+    "elev_ft": 7185,
+    "type": "camp",
+    "role": "main",
+    "notes": "The most used camping ground in the basin, on the benches and the bluff between the two lakes, and the closest general camp to the peak — the signed path toward Prusik Pass leaves the western shore of Perfection Lake. Open granite and heather, thoroughly worn in, and shared with mountain goats that come in for salt. Th…"
+   },
+   {
+    "name": "Tarn below Isolation Lake",
+    "elev_ft": null,
+    "type": "camp",
+    "role": "route",
+    "notes": "A climbers' base camp rather than a scenic one: an unnamed tarn a tier below Isolation Lake, the first large lake reached coming over Aasgard Pass. Chosen for easy water, comparatively few insects and shelter below the open upper benches, at the cost of about two miles with a little climbing to reach the peak. Fires ar…"
+   }
+  ],
+  "campsite_pins": [
+   {
+    "name": "Core Enchantments",
+    "elev": 7000,
+    "distMi": 7
+   }
+  ]
+ },
+ {
+  "id": "wa_sherpa_peak_east_ridge",
+  "name": "East Ridge",
+  "discipline": "alpine",
+  "peak": "Sherpa Peak",
+  "area_id": "wa_sherpa_peak",
+  "path": "usa.washington.wa_centraleast.wa_stuart_range.wa_sherpa_peak",
+  "trip_plan": {
+   "totalNote": "A 2-day trip for most parties (~14 miles, ~4,300 ft gain); a few very fit teams have pushed it car-to-car in a single ~20-22 hour day, and some split the descent into a third day.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Approach to treeline bivy",
+     "objective": "Reach a bivy in the basin below the East Ridge (~7,000 ft)",
+     "miles": 7,
+     "gainFt": 3100,
+     "note": "Same Longs Pass approach as the West Ridge, but continue along the Ingalls Creek Trail past the Beverly-Turnpike junction and climb into the basin below Sherpa's east side for a treeline bivy."
+    },
+    {
+     "n": 2,
+     "title": "Climb East Ridge, descend West Ridge, hike out",
+     "objective": "Summit via the East Ridge and descend the West Ridge side",
+     "miles": 7.5,
+     "gainFt": 1500,
+     "note": "Climb a broad gully to the ridge crest east of Sherpa's famous balanced rock, then follow the ridge (class 3-4 with some low-5th) west past the balanced rock to the summit. Descend via the West Ridge side with a rappel off the summit block, then hike back out over Longs Pass. Many parties do this all in one long day, b…"
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Sherpa south basin camp",
+    "elev_ft": 6200,
+    "type": "camp",
+    "role": "main",
+    "notes": "Sitting a couple of thousand feet above the Ingalls Creek trail in the cirque south of Sherpa, this is where a party wanting a reasonable summit day on the East or West Ridge sleeps. Getting here means leaving the valley trail and grinding up open slopes and gullies with no path to speak of, so the climb from the creek…"
+   },
+   {
+    "name": "Table Rock bivy, upper Sherpa basin",
+    "elev_ft": 7400,
+    "type": "bivy",
+    "role": "main",
+    "notes": "A large flat block high in the basin below Sherpa's south side, used by parties who want the East Ridge to start within minutes of waking rather than an hour and a half above camp. From here the route climbs a broad gully trending north-northeast to gain the crest east of the balanced rock, then follows blocks and sand…"
+   },
+   {
+    "name": "Beverly and De Roux campgrounds and the North Fork Teanaway roadside camps",
+    "elev_ft": null,
+    "type": "camp",
+    "role": "route",
+    "notes": "This is what most parties on Ingalls Peak actually use, because all three Ingalls summits are comfortably a long day from the car and there is no reason to carry a camp. Sleeping on the road puts you at the Esmeralda trailhead in minutes rather than driving up from Cle Elum in the dark. The Ingalls group sits entirely …"
+   },
+   {
+    "name": "Ingalls Creek valley camps below the Sherpa and Argonaut south sides",
+    "elev_ft": null,
+    "type": "camp",
+    "role": "route",
+    "notes": "This is the base for the south side of both Argonaut and Sherpa, and it is what makes those peaks feasible as overnights rather than brutal single pushes. Two ways in. From Esmeralda you climb to Longs Pass at about 6,200 feet and drop roughly 1,400 feet to the valley, then walk east along the trail until you are under…"
+   }
+  ],
+  "campsite_pins": [
+   {
+    "name": "Basin bivy below Sherpa",
+    "elev": 6995,
+    "distMi": 4.5
+   }
+  ]
+ },
+ {
+  "id": "wa_sherpa_peak_north_ridge",
+  "name": "North Ridge",
+  "discipline": "alpine",
+  "peak": "Sherpa Peak",
+  "area_id": "wa_sherpa_peak",
+  "path": "usa.washington.wa_centraleast.wa_stuart_range.wa_sherpa_peak",
+  "trip_plan": {
+   "totalNote": "A 2-day trip, roughly 13.5 miles and ~5,000 ft gain round trip; this is Sherpa's most serious route (5.8, loose rock) so parties move deliberately.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Approach to high bivy",
+     "objective": "Reach the class 2 ledge below the North Ridge crest (~7,800 ft)",
+     "miles": 7,
+     "gainFt": 4200,
+     "note": "Hike the Stuart Lake trail and the Mountaineer Creek boot path (or over Longs Pass, Ingalls Creek, and the Sherpa-Argonaut col from the south), then climb steep talus and heather to a flat, sandy ledge just below the ridge crest near the notch."
+    },
+    {
+     "n": 2,
+     "title": "Climb North Ridge, descend to Mountaineer Creek side",
+     "objective": "Climb the 5.8 North Ridge and descend via the Sherpa-Argonaut saddle",
+     "miles": 6.5,
+     "gainFt": 800,
+     "note": "The route alternates class 4 scrambling with several roped pitches up to 5.8 (a chimney and blocky cracks), reaching the summit in about 3 hours from the bivy. Descend with a short rappel off the summit, downclimb a class 3 gully, traverse to the Sherpa-Argonaut saddle, and descend loose terrain back to treeline and th…"
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Upper Mountaineer Creek bench",
+    "elev_ft": 5400,
+    "type": "camp",
+    "role": "main",
+    "notes": "The north-side base for everything on this side of the range: the Sherpa Glacier and Sherpa's north routes, Argonaut's north approaches, and the start of the northeast ridge on Cannon Mountain. Leave the Stuart Lake trail at the first switchback where it begins to climb, roughly half a mile past the Colchuck Lake junct…"
+   }
+  ],
+  "campsite_pins": []
+ },
+ {
+  "id": "wa_sherpa_peak_west_ridge",
+  "name": "West Ridge",
+  "discipline": "alpine",
+  "peak": "Sherpa Peak",
+  "area_id": "wa_sherpa_peak",
+  "path": "usa.washington.wa_centraleast.wa_stuart_range.wa_sherpa_peak",
+  "trip_plan": {
+   "totalNote": "A 2-day round trip: ~14.5 miles and ~4,300 ft gain total, with day 2 a long 12-14 hour push from bivy to summit and back to the car.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Approach to treeline bivy",
+     "objective": "Reach camp near 'Table Rock' (~7,400 ft) below the West Ridge",
+     "miles": 7,
+     "gainFt": 3200,
+     "note": "From the Longs Pass Trailhead, climb over Longs Pass (6,200 ft), drop to the Ingalls Creek basin, then climb back up talus and slab to a flat bivy spot near 'Table Rock' at treeline below Sherpa's west side. Most parties take 6-7 hours with overnight and rock gear."
+    },
+    {
+     "n": 2,
+     "title": "Climb the West Ridge, descend, hike out",
+     "objective": "Summit via the West Ridge and return to the car",
+     "miles": 7.5,
+     "gainFt": 1300,
+     "note": "Leave camp before dawn, scramble to the base of the ridge, then climb 5-6 pitches (5.4 with a crux that feels more like 5.5) to the summit block. Reverse the ridge by rappel, then descend all the way back over Longs Pass to the trailhead — a long 12-14 hour day."
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Sherpa south basin camp",
+    "elev_ft": 6200,
+    "type": "camp",
+    "role": "main",
+    "notes": "Sitting a couple of thousand feet above the Ingalls Creek trail in the cirque south of Sherpa, this is where a party wanting a reasonable summit day on the East or West Ridge sleeps. Getting here means leaving the valley trail and grinding up open slopes and gullies with no path to speak of, so the climb from the creek…"
+   },
+   {
+    "name": "Table Rock bivy, upper Sherpa basin",
+    "elev_ft": 7400,
+    "type": "bivy",
+    "role": "main",
+    "notes": "A large flat block high in the basin below Sherpa's south side, used by parties who want the East Ridge to start within minutes of waking rather than an hour and a half above camp. From here the route climbs a broad gully trending north-northeast to gain the crest east of the balanced rock, then follows blocks and sand…"
+   },
+   {
+    "name": "Beverly and De Roux campgrounds and the North Fork Teanaway roadside camps",
+    "elev_ft": null,
+    "type": "camp",
+    "role": "route",
+    "notes": "This is what most parties on Ingalls Peak actually use, because all three Ingalls summits are comfortably a long day from the car and there is no reason to carry a camp. Sleeping on the road puts you at the Esmeralda trailhead in minutes rather than driving up from Cle Elum in the dark. The Ingalls group sits entirely …"
+   },
+   {
+    "name": "Ingalls Creek valley camps below the Sherpa and Argonaut south sides",
+    "elev_ft": null,
+    "type": "camp",
+    "role": "route",
+    "notes": "This is the base for the south side of both Argonaut and Sherpa, and it is what makes those peaks feasible as overnights rather than brutal single pushes. Two ways in. From Esmeralda you climb to Longs Pass at about 6,200 feet and drop roughly 1,400 feet to the valley, then walk east along the trail until you are under…"
+   }
+  ],
+  "campsite_pins": [
+   {
+    "name": "Sherpa south basin camp",
+    "elev": 6200,
+    "distMi": 4.5
+   }
+  ]
+ },
+ {
+  "id": "wa_the_temple_south_ridge",
+  "name": "West Side",
+  "discipline": "alpine",
+  "peak": "The Temple",
+  "area_id": "wa_the_temple",
+  "path": "usa.washington.wa_centraleast.wa_stuart_range.wa_the_temple",
+  "trip_plan": {
+   "totalNote": "A 3-day/2-night backpack is the common way to climb The Temple: roughly 19-20 miles and ~7,000 ft gain round trip, with day 2 as the technical summit day (~8 hrs, class 4/low-5th crux, rappel descent). Strong parties without an Enchantments overnight permit instead push the whole thing car-to-car in one very long day (documented at 16.5 mi / ~7,000 ft, ~14-16 hrs, 4:30 AM start).",
+   "days": [
+    {
+     "n": 1,
+     "title": "Backpack in to high camp",
+     "objective": "Reach Temple Canyon / Tamarack Meadows camp below The Temple's south side",
+     "miles": 8.2,
+     "gainFt": 5300,
+     "note": "From the Snow Lakes Trailhead, follow the Snow Lakes Trail past Nada Lake, then pick up the cairned climber's path that switchbacks through brush, talus and a slide-alder gully to Temple Canyon (~6,200-6,600 ft), a rock-bench camp near a small stream at the base of The Temple. This leg alone is roughly as long and stee…"
+    },
+    {
+     "n": 2,
+     "title": "Summit push via the South Ridge",
+     "objective": "Climb The Temple (8,295 ft) via the South Ridge and return to camp",
+     "miles": 3,
+     "gainFt": 1700,
+     "note": "An alpine start gets the party to the base of the buttresses in good light. The route climbs sandy ramps and talus to the ridge/notch, then class 3-4 scrambling gives way to a short, exposed low-5th-class crux just below the summit. Most parties rappel the crux on a 60m rope to descend, then reverse the ridge and talus…"
+    },
+    {
+     "n": 3,
+     "title": "Hike out to trailhead",
+     "objective": "Return to Snow Lakes Trailhead",
+     "miles": 8.3,
+     "gainFt": 200,
+     "note": "Break camp and retrace the approach past Nada Lake back to the trailhead — a long, knee-jarring descent after two hard days."
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Core Enchantments / Prusik Pass area",
+    "elev_ft": null,
+    "type": "camp",
+    "role": "main",
+    "notes": ""
+   },
+   {
+    "name": "Upper Snow Lake",
+    "elev_ft": 5415,
+    "type": "camp",
+    "role": "main",
+    "notes": "The big lake camp on the Snow Lakes trail below the Lower Enchantments. Parties split the long, hot climb from the Snow Lakes trailhead here before heading up toward Tamarack Meadows and the Temple."
+   }
+  ],
+  "campsite_pins": []
+ },
+ {
+  "id": "wa_smears_jugs_and_rock_roll",
+  "name": "Smears, Jugs, and Rock & Roll",
+  "discipline": "alpine",
+  "peak": "Viviane Campsite",
+  "area_id": "wa_viviane_campsite",
+  "path": "usa.washington.wa_centraleast.wa_stuart_range.wa_viviane_campsite",
+  "trip_plan": {
+   "totalNote": null,
+   "days": [
+    {
+     "n": 1,
+     "title": "Day 1",
+     "objective": "",
+     "miles": null,
+     "gainFt": null,
+     "note": "Hike from Snow Lakes Trailhead to Lake Viviane (6-8 hours with full pack). Establish camp at Viviane Campsite."
+    },
+    {
+     "n": 2,
+     "title": "Day 2",
+     "objective": "",
+     "miles": null,
+     "gainFt": null,
+     "note": "Acclimatization day; scout the route and set up top-rope if desired."
+    },
+    {
+     "n": 3,
+     "title": "Day 3",
+     "objective": "",
+     "miles": null,
+     "gainFt": null,
+     "note": "Climb Smears, Jugs, and Rock & Roll (1-2 hours of climbing)."
+    },
+    {
+     "n": 4,
+     "title": "Day 4",
+     "objective": "",
+     "miles": null,
+     "gainFt": null,
+     "note": "Descent to trailhead (5-6 hours)."
+    }
+   ]
+  },
+  "camps_on_file": [],
+  "campsite_pins": [
+   {
+    "name": "Viviane Campsite (Lake Viviane)",
+    "elev": 6788,
+    "distMi": 9.3
+   }
+  ]
+ },
+ {
+  "id": "wa_vanishing_point",
+  "name": "Vanishing Point",
+  "discipline": "alpine",
+  "peak": "Dolomite Tower",
+  "area_id": "wa_dolomite_tower",
+  "path": "usa.washington.wa_centralwest.wa_stevens_pass_region.wa_baring_mountain.wa_dolomite_tower",
+  "trip_plan": {
+   "totalNote": "Hike and climb the technical approach to the bivy caves, climb all 14 pitches the next day, then walk off to the Barclay Lake trailhead.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Approach to the Dolomite Tower bivy caves",
+     "objective": "Reach the bivy caves below the tower",
+     "miles": null,
+     "gainFt": null,
+     "note": "Hike in and complete the 3-3.5 hour technical approach, a forested rib with fixed lines and a roped slab, to the bivy caves below the tower."
+    },
+    {
+     "n": 2,
+     "title": "Climb Vanishing Point",
+     "objective": "Climb all 14 pitches",
+     "miles": null,
+     "gainFt": null,
+     "note": "Climb the full 14-pitch route, a very long day given the sustained 5.10-5.12 climbing with few easy pitches."
+    },
+    {
+     "n": 3,
+     "title": "Walk off to the trailhead",
+     "objective": "Return to the Barclay Lake trailhead",
+     "miles": null,
+     "gainFt": null,
+     "note": "Descend via the roughly 3-hour descent route back to the trailhead, or do this the same day if fast."
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Dolomite Tower bivy caves",
+    "elev_ft": null,
+    "type": "bivy",
+    "role": "main",
+    "notes": "Shallow caves about 150 ft right of the start of the route. Spray can blow in during wind and rain."
+   }
+  ],
+  "campsite_pins": []
+ }
+]

@@ -1,0 +1,1352 @@
+[
+ {
+  "id": "wa_east_twin_needle_north_buttress",
+  "name": "North Buttress (Thread of Gneiss)",
+  "discipline": "alpine",
+  "peak": "East Twin Needle",
+  "area_id": "wa_east_twin_needle",
+  "path": "usa.washington.wa_northwest.wa_hwy20_ncnp.wa_north_cascades.wa_picket_range.wa_southern_pickets.wa_east_twin_needle",
+  "trip_plan": {
+   "totalNote": null,
+   "days": [
+    {
+     "n": 1,
+     "title": "Day 1",
+     "objective": "",
+     "miles": null,
+     "gainFt": null,
+     "note": "Lower Goodell Creek TH to a col near the Chopping Block (~6+ mi, ~6,000 ft gain)."
+    },
+    {
+     "n": 2,
+     "title": "Day 2",
+     "objective": "",
+     "miles": null,
+     "gainFt": null,
+     "note": "Traverse Crescent Creek Basin, cross to the Ottohorn-Himmelhorn col, rappel onto the Mustard Glacier, then climb the North Buttress (9 pitches, 5.9, ~2,000 ft)."
+    }
+   ]
+  },
+  "camps_on_file": [],
+  "campsite_pins": []
+ },
+ {
+  "id": "wa_east_twin_needle_south_route",
+  "name": "South Route",
+  "discipline": "alpine",
+  "peak": "East Twin Needle",
+  "area_id": "wa_east_twin_needle",
+  "path": "usa.washington.wa_northwest.wa_hwy20_ncnp.wa_north_cascades.wa_picket_range.wa_southern_pickets.wa_east_twin_needle",
+  "trip_plan": {
+   "totalNote": "A 3-4 day trip out of Goodell Creek Trailhead: a long, brutal cross-country approach over the Barrier to a high camp in/above Crescent Creek Basin, a big summit day tagging East (and usually West) Twin Needle via Eye Col, an optional spare/bonus day, and a long descent back out — roughly 16-19 miles round trip and 7,000+ ft of cumulative gain.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Approach over the Barrier to high camp",
+     "objective": "Reach camp in/above Crescent Creek Basin",
+     "miles": 6.5,
+     "gainFt": 5800,
+     "note": "A grueling cross-country day: old roadbed and steep, brushy boot path from Goodell Creek Trailhead past Terror Creek, then a loose, exposed scramble across the Barrier into the Crescent Creek Basin drainage. Most parties camp on a flat bench or col around 6,000-6,400 ft, close under the Chopping Block/Twin Needles grou…"
+    },
+    {
+     "n": 2,
+     "title": "East (and West) Twin Needle via Eye Col",
+     "objective": "Summit East Twin Needle, tag West Twin Needle if conditions allow",
+     "miles": 3,
+     "gainFt": 2400,
+     "note": "An alpine-start day from camp: cross Crescent Creek Basin's snow and talus to Eye Col, the notch between the two Twin Needles, then scramble/climb the South Route to East Twin Needle's summit. Most parties use the same col to tack on West Twin Needle's easier class 2-3 west slope before returning to camp."
+    },
+    {
+     "n": 3,
+     "title": "Spare day / bonus objective",
+     "objective": "Weather buffer or add a second Southern Pickets peak",
+     "miles": 0,
+     "gainFt": 0,
+     "note": "Built-in slack for weather or recovery. Strong parties instead use it to climb another objective from the same camp, commonly Himmelhorn or Mount Terror's West Ridge, at similar cost in time and effort to Day 2."
+    },
+    {
+     "n": 4,
+     "title": "Descend back to the trailhead",
+     "objective": "Return to Goodell Creek Trailhead",
+     "miles": 6.5,
+     "gainFt": 200,
+     "note": "A long reversal of Day 1: break camp, re-cross the Barrier, and descend the steep boot path and roadbed back to the car. Most parties treat this as a full day given the terrain and fatigue."
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Crescent Creek Basin camp",
+    "elev_ft": 6050,
+    "type": "camp",
+    "role": "main",
+    "notes": "Crescent Creek Basin sits on the south side of the crest and is what you cross the Barrier for, reached over the roughly 6,400 ft saddle northeast of the Chopping Block. It is the working base for East and West McMillan Spire, Inspiration, the Twin Needles, and for the Ottohorn and Himmelhorn by way of the col between …"
+   },
+   {
+    "name": "Goodell Creek Campground, roadhead staging",
+    "elev_ft": 500,
+    "type": "camp",
+    "role": "route",
+    "notes": "The pavement-level staging camp rather than a mountain camp, and most parties use it to get a few hours of sleep before starting the approach in the dark. Bear boxes, tables and vault toilets mean food and rubbish can be dealt with before you leave the car. Sleeping here advances you toward the peaks not at all, but it…"
+   },
+   {
+    "name": "Old Goodell Creek roadbed near the Terror Creek crossing",
+    "elev_ft": 2000,
+    "type": "bivy",
+    "role": "route",
+    "notes": "The roughly four miles of overgrown roadbed to the cairn near the Terror Creek crossing is walking rather than climbing, and a party leaving the car late often ends the first day somewhere near here. That is defensible, because the ground above is where the day gets expensive and nobody wants to be finding the path by …"
+   },
+   {
+    "name": "Terror Basin camp",
+    "elev_ft": 5800,
+    "type": "camp",
+    "role": "route",
+    "notes": "The standard base for the south side of the range, and the place the Terror Creek climbers' path is trying to reach. From the flat gravel the basin runs up to a notch on its eastern rim near 6,200 ft, and the Chopping Block, Degenhardt, the Pyramid and the west side of Terror are all workable from here. Whether a party…"
+   },
+   {
+    "name": "Stump Hollow bench",
+    "elev_ft": 6000,
+    "type": "camp",
+    "role": "route",
+    "notes": "Stump Hollow is the open slabby heather ground at timberline between the Barrier ridge and the Chopping Block, and the first place after the forest where a tent actually goes down comfortably. Parties heading for the north side use it as the intermediate camp, because an easy rising traverse reaches the saddle northeas…"
+   },
+   {
+    "name": "High bivouacs at the western end of the crest",
+    "elev_ft": null,
+    "type": "bivy",
+    "role": "route",
+    "notes": "The western summits — the Twin Needles, Ottohorn, Himmelhorn and Frenzel Spitz — are far enough along the crest that a party working from a basin camp faces a very long day, so some take a bivouac high on the traverse instead. These are improvised spots rather than established sites, and quality varies from a decent gr…"
+   }
+  ],
+  "campsite_pins": [
+   {
+    "name": "Goodell Creek Campground, roadhead staging",
+    "elev": 500,
+    "distMi": null
+   },
+   {
+    "name": "Terror Basin camp",
+    "elev": 5800,
+    "distMi": null
+   },
+   {
+    "name": "Crescent Creek Basin camp",
+    "elev": 6050,
+    "distMi": null
+   },
+   {
+    "name": "Chopping Block saddle camp (above Crescent Creek Basin)",
+    "elev": 6400,
+    "distMi": 7
+   }
+  ]
+ },
+ {
+  "id": "wa_east_twin_needle_thread_of_ice",
+  "name": "Thread of Ice",
+  "discipline": "alpine",
+  "peak": "East Twin Needle",
+  "area_id": "wa_east_twin_needle",
+  "path": "usa.washington.wa_northwest.wa_hwy20_ncnp.wa_north_cascades.wa_picket_range.wa_southern_pickets.wa_east_twin_needle",
+  "trip_plan": {
+   "totalNote": "Three days: bushwhack up the Barrier to a Chopping Block ridge camp, a very long day over the Otto-Himmel col to climb the couloir and return, then descend to Goodell Creek.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Goodell Creek to Chopping Block ridge camp",
+     "objective": "Climb the Barrier to camp on Chopping Block ridge",
+     "miles": null,
+     "gainFt": 5300,
+     "note": "Walk the old Goodell Creek road and trail, cross Terror Creek on a high log, then grind up roughly 1,700 ft of steep, cliff-broken bushwhacking on a faint boot path to the ridge crest. Continue up snow below the Chopping Block to a flattened camp spot on the ridge."
+    },
+    {
+     "n": 2,
+     "title": "Climb Thread of Ice and return to camp",
+     "objective": "Climb the couloir to Eye Col and the East Twin Needle",
+     "miles": null,
+     "gainFt": null,
+     "note": "Cross Crescent Creek Basin to the Ottohorn-Himmelhorn col, then drop about 1,000 ft down its north side and the glacier to the foot of the Thread. The couloir is about 1,200 ft of hard snow and near-ice to Eye Col; the East Needle is a short Class 3-4 scramble from there, and the south-side gullies take downclimbing an…"
+    },
+    {
+     "n": 3,
+     "title": "Descend the Barrier to Goodell Creek",
+     "objective": "Return to the car",
+     "miles": null,
+     "gainFt": 0,
+     "note": "Reverse the ridge, the Barrier bushwhack and the Terror Creek log; the boot path is easy to lose on the ridge. The first-ascent party called it a five-hour descent."
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Crescent Creek Basin camp",
+    "elev_ft": 6050,
+    "type": "camp",
+    "role": "main",
+    "notes": "Crescent Creek Basin sits on the north side of the crest and is what you cross the Barrier for, reached over the roughly 6,400 ft saddle northeast of the Chopping Block. It is the working base for East and West McMillan Spire, Inspiration, the Twin Needles, and for the Ottohorn and Himmelhorn by way of the col between …"
+   },
+   {
+    "name": "Goodell Creek Campground, roadhead staging",
+    "elev_ft": 500,
+    "type": "camp",
+    "role": "route",
+    "notes": "The pavement-level staging camp rather than a mountain camp, and most parties use it to get a few hours of sleep before starting the approach in the dark. Bear boxes, tables and vault toilets mean food and rubbish can be dealt with before you leave the car. Sleeping here advances you toward the peaks not at all, but it…"
+   },
+   {
+    "name": "Old Goodell Creek roadbed near the Terror Creek crossing",
+    "elev_ft": 2000,
+    "type": "bivy",
+    "role": "route",
+    "notes": "The roughly four miles of overgrown roadbed to the cairn near the Terror Creek crossing is walking rather than climbing, and a party leaving the car late often ends the first day somewhere near here. That is defensible, because the ground above is where the day gets expensive and nobody wants to be finding the path by …"
+   },
+   {
+    "name": "Terror Basin camp",
+    "elev_ft": 5800,
+    "type": "camp",
+    "role": "route",
+    "notes": "The standard base for the south side of the range, and the place the Terror Creek climbers' path is trying to reach. From the flat gravel the basin runs up to a notch on its eastern rim near 6,200 ft, and the Chopping Block, Degenhardt, the Pyramid and the west side of Terror are all workable from here. Whether a party…"
+   },
+   {
+    "name": "Stump Hollow bench",
+    "elev_ft": 6000,
+    "type": "camp",
+    "role": "route",
+    "notes": "Stump Hollow is the open slabby heather ground at timberline between the Barrier ridge and the Chopping Block, and the first place after the forest where a tent actually goes down comfortably. Parties heading for the north side use it as the intermediate camp, because an easy rising traverse reaches the saddle northeas…"
+   },
+   {
+    "name": "High bivouacs at the western end of the crest",
+    "elev_ft": null,
+    "type": "bivy",
+    "role": "route",
+    "notes": "The western summits — the Twin Needles, Ottohorn, Himmelhorn and Frenzel Spitz — are far enough along the crest that a party working from a basin camp faces a very long day, so some take a bivouac high on the traverse instead. These are improvised spots rather than established sites, and quality varies from a decent gr…"
+   }
+  ],
+  "campsite_pins": [
+   {
+    "name": "Goodell Creek Campground, roadhead staging",
+    "elev": 500,
+    "distMi": null
+   },
+   {
+    "name": "Terror Basin camp",
+    "elev": 5800,
+    "distMi": null
+   },
+   {
+    "name": "Crescent Creek Basin camp",
+    "elev": 6050,
+    "distMi": null
+   }
+  ]
+ },
+ {
+  "id": "wa_frenzel_spitz_south_route",
+  "name": "South Route",
+  "discipline": "alpine",
+  "peak": "Frenzel Spitz",
+  "area_id": "wa_frenzel_spitz",
+  "path": "usa.washington.wa_northwest.wa_hwy20_ncnp.wa_north_cascades.wa_picket_range.wa_southern_pickets.wa_frenzel_spitz",
+  "trip_plan": {
+   "totalNote": "A remote, non-technical-camp-to-technical-summit trip: roughly 4 days and ~18 miles round trip with ~7,600 ft of cumulative gain, most of it on Day 1 and the Day 4 exit, bracketing a short but serious Barrier crossing and a roped scramble/ridge day to tag the summit.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Approach to Terror Basin",
+     "objective": "Establish first high camp at ~5,800 ft in Terror Basin",
+     "miles": 6,
+     "gainFt": 5200,
+     "note": "From the Goodell Creek trailhead, follow an old roadbed and climbers' path up Terror Creek through timber to treeline, then boulder-hop/scramble to a camp near 5,800 ft in Terror Basin, just below the saddle leading toward the Barrier. This mirrors the standard Southern Pickets approach day used for Inspiration, Terror…"
+    },
+    {
+     "n": 2,
+     "title": "Cross the Barrier into Crescent Creek Basin",
+     "objective": "Cross 'The Barrier' and set up camp near Crescent Creek Basin (~6,200 ft)",
+     "miles": 1.5,
+     "gainFt": 800,
+     "note": "A short but serious day: sustained Class 3 scrambling up loose, grassy ledges to the Barrier crest (~6,400-6,600 ft), exposed but well-traveled, then down the far side into Crescent Creek Basin to camp near 6,200 ft below the Ottohorn-Himmelhorn massif. Parties often arrive early enough to scout the col or bag an easy …"
+    },
+    {
+     "n": 3,
+     "title": "Summit push: over the col to Frenzel Spitz",
+     "objective": "Cross the Ottohorn-Himmelhorn col, descend its north side and climb Frenzel Spitz",
+     "miles": 2.5,
+     "gainFt": 1300,
+     "note": "An alpine-start day climbing roughly an hour up scrambling terrain from camp to the Ottohorn-Himmelhorn col, then rappelling and downclimbing roughly 500 ft of broken couloir and glacier/moat terrain off the col's north side to the foot of Frenzel Spitz's south face, and climbing its 5.6 rock to the summit. Many partie…"
+    },
+    {
+     "n": 4,
+     "title": "Exit: back over the Barrier to the trailhead",
+     "objective": "Break camp, re-cross the Barrier, and hike out to Goodell Creek trailhead",
+     "miles": 8,
+     "gainFt": 400,
+     "note": "Pack up Crescent Creek Basin camp, re-cross the Barrier back into Terror Basin, and continue the long descent down Terror Creek to the trailhead. Fit parties do this in one long push, similar in reverse to Days 1-2 combined; some choose to split it into two shorter days if the group is tired or weather is closing in."
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Crescent Creek Basin camp",
+    "elev_ft": 6050,
+    "type": "camp",
+    "role": "main",
+    "notes": "Crescent Creek Basin sits on the north side of the crest and is what you cross the Barrier for, reached over the roughly 6,400 ft saddle northeast of the Chopping Block. It is the working base for East and West McMillan Spire, Inspiration, the Twin Needles, and for the Ottohorn and Himmelhorn by way of the col between …"
+   },
+   {
+    "name": "Goodell Creek Campground, roadhead staging",
+    "elev_ft": 500,
+    "type": "camp",
+    "role": "route",
+    "notes": "The pavement-level staging camp rather than a mountain camp, and most parties use it to get a few hours of sleep before starting the approach in the dark. Bear boxes, tables and vault toilets mean food and rubbish can be dealt with before you leave the car. Sleeping here advances you toward the peaks not at all, but it…"
+   },
+   {
+    "name": "Old Goodell Creek roadbed near the Terror Creek crossing",
+    "elev_ft": 2000,
+    "type": "bivy",
+    "role": "route",
+    "notes": "The roughly four miles of overgrown roadbed to the cairn near the Terror Creek crossing is walking rather than climbing, and a party leaving the car late often ends the first day somewhere near here. That is defensible, because the ground above is where the day gets expensive and nobody wants to be finding the path by …"
+   },
+   {
+    "name": "Terror Basin camp",
+    "elev_ft": 5800,
+    "type": "camp",
+    "role": "route",
+    "notes": "The standard base for the south side of the range, and the place the Terror Creek climbers' path is trying to reach. From the flat gravel the basin runs up to a notch on its eastern rim near 6,200 ft, and the Chopping Block, Degenhardt, the Pyramid and the west side of Terror are all workable from here. Whether a party…"
+   },
+   {
+    "name": "Stump Hollow bench",
+    "elev_ft": 6000,
+    "type": "camp",
+    "role": "route",
+    "notes": "Stump Hollow is the open slabby heather ground at timberline between the Barrier ridge and the Chopping Block, and the first place after the forest where a tent actually goes down comfortably. Parties heading for the north side use it as the intermediate camp, because an easy rising traverse reaches the saddle northeas…"
+   },
+   {
+    "name": "High bivouacs at the western end of the crest",
+    "elev_ft": null,
+    "type": "bivy",
+    "role": "route",
+    "notes": "The western summits — the Twin Needles, Ottohorn, Himmelhorn and Frenzel Spitz — are far enough along the crest that a party working from a basin camp faces a very long day, so some take a bivouac high on the traverse instead. These are improvised spots rather than established sites, and quality varies from a decent gr…"
+   }
+  ],
+  "campsite_pins": [
+   {
+    "name": "Goodell Creek Campground, roadhead staging",
+    "elev": 500,
+    "distMi": null
+   },
+   {
+    "name": "Terror Basin camp",
+    "elev": 5800,
+    "distMi": null
+   },
+   {
+    "name": "Terror Basin",
+    "elev": 5860,
+    "distMi": 6
+   },
+   {
+    "name": "Crescent Creek Basin Camp",
+    "elev": 5900,
+    "distMi": 7.5
+   }
+  ]
+ },
+ {
+  "id": "wa_himmelhorn_southeast_route",
+  "name": "Standard Route",
+  "discipline": "alpine",
+  "peak": "Himmelhorn",
+  "area_id": "wa_himmelhorn",
+  "path": "usa.washington.wa_northwest.wa_hwy20_ncnp.wa_north_cascades.wa_picket_range.wa_southern_pickets.wa_himmelhorn",
+  "trip_plan": {
+   "totalNote": "A 3-day trip out of Goodell Creek: a long, brushy, steep approach day to Crescent Creek Basin (~5,300 ft gain), a technical scramble day up the Otto-Himmel col gully to the 7,880 ft summit and back to camp, and a full day hiking out — roughly 16-17 miles and 7,700 ft of gain/loss round trip.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Approach to Crescent Creek Basin",
+     "objective": "Reach high camp below Himmelhorn",
+     "miles": 7,
+     "gainFt": 5300,
+     "note": "From the Goodell Creek trailhead, follow an old roadbed about 4-4.5 miles, then leave the maintained trail to climb the brushy forested ridge crest, cross Terror Creek on a log jam, and continue through Stump Hollow into Crescent Creek Basin. It's a steep, brushy, unmaintained climbers' path with route-finding required…"
+    },
+    {
+     "n": 2,
+     "title": "Climb Himmelhorn (Standard Route) and return to camp",
+     "objective": "Summit Himmelhorn via the Otto-Himmel col gully",
+     "miles": 2.5,
+     "gainFt": 2100,
+     "note": "An alpine-start day climb from Crescent Creek Basin: ascend the narrow snow/scree gully to the Ottohorn-Himmelhorn col, then work up the northwest side to the summit, downclimbing or bypassing an overhanging block near the top on class 3/4 rock in late season. Descend by reversing the route, downclimbing and rappelling…"
+    },
+    {
+     "n": 3,
+     "title": "Hike out",
+     "objective": "Return to Goodell Creek trailhead",
+     "miles": 7,
+     "gainFt": 300,
+     "note": "Reverse the approach: back across Crescent Creek Basin and Stump Hollow, over the ridge crest, down through the brush to the old roadbed and out to the trailhead."
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Crescent Creek Basin camp",
+    "elev_ft": 6050,
+    "type": "camp",
+    "role": "main",
+    "notes": "Crescent Creek Basin sits on the north side of the crest and is what you cross the Barrier for, reached over the roughly 6,400 ft saddle northeast of the Chopping Block. It is the working base for East and West McMillan Spire, Inspiration, the Twin Needles, and for the Ottohorn and Himmelhorn by way of the col between …"
+   },
+   {
+    "name": "Goodell Creek Campground, roadhead staging",
+    "elev_ft": 500,
+    "type": "camp",
+    "role": "route",
+    "notes": "The pavement-level staging camp rather than a mountain camp, and most parties use it to get a few hours of sleep before starting the approach in the dark. Bear boxes, tables and vault toilets mean food and rubbish can be dealt with before you leave the car. Sleeping here advances you toward the peaks not at all, but it…"
+   },
+   {
+    "name": "Old Goodell Creek roadbed near the Terror Creek crossing",
+    "elev_ft": 2000,
+    "type": "bivy",
+    "role": "route",
+    "notes": "The roughly four miles of overgrown roadbed to the cairn near the Terror Creek crossing is walking rather than climbing, and a party leaving the car late often ends the first day somewhere near here. That is defensible, because the ground above is where the day gets expensive and nobody wants to be finding the path by …"
+   },
+   {
+    "name": "Terror Basin camp",
+    "elev_ft": 5800,
+    "type": "camp",
+    "role": "route",
+    "notes": "The standard base for the south side of the range, and the place the Terror Creek climbers' path is trying to reach. From the flat gravel the basin runs up to a notch on its eastern rim near 6,200 ft, and the Chopping Block, Degenhardt, the Pyramid and the west side of Terror are all workable from here. Whether a party…"
+   },
+   {
+    "name": "Stump Hollow bench",
+    "elev_ft": 6000,
+    "type": "camp",
+    "role": "route",
+    "notes": "Stump Hollow is the open slabby heather ground at timberline between the Barrier ridge and the Chopping Block, and the first place after the forest where a tent actually goes down comfortably. Parties heading for the north side use it as the intermediate camp, because an easy rising traverse reaches the saddle northeas…"
+   },
+   {
+    "name": "High bivouacs at the western end of the crest",
+    "elev_ft": null,
+    "type": "bivy",
+    "role": "route",
+    "notes": "The western summits — the Twin Needles, Ottohorn, Himmelhorn and Frenzel Spitz — are far enough along the crest that a party working from a basin camp faces a very long day, so some take a bivouac high on the traverse instead. These are improvised spots rather than established sites, and quality varies from a decent gr…"
+   }
+  ],
+  "campsite_pins": [
+   {
+    "name": "Goodell Creek Campground, roadhead staging",
+    "elev": 500,
+    "distMi": null
+   },
+   {
+    "name": "Terror Basin camp",
+    "elev": 5800,
+    "distMi": null
+   },
+   {
+    "name": "Crescent Creek Basin Camp",
+    "elev": 6050,
+    "distMi": 7.1
+   }
+  ]
+ },
+ {
+  "id": "wa_himmelhorn_stonehenge",
+  "name": "Stonehenge",
+  "discipline": "alpine",
+  "peak": "Himmelhorn",
+  "area_id": "wa_himmelhorn",
+  "path": "usa.washington.wa_northwest.wa_hwy20_ncnp.wa_north_cascades.wa_picket_range.wa_southern_pickets.wa_himmelhorn",
+  "trip_plan": {
+   "totalNote": "Three days minimum: a long approach over the Barrier to a camp below the Chopping Block, a 4 am start for the 8-pitch south face, and a 7-hour walk out.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Goodell Creek to Chopping Block camp",
+     "objective": "Reach a camp below the Chopping Block",
+     "miles": null,
+     "gainFt": 5800,
+     "note": "Follow the old Goodell Creek roadbed about 4 miles to the Terror Creek turnoff near 1,700 ft, then take the steep climbers' path up the Barrier to timberline around 5,000-5,600 ft. Continue through Stump Hollow to the crest near 6,400 ft and camp below the Chopping Block above Crescent Creek. Many parties split this in…"
+    },
+    {
+     "n": 2,
+     "title": "Climb Stonehenge on the Himmelhorn",
+     "objective": "Climb the south face to the summit and return to camp",
+     "miles": null,
+     "gainFt": 1480,
+     "note": "Cross to the snow below the wall, then scramble about 600 ft of easy ramps and ledges to a grassy col and rope up. Eight pitches include two 5.10- leads: a dihedral-to-hand-crack on pitch 2 and a run-out face on the summit tower. An unprotected traverse to a notch ends the difficulties before an easy, loose pitch to th…"
+    },
+    {
+     "n": 3,
+     "title": "Barrier and Goodell Creek to the car",
+     "objective": "Walk out to the trailhead",
+     "miles": null,
+     "gainFt": 0,
+     "note": "Retrace through Stump Hollow and down the Barrier, crossing Terror Creek on a log near 2,000 ft before rejoining the roadbed. Abegg's party took about 7 hours from the Chopping Block camp to the car."
+    }
+   ]
+  },
+  "camps_on_file": [],
+  "campsite_pins": []
+ },
+ {
+  "id": "wa_himmelhorn_wild_hair_crack",
+  "name": "Wild Hair Crack",
+  "discipline": "alpine",
+  "peak": "Himmelhorn",
+  "area_id": "wa_himmelhorn",
+  "path": "usa.washington.wa_northwest.wa_hwy20_ncnp.wa_north_cascades.wa_picket_range.wa_southern_pickets.wa_himmelhorn",
+  "trip_plan": {
+   "totalNote": "Three days: approach over the Barrier into the Crescent Creek side, climb the gully to the Himmel-Otto col and four pitches to the summit, then walk out in about 7 hours.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Goodell Creek over the Barrier",
+     "objective": "Reach a camp above Crescent Creek Basin",
+     "miles": null,
+     "gainFt": 5800,
+     "note": "Take the Goodell Creek roadbed about 4 miles to the Terror Creek turnoff, climb the steep Barrier path to timberline, and traverse Stump Hollow to the saddle near 6,400 ft. Good bivies sit below Terror in Crescent Creek Basin, with a decent one just below the Himmel-Otto col. Many parties take two days for this approac…"
+    },
+    {
+     "n": 2,
+     "title": "Gully to the col and Wild Hair Crack",
+     "objective": "Climb to the Himmelhorn summit and return to camp",
+     "miles": null,
+     "gainFt": 1480,
+     "note": "Climb the narrow gully to the Himmel-Otto col. Early in the season it is all snow with a little scrambling near the top; late in the season expect icy snow, chossy moats, and a loose class 3-4 bypass of an overhanging boulder. Four pitches of 5.7 PG13 lead to the summit. Descend by scrambling early season, or rappel th…"
+    },
+    {
+     "n": 3,
+     "title": "Walk out to Goodell Creek",
+     "objective": "Return to the trailhead",
+     "miles": null,
+     "gainFt": 0,
+     "note": "Reverse Stump Hollow and the Barrier, cross Terror Creek near 2,000 ft, and follow the roadbed back. Abegg's party took about 7 hours from the Chopping Block camp."
+    }
+   ]
+  },
+  "camps_on_file": [],
+  "campsite_pins": []
+ },
+ {
+  "id": "wa_east_ridge_4",
+  "name": "East Ridge",
+  "discipline": "alpine",
+  "peak": "Inspiration Peak",
+  "area_id": "wa_inspiration_peak",
+  "path": "usa.washington.wa_northwest.wa_hwy20_ncnp.wa_north_cascades.wa_picket_range.wa_southern_pickets.wa_inspiration_peak",
+  "trip_plan": {
+   "totalNote": "A demanding 3-day trip (~21 mi, ~7,800 ft total gain): same Terror Basin approach as the other routes, but the summit day is an 18-hour epic combining 10 pitches up and 14 rappels down two different ridges/faces.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Approach to Terror Basin",
+     "objective": "Establish camp in Terror Basin",
+     "miles": 7.4,
+     "gainFt": 5500,
+     "note": "Same brutal approach shared by all Inspiration Peak routes: brushy Goodell Creek trail, then a steep ~3,600+ ft forested slog with no switchbacks up to a saddle and down into Terror Basin camp."
+    },
+    {
+     "n": 2,
+     "title": "Climb the East Ridge",
+     "objective": "Summit Inspiration Peak (7,891') via the East Ridge and get back to camp",
+     "miles": 6.2,
+     "gainFt": 2300,
+     "note": "An all-day alpine outing: scramble and glacier-travel to the route start, then climb 4 pitches of 5.7 to gain the ridge crest, a 5.8 pitch and the 5.9 crack crux, then 4 more moderate pitches to the summit (~8 hrs of climbing). There is no walk-off — the descent is 5 rappels down the upper West Ridge, a scramble to a n…"
+    },
+    {
+     "n": 3,
+     "title": "Hike out",
+     "objective": "Return to Goodell Creek trailhead",
+     "miles": 7.4,
+     "gainFt": 0,
+     "note": "After the previous day's marathon push, most parties take a slower exit hike back down to the trailhead; road closures on Highway 20 can add hours to the drive home, so budget extra time."
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Terror Basin camp",
+    "elev_ft": 5800,
+    "type": "camp",
+    "role": "main",
+    "notes": "The base camp for the whole Southern Pickets and the one this route is built around: parties sleep here, climb, and come back to it, so plan two nights rather than moving camp. It sits about 400 ft below the 6,200 ft saddle the approach crosses, with flowers, running water and a full view of the range. The approach to …"
+   }
+  ],
+  "campsite_pins": [
+   {
+    "name": "Terror Basin camp",
+    "elev": 5800,
+    "distMi": 5.4
+   }
+  ]
+ },
+ {
+  "id": "wa_inspiration_peak_west_ridge",
+  "name": "West Ridge",
+  "discipline": "alpine",
+  "peak": "Inspiration Peak",
+  "area_id": "wa_inspiration_peak",
+  "path": "usa.washington.wa_northwest.wa_hwy20_ncnp.wa_north_cascades.wa_picket_range.wa_southern_pickets.wa_inspiration_peak",
+  "trip_plan": {
+   "totalNote": "A 3-day trip out of Goodell Creek: ~21 mi round trip and ~7,500 ft total gain, with one very long summit day (~14-15 hrs) sandwiched between a brutal bushwhack approach and exit.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Approach to Terror Basin",
+     "objective": "Establish camp in Terror Basin",
+     "miles": 7.4,
+     "gainFt": 5500,
+     "note": "From the Goodell Creek trailhead, hike ~4 mi of brushy trail along the creek, then grind up an unrelenting, viewless ~3,600 ft of steep forested slope with no switchbacks, finishing with a rising traverse to a ~6,200 ft saddle and a short descent into Terror Basin. Real trip reports clock this leg at roughly 6.5 hours."
+    },
+    {
+     "n": 2,
+     "title": "Climb the West Ridge",
+     "objective": "Summit Inspiration Peak (7,891') via the West Ridge and return to camp",
+     "miles": 3.4,
+     "gainFt": 2300,
+     "note": "A long alpine day: cross the Terror Glacier (crampons on, watch for the mid-glacier icefall), gain the base of the ridge, then climb ~14 pitches of sustained 5.6-5.7 rock to the summit. Descend the same ridge crest by rappel/downclimb combo back to the glacier and camp."
+    },
+    {
+     "n": 3,
+     "title": "Hike out",
+     "objective": "Return to Goodell Creek trailhead",
+     "miles": 7.4,
+     "gainFt": 0,
+     "note": "Reverse the approach: scree/scramble up out of the basin, over the saddle, and down the steep forested slope back to the creek trail. Most parties take it easier than the way in but still budget most of a day given the terrain."
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Terror Basin camp",
+    "elev_ft": 5800,
+    "type": null,
+    "role": "main",
+    "notes": "This is the standard base camp for the whole Southern Pickets and a genuinely comfortable one — a small flat gravelly basin with flowers, running water and a full view of the range, sitting about 400 ft below the notch in the ridge above it. It is a planned camp, not a bivy: parties sleep here, climb the peak, and come…"
+   }
+  ],
+  "campsite_pins": [
+   {
+    "name": "Terror Basin camp",
+    "elev": 5860,
+    "distMi": 7.4
+   }
+  ]
+ },
+ {
+  "id": "wa_south_face_5",
+  "name": "South Face",
+  "discipline": "alpine",
+  "peak": "Inspiration Peak",
+  "area_id": "wa_inspiration_peak",
+  "path": "usa.washington.wa_northwest.wa_hwy20_ncnp.wa_north_cascades.wa_picket_range.wa_southern_pickets.wa_inspiration_peak",
+  "trip_plan": {
+   "totalNote": "A 3-day trip (~21 mi, ~7,800 ft total gain) built around the same Terror Basin approach; the South Face itself is the shortest of Inspiration's technical routes (just 4 pitches), making for a noticeably shorter summit day than the East or West Ridges.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Approach to Terror Basin",
+     "objective": "Establish camp in Terror Basin",
+     "miles": 7.4,
+     "gainFt": 5500,
+     "note": "Same approach as the other Inspiration Peak routes: brushy creek trail followed by a steep, unrelenting forested climb to a saddle and down into Terror Basin. One party clocked this at about 6.5 hours to the 5,800 ft lower basin camp."
+    },
+    {
+     "n": 2,
+     "title": "Climb the South Face",
+     "objective": "Summit Inspiration Peak (7,891') via the South Face and return to camp",
+     "miles": 6,
+     "gainFt": 2300,
+     "note": "Cross the Terror Glacier to the base of the face, then climb just 4 pitches (5.8) to the summit — the shortest of Inspiration's three technical lines. Descend by scrambling a few hundred feet to a notch and rappelling, then joining the shared West Ridge rappel line down to the glacier; one party made 7 double-rope rapp…"
+    },
+    {
+     "n": 3,
+     "title": "Hike out",
+     "objective": "Return to Goodell Creek trailhead",
+     "miles": 7.4,
+     "gainFt": 0,
+     "note": "Reverse the approach back down to the trailhead — steep, slow, and tiring on tired legs, but typically the easiest of the three days."
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Terror Basin camp",
+    "elev_ft": 5800,
+    "type": "camp",
+    "role": "main",
+    "notes": "The standard base for the south side of the range, and the place the Terror Creek climbers' path is trying to reach. From the flat gravel the basin runs up to a notch on its eastern rim near 6,200 ft, and the Chopping Block, Degenhardt, the Pyramid and the west side of Terror are all workable from here. Whether a party…"
+   },
+   {
+    "name": "Goodell Creek Campground, roadhead staging",
+    "elev_ft": 500,
+    "type": "camp",
+    "role": "route",
+    "notes": "The pavement-level staging camp rather than a mountain camp, and most parties use it to get a few hours of sleep before starting the approach in the dark. Bear boxes, tables and vault toilets mean food and rubbish can be dealt with before you leave the car. Sleeping here advances you toward the peaks not at all, but it…"
+   },
+   {
+    "name": "Old Goodell Creek roadbed near the Terror Creek crossing",
+    "elev_ft": 2000,
+    "type": "bivy",
+    "role": "route",
+    "notes": "The roughly four miles of overgrown roadbed to the cairn near the Terror Creek crossing is walking rather than climbing, and a party leaving the car late often ends the first day somewhere near here. That is defensible, because the ground above is where the day gets expensive and nobody wants to be finding the path by …"
+   }
+  ],
+  "campsite_pins": [
+   {
+    "name": "Goodell Creek Campground, roadhead staging",
+    "elev": 500,
+    "distMi": null
+   },
+   {
+    "name": "Terror Basin camp",
+    "elev": 5860,
+    "distMi": 7.4
+   }
+  ]
+ },
+ {
+  "id": "wa_little_mac_spire_southwest_route",
+  "name": "Southwest Route",
+  "discipline": "alpine",
+  "peak": "Little Mac Spire",
+  "area_id": "wa_little_mac_spire",
+  "path": "usa.washington.wa_northwest.wa_hwy20_ncnp.wa_north_cascades.wa_picket_range.wa_southern_pickets.wa_little_mac_spire",
+  "trip_plan": {
+   "totalNote": "A 3-day trip out of Goodell Creek trailhead: ~17 miles and ~8,000 ft round-trip gain, with 1 night in and 1 night out of Terror Basin bracketing a long technical summit day on Little Mac Spire.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Approach to Terror Basin",
+     "objective": "Establish camp below the Southern Pickets",
+     "miles": 7,
+     "gainFt": 5600,
+     "note": "From the Goodell Creek trailhead (600 ft) the trail parallels the creek for an easy 4.5 miles, then gains roughly 4,700 ft in the final 2.5 miles through brush and a class 3 root-pull cliff band to a 6,200 ft notch. Drop scree/snow on the far side to the flat gravel camp at 5,800 ft in Terror Basin, with McMillan Spire…"
+    },
+    {
+     "n": 2,
+     "title": "Little Mac Spire summit push",
+     "objective": "Climb the Southwest Route/Arête and return to camp",
+     "miles": 2.5,
+     "gainFt": 2000,
+     "note": "Alpine start from Terror Basin, crossing the basin to the foot of the spire before climbing Little Mac Spire's 800 ft southwest arête -- sustained class 4/low 5th with real route-finding on excellent but featureless rock. Many parties combine this with East and/or West McMillan Spire from the same camp since the approa…"
+    },
+    {
+     "n": 3,
+     "title": "Hike out",
+     "objective": "Return to Goodell Creek trailhead",
+     "miles": 7,
+     "gainFt": 400,
+     "note": "Break camp and reverse the approach: climb back to the 6,200 ft notch, then descend the steep, brushy 2.5-mile drop before the final easy 4.5 miles out along Goodell Creek to the trailhead."
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Terror Basin camp",
+    "elev_ft": 5800,
+    "type": "camp",
+    "role": "main",
+    "notes": "The standard base for the south side of the range, and the place the Terror Creek climbers' path is trying to reach. From the flat gravel the basin runs up to a notch on its eastern rim near 6,200 ft, and the Chopping Block, Degenhardt, the Pyramid and the west side of Terror are all workable from here. Whether a party…"
+   },
+   {
+    "name": "Goodell Creek Campground, roadhead staging",
+    "elev_ft": 500,
+    "type": "camp",
+    "role": "route",
+    "notes": "The pavement-level staging camp rather than a mountain camp, and most parties use it to get a few hours of sleep before starting the approach in the dark. Bear boxes, tables and vault toilets mean food and rubbish can be dealt with before you leave the car. Sleeping here advances you toward the peaks not at all, but it…"
+   },
+   {
+    "name": "Old Goodell Creek roadbed near the Terror Creek crossing",
+    "elev_ft": 2000,
+    "type": "bivy",
+    "role": "route",
+    "notes": "The roughly four miles of overgrown roadbed to the cairn near the Terror Creek crossing is walking rather than climbing, and a party leaving the car late often ends the first day somewhere near here. That is defensible, because the ground above is where the day gets expensive and nobody wants to be finding the path by …"
+   }
+  ],
+  "campsite_pins": [
+   {
+    "name": "Terror Basin Camp",
+    "elev": 5800,
+    "distMi": 7.4
+   }
+  ]
+ },
+ {
+  "id": "wa_mcmillan_spire_west_southwest_ridge",
+  "name": "Southwest Ridge",
+  "discipline": "alpine",
+  "peak": "McMillan Spire (West)",
+  "area_id": "wa_mcmillan_spire_west",
+  "path": "usa.washington.wa_northwest.wa_hwy20_ncnp.wa_north_cascades.wa_picket_range.wa_southern_pickets.wa_mcmillan_spire_west",
+  "trip_plan": {
+   "totalNote": "Approach over the notch to a Terror Basin camp, climb the Southwest Ridge and return to camp, and hike out via Goodell Creek on day three.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Approach to Terror Basin camp",
+     "objective": "Reach camp in Terror Basin",
+     "miles": 7,
+     "gainFt": 5600,
+     "note": "Approach from the Goodell Creek trailhead over the 6,200 ft notch to camp in Terror Basin, which takes 6-8 hours."
+    },
+    {
+     "n": 2,
+     "title": "Climb the Southwest Ridge",
+     "objective": "Summit West McMillan and return to camp",
+     "miles": 2,
+     "gainFt": 2200,
+     "note": "Cross the Terror Glacier to its east end, climb the Southwest Ridge to the summit, and return to camp."
+    },
+    {
+     "n": 3,
+     "title": "Hike out via Goodell Creek",
+     "objective": "Return to the trailhead",
+     "miles": 7,
+     "gainFt": 400,
+     "note": "Pack up and hike out over the notch and down Goodell Creek."
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Terror Basin camp",
+    "elev_ft": 5800,
+    "type": "camp",
+    "role": "main",
+    "notes": "The standard base for the south side of the range, and the place the Terror Creek climbers' path is trying to reach. From the flat gravel the basin runs up to a notch on its eastern rim near 6,200 ft, and the Chopping Block, Degenhardt, the Pyramid and the west side of Terror are all workable from here. Whether a party…"
+   },
+   {
+    "name": "Goodell Creek Campground, roadhead staging",
+    "elev_ft": 500,
+    "type": "camp",
+    "role": "route",
+    "notes": "The pavement-level staging camp rather than a mountain camp, and most parties use it to get a few hours of sleep before starting the approach in the dark. Bear boxes, tables and vault toilets mean food and rubbish can be dealt with before you leave the car. Sleeping here advances you toward the peaks not at all, but it…"
+   },
+   {
+    "name": "Old Goodell Creek roadbed near the Terror Creek crossing",
+    "elev_ft": 2000,
+    "type": "bivy",
+    "role": "route",
+    "notes": "The roughly four miles of overgrown roadbed to the cairn near the Terror Creek crossing is walking rather than climbing, and a party leaving the car late often ends the first day somewhere near here. That is defensible, because the ground above is where the day gets expensive and nobody wants to be finding the path by …"
+   }
+  ],
+  "campsite_pins": [
+   {
+    "name": "Goodell Creek Campground, roadhead staging",
+    "elev": 500,
+    "distMi": null
+   },
+   {
+    "name": "Terror Basin camp",
+    "elev": 5800,
+    "distMi": 5.4
+   }
+  ]
+ },
+ {
+  "id": "wa_mcmillan_spire_west_west_ridge",
+  "name": "West Ridge / Southwest Approach",
+  "discipline": "mountaineering",
+  "peak": "McMillan Spire (West)",
+  "area_id": "wa_mcmillan_spire_west",
+  "path": "usa.washington.wa_northwest.wa_hwy20_ncnp.wa_north_cascades.wa_picket_range.wa_southern_pickets.wa_mcmillan_spire_west",
+  "trip_plan": {
+   "totalNote": "A 3-day, 2-night trip is the standard plan: ~7.5 mi/5,300 ft to Terror Basin camp, a ~4 mi/2,300 ft round-trip summit day via the Terror Glacier snow finger and West Ridge, and a ~7.5 mi/5,400 ft hike out — call it ~9,800 ft gain and ~19 miles round trip overall.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Approach to Terror Basin high camp",
+     "objective": "Reach Terror Basin camp (~5,800 ft)",
+     "miles": 7.5,
+     "gainFt": 5300,
+     "note": "From the Goodell Creek trailhead (600 ft), follow the old forestry-road bed roughly 4 miles through mossy, brushy, deadfall-choked forest, then turn uphill at the cairned junction for a steep 2-mile, ~4,000 ft climb through heather benches and blueberry fields to the notch overlooking Terror Basin. A short, occasionall…"
+    },
+    {
+     "n": 2,
+     "title": "Summit day: West Ridge of West McMillan Spire",
+     "objective": "Climb the Terror Glacier snow finger and West Ridge to the 8,004 ft summit and back to camp",
+     "miles": 4,
+     "gainFt": 2300,
+     "note": "An early start puts the party on the Terror Glacier's snow finger while it's still firm; the glacier crossing is typically done unroped with axe/crampons to the col, where terrain transitions to class 3 rock for the West Ridge scramble to the summit. Most parties are back in camp by late morning after a round trip of a…"
+    },
+    {
+     "n": 3,
+     "title": "Hike out to the trailhead",
+     "objective": "Break camp and descend to Goodell Creek trailhead",
+     "miles": 7.5,
+     "gainFt": 200,
+     "note": "Pack up camp, climb back up out of the basin to the notch, then descend the heather benches and forested old road bed back to the car — mostly downhill and noticeably faster than the way in, though the deadfall-choked lower trail still slows the pace."
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Terror Basin camp",
+    "elev_ft": 5800,
+    "type": null,
+    "role": "main",
+    "notes": "The planned camp for this route and effectively the only one — a flat gravelly basin roughly 400 ft below and north of the 6,200 to 6,350 ft notch that the approach crosses. Comfortable ground, water at hand, and a direct view of the Pickets. From here it is a long traverse over benches and slabs to the Terror Glacier …"
+   }
+  ],
+  "campsite_pins": [
+   {
+    "name": "Terror Basin camp",
+    "elev": 5800,
+    "distMi": null
+   }
+  ]
+ },
+ {
+  "id": "wa_mount_degenhardt_southwest_route",
+  "name": "South Route",
+  "discipline": "alpine",
+  "peak": "Mount Degenhardt",
+  "area_id": "wa_mount_degenhardt",
+  "path": "usa.washington.wa_northwest.wa_hwy20_ncnp.wa_north_cascades.wa_picket_range.wa_southern_pickets.wa_mount_degenhardt",
+  "trip_plan": {
+   "totalNote": "A 3-day trip (commonly climbed as part of a longer Southern Pickets outing): ~18.7 miles round trip with roughly 7,500 ft of gain/loss, one long approach day, one big summit day with a rappel, and one exit day.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Approach to high camp",
+     "objective": "Reach Terror Basin / Stump Hollow high camp (~5,800–6,200 ft)",
+     "miles": 8.5,
+     "gainFt": 5400,
+     "note": "A long, brutal bushwhack: Goodell Creek Trail to a fading climbers' path, a tricky ford of Terror Creek, then a steep, sustained climbers' trail straight up the hillside to treeline and on to a bench near The Barrier. This leg typically takes 6.5–9.5 hours depending on creek levels and route-finding."
+    },
+    {
+     "n": 2,
+     "title": "Climb Degenhardt via the Southwest/Corkscrew Route",
+     "objective": "Summit Mount Degenhardt (8,107 ft) and return to high camp",
+     "miles": 1.7,
+     "gainFt": 2100,
+     "note": "An alpine-start round trip from camp: cross The Barrier via the upper crossing just below Degenhardt into Crescent Basin, then climb a Class 4 slot to the north ridge, a Class 4-5 face to the west ridge, and an exposed Class 3 ledge to the south ridge and summit. One rappel off the summit block on the way down; loose, …"
+    },
+    {
+     "n": 3,
+     "title": "Exit to trailhead",
+     "objective": "Hike out to the Goodell Creek Cross-Country Access Trailhead",
+     "miles": 8.5,
+     "gainFt": 0,
+     "note": "Reverse the Day 1 approach: down the steep hillside, re-ford Terror Creek, and follow the climbers' path and Goodell Creek Trail back to the car. Descending is a bit faster than the grind up but still a full day with the creek crossing."
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Crescent Creek Basin camp",
+    "elev_ft": 6050,
+    "type": "camp",
+    "role": "main",
+    "notes": "Crescent Creek Basin sits on the north side of the crest and is what you cross the Barrier for, reached over the roughly 6,400 ft saddle northeast of the Chopping Block. It is the working base for East and West McMillan Spire, Inspiration, the Twin Needles, and for the Ottohorn and Himmelhorn by way of the col between …"
+   },
+   {
+    "name": "Chopping Block Saddle Camp",
+    "elev_ft": null,
+    "type": "camp",
+    "role": "main",
+    "notes": ""
+   },
+   {
+    "name": "Goodell Creek Campground, roadhead staging",
+    "elev_ft": 500,
+    "type": "camp",
+    "role": "route",
+    "notes": "The pavement-level staging camp rather than a mountain camp, and most parties use it to get a few hours of sleep before starting the approach in the dark. Bear boxes, tables and vault toilets mean food and rubbish can be dealt with before you leave the car. Sleeping here advances you toward the peaks not at all, but it…"
+   },
+   {
+    "name": "Old Goodell Creek roadbed near the Terror Creek crossing",
+    "elev_ft": 2000,
+    "type": "bivy",
+    "role": "route",
+    "notes": "The roughly four miles of overgrown roadbed to the cairn near the Terror Creek crossing is walking rather than climbing, and a party leaving the car late often ends the first day somewhere near here. That is defensible, because the ground above is where the day gets expensive and nobody wants to be finding the path by …"
+   },
+   {
+    "name": "Terror Basin camp",
+    "elev_ft": 5800,
+    "type": "camp",
+    "role": "route",
+    "notes": "The standard base for the south side of the range, and the place the Terror Creek climbers' path is trying to reach. From the flat gravel the basin runs up to a notch on its eastern rim near 6,200 ft, and the Chopping Block, Degenhardt, the Pyramid and the west side of Terror are all workable from here. Whether a party…"
+   },
+   {
+    "name": "Stump Hollow bench",
+    "elev_ft": 6000,
+    "type": "camp",
+    "role": "route",
+    "notes": "Stump Hollow is the open slabby heather ground at timberline between the Barrier ridge and the Chopping Block, and the first place after the forest where a tent actually goes down comfortably. Parties heading for the north side use it as the intermediate camp, because an easy rising traverse reaches the saddle northeas…"
+   }
+  ],
+  "campsite_pins": [
+   {
+    "name": "Goodell Creek Campground, roadhead staging",
+    "elev": 500,
+    "distMi": null
+   },
+   {
+    "name": "Terror Basin camp",
+    "elev": 5800,
+    "distMi": null
+   },
+   {
+    "name": "Crescent Creek Basin camp",
+    "elev": 6050,
+    "distMi": null
+   },
+   {
+    "name": "Chopping Block Saddle Camp",
+    "elev": 6400,
+    "distMi": 6.5
+   }
+  ]
+ },
+ {
+  "id": "wa_mount_terror_north_face",
+  "name": "North Face / North Buttress",
+  "discipline": "alpine",
+  "peak": "Mount Terror",
+  "area_id": "wa_mount_terror",
+  "path": "usa.washington.wa_northwest.wa_hwy20_ncnp.wa_north_cascades.wa_picket_range.wa_southern_pickets.wa_mount_terror",
+  "trip_plan": {
+   "totalNote": "A 4-day trip: two hard bushwhack approach days to Crescent Creek Basin, one very long (14-15 hr) technical day on the 2,500 ft North Face / North Buttress line, and a day to hike out.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Approach to Terror Basin / Stump Hollow",
+     "objective": "Reach camp in Terror Basin below the Southern Pickets",
+     "miles": 8,
+     "gainFt": 5400,
+     "note": "From the Goodell Creek Trailhead (600 ft), follow the old road bed to the cairn near 1,700 ft, then turn hard right up the steep Terror Basin climbers' path to camp in Terror Basin (about 5,800 ft). This is widely considered one of the harder approaches in the Cascades; expect route-finding and heavy brush even in good…"
+    },
+    {
+     "n": 2,
+     "title": "Move to Crescent Creek Basin",
+     "objective": "Position camp below the peak's south/east side",
+     "miles": 1.5,
+     "gainFt": 500,
+     "note": "Cross the Barrier and traverse into Crescent Creek Basin (~5,800 ft), staying high along the bushy ridge. Short mileage but slow, exposed sidehill travel; many parties treat this as a half-day and use the rest to scout the route or rest before the summit push."
+    },
+    {
+     "n": 3,
+     "title": "North Face / North Buttress summit push",
+     "objective": "Climb the 2,500 ft North Face and return to camp",
+     "miles": 4,
+     "gainFt": 3000,
+     "note": "A long alpine day: cross the Otto-Himmel col and traverse below the Twin Spires and the Rake to reach the base of the North Face, then climb the face and its right-hand buttress (5.7, much of it simul-climbed) to the 8,151 ft summit before descending the West Ridge gully to get back to camp."
+    },
+    {
+     "n": 4,
+     "title": "Hike out",
+     "objective": "Return to the Goodell Creek Trailhead",
+     "miles": 8.5,
+     "gainFt": 100,
+     "note": "Reverse the approach: back over the Barrier, down through Terror Basin, and down the Terror Basin climbers' path to the trailhead. Brush is easier to push through downhill but navigation errors are still common."
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Crescent Creek Basin camp",
+    "elev_ft": 6050,
+    "type": "camp",
+    "role": "main",
+    "notes": "Crescent Creek Basin sits on the north side of the crest and is what you cross the Barrier for, reached over the roughly 6,400 ft saddle northeast of the Chopping Block. It is the working base for East and West McMillan Spire, Inspiration, the Twin Needles, and for the Ottohorn and Himmelhorn by way of the col between …"
+   },
+   {
+    "name": "Goodell Creek Campground, roadhead staging",
+    "elev_ft": 500,
+    "type": "camp",
+    "role": "route",
+    "notes": "The pavement-level staging camp rather than a mountain camp, and most parties use it to get a few hours of sleep before starting the approach in the dark. Bear boxes, tables and vault toilets mean food and rubbish can be dealt with before you leave the car. Sleeping here advances you toward the peaks not at all, but it…"
+   },
+   {
+    "name": "Old Goodell Creek roadbed near the Terror Creek crossing",
+    "elev_ft": 2000,
+    "type": "bivy",
+    "role": "route",
+    "notes": "The roughly four miles of overgrown roadbed to the cairn near the Terror Creek crossing is walking rather than climbing, and a party leaving the car late often ends the first day somewhere near here. That is defensible, because the ground above is where the day gets expensive and nobody wants to be finding the path by …"
+   },
+   {
+    "name": "Terror Basin camp",
+    "elev_ft": 5800,
+    "type": "camp",
+    "role": "route",
+    "notes": "The standard base for the south side of the range, and the place the Terror Creek climbers' path is trying to reach. From the flat gravel the basin runs up to a notch on its eastern rim near 6,200 ft, and the Chopping Block, Degenhardt, the Pyramid and the west side of Terror are all workable from here. Whether a party…"
+   },
+   {
+    "name": "Stump Hollow bench",
+    "elev_ft": 6000,
+    "type": "camp",
+    "role": "route",
+    "notes": "Stump Hollow is the open slabby heather ground at timberline between the Barrier ridge and the Chopping Block, and the first place after the forest where a tent actually goes down comfortably. Parties heading for the north side use it as the intermediate camp, because an easy rising traverse reaches the saddle northeas…"
+   }
+  ],
+  "campsite_pins": [
+   {
+    "name": "Terror Basin bivy",
+    "elev": 5800,
+    "distMi": 7
+   },
+   {
+    "name": "Terror Basin camp",
+    "elev": 5800,
+    "distMi": 5.8
+   },
+   {
+    "name": "Crescent Creek Basin camp",
+    "elev": 6050,
+    "distMi": 7.1
+   }
+  ]
+ },
+ {
+  "id": "wa_mount_terror_southeast_face",
+  "name": "East Ridge",
+  "discipline": "alpine",
+  "peak": "Mount Terror",
+  "area_id": "wa_mount_terror",
+  "path": "usa.washington.wa_northwest.wa_hwy20_ncnp.wa_north_cascades.wa_picket_range.wa_southern_pickets.wa_mount_terror",
+  "trip_plan": {
+   "totalNote": "A 4-day trip: two approach days to Crescent Creek Basin, then a shorter (~9 hr) summit day on the short, steep 4-pitch East Ridge above camp, and a day out. This is the least-popular of Terror's routes and is usually done as one leg of a larger Southern Pickets enchainment rather than a standalone objective.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Approach to Terror Basin / Stump Hollow",
+     "objective": "Reach the 6,000 ft basin below the Southern Pickets",
+     "miles": 8,
+     "gainFt": 5400,
+     "note": "From the Goodell Creek Trailhead (600 ft), follow the old road bed about 4.5 miles to the cairns, then turn hard right up the steep Terror Basin climbers' path to camp in Terror Basin around 5,800 ft. Reserve a full day; this approach is a known crux of the trip in its own right."
+    },
+    {
+     "n": 2,
+     "title": "Move to Crescent Creek Basin",
+     "objective": "Position camp below the Terror-Degenhardt saddle",
+     "miles": 1.5,
+     "gainFt": 400,
+     "note": "Cross the Barrier into Crescent Creek Basin (~5,800 ft) and camp near the base of the slabs leading up to the saddle between Terror and Degenhardt. A shorter day than Day 1, used to rest and stage for the climb."
+    },
+    {
+     "n": 3,
+     "title": "East Ridge summit push",
+     "objective": "Climb the 4-pitch East Ridge to the summit and return",
+     "miles": 3,
+     "gainFt": 2400,
+     "note": "A more moderate day than the north-side routes: slabs lead directly from camp to the saddle between Terror and Degenhardt, then a short, steep 4-pitch ridge/face climbs straight to the top, then descended by the West Ridge gully, with rappels, back into Crescent Creek Basin and camp."
+    },
+    {
+     "n": 4,
+     "title": "Hike out",
+     "objective": "Return to the Goodell Creek Trailhead",
+     "miles": 8,
+     "gainFt": 100,
+     "note": "Reverse the approach: back over the Barrier, down through Terror Basin, and down the Terror Basin climbers' path to the trailhead."
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Crescent Creek Basin camp",
+    "elev_ft": 6050,
+    "type": "camp",
+    "role": "main",
+    "notes": "Crescent Creek Basin sits on the north side of the crest and is what you cross the Barrier for, reached over the roughly 6,400 ft saddle northeast of the Chopping Block. It is the working base for East and West McMillan Spire, Inspiration, the Twin Needles, and for the Ottohorn and Himmelhorn by way of the col between …"
+   },
+   {
+    "name": "Goodell Creek Campground, roadhead staging",
+    "elev_ft": 500,
+    "type": "camp",
+    "role": "route",
+    "notes": "The pavement-level staging camp rather than a mountain camp, and most parties use it to get a few hours of sleep before starting the approach in the dark. Bear boxes, tables and vault toilets mean food and rubbish can be dealt with before you leave the car. Sleeping here advances you toward the peaks not at all, but it…"
+   },
+   {
+    "name": "Old Goodell Creek roadbed near the Terror Creek crossing",
+    "elev_ft": 2000,
+    "type": "bivy",
+    "role": "route",
+    "notes": "The roughly four miles of overgrown roadbed to the cairn near the Terror Creek crossing is walking rather than climbing, and a party leaving the car late often ends the first day somewhere near here. That is defensible, because the ground above is where the day gets expensive and nobody wants to be finding the path by …"
+   },
+   {
+    "name": "Terror Basin camp",
+    "elev_ft": 5800,
+    "type": "camp",
+    "role": "route",
+    "notes": "The standard base for the south side of the range, and the place the Terror Creek climbers' path is trying to reach. From the flat gravel the basin runs up to a notch on its eastern rim near 6,200 ft, and the Chopping Block, Degenhardt, the Pyramid and the west side of Terror are all workable from here. Whether a party…"
+   },
+   {
+    "name": "Stump Hollow bench",
+    "elev_ft": 6000,
+    "type": "camp",
+    "role": "route",
+    "notes": "Stump Hollow is the open slabby heather ground at timberline between the Barrier ridge and the Chopping Block, and the first place after the forest where a tent actually goes down comfortably. Parties heading for the north side use it as the intermediate camp, because an easy rising traverse reaches the saddle northeas…"
+   }
+  ],
+  "campsite_pins": [
+   {
+    "name": "Goodell Creek Campground, roadhead staging",
+    "elev": 500,
+    "distMi": null
+   },
+   {
+    "name": "Terror Basin camp",
+    "elev": 5800,
+    "distMi": null
+   },
+   {
+    "name": "Crescent Creek Basin camp",
+    "elev": 6050,
+    "distMi": null
+   }
+  ]
+ },
+ {
+  "id": "wa_mount_terror_stoddard_buttress",
+  "name": "Stoddard Buttress",
+  "discipline": "alpine",
+  "peak": "Mount Terror",
+  "area_id": "wa_mount_terror",
+  "path": "usa.washington.wa_northwest.wa_hwy20_ncnp.wa_north_cascades.wa_picket_range.wa_southern_pickets.wa_mount_terror",
+  "trip_plan": {
+   "totalNote": "Hike to a high camp in Crescent Creek Basin, make a very long alpine-start day over the Ottohorn-Himmelhorn col and Mustard Glacier to climb the buttress and descend the West Ridge notch, then hike out.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Hike to Crescent Creek Basin",
+     "objective": "Reach the high camp in Crescent Creek Basin",
+     "miles": null,
+     "gainFt": 6000,
+     "note": "Hike to the high camp in Crescent Creek Basin via Terror Creek, the Barrier, Stump Hollow, and the 6,400 ft saddle northeast of The Chopping Block, then downclimb about 200 ft into the basin. Expect about 6,000 ft of gain and 7-7.5 hours."
+    },
+    {
+     "n": 2,
+     "title": "Climb the Stoddard Buttress",
+     "objective": "Climb the buttress to the summit and return to camp",
+     "miles": null,
+     "gainFt": null,
+     "note": "Make an alpine start, cross the Ottohorn-Himmelhorn col and Mustard Glacier to the route base (2-3 hours from camp), and climb the buttress crest and knife-edge finish to the summit. Descend via the West Ridge notch and gully rappels; it is a long day, about 17 hours camp to camp for one party."
+    },
+    {
+     "n": 3,
+     "title": "Hike out",
+     "objective": "Return to the Goodell Creek trailhead",
+     "miles": null,
+     "gainFt": 200,
+     "note": "Hike out."
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Crescent Creek Basin camp",
+    "elev_ft": 6050,
+    "type": "camp",
+    "role": "main",
+    "notes": "Crescent Creek Basin sits on the north side of the crest and is what you cross the Barrier for, reached over the roughly 6,400 ft saddle northeast of the Chopping Block. It is the working base for East and West McMillan Spire, Inspiration, the Twin Needles, and for the Ottohorn and Himmelhorn by way of the col between …"
+   },
+   {
+    "name": "Goodell Creek Campground, roadhead staging",
+    "elev_ft": 500,
+    "type": "camp",
+    "role": "route",
+    "notes": "The pavement-level staging camp rather than a mountain camp, and most parties use it to get a few hours of sleep before starting the approach in the dark. Bear boxes, tables and vault toilets mean food and rubbish can be dealt with before you leave the car. Sleeping here advances you toward the peaks not at all, but it…"
+   },
+   {
+    "name": "Old Goodell Creek roadbed near the Terror Creek crossing",
+    "elev_ft": 2000,
+    "type": "bivy",
+    "role": "route",
+    "notes": "The roughly four miles of overgrown roadbed to the cairn near the Terror Creek crossing is walking rather than climbing, and a party leaving the car late often ends the first day somewhere near here. That is defensible, because the ground above is where the day gets expensive and nobody wants to be finding the path by …"
+   },
+   {
+    "name": "Terror Basin camp",
+    "elev_ft": 5800,
+    "type": "camp",
+    "role": "route",
+    "notes": "The standard base for the south side of the range, and the place the Terror Creek climbers' path is trying to reach. From the flat gravel the basin runs up to a notch on its eastern rim near 6,200 ft, and the Chopping Block, Degenhardt, the Pyramid and the west side of Terror are all workable from here. Whether a party…"
+   },
+   {
+    "name": "Stump Hollow bench",
+    "elev_ft": 6000,
+    "type": "camp",
+    "role": "route",
+    "notes": "Stump Hollow is the open slabby heather ground at timberline between the Barrier ridge and the Chopping Block, and the first place after the forest where a tent actually goes down comfortably. Parties heading for the north side use it as the intermediate camp, because an easy rising traverse reaches the saddle northeas…"
+   }
+  ],
+  "campsite_pins": []
+ },
+ {
+  "id": "wa_mount_terror_west_ridge",
+  "name": "West Ridge",
+  "discipline": "alpine",
+  "peak": "Mount Terror",
+  "area_id": "wa_mount_terror",
+  "path": "usa.washington.wa_northwest.wa_hwy20_ncnp.wa_north_cascades.wa_picket_range.wa_southern_pickets.wa_mount_terror",
+  "trip_plan": {
+   "totalNote": "Approach to Crescent Creek Basin (~6,000 ft of gain), climb the gully to the West Ridge notch and the summit and back, then hike out.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Approach to Crescent Creek Basin",
+     "objective": "Reach camp in Crescent Creek Basin",
+     "miles": null,
+     "gainFt": 6000,
+     "note": "Approach to Crescent Creek Basin, gaining about 6,000 ft."
+    },
+    {
+     "n": 2,
+     "title": "Climb the West Ridge",
+     "objective": "Summit via the West Ridge notch and return to camp",
+     "miles": null,
+     "gainFt": 2100,
+     "note": "Climb the gully to the West Ridge notch, complete the short technical section and summit scramble, then descend the same way."
+    },
+    {
+     "n": 3,
+     "title": "Hike out",
+     "objective": "Return to the Goodell Creek trailhead",
+     "miles": null,
+     "gainFt": 200,
+     "note": "Hike out."
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Crescent Creek Basin camp",
+    "elev_ft": 6050,
+    "type": "camp",
+    "role": "main",
+    "notes": "The working camp for Terror, in the basin under the peak. Published camps sit between roughly 6,000 and 6,200 ft — there is talk among parties of a named 'Crescent Camp' that several have gone looking for and not found, so treat this as a zone of flat spots rather than a fixed site. Getting here from Terror Basin means…"
+   },
+   {
+    "name": "Chopping Block saddle camp",
+    "elev_ft": 6401,
+    "type": "bivy",
+    "role": "main",
+    "notes": "The saddle on the Chopping Block ridge overlooking Crescent Creek Basin, and the camp parties rate most highly on this side of the range — an open grandstand on the Southern Pickets. It is a dry, exposed perch, so the trade is view and position against carrying your water. Being on the crest it also puts you above the …"
+   },
+   {
+    "name": "Terror Basin camp",
+    "elev_ft": 5800,
+    "type": "camp",
+    "role": "route",
+    "notes": "The usual first night for parties heading to Terror, about 400 ft below the 6,200 ft saddle at the top of the Goodell Creek boot path. It is not the camp you climb Terror from — from here you still have to traverse and cross the roughly 6,400 ft saddle by the Chopping Block and drop into Crescent Creek Basin — but it i…"
+   }
+  ],
+  "campsite_pins": [
+   {
+    "name": "Terror Basin camp",
+    "elev": 5800,
+    "distMi": 7.8
+   },
+   {
+    "name": "Crescent Creek Basin camp",
+    "elev": 6050,
+    "distMi": 10
+   },
+   {
+    "name": "Chopping Block saddle camp",
+    "elev": 6401,
+    "distMi": 9.2
+   }
+  ]
+ }
+]
