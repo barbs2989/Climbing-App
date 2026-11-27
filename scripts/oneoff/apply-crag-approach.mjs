@@ -6,11 +6,16 @@
 // crag-fills.json: [{ area_id, approach, approach_min }]. Fill-only: an area that already has an
 // approach is left alone, never overwritten. The walk-in is the walk from the trail to the base;
 // roads, parking, permits and closures are not written here (the collector refuses them).
+// Writes are PACED (owner rule for bulk prod writes): at least --pace ms (default 1200) between rows,
+// and any failed read or write backs off 90 s once before the row is refused.
 import fs from "fs";
 import { SUPABASE_URL, requireServiceKey, headers, patchRow } from "../lib/supabase-env.mjs";
 
 const [file, flag] = process.argv.slice(2);
 const APPLY = flag === "--apply";
+const paceArg = process.argv.find(a => a.startsWith("--pace="));
+const PACE = paceArg ? Math.max(1000, Number(paceArg.slice(7))) : 1200;
+const sleep = ms => new Promise(r => setTimeout(r, ms));
 const key = requireServiceKey();
 const items = JSON.parse(fs.readFileSync(file, "utf8"));
 const rbFile = `scripts/rollback-crag-approach-${Date.now()}.json`;
@@ -18,7 +23,10 @@ const rollback = [];
 let ok = 0, skipped = 0, refused = 0;
 for (const it of items) {
   const url = `${SUPABASE_URL}/rest/v1/areas?id=eq.${encodeURIComponent(it.area_id)}&select=id,approach,approach_min`;
-  const rows = await (await fetch(url, { headers: headers(key) })).json();
+  if (APPLY) await sleep(PACE);
+  let rows;
+  try { rows = await (await fetch(url, { headers: headers(key) })).json(); }
+  catch { console.log(`read failed for ${it.area_id}; backing off 90 s`); await sleep(90000); rows = await (await fetch(url, { headers: headers(key) })).json(); }
   if (!Array.isArray(rows) || rows.length !== 1) { console.log(`REFUSED ${it.area_id}: not exactly one row`); refused++; continue; }
   const row = rows[0];
   if (row.approach) { console.log(`SKIP ${it.area_id}: already has a walk-in`); skipped++; continue; }
