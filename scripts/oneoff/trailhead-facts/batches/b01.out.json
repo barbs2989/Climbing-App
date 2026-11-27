@@ -1,0 +1,421 @@
+[
+ {
+  "key": "t030",
+  "pass": null,
+  "parking": null,
+  "facilities": null,
+  "evidence": [],
+  "note": "No page found for the upper Alpental lots specifically; nothing confirmed."
+ },
+ {
+  "key": "t031",
+  "pass": null,
+  "parking": null,
+  "facilities": null,
+  "evidence": [],
+  "note": "No official page found for the Squire Creek Road washout lot; a hiking page lists a Northwest Forest Pass for a different (Eight-mile) trailhead, and a climbing guide says none required. Left blank."
+ },
+ {
+  "key": "t032",
+  "pass": null,
+  "parking": "Large lot at the road end near the park entrance, expanded in 2023 with 97 extra stalls.",
+  "facilities": null,
+  "evidence": [
+   {
+    "url": "https://news.gov.bc.ca/releases/2023ENV0039-001011",
+    "supports": [
+     "parking"
+    ]
+   },
+   {
+    "url": "https://bcparks.ca/mount-robson-park/berg-lake-trail/",
+    "supports": [
+     "parking"
+    ]
+   }
+  ],
+  "note": "No page found stating a parking fee or trailhead toilets. A non-resident Berg Lake Trail fee is mentioned from 2027 (search snippet only)."
+ },
+ {
+  "key": "t033",
+  "pass": "None",
+  "parking": null,
+  "facilities": "Vault toilet; no drinking water.",
+  "evidence": [
+   {
+    "url": "https://www.fs.usda.gov/r05/inyo/recreation/onion-valley-area",
+    "supports": [
+     "pass",
+     "facilities"
+    ]
+   },
+   {
+    "url": "https://www.fs.usda.gov/r05/inyo/recreation/trails/kearsarge-pass-trail",
+    "supports": [
+     "facilities"
+    ]
+   }
+  ],
+  "note": "Forest Service page says no fees for the area and no potable water; a third-party page says water spigots exist but were off as of 2018. Campground nearby charges separately. Overnight trips need a wilderness permit."
+ },
+ {
+  "key": "t034",
+  "pass": "Paid lot; day fee",
+  "parking": "Large paid lot beside the information center; no buses or RVs; fills before 6 am on summer weekends.",
+  "facilities": "Restrooms at the information center.",
+  "evidence": [
+   {
+    "url": "https://adk.org/hiker-parking-at-heart-lake/",
+    "supports": [
+     "pass",
+     "parking",
+     "facilities"
+    ]
+   }
+  ],
+  "note": "Fee amounts conflict between ADK pages ($25/day vs older $18), so no amount is given."
+ },
+ {
+  "key": "t035",
+  "pass": null,
+  "parking": null,
+  "facilities": null,
+  "evidence": [],
+  "note": "No official page confirming the shoulder pullout or its lack of fee."
+ },
+ {
+  "key": "t036",
+  "pass": null,
+  "parking": null,
+  "facilities": null,
+  "evidence": [],
+  "note": "Forest Service page returned 404. WTA lists no pass; our stored text says Northwest Forest Pass. Unresolved, left blank."
+ },
+ {
+  "key": "t037",
+  "pass": "Park entrance fee",
+  "parking": "Lot at the end of the road; parking is challenging in summer.",
+  "facilities": "Restroom at the trailhead.",
+  "evidence": [
+   {
+    "url": "https://www.nps.gov/olym/planyourvisit/fees.htm",
+    "supports": [
+     "pass"
+    ]
+   },
+   {
+    "url": "https://www.nps.gov/olym/learn/news/olympic-national-park-encourages-visitors-to-plan-like-a-park-ranger-this-summer.htm",
+    "supports": [
+     "parking"
+    ]
+   },
+   {
+    "url": "https://www.nps.gov/places/000/sol-duc-falls-trail.htm",
+    "supports": [
+     "facilities",
+     "parking"
+    ]
+   }
+  ],
+  "note": "Pass is from the park-wide fees page ('all visitors must have'), not a Sol Duc-specific line. NPS release is from 2021."
+ },
+ {
+  "key": "t038",
+  "pass": null,
+  "parking": null,
+  "facilities": "Restroom near the ranger station.",
+  "evidence": [
+   {
+    "url": "https://www.nps.gov/places/000/restroom-staircase-ranger-station-area.htm",
+    "supports": [
+     "facilities"
+    ]
+   }
+  ],
+  "note": "Pass left blank: the park fees page does not say whether Staircase collects the entrance fee. Stored text says the summit is on Olympic National Forest land."
+ },
+ {
+  "key": "t039",
+  "pass": null,
+  "parking": null,
+  "facilities": null,
+  "evidence": [],
+  "note": "Nothing official found for this roadside pullout."
+ },
+ {
+  "key": "t040",
+  "pass": "Discover Pass",
+  "parking": null,
+  "facilities": null,
+  "evidence": [
+   {
+    "url": "https://www.wta.org/go-hiking/hikes/deception-crags",
+    "supports": [
+     "pass"
+    ]
+   },
+   {
+    "url": "https://www.mountainproject.com/area/105791955/deception-crags",
+    "supports": [
+     "pass"
+    ]
+   }
+  ],
+  "note": "Two non-official pages agree. Mountain Project mentions pullouts on SE Homestead Valley Rd where no pass is mentioned; and a guidebook reportedly says a pass is not needed for the crag lot. Parking left blank."
+ },
+ {
+  "key": "t041",
+  "pass": null,
+  "parking": null,
+  "facilities": null,
+  "evidence": [],
+  "note": "Only one non-official page (climber.org: no facilities, lot plus overflow). Not enough to state."
+ },
+ {
+  "key": "t042",
+  "pass": "Free reservation, May 1 to Oct 31",
+  "parking": "Reservation-only lot with about 70 cars a day, including overnight.",
+  "facilities": null,
+  "evidence": [
+   {
+    "url": "https://dec.ny.gov/news/press-releases/2025/4/dec-and-adirondack-mountain-reserve-announce-start-of-2025-parking-reservation-system",
+    "supports": [
+     "pass",
+     "parking"
+    ]
+   }
+  ],
+  "note": "DEC release is 2025; confirm the system continues in 2026."
+ },
+ {
+  "key": "t043",
+  "pass": null,
+  "parking": null,
+  "facilities": null,
+  "evidence": [],
+  "note": "Reached by boat and Holden shuttle; no trailhead parking page found."
+ },
+ {
+  "key": "t044",
+  "pass": null,
+  "parking": null,
+  "facilities": "Vault toilet at the shuttle stop.",
+  "evidence": [
+   {
+    "url": "https://www.nps.gov/places/high-bridge.htm",
+    "supports": [
+     "facilities"
+    ]
+   }
+  ],
+  "note": "Reached by NPS shuttle, no parking described. No fee mentioned."
+ },
+ {
+  "key": "t045",
+  "pass": "Northwest Forest Pass or $5 day fee",
+  "parking": null,
+  "facilities": "Vault toilet; no drinking water.",
+  "evidence": [
+   {
+    "url": "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/white-river-trailhead",
+    "supports": [
+     "pass",
+     "facilities"
+    ]
+   }
+  ],
+  "note": null
+ },
+ {
+  "key": "t046",
+  "pass": "Northwest Forest Pass or $5 day fee",
+  "parking": null,
+  "facilities": "Vault toilet; no drinking water.",
+  "evidence": [
+   {
+    "url": "https://www.fs.usda.gov/r06/mbs/recreation/barclay-lake-trailhead",
+    "supports": [
+     "pass",
+     "facilities"
+    ]
+   }
+  ],
+  "note": "WTA says about 20 spaces (single non-official page, not used)."
+ },
+ {
+  "key": "t047",
+  "pass": "None",
+  "parking": "Gravel lot with room for eight vehicles.",
+  "facilities": "No toilet or water.",
+  "evidence": [
+   {
+    "url": "https://www.fs.usda.gov/r06/giffordpinchot/recreation/trailhead-killen-creek",
+    "supports": [
+     "pass",
+     "parking",
+     "facilities"
+    ]
+   }
+  ],
+  "note": "Free wilderness permit required; climbing pass above 7,000 ft June-Sept."
+ },
+ {
+  "key": "t048",
+  "pass": null,
+  "parking": null,
+  "facilities": "Restroom at the trailhead.",
+  "evidence": [
+   {
+    "url": "https://www.nps.gov/places/000/north-fork-trailhead-quinault.htm",
+    "supports": [
+     "facilities"
+    ]
+   }
+  ],
+  "note": "Pass left blank: fees page is park-wide and no official page confirms a fee at this lot."
+ },
+ {
+  "key": "t049",
+  "pass": null,
+  "parking": null,
+  "facilities": null,
+  "evidence": [],
+  "note": "Nothing official found for the Depot Creek washout parking."
+ },
+ {
+  "key": "t050",
+  "pass": "Northwest Forest Pass or $5 day fee",
+  "parking": "Two large lots; north one for hikers, south one for stock users; day use only.",
+  "facilities": "Vault toilet; no drinking water.",
+  "evidence": [
+   {
+    "url": "https://www.fs.usda.gov/r06/mbs/recreation/middle-fork-snoqualmie-trailhead",
+    "supports": [
+     "pass",
+     "parking",
+     "facilities"
+    ]
+   }
+  ],
+  "note": null
+ },
+ {
+  "key": "t051",
+  "pass": null,
+  "parking": null,
+  "facilities": null,
+  "evidence": [],
+  "note": "Nothing official found for this SR 20 pullout."
+ },
+ {
+  "key": "t052",
+  "pass": null,
+  "parking": null,
+  "facilities": null,
+  "evidence": [],
+  "note": "Only one non-official page (Mountain Project)."
+ },
+ {
+  "key": "t053",
+  "pass": null,
+  "parking": null,
+  "facilities": null,
+  "evidence": [],
+  "note": "Nothing found."
+ },
+ {
+  "key": "t054",
+  "pass": null,
+  "parking": null,
+  "facilities": null,
+  "evidence": [],
+  "note": "Fees page does not address this lot; stored Olympic NP fee text looks wrong since the washout is outside the park per a search result. Left blank."
+ },
+ {
+  "key": "t055",
+  "pass": "None",
+  "parking": "Small pullout at milepost 22.5 on Cascade River Road; parking on this road is limited.",
+  "facilities": null,
+  "evidence": [
+   {
+    "url": "https://www.nps.gov/noca/planyourvisit/fees.htm",
+    "supports": [
+     "pass"
+    ]
+   },
+   {
+    "url": "https://www.nps.gov/noca/planyourvisit/cascade-river-road.htm",
+    "supports": [
+     "parking"
+    ]
+   }
+  ],
+  "note": null
+ },
+ {
+  "key": "t056",
+  "pass": "Northwest Forest Pass or $5 day fee",
+  "parking": "Limited; park only on the left side of Icicle Road, and leave overnight spots for permit holders.",
+  "facilities": "Vault toilet; no drinking water.",
+  "evidence": [
+   {
+    "url": "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/snow-lakes-trailhead",
+    "supports": [
+     "pass",
+     "parking",
+     "facilities"
+    ]
+   }
+  ],
+  "note": null
+ },
+ {
+  "key": "t057",
+  "pass": "Northwest Forest Pass or $5 day fee",
+  "parking": null,
+  "facilities": "Vault toilet; no drinking water.",
+  "evidence": [
+   {
+    "url": "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/north-fork-entiat-trailhead",
+    "supports": [
+     "pass",
+     "facilities"
+    ]
+   }
+  ],
+  "note": "Page lists the site as CLOSED due to the 2026 Little Giant Fire."
+ },
+ {
+  "key": "t058",
+  "pass": "Northwest Forest Pass or $5 day fee",
+  "parking": "Lot with room for about 70 cars.",
+  "facilities": "Vault toilet; no drinking water.",
+  "evidence": [
+   {
+    "url": "https://www.fs.usda.gov/r06/mbs/recreation/pacific-crest-trail-snoqualmie-north-trailhead",
+    "supports": [
+     "pass",
+     "parking",
+     "facilities"
+    ]
+   }
+  ],
+  "note": null
+ },
+ {
+  "key": "t059",
+  "pass": "Northwest Forest Pass or $5 day fee",
+  "parking": null,
+  "facilities": "Vault toilet; no drinking water.",
+  "evidence": [
+   {
+    "url": "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/canyon-creek-trailhead",
+    "supports": [
+     "pass",
+     "facilities"
+    ]
+   }
+  ],
+  "note": "Free self-issued Pasayten Wilderness permit at the trailhead."
+ }
+]

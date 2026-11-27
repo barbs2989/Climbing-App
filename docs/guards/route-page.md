@@ -731,6 +731,12 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     APPROACH heading, a `TrailheadCard` that did not render, or a control detector that matches
     nothing anywhere — every "exactly one" assertion here is satisfied by a page that rendered
     nothing at all.
+  - **SECTION 10 — THE TRAILHEAD CARD CARRIES THE TRAILHEAD'S OWN FACTS (owner note 2026-11-26,
+    "Add more detail to the trailhead").** A fixture with `trailheadPass`, `trailheadParking` and a
+    blank `trailheadFacilities` must show the first two under their labels inside the card, above the
+    coordinates, and draw no *Toilet and water* label over the blank. These are labelled rows, not
+    the stat tiles section 7 forbids: none restates a TECH STATS figure. Injection: dropping the
+    `facts` list from the render fails both "renders" lines.
   - **SECTION 7 — THE TRAILHEAD CARD CARRIES NO STAT TILES (2026-09-25, user request).** The card
     used to print Elevation, `"Approach (one way)"` and a straight-line `"To the peak"` bearing
     above its directions. The user asked for them gone: elevation and approach are already in

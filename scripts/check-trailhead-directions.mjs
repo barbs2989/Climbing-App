@@ -107,7 +107,7 @@ const CRAG = (extra) => ROUTE(Object.assign({ discipline: "sport", areaType: "cr
    that list, which is why a crag Overview can never carry a drive control — see section 1. */
 const BARE = { road: undefined, approach: undefined, approachLogistics: undefined, waypoints: [], descent: undefined, descentText: undefined, rappels: undefined, driveMinSLC: undefined };
 
-let plan, tilesProbe, noCoord, cragOv, cragDup, gateOnly, itinOutback, rawKm100, rawKm40, estPoint;
+let plan, tilesProbe, factsProbe, noCoord, cragOv, cragDup, gateOnly, itinOutback, rawKm100, rawKm40, estPoint;
 try {
   plan = render(ROUTE(), "planner");
   // No coordinate anywhere: no pin, no logistics lat/lng. trailheadPoint() resolves nothing.
@@ -128,6 +128,8 @@ try {
   gateOnly = render(ROUTE({ road: { name: "Probe River Road (FR 99)", seasonalGate: "Gated 1 Nov to 1 Jun" } }), "planner");
   // Section 7: every input the old stat tiles read -- pin elevation, a distance, a peak coordinate.
   tilesProbe = render(ROUTE({ distKm: 10, approachLogistics: { trailhead: "Probe Trailhead", trailheadLat: LAT, trailheadLng: LNG, trailheadDirection: "From the highway, turn north.", peakLat: 48.7, peakLng: -121.1 } }), "planner");
+  // Section 10: the three trailhead facts, one of them blank.
+  factsProbe = render(ROUTE({ approachLogistics: { trailhead: "Probe Trailhead", trailheadLat: LAT, trailheadLng: LNG, trailheadDirection: "From the highway, turn north.", trailheadPass: "Probe Pass", trailheadParking: "Gravel probe lot for about 20 cars.", trailheadFacilities: "  " } }), "planner");
   // Section 8's outback fixture: its column holds the ROUND TRIP of a 31 mi each-way itinerary.
   itinOutback = render(ROUTE({ distKm: 100, itinerary: { days: [{ miles: 31 }, { miles: 31 }] } }), "planner");
   /* Section 8's PAIRS: each fixture against a CONTROL identical but for the itinerary, which is
@@ -361,6 +363,21 @@ else {
   if (descT && downT && descT[0] === downT[0]) ok("the DESCENT section's time matches the SUMMIT TO TRAILHEAD leg (" + descT[0] + ")");
   else fail("the DESCENT section does not print the same time as the SUMMIT TO TRAILHEAD leg (leg " + (downT ? downT[0] : "none") + ", descent " + (descT ? descT[0] : "none") + ")");
 }
+
+/* -- 10. the TRAILHEAD card carries the trailhead's own facts ---------------------------------
+   Owner note 2026-11-26, "Add more detail to the trailhead": the parking pass, the parking and the
+   toilet/water, stored as approach_logistics.trailheadPass / trailheadParking / trailheadFacilities.
+   Each must render INSIDE the card (between the TRAILHEAD label and the coordinates), and a blank
+   one must draw no label over nothing. NON-VACUITY: the card is found by its coordinates first. */
+const fCard = trailheadCard(factsProbe);
+if (!fCard || !fCard.includes(COORD)) dead("the TRAILHEAD card did not render in the facts probe - ANCHOR LOST, so section 10 checked nothing");
+const fBefore = fCard.slice(0, fCard.indexOf(COORD));
+if (/Parking pass\s*Probe Pass/.test(fBefore)) ok("the parking pass renders in the TRAILHEAD card, labelled, above the coordinates");
+else fail("the TRAILHEAD card does not show approach_logistics.trailheadPass under a Parking pass label");
+if (/Parking\s*Gravel probe lot for about 20 cars\./.test(fBefore)) ok("the parking note renders in the TRAILHEAD card");
+else fail("the TRAILHEAD card does not show approach_logistics.trailheadParking under a Parking label");
+if (!/Toilet and water/.test(fCard)) ok("a blank facilities value draws no Toilet and water label");
+else fail("the TRAILHEAD card prints a Toilet and water label over a blank value");
 
 console.log("");
 if (failures) {

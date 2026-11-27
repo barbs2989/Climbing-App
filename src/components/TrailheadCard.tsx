@@ -14,6 +14,9 @@ export interface TrailheadCardProps {
       trailheadDirection?: string | null;
       trailheadLat?: number | string | null;
       trailheadLng?: number | string | null;
+      trailheadPass?: string | null;
+      trailheadParking?: string | null;
+      trailheadFacilities?: string | null;
     } | null;
     waypoints?: Array<{ name?: string | null; type?: string | null }> | null;
   };
@@ -82,6 +85,16 @@ export default function TrailheadCard({route,onEdit}: TrailheadCardProps){
      good values, which is what makes hiding safe (scripts/trailhead-directions-reviewed.json). */
   const dir=trailheadDirectionProblem(al.trailheadDirection)?null:al.trailheadDirection;
   const dup=dir&&(route.approach||"").slice(0,80).indexOf(dir.slice(0,40))!==-1;
+  /* WHAT A CLIMBER NEEDS TO KNOW AT THE CAR (owner note, 2026-11-26: "Add more detail to the
+     trailhead"). The pass to leave on the dash, what the parking is like, and whether there is a
+     toilet or water: the three facts every Forest Service trailhead page lists beside its name, and
+     the ones WTA puts at the top of every hike. Researched per trailhead and stored in
+     approach_logistics (trailheadPass / trailheadParking / trailheadFacilities), editable from the
+     trailhead editor like the name and directions. LABELLED ROWS, NOT STAT TILES: section 7 of
+     check:trailhead-directions keeps TECH STATS' figures off this card, and none of these is one.
+     A blank fact is simply left out; nothing is guessed. ACCESS & REGULATIONS keeps the pass's full
+     terms (prices, what it covers); this row is its name, where the climber parks. */
+  const facts=([["Parking pass",al.trailheadPass],["Parking",al.trailheadParking],["Toilet and water",al.trailheadFacilities]] as [string,string|null|undefined][]).map(function(f): [string,string]{return [f[0],typeof f[1]==="string"?f[1].trim():""];}).filter(function(f){return !!f[1];});
   const thLink: CSSProperties={flex:"1 1 0",display:"flex",alignItems:"center",justifyContent:"center",boxSizing:"border-box",minHeight:44,padding:"8px 10px",borderRadius:8,border:"1px solid "+C.greenDim,background:C.greenBg,color:C.green,fontSize:12.5,fontWeight:700,textDecoration:"none",whiteSpace:"nowrap"};
   return <div style={{background:C.surface,borderRadius:12,padding:"12px 14px",border:"1px solid "+C.border,marginTop:12,marginBottom:12}}>
     <div style={{display:"flex",justifyContent:"space-between",alignItems:"flex-start",gap:8,marginBottom:10}}>
@@ -95,6 +108,7 @@ export default function TrailheadCard({route,onEdit}: TrailheadCardProps){
       {onEdit?<EditIconButton onClick={onEdit} title="Edit trailhead and approach"/>:null}
     </div>
     {(dir&&!dup)?<div style={{fontSize:12.5,color:C.textSub,lineHeight:1.55,marginBottom:12}}>{_dirIsOther?<span style={{color:C.textMuted}}>{"Directions on file describe a different start \u2014 "+al.trailhead+": "}</span>:null}{dir}</div>:null}
+    {facts.length?<dl style={{margin:"0 0 12px",padding:0}}>{facts.map(function(f,i){return <div key={f[0]} style={{display:"flex",gap:10,padding:"7px 0",borderTop:i?"1px solid "+C.borderLight:"none"}}><dt style={{...SUB_LABEL,flex:"0 0 92px",margin:0,lineHeight:1.5}}>{f[0]}</dt><dd style={{margin:0,flex:1,minWidth:0,fontSize:12.5,color:C.text,lineHeight:1.5,overflowWrap:"anywhere"}}>{f[1]}</dd></div>;})}</dl>:null}
     {/* THE COORDINATES GET THEIR OWN ROW, the two maps apps the row under it (owner note, 2026-10-25:
         "Directions to trailhead box doesn't have proper spacing"). With Apple Maps added beside Google
         Maps (#2831) the three controls shared one line, and at 390px the coordinate shrank to
