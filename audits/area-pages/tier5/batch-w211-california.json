@@ -1,0 +1,63 @@
+{
+  "ca_pothole_rock": {
+    "_expect": {
+      "name": "Pothole Rock",
+      "region": "California"
+    },
+    "blurb": "Pothole Rock is a single boulder inside the Hidden Valley Campground bouldering zone of Joshua Tree National Park, between the Intersection Rock parking lot and the west side of Chimney Rock, a short stroll from the Caveman boulder. It has nine problems, every one of them very easy, running from VB up to V0-minus. Traffic stays light, which makes it a handy spot for a first warm-up before heading to harder boulders nearby. A few lines feel stiffer than their numbers suggest, so do not assume every move is a gimme. The stone is monzogranite.",
+    "review": {
+      "sources": [
+        "https://www.mountainproject.com/area/109792474/pothole-rock",
+        "https://www.mountainproject.com/area/106041688/hvcg-west"
+      ]
+    }
+  },
+  "ca_the_castle": {
+    "_expect": {
+      "name": "The Castle",
+      "region": "California"
+    },
+    "blurb": "The Castle is a granodiorite formation in the southern part of the Alabama Hills near Lone Pine, in the Eastern Sierra, at roughly 4,800 feet. Nine routes mix sport, trad, top-rope and one aid line. Grades start around 5.6 and reach low 5.12, with the bulk between 5.9 and 5.10. The base sits above the Candy Store area and is reached by third-class scrambling and boulder hopping, with the west side giving the simpler way in. The formation stands apart from its neighbours, so expect to spend some effort finding the start of each line.",
+    "review": {
+      "sources": [
+        "https://www.mountainproject.com/area/122302738/the-castle",
+        "https://mountainproject.com/route/122302788/ride-the-lightning?print=1"
+      ]
+    }
+  },
+  "ca_split_boulder_5": {
+    "_expect": {
+      "name": "Split Boulder",
+      "region": "California"
+    },
+    "blurb": "Split Boulder sits just south of King Dome in the Hall of Horrors end of Joshua Tree National Park, a short hike from the paved lot. The boulder is cleaved cleanly into two halves, with a big juniper growing behind it. Nine problems here run from VB to V2, with most at VB or V0, so it suits beginners and anyone warming up. Landings are flat and the view looks out over open desert. Few people come this way, and the walk in is brief. The rock is monzogranite.",
+    "review": {
+      "sources": [
+        "https://www.mountainproject.com/area/106120158/split-boulder",
+        "https://www.mountainproject.com/area/106418142/king-dome-area"
+      ]
+    }
+  },
+  "ca_right_side_gully": {
+    "_expect": {
+      "name": "Right Side Gully",
+      "region": "California"
+    },
+    "blurb": "Right Side Gully is one of the gullies of The Fortress, a sandstone crag above Sespe Creek off Highway 33 in the Ojai area of the Central Coast. Three large flatirons form the gully, and each carries long, moderate lines, some of them two pitches. Nine routes, eight bolted and one trad, run from about 5.8 to 5.11, with most in the 5.10 range. Slab and arete climbing dominates, so it suits climbers who are comfortable on sustained, balancy ground.",
+    "review": {
+      "sources": [
+        "https://www.mountainproject.com/area/106094647/right-side-gully",
+        "https://www.mountainproject.com/area/105892652/the-fortress"
+      ]
+    }
+  },
+  "_skipped": {
+    "ca_ramblin_wall_north": "Parent Williamson Rock is under a closure to all climbing per the only fetched pages (MP Williamson Rock, search results); no page about Ramblin' Wall North itself found.",
+    "ca_shipwreck_boulder": "Fetched area page and Turtle Rock Circuit page state climbing there is permanently closed.",
+    "ca_samadhi_towers": "second page is a sibling crag page only",
+    "ca_san_jose_communications_hill": "pages describe an artificial wall; stored as a crag (catalog question)"
+  },
+  "_conflicts": {
+    "ca_san_jose_communications_hill": "Stored rock 'serpentinite' conflicts with both pages, which describe an artificial wall (https://mountainproject.com/area/122986649/san-jose-communications-hill, https://mandarin-wedge-33kh.squarespace.com/climbing/william-lewis-manly-park)."
+  }
+}
