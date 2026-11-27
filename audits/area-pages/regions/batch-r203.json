@@ -1,0 +1,30 @@
+{
+ "nv_red_spring_boulders": {
+  "_expect": { "name": "Red Spring Boulders", "region": "Nevada" },
+  "blurb": "Red Spring Boulders is a bouldering zone on the Calico Basin side of Red Rock in southern Nevada, organised around the Red Spring parking lot. The rock is sandstone. Many boulders sit a short walk from the cars, while others call for an uphill hike or some scrambling. The Main Cluster holds the most climbs, and Hillside Boulders are spread across the slope west of the lot, where Beating Heart Boulders is one of the busier blocks. Bouldering dominates, with only a handful of roped routes. Problems run from V0 up to V10, with plenty in the V0 to V5 range and a thinner hard end above that. The area is shaded in the afternoon once the sun slips behind the hillside.",
+  "review": { "sources": ["https://www.mountainproject.com/area/106657528/red-spring-boulders", "https://www.mountainproject.com/area/200291782/hillside-boulders"] }
+ },
+ "on_gold_mine": {
+  "_expect": { "name": "Gold Mine", "region": "Ontario" },
+  "blurb": "Gold Mine is a bouldering area near Elliot Lake, west of Sudbury in northern Ontario, and part of The Nooks. The rock is granite, and the boulders range from blocks in a talus field to ones tucked away in the woods. Lower Gold Mine holds the most climbs and is the densest zone, close to the road, with big boulders, flat landings and some classic lines. Upper Gold Mine sits uphill and is much less developed, and Gold Mine West, Nightmare Zone and Gold Mine Talus add smaller groups. Everything here is bouldering, from V0 to V8, centred on V2 to V5 with a thinner hard end. The area is recent, and the middle and upper zones in particular have seen little development so far.",
+  "review": { "sources": ["https://gripped.com/?p=41647", "https://www.mountainproject.com/area/118166272/gold-mine"] }
+ },
+ "ca_echo_summit": {
+  "_expect": { "name": "Echo Summit", "region": "California" },
+  "blurb": "Echo Summit sits on Highway 50 in the Lake Tahoe area of California. Echo Lakes holds the most climbs. There the rock is largely granite and the routes are mostly trad, running from about 30 to 300 feet, with roughly ten sport routes at Berkeley Camp Rocks, a few miles from the lake. Most approaches at Echo Lakes take under an hour, largely along the Pacific Crest Trail. The wider area also offers boulders with short approaches, including the PCT Boulders and Benwood Meadow. Trad is the biggest share, followed by sport and bouldering. Roped grades run from 5.6 to 5.12 and are mostly 5.8 to 5.11, while the boulder problems stretch from easy up to V10.",
+  "review": { "sources": ["https://www.mountainproject.com/area/114496503/echo-summit", "https://mountainproject.com/area/105733995/echo-lakes"] }
+ },
+ "co_escalante_canyon": {
+  "_expect": { "name": "Escalante Canyon", "region": "Colorado" },
+  "blurb": "Escalante Canyon lies south of Grand Junction on Colorado's Western Slope. The walls are sandstone, and the climbing is mainly cracks on traditional gear, with only a few sport routes, a little aid and a handful of boulder problems. Approaches to the walls are short. Most routes face south, though both sides of the canyon have climbing. Grades centre on 5.10 and 5.11, with a good number of 5.9s and a few 5.12s and 5.13s. Zappa Wall holds the most climbs, followed by Interiors Wall Area and Cabin Wall, with The Pot Holes Area and Gunnison Area adding more crack lines.",
+  "review": { "sources": ["https://www.mountainproject.com/area/105788880/escalante-canyon", "http://www.skywardmountaineering.com/grand-junction-rock-climbing"] }
+ },
+ "mo_em_sage_mountain_recreation_area": {
+  "_expect": { "name": "Sage Mountain Recreation Area", "region": "Missouri" },
+  "blurb": "Sage Mountain Recreation Area is in eastern Missouri near Berger, in forested hills about an hour from St. Louis. Bouldering makes up most of it, with a smaller set of sport and top-rope routes and a few trad lines. Mountain Right and Mountain Left hold the most climbs, with Moss Fairy Landing and the Dragon's Lair cave among the named zones. The cave and Bandit's Cove have overhanging rock with cracks and good holds. Most boulders are shaded in the late afternoon, the cave being the exception. Boulder problems run from V0 to V7, mostly V1 to V4, and the roped routes span about 5.6 to 5.12, mostly 5.9 to 5.11.",
+  "review": { "sources": ["https://terrain-mag.com/sage-mountain-recreation-area-opens-in-berger-missouri/", "https://mountainproject.com/area/121568608/em-sage-mountain-recreation-area"] }
+ },
+ "_skipped": {
+  "qc_16_mont_r_gie": "Wrapper region: holds only Mont Rigaud (121 of 122 climbs, itself an input region in r204) plus one single-climb crag; pages found describe Mont Rigaud."
+ }
+}
