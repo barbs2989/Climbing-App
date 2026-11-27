@@ -1,0 +1,49 @@
+{
+ "ca_olympus": {
+  "_expect": { "name": "Olympus", "region": "California" },
+  "blurb": "Olympus is a cluster of boulders on a hillside in the Box Springs Mountain Reserve area of Riverside, at roughly 1,400 feet. The stones lean against one another, so the group is easy to pick out: the lowest one carries a tall slab with easy climbing on its face, and two more boulders on the far side form a small cave. There are nine bouldering problems. Most are very easy, in the VB to V0 range, with a single V2 and two V4 lines for stronger climbers. The slab is a highball, so the landing deserves a careful look before pulling on.",
+  "review": { "sources": ["https://mountainproject.com/area/123710438/olympus", "https://mountainproject.com/area/123710411/ancient-cluster"] }
+ },
+ "ca_earthwatch_wall": {
+  "_expect": { "name": "Earthwatch Wall", "region": "California" },
+  "blurb": "Earthwatch Wall is a short, steeply overhanging cliff on La Cumbre Peak above Santa Barbara, at about 3,900 feet. It has nine climbs: six bolted sport routes, two trad lines and one top-rope. Grades start with an easy 5.4 and a 5.7 on gear, then the sport routes cluster in the 5.10s and 5.11s, topped by one 5.12 and one 5.13. The wall faces east, so it takes the morning sun and goes into shade as the day wears on. The overhanging angle means steep, strenuous moves rather than slab or crack climbing.",
+  "review": { "sources": ["https://mountainproject.com/area/108775345/earthwatch-wall", "https://mountainproject.com/area/108775318/la-cumbre-peak"] }
+ },
+ "ca_pie_slice_area": {
+  "_expect": { "name": "Pie Slice Area", "region": "California" },
+  "blurb": "Pie Slice Area is a small cluster of granite problems in the Horse Flats zone of the Angeles National Forest, along Highway 2 north of the Los Angeles basin. It has nine climbs: six boulder problems running from V0 up to V7, two top-rope lines around 5.10 and one trad route at about the same grade. The easier problems suit climbers new to bouldering, while the top end is well beyond beginner level. Trails link it with the Main Area boulders, and a faint path leads on to a separate top-rope wall nearby.",
+  "rock": "granite",
+  "review": { "sources": ["https://mountainproject.com/area/105921673/pie-slice-area", "https://www.mountainproject.com/area/105920760/horse-flats"] }
+ },
+ "ca_half_dome_boulder": {
+  "_expect": { "name": "Half Dome Boulder", "region": "California" },
+  "blurb": "Half Dome Boulder sits on Mount Rubidoux in Riverside, just below the Joe Brown boulders and above the Ben Lewis Bridge, at about 1,250 feet. The larger block has two moderate crack lines on a face that stays shaded for much of the day, plus a smooth vertical wall that is often toproped because the landing is poor. There are nine climbs: seven boulder problems and two top-ropes. Difficulty runs from very easy problems to a few much harder ones, and several lines work equally well as a boulder problem or a rope climb.",
+  "review": { "sources": ["https://mountainproject.com/area/106121614/half-dome-boulder", "https://www.mountainproject.com/area/107013425/joe-brown-and-half-dome-area"] }
+ },
+ "ca_lake_boulder": {
+  "_expect": { "name": "Lake Boulder", "region": "California" },
+  "blurb": "Lake Boulder is a square-cut block beside the trail above a lake near Mammoth Lakes in the Eastern Sierra, at about 9,200 feet. Its nine problems are all low, with flat landings, and they spread across several faces and arêtes. Grades go from very easy through V0 and V1 to a V2, a V3 and one V4 variation, so it works as a warm-up stop or a place to bring newcomers. It is one of several boulder groups around T J Lake.",
+  "review": { "sources": ["https://mountainproject.com/area/111939122/lake-boulder", "https://www.mountainproject.com/area/107679195/t-j-lake"] }
+ },
+ "ca_peanut_boulder": {
+  "_expect": { "name": "Peanut Boulder", "region": "California" },
+  "blurb": "Peanut Boulder is a granite block in the Main Area of Horse Flats, in the Angeles National Forest at close to 5,800 feet. It stands downhill from the Y-shaped crack, past a neighbouring boulder, and away from the main trail. It has nine bouldering problems. Most fall between V1 and V4, but three are much harder, running from V6 up to V9, so it leans toward stronger boulderers while still offering a few moderate lines.",
+  "rock": "granite",
+  "review": { "sources": ["https://mountainproject.com/area/108150602/peanut-boulder", "https://mountainproject.com/area/105921667/main-area"] }
+ },
+ "ca_dr_haney_s_tool_shed_area": {
+  "_expect": { "name": "Dr. Haney's Tool Shed Area", "region": "California" },
+  "blurb": "Dr. Haney's Tool Shed Area is a small group of rocks in the Pinto Basin of Joshua Tree National Park, at about 4,400 feet, close to the Live Oak Picnic Area. It has nine climbs, seven trad and two sport, with grades from 5.3 up to 5.10. Several fall between 5.5 and 5.8, and three sit at 5.10, so beginners and intermediate climbers both have something to try. The rock here is rough and granular, which is hard on skin but gives good friction.",
+  "parking_note": "Leave the car at the Live Oak picnic area and walk southeast, or use the large pullout on Cottonwood Road just beyond Belle Campground and walk west.",
+  "review": { "sources": ["https://mountainproject.com/area/106757667/dr-haneys-tool-shed-area", "https://mountainproject.com/area/105720651/live-oak-picnic-area", "https://mountainproject.com/route/106788372/dr-haney"] }
+ },
+ "ca_dxm_wall": {
+  "_expect": { "name": "DXM Wall", "region": "California" },
+  "blurb": "DXM Wall is a cliff within The Ghosts, a collection of towers and formations in the Alabama Hills near Lone Pine, in the Eastern Sierra at about 4,760 feet. It has nine routes: four sport, four trad and one top-rope, with grades from 5.6 into the low 5.11s. Most sit between 5.8 and 5.10, which makes it a reasonable stop for climbers working through the middle grades, with a few easier lines and one harder top-rope problem at the upper end.",
+  "review": { "sources": ["https://mountainproject.com/area/106320080/dxm-wall", "https://mountainproject.com/area/106162152/the-ghosts"] }
+ },
+ "_skipped": {},
+ "_conflicts": {
+  "ca_lake_boulder": "Stored rock is volcanic rock, but the parent T J Lake page (https://www.mountainproject.com/area/107679195/t-j-lake) says the east and south shores are gneiss and the north and west sides granite; the Lake Boulder page (https://mountainproject.com/area/111939122/lake-boulder) gives no rock type. Rock left unchanged and unnamed in the blurb."
+ }
+}
