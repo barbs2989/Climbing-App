@@ -1,0 +1,44 @@
+{
+ "bc_firewall": {
+  "_expect": { "name": "Firewall", "region": "British Columbia" },
+  "blurb": "Firewall is a small crag on the western side of Mt Wells, near Victoria on Vancouver Island, tucked among arbutus and Garry oak. It has six sport routes, with grades clustered in the 5.10 range and stretching from 5.9 up to 5.11. The basalt is polished and dark, and the wall stays shaded through the morning before getting sun later in the day. It is a short uphill walk from the road, and La Discothèque sits just a couple of minutes along the trail, so the two pair up well for a half day of steady mid-grade climbing.",
+  "review": { "sources": ["https://www.mountainproject.com/area/113594241/firewall", "https://www.mountainproject.com/area/113594581/la-discotheque"] }
+ },
+ "bc_la_discoth_que": {
+  "_expect": { "name": "La Discothèque", "region": "British Columbia" },
+  "blurb": "La Discothèque is a compact crag on Mt Wells near Victoria, a couple of minutes uphill from the neighbouring Firewall. It has six routes, four sport and two trad, ranging from 5.8 to 5.11 with a good share in the 5.10s and low 5.11s. The rock is dark basalt, and the lower part of the wall is steep. The crag stays in shade until the afternoon, which suits warm days. Climbing here is medium-grade and of good quality, a natural add-on to a session at Firewall.",
+  "review": { "sources": ["https://www.mountainproject.com/area/113594581/la-discotheque", "https://sendage.com/area/discotheque-mt-wells-vancouver-island-bc-canada", "https://www.mountainproject.com/area/113594241/firewall"] }
+ },
+ "bc_lake_view_crag": {
+  "_expect": { "name": "Lake View Crag", "region": "British Columbia" },
+  "blurb": "Lake View Crag looks out over the east arm of Morte Lake on Quadra Island. There are six sport routes here, from 5.7 up to 5.10, which makes it friendly for newer leaders while still offering some steeper lines for stronger climbers. The rock is weathered, coarse and mostly clean, and with no slope above feeding water onto the face it dries fast after rain. A wide ledge at the base gives a group room to spread out, and the lake beach is a short stroll away for a swim between routes.",
+  "approach": "From the Morte Lake trailhead, follow the main trail along the lake's north side for roughly 30 to 40 minutes, then take a short path uphill through the forest to the crag.",
+  "review": { "sources": ["https://quadraisland.ca/adventure-recreation-tours/rock-climbing/morte-lake.html", "https://www.mountainproject.com/area/110940428/morte-lake", "https://www.mountainproject.com/v/lake-view-arte/112839645"] }
+ },
+ "bc_the_zoo": {
+  "_expect": { "name": "The Zoo", "region": "British Columbia" },
+  "blurb": "The Zoo is a small steep crag in the Comox Lake climbing area, just outside Cumberland on Vancouver Island. It has six routes, five sport and one trad, with most in the 5.10 range and a couple at 5.11. The lines follow arêtes and dihedrals on basalt, the dominant rock at Comox Lake. It is a short walk from neighbouring crags such as Downtown Eastside, so it is easy to combine with other walls. Expect tougher, sustained climbing rather than easy warm-ups.",
+  "review": { "sources": ["https://www.mountainproject.com/area/119060199/the-zoo", "https://www.mountainproject.com/area/119060052/comox-lake"] }
+ },
+ "bc_genesis": {
+  "_expect": { "name": "Genesis", "region": "British Columbia" },
+  "blurb": "Genesis is a shaded forest crag in Murrin Park, on the highway between Britannia Beach and Squamish. The rock is granite, well featured and steep. Six routes split evenly between trad and sport, running from 5.8 to 5.11, with the bulk around 5.10. It sits only a minute or so from the parking lot, which makes it a quick stop for a short session or a cool spot when other walls are hot. The wall is small, so it works best as part of a wider day at Murrin.",
+  "review": { "sources": ["https://www.mountainproject.com/area/106999946/genesis", "https://www.mountainproject.com/area/105910820/murrin-park"] }
+ },
+ "bc_cathedral_rock": {
+  "_expect": { "name": "Cathedral Rock", "region": "British Columbia" },
+  "blurb": "Cathedral Rock is a crag in the Comox Lake area near Cumberland on Vancouver Island, sitting above the campground boulders and just along from The Zoo. Six routes, three sport and three trad, mix moderately hard corners with face climbing on basalt. Grades start at 5.10, centre on 5.11 and reach 5.12, so it suits climbers already comfortable with harder leads. Several of the lines carry two or three stars, and it is worth pairing with the neighbouring walls for a full day.",
+  "review": { "sources": ["https://www.mountainproject.com/area/119063794/cathedral-rock", "https://www.mountainproject.com/area/119060052/comox-lake"] }
+ },
+ "bc_the_boss_wall": {
+  "_expect": { "name": "The Boss Wall", "region": "British Columbia" },
+  "blurb": "The Boss Wall is one of the strongest walls at Horne Lake on Vancouver Island, reached by a left turn at the first trail split on the uphill hike. It holds six sport routes aimed at experts: one at 5.11, one at 5.12 and the rest in the 5.13 and 5.14 range. The limestone is steep, from vertical to overhanging, with roofs and dihedrals, and the climbing is technical with pockets and endurance sections. It is not a place for beginners or for easy mileage.",
+  "review": { "sources": ["https://www.mountainproject.com/area/201845514/the-boss-wall", "https://www.mountainproject.com/area/108922411/horne-lake", "https://sendage.com/area/boss-wall-horne-lake-vancouver-island-bc-canada"] }
+ },
+ "_skipped": {
+  "bc_lower_tier": "no fetched page is about Lower Tier itself (Jug Slab route pages only name Upper Tier; no Lower Tier area page found)"
+ },
+ "_conflicts": {
+  "bc_cathedral_rock": "stored rock basalt (Comox Lake area page https://www.mountainproject.com/area/119060052/comox-lake) vs a route write-up calling the face granite and south-facing (https://app.advcollective.com/climbing/deep-thoughts-at-cathedral-rock-a-bold-test-of-precision-and-power); stored value left unchanged"
+ }
+}
