@@ -1,0 +1,150 @@
+{
+ "dry": false,
+ "applied": [
+  {
+   "id": "wa_mount_baker_park_glacier_headwall",
+   "i": 1,
+   "label": "Headwall ice (x3)",
+   "from": "~50m pitches, up to ~60°",
+   "to": "AI3, ~60° ice",
+   "anchor": "ice screws",
+   "change": "to_pitch"
+  },
+  {
+   "id": "wa_mount_stuart_stuart_glacier_couloir",
+   "i": 1,
+   "label": "First step",
+   "from": "Ice step, 60–80°",
+   "to": "WI3, 60-80° ice step",
+   "anchor": "ice screws",
+   "change": "to_pitch"
+  },
+  {
+   "id": "wa_dragontail_peak_r4",
+   "i": 3,
+   "label": "Step to 3rd couloir",
+   "from": "Ice or mixed band",
+   "to": "WI2-3 or M3, short step",
+   "anchor": "ice screws and rock gear",
+   "change": "to_pitch"
+  },
+  {
+   "id": "wa_eldorado_peak_northeast_face",
+   "i": 2,
+   "label": "Face section",
+   "from": "Snow/ice to 60°",
+   "to": "AI2, snow/ice to 60°",
+   "anchor": "pickets and ice screws",
+   "change": "to_pitch"
+  },
+  {
+   "id": "wa_mount_rainier_mowich_face",
+   "i": 3,
+   "label": "Upper face variations",
+   "from": "40–60° snow/ice",
+   "to": "AI2-3, 50-60° snow/ice",
+   "anchor": "pickets or ice screws",
+   "change": "to_pitch"
+  },
+  {
+   "id": "wa_mount_shuksan_price_glacier",
+   "i": 0,
+   "label": "Section 1",
+   "from": "AI2",
+   "to": "Steep snow/ice, between seracs",
+   "anchor": null,
+   "change": "to_leg"
+  },
+  {
+   "id": "wa_colchuck_peak_holsten_hilden",
+   "i": 3,
+   "label": "4-5",
+   "from": "Snow over rock",
+   "to": "Snow over rock",
+   "anchor": "rock gear, pins",
+   "change": "to_pitch"
+  },
+  {
+   "id": "wa_lincoln_peak_standard",
+   "i": 2,
+   "label": "Steep gullies",
+   "from": "50-60 deg snow/ice",
+   "to": "AI2, 50-60° snow/ice",
+   "anchor": "pickets or ice screws",
+   "change": "to_pitch"
+  },
+  {
+   "id": "wa_mount_logan_fremont_glacier",
+   "i": 2,
+   "label": "4: Lower glacier",
+   "from": "Glacier travel, AI1, crevasse hazard",
+   "to": "Glacier travel, crevassed",
+   "anchor": null,
+   "change": "to_leg"
+  },
+  {
+   "id": "wa_mount_logan_fremont_glacier",
+   "i": 3,
+   "label": "5: Upper glacier to Hogsback",
+   "from": "Glacier AI1-AI2, moderate incline",
+   "to": "Glacier travel, moat crossing",
+   "anchor": null,
+   "change": "to_leg"
+  },
+  {
+   "id": "wa_mount_rainier_liberty_ridge",
+   "i": 3,
+   "label": "Upper ridge",
+   "from": "Steep snow/ice",
+   "to": "AI3, short 70-80° ice",
+   "anchor": "ice screws",
+   "change": "to_pitch"
+  },
+  {
+   "id": "wa_mount_rainier_liberty_ridge",
+   "i": 4,
+   "label": "Black Pyramid",
+   "from": "Snow/ice to ~60°",
+   "to": "AI2, 40-60° ice",
+   "anchor": "ice screws or pickets",
+   "change": "to_pitch"
+  },
+  {
+   "id": "wa_mount_rainier_liberty_ridge",
+   "i": 5,
+   "label": "Bergschrund & summit ice cap",
+   "from": "Snow ramp to steep ice",
+   "to": "AI2, short vertical steps",
+   "anchor": "ice screws",
+   "change": "to_pitch"
+  },
+  {
+   "id": "wa_mount_rainier_ptarmigan_ridge",
+   "i": 3,
+   "label": "Right variation: ice slope and exit chute",
+   "from": "Blue ice to 55°, rock step",
+   "to": "AI2, 55° ice, low 5th",
+   "anchor": "ice screws, pins",
+   "change": "to_pitch"
+  },
+  {
+   "id": "wa_sw_couloir_and_face",
+   "i": 1,
+   "label": "Ice chimney",
+   "from": "Vertical ice, rock corner",
+   "to": "WI3, vertical step",
+   "anchor": "ice screws",
+   "change": "to_pitch"
+  },
+  {
+   "id": "wa_sw_couloir_and_face",
+   "i": 5,
+   "label": "Ice slope to headwall",
+   "from": "60–70° ice then snow",
+   "to": "WI2, 60-70° ice",
+   "anchor": "pickets or ice screws",
+   "change": "to_pitch"
+  }
+ ],
+ "refused": []
+}
