@@ -57,6 +57,8 @@ const PROMISED = [
   { promise: "filler climber", decl: "FILLER_CLIMBERS" },
   { promise: "sample group", decl: "GROUPS" },
   { promise: "sample comment", decl: "COMMENTS" },
+  { promise: "seed CLIMBERS", decl: "CLIMBERS" },
+  { promise: "seed open crews", decl: "OPEN_CREWS" },
 ];
 // The rest are useState seeds rather than named constants — they have no declaration to key on, so
 // they are matched by a literal that exists only inside their own DEMO_FILLERS branch.
@@ -64,6 +66,8 @@ const PROMISED_INLINE = [
   { promise: "sample group event", needle: 'group_wasatch_trad:[{id:"ev1"' },
   { promise: "sample group join-request", needle: 'groupId:"group_alpine_start"' },
   { promise: "sample condition report", needle: "scoutOnly:true" },
+  // The seed climbs stay as the catalog of a NO-BACKEND build only: `(DEMO_FILLERS||!USE_DB)?[...]:[]`.
+  { promise: "seed climbs in a database build", needle: "||!USE_DB)?[" },
 ];
 
 const fail = (m) => { console.error(`\ncheck:sample-content-removable FAILED — ${m}`); process.exit(1); };
@@ -79,6 +83,10 @@ for (const f of FILES) {
 const decl = src["ClimbMatchCore.jsx"].match(/const\s+DEMO_FILLERS\s*=\s*(true|false)\s*;/);
 if (!decl) fail(`could not find \`const ${FLAG} = true|false;\` in ClimbMatchCore.jsx. If it became a computed value this guard is reading the wrong thing, and every assertion below would be about a flag it cannot see.`);
 const flagValue = decl[1];
+// THE EXAMPLES ARE REMOVED (owner note 2026-11-26: "Remove examples seeded everything from the app.
+// Only keep database stuff now"). The flag may be turned on in a local checkout for a look, but a
+// committed `true` ships every example to production, so it fails here.
+if (flagValue !== "false") fail(`${FLAG} is ${flagValue}. The owner removed the sample content (2026-11-26) — the app shows only what the database holds. Set it back to false before committing.`);
 
 // ---- 1 + 3. every constant initialised from the flag, found rather than listed ----
 const gated = new Map(); // name -> { file, emptiesOff }
@@ -186,36 +194,38 @@ if (clearedByReset.size < 10) fail(`the sign-in reset parsed as only ${clearedBy
 // — the standard KNOWN and PARTIAL_ON_PURPOSE are held to elsewhere in this repo.
 // (Empty since 2026-11-05: `filters` was the one entry — route-search defaults, a UI starting position —
 // and it stopped parsing as a seeded declaration when its setter went with saved searches, the only writer.)
-const NOT_SEED_CONTENT = {};
-const seededDecls = [];
+// `profile` is the editor's draft, copied from ME -- which is itself blanked when the flag is off --
+// so it is not sample content of its own.
+const NOT_SEED_CONTENT = { profile: "the profile editor's draft, derived from ME, which the flag blanks" };
+const seededDecls = [], flagGatedStates = [];
 for (const m of appSrc.matchAll(/\[(\w+),\s*set(\w+)\]\s*=\s*useState\(/g)) {
   const from = m.index + m[0].length;
   let d = 1, j = from;
   for (; j < appSrc.length && d > 0; j++) { const c = appSrc[j]; if (c === "(") d++; else if (c === ")") d--; }
   const init = appSrc.slice(from, j - 1);
-  if (/DEMO_FILLERS/.test(init)) continue;                       // rules 1 and 3 already own these
+  if (/DEMO_FILLERS/.test(init)) { flagGatedStates.push(m[1]); continue; }
   if (!/^\s*(\[\s*\{|\[\s*"|\[\s*\d|\{\s*\w+\s*:)/.test(init)) continue;
   seededDecls.push(m[1]);
 }
-if (seededDecls.length < 10) fail(`only ${seededDecls.length} ungated seeded declaration(s) parsed. The app has around twenty, so the traversal is broken rather than the app being clean.`);
+// Since the removal (2026-11-26) the reset is no longer enough: a GUEST has no uid, so the reset never
+// runs for them, and an ungated seed would be shown to every visitor. Every seeded useState must be
+// gated on the flag at its declaration; the reset stays as the second line for a flag turned on locally.
+if (flagGatedStates.length < 10) fail(`only ${flagGatedStates.length} useState declaration(s) parsed as gated on ${FLAG}. The app has around twenty, so the traversal is broken rather than the app being clean.`);
 
-const resetCovered = seededDecls.filter((n) => clearedByReset.has(n));
-const uncovered = seededDecls.filter((n) => !clearedByReset.has(n) && !NOT_SEED_CONTENT[n]);
+const resetCovered = flagGatedStates.filter((n) => clearedByReset.has(n));
+const uncovered = seededDecls.filter((n) => !NOT_SEED_CONTENT[n]);
 if (uncovered.length) {
-  problems.push(`${uncovered.length} seeded declaration(s) are gated by neither ${FLAG} nor the sign-in reset: ${uncovered.join(", ")}. A real signed-in climber keeps them beside their own rows, because every hydration path is additive. Clear it in the \`if(uid){...}\` reset, or declare it in NOT_SEED_CONTENT with the reason it is a preference rather than sample data.`);
+  problems.push(`${uncovered.length} useState declaration(s) start POPULATED and are not gated on ${FLAG}: ${uncovered.join(", ")}. A guest has no uid, so the sign-in reset never clears them: every visitor sees them. Gate the initialiser -- \`${FLAG}?<seed>:[]\` -- or declare it in NOT_SEED_CONTENT with the reason it is not sample data.`);
 }
+const notReset = flagGatedStates.filter((n) => !clearedByReset.has(n) && !["userLists", "joinedGroups"].includes(n));
 const staleNotSeed = Object.keys(NOT_SEED_CONTENT).filter((n) => !seededDecls.includes(n));
 if (staleNotSeed.length) {
   problems.push(`NOT_SEED_CONTENT names ${staleNotSeed.join(", ")}, which no longer parses as a seeded declaration. Stale bookkeeping: delete the entry, or find out what it became.`);
 }
 
 console.log(`check:sample-content-removable — ${FLAG} is ${flagValue}; ${gated.size} constant(s) gated on it, ${PROMISED.length + PROMISED_INLINE.length} promise(s) checked.`);
-console.log(`  second mechanism: ${seededDecls.length} ungated seeded declaration(s), ${resetCovered.length} cleared by the sign-in reset, ${Object.keys(NOT_SEED_CONTENT).length} declared not-sample-content.`);
-if (flagValue === "true") {
-  console.log("  NOTE: the flag is ON, which is the temporary state #1566 was asked for. This guard");
-  console.log("        is unaffected either way — it asks whether the OFF branch removes the sample");
-  console.log("        content, which is a property of the source rather than of the flag's value.");
-}
+console.log(`  useState seeds: ${flagGatedStates.length} gated on the flag (${resetCovered.length} also cleared by the sign-in reset), ${seededDecls.length} ungated, ${Object.keys(NOT_SEED_CONTENT).length} declared not-sample-content.`);
+if (notReset.length) console.log(`  note: ${notReset.join(", ")} gated on the flag but not in the sign-in reset (only matters with the flag on locally).`);
 
 if (problems.length) {
   for (const p of problems) console.error(`  FAIL  ${p}`);
