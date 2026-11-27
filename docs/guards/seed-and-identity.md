@@ -571,3 +571,16 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     which is plainly wrong. Whether a sentence is ON SCREEN needs no resolution at all — the
     [[a-partial-measurement-agrees-with-what-you-expect]] shape, caught because the verdict
     disagreed with a fact already known.
+
+- **2026-11-26 — THE EXAMPLES ARE REMOVED, AND `check:sample-content-removable` NOW HOLDS THAT.**
+  Owner note: *"Remove examples seeded everything from the app. Only keep database stuff now."*
+  `DEMO_FILLERS` is `false`, and the guard fails a committed `true`. Section 4 changed meaning: the
+  sign-in reset is no longer enough, because a GUEST has no uid and the reset never runs for them,
+  so every `useState` that starts populated must be gated on the flag at its declaration (25 are;
+  `profile` is declared not-sample-content — it copies `ME`, which the flag blanks). Its floor is
+  now "at least 10 flag-gated useStates parsed". `CLIMBERS` and `OPEN_CREWS` joined PROMISED; the
+  seed `ROUTES` are `(DEMO_FILLERS||!USE_DB)?[...]:[]` — kept only as a no-backend build's catalog,
+  because `dbRouteFull` merged a seed row into a REAL route page whenever the ids matched — and are
+  asserted by an inline needle. `DEMO_FILLERS` had to move ABOVE `ROUTES` and `CLIMBERS`: a `const`
+  read before its line is a TDZ ReferenceError at module load, which blanks the whole app.
+  `MOUNTAINS` stays: it is the no-backend place tree and a lookup table, not sample content.
