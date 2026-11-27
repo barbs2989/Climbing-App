@@ -1,0 +1,325 @@
+{
+ "changes": [
+  {
+   "id": "wa_ragged_ridge",
+   "pin_name": "Fisher Camp, Fisher Creek basin",
+   "field": "distMi",
+   "old": 14.7,
+   "new": 5.5,
+   "confidence": "high",
+   "sources": [
+    {
+     "url": "https://www.nps.gov/noca/planyourvisit/easy-pass-trail.htm",
+     "says": "Easy Pass is 3.5 mi from the trailhead; Fisher Camp is 2 mi beyond the pass"
+    },
+    {
+     "url": "https://www.wta.org/go-hiking/hikes/easy-pass",
+     "says": "Easy Pass hike is 7.0 mi round trip; trailhead 48.5879,-120.8029"
+    },
+    {
+     "url": "https://www.wta.org/go-hiking/hikes/fisher-creek",
+     "says": "Fisher Camp is the camp below Easy Pass on the Fisher Creek trail; 1,150 ft climb from Fisher to the pass"
+    }
+   ]
+  },
+  {
+   "id": "wa_burnt_boot_peak_north_route",
+   "pin_name": "Hardscrabble Creek crossing",
+   "field": "distMi",
+   "old": 2.8,
+   "new": 0.1,
+   "confidence": "medium",
+   "sources": [
+    {
+     "url": "https://www.wta.org/go-hiking/hikes/dutch-miller-gap",
+     "says": "Hardscrabble Creek is crossed at the Hardscrabble Horse Camp end of the Dutch Miller Gap trail (trailhead 47.5104,-121.3495), i.e. at the start, not 2.8 mi in"
+    },
+    {
+     "url": "pin's own coordinates",
+     "says": "pin sits about 0.1 mi from the trailhead pin"
+    }
+   ]
+  },
+  {
+   "id": "wa_guye_peak_improbable_traverse",
+   "pin_name": "Talus cone base / climbing start",
+   "field": "distMi",
+   "old": 0.3,
+   "new": 0.8,
+   "confidence": "low",
+   "sources": [
+    {
+     "url": "route approach text + pin geometry",
+     "says": "approach 30-60 min; pin is 0.7 mi straight from trailhead pin, so trail distance cannot be 0.3"
+    }
+   ]
+  },
+  {
+   "id": "wa_guye_peak_improbable_traverse",
+   "pin_name": "Lunch Ledge belay (~300 ft on route)",
+   "field": "distMi",
+   "old": 0.4,
+   "new": 0.9,
+   "confidence": "low",
+   "sources": [
+    {
+     "url": "route approach text + pin geometry",
+     "says": "0.77 mi straight from trailhead pin; ledge is just above the cone"
+    }
+   ]
+  },
+  {
+   "id": "wa_hagan_mountain_south",
+   "pin_name": "Upper Watson Lake",
+   "field": "remove",
+   "old": null,
+   "new": null,
+   "confidence": "high",
+   "sources": [
+    {
+     "url": "route approach text (Sulphide Creek Camp -> Hidden Lake tarn -> south flank cliff bands -> Hagan Glacier apron)",
+     "says": "this South Slopes route never goes near the Watson/Diobsud lakes or Blum Lakes (Blum Lakes belong to the North Slopes route)"
+    },
+    {
+     "url": "https://www.mountaineers.org/activities/routes-places/bacon-canadian-bacon-peaks",
+     "says": "Diobsud Lakes and Watson Lakes serve Bacon/Watson, a different approach"
+    }
+   ]
+  },
+  {
+   "id": "wa_hagan_mountain_south",
+   "pin_name": "Uppermost Diobsud Lake",
+   "field": "remove",
+   "old": null,
+   "new": null,
+   "confidence": "medium",
+   "sources": [
+    {
+     "url": "route approach text (Sulphide Creek Camp -> Hidden Lake tarn -> south flank cliff bands -> Hagan Glacier apron)",
+     "says": "this South Slopes route never goes near the Watson/Diobsud lakes or Blum Lakes (Blum Lakes belong to the North Slopes route)"
+    },
+    {
+     "url": "https://www.mountaineers.org/activities/routes-places/bacon-canadian-bacon-peaks",
+     "says": "Diobsud Lakes and Watson Lakes serve Bacon/Watson, a different approach"
+    }
+   ]
+  },
+  {
+   "id": "wa_hagan_mountain_south",
+   "pin_name": "~5,300-ft saddle below Mt. Watson",
+   "field": "remove",
+   "old": null,
+   "new": null,
+   "confidence": "medium",
+   "sources": [
+    {
+     "url": "route approach text (Sulphide Creek Camp -> Hidden Lake tarn -> south flank cliff bands -> Hagan Glacier apron)",
+     "says": "this South Slopes route never goes near the Watson/Diobsud lakes or Blum Lakes (Blum Lakes belong to the North Slopes route)"
+    },
+    {
+     "url": "https://www.mountaineers.org/activities/routes-places/bacon-canadian-bacon-peaks",
+     "says": "Diobsud Lakes and Watson Lakes serve Bacon/Watson, a different approach"
+    }
+   ]
+  },
+  {
+   "id": "wa_hagan_mountain_south",
+   "pin_name": "Blum Lakes",
+   "field": "remove",
+   "old": null,
+   "new": null,
+   "confidence": "medium",
+   "sources": [
+    {
+     "url": "route approach text (Sulphide Creek Camp -> Hidden Lake tarn -> south flank cliff bands -> Hagan Glacier apron)",
+     "says": "this South Slopes route never goes near the Watson/Diobsud lakes or Blum Lakes (Blum Lakes belong to the North Slopes route)"
+    },
+    {
+     "url": "https://www.mountaineers.org/activities/routes-places/bacon-canadian-bacon-peaks",
+     "says": "Diobsud Lakes and Watson Lakes serve Bacon/Watson, a different approach"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_redoubt_south_face",
+   "pin_name": "Depot Creek Falls",
+   "field": "distMi",
+   "old": 3.0,
+   "new": 4.3,
+   "confidence": "medium",
+   "sources": [
+    {
+     "url": "https://trailcatjim.com/mt-redoubt-via-redoubt-glacier-mt-spickard-via-southwest-glacier/",
+     "says": "falls are about 3 mi past Monument 65 (which is itself ~1 mi from the car); Ouzel Lake 6.0 h from car"
+    },
+    {
+     "url": "https://www.gaiagps.com/hike/297999/ouzel-lake-via-depot-creek-trail/",
+     "says": "Ouzel Lake is 6.2 mi one way from trailhead (matches stored 6.2)"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_carrie_se_route",
+   "pin_name": "Heart Lake",
+   "field": "distMi",
+   "old": 18.5,
+   "new": 8.0,
+   "confidence": "high",
+   "sources": [
+    {
+     "url": "https://adminonly.wta.org/go-hiking/hikes/sol-duc-river",
+     "says": "Heart Lake 8.0 mi from Sol Duc trailhead"
+    },
+    {
+     "url": "route approach text",
+     "says": "Sol Duc Falls -> Deer Lake junction +1 mi -> Heart Lake +7 mi = 8"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_carrie_se_route",
+   "pin_name": "Deer Lake",
+   "field": "remove",
+   "old": null,
+   "new": null,
+   "confidence": "medium",
+   "sources": [
+    {
+     "url": "route approach text",
+     "says": "approach goes Sol Duc Falls -> Heart Lake -> High Divide -> Cat Basin; Deer Lake is only a junction signpost, the other (Canyon Creek) branch of the High Divide loop"
+    },
+    {
+     "url": "https://www.wta.org/go-hiking/hikes/seven-lakes-basin",
+     "says": "Deer Lake and Heart Lake are the two alternate legs of the loop"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_carrie_se_route",
+   "pin_name": "Cat Basin / High Divide",
+   "field": "distMi",
+   "old": null,
+   "new": 9.3,
+   "confidence": "low",
+   "sources": [
+    {
+     "url": "derived",
+     "says": "Heart Lake 8.0 + 0.5 to High Divide crest (route text) + ~1 mi along crest/trail to Cat Basin (pins 1.2 mi apart straight)"
+    }
+   ]
+  },
+  {
+   "id": "wa_lemah_mountain_east_route",
+   "pin_name": "Lemah Creek crossing",
+   "field": "distMi",
+   "old": 9.2,
+   "new": 6.5,
+   "confidence": "low",
+   "sources": [
+    {
+     "url": "route approach text",
+     "says": "PCT crossing is Pete Lake 4 + 1.2 + 0.8 = 6 mi, but this pin is at 4,926 ft (the 5,000 ft glacier-remnant creek), which the text puts before the 6,500 ft snow gully (7.0); 16 mi round trip puts summit ~8 mi"
+    },
+    {
+     "url": "https://summitpost.org/lemah-glacier-via-lemah-creek/911905",
+     "says": "about 20 mi round trip via Lemah Creek (so summit ~8-10 mi)"
+    }
+   ]
+  },
+  {
+   "id": "wa_southeast_mox_peak_se_rib",
+   "pin_name": "Depot Creek Road parking / trailhead",
+   "field": "latlng",
+   "old": "49.033,-121.4025",
+   "new": "UNSURE: ~1 mile of road from Monument 65 (49.0009,-121.3348)",
+   "confidence": "low",
+   "sources": [
+    {
+     "url": "https://trailcatjim.com/mt-redoubt-via-redoubt-glacier-mt-spickard-via-southwest-glacier/",
+     "says": "washout (start) at ~2600 ft; Monument 65 is about 0.8 h walk from the car"
+    },
+    {
+     "url": "https://www.gaiagps.com/hike/297999/ouzel-lake-via-depot-creek-trail/",
+     "says": "Ouzel Lake only 6.2 mi from start, but stored pin is 8 mi straight from Ouzel"
+    }
+   ]
+  }
+ ],
+ "bivy": [
+  {
+   "id": "wa_hagan_mountain_south",
+   "camp": "Upper Watson Lake",
+   "verdict": "NOT on route; remove",
+   "sources": [
+    {
+     "url": "route approach text",
+     "says": "south route uses Sulphide Camp, Hidden Lake tarn, south benches"
+    }
+   ]
+  },
+  {
+   "id": "wa_hagan_mountain_south",
+   "camp": "Uppermost Diobsud Lake",
+   "verdict": "NOT on route; remove",
+   "sources": [
+    {
+     "url": "https://www.mountaineers.org/activities/routes-places/bacon-canadian-bacon-peaks",
+     "says": "Diobsud Lakes are Bacon/Watson camps"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_carrie_se_route",
+   "camp": "Sol Duc Hot Springs Resort campground",
+   "verdict": "Not on the climb route (roadside resort campground before the trailhead); likely remove, low confidence",
+   "sources": [
+    {
+     "url": "route approach text",
+     "says": "trip starts at Sol Duc trailhead"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_carrie_se_route",
+   "camp": "Heart Lake / Cat Basin / Boston Charlie's Camp",
+   "verdict": "on route",
+   "sources": [
+    {
+     "url": "https://www.mountaineers.org/activities/trip-reports/alpine-scramble-mount-carrie-seven-lakes-loop-1",
+     "says": "parties camp at High Divide/Cat Basin and Boston Charlie's"
+    }
+   ]
+  },
+  {
+   "id": "wa_ragged_ridge",
+   "camp": "Mesahchie basin, below the col",
+   "verdict": "on route",
+   "sources": [
+    {
+     "url": "https://cascadeclimbers.com/forum/topic/95412-tr-ragged-ridge-katsuk-kimtah-cosho-south-side-traverse-from-easy-pass-7282014",
+     "says": "camp at 6,600 ft basin south of Mesahchie"
+    }
+   ]
+  },
+  {
+   "id": "wa_ragged_ridge",
+   "camp": "Fisher Camp",
+   "verdict": "on route as the descent/alternate approach (Fisher Creek trail), keep, distance 5.5",
+   "sources": [
+    {
+     "url": "https://www.nps.gov/noca/planyourvisit/easy-pass-trail.htm",
+     "says": "Easy Pass is 3.5 mi from the trailhead; Fisher Camp is 2 mi beyond the pass"
+    }
+   ]
+  }
+ ],
+ "unsure": [
+  "wa_ultramega_ok / wa_vasiliki_ridge_standard: 'Early Winters Creek crossing' coordinate 48.56803,-120.629805 is ~1.2 mi north of the pullout (48.55/48.549); distMi 0.2/0.3 and elev 4080 look right, so the COORDINATE is wrong, but no source with the true crossing coordinate was found (Mountaineers/SummitPost give none). Suggest moving the pin to the creek just east of the pullout, ~48.550,-120.627 (derived, not sourced), or recompute.",
+  "wa_mount_redoubt_south_face / wa_southeast_mox_peak_se_rib: TH pin 49.033,-121.4025 is 3.8 mi straight from Monument 65 though sources put Monument 65 ~1 mi (0.8 h) from the car, and Ouzel is 6.2 mi trail but 8 mi straight from the pin. Monument 65, falls and Ouzel are mutually consistent; the TH pin is the outlier. No source gave the washout coordinate; the Mox route's Monument 65 1.2, Falls 4.5, Ouzel 6.2 are fine.",
+  "wa_mount_carrie_se_route: Boston Charlie's Camp 12.8 left alone; one Mountaineers guide says ~14 mi, route text says summit ~13 mi. Unsettled.",
+  "wa_lemah_mountain_east_route: three coordinate-less pins (Point 3854 cairn line, Snow gully and moat transition, Southeast ridge notch) - no source for coordinates found. Lemah Creek crossing 6.5 is derived/low.",
+  "wa_ragged_ridge: Mesahchie basin 4.4 left (Easy Pass 3.5 + ~1.1 = 4.6, consistent). Summit pins have no distMi; no sourced distances.",
+  "wa_lena_lake_to_mt_stone_traverse: Putvin Trail hazard is on the DESCENT (route text: exit via Putvin Trail to a different trailhead), so being stored past the summit (13.3 > 10.8) is correct; its coordinates are near the Lena TH only because the Putvin TH is nearby. No change; exact distance unsourced.",
+  "wa_hagan_mountain_south: Hidden Lake (Bacon-Hagan saddle), Hazard pins and the Hagan summit have no distMi; unsourced."
+ ]
+}

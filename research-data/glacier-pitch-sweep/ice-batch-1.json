@@ -1,0 +1,518 @@
+{
+ "wa_argonaut_peak_northeast_couloir": {
+  "id": "wa_argonaut_peak_northeast_couloir",
+  "name": "Northeast Couloir",
+  "discipline": "alpine",
+  "grade": "5.6",
+  "ice_grade": "WI2 (harder if the couloir is icy)",
+  "alpine_grade": null,
+  "pitches": 3,
+  "length_m": 366,
+  "pitch_detail": [
+   {
+    "grade": "Steep snow, 35-45 deg",
+    "notes": "Sustained snow climbing narrowing from ~50 ft to as little as 10 ft wide; can go to neve or ice after a freeze-thaw cycle.",
+    "pitch": "Lower/mid couloir",
+    "lengthM": null
+   },
+   {
+    "grade": "5.5-5.6 / WI2 if icy",
+    "notes": "Mid-fifth-class rock (or ice, conditions dependent) to exit the couloir onto the summit-ridge system; ample rock protection on the flanking walls.",
+    "pitch": "Exit pitch",
+    "lengthM": 20
+   },
+   {
+    "grade": "3rd-4th class",
+    "notes": "Scrambling across the upper snowfield/summit-ridge system to the A-frame summit blocks.",
+    "pitch": "Summit approach",
+    "lengthM": 46
+   }
+  ]
+ },
+ "wa_buckner_mountain_north_face": {
+  "id": "wa_buckner_mountain_north_face",
+  "name": "North Face",
+  "discipline": "alpine",
+  "grade": "AI2",
+  "ice_grade": "AI2",
+  "alpine_grade": "AD",
+  "pitches": 12,
+  "length_m": 396,
+  "pitch_detail": [
+   {
+    "grade": "40-50 degree snow/ice",
+    "notes": "Continuous or simul-climbed snow-ice face above the Boston Glacier bergschrund; the steepest climbing has been reported near a rock outcrop about halfway up and in the final couloir just below the summit.",
+    "pitch": "1-13 (roped/simul-climbed sections)",
+    "lengthM": null
+   }
+  ]
+ },
+ "wa_colfax_peak_fords_theatre": {
+  "id": "wa_colfax_peak_fords_theatre",
+  "name": "Ford's Theatre",
+  "discipline": "ice",
+  "grade": "AI4+",
+  "ice_grade": "AI4+",
+  "alpine_grade": null,
+  "pitches": 4,
+  "length_m": 152,
+  "pitch_detail": [
+   {
+    "crux": true,
+    "grade": "AI4+",
+    "notes": "The ice step hides in a cleft on the right side of a buttress, just up and right of the Cosley-Houston. It starts as rambling WI3, then makes a steeper rightward traverse at WI4 to WI4+ before easing into stemming to the lip. The first ascent split it into three pitches on hanging screw belays; in good ice it has gone as one full 70 m rope-length. Bring plenty of screws.",
+    "pitch": "1-3",
+    "anchor": "ice screws",
+    "lengthM": 70
+   },
+   {
+    "grade": "Steep snow, some ice",
+    "notes": "Above the lip, follow optional ice in the gully, then trend up and left onto steep snow gullies with good steps but little protection; pickets are the useful gear here and for anchors. Cross a narrow knife-edge rib and traverse left to join the Cosley-Houston exit. In sun, ice and snow come off the face above in large chunks.",
+    "pitch": "Snow gullies"
+   },
+   {
+    "grade": "Steep snow",
+    "notes": "Finish up the last stretch of the Cosley-Houston couloir to the summit on steep snow, commonly simul-climbed with pickets for protection. Do not plan to reverse the ice step.",
+    "pitch": "Cosley-Houston finish",
+    "lengthM": 30
+   }
+  ]
+ },
+ "wa_dragontail_peak_r4": {
+  "id": "wa_dragontail_peak_r4",
+  "name": "Triple Couloirs",
+  "discipline": "alpine",
+  "grade": "WI3",
+  "ice_grade": "WI3",
+  "alpine_grade": "D",
+  "pitches": 20,
+  "length_m": 762,
+  "pitch_detail": [
+   {
+    "grade": "40–50° snow/ice",
+    "notes": "From Colchuck Lake, aim for the lowest rock protrusion near the middle of the face and bear slightly left. There are two possible starts (left or right) into the first couloir, which cannot be seen from the lake. Climb about 800 ft of 40–50° snow, sometimes with a tongue of blue ice to the right that takes screws. Most parties simul-climb or solo this section.",
+    "pitch": "Hidden Couloir (1st)",
+    "lengthM": null
+   },
+   {
+    "crux": true,
+    "grade": "WI3",
+    "notes": "About three pitches of 70–80° ice gullies over slabby rock link the first and second couloirs, rated up to M3 when lean. Some years it is fat, easy ice; other years a paper-thin sheet protected by pins and rock gear more than screws. There are two alternatives: a left-trending steep snow ramp, followed by a 20 m rappel from a fixed anchor, or a 5.8 rock bypass.",
+    "pitch": "The Runnels",
+    "lengthM": null
+   },
+   {
+    "grade": "40–50° snow/ice",
+    "notes": "Over 600 ft of 40–50° snow and ice. Some seasons it holds a short AI3 step. After a dry spell it can be knee-deep unconsolidated snow that is slow and exhausting; parties typically simul-climb it.",
+    "pitch": "2nd Couloir",
+    "lengthM": null
+   },
+   {
+    "grade": "Ice or mixed band",
+    "notes": "A short steep band separates the second and third couloirs. Exit up and right, either by a mixed pitch or a steep snow pitch depending on conditions. The band ranges from thick easy ice to runout, thin mixed climbing on slab that is hard to protect, so plan to belay it.",
+    "pitch": "Step to 3rd couloir"
+   },
+   {
+    "grade": "40–50° snow/ice",
+    "notes": "A few hundred feet of snow at a similar or slightly lower angle cuts behind the Fin, the prominent rock feature on the upper face. It sometimes holds a short, thick WI2 step and ends on an open slope a couple hundred feet below the summit.",
+    "pitch": "3rd Couloir"
+   },
+   {
+    "grade": "Snow scramble",
+    "notes": "A short snow scramble and traversing slope from the top of the third couloir reach the summit. Descend by the long traverse to Asgard Pass.",
+    "pitch": "Summit scramble"
+   }
+  ]
+ },
+ "wa_lincoln_peak_north_ridge": {
+  "id": "wa_lincoln_peak_north_ridge",
+  "name": "Wilkes-Booth (Northwest Face)",
+  "discipline": "alpine",
+  "grade": "WI4",
+  "ice_grade": "WI4",
+  "alpine_grade": "IV",
+  "pitches": 5,
+  "length_m": 610,
+  "pitch_detail": [
+   {
+    "crux": true,
+    "grade": "WI4",
+    "notes": "Starts just right of the prominent hanging glacier, at the same point as the Assassin Spire routes, and shares its lower ground with Shooting Gallery. The upper half is the crux: overhanging, poorly protected ice of doubtful quality. The route as a whole is graded AI4+ or WI4.",
+    "pitch": "P1 (crux)",
+    "lengthM": 60
+   },
+   {
+    "grade": "Glacial ice step",
+    "notes": "Cross the first snowfield above the overhanging glacier, climb a vertical ice curtain up to the glacier, then a step of glacial ice with good protection into the upper amphitheater, the basin between Lincoln Peak and Assassin Spire. Simul-climb along the amphitheater's west side toward Lincoln's northwest wall.",
+    "pitch": "Ice curtain and glacier step"
+   },
+   {
+    "grade": "WI3+",
+    "notes": "Climb the obvious flow in the middle of the amphitheater wall in two long pitches. The first runs a full 70 m (a little simul-climbing on 60 m ropes) and is the harder, with several vertical steps; the second starts with a short 85° section, then eases for about 50 m to the top of the flow. An easier variation traverses in from the right.",
+    "pitch": "Central flow",
+    "lengthM": null
+   },
+   {
+    "grade": "Snow to 70°",
+    "notes": "Above the flow, steep snowfields reaching 70° separate the upper ice steps and lead up to the crest. Snow condition decides how fast this goes; running protection is pickets and screws.",
+    "pitch": "Upper snowfields"
+   },
+   {
+    "grade": "Rime ridge, icy gully",
+    "notes": "Follow the rime-covered ridge on snow and rime to the first sub-summit, downclimb a short section of rime ice, then climb the final icy gully, a full but relatively easy rope-length, to the summit.",
+    "pitch": "Final section"
+   }
+  ]
+ },
+ "wa_eldorado_peak_northeast_face": {
+  "id": "wa_eldorado_peak_northeast_face",
+  "name": "Northeast Face",
+  "discipline": "alpine",
+  "grade": "AI2",
+  "ice_grade": "AI2",
+  "alpine_grade": "AD",
+  "pitches": null,
+  "length_m": null,
+  "pitch_detail": [
+   {
+    "grade": "Glacier traverse",
+    "notes": "Around 7,500 ft, leave the standard East Ridge track and traverse climber's right onto the Northeast Face, staying above the steep cliffs that guard its lower edge. This is crevassed glacier ground, so stay roped with crevasse rescue gear.",
+    "pitch": "Leave the East Ridge"
+   },
+   {
+    "grade": "Easy to moderate snow",
+    "notes": "Traverse the face below the rock band. Late in summer there are two levels: a low line below a significant crevasse at about 8,100 ft, and a higher line above that crevasse but below the bergschrund and rock band at about 8,400 ft. The usual track runs under the band near 8,200 ft, paralleling the big crevasse, to a point roughly northeast of the summit.",
+    "pitch": "Traverse below the rock band"
+   },
+   {
+    "grade": "Snow/ice to 60°",
+    "notes": "Turn uphill and climb the face, several pitches up to 60°, to the base of the summit knife-edge; a running belay on pickets and ice screws is the usual protection. A direct line above the bergschrund can hold ice to about AI2+, and a harder variation crosses the schrund and climbs a snowy ramp through the rock band to an exposed 60° ice slope. Snow or bare ice depends on recent weather.",
+    "pitch": "Face section"
+   },
+   {
+    "grade": "Exposed snow ridge",
+    "notes": "Rejoin the East Ridge at the start of the knife-edge, around 8,700 ft, and follow the exposed crest to the summit. Hard ice just below the edge can take screws, while pickets may need heavy driving. East Ridge parties share this crest, so expect traffic and plan belays that do not block it.",
+    "pitch": "Summit knife-edge"
+   }
+  ]
+ },
+ "wa_mount_baker_park_glacier_headwall": {
+  "id": "wa_mount_baker_park_glacier_headwall",
+  "name": "Park Glacier Headwall",
+  "discipline": "alpine",
+  "grade": "Class 3",
+  "ice_grade": "AI3",
+  "alpine_grade": "D",
+  "pitches": 4,
+  "length_m": 396,
+  "pitch_detail": [
+   {
+    "grade": "~60° snow/ice at top",
+    "notes": "Access ramp across the bergschrund; narrow ledge traverse and step-chopping may be needed at the lip.",
+    "pitch": "Schrund ramp"
+   },
+   {
+    "grade": "~50m pitches, up to ~60°",
+    "notes": "Sustained ice pitches to the ridge crest.",
+    "pitch": "Headwall ice (x3)"
+   },
+   {
+    "grade": "Short, exposed",
+    "notes": "An overhanging cornice lip near the ridge crest/summit plateau has been noted in historical accounts (~8 ft).",
+    "pitch": "Cornice exit"
+   }
+  ]
+ },
+ "rainier_north_mowich_headwall": {
+  "id": "rainier_north_mowich_headwall",
+  "name": "North Mowich Headwall",
+  "discipline": "mountaineering",
+  "grade": null,
+  "ice_grade": "WI3",
+  "alpine_grade": "IV",
+  "pitches": null,
+  "length_m": 1253,
+  "pitch_detail": [
+   {
+    "grade": "Rock/ice, ~40-50 ft",
+    "notes": "Steep entry section above the 10,000 ft bivy",
+    "pitch": "Hourglass entry"
+   },
+   {
+    "grade": "~45°",
+    "notes": "~2,000+ ft of sustained snow climbing to the rock band",
+    "pitch": "Snow face"
+   },
+   {
+    "grade": "5th class",
+    "notes": "Traverse left then work right to clear the band and reach the ice cap",
+    "pitch": "Rock band"
+   }
+  ]
+ },
+ "wa_mount_rainier_edmunds_headwall": {
+  "id": "wa_mount_rainier_edmunds_headwall",
+  "name": "Edmunds Headwall",
+  "discipline": "mountaineering",
+  "grade": "Class 3",
+  "ice_grade": "AI3",
+  "alpine_grade": "D",
+  "pitches": null,
+  "length_m": 1067,
+  "pitch_detail": [
+   {
+    "grade": "Glacier",
+    "notes": "From the bivy near 9,600 ft between the North Mowich and Edmunds glaciers (reached over Ptarmigan Ridge from Mowich Lake), cross volcanic scree and then the lower Edmunds Glacier to the foot of the headwall near 9,900 ft. Overhead seracs on this side of the mountain do calve; keep moving under them and start before dawn.",
+    "pitch": "Camp to the headwall"
+   },
+   {
+    "grade": "Steep snow/ice",
+    "notes": "The bergschrund at the foot of the headwall is often impassable. It has been passed on the climber's left, near a twin gendarme, or through broken crevasses on the left. Expect a short steep step onto the face; belay it when the snow bridge or ice is marginal.",
+    "pitch": "Bergschrund bypass"
+   },
+   {
+    "crux": true,
+    "grade": "Sustained 45–50° snow/ice",
+    "notes": "A long, sustained slope from about 9,900 to 13,400 ft, reported at 45° with 50° sections. Conditions decide the character: penitente-textured névé that gives steps without front-pointing, or a thin skin of snow over hard alpine ice with shiny blue patches. Rockfall comes down the face once sun hits it; carry screws for the icy years.",
+    "pitch": "Main headwall"
+   },
+   {
+    "grade": "Steep snow, penitentes",
+    "notes": "Above the steepest climbing near 13,000 ft, the route joins upper Sunset Ridge and the bench atop the Edmunds, then heads for Liberty Cap (14,112 ft). Penitentes up to about 3 ft tall can cover this ground and turn it into slow, exhausting work. Descend by carryover down the Emmons-Winthrop or a west-side route.",
+    "pitch": "Upper Sunset Ridge traverse"
+   }
+  ]
+ },
+ "wa_mount_rainier_mowich_face": {
+  "id": "wa_mount_rainier_mowich_face",
+  "name": "Mowich Face",
+  "discipline": "alpine",
+  "grade": "AI3",
+  "ice_grade": "AI2-3",
+  "alpine_grade": "IV",
+  "pitches": null,
+  "length_m": 1219,
+  "pitch_detail": [
+   {
+    "grade": "Glacier",
+    "notes": "From the glacier camps below the face (about 9,600-10,200 ft, near the divide with the Edmunds Glacier), stay roped and climb the last of the North Mowich Glacier to the foot of the face. Watch for fresh rockfall debris on the ice: it marks the fall lines coming off the face. Start in the dark so the face is climbed before sun hits it.",
+    "pitch": "Approach to base"
+   },
+   {
+    "grade": "Crevassed, snow bridge",
+    "notes": "The bergschrund under the central face is large and can be impassable late season. It is usually bypassed through a rock band on the climber's left; earlier in the year a snow bridge may go after weaving around the biggest crevasses. Belay the crossing if the bridge is thin.",
+    "pitch": "Bergschrund"
+   },
+   {
+    "grade": "35–45° snow",
+    "notes": "The lower two-thirds of the face runs at roughly 35–42° on solid snow in good conditions, climbed with running protection on pickets. Near 12,000 ft the surface turns to harder ice and demands more careful technique. The whole face is exposed to rockfall and ice shards; climbing before the sun arrives reduces but does not remove the hazard.",
+    "pitch": "Mowich Face"
+   },
+   {
+    "crux": true,
+    "grade": "40–60° snow/ice",
+    "notes": "Around 12,500 ft the line splits. The original (Grade III) cuts left into an hourglass of snow, ice and rock, gains a snow ledge around the rock, then a 40–50° ramp. The harder (Grade IV) variation cuts right over one or two AI2–3 ice steps and 4–6 pitches of 50–60° snow. Wrong gullies here dead-end in cliffs; carry screws.",
+    "pitch": "Upper face variations"
+   },
+   {
+    "grade": "Steep snow, windlip",
+    "notes": "The face tops out on a bench near 13,300 ft; high up a windlip or choke often needs a short traverse on firmer snow. From the bench, slushy sun cups or penitentes lead to Liberty Cap (14,112 ft). The descent is a carryover down the Emmons-Winthrop or Disappointment Cleaver, not the face.",
+    "pitch": "Exit to Liberty Cap"
+   }
+  ]
+ },
+ "wa_mount_rainier_sunset_ridge": {
+  "id": "wa_mount_rainier_sunset_ridge",
+  "name": "Sunset Ridge",
+  "discipline": "alpine",
+  "grade": "5.5",
+  "ice_grade": "AI1-2",
+  "alpine_grade": "IV+",
+  "pitches": null,
+  "length_m": 1649,
+  "pitch_detail": [
+   {
+    "grade": "Glacier, icefall crossing",
+    "notes": "Leave the Puyallup Cleaver near 8,500 ft and traverse the Puyallup and South Mowich glaciers into the Sunset Amphitheater side of the ridge, crossing below South Mowich icefall. Bivy on a flat spot on the South Mowich Glacier around 8,500 ft (some parties go higher, to about 9,600 ft). The glacier crossing to the base is usually straightforward early season.",
+    "pitch": "Glacier approach"
+   },
+   {
+    "grade": "45–55° névé",
+    "notes": "Pass the bergschrund at the base, usually on the climber's right, where two axes help; it collapses as summer warms. Then climb roughly 1,800–2,000 ft of steep gullies and open face (the lower 'pyramid') averaging about 45°, with steps of 50–55° and some easy ice near the top, to gain the ridge crest near 11,650 ft.",
+    "pitch": "Névé-ice slope"
+   },
+   {
+    "grade": "Loose 4th class rock",
+    "notes": "A short, technical stretch on the crest, which is volcanic rubble with almost no solid rock and few natural anchors. A knife-edge cut by a deep gully and notch lies along it; with good snow cover it goes, but in a dry year the descent into that notch is a steep choss wall that has turned parties back. More exposed rock means far looser climbing.",
+    "pitch": "Knife-edge ridge"
+   },
+   {
+    "crux": true,
+    "grade": "55–60° snow/ice",
+    "notes": "At about 12,800 ft the ridge forces the route left onto the upper Mowich Face. Traverse onto it and front-point roughly 1,000–1,300 ft of firm 55–60° snow, often with glacier ice a few inches down that takes screws, regaining the ridge near 13,200 ft. The face is exposed to rockfall once the sun reaches it.",
+    "pitch": "Upper Mowich Face traverse"
+   },
+   {
+    "grade": "Moderate snow",
+    "notes": "Back on the crest, easier snow leads to Liberty Cap (14,112 ft); tall penitentes can cover this ground and slow progress badly. From Liberty Cap cross the saddle to Columbia Crest or drop to Liberty Saddle for the Emmons-Winthrop descent, staying roped through the thinly bridged saddle.",
+    "pitch": "To Liberty Cap"
+   }
+  ]
+ },
+ "wa_mount_shuksan_hanging_glacier": {
+  "id": "wa_mount_shuksan_hanging_glacier",
+  "name": "Hanging Glacier",
+  "discipline": "alpine",
+  "grade": "5.6",
+  "ice_grade": "AI4 (up to 65 degrees)",
+  "alpine_grade": "D",
+  "pitches": null,
+  "length_m": null,
+  "pitch_detail": [
+   {
+    "grade": "Class 3-4, then glacier",
+    "notes": "From a camp above the Fisher Chimneys, descend about 1,000 ft down the White Salmon Glacier, then cross the Northwest Rib, the narrow rock spur that divides the White Salmon and Hanging Glaciers, to reach the foot of the Hanging Glacier. From the White Salmon valley instead, traverse left beneath the upper ice, staying well right of the North Face's avalanche paths.",
+    "pitch": "Section 1"
+   },
+   {
+    "grade": "Ice to 65°",
+    "notes": "Climb the Hanging Glacier, mixing roped glacier travel with ice steps up to about 65 degrees; steeper lines are there for those who want them. A large crevasse high on the glacier has to be outflanked. The glacier's top joins the Crystal Glacier, which leads onto the upper plateau beside the summit pyramid. Serac fall is a real hazard here, and the glacier is retreating, so conditions change from year to year.",
+    "pitch": "Section 2"
+   },
+   {
+    "grade": "5.6",
+    "notes": "Finish on the east ridge of the summit pyramid: roped rock climbing at about 5.3 to 5.6 to the summit. Descend the pyramid's central gully on its south side.",
+    "pitch": "Section 3"
+   }
+  ]
+ },
+ "wa_mount_shuksan_price_glacier": {
+  "id": "wa_mount_shuksan_price_glacier",
+  "name": "Price Glacier",
+  "discipline": "alpine",
+  "grade": "AI3",
+  "ice_grade": "AI2-3",
+  "alpine_grade": "IV",
+  "pitches": null,
+  "length_m": 1219,
+  "pitch_detail": [
+   {
+    "grade": "AI2",
+    "notes": "From the slab bivy, gain the ridge crest and the glacier margin, traverse right to the exposed snow saddle below Nooksack Tower, then drop and work onto the main lobe near 6,500 ft; the gully under the tower is a rock- and icefall path, so cross it fast. Above, weave up steep snow and alpine ice (AI2-AI3) between seracs and slough chutes. Late season means bare ice and climbing into and out of the overhanging walls of crevasses.",
+    "pitch": "Section 1"
+   },
+   {
+    "crux": true,
+    "grade": "AI3",
+    "notes": "The bergschrund band near 7,800 ft, which may be one crack or several. There are three ways over: rock on the left, an ice line in the middle, or mixed ground on the right. Which one goes changes with the season, from an AI3 ice rib to an AI4 ice chimney late in the year; in a big-snow year the left edge can be filled in. Carry screws, pickets and a small rock rack.",
+    "pitch": "Section 2"
+   },
+   {
+    "grade": "Steep snow/ice, crevassed",
+    "notes": "Above the schrund, climb the steep snow or ice field to the glacier plateau below the summit pyramid, then cross the plateau and swing around to the pyramid's south side. Crevasses remain on the plateau, and the snow here softens early on a warm day.",
+    "pitch": "Section 3"
+   },
+   {
+    "grade": "4th class",
+    "notes": "Finish up the easy gullies on the south side of the summit pyramid (4th to low 5th class), the same central gully the Sulphide route uses, with a few rock moves low and again near the top. Expect other parties and rockfall; the descent reverses this gully toward Hell's Highway.",
+    "pitch": "Section 4"
+   }
+  ]
+ },
+ "wa_mount_stuart_stuart_glacier_couloir": {
+  "id": "wa_mount_stuart_stuart_glacier_couloir",
+  "name": "Stuart Glacier Couloir",
+  "discipline": "alpine",
+  "grade": "WI3",
+  "ice_grade": "WI2-3",
+  "alpine_grade": "IV",
+  "pitches": 6,
+  "length_m": 518,
+  "pitch_detail": [
+   {
+    "grade": "40–50° snow, bergschrund",
+    "notes": "Start at about 7,800 ft at the top of the Stuart Glacier. The bergschrund below the couloir can be the first real obstacle: in sugary spring snow a safe crossing is hard to find, so be ready to belay it. Above, the gully runs at 40–50° and narrows steadily for a few hundred feet toward the first step.",
+    "pitch": "Couloir entry"
+   },
+   {
+    "crux": true,
+    "grade": "Ice step, 60–80°",
+    "notes": "The crux sits in the narrowest part of the couloir, roughly halfway up: a short steep step that often holds around 100 ft of water ice up to 60°, with sections described as near 80°. It can be anything from firm snow to verglas over rock, so bring screws and a few rock pieces and expect to pitch it out in lean conditions.",
+    "pitch": "First step"
+   },
+   {
+    "grade": "Short rock or ice step",
+    "notes": "A little above the first step a second, shorter step of rock or ice interrupts the gully. It is brief, but thin ice over rock here protects poorly; above it the couloir widens out.",
+    "pitch": "Second step"
+   },
+   {
+    "grade": "50° snow",
+    "notes": "The couloir opens into a wider snowfield. Climb a couple hundred feet of sustained 50° snow to the small notch on the upper West Ridge. Late in the day this slope softens and becomes tiring; the exit rocks at the notch are low 5th class on the normal finish, or about 5.7 on the left-hand variation.",
+    "pitch": "Upper snowfield"
+   },
+   {
+    "grade": "low 5th",
+    "notes": "From the notch, drop about 10 ft onto the south side and follow ledges along the south flank of the ridge. In early season these ledges are commonly rimed and iced, and the traversing and short downclimbs are harder to protect than the grade suggests.",
+    "pitch": "Ridge 1"
+   },
+   {
+    "grade": "low 5th",
+    "notes": "Easy fifth-class ground that steepens toward the top of the pitch. Stay on the south side rather than being drawn onto the colder, more exposed north face.",
+    "pitch": "Ridge 2"
+   },
+   {
+    "grade": "mid 5th",
+    "notes": "Traverse diagonally across mid-fifth-class rock into a gully that leads back up to the crest. With rime on the rock this is mixed climbing in crampons, often graded M3–M5 depending on season.",
+    "pitch": "Ridge 3"
+   },
+   {
+    "grade": "mid 5th",
+    "notes": "Class 3 ledges link short crack systems of mid-fifth-class climbing to the summit block. Near the top a short 5.6 lieback can be bypassed by a delicate traverse across the upper north face; the final moves to the summit follow a down-sloping ledge that holds ice early in the year and takes little protection.",
+    "pitch": "Ridge 4-6 to summit"
+   }
+  ]
+ },
+ "wa_summit_chief_mountain_north_face": {
+  "id": "wa_summit_chief_mountain_north_face",
+  "name": "North Face",
+  "discipline": "ice",
+  "grade": "WI3",
+  "ice_grade": "WI2-3 (AI2 upper exit)",
+  "alpine_grade": null,
+  "pitches": 12,
+  "length_m": 610,
+  "pitch_detail": [
+   {
+    "grade": "Neve",
+    "notes": "The line is the chain of runnels and couloirs just right of the true summit on the north face. Start up the avalanche cone at the foot of the face, then climb neve on the lower face into the ramp.",
+    "pitch": "Avalanche cone and lower face"
+   },
+   {
+    "grade": "WI3",
+    "notes": "The ramp that looks from below like a snow slope linking to the first snowfield can hold several pitches of water ice, mostly WI2 with WI3 steps, finishing on a steeper WI3 pitch into the first snowfield. The rock alongside is compact and takes little beyond thin pitons, so the ice has to carry the protection: bring a real screw rack, not a couple of screws.",
+    "pitch": "1",
+    "lengthM": null
+   },
+   {
+    "grade": "Snow/neve",
+    "notes": "The first snowfield: moving ground on neve above the ramp. The runnels below funnel everything that slides off this slope and the one above it, and spindrift avalanches run down the face once snow starts falling. Keep moving and watch the weather, since the face turns into a spindrift chute quickly.",
+    "pitch": "2"
+   },
+   {
+    "grade": "Snow/neve",
+    "notes": "The second snowfield continues up toward the exit step at its top. Same neve and the same exposure to spindrift as the lower snowfield.",
+    "pitch": "3"
+   },
+   {
+    "grade": "AI2",
+    "notes": "A short alpine ice step exits the top of the second snowfield and leads out of the couloir system onto the summit slopes. It is the last technical ground on the route.",
+    "pitch": "4"
+   },
+   {
+    "grade": "Easy scramble",
+    "notes": "Easy scrambling above the exit step reaches the summit. The descent does not reverse the face: it goes down the southwest side by a snow gully that needs downclimbing and two 30 m rappels to reach the snow leading to a col west of the peak.",
+    "pitch": "Scramble to the summit"
+   }
+  ]
+ }
+}

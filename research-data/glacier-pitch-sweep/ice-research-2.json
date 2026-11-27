@@ -1,0 +1,467 @@
+{
+ "changes": [
+  {
+   "id": "wa_big_four_mountain_spindrift_couloir",
+   "i": 2,
+   "label": "First step",
+   "old_grade": "75° névé and water ice",
+   "change": "to_pitch",
+   "grade": "WI3, 75° névé/ice",
+   "anchor": "ice screws",
+   "confidence": "low",
+   "sources": [
+    {
+     "url": "https://publications.americanalpineclub.org/articles/12199713800",
+     "says": "AAJ 1997 summary: IV+ 5.9 95° couloir climbed in steps with 'a little ice protection'; no pitch-by-pitch text retrievable. Entry's own notes: about two pitches, protection available."
+    }
+   ]
+  },
+  {
+   "id": "wa_big_four_mountain_spindrift_couloir",
+   "i": 4,
+   "label": "Crux",
+   "old_grade": "Near-vertical ice",
+   "change": "to_pitch",
+   "grade": "WI5, near-vertical",
+   "anchor": "ice screws, knifeblade",
+   "confidence": "low",
+   "sources": [
+    {
+     "url": "https://publications.americanalpineclub.org/articles/12199713800",
+     "says": "Route is a steep gully with hardest ground in a few pitches; no WI5 rating found independently. The entry text itself calls this a near-vertical ice pitch with a belay at its base."
+    }
+   ]
+  },
+  {
+   "id": "wa_colchuck_peak_holsten_hilden",
+   "i": 3,
+   "label": "4-5",
+   "old_grade": "Snow over rock",
+   "change": "to_pitch",
+   "grade": "Snow over rock",
+   "anchor": "rock gear, pins",
+   "confidence": "medium",
+   "sources": [
+    {
+     "url": "https://publications.americanalpineclub.org/articles/12201209602/North-America-United-States-Washington-Colchuck-Peak-Northeast-Face-Hilden-Holsten",
+     "says": "First-ascent account: 'two pitches through unconsolidated snow over moderate rock' after the steep snow, then a rock band."
+    },
+    {
+     "url": "https://www.mountainproject.com/route/112066235/holsten-hilden",
+     "says": "Route listed as steep snow/mixed with no continuous glacier travel; gear includes rock pro."
+    }
+   ]
+  },
+  {
+   "id": "wa_colchuck_peak_holsten_hilden",
+   "i": 7,
+   "label": "Summit pitch",
+   "old_grade": "Short steep mixed step",
+   "change": "to_pitch",
+   "grade": "Short steep mixed step",
+   "anchor": "rock gear",
+   "confidence": "low",
+   "sources": [
+    {
+     "url": "https://publications.americanalpineclub.org/articles/12201209602/North-America-United-States-Washington-Colchuck-Peak-Northeast-Face-Hilden-Holsten",
+     "says": "After the M6 notch crack, party traverses into the final couloir of the North Buttress Couloir route; the entry's own notes call it one more steep mixed pitch. Grade not stated by source."
+    }
+   ]
+  },
+  {
+   "id": "wa_forbidden_peak_northeast_face",
+   "i": 1,
+   "label": "Ice patch",
+   "old_grade": "~50° ice",
+   "change": "to_pitch",
+   "grade": "AI3, ~50° ice",
+   "anchor": "ice screws",
+   "confidence": "low",
+   "sources": [
+    {
+     "url": "https://www.summitpost.org/view_object.php?object_id=168442",
+     "says": "(search snippet only, page 403) NE Face is a technical snow/ice/rock route (Beckey-Rupley 1971) climbing an 'objective ice apron' across crevasses; entry notes say screws needed. Route ice_grade AI3."
+    }
+   ]
+  },
+  {
+   "id": "wa_lincoln_peak_standard",
+   "i": 2,
+   "label": "Steep gullies",
+   "old_grade": "50-60 deg snow/ice",
+   "change": "to_pitch",
+   "grade": "AI2, 50-60° snow/ice",
+   "anchor": "pickets or ice screws",
+   "confidence": "medium",
+   "sources": [
+    {
+     "url": "https://cascadeclimbers.com/forum/topic/102773-tr-lincoln-peak-x-couloir-05052019",
+     "says": "2019 trip report: leftward traverse then climbed 2 long pitches after the lower bergschrund (party simul-climbed them)."
+    },
+    {
+     "url": "https://lemkeclimbs.com/lincoln-peak",
+     "says": "Account of the line: 30-40° snow to first schrund, 50 ft serac crux (70-85°), more steep snow/ice above."
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_logan_fremont_glacier",
+   "i": 2,
+   "label": "4: Lower glacier",
+   "old_grade": "Glacier travel, AI1, crevasse hazard",
+   "change": "to_leg",
+   "grade": "Glacier travel, crevassed",
+   "anchor": "",
+   "confidence": "medium",
+   "sources": [
+    {
+     "url": "(no page fetched)",
+     "says": "Standard Fremont Glacier route is roped glacier travel, no belayed ice; AI1 is a rating of walking-angle glacier, not a pitch. Based on route description in the entry plus general knowledge; no source page retrieved."
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_logan_fremont_glacier",
+   "i": 3,
+   "label": "5: Upper glacier to Hogsback",
+   "old_grade": "Glacier AI1-AI2, moderate incline",
+   "change": "to_leg",
+   "grade": "Glacier travel, moat crossing",
+   "anchor": "",
+   "confidence": "medium",
+   "sources": [
+    {
+     "url": "(no page fetched)",
+     "says": "Moderate-incline glacier to the Hogsback; moat crossing is a step, not a pitch. No source page retrieved."
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_rainier_liberty_ridge",
+   "i": 3,
+   "label": "Upper ridge",
+   "old_grade": "Steep snow/ice",
+   "change": "to_pitch",
+   "grade": "AI3, short 70-80° ice",
+   "anchor": "ice screws",
+   "confidence": "medium",
+   "sources": [
+    {
+     "url": "https://www.mountainproject.com/route/106459197/liberty-ridge",
+     "says": "Mountain Project describes a 'short ice pitch (70-80 degrees)' above Thumb Rock with an option to traverse around; entry notes a water-ice pitch through the Gun Sight when formed."
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_rainier_liberty_ridge",
+   "i": 4,
+   "label": "Black Pyramid",
+   "old_grade": "Snow/ice to ~60°",
+   "change": "to_pitch",
+   "grade": "AI2, 40-60° ice",
+   "anchor": "ice screws or pickets",
+   "confidence": "medium",
+   "sources": [
+    {
+     "url": "https://www.mountainproject.com/route/106459197/liberty-ridge",
+     "says": "'Climb several pitches of 40-60 degree ice and negotiate steep glacier travel until gaining the Liberty Cap Glacier.'"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_rainier_liberty_ridge",
+   "i": 5,
+   "label": "Bergschrund & summit ice cap",
+   "old_grade": "Snow ramp to steep ice",
+   "change": "to_pitch",
+   "grade": "AI2, short vertical steps",
+   "anchor": "ice screws",
+   "confidence": "medium",
+   "sources": [
+    {
+     "url": "https://www.mountainproject.com/route/106459197/liberty-ridge",
+     "says": "'Climb a few short (5-8 ft) vertical ice sections to surpass the bergschrund'; photo caption 'crossing the bergschrund before the final ice pitches to Liberty Cap'."
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_rainier_ptarmigan_ridge",
+   "i": 3,
+   "label": "Right variation: ice slope and exit chute",
+   "old_grade": "Blue ice to 55°, rock step",
+   "change": "to_pitch",
+   "grade": "AI2, 55° ice, low 5th",
+   "anchor": "ice screws, pins",
+   "confidence": "medium",
+   "sources": [
+    {
+     "url": "https://www.mountainproject.com/route/106846325/ptarmigan-ridge",
+     "says": "Right variation: ice/rock to the exit chute, a short vertical rock step with one or two pins; protection 'may include ice screws, a pin rack and/or light rock rack'; 45-55° ice near the buttress."
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_rainier_willis_wall",
+   "i": 2,
+   "label": "Upper wall and ice cliff",
+   "old_grade": "Mixed, 50–60° ice",
+   "change": "to_pitch",
+   "grade": "AI3, 50-60° ice",
+   "anchor": "ice screws",
+   "confidence": "low",
+   "sources": [
+    {
+     "url": "(no page retrieved)",
+     "says": "Willis Wall is a Grade V face whose upper ice steps beneath the ice cliff are climbed belayed; route ice_grade AI3. No source page confirmed pitch style."
+    }
+   ]
+  },
+  {
+   "id": "wa_sw_couloir_and_face",
+   "i": 1,
+   "label": "Ice chimney",
+   "old_grade": "Vertical ice, rock corner",
+   "change": "to_pitch",
+   "grade": "WI3, vertical step",
+   "anchor": "ice screws",
+   "confidence": "medium",
+   "sources": [
+    {
+     "url": "https://summitpost.org/sw-couloir-and-face/990312",
+     "says": "(search snippet) SW Couloir and Face is WI3/5.2, Grade III; entry notes name the vertical ice in a corner as steepest ice, 18 m, needs screws and a second tool."
+    }
+   ]
+  },
+  {
+   "id": "wa_sw_couloir_and_face",
+   "i": 5,
+   "label": "Ice slope to headwall",
+   "old_grade": "60–70° ice then snow",
+   "change": "to_pitch",
+   "grade": "WI2, 60-70° ice",
+   "anchor": "pickets or ice screws",
+   "confidence": "medium",
+   "sources": [
+    {
+     "url": "https://summitpost.org/sw-couloir-and-face/990312",
+     "says": "(search snippet) Route graded WI3; 'steepest sustained ground' per entry notes, protected by screws and pickets."
+    }
+   ]
+  },
+  {
+   "id": "wa_sw_couloir_and_face",
+   "i": 7,
+   "label": "SE corner buttress",
+   "old_grade": "5th class",
+   "change": "to_pitch",
+   "grade": "easy/low 5th",
+   "anchor": "nuts, slings",
+   "confidence": "skipped",
+   "sources": [
+    {
+     "url": "https://summitpost.org/sw-couloir-and-face/990312",
+     "says": "Route listed WI3/5.2; this is a roped easy fifth-class buttress with a rack. 'Entry grade '5th class' does not match the app's technical-grade regex."
+    }
+   ],
+   "skip_reason": "already classified as a roped pitch (TECH_GRADE_RE matches low 5th / 5th class); relabel adds nothing"
+  },
+  {
+   "id": "wa_mount_maude_r2",
+   "i": 3,
+   "label": "Rock ramps",
+   "old_grade": "low 5th",
+   "change": "to_pitch",
+   "grade": "easy/low 5th",
+   "anchor": "running belays, pins",
+   "confidence": "skipped",
+   "sources": [
+    {
+     "url": "(entry notes)",
+     "says": "Notes: running belays are usual, protection scarce; 'low 5th' does not match the regex 5\\.\\d / easy/low 5th so it draws as a leg."
+    }
+   ],
+   "skip_reason": "already classified as a roped pitch (TECH_GRADE_RE matches low 5th / 5th class); relabel adds nothing"
+  },
+  {
+   "id": "wa_mount_maude_r2",
+   "i": 4,
+   "label": "Upper rock",
+   "old_grade": "low 5th",
+   "change": "to_pitch",
+   "grade": "easy/low 5th",
+   "anchor": "running belays, pins",
+   "confidence": "skipped",
+   "sources": [
+    {
+     "url": "(entry notes)",
+     "says": "Same: ~900 ft of loose 4th/low-5th rock, the label 'low 5th' is not matched by the regex."
+    }
+   ],
+   "skip_reason": "already classified as a roped pitch (TECH_GRADE_RE matches low 5th / 5th class); relabel adds nothing"
+  }
+ ],
+ "routes": [
+  {
+   "id": "wa_big_four_mountain_spindrift_couloir",
+   "pitches_stored": null,
+   "pitches_after": null,
+   "pitches_sources": "AAJ 1997: 4,000 ft IV+ 5.9, gully ~5 pitches; entries span far more",
+   "notes": "No source gives an ice grade or full pitch list; entries 0, 3 already pitch."
+  },
+  {
+   "id": "wa_colchuck_peak_holsten_hilden",
+   "pitches_stored": null,
+   "pitches_after": null,
+   "pitches_sources": "MP 1600 ft; AAC: 2 AI3+, steep snow, 2 snow/rock, chimney 2 M6, notch crack M6, summit",
+   "notes": "Entries 0,1,4,6 already pitch; 4 and 6 M6 ok. Label '6-7' and '4-5' cover two pitches each."
+  },
+  {
+   "id": "wa_dark_peak_dark_glacier_route",
+   "pitches_stored": null,
+   "pitches_after": null,
+   "pitches_sources": "none found",
+   "notes": "'Belayed' moat/bergschrund entry draws as a leg; no source found for its ice grade or anchor, left alone."
+  },
+  {
+   "id": "wa_forbidden_peak_northeast_face",
+   "pitches_stored": null,
+   "pitches_after": null,
+   "pitches_sources": "none",
+   "notes": "Lower face rock and upper slabs also roped, but no grade; unsure."
+  },
+  {
+   "id": "wa_lincoln_peak_standard",
+   "pitches_stored": 2,
+   "pitches_after": 3,
+   "pitches_sources": "CascadeClimbers 2019: 2 long pitches in the gullies; plus serac crux",
+   "notes": "Stored 2 vs 3 after changes (crux + 2 gullies in one entry); count of 2 may mean gullies only."
+  },
+  {
+   "id": "wa_mount_adams_adams_glacier",
+   "pitches_stored": null,
+   "pitches_after": 1,
+   "pitches_sources": "MP: mostly simul-soloed; two sections needing screws and a belay (2016)",
+   "notes": "Mid icefall AI2 stays a pitch. Lower icefall left unsure (MP says simul-soloed most of route)."
+  },
+  {
+   "id": "wa_mount_logan_fremont_glacier",
+   "pitches_stored": null,
+   "pitches_after": 0,
+   "pitches_sources": "none",
+   "notes": "Both AI1 entries are glacier travel."
+  },
+  {
+   "id": "wa_mount_maude_r2",
+   "pitches_stored": 6,
+   "pitches_after": 2,
+   "pitches_sources": "none retrieved",
+   "notes": "Stored 6 vs 2 roped entries after changes; icefall (running belay) left unsure. Count likely includes pitches inside the rock entries."
+  },
+  {
+   "id": "wa_mount_rainier_liberty_ridge",
+   "pitches_stored": 6,
+   "pitches_after": 3,
+   "pitches_sources": "MP: 6 pitches, 'several pitches' of 40-60° ice",
+   "notes": "3 entries after change; Black Pyramid is several pitches so 6 is plausible."
+  },
+  {
+   "id": "wa_mount_rainier_ptarmigan_ridge",
+   "pitches_stored": null,
+   "pitches_after": 1,
+   "pitches_sources": "none",
+   "notes": "Hourglass/buttress 45-55° snow left as leg (pickets, belay only if rockfall active)."
+  },
+  {
+   "id": "wa_mount_rainier_willis_wall",
+   "pitches_stored": null,
+   "pitches_after": 1,
+   "pitches_sources": "none",
+   "notes": "Low-confidence change."
+  },
+  {
+   "id": "wa_mount_shuksan_north_face",
+   "pitches_stored": null,
+   "pitches_after": 0,
+   "pitches_sources": "none",
+   "notes": "No change: often climbed unroped, screws only late season."
+  },
+  {
+   "id": "wa_mount_stuart_ice_cliff_glacier",
+   "pitches_stored": null,
+   "pitches_after": 1,
+   "pitches_sources": "none",
+   "notes": "Upper couloir is conditions-dependent; left unsure. Ice cliff bypass AI2 already pitch."
+  },
+  {
+   "id": "wa_sw_couloir_and_face",
+   "pitches_stored": 7,
+   "pitches_after": 5,
+   "pitches_sources": "none retrieved (SummitPost snippet: WI3/5.2, Grade III)",
+   "notes": "After changes: ice chimney, rock step 5.0, ice slope, SE buttress, plus 4th-class headwall (30 m) not counted; 7 plausible if headwall and buttress are two pitches."
+  },
+  {
+   "id": "wa_wing_peak_northwest_ridge",
+   "pitches_stored": null,
+   "pitches_after": 0,
+   "pitches_sources": "none",
+   "notes": "Snowfinger unsure."
+  }
+ ],
+ "unsure": [
+  {
+   "id": "wa_dark_peak_dark_glacier_route",
+   "i": 5,
+   "why": "'Belayed' bergschrund/moat crossing; no source for grade or anchor"
+  },
+  {
+   "id": "wa_mount_adams_adams_glacier",
+   "i": 1,
+   "why": "Lower icefall 45° steps: notes say most belay, MP says most is simul-soloed"
+  },
+  {
+   "id": "wa_mount_maude_r2",
+   "i": 1,
+   "why": "Icefall short ice steps, running belay; roped or travel unclear"
+  },
+  {
+   "id": "wa_mount_rainier_ptarmigan_ridge",
+   "i": 2,
+   "why": "Hourglass 45-55° snow: pickets, belay only if rockfall"
+  },
+  {
+   "id": "wa_mount_stuart_ice_cliff_glacier",
+   "i": 4,
+   "why": "Upper couloir: snow or ice depending on year"
+  },
+  {
+   "id": "wa_mount_stuart_ice_cliff_glacier",
+   "i": 5,
+   "why": "Cornice exit"
+  },
+  {
+   "id": "wa_big_four_mountain_spindrift_couloir",
+   "i": 6,
+   "why": "Cornice exit, one anchor on a boulder"
+  },
+  {
+   "id": "wa_forbidden_peak_northeast_face",
+   "i": 0,
+   "why": "Rock lower face, no grade"
+  },
+  {
+   "id": "wa_colchuck_peak_holsten_hilden",
+   "i": 5,
+   "why": "Steep snow, rock band 8+"
+  },
+  {
+   "id": "wa_wing_peak_northwest_ridge",
+   "i": 4,
+   "why": "~70° snowfinger 'often picketed and belayed'; no source found"
+  },
+  {
+   "id": "wa_mount_shuksan_north_face",
+   "i": 2,
+   "why": "45-50° snow/ice, usually unroped"
+  }
+ ]
+}

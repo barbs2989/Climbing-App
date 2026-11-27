@@ -1,0 +1,1172 @@
+{
+ "wa_ragged_ridge": {
+  "id": "wa_ragged_ridge",
+  "name": "Ragged Ridge",
+  "discipline": "mountaineering",
+  "dist_km": 33.8,
+  "gain_ft": null,
+  "approach": "From the Easy Pass Trailhead on SR-20, hike the Easy Pass Trail about 3.5 miles and roughly 2,900 ft to Easy Pass, about 6,500 ft. Most parties then leave the trail and sidehill west along the south side of the ridge on grassy benches around 6,600-6,800 ft, crossing many small gullies and buttresses; a large gully with a waterfall just before the basin needs a short descent of steep scree. The usual high camp is in the basin just south of Mesahchie Peak at about 6,600-6,700 ft, roughly five hours from the car. The alternative is to follow the trail down the far side of the pass into the Fisher Creek basin near 5,100 ft and climb off-trail back up to the same camp. From camp, climb northwest to the Mesahchie-Katsuk saddle to start the traverse.",
+  "descent_text": "Trip reports consistently recommend dropping off the ridge to the Fisher Creek trail (roughly 2-2.5 hrs from the Cosho/west end) rather than attempting a high traverse back at 7,000+ ft, which is described as slow, exposed sidehilling through 'awfulness'; from Fisher Creek, follow the maintained trail back over Easy Pass to the trailhead.",
+  "waypoints": [
+   {
+    "lat": 48.58817,
+    "lng": -120.80298,
+    "elev": 3678,
+    "name": "Easy Pass Trailhead",
+    "type": "Trailhead",
+    "distMi": null,
+    "elevFt": 3678,
+    "directions": "From Marblemount, drive SR-20 east about 45 miles and turn right between mileposts 151 and 152 onto the short spur road signed for Easy Pass, which ends at the trailhead. A Northwest Forest Pass or interagency pass is required to park, and camping on the national park side of the pass needs a backcountry permit."
+   },
+   {
+    "lat": 48.568004,
+    "lng": -120.855546,
+    "elev": 5136,
+    "name": "Fisher Camp, Fisher Creek basin",
+    "type": "Campsite",
+    "distMi": 14.7
+   },
+   {
+    "lat": 48.575936,
+    "lng": -120.870902,
+    "elev": 6600,
+    "name": "Mesahchie basin, below the col",
+    "type": "Campsite",
+    "distMi": 4.4
+   },
+   {
+    "lat": 48.5786,
+    "lng": -120.8803,
+    "elev": 8795,
+    "name": "Mesahchie Peak",
+    "type": "Summit",
+    "distMi": null,
+    "elevFt": 8795,
+    "directions": "Hike the Easy Pass Trail 3.4 miles and about 2,900 ft to Easy Pass, then descend the far side into the Fisher Creek basin at about 5,100 ft. Leave the trail and climb off-trail to a high camp at about 6,700 ft on Mesahchie's south shoulder, then ascend northwest to the Mesahchie-Katsuk saddle and scramble to the summit."
+   },
+   {
+    "lat": 48.578449,
+    "lng": -120.888902,
+    "elev": 8683,
+    "name": "Katsuk Peak",
+    "note": "Second summit of the traverse, just west of the Mesahchie-Katsuk saddle.",
+    "type": "Summit",
+    "distMi": null,
+    "directions": "Return to the Mesahchie-Katsuk saddle and scramble west to Katsuk's summit."
+   },
+   {
+    "lat": 48.585121,
+    "lng": -120.910853,
+    "elev": 8649,
+    "name": "Kimtah Peak",
+    "note": "Third summit; the exposed red ledge that links the central peaks is the traverse's crux route-finding.",
+    "type": "Summit",
+    "distMi": null,
+    "directions": "Continue west from Katsuk across the upper Katsuk and Kimtah glaciers (crampons and a rope are worth carrying) and along the exposed red ledge that cuts across ribs and gullies, then scramble to Kimtah's summit."
+   },
+   {
+    "lat": 48.588914,
+    "lng": -120.927825,
+    "elev": 8332,
+    "name": "Cosho Peak",
+    "note": "Westernmost summit of the traverse; descend from here to the Fisher Creek trail rather than sidehilling back east high.",
+    "type": "Summit",
+    "distMi": null,
+    "directions": "Follow the ridge west from Kimtah over talus and blocky class 3 ground to Cosho Peak."
+   }
+  ],
+  "bivy": [
+   {
+    "elev": 6600,
+    "name": "Mesahchie basin, below the col",
+    "role": "main",
+    "type": "bivy",
+    "notes": "This is the base for Mesahchie and the usual first night of any Ragged Ridge traverse. From Easy Pass the line goes cross-country west-northwest, sidehilling on heather and tiresome scree at around six thousand eight hundred feet for roughly three hours to reach the basin below Mesahchie Col. It is not a trail and it is not fast — talus, sidehill and sustained scrambling are the whole character of this ridge and parties consistently underestimate the traverse. From camp Mesahchie goes by its south side, Katsuk lies about half a mile further west along the crest by its south spur and east ridge, and Kimtah is beyond that again and is rarely worth a trip on its own. Note that camping is prohibited at Easy Pass itself and in the meadows around it, so this basin or the crest bivy is where the first legal ground is. All of it is inside the park, so leave the dog at home.",
+    "water": "Running water in the basin, fed by snow above, and this is what recommends it over the ridge bivy higher up. It is the dependable choice late in a hot summer when the crest has dried out.",
+    "permit": "North Cascades National Park backcountry permit required, without exception. Permits are reserved in advance through the national online reservation system and issued by park staff shortly before the trip, by email or in person at the wilderness desk in Marblemount, with a per-person recreation fee and a small booking fee on top. Camping is in a cross-country zone rather than at a named site, and an approved bear-resistant canister is required wherever there is nothing to hang food from, which up here is everywhere. No campfires; carry a stove.",
+    "capacity": "Unimproved ground for a couple of small tents on benches in the basin under Mesahchie and Katsuk. Nothing is built here — no pads, no privy, no fire ring, and there should not be."
+   },
+   {
+    "elev": 7000,
+    "name": "Ragged Ridge crest bivy, south of Mesahchie Col",
+    "role": "main",
+    "type": "bivy",
+    "notes": "This is the higher and more committing of the two Ragged Ridge camps, about a mile west-northwest of Easy Pass. Two ways reach it: sidehill west at roughly six thousand eight hundred feet on heather and scree, or climb the grassy slope just past the pass to gain the crest near seven thousand two hundred feet and follow the ridge until the ground steepens toward the 7,690-foot point, where it turns technical. The reward is a start already on the ridge for a long traverse day toward Katsuk and Kimtah; the cost is wind, cold and the water problem. Mount Arriva goes the other way from the pass, southwest, so a party after Arriva alone gains nothing by coming up here. Pitch on gravel rather than on the heather, which is thin and slow to recover, and expect a party of more than two to be split across separate patches of ground.",
+    "water": "Seasonal and often gone. Snow patches supply it early and it is commonly dry by late summer, which is the one reason to prefer the basin below. Coming up here late in the year means carrying water or dropping into the basin to fetch it.",
+    "permit": "North Cascades National Park backcountry permit required, reserved in advance and issued by park staff before the trip. Cross-country zone camping with an approved bear canister, and no campfires. There is no self-issue option anywhere on this side of the pass — the free trailhead-kiosk permits people are used to on the forest do not exist here.",
+    "capacity": "A small high bivy on the south side of the crest, east of the 7,985-foot subpeak. Room for one or two parties on gravel and heather. Exposed, with no shelter of any kind."
+   },
+   {
+    "elev": 5136,
+    "name": "Fisher Camp, Fisher Creek basin",
+    "role": "route",
+    "type": "camp",
+    "notes": "Fisher Camp sits in the forested basin west of and well below Easy Pass, reached by carrying on over the pass and descending into Fisher Creek. It is the comfortable option and it is also the alternative approach to Kimtah that some parties prefer: rather than the long sidehill traverse along the south flank of Ragged Ridge, they drop into the basin, losing something like eighteen hundred feet, and then climb a more direct line straight back up to the crest. Whether that trade is worth it depends on snow on the traverse and on how much the party dislikes scree. Further down the valley the trail passes additional designated camps toward the Thunder Creek junction, which is how a Ragged Ridge trip can be finished as a through-hike rather than an out-and-back. The descent to this camp is real elevation that has to be regained on the way out, and it is the reason a summit-focused party stays high instead.",
+    "water": "Fisher Creek, right at the camp, and it runs all season. This is the most reliable water anywhere on the Ragged Ridge side.",
+    "permit": "North Cascades National Park backcountry permit required and reserved for this specific named site, not for a zone. Book in advance through the national online system and collect the permit from park staff shortly before the trip. Food must be stored properly; a canister is the simplest answer. No campfires, and no dogs anywhere beyond Easy Pass.",
+    "capacity": "Three designated sites — two taking a single tent each and one that will hold about four. A privy is provided. Being a named camp rather than a zone, it is reserved specifically and can simply be full."
+   }
+  ]
+ },
+ "wa_burnt_boot_peak_north_route": {
+  "id": "wa_burnt_boot_peak_north_route",
+  "name": "North Route",
+  "discipline": "scrambling",
+  "dist_km": 31.06,
+  "gain_ft": 5300,
+  "approach": "Park at the Dingford Creek Trailhead, where Middle Fork Snoqualmie Road (FS Road 56) is gated to vehicles — the last few miles of FS 56 are pitted with potholes and washboard, so high-clearance is strongly recommended — then walk or bike about 7.5 mi of closed road to its old end at the former Dutch Miller Gap Trailhead (Trail #1030). Do not follow the maintained Dutch Miller Gap trail; instead ford the Middle Fork Snoqualmie River roughly 300 ft upstream of the trailhead to its true-right (north) bank. Early-season and post-snowmelt (roughly June) this ford can run thigh-deep and cold — scout upstream for a braided or log crossing if flows are high. Once across, climb the boulder/talus field directly above the river for about 400 vertical feet until you hit a rock band. At the cliff, angle left (west) into a brushy gully thick with salmonberry and black currant — expect real bushwhacking here, not a trail. Follow the gully up into timber around 3,900 ft, then traverse upward through the trees until you break out onto open talus. From the talus, work up and climber's-left toward the low notch/pass beside Point 5,841, which separates Burnt Boot's summit block from the peak immediately west — this notch is the key route-finding target and where the described 'heather/cedar benches' sit. Above roughly 5,400–5,800 ft, pick a line through talus and boulders to avoid the steepest snow; the final ~200 vertical feet below the pass typically holds a firm, sustained snow ramp well into summer, and an ice axe (crampons/microspikes in early season) is required for this section — it is genuine self-arrest terrain. From the pass, a short class 3–4 ridge traverse leads to the summit. From the ford the summit is roughly 2 mi one way, with nearly all the elevation gain packed into the final two miles above the river. There is no reliable water once you leave the river, aside from occasional early-season snowmelt trickles near the pass. Principal hazards: the river ford itself, sustained brush in the lower gully, loose talus/scree on the upper slopes, and the steep snow ramp below the pass. Near the top of the summit-pass snow ramp, watch for a moat-type gap — a short traverse beneath the snow edge may be needed to reach solid rock.",
+  "descent_text": "Reverse the ascent line: downclimb the short class 3–4 ridge step off the summit block back to the Point 5,841 pass, then descend the steep snow ramp below it facing in, plunge-stepping or self-belaying with an ice axe (a controlled glissade may be possible lower down if the snow is soft and the runout is clean and known — check before committing). From the base of the ramp, work back down through talus and boulders, staying climber's-right where possible to avoid the loosest scree, drop into the timber, and downclimb the brushy salmonberry/currant gully back to the cliff band. Pick a descending line through the boulder field to the river and re-ford to the trailhead. This is a walk-off/downclimb — there is no fixed rappel station or bolted anchor on this route, and the discipline (scrambling, not roped climbing) is consistent with that. In icy or wet conditions some parties might choose to build a single natural rappel (sling around a horn or tree) to protect the short class 4 step just above the pass, but that is a judgment call, not standard practice for the route. Note there is a separate, much harder roped North Ridge line on this peak (1971 first ascent by Williamson/Oas/Bucher, three leads of 5th-class granite) that is a distinct technical route from this scramble line and should not be confused with it.",
+  "waypoints": [
+   {
+    "lat": 47.510099,
+    "lng": -121.34632,
+    "elev": 2828,
+    "name": "Hardscrabble Horse Camp, Middle Fork Snoqualmie",
+    "type": "Campsite"
+   },
+   {
+    "lat": 47.5104,
+    "lng": -121.3495,
+    "elev": 2862,
+    "name": "Dutch Miller Gap Trailhead",
+    "note": "Old end of FS Road 56, reached on foot or by bike about 7.5 mi past the vehicle gate at Dingford Creek Trailhead; self-issue Alpine Lakes Wilderness permit required, high-clearance vehicle recommended for the last miles.",
+    "type": "Trailhead",
+    "distMi": 0,
+    "directions": "Drive FS Road 56 up the Middle Fork Snoqualmie from I-90 Exit 34 to the vehicle gate at Dingford Creek Trailhead; the last miles are potholed and washboarded, so high clearance is worth having. Walk or bike the closed road about 7.5 miles beyond the gate to this old road end, where the maintained Dutch Miller Gap trail begins; this route does not use that trail."
+   },
+   {
+    "lat": 47.510123,
+    "lng": -121.345299,
+    "elev": 2812,
+    "name": "Hardscrabble Creek crossing",
+    "type": "Water",
+    "distMi": 2.8
+   },
+   {
+    "lat": 47.509820999999995,
+    "lng": -121.34559405,
+    "elev": 2900,
+    "name": "Middle Fork Snoqualmie River ford",
+    "note": "Leave the trail here and ford the river to a boulder field on the far shore; can run thigh-deep and swift in early season.",
+    "type": "Hazard",
+    "distMi": 0.1,
+    "directions": "Walk roughly 300 ft upstream from the lot and cross to the true-right (north) bank. Do not follow the Dutch Miller Gap trail — the route leaves the valley right here. In June and other high-water periods, scout upstream for a braided section or a log rather than forcing the main channel."
+   },
+   {
+    "lat": 47.508883,
+    "lng": -121.34370215,
+    "elev": 3260,
+    "name": "Cliff band / gully entrance",
+    "note": "Boulder field ends at a ~400-ft cliff band; go left into a steep gully choked with salmonberry and black currant bushes.",
+    "type": "Junction",
+    "distMi": 0.3,
+    "directions": "Straight up from the far bank: climb the boulder and talus field directly above the river for about 400 vertical feet until the rock band stops you."
+   },
+   {
+    "lat": 47.506538,
+    "lng": -121.3389724,
+    "elev": 3900,
+    "name": "Treeline at ~3,900 ft",
+    "note": "Gully tops out in scattered timber; leave the brush here and angle SSE cross-country toward the talus slopes.",
+    "type": "Junction",
+    "distMi": 0.8,
+    "directions": "Angle left (west) off the boulder field into the gully and force your way up it. This is real bushwhacking through salmonberry and black currant, not a trail, and it is the slowest ground of the day. The gully tops out where the brush gives way to timber."
+   },
+   {
+    "lat": 47.503724,
+    "lng": -121.33329669999999,
+    "elev": 5800,
+    "name": "Steep snow ramp below north wall",
+    "note": "A persistent snow ramp crosses the talus below Burnt Boot's north face; can hold snow into September and is the crux of the descent in reverse.",
+    "type": "Hazard",
+    "distMi": 1.4,
+    "directions": "Traverse upward through the trees until they run out onto open talus, then work up and climber's-left toward the low notch beside Point 5,841 — that notch is the key route-finding target. Above roughly 5,400 ft, pick a line through talus and boulders that keeps you off the steepest snow; the heather and cedar benches on this stretch give the easiest going."
+   },
+   {
+    "lat": 47.502317,
+    "lng": -121.33045885,
+    "elev": 5750,
+    "name": "Pass at Point 5,841",
+    "note": "Low saddle between the Burnt Boot summit block and neighboring Point 5,841; gain the ridge here for the final scramble.",
+    "type": "Junction",
+    "distMi": 1.7,
+    "directions": "The last couple of hundred vertical feet to the notch are the ramp itself: firm, sustained snow. An ice axe is required and crampons or microspikes are worth having early season — this is genuine self-arrest terrain, not a patch to walk across. Near the top, watch for a moat between snow and rock; a short traverse beneath the snow edge is sometimes needed to reach solid ground."
+   },
+   {
+    "lat": 47.5009,
+    "lng": -121.3276,
+    "elev": 6540,
+    "name": "Burnt Boot Peak",
+    "note": "Class 3 summit block with a short ridge scramble east from the 5,841 pass; views to Lemah Mountain and Overcoat Peak.",
+    "type": "Summit",
+    "distMi": 2,
+    "directions": "A short class 3-4 ridge step east off the notch, then boulder-hopping up the last of the talus to the summit block. Stay on this line: the neighbouring northwest gully is reported to hold class 4 ground and is not the way up."
+   }
+  ],
+  "bivy": [
+   {
+    "elev": 2828,
+    "name": "Hardscrabble Horse Camp, Middle Fork Snoqualmie",
+    "role": "main",
+    "type": "camp",
+    "notes": "The staging camp for the whole Middle Fork half of this zone, and the answer to the question of what to do with a seven-mile road walk. Forest Road 56 is rough — potholes, ruts and washed river-rock sections that want high clearance — and it is gated at Dingford Creek, so the last roughly seven miles to the horse camp are closed road with about 1,300 ft of gain. That stretch is legal and pleasant to bike and most parties do, then walk from here; a mountain bike is the right tool, a gravel bike is survivable. The camp itself is low, forested and buggy, but it is quiet and it sits at the foot of everything. Burnt Boot Peak is climbed from here by fording the Middle Fork — cold and thigh-deep at ordinary summer flows, and not to be attempted in high water — and then working up the northwest side to the gully system and the northeast gully at around 5,800 ft. The boot path to Hardscrabble Lakes leaves the old road about half a mile below the camp, marked by a large broken log lying across the road; it is easy to walk past. Continuing up-valley on foot the trail runs about six more miles to the old Camp Pedro area and on toward Dutch Miller Gap. Season is May into October at this elevation, but the peaks above hold snow until July.",
+    "water": "The Middle Fork Snoqualmie River and Hardscrabble Creek, both right at camp and both reliable",
+    "permit": "Free self-issue Alpine Lakes Wilderness permit at the Dingford Creek gate. Northwest Forest Pass to park at the gate. Group limit twelve including stock. Fires are legal at this elevation and the camp has established rings, but wood is picked over and summer burn bans are common on this district.",
+    "capacity": "Large — an old horse camp with a broad clearing and riverside sites near Hardscrabble Creek; several parties, stock included"
+   }
+  ]
+ },
+ "wa_ultramega_ok": {
+  "id": "wa_ultramega_ok",
+  "name": "Ultramega OK",
+  "discipline": "alpine",
+  "dist_km": 10.62,
+  "gain_ft": 4170,
+  "approach": "Start at the long highway pullout on SR-20 (~4,310 ft, near milepost 166, roughly 3.75 mi east of Washington Pass and directly across the valley from Silver Star Mountain). A boot path drops east through loose talus into forest; look for a registration box a few minutes in. The path fords Early Winters Creek on logs at about 4,080 ft (a swift wade in early season — trekking poles help). From the creek the trail climbs steadily east through forest and open slopes for roughly 2,200 ft to a broad flat bench/campsite around 6,460 ft, the approach's natural midpoint and a good high camp or bail point. Above the bench the boot path traverses loose scree gullies below Burgundy's northwest side and finishes up a final stretch of unstable, cairn-marked 'ball-bearing' scree over slab to Burgundy Col (~7,770–7,800 ft), the notch between Burgundy Spire and Paisano Pinnacle — about 3 miles and 3,500 ft one-way. From the col, Ultramega OK does not start at the col itself: scramble loose rock (or kick steps in lingering snow, ice axe recommended into July) down and around the base of Burgundy's north face until you reach a twin-crack system marked by obvious loose blocks about 60 ft up — this is the route start, climber's left of the North Face start, with Action Potential's clean splitter flake roughly 15 ft further left. Water is available at Early Winters Creek, a small trickle partway up near the col, and occasionally late-season ice on the col's east side. The loose final scree slopes below the col are the approach's main hazard — move carefully and stay bunched to avoid rockfall onto party members below.",
+  "descent_text": "Ultramega OK has no independent, well-established rappel line of its own — it is a Northeast Buttress route whose last pitch finishes up an offwidth crack to the summit, though a party that loses the line high up can traverse ledges into upper North Face terrain (near Burgundy Ledge) and finish from there. From wherever the route is topped out, the standard way down is the North Face rappel descent, about 9-10 shorter rappels on a single 60 m rope: from a heavily slung summit boulder down the upper face toward a bolted ledge anchor (use the intermediate station on the slab variation, or carry a 70 m, since a single 60 m falls about 10 ft short); down lichen-covered rock to a huge ledge near a rock arch (traverse the ledge to a constriction with slings); on to a blue-slung horn; then to broad scree ledges (watch the rope pull here — lots of snag potential) and finally back to Burgundy Col. From the base of the raps, reverse the Burgundy Col approach back to the highway. A few parties describe instead downclimbing loose 3rd/4th-class terrain on Burgundy's east side back toward the col to avoid rappelling altogether, but this is opportunistic route-finding rather than an established descent, and is not recommended in the wet or for parties unfamiliar with the terrain.",
+  "waypoints": [
+   {
+    "lat": 48.55,
+    "lng": -120.6306,
+    "elev": 4310,
+    "name": "SR-20 Burgundy Col Pullout",
+    "note": "Long unmarked pullout on the east shoulder of SR-20 near milepost 165-166, about 4 miles east of Washington Pass; the climber's trail drops down the embankment on the east side.",
+    "type": "Trailhead",
+    "distMi": 0,
+    "directions": "This route starts from a long, unmarked pullout on the east shoulder of State Route 20 near milepost 166, about 3.75 miles east of Washington Pass and directly across the valley from Silver Star Mountain, at roughly 4,310 feet. A climber's path drops down the embankment on the east side of the pullout into loose talus and forest, and you'll pass a registration box a few minutes down the trail."
+   },
+   {
+    "lat": 48.56803,
+    "lng": -120.629805,
+    "elev": 4080,
+    "name": "Early Winters Creek Crossing",
+    "note": "Trail descends ~200 ft from the pullout to ford/log-cross Early Winters Creek; last reliable, easy water before the steep climb begins.",
+    "type": "Water",
+    "distMi": 0.2
+   },
+   {
+    "lat": 48.552689650944515,
+    "lng": -120.60337830920488,
+    "elev": 6460,
+    "name": "The Bench",
+    "note": "Flat forested camping bench with multiple established tent sites and views toward the Liberty Bell group; common first-night camp for a two-day trip.",
+    "type": "Campsite",
+    "distMi": 1.8
+   },
+   {
+    "lat": 48.554424,
+    "lng": -120.592209,
+    "elev": 7770,
+    "name": "Burgundy Col",
+    "note": "7,770-ft notch gained via 1,000+ ft of loose ball-bearing scree; routes on the north face are reached by scrambling/downclimbing loose rock or snow left from here.",
+    "type": "Junction",
+    "distMi": 2.6
+   },
+   {
+    "lat": 48.55419895307295,
+    "lng": -120.59179453796625,
+    "elev": 7700,
+    "name": "Twin-crack start",
+    "note": "~5-10 min scramble down and around the north face from the col to a twin-crack system with obvious loose blocks about 60 ft up; roped climbing begins here.",
+    "type": "Junction",
+    "distMi": 2.7
+   },
+   {
+    "lat": 48.553455,
+    "lng": -120.590745,
+    "elev": 8483,
+    "name": "Burgundy Spire Summit",
+    "note": "P8 climbs left past an old bolt toward the top; parties who lose the line after P7 traverse ledges onto the North Face route's 5.10a squeeze chimney to finish, then downclimb/scramble or use the North Face rappel line to retreat.",
+    "type": "Summit",
+    "distMi": 3.3
+   }
+  ],
+  "bivy": [
+   {
+    "elev": 7800,
+    "name": "Burgundy Col high camp — west side, the Wine Spires",
+    "role": "main",
+    "type": "bivy",
+    "notes": "The narrow saddle between Burgundy Spire and the ridge, and the standard high camp for the Wine Spires and for the Silver Star Glacier approached from the highway side. Published elevations disagree by a couple of hundred feet, with figures from roughly 7,720 to 7,950 in circulation, so treat any single number as approximate. It is exposed to wind from both sides and several parties have dropped back down the west slope to sleep after a rough night. Camping here removes about 1,500 ft of the scree from summit day, which is most of the argument for carrying overnight gear up it.",
+    "water": "No spring or stream. Parties melt snow from the lingering patches on the glacier side of the col, which normally hold into late summer but can be rock-hard in the morning or gone entirely in a dry, late season. Many simply haul all their water up the scree, which is the single heaviest decision on this approach.",
+    "permit": "None. Okanogan-Wenatchee National Forest, outside any designated wilderness — no quota, no reservation and no self-issue permit, unlike the North Cascades park zones a few miles west.",
+    "capacity": "Two to four rock-ringed bivy platforms; roughly one is level enough for a two-person tent, so a large party should expect to sleep scattered or send some members back down"
+   },
+   {
+    "elev": 6400,
+    "name": "Burgundy Creek bench camp — west side",
+    "role": "main",
+    "type": "camp",
+    "notes": "The flat, sheltered alternative to sleeping at the col, in trees before the timbered rib gives way to open scree. Reports consistently call it the more pleasant camp of the two, at the cost of extra vertical on summit morning. Elevation is quoted anywhere from about 6,400 to 6,500 ft depending on which flat spot a party used. Its value is almost entirely the spring: if that has failed, the bench loses most of its advantage over the col.",
+    "water": "The most dependable water on this approach, but NOT from the obvious place. The creek shown on maps immediately east of the bench is frequently dry, while a spring roughly ten minutes north of camp keeps running well into September in most years. Confirm it before committing, and expect insects around it.",
+    "permit": "None required. Okanogan-Wenatchee National Forest, non-wilderness, so no permit or reservation applies.",
+    "capacity": "Several established tent spots on a wooded bench, with a large boulder and an old fire ring as the usual landmark; comfortably three or four tents"
+   },
+   {
+    "elev": 3600,
+    "name": "Lone Fir Campground, SR 20",
+    "role": "main",
+    "type": "camp",
+    "notes": "A roadside vehicle campground rather than a site on any approach — it is for sleeping the night before, not for the climb. It opens around May and closes with the first serious snow, tracking the same window as everything else here. The whole area is gated by the SR 20 winter closure, which shuts in late November or early December and reopens in spring, with the date driven by avalanche work and storm damage rather than the calendar. In closed months the pullout is inside the gated section and the approach becomes a long ski or snowmobile trip.",
+    "water": "No drinking water at the campground. Early Winters Creek runs alongside and needs filtering; Klipchuck and Early Winters campgrounds, farther east, have drinking water in season.",
+    "permit": "Per-night campground fee; no wilderness permit involved. The unmarked Silver Star Creek pullout that starts the west approach is not itself a signed fee site — check current signage rather than assuming either way.",
+    "capacity": "27 developed first-come, first-served sites for tents and small vehicles"
+   },
+   {
+    "elev": 7200,
+    "name": "Upper scree benches below Burgundy Col — west side",
+    "role": "route",
+    "type": "bivy",
+    "notes": "Not an established campsite so much as a fallback for a party that has run out of daylight or water partway up the talus. The main reason to know about them is that the water situation on this hillside is patchy rather than uniform, so a dry creek at the wooded bench does not necessarily mean a dry mountainside above it. Anyone counting on this should carry a stove and be prepared to find nothing.",
+    "water": "Genuinely unreliable and conditions-dependent. At least one party found a trickle running here in a season when the bench camp creek below was dry, which makes it worth checking on the way up, but nothing about it is dependable enough to plan a camp around.",
+    "permit": "None. Non-wilderness National Forest land; no permit, quota or registration.",
+    "capacity": "Improvised, one or two small parties at most; flat ground has to be found or built rather than chosen"
+   },
+   {
+    "name": "The Bench",
+    "role": "hidden"
+   }
+  ]
+ },
+ "wa_guye_peak_improbable_traverse": {
+  "id": "wa_guye_peak_improbable_traverse",
+  "name": "Improbable Traverse",
+  "discipline": "alpine",
+  "dist_km": 4.83,
+  "gain_ft": 2100,
+  "approach": "From Alpental Ski Area parking lot (3,120 ft), reach the talus cone below the west face by a line that stays off the private Alpental Community Club roads; the 'Strasse' roads off the access road are closed to walking and driving, and no established path exists. Approach time ~30 minutes to 1 hour from parking. In early August a public roadside pullout just past the private Strasse entrance serves as parking; keep to the left side of the talus where the rock is less loose.",
+  "descent_text": "After summiting via Improbable Traverse, most climbers traverse north over Guye's north and middle summits to descend via established gully systems. A climbers' trail descends from the Guye-Snoqualmie saddle area. For faster/safer descent, fixed anchors (tree with rap tatters) provide rappel opportunity on east side of summit to bypass exposure. Southeast Couloir descent toward Cave Ridge parking is viable alternative.",
+  "waypoints": [
+   {
+    "lat": 47.44542,
+    "lng": -121.42353,
+    "elev": 3120,
+    "name": "Alpental Ski Area / Snow Lake Trailhead parking lot",
+    "note": "Alpental Ski Area parking lot, the shared start for all Guye Peak routes. Stay off the private Strasse roads on the way to the talus below the west face.",
+    "type": "Trailhead",
+    "elevFt": 3120,
+    "directions": "From I-90 Exit 52 (West Summit) at Snoqualmie Pass, turn north onto Alpental Road, pass under the freeway, keep right at the fork just beyond the Pacific Crest Trail access, and drive about 1.4 miles to the Alpental Ski Area lot, with the Snow Lake trailhead across the road. A Northwest Forest Pass is required. Do not drive or park on the private Strasse roads off the access road."
+   },
+   {
+    "lat": 47.44,
+    "lng": -121.411,
+    "elev": 3600,
+    "name": "Talus cone base / climbing start",
+    "type": "landmark",
+    "distMi": 0.3,
+    "elevFt": 3600
+   },
+   {
+    "lat": 47.441,
+    "lng": -121.4095,
+    "elev": 3900,
+    "name": "Lunch Ledge belay (~300 ft on route)",
+    "type": "landmark",
+    "distMi": 0.4,
+    "elevFt": 3900
+   },
+   {
+    "lat": 47.44203,
+    "lng": -121.40875,
+    "elev": 5168,
+    "name": "Guye Peak summit (south summit, has the summit register; traverse endpoint)",
+    "type": "Summit",
+    "elevFt": 5168
+   }
+  ],
+  "bivy": [
+   {
+    "elev": 2283,
+    "name": "Denny Creek Campground, I-90 exit 47",
+    "role": "main",
+    "type": "camp",
+    "notes": "The nearest developed campground to the Alpental trailhead, roughly a twenty-minute drive back down I-90 and then three miles up the Denny Creek road. The sensible answer for a party arriving late the night before a Tooth or Chair Peak day, since it needs no wilderness permit and no early-morning decisions. Sites go quickly on summer weekends; book ahead rather than driving up hoping. In winter this option disappears entirely and you are back to sleeping in the valley towns or driving up in the dark.",
+    "water": "Potable water provided during the operating season.",
+    "permit": "Standard campground fee, reserved through recreation.gov up to six months ahead; a small number of first-come sites. No wilderness permit needed, and no trailhead pass required to sleep here. Seasonal — closed outside the summer months, so it is not an option for a winter climb.",
+    "capacity": "About 33 sites, most reservable, including electric and double sites plus one group site"
+   },
+   {
+    "elev": 1535,
+    "name": "Tinkham Campground, I-90 exit 42",
+    "role": "main",
+    "type": "camp",
+    "notes": "Further down the valley than Denny Creek, about 1.5 miles in on Forest Road 55 from exit 42, and the usual fallback when Denny Creek is booked out. The extra driving costs perhaps fifteen minutes on the approach next morning, which matters little against a ten-hour climbing day. Like every developed site on this stretch of I-90 it is a summer-only option. It sits well below the pass, low in the South Fork valley.",
+    "water": "Water availability here varies by year and is not guaranteed — confirm before relying on it and carry enough for the night otherwise.",
+    "permit": "Campground fee via recreation.gov; seasonal operation only, closed outside the summer months. No wilderness permit or trailhead pass involved.",
+    "capacity": "Small forested Forest Service campground, reservable sites"
+   }
+  ]
+ },
+ "wa_hagan_mountain_south": {
+  "id": "wa_hagan_mountain_south",
+  "name": "South Slopes",
+  "discipline": "mountaineering",
+  "dist_km": 31.38,
+  "gain_ft": 6600,
+  "approach": "This is the southern way onto Hagan, used mostly by parties on a longer traverse with Bacon Peak and Mount Blum; for the peak alone, the usual line is the North Slopes route by the Blum Lakes. Park at the Baker River Trailhead, the end of FR 11 (Baker Lake Highway), elevation roughly 800 ft. Start on Baker River Trail #606, which follows the true-right bank of the Baker River upstream through mossy old-growth forest — mostly flat, easy tread. At about 0.6 mile the trail crosses the river on a suspension bridge. Shortly after, a rerouted section drops steeply down a bank to ford a side creek and climbs back out through deadfall; this crossing gets wet and can be genuinely difficult or impassable during high runoff (spring snowmelt or after heavy rain) — plan around low-water conditions. The trail then enters North Cascades National Park and continues roughly another mile to Sulphide Creek Camp near the Sulphide Creek/Baker River confluence, about 2.6 miles and only ~170 ft of gain from the trailhead — this is the last maintained tread, the last reliable easy water, and a common bivy for a two-day trip. From near Sulphide Creek Camp, leave the trail and begin a steep, unmarked, use-path-at-best bushwhack climbing north/northeast up the valley wall through old growth and brush toward a small unnamed tarn at roughly 4550-4600 ft informally called 'Hidden Lake' (not the maintained, signed Hidden Lake Trail #745 near Marblemount, which is a different area entirely) — this gains close to 3,700 ft in a little over a mile with no tread. From the tarn, continue bushwhacking north up steep forest, working through two distinct rock cliffbands that form the route-finding crux of the approach; parties pick brushy ramps and weaknesses to keep the grade climbable. Above the cliffbands the forest breaks into open heather and grass benches on Hagan's south flank around 6000-6400 ft, with seasonal snowmelt water and rough camps. From the benches, ascend a broad talus-and-scree couloir to the southwest end of the Hagan Mountain crags, then make a rising, crevasse/moat-aware traverse around the ice apron of the Hagan Glacier (rope and crampons recommended even in summer) to reach the col between Hagan's twin summits, finishing with a short Class 2-3 scramble on slabs to the summit (listed 7067-7080 ft). Overall this is one of the more sustained, taxing approaches in the North Cascades — heavy old-growth/slide-alder bushwhacking, two cliffband route-finding sections, loose scree, and a glacier crossing — which is why it is very commonly combined with Mount Blum (and sometimes Bacon Peak) into a multi-day traverse rather than done as a single out-and-back day.",
+  "descent_text": "There is no rappelling on this route — it is a walk-off/downclimb, reversing the ascent line. From the summit, downclimb the slabs back to the col/notch between Hagan's twin summits, re-cross the moat, and retrace the rising traverse around the Hagan Glacier's ice apron (rope up again if you did on the way in — moat and crevasse hazard is the same in both directions). Continue down the broad scree/talus couloir to the heather benches on the south flank, then descend back through the two cliffbands — this is the trickiest part to reverse cleanly since the weaknesses threaded on the way up are easy to lose from above; take note of your ascent line (photos, cairns, or a GPS track) before committing. From below the cliffbands, continue the steep bushwhack descent past the small tarn ('Hidden Lake') back down to the Baker River valley floor, rejoin Baker River Trail #606 near Sulphide Creek Camp, and hike the remaining ~2.6 miles out to the trailhead. Parties who combine Hagan with Mount Blum or a longer Blum-Hagan-Bacon traverse typically continue over connecting ridges/cols instead of reversing this line, but for a standalone South Slopes ascent, downclimbing the ascent route is the standard descent. Because of the loose rock in the couloir and the brushy, unmarked cliffband sections, the descent is commonly reported as slower and more error-prone than the climb — budget extra daylight.",
+  "waypoints": [
+   {
+    "lat": 48.7507,
+    "lng": -121.556,
+    "elev": 800,
+    "name": "Baker River Trailhead",
+    "note": "End of FR 1107022; Northwest Forest Pass required for day parking and a self-issue Noisy-Diobsud Wilderness permit is at the kiosk (confirm current FR 1107 access - a 2025 washout has intermittently closed the road at mile 4).",
+    "type": "Trailhead",
+    "distMi": 0,
+    "directions": "From Sedro-Woolley, follow SR 20 east 16 miles to milepost 82, turn north on Baker Lake Road (FR 11) for 14 miles to Baker Dam Road, cross the Upper Baker Dam, continue 8 miles on FR 1107, then turn onto spur FR 1107022 and follow it to the road-end trailhead. Pavement ends at Baker Dam Road; everything beyond it is gravel Forest Service road."
+   },
+   {
+    "lat": 48.666193,
+    "lng": -121.590559,
+    "elev": 4415,
+    "name": "Upper Watson Lake",
+    "note": "This pin is the lake itself, not the Hagan Mountain summit. Designated backcountry campsites on rock outcroppings along the upper lake with a privy; no campfires allowed - last reliable, easy water before the route goes cross-country.",
+    "type": "Campsite",
+    "distMi": 3,
+    "directions": "Start on the maintained Anderson-Watson Lakes Trail 611 from the road end. Where the tread splits at about 4,700 ft, take the left (Watson) branch - the right fork drops half a mile to lower Anderson Lake - then climb roughly another half mile to the saddle near 4,800 ft where the trail crosses into the Noisy-Diobsud Wilderness, and descend from it to the lakes at about 4,400 ft. This is the last graded trail on the route; everything above the upper lake is cross-country."
+   },
+   {
+    "elev": 5300,
+    "name": "~5,300-ft saddle below Mt. Watson",
+    "note": "Cross-country gain point beyond the maintained trail: traverse rock slabs, scree and lingering snowfields beneath Mt. Watson to top this saddle, then drop through heather toward the Diobsud basin.",
+    "type": "Junction",
+    "directions": "Leave the maintained trail at the upper lake and go cross-country, climbing toward the terminal moraine below Mt. Watson. Traverse rock slabs, scree and lingering snowfields beneath the peak to top the roughly 5,300 ft saddle. There is no tread, no signage and no marked line from here on, so navigate deliberately with map and compass or GPS rather than expecting to follow anything."
+   },
+   {
+    "name": "Uppermost Diobsud Lake",
+    "note": "Established rough camp in the upper Diobsud Lakes basin used as a staging point before continuing north toward the Bacon-Hagan saddle; roughly 6 hours of travel from the trailhead.",
+    "type": "Campsite",
+    "directions": "Drop off the saddle through open heather and easy slopes into the Diobsud basin, aiming for the uppermost pair of the four Diobsud Lakes. Heather and open ground with route-finding required, but no technical terrain. On-file timing puts this camp at roughly 6 to 6.5 hours and about 7.4 miles from the trailhead, with around 3,600 ft of gain and 500 ft of loss, and it is the standard base for the south-slopes climb."
+   },
+   {
+    "elev": 4553,
+    "name": "Hidden Lake (Bacon-Hagan saddle)",
+    "note": "Small unofficial-name tarn in the low saddle between Bacon Peak and Hagan Mountain, draining to Hidden Creek; reliable water and a flat-enough bivy if needed.",
+    "type": "Water"
+   },
+   {
+    "lat": 48.74893,
+    "lng": -121.496492,
+    "elev": 5024,
+    "name": "Blum Lakes",
+    "type": "Water"
+   },
+   {
+    "name": "Cliff-band forest slopes, south flank of Hagan",
+    "note": "Steep bushwhack north through timber past two cliff bands to break out onto open heather and grass on Hagan's south side - the most sustained brush/route-finding crux of the approach.",
+    "type": "Hazard",
+    "directions": "From the tarn, bushwhack north up steep forest, working through two distinct rock cliff bands - this is the sustained route-finding crux of the whole approach. Pick brushy ramps and weaknesses through each band to keep the ground climbable; above them the timber breaks out onto open heather and grass benches on Hagan's south flank around 6,000-6,400 ft, with seasonal snowmelt water and rough camps. Mark your line through the bands with photos, cairns or a GPS track before going higher: the descent reverses this exact ground, the weaknesses you threaded coming up are hard to spot from above, and the descent is consistently reported as slower and more error-prone than the climb."
+   },
+   {
+    "name": "Scree/talus couloir col, SW end of Hagan",
+    "note": "Ascend a broad, loose scree-and-talus couloir to a col near the southwest end of the summit crags; this is the same col the descent down-climbs back to the heather benches - watch for rockfall onto parties below.",
+    "type": "Hazard",
+    "directions": "From the heather benches, ascend a broad talus-and-scree couloir to a col near the southwest end of the Hagan summit crags, around 7,000 ft. The couloir is loose the whole way - helmets on, and keep the party either tight together or well spread out rather than stacked, since anything kicked here runs straight onto whoever is below. This is the same col the descent downclimbs back to the benches."
+   },
+   {
+    "lat": 48.724455,
+    "lng": -121.492005,
+    "elev": 7067,
+    "name": "Hagan Mountain summit",
+    "note": "Class 2-3 scrambling up slabs from the col to the summit ridge; several rocky bumps along the crest, so identify the true high point before topping out.",
+    "type": "Summit",
+    "directions": "From the col at the southwest end of the crags, make a rising, crevasse- and moat-aware traverse around the ice apron of the Hagan Glacier to reach the second col, the one between Hagan's twin summits. This short glacier section is the technical crux of the route despite the Class 2-3 billing: carry rope, harness and a crevasse-rescue kit, and put crampons on - both are recommended even in midsummer. The moat is the same hazard in both directions on the way back. From the twin-summit col a short Class 2-3 scramble on slabs gains the summit ridge. Hagan carries several rocky bumps of similar height along that crest, so identify the true high point (7,067-7,080 ft) before committing to the last moves."
+   }
+  ],
+  "bivy": [
+   {
+    "elev": 5800,
+    "name": "South Hagan bench",
+    "role": "main",
+    "type": "bivy",
+    "notes": "Open benches on the south side of Hagan Mountain, reached from the Blum Lakes by climbing to the ridge crest near 5,600 ft and traversing south. This is where parties stage for Hagan's south slopes: from the bench, talus and a scree couloir lead to the southwest end of the Hagan crags, and slabs on the south side give the final scramble to the summit. It is also the natural stop for anyone continuing east toward Hidden Lake and Bacon. The bench is comfortable and the position is superb, but it is fully exposed and the water is seasonal, which is the reason most parties still base at the lakes and do Hagan in a long day.",
+    "water": "Snowmelt runnels and small pools that shrink through the season; late summer parties should plan to carry water up from the Blum Lakes or from Hidden Lake below",
+    "permit": "North Cascades National Park backcountry permit. This ground sits on the boundary between the Blum and Bacon Peak cross-country zones, so confirm which zone your permit is written for when you pick it up. Six-person party limit either way, no fires, no camping in meadow",
+    "capacity": "Two tents on heather and gravel benches; informal, with no fixed site"
+   },
+   {
+    "elev": 4550,
+    "name": "Hidden Lake, below the Blum-Hagan divide",
+    "role": "main",
+    "type": "camp",
+    "notes": "A small lake in the saddle country between Hagan and Bacon, reached from the Blum Lakes by crossing the ridge southeast of them and dropping to it. It matters here as the reliable water on Hagan's far side and as the standard second night for parties traversing east. It is a considerable drop below the Hagan bench, so it is a poor choice if Hagan is your only objective — you give back four hundred feet you will re-climb in the morning. Reaching it involves snow into midsummer and steep heather afterwards. Do not treat this as an approach camp for Bacon Peak from the Baker River side; the practical way to Bacon is from a different road entirely.",
+    "water": "The lake. Treat it. Reliable all season, which is not true of the benches above",
+    "permit": "North Cascades National Park backcountry permit. This lake sits toward the Bacon Peak side of the divide, so check which cross-country zone the ranger writes your permit for. No fires, six-person limit, camp a hundred feet back from the water",
+    "capacity": "Two or three tents on the flats near the shore"
+   },
+   {
+    "name": "Sulphide Camp, end of the Baker River trail",
+    "role": "route",
+    "type": "camp",
+    "notes": "This is the only designated, built camp anywhere near this trailhead: flat sites and a toilet at the end of trail 606, a couple of easy valley miles past the suspension bridge. It is not on the way to Blum or Hagan. The climbers' path for both peaks leaves the trail near Blum Creek, well before this, and heading up-valley to Sulphide takes you in the wrong direction. It is listed because it is the legal, comfortable option for a party that arrives late, wants a short first evening, or is waiting out weather at the bottom, and because low-elevation valley ground here is otherwise wet, brushy and off-limits. Elevation is valley-bottom, only a little above the trailhead.",
+    "water": "Sulphide Creek and the Baker River, both close by. Treat the water; the river runs silty in high melt",
+    "permit": "North Cascades National Park backcountry permit for a designated camp, which is a different reservation than a cross-country zone — book it or ask for it at the permit office rather than assuming a zone permit covers it. No fires",
+    "capacity": "Two established sites and a backcountry toilet; a small party each"
+   },
+   {
+    "name": "Upper Watson Lake",
+    "role": "hidden"
+   },
+   {
+    "name": "Uppermost Diobsud Lake",
+    "role": "hidden"
+   }
+  ]
+ },
+ "wa_lemah_mountain_east_route": {
+  "id": "wa_lemah_mountain_east_route",
+  "name": "East Route (Main Peak)",
+  "discipline": "alpine",
+  "dist_km": 12.9,
+  "gain_ft": 4680,
+  "approach": "Start at the Pete Lake Trailhead (aka Cooper Lake / Cooper River trailhead, ~2,800') on FR 4616 off Cooper Lake Road (FS-46); a Northwest Forest Pass is required to park. Follow the Cooper River Trail (Trail #1323) roughly 4 flat, forested miles to Pete Lake (~2,980'). Continue along the lakeshore and past its camps for about another 1.2 miles, staying right at the first fork rather than crossing the creek, to reach the Pacific Crest Trail junction. Turn south (left) on the PCT for about 0.8 mile to the Lemah Creek crossing. Leave the maintained trail near the Lemah Creek crossing (the PCT bridge here washed out years ago and has not been replaced; parties ford or cross on logs) and head west/cross-country toward Upper Lemah Meadows — an intermittent climbers' path and sparse cairns mark the way for the first ~1,000 feet before fading into open terrain. From there it's another 1-2 miles of off-trail travel up the Lemah Creek valley — past small waterfalls and swimming holes, through several creek crossings, and some brushy slide-alder sections — gaining to a meadow camp around 3,600'. Most parties camp here or continue up the valley along the creek to about 5,000' where the glacier remnant/snowfinger terminates. From there climb to roughly 6,200' and exit left (south) up a short cliff step onto the glacial remnants/snowfields on the peak's southeast side. Traverse to just southwest of the main summit and climb a series of Class 2-3 cliff bands to the col between Lemah Two and the Main (East) Peak — this is the technical crux of the approach/climb and the point most trip reports flag for route-finding and loose rock. Total is roughly 16 miles round trip with ~4,700' of gain, and parties commonly take 8-10+ hours from trailhead to summit, so many split it into a two-day trip with a camp near 3,600'. Hazards: cold, sometimes thigh-deep early-season creek crossings on Lemah Creek; brush and downed timber off-trail; loose, exposed Class 2-3 scrambling in the cliff bands; and a genuine route-finding crux locating the correct gully/cliff-band line up to the col, especially in fog, low visibility, or lingering snow.",
+  "descent_text": "Standard descent is to reverse the ascent line: down from the summit block via the NW ridge to just below the true summit, back down through the col between Lemah Two and Lemah Main, down the Class 2-3 cliff bands, across the southeast snowfields/glacial remnants, and back down the valley to camp and out the same cross-country/PCT/Pete Lake Trail approach. This is not a walk-off in the sense of a maintained trail all the way — expect the same off-trail, brushy, creek-crossing travel in reverse. On the technical section near the col/notch (above ~7,200'), many parties downclimb the Class 3-4 rock and short snow/ice moat, but a documented descent used rappels here instead of downclimbing the more exposed step: that party rigged for four rappel stations but ended up doing three (having passed the first anchor), with a 60m rope reaching a small ledge/platform from which the remaining short section was downclimbed. Anchors on this section are natural — slings around rock horns/chockstones, not bolted or fixed gear — so bring cordage/slings and be prepared to build your own. Bring a 60m rope (or a 30m single is enough for some parties who downclimb more and rappel less); carrying less rope means more downclimbing of exposed 3rd/4th-class terrain. Descent hazards: rockfall in the gully/cliff-band system (especially with multiple parties on route), a snow/ice moat near the top of the gully that can be tricky to negotiate depending on season, and losing the correct downclimbing line through the cliff bands, which can cliff you out onto steeper terrain. Given the long round-trip time, plan for the possibility of finishing the hike-out in the dark.",
+  "waypoints": [
+   {
+    "lat": 47.4341,
+    "lng": -121.1869,
+    "elev": 2800,
+    "name": "Pete Lake Trailhead",
+    "note": "Self-issue Alpine Lakes Wilderness permit at the kiosk; Northwest Forest Pass or day-use fee required for the lot.",
+    "type": "Trailhead",
+    "distMi": 0,
+    "directions": "From I-90 Exit 80 (Roslyn/Salmon la Sac), go north on Bullfrog Road 2.8 miles through two roundabouts and continue on SR 903 through Roslyn and past Cle Elum Lake to Forest Road 46, about 16.8 miles from the freeway. Turn left (west) on FR 46 for 4.7 miles, then right on FR 4616 for about 1 mile to the Pete Lake trailhead at about 2,800 ft. A Northwest Forest Pass and a self-issued wilderness permit are required."
+   },
+   {
+    "lat": 47.473018,
+    "lng": -121.222841,
+    "elev": 2921,
+    "name": "Cooper River crossing",
+    "type": "Water",
+    "distMi": 3.6
+   },
+   {
+    "lat": 47.475873,
+    "lng": -121.235953,
+    "elev": 2984,
+    "name": "Pete Lake",
+    "note": "Established lakeshore campsites and reliable water on the east shore where Pete Lake Trail #1323 meets the lake.",
+    "type": "Campsite",
+    "distMi": 4,
+    "directions": "Four flat, forested miles on the Cooper River Trail #1323 with barely 200 ft of gain — the easiest walking of the trip, and no measure of what follows it."
+   },
+   {
+    "lat": 47.48416,
+    "lng": -121.25932,
+    "elev": 3249,
+    "name": "Lemah Meadow / PCT junction campsite",
+    "note": "Small campsite marks the Pacific Crest Trail junction; turn left (south) here on the PCT and stay on it to Lemah Creek, where the climbers' path leaves the trail.",
+    "type": "Junction",
+    "distMi": 5,
+    "directions": "Continue along the shore past the lake camps for roughly another mile, staying right at the first fork rather than crossing the creek, to where the Pacific Crest Trail comes in. Turn left (south) on the PCT for about 0.8 mile to Lemah Creek."
+   },
+   {
+    "lat": 47.481715,
+    "lng": -121.255982,
+    "elev": 3400,
+    "name": "Lemah Meadows creek ford",
+    "note": "Marshy meadow crossing forces a thigh-high ford of Lemah Creek's braids, followed by roughly 1,000 ft of slide-alder bushwhacking on the meadow's northwest side.",
+    "type": "Hazard",
+    "distMi": 5.5,
+    "directions": "An intermittent climbers' path with sparse cairns leads the first thousand feet or so toward Upper Lemah Meadows before fading into open ground. There is no dependable bridge over Lemah Creek, so plan on wading rather than counting on one; the braids run cold and can be thigh-deep, and with high water this is a real obstacle rather than a nuisance."
+   },
+   {
+    "lat": null,
+    "lng": null,
+    "elev": 3854,
+    "name": "Point 3854 cairn line",
+    "note": "Trail fades into brush here; sparse cairns mark the cross-country line where Lemah's five distinct summits and Whinnimic Falls first come into view.",
+    "type": "Junction",
+    "distMi": 6,
+    "directions": "Beyond the alder the travel goes straight up the Lemah Creek valley — a mile or two of off-trail ground past small waterfalls and pools, with several more creek crossings and further brushy stretches. Expect wet feet for the rest of the day; there is no line through here that keeps them dry. Most parties camp on a bench in the meadows near 3,600 ft."
+   },
+   {
+    "lat": 47.494401,
+    "lng": -121.287664,
+    "elev": 4926,
+    "name": "Lemah Creek crossing",
+    "type": "Water",
+    "distMi": 9.2
+   },
+   {
+    "lat": null,
+    "lng": null,
+    "elev": 6500,
+    "name": "Snow gully and moat transition",
+    "note": "Prominent snow gully gains the east flank; near its top, ~200 ft of wet slabs and running water lead to a moat where snow meets rock — tricky, exposed transition onto the ledges.",
+    "type": "Hazard",
+    "distMi": 7,
+    "directions": "Carry on up the valley beside the creek to about 5,000 ft, where the snow finger and glacier remnant begin, then take the snow itself: 35-45 degree ground where crampons and an axe are essential and the runout below is bad. Crevasses are few but they are there, so a rope team is worth having across the remnant. Start early enough that the snow is still firm — this is the section that degrades to bare ice and open moats as the snowpack goes."
+   },
+   {
+    "lat": null,
+    "lng": null,
+    "elev": 7200,
+    "name": "Southeast ridge notch",
+    "note": "Loose, exposed ledges gain the notch on the southeast ridge above 7,200 ft; the final summit scramble begins here.",
+    "type": "Junction",
+    "distMi": 7.5,
+    "directions": "Cross the moat and climb the short cliff step onto the glacial remnants and snowfields on the peak's southeast side, then work across a series of cliff bands to the col between Lemah Two and the main peak. Finding the correct gully and cliff-band line up to the col is the route-finding crux, especially in fog or lingering snow, and the rock is loose."
+   },
+   {
+    "lat": 47.4907,
+    "lng": -121.3012,
+    "elev": 7519,
+    "name": "Lemah Mountain (Main Peak / Lemah Three)",
+    "note": "True summit of the five-tower Lemah massif, first climbed in 1923; last moves are exposed class 3-4 blocks on the summit tower.",
+    "type": "Summit",
+    "distMi": null,
+    "directions": "From the col climb north toward the summit, then traverse west across the exposed ridge, going around or over a small summit block; the final 30 ft traverse west and climb the northwest ridge to the top. Gain the ridge where it looks easiest rather than following the snow-filled gully just left of the summit rocks, which tops out on loose third- and fourth-class ground."
+   }
+  ],
+  "bivy": [
+   {
+    "elev": 2986,
+    "name": "Pete Lake and the Lemah Meadows camps",
+    "role": "main",
+    "type": "camp",
+    "notes": "The workhorse camp of the entire western half of this zone. From the trailhead at the north end of Cooper Lake the trail runs about four gentle miles along the Cooper River to Pete Lake, and roughly two and a half more to the Lemah Meadows area and the Pacific Crest Trail junction. Parties bound for Lemah Mountain and Lemah Two leave the trail here and follow a climbers' path up the north side of Lemah Creek past waterfalls to the meadow at about 3,600 ft, where the creek spreads into shallow ponds; camp at the far end, and expect a thicket of slide alder that is best turned in the timber to the north rather than fought through. Parties bound for Chimney Rock also pass through, but leave the PCT further north — see the Chimney Glacier basin entry. Pete Lake itself is low, forested and mosquito-ridden in early summer, and it is a long way from any summit, so it works as a first-night camp or a bail-out rather than a climbing base. Season is roughly July into October; the valley clears early but the basins above hold snow well into July. The Cooper River road is paved then gravel and passenger-car friendly. Honest caveat for 2026: the Pete Lake trail was inside a large wildfire closure on the Cle Elum Ranger District through late summer, with the closure scheduled to run to the end of October and subject to change — confirm the trail is open before driving out.",
+    "water": "Reliable all season — the lake itself, the Cooper River along the trail, and Lemah Creek and its north fork above the meadows",
+    "permit": "Free self-issue Alpine Lakes Wilderness permit at the trailhead board, filled out and carried. Northwest Forest Pass to park. Group limit twelve including stock. Campfires are legal at these elevations but the lakeshore is heavily used and a stove is the better manners; no fires above 5,000 ft anywhere in this wilderness.",
+    "capacity": "Numerous established sites around Pete Lake, enough for a dozen or more parties on a summer weekend; the meadow camps beyond are informal and hold two or three tents each"
+   },
+   {
+    "name": "Pete Lake",
+    "role": "hidden"
+   }
+  ]
+ },
+ "wa_mount_carrie_se_route": {
+  "id": "wa_mount_carrie_se_route",
+  "name": "Southwest Ridge via High Divide and the Catwalk",
+  "discipline": "scrambling",
+  "dist_km": 40.2,
+  "gain_ft": 6000,
+  "approach": "There is no established route to Mount Carrie from Hurricane Ridge; that area is separated from the Bailey Range by miles of trailless, glaciated terrain and functions only as a viewpoint. The actual approach used by essentially all climbers starts at the Sol Duc River Road trailhead (~2,000 ft) on US-101 near Lake Crescent: Sol Duc Falls → Deer Lake Trail junction (+1 mi) → Heart Lake (+7 mi, 4,800 ft) → High Divide crest (+0.5 mi, 5,100 ft) → east on the Cat Basin trail toward Cat Basin → an unmaintained path over Cat Peak's exposed south side and across the airy \"Catwalk\" ridge (Class 3) to Boston Charlie's Camp. From camp, the final push follows Carrie's southwest ridge (Class 1 grass/rock) and contours a broad, steep, loose south-facing scree basin around 6,500 ft before a scree-and-snow finish (ice axe advisable) to the summit (Class 2). One-way distance from the trailhead to the summit is roughly 13 miles. Just before the Catwalk the path turns steeply uphill for about 100 ft; it is easy to miss that turn and follow a track that ends in cliffs (early July).",
+  "descent_text": "Reverse the ascent line. From the summit, descend the southwest ridge and the south-facing scree basin below it to Boston Charlie's Camp, keeping the helmet on - the rock here is loose and rockfall is the reason the helmet is mandatory on this route - and carrying the axe for any steep snow still lying in the basin early in the season. From Boston Charlie's, re-cross the Catwalk to Cat Peak. This is the crux of the day in descent exactly as it is in ascent: a narrow rock and heather ridge with substantial exposure where a fall could be fatal, and descending a scramble is generally the more hazardous direction, so cross it in daylight and with full attention rather than hurrying it at the end of a long day. From Cat Peak follow the High Divide back to Heart Lake, then take the Sol Duc River Trail out to the trailhead. There is no rappelling anywhere on the standard line. With lingering snow in mid-July you can scree-ski a gully southeast from about 6,300 ft back to the trail, but a washed-out chute near 5,150 ft needs careful routefinding.",
+  "waypoints": [
+   {
+    "lat": 47.96963,
+    "lng": -123.86379,
+    "elev": 1684,
+    "name": "Sol Duc Hot Springs Resort campground",
+    "type": "Campsite"
+   },
+   {
+    "lat": 47.955249,
+    "lng": -123.835839,
+    "elev": 1970,
+    "name": "Sol Duc Trailhead",
+    "note": "",
+    "type": "Trailhead",
+    "distMi": 0,
+    "directions": "Do not drive to Hurricane Ridge — there is no established approach to Carrie from there, and essentially every party starts at Sol Duc instead. From US-101 near Lake Crescent, turn up Sol Duc Hot Springs Road and follow it to the end at the Sol Duc River trailhead, around 2,000 ft. The maintained trail toward Sol Duc Falls and the Deer Lake junction leaves from here."
+   },
+   {
+    "lat": 47.927737,
+    "lng": -123.823777,
+    "elev": 3526,
+    "name": "Deer Lake",
+    "type": "Water",
+    "distMi": 2.7
+   },
+   {
+    "lat": 47.909836,
+    "lng": -123.733915,
+    "elev": 4744,
+    "name": "Heart Lake",
+    "type": "Campsite",
+    "distMi": 18.5
+   },
+   {
+    "lat": 47.9092533,
+    "lng": -123.708383,
+    "elev": 5000,
+    "name": "Cat Basin / High Divide",
+    "type": "Campsite",
+    "distMi": null,
+    "elevFt": 5000,
+    "directions": "Hike past Sol Duc Falls and stay on the Sol Duc River Trail past the Deer Lake junction, climbing about 7 more miles up the valley to Heart Lake, the last reliable water. Climb about half a mile to the High Divide crest and turn east on the primitive trail toward Cat Basin."
+   },
+   {
+    "lat": 47.890988,
+    "lng": -123.664591,
+    "elev": 5543,
+    "name": "Boston Charlie's Camp",
+    "type": "Campsite",
+    "distMi": 12.8
+   },
+   {
+    "lat": 47.894273,
+    "lng": -123.649285,
+    "elev": 6995,
+    "name": "Mount Carrie",
+    "type": "Summit",
+    "distMi": null,
+    "elevFt": 6995,
+    "directions": "Follow the High Divide trail to its end, then the thin path along the exposed south side of Cat Peak to the Catwalk, a narrow class 2-3 rock and heather ridge where a fall could be fatal. Push through brush to Boston Charlie's Camp, switchback up Carrie's southwest ridge, contour around the top of the loose south-facing scree basin near 6,500 ft, and finish at the true summit on the basin's far right (east) end."
+   }
+  ],
+  "bivy": [
+   {
+    "elev": 4744,
+    "name": "Heart Lake",
+    "role": "main",
+    "type": "camp",
+    "notes": "The most useful camp in the whole zone for a climber. It sits just under eight miles in, a short climb below the High Divide, and it is the last camp on maintained trail with easy water before the route to Mount Carrie, Ruth Peak and Mount Fairchild leaves the trail for good. From here you gain the divide, follow it past Cat Peak, cross the exposed class 3 ridge known as the Catwalk, and the climbing starts. Parties who miss the permit sometimes take a Seven Lakes Basin camp such as Lunch Lake instead, but that puts you off the direct line and adds side-hilling in the morning. Fill every bottle here — the stretch from the divide out to the first Bailey Range camps carries no running water.",
+    "water": "Reliable — the lake and the creek feeding it, all season; this is the last dependable running water for a long way",
+    "permit": "Olympic wilderness permit required, quota camp booked for a specific night on the federal booking site. Reservations for the summer season open in the spring and the High Divide camps are among the fastest to go in the park, often within minutes. Bear canisters mandatory, no campfires.",
+    "capacity": "A small number of designated sites under a nightly cap, with a vault toilet; group parties must use the designated group site"
+   },
+   {
+    "name": "Cat Basin",
+    "role": "main",
+    "type": "camp",
+    "notes": "Cat Basin lies just below the junction at roughly 5,042 ft where the High Divide trail meets the way into the Bailey Range, so it is the last sheltered ground on the approach before the route turns cross-country beneath Cat Peak. Parties heading for Mount Carrie use it to shorten the following morning and to get below the wind, since the divide itself is fully exposed. It is genuinely primitive — expect to be finding your own flat spot on durable ground, and expect the sites to be scattered rather than obvious. In heavy snow years the basin fills late and the traverse out to the Catwalk holds steep snow well into July.",
+    "water": "Streams in the basin early in the season, unreliable by late summer; carry from Heart Lake if the year has been dry",
+    "permit": "Olympic wilderness permit required. This one is worth phoning the park's wilderness information office about rather than assuming — the primitive and cross-country parts of this area are not all bookable through the standard online map, and staff issue those permits directly. Bear canisters mandatory, campfires banned outright at this height.",
+    "capacity": "A primitive designated area rather than a developed camp; a handful of tent spots, no toilet you should count on"
+   },
+   {
+    "elev": 1684,
+    "name": "Sol Duc Hot Springs Resort campground",
+    "role": "route",
+    "type": "camp",
+    "notes": "The drive-in staging base for every objective in this zone except Mount Angeles, a couple of miles short of the end of the Sol Duc Hot Springs Road where the trailhead for the High Divide and Appleton Pass sits. Climbers use it the night before, because the walk to Heart Lake or Appleton Pass is long enough that leaving Port Angeles in the morning wastes the day. It opens with the season, roughly late March into late October, and it fills solidly on summer weekends. It is a staging base and nothing more — from here you still have the entire approach ahead of you, and every camp above it is permit-controlled.",
+    "water": "Potable water and flush toilets in the comfort stations through the operating season",
+    "permit": "No wilderness permit — this is a frontcountry campground with a nightly fee, taken on the federal recreation booking site or through the resort. Park entrance fee applies. Fires are allowed in the provided rings here, unlike anywhere you are going above it.",
+    "capacity": "Around 82 tent sites plus a smaller RV loop; most tent sites are reservable and a handful are held back first-come"
+   },
+   {
+    "elev": 5543,
+    "name": "Boston Charlie's Camp",
+    "role": "route",
+    "type": "bivy",
+    "notes": "This is the first camp on the far side of the Catwalk and the recognised start of the Bailey Range proper. It matters because it puts you directly at the foot of Mount Carrie's southwest ridge, where the route gains around 2,000 ft in under a mile on a semi-cairned bootpack, so a party camped here can be on the summit early and off the loose ground before the afternoon. Getting to it means crossing the exposed class 3 ridge between Cat Peak and Carrie with a full pack, which is the crux of the approach for most people and not somewhere to be in wet weather. The water is the honest drawback and the reason some parties push straight through to the basins beyond.",
+    "water": "Poor and the standing complaint about the place — a shallow sinkhole pond that is often silty and stagnant, and nothing else nearby. Filter and treat, and consider carrying from Heart Lake or Cat Basin",
+    "permit": "Covered by an Olympic wilderness cross-country permit, which for the Bailey Range is arranged directly with the park's wilderness information office rather than booked as a named campsite online. Bear canisters mandatory. No fires. Camp on durable surfaces — snow, rock or gravel — and pack out everything.",
+    "capacity": "Informal cross-country bivy sites for a couple of small parties; no facilities of any kind"
+   },
+   {
+    "name": "Cat Basin / High Divide",
+    "role": "hidden"
+   }
+  ]
+ },
+ "wa_lena_lake_to_mt_stone_traverse": {
+  "id": "wa_lena_lake_to_mt_stone_traverse",
+  "name": "Lena Lake to Mt Stone traverse",
+  "discipline": "scrambling",
+  "dist_km": 25.7,
+  "gain_ft": 9000,
+  "approach": "Start at the Lena Lake Trailhead on Hamma Hamma River Road (FS 25, ~600-750 ft). Follow the well-maintained Lena Lake Trail (#810) about 3 miles through second-growth and old-growth forest along Lena Creek to Lena Lake (~1,800 ft), a popular backpacking destination with reliable camping and water. Beyond Lena Lake the trail narrows to a steep, primitive tread that climbs the West Fork Lena Creek drainage; continue roughly 3.5 more miles and about 2,700 additional feet to Upper Lena Lake (~4,000 ft total gain, ~6.5 mi from the trailhead), the last reliable water and the last maintained-trail camp before the traverse goes cross-country. From Upper Lena Lake, leave the trail and head southwest/west: pick up the Scout Lake way-trail across meadows and huckleberry-heather slopes past Lena Tarn to Scout Pass (~5,200 ft), descend slightly to Upper Scout Lake, contour high around it into Scout Basin, and climb to Ullin's Pass (~5,000 ft) overlooking the tarns known as \"Ullin's Bathtubs.\" From Ullin's Pass, a rising traverse above the small lakes leads to a snow ramp that angles across a steep hillside below Mt. Stone and ends at a loose, grungy moraine; the final approach to St. Peter's Gate (~5,950 ft, the traverse's high point) is exposed dirt-and-mud slopes with real route-finding demands, about 2.2 miles and 2,200 ft above Upper Lena Lake. This entire off-trail section crosses loose moraine and talus, can hold snow patches well into summer (many parties carry an ice axe), and has no dependable water between Upper Lena Lake and the small tarns near Ullin's Pass; fog is common and has caused parties to lose the route. From St. Peter's Gate, most parties descend about 300 ft to the base of a basalt cliff and cache overnight packs there, then follow a vague climber's path up a Class 3-4 gully on Mt. Stone's south face into a rock bowl below the summit block, joining the standard west-ridge route for a final ~100 ft of Class 2-3 scrambling on solid pillow basalt to the true (south) summit.",
+  "descent_text": "From the summit, reverse the west-ridge/south-face scramble line (well-trodden climber's path) back down to the pack cache below St. Peter's Gate — this is the same route used on the ascent, no alternate descent line. From there continue southwest about half a mile to the Lake of the Angels basin, a common second camp, then pick up the primitive, historic Putvin Trail for the exit. The Putvin Trail drops steeply through Whitehorse Basin and past the Pond of the False Prophet; one particularly steep pitch is equipped with a fixed handline rope, and another awkward step is negotiated using a large, exposed tree root as a handhold. The trail continues down to the Putvin Trailhead on Hamma Hamma River Road — a different trailhead than the Lena Lake start, roughly 4 miles of forest road away, so plan a car shuttle or a bike stashed at one end to close the loop. The entire route, ascent and descent alike, is a scramble/walk with no technical rock protection or rope work beyond the fixed handline on the Putvin Trail; no rappelling is involved anywhere on this traverse.",
+  "waypoints": [
+   {
+    "lat": 47.5998,
+    "lng": -123.1508,
+    "elev": 750,
+    "name": "Lena Lake Trailhead",
+    "note": "FS Road 25 trailhead on the Hamma Hamma River; well-graded Lena Lake Trail #810 starts here, Northwest Forest Pass required to park.",
+    "type": "Trailhead",
+    "distMi": 0,
+    "directions": "From Hoodsport, drive north on US 101 about 14 miles and turn left onto Hamma Hamma River Road (FS Road 25) near milepost 318. Follow it about 7.5 paved miles to the Lena Lake Trailhead, a lot for about 30 cars. A Northwest Forest Pass or Interagency pass is required to park."
+   },
+   {
+    "lat": 47.6235,
+    "lng": -123.1572,
+    "elev": 1800,
+    "name": "Lena Lake",
+    "note": "55-acre lake with an established Forest Service campground on the west shore; last reliable, easy-access water before the climb steepens toward the upper basin.",
+    "type": "Water",
+    "distMi": 3
+   },
+   {
+    "lat": 47.624686,
+    "lng": -123.160335,
+    "elev": 1816,
+    "name": "Lena Creek crossing",
+    "type": "Water"
+   },
+   {
+    "lat": 47.626282,
+    "lng": -123.243121,
+    "elev": 4263,
+    "name": "Scout Lake",
+    "type": "Water"
+   },
+   {
+    "lat": 47.6337,
+    "lng": -123.2096,
+    "elev": 4550,
+    "name": "Upper Lena Lake",
+    "note": "Backcountry camp basin just inside Olympic National Park; wilderness permit and bear canister required, and the trail ends here and the Scout Lake way-trail continues off-trail.",
+    "type": "Campsite",
+    "distMi": 6.5
+   },
+   {
+    "lat": 47.59658,
+    "lng": -123.27357,
+    "elev": 4900,
+    "name": "Lake of the Angels",
+    "type": "Campsite"
+   },
+   {
+    "lat": 47.624834,
+    "lng": -123.228267,
+    "elev": 5200,
+    "name": "Scout Pass",
+    "note": "Primitive way-trail crosses this pass through huckleberry-heather meadows past Lena Tarn and Scout Lake; tread is faint and easy to lose in fog or fresh snow.",
+    "type": "Junction",
+    "distMi": 8.5
+   },
+   {
+    "lat": 47.60399,
+    "lng": -123.26471,
+    "elev": 5934,
+    "name": "St. Peter's Gate",
+    "note": "Rocky notch in Mt. Stone's southeast ridge and the traverse's high point, reached via a steep snow/dirt ramp over loose glacial moraine above Ullin's Bathtubs; gap opens onto the Lake of the Angels basin beyond.",
+    "type": "Junction",
+    "distMi": null
+   },
+   {
+    "lat": 47.6063,
+    "lng": -123.2666,
+    "elev": 6612,
+    "name": "Mount Stone (South Summit)",
+    "note": "Class 3 scramble on solid pillow basalt from St. Peter's Gate; in fog it's easy to confuse the true south summit with the nearby Middle and North summits, and the final gully narrows to Class 3-4.",
+    "type": "Summit",
+    "distMi": 10.8
+   },
+   {
+    "lat": 47.593144,
+    "lng": -123.239673,
+    "elev": 3200,
+    "name": "Putvin Trail cliff/handline section",
+    "note": "Steep, eroded cliff band on the descent below Whitehorse Basin and the Pond of the False Prophet, rigged with a fixed handline and an exposed root system used as a ladder; greasy and dangerous when wet.",
+    "type": "Hazard",
+    "distMi": 13.3
+   }
+  ],
+  "bivy": [
+   {
+    "elev": 4500,
+    "name": "Upper Lena Lake",
+    "role": "main",
+    "type": "camp",
+    "notes": "The high camp for the northern approach to Mount Stone. Seven-odd miles and around 3,900 ft from the Lena Lake trailhead, of which the last three miles above the lower lake are steep and rooty and feel far longer than the distance suggests. From here the traverse runs southwest past Scout Lake to St. Peter's Gate, the notch under Mount Stone, and parties often continue over the gate and out via Lake of the Angels and the Putvin trail, which needs a car shuttle between two Hamma Hamma trailheads. Getting the permit is the whole planning problem: eight sites against considerable demand means the reservation window matters more than the weather. If it is gone, camp at Lena Lake below and accept a much longer summit day, or come at Mount Stone from the Putvin side instead. Snow lingers in the basin into July in a heavy year, and the meadow is the reason the sites are designated — stay on them.",
+    "water": "Reliable. The lake, plus meltwater in the basin early in the season. This is the last certain water before the high traverse toward Scout Lake and St. Peter's Gate",
+    "permit": "Olympic National Park wilderness permit required, and this is a named quota area — the boundary is crossed on the climb up from Lena Lake, so the rules change midway. Reserve through Recreation.gov, choosing Staircase as the entry area and Upper Lena Lake as the camp; the reservation season runs roughly July into mid-October and permits for the summer are released in a single April window that clears quickly. Per-person nightly fees apply on top of a booking fee. An animal-resistant food container is required throughout the park wilderness. No campfires — well above the 3,500 ft fire limit. A Northwest Forest Pass is still needed at the trailhead, because the parking is on Forest Service ground",
+    "capacity": "Eight designated wilderness sites in the meadow basin, and that is the hard ceiling — the basin is small, fragile and closely managed"
+   },
+   {
+    "elev": 700,
+    "name": "Hamma Hamma River road campgrounds — Lena Creek and Hamma Hamma",
+    "role": "route",
+    "type": "camp",
+    "notes": "The drive-in staging option for everything on the Hamma Hamma side: Lena Lake and The Brothers, the Putvin trail to Lake of the Angels for Mount Skokomish and Mount Stone, and the Jefferson Creek spur for Mount Pershing. Lena Creek is the more useful of the two because it sits essentially at the Lena Lake trailhead, so a party arriving late can sleep at the car and start walking at first light instead of driving the gravel in the dark. This is a contingency and staging site rather than the normal plan for anyone climbing here — the objectives are all hours above it — but it is the right answer for a party that arrives after dark, gets weathered off, or comes out late and does not want to drive home tired. Being at 700 ft it is usable long before the high camps melt out, which makes it the practical base for an early-season Brothers attempt.",
+    "water": "No potable water at either campground — this catches people out. The Hamma Hamma River runs alongside both and can be filtered, but bring drinking water from Hoodsport",
+    "permit": "Modest per-night Forest Service fee with an extra vehicle charge, paid at the fee machine, which is cashless. No reservation system and no wilderness permit — this is developed Forest Service camping. Fire rings and picnic tables at each site, vault toilets, no hookups. Typically open from mid-May into late October and gated the rest of the year",
+    "capacity": "Lena Creek has around thirteen well-spaced sites at the Lena Lake trailhead junction; Hamma Hamma has around fifteen a couple of miles further down the river. Both first come, first served, no reservations"
+   },
+   {
+    "elev": 1800,
+    "name": "Lena Lake designated sites",
+    "role": "route",
+    "type": "camp",
+    "notes": "The workhorse camp of the whole Hamma Hamma side and the single most useful site in this zone. Three easy miles and about 1,300 ft of gain on a wide graded trail from the road, so a party can leave the car after work and be in camp before dark, which is exactly how most Brothers and Mount Stone trips are staged. From here two entirely separate objectives open up: north into the Valley of the Silent Men for The Brothers, and west and up for Upper Lena Lake and the traverse toward Mount Stone. Being outside Olympic National Park is the point — no quota, no reservation, no fee, so it is the fallback when the park permits above it are gone. The cost is crowding and noise; this is a family backpacking destination as much as a climbers' camp, and the shoreline shows it. Snow-free and usable most of the year, which makes it a genuine early-season and late-season base when everything higher is buried.",
+    "water": "Reliable. The lake itself, and the inlet creeks at the north end. Filter or treat everything — this is a heavily used shoreline",
+    "permit": "Northwest Forest Pass or Interagency Pass required to park at the Lena Lake / Brothers trailhead. No camping permit, no reservation and no fee for the sites themselves — it is Forest Service ground, first come first served. Camping is restricted to the numbered sites. Wilderness rules apply once you leave the lake basin: stoves only, no campfires, and a party limit of twelve. Plan on cooking on a stove at the lake as well",
+    "capacity": "Large by Olympic standards — roughly 28 to 29 numbered sites strung along the west and north shores, with a couple more on the east side; two pit toilets. It is the biggest backcountry camp in this zone and it still fills on summer weekends"
+   },
+   {
+    "elev": 4900,
+    "name": "Lake of the Angels",
+    "role": "route",
+    "type": "camp",
+    "notes": "The base for Mount Skokomish and for the south side of Mount Stone, and one of the best-placed camps in the Olympics for a climber. About 3.5 miles and 3,400 ft from the Putvin trailhead, which understates it badly — the trail is notoriously steep, with hand-over-hand sections on rock and root where a slip has real consequence, and it is slow going with an overnight pack. From the basin the east slopes of Mount Skokomish are a straightforward scramble, and Mount Stone is gained by working north toward St. Peter's Gate, so a fit party can take both peaks in one day from these tents. The four sites and the meadow are the constraint: this is a fragile alpine basin that has been loved hard, so camp only on the designated ground and expect company. Best from mid-July, once the steep upper trail is clear of snow, through September. Early season the last pitch to the basin holds snow and the trail is genuinely hazardous when wet.",
+    "water": "The lake, but read this one carefully. It is a shallow basin lake fed by snowmelt with no significant inlet, so it draws down through the summer and by a dry late season it can be low, warm and unappealing, and the meadow seeps around it disappear entirely. There is a good spring roughly two miles up the Putvin trail that is often the last dependable water on a dry year. Late-season parties should plan to carry water up from lower on the trail rather than count on finding it in the basin",
+    "permit": "Olympic National Park wilderness permit required — the trail crosses the park boundary shortly before the final climb into the basin, having already passed through the Mount Skokomish Wilderness on Forest Service ground below. Book through Recreation.gov or obtain the permit from a park wilderness information office; per-person nightly fees apply. An animal-resistant food container is required. No campfires — the basin is far above the 3,500 ft fire limit and this is stove-only ground. No dogs. No Northwest Forest Pass or other parking pass is needed at the Putvin trailhead itself, which is unusual for this road and worth knowing",
+    "capacity": "Four designated sites in the upper basin. Four. It is a small hanging meadow and there is no overflow ground that is acceptable to camp on"
+   }
+  ]
+ },
+ "wa_mount_redoubt_south_face": {
+  "id": "wa_mount_redoubt_south_face",
+  "name": "South Face / Redoubt Glacier",
+  "discipline": "alpine",
+  "dist_km": 13.8,
+  "gain_ft": 6400,
+  "approach": "Southeast via Depot Creek and Redoubt Glacier. International border crossing required (Canadian side). From Ouzel Lake, cross Depot Creek and scramble rock steps and slabs southwest of the lake onto the Redoubt Glacier.",
+  "descent_text": "Reverse the ascent line: downclimb or rappel the exposed Class 4 section from the summit horn back through the cannonhole, downclimb the loose gully/chimney system, and traverse back beneath the flying buttress to regain the notch at the head of the glacier. Rope up again for the glacier descent, then retrace the rock steps and slabs down to Ouzel Lake camp and follow the Depot Creek climbers' path back past the falls to Monument 65 and the vehicle.",
+  "waypoints": [
+   {
+    "lat": 49.033,
+    "lng": -121.4025,
+    "elev": 2600,
+    "name": "Depot Creek Road washout",
+    "note": "The road washout, where the Depot Creek approaches to Mount Rahm and Southeast Mox Peak also start.",
+    "type": "Trailhead",
+    "distMi": 0,
+    "directions": "Access is from the Canadian side, off the Chilliwack River Road. Turn onto Depot Creek Road, a rough dirt spur that has been washed out in places, and drive it to where the washout ends vehicle travel at roughly 2,600 feet; high clearance helps, and it is best driven from mid-summer through early fall. Everything above the parking is on foot, including the international border crossing at Monument 65 up the Depot Creek valley. If you plan to camp at Ouzel Lake, arrange a North Cascades backcountry camping permit through recreation.gov or the Wilderness Information Center before the trip."
+   },
+   {
+    "lat": 49.0009153,
+    "lng": -121.3348472,
+    "elev": 2700,
+    "name": "Monument 65 (US-Canada border)",
+    "note": "",
+    "type": "Junction",
+    "distMi": 1.3
+   },
+   {
+    "lat": 48.977306,
+    "lng": -121.284785,
+    "elev": 3800,
+    "name": "Depot Creek Falls",
+    "note": "~950 ft sliding horsetail falls; fixed handlines assist crossing the slippery slabs at its base, a common wet/exposed pinch point on the approach.",
+    "type": "Water",
+    "distMi": 3
+   },
+   {
+    "lat": 48.9623,
+    "lng": -121.2633,
+    "elev": 5700,
+    "name": "Ouzel Lake",
+    "note": "Flat sandbar at the meadow's edge is the standard base camp for Redoubt and Spickard; reliable running water, well-cairned slabs lead up from here toward the glacier.",
+    "type": "Campsite",
+    "distMi": 6.2
+   },
+   {
+    "lat": 48.96092813333333,
+    "lng": -121.27613333333333,
+    "elev": 6700,
+    "name": "Redoubt Glacier snout",
+    "note": "Rope up and put on crampons here where the slabs above Ouzel Lake give way to the glacier; open crevasses are more exposed early season.",
+    "type": "Junction",
+    "distMi": 7
+   },
+   {
+    "lat": 48.95972775,
+    "lng": -121.2873625,
+    "elev": 7200,
+    "name": "High camp, head of Redoubt Glacier",
+    "note": "Rocky knoll with southern views used as an optional high camp roughly 2 hrs above Ouzel Lake, shortening summit day.",
+    "type": "Campsite",
+    "distMi": 7.7
+   },
+   {
+    "lat": 48.9592133,
+    "lng": -121.292175,
+    "elev": 7800,
+    "name": "Col below the flying buttress / cannonhole notch",
+    "note": "Low point on the south ridge requiring a short low-5th-class move past a chockstone-choked 'cannon slot'; terrain drops off abruptly to the glacier on the north side.",
+    "type": "Hazard",
+    "distMi": 8
+   },
+   {
+    "lat": 48.95782,
+    "lng": -121.300744,
+    "elev": 8969,
+    "name": "Mount Redoubt summit",
+    "note": "Final ~50 ft of exposed Class 4 rock to the true summit — the summit block itself is notoriously loose, rotten Skagit gneiss, so test every hold; complex ridge crest is easy to lose in poor visibility, plan the 3-rappel descent before committing.",
+    "type": "Summit",
+    "distMi": 8.6
+   }
+  ],
+  "bivy": [
+   {
+    "name": "Ouzel Lake",
+    "role": "main",
+    "type": "camp"
+   },
+   {
+    "name": "High camp, head of Redoubt Glacier",
+    "role": "main",
+    "type": "camp"
+   }
+  ]
+ },
+ "wa_southeast_mox_peak_se_rib": {
+  "id": "wa_southeast_mox_peak_se_rib",
+  "name": "West Ridge (Beckey Route)",
+  "discipline": "alpine",
+  "dist_km": 33.2,
+  "gain_ft": 7200,
+  "approach": "From the Depot Creek trailhead parking on the abandoned logging spur off Chilliwack Lake Road (BC) at roughly 2,350 ft, hike the old roadway grade uphill (left-hand fork) for about a mile to the Monument 65 border marker, where you cross into North Cascades National Park and should sign in at the wilderness-permit kiosk. From there the route follows the unmaintained, unmarked 'Depot Creek climbers path' — a boot-track through old-growth forest for roughly 3 miles that gains to the base of Depot Creek Falls (about 4.8 hours and 1,600 ft in from the cars). The falls are one of the tallest in Washington (drop cited around 900-1,000 ft), and the path climbs steep, often wet and slippery slabs along its left edge; a fixed handline is present at the crux scramble section here and this is the approach's main technical hazard (exposed, greasy rock, worse in the wet or in the dark — several parties report losing the tread here at night). Above the falls the path eases through scrubby subalpine forest onto a broad outwash plain, reaching treeline where climbers typically switch to mountaineering boots/crampons. Continue up class 3 tread gaining roughly 800 ft into the Redoubt Glacier basin; Ouzel Lake, in this basin, is the most common first camp. From Ouzel Lake most parties relocate camp 3-4 hours further up onto the Redoubt Glacier saddle/col (~7,150 ft) for a high camp closer to the peaks — this leg is flat glacier travel with only minor, usually avoidable crevasse hazard in normal late-season conditions. From high camp, traverse roughly 2 miles east across snow/glacier beneath Easy Mox's south side toward the 'Col of the Wild,' the saddle between Easy and Hard (Southeast) Mox, finishing with a steep ~1,000 ft climb over notoriously unstable, sandy talus (loose rock is the dominant hazard on this whole upper approach — helmets on well before the col). From the Col of the Wild, ascend a ramp leading right past a snow patch into a gully, then scramble up and right (class 4, exposed enough that many parties belay it) toward a notch in the 'Ridge of Gendarmes.' A short sequence of ledges zig-zagging right-left-right leads through the notch; descend briefly to a small flat area and locate the correct gully leading to a high notch on the west ridge, which is the start of the roped climbing (two pitches of 5th class to the summit tower, then a final short, exposed class 3 scramble — stay roped — to the true summit). Water is available from the glacier/snowmelt and Ouzel Lake but not reliably along the upper ridge, so carry enough from camp.",
+  "descent_text": "Descend by reversing the ascent line rather than any independent walk-off. From the true summit, most parties make three single-rope (30 m) rappels down the tower to a small, exposed high notch, then shorter rappels and downclimbing from that notch down the gully toward the glacier below — roughly three rappels to the notch in typical late-summer, snow-free conditions. Anchors along this line are almost entirely improvised rather than bolted: slung boulders, horns and pedestals wrapped with tat/cord, and the occasional jammed knot in a crack; a couple of the stations have accumulated enough old cord to look semi-permanent, but none should be trusted blindly and back-up/extend as needed. Bring a single 60 m rope; below the notch, expect to downclimb part of the gully. In seasons or conditions where a snow finger lingers in the descent gully, parties have needed far more — up to 9-10 shorter single-rope rappels interspersed with downclimbing to get through the same 400-ft gully system, because a lingering snow patch prevents a clean full-length pull; budget extra time and a plan B if you find snow still choking the gully. Known hazards on this descent: persistently loose, choss-prone rock (the Southeast Spire's rock quality is poor, and at least one incident involved a slab breaking loose during rope retrieval at the notch and striking a climber), ropes getting stuck when pulled through the loose gully, high exposure along the east ledges near the Ridge of Gendarmes, and fatigue/darkness on the lower-angle terrain given how long this climb runs. After reaching the glacier below the Col of the Wild, reverse the approach traverse back to your high camp (Redoubt Col/Ouzel Lake), then descend the Depot Creek climbers path past the falls — using the fixed handline again on the steep slab section — back to the trailhead.",
+  "waypoints": [
+   {
+    "lat": 49.033,
+    "lng": -121.4025,
+    "elev": 2350,
+    "name": "Depot Creek Road parking / trailhead",
+    "note": "Standard Depot Creek/Chilliwack Lake Road (Canada) trailhead for Mox Peaks/Redoubt approaches, via Depot Creek Falls and Ouzel Lake.",
+    "type": "Trailhead",
+    "distMi": 0,
+    "directions": "This trailhead is on the Canadian side of the border: follow Chilliwack Lake Road in BC to the abandoned logging spur at Depot Creek, where the parking sits at roughly 2,350 ft. From there the approach walks the old roadway grade, taking the left-hand fork, about a mile to the Monument 65 border marker, where you cross into North Cascades National Park and should sign in at the wilderness-permit kiosk."
+   },
+   {
+    "lat": 49.0009153,
+    "lng": -121.3348472,
+    "elev": 2850,
+    "name": "Monument 65 (US-Canada border)",
+    "note": "Border obelisk and North Cascades NP trail register/kiosk in old growth ~200 yd past the parking intersection; register for backcountry entry here.",
+    "type": "Junction",
+    "distMi": 1.2
+   },
+   {
+    "lat": 48.977306,
+    "lng": -121.284785,
+    "elev": 4760,
+    "name": "Depot Creek Falls handline/cable step",
+    "note": "Class 3 scramble past a ~967-ft waterfall on wet, slippery rock; an old cable/handline aids a steep, misty 8-ft rock step.",
+    "type": "Hazard",
+    "distMi": 4.5
+   },
+   {
+    "lat": 48.96444,
+    "lng": -121.26472,
+    "elev": 5700,
+    "name": "Ouzel Lake camp",
+    "note": "Flat sandy/gravelly moraine benches above the lake outlet; established high-camp for Chilliwack-range climbs, ~9+ hrs / 3,550 ft above the cars.",
+    "type": "Campsite",
+    "distMi": 6.2
+   },
+   {
+    "lat": 48.95682248780488,
+    "lng": -121.26132985365854,
+    "elev": 7150,
+    "name": "Redoubt Glacier saddle / high camp",
+    "note": "Broken buttress SW of Ouzel Lake tops out on rock outcrops at this glacier-edge saddle; rope up here for crevassed glacier travel, visibility often poor.",
+    "type": "Junction",
+    "distMi": 8
+   },
+   {
+    "lat": 48.95047456097561,
+    "lng": -121.25850473170732,
+    "elev": 8200,
+    "name": "Col of the Wild",
+    "note": "Contour ~2 mi of moderately steep snow on the Redoubt Glacier to this col between the Mox Peaks; final ~100 ft is loose talus over sand.",
+    "type": "Hazard",
+    "distMi": 9.5
+   },
+   {
+    "lat": 48.94835858536585,
+    "lng": -121.25756302439024,
+    "elev": 8300,
+    "name": "Gendarme notch below SE Mox",
+    "note": "Class 2-3 ledges and a Class 4 headwall gain the high notch on the west side of the summit tower; rock is notably loose with high exposure.",
+    "type": "Hazard",
+    "distMi": 10
+   },
+   {
+    "lat": 48.947089,
+    "lng": -121.256998,
+    "elev": 8504,
+    "name": "Southeast Mox Peak (Hard Mox) summit",
+    "note": "Three pitches up to 5.5 (mostly Class 3-4 on the final pitch) above the notch to the true summit; descend by downclimbing/short-rappelling back to the notch.",
+    "type": "Summit",
+    "distMi": 10.3
+   }
+  ],
+  "bivy": [
+   {
+    "name": "Ouzel Lake camp",
+    "role": "main",
+    "type": "camp"
+   }
+  ]
+ },
+ "wa_vasiliki_ridge_standard": {
+  "id": "wa_vasiliki_ridge_standard",
+  "name": "Standard Route (Ares Tower)",
+  "discipline": "alpine",
+  "dist_km": 11.27,
+  "gain_ft": 4123,
+  "approach": "Park at the unsigned 'Wine Spires' pullout on SR-20, about 3.7 miles east of Washington Pass (roughly 0.7 mile past the Cutthroat Lake Road turnoff, near milepost 166), at about 4,300 ft elevation. A boot path drops down loose, scree-covered talus into the trees, passes a trail register, and crosses Early Winters Creek on logs at about 4,080 ft. The trail then climbs steadily through forest, steepening between two side creeks, gaining roughly 3,700+ ft to Burgundy Col (~7,800 ft); a flat bench campsite ('the Bench,' ~6,460 ft) sits about halfway up and is the more common camp for this objective. Vasiliki Ridge and Ares Tower rise directly north of Burgundy Col and the Wine Spires camp area; from the bench or col, contour and scramble north along the ridge crest to reach the base of Ares Tower.",
+  "descent_text": "Rappel from the fixed anchor at the Ares Tower summit down to the notch to retrieve stashed gear, then reverse the 4th-class ridge scramble and descend the Burgundy Col approach trail back to Early Winters Creek and the SR-20 pullout.",
+  "waypoints": [
+   {
+    "lat": 48.549,
+    "lng": -120.630965,
+    "elev": 4300,
+    "name": "Wine Spires / Burgundy Col pullout, SR-20",
+    "note": "Broad highway shoulder near milepost 166, ~3.7-4 mi east of Washington Pass; boot path drops from the pavement into trees toward Early Winters Creek.",
+    "type": "Trailhead",
+    "distMi": 0,
+    "directions": "Park at the unsigned Wine Spires pullout on SR-20, a broad highway shoulder about 3.7 miles east of Washington Pass and roughly 0.7 mile past the Cutthroat Lake Road turnoff, near milepost 166, at about 4,300 feet. North Cascades Highway 20 over Washington Pass is open only seasonally, typically from mid-April until a winter closure that comes between mid-November and early December, depending on weather and snowpack, so the pullout is inaccessible outside that window."
+   },
+   {
+    "lat": 48.56803,
+    "lng": -120.629805,
+    "elev": 4080,
+    "name": "Early Winters Creek log crossing",
+    "note": "Climbers' path crosses on logs almost immediately below the highway; last reliable, easy water until the Bench.",
+    "type": "Water",
+    "distMi": 0.3
+   },
+   {
+    "lat": 48.55368,
+    "lng": -120.60556,
+    "elev": 6000,
+    "name": "The Ledge bivy",
+    "note": "Small established bivy shelf passed on the climbers' trail about two miles in, below the main Bench basin.",
+    "type": "Campsite",
+    "distMi": 2
+   },
+   {
+    "lat": 48.554232,
+    "lng": -120.601804,
+    "elev": 6460,
+    "name": "The Bench",
+    "note": "Flat camping basin (~2 hrs up from the highway) used as a base camp for Wine Spires/Vasiliki Ridge objectives; last dependable water before the col in early season snowmelt.",
+    "type": "Campsite",
+    "distMi": 2.3
+   },
+   {
+    "lat": 48.55552,
+    "lng": -120.59304,
+    "elev": 7800,
+    "name": "Burgundy Col",
+    "note": "Ridge-gain saddle ~3 mi/3-4 hrs from the highway; Vasiliki Tower sits immediately on the left entering the col — turn north here onto Vasiliki Ridge toward Ares Tower.",
+    "type": "Junction",
+    "distMi": 3
+   },
+   {
+    "lat": 48.5582188,
+    "lng": -120.59447399999999,
+    "name": "Vasiliki Ridge Class 4 traverse",
+    "note": "Exposed, loose 4th-class ridge scrambling north from the col/Bench toward Ares Tower; rope up for parties uncomfortable with unroped exposure.",
+    "type": "Hazard",
+    "distMi": 3.3
+   },
+   {
+    "lat": 48.560018,
+    "lng": -120.59543,
+    "elev": 8203,
+    "name": "Ares Tower summit",
+    "note": "Fixed rappel anchor at the true summit block (surveyed 8,202.8 ft); descend by rappelling into the notch to reverse the route.",
+    "type": "Summit",
+    "distMi": 3.5
+   }
+  ],
+  "bivy": [
+   {
+    "elev": 6450,
+    "name": "Bench Camp — larch bench above the Wine Spires pullout",
+    "role": "main",
+    "type": "camp",
+    "notes": "The one genuinely used high camp on the Kangaroo Ridge side, reached by a steep switchbacking climbers' trail that gains roughly 2,000 ft from the highway. It is the sensible base for Vasiliki Ridge and Vasiliki Tower, for the west side of Juno Tower, and for linking two or three routes over a weekend rather than re-walking the approach each morning. Juno's east-side routes are a different problem — a 2.5 to 3.5 hour approach with a valley camp in Silver Star Creek — and this camp does not serve them. Bugs can be bad in July; water availability is what actually varies.",
+    "water": "Present early in the season from snowmelt and the creek drainage, but limited to non-existent by late summer and early autumn. Higher up, a tarn around 7,100 ft and year-round snow at Burgundy Col are the late-season backups.",
+    "permit": "None — no reservation, no quota, no backcountry permit. Northwest Forest Pass for the vehicle at the pullout below.",
+    "capacity": "Several established tent spots among the larches; the standard base for the north end of the ridge"
+   },
+   {
+    "name": "The Bench",
+    "role": "hidden"
+   }
+  ]
+ }
+}
