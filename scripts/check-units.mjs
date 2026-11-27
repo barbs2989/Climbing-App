@@ -193,7 +193,7 @@ import ReactDOM from "react-dom";
 import RouteDetail from ${JSON.stringify(RD_PATH)};
 import ItineraryEditor from ${JSON.stringify(IE_PATH)};
 import FullProfile from ${JSON.stringify(path.join(ROOT, "src/components/FullProfile.tsx"))};
-export { distMiles, ME } from ${JSON.stringify(CORE_PATH)};
+export { distMiles, ME, SEED_ME } from ${JSON.stringify(CORE_PATH)};
 export {
   uTemp, uTempN, uTempDelta, uWind, uWindN, uPrecip, uSnowfall,
   uTempU, uTempIn, buildConsensus,
@@ -1386,6 +1386,9 @@ async function runProfile() {
     lat: 48.7519, lng: -122.4787, level: "Intermediate", avatar: null,
     disciplines: ["sport"], vouches: [], photos: [], objectiveIds: [],
   };
+  // The app's ME has no location since the examples were removed (2026-11-26); the profile measures
+  // from ME, so place it where the demo climber was (SEED_ME, a fixture copy) for this render.
+  Object.assign(M.ME, { lat: M.SEED_ME.lat, lng: M.SEED_ME.lng });
   const D = M.distMiles(M.ME, CLIMBER);
   if (!isFinite(D) || D <= 0) dead(`the profile fixture produced no distance (${D}) -- the render assertions would be vacuous`);
   ok(`the profile fixture is ${D.toFixed(1)} mi from ME, so the distance line is reachable at all`);
