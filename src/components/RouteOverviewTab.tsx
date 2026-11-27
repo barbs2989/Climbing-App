@@ -13,7 +13,6 @@ import { BTN } from "../../lib/buttonStyles.js";
 import { climbNoun, ClimbNoun } from "../../lib/discLabels.js";
 import { clickable } from "../../lib/clickable";
 import Av from "./Av.tsx";
-import RouteTagRow from "./RouteTagRow.tsx";
 import Capped from "./Capped.tsx";
 import { splitParagraphs, PeakMetadataPanel } from "../../EnrichmentPanels";
 import GapNote from "./GapNote.tsx";
@@ -188,7 +187,7 @@ export default function RouteOverviewTab({onLogClimb,statsLive,onEditArea,_mapOf
     every route now has. It did start on `conditions`, and that is worth not repeating — that tab is
     LABELLED "Reports" / "Send Reports", so a climber looking for hazards never opens it. Same trap
     as #655. */}
-      {saved?<div style={{marginBottom:ROUTE_GAP}}><div className="cm-pop" style={{display:"flex",alignItems:"center",gap:9,background:C.greenBg,border:"1px solid "+C.greenDim,borderRadius:11,padding:"7px 13px"}}><span style={{fontSize:13.5,fontWeight:700,color:C.green,flex:1}}>On your objectives</span><button onClick={()=>setTab("partners")} style={{...BTN,background:C.blueChip,color:C.onSolid,border:"none"}}>Find partners →</button></div></div>:null}{logged?<div style={{fontSize:12.5,color:C.green,fontWeight:700,marginBottom:ROUTE_GAP}}>✓ In your logbook</div>:null}{route.condWindow?<div style={{background:C.card,border:"1px solid "+C.border,borderRadius:12,padding:"10px 14px",marginBottom:12}}><div style={{...SUB_LABEL,marginBottom:3}}>Conditions window</div><div style={{fontSize:12.5,color:C.textSub,lineHeight:1.5}}>{Array.isArray(route.condWindow)?route.condWindow.join(", "):route.condWindow}</div></div>:null}<div style={{marginBottom:ROUTE_GAP}}><RouteTagRow route={route}/></div>{techStatsEl}{/* MERGE NOTE: the card renders when there is a description OR "About this peak", because
+      {saved?<div style={{marginBottom:ROUTE_GAP}}><div className="cm-pop" style={{display:"flex",alignItems:"center",gap:9,background:C.greenBg,border:"1px solid "+C.greenDim,borderRadius:11,padding:"7px 13px"}}><span style={{fontSize:13.5,fontWeight:700,color:C.green,flex:1}}>On your objectives</span><button onClick={()=>setTab("partners")} style={{...BTN,background:C.blueChip,color:C.onSolid,border:"none"}}>Find partners →</button></div></div>:null}{logged?<div style={{fontSize:12.5,color:C.green,fontWeight:700,marginBottom:ROUTE_GAP}}>✓ In your logbook</div>:null}{route.condWindow?<div style={{background:C.card,border:"1px solid "+C.border,borderRadius:12,padding:"10px 14px",marginBottom:12}}><div style={{...SUB_LABEL,marginBottom:3}}>Conditions window</div><div style={{fontSize:12.5,color:C.textSub,lineHeight:1.5}}>{Array.isArray(route.condWindow)?route.condWindow.join(", "):route.condWindow}</div></div>:null}{/* The list chips (Bulger #51...) moved into the route header (owner note, 2026-11-26), and the Share / Save / Log / Start a crew row took their place above every tab. */}{techStatsEl}{/* MERGE NOTE: the card renders when there is a description OR "About this peak", because
     geology has no other home — PeakMetadataPanel stopped rendering it, so gating this card on
     the description alone would leave routes.peak_metadata.geology populated and displayed
     nowhere. The GapNote still fires on a missing DESCRIPTION specifically, which is a
