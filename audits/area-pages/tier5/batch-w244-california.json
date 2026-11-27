@@ -1,0 +1,46 @@
+{
+ "ca_small_world_cliff_climbs": {
+  "_expect": { "name": "Small World Cliff Routes", "region": "California" },
+  "blurb": "Small World Cliff is a compact trad and top-rope crag in Joshua Tree National Park, on the far side of the paved road from the Sheep Pass group campground. It holds eight routes: five led on gear and three set up for top rope. Grades start near 5.6 and top out around 5.12, with most of the lines sitting between 5.8 and 5.10. The mix is cracks and face climbing, so it works for a short session when you want a handful of moderate leads plus a couple of harder top-rope problems in the same spot.",
+  "review": { "sources": ["https://www.mountainproject.com/area/106227054/small-world-cliff", "https://www.mountainproject.com/area/106239055/sheep-pass-group-cg-area"] }
+ },
+ "ca_warmup_boulder_7": {
+  "_expect": { "name": "Warmup Boulder", "region": "California" },
+  "blurb": "Warmup Boulder is one large, free-standing block in Big Springs Gully, on the Box Springs Mountain side of Riverside in the Inland Empire. A prominent crack splits its middle, and the faces around it carry eight problems with plenty of unnamed variations. Difficulty runs from very easy up to V4, but most of it falls between V0 and V2, which makes it a natural first stop before heading to harder boulders higher in the gully. It is only one rock, so plan on a short stop rather than a full day.",
+  "review": { "sources": ["https://www.mountainproject.com/area/123711921/warmup-boulder", "https://www.mountainproject.com/area/123711881/big-springs-gully"] }
+ },
+ "ca_mad_cow_boulder": {
+  "_expect": { "name": "Mad Cow Boulder", "region": "California" },
+  "blurb": "Mad Cow Boulder sits among the Hillcrest Boulders above Vacaville, near the Nut Tree area. It is one of the shorter blocks in the field, with a nearly vertical face that is still tall enough to want a pad under the top-outs. Pinch holds shaped like small loaves give the problems their character, and the ground below is flat. There are eight problems, from very easy to V5, with most of them in the V0 to V2 range, so it works well as a warm-up rock before moving on to the bigger boulders along the trail.",
+  "review": { "sources": ["https://www.mountainproject.com/area/105734477/mad-cow-boulder", "https://www.mountainproject.com/area/108012775/hillcrest-boulders"] }
+ },
+ "ca_railroad_boulder_2": {
+  "_expect": { "name": "Railroad Boulder", "region": "California" },
+  "blurb": "Railroad Boulder is a triangular block on the Sugarloaf Mountain side of Box Springs Mountain in Riverside, part of the Rustin Avenue boulders. It is among the larger rocks in the group and has uneven, well-featured stone. Eight problems are on it, and the grade spread leans easy: six are at the very easy end of the scale, with one around V1 and one around V3. That makes it a good fit for beginners or a quick session of low-grade mileage. Reaching it means walking past the Zodiac Mind Warp Boulder, crossing a dirt road and climbing the slope.",
+  "review": { "sources": ["https://www.mountainproject.com/area/122364744/railroad-boulder", "https://www.mountainproject.com/area/122343361/rustin-avenue-rocks"] }
+ },
+ "ca_s_crack_formation": {
+  "_expect": { "name": "S-Crack Formation", "region": "California" },
+  "blurb": "S-Crack Formation is a small, dark, slightly overhanging crag in the Lost Horse area of Joshua Tree National Park, reached by walking up the dirt road beyond the ranger station. It faces roughly north, so the rock stays shaded for most of the day. Eight routes, almost all trad with one top-rope line, run from 5.8 to 5.11, with three at each end of that range. The texture of the stone is excellent, and since it takes a walk to reach, it sees less traffic than the busier Lost Horse walls.",
+  "review": { "sources": ["https://www.mountainproject.com/area/105720933/s-crack-formation", "https://www.mountainproject.com/route/108571579/middle-s-crack"] }
+ },
+ "ca_shark_fin_bouldering_circuit": {
+  "_expect": { "name": "Shark Fin Bouldering Circuit", "region": "California" },
+  "blurb": "This circuit is in the Alabama Hills outside Lone Pine, at roughly 4,700 feet in the Eastern Sierra. The boulders around the Shark's Fin range from patina-streaked slabs to steep, overhanging blocks, and the stone is coarse. There are eight problems, nearly all easy: three are at the very easy end, a few are V0 and V1, and the hardest is about V2. The blocks are scattered, so expect to walk between them over open ground.",
+  "review": { "sources": ["https://www.mountainproject.com/area/119544330/shark-fin-bouldering-cirque", "https://mountainproject.com/area/118124288/alabama-hills-bouldering"] }
+ },
+ "ca_west_face_14": {
+  "_expect": { "name": "West Face", "region": "California" },
+  "blurb": "This is a trad face on Tuolumne Peak in Yosemite National Park, reached off-trail from May Lake. The eight routes are long and mostly moderate, ranging from fourth-class up to about 5.8, with three at 5.7 and three at 5.8. The best stone is orange and excellent, though some darker patches are loose. Many lines lack obvious features, so finding the way takes real attention, and the character is that of a mountain outing more than a roadside crag.",
+  "review": { "sources": ["https://www.mountainproject.com/area/117571088/west-face", "https://www.mountainproject.com/area/110868431/tuolumne-peak"] }
+ },
+ "ca_sleeping_pup_boulder": {
+  "_expect": { "name": "Sleeping Pup boulder", "region": "California" },
+  "blurb": "Sleeping Pup is a single boulder at Stinson Beach in Marin County, the first rock in a field of boulders along the back edge of the beach. It has eight problems that cover a wide span: a few easy faces at V0 to V2, several in the V4 and V5 range, and a couple of high-end lines at V7 and V9. That spread means a beginner and a strong boulderer can both find something here. Tide and drifting sand change the feel of the landings, so check the ground before committing to a problem.",
+  "review": { "sources": ["https://www.mountainproject.com/area/120366006/sleeping-pup-boulder", "https://www.mountainproject.com/area/105869295/stinson-beach"] }
+ },
+ "_skipped": {},
+ "_conflicts": {
+  "ca_mad_cow_boulder": "Stored rock is sandstone, but the pages for the Nut Tree Boulders describe the rock there as basalt: https://www.mountainproject.com/area/105734016/the-nut-tree-boulders (area that contains Hillcrest Boulders, per https://www.mountainproject.com/area/108012775/hillcrest-boulders). Stored value left unchanged and no rock named in the blurb."
+ }
+}

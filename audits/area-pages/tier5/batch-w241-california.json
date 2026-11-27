@@ -1,0 +1,47 @@
+{
+ "ca_miniscule_crag": {
+  "_expect": { "name": "Miniscule Crag", "region": "California" },
+  "blurb": "Miniscule Crag is a small formation beside the road in Keys Wash, in the Quail Springs area of Joshua Tree National Park. It has eight short routes: seven trad and one top-rope, with the grades topping out at 5.9 and the rest well below that. From the pavement the rock hardly looks like a cliff, so it is easy to drive past; the walk in is about 150 yards up the wash. Nano Crag and Voice's Crag are close by, which makes it simple to string together several brief stops in one outing.",
+  "review": { "sources": ["https://www.mountainproject.com/area/125249342/miniscule-crag", "https://www.mountainproject.com/area/200387256/nano-crag", "https://www.mountainproject.com/area/105720621/quail-springs-area"] }
+ },
+ "ca_main_wall_12": {
+  "_expect": { "name": "Main Wall", "region": "California" },
+  "blurb": "Main Wall is the biggest and broadest face in So-So Grotto, a newer crag in the forest above Burnt Ranch off Highway 299. Standing about 150 feet at its tallest, it carries most of the grotto's climbing. Six of the eight routes are sport and two are trad, running from 5.9 to 5.13, with 5.12 the most common grade. Expect long, sustained pitches rather than short problems. Reaching it takes a hike of roughly ten minutes from the parking clearing, ending in a descent into the chasm where the wall rises on your right. Rock quality varies, so watch for loose holds.",
+  "approach": "Walk down the old road about five minutes, then follow the trail downhill on the left for another five, passing a small pond. Drop into the chasm by the trail on its left side; the wall is on your right at the bottom.",
+  "approach_min": 10,
+  "review": { "sources": ["https://www.mountainproject.com/area/108620834/main-wall", "https://www.mountainproject.com/area/108618408/so-so-grotto"] }
+ },
+ "ca_bug_wall": {
+  "_expect": { "name": "Bug Wall", "region": "California" },
+  "blurb": "Bug Wall is a sector of the Invisible Wall in the Santa Barbara front country, reached from Gibraltar Road by the West Fork of the Cold Spring trail. The sandstone crag sits on a knoll beside the trail's first bend. Eight single-pitch routes, six sport and two trad, run from 5.7 to 5.10, with 5.8 the most common grade, so the grades stay moderate. The top of the knoll has fixed anchors for rigging a top rope from above, which suits the gear routes. A clear path zigzags up to the climbs.",
+  "parking_note": "Drive up Gibraltar Road and leave the car at the long hairpin bend, where a trailhead sign marks the start of the West Fork trail.",
+  "approach": "Follow the West Fork trail downhill from the hairpin. The crag is the knoll on your left before the trail's first right-hand turn; a path zigzags up it.",
+  "review": { "sources": ["https://www.mountainproject.com/area/115383400/bug-wall", "https://www.mountainproject.com/area/115382414/invisible-wall"] }
+ },
+ "ca_hidetaka_s_hideout": {
+  "_expect": { "name": "Hidetaka's Hideout", "region": "California" },
+  "blurb": "Hidetaka's Hideout is a cluster of orange-gold pillars on the hillside above Christmas Tree Valley, close to Meyers and visible from Highway 89 as you drive toward town. It has eight routes, six trad and two sport, all between 5.10 and 5.11, with 5.11 slightly more common. The lines are sparsely protected faces where bolts sit far apart and extra gear goes in wherever it fits. This is bold climbing rather than modern bolted sport, and some of the hardware looks old. The approach is a steep uphill hike on a climbers' trail that has been hard to follow since forestry work, so allow extra time.",
+  "review": { "sources": ["https://www.mountainproject.com/area/115349969/hidetakas-hideout", "https://www.mountainproject.com/area/110561742/south-shore"] }
+ },
+ "ca_lower_spire": {
+  "_expect": { "name": "Lower Spire", "region": "California" },
+  "blurb": "Lower Spire is the lowest and smallest of the Phantom Spires, a group of tall rocks reached from the Wrights Lake Road turnoff on Highway 50 near Kyburz. One skinny spire stands among several lower, less spire-shaped rocks. Eight routes, five trad and three sport, run from 5.9 to 5.12, giving moderate leaders and stronger climbers something each. The Spires are treeless and open to wind. It does not stand out from the main trail toward Middle Spire: go west around Middle Spire, drop downhill past the next rock and curl to its right to see the spire on its own.",
+  "review": { "sources": ["https://www.mountainproject.com/area/105859175/lower-spire", "https://www.mountainproject.com/area/105733989/phantom-spires"] }
+ },
+ "ca_old_peculiar": {
+  "_expect": { "name": "Old Peculiar", "region": "California" },
+  "blurb": "Old Peculiar is a compact 40-foot cliff above Echo Lakes, just off Highway 50 at Echo Summit. All eight routes are trad lines, running from 5.7 to 5.11, and anything here can also be top-roped. Most of the rock leans back, though anything harder than 5.9 includes an overhanging section. It is reached on foot from the marina parking lot: cross the breakwater and the small footbridge, follow the trail around the lake's northern shore to its end, and the cliff sits about 200 feet uphill from the path.",
+  "review": { "sources": ["https://www.mountainproject.com/area/105734342/old-peculiar", "https://www.mountainproject.com/area/105733995/echo-lakes"] }
+ },
+ "ca_pebble_beach": {
+  "_expect": { "name": "Pebble Beach", "region": "California" },
+  "blurb": "Pebble Beach is a small wall in the Benches section of the Emeralds, beside the Yuba River. It stands roughly 50 to 60 feet high and about 200 feet wide, facing west, so the base stays shaded until around midday. Eight routes, five sport and three trad, run from 5.5 to 5.10, with most in the 5.9 to 5.10 range, which makes it a handy warm-up before harder climbs nearby. The rock is a little dirty in places but has been cleaning up with traffic. A ledge partway up allows belaying, and the way in is either a short fourth-class scramble or a rappel from above.",
+  "review": { "sources": ["https://www.mountainproject.com/area/108852938/pebble-beach", "https://www.mountainproject.com/area/109010471/the-benches"] }
+ },
+ "_skipped": {
+  "ca_lodestone": "Only one standalone page about the boulder itself and its whole description is one line ('A classic boulder'); the other Lodestone page found is a different place in the Angeles area, so no real description plus second page."
+ },
+ "_conflicts": {
+  "ca_main_wall_12": "Stored rock 'metasedimentary rock' versus https://www.mountainproject.com/area/108618408/so-so-grotto which calls the stone (metamorphosed?) granite; left unchanged and no rock named in the blurb."
+ }
+}
