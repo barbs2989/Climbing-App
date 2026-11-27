@@ -87,7 +87,8 @@ try {
       empty: "No friend chats yet",
       outageProps: { dmUnavailable: true },
       outage: "load your chats",
-      populated: { msgs: { 5: [{ from: 5, text: "hi", ts: 1 }] }, connections: [{ id: 5, name: "Robin" }] },
+      // id 0 is ME: a numeric id names a SEED climber, and the seed climbers are gone (2026-11-26).
+      populated: { msgs: { 0: [{ from: 0, text: "hi", ts: 1 }] }, connections: [{ id: 0, name: "Robin" }] },
       floor: 800,
     },
     {

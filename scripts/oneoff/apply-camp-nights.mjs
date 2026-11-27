@@ -19,7 +19,7 @@ const file = args[0];
 const DRY = !args.includes("--write");
 const copyAt = args.indexOf("--copy-batch");
 const research = JSON.parse(readFileSync(file, "utf8"));
-const inputFile = file.replace("/output/", "/input/");
+const inputFile = file.includes("/fix-output/") ? file.replace("/fix-output/", "/fix-input/") : file.replace("/output/", "/input/");
 const input = Object.fromEntries(JSON.parse(readFileSync(inputFile, "utf8")).map(r => [r.id, r]));
 
 const SOURCE_WORDS = /summitpost|peakbagger|mountaineers|cascadeclimbers|nwhikers|\bwta\b|guidebook|beckey|trip reports? (say|note|describe)|according to|reportedly|https?:|www\./i;
@@ -58,7 +58,8 @@ for (const r of research) {
   }
   for (const c of news) {
     if (onFile.has(key(c.name))) errs.push(`new camp "${c.name}" is already on file`);
-    if (!(Number(c.elev_ft) > 0)) errs.push(`new camp "${c.name}" has no researched elevation`);
+    // A bivy ON the route (a wall ledge) has no map height to research; any other new camp must carry one.
+    if (!(Number(c.elev_ft) > 0) && (c.type !== "bivy" || /\b(lakes?|creek|river|meadows?|basin|campground|trailhead|tarns?|flats?|camp)\b/i.test(c.name))) errs.push(`new camp "${c.name}" has no researched elevation (only a bivy on the climb may lack one)`);
     for (const f of ["water", "capacity", "permit"]) if (c[f] && proseBad(c[f], 3, 600)) errs.push(`new camp "${c.name}" ${f}: ${proseBad(c[f], 3, 600)}`);
     if (c.notes && proseBad(c.notes, 20, 700)) errs.push(`new camp "${c.name}" notes: ${proseBad(c.notes, 20, 700)}`);
   }
@@ -122,7 +123,7 @@ for (const p of plans) {
   });
   // A camp the research named that exists only as a Campsite PIN: a bivy entry of the same name joins it (campSites merges on name).
   for (const c of by.values()) next.push({ name: c.name, role: c.role, nights: c.nights, why: c.why.trim() });
-  for (const c of p.news) next.push({ name: c.name.trim(), type: c.type || "camp", elev: Math.round(Number(c.elev_ft)), role: c.role, nights: c.nights, why: c.why.trim(), water: c.water || "", capacity: c.capacity || "", permit: c.permit || "", notes: c.notes || "" });
+  for (const c of p.news) next.push({ name: c.name.trim(), type: c.type || "camp", elev: Number(c.elev_ft) > 0 ? Math.round(Number(c.elev_ft)) : null, role: c.role, nights: c.nights, why: c.why.trim(), water: c.water || "", capacity: c.capacity || "", permit: c.permit || "", notes: c.notes || "" });
   await patchRow("routes", p.id, { bivy: next });
   done.push([p.id, next]);
   await new Promise(r => setTimeout(r, 1000));

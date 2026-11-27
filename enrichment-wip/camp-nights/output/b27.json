@@ -1,0 +1,541 @@
+[
+ {
+  "id": "wa_inner_constance_northwest_buttress",
+  "camps": [
+   {
+    "name": "Home Lake, below Constance Pass — inside the park, and reached from the north",
+    "nights": [
+     1,
+     2
+    ],
+    "role": "main",
+    "why": "Gets you under the northwest face for the summit day and a look at the buttress the evening before; the cost is a 9-mile, 2,800 ft carry and a permit."
+   },
+   {
+    "name": "Boulder Shelter — the last camp outside the national park",
+    "nights": [
+     1
+    ],
+    "role": "route",
+    "why": "A shorter 6-mile first day on free, no-booking ground with a roofed shelter; you then carry to Home Lake or the face boulders next morning."
+   }
+  ],
+  "new_camps": [],
+  "confidence": "low",
+  "plan_conflict": null,
+  "sources": [
+   "https://www.explorehoodcanal.com/stories/2026/9/16/home-lake",
+   "https://stephabegg.com/?p=8823",
+   "https://goteamdarkley.com/2015/01/17/dungeness-constance/"
+  ]
+ },
+ {
+  "id": "wa_inner_constance_seans_route",
+  "camps": [],
+  "new_camps": [
+   {
+    "name": "Home Lake",
+    "elev_ft": 5325,
+    "type": "camp",
+    "role": "main",
+    "nights": [
+     1,
+     2
+    ],
+    "why": "The camp for this side of Inner Constance: a 9-mile walk in on maintained trail, then a summit day that returns to the same tents before the walk out.",
+    "water": "",
+    "capacity": "Lightly used sites on the wooded bluff above the western shore.",
+    "permit": "Overnight permit required (booked through Recreation.gov or the Port Angeles wilderness office); no campfires.",
+    "notes": "Sits a few hundred feet below Constance Pass, inside Olympic National Park. Boulder Shelter, about three miles lower, is the usual fallback for a late start."
+   }
+  ],
+  "confidence": "low",
+  "plan_conflict": null,
+  "sources": [
+   "https://www.explorehoodcanal.com/stories/2026/9/16/home-lake",
+   "https://goteamdarkley.com/2015/01/17/dungeness-constance/"
+  ]
+ },
+ {
+  "id": "wa_inner_constance_standard",
+  "camps": [
+   {
+    "name": "Lake Constance",
+    "nights": [
+     1,
+     2
+    ],
+    "role": "main",
+    "why": "The only workable camp on this side: sites at the back of the lake put you at the foot of Avalanche Canyon, so the summit day starts from your tent."
+   }
+  ],
+  "new_camps": [],
+  "confidence": "medium",
+  "plan_conflict": null,
+  "sources": [
+   "https://home.nps.gov/olym/planyourvisit/lake-constance-route.htm",
+   "https://www.hikewithkurt.com/lake-constance-a-complete-guide-to-the-most-rewarding-hike-in-olympic-national-park",
+   "https://trailcatjim.com/mt-constance-inner-peak/"
+  ]
+ },
+ {
+  "id": "wa_mount_constance_north_chimney",
+  "camps": [
+   {
+    "name": "Lake Constance",
+    "nights": [
+     1,
+     2
+    ],
+    "role": "main",
+    "why": "Every climb of the mountain starts here; designated sites at the back of the lake sit at the mouth of Avalanche Canyon, so you climb light and return to the same tent."
+   }
+  ],
+  "new_camps": [],
+  "confidence": "high",
+  "plan_conflict": null,
+  "sources": [
+   "https://home.nps.gov/olym/planyourvisit/lake-constance-route.htm",
+   "https://thewildoutsiders.squarespace.com/adventure-journal/mount-constance",
+   "https://sverdina.com/Constance1.asp",
+   "https://www.nwhikers.net/forums/viewtopic.php?p=888134"
+  ]
+ },
+ {
+  "id": "wa_mount_constance_north_chute",
+  "camps": [
+   {
+    "name": "Lake Constance — the standard base for the South Chute",
+    "nights": [
+     1,
+     2
+    ],
+    "role": "main",
+    "why": "The base for every route on the mountain: designated sites at the north end of the lake, a toilet and bear wires on site, and the canyon starts a short walk away."
+   }
+  ],
+  "new_camps": [],
+  "confidence": "high",
+  "plan_conflict": null,
+  "sources": [
+   "https://home.nps.gov/olym/planyourvisit/lake-constance-route.htm",
+   "https://thewildoutsiders.squarespace.com/adventure-journal/mount-constance",
+   "https://www.nwhikers.net/forums/viewtopic.php?p=888134"
+  ]
+ },
+ {
+  "id": "wa_mount_constance_west_arete",
+  "camps": [
+   {
+    "name": "Lake Constance — the standard base for the South Chute",
+    "nights": [
+     1,
+     2
+    ],
+    "role": "main",
+    "why": "Two nights here let you carry the rack up on day one and climb the arete unburdened; the lake camp is the only legal base, and the canyon walk to the arete starts from it."
+   }
+  ],
+  "new_camps": [],
+  "confidence": "high",
+  "plan_conflict": null,
+  "sources": [
+   "https://home.nps.gov/olym/planyourvisit/lake-constance-route.htm",
+   "https://sverdina.com/Constance1.asp",
+   "https://thewildoutsiders.squarespace.com/adventure-journal/mount-constance"
+  ]
+ },
+ {
+  "id": "wa_lena_lake_to_mt_stone_traverse",
+  "camps": [
+   {
+    "name": "Upper Lena Lake",
+    "nights": [
+     1
+    ],
+    "role": "main",
+    "why": "The easy first night: the last trail-side camp before the off-trail traverse, with lakeshore sites, so day two starts with fresh legs at the foot of the route."
+   },
+   {
+    "name": "Lake of the Angels",
+    "nights": [
+     2
+    ],
+    "role": "main",
+    "why": "The end of the crux day: the only good camp on the south side of St. Peter's Gate, with a steep Putvin descent to the trailhead the next morning."
+   },
+   {
+    "name": "Lena Lake designated sites",
+    "nights": [],
+    "role": "route",
+    "why": "A lower first night for a late start; it adds roughly 2,500 ft to day two and makes the traverse day very long, so most parties push to Upper Lena Lake."
+   },
+   {
+    "name": "Hamma Hamma River road campgrounds — Lena Creek and Hamma Hamma",
+    "nights": [],
+    "role": "route",
+    "why": "Drive-in sites for the night before the hike; useful for a dawn start from the trailhead, but they add nothing during the trip itself."
+   }
+  ],
+  "new_camps": [],
+  "confidence": "medium",
+  "plan_conflict": "Lake of the Angels is on file as a route camp, but on this traverse it is where parties sleep on night 2, so it is listed as the main for that night.",
+  "sources": [
+   "https://trailcatjim.com/st-peters-traverse-mt-stone-2021/",
+   "http://trailcatjim.com/mount-stone-via-west-ridge-olympic-mountains/"
+  ]
+ },
+ {
+  "id": "wa_mount_stone_lake_of_angels",
+  "camps": [
+   {
+    "name": "Lake of the Angels",
+    "nights": [
+     1
+    ],
+    "role": "main",
+    "why": "The only camp worth the steep Putvin climb: bare ground by the lake puts the summit within an afternoon or an early morning, with a short descent to the car after."
+   },
+   {
+    "name": "Hamma Hamma River road campgrounds — Lena Creek and Hamma Hamma",
+    "nights": [],
+    "role": "route",
+    "why": "A drive-in option for the night before; lets you start the Putvin trail fresh and early, but it is not part of the trip's own nights."
+   }
+  ],
+  "new_camps": [],
+  "confidence": "high",
+  "plan_conflict": "The plan puts the summit on day 2, but parties often climb Stone the afternoon they reach the lake and walk straight out the next day.",
+  "sources": [
+   "http://trailcatjim.com/mount-stone-via-west-ridge-olympic-mountains/",
+   "https://trailcatjim.com/st-peters-traverse-mt-stone-2021/"
+  ]
+ },
+ {
+  "id": "wa_the_brothers_south_couloir",
+  "camps": [
+   {
+    "name": "Brothers base camp at Lena Forks",
+    "nights": [
+     1
+    ],
+    "role": "main",
+    "why": "The standard night: flat enough to sleep at, near water, and about 3,000 ft below the summit; it is deep forest, so expect shade and a wait for morning sun."
+   },
+   {
+    "name": "Upper camp above the forks",
+    "nights": [],
+    "role": "route",
+    "why": "A small meadow near 3,600 ft that shortens the couloir day by a few hundred feet, but takes more route-finding and has fewer flat sites than the forks."
+   },
+   {
+    "name": "Lower Lena Lake",
+    "nights": [],
+    "role": "route",
+    "why": "Only three miles in and about 1,000 ft lower than the usual camp; suits a late arrival, but leaves a very long summit day."
+   }
+  ],
+  "new_camps": [],
+  "confidence": "high",
+  "plan_conflict": null,
+  "sources": [
+   "http://cwillett.imathas.com/local/brothers/index.html",
+   "https://trailcatjim.com/the-brothers-south-peak-via-lunch-rock-south-couloir/",
+   "https://mazamas.org/activity/instance/7906/detail/"
+  ]
+ },
+ {
+  "id": "wa_the_brothers_traverse",
+  "camps": [
+   {
+    "name": "The Brothers climbers camp, Valley of the Silent Men",
+    "nights": [
+     1
+    ],
+    "role": "main",
+    "why": "The standard high camp: at the foot of the south couloir, so the traverse day starts and ends here, and a second night is easy if the ridge goes slowly."
+   },
+   {
+    "name": "Lena Lake designated sites",
+    "nights": [],
+    "role": "route",
+    "why": "Three easy miles from the road; a party starting after work can sleep here and carry the remaining three miles to the climbers camp in the morning."
+   },
+   {
+    "name": "Hamma Hamma River road campgrounds — Lena Creek and Hamma Hamma",
+    "nights": [],
+    "role": "route",
+    "why": "Drive-in sites by the trailhead for the night before; they put you at the trail early, but you still sleep at the climbers camp on the trip."
+   }
+  ],
+  "new_camps": [],
+  "confidence": "medium",
+  "plan_conflict": "The plan has the climb and the walk-out on the same day; many parties instead sleep a second night at the climbers camp, because the traverse takes 10 to 12 hours.",
+  "sources": [
+   "http://cwillett.imathas.com/local/brothers/index.html",
+   "https://trailcatjim.com/the-brothers-south-peak-via-lunch-rock-south-couloir/"
+  ]
+ },
+ {
+  "id": "wa_warrior_peak_standard",
+  "camps": [
+   {
+    "name": "Boulder Shelter — the last camp outside the national park",
+    "nights": [
+     1
+    ],
+    "role": "main",
+    "why": "The camp most climbers use for Warrior Peak: a roofed shelter, water nearby, 6 miles in, no booking needed, and the cirque below the peak is a short morning walk above it."
+   },
+   {
+    "name": "Home Lake, below Constance Pass — inside the park, and reached from the north",
+    "nights": [],
+    "role": "route",
+    "why": "About 400 ft of climbing and 3 miles beyond the shelter; it shaves the summit day but needs a permit and makes a longer day one."
+   },
+   {
+    "name": "Camp Handy",
+    "nights": [],
+    "role": "route",
+    "why": "Three miles in on easy trail, free and sheltered; a spot for a late start, which leaves a very long day to the summit."
+   }
+  ],
+  "new_camps": [],
+  "confidence": "medium",
+  "plan_conflict": "The plan sleeps at Home Lake, but climbers mostly use Boulder Shelter for the night; Home Lake has been demoted to a route camp.",
+  "sources": [
+   "https://stephabegg.com/?p=8823",
+   "https://www.nwhikers.net/forums/viewtopic.php?p=1234721",
+   "https://www.explorehoodcanal.com/stories/2026/9/16/home-lake"
+  ]
+ },
+ {
+  "id": "wa_mount_anderson_eel_glacier",
+  "camps": [
+   {
+    "name": "Honeymoon Meadows",
+    "nights": [
+     1,
+     2
+    ],
+    "role": "main",
+    "why": "The camp three-day parties use: a long established site with room for several tents; the summit push begins and ends here, though it makes a longer summit day."
+   },
+   {
+    "name": "Tarn camp above Anderson Pass",
+    "nights": [],
+    "role": "route",
+    "why": "Open ground near water that cuts the summit day by hours; parties choose it for a shorter push or a two-night high camp, at the price of a long first day."
+   },
+   {
+    "name": "Camp Siberia / Anderson Pass shelter area",
+    "nights": [],
+    "role": "route",
+    "why": "A sheltered camp in trees just below the pass that is easy to miss under snow; useful in bad weather, though it leaves the summit day long."
+   }
+  ],
+  "new_camps": [],
+  "confidence": "medium",
+  "plan_conflict": "The plan reaches the Anderson Pass tarn camp on day 1, but three-day parties usually stop at Honeymoon Meadows and climb from there.",
+  "sources": [
+   "https://sverdina.com/Anderson1.asp",
+   "https://turns-all-year.com/trip-reports/april-30-may-3-mt-anderson-olympics"
+  ]
+ },
+ {
+  "id": "wa_mount_cameron_standard",
+  "camps": [
+   {
+    "name": "Cameron Basin",
+    "nights": [
+     1,
+     2
+    ],
+    "role": "main",
+    "why": "The one camp zone for the climb: sites along the creek below the pass put the west ridge at your doorstep; bring a canister and fill water from the creek."
+   }
+  ],
+  "new_camps": [],
+  "confidence": "medium",
+  "plan_conflict": null,
+  "sources": [
+   "https://www.nps.gov/olym/planyourvisit/cameron-pass-trail.htm",
+   "https://www.wta.org/go-hiking/hikes/grand-valley-cameron-creek-loop"
+  ]
+ },
+ {
+  "id": "wa_mount_clark_standard",
+  "camps": [
+   {
+    "name": "Upper Royal Basin",
+    "nights": [
+     1,
+     2
+    ],
+    "role": "main",
+    "why": "The climbers' camp: a mile above the lake, cutting the long summit day and giving the quickest access to Surprise Basin; the permit has to be booked by phone."
+   },
+   {
+    "name": "Royal Lake",
+    "nights": [],
+    "role": "route",
+    "why": "The fallback when the upper-basin permit is not available: easier to book, ten sites, but 500 ft lower and a longer summit day."
+   },
+   {
+    "name": "Lower Royal Meadow Camp",
+    "nights": [],
+    "role": "route",
+    "why": "A bare-ground camp below the lake for a late arrival; it leaves a very long day on day two."
+   }
+  ],
+  "new_camps": [],
+  "confidence": "high",
+  "plan_conflict": "Royal Lake was on file as a main camp alongside Upper Royal Basin; only the upper basin is the main for this climb.",
+  "sources": [
+   "https://www.hikewithkurt.com/backpacking-royal-basin-in-olympic-national-park-epic-views",
+   "http://eileensadventures.com/2020/08/royal-basin",
+   "https://turns-all-year.com/trip-reports/may-9-11-royal-basin-deception-basin-onp-video"
+  ]
+ },
+ {
+  "id": "wa_mount_claywood_standard",
+  "camps": [
+   {
+    "name": "Lost Basin camp",
+    "nights": [
+     1,
+     2
+    ],
+    "role": "main",
+    "why": "The camp parties actually use: unmaintained sites at the head of the Lost River, a few hundred feet below the pass, so Claywood is a light day and the camp is quiet."
+   },
+   {
+    "name": "Upper Cameron Basin high camp",
+    "nights": [],
+    "role": "route",
+    "why": "A shorter day one over Grand Pass, with a stream and many sites; the cost is another climb over Cameron Pass before the summit day."
+   },
+   {
+    "name": "Dose Meadows",
+    "nights": [],
+    "role": "route",
+    "why": "The south-side base at the head of the Dosewallips; the washed-out road makes it a very long approach, so it is rarely used from Obstruction Point."
+   },
+   {
+    "name": "Cameron Basin",
+    "nights": [],
+    "role": "route",
+    "why": "The staging camp for Cameron itself; sleeping here splits the Grand Pass day, but leaves the Lost Basin leg for the following day."
+   }
+  ],
+  "new_camps": [],
+  "confidence": "medium",
+  "plan_conflict": "Upper Cameron Basin and Dose Meadows were both main on file, but parties camp in Lost Basin for Claywood, as the plan says.",
+  "sources": [
+   "https://www.nwhikers.net/forums/viewtopic.php?t=8032474",
+   "https://barefootjake.blogspot.com/2014/01/walking-through-seasons-sleeping-with.html"
+  ]
+ },
+ {
+  "id": "wa_honeymoon_route",
+  "camps": [
+   {
+    "name": "Upper Royal Basin",
+    "nights": [
+     1,
+     2
+    ],
+    "role": "main",
+    "why": "The climbers' camp, in sight of the couloir: most parties walk the extra mile above the lake so the summit day starts from tents at the foot of the route."
+   },
+   {
+    "name": "Royal Lake",
+    "nights": [],
+    "role": "route",
+    "why": "The easier-to-book fallback when the upper basin is full; sites are plentiful, but the summit day starts 500 ft lower and runs longer."
+   }
+  ],
+  "new_camps": [],
+  "confidence": "high",
+  "plan_conflict": "Royal Lake was a main camp on file next to Upper Royal Basin; research makes the upper basin the single main.",
+  "sources": [
+   "http://eileensadventures.com/2020/08/royal-basin",
+   "https://turns-all-year.com/trip-reports/may-9-11-royal-basin-deception-basin-onp-video",
+   "https://www.hikewithkurt.com/backpacking-royal-basin-in-olympic-national-park-epic-views"
+  ]
+ },
+ {
+  "id": "wa_mount_deception_standard",
+  "camps": [
+   {
+    "name": "Upper Royal Basin",
+    "nights": [
+     1,
+     2
+    ],
+    "role": "main",
+    "why": "The climbers' camp: gravel flats beside the tarns put the Deception moraine right above you, and the basin has the best views and fewest bugs."
+   },
+   {
+    "name": "Royal Lake",
+    "nights": [],
+    "role": "route",
+    "why": "The fallback when the upper-basin permit is gone: more sites and an easier booking, but a mile and 500 ft farther from the climb."
+   },
+   {
+    "name": "Royal Creek",
+    "nights": [],
+    "role": "route",
+    "why": "Forested sites well short of the basin; only for a very late arrival, since it adds hours to the summit day."
+   },
+   {
+    "name": "Lower Royal Meadow",
+    "nights": [],
+    "role": "route",
+    "why": "A bare-ground meadow just below the lake that fills in when the lake is booked; costs a little height on summit day."
+   }
+  ],
+  "new_camps": [],
+  "confidence": "high",
+  "plan_conflict": "Royal Lake was a main camp on file next to Upper Royal Basin; only the upper basin is the main.",
+  "sources": [
+   "http://eileensadventures.com/2020/08/royal-basin",
+   "https://turns-all-year.com/trip-reports/mt-deception-royal-basin",
+   "https://www.hikewithkurt.com/backpacking-royal-basin-in-olympic-national-park-epic-views"
+  ]
+ },
+ {
+  "id": "wa_mount_fricaba_standard",
+  "camps": [
+   {
+    "name": "Home Lake",
+    "nights": [
+     1,
+     2
+    ],
+    "role": "main",
+    "why": "The camp for this side of Fricaba: a few hundred feet below Constance Pass, so the Deception Basin day starts close to the route; a permit is required."
+   },
+   {
+    "name": "Camp Handy",
+    "nights": [],
+    "role": "route",
+    "why": "Three miles in, free and sheltered; a first-night stop for a late start, but it leaves a long walk and big climb before the summit day."
+   },
+   {
+    "name": "Boulder Shelter",
+    "nights": [],
+    "role": "route",
+    "why": "Six miles in at the trail junction; a roofed, no-permit fallback when Home Lake is full, and one climb shorter on the day out."
+   }
+  ],
+  "new_camps": [],
+  "confidence": "low",
+  "plan_conflict": "Most parties climb Fricaba from a camp in Deception Basin on the Royal Basin side, not from Home Lake.",
+  "sources": [
+   "http://www.nwhikers.net/forums/viewtopic.php?t=8016457",
+   "https://www.nwhikers.net/forums/viewtopic.php?p=890659",
+   "https://www.explorehoodcanal.com/stories/2026/9/16/home-lake"
+  ]
+ }
+]

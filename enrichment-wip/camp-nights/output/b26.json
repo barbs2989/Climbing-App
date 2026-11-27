@@ -1,0 +1,824 @@
+[
+ {
+  "id": "wa_mount_christie_west",
+  "camps": [
+   {
+    "name": "Halfway House Camp",
+    "nights": [
+     1,
+     4
+    ],
+    "role": "main",
+    "why": "Five easy miles in, so an afternoon start still arrives with daylight; only two sites, and the payoff is a very long second day to the pass."
+   },
+   {
+    "name": "Low Divide — the pass camp for Mount Seattle and Mount Christie",
+    "nights": [
+     2,
+     3
+    ],
+    "role": "main",
+    "why": "Flat, watered base with a toilet and bear wire; the climb starts from here and a return from the summit day lands you back in your tent."
+   },
+   {
+    "name": "Wolf Bar",
+    "nights": [],
+    "role": "route",
+    "why": "Only 2.5 miles in with five sites at the forest edge; too short for most parties, but fine for a late-day arrival at the trailhead."
+   },
+   {
+    "name": "Trapper Shelter",
+    "nights": [],
+    "role": "route",
+    "why": "Eight miles in with two small sites behind the shelter; it trims about three miles off the long day to the pass, but the shelter itself is not for overnighting."
+   }
+  ],
+  "new_camps": [],
+  "confidence": "medium",
+  "plan_conflict": "The plan sleeps at Halfway House on nights 1 and 4 while some itineraries for this approach push the 16 miles to Low Divide in one long day; the nights at the pass are the firm ones.",
+  "sources": [
+   "https://home.nps.gov/olym/planyourvisit/north-for-quinault.htm",
+   "https://climberkyle.com/2023/07/30/quinault-high-route/",
+   "https://www.oregonhikers.org/forum/viewtopic.php?p=198696"
+  ]
+ },
+ {
+  "id": "wa_mount_dana_scramble",
+  "camps": [
+   {
+    "name": "Hayes River and Elkhorn — the mid-valley camps, and the base for Mount Norton",
+    "nights": [
+     1,
+     5
+    ],
+    "role": "main",
+    "why": "Level camps with a privy and bear wire, a sensible first night with a heavy pack and the last trail camp before the walk out; Elkhorn is the shorter option."
+   },
+   {
+    "name": "Chicago Camp — the last established camp in the upper Elwha",
+    "nights": [
+     2
+    ],
+    "role": "main",
+    "why": "The last established trail camp, where the Elwha ford and the cross-country start; it leaves a short step to the way trail toward Happy Hollow."
+   },
+   {
+    "name": "Elwha Basin, Queets Basin and the upper cross-country bivy zones",
+    "nights": [
+     3,
+     4
+    ],
+    "role": "main",
+    "why": "Camp on the crest between Barnes and Wilder, as parties do: it puts the summit within a day trip with light packs, but carry your water up for the night."
+   },
+   {
+    "name": "Lillian River and Mary's Falls — the first night out of Whiskey Bend",
+    "nights": [],
+    "role": "route",
+    "why": "The mid-valley option for a slower first night after the road walk; it adds a long day two to Chicago Camp."
+   }
+  ],
+  "new_camps": [],
+  "confidence": "medium",
+  "plan_conflict": "The camp on file as main for the cross-country zone is Elwha Basin, but this plan sleeps on the Barnes-Wilder ridge, and Chicago Camp is main only for night 2.",
+  "sources": [
+   "https://www.oregonhikers.org/forum/viewtopic.php?p=198696",
+   "https://www.nps.gov/olym/planyourvisit/elwha-river-trail.htm",
+   "https://www.nps.gov/olym/planyourvisit/dodger-point-way-trail.htm"
+  ]
+ },
+ {
+  "id": "wa_mount_ferry_standard",
+  "camps": [
+   {
+    "name": "Ferry Basin",
+    "nights": [
+     2
+    ],
+    "role": "main",
+    "why": "Meadow camp with tarns and a small waterfall, reached after the Catwalk; parties use it as the base and side-trip Ferry from here."
+   },
+   {
+    "name": "Deer Lake",
+    "nights": [],
+    "role": "route",
+    "why": "Early camp on the Sol Duc trail, only a few miles in; useful for a late start but it leaves the first day short and the High Divide push huge."
+   }
+  ],
+  "new_camps": [
+   {
+    "name": "Heart Lake",
+    "elev_ft": 4784,
+    "type": "camp",
+    "role": "main",
+    "nights": [
+     1
+    ],
+    "why": "The usual first camp on the High Divide approach: well graded trail in and a high start for the Catwalk, though the traverse day is long.",
+    "water": "",
+    "capacity": "",
+    "permit": "Wilderness permit needed.",
+    "notes": "Elevation from the map pin on file; many parties pass the lake and camp further along the divide instead."
+   },
+   {
+    "name": "Dodwell-Rixon Pass",
+    "elev_ft": 4763,
+    "type": "bivy",
+    "role": "main",
+    "nights": [
+     3
+    ],
+    "why": "Camp near Bear Pass or the pass puts you at the top of the snowfinger for the descent, with water from snow and a short morning.",
+    "water": "",
+    "capacity": "",
+    "permit": "",
+    "notes": "The pass elevation is the figure on file; parties camp on the benches near Bear Pass or just north of the pass."
+   },
+   {
+    "name": "Low Divide",
+    "elev_ft": 3600,
+    "type": "camp",
+    "role": "main",
+    "nights": [
+     4
+    ],
+    "why": "First trail camp with a toilet and bear wire on the way out; the day down the snowfinger ends here.",
+    "water": "",
+    "capacity": "3 sites by the ranger cabin and 2 more a quarter mile beyond.",
+    "permit": "Camping near the lakes is prohibited.",
+    "notes": "Pit toilets and a cabin that is periodically staffed."
+   }
+  ],
+  "confidence": "low",
+  "plan_conflict": "The plan puts night 1 at Heart Lake and night 3 in Queets Basin, but the accounts found pass Heart Lake and sleep elsewhere, so those nights are not confirmed; only Ferry Basin is supported as a camp.",
+  "sources": [
+   "https://climberkyle.com/2021/07/31/the-bailey-range-traverse/",
+   "https://turns-all-year.com/trip-reports/bailey-range-traverse",
+   "https://backcountrypost.com/threads/the-bailey-range-traverse-an-8-day-olympic-national-park-epic.9395"
+  ]
+ },
+ {
+  "id": "wa_mount_lawson_standard",
+  "camps": [
+   {
+    "name": "Sixteen Mile Camp — the base directly under Mount Lawson",
+    "nights": [
+     1
+    ],
+    "role": "main",
+    "why": "The camp for the peak: four sites just across the ford, and the climb starts straight up from the drainage the camp sits in."
+   },
+   {
+    "name": "Wolf Bar",
+    "nights": [],
+    "role": "route",
+    "why": "Only 2.5 miles in, which would turn the summit day into an impossible mileage; keep it for an extra night on the way in."
+   },
+   {
+    "name": "Halfway House",
+    "nights": [],
+    "role": "route",
+    "why": "Five miles in with two sites; too far from the peak for a two-day plan, so it only serves a slower three-day version."
+   },
+   {
+    "name": "Elip Creek Camp",
+    "nights": [],
+    "role": "route",
+    "why": "Six and a half miles in with four sites; it shortens the first day but pushes the summit day well past what the plan allows."
+   }
+  ],
+  "new_camps": [],
+  "confidence": "medium",
+  "plan_conflict": null,
+  "sources": [
+   "https://home.nps.gov/olym/planyourvisit/north-for-quinault.htm",
+   "https://cascadeclimbers.com/forum/topic/42316-tr-mt-lawson-nw-basin-from-river-5132006"
+  ]
+ },
+ {
+  "id": "wa_mount_meany_standard",
+  "camps": [
+   {
+    "name": "Low Divide — the pass camp for Mount Seattle and Mount Christie",
+    "nights": [
+     2
+    ],
+    "role": "main",
+    "why": "Flat, watered base with a toilet and bear wire after the river ford; the pass camp parties sleep at before the climb to Seattle Basin."
+   },
+   {
+    "name": "Seattle Basin high camp",
+    "nights": [
+     3,
+     4
+    ],
+    "role": "main",
+    "why": "Gravelly meadow rib high in the basin; it cuts the summit day down to the col and gives a short walk back after the crux."
+   },
+   {
+    "name": "Elwha Basin",
+    "nights": [],
+    "role": "route",
+    "why": "The basin on the Elwha side of the divide, a long bushwhack from Chicago Camp; it serves the other approach and is not slept at on this plan."
+   },
+   {
+    "name": "Elwha Basin, Queets Basin and the upper cross-country bivy zones",
+    "nights": [],
+    "role": "route",
+    "why": "The working zone for Elwha Basin peaks from the south; it belongs to the other approach and is not slept at on this Quinault itinerary."
+   },
+   {
+    "name": "Lillian River and Mary's Falls — the first night out of Whiskey Bend",
+    "nights": [],
+    "role": "route",
+    "why": "Part of the Elwha approach, so it is not used on this Quinault itinerary; it serves parties who start at Whiskey Bend instead."
+   },
+   {
+    "name": "Hayes River and Elkhorn — the mid-valley camps, and the base for Mount Norton",
+    "nights": [],
+    "role": "route",
+    "why": "Level camps about eleven and sixteen miles up the valley; a longer first day than most take, but it shortens the push to the head of the Elwha."
+   },
+   {
+    "name": "Chicago Camp — the last established camp in the upper Elwha",
+    "nights": [],
+    "role": "route",
+    "why": "Last trail camp on the Elwha side, the base for Meany when approaching from Whiskey Bend; not slept at on this Quinault plan."
+   }
+  ],
+  "new_camps": [
+   {
+    "name": "Elip Creek Camp",
+    "elev_ft": 870,
+    "type": "camp",
+    "role": "main",
+    "nights": [
+     1
+    ],
+    "why": "Four sites a short push past Halfway House on the first afternoon; a good start for the long day to Low Divide.",
+    "water": "",
+    "capacity": "4 sites on the north side of the creek.",
+    "permit": "",
+    "notes": "The pit toilet is on the south side; Wild Rose and Elip creeks are fords that can run high."
+   },
+   {
+    "name": "Sixteen Mile Camp",
+    "elev_ft": 2021,
+    "type": "camp",
+    "role": "main",
+    "nights": [
+     5
+    ],
+    "why": "Four sites across the ford; an easy leg down after the summit day, though the crossing is the main hazard in high water.",
+    "water": "",
+    "capacity": "4 sites on the far bank.",
+    "permit": "",
+    "notes": "The ford is knee to thigh deep in summer and can be impassable in heavy rain or snowmelt."
+   }
+  ],
+  "confidence": "medium",
+  "plan_conflict": "The camp on file as main for this route is Elwha Basin, which belongs to the Elwha-side approach; this plan sleeps at Elip Creek, Low Divide, Seattle Basin and Sixteen Mile.",
+  "sources": [
+   "https://climberkyle.com/2023/07/30/quinault-high-route/",
+   "https://home.nps.gov/olym/planyourvisit/north-for-quinault.htm",
+   "https://www.oregonhikers.org/forum/viewtopic.php?p=198696"
+  ]
+ },
+ {
+  "id": "wa_mount_norton_scramble",
+  "camps": [
+   {
+    "name": "Elkhorn Guard Station",
+    "nights": [
+     1
+    ],
+    "role": "main",
+    "why": "Level camp about eleven miles up from Whiskey Bend; with the road walk added, it is as far as most parties get on day one."
+   },
+   {
+    "name": "Hayes River and Elkhorn — the mid-valley camps, and the base for Mount Norton",
+    "nights": [
+     2,
+     3
+    ],
+    "role": "main",
+    "why": "Hayes River is the closest trail camp to the peak, with a ranger station, bear wire and privy; leave the heavy gear here for the steep summit day."
+   },
+   {
+    "name": "Lillian River and Mary's Falls — the first night out of Whiskey Bend",
+    "nights": [],
+    "role": "route",
+    "why": "A shorter first day after the road walk; it adds a long second day and makes the summit day a stretch to reach."
+   }
+  ],
+  "new_camps": [],
+  "confidence": "medium",
+  "plan_conflict": null,
+  "sources": [
+   "https://www.oregonhikers.org/forum/viewtopic.php?p=198696",
+   "https://www.nps.gov/olym/planyourvisit/elwha-river-trail.htm",
+   "https://cascadeclimbers.com/forum/topic/53223-tr-norton-wilder-dana-barnes-childs-luddenscott-elwah-to-bailey-to-dodger-point-to-elwah-842007"
+  ]
+ },
+ {
+  "id": "wa_mount_olson_standard",
+  "camps": [
+   {
+    "name": "Belview and the Six Ridge camps — for Mount Olson only",
+    "nights": [
+     1,
+     2
+    ],
+    "role": "main",
+    "why": "High camp near the McGravey Lakes on Six Ridge; it puts the peak a short sidehill away, but water is thin and the trail is hard to follow."
+   },
+   {
+    "name": "Lake Sundown",
+    "nights": [],
+    "role": "route",
+    "why": "Designated sites about eight miles in with reliable water; easier to find than the ridge, but it leaves the way trail and the summit for the next morning."
+   },
+   {
+    "name": "Tarn below Olson's summit block",
+    "nights": [],
+    "role": "route",
+    "why": "The closest water to the peak with the shortest summit morning; there is no designated site, so it means camping on bare ground away from the shore."
+   }
+  ],
+  "new_camps": [],
+  "confidence": "medium",
+  "plan_conflict": "The camp on file as main is Lake Sundown, but this plan and the party that did it sleep at the McGravey Lakes and Six Ridge high camp, with Sundown Lake as the first-night stop for slower parties.",
+  "sources": [
+   "https://www.nps.gov/olym/planyourvisit/six-ridge-primitive-trail.htm",
+   "https://www.oregonhikers.org/forum/viewtopic.php?p=198899"
+  ]
+ },
+ {
+  "id": "wa_mount_olympus_2_north_ridge_via_blue_glacier",
+  "camps": [],
+  "new_camps": [
+   {
+    "name": "Elk Lake",
+    "elev_ft": 2600,
+    "type": "camp",
+    "role": "main",
+    "nights": [
+     1,
+     2
+    ],
+    "why": "Fifteen miles in with limited permits; a basecamp that keeps the long summit day but spares a second night on the climbing side.",
+    "water": "",
+    "capacity": "7 individual sites and a group site.",
+    "permit": "Permits are limited.",
+    "notes": "Pit toilet; bear canisters are required and campfires are not allowed above Martin Creek."
+   },
+   {
+    "name": "Glacier Meadows",
+    "elev_ft": 4300,
+    "type": "camp",
+    "role": "route",
+    "nights": [
+     1,
+     2
+    ],
+    "why": "Two miles further in; it shortens the summit day a lot, but permits are limited and the last climb up to it is steep.",
+    "water": "",
+    "capacity": "11 individual sites and 1 group site.",
+    "permit": "Permits are limited.",
+    "notes": "Pit toilet and bear wires; no camping is allowed between the meadows and the glacier."
+   }
+  ],
+  "confidence": "medium",
+  "plan_conflict": "Guided itineraries sleep at Glacier Meadows, and one 3-day trip report camped near Elk Lake both nights, so Elk Lake is main here only because the plan is three days.",
+  "sources": [
+   "https://pages.uoregon.edu/dbelitz/db_virtual/db_climbing/peaks/mt_olympus.html",
+   "https://www.alpineascents.com/climbs/mount-olympus/itinerary-2/",
+   "https://mountainguides.com/olympus-itin.shtml",
+   "https://www.nps.gov/olym/planyourvisit/hoh-river-trail.htm"
+  ]
+ },
+ {
+  "id": "wa_mount_olympus_blue_glacier",
+  "camps": [
+   {
+    "name": "Glacier Meadows",
+    "nights": [
+     2,
+     3
+    ],
+    "role": "main",
+    "why": "The standard base: shelters, a bear wire and privies, with the glacier an easy morning walk away; the last toilets before the ice."
+   },
+   {
+    "name": "Snow Dome",
+    "nights": [],
+    "role": "route",
+    "why": "A high camp on the ice that skips the glacier's lower miles on summit day, but it is exposed to wind and weather and needs roped crevasse travel to reach."
+   },
+   {
+    "name": "Elk Lake",
+    "nights": [],
+    "role": "route",
+    "why": "About fifteen miles in; the break for parties who cannot reach the meadows in a day, but the summit day gets much longer."
+   }
+  ],
+  "new_camps": [
+   {
+    "name": "Olympus Guard Station",
+    "elev_ft": 950,
+    "type": "camp",
+    "role": "main",
+    "nights": [
+     1
+    ],
+    "why": "A nine-mile warm-up day on flat trail with a toilet and bear wire; most parties arrive in daylight and reach the meadows the next day.",
+    "water": "",
+    "capacity": "7 individual sites and 2 group sites.",
+    "permit": "",
+    "notes": "Historic ranger station and a pit toilet beside the river, about 9.5 miles in."
+   }
+  ],
+  "confidence": "high",
+  "plan_conflict": "Both Glacier Meadows and Snow Dome are marked main on file; parties sleep at Glacier Meadows, so Snow Dome is demoted to a route option.",
+  "sources": [
+   "https://www.alpineascents.com/climbs/mount-olympus/itinerary-2/",
+   "https://mountainguides.com/olympus-itin.shtml",
+   "https://www.nps.gov/olym/planyourvisit/hoh-river-trail.htm"
+  ]
+ },
+ {
+  "id": "wa_mount_olympus_west_ridge",
+  "camps": [
+   {
+    "name": "Lewis Meadows Camp, Hoh River trail",
+    "nights": [
+     1
+    ],
+    "role": "main",
+    "why": "The first night, about ten miles in on the valley floor; it lets you arrive in daylight and tackle the climb up the next day."
+   },
+   {
+    "name": "Glacier Meadows — the standard Blue Glacier base camp",
+    "nights": [
+     2,
+     3
+    ],
+    "role": "main",
+    "why": "The last camp before the Blue Glacier and the standard base; the rock rack and glacier gear for the ridge day sort out here."
+   },
+   {
+    "name": "Elk Lake Camp, Hoh River trail",
+    "nights": [],
+    "role": "route",
+    "why": "The fallback when Glacier Meadows permits are gone; the summit day for the ridge becomes very long."
+   },
+   {
+    "name": "Snow Dome / Caltech Rocks high bivy, on the Blue Glacier",
+    "nights": [],
+    "role": "route",
+    "why": "A light camp on the ice for strong parties; it makes the ridge day shorter at the cost of a heavy carry."
+   }
+  ],
+  "new_camps": [],
+  "confidence": "high",
+  "plan_conflict": "Lewis Meadows Camp is listed as a route option on file but this plan sleeps there on night 1, so it becomes main for that night.",
+  "sources": [
+   "https://www.alpineascents.com/climbs/mount-olympus/itinerary-2/",
+   "https://mountainguides.com/olympus-itin.shtml",
+   "https://www.nps.gov/olym/planyourvisit/hoh-river-trail.htm"
+  ]
+ },
+ {
+  "id": "wa_olympus_summit_block_north_face",
+  "camps": [],
+  "new_camps": [
+   {
+    "name": "Olympus Guard Station",
+    "elev_ft": 950,
+    "type": "camp",
+    "role": "main",
+    "nights": [
+     1
+    ],
+    "why": "A nine-mile warm-up day on flat trail with a toilet and bear wire; most parties arrive in daylight and reach the meadows the next day.",
+    "water": "",
+    "capacity": "7 individual sites and 2 group sites.",
+    "permit": "",
+    "notes": "Historic ranger station and a pit toilet beside the river, about 9.5 miles in."
+   },
+   {
+    "name": "Glacier Meadows",
+    "elev_ft": 4300,
+    "type": "camp",
+    "role": "main",
+    "nights": [
+     2,
+     3
+    ],
+    "why": "The standard base: shelters, a bear wire and privies, and the glacier is an easy morning walk away. Sort the pitch rack tonight.",
+    "water": "",
+    "capacity": "11 individual sites and 1 group site.",
+    "permit": "Permits are limited.",
+    "notes": "Pit toilet and bear wires; no camping is allowed between the meadows and the glacier."
+   }
+  ],
+  "confidence": "high",
+  "plan_conflict": null,
+  "sources": [
+   "https://www.alpineascents.com/climbs/mount-olympus/itinerary-2/",
+   "https://mountainguides.com/olympus-itin.shtml",
+   "https://www.nps.gov/olym/planyourvisit/hoh-river-trail.htm"
+  ]
+ },
+ {
+  "id": "wa_olympus_traverse",
+  "camps": [
+   {
+    "name": "Lewis Meadows Camp, Hoh River trail",
+    "nights": [
+     1
+    ],
+    "role": "main",
+    "why": "The first night, about ten miles in on the valley floor; it lets you arrive in daylight and get to the meadows the next day."
+   },
+   {
+    "name": "Glacier Meadows — the standard Blue Glacier base camp",
+    "nights": [
+     2,
+     3,
+     4
+    ],
+    "role": "main",
+    "why": "The standard base, with the glacier a morning walk away; the plan's buffer night is also spent here after the long traverse."
+   },
+   {
+    "name": "Snow Dome / Caltech Rocks high bivy, on the Blue Glacier",
+    "nights": [],
+    "role": "route",
+    "why": "A light camp on the ice for strong parties; it shortens summit day but is exposed and a poor place to wait out weather."
+   },
+   {
+    "name": "Elk Lake Camp, Hoh River trail",
+    "nights": [],
+    "role": "route",
+    "why": "The fallback when Glacier Meadows permits are gone; every traverse day then starts several miles and a steep climb further away."
+   }
+  ],
+  "new_camps": [],
+  "confidence": "medium",
+  "plan_conflict": "Snow Dome / Caltech Rocks is marked main on file, but this plan sleeps at Glacier Meadows, so the bivy becomes a route option.",
+  "sources": [
+   "https://www.alpineascents.com/climbs/mount-olympus/itinerary-2/",
+   "https://mountainguides.com/olympus-itin.shtml",
+   "https://www.nps.gov/olym/planyourvisit/hoh-river-trail.htm"
+  ]
+ },
+ {
+  "id": "wa_mount_pulitzer_standard",
+  "camps": [
+   {
+    "name": "Ferry Basin",
+    "nights": [
+     2
+    ],
+    "role": "main",
+    "why": "Meadow camp with tarns below Ferry, the usual base for Pulitzer and Ferry after the Catwalk; a long day gets you here."
+   },
+   {
+    "name": "Upper Ferry Basin camp",
+    "nights": [],
+    "role": "route",
+    "why": "The higher end of the same basin; it is picked over the lower flats according to snow cover and shelter that night."
+   },
+   {
+    "name": "Heart Lake",
+    "nights": [
+     1
+    ],
+    "role": "main",
+    "why": "The easy first night on the High Divide trail; a well graded climb in and a high start for the Catwalk."
+   }
+  ],
+  "new_camps": [
+   {
+    "name": "Dodwell-Rixon Pass",
+    "elev_ft": 4763,
+    "type": "bivy",
+    "role": "main",
+    "nights": [
+     3
+    ],
+    "why": "Camp near Bear Pass or the pass places you above Queets Basin and at the head of the snowfinger for the exit; water comes from snow.",
+    "water": "",
+    "capacity": "",
+    "permit": "",
+    "notes": "The pass elevation is the figure on file; parties camp on the benches near Bear Pass or just north of the pass."
+   },
+   {
+    "name": "Hayes River Guard Station",
+    "elev_ft": 2000,
+    "type": "camp",
+    "role": "main",
+    "nights": [
+     4
+    ],
+    "why": "First good trail camp below the snowfinger, with a ranger station, bear wire and privy; it leaves one long day out to Whiskey Bend.",
+    "water": "",
+    "capacity": "",
+    "permit": "",
+    "notes": "Elevation from the map pin on file."
+   }
+  ],
+  "confidence": "low",
+  "plan_conflict": "The plan has night 3 in Queets Basin and night 4 somewhere on the Elwha trail; the accounts found camp near Bear Pass and at Hayes River, so those nights are not confirmed.",
+  "sources": [
+   "https://backcountrypost.com/threads/the-bailey-range-traverse-an-8-day-olympic-national-park-epic.9395",
+   "https://climberkyle.com/2021/07/31/the-bailey-range-traverse/",
+   "https://www.nps.gov/olym/planyourvisit/elwha-river-trail.htm"
+  ]
+ },
+ {
+  "id": "wa_mount_queets_south",
+  "camps": [
+   {
+    "name": "Hayes River and Elkhorn — the mid-valley camps, and the base for Mount Norton",
+    "nights": [
+     1,
+     4
+    ],
+    "role": "main",
+    "why": "Level camps with a privy and bear wire, about eleven and sixteen miles up; as far as most parties get on a first day that includes the road walk."
+   },
+   {
+    "name": "Elwha Basin, Queets Basin and the upper cross-country bivy zones",
+    "nights": [
+     2,
+     3
+    ],
+    "role": "main",
+    "why": "The high camp for the Elwha Basin peaks; it cuts the summit day to the pass and ridge, but the bushwhack up from Chicago Camp is long."
+   },
+   {
+    "name": "Lillian River and Mary's Falls — the first night out of Whiskey Bend",
+    "nights": [],
+    "role": "route",
+    "why": "The shorter first night after the road walk; it adds a long second day to the basin."
+   },
+   {
+    "name": "Chicago Camp — the last established camp in the upper Elwha",
+    "nights": [],
+    "role": "route",
+    "why": "The last trail camp before the cross-country; parties who cannot face the brush at the end of a long day stop here and go up in the morning."
+   }
+  ],
+  "new_camps": [],
+  "confidence": "low",
+  "plan_conflict": null,
+  "sources": [
+   "https://www.countryhighpoints.com/most-remote-point-in-washington/",
+   "https://www.oregonhikers.org/forum/viewtopic.php?p=198696",
+   "https://www.nps.gov/olym/planyourvisit/elwha-river-trail.htm"
+  ]
+ },
+ {
+  "id": "wa_mount_seattle_south",
+  "camps": [
+   {
+    "name": "Seattle Meadows",
+    "nights": [
+     2,
+     3
+    ],
+    "role": "main",
+    "why": "Meadow camp near 4,550 ft below the peak; it makes a half-day scramble of the summit, though the haul up from the river is long."
+   },
+   {
+    "name": "Low Divide — the pass camp for Mount Seattle and Mount Christie",
+    "nights": [],
+    "role": "route",
+    "why": "The flat, watered pass camp with a toilet; a mile or two shorter than Seattle Meadows, but it adds the climb to the peak on summit day."
+   },
+   {
+    "name": "Lillian River and Mary's Falls — the first night out of Whiskey Bend",
+    "nights": [],
+    "role": "route",
+    "why": "Part of the Elwha approach, not slept at on this Quinault itinerary."
+   },
+   {
+    "name": "Hayes River and Elkhorn — the mid-valley camps, and the base for Mount Norton",
+    "nights": [],
+    "role": "route",
+    "why": "Level camps about eleven and sixteen miles up the valley; a longer first day than most take, but it shortens the push to the head of the Elwha."
+   },
+   {
+    "name": "Chicago Camp — the last established camp in the upper Elwha",
+    "nights": [],
+    "role": "route",
+    "why": "Last trail camp on the Elwha side; the other way to reach the peaks above Low Divide, not used here."
+   }
+  ],
+  "new_camps": [
+   {
+    "name": "Elip Creek Camp",
+    "elev_ft": 870,
+    "type": "camp",
+    "role": "main",
+    "nights": [
+     1,
+     4
+    ],
+    "why": "Four sites about 6.5 miles in; a sensible first stop and last night, leaving the fords and the climb to the pass for day two.",
+    "water": "",
+    "capacity": "4 sites on the north side of the creek.",
+    "permit": "",
+    "notes": "The pit toilet is on the south side; Wild Rose and Elip creeks are fords that can run high."
+   }
+  ],
+  "confidence": "low",
+  "plan_conflict": "Low Divide is main on file, but this plan sleeps at Seattle Meadows on nights 2 and 3; no trip report was found to confirm the nights.",
+  "sources": [
+   "https://home.nps.gov/olym/planyourvisit/north-for-quinault.htm",
+   "https://climberkyle.com/2023/07/30/quinault-high-route/"
+  ]
+ },
+ {
+  "id": "wa_mount_tom_scramble",
+  "camps": [
+   {
+    "name": "Lewis Meadows Camp, Hoh River trail",
+    "nights": [
+     1,
+     4
+    ],
+    "role": "main",
+    "why": "About ten miles in on the valley floor; a gentle first night and a short, safe night after the exhausting summit day."
+   },
+   {
+    "name": "Glacier Meadows — the standard Blue Glacier base camp",
+    "nights": [
+     2,
+     3
+    ],
+    "role": "main",
+    "why": "The standard base with shelters, privies and bear wires; the last camp before the glacier and a restful night before the long push."
+   },
+   {
+    "name": "Elk Lake Camp, Hoh River trail",
+    "nights": [],
+    "role": "route",
+    "why": "The fallback when Glacier Meadows permits are gone; every day on the glacier then starts a long way lower."
+   }
+  ],
+  "new_camps": [],
+  "confidence": "medium",
+  "plan_conflict": null,
+  "sources": [
+   "https://www.alpineascents.com/climbs/mount-olympus/itinerary-2/",
+   "https://mountainguides.com/olympus-itin.shtml",
+   "https://www.nps.gov/olym/planyourvisit/hoh-river-trail.htm"
+  ]
+ },
+ {
+  "id": "wa_mount_wilder_scramble",
+  "camps": [
+   {
+    "name": "Lillian River and Mary's Falls — the first night out of Whiskey Bend",
+    "nights": [
+     1,
+     4
+    ],
+    "role": "main",
+    "why": "A short warm-up on gentle trail after the road walk; a tiny clearing on the river and a long enough day to ease into a full pack."
+   },
+   {
+    "name": "Camp Wilder",
+    "nights": [
+     2,
+     3
+    ],
+    "role": "main",
+    "why": "Sandy riverside camp at the foot of the peak, with a privy, bear wire and shelter; the climb starts almost from your tent."
+   },
+   {
+    "name": "Hayes River and Elkhorn — the mid-valley camps, and the base for Mount Norton",
+    "nights": [],
+    "role": "route",
+    "why": "Level camps about eleven and sixteen miles up the valley; a longer first day than most take, but it shortens the push to the head of the Elwha."
+   },
+   {
+    "name": "Chicago Camp — the last established camp in the upper Elwha",
+    "nights": [],
+    "role": "route",
+    "why": "Just above Camp Wilder and the last trail camp before the cross-country; the climb is slightly further away and the ford is next door."
+   }
+  ],
+  "new_camps": [],
+  "confidence": "medium",
+  "plan_conflict": "Chicago Camp is main on file, but this plan sleeps at Camp Wilder and the Elwha trail below it.",
+  "sources": [
+   "https://www.oregonhikers.org/forum/viewtopic.php?p=198696",
+   "https://www.nps.gov/olym/planyourvisit/elwha-river-trail.htm",
+   "https://www.wta.org/go-hiking/trip-reports/trip_report-2025-05-26.114424514421"
+  ]
+ }
+]

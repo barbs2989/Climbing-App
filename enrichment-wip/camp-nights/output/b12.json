@@ -1,0 +1,541 @@
+[
+ {
+  "id": "wa_mount_spickard_silver_glacier",
+  "camps": [
+   {
+    "name": "Silver Lake camp",
+    "nights": [],
+    "role": "route",
+    "why": "Needs the water-taxi or Silver Creek approach, so far fewer parties use it. The glacier toe is closer, but most go via Depot Creek and sleep at Ouzel Lake instead."
+   },
+   {
+    "name": "Ouzel Lake camp",
+    "nights": [
+     1,
+     2
+    ],
+    "role": "main",
+    "why": "Where nearly everyone sleeps: the Depot Creek hike ends here, and the Silver Glacier is a day trip from the lake via the pass toward Silver Lake."
+   }
+  ],
+  "new_camps": [],
+  "confidence": "medium",
+  "plan_conflict": "Camp on file lists Silver Lake as the main camp, but climbers' reports camp at Ouzel Lake via Depot Creek; Ouzel Lake is made the main camp.",
+  "sources": [
+   "https://stephabegg.com/?p=8926",
+   "https://turns-all-year.com/trip-reports/july-3-5-2004-mount-spickard-n-cascades",
+   "https://sverdina.com/Redoubt_spickard1.asp"
+  ]
+ },
+ {
+  "id": "wa_mount_spickard_southwest",
+  "camps": [
+   {
+    "name": "Ouzel Lake",
+    "nights": [
+     1,
+     2
+    ],
+    "role": "main",
+    "why": "The standard base: reached in six to seven hours via Depot Creek, with Spickard about three hours above camp, and it also serves Redoubt and the Moxes."
+   },
+   {
+    "name": "Lower Depot Creek bench",
+    "nights": [],
+    "role": "route",
+    "why": "Not slept at on a normal trip. It is a fallback for a slow day on the falls headwall, or a short last stop on the way out."
+   }
+  ],
+  "new_camps": [],
+  "confidence": "high",
+  "plan_conflict": null,
+  "sources": [
+   "https://stephabegg.com/?p=8926",
+   "https://turns-all-year.com/trip-reports/july-3-5-2004-mount-spickard-n-cascades",
+   "https://sverdina.com/Redoubt_spickard1.asp"
+  ]
+ },
+ {
+  "id": "wa_northwest_mox_peak_standard",
+  "camps": [
+   {
+    "name": "Ouzel Lake basin, head of Depot Creek",
+    "nights": [
+     1
+    ],
+    "role": "main",
+    "why": "Reached after a slow, brushy day up Depot Creek; the last flat sandy benches before the glacier, so parties sleep here before moving up to the saddle."
+   }
+  ],
+  "new_camps": [
+   {
+    "name": "Redoubt Glacier high camp",
+    "elev_ft": 7200,
+    "type": "camp",
+    "role": "main",
+    "nights": [
+     2,
+     3
+    ],
+    "why": "Rocky knoll at the head of the Redoubt Glacier. It cuts the Mox summit day to a manageable length compared with climbing from Ouzel Lake.",
+    "water": "",
+    "capacity": "",
+    "permit": "",
+    "notes": "A knoll at the head of the Redoubt Glacier near 7,200 ft with views south, used as the base for the Mox peaks. Some parties instead bivy at Redoubt Col nearby."
+   }
+  ],
+  "confidence": "medium",
+  "plan_conflict": "Strong parties and some reports skip the second camp (Redoubt Col bivy or a same-day exit); the plan's night 2 and 3 high camp is not on file, so it is added.",
+  "sources": [
+   "https://stephabegg.com/?p=8926",
+   "https://lemkeclimbs.com/custer-ridge-and-easy-mox"
+  ]
+ },
+ {
+  "id": "wa_southeast_mox_peak_beckey_route_west_ridge",
+  "camps": [],
+  "new_camps": [
+   {
+    "name": "Ouzel Lake camp",
+    "elev_ft": 5700,
+    "type": "camp",
+    "role": "main",
+    "nights": [
+     1
+    ],
+    "why": "The usual first night: the Depot Creek hike ends at the lake and parties rest before hauling loads up to the Redoubt Glacier.",
+    "water": "",
+    "capacity": "",
+    "permit": "",
+    "notes": "Sandy benches by the lake at about 5,700 ft, the standard camp for the Chilliwack peaks. Some parties camp here two nights."
+   },
+   {
+    "name": "Redoubt Glacier high camp",
+    "elev_ft": 7200,
+    "type": "camp",
+    "role": "main",
+    "nights": [
+     2,
+     3
+    ],
+    "why": "Rocky knoll at the head of the Redoubt Glacier. It cuts the Mox summit day to a manageable length compared with climbing from Ouzel Lake.",
+    "water": "",
+    "capacity": "",
+    "permit": "",
+    "notes": "A knoll at the head of the Redoubt Glacier near 7,200 ft with views south, used as the base for the Mox peaks. Some parties instead bivy at Redoubt Col nearby."
+   }
+  ],
+  "confidence": "medium",
+  "plan_conflict": null,
+  "sources": [
+   "https://stephabegg.com/?p=8926",
+   "https://lemkeclimbs.com/custer-ridge-and-easy-mox"
+  ]
+ },
+ {
+  "id": "wa_southeast_mox_peak_se_rib",
+  "camps": [
+   {
+    "name": "Ouzel Lake camp",
+    "nights": [
+     1
+    ],
+    "role": "main",
+    "why": "Where the Depot Creek hike ends; parties sleep here the first night and carry up to the glacier saddle next day, rather than doing everything in one push."
+   }
+  ],
+  "new_camps": [
+   {
+    "name": "Redoubt Glacier high camp",
+    "elev_ft": 7200,
+    "type": "camp",
+    "role": "main",
+    "nights": [
+     2,
+     3
+    ],
+    "why": "Rocky knoll at the head of the Redoubt Glacier. It cuts the Mox summit day to a manageable length compared with climbing from Ouzel Lake.",
+    "water": "",
+    "capacity": "",
+    "permit": "",
+    "notes": "A knoll at the head of the Redoubt Glacier near 7,200 ft with views south, used as the base for the Mox peaks. Some parties instead bivy at Redoubt Col nearby."
+   }
+  ],
+  "confidence": "medium",
+  "plan_conflict": null,
+  "sources": [
+   "https://stephabegg.com/?p=8926",
+   "https://lemkeclimbs.com/custer-ridge-and-easy-mox"
+  ]
+ },
+ {
+  "id": "wa_the_devils_club",
+  "camps": [
+   {
+    "name": "Perry Creek basin",
+    "nights": [
+     1,
+     2,
+     3,
+     4,
+     5
+    ],
+    "role": "main",
+    "why": "The only camp area on file for the approach drainage; the wall bivy and the return are dispersed sites in the same basin, with no separately known camp for each night."
+   }
+  ],
+  "new_camps": [],
+  "confidence": "low",
+  "plan_conflict": "Day 3 ends on a bivy ledge on the face, which is not a researched camp; night 3 is assigned to Perry Creek basin only so every night has a main, and no source confirms where nights 1 to 5 fall.",
+  "sources": [
+   "https://www.countryhighpoints.com/hard-mox-via-perry-creek/",
+   "https://stephabegg.com/?p=8926"
+  ]
+ },
+ {
+  "id": "wa_austera_peak",
+  "camps": [
+   {
+    "name": "Eldorado-Inspiration snow arm high camp",
+    "nights": [
+     1,
+     2
+    ],
+    "role": "main",
+    "why": "The usual base for Austera: a short day from the trailhead, comfortable ground, and the Klawatti Glacier approach starts from here."
+   },
+   {
+    "name": "Klawatti Col camp",
+    "nights": [],
+    "role": "route",
+    "why": "Trims the Austera day and suits parties adding Klawatti or Dorado Needle, but costs a long glacier carry and is rarely used on a simple trip."
+   },
+   {
+    "name": "Marble Creek Campground, Cascade River Road",
+    "nights": [
+     0
+    ],
+    "role": "route",
+    "why": "Roadside campground for the night before; lets you start walking early without a long drive from Marblemount."
+   },
+   {
+    "name": "Eldorado East Ridge rock bivies",
+    "nights": [],
+    "role": "route",
+    "why": "Bare rock where snow has retreated; used only when the snow arm is too soft or crevassed to pitch on."
+   },
+   {
+    "name": "Eldorado Basin camp",
+    "nights": [],
+    "role": "route",
+    "why": "A bail-out camp for parties who start late or find the boulder field slow, leaving a longer day to the glacier camp."
+   },
+   {
+    "name": "Roush Creek Basin camp",
+    "nights": [],
+    "role": "route",
+    "why": "An alternative low camp when Eldorado Basin is crowded; adds distance to the glacier but is quieter."
+   }
+  ],
+  "new_camps": [],
+  "confidence": "high",
+  "plan_conflict": "Klawatti Col camp and Marble Creek Campground are filed as main, but only the Eldorado camp fits a 3-day plan's nights 1 and 2; both are changed to route.",
+  "sources": [
+   "https://turns-all-year.com/trip-reports/april-30-may-2-2004-eldorado-austera",
+   "https://www.countryhighpoints.com/klawatti-austera-eldorado-winter-ascents/",
+   "https://www.wta.org/go-hiking/trip-reports/trip_report-2021-08-09-0386954541"
+  ]
+ },
+ {
+  "id": "wa_austera_peak_southwest_ridge",
+  "camps": [
+   {
+    "name": "Eldorado-Inspiration snow arm high camp",
+    "nights": [
+     1,
+     2
+    ],
+    "role": "main",
+    "why": "The usual base for Austera: a short day from the trailhead, comfortable ground, and the Klawatti Glacier approach starts from here."
+   },
+   {
+    "name": "Klawatti Col camp",
+    "nights": [],
+    "role": "route",
+    "why": "Trims the Austera day and suits parties adding Klawatti or Dorado Needle, but costs a long glacier carry and is rarely used on a simple trip."
+   },
+   {
+    "name": "Marble Creek Campground, Cascade River Road",
+    "nights": [
+     0
+    ],
+    "role": "route",
+    "why": "Roadside campground for the night before; lets you start walking early without a long drive from Marblemount."
+   },
+   {
+    "name": "Eldorado East Ridge rock bivies",
+    "nights": [],
+    "role": "route",
+    "why": "Bare rock where snow has retreated; used only when the snow arm is too soft or crevassed to pitch on."
+   },
+   {
+    "name": "Eldorado Basin camp",
+    "nights": [],
+    "role": "route",
+    "why": "A bail-out camp for parties who start late or find the boulder field slow, leaving a longer day to the glacier camp."
+   },
+   {
+    "name": "Roush Creek Basin camp",
+    "nights": [],
+    "role": "route",
+    "why": "An alternative low camp when Eldorado Basin is crowded; adds distance to the glacier but is quieter."
+   }
+  ],
+  "new_camps": [],
+  "confidence": "medium",
+  "plan_conflict": "Klawatti Col camp and Marble Creek Campground are filed as main, but the plan's high camp on the Eldorado/Inspiration Glacier fits only the snow arm camp for both nights; both are changed to route.",
+  "sources": [
+   "https://turns-all-year.com/trip-reports/april-30-may-2-2004-eldorado-austera",
+   "https://www.countryhighpoints.com/klawatti-austera-eldorado-winter-ascents/",
+   "https://www.wta.org/go-hiking/trip-reports/trip_report-2021-08-09-0386954541"
+  ]
+ },
+ {
+  "id": "wa_booker_mountain_northwest_route",
+  "camps": [
+   {
+    "name": "Thunder Basin Hiker Camp",
+    "nights": [
+     1,
+     2
+    ],
+    "role": "main",
+    "why": "Meadow camp below Park Creek Pass, a base for the Booker-Buckner col; camping is banned at the pass itself, so this and nearby knolls are used."
+   },
+   {
+    "name": "Neve Camp",
+    "nights": [],
+    "role": "route",
+    "why": "Under two miles in; only for a very late start, as it leaves a punishing second day to the pass area."
+   },
+   {
+    "name": "Junction Camp",
+    "nights": [],
+    "role": "route",
+    "why": "About ten miles in; a way to split the long approach into two days for a four-day trip, with the Fisher Basin trail starting here."
+   },
+   {
+    "name": "Skagit Queen Camp",
+    "nights": [],
+    "role": "route",
+    "why": "Last creekside camp before the climb toward the pass; splits the approach if the first day starts late."
+   },
+   {
+    "name": "Five Mile Camp, Park Creek trail",
+    "nights": [],
+    "role": "route",
+    "why": "Camp on the east side of Park Creek Pass; used by parties who come in from the Stehekin side instead of Thunder Creek."
+   }
+  ],
+  "new_camps": [],
+  "confidence": "medium",
+  "plan_conflict": "The plan's day 1 puts a party near Park Creek Pass, which is a long day up Thunder Creek; many parties actually split the approach and camp on a knoll near 6,000 ft southwest of the pass.",
+  "sources": [
+   "https://stephabegg.com/?p=8941",
+   "https://www.wta.org/go-hiking/hikes/park-creek-pass-via-thunder-creek",
+   "https://home.nps.gov/noca/planyourvisit/thunder-creek-trail.htm"
+  ]
+ },
+ {
+  "id": "wa_north_ridge_7",
+  "camps": [
+   {
+    "name": "Boston Basin upper (high) camp",
+    "nights": [
+     1
+    ],
+    "role": "main",
+    "why": "The high camp near 6,400 ft; parties pitch here and the climb is a short half-day above camp, with a toilet and a higher start."
+   },
+   {
+    "name": "Boston Basin lower camp",
+    "nights": [],
+    "role": "route",
+    "why": "Lower, more sheltered and melts out sooner, so it suits early season or slower arrivals, but adds a longer morning to the route."
+   }
+  ],
+  "new_camps": [],
+  "confidence": "medium",
+  "plan_conflict": "Both Boston Basin camps are filed as main; only the high camp fits the plan, so the lower camp is changed to route.",
+  "sources": [
+   "https://www.alpineinstitute.com/route-profile-aiguille-de-i-m-north-ridge/",
+   "https://mitoc-cag.mit.edu/?p=461",
+   "https://www.nps.gov/noca/blogs/climbing-conditions-for-boston-basin-area.htm"
+  ]
+ },
+ {
+  "id": "wa_south_ridge_6",
+  "camps": [
+   {
+    "name": "Boston Basin upper (high) camp",
+    "nights": [
+     1
+    ],
+    "role": "main",
+    "why": "The high camp near 6,400 ft; parties pitch here and the climb is a short half-day above camp, with a toilet and a higher start."
+   },
+   {
+    "name": "Boston Basin lower camp",
+    "nights": [],
+    "role": "route",
+    "why": "Lower, more sheltered and melts out sooner, so it suits early season or slower arrivals, but adds a longer morning to the route."
+   }
+  ],
+  "new_camps": [],
+  "confidence": "medium",
+  "plan_conflict": "Both Boston Basin camps are filed as main; only the high camp fits the plan, so the lower camp is changed to route.",
+  "sources": [
+   "https://www.alpineinstitute.com/route-profile-aiguille-de-i-m-north-ridge/",
+   "https://mitoc-cag.mit.edu/?p=461",
+   "https://www.nps.gov/noca/blogs/climbing-conditions-for-boston-basin-area.htm"
+  ]
+ },
+ {
+  "id": "wa_boston_peak_southeast_face",
+  "camps": [
+   {
+    "name": "Boston Basin high camp",
+    "nights": [
+     1,
+     2
+    ],
+    "role": "main",
+    "why": "The practical base for Boston: the Quien Sabe Glacier starts right above, so the 10-12 hour summit day begins close to the snow."
+   },
+   {
+    "name": "Boston Basin low camp",
+    "nights": [],
+    "role": "route",
+    "why": "Melts out sooner and is more sheltered, so slower parties and early-season trips use it, at the cost of a longer summit day."
+   }
+  ],
+  "new_camps": [],
+  "confidence": "medium",
+  "plan_conflict": null,
+  "sources": [
+   "https://www.nps.gov/noca/blogs/climbing-conditions-for-boston-basin-area.htm",
+   "https://stephabegg.com/?p=8819",
+   "https://www.alpineinstitute.com/route-profile-aiguille-de-i-m-north-ridge/"
+  ]
+ },
+ {
+  "id": "wa_northwest_ridge_2",
+  "camps": [
+   {
+    "name": "Boston Basin upper (high) camp",
+    "nights": [
+     1,
+     2
+    ],
+    "role": "main",
+    "why": "Closest camp to Sharkfin Col and the start of the ridge, which matters on a roughly 13-hour day; has a toilet and snow-melt water."
+   },
+   {
+    "name": "Boston Basin lower camp",
+    "nights": [],
+    "role": "route",
+    "why": "Sheltered and snow-free early, but adds a long hike to the ridge on an already very long day."
+   },
+   {
+    "name": "Informal snow and rock bivouacs above the basins",
+    "nights": [],
+    "role": "route",
+    "why": "Not a planned camp. Parties who run out of daylight on the ridge or traverse end up here and sleep there."
+   }
+  ],
+  "new_camps": [],
+  "confidence": "medium",
+  "plan_conflict": "The route is usually climbed mid-traverse (Sharkfin Tower or Forbidden Peak toward Boston and Sahale), so nights may fall at bivouacs on the ridge or at Sahale instead.",
+  "sources": [
+   "https://www.nps.gov/noca/blogs/climbing-conditions-for-boston-basin-area.htm",
+   "https://stephabegg.com/?p=8819",
+   "https://www.alpineinstitute.com/route-profile-aiguille-de-i-m-north-ridge/"
+  ]
+ },
+ {
+  "id": "wa_buckner_mountain_north_face",
+  "camps": [
+   {
+    "name": "Boston Glacier bivy",
+    "nights": [
+     1
+    ],
+    "role": "main",
+    "why": "Exposed glacier camp that puts the face a short walk away, used by two-day parties; you sleep on a crevassed surface with no shelter."
+   },
+   {
+    "name": "Boston Basin high camp",
+    "nights": [],
+    "role": "route",
+    "why": "More comfortable sandy flats below the snowfield but a long carry from the face; fine for a slow first day before moving up."
+   },
+   {
+    "name": "Sahale–Boston col bivy",
+    "nights": [],
+    "role": "route",
+    "why": "A tiny perch on the col, used when linking the face with other climbs or when weather forces a stop."
+   }
+  ],
+  "new_camps": [
+   {
+    "name": "Sahale Glacier Camp",
+    "elev_ft": 7686,
+    "type": "camp",
+    "role": "main",
+    "nights": [
+     2
+    ],
+    "why": "Where the descent from the summit ends before the Cascade Pass exit; flat moraine ground shortens the last day.",
+    "water": "",
+    "capacity": "",
+    "permit": "",
+    "notes": "At the end of the Sahale Arm trail near 7,600-7,700 ft; the standard camp for the southwest side of Buckner. Permits go fast on summer weekends."
+   }
+  ],
+  "confidence": "low",
+  "plan_conflict": "The camp on file lists Boston Basin high camp as main, but the plan's night 1 is a Boston Glacier camp and night 2 is at Sahale or Horseshoe Basin; Boston Basin high camp is changed to route.",
+  "sources": [
+   "https://stephabegg.com/?p=8819",
+   "https://www.summitpost.org/buckner-mountain/climbers-log/151083",
+   "https://www.mountaineers.org/activities/routes-places/mount-buckner-north-face"
+  ]
+ },
+ {
+  "id": "wa_buckner_mountain_southwest_face",
+  "camps": [
+   {
+    "name": "Sahale Glacier Camp",
+    "nights": [
+     1,
+     2
+    ],
+    "role": "main",
+    "why": "The standard base for Buckner from the southwest: about six miles from Cascade Pass, with the summit slopes reached through Horseshoe Basin."
+   },
+   {
+    "name": "Upper Horseshoe Basin bivy",
+    "nights": [],
+    "role": "route",
+    "why": "An alternative for parties who cannot get a Sahale Glacier Camp permit, sleeping on whatever flat ground the upper basin offers."
+   }
+  ],
+  "new_camps": [],
+  "confidence": "high",
+  "plan_conflict": null,
+  "sources": [
+   "https://turns-all-year.com/trip-reports/buckner-logan-traverse",
+   "https://cascadeclimbers.com/forum/topic/99630-tr-mount-buckner-sw-slope-7162016",
+   "https://summitpost.org/southwest-slope/climbers-log/158520"
+  ]
+ }
+]

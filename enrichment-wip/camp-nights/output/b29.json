@@ -1,0 +1,145 @@
+[
+ {
+  "id": "wa_little_tahoma_east_shoulder",
+  "camps": [
+   {"name": "Meany Crest", "nights": [1], "role": "main",
+    "why": "The usual overnight for this climb: flat wind-walled sites above Summerland, meltwater on the nearby glacier, and a start that is short enough for one night."},
+   {"name": "Summerland Camp", "nights": [], "role": "route",
+    "why": "Easier and more sheltered, with running water, but about 1,600 ft lower, so summit day gets much longer. Used by parties that arrive late or stop short."},
+   {"name": "Toe of the Fryingpan Glacier", "nights": [], "role": "route",
+    "why": "A higher, colder bivy on moraine at the glacier edge. It saves a little time on summit morning but has less shelter than Meany Crest."},
+   {"name": "Whitman Glacier notch camp", "nights": [], "role": "route",
+    "why": "The highest sites, in the gap between the two glaciers, make summit day short. Expect wind and cold, and a long carry to get there, so few parties choose it."}
+  ],
+  "new_camps": [],
+  "confidence": "high",
+  "plan_conflict": "The plan puts the night at about 7,900 ft near Whitman Crest, but parties report sleeping on the Meany Crest bench near 7,500 ft; Summerland was on file as a second main.",
+  "sources": ["https://climber.org/reports/2006/1481.html", "https://sites.google.com/site/guideto100peaks/home/3-route-descriptions/49-little-tahoma-peak-11138-c", "https://www.mountaineers.org/activities/routes-places/summerland-area-review/meany-crest"]
+ },
+ {
+  "id": "adams_avalanche_glacier",
+  "camps": [
+   {"name": "Avalanche Glacier high bivy", "nights": [1, 2], "role": "main",
+    "why": "Placing camp high on the ridge beside the glacier shortens summit day; the plan assumes this is where both nights are spent."},
+   {"name": "Cold Springs / South Climb trailhead", "nights": [], "role": "route",
+    "why": "A trailhead camp the night before an early start, not slept at on the plan's nights. It costs nothing in carrying but adds a full day of approach."},
+   {"name": "Lunch Counter", "nights": [], "role": "route",
+    "why": "The South Climb high camp, on a different side of the mountain; relevant only to parties who descend that way instead of returning to the glacier camp."},
+   {"name": "Morrison Creek Campground", "nights": [], "role": "route",
+    "why": "A fallback car campground below the trailhead when the upper road is too rough or Cold Springs is full; it adds miles to the approach."}
+  ],
+  "new_camps": [],
+  "confidence": "low",
+  "plan_conflict": "The plan names Mad Cat Meadow or Salt Creek for the night, but neither is on file, and no source on this route's camps was found; the high bivy is assumed.",
+  "sources": ["https://fs.usda.gov/r06/giffordpinchot/recreation/mt-adams-summit"]
+ },
+ {
+  "id": "adams_northwest_ridge",
+  "camps": [
+   {"name": "High Camp (Adams Creek Meadows)", "nights": [1, 2], "role": "main",
+    "why": "The north-side base: about three hours from the trailhead, meadow ground with snowmelt water, and the ridge starts straight above. Exposed to wind."},
+   {"name": "Adams Glacier moraine bivy", "nights": [], "role": "route",
+    "why": "Rock sites on the moraine and by the lake at the foot of the glacier cut the summit-day distance, but they are smaller, less sheltered and shift year to year."}
+  ],
+  "new_camps": [],
+  "confidence": "high",
+  "plan_conflict": null,
+  "sources": ["https://apps.yellowleaf.org/scramble/g/r/2004-09-03-Mount-Adams-via-north-ridge.html", "https://www.wta.org/go-hiking/hikes/killen-creek", "https://publications.americanalpineclub.org/articles/12197644201/North-America-United-States-Washington-Cascade-Mountains-Mount-Adams-Lava-Glacier-Headwall"]
+ },
+ {
+  "id": "wa_mount_adams_adams_glacier",
+  "camps": [
+   {"name": "High Camp (Adams Creek Meadows)", "nights": [1], "role": "main",
+    "why": "The standard base for the north side, a short carry from the trailhead and directly below the glacier. Snowmelt is the only water, and the site is windy."},
+   {"name": "Adams Glacier moraine bivy", "nights": [], "role": "route",
+    "why": "Moving up onto the moraine shaves distance off the icefall start, but sites are small and exposed and change as the glacier retreats."}
+  ],
+  "new_camps": [],
+  "confidence": "medium",
+  "plan_conflict": null,
+  "sources": ["https://www.wta.org/go-hiking/hikes/killen-creek", "https://apps.yellowleaf.org/scramble/g/r/2004-09-03-Mount-Adams-via-north-ridge.html"]
+ },
+ {
+  "id": "wa_mount_adams_lava_glacier_headwall",
+  "camps": [
+   {"name": "High Camp (Adams Creek Meadows)", "nights": [1], "role": "main",
+    "why": "Where north-side parties sleep: a three-hour carry from Killen Creek, snowmelt water, and the lava fields and glacier reached in the morning. Very windy."}
+  ],
+  "new_camps": [],
+  "confidence": "medium",
+  "plan_conflict": null,
+  "sources": ["https://publications.americanalpineclub.org/articles/12197644201/North-America-United-States-Washington-Cascade-Mountains-Mount-Adams-Lava-Glacier-Headwall", "https://www.wta.org/go-hiking/hikes/killen-creek"]
+ },
+ {
+  "id": "wa_mount_adams_lyman_glacier",
+  "camps": [
+   {"name": "High Camp (Adams Creek Meadows)", "nights": [1, 2], "role": "main",
+    "why": "The north-side base for the summit day: a three-hour carry, snowmelt water and an hour's traverse to the glacier. Exposed to wind, and you return to it after the climb."}
+  ],
+  "new_camps": [],
+  "confidence": "medium",
+  "plan_conflict": null,
+  "sources": ["https://turns-all-year.com/trip-reports/may-25-26-2005-mt-adams-lava-lyman-wilson-rusk", "https://www.wta.org/go-hiking/hikes/killen-creek"]
+ },
+ {
+  "id": "wa_mount_adams_mazama_glacier_headwall",
+  "camps": [
+   {"name": "Sunrise Camp", "nights": [1, 2], "role": "main",
+    "why": "The established high camp at the edge of the glacier: snow-free ground, close to the route, and the summit day returns to it before the walk out."}
+  ],
+  "new_camps": [],
+  "confidence": "medium",
+  "plan_conflict": "Many parties pack up and hike out the afternoon of summit day, so night 2 is often skipped; the plan still lists it.",
+  "sources": ["https://www.mountaineers.org/activities/routes-places/mount-adams-mazama-glacier", "https://summitpost.org/mazama-glacier-via-cold-springs-trailhead/1003995"]
+ },
+ {
+  "id": "wa_mount_adams_north_ridge",
+  "camps": [
+   {"name": "High Camp (Adams Creek Meadows)", "nights": [1, 2], "role": "main",
+    "why": "The base for the north side: about three hours in, snowmelt water, and the ridge starts above. The summit day returns here, so it is the second night too."}
+  ],
+  "new_camps": [],
+  "confidence": "high",
+  "plan_conflict": null,
+  "sources": ["https://apps.yellowleaf.org/scramble/g/r/2004-09-03-Mount-Adams-via-north-ridge.html", "https://www.wta.org/go-hiking/hikes/killen-creek", "https://publications.americanalpineclub.org/articles/12197644201/North-America-United-States-Washington-Cascade-Mountains-Mount-Adams-Lava-Glacier-Headwall"]
+ },
+ {
+  "id": "wa_mount_adams_northwest_ridge",
+  "camps": [
+   {"name": "High Camp (Adams Creek Meadows)", "nights": [1], "role": "main",
+    "why": "The north-side base, about three hours from the trailhead, with snowmelt water and the ridge starting above. Windy, so pitch behind rocks."},
+   {"name": "Adams Glacier moraine bivy", "nights": [], "role": "route",
+    "why": "Rock bivy sites on the way up the ridge and by the lake below the glacier shorten summit day, but offer less room and shelter than High Camp."}
+  ],
+  "new_camps": [],
+  "confidence": "high",
+  "plan_conflict": null,
+  "sources": ["https://apps.yellowleaf.org/scramble/g/r/2004-09-03-Mount-Adams-via-north-ridge.html", "https://www.wta.org/go-hiking/hikes/killen-creek"]
+ },
+ {
+  "id": "wa_mount_adams_south_climb",
+  "camps": [
+   {"name": "The Lunch Counter", "nights": [1], "role": "main",
+    "why": "The standard high camp: rock windbreaks already built, snow to melt, and summit day starts above it. Often windy and crowded; carry water early season."},
+   {"name": "Morrison Creek drainage", "nights": [], "role": "route",
+    "why": "A quieter, lower alternative with water, but it adds elevation to the summit day. Also used by parties arriving late who skip the rough road."}
+  ],
+  "new_camps": [],
+  "confidence": "medium",
+  "plan_conflict": null,
+  "sources": ["https://www.wta.org/go-hiking/trip-reports/trip_report.2023-07-18.0754881720", "https://fs.usda.gov/r06/giffordpinchot/recreation/mt-adams-summit"]
+ },
+ {
+  "id": "wa_mount_adams_wilson_glacier_headwall",
+  "camps": [
+   {"name": "Avalanche Valley", "nights": [1], "role": "main",
+    "why": "The only established camp near the Wilson and Rusk glaciers: meadow ground with creeks and ponds. Reaching it is a long off-trail day, so expect a tired start."},
+   {"name": "Cold Springs / South Climb trailhead", "nights": [], "role": "route",
+    "why": "The trailhead where this plan starts and ends; a car camp here the night before saves nothing on night 1 but gives an earlier start."}
+  ],
+  "new_camps": [],
+  "confidence": "low",
+  "plan_conflict": null,
+  "sources": ["https://www.sixmoondesigns.com/blogs/newsletter/mount-adams-circumnavigation-navigating-the-gap-by-kirsten-anderson", "https://turns-all-year.com/trip-reports/may-25-26-2005-mt-adams-lava-lyman-wilson-rusk"]
+ }
+]

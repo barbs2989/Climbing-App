@@ -433,7 +433,7 @@ Three top-level `tab` values in `ClimbMatch.jsx` (`tab==="today"`, `tab==="crew"
   0415 the DATABASE enforces `cap`: triggers `crew_members_respect_cap` and `crew_email_invites_respect_cap` refuse a row that newly takes a spot past it ("This crew is full"), locking the crew row so two accepts at once cannot both pass. An unclaimed email invite holds a spot (counted in `held_count` too); claiming one at sign-up and the organiser's own row are never refused. One test decides "full" in the app, `crewIsFull` (core), and `crewFullError` turns the database's refusal into the same toast. The 0227 exemption now reads a flag only `crew_creator_joins` sets.
   0519 reliability: `crew_trip_reports`, `crew_trip_replies`, `crew_departures` — no client grant at all; every read and write is a function (`submit_trip_report`, `withdraw_trip_report`, `reply_to_trip_report`, `crew_recap`, `my_trip_reports_about_me`, `reliability_of_users`). Hooks: `useCrewRecap`, `useTripReportsAboutMe`, `useReliabilityOf`.
 - **Device-only**: offline downloads (browser storage via `lib/offline.js`).
-- **Seed**: `ROUTES`/`CLIMBERS` fallbacks and `DEMO_FILLERS` sample crews/logs exist for the non-DB path; with `USE_DB` on, the lists above come from Supabase.
+- **Seed**: OFF (2026-11-26). `DEMO_FILLERS` is false, so every sample crew, log, message, notification and request starts empty for guests too; seed `ROUTES` exist only in a no-backend build (`(DEMO_FILLERS||!USE_DB)`), and `CLIMBERS` is empty. With `USE_DB` on, the lists above come only from Supabase.
 
 ## 5. Connections
 - Route page (`RouteDetail.jsx`): saving an objective, logging a climb, opening a crew's route via `openRoute`; Planner reads logged times (`check:logged-times`).

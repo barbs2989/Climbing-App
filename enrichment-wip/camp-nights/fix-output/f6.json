@@ -1,0 +1,586 @@
+[
+ {
+  "id": "wa_mount_barnes_scramble",
+  "camps": [
+   {
+    "name": "Upper Ferry Basin / Ferry Glacial Lake",
+    "nights": [
+     3
+    ],
+    "role": "main",
+    "why": "The only camp on this plan that reports confirm: meadow and tarn ground under Mount Ferry, with water, reached on the third day of the traverse."
+   },
+   {
+    "name": "Elwha Basin, Queets Basin and the upper cross-country bivy zones",
+    "nights": [],
+    "role": "route",
+    "why": "Belongs to the approach from Whiskey Bend up the Elwha, not to this Sol Duc traverse; use it only if you come in from the south."
+   },
+   {
+    "name": "Lillian River and Mary's Falls — the first night out of Whiskey Bend",
+    "nights": [],
+    "role": "route",
+    "why": "First-night camp on the Elwha approach from Whiskey Bend. Not slept at on this Sol Duc plan."
+   },
+   {
+    "name": "Hayes River and Elkhorn — the mid-valley camps, and the base for Mount Norton",
+    "nights": [],
+    "role": "route",
+    "why": "Mid-valley Elwha camp on the Whiskey Bend approach, or on the way out if the final day is split. Not on the Sol Duc plan's nights."
+   },
+   {
+    "name": "Chicago Camp — the last established camp in the upper Elwha",
+    "nights": [],
+    "role": "route",
+    "why": "Last trail camp on the Elwha. The plan reaches it only on its final walk-out day, so it matters if you split that day."
+   }
+  ],
+  "new_camps": [],
+  "confidence": "low",
+  "plan_conflict": "Nights 4 and 5 sleep in a meadow near Bear Pass, and nights 1 and 2 at Cat Basin and Stephen Lake, none of which is a camp on file; the on-file Elwha Basin camp is for the other approach, so it is no longer main.",
+  "sources": [
+   "https://backcountrypost.com/threads/the-bailey-range-traverse-an-8-day-olympic-national-park-epic.9395",
+   "https://turns-all-year.com/trip-reports/bailey-range-traverse",
+   "https://xanderuyttendaele.substack.com/p/the-bailey-range-traverse"
+  ]
+ },
+ {
+  "id": "wa_mount_ferry_standard",
+  "camps": [
+   {
+    "name": "Ferry Basin",
+    "nights": [
+     2
+    ],
+    "role": "main",
+    "why": "Meadow and tarn basin directly below Mount Ferry. Parties drop packs here and scramble the peak, so it is the natural second night of the traverse."
+   },
+   {
+    "name": "Deer Lake",
+    "nights": [],
+    "role": "route",
+    "why": "Short first day on the Sol Duc trail, well below the High Divide; it leaves a longer cross-country day to reach Ferry Basin."
+   }
+  ],
+  "new_camps": [],
+  "confidence": "low",
+  "plan_conflict": "The plan puts night 1 at Heart Lake and night 3 in Queets Basin; the accounts found pass Heart Lake or stop elsewhere, and no account confirms Queets Basin or a Low Divide trail camp on nights 3 and 4.",
+  "sources": [
+   "https://turns-all-year.com/trip-reports/bailey-range-traverse",
+   "https://backcountrypost.com/threads/the-bailey-range-traverse-an-8-day-olympic-national-park-epic.9395",
+   "https://xanderuyttendaele.substack.com/p/the-bailey-range-traverse"
+  ]
+ },
+ {
+  "id": "wa_mount_pulitzer_standard",
+  "camps": [
+   {
+    "name": "Heart Lake",
+    "nights": [
+     1
+    ],
+    "role": "main",
+    "why": "Last dependable water before the ridge and the planned first camp. A few parties walk on to the Cat Peak ridge instead, which makes the next day shorter."
+   },
+   {
+    "name": "Ferry Basin",
+    "nights": [
+     2
+    ],
+    "role": "main",
+    "why": "Meadow and tarns under Mount Ferry. The usual camp for Pulitzer and Ferry, since both peaks are an early-morning scramble from here."
+   },
+   {
+    "name": "Upper Ferry Basin camp",
+    "nights": [],
+    "role": "route",
+    "why": "Higher camp up the basin near the glacial lake, a little closer to the peaks. Some parties pick it over the lower meadows for the shorter morning."
+   }
+  ],
+  "new_camps": [],
+  "confidence": "low",
+  "plan_conflict": "The plan has night 3 in Queets Basin and night 4 on the upper Elwha; accounts found camp near Bear Pass or at Hayes River, so those nights are not confirmed, and Heart Lake as night 1 is passed by some parties.",
+  "sources": [
+   "https://backcountrypost.com/threads/the-bailey-range-traverse-an-8-day-olympic-national-park-epic.9395",
+   "https://turns-all-year.com/trip-reports/bailey-range-traverse",
+   "https://stephabegg.com/?p=8923"
+  ]
+ },
+ {
+  "id": "wa_mount_queets_south",
+  "camps": [
+   {
+    "name": "Hayes River and Elkhorn — the mid-valley camps, and the base for Mount Norton",
+    "nights": [
+     1,
+     4
+    ],
+    "role": "main",
+    "why": "Level riverside camps in the mid Elwha valley, about halfway to Chicago Camp. A sensible first night, and the place most parties sleep again coming out."
+   },
+   {
+    "name": "Elwha Basin, Queets Basin and the upper cross-country bivy zones",
+    "nights": [
+     2,
+     3
+    ],
+    "role": "main",
+    "why": "Cross-country camp above the maze, within reach of Dodwell-Rixon Pass. It lets the summit day be a light carry from the tent."
+   },
+   {
+    "name": "Lillian River and Mary's Falls — the first night out of Whiskey Bend",
+    "nights": [],
+    "role": "route",
+    "why": "Closer camp near the start of the valley; choose it if the road walk or a late start makes the first day short."
+   },
+   {
+    "name": "Chicago Camp — the last established camp in the upper Elwha",
+    "nights": [],
+    "role": "route",
+    "why": "Last trail camp before the cross-country begins. Parties stopping here give up the basin camp and take a longer summit day."
+   }
+  ],
+  "new_camps": [],
+  "confidence": "low",
+  "plan_conflict": null,
+  "sources": [
+   "https://www.wta.org/go-hiking/trip-reports/trip_report.2017-09-17.1930461418",
+   "https://backcountrypost.com/threads/the-bailey-range-traverse-an-8-day-olympic-national-park-epic.9395",
+   "https://www.oregonhikers.org/forum/viewtopic.php?p=198696"
+  ]
+ },
+ {
+  "id": "wa_mount_seattle_south",
+  "camps": [
+   {
+    "name": "Low Divide — the pass camp for Mount Seattle and Mount Christie",
+    "nights": [
+     2,
+     3
+    ],
+    "role": "main",
+    "why": "Flat, watered pass camp with a toilet, a short walk from the peak's scree lines. Parties usually sleep here both nights rather than carry higher."
+   },
+   {
+    "name": "Seattle Meadows",
+    "nights": [],
+    "role": "route",
+    "why": "Higher meadow camp nearer the summit scramble, but with little standing water and more carrying than Low Divide."
+   },
+   {
+    "name": "Lillian River and Mary's Falls — the first night out of Whiskey Bend",
+    "nights": [],
+    "role": "route",
+    "why": "Camp on the Elwha side of Low Divide, not on this Quinault approach; it matters only if you cross the divide."
+   },
+   {
+    "name": "Hayes River and Elkhorn — the mid-valley camps, and the base for Mount Norton",
+    "nights": [],
+    "role": "route",
+    "why": "Elwha-side valley camp, far from this Quinault approach. Not slept at on this plan."
+   },
+   {
+    "name": "Chicago Camp — the last established camp in the upper Elwha",
+    "nights": [],
+    "role": "route",
+    "why": "Elwha-side trail camp below Low Divide; used only by parties crossing the divide from the south."
+   }
+  ],
+  "new_camps": [],
+  "confidence": "low",
+  "plan_conflict": "Low Divide is main on file and the plan sleeps nights 2 and 3 at the high camp; Seattle Meadows is moved to route. Nights 1 and 4 on the North Fork Quinault have no camp on file.",
+  "sources": [
+   "https://www.summitpost.org/cougar-seattle-creek-basin/652521",
+   "https://www.oregonhikers.org/forum/viewtopic.php?p=198696"
+  ]
+ },
+ {
+  "id": "wa_inner_constance_northwest_buttress",
+  "camps": [
+   {
+    "name": "Home Lake, below Constance Pass — inside the park, and reached from the north",
+    "nights": [
+     1,
+     2
+    ],
+    "role": "main",
+    "why": "The high camp on this side, about nine miles in. The buttress is a day from the tent and the plan returns to it, so both nights are here."
+   },
+   {
+    "name": "Boulder Shelter — the last camp outside the national park",
+    "nights": [],
+    "role": "route",
+    "why": "Free, unbooked camp lower on the trail; saves distance on day one but adds a long, brushy carry to the climb."
+   }
+  ],
+  "new_camps": [],
+  "confidence": "low",
+  "plan_conflict": null,
+  "sources": [
+   "https://turns-all-year.com/trip-reports/tay-69-46-3-home-lake-snowpatch-mt-constance"
+  ]
+ },
+ {
+  "id": "wa_inner_constance_seans_route",
+  "camps": [],
+  "new_camps": [
+   {
+    "name": "Home Lake",
+    "elev_ft": 5308,
+    "type": "camp",
+    "role": "main",
+    "nights": [
+     1,
+     2
+    ],
+    "why": "The camp the plan uses: about nine miles up the Upper Dungeness trail, and the climb is a day trip from here with a return to the same tent.",
+    "water": "",
+    "capacity": "",
+    "permit": "",
+    "notes": "Elevation is taken from the figure other routes on file use for the same lake. No report of this route was found, so the nights come from the plan alone."
+   }
+  ],
+  "confidence": "low",
+  "plan_conflict": null,
+  "sources": [
+   "https://turns-all-year.com/trip-reports/tay-69-46-3-home-lake-snowpatch-mt-constance"
+  ]
+ },
+ {
+  "id": "wa_mount_fricaba_standard",
+  "camps": [
+   {
+    "name": "Home Lake",
+    "nights": [
+     1,
+     2
+    ],
+    "role": "main",
+    "why": "Standard camp for this side of the mountain; Constance Pass is a short climb above, so the summit day starts close to the tent."
+   },
+   {
+    "name": "Camp Handy",
+    "nights": [],
+    "role": "route",
+    "why": "Low, sheltered, permit-free camp three miles in. Parties use it for a very short first day or a slow walk out."
+   },
+   {
+    "name": "Boulder Shelter",
+    "nights": [],
+    "role": "route",
+    "why": "Six miles in at the trail junction; a cheaper night than Home Lake, with a longer summit day."
+   }
+  ],
+  "new_camps": [],
+  "confidence": "low",
+  "plan_conflict": "Accounts found camp in Deception Basin, reached from the Royal Basin side, as the closest camp to Fricaba; few parties use Home Lake.",
+  "sources": [
+   "https://summitpost.org/mount-fricaba/226787",
+   "https://turns-all-year.com/trip-reports/tay-69-46-3-home-lake-snowpatch-mt-constance"
+  ]
+ },
+ {
+  "id": "wa_mount_cruiser_nw_face_corner",
+  "camps": [
+   {
+    "name": "Flapjack Lakes — the base camp for the whole Sawtooth Ridge",
+    "nights": [
+     1,
+     2
+    ],
+    "role": "main",
+    "why": "Base camp for the whole Sawtooth Ridge, with water and a quota system. Parties often stay both nights and climb from here."
+   },
+   {
+    "name": "Black and White Lakes — the fallback when Flapjack is booked out",
+    "nights": [],
+    "role": "route",
+    "why": "The fallback when Flapjack is booked out; higher and farther from the ridge, which lengthens the summit day."
+   }
+  ],
+  "new_camps": [],
+  "confidence": "low",
+  "plan_conflict": "The plan moves night 2 to a primitive camp near Gladys Divide, which is not on file; only Flapjack Lakes is on file, and Black and White Lakes changes from main to route.",
+  "sources": [
+   "https://stevensong.com/mount-cruiser",
+   "https://summitpost.org/mt-cruiser-south-corner/553495"
+  ]
+ },
+ {
+  "id": "wa_gilbert_peak_meade_glacier",
+  "camps": [
+   {
+    "name": "Conrad Meadows and Surprise Lake, South Fork Tieton",
+    "nights": [
+     1
+    ],
+    "role": "main",
+    "why": "Wooded, sheltered camp on the trail in; a longer summit day than Warm Lake, which sits higher and in wind above the trees."
+   }
+  ],
+  "new_camps": [],
+  "confidence": "low",
+  "plan_conflict": "The plan offers Surprise Lake or Warm Lake; accounts of Gilbert show both used, with Warm Lake common for the summit, but none states where Meade Glacier parties sleep, and Warm Lake is not on file.",
+  "sources": [
+   "https://yellowleaf.org/scramble/g/r/2004-10-04--2004-10-05-Mount-Curtis-Gilbert-via-Klickton-Div.html"
+  ]
+ },
+ {
+  "id": "adams_avalanche_glacier",
+  "camps": [
+   {
+    "name": "Avalanche Glacier high bivy",
+    "nights": [
+     1,
+     2
+    ],
+    "role": "main",
+    "why": "Dry high camp above 9,000 ft on the ridge beside the glacier. It cuts the summit day short but has little water; carry or melt."
+   },
+   {
+    "name": "Cold Springs / South Climb trailhead",
+    "nights": [],
+    "role": "route",
+    "why": "Car camp at the trailhead: the night before, or the last night on a slow descent. Not a camp on the plan's nights."
+   },
+   {
+    "name": "Lunch Counter",
+    "nights": [],
+    "role": "route",
+    "why": "The South Climb high camp. A fall-back if you give up on the Avalanche side and descend south."
+   },
+   {
+    "name": "Morrison Creek Campground",
+    "nights": [],
+    "role": "route",
+    "why": "Lower drive-in campground for when the road or Cold Springs is full; it adds a long approach day."
+   }
+  ],
+  "new_camps": [],
+  "confidence": "low",
+  "plan_conflict": "The on-file role of Cold Springs as main does not match the plan, which sleeps nights 1 and 2 at a high camp near Mad Cat Meadow or Salt Creek; neither is on file, and no account of the route's camps was found.",
+  "sources": [
+   "https://turns-all-year.com/trip-reports/july-10-2010-mt-adams-avalanche-glacier-headwall"
+  ]
+ },
+ {
+  "id": "wa_mount_adams_wilson_glacier_headwall",
+  "camps": [
+   {
+    "name": "Avalanche Valley",
+    "nights": [
+     1
+    ],
+    "role": "main",
+    "why": "Meadow basin right under the Rusk and Wilson glaciers, the closest camp to the headwall; it puts the climb a short alpine start away."
+   },
+   {
+    "name": "Cold Springs / South Climb trailhead",
+    "nights": [],
+    "role": "route",
+    "why": "South Climb trailhead; the descent ends here, and a few parties sleep here before the long traverse."
+   }
+  ],
+  "new_camps": [],
+  "confidence": "low",
+  "plan_conflict": "The notes on file reach Avalanche Valley from Bird Creek Meadows or the Highline Trail, but the plan starts at Cold Springs and walks round the east flank; no account of either was found.",
+  "sources": [
+   "https://turns-all-year.com/trip-reports/may-25-26-2005-mt-adams-lava-lyman-wilson-rusk"
+  ]
+ },
+ {
+  "id": "wa_mount_rainier_mowich_face",
+  "camps": [
+   {
+    "name": "Edmunds/North Mowich glacier divide camp",
+    "nights": [
+     1,
+     2
+    ],
+    "role": "main",
+    "why": "Parties put both nights at this 8,100 ft camp on the divide between the two glaciers, and climb the face and return to it."
+   },
+   {
+    "name": "Ptarmigan Ridge bivy above Observation Rock",
+    "nights": [],
+    "role": "route",
+    "why": "Sheltered rock windbreaks, but you must still descend scree onto the North Mowich; some parties use it as their only camp."
+   },
+   {
+    "name": "High camp below the North Mowich headwall",
+    "nights": [],
+    "role": "route",
+    "why": "Closest to the face but exposed to icefall and rockfall; worth it only in cold, stable conditions."
+   },
+   {
+    "name": "Liberty Cap saddle",
+    "nights": [],
+    "role": "route",
+    "why": "Emergency bivy for a party benighted after topping out, not a planned camp."
+   }
+  ],
+  "new_camps": [],
+  "confidence": "medium",
+  "plan_conflict": "The plan moves to a higher bivy on night 2, but the reports found stay at the 8,100 ft divide camp for every night; the on-file Ptarmigan Ridge bivy changes from main to route.",
+  "sources": [
+   "https://turns-all-year.com/trip-reports/july-21-23-2016-mt-rainier-central-mowich-face",
+   "https://turns-all-year.com/trip-reports/july-6-7-2012-mrnp-mowich-face-circuit",
+   "https://turns-all-year.com/trip-reports/edmunds-headwall"
+  ]
+ },
+ {
+  "id": "wa_mount_rainier_nisqually_icefall",
+  "camps": [
+   {
+    "name": "Nisqually Glacier camp below the icefall",
+    "nights": [
+     1
+    ],
+    "role": "main",
+    "why": "On the upper glacier or its moraine, so the icefall is crossed before sunrise. The site moves with the year."
+   },
+   {
+    "name": "Camp Muir",
+    "nights": [],
+    "role": "route",
+    "why": "Easier ground and a shelter, used by the first-ascent party; the drop to the icefall costs height and time before dawn."
+   },
+   {
+    "name": "Ingraham Flats",
+    "nights": [],
+    "role": "route",
+    "why": "Higher bench above Muir, colder and exposed to icefall; not a normal night for this route."
+   }
+  ],
+  "new_camps": [],
+  "confidence": "low",
+  "plan_conflict": null,
+  "sources": [
+   "https://publications.americanalpineclub.org/articles/12194913800/First-Ascent-of-the-Nisqually-Icefall",
+   "https://www.mountainmadness.com/blog/2013/08/05/ice-fall-winds-and-beautiful-blue-skies-on-mt-rainier"
+  ]
+ },
+ {
+  "id": "wa_mount_rainier_sunset_ridge",
+  "camps": [
+   {
+    "name": "Colonnade Ridge",
+    "nights": [
+     1
+    ],
+    "role": "main",
+    "why": "First stopping point after the Wonderland Trail, around 6,700 ft: a snow camp that sets up the cleaver the next morning."
+   },
+   {
+    "name": "Bergschrund camp in the Sunset Amphitheater",
+    "nights": [
+     2
+    ],
+    "role": "main",
+    "why": "Good ground by a small schrund at the top of the amphitheater gully, reached from the cleaver; sited well, it cuts the summit day."
+   },
+   {
+    "name": "Puyallup Cleaver high camp",
+    "nights": [],
+    "role": "route",
+    "why": "Rib camp around 9,000 ft before the glacier traverse; exposed to wind, and it leaves a longer day than the schrund camp."
+   },
+   {
+    "name": "Open bivouac near 9,600 ft",
+    "nights": [],
+    "role": "route",
+    "why": "Committing open bivouac to shorten summit day; it only pays off with good snow on the face."
+   }
+  ],
+  "new_camps": [],
+  "confidence": "low",
+  "plan_conflict": "Night 3 (Camp Schurman or Camp Muir) has no camp on file and no Sunset Ridge report confirms it, and the plan's South Mowich Glacier camp is closest to the on-file Bergschrund camp, now main for night 2.",
+  "sources": [
+   "https://mountrainierclimbing.blogspot.com/2018/05/sunset-ridge-conditions.html",
+   "https://williswall2.squarespace.com/willis-wall-blog/tag/mt+rainier+west+side+road"
+  ]
+ },
+ {
+  "id": "wa_mount_rainier_tahoma_glacier",
+  "camps": [
+   {
+    "name": "Puyallup Cleaver camp below St. Andrews Rock",
+    "nights": [
+     2,
+     3
+    ],
+    "role": "main",
+    "why": "Flat sites at the base of the rocks, just short of the ramp onto the Tahoma Glacier; summit day goes from the tent and returns to it."
+   }
+  ],
+  "new_camps": [
+   {
+    "name": "St. Andrews Park camp, Wonderland Trail",
+    "elev_ft": 5900,
+    "type": "camp",
+    "role": "main",
+    "nights": [
+     1
+    ],
+    "why": "Timberline bench with a pond below the cleaver; the usual first night, which makes the move to high camp a short half day.",
+    "water": "",
+    "capacity": "",
+    "permit": "",
+    "notes": "Meadow camp on the Wonderland Trail reached by the South Puyallup River trail. Height is the high point listed for the St. Andrews Lake hike."
+   }
+  ],
+  "confidence": "low",
+  "plan_conflict": null,
+  "sources": [
+   "https://sverdina.com/Rainier4.asp",
+   "https://turns-all-year.com/trip-reports/april-21-23-2018-tahoma-glacier-scouting-mission"
+  ]
+ },
+ {
+  "id": "wa_mount_rainier_willis_wall",
+  "camps": [
+   {
+    "name": "Curtis Ridge camp",
+    "nights": [
+     1
+    ],
+    "role": "main",
+    "why": "The camp the climb is made from: leave before midnight to reach the cones while the wall above is frozen."
+   },
+   {
+    "name": "Glacier Basin camp",
+    "nights": [],
+    "role": "route",
+    "why": "Camp on the White River approach with last running water; a shorter first day, then a long carry to Curtis Ridge."
+   },
+   {
+    "name": "St Elmo Pass bivy",
+    "nights": [],
+    "role": "route",
+    "why": "Staging bivy at the pass for parties who start late and cannot reach Curtis Ridge in daylight."
+   }
+  ],
+  "new_camps": [
+   {
+    "name": "Camp Schurman",
+    "elev_ft": 9460,
+    "type": "camp",
+    "role": "main",
+    "nights": [
+     2
+    ],
+    "why": "The ranger camp where the descent from the wall ends, with tent sites and shelter after a very long day.",
+    "water": "",
+    "capacity": "",
+    "permit": "",
+    "notes": "Reached by descending the Emmons-Winthrop after the climb. Height is the figure the Mountaineers route page gives."
+   }
+  ],
+  "confidence": "low",
+  "plan_conflict": "Day 2 ends at Camp Schurman, which is not on file, so it is added as the night 2 main; no account of this route's second night was found.",
+  "sources": [
+   "https://www.mountaineers.org/blog/an-epic-climb-of-mount-rainier-via-the-willis-wall",
+   "https://cascadeclimbers.com/forum/topic/94984-tr-mount-rainier-curtis-ridge-6142014"
+  ]
+ }
+]

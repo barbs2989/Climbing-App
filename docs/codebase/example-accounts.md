@@ -1,8 +1,9 @@
 # Real example accounts (the database examples)
 
-The seed examples (`DEMO_FILLERS`, the seeded `useState` arrays in `App`) are what a **guest**
-sees: module constants that never touch Supabase, so they show how a screen looks but prove nothing
-about whether it works. A signed-in account never sees them (the sign-in reset clears them).
+The seed examples (`DEMO_FILLERS`, the seeded `useState` arrays in `App`) are **OFF since
+2026-11-26** (owner note: "Remove examples seeded everything from the app. Only keep database stuff
+now"): a guest and a signed-in account alike see only what the database holds. These real accounts
+are now the ONLY examples, and they appear only in an account they are linked into.
 
 `scripts/manual-test-accounts.mjs` is the database counterpart: four real accounts (Avery, Blake,
 Casey, Drew, on the reserved `climbmatch-manual.invalid` domain) with real rows behind every
