@@ -7,12 +7,13 @@
 // row's prior approach_logistics is written before the first write.
 import fs from "fs";
 import path from "path";
+import { fileURLToPath } from "url";
 import { SUPABASE_URL, headers, requireServiceKey, patchRow } from "../../lib/supabase-env.mjs";
 
 const args = process.argv.slice(2);
 const DRY = args.includes("--dry");
 const files = args.filter((a) => !a.startsWith("--"));
-const HERE = path.dirname(new URL(import.meta.url).pathname);
+const HERE = path.dirname(fileURLToPath(import.meta.url));
 const groups = new Map(JSON.parse(fs.readFileSync(path.join(HERE, "groups.json"))).map((g) => [g.key, g]));
 const LIMITS = { pass: 60, parking: 140, facilities: 80 };
 const KEY = { pass: "trailheadPass", parking: "trailheadParking", facilities: "trailheadFacilities" };
