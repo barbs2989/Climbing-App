@@ -53,6 +53,11 @@ Rules for each field:
   for a campground the party sleeps at THE NIGHT BEFORE day 1 (a car campground at the trailhead).
   `[]` if the camp is not slept at on a normal trip of this plan (e.g. a camp for a different
   approach, or an emergency bivy) — the `why` then says when it is used.
+- EVERY night 1..days-1 needs a main camp. The commonest miss: a 3-day plan (in, summit, out) has
+  TWO nights — the summit day returns to camp, so the high camp is usually `nights: [1, 2]`.
+  Read each day's title/objective to see where it ends. If the plan's day N walks out to the car,
+  night N does not exist in practice — then say so in `plan_conflict` and still give night N a
+  main (the camp the plan's day N ends at).
 - `role`: `main` = where most parties sleep on the night(s) listed. EXACTLY ONE `main` per night of
   the plan (night 1..days-1). `route` = another option for those nights (or for none). Change a
   role from what is on file when research shows it is wrong, and say so in `plan_conflict`.

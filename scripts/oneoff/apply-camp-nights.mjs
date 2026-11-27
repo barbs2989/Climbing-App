@@ -85,6 +85,22 @@ if (copyAt > 0) {
   writeFileSync(args[copyAt + 1], JSON.stringify(shaped, null, 1));
   console.log("wrote", args[copyAt + 1]);
 }
+// jsonb stores object keys in its own order, so compare canonically (sorted keys), never as raw JSON.
+const canon = v => Array.isArray(v) ? v.map(canon) : (v && typeof v === "object") ? Object.fromEntries(Object.keys(v).sort().map(k => [k, canon(v[k])])) : v;
+const same = (a, b) => JSON.stringify(canon(a)) === JSON.stringify(canon(b));
+// --verify: does the LIVE row carry what this batch researched (role, nights, why per camp; each new camp)?
+if (args.includes("--verify")) {
+  let okN = 0, badN = 0;
+  for (const p of plans) {
+    const live = await liveRow(p.id);
+    const by = new Map((live && Array.isArray(live.bivy) ? live.bivy : []).map(b => [key(b && b.name), b]));
+    const miss = p.camps.concat(p.news).filter(c => { const b = by.get(key(c.name)); return !b || b.role !== c.role || !same(b.nights, c.nights) || b.why !== c.why.trim(); });
+    if (miss.length) { badN++; console.log(`  NOT LANDED ${p.id}: ${miss.map(c => c.name).join(", ")}`); } else okN++;
+    await new Promise(r => setTimeout(r, 300));
+  }
+  console.log(`verify: ${okN} landed, ${badN} not`);
+  process.exit(badN ? 1 : 0);
+}
 if (DRY) process.exit(0);
 
 const rollback = [], done = [], stale = [];
@@ -109,12 +125,13 @@ for (const p of plans) {
   for (const c of p.news) next.push({ name: c.name.trim(), type: c.type || "camp", elev: Math.round(Number(c.elev_ft)), role: c.role, nights: c.nights, why: c.why.trim(), water: c.water || "", capacity: c.capacity || "", permit: c.permit || "", notes: c.notes || "" });
   await patchRow("routes", p.id, { bivy: next });
   done.push([p.id, next]);
+  await new Promise(r => setTimeout(r, 1000));
 }
 // Reconcile: a 200 is not evidence the data changed.
 let bad = 0;
 for (const [id, want] of done) {
   const live = await liveRow(id);
-  if (JSON.stringify(live && live.bivy) !== JSON.stringify(want)) { bad++; console.log(`  RECONCILE FAIL ${id}`); }
+  if (!same(live && live.bivy, want)) { bad++; console.log(`  RECONCILE FAIL ${id}`); }
   await new Promise(r => setTimeout(r, 300));
 }
 console.log(`wrote ${done.length}, reconciled ${done.length - bad}/${done.length}, stale ${stale.length}; rollback ${rbPath}`);

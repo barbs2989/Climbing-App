@@ -1,0 +1,244 @@
+[
+ {
+  "id": "wa_summit_chief_mountain_north_face",
+  "camps": [],
+  "new_camps": [],
+  "confidence": "low",
+  "plan_conflict": "Parties camp on the valley floor of the Middle Fork Snoqualmie close under the face, but no source gave an elevation, so no camp entry could be added for night 1.",
+  "sources": ["https://alpinedave.com/summit_chief/north_face.htm", "https://mountainproject.com/route/120326622/north-face"]
+ },
+ {
+  "id": "wa_summit_chief_mountain_south_route",
+  "camps": [
+   {"name": "Vista Lakes (upper lake)", "nights": [1, 2], "role": "main",
+    "why": "Tarns just off the PCT with flat slab and bivy sites, only about two miles from the peak, so the summit day is a short carry and you sleep here both nights."},
+   {"name": "Pete Lake and the Lemah Meadows camps", "nights": [], "role": "route",
+    "why": "A gentler first night with a toilet and decent sites at Pete Lake, but it leaves a much longer, steeper summit day. Useful only if you start late."}
+  ],
+  "new_camps": [],
+  "confidence": "medium",
+  "plan_conflict": null,
+  "sources": ["https://www.wta.org/go-hiking/trip-reports/tripreport-2002090201", "https://mountaineers.org/activities/routes-places/summit-chief", "https://adminonly.wta.org/go-hiking/trip-reports/trip_report-2021-10-06-1670023869"]
+ },
+ {
+  "id": "wa_three_queens_west_peak",
+  "camps": [
+   {"name": "Spectacle Point high camp", "nights": [1], "role": "main",
+    "why": "Ridge bivy above the lakes that puts the towers close for the climb. It is exposed and the water is down at Park Lakes, so most parties fetch it before climbing up."},
+   {"name": "Park Lakes Basin", "nights": [1], "role": "route",
+    "why": "Lake water and room for several tents at the head of the Mineral Creek trail, with views of the towers. It adds a bit of altitude to the climbing day compared with the ridge."}
+  ],
+  "new_camps": [],
+  "confidence": "low",
+  "plan_conflict": "Reports found describe camping at Park Lakes or Spectacle Lake for Three Queens; none confirmed a camp on Spectacle Point itself, so the plan's night-1 camp is unverified.",
+  "sources": ["https://www.wta.org/go-hiking/trip-reports/trip_report.2018-09-03.6963206389", "https://www.summitpost.org/three-queens/151982", "https://www.wta.org/go-hiking/trip-reports/trip_report.2016-07-19.8412665886"]
+ },
+ {
+  "id": "wa_concerto_in_c_for_drill_and_hammer",
+  "camps": [
+   {"name": "Squire Creek Park & Campground, Snohomish County", "nights": [0], "role": "route",
+    "why": "Developed county campground with toilets, handy for a night before the approach, but it is far from the wall. It is not where parties sleep on the climb."},
+   {"name": "Squire Creek road end / trailhead bivouac", "nights": [], "role": "route",
+    "why": "Sleeping at the road end or closure adds the whole approach to summit day. Most parties carry on to the grassy saddle bivy instead, which is only a couple of hours in."},
+   {"name": "Squire Creek Wall on-route ledges", "nights": [], "role": "route",
+    "why": "Emergency ledge bivouacs on the face for slow parties on long lines. Not a planned night; the saddle at the base is far more comfortable."}
+  ],
+  "new_camps": [],
+  "confidence": "low",
+  "plan_conflict": "The plan's night 1 is the grassy saddle bivy at the base of the route; no camp on file covers it and no elevation was found to add one. The two on-file bivouacs marked main were changed to route.",
+  "sources": ["https://climberkyle.com/2021/06/19/the-darrington-rodeo/", "https://cascadeclimbers.com/forum/topic/104100-tr-squire-creek-wall-concerto-in-c-for-drill-and-hammer-07182021"]
+ },
+ {
+  "id": "wa_dome_peak_dome_glacier",
+  "camps": [
+   {"name": "Itswoot Ridge", "nights": [1, 2], "role": "main",
+    "why": "Ridge camp with benches, nearby snowmelt water and the best position for the glacier: the summit ridge is about two and a half hours from tents."},
+   {"name": "Dome-Dana col", "nights": [], "role": "route",
+    "why": "A high perch that shortens summit day or links to the Ptarmigan Traverse, but no running water and no shelter from wind. Not part of a standard three-day trip."},
+   {"name": "Bachelor Creek forest camp", "nights": [], "role": "route",
+    "why": "Sheltered creekside spot for parties slowed by brush and blowdown on the way up. It is a fallback night that adds a long day to reach the ridge."},
+   {"name": "Cub Lake", "nights": [1], "role": "route",
+    "why": "Easy water and flat meadow at the top of the trail, but crowded in summer and an extra hour below the ridge, so the summit day starts from lower down."}
+  ],
+  "new_camps": [],
+  "confidence": "high",
+  "plan_conflict": "Camp role on file for Dome-Dana col was main; changed to route because parties in several reports slept on Itswoot Ridge both nights.",
+  "sources": ["https://turns-all-year.com/trip-reports/dome-south-couloir-sinister-north-face", "https://wenatcheeoutdoors.org/2020/09/23/gunsight-peak-sinister-peak/", "https://stephabegg.com/?p=8693"]
+ },
+ {
+  "id": "wa_glacier_peak_cool_glacier_gerdine",
+  "camps": [
+   {"name": "Glacier Gap", "nights": [1, 2], "role": "main",
+    "why": "The high camp for this side of the mountain: large area with many tent sites, meltwater nearby, and the summit within one long day."},
+   {"name": "Mackinaw Shelter camp, North Fork Sauk", "nights": [], "role": "route",
+    "why": "Only a couple of hours from the trailhead, so it suits a late start or a four-day trip. It leaves a very long carry up to Glacier Gap the next morning."},
+   {"name": "White Pass and the Foam Creek benches under White Mountain", "nights": [], "role": "route",
+    "why": "Halfway-point camp on the PCT for a four-day split, with water and meadow sites. It shortens day one but lengthens the day to Glacier Gap."}
+  ],
+  "new_camps": [],
+  "confidence": "medium",
+  "plan_conflict": "Notes on file call Mackinaw the first night and White Pass the second, but this three-day plan walks to Glacier Gap on day 1; Mackinaw and White Pass are splits for four-day trips.",
+  "sources": ["https://mountainproject.com/route/107257991/gerdine-ridgecool-glacier", "https://sverdina.com/Glacier3.asp", "https://turns-all-year.com/trip-reports/feb-19-22-gerdine-glacier-glacier-peak"]
+ },
+ {
+  "id": "wa_glacier_peak_frostbite_ridge",
+  "camps": [
+   {"name": "Kennedy Ridge high camp", "nights": [], "role": "route",
+    "why": "Open ridge crest of pumice and snow below Kennedy Peak, reached from the PCT. Stakes hold poorly and there is no cover, but it cuts the summit day."},
+   {"name": "Vista-Kennedy saddle", "nights": [], "role": "route",
+    "why": "Bivy sites above the easy ground that shorten summit day. Fully exposed to wind, with no shelter or water short of melting snow."},
+   {"name": "8,800 ft saddle at the foot of Frostbite Ridge", "nights": [], "role": "route",
+    "why": "The last bivy before the ridge itself, and the closest camp to the crux. Rocky and windy; dig a platform in the snow if conditions allow."},
+   {"name": "Ledge near 9,900 ft below the ridge crux", "nights": [], "role": "route",
+    "why": "Emergency bivouac only, with no shelter and rockfall risk. Not a planned night for the trip."}
+  ],
+  "new_camps": [
+   {"name": "PCT camp, East Fork Milk Creek basin", "elev_ft": 5600, "type": "camp", "role": "main", "nights": [2],
+    "why": "Trail-side camp in the basin on the north side of the mountain; the standard staging point for the ridge, with easy access to Kennedy Glacier.",
+    "water": "", "capacity": "", "permit": "",
+    "notes": "About nine miles down the PCT from the Suiattle side; the ridge climb starts from here the next morning."}
+  ],
+  "confidence": "low",
+  "plan_conflict": "Night 1 (somewhere on the PCT short of Milk Creek) and night 3 (after the Sitkum descent) could not be matched to a researched camp; only night 2 at the 5,600 ft PCT camp is supported. The on-file high camps are used by parties who skip the base camp.",
+  "sources": ["https://www.mountaineers.org/activities/routes-places/glacier-peak-vista-frostbite-ridge", "https://cascadeclimbers.com/forum/topic/97905-tr-glacier-peak-frostbite-ridge-822015", "https://www.mountainproject.com/route/110630353/frostbite-ridge?print=1", "https://sverdina.com/Glacier3.asp"]
+ },
+ {
+  "id": "wa_glacier_peak_kennedy_glacier",
+  "camps": [
+   {"name": "Kennedy Ridge and the Glacier Creek camps, Suiattle side", "nights": [1, 2], "role": "main",
+    "why": "Bivy ground on the old Kennedy moraine near 6,100-6,200 ft puts the glacier at your door, so the summit loop starts and ends at the same tents."}
+  ],
+  "new_camps": [],
+  "confidence": "medium",
+  "plan_conflict": "The camp on file is described as Suiattle side, but this plan reaches the same Kennedy Creek moraine from North Fork Sauk via the PCT over Red Pass.",
+  "sources": ["https://www.mountainproject.com/route/110630353/frostbite-ridge?print=1", "https://www.mountaineers.org/activities/routes-places/glacier-peak-vista-frostbite-ridge"]
+ },
+ {
+  "id": "wa_glacier_peak_sitkum_glacier",
+  "camps": [
+   {"name": "Boulder Basin", "nights": [2, 3], "role": "main",
+    "why": "Open meadow basin with waterfalls and tent sites near the glacier toe; pleasant, but marmots and mosquitoes are persistent. Summit day is a long loop from here."},
+   {"name": "Kennedy Guard Station area", "nights": [], "role": "route",
+    "why": "Not usable on the current approach: the lodge and hot pool were destroyed in 2003 and the trail below it is closed. Listed for history only."},
+   {"name": "Sitkum Creek / PCT junction camp", "nights": [], "role": "route",
+    "why": "Forested campsite a short way up the PCT, below the climbers' path. Sheltered, and a fallback for slow parties, but it leaves the steep path and the gain to Boulder Basin."}
+  ],
+  "new_camps": [],
+  "confidence": "low",
+  "plan_conflict": "Night 1 falls on the PCT between Red Pass and Sitkum Creek; no camp on file or found in sources covers it. Reports found also approach from White Chuck, not North Fork Sauk.",
+  "sources": ["https://danielarndt.com/trips/48-glacier-peak-climb-via-sitkum-glacier", "https://mountainproject.com/route/121086767/sitkum-glacier"]
+ },
+ {
+  "id": "wa_east_face",
+  "camps": [
+   {"name": "Dome Glacier and Dome-Chickamin col high bivouacs", "nights": [2, 3], "role": "main",
+    "why": "The col base camp puts the Gunsight peaks within a day's round trip. Room is tight and the wind funnels, but it saves a long approach on climbing day."},
+   {"name": "Bachelor Creek forest and meadow camps", "nights": [1, 4], "role": "main",
+    "why": "Informal forest camp at Bachelor Flats, the usual stop before and after the high camp. Low and buggy, but sheltered and with water, and it breaks up the walk."},
+   {"name": "Cub Lake", "nights": [], "role": "route",
+    "why": "Lake water and meadows past the brush, for strong parties who push further on day 1. It is crowded in summer and an hour below the ridge."},
+   {"name": "Itswoot Ridge", "nights": [], "role": "route",
+    "why": "Popular ridge camp that cuts the next day to the col and is an alternative first night. Longer first day, but water and benches are good."}
+  ],
+  "new_camps": [],
+  "confidence": "medium",
+  "plan_conflict": "The plan returns to Bachelor Flats on night 4, but several reports show parties stopping at Itswoot Ridge or Cub Lake on the way out and using Itswoot for night 1.",
+  "sources": ["https://wenatcheeoutdoors.org/2020/09/23/gunsight-peak-sinister-peak/", "https://stephabegg.com/?p=8693"]
+ },
+ {
+  "id": "wa_gunrunner",
+  "camps": [
+   {"name": "Dome Glacier and Dome-Chickamin col high bivouacs", "nights": [2, 3], "role": "main",
+    "why": "The col base camp puts the Gunsight peaks within a day's round trip. Room is tight and the wind funnels, but it saves a long approach on climbing day."},
+   {"name": "Bachelor Creek forest and meadow camps", "nights": [1, 4], "role": "main",
+    "why": "Informal forest camp at Bachelor Flats, the usual stop before and after the high camp. Low and buggy, but sheltered and with water, and it breaks up the walk."},
+   {"name": "Cub Lake", "nights": [], "role": "route",
+    "why": "Lake water and meadows past the brush, for strong parties who push further on day 1. It is crowded in summer and an hour below the ridge."},
+   {"name": "Itswoot Ridge", "nights": [], "role": "route",
+    "why": "Popular ridge camp that cuts the next day to the col and is an alternative first night. Longer first day, but water and benches are good."}
+  ],
+  "new_camps": [],
+  "confidence": "medium",
+  "plan_conflict": "The plan returns to Bachelor Flats on night 4, but several reports show parties stopping at Itswoot Ridge or Cub Lake on the way out and using Itswoot for night 1.",
+  "sources": ["https://wenatcheeoutdoors.org/2020/09/23/gunsight-peak-sinister-peak/", "https://stephabegg.com/?p=8693"]
+ },
+ {
+  "id": "wa_gunsight_peak_standard",
+  "camps": [
+   {"name": "Bachelor Flats / Bachelor Meadows", "nights": [1], "role": "main",
+    "why": "Forest clearing where the maintained trail ends. Buggy and low, but sheltered, and the climbers' path above is slow with a full pack."},
+   {"name": "Chikamin-Dome col", "nights": [2], "role": "main",
+    "why": "Established col camp with big views, but room is tight and ground needs levelling. Wind funnels over it, and it puts the glacier crossings close."},
+   {"name": "Chikamin Glacier bench below the west face", "nights": [3], "role": "main",
+    "why": "Snow-and-rock bench under the west face; sleeping here shortens summit day. Rope up to reach it and keep the tent out of the fall line."},
+   {"name": "Cub Lake meadows", "nights": [4], "role": "main",
+    "why": "Heather meadows with easy water, a comfortable first stop after the double summit day. Busy in summer, with many parties spread across them."},
+   {"name": "Itswoot Ridge camp", "nights": [], "role": "route",
+    "why": "Ridge benches an hour above the meadows, quieter and with a head start on the glacier. Used by parties who skip Cub Lake or want the col sooner."}
+  ],
+  "new_camps": [],
+  "confidence": "low",
+  "plan_conflict": "Night 5 is a small camp on the lower Downey Creek trail a few miles above the trailhead; no camp on file covers it and no elevation was found. Itswoot Ridge camp was changed from main to route.",
+  "sources": ["https://wenatcheeoutdoors.org/2020/09/23/gunsight-peak-sinister-peak/", "https://stephabegg.com/?p=8693"]
+ },
+ {
+  "id": "wa_sw_ridge",
+  "camps": [
+   {"name": "High camp above the Blue Glacier", "nights": [2, 3], "role": "main",
+    "why": "Rock-ridge camp right below the east side of the peaks, so the climb starts nearby. Exposed, and water is limited to snow melt."}
+  ],
+  "new_camps": [],
+  "confidence": "low",
+  "plan_conflict": "Night 1 (a streamside camp after the shuttle) could not be tied to an elevation, and reports differ: one stops about six miles up the PCT, another at Swamp Creek; the plan's ten-mile Agnes Creek trail does not match either.",
+  "sources": ["https://natureofmotion.blogspot.com/2014/08/gunsight-peaks-trip-report.html", "https://wildsnow.com/20610/washingtons-gunsight-range-backcountry-climbing/"]
+ },
+ {
+  "id": "wa_west_face_2",
+  "camps": [
+   {"name": "Dome Glacier and Dome-Chickamin col high bivouacs", "nights": [2, 3], "role": "main",
+    "why": "High camp at the col gets you to the west face with a short glacier crossing. Cramped and windy, but it saves a very long day from lower down."},
+   {"name": "Bachelor Creek forest and meadow camps", "nights": [1, 4], "role": "main",
+    "why": "Bachelor Flats forest camp, a typical stop on both the way in and out. Sheltered with water, but low and buggy, and it breaks up the long hike."},
+   {"name": "Cub Lake", "nights": [], "role": "route",
+    "why": "Lake and meadow sites reached after the brush, for parties pushing the first day further. Crowded in summer; leaves the ridge climb for day 2."},
+   {"name": "Itswoot Ridge", "nights": [], "role": "route",
+    "why": "Ridge benches with snowmelt water, often used as the first night to shorten the col day. Longer first day, but a better position."}
+  ],
+  "new_camps": [],
+  "confidence": "medium",
+  "plan_conflict": "Reports show parties often camp at Itswoot Ridge on night 1 instead of Bachelor Flats, and stop at Cub Lake or Itswoot rather than Bachelor Creek on night 4.",
+  "sources": ["https://stephabegg.com/?p=8693", "https://wenatcheeoutdoors.org/2020/09/23/gunsight-peak-sinister-peak/"]
+ },
+ {
+  "id": "wa_accidental_discharge_east_face",
+  "camps": [
+   {"name": "Itswoot Ridge", "nights": [1, 4], "role": "main",
+    "why": "Ridge camp with water and benches, the usual end of day 1 and the first stop on the way back. Several parties camp here in summer."},
+   {"name": "Dome Glacier and Dome-Chickamin col high bivouacs", "nights": [2, 3], "role": "main",
+    "why": "The high camp near the col puts the Blue Glacier side in reach. Cramped, and wind funnels across it, but it saves a very long approach."},
+   {"name": "Bachelor Creek forest and meadow camps", "nights": [], "role": "route",
+    "why": "Forest camp for parties slowed by brush on the way in, or for a late exit. Sheltered with water, but leaves a harder day to the ridge."},
+   {"name": "Cub Lake", "nights": [], "role": "route",
+    "why": "Lake water and meadows just below the ridge, an alternative first night if the ridge is full. Crowded, and an hour lower than Itswoot."}
+  ],
+  "new_camps": [],
+  "confidence": "medium",
+  "plan_conflict": null,
+  "sources": ["https://stephabegg.com/?p=8693", "https://wenatcheeoutdoors.org/2020/09/23/gunsight-peak-sinister-peak/"]
+ },
+ {
+  "id": "wa_gothic_peak_standard",
+  "camps": [
+   {"name": "Foggy Lake, Gothic Basin", "nights": [1], "role": "main",
+    "why": "Sites on the south side of the lake and the ridge toward the peak, with streams nearby. Closest camp to the summit, so the climbing day is short."},
+   {"name": "Weden Creek trail junction, one mile up the Monte Cristo road", "nights": [], "role": "route",
+    "why": "Flat spot near the bottom for a party caught out late on the slabby descent. A fallback, not a planned night."},
+   {"name": "Lower Gothic Basin — the slab benches and tarns short of Foggy Lake", "nights": [1], "role": "route",
+    "why": "Quieter slab benches by the tarns, about half a mile before the lake. Saves the last route-finding but less water, and the peak is a bit farther."}
+  ],
+  "new_camps": [],
+  "confidence": "high",
+  "plan_conflict": null,
+  "sources": ["https://www.theoutbound.com/washington/backpacking/backpack-at-gothic-basin", "https://www.wta.org/go-hiking/trip-reports/trip_report-2025-09-09.203414639646"]
+ }
+]
