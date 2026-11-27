@@ -1,0 +1,116 @@
+{
+ "ca_castle_peak_summit_via_castle_pass": {
+  "area": "ca_castle_peak_summit",
+  "set": {
+   "approach": "Park near the Castle Peak and Boreal Ridge exit of I-80, on the north side of the freeway. Busy summer weekends can push parking down toward the bottom of the access road. The first mile follows a forest road, then the path heads northwest on an easy grade to Castle Pass and the Pacific Crest Trail. From the pass, follow the crest northeast for roughly half a mile, where the trail steepens and wraps the north slope toward the summit.",
+   "descent_text": "Return the way you came: down the loose, steep upper slope with care, back along the crest to Castle Pass, then southeast on the forest road to the trailhead near the freeway.",
+   "season": "Jun-Oct",
+   "hazards": [
+    "Loose rock on the steep final slope below the summit",
+    "Sheer cliffs drop away on the south face of the peak",
+    "Weathered volcanic rock and gravel on the upper tread make footing unreliable"
+   ],
+   "gain_ft": 1735,
+   "dist_km": 4.83
+  },
+  "ledger": [
+   {
+    "field": "gain_ft",
+    "value": 1735,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.theoutbound.com/california/hiking/summit-castle-peak",
+      "retrieved_at": "2026-11-26",
+      "fact": "1,800 ft gain, out-and-back from the Boreal exit via Castle Pass"
+     },
+     {
+      "url": "https://www.trailspotting.com/2021/07/castle-peak-tahoe-national-forest.html",
+      "retrieved_at": "2026-11-26",
+      "fact": "about 1,670 ft gain, same trailhead, 9,103 ft summit"
+     }
+    ]
+   },
+   {
+    "field": "dist_km",
+    "value": 4.83,
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://www.theoutbound.com/california/hiking/summit-castle-peak",
+      "retrieved_at": "2026-11-26",
+      "fact": "6 miles out-and-back, about 3 miles each way; one-way 3 mi = 4.83 km"
+     }
+    ]
+   }
+  ],
+  "review": {
+   "sources": [
+    "https://www.theoutbound.com/california/hiking/summit-castle-peak",
+    "https://www.trailspotting.com/2021/07/castle-peak-tahoe-national-forest.html"
+   ],
+   "confidence": "medium",
+   "notes": "Second page gives 5.4 mi round trip (10% under the first), so distance kept single-source. Descent is the reverse of an out-and-back; neither page describes it separately."
+  }
+ },
+ "nv_mount_rose_mount_rose_trail": {
+  "area": "nv_mount_rose",
+  "set": {
+   "overview": "Mount Rose is the high point of the range above Reno and Lake Tahoe, at 10,776 feet. The standard trail is a walk, not a scramble: it leaves the highway pass, passes the north side of Tamarack Peak and a waterfall, crosses a valley to a saddle, and makes an easy last push to the top. Volcanic rock pillars line parts of the route, and the summit looks over Lake Tahoe.",
+   "approach": "Start at the Mount Rose Summit parking area on Nevada State Route 431, the Mount Rose Highway, at about 8,900 feet. The lot is large and has restrooms; the trail begins just behind them. Take the right-hand branch, which is the most direct way to the summit, and follow it past Tamarack Peak and the waterfall to the saddle below the top.",
+   "descent_text": "Go back down the same trail to the parking area. For a slightly longer and more scenic return, loop around the south side of Tamarack Peak on the Tahoe Rim Trail, which adds about half a mile.",
+   "season": "Jun-Nov"
+  },
+  "review": {
+   "sources": [
+    "https://www.trailspotting.com/2021/07/mount-rose-lake-tahoe.html"
+   ],
+   "confidence": "medium",
+   "notes": "Single page read. Hazards skipped: no page I could open stated one for this route (SummitPost returned 403). The window is early summer through November per that page."
+  }
+ },
+ "ca_sierra_buttes_lookout_trail": {
+  "area": "ca_sierra_buttes",
+  "set": {
+   "overview": "The Sierra Buttes lookout trail is a steady walk to a historic fire lookout perched on a jagged butte at 8,591 feet. Most of the route is ordinary trail, crossing the Pacific Crest Trail and a closed four-wheel-drive road, but the end is unusual: about 180 metal stairs climb the rock to the tower. The summit gives views over the Lakes Basin and surrounding ridges.",
+   "approach": "From Highway 49, take Gold Lake Highway north, then Packer Lake Road past the Sardine and Packer Lake turnoffs, up the steep paved grade to Packer Lake Saddle. A short dirt road beyond the saddle, passable in a regular car, reaches a small parking area at roughly 7,000 feet with a Sierra Buttes sign and Pacific Crest Trail markers. The trail climbs from the lot, levels briefly along the ridge, then steepens, switchbacks, and joins a closed 4WD road to the saddle below the stairs.",
+   "descent_text": "Descend the stairs, then walk back down the same trail and the closed road to the parking area. The steep sections near the top are the slowest part, and an early start avoids crowds on the way down.",
+   "hazards": [
+    "Exposed metal stairs with open air below, hard on anyone uneasy with heights",
+    "A grated floor at the lookout looks down about 300 feet to rock",
+    "In winter the stairs can be drifted or iced over and need crampons and an ice axe"
+   ]
+  },
+  "review": {
+   "sources": [
+    "https://californiathroughmylens.com/sierra-buttes-fire-lookout",
+    "https://www.climber.org/driving/SierraButtes.html"
+   ],
+   "confidence": "medium",
+   "notes": "Season skipped: no page gives a window. Overview mentions the stairs and rock from two pages; the row already states the 1,500 ft figure which I did not repeat."
+  }
+ },
+ "ca_mount_elwell_mt_elwell_trail": {
+  "area": "ca_mount_elwell",
+  "set": {
+   "overview": "Mount Elwell rises to 7,818 feet above the Lakes Basin in the northern Sierra and is a trail hike with a short scramble at the end. The route climbs through forest, with views of Long Lake on one approach and Maiden Lake on another, and finishes over craggy boulders to a summit with a former lookout site and a sign-in scroll. Views reach Mount Shasta, Lassen and the Sierra Buttes lookout.",
+   "approach": "Two ways in. The shorter starts from the trailhead at the end of Lakes Basin Campground: walk about three quarters of a mile, turn right on the Long Lake Connector, and join the Long Lake Trail toward the Elwell trail. The longer one starts on the Smith Lake Trail near Gray Eagle Lodge and climbs the Elwell trail about 3 miles through sugar pine forest. Both are in the Lakes Basin Recreation Area near Clio.",
+   "descent_text": "The shorter approach is retraced the way you came. After the longer route, drop down the Long Lake Trail to return to the car as a loop. Take the final boulders slowly on the way down.",
+   "season": "Jun-Oct",
+   "hazards": [
+    "Final stretch is a scramble over craggy boulders; cairns mark the route on the south side",
+    "Hard to follow if you wander off the cairns, so go slowly and use caution"
+   ]
+  },
+  "review": {
+   "sources": [
+    "https://weekendsherpa.com/stories/hike-to-the-summit-of-mount-elwell-in-the-lakes-basin-sierra-nevada",
+    "https://visitplumas.org/get-outside/hiking/mt-elwell-and-long-lake-loop/"
+   ],
+   "confidence": "medium",
+   "notes": "Gain and distance skipped: sources give 7-8 miles round trip and nearly 2,000 ft for the longer loop only, not a single trailhead-to-summit line, and the county page contradicts itself (6.5 vs 8 mi). Season Jun-Oct is from the county page only. Second hazard line is mild; trim if reviewer prefers."
+  }
+ }
+}
