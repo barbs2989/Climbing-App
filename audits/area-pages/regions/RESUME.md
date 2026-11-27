@@ -18,7 +18,7 @@ strip are formation-only, so a region needs only `blurb`.
 ## Status
 - Tier >=100 climbs: 1,494 regions = r001–r249 (inputs rebuilt by `tools/build-regions.cjs 100 1000000000`,
   split 6 per batch in route_count order; the job tmp copy is gone with the job).
-- Research: r001–r164 done and reviewed (956 written, 28 skipped); r165+ running; the 17 fetch-outage skips were redone (redo/) and merged back. Next: r165–r249. r001–r006 applied 2026-11-26 13:19 (36/36 written, 0 refused) and verified live (`tools/verify-regions.mjs 1 6`).
+- Research: r001–r196 and r199–r200 done and reviewed (1,128 written, 60 skipped); r197+ running; the 17 fetch-outage skips were redone (redo/) and merged back. Next: r201–r249 (r197–r198 out). r001–r006 applied 2026-11-26 13:19 (36/36 written, 0 refused) and verified live (`tools/verify-regions.mjs 1 6`).
 - REDO DONE: the 17 r123–r126 skips caused by a WebFetch outage (~13:40 2026-11-26) were redone and merged. Old note: every `_skipped`
   entry in r123–r126 whose reason says "fetch tool refused", "only search snippets" or "only one page could be
   fetched" is a tool failure, not a judgement — re-research those once fetching works (list them with
@@ -27,4 +27,4 @@ strip are formation-only, so a region needs only `blurb`.
   pages cover several sub-areas, or a sub-area holding most of its climbs, is kept (Highway 38, SD Desert/Culp).
 - Review step per batch: `node tools/lint-batches.cjs batch-rNNN.json`, then read every sentence the agent says
   it is unsure of and cut it (fix scripts `tools/fix-wave1.cjs`, `tools/fix-wave2.cjs` record each cut).
-- DB writes: r001–r006 APPLIED + verified. r007+ NOT applied: the chained driver was killed by Claude Code for low system memory (2026-11-26 ~14:20) while still queued, before any write. Restart from the worktree root: `DONE=<file listing 001..006> LOG=<log> bash audits/area-pages/regions/tools/apply-regions.sh $(seq -f "%03g" 7 128)`, then grep the log for ✗, reword, re-apply, and `node audits/area-pages/regions/tools/verify-regions.mjs 7 128`. Lint with INR=<input dir> also checks coverage.
+- DB writes: r001–r007 APPLIED + verified live 2026-11-26 16:19 (41/41, 0 refused). r008+ queued (apply-regions.sh restarted 15:3x, DONE=$CLAUDE_JOB_DIR/tmp/regions.done; it backs off 10 min when the DB is slow). Earlier note: the chained driver was killed by Claude Code for low system memory (2026-11-26 ~14:20) while still queued, before any write. Restart from the worktree root: `DONE=<file listing 001..006> LOG=<log> bash audits/area-pages/regions/tools/apply-regions.sh $(seq -f "%03g" 7 128)`, then grep the log for ✗, reword, re-apply, and `node audits/area-pages/regions/tools/verify-regions.mjs 7 128`. Lint with INR=<input dir> also checks coverage.
