@@ -1,0 +1,22 @@
+{
+ "id_table_rock": {
+  "_expect": { "name": "Table Rock", "region": "Idaho" },
+  "blurb": "Table Rock is a sandstone mesa overlooking Boise. Nearly all of the climbing is bouldering, with a few top-rope, sport and trad lines mixed in. Problems range from the easiest grades up through V4 in good number, with a handful from V6 to V8. Rock quality changes from spot to spot, running from loose grit to solid slabs. Summer days are hot and exposed, so early starts are the norm, and the eastern wall is the most shielded from the heat. Little Quarry and Tram Trail Boulders hold the most climbs, followed by Propeller Area and Blasted Wall.",
+  "review": { "sources": ["https://www.mountainproject.com/area/107207153/table-rock", "https://www.onxmaps.com/hiking/5x36w7k8gqyk/table-rock-bouldering-walls"] }
+ },
+ "mo_em_elephant_rocks_sp": {
+  "_expect": { "name": "Elephant Rocks SP", "region": "Missouri" },
+  "blurb": "Elephant Rocks State Park is about an hour and a half from St. Louis, and its climbing is all bouldering. The boulders are rounded blocks of large-grained red granite, left behind as the surrounding rock eroded. The grain can be sharp on skin but gives very good friction. Problems start at the easiest grades and run up to V10, with the great majority between V0 and V4 and a steady group from V5 to V8. Picnic Area holds the most climbs, followed by Upper Picnic Area, The Porch and The Front Range.",
+  "review": { "sources": ["https://www.mountainproject.com/area/106328972/em-elephant-rocks-sp", "https://mostateparks.com/basic-page/natural-history-elephant-rocks"] }
+ },
+ "mo_wm_swope_blue_river_limestone": {
+  "_expect": { "name": "Swope & Blue River Limestone", "region": "Missouri" },
+  "blurb": "These boulders are in Kansas City, Missouri, around Swope Park and along Blue River Road. The rock is rough limestone blocks, with short, unusual features. Almost everything is bouldering, mostly V0 to V4 with a smaller group from V5 to V8, and a handful of sport routes at Blue River Bend. Swope Park Bouldering holds nearly all of the climbs, with Blue River Road a distant second.",
+  "review": { "sources": ["https://www.mountainproject.com/area/105963053/swope-boulders", "https://climbingzine.com/4140-2/"] }
+ },
+ "_skipped": {
+  "id_east_sector": "Mountain Project says the BLM land in this sector is permanently closed to climbing, and the only other page that loaded (Castle Rocks parent) is the parent.",
+  "me_south_freeport_boulders": "Only one real page (its Mountain Project listing); the second fetched pages were about Greater Portland, which says nothing of the boulders, and a single boulder.",
+  "mo_1_south_climber_s_left_of_stairs": "Only pages about the parent Robinson Bluff describe it; the south section is one of its sub-areas."
+ }
+}
