@@ -1,0 +1,30 @@
+{
+ "mt_allenspur": {
+  "_expect": { "name": "Allenspur", "region": "Montana" },
+  "blurb": "A sport-climbing area in Paradise Valley, about five miles south of Livingston along US 89. The walls face southwest, take plenty of sun and look out over the valley; the setting is dry and windy. Climbing is possible year-round, with spring and fall likely the best, and in spring the rock dries and warms early. Nearly all the routes are bolted, in grades from the 5.7s up to 5.12. The climbing is spread across five crags: Main Crag holds the most climbs, followed by 7-11 Crag, Obscurity Crag and Boundary Crag.",
+  "review": { "sources": ["https://www.mountainproject.com/area/106428134/allenspur", "https://www.outsidebozeman.com/activities/climbing/rock-climbing/rock-climbing-allenspur"] }
+ },
+ "mt_butte_area": {
+  "_expect": { "name": "Butte Area", "region": "Montana" },
+  "blurb": "Climbing around Butte in Montana's Southwest Region, mostly bolted sport routes with a smaller set of boulder problems; bouldering can be done year-round. Maiden Rocks, a limestone sport crag off I-15 between Butte and Dillon, holds the most climbs and has a large number of 5.13s alongside routes at easier levels. Across the area, sport grades mostly run 5.10 to 5.13, and the boulder problems sit mainly between V2 and V5. Other sub-areas include Whitetail Grove, East Ridge and Upper Pipestone Boulders.",
+  "review": { "sources": ["https://www.mountainproject.com/area/201907536/butte-area", "https://www.mountainproject.com/area/121794036/maiden-rocks"] }
+ },
+ "mt_natural_bridge_and_falls": {
+  "_expect": { "name": "Natural Bridge and Falls", "region": "Montana" },
+  "blurb": "A steep limestone canyon south of Big Timber in Montana's South Central Region. Nearly all the climbing is bolted sport, and much of it is hard: routes cluster between 5.10 and 5.13, with 5.12 the most common grade, plus some moderates and a few top-rope lines. The walls are steep for Montana, with small edges and some pockets. The canyon offers some shelter and mild temperatures, so it can be climbed nearly year-round, with spring and fall generally best. Porcelain Wall, The Foyer, Antiquities Wall and Shipwreck Rock hold the most climbs. Development is still active, and new lines keep appearing.",
+  "review": { "sources": ["https://mountainproject.com/area/107524256/natural-bridge-and-falls", "https://www.outsidebozeman.com/magazine/archives/summer-2020/ouzeling-along"] }
+ },
+ "nh_great_north_woods_region": {
+  "_expect": { "name": "Great North Woods Region", "region": "New Hampshire" },
+  "blurb": "Climbing in the northern part of New Hampshire, beyond the Presidential Range. North Bald Cap and Mount Forist hold the most climbs. Mount Forist is mostly trad with some sport, and North Bald Cap mixes trad, sport and top-rope lines. Round Mountain is mostly trad, and Boundary Boulder offers a few boulder problems. Rock routes run mostly from 5.6 to 5.10. Dixville Notch, the northernmost notch in the state, is a narrow, rugged ice and mixed spot with a flow wide enough for two parties.",
+  "review": { "sources": ["https://www.mountainproject.com/area/110932323/great-north-woods-region", "https://www.mountainproject.com/area/106513877/dixville-notch"] }
+ },
+ "nm_last_chance_canyon": {
+  "_expect": { "name": "Last Chance Canyon", "region": "New Mexico" },
+  "blurb": "A limestone sport-climbing canyon in the Lincoln National Forest near Carlsbad. Almost everything is bolted, mostly between 5.10 and 5.13 with a few easier lines. Two styles share the canyon: technical, near-vertical faces with thin edges and pockets, and steep, jug-filled lines up large roofs. About fifteen crags face in all directions, so there is sun or shade to pick from. In winter, Violince Wall, Tornado Alley and Breakfast Wall get morning sun, while The Sunporch, Santa Fe Wall, Tombstone Wall, Beer Garden and Tsunami Wall get afternoon sun; Mad Cow Wall and Hueco Cave are suggested for warmer months. The Heater is a full-sun crag of short, moderate routes. Mad Cow Wall holds the most climbs.",
+  "review": { "sources": ["https://www.mountainproject.com/area/105920274/last-chance-canyon", "https://www.mountainproject.com/area/106094178/the-heater?print=1"] }
+ },
+ "_skipped": {
+  "ny_p_east_end": "Only fetched page covering East End is its parent Powerlinez page (a sub-area listing, no description of its own); skipped, parent gets its own text"
+ }
+}
