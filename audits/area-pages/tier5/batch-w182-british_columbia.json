@@ -1,0 +1,27 @@
+{
+ "bc_eastpost_spire": {
+  "_expect": { "name": "Eastpost Spire", "region": "British Columbia" },
+  "blurb": "Eastpost Spire is a tall, slender peak at the south end of Bugaboo Provincial Park in the Purcell Mountains, on the far side of Crescent Glacier from the main Bugaboo group. It has five routes: four trad and one alpine line, with grades from around 5.6 up to a single 5.12 and a pair at 5.10. Trips here run out and back from the Applebee Dome camp in a day. The ridges also give an unroped scramble with one short, exposed fourth-class move near the top, which suits an easy day between bigger objectives.",
+  "review": { "sources": ["https://apps.gov.bc.ca/pub/bcgnws/names/1235.html", "https://alpinedave.com/bugaboos/august03/eastpost.htm", "https://discourse.accvi.ca/t/bugaboos-pigeon-snowpatch-eastpost-crescent-towers-and-brenta-spire/524", "https://www.mountainproject.com/area/classics/105868087/eastpost-spire"] }
+ },
+ "bc_golden_gate_crag": {
+  "_expect": { "name": "Golden Gate Crag", "region": "British Columbia" },
+  "blurb": "Golden Gate Crag is a small trad area above Squamish, in the upper Olesen Creek drainage, off the Mamquam forest road that branches east a little north of the Stawamus Chief. There are five routes, four of them around 5.10 and one at 5.11. Several climb in multiple pitches, linking cracks of different widths, so a standard trad rack and some stamina for sustained crack climbing are the main requirements. It is a place for climbers already comfortable on 5.10 who want longer crack lines away from the busier Squamish walls.",
+  "review": { "sources": ["https://outmap.pro/waypoint/golden-gate-mXe1dQniiyaWQoGfJUKzoo", "https://www.mountainproject.com/area/113841225/mamquam-fsr"] }
+ },
+ "bc_roadside_attraction": {
+  "_expect": { "name": "Roadside Attraction", "region": "British Columbia" },
+  "blurb": "Roadside Attraction is a short bluff in the Fraser Valley, in the Abbotsford and Mission area along Morris Valley Road, with no walk to the base. The wall gets sun from morning into mid-afternoon. This area has five routes: three sport lines around 5.11, one trad route at 5.9 and one aid line. The routes are single-pitch and suit a 60 m rope and a standard set of quickdraws. It works as a quick stop for a few pitches rather than a full day's destination.",
+  "review": { "sources": ["https://sendage.com/area/roadside-attraction-abbotsford-amp-mission-fraser-valley-bc-canada", "https://www.mountainproject.com/area/105994950/fraser-valley"] }
+ },
+ "_skipped": {
+  "bc_un_boulder": "Only a route page lists the boulder; the Left Fork area page found is in Utah, no page about this crag, could not fetch two pages",
+  "bc_sleepyhead_boulder": "Only a neighbouring boulder's page (Brightside, Right Fork) mentions it in directions; no standalone page about Sleepyhead Boulder",
+  "bc_the_box_office": "Only the Revelstoke parent page lists it, with counts; no page about the crag itself",
+  "bc_macpherson_crag": "Only the Revelstoke parent page and a tourism line mention it; no standalone page about the crag",
+  "bc_munro_lake_trail": "Only the Vancouver parent page and one route page; no page describing the boulder area itself"
+ },
+ "_conflicts": {
+  "bc_roadside_attraction": "Stored aspect is E; the sendage page (https://sendage.com/area/roadside-attraction-abbotsford-amp-mission-fraser-valley-bc-canada) says the wall faces southeast. It also counts 7 routes versus 5 stored."
+ }
+}
