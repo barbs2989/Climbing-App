@@ -19,7 +19,12 @@ import Chevron from "./Chevron.tsx";
 // Mountain Project's classics table reads, plus what MP's does not show: ✓ on a climb you have logged and ★ on one
 // that is in your objectives (ClimberCtx: completedIds, wishlist).
 const CLASSICS_SHOWN = 5;
-export interface ClassicsListRow extends RouteRowRoute { id: string | number; area_name?: string | null }
+export interface ClassicsListRow extends RouteRowRoute {
+  id: string | number;
+  area_name?: string | null;
+  /** A last part of the muted line: which of your lists the climb is on (SavedHereList). */
+  note?: string | null;
+}
 export interface ClassicsListProps {
   rows: ClassicsListRow[];
   /** The whole count when the read was capped. */
@@ -48,7 +53,7 @@ export default function ClassicsList({ rows, total, withWall, dense, onOpen, C, 
         {shown.map((r, i) => {
           const stars = r.stars ? Math.round(r.stars) : 0;
           const pitches = r.pitches > 1 && r.discipline !== "bouldering" && r.discipline !== "scrambling" ? r.pitches + "p" : null;
-          const sub = [withWall ? r.area_name || null : null, r.discipline ? (DL[r.discipline] || r.discipline) : null, pitches].filter(Boolean).join(" · ");
+          const sub = [withWall ? r.area_name || null : null, r.discipline ? (DL[r.discipline] || r.discipline) : null, pitches, r.note || null].filter(Boolean).join(" · ");
           const ticked = done.has(String(r.id)), saved = wish.has(String(r.id));
           const marks = ticked || saved ? <span style={{ flexShrink: 0, display: "inline-flex", gap: 3, fontSize: 11.5, fontWeight: 800 }}>
             {ticked ? <span title="You logged this" aria-label="logged" style={{ color: C.green }}>{"✓"}</span> : null}

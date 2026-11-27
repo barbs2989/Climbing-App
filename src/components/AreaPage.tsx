@@ -15,6 +15,7 @@ import { useWideScreen, useFullWidth } from "../../lib/wideLayout.js";
 import { ClimberCtx } from "../../lib/climberCtx.js";
 import { headerValue } from "../../lib/headerValue.js";
 import ClassicsList from "./ClassicsList.tsx";
+import SavedHereList from "./SavedHereList.tsx";
 import { BTN_LG, CHIP, BTN } from "../../lib/buttonStyles.js";
 import Chevron from "./Chevron.tsx";
 import AreaGettingThere from "./AreaGettingThere.tsx";
@@ -352,6 +353,9 @@ export default function AreaPage({ area: areaRow, onSignIn, uElev, uElevN, uElev
      dropdown that draws nothing at all when it has nothing to suggest, and a section would leave an empty card. */
   const suggestedEl = <DbSuggestedClimbs area={area} onOpen={onOpenRoute} C={C} />;
   const section = (el: ReactNode) => <div style={areaSheet(C)}><div style={{ marginTop: -1 }}>{el}</div></div>;
+  // YOUR SAVED CLIMBS HERE: objectives and list climbs under this area, beside the classics (SavedHereList). Not on a
+  // world or country page, which would only repeat My Objectives whole.
+  const savedEl = area.area_type !== "world" && area.area_type !== "country" ? <SavedHereList area={area} onOpen={onOpenRoute} dense={wide} C={C} wrap={section} /> : null;
   // AREA FACTS sits directly under the description (owner, 2026-11-18: "area facts should go under description"),
   // in both page orders. It was below the photos and Getting there.
   const factsEl = formation ? <AreaFactsCard area={area} C={C} uElev={uElev} onEdit={editOn} loggedMonths={wide && logged.data ? logged.data : null} /> : null;
@@ -524,6 +528,7 @@ export default function AreaPage({ area: areaRow, onSignIn, uElev, uElevN, uElev
         {factsEl}
         {chartable && !(isLeaf && routes && routes.length < 3) ? section(<GradeSpreadDisclosure first stats={stats.data} loading={stats.isLoading} error={stats.error} C={C} discOptions={discOptions} onDisc={onFinder} onGrade={onGrade} />) : null}
         {classicsEl && !(isLeaf && routes && routes.length <= 5) ? section(classicsEl) : null}
+        {savedEl}
         {suggestedEl}
       </> : <>
         {chartable ? section(<GradeSpreadDisclosure first stats={stats.data} loading={stats.isLoading} error={stats.error} C={C} discOptions={discOptions} onDisc={onFinder} onGrade={onGrade} />) : null}
@@ -536,6 +541,7 @@ export default function AreaPage({ area: areaRow, onSignIn, uElev, uElevN, uElev
         {wide && searchEl ? section(<div style={{ padding: "12px 14px 4px" }}>{searchEl}</div>) : null}
         {!leftEl && childRows ? section(<div style={{ padding: "12px 14px 4px" }}>{childList("section")}</div>) : null}
         {classicsEl ? section(classicsEl) : null}
+        {savedEl}
         {suggestedEl}
       </>}
       {/* PHOTOS only on a specific place (0541): the strip asks the database and draws its card through `section`
