@@ -1,0 +1,76 @@
+{
+  "ca_marmot_dome": {
+    "_expect": {
+      "name": "Marmot Dome",
+      "region": "California"
+    },
+    "blurb": "Marmot Dome is a trad-only formation in the Tuolumne Meadows part of Yosemite, sitting just past Fairview Dome and in view from the road. There are eight routes running from 5.6 up to 5.11, with the largest share at 5.8 and 5.9. Most of the terrain is slab climbing. The summit is near 9,250 feet, so this is a high-elevation outing. The way in is a short cross-country stretch to the Tenaya Lake trail near Pothole Dome, then a cairned climbers' path back toward the dome.",
+    "review": {
+      "sources": [
+        "https://www.mountainproject.com/area/108556295/marmot-dome",
+        "https://en.wikipedia.org/wiki/Marmot_Dome"
+      ]
+    }
+  },
+  "ca_pico_raquelita": {
+    "_expect": {
+      "name": "Pico Raquelita",
+      "region": "California"
+    },
+    "blurb": "Pico Raquelita is a short, steep wall in the Santa Monica Mountains, a 40 to 60 minute hike from the Sandstone Peak parking area, so few climbers make the trip. It has eight routes: seven sport and a single trad line. Grades span 5.10 to 5.12, mostly 5.11 and 5.12. Despite the modest height the lines are sustained for their grades, and some routes still have loose rock, so expect to test holds and wear a helmet.",
+    "review": {
+      "sources": [
+        "https://www.mountainproject.com/area/108093199/pico-raquelita",
+        "https://www.mountainproject.com/area/105825725/santa-monica-mountains"
+      ]
+    }
+  },
+  "ca_kamikaze_cave": {
+    "_expect": {
+      "name": "Kamikaze Cave",
+      "region": "California"
+    },
+    "blurb": "Kamikaze Cave is a steep sport cave at the far end of the Echo Cliffs band, and it holds some of the steepest, hardest lines in the Echo Cliffs. There are eight bolted routes, all between 5.12 and 5.14, with 5.13 the most common grade. Big jugs and powerful moves reward endurance and the ability to pull the lip. It is the first stop in the section called The Far Side; a tunnel at the end of the cliff band leads straight to it. This is a destination for strong climbers, not a place to warm up.",
+    "review": {
+      "sources": [
+        "https://www.mountainproject.com/area/106571471/kamikaze-cave",
+        "https://www.mountainproject.com/area/105825729/echo-cliffs"
+      ]
+    }
+  },
+  "ca_breakfast_at_tiffany_s": {
+    "_expect": {
+      "name": "Breakfast at Tiffany's",
+      "region": "California"
+    },
+    "blurb": "Breakfast at Tiffany's is a small bouldering zone within Lizard's Mouth, in the mountains above Santa Barbara on the Central Coast. It has about eight sandstone problems from V0 to V3, spread along a cliff band around 20 feet tall, with a small alcove at the left end and a higher tier off to the right. The stone is grainy and the wall stays shaded. A short scramble through a jumble of rocks off the main Lizard's Mouth trail drops you at the foot of the wall.",
+    "review": {
+      "sources": [
+        "https://www.mountainproject.com/area/106824568/breakfast-at-tiffanys",
+        "https://www.mountainproject.com/area/105885134/the-lizards-mouth"
+      ]
+    }
+  },
+  "ca_n_the_alcove": {
+    "_expect": {
+      "name": "The Alcove",
+      "region": "California"
+    },
+    "blurb": "The Alcove sits at the far right end of the main face at Riverside Quarry in the Inland Empire, where the cliff shrinks and merges into the hillside. It has eight bolted sport routes on granite, many of them long. Grades run from 5.10 to 5.12, with 5.11 and 5.12 making up most of the list, and the climbing tends to be sustained. To reach it, walk right past the neighboring Taboo Area to the last big section of rock.",
+    "review": {
+      "sources": [
+        "https://www.mountainproject.com/area/105904274/the-alcove",
+        "https://www.mountainproject.com/area/105902982/riverside-quarry"
+      ]
+    }
+  },
+  "_skipped": {
+    "ca_pillsbury_dome": "Only one page is about the dome itself and its description is a single line (plus directions); the Twin Bridges parent is the only other page, so no real standalone description.",
+    "ca_left_side_4": "The crag's own page is a one-line description plus a trail direction; nothing substantive beyond the parent Squirrel Creek page.",
+    "ca_monkey_ball_3": "The crag's own page is two short lines with no real description; parent page is about the whole boulder field, and its rock (granodiorite boulders) disagrees with the stored gneiss."
+  },
+  "_conflicts": {
+    "ca_kamikaze_cave": "Stored aspect W, but https://www.mountainproject.com/area/106571471/kamikaze-cave says mixed shade in the morning and full shade in the afternoon, which does not fit a west-facing wall; no sun timing written.",
+    "ca_monkey_ball_3": "Stored rock gneiss; https://www.mountainproject.com/area/125631651/monkeyface-falls-bouldering describes the Monkeyface boulders as granodiorite."
+  }
+}
