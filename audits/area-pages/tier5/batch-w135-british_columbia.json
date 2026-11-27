@@ -1,0 +1,25 @@
+{
+ "bc_pov": {
+  "_expect": { "name": "POV", "region": "British Columbia" },
+  "blurb": "POV is a steep, fully bolted cliff high in the East Kootenay backcountry, a long uphill trek from the car. Eight sport lines cover a lopsided spread: one 5.9, a pair of 5.10s, and five at 5.12, so this is mainly a place for strong climbers, with only a few easier options. The wall is heavily featured and powerful, with a mix of solid stone and loose patches. Finding the way on an onsight is hard while the routes are still new and lightly chalked. Expect a full day, bring a helmet, spare food and extra layers, and plan for big swings in temperature.",
+  "parking_note": "Drive in past Lakit Lake and keep going for roughly a quarter hour to the lot. The road becomes rougher after the lake, but an ordinary passenger car can make it.",
+  "approach": "A little under 2 km with about 350 m of climbing. The trail is rough and faint in places: follow an ATV track, then flagging tape onto an old mining trail with switchbacks. Pass a creek crossing where you can get water and a boulder field, then pick up a faint path to the base.",
+  "review": { "sources": ["https://www.mountainproject.com/area/123538620/pov", "https://sendage.com/area/12405-pov"] }
+ },
+ "bc_far_far_left_wall": {
+  "_expect": { "name": "Far Far Left Wall", "region": "British Columbia" },
+  "blurb": "This is the lower portion of the Apron in Marble Canyon Provincial Park, set beside Pavilion Lake along Highway 99, about 35 km northeast of Lillooet and 40 km northwest of Cache Creek. It holds eight routes, six sport and two trad, and several are long multipitch lines of six to eight pitches. Grades cluster around 5.10, with one 5.9 and a single 5.12 at the top end, which suits climbers comfortable with moderate grades and a long day on the wall. The stone is limestone, so expect the occasional loose section.",
+  "review": { "sources": ["https://www.mountainproject.com/area/122705498/far-far-left-wall", "https://www.mountainproject.com/area/122705482/the-apron"] }
+ },
+ "_skipped": {
+  "bc_lost_souls_wall": "no fetched page is about the crag itself; Purgatory pages (MP, sendage) only list it as a child and give no wall detail",
+  "bc_rail_grade_crag": "no page found for this crag after several searches and fetches (Grand Forks and Gilpin pages do not list it)",
+  "bc_askin_for_it_closed": "listed as closed on Mountain Project (Mt Maxwell, Salt Spring Island); also stored coordinates/area do not match a page about it",
+  "bc_south_face": "no standalone page about this south face; Retardant Wall pages only list it as a sub-area with no detail",
+  "bc_shampoo_wall": "only Mountain Project pages exist and the Shampoo Wall and Lower Blanket Canyon pages hold no description beyond a route list; no second page found",
+  "bc_the_big_bang_boulders": "no page about the boulders themselves found; Old Hope Bouldering page only lists it as a sub-area with a camping note"
+ },
+ "_conflicts": {
+  "bc_pov": "stored rock is siltstone but both fetched pages say quartzite with quartz veins: https://www.mountainproject.com/area/123538620/pov and https://sendage.com/area/12405-pov"
+ }
+}

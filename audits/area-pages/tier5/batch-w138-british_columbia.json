@@ -1,0 +1,41 @@
+{
+ "bc_grub_street": {
+  "_expect": { "name": "Grub Street", "region": "British Columbia" },
+  "blurb": "Grub Street is a small trad sector at the foot of Stooges Slab, on the Malamute cliff above Squamish. It holds eight gear-protected routes, mostly 5.10 with a couple at 5.11 and one 5.9. Lines start from ledges, and tips cracks are the signature feature. Individual pitches can be strung together in many combinations, so the same ground gets described under several different link-ups. The Malamute as a whole is usually breezy, so bring a layer.",
+  "review": { "sources": ["https://outmap.pro/waypoint/grub-street-qmtbrUAkY4UJRTp7rJzxES", "https://www.mountainproject.com/area/105876726/the-malamute", "https://www.mountainproject.com/route/106846140/grub-street"] }
+ },
+ "bc_altamont": {
+  "_expect": { "name": "Altamont", "region": "British Columbia" },
+  "blurb": "Altamont is a tall wall in Murrin Park, east of the Woodstock crag and a short uphill walk from the lakeside lot. It has eight routes split evenly between sport and trad, from 5.9 up through the 5.11 range, with most of the grades clustered around 5.10 and 5.11. The trad lines are the main draw, with bolts added on the less featured upper sections. Trees shade much of the wall, which helps on warm days.",
+  "review": { "sources": ["https://sendage.com/area/altamont-murrin-park-squamish-bc-canada", "https://www.mountainproject.com/area/105910820/murrin-park"] }
+ },
+ "bc_jurassic": {
+  "_expect": { "name": "Jurassic", "region": "British Columbia" },
+  "blurb": "Jurassic is one of five boulders in the Borderlands group in the Arrow Lake bouldering zone of the West Kootenays. A large block, split down its middle, it sits alone in a small meadow. Eight problems run from very easy to V6, with most falling between V1 and V4 and a single hard line at the top end. The page notes a few fun lines and good landings, which makes it a decent stop for a mixed-ability group.",
+  "review": { "sources": ["https://www.mountainproject.com/area/114528894/jurassic", "https://www.mountainproject.com/area/114528868/borderlands"] }
+ },
+ "bc_tsunami_wall": {
+  "_expect": { "name": "Tsunami Wall", "region": "British Columbia" },
+  "blurb": "Tsunami Wall is a short, steep, overhanging sport wall in a narrow gully beside the walk to Doctors' Wall at Skaha Bluffs. Its eight bolted routes reward power more than stamina and are hard: one is 5.10, one 5.11, five sit in the 5.12 range and one reaches 5.13, so few lines suit anyone below 5.12. The wall catches morning sun while trees in the gully keep it from heating up fast, and its steepness lets it stay climbable in wet weather most days.",
+  "review": { "sources": ["https://sendage.com/area/tsunami-wall-skaha-bc-canada", "https://www.mountainproject.com/area/111625792/doctors-group"] }
+ },
+ "bc_pub_wall": {
+  "_expect": { "name": "Pub Wall", "region": "British Columbia" },
+  "blurb": "Pub Wall is the main cliff behind the Lions Head Pub in Robson, near Castlegar in the West Kootenays. It has eight routes, mostly sport with one trad line, graded from 5.9 to the 5.10 range. Several are two pitches, and newer sport and trad lines have been added toward the western end. The wall is right beside the lot, so there is essentially no approach, which suits a short after-work session.",
+  "parking_note": "Leave the car at the Lions Head Pub lot in Robson; the wall rises directly beside it.",
+  "review": { "sources": ["https://www.mountainproject.com/area/114277581/pub-wall", "https://www.mountainproject.com/area/114277571/lions-head"] }
+ },
+ "bc_conspiracy_wall": {
+  "_expect": { "name": "Conspiracy Wall", "region": "British Columbia" },
+  "blurb": "Conspiracy Wall is the main hard-climbing sport crag in Cougar Canyon, in Kalamalka Lake Provincial Park south of Vernon. It was once known as Sofa Kingdom. Eight sport routes span the 5.10 to 5.12 range, though the best lines sit at the upper end of that. The lower half is slightly overhung and covered in pockets, and the upper half steepens. The gneiss is solid. Lowering all the way down takes a 70 m rope.",
+  "review": { "sources": ["https://sendage.com/area/conspiracy-wall-cougar-canyon-arrow-lakes-west-kootenay-bc-canada", "https://www.mountainproject.com/area/105953176/cougar-canyon"] }
+ },
+ "bc_monkey_and_weasel": {
+  "_expect": { "name": "Monkey and Weasel", "region": "British Columbia" },
+  "blurb": "Monkey and Weasel is a sport cliff in the Cal-Cheak group, about 45 km north of Squamish on the way to Whistler. It is the first main wall reached after crossing the boulder field, and it has eight bolted face routes ranging from 5.7 to 5.10, with the majority at 5.10. That makes it a good fit for climbers working through moderate grades. Some routes need a little cleaning, and a few have recently had bolts added.",
+  "review": { "sources": ["https://www.mountainproject.com/area/108303861/monkey-and-weasel", "https://www.mountainproject.com/area/108303788/cal-cheak"] }
+ },
+ "_skipped": {
+  "bc_outta_sight_wall": "could not fetch two pages: thecrag page returned 403, and the fetched Area 44 pages (sendage, thetopo) do not mention the wall; no page about the crag itself was readable"
+ }
+}

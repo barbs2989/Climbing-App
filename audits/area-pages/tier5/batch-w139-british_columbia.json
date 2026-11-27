@@ -1,0 +1,31 @@
+{
+ "bc_hang_dog_hill": {
+  "_expect": { "name": "Hang Dog Hill", "region": "British Columbia" },
+  "blurb": "Hang Dog Hill is a small crag in the Southern Crags section of Skaha Bluffs, in the Okanagan. It holds eight short climbs, almost all of them bolted sport lines with a single trad route mixed in. Difficulty stays gentle, from 5.7 up to 5.10, with 5.9 being the most common grade, so it suits newer leaders and anyone setting up top-ropes. The routes are brief and easy-going rather than sustained. The crag sits just above the trail on the left, a short walk past the trailhead gate toward the Daycare area.",
+  "review": { "sources": ["https://www.mountainproject.com/area/111187087", "https://www.mountainproject.com/area/112451748/southern-crags"] }
+ },
+ "bc_the_change_room": {
+  "_expect": { "name": "The Change Room", "region": "British Columbia" },
+  "blurb": "The Change Room is a set of single-pitch crags perched above the Stained Walls at Harrison Bluffs in the Fraser Valley. All eight routes here are trad climbs, and they cover a wide spread: a couple at 5.8, one 5.9, three at 5.10, and two hard 5.12 lines. The walls face south, so they pick up plenty of sun. Reaching them takes a committed walk on ledges, fixed ropes and a flagged scrambling trail, so expect more effort than at the lower walls.",
+  "review": { "sources": ["https://www.mountainproject.com/area/107295745/the-change-room", "https://mountainproject.com/area/105994963/harrison-bluffs"] }
+ },
+ "bc_low_tide": {
+  "_expect": { "name": "Low Tide", "region": "British Columbia" },
+  "blurb": "Low Tide is a lakeside bouldering zone within the Beachside group near Arrow Lake in the West Kootenay. It has eight problems, ranging from V0 to a standout V9, with the middle of the range around V3. The lines are described as attractive and not too tall. Because Arrow Lake is a reservoir, the blocks go underwater at high water, around June and July, so the season is shorter than at nearby zones. The boulders are scattered, and you can reach them by working west along the beach from the main Beachside boulder.",
+  "review": { "sources": ["https://www.mountainproject.com/area/114548449/low-tide", "https://mountainproject.com/area/114548412/beachside"] }
+ },
+ "bc_ponderosa_2": {
+  "_expect": { "name": "Ponderosa", "region": "British Columbia" },
+  "blurb": "Ponderosa is a bouldering zone high above the shore of Arrow Lake in the West Kootenay, set among ponderosa pines. The original boulder found here offers face climbing and works well as a warm-up before heading uphill to the much bigger Fukushima Boulder. Eight problems are recorded, mostly easy to moderate, with several at V2 and a handful at V1 or below, plus one around V4. The walk in is the longest of any zone at Arrow Lake, climbing a steep trail.",
+  "review": { "sources": ["https://squamishclimbingmagazine.ca/topo-ponderosa-boulders-arrow-lakes-nelson-bc/", "https://www.mountainproject.com/area/109462099/arrow-lake"] }
+ },
+ "_skipped": {
+  "bc_sport_temple": "no page about the crag itself could be fetched (Mountain Project 404, theCrag 403); thetopo lists it with 0 routes and no description; the Chek page does not mention it",
+  "bc_wall_6": "no fetched page names Wall 6; the Paradise topo PDF is unreadable and the BCMC listing names only Walls 5 and 3",
+  "bc_the_prow": "no page found about a Prow boulder at Washout/Arrow Lake; the only Mountain Project Prow Boulder fetched is in California",
+  "bc_e_jughaul_wall": "only one fetched page names Jughaul Wall (Mountain Project); theCrag returned 403 and the Claim-It-All and Skaha parent pages do not mention it"
+ },
+ "_conflicts": {
+  "bc_ponderosa_2": "stored rock is granite, but https://www.mountainproject.com/area/109462099/arrow-lake describes Arrow Lake rock generally as compact gneiss; rock left unchanged and unnamed in the blurb"
+ }
+}

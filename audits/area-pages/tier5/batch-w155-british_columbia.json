@@ -1,0 +1,43 @@
+{
+ "bc_riley_park_boulder": {
+  "_expect": { "name": "Riley Park Boulder", "region": "British Columbia" },
+  "blurb": "An artificial boulder in a city park in Vancouver, set beside the baseball stadium just off Main Street. It was built mostly from textured concrete with a few plastic holds, and the seven problems can be varied by using or skipping certain holds. Grades run from easy up to roughly V5, with most of the problems in the lower-to-middle range. The ground underneath is soft dirt and mulch, so a pad is optional, though mulch tends to stick to shoe soles. The concrete dries fairly quickly after rain, although the big jugs can hold small puddles. A convenient spot for a short session or for newcomers to try bouldering.",
+  "review": { "sources": ["https://www.mountainproject.com/area/119428180/riley-park-boulder", "https://www.destinationvancouver.com/inspirations/outdoors/4-beginner-friendly-ways-to-try-rock-climbing-in-vancouver"] }
+ },
+ "bc_wakesiah_wall": {
+  "_expect": { "name": "Wakesiah Wall", "region": "British Columbia" },
+  "blurb": "A small wall on Mt. Benson above Nanaimo on Vancouver Island, with seven routes, mostly bolted and one traditional line. Grades sit in the 5.8 to 5.10 range, which suits climbers working through the moderate grades. Tall trees stand close to the rock and keep it heavily shaded. Many of the lines are two pitches, so a tagline helps for linking both pitches and rappelling from the top. The wall sits a short, mostly flat walk from the park lot, making it an easy add-on to a day on the mountain.",
+  "parking_note": "Leave the car in the Mt. Benson Regional Park lot off Benson View Road, which has toilets.",
+  "approach": "A short, mostly flat walk of about five minutes: cross the bridge near the trailhead, turn left, cross the mountain bike trail, and the wall is roughly a hundred metres beyond.",
+  "approach_min": 5,
+  "review": { "sources": ["https://www.mountainproject.com/area/124305057/wakesiah-wall", "https://sendage.com/area/wakesiah-wall-mt-benson-nanaimo-area-vancouver-island-bc-canada"] }
+ },
+ "bc_sumas_mountain_crag": {
+  "_expect": { "name": "Sumas Mountain Crag", "region": "British Columbia" },
+  "blurb": "A small roadside crag partway up Sumas Mountain, above Abbotsford in the Fraser Valley. Mostly bolted sport lines with a couple of trad routes and a short ice line, from easy 5.6-ish climbing up to the low 5.11s, so it is a friendly place to learn and for moderate grades. Forest cover keeps the wall shaded for much of the day, which helps in hot weather, but it is slow to dry after rain. Anchors are set back from the edge and walk-offs are quick. A single rack and a 60 m rope cover the area.",
+  "parking_note": "From the Dawson Road and Sumas Mountain Road junction, head north uphill past the quarry to a roadside pullout with a trail.",
+  "approach": "A short trail walk of about five minutes from the pullout leads to the wall.",
+  "approach_min": 5,
+  "review": { "sources": ["https://sendage.com/area/sumas-mountain-abbotsford-amp-mission-fraser-valley-bc-canada", "https://bcmc.ca/events/1467269170"] }
+ },
+ "bc_pigeon_spire": {
+  "_expect": { "name": "Pigeon Spire", "region": "British Columbia" },
+  "blurb": "A 3,156 m spire in the Bugaboos of southeastern British Columbia, sitting west of Snowpatch Spire between two glaciers. Climbing here is alpine and trad, with a few ice and mixed objectives, and difficulty ranges from a scrambling-level ridge to hard multi-pitch rock. The east face is the largest and most impressive side. Reaching the base means one to two hours of glacier travel, either over the col to the upper glacier or up the glacier to the south. The long ridge route is the most popular line and also serves as the usual way down. A small rack of nuts and cams is enough for it.",
+  "review": { "sources": ["https://www.mountainproject.com/v/105868078", "https://www.mountainproject.com/route/105869393/west-ridge"] }
+ },
+ "bc_cheddar_wall": {
+  "_expect": { "name": "Cheddar Wall", "region": "British Columbia" },
+  "blurb": "A short wall in the upper Slocan Lake Bluffs on the east side of Slocan Lake in the West Kootenay, with views over the water. Six moderate routes, four bolted and two trad, run from about 5.8 up to the low 5.10s, so it suits climbers building up through the 5.10 range. The walk from the lot is brief and passes the neighbouring wall first. A ramp between the two walls leads to the top, making it easy to set up top ropes. The routes were cleaned and had their anchors upgraded in 2022.",
+  "parking_note": "Drive north on Highway 6 past the Slocan turnoff; about 2 km on, a lakeside pullout on the left serves the trail.",
+  "approach": "Take the large trailhead at the north end of the pullout and bear left at the first turn. The trail goes past Blaze Wall, and Cheddar Wall is roughly three minutes further.",
+  "review": { "sources": ["https://www.mountainproject.com/area/121395655/cheddar-wall", "https://www.mountainproject.com/area/121389961/slocan-lake-bluffs-upper"] }
+ },
+ "_skipped": {
+  "bc_senior_centre": "only a single route page (Walker on the Wild Side) was fetched; no page about the crag itself",
+  "bc_pound_town": "no page found for this crag name across several searches",
+  "bc_roadside": "no page about this crag; Bealby Road pages fetched do not describe a Roadside sector"
+ },
+ "_conflicts": {
+  "bc_wakesiah_wall": "aspect: stored N and the Mountain Project page says north-facing, but the Sendage page says west-facing (https://www.mountainproject.com/area/124305057/wakesiah-wall vs https://sendage.com/area/wakesiah-wall-mt-benson-nanaimo-area-vancouver-island-bc-canada)"
+ }
+}

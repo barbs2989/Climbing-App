@@ -1,0 +1,35 @@
+{
+ "bc_shelf_road": {
+  "_expect": { "name": "Shelf Road", "region": "British Columbia" },
+  "blurb": "Shelf Road is a small sport crag in the Cal-Cheak cluster of cliffs, on a hillside above the Daisy Lake forest road roughly 45 km north of Squamish on the way to Whistler. It holds seven bolted routes on well-featured vertical faces. The grades run from an easy 5.7 up through the 5.9 and 5.10 range, with a single 5.11 and one 5.12 at the top end, so it suits a mixed group where most climbers want moderates. The cliff is reached by the main trail that serves the whole Cal-Cheak hill, so it pairs easily with neighbouring walls for a half day.",
+  "review": { "sources": ["https://www.mountainproject.com/area/108303824/shelf-road", "https://www.mountainproject.com/area/108303788/cal-cheak"] }
+ },
+ "bc_creekside": {
+  "_expect": { "name": "Creekside", "region": "British Columbia" },
+  "blurb": "Creekside is a single boulder on the slope above a creek, part of the Predator Ridge zone on the north side of Arrow Lake near Castlegar. Seven problems share the block, running from about V1 up to V5, which makes it a good stop for a session of moderate climbing on positive edges. The landing is described as good. It sits very close to the road, so it makes a handy warm-up or a short outing on its own before heading up to the larger boulders further along the ridge.",
+  "approach": "Walk back down Broadwater Road from the parking and climb the grassy hill and rock slabs to the boulder.",
+  "approach_min": 2,
+  "review": { "sources": ["https://www.mountainproject.com/area/114546762/creekside", "https://www.mountainproject.com/area/114546752/predator-ridge"] }
+ },
+ "bc_mount_rexford": {
+  "_expect": { "name": "Mount Rexford", "region": "British Columbia" },
+  "blurb": "Mount Rexford is a 2,300 m peak in the Western Chilliwack Range, just north of the US border and across the valley from Mount Slesse. It is a full alpine objective rather than a roadside crag, with a mix of trad lines on its ridges and pillars, a snow and ice option, and mountaineering routes. Trad grades start at moderate fifth class and reach the low 5.11 range, plus a WI2 couloir. The summit ridge is clean, fractured stone with excellent climbing. The approach follows a rough forest road and then a short, very steep trail to the upper mountain.",
+  "review": { "sources": ["https://www.mountainproject.com/area/111774888/mount-rexford", "https://en.wikipedia.org/wiki/Mount_Rexford"] }
+ },
+ "bc_ursus": {
+  "_expect": { "name": "Ursus", "region": "British Columbia" },
+  "blurb": "Ursus is a boulder in the Syringa group near Lower Arrow Lake, close to Castlegar in the West Kootenay. Seven problems cover a wide spread: three at V2, then a V3 and a V4, and two hard lines at V7 and V8. The block offers plenty of variety, quality rock and shade, which helps on warm days. It sits right off a gravel road, with its top visible from the road, so there is almost no walking, and it is easy to combine with the other Syringa boulders around the campground.",
+  "parking_note": "Pull off on the gravel road a couple of minutes' drive beyond the pullout used for the campground and Savannah boulder; the boulder's top can be seen from the roadside.",
+  "review": { "sources": ["https://www.mountainproject.com/area/114548991/ursus", "https://www.mountainproject.com/area/114548967/syringa"] }
+ },
+ "bc_berlin_wall": {
+  "_expect": { "name": "Berlin Wall", "region": "British Columbia" },
+  "blurb": "Berlin Wall is a small sport wall near Squamish, and the first one you meet on the hike down from Area 44 toward the Pillary. It carries seven bolted routes with a wide spread of difficulty: one very easy line, a handful in the 5.7 to 5.9 range, and a couple at 5.10 and 5.11 at the harder end. That mix makes it a reasonable pick for beginners working up, while stronger climbers can use it to warm up before heading on to the neighbouring crag.",
+  "review": { "sources": ["https://www.mountainproject.com/area/112389667/berlin-wall", "https://thetopo.com/crags/area-44/topos/berlin-wall"] }
+ },
+ "_skipped": {
+  "bc_pleasure_dome": "no fetched page about the crag itself; thetopo lists the sector with 0 routes and no topo, MP Cheakamus Canyon only lists it as a sub-area; other Pleasure Dome pages are different places; thecrag returned 403",
+  "bc_wizard_cow": "only a short section of the Predator Ridge page names it; no page about the crag itself",
+  "bc_rfw": "only the Beachside parent pages name it; no page about the RFW boulder itself (RFW Wall is a different trad crag)"
+ }
+}

@@ -1,0 +1,26 @@
+{
+ "bc_rock_of_ages": {
+  "_expect": { "name": "Rock of Ages", "region": "British Columbia" },
+  "blurb": "Rock of Ages is a small sport crag in Cheakamus Canyon near Squamish, reached from the Electric Avenue cliffs. It has seven bolted routes, all between 5.10 and 5.12, with a few at each step. The lines are shorter than the canyon's big walls and are described as good quality, on rock with unusually varied features. The face is shaded in the morning, and the crag looks out toward the Tantalus peaks. The walk in takes about ten minutes, so it makes an easy add-on to a day at Electric Avenue.",
+  "approach": "From the Electric Avenue crag, follow the trail that climbs through the power-line clearing and continue uphill to the base.",
+  "approach_min": 10,
+  "review": { "sources": ["https://sendage.com/area/rock-of-ages-cheakamus-canyon-squamish-bc-canada", "https://squamishclimbingmagazine.ca/new-topo-for-rock-of-ages-in-cheakamus-canyon-development-news/"] }
+ },
+ "bc_rabbit_wall": {
+  "_expect": { "name": "Rabbit Wall", "region": "British Columbia" },
+  "blurb": "Rabbit Wall is a sport crag in the Begbie Bluffs area near Revelstoke, and it ranks among the busier walls there. It has seven routes, mostly around 5.9 and 5.10 with a single 5.11, and the climbing favours technical movement over strenuous effort. From the parking area the walk takes at most about fifteen minutes: head uphill past Raptor Wall, then follow a short trail to the right. Rock quality across Begbie Bluffs is variable, so expect some differences from route to route.",
+  "review": { "sources": ["https://sendage.com/area/rabbit-wall-begbie-bluffs-revelstoke-bc-canada", "https://sendage.com/area/begbie-bluffs-revelstoke-bc-canada"] }
+ },
+ "bc_minor_threat_boulders": {
+  "_expect": { "name": "Minor Threat Boulders", "region": "British Columbia" },
+  "blurb": "Minor Threat Boulders is a newer bouldering area close to Deep Cove, within the Mt. Seymour Conservation Area, and it sits alongside Pennywise Boulders. It has seven problems, all at the V0 level, and most are moderate. That makes it a gentle warm-up stop on the way to Quarry Rock or the Cove Marina climbs. Moss has been noted growing in a few key spots, so check conditions before you commit to a session.",
+  "review": { "sources": ["https://sendage.com/area/minor-threat-boulders-vancouver-bc-canada", "https://bcmc.ca/events/1694291257"] }
+ },
+ "_skipped": {
+  "bc_cow_gate_crag": "no fetched page names Cow Gate Crag; two searches returned only Gilpin Crag and Grand Forks pages, neither of which mentions it",
+  "bc_castaway_rock": "no fetchable page about the crag itself (thecrag 403, no Mountain Project or Sendage crag page); only the parent Canoe Trail Crags page names it",
+  "bc_high_country_bluff": "only Adventure Collective route pages (excluded) and a Mountain Project list entry with no description; no two usable pages",
+  "bc_riverside_crag": "the only Riverside Crag page found is in Burnt River Canyon, Oregon, a different place; the Nelson listing has no description",
+  "bc_tooth_fairy_boulder": "only the Rose Valley parent page names it, with no detail; the standalone Tooth Fairy Boulder page found is a Colorado boulder, a different place"
+ }
+}

@@ -1,0 +1,45 @@
+{
+ "bc_crystal_rock": {
+  "_expect": { "name": "Crystal Rock", "region": "British Columbia" },
+  "blurb": "Crystal Rock is a small bouldering spot on the Sunshine Coast with eight problems. Most of them fall between V1 and V4, and there is one far harder line at V9. The stone is flaky and sharp, so expect it to be rough on skin, and the face looks south, which means sun for most of the day. That makes cooler weather a better bet than midsummer. Problems reach about six metres tall, so bring a crash pad and spotters.",
+  "review": { "sources": ["https://www.mountainproject.com/area/114308062/crystal-rock", "https://www.mountainproject.com/route/114308306/101s-crack"] }
+ },
+ "bc_northwood_bluffs": {
+  "_expect": { "name": "Northwood Bluffs", "region": "British Columbia" },
+  "blurb": "Northwood Bluffs is a crag on Mt. Benson above Nanaimo on Vancouver Island, holding eight climbs: six sport and two trad. The sport lines run from 5.8 up to several in the 5.10 range, while the two trad lines are moderate, at 5.7 and 5.8. Local climbers rate the stone as some of the best among the Nanaimo crags, though there is some loose rock, so belay carefully and wear a helmet. Routes are mostly shorter than 30 m, and the wall comes into view after roughly ten minutes uphill.",
+  "parking_note": "Reach it from the Nanaimo Parkway by taking Jinglepot Road, then Kilpatrick Road and Jameson Road to Northwood Road. Drive to the far end and leave the car beside the locked gate.",
+  "review": { "sources": ["https://sendage.com/area/northwood-bluffs-mt-benson-nanaimo-area-vancouver-island-bc-canada", "https://accvi.ca/events/mt-benson-climbing-and-cragging-with-option-to-hike-a5/"] }
+ },
+ "bc_lois_lake_bluffs": {
+  "_expect": { "name": "Lois Lake Bluffs", "region": "British Columbia" },
+  "blurb": "Lois Lake Bluffs is a trad-only area in the Powell River region of British Columbia, with eight climbs. The bluffs are tall and shaded, and the grades cluster around 5.9, with a couple at 5.10 and two harder lines at 5.11. It suits climbers comfortable placing their own gear on moderate cracks and walls who want shade rather than a sunny face.",
+  "review": { "sources": ["https://www.mountainproject.com/area/113588953/lois-lake-bluffs", "https://www.mountainproject.com/area/106189297/powell-river"] }
+ },
+ "bc_desoto_rock": {
+  "_expect": { "name": "Desoto Rock", "region": "British Columbia" },
+  "blurb": "Desoto Rock is a bolted crag near Halfmoon Bay on the Sunshine Coast of British Columbia, with eight sport routes. Five of them are in the 5.10 range, and the rest are spread across 5.7 to 5.9, so it suits climbers who are comfortable at that level more than complete beginners. The drive in follows forest roads, and the final approach is a short walk on an old trail with a sign and flagging marking the way up to the wall. A route here is around 26 m long.",
+  "review": { "sources": ["https://sendage.com/area/desoto-rock-sunshine-coast-bc-canada", "https://www.mountainproject.com/route/118854704/lockdown"] }
+ },
+ "bc_boxcar": {
+  "_expect": { "name": "Boxcar", "region": "British Columbia" },
+  "blurb": "Boxcar is a sector of boulders within Grohman Narrows near Nelson, British Columbia, with seven problems. The grades start at an easy V1, then mostly run from V3 to V7. The wider Grohman area is known for textured, fine-grained stone, with slopers, smeary feet and committing top-outs. Walking in from the highway pullout, the boulders are no more than about ten minutes along the trail, so crash pads are manageable here.",
+  "review": { "sources": ["https://thetopo.com/crags/grohman-narrows/topos/boxcar-6057", "https://www.mountainproject.com/area/109462111/grohman-narrows"] }
+ },
+ "bc_glacier": {
+  "_expect": { "name": "Glacier", "region": "British Columbia" },
+  "blurb": "Glacier is a boulder at Kokanee Lake in Kokanee Glacier Provincial Park near Nelson, hidden just beyond the Wonderland Boulder. It holds seven problems, mostly V1 to V3 with a single very hard V9. The rock is high quality and the boulders face northeast, which makes this a summer destination. Landings are talus, though the blocks have been built up to make most problems safer, so take care on the harder lines. The hike in is long, and the walk back out is too.",
+  "approach": "From the Gibson Lake trailhead, hike about an hour to Kokanee Lake, cross the creek, and follow the trail around the lake and through a meadow. Then head up the talus slope, following cairns, to the boulders. The whole trip is roughly 5 km from the car.",
+  "review": { "sources": ["https://www.mountainproject.com/area/114379537/kokanee-lake", "https://squamishclimbingmagazine.ca/topos-bouldering-guide-kokanee-lake-boulders-nelson-bc/"] }
+ },
+ "bc_the_well_of_souls": {
+  "_expect": { "name": "The Well of Souls", "region": "British Columbia" },
+  "blurb": "The Well of Souls is a small sport wall in the Chek area of Cheakamus Canyon, between Squamish and Whistler, with seven routes. Four are 5.9, one is 5.10, and two are 5.11, so it works for mid-grade climbers and a bit of projecting. All seven are bolted, and the wall sits beside a slot-like canyon, with some of the face climbing following an arete edge.",
+  "review": { "sources": ["https://www.thetopo.com/crags/cheakamus-canyon/routelist/the-well-of-souls", "https://www.mountainproject.com/route/114523713/the-asp"] }
+ },
+ "_skipped": {
+  "bc_prickly_pear_canyon_closed": "Listed as CLOSED and only one fetched page (Kamloops area list) describes it; could not fetch two pages that describe the place"
+ },
+ "_conflicts": {
+  "bc_lois_lake_bluffs": "Stored rock is diorite; the area page (https://www.mountainproject.com/area/113588953/lois-lake-bluffs) calls the bluffs granite. Only one page, so stored value left unchanged."
+ }
+}
