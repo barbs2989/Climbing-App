@@ -1,0 +1,1073 @@
+[
+ {
+  "id": "wa_mount_johnson_standard",
+  "name": "Standard Route",
+  "discipline": "scrambling",
+  "peak": "Mount Johnson",
+  "area_id": "wa_mount_johnson",
+  "path": "usa.washington.wa_olympics.wa_olympic_np.wa_north_central_olympics.wa_mount_johnson",
+  "trip_plan": {
+   "totalNote": "A 3-day trip: two roughly 8-mile approach days on maintained trail bracket one long, technical summit day (~2,700 ft gain, class 3-4 terrain) between the Johnson-Clark notch and the summit block.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Hike in to Upper Royal Basin camp",
+     "objective": "Establish high camp near Imperial Tarn in Upper Royal Basin",
+     "miles": 8,
+     "gainFt": 1800,
+     "note": "From the Upper Dungeness trailhead, hike the Royal Basin trail past Royal Lake and up into Upper Royal Basin, camping near Imperial Tarn at roughly 5,700 ft. This is a moderate, well-graded backpack with no exposure — most parties take it at a leisurely pace and arrive with time to scout tomorrow's route."
+    },
+    {
+     "n": 2,
+     "title": "Summit day: Johnson via the ledges and summit chimney",
+     "objective": "Climb Mount Johnson (7,680 ft) and return to camp",
+     "miles": 3.2,
+     "gainFt": 2700,
+     "note": "Leave camp before dawn, climb to the ~6,900 ft notch between Johnson and Clark, drop about 100 ft and climb Johnson's lower snowfield to its upper-left corner, then take the narrow, exposed ledge south onto the upper snowfield. A loose, low-angle gully and the foot of a low wall lead around behind Sweat Spire and Gasp …"
+    },
+    {
+     "n": 3,
+     "title": "Hike out",
+     "objective": "Return to the Upper Dungeness trailhead",
+     "miles": 8,
+     "gainFt": 0,
+     "note": "Break camp and retrace the Royal Basin trail back down past Royal Lake to the trailhead."
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Upper Royal Basin",
+    "elev_ft": 5600,
+    "type": "camp",
+    "role": "main",
+    "notes": "This is the climbers' camp, three quarters of a mile to a mile above the lake on an unmaintained way trail that gains around five hundred to a thousand feet. It puts you at the foot of the west wall of the basin, which is the east side of The Needles, and it is the difference between a reasonable day and a very long on…"
+   },
+   {
+    "name": "Royal Lake",
+    "elev_ft": 5100,
+    "type": "camp",
+    "role": "main",
+    "notes": "This is the front door to the whole Needles group and the default answer for anyone climbing Deception, Clark, Johnson, Walkinshaw, The Incisor or Sundial. It sits about seven miles and two and a half thousand feet from the Upper Dungeness trailhead, up the Dungeness and then the Royal Creek fork, which is walkable wit…"
+   }
+  ],
+  "campsite_pins": [
+   {
+    "name": "Royal Creek Camp",
+    "elev": 3500,
+    "distMi": 3
+   },
+   {
+    "name": "Royal Lake",
+    "elev": 5100,
+    "distMi": 7.2
+   }
+  ]
+ },
+ {
+  "id": "wa_mount_mystery_standard",
+  "name": "Standard Scramble (Deception Creek / Royal Basin)",
+  "discipline": "mountaineering",
+  "peak": "Mount Mystery",
+  "area_id": "wa_mount_mystery",
+  "path": "usa.washington.wa_olympics.wa_olympic_np.wa_north_central_olympics.wa_mount_mystery",
+  "trip_plan": {
+   "totalNote": "A 3-day trip: about 23 miles round trip with roughly 6,700 ft of cumulative gain, one night in and one night out of a high camp in Upper Royal Basin (5,800 ft); the summit day itself is an 8-9 hour round trip on class 3-4 terrain.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Approach to Upper Royal Basin",
+     "objective": "Reach high camp in Upper Royal Basin",
+     "miles": 8.5,
+     "gainFt": 3300,
+     "note": "From the Dungeness River / Royal Lake trailhead (~2,500 ft), follow the Royal Creek trail past Royal Lake and Lower Royal Basin up to a high camp in Upper Royal Basin (~5,800 ft). Trail hiking the whole way with a full overnight pack; real trip reports clock this leg at about 5.2 hours."
+    },
+    {
+     "n": 2,
+     "title": "Summit push via Mystery Glacier",
+     "objective": "Climb Mount Mystery and return to Upper Royal Basin camp",
+     "miles": 5.5,
+     "gainFt": 3600,
+     "note": "Leave camp light and early, climb a moraine and 40-degree snowfield (crampons) to Royal Pass (~6,500 ft), drop into Deception Basin, cross the low-angle Mystery Glacier to its col, then finish on class 3 (short class 4) rock, traversing left off the notch to avoid the worst loose blocks before topping out on the summit…"
+    },
+    {
+     "n": 3,
+     "title": "Hike out",
+     "objective": "Return to trailhead",
+     "miles": 8.5,
+     "gainFt": 0,
+     "note": "Pack up camp and descend the same trail back through Lower Royal Basin, Royal Lake, and Royal Creek to the trailhead."
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Upper Royal Basin",
+    "elev_ft": 5600,
+    "type": "camp",
+    "role": "main",
+    "notes": "This is the climbers' camp, three quarters of a mile to a mile above the lake on an unmaintained way trail that gains around five hundred to a thousand feet. It puts you at the foot of the west wall of the basin, which is the east side of The Needles, and it is the difference between a reasonable day and a very long on…"
+   },
+   {
+    "name": "Royal Lake",
+    "elev_ft": 5100,
+    "type": "camp",
+    "role": "main",
+    "notes": "This is the front door to the whole Needles group and the default answer for anyone climbing Deception, Clark, Johnson, Walkinshaw, The Incisor or Sundial. It sits about seven miles and two and a half thousand feet from the Upper Dungeness trailhead, up the Dungeness and then the Royal Creek fork, which is walkable wit…"
+   }
+  ],
+  "campsite_pins": [
+   {
+    "name": "Royal Creek Camp",
+    "elev": 3500,
+    "distMi": 4.3
+   },
+   {
+    "name": "Royal Lake",
+    "elev": 5100,
+    "distMi": 7.2
+   },
+   {
+    "name": "Upper Royal Basin",
+    "elev": 5600,
+    "distMi": null
+   }
+  ]
+ },
+ {
+  "id": "wa_mount_steel_first_divide",
+  "name": "First Divide Route (North Fork Skokomish / Staircase approach)",
+  "discipline": "mountaineering",
+  "peak": "Mount Steel",
+  "area_id": "wa_mount_steel",
+  "path": "usa.washington.wa_olympics.wa_olympic_np.wa_north_central_olympics.wa_mount_steel",
+  "trip_plan": {
+   "totalNote": "Three days up the North Fork Skokomish: hike to Nine Stream, climb to the First Divide area and up Steel's face and back, then walk out to Staircase.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Staircase to Nine Stream",
+     "objective": "Walk the North Fork Skokomish to the last low camp",
+     "miles": 9.7,
+     "gainFt": null,
+     "note": "Mostly gentle old-growth valley walking past Camp Pleasant (6.8 mi) to Nine Stream at about 9.7 mi, where the trail starts to climb in earnest."
+    },
+    {
+     "n": 2,
+     "title": "Climb Mount Steel from Nine Stream",
+     "objective": "Summit Mount Steel and return to camp",
+     "miles": 8,
+     "gainFt": 4190,
+     "note": "Climb steeply toward First Divide; just before the trail swings east to the divide, leave it on a brushy but defined path into the basin under Steel (Camp Lookabout). Go up the face on a decent game trail, with water about a third of the way up, to a steep but straightforward top."
+    },
+    {
+     "n": 3,
+     "title": "Walk out to Staircase",
+     "objective": "Return to the trailhead",
+     "miles": 9.7,
+     "gainFt": 0,
+     "note": "Reverse the valley trail from Nine Stream."
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Home Sweet Home — the meadow camp under First Divide for Steel and Hopper",
+    "elev_ft": 4288,
+    "type": "camp",
+    "role": "main",
+    "notes": "THE base camp for the First Divide peaks, sitting in big open meadow about half a mile beyond the divide and roughly 400 ft below it, some 13 to 13.5 miles and 3,800 ft from Staircase. Mount Steel stands about a mile west-northwest of the divide and Mount Hopper about a mile east, so from here both are scrambles rather…"
+   },
+   {
+    "name": "Camp Pleasant — mid-valley staging on the North Fork Skokomish",
+    "elev_ft": 1550,
+    "type": "camp",
+    "role": "route",
+    "notes": "About 6.2 to 6.7 miles up the valley at low elevation, this is the standard first night for a First Divide trip and the obvious place to stop if you started driving late. It serves none of the Sawtooth peaks directly — the Flapjack junction is well behind you by here — but it breaks the long walk to Steel, Hopper and t…"
+   },
+   {
+    "name": "Nine Stream — last low camp before the First Divide climb",
+    "elev_ft": 2040,
+    "type": "camp",
+    "role": "route",
+    "notes": "At roughly 9.6 miles and just over 2,000 ft, this is where the valley trail stops being flat. Everything above it climbs hard to First Divide at about 4,690 ft. Its specific value is Mount Hopper: the Hopper way trail leaves the main trail around the 12.4 mile mark, and a party camped at Nine Stream can reach it and be…"
+   }
+  ],
+  "campsite_pins": [
+   {
+    "name": "Camp Pleasant — mid-valley staging on the North Fork Skokomish",
+    "elev": 1550,
+    "distMi": null
+   },
+   {
+    "name": "Nine Stream — last low camp before the First Divide climb",
+    "elev": 2040,
+    "distMi": null
+   }
+  ]
+ },
+ {
+  "id": "wa_mount_steel_standard",
+  "name": "Standard Scramble (Marmot Lake / Duckabush approach)",
+  "discipline": "mountaineering",
+  "peak": "Mount Steel",
+  "area_id": "wa_mount_steel",
+  "path": "usa.washington.wa_olympics.wa_olympic_np.wa_north_central_olympics.wa_mount_steel",
+  "trip_plan": {
+   "totalNote": "A remote ~50-mile, 5-day round trip: two long days backpacking up the Duckabush to Marmot Lake camp, a class 2-3 scramble day to Steel's 6,225-ft summit, and two days back out — not a car-to-car outing.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Hike in to Ten Mile Camp",
+     "objective": "Reach a mid-route camp on the Duckabush River Trail",
+     "miles": 10,
+     "gainFt": 2000,
+     "note": "From the Duckabush trailhead (~300 ft), the trail climbs gently through old-growth forest along the Duckabush River. Most parties break the 21-mile approach into two days, camping around the Ten Mile Camp area the first night."
+    },
+    {
+     "n": 2,
+     "title": "Push to Marmot Lake base camp",
+     "objective": "Establish camp at Marmot Lake (4,400 ft)",
+     "miles": 11.3,
+     "gainFt": 2600,
+     "note": "Continue upriver, passing the Duckabush/Marmot Lake junction about 3 miles below the lake. The final 3 miles are the steepest of the whole approach, gaining roughly 1,500 ft to Marmot Lake, the standard base camp for climbing Steel."
+    },
+    {
+     "n": 3,
+     "title": "Summit day: Mount Steel",
+     "objective": "Climb Mount Steel (6,225 ft) from Marmot Lake camp",
+     "miles": 4.5,
+     "gainFt": 1500,
+     "note": "Leave the trail near camp and climb open talus/heather slopes onto Steel's south/west flank — an unroped class 2-3 scramble in summer, though snow lingers into July and cornices can guard the summit ridge into late June. Round trip from camp is a half-day to full day depending on conditions."
+    },
+    {
+     "n": 4,
+     "title": "Hike out to Ten Mile Camp",
+     "objective": "Descend the Duckabush Trail toward the trailhead",
+     "miles": 11.3,
+     "gainFt": 100,
+     "note": "Retrace the approach, dropping off the steep upper section and continuing down-valley to a camp near the Ten Mile area."
+    },
+    {
+     "n": 5,
+     "title": "Hike out to trailhead",
+     "objective": "Return to the Duckabush trailhead",
+     "miles": 10,
+     "gainFt": 0,
+     "note": "Finish the descent through old-growth forest back to the car."
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Marmot Lake — the Duckabush-side high camp for Steel and Duckabush",
+    "elev_ft": 4400,
+    "type": "camp",
+    "role": "main",
+    "notes": "The eastern base for this group of peaks, about 20 miles up the Duckabush River trail from Brinnon and roughly 1.1 miles and 1,700 ft above the Upper Duckabush camp, in a saddle a little over a mile from O'Neil Pass. Mount Steel and Mount Duckabush both stand directly above it, and Steel's less-travelled route from thi…"
+   },
+   {
+    "name": "Upper Duckabush junction camp — the link between First Divide and the Duckabush head",
+    "elev_ft": 2694,
+    "type": "camp",
+    "role": "route",
+    "notes": "This is a connector rather than a destination, and it matters because of where it sits: the point where the trail down from First Divide and Home Sweet Home meets the Duckabush River trail coming up from the east and the O'Neil Pass trail heading west. If you are going for Mount Duckabush from Staircase, you come over …"
+   }
+  ],
+  "campsite_pins": [
+   {
+    "name": "Ten-Mile Camp",
+    "elev": 1400,
+    "distMi": 10.7
+   },
+   {
+    "name": "Upper Duckabush Camp",
+    "elev": 2673,
+    "distMi": 18.1
+   },
+   {
+    "name": "Marmot Lake",
+    "elev": 4400,
+    "distMi": 21.3
+   }
+  ]
+ },
+ {
+  "id": "wa_mount_walkinshaw_scramble",
+  "name": "The Needles Scramble",
+  "discipline": "scrambling",
+  "peak": "Mount Walkinshaw",
+  "area_id": "wa_mount_walkinshaw",
+  "path": "usa.washington.wa_olympics.wa_olympic_np.wa_north_central_olympics.wa_mount_walkinshaw",
+  "trip_plan": {
+   "totalNote": "A 3-day, 2-night trip: about 19-20 miles and roughly 5,500 ft of total gain round trip, with the middle day given entirely to the exposed, blade-like Needles ridge scramble to Walkinshaw's summit.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Backpack to Royal Lake",
+     "objective": "Establish camp below The Needles",
+     "miles": 7.2,
+     "gainFt": 2550,
+     "note": "From the Upper Dungeness trailhead, follow the Royal Basin Trail up through old-growth forest along Royal Creek to camp in the designated sites at Royal Lake (5,100 ft), below The Needles. Camping is not permitted in Upper Royal Basin, so the summit day starts from the lake."
+    },
+    {
+     "n": 2,
+     "title": "Summit day: The Needles ridge to Walkinshaw",
+     "objective": "Climb Mount Walkinshaw (7,378 ft) and return to camp",
+     "miles": 5.1,
+     "gainFt": 2950,
+     "note": "Leave camp with a light pack and climb cross-country onto the ridge crest north/northeast of the peak, then follow the crest south, scrambling airily along a narrow, blade-like section of rock to reach the summit. Parties describe this as sustained Class 3 with real exposure; some parties place a hand line or short rap…"
+    },
+    {
+     "n": 3,
+     "title": "Hike out",
+     "objective": "Return to the Upper Dungeness trailhead",
+     "miles": 7.2,
+     "gainFt": 0,
+     "note": "Break camp and descend the Royal Basin Trail from Royal Lake to the trailhead, losing the elevation gained on day one."
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Upper Royal Basin",
+    "elev_ft": 5600,
+    "type": "camp",
+    "role": "main",
+    "notes": "This is the climbers' camp, three quarters of a mile to a mile above the lake on an unmaintained way trail that gains around five hundred to a thousand feet. It puts you at the foot of the west wall of the basin, which is the east side of The Needles, and it is the difference between a reasonable day and a very long on…"
+   },
+   {
+    "name": "Royal Lake",
+    "elev_ft": 5100,
+    "type": "camp",
+    "role": "main",
+    "notes": "This is the front door to the whole Needles group and the default answer for anyone climbing Deception, Clark, Johnson, Walkinshaw, The Incisor or Sundial. It sits about seven miles and two and a half thousand feet from the Upper Dungeness trailhead, up the Dungeness and then the Royal Creek fork, which is walkable wit…"
+   }
+  ],
+  "campsite_pins": [
+   {
+    "name": "Royal Lake designated camp",
+    "elev": 5100,
+    "distMi": 7.2
+   },
+   {
+    "name": "Upper Royal Basin",
+    "elev": 5700,
+    "distMi": 8
+   }
+  ]
+ },
+ {
+  "id": "wa_sundial_northeast",
+  "name": "East Slopes (Standard)",
+  "discipline": "scrambling",
+  "peak": "Sundial",
+  "area_id": "wa_sundial",
+  "path": "usa.washington.wa_olympics.wa_olympic_np.wa_north_central_olympics.wa_sundial",
+  "trip_plan": {
+   "totalNote": "A 3-day, ~19.6-mile round trip: two backpacking days (Upper Dungeness TH to Royal Lake, ~2,550 ft each way) bracket a single scramble day up Sundial's Class 3 East Face (~2,100 ft round trip from camp).",
+   "days": [
+    {
+     "n": 1,
+     "title": "Backpack in to Royal Lake",
+     "objective": "Reach high camp below Sundial",
+     "miles": 7.2,
+     "gainFt": 2550,
+     "note": "Backpack the Royal Basin Trail from the Upper Dungeness Trailhead through old-growth forest, passing Royal Creek Camp, to camp in the designated sites at Royal Lake (about 5,100 ft) below Sundial and the rest of the Needles."
+    },
+    {
+     "n": 2,
+     "title": "Climb Sundial's East Face",
+     "objective": "Summit Sundial (7,209 ft) and return to camp",
+     "miles": 5.2,
+     "gainFt": 2100,
+     "note": "Scramble cross-country up talus and scree to the base of the East Face, then climb sustained, exposed Class 3 rock (loose in spots near the top) to the summit for views over Royal Basin, Mount Clark and Mount Deception. Retrace the same line back down to camp."
+    },
+    {
+     "n": 3,
+     "title": "Hike out",
+     "objective": "Return to trailhead",
+     "miles": 7.2,
+     "gainFt": 0,
+     "note": "Break camp and hike the 7.2 miles back to the Upper Dungeness Trailhead, descending about 2,550 ft through the river valley."
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Upper Royal Basin",
+    "elev_ft": 5600,
+    "type": "camp",
+    "role": "main",
+    "notes": "This is the climbers' camp, three quarters of a mile to a mile above the lake on an unmaintained way trail that gains around five hundred to a thousand feet. It puts you at the foot of the west wall of the basin, which is the east side of The Needles, and it is the difference between a reasonable day and a very long on…"
+   },
+   {
+    "name": "Royal Lake",
+    "elev_ft": 5100,
+    "type": "camp",
+    "role": "main",
+    "notes": "This is the front door to the whole Needles group and the default answer for anyone climbing Deception, Clark, Johnson, Walkinshaw, The Incisor or Sundial. It sits about seven miles and two and a half thousand feet from the Upper Dungeness trailhead, up the Dungeness and then the Royal Creek fork, which is walkable wit…"
+   }
+  ],
+  "campsite_pins": [
+   {
+    "name": "Royal Lake",
+    "elev": 5107,
+    "distMi": 7.2
+   },
+   {
+    "name": "Upper Royal Basin",
+    "elev": 5600,
+    "distMi": null
+   }
+  ]
+ },
+ {
+  "id": "wa_the_horn_scramble",
+  "name": "Sawtooth Range Scramble",
+  "discipline": "alpine",
+  "peak": "The Horn",
+  "area_id": "wa_the_horn",
+  "path": "usa.washington.wa_olympics.wa_olympic_np.wa_north_central_olympics.wa_the_horn",
+  "trip_plan": {
+   "totalNote": "A 3-day trip: backpack in to Flapjack Lakes, spend a full day climbing The Horn's 5.5 notch route and back to camp, then hike out — roughly 17.5 miles and 4,750 ft round trip.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Approach to Flapjack Lakes camp",
+     "objective": "Establish base camp at Flapjack Lakes",
+     "miles": 7,
+     "gainFt": 3050,
+     "note": "From the Staircase Ranger Station, follow the North Fork Skokomish River trail 3.4 miles to the Spike Camp junction, then climb more steeply for another 3.6 miles to Flapjack Lakes (3,850 ft), a permit-required camp basin ringed by the Sawtooth spires. Set up camp and scout the route toward Sawtooth Pass for the next d…"
+    },
+    {
+     "n": 2,
+     "title": "Climb The Horn",
+     "objective": "Summit The Horn via the notch south face (5.5) and return to camp",
+     "miles": 3.5,
+     "gainFt": 1700,
+     "note": "Hike east from camp toward Gladys Divide, leaving the trail at about 4,400 ft to cross an open snow/rock slope southeast to Sawtooth Pass. Scramble right beneath the west face of The Fin to the notch south of The Horn, then climb the Southeast or Southwest Route (5.5, a single pitch of steep pillow basalt) to the summi…"
+    },
+    {
+     "n": 3,
+     "title": "Hike out",
+     "objective": "Return to the Staircase trailhead",
+     "miles": 7,
+     "gainFt": 0,
+     "note": "Break camp and retrace the North Fork Skokomish River trail back through the Spike Camp junction to the trailhead. Mostly downhill and faster than the approach."
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Flapjack Lakes — the base camp for the whole Sawtooth Ridge",
+    "elev_ft": 3900,
+    "type": "camp",
+    "role": "main",
+    "notes": "This is the single most important site in the zone and everything on Sawtooth Ridge runs off it. It is about 7.5 miles and 3,100 ft from the Staircase trailhead, up the North Fork Skokomish valley to the junction near Spike Camp at roughly 3.4 miles, then right and steeply up beside Madeline Creek. Most parties take fi…"
+   },
+   {
+    "name": "Black and White Lakes — the fallback when Flapjack is booked out",
+    "elev_ft": 4500,
+    "type": "camp",
+    "role": "main",
+    "notes": "Reached by branching left across Donahue Creek about half a mile below Flapjack Lakes and climbing further, which puts it around 4,500 ft and some 3,800 ft above the trailhead. It is a fine camp with a big outlook and it is the practical answer when the Flapjack quota is gone, but be clear about what it costs you: it i…"
+   }
+  ],
+  "campsite_pins": [
+   {
+    "name": "Spike Camp junction",
+    "elev": 1473,
+    "distMi": 3.4
+   },
+   {
+    "name": "Flapjack Lakes",
+    "elev": 3900,
+    "distMi": 7
+   }
+  ]
+ },
+ {
+  "id": "wa_mount_cruiser_nw_face_corner",
+  "name": "Northwest Face/Corner",
+  "discipline": "alpine",
+  "peak": "Mount Cruiser",
+  "area_id": "wa_mount_cruiser",
+  "path": "usa.washington.wa_olympics.wa_olympic_np.wa_southern_olympics.wa_mount_cruiser",
+  "trip_plan": {
+   "totalNote": "A 3-day trip is the sensible plan for this harder (5.7) line: hike in, relocate to a short high camp near Needle Pass to shorten the summit push, then climb the face and hike all the way out on day 3 — roughly 5,250 ft gain and 18-20 miles round trip.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Hike in to Flapjack Lakes",
+     "objective": "Reach Flapjack Lakes camp",
+     "miles": 8,
+     "gainFt": 3000,
+     "note": "Same approach as the South Corner: North Fork Skokomish River Trail (3.8 mi) then Flapjack Lakes Trail (4.1 mi) to camp at East Flapjack Lake (~3,850-3,900 ft)."
+    },
+    {
+     "n": 2,
+     "title": "Move to high camp and scope the route",
+     "objective": "Relocate to the Gladys Divide/Needle Pass primitive camp",
+     "miles": 1.5,
+     "gainFt": 700,
+     "note": "A short, easy carry up to the primitive camp near Gladys Divide/Needle Pass. Leaves the afternoon free to rack up, scope the Northwest Face line, and shortens the following day's summit push considerably."
+    },
+    {
+     "n": 3,
+     "title": "Climb the Northwest Face/Corner and hike all the way out",
+     "objective": "Summit via the Northwest Face/Corner, then descend and hike out",
+     "miles": 10.5,
+     "gainFt": 1550,
+     "note": "From high camp, scramble the ridge and climb the short 5.7 Northwest Face/Corner pitch to the summit block, then make the short exposed Class 3 scramble to the true summit. Descend via the standard South Corner bolted double-anchor rappel, break camp on the way down, and hike all the way back to the trailhead."
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Flapjack Lakes — the base camp for the whole Sawtooth Ridge",
+    "elev_ft": 3900,
+    "type": "camp",
+    "role": "main",
+    "notes": "This is the single most important site in the zone and everything on Sawtooth Ridge runs off it. It is about 7.5 miles and 3,100 ft from the Staircase trailhead, up the North Fork Skokomish valley to the junction near Spike Camp at roughly 3.4 miles, then right and steeply up beside Madeline Creek. Most parties take fi…"
+   },
+   {
+    "name": "Black and White Lakes — the fallback when Flapjack is booked out",
+    "elev_ft": 4500,
+    "type": "camp",
+    "role": "main",
+    "notes": "Reached by branching left across Donahue Creek about half a mile below Flapjack Lakes and climbing further, which puts it around 4,500 ft and some 3,800 ft above the trailhead. It is a fine camp with a big outlook and it is the practical answer when the Flapjack quota is gone, but be clear about what it costs you: it i…"
+   }
+  ],
+  "campsite_pins": [
+   {
+    "name": "Flapjack Lakes — the base camp for the whole Sawtooth Ridge",
+    "elev": 3900,
+    "distMi": null
+   }
+  ]
+ },
+ {
+  "id": "wa_mount_cruiser_south_corner",
+  "name": "South Corner",
+  "discipline": "alpine",
+  "peak": "Mount Cruiser",
+  "area_id": "wa_mount_cruiser",
+  "path": "usa.washington.wa_olympics.wa_olympic_np.wa_southern_olympics.wa_mount_cruiser",
+  "trip_plan": {
+   "totalNote": "A 2-day trip for most parties: an easy hike-in day to Flapjack Lakes, then one long (12-14 hr) alpine-start day that climbs the South Corner and hikes all the way back to the trailhead — 5,250 ft gain and about 17-18 miles round trip.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Hike in to Flapjack Lakes",
+     "objective": "Reach Flapjack Lakes camp",
+     "miles": 8,
+     "gainFt": 3000,
+     "note": "Hike the North Fork Skokomish River Trail (3.8 mi) then the Flapjack Lakes Trail (4.1 mi) up through old-growth forest to camp at East Flapjack Lake (~3,850-3,900 ft). Well-graded trail, moderate grind with an overnight/rock rack pack."
+    },
+    {
+     "n": 2,
+     "title": "Summit push and hike all the way out",
+     "objective": "Climb the South Corner, then break camp and hike out",
+     "miles": 10,
+     "gainFt": 2250,
+     "note": "An alpine start toward Gladys Divide, up the couloir to Needle Pass, then the two-pitch 5.0-5.3 South Corner to the summit. Rappel back to the platform, descend to camp, break camp, and hike all 8 miles back out to the trailhead the same day — a long but standard single push."
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Flapjack Lakes — the base camp for the whole Sawtooth Ridge",
+    "elev_ft": 3900,
+    "type": "camp",
+    "role": "main",
+    "notes": "This is the single most important site in the zone and everything on Sawtooth Ridge runs off it. It is about 7.5 miles and 3,100 ft from the Staircase trailhead, up the North Fork Skokomish valley to the junction near Spike Camp at roughly 3.4 miles, then right and steeply up beside Madeline Creek. Most parties take fi…"
+   },
+   {
+    "name": "Black and White Lakes — the fallback when Flapjack is booked out",
+    "elev_ft": 4500,
+    "type": "camp",
+    "role": "route",
+    "notes": "Reached by branching left across Donahue Creek about half a mile below Flapjack Lakes and climbing further, which puts it around 4,500 ft and some 3,800 ft above the trailhead. It is a fine camp with a big outlook and it is the practical answer when the Flapjack quota is gone, but be clear about what it costs you: it i…"
+   }
+  ],
+  "campsite_pins": [
+   {
+    "name": "Flapjack Lakes — the base camp for the whole Sawtooth Ridge",
+    "elev": 3900,
+    "distMi": 7.2
+   }
+  ]
+ },
+ {
+  "id": "wa_mount_duckabush_standard",
+  "name": "Standard Scramble (Marmot Lake / O'Neil Pass approach)",
+  "discipline": "scrambling",
+  "peak": "Mount Duckabush",
+  "area_id": "wa_mount_duckabush",
+  "path": "usa.washington.wa_olympics.wa_olympic_np.wa_southern_olympics.wa_mount_duckabush",
+  "trip_plan": {
+   "totalNote": "A 4-day, 3-night trip: roughly 43 miles and ~7,900 ft of cumulative gain round-trip, with one full day (Day 3) dedicated to the class 2-3 off-trail summit push from a high camp near O'Neil Pass/Marmot Lake.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Trailhead to Ten Mile Camp",
+     "objective": "Hike in via the Duckabush River Trail to Ten Mile Camp",
+     "miles": 11,
+     "gainFt": 2500,
+     "note": "From the Duckabush trailhead the trail is easy for the first ~2.4 mi, then climbs steeply and loosely over Big Hump before dropping back to the river. Camp at Ten Mile Camp (1,400 ft) beside the Duckabush River; there's a privy and multiple tent sites."
+    },
+    {
+     "n": 2,
+     "title": "Ten Mile Camp to O'Neil Pass / Marmot Lake high camp",
+     "objective": "Continue up-valley to a high camp near O'Neil Pass or Marmot Lake, below Mount Duckabush",
+     "miles": 8,
+     "gainFt": 3200,
+     "note": "The trail continues along the river with overgrown, root-and-blowdown sections, then climbs in earnest toward the park's alpine zone. The final mile up to Marmot Lake / the O'Neil Pass junction is steep and exposed underfoot. Camp near O'Neil Pass (~4,950 ft) or at Marmot Lake, both of which put Mount Duckabush's south…"
+    },
+    {
+     "n": 3,
+     "title": "Summit day: Mount Duckabush",
+     "objective": "Climb Mount Duckabush from high camp and return to camp",
+     "miles": 5,
+     "gainFt": 1800,
+     "note": "Drop packs at camp and head cross-country toward the peak's south side and South Ridge, mixing heather benches, talus, and short class 2-3 scrambling to the summit (6,254 ft). Route-finding is the crux more than technical difficulty; parties typically pick a line up broken rock and heather rather than a single defined …"
+    },
+    {
+     "n": 4,
+     "title": "Hike out",
+     "objective": "Return to the Duckabush trailhead",
+     "miles": 19,
+     "gainFt": 600,
+     "note": "A long, mostly-downhill day retracing the full approach — over Big Hump one more time and back to the trailhead. Many parties start before dawn to beat the heat and finish with daylight to spare."
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Marmot Lake — the Duckabush-side high camp for Steel and Duckabush",
+    "elev_ft": 4400,
+    "type": "camp",
+    "role": "main",
+    "notes": "The eastern base for this group of peaks, about 20 miles up the Duckabush River trail from Brinnon and a steep climb of about 1,700 ft above the Upper Duckabush camp, in a saddle a little over a mile from O'Neil Pass. Mount Steel and Mount Duckabush both stand directly above it, and Steel's less-travelled route from th…"
+   }
+  ],
+  "campsite_pins": [
+   {
+    "name": "10-Mile Camp",
+    "elev": 1471,
+    "distMi": 10.8
+   },
+   {
+    "name": "Upper Duckabush Camp",
+    "elev": 2673,
+    "distMi": 16.3
+   },
+   {
+    "name": "Marmot Lake",
+    "elev": 4400,
+    "distMi": 19.8
+   }
+  ]
+ },
+ {
+  "id": "wa_mount_hopper_standard",
+  "name": "Standard Scramble",
+  "discipline": "mountaineering",
+  "peak": "Mount Hopper",
+  "area_id": "wa_mount_hopper",
+  "path": "usa.washington.wa_olympics.wa_olympic_np.wa_southern_olympics.wa_mount_hopper",
+  "trip_plan": {
+   "totalNote": "A 4-day backpack: ~28.4 mi round trip and ~5,300 ft of net gain to the 6,120 ft summit, most of it easy river-valley trail plus one genuinely steep, route-finding summit day on an unmaintained 'way trail'.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Approach up the North Fork Skokomish",
+     "objective": "Reach Nine Stream Camp",
+     "miles": 9.8,
+     "gainFt": 1200,
+     "note": "From the Staircase Ranger Station (~850 ft) the North Fork Skokomish River Trail climbs gently and steadily through old-growth forest, with several creek crossings, to Nine Stream Camp. This is the easy, graded part of the trip — save energy for the steep push later."
+    },
+    {
+     "n": 2,
+     "title": "Push to high camp below Mount Hopper",
+     "objective": "Reach a high camp at Two Bear Camp",
+     "miles": 2.4,
+     "gainFt": 1650,
+     "note": "A short, steeper day up the valley to a high camp at Two Bear Camp (~3,600 ft), a little over a mile below First Divide. Arriving early leaves time to scout the start of tomorrow's climbers' path before dark."
+    },
+    {
+     "n": 3,
+     "title": "Summit day",
+     "objective": "Climb Mount Hopper via the Mount Hopper Way Trail and return to high camp",
+     "miles": 4,
+     "gainFt": 2440,
+     "note": "Climb the main trail to just below First Divide, where the old Mount Hopper Way leaves it; from there it is an unmaintained, brushy, route-finding climb, about 2,400+ ft from camp to the summit in all — steep forest giving way to open slopes near the top. Trip reports flag genuine route-finding difficulty, so budget ex…"
+    },
+    {
+     "n": 4,
+     "title": "Hike out",
+     "objective": "Return to the Staircase trailhead",
+     "miles": 12.2,
+     "gainFt": 0,
+     "note": "A long but mostly gentle, downhill-trending day back down the North Fork Skokomish trail to the car."
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Home Sweet Home — the meadow camp under First Divide for Steel and Hopper",
+    "elev_ft": 4288,
+    "type": "camp",
+    "role": "main",
+    "notes": "THE base camp for the First Divide peaks, sitting in big open meadow about half a mile beyond the divide and roughly 400 ft below it, some 13 to 13.5 miles and 3,800 ft from Staircase. Mount Steel stands about a mile west-northwest of the divide and Mount Hopper about a mile east, so from here both are scrambles rather…"
+   },
+   {
+    "name": "Upper Duckabush junction camp — the link between First Divide and the Duckabush head",
+    "elev_ft": 2694,
+    "type": "camp",
+    "role": "route",
+    "notes": "This is a connector rather than a destination, and it matters because of where it sits: the point where the trail down from First Divide and Home Sweet Home meets the Duckabush River trail coming up from the east and the O'Neil Pass trail heading west. If you are going for Mount Duckabush from Staircase, you come over …"
+   }
+  ],
+  "campsite_pins": [
+   {
+    "name": "Camp Pleasant",
+    "elev": 1550,
+    "distMi": 6.9
+   },
+   {
+    "name": "Nine Stream Camp",
+    "elev": 2040,
+    "distMi": 9.3
+   }
+  ]
+ },
+ {
+  "id": "wa_mount_lincoln_standard",
+  "name": "North Ridge from Flapjack Lakes",
+  "discipline": "scrambling",
+  "peak": "Mount Lincoln",
+  "area_id": "wa_mount_lincoln",
+  "path": "usa.washington.wa_olympics.wa_olympic_np.wa_southern_olympics.wa_mount_lincoln",
+  "trip_plan": {
+   "totalNote": "A 2-day trip: hike in and camp at Flapjack Lakes on day one (~7.7 mi, ~3,050 ft), then a long summit day (~11 mi, ~2,200 ft up / ~5,250 ft down) that finishes by hiking all the way out — route-finding above camp, not distance, is the real crux.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Approach to Flapjack Lakes camp",
+     "objective": "Hike in and establish camp at Flapjack Lakes",
+     "miles": 7.7,
+     "gainFt": 3050,
+     "note": "From the Staircase Ranger Station, follow the North Fork Skokomish River trail through old-growth forest and switchbacks up to the established camp at Flapjack Lakes (bear wire and toilet on site). This is a well-maintained, moderate-grade trail with no route-finding difficulty."
+    },
+    {
+     "n": 2,
+     "title": "Summit push, then hike all the way out",
+     "objective": "Climb Mount Lincoln via the Class 3 north ridge/couloir above Flapjack Lakes, then hike out to the trailhead",
+     "miles": 10.9,
+     "gainFt": 2200,
+     "note": "An alpine start with a light pack gets you up the steep climbers' path onto Sawtooth Ridge and into the Class 3 terrain below Lincoln's summit block, where route-finding — not the climbing itself — is the real crux; parties have gotten cliffed out and burned hours here even in good conditions. After tagging the summit,…"
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Flapjack Lakes — the base camp for the whole Sawtooth Ridge",
+    "elev_ft": 3900,
+    "type": "camp",
+    "role": "main",
+    "notes": "This is the single most important site in the zone and everything on Sawtooth Ridge runs off it. It is about 7.5 miles and 3,100 ft from the Staircase trailhead, up the North Fork Skokomish valley to the junction near Spike Camp at roughly 3.4 miles, then right and steeply up beside Madeline Creek. Most parties take fi…"
+   },
+   {
+    "name": "Black and White Lakes — the fallback when Flapjack is booked out",
+    "elev_ft": 4500,
+    "type": "camp",
+    "role": "main",
+    "notes": "Reached by branching left across Donahue Creek about half a mile below Flapjack Lakes and climbing further, which puts it around 4,500 ft and some 3,800 ft above the trailhead. It is a fine camp with a big outlook and it is the practical answer when the Flapjack quota is gone, but be clear about what it costs you: it i…"
+   }
+  ],
+  "campsite_pins": [
+   {
+    "name": "Spike Camp",
+    "elev": 1473,
+    "distMi": 3.4
+   },
+   {
+    "name": "Flapjack Lakes basin",
+    "elev": 3858,
+    "distMi": 7
+   }
+  ]
+ },
+ {
+  "id": "wa_mount_skokomish_standard",
+  "name": "Standard Scramble (Putvin Trail / Lake of the Angels approach)",
+  "discipline": "scrambling",
+  "peak": "Mount Skokomish",
+  "area_id": "wa_mount_skokomish",
+  "path": "usa.washington.wa_olympics.wa_olympic_np.wa_southern_olympics.wa_mount_skokomish",
+  "trip_plan": {
+   "totalNote": "A 2-day, 1-night weekend trip: roughly 12 miles round trip with about 5,100 ft of cumulative gain, most parties backpacking in on day one and combining the summit push with the full hike-out on day two.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Backpack in to Lake of the Angels camp",
+     "objective": "Set up basecamp at Lake of the Angels",
+     "miles": 3.5,
+     "gainFt": 3400,
+     "note": "The Putvin Trail is steep and rough - the headwall below the lake takes hand-and-foot scrambling on roots and rock - so most parties treat it as a half-day in with a full overnight pack. Camp at Lake of the Angels, which also serves as the base for nearby Mount Stone."
+    },
+    {
+     "n": 2,
+     "title": "Summit push and hike out",
+     "objective": "Climb Mount Skokomish (6,434 ft) and return to the trailhead",
+     "miles": 8.7,
+     "gainFt": 1700,
+     "note": "An early start lets you cache overnight gear at camp and climb light: scramble talus and side-hill terrain up toward the summit ridge, then a short class 2-3 section (rock is notoriously rotten) to the top. After descending to camp, break camp and hike the brutal trail back out the same afternoon - a long but standard …"
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Lake of the Angels",
+    "elev_ft": 4900,
+    "type": "camp",
+    "role": "main",
+    "notes": "The base for Mount Skokomish and for the south side of Mount Stone, and one of the best-placed camps in the Olympics for a climber. About 3.5 miles and 3,400 ft from the Putvin trailhead, which understates it badly — the trail is notoriously steep, with hand-over-hand sections on rock and root where a slip has real con…"
+   },
+   {
+    "name": "Hamma Hamma River road campgrounds — Lena Creek and Hamma Hamma",
+    "elev_ft": 700,
+    "type": "camp",
+    "role": "route",
+    "notes": "The drive-in staging option for everything on the Hamma Hamma side: Lena Lake and The Brothers, the Putvin trail to Lake of the Angels for Mount Skokomish and Mount Stone, and the Jefferson Creek spur for Mount Pershing. Lena Creek is the more useful of the two because it sits essentially at the Lena Lake trailhead, so…"
+   }
+  ],
+  "campsite_pins": [
+   {
+    "name": "Lake of the Angels",
+    "elev": 4950,
+    "distMi": 3.5
+   }
+  ]
+ },
+ {
+  "id": "wa_the_fin_northeast_face",
+  "name": "The Fin - Northeast Face",
+  "discipline": "alpine",
+  "peak": "The Fin",
+  "area_id": "wa_the_fin",
+  "path": "usa.washington.wa_olympics.wa_olympic_np.wa_southern_olympics.wa_the_fin",
+  "trip_plan": {
+   "totalNote": "A 2-day Olympics plan: hike about 7.7 mi to Flapjack Lakes, then climb to Sawtooth Pass for the Fin's short 5.4 chimney route before hiking out to Staircase.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Staircase to Flapjack Lakes",
+     "objective": "Reach the Flapjack Lakes camp",
+     "miles": 7.7,
+     "gainFt": 3050,
+     "note": "Follow the North Fork Skokomish trail about 3.4-3.7 mi to the junction, then 3.6 mi up the right fork to Flapjack Lakes. It is about 15.4 mi round trip and 3,050 ft of gain. The camps are established sites with a bear wire and toilets."
+    },
+    {
+     "n": 2,
+     "title": "Climb the Fin and hike out",
+     "objective": "Summit the Fin and return to Staircase",
+     "miles": 9.3,
+     "gainFt": 1650,
+     "note": "Head toward Gladys Divide and leave the trail near 4,400 ft before the small pond. Climb the open snow and rock slope southeast to the narrow chute of Sawtooth Pass, then follow the ridge east to the route: steep pillow basalt with a classic chimney. Reverse with a short rappel or downclimb to the pass, then hike out."
+    }
+   ]
+  },
+  "camps_on_file": [],
+  "campsite_pins": []
+ },
+ {
+  "id": "wa_gilbert_peak_klickton_divide",
+  "name": "Klickton Divide (via Warm Lake)",
+  "discipline": "scrambling",
+  "peak": "Gilbert Peak",
+  "area_id": "wa_gilbert_peak",
+  "path": "usa.washington.wa_sw_tacoma.wa_southwest_cascades.wa_gilbert_peak",
+  "trip_plan": {
+   "totalNote": "Two days: hike from Conrad Meadows past Surprise Lake to a camp at Warm Lake, then a 2-hour climb up the Klickton Divide to the Goat Rocks high point and the long walk out, about 4,200-4,600 ft and 21 miles round trip.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Hike from Conrad Meadows to Warm Lake",
+     "objective": "Camp on the west side of Warm Lake",
+     "miles": 9.5,
+     "gainFt": 2700,
+     "note": "Follow the South Fork Tieton trail through Conrad Meadows past Surprise Lake to the upper meadows near 6,000 ft, then a faint boot path up the Klickton Divide slope and a contour northwest to Warm Lake. One party took about 4 hours 10 minutes from the trailhead to camp."
+    },
+    {
+     "n": 2,
+     "title": "Climb the Klickton Divide and hike out",
+     "objective": "Summit Gilbert Peak and return to the car",
+     "miles": 12,
+     "gainFt": 1500,
+     "note": "Climb southwest up the Klickton Divide face to a boot path along the ridge crest, then scramble near the west base of the summit buttress; the last step to the top is exposed. Return to Warm Lake, pack up and walk out through the meadows (about 4 hours from the lake to the car)."
+    }
+   ]
+  },
+  "camps_on_file": [],
+  "campsite_pins": []
+ },
+ {
+  "id": "wa_gilbert_peak_meade_glacier",
+  "name": "Meade Glacier",
+  "discipline": "mountaineering",
+  "peak": "Gilbert Peak",
+  "area_id": "wa_gilbert_peak",
+  "path": "usa.washington.wa_sw_tacoma.wa_southwest_cascades.wa_gilbert_peak",
+  "trip_plan": {
+   "totalNote": "Hike in to camp at Surprise Lake or Warm Lake, then make an alpine-start summit push up the Meade Glacier snowfields, return to camp and hike out.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Hike in to Surprise Lake",
+     "objective": "Camp at Surprise Lake or Warm Lake",
+     "miles": 6.5,
+     "gainFt": 1500,
+     "note": "Hike in to camp at Surprise Lake (wooded and sheltered) or Warm Lake (above treeline and exposed to wind)."
+    },
+    {
+     "n": 2,
+     "title": "Summit via the Meade Glacier and hike out",
+     "objective": "Reach the summit, return to camp and hike out",
+     "miles": 14.5,
+     "gainFt": 3100,
+     "note": "Make an alpine start for the summit push across the basin and up the Meade Glacier snowfields. Return to camp and hike out, or split the hike-out over a third day."
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Conrad Meadows and Surprise Lake, South Fork Tieton",
+    "elev_ft": 4100,
+    "type": "camp",
+    "role": "main",
+    "notes": "This is the correct side of the range for Gilbert Peak's Conrad Glacier and Meade Glacier routes, and there is no sensible way to reach either from the Snowgrass trailheads — the two approaches are separated by the whole crest. From the road end the trail runs level through meadows for around four miles before the loop…"
+   }
+  ],
+  "campsite_pins": []
+ },
+ {
+  "id": "wa_gilbert_peak_west_route",
+  "name": "West Route",
+  "discipline": "mountaineering",
+  "peak": "Gilbert Peak",
+  "area_id": "wa_gilbert_peak",
+  "path": "usa.washington.wa_sw_tacoma.wa_southwest_cascades.wa_gilbert_peak",
+  "trip_plan": {
+   "totalNote": "Hike in to camp below Snowgrass Flats, traverse Old Snowy, Ives and Gilbert in one long day, then hike out.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Hike in below Snowgrass Flats",
+     "objective": "Camp at Lower Snowgrass or the timber sites below the flat",
+     "miles": 4,
+     "gainFt": 1700,
+     "note": "Hike in on the Snowgrass Trail to Lower Snowgrass or the timber sites below Snowgrass Flat. The flat itself is closed to camping, so use the established sites below it."
+    },
+    {
+     "n": 2,
+     "title": "Traverse Old Snowy, Ives and Gilbert",
+     "objective": "Climb three summits in one long day and return to camp",
+     "miles": 14,
+     "gainFt": 5700,
+     "note": "Traverse to and climb Old Snowy Mountain, Ives Peak and Gilbert Peak in a single long day, then return to camp. Reported round-trip totals for the full multi-peak traverse are about 22 miles and 7,500 ft of cumulative gain and loss."
+    },
+    {
+     "n": 3,
+     "title": "Hike out to the trailhead",
+     "objective": "Return to the Snowgrass Flat Trailhead",
+     "miles": 4,
+     "gainFt": 100,
+     "note": "Pack up camp and hike out the Snowgrass Trail to the trailhead."
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Snowgrass Flat area backcountry camps",
+    "elev_ft": 6200,
+    "type": "camp",
+    "role": "main",
+    "notes": "The standard base for Old Snowy and Ives Peak, and for the West Route on Gilbert. The name misleads: the flat proper is a closed meadow and the legal camping is in the timber and on the benches a little below it, around 6,000 to 6,300 feet, roughly three to four miles from the road. From here Old Snowy is a walk-up on …"
+   },
+   {
+    "name": "Chambers Lake Campground",
+    "elev_ft": 4500,
+    "type": "camp",
+    "role": "route",
+    "notes": "The obvious drive-in base for the Goat Rocks crest, under a mile from both the Berry Patch and Snowgrass trailheads, so you can sleep at the car and be walking at first light without the four-mile carry to Snowgrass. That makes it the right choice for a car-to-car attempt on Old Snowy, and a sensible staging night befo…"
+   }
+  ],
+  "campsite_pins": [
+   {
+    "name": "Chambers Lake Campground",
+    "elev": 4500,
+    "distMi": null
+   }
+  ]
+ },
+ {
+  "id": "wa_ives_peak_r1",
+  "name": "Northwest Ridge / South Face",
+  "discipline": "scrambling",
+  "peak": "Ives Peak",
+  "area_id": "wa_ives_peak",
+  "path": "usa.washington.wa_sw_tacoma.wa_southwest_cascades.wa_ives_peak",
+  "trip_plan": {
+   "totalNote": "A 2-day trip: backpack ~7 mi into an upper Snowgrass basin camp (~7,100-7,200 ft) on Day 1, then do a long ~7-8 hr summit push over Old Snowy Mountain and Ives Peak and hike all the way out on Day 2 (~14.2 mi / 3,400 ft round trip total). Very fit parties do sometimes push it car-to-car in one long (8+ hr) day, but backpacking in is the standard/recommended plan.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Backpack in to upper Snowgrass basin camp",
+     "objective": "Reach camp near treeline below the PCT/Elk Pass junction",
+     "miles": 7,
+     "gainFt": 2500,
+     "note": "From the Snowgrass trailhead (4,650 ft), cross Goat Creek at ~2 mi, pass (but don't camp at) Lower Snowgrass Flat around 4 mi, and continue climbing through meadows to the PCT, dropping a light camp in the upper Snowgrass basin around 7,100-7,200 ft. Afternoon is free to scout the next day's route to Elk Pass and enjoy…"
+    },
+    {
+     "n": 2,
+     "title": "Old Snowy + Ives Peak summit push, then hike out",
+     "objective": "Tag both summits and hike all the way back to the trailhead",
+     "miles": 7.2,
+     "gainFt": 900,
+     "note": "Alpine start with a light pack up to the PCT and Old Snowy's north ridge, stash poles for the final Class 3 scramble to the summit, downclimb the south ridge to the Old Snowy-Ives col, then climb Ives' NW ridge (Class 1-2) and a short Class 3 south-face scramble to the top. Reverse the traverse back to camp, break camp…"
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Snowgrass Flat area backcountry camps",
+    "elev_ft": 6200,
+    "type": "camp",
+    "role": "main",
+    "notes": "The standard base for Old Snowy and Ives Peak, and for the West Route on Gilbert. The name misleads: the flat proper is a closed meadow and the legal camping is in the timber and on the benches a little below it, around 6,000 to 6,300 feet, roughly three to four miles from the road. From here Old Snowy is a walk-up on …"
+   },
+   {
+    "name": "Chambers Lake Campground",
+    "elev_ft": 4500,
+    "type": "camp",
+    "role": "route",
+    "notes": "The obvious drive-in base for the Goat Rocks crest, under a mile from both the Berry Patch and Snowgrass trailheads, so you can sleep at the car and be walking at first light without the four-mile carry to Snowgrass. That makes it the right choice for a car-to-car attempt on Old Snowy, and a sensible staging night befo…"
+   }
+  ],
+  "campsite_pins": [
+   {
+    "name": "Chambers Lake Campground",
+    "elev": 4500,
+    "distMi": null
+   },
+   {
+    "name": "Lower Snowgrass Flat / Lily Basin Trail (#86) junction",
+    "elev": 5920,
+    "distMi": 4.1
+   }
+  ]
+ }
+]

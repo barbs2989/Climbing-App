@@ -1,0 +1,261 @@
+[
+ {
+  "id": "wa_martin_peak_west_ridge",
+  "camps": [
+   {"name": "Holden Pass and the slab bivies above", "nights": [1, 2], "role": "main",
+    "why": "Sleeping at the saddle puts the West Ridge gullies right above camp, so the loose summit day starts early and short; water is nearby and sites are established."},
+   {"name": "Holden Lake", "nights": [], "role": "route",
+    "why": "The Bonanza base camp, lower and buggier, with a longer summit day for Martin; use it when you also want Bonanza or arrive too late to carry on to the pass."},
+   {"name": "Holden Village", "nights": [], "role": "route",
+    "why": "Indoor beds and meals at 3,200 ft the night before or after the trip; it fits a ferry schedule but adds a full climbing day of distance if you sleep there on the way in."},
+   {"name": "Holden Ballpark Campground", "nights": [], "role": "route",
+    "why": "A cheap open field about a mile above the village for a night before or after; exposed, with few sites, and too low to help the summit day."}
+  ],
+  "new_camps": [],
+  "confidence": "medium",
+  "plan_conflict": "Holden Lake is filed as a main camp, but this plan and most parties sleep both nights at Holden Pass.",
+  "sources": ["https://www.mountaineers.org/activities/trip-reports/basic-alpine-climb-bonanza-martin-peaks", "https://stevensong.com/martin-peak-holden-wa", "https://www.summitpost.org/martin-peak/1003496"]
+ },
+ {
+  "id": "wa_massie_peak_west_route",
+  "camps": [
+   {"name": "Massie Lake basin", "nights": [1], "role": "main",
+    "why": "The only practical camp for the peak: lake water, a toilet and flat sites, with the summit scramble a short half day above."},
+   {"name": "Trinity trailhead roadhead", "nights": [], "role": "route",
+    "why": "A staging spot after the long gravel drive; sleeping here only saves an hour of driving and adds to the next day's carry."},
+   {"name": "The Chiwawa River trail camps above the bridge", "nights": [], "role": "route",
+    "why": "Flat, sheltered and on the river; a fallback for a late start or the walk out, but it leaves a steep climb to the lake the next morning."},
+   {"name": "The benches above Massie Lake — no established camp", "nights": [], "role": "route",
+    "why": "A cold dry bivy only for a crest start at first light; you carry water up and gain little, since the peak is a short day from the lake."}
+  ],
+  "new_camps": [],
+  "confidence": "medium",
+  "plan_conflict": null,
+  "sources": ["https://wenatcheeoutdoors.org/2016/06/23/massie-lake-louis-creek-high-route/", "https://www.wta.org/go-hiking/hikes/massie-lake"]
+ },
+ {
+  "id": "wa_mount_fernow_southeast_face",
+  "camps": [
+   {"name": "Leroy Basin", "nights": [1, 2], "role": "main",
+    "why": "The standard base for Fernow: a meadow at about 6,100 ft with water, reached by the steep climbers' path, and it cuts the summit day to the shortest possible."}
+  ],
+  "new_camps": [],
+  "confidence": "high",
+  "plan_conflict": null,
+  "sources": ["https://summitpost.org/mount-fernow/climbers-log/152494", "https://www.mountaineers.org/activities/trip-reports/mount-fernow-summit-from-phelps-creek", "https://cascadeclimbers.com/forum/topic/81107-tr-mount-fernow-and-seven-fingered-jack-phelps-creek-trail-to-the-leroy-creek-basin-732011"]
+ },
+ {
+  "id": "wa_mount_lyall_south_route",
+  "camps": [
+   {"name": "Swamp Creek Camp — the base for Needle Peak, Mount Lyall and Lyall Ridge", "nights": [1, 2], "role": "main",
+    "why": "The working base for Lyall on the Crest trail corridor; sleeping here shortens the summit day, and the unmaintained trail beyond is brushy with no better site."},
+   {"name": "Purple Point and Harlequin — the landing camps, and the boat that decides the trip", "nights": [], "role": "route",
+    "why": "The night before the walk if the boat times badly; it is far down the valley, so you start with a long shuttle and walk."},
+   {"name": "High Bridge Camp — the shuttle terminus and the base for McGregor Mountain", "nights": [], "role": "route",
+    "why": "The first camp past the bus; good for a late arrival, but it adds about eight miles to the approach and makes day one much longer."},
+   {"name": "Fivemile Camp, Agnes Creek", "nights": [], "role": "route",
+    "why": "A comfortable halfway camp on the trail; stopping here splits the approach but leaves roughly three miles more to Swamp Creek the next morning."}
+  ],
+  "new_camps": [],
+  "confidence": "low",
+  "plan_conflict": null,
+  "sources": ["https://www.nps.gov/noca/planyourvisit/stehekin-trails.htm", "https://www.wta.org/go-hiking/trip-reports/tripreport-2007082912"]
+ },
+ {
+  "id": "wa_mount_maude_r2",
+  "camps": [
+   {"name": "Leroy Basin", "nights": [], "role": "route",
+    "why": "The lower, easier camp on the standard Maude approach; it adds a long day over the cols to reach the glacier, so this route's parties go higher to the Ice Lakes."},
+   {"name": "Phelps Creek Campground and the Chiwawa River road campgrounds", "nights": [], "role": "route",
+    "why": "Staging camps at the end of a long rough drive; they save nothing on the climb but spare a tired late-night drive."}
+  ],
+  "new_camps": [
+   {"name": "Ice Lakes bivy", "elev_ft": 7182, "type": "bivy", "role": "main", "nights": [1, 2],
+    "why": "Bivy ledges beside the Ice Lakes near the South Ridge; they sit within reach of the glacier crossing and icefall, and the same ledges are used on the descent.",
+    "water": "Lake water at the Ice Lakes below.",
+    "capacity": "A few small flat ledges; space is limited.",
+    "permit": "Glacier Peak Wilderness permit required; check current rules.",
+    "notes": "Reached by about 4,000 ft of gain from the trailhead. After the summit the party drops back to these ledges for the second night before hiking out."}
+  ],
+  "confidence": "medium",
+  "plan_conflict": "Leroy Basin is filed as the main camp, but this plan sleeps at a bivy above the Ice Lakes both nights.",
+  "sources": ["https://alpinedave.com/maude.html", "https://cascadeclimbers.com/forum/topic/3350-mt-maude-entiat-icefall"]
+ },
+ {
+  "id": "wa_mount_maude_r3",
+  "camps": [
+   {"name": "Leroy Basin", "nights": [1, 2], "role": "main",
+    "why": "The climbers' basin for Maude from the west: meadow sites with water at about 6,100 ft, and the Nothing Couloir loop starts within a short walk."},
+   {"name": "Phelps Creek Campground and the Chiwawa River road campgrounds", "nights": [], "role": "route",
+    "why": "Staging camps after the rough gravel drive; sleeping here helps a late arrival but adds the whole approach to the first day."}
+  ],
+  "new_camps": [],
+  "confidence": "medium",
+  "plan_conflict": null,
+  "sources": ["https://summitpost.org/mount-fernow/climbers-log/152494", "https://summitpost.org/mount-maude/climbers-log/150386/p2"]
+ },
+ {
+  "id": "wa_north_star_mountain_cloudy_peak_traverse",
+  "camps": [
+   {"name": "Lyman Lakes and Cloudy Pass", "nights": [1, 2], "role": "main",
+    "why": "Past Spider Gap on day one; the lakes and pass have many sites and water, and North Star is an easy day from the pass trail."},
+   {"name": "Phelps Creek Campground and the Chiwawa River road campgrounds", "nights": [], "role": "route",
+    "why": "Staging camps at the road end; useful the night before an early start for the long Spider Gap day."},
+   {"name": "Spider Meadow and Phelps Basin", "nights": [], "role": "route",
+    "why": "The usual first night for a four-day version: it splits the gap crossing in half, but adds a day and a second carry over the snow."},
+   {"name": "Holden Village", "nights": [], "role": "route",
+    "why": "Indoor beds if you come in from the Railroad Creek side; not on this over-the-gap plan, and the road end is a day's walk away."},
+   {"name": "Holden Ballpark Campground", "nights": [], "role": "route",
+    "why": "A cheap tent field above the village for the Railroad Creek approach; exposed with few sites and not used on the Spider Gap plan."}
+  ],
+  "new_camps": [],
+  "confidence": "medium",
+  "plan_conflict": null,
+  "sources": ["https://adminonly.wta.org/go-hiking/trip-reports/trip_report.2009-10-11.7022727221", "https://www.wta.org/go-hiking/trip-reports/trip_report-2021-09-17-8385851074", "https://summitpost.org/north-star-mountain/climbers-log/901196"]
+ },
+ {
+  "id": "wa_north_star_mountain_east_route",
+  "camps": [
+   {"name": "Lower Lyman Lake", "nights": [1, 2], "role": "main",
+    "why": "The base for this Holden-side plan: eight miles up Railroad Creek, with lake water and sites, and the south flank starts straight from camp."},
+   {"name": "Lyman Lakes and Cloudy Pass", "nights": [], "role": "route",
+    "why": "The higher group of sites a mile or two on; it gives a shorter walk to the pass trail but adds carrying and exposure to wind."},
+   {"name": "Holden Village", "nights": [], "role": "route",
+    "why": "Indoor beds the night before the trip if the boat times badly; it costs lodging fees and adds eight miles to the first day."},
+   {"name": "Holden Ballpark Campground", "nights": [], "role": "route",
+    "why": "A cheap tent field above the village for a night before the walk in; exposed with few sites and not used on a normal two-night plan."},
+   {"name": "Phelps Creek Campground and the Chiwawa River road campgrounds", "nights": [], "role": "route",
+    "why": "Camps on the far side of Spider Gap for the other approach; not slept at on this boat-and-bus plan."},
+   {"name": "Spider Meadow and Phelps Basin", "nights": [], "role": "route",
+    "why": "The first night for the over-the-gap approach from Phelps Creek; not used when you come in from Holden."},
+   {"name": "Rebel Camp", "nights": [], "role": "route",
+    "why": "A trailside camp about five miles up Railroad Creek; a split option for a slow party, but it leaves a longer second leg to the lake."}
+  ],
+  "new_camps": [],
+  "confidence": "medium",
+  "plan_conflict": "Lyman Lakes and Cloudy Pass is filed as a second main camp, but this plan sleeps at Lower Lyman Lake.",
+  "sources": ["https://www.wta.org/go-hiking/trip-reports/trip_report-2021-09-17-8385851074", "https://www.wta.org/go-hiking/trip-reports/trip_report.2018-09-15.9825258247"]
+ },
+ {
+  "id": "wa_seven_fingered_jack_southwest_slopes",
+  "camps": [
+   {"name": "Leroy Basin", "nights": [1], "role": "main",
+    "why": "The standard camp for the Jack: meadow sites with water at about 6,100 ft, about three hours below the summit on loose scree."},
+   {"name": "Phelps Creek Campground and the Chiwawa River road campgrounds", "nights": [], "role": "route",
+    "why": "Staging camps at the end of the rough road for a late arrival; they leave the full approach and the summit for one long day."}
+  ],
+  "new_camps": [],
+  "confidence": "high",
+  "plan_conflict": null,
+  "sources": ["https://summitpost.org/seven-fingered-jack-and-fernwho/220959", "https://cascadeclimbers.com/forum/topic/81107-tr-mount-fernow-and-seven-fingered-jack-phelps-creek-trail-to-the-leroy-creek-basin-732011"]
+ },
+ {
+  "id": "wa_spectacle_buttes_west_route",
+  "camps": [
+   {"name": "Leroy Basin camp", "nights": [1, 2], "role": "main",
+    "why": "The only practical high camp on this approach: meadow sites and water at about 6,100 ft, giving a long but possible summit day over two passes."}
+  ],
+  "new_camps": [],
+  "confidence": "low",
+  "plan_conflict": null,
+  "sources": ["https://summitpost.org/mount-fernow/climbers-log/152494"]
+ },
+ {
+  "id": "wa_buck_mountain_south_ridge",
+  "camps": [
+   {"name": "Louis Creek Basin camp", "nights": [1, 2], "role": "main",
+    "why": "A basin camp right under the southwest slopes, so the summit is a short half day; it costs a long first day over the High Pass route."},
+   {"name": "Buck Creek Pass and the High Pass camps", "nights": [], "role": "route",
+    "why": "Good established sites with water, and a shorter first day; the next morning's walk and the dry ridge crossing to the basin add a few hours."}
+  ],
+  "new_camps": [],
+  "confidence": "medium",
+  "plan_conflict": "Buck Creek Pass and the High Pass camps is filed as the main camp, but this plan carries on to Louis Creek Basin both nights.",
+  "sources": ["https://www.mountaineers.org/activities/trip-reports/buck-mountain-southwest-route", "https://cascadeclimbers.com/forum/topic/15416-seeking-beta-on-rte-to-high-pass-near-buck-pass", "https://wenatcheeoutdoors.org/?p=3099"]
+ },
+ {
+  "id": "wa_chalangin_peak_little_giant_pass_luahna_col",
+  "camps": [
+   {"name": "Butterfly Butte and the Pilz Glacier basin camps", "nights": [1, 2], "role": "main",
+    "why": "The climbing camp for Chalangin and Luahna: benches near Butterfly Butte with water, and the Pilz Glacier approach starts nearby."},
+   {"name": "Napeequa Valley floor near Louis Creek", "nights": [], "role": "route",
+    "why": "A lower, warmer camp by the river after the pass; it shortens the first day but adds roughly a thousand feet and a longer summit day."}
+  ],
+  "new_camps": [],
+  "confidence": "low",
+  "plan_conflict": "The plan puts camp at about 6,200 ft while the camp on file sits near 5,850 ft; the exact bench was not confirmed.",
+  "sources": ["https://www.countryhighpoints.com/chalangin-peak-wa-top-100-completion/"]
+ },
+ {
+  "id": "wa_chalangin_peak_southwest_face",
+  "camps": [],
+  "new_camps": [
+   {"name": "Chalangin Basin high camp", "elev_ft": 5100, "type": "camp", "role": "main", "nights": [1, 2],
+    "why": "The only high camp on the Thunder Creek approach; it puts the snowy southwest face right above you and saves a long bushwhack on the summit day.",
+    "water": "Thunder Creek and snowmelt in the basin; not confirmed.",
+    "capacity": "Unknown; expect a few small sites.",
+    "permit": "Wilderness permit required; check current rules.",
+    "notes": "Reached by leaving the White River trail and bushwhacking up Thunder Creek through alder and burned blowdown. Camp location comes from the trip plan and was not confirmed independently."}
+  ],
+  "confidence": "low",
+  "plan_conflict": null,
+  "sources": ["https://www.countryhighpoints.com/chalangin-peak-wa-top-100-completion/"]
+ },
+ {
+  "id": "wa_clark_mountain_west_ridge",
+  "camps": [
+   {"name": "Boulder Basin camp", "nights": [1, 2], "role": "main",
+    "why": "A basin camp at about 5,000 to 5,300 ft below Boulder Pass; water and a south view of Clark, with the glacier reached in an alpine start."},
+   {"name": "Boulder Pass and Thunder Basin, White River", "nights": [], "role": "route",
+    "why": "A higher camp near the pass; it shortens the summit day but adds carry and a colder, more exposed night."}
+  ],
+  "new_camps": [],
+  "confidence": "medium",
+  "plan_conflict": "Boulder Pass and Thunder Basin is also filed as main, but this plan sleeps in Boulder Basin.",
+  "sources": ["https://mountaineers.org/activities/routes-places/clark-mountain-southeast-route", "https://www.wta.org/go-hiking/trip-reports/trip_report.2023-07-24.7912650471"]
+ },
+ {
+  "id": "wa_helmet_butte_standard_route",
+  "camps": [
+   {"name": "Buck Creek Pass and the High Pass camps", "nights": [1, 2], "role": "main",
+    "why": "Established sites with water at Buck Creek Pass or Pass No Pass; Helmet Butte is a one to two hour scramble from camp."}
+  ],
+  "new_camps": [],
+  "confidence": "medium",
+  "plan_conflict": "The plan's night 2 is optional; most parties summit on day 2 and hike out, so only night 1 is a normal camp.",
+  "sources": ["https://www.mountaineers.org/activities/trip-reports/buck-mountain-southwest-route", "https://adminonly.wta.org/go-hiking/trip-reports/trip_report-2020-08-20-1960144035"]
+ },
+ {
+  "id": "wa_luahna_peak_east_slopes",
+  "camps": [
+   {"name": "Boulder Creek ford camp", "nights": [1], "role": "main",
+    "why": "A forest camp at the Boulder Creek ford after a short first day; it keeps the upper basin move for the morning with water at hand."},
+   {"name": "Upper Boulder Basin high camp", "nights": [2], "role": "main",
+    "why": "The high camp at about 5,700 ft, which puts Point 7970 and the glacier within reach, so the summit day is the shortest."},
+   {"name": "Boulder Pass and Thunder Basin, White River", "nights": [], "role": "route",
+    "why": "A higher alternative near the pass; it saves little for Luahna and adds distance and exposure beyond the basin camp."}
+  ],
+  "new_camps": [],
+  "confidence": "medium",
+  "plan_conflict": "Boulder Pass and Thunder Basin is filed as the main camp, but this plan sleeps at the Boulder Creek ford and then in upper Boulder Basin.",
+  "sources": ["https://apps.yellowleaf.org/scramble/g/r/2013-08-31--09-01-luahna-clark.html", "https://mountaineers.org/activities/routes-places/clark-mountain-southeast-route"]
+ },
+ {
+  "id": "wa_luahna_peak_southwest_slope_southeast_ridge",
+  "camps": [
+   {"name": "Boulder Pass and Thunder Basin, White River", "nights": [], "role": "route",
+    "why": "A higher camp near the pass; it is farther than the basin camp and not used on this overnight plan."}
+  ],
+  "new_camps": [
+   {"name": "Boulder Creek ford camp", "elev_ft": 3700, "type": "camp", "role": "main", "nights": [1],
+    "why": "The one night camp on this plan, at the Boulder Creek ford; it is a short walk from the cars and keeps the long climb for the morning.",
+    "water": "Boulder Creek at the ford.",
+    "capacity": "A few forest sites.",
+    "permit": "Wilderness permit required; check current rules.",
+    "notes": "About four miles up the White River trail then to the ford. The plan then climbs to a high camp and out all on day 2, which is very long."}
+  ],
+  "confidence": "low",
+  "plan_conflict": "The plan fits two camps (ford camp, then upper Boulder Basin) and the summit and hike out into only one night and two days; it is not workable as written.",
+  "sources": ["https://apps.yellowleaf.org/scramble/g/r/2013-08-31--09-01-luahna-clark.html"]
+ }
+]

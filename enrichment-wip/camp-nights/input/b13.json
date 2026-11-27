@@ -1,0 +1,1216 @@
+[
+ {
+  "id": "wa_forbidden_peak_east_ridge",
+  "name": "East Ridge Direct",
+  "discipline": "alpine",
+  "peak": "Forbidden Peak",
+  "area_id": "wa_forbidden_peak",
+  "path": "usa.washington.wa_northwest.wa_hwy20_ncnp.wa_north_cascades.wa_north_cascades_core.wa_boston_basin.wa_forbidden_peak",
+  "trip_plan": {
+   "totalNote": "A 2-day trip: ~4 hrs / 2,800 ft hiking in to a Boston Basin camp, then a long 12-14 hr day climbing the East Ridge (8 pitches) and descending the West Ridge for a full ridge traverse, ~5,200 ft total gain.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Approach to Boston Basin camp",
+     "objective": "Establish camp in upper Boston Basin",
+     "miles": 6,
+     "gainFt": 2800,
+     "note": "Walk or bike the 2.5 closed miles of Cascade River Road from the Eldorado gate to the Boston Basin trailhead first. Hike the climbers' path from the Cascade River Road trailhead through forest and boulder fields into Boston Basin, camping near 6,400 ft in the basin below the peak. An easy afternoon to sort gear and rac…"
+    },
+    {
+     "n": 2,
+     "title": "East Ridge to summit, descend West Ridge (full traverse)",
+     "objective": "Climb the East Ridge and descend via the West Ridge notch and couloir",
+     "miles": 7.3,
+     "gainFt": 2415,
+     "note": "Alpine start from camp, gain the East Ridge and follow ~8 pitches of low 5th-class rock to the true summit, then reverse over the summit block and downclimb/rappel the West Ridge to its notch and couloir back into Boston Basin. A full traverse avoids reversing technical terrain but makes for a long day."
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Boston Basin upper (high) camp",
+    "elev_ft": 6400,
+    "type": "camp",
+    "role": "main",
+    "notes": "Several hundred vertical feet above the lower camp and also served by a composting toilet, this shortens the morning to the Forbidden West Ridge couloir and to Sharkfin Tower considerably. There is a real tension in the published guidance worth knowing before you go: park zone rules describe camping on durable surfaces…"
+   },
+   {
+    "name": "Boston Basin lower camp",
+    "elev_ft": 5300,
+    "type": "camp",
+    "role": "route",
+    "notes": "The first hardened camp on the climbers' trail up from the Cascade River Road pullout near mile 21.7, with a composting toilet. It is the usual base for Forbidden Peak's West Ridge and North Ridge, Sharkfin Tower and the Torment-Forbidden traverse, and it stays snow-covered well into early summer. accounts differ on th…"
+   },
+   {
+    "name": "Informal snow and rock bivouacs above the basins",
+    "elev_ft": null,
+    "type": "bivy",
+    "role": "route",
+    "notes": "Parties attempting the Torment-Forbidden traverse, a long day on Boston Peak, or a late finish on the Forbidden North Ridge sometimes end up bivouacking on snow or rock above the established camps, in the Sharkfin Col area, or in a notch on route. Treat these as unplanned or emergency shelter rather than as an itinerar…"
+   }
+  ],
+  "campsite_pins": [
+   {
+    "name": "Boston Basin",
+    "elev": 6248,
+    "distMi": 3
+   },
+   {
+    "name": "Boston Basin lower camp",
+    "elev": 5300,
+    "distMi": 2
+   }
+  ]
+ },
+ {
+  "id": "wa_forbidden_peak_north_ridge",
+  "name": "North Ridge",
+  "discipline": "alpine",
+  "peak": "Forbidden Peak",
+  "area_id": "wa_forbidden_peak",
+  "path": "usa.washington.wa_northwest.wa_hwy20_ncnp.wa_north_cascades.wa_north_cascades_core.wa_boston_basin.wa_forbidden_peak",
+  "trip_plan": {
+   "totalNote": "A serious 3-day route, not a simple single-camp climb: hike to a high camp, rope up to rappel and cross the remote Boston Glacier to a knife-edge bivy on the ridge, then climb to the summit and descend the standard West Ridge.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Approach to Boston Basin high camp",
+     "objective": "Reach Boston Basin high camp (~6,400 ft)",
+     "miles": 3.6,
+     "gainFt": 3000,
+     "note": "Hike from the trailhead into Boston Basin and continue up to the high camps near 6,400 ft, carrying glacier and overnight gear."
+    },
+    {
+     "n": 2,
+     "title": "Rappel to and cross the Boston Glacier, gain the North Ridge bivy",
+     "objective": "Reach the exposed bivy site low on the North Ridge",
+     "miles": 2,
+     "gainFt": 600,
+     "note": "Rappel from Sharkfin Col onto the Boston Glacier, cross it roped for crevasses, then climb to a small exposed bivy notch on the ridge itself."
+    },
+    {
+     "n": 3,
+     "title": "North Ridge to summit, descend West Ridge to trailhead",
+     "objective": "Climb the ridge and hike out",
+     "miles": 3.4,
+     "gainFt": 900,
+     "note": "Climb the North Ridge's mixed snow, ice, and 5th-class rock to the summit pyramid, then descend the standard West Ridge notch and couloir back into Boston Basin and out to the trailhead."
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Boston Basin upper (high) camp",
+    "elev_ft": 6400,
+    "type": "camp",
+    "role": "main",
+    "notes": "Several hundred vertical feet above the lower camp and also served by a composting toilet, this shortens the morning to the Forbidden West Ridge couloir and to Sharkfin Tower considerably. There is a real tension in the published guidance worth knowing before you go: park zone rules describe camping on durable surfaces…"
+   },
+   {
+    "name": "Boston Basin lower camp",
+    "elev_ft": 5300,
+    "type": "camp",
+    "role": "route",
+    "notes": "The first hardened camp on the climbers' trail up from the Cascade River Road pullout near mile 21.7, with a composting toilet. It is the usual base for Forbidden Peak's West Ridge and North Ridge, Sharkfin Tower and the Torment-Forbidden traverse, and it stays snow-covered well into early summer. accounts differ on th…"
+   },
+   {
+    "name": "Informal snow and rock bivouacs above the basins",
+    "elev_ft": null,
+    "type": "bivy",
+    "role": "route",
+    "notes": "Parties attempting the Torment-Forbidden traverse, a long day on Boston Peak, or a late finish on the Forbidden North Ridge sometimes end up bivouacking on snow or rock above the established camps, in the Sharkfin Col area, or in a notch on route. Treat these as unplanned or emergency shelter rather than as an itinerar…"
+   }
+  ],
+  "campsite_pins": [
+   {
+    "name": "Boston Basin lower camp",
+    "elev": 5300,
+    "distMi": null
+   },
+   {
+    "name": "Boston Basin High Camp",
+    "elev": 6400,
+    "distMi": 3
+   }
+  ]
+ },
+ {
+  "id": "wa_forbidden_peak_northeast_face",
+  "name": "Northeast Face",
+  "discipline": "alpine",
+  "peak": "Forbidden Peak",
+  "area_id": "wa_forbidden_peak",
+  "path": "usa.washington.wa_northwest.wa_hwy20_ncnp.wa_north_cascades.wa_north_cascades_core.wa_boston_basin.wa_forbidden_peak",
+  "trip_plan": {
+   "totalNote": "A 2-day trip: camp in Boston Basin, then an estimated ~11-12 hr day up the Northeast Face and down the standard West Ridge couloir; this route sees little traffic and few published trip reports.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Approach to Boston Basin camp",
+     "objective": "Establish camp below the peak",
+     "miles": 3.4,
+     "gainFt": 2700,
+     "note": "Hike from the trailhead into Boston Basin and camp near 6,400 ft on the peak's east side."
+    },
+    {
+     "n": 2,
+     "title": "Northeast Face to summit, descend West Ridge couloir",
+     "objective": "Climb the face and descend the standard couloir",
+     "miles": 4.8,
+     "gainFt": 1800,
+     "note": "A less-traveled, more remote line on Forbidden's east side; climb mixed snow and rock to gain the upper mountain and the summit, then descend the standard West Ridge notch and couloir back into Boston Basin."
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Boston Basin upper (high) camp",
+    "elev_ft": 6400,
+    "type": "camp",
+    "role": "main",
+    "notes": "Several hundred vertical feet above the lower camp and also served by a composting toilet, this shortens the morning to the Forbidden West Ridge couloir and to Sharkfin Tower considerably. There is a real tension in the published guidance worth knowing before you go: park zone rules describe camping on durable surfaces…"
+   },
+   {
+    "name": "Boston Basin lower camp",
+    "elev_ft": 5300,
+    "type": "camp",
+    "role": "route",
+    "notes": "The first hardened camp on the climbers' trail up from the Cascade River Road pullout near mile 21.7, with a composting toilet. It is the usual base for Forbidden Peak's West Ridge and North Ridge, Sharkfin Tower and the Torment-Forbidden traverse, and it stays snow-covered well into early summer. accounts differ on th…"
+   },
+   {
+    "name": "Informal snow and rock bivouacs above the basins",
+    "elev_ft": null,
+    "type": "bivy",
+    "role": "route",
+    "notes": "Parties attempting the Torment-Forbidden traverse, a long day on Boston Peak, or a late finish on the Forbidden North Ridge sometimes end up bivouacking on snow or rock above the established camps, in the Sharkfin Col area, or in a notch on route. Treat these as unplanned or emergency shelter rather than as an itinerar…"
+   }
+  ],
+  "campsite_pins": [
+   {
+    "name": "Boston Basin lower camp",
+    "elev": 5300,
+    "distMi": 1.2
+   },
+   {
+    "name": "Boston Basin High Camp",
+    "elev": 6400,
+    "distMi": 3
+   }
+  ]
+ },
+ {
+  "id": "wa_forbidden_peak_northwest_face",
+  "name": "Northwest Face",
+  "discipline": "alpine",
+  "peak": "Forbidden Peak",
+  "area_id": "wa_forbidden_peak",
+  "path": "usa.washington.wa_northwest.wa_hwy20_ncnp.wa_north_cascades.wa_north_cascades_core.wa_boston_basin.wa_forbidden_peak",
+  "trip_plan": {
+   "totalNote": "A 2-day trip: hike in and camp in Boston Basin, then a long, complex ~12 hr face day (multiple notches and glacier basins) to the summit, descending the standard West Ridge couloir; very fit parties have linked it car-to-car in ~17 hrs.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Approach to Boston Basin camp",
+     "objective": "Establish camp below the peak",
+     "miles": 3.4,
+     "gainFt": 2700,
+     "note": "Hike in from the trailhead to a camp near 6,400 ft in Boston Basin, from which the Northwest Face's approach notches are reachable."
+    },
+    {
+     "n": 2,
+     "title": "Northwest Face to summit, descend West Ridge couloir",
+     "objective": "Climb the Northwest Face and descend the standard couloir",
+     "miles": 4.8,
+     "gainFt": 1800,
+     "note": "From camp, work up and over intermediate notches and rappel into the glacier basins below the face — a more complex, committing approach than the standard routes. Climb the face proper to the upper mountain, tag the summit, then descend the West Ridge couloir back to camp."
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Boston Basin upper (high) camp",
+    "elev_ft": 6400,
+    "type": "camp",
+    "role": "main",
+    "notes": "Several hundred vertical feet above the lower camp and also served by a composting toilet, this shortens the morning to the Forbidden West Ridge couloir and to Sharkfin Tower considerably. There is a real tension in the published guidance worth knowing before you go: park zone rules describe camping on durable surfaces…"
+   },
+   {
+    "name": "Boston Basin lower camp",
+    "elev_ft": 5300,
+    "type": "camp",
+    "role": "route",
+    "notes": "The first hardened camp on the climbers' trail up from the Cascade River Road pullout near mile 21.7, with a composting toilet. It is the usual base for Forbidden Peak's West Ridge and North Ridge, Sharkfin Tower and the Torment-Forbidden traverse, and it stays snow-covered well into early summer. accounts differ on th…"
+   },
+   {
+    "name": "Informal snow and rock bivouacs above the basins",
+    "elev_ft": null,
+    "type": "bivy",
+    "role": "route",
+    "notes": "Parties attempting the Torment-Forbidden traverse, a long day on Boston Peak, or a late finish on the Forbidden North Ridge sometimes end up bivouacking on snow or rock above the established camps, in the Sharkfin Col area, or in a notch on route. Treat these as unplanned or emergency shelter rather than as an itinerar…"
+   }
+  ],
+  "campsite_pins": [
+   {
+    "name": "Boston Basin lower camp",
+    "elev": 5300,
+    "distMi": 1.6
+   },
+   {
+    "name": "Boston Basin High Camp",
+    "elev": 6400,
+    "distMi": 3
+   }
+  ]
+ },
+ {
+  "id": "wa_forbidden_peak_west_ridge",
+  "name": "West Ridge",
+  "discipline": "alpine",
+  "peak": "Forbidden Peak",
+  "area_id": "wa_forbidden_peak",
+  "path": "usa.washington.wa_northwest.wa_hwy20_ncnp.wa_north_cascades.wa_north_cascades_core.wa_boston_basin.wa_forbidden_peak",
+  "trip_plan": {
+   "totalNote": "A 2-day trip for most parties (hike in and camp, then a technical summit day of about 6 hr up and 13.5 hr in all, back down to camp and out to the car); very strong parties occasionally push it car-to-car in a single long day.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Approach to Boston Basin camp",
+     "objective": "Establish camp in Boston Basin",
+     "miles": 3.3,
+     "gainFt": 3200,
+     "note": "Hike the climbers' path from the trailhead into Boston Basin and camp near 6,400 ft below the peak."
+    },
+    {
+     "n": 2,
+     "title": "West Ridge to summit, descend couloir",
+     "objective": "Climb the West Ridge and return to camp",
+     "miles": 4.7,
+     "gainFt": 2415,
+     "note": "Pre-dawn start up the approach couloir to the West Ridge notch, then ~6 pitches of low 5th-class ridge climbing to the true summit. Reverse the ridge to the notch and descend the couloir back to camp, hiking out the same evening or the next morning."
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Boston Basin high camp",
+    "elev_ft": 6200,
+    "type": null,
+    "role": "main",
+    "notes": "The standard base for the route, in the boulder-and-heather basin below the south face, roughly 3 miles and 3,000 ft above the trailhead. Most parties leave camp very early and are back the same day; it is also the place to retreat to if the couloir or the ridge turns you around."
+   },
+   {
+    "name": "Treeline emergency bivy",
+    "elev_ft": 4800,
+    "type": null,
+    "role": "route",
+    "notes": "Not a planned camp and not a substitute for reaching the basin. An emergency option only: parties benighted on the walk in have stopped near treeline on the Boston Basin path; there are no prepared sites and no reason to aim for it."
+   }
+  ],
+  "campsite_pins": [
+   {
+    "name": "Boston Basin",
+    "elev": 6200,
+    "distMi": 3
+   }
+  ]
+ },
+ {
+  "id": "wa_mount_torment_south_ridge",
+  "name": "South Ridge",
+  "discipline": "alpine",
+  "peak": "Mount Torment",
+  "area_id": "wa_mount_torment",
+  "path": "usa.washington.wa_northwest.wa_hwy20_ncnp.wa_north_cascades.wa_north_cascades_core.wa_boston_basin.wa_mount_torment",
+  "trip_plan": {
+   "totalNote": "A 3-day, 2-night trip: hike in to Boston Basin, a long round-trip summit day on the South Ridge, and hike out — about 5,300 ft of gain over roughly 10 miles round trip.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Approach to Boston Basin camp",
+     "objective": "Establish camp below Torment's South Ridge",
+     "miles": 3.5,
+     "gainFt": 3000,
+     "note": "A steep, rough climbers' trail off Cascade River Road gains about 3,000 ft in 3-4 hours to benched campsites in upper Boston Basin beneath the Taboo Glacier and Torment's South Ridge."
+    },
+    {
+     "n": 2,
+     "title": "Climb the South Ridge, return to camp",
+     "objective": "Summit Mount Torment via the South Ridge",
+     "miles": 3,
+     "gainFt": 2300,
+     "note": "An alpine start crosses the gentle Taboo Glacier to a snow couloir gaining the South Ridge; four pitches of low-5th-class rock lead to the summit, with the moat/bergschrund at the base often the crux in mid-to-late season. Most parties reverse the route with several rappels back to the glacier and are back in camp by e…"
+    },
+    {
+     "n": 3,
+     "title": "Hike out",
+     "objective": "Return to the trailhead",
+     "miles": 3.5,
+     "gainFt": 0,
+     "note": "Break camp and descend the climbers' trail back to the Cascade River Road trailhead."
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Boston Basin upper (high) camp",
+    "elev_ft": 6400,
+    "type": "camp",
+    "role": "main",
+    "notes": "Several hundred vertical feet above the lower camp and also served by a composting toilet, this shortens the morning to the Forbidden West Ridge couloir and to Sharkfin Tower considerably. There is a real tension in the published guidance worth knowing before you go: park zone rules describe camping on durable surfaces…"
+   },
+   {
+    "name": "Boston Basin lower camp",
+    "elev_ft": 5300,
+    "type": "camp",
+    "role": "route",
+    "notes": "The first hardened camp on the climbers' trail up from the Cascade River Road pullout near mile 21.7, with a composting toilet. It is the usual base for Forbidden Peak's West Ridge and North Ridge, Sharkfin Tower and the Torment-Forbidden traverse, and it stays snow-covered well into early summer. accounts differ on th…"
+   },
+   {
+    "name": "Informal snow and rock bivouacs above the basins",
+    "elev_ft": null,
+    "type": "bivy",
+    "role": "route",
+    "notes": "Parties attempting the Torment-Forbidden traverse, a long day on Boston Peak, or a late finish on the Forbidden North Ridge sometimes end up bivouacking on snow or rock above the established camps, in the Sharkfin Col area, or in a notch on route. Treat these as unplanned or emergency shelter rather than as an itinerar…"
+   }
+  ],
+  "campsite_pins": [
+   {
+    "name": "Boston Basin",
+    "elev": 6248,
+    "distMi": 3
+   },
+   {
+    "name": "Boston Basin lower camp",
+    "elev": 5300,
+    "distMi": 2.1
+   }
+  ]
+ },
+ {
+  "id": "wa_mount_torment_torment_forbidden_traverse",
+  "name": "Torment-Forbidden Traverse",
+  "discipline": "alpine",
+  "peak": "Mount Torment",
+  "area_id": "wa_mount_torment",
+  "path": "usa.washington.wa_northwest.wa_hwy20_ncnp.wa_north_cascades.wa_north_cascades_core.wa_boston_basin.wa_mount_torment",
+  "trip_plan": {
+   "totalNote": "A 3-day, 2-night trip (about 30 hours on the move): hike in, climb Torment and bivy on the connecting ridge, then finish over Forbidden and descend all the way to the car; strong parties sometimes do it all in one very long push.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Approach to Boston Basin camp",
+     "objective": "Establish camp below the Taboo Glacier",
+     "miles": 3.5,
+     "gainFt": 3000,
+     "note": "A steep, rough climbers' trail off Cascade River Road gains about 3,000 ft in 3-4 hours to benched campsites in upper Boston Basin below the Taboo Glacier. Afternoon is spent racking up and scouting the couloir for the next day's alpine start."
+    },
+    {
+     "n": 2,
+     "title": "Climb Torment, bivy on the connecting ridge",
+     "objective": "Summit Mount Torment and reach a bivy site on the traverse ridge",
+     "miles": 2.5,
+     "gainFt": 2200,
+     "note": "An alpine start crosses the Taboo Glacier to a snow/rock couloir that gains Torment's south ridge; low-5th-class rock leads to the summit around midday. Rather than pushing straight on to Forbidden, most parties downclimb and traverse the connecting ridge and find a bivy ledge in the early evening."
+    },
+    {
+     "n": 3,
+     "title": "Finish the traverse over Forbidden, descend to the car",
+     "objective": "Summit Forbidden Peak and return to the trailhead",
+     "miles": 5.5,
+     "gainFt": 500,
+     "note": "From the ridge bivy, parties reach the notch below Forbidden's West Ridge by mid-morning, simul-climb to the summit around noon, then descend via the West Ridge and the Cat Scratch Gullies (roughly 6-8 rappels) back to Boston Basin and out to the trailhead, often not reaching the car until evening."
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Boston Basin high camp",
+    "elev_ft": 6300,
+    "type": null,
+    "role": "main",
+    "notes": "A comfortable planned camp, roughly 6,300 to 6,400 ft, on a small sandy flat at the foot of a permanent snowfield with a privy and a food storage bin nearby. This is the standard staging camp for the traverse: about two to two and a half hours from here to the base of Torment. It is the most crowded alpine camp in this…"
+   },
+   {
+    "name": "Torment Basin camp below the southeast face",
+    "elev_ft": 7100,
+    "type": null,
+    "role": "route",
+    "notes": "A planned alternative camp for parties who want to start the traverse from the base of the climbing instead of from Boston Basin. It sits under the southeast side of Torment near the foot of the east couloir. Early in the season the ground is still part snow and gets excavated with an axe; late in the season the rocky …"
+   },
+   {
+    "name": "Mid-traverse ridge bivy",
+    "elev_ft": null,
+    "type": null,
+    "role": "route",
+    "notes": "This is the emergency-and-committed option rather than a planned camp: a flat spot at a notch on the ridge roughly midway along the traverse, reached after the snow and ice section on the north side. Parties who get benighted mid-ridge use it, and parties intentionally splitting the traverse into two short days sleep t…"
+   }
+  ],
+  "campsite_pins": [
+   {
+    "name": "Boston Basin",
+    "elev": 6248,
+    "distMi": 3
+   }
+  ]
+ },
+ {
+  "id": "wa_sahale_mountain_r1",
+  "name": "Quien Sabe Glacier",
+  "discipline": "mountaineering",
+  "peak": "Sahale Mountain",
+  "area_id": "wa_sahale_mountain",
+  "path": "usa.washington.wa_northwest.wa_hwy20_ncnp.wa_north_cascades.wa_north_cascades_core.wa_boston_basin.wa_sahale_mountain",
+  "trip_plan": {
+   "totalNote": "A classic 3-day glacier climb (2 nights in Boston Basin) totaling roughly 10.5 mi and 5,500 ft of gain; strong, fit rope teams commonly compress it into a 2-day trip by hiking out the same day they summit.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Approach to Boston Basin high camp",
+     "objective": "Reach camp in Boston Basin below Sharkfin Tower",
+     "miles": 3.5,
+     "gainFt": 2700,
+     "note": "From the Boston Basin Trailhead off Cascade River Road, a steep, well-worn climbers' trail through timber and stream crossings gains the alpine basin. Camp around 6,200-6,700 ft with views of Sahale, Sharkfin, and Boston Peak."
+    },
+    {
+     "n": 2,
+     "title": "Quien Sabe Glacier summit day",
+     "objective": "Climb Sahale Peak via the Quien Sabe Glacier and return to camp",
+     "miles": 3.5,
+     "gainFt": 2380,
+     "note": "A pre-dawn alpine start to rope up on the glacier, climb to the Boston-Sahale col, then traverse an exposed class 3-4 ridge to the summit. Round trip from camp typically runs 7-9 hours for a fit, efficient rope team."
+    },
+    {
+     "n": 3,
+     "title": "Hike out",
+     "objective": "Return to the Boston Basin trailhead",
+     "miles": 3.5,
+     "gainFt": 0,
+     "note": "Break camp after breakfast and descend the same trail back to the car; strong parties often skip this night and combine the summit push with the hike out on day 2 instead."
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Boston Basin high camp",
+    "elev_ft": 6401,
+    "type": "camp",
+    "role": "main",
+    "notes": "The upper of the basin's two camps, around 6,400 ft, with a composting toilet. It is the natural base for the Quien Sabe: the glacier starts more or less at the tent door, so summit day is short. Snow lingers here well into July, and the rule to pitch only on hardened ground matters — the meadows recover very slowly."
+   },
+   {
+    "name": "Boston Basin low camp",
+    "elev_ft": 5299,
+    "type": "camp",
+    "role": "route",
+    "notes": "Around 5,300 ft on the edge of a moraine crest among small trees, below the polished slabs the Quien Sabe has left behind. Melts out earlier and is more sheltered than the high camp, at the cost of an extra thousand feet on summit morning."
+   }
+  ],
+  "campsite_pins": [
+   {
+    "name": "Boston Basin low camp",
+    "elev": 5300,
+    "distMi": 2.7
+   }
+  ]
+ },
+ {
+  "id": "wa_sahale_mountain_sahale_glacier",
+  "name": "Sahale Arm / Sahale Glacier",
+  "discipline": "mountaineering",
+  "peak": "Sahale Mountain",
+  "area_id": "wa_sahale_mountain",
+  "path": "usa.washington.wa_northwest.wa_hwy20_ncnp.wa_north_cascades.wa_north_cascades_core.wa_boston_basin.wa_sahale_mountain",
+  "trip_plan": {
+   "totalNote": "A popular 1-night backpack: ~13 mi round trip and ~5,000 ft gain, with an alpine-start glacier crossing and summit scramble on day 2 before hiking all the way out.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Approach to Sahale Glacier Camp",
+     "objective": "Reach Sahale Glacier Camp",
+     "miles": 5.9,
+     "gainFt": 3940,
+     "note": "From the Cascade Pass Trailhead, switchback up to Cascade Pass (3.7 mi, ~1,800 ft), then continue up the Sahale Arm climbers' trail to the permitted camp at ~7,600 ft. The final 0.6-0.7 mi above the Arm is loose scree/talus on cairns with real exposure — go slow and watch weather."
+    },
+    {
+     "n": 2,
+     "title": "Summit push and hike out",
+     "objective": "Climb Sahale Mountain via the Sahale Glacier, then descend to the trailhead",
+     "miles": 7.3,
+     "gainFt": 1080,
+     "note": "An early start to cross the small, crevassed Sahale Glacier while snow is firm, then a short, exposed class 3-4 scramble and an awkward chimney move (about 5.0) to the 8,680 ft summit. Most parties return to camp, break it down, and hike all the way out to the car the same day rather than spend a second night."
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Sahale Glacier Camp",
+    "elev_ft": 7500,
+    "type": null,
+    "role": "main",
+    "notes": "A planned camp and one of the highest in the park, where the maintained trail ends: flat gravel tent pads built onto rock mounds at the foot of the glacier, each ringed by a primitive dry-stone wall, plus a composting toilet. Those walls are there because the site is completely exposed to wind and weather with nothing …"
+   },
+   {
+    "name": "Doubtful Lake",
+    "elev_ft": 5393,
+    "type": null,
+    "role": "route",
+    "notes": "The lower fallback, roughly a mile and a thousand feet down a signed spur off the arm. It has water when the high camp does not and it is far more sheltered in bad weather, at the cost of re-gaining that thousand feet to rejoin the route. Worth knowing because there is no camping permitted anywhere along Sahale Arm bet…"
+   }
+  ],
+  "campsite_pins": [
+   {
+    "name": "Sahale Glacier Camp",
+    "elev": 7686,
+    "distMi": 5.5
+   }
+  ]
+ },
+ {
+  "id": "wa_sharkfin_tower_southeast_ridge",
+  "name": "Southeast Ridge",
+  "discipline": "alpine",
+  "peak": "Sharkfin Tower",
+  "area_id": "wa_sharkfin_tower",
+  "path": "usa.washington.wa_northwest.wa_hwy20_ncnp.wa_north_cascades.wa_north_cascades_core.wa_boston_basin.wa_sharkfin_tower",
+  "trip_plan": {
+   "totalNote": "A standard 2-day (1-night) trip: backpack into Boston Basin, then an alpine-start summit day (~10 hrs car-to-camp) climbing 3 easy pitches and hiking all the way back out. ~4,900 ft total gain, ~10 miles round trip.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Hike in to Boston Basin camp",
+     "objective": "Establish camp below Sharkfin Tower",
+     "miles": 3.3,
+     "gainFt": 2500,
+     "note": "A rough climber's path leaves the Cascade River Road trailhead through steep old-growth, crosses Midas and Morning Star creeks, passes the old miner's cabin site (~5,300 ft), and opens into alpine terrain at Boston Basin. Most parties set a lower camp near treeline (~5,700 ft) with views straight up at Sharkfin, Forbid…"
+    },
+    {
+     "n": 2,
+     "title": "Summit push and hike out",
+     "objective": "Climb the SE Ridge (5.0, 3 pitches) and return to the car",
+     "miles": 6.8,
+     "gainFt": 2420,
+     "note": "An alpine start gets you across the short glacier and up the couloir to the notch before the sun softens the snow. Three low-fifth-class pitches on clean granite lead to the summit, then downclimb and rappel the same line back to the glacier. Most parties break camp and hike all the way out the same afternoon, ideally …"
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Boston Basin upper (high) camp",
+    "elev_ft": 6400,
+    "type": "camp",
+    "role": "main",
+    "notes": "Several hundred vertical feet above the lower camp and also served by a composting toilet, this shortens the morning to the Forbidden West Ridge couloir and to Sharkfin Tower considerably. There is a real tension in the published guidance worth knowing before you go: park zone rules describe camping on durable surfaces…"
+   },
+   {
+    "name": "Boston Basin lower camp",
+    "elev_ft": 5300,
+    "type": "camp",
+    "role": "route",
+    "notes": "The first hardened camp on the climbers' trail up from the Cascade River Road pullout near mile 21.7, with a composting toilet. It is the usual base for Forbidden Peak's West Ridge and North Ridge, Sharkfin Tower and the Torment-Forbidden traverse, and it stays snow-covered well into early summer. accounts differ on th…"
+   },
+   {
+    "name": "Informal snow and rock bivouacs above the basins",
+    "elev_ft": null,
+    "type": "bivy",
+    "role": "route",
+    "notes": "Parties attempting the Torment-Forbidden traverse, a long day on Boston Peak, or a late finish on the Forbidden North Ridge sometimes end up bivouacking on snow or rock above the established camps, in the Sharkfin Col area, or in a notch on route. Treat these as unplanned or emergency shelter rather than as an itinerar…"
+   }
+  ],
+  "campsite_pins": [
+   {
+    "name": "Boston Basin",
+    "elev": 5395,
+    "distMi": 3
+   },
+   {
+    "name": "Boston Basin lower camp",
+    "elev": 5300,
+    "distMi": 1.4
+   }
+  ]
+ },
+ {
+  "id": "wa_southeast_face",
+  "name": "Southeast Face",
+  "discipline": "alpine",
+  "peak": "Sharkfin Tower",
+  "area_id": "wa_sharkfin_tower",
+  "path": "usa.washington.wa_northwest.wa_hwy20_ncnp.wa_north_cascades.wa_north_cascades_core.wa_boston_basin.wa_sharkfin_tower",
+  "trip_plan": {
+   "totalNote": "A 2-day (1-night) trip built around a single technical crux day: backpack to Boston Basin, then climb two sustained 5.10 pitches on the SE Face and hike all the way out the same afternoon. Roughly 4,900 ft total gain and 10 miles round trip (estimated).",
+   "days": [
+    {
+     "n": 1,
+     "title": "Hike in to Boston Basin camp",
+     "objective": "Establish camp below Sharkfin Tower",
+     "miles": 3.3,
+     "gainFt": 2500,
+     "note": "Same approach as the standard SE Ridge route: a steep climber's path from the Cascade River Road trailhead through forest, several creek crossings, and up into alpine terrain, ending at a lower camp near treeline (~5,700 ft) in Boston Basin."
+    },
+    {
+     "n": 2,
+     "title": "Climb the Southeast Face and hike out",
+     "objective": "Climb the SE Face (5.10, 2 pitches) and return to the car",
+     "miles": 6.7,
+     "gainFt": 2400,
+     "note": "From camp, follow the Quien Sabe Glacier approach used for Sahale, staying climber's left of the glacier before angling right underneath the tower; a gully (snow early season, loose scree late season) leads to a sloped terrace below the face. Two pitches of sustained 5.10 rock gain the summit; the harder, more sustaine…"
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Boston Basin upper (high) camp",
+    "elev_ft": 6400,
+    "type": "camp",
+    "role": "main",
+    "notes": "Several hundred vertical feet above the lower camp and also served by a composting toilet, this shortens the morning to the Forbidden West Ridge couloir and to Sharkfin Tower considerably. There is a real tension in the published guidance worth knowing before you go: park zone rules describe camping on durable surfaces…"
+   },
+   {
+    "name": "Boston Basin lower camp",
+    "elev_ft": 5300,
+    "type": "camp",
+    "role": "route",
+    "notes": "The first hardened camp on the climbers' trail up from the Cascade River Road pullout near mile 21.7, with a composting toilet. It is the usual base for Forbidden Peak's West Ridge and North Ridge, Sharkfin Tower and the Torment-Forbidden traverse, and it stays snow-covered well into early summer. accounts differ on th…"
+   },
+   {
+    "name": "Informal snow and rock bivouacs above the basins",
+    "elev_ft": null,
+    "type": "bivy",
+    "role": "route",
+    "notes": "Parties attempting the Torment-Forbidden traverse, a long day on Boston Peak, or a late finish on the Forbidden North Ridge sometimes end up bivouacking on snow or rock above the established camps, in the Sharkfin Col area, or in a notch on route. Treat these as unplanned or emergency shelter rather than as an itinerar…"
+   }
+  ],
+  "campsite_pins": [
+   {
+    "name": "Boston Basin lower camp",
+    "elev": 5300,
+    "distMi": null
+   },
+   {
+    "name": "Boston Basin upper (high) camp",
+    "elev": 6400,
+    "distMi": null
+   }
+  ]
+ },
+ {
+  "id": "wa_cascade_peak_east_ridge",
+  "name": "East Ridge and NW Chimney",
+  "discipline": "alpine",
+  "peak": "Cascade Peak",
+  "area_id": "wa_cascade_peak",
+  "path": "usa.washington.wa_northwest.wa_hwy20_ncnp.wa_north_cascades.wa_north_cascades_core.wa_cascade_peak",
+  "trip_plan": {
+   "totalNote": "A 2-day round trip: ~3,400 ft of snow/ice up the CJ Couloir to a col bivy on day 1, then a long ~12-hr day 2 combining 3 technical pitches (5.8 chimney) with a full descent back to the car — about 4,200 ft total gain and 11+ miles round trip.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Approach and CJ Couloir to a col bivy",
+     "objective": "Reach the Cascade-Johannesburg col via the CJ Couloir before the day warms",
+     "miles": 8.7,
+     "gainFt": 3600,
+     "note": "Walk or bike the 3 closed miles of Cascade River Road from the Eldorado gate to the Cascade Pass trailhead first. From the Cascade Pass trailhead (verify Cascade River Road status first — it washes out periodically), walk back to the hairpin, scramble down, cross the creek, and bushwhack about 15 minutes to the base of…"
+    },
+    {
+     "n": 2,
+     "title": "NW Chimney to the summit, then out",
+     "objective": "Climb the East Ridge/NW Chimney and descend all the way to the trailhead",
+     "miles": 8.7,
+     "gainFt": 600,
+     "note": "Traverse from the col to the base of Cascade Peak's NW Chimney in the moat and climb the roughly 3-pitch route (loose crux crack, then a cleaner 5.8 chimney, then a short loose pitch and simul-climbing to the summit). Rappel the route back to the moat, return to the col, break camp, then reverse the CJ Couloir and hike…"
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Cascade-Johannesburg Col bivy",
+    "elev_ft": null,
+    "type": "bivy",
+    "role": "main",
+    "notes": "Top of the CJ Couloir between Cascade Peak and Johannesburg. Most parties sleep here and climb to the summit the next morning."
+   },
+   {
+    "name": "Johannesburg Camp",
+    "elev_ft": 3400,
+    "type": "camp",
+    "role": "route",
+    "notes": "A walk-in camp a short, steep and often slick few minutes above the Cascade Pass trailhead at the end of the road — not a drive-up campground, you carry everything in. It is the practical staging point for the Cascade-Johannesburg Couloir, Cascade Peak, and any pre-dawn start where you want to be at the road end the ni…"
+   }
+  ],
+  "campsite_pins": [
+   {
+    "name": "Johannesburg Camp",
+    "elev": 3400,
+    "distMi": null
+   }
+  ]
+ },
+ {
+  "id": "wa_colonial_peak_west_ridge",
+  "name": "West Ridge / Colonial Glacier",
+  "discipline": "mountaineering",
+  "peak": "Colonial Peak",
+  "area_id": "wa_colonial_peak",
+  "path": "usa.washington.wa_northwest.wa_hwy20_ncnp.wa_north_cascades.wa_north_cascades_core.wa_colonial_peak",
+  "trip_plan": {
+   "totalNote": "A 2-day, 1-night trip: ~6 mi and 5,000 ft to camp on day 1, then a long ~10 mi summit-and-hike-out day (~1,900 ft up / ~7,100 ft down) on day 2; strong parties occasionally push it car-to-car in one very long day instead.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Approach to Colonial Glacier basin camp",
+     "objective": "Reach the ~6,100 ft camp below Colonial Glacier",
+     "miles": 6,
+     "gainFt": 5000,
+     "note": "From the Pyramid Lake trailhead on SR 20 (~1,150 ft), follow the Pyramid Lake trail then leave it for a steep, brushy, off-trail climbers' path up Pyramid Ridge and into the basin below Colonial Glacier, camping near a tarn at ~6,100 ft. The mileage is modest but steep talus, brush, and route-finding off-trail make it …"
+    },
+    {
+     "n": 2,
+     "title": "Summit day and hike out",
+     "objective": "Climb Colonial Glacier and the West Ridge to the summit, then descend all the way to the car",
+     "miles": 10,
+     "gainFt": 1900,
+     "note": "An alpine start gets the team across the glacier while it's still firm, up class 3 rock on the summit pyramid, and back to camp by midday. Most parties then break camp and hike all the way out the same day rather than adding a third night, making for a long but complete summit-and-out day."
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Basin camp below Colonial Glacier",
+    "elev_ft": null,
+    "type": "camp",
+    "role": "main",
+    "notes": ""
+   },
+   {
+    "name": "Colonial Basin bench camps, below the Pyramid-Colonial col",
+    "elev_ft": 5400,
+    "type": "camp",
+    "role": "main",
+    "notes": "The standard first-night camp for Snowfield, Neve and Colonial, reached by a steep sustained climb from the Pyramid Lake trailhead with no easy water for much of it. Early in the season the ground is still under snow and flat bivy platforms are easier to find than proper tent pitches; by late summer the basin rim dries…"
+   }
+  ],
+  "campsite_pins": [
+   {
+    "name": "Basin camp below Colonial Glacier",
+    "elev": 6100,
+    "distMi": null
+   }
+  ]
+ },
+ {
+  "id": "wa_cosho_peak_scramble",
+  "name": "Standard Scramble",
+  "discipline": "scrambling",
+  "peak": "Cosho Peak",
+  "area_id": "wa_cosho_peak",
+  "path": "usa.washington.wa_northwest.wa_hwy20_ncnp.wa_north_cascades.wa_north_cascades_core.wa_cosho_peak",
+  "trip_plan": {
+   "totalNote": "A 3-day, roughly 25-mile round trip out of the Easy Pass Trailhead: backpack in to Cosho Camp, a long cross-country summit day (~4,400 ft of gain on loose gullies, snow, and class 3 rock), then hike back out.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Backpack in to Cosho Camp",
+     "objective": "Reach Cosho Camp on Fisher Creek",
+     "miles": 9.6,
+     "gainFt": 2850,
+     "note": "Hike the Easy Pass Trail (3.6 mi, ~2,850 ft) to Easy Pass at 6,550 ft — snow often lingers on the pass into early July, so an ice axe is worth carrying. Descend the north side down ~30 switchbacks and about 1,400 ft to the Fisher Creek Trail junction, then continue down-valley past Fisher Camp to Cosho Camp (3,880 ft) …"
+    },
+    {
+     "n": 2,
+     "title": "Summit day: Cosho Peak via south gullies",
+     "objective": "Climb Cosho Peak (and optionally Kimtah) via the south gullies and upper east face",
+     "miles": 5,
+     "gainFt": 4450,
+     "note": "Alpine start with a light day pack. Follow the trail about a mile past camp, then leave it and climb one of the loose south-facing gullies (roughly 4,000 ft of gain, staying in the gully or on the rib to its west) to the 7,830 ft Kimtah-Cosho saddle. Grab the axe for the moderate snow slope on the north side up to ~8,1…"
+    },
+    {
+     "n": 3,
+     "title": "Hike out",
+     "objective": "Return to the Easy Pass trailhead",
+     "miles": 9.6,
+     "gainFt": 2670,
+     "note": "Reverse day one: climb back up out of the Fisher Creek drainage to Easy Pass, then descend the Easy Pass Trail to the trailhead."
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Cosho Camp, Fisher Creek",
+    "elev_ft": 3880,
+    "type": "camp",
+    "role": "main",
+    "notes": "This forested camp on the north side of Fisher Creek is the usual base for Cosho Peak and the eastern end of Ragged Ridge, reached over Easy Pass from the SR 20 trailhead and then down roughly 1,400 ft of switchbacks to the valley. It is an easy first day from the car, which is why parties use it despite the elevation …"
+   }
+  ],
+  "campsite_pins": [
+   {
+    "name": "Cosho Camp",
+    "elev": 3880,
+    "distMi": 9.6
+   }
+  ]
+ },
+ {
+  "id": "wa_direct_southwest_buttress",
+  "name": "Direct Southwest Buttress",
+  "discipline": "alpine",
+  "peak": "Dorado Needle",
+  "area_id": "wa_dorado_needle",
+  "path": "usa.washington.wa_northwest.wa_hwy20_ncnp.wa_north_cascades.wa_north_cascades_core.wa_eldorado_peak.wa_dorado_needle",
+  "trip_plan": {
+   "totalNote": "A 3-day trip (~16.2 mi, ~7,200 ft total gain) - the direct-start variant of the Southwest Buttress, slightly longer and more sustained than the standard line, with a full 11-13 hr summit day.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Approach to high camp near the McAllister/Marble Creek col",
+     "objective": "Reach high camp below the Southwest Buttress",
+     "miles": 5.8,
+     "gainFt": 5500,
+     "note": "Same Eldorado Creek trail and glacier approach as the standard Southwest Buttress, camping within reach of the buttress's toe."
+    },
+    {
+     "n": 2,
+     "title": "Climb the Direct Southwest Buttress",
+     "objective": "Summit via the direct-start buttress line and return to camp",
+     "miles": 4.2,
+     "gainFt": 1700,
+     "note": "Climb the standard approach gully, then go straight up from its top where the standard line traverses right: two direct-start pitches (the 5.10a mantel crux, then 5.8+) rejoin the 1985 route at a large white slab. Expect a longer, more continuous day of steep crack and slab climbing. Descend as for the standard route -…"
+    },
+    {
+     "n": 3,
+     "title": "Hike out",
+     "objective": "Break camp and return to the trailhead",
+     "miles": 5.8,
+     "gainFt": 0,
+     "note": "Reverse the approach back to the Cascade River Road trailhead."
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Eldorado-Inspiration snow arm high camp",
+    "elev_ft": 7500,
+    "type": "camp",
+    "role": "main",
+    "notes": "The standard base for the East Ridge and for anything out on the Inspiration Glacier, on the broad snow arm where the Eldorado and Inspiration ice meet. Because it is a snow camp rather than a fixed site, the exact ground shifts year to year with the snowpack — early season it is uniform snow, while a thin year opens m…"
+   },
+   {
+    "name": "Roush Creek Basin camp",
+    "elev_ft": 6300,
+    "type": "camp",
+    "role": "main",
+    "notes": "The neighbouring basin to the east offers an alternative low camp when Eldorado Basin is occupied, with usable ground reported roughly between 6,100 and 6,400 ft. It suits parties splitting the approach into a short first day, or skiers wanting a lower base. Like the Eldorado Basin option it costs you the height you di…"
+   },
+   {
+    "name": "Marble Creek Campground, Cascade River Road",
+    "elev_ft": 1225,
+    "type": "camp",
+    "role": "main",
+    "notes": "Roughly eight miles up the gravel Cascade River Road from Marblemount, this is the practical place to spend the night before if you cannot start walking the same day. Its value is logistical: the Wilderness Information Center wants your permit activated in person the day before, or before late morning on your start day…"
+   },
+   {
+    "name": "Eldorado East Ridge rock bivies",
+    "elev_ft": null,
+    "type": "bivy",
+    "role": "route",
+    "notes": "Where the snowpack has pulled back from the base of the East Ridge, flat rock takes bivy gear directly and gives a firmer, drier platform than the glacier. The site sits anywhere from roughly 7,500 to 7,800 ft, and the range is real rather than an error — how much rock is exposed, and therefore where you end up sleepin…"
+   },
+   {
+    "name": "Eldorado Basin camp",
+    "elev_ft": 6100,
+    "type": "camp",
+    "role": "route",
+    "notes": "The usual bail-out camp for parties who leave the trailhead late or find the boulder field slower than expected, reached after the talus and the short cliff band on the climbers' trail. It sits on vegetated ground rather than snow, so it is warmer and has real water, at the cost of adding a couple of thousand feet to s…"
+   },
+   {
+    "name": "Klawatti Col camp",
+    "elev_ft": 7800,
+    "type": "camp",
+    "role": "route",
+    "notes": "Only parties staying out more than one night use this camp; it exists to put Klawatti, Austera and Dorado Needle within a day's reach, and it is the natural staging point for continuing east. Getting there means traversing the Inspiration Glacier from the Eldorado camp, so it is a roped, crevassed approach rather than …"
+   }
+  ],
+  "campsite_pins": [
+   {
+    "name": "Eldorado/Inspiration Glacier high camp",
+    "elev": 7500,
+    "distMi": null
+   }
+  ]
+ },
+ {
+  "id": "wa_dorado_needle_east_ridge",
+  "name": "East Ridge / Inspiration Glacier",
+  "discipline": "alpine",
+  "peak": "Dorado Needle",
+  "area_id": "wa_dorado_needle",
+  "path": "usa.washington.wa_northwest.wa_hwy20_ncnp.wa_north_cascades.wa_north_cascades_core.wa_eldorado_peak.wa_dorado_needle",
+  "trip_plan": {
+   "totalNote": "Climb steeply from the Eldorado trailhead to a ~7,400 ft camp, cross the Inspiration and McAllister Glaciers to climb the East Ridge and descend the Northwest Ridge, then hike out on day three.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Hike to the Eldorado high camp",
+     "objective": "Set up high camp near 7,400 ft",
+     "miles": 4,
+     "gainFt": 6000,
+     "note": "Hike from the Cascade River Road trailhead, cross the creek, and climb steeply via the Eldorado Glacier to the East Ridge of Eldorado Peak, roughly 4 miles and 6,000 ft of gain. Set up camp around 7,400 ft and review gear and technique."
+    },
+    {
+     "n": 2,
+     "title": "Climb Dorado Needle",
+     "objective": "Climb the East Ridge and return to camp",
+     "miles": null,
+     "gainFt": null,
+     "note": "Rope up and traverse the Inspiration Glacier onto the McAllister Glacier, then descend to the col at the base of Dorado Needle's East Ridge and climb it to the summit. Downclimb and rappel the Northwest Ridge back to the col, then retrace the glacier traverse to high camp."
+    },
+    {
+     "n": 3,
+     "title": "Descend to the trailhead",
+     "objective": "Return to the Eldorado trailhead",
+     "miles": 4,
+     "gainFt": null,
+     "note": "Descend to the trailhead, including the final creek crossing, typically finishing by early evening."
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Eldorado-Inspiration snow arm high camp",
+    "elev_ft": 7500,
+    "type": "camp",
+    "role": "main",
+    "notes": "The standard base for the East Ridge and for anything out on the Inspiration Glacier, on the broad snow arm where the Eldorado and Inspiration ice meet. Because it is a snow camp rather than a fixed site, the exact ground shifts year to year with the snowpack — early season it is uniform snow, while a thin year opens m…"
+   },
+   {
+    "name": "Roush Creek Basin camp",
+    "elev_ft": 6300,
+    "type": "camp",
+    "role": "main",
+    "notes": "The neighbouring basin to the east offers an alternative low camp when Eldorado Basin is occupied, with usable ground reported roughly between 6,100 and 6,400 ft. It suits parties splitting the approach into a short first day, or skiers wanting a lower base. Like the Eldorado Basin option it costs you the height you di…"
+   },
+   {
+    "name": "Marble Creek Campground, Cascade River Road",
+    "elev_ft": 1225,
+    "type": "camp",
+    "role": "main",
+    "notes": "Roughly eight miles up the gravel Cascade River Road from Marblemount, this is the practical place to spend the night before if you cannot start walking the same day. Its value is logistical: the Wilderness Information Center wants your permit activated in person the day before, or before late morning on your start day…"
+   },
+   {
+    "name": "Eldorado East Ridge rock bivies",
+    "elev_ft": null,
+    "type": "bivy",
+    "role": "route",
+    "notes": "Where the snowpack has pulled back from the base of the East Ridge, flat rock takes bivy gear directly and gives a firmer, drier platform than the glacier. The site sits anywhere from roughly 7,500 to 7,800 ft, and the range is real rather than an error — how much rock is exposed, and therefore where you end up sleepin…"
+   },
+   {
+    "name": "Eldorado Basin camp",
+    "elev_ft": 6100,
+    "type": "camp",
+    "role": "route",
+    "notes": "The usual bail-out camp for parties who leave the trailhead late or find the boulder field slower than expected, reached after the talus and the short cliff band on the climbers' trail. It sits on vegetated ground rather than snow, so it is warmer and has real water, at the cost of adding a couple of thousand feet to s…"
+   },
+   {
+    "name": "Klawatti Col camp",
+    "elev_ft": 7800,
+    "type": "camp",
+    "role": "route",
+    "notes": "Only parties staying out more than one night use this camp; it exists to put Klawatti, Austera and Dorado Needle within a day's reach, and it is the natural staging point for continuing east. Getting there means traversing the Inspiration Glacier from the Eldorado camp, so it is a roped, crevassed approach rather than …"
+   }
+  ],
+  "campsite_pins": [
+   {
+    "name": "Eldorado-Inspiration snow arm high camp",
+    "elev": 7500,
+    "distMi": 2.8
+   }
+  ]
+ },
+ {
+  "id": "wa_northwest_ridge",
+  "name": "Northwest Ridge",
+  "discipline": "alpine",
+  "peak": "Dorado Needle",
+  "area_id": "wa_dorado_needle",
+  "path": "usa.washington.wa_northwest.wa_hwy20_ncnp.wa_north_cascades.wa_north_cascades_core.wa_eldorado_peak.wa_dorado_needle",
+  "trip_plan": {
+   "totalNote": "A 3-day trip (~14 mi, ~6,400 ft total gain) but the shortest/easiest of Dorado Needle's ridge lines - only 3 pitches of easy 5th class - so summit day is typically a half-day, 6-8 hrs camp-to-camp, rather than a full push.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Approach to Inspiration/McAllister Glacier high camp",
+     "objective": "Reach high camp below the Northwest Ridge",
+     "miles": 5.3,
+     "gainFt": 5300,
+     "note": "Same Eldorado Creek trail and glacier approach as the other Dorado Needle routes, to a high camp in the 7,000-7,500 ft range."
+    },
+    {
+     "n": 2,
+     "title": "Climb the Northwest Ridge",
+     "objective": "Summit via the Northwest Ridge and return to camp",
+     "miles": 3,
+     "gainFt": 1100,
+     "note": "Cross the Inspiration and McAllister Glaciers to gain the ridge, then follow easy 5th-class rock (only ~3 short pitches) along the crest to the summit - the shortest and easiest of Dorado Needle's ridge routes. Downclimb or rappel the same line (carry extra webbing for the anchor), or descend an alternate snow gully, t…"
+    },
+    {
+     "n": 3,
+     "title": "Hike out",
+     "objective": "Break camp and return to the trailhead",
+     "miles": 5.3,
+     "gainFt": 0,
+     "note": "Reverse the approach back to the Cascade River Road trailhead."
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Eldorado-Inspiration snow arm high camp",
+    "elev_ft": 7500,
+    "type": "camp",
+    "role": "main",
+    "notes": "The standard base for the East Ridge and for anything out on the Inspiration Glacier, on the broad snow arm where the Eldorado and Inspiration ice meet. Because it is a snow camp rather than a fixed site, the exact ground shifts year to year with the snowpack — early season it is uniform snow, while a thin year opens m…"
+   },
+   {
+    "name": "Roush Creek Basin camp",
+    "elev_ft": 6300,
+    "type": "camp",
+    "role": "main",
+    "notes": "The neighbouring basin to the east offers an alternative low camp when Eldorado Basin is occupied, with usable ground reported roughly between 6,100 and 6,400 ft. It suits parties splitting the approach into a short first day, or skiers wanting a lower base. Like the Eldorado Basin option it costs you the height you di…"
+   },
+   {
+    "name": "Marble Creek Campground, Cascade River Road",
+    "elev_ft": 1225,
+    "type": "camp",
+    "role": "main",
+    "notes": "Roughly eight miles up the gravel Cascade River Road from Marblemount, this is the practical place to spend the night before if you cannot start walking the same day. Its value is logistical: the Wilderness Information Center wants your permit activated in person the day before, or before late morning on your start day…"
+   },
+   {
+    "name": "Eldorado East Ridge rock bivies",
+    "elev_ft": null,
+    "type": "bivy",
+    "role": "route",
+    "notes": "Where the snowpack has pulled back from the base of the East Ridge, flat rock takes bivy gear directly and gives a firmer, drier platform than the glacier. The site sits anywhere from roughly 7,500 to 7,800 ft, and the range is real rather than an error — how much rock is exposed, and therefore where you end up sleepin…"
+   },
+   {
+    "name": "Eldorado Basin camp",
+    "elev_ft": 6100,
+    "type": "camp",
+    "role": "route",
+    "notes": "The usual bail-out camp for parties who leave the trailhead late or find the boulder field slower than expected, reached after the talus and the short cliff band on the climbers' trail. It sits on vegetated ground rather than snow, so it is warmer and has real water, at the cost of adding a couple of thousand feet to s…"
+   },
+   {
+    "name": "Klawatti Col camp",
+    "elev_ft": 7800,
+    "type": "camp",
+    "role": "route",
+    "notes": "Only parties staying out more than one night use this camp; it exists to put Klawatti, Austera and Dorado Needle within a day's reach, and it is the natural staging point for continuing east. Getting there means traversing the Inspiration Glacier from the Eldorado camp, so it is a roped, crevassed approach rather than …"
+   }
+  ],
+  "campsite_pins": [
+   {
+    "name": "Eldorado Creek Basin camp",
+    "elev": 5650,
+    "distMi": null
+   },
+   {
+    "name": "Eldorado/Inspiration Glacier high camp",
+    "elev": 7500,
+    "distMi": null
+   }
+  ]
+ },
+ {
+  "id": "wa_southwest_buttress",
+  "name": "Southwest Buttress",
+  "discipline": "alpine",
+  "peak": "Dorado Needle",
+  "area_id": "wa_dorado_needle",
+  "path": "usa.washington.wa_northwest.wa_hwy20_ncnp.wa_north_cascades.wa_north_cascades_core.wa_eldorado_peak.wa_dorado_needle",
+  "trip_plan": {
+   "totalNote": "A 3-day trip (occasionally pushed to 2 by a fast team): ~7,000 ft total gain, high camp near the McAllister/Marble Creek col, and a long 10-13 hr summit day on 9 pitches of quality 5.7-5.8 rock.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Approach to high camp near the McAllister/Marble Creek col",
+     "objective": "Reach high camp below the Southwest Buttress",
+     "miles": 5.7,
+     "gainFt": 5400,
+     "note": "Same Eldorado Creek trail approach, continuing over talus and the Eldorado Glacier toward the Inspiration/McAllister Glacier area, camping within striking distance of the snow gully below the Marble Creek-McAllister col that gives access to the buttress."
+    },
+    {
+     "n": 2,
+     "title": "Climb the Southwest Buttress",
+     "objective": "Summit via the Southwest Buttress and return to camp",
+     "miles": 4,
+     "gainFt": 1600,
+     "note": "Cross the glacier to the snow-filled gully below the col, gain the blocky toe of the buttress, then climb roughly 9 pitches of steep cracks, slabs, and photogenic gendarme traverses (5.7-5.8) to the summit. Descend by rappelling the approach gully, or via a fixed ring/sling on a boulder near the true summit, then rever…"
+    },
+    {
+     "n": 3,
+     "title": "Hike out",
+     "objective": "Break camp and return to the trailhead",
+     "miles": 5.7,
+     "gainFt": 0,
+     "note": "Reverse the approach back to the Cascade River Road trailhead."
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Eldorado-Inspiration snow arm high camp",
+    "elev_ft": 7500,
+    "type": "camp",
+    "role": "main",
+    "notes": "The standard base for the East Ridge and for anything out on the Inspiration Glacier, on the broad snow arm where the Eldorado and Inspiration ice meet. Because it is a snow camp rather than a fixed site, the exact ground shifts year to year with the snowpack — early season it is uniform snow, while a thin year opens m…"
+   },
+   {
+    "name": "Roush Creek Basin camp",
+    "elev_ft": 6300,
+    "type": "camp",
+    "role": "main",
+    "notes": "The neighbouring basin to the east offers an alternative low camp when Eldorado Basin is occupied, with usable ground reported roughly between 6,100 and 6,400 ft. It suits parties splitting the approach into a short first day, or skiers wanting a lower base. Like the Eldorado Basin option it costs you the height you di…"
+   },
+   {
+    "name": "Marble Creek Campground, Cascade River Road",
+    "elev_ft": 1225,
+    "type": "camp",
+    "role": "main",
+    "notes": "Roughly eight miles up the gravel Cascade River Road from Marblemount, this is the practical place to spend the night before if you cannot start walking the same day. Its value is logistical: the Wilderness Information Center wants your permit activated in person the day before, or before late morning on your start day…"
+   },
+   {
+    "name": "Eldorado East Ridge rock bivies",
+    "elev_ft": null,
+    "type": "bivy",
+    "role": "route",
+    "notes": "Where the snowpack has pulled back from the base of the East Ridge, flat rock takes bivy gear directly and gives a firmer, drier platform than the glacier. The site sits anywhere from roughly 7,500 to 7,800 ft, and the range is real rather than an error — how much rock is exposed, and therefore where you end up sleepin…"
+   },
+   {
+    "name": "Eldorado Basin camp",
+    "elev_ft": 6100,
+    "type": "camp",
+    "role": "route",
+    "notes": "The usual bail-out camp for parties who leave the trailhead late or find the boulder field slower than expected, reached after the talus and the short cliff band on the climbers' trail. It sits on vegetated ground rather than snow, so it is warmer and has real water, at the cost of adding a couple of thousand feet to s…"
+   },
+   {
+    "name": "Klawatti Col camp",
+    "elev_ft": 7800,
+    "type": "camp",
+    "role": "route",
+    "notes": "Only parties staying out more than one night use this camp; it exists to put Klawatti, Austera and Dorado Needle within a day's reach, and it is the natural staging point for continuing east. Getting there means traversing the Inspiration Glacier from the Eldorado camp, so it is a roped, crevassed approach rather than …"
+   }
+  ],
+  "campsite_pins": [
+   {
+    "name": "Eldorado Creek Basin camp",
+    "elev": 5650,
+    "distMi": null
+   },
+   {
+    "name": "Eldorado/Inspiration Glacier high camp",
+    "elev": 7500,
+    "distMi": null
+   }
+  ]
+ }
+]

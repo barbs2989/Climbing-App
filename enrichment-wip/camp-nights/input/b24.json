@@ -1,0 +1,1198 @@
+[
+ {
+  "id": "wa_blackcap_mountain_scramble",
+  "name": "Standard Scramble",
+  "discipline": "scrambling",
+  "peak": "Blackcap Mountain",
+  "area_id": "wa_blackcap_mountain",
+  "path": "usa.washington.wa_okanogan.wa_pasayten.wa_blackcap_mountain",
+  "trip_plan": {
+   "totalNote": "A remote 3-day, roughly 30-34 mile round trip into the Pasayten Wilderness with about 8,000-8,500 ft of cumulative gain; many parties instead stretch it to 4-5 days to also tag nearby Mt. Lago and Mt. Carru from the same Shellrock Basin camp.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Backpack in to Shellrock Basin",
+     "objective": "Reach high camp near Shellrock Pass",
+     "miles": 14,
+     "gainFt": 3600,
+     "note": "From the Buckskin Ridge/Slate Peak trailhead (~6,900 ft), climb over Slate Pass and drop past Fred's Lake, then continue through the Eureka Creek valley and up into Shellrock Basin, camping in the basin below Shellrock Pass (~6,800 ft). Trip reports split this into two shorter days via a Fred's Lake camp, but strong pa…"
+    },
+    {
+     "n": 2,
+     "title": "Summit day: Blackcap Mountain",
+     "objective": "Climb Blackcap via the northeast ridge",
+     "miles": 6,
+     "gainFt": 1800,
+     "note": "An early start from camp, up onto Shellrock Pass and along Blackcap's northeast ridge — a Class 2-3 scramble with maybe one or two harder moves, finishing on the distinctive black hornfels summit cap. Round trip from camp runs about 5 hours, leaving the afternoon free to rest or tag Mt. Lago/Mt. Carru if water and ener…"
+    },
+    {
+     "n": 3,
+     "title": "Hike out",
+     "objective": "Return to trailhead",
+     "miles": 14,
+     "gainFt": 2900,
+     "note": "Reverse the approach: down through Eureka Creek, back over the Rolo Pass/Fred's Lake area and Slate Pass, and out to the Buckskin Ridge/Slate Peak trailhead. Some parties split this into two shorter days with a camp on the Pasayten River flats instead."
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Doris Lake and Freds Lake basins",
+    "elev_ft": 6975,
+    "type": "camp",
+    "role": "main",
+    "notes": "This is the working climbers' camp for Osceola Peak and Blackcap Mountain and the first night of the long traverse that links them with Carru and Lago. The line in starts high, which is the point: from Slate Pass at about 6,900 feet a short connector drops to the Middle Fork Pasayten trail, five miles of valley walking…"
+   },
+   {
+    "name": "Shellrock Pass, Shellrock Basin and the Eureka Creek meadows",
+    "elev_ft": null,
+    "type": "camp",
+    "role": "main",
+    "notes": "Shellrock is the camp for Ptarmigan Peak and Dot Mountain, both of which are otherwise out of reach. The standard line leaves Slate Pass, follows the Middle Fork Pasayten to Berk Creek, climbs to Freds Pass and crosses the head of Eureka Creek to Shellrock Pass, which puts a party in position to scramble Ptarmigan the …"
+   },
+   {
+    "name": "Harts Pass and Meadows campgrounds",
+    "elev_ft": 6200,
+    "type": "camp",
+    "role": "route",
+    "notes": "This is the staging ground for almost everything in the zone and the road to it is a substantial fact in its own right. Forest Road 5400 climbs roughly twenty miles of unpaved single lane from Mazama with pullouts rather than passing room, a rock wall on one side and an unguarded drop on the other, and grades approachi…"
+   }
+  ],
+  "campsite_pins": [
+   {
+    "name": "Fred's Lake",
+    "elev": 6507,
+    "distMi": 8.8
+   },
+   {
+    "name": "Shellrock Basin",
+    "elev": 6800,
+    "distMi": 12.6
+   }
+  ]
+ },
+ {
+  "id": "wa_blizzard_peak_standard",
+  "name": "Standard Route",
+  "discipline": "mountaineering",
+  "peak": "Blizzard Peak",
+  "area_id": "wa_blizzard_peak",
+  "path": "usa.washington.wa_okanogan.wa_pasayten.wa_blizzard_peak",
+  "trip_plan": {
+   "totalNote": "A long, remote 5-day trip: roughly 64 miles round trip via Harts Pass and the PCT/Boundary Trail, with two full travel days each way bracketing one summit day out of a high camp at Upper Frosty Basin; strong parties sometimes compress the travel days to cover it in 4.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Harts Pass to Holman Pass",
+     "objective": "Cover ground on the PCT to a mid-way camp",
+     "miles": 14,
+     "gainFt": 2600,
+     "note": "Start on the PCT at Harts Pass and follow it north over Windy, Tamarack and Foggy/Jim passes, traversing below Jim Peak's Devils Backbone before dropping down to camp near Holman Pass. It's a rolling, scenic high-traverse day rather than a steady climb."
+    },
+    {
+     "n": 2,
+     "title": "Push to high camp at Upper Frosty Basin",
+     "objective": "Reach base camp below Blizzard Peak",
+     "miles": 15,
+     "gainFt": 3800,
+     "note": "The long day of the trip: climb out of Holman Pass over Rock Pass and the treeless Woody Pass, past Devils Stairway and Hopkins Lake to Hopkins Pass, then reach Castle Pass and drop off the PCT onto the Boundary Trail, traversing below Mount Winthrop's west slopes to the grassy flats of Upper Frosty Basin (~6,100 ft), …"
+    },
+    {
+     "n": 3,
+     "title": "Summit day: Blizzard Peak",
+     "objective": "Climb Blizzard Peak (optionally tag Mount Winthrop)",
+     "miles": 6,
+     "gainFt": 2200,
+     "note": "Drop the overnight gear at camp and head out with a light pack. Blizzard Peak's south/north slopes from Frosty Pass are an easy Class 1-2 walk-up scramble; strong parties often tack on Mount Winthrop's Class 1-3 south ridge (~3.7 km away) the same day since both are visible from camp."
+    },
+    {
+     "n": 4,
+     "title": "Begin the hike out",
+     "objective": "Retrace the Boundary Trail and PCT toward Holman Pass",
+     "miles": 15,
+     "gainFt": 2600,
+     "note": "Reverse Day 2's route back over to the PCT near Castle Pass and on to a camp near Holman Pass. Pack is lighter with several days of food gone."
+    },
+    {
+     "n": 5,
+     "title": "Finish the hike out",
+     "objective": "Return to the Harts Pass trailhead",
+     "miles": 14,
+     "gainFt": 2700,
+     "note": "Reverse Day 1 south on the PCT over Windy, Tamarack, Foggy/Jim passes and the Devils Backbone back to the Harts Pass trailhead."
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Upper Frosty Basin Camp",
+    "elev_ft": null,
+    "type": "camp",
+    "role": "main",
+    "notes": ""
+   },
+   {
+    "name": "Harts Pass and Meadows campgrounds",
+    "elev_ft": 6200,
+    "type": "camp",
+    "role": "route",
+    "notes": "This is the staging ground for almost everything in the zone and the road to it is a substantial fact in its own right. Forest Road 5400 climbs roughly twenty miles of unpaved single lane from Mazama with pullouts rather than passing room, a rock wall on one side and an unguarded drop on the other, and grades approachi…"
+   },
+   {
+    "name": "Windy Pass and the crest camps north of Harts Pass",
+    "elev_ft": null,
+    "type": "camp",
+    "role": "route",
+    "notes": "This is the first day of every trip toward Castle and Blizzard and the natural stop for anyone who wants a night high on the crest without a valley grind. The trail leaves Harts Pass at about 6,200 feet, tops out just under 7,000 a little over two miles north, and never drops below 5,000 the whole way to the border, so…"
+   },
+   {
+    "name": "Hopkins Lake and Castle Pass",
+    "elev_ft": null,
+    "type": "camp",
+    "role": "route",
+    "notes": "These are the camps that make Castle Peak and Blizzard Peak possible at all from the American side. Hopkins Lake sits about twenty-four trail miles north of Harts Pass, six hundred feet below the trail, and Castle Pass is roughly twenty-seven miles out at about 5,450 feet. Castle Peak rises directly north and east of t…"
+   }
+  ],
+  "campsite_pins": [
+   {
+    "name": "Upper Frosty Basin Camp",
+    "elev": 6100,
+    "distMi": 30.5
+   }
+  ]
+ },
+ {
+  "id": "wa_castle_peak_pasayten_scramble",
+  "name": "Standard Scramble",
+  "discipline": "scrambling",
+  "peak": "Castle Peak",
+  "area_id": "wa_castle_peak_pasayten",
+  "path": "usa.washington.wa_okanogan.wa_pasayten.wa_castle_peak_pasayten",
+  "trip_plan": {
+   "totalNote": "A remote 4-day trip (~28 miles, ~7,400 ft gross gain) using the Ross Lake water-taxi/Freezeout Creek approach; some strong parties compress it to 3 days or even do it as a single 24+ hour continuous push, but a relaxed backpacking pace with 2 nights out and a dedicated summit day from high camp is the realistic recommendation.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Boat in and approach to camp",
+     "objective": "Reach a camp near Freezeout Cabin (3,600 ft)",
+     "miles": 9,
+     "gainFt": 2100,
+     "note": "Take the Ross Lake Resort water taxi north across Ross Lake to the Lightning Creek dock, then hike the Lightning Creek and Freezeout Creek trails north to a camp near the historic Freezeout Cabin (3,600 ft). This trail is faint/abandoned in stretches and involves a creek crossing at Lightning Creek."
+    },
+    {
+     "n": 2,
+     "title": "Move to high camp / stage for summit",
+     "objective": "Push higher toward the SW ridge approach for a shorter summit day",
+     "miles": 4,
+     "gainFt": 1600,
+     "note": "Continue up the Freezeout Creek drainage, leaving the last maintained tread behind, and establish a high camp higher in the basin below the SW ridge notch (roughly 5,000-5,500 ft) to shorten the following day's summit push. Water and flat tent sites are the deciding factor on exact camp spot."
+    },
+    {
+     "n": 3,
+     "title": "Summit day via the SW ridge notch",
+     "objective": "Climb Castle Peak (8,343 ft) and return to high camp",
+     "miles": 6,
+     "gainFt": 3300,
+     "note": "From high camp, climb talus and heather slopes to the SW ridge notch (~7,600 ft), then scramble Class 2 with a few Class 3 steps along the ridge to the summit. A 2004 trip report from a similar Freezeout-side camp reached the summit in about 4 hours from camp; expect a similarly long day with loose rock and route-findi…"
+    },
+    {
+     "n": 4,
+     "title": "Hike out and water-taxi back",
+     "objective": "Return to Ross Lake and catch the water taxi to the trailhead",
+     "miles": 9,
+     "gainFt": 400,
+     "note": "Break camp and retrace the Freezeout/Lightning Creek trail back down to the Ross Lake shore, timed to meet the scheduled water taxi pickup (taxi schedules are limited and should be booked in advance with Ross Lake Resort)."
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Freezeout Creek Cabin",
+    "elev_ft": null,
+    "type": "camp",
+    "role": "main",
+    "notes": ""
+   }
+  ],
+  "campsite_pins": [
+   {
+    "name": "Freezeout Creek Cabin",
+    "elev": 3600,
+    "distMi": null
+   }
+  ]
+ },
+ {
+  "id": "wa_cathedral_peak_last_rites",
+  "name": "Last Rites",
+  "discipline": "alpine",
+  "peak": "Cathedral Peak",
+  "area_id": "wa_cathedral_peak_pasayten",
+  "path": "usa.washington.wa_okanogan.wa_pasayten.wa_cathedral_peak_pasayten",
+  "trip_plan": {
+   "totalNote": "Hike 17-20 miles to Upper Cathedral Lake, spend a day resting and scouting the face, climb Last Rites and descend the Southwest Route on day three, and hike out on day four.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Hike in to Upper Cathedral Lake",
+     "objective": "Reach camp at Upper Cathedral Lake",
+     "miles": 17,
+     "gainFt": 4800,
+     "note": "Strong parties do the full 17-20 miles to Upper Cathedral Lake in one long day with heavy packs; others split it with a camp partway up Andrews Creek or the Chewuch. The Andrews Creek line runs about 17 miles with about 4,800 ft of gain, over Andrews Pass and down into the Spanish Creek drainage before the Cathedral La…"
+    },
+    {
+     "n": 2,
+     "title": "Rest and scout the face",
+     "objective": "Scout the South Face and fix the start",
+     "miles": null,
+     "gainFt": null,
+     "note": "Rest, scout the face from the lake and from the slopes toward Amphitheater Mountain, and fix the start."
+    },
+    {
+     "n": 3,
+     "title": "Climb Last Rites",
+     "objective": "Climb the route and return to camp",
+     "miles": null,
+     "gainFt": 1200,
+     "note": "Approach toward the Cathedral-Monk gully and along the base to its left to reach the open South Face, then climb Last Rites. Descend the Southwest Route walk-off back to camp."
+    },
+    {
+     "n": 4,
+     "title": "Hike out",
+     "objective": "Return to the trailhead",
+     "miles": 17,
+     "gainFt": 500,
+     "note": "Pack up and hike back out to the trailhead."
+    }
+   ]
+  },
+  "camps_on_file": [],
+  "campsite_pins": []
+ },
+ {
+  "id": "wa_cathedral_peak_pasayten_se_buttress",
+  "name": "Southeast Buttress",
+  "discipline": "alpine",
+  "peak": "Cathedral Peak",
+  "area_id": "wa_cathedral_peak_pasayten",
+  "path": "usa.washington.wa_okanogan.wa_pasayten.wa_cathedral_peak_pasayten",
+  "trip_plan": {
+   "totalNote": "A 4-5 day trip: roughly 36 miles round-trip and 4,350 ft of approach gain on the Andrews Creek Trail, plus an 8-11 hour, 10-pitch 5.9+/5.10a summit day from Upper Cathedral Lake camp; many parties add a rest or bonus-summit day.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Backpack to Upper Cathedral Lake",
+     "objective": "Reach high camp at Upper Cathedral Lake (7,380 ft)",
+     "miles": 18,
+     "gainFt": 4350,
+     "note": "A long, steady approach on the Andrews Creek Trail through forest and subalpine meadows into the Pasayten Wilderness, ending at Upper Cathedral Lake, the standard base camp for the peak. Self-issue a free wilderness permit at the trailhead kiosk before starting."
+    },
+    {
+     "n": 2,
+     "title": "Southeast Buttress summit day",
+     "objective": "Climb the SE Buttress (10 pitches, 5.9+/5.10a) and return to camp",
+     "miles": 2,
+     "gainFt": 1300,
+     "note": "Alpine start for the short approach to the base of the buttress, then 10 pitches of sustained hand and finger cracks on excellent granite to the 8,606 ft summit. Descend via the 3rd-class scramble route, including a short, exposed Class 4 gap crossing, back to camp."
+    },
+    {
+     "n": 3,
+     "title": "Rest day / optional bonus summit",
+     "objective": "Recover, or scramble Amphitheater Mountain or Deacon Peak",
+     "miles": 4,
+     "gainFt": 800,
+     "note": "Many parties build in a layover day at Upper Cathedral Lake to recover and take advantage of being deep in the Pasayten -- a common add-on is the easy 3rd-class scramble up nearby Amphitheater Mountain or Deacon Peak. Skip this day entirely for a faster 4-day trip."
+    },
+    {
+     "n": 4,
+     "title": "Hike out",
+     "objective": "Return to Andrews Creek Trailhead",
+     "miles": 18,
+     "gainFt": 200,
+     "note": "Retrace the Andrews Creek Trail back to the trailhead, losing the elevation gained on Day 1."
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Upper Cathedral Lake basin",
+    "elev_ft": 7400,
+    "type": "camp",
+    "role": "main",
+    "notes": "The working climbers' camp for both the Southeast Buttress and Amphitheater's ridges, sitting directly under the peaks with short walks to either. The basin has taken heavy use for decades and the Forest Service has posted revegetation closures on damaged ground here in the past, so treat the shoreline as off limits an…"
+   },
+   {
+    "name": "Andrews Pass",
+    "elev_ft": 6700,
+    "type": "camp",
+    "role": "route",
+    "notes": "The natural first-night stop if you leave the trailhead in the afternoon, roughly twelve miles up the drainage and about the halfway mark to the Cathedral basin. Everything below here is burn — the lower Andrews Creek drainage has been through repeated fire and the trail was closed for years after it, so expect open, h…"
+   },
+   {
+    "name": "Cathedral Pass benches and the tarn slabs",
+    "elev_ft": 7600,
+    "type": "bivy",
+    "role": "route",
+    "notes": "Useful mainly as a high, quick bivy if you arrive late or want to be moving before dawn, since it saves the drop into the lake basin and puts you already at the crest. The ground is rock and thin turf, so pick a slab and leave the vegetation alone. Wind is the real cost — the pass funnels it and there is nothing to hid…"
+   }
+  ],
+  "campsite_pins": [
+   {
+    "name": "Upper Cathedral Lake camp",
+    "elev": 7400,
+    "distMi": 18
+   }
+  ]
+ },
+ {
+  "id": "wa_cathedral_peak_southwest_route",
+  "name": "Southwest Route",
+  "discipline": "scrambling",
+  "peak": "Cathedral Peak",
+  "area_id": "wa_cathedral_peak_pasayten",
+  "path": "usa.washington.wa_okanogan.wa_pasayten.wa_cathedral_peak_pasayten",
+  "trip_plan": {
+   "totalNote": "Hike 17-20 miles to Upper Cathedral Lake, climb the Southwest Route in a half day from camp, then hike out or add Remmel Mountain.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Hike in to Upper Cathedral Lake",
+     "objective": "Reach camp at Upper Cathedral Lake",
+     "miles": 17,
+     "gainFt": 4800,
+     "note": "Hike 17-20 miles to Upper Cathedral Lake at 7,380 ft. The shortest way is the Andrews Creek Trail, about 17 miles and 4,800 ft of gain over Andrews Pass and down into the Spanish Creek drainage; the Chewuch River Trail is about 19.9 miles and 4,900 ft on gentle valley trail."
+    },
+    {
+     "n": 2,
+     "title": "Climb the Southwest Route",
+     "objective": "Summit Cathedral Peak and return to camp",
+     "miles": null,
+     "gainFt": 1200,
+     "note": "The climb starts 0.6 trail miles from camp at Cathedral Pass and is a half-day round trip; the descent from the summit back to camp takes about 45 minutes. If you have the legs, add Amphitheater Mountain's West Ridge across the basin."
+    },
+    {
+     "n": 3,
+     "title": "Hike out or add Remmel Mountain",
+     "objective": "Return to the trailhead",
+     "miles": 17,
+     "gainFt": 500,
+     "note": "Hike back out to the trailhead, or stay and add Remmel Mountain."
+    }
+   ]
+  },
+  "camps_on_file": [],
+  "campsite_pins": []
+ },
+ {
+  "id": "wa_ne_ridge",
+  "name": "NE Ridge",
+  "discipline": "alpine",
+  "peak": "Cathedral Peak",
+  "area_id": "wa_cathedral_peak_pasayten",
+  "path": "usa.washington.wa_okanogan.wa_pasayten.wa_cathedral_peak_pasayten",
+  "trip_plan": {
+   "totalNote": "A 5-day remote backpack: two days in over Andrews Pass to Upper Cathedral Lake basin, a day to climb the Northeast Ridge, and two days out.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Hike toward Cathedral Pass",
+     "objective": "Hike up Andrews Creek and camp en route",
+     "miles": 12,
+     "gainFt": 3650,
+     "note": "Hike from the Andrews Creek Trailhead toward Cathedral Pass and camp."
+    },
+    {
+     "n": 2,
+     "title": "Continue to Upper Cathedral Lake",
+     "objective": "Reach the Upper Cathedral Lake basin",
+     "miles": 6,
+     "gainFt": null,
+     "note": "Continue to the Upper Cathedral Lake basin."
+    },
+    {
+     "n": 3,
+     "title": "Climb the Northeast Ridge",
+     "objective": "Climb the ridge and descend to camp",
+     "miles": null,
+     "gainFt": 1200,
+     "note": "Climb the ridge and descend to camp via the standard southwest-slope walk-off."
+    },
+    {
+     "n": 4,
+     "title": "Hike out toward Andrews Pass",
+     "objective": "Begin the hike out",
+     "miles": 6,
+     "gainFt": null,
+     "note": "Begin the hike out."
+    },
+    {
+     "n": 5,
+     "title": "Hike out to the trailhead",
+     "objective": "Finish the hike out",
+     "miles": 12,
+     "gainFt": 0,
+     "note": "Finish the hike out to the trailhead."
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Upper Cathedral Lake basin",
+    "elev_ft": 7400,
+    "type": "camp",
+    "role": "main",
+    "notes": "The working climbers' camp for both the Southeast Buttress and Amphitheater's ridges, sitting directly under the peaks with short walks to either. The basin has taken heavy use for decades and the Forest Service has posted revegetation closures on damaged ground here in the past, so treat the shoreline as off limits an…"
+   },
+   {
+    "name": "Andrews Pass",
+    "elev_ft": 6700,
+    "type": "camp",
+    "role": "route",
+    "notes": "The natural first-night stop if you leave the trailhead in the afternoon, roughly twelve miles up the drainage and about the halfway mark to the Cathedral basin. Everything below here is burn — the lower Andrews Creek drainage has been through repeated fire and the trail was closed for years after it, so expect open, h…"
+   },
+   {
+    "name": "Cathedral Pass benches and the tarn slabs",
+    "elev_ft": 7600,
+    "type": "bivy",
+    "role": "route",
+    "notes": "Useful mainly as a high, quick bivy if you arrive late or want to be moving before dawn, since it saves the drop into the lake basin and puts you already at the crest. The ground is rock and thin turf, so pick a slab and leave the vegetation alone. Wind is the real cost — the pass funnels it and there is nothing to hid…"
+   }
+  ],
+  "campsite_pins": [
+   {
+    "name": "Andrews Pass",
+    "elev": 6700,
+    "distMi": null
+   },
+   {
+    "name": "Upper Cathedral Lake basin",
+    "elev": 7400,
+    "distMi": null
+   }
+  ]
+ },
+ {
+  "id": "wa_south_face_10",
+  "name": "South Face",
+  "discipline": "alpine",
+  "peak": "Cathedral Peak",
+  "area_id": "wa_cathedral_peak_pasayten",
+  "path": "usa.washington.wa_okanogan.wa_pasayten.wa_cathedral_peak_pasayten",
+  "trip_plan": {
+   "totalNote": "Four days: hike in toward Upper Cathedral Lake, reach basecamp and scout, climb the South Face from camp, and hike out.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Hike in toward Upper Cathedral Lake",
+     "objective": "Make progress toward the Upper Cathedral Lake basin",
+     "miles": null,
+     "gainFt": null,
+     "note": "Hike in from the Andrews Creek Trailhead toward the Upper Cathedral Lake basin."
+    },
+    {
+     "n": 2,
+     "title": "Reach basecamp, rest and scout",
+     "objective": "Settle at Upper Cathedral Lake",
+     "miles": null,
+     "gainFt": null,
+     "note": "Continue to basecamp at Upper Cathedral Lake if needed, then rest and scout the route."
+    },
+    {
+     "n": 3,
+     "title": "Climb the South Face",
+     "objective": "Summit Cathedral Peak and return to camp",
+     "miles": null,
+     "gainFt": 1200,
+     "note": "Climb the seven-pitch South Face from camp and descend the standard southwest-slope walk-up back to camp."
+    },
+    {
+     "n": 4,
+     "title": "Hike out",
+     "objective": "Return to the Andrews Creek Trailhead",
+     "miles": 18,
+     "gainFt": null,
+     "note": "Hike the roughly 18 miles back to the Andrews Creek Trailhead."
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Upper Cathedral Lake basin",
+    "elev_ft": 7400,
+    "type": "camp",
+    "role": "main",
+    "notes": "The working climbers' camp for both the Southeast Buttress and Amphitheater's ridges, sitting directly under the peaks with short walks to either. The basin has taken heavy use for decades and the Forest Service has posted revegetation closures on damaged ground here in the past, so treat the shoreline as off limits an…"
+   },
+   {
+    "name": "Andrews Pass",
+    "elev_ft": 6700,
+    "type": "camp",
+    "role": "route",
+    "notes": "The natural first-night stop if you leave the trailhead in the afternoon, roughly twelve miles up the drainage and about the halfway mark to the Cathedral basin. Everything below here is burn — the lower Andrews Creek drainage has been through repeated fire and the trail was closed for years after it, so expect open, h…"
+   },
+   {
+    "name": "Cathedral Pass benches and the tarn slabs",
+    "elev_ft": 7600,
+    "type": "bivy",
+    "role": "route",
+    "notes": "Useful mainly as a high, quick bivy if you arrive late or want to be moving before dawn, since it saves the drop into the lake basin and puts you already at the crest. The ground is rock and thin turf, so pick a slab and leave the vegetation alone. Wind is the real cost — the pass funnels it and there is nothing to hid…"
+   }
+  ],
+  "campsite_pins": [
+   {
+    "name": "Andrews Pass",
+    "elev": 6700,
+    "distMi": null
+   },
+   {
+    "name": "Upper Cathedral Lake basin",
+    "elev": 7400,
+    "distMi": null
+   }
+  ]
+ },
+ {
+  "id": "wa_dot_mountain_scramble",
+  "name": "Standard Scramble",
+  "discipline": "mountaineering",
+  "peak": "Dot Mountain",
+  "area_id": "wa_dot_mountain",
+  "path": "usa.washington.wa_okanogan.wa_pasayten.wa_dot_mountain",
+  "trip_plan": {
+   "totalNote": "A remote 4-day, roughly 35-mile round trip with about 6,000-7,000 ft of cumulative gain each way; the standard plan backpacks in to a high camp below Mount Lago and tags Dot Mountain (often combined with Ptarmigan Peak) on a long summit day.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Approach down the Middle Fork to Berk Creek",
+     "objective": "Reach a camp near the Berk Creek crossing",
+     "miles": 9,
+     "gainFt": 2200,
+     "note": "From the Buckskin Ridge trailhead at Slate Pass, the trail drops off the ridge into the Middle Fork Pasayten valley and follows it down-valley to the Berk Creek crossing. Most parties carry full overnight packs and camp near Berk Creek to break up the long approach."
+    },
+    {
+     "n": 2,
+     "title": "Push to high camp below Mount Lago",
+     "objective": "Reach the 7,400 ft tarn / Lago-Carru col camp",
+     "miles": 7,
+     "gainFt": 2000,
+     "note": "Climb Berk Creek over the pass above Freds Lake, drop into Eureka Creek, and continue up toward the Lago-Carru col, then drop slightly to camp near the 7,400 ft tarn below Mount Lago's north slopes. This puts you within striking distance of Dot Mountain for a lighter summit day."
+    },
+    {
+     "n": 3,
+     "title": "Summit push over Lago's north slopes to Dot",
+     "objective": "Tag Dot Mountain (and optionally Ptarmigan Peak)",
+     "miles": 8,
+     "gainFt": 1800,
+     "note": "Leave camp at first light with a light pack and traverse Lago's rocky north slopes past Points 8207 and 8165 to the Dot Mountain summit. Strong parties continue the mile-long ridge to Ptarmigan Peak before retracing the traverse back to high camp; the ridge gets knife-edged with some easy class 3 near Pt. 8165."
+    },
+    {
+     "n": 4,
+     "title": "Hike out",
+     "objective": "Return to the Buckskin Ridge / Slate Pass trailhead",
+     "miles": 11.2,
+     "gainFt": 500,
+     "note": "Break camp and reverse the approach back over the Eureka Creek drainage to the trailhead. It's a long descending day with a couple of re-climbs where the trail crosses drainages."
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "7,400 ft Tarn Camp, Mount Lago north side",
+    "elev_ft": null,
+    "type": "camp",
+    "role": "main",
+    "notes": ""
+   },
+   {
+    "name": "Shellrock Pass, Shellrock Basin and the Eureka Creek meadows",
+    "elev_ft": null,
+    "type": "camp",
+    "role": "main",
+    "notes": "Shellrock is the camp for Ptarmigan Peak and Dot Mountain, both of which are otherwise out of reach. The standard line leaves Slate Pass, follows the Middle Fork Pasayten to Berk Creek, climbs to Freds Pass and crosses the head of Eureka Creek to Shellrock Pass, which puts a party in position to scramble Ptarmigan the …"
+   },
+   {
+    "name": "Harts Pass and Meadows campgrounds",
+    "elev_ft": 6200,
+    "type": "camp",
+    "role": "route",
+    "notes": "This is the staging ground for almost everything in the zone and the road to it is a substantial fact in its own right. Forest Road 5400 climbs roughly twenty miles of unpaved single lane from Mazama with pullouts rather than passing room, a rock wall on one side and an unguarded drop on the other, and grades approachi…"
+   },
+   {
+    "name": "Doris Lake and Freds Lake basins",
+    "elev_ft": 6975,
+    "type": "camp",
+    "role": "route",
+    "notes": "This is the working climbers' camp for Osceola Peak and Blackcap Mountain and the first night of the long traverse that links them with Carru and Lago. The line in starts high, which is the point: from Slate Pass at about 6,900 feet a short connector drops to the Middle Fork Pasayten trail, five miles of valley walking…"
+   }
+  ],
+  "campsite_pins": [
+   {
+    "name": "7,400 ft Tarn Camp, Mount Lago north side",
+    "elev": 7400,
+    "distMi": 16
+   }
+  ]
+ },
+ {
+  "id": "wa_lake_mountain_pasayten_scramble",
+  "name": "Standard Scramble",
+  "discipline": "mountaineering",
+  "peak": "Lake Mountain",
+  "area_id": "wa_lake_mountain_pasayten",
+  "path": "usa.washington.wa_okanogan.wa_pasayten.wa_lake_mountain_pasayten",
+  "trip_plan": {
+   "totalNote": "A 3-day, ~27-28 mile round trip out of Monument Creek trailhead: two long approach days bracketing one short, fun scramble day up Lake Mountain's East Ridge (class 2-3) from a Lake of the Woods base camp.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Approach to Lake of the Woods camp",
+     "objective": "Reach base camp at Lake of the Woods (~6,600 ft)",
+     "miles": 12,
+     "gainFt": 5300,
+     "note": "Long, rough approach from the Monument Creek trailhead through the Lost River valley, fording Eureka Creek around mile 4, then climbing over Pistol Ridge/Pistol Pass and dropping into the Lake of the Woods basin below Lake Mountain's east side. Trail is faint/unmaintained in stretches past the wilderness boundary; part…"
+    },
+    {
+     "n": 2,
+     "title": "Climb Lake Mountain via the East Ridge",
+     "objective": "Summit Lake Mountain (8,377 ft) and return to base camp",
+     "miles": 3.5,
+     "gainFt": 1300,
+     "note": "A short, fast scramble day compared to the approach: gain the East Ridge directly from camp and follow class 2-3 granite to the summit. Many parties use the same camp to also bag nearby Monument Peak (8,592 ft) as a separate, much longer day, but Lake Mountain alone is a half-day outing."
+    },
+    {
+     "n": 3,
+     "title": "Hike out to trailhead",
+     "objective": "Return to the Monument Creek trailhead",
+     "miles": 12,
+     "gainFt": 700,
+     "note": "Reverse the approach: re-climb to Pistol Pass, drop down Pistol Ridge, re-ford Eureka Creek, and follow the Lost River valley back to the car. Faster than the way in but still a full, rugged day."
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Lake of the Woods and the Eureka Falls camp",
+    "elev_ft": null,
+    "type": "camp",
+    "role": "main",
+    "notes": "This is the camp for Monument Peak and Lake Mountain and it is worth being clear that they are approached from a completely different point on the Harts Pass road than the crest peaks — the Monument Creek trailhead at about 2,400 feet, roughly seven miles up from Mazama, thirteen miles short of the pass. The route runs…"
+   }
+  ],
+  "campsite_pins": [
+   {
+    "name": "Lake of the Woods",
+    "elev": 6620,
+    "distMi": 12
+   }
+  ]
+ },
+ {
+  "id": "wa_lost_peak_pasayten_scramble",
+  "name": "Standard Scramble",
+  "discipline": "scrambling",
+  "peak": "Lost Peak",
+  "area_id": "wa_lost_peak_pasayten",
+  "path": "usa.washington.wa_okanogan.wa_pasayten.wa_lost_peak_pasayten",
+  "trip_plan": {
+   "totalNote": "A full 5-day, roughly 48-mile loop backpack (~14,000 ft cumulative gain) through the Pasayten Wilderness, with one dedicated summit day linking Pass Butte and Lost Peak from a high camp near Shellrock/Butte Pass; Lost Peak's remoteness rules out a single-day car-to-car approach.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Robinson Creek to Middle Fork Pasayten",
+     "objective": "Reach Middle Fork Pasayten River flats camp",
+     "miles": 9.5,
+     "gainFt": 4200,
+     "note": "Fast, well-graded trail up and over 6,220 ft Robinson Pass, then down into the Pasayten drainage to camp on the flats along the Middle Fork Pasayten River. An easy warm-up day on good tread."
+    },
+    {
+     "n": 2,
+     "title": "Rolo Pass to Shellrock country",
+     "objective": "Reach North Monument Creek Pond below Shellrock Pass",
+     "miles": 10.5,
+     "gainFt": 3600,
+     "note": "Continue down-valley past Fred's Lake, climb over 7,100 ft Rolo Pass into the Eureka Creek drainage, and on to 7,500 ft Shellrock Pass, with an optional side trip to Lake Doris. Camp at a small pond near North Monument Creek just below the pass, setting up for the summit day."
+    },
+    {
+     "n": 3,
+     "title": "Pass Butte and Lost Peak",
+     "objective": "Summit Pass Butte (8,140 ft) and Lost Peak (8,464 ft)",
+     "miles": 10,
+     "gainFt": 3400,
+     "note": "The trip's crux day: cross-country travel to Butte Pass, then a connecting ridge scramble over Pass Butte and on to Lost Peak's Class 2 NW ridge, before descending the west ridge and moving camp on to Lake of the Woods. Parties note this basin/talus travel is slower than it looks on the map, and several parties stash o…"
+    },
+    {
+     "n": 4,
+     "title": "Over Pistol Pass",
+     "objective": "Reach Eureka Falls camp",
+     "miles": 11.5,
+     "gainFt": 2600,
+     "note": "Climb over Pistol Pass, with strong parties adding an optional scramble up Lake Mountain or a side push toward North Pistol Peak, then descend to camp at Eureka Falls near the confluence of the Lost River and Eureka Creek."
+    },
+    {
+     "n": 5,
+     "title": "Exit to Monument Trailhead",
+     "objective": "Hike out",
+     "miles": 6.5,
+     "gainFt": 200,
+     "note": "A short, easy, mostly downhill walk out, fording Eureka Creek en route to the Monument Trailhead."
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Dot Lake and the Butte Pass basins — the far end of the traverse for Lost Peak",
+    "elev_ft": null,
+    "type": "camp",
+    "role": "main",
+    "notes": "Lost Peak at 8,464 ft sits at the eastern end of this group between Monument Creek and the Lost River, and it is the awkward one — it does not fall out of a Carru and Lago camp the way those two fall out of each other. From the Shellrock country the usual line descends to Dot Lake, crosses a burned basin to Butte Pass …"
+   },
+   {
+    "name": "The Berk Creek junction and the Middle Fork Pasayten river camps",
+    "elev_ft": null,
+    "type": "camp",
+    "role": "route",
+    "notes": "This is the hinge of the whole Middle Fork approach and it is where a party bound for Mount Carru, Mount Lago or Lost Peak actually sleeps on the first night. Two roads reach it: the high start from Slate Pass at nearly 6,900 ft with a short connector down to the Middle Fork trail, or the low start from the Robinson Cr…"
+   },
+   {
+    "name": "The high bench southwest of Shellrock Pass",
+    "elev_ft": 7500,
+    "type": "bivy",
+    "role": "route",
+    "notes": "This is the staging camp that makes Mount Carru and Mount Lago short days instead of enormous ones, and it is deliberately not the same ground as the Shellrock Basin and Eureka Creek meadow camps lower down. It is a bench at around 7,500 ft immediately southwest of the pass, high enough that every summit in the group i…"
+   }
+  ],
+  "campsite_pins": [
+   {
+    "name": "Fred's Lake",
+    "elev": 6507,
+    "distMi": 16
+   },
+   {
+    "name": "The high bench southwest of Shellrock Pass",
+    "elev": 7500,
+    "distMi": null
+   }
+  ]
+ },
+ {
+  "id": "wa_monument_peak_pasayten_scramble",
+  "name": "Standard Scramble",
+  "discipline": "scrambling",
+  "peak": "Monument Peak",
+  "area_id": "wa_monument_peak_pasayten",
+  "path": "usa.washington.wa_okanogan.wa_pasayten.wa_monument_peak_pasayten",
+  "trip_plan": {
+   "totalNote": "A remote 3-day, ~31-32 mile loop with ~12,000-13,200 ft of cumulative gain/loss to bag both Monument Peak and Lake Mountain (the standard 'Monumental Slam'); strong parties sometimes stretch it to 4 days by adding a second overnight at Eureka Falls camp on the hike out.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Approach to Lake of the Woods camp",
+     "objective": "Reach Lake of the Woods high camp via Pistol Pass",
+     "miles": 12,
+     "gainFt": 5300,
+     "note": "A long, grinding backpack up the Monument Creek Trail, fording Eureka Creek (thigh-deep, cold, and easy to lose the trail beyond it), then climbing over Pistol Pass (~7,100 ft) before dropping to camp among the alpine tarns at Lake of the Woods. Most parties start early and still finish near dark."
+    },
+    {
+     "n": 2,
+     "title": "Monument Peak summit day",
+     "objective": "Climb Monument Peak's south ridge from camp",
+     "miles": 7,
+     "gainFt": 2600,
+     "note": "A long out-and-back scramble from camp: drop into Lower Monument Basin, then climb long talus slopes and a left-angling ramp system up the south ridge, past a class 3 step near a false summit at ~8,000 ft, to the true summit. Loose rock makes the descent slower than the climb."
+    },
+    {
+     "n": 3,
+     "title": "Lake Mountain, then hike out",
+     "objective": "Tag Lake Mountain, then hike out to the trailhead",
+     "miles": 14,
+     "gainFt": 2000,
+     "note": "A quick early scramble up Lake Mountain's class 2-3 east ridge direct from camp, then break camp and reverse the approach over Pistol Pass and back down to the trailhead. It's a long final day and many parties finish by headlamp."
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Lake of the Woods and the Eureka Falls camp",
+    "elev_ft": null,
+    "type": "camp",
+    "role": "main",
+    "notes": "This is the camp for Monument Peak and Lake Mountain and it is worth being clear that they are approached from a completely different point on the Harts Pass road than the crest peaks — the Monument Creek trailhead at about 2,400 feet, roughly seven miles up from Mazama, thirteen miles short of the pass. The route runs…"
+   }
+  ],
+  "campsite_pins": [
+   {
+    "name": "Lake of the Woods",
+    "elev": 7000,
+    "distMi": 12
+   },
+   {
+    "name": "Lower Monument Basin",
+    "elev": 6100,
+    "distMi": 14
+   }
+  ]
+ },
+ {
+  "id": "wa_mount_ballard_south",
+  "name": "South Slopes",
+  "discipline": "scrambling",
+  "peak": "Mount Ballard",
+  "area_id": "wa_mount_ballard",
+  "path": "usa.washington.wa_okanogan.wa_pasayten.wa_mount_ballard",
+  "trip_plan": {
+   "totalNote": "A 3-day, ~31-mile round-trip backpack with roughly 6,000-6,500 ft of cumulative gain: a long brushy approach to a base camp below the peak, one long summit day up the south slopes, and an equally slow hike back out — strong, fast parties sometimes compress this to 2 days, but 3 (2 nights) is the common pace given how bad the Mill Creek Trail brush is.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Approach to base camp",
+     "objective": "Reach camp near the old Azurite Mine, at the foot of Mount Ballard",
+     "miles": 11,
+     "gainFt": 2600,
+     "note": "Hike the Canyon Creek Trail about 6 miles — good tread to Boulder Creek, then washouts and slides, and the bridge at Mill Creek is down, so plan to ford — then turn onto the Mill Creek Trail (about 5 miles). Parties describe Mill Creek as badly overgrown and blown-down — the first 4 brushy miles alone can eat 4 hours —…"
+    },
+    {
+     "n": 2,
+     "title": "Summit day: Mount Ballard's south slopes",
+     "objective": "Climb from camp to the 8,371 ft summit and back via the south-facing slopes/gully",
+     "miles": 5.5,
+     "gainFt": 3700,
+     "note": "A steep, mostly off-trail scramble on brush, scree, and rock with two well-known cruxes: thick brush low on the mountain, and route-finding into the correct summit gully higher up (sustained 3rd class with a couple of exposed 4th class steps). Parties commonly tack on nearby Azurite Peak from the same camp if time and …"
+    },
+    {
+     "n": 3,
+     "title": "Hike out",
+     "objective": "Return to the Canyon Creek trailhead",
+     "miles": 11,
+     "gainFt": 200,
+     "note": "Retrace the Mill Creek Trail and then the Canyon Creek Trail back to the car. The brushy Mill Creek stretch is slow again on tired legs, so it typically takes about as long as the way in."
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Azurite Mine",
+    "elev_ft": null,
+    "type": "camp",
+    "role": "main",
+    "notes": ""
+   },
+   {
+    "name": "Azurite–Ballard basin",
+    "elev_ft": null,
+    "type": "camp",
+    "role": "main",
+    "notes": ""
+   },
+   {
+    "name": "Canyon Creek trailhead, SR 20",
+    "elev_ft": 1900,
+    "type": "camp",
+    "role": "route",
+    "notes": "This is the western door to Azurite and Ballard, and the drive alone puts it a long way from anywhere — roughly thirty-three miles east of Marblemount and sixteen west of Rainy Pass, with no services in either direction. Parties commonly sleep in the lot before starting, and the low elevation means it is warm and buggy…"
+   }
+  ],
+  "campsite_pins": [
+   {
+    "name": "Canyon Creek trailhead, SR 20",
+    "elev": 1900,
+    "distMi": null
+   },
+   {
+    "name": "Azurite Mine",
+    "elev": 4440,
+    "distMi": 11
+   },
+   {
+    "name": "Azurite–Ballard basin",
+    "elev": 6600,
+    "distMi": 12
+   }
+  ]
+ },
+ {
+  "id": "wa_mount_carru_scramble",
+  "name": "South Slopes Scramble",
+  "discipline": "scrambling",
+  "peak": "Mount Carru",
+  "area_id": "wa_mount_carru",
+  "path": "usa.washington.wa_okanogan.wa_pasayten.wa_mount_carru",
+  "trip_plan": {
+   "totalNote": "A remote 4-day Pasayten backpack: ~29-30 miles round trip and roughly 7,500-8,000 ft of cumulative gain, with one long summit day tagging Carru's southeast slopes from a high camp in Shellrock Basin.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Hike in to Fred's Lake",
+     "objective": "Reach Fred's Lake camp",
+     "miles": 7,
+     "gainFt": 1400,
+     "note": "From the Harts Pass/Slate Pass trailhead, cross Slate Pass and descend into the Middle Fork Pasayten drainage, then climb back up to Fred's Lake for the first camp. Full wilderness packs with 4 days of food."
+    },
+    {
+     "n": 2,
+     "title": "Cross to Shellrock Basin high camp",
+     "objective": "Establish high camp in Shellrock Basin",
+     "miles": 5,
+     "gainFt": 1600,
+     "note": "Climb over Fred's/Rolo Pass on the ridge above Fred's Lake, then drop to Eureka Creek and back up into scenic Shellrock Basin, directly below the Carru-Lago-Osceola cirque. A shorter day than Day 1, leaving the afternoon free to scout the route."
+    },
+    {
+     "n": 3,
+     "title": "Summit day: Mount Carru",
+     "objective": "Climb Carru's southeast slopes and return to camp",
+     "miles": 5,
+     "gainFt": 2400,
+     "note": "Leave camp with light daypacks and climb toward the Lago-Carru saddle, then follow the obvious southeast slope/ridge line - mostly class 2 talus and scree with brief exposed sections - to the summit. Many parties tack on Osceola and/or Lago from the same camp, but a Carru-only push is a shorter, half-day round trip."
+    },
+    {
+     "n": 4,
+     "title": "Hike out",
+     "objective": "Return to the Harts Pass/Slate Pass trailhead",
+     "miles": 12,
+     "gainFt": 2200,
+     "note": "Reverse Days 1 and 2 in a single long push: back over Rolo/Fred's Pass, down through the Middle Fork Pasayten drainage, and over Slate Pass to the trailhead. A full day with full packs."
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Shellrock Basin",
+    "elev_ft": null,
+    "type": "camp",
+    "role": "main",
+    "notes": ""
+   },
+   {
+    "name": "The high bench southwest of Shellrock Pass",
+    "elev_ft": 7500,
+    "type": "bivy",
+    "role": "main",
+    "notes": "This is the staging camp that makes Mount Carru and Mount Lago short days instead of enormous ones, and it is deliberately not the same ground as the Shellrock Basin and Eureka Creek meadow camps lower down. It is a bench at around 7,500 ft immediately southwest of the pass, high enough that every summit in the group i…"
+   },
+   {
+    "name": "The Berk Creek junction and the Middle Fork Pasayten river camps",
+    "elev_ft": null,
+    "type": "camp",
+    "role": "route",
+    "notes": "This is the hinge of the whole Middle Fork approach and it is where a party bound for Mount Carru, Mount Lago or Lost Peak actually sleeps on the first night. Two roads reach it: the high start from Slate Pass at nearly 6,900 ft with a short connector down to the Middle Fork trail, or the low start from the Robinson Cr…"
+   }
+  ],
+  "campsite_pins": [
+   {
+    "name": "Fred's Lake",
+    "elev": 6507,
+    "distMi": 7.5
+   },
+   {
+    "name": "Shellrock Basin",
+    "elev": 6800,
+    "distMi": 11
+   }
+  ]
+ },
+ {
+  "id": "wa_mount_lago_south_slope_south_face",
+  "name": "South Slope - South Face (Standard Route)",
+  "discipline": "mountaineering",
+  "peak": "Mount Lago",
+  "area_id": "wa_mount_lago",
+  "path": "usa.washington.wa_okanogan.wa_pasayten.wa_mount_lago",
+  "trip_plan": {
+   "totalNote": null,
+   "days": [
+    {
+     "n": 1,
+     "title": "Day 1",
+     "objective": "",
+     "miles": null,
+     "gainFt": null,
+     "note": "Hike in from the Robinson Creek or Slate Pass trailhead to Fred's Lake or Shellrock Basin."
+    },
+    {
+     "n": 2,
+     "title": "Day 2",
+     "objective": "",
+     "miles": null,
+     "gainFt": null,
+     "note": "Climb Mount Lago (often combined with Mount Carru via the connecting saddle) from a Shellrock Basin camp, roughly a 7-hour round trip."
+    },
+    {
+     "n": 3,
+     "title": "Day 3",
+     "objective": "",
+     "miles": null,
+     "gainFt": null,
+     "note": "Hike out. Many parties extend to 4-5 days to add Osceola Peak, Mount Rolo, or a full Pasayten ridge traverse (e.g. via Ptarmigan Peak and Dot Mountain)."
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Shellrock Basin camp area",
+    "elev_ft": null,
+    "type": "camp",
+    "role": "main",
+    "notes": ""
+   },
+   {
+    "name": "The high bench southwest of Shellrock Pass",
+    "elev_ft": 7500,
+    "type": "bivy",
+    "role": "main",
+    "notes": "This is the staging camp that makes Mount Carru and Mount Lago short days instead of enormous ones, and it is deliberately not the same ground as the Shellrock Basin and Eureka Creek meadow camps lower down. It is a bench at around 7,500 ft immediately southwest of the pass, high enough that every summit in the group i…"
+   },
+   {
+    "name": "The Berk Creek junction and the Middle Fork Pasayten river camps",
+    "elev_ft": null,
+    "type": "camp",
+    "role": "route",
+    "notes": "This is the hinge of the whole Middle Fork approach and it is where a party bound for Mount Carru, Mount Lago or Lost Peak actually sleeps on the first night. Two roads reach it: the high start from Slate Pass at nearly 6,900 ft with a short connector down to the Middle Fork trail, or the low start from the Robinson Cr…"
+   }
+  ],
+  "campsite_pins": [
+   {
+    "name": "The high bench southwest of Shellrock Pass",
+    "elev": 7500,
+    "distMi": null
+   },
+   {
+    "name": "Shellrock Basin camp area",
+    "elev": null,
+    "distMi": null
+   }
+  ]
+ },
+ {
+  "id": "wa_osceola_peak_scramble",
+  "name": "Southwest Slopes Scramble",
+  "discipline": "mountaineering",
+  "peak": "Osceola Peak",
+  "area_id": "wa_osceola_peak",
+  "path": "usa.washington.wa_okanogan.wa_pasayten.wa_osceola_peak",
+  "trip_plan": {
+   "totalNote": "A 3-day, 2-night backpack: roughly 24-25 miles round trip with about 5,600 ft of cumulative gain, and only 2.5-3 hours of actual climbing on summit day from Lake Doris camp.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Backpack in to Lake Doris",
+     "objective": "Reach high camp at Lake Doris below Osceola's southwest slopes",
+     "miles": 10.5,
+     "gainFt": 2300,
+     "note": "From the Buckskin Ridge Trailhead near Slate Pass (~6,900 ft), follow the Middle Fork Pasayten River / Robinson Creek Trail past Fred's Lake and over Rolo Pass (~7,100 ft), then drop to camp at Lake Doris. Mostly on-trail with a short cross-country stretch near the pass above Fred's Lake if snow lingers."
+    },
+    {
+     "n": 2,
+     "title": "Climb Osceola Peak via the southwest slopes",
+     "objective": "Summit Osceola Peak (8,584 ft) and return to camp",
+     "miles": 3,
+     "gainFt": 1450,
+     "note": "An out-and-back scramble straight from Lake Doris up the broad southwest-facing talus slope to the summit. The talus and lichen-covered rock can be slippery when wet, which slows the descent almost as much as the ascent. The rest of the day is free at camp; some parties use the time to scout toward Mt. Rolo or Mt. Carr…"
+    },
+    {
+     "n": 3,
+     "title": "Hike out to trailhead",
+     "objective": "Return to the Buckskin Ridge Trailhead",
+     "miles": 10.5,
+     "gainFt": 1900,
+     "note": "Reverse the Day 1 route: Lake Doris, over Rolo Pass, past Fred's Lake, and back down the Middle Fork Pasayten River / Robinson Creek Trail to the trailhead. A long but straightforward exit day, mostly downhill with a couple of short climbs back over the pass."
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Doris Lake and Freds Lake basins",
+    "elev_ft": 6975,
+    "type": "camp",
+    "role": "main",
+    "notes": "This is the working climbers' camp for Osceola Peak and Blackcap Mountain and the first night of the long traverse that links them with Carru and Lago. The line in starts high, which is the point: from Slate Pass at about 6,900 feet a short connector drops to the Middle Fork Pasayten trail, five miles of valley walking…"
+   },
+   {
+    "name": "Harts Pass and Meadows campgrounds",
+    "elev_ft": 6200,
+    "type": "camp",
+    "role": "route",
+    "notes": "This is the staging ground for almost everything in the zone and the road to it is a substantial fact in its own right. Forest Road 5400 climbs roughly twenty miles of unpaved single lane from Mazama with pullouts rather than passing room, a rock wall on one side and an unguarded drop on the other, and grades approachi…"
+   }
+  ],
+  "campsite_pins": [
+   {
+    "name": "Lake Doris",
+    "elev": 6975,
+    "distMi": 13
+   }
+  ]
+ },
+ {
+  "id": "wa_ptarmigan_peak_pasayten_scramble",
+  "name": "Standard Scramble",
+  "discipline": "mountaineering",
+  "peak": "Ptarmigan Peak",
+  "area_id": "wa_ptarmigan_peak_pasayten",
+  "path": "usa.washington.wa_okanogan.wa_pasayten.wa_ptarmigan_peak_pasayten",
+  "trip_plan": {
+   "totalNote": "A 3-day, ~36-mile round trip from Slate Pass with one moderate approach day, one long summit day (often combined with Dot Mountain and/or Mount Lago), and one exit day; strong parties sometimes compress it to 2 days, and some stretch the exit into 2 days for a 4-day trip.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Backpack in to Shellrock Pass camp",
+     "objective": "Establish high camp near Shellrock Pass / Freds Lake basin",
+     "miles": 16,
+     "gainFt": 3200,
+     "note": "From the Slate Pass / Buckskin Ridge trailhead, follow the Robinson Creek Trail down to the Middle Fork Pasayten River, then up past Freds Lake and through the Eureka Creek valley to a camp near Shellrock Pass. Mostly on trail, snow-free by midsummer, with one notable slick-log creek crossing."
+    },
+    {
+     "n": 2,
+     "title": "Climb Ptarmigan Peak (with Dot Mountain)",
+     "objective": "Summit Ptarmigan Peak via the ridge traverse from Shellrock Pass, tagging Dot Mountain en route",
+     "miles": 9,
+     "gainFt": 3000,
+     "note": "A long day-hike loop from camp along open ridge and talus, class 2 the whole way once past Point 8207/8165 -- widely regarded as the easiest Bulger, little more than a walk. Most parties tag Dot Mountain on the same ridge since it costs little extra; some also add Mount Lago if energy and weather allow."
+    },
+    {
+     "n": 3,
+     "title": "Hike out",
+     "objective": "Return to Slate Pass trailhead",
+     "miles": 16,
+     "gainFt": 2400,
+     "note": "Reverse the Day 1 approach via Eureka Creek and Freds Lake back to the Middle Fork Pasayten River and up to Slate Pass. Some parties split this into two shorter days (4-day trip total) rather than one long exit day."
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Shellrock Pass bench",
+    "elev_ft": null,
+    "type": "camp",
+    "role": "main",
+    "notes": ""
+   },
+   {
+    "name": "Harts Pass and Meadows campgrounds",
+    "elev_ft": 6200,
+    "type": "camp",
+    "role": "route",
+    "notes": "This is the staging ground for almost everything in the zone and the road to it is a substantial fact in its own right. Forest Road 5400 climbs roughly twenty miles of unpaved single lane from Mazama with pullouts rather than passing room, a rock wall on one side and an unguarded drop on the other, and grades approachi…"
+   },
+   {
+    "name": "Doris Lake and Freds Lake basins",
+    "elev_ft": 6975,
+    "type": "camp",
+    "role": "route",
+    "notes": "This is the working climbers' camp for Osceola Peak and Blackcap Mountain and the first night of the long traverse that links them with Carru and Lago. The line in starts high, which is the point: from Slate Pass at about 6,900 feet a short connector drops to the Middle Fork Pasayten trail, five miles of valley walking…"
+   },
+   {
+    "name": "Shellrock Pass, Shellrock Basin and the Eureka Creek meadows",
+    "elev_ft": null,
+    "type": "camp",
+    "role": "route",
+    "notes": "Shellrock is the camp for Ptarmigan Peak and Dot Mountain, both of which are otherwise out of reach. The standard line leaves Slate Pass, follows the Middle Fork Pasayten to Berk Creek, climbs to Freds Pass and crosses the head of Eureka Creek to Shellrock Pass, which puts a party in position to scramble Ptarmigan the …"
+   }
+  ],
+  "campsite_pins": [
+   {
+    "name": "Shellrock Pass bench",
+    "elev": 7500,
+    "distMi": null
+   }
+  ]
+ }
+]

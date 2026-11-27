@@ -1,0 +1,1270 @@
+[
+ {
+  "id": "wa_remmel_mountain_nw_ridge",
+  "name": "NW Ridge",
+  "discipline": "alpine",
+  "peak": "Remmel Mountain",
+  "area_id": "wa_remmel_mountain",
+  "path": "usa.washington.wa_okanogan.wa_pasayten.wa_remmel_mountain",
+  "trip_plan": {
+   "totalNote": "Two days from Remmel Lake: bushwhack to a high camp on the lower NW ridge, then climb, rappel and return to Remmel Lake.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Bushwhack to the NW ridge camp",
+     "objective": "Camp at 7,500 ft on the lower ridge",
+     "miles": 2,
+     "gainFt": 630,
+     "note": "From Remmel Lake, bushwhack south through forests and bogs to camp at 7,500 ft on the lower ridge."
+    },
+    {
+     "n": 2,
+     "title": "Climb the NW Ridge and return",
+     "objective": "Summit Remmel and return to Remmel Lake",
+     "miles": null,
+     "gainFt": 1190,
+     "note": "Climb from camp to the summit, typically about 3.5 hours. Rappel and descend back to camp in about 2.5 hours, then return to Remmel Lake."
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "NW Ridge Camp",
+    "elev_ft": null,
+    "type": "camp",
+    "role": "main",
+    "notes": ""
+   },
+   {
+    "name": "The lower Chewuch River camps out of Thirtymile",
+    "elev_ft": null,
+    "type": "camp",
+    "role": "route",
+    "notes": "These exist to break the walk rather than to serve a summit, and on an approach this long that is worth more than it sounds. The Chewuch trail is gentle enough that a party can cover a lot of it quickly, but thirteen miles to the Four Point junction with a full pack is a poor first day after the drive from the west sid…"
+   }
+  ],
+  "campsite_pins": [
+   {
+    "name": "NW Ridge Camp",
+    "elev": 7500,
+    "distMi": null
+   }
+  ]
+ },
+ {
+  "id": "wa_remmel_mountain_southeast_slope",
+  "name": "Southeast Slope (Standard Route)",
+  "discipline": "mountaineering",
+  "peak": "Remmel Mountain",
+  "area_id": "wa_remmel_mountain",
+  "path": "usa.washington.wa_okanogan.wa_pasayten.wa_remmel_mountain",
+  "trip_plan": {
+   "totalNote": "Three days: hike in to Four Point Lake, walk up Remmel Mountain from camp, and hike out.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Hike in to Four Point Lake",
+     "objective": "Camp at Four Point Lake",
+     "miles": 15,
+     "gainFt": 3450,
+     "note": "Hike in along the Chewuch River and Four Point Creek trails to camp at Four Point Lake, or camp along the Chewuch or Andrews Creek trail."
+    },
+    {
+     "n": 2,
+     "title": "Climb Remmel Mountain",
+     "objective": "Summit and return to camp",
+     "miles": 3.2,
+     "gainFt": 1840,
+     "note": "Follow the abandoned Coleman Ridge Trail to a cairn at about 7,070 ft. Climb open meadow and talus on the unofficial path to the summit and return to camp."
+    },
+    {
+     "n": 3,
+     "title": "Hike out",
+     "objective": "Return to the trailhead",
+     "miles": 15,
+     "gainFt": null,
+     "note": "Hike out the same trails to the trailhead."
+    }
+   ]
+  },
+  "camps_on_file": [],
+  "campsite_pins": [
+   {
+    "name": "Four Point Lake",
+    "elev": 6846,
+    "distMi": null
+   }
+  ]
+ },
+ {
+  "id": "wa_the_monk_le_gibet",
+  "name": "The Monk - Le Gibet",
+  "discipline": "alpine",
+  "peak": "The Monk",
+  "area_id": "wa_the_monk_pasayten",
+  "path": "usa.washington.wa_okanogan.wa_pasayten.wa_the_monk_pasayten",
+  "trip_plan": {
+   "totalNote": "A four-day trip from Andrews Creek to Upper Cathedral Lake with a half day on The Monk and a day on Cathedral Peak.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Hike in to Upper Cathedral Lake",
+     "objective": "Reach the Upper Cathedral Lake camp",
+     "miles": 18,
+     "gainFt": null,
+     "note": "Hike 17-20 miles over Andrews Pass to Upper Cathedral Lake."
+    },
+    {
+     "n": 2,
+     "title": "Le Gibet and other Monk routes",
+     "objective": "Climb The Monk",
+     "miles": null,
+     "gainFt": 930,
+     "note": "Climb Le Gibet and other Monk routes as a half day, then rest. Descend via three 75-foot rappels down the NE gully."
+    },
+    {
+     "n": 3,
+     "title": "Climb Cathedral Peak",
+     "objective": "Southeast Buttress or South Face",
+     "miles": null,
+     "gainFt": 1240,
+     "note": "Climb the Southeast Buttress or the South Face on Cathedral Peak proper."
+    },
+    {
+     "n": 4,
+     "title": "Hike out",
+     "objective": "Return to the Andrews Creek trailhead",
+     "miles": 18,
+     "gainFt": null,
+     "note": "Hike back out over Andrews Pass to the trailhead."
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Upper Cathedral Lake basin",
+    "elev_ft": 7400,
+    "type": "camp",
+    "role": "main",
+    "notes": "The working climbers' camp for both the Southeast Buttress and Amphitheater's ridges, sitting directly under the peaks with short walks to either. The basin has taken heavy use for decades and the Forest Service has posted revegetation closures on damaged ground here in the past, so treat the shoreline as off limits an…"
+   },
+   {
+    "name": "Andrews Pass",
+    "elev_ft": 6700,
+    "type": "camp",
+    "role": "route",
+    "notes": "The natural first-night stop if you leave the trailhead in the afternoon, roughly twelve miles up the drainage and about the halfway mark to the Cathedral basin. Everything below here is burn — the lower Andrews Creek drainage has been through repeated fire and the trail was closed for years after it, so expect open, h…"
+   },
+   {
+    "name": "Cathedral Pass benches and the tarn slabs",
+    "elev_ft": 7600,
+    "type": "bivy",
+    "role": "route",
+    "notes": "Useful mainly as a high, quick bivy if you arrive late or want to be moving before dawn, since it saves the drop into the lake basin and puts you already at the crest. The ground is rock and thin turf, so pick a slab and leave the vegetation alone. Wind is the real cost — the pass funnels it and there is nothing to hid…"
+   }
+  ],
+  "campsite_pins": [
+   {
+    "name": "Andrews Pass",
+    "elev": 6700,
+    "distMi": null
+   },
+   {
+    "name": "Upper Cathedral Lake",
+    "elev": 7369,
+    "distMi": 18
+   }
+  ]
+ },
+ {
+  "id": "wa_the_monk_odine",
+  "name": "The Monk - Ondine",
+  "discipline": "alpine",
+  "peak": "The Monk",
+  "area_id": "wa_the_monk_pasayten",
+  "path": "usa.washington.wa_okanogan.wa_pasayten.wa_the_monk_pasayten",
+  "trip_plan": {
+   "totalNote": "A four-day trip from Andrews Creek to Upper Cathedral Lake with a half day on The Monk and a day on Cathedral's Southeast Buttress.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Hike in to Upper Cathedral Lake",
+     "objective": "Reach the Upper Cathedral Lake camp",
+     "miles": 18,
+     "gainFt": null,
+     "note": "Hike 17-20 miles over Andrews Pass to Upper Cathedral Lake."
+    },
+    {
+     "n": 2,
+     "title": "Ondine and another Monk route",
+     "objective": "Climb The Monk",
+     "miles": null,
+     "gainFt": 930,
+     "note": "Climb Ondine and another Monk route as a half day. Descend via three 75-foot rappels down the NE gully."
+    },
+    {
+     "n": 3,
+     "title": "Climb the Southeast Buttress",
+     "objective": "Summit Cathedral Peak",
+     "miles": null,
+     "gainFt": 1240,
+     "note": "Climb the Southeast Buttress of Cathedral Peak."
+    },
+    {
+     "n": 4,
+     "title": "Hike out",
+     "objective": "Return to the Andrews Creek trailhead",
+     "miles": 18,
+     "gainFt": null,
+     "note": "Hike back out over Andrews Pass to the trailhead."
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Upper Cathedral Lake basin",
+    "elev_ft": 7400,
+    "type": "camp",
+    "role": "main",
+    "notes": "The working climbers' camp for both the Southeast Buttress and Amphitheater's ridges, sitting directly under the peaks with short walks to either. The basin has taken heavy use for decades and the Forest Service has posted revegetation closures on damaged ground here in the past, so treat the shoreline as off limits an…"
+   },
+   {
+    "name": "Andrews Pass",
+    "elev_ft": 6700,
+    "type": "camp",
+    "role": "route",
+    "notes": "The natural first-night stop if you leave the trailhead in the afternoon, roughly twelve miles up the drainage and about the halfway mark to the Cathedral basin. Everything below here is burn — the lower Andrews Creek drainage has been through repeated fire and the trail was closed for years after it, so expect open, h…"
+   },
+   {
+    "name": "Cathedral Pass benches and the tarn slabs",
+    "elev_ft": 7600,
+    "type": "bivy",
+    "role": "route",
+    "notes": "Useful mainly as a high, quick bivy if you arrive late or want to be moving before dawn, since it saves the drop into the lake basin and puts you already at the crest. The ground is rock and thin turf, so pick a slab and leave the vegetation alone. Wind is the real cost — the pass funnels it and there is nothing to hid…"
+   }
+  ],
+  "campsite_pins": [
+   {
+    "name": "Andrews Pass",
+    "elev": 6700,
+    "distMi": null
+   },
+   {
+    "name": "Upper Cathedral Lake",
+    "elev": 7369,
+    "distMi": 18
+   }
+  ]
+ },
+ {
+  "id": "wa_the_monk_scabo",
+  "name": "The Monk - Scarbo",
+  "discipline": "alpine",
+  "peak": "The Monk",
+  "area_id": "wa_the_monk_pasayten",
+  "path": "usa.washington.wa_okanogan.wa_pasayten.wa_the_monk_pasayten",
+  "trip_plan": {
+   "totalNote": "A four-day trip from Andrews Creek to Upper Cathedral Lake with a half day on The Monk and a day on Cathedral Peak.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Hike in to Upper Cathedral Lake",
+     "objective": "Reach the Upper Cathedral Lake camp",
+     "miles": 18,
+     "gainFt": null,
+     "note": "Hike 17-20 miles over Andrews Pass to Upper Cathedral Lake."
+    },
+    {
+     "n": 2,
+     "title": "Scarbo and a second Monk route",
+     "objective": "Climb The Monk",
+     "miles": null,
+     "gainFt": 930,
+     "note": "Climb Scarbo and a second Monk route as a half day. Descend via three roughly 75-foot rappels down the NE gully."
+    },
+    {
+     "n": 3,
+     "title": "Climb Cathedral Peak",
+     "objective": "Southeast Buttress or South Face",
+     "miles": null,
+     "gainFt": 1240,
+     "note": "Climb the Southeast Buttress or the South Face of Cathedral Peak."
+    },
+    {
+     "n": 4,
+     "title": "Hike out",
+     "objective": "Return to the Andrews Creek trailhead",
+     "miles": 18,
+     "gainFt": null,
+     "note": "Hike back out over Andrews Pass to the trailhead."
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Upper Cathedral Lake basin",
+    "elev_ft": 7400,
+    "type": "camp",
+    "role": "main",
+    "notes": "The working climbers' camp for both the Southeast Buttress and Amphitheater's ridges, sitting directly under the peaks with short walks to either. The basin has taken heavy use for decades and the Forest Service has posted revegetation closures on damaged ground here in the past, so treat the shoreline as off limits an…"
+   },
+   {
+    "name": "Andrews Pass",
+    "elev_ft": 6700,
+    "type": "camp",
+    "role": "route",
+    "notes": "The natural first-night stop if you leave the trailhead in the afternoon, roughly twelve miles up the drainage and about the halfway mark to the Cathedral basin. Everything below here is burn — the lower Andrews Creek drainage has been through repeated fire and the trail was closed for years after it, so expect open, h…"
+   },
+   {
+    "name": "Cathedral Pass benches and the tarn slabs",
+    "elev_ft": 7600,
+    "type": "bivy",
+    "role": "route",
+    "notes": "Useful mainly as a high, quick bivy if you arrive late or want to be moving before dawn, since it saves the drop into the lake basin and puts you already at the crest. The ground is rock and thin turf, so pick a slab and leave the vegetation alone. Wind is the real cost — the pass funnels it and there is nothing to hid…"
+   }
+  ],
+  "campsite_pins": [
+   {
+    "name": "Andrews Pass",
+    "elev": 6700,
+    "distMi": null
+   },
+   {
+    "name": "Upper Cathedral Lake",
+    "elev": 7369,
+    "distMi": 18
+   }
+  ]
+ },
+ {
+  "id": "wa_west_craggy_peak_standard_route",
+  "name": "Standard Route (South Ridge / South Gully via Copper Glance Basin)",
+  "discipline": "mountaineering",
+  "peak": "West Craggy Peak",
+  "area_id": "wa_west_craggy_peak",
+  "path": "usa.washington.wa_okanogan.wa_pasayten.wa_west_craggy_peak",
+  "trip_plan": {
+   "totalNote": "Hike to a camp in Copper Glance Basin, then climb the south gully and ridge to the summit and hike out the next day.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Hike in to Copper Glance Basin",
+     "objective": "Camp in the upper basin",
+     "miles": 3.4,
+     "gainFt": 2800,
+     "note": "Hike about 3.3-3.5 miles with about 2,800 ft of gain from the Copper Glance Trailhead to a camp in Copper Glance Basin at about 6,260-6,600 ft."
+    },
+    {
+     "n": 2,
+     "title": "Climb West Craggy and hike out",
+     "objective": "Summit West Craggy Peak",
+     "miles": 7.6,
+     "gainFt": 1800,
+     "note": "From camp, climb about 1,800 ft of talus, scree and the south gully to the south ridge and the summit, roughly 2.5-3 hours one way. Descend to camp, break camp and hike out."
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Copper Glance Lake",
+    "elev_ft": 6100,
+    "type": "camp",
+    "role": "main",
+    "notes": "This is the only camp that serves Big Craggy and West Craggy, and it belongs to a different drive from everything else in this zone: north from Winthrop on the West Chewuch road, then left onto the Eightmile Creek road and about twelve to thirteen miles to the trailhead at 3,800 feet. Nothing here connects to Harts Pas…"
+   },
+   {
+    "name": "Copper Glance Basin camp",
+    "elev_ft": null,
+    "type": "camp",
+    "role": "main",
+    "notes": ""
+   }
+  ],
+  "campsite_pins": [
+   {
+    "name": "Copper Glance Basin camp",
+    "elev": 6600,
+    "distMi": null
+   }
+  ]
+ },
+ {
+  "id": "wa_windy_peak_iron_gate_trail",
+  "name": "Windy Peak via Iron Gate Trailhead (Boundary Trail / Sunny Pass Approach)",
+  "discipline": "scrambling",
+  "peak": "Windy Peak",
+  "area_id": "wa_windy_peak",
+  "path": "usa.washington.wa_okanogan.wa_pasayten.wa_windy_peak",
+  "trip_plan": {
+   "totalNote": "A two-day trip: hike the Boundary Trail to a camp at Sunny Pass or Horseshoe Basin, then climb Windy Peak by the Windy Peak Trail and loop back to Iron Gate via the Clutch Creek trail, about 15 miles and 3,800 ft in total.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Boundary Trail to Sunny Pass",
+     "objective": "Camp at Sunny Pass or in Horseshoe Basin",
+     "miles": 4.8,
+     "gainFt": 1300,
+     "note": "Follow the Boundary Trail north through the 2006 Tripod Fire burn, crossing the Clutch Creek tributary at about 1.5 miles (the last reliable water before the basin), to Sunny Pass at about 4.8 miles. Horseshoe Basin's tundra camps are about 1.2 miles farther."
+    },
+    {
+     "n": 2,
+     "title": "Climb Windy Peak and loop out",
+     "objective": "Summit Windy Peak and return via Clutch Creek",
+     "miles": 10,
+     "gainFt": 2500,
+     "note": "From Sunny Pass take the Windy Peak Trail west, dropping to a saddle near 6,600 ft, staying left at the Basin Creek and Windy Creek junctions; a short spur gains the summit for 360-degree Pasayten views. Continue south on the Windy Peak Trail to the Clutch Creek trail and back to the Boundary Trail and trailhead."
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Horseshoe Basin — Sunny Pass, Louden Lake and the Smith Lake meadows",
+    "elev_ft": null,
+    "type": "camp",
+    "role": "main",
+    "notes": "This is the camp for Windy Peak and the reason the trip is worth doing at all — the basin is one of very few places in the lower states carrying genuine alpine tundra, open rolling meadow at seven thousand feet with bighorn sheep on it. From the Iron Gate trailhead the trail is nearly flat for a mile and then climbs st…"
+   }
+  ],
+  "campsite_pins": []
+ },
+ {
+  "id": "wa_wolframite_mountain_scramble",
+  "name": "Standard Scramble",
+  "discipline": "mountaineering",
+  "peak": "Wolframite Mountain",
+  "area_id": "wa_wolframite_mountain",
+  "path": "usa.washington.wa_okanogan.wa_pasayten.wa_wolframite_mountain",
+  "trip_plan": {
+   "totalNote": "A 4-day, ~34-mile round-trip backpack (net gain/loss roughly 4,600 ft each way) with a layover day for the Class 2 summit climb from Tungsten Mine Camp; very strong parties compress this to 2 days or even a single long car-to-car push.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Approach to the Tungsten Creek junction",
+     "objective": "Hike from Thirtymile TH toward Tungsten Mine Camp",
+     "miles": 8.8,
+     "gainFt": 1300,
+     "note": "From the Thirtymile Trailhead (~3,400 ft), follow the Chewuch River Trail #510 north 8.8 miles to its junction with the Tungsten Creek Trail #534. Gentle, well-graded trail through forest along the Chewuch River; several established campsites near the junction make a natural first-night stop."
+    },
+    {
+     "n": 2,
+     "title": "Up to Tungsten Mine Camp",
+     "objective": "Reach Tungsten Mine Camp at the base of Wolframite",
+     "miles": 6.2,
+     "gainFt": 2100,
+     "note": "Climb the Tungsten Creek Trail #534 for 6.2 miles to its junction with the Boundary Trail #533 at historic Tungsten Mine Camp (~6,750 ft), site of two old cabins and mining relics on the south side of Wolframite. Most parties arrive by early-to-mid afternoon, leaving time to set up camp, filter water, and scout the wes…"
+    },
+    {
+     "n": 3,
+     "title": "Summit day: Wolframite Mountain",
+     "objective": "Climb Wolframite Mountain's west side and return to camp",
+     "miles": 4,
+     "gainFt": 1450,
+     "note": "Leave camp with light daypacks, follow the Boundary Trail about 1 mile west to where it bends south, then leave the trail and ascend the broad, gentle west side of Wolframite (sustained Class 2, with occasional Class 3 variations depending on line) to the 8,136 ft summit. Many strong parties use this camp as a base to …"
+    },
+    {
+     "n": 4,
+     "title": "Hike out to the trailhead",
+     "objective": "Return to Thirtymile TH",
+     "miles": 15,
+     "gainFt": 150,
+     "note": "Retrace the full approach — Boundary/Tungsten Creek Trail down to the Chewuch River Trail junction and out to Thirtymile TH — in one long, mostly-downhill day. Fit parties often push straight through rather than splitting the exit into two days."
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "The Tungsten Creek trail camps below the Boundary Trail junction",
+    "elev_ft": null,
+    "type": "camp",
+    "role": "main",
+    "notes": "This is where a party climbing Wolframite from the Chewuch actually sleeps on the second night, and it matters because the arithmetic of the approach is punishing without it. The Tungsten Creek trail breaks off the Chewuch trail a little past eight miles and climbs steadily for about six more, with the creek on the lef…"
+   }
+  ],
+  "campsite_pins": [
+   {
+    "name": "Tungsten Mine Camp / Boundary Trail #533 junction",
+    "elev": 6750,
+    "distMi": 15
+   }
+  ]
+ },
+ {
+  "id": "wa_chimney_peak_standard",
+  "name": "Standard Route",
+  "discipline": "scrambling",
+  "peak": "Chimney Peak",
+  "area_id": "wa_chimney_peak",
+  "path": "usa.washington.wa_olympics.wa_olympic_np.wa_anderson_dosewallips.wa_chimney_peak",
+  "trip_plan": {
+   "totalNote": "A 3-day, 2-night backpack: ~27 miles and ~4,000 ft round trip on trail to/from Enchanted Valley Chalet, plus a very steep, brushy ~4,900 ft off-trail class 3 scramble day to the summit and back. Parties wanting a buffer or rest day often stretch it to 4 days.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Approach to Enchanted Valley Chalet",
+     "objective": "Reach the Enchanted Valley Chalet camp",
+     "miles": 13.5,
+     "gainFt": 2000,
+     "note": "Hike the East Fork Quinault River Trail from Graves Creek Trailhead (~600 ft) through old-growth rainforest to the historic Enchanted Valley Chalet (~2,035 ft). Grade is gentle and well-graded almost the whole way, with the trail gaining elevation gradually alongside the river. Camp in the quota zone near the chalet, w…"
+    },
+    {
+     "n": 2,
+     "title": "Summit day: SW ridge of Chimney Peak",
+     "objective": "Climb Chimney Peak's SW ridge and return to camp",
+     "miles": 2,
+     "gainFt": 4900,
+     "note": "An alpine-start, out-and-back day climb straight off camp: leave the trail and climb steep, brushy off-trail terrain gaining roughly 4,900 ft in under a mile to reach the SW ridge, then follow class 3 scrambling along the ridge to the 6,917-ft summit. Terrain is notably steep and slide-alder/brush-choked low down (typi…"
+    },
+    {
+     "n": 3,
+     "title": "Hike out",
+     "objective": "Return to Graves Creek Trailhead",
+     "miles": 13.5,
+     "gainFt": 500,
+     "note": "Retrace the East Fork Quinault River Trail back down to Graves Creek Trailhead. Same easy grade as the approach, just in reverse; tired legs from the summit day make this feel longer than Day 1."
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Pyrites Creek — where the Chimney Peak approach leaves the trail",
+    "elev_ft": null,
+    "type": "camp",
+    "role": "main",
+    "notes": "This is the camp for Chimney Peak, and the reason it rather than the chalet meadow is that the approach leaves the East Fork Quinault trail at about nine miles, which is where this camp sits. Push on to the chalet and you have walked four miles past your own turning and given yourself them back again in the morning. Th…"
+   }
+  ],
+  "campsite_pins": [
+   {
+    "name": "O'Neil Creek Camp",
+    "elev": 950,
+    "distMi": 6.7
+   },
+   {
+    "name": "Pyrites Creek Camp",
+    "elev": 1500,
+    "distMi": 9.5
+   }
+  ]
+ },
+ {
+  "id": "wa_chimney_peak_the_chimney",
+  "name": "The Chimney",
+  "discipline": "alpine",
+  "peak": "Chimney Peak",
+  "area_id": "wa_chimney_peak",
+  "path": "usa.washington.wa_olympics.wa_olympic_np.wa_anderson_dosewallips.wa_chimney_peak",
+  "trip_plan": {
+   "totalNote": "Hike 13.9 miles up the East Fork Quinault to Enchanted Valley, make a long off-trail day to the Southwest Ridge and The Chimney, and hike out on day three.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Hike up the East Fork Quinault",
+     "objective": "Reach camp in or near Enchanted Valley",
+     "miles": 13.9,
+     "gainFt": 1850,
+     "note": "Hike 13.9 miles up the East Fork Quinault River Trail from the Graves Creek Trailhead to a permitted camp in or near Enchanted Valley at about 2,000 ft."
+    },
+    {
+     "n": 2,
+     "title": "Climb The Chimney",
+     "objective": "Climb the tower and return to camp",
+     "miles": null,
+     "gainFt": 4900,
+     "note": "Leave camp very early and work off-trail around to the southwest side, since the 4,800 ft south wall above the valley is not the way up. Scramble the Southwest Ridge to the upper peak, traverse to the base of The Chimney on the west aspect and climb it, then downclimb or rappel the tower and return to camp."
+    },
+    {
+     "n": 3,
+     "title": "Hike out to Graves Creek",
+     "objective": "Return to the trailhead",
+     "miles": 13.9,
+     "gainFt": 350,
+     "note": "Hike the 13.9 miles back down the valley to the Graves Creek Trailhead."
+    }
+   ]
+  },
+  "camps_on_file": [],
+  "campsite_pins": [
+   {
+    "name": "Enchanted Valley Chalet (emergency shelter and camp area beneath the peak)",
+    "elev": 2000,
+    "distMi": 13.9
+   }
+  ]
+ },
+ {
+  "id": "wa_mount_la_crosse_scramble",
+  "name": "Mount La Crosse Scramble",
+  "discipline": "mountaineering",
+  "peak": "Mount La Crosse",
+  "area_id": "wa_mount_la_crosse",
+  "path": "usa.washington.wa_olympics.wa_olympic_np.wa_anderson_dosewallips.wa_mount_la_crosse",
+  "trip_plan": {
+   "totalNote": "A remote 5-day, roughly 41-mile round-trip backpack with about 7,000 ft of cumulative gain. Most of the effort is the Duckabush River approach and the steep climb to La Crosse Pass; the summit itself is a moderate Class 2 (brief Class 3) scramble west along the ridge from the pass.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Approach to Ten Mile Camp",
+     "objective": "Cover the low-elevation river miles of the Duckabush River Trail",
+     "miles": 10.7,
+     "gainFt": 1500,
+     "note": "Start from the Duckabush River trailhead near Brinnon and follow the Duckabush River Trail up through second-growth and old-growth forest to Ten Mile Camp, a well-established riverside campsite. This day is mostly gentle grade along the valley floor."
+    },
+    {
+     "n": 2,
+     "title": "Up the Duckabush to the La Crosse Pass junction",
+     "objective": "Camp by the river near the La Crosse Pass Trail junction",
+     "miles": 6,
+     "gainFt": 1300,
+     "note": "Continue up the Duckabush River Trail through the upper valley, which can be brushy with blowdown early in the season, to the signed La Crosse Pass Trail junction about 6 miles above Ten Mile Camp. Camp along the river near the junction: it is the last reliable water below the pass, and the pass itself has no water or …"
+    },
+    {
+     "n": 3,
+     "title": "Summit Mount La Crosse (optionally + White Mountain)",
+     "objective": "Climb Mount La Crosse from La Crosse Pass and return to camp",
+     "miles": 8,
+     "gainFt": 3800,
+     "note": "Fill water in the valley, then climb the La Crosse Pass Trail north from the junction, about 3 miles and 2,900 ft of steep, eroded switchbacks, to the bald saddle of La Crosse Pass (5,566 ft). Leave the trail there and follow the broad ridge crest west over heather benches and talus to the summit of Mount La Crosse, Cl…"
+    },
+    {
+     "n": 4,
+     "title": "Descend to Ten Mile Camp",
+     "objective": "Retrace the approach back down the Duckabush drainage",
+     "miles": 6,
+     "gainFt": 100,
+     "note": "Walk back down the Duckabush valley from the junction to Ten Mile Camp. Lighter pack (less food) makes this faster than the way in."
+    },
+    {
+     "n": 5,
+     "title": "Hike out to trailhead",
+     "objective": "Return to the Duckabush trailhead",
+     "miles": 10.7,
+     "gainFt": 100,
+     "note": "An easy, mostly downhill valley walk back to the car, retracing Day 1 in reverse."
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Lake LaCrosse and Hart Lake — the base for Mount La Crosse and White Mountain",
+    "elev_ft": 4800,
+    "type": "camp",
+    "role": "main",
+    "notes": "The camp for both Mount La Crosse and White Mountain, which stand less than a mile apart on either side of a small unnamed glacier directly above the basin. Both are scrambles rather than climbs — La Crosse at 6,417 ft goes at class 2 and was first climbed in 1928, White Mountain at 6,378 ft is class 2 as well — so fro…"
+   }
+  ],
+  "campsite_pins": [
+   {
+    "name": "Five Mile Camp",
+    "elev": 1100,
+    "distMi": 5
+   },
+   {
+    "name": "Ten Mile Camp",
+    "elev": 1400,
+    "distMi": 10.7
+   }
+  ]
+ },
+ {
+  "id": "wa_white_mountain_olympics_scramble",
+  "name": "White Mountain Scramble",
+  "discipline": "mountaineering",
+  "peak": "White Mountain",
+  "area_id": "wa_white_mountain_olympics",
+  "path": "usa.washington.wa_olympics.wa_olympic_np.wa_anderson_dosewallips.wa_white_mountain_olympics",
+  "trip_plan": {
+   "totalNote": "A 3-day, ~42-mile round trip up the West Fork Dosewallips (extended by the long-standing Dosewallips Road washout): two long bike-and-hike approach days to a high camp near Anderson Pass, bracketing one big scramble day with ~4,000 ft of gain to the remote 6,378 ft summit.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Bike-and-hike approach to high camp",
+     "objective": "Reach camp at Honeymoon Meadows (or Camp Siberia near Anderson Pass)",
+     "miles": 17,
+     "gainFt": 5300,
+     "note": "Ride bikes up the washed-out Dosewallips Road to the old Ranger Station, stash them, then continue on foot up the West Fork Dosewallips Trail past Dose Forks and Diamond Meadows to camp. Most parties camp at Honeymoon Meadows; some push on toward Camp Siberia to shorten the summit day."
+    },
+    {
+     "n": 2,
+     "title": "Summit push",
+     "objective": "Climb White Mountain (6,378 ft) and return to camp",
+     "miles": 8,
+     "gainFt": 4000,
+     "note": "Leave camp with a light pack, cross Anderson Pass, then leave the trail for open scree and talus slopes to the summit — Class 2 with no maintained path, so route-finding matters above treeline. Round trip is about 8 miles with roughly 4,000 ft of gain and loss."
+    },
+    {
+     "n": 3,
+     "title": "Hike-and-bike out",
+     "objective": "Return to the Dosewallips trailhead",
+     "miles": 17,
+     "gainFt": 300,
+     "note": "Reverse day one: hike back down the West Fork Dosewallips Trail to the old Ranger Station, retrieve bikes, and coast the washed-out road back to the car. Lighter pack and mostly downhill grade make this faster than the trip in."
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Honeymoon Meadows Camp",
+    "elev_ft": null,
+    "type": "camp",
+    "role": "main",
+    "notes": ""
+   },
+   {
+    "name": "Lake LaCrosse and Hart Lake — the base for Mount La Crosse and White Mountain",
+    "elev_ft": 4800,
+    "type": "camp",
+    "role": "main",
+    "notes": "The camp for both Mount La Crosse and White Mountain, which stand less than a mile apart on either side of a small unnamed glacier directly above the basin. Both are scrambles rather than climbs — La Crosse at 6,417 ft goes at class 2 and was first climbed in 1928, White Mountain at 6,378 ft is class 2 as well — so fro…"
+   }
+  ],
+  "campsite_pins": [
+   {
+    "name": "Diamond Meadows Camp",
+    "elev": 2718,
+    "distMi": 12.7
+   },
+   {
+    "name": "Honeymoon Meadows Camp",
+    "elev": 3527,
+    "distMi": 14.1
+   }
+  ]
+ },
+ {
+  "id": "wa_mount_carrie_se_route",
+  "name": "Southwest Ridge via High Divide and the Catwalk",
+  "discipline": "scrambling",
+  "peak": "Mount Carrie",
+  "area_id": "wa_mount_carrie",
+  "path": "usa.washington.wa_olympics.wa_olympic_np.wa_bailey_range.wa_mount_carrie",
+  "trip_plan": {
+   "totalNote": "A demanding 3-day, roughly 27-mile round trip: two travel days to and from a Heart Lake base camp bookend one very long summit day (the published time is 5 hr from camp; real parties report 9.5-12+ hr) across Cat Basin and the exposed Catwalk to Carrie's summit.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Approach to Heart Lake camp",
+     "objective": "Reach Heart Lake camp (4,800 ft)",
+     "miles": 8,
+     "gainFt": 2800,
+     "note": "Hike the Sol Duc trail past the Deer Lake junction to Heart Lake, the standard base camp for the Cat Basin/Catwalk approach to Carrie."
+    },
+    {
+     "n": 2,
+     "title": "Cat Basin, the Catwalk, and the summit",
+     "objective": "Tag the 6,995 ft summit via Cat Basin and the Catwalk",
+     "miles": 11,
+     "gainFt": 3200,
+     "note": "A genuinely long day: gain the High Divide, drop into Cat Basin, cross the exposed class 3 Catwalk past Boston Charlie's Camp, then climb Carrie's grassy/scree southwest ridge to the summit scree basin and the true summit, before reversing the entire route back to camp."
+    },
+    {
+     "n": 3,
+     "title": "Hike out",
+     "objective": "Return to the Sol Duc trailhead",
+     "miles": 8,
+     "gainFt": 0,
+     "note": "Descend the Sol Duc trail from Heart Lake back to the trailhead."
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Heart Lake",
+    "elev_ft": 4744,
+    "type": "camp",
+    "role": "main",
+    "notes": "The most useful camp in the whole zone for a climber. It sits just under eight miles in, a short climb below the High Divide, and it is the last camp on maintained trail with easy water before the route to Mount Carrie, Ruth Peak and Mount Fairchild leaves the trail for good. From here you gain the divide, follow it pa…"
+   },
+   {
+    "name": "Cat Basin",
+    "elev_ft": null,
+    "type": "camp",
+    "role": "main",
+    "notes": "Cat Basin lies just below the junction at roughly 5,042 ft where the High Divide trail meets the way into the Bailey Range, so it is the last sheltered ground on the approach before the route turns cross-country beneath Cat Peak. Parties heading for Mount Carrie use it to shorten the following morning and to get below …"
+   },
+   {
+    "name": "Sol Duc Hot Springs Resort campground",
+    "elev_ft": 1684,
+    "type": "camp",
+    "role": "route",
+    "notes": "The drive-in staging base for every objective in this zone except Mount Angeles, a couple of miles short of the end of the Sol Duc Hot Springs Road where the trailhead for the High Divide and Appleton Pass sits. Climbers use it the night before, because the walk to Heart Lake or Appleton Pass is long enough that leavin…"
+   },
+   {
+    "name": "Boston Charlie's Camp",
+    "elev_ft": 5543,
+    "type": "bivy",
+    "role": "route",
+    "notes": "This is the first camp on the far side of the Catwalk and the recognised start of the Bailey Range proper. It matters because it puts you directly at the foot of Mount Carrie's southwest ridge, where the route gains around 2,000 ft in under a mile on a semi-cairned bootpack, so a party camped here can be on the summit …"
+   }
+  ],
+  "campsite_pins": [
+   {
+    "name": "Sol Duc Hot Springs Resort campground",
+    "elev": 1684,
+    "distMi": null
+   },
+   {
+    "name": "Heart Lake",
+    "elev": 4744,
+    "distMi": 18.5
+   },
+   {
+    "name": "Cat Basin / High Divide",
+    "elev": 5000,
+    "distMi": null
+   },
+   {
+    "name": "Boston Charlie's Camp",
+    "elev": 5543,
+    "distMi": 12.8
+   }
+  ]
+ },
+ {
+  "id": "wa_mount_fairchild_standard",
+  "name": "Standard Route",
+  "discipline": "mountaineering",
+  "peak": "Mount Fairchild",
+  "area_id": "wa_mount_fairchild",
+  "path": "usa.washington.wa_olympics.wa_olympic_np.wa_bailey_range.wa_mount_fairchild",
+  "trip_plan": {
+   "totalNote": "A 4-day, 3-night out-and-back from the Sol Duc trailhead: a trail day to Cat Basin, a short day across the Catwalk to Boston Charlie's, a long summit day over Mount Carrie to Fairchild and back, and a long day out.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Sol Duc trailhead to Cat Basin",
+     "objective": "Camp in Cat Basin below Cat Peak",
+     "miles": 10.5,
+     "gainFt": 3700,
+     "note": "Walk the Sol Duc River Trail past Sol Duc Falls and climb to the High Divide by way of Deer Lake or Heart Lake, then follow the divide east to the Cat Basin junction, where the maintained trail ends. Fill every bottle before leaving the divide trail: the way on toward Cat Peak carries no water. Camp in Cat Basin, the l…"
+    },
+    {
+     "n": 2,
+     "title": "Across the Catwalk to Boston Charlie's",
+     "objective": "Camp at Boston Charlie's, at the foot of Mount Carrie",
+     "miles": 2.5,
+     "gainFt": 800,
+     "note": "Leave Cat Basin on the boot path below Cat Peak and cross the Catwalk, the narrow, exposed ridge between Cat Peak and Mount Carrie. With a full pack it is the crux of the approach, and no place to be in wet weather. Camp at Boston Charlie's on the far side, where the only water is a small sinkhole pond that must be fil…"
+    },
+    {
+     "n": 3,
+     "title": "Summit day: over Mount Carrie to Fairchild",
+     "objective": "Summit Mount Fairchild (6,899 ft) and return to Boston Charlie's",
+     "miles": 6,
+     "gainFt": 3800,
+     "note": "Climb roughly 2,000 ft from camp to the summit of Mount Carrie. From Carrie's top, rope up and put on crampons, head northeast down onto the glacier, circle round to the north side of Fairchild and climb its Southwest Ridge to the summit. Reverse the whole line back over Carrie to camp, allowing for snow bridges that s…"
+    },
+    {
+     "n": 4,
+     "title": "Hike out to Sol Duc",
+     "objective": "Return to the Sol Duc trailhead",
+     "miles": 13,
+     "gainFt": 1200,
+     "note": "Recross the Catwalk to Cat Basin, regain the High Divide trail and follow it back down past Sol Duc Falls to the trailhead."
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Eleven Bull Basin and the Cream Lake cross-country camps",
+    "elev_ft": null,
+    "type": "bivy",
+    "role": "main",
+    "notes": "These are the working camps for Ruth Peak and Mount Fairchild. Eleven Bull Basin sits beneath Carrie and Ruth, a meadow with running streams, and it is the natural second night for a party that climbed Carrie from Boston Charlie's. Fairchild is the next peak along the crest, less than a mile north of Ruth, and both are…"
+   },
+   {
+    "name": "Cat Basin",
+    "elev_ft": null,
+    "type": "camp",
+    "role": "main",
+    "notes": "Cat Basin lies just below the junction at roughly 5,042 ft where the High Divide trail meets the way into the Bailey Range, so it is the last sheltered ground on the approach before the route turns cross-country beneath Cat Peak. Parties heading for Mount Carrie use it to shorten the following morning and to get below …"
+   },
+   {
+    "name": "Sol Duc Hot Springs Resort campground",
+    "elev_ft": 1684,
+    "type": "camp",
+    "role": "route",
+    "notes": "The drive-in staging base for every objective in this zone except Mount Angeles, a couple of miles short of the end of the Sol Duc Hot Springs Road where the trailhead for the High Divide and Appleton Pass sits. Climbers use it the night before, because the walk to Heart Lake or Appleton Pass is long enough that leavin…"
+   },
+   {
+    "name": "Deer Lake",
+    "elev_ft": 3527,
+    "type": "camp",
+    "role": "route",
+    "notes": "Three and a half miles up from the Sol Duc trailhead by way of Sol Duc Falls, this is the first camp on the loop and the one parties take when they get away late and cannot face the climb to Heart Lake in the dark. For a Bailey Range objective it is a poor base on its own — you are still well below the High Divide and …"
+   },
+   {
+    "name": "Heart Lake",
+    "elev_ft": 4744,
+    "type": "camp",
+    "role": "route",
+    "notes": "The most useful camp in the whole zone for a climber. It sits just under eight miles in, a short climb below the High Divide, and it is the last camp on maintained trail with easy water before the route to Mount Carrie, Ruth Peak and Mount Fairchild leaves the trail for good. From here you gain the divide, follow it pa…"
+   },
+   {
+    "name": "Boston Charlie's Camp",
+    "elev_ft": 5543,
+    "type": "bivy",
+    "role": "route",
+    "notes": "This is the first camp on the far side of the Catwalk and the recognised start of the Bailey Range proper. It matters because it puts you directly at the foot of Mount Carrie's southwest ridge, where the route gains around 2,000 ft in under a mile on a semi-cairned bootpack, so a party camped here can be on the summit …"
+   }
+  ],
+  "campsite_pins": [
+   {
+    "name": "Boston Charlie's Camp",
+    "elev": 5300,
+    "distMi": 11.5
+   }
+  ]
+ },
+ {
+  "id": "wa_mount_mathias_scramble",
+  "name": "West Face",
+  "discipline": "mountaineering",
+  "peak": "Mount Mathias",
+  "area_id": "wa_mount_mathias",
+  "path": "usa.washington.wa_olympics.wa_olympic_np.wa_bailey_range.wa_mount_mathias",
+  "trip_plan": {
+   "totalNote": "An out-and-back from the Hoh: a long trail day in to Glacier Meadows, a roped glacier day to Glacier Pass and the summit ridge, and the walk out. Many parties add a spare day for weather or climb Mathias alongside Mount Olympus.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Hoh trailhead to Glacier Meadows",
+     "objective": "Reach the Glacier Meadows base camp",
+     "miles": 17.2,
+     "gainFt": 3900,
+     "note": "The long, mostly gentle Hoh River Trail through the rainforest, climbing steadily only in the last few miles out of the valley. A washed-out section near the top is crossed on a fixed ladder. Packs carry full glacier kit."
+    },
+    {
+     "n": 2,
+     "title": "Blue Glacier, Glacier Pass and the Mathias summit",
+     "objective": "Climb Mount Mathias by the snow finger or the Mercury-Mathias col and return to camp",
+     "miles": 9,
+     "gainFt": 3300,
+     "note": "Take the way trail to the Blue Glacier moraine, rope up and cross the glacier to Snow Dome, then continue up the upper Blue Glacier to Glacier Pass, the saddle between Mathias and the East Peak of Mount Olympus. Climb the steep snow finger between Mathias and the pass, or the gullies to the Mercury-Mathias col, to Clas…"
+    },
+    {
+     "n": 3,
+     "title": "Hike out",
+     "objective": "Walk back down the Hoh River Trail to the trailhead",
+     "miles": 17.2,
+     "gainFt": 300,
+     "note": "A long, mostly downhill trail day back to the Hoh Rain Forest Visitor Center."
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Glacier Meadows",
+    "elev_ft": 4200,
+    "type": "camp",
+    "role": "main",
+    "notes": "The standard base camp for climbs off the Blue Glacier, about 17 miles up the Hoh River Trail. Summit day starts with the short way trail to the Blue Glacier moraine."
+   },
+   {
+    "name": "Snow Dome high camp",
+    "elev_ft": 6600,
+    "type": "bivy",
+    "role": "route",
+    "notes": "Higher option on the rocks of the lower Snow Dome or on its crest, above the Blue Glacier. It shortens the day to Glacier Pass and Mathias; carry out human waste."
+   }
+  ],
+  "campsite_pins": [
+   {
+    "name": "Glacier Meadows",
+    "elev": 4180,
+    "distMi": null
+   },
+   {
+    "name": "Snow Dome high camp",
+    "elev": 6600,
+    "distMi": null
+   }
+  ]
+ },
+ {
+  "id": "wa_ruth_peak_olympics_scramble",
+  "name": "Ruth Peak Scramble",
+  "discipline": "scrambling",
+  "peak": "Ruth Peak",
+  "area_id": "wa_ruth_peak_olympics",
+  "path": "usa.washington.wa_olympics.wa_olympic_np.wa_bailey_range.wa_ruth_peak_olympics",
+  "trip_plan": {
+   "totalNote": "A 5-day, roughly 31-mile round trip from Sol Duc via Heart Lake/High Divide and Eleven Bull Basin, with about 6,500 ft of cumulative gain each way plus a dedicated day to tag the Ruth Peak summit itself.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Approach to High Divide / Heart Lake",
+     "objective": "Reach the Heart Lake / High Divide camp",
+     "miles": 8,
+     "gainFt": 2900,
+     "note": "Follow the Sol Duc River trail past Sol Duc Falls and Deer Lake, then climb through subalpine meadows to the High Divide/Heart Lake area. This is the standard first-night camp for any Bailey Range approach, on trail the whole way."
+    },
+    {
+     "n": 2,
+     "title": "Over the Catwalk to Eleven Bull Basin",
+     "objective": "Reach Eleven Bull Basin camp",
+     "miles": 6,
+     "gainFt": 1300,
+     "note": "Leave the maintained trail at High Divide and sidehill past Cat Peak, across the narrow, exposed 'Catwalk' ridge, then drop into the meadows of Eleven Bull Basin — the standard camp for parties tagging Ruth Peak without continuing the full Bailey Range Traverse. Off-trail, with route-finding and steep sidehilling."
+    },
+    {
+     "n": 3,
+     "title": "Climb Ruth Peak",
+     "objective": "Summit Ruth Peak (6,841 ft) and return to camp",
+     "miles": 3,
+     "gainFt": 1541,
+     "note": "Drop the overnight gear and scramble up the slopes above Eleven Bull Basin toward Ruth Peak — mostly open talus/heather with a short, looser section near the top. Most parties are back at camp by early-to-mid afternoon."
+    },
+    {
+     "n": 4,
+     "title": "Return to High Divide / Heart Lake",
+     "objective": "Retrace to Heart Lake/High Divide camp",
+     "miles": 6,
+     "gainFt": 800,
+     "note": "Reverse yesterday's off-trail line back over the Catwalk and past Cat Peak to the Heart Lake/High Divide camp, rejoining the maintained trail there."
+    },
+    {
+     "n": 5,
+     "title": "Exit to Sol Duc Trailhead",
+     "objective": "Hike out to the trailhead",
+     "miles": 8,
+     "gainFt": 0,
+     "note": "Descend the trail back through Deer Lake and Sol Duc Falls to the Sol Duc Trailhead, closing out the trip."
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Eleven Bull Basin and the Cream Lake cross-country camps",
+    "elev_ft": null,
+    "type": "bivy",
+    "role": "main",
+    "notes": "These are the working camps for Ruth Peak and Mount Fairchild. Eleven Bull Basin sits beneath Carrie and Ruth, a meadow with running streams, and it is the natural second night for a party that climbed Carrie from Boston Charlie's. Fairchild is the next peak along the crest, less than a mile north of Ruth, and both are…"
+   },
+   {
+    "name": "Sol Duc Hot Springs Resort campground",
+    "elev_ft": 1684,
+    "type": "camp",
+    "role": "route",
+    "notes": "The drive-in staging base for every objective in this zone except Mount Angeles, a couple of miles short of the end of the Sol Duc Hot Springs Road where the trailhead for the High Divide and Appleton Pass sits. Climbers use it the night before, because the walk to Heart Lake or Appleton Pass is long enough that leavin…"
+   },
+   {
+    "name": "Heart Lake",
+    "elev_ft": 4744,
+    "type": "camp",
+    "role": "route",
+    "notes": "The most useful camp in the whole zone for a climber. It sits just under eight miles in, a short climb below the High Divide, and it is the last camp on maintained trail with easy water before the route to Mount Carrie, Ruth Peak and Mount Fairchild leaves the trail for good. From here you gain the divide, follow it pa…"
+   },
+   {
+    "name": "Cat Basin",
+    "elev_ft": null,
+    "type": "camp",
+    "role": "route",
+    "notes": "Cat Basin lies just below the junction at roughly 5,042 ft where the High Divide trail meets the way into the Bailey Range, so it is the last sheltered ground on the approach before the route turns cross-country beneath Cat Peak. Parties heading for Mount Carrie use it to shorten the following morning and to get below …"
+   },
+   {
+    "name": "Boston Charlie's Camp",
+    "elev_ft": 5543,
+    "type": "bivy",
+    "role": "route",
+    "notes": "This is the first camp on the far side of the Catwalk and the recognised start of the Bailey Range proper. It matters because it puts you directly at the foot of Mount Carrie's southwest ridge, where the route gains around 2,000 ft in under a mile on a semi-cairned bootpack, so a party camped here can be on the summit …"
+   }
+  ],
+  "campsite_pins": [
+   {
+    "name": "Sol Duc Hot Springs Resort campground",
+    "elev": 1684,
+    "distMi": null
+   },
+   {
+    "name": "Heart Lake",
+    "elev": 4744,
+    "distMi": null
+   },
+   {
+    "name": "Eleven Bull Basin",
+    "elev": 5200,
+    "distMi": null
+   },
+   {
+    "name": "Boston Charlie's Camp",
+    "elev": 5543,
+    "distMi": null
+   }
+  ]
+ },
+ {
+  "id": "wa_andersons_thumb_standard",
+  "name": "Standard Route",
+  "discipline": "alpine",
+  "peak": "Anderson's Thumb",
+  "area_id": "wa_andersons_thumb",
+  "path": "usa.washington.wa_olympics.wa_olympic_np.wa_central_olympics.wa_andersons_thumb",
+  "trip_plan": {
+   "totalNote": "A 3-day, roughly 38-mile round trip (including the ~13 miles of washed-out road) with about 6,200 ft of net gain/loss; a long valley approach bookends one technical day climbing the spire from the moraine camp.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Washout approach to high camp",
+     "objective": "Reach high camp on the Anderson Glacier moraine",
+     "miles": 17,
+     "gainFt": 4600,
+     "note": "Since the 2002 washout, the Dosewallips Road is closed roughly 6.5 miles before the old trailhead, so most parties bike (or walk) that stretch first. From the ranger station it's a long, mostly gentle valley hike up the West Fork Dosewallips through Honeymoon Meadows (with a knee-to-thigh-deep river ford) to Anderson P…"
+    },
+    {
+     "n": 2,
+     "title": "Up the basin to the Thumb",
+     "objective": "Climb Anderson's Thumb and return to high camp",
+     "miles": 4,
+     "gainFt": 1650,
+     "note": "A technical day-trip from camp: traverse above Anderson Lake and work up the basin toward Flypaper Pass, bearing west under Echo Rock to the col at the base of the spire, then climb the short but exposed sandstone pitch to the summit block and rappel back off. Afternoon convective weather is common, so an early start a…"
+    },
+    {
+     "n": 3,
+     "title": "Hike and bike out",
+     "objective": "Return to the trailhead/vehicle",
+     "miles": 17,
+     "gainFt": 150,
+     "note": "A long reversal of Day 1: break camp, drop back through Anderson Pass and Honeymoon Meadows to the ranger station, then bike the washed-out road back to the car. Most parties treat this as a full day given the distance."
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Anderson Tarn high camp",
+    "elev_ft": null,
+    "type": "camp",
+    "role": "main",
+    "notes": ""
+   },
+   {
+    "name": "Honeymoon Meadows",
+    "elev_ft": 3527,
+    "type": "camp",
+    "role": "main",
+    "notes": "Established camp on the West Fork Dosewallips trail about 8 miles past the old ranger station, below Anderson Pass. The usual base for the Anderson Glacier side of the massif."
+   },
+   {
+    "name": "Enchanted Valley and Anderson Pass — the approach to Anderson's Thumb",
+    "elev_ft": 2000,
+    "type": "camp",
+    "role": "route",
+    "notes": "The East Fork Quinault runs about thirteen miles from Graves Creek to the Enchanted Valley chalet, with staged camps at Pony Bridge around three miles, O'Neil Creek around six and a half and Pyrites Creek around nine, all of which are useful for breaking the walk in. This is the approach to Anderson's Thumb, the pinnac…"
+   }
+  ],
+  "campsite_pins": [
+   {
+    "name": "Honeymoon Meadows",
+    "elev": 3527,
+    "distMi": null
+   },
+   {
+    "name": "Anderson Tarn high camp",
+    "elev": 5100,
+    "distMi": 17
+   }
+  ]
+ },
+ {
+  "id": "wa_mount_barnes_scramble",
+  "name": "Elwha Basin Scramble",
+  "discipline": "mountaineering",
+  "peak": "Mount Barnes",
+  "area_id": "wa_mount_barnes",
+  "path": "usa.washington.wa_olympics.wa_olympic_np.wa_central_olympics.wa_mount_barnes",
+  "trip_plan": {
+   "totalNote": "A 6-day, roughly 55-mile off-trail Bailey Range traverse with 17,000+ ft of cumulative gain; Mount Barnes itself is only a half-day out-and-back scramble tacked onto a high camp near Bear Pass, usually paired with (or offered as an alternative to) Mount Queets, and the trip finishes with a very long exit day down the Elwha.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Sol Duc to High Divide / Cat Basin",
+     "objective": "Reach the base of the Bailey Range crest",
+     "miles": 7.5,
+     "gainFt": 4300,
+     "note": "Well-graded trail from the Sol Duc trailhead up through Deer Lake and along High Divide to a camp near Cat Basin, staged at the start of the off-trail traverse. Last easy water and maintained tread of the trip."
+    },
+    {
+     "n": 2,
+     "title": "The Catwalk to Stephen Lake",
+     "objective": "Cross the Catwalk and flank Mount Carrie",
+     "miles": 7,
+     "gainFt": 3200,
+     "note": "Off-trail route-finding begins here: the exposed 'Catwalk' traverse between Cat Peak and Mount Carrie, then sidehilling brushy meadows and gullies down to a beach camp on Stephen Lake."
+    },
+    {
+     "n": 3,
+     "title": "Stephen Lake to Ferry Basin",
+     "objective": "Push south along the Bailey Range crest",
+     "miles": 5,
+     "gainFt": 2600,
+     "note": "Climb out of the Stephen Lake basin and traverse post-glacial moraine and meadow terrain to camp in Upper Ferry Basin, with Stephen Peak an optional short side-scramble along the way."
+    },
+    {
+     "n": 4,
+     "title": "Ferry Basin to a high camp near Bear Pass",
+     "objective": "Reach the meadow camp below Mount Barnes",
+     "miles": 5,
+     "gainFt": 2400,
+     "note": "Loose scree and talus lead over a shoulder near Mount Ferry into what parties often nickname 'Junkyard Basin,' then down to a grassy meadow camp near Bear Pass — the staging point for the Barnes side-trip."
+    },
+    {
+     "n": 5,
+     "title": "Side-trip: climb Mount Barnes",
+     "objective": "Tag the Mount Barnes summit and return to camp",
+     "miles": 5.5,
+     "gainFt": 2200,
+     "note": "Stash overnight gear in the meadow and go light. Scree and lingering snow patches lead southwest of the peak, then a moderate scree slope and a boot track curl left through brief brush to the summit, with big views of Olympus, Queets, Noyes, and Seattle — often shared with swarms of flying ants in late summer."
+    },
+    {
+     "n": 6,
+     "title": "Descend the Elwha Snowfinger and out to Whiskey Bend",
+     "objective": "Exit via the Elwha Basin maze and Elwha River Trail",
+     "miles": 32,
+     "gainFt": 1000,
+     "note": "A long, punishing grind: down the largely melted-out Elwha Snowfinger gully (steep scree, slabs and an icy snow hump) into the tangled brush and stream crossings of the Elwha Basin ('the maze') to Chicago Camp, then a fast, well-graded push down the Elwha River Trail to the Whiskey Bend trailhead near Madison Falls. Ti…"
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Elwha Basin, Queets Basin and the upper cross-country bivy zones",
+    "elev_ft": null,
+    "type": "bivy",
+    "role": "main",
+    "notes": "This is the working base for the Elwha Basin peaks and the only sensible way to reach the Bailey Range from the south. From Chicago Camp the route into Elwha Basin is a notorious bushwhack in low snow years, then the Elwha Snowfinger leads to Dodwell-Rixon Pass at 4,763 ft and over into Queets Basin. From a basin camp,…"
+   },
+   {
+    "name": "Lillian River and Mary's Falls — the first night out of Whiskey Bend",
+    "elev_ft": null,
+    "type": "camp",
+    "role": "route",
+    "notes": "The whole Elwha approach now begins with a road walk, and it is the single biggest change to planning in this valley. Vehicles stop at the Madison Falls parking area; the Olympic Hot Springs Road and then the Whiskey Bend Road are closed by a washout that has stood for years with no repair date, which puts the old Whis…"
+   },
+   {
+    "name": "Hayes River and Elkhorn — the mid-valley camps, and the base for Mount Norton",
+    "elev_ft": null,
+    "type": "camp",
+    "role": "route",
+    "notes": "Elkhorn sits about eleven miles up the Elwha from Whiskey Bend and Hayes River about sixteen, both on level ground and both far more pleasant than Canyon Camp between them, which has been badly hit by treefall and is worth walking past. Hayes River is the camp for Mount Norton: the peak's east side rises roughly 3,200 …"
+   },
+   {
+    "name": "Chicago Camp — the last established camp in the upper Elwha",
+    "elev_ft": null,
+    "type": "camp",
+    "role": "route",
+    "notes": "Chicago Camp is where the trail effectively ends and the cross-country begins, roughly twenty-five miles from Whiskey Bend at the confluence of the Elwha and Delabarre Creek. It is the standard last-trail-camp for Mount Barnes, Mount Meany, Mount Noyes, Mount Queets and Mount Wilder, all of which are reached by pushing…"
+   }
+  ],
+  "campsite_pins": [
+   {
+    "name": "Chicago Camp — the last established camp in the upper Elwha",
+    "elev": 2195,
+    "distMi": null
+   },
+   {
+    "name": "Upper Ferry Basin / Ferry Glacial Lake",
+    "elev": 5706,
+    "distMi": 19
+   }
+  ]
+ }
+]

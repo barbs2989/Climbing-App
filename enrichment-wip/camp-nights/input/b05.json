@@ -1,0 +1,854 @@
+[
+ {
+  "id": "wa_der_dihedral",
+  "name": "Der Dihedral",
+  "discipline": "alpine",
+  "peak": "Dragontail Peak",
+  "area_id": "wa_dragontail_peak",
+  "path": "usa.washington.wa_centraleast.wa_stuart_range.wa_dragontail_peak",
+  "trip_plan": {
+   "totalNote": "A 2-3 day trip: camp at Colchuck Lake, then a full alpine day (10-12 hrs) climbing the dihedral into the Northeast Arete finish and descending to camp before hiking out.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Approach to Colchuck Lake camp",
+     "objective": "Reach camp at Colchuck Lake",
+     "miles": 4.3,
+     "gainFt": 2300,
+     "note": "Hike the Stuart Lake Trail to Colchuck Lake and camp below the north face, the shared base for this and the neighboring Backbone Ridge."
+    },
+    {
+     "n": 2,
+     "title": "Climb Der Dihedral into the Northeast Arete, descend to camp",
+     "objective": "Summit via Der Dihedral and the Northeast Arete finish",
+     "miles": 3.3,
+     "gainFt": 3050,
+     "note": "Pre-dawn approach to a start a couple of ridges below the standard Backbone base, climb a clean dihedral a couple of pitches up, then join the 1972 Northeast Arete for its finish to the summit (6 pitches total). Descend via Aasgard Pass back to camp."
+    },
+    {
+     "n": 3,
+     "title": "Hike out",
+     "objective": "Return to trailhead",
+     "miles": 4.3,
+     "gainFt": 0,
+     "note": "Break camp and hike back out to the trailhead."
+    }
+   ]
+  },
+  "camps_on_file": [],
+  "campsite_pins": [
+   {
+    "name": "Colchuck Lake",
+    "elev": 5570,
+    "distMi": 4
+   }
+  ]
+ },
+ {
+  "id": "wa_dragontail_peak_r2",
+  "name": "Gerber-Sink",
+  "discipline": "alpine",
+  "peak": "Dragontail Peak",
+  "area_id": "wa_dragontail_peak",
+  "path": "usa.washington.wa_centraleast.wa_stuart_range.wa_dragontail_peak",
+  "trip_plan": {
+   "totalNote": "A 2-3 day trip in shoulder-season ice conditions: camp at Colchuck Lake, then a full mixed/ice day (9-11 hrs) climbing Gerber-Sink to the summit and descending to camp before hiking out.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Winter/spring approach to Colchuck Lake camp",
+     "objective": "Reach camp at Colchuck Lake",
+     "miles": 4.3,
+     "gainFt": 2300,
+     "note": "Hike (or skin) the Stuart Lake Trail to Colchuck Lake and camp below the north face; expect firmer, colder travel and possibly a longer walk if the access road isn't fully plowed."
+    },
+    {
+     "n": 2,
+     "title": "Climb Gerber-Sink, descend to camp",
+     "objective": "Summit via Gerber-Sink",
+     "miles": 3.6,
+     "gainFt": 3200,
+     "note": "Climb runnels connecting snow bands at the lowest point of the nordwand (between Triple Couloirs and Backbone Arete) — an ice pitch, a snowfield, rambling ice with screw protection, and a thin M4 rock crux — finishing in the third couloir shared with Triple Couloirs. Descend the Aasgard Pass scramble back to camp."
+    },
+    {
+     "n": 3,
+     "title": "Hike out",
+     "objective": "Return to trailhead",
+     "miles": 4.3,
+     "gainFt": 0,
+     "note": "Break camp and hike/ski back out to the trailhead."
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Colchuck Lake designated campsites",
+    "elev_ft": 5570,
+    "type": "camp",
+    "role": "main",
+    "notes": "This is the working basecamp for Backbone Ridge, Serpentine Arete and Colchuck Balanced Rock, and it cuts an hour or more off the pre-dawn walk-in. Access is the Stuart Lake trailhead at the end of FR 7601, off Icicle Creek Road out of Leavenworth; the last few miles are rough dirt, washboarded by late summer, and the …"
+   },
+   {
+    "name": "Bridge Creek and Eightmile campgrounds, Icicle Creek Road",
+    "elev_ft": null,
+    "type": "camp",
+    "role": "main",
+    "notes": "Given how unlikely a Colchuck or Core permit is on any given weekend, most parties on Backbone Ridge, Serpentine Arete or Colchuck Balanced Rock end up sleeping down on Icicle Creek Road and starting for the trailhead in the small hours. Both campgrounds sit on the drive in, before the FR 7601 turnoff, so the extra dri…"
+   },
+   {
+    "name": "Talus and boulder bivies below Dragontail's north side",
+    "elev_ft": null,
+    "type": "bivy",
+    "role": "route",
+    "notes": "Parties wanting to shorten the approach to Backbone Ridge or Serpentine Arete sometimes move above the lake into the boulders and moraine beneath the north face rather than staying at the shoreline camps. It buys perhaps half an hour and a clearer look at the route, at the cost of a colder, windier and rockier night. W…"
+   }
+  ],
+  "campsite_pins": [
+   {
+    "name": "Colchuck Lake",
+    "elev": 5570,
+    "distMi": 4
+   }
+  ]
+ },
+ {
+  "id": "wa_dragontail_peak_r3",
+  "name": "Pandora's Box (W Couloir)",
+  "discipline": "alpine",
+  "peak": "Dragontail Peak",
+  "area_id": "wa_dragontail_peak",
+  "path": "usa.washington.wa_centraleast.wa_stuart_range.wa_dragontail_peak",
+  "trip_plan": {
+   "totalNote": "A 2-3 day trip: camp at Colchuck Lake, then a moderate snow-climbing day (8-10 hrs) up Pandora's Box to the summit and back to camp before hiking out.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Approach to Colchuck Lake camp",
+     "objective": "Reach camp at Colchuck Lake",
+     "miles": 4.3,
+     "gainFt": 2300,
+     "note": "Hike the Stuart Lake Trail to Colchuck Lake and camp below the north face, the base for the approach up toward the Colchuck-Dragontail col."
+    },
+    {
+     "n": 2,
+     "title": "Climb Pandora's Box (W Couloir), descend to camp",
+     "objective": "Summit via Pandora's Box",
+     "miles": 3.6,
+     "gainFt": 3200,
+     "note": "Climb steep snow (up to ~45 degrees near the top) up the couloir from near the Colchuck-Dragontail col to the summit ridge. Descend the standard Aasgard Pass scramble back to camp."
+    },
+    {
+     "n": 3,
+     "title": "Hike out",
+     "objective": "Return to trailhead",
+     "miles": 4.3,
+     "gainFt": 0,
+     "note": "Break camp and hike out."
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Colchuck Lake designated campsites",
+    "elev_ft": 5570,
+    "type": "camp",
+    "role": "main",
+    "notes": "This is the working basecamp for Backbone Ridge, Serpentine Arete and Colchuck Balanced Rock, and it cuts an hour or more off the pre-dawn walk-in. Access is the Stuart Lake trailhead at the end of FR 7601, off Icicle Creek Road out of Leavenworth; the last few miles are rough dirt, washboarded by late summer, and the …"
+   },
+   {
+    "name": "Bridge Creek and Eightmile campgrounds, Icicle Creek Road",
+    "elev_ft": null,
+    "type": "camp",
+    "role": "main",
+    "notes": "Given how unlikely a Colchuck or Core permit is on any given weekend, most parties on Backbone Ridge, Serpentine Arete or Colchuck Balanced Rock end up sleeping down on Icicle Creek Road and starting for the trailhead in the small hours. Both campgrounds sit on the drive in, before the FR 7601 turnoff, so the extra dri…"
+   },
+   {
+    "name": "Talus and boulder bivies below Dragontail's north side",
+    "elev_ft": null,
+    "type": "bivy",
+    "role": "route",
+    "notes": "Parties wanting to shorten the approach to Backbone Ridge or Serpentine Arete sometimes move above the lake into the boulders and moraine beneath the north face rather than staying at the shoreline camps. It buys perhaps half an hour and a clearer look at the route, at the cost of a colder, windier and rockier night. W…"
+   }
+  ],
+  "campsite_pins": [
+   {
+    "name": "Colchuck Lake",
+    "elev": 5570,
+    "distMi": 4
+   }
+  ]
+ },
+ {
+  "id": "wa_dragontail_peak_r4",
+  "name": "Triple Couloirs",
+  "discipline": "alpine",
+  "peak": "Dragontail Peak",
+  "area_id": "wa_dragontail_peak",
+  "path": "usa.washington.wa_centraleast.wa_stuart_range.wa_dragontail_peak",
+  "trip_plan": {
+   "totalNote": "Two-day plan: hike to Colchuck Lake, then a pre-dawn start for roughly 2,500 ft of couloirs and runnels to the 8,840 ft summit, down Aasgard Pass, and out to the car the same day.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Hike to Colchuck Lake",
+     "objective": "Reach camp at Colchuck Lake",
+     "miles": 4.5,
+     "gainFt": 2170,
+     "note": "From the Stuart Lake trailhead (about 3,400 ft) follow the trail about 4.5 miles, taking the left fork toward Colchuck Lake, and camp on the lake's west shore at about 5,570 ft. Gain is derived from those two elevations."
+    },
+    {
+     "n": 2,
+     "title": "Triple Couloirs, Aasgard Pass, and out",
+     "objective": "Climb the north face to the summit and return to the car",
+     "miles": 7.5,
+     "gainFt": 3270,
+     "note": "Go counter-clockwise around the lake and up to the lowest point of the north face to enter the Hidden Couloir; the cruxes are the transitions, especially the 2-3 pitch runnels (70-80 degrees, bring pitons) into the second couloir. Allow 5-9 hours from the lake; descend east to Aasgard Pass, back to camp, and hike out."
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Colchuck Lake designated campsites",
+    "elev_ft": 5570,
+    "type": "camp",
+    "role": "main",
+    "notes": "This is the working basecamp for Backbone Ridge, Serpentine Arete and Colchuck Balanced Rock, and it cuts an hour or more off the pre-dawn walk-in. Access is the Stuart Lake trailhead at the end of FR 7601, off Icicle Creek Road out of Leavenworth; the last few miles are rough dirt, washboarded by late summer, and the …"
+   },
+   {
+    "name": "Bridge Creek and Eightmile campgrounds, Icicle Creek Road",
+    "elev_ft": null,
+    "type": "camp",
+    "role": "main",
+    "notes": "Given how unlikely a Colchuck or Core permit is on any given weekend, most parties on Backbone Ridge, Serpentine Arete or Colchuck Balanced Rock end up sleeping down on Icicle Creek Road and starting for the trailhead in the small hours. Both campgrounds sit on the drive in, before the FR 7601 turnoff, so the extra dri…"
+   },
+   {
+    "name": "Talus and boulder bivies below Dragontail's north side",
+    "elev_ft": null,
+    "type": "bivy",
+    "role": "route",
+    "notes": "Parties wanting to shorten the approach to Backbone Ridge or Serpentine Arete sometimes move above the lake into the boulders and moraine beneath the north face rather than staying at the shoreline camps. It buys perhaps half an hour and a clearer look at the route, at the cost of a colder, windier and rockier night. W…"
+   }
+  ],
+  "campsite_pins": [
+   {
+    "name": "Colchuck Lake designated campsites",
+    "elev": 5570,
+    "distMi": null
+   }
+  ]
+ },
+ {
+  "id": "wa_dragontail_peak_serpentine_arete",
+  "name": "Serpentine Arête",
+  "discipline": "alpine",
+  "peak": "Dragontail Peak",
+  "area_id": "wa_dragontail_peak",
+  "path": "usa.washington.wa_centraleast.wa_stuart_range.wa_dragontail_peak",
+  "trip_plan": {
+   "totalNote": "Hike in to camp at Colchuck Lake, then make a long alpine-start day to climb Serpentine Arête, descend via Aasgard Pass or the Snow Creek side, and hike out.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Hike in to Colchuck Lake",
+     "objective": "Camp on the south shore of Colchuck Lake",
+     "miles": 4.3,
+     "gainFt": 2280,
+     "note": "Hike from the Stuart Lake Trailhead to Colchuck Lake and camp on the south shore."
+    },
+    {
+     "n": 2,
+     "title": "Climb Serpentine Arête and hike out",
+     "objective": "Climb the route, descend to the lake and hike out",
+     "miles": 7.3,
+     "gainFt": 3270,
+     "note": "Make an alpine start (2-4 am) and approach the route base in about 3 hours, then climb the route in 7-10 hours. Descend to Colchuck Lake and hike out to the trailhead."
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Colchuck Lake designated campsites",
+    "elev_ft": 5570,
+    "type": "camp",
+    "role": "main",
+    "notes": "This is the working basecamp for Backbone Ridge, Serpentine Arete and Colchuck Balanced Rock, and it cuts an hour or more off the pre-dawn walk-in. Access is the Stuart Lake trailhead at the end of FR 7601, off Icicle Creek Road out of Leavenworth; the last few miles are rough dirt, washboarded by late summer, and the …"
+   },
+   {
+    "name": "Bridge Creek and Eightmile campgrounds, Icicle Creek Road",
+    "elev_ft": null,
+    "type": "camp",
+    "role": "main",
+    "notes": "Given how unlikely a Colchuck or Core permit is on any given weekend, most parties on Backbone Ridge, Serpentine Arete or Colchuck Balanced Rock end up sleeping down on Icicle Creek Road and starting for the trailhead in the small hours. Both campgrounds sit on the drive in, before the FR 7601 turnoff, so the extra dri…"
+   },
+   {
+    "name": "Talus and boulder bivies below Dragontail's north side",
+    "elev_ft": null,
+    "type": "bivy",
+    "role": "route",
+    "notes": "Parties wanting to shorten the approach to Backbone Ridge or Serpentine Arete sometimes move above the lake into the boulders and moraine beneath the north face rather than staying at the shoreline camps. It buys perhaps half an hour and a clearer look at the route, at the cost of a colder, windier and rockier night. W…"
+   }
+  ],
+  "campsite_pins": [
+   {
+    "name": "Colchuck Lake designated campsites",
+    "elev": 5570,
+    "distMi": null
+   }
+  ]
+ },
+ {
+  "id": "wa_enchantment_peak_southwest_scramble",
+  "name": "South Gully",
+  "discipline": "scrambling",
+  "peak": "Enchantment Peak",
+  "area_id": "wa_enchantment_peak",
+  "path": "usa.washington.wa_centraleast.wa_stuart_range.wa_enchantment_peak",
+  "trip_plan": {
+   "totalNote": "A 3-day, 2-night trip out of the Stuart Lake TH: roughly 16-17 miles round trip with the crux being the ~2,200 ft Aasgard Pass headwall (both up and down) bracketing an easy day-hike summit day inside the Core Enchantments.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Approach to Core Enchantments camp",
+     "objective": "Cross Aasgard Pass and establish camp near Isolation/Inspiration Lake",
+     "miles": 6.7,
+     "gainFt": 4300,
+     "note": "From the Stuart Lake TH, hike to Colchuck Lake, then grind up the notoriously steep, loose Aasgard Pass headwall with full overnight packs. Drop into the Core Enchantments basin and make camp near Isolation or Inspiration Lake, centrally located below Enchantment Peak."
+    },
+    {
+     "n": 2,
+     "title": "Enchantment Peak summit day",
+     "objective": "Scramble the south-side gully to the northeast summit and return to camp",
+     "miles": 3.2,
+     "gainFt": 1650,
+     "note": "Day-hike from camp past Tranquil Lake to the base of the south-side gully; class 2 talus and slab lead to a short class 3 gully onto the summit plateau between the SW and NE summits. Many parties link this with Little Annapurna or McClellan Peak in the same push since they share the same basin."
+    },
+    {
+     "n": 3,
+     "title": "Exit over Aasgard Pass",
+     "objective": "Return to the Stuart Lake trailhead",
+     "miles": 6.7,
+     "gainFt": 700,
+     "note": "Reclimb to the top of Aasgard Pass, then carefully downclimb the steep, exposed, loose upper headwall (the crux of the exit, harder than the ascent for many parties) before the long, knee-jarring descent past Colchuck Lake to the car."
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Perfection Lake and Inspiration Lake basin camps",
+    "elev_ft": 7190,
+    "type": "camp",
+    "role": "main",
+    "notes": "The natural base for Prusik Peak's West Ridge and South Face, putting the approach at well under an hour of walking and scrambling to Prusik Pass. Most parties reach it over Aasgard Pass from Colchuck Lake, which is a steep loose grind with a heavy pack rather than a trail in any real sense. Camp on rock, sand or grave…"
+   },
+   {
+    "name": "Bridge Creek and Eightmile campgrounds, Icicle Creek Road",
+    "elev_ft": null,
+    "type": "camp",
+    "role": "main",
+    "notes": "Given how unlikely a Colchuck or Core permit is on any given weekend, most parties on Backbone Ridge, Serpentine Arete or Colchuck Balanced Rock end up sleeping down on Icicle Creek Road and starting for the trailhead in the small hours. Both campgrounds sit on the drive in, before the FR 7601 turnoff, so the extra dri…"
+   },
+   {
+    "name": "Colchuck Lake designated campsites",
+    "elev_ft": 5570,
+    "type": "camp",
+    "role": "route",
+    "notes": "This is the working basecamp for Backbone Ridge, Serpentine Arete and Colchuck Balanced Rock, and it cuts an hour or more off the pre-dawn walk-in. Access is the Stuart Lake trailhead at the end of FR 7601, off Icicle Creek Road out of Leavenworth; the last few miles are rough dirt, washboarded by late summer, and the …"
+   }
+  ],
+  "campsite_pins": [
+   {
+    "name": "Colchuck Lake designated campsites",
+    "elev": 5570,
+    "distMi": 4.6
+   }
+  ]
+ },
+ {
+  "id": "wa_little_annapurna_south_slopes",
+  "name": "North Slopes",
+  "discipline": "scrambling",
+  "peak": "Little Annapurna",
+  "area_id": "wa_little_annapurna",
+  "path": "usa.washington.wa_centraleast.wa_stuart_range.wa_little_annapurna",
+  "trip_plan": {
+   "totalNote": "A 2-day, 1-night trip: hike in and camp at Colchuck Lake, then an early alpine-start summit day over Aasgard Pass to Little Annapurna and all the way back out to the car (~15 mi and ~5,100 ft round trip total). Strong, fit parties do sometimes push it car-to-car in a single very long day (~12-13 hrs), but most treat it as an overnight given the permit system and the risk of descending the loose Aasgard Pass gully in the dark.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Approach to Colchuck Lake camp",
+     "objective": "Establish camp at Colchuck Lake for an Aasgard Pass summit push",
+     "miles": 4,
+     "gainFt": 2270,
+     "note": "Hike from the Stuart Lake/Colchuck Lake Trailhead via the Colchuck Lake Trail (moderate, well-graded climb through forest and boulder fields) to camp at Colchuck Lake, 5,570 ft. Most parties use this shorter approach day to bank energy and scout the Aasgard Pass gully before the long summit day."
+    },
+    {
+     "n": 2,
+     "title": "Aasgard Pass to Little Annapurna, then out to trailhead",
+     "objective": "Summit Little Annapurna via Aasgard Pass and hike all the way out to the car",
+     "miles": 11,
+     "gainFt": 2815,
+     "note": "An early alpine start up the steep, loose Aasgard Pass gully (2,200+ ft in under 2 miles) gains the Enchantment plateau, from which an easy walk-up leads to the summit. Most parties then descend the full route back through camp, break down their tent, and continue all the way out to the trailhead the same day — a long,…"
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Perfection Lake and Inspiration Lake basin camps",
+    "elev_ft": 7190,
+    "type": "camp",
+    "role": "main",
+    "notes": "The natural base for Prusik Peak's West Ridge and South Face, putting the approach at well under an hour of walking and scrambling to Prusik Pass. Most parties reach it over Aasgard Pass from Colchuck Lake, which is a steep loose grind with a heavy pack rather than a trail in any real sense. Camp on rock, sand or grave…"
+   },
+   {
+    "name": "Bridge Creek and Eightmile campgrounds, Icicle Creek Road",
+    "elev_ft": null,
+    "type": "camp",
+    "role": "main",
+    "notes": "Given how unlikely a Colchuck or Core permit is on any given weekend, most parties on Backbone Ridge, Serpentine Arete or Colchuck Balanced Rock end up sleeping down on Icicle Creek Road and starting for the trailhead in the small hours. Both campgrounds sit on the drive in, before the FR 7601 turnoff, so the extra dri…"
+   },
+   {
+    "name": "Colchuck Lake designated campsites",
+    "elev_ft": 5570,
+    "type": "camp",
+    "role": "route",
+    "notes": "This is the working basecamp for Backbone Ridge, Serpentine Arete and Colchuck Balanced Rock, and it cuts an hour or more off the pre-dawn walk-in. Access is the Stuart Lake trailhead at the end of FR 7601, off Icicle Creek Road out of Leavenworth; the last few miles are rough dirt, washboarded by late summer, and the …"
+   }
+  ],
+  "campsite_pins": [
+   {
+    "name": "Core Enchantments",
+    "elev": 7400,
+    "distMi": 6.5
+   },
+   {
+    "name": "Colchuck Lake designated campsites",
+    "elev": 5570,
+    "distMi": 4.5
+   }
+  ]
+ },
+ {
+  "id": "wa_mount_stuart_cascadian_couloir",
+  "name": "Cascadian Couloir",
+  "discipline": "scrambling",
+  "peak": "Mount Stuart",
+  "area_id": "wa_mount_stuart",
+  "path": "usa.washington.wa_centraleast.wa_stuart_range.wa_mount_stuart",
+  "trip_plan": {
+   "totalNote": "A moderate 2-day trip: roughly 8,100+ ft of cumulative gain/loss (the profile crosses Longs Pass twice) over about 12-13 mi round trip; strong parties do it car-to-car in a single long day instead.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Approach to Ingalls Creek camp",
+     "objective": "Reach a camp near the base of the Cascadian Couloir",
+     "miles": 4,
+     "gainFt": 1800,
+     "note": "From the Esmeralda/Ingalls trailhead, climb over Longs Pass and drop into the Ingalls Creek valley to camp within striking distance of the couloir. A moderate half-day approach for most parties."
+    },
+    {
+     "n": 2,
+     "title": "Summit via the Cascadian Couloir and exit",
+     "objective": "Climb the couloir to the false and true summits, then return to the trailhead",
+     "miles": 8.5,
+     "gainFt": 6300,
+     "note": "An early start up the couloir's scree/snow gains the false summit and then the true summit in 5-8 hours for most parties; the route is reversed back through camp and out the same day for a long finish."
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Ingalls Creek basin camp, below Longs Pass",
+    "elev_ft": 4800,
+    "type": "camp",
+    "role": "main",
+    "notes": "The standard base for the Cascadian Couloir and south-side approaches generally, reached from the Esmeralda Basin trailhead over Longs Pass at about 6,200 ft and then dropping roughly 1,400 ft to the valley floor. Access is gated by the Teanaway road: pavement gives way to gravel Forest Road 9737 for the last nine or s…"
+   }
+  ],
+  "campsite_pins": []
+ },
+ {
+  "id": "wa_mount_stuart_direct_north_ridge",
+  "name": "Direct North Ridge",
+  "discipline": "alpine",
+  "peak": "Mount Stuart",
+  "area_id": "wa_mount_stuart",
+  "path": "usa.washington.wa_centraleast.wa_stuart_range.wa_mount_stuart",
+  "trip_plan": {
+   "totalNote": "Two days from the Esmeralda (Ingalls) side: walk to a camp at Goat Pass, then climb the full ridge from its toe, descend the Cascadian Couloir and walk out over Longs Pass. Fast parties do it car to car in about 17 hours; parties who pitch out most of the ridge often bivy at the notch around 8,200 ft instead and take longer.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Esmeralda trailhead to Goat Pass",
+     "objective": "Hike past Ingalls Lake and over Stuart Pass to a bivy at Goat Pass",
+     "miles": null,
+     "gainFt": null,
+     "note": "Follow the Ingalls Way trail to Ingalls Lake, pass the lake on its west side and pick up the faint path to Stuart Pass. Cross talus below the West Ridge and, around 7,000 ft, drop into the north-side gully (not too early) before climbing out to Goat Pass at about 7,600 ft, which has many bivy sites."
+    },
+    {
+     "n": 2,
+     "title": "Direct North Ridge, Cascadian descent",
+     "objective": "Climb the Direct North Ridge to the summit and descend the Cascadian Couloir to the car",
+     "miles": null,
+     "gainFt": null,
+     "note": "Traverse east under the Stuart Glacier to the toe of the ridge. The first three pitches are the hardest of the lower ridge (a 5.8 slot and a sustained 5.9+ crack); above them mostly easy 5th class leads to the notch. The upper ridge brings a knife-edge and slabs to the Gendarme, climbed in two pitches (5.8 lieback, 5.9…"
+    }
+   ]
+  },
+  "camps_on_file": [],
+  "campsite_pins": []
+ },
+ {
+  "id": "wa_mount_stuart_girth_pillar",
+  "name": "Girth Pillar",
+  "discipline": "alpine",
+  "peak": "Mount Stuart",
+  "area_id": "wa_mount_stuart",
+  "path": "usa.washington.wa_centraleast.wa_stuart_range.wa_mount_stuart",
+  "trip_plan": {
+   "totalNote": "A 2-day rock route above the Ice Cliff Glacier: 11 pitches and ~6,000 ft gain over ~15 mi round trip; strong parties occasionally link it car-to-car.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Approach to a bivy between the glaciers",
+     "objective": "Reach a bivy in the scree between the Sherpa and Ice Cliff glaciers",
+     "miles": 6.5,
+     "gainFt": 3200,
+     "note": "Hike in via Mountaineer Creek to a bivy positioned between the two glaciers, allowing an early start up the Ice Cliff the next morning."
+    },
+    {
+     "n": 2,
+     "title": "Climb the Ice Cliff Glacier and Girth Pillar to the summit",
+     "objective": "Climb the glacier to the base of the pillar, then the route's 11 pitches to the summit",
+     "miles": 8.5,
+     "gainFt": 2800,
+     "note": "In good conditions the Ice Cliff Glacier can be soloed to the base of the pillar in under 2 hours; the route above it is 11 pitches: four easy pitches to the pillar, three sustained crack pitches up to 5.11- on the pillar itself, then easier ground to the summit ridge."
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Mountaineer Creek basin below the Sherpa Glacier",
+    "elev_ft": 5400,
+    "type": "camp",
+    "role": "main",
+    "notes": "The standard base for the north side of Mount Stuart. Leave the Stuart Lake trail before the final switchbacks, cross the creek and follow the climbers' path up the south fork of Mountaineer Creek to the flat valley below the Sherpa and Stuart glaciers."
+   }
+  ],
+  "campsite_pins": [
+   {
+    "name": "Mountaineer Creek basin below the Sherpa Glacier",
+    "elev": 5400,
+    "distMi": 4.6
+   }
+  ]
+ },
+ {
+  "id": "wa_mount_stuart_ice_cliff_glacier",
+  "name": "Ice Cliff Glacier",
+  "discipline": "alpine",
+  "peak": "Mount Stuart",
+  "area_id": "wa_mount_stuart",
+  "path": "usa.washington.wa_centraleast.wa_stuart_range.wa_mount_stuart",
+  "trip_plan": {
+   "totalNote": "A 2-day ice route: ~6,000 ft gain over ~15 mi round trip, about 19.5 hours of moving time; some strong parties instead push it car-to-car in one very long day of around 20-22 hours.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Approach to a bivy near the glacier",
+     "objective": "Reach a bivy near the Ice Cliff Glacier moraine",
+     "miles": 6.5,
+     "gainFt": 3000,
+     "note": "Leave the Stuart Lake Trail past the Colchuck junction and follow Mountaineer Creek into the basin below the glacier, carrying a full ice rack."
+    },
+    {
+     "n": 2,
+     "title": "Climb the Ice Cliff Glacier to the summit, descend the Sherpa Glacier",
+     "objective": "Climb the glacier and crux ice past the cliff to the summit, then descend the Sherpa Glacier",
+     "miles": 8,
+     "gainFt": 3015,
+     "note": "A pre-dawn start crosses the glacier and exits the crux ice/cornice while conditions are firm. The route tops out on the ridge below the false summit; descend the Sherpa Glacier back to camp and hike out to the Stuart Lake Trailhead."
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Mountaineer Creek basin below the Sherpa Glacier",
+    "elev_ft": 5400,
+    "type": "camp",
+    "role": "main",
+    "notes": "The standard base for the north side of Mount Stuart. Leave the Stuart Lake trail before the final switchbacks, cross the creek and follow the climbers' path up the south fork of Mountaineer Creek to the flat valley below the Sherpa and Stuart glaciers."
+   }
+  ],
+  "campsite_pins": [
+   {
+    "name": "Ice Cliff Glacier base bivy",
+    "elev": 5384,
+    "distMi": null
+   }
+  ]
+ },
+ {
+  "id": "wa_mount_stuart_north_ridge",
+  "name": "North Ridge (Complete)",
+  "discipline": "alpine",
+  "peak": "Mount Stuart",
+  "area_id": "wa_mount_stuart",
+  "path": "usa.washington.wa_centraleast.wa_stuart_range.wa_mount_stuart",
+  "trip_plan": {
+   "totalNote": "A committing Grade IV route: ~18 pitches and 6,000 ft gain over ~15.5 mi round trip; most parties bivy once near the Gendarme, though very strong teams push it car-to-car in 14-26 hrs.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Approach and climb to a bivy below the Gendarme",
+     "objective": "Reach the base of the North Ridge and climb the lower ridge to a bivy",
+     "miles": 7,
+     "gainFt": 4500,
+     "note": "A pre-dawn start over the approach gets the party to the base of the lower ridge by mid-morning; the lower ridge (4th class to 5.7, much of it simul-climbed) is climbed through the day to a bivy a few pitches below the Gendarme."
+    },
+    {
+     "n": 2,
+     "title": "Finish the ridge to the summit, descend Cascadian",
+     "objective": "Climb the Gendarme and upper ridge to the summit, then exit via the Cascadian Couloir",
+     "miles": 8,
+     "gainFt": 1515,
+     "note": "The Gendarme (5.9 layback or 5.8 bypass) and remaining upper pitches are climbed in the morning; most parties summit by mid-late morning and descend the Cascadian Couloir to exit the same evening."
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Mountaineer Creek basin (beneath the Sherpa and Ice Cliff glaciers)",
+    "elev_ft": 5400,
+    "type": null,
+    "role": "main",
+    "notes": "The standard planned base camp for the north-side approach, and the last flat, sheltered ground with running water. Getting here means leaving the maintained trail before Stuart Lake, crossing the creek and following it cross-country for roughly two miles, then climbing a steep loose talus slope — the crossing runs hig…"
+   },
+   {
+    "name": "Goat Pass",
+    "elev_ft": 7600,
+    "type": null,
+    "role": "main",
+    "notes": "The camp for the southern approach over Longs Pass and up Ingalls Creek — a longer, higher-gain walk in, but it sets up a much shorter car-to-car loop because the Cascadian Couloir descent drops back the same way. A planned camp with plenty of flat ground, though water becomes a carry once the snow patches are gone."
+   },
+   {
+    "name": "The 8,200 ft notch on the North Ridge",
+    "elev_ft": 8200,
+    "type": null,
+    "role": "route",
+    "notes": "The classic place to split the complete ridge, reached by the snow-filled gully (usually climbed on 4th-class rock at its edge) above the Stuart Glacier. This is a planned bivy, not an emergency ledge, but only two spots are actually comfortable and a party of three or more will be spread out. Wind-scoured and fully ex…"
+   }
+  ],
+  "campsite_pins": []
+ },
+ {
+  "id": "wa_mount_stuart_stuart_glacier_couloir",
+  "name": "Stuart Glacier Couloir",
+  "discipline": "alpine",
+  "peak": "Mount Stuart",
+  "area_id": "wa_mount_stuart",
+  "path": "usa.washington.wa_centraleast.wa_stuart_range.wa_mount_stuart",
+  "trip_plan": {
+   "totalNote": "A 2-day glacier/couloir route: roughly 6,000 ft gain over a ~15 mi round trip, with most parties camping near the Stuart Glacier basin and pushing a long summit day out via the Cascadian descent.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Approach to a glacier-basin camp",
+     "objective": "Reach camp near the Stuart Glacier basin",
+     "miles": 7,
+     "gainFt": 2600,
+     "note": "Hike in via the Stuart Lake Trail and Mountaineer Creek to a camp within striking distance of the couloir, carrying glacier/ice gear for the climb above."
+    },
+    {
+     "n": 2,
+     "title": "Summit via the Stuart Glacier Couloir, descend Cascadian",
+     "objective": "Climb the couloir to the West Ridge notch and summit, then exit via the Cascadian Couloir",
+     "miles": 8,
+     "gainFt": 3400,
+     "note": "An alpine start gets the couloir climbed while it's still firm; the route tops out near the West Ridge notch a couple hours below the summit. Descend the Cascadian Couloir and hike out over Longs Pass."
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Basin below Sherpa Glacier",
+    "elev_ft": null,
+    "type": "camp",
+    "role": "main",
+    "notes": ""
+   },
+   {
+    "name": "Goat Pass bivies",
+    "elev_ft": 7650,
+    "type": "bivy",
+    "role": "main",
+    "notes": "The high camp of choice for the upper North Ridge and the Stuart Glacier Couloir when approaching from the Ingalls side, putting the traverse under the glacier and the entry gully within an easy morning. Bivy ground is plentiful and reasonably flat, but the position is exposed and windy, so bring a shelter rather than …"
+   }
+  ],
+  "campsite_pins": [
+   {
+    "name": "Basin below Sherpa Glacier",
+    "elev": 5384,
+    "distMi": 5.5
+   }
+  ]
+ },
+ {
+  "id": "wa_sherpa_glacier",
+  "name": "Sherpa Glacier",
+  "discipline": "mountaineering",
+  "peak": "Mount Stuart",
+  "area_id": "wa_mount_stuart",
+  "path": "usa.washington.wa_centraleast.wa_stuart_range.wa_mount_stuart",
+  "trip_plan": {
+   "totalNote": "The classic two-day plan: walk in to a camp in the Mountaineer Creek basin at about 5,400 ft, then climb the Sherpa Glacier to the summit and descend the same way before hiking out, roughly 6,000 ft and 16 miles round trip.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Hike in to the Mountaineer Creek basin",
+     "objective": "Camp in the basin below the Sherpa Glacier",
+     "miles": 5.5,
+     "gainFt": 2000,
+     "note": "Follow the Stuart Lake trail past the Colchuck junction, then leave it and work up the south fork of Mountaineer Creek (route-finding is tricky; expect boulder fields and creek crossings) to the flat basin at about 5,400 ft. Gain is derived from the trailhead (3,400 ft) and camp (5,400 ft) elevations."
+    },
+    {
+     "n": 2,
+     "title": "Climb the Sherpa Glacier and hike out",
+     "objective": "Summit Mount Stuart and return to the car",
+     "miles": 10.7,
+     "gainFt": 4000,
+     "note": "Climb the Sherpa Glacier to the col at about 8,300-8,600 ft (the schrund is usually passed on climber's right in spring), then follow the southeast ridge to the summit. Descend the same glacier back to camp (best early season), pack up and walk out; gain and loss derived from camp (5,400 ft) to summit (9,415 ft) to tra…"
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Mountaineer Creek basin below the Sherpa Glacier",
+    "elev_ft": 5400,
+    "type": "camp",
+    "role": "main",
+    "notes": "The standard base for the north side of Mount Stuart. Leave the Stuart Lake trail before the final switchbacks, cross the creek and follow the climbers' path up the south fork of Mountaineer Creek to the flat valley below the Sherpa and Stuart glaciers."
+   }
+  ],
+  "campsite_pins": [
+   {
+    "name": "Mountaineer Creek basin below the Sherpa Glacier",
+    "elev": 5400,
+    "distMi": null
+   }
+  ]
+ },
+ {
+  "id": "wa_south_headwall",
+  "name": "South Headwall",
+  "discipline": "alpine",
+  "peak": "Mount Stuart",
+  "area_id": "wa_mount_stuart",
+  "path": "usa.washington.wa_centraleast.wa_stuart_range.wa_mount_stuart",
+  "trip_plan": {
+   "totalNote": "A 3-day south-side plan: cross Longs Pass to camp on Ingalls Creek, climb about 4,600 ft of scree and 4-5 pitches of the South Headwall on a long summit day, then climb back over Longs Pass to the car.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Over Longs Pass to Ingalls Creek",
+     "objective": "Reach the Ingalls Creek camp below Longs Pass",
+     "miles": 4,
+     "gainFt": 2000,
+     "note": "Longs Pass is 2.9 mi and about 2,100 ft from the Esmeralda trailhead. From the pass, drop roughly 1,400 ft to camp on Ingalls Creek, which has good sites but mice. There is no water between the trailhead and the creek."
+    },
+    {
+     "n": 2,
+     "title": "South Headwall to the summit and back",
+     "objective": "Climb the South Headwall and return to camp",
+     "miles": 3.5,
+     "gainFt": 4600,
+     "note": "From the Ingalls Creek trail, go up the first major clearing west of Ulrich's Couloir into the West Ridge couloir. Take the right fork near 7,000 ft beneath black slabs to the cirque near 8,700 ft. The 4-5 pitches are mostly 4th and low 5th, with two short 5.7 sections and a ledge belay on every pitch. Several thousand…"
+    },
+    {
+     "n": 3,
+     "title": "Back over Longs Pass to the car",
+     "objective": "Regain Longs Pass and hike out",
+     "miles": 4,
+     "gainFt": 1450,
+     "note": "Climb about 1,450 ft from the creek back to Longs Pass, a dry and often hot climb, then descend the switchbacks to the Esmeralda trailhead."
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Ingalls Creek basin camp, below Longs Pass",
+    "elev_ft": 4800,
+    "type": "camp",
+    "role": "main",
+    "notes": "The standard base for the Cascadian Couloir and south-side approaches generally, reached from the Esmeralda Basin trailhead over Longs Pass at about 6,200 ft and then dropping roughly 1,400 ft to the valley floor. Access is gated by the Teanaway road: pavement gives way to gravel Forest Road 9737 for the last nine or s…"
+   }
+  ],
+  "campsite_pins": []
+ },
+ {
+  "id": "wa_upper_north_ridge_w_great_gendarme",
+  "name": "Upper North Ridge w/Great Gendarme",
+  "discipline": "alpine",
+  "peak": "Mount Stuart",
+  "area_id": "wa_mount_stuart",
+  "path": "usa.washington.wa_centraleast.wa_stuart_range.wa_mount_stuart",
+  "trip_plan": {
+   "totalNote": "A 2-day plan from the Esmeralda trailhead: bivy at Goat Pass, then climb the Upper North Ridge with the Great Gendarme and descend the Cascadian Couloir over Longs Pass to the car in one long second day.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Lake Ingalls and Stuart Pass to Goat Pass",
+     "objective": "Reach the Goat Pass bivy",
+     "miles": 6.5,
+     "gainFt": 3800,
+     "note": "Lake Ingalls is about 4.5 mi and 2,500 ft from the trailhead, and camping is not allowed at the lake itself. Go around the west side of the lake toward Stuart Pass, then up to the Goat Pass bivies at about 7,650 ft. Treat Goat Pass as a dry camp late in the season. A fast party reaches Goat Pass in about 3.5 hours."
+    },
+    {
+     "n": 2,
+     "title": "Upper North Ridge and Cascadian descent",
+     "objective": "Summit via the Great Gendarme and return to the car",
+     "miles": 9,
+     "gainFt": 3200,
+     "note": "Traverse east below the Stuart Glacier and climb a loose 4th-class gully edge to the North Ridge notch at about 8,200 ft. Above, the Great Gendarme is the 5.9 crux. Descend the Cascadian Couloir to Ingalls Creek, then climb back over Longs Pass to the Esmeralda trailhead. Slower parties bivy just below the summit and f…"
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Goat Pass bivies",
+    "elev_ft": 7650,
+    "type": "bivy",
+    "role": "main",
+    "notes": "The high camp of choice for the upper North Ridge and the Stuart Glacier Couloir when approaching from the Ingalls side, putting the traverse under the glacier and the entry gully within an easy morning. Bivy ground is plentiful and reasonably flat, but the position is exposed and windy, so bring a shelter rather than …"
+   },
+   {
+    "name": "North Ridge notch bivy",
+    "elev_ft": 8200,
+    "type": "bivy",
+    "role": "main",
+    "notes": "The ridge is gained at roughly 8,200 ft from the upper Stuart Glacier at about 7,800 ft via a snow-filled gully usually climbed on fourth-class rock along its edge, and the notch just above is the last genuinely comfortable bivy before the climbing proper. A second cluster of usable ledges sits several pitches higher, …"
+   },
+   {
+    "name": "Headlight Basin designated sites",
+    "elev_ft": null,
+    "type": "camp",
+    "role": "route",
+    "notes": "Headlight Basin sits just past Ingalls Pass and is the legal overnight option for parties staging the West Ridge or approaching the north side via Stuart Pass. It buys a comfortable night with the whole south face in view, but it is well short of any route start, so summit day from here is long. Do not be tempted by th…"
+   },
+   {
+    "name": "Upper Ingalls Creek meadows, below Stuart Pass",
+    "elev_ft": 6000,
+    "type": "camp",
+    "role": "route",
+    "notes": "Parties climbing the West Ridge often push past Headlight Basin to the meadows at the head of Ingalls Creek so the morning starts near the base of the ridge instead of two hours below it. The ground is a boulder-and-heather mix under the West Wall, and site quality varies a lot within a few hundred yards. From here the…"
+   },
+   {
+    "name": "Ingalls Creek basin camp, below Longs Pass",
+    "elev_ft": 4800,
+    "type": "camp",
+    "role": "route",
+    "notes": "The standard base for the Cascadian Couloir and south-side approaches generally, reached from the Esmeralda Basin trailhead over Longs Pass at about 6,200 ft and then dropping roughly 1,400 ft to the valley floor. Access is gated by the Teanaway road: pavement gives way to gravel Forest Road 9737 for the last nine or s…"
+   }
+  ],
+  "campsite_pins": []
+ }
+]

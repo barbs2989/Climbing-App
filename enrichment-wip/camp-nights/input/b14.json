@@ -1,0 +1,1022 @@
+[
+ {
+  "id": "wa_eldorado_peak_east_ridge",
+  "name": "East Ridge (Inspiration Glacier)",
+  "discipline": "mountaineering",
+  "peak": "Main Peak",
+  "area_id": "wa_main_peak",
+  "path": "usa.washington.wa_northwest.wa_hwy20_ncnp.wa_north_cascades.wa_north_cascades_core.wa_eldorado_peak.wa_main_peak",
+  "trip_plan": {
+   "totalNote": "The classic 3-day Eldorado itinerary: hike to a glacier high camp, a pre-dawn summit day across the Inspiration Glacier and knife-edge ridge to 8,872 ft, then hike out (~6,700 ft gain, ~10 mi round trip); strong parties sometimes compress this to 2 days, and very fit teams have done it car-to-car in an 11-21 hr single push.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Approach to glacier high camp",
+     "objective": "Reach high camp on the Eldorado/Inspiration Glacier",
+     "miles": 3,
+     "gainFt": 5400,
+     "note": "Cross the Cascade River, then climb steep forest and boulder-field trail up Eldorado Creek/Roush Creek basin onto the Eldorado Glacier. Camp on the glacier or moraine, typically 5,600-7,500 ft depending on season and snowline."
+    },
+    {
+     "n": 2,
+     "title": "Summit day via Inspiration Glacier",
+     "objective": "Reach the 8,872 ft summit via the Inspiration Glacier and knife-edge ridge",
+     "miles": 4,
+     "gainFt": 1300,
+     "note": "Pre-dawn alpine start across the Inspiration Glacier to the base of the East Ridge, then up the exposed, knife-edged summit snow arête to the top. Reverse the same line back to camp."
+    },
+    {
+     "n": 3,
+     "title": "Hike out",
+     "objective": "Break camp and return to the trailhead",
+     "miles": 3,
+     "gainFt": 0,
+     "note": "Break camp and descend back across the Cascade River to the trailhead."
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Eldorado-Inspiration Glacier saddle high camp",
+    "elev_ft": 7600,
+    "type": null,
+    "role": "main",
+    "notes": "The best-positioned planned camp, on the broad flat apron where the glaciers meet, with the East Ridge and the summit knife-edge laid out in front of you. It is entirely exposed — no trees, no shelter, and weather arrives with nothing in the way. Both the Eldorado and the Inspiration carry real crevasse hazard that get…"
+   },
+   {
+    "name": "Roush Creek Basin",
+    "elev_ft": 6200,
+    "type": null,
+    "role": "main",
+    "notes": "A higher alternative to the basin below, reached by climbing to the rocky ridge near 6,100 ft and dropping a few hundred feet down the far side. That drop has to be re-gained on the way out, which is the main argument against it, but it puts you closer to the glacier toe with water still running. A planned camp, not a …"
+   },
+   {
+    "name": "Eldorado Creek Basin",
+    "elev_ft": 5500,
+    "type": null,
+    "role": "route",
+    "notes": "The usual first camp, about three miles and 3,300 ft from the car and the first flat, pretty ground after the long climb through timber and the boulder field. Camp on durable surfaces only — snow, rock or bare ground — and stay a hundred feet back from water; the meadow here is exactly what the rule is protecting. A co…"
+   }
+  ],
+  "campsite_pins": [
+   {
+    "name": "Eldorado / Inspiration Glacier camp",
+    "elev": 7634,
+    "distMi": 3.5
+   }
+  ]
+ },
+ {
+  "id": "wa_eldorado_peak_eldorado_glacier_nw",
+  "name": "Northwest Couloir / Eldorado Glacier",
+  "discipline": "alpine",
+  "peak": "Main Peak",
+  "area_id": "wa_main_peak",
+  "path": "usa.washington.wa_northwest.wa_hwy20_ncnp.wa_north_cascades.wa_north_cascades_core.wa_eldorado_peak.wa_main_peak",
+  "trip_plan": {
+   "totalNote": "A 3-day trip: a day up to glacier high camp, a day climbing the NW Couloir's 2-3 pitches to the 8,872 ft summit, and a day hiking out (~6,700 ft gain, ~10 mi round trip); very fit ice-climbing parties sometimes do it car-to-car in a single 11-21 hr push instead.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Approach to glacier high camp",
+     "objective": "Reach high camp on the Eldorado/Inspiration Glacier",
+     "miles": 3,
+     "gainFt": 5400,
+     "note": "From the Eldorado Creek trailhead (~2,100 ft), climb steep forest and boulder-field trail, cross the Eldorado Glacier's lower ice, and gain the broad Inspiration Glacier bench. Camp near 7,500 ft (or lower, at Eldorado Creek/Roush Creek basins in leaner snow years)."
+    },
+    {
+     "n": 2,
+     "title": "NW Couloir summit push",
+     "objective": "Climb the NW Couloir to the 8,872 ft summit and return to camp",
+     "miles": 4,
+     "gainFt": 1300,
+     "note": "Alpine start to catch the couloir's snow/ice in firm morning condition. Simul-climb or short-pitch the couloir's 2-3 long pitches (up to WI2-3), top out near the summit ridge, then descend the East Ridge knife-edge and cross the Inspiration Glacier back to camp."
+    },
+    {
+     "n": 3,
+     "title": "Hike out",
+     "objective": "Break camp and return to the trailhead",
+     "miles": 3,
+     "gainFt": 0,
+     "note": "Break camp and retrace the approach back down to the Eldorado Creek trailhead."
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Eldorado-Inspiration snow arm high camp",
+    "elev_ft": 7500,
+    "type": "camp",
+    "role": "main",
+    "notes": "The standard base for the East Ridge and for anything out on the Inspiration Glacier, on the broad snow arm where the Eldorado and Inspiration ice meet. Because it is a snow camp rather than a fixed site, the exact ground shifts year to year with the snowpack — early season it is uniform snow, while a thin year opens m…"
+   },
+   {
+    "name": "Roush Creek Basin camp",
+    "elev_ft": 6300,
+    "type": "camp",
+    "role": "main",
+    "notes": "The neighbouring basin to the east offers an alternative low camp when Eldorado Basin is occupied, with usable ground reported roughly between 6,100 and 6,400 ft. It suits parties splitting the approach into a short first day, or skiers wanting a lower base. Like the Eldorado Basin option it costs you the height you di…"
+   },
+   {
+    "name": "Marble Creek Campground, Cascade River Road",
+    "elev_ft": 1225,
+    "type": "camp",
+    "role": "main",
+    "notes": "Roughly eight miles up the gravel Cascade River Road from Marblemount, this is the practical place to spend the night before if you cannot start walking the same day. Its value is logistical: the Wilderness Information Center wants your permit activated in person the day before, or before late morning on your start day…"
+   },
+   {
+    "name": "Eldorado East Ridge rock bivies",
+    "elev_ft": null,
+    "type": "bivy",
+    "role": "route",
+    "notes": "Where the snowpack has pulled back from the base of the East Ridge, flat rock takes bivy gear directly and gives a firmer, drier platform than the glacier. The site sits anywhere from roughly 7,500 to 7,800 ft, and the range is real rather than an error — how much rock is exposed, and therefore where you end up sleepin…"
+   },
+   {
+    "name": "Eldorado Basin camp",
+    "elev_ft": 6100,
+    "type": "camp",
+    "role": "route",
+    "notes": "The usual bail-out camp for parties who leave the trailhead late or find the boulder field slower than expected, reached after the talus and the short cliff band on the climbers' trail. It sits on vegetated ground rather than snow, so it is warmer and has real water, at the cost of adding a couple of thousand feet to s…"
+   }
+  ],
+  "campsite_pins": [
+   {
+    "name": "Eldorado / Inspiration Glacier camp",
+    "elev": 7634,
+    "distMi": 3.5
+   }
+  ]
+ },
+ {
+  "id": "wa_eldorado_peak_north_ridge",
+  "name": "North Ridge",
+  "discipline": "alpine",
+  "peak": "Main Peak",
+  "area_id": "wa_main_peak",
+  "path": "usa.washington.wa_northwest.wa_hwy20_ncnp.wa_north_cascades.wa_north_cascades_core.wa_eldorado_peak.wa_main_peak",
+  "trip_plan": {
+   "totalNote": "Approach to the Eldorado high camp on day one, then climb the North Ridge (about 5 hours round trip from camp) and hike out or camp a third night.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Approach to Eldorado high camp",
+     "objective": "Reach high camp near the East Ridge",
+     "miles": 4.5,
+     "gainFt": 5400,
+     "note": "Approach from the trailhead to high camp."
+    },
+    {
+     "n": 2,
+     "title": "Climb the North Ridge and hike out",
+     "objective": "Climb the North Ridge and return to the trailhead",
+     "miles": null,
+     "gainFt": 1300,
+     "note": "Descend to the base of the North Ridge and climb the ridge, roughly a half-day and about 5 hours round trip from camp. Descend, then hike out or camp a third night."
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Eldorado-Inspiration snow arm high camp",
+    "elev_ft": 7500,
+    "type": "camp",
+    "role": "main",
+    "notes": "The standard base for the East Ridge and for anything out on the Inspiration Glacier, on the broad snow arm where the Eldorado and Inspiration ice meet. Because it is a snow camp rather than a fixed site, the exact ground shifts year to year with the snowpack — early season it is uniform snow, while a thin year opens m…"
+   },
+   {
+    "name": "Roush Creek Basin camp",
+    "elev_ft": 6300,
+    "type": "camp",
+    "role": "main",
+    "notes": "The neighbouring basin to the east offers an alternative low camp when Eldorado Basin is occupied, with usable ground reported roughly between 6,100 and 6,400 ft. It suits parties splitting the approach into a short first day, or skiers wanting a lower base. Like the Eldorado Basin option it costs you the height you di…"
+   },
+   {
+    "name": "Marble Creek Campground, Cascade River Road",
+    "elev_ft": 1225,
+    "type": "camp",
+    "role": "main",
+    "notes": "Roughly eight miles up the gravel Cascade River Road from Marblemount, this is the practical place to spend the night before if you cannot start walking the same day. Its value is logistical: the Wilderness Information Center wants your permit activated in person the day before, or before late morning on your start day…"
+   },
+   {
+    "name": "Eldorado East Ridge rock bivies",
+    "elev_ft": null,
+    "type": "bivy",
+    "role": "route",
+    "notes": "Where the snowpack has pulled back from the base of the East Ridge, flat rock takes bivy gear directly and gives a firmer, drier platform than the glacier. The site sits anywhere from roughly 7,500 to 7,800 ft, and the range is real rather than an error — how much rock is exposed, and therefore where you end up sleepin…"
+   },
+   {
+    "name": "Eldorado Basin camp",
+    "elev_ft": 6100,
+    "type": "camp",
+    "role": "route",
+    "notes": "The usual bail-out camp for parties who leave the trailhead late or find the boulder field slower than expected, reached after the talus and the short cliff band on the climbers' trail. It sits on vegetated ground rather than snow, so it is warmer and has real water, at the cost of adding a couple of thousand feet to s…"
+   }
+  ],
+  "campsite_pins": [
+   {
+    "name": "Eldorado (East Ridge) camp",
+    "elev": 7600,
+    "distMi": 5.5
+   }
+  ]
+ },
+ {
+  "id": "wa_eldorado_peak_northeast_face",
+  "name": "Northeast Face",
+  "discipline": "alpine",
+  "peak": "Main Peak",
+  "area_id": "wa_main_peak",
+  "path": "usa.washington.wa_northwest.wa_hwy20_ncnp.wa_north_cascades.wa_north_cascades_core.wa_eldorado_peak.wa_main_peak",
+  "trip_plan": {
+   "totalNote": "A 3-day trip similar in shape to the East Ridge (this route diverges onto the Northeast Face): approach to camp, an alpine-start day climbing the Northeast Face to the 8,872 ft summit, then hike out (~6,900 ft gain, ~12 mi round trip).",
+   "days": [
+    {
+     "n": 1,
+     "title": "Approach to glacier/moraine camp",
+     "objective": "Reach a camp near the base of the Northeast Face/East Ridge",
+     "miles": 3.9,
+     "gainFt": 5700,
+     "note": "Same steep Eldorado/Roush Creek approach used for the East Ridge (this route diverges onto the Northeast Face), to a camp on glacier or moraine near the base of the peak's east side (~7,500-7,800 ft)."
+    },
+    {
+     "n": 2,
+     "title": "Northeast Face summit push",
+     "objective": "Climb the Northeast Face to the 8,872 ft summit and return to camp",
+     "miles": 4.3,
+     "gainFt": 1100,
+     "note": "Alpine start to climb the Northeast Face's snow and ice pitches, joining the upper mountain near the summit snowfields. Descend the standard East Ridge/Eldorado Glacier route back to camp."
+    },
+    {
+     "n": 3,
+     "title": "Hike out",
+     "objective": "Break camp and return to the trailhead",
+     "miles": 3.9,
+     "gainFt": 0,
+     "note": "Break camp and hike back down to the Cascade River approach trailhead."
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Eldorado-Inspiration snow arm high camp",
+    "elev_ft": 7500,
+    "type": "camp",
+    "role": "main",
+    "notes": "The standard base for the East Ridge and for anything out on the Inspiration Glacier, on the broad snow arm where the Eldorado and Inspiration ice meet. Because it is a snow camp rather than a fixed site, the exact ground shifts year to year with the snowpack — early season it is uniform snow, while a thin year opens m…"
+   },
+   {
+    "name": "Roush Creek Basin camp",
+    "elev_ft": 6300,
+    "type": "camp",
+    "role": "main",
+    "notes": "The neighbouring basin to the east offers an alternative low camp when Eldorado Basin is occupied, with usable ground reported roughly between 6,100 and 6,400 ft. It suits parties splitting the approach into a short first day, or skiers wanting a lower base. Like the Eldorado Basin option it costs you the height you di…"
+   },
+   {
+    "name": "Marble Creek Campground, Cascade River Road",
+    "elev_ft": 1225,
+    "type": "camp",
+    "role": "main",
+    "notes": "Roughly eight miles up the gravel Cascade River Road from Marblemount, this is the practical place to spend the night before if you cannot start walking the same day. Its value is logistical: the Wilderness Information Center wants your permit activated in person the day before, or before late morning on your start day…"
+   },
+   {
+    "name": "Eldorado East Ridge rock bivies",
+    "elev_ft": null,
+    "type": "bivy",
+    "role": "route",
+    "notes": "Where the snowpack has pulled back from the base of the East Ridge, flat rock takes bivy gear directly and gives a firmer, drier platform than the glacier. The site sits anywhere from roughly 7,500 to 7,800 ft, and the range is real rather than an error — how much rock is exposed, and therefore where you end up sleepin…"
+   },
+   {
+    "name": "Eldorado Basin camp",
+    "elev_ft": 6100,
+    "type": "camp",
+    "role": "route",
+    "notes": "The usual bail-out camp for parties who leave the trailhead late or find the boulder field slower than expected, reached after the talus and the short cliff band on the climbers' trail. It sits on vegetated ground rather than snow, so it is warmer and has real water, at the cost of adding a couple of thousand feet to s…"
+   }
+  ],
+  "campsite_pins": [
+   {
+    "name": "Eldorado-Inspiration snow arm high camp",
+    "elev": 7500,
+    "distMi": 2.8
+   }
+  ]
+ },
+ {
+  "id": "wa_eldorado_peak_west_arete",
+  "name": "West Arete",
+  "discipline": "alpine",
+  "peak": "Main Peak",
+  "area_id": "wa_main_peak",
+  "path": "usa.washington.wa_northwest.wa_hwy20_ncnp.wa_north_cascades.wa_north_cascades_core.wa_eldorado_peak.wa_main_peak",
+  "trip_plan": {
+   "totalNote": "Approach to a high camp near the East Ridge, spend a long day crossing to the West Arête and climbing its ~19 pitches before descending the East Ridge to camp, then hike out.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Approach to Eldorado high camp",
+     "objective": "Reach high camp near the East Ridge base",
+     "miles": 4.5,
+     "gainFt": 5200,
+     "note": "Approach via Eldorado Creek, the Roush Creek basin and the Eldorado Glacier to a high camp near the base of the East Ridge, about 7,400 ft."
+    },
+    {
+     "n": 2,
+     "title": "Climb the West Arête",
+     "objective": "Climb the arête to the summit and return to camp",
+     "miles": null,
+     "gainFt": 3000,
+     "note": "Continue via Dorado Col to the base of the west face and climb the ~19-pitch, 2,800-3,000 ft arête (5.6-5.8) to the summit. Descend the East Ridge back to camp; it is a long day, often around 10 hours from camp to the top, with only a short walk back down to camp."
+    },
+    {
+     "n": 3,
+     "title": "Hike out to the trailhead",
+     "objective": "Return to the Eldorado Creek Trailhead",
+     "miles": 4.5,
+     "gainFt": 0,
+     "note": "Hike out to the trailhead."
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Eldorado-Inspiration snow arm high camp",
+    "elev_ft": 7500,
+    "type": "camp",
+    "role": "main",
+    "notes": "The standard base for the East Ridge and for anything out on the Inspiration Glacier, on the broad snow arm where the Eldorado and Inspiration ice meet. Because it is a snow camp rather than a fixed site, the exact ground shifts year to year with the snowpack — early season it is uniform snow, while a thin year opens m…"
+   },
+   {
+    "name": "Roush Creek Basin camp",
+    "elev_ft": 6300,
+    "type": "camp",
+    "role": "main",
+    "notes": "The neighbouring basin to the east offers an alternative low camp when Eldorado Basin is occupied, with usable ground reported roughly between 6,100 and 6,400 ft. It suits parties splitting the approach into a short first day, or skiers wanting a lower base. Like the Eldorado Basin option it costs you the height you di…"
+   },
+   {
+    "name": "Marble Creek Campground, Cascade River Road",
+    "elev_ft": 1225,
+    "type": "camp",
+    "role": "main",
+    "notes": "Roughly eight miles up the gravel Cascade River Road from Marblemount, this is the practical place to spend the night before if you cannot start walking the same day. Its value is logistical: the Wilderness Information Center wants your permit activated in person the day before, or before late morning on your start day…"
+   },
+   {
+    "name": "Eldorado East Ridge rock bivies",
+    "elev_ft": null,
+    "type": "bivy",
+    "role": "route",
+    "notes": "Where the snowpack has pulled back from the base of the East Ridge, flat rock takes bivy gear directly and gives a firmer, drier platform than the glacier. The site sits anywhere from roughly 7,500 to 7,800 ft, and the range is real rather than an error — how much rock is exposed, and therefore where you end up sleepin…"
+   },
+   {
+    "name": "Eldorado Basin camp",
+    "elev_ft": 6100,
+    "type": "camp",
+    "role": "route",
+    "notes": "The usual bail-out camp for parties who leave the trailhead late or find the boulder field slower than expected, reached after the talus and the short cliff band on the climbers' trail. It sits on vegetated ground rather than snow, so it is warmer and has real water, at the cost of adding a couple of thousand feet to s…"
+   }
+  ],
+  "campsite_pins": [
+   {
+    "name": "Eldorado-Inspiration snow arm high camp",
+    "elev": 7500,
+    "distMi": 3
+   }
+  ]
+ },
+ {
+  "id": "wa_main_peak_tepeh_towers",
+  "name": "Tepeh Towers",
+  "discipline": "alpine",
+  "peak": "Main Peak",
+  "area_id": "wa_main_peak",
+  "path": "usa.washington.wa_northwest.wa_hwy20_ncnp.wa_north_cascades.wa_north_cascades_core.wa_eldorado_peak.wa_main_peak",
+  "trip_plan": {
+   "totalNote": null,
+   "days": [
+    {
+     "n": 1,
+     "title": "Day 1",
+     "objective": "",
+     "miles": null,
+     "gainFt": null,
+     "note": "Approach to Eldorado high camp (~7,600 ft) via Eldorado Creek and Eldorado Glacier."
+    },
+    {
+     "n": 2,
+     "title": "Day 2",
+     "objective": "",
+     "miles": null,
+     "gainFt": null,
+     "note": "~45 min glacier approach north/northwest to Tepeh Towers, climb the short route (~30 min), return to camp or continue on to Austera Peak."
+    },
+    {
+     "n": 3,
+     "title": "Day 3",
+     "objective": "",
+     "miles": null,
+     "gainFt": null,
+     "note": "Hike out."
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Eldorado-Inspiration snow arm high camp",
+    "elev_ft": 7500,
+    "type": "camp",
+    "role": "main",
+    "notes": "The standard base for the East Ridge and for anything out on the Inspiration Glacier, on the broad snow arm where the Eldorado and Inspiration ice meet. Because it is a snow camp rather than a fixed site, the exact ground shifts year to year with the snowpack — early season it is uniform snow, while a thin year opens m…"
+   },
+   {
+    "name": "Roush Creek Basin camp",
+    "elev_ft": 6300,
+    "type": "camp",
+    "role": "main",
+    "notes": "The neighbouring basin to the east offers an alternative low camp when Eldorado Basin is occupied, with usable ground reported roughly between 6,100 and 6,400 ft. It suits parties splitting the approach into a short first day, or skiers wanting a lower base. Like the Eldorado Basin option it costs you the height you di…"
+   },
+   {
+    "name": "Marble Creek Campground, Cascade River Road",
+    "elev_ft": 1225,
+    "type": "camp",
+    "role": "main",
+    "notes": "Roughly eight miles up the gravel Cascade River Road from Marblemount, this is the practical place to spend the night before if you cannot start walking the same day. Its value is logistical: the Wilderness Information Center wants your permit activated in person the day before, or before late morning on your start day…"
+   },
+   {
+    "name": "Eldorado East Ridge rock bivies",
+    "elev_ft": null,
+    "type": "bivy",
+    "role": "route",
+    "notes": "Where the snowpack has pulled back from the base of the East Ridge, flat rock takes bivy gear directly and gives a firmer, drier platform than the glacier. The site sits anywhere from roughly 7,500 to 7,800 ft, and the range is real rather than an error — how much rock is exposed, and therefore where you end up sleepin…"
+   },
+   {
+    "name": "Eldorado Basin camp",
+    "elev_ft": 6100,
+    "type": "camp",
+    "role": "route",
+    "notes": "The usual bail-out camp for parties who leave the trailhead late or find the boulder field slower than expected, reached after the talus and the short cliff band on the climbers' trail. It sits on vegetated ground rather than snow, so it is warmer and has real water, at the cost of adding a couple of thousand feet to s…"
+   }
+  ],
+  "campsite_pins": [
+   {
+    "name": "Eldorado (East Ridge) camp",
+    "elev": 7600,
+    "distMi": 5.5
+   }
+  ]
+ },
+ {
+  "id": "wa_south_ridge_4",
+  "name": "South Ridge",
+  "discipline": "alpine",
+  "peak": "Main Peak",
+  "area_id": "wa_main_peak",
+  "path": "usa.washington.wa_northwest.wa_hwy20_ncnp.wa_north_cascades.wa_north_cascades_core.wa_eldorado_peak.wa_main_peak",
+  "trip_plan": {
+   "totalNote": "Three days: approach to the Eldorado high camp, climb the South Ridge and descend the East Ridge, then hike out.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Hike in to Eldorado high camp",
+     "objective": "Reach high camp at about 7,600 ft",
+     "miles": null,
+     "gainFt": 5440,
+     "note": "Approach via Eldorado Creek and the Eldorado Glacier to high camp at about 7,600 ft, which takes 5-6 hours."
+    },
+    {
+     "n": 2,
+     "title": "Climb the South Ridge",
+     "objective": "Summit Eldorado and return to camp",
+     "miles": null,
+     "gainFt": 1270,
+     "note": "Climb the four-pitch South Ridge and descend the East Ridge back to camp."
+    },
+    {
+     "n": 3,
+     "title": "Hike out",
+     "objective": "Return to the trailhead",
+     "miles": null,
+     "gainFt": 0,
+     "note": "Hike out from high camp to the trailhead."
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Eldorado-Inspiration snow arm high camp",
+    "elev_ft": 7500,
+    "type": "camp",
+    "role": "main",
+    "notes": "The standard base for the East Ridge and for anything out on the Inspiration Glacier, on the broad snow arm where the Eldorado and Inspiration ice meet. Because it is a snow camp rather than a fixed site, the exact ground shifts year to year with the snowpack — early season it is uniform snow, while a thin year opens m…"
+   },
+   {
+    "name": "Roush Creek Basin camp",
+    "elev_ft": 6300,
+    "type": "camp",
+    "role": "main",
+    "notes": "The neighbouring basin to the east offers an alternative low camp when Eldorado Basin is occupied, with usable ground reported roughly between 6,100 and 6,400 ft. It suits parties splitting the approach into a short first day, or skiers wanting a lower base. Like the Eldorado Basin option it costs you the height you di…"
+   },
+   {
+    "name": "Marble Creek Campground, Cascade River Road",
+    "elev_ft": 1225,
+    "type": "camp",
+    "role": "main",
+    "notes": "Roughly eight miles up the gravel Cascade River Road from Marblemount, this is the practical place to spend the night before if you cannot start walking the same day. Its value is logistical: the Wilderness Information Center wants your permit activated in person the day before, or before late morning on your start day…"
+   },
+   {
+    "name": "Eldorado East Ridge rock bivies",
+    "elev_ft": null,
+    "type": "bivy",
+    "role": "route",
+    "notes": "Where the snowpack has pulled back from the base of the East Ridge, flat rock takes bivy gear directly and gives a firmer, drier platform than the glacier. The site sits anywhere from roughly 7,500 to 7,800 ft, and the range is real rather than an error — how much rock is exposed, and therefore where you end up sleepin…"
+   },
+   {
+    "name": "Eldorado Basin camp",
+    "elev_ft": 6100,
+    "type": "camp",
+    "role": "route",
+    "notes": "The usual bail-out camp for parties who leave the trailhead late or find the boulder field slower than expected, reached after the talus and the short cliff band on the climbers' trail. It sits on vegetated ground rather than snow, so it is warmer and has real water, at the cost of adding a couple of thousand feet to s…"
+   }
+  ],
+  "campsite_pins": [
+   {
+    "name": "Eldorado camp (Inspiration Glacier flat)",
+    "elev": 7600,
+    "distMi": 5.5
+   }
+  ]
+ },
+ {
+  "id": "wa_horseshoe_peak_scramble",
+  "name": "Standard Route",
+  "discipline": "alpine",
+  "peak": "Horseshoe Peak",
+  "area_id": "wa_horseshoe_peak",
+  "path": "usa.washington.wa_northwest.wa_hwy20_ncnp.wa_north_cascades.wa_north_cascades_core.wa_horseshoe_peak",
+  "trip_plan": {
+   "totalNote": "A 2-day trip is the norm: ~5.7 mi/4,000 ft up to Sahale Glacier Camp on Day 1, then a long ~9-10 hr, ~9 mi summit-and-exit Day 2 with a short roped 5.2 step near the top; very fit parties do climb it car-to-car in a single ~12-16 hr day instead.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Approach to Sahale Glacier Camp",
+     "objective": "Reach Sahale Glacier Camp (7,600 ft) as base for the Horseshoe/Buckner traverse",
+     "miles": 8.7,
+     "gainFt": 4000,
+     "note": "Walk or bike the 3 closed miles of Cascade River Road from the Eldorado gate to the Cascade Pass trailhead first. From the Cascade Pass Trailhead, climb switchbacks to Cascade Pass (5,400 ft, 3.7 mi) then continue up the Sahale Arm Trail to the permitted Sahale Glacier Camp at 7,600 ft. Most parties treat this as a hal…"
+    },
+    {
+     "n": 2,
+     "title": "Summit push and full exit",
+     "objective": "Climb Horseshoe Peak via Horseshoe Basin, then break camp and hike all the way out",
+     "miles": 12.2,
+     "gainFt": 1900,
+     "note": "Alpine start down off Sahale Arm into Horseshoe Basin, crossing snow/talus past old Davenport Mine relics to the base of Horseshoe's summit block. A short, exposed 5.2 step (rope, light rack, 30-60m) gains the true summit; most parties downclimb or make one short rappel back to the ledge. After returning to camp, break…"
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Buckner cross-country zone bivy",
+    "elev_ft": null,
+    "type": "bivy",
+    "role": "main",
+    "notes": "The option for climbers who want to sleep on the route rather than at a valley camp — high bivies on moraine, slab or snow under Buckner's north side and the Ripsaw Ridge peaks. Zone rules are strict and worth reading before you go: camp at least a mile from any designated camp and half a mile from any trail, out of si…"
+   },
+   {
+    "name": "Sahale Glacier Camp",
+    "elev_ft": 7400,
+    "type": "camp",
+    "role": "main",
+    "notes": "A set of hand-built rock-walled tent platforms at the toe of the glacier, at the top of Sahale Arm. It is high, exposed and above the last dependable water, so late-season parties should plan to melt snow or carry up from lower on the arm. For the Horseshoe Basin peaks it is a high camp rather than a basin camp — it se…"
+   },
+   {
+    "name": "Pelton Basin Camp",
+    "elev_ft": 4770,
+    "type": "camp",
+    "role": "route",
+    "notes": "Pelton Basin sits about half a mile east of and below Cascade Pass, on the Stehekin side, which makes it the obvious first night for a party coming in over the pass rather than up from the lake. It puts Horseshoe Basin within a long day, though the basin itself is still several miles and a substantial descent-then-clim…"
+   },
+   {
+    "name": "Basin Creek Camp",
+    "elev_ft": 3244,
+    "type": "camp",
+    "role": "route",
+    "notes": "The closest designated camp to the Horseshoe Basin trail junction, which sits at about 3,600 ft on the valley trail, so it is the practical base for anything up in the cirque. It has a separate cooking area, a bear box and its own privy. Capacity is tiny — three sites — so a party of four fills most of it and a weekend…"
+   },
+   {
+    "name": "Doubtful Lake Camp",
+    "elev_ft": 5390,
+    "type": "camp",
+    "role": "route",
+    "notes": "Doubtful Lake lies in a cirque below Sahale Arm, reached by a spur that drops off the arm trail. It is the natural middle camp on the Sahale Arm variation of the approach, breaking up a long crossing between Cascade Pass and the head of Horseshoe Basin. Water is the one thing never in question here, which matters if th…"
+   }
+  ],
+  "campsite_pins": [
+   {
+    "name": "Sahale Glacier Camp",
+    "elev": 7686,
+    "distMi": 6
+   },
+   {
+    "name": "Doubtful Lake Camp",
+    "elev": 5390,
+    "distMi": 4.2
+   }
+  ]
+ },
+ {
+  "id": "wa_hurry_up_peak_south_ridge",
+  "name": "South Ridge",
+  "discipline": "mountaineering",
+  "peak": "Hurry-Up Peak",
+  "area_id": "wa_hurry_up_peak",
+  "path": "usa.washington.wa_northwest.wa_hwy20_ncnp.wa_north_cascades.wa_north_cascades_core.wa_hurry_up_peak",
+  "trip_plan": {
+   "totalNote": "A 2-day, 1-night trip: about 16 miles round trip with roughly 5,500 ft of total gain, mostly spent covering the Cascade Pass-Cache Col approach rather than the short summit scramble itself.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Approach to Kool-Aid Lake",
+     "objective": "Reach high camp at Kool-Aid Lake",
+     "miles": 9.5,
+     "gainFt": 3300,
+     "note": "Walk or bike the 3 closed miles of Cascade River Road from the Eldorado gate to the Cascade Pass trailhead first. Hike the maintained Cascade Pass Trail to Cascade Pass, then leave the trail and climb cross-country over the Cache Glacier remnant to Cache Col before dropping about a mile to camp at Kool-Aid Lake, a smal…"
+    },
+    {
+     "n": 2,
+     "title": "Climb Hurry-Up Peak, then hike out",
+     "objective": "Tag the summit via the South Ridge and return to the trailhead",
+     "miles": 11.5,
+     "gainFt": 2200,
+     "note": "An early start lets you climb the peak on firm snow before it softens: cross the steep snow band near 7,100 ft and take a gully up to the summit ridge, then follow the ridge past a false summit to the true 7,821 ft top. Back at camp by mid-morning, most parties break camp and hike all the way out the same day rather th…"
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Kool-Aid Lake",
+    "elev_ft": null,
+    "type": "camp",
+    "role": "main",
+    "notes": ""
+   }
+  ],
+  "campsite_pins": [
+   {
+    "name": "Kool-Aid Lake",
+    "elev": 6120,
+    "distMi": 7.2
+   }
+  ]
+ },
+ {
+  "id": "wa_jack_mountain_east_ridge",
+  "name": "East Ridge",
+  "discipline": "alpine",
+  "peak": "Jack Mountain",
+  "area_id": "wa_jack_mountain",
+  "path": "usa.washington.wa_northwest.wa_hwy20_ncnp.wa_north_cascades.wa_north_cascades_core.wa_jack_mountain",
+  "trip_plan": {
+   "totalNote": "Approach to a camp on the east side of Jack, climb the East Ridge in a full pre-dawn-to-evening day, and return.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Approach to the east-side camp",
+     "objective": "Establish a camp on the eastern side of the mountain",
+     "miles": null,
+     "gainFt": 5300,
+     "note": "Approach and establish a camp on the eastern side of the mountain."
+    },
+    {
+     "n": 2,
+     "title": "Climb the East Ridge",
+     "objective": "Summit Jack Mountain and return to camp",
+     "miles": null,
+     "gainFt": 3500,
+     "note": "Make a pre-dawn start and plan a full day up and down. The published account records 9.5 hours from low on the glacier for the Skoogs' variation."
+    },
+    {
+     "n": 3,
+     "title": "Return to the trailhead",
+     "objective": "Recross the glacier and hike out",
+     "miles": null,
+     "gainFt": 800,
+     "note": "Return to the trailhead."
+    }
+   ]
+  },
+  "camps_on_file": [],
+  "campsite_pins": []
+ },
+ {
+  "id": "wa_jack_mountain_nohokomeen_headwall",
+  "name": "Nohokomeen Glacier and Headwall",
+  "discipline": "mountaineering",
+  "peak": "Jack Mountain",
+  "area_id": "wa_jack_mountain",
+  "path": "usa.washington.wa_northwest.wa_hwy20_ncnp.wa_north_cascades.wa_north_cascades_core.wa_jack_mountain",
+  "trip_plan": {
+   "totalNote": "Hike the East Bank Trail to May Creek and bushwhack to a camp below the Nohokomeen Glacier, climb the headwall, and hike out.",
+   "days": [
+    {
+     "n": 1,
+     "title": "East Bank Trail to the glacier camp",
+     "objective": "Camp near 5,200 ft below the glacier",
+     "miles": 11,
+     "gainFt": 3600,
+     "note": "Hike 8 miles of easy trail from the trailhead to May Creek in roughly 3-3.5 hours, then make 3 miles of steep bushwhack to a camp at about 5,200 ft below the glacier. Alternatively, push on to a glacier camp near 7,400 ft; a 6 a.m. start has reached a 7,400 ft camp by 5 p.m."
+    },
+    {
+     "n": 2,
+     "title": "Climb the headwall to the summit",
+     "objective": "Summit Jack Mountain and return to camp",
+     "miles": 8,
+     "gainFt": 3900,
+     "note": "Leave camp around 4-4:30 a.m., cross the glacier, and climb the headwall and the summit ridge. The summit typically comes at 7:45-8:45 a.m. from a high camp, or roughly 4-5 hours from a 5,200 ft camp; then downclimb and return."
+    },
+    {
+     "n": 3,
+     "title": "Bushwhack down and hike out",
+     "objective": "Return to the East Bank Trailhead",
+     "miles": 11,
+     "gainFt": 200,
+     "note": "Descend the bushwhack and hike out the East Bank Trail."
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "High camp below the Nohokomeen Glacier",
+    "elev_ft": 5200,
+    "type": "camp",
+    "role": "main",
+    "notes": "Most parties climb straight up from the lake trail on day one and camp high on the ridge below the toe of the Nohokomeen Glacier, roughly 5,200 ft, to leave a manageable summit day. Some camp higher on the ridge."
+   },
+   {
+    "name": "May Creek Camp, Ross Lake",
+    "elev_ft": null,
+    "type": "camp",
+    "role": "route",
+    "notes": "Designated camp on the East Bank Trail about 8 miles from the East Bank trailhead, where climbers leave the trail for the north side of Jack Mountain. It can also be reached by water taxi. Used as a first night or as the camp on the way out."
+   }
+  ],
+  "campsite_pins": [
+   {
+    "name": "May Creek Camp, Ross Lake",
+    "elev": 1643,
+    "distMi": null
+   }
+  ]
+ },
+ {
+  "id": "wa_jack_mountain_north_ridge",
+  "name": "North Ridge",
+  "discipline": "scrambling",
+  "peak": "Jack Mountain",
+  "area_id": "wa_jack_mountain",
+  "path": "usa.washington.wa_northwest.wa_hwy20_ncnp.wa_north_cascades.wa_north_cascades_core.wa_jack_mountain",
+  "trip_plan": {
+   "totalNote": "Hike the East Bank Trail and climb off-trail to a camp below the ridge, climb the North Ridge and descend the East Ridge, then hike out.",
+   "days": [
+    {
+     "n": 1,
+     "title": "East Bank Trail to camp below the ridge",
+     "objective": "Camp below the North Ridge",
+     "miles": null,
+     "gainFt": null,
+     "note": "Hike the East Bank Trail, then make the off-trail climb to a camp below the ridge."
+    },
+    {
+     "n": 2,
+     "title": "Climb the North Ridge",
+     "objective": "Summit and descend the East Ridge to camp",
+     "miles": null,
+     "gainFt": null,
+     "note": "Climb the ridge to the summit and descend the East Ridge back to camp, a full day."
+    },
+    {
+     "n": 3,
+     "title": "Bushwhack down and hike out",
+     "objective": "Return to the East Bank Trailhead",
+     "miles": null,
+     "gainFt": null,
+     "note": "Descend the bushwhack and hike out the East Bank Trail."
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "May Creek Camp, Ross Lake",
+    "elev_ft": null,
+    "type": "camp",
+    "role": "main",
+    "notes": "Designated camp on the East Bank Trail about 8 miles from the East Bank trailhead, where climbers leave the trail for the north side of Jack Mountain. It can also be reached by water taxi. Used as a first night or as the camp on the way out."
+   }
+  ],
+  "campsite_pins": [
+   {
+    "name": "May Creek Camp, Ross Lake",
+    "elev": 1643,
+    "distMi": null
+   }
+  ]
+ },
+ {
+  "id": "wa_jack_mountain_northeast_glacier",
+  "name": "Northeast Glacier",
+  "discipline": "mountaineering",
+  "peak": "Jack Mountain",
+  "area_id": "wa_jack_mountain",
+  "path": "usa.washington.wa_northwest.wa_hwy20_ncnp.wa_north_cascades.wa_north_cascades_core.wa_jack_mountain",
+  "trip_plan": {
+   "totalNote": "Cross between Crater Mountain's summits and the Jerry Glacier to a camp on Jack's east side, climb the Northeast Glacier, and return.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Cross the Jerry Glacier to the east camp",
+     "objective": "Camp near 6,000 ft on the east side of Jack",
+     "miles": null,
+     "gainFt": 5100,
+     "note": "Cross the pass between Crater Mountain's summits and the Jerry Glacier to a camp near 6,000 ft on the east side of Jack."
+    },
+    {
+     "n": 2,
+     "title": "Climb the Northeast Glacier",
+     "objective": "Summit Jack Mountain and return to camp",
+     "miles": null,
+     "gainFt": 3300,
+     "note": "Spend a full summit day on the glacier and the upper mountain, then return to camp."
+    },
+    {
+     "n": 3,
+     "title": "Return over the pass",
+     "objective": "Hike out to the Canyon Creek Trailhead",
+     "miles": null,
+     "gainFt": 1000,
+     "note": "Return over the pass and the Jerry Glacier and hike out."
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Camp on the east side of Jack",
+    "elev_ft": 6000,
+    "type": "camp",
+    "role": "main",
+    "notes": "Reached over the pass between Crater Mountain's summits and down past the Jerry Glacier. Leaves the col crossing and the glacier for summit day."
+   }
+  ],
+  "campsite_pins": []
+ },
+ {
+  "id": "wa_jack_mountain_south_face",
+  "name": "South Face / Southeast Ridge",
+  "discipline": "mountaineering",
+  "peak": "Jack Mountain",
+  "area_id": "wa_jack_mountain",
+  "path": "usa.washington.wa_northwest.wa_hwy20_ncnp.wa_north_cascades.wa_north_cascades_core.wa_jack_mountain",
+  "trip_plan": {
+   "totalNote": "A 3-day, ~22-24 mile round trip with roughly 11,000-11,500 ft of cumulative gain: one long day to a ~6,000-6,200 ft high camp, one long summit day up the loose South Face/SE Ridge (~9-9.5 hrs camp-to-camp), and one day to hike out.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Approach to high camp",
+     "objective": "Reach a high camp near Crater Creek Meadows / Jerry Lakes basin (~6,000-6,200 ft)",
+     "miles": 8.3,
+     "gainFt": 5900,
+     "note": "From the Canyon Creek Trailhead, hike FST 738 through McMillan Park to Crater Lake, then climb to the Crater Mountain saddle, cross/skirt the Jerry Glacier basin, and descend scree and heather to a camp near Crater Creek or the Jerry Lakes basin. This is the long day of the trip, mostly off-trail after the saddle."
+    },
+    {
+     "n": 2,
+     "title": "Summit day: South Face / SE Ridge",
+     "objective": "Climb Jack Mountain (9,069 ft) via the South Face and Southeast Ridge, then reposition camp",
+     "miles": 5.7,
+     "gainFt": 3400,
+     "note": "Climb from camp up to the ~7,200 ft step in the Southeast Ridge, then pick through loose class 3-4 terrain on the South Face (past the fish-shaped snowfield and hidden chimney) back onto the ridge crest to the summit. Reverse the route to camp; many parties then shuttle gear partway toward the Jerry Lakes saddle in the…"
+    },
+    {
+     "n": 3,
+     "title": "Hike out",
+     "objective": "Return to the Canyon Creek Trailhead",
+     "miles": 9,
+     "gainFt": 2200,
+     "note": "Retrace the approach back over the Jerry Lakes/Crater Mountain saddle area (some parties detour past the East Crater Mountain lookout site) and descend to the trailhead."
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Crater Creek Meadows bench",
+    "elev_ft": 6000,
+    "type": null,
+    "role": "main",
+    "notes": "Planned camp and the standard staging point for the south face, on a heather bench above Crater Creek northwest of point 7001. Reached in roughly eight hours and eleven miles from the car, after the Jerry Glacier traverse and the drop into Crater Creek Basin. Parties choose it over Jerry Lakes specifically because it s…"
+   },
+   {
+    "name": "Jerry Lakes basin",
+    "elev_ft": 6350,
+    "type": null,
+    "role": "main",
+    "notes": "Planned camp, a grassy boulder-strewn bowl with several separate sites; the best of them sits by the small lake between the two large ones. Snow-free by mid-August. It is the more pleasant camp of the two and the obvious stop if you arrive late, but it leaves a longer traverse to the face on summit day. Open bowl, so a…"
+   },
+   {
+    "name": "Jerry Lakes Peak south saddle",
+    "elev_ft": null,
+    "type": null,
+    "role": "route",
+    "notes": "Emergency ledge, not a camp — on record only as an unplanned night out, sat through in a bivy sack and an emergency blanket with little wind protection and a cold, sleepless result. Worth knowing exists if a party is caught on the ridge between the lakes and the Crater Mountain saddle, and worth planning not to use."
+   }
+  ],
+  "campsite_pins": [
+   {
+    "name": "Jerry Lakes / Crater Creek Meadows camp",
+    "elev": 6000,
+    "distMi": 9
+   }
+  ]
+ },
+ {
+  "id": "wa_jack_mountain_southeast_ridge_direct",
+  "name": "Southeast Ridge (Direct)",
+  "discipline": "alpine",
+  "peak": "Jack Mountain",
+  "area_id": "wa_jack_mountain",
+  "path": "usa.washington.wa_northwest.wa_hwy20_ncnp.wa_north_cascades.wa_north_cascades_core.wa_jack_mountain",
+  "trip_plan": {
+   "totalNote": "Cross from Crater Lake over the Crater Mountain saddle and Jerry Glacier to camp, climb the Southeast Ridge, and hike out.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Crater Lake and Jerry Glacier to camp",
+     "objective": "Camp at Jerry Lakes or Crater Creek",
+     "miles": null,
+     "gainFt": 5300,
+     "note": "Hike from the trailhead to Crater Lake, then go cross-country over the Crater Mountain saddle and the Jerry Glacier to a Jerry Lakes or Crater Creek camp, about 7 hours with packs."
+    },
+    {
+     "n": 2,
+     "title": "Climb the Southeast Ridge",
+     "objective": "Summit via the ridge and descend the South Face",
+     "miles": null,
+     "gainFt": 2700,
+     "note": "Make an alpine start, gain the 7,000 ft ridge step, and climb the crest to the summit, then descend the South Face and return to camp. Budget a full day, longer than the standard route's ~10 hour round trip from camp, because the ridge is roped terrain."
+    },
+    {
+     "n": 3,
+     "title": "Recross the glacier and hike out",
+     "objective": "Return to the Canyon Creek Trailhead",
+     "miles": null,
+     "gainFt": 800,
+     "note": "Recross the glacier and saddle and hike out."
+    }
+   ]
+  },
+  "camps_on_file": [],
+  "campsite_pins": []
+ },
+ {
+  "id": "wa_jack_mountain_southwest_ridge",
+  "name": "Southwest Ridge",
+  "discipline": "scrambling",
+  "peak": "Jack Mountain",
+  "area_id": "wa_jack_mountain",
+  "path": "usa.washington.wa_northwest.wa_hwy20_ncnp.wa_north_cascades.wa_north_cascades_core.wa_jack_mountain",
+  "trip_plan": {
+   "totalNote": "Climb the old Little Jack Trail to a high camp on the crest, climb the Southwest Ridge from camp, and return over Little Jack.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Climb to Little Jack and camp high",
+     "objective": "Camp high on the crest beyond Little Jack",
+     "miles": 6,
+     "gainFt": 5000,
+     "note": "Hike from the trailhead to Little Jack, 6.0 miles with about 4,800 ft of gain from the junction, and continue along the ridge toward the notch, camping high on the crest."
+    },
+    {
+     "n": 2,
+     "title": "Climb the Southwest Ridge",
+     "objective": "Summit Jack and return to camp",
+     "miles": null,
+     "gainFt": null,
+     "note": "Traverse to Jack's base, climb the southwest ridge to the summit, and reverse it back to camp, a full day."
+    },
+    {
+     "n": 3,
+     "title": "Return over Little Jack",
+     "objective": "Descend to the car",
+     "miles": 6,
+     "gainFt": 200,
+     "note": "Reverse the ridge to Little Jack and descend to the car."
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Little Jack camp, knoll northwest of Little Jack",
+    "elev_ft": 6600,
+    "type": "camp",
+    "role": "main",
+    "notes": "High camp on a small hump just northwest of Little Jack, reached by the old Little Jack trail from the East Bank trailhead. It looks straight across the head of Crater Creek at Jack Mountain and is the usual place to split the Southwest Ridge."
+   }
+  ],
+  "campsite_pins": []
+ }
+]

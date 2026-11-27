@@ -1,0 +1,470 @@
+[
+ {
+  "id": "wa_baring_mountain_oatmeal_man",
+  "camps": [],
+  "new_camps": [
+   {
+    "name": "Barclay Lake bivy",
+    "elev_ft": 2420,
+    "type": "bivy",
+    "role": "main",
+    "nights": [
+     1
+    ],
+    "why": "Only 2.2 trail miles in, with water at the door and flat established sites; you start the brush-bash to the north face from here at first light.",
+    "water": "Barclay Lake.",
+    "capacity": "Established sites around the lake; the area takes large groups.",
+    "permit": "",
+    "notes": "The lake sits right under the north face, so the approach next morning is short. The footlog over Barclay Creek was removed as of 2026, so expect a creek crossing on the way in."
+   }
+  ],
+  "confidence": "medium",
+  "plan_conflict": null,
+  "sources": [
+   "https://www.wta.org/go-hiking/hikes/barclay-lake",
+   "https://publications.americanalpineclub.org/articles/12196130200/The-North-Face-of-Mount-Baring"
+  ]
+ },
+ {
+  "id": "wa_baring_mountain_r1",
+  "camps": [
+   {
+    "name": "Dolomite Camp",
+    "nights": [
+     1
+    ],
+    "role": "main",
+    "why": "Perched above the first step, it is the camp parties haul to and sleep at on the face, with a snow patch for water and a short push to the upper steps."
+   },
+   {
+    "name": "Couloir Camp",
+    "nights": [],
+    "role": "route",
+    "why": "A forested staging ledge about 1,000 ft above the lake; most parties pass through it to Dolomite Camp, using it only to split loads or sit out a bad day."
+   },
+   {
+    "name": "Barclay Lake",
+    "nights": [],
+    "role": "route",
+    "why": "Comfortable lakeside sites at the trailhead end of the approach; it adds a long brush-bash to day one, so it suits only a slow party or a retreat."
+   }
+  ],
+  "new_camps": [],
+  "confidence": "low",
+  "plan_conflict": "The plan puts the bivy atop the crux step, but the only documented camp on the face is Dolomite Camp at the top of the first step; Couloir Camp and Barclay Lake were both marked main and are now route (they are not slept at on a two-day plan).",
+  "sources": [
+   "https://publications.americanalpineclub.org/articles/12196130200/The-North-Face-of-Mount-Baring"
+  ]
+ },
+ {
+  "id": "wa_iron_cap_mountain_south_route",
+  "camps": [
+   {
+    "name": "Chetwoot Lake",
+    "nights": [
+     1,
+     2
+    ],
+    "role": "main",
+    "why": "Quiet flat sites near the outlet, and the climb starts right from camp; it is a long, slow off-trail day to reach but you have the lake mostly to yourself."
+   },
+   {
+    "name": "Big Heart Lake",
+    "nights": [
+     1
+    ],
+    "role": "route",
+    "why": "The last maintained-trail camp and a shorter first day, but busy with tents and it leaves the slow cross-country leg to Chetwoot for the morning."
+   }
+  ],
+  "new_camps": [],
+  "confidence": "high",
+  "plan_conflict": null,
+  "sources": [
+   "https://onehikeaweek.com/2015/08/24/west-fork-foss-river-valley/",
+   "https://www.yellowleaf.org/scramble/g/r/2005-08-05--08-07-traverse.html"
+  ]
+ },
+ {
+  "id": "wa_la_bohn_peak_southwest_slopes",
+  "camps": [
+   {
+    "name": "Necklace Valley — Jade, Emerald and Opal Lakes",
+    "nights": [
+     1
+    ],
+    "role": "main",
+    "why": "The usual first-night camp: lakeside sites at the end of the long trail, with the final steep scramble to La Bohn Gap still ahead the next morning."
+   },
+   {
+    "name": "La Bohn Lakes, La Bohn Gap and the Chain Lakes benches",
+    "nights": [],
+    "role": "route",
+    "why": "Higher and roughly 1,000 ft closer to the gap, so the summit morning is shorter, but it adds a steep, loose, slow haul with a full pack on day one."
+   },
+   {
+    "name": "Money Creek and Miller River campgrounds, Foss River roadhead",
+    "nights": [
+     0
+    ],
+    "role": "route",
+    "why": "Car-camping the night before gives a pre-dawn start on an 8-mile, 3,200 ft walk-in day; nothing in the valley itself is slept at on the climb."
+   }
+  ],
+  "new_camps": [],
+  "confidence": "medium",
+  "plan_conflict": "Both Necklace Valley and La Bohn Lakes were marked main; Jade Lake is where most parties sleep on a one-night plan, so La Bohn Lakes is now route.",
+  "sources": [
+   "https://www.wta.org/go-hiking/trip-reports/trip_report.2018-09-29.4747050951",
+   "https://trailcatjim.com/la-bohn-tank-loop-and-little-big-chief-peak/"
+  ]
+ },
+ {
+  "id": "wa_hourglass_gully_winter",
+  "camps": [
+   {
+    "name": "Lake Serene basin and the talus under the Norwegian Buttresses",
+    "nights": [
+     1
+    ],
+    "role": "main",
+    "why": "A short 4-mile walk in, water at the lake, and the gully approach starts within a couple of hours; parties camp here to start before dawn and avoid sun on the gully."
+   }
+  ],
+  "new_camps": [],
+  "confidence": "medium",
+  "plan_conflict": "On file as a route option, but it is the only camp on this plan's one night, so it is now main.",
+  "sources": [
+   "https://stevensong.com/mount-index-hourglass-gully",
+   "https://waynewallace.wordpress.com/2010/07/08/index-traverse-north-middle-and-main/"
+  ]
+ },
+ {
+  "id": "wa_traverse_of_mount_index",
+  "camps": [
+   {
+    "name": "Middle Peak crest bivouac, Mount Index traverse",
+    "nights": [
+     1
+    ],
+    "role": "main",
+    "why": "A flat crest spot with snow nearby for water, and about half the traverse done; the descent from Main then finishes the next day."
+   },
+   {
+    "name": "Lake Serene basin and the talus under the Norwegian Buttresses",
+    "nights": [],
+    "role": "route",
+    "why": "A lower, comfortable bivy the night before the North Face; used on a three-day version that splits the first climb from the high bivy."
+   }
+  ],
+  "new_camps": [],
+  "confidence": "medium",
+  "plan_conflict": "The plan says to bivy on North Peak, but most parties sleep on the crest of Middle Peak (one party slept on the North summit).",
+  "sources": [
+   "https://waynewallace.wordpress.com/2010/07/08/index-traverse-north-middle-and-main/",
+   "https://cascadeclimbers.com/forum/topic/107407-tr-mt-index-traverse-north-middle-main-06252023/",
+   "https://cascadeclimbers.com/forum/topic/35410-tr-mount-index-index-traverse-7232005/"
+  ]
+ },
+ {
+  "id": "wa_j_tnar",
+  "camps": [
+   {
+    "name": "Lake Serene basin and the talus under the Norwegian Buttresses",
+    "nights": [
+     1
+    ],
+    "role": "main",
+    "why": "Easy walk-in, water at the lake and a ground base to haul from; the first ascent team returned here after their first day on the wall."
+   },
+   {
+    "name": "On-wall ledges, Jotunheim and the Norwegian Buttresses",
+    "nights": [
+     2,
+     3
+    ],
+    "role": "main",
+    "why": "Portaledge camps are the only way to sleep on a wall this steep; they save descending each day but need a full haul load and water carried."
+   }
+  ],
+  "new_camps": [],
+  "confidence": "medium",
+  "plan_conflict": "The plan lists several days as day 2 and shows three nights; the first ascent took about five nights on the wall after one night at the base, so a repeat is likely shorter but not confirmed.",
+  "sources": [
+   "https://publications.americanalpineclub.org/articles/13201215809"
+  ]
+ },
+ {
+  "id": "wa_mount_index_bluebell",
+  "camps": [],
+  "new_camps": [
+   {
+    "name": "Pitch 10 ledge, Bluebell",
+    "elev_ft": null,
+    "type": "bivy",
+    "role": "main",
+    "nights": [
+     1
+    ],
+    "why": "The ledge at the top of pitch 10 has extra bolts for portaledges, which splits the route in half; the ledge above pitch 12 is a poor, narrow spot for one.",
+    "water": "",
+    "capacity": "A portaledge fits; the ledge alone sleeps one poorly.",
+    "permit": "",
+    "notes": "Not every party sleeps on the route; the first-ascent party took two days and some climb it in one. Elevation not found in any source."
+   }
+  ],
+  "confidence": "medium",
+  "plan_conflict": null,
+  "sources": [
+   "https://www.mountainproject.com/route/124804426/bluebell",
+   "https://publications.americanalpineclub.org/articles/13201215809"
+  ]
+ },
+ {
+  "id": "wa_mount_index_north_face",
+  "camps": [],
+  "new_camps": [
+   {
+    "name": "Lake Serene bivy",
+    "elev_ft": 2525,
+    "type": "bivy",
+    "role": "main",
+    "nights": [
+     1
+    ],
+    "why": "A 3.6-mile walk-in puts you at water and below the face for a pre-dawn start; the flat ground north of the lake is brushy, so arrive in daylight.",
+    "water": "Lake Serene.",
+    "capacity": "",
+    "permit": "",
+    "notes": "One 2025 party arrived after dark and found the north shore very brushy. The talus basin below the route is the alternative."
+   }
+  ],
+  "confidence": "high",
+  "plan_conflict": null,
+  "sources": [
+   "https://wdfw.wa.gov/fishing/locations/high-lakes/serene",
+   "https://cascadeclimbers.com/forum/topic/108144-tr-mount-index-north-peak-north-face-06292025",
+   "https://waynewallace.wordpress.com/2010/07/08/index-traverse-north-middle-and-main/"
+  ]
+ },
+ {
+  "id": "wa_wing_peak_northwest_ridge",
+  "camps": [],
+  "new_camps": [
+   {
+    "name": "Saddle camp between Wing Peak and Tailgunner (Tailgunner Pass)",
+    "elev_ft": 5400,
+    "type": "camp",
+    "role": "main",
+    "nights": [
+     1
+    ],
+    "why": "The ridge saddle puts Wing Peak a short walk from the tent; the price is a steep 3,000 ft carry and no water on the saddle in summer.",
+    "water": "",
+    "capacity": "",
+    "permit": "",
+    "notes": "Winter parties have dug a tent platform here and gathered snow. Barclay Creek near the trailhead is the lower water source."
+   }
+  ],
+  "confidence": "medium",
+  "plan_conflict": null,
+  "sources": [
+   "https://turns-all-year.com/trip-reports/gunn-peak",
+   "https://www.wta.org/go-hiking/trip-reports/trip_report-2025-11-10.102301319582"
+  ]
+ },
+ {
+  "id": "wa_bears_breast_mountain_infinite_beauty",
+  "camps": [],
+  "new_camps": [
+   {
+    "name": "Camp near the Waptus River PCT bridge",
+    "elev_ft": null,
+    "type": "camp",
+    "role": "main",
+    "nights": [
+     1
+    ],
+    "why": "About an hour from the slab base along the old Shovel Creek track, which makes this the standard camp for the Mega Slab climbs.",
+    "water": "",
+    "capacity": "",
+    "permit": "",
+    "notes": "One party camped at an abandoned trail near Shovel Creek instead, and carried river shoes for the Waptus crossing. Elevation was not found in any source."
+   }
+  ],
+  "confidence": "medium",
+  "plan_conflict": null,
+  "sources": [
+   "https://cascadeclimbers.com/forum/topic/95807-tr-bears-breast-se-mega-slab-972014"
+  ]
+ },
+ {
+  "id": "wa_bears_breast_mountain_southwest_face",
+  "camps": [],
+  "new_camps": [
+   {
+    "name": "Dutch Miller Gap camp",
+    "elev_ft": 5000,
+    "type": "camp",
+    "role": "main",
+    "nights": [
+     1
+    ],
+    "why": "The standard night after a long 15-mile walk-in, with established sites and ponds at the gap, leaving a six-hour summit day with a night's rest.",
+    "water": "",
+    "capacity": "",
+    "permit": "Free self-issue wilderness permit at the trailhead.",
+    "notes": "Gap elevation is about 5,000 ft; sites sit at or just below it."
+   },
+   {
+    "name": "Tarns below the Southwest Face, about 5,300 ft",
+    "elev_ft": 5300,
+    "type": "camp",
+    "role": "route",
+    "nights": [],
+    "why": "Moving up from the gap shortens the summit morning, at the cost of carrying packs another uphill mile past the gap.",
+    "water": "Tarns.",
+    "capacity": "",
+    "permit": "",
+    "notes": "Used by a 2020 party who moved camp from the gap the same evening."
+   }
+  ],
+  "confidence": "high",
+  "plan_conflict": null,
+  "sources": [
+   "https://trailcatjim.com/bears-breast-mtn-via-southwest-face-west-chimney/",
+   "https://www.nwhikers.net/forums/viewtopic.php?p=1196134",
+   "https://www.wta.org/go-hiking/hikes/dutch-miller-gap"
+  ]
+ },
+ {
+  "id": "wa_bears_breast_mountain_timeless_treasure",
+  "camps": [],
+  "new_camps": [
+   {
+    "name": "Camp near the Waptus River PCT bridge",
+    "elev_ft": null,
+    "type": "camp",
+    "role": "main",
+    "nights": [
+     1
+    ],
+    "why": "About an hour from the slab base along the old Shovel Creek track, which makes this the standard camp for the Mega Slab climbs.",
+    "water": "",
+    "capacity": "",
+    "permit": "",
+    "notes": "One party camped at an abandoned trail near Shovel Creek instead, and carried river shoes for the Waptus crossing. Elevation was not found in any source."
+   }
+  ],
+  "confidence": "medium",
+  "plan_conflict": null,
+  "sources": [
+   "https://cascadeclimbers.com/forum/topic/95807-tr-bears-breast-se-mega-slab-972014"
+  ]
+ },
+ {
+  "id": "wa_big_snow_mountain_east_ridge_hardscrabble_route",
+  "camps": [
+   {
+    "name": "Upper Hardscrabble Lake",
+    "nights": [
+     1
+    ],
+    "role": "main",
+    "why": "Flat dirt sites at the high lake put you about 2,000 ft below the summit with water at camp; lower lake has fewer flat sites."
+   },
+   {
+    "name": "Hardscrabble Horse Camp, Middle Fork Snoqualmie",
+    "nights": [],
+    "role": "route",
+    "why": "A lower camp that splits the 7-mile road walk into two shorter days, but it adds a long, steep climb to the lakes before the summit day."
+   }
+  ],
+  "new_camps": [],
+  "confidence": "high",
+  "plan_conflict": null,
+  "sources": [
+   "http://trailcatjim.com/big-snow-mountain-carryover/",
+   "https://wdfw.wa.gov/fishing/locations/high-lakes/hardscrabble-lower"
+  ]
+ },
+ {
+  "id": "wa_burnt_boot_peak_north_route",
+  "camps": [
+   {
+    "name": "Hardscrabble Horse Camp, Middle Fork Snoqualmie",
+    "nights": [
+     1,
+     2
+    ],
+    "role": "main",
+    "why": "An established site near the river ford; the summit day starts right across the water, so you leave the packs in camp and the walk-out stays easy."
+   }
+  ],
+  "new_camps": [],
+  "confidence": "medium",
+  "plan_conflict": null,
+  "sources": [
+   "https://onehikeaweek.com/2022/07/24/burnt-boot-peak/"
+  ]
+ },
+ {
+  "id": "wa_cathedral_rock_northwest_couloir",
+  "camps": [
+   {
+    "name": "Peggy's Pond — standard base camp and water source",
+    "nights": [
+     1
+    ],
+    "role": "main",
+    "why": "Many flat sites near the pond, water at camp, and the couloir starts a short walk away; the exposed path to it makes arriving in daylight important."
+   }
+  ],
+  "new_camps": [],
+  "confidence": "high",
+  "plan_conflict": null,
+  "sources": [
+   "https://www.nwhikers.net/forums/viewtopic.php?p=960448",
+   "https://www.wta.org/go-hiking/trip-reports/trip_report-2025-07-29.175234093974"
+  ]
+ },
+ {
+  "id": "wa_cathedral_rock_southeast_face_chimney",
+  "camps": [],
+  "new_camps": [
+   {
+    "name": "Cathedral Pass camp",
+    "elev_ft": 5550,
+    "type": "camp",
+    "role": "main",
+    "nights": [
+     1
+    ],
+    "why": "Flat tent sites near the last tarn, about 4 miles in, put you closest to the face; camp away from the water to dodge mosquitoes.",
+    "water": "Tarns near the sites.",
+    "capacity": "",
+    "permit": "Free self-issue wilderness permit at the trailhead register.",
+    "notes": "A 2025 party planning to go on to Peggy's Pond stopped here and found several flat sites above the tarn."
+   },
+   {
+    "name": "Nosh Nosh Wahtum camp",
+    "elev_ft": 4850,
+    "type": "camp",
+    "role": "route",
+    "nights": [],
+    "why": "Lakeside camp 2.5 miles in for a shorter first day, but 1,000 ft lower and farther from the chimney in the morning.",
+    "water": "Nosh Nosh Wahtum lake.",
+    "capacity": "",
+    "permit": "",
+    "notes": "Lake elevation about 4,850 ft."
+   }
+  ],
+  "confidence": "medium",
+  "plan_conflict": null,
+  "sources": [
+   "https://www.wta.org/go-hiking/trip-reports/trip_report-2025-07-29.175234093974",
+   "https://www.wta.org/go-hiking/hikes/nosh-nosh-wahtum",
+   "https://www.nwhikers.net/forums/viewtopic.php?p=960448"
+  ]
+ }
+]
