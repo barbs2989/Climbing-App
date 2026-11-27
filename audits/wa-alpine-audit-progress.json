@@ -2,10 +2,10 @@
   "scope_definition": "routes.discipline IN ('alpine','mountaineering') AND routes.id LIKE 'wa_%' AND routes.area_id IN (SELECT id FROM areas WHERE area_type = 'peak'), ordered by routes.id ASC",
   "scope_note": "area_type = 'peak' excludes crags/walls (e.g. The Dikes, Summertime Crag) that carry an alpine/mountaineering discipline tag but are actually short cragging routes, not mountaineering objectives \u2014 out of scope per audit instructions.",
   "pass": 9,
-  "last_processed_id": "wa_mount_crowder_northeast_ridge",
+  "last_processed_id": "wa_mount_degenhardt_southwest_route",
   "total_in_scope_last_count": 751,
   "total_wa_alpine_or_mountaineering_tagged": 857,
-  "pass_note": "1 confirmed error fixed: wa_mount_christie areas.elevation_ft was 6182, one foot off from this DB's own routes.high_point_ft (6181) and two independent external sources (Wikipedia NAVD88, TopoQuest NAD83) that agree on 6181 -- SQL in 2026-11-27-batch-599.sql. 1 flagged for human review: wa_mount_christie_west is a route-identity mismatch (id says west, but name/face/approach all describe a north-side line) -- left for route-identity.md resolution, not SQL'd. 5 verified clean: wa_mount_buckindy_scramble fa (Grimlund/Nicholson/Trueblood, Aug 28 1955 -- matches Wikipedia exactly), wa_mount_challenger_challenger_glacier fa (Dickert/Hossack/MacGowan, Sept 7 1936 -- matches Mountain Project/SummitPost/Dickert's own 1936 article) plus its elevation, wa_mount_chaval_north_ridge's peak elevation (7127 ft, matches Wikipedia), wa_mount_constance_west_arete's peak elevation (7756 ft, matches Wikipedia/Peakery) and its already-disclosed grade-source split, and wa_mount_crowder_northeast_ridge's peak elevation+coordinates (7082 ft, matches Wikipedia). Inconclusive, not flagged: wa_mount_claywood_standard fa (Mountaineers outing party incl. Rogers/Bailey, Aug 3 1920 -- could not confirm or contradict a Claywood summit specifically this run) and wa_mount_cameron_standard (no fa stored; already self-disclosed as unconfirmed in data_quality). WebFetch to summitpost.org/wikipedia.org/mountainproject.com was blocked by this session's network allowlist again; WebSearch only.",
+  "pass_note": "0 confirmed errors, 0 flagged for human review this batch. 8 verified clean: wa_mount_crowder_southwest_route's fa/corrections wording (credits the peak's 1962 FA -- Magnusson/Ardussi/Mech/Schmechel -- to the peak, not this route, confirmed by a Wikipedia mirror), Mount Cruiser's shared peak elevation (6104 ft, matches Wikipedia/SummitPost) on wa_mount_cruiser_nw_face_corner and wa_mount_cruiser_south_corner, wa_mount_custer_standard fa (Dawe/Mason/Teichman 1958, matches SummitPost) and elevation (8630 ft, matches WTA/ListsOfJohn), Mount Daniel's shared peak elevation (7960 ft) and the 1925 Mountaineers Lynch Glacier FA cross-referenced by both wa_mount_daniel_daniel_glacier and wa_mount_daniel_lynch_glacier (confirmed by the Mountaineers' own route page), wa_mount_deception_standard elevation (7788 ft, matches Wikipedia/SummitPost/LiDAR ListsOfJohn), and wa_mount_degenhardt_southwest_route elevation (8107 ft -- initially looked like an outlier against Wikipedia's older 8000 ft/TopoQuest's 8021 ft, but is ListsOfJohn's own LiDAR figure, corroborated within 5 ft by Peakbagger's independent LiDAR figure of 8102 ft; the older figures are the pre-LiDAR map value). 2 checked but already self-disclosed, not re-flagged: wa_mount_cruiser_south_corner's grade (5.3 here vs 5.0 per Mountaineers/SummitPost -- already disclosed as an unresolved source split in the route's own data_quality.gaps) and wa_mount_cruiser_nw_face_corner's fa (Wallace/Parker 2004 -- already flagged in data_quality.gaps as plausible but not independently confirmed). WebFetch to Wikipedia/SummitPost/Mountaineers/Peakbagger mirrors was blocked by this session's network allowlist again; WebSearch only.",
   "batches": [
     {
       "batch_number": 1,
@@ -11943,6 +11943,26 @@
       "clean": 5,
       "sql_file": "audits/sql/2026-11-27-batch-599.sql",
       "note": "1 confirmed error fixed: wa_mount_christie areas.elevation_ft was 6182, one foot off from this DB's own routes.high_point_ft (6181) and two independent external sources (Wikipedia NAVD88, TopoQuest NAD83) that agree on 6181 -- SQL in 2026-11-27-batch-599.sql. 1 flagged for human review: wa_mount_christie_west is a route-identity mismatch (id says west, but name/face/approach all describe a north-side line) -- left for route-identity.md resolution, not SQL'd. 5 verified clean: wa_mount_buckindy_scramble fa (Grimlund/Nicholson/Trueblood, Aug 28 1955 -- matches Wikipedia exactly), wa_mount_challenger_challenger_glacier fa (Dickert/Hossack/MacGowan, Sept 7 1936 -- matches Mountain Project/SummitPost/Dickert's own 1936 article) plus its elevation, wa_mount_chaval_north_ridge's peak elevation (7127 ft, matches Wikipedia), wa_mount_constance_west_arete's peak elevation (7756 ft, matches Wikipedia/Peakery) and its already-disclosed grade-source split, and wa_mount_crowder_northeast_ridge's peak elevation+coordinates (7082 ft, matches Wikipedia). Inconclusive, not flagged: wa_mount_claywood_standard fa (Mountaineers outing party incl. Rogers/Bailey, Aug 3 1920 -- could not confirm or contradict a Claywood summit specifically this run) and wa_mount_cameron_standard (no fa stored; already self-disclosed as unconfirmed in data_quality). WebFetch to summitpost.org/wikipedia.org/mountainproject.com was blocked by this session's network allowlist again; WebSearch only."
+    },
+    {
+      "batch_number": 600,
+      "date": "2026-11-27",
+      "pass": 9,
+      "route_ids": [
+        "wa_mount_crowder_southwest_route",
+        "wa_mount_cruiser_nw_face_corner",
+        "wa_mount_cruiser_south_corner",
+        "wa_mount_custer_standard",
+        "wa_mount_daniel_daniel_glacier",
+        "wa_mount_daniel_lynch_glacier",
+        "wa_mount_deception_standard",
+        "wa_mount_degenhardt_southwest_route"
+      ],
+      "confirmed_errors_fixed": 0,
+      "flagged_for_human_review": 0,
+      "clean": 8,
+      "sql_file": null,
+      "note": "0 confirmed errors, 0 flagged. 8 verified clean (Mount Crowder's FA attribution wording, Mount Cruiser's shared peak elevation across its 2 routes, Mount Custer's fa+elevation, Mount Daniel's shared peak elevation + cross-referenced 1925 Lynch Glacier FA across its 2 routes, Mount Deception's elevation, Mount Degenhardt's elevation -- which looked like an outlier but is the better-sourced LiDAR figure). 2 checked but already self-disclosed in data_quality.gaps, not re-flagged (Cruiser South Corner's grade-source split; Cruiser NW Face/Corner's unconfirmed-but-plausible FA)."
     }
   ],
   "outage_runs": [

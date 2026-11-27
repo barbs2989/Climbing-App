@@ -41420,3 +41420,50 @@ Checked but inconclusive (not flagged — no source contradicts the stored data)
 1 confirmed error fixed, 1 flagged for human review, 5 clean, 2 inconclusive (not
 flagged). Next batch continues id-ascending from `wa_mount_crowder_northeast_ridge`
 (pass 9).
+
+## Batch 600 (2026-11-27, pass 9)
+
+Checked `wa_mount_crowder_southwest_route` through `wa_mount_degenhardt_southwest_route`
+(id-ascending), 8 routes across Mount Crowder, Mount Cruiser, Mount Custer, Mount Daniel,
+Mount Deception and Mount Degenhardt.
+
+No confirmed errors this batch (no SQL file).
+
+Verified clean:
+- `wa_mount_crowder_southwest_route` — peak elevation (7082 ft, already confirmed clean in
+  batch 599) and its `fa`/`corrections` wording, which explicitly credits the peak's 1962 FA
+  (Cal Magnusson, Jack Ardussi, Don Mech, Don Schmechel) as the *peak's* first ascent, not this
+  route's — a Wikipedia mirror independently confirms those four names and the 1962 date for
+  the peak.
+- `wa_mount_cruiser_nw_face_corner` and `wa_mount_cruiser_south_corner` — Mount Cruiser's shared
+  peak elevation (6104 ft) matches Wikipedia and SummitPost exactly.
+- `wa_mount_custer_standard` `fa` "Frank Dawe, Roy Mason, and Karl Teichman, 1958" matches
+  SummitPost's first-recorded-ascent credit; elevation (8630 ft) matches WTA and ListsOfJohn.
+- `wa_mount_daniel_daniel_glacier` and `wa_mount_daniel_lynch_glacier` — Mount Daniel's shared
+  peak elevation (7960 ft) matches SummitPost/Peakery/Yellowleaf (TopoZone's 7884 ft is the lone
+  outlier); both routes' cross-referenced claim that the Mountaineers made the first recorded
+  ascent via Lynch Glacier in 1925 is confirmed directly by the Mountaineers' own Lynch Glacier
+  route page and by Wikipedia.
+- `wa_mount_deception_standard` — peak elevation (7788 ft) matches Wikipedia, SummitPost, and a
+  LiDAR-based ListsOfJohn figure, all in agreement.
+- `wa_mount_degenhardt_southwest_route` — peak elevation (8107 ft) initially looked like an
+  outlier against Wikipedia's older 8,000 ft and TopoQuest's 8,021 ft, but ListsOfJohn's
+  LiDAR-based figure is exactly 8,107 ft (explicitly noting the older map value was 8,020 ft),
+  closely corroborated by Peakbagger's independent LiDAR figure of 8,102 ft — the stored value is
+  the more authoritative, modern survey figure, not an error.
+
+Checked but already self-disclosed, not re-flagged (same as the precedent set for
+`wa_mount_constance_west_arete` in batch 599 — a disclosed source split isn't a hidden error):
+- `wa_mount_cruiser_south_corner` `grade` "5.3" — the Mountaineers and SummitPost both give 5.0
+  for this route; the route's own `data_quality.gaps` already states this exact 5.0-vs-5.3 split
+  between The Mountaineers/Wikipedia and Mountain Project, so the ambiguity is already disclosed
+  rather than hidden.
+- `wa_mount_cruiser_nw_face_corner` `fa` "Wayne Wallace and David Parker, 2004" — consistent with
+  their documented Sawtooth Ridge traverse but not found verbatim in a primary source this run;
+  already flagged as "reasonably likely but not independently confirmed" in the route's own
+  `data_quality.gaps`.
+
+0 confirmed errors, 0 flagged for human review, 8 clean. WebFetch to Wikipedia/SummitPost/
+Mountaineers/Peakbagger mirrors was unavailable again this run (network allowlist); all research
+used WebSearch's result summaries. Next batch continues id-ascending from
+`wa_mount_degenhardt_southwest_route` (pass 9).
