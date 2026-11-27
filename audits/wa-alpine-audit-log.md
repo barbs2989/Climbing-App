@@ -41366,3 +41366,57 @@ flagged). WebFetch could not resolve summitpost.org, publications.americanalpine
 mountainproject.com, climberkyle.com, or en.wikipedia.org this run (blocked for this
 session); all research used WebSearch's own result summaries instead. Next batch
 continues id-ascending from `wa_mount_blum_north_ridge` (pass 9).
+
+## Batch 599 (2026-11-27, pass 9)
+
+Checked `wa_mount_buckindy_scramble` through `wa_mount_crowder_northeast_ridge`
+(id-ascending), 8 routes across Mount Buckindy, Mount Cameron, Mount Challenger, Mount
+Chaval, Mount Christie, Mount Claywood, Mount Constance and Mount Crowder.
+
+Confirmed error, fixed (SQL in `audits/sql/2026-11-27-batch-599.sql`):
+- `wa_mount_christie` (`areas` table) `elevation_ft` was 6182, one foot off from this
+  DB's own `wa_mount_christie_west.high_point_ft` (6181) and from Wikipedia (6,181 ft
+  NAVD 88) and TopoQuest (6181 ft MSL, NAD83), which independently agree; a stale
+  Wikipedia mirror (6183 ft) and SummitPost (6177 ft) are the only outliers. Corrected
+  to 6181.
+
+Flagged for human review:
+- `wa_mount_christie_west` — a route-identity mismatch, not a fact error: the id says
+  "west" but the row's own `name` ("North Couloir / Christie Glacier"), `face`, and
+  `approach`/`descent_text` all describe a line approached and climbed from the north
+  side of the peak. Left for human resolution via route-identity.md rather than SQL'd
+  here.
+
+Verified clean:
+- `wa_mount_buckindy_scramble` `fa` "Don Grimlund, Dave Nicholson, and Win Trueblood,
+  August 28, 1955" — matches Wikipedia's first-ascent credit (citing The Mountaineer,
+  1955) exactly.
+- `wa_mount_challenger_challenger_glacier` `fa` "Philip Dickert, Jack Hossack, and
+  George MacGowan, September 7, 1936" — matches Mountain Project and SummitPost, and
+  corroborated by Dickert's own 1936 Mountaineer article "The Challenge of Challenger."
+  The route's own `high_point_ft` (8207 ft) also matches the most-cited USGS/Wikipedia
+  figure (already self-noted in `data_quality`).
+- `wa_mount_chaval_north_ridge`'s own peak elevation (7127 ft) — matches Wikipedia; two
+  TopoZone/TopoQuest listings giving ~6502-6503 ft are clear outliers (likely a
+  different, nearby benchmark) and don't move the consensus.
+- `wa_mount_constance_west_arete`'s own peak elevation (7756 ft) — matches Wikipedia and
+  Peakery; SummitPost's 7743 ft is a minor (13 ft) outlier. The route's own
+  `corrections` field already discloses the 5.4-vs-5.5 grade-source split, so no action
+  needed there either.
+- `wa_mount_crowder_northeast_ridge`'s own peak elevation (7082 ft) and coordinates —
+  match Wikipedia closely; TopoQuest's 7099 ft and TopoZone's 7044 ft are the outliers.
+
+Checked but inconclusive (not flagged — no source contradicts the stored data):
+- `wa_mount_claywood_standard` `fa` "Mountaineers Club outing party (including Philip
+  Rogers and Winona Bailey), August 3, 1920" — confirmed only that Winona Bailey wrote
+  the 1920 Mountaineer account of that outing and that it mentions Mount Claywood by
+  sight from the Northeast Burn; could not reach a source confirming an actual summit,
+  Rogers' participation, or the August 3 date this run.
+- `wa_mount_cameron_standard` `fa` — none stored; the route's own `data_quality` field
+  already says "No confirmed first-ascent history or date found for Mount Cameron,"
+  which this run's search also failed to turn up, so the gap is already accurately
+  disclosed rather than hidden.
+
+1 confirmed error fixed, 1 flagged for human review, 5 clean, 2 inconclusive (not
+flagged). Next batch continues id-ascending from `wa_mount_crowder_northeast_ridge`
+(pass 9).
