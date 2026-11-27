@@ -1,33 +1,81 @@
 {
- "ak_anchorage_south_central_alaska": {
-  "_expect": { "name": "Anchorage & South Central Alaska", "region": "Alaska" },
-  "blurb": "Climbing spreads out from Anchorage along the Glenn, Seward and Parks highways, with Valdez to the east. Sport and trad rock make up the largest share, mostly 5.8 to 5.12 with a solid middle of 5.10s and 5.11s. Ice is a big second draw, running from WI2 up to WI5 and WI6, along with alpine routes and a good amount of bouldering across the full V-scale. Hatcher Pass is the biggest hub for sport, trad and boulders. The Seward Highway puts routes right above the road, and Valdez adds summer rock to its winter ice, with Eklutna Canyon and Caribou Creek holding more frozen lines. The rock season generally runs from late spring to early fall.",
-  "review": { "sources": ["https://www.travelalaska.com/explore-alaska/articles/intro-rock-climbing-alaska", "https://www.mountainproject.com/area/106905072/south-central-alaska"] }
- },
- "ut_south_central_utah": {
-  "_expect": { "name": "South Central Utah", "region": "Utah" },
-  "blurb": "A big, remote stretch of canyon country running from the Colorado River and Lake Powell near the Arizona line up toward Castle Dale, with few crowds and little in the way of good roads. Trad is the main event, followed by bouldering and sport, with most grades between 5.8 and 5.11 and a handful of easier and harder lines at the edges. The character changes a lot from place to place: desert towers of loose rock in the San Rafael Swell and Grand Staircase, good sandstone cracks at Capitol Reef, granite multi-pitch lines in the Henry Mountains, and volcanic tuff on the Aquarius Plateau at the Jungle. Expect summer heat and storms in the sandstone areas, and weak rock when wet.",
-  "review": { "sources": ["https://www.mountainproject.com/area/119375770/south-central-utah", "https://www.nps.gov/care/planyourvisit/rockclimbingandbouldering.htm"] }
- },
- "wv_new_river_gorge_proper": {
-  "_expect": { "name": "New River Gorge Proper", "region": "West Virginia" },
-  "blurb": "The core of New River Gorge climbing: hard sandstone cliffs along the rim of a canyon over 900 feet deep, with walls mostly 30 to 120 feet tall. Sport and trad are about evenly split, with a large bouldering scene beside them. Grades center on 5.10 to 5.12, with fewer moderates and a real tail into 5.13 and 5.14. The rock is highly featured, with jugs, pockets and cracks on faces from vertical to steeply overhanging, and nearly every route ends at fixed anchors. Endless Wall, Bubba City, Beauty Mountain and Kaymoor are the big names. Late April to mid-June and mid-September to late October are the best windows, and crags near the bridge can be crowded.",
-  "review": { "sources": ["https://www.nps.gov/neri/planyourvisit/climbing.htm", "https://wvexplorer.com/new-river-gorge-climbing-area"] }
- },
- "bc_fraser_valley": {
-  "_expect": { "name": "Fraser Valley", "region": "British Columbia" },
-  "blurb": "Climbing stretches from Abbotsford east to Hope in British Columbia, along the Fraser River and the Trans-Canada corridor. Bouldering makes up most of the climbing, from easy problems through to the hardest grades, with Hunter Creek, Elbow Lake and the Hope-area boulders among the largest collections. Single-pitch sport and trad fill out the rest, mostly 5.8 to 5.12, at places like Harrison Bluffs, Slesse Creek and The Stacks. The rock changes with location, from solid granite to limestone, and the Cheam Range is known for loose, flaky volcanic rock. A few alpine peaks and some ice are also in reach, though they are a small part of the picture.",
-  "review": { "sources": ["https://www.mountainproject.com/area/105994950/fraser-valley", "https://www.mountainproject.com/area/106337143/old-hope-bouldering?print=1"] }
- },
- "ca_hidden_valley_area": {
-  "_expect": { "name": "Hidden Valley Area", "region": "California" },
-  "blurb": "One of the central and most convenient climbing zones in Joshua Tree National Park, spread over four main pockets: Real Hidden Valley, the campground zone, The Outback and Roadside Rocks. Trad climbing leads by a wide margin, with a large bouldering scene and a good number of top-rope lines. Sport routes are few and gather in Real Hidden Valley. Most roped climbs fall between 5.7 and 5.11, with a few harder, and boulder problems cover the full range from easy to very hard. The formations are rocky and uneven, and many have no rappel rings, so a walk-off descent that may involve steep downclimbing is part of the plan. Winter, spring and fall are the seasons for it.",
-  "review": { "sources": ["https://www.nps.gov/thingstodo/rock-climbing-in-hidden-valley.htm", "https://www.mountainproject.com/area/119538702/hidden-valley-area"] }
- },
- "ca_inland_empire": {
-  "_expect": { "name": "Inland Empire", "region": "California" },
-  "blurb": "A spread of small foothill climbing areas in western Riverside and San Bernardino Counties, between the Santa Ana, San Bernardino and San Jacinto ranges. The climate is drier than the coast and milder than the desert beyond San Gorgonio Pass. Bouldering is by far the main activity, mostly easy to moderate problems with a real handful of hard ones. Sport comes next, with some trad and top-rope, running up to about 5.12. The Riverside Area is the biggest hub, followed by Menifee and Perris, with smaller pockets around Temecula, Jurupa Hills, Hemet and Yucaipa. At Menifee the rock is rough and partly decomposed, so test holds. Spring through fall suits the boulders there, and winter stays comfortable.",
-  "review": { "sources": ["https://www.mountainproject.com/area/105903783/inland-empire", "https://app.advcollective.com/climbing/exploring-beer-me-boulders-a-raw-california-boulder-escape"] }
- },
- "_skipped": {}
+  "ak_anchorage_south_central_alaska": {
+    "_expect": {
+      "name": "Anchorage & South Central Alaska",
+      "region": "Alaska"
+    },
+    "blurb": "Climbing spreads out from Anchorage along the Glenn, Seward and Parks highways, with Valdez to the east. Sport and trad rock make up the largest share, mostly 5.8 to 5.12 with a solid middle of 5.10s and 5.11s. Ice is a big second draw, running from WI2 up to WI5 and WI6, along with alpine routes and a good amount of bouldering across the full V-scale. Hatcher Pass is the biggest hub for sport, trad and boulders. The Seward Highway puts routes right above the road, and Valdez adds summer rock to its winter ice, with Eklutna Canyon and Caribou Creek holding more frozen lines. The rock season generally runs from late spring to early fall.",
+    "review": {
+      "sources": [
+        "https://www.travelalaska.com/explore-alaska/articles/intro-rock-climbing-alaska",
+        "https://www.mountainproject.com/area/106905072/south-central-alaska"
+      ]
+    }
+  },
+  "ut_south_central_utah": {
+    "_expect": {
+      "name": "South Central Utah",
+      "region": "Utah"
+    },
+    "blurb": "A big, remote stretch of canyon country running from the Colorado River and Lake Powell near the Arizona line up toward Castle Dale, with few crowds and little in the way of good roads. Trad is the main event, followed by bouldering and sport, with most grades between 5.8 and 5.11 and a handful of easier and harder lines at the edges. The character changes a lot from place to place: desert towers of loose rock in the San Rafael Swell and Grand Staircase, good sandstone cracks at Capitol Reef, granite multi-pitch lines in the Henry Mountains, and volcanic tuff on the Aquarius Plateau at the Jungle. Expect summer heat and storms in the sandstone areas, and weak rock when wet.",
+    "review": {
+      "sources": [
+        "https://www.mountainproject.com/area/119375770/south-central-utah",
+        "https://www.nps.gov/care/planyourvisit/rockclimbingandbouldering.htm"
+      ]
+    }
+  },
+  "wv_new_river_gorge_proper": {
+    "_expect": {
+      "name": "New River Gorge Proper",
+      "region": "West Virginia"
+    },
+    "blurb": "The core of New River Gorge climbing: hard sandstone cliffs along the rim of a canyon over 900 feet deep, with walls mostly 30 to 120 feet tall. Sport and trad are about evenly split, with a large bouldering scene beside them. Grades center on 5.10 to 5.12, with fewer moderates and a real tail into 5.13 and 5.14. The rock is highly featured, with jugs, pockets and cracks on faces from vertical to steeply overhanging, and nearly every route ends at fixed anchors. Endless Wall, Bubba City, Beauty Mountain and Kaymoor are the big names. The best windows are spring, from late April into June, and autumn, from mid-September through October, and crags near the bridge can be crowded.",
+    "review": {
+      "sources": [
+        "https://www.nps.gov/neri/planyourvisit/climbing.htm",
+        "https://wvexplorer.com/new-river-gorge-climbing-area"
+      ]
+    }
+  },
+  "bc_fraser_valley": {
+    "_expect": {
+      "name": "Fraser Valley",
+      "region": "British Columbia"
+    },
+    "blurb": "Climbing stretches from Abbotsford east to Hope in British Columbia, along the Fraser River and the Trans-Canada corridor. Bouldering makes up most of the climbing, from easy problems through to the hardest grades, with Hunter Creek, Elbow Lake and the Hope-area boulders among the largest collections. Single-pitch sport and trad fill out the rest, mostly 5.8 to 5.12, at places like Harrison Bluffs, Slesse Creek and The Stacks. The rock changes with location, from solid granite to limestone, and the Cheam Range is known for loose, flaky volcanic rock. A few alpine peaks and some ice are also in reach, though they are a small part of the picture.",
+    "review": {
+      "sources": [
+        "https://www.mountainproject.com/area/105994950/fraser-valley",
+        "https://www.mountainproject.com/area/106337143/old-hope-bouldering?print=1"
+      ]
+    }
+  },
+  "ca_hidden_valley_area": {
+    "_expect": {
+      "name": "Hidden Valley Area",
+      "region": "California"
+    },
+    "blurb": "One of the central and most convenient climbing zones in Joshua Tree National Park, spread over four main pockets: Real Hidden Valley, the campground zone, The Outback and Roadside Rocks. Trad climbing leads by a wide margin, with a large bouldering scene and a good number of top-rope lines. Sport routes are few and gather in Real Hidden Valley. Most roped climbs fall between 5.7 and 5.11, with a few harder, and boulder problems cover the full range from easy to very hard. The formations are rocky and uneven, and many have no rappel rings, so a walk-off descent that may involve steep downclimbing is part of the plan. Winter, spring and fall are the seasons for it.",
+    "review": {
+      "sources": [
+        "https://www.nps.gov/thingstodo/rock-climbing-in-hidden-valley.htm",
+        "https://www.mountainproject.com/area/119538702/hidden-valley-area"
+      ]
+    }
+  },
+  "ca_inland_empire": {
+    "_expect": {
+      "name": "Inland Empire",
+      "region": "California"
+    },
+    "blurb": "A spread of small foothill climbing areas in western Riverside and San Bernardino Counties, between the Santa Ana, San Bernardino and San Jacinto ranges. The climate is drier than the coast and milder than the desert beyond San Gorgonio Pass. Bouldering is by far the main activity, mostly easy to moderate problems with a real handful of hard ones. Sport comes next, with some trad and top-rope, running up to about 5.12. The Riverside Area is the biggest hub, followed by Menifee and Perris, with smaller pockets around Temecula, Jurupa Hills, Hemet and Yucaipa. At Menifee the rock is rough and partly decomposed, so test holds. Spring through fall suits the boulders there, and winter stays comfortable.",
+    "review": {
+      "sources": [
+        "https://www.mountainproject.com/area/105903783/inland-empire",
+        "https://app.advcollective.com/climbing/exploring-beer-me-boulders-a-raw-california-boulder-escape"
+      ]
+    }
+  },
+  "_skipped": {}
 }
