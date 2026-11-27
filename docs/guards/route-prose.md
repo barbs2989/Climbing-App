@@ -1238,7 +1238,7 @@ the correction knows the screen is wrong, and they have no way to report it.
     - **2 more on a second-source pass**: Stokeman Pillar 5→6 pitches and 183→200 m (the first
       ascensionist's AAJ report: 200 m of climbing above the couloir, 250 m overall); Lichen Arete
       prose "eight-pitch"→nine (a guide service lists 9 pitches, as stored). **9 repaired in all.**
-    - **3 stay OPEN, on purpose** — the only source contradicts itself and nothing independent
+    - **3 stayed OPEN (settled 2026-11-26, below)** — the only source contradicts itself and nothing independent
       names the route: The Mammoth (header 8 pitches, text itemises P1–P7), Station D Peak North
       Buttress (header 7, text "nine pitches"), Echo Location (header 30 m, text "a 55 m pillar").
       A guidebook settles them; do not pick a side from the one page again.
@@ -1249,6 +1249,35 @@ the correction knows the screen is wrong, and they have no way to report it.
     screen disagrees, because a 0 pitch count and a missing length do not render. They are counted,
     not listed (`--missing` lists them). Filling them from the prose is a separate job, and a
     fingerprint does not authorise a bulk fill: read them first.
+  - **Second run, 2026-11-26: 20,869 described routes.** The MP pitch-count fill (#3998) writes MP's
+    HEADER count onto blank rows, and that header often disagrees with MP's own pitch list, which is
+    what our description was written from. Run against the snapshot with the fill's remaining plan
+    projected onto it: 26 pitch + 7 length contradictions. Every one READ and researched (MP's own
+    text from the crawl in `~/dev/mp-data/_mp/_details/`, MP pages, web search):
+    - **19 not contradictions** (sections, an easier start, "a single pitch is possible" on a
+      two-pitch line, a distance from a neighbour, an elevation gain). Added to `READ` with reasons.
+    - **The 3 left open in October are settled** by the same rule as before (the itemised list wins
+      when it also states the total): The Mammoth 8→7 (P1–P7 itemised, 7 pitch_detail rows),
+      Station D North Buttress 7→9 (the text says "nine pitches", nothing supports 7), Echo
+      Location 30→55 m (a one-pitch "55 m pillar"). No independent source names any of them.
+    - **Stats repaired** (`scripts/oneoff/fix-prose-length-2026-11-26.mjs`, compare-and-set, rollback
+      in `audits/prose-length/`): South Buttress (3rd Tower) 10→8, Wind Shear 13→14, Highwayman 12→13,
+      Weissner's Buttress 6→7, Wishful Thinking 5→6 and 142 m, Taivallista 4→3, Hail Mary 4→2 (the 4
+      was its neighbour Find Shade's), Crucify the Dread 4→3, Northwest Arete (Wister) 10→12. Blank
+      filled where the description states the whole route and a source agrees: Starlight Dihedral 11
+      (its MP text numbers 1–11), Optical Illusions 2, The Chase 457 m, Kolibri Crack 275 m (its six
+      pitch lengths; the prose's 90 m is the splitter), Mount Harwood N Face Couloir 671 m, The Flying
+      Dutchman 488 m. Half Mile High was filed as a V-scale boulder: a four-pitch 5.12- trad line,
+      300 ft, now trad/yds, 4 pitches, 91 m.
+    - **Prose repaired**: Cajun Capers "five-pitch"→six (MP itemises P1–P6, 1,100 ft); Southeast Face
+      (Sheep's Nose) "four-pitch"→"four or five pitches" (MP's own text says "4 or 5", numbers P1–P5).
+    - **Held in the fill's plan**: the 7 not-yet-written rows above carry `hold` in
+      `~/dev/mp-data/_mp/_pitches/plan.json`, and `fill-pitches-from-mp.mjs --apply` skips a held
+      entry, because its overwrite path would put MP's header count back.
+    - Still MISSING and not filled: War Hippies (3) and Calamity Jam (3); nothing but our own prose
+      names a count. Single-pitch claims are left blank: a blank already reads as one pitch (#3998).
+  - `--snapshot` reads the nightly static catalog the site serves (`states/index.json` + parts)
+    instead of the database: no DB slot, up to a day stale. Use it first; confirm with the DB run.
   - Service key, reads every route with an `overview` in 500-row pages (1,000-row pages hit the
     statement timeout on 2026-10-24). Not a build gate — a property of the DB, not the checkout.
 
