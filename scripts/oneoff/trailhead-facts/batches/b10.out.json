@@ -1,0 +1,316 @@
+[
+ {
+  "key": "t300",
+  "pass": null,
+  "parking": null,
+  "facilities": null,
+  "evidence": [],
+  "note": "No official page found for this trailhead; the Forest Service Diamond Peak PCT page states no fee, parking or toilet details."
+ },
+ {
+  "key": "t301",
+  "pass": null,
+  "parking": null,
+  "facilities": null,
+  "evidence": [],
+  "note": "No page found for this trailhead."
+ },
+ {
+  "key": "t302",
+  "pass": "Sno-Park permit, November 1 to April 30",
+  "parking": null,
+  "facilities": null,
+  "evidence": [
+   {
+    "url": "https://www.fs.usda.gov/r06/mthood/recreation/sno-parks-mt-hood",
+    "supports": [
+     "pass"
+    ]
+   }
+  ],
+  "note": "Official page covers only the winter permit window; summer parking rules not stated. Parking and toilet facts only on one non-official page."
+ },
+ {
+  "key": "t303",
+  "pass": "$5 day fee or Northwest Forest Pass",
+  "parking": "Parking area beside Devils Lake; overnight camping is not allowed in the day-use lot.",
+  "facilities": "Vault toilet.",
+  "evidence": [
+   {
+    "url": "https://fs.usda.gov/r06/deschutes/recreation/devils-lake-south-sister-trailhead",
+    "supports": [
+     "pass",
+     "parking",
+     "facilities"
+    ]
+   }
+  ],
+  "note": "Page does not mention drinking water, so facilities say only the toilet. Central Cascades wilderness permit is separate. Stored pass text says 'both trailheads'; page covers this one only."
+ },
+ {
+  "key": "t304",
+  "pass": null,
+  "parking": null,
+  "facilities": null,
+  "evidence": [],
+  "note": "Official Scatter Creek (Methow Valley Rd) page returned 404 on fetch; only WTA lists 'America the Beautiful or NW Forest Pass' (single non-official source), so left null."
+ },
+ {
+  "key": "t305",
+  "pass": null,
+  "parking": null,
+  "facilities": null,
+  "evidence": [],
+  "note": "Summit at Snoqualmie parking guide covers winter only; no summer or Discover Pass info found."
+ },
+ {
+  "key": "t306",
+  "pass": "$5 day fee or Northwest Forest Pass",
+  "parking": null,
+  "facilities": "Vault toilet; no drinking water.",
+  "evidence": [
+   {
+    "url": "https://fs.usda.gov/r06/okanogan-wenatchee/recreation/round-mountain-trailhead",
+    "supports": [
+     "pass",
+     "facilities"
+    ]
+   }
+  ],
+  "note": "Official page gives the trailhead at 47.7921,-120.7944 reached via FR 6910 then FR 6910-170 (about 4.5 mi), which differs from the stored 'just past Nason Creek Rest Area' drive text. Parking not described."
+ },
+ {
+  "key": "t307",
+  "pass": null,
+  "parking": null,
+  "facilities": null,
+  "evidence": [],
+  "note": "No page found for this unofficial pullout."
+ },
+ {
+  "key": "t308",
+  "pass": null,
+  "parking": null,
+  "facilities": null,
+  "evidence": [],
+  "note": "Conflict: WTA lists no pass and a vault toilet; Hike of the Week says Northwest Forest Pass or Interagency Pass required. Left null. Official page not found."
+ },
+ {
+  "key": "t309",
+  "pass": null,
+  "parking": null,
+  "facilities": null,
+  "evidence": [],
+  "note": "No page matches this pullout. Official Necklace Valley trailhead (FR 68, 47.6656,-121.2872) is about 1.5 km away and appears to be a different place."
+ },
+ {
+  "key": "t310",
+  "pass": null,
+  "parking": null,
+  "facilities": null,
+  "evidence": [],
+  "note": "Only WTA says no toilet (one non-official source); no official page found."
+ },
+ {
+  "key": "t311",
+  "pass": null,
+  "parking": null,
+  "facilities": null,
+  "evidence": [],
+  "note": "Official Damfino Lakes trailhead (end of FS-31, 48.959,-121.807) is a different place; no page found for the FS-3160 road end."
+ },
+ {
+  "key": "t312",
+  "pass": null,
+  "parking": null,
+  "facilities": null,
+  "evidence": [],
+  "note": "No page found."
+ },
+ {
+  "key": "t313",
+  "pass": null,
+  "parking": null,
+  "facilities": null,
+  "evidence": [],
+  "note": "No page found for the Bacon Creek road end."
+ },
+ {
+  "key": "t314",
+  "pass": "None",
+  "parking": null,
+  "facilities": "No restroom; no drinking water.",
+  "evidence": [
+   {
+    "url": "https://fs.usda.gov/r06/okanogan-wenatchee/recreation/white-pine-trailhead",
+    "supports": [
+     "pass",
+     "facilities"
+    ]
+   }
+  ],
+  "note": "Official White Pine Trailhead page at 47.7708,-120.9270 (coords match). It says no fees required and a free self-issued wilderness permit. Parking not described."
+ },
+ {
+  "key": "t315",
+  "pass": null,
+  "parking": null,
+  "facilities": null,
+  "evidence": [],
+  "note": "Official Ice Caves page 404'd on fetch. WTA (single non-official source) reports paved lot, vault toilets, Northwest Forest Pass; reports of toilet closures conflict. Left null."
+ },
+ {
+  "key": "t316",
+  "pass": null,
+  "parking": null,
+  "facilities": null,
+  "evidence": [],
+  "note": "Same as t315: official page unavailable; WTA only, so left null."
+ },
+ {
+  "key": "t317",
+  "pass": null,
+  "parking": null,
+  "facilities": null,
+  "evidence": [],
+  "note": "Official buckskin-ridge-trailhead page 404'd; nothing else found."
+ },
+ {
+  "key": "t318",
+  "pass": "None",
+  "parking": null,
+  "facilities": "Vault toilet; no drinking water.",
+  "evidence": [
+   {
+    "url": "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/harts-pass-trailhead",
+    "supports": [
+     "pass",
+     "facilities"
+    ]
+   }
+  ],
+  "note": "Official page says no fees required (stored pass text said Northwest Forest Pass, which this page contradicts). Road is high-clearance only. Parking not described."
+ },
+ {
+  "key": "t319",
+  "pass": "$5 day fee or Northwest Forest Pass",
+  "parking": "Paved south lot; parking is very limited and fills quickly.",
+  "facilities": "Vault toilets; no drinking water.",
+  "evidence": [
+   {
+    "url": "https://fs.usda.gov/r06/okanogan-wenatchee/recreation/heather-maple-pass-rainy-pass-picnic-site",
+    "supports": [
+     "pass",
+     "parking",
+     "facilities"
+    ]
+   }
+  ],
+  "note": "Matched to the Forest Service Rainy Pass picnic site page (48.5166,-120.7358, south lot). Closed in winter with SR 20. Input land manager says NPS but the page is Forest Service."
+ },
+ {
+  "key": "t320",
+  "pass": "$5 day fee or Northwest Forest Pass",
+  "parking": null,
+  "facilities": "Vault toilet; no drinking water.",
+  "evidence": [
+   {
+    "url": "https://www.fs.usda.gov/r06/olympic/recreation/upper-big-quilcene-trailhead",
+    "supports": [
+     "pass",
+     "facilities"
+    ]
+   }
+  ],
+  "note": "Coordinates match exactly. Parking not described."
+ },
+ {
+  "key": "t321",
+  "pass": null,
+  "parking": null,
+  "facilities": null,
+  "evidence": [],
+  "note": "Official Stevens Pass North page says the PCT trailhead is on the NORTH side of US-2 and charges $5/day or a recreation pass; our entry says south side/resort lot, so identity is unclear. Left null."
+ },
+ {
+  "key": "t322",
+  "pass": null,
+  "parking": null,
+  "facilities": null,
+  "evidence": [],
+  "note": "Same as t321: official PCT page places the trailhead on the north side of US-2; not matched to this south-side lot. Left null."
+ },
+ {
+  "key": "t323",
+  "pass": null,
+  "parking": null,
+  "facilities": null,
+  "evidence": [
+   {
+    "url": "https://www.fs.usda.gov/r06/mbs/recreation/dingford-creek-trailhead",
+    "supports": [
+     "parking",
+     "facilities"
+    ]
+   }
+  ],
+  "note": "Official Dingford Creek trailhead page at 47.5173,-121.4543 (coords match). It lists no fee. FR 56 is rough; four-wheel drive recommended. [nulled at review: Dingford Creek page is a different trailhead from the Dutch Miller Gap road end]"
+ },
+ {
+  "key": "t324",
+  "pass": "$5 day fee or Northwest Forest Pass",
+  "parking": "Heavily used trailhead with limited parking; park only where permitted.",
+  "facilities": "Vault toilet; no drinking water.",
+  "evidence": [
+   {
+    "url": "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/eightmile-trailhead",
+    "supports": [
+     "pass",
+     "parking",
+     "facilities"
+    ]
+   }
+  ],
+  "note": "Coords match (47.536,-120.814). Road is steep and rough, high clearance recommended, closed to vehicles in winter."
+ },
+ {
+  "key": "t325",
+  "pass": null,
+  "parking": null,
+  "facilities": null,
+  "evidence": [],
+  "note": "NPS pages give location only (Reflection Lakes lot, south side of Stevens Canyon Rd); capacity (about 35) and no facilities only on WTA and a third-party guide; fee not stated there. Left null."
+ },
+ {
+  "key": "t326",
+  "pass": null,
+  "parking": null,
+  "facilities": null,
+  "evidence": [],
+  "note": "WTA says NWFP or America the Beautiful pass; Mountaineers page returned 403. No official page found. Left null."
+ },
+ {
+  "key": "t327",
+  "pass": null,
+  "parking": null,
+  "facilities": null,
+  "evidence": [],
+  "note": "WTA says pass None and no toilet, but that conflicts with WDFW's general Discover Pass rule; no official WDFW page for this lot. Left null."
+ },
+ {
+  "key": "t328",
+  "pass": null,
+  "parking": null,
+  "facilities": null,
+  "evidence": [],
+  "note": "Only WTA (non-official): no pass, pit toilet, about 20 vehicles. NPS pages for the trailhead not found. Left null."
+ },
+ {
+  "key": "t329",
+  "pass": null,
+  "parking": null,
+  "facilities": null,
+  "evidence": [],
+  "note": "WTA only. FR 38 washout at milepost 7 and FR 12 closure from Aug 2026 make the trailhead inaccessible by vehicle."
+ }
+]

@@ -36,6 +36,9 @@ for (const f of files) {
     if (!g) { console.error(`unknown key ${x.key}`); process.exit(1); }
     const facts = {};
     for (const fld of Object.keys(KEY)) { const c = clean(fld, x[fld]); if (c) facts[KEY[fld]] = c; }
+    /* One spelling per pass: in Washington and Oregon (Forest Service Region 6) the "recreation
+       pass" a fee page names IS the Northwest Forest Pass, and two batches worded it each way. */
+    if (facts.trailheadPass && (g.state === "Washington" || g.state === "Oregon")) facts.trailheadPass = facts.trailheadPass.replace(/^Northwest Forest Pass or \$5 day fee$/i, "$5 day fee or Northwest Forest Pass").replace(/^\$5 day fee or recreation pass$/i, "$5 day fee or Northwest Forest Pass");
     if (Object.keys(facts).length && (x.evidence || []).length) plan.push({ g, facts });
   }
 }
