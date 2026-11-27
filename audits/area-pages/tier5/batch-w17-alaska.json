@@ -1,30 +1,63 @@
 {
- "ak_3rd_tower_main": {
-  "_expect": { "name": "3rd Tower - Main", "region": "Alaska" },
-  "blurb": "The Main face of the 3rd Tower is the tallest summit of the Mendenhall Towers, a seven-peak massif roughly a dozen miles north of Juneau; seen from town it is the third spire counting from the left. Its six alpine routes are long multi-pitch trad outings, with the best-known ones running around ten pitches. The grades span an easy-for-the-area 5.6 line, four routes in the 5.10 range and one at 5.12, so there is something for confident mid-grade parties as well as strong ones. The summit sits above 6,000 feet, and this is a committing day in a remote setting rather than a quick crag visit.",
-  "review": { "sources": ["https://www.mountainproject.com/area/117524666/3rd-tower-main", "https://www.mountainproject.com/area/106651078/mendenhall-towers"] }
- },
- "ak_captain_kaboom_boulders": {
-  "_expect": { "name": "Captain Kaboom Boulders", "region": "Alaska" },
-  "blurb": "A small cluster of granite boulders in the Hatcher Pass valley near the old Independence Mine, reached on foot past the mine ruins and then off the trail toward the creek. These are the first chalked blocks you meet on the way in. Six problems are recorded, mostly easy to moderate, running from the lowest grades up through V2 and with one standout around V6. It is a quiet spot with little traffic apart from hikers, and the stone is granite. A good short stop to combine with the other boulders further up the valley.",
-  "rock": "granite",
-  "review": { "sources": ["https://www.mountainproject.com/area/107267919/captain-kaboom-boulders", "https://www.mountainproject.com/area/106931730/independence-mine-bouldering-and-climbing", "https://thetopo.com/crags/hatcher-pass-ak/topos/captain-kaboom-boulder"] }
- },
- "ak_dragonfly_creek": {
-  "_expect": { "name": "Dragonfly Creek", "region": "Alaska" },
-  "blurb": "Dragonfly Creek is a small drainage beside the Parks Highway near the Denali park entrance, best known for its frozen waterfall. Two steps of ice, about 10 and 20 meters, make a short, friendly outing at an easy-to-moderate grade, and there are anchors above so it can be top-roped. The six routes on record are mostly ice and mixed, from WI2 up to WI4, plus a couple of boulder problems and a single sport line near 5.9. Views down the Nenana valley are a bonus. Expect to approach from the top and walk or rappel down to the base.",
-  "parking_note": "Pull off at the highway turnout just short of the creek bridge, around mile 242 on the Parks Highway, on the side before the Denali park entrance road.",
-  "review": { "sources": ["https://www.mountainproject.com/area/108641282/dragonfly-creek", "https://alaskaiceclimbing.com/?p=837"] }
- },
- "ak_gorilla_s_head": {
-  "_expect": { "name": "Gorilla's Head", "region": "Alaska" },
-  "blurb": "Gorilla's Head is a compact limestone formation within East Grapefruit Rocks, on the Elliott Highway north of Fairbanks. Six bolted sport lines share the face, running from an easy 5.8 through a cluster of 5.10s to a single 5.11 at the top end. Like the rest of the Grapefruit crags, the rock is short, with routes in the range of a few dozen feet, and this face is reported to hold shade, which helps on warm days. It makes a handy stop for a climber working through lower and middle sport grades without a long commitment.",
-  "review": { "sources": ["https://www.mountainproject.com/area/108587012/gorillas-head", "https://www.mountainproject.com/area/105974971/east-grapefruit-rocks"] }
- },
- "_skipped": {
-  "ak_1st_tower_west_tower": "no fetched page about the crag itself (only the Mendenhall Towers parent page, which lists it with no description, and route/news pages)",
-  "ak_4_mile_crag": "only one fetched page names it (Skagway parent page, no description); the OpenBeta page returned 404",
-  "ak_asgard_tor": "no fetched page about Asgard Tor itself; only the Granite Tors parent page and route pages mention it",
-  "ak_fred_s_sport_routes": "no page found that names this crag; the Juneau Road System Climbs page does not list it"
- }
+  "ak_3rd_tower_main": {
+    "_expect": {
+      "name": "3rd Tower - Main",
+      "region": "Alaska"
+    },
+    "blurb": "The Main face of the 3rd Tower is the tallest summit of the Mendenhall Towers, a seven-peak massif roughly a dozen miles north of Juneau; seen from town it is the third spire counting from the left. Its six alpine routes are long multi-pitch trad outings, with the best-known ones running around ten pitches. The grades span an easy-for-the-area 5.6 line, four routes in the 5.10 range and one at 5.12, so there is something for confident mid-grade parties as well as strong ones. The summit sits above 6,000 feet, and this is a committing day in a remote setting rather than a quick crag visit.",
+    "review": {
+      "sources": [
+        "https://www.mountainproject.com/area/117524666/3rd-tower-main",
+        "https://www.mountainproject.com/area/106651078/mendenhall-towers"
+      ]
+    }
+  },
+  "ak_captain_kaboom_boulders": {
+    "_expect": {
+      "name": "Captain Kaboom Boulders",
+      "region": "Alaska"
+    },
+    "blurb": "A small cluster of granite boulders in the Hatcher Pass valley near the old Independence Mine, reached on foot past the mine ruins and then off the trail toward the creek. These are the first chalked blocks you meet on the way in. It has six problems, mostly easy to moderate, running from the lowest grades up through V2 and with one standout around V6. It is a quiet spot with little traffic apart from hikers, and the stone is granite. A good short stop to combine with the other boulders further up the valley.",
+    "rock": "granite",
+    "review": {
+      "sources": [
+        "https://www.mountainproject.com/area/107267919/captain-kaboom-boulders",
+        "https://www.mountainproject.com/area/106931730/independence-mine-bouldering-and-climbing",
+        "https://thetopo.com/crags/hatcher-pass-ak/topos/captain-kaboom-boulder"
+      ]
+    }
+  },
+  "ak_dragonfly_creek": {
+    "_expect": {
+      "name": "Dragonfly Creek",
+      "region": "Alaska"
+    },
+    "blurb": "Dragonfly Creek is a small drainage beside the Parks Highway near the Denali park entrance, best known for its frozen waterfall. Two steps of ice, about 10 and 20 meters, make a short, friendly outing at an easy-to-moderate grade, and there are anchors above so it can be top-roped. The six routes on record are mostly ice and mixed, from WI2 up to WI4, plus a couple of boulder problems and a single sport line near 5.9. Views down the Nenana valley are a bonus. Expect to approach from the top and walk or rappel down to the base.",
+    "parking_note": "Pull off at the highway turnout just short of the creek bridge, around mile 242 on the Parks Highway, on the side before the Denali park entrance road.",
+    "review": {
+      "sources": [
+        "https://www.mountainproject.com/area/108641282/dragonfly-creek",
+        "https://alaskaiceclimbing.com/?p=837"
+      ]
+    }
+  },
+  "ak_gorilla_s_head": {
+    "_expect": {
+      "name": "Gorilla's Head",
+      "region": "Alaska"
+    },
+    "blurb": "Gorilla's Head is a compact limestone formation within East Grapefruit Rocks, on the Elliott Highway north of Fairbanks. Six bolted sport lines share the face, running from an easy 5.8 through a cluster of 5.10s to a single 5.11 at the top end. Like the rest of the Grapefruit crags, the rock is short, with routes in the range of a few dozen feet, and this face is reported to hold shade, which helps on warm days. It makes a handy stop for a climber working through lower and middle sport grades without a long commitment.",
+    "review": {
+      "sources": [
+        "https://www.mountainproject.com/area/108587012/gorillas-head",
+        "https://www.mountainproject.com/area/105974971/east-grapefruit-rocks"
+      ]
+    }
+  },
+  "_skipped": {
+    "ak_1st_tower_west_tower": "no fetched page about the crag itself (only the Mendenhall Towers parent page, which lists it with no description, and route/news pages)",
+    "ak_4_mile_crag": "only one fetched page names it (Skagway parent page, no description); the OpenBeta page returned 404",
+    "ak_asgard_tor": "no fetched page about Asgard Tor itself; only the Granite Tors parent page and route pages mention it",
+    "ak_fred_s_sport_routes": "no page found that names this crag; the Juneau Road System Climbs page does not list it"
+  }
 }

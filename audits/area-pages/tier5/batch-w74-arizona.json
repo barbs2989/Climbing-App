@@ -1,35 +1,75 @@
 {
- "az_right_dome": {
-  "_expect": { "name": "Right Dome", "region": "Arizona" },
-  "blurb": "Right Dome is a granite dome in the Coyote Domes group of Mendoza Canyon in southern Arizona, northeast of Elephant Dome. Six trad routes are logged, from moderate climbs around 5.7 up to 5.10. Expect mostly slabby face climbing on compact stone with chickenheads and plates. One side of the dome is sunny, while another face stays shaded through most of the usual climbing season and sits out of the wind. The valley is remote and very quiet, so you will probably have it largely to yourself. The base is reached by following cairns up to a saddle, then a short easy scramble over boulders.",
-  "review": { "sources": ["https://www.mountainproject.com/area/125957516/right-dome", "https://www.mountainproject.com/area/105738040/mendoza-canyon-aka-coyote-domes"] }
- },
- "az_face_of_god_the": {
-  "_expect": { "name": "Face of God, The", "region": "Arizona" },
-  "blurb": "This is a small crag in Queen Creek Canyon in central Arizona, filed under Godhead South. Six routes are logged, mixing trad and sport, with grades running from 5.10 up to 5.12, so it suits climbers already comfortable on harder ground. Two trails climb up from the road; this wall is reached by the second one, which also serves the Cherub area, and you turn uphill at a cairn after walking a short way south. The name comes from a face-like profile in the rock that you can pick out from the trailhead parking.",
-  "review": { "sources": ["https://www.mountainproject.com/area/107382089/the-face-of-god", "https://www.mountainproject.com/area/107380875/godhead-south"] }
- },
- "az_cornerstone": {
-  "_expect": { "name": "Cornerstone", "region": "Arizona" },
-  "blurb": "Cornerstone is a small trad crag in the Bear Canyon zone of Mount Lemmon, in the Santa Catalina Mountains near Tucson. Six routes are logged between roughly 5.8 and 5.10, mostly protected with gear and with some top-rope options. The canyon around it is shady and pine-filled, yet this wall itself is described as a sunny one. It shows few signs of use, so it is quiet and well suited to climbers who like to have a wall to themselves.",
-  "review": { "sources": ["https://www.mountainproject.com/area/105930513/cornerstone", "https://www.mountainproject.com/area/106822906/2-bear-canyon"] }
- },
- "az_tricky_boulder": {
-  "_expect": { "name": "Tricky Boulder", "region": "Arizona" },
-  "blurb": "Tricky Boulder is a single boulder inside the main bouldering zone of the Beardsley boulders in the Phoenix area. It holds six problems spread from V0 up to V7, so there is something for most levels with one standout hard line. The stone is rough, weathered desert granite that wears on skin, and the landing is friendly. Boulders around here can run to roughly 15 feet, so bring a pad. Leave the car at the Lone Cactus lot, then follow cairned switchbacks up the hillside, bearing right below the taller roped faces.",
-  "review": { "sources": ["https://www.mountainproject.com/area/125568229/tricky-boulder", "https://www.mountainproject.com/area/119455323/beardsley-bouldering"] }
- },
- "az_sandwich_spire_west_face_new_york_deli_wall": {
-  "_expect": { "name": "Sandwich Spire West Face (New York Deli Wall)", "region": "Arizona" },
-  "blurb": "This small wall sits in the tightest gully between the Agave Spires on Mount Lemmon, near Tucson. Six routes are logged, a mix of sport and trad from about 5.9 to 5.11, on rock praised as high quality. The gully gets very little sun. The way in is a rough bushwhack through downed oak and manzanita, and the area as a whole is hard to reach, which keeps crowds away: expect to be alone. The spires can be spotted from the highway near the 7 Cataracts pullout.",
-  "review": { "sources": ["https://www.mountainproject.com/area/106557854/sandwich-spire-west-face-new-york-deli-wall", "https://www.mountainproject.com/area/106172437/agave-spires-area"] }
- },
- "_skipped": {
-  "az_east_face_union_wall": "no fetched page about this crag itself (Ravens page lists one route only; the other East Face page is Raven A)",
-  "az_outfrumunders": "only one fetched page names it; Thumb Butte page does not mention it and the Upper Outfromunder page is a sibling",
-  "az_sine_wall_the": "no fetched page about the Sine Wall itself; Paradise Forks and The Prow pages only name it in passing"
- },
- "_conflicts": {
-  "az_outfrumunders": "stored rock granodiorite, but https://www.mountainproject.com/area/106224004/outfrumunders and https://mountainproject.com/area/105944337/thumb-butte say basalt"
- }
+  "az_right_dome": {
+    "_expect": {
+      "name": "Right Dome",
+      "region": "Arizona"
+    },
+    "blurb": "Right Dome is a granite dome in the Coyote Domes group of Mendoza Canyon in southern Arizona, northeast of Elephant Dome. It has six trad routes, from moderate climbs around 5.7 up to 5.10. Expect mostly slabby face climbing on compact stone with chickenheads and plates. One side of the dome is sunny, while another face stays shaded through most of the usual climbing season and sits out of the wind. The valley is remote and very quiet, so you will probably have it largely to yourself. The base is reached by following cairns up to a saddle, then a short easy scramble over boulders.",
+    "review": {
+      "sources": [
+        "https://www.mountainproject.com/area/125957516/right-dome",
+        "https://www.mountainproject.com/area/105738040/mendoza-canyon-aka-coyote-domes"
+      ]
+    }
+  },
+  "az_face_of_god_the": {
+    "_expect": {
+      "name": "Face of God, The",
+      "region": "Arizona"
+    },
+    "blurb": "This is a small crag in Queen Creek Canyon in central Arizona, filed under Godhead South. It has six routes, mixing trad and sport, with grades running from 5.10 up to 5.12, so it suits climbers already comfortable on harder ground. Two trails climb up from the road; this wall is reached by the second one, which also serves the Cherub area, and you turn uphill at a cairn after walking a short way south. The name comes from a face-like profile in the rock that you can pick out from the trailhead parking.",
+    "review": {
+      "sources": [
+        "https://www.mountainproject.com/area/107382089/the-face-of-god",
+        "https://www.mountainproject.com/area/107380875/godhead-south"
+      ]
+    }
+  },
+  "az_cornerstone": {
+    "_expect": {
+      "name": "Cornerstone",
+      "region": "Arizona"
+    },
+    "blurb": "Cornerstone is a small trad crag in the Bear Canyon zone of Mount Lemmon, in the Santa Catalina Mountains near Tucson. It has six routes between roughly 5.8 and 5.10, mostly protected with gear and with some top-rope options. The canyon around it is shady and pine-filled, yet this wall itself is described as a sunny one. It shows few signs of use, so it is quiet and well suited to climbers who like to have a wall to themselves.",
+    "review": {
+      "sources": [
+        "https://www.mountainproject.com/area/105930513/cornerstone",
+        "https://www.mountainproject.com/area/106822906/2-bear-canyon"
+      ]
+    }
+  },
+  "az_tricky_boulder": {
+    "_expect": {
+      "name": "Tricky Boulder",
+      "region": "Arizona"
+    },
+    "blurb": "Tricky Boulder is a single boulder inside the main bouldering zone of the Beardsley boulders in the Phoenix area. It holds six problems spread from V0 up to V7, so there is something for most levels with one standout hard line. The stone is rough, weathered desert granite that wears on skin, and the landing is friendly. Boulders around here can run to roughly 15 feet, so bring a pad. Leave the car at the Lone Cactus lot, then follow cairned switchbacks up the hillside, bearing right below the taller roped faces.",
+    "review": {
+      "sources": [
+        "https://www.mountainproject.com/area/125568229/tricky-boulder",
+        "https://www.mountainproject.com/area/119455323/beardsley-bouldering"
+      ]
+    }
+  },
+  "az_sandwich_spire_west_face_new_york_deli_wall": {
+    "_expect": {
+      "name": "Sandwich Spire West Face (New York Deli Wall)",
+      "region": "Arizona"
+    },
+    "blurb": "This small wall sits in the tightest gully between the Agave Spires on Mount Lemmon, near Tucson. It has six routes, a mix of sport and trad from about 5.9 to 5.11, on rock praised as high quality. The gully gets very little sun. The way in is a rough bushwhack through downed oak and manzanita, and the area as a whole is hard to reach, which keeps crowds away: expect to be alone. The spires can be spotted from the highway near the 7 Cataracts pullout.",
+    "review": {
+      "sources": [
+        "https://www.mountainproject.com/area/106557854/sandwich-spire-west-face-new-york-deli-wall",
+        "https://www.mountainproject.com/area/106172437/agave-spires-area"
+      ]
+    }
+  },
+  "_skipped": {
+    "az_east_face_union_wall": "no fetched page about this crag itself (Ravens page lists one route only; the other East Face page is Raven A)",
+    "az_outfrumunders": "only one fetched page names it; Thumb Butte page does not mention it and the Upper Outfromunder page is a sibling",
+    "az_sine_wall_the": "no fetched page about the Sine Wall itself; Paradise Forks and The Prow pages only name it in passing"
+  },
+  "_conflicts": {
+    "az_outfrumunders": "stored rock granodiorite, but https://www.mountainproject.com/area/106224004/outfrumunders and https://mountainproject.com/area/105944337/thumb-butte say basalt"
+  }
 }

@@ -1,42 +1,98 @@
 {
- "az_too_small_to_solo_wall": {
-  "_expect": { "name": "Too Small to Solo Wall", "region": "Arizona" },
-  "blurb": "A small block of boulders and one short toprope line, set in the North Side Crags at Griffith Springs near Flagstaff. It sits a little farther down canyon from the Aesthetic Area, up a short slope toward the blocks. Four boulder problems run from very easy up to about V2, and the single toprope climb is an easy grade-5 line. The surrounding Griffith Springs crags are short, with routes mostly 30 to 45 feet, set among big ponderosa pines and described as shady.",
-  "review": { "sources": ["https://www.mountainproject.com/area/124021874/too-small-to-solo-wall", "https://mountainproject.com/area/120946887/griffith-springs"] }
- },
- "az_quickie_wall": {
-  "_expect": { "name": "Quickie Wall", "region": "Arizona" },
-  "blurb": "A 70 to 90 foot wall in West Clear Creek canyon on the Mogollon Rim, found roughly a third of the way along the trail down into the canyon, then about 100 yards off to the right. Five trad routes follow cracks, running from 5.9 up through several 5.10s to a single 5.11. The canyon around it is sandstone and mostly ground-up trad, with few bolts and widely spaced ones where they do exist, so bring a full rack and be comfortable placing gear.",
-  "rock": "sandstone",
-  "review": { "sources": ["https://www.mountainproject.com/area/111050856/quickie-wall", "https://www.mountainproject.com/area/106113685/west-clear-creek"] }
- },
- "az_parking_fun_boulder": {
-  "_expect": { "name": "Parking Fun Boulder", "region": "Arizona" },
-  "blurb": "A small boulder in the e-Boulders section of Beardsley Bouldering on the north side of Phoenix. It stands only a few paces northwest of where you leave the car and can be seen from the trail leading to the e-Boulders. Five problems are listed, from easy V0 and V0- up through two V3s to one V5-. The page mentions a powerful compression problem here and describes the rock on at least one line as poor quality, but handy for a quick session close to the road.",
-  "review": { "sources": ["https://www.mountainproject.com/area/123712951/parking-fun-boulder", "https://www.mountainproject.com/area/122676653/the-e-boulders"] }
- },
- "az_eroder_wall": {
-  "_expect": { "name": "Eroder Wall", "region": "Arizona" },
-  "blurb": "Part of the Mohawk, a long cliff band in Finger Rock Canyon in the Santa Catalina Mountains above Tucson, lying to the right of the Ranger Danger section. The wall stands 200 to 400 feet tall and holds five trad routes of about two to five pitches, from 5.9 through three 5.10s to one 5.11. Expect mostly solid face climbing mixed with varied corners and cracks. Every route ends on top of the cliff, so you walk off afterward; carry some nuts or tat for a bail.",
-  "review": { "sources": ["https://www.mountainproject.com/area/123593250/eroder-wall", "https://www.mountainproject.com/area/200999601/the-mohawk"] }
- },
- "az_grad_rock": {
-  "_expect": { "name": "Grad Rock", "region": "Arizona" },
-  "blurb": "A small wall in the West Stronghold of Cochise Stronghold, part of the Isle of You group of crags. Five routes are listed, mostly sport with a couple of trad lines, ranging from an easy 5.7 to a cluster of 5.11s, with a couple of two-pitch climbs. The wall stays in shade through the morning, while the northwest-facing section catches sun in the afternoon. The wall is fairly new, so some loose rock remains and a helmet is a good idea. The approach follows a cairned trail that starts the same way as the one to Trad Wall.",
-  "review": { "sources": ["https://www.mountainproject.com/area/107866778/grad-rock", "https://www.mountainproject.com/area/105738031/isle-of-you"] }
- },
- "az_mt_chaktar": {
-  "_expect": { "name": "Mt. Chaktar", "region": "Arizona" },
-  "blurb": "A dome in the Sheepshead area on the west side of Cochise Stronghold, a few peaks northwest of the Sheepshead itself and the farthest left in the row of peaks seen from the west. It holds five multi-pitch trad routes of three to five pitches, from 5.9 up to a 5.11- line, with most in the 5.9 to 5.10 range. Reaching the base is a real mission: follow the trail toward the Muttonhead, cross a saddle, then bushwhack along the foot of the dome. Descent is by rappel with a single 60 m rope, then some scrambling.",
-  "review": { "sources": ["https://www.mountainproject.com/area/106563123/mt-chaktar", "https://www.mountainproject.com/area/105738025/sheepshead-area-southwest"] }
- },
- "az_eastern_boulders": {
-  "_expect": { "name": "Eastern Boulders", "region": "Arizona" },
-  "blurb": "A handful of boulder problems on the east side of the Meteor Crater rest stop beside I-40 in northern Arizona, found by facing the restrooms from the parking area and looking left. Five problems are listed: two at the easiest grade, a V0-, a V1-2, and one harder problem around V5. The place is better as a quick roadside break than as a destination trip, and it is a spot to try a few moves while driving west.",
-  "review": { "sources": ["https://www.mountainproject.com/area/201358644/eastern-boulders", "https://www.mountainproject.com/area/112425805/meteor-crater-rest-area-i-40-westbound"] }
- },
- "_skipped": {
-  "az_smile_boulder": "no fetched page about the Beardsley Smile Boulder itself; the only Smile Boulder page found is a different place in Joe's Valley, Utah; Beardsley Bouldering page does not mention it"
- },
- "_conflicts": {}
+  "az_too_small_to_solo_wall": {
+    "_expect": {
+      "name": "Too Small to Solo Wall",
+      "region": "Arizona"
+    },
+    "blurb": "A small block of boulders and one short toprope line, set in the North Side Crags at Griffith Springs near Flagstaff. It sits a little farther down canyon from the Aesthetic Area, up a short slope toward the blocks. Four boulder problems run from very easy up to about V2, and the single toprope climb is an easy grade-5 line. The surrounding Griffith Springs crags are short, with routes mostly 30 to 45 feet, set among big ponderosa pines and described as shady.",
+    "review": {
+      "sources": [
+        "https://www.mountainproject.com/area/124021874/too-small-to-solo-wall",
+        "https://mountainproject.com/area/120946887/griffith-springs"
+      ]
+    }
+  },
+  "az_quickie_wall": {
+    "_expect": {
+      "name": "Quickie Wall",
+      "region": "Arizona"
+    },
+    "blurb": "A 70 to 90 foot wall in West Clear Creek canyon on the Mogollon Rim, found roughly a third of the way along the trail down into the canyon, then about 100 yards off to the right. Five trad routes follow cracks, running from 5.9 up through several 5.10s to a single 5.11. The canyon around it is sandstone and mostly ground-up trad, with few bolts and widely spaced ones where they do exist, so bring a full rack and be comfortable placing gear.",
+    "rock": "sandstone",
+    "review": {
+      "sources": [
+        "https://www.mountainproject.com/area/111050856/quickie-wall",
+        "https://www.mountainproject.com/area/106113685/west-clear-creek"
+      ]
+    }
+  },
+  "az_parking_fun_boulder": {
+    "_expect": {
+      "name": "Parking Fun Boulder",
+      "region": "Arizona"
+    },
+    "blurb": "A small boulder in the e-Boulders section of Beardsley Bouldering on the north side of Phoenix. It stands only a few paces northwest of where you leave the car and can be seen from the trail leading to the e-Boulders. It has five problems, from easy V0 and V0- up through two V3s to one V5-. The page mentions a powerful compression problem here and describes the rock on at least one line as poor quality, but handy for a quick session close to the road.",
+    "review": {
+      "sources": [
+        "https://www.mountainproject.com/area/123712951/parking-fun-boulder",
+        "https://www.mountainproject.com/area/122676653/the-e-boulders"
+      ]
+    }
+  },
+  "az_eroder_wall": {
+    "_expect": {
+      "name": "Eroder Wall",
+      "region": "Arizona"
+    },
+    "blurb": "Part of the Mohawk, a long cliff band in Finger Rock Canyon in the Santa Catalina Mountains above Tucson, lying to the right of the Ranger Danger section. The wall stands 200 to 400 feet tall and holds five trad routes of about two to five pitches, from 5.9 through three 5.10s to one 5.11. Expect mostly solid face climbing mixed with varied corners and cracks. Every route ends on top of the cliff, so you walk off afterward; carry some nuts or tat for a bail.",
+    "review": {
+      "sources": [
+        "https://www.mountainproject.com/area/123593250/eroder-wall",
+        "https://www.mountainproject.com/area/200999601/the-mohawk"
+      ]
+    }
+  },
+  "az_grad_rock": {
+    "_expect": {
+      "name": "Grad Rock",
+      "region": "Arizona"
+    },
+    "blurb": "A small wall in the West Stronghold of Cochise Stronghold, part of the Isle of You group of crags. It has five routes, mostly sport with a couple of trad lines, ranging from an easy 5.7 to a cluster of 5.11s, with a couple of two-pitch climbs. The wall stays in shade through the morning, while the northwest-facing section catches sun in the afternoon. The wall is fairly new, so some loose rock remains and a helmet is a good idea. The approach follows a cairned trail that starts the same way as the one to Trad Wall.",
+    "review": {
+      "sources": [
+        "https://www.mountainproject.com/area/107866778/grad-rock",
+        "https://www.mountainproject.com/area/105738031/isle-of-you"
+      ]
+    }
+  },
+  "az_mt_chaktar": {
+    "_expect": {
+      "name": "Mt. Chaktar",
+      "region": "Arizona"
+    },
+    "blurb": "A dome in the Sheepshead area on the west side of Cochise Stronghold, a few peaks northwest of the Sheepshead itself and the farthest left in the row of peaks seen from the west. It holds five multi-pitch trad routes of three to five pitches, from 5.9 up to a 5.11- line, with most in the 5.9 to 5.10 range. Reaching the base is a real mission: follow the trail toward the Muttonhead, cross a saddle, then bushwhack along the foot of the dome. Descent is by rappel with a single 60 m rope, then some scrambling.",
+    "review": {
+      "sources": [
+        "https://www.mountainproject.com/area/106563123/mt-chaktar",
+        "https://www.mountainproject.com/area/105738025/sheepshead-area-southwest"
+      ]
+    }
+  },
+  "az_eastern_boulders": {
+    "_expect": {
+      "name": "Eastern Boulders",
+      "region": "Arizona"
+    },
+    "blurb": "A handful of boulder problems on the east side of the Meteor Crater rest stop beside I-40 in northern Arizona, found by facing the restrooms from the parking area and looking left. It has five problems: two at the easiest grade, a V0-, a V1-2, and one harder problem around V5. The place is better as a quick roadside break than as a destination trip, and it is a spot to try a few moves while driving west.",
+    "review": {
+      "sources": [
+        "https://www.mountainproject.com/area/201358644/eastern-boulders",
+        "https://www.mountainproject.com/area/112425805/meteor-crater-rest-area-i-40-westbound"
+      ]
+    }
+  },
+  "_skipped": {
+    "az_smile_boulder": "no fetched page about the Beardsley Smile Boulder itself; the only Smile Boulder page found is a different place in Joe's Valley, Utah; Beardsley Bouldering page does not mention it"
+  },
+  "_conflicts": {}
 }

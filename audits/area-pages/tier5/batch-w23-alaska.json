@@ -1,37 +1,85 @@
 {
- "ak_mt_hunter": {
-  "_expect": {"name": "Mt Hunter", "region": "Alaska"},
-  "blurb": "Mt Hunter is a steep alpine peak in Denali National Park, in the Alaska Range, and it sees far fewer parties than its famous neighbour. The five climbs here are all ice-oriented, with a couple around WI4, one at WI6 and two with 5.8 rock-grade sections, so this is serious terrain for experienced alpinists rather than a place to learn. Expect expedition-style logistics: a ski in from the glacier airstrip for the western and northern lines, or a longer approach from the Tokositna side for eastern ones. Weather and deep snow high on the mountain often decide whether a team reaches the top.",
-  "review": {"sources": ["https://mountainproject.com/area/106213704/mt-hunter", "https://www.nps.gov/dena/blogs/West-Ridge-of-Hunter.htm"]}
- },
- "ak_pbr_wall": {
-  "_expect": {"name": "PBR Wall", "region": "Alaska"},
-  "blurb": "PBR Wall is a traditional-gear crag in the Archangel Valley part of Hatcher Pass, in the Upper Webfoot Prospect sector. Its five routes run from easy 5.7 and 5.8 up through two in the 5.10 range to a single 5.11, and several are long, stretching beyond 35 metres or running to multiple pitches. It is described as a good moderate wall that gets sun for most of the day. Bring a full trad rack. Listings give very little detail on the walk in beyond heading up toward Webfoot, so expect to navigate by the valley itself.",
-  "review": {"sources": ["https://www.mountainproject.com/area/115185784/pbr-wall", "https://rakkup.com/guidebook/hatcher-pass-rock-climbing/pbr-wall/s22897"]}
- },
- "ak_moose_s_tooth": {
-  "_expect": {"name": "Moose's Tooth", "region": "Alaska"},
-  "blurb": "Moose's Tooth is the biggest peak on the east side of the Ruth Gorge in Denali National Park, a granite mountain of about 10,300 feet with a long summit ridge and large faces. The climbs here are mainly long ice and mixed lines, mostly in the WI4 to WI5 range, plus one alpine route. Reaching it means landing on a glacier strip, either the Root Canal on the south side or the head of the Buckskin Glacier for the east face. It is a committed, remote objective for experienced alpine teams, and none of the routes are short days.",
-  "review": {"sources": ["https://mountainproject.com/area/105976870/mooses-tooth", "https://en.wikipedia.org/wiki/The_Moose%27s_Tooth"]}
- },
- "ak_cape_fear_boulder": {
-  "_expect": {"name": "Cape Fear Boulder", "region": "Alaska"},
-  "blurb": "Cape Fear Boulder sits on the beach in Captain Cook State Recreation Area on the Kenai Peninsula, near Nikiski, next to the Money Island Boulder. It offers a handful of problems on one seaside rock, mostly in the V2 to V6 range with a couple of easier ones, and the beach setting feels quiet and out of the way. Plan around the tide, since many boulders along this shore are only reachable when the water is low. The walk along the sand is long enough that many visitors bring bikes to carry pads.",
-  "review": {"sources": ["https://www.mountainproject.com/area/113572530/cape-fear-boulder?print=1", "https://mountainproject.com/area/108219460/capt-cook-state-recreation-area"]}
- },
- "ak_3_pigs_2": {
-  "_expect": {"name": "3 Pigs", "region": "Alaska"},
-  "blurb": "3 Pigs is a big Chugach peak of roughly 6,800 feet beside the Richardson Highway near Thompson Pass and Valdez, with climbing between the Tsaina Bridge and a few miles up the road. Ice flows spill down its lower flanks, and routes continue up toward the summit, so it suits both roadside ice and longer alpine days. The five listed climbs sit between WI3 and WI5, one of them with harder mixed climbing. The east face is hidden from the road, so you have to hike into the east basin to see it, and avalanche-prone slopes there reward early-season timing.",
-  "review": {"sources": ["https://www.mountainproject.com/area/120074417/3-pigs", "https://www.mountainproject.com/route/120074536/pork-ceviche"]}
- },
- "ak_bear_creek_2": {
-  "_expect": {"name": "Bear Creek", "region": "Alaska"},
-  "blurb": "Bear Creek is a narrow ice canyon about 17 miles out of Valdez toward Glennallen, the first big canyon on the left after Keystone Canyon, and a railroad bridge marks the entrance. It holds five ice and mixed lines from WI3 up to WI5, led by a classic two-pitch flow that is a popular pick when slopes elsewhere feel loaded. The canyon is sheltered compared with the windier ground nearby. Ski or snowshoe up the creek beneath the bridge for roughly 10 to 20 minutes. Finding a place to leave the car is often the hardest part of the day.",
-  "parking_note": "Roadside pull-offs along the highway near the canyon are limited, so allow time to find a spot and be ready to walk some distance from where you end up.",
-  "review": {"sources": ["https://www.mountainproject.com/area/108027071", "https://alaskaiceclimbing.com/bear-creek/"]}
- },
- "_skipped": {
-  "ak_thunder_mountain_ice": "only one fetched page about the crag (Mountain Project); SummitPost returned 403 and no second page found",
-  "ak_peanut_gullery": "no page found by name after several searches; no fetched page about the crag"
- }
+  "ak_mt_hunter": {
+    "_expect": {
+      "name": "Mt Hunter",
+      "region": "Alaska"
+    },
+    "blurb": "Mt Hunter is a steep alpine peak in Denali National Park, in the Alaska Range, and it sees far fewer parties than its famous neighbour. The five climbs here are all ice-oriented, with a couple around WI4, one at WI6 and two with 5.8 rock-grade sections, so this is serious terrain for experienced alpinists rather than a place to learn. Expect expedition-style logistics: a ski in from the glacier airstrip for the western and northern lines, or a longer approach from the Tokositna side for eastern ones. Weather and deep snow high on the mountain often decide whether a team reaches the top.",
+    "review": {
+      "sources": [
+        "https://mountainproject.com/area/106213704/mt-hunter",
+        "https://www.nps.gov/dena/blogs/West-Ridge-of-Hunter.htm"
+      ]
+    }
+  },
+  "ak_pbr_wall": {
+    "_expect": {
+      "name": "PBR Wall",
+      "region": "Alaska"
+    },
+    "blurb": "PBR Wall is a traditional-gear crag in the Archangel Valley part of Hatcher Pass, in the Upper Webfoot Prospect sector. Its five routes run from easy 5.7 and 5.8 up through two in the 5.10 range to a single 5.11, and several are long, stretching beyond 35 metres or running to multiple pitches. It is described as a good moderate wall that gets sun for most of the day. Bring a full trad rack. Listings give very little detail on the walk in beyond heading up toward Webfoot, so expect to navigate by the valley itself.",
+    "review": {
+      "sources": [
+        "https://www.mountainproject.com/area/115185784/pbr-wall",
+        "https://rakkup.com/guidebook/hatcher-pass-rock-climbing/pbr-wall/s22897"
+      ]
+    }
+  },
+  "ak_moose_s_tooth": {
+    "_expect": {
+      "name": "Moose's Tooth",
+      "region": "Alaska"
+    },
+    "blurb": "Moose's Tooth is the biggest peak on the east side of the Ruth Gorge in Denali National Park, a granite mountain of about 10,300 feet with a long summit ridge and large faces. The climbs here are mainly long ice and mixed lines, mostly in the WI4 to WI5 range, plus one alpine route. Reaching it means landing on a glacier strip, either the Root Canal on the south side or the head of the Buckskin Glacier for the east face. It is a committed, remote objective for experienced alpine teams, and none of the routes are short days.",
+    "review": {
+      "sources": [
+        "https://mountainproject.com/area/105976870/mooses-tooth",
+        "https://en.wikipedia.org/wiki/The_Moose%27s_Tooth"
+      ]
+    }
+  },
+  "ak_cape_fear_boulder": {
+    "_expect": {
+      "name": "Cape Fear Boulder",
+      "region": "Alaska"
+    },
+    "blurb": "Cape Fear Boulder sits on the beach in Captain Cook State Recreation Area on the Kenai Peninsula, near Nikiski, next to the Money Island Boulder. It offers a handful of problems on one seaside rock, mostly in the V2 to V6 range with a couple of easier ones, and the beach setting feels quiet and out of the way. Plan around the tide, since many boulders along this shore are only reachable when the water is low. The walk along the sand is long enough that many visitors bring bikes to carry pads.",
+    "review": {
+      "sources": [
+        "https://www.mountainproject.com/area/113572530/cape-fear-boulder?print=1",
+        "https://mountainproject.com/area/108219460/capt-cook-state-recreation-area"
+      ]
+    }
+  },
+  "ak_3_pigs_2": {
+    "_expect": {
+      "name": "3 Pigs",
+      "region": "Alaska"
+    },
+    "blurb": "3 Pigs is a big Chugach peak of roughly 6,800 feet beside the Richardson Highway near Thompson Pass and Valdez, with climbing between the Tsaina Bridge and a few miles up the road. Ice flows spill down its lower flanks, and routes continue up toward the summit, so it suits both roadside ice and longer alpine days. The five climbs sit between WI3 and WI5, one of them with harder mixed climbing. The east face is hidden from the road, so you have to hike into the east basin to see it, and avalanche-prone slopes there reward early-season timing.",
+    "review": {
+      "sources": [
+        "https://www.mountainproject.com/area/120074417/3-pigs",
+        "https://www.mountainproject.com/route/120074536/pork-ceviche"
+      ]
+    }
+  },
+  "ak_bear_creek_2": {
+    "_expect": {
+      "name": "Bear Creek",
+      "region": "Alaska"
+    },
+    "blurb": "Bear Creek is a narrow ice canyon about 17 miles out of Valdez toward Glennallen, the first big canyon on the left after Keystone Canyon, and a railroad bridge marks the entrance. It holds five ice and mixed lines from WI3 up to WI5, led by a classic two-pitch flow that is a popular pick when slopes elsewhere feel loaded. The canyon is sheltered compared with the windier ground nearby. Ski or snowshoe up the creek beneath the bridge for roughly 10 to 20 minutes. Finding a place to leave the car is often the hardest part of the day.",
+    "parking_note": "Roadside pull-offs along the highway near the canyon are limited, so allow time to find a spot and be ready to walk some distance from where you end up.",
+    "review": {
+      "sources": [
+        "https://www.mountainproject.com/area/108027071",
+        "https://alaskaiceclimbing.com/bear-creek/"
+      ]
+    }
+  },
+  "_skipped": {
+    "ak_thunder_mountain_ice": "only one fetched page about the crag (Mountain Project); SummitPost returned 403 and no second page found",
+    "ak_peanut_gullery": "no page found by name after several searches; no fetched page about the crag"
+  }
 }

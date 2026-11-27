@@ -1,41 +1,97 @@
 {
- "ar_cove_the": {
-  "_expect": { "name": "Cove, The", "region": "Arkansas" },
-  "blurb": "The Cove is a small bouldering pocket at Lake Lincoln, roughly 30 to 40 minutes west of Fayetteville in northwest Arkansas. Nine problems are recorded, running from an easy V0 crack through the middle V grades to unclimbed projects around V10, so a mixed group will find something. The setting is shaded and sits close to the lake loop trail. This is a very recent development, so expect some dirt on the holds and landings. The sandstone boulders here are a minor addition next to the bigger boulder fields elsewhere at the lake.",
-  "review": { "sources": ["https://www.mountainproject.com/area/111195368/the-cove", "https://www.mountainproject.com/area/106232604/lake-lincoln"] }
- },
- "ar_deliverance": {
-  "_expect": { "name": "Deliverance", "region": "Arkansas" },
-  "blurb": "Deliverance is a cliff band in the Sam's Throne area of north-central Arkansas, and you can pick it out looking southeast from the Throne itself. It holds nine routes, eight of them trad and one sport, with grades spread fairly evenly from 5.6 up to 5.11. The first few lines stay wet for long stretches, while the band swings toward more sun further along, past a big boulder below the cliff. Few climbers come here, since the way in is a long uphill bushwhack along the cliff line.",
-  "review": { "sources": ["https://www.mountainproject.com/area/112323714/deliverance", "https://mountainproject.com/area/105901033/sams-throne-surroundings"] }
- },
- "ar_pit_the": {
-  "_expect": { "name": "Pit, The", "region": "Arkansas" },
-  "blurb": "The Pit is a boulder sector in the Gasfields, a bouldering destination in Arkansas. The main feature is an overhanging wave of fine-grained sandstone, and every one of the nine problems finishes with a top-out. Grades run from a very easy warm-up through the V1 to V5 range, with a single hard problem near V7 at the top. It is among the first sectors you meet on the downhill walk into the main part of the Gasfields.",
-  "review": { "sources": ["https://www.mountainproject.com/area/120184380/the-pit", "https://thetopo.com/crags/the-gasfields/routelist/the-pit-10861"] }
- },
- "ar_outback_wall": {
-  "_expect": { "name": "Outback Wall", "region": "Arkansas" },
-  "approach": "Hike in from the base of the Dog Walkdown.",
-  "blurb": "Outback Wall is a mostly sport wall within The Outback at Sam's Throne in north-central Arkansas, just beyond the Wall of the Unclimbables. Of its nine routes, eight are sport and one is trad. Grades start around 5.7 and top out in the 5.11s, with the bulk sitting at 5.10 and 5.11. The wall stretches from a wet black dihedral offwidth on one end, around a few corners, to an overhanging arete at the other. The rock across The Outback is generally good, though some lines carry more lichen than the East Main Bluff.",
-  "review": { "sources": ["https://www.mountainproject.com/area/106178960/outback-wall", "https://www.mountainproject.com/area/105901635/the-outback"] }
- },
- "ar_sun_wall": {
-  "_expect": { "name": "Sun Wall", "region": "Arkansas" },
-  "blurb": "Sun Wall is a sport wall in the Piney Bowl section of the Big Piney region in north-central Arkansas, standing to the right of a waterfall. The wall is bright orange and holds nine bolted routes. Difficulty is on the steep side: two lines sit at 5.10, five at 5.12 and two at 5.13, so this is more a spot for strong climbers than for beginners. Several of the lines are open projects that have not yet been repeated.",
-  "review": { "sources": ["https://www.mountainproject.com/area/127309893/sun-wall", "https://www.mountainproject.com/area/127309667/piney-bowl"] }
- },
- "ar_spy_rock": {
-  "_expect": { "name": "Spy Rock", "region": "Arkansas" },
-  "blurb": "Spy Rock is a small crag in northwest Arkansas near the town of Ozark, within about an hour of Fayetteville. Six of its nine routes are trad and three are sport, though a few quickdraws are still worth carrying. Grades range from 5.7 to the low 5.12s, with a fairly even spread in between. Reaching it means a short trail walk to an overlook, followed by a scramble down to the right to one of the lower bands. It makes the most sense as a stop combined with other climbing nearby.",
-  "review": { "sources": ["https://www.mountainproject.com/area/112525524/spy-rock", "https://www.mountainproject.com/area/118730582/northwest-arkansas-nwa-region"] }
- },
- "ar_squeeze_block_titanic_wall_the": {
-  "_expect": { "name": "Squeeze Block & Titanic Wall, The", "region": "Arkansas" },
-  "blurb": "The Squeeze Block & Titanic Wall sits on the West Main Bluff at Sam's Throne in north-central Arkansas. It offers a mix of climbing styles on mostly good rock: eight trad routes and one sport route. Grades span 5.8 up to 5.11, with a cluster in the 5.8 to 5.9 range and a few harder lines at the top end. The section runs from the Dog Walkdown to just past a boulder called Quarter Dome, which lies about 30 yards downhill from the bluff line.",
-  "review": { "sources": ["https://mountainproject.com/area/105902860/the-squeeze-block-titanic-wall", "https://www.mountainproject.com/area/classics/105901630/3-west-main-bluff"] }
- },
- "_skipped": {
-  "ar_warm_up_block": "no page found about an Arkansas Warm-Up Block under Alexandria North; the only pages with that name are in Colorado (Clear Creek Canyon, Alderfer/Three Sisters)"
- }
+  "ar_cove_the": {
+    "_expect": {
+      "name": "Cove, The",
+      "region": "Arkansas"
+    },
+    "blurb": "The Cove is a small bouldering pocket at Lake Lincoln, roughly 30 to 40 minutes west of Fayetteville in northwest Arkansas. It has nine problems, running from an easy V0 crack through the middle V grades to unclimbed projects around V10, so a mixed group will find something. The setting is shaded and sits close to the lake loop trail. This is a very recent development, so expect some dirt on the holds and landings. The sandstone boulders here are a minor addition next to the bigger boulder fields elsewhere at the lake.",
+    "review": {
+      "sources": [
+        "https://www.mountainproject.com/area/111195368/the-cove",
+        "https://www.mountainproject.com/area/106232604/lake-lincoln"
+      ]
+    }
+  },
+  "ar_deliverance": {
+    "_expect": {
+      "name": "Deliverance",
+      "region": "Arkansas"
+    },
+    "blurb": "Deliverance is a cliff band in the Sam's Throne area of north-central Arkansas, and you can pick it out looking southeast from the Throne itself. It holds nine routes, eight of them trad and one sport, with grades spread fairly evenly from 5.6 up to 5.11. The first few lines stay wet for long stretches, while the band swings toward more sun further along, past a big boulder below the cliff. Few climbers come here, since the way in is a long uphill bushwhack along the cliff line.",
+    "review": {
+      "sources": [
+        "https://www.mountainproject.com/area/112323714/deliverance",
+        "https://mountainproject.com/area/105901033/sams-throne-surroundings"
+      ]
+    }
+  },
+  "ar_pit_the": {
+    "_expect": {
+      "name": "Pit, The",
+      "region": "Arkansas"
+    },
+    "blurb": "The Pit is a boulder sector in the Gasfields, a bouldering destination in Arkansas. The main feature is an overhanging wave of fine-grained sandstone, and every one of the nine problems finishes with a top-out. Grades run from a very easy warm-up through the V1 to V5 range, with a single hard problem near V7 at the top. It is among the first sectors you meet on the downhill walk into the main part of the Gasfields.",
+    "review": {
+      "sources": [
+        "https://www.mountainproject.com/area/120184380/the-pit",
+        "https://thetopo.com/crags/the-gasfields/routelist/the-pit-10861"
+      ]
+    }
+  },
+  "ar_outback_wall": {
+    "_expect": {
+      "name": "Outback Wall",
+      "region": "Arkansas"
+    },
+    "approach": "Hike in from the base of the Dog Walkdown.",
+    "blurb": "Outback Wall is a mostly sport wall within The Outback at Sam's Throne in north-central Arkansas, just beyond the Wall of the Unclimbables. Of its nine routes, eight are sport and one is trad. Grades start around 5.7 and top out in the 5.11s, with the bulk sitting at 5.10 and 5.11. The wall stretches from a wet black dihedral offwidth on one end, around a few corners, to an overhanging arete at the other. The rock across The Outback is generally good, though some lines carry more lichen than the East Main Bluff.",
+    "review": {
+      "sources": [
+        "https://www.mountainproject.com/area/106178960/outback-wall",
+        "https://www.mountainproject.com/area/105901635/the-outback"
+      ]
+    }
+  },
+  "ar_sun_wall": {
+    "_expect": {
+      "name": "Sun Wall",
+      "region": "Arkansas"
+    },
+    "blurb": "Sun Wall is a sport wall in the Piney Bowl section of the Big Piney region in north-central Arkansas, standing to the right of a waterfall. The wall is bright orange and holds nine bolted routes. Difficulty is on the steep side: two lines sit at 5.10, five at 5.12 and two at 5.13, so this is more a spot for strong climbers than for beginners. Several of the lines are open projects that have not yet been repeated.",
+    "review": {
+      "sources": [
+        "https://www.mountainproject.com/area/127309893/sun-wall",
+        "https://www.mountainproject.com/area/127309667/piney-bowl"
+      ]
+    }
+  },
+  "ar_spy_rock": {
+    "_expect": {
+      "name": "Spy Rock",
+      "region": "Arkansas"
+    },
+    "blurb": "Spy Rock is a small crag in northwest Arkansas near the town of Ozark, within about an hour of Fayetteville. Six of its nine routes are trad and three are sport, though a few quickdraws are still worth carrying. Grades range from 5.7 to the low 5.12s, with a fairly even spread in between. Reaching it means a short trail walk to an overlook, followed by a scramble down to the right to one of the lower bands. It makes the most sense as a stop combined with other climbing nearby.",
+    "review": {
+      "sources": [
+        "https://www.mountainproject.com/area/112525524/spy-rock",
+        "https://www.mountainproject.com/area/118730582/northwest-arkansas-nwa-region"
+      ]
+    }
+  },
+  "ar_squeeze_block_titanic_wall_the": {
+    "_expect": {
+      "name": "Squeeze Block & Titanic Wall, The",
+      "region": "Arkansas"
+    },
+    "blurb": "The Squeeze Block & Titanic Wall sits on the West Main Bluff at Sam's Throne in north-central Arkansas. It offers a mix of climbing styles on mostly good rock: eight trad routes and one sport route. Grades span 5.8 up to 5.11, with a cluster in the 5.8 to 5.9 range and a few harder lines at the top end. The section runs from the Dog Walkdown to just past a boulder called Quarter Dome, which lies about 30 yards downhill from the bluff line.",
+    "review": {
+      "sources": [
+        "https://mountainproject.com/area/105902860/the-squeeze-block-titanic-wall",
+        "https://www.mountainproject.com/area/classics/105901630/3-west-main-bluff"
+      ]
+    }
+  },
+  "_skipped": {
+    "ar_warm_up_block": "no page found about an Arkansas Warm-Up Block under Alexandria North; the only pages with that name are in Colorado (Clear Creek Canyon, Alderfer/Three Sisters)"
+  }
 }

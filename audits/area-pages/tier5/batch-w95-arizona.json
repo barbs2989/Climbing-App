@@ -1,45 +1,109 @@
 {
- "az_tonto_buttress": {
-  "_expect": { "name": "Tonto Buttress", "region": "Arizona" },
-  "blurb": "Tonto Buttress is a small cliff in Stewart Pocket, up around 5,200 feet in the hills near Payson. Its broad west face and narrow left shoulder hold five climbs, nearly all of them trad lines at moderate grades from the 5.6 to 5.7 range, plus a single sport route in the low 5.11s. One route follows a long, clean dihedral to the top. The granite here is part of a pocket that is lightly developed overall, and a few of the moderate lines are run out, so bring a rack and a steady head. Look for cairns on the way up.",
-  "review": { "sources": ["https://www.mountainproject.com/area/112825350/tonto-buttress", "https://www.mountainproject.com/area/105874747/stewart-pocket"] }
- },
- "az_sundial_the": {
-  "_expect": { "name": "Sundial, The", "region": "Arizona" },
-  "blurb": "The Sundial is a standout spire set among hoodoos and odd rock shapes in the Superstition Mountains, with an amphitheater that looks across at the east face of Weavers Needle. Five climbs are recorded, mostly trad, covering the 5.9 to 5.11 range with one two-pitch sport line. Rock quality is middling and a bit loose compared with nearby Barks Canyon Wall, so test holds. Getting here is a commitment: from the Peralta trailhead you go over the ridge on the Bluff Spring trail into Barks Canyon, then follow a cairned path north, for roughly an hour to an hour and a half with some route-finding.",
-  "review": { "sources": ["https://mountainproject.com/area/118274848/the-sundial", "https://www.mountainproject.com/area/105787978/superstition-mountains"] }
- },
- "az_forrest_spires": {
-  "_expect": { "name": "Forrest Spires", "region": "Arizona" },
-  "blurb": "Forrest Spires is a cluster of freestanding towers on the south side of Siphon Draw in the Superstition Mountains, close to Siphon Dome and Crying Dinosaur. Three big towers stand out, with a few smaller ones beside them. Five trad routes range from easy ground up to the 5.8 level, but several carry R or PG13 warnings, so the grades understate the seriousness. Expect an off-trail bushwhack south from the state park lot that can take an hour or more, though the towers are easy to spot. Page descriptions call the spot remote, with sheep and vultures for company.",
-  "review": { "sources": ["https://www.mountainproject.com/area/116362138/forrest-spires", "https://www.mountainproject.com/area/105787978/superstition-mountains"] }
- },
- "az_flatiron": {
-  "_expect": { "name": "Flatiron", "region": "Arizona" },
-  "blurb": "The Flatiron is a 450-foot wall on the east edge of the Phoenix valley in the Superstition Mountains, with a prow where its south and north exposures meet. Five long trad climbs are recorded, all in the 5.10 range and running from three to five pitches. Only a few lines have been established, and some are described as serious. Rock tends to be better on the shadier routes. The approach is long: head up Siphon Draw gully from the state park for about two hours to the north side, then follow a trail along the cliff base toward the prow.",
-  "review": { "sources": ["https://www.mountainproject.com/area/105797454/flatiron", "https://www.mountainproject.com/area/105787978/superstition-mountains"] }
- },
- "az_the_castle": {
-  "_expect": { "name": "The Castle", "region": "Arizona" },
-  "blurb": "The Castle is the left-most formation at the Nursery, in Bear Canyon on Mount Lemmon near Tucson, at about 5,600 feet. It holds five sport routes: two easy ones bolted with first-timers in mind, one in the 5.8 range, and two low 5.10s. The slab faces south, so it catches the sun. You can also walk to the top and rig top ropes from the anchors there. From the Nursery's approach trail, a side path heads west near Rapunzel's Tower to reach it. The whole Nursery was retrobolted in winter 2025 so its routes can be led.",
-  "aspect": "S",
-  "review": { "sources": ["https://www.mountainproject.com/area/106674461/the-castle", "https://www.mountainproject.com/area/106664863/the-nursery"] }
- },
- "az_co_op_crack_area": {
-  "_expect": { "name": "Co-op Crack Area", "region": "Arizona" },
-  "blurb": "Co-op Crack Area is a small separate corner of the High Rappel area in the Granite Dells near Prescott, tucked around the south end of the main wall. Five climbs are recorded, trad or top rope, with one at 5.8, three in the 5.10 range and one in the low 5.11s. Three of them are rated among the better lines of the wider High Rappel area. To get here, walk past the far south side of the main wall and turn the corner. The main wall itself is called one of the most striking in the Dells.",
-  "review": { "sources": ["https://www.mountainproject.com/area/110478822/co-op-crack-area", "https://www.mountainproject.com/area/110479190/high-rappel-area"] }
- },
- "az_way_back": {
-  "_expect": { "name": "Way Back", "region": "Arizona" },
-  "blurb": "Way Back is a small sport crag in the Outback section of Windy Ridge on Mount Lemmon, near 7,100 feet. It has five routes: one at 5.10 and four in the 5.11 range, so it suits climbers who already lead the 5.10s. The Outback as a whole is a spread-out collection of formations with plenty of bolted lines, reached on a hike of around 35 to 40 minutes from a roadside pullout to its northernmost wall. Trails between the formations were still being completed, so expect some searching.",
-  "review": { "sources": ["https://www.mountainproject.com/area/114185005/way-back", "https://www.mountainproject.com/area/105838485/the-outback"] }
- },
- "az_zester_cluster": {
-  "_expect": { "name": "Zester cluster", "region": "Arizona" },
-  "blurb": "The Zester cluster is a handful of boulders among the Entrance Boulders in the Wilderness of Rocks on Mount Lemmon, near 7,800 feet. Five problems are listed: one V4, two V5s, a V10 and a V12 project, so it favors strong boulderers. The stone in this pocket gets praise for its quality, though the wider Entrance Boulders vary from hard, clean granite to loose rubble. Find it by walking down and left behind the ACDC boulder, a short stroll of five to ten minutes. One boulder here is a nicely perched block.",
-  "review": { "sources": ["https://www.mountainproject.com/area/118986524/zester-cluster", "https://www.mountainproject.com/area/117753278/entrance-boulders"] }
- },
- "_skipped": {},
- "_conflicts": {}
+  "az_tonto_buttress": {
+    "_expect": {
+      "name": "Tonto Buttress",
+      "region": "Arizona"
+    },
+    "blurb": "Tonto Buttress is a small cliff in Stewart Pocket, up around 5,200 feet in the hills near Payson. Its broad west face and narrow left shoulder hold five climbs, nearly all of them trad lines at moderate grades from the 5.6 to 5.7 range, plus a single sport route in the low 5.11s. One route follows a long, clean dihedral to the top. The granite here is part of a pocket that is lightly developed overall, and a few of the moderate lines are run out, so bring a rack and a steady head. Look for cairns on the way up.",
+    "review": {
+      "sources": [
+        "https://www.mountainproject.com/area/112825350/tonto-buttress",
+        "https://www.mountainproject.com/area/105874747/stewart-pocket"
+      ]
+    }
+  },
+  "az_sundial_the": {
+    "_expect": {
+      "name": "Sundial, The",
+      "region": "Arizona"
+    },
+    "blurb": "The Sundial is a standout spire set among hoodoos and odd rock shapes in the Superstition Mountains, with an amphitheater that looks across at the east face of Weavers Needle. It has five climbs, mostly trad, covering the 5.9 to 5.11 range with one two-pitch sport line. Rock quality is middling and a bit loose compared with nearby Barks Canyon Wall, so test holds. Getting here is a commitment: from the Peralta trailhead you go over the ridge on the Bluff Spring trail into Barks Canyon, then follow a cairned path north, for roughly an hour to an hour and a half with some route-finding.",
+    "review": {
+      "sources": [
+        "https://mountainproject.com/area/118274848/the-sundial",
+        "https://www.mountainproject.com/area/105787978/superstition-mountains"
+      ]
+    }
+  },
+  "az_forrest_spires": {
+    "_expect": {
+      "name": "Forrest Spires",
+      "region": "Arizona"
+    },
+    "blurb": "Forrest Spires is a cluster of freestanding towers on the south side of Siphon Draw in the Superstition Mountains, close to Siphon Dome and Crying Dinosaur. Three big towers stand out, with a few smaller ones beside them. Five trad routes range from easy ground up to the 5.8 level, but several carry R or PG13 warnings, so the grades understate the seriousness. Expect an off-trail bushwhack south from the state park lot that can take an hour or more, though the towers are easy to spot. Page descriptions call the spot remote, with sheep and vultures for company.",
+    "review": {
+      "sources": [
+        "https://www.mountainproject.com/area/116362138/forrest-spires",
+        "https://www.mountainproject.com/area/105787978/superstition-mountains"
+      ]
+    }
+  },
+  "az_flatiron": {
+    "_expect": {
+      "name": "Flatiron",
+      "region": "Arizona"
+    },
+    "blurb": "The Flatiron is a 450-foot wall on the east edge of the Phoenix valley in the Superstition Mountains, with a prow where its south and north exposures meet. It has five long trad climbs, all in the 5.10 range and running from three to five pitches. Only a few lines have been established, and some are described as serious. Rock tends to be better on the shadier routes. The approach is long: head up Siphon Draw gully from the state park for about two hours to the north side, then follow a trail along the cliff base toward the prow.",
+    "review": {
+      "sources": [
+        "https://www.mountainproject.com/area/105797454/flatiron",
+        "https://www.mountainproject.com/area/105787978/superstition-mountains"
+      ]
+    }
+  },
+  "az_the_castle": {
+    "_expect": {
+      "name": "The Castle",
+      "region": "Arizona"
+    },
+    "blurb": "The Castle is the left-most formation at the Nursery, in Bear Canyon on Mount Lemmon near Tucson, at about 5,600 feet. It holds five sport routes: two easy ones bolted with first-timers in mind, one in the 5.8 range, and two low 5.10s. The slab faces south, so it catches the sun. You can also walk to the top and rig top ropes from the anchors there. From the Nursery's approach trail, a side path heads west near Rapunzel's Tower to reach it. The whole Nursery was retrobolted in winter 2025 so its routes can be led.",
+    "aspect": "S",
+    "review": {
+      "sources": [
+        "https://www.mountainproject.com/area/106674461/the-castle",
+        "https://www.mountainproject.com/area/106664863/the-nursery"
+      ]
+    }
+  },
+  "az_co_op_crack_area": {
+    "_expect": {
+      "name": "Co-op Crack Area",
+      "region": "Arizona"
+    },
+    "blurb": "Co-op Crack Area is a small separate corner of the High Rappel area in the Granite Dells near Prescott, tucked around the south end of the main wall. It has five climbs, trad or top rope, with one at 5.8, three in the 5.10 range and one in the low 5.11s. Three of them are rated among the better lines of the wider High Rappel area. To get here, walk past the far south side of the main wall and turn the corner. The main wall itself is called one of the most striking in the Dells.",
+    "review": {
+      "sources": [
+        "https://www.mountainproject.com/area/110478822/co-op-crack-area",
+        "https://www.mountainproject.com/area/110479190/high-rappel-area"
+      ]
+    }
+  },
+  "az_way_back": {
+    "_expect": {
+      "name": "Way Back",
+      "region": "Arizona"
+    },
+    "blurb": "Way Back is a small sport crag in the Outback section of Windy Ridge on Mount Lemmon, near 7,100 feet. It has five routes: one at 5.10 and four in the 5.11 range, so it suits climbers who already lead the 5.10s. The Outback as a whole is a spread-out collection of formations with plenty of bolted lines, reached on a hike of around 35 to 40 minutes from a roadside pullout to its northernmost wall. Trails between the formations were still being completed, so expect some searching.",
+    "review": {
+      "sources": [
+        "https://www.mountainproject.com/area/114185005/way-back",
+        "https://www.mountainproject.com/area/105838485/the-outback"
+      ]
+    }
+  },
+  "az_zester_cluster": {
+    "_expect": {
+      "name": "Zester cluster",
+      "region": "Arizona"
+    },
+    "blurb": "The Zester cluster is a handful of boulders among the Entrance Boulders in the Wilderness of Rocks on Mount Lemmon, near 7,800 feet. It has five problems: one V4, two V5s, a V10 and a V12 project, so it favors strong boulderers. The stone in this pocket gets praise for its quality, though the wider Entrance Boulders vary from hard, clean granite to loose rubble. Find it by walking down and left behind the ACDC boulder, a short stroll of five to ten minutes. One boulder here is a nicely perched block.",
+    "review": {
+      "sources": [
+        "https://www.mountainproject.com/area/118986524/zester-cluster",
+        "https://www.mountainproject.com/area/117753278/entrance-boulders"
+      ]
+    }
+  },
+  "_skipped": {},
+  "_conflicts": {}
 }

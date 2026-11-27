@@ -1,32 +1,72 @@
 {
- "ar_bullet_wall": {
-  "_expect": { "name": "Bullet Wall", "region": "Arkansas" },
-  "blurb": "Bullet Wall is a small sport wall in the Piney Bowl area of the Big Piney region, in north-central Arkansas, and it is the first wall you meet coming in from either direction. Six bolted routes climb here, starting at 5.8 and topping out in the 5.11 range, with half of them at 5.11. The lines are short, which makes the wall a handy early stop for a warm-up before moving on to the rest of Piney Bowl. It was once a shady wall, but a big oak fell in a December 2018 tornado and the wall now gets more exposure. Piney Bowl as a whole tends to fall into shade by late morning from fall through spring.",
-  "review": { "sources": ["https://www.mountainproject.com/area/127310357/bullet-wall", "https://www.mountainproject.com/area/127309667/piney-bowl"] }
- },
- "ar_miho_boulder": {
-  "_expect": { "name": "Miho Boulder", "region": "Arkansas" },
-  "blurb": "Miho Boulder is part of the Idaho Boulders section on the west side of Horseshoe Canyon Ranch, in north-central Arkansas. You find it over the trail and to the north of the warm-up wall. The surrounding field has its blocks packed close together right beside the trail, so it is easy to hop to a neighbouring boulder or to nearby routes when one is busy, and the field can get crowded now and then. Miho itself holds six problems, from an easy V1 up to a V8, with a couple of mid-grade lines around V3 and one at V6. It is a place for short, punchy problems, with a few standouts among them.",
-  "review": { "sources": ["https://www.mountainproject.com/area/106733592/miho-boulder", "https://www.mountainproject.com/area/106141008/idaho-boulders"] }
- },
- "ar_indian_wall": {
-  "_expect": { "name": "Indian Wall", "region": "Arkansas" },
-  "blurb": "Indian Wall is a small crag on the south side of Lake Lincoln in northwest Arkansas. It is the second set of climbs you reach along the south side wall: walk past the Hang Over Wall and up a gentle rise. Six routes are listed, five of them sport and one trad, running from 5.9 to the 5.12 range, with most of the grades clustered between 5.10 and 5.11. The South Side overall gets fewer visitors than other parts of the lake's crags, and reaching it means following a trail along the cliffline with some scrambling, bushwhacking and fallen trees.",
-  "review": { "sources": ["https://www.mountainproject.com/area/106232843/indian-wall", "https://www.mountainproject.com/area/106232619/south-side"] }
- },
- "ar_mamba_wall": {
-  "_expect": { "name": "Mamba Wall", "region": "Arkansas" },
-  "blurb": "Mamba Wall is a bouldering wall in the Strawberry zone of Woods Mountain, in the River Valley and Ouachitas region of Arkansas. It holds five problems ranging from V4 up to V7, with two at the top end, and they are highballs, so bring big pads. Strawberry as a whole faces south to southwest and gets plenty of sun; it can be climbed all year if you plan around shade, cloud cover or wind. Getting to the wall can mean roughly ten minutes of bushwhacking from the front corridor, or scrambling down from the bluff top, and storm-felled trees and briars have made the approach rough.",
-  "review": { "sources": ["https://www.mountainproject.com/area/120244536/mamba-wall", "https://www.mountainproject.com/area/120237849/strawberry"] }
- },
- "ar_orange_wall": {
-  "_expect": { "name": "Orange Wall", "region": "Arkansas" },
-  "blurb": "Orange Wall is a sport wall in Haunt Hollow, in the Cowell/Deer area of north-central Arkansas, found along the main trail in from the camping area. It has five bolted routes: one at 5.9, one at 5.11, and three in the 5.12 range. The rock is orange, and a seasonal, dripping waterfall runs down the far left side. Haunt Hollow is a steep crag where most routes catch sun for much of the day, with shade early and late, and the routes there average around 55 to 60 feet.",
-  "review": { "sources": ["https://www.mountainproject.com/area/118722728/orange-wall", "https://www.mountainproject.com/area/118722412/haunt-hollow"] }
- },
- "_skipped": {
-  "ar_cave_creek_boulders": "no fetched page describes the boulders themselves: the OpenBeta page says 'No information available' and the Mountain Project pages are the parent Cave Creek and the Brick Attack wall",
-  "ar_hallucinogen_wall_the": "no page about this Arkansas crag itself: the Mountain Project wall page found is the South Africa Hallucinogen Wall; the Mt Magazine park page only lists it as an empty sub-area link",
-  "ar_downhill_area": "only one fetched page (Mountain Project Downhill Area) describes it; searches found no second page naming it (no Hurricane Creek parent page)"
- }
+  "ar_bullet_wall": {
+    "_expect": {
+      "name": "Bullet Wall",
+      "region": "Arkansas"
+    },
+    "blurb": "Bullet Wall is a small sport wall in the Piney Bowl area of the Big Piney region, in north-central Arkansas, and it is the first wall you meet coming in from either direction. Six bolted routes climb here, starting at 5.8 and topping out in the 5.11 range, with half of them at 5.11. The lines are short, which makes the wall a handy early stop for a warm-up before moving on to the rest of Piney Bowl. It was once a shady wall, but a big oak fell in a December 2018 tornado and the wall now gets more exposure. Piney Bowl as a whole tends to fall into shade by late morning from fall through spring.",
+    "review": {
+      "sources": [
+        "https://www.mountainproject.com/area/127310357/bullet-wall",
+        "https://www.mountainproject.com/area/127309667/piney-bowl"
+      ]
+    }
+  },
+  "ar_miho_boulder": {
+    "_expect": {
+      "name": "Miho Boulder",
+      "region": "Arkansas"
+    },
+    "blurb": "Miho Boulder is part of the Idaho Boulders section on the west side of Horseshoe Canyon Ranch, in north-central Arkansas. You find it over the trail and to the north of the warm-up wall. The surrounding field has its blocks packed close together right beside the trail, so it is easy to hop to a neighbouring boulder or to nearby routes when one is busy, and the field can get crowded now and then. Miho itself holds six problems, from an easy V1 up to a V8, with a couple of mid-grade lines around V3 and one at V6. It is a place for short, punchy problems, with a few standouts among them.",
+    "review": {
+      "sources": [
+        "https://www.mountainproject.com/area/106733592/miho-boulder",
+        "https://www.mountainproject.com/area/106141008/idaho-boulders"
+      ]
+    }
+  },
+  "ar_indian_wall": {
+    "_expect": {
+      "name": "Indian Wall",
+      "region": "Arkansas"
+    },
+    "blurb": "Indian Wall is a small crag on the south side of Lake Lincoln in northwest Arkansas. It is the second set of climbs you reach along the south side wall: walk past the Hang Over Wall and up a gentle rise. It has six routes, five of them sport and one trad, running from 5.9 to the 5.12 range, with most of the grades clustered between 5.10 and 5.11. The South Side overall gets fewer visitors than other parts of the lake's crags, and reaching it means following a trail along the cliffline with some scrambling, bushwhacking and fallen trees.",
+    "review": {
+      "sources": [
+        "https://www.mountainproject.com/area/106232843/indian-wall",
+        "https://www.mountainproject.com/area/106232619/south-side"
+      ]
+    }
+  },
+  "ar_mamba_wall": {
+    "_expect": {
+      "name": "Mamba Wall",
+      "region": "Arkansas"
+    },
+    "blurb": "Mamba Wall is a bouldering wall in the Strawberry zone of Woods Mountain, in the River Valley and Ouachitas region of Arkansas. It holds five problems ranging from V4 up to V7, with two at the top end, and they are highballs, so bring big pads. Strawberry as a whole faces south to southwest and gets plenty of sun; it can be climbed all year if you plan around shade, cloud cover or wind. Getting to the wall can mean roughly ten minutes of bushwhacking from the front corridor, or scrambling down from the bluff top, and storm-felled trees and briars have made the approach rough.",
+    "review": {
+      "sources": [
+        "https://www.mountainproject.com/area/120244536/mamba-wall",
+        "https://www.mountainproject.com/area/120237849/strawberry"
+      ]
+    }
+  },
+  "ar_orange_wall": {
+    "_expect": {
+      "name": "Orange Wall",
+      "region": "Arkansas"
+    },
+    "blurb": "Orange Wall is a sport wall in Haunt Hollow, in the Cowell/Deer area of north-central Arkansas, found along the main trail in from the camping area. It has five bolted routes: one at 5.9, one at 5.11, and three in the 5.12 range. The rock is orange, and a seasonal, dripping waterfall runs down the far left side. Haunt Hollow is a steep crag where most routes catch sun for much of the day, with shade early and late, and the routes there average around 55 to 60 feet.",
+    "review": {
+      "sources": [
+        "https://www.mountainproject.com/area/118722728/orange-wall",
+        "https://www.mountainproject.com/area/118722412/haunt-hollow"
+      ]
+    }
+  },
+  "_skipped": {
+    "ar_cave_creek_boulders": "no fetched page describes the boulders themselves: the OpenBeta page says 'No information available' and the Mountain Project pages are the parent Cave Creek and the Brick Attack wall",
+    "ar_hallucinogen_wall_the": "no page about this Arkansas crag itself: the Mountain Project wall page found is the South Africa Hallucinogen Wall; the Mt Magazine park page only lists it as an empty sub-area link",
+    "ar_downhill_area": "only one fetched page (Mountain Project Downhill Area) describes it; searches found no second page naming it (no Hurricane Creek parent page)"
+  }
 }

@@ -1,0 +1,79 @@
+{
+  "bc_mid_wall": {
+    "_expect": {
+      "name": "Mid Wall",
+      "region": "British Columbia"
+    },
+    "blurb": "Mid Wall is a compact limestone cliff inside Marble Canyon Provincial Park, in the Cariboo country roughly 35 km northeast of Lillooet. It sits between two big gullies, to the left of the main headwall. It has six climbs, mostly trad with a single sport line, and the grades run from the easy 5.7s up through 5.10, so moderate climbers will find the most to do. It is a regular fallback for Squamish climbers when rain closes down the coast.",
+    "review": {
+      "sources": [
+        "https://www.mountainproject.com/area/122709159/mid-wall",
+        "https://app.advcollective.com/climbing/mid-wall-climbing-guide-adventure-awaits-above-pavilion-lake"
+      ]
+    }
+  },
+  "bc_leaning_tree_edge": {
+    "_expect": {
+      "name": "Leaning Tree Edge",
+      "region": "British Columbia"
+    },
+    "blurb": "Leaning Tree Edge is a steep sport crag in the Chinese Mountains on Quadra Island, tucked into the trees above a mossy meadow. It holds six bolted lines, five of them in the 5.10 range and one at 5.11, which makes it a good stop for climbers who are comfortable on 5.10. The wall is overhanging enough that the holds are generally positive, but every line has sustained or strenuous stretches that build a real pump. Short walk from the trailhead; wandering too far left in the meadow ends up at the neighbouring Manzanita Wall instead.",
+    "approach": "From the main trailhead, take the Beech's Mountain trail a short way, then branch uphill on a worn path through a mossy draw. Cross the open mossy meadow, then climb on into the trees; the crag sits just above. Do not drift far left across the meadow, which leads to Manzanita Wall.",
+    "review": {
+      "sources": [
+        "https://www.mountainproject.com/area/112839422/leaning-tree-edge",
+        "https://sendage.com/area/leaning-tree-edge-chinese-mountains-area-quadra-island-discovery-islands-vancouver-island-bc-canada"
+      ]
+    }
+  },
+  "bc_salamander": {
+    "_expect": {
+      "name": "Salamander",
+      "region": "British Columbia"
+    },
+    "blurb": "Salamander is a small slab wall in the New Crest Creek section of Crest Creek Crags, in Strathcona Provincial Park on Vancouver Island. It has six routes, split evenly between trad and bolted lines, with grades from about 5.8 to 5.10. The climbs are slabby and run a bit longer than many of their neighbours, which suits climbers who want friction and footwork at a moderate level rather than steep pulling. The crags in this park are built of basalt, and the rock is generally reported as solid.",
+    "review": {
+      "sources": [
+        "https://www.mountainproject.com/area/114595915/salamander",
+        "https://www.mountainproject.com/area/112136827/crest-creek-crags"
+      ]
+    }
+  },
+  "bc_eagles_nest": {
+    "_expect": {
+      "name": "Eagles' Nest",
+      "region": "British Columbia"
+    },
+    "blurb": "Eagles' Nest is a north-facing cliff above the outflow of Eaglet Lake at Giscome, near Prince George. It has six routes, mostly trad with two sport lines, spanning 5.7 up to 5.11. Every route is reached by rappelling in, so you need to be comfortable setting up and managing a rappel before you start. Belay bolts at the base serve at least two of the lines. The north aspect keeps the wall shaded, and there is no cell service in the area, so plan on being self-reliant.",
+    "parking_note": "Drive to Eaglet Lake and turn onto the forest road just past it. Leave the car at the quarry at the start of that road.",
+    "approach": "A marked trail leaves the quarry and runs to the top edge of the cliff. All routes start with a rappel from there.",
+    "review": {
+      "sources": [
+        "https://www.mountainproject.com/area/122961026/eagles-nest",
+        "https://app.advcollective.com/climbing/eagles-nest-climbing-guide-north-facing-challenges-above-eaglet-lake"
+      ]
+    }
+  },
+  "bc_great_white_south": {
+    "_expect": {
+      "name": "Great White South",
+      "region": "British Columbia"
+    },
+    "blurb": "Great White South is a small sport crag at the start of the approach to the Great White cliff at Skaha Bluffs, near Penticton. It has six bolted lines on a short wall, all in the 5.11 to 5.12 range, with four at 5.11 and two at 5.12. Because the routes are brief and sit right beside the trail, climbers often use them as a warm-up before heading on to the harder, longer lines further along the wall. It is a poor choice for beginners, since there is nothing easier than 5.11 here.",
+    "review": {
+      "sources": [
+        "https://www.mountainproject.com/area/117910440/great-white-south",
+        "https://www.mountainproject.com/route/127128423/mmm-steak"
+      ]
+    }
+  },
+  "_skipped": {
+    "bc_main_wall_3": "no fetched page about Main wall itself; only the parent Windmill 34 page names it (no description), other 'Main Wall' pages are different places",
+    "bc_east_side": "no page about the E Side sector itself; only a breadcrumb on a route page and the parent Fern Gully page",
+    "bc_end_of_the_road": "no page about this crag found; the 'End of the Road' pages found are in Wyoming and California"
+  },
+  "_conflicts": {
+    "bc_eagles_nest": "stored rock is basalt, but the parent Giscome page (https://www.mountainproject.com/area/113375525/giscome) describes the cliffs as granodiorite; neither Eagles' Nest page states a rock. One page lists south-facing in metadata but its text and the MP page both say north.",
+    "bc_mid_wall": "https://www.mountainproject.com/area/122709159/mid-wall lists multi-pitch routes (8 and 19 pitches) while https://app.advcollective.com/climbing/mid-wall-climbing-guide-adventure-awaits-above-pavilion-lake calls it a single-pitch cliff about 80 ft high"
+  }
+}

@@ -1,32 +1,72 @@
 {
- "ak_white_spot_the": {
-  "_expect": { "name": "White Spot, The", "region": "Alaska" },
-  "blurb": "The White Spot is a granite wall in the Hatcher Pass area north of Anchorage, reached through the Archangel Valley. About seven routes are on it, mostly trad with a couple of bolted lines. Difficulty sits mainly around 5.10 with two 5.11 climbs, so it suits climbers already comfortable leading cracks and featured faces rather than beginners. Sections of the wall stay damp well into summer, so a dry spell helps. Rock across Hatcher Pass tends to be blocky and mossy, and spring and fall bring steady rain.",
-  "review": { "sources": ["https://rakkup.com/guidebook/hatcher-pass-rock-climbing/the-white-spot/s22885", "https://www.mountainproject.com/area/106207101/hatcher-pass"] }
- },
- "ak_raspberry_rock": {
-  "_expect": { "name": "Raspberry Rock", "region": "Alaska" },
-  "blurb": "Raspberry Rock is a compact single-pitch wall on Thompson Pass above Valdez. Roughly seven sport and trad routes share it, with most of the grades clustered around 5.10 plus one easier line each at 5.8 and 5.9, so there is a fair spread without much at the hard end. Climbs are short, one of them about 50 feet. The rock is high quality, the walk from the car is only a few steps, and bolts can be spotted from the pavement. Expect afternoon sun when the sky is clear, and big views over the pass.",
-  "review": { "sources": ["https://www.mountainproject.com/area/108921535/raspberry-rock", "https://www.mountainproject.com/route/108922987/d"] }
- },
- "ak_pipe_it_up": {
-  "_expect": { "name": "Pipe it Up", "region": "Alaska" },
-  "blurb": "Pipe it Up is the largest and tallest tor in the cluster at Finger Mountain along the Dalton Highway in northern Alaska, and also the one farthest from the car. It has more roped climbing than any neighbouring formation, plus a little bouldering. Seven lines are recorded: mostly trad cracks from about 5.7 to 5.10, one top-rope, and one V3 problem. Climbs are short and fixed hardware is generally absent, so bring your own gear for anchors and expect to walk off. The rock is described as excellent.",
-  "review": { "sources": ["https://www.mountainproject.com/area/119051035/pipe-it-up", "https://mountainproject.com/area/119050990/pipeline-area"] }
- },
- "ak_catch_the_wave": {
-  "_expect": { "name": "Catch The Wave", "region": "Alaska" },
-  "blurb": "Catch the Wave is a trad sector in the Archangel Valley of Hatcher Pass, set back behind The White Spot and The Diamond. Seven routes run from 5.9 up to 5.12, spread fairly evenly across the 5.9, 5.10 and 5.11 grades with a single climb at the hard end, and a couple of the moderate ones go two pitches. The wall picks up sun in the afternoon and evening. Reaching it takes a real uphill walk, so it suits climbers who want moderate-to-hard crack and slab leads away from the roadside crags.",
-  "review": { "sources": ["https://www.mountainproject.com/area/108589786/catch-the-wave", "https://rakkup.com/guidebook/hatcher-pass-rock-climbing/catch-the-wave/s22886"] }
- },
- "ak_spring_fling": {
-  "_expect": { "name": "Spring Fling", "region": "Alaska" },
-  "blurb": "Spring Fling is a small roadside crag on the Seward Highway south of Anchorage, around highway mile 110. Six of its seven routes are sport, plus one trad line, with grades running from 5.7 to about 5.10, so it works for newer leaders and for a quick after-work lap. The climbs are on blasted road cuts and slabby faces, and a few are decent quality. Highway traffic noise is constant, which makes talking to a partner hard. Rock along this corridor is loose and chossy, so wear a helmet.",
-  "review": { "sources": ["https://www.mountainproject.com/area/108953234/spring-fling", "https://www.mountainproject.com/area/105991968/seward-highway"] }
- },
- "_skipped": {
-  "ak_morning_wall_back_wall": "no fetched page is about the crag itself: only the East Grapefruit Rocks parent page, a route page and a Grapefruit Rocks overview mention the wall (the MP page named Morning Wall is a Spokane, WA crag, a different place)",
-  "ak_hidden_hare_boulder": "only one page about it could be fetched (single area page); no second page found that mentions it",
-  "ak_tidal_flats": "only one page about it could be fetched; the Skagway/Dyea area page and the forum thread do not mention it"
- }
+  "ak_white_spot_the": {
+    "_expect": {
+      "name": "White Spot, The",
+      "region": "Alaska"
+    },
+    "blurb": "The White Spot is a granite wall in the Hatcher Pass area north of Anchorage, reached through the Archangel Valley. About seven routes are on it, mostly trad with a couple of bolted lines. Difficulty sits mainly around 5.10 with two 5.11 climbs, so it suits climbers already comfortable leading cracks and featured faces rather than beginners. Sections of the wall stay damp well into summer, so a dry spell helps. Rock across Hatcher Pass tends to be blocky and mossy, and spring and fall bring steady rain.",
+    "review": {
+      "sources": [
+        "https://rakkup.com/guidebook/hatcher-pass-rock-climbing/the-white-spot/s22885",
+        "https://www.mountainproject.com/area/106207101/hatcher-pass"
+      ]
+    }
+  },
+  "ak_raspberry_rock": {
+    "_expect": {
+      "name": "Raspberry Rock",
+      "region": "Alaska"
+    },
+    "blurb": "Raspberry Rock is a compact single-pitch wall on Thompson Pass above Valdez. Roughly seven sport and trad routes share it, with most of the grades clustered around 5.10 plus one easier line each at 5.8 and 5.9, so there is a fair spread without much at the hard end. Climbs are short, one of them about 50 feet. The rock is high quality, the walk from the car is only a few steps, and bolts can be spotted from the pavement. Expect afternoon sun when the sky is clear, and big views over the pass.",
+    "review": {
+      "sources": [
+        "https://www.mountainproject.com/area/108921535/raspberry-rock",
+        "https://www.mountainproject.com/route/108922987/d"
+      ]
+    }
+  },
+  "ak_pipe_it_up": {
+    "_expect": {
+      "name": "Pipe it Up",
+      "region": "Alaska"
+    },
+    "blurb": "Pipe it Up is the largest and tallest tor in the cluster at Finger Mountain along the Dalton Highway in northern Alaska, and also the one farthest from the car. It has more roped climbing than any neighbouring formation, plus a little bouldering. It has seven lines: mostly trad cracks from about 5.7 to 5.10, one top-rope, and one V3 problem. Climbs are short and fixed hardware is generally absent, so bring your own gear for anchors and expect to walk off. The rock is described as excellent.",
+    "review": {
+      "sources": [
+        "https://www.mountainproject.com/area/119051035/pipe-it-up",
+        "https://mountainproject.com/area/119050990/pipeline-area"
+      ]
+    }
+  },
+  "ak_catch_the_wave": {
+    "_expect": {
+      "name": "Catch The Wave",
+      "region": "Alaska"
+    },
+    "blurb": "Catch the Wave is a trad sector in the Archangel Valley of Hatcher Pass, set back behind The White Spot and The Diamond. Seven routes run from 5.9 up to 5.12, spread fairly evenly across the 5.9, 5.10 and 5.11 grades with a single climb at the hard end, and a couple of the moderate ones go two pitches. The wall picks up sun in the afternoon and evening. Reaching it takes a real uphill walk, so it suits climbers who want moderate-to-hard crack and slab leads away from the roadside crags.",
+    "review": {
+      "sources": [
+        "https://www.mountainproject.com/area/108589786/catch-the-wave",
+        "https://rakkup.com/guidebook/hatcher-pass-rock-climbing/catch-the-wave/s22886"
+      ]
+    }
+  },
+  "ak_spring_fling": {
+    "_expect": {
+      "name": "Spring Fling",
+      "region": "Alaska"
+    },
+    "blurb": "Spring Fling is a small roadside crag on the Seward Highway south of Anchorage, around highway mile 110. Six of its seven routes are sport, plus one trad line, with grades running from 5.7 to about 5.10, so it works for newer leaders and for a quick after-work lap. The climbs are on blasted road cuts and slabby faces, and a few are decent quality. Highway traffic noise is constant, which makes talking to a partner hard. Rock along this corridor is loose and chossy, so wear a helmet.",
+    "review": {
+      "sources": [
+        "https://www.mountainproject.com/area/108953234/spring-fling",
+        "https://www.mountainproject.com/area/105991968/seward-highway"
+      ]
+    }
+  },
+  "_skipped": {
+    "ak_morning_wall_back_wall": "no fetched page is about the crag itself: only the East Grapefruit Rocks parent page, a route page and a Grapefruit Rocks overview mention the wall (the MP page named Morning Wall is a Spokane, WA crag, a different place)",
+    "ak_hidden_hare_boulder": "only one page about it could be fetched (single area page); no second page found that mentions it",
+    "ak_tidal_flats": "only one page about it could be fetched; the Skagway/Dyea area page and the forum thread do not mention it"
+  }
 }

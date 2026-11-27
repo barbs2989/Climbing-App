@@ -1,44 +1,111 @@
 {
- "ab_up_the_hill": {
-  "_expect": { "name": "Up The Hill", "region": "Alberta" },
-  "blurb": "Up The Hill is a compact wall in the Little Russia canyon near Nordegg, in the David Thompson corridor. It holds eight bolted sport routes, running from the low 5.11s up into 5.13, with most of the grades clustered around 5.12. The limestone is compact and well featured, and the lines are thin, technical and a touch overhanging, with decent rests between the hard sections. The wall catches light in the morning, and the base stays cool while the upper face can heat up. Stick clipping is a good idea on a few lines. This is a place for strong sport climbers rather than a beginner crag.",
-  "review": { "sources": ["https://www.mountainproject.com/area/120181504/up-the-hill", "https://mountainproject.com/area/116647936/little-russia"] }
- },
- "ab_8_the_tipperary": {
-  "_expect": { "name": "The Tipperary", "region": "Alberta" },
-  "blurb": "The Tipperary is one of the sectors of Bataan, the demanding limestone crag above Canmore in the Bow Valley. Eight sport routes are found here, spanning roughly 5.10 to 5.12, with the bulk in the 5.11 and 5.12 range. The stone is solid and compact, without the pockets of the neighbouring Eyes, and lines begin close to vertical before easing briefly and then tipping back. Sun arrives from the middle of the afternoon, and the spot feels breezier than the nearby sectors. Reaching it takes a long uphill hike past other Bataan walls, so expect a committing day out.",
-  "review": { "sources": ["https://www.mountainproject.com/area/123997801/the-tipperary", "https://www.mountainproject.com/area/115144708/bataan"] }
- },
- "ab_the_quarry": {
-  "_expect": { "name": "The Quarry", "region": "Alberta" },
-  "blurb": "The Quarry is a small outcrop above the Knob Hill slabs near Coleman in the Crowsnest Pass. Eight routes are recorded, mostly bolted sport with a single trad line, and they are overwhelmingly easy to moderate: a handful of 5.3 to 5.5 climbs, plus a few in the 5.9 to 5.10 range. The walls are laid back and full of holds, with short cruxes, so the lower bench suits first lead climbs or top-rope laps, while the upper bench offers moderate lines. A short hike up a dry creek bed brings you to the base. Spring avalanche debris can reach the bottom of the gully above.",
-  "review": { "sources": ["https://mountainproject.com/area/123520518/the-quarry", "https://www.mountainproject.com/area/123520505/knob-hill"] }
- },
- "ab_castle_mountain": {
-  "_expect": { "name": "Castle Mountain", "region": "Alberta" },
-  "blurb": "Castle Mountain is the big, castle-shaped massif beside the Bow Valley, roughly halfway between Banff and Lake Louise. Two cliff tiers separated by a scree shelf host long mountain routes, mostly traditional with a couple of bolted lines and one short ice climb at the easier end of the water-ice scale. The rock grades run from moderate 5.6 climbing through the 5.9 to 5.11 range. Rock quality is good for the Rockies but can be loose in places. Routes are many pitches long and the approach is a real hike with some scrambling, so plan a full day and an early start.",
-  "review": { "sources": ["https://www.mountainproject.com/area/106073044/castle-mountain", "https://stephabegg.com/?p=7851", "https://en.wikipedia.org/wiki/Castle_Mountain"] }
- },
- "ab_mount_kidd": {
-  "_expect": { "name": "Mount Kidd", "region": "Alberta" },
-  "blurb": "Mount Kidd is a large double-summited peak in central Kananaskis, and winter is its main season for climbing. Most of the eight recorded routes are waterfall ice, from easy WI2 up to WI5, with a few tied to big avalanche slopes where debris often collects, so check conditions before committing. The face is steep and often sunny, and activity clusters from February through April. For rock, there are two traditional routes at 5.8 grade, including a long multipitch line on the south peak. Expect a serious mountain day rather than a quick crag visit.",
-  "review": { "sources": ["https://mountainproject.com/area/107207268/mount-kidd", "https://avalanche.ca/resources/ice-climbing/atlas/other-mt-kidd", "https://en.wikipedia.org/wiki/Mount_Kidd"] }
- },
- "ab_james_pass": {
-  "_expect": { "name": "James Pass", "region": "Alberta" },
-  "blurb": "James Pass is a winter ice destination in the Dry Ranges of Alberta, a valley holding Eagle Lake and James Lake between Maze Peak and Eagle Mountain. Ice forms on both sides of the valley. All eight recorded routes are ice or ice-and-rock mixed, from WI3 up to WI5, with WI4 the most common grade; the best-known line is a two-pitch WI4. The valley is rarely visited, so climbers often have it to themselves, which makes it a good escape from the busier Rockies venues. Approaches cross a frozen lake or follow an old trail toward James Lake.",
-  "review": { "sources": ["https://www.mountainproject.com/area/118158764/james-pass", "https://raphaelslawinski.blogspot.com/2013/01/nachtmahr.html"] }
- },
- "ab_mcgillivray_slabs": {
-  "_expect": { "name": "McGillivray Slabs", "region": "Alberta" },
-  "blurb": "McGillivray Slabs is a north-facing slab crag just east of Canmore, across from Lac des Arcs in the Bow Valley. The eight recorded routes include sport lines from about 5.7 to 5.11, a trad climb at 5.9, and two WI3 ice routes. Many of the lines are multipitch, on solid friction-and-ledge limestone, with moderate climbing that makes it a sensible choice for newer multipitch parties. The walk to the base is brief. Expect highway noise and a view of a quarry across the lake, and bolts on some routes are spaced a little far apart.",
-  "review": { "sources": ["https://mountainproject.com/area/107233191/mcgillivray-slabs", "https://theoutbound.com/canada/rock-climbing/climb-mcgillivray-slabs"] }
- },
- "ab_mount_louis": {
-  "_expect": { "name": "Mount Louis", "region": "Alberta" },
-  "blurb": "Mount Louis is a tall limestone spire in the Sawback Range of southeast Banff National Park, near Banff. It is a climber's peak with no walk-up route, and the steep faces and buttresses carry mostly traditional lines plus a few alpine routes and one bolted line. Recorded climbs run from 5.8 up to 5.12, and styles range from loose chimneys to sustained crack and face climbing. Gear can be sparse and rock loose in places. Reaching the base needs a hike and some scrambling, and the descent by rappel and route-finding is a serious part of the day, so allow a long outing.",
-  "review": { "sources": ["https://en.wikipedia.org/wiki/Mount_Louis", "https://gripped.com/?p=25783", "https://stephabegg.com/?p=7872"] }
- },
- "_skipped": {},
- "_conflicts": {}
+  "ab_up_the_hill": {
+    "_expect": {
+      "name": "Up The Hill",
+      "region": "Alberta"
+    },
+    "blurb": "Up The Hill is a compact wall in the Little Russia canyon near Nordegg, in the David Thompson corridor. It holds eight bolted sport routes, running from the low 5.11s up into 5.13, with most of the grades clustered around 5.12. The limestone is compact and well featured, and the lines are thin, technical and a touch overhanging, with decent rests between the hard sections. The wall catches light in the morning, and the base stays cool while the upper face can heat up. Stick clipping is a good idea on a few lines. This is a place for strong sport climbers rather than a beginner crag.",
+    "review": {
+      "sources": [
+        "https://www.mountainproject.com/area/120181504/up-the-hill",
+        "https://mountainproject.com/area/116647936/little-russia"
+      ]
+    }
+  },
+  "ab_8_the_tipperary": {
+    "_expect": {
+      "name": "The Tipperary",
+      "region": "Alberta"
+    },
+    "blurb": "The Tipperary is one of the sectors of Bataan, the demanding limestone crag above Canmore in the Bow Valley. Eight sport routes are found here, spanning roughly 5.10 to 5.12, with the bulk in the 5.11 and 5.12 range. The stone is solid and compact, without the pockets of the neighbouring Eyes, and lines begin close to vertical before easing briefly and then tipping back. Sun arrives from the middle of the afternoon, and the spot feels breezier than the nearby sectors. Reaching it takes a long uphill hike past other Bataan walls, so expect a committing day out.",
+    "review": {
+      "sources": [
+        "https://www.mountainproject.com/area/123997801/the-tipperary",
+        "https://www.mountainproject.com/area/115144708/bataan"
+      ]
+    }
+  },
+  "ab_the_quarry": {
+    "_expect": {
+      "name": "The Quarry",
+      "region": "Alberta"
+    },
+    "blurb": "The Quarry is a small outcrop above the Knob Hill slabs near Coleman in the Crowsnest Pass. It has eight routes, mostly bolted sport with a single trad line, and they are overwhelmingly easy to moderate: a handful of 5.3 to 5.5 climbs, plus a few in the 5.9 to 5.10 range. The walls are laid back and full of holds, with short cruxes, so the lower bench suits first lead climbs or top-rope laps, while the upper bench offers moderate lines. A short hike up a dry creek bed brings you to the base. Spring avalanche debris can reach the bottom of the gully above.",
+    "review": {
+      "sources": [
+        "https://mountainproject.com/area/123520518/the-quarry",
+        "https://www.mountainproject.com/area/123520505/knob-hill"
+      ]
+    }
+  },
+  "ab_castle_mountain": {
+    "_expect": {
+      "name": "Castle Mountain",
+      "region": "Alberta"
+    },
+    "blurb": "Castle Mountain is the big, castle-shaped massif beside the Bow Valley, roughly halfway between Banff and Lake Louise. Two cliff tiers separated by a scree shelf host long mountain routes, mostly traditional with a couple of bolted lines and one short ice climb at the easier end of the water-ice scale. The rock grades run from moderate 5.6 climbing through the 5.9 to 5.11 range. Rock quality is good for the Rockies but can be loose in places. Routes are many pitches long and the approach is a real hike with some scrambling, so plan a full day and an early start.",
+    "review": {
+      "sources": [
+        "https://www.mountainproject.com/area/106073044/castle-mountain",
+        "https://stephabegg.com/?p=7851",
+        "https://en.wikipedia.org/wiki/Castle_Mountain"
+      ]
+    }
+  },
+  "ab_mount_kidd": {
+    "_expect": {
+      "name": "Mount Kidd",
+      "region": "Alberta"
+    },
+    "blurb": "Mount Kidd is a large double-summited peak in central Kananaskis, and winter is its main season for climbing. Most of the eight routes are waterfall ice, from easy WI2 up to WI5, with a few tied to big avalanche slopes where debris often collects, so check conditions before committing. The face is steep and often sunny, and activity clusters from February through April. For rock, there are two traditional routes at 5.8 grade, including a long multipitch line on the south peak. Expect a serious mountain day rather than a quick crag visit.",
+    "review": {
+      "sources": [
+        "https://mountainproject.com/area/107207268/mount-kidd",
+        "https://avalanche.ca/resources/ice-climbing/atlas/other-mt-kidd",
+        "https://en.wikipedia.org/wiki/Mount_Kidd"
+      ]
+    }
+  },
+  "ab_james_pass": {
+    "_expect": {
+      "name": "James Pass",
+      "region": "Alberta"
+    },
+    "blurb": "James Pass is a winter ice destination in the Dry Ranges of Alberta, a valley holding Eagle Lake and James Lake between Maze Peak and Eagle Mountain. Ice forms on both sides of the valley. All eight routes are ice or ice-and-rock mixed, from WI3 up to WI5, with WI4 the most common grade; the best-known line is a two-pitch WI4. The valley is rarely visited, so climbers often have it to themselves, which makes it a good escape from the busier Rockies venues. Approaches cross a frozen lake or follow an old trail toward James Lake.",
+    "review": {
+      "sources": [
+        "https://www.mountainproject.com/area/118158764/james-pass",
+        "https://raphaelslawinski.blogspot.com/2013/01/nachtmahr.html"
+      ]
+    }
+  },
+  "ab_mcgillivray_slabs": {
+    "_expect": {
+      "name": "McGillivray Slabs",
+      "region": "Alberta"
+    },
+    "blurb": "McGillivray Slabs is a north-facing slab crag just east of Canmore, across from Lac des Arcs in the Bow Valley. The eight routes include sport lines from about 5.7 to 5.11, a trad climb at 5.9, and two WI3 ice routes. Many of the lines are multipitch, on solid friction-and-ledge limestone, with moderate climbing that makes it a sensible choice for newer multipitch parties. The walk to the base is brief. Expect highway noise and a view of a quarry across the lake, and bolts on some routes are spaced a little far apart.",
+    "review": {
+      "sources": [
+        "https://mountainproject.com/area/107233191/mcgillivray-slabs",
+        "https://theoutbound.com/canada/rock-climbing/climb-mcgillivray-slabs"
+      ]
+    }
+  },
+  "ab_mount_louis": {
+    "_expect": {
+      "name": "Mount Louis",
+      "region": "Alberta"
+    },
+    "blurb": "Mount Louis is a tall limestone spire in the Sawback Range of southeast Banff National Park, near Banff. It is a climber's peak with no walk-up route, and the steep faces and buttresses carry mostly traditional lines plus a few alpine routes and one bolted line. Climbs run from 5.8 up to 5.12, and styles range from loose chimneys to sustained crack and face climbing. Gear can be sparse and rock loose in places. Reaching the base needs a hike and some scrambling, and the descent by rappel and route-finding is a serious part of the day, so allow a long outing.",
+    "review": {
+      "sources": [
+        "https://en.wikipedia.org/wiki/Mount_Louis",
+        "https://gripped.com/?p=25783",
+        "https://stephabegg.com/?p=7872"
+      ]
+    }
+  },
+  "_skipped": {},
+  "_conflicts": {}
 }

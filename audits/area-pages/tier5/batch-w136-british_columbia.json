@@ -1,29 +1,62 @@
 {
- "bc_the_portal": {
-  "_expect": { "name": "The Portal", "region": "British Columbia" },
-  "blurb": "A small cluster of boulders sitting below a wall in the Grid bouldering zone of the Fraser Valley, near the Hunter Creek road. Eight problems are described here, running from V1 up to a single V4, with most of them in the V1 to V3 range, which makes it a fair stop for climbers working through easy and moderate grades. The neighbouring Metropolis boulder is the landmark for finding it: the cluster lies to the southwest of that block. The wider Grid area is a forest setting with big boulders and flat, sandy ground beneath them.",
-  "review": { "sources": ["https://www.mountainproject.com/area/110326555/the-portal", "https://www.mountainproject.com/area/109000923/the-grid"] }
- },
- "bc_simian": {
-  "_expect": { "name": "Simian", "region": "British Columbia" },
-  "blurb": "A short two-tiered cliff band, about ten metres tall, with one small boulder beside it, in the East Side Boulders section of Cypress Falls near Vancouver. It is the first stop on the trail up from the parking lot, so the walk is only a couple of minutes. Eight problems here, nearly all at the easy end of the scale, V0 to V1: crack lines and a few easy traverses. It suits warming up or introducing newer climbers to bouldering before moving on to the harder blocks further along the trail.",
-  "approach": "Walk northeast uphill from the parking lot on the trail, passing the small Shine boulder; the two-tiered cliff is on your left. It takes a minute or two.",
-  "review": { "sources": ["https://www.mountainproject.com/area/119021768/simian", "https://www.mountainproject.com/area/119021754/east-side-boulders"] }
- },
- "bc_mount_dennis": {
-  "_expect": { "name": "Mount Dennis", "region": "British Columbia" },
-  "blurb": "A 2,549 m peak about 3 km south of Field in Yoho National Park, whose lower slopes hold a set of winter ice and mixed lines reached from the Field back road. Eight ice routes are described here, spanning roughly WI3 to WI6, with the bulk at WI4 and WI5. Most lines sit beneath large avalanche paths, so conditions need checking before every outing. Guinness Gully is the busiest, its tiered pitches letting several parties climb at once, and the first pitch can be lean early in the season. Ice generally forms by late November and lasts into April.",
-  "review": { "sources": ["https://en.wikipedia.org/wiki/Mount_Dennis_(Yoho)", "https://avalanche.ca/resources/ice-climbing/atlas/guinness", "https://gripped.com/?p=43923"] }
- },
- "bc_facelift_boulder": {
-  "_expect": { "name": "Facelift Boulder", "region": "British Columbia" },
-  "blurb": "A boulder in the Pictograph Area of the Old Hedley boulders in the Okanagan, and the block with the most problems of any in that area. Eight problems are listed, from V0 up to V5, with most between V1 and V3, so there is something for newer boulderers and a couple of lines for stronger ones. The Pictograph Area as a whole is where a good share of the better problems in the Old Hedley boulders are found, and Facelift is the one you will likely spend the longest at.",
-  "review": { "sources": ["https://www.mountainproject.com/area/119970516/facelift-boulder", "https://www.mountainproject.com/area/114555135/pictograph-area"] }
- },
- "_skipped": {
-  "bc_azi_s_boulder": "no fetched page about Azi's Boulder itself; only the parent Little Mountain Bouldering page names it, and two searches found nothing else",
-  "bc_the_fitness_club": "only one page (a single Mountain Project page) describes it; two searches found no second",
-  "bc_the_pyramid": "only one page about the crag itself; the only other page (Warm Up Boulder, a sibling) names it merely as a landmark",
-  "bc_the_solarium": "only one fetchable page about it; thecrag returned 403 and the forum thread returned 503 (fetch outage for the second page)"
- }
+  "bc_the_portal": {
+    "_expect": {
+      "name": "The Portal",
+      "region": "British Columbia"
+    },
+    "blurb": "A small cluster of boulders sitting below a wall in the Grid bouldering zone of the Fraser Valley, near the Hunter Creek road. Eight problems are described here, running from V1 up to a single V4, with most of them in the V1 to V3 range, which makes it a fair stop for climbers working through easy and moderate grades. The neighbouring Metropolis boulder is the landmark for finding it: the cluster lies to the southwest of that block. The wider Grid area is a forest setting with big boulders and flat, sandy ground beneath them.",
+    "review": {
+      "sources": [
+        "https://www.mountainproject.com/area/110326555/the-portal",
+        "https://www.mountainproject.com/area/109000923/the-grid"
+      ]
+    }
+  },
+  "bc_simian": {
+    "_expect": {
+      "name": "Simian",
+      "region": "British Columbia"
+    },
+    "blurb": "A short two-tiered cliff band, about ten metres tall, with one small boulder beside it, in the East Side Boulders section of Cypress Falls near Vancouver. It is the first stop on the trail up from the parking lot, so the walk is only a couple of minutes. Eight problems here, nearly all at the easy end of the scale, V0 to V1: crack lines and a few easy traverses. It suits warming up or introducing newer climbers to bouldering before moving on to the harder blocks further along the trail.",
+    "approach": "Walk northeast uphill from the parking lot on the trail, passing the small Shine boulder; the two-tiered cliff is on your left. It takes a minute or two.",
+    "review": {
+      "sources": [
+        "https://www.mountainproject.com/area/119021768/simian",
+        "https://www.mountainproject.com/area/119021754/east-side-boulders"
+      ]
+    }
+  },
+  "bc_mount_dennis": {
+    "_expect": {
+      "name": "Mount Dennis",
+      "region": "British Columbia"
+    },
+    "blurb": "A 2,549 m peak about 3 km south of Field in Yoho National Park, whose lower slopes hold a set of winter ice and mixed lines reached from the Field back road. Eight ice routes are described here, spanning roughly WI3 to WI6, with the bulk at WI4 and WI5. Most lines sit beneath large avalanche paths, so conditions need checking before every outing. Guinness Gully is the busiest, its tiered pitches letting several parties climb at once, and the first pitch can be lean early in the season. Ice generally forms by late November and lasts into April.",
+    "review": {
+      "sources": [
+        "https://en.wikipedia.org/wiki/Mount_Dennis_(Yoho)",
+        "https://avalanche.ca/resources/ice-climbing/atlas/guinness",
+        "https://gripped.com/?p=43923"
+      ]
+    }
+  },
+  "bc_facelift_boulder": {
+    "_expect": {
+      "name": "Facelift Boulder",
+      "region": "British Columbia"
+    },
+    "blurb": "A boulder in the Pictograph Area of the Old Hedley boulders in the Okanagan, and the block with the most problems of any in that area. It has eight problems, from V0 up to V5, with most between V1 and V3, so there is something for newer boulderers and a couple of lines for stronger ones. The Pictograph Area as a whole is where a good share of the better problems in the Old Hedley boulders are found, and Facelift is the one you will likely spend the longest at.",
+    "review": {
+      "sources": [
+        "https://www.mountainproject.com/area/119970516/facelift-boulder",
+        "https://www.mountainproject.com/area/114555135/pictograph-area"
+      ]
+    }
+  },
+  "_skipped": {
+    "bc_azi_s_boulder": "no fetched page about Azi's Boulder itself; only the parent Little Mountain Bouldering page names it, and two searches found nothing else",
+    "bc_the_fitness_club": "only one page (a single Mountain Project page) describes it; two searches found no second",
+    "bc_the_pyramid": "only one page about the crag itself; the only other page (Warm Up Boulder, a sibling) names it merely as a landmark",
+    "bc_the_solarium": "only one fetchable page about it; thecrag returned 403 and the forum thread returned 503 (fetch outage for the second page)"
+  }
 }

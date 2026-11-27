@@ -1,0 +1,75 @@
+{
+  "bc_gilligan_s_island": {
+    "_expect": {
+      "name": "Gilligan's Island",
+      "region": "British Columbia"
+    },
+    "blurb": "Gilligan's Island is one of three cliffs at Waterworld, a sport area above Revelstoke Lake near Revelstoke. It holds six bolted routes, all of them multi-pitch, and none of the grades fall below 5.8. Three routes sit at 5.11, with the rest spread across 5.8, 5.9 and 5.10. Climbers get to the base by walking the Waterworld trail and rappelling in with two ropes of about 30 metres each, so a party is committed to climbing out and should be comfortable with rope handling. This is a good stop for a team that wants long sport pitches over water rather than a quick roadside crag.",
+    "review": {
+      "sources": [
+        "https://www.mountainproject.com/area/114538294/gilligans-island?print=1",
+        "https://sendage.com/area/water-world-revelstoke-bc-canada"
+      ]
+    }
+  },
+  "bc_upper_blanket_canyon": {
+    "_expect": {
+      "name": "Upper Blanket Canyon",
+      "region": "British Columbia"
+    },
+    "blurb": "Upper Blanket Canyon is a small sport crag in the canyon outside Revelstoke, on the upstream side of the bridge. Six routes are bolted, and they include at least one two-pitch line. Most sit around 5.10, with a single 5.11. Routes are reached from above: climbers drop in by rappel or by a steep gully with fixed hand lines, so expect to haul yourself out at the end of the day. The place sees few visitors. It suits a pair of climbers who are steady at 5.10 and want a quiet half day.",
+    "review": {
+      "sources": [
+        "https://www.mountainproject.com/area/122415838/upper-blanket-canyon",
+        "https://app.advcollective.com/climbing/upper-blanket-canyon-climbing-guide-revelstoke-bc"
+      ]
+    }
+  },
+  "bc_foreplay_right": {
+    "_expect": {
+      "name": "Foreplay Right",
+      "region": "British Columbia"
+    },
+    "blurb": "Foreplay Right is the final section of Foreplay Cliff, among the Evergreen Drive crags at Skaha Bluffs near Penticton. There are six routes: five sport and one trad. The trad line is the easiest at 5.7, three sport routes are 5.10 and two are 5.11. The wall is coloured orange and leans toward edging moves. The walk in is short and easy, following the base of the cliff past the earlier sections until you reach this one. It works well as an extension of a day at Foreplay for climbers moving up from 5.10 into the low 5.11s.",
+    "review": {
+      "sources": [
+        "https://www.mountainproject.com/area/112288574/foreplay-right",
+        "https://www.mountainproject.com/area/112287106/foreplay-cliff"
+      ]
+    }
+  },
+  "bc_champion_crag": {
+    "_expect": {
+      "name": "Champion Crag",
+      "region": "British Columbia"
+    },
+    "blurb": "Champion Crag is a cliff in the West Kootenay near Castlegar, set high enough to give views over the Columbia River. It has six routes, split evenly between sport and trad, ranging from 5.8 to 5.10. The walk in is long and flat compared with most local crags, and the last stretch follows cairns along the rim to a fixed ladder that drops to the belay ledge. The longer lines are the draw. It suits a party at 5.8 to 5.10 who wants a half-day outing.",
+    "review": {
+      "sources": [
+        "https://www.mountainproject.com/area/114312018/champion-crag",
+        "https://www.mountainproject.com/area/107294368/castlegar"
+      ]
+    }
+  },
+  "bc_moss_hollow": {
+    "_expect": {
+      "name": "Moss Hollow",
+      "region": "British Columbia"
+    },
+    "blurb": "Moss Hollow is the main bouldering sector of Cougar Canyon, in the Vernon area of the Okanagan. It lies in the bottom of the canyon, reached by following the approach trail down past the sport crag called Creekside. It has six problems, mostly easy to moderate: V0 and V1 warm-ups including a small cave, one V3, and a handful harder up to V5. The sector is tucked among trees and holds the strongest concentration of boulders in the canyon, so it suits a short session for a mixed group.",
+    "review": {
+      "sources": [
+        "https://www.mountainproject.com/area/120481416/moss-hollow",
+        "https://thetopo.com/crags/cougar-canyon/topos"
+      ]
+    }
+  },
+  "_skipped": {
+    "bc_raven_s_castle_east": "no page about a Raven's Castle East crag exists; only the parent Raven's Castle page was found",
+    "bc_secret_spires": "searches found no page for any Secret Spires crag in the East Kootenay",
+    "bc_grohman_narrows_2": "the pages fetched describe Grohman Narrows as a bouldering-only area; stored climbs are sport and trad, so they do not describe these routes"
+  },
+  "_conflicts": {
+    "bc_upper_blanket_canyon": "Stored rock quartzite; https://app.advcollective.com/climbing/upper-blanket-canyon-climbing-guide-revelstoke-bc says limestone and south-facing trad, https://www.mountainproject.com/area/122415838/upper-blanket-canyon lists sport and gives no rock"
+  }
+}

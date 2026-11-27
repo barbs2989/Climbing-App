@@ -1,31 +1,63 @@
 {
- "bc_yoga_ball_boulder": {
-  "_expect": { "name": "Yoga ball boulder", "region": "British Columbia" },
-  "blurb": "A single boulder holding eight problems within the Copper Boulders zone, at the foot of Copper Mountain near Terrace in northern British Columbia. The problems are mostly V1 and V2, with one V0 and a lone problem far harder than the rest. The boulder is described as a sunny one with a mix of climbing styles. The wider zone has flat ground and moderate-height boulders, which makes falls friendlier, and many of its boulders sit only a few metres from the road, so the walk in is short.",
-  "review": { "sources": ["https://www.mountainproject.com/area/118732477/yoga-ball-boulder", "https://www.mountainproject.com/area/118670864/copper-boulders"] }
- },
- "bc_the_big_boulder": {
-  "_expect": { "name": "The Big Boulder", "region": "British Columbia" },
-  "blurb": "A big detached block of rock in the Waterline area near Castlegar, in the West Kootenay, standing between two neighbouring walls. It holds eight routes: seven bolted lines and one trad line. Grades start around 5.8 and reach 5.12, with a cluster in the 5.9 and 5.10 range and a few harder lines on top. Most of the routes are rated well, and there is also a little bouldering low on the right-hand side. The hike from the gate is short, around four minutes.",
-  "review": { "sources": ["https://www.mountainproject.com/area/114379418/the-big-boulder", "https://www.mountainproject.com/route/124496093/v-20"] }
- },
- "bc_left_centre": {
-  "_expect": { "name": "Left Centre", "region": "British Columbia" },
-  "blurb": "The middle-left section of the Roche Lake cliffs near Kamloops, easy to spot thanks to a big roof. Eight routes are listed, six of them bolted and two trad, and at least one can also be top-roped. Grades begin at 5.9, with five routes in the 5.10 range and two at 5.12, so it suits climbers who already lead moderate sport. To reach it, take the middle trail from the parking lot.",
-  "review": { "sources": ["https://mountainproject.com/area/119077550/left-centre", "https://www.mountainproject.com/route/stats/108071689/midnight-oil"] }
- },
- "bc_bat_wall": {
-  "_expect": { "name": "Bat Wall", "region": "British Columbia" },
-  "blurb": "A steep wall at Gotham City, a small sport crag in the hills near Nelson in the West Kootenay. All eight routes are bolted, and they are described as fun and pumpy. The grades are concentrated around 5.10, with five routes in that range, plus one easy 5.6, a 5.9 and a single 5.11. That makes it a good fit for climbers comfortable on steep ground at the low to middle 5.10 grades.",
-  "review": { "sources": ["https://www.mountainproject.com/area/114530828/bat-wall", "https://sendage.com/area/gotham-city-bc-canada"] }
- },
- "_skipped": {
-  "bc_roadside_wall": "no fetched page about this crag itself; only a search snippet from a listing site that could not be fetched, and the fetched Lower Road Side Wall page is a different place (Fraser Valley)",
-  "bc_the_rats_nest": "no standalone page about the crag; only the parent area page names it (Adventure Collective pages do not count)",
-  "bc_01_road_side_crag": "no page found about this crag after several searches",
-  "bc_02_shaded_wall": "no page found about this crag after several searches"
- },
- "_conflicts": {
-  "bc_bat_wall": "stored rock is mudstone, but the parent Gotham City page (https://sendage.com/area/gotham-city-bc-canada) describes basaltic andesite; not changed"
- }
+  "bc_yoga_ball_boulder": {
+    "_expect": {
+      "name": "Yoga ball boulder",
+      "region": "British Columbia"
+    },
+    "blurb": "A single boulder holding eight problems within the Copper Boulders zone, at the foot of Copper Mountain near Terrace in northern British Columbia. The problems are mostly V1 and V2, with one V0 and a lone problem far harder than the rest. The boulder is described as a sunny one with a mix of climbing styles. The wider zone has flat ground and moderate-height boulders, which makes falls friendlier, and many of its boulders sit only a few metres from the road, so the walk in is short.",
+    "review": {
+      "sources": [
+        "https://www.mountainproject.com/area/118732477/yoga-ball-boulder",
+        "https://www.mountainproject.com/area/118670864/copper-boulders"
+      ]
+    }
+  },
+  "bc_the_big_boulder": {
+    "_expect": {
+      "name": "The Big Boulder",
+      "region": "British Columbia"
+    },
+    "blurb": "A big detached block of rock in the Waterline area near Castlegar, in the West Kootenay, standing between two neighbouring walls. It holds eight routes: seven bolted lines and one trad line. Grades start around 5.8 and reach 5.12, with a cluster in the 5.9 and 5.10 range and a few harder lines on top. Most of the routes are rated well, and there is also a little bouldering low on the right-hand side. The hike from the gate is short, around four minutes.",
+    "review": {
+      "sources": [
+        "https://www.mountainproject.com/area/114379418/the-big-boulder",
+        "https://www.mountainproject.com/route/124496093/v-20"
+      ]
+    }
+  },
+  "bc_left_centre": {
+    "_expect": {
+      "name": "Left Centre",
+      "region": "British Columbia"
+    },
+    "blurb": "The middle-left section of the Roche Lake cliffs near Kamloops, easy to spot thanks to a big roof. It has eight routes, six of them bolted and two trad, and at least one can also be top-roped. Grades begin at 5.9, with five routes in the 5.10 range and two at 5.12, so it suits climbers who already lead moderate sport. To reach it, take the middle trail from the parking lot.",
+    "review": {
+      "sources": [
+        "https://mountainproject.com/area/119077550/left-centre",
+        "https://www.mountainproject.com/route/stats/108071689/midnight-oil"
+      ]
+    }
+  },
+  "bc_bat_wall": {
+    "_expect": {
+      "name": "Bat Wall",
+      "region": "British Columbia"
+    },
+    "blurb": "A steep wall at Gotham City, a small sport crag in the hills near Nelson in the West Kootenay. All eight routes are bolted, and they are described as fun and pumpy. The grades are concentrated around 5.10, with five routes in that range, plus one easy 5.6, a 5.9 and a single 5.11. That makes it a good fit for climbers comfortable on steep ground at the low to middle 5.10 grades.",
+    "review": {
+      "sources": [
+        "https://www.mountainproject.com/area/114530828/bat-wall",
+        "https://sendage.com/area/gotham-city-bc-canada"
+      ]
+    }
+  },
+  "_skipped": {
+    "bc_roadside_wall": "no fetched page about this crag itself; only a search snippet from a listing site that could not be fetched, and the fetched Lower Road Side Wall page is a different place (Fraser Valley)",
+    "bc_the_rats_nest": "no standalone page about the crag; only the parent area page names it (Adventure Collective pages do not count)",
+    "bc_01_road_side_crag": "no page found about this crag after several searches",
+    "bc_02_shaded_wall": "no page found about this crag after several searches"
+  },
+  "_conflicts": {
+    "bc_bat_wall": "stored rock is mudstone, but the parent Gotham City page (https://sendage.com/area/gotham-city-bc-canada) describes basaltic andesite; not changed"
+  }
 }

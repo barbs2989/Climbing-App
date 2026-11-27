@@ -1,24 +1,48 @@
 {
- "az_forum": {
-  "_expect": {"name": "Forum", "region": "Arizona"},
-  "blurb": "Forum is a small bolted crag on Mount Lemmon, at roughly 7,700 feet along the Upper Highway side of the Catalinas. It holds six sport routes: a couple near 5.8 and the rest in the 5.10 range. The wall sits in shade during the morning, and the stone nearby is regarded as good quality. The trail to the neighboring Continuum and Spectrum crags runs right past its base, so most climbers meet it on the way somewhere else. It suits a warm-up or a quick add-on stop rather than a full day out.",
-  "review": {"sources": ["https://www.mountainproject.com/area/119014025/forum", "https://www.mountainproject.com/area/110510532/spectrum-crags"]}
- },
- "az_charlie_dome_and_the_lony_tusk": {
-  "_expect": {"name": "Charlie Dome and The Lony Tusk", "region": "Arizona"},
-  "blurb": "Charlie Dome and The Lony Tusk sit high on Mount Lemmon, around 7,200 feet, in the Upper Highway zone. The pair is a rounded dome plus a detached tower, about a quarter mile south-southwest of The Steep. Six sport routes are bolted here, split evenly between the 5.10 and 5.11 ranges. Several lines stay in deep shade in the morning. The climbing is decent rather than spectacular, but the spot is far from the main flow of climbers, so expect quiet. The walk in is long, and the return leg is uphill.",
-  "review": {"sources": ["https://www.mountainproject.com/area/109483332/charlie-dome-and-the-lony-tusk", "https://www.mountainproject.com/area/106824468/7-upper-highway"]}
- },
- "az_courthouse_rock": {
-  "_expect": {"name": "Courthouse Rock", "region": "Arizona"},
-  "blurb": "Courthouse Rock is a large desert formation in the Eagletail Mountains of central Arizona, with its climbing on the east face. Six routes are recorded, five trad and one sport, ranging from an easy 5.5 up to about 5.10. These are long multi-pitch outings, some running to eight pitches, and the 5.5 standard route is the most popular. The stone is typical Sonoran Desert rock, and some holds can come loose. Reaching the base means a rough dirt drive through sandy washes, where extra clearance helps.",
-  "review": {"sources": ["https://www.mountainproject.com/area/105921364/eagletail-mountains", "https://www.mountainproject.com/area/105921368/courthouse-rock"]}
- },
- "_skipped": {
-  "az_woods_canyon_ice": "no fetched page about the ice crag itself (only the parent Central Mogollon Rim page lists it); no second page found",
-  "az_gimme_some_dome_the": "no area page found, only route pages (Mr. Blond, Blonde Ambition) under it; one page naming it",
-  "az_split_boulder": "Split Boulder pages found were in Joshua Tree and Red Rock, not Panther Peak; only the Panther Peak parent page names it",
-  "az_the_takeoff_boulder": "no page found that mentions the Takeoff Boulder; The Egg page fetched does not name it",
-  "az_boulder_e": "only the Rose Canyon Entrance Boulders parent page names Boulder E; no page about the boulder itself found"
- }
+  "az_forum": {
+    "_expect": {
+      "name": "Forum",
+      "region": "Arizona"
+    },
+    "blurb": "Forum is a small bolted crag on Mount Lemmon, at roughly 7,700 feet along the Upper Highway side of the Catalinas. It holds six sport routes: a couple near 5.8 and the rest in the 5.10 range. The wall sits in shade during the morning, and the stone nearby is regarded as good quality. The trail to the neighboring Continuum and Spectrum crags runs right past its base, so most climbers meet it on the way somewhere else. It suits a warm-up or a quick add-on stop rather than a full day out.",
+    "review": {
+      "sources": [
+        "https://www.mountainproject.com/area/119014025/forum",
+        "https://www.mountainproject.com/area/110510532/spectrum-crags"
+      ]
+    }
+  },
+  "az_charlie_dome_and_the_lony_tusk": {
+    "_expect": {
+      "name": "Charlie Dome and The Lony Tusk",
+      "region": "Arizona"
+    },
+    "blurb": "Charlie Dome and The Lony Tusk sit high on Mount Lemmon, around 7,200 feet, in the Upper Highway zone. The pair is a rounded dome plus a detached tower, about a quarter mile south-southwest of The Steep. Six sport routes are bolted here, split evenly between the 5.10 and 5.11 ranges. Several lines stay in deep shade in the morning. The climbing is decent rather than spectacular, but the spot is far from the main flow of climbers, so expect quiet. The walk in is long, and the return leg is uphill.",
+    "review": {
+      "sources": [
+        "https://www.mountainproject.com/area/109483332/charlie-dome-and-the-lony-tusk",
+        "https://www.mountainproject.com/area/106824468/7-upper-highway"
+      ]
+    }
+  },
+  "az_courthouse_rock": {
+    "_expect": {
+      "name": "Courthouse Rock",
+      "region": "Arizona"
+    },
+    "blurb": "Courthouse Rock is a large desert formation in the Eagletail Mountains of central Arizona, with its climbing on the east face. It has six routes, five trad and one sport, ranging from an easy 5.5 up to about 5.10. These are long multi-pitch outings, some running to eight pitches, and the 5.5 standard route is the most popular. The stone is typical Sonoran Desert rock, and some holds can come loose. Reaching the base means a rough dirt drive through sandy washes, where extra clearance helps.",
+    "review": {
+      "sources": [
+        "https://www.mountainproject.com/area/105921364/eagletail-mountains",
+        "https://www.mountainproject.com/area/105921368/courthouse-rock"
+      ]
+    }
+  },
+  "_skipped": {
+    "az_woods_canyon_ice": "no fetched page about the ice crag itself (only the parent Central Mogollon Rim page lists it); no second page found",
+    "az_gimme_some_dome_the": "no area page found, only route pages (Mr. Blond, Blonde Ambition) under it; one page naming it",
+    "az_split_boulder": "Split Boulder pages found were in Joshua Tree and Red Rock, not Panther Peak; only the Panther Peak parent page names it",
+    "az_the_takeoff_boulder": "no page found that mentions the Takeoff Boulder; The Egg page fetched does not name it",
+    "az_boulder_e": "only the Rose Canyon Entrance Boulders parent page names Boulder E; no page about the boulder itself found"
+  }
 }

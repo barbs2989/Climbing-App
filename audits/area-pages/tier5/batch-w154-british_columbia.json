@@ -1,37 +1,85 @@
 {
- "bc_the_estuary": {
-  "_expect": { "name": "The Estuary", "region": "British Columbia" },
-  "blurb": "The Estuary is a sport wall in the Paradise Valley area near Squamish, British Columbia. It holds seven bolted routes, spread from the 5.10 range up into the 5.12 range, with three of them in the 5.11 range. One line begins up an easy bolted crack, then crosses an overhanging wall and finishes on an arete. Another starts just to the right of the wall's best-known line, so the routes sit close together.",
-  "review": { "sources": ["https://thetopo.com/crags/paradise-valley/routelist/the-estuary", "https://sendage.com/climb/kype-of-pinook-estuary-paradise-wall-paradise-valley-squamish-bc-canada"] }
- },
- "bc_art_exhibit": {
-  "_expect": { "name": "Art Exhibit", "region": "British Columbia" },
-  "blurb": "Art Exhibit is a small crag on Debeck's Hill near Squamish, in the Sea to Sky region. Seven routes are listed, five sport and two trad: one easier trad line around 5.8, and the rest running from the 5.10 range through the 5.12 range. The documented lines are steep and technical, with overhanging headwalls, a small roof and a leaning corner, and a couple of them stay dry after rain. It suits climbers already comfortable in the harder grades.",
-  "review": { "sources": ["https://sendage.com/area/art-exhibit-debecks-hill-squamish-bc-canada", "https://outmap.pro/waypoint/art-exhibit-e7GFSdkiMmjukYjUMTMPc5"] }
- },
- "bc_crescent_towers": {
-  "_expect": { "name": "Crescent Towers", "region": "British Columbia" },
-  "blurb": "Crescent Towers is a cluster of summits in the Bugaboos of southeastern British Columbia, set between Crescent Spire and Eastpost Spire. It is made up of a North Tower, two Central Towers and the two southern towers nicknamed the Donkey Ears. The seven routes here are mostly multi-pitch trad with a couple of alpine lines, spanning roughly 5.6 to the 5.10 range, with most in the 5.8 to 5.10 range. That makes it a moderate objective by Bugaboos standards.",
-  "review": { "sources": ["https://www.mountainproject.com/area/105902683/crescent-towers", "https://en.wikipedia.org/wiki/Crescent_Towers"] }
- },
- "bc_pigeon_feathers": {
-  "_expect": { "name": "Pigeon Feathers", "region": "British Columbia" },
-  "blurb": "The Pigeon Feathers are a group of shorter spires in East Creek Basin in the Bugaboos, an alpine setting where the climbing is mostly multi-pitch trad. Seven routes run from the 5.10 range up into the 5.12 range, with four of them in the 5.11 range, and several are many pitches long. Most can be done as a day trip from the Applebee camp or the Kain hut, which sit roughly one to two hours away. Strong parties will want a rack that includes big cams.",
-  "review": { "sources": ["https://www.mountainproject.com/v/pigeon-feathers/107335606", "https://mountainproject.com/route/107335614/solitary-confinement"] }
- },
- "bc_victor_lake_wall": {
-  "_expect": { "name": "Victor Lake Wall", "region": "British Columbia" },
-  "blurb": "Victor Lake Wall is a big multi-pitch wall beside the Trans-Canada Highway west of Revelstoke, rising above Victor Lake. Seven routes are described, six sport and one trad, nearly all in the 5.10 range with two in the 5.11 range. Several run to a dozen pitches or more. A broad ledge cuts across the face between the lower and upper sections, and climbers can use it to bail from any line. Walking off the top takes about half an hour.",
-  "review": { "sources": ["https://www.mountainproject.com/area/119531440/victor-lake-wall", "https://sendage.com/area/victor-lake-wall-revelstoke-bc-canada"] }
- },
- "bc_main_face": {
-  "_expect": { "name": "Main Face", "region": "British Columbia" },
-  "blurb": "Main Face is the largest section of Comic Rocks, an old-school trad crag in the Sea to Sky corridor. It has seven trad routes, from 5.8 up to the 5.12 range, with most of them in the 5.10 range and one each at 5.9, 5.11 and 5.12. The styles vary from line to line. The rock here is finer-grained than much of what you find around Squamish. It is a tall face and a good fit for climbers who prefer traditional gear.",
-  "approach": "Follow the path that starts at the roadside gate and climbs uphill; Main Face is the first wall you reach, on the left side.",
-  "review": { "sources": ["https://www.mountainproject.com/area/118489823/main-face", "https://mountainproject.com/area/118489813/comic-rocks"] }
- },
- "_skipped": {
-  "bc_climbing_craigs_crag": "no page about the crag itself found; only the parent Sol Mountain Lodge page names it (2 searches)",
-  "bc_bowen_island": "could not fetch two pages on the Bowen Island BC crag; forum posts returned 503, other results were hiking pages or a different Bowen (Queensland)"
- }
+  "bc_the_estuary": {
+    "_expect": {
+      "name": "The Estuary",
+      "region": "British Columbia"
+    },
+    "blurb": "The Estuary is a sport wall in the Paradise Valley area near Squamish, British Columbia. It holds seven bolted routes, spread from the 5.10 range up into the 5.12 range, with three of them in the 5.11 range. One line begins up an easy bolted crack, then crosses an overhanging wall and finishes on an arete. Another starts just to the right of the wall's best-known line, so the routes sit close together.",
+    "review": {
+      "sources": [
+        "https://thetopo.com/crags/paradise-valley/routelist/the-estuary",
+        "https://sendage.com/climb/kype-of-pinook-estuary-paradise-wall-paradise-valley-squamish-bc-canada"
+      ]
+    }
+  },
+  "bc_art_exhibit": {
+    "_expect": {
+      "name": "Art Exhibit",
+      "region": "British Columbia"
+    },
+    "blurb": "Art Exhibit is a small crag on Debeck's Hill near Squamish, in the Sea to Sky region. It has seven routes, five sport and two trad: one easier trad line around 5.8, and the rest running from the 5.10 range through the 5.12 range. The documented lines are steep and technical, with overhanging headwalls, a small roof and a leaning corner, and a couple of them stay dry after rain. It suits climbers already comfortable in the harder grades.",
+    "review": {
+      "sources": [
+        "https://sendage.com/area/art-exhibit-debecks-hill-squamish-bc-canada",
+        "https://outmap.pro/waypoint/art-exhibit-e7GFSdkiMmjukYjUMTMPc5"
+      ]
+    }
+  },
+  "bc_crescent_towers": {
+    "_expect": {
+      "name": "Crescent Towers",
+      "region": "British Columbia"
+    },
+    "blurb": "Crescent Towers is a cluster of summits in the Bugaboos of southeastern British Columbia, set between Crescent Spire and Eastpost Spire. It is made up of a North Tower, two Central Towers and the two southern towers nicknamed the Donkey Ears. The seven routes here are mostly multi-pitch trad with a couple of alpine lines, spanning roughly 5.6 to the 5.10 range, with most in the 5.8 to 5.10 range. That makes it a moderate objective by Bugaboos standards.",
+    "review": {
+      "sources": [
+        "https://www.mountainproject.com/area/105902683/crescent-towers",
+        "https://en.wikipedia.org/wiki/Crescent_Towers"
+      ]
+    }
+  },
+  "bc_pigeon_feathers": {
+    "_expect": {
+      "name": "Pigeon Feathers",
+      "region": "British Columbia"
+    },
+    "blurb": "The Pigeon Feathers are a group of shorter spires in East Creek Basin in the Bugaboos, an alpine setting where the climbing is mostly multi-pitch trad. Seven routes run from the 5.10 range up into the 5.12 range, with four of them in the 5.11 range, and several are many pitches long. Most can be done as a day trip from the Applebee camp or the Kain hut, which sit roughly one to two hours away. Strong parties will want a rack that includes big cams.",
+    "review": {
+      "sources": [
+        "https://www.mountainproject.com/v/pigeon-feathers/107335606",
+        "https://mountainproject.com/route/107335614/solitary-confinement"
+      ]
+    }
+  },
+  "bc_victor_lake_wall": {
+    "_expect": {
+      "name": "Victor Lake Wall",
+      "region": "British Columbia"
+    },
+    "blurb": "Victor Lake Wall is a big multi-pitch wall beside the Trans-Canada Highway west of Revelstoke, rising above Victor Lake. Seven routes are described, six sport and one trad, nearly all in the 5.10 range with two in the 5.11 range. Several run to a dozen pitches or more. A broad ledge cuts across the face between the lower and upper sections, and climbers can use it to bail from any line. Walking off the top takes about half an hour.",
+    "review": {
+      "sources": [
+        "https://www.mountainproject.com/area/119531440/victor-lake-wall",
+        "https://sendage.com/area/victor-lake-wall-revelstoke-bc-canada"
+      ]
+    }
+  },
+  "bc_main_face": {
+    "_expect": {
+      "name": "Main Face",
+      "region": "British Columbia"
+    },
+    "blurb": "Main Face is the largest section of Comic Rocks, an old-school trad crag in the Sea to Sky corridor. It has seven trad routes, from 5.8 up to the 5.12 range, with most of them in the 5.10 range and one each at 5.9, 5.11 and 5.12. The styles vary from line to line. The rock here is finer-grained than much of what you find around Squamish. It is a tall face and a good fit for climbers who prefer traditional gear.",
+    "approach": "Follow the path that starts at the roadside gate and climbs uphill; Main Face is the first wall you reach, on the left side.",
+    "review": {
+      "sources": [
+        "https://www.mountainproject.com/area/118489823/main-face",
+        "https://mountainproject.com/area/118489813/comic-rocks"
+      ]
+    }
+  },
+  "_skipped": {
+    "bc_climbing_craigs_crag": "no page about the crag itself found; only the parent Sol Mountain Lodge page names it (2 searches)",
+    "bc_bowen_island": "could not fetch two pages on the Bowen Island BC crag; forum posts returned 503, other results were hiking pages or a different Bowen (Queensland)"
+  }
 }

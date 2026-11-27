@@ -1,47 +1,104 @@
 {
- "az_wilderness_of_rocks_domes": {
-  "_expect": {"name": "Wilderness of Rocks Domes", "region": "Arizona"},
-  "blurb": "A cluster of big granite domes high on Mount Lemmon in the Santa Catalinas, set along the Wilderness of Rocks trail among pines and oaks. Seven routes are recorded, mostly traditional with a couple of sport lines, running from moderate 5.7 up to about 5.10. Several of the lines are multi-pitch, so expect a real day out rather than a quick lap. Reaching the domes takes a hike of roughly a mile past the trail junction on the ridge, and a few formations can also be reached from the top by a longer walk down. This is an adventurous, uncrowded setting rather than a roadside crag.",
-  "parking_note": "Leave the car at the Marshall Gulch parking area near Summerhaven, which is the start of the trail in.",
-  "approach": "Hike the Marshall Gulch trail up to the junction on the ridge, then follow the Wilderness of Rocks trail for about a mile until a two-summit dome appears to the north.",
-  "review": {"sources": ["https://www.mountainproject.com/area/106924878/wilderness-of-rocks-domes", "https://www.mountainproject.com/area/106021041/wilderness-of-rocks", "https://www.mountainproject.com/area/106824468/7-upper-highway"]}
- },
- "az_ludus_magnus_wall": {
-  "_expect": {"name": "Ludus Magnus Wall", "region": "Arizona"},
-  "blurb": "A small sport wall in the Colosseum zone beside the Catalina Highway on Mount Lemmon, outside Tucson. It holds seven bolted lines spread from easy terrain up to 5.10, with most of the routes in the moderate range, which makes it a friendly place for newer leaders and mixed-ability partners. The wall catches the morning sun and drops into shade around midday, a pleasant pattern for fall, winter and spring. The uphill walk counts as part of the workout, the setting is quiet with good views, and the surrounding cliff band has loose rock, so wear a helmet.",
-  "review": {"sources": ["https://www.mountainproject.com/area/123347553/ludus-magnus-wall", "https://www.mountainproject.com/area/122278239/colosseum"]}
- },
- "az_sunnyside": {
-  "_expect": {"name": "Sunnyside", "region": "Arizona"},
-  "blurb": "Sunnyside is a small sport crag in La Milagrosa Canyon, a desert canyon at the base of the Santa Catalina Mountains near Tucson. It is the warmest, sunniest spot in the canyon, which suits cool days, and the canyon as a whole is a winter favorite with locals. There are seven routes, nearly all sport plus one other line, ranging from 5.9 into the low 5.11s. That is a gentler spread than the rest of the canyon, which is known for steep, hard sport climbing, so it is a handy stop for climbers working through the moderates. Rock quality in the canyon varies, so check holds and anchors.",
-  "review": {"sources": ["https://www.mountainproject.com/area/106328687/sunnyside", "https://www.mountainproject.com/v/107179638"]}
- },
- "az_the_slots": {
-  "_expect": {"name": "The Slots", "region": "Arizona"},
-  "blurb": "Two narrow slot canyons on the lower west side of Point of Rocks in the Granite Dells near Prescott. The walls hold crack climbs that face west and stay shaded, which helps on hot days. Seven routes are recorded, nearly all traditional with one that can be top-roped, spanning 5.7 to about 5.10. Getting into the second slot with a pack is awkward, and setting up a top rope means a worrying scramble behind the slots. A helmet is wise when leading because of the back wall close by. It suits climbers who enjoy scrambling and adventurous trad rather than quick, easy laps.",
-  "review": {"sources": ["https://www.mountainproject.com/area/124461889/the-slots", "https://mountainproject.com/area/116496672/point-of-rocks"]}
- },
- "az_delusions_of_grandeur_boulder": {
-  "_expect": {"name": "Delusions of Grandeur Boulder", "region": "Arizona"},
-  "blurb": "A single desert boulder in the Equestrian Area of South Mountain in Phoenix, visible from the Desert Classic trail. Seven problems run around most of its sides, from the easiest grades up to V6, with a couple of standout hard lines at the top end and plenty of friendly ones lower down. That spread makes it a good warm-up stop before moving on to bigger boulders nearby, and it works for a mixed group. Expect hot, exposed conditions typical of the Phoenix desert, and plan around the heat. Bring a pad and a few friends to spot.",
-  "review": {"sources": ["https://www.mountainproject.com/area/116209625/delusions-of-grandeur-boulder", "https://www.mountainproject.com/area/116186271/equestrian-area-closures-in-effect"]}
- },
- "az_limestone_bluff": {
-  "_expect": {"name": "Limestone Bluff", "region": "Arizona"},
-  "blurb": "A compact limestone bouldering spot in Sinclair Wash on the edge of Flagstaff. The main feature is a prominent boulder in a clearing, with a pocketed prow and a handful of smaller problems around it. Seven problems are recorded, all between V0 and V2, so it is a relaxed place for beginners or a short warm-up session. The boulder is easy to find and sits close to a busy trail used by walkers, runners and bikers, so expect to be seen. Bring pads, and think about where a fall would end up before trying the taller lines.",
-  "parking_note": "Sawmill Community Park on the west side is the usual place to start.",
-  "approach": "From Sawmill Community Park, follow the trail east to the boulder, which sits in a clearing.",
-  "review": {"sources": ["https://www.mountainproject.com/area/124612302/limestone-bluff", "https://www.mountainproject.com/area/124612288/sinclair-wash"]}
- },
- "az_dog_leg_area": {
-  "_expect": {"name": "Dog Leg Area", "region": "Arizona"},
-  "blurb": "One of the sections of Thumb Butte, the butte overlooking Prescott in central Arizona. Seven routes are listed, mostly traditional with a single sport line, in a range from 5.8 to about 5.12, with most of them sitting around 5.10 and 5.11. The wall stays shady in the morning and turns cold through winter, so it suits warmer days. Protection can be tricky across the butte, so this is better for confident trad leaders than for beginners. To top out, a ridge walk leads toward the summit, where rappel anchors sit in a corner just short of the top.",
-  "review": {"sources": ["https://www.mountainproject.com/area/109021357/dog-leg-area", "https://mountainproject.com/area/105944337/thumb-butte"]}
- },
- "_skipped": {
-  "az_musicians_wall": "Only listed (about seven climbs) as a name under the Hairpin Turn Area page; no fetched page is about the wall itself, and two searches found no other page naming it."
- },
- "_conflicts": {
-  "az_dog_leg_area": "Stored rock is granodiorite, but https://mountainproject.com/area/105944337/thumb-butte describes Thumb Butte as a basalt butte; the Dog Leg Area page itself gives no rock. Stored value left unchanged and rock not named in the blurb."
- }
+  "az_wilderness_of_rocks_domes": {
+    "_expect": {
+      "name": "Wilderness of Rocks Domes",
+      "region": "Arizona"
+    },
+    "blurb": "A cluster of big granite domes high on Mount Lemmon in the Santa Catalinas, set along the Wilderness of Rocks trail among pines and oaks. It has seven routes, mostly traditional with a couple of sport lines, running from moderate 5.7 up to about 5.10. Several of the lines are multi-pitch, so expect a real day out rather than a quick lap. Reaching the domes takes a hike of roughly a mile past the trail junction on the ridge, and a few formations can also be reached from the top by a longer walk down. This is an adventurous, uncrowded setting rather than a roadside crag.",
+    "parking_note": "Leave the car at the Marshall Gulch parking area near Summerhaven, which is the start of the trail in.",
+    "approach": "Hike the Marshall Gulch trail up to the junction on the ridge, then follow the Wilderness of Rocks trail for about a mile until a two-summit dome appears to the north.",
+    "review": {
+      "sources": [
+        "https://www.mountainproject.com/area/106924878/wilderness-of-rocks-domes",
+        "https://www.mountainproject.com/area/106021041/wilderness-of-rocks",
+        "https://www.mountainproject.com/area/106824468/7-upper-highway"
+      ]
+    }
+  },
+  "az_ludus_magnus_wall": {
+    "_expect": {
+      "name": "Ludus Magnus Wall",
+      "region": "Arizona"
+    },
+    "blurb": "A small sport wall in the Colosseum zone beside the Catalina Highway on Mount Lemmon, outside Tucson. It holds seven bolted lines spread from easy terrain up to 5.10, with most of the routes in the moderate range, which makes it a friendly place for newer leaders and mixed-ability partners. The wall catches the morning sun and drops into shade around midday, a pleasant pattern for fall, winter and spring. The uphill walk counts as part of the workout, the setting is quiet with good views, and the surrounding cliff band has loose rock, so wear a helmet.",
+    "review": {
+      "sources": [
+        "https://www.mountainproject.com/area/123347553/ludus-magnus-wall",
+        "https://www.mountainproject.com/area/122278239/colosseum"
+      ]
+    }
+  },
+  "az_sunnyside": {
+    "_expect": {
+      "name": "Sunnyside",
+      "region": "Arizona"
+    },
+    "blurb": "Sunnyside is a small sport crag in La Milagrosa Canyon, a desert canyon at the base of the Santa Catalina Mountains near Tucson. It is the warmest, sunniest spot in the canyon, which suits cool days, and the canyon as a whole is a winter favorite with locals. There are seven routes, nearly all sport plus one other line, ranging from 5.9 into the low 5.11s. That is a gentler spread than the rest of the canyon, which is known for steep, hard sport climbing, so it is a handy stop for climbers working through the moderates. Rock quality in the canyon varies, so check holds and anchors.",
+    "review": {
+      "sources": [
+        "https://www.mountainproject.com/area/106328687/sunnyside",
+        "https://www.mountainproject.com/v/107179638"
+      ]
+    }
+  },
+  "az_the_slots": {
+    "_expect": {
+      "name": "The Slots",
+      "region": "Arizona"
+    },
+    "blurb": "Two narrow slot canyons on the lower west side of Point of Rocks in the Granite Dells near Prescott. The walls hold crack climbs that face west and stay shaded, which helps on hot days. It has seven routes, nearly all traditional with one that can be top-roped, spanning 5.7 to about 5.10. Getting into the second slot with a pack is awkward, and setting up a top rope means a worrying scramble behind the slots. A helmet is wise when leading because of the back wall close by. It suits climbers who enjoy scrambling and adventurous trad rather than quick, easy laps.",
+    "review": {
+      "sources": [
+        "https://www.mountainproject.com/area/124461889/the-slots",
+        "https://mountainproject.com/area/116496672/point-of-rocks"
+      ]
+    }
+  },
+  "az_delusions_of_grandeur_boulder": {
+    "_expect": {
+      "name": "Delusions of Grandeur Boulder",
+      "region": "Arizona"
+    },
+    "blurb": "A single desert boulder in the Equestrian Area of South Mountain in Phoenix, visible from the Desert Classic trail. Seven problems run around most of its sides, from the easiest grades up to V6, with a couple of standout hard lines at the top end and plenty of friendly ones lower down. That spread makes it a good warm-up stop before moving on to bigger boulders nearby, and it works for a mixed group. Expect hot, exposed conditions typical of the Phoenix desert, and plan around the heat. Bring a pad and a few friends to spot.",
+    "review": {
+      "sources": [
+        "https://www.mountainproject.com/area/116209625/delusions-of-grandeur-boulder",
+        "https://www.mountainproject.com/area/116186271/equestrian-area-closures-in-effect"
+      ]
+    }
+  },
+  "az_limestone_bluff": {
+    "_expect": {
+      "name": "Limestone Bluff",
+      "region": "Arizona"
+    },
+    "blurb": "A compact limestone bouldering spot in Sinclair Wash on the edge of Flagstaff. The main feature is a prominent boulder in a clearing, with a pocketed prow and a handful of smaller problems around it. It has seven problems, all between V0 and V2, so it is a relaxed place for beginners or a short warm-up session. The boulder is easy to find and sits close to a busy trail used by walkers, runners and bikers, so expect to be seen. Bring pads, and think about where a fall would end up before trying the taller lines.",
+    "parking_note": "Sawmill Community Park on the west side is the usual place to start.",
+    "approach": "From Sawmill Community Park, follow the trail east to the boulder, which sits in a clearing.",
+    "review": {
+      "sources": [
+        "https://www.mountainproject.com/area/124612302/limestone-bluff",
+        "https://www.mountainproject.com/area/124612288/sinclair-wash"
+      ]
+    }
+  },
+  "az_dog_leg_area": {
+    "_expect": {
+      "name": "Dog Leg Area",
+      "region": "Arizona"
+    },
+    "blurb": "One of the sections of Thumb Butte, the butte overlooking Prescott in central Arizona. It has seven routes, mostly traditional with a single sport line, in a range from 5.8 to about 5.12, with most of them sitting around 5.10 and 5.11. The wall stays shady in the morning and turns cold through winter, so it suits warmer days. Protection can be tricky across the butte, so this is better for confident trad leaders than for beginners. To top out, a ridge walk leads toward the summit, where rappel anchors sit in a corner just short of the top.",
+    "review": {
+      "sources": [
+        "https://www.mountainproject.com/area/109021357/dog-leg-area",
+        "https://mountainproject.com/area/105944337/thumb-butte"
+      ]
+    }
+  },
+  "_skipped": {
+    "az_musicians_wall": "Only listed (about seven climbs) as a name under the Hairpin Turn Area page; no fetched page is about the wall itself, and two searches found no other page naming it."
+  },
+  "_conflicts": {
+    "az_dog_leg_area": "Stored rock is granodiorite, but https://mountainproject.com/area/105944337/thumb-butte describes Thumb Butte as a basalt butte; the Dog Leg Area page itself gives no rock. Stored value left unchanged and rock not named in the blurb."
+  }
 }

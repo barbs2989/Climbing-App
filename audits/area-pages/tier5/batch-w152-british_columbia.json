@@ -1,24 +1,48 @@
 {
- "bc_frolich": {
-  "_expect": { "name": "Frolich", "region": "British Columbia" },
-  "blurb": "Frolich is a small sport crag in the Pillary part of Area 44, in the Squamish to Whistler corridor. It holds seven bolted lines, running from an easy 5.7 up through the 5.9 and 5.10 range, with the largest group at 5.11. The routes are short single pitches, so it suits a quick session on moderate-to-hard sport grades more than a long day out. Neighbouring walls such as Pillary and the Boondocks sit close by, and the crag is best treated as an add-on to a visit there rather than a stand-alone destination.",
-  "review": { "sources": ["https://www.mountainproject.com/area/112389686/frolich", "https://thetopo.com/crags/area-44/cragmap/pillary"] }
- },
- "bc_pillary": {
-  "_expect": { "name": "Pillary", "region": "British Columbia" },
-  "blurb": "Pillary is a sport crag within Area 44, between Squamish and Whistler. Its seven routes begin at an easy 5.7 and climb through 5.9 and 5.10 to a pair of 5.11s, with the 5.10 grade the most common. Most of the lines face west. To reach the longer climbs on the front side, climbers go down the stairs found across from the right end of the Boondocks sector. The wall is a decent pick for someone working through the middle sport grades.",
-  "review": { "sources": ["https://www.mountainproject.com/area/112389710/pillary", "https://thetopo.com/crags/area-44/cragmap/pillary"] }
- },
- "bc_satisfaction": {
-  "_expect": { "name": "Satisfaction", "region": "British Columbia" },
-  "blurb": "Satisfaction is a compact crag at Esler Bluffs, outside Williams Lake in the Cariboo. Seven routes are recorded, mostly bolted sport lines with one trad route and one top-rope option. The difficulty is on the hard side: nearly every route sits at 5.11, with a single 5.10 at the easy end, so it is not a spot for beginners. The crag lies close to the parking area. The wider bluffs have both north-facing and south-facing walls, and are mainly a sport climbing destination.",
-  "review": { "sources": ["https://www.mountainproject.com/area/113281666/satisfaction", "https://sendage.com/area/esler-bluffs-williams-lake-bc-canada"] }
- },
- "_skipped": {
-  "bc_welcome_wall": "no page found naming a Welcome Wall at Lillooet Edge (searched twice; only Original Wall sector pages and unrelated Welcome Walls in other states)",
-  "bc_nurses_wall": "only one fetched page about the crag (Mountain Project); second fetch of the Waterline page did not name it, rockclimbing.com refused connection, thecrag 403",
-  "bc_ovis_wall": "only a search snippet; thecrag page fetch returned 403, no second fetched page",
-  "bc_left_2": "Mountain Project Beach page lists Left only as a sub-area; fetched Left pages were for different places (Roche Lake, Skaha), no fetched page about this Left itself",
-  "bc_lower_bluffs": "fetched pages mention Lower Bluffs only as the access path to Upper Bluffs; no page about it"
- }
+  "bc_frolich": {
+    "_expect": {
+      "name": "Frolich",
+      "region": "British Columbia"
+    },
+    "blurb": "Frolich is a small sport crag in the Pillary part of Area 44, in the Squamish to Whistler corridor. It holds seven bolted lines, running from an easy 5.7 up through the 5.9 and 5.10 range, with the largest group at 5.11. The routes are short single pitches, so it suits a quick session on moderate-to-hard sport grades more than a long day out. Neighbouring walls such as Pillary and the Boondocks sit close by, and the crag is best treated as an add-on to a visit there rather than a stand-alone destination.",
+    "review": {
+      "sources": [
+        "https://www.mountainproject.com/area/112389686/frolich",
+        "https://thetopo.com/crags/area-44/cragmap/pillary"
+      ]
+    }
+  },
+  "bc_pillary": {
+    "_expect": {
+      "name": "Pillary",
+      "region": "British Columbia"
+    },
+    "blurb": "Pillary is a sport crag within Area 44, between Squamish and Whistler. Its seven routes begin at an easy 5.7 and climb through 5.9 and 5.10 to a pair of 5.11s, with the 5.10 grade the most common. Most of the lines face west. To reach the longer climbs on the front side, climbers go down the stairs found across from the right end of the Boondocks sector. The wall is a decent pick for someone working through the middle sport grades.",
+    "review": {
+      "sources": [
+        "https://www.mountainproject.com/area/112389710/pillary",
+        "https://thetopo.com/crags/area-44/cragmap/pillary"
+      ]
+    }
+  },
+  "bc_satisfaction": {
+    "_expect": {
+      "name": "Satisfaction",
+      "region": "British Columbia"
+    },
+    "blurb": "Satisfaction is a compact crag at Esler Bluffs, outside Williams Lake in the Cariboo. It has seven routes, mostly bolted sport lines with one trad route and one top-rope option. The difficulty is on the hard side: nearly every route sits at 5.11, with a single 5.10 at the easy end, so it is not a spot for beginners. The crag lies close to the parking area. The wider bluffs have both north-facing and south-facing walls, and are mainly a sport climbing destination.",
+    "review": {
+      "sources": [
+        "https://www.mountainproject.com/area/113281666/satisfaction",
+        "https://sendage.com/area/esler-bluffs-williams-lake-bc-canada"
+      ]
+    }
+  },
+  "_skipped": {
+    "bc_welcome_wall": "no page found naming a Welcome Wall at Lillooet Edge (searched twice; only Original Wall sector pages and unrelated Welcome Walls in other states)",
+    "bc_nurses_wall": "only one fetched page about the crag (Mountain Project); second fetch of the Waterline page did not name it, rockclimbing.com refused connection, thecrag 403",
+    "bc_ovis_wall": "only a search snippet; thecrag page fetch returned 403, no second fetched page",
+    "bc_left_2": "Mountain Project Beach page lists Left only as a sub-area; fetched Left pages were for different places (Roche Lake, Skaha), no fetched page about this Left itself",
+    "bc_lower_bluffs": "fetched pages mention Lower Bluffs only as the access path to Upper Bluffs; no page about it"
+  }
 }

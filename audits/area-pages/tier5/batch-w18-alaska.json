@@ -1,46 +1,102 @@
 {
- "ak_rubble_pile_crag": {
-  "_expect": { "name": "Rubble Pile Crag", "region": "Alaska" },
-  "blurb": "A small, quiet sport crag in the West Grapefruit section of the Grapefruit Rocks, north of Fairbanks. It holds six bolted lines on limestone, running from 5.9 up to 5.13, with most of the climbing in the 5.10 to 5.11 range, so it suits someone with a few solid grades under their belt. The stone is a little less polished than elsewhere in the area, and some of it flakes off in places, so test holds as you go. The setting is tucked away in the trees, away from the busier faces, and gives open views across the surrounding country. Expect to share it with very few other parties.",
-  "review": { "sources": ["https://mountainproject.com/area/106010605/rubble-pile-crag", "https://www.mountainproject.com/route/106674577/barney-rubble"] }
- },
- "ak_silverfish_wall": {
-  "_expect": { "name": "Silverfish Wall", "region": "Alaska" },
-  "blurb": "A slabby wall on Lower Goat Ridge near Juneau, sitting just along from Garnet City on the roadless side of town. Six routes, split evenly between sport and trad, run from 5.8 to 5.12 with most of them around 5.10. The slab is known for lots of unusual holds, which makes the climbing playful rather than pumpy. The wall stays shaded in the morning until roughly nine or ten, then warms up. Plan on an 80 metre rope, since the lines are long, and be aware the ground at the foot of the wall is exposed, so take care moving around the base.",
-  "review": { "sources": ["https://www.mountainproject.com/area/125381405/silverfish-wall", "https://www.mountainproject.com/area/200412267/lower-goat-ridge"] }
- },
- "ak_2nd_fin": {
-  "_expect": { "name": "2nd Fin", "region": "Alaska" },
-  "blurb": "One of the Fins at Jaw Point, a stretch of sea-level cliff roughly 15 miles south of Juneau that has to be reached by boat. This fin has six traditional routes, from an easy 5.8 through the 5.10 and 5.11 range up to 5.12, so there is something for a mid-grade leader and a couple of hard lines for stronger climbers. It sits a short way uphill from where boats are tied up. Development here is recent and still going, and the fin offers a good rack-and-nuts style day out rather than a bolted venue.",
-  "review": { "sources": ["https://www.mountainproject.com/area/119138330/2nd-fin", "https://www.mountainproject.com/area/119138283/jaw-point"] }
- },
- "ak_garnet_city": {
-  "_expect": { "name": "Garnet City", "region": "Alaska" },
-  "blurb": "A sunny, well-featured wall on Lower Goat Ridge outside Juneau, away from the road system. Five of its six routes are trad and one is sport, spanning an easy 5.6 up to 5.11, with the left side holding a run of moderate trad lines. The cleanest climbing is on the slabs and arêtes, while some of the cracks are still in need of cleaning. It gets sun for much of the day. The approach climbs the north gully and then traverses along cairns and fixed hand lines to the base.",
-  "review": { "sources": ["https://www.mountainproject.com/area/125412069/garnet-city", "https://www.mountainproject.com/area/119138283/jaw-point"] }
- },
- "ak_airport_heights": {
-  "_expect": { "name": "Airport Heights", "region": "Alaska" },
-  "blurb": "A single-pitch sport wall on the hillside above the east end of the Valdez airport runway, the bottom right of a group of four small cliffs. It has six bolted routes of roughly 20 to 25 metres, from 5.8 to 5.11, mostly in the 5.10 range, so it works for after-work laps or an easy weekend day. The wall catches sun all day and looks out over the valley, the water and the surrounding peaks. The walk in is short but steep and can be slick after rain, and bear spray is a sensible thing to carry.",
-  "parking_note": "Drive beyond the airport, turn left into the Valdez Glacier Campground and follow the main road to where it ends at the runway. Leave the car there and keep clear of the campsites.",
-  "approach": "Follow the old dirt jeep road for about a quarter mile, then take the footpath that peels off to the right and climb the steep trail for a few hundred feet to the cliffs.",
-  "approach_min": 15,
-  "review": { "sources": ["https://www.mountainproject.com/area/108600926/airport-heights", "https://www.mountainproject.com/area/108603930/raven-rock"] }
- },
- "ak_eagle_point_boulder": {
-  "_expect": { "name": "Eagle Point Boulder", "region": "Alaska" },
-  "blurb": "A remote bouldering spot on the beach within Captain Cook State Recreation Area, near the northern end of the Kenai Peninsula road. Six problems are recorded here, all between V2 and V4, though the area is described as holding a dozen or more problems from V0 to V7. It lies along a quiet, non-motorized stretch of shoreline, a long walk from the day-use lot, and feels secluded. The broader recreation area is mostly tidal-flat boulders, so check the tide table before heading out and plan around the water.",
-  "review": { "sources": ["https://www.mountainproject.com/area/113572391/eagle-point-boulder", "https://mountainproject.com/area/108219460/capt-cook-state-recreation-area"] }
- },
- "ak_weeping_wall": {
-  "_expect": { "name": "Weeping Wall", "region": "Alaska" },
-  "blurb": "A roadside wall on the Seward Highway along Turnagain Arm, south of Anchorage. It has six sport lines, mostly in the 5.11 range with a couple of easier ones at 5.9 and 5.10, and the rock is loose and has dropped chunks in the past, so it is more of a convenient stop than a destination. A shorter upper wall sits up and to the left of the main face. In winter the same cliff turns into a well-known ice and dry-tooling venue.",
-  "parking_note": "There is a roomy gravel pit pullout at the foot of the wall, a little over three miles beyond the weigh station, near mile marker 111.6 on the Seward Highway.",
-  "approach": "The main wall is right beside the road. The upper wall is a short hike up and to the left, about five minutes.",
-  "review": { "sources": ["https://www.mountainproject.com/area/108949790/weeping-wall", "https://alaskaiceclimbing.com/pfm/"] }
- },
- "_skipped": {
-  "ak_spruce_cape_boulder": "Two searches (Spruce Cape Boulder + Kodiak Island, and + mountainproject) found only hiking pages for Spruce Cape and no page about this boulder; fewer than two fetchable pages describing it."
- },
- "_conflicts": {}
+  "ak_rubble_pile_crag": {
+    "_expect": {
+      "name": "Rubble Pile Crag",
+      "region": "Alaska"
+    },
+    "blurb": "A small, quiet sport crag in the West Grapefruit section of the Grapefruit Rocks, north of Fairbanks. It holds six bolted lines on limestone, running from 5.9 up to 5.13, with most of the climbing in the 5.10 to 5.11 range, so it suits someone with a few solid grades under their belt. The stone is a little less polished than elsewhere in the area, and some of it flakes off in places, so test holds as you go. The setting is tucked away in the trees, away from the busier faces, and gives open views across the surrounding country. Expect to share it with very few other parties.",
+    "review": {
+      "sources": [
+        "https://mountainproject.com/area/106010605/rubble-pile-crag",
+        "https://www.mountainproject.com/route/106674577/barney-rubble"
+      ]
+    }
+  },
+  "ak_silverfish_wall": {
+    "_expect": {
+      "name": "Silverfish Wall",
+      "region": "Alaska"
+    },
+    "blurb": "A slabby wall on Lower Goat Ridge near Juneau, sitting just along from Garnet City on the roadless side of town. Six routes, split evenly between sport and trad, run from 5.8 to 5.12 with most of them around 5.10. The slab is known for lots of unusual holds, which makes the climbing playful rather than pumpy. The wall stays shaded in the morning until roughly nine or ten, then warms up. Plan on an 80 metre rope, since the lines are long, and be aware the ground at the foot of the wall is exposed, so take care moving around the base.",
+    "review": {
+      "sources": [
+        "https://www.mountainproject.com/area/125381405/silverfish-wall",
+        "https://www.mountainproject.com/area/200412267/lower-goat-ridge"
+      ]
+    }
+  },
+  "ak_2nd_fin": {
+    "_expect": {
+      "name": "2nd Fin",
+      "region": "Alaska"
+    },
+    "blurb": "One of the Fins at Jaw Point, a stretch of sea-level cliff roughly 15 miles south of Juneau that has to be reached by boat. This fin has six traditional routes, from an easy 5.8 through the 5.10 and 5.11 range up to 5.12, so there is something for a mid-grade leader and a couple of hard lines for stronger climbers. It sits a short way uphill from where boats are tied up. Development here is recent and still going, and the fin offers a good rack-and-nuts style day out rather than a bolted venue.",
+    "review": {
+      "sources": [
+        "https://www.mountainproject.com/area/119138330/2nd-fin",
+        "https://www.mountainproject.com/area/119138283/jaw-point"
+      ]
+    }
+  },
+  "ak_garnet_city": {
+    "_expect": {
+      "name": "Garnet City",
+      "region": "Alaska"
+    },
+    "blurb": "A sunny, well-featured wall on Lower Goat Ridge outside Juneau, away from the road system. Five of its six routes are trad and one is sport, spanning an easy 5.6 up to 5.11, with the left side holding a run of moderate trad lines. The cleanest climbing is on the slabs and arêtes, while some of the cracks are still in need of cleaning. It gets sun for much of the day. The approach climbs the north gully and then traverses along cairns and fixed hand lines to the base.",
+    "review": {
+      "sources": [
+        "https://www.mountainproject.com/area/125412069/garnet-city",
+        "https://www.mountainproject.com/area/119138283/jaw-point"
+      ]
+    }
+  },
+  "ak_airport_heights": {
+    "_expect": {
+      "name": "Airport Heights",
+      "region": "Alaska"
+    },
+    "blurb": "A single-pitch sport wall on the hillside above the east end of the Valdez airport runway, the bottom right of a group of four small cliffs. It has six bolted routes of roughly 20 to 25 metres, from 5.8 to 5.11, mostly in the 5.10 range, so it works for after-work laps or an easy weekend day. The wall catches sun all day and looks out over the valley, the water and the surrounding peaks. The walk in is short but steep and can be slick after rain, and bear spray is a sensible thing to carry.",
+    "parking_note": "Drive beyond the airport, turn left into the Valdez Glacier Campground and follow the main road to where it ends at the runway. Leave the car there and keep clear of the campsites.",
+    "approach": "Follow the old dirt jeep road for about a quarter mile, then take the footpath that peels off to the right and climb the steep trail for a few hundred feet to the cliffs.",
+    "approach_min": 15,
+    "review": {
+      "sources": [
+        "https://www.mountainproject.com/area/108600926/airport-heights",
+        "https://www.mountainproject.com/area/108603930/raven-rock"
+      ]
+    }
+  },
+  "ak_eagle_point_boulder": {
+    "_expect": {
+      "name": "Eagle Point Boulder",
+      "region": "Alaska"
+    },
+    "blurb": "A remote bouldering spot on the beach within Captain Cook State Recreation Area, near the northern end of the Kenai Peninsula road. It has six problems, all between V2 and V4, though the area is described as holding a dozen or more problems from V0 to V7. It lies along a quiet, non-motorized stretch of shoreline, a long walk from the day-use lot, and feels secluded. The broader recreation area is mostly tidal-flat boulders, so check the tide table before heading out and plan around the water.",
+    "review": {
+      "sources": [
+        "https://www.mountainproject.com/area/113572391/eagle-point-boulder",
+        "https://mountainproject.com/area/108219460/capt-cook-state-recreation-area"
+      ]
+    }
+  },
+  "ak_weeping_wall": {
+    "_expect": {
+      "name": "Weeping Wall",
+      "region": "Alaska"
+    },
+    "blurb": "A roadside wall on the Seward Highway along Turnagain Arm, south of Anchorage. It has six sport lines, mostly in the 5.11 range with a couple of easier ones at 5.9 and 5.10, and the rock is loose and has dropped chunks in the past, so it is more of a convenient stop than a destination. A shorter upper wall sits up and to the left of the main face. In winter the same cliff turns into a well-known ice and dry-tooling venue.",
+    "parking_note": "There is a roomy gravel pit pullout at the foot of the wall, a little over three miles beyond the weigh station, near mile marker 111.6 on the Seward Highway.",
+    "approach": "The main wall is right beside the road. The upper wall is a short hike up and to the left, about five minutes.",
+    "review": {
+      "sources": [
+        "https://www.mountainproject.com/area/108949790/weeping-wall",
+        "https://alaskaiceclimbing.com/pfm/"
+      ]
+    }
+  },
+  "_skipped": {
+    "ak_spruce_cape_boulder": "Two searches (Spruce Cape Boulder + Kodiak Island, and + mountainproject) found only hiking pages for Spruce Cape and no page about this boulder; fewer than two fetchable pages describing it."
+  },
+  "_conflicts": {}
 }

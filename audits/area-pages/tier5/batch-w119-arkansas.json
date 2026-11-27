@@ -1,28 +1,61 @@
 {
- "ar_fall_out_boulder": {
-  "_expect": { "name": "Fall Out Boulder", "region": "Arkansas" },
-  "blurb": "A roofed boulder at Mossy Bluff, a city park in Heber Springs in northeast Arkansas, close to Greers Ferry Lake and the Little Red River. Six bouldering problems are recorded here, mostly in the V5 to V7 range, plus one very hard low start at about V12. The roof makes it a spot for strong fingers rather than a warm-up. The park's trail passes over the top of the boulder. Rock quality across the park swings from soft and friable to very hard, and with little traffic the boulders fill up with dirt, moss and leaves, so bring a brush. Poison ivy grows in the park.",
-  "review": { "sources": ["https://www.mountainproject.com/area/120251650/fall-out-boulder", "https://www.mountainproject.com/area/120224098/mossy-bluff", "https://thetopo.com/crags/mossy-bluff/topos/fall-out"] }
- },
- "ar_strawberry_shortcake_wall": {
-  "_expect": { "name": "Strawberry shortcake wall", "region": "Arkansas" },
-  "blurb": "A small wall in the middle of Jamestown Crag, the sandstone sport area near Batesville in northeast Arkansas. Six lines are recorded: five sport routes and one trad line. Grades start at 5.10 and run up through 5.11 to three at 5.12, so this is a stop for climbers already comfortable on steeper, harder sport climbing rather than for beginners. Two of its lines, in the 5.10 and 5.11 range, collect the best star ratings here. The way to the base involves a short descent from the bluff top, with a rappel part of it.",
-  "review": { "sources": ["https://www.mountainproject.com/area/107931027/strawberry-shortcake-wall", "https://www.mountainproject.com/area/106407913/jamestown-crag"] }
- },
- "ar_fern_bouldering": {
-  "_expect": { "name": "Fern Bouldering", "region": "Arkansas" },
-  "blurb": "A small bouldering zone within the Fern climbing area in northwest Arkansas, reached by heading north on Highway 215 from Mulberry. Six problems are recorded, centred on V5 with one easy V1, a V4 and a single V7 at the top end, so it suits climbers working moderates and low-end hard grades. Fern as a whole has a creek running through it and most of its climbs are short. The spot is lightly documented, so expect to find your own way around.",
-  "review": { "sources": ["https://www.mountainproject.com/area/111244847/fern-bouldering", "https://www.mountainproject.com/area/107468143/fern"] }
- },
- "ar_telekinetic_wall": {
-  "_expect": { "name": "Telekinetic Wall", "region": "Arkansas" },
-  "blurb": "A steep, overhanging and tall wall in the Andromeda bouldering area near Cowell in north-central Arkansas. It has six boulder problems spread from V2 up to V11, with one in each of V2, V3, V4 and V6 and two hard ones at about V10 and V11. The face feels more like a rope-climbing cliff than a typical boulder, and its overhang keeps climbers out of the rain. Water runs over the wall through most of spring. The wall is secluded, so visitors may have it to themselves. From the Rudder Wall, follow the cliff to the right for a couple of minutes.",
-  "review": { "sources": ["https://www.mountainproject.com/area/116623283/telekinetic-wall", "https://www.mountainproject.com/area/116623216/andromeda"] }
- },
- "_skipped": {
-  "ar_heresy_wall": "no fetched page names Heresy Wall or Western Influence in Arkansas; searches only returned unrelated Heresy routes elsewhere (research skip: could not find two pages)",
-  "ar_doomsday_wall_the": "only one fetched page about the crag (Mountain Project); the Horseshoe Canyon Ranch parent page does not mention it and a guidebook PDF was unreadable",
-  "ar_headroom": "no page found for Headroom itself; only a one-route Max Headroom page that refers to it, so one page only",
-  "ar_envy_wall": "only one fetched page names Envy Wall; the Cowell and Cemetery parent pages checked do not mention it"
- }
+  "ar_fall_out_boulder": {
+    "_expect": {
+      "name": "Fall Out Boulder",
+      "region": "Arkansas"
+    },
+    "blurb": "A roofed boulder at Mossy Bluff, a city park in Heber Springs in northeast Arkansas, close to Greers Ferry Lake and the Little Red River. It has six bouldering problems, mostly in the V5 to V7 range, plus one very hard low start at about V12. The roof makes it a spot for strong fingers rather than a warm-up. The park's trail passes over the top of the boulder. Rock quality across the park swings from soft and friable to very hard, and with little traffic the boulders fill up with dirt, moss and leaves, so bring a brush. Poison ivy grows in the park.",
+    "review": {
+      "sources": [
+        "https://www.mountainproject.com/area/120251650/fall-out-boulder",
+        "https://www.mountainproject.com/area/120224098/mossy-bluff",
+        "https://thetopo.com/crags/mossy-bluff/topos/fall-out"
+      ]
+    }
+  },
+  "ar_strawberry_shortcake_wall": {
+    "_expect": {
+      "name": "Strawberry shortcake wall",
+      "region": "Arkansas"
+    },
+    "blurb": "A small wall in the middle of Jamestown Crag, the sandstone sport area near Batesville in northeast Arkansas. It has six lines: five sport routes and one trad line. Grades start at 5.10 and run up through 5.11 to three at 5.12, so this is a stop for climbers already comfortable on steeper, harder sport climbing rather than for beginners. Two of its lines, in the 5.10 and 5.11 range, collect the best star ratings here. The way to the base involves a short descent from the bluff top, with a rappel part of it.",
+    "review": {
+      "sources": [
+        "https://www.mountainproject.com/area/107931027/strawberry-shortcake-wall",
+        "https://www.mountainproject.com/area/106407913/jamestown-crag"
+      ]
+    }
+  },
+  "ar_fern_bouldering": {
+    "_expect": {
+      "name": "Fern Bouldering",
+      "region": "Arkansas"
+    },
+    "blurb": "A small bouldering zone within the Fern climbing area in northwest Arkansas, reached by heading north on Highway 215 from Mulberry. It has six problems, centred on V5 with one easy V1, a V4 and a single V7 at the top end, so it suits climbers working moderates and low-end hard grades. Fern as a whole has a creek running through it and most of its climbs are short. The spot is lightly documented, so expect to find your own way around.",
+    "review": {
+      "sources": [
+        "https://www.mountainproject.com/area/111244847/fern-bouldering",
+        "https://www.mountainproject.com/area/107468143/fern"
+      ]
+    }
+  },
+  "ar_telekinetic_wall": {
+    "_expect": {
+      "name": "Telekinetic Wall",
+      "region": "Arkansas"
+    },
+    "blurb": "A steep, overhanging and tall wall in the Andromeda bouldering area near Cowell in north-central Arkansas. It has six boulder problems spread from V2 up to V11, with one in each of V2, V3, V4 and V6 and two hard ones at about V10 and V11. The face feels more like a rope-climbing cliff than a typical boulder, and its overhang keeps climbers out of the rain. Water runs over the wall through most of spring. The wall is secluded, so visitors may have it to themselves. From the Rudder Wall, follow the cliff to the right for a couple of minutes.",
+    "review": {
+      "sources": [
+        "https://www.mountainproject.com/area/116623283/telekinetic-wall",
+        "https://www.mountainproject.com/area/116623216/andromeda"
+      ]
+    }
+  },
+  "_skipped": {
+    "ar_heresy_wall": "no fetched page names Heresy Wall or Western Influence in Arkansas; searches only returned unrelated Heresy routes elsewhere (research skip: could not find two pages)",
+    "ar_doomsday_wall_the": "only one fetched page about the crag (Mountain Project); the Horseshoe Canyon Ranch parent page does not mention it and a guidebook PDF was unreadable",
+    "ar_headroom": "no page found for Headroom itself; only a one-route Max Headroom page that refers to it, so one page only",
+    "ar_envy_wall": "only one fetched page names Envy Wall; the Cowell and Cemetery parent pages checked do not mention it"
+  }
 }
