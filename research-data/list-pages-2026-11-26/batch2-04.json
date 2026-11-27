@@ -1,0 +1,338 @@
+{
+ "ca_st_jeans_couloir": {
+  "area": "ca_split_mountain",
+  "set": {
+   "overview": "A snow and ice couloir on the east side of Split Mountain, reached from the Red Lake basin. It sits just right of the east-central couloir and climbs roughly 1,200 feet; it bends as it rises, so the top stays hidden from below. Expect firm snow near 50 degrees, steeper in places, with a bergschrund at the foot. At the top, bear left over two or so false summits to the summit.",
+   "approach": "Drive the rough dirt road to the Red Lake trailhead; high clearance is needed and washouts are common near the end. The trail leaves the road a short way north of Red Mountain Creek, switchbacks uphill, then turns west to Red Lake, where most parties camp. From the lake, cross talus and snow toward the base of Split Mountain and cross the debris fan to the foot of the couloir.",
+   "descent_text": "The couloir tops out on the broad northwest talus plain. Cross the talus and any snow patches to the standard north slope route (class 2) and follow it back down to Red Lake and the trailhead. The standard route can be hard to find without having seen it before.",
+   "hazards": [
+    "Rockfall in the couloir, steady enough to need a helmet",
+    "Snow and ice vary widely by month, from soft snow to hard alpine ice to bare scree",
+    "Bergschrund at the base of the couloir",
+    "Finding the standard descent route in poor visibility"
+   ]
+  },
+  "review": {
+   "sources": [
+    "https://davidstillman.blogspot.com/2010/06/split-mountain14006-feet-via-stjean.html",
+    "https://www.mountainproject.com/area/106847044/split-mountain",
+    "https://www.14ers.com/php14ers/tripreport.php?trip=13570",
+    "http://drdirtbag.com/2015/05/14/tinemaha-st-jean-couloir/"
+   ],
+   "confidence": "medium",
+   "notes": "Gain and distance skipped: only one trip report (about 11 mi round trip, 8,000 ft) and that party turned back; no second source. Season skipped: no page states a window. Road access wording differs between sources (4x4 required vs a 2WD-unfriendly road)."
+  }
+ },
+ "ny_mount_marcy_van_hoevenberg_trail": {
+  "area": "ny_mount_marcy",
+  "set": {
+   "approach": "Start at the High Peaks Information Center lot at Adirondack Loj, off Adirondack Loj Road; a parking fee is collected. The marked trail rolls gently for 2.3 miles to the former Marcy Dam site, then bears left and follows Phelps Brook on rockier, sometimes steep ground. Marcy Brook comes at 4.4 miles, with an unmarked side path to Indian Falls on the right. Treeline is near mile 6.8, after which paint blazes and cairns lead up bare rock to the summit at 7.4 miles.",
+   "descent_text": "Return the way you came: down the bare rock cone following the blazes and cairns, back through treeline, and along Marcy Brook, Phelps Brook and the long gentle section to Adirondack Loj.",
+   "hazards": [
+    "Phelps Brook and Marcy Brook crossings, which turn dangerous when water is high or icy",
+    "Steep rock slab and exposed footing on the upper cone",
+    "Weather above treeline changes fast with little warning"
+   ]
+  },
+  "review": {
+   "sources": [
+    "https://www.lakeplacid.com/hiking/mount-marcy"
+   ],
+   "confidence": "high",
+   "notes": "Season skipped: no page states a window."
+  }
+ },
+ "ny_algonquin_van_hoevenberg_and_macintyre_range_trails": {
+  "area": "ny_algonquin",
+  "set": {
+   "approach": "Start at the Adirondack Loj lot at Heart Lake, with a parking fee; in summer it can fill very early. Follow the blue-blazed Van Hoevenberg Trail for 1.0 mile to the junction where the Marcy Dam trail goes left, and continue straight on the yellow-blazed trail. It climbs to MacIntyre Falls at 2.6 miles, steepens and gets rockier, and meets the Wright Peak junction at 3.2 miles. Stay straight there; the last stretch is a steep climb to treeline and a cairned walk over the open rock cone.",
+   "descent_text": "Go back down the same trail: across the bare cone by the cairns, down the steep rocky section to the Wright Peak junction and MacIntyre Falls, then to the junction with the Van Hoevenberg Trail and the Loj.",
+   "hazards": [
+    "Summit cone is fully exposed to wind and weather above treeline",
+    "Steep, rocky trail above MacIntyre Falls that is hard on the knees going down",
+    "Upper trail can hold ice into May",
+    "Open rock where cairns are the only guide in cloud"
+   ],
+   "dist_km": 6.92
+  },
+  "ledger": [
+   {
+    "field": "dist_km",
+    "value": 6.92,
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://pureadirondacks.com/blogs/adirondack-hiking/algonquin-peak",
+      "retrieved_at": "2026-11-26",
+      "fact": "8.6 miles round trip, 4.3 miles one way to the summit"
+     },
+     {
+      "url": "https://lakeplacid.com/do/hiking/algonquin-mountain",
+      "retrieved_at": "2026-11-26",
+      "fact": "7.8 miles round trip, so 3.9 miles one way"
+     }
+    ]
+   }
+  ],
+  "review": {
+   "sources": [
+    "https://pureadirondacks.com/blogs/adirondack-hiking/algonquin-peak",
+    "https://lakeplacid.com/do/hiking/algonquin-mountain"
+   ],
+   "confidence": "high",
+   "notes": "dist_km uses 4.3 mi (the figure the route's own prose already gives); the other source says 3.9 mi, within 10%. Season skipped."
+  }
+ },
+ "ny_mount_haystack_phelps_trail_from_the_garden": {
+  "area": "ny_mount_haystack",
+  "set": {
+   "overview": "The Phelps Trail route to Haystack is one of the longest and most demanding of the marked High Peaks. It follows Johns Brook valley past Johns Brook Lodge, Bushnell Falls and Slant Rock, then climbs very steeply to Horse Hill and above treeline. The finish crosses Little Haystack, dips to a col, and ends on open rock with sweeping views of the high peaks to the south.",
+   "approach": "Start at The Garden trailhead near Keene Valley; the small lot charges a fee and usually fills early on weekends. The trail rolls gently at first, then drops steeply into Johns Brook valley at about 3.0 miles. Continue past Johns Brook Lodge toward Bushnell Falls, cross Johns Brook where the red markers direct, pass the lean-to and climb to Slant Rock. From there it is steep and steady to the Marcy Trail junction, then left for the very steep climb to Horse Hill.",
+   "descent_text": "Retrace the route: cross the open rock back over Little Haystack, descend very steeply to the Marcy Trail junction, then follow the trail back past Slant Rock, Bushnell Falls and Johns Brook Lodge to The Garden.",
+   "hazards": [
+    "Steep rock slab and an exposed summit above treeline",
+    "Johns Brook crossing on the way in",
+    "Very steep, eroded sections on the climb past Horse Hill",
+    "Slippery footing in the col below the summit when icy"
+   ],
+   "dist_km": 13.2
+  },
+  "ledger": [
+   {
+    "field": "dist_km",
+    "value": 13.2,
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://www.lakeplacid.com/hiking/mount-haystack",
+      "retrieved_at": "2026-11-26",
+      "fact": "16.4 miles round trip, 8.2 miles one way by the Phelps Trail from The Garden"
+     }
+    ]
+   }
+  ],
+  "review": {
+   "sources": [
+    "https://www.lakeplacid.com/hiking/mount-haystack",
+    "https://pureadirondacks.com/blogs/adirondack-hiking/mount-haystack"
+   ],
+   "confidence": "medium",
+   "notes": "Distance single-source (8.2 mi one way). The other page opened describes a 17.7-mile loop over Saddleback and Basin, so it was not used for numbers. Season skipped."
+  }
+ },
+ "ny_mount_skylight_via_mount_marcy": {
+  "area": "ny_mount_skylight",
+  "set": {
+   "approach": "Start at the Adirondack Loj lot at Heart Lake; a parking fee applies. Follow the Van Hoevenberg Trail to Marcy Dam and on over the top of Mount Marcy, 7.4 miles from the Loj. From Marcy's summit, descend the south side for roughly 0.8 miles to the Four Corners junction, go straight across it, and climb about half a mile to Skylight's summit.",
+   "descent_text": "Go back to Four Corners and either climb back over Marcy and down the Van Hoevenberg Trail, or add Gray Peak and return by Lake Arnold. The Lake Arnold route is currently blocked by a slide that needs a short bushwhack, so the loop is not advised until it is cleared.",
+   "hazards": [
+    "Slide debris on the Lake Arnold and Feldspar trail forces a bushwhack and spoils the Gray loop",
+    "Phelps Brook and Marcy Brook crossings on the lower trail",
+    "Steep rock slab and exposed upper slopes on Marcy"
+   ]
+  },
+  "review": {
+   "sources": [
+    "https://www.lakeplacid.com/hiking/mount-skylight",
+    "https://pureadirondacks.com/blogs/adirondack-hiking/mt-skylight"
+   ],
+   "confidence": "medium",
+   "notes": "Gain and distance skipped: the one page for this over-Marcy line gives 8 mi one way / 5,100 ft, but its 5,100 ft looks like a round-trip figure and 7.4 + 0.8 + 0.5 is more than 8 miles. The other page describes the direct Lake Tear approach (2,747 ft), not this route. Season skipped."
+  }
+ },
+ "ny_whiteface_wilmington_trail": {
+  "area": "ny_whiteface",
+  "set": {
+   "overview": "The Wilmington Trail is the long marked route up Whiteface from the east, starting at Reservoir Road. It climbs through hardwoods to a ridge, then steeply up the old ski hill on Marble Mountain, runs mostly level to a view of the summit, and climbs again to treeline near the Memorial Highway. The final stretch crosses open rock to the summit.",
+   "approach": "From Wilmington, take Whiteface Mountain Road and turn onto Reservoir Road about 0.6 miles along; the trailhead parking area is on the right about 0.2 miles in. The trail crosses a brook on a bridge, climbs gradually through hardwoods to a ridge at 1.4 miles, then goes steeply for about 0.8 miles to Marble Mountain. After a mostly level section it passes the junction with an unmarked side trail to Esther Mountain at roughly mile 4, where you stay left.",
+   "descent_text": "Return by the same trail: down the open rock to treeline, past the Esther junction, over the level section and Marble Mountain, and down the ridge and hardwoods to Reservoir Road.",
+   "hazards": [
+    "Steep climb above treeline over open rock with no shelter",
+    "Weather changes quickly and cell service is poor"
+   ],
+   "gain_ft": 3620,
+   "dist_km": 8.37
+  },
+  "ledger": [
+   {
+    "field": "gain_ft",
+    "value": 3620,
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://pureadirondacks.com/blogs/adirondack-hiking/whiteface-mountain",
+      "retrieved_at": "2026-11-26",
+      "fact": "Wilmington Trail from Reservoir Road: total gain 3,620 ft"
+     }
+    ]
+   },
+   {
+    "field": "dist_km",
+    "value": 8.37,
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://pureadirondacks.com/blogs/adirondack-hiking/whiteface-mountain",
+      "retrieved_at": "2026-11-26",
+      "fact": "Mileage table ends at 5.2 miles at the summit (one way)"
+     }
+    ]
+   }
+  ],
+  "review": {
+   "sources": [
+    "https://pureadirondacks.com/blogs/adirondack-hiking/whiteface-mountain",
+    "https://www.lakeplacid.com/hiking/whiteface-mountain"
+   ],
+   "confidence": "medium",
+   "notes": "Single-source figures. The page also lists 11.4 miles round trip, slightly off from 2 x 5.2; another page gives 4.75 mi / 3,600 ft for the Reservoir Road start and 3.6 mi / 3,050 ft for the shorter ASRC start. A third page says 5.2 / nearly 3,700 but only appeared in a search summary and the PDF could not be read. Season skipped."
+  }
+ },
+ "ny_dix_mtn_beckhorn_trail_from_elk_lake": {
+  "area": "ny_dix_mtn",
+  "set": {
+   "overview": "The Elk Lake approach to Dix is the long summer route, following the Hunter Pass Trail to the Hunters Pass junction and then the Beckhorn Trail to the top. The Beckhorn is steep and demanding, with rock slab and an exposed summit area, and has an unmarked stretch. The longer Hunters Pass Trail is a gentler alternative for anyone uneasy about the exposure.",
+   "approach": "Drive to the end of the road past Elk Lake Lodge; the lodge turnoff is reached from Exit 29 of I-87 by turning left on Blue Ridge Road and driving about 4 miles toward Newcomb. The trail starts at the trailhead at the road end, follows the Hunter Pass Trail to the Hunters Pass junction, and then turns onto the Beckhorn Trail for the climb to the summit. The Elk Lake route is closed during big game season.",
+   "descent_text": "Return by the same trail: down the Beckhorn Trail to the Hunters Pass junction and out along the Hunter Pass Trail to the Elk Lake trailhead. The longer Hunters Pass Trail is a less steep option for the descent if the Beckhorn's exposure is a worry.",
+   "hazards": [
+    "Steep rock slab and exposure on the upper Beckhorn",
+    "Unmarked sections and bridges along the route",
+    "Elk Lake access closed during big game season",
+    "Upper terrain well colder than the trailhead"
+   ],
+   "gain_ft": 3740,
+   "dist_km": 10.62
+  },
+  "ledger": [
+   {
+    "field": "gain_ft",
+    "value": 3740,
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://www.lakeplacid.com/hiking/dix-mountain",
+      "retrieved_at": "2026-11-26",
+      "fact": "About 3,740 ft of gain, Elk Lake, 13.2 miles round trip"
+     }
+    ]
+   },
+   {
+    "field": "dist_km",
+    "value": 10.62,
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://www.lakeplacid.com/hiking/dix-mountain",
+      "retrieved_at": "2026-11-26",
+      "fact": "Elk Lake via Hunter Pass and Beckhorn trails: 6.6 miles one way"
+     }
+    ]
+   }
+  ],
+  "review": {
+   "sources": [
+    "https://www.lakeplacid.com/hiking/dix-mountain",
+    "https://www.adirondackhub.com/hiking/dix-mountain"
+   ],
+   "confidence": "medium",
+   "notes": "Single source: the second page repeats the same figures so it does not count as independent. Another page (Round Pond start) was not used. Season skipped."
+  }
+ },
+ "ny_gray_peak_via_lake_tear_of_the_clouds": {
+  "area": "ny_gray_peak",
+  "set": {
+   "approach": "Start at the Adirondack Loj lot at Heart Lake; a parking fee applies and the lot fills early in summer. Walk 2.3 miles on the rolling trail to Marcy Dam, then past the register and campsites toward Avalanche Pass. At the Avalanche Camps junction take the left fork toward Lake Arnold, stay left around the lake, and climb steeply to Lake Tear of the Clouds. The faint herd path to Gray leaves from the lake's outlet and goes a little under half a mile to the summit.",
+   "descent_text": "Follow the herd path back to Lake Tear of the Clouds, then return down the marked trail past Lake Arnold and Avalanche Camps to Marcy Dam and the Loj.",
+   "hazards": [
+    "No maintained trail to the summit; the herd path is faint and easy to lose",
+    "A slide on Mount Colden has blocked the Lake Arnold and Feldspar trail, needing a bushwhack around debris",
+    "Wet log bridges and beaver-affected ground in the valley"
+   ],
+   "dist_km": 12.23
+  },
+  "ledger": [
+   {
+    "field": "dist_km",
+    "value": 12.23,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.lakeplacid.com/hiking/gray-peak",
+      "retrieved_at": "2026-11-26",
+      "fact": "Via the Loj, one way about 7.6 miles; 15.4 miles round trip"
+     },
+     {
+      "url": "https://pureadirondacks.com/blogs/adirondack-hiking/gray-peak",
+      "retrieved_at": "2026-11-26",
+      "fact": "About 15 miles round trip"
+     }
+    ]
+   }
+  ],
+  "review": {
+   "sources": [
+    "https://www.lakeplacid.com/hiking/gray-peak",
+    "https://pureadirondacks.com/blogs/adirondack-hiking/gray-peak"
+   ],
+   "confidence": "medium",
+   "notes": "Gain skipped: one page says 3,975 ft (with a wrong summit elevation), the other 2,661 ft which is below summit minus trailhead elevation. Season skipped."
+  }
+ },
+ "ny_iroquois_peak_via_algonquin_peak": {
+  "area": "ny_iroquois_peak",
+  "set": {
+   "overview": "Iroquois is reached as an out-and-back over Algonquin: the marked trail climbs to Algonquin's bare summit cone, then a steep, unmarked herd path crosses Boundary Peak and continues to Iroquois along open rock. The summit is a short way past the trail's end, but it demands a map and the skill to use one once the blazes stop.",
+   "approach": "Start at the Adirondack Loj lot at Heart Lake; a parking fee applies and overflow parking adds about a mile each way. Follow the blue-blazed Van Hoevenberg Trail for 1.0 mile, then go straight onto the yellow-blazed Algonquin trail at the Marcy Dam junction. It passes MacIntyre Falls at 2.6 miles and the Wright Peak junction at 3.2 miles, then climbs steeply above treeline over the cairned cone to Algonquin at 4.3 miles. From there a herd path runs about 0.2 miles to Boundary Peak and roughly half a mile more to Iroquois.",
+   "descent_text": "Retrace the herd path over Boundary Peak to Algonquin, then follow the marked trail down past the Wright Peak junction and MacIntyre Falls to the Van Hoevenberg Trail and the Loj.",
+   "hazards": [
+    "No maintained trail beyond Algonquin; the herd path needs a map",
+    "Steep, exposed ground over open rock between Algonquin, Boundary and Iroquois",
+    "Weather changes quickly above treeline"
+   ],
+   "gain_ft": 3800,
+   "dist_km": 8.21
+  },
+  "ledger": [
+   {
+    "field": "gain_ft",
+    "value": 3800,
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://pureadirondacks.com/blogs/adirondack-hiking/iroquois-peak",
+      "retrieved_at": "2026-11-26",
+      "fact": "Total gain about 3,800 ft"
+     }
+    ]
+   },
+   {
+    "field": "dist_km",
+    "value": 8.21,
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://pureadirondacks.com/blogs/adirondack-hiking/iroquois-peak",
+      "retrieved_at": "2026-11-26",
+      "fact": "10.2 miles round trip, about 5.1 miles one way"
+     }
+    ]
+   }
+  ],
+  "review": {
+   "sources": [
+    "https://pureadirondacks.com/blogs/adirondack-hiking/iroquois-peak"
+   ],
+   "confidence": "medium",
+   "notes": "Single source for gain and distance. Season skipped."
+  }
+ }
+}

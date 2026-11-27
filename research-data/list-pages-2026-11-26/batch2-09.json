@@ -1,0 +1,91 @@
+{
+ "ca_alta_peak_alta_trail": {
+  "area": "ca_alta_peak",
+  "set": {
+   "overview": "A trail walk to an 11,204-foot summit on the Sequoia National Park side of the Sierra, starting in red fir forest at Wolverton and finishing on the Great Western Divide viewpoint. Nothing here is technical, but it is a long, steady day, and the last stretch is a hands-on scramble over broken granite slabs rather than a plain walk.",
+   "approach": "Drive Wolverton Road for 1.4 miles off the Generals Highway to its end and park in the large lot. The Lakes Trail leaves from the north side of the lot. Stay on it past the Heather Lake and Pear Lake fork at about 1.8 miles, then reach Panther Gap (8,450 feet) near 2.8 miles and turn left onto the Alta Trail. Continue east past the High Sierra Trail junction near 3.8 miles and the Alta Meadows fork near 4.8 miles, then climb the switchbacks past Tharps Rock to the top at roughly 6.9 miles.",
+   "descent_text": "Walk back down the same trail to Wolverton. The way down is easy and fast on the maintained tread, so the main task is keeping to the schedule; leave the summit early enough to reach the lot before dark.",
+   "hazards": [
+    "Steep climb across an avalanche chute on the climb above the junction",
+    "Steep, sandy tread on the upper switchbacks",
+    "Final scramble over broken slabs needs hands",
+    "Short autumn daylight makes a 7-hour-plus round trip easy to run out of light on"
+   ],
+   "dist_km": 11.1
+  },
+  "ledger": [
+   {
+    "field": "dist_km",
+    "value": 11.1,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.hikingwalking.com/destinations/ca/ca_sws/lodgepole/alta_peak/alta_peak_detail",
+      "retrieved_at": "2026-11-26",
+      "fact": "13.8 miles round trip from Wolverton; summit at 6.9 miles (one-way 6.9 mi = 11.10 km)"
+     },
+     {
+      "url": "https://sep.stanford.edu/sep/morgan/adventures/seki/trips2001/alta_peak.html",
+      "retrieved_at": "2026-11-26",
+      "fact": "14 miles round trip from Wolverton (one-way 7 mi = 11.27 km)"
+     }
+    ]
+   }
+  ],
+  "review": {
+   "sources": [
+    "https://www.hikingwalking.com/destinations/ca/ca_sws/lodgepole/alta_peak/alta_peak_detail",
+    "https://sep.stanford.edu/sep/morgan/adventures/seki/trips2001/alta_peak.html"
+   ],
+   "confidence": "medium",
+   "notes": "Season skipped: no page read states a window (one report was an October hike). Gain already stored (4000); both pages agree with it (3,924 and about 4,000)."
+  }
+ },
+ "ca_west_vidette_standard_route": {
+  "area": "ca_west_vidette",
+  "set": {
+   "overview": "West Vidette is a class 2 walk-up on the Bubbs Creek side of Kearsarge Pass, reached by a long trail approach from the east side of the Sierra rather than any hard climbing. The route follows a broad northeast chute from the Vidette Lakes to the north ridge, then a short stroll to the summit, so the day is mostly about distance, a creek crossing and loose sand.",
+   "approach": "Start at the Onion Valley trailhead at roughly 9,200 feet and climb the Kearsarge Pass trail about 4.7 miles to the pass at 11,810 feet. Descend about 3.9 miles to Bubbs Creek near 9,530 feet and follow the John Muir Trail a short way south to Vidette Meadow. Cross Bubbs Creek, then follow Vidette Creek upstream by use-trail to the lowest Vidette Lake, from which the northeast chute climbs to the north ridge.",
+   "descent_text": "Go down the way you came: the north ridge to the head of the northeast chute, down the chute to the lowest Vidette Lake, then the creek crossing, Vidette Meadow and the long climb back to Kearsarge Pass before the descent to Onion Valley. The chute goes quickly, but the climb out to the pass comes at the end of a long day.",
+   "hazards": [
+    "Bubbs Creek crossing near Vidette Meadow, which can mean a wet ford at higher flow",
+    "Loose sand and scree in the northeast chute, slow going up and hard to see under a dusting of snow",
+    "Ice and patchy snow on the Kearsarge Pass trail early and late in the season",
+    "Long day: the pass has to be climbed again on tired legs, and autumn daylight is short"
+   ]
+  },
+  "review": {
+   "sources": [
+    "https://sites.google.com/view/wacziarg-climbing/2021-10-19-west-vidette",
+    "https://peaksforfreaks.blogspot.com/2014/05/deerhorn-mountain-mt-stanford-gregorys.html"
+   ],
+   "confidence": "medium",
+   "notes": "Gain/distance skipped: only one report (23 mi RT, 7,850 ft, a personal GPS log from a snowy October day), no second source. Season skipped: not stated. Approach mileages come from a different peak's report over the same trail (Deerhorn), read as trail facts only."
+  }
+ },
+ "ca_mount_bradley_standard_route": {
+  "area": "ca_mount_bradley",
+  "set": {
+   "overview": "Mount Bradley is a class 2 peak above Center Basin, climbed from the west by a wide chute that reaches the ridge between its two summits. The northern top is the higher; the final stretch involves picking a line through some sandy chimney and outcrop terrain, and some parties hit a third-class move or two to avoid the loose scree.",
+   "approach": "Hike from Onion Valley over Kearsarge Pass, past Kearsarge Lakes and Vidette Meadow, and up the old trail into Center Basin, camping near 11,000 feet. The other usual way in is Robinson Lake and University Pass, which is cross-country above the lake and shorter but needs good snow conditions. From the basin, aim for the wide west chute below the saddle.",
+   "descent_text": "Come back down the west chute you climbed. The scree is firm enough in late season to boot-ski quickly, but after a snowy winter old avalanche debris can slow the chute badly. Then return to camp and out over Kearsarge Pass.",
+   "hazards": [
+    "Loose scree and sand in the west chute",
+    "Hard or avalanche-debris snow in the chute in early season, around 35 to 40 degrees in places",
+    "Route-finding on the summit ridge between the two tops",
+    "Icy snow on University Pass if used as the approach"
+   ]
+  },
+  "review": {
+   "sources": [
+    "https://sites.google.com/view/wacziarg-climbing/2023-08-31-mount-bradley",
+    "https://climber.org/reports/2008/1656.html",
+    "https://climber.org/reports/1998/311.html",
+    "https://climber.org/reports/2001/728.html"
+   ],
+   "confidence": "medium",
+   "notes": "Distance skipped (loop figures include other peaks). Gain already stored. Season skipped. The West chute ascent is stated by two reports."
+  }
+ }
+}

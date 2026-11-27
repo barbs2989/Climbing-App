@@ -1,0 +1,434 @@
+{
+ "co_challenger_point_north_slope": {
+  "area": "co_challenger_point",
+  "set": {
+   "overview": "The normal way up Challenger Point, a 14,086-foot summit on the Kit Carson ridge in the Sangre de Cristo Range. It climbs from the Willow Creek drainage past Willow Lake, then up zigzagging ledges and a long talus slope to a notch on the summit ridge. Mostly Class 2 with a steep, loose 600-foot crux where careful line choice keeps it below Class 3.",
+   "approach": "Start at the Willow Creek trailhead near 8,850 feet, reached by Forest Service road 949 about 2 miles out of the town of Crestone. Follow the Willow Creek trail to Willow Lake, passing a small waterfall and a hill beside the lake. Skirt the boulder field, go by the big waterfall at the east end, cross the stream above it, and follow cairns over the flat ground. Turn right at the trail junction for Challenger and Kit Carson; the climb proper begins on the ledges above.",
+   "descent_text": "Go back down the way you came: out through the notch, down the loose talus slope on the cairned line, then the zigzags to the Willow Lake flats and the trail to the trailhead. Take extra care with footing and with other parties below on the steep upper slope.",
+   "hazards": [
+    "Loose, talus-covered slope of about 600 feet near 13,200 ft where climbers above can send rocks down",
+    "A snow-filled gully beside the route that commonly holds snow into August",
+    "Narrow, exposed section of the summit ridge; stay slightly left of the crest",
+    "Route-finding on cairned ledges and slabs below the upper slope"
+   ],
+   "dist_km": 10.86
+  },
+  "ledger": [
+   {
+    "field": "dist_km",
+    "value": 10.86,
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=chal1",
+      "retrieved_at": "2026-11-26",
+      "fact": "13.5 mi round trip from the trailhead, so about 6.75 mi one way"
+     }
+    ]
+   }
+  ],
+  "review": {
+   "sources": [
+    "https://www.14ers.com/route.php?route=chal1"
+   ],
+   "confidence": "medium",
+   "notes": "Distance single-source (round trip halved). Season skipped: page states none."
+  }
+ },
+ "co_mount_columbia_west_slopes": {
+  "area": "co_mount_columbia",
+  "set": {
+   "overview": "The standard route up Mount Columbia, a 14,077-foot Collegiate Peak above Buena Vista. A long forest trail up the North Cottonwood Creek valley leads to a side trail, then a switchbacked shoulder and a rough upper slope to a ridge walk to the top. Class 2 throughout, with loose terrain above 13,300 feet.",
+   "approach": "Begin at the North Cottonwood Creek trailhead near 9,900 feet, at the end of County Road 365 west of Buena Vista. Follow the trail across a bridge, then about 1.4 miles to a second bridge and a junction where you keep right for Horn Fork Basin. Continue about 1.75 miles to a small clearing near 11,250 feet, then roughly 0.3 mile more to the signed Columbia junction at about 11,500 feet, where you turn right. The climbing starts as the trail leaves the trees toward a wide gully on the southwest side.",
+   "descent_text": "Retrace the ridge south from the summit and drop off the ridge at 13,680 feet onto the shoulder. Follow the switchbacks down, taking care on the rough, less distinct section below 13,500 feet, then return to the Horn Fork trail and out to the trailhead.",
+   "hazards": [
+    "Considerable rockfall potential on the loose upper slope",
+    "Rough, poorly defined trail near 13,300 feet that needs careful zigzagging through rocks",
+    "Rock bumps to negotiate along the ridge to the summit"
+   ],
+   "dist_km": 9.66
+  },
+  "ledger": [
+   {
+    "field": "dist_km",
+    "value": 9.66,
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=colu2",
+      "retrieved_at": "2026-11-26",
+      "fact": "12 mi round trip from the N. Cottonwood TH, so 6 mi one way"
+     },
+     {
+      "url": "https://www.cmc.org/education-adventure/trips/routes-places/mt-columbia",
+      "retrieved_at": "2026-11-26",
+      "fact": "12 mi, 4,250 ft gain listed (page does not state round trip)"
+     }
+    ]
+   }
+  ],
+  "review": {
+   "sources": [
+    "https://www.14ers.com/route.php?route=colu2",
+    "https://www.cmc.org/education-adventure/trips/routes-places/mt-columbia"
+   ],
+   "confidence": "medium",
+   "notes": "Season skipped: none stated. Second figure ambiguous on round trip but matches."
+  }
+ },
+ "co_missouri_mountain_northwest_ridge": {
+  "area": "co_missouri_mountain",
+  "set": {
+   "overview": "The standard line up Missouri Mountain, a 14,071-foot peak in the Collegiate Peaks Wilderness. It follows Missouri Gulch to its head, climbs west to a saddle, then follows a narrow ridge trail to the summit. Class 2, with one short downclimb on the crest that is the hardest move of the day.",
+   "approach": "Start at the Missouri Gulch trailhead near 9,650 feet, off Chaffee County Road 390. The trail crosses a bridge, then climbs steep switchbacks through forest before turning south up the gulch. Near 10,800 feet cross to the east side on a log bridge, pass the ruins of an old shack, and reach the Belford junction near 11,600 feet, staying right. Continue to a junction at about 12,600 feet and turn right onto the Missouri Mountain trail, where the ridge climb begins.",
+   "descent_text": "Return along the ridge trail, climbing back over the short rocky bypass, to the saddle near 13,700 feet. From there drop back down the zigzags to the 12,600-foot junction, then follow the gulch and the forest switchbacks to the trailhead.",
+   "hazards": [
+    "Considerable rockfall potential on the upper slopes",
+    "Exposure on the narrow ridge between the saddle and summit",
+    "A downclimb of about 25 feet on the crest at difficult Class 2 where the trail bypasses rocky obstacles",
+    "Weekend crowding in the trailhead lot"
+   ],
+   "dist_km": 8.45
+  },
+  "ledger": [
+   {
+    "field": "dist_km",
+    "value": 8.45,
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=miss1",
+      "retrieved_at": "2026-11-26",
+      "fact": "10.5 mi round trip, so 5.25 mi one way"
+     },
+     {
+      "url": "https://www.cmc.org/education-adventure/trips/routes-places/missouri-mountain",
+      "retrieved_at": "2026-11-26",
+      "fact": "10.5 mi, 4,500 ft listed for the standard route (round trip not stated)"
+     }
+    ]
+   }
+  ],
+  "review": {
+   "sources": [
+    "https://www.14ers.com/route.php?route=miss1",
+    "https://www.cmc.org/education-adventure/trips/routes-places/missouri-mountain"
+   ],
+   "confidence": "medium",
+   "notes": "Season skipped: none stated."
+  }
+ },
+ "co_humboldt_peak_west_ridge": {
+  "area": "co_humboldt_peak",
+  "set": {
+   "overview": "The standard route up Humboldt Peak, a 14,068-foot summit in the Sangre de Cristo Range, climbing from South Colony Lakes. It follows an old road, then a trail past the lakes to the saddle on the west ridge and a long, exposed ridge walk to the top. Class 2, but easy to lose the trail near the summit and it is not a simple walk-up.",
+   "approach": "Start at the South Colony Lakes trailhead near 9,950 feet, at the 4WD parking area before the river crossing; a 2WD trailhead sits 2.7 miles lower on the 120 Road. Cross the footbridge and follow the old road about 2.5 miles to a junction near 11,100 feet, then turn right onto the trail. Continue west through forest and willows past Lower South Colony Lake to the junction above the upper lake near 12,100 feet, then switchback toward the west ridge saddle.",
+   "descent_text": "Descend the ridge the way you came, watching for cairns where the trail fades above 13,700 feet. Drop to the 12,850-foot saddle, switchback to the upper lake junction, and follow the trail and road back to the trailhead.",
+   "hazards": [
+    "Trail easy to lose above 13,700 feet; follow small cairns and trail segments",
+    "Exposed ridge with no shelter between the saddle and the summit",
+    "Moderate rockfall and route-finding on the ridge",
+    "False summit before the true top"
+   ],
+   "dist_km": 8.45
+  },
+  "ledger": [
+   {
+    "field": "dist_km",
+    "value": 8.45,
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=humb1",
+      "retrieved_at": "2026-11-26",
+      "fact": "10.5 mi round trip from the 4WD trailhead, so 5.25 mi one way"
+     },
+     {
+      "url": "https://www.cmc.org/education-adventure/trips/routes-places/humboldt-peak",
+      "retrieved_at": "2026-11-26",
+      "fact": "11 mi, 4,200 ft listed for the standard West Ridge route (round trip not stated)"
+     }
+    ]
+   }
+  ],
+  "review": {
+   "sources": [
+    "https://www.14ers.com/route.php?route=humb1",
+    "https://www.cmc.org/education-adventure/trips/routes-places/humboldt-peak"
+   ],
+   "confidence": "medium",
+   "notes": "Season skipped."
+  }
+ },
+ "co_mt_bierstadt_standard_route_west_slopes": {
+  "area": "co_mt_bierstadt_standard_route",
+  "set": {
+   "overview": "The standard route up Mount Bierstadt, a 14,066-foot summit in the Mount Evans Wilderness, starting from the high point of Guanella Pass. A well-built trail crosses willow flats to a creek, then switchbacks up the west slopes to a ridge crest. Class 2, with a final stretch of about 250 feet of untrailed boulders to the top.",
+   "approach": "Park at Guanella Pass near 11,700 feet; the upper lot on the west side has restrooms. Descend east from the east-side parking area on the Bierstadt trail, following wooden bridges through willows for nearly a mile to Scott Gomer Creek at about 11,500 feet. Cross it and continue through willows, then begin switchbacking up the steeper slope near 11,800 feet. The climbing proper begins where the trail leaves the willows.",
+   "descent_text": "Go back the way you came: pick through the boulders on or just left of the crest to the ridge, follow the zigzag trail down the shoulder, and cross the willow flats to the pass. Take care on the boulder section, where the trail disappears.",
+   "hazards": [
+    "Moderate rockfall potential on the upper slopes",
+    "About 250 feet of untrailed boulder hopping near the top",
+    "Crowded trail and parking on summer weekends",
+    "Winter road closure 1.5 miles before the pass adds 3 miles round trip"
+   ]
+  },
+  "ledger": [],
+  "review": {
+   "sources": [
+    "https://www.14ers.com/route.php?route=bier1"
+   ],
+   "confidence": "medium",
+   "notes": "Season skipped: none stated. Distance not in fill."
+  }
+ },
+ "co_sunlight_peak_south_face": {
+  "area": "co_sunlight_peak",
+  "set": {
+   "overview": "The standard route up Sunlight Peak, a 14,061-foot summit in the Needle Mountains of the Weminuche Wilderness, reached from Chicago Basin. It climbs to Twin Lakes, then a gully to the notch below the summit block, followed by Class 3 climbing past a hole in the ridge and a short chimney. The final summit pitch is highly exposed and rated Class 4.",
+   "approach": "Reach Needleton at about 11,100 feet by the Durango and Silverton narrow-gauge train, then hike the Chicago Basin trail to the camping area between 10,800 and 11,100 feet. From the basin follow the trail northeast, turning left at the signed junction near 11,200 feet toward Twin Lakes. Climb by cairns through forest and slabs to Twin Lakes at 12,500 feet, then continue east and cross the basin to the gully between Sunlight and the Sunlight Spire, which leads to a saddle near 13,500 feet.",
+   "descent_text": "Reverse the route: downclimb the summit block and chimney with care, return through the notch to the saddle near 13,500 feet, then descend the gully and cairned trail past Twin Lakes to the basin and the trail out to Needleton.",
+   "hazards": [
+    "Extreme exposure on the final summit block",
+    "High rockfall potential, especially in the gully below the notch",
+    "Route-finding on the Class 3 ledges beneath cliffs near the summit",
+    "Remote setting; the approach is by train and a long hike"
+   ],
+   "dist_km": 14.48
+  },
+  "ledger": [
+   {
+    "field": "dist_km",
+    "value": 14.48,
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=sunl2",
+      "retrieved_at": "2026-11-26",
+      "fact": "18 mi round trip from the Needleton drop-off (6,000 ft gain), so 9 mi one way"
+     }
+    ]
+   }
+  ],
+  "review": {
+   "sources": [
+    "https://www.14ers.com/route.php?route=sunl2"
+   ],
+   "confidence": "medium",
+   "notes": "Distance is Needleton to summit (matches stored gain 6000); the page's own 6 mi figure is from Chicago Basin. Single source. Season skipped. Descent given as reversing; no rappel claimed."
+  }
+ },
+ "co_handies_peak_standard_route_southwest_slopes": {
+  "area": "co_handies_peak_standard_route",
+  "set": {
+   "overview": "The shortest route up Handies Peak, a 14,058-foot San Juan Mountains summit, climbing from American Basin. A trail runs through the basin past Sloan Lake, crosses a talus slope to the southwest slope, then switchbacks to a saddle and a short ridge walk. Class 1 overall, with the talus traverse the hardest part.",
+   "approach": "Start at the American Basin trailhead near 11,600 feet, reached by County Road 30 toward Cinnamon Pass; the final road needs 4WD or AWD. Follow the trail south into the basin and turn left near 12,400 feet to climb a slope at its center. The trail levels at 12,700 feet, curves toward Sloan Lake, and reaches a junction just north of the lake near 12,950 feet. Turn left there, east onto rugged terrain, where the traverse and the real climb begin.",
+   "descent_text": "Retrace the ridge trail to the 13,500-foot saddle, switchback down the southwest slope, and cross the talus traverse back to the Sloan Lake junction. Follow the trail back through American Basin to the trailhead.",
+   "hazards": [
+    "Talus traverse after the Sloan Lake junction, with a slight descent through the hardest section",
+    "Moderate exposure on the summit ridge",
+    "Rough narrow road and a stream crossing near the trailhead"
+   ],
+   "gain_ft": 2500,
+   "dist_km": 4.63
+  },
+  "ledger": [
+   {
+    "field": "gain_ft",
+    "value": 2500,
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=hand1",
+      "retrieved_at": "2026-11-26",
+      "fact": "2,500 ft gain from American Basin TH"
+     }
+    ]
+   },
+   {
+    "field": "dist_km",
+    "value": 4.63,
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=hand1",
+      "retrieved_at": "2026-11-26",
+      "fact": "5.75 mi round trip from American Basin TH, so 2.875 mi one way"
+     }
+    ]
+   }
+  ],
+  "review": {
+   "sources": [
+    "https://www.14ers.com/route.php?route=hand1"
+   ],
+   "confidence": "medium",
+   "notes": "Gain and distance single-source. Season skipped."
+  }
+ },
+ "co_culebra_peak_northwest_ridge": {
+  "area": "co_culebra_peak",
+  "set": {
+   "overview": "The standard route up Culebra Peak, a 14,053-foot summit in the Sangre de Cristo Range that lies on private land. There is no trail: parties choose a line up open northwest slopes to the ridge crest, then follow the ridge over a false summit to the final pitch. Class 2, and entry is by advance booking with the ranch that owns the peak.",
+   "approach": "Book ahead and pay the landowner's fee, then check in at the ranch headquarters. From there a steep AWD or 4WD road about 4.4 miles long reaches the upper trailhead near 11,650 feet. Descend slightly south, cross the stream, and head southeast toward the open slopes, staying on the south side of the creek along a gentle ridge. Above treeline the climbing is cross-country toward a large cairn on the ridge crest near 13,350 feet.",
+   "descent_text": "Return along the ridge over the false summit and down to the large cairn near 13,350 feet, then drop the open slopes northwest to the stream and the upper trailhead. With no trail, aim for the creek and the road end.",
+   "hazards": [
+    "No trail, so cross-country route-finding on the open slopes",
+    "Moderate rockfall and exposure on the rough ridge sections",
+    "Private land: trespass outside the booked ranch route is illegal",
+    "Steep AWD or 4WD road to the upper trailhead"
+   ],
+   "dist_km": 4.02
+  },
+  "ledger": [
+   {
+    "field": "dist_km",
+    "value": 4.02,
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=cule1",
+      "retrieved_at": "2026-11-26",
+      "fact": "5 mi round trip from the 4WD trailhead, so 2.5 mi one way"
+     }
+    ]
+   }
+  ],
+  "review": {
+   "sources": [
+    "https://www.14ers.com/route.php?route=cule1"
+   ],
+   "confidence": "medium",
+   "notes": "Season skipped: the page says hiking has been allowed Jan to Jul in recent years but availability varies; that is an access window, not a stated climbing season, so not used."
+  }
+ },
+ "co_wrong_peak": {
+  "area": "co_ellingwood_point",
+  "set": {
+   "hazards": [
+    "Chossy, loose rock on the face",
+    "Hairy, suspect protection, notably around the mantle roof crux on pitch 5",
+    "Carries an X rating for the risk of a serious fall",
+    "The face was first climbed by mistake, with little route information to rely on"
+   ]
+  },
+  "ledger": [],
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/109449517/wrong-peak"
+   ],
+   "confidence": "low",
+   "notes": "Approach, gain, distance, season skipped: the only page read gives no approach and no figures for this line. Hazards and descent from the single Mountain Project page."
+  }
+ },
+ "co_mount_lindsey_northwest_gully": {
+  "area": "co_mount_lindsey_climbs",
+  "set": {
+   "overview": "The Northwest Gully is the standard route up Mount Lindsey, a 14,055-foot summit in the Sangre de Cristo Range. A forest trail from Lily Lake leads to the 13,150-foot saddle with Iron Nipple, then a steep, loose gully and angled Class 3 slabs reach the summit ridge. The upper mountain is private land, so climbers sign a landowner waiver first.",
+   "approach": "Start at the Huerfano or Lily Lake trailhead near 10,700 feet at the end of a long dirt road west of Gardner; a steep stretch past the landslide area needs 4WD. Follow the Lily Lake trail south through forest into a meadow for about a mile, then go straight on an unmarked trail at the junction where the lake trail veers right. Cross the Huerfano River, zigzag through dense forest to a boulder field near 10,800 feet, and continue to treeline near 12,000 feet. The climbing begins above the saddle at the base of the gully.",
+   "descent_text": "Reverse the route: down the gully, which is looser going down than up, then back to the 13,150-foot saddle and the basin, boulder field and forest to the trailhead. Aim to be below treeline before afternoon storms.",
+   "hazards": [
+    "Steep, loose gully with considerable rockfall; stay out from under other parties",
+    "Gully snow in early season may call for an ice axe and crampons",
+    "Considerable exposure and route-finding on the upper Class 3 slabs",
+    "Unmarked turnoff from the Lily Lake trail and braided forest trails",
+    "Private land above the saddle needs a landowner waiver"
+   ],
+   "dist_km": 6.64
+  },
+  "ledger": [
+   {
+    "field": "dist_km",
+    "value": 6.64,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=lind1",
+      "retrieved_at": "2026-11-26",
+      "fact": "8.25 mi round trip, so 4.125 mi one way"
+     },
+     {
+      "url": "https://thenextsummit.org/colorado-14ers/climbing-mount-lindsey/",
+      "retrieved_at": "2026-11-26",
+      "fact": "about 8.25 mi round trip, 3,500 ft gain"
+     }
+    ]
+   }
+  ],
+  "review": {
+   "sources": [
+    "https://www.14ers.com/route.php?route=lind1",
+    "https://thenextsummit.org/colorado-14ers/climbing-mount-lindsey/"
+   ],
+   "confidence": "high",
+   "notes": "Season skipped."
+  }
+ },
+ "co_west_ridge_and_hourglass_couloir": {
+  "area": "co_little_bear_peak",
+  "set": {
+   "overview": "The standard route up Little Bear Peak, a 14,041-foot summit in the Sangre de Cristo Range, rated Class 4. From Lake Como a steep, loose gully leads to a notch in the west ridge, a traverse reaches the base of the Hourglass, and a steep rock climb up it gives the summit. Among the most dangerous of the fourteeners because of rockfall and difficulty.",
+   "approach": "Start at the Lake Como road off Colorado 150 toward Great Sand Dunes. Most cars reach about 1.5 miles before it gets rough; 4WD vehicles can go to pull-offs at 8,800 feet. Hike the road to Lake Como at 11,750 feet, continue around the lake into forest, and near 11,900 feet leave the road at a cairn. Cross the stream and follow cairns over a talus pile to the base of the gully near 12,000 feet, where the climb starts and a helmet goes on.",
+   "descent_text": "Descend by reversing the line. Downclimb the Hourglass carefully (a fixed rope may be present but needs checking), return along the south side of the west ridge to the notch near 12,600 feet, then down the loose gully and the cairns to Lake Como and the road.",
+   "hazards": [
+    "Major rockfall in the Hourglass, worse with more climbers; helmet mandatory",
+    "Steep, loose gully below the west ridge notch",
+    "High exposure and route-finding on the Class 4 sections",
+    "Wet or icy rock in the Hourglass may force a line to the side",
+    "Fixed rope, if present, may be in poor condition"
+   ],
+   "dist_km": 11.27
+  },
+  "ledger": [
+   {
+    "field": "dist_km",
+    "value": 11.27,
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=litt6",
+      "retrieved_at": "2026-11-26",
+      "fact": "14 mi round trip from the 2WD trailhead (6,200 ft gain), so 7 mi one way"
+     }
+    ]
+   }
+  ],
+  "review": {
+   "sources": [
+    "https://www.14ers.com/route.php?route=litt6"
+   ],
+   "confidence": "medium",
+   "notes": "Distance is from the 2WD start (matches stored 6200 ft gain); single source. Season skipped."
+  }
+ },
+ "co_mount_sherman_southwest_ridge": {
+  "area": "co_mount_sherman",
+  "set": {
+   "approach": "Start at the Fourmile Creek trailhead near 12,000 feet, reached from Fairplay by County Road 18 for about 12 miles past the Leavick site. Hike the road past the gate to the Dauntless Mine at 12,300 feet, then stay on the main road at the junction near 12,500 feet. Pass a pond and the flats below the Hilltop Mine, turning left near 12,800 feet toward the upper mine area. Find the cairned trail beyond the gray gravel pile and switchback up to the 13,150-foot saddle, where the ridge climb starts.",
+   "descent_text": "Go back the way you came: down the ridge to the saddle at 13,150 feet, then down the cairned switchbacks. Do not cut straight down toward the Hilltop Mine area; follow the road back to the trailhead.",
+   "hazards": [
+    "Loose rock on the narrowing ridge, the hardest part of the route",
+    "Moderate rockfall and exposure along the crest",
+    "Early-summer snow patches on the switchbacks below the saddle"
+   ]
+  },
+  "ledger": [],
+  "review": {
+   "sources": [
+    "https://www.14ers.com/route.php?route=sher1"
+   ],
+   "confidence": "medium",
+   "notes": "Season skipped: page states none."
+  }
+ }
+}

@@ -1,0 +1,105 @@
+{
+ "ca_the_golden_bear_tower_polemonium": {
+  "area": "ca_mt_gardiner",
+  "set": {
+   "approach": "From the east, start at Onion Valley, cross Kearsarge Pass, descend Charlotte Creek and hike over Gardiner Pass to reach the northwest face. From the west the same pass is reached from Road's End in Kings Canyon by walking up Bubbs Creek and turning north up Charlotte Creek.",
+   "descent_text": "From the summit, scramble or simul-climb the exposed fourth-class ridge for a few hundred feet, then follow the ridgeline along its south side toward Gardiner Pass and drop back down to camp."
+  },
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/112048332/the-golden-bear-tower-polemonium",
+    "https://mountainproject.com/area/112048320/mt-gardiner"
+   ],
+   "confidence": "medium",
+   "notes": "Hazards skipped: no page states route-specific ones. No approach distance, gain or season found."
+  }
+ },
+ "ca_mt_clarence_king_south_face": {
+  "area": "ca_mt_clarence_king",
+  "set": {
+   "approach": "The easiest approach is from Onion Valley: cross Kearsarge Pass, pass Charlotte Lake and cross Glen Pass into the Sixty Lakes Basin, then camp near the basin's upper lakes below Fin Dome. A shorter line through Gardiner Creek saves miles but costs more in brush than it saves.",
+   "hazards": [
+    "Class 4 climbing leads to the summit block, with a few tricky moves to reach the pinnacle",
+    "A rope is advisable for less experienced parties",
+    "Early-summer snow on the passes slows the long approach",
+    "Remote setting a long way from the trailhead"
+   ],
+   "dist_km": 26.56
+  },
+  "ledger": [
+   {
+    "field": "dist_km",
+    "value": 26.56,
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://www.snwburd.com/bob/emblem/peaks/clarence_king.html",
+      "retrieved_at": "2026-11-26",
+      "fact": "33.0 miles round trip from Onion Valley, so 16.5 miles one way = 26.56 km"
+     }
+    ]
+   }
+  ],
+  "review": {
+   "sources": [
+    "https://www.snwburd.com/bob/emblem/peaks/clarence_king.html",
+    "https://sites.google.com/view/wacziarg-climbing/2010-06-mount-clarence-king"
+   ],
+   "confidence": "medium",
+   "notes": "Gain skipped: the only figure (9,169 ft) is the round-trip total. Season skipped. Distance halved from a round-trip figure."
+  }
+ },
+ "ca_south_ridge_via_south_chute": {
+  "area": "ca_dragon_peak",
+  "set": {
+   "overview": "Dragon Peak is a sharp, dark summit on the Sierra crest just north of Mount Gould. The south ridge is reached through a narrow chute and ends in a summit pinnacle, where steep class 3 rock on the west side leads to an exposed but easy foot traverse.",
+   "approach": "From the Onion Valley trailhead take the Golden Trout Lakes trail, a steep, unmaintained path that takes nearly two hours to reach the lake near 11,400 feet below the peak's east side. Climb the talus bowl to the Sierra crest, using a narrow chute on the right to get past cliffs at the top of the bowl.",
+   "descent_text": "Reverse the route: down the south ridge to the crest, down the chute and talus bowl to the lake near 11,400 feet, then back along the steep trail to Onion Valley.",
+   "hazards": [
+    "A tedious loose talus bowl below the crest",
+    "Steep cliffs at the top of the bowl; the narrow chute has an awkward class 3 chockstone",
+    "Exposure on the foot traverse near the summit pinnacle",
+    "Clouds building overhead can bring afternoon weather"
+   ],
+   "gain_ft": 3800,
+   "dist_km": 6.84
+  },
+  "ledger": [
+   {
+    "field": "gain_ft",
+    "value": 3800,
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://sites.google.com/view/wacziarg-climbing/2019-09-mount-bago-dragon-peak",
+      "retrieved_at": "2026-11-26",
+      "fact": "Dragon day trip from trailhead: 3,800 ft gain"
+     }
+    ]
+   },
+   {
+    "field": "dist_km",
+    "value": 6.84,
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://sites.google.com/view/wacziarg-climbing/2019-09-mount-bago-dragon-peak",
+      "retrieved_at": "2026-11-26",
+      "fact": "8.5 miles round trip from the trailhead, so 4.25 miles one way = 6.84 km"
+     }
+    ]
+   }
+  ],
+  "review": {
+   "sources": [
+    "https://sites.google.com/view/wacziarg-climbing/2019-09-mount-bago-dragon-peak",
+    "https://www.mountainproject.com/area/110949299/dragon-peak"
+   ],
+   "confidence": "medium",
+   "notes": "Gain and distance from one trip page (round trip halved), unconfirmed. Season skipped."
+  }
+ }
+}
