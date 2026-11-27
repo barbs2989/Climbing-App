@@ -1,0 +1,294 @@
+[
+ {
+  "id": "wa_east_face_2",
+  "camps": [
+   {"name": "Burgundy Creek bench camp — west side", "nights": [1, 2], "role": "main",
+    "why": "Flat, sheltered sites in trees with a spring beside them; this route and the Pernod and Whine faces are reached from the bench, so a two-night base is easy."},
+   {"name": "Burgundy Col high camp — west side, the Wine Spires", "nights": [], "role": "route",
+    "why": "Saves vertical on summit morning but is windy, cramped and short of water late season; choose it only to link spires from the col."},
+   {"name": "Lone Fir Campground, SR 20", "nights": [], "role": "route",
+    "why": "A roadside campground for the night before an early start. It is not on the approach, and it closes when the highway shuts for winter."},
+   {"name": "Upper scree benches below Burgundy Col — west side", "nights": [], "role": "route",
+    "why": "A fallback bivy for a party caught by dark or thirst on the talus. Water is patchy up there, so it is not a planned stop."}
+  ],
+  "new_camps": [],
+  "confidence": "medium",
+  "plan_conflict": "The Burgundy Col camp was main on file, but this plan and the bench's base-camp use put both nights at the bench; the col is demoted to route.",
+  "sources": ["https://mountainproject.com/forum/topic/112029616/wine-spires-camping", "https://ncmountainguides.com/node/48", "https://stephabegg.com/?p=8704"]
+ },
+ {
+  "id": "wa_chianti_spire_east_face",
+  "camps": [
+   {"name": "Burgundy Col high camp — west side, the Wine Spires", "nights": [1], "role": "main",
+    "why": "Puts the Rebel Yell base under an hour away, with snow for water; the sites are few, small and windy, and water can vanish late season."},
+   {"name": "Burgundy Creek bench camp — west side", "nights": [], "role": "route",
+    "why": "The calmer, treed camp with a spring. Pick it when the col is windy or full; the summit approach then starts about 1,300 ft lower."},
+   {"name": "Lone Fir Campground, SR 20", "nights": [], "role": "route",
+    "why": "A roadside campground for the night before an early start. It is not on the approach, and it closes when the highway shuts for winter."},
+   {"name": "Upper scree benches below Burgundy Col — west side", "nights": [], "role": "route",
+    "why": "A fallback bivy for a party caught by dark or thirst on the talus. Water is patchy up there, so it is not a planned stop."}
+  ],
+  "new_camps": [],
+  "confidence": "high",
+  "plan_conflict": "The bench camp was also main on file; with one night in the plan and parties sleeping at the col for this spire, the bench is demoted to route.",
+  "sources": ["https://stephabegg.com/?p=8704", "https://ncmountainguides.com/node/48", "https://cascadeclimbers.com/forum/topic/91906-tr-burgundy-and-chianti-nf-and-rebel-yell-6292013"]
+ },
+ {
+  "id": "wa_chianti_spire_lichen_bouquet",
+  "camps": [],
+  "new_camps": [
+   {"name": "Burgundy Col high camp — west side, the Wine Spires", "elev_ft": 7720, "type": "bivy", "role": "main", "nights": [1],
+    "why": "Closest sleep to Chianti's east face, under an hour away, with snow for water; sites are few and exposed, so it suits a small party in settled weather.",
+    "water": "Snow patches near the col; hard to find late in a dry summer.",
+    "capacity": "Three or four bivy sites, only one big enough for a two-person tent.",
+    "permit": "None needed; the spire lies outside the national park.",
+    "notes": "Elevation is quoted from about 7,720 to 7,950 ft depending on the source. Windy and exposed."},
+   {"name": "Burgundy Creek bench camp — west side", "elev_ft": 6400, "type": "camp", "role": "route", "nights": [],
+    "why": "Calmer, treed camp with a spring below the col; choose it for shelter at the cost of about 1,300 more ft to climb to the col next morning.",
+    "water": "A spring on the climbers-left side of the bench; thin by late summer.",
+    "capacity": "",
+    "permit": "None needed; outside the national park.",
+    "notes": "Quoted between 6,400 and 6,500 ft. Heavy mosquitoes early in the season."}
+  ],
+  "confidence": "medium",
+  "plan_conflict": "The plan allows either the bench or the col on night 1; research on the neighbouring Rebel Yell puts most parties at the col, so the col is main.",
+  "sources": ["https://stephabegg.com/?p=8704", "https://ncmountainguides.com/node/48", "https://mountainproject.com/forum/topic/112029616/wine-spires-camping"]
+ },
+ {
+  "id": "wa_chianti_spire_north_face",
+  "camps": [],
+  "new_camps": [
+   {"name": "Burgundy Col high camp — west side, the Wine Spires", "elev_ft": 7720, "type": "bivy", "role": "main", "nights": [1],
+    "why": "Next to the notch traverse for the north face, with snow for water; sites are few and exposed, so it suits a small party in settled weather.",
+    "water": "Snow patches near the col; hard to find late in a dry summer.",
+    "capacity": "Three or four bivy sites, only one big enough for a two-person tent.",
+    "permit": "None needed; the spire lies outside the national park.",
+    "notes": "Elevation is quoted from about 7,720 to 7,950 ft depending on the source. Windy and exposed."},
+   {"name": "Burgundy Creek bench camp — west side", "elev_ft": 6400, "type": "camp", "role": "route", "nights": [],
+    "why": "Calmer, treed camp with a spring below the col; choose it for shelter at the cost of about 1,300 more ft to climb to the col next morning.",
+    "water": "A spring on the climbers-left side of the bench; thin by late summer.",
+    "capacity": "",
+    "permit": "None needed; outside the national park.",
+    "notes": "Quoted between 6,400 and 6,500 ft. Heavy mosquitoes early in the season."}
+  ],
+  "confidence": "medium",
+  "plan_conflict": "The plan lists bench or col for night 1; parties climbing Chianti sleep at the col, so it is main.",
+  "sources": ["https://stephabegg.com/?p=8704", "https://ncmountainguides.com/node/48", "https://mountainproject.com/forum/topic/112029616/wine-spires-camping"]
+ },
+ {
+  "id": "wa_direct_west_face",
+  "camps": [
+   {"name": "Burgundy Creek bench camp — west side", "nights": [1], "role": "main",
+    "why": "The west face is reached by a gully straight from the bench, so there is no need to climb to the col; flat sites in trees with a nearby spring."},
+   {"name": "Burgundy Col high camp — west side, the Wine Spires", "nights": [], "role": "route",
+    "why": "A higher, windier camp used by parties linking several spires; it adds a climb to the col and a long drop back to the face."},
+   {"name": "Lone Fir Campground, SR 20", "nights": [], "role": "route",
+    "why": "A roadside campground for the night before an early start. It is not on the approach, and it closes when the highway shuts for winter."},
+   {"name": "Upper scree benches below Burgundy Col — west side", "nights": [], "role": "route",
+    "why": "A fallback bivy for a party caught by dark or thirst on the talus. Water is patchy up there, so it is not a planned stop."}
+  ],
+  "new_camps": [],
+  "confidence": "medium",
+  "plan_conflict": "The Burgundy Col camp was main on file; this west-face route is approached from the bench, so the col is demoted to route.",
+  "sources": ["https://mountainproject.com/forum/topic/112029616/wine-spires-camping", "https://www.mountainproject.com/route/108106040/direct-west-face", "https://stephabegg.com/?p=8704"]
+ },
+ {
+  "id": "wa_pernod_spire_standard",
+  "camps": [
+   {"name": "Burgundy Col high camp — west side, the Wine Spires", "nights": [1], "role": "main",
+    "why": "The standard line starts across the col and under the east walls, so sleeping here shortens the climb; sites are small and windy with snow for water."},
+   {"name": "Burgundy Creek bench camp — west side", "nights": [], "role": "route",
+    "why": "Sheltered, with a spring and room to spread out; it adds roughly 1,300 ft of climbing to the col on summit morning."},
+   {"name": "Lone Fir Campground, SR 20", "nights": [], "role": "route",
+    "why": "A roadside campground for the night before an early start. It is not on the approach, and it closes when the highway shuts for winter."},
+   {"name": "Upper scree benches below Burgundy Col — west side", "nights": [], "role": "route",
+    "why": "A fallback bivy for a party caught by dark or thirst on the talus. Water is patchy up there, so it is not a planned stop."}
+  ],
+  "new_camps": [],
+  "confidence": "medium",
+  "plan_conflict": "The bench camp was also main on file; for this east-side line the plan and research favour the col, so the bench is demoted to route.",
+  "sources": ["https://stephabegg.com/?p=8704", "https://ncmountainguides.com/node/48", "https://www.mountainproject.com/area/108106031/pernod-spire"]
+ },
+ {
+  "id": "wa_south_face_2",
+  "camps": [
+   {"name": "Burgundy Col high camp — west side, the Wine Spires", "nights": [1], "role": "main",
+    "why": "Same trip as the standard line: sleep at the col to start from the notch side next morning; sites are small and windy with snow for water."},
+   {"name": "Burgundy Creek bench camp — west side", "nights": [], "role": "route",
+    "why": "Sheltered, with a spring and room to spread out; it adds roughly 1,300 ft of climbing to the col on summit morning."},
+   {"name": "Lone Fir Campground, SR 20", "nights": [], "role": "route",
+    "why": "A roadside campground for the night before an early start. It is not on the approach, and it closes when the highway shuts for winter."},
+   {"name": "Upper scree benches below Burgundy Col — west side", "nights": [], "role": "route",
+    "why": "A fallback bivy for a party caught by dark or thirst on the talus. Water is patchy up there, so it is not a planned stop."}
+  ],
+  "new_camps": [],
+  "confidence": "medium",
+  "plan_conflict": "The bench camp was also main on file; the plan sleeps at the col, so the bench is demoted to route.",
+  "sources": ["https://stephabegg.com/?p=8704", "https://ncmountainguides.com/node/48", "https://www.mountainproject.com/area/108106031/pernod-spire"]
+ },
+ {
+  "id": "wa_playing_not_spraying",
+  "camps": [
+   {"name": "Meadows below the Silver Horn's south face", "nights": [1], "role": "main",
+    "why": "The only camp near the route: meadows right under the south face, so summit day starts at the base and you rappel back to your tent."}
+  ],
+  "new_camps": [],
+  "confidence": "medium",
+  "plan_conflict": null,
+  "sources": ["https://www.mountainproject.com/area/106255336/the-silver-horn", "https://www.mountainproject.com/route/106255378/playing-not-spraying"]
+ },
+ {
+  "id": "wa_the_chalice",
+  "camps": [
+   {"name": "Meadows below the Silver Horn's south face", "nights": [1], "role": "main",
+    "why": "The only camp near the route: meadows right under the south face, so summit day starts at the base and you rappel back to your tent."}
+  ],
+  "new_camps": [],
+  "confidence": "medium",
+  "plan_conflict": null,
+  "sources": ["https://www.mountainproject.com/area/106255336/the-silver-horn", "https://cascadeclimbers.com/forum/topic/75554-tr-silver-horn-fa-spice-of-life-iii-510-8122010"]
+ },
+ {
+  "id": "wa_silver_star_glacier",
+  "camps": [
+   {"name": "Burgundy Creek bench camp — west side", "nights": [1], "role": "main",
+    "why": "The sheltered, treed camp most parties pick for the glacier, with a spring; it makes summit day longer than sleeping at the col."},
+   {"name": "Burgundy Col high camp — west side, the Wine Spires", "nights": [], "role": "route",
+    "why": "Puts you at the glacier's doorstep for a shorter summit day, but the few sites are cramped and windy and water depends on snow."},
+   {"name": "Lone Fir Campground, SR 20", "nights": [], "role": "route",
+    "why": "A roadside campground for the night before an early start. It is not on the approach, and it closes when the highway shuts for winter."},
+   {"name": "Upper scree benches below Burgundy Col — west side", "nights": [], "role": "route",
+    "why": "A fallback bivy for a party caught by dark or thirst on the talus. Water is patchy up there, so it is not a planned stop."}
+  ],
+  "new_camps": [],
+  "confidence": "medium",
+  "plan_conflict": "Bench and col were both main on file; with one night only, the plan's most-parties choice, the bench, stays main and the col becomes route. Some parties do sleep at the col.",
+  "sources": ["https://stephabegg.com/?p=8704", "https://ncmountainguides.com/node/48", "https://mountaineers.org/activities/routes-places/silver-star-mountain-silver-star-glacier"]
+ },
+ {
+  "id": "wa_vasiliki_ridge_standard",
+  "camps": [
+   {"name": "Bench Camp — larch bench above the Wine Spires pullout", "nights": [1], "role": "main",
+    "why": "The established camp on this side, with a nearby spring and the shortest hike from the highway; the ridge traverse starts by gaining the col next morning."}
+  ],
+  "new_camps": [],
+  "confidence": "medium",
+  "plan_conflict": null,
+  "sources": ["https://stephabegg.com/?p=8704", "https://mountainproject.com/forum/topic/112029616/wine-spires-camping", "https://www.countryhighpoints.com/ares-tower-and-the-acropolis/"]
+ },
+ {
+  "id": "wa_gato_negro",
+  "camps": [
+   {"name": "Burgundy Creek bench camp — west side", "nights": [1, 2], "role": "main",
+    "why": "A full-day climb with a slow descent gully is best done from a settled base: flat treed sites, a spring nearby, and no carry to the col."},
+   {"name": "Burgundy Col high camp — west side, the Wine Spires", "nights": [], "role": "route",
+    "why": "Higher and windier with little water late season; only worth it to string other spires together, since Whine's route is approached from below."},
+   {"name": "Lone Fir Campground, SR 20", "nights": [], "role": "route",
+    "why": "A roadside campground for the night before an early start. It is not on the approach, and it closes when the highway shuts for winter."},
+   {"name": "Upper scree benches below Burgundy Col — west side", "nights": [], "role": "route",
+    "why": "A fallback bivy for a party caught by dark or thirst on the talus. Water is patchy up there, so it is not a planned stop."}
+  ],
+  "new_camps": [],
+  "confidence": "medium",
+  "plan_conflict": "The col and Lone Fir were main on file; the plan and the camp-to-camp climbing times point to the bench for both nights, so the others become route.",
+  "sources": ["https://cascadeclimbers.com/forum/topic/92610-tr-whine-spire-gato-negro-iv-510-12p-932013/", "https://mountainproject.com/forum/topic/112029616/wine-spires-camping", "https://publications.americanalpineclub.org/articles/12200319301"]
+ },
+ {
+  "id": "wa_tower_mountain_southwest_route",
+  "camps": [
+   {"name": "Snowy Lakes basin", "nights": [1], "role": "main",
+    "why": "The standard camp for Tower and Golden Horn: lakeside sites with water, close enough that summit day is a light pack and a return to tents."},
+   {"name": "Rainy Pass PCT north trailhead", "nights": [], "role": "route",
+    "why": "The start of the walk, not a place anyone sleeps on the trip; a toilet but no water, and the camps start miles up the trail."},
+   {"name": "Cutthroat Pass, PCT crest camps", "nights": [], "role": "route",
+    "why": "A first stopping point about five miles in with several sites, but it is exposed and a long way from the climb; a late party might stop here."},
+   {"name": "Granite Pass", "nights": [], "role": "route",
+    "why": "A few sites halfway to the lakes that break the walk in two; useful for a late start but it leaves a longer first morning toward the peak."}
+  ],
+  "new_camps": [],
+  "confidence": "high",
+  "plan_conflict": "Rainy Pass trailhead was main on file but nobody sleeps there on this trip; Snowy Lakes basin is the one main for night 1.",
+  "sources": ["https://www.theoutbound.com/washington/backpacking/camp-at-snowy-lakes", "https://mountaineers.org/activities/trip-reports/basic-alpine-climb-tower-mountain-golden-horn-2", "https://www.wta.org/go-hiking/trip-reports/trip_report-2021-09-12-8693161867"]
+ },
+ {
+  "id": "wa_american_border_peak_southeast_face",
+  "camps": [
+   {"name": "Gargett Mine basin bivy", "nights": [1], "role": "main",
+    "why": "A small basin close under the peak's approach ridge; it turns the long off-trail day into two, but sites are few and water thins out late in the season."},
+   {"name": "High Pass camp", "nights": [], "role": "route",
+    "why": "A marginal, exposed spot near the start of the cross-country; a party that runs short of daylight or finds the basin full may stop here."},
+   {"name": "Twin Lakes basin road-end camp", "nights": [], "role": "route",
+    "why": "A drive-up campground with toilets for a rested start; it adds the whole approach to the summit day and has no drinking water."}
+  ],
+  "new_camps": [],
+  "confidence": "medium",
+  "plan_conflict": null,
+  "sources": ["https://www.mountaineers.org/activities/routes-places/american-border-peak-southeast-route", "https://summitpost.org/american-border-peak/climbers-log/154887", "https://www.wta.org/go-hiking/hikes/high-pass-1"]
+ },
+ {
+  "id": "wa_bacon_peak_diobsud",
+  "camps": [
+   {"name": "Upper Diobsud Lakes", "nights": [1, 2], "role": "main",
+    "why": "The plan's traverse ends here: lake water and flat benches, and the summit is a round trip from camp the next day."},
+   {"name": "Northeast Bacon camp, above the glacier", "nights": [], "role": "route",
+    "why": "A higher camp half a mile from the summit that suits a two-day push or carrying over after the climb; it is waterless late in the season."},
+   {"name": "Watson Lakes designated camps", "nights": [], "role": "route",
+    "why": "A short two-mile walk from the road with lake water; stop here if starting late, then do the long traverse the following day."},
+   {"name": "Lower Anderson Lake", "nights": [], "role": "route",
+    "why": "Sits directly below the climbers' ridge route, so it works for a late start; the plan walks past it on day one."},
+   {"name": "Anderson Creek road end, Watson Lakes trailhead", "nights": [], "role": "route",
+    "why": "The trailhead on a gravel road; sleep here only for an early start the next morning, not as a camp on the trip."}
+  ],
+  "new_camps": [],
+  "confidence": "low",
+  "plan_conflict": "Research for the standard two-day trip names a high camp near the summit rather than Diobsud Lakes; the plan's three-day shape with Diobsud both nights could not be confirmed.",
+  "sources": ["https://stephabegg.com/?p=8825", "https://www.mountaineers.org/activities/routes-places/bacon-canadian-bacon-peaks", "https://turns-all-year.com/trip-reports/mount-watson-bacon-peak"]
+ },
+ {
+  "id": "wa_hagan_mountain_north_slopes_blum_lakes",
+  "camps": [],
+  "new_camps": [
+   {"name": "Upper Blum Lake", "elev_ft": 5024, "type": "camp", "role": "main", "nights": [1, 2],
+    "why": "The natural base for the glacier side: lake water and good sites at the end of the steep path, with the summit a round trip from camp.",
+    "water": "",
+    "capacity": "",
+    "permit": "Backcountry permit needed; the area is inside the national park, with parties limited to six.",
+    "notes": "The Blum Lakes are reached by the faint climbers' path from Blum Creek; the lakes sit near 4,900 to 5,000 ft."}
+  ],
+  "confidence": "medium",
+  "plan_conflict": null,
+  "sources": ["https://mountaineers.org/activities/routes-places/north-cascades-national-park-cross-country-zones/mount-blum-mount-hagan", "https://turns-all-year.com/trip-reports/watson-bacon-hagan-blum-traverse-solo", "https://summitpost.org/hagan-mountain/1064993"]
+ },
+ {
+  "id": "wa_hagan_mountain_south",
+  "camps": [
+   {"name": "South Hagan bench", "nights": [1, 2], "role": "main",
+    "why": "Open benches on Hagan's south side where parties stage for the south slopes; it is the closest sleep to the climb, with long carries to reach it."},
+   {"name": "Hidden Lake, below the Blum-Hagan divide", "nights": [], "role": "route",
+    "why": "Reliable water on the far side of Hagan, used by parties traversing east; it sits well below the bench and adds a climb to the south slopes."},
+   {"name": "Sulphide Camp, end of the Baker River trail", "nights": [], "role": "route",
+    "why": "Built sites and a toilet at trail's end, but off the climbers' route; it suits a trail-only trip, not Hagan, and adds a long bushwhack."}
+  ],
+  "new_camps": [],
+  "confidence": "low",
+  "plan_conflict": "The plan camps on benches above Diobsud Lakes, which is not a camp on file; South Hagan bench is the nearest listed camp but the match was not confirmed.",
+  "sources": ["https://summitpost.org/hagan-mountain/1064993", "https://climberkyle.com/2020/09/05/watson-blum-high-route/", "https://turns-all-year.com/trip-reports/watson-bacon-hagan-blum-traverse-solo"]
+ },
+ {
+  "id": "wa_icy_peak_southwest_route",
+  "camps": [
+   {"name": "Notch bivy on the Ruth-Icy ridge", "nights": [1], "role": "main",
+    "why": "Snow camp just past the first notch from Ruth, about 6,600 ft; it puts Icy a few hours away on day two and leaves a drop and haul out afterward."},
+   {"name": "Ruth Arm ridge camps below the Ruth Glacier", "nights": [], "role": "route",
+    "why": "Drier rock sites at the toe of the glacier; use them to split the walk-in or for Ruth alone, but they leave a longer day to Icy."},
+   {"name": "Ruth Mountain summit camp", "nights": [], "role": "route",
+    "why": "A view-rich snow camp on Ruth's dome that is a popular choice, though it is windy and a longer way from Icy than the notch."},
+   {"name": "Hannegan trailhead, end of the Ruth Creek road", "nights": [], "role": "route",
+    "why": "A road-end camp for a late arrival before the alpine start; it adds the whole walk-in to the next day."}
+  ],
+  "new_camps": [],
+  "confidence": "high",
+  "plan_conflict": "Ruth Arm ridge camps and Ruth summit camp were both main on file; the plan and research put night 1 at the notch beyond Ruth, so those two become route.",
+  "sources": ["https://www.mountaineers.org/activities/routes-places/north-cascades-national-park-cross-country-zones/high-occupancy-xc-zones/ruth-mountain-icy-peak-traverse", "https://www.nps.gov/noca/blogs/ruth-icy-traverse-june-27-28-2016.htm", "https://mountaineers.org/activities/trip-reports/ruth-mountain-icy-peak-traverse-18"]
+ }
+]

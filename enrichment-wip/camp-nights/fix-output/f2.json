@@ -1,0 +1,599 @@
+[
+ {
+  "id": "wa_star_peak_sawtooth_nw_ridge",
+  "camps": [],
+  "new_camps": [
+   {
+    "name": "Star Lake",
+    "elev_ft": 7185,
+    "type": "camp",
+    "role": "main",
+    "nights": [
+     1,
+     2
+    ],
+    "why": "The base for Star Peak: the ridge starts from your tent, the descent returns to the same camp, and day three is a downhill carry out.",
+    "water": "The lake.",
+    "capacity": "",
+    "permit": "",
+    "notes": "Camp at least 200 ft from the shore. Reach it by crossing Fish Creek Pass, dropping about a quarter mile and walking left. The only other option is a spot near the pass."
+   }
+  ],
+  "confidence": "medium",
+  "plan_conflict": null,
+  "sources": [
+   "https://wenatcheeoutdoors.org/?p=1715",
+   "https://www.yellowleaf.org/scramble/g/l/Star-Peak.html",
+   "https://www.wta.org/go-hiking/trip-reports/trip_report-2021-06-26-1152798111"
+  ]
+ },
+ {
+  "id": "wa_tupshin_peak_east_face",
+  "camps": [],
+  "new_camps": [
+   {
+    "name": "Company Creek trailhead bivy",
+    "elev_ft": null,
+    "type": "bivy",
+    "role": "main",
+    "nights": [
+     1
+    ],
+    "why": "Day one is short after the boat, so parties sleep near the trailhead and start the off-trail climb to the basin fresh the next day.",
+    "water": "",
+    "capacity": "",
+    "permit": "",
+    "notes": "Night one is the least documented of the trip. The usual alternative, Bird Creek Camp on the Devore Creek Trail near 4,200 ft, is a different approach."
+   },
+   {
+    "name": "High bivy in the larches southeast of Tupshin",
+    "elev_ft": 7000,
+    "type": "bivy",
+    "role": "main",
+    "nights": [
+     2,
+     3
+    ],
+    "why": "Flat spots in the highest larches put the east face a short walk away; parties sleep here before the climb and again after it.",
+    "water": "A creek runs near the site.",
+    "capacity": "A few flat spots about 200 ft above the basin floor.",
+    "permit": "",
+    "notes": "Elevation is approximate. Reached after crossing the lower south ridge into the basin southeast of the peak; one party bivied at the base of the east cliff instead."
+   }
+  ],
+  "confidence": "low",
+  "plan_conflict": "Many parties reach Tupshin from Bird Creek Camp on the Devore Creek Trail; this plan's Company Creek and basin route has one documented trip.",
+  "sources": [
+   "https://lemkeclimbs.com/?p=2842",
+   "https://countryhighpoints.com/tupshin-peak-devore-peak-and-flora-mountain"
+  ]
+ },
+ {
+  "id": "wa_agnes_mountain_south_ridge",
+  "camps": [],
+  "new_camps": [
+   {
+    "name": "Swamp Creek camp on the PCT",
+    "elev_ft": null,
+    "type": "camp",
+    "role": "main",
+    "nights": [
+     1
+    ],
+    "why": "The end of an easy 8.5 miles on the PCT, with good water and flat ground before the steep off-trail climb the next morning.",
+    "water": "Swamp Creek.",
+    "capacity": "",
+    "permit": "",
+    "notes": "Elevation not found."
+   },
+   {
+    "name": "Upper Blue Basin camp",
+    "elev_ft": 5000,
+    "type": "camp",
+    "role": "main",
+    "nights": [
+     2
+    ],
+    "why": "The first flat ground after the brush, talus and slab climb from the creeks, splitting the carry before the final move up to the pass.",
+    "water": "",
+    "capacity": "",
+    "permit": "",
+    "notes": "Off-trail, no maintained path; a camp below Asa Peak near 5,000 ft is the one reported."
+   },
+   {
+    "name": "High camp near Icy-Spruce Pass",
+    "elev_ft": 6760,
+    "type": "camp",
+    "role": "main",
+    "nights": [
+     3,
+     4
+    ],
+    "why": "The high camp for the south ridge: the long summit push starts and ends here, and you break camp from it on the way out.",
+    "water": "",
+    "capacity": "",
+    "permit": "",
+    "notes": "Pass elevation is from the route description; other parties have camped on the Agnes Col."
+   }
+  ],
+  "confidence": "low",
+  "plan_conflict": null,
+  "sources": [
+   "https://docs.google.com/document/d/1-jvr_zQLMipo-9Up81Vi0s80lHDAo7DhqUExjNBrAYo/export?format=pdf",
+   "https://outthereoutdoors.com/?p=31622",
+   "https://cascadeclimbers.com/forum/topic/81507-tr-asa-agnes-gunsight-and-sinister-standards-7132011"
+  ]
+ },
+ {
+  "id": "wa_vanishing_point",
+  "camps": [
+   {
+    "name": "Dolomite Tower bivy caves",
+    "nights": [
+     1,
+     2
+    ],
+    "role": "main",
+    "why": "Three flat platforms in shallow caves right of the start, one person each, so the 14 pitches begin at the base; spray blows in during wind and rain."
+   }
+  ],
+  "new_camps": [],
+  "confidence": "medium",
+  "plan_conflict": "Strong parties do the approach, climb and descent car-to-car in about 12.5 hours; the plan's second night at the caves exists only for a party that climbs slowly and sleeps again before the walk-off.",
+  "sources": [
+   "https://blakeclimbs.blogspot.com/2012/09/mt-baring-vanishing-point.html",
+   "https://nathanhadley.pages.dev/stories/vanishing-point"
+  ]
+ },
+ {
+  "id": "wa_baring_mountain_r1",
+  "camps": [
+   {
+    "name": "Dolomite Camp",
+    "nights": [
+     1
+    ],
+    "role": "main",
+    "why": "At the top of the first step: the camp parties haul up and sleep at on the face, within reach of the upper steps."
+   },
+   {
+    "name": "Couloir Camp",
+    "nights": [],
+    "role": "route",
+    "why": "A forested ledge about 1,000 ft above the lake that parties pass through; use it to split loads or sit out bad weather."
+   },
+   {
+    "name": "Barclay Lake",
+    "nights": [],
+    "role": "route",
+    "why": "Comfortable lakeside sites at the foot of the approach; sleeping here adds the brush-bash to the start of a long day."
+   }
+  ],
+  "new_camps": [],
+  "confidence": "medium",
+  "plan_conflict": "The plan puts the bivy atop the crux step, but the documented camp on the face is Dolomite Camp at the top of the first step; Couloir Camp and Barclay Lake are changed from main to route.",
+  "sources": [
+   "https://publications.americanalpineclub.org/articles/12196130200/The-North-Face-of-Mount-Baring"
+  ]
+ },
+ {
+  "id": "wa_bears_breast_mountain_infinite_beauty",
+  "camps": [],
+  "new_camps": [
+   {
+    "name": "Camp near the Waptus River PCT bridge",
+    "elev_ft": null,
+    "type": "camp",
+    "role": "main",
+    "nights": [
+     1,
+     2
+    ],
+    "why": "The usual camp for the Mega Slab climbs, about an hour from the slab base along the old Shovel Creek track; the summit day returns here.",
+    "water": "",
+    "capacity": "",
+    "permit": "",
+    "notes": "One party camped on the abandoned trail beside Shovel Creek instead. Elevation not found in any source."
+   }
+  ],
+  "confidence": "low",
+  "plan_conflict": null,
+  "sources": [
+   "https://cascadeclimbers.com/forum/topic/95807-tr-bears-breast-se-mega-slab-972014",
+   "https://www.wta.org/go-hiking/trip-reports/trip_report-2020-08-31-6410441939"
+  ]
+ },
+ {
+  "id": "wa_bears_breast_mountain_timeless_treasure",
+  "camps": [],
+  "new_camps": [
+   {
+    "name": "Camp near the Waptus River PCT bridge",
+    "elev_ft": null,
+    "type": "camp",
+    "role": "main",
+    "nights": [
+     1,
+     2
+    ],
+    "why": "The usual camp for the Mega Slab climbs, about an hour from the slab base along the old Shovel Creek track; the summit day returns here.",
+    "water": "",
+    "capacity": "",
+    "permit": "",
+    "notes": "One party camped on the abandoned trail beside Shovel Creek instead. Elevation not found in any source."
+   }
+  ],
+  "confidence": "low",
+  "plan_conflict": null,
+  "sources": [
+   "https://cascadeclimbers.com/forum/topic/95807-tr-bears-breast-se-mega-slab-972014",
+   "https://www.wta.org/go-hiking/trip-reports/trip_report-2020-08-31-6410441939"
+  ]
+ },
+ {
+  "id": "wa_bears_breast_mountain_southwest_face",
+  "camps": [],
+  "new_camps": [
+   {
+    "name": "Dutch Miller Gap camp",
+    "elev_ft": 5000,
+    "type": "camp",
+    "role": "main",
+    "nights": [
+     1,
+     2
+    ],
+    "why": "The standard camp after a long 15-mile walk-in: the face looms above, the summit day returns here, and ponds nearby give water.",
+    "water": "Nearby ponds.",
+    "capacity": "",
+    "permit": "Free self-issue wilderness permit at the trailhead.",
+    "notes": "Gap elevation is about 5,000 ft. Parties return here after the summit and hike out the next morning."
+   },
+   {
+    "name": "Tarns below the Southwest Face, about 5,300 ft",
+    "elev_ft": 5300,
+    "type": "camp",
+    "role": "route",
+    "nights": [],
+    "why": "Moving up from the gap shortens the summit morning, at the cost of carrying packs another uphill mile past the gap.",
+    "water": "Tarns.",
+    "capacity": "",
+    "permit": "",
+    "notes": "Used by a 2020 party who moved camp from the gap the same evening."
+   }
+  ],
+  "confidence": "high",
+  "plan_conflict": null,
+  "sources": [
+   "https://trailcatjim.com/bears-breast-mtn-via-southwest-face-west-chimney/",
+   "https://www.nwhikers.net/forums/viewtopic.php?p=1196134"
+  ]
+ },
+ {
+  "id": "wa_chimney_rock_east_face_direct",
+  "camps": [
+   {
+    "name": "Chimney Glacier hanging basin — the big boulder bivy",
+    "nights": [
+     1,
+     2
+    ],
+    "role": "main",
+    "why": "Puts the glacier about two hours away and has overhang space for a few bivy sacks; the summit day returns here before the hike out."
+   },
+   {
+    "name": "Pete Lake and the Lemah Meadows camps",
+    "nights": [],
+    "role": "route",
+    "why": "An easy flat first night for late starters or a four-day trip, but it leaves a steep brushy climb to the bivy basin before the long summit day."
+   }
+  ],
+  "new_camps": [],
+  "confidence": "high",
+  "plan_conflict": "Fit parties return to the bivy and hike out the same evening, so night 2 is only spent there on the three-day plan.",
+  "sources": [
+   "https://sverdina.com/Chimney_Rock1.asp",
+   "https://lemkeclimbs.com/chimney-rock-2"
+  ]
+ },
+ {
+  "id": "wa_chimney_rock_west_face",
+  "camps": [
+   {
+    "name": "Chimney Glacier hanging basin — the big boulder bivy",
+    "nights": [
+     1,
+     2
+    ],
+    "role": "main",
+    "why": "The standard high camp below the glacier toe, with a sheltered overhang; summit day starts and ends here before the hike out."
+   },
+   {
+    "name": "Sunrise Knob",
+    "nights": [],
+    "role": "route",
+    "why": "Mapped at about 4,650 ft in the same basin; an alternative bench when the boulder bivy is taken by another party."
+   },
+   {
+    "name": "Pete Lake and the Lemah Meadows camps",
+    "nights": [],
+    "role": "route",
+    "why": "A flat, easy night for parties that start late, but it adds a steep brushy climb to the high camp and lengthens summit day."
+   }
+  ],
+  "new_camps": [],
+  "confidence": "medium",
+  "plan_conflict": "Both the boulder bivy and Sunrise Knob are on file as main; Sunrise Knob is changed to route.",
+  "sources": [
+   "https://sverdina.com/Chimney_Rock1.asp",
+   "https://lemkeclimbs.com/chimney-rock-2"
+  ]
+ },
+ {
+  "id": "wa_east_face_6",
+  "camps": [
+   {
+    "name": "Chimney Glacier hanging basin — the big boulder bivy",
+    "nights": [
+     1,
+     2
+    ],
+    "role": "main",
+    "why": "The usual high camp below the glacier toe, with sheltered bivy space under the boulder; summit day starts and ends a short moraine walk away."
+   },
+   {
+    "name": "Sunrise Knob",
+    "nights": [],
+    "role": "route",
+    "why": "Mapped at about 4,650 ft in the same basin; an alternative when the boulder bivy is occupied, with the same short approach to the glacier."
+   },
+   {
+    "name": "Pete Lake and the Lemah Meadows camps",
+    "nights": [],
+    "role": "route",
+    "why": "An easy flat first night with plenty of space, but it leaves the steep brushy climb to the glacier basin for the morning of the summit day."
+   }
+  ],
+  "new_camps": [],
+  "confidence": "medium",
+  "plan_conflict": "Both the boulder bivy and Sunrise Knob are on file as main; Sunrise Knob is changed to route.",
+  "sources": [
+   "https://sverdina.com/Chimney_Rock1.asp",
+   "https://lemkeclimbs.com/chimney-rock-2"
+  ]
+ },
+ {
+  "id": "wa_lemah_two_goatshead_spire",
+  "camps": [
+   {
+    "name": "Pete Lake and the Lemah Meadows camps",
+    "nights": [
+     1,
+     2
+    ],
+    "role": "main",
+    "why": "Easy flat miles to sites by Pete Lake or along Lemah Creek; the creek-side sites save about three miles on summit day over staying at the lake."
+   }
+  ],
+  "new_camps": [],
+  "confidence": "medium",
+  "plan_conflict": null,
+  "sources": [
+   "https://sverdina.com/Lemah1.asp",
+   "https://www.wta.org/go-hiking/hikes/pete-lake"
+  ]
+ },
+ {
+  "id": "wa_little_big_chief_mountain_northeast_face",
+  "camps": [
+   {
+    "name": "Williams Lake and the upper Middle Fork meadows below Dutch Miller Gap",
+    "nights": [
+     1,
+     2
+    ],
+    "role": "main",
+    "why": "The first real camp up the valley, only a short climb from the gap and the peak; lake and meadow sites give water and room, and summit day returns here."
+   },
+   {
+    "name": "Hardscrabble Horse Camp, Middle Fork Snoqualmie",
+    "nights": [],
+    "role": "route",
+    "why": "Staging camp at the end of the closed road; sleeping here shortens day one but adds about seven trail miles to the summit day."
+   },
+   {
+    "name": "Waptus Lake, with Spade Lake above it",
+    "nights": [],
+    "role": "route",
+    "why": "The gentle eastern approach from Salmon la Sac; a pleasant first night but it adds a long climb to the gap before the peak."
+   }
+  ],
+  "new_camps": [],
+  "confidence": "low",
+  "plan_conflict": null,
+  "sources": [
+   "https://climberkyle.com/2019/06/30/the-alpine-lakes-crest-traverse/",
+   "https://www.wta.org/go-hiking/hikes/dutch-miller-gap"
+  ]
+ },
+ {
+  "id": "wa_northwest_face_4",
+  "camps": [
+   {
+    "name": "Summit Chief Valley gravel flats",
+    "nights": [
+     1,
+     2
+    ],
+    "role": "main",
+    "why": "A flat gravel wash directly below the face, a short way off the trail; the climb and the descent both start and end at your tent."
+   },
+   {
+    "name": "Hardscrabble Horse Camp, Middle Fork Snoqualmie",
+    "nights": [],
+    "role": "route",
+    "why": "A lower option at the road end; it spares the cross-country day with a heavy pack but adds miles and gain to summit day."
+   }
+  ],
+  "new_camps": [],
+  "confidence": "low",
+  "plan_conflict": null,
+  "sources": [
+   "https://cascadeclimbers.com/forum/topic/107543-tr-little-big-chief-northwest-face-falcon-route"
+  ]
+ },
+ {
+  "id": "wa_mount_daniel_lynch_glacier",
+  "camps": [
+   {
+    "name": "Peggy's Pond, below Cathedral Rock",
+    "nights": [],
+    "role": "route",
+    "why": "The pond is where this loop ends, not where it sleeps: you pass it on summit day on the way down to the trailhead."
+   },
+   {
+    "name": "Hyas Lake and Upper Hyas Lake",
+    "nights": [],
+    "role": "route",
+    "why": "An easy low camp close to the trailhead for a three-day trip; it adds a long climb to Deception Pass and the lakes before the glacier."
+   }
+  ],
+  "new_camps": [
+   {
+    "name": "Pea Soup Lake outlet",
+    "elev_ft": 6100,
+    "type": "camp",
+    "role": "main",
+    "nights": [
+     1
+    ],
+    "why": "The usual camp for the Lynch Glacier: the glacier is minutes away, and summit day skips the long climb up from Jade Lake.",
+    "water": "The lake and its outlet.",
+    "capacity": "",
+    "permit": "",
+    "notes": "Elevation is approximate. Lies over Dip Top Gap from Jade Lake; be ready to camp on snow early in the season."
+   },
+   {
+    "name": "Jade Lake",
+    "elev_ft": 5500,
+    "type": "camp",
+    "role": "route",
+    "nights": [],
+    "why": "A lower, more sheltered camp reached without crossing the gap; it adds the steep Dip Top Gap snow climb to the morning of summit day.",
+    "water": "The lake.",
+    "capacity": "",
+    "permit": "",
+    "notes": "Elevation is the plan's figure for the lake."
+   }
+  ],
+  "confidence": "medium",
+  "plan_conflict": "The plan names Jade Lake first, but the documented party slept at the Pea Soup Lake outlet; Pea Soup is made main and Jade route.",
+  "sources": [
+   "https://turns-all-year.com/trip-reports/july-4-5-2018-mt-daniel-ski-jade-lake-paddle-loop",
+   "https://www.mountaineers.org/activities/routes-places/mt-daniel-lynch-glacier"
+  ]
+ },
+ {
+  "id": "wa_mount_hinman_hinman_glacier",
+  "camps": [
+   {
+    "name": "La Bohn Lakes, La Bohn Gap and the Chain Lakes benches",
+    "nights": [
+     1,
+     2
+    ],
+    "role": "main",
+    "why": "Camps right under the gap, so summit day is a short scramble and returns to the tent; the price is a longer, steeper first day with a snow slope to the gap."
+   },
+   {
+    "name": "Necklace Valley — Jade, Emerald and Opal Lakes",
+    "nights": [],
+    "role": "route",
+    "why": "Established lake sites eight to nine miles in, lower and buggier; stopping here keeps day one easier but adds the gap climb to summit day."
+   },
+   {
+    "name": "Money Creek and Miller River campgrounds, Foss River roadhead",
+    "nights": [],
+    "role": "route",
+    "why": "Car campgrounds for the night before an early trailhead start; useful for a Friday-night arrival, though the Foss River road has had delays."
+   }
+  ],
+  "new_camps": [],
+  "confidence": "medium",
+  "plan_conflict": "Both La Bohn Lakes and Necklace Valley are on file as main; Necklace Valley is changed to route.",
+  "sources": [
+   "https://www.wta.org/go-hiking/trip-reports/trip_report-2025-07-09.210121759056",
+   "https://www.wta.org/go-hiking/hikes/necklace-valley"
+  ]
+ },
+ {
+  "id": "wa_mount_hinman_west_ridge",
+  "camps": [],
+  "new_camps": [
+   {
+    "name": "Jade Lake, Necklace Valley",
+    "elev_ft": 4613,
+    "type": "camp",
+    "role": "main",
+    "nights": [
+     1,
+     2
+    ],
+    "why": "Established sites at the end of the nine-mile first day; the summit day over La Bohn Gap returns here, and Emerald and Opal give quieter sites.",
+    "water": "",
+    "capacity": "",
+    "permit": "A wilderness permit is self-issued at the trailhead at no fee.",
+    "notes": "Buggy early in the season; campfires are not allowed. Some parties move up to La Bohn Lakes for night 2."
+   }
+  ],
+  "confidence": "medium",
+  "plan_conflict": null,
+  "sources": [
+   "https://www.wta.org/go-hiking/hikes/necklace-valley",
+   "https://www.wta.org/go-hiking/trip-reports/trip_report-2024-07-29.171542765555"
+  ]
+ },
+ {
+  "id": "wa_overcoat_peak_southeast_route",
+  "camps": [
+   {
+    "name": "Rock benches above Overcoat Glacier",
+    "nights": [
+     1
+    ],
+    "role": "main",
+    "why": "The highest camp, at the base of the summit snow; it makes summit day short but means a hard, brushy carry up from the valley."
+   },
+   {
+    "name": "Overcoat Lake",
+    "nights": [],
+    "role": "route",
+    "why": "A lower base reached after the same brush, with water; it saves some of the carry but adds climbing to summit day."
+   },
+   {
+    "name": "Hardscrabble Horse Camp, Middle Fork Snoqualmie",
+    "nights": [],
+    "role": "route",
+    "why": "The end of the bike ride and the last night before the car; it keeps the loaded carry short but makes day one a long ride and walk."
+   }
+  ],
+  "new_camps": [],
+  "confidence": "low",
+  "plan_conflict": "The plan's night 2 near Bears Breast Tarns could not be confirmed in any source, and Overcoat Lake is changed from main to route.",
+  "sources": [
+   "https://turns-all-year.com/trip-reports/july-10-11-2018-overcoat-finally",
+   "https://www.mountaineers.org/activities/activities/basic-alpine-climb-overcoat-peak"
+  ]
+ },
+ {
+  "id": "wa_summit_chief_mountain_north_face",
+  "camps": [],
+  "new_camps": [],
+  "confidence": "low",
+  "plan_conflict": "Parties camp on the valley floor below the face (one trip climbed from camp and returned to it), but no source gives the camp's elevation.",
+  "sources": [
+   "https://alpinedave.com/summit_chief/north_face.htm",
+   "https://www.mountainproject.com/route/120326622/north-face"
+  ]
+ }
+]

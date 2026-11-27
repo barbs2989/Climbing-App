@@ -81,7 +81,7 @@ const out = path.join(outdir, "b.cjs");
 const CORE = JSON.stringify(corePath);
 await build({
   stdin: {
-    contents: `export { compat, compatParts, compatWhy, compatSummary, compatUnknown, availOf, availSlotLabels, AVAIL_OPTS, AVAIL_SLOT_OPTS, __set_MY_PACE, CLIMBERS, ME, CMAX_DISC, CMAX_GRADE, CMAX_WHERE, CMAX_VERIF, CMAX_PACE, CMAX_AVAIL, CMAX_REL, REL_PRIOR, COMPAT_BASE, COMPAT_TOP, COMPAT_MAX } from ${CORE};`,
+    contents: `export { compat, compatParts, compatWhy, compatSummary, compatUnknown, availOf, availSlotLabels, AVAIL_OPTS, AVAIL_SLOT_OPTS, __set_MY_PACE, SEED_CLIMBERS as CLIMBERS, SEED_ME as ME, CMAX_DISC, CMAX_GRADE, CMAX_WHERE, CMAX_VERIF, CMAX_PACE, CMAX_AVAIL, CMAX_REL, REL_PRIOR, COMPAT_BASE, COMPAT_TOP, COMPAT_MAX } from ${CORE};`,
     resolveDir: ROOT, loader: "js",
   },
   bundle: true, format: "cjs", platform: "node", jsx: "automatic",

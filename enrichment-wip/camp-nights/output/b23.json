@@ -1,0 +1,216 @@
+[
+ {
+  "id": "wa_mount_shuksan_fisher_chimneys",
+  "camps": [
+   {"name": "Lake Ann", "nights": [1], "role": "main", "why": "The easy first night: a short walk in, water at hand, and a rested start on the chimneys. Costs a long summit day and a big re-climb of the chimneys on the way out."},
+   {"name": "Top of the Chimneys rock outcrop", "nights": [2], "role": "main", "why": "Dry ground just above the chimneys, so summit day starts at the glacier edge. You carry full packs up the scramble, but you skip the chimneys in the dark."},
+   {"name": "Rock rib above Winnie's Slide", "nights": [], "role": "route", "why": "Highest and shortest summit day, but it sits above the steep slide, so bailing in a storm means a down-climb. Pick it only with a settled forecast."}
+  ],
+  "new_camps": [],
+  "confidence": "medium",
+  "plan_conflict": "Our file marks the rib above Winnie's Slide as a main camp, but the plan's day 2 ends at the top of the chimneys, so that spot is the main for night 2.",
+  "sources": ["https://www.nps.gov/noca/blogs/fisher-chimneys.htm", "https://www.nps.gov/noca/blogs/climbing-conditions-mt-shuksan.htm", "https://www.mountainproject.com/route/107476295/north-face?print=1"]
+ },
+ {
+  "id": "wa_mount_shuksan_hanging_glacier",
+  "camps": [
+   {"name": "Fisher Chimneys camps, White Salmon and above Winnie's Slide", "nights": [1, 2], "role": "main", "why": "The plan's high camp: dry bivies with running water above the chimneys, a base for the White Salmon descent, and the same camp to return to after summit day."},
+   {"name": "North Face bivy, where the rib meets the face", "nights": [], "role": "route", "why": "Belongs to the White Salmon Creek approach to the North Face. It puts you closer to the cirque, but this plan comes in by the chimneys, so you only use it if you approach that way."}
+  ],
+  "new_camps": [],
+  "confidence": "low",
+  "plan_conflict": "Our file lists the North Face bivy as main, but the plan's day 1 approach and day 3 exit use the Fisher Chimneys side, so the chimneys camps are the main here.",
+  "sources": ["https://www.mountainproject.com/route/107476295/north-face?print=1", "https://www.nps.gov/noca/blogs/climbing-conditions-mt-shuksan.htm"]
+ },
+ {
+  "id": "wa_mount_shuksan_north_face",
+  "camps": [
+   {"name": "North Face bivy, where the rib meets the face", "nights": [1, 2], "role": "main", "why": "Flat bivy ledges with a view down to Price Lake, right at the foot of the face. Summit day starts and ends here, so you leave the big packs behind."},
+   {"name": "Fisher Chimneys camps, White Salmon and above Winnie's Slide", "nights": [], "role": "route", "why": "Used by parties who descend the Fisher Chimneys side rather than return to the face bivy. You get water above Winnie's Slide, but it leaves a second descent to the trailhead."}
+  ],
+  "new_camps": [],
+  "confidence": "medium",
+  "plan_conflict": null,
+  "sources": ["https://www.mountainproject.com/route/107476295/north-face?print=1", "https://stephabegg.com/?p=8911", "https://turns-all-year.com/trip-reports/july-9-10-2007-mt-shuksan-north-face"]
+ },
+ {
+  "id": "wa_mount_shuksan_price_glacier",
+  "camps": [
+   {"name": "Price Glacier Base Camp", "nights": [1], "role": "main", "why": "Granite slabs below the glacier with running water, reached after a long brushy approach. It leaves the climb right overhead on summit day."},
+   {"name": "Fisher Chimneys camps, White Salmon and above Winnie's Slide", "nights": [2], "role": "main", "why": "Where the traverse stops after topping out and coming down the chimneys side. Dry bivies and water above Winnie's Slide shorten the final day's walk to the shuttle car."}
+  ],
+  "new_camps": [],
+  "confidence": "low",
+  "plan_conflict": "Plan day 2 ends on the Fisher Chimneys side and day 3 finishes at the Lake Ann trailhead; no source confirmed where parties actually sleep on night 2.",
+  "sources": ["https://lamountaineers.org/NAC/browserf/climbs/shuksan/ls_703.htm", "https://www.mountainproject.com/route/106238998/price-glacier", "https://www.nps.gov/noca/blogs/climbing-conditions-mt-shuksan.htm"]
+ },
+ {
+  "id": "wa_mount_shuksan_sulphide_glacier",
+  "camps": [
+   {"name": "Lower bivy site", "nights": [1, 2], "role": "main", "why": "The standard camp near 6,200 ft: a few dry tent pads, running water, and a toilet. It melts out sooner than the upper site and keeps summit day reasonable."},
+   {"name": "The Notch", "nights": [], "role": "route", "why": "The first flat stop on Shannon Ridge, with limited water well below camp. Lower and quicker to reach, but it leaves a much longer summit day."},
+   {"name": "Upper bivy site", "nights": [], "role": "route", "why": "Shaves the most off summit day, but it is colder and windier, has no running water, and often means camping on snow."}
+  ],
+  "new_camps": [],
+  "confidence": "high",
+  "plan_conflict": null,
+  "sources": ["https://www.nps.gov/noca/blogs/sulphide-cross-country-zone.htm", "https://www.nps.gov/noca/blogs/climbing-conditions-mt-shuksan.htm", "https://www.wta.org/go-hiking/trip-reports/trip_report.2022-10-04.9067186918"]
+ },
+ {
+  "id": "wa_southeast_ridge_se_corner",
+  "camps": [
+   {"name": "Sulphide Glacier camp", "nights": [1, 2], "role": "main", "why": "The usual high camp for the Sulphide side: flat, roomy ground with water early in the season. Summit day starts and finishes here, then you walk out."},
+   {"name": "Shannon Ridge crest camps, below the park boundary", "nights": [], "role": "route", "why": "Needs no park permit, but it is lower and drier, and it lengthens summit day. A fallback when the Sulphide permits are gone."},
+   {"name": "Sulphide Glacier high camp", "nights": [], "role": "route", "why": "A snow bivy on the glacier that shortens the approach to the summit pyramid. No water, full exposure, and only worth it in a steady forecast."}
+  ],
+  "new_camps": [],
+  "confidence": "medium",
+  "plan_conflict": "Plan day 1 also mentions a bivy near Winnie's Slide, which is not one of this route's camps on file; the Sulphide camp is the main.",
+  "sources": ["https://www.nps.gov/noca/blogs/sulphide-cross-country-zone.htm", "https://www.nps.gov/noca/blogs/climbing-conditions-mt-shuksan.htm", "https://www.wta.org/go-hiking/trip-reports/trip_report.2022-10-04.9067186918"]
+ },
+ {
+  "id": "wa_mount_watson_scramble",
+  "camps": [
+   {"name": "Watson Lakes designated camps", "nights": [1], "role": "main", "why": "Established, legal tent sites on the lakes with water and no snow needed. About 1,500 ft below the summit, so summit day starts lower than from the slopes."},
+   {"name": "Camp on slopes below Mount Watson (~5,400 ft)", "nights": [], "role": "route", "why": "A higher dry camp that shortens summit day, but it has no designated sites and water is a long carry or melted snow. For parties who want the earlier start."},
+   {"name": "Anderson Creek road end, Watson Lakes trailhead", "nights": [], "role": "route", "why": "The trailhead, not a destination. Sleep here only the night before an early start; the plan's two days begin on the trail."},
+   {"name": "Lower Anderson Lake", "nights": [], "role": "route", "why": "A neighbouring basin camp about a half mile off the main junction. Handy if the plan also takes in Bacon Peak, but it adds nothing for Watson itself."}
+  ],
+  "new_camps": [],
+  "confidence": "medium",
+  "plan_conflict": "The plan's day 1 camp is the ~5,400 ft slopes, but the only documented, permitted camping on the approach is at the Watson Lakes; our file also lists both as main.",
+  "sources": ["https://fs.usda.gov/r06/mbs/recreation/trails/anderson-watson-lakes-trail-611", "https://www.mountaineers.org/activities/routes-places/anderson-lakes-watson-lakes-mount-watson", "https://turns-all-year.com/trip-reports/mount-watson-bacon-peak"]
+ },
+ {
+  "id": "wa_nooksack_tower_beckey_route",
+  "camps": [
+   {"name": "Shoulder camp above Price Lake, between the Price and East Nooksack glaciers", "nights": [1, 2], "role": "main", "why": "The one established site: flat rock for two or three bivy sacks near 5,900 ft, close under the north face. Summit day is long, so you sleep here again before the walk out."},
+   {"name": "Nooksack Cirque river bottom, below the tower", "nights": [], "role": "route", "why": "Nothing established: a gravel-bar or forest improvisation after a brushy river approach. Only for parties coming in from the cirque side without reaching the shoulder."}
+  ],
+  "new_camps": [],
+  "confidence": "high",
+  "plan_conflict": null,
+  "sources": ["https://www.summitpost.org/be-there-or-be-square/169856", "https://stevensong.com/nooksack-tower", "https://cascadeclimbers.com/forum/topic/67702-tr-nooksack-tower-beckeyschmidtke-july-2-4"]
+ },
+ {
+  "id": "wa_ruth_icy_traverse",
+  "camps": [
+   {"name": "Notch bivy on the Ruth-Icy ridge", "nights": [1], "role": "main", "why": "The suggested high camp near 6,600 ft, best on snow to spare the ground. It puts you past Ruth's summit and shortens the long traverse and descent to Icy and the car."},
+   {"name": "Ruth Arm ridge camps below the Ruth Glacier", "nights": [], "role": "route", "why": "Lower, drier ground at the toe of the glacier, reached sooner. It leaves more of the climb for day two, and water is scarce above the Hannegan stream."},
+   {"name": "Ruth Mountain summit camp", "nights": [], "role": "route", "why": "A spectacular snow-dome bivy high above everything, but fully exposed and above the water. Also requires the park permit if you sleep inside the park."},
+   {"name": "Hannegan trailhead, end of the Ruth Creek road", "nights": [], "role": "route", "why": "A car camp for the night before an early start. Add water and a long first day from here, since the plan's night is the climb camp."}
+  ],
+  "new_camps": [],
+  "confidence": "medium",
+  "plan_conflict": "Our file marks both the Ruth Arm ridge camps and the summit camp as main; the plan's day 1 ends at the notch, so the notch bivy is the main.",
+  "sources": ["https://www.mountainproject.com/route/113515824/north-face", "https://www.wta.org/go-hiking/trip-reports/trip_report-2024-07-29.175140543321"]
+ },
+ {
+  "id": "wa_sherman_peak_baker_route",
+  "camps": [
+   {"name": "Sandy Camp", "nights": [1], "role": "main", "why": "The end of the Railroad Grade trail at about 5,900 ft, the designated camp before the glacier. An afternoon of rest here sets up the pre-dawn start."}
+  ],
+  "new_camps": [],
+  "confidence": "medium",
+  "plan_conflict": null,
+  "sources": ["https://www.fs.usda.gov/r06/mbs/recreation/easton-glacier-climbing-route", "https://www.mountaineers.org/activities/routes-places/mount-baker-easton-glacier"]
+ },
+ {
+  "id": "wa_sherman_peak_baker_squak_glacier",
+  "camps": [
+   {"name": "Crag View, Squak Glacier", "nights": [1], "role": "main", "why": "The camp most parties use, at the prow near 6,500 ft right at the glacier edge. It is about four hours from the trailhead and puts the traverse to Sherman close."},
+   {"name": "Upper Squak benches, Sulphur moraine and the rock prow", "nights": [], "role": "route", "why": "Climbs 500 to 1,000 ft higher for a shorter summit day, but the ground is colder, windier, and often snow, so you carry more and sleep less comfortably."}
+  ],
+  "new_camps": [],
+  "confidence": "high",
+  "plan_conflict": "Our file marks the upper benches as a main camp too; most parties sleep at Crag View, so the benches are an alternative.",
+  "sources": ["https://www.fs.usda.gov/r06/mbs/recreation/squak-climbing-route", "https://www.theoutbound.com/washington/backpacking/climb-mt-baker-via-squak-glacier", "https://www.mountaineers.org/activities/routes-places/sherman-peak-squak-glacier-mount-baker"]
+ },
+ {
+  "id": "wa_amphitheater_mountain_finger_of_fatwa",
+  "camps": [
+   {"name": "Upper Cathedral Lake basin", "nights": [1, 2], "role": "main", "why": "The standard base: a handful of good tent sites, water, and the climbs a short scramble away. You use it both nights because the climb returns here."},
+   {"name": "Andrews Pass", "nights": [], "role": "route", "why": "A stop about 12 miles in for parties who leave late. It splits the 17 miles but adds a long carry to the lake the next morning."},
+   {"name": "Cathedral Pass benches and the tarn slabs", "nights": [], "role": "route", "why": "A high, windy bivy on rock slabs for an earlier start. It spares the drop into the lake basin but offers little shelter."}
+  ],
+  "new_camps": [],
+  "confidence": "high",
+  "plan_conflict": null,
+  "sources": ["https://stephabegg.com/trip-reports/washington/pasayten-2016/", "https://www.countryhighpoints.com/cathedral-peak-and-amphitheater-mountain/", "https://www.theoutbound.com/washington/backpacking/backpack-to-cathedral-lakes-and-amphitheater-mountain"]
+ },
+ {
+  "id": "wa_amphitheater_mountain_middle_finger_buttress_left_side",
+  "camps": [
+   {"name": "Upper Cathedral Lake basin", "nights": [1, 2], "role": "main", "why": "The standard base: a handful of good tent sites, water, and the buttress about fifteen minutes up. You use it both nights because the climb returns here."},
+   {"name": "Andrews Pass", "nights": [], "role": "route", "why": "A stop about 12 miles in for parties who leave late. It splits the 17 miles but adds a long carry to the lake the next morning."},
+   {"name": "Cathedral Pass benches and the tarn slabs", "nights": [], "role": "route", "why": "A high, windy bivy on rock slabs for an earlier start. It spares the drop into the lake basin but offers little shelter."}
+  ],
+  "new_camps": [],
+  "confidence": "high",
+  "plan_conflict": null,
+  "sources": ["https://stephabegg.com/trip-reports/washington/pasayten-2016/", "https://www.countryhighpoints.com/cathedral-peak-and-amphitheater-mountain/", "https://www.theoutbound.com/washington/backpacking/backpack-to-cathedral-lakes-and-amphitheater-mountain"]
+ },
+ {
+  "id": "wa_amphitheater_mountain_middle_finger_buttress_right_side",
+  "camps": [
+   {"name": "Upper Cathedral Lake basin", "nights": [1, 2], "role": "main", "why": "The standard base: a handful of good tent sites, water, and the seven-pitch buttress close by. You sleep here both nights since the climb returns to camp."},
+   {"name": "Andrews Pass", "nights": [], "role": "route", "why": "A stop about 12 miles in for parties who leave late. It splits the 17 miles but adds a long carry to the lake the next morning."},
+   {"name": "Cathedral Pass benches and the tarn slabs", "nights": [], "role": "route", "why": "A high, windy bivy on rock slabs for an earlier start. It spares the drop into the lake basin but offers little shelter."}
+  ],
+  "new_camps": [],
+  "confidence": "high",
+  "plan_conflict": null,
+  "sources": ["https://stephabegg.com/trip-reports/washington/pasayten-2016/", "https://www.countryhighpoints.com/cathedral-peak-and-amphitheater-mountain/", "https://www.theoutbound.com/washington/backpacking/backpack-to-cathedral-lakes-and-amphitheater-mountain"]
+ },
+ {
+  "id": "wa_amphitheater_mountain_north_ridge",
+  "camps": [
+   {"name": "Upper Cathedral Lake basin", "nights": [1, 2], "role": "main", "why": "Where parties actually sleep: good tent sites and water, minutes from Cathedral Pass and the ridge. Summit day returns here before the hike out."},
+   {"name": "Cathedral Pass benches and the tarn slabs", "nights": [], "role": "route", "why": "A high, windy bivy on rock slabs, a bit closer to the ridge for an earlier start. It has little shelter and no easy water."},
+   {"name": "Andrews Pass", "nights": [], "role": "route", "why": "A stop about 12 miles in for parties who leave late. It splits the 17 miles but adds a long carry to the lake the next morning."}
+  ],
+  "new_camps": [],
+  "confidence": "high",
+  "plan_conflict": "Our file marks the Cathedral Pass benches as a main camp too; most parties sleep at Upper Cathedral Lake, so the benches are an alternative.",
+  "sources": ["https://stephabegg.com/trip-reports/washington/pasayten-2016/", "https://www.countryhighpoints.com/cathedral-peak-and-amphitheater-mountain/", "https://www.theoutbound.com/washington/backpacking/backpack-to-cathedral-lakes-and-amphitheater-mountain"]
+ },
+ {
+  "id": "wa_amphitheater_mountain_pilgrimage_to_mecca",
+  "camps": [
+   {"name": "Upper Cathedral Lake basin", "nights": [1, 2], "role": "main", "why": "The standard base: tent sites, water, and the Ka'aba Buttress about fifteen minutes around the lake. The half-day route returns here for the second night."},
+   {"name": "Andrews Pass", "nights": [], "role": "route", "why": "A stop about 12 miles in for parties who leave late. It splits the 17 miles but adds a long carry to the lake the next morning."},
+   {"name": "Remmel Lake and the Spanish Camp meadows", "nights": [], "role": "route", "why": "A base if Remmel Mountain is also on the list. The meadows are soft and easy to damage, and the walk to the Cathedral basin is extra."},
+   {"name": "Cathedral Pass benches and the tarn slabs", "nights": [], "role": "route", "why": "A high, windy bivy on rock slabs for an earlier start. It spares the drop into the lake basin but offers little shelter."}
+  ],
+  "new_camps": [],
+  "confidence": "high",
+  "plan_conflict": null,
+  "sources": ["https://stephabegg.com/trip-reports/washington/pasayten-2016/", "https://www.countryhighpoints.com/cathedral-peak-and-amphitheater-mountain/", "https://www.theoutbound.com/washington/backpacking/backpack-to-cathedral-lakes-and-amphitheater-mountain"]
+ },
+ {
+  "id": "wa_amphitheater_mountain_west_route",
+  "camps": [
+   {"name": "Upper Cathedral Lake basin", "nights": [1, 2], "role": "main", "why": "The standard base: tent sites and water at the foot of both peaks. The alpine start and return both happen here before the hike out."},
+   {"name": "Andrews Pass", "nights": [], "role": "route", "why": "A stop about 12 miles in for parties who leave late. It splits the 17 miles but adds a long carry to the lake the next morning."},
+   {"name": "Remmel Lake and the Spanish Camp meadows", "nights": [], "role": "route", "why": "A base if Remmel Mountain is also on the list. The meadows are soft and easy to damage, and the walk to the Cathedral basin is extra."},
+   {"name": "Cathedral Pass benches and the tarn slabs", "nights": [], "role": "route", "why": "A high, windy bivy on rock slabs for an earlier start. It spares the drop into the lake basin but offers little shelter."},
+   {"name": "Amphitheater Mountain upper basin", "nights": [], "role": "route", "why": "Puts you on the ridge at first light, but water is hard to find and it saves little over the lake. Only for a party that wants the very early start."}
+  ],
+  "new_camps": [],
+  "confidence": "high",
+  "plan_conflict": "Plan day 2 says to return to Cathedral Pass and camp, but day 1 camps at Upper Cathedral Lake, which is where parties return.",
+  "sources": ["https://stephabegg.com/trip-reports/washington/pasayten-2016/", "https://www.countryhighpoints.com/cathedral-peak-and-amphitheater-mountain/", "https://www.theoutbound.com/washington/backpacking/backpack-to-cathedral-lakes-and-amphitheater-mountain"]
+ },
+ {
+  "id": "wa_big_craggy_peak_scramble",
+  "camps": [
+   {"name": "Copper Glance Lake", "nights": [], "role": "route", "why": "A lower, scenic camp near 6,100 ft with a lakeshore bench. The lake is a further walk and leaves more distance to the ridge, so most parties stop in the basin above."}
+  ],
+  "new_camps": [
+   {"name": "Upper basin tarn camp, Copper Glance Creek", "elev_ft": 6600, "type": "camp", "role": "main", "nights": [1], "why": "Knoll camp by a small tarn in the upper basin, about three miles up. Puts the Craggy ridge close and keeps the summit-day climb short before you pack out.", "water": "A seasonal tarn and the creek; the tarn can dry up by late summer.", "capacity": "", "permit": "", "notes": "Parties camp on the knoll near the tarn below the Craggy Peaks. Carry a water filter and check the tarn in late season."}
+  ],
+  "confidence": "medium",
+  "plan_conflict": "Our file lists only Copper Glance Lake as main, but the plan and most trip reports camp in the upper basin near 6,600 ft.",
+  "sources": ["https://www.wta.org/go-hiking/hikes/copper-glance-lake", "https://wenatcheeoutdoors.org/?p=14758"]
+ }
+]

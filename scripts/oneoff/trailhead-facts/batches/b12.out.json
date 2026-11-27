@@ -1,0 +1,360 @@
+[
+ {
+  "key": "t360",
+  "pass": "$5 day fee or Northwest Forest Pass",
+  "parking": "Limited lot; when full, overflow parking is allowed only on the west side of the road.",
+  "facilities": "Vault toilet; no drinking water.",
+  "evidence": [
+   {
+    "url": "https://fs.usda.gov/r06/okanogan-wenatchee/recreation/esmeralda-trailhead",
+    "supports": [
+     "pass",
+     "parking",
+     "facilities"
+    ]
+   }
+  ],
+  "note": "Same trailhead as t361 (Esmeralda / Ingalls Way)."
+ },
+ {
+  "key": "t361",
+  "pass": "$5 day fee or Northwest Forest Pass",
+  "parking": "Limited lot; when full, overflow parking is allowed only on the west side of the road.",
+  "facilities": "Vault toilet; no drinking water.",
+  "evidence": [
+   {
+    "url": "https://fs.usda.gov/r06/okanogan-wenatchee/recreation/esmeralda-trailhead",
+    "supports": [
+     "pass",
+     "parking",
+     "facilities"
+    ]
+   }
+  ],
+  "note": null
+ },
+ {
+  "key": "t362",
+  "pass": "$5 day fee or Northwest Forest Pass",
+  "parking": null,
+  "facilities": "Vault toilet; no drinking water.",
+  "evidence": [
+   {
+    "url": "https://www.fs.usda.gov/r06/mbs/recreation/west-fork-foss-lakes-trailhead",
+    "supports": [
+     "pass",
+     "facilities"
+    ]
+   }
+  ],
+  "note": null
+ },
+ {
+  "key": "t363",
+  "pass": null,
+  "parking": null,
+  "facilities": null,
+  "evidence": [],
+  "note": "Only non-official pages found."
+ },
+ {
+  "key": "t364",
+  "pass": null,
+  "parking": null,
+  "facilities": null,
+  "evidence": [],
+  "note": "Official FS page 404'd on fetch; WTA says toilet, FS search snippet says none: conflict, left null."
+ },
+ {
+  "key": "t365",
+  "pass": "Sno-Park permit",
+  "parking": "Sno-park lot with 150 spaces; no overnight parking.",
+  "facilities": null,
+  "evidence": [
+   {
+    "url": "https://parks.wa.gov/find-sno-parks/hyak-sno-park",
+    "supports": [
+     "pass",
+     "parking"
+    ]
+   }
+  ],
+  "note": "State page lists restrooms but gives no detail, so facilities left null."
+ },
+ {
+  "key": "t366",
+  "pass": null,
+  "parking": null,
+  "facilities": null,
+  "evidence": [],
+  "note": "Only campground-level pages; nothing for a trailhead."
+ },
+ {
+  "key": "t367",
+  "pass": null,
+  "parking": null,
+  "facilities": null,
+  "evidence": [],
+  "note": "Only WTA found (one non-official page; its toilet info contradicts itself). Trailhead inaccessible since Dec 2025 flood damage per WTA alert."
+ },
+ {
+  "key": "t368",
+  "pass": null,
+  "parking": null,
+  "facilities": null,
+  "evidence": [],
+  "note": "Only WTA found; no official page. Trailhead inaccessible since Dec 2025 floods."
+ },
+ {
+  "key": "t369",
+  "pass": "$5 day fee or Northwest Forest Pass",
+  "parking": "Small lot of about 20 spaces that is often full; overflow stays outside the fog line.",
+  "facilities": "Vault toilet; no drinking water.",
+  "evidence": [
+   {
+    "url": "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/blue-lake-trailhead",
+    "supports": [
+     "pass",
+     "parking",
+     "facilities"
+    ]
+   }
+  ],
+  "note": null
+ },
+ {
+  "key": "t370",
+  "pass": "None",
+  "parking": "Busy lot that overflows on popular days; not suited to stock trailers.",
+  "facilities": "No toilet or water.",
+  "evidence": [
+   {
+    "url": "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/smithbrook-trailhead",
+    "supports": [
+     "pass",
+     "parking",
+     "facilities"
+    ]
+   }
+  ],
+  "note": "Matched to the official Smithbrook Trailhead page (Smith Brook Road, ~4,000 ft; Lake Valhalla/Janus access) by road and elevation; name differs. Official page says no fee, contradicting the stored hedged pass text."
+ },
+ {
+  "key": "t371",
+  "pass": null,
+  "parking": null,
+  "facilities": null,
+  "evidence": [],
+  "note": "No page found; FR 38 closed by washout per stored text."
+ },
+ {
+  "key": "t372",
+  "pass": null,
+  "parking": null,
+  "facilities": null,
+  "evidence": [],
+  "note": "NPS Summerland page: parking limited, fills early; from 2026-09-28 through 2029 NO parking on either side of the Fryingpan Creek bridge (construction), access via White River Campground. No fee or restroom info on that page, so all fields left null."
+ },
+ {
+  "key": "t373",
+  "pass": null,
+  "parking": null,
+  "facilities": null,
+  "evidence": [],
+  "note": "No official Dingford page; Mountaineers/WTA pages are about the Middle Fork trailhead, not this one."
+ },
+ {
+  "key": "t374",
+  "pass": null,
+  "parking": null,
+  "facilities": null,
+  "evidence": [],
+  "note": "Official FS page fetch 404'd; recreation.gov page has no details."
+ },
+ {
+  "key": "t375",
+  "pass": null,
+  "parking": null,
+  "facilities": null,
+  "evidence": [],
+  "note": "Roadside pullout; sources disagree on location."
+ },
+ {
+  "key": "t376",
+  "pass": "$5 day fee or Northwest Forest Pass",
+  "parking": "Three large one-way lots shared with Franklin Falls trailhead.",
+  "facilities": "No drinking water.",
+  "evidence": [
+   {
+    "url": "https://www.fs.usda.gov/r06/mbs/recreation/denny-creek-trailhead",
+    "supports": [
+     "pass",
+     "parking",
+     "facilities"
+    ]
+   }
+  ],
+  "note": "Official page says the Denny Creek vault toilet is permanently closed (Franklin Falls has one); a 2026 third-party post says a toilet was open, so toilet left out. Road/gate closures reported by WTA 2024-26."
+ },
+ {
+  "key": "t377",
+  "pass": null,
+  "parking": null,
+  "facilities": null,
+  "evidence": [],
+  "note": "Only WTA found (roadside parking, Discover Pass, no toilet); single non-official source."
+ },
+ {
+  "key": "t378",
+  "pass": "None",
+  "parking": "Gravel lot holding eight vehicles.",
+  "facilities": "No toilet or water.",
+  "evidence": [
+   {
+    "url": "https://www.fs.usda.gov/r06/giffordpinchot/recreation/trailhead-killen-creek",
+    "supports": [
+     "pass",
+     "parking",
+     "facilities"
+    ]
+   }
+  ],
+  "note": "Free wilderness permit at trailhead; Mt Adams climbing pass above 7,000 ft (not parking)."
+ },
+ {
+  "key": "t379",
+  "pass": null,
+  "parking": null,
+  "facilities": null,
+  "evidence": [],
+  "note": "Yakama Nation sources disagree on fee; closed per stored text."
+ },
+ {
+  "key": "t380",
+  "pass": null,
+  "parking": null,
+  "facilities": null,
+  "evidence": [],
+  "note": "Only WTA found."
+ },
+ {
+  "key": "t381",
+  "pass": "$5 day fee or Northwest Forest Pass",
+  "parking": "Fills quickly in summer; steep, narrow access road, no RVs or trailers.",
+  "facilities": "Vault toilet; no drinking water.",
+  "evidence": [
+   {
+    "url": "https://fs.usda.gov/r06/giffordpinchot/recreation/trailhead-south-climb",
+    "supports": [
+     "pass",
+     "parking",
+     "facilities"
+    ]
+   }
+  ],
+  "note": "Matched to the official South Climb Trailhead page (Cold Springs); a Mt Adams Climbing Pass also covers the fee May 1-Sep 30."
+ },
+ {
+  "key": "t382",
+  "pass": "$5 day fee or Northwest Forest Pass",
+  "parking": "Fills quickly in summer; steep, narrow access road, no RVs or trailers.",
+  "facilities": "Vault toilet; no drinking water.",
+  "evidence": [
+   {
+    "url": "https://fs.usda.gov/r06/giffordpinchot/recreation/trailhead-south-climb",
+    "supports": [
+     "pass",
+     "parking",
+     "facilities"
+    ]
+   }
+  ],
+  "note": "Matched to the official South Climb Trailhead page (Cold Springs); a Mt Adams Climbing Pass also covers the fee May 1-Sep 30."
+ },
+ {
+  "key": "t383",
+  "pass": "Park entrance fee",
+  "parking": null,
+  "facilities": "Restrooms; no drinking water.",
+  "evidence": [
+   {
+    "url": "https://www.nps.gov/olym/planyourvisit/basicinfo.htm",
+    "supports": [
+     "pass"
+    ]
+   },
+   {
+    "url": "https://home.nps.gov/olym/hurricane-ridge-post-fire.htm",
+    "supports": [
+     "facilities"
+    ]
+   }
+  ],
+  "note": "Post-fire (2023) temporary restrooms; visitor center burned."
+ },
+ {
+  "key": "t384",
+  "pass": "$5 day fee or Northwest Forest Pass",
+  "parking": null,
+  "facilities": "Vault toilet; no drinking water.",
+  "evidence": [
+   {
+    "url": "https://www.fs.usda.gov/r06/mbs/recreation/park-butte-trailhead",
+    "supports": [
+     "pass",
+     "facilities"
+    ]
+   }
+  ],
+  "note": "Page forbids passenger vehicles in the stock parking area Jul 1-Oct 31."
+ },
+ {
+  "key": "t385",
+  "pass": null,
+  "parking": null,
+  "facilities": null,
+  "evidence": [],
+  "note": "Only WTA found; Chiwawa River Road closed by Little Giant Fire per WTA (Jul 2026)."
+ },
+ {
+  "key": "t386",
+  "pass": null,
+  "parking": null,
+  "facilities": null,
+  "evidence": [],
+  "note": "No page found."
+ },
+ {
+  "key": "t387",
+  "pass": null,
+  "parking": null,
+  "facilities": null,
+  "evidence": [],
+  "note": "No page found."
+ },
+ {
+  "key": "t388",
+  "pass": null,
+  "parking": null,
+  "facilities": null,
+  "evidence": [],
+  "note": "Not a trailhead."
+ },
+ {
+  "key": "t389",
+  "pass": "$5 day fee or recreation pass",
+  "parking": "Limited parking; expect extra walking.",
+  "facilities": "Vault toilet; no drinking water.",
+  "evidence": [
+   {
+    "url": "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/tucquala-meadows-fish-lake-trailhead",
+    "supports": [
+     "pass",
+     "parking",
+     "facilities"
+    ]
+   }
+  ],
+  "note": "Matched to official Tucquala Meadows / Fish Lake trailhead (end of FR 4330)."
+ }
+]

@@ -1,0 +1,220 @@
+[
+ {
+  "id": "wa_ottohorn_southeast_route",
+  "camps": [
+   {"name": "Crescent Creek Basin camp", "nights": [1, 2], "role": "main", "why": "The base for the westernmost Pickets towers: boulder and heather sites with water, and the Ottohorn-Himmelhorn col is a short climb from the tents on summit day."},
+   {"name": "Goodell Creek Campground, roadhead staging", "nights": [], "role": "route", "why": "Only for a night at the car before a pre-dawn start; it saves no approach, so it is a convenience stop rather than a camp for this climb."},
+   {"name": "Old Goodell Creek roadbed near the Terror Creek crossing", "nights": [], "role": "route", "why": "A fallback if a late start or a heavy pack runs out the first day on the flat roadbed; it leaves the whole Barrier climb for day two."},
+   {"name": "Terror Basin camp", "nights": [], "role": "route", "why": "A shorter first day that stops before the Barrier; reasonable for a slow party, but it adds a notch crossing and a long push to the col the next morning."},
+   {"name": "Stump Hollow bench", "nights": [], "role": "route", "why": "The first comfortable tent ground past the forest, with the notch toward Crescent Creek Basin close above; a good place to split a heavy carry."},
+   {"name": "High bivouacs at the western end of the crest", "nights": [], "role": "route", "why": "Improvised spots for a party linking several western towers in one push; poor sleeping and little water, so most skip them for the basin camp."}
+  ],
+  "new_camps": [],
+  "confidence": "medium",
+  "plan_conflict": null,
+  "sources": ["https://publications.americanalpineclub.org/articles/13201213408/Himmelhorn-South-Face-Stonehenge", "https://lemkeclimbs.com/southern-pickets-traverse", "https://www.nps.gov/noca/blogs/crescent-creek-basin-degenhardt-peak.htm", "https://stephabegg.com/?p=8949"]
+ },
+ {
+  "id": "wa_the_chopping_block_northwest_route",
+  "camps": [],
+  "new_camps": [
+   {"name": "Chopping Block ridge camp", "elev_ft": 6400, "type": "camp", "role": "main", "nights": [1, 2], "why": "The saddle camp on the ridge above Crescent Creek Basin: the summit is an easy outing from the tents, and the crest is where the Barrier approach ends.", "water": "", "capacity": "", "permit": "", "notes": "Sits on the ridge crest near 6,400 ft, reached after crossing the Barrier. Parties climb the Chopping Block from here and return to the same tents, and the ridge is also the starting point for Terror's west ridge."}
+  ],
+  "confidence": "medium",
+  "plan_conflict": "Night 2 does not exist in practice: day 3 of the plan walks out to the car, so only night 1 is slept on the mountain, and the ridge camp covers both listed nights.",
+  "sources": ["https://stephabegg.com/?p=8949", "https://cascadeclimbers.com/forum/topic/75848-tr-five-days-in-the-southern-pickets-82110-82610-chopping-block-ne-ridge-terror-e-ridge-8272010"]
+ },
+ {
+  "id": "wa_the_chopping_block_south_route",
+  "camps": [
+   {"name": "Stump Hollow bench", "nights": [1, 2], "role": "main", "why": "Slabby heather at timberline just below the ridge saddle: the first good tent ground after the forest, and the Chopping Block is a short walk from it."},
+   {"name": "Goodell Creek Campground, roadhead staging", "nights": [], "role": "route", "why": "Only for a night at the car before a pre-dawn start; it saves no approach, so it is a convenience stop rather than a camp for this climb."},
+   {"name": "Old Goodell Creek roadbed near the Terror Creek crossing", "nights": [], "role": "route", "why": "A fallback if a late start or a heavy pack runs out the first day on the flat roadbed; it leaves the whole Barrier climb for day two."},
+   {"name": "Terror Basin camp", "nights": [], "role": "route", "why": "Flat gravel with water, shorter than the ridge approach; choose it to combine the Chopping Block with Pyramid or Degenhardt, accepting a notch crossing to return."}
+  ],
+  "new_camps": [],
+  "confidence": "medium",
+  "plan_conflict": "Night 2 does not exist in practice: day 3 walks out to the car. Parties also often sleep a little higher, on the 6,400 ft saddle above Stump Hollow, rather than on the bench itself.",
+  "sources": ["https://stephabegg.com/?p=8949", "https://cascadeclimbers.com/forum/topic/103696-tr-himmelhorn-wild-hair-crack-and-ne-ridge-of-the-chopping-block-10042020", "https://publications.americanalpineclub.org/articles/13201213408/Himmelhorn-South-Face-Stonehenge"]
+ },
+ {
+  "id": "wa_the_pyramid_picket_south_route",
+  "camps": [
+   {"name": "Terror Basin camp", "nights": [1, 2], "role": "main", "why": "The standard south-side base, with the Pyramid and Degenhardt in view and water nearby; summit day starts from the tents and returns to them."},
+   {"name": "Goodell Creek Campground, roadhead staging", "nights": [], "role": "route", "why": "Only for a night at the car before a pre-dawn start; it saves no approach, so it is a convenience stop rather than a camp for this climb."},
+   {"name": "Old Goodell Creek roadbed near the Terror Creek crossing", "nights": [], "role": "route", "why": "A fallback if a late start runs out the first day on the roadbed; it leaves the steep forest climb to Terror Basin for the next morning."}
+  ],
+  "new_camps": [],
+  "confidence": "medium",
+  "plan_conflict": "Night 2 does not exist in practice: day 3 of the plan walks out to the car, so only the first night is slept at Terror Basin.",
+  "sources": ["https://stephabegg.com/?p=8949", "https://cascadeclimbers.com/forum/topic/102094-tr-north-cascades-southern-pickets-southern-pickets-enchainment-traverse-%25E2%2580%2593-second-ascent-08172018/", "https://lemkeclimbs.com/southern-pickets-traverse"]
+ },
+ {
+  "id": "wa_the_rake_traverse_route",
+  "camps": [
+   {"name": "Crescent Creek Basin camp", "nights": [1, 2], "role": "main", "why": "The working base for the Rake: heather and boulder sites with water, and the ridge starts from the col a short way above the tents."},
+   {"name": "Goodell Creek Campground, roadhead staging", "nights": [], "role": "route", "why": "Only for a night at the car before a pre-dawn start; it saves no approach, so it is a convenience stop rather than a camp for this climb."},
+   {"name": "Old Goodell Creek roadbed near the Terror Creek crossing", "nights": [], "role": "route", "why": "A fallback if a late start runs out day one on the flat roadbed; it leaves the Barrier climb and a long day for the next morning."},
+   {"name": "Terror Basin camp", "nights": [], "role": "route", "why": "A shorter first day that stops before the Barrier; it makes the Rake day much longer because the Barrier crossing comes before the climb."},
+   {"name": "Stump Hollow bench", "nights": [], "role": "route", "why": "Good tent ground below the crossing to Crescent Creek Basin; a sensible place to split the carry, though it adds a morning of travel before climbing."},
+   {"name": "High bivouacs at the western end of the crest", "nights": [], "role": "route", "why": "Improvised spots for a party linking several crest summits in one push; poor sleeping and little water compared with the basin camp."}
+  ],
+  "new_camps": [],
+  "confidence": "high",
+  "plan_conflict": "Night 2 does not exist in practice: day 3 walks out to the car, so the basin camp is slept at night 1 and the summit-day night is used only by parties staying longer.",
+  "sources": ["https://publications.americanalpineclub.org/articles/13201213408/Himmelhorn-South-Face-Stonehenge", "https://lemkeclimbs.com/southern-pickets-traverse", "https://www.nps.gov/noca/blogs/crescent-creek-basin-degenhardt-peak.htm"]
+ },
+ {
+  "id": "wa_west_twin_needle_south_route",
+  "camps": [
+   {"name": "Crescent Creek Basin camp", "nights": [1, 2], "role": "main", "why": "Flat sites with water below Terror; the climb starts by dropping to the head of the basin, so summit day begins and ends here."},
+   {"name": "Goodell Creek Campground, roadhead staging", "nights": [], "role": "route", "why": "Only for a night at the car before a pre-dawn start; it saves no approach, so it is a convenience stop rather than a camp for this climb."},
+   {"name": "Old Goodell Creek roadbed near the Terror Creek crossing", "nights": [], "role": "route", "why": "A fallback if a late start runs out day one on the flat roadbed; it leaves the Barrier climb and a long day for the next morning."},
+   {"name": "Terror Basin camp", "nights": [], "role": "route", "why": "A shorter first day that stops before the Barrier; it adds a crossing and a much longer summit day, so it suits slow parties only."},
+   {"name": "Stump Hollow bench", "nights": [], "role": "route", "why": "Good tent ground below the crossing to Crescent Creek Basin; a sensible place to split the carry, though it adds a morning of travel before climbing."},
+   {"name": "High bivouacs at the western end of the crest", "nights": [], "role": "route", "why": "Improvised spots for a party linking several western summits in one push; poor sleeping and little water compared with the basin camp."}
+  ],
+  "new_camps": [],
+  "confidence": "medium",
+  "plan_conflict": "Night 2 does not exist in practice: day 3 walks out to the car, so the basin camp is slept at night 1 and the second night applies only to parties staying a second night.",
+  "sources": ["https://publications.americanalpineclub.org/articles/13201213408/Himmelhorn-South-Face-Stonehenge", "https://lemkeclimbs.com/southern-pickets-traverse", "https://www.nps.gov/noca/blogs/crescent-creek-basin-degenhardt-peak.htm"]
+ },
+ {
+  "id": "wa_snowfield_peak_neve_glacier",
+  "camps": [
+   {"name": "Colonial Basin", "nights": [1], "role": "main", "why": "Where most parties stop after the steep climbers' path: it is below the glacier crossing, so summit day starts from here, but it is exposed and windy."},
+   {"name": "Colonial-Neve col", "nights": [], "role": "route", "why": "Running water and a shorter summit morning, but you must cross the Colonial Glacier roped with full packs to reach it; worth it for a second night."},
+   {"name": "Lower camp below the basin", "nights": [], "role": "route", "why": "A bail-out near 5,400 ft for a party that runs out of daylight or legs on the steep path; it makes summit day much longer."}
+  ],
+  "new_camps": [],
+  "confidence": "medium",
+  "plan_conflict": "The col was listed as a main camp; the plan's day 2 crosses to the col from camp, so the Colonial Basin camp is the night-1 main and the col is an option.",
+  "sources": ["https://www.nps.gov/noca/blogs/snowfield-colonial-zone.htm", "https://turns-all-year.com/trip-reports/april-24-25-2004-snowfield-pk-neve-glacier", "https://backcountrypost.com/threads/snowfield-peak.2357/latest"]
+ },
+ {
+  "id": "wa_azurite_peak_southeast",
+  "camps": [
+   {"name": "Horse Heaven Camp, West Fork Methow", "nights": [1, 2], "role": "main", "why": "A forested camp about nine miles in, off the PCT; it breaks the long walk and keeps summit day to the pass and ridge, with the exit a full day downhill."},
+   {"name": "Azurite Pass", "nights": [], "role": "route", "why": "A high bivy that puts the peak next door and shortens summit day, but it means a long carry uphill and no tree shelter; some parties use it for a two-day trip."},
+   {"name": "River Bend and Ballard campgrounds, Lost River Road", "nights": [], "role": "route", "why": "Car camping the night before for an early start at the trailhead; it adds nothing to the approach."}
+  ],
+  "new_camps": [],
+  "confidence": "medium",
+  "plan_conflict": "Azurite Pass was listed as a second main camp; the plan sleeps at Horse Heaven Camp, so the pass is an alternative. Night 2 does not exist in practice because day 3 walks out.",
+  "sources": ["https://yellowleaf.org/scramble/g/r/2012-09-08-09-Azurite.html", "https://lemkeclimbs.com/azurite-peak", "https://mountaineers.org/activities/routes-places/azurite-peak"]
+ },
+ {
+  "id": "wa_black_peak_northeast_ridge",
+  "camps": [
+   {"name": "Wing Lake", "nights": [1, 2], "role": "main", "why": "The climbers' camp directly below the peak, with water and rock sites; the summit day starts and ends at the tents, and it is busy on fine weekends."},
+   {"name": "Rainy Pass trailhead lots, and the quarter-mile camping closures", "nights": [], "role": "route", "why": "Parking only; camping is closed near the trail, so it serves for a short night in the car before an early start, not as a camp."},
+   {"name": "Lewis Lake", "nights": [], "role": "route", "why": "A lower fallback for a late start or heavy pack; it adds about 1,200 ft each way to summit day and has more bugs than the higher lake."}
+  ],
+  "new_camps": [],
+  "confidence": "high",
+  "plan_conflict": "Night 2 does not exist in practice: day 3 of the plan walks out, so the second night applies only to parties staying a second night at the lake.",
+  "sources": ["https://wenatcheeoutdoors.org/2022/09/07/black-peak-corteo-peak/", "https://lemkeclimbs.com/black-peak", "https://www.mountaineers.org/activities/routes-places/north-cascades-national-park-cross-country-zones/black-peak-northeast-ridge"]
+ },
+ {
+  "id": "wa_south_ridge_3",
+  "camps": [
+   {"name": "Wing Lake", "nights": [1], "role": "main", "why": "The standard camp directly under the peak: reached in 4 to 6 hours, with water and rock sites, so summit day is only the climb and the walk out."},
+   {"name": "Lewis Lake", "nights": [], "role": "route", "why": "A lower, easier first night if the boulder field above looks like too much; it adds about 1,200 ft each way to summit day."}
+  ],
+  "new_camps": [],
+  "confidence": "high",
+  "plan_conflict": null,
+  "sources": ["https://wenatcheeoutdoors.org/2022/09/07/black-peak-corteo-peak/", "https://lemkeclimbs.com/black-peak", "https://www.mountaineers.org/activities/routes-places/north-cascades-national-park-cross-country-zones/black-peak-northeast-ridge"]
+ },
+ {
+  "id": "wa_corteo_peak_southwest_ridge",
+  "camps": [
+   {"name": "Lewis Lake", "nights": [1], "role": "main", "why": "The closest camp to the Lewis Glacier start: heather benches and sites near the lake put the glacier within an early walk and cut about 1,200 ft from summit day."},
+   {"name": "Wing Lake", "nights": [], "role": "route", "why": "Busier and higher; choose it to pair Corteo with Black Peak, since the glacier approach is longer from there."},
+   {"name": "Rainy Pass trailhead lots, and the quarter-mile camping closures", "nights": [], "role": "route", "why": "Parking only; camping is closed near the trail, so it serves only for a short night in the car before an early start."}
+  ],
+  "new_camps": [],
+  "confidence": "medium",
+  "plan_conflict": "Wing Lake was listed as a second main camp; the plan sleeps above Lewis Lake, so Wing Lake is an alternative, though some parties do base there and climb Corteo from it.",
+  "sources": ["https://wenatcheeoutdoors.org/2022/09/07/black-peak-corteo-peak/", "https://mountaineers.org/activities/routes-places/north-cascades-national-park-cross-country-zones/corteo-peak-southwest-ridge", "https://lemkeclimbs.com/black-peak"]
+ },
+ {
+  "id": "wa_north_ridge_west_side",
+  "camps": [
+   {"name": "Cutthroat Lake basin, outside the quarter-mile closure", "nights": [1], "role": "main", "why": "The nearest legal camp below the peak, about 1.8 miles in; it shortens the approach, though it sits well below the route's base and closure rules limit the sites."},
+   {"name": "Cutthroat Creek trailhead", "nights": [], "role": "route", "why": "A night at the car before a pre-dawn start; the lot is signed for day use, and it adds the full approach to the climbing day."}
+  ],
+  "new_camps": [],
+  "confidence": "low",
+  "plan_conflict": "The plan's day 1 ends at the base of the route about 2,100 ft above the trailhead, farther than any camp on file, and day 2 walks out; no source describing a Molar Tooth camp was found.",
+  "sources": ["https://stevensong.com/molar-tooth", "https://www.mountainproject.com/area/117649096/molar-tooth", "https://www.wta.org/go-hiking/trip-reports/trip_report.2017-07-03.4932765928"]
+ },
+ {
+  "id": "wa_gardner_mountain_west_ridge",
+  "camps": [
+   {"name": "Gardner Meadows, Wolf Creek trail", "nights": [1, 2], "role": "main", "why": "The standard camp, about ten miles up the valley, with running water and packers' sites; both peaks are done as a day from here."},
+   {"name": "High basin camp above Gardner Meadows", "nights": [], "role": "route", "why": "About 500 ft higher, it shortens summit day but has less shelter and water; pick it if you want the shortest morning to the west ridge."}
+  ],
+  "new_camps": [],
+  "confidence": "high",
+  "plan_conflict": "The plan ends day 1 at the basin camp near 6,000-6,250 ft, but parties sleep at Gardner Meadows; and night 2 does not exist because day 3 walks out.",
+  "sources": ["https://lemkeclimbs.com/gardner-peaks", "https://www.countryhighpoints.com/gardner-mountains/", "https://www.wta.org/go-hiking/hikes/wolf-creek"]
+ },
+ {
+  "id": "wa_golden_horn_east_face",
+  "camps": [],
+  "new_camps": [
+   {"name": "Upper Snowy Lake camp", "elev_ft": 6700, "type": "camp", "role": "main", "nights": [1, 2], "why": "The standard base for Golden Horn: sites near Upper Snowy Lake put the face within reach, with views of the peak; the walk back to the PCT is short.", "water": "", "capacity": "", "permit": "", "notes": "The established sites are near the PCT meadow, and the lake meadows are fragile, so camp on the established ground. The basin is about 6,700 ft; the base of the east face is a descent and scramble from it."}
+  ],
+  "confidence": "high",
+  "plan_conflict": "Night 2 does not exist in practice: day 3 walks out to Rainy Pass, so the lakes are slept at night 1 and again only by parties taking a rest day.",
+  "sources": ["https://thewildoutsiders.squarespace.com/adventure-journal/golden-horn-and-tower-mountain", "https://www.wta.org/news/go-hiking/hikes/golden-horn", "https://turns-all-year.com/trip-reports/may-24-25-2009-mt-hardy-golden-horn"]
+ },
+ {
+  "id": "wa_golden_horn_southwest_route",
+  "camps": [],
+  "new_camps": [
+   {"name": "Upper Snowy Lake camp", "elev_ft": 6700, "type": "camp", "role": "main", "nights": [1], "why": "The usual base for Golden Horn: sites near Upper Snowy Lake leave the summit a short scramble away, and the lake is a half-mile off the PCT.", "water": "", "capacity": "", "permit": "", "notes": "The established sites are near the PCT meadow, and the lake meadows are fragile, so camp on the established ground. The basin sits near 6,700 ft; the summit is reached by a gully and talus."}
+  ],
+  "confidence": "high",
+  "plan_conflict": null,
+  "sources": ["https://thewildoutsiders.squarespace.com/adventure-journal/golden-horn-and-tower-mountain", "https://www.wta.org/news/go-hiking/hikes/golden-horn", "https://turns-all-year.com/trip-reports/may-24-25-2009-mt-hardy-golden-horn"]
+ },
+ {
+  "id": "wa_mcgregor_mountain_scramble",
+  "camps": [
+   {"name": "Heaton Camp", "nights": [1], "role": "main", "why": "The only established site on the mountain, about seven miles up near the tree line, with seasonal water below; it puts the summit scramble half a mile away."},
+   {"name": "High Bridge Camp — the shuttle terminus and the base for McGregor Mountain", "nights": [], "role": "route", "why": "The camp at the bus stop: a low night before the climb, which means the full 6,000 ft of gain and the summit scramble in one big day."},
+   {"name": "Purple Point and Harlequin — the landing camps, and the boat that decides the trip", "nights": [], "role": "route", "why": "Camps near the landing for the night the boat arrives; the ferry timetable decides if you need one before taking the shuttle."}
+  ],
+  "new_camps": [],
+  "confidence": "high",
+  "plan_conflict": "High Bridge Camp was listed as a second main camp; the plan sleeps at Heaton Camp, so High Bridge is an option for the night before only.",
+  "sources": ["https://home.nps.gov/noca/planyourvisit/mcgregor-mountain-trail.htm", "https://wenatcheeoutdoors.org/2016/06/01/mcgregor-mountain/"]
+ },
+ {
+  "id": "wa_mount_arriva_scramble",
+  "camps": [
+   {"name": "Silent Lakes", "nights": [1, 2], "role": "main", "why": "The usual camp for backpackers: water at the lakes and the south ridge close above, so summit day is short, though the gully to reach it is steep."},
+   {"name": "Easy Pass trailhead, SR 20", "nights": [], "role": "route", "why": "Parking only; sleeping at the lot saves nothing and the 3,000 ft climb to the pass starts in the morning, so it serves only for an early start."}
+  ],
+  "new_camps": [],
+  "confidence": "high",
+  "plan_conflict": "Night 2 does not exist in practice: day 3 walks out to the car, so the second night at Silent Lakes applies only to parties staying a second night.",
+  "sources": ["https://www.countryhighpoints.com/fisher-peak-and-mt-arriva/", "https://turns-all-year.com/trip-reports/may-10-11-2003-mt-arriva-north-cascades", "https://cascadeclimbers.com/forum/topic/80287-silent-lakes-fisher-pass-route-north-cascades"]
+ },
+ {
+  "id": "wa_mount_hardy_snow_scramble",
+  "camps": [
+   {"name": "Upper Snowy Lake basin", "nights": [1, 2], "role": "main", "why": "The standard base for Hardy and Golden Horn, with water and views of both; Methow Pass is a short walk up the PCT on summit morning."},
+   {"name": "Rainy Pass PCT north trailhead", "nights": [], "role": "route", "why": "Parking only, 10 miles from the lakes; a car night here gives an early start but no head start on the approach."},
+   {"name": "Methow Pass and the PCT meadow camps below Snowy Lakes", "nights": [], "role": "route", "why": "Sheltered sites close to Hardy's start, but dry; some parties camp here after the climb, and it saves a short walk on summit morning."},
+   {"name": "Cutthroat Pass, PCT crest camps", "nights": [], "role": "route", "why": "An early stop on the crest for a late start; it breaks the walk in but leaves a long second day to reach the lakes."},
+   {"name": "Granite Pass", "nights": [], "role": "route", "why": "A stop partway up the PCT; it splits the approach into two halves, and the remaining miles to the lakes can be done early."}
+  ],
+  "new_camps": [],
+  "confidence": "medium",
+  "plan_conflict": "Rainy Pass PCT north trailhead and the Methow Pass camps were listed as main camps; the plan camps at Upper Snowy Lake, and night 2 does not exist in practice because day 3 walks out.",
+  "sources": ["https://thewildoutsiders.squarespace.com/adventure-journal/golden-horn-and-tower-mountain", "https://turns-all-year.com/trip-reports/may-24-25-2009-mt-hardy-golden-horn", "http://backcountrypost.com/threads/north-cascades-cutthroat-granite-snowy-lakes-passes.9478/"]
+ }
+]

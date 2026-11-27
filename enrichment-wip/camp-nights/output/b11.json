@@ -1,0 +1,640 @@
+[
+ {
+  "id": "wa_sinister_peak_north_face",
+  "camps": [
+   {
+    "name": "Itswoot Ridge",
+    "nights": [
+     1
+    ],
+    "role": "main",
+    "why": "The usual first night: a long day from Downey Creek reaches these benches with views, and the move to the glacier camp is a short half day."
+   },
+   {
+    "name": "Dome Glacier and Dome-Chickamin col high bivouacs",
+    "nights": [
+     2,
+     3
+    ],
+    "role": "main",
+    "why": "Puts the Chickamin Glacier and the north face a short cold walk away, and the climb returns here. Exposed, with little shelter and snow for water."
+   },
+   {
+    "name": "Bachelor Creek forest and meadow camps",
+    "nights": [
+     1
+    ],
+    "role": "route",
+    "why": "A shorter first day for slow or heavily loaded parties; the brush beyond makes a second long push the next morning."
+   },
+   {
+    "name": "Cub Lake",
+    "nights": [],
+    "role": "route",
+    "why": "A lake-side alternative in the basin below the ridge, with water at hand; parties drop to it when Itswoot is crowded or windy, then climb back up."
+   }
+  ],
+  "new_camps": [],
+  "confidence": "high",
+  "plan_conflict": "On file both Itswoot Ridge and the high bivouacs are main; Itswoot is night 1 and the high camp covers the climbing nights 2 and 3.",
+  "sources": [
+   "https://sverdina.com/Dome1.asp",
+   "https://turns-all-year.com/trip-reports/dome-south-couloir-sinister-north-face",
+   "https://www.wta.org/go-hiking/trip-reports/tripreport-2002071410"
+  ]
+ },
+ {
+  "id": "wa_sinister_peak_southwest_route",
+  "camps": [
+   {
+    "name": "Bachelor Creek forest and meadow camps",
+    "nights": [
+     1
+    ],
+    "role": "main",
+    "why": "The planned first night: flat ground past the worst of the brush, which splits the long approach into two days before the pass."
+   },
+   {
+    "name": "Itswoot Ridge",
+    "nights": [
+     2,
+     3
+    ],
+    "role": "main",
+    "why": "The base most parties use for the southwest route: reached over the pass on day two, and the glacier day starts and ends here."
+   },
+   {
+    "name": "Sixmile Camp",
+    "nights": [
+     1
+    ],
+    "role": "route",
+    "why": "Easy forest miles from the trailhead; an earlier stop for a late start, but it leaves the brushy Bachelor Creek climb for the second morning."
+   },
+   {
+    "name": "Dome Glacier and Dome-Chickamin col high bivouacs",
+    "nights": [],
+    "role": "route",
+    "why": "Sits closer to the glacier crossing but needs a heavier move and exposed ground; used by parties adding the Dome peaks, not for this plan."
+   },
+   {
+    "name": "Cub Lake",
+    "nights": [],
+    "role": "route",
+    "why": "Water and flat ground at the lake basin; a lower alternative to the ridge camp when wind or snow cover makes Itswoot unpleasant."
+   }
+  ],
+  "new_camps": [],
+  "confidence": "medium",
+  "plan_conflict": "Plan day 1 ends at Bachelor Creek, but many parties push the whole 12.8 miles to Itswoot Ridge in one day; Itswoot role kept main for nights 2 and 3, and the high bivouacs changed from main to route.",
+  "sources": [
+   "https://sverdina.com/Dome1.asp",
+   "https://turns-all-year.com/trip-reports/dome-south-couloir-sinister-north-face",
+   "https://www.wta.org/go-hiking/trip-reports/tripreport-2002071410"
+  ]
+ },
+ {
+  "id": "wa_spire_point_southwest_face",
+  "camps": [
+   {
+    "name": "Itswoot Ridge",
+    "nights": [
+     2
+    ],
+    "role": "main",
+    "why": "Where most parties sleep for Spire Point: a fine bench camp with room for a few tents, an hour or two below the col."
+   },
+   {
+    "name": "Spire Col bivouac",
+    "nights": [],
+    "role": "route",
+    "why": "Saves an hour on summit morning, but it is cold, windy and without shelter; used only by parties that want the earliest start."
+   },
+   {
+    "name": "Bachelor Creek forest and meadow camps",
+    "nights": [],
+    "role": "route",
+    "why": "A way to shorten the first long day from the trailhead if Sixmile feels too low; the brush above is the hard part."
+   },
+   {
+    "name": "Cub Lake",
+    "nights": [
+     2
+    ],
+    "role": "route",
+    "why": "Lake-side camp an hour past the ridge saddle: water close by, but a longer approach on summit morning."
+   }
+  ],
+  "new_camps": [
+   {
+    "name": "Sixmile Camp",
+    "elev_ft": 2420,
+    "type": "camp",
+    "role": "main",
+    "nights": [
+     1,
+     3
+    ],
+    "why": "The easy first night on the Downey Creek Trail and the usual last night on the way out, a short walk from the car.",
+    "water": "",
+    "capacity": "",
+    "permit": "",
+    "notes": "Forest camp about six miles up the Downey Creek Trail, used as night one by nearly every party for this approach. The plan returns here after the summit; many parties instead stay a second night on Itswoot Ridge."
+   }
+  ],
+  "confidence": "medium",
+  "plan_conflict": "Plan sends night 2 to Spire Col and night 3 back down to Sixmile Camp; most parties sleep on Itswoot Ridge (about 6,400 ft) instead and the Spire Col bivouac role changed from main to route.",
+  "sources": [
+   "https://ifiwereacrow.blogspot.com/2012/09/dome-peak-and-spire-point.html",
+   "https://stephabegg.com/?p=8946",
+   "https://sverdina.com/Dome1.asp",
+   "https://www.alpineinstitute.com/itinerary-bakw00-26r-ptarmtraverse/"
+  ]
+ },
+ {
+  "id": "wa_tenpeak_mountain_southeast",
+  "camps": [
+   {
+    "name": "Thunder Basin high camp",
+    "nights": [
+     1,
+     2
+    ],
+    "role": "main",
+    "why": "The only sensible camp: the summit round trip is about six hours from the upper basin, so you sleep there both nights and carry day packs."
+   }
+  ],
+  "new_camps": [],
+  "confidence": "medium",
+  "plan_conflict": null,
+  "sources": [
+   "https://wenatcheeoutdoors.org/?p=2417",
+   "https://wenatcheeoutdoors.org/?p=3397",
+   "https://www.countryhighpoints.com/tenpeak-mountain/"
+  ]
+ },
+ {
+  "id": "wa_three_fingers_r1",
+  "camps": [
+   {
+    "name": "Goat Flats",
+    "nights": [
+     1,
+     2
+    ],
+    "role": "main",
+    "why": "The standard camp: open meadow with the most flat sites, the climb is a day trip from here, and it is a shorter carry than the gap."
+   },
+   {
+    "name": "Tin Can Gap high camp",
+    "nights": [],
+    "role": "route",
+    "why": "Closer to the glacier but little flat ground and scarce, snow-dependent water; a bivy for parties wanting a shorter morning."
+   },
+   {
+    "name": "Saddle Lake",
+    "nights": [],
+    "role": "route",
+    "why": "Low in timber and a long way from the climb; only a fallback for a late start or a closed road."
+   }
+  ],
+  "new_camps": [],
+  "confidence": "medium",
+  "plan_conflict": null,
+  "sources": [
+   "https://www.fs.usda.gov/r06/mbs/recreation/trails/three-fingers-goat-flats-saddle-lake-trail-641",
+   "https://stephabegg.com/trip-reports/washington/three-fingers-lookout/",
+   "https://www.wta.org/go-hiking/trip-reports/trip_report.2018-09-10.7257862451"
+  ]
+ },
+ {
+  "id": "wa_three_fingers_r2",
+  "camps": [
+   {
+    "name": "Goat Flats",
+    "nights": [
+     1,
+     2
+    ],
+    "role": "main",
+    "why": "The standard camp: open meadow with the most room, and Middle Peak is a day trip from here, so both nights are in the same place."
+   },
+   {
+    "name": "Tin Can Gap high camp",
+    "nights": [],
+    "role": "route",
+    "why": "Closer to the glacier but little flat ground and scarce water; a bivy for parties wanting a shorter morning."
+   },
+   {
+    "name": "Saddle Lake",
+    "nights": [],
+    "role": "route",
+    "why": "Low in timber and far from the climb; a fallback if the road keeps you out until late."
+   }
+  ],
+  "new_camps": [],
+  "confidence": "medium",
+  "plan_conflict": "On file both Tin Can Gap high camp and Goat Flats are main; Goat Flats is where parties sleep and the plan says to return there, so Tin Can Gap changed to route.",
+  "sources": [
+   "https://www.fs.usda.gov/r06/mbs/recreation/trails/three-fingers-goat-flats-saddle-lake-trail-641",
+   "https://stephabegg.com/trip-reports/washington/three-fingers-lookout/",
+   "https://www.wta.org/go-hiking/trip-reports/trip_report.2018-09-10.7257862451"
+  ]
+ },
+ {
+  "id": "wa_three_fingers_south_peak_lookout",
+  "camps": [
+   {
+    "name": "Goat Flats",
+    "nights": [
+     1
+    ],
+    "role": "main",
+    "why": "The camp for this trip: plenty of flat sites a short walk below the gap, and a way to leave the lookout free for those who arrive early."
+   },
+   {
+    "name": "Three Fingers Lookout",
+    "nights": [],
+    "role": "route",
+    "why": "Sleeping in the cabin is possible but first come, with a steep ladder and exposure; have a fallback at Goat Flats if it is taken or iced in."
+   },
+   {
+    "name": "Saddle Lake",
+    "nights": [],
+    "role": "route",
+    "why": "Low and in timber, only a backup for a late start or road trouble."
+   },
+   {
+    "name": "Tin Can Gap",
+    "nights": [],
+    "role": "route",
+    "why": "The last ground before the glacier; a bivy for a very early start, with little flat space and water that depends on snow."
+   }
+  ],
+  "new_camps": [],
+  "confidence": "high",
+  "plan_conflict": "Plan day 1 shows 12.5 miles and 4,400 ft (including the closed road) while the trip note says 4.5 miles and 3,000 ft; the lookout role changed from main to route because the agency page does not list it as a camp.",
+  "sources": [
+   "https://www.fs.usda.gov/r06/mbs/recreation/trails/three-fingers-goat-flats-saddle-lake-trail-641",
+   "https://stephabegg.com/trip-reports/washington/three-fingers-lookout/",
+   "https://www.wta.org/go-hiking/trip-reports/trip_report-2025-09-17.081459588147"
+  ]
+ },
+ {
+  "id": "wa_hozomeen_mountain_northeast_buttress",
+  "camps": [],
+  "new_camps": [
+   {
+    "name": "Hozomeen north col camp",
+    "elev_ft": 6300,
+    "type": "bivy",
+    "role": "main",
+    "nights": [
+     1
+    ],
+    "why": "Close to the base of the North Peak: you sleep at the col or in the basin just west of it, then climb at first light.",
+    "water": "",
+    "capacity": "",
+    "permit": "",
+    "notes": "The approach follows the creek drainage up from about 4,000 ft to the col near 6,300 ft north of the peak. The plan places the camp near Monument 74 at about 6,345 ft."
+   }
+  ],
+  "confidence": "low",
+  "plan_conflict": null,
+  "sources": [
+   "https://www.mountaineers.org/activities/routes-places/hozomeen-mountain-north-peak-norhteast-buttress",
+   "https://colinhaley.com/?p=17"
+  ]
+ },
+ {
+  "id": "wa_hozomeen_mountain_south_peak_southwest_route",
+  "camps": [],
+  "new_camps": [
+   {
+    "name": "Bivy in the west gully above Hozomeen Lake",
+    "elev_ft": 4800,
+    "type": "bivy",
+    "role": "main",
+    "nights": [
+     1,
+     2
+    ],
+    "why": "A forest bivy at the start of the gully puts the summit day within reach; the col bivys higher up are poor, so the climb returns here.",
+    "water": "",
+    "capacity": "",
+    "permit": "",
+    "notes": "Reached by a brushy climb east from Hozomeen Lake; water access in the gully is the crux of the approach. Elevation is the timber patch used on the early descent; the plan says about 4,900 ft."
+   }
+  ],
+  "confidence": "low",
+  "plan_conflict": null,
+  "sources": [
+   "https://publications.americanalpineclub.org/articles/12194801500",
+   "https://cascadeclimbers.com/forum/topic/66987-tr-south-hozomeen-sw-route-5312009"
+  ]
+ },
+ {
+  "id": "wa_hozomeen_mountain_west_face",
+  "camps": [],
+  "new_camps": [
+   {
+    "name": "Hozomeen north col camp",
+    "elev_ft": 6300,
+    "type": "bivy",
+    "role": "main",
+    "nights": [
+     1,
+     3
+    ],
+    "why": "Reached after the long hike in with wall loads; the face is entered from here and the descent comes back to the same place.",
+    "water": "",
+    "capacity": "",
+    "permit": "",
+    "notes": "Camp at the col near 6,300 ft north of the peak or in the basin west of the divide."
+   }
+  ],
+  "confidence": "low",
+  "plan_conflict": "Night 2 is a bivouac on the face (the first ascent party bivouaced at the top of pitch 10), so no camp can be listed for it; nights 1 and 3 use the col camp, which was not confirmed for this route.",
+  "sources": [
+   "https://www.mountaineers.org/activities/routes-places/hozomeen-mountain-north-peak-norhteast-buttress",
+   "https://colinhaley.com/?p=17"
+  ]
+ },
+ {
+  "id": "wa_inspiration_traverse",
+  "camps": [
+   {
+    "name": "Inspiration Glacier high camp",
+    "nights": [
+     1
+    ],
+    "role": "main",
+    "why": "Rock outcrops at the glacier edge, the starting base for Eldorado and the traverse east; a big first day to reach it."
+   },
+   {
+    "name": "Klawatti col",
+    "nights": [
+     2
+    ],
+    "role": "main",
+    "why": "Rock tent sites with running water at the col; a perfect base for Klawatti, Austera and Primus, and an easy walk to the next day's exit."
+   },
+   {
+    "name": "Eldorado Creek basin",
+    "nights": [],
+    "role": "route",
+    "why": "A lower camp for parties splitting the boulder-field approach into two days; it adds a day and removes the carry."
+   }
+  ],
+  "new_camps": [],
+  "confidence": "medium",
+  "plan_conflict": null,
+  "sources": [
+   "https://www.mountaineers.org/activities/routes-places/inspiration-mcallister-klawatti-ice-cap",
+   "https://www.mountaineers.org/activities/trip-reports/inspiration-mcallister-klawatti-ice-cap-traverse"
+  ]
+ },
+ {
+  "id": "wa_ptarmigan_traverse",
+  "camps": [
+   {
+    "name": "Kool-Aid Lake",
+    "nights": [
+     1
+    ],
+    "role": "main",
+    "why": "The standard first night, the first water and flat ground after Cache Col; pitch back from the steep edge when it blows."
+   },
+   {
+    "name": "Yang Yang Lakes",
+    "nights": [
+     2
+    ],
+    "role": "main",
+    "why": "The usual second night: sheltered heather and boulders below the Le Conte Glacier after the long Red Ledge and col day."
+   },
+   {
+    "name": "White Rock Lakes",
+    "nights": [
+     3,
+     4
+    ],
+    "role": "main",
+    "why": "The most scenic camp and an easy two-night base for a rest or peak day, with dry platforms and open views."
+   },
+   {
+    "name": "Cub Lake meadows / Itswoot Ridge",
+    "nights": [
+     5
+    ],
+    "role": "main",
+    "why": "The last night before the exit: heather meadow below the ridge; melts out late, so check snow cover."
+   }
+  ],
+  "new_camps": [],
+  "confidence": "high",
+  "plan_conflict": "Cub Lake meadows / Itswoot Ridge is on file as a route camp but is the only camp for night 5, so it changed to main.",
+  "sources": [
+   "https://stephabegg.com/?p=8946",
+   "https://www.alpineinstitute.com/itinerary-bakw00-26r-ptarmtraverse/",
+   "https://climberkyle.com/2019/07/09/the-extended-ptarmigan-traverse/"
+  ]
+ },
+ {
+  "id": "wa_ragged_ridge",
+  "camps": [
+   {
+    "name": "Mesahchie basin, below the col",
+    "nights": [
+     1
+    ],
+    "role": "main",
+    "why": "The usual first night: reached cross-country from Easy Pass, with the climb of Mesahchie from the doorstep."
+   },
+   {
+    "name": "Ragged Ridge crest bivy, south of Mesahchie Col",
+    "nights": [],
+    "role": "route",
+    "why": "A higher and more exposed alternative closer to the crest; windier, with less water than the basin."
+   },
+   {
+    "name": "Fisher Camp, Fisher Creek basin",
+    "nights": [],
+    "role": "route",
+    "why": "Comfortable forest camp below the pass for a split approach or an alternative route to Kimtah; costs elevation to regain."
+   }
+  ],
+  "new_camps": [],
+  "confidence": "low",
+  "plan_conflict": "A two-day plan tackles the full Mesahchie to Cosho traverse; many parties take three days and sleep a second night on the ridge, e.g. the saddle near Cosho.",
+  "sources": [
+   "https://turns-all-year.com/trip-reports/partial-ragged-ridge-traverse-cosho-via-mesahchie-glacier",
+   "https://summitpost.org/ragged-ridge-traverse/1004461"
+  ]
+ },
+ {
+  "id": "wa_bear_mountain_chilliwack_north_buttress",
+  "camps": [
+   {
+    "name": "Meadow basin below the northwest-ridge saddle",
+    "nights": [
+     2,
+     3
+    ],
+    "role": "main",
+    "why": "The only high camp: heather meadow with snowmelt below the saddle; the climb starts and ends here."
+   },
+   {
+    "name": "Bear Creek Camp (Chilliwack River Trail)",
+    "nights": [],
+    "role": "route",
+    "why": "The plan treats it as closed, so parties pass it; those starting from Canada reach it in about five hours before the climb to the saddle."
+   }
+  ],
+  "new_camps": [
+   {
+    "name": "US Cabin Camp, Chilliwack River",
+    "elev_ft": 2608,
+    "type": "camp",
+    "role": "main",
+    "nights": [
+     1,
+     4
+    ],
+    "why": "A forest camp on the trail before the cable-car crossing, a day's walk from Hannegan Pass; it shortens the haul to the saddle camp.",
+    "water": "",
+    "capacity": "",
+    "permit": "",
+    "notes": "No Brush Creek camp elevation was found; the plan itself names US Cabin or Copper Creek as alternatives. The trail crosses the river by cable car beyond it."
+   }
+  ],
+  "confidence": "low",
+  "plan_conflict": "Plan puts nights 1 and 4 at the Brush Creek junction, but no elevation could be confirmed for it, so the nearby US Cabin Camp is listed instead.",
+  "sources": [
+   "https://stephabegg.com/?p=8710",
+   "https://www.mountainproject.com/area/112828230/bear-mountain",
+   "https://www.nps.gov/noca/planyourvisit/copper-ridge-trail.htm"
+  ]
+ },
+ {
+  "id": "wa_direct_north_buttress",
+  "camps": [
+   {
+    "name": "US Cabin Camp, Chilliwack River",
+    "nights": [
+     1,
+     5
+    ],
+    "role": "main",
+    "why": "A forest valley camp on the way in and out; the plan's Brush Creek camp lies just beyond the cable-car crossing."
+   },
+   {
+    "name": "Basin below the Bear Mountain saddle",
+    "nights": [
+     2,
+     4
+    ],
+    "role": "main",
+    "why": "The launching camp for the north side, with snowfield water; reached after two long approach days, so most parties sleep here the nights around the climb."
+   },
+   {
+    "name": "Hannegan Camp, below Hannegan Pass",
+    "nights": [],
+    "role": "route",
+    "why": "A short first night for a late start from the trailhead, only a few miles in; it puts the pass behind you in the morning."
+   },
+   {
+    "name": "Boundary Camp",
+    "nights": [],
+    "role": "route",
+    "why": "Three sites just over the pass, booked on summer weekends; an alternative for a shortened first or last day."
+   }
+  ],
+  "new_camps": [],
+  "confidence": "low",
+  "plan_conflict": "Night 3 is a bivouac on the 21-pitch buttress, so no camp can be listed for it; the plan's night-1 and night-5 camp near Brush Creek was replaced by US Cabin Camp, which is on file.",
+  "sources": [
+   "https://stephabegg.com/?p=8710",
+   "https://www.mountainproject.com/area/112828230/bear-mountain",
+   "https://www.nps.gov/noca/planyourvisit/copper-ridge-trail.htm"
+  ]
+ },
+ {
+  "id": "wa_mount_custer_standard",
+  "camps": [
+   {
+    "name": "Ouzel Lake camp",
+    "nights": [
+     1,
+     2
+    ],
+    "role": "main",
+    "why": "The standard base: sandy benches by the lake, the summit is a 3-5 hour round trip, and most parties stay both nights rather than hauling gear up the loose mountain."
+   }
+  ],
+  "new_camps": [],
+  "confidence": "high",
+  "plan_conflict": null,
+  "sources": [
+   "https://stephabegg.com/?p=8926",
+   "https://www.nps.gov/noca/blogs/depot-creek-mt-redoubt.htm",
+   "https://summitpost.org/mount-rahm/climbers-log/153619"
+  ]
+ },
+ {
+  "id": "wa_mount_rahm_south_side",
+  "camps": [],
+  "new_camps": [
+   {
+    "name": "Ouzel Lake",
+    "elev_ft": 5700,
+    "type": "camp",
+    "role": "main",
+    "nights": [
+     1,
+     2
+    ],
+    "why": "The usual base: an easier approach than the Silver Creek bushwhack, and the climb is a short day from camp.",
+    "water": "",
+    "capacity": "",
+    "permit": "A North Cascades backcountry permit is required to camp.",
+    "notes": "Silver Lake is the shorter way to Rahm (about 2 hours versus 3-5 from Ouzel) but reached by a harder bushwhack up Silver Creek; no elevation for Silver Lake was found."
+   }
+  ],
+  "confidence": "medium",
+  "plan_conflict": null,
+  "sources": [
+   "https://stephabegg.com/?p=8926",
+   "https://www.wta.org/go-hiking/hikes/mount-rahm",
+   "https://www.summitpost.org/mount-rahm/153619"
+  ]
+ },
+ {
+  "id": "wa_mount_redoubt_south_face",
+  "camps": [
+   {
+    "name": "Ouzel Lake",
+    "nights": [
+     1,
+     2
+    ],
+    "role": "main",
+    "why": "The standard base: the climb starts from the lake, and the hike out from the plan's day three is simple with a night here after summit day."
+   },
+   {
+    "name": "High camp, head of Redoubt Glacier",
+    "nights": [],
+    "role": "route",
+    "why": "Used by parties who stay for Spickard or the harder Mox routes; trims the summit approach but means a long carry and exposed ground."
+   }
+  ],
+  "new_camps": [],
+  "confidence": "high",
+  "plan_conflict": "On file both Ouzel Lake and the glacier high camp are main; the plan returns to Ouzel Lake, so the high camp changed to route.",
+  "sources": [
+   "https://stephabegg.com/?p=8926",
+   "https://www.nps.gov/noca/blogs/depot-creek-mt-redoubt.htm",
+   "https://sverdina.com/Redoubt_spickard1.asp"
+  ]
+ }
+]
