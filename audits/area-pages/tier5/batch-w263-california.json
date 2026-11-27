@@ -1,0 +1,47 @@
+{
+  "ca_box_the": {
+    "_expect": {
+      "name": "Box, The",
+      "region": "California"
+    },
+    "blurb": "The Box is a compact crag within the Lover's Leap complex, off the Highway 50 corridor near Strawberry in the Lake Tahoe region, at about 6,300 feet. Its seven routes sit close together, with a few lesser-known lines close by. Five are trad and two are sport, and the grades run from 5.6 up to 5.12: a handful of moderate leads, a pair of 5.11s and two 5.12s at the top end. It is a short outing with a focused set of lines rather than a full-day wall, and it pairs well with the longer routes elsewhere at the Leap.",
+    "review": {
+      "sources": [
+        "https://www.mountainproject.com/area/113603736/the-box",
+        "https://www.mountainproject.com/area/105733959/lovers-leap"
+      ]
+    }
+  },
+  "ca_blindspot_buttress": {
+    "_expect": {
+      "name": "Blindspot Buttress",
+      "region": "California"
+    },
+    "blurb": "Blindspot Buttress is a large, clean buttress on the side of Scheelite Canyon within Pine Creek Canyon above Bishop, at roughly 7,500 feet. It faces southwest, so the wall holds shade only in the morning and warms up for the rest of the day. The seven routes are mostly multi-pitch trad, with one sport line, and the difficulty is concentrated from 5.10 to 5.13, with most lines around 5.11. This is a place for experienced parties comfortable on sustained cracks, arêtes and bolted sections. The faces need little cleaning, though cracks nobody has climbed are dirty. The walk in takes roughly twenty minutes and ends with a scramble up third-class ledges.",
+    "review": {
+      "sources": [
+        "https://www.mountainproject.com/area/106815377/blindspot-buttress",
+        "https://www.mountainproject.com/route/106815380/blindspot"
+      ]
+    }
+  },
+  "ca_campfire_circle_boulder": {
+    "_expect": {
+      "name": "Campfire Circle Boulder",
+      "region": "California"
+    },
+    "blurb": "Campfire Circle Boulder is a small boulder in the Hidden Valley campground area of Joshua Tree National Park, at about 4,200 feet and a short stroll from the road. It holds seven problems that stay in friendly territory, from V0 to around V3, with three at V0, three near V2 and a single V3. Several carry the Weenie name, and Eimers Roast and Crystal Arete are the standouts at the easy and hard ends. An easy downclimb lets you get off the top. It works as a quick stop for campers or anyone looking for approachable problems among the campground boulders.",
+    "review": {
+      "sources": [
+        "https://www.mountainproject.com/area/106292601/campfire-circle-boulder",
+        "https://www.mountainproject.com/area/106041695/hvcg-south"
+      ]
+    }
+  },
+  "_skipped": {
+    "ca_blood_kin_stone": "own page has one line of description"
+  },
+  "_conflicts": {
+    "ca_campfire_circle_boulder": "Stored aspect W, but https://www.mountainproject.com/area/106292601/campfire-circle-boulder says most problems face north."
+  }
+}
