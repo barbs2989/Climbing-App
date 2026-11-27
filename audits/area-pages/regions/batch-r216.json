@@ -1,0 +1,35 @@
+{
+  "co_glacier_gorge": {
+    "_expect": {
+      "name": "Glacier Gorge",
+      "region": "Colorado"
+    },
+    "blurb": "Glacier Gorge is a high cirque in Rocky Mountain National Park, Colorado, where the west slope of Longs Peak falls about 3,000 feet to Black Lake at the head of the gorge. Walls and spires stand above wildflower meadows, ice-scoured slabs and lakes, and reaching the upper cirque means long, largely off-trail approaches. The climbing is mainly alpine rock on multi-pitch routes, plus a good amount of water ice and a few mixed lines. Rock grades run from easy fifth class to 5.12, with most at 5.9 to 5.11, and the ice spans WI3 to WI5. Arrowhead holds the most climbs, with granite spires above Black Lake and mostly 4 to 5 pitch routes. Spearhead comes next, a north-facing wall that gets sun in the late morning and early afternoon in high season.",
+    "review": {
+      "sources": [
+        "https://www.mountainproject.com/area/106575635/glacier-gorge",
+        "https://www.mountainproject.com/area/105745588/arrowhead",
+        "https://www.mountainproject.com/area/105744832/spearhead"
+      ]
+    }
+  },
+  "tx_mckinney_falls_state_park": {
+    "_expect": {
+      "name": "McKinney Falls State Park",
+      "region": "Texas"
+    },
+    "blurb": "McKinney Falls State Park is a bouldering-only area in southeast Austin, Texas, on limestone along Onion Creek. Problems are short and steep, with a powerful, pocketed style. Grades run from V0 to V12, with the weight in the middle: plenty of V4 and a solid block from V6 to V8, plus a good number of easier problems and a few at V10 and above. Spacefarm holds the most climbs, followed by Project Wall, Scrunchy Wall and Injury Wall. Warm-Up Wall, Lower Falls and the Roof are smaller sections, and Rocky Shores and Upper Falls have a single problem each.",
+    "review": {
+      "sources": [
+        "https://www.mountainproject.com/area/106265889/mckinney-falls-state-park",
+        "https://tpwmagazine.com/archive/2016/nov/getout_bouldering/"
+      ]
+    }
+  },
+  "_skipped": {
+    "co_other_side_of_road_area": "Sub-area of Mecca Boulder Area in Nine Mile; the only substantive pages (Nine Mile Bouldering, Mecca) are about its parent; the Summitpost page returned 403.",
+    "co_sheep_mountain": "Only one fetched page about the crag itself (MP Sheep Mountain); the other (The Narrows) is its parent and does not list it, CMC page is hiking only, second crag pages blocked (402/403).",
+    "nc_east_side_boulders": "Pages fetched (MP Rumbling Bald Bouldering, Carolina Climbers) describe the parent Rumbling Bald, not the East Side; nothing about this sub-area itself.",
+    "qc_dalquier": "Only one readable page (MP Dalquier); FQME PDFs unreadable or too large, other page 404."
+  }
+}

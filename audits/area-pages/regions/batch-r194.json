@@ -1,0 +1,26 @@
+{
+ "nv_west_side_2": {
+  "_expect": { "name": "West Side", "region": "Nevada" },
+  "blurb": "The West Side gathers the crags on the west flank of Mount Potosi in southern Nevada. It is almost entirely sport climbing, with grades from 5.7 to 5.13 and the bulk of the routes between 5.10 and 5.12. Sleepy Hollow holds the most climbs, followed by the Old Spanish Trail Crags, also called Story Crags. At Story Crags the cliff faces north-northwest, so most walls see sun for only a few hours on the longest days of the year and stay shaded through the rest of the year, and it can feel cold there when the city is mild. Some routes at Story Crags run about 200 feet and call for close to 30 quickdraws, and helmets are recommended.",
+  "review": { "sources": ["https://www.mountainproject.com/area/108605987/west-side", "https://www.mountainproject.com/area/120270707/old-spanish-trail-crags-story-crags"] }
+ },
+ "wy_valhalla": {
+  "_expect": { "name": "Valhalla", "region": "Wyoming" },
+  "blurb": "Valhalla is a cluster of sport crags in the upper part of Ten Sleep Canyon, reached on foot by a wooded trail of switchbacks up from the main parking area. Every route is a bolted sport climb, from 5.9 to 5.13, with the weight at 5.11 and 5.12, so this is mostly a place for strong climbers rather than beginners. Superratic Pillar holds the most climbs, followed by Drugs and Sex, Ministry Wall and Vietnam. The cliffs lean on roofs and bulges: the Drugs and Sex wall sits under a large roof section, and the Oblivion routes begin vertically and finish across a huge roof.",
+  "review": { "sources": ["https://thetopo.com/crags/ten-sleep-valhalla", "https://mountainproject.com/area/105847531/vietnam?print=1"] }
+ },
+ "ia_pictured_rocks": {
+  "_expect": { "name": "Pictured Rocks", "region": "Iowa" },
+  "blurb": "Pictured Rocks is a Jones County park near Monticello, Iowa, with limestone bluffs along the Maquoketa River. Sport climbing is the main draw, with a good number of boulder problems and a few trad lines. Grades run from 5.6 to 5.12, with the most climbs at 5.10 and 5.11, and boulder problems from V0 to V7. Wild Iowa Wall holds the most climbs among the walls, with Comic Gallery, Windy Point and Shiprock next. A Wall and Comic Gallery have some of the tallest climbs, and Windy Point is often windy. The park is busiest on spring and fall weekends, and fall and early winter are the drier seasons. After heavy rain the rock can drip or seep for days. Trees shade most walls in summer and early fall.",
+  "review": { "sources": ["https://www.mountainproject.com/area/106086995/pictured-rocks", "https://midwestoutside.com/climbing/outdoor-rock-climbing-iowa-pictured-rocks/", "https://rakkup.com/guidebook/iowa-rock-climbing/pictured-rocks/s17512"] }
+ },
+ "mt_point_of_rocks_2": {
+  "_expect": { "name": "Point of Rocks", "region": "Montana" },
+  "blurb": "Point of Rocks is in Stillwater State Forest near Olney, at the base of the Whitefish Range, roughly halfway between Whitefish and Eureka. The cliffs are argillite, a hard sedimentary rock that is solid if a little broken in places. Sport climbing leads, with a solid group of trad routes and a few boulder problems. Grades run from 5.5 to 5.12, with most climbs at 5.10 and 5.11. Sport routes are typically 40 to 70 feet tall, and a few top 100 feet. The crags are tucked into wooded, rolling hills and are spread out, often with only a half dozen or so routes each, linked by short hikes. Stillwater Canyon and Mt. Marston Rd. holds the most climbs, with South Point of Rocks next.",
+  "review": { "sources": ["https://flatheadbeacon.com/2016/05/19/a-climbers-guide-point-of-rocks/", "https://glaciermt.com/rock-climbing", "https://dailyinterlake.com/news/2023/mar/26/point-rocks-climbing-guidebook"] }
+ },
+ "_skipped": {
+  "wy_sinks_canyon_bouldering": "Only substantive fetched page is the parent Sinks Canyon (all three rocks, seasons are the canyon's); the only other page is a Lander-area bouldering article about a different area (Rock Shop); no page about this boulder grouping or its sub-areas could be fetched.",
+  "co_bigfoots_the": "No fetched page describes The Bigfoots as a whole: the Rampart Range Road page is the parent and gives no rock or season, and the one sub-area page (The Saddle) names no rock; search snippets do not count."
+ }
+}

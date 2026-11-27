@@ -1,0 +1,26 @@
+{
+ "wa_cumberland_crags": {
+  "_expect": { "name": "Cumberland Crags", "region": "Washington" },
+  "blurb": "Cumberland Crags is a sub-alpine cluster of cliffs in the Skagit Valley of northwest Washington, with short approaches and plenty of exposure. The climbing mixes cracks, bolted slabs and overhangs, and the area is noted for long cracks by western Washington standards. Rock quality varies from solid to loose, and black lichen coats many walls. Most routes are trad, with a good number of sport lines, a few boulder problems, and grades mostly from 5.8 to 5.11. Coal Mt. Crag holds the most climbs, followed by Iron Mountain Crag, Big Rock and a small bouldering area.",
+  "review": { "sources": ["https://www.mountainproject.com/area/108211392/cumberland-crags", "https://www.mountainproject.com/area/108211470/coal-mt-crag"] }
+ },
+ "az_lime_kiln_canyon": {
+  "_expect": { "name": "Lime Kiln Canyon", "region": "Arizona" },
+  "blurb": "Lime Kiln Canyon is a limestone sport climbing area in northern Arizona, just across the state line from Mesquite, Nevada, at about 4,000 feet. Every route is bolted, and grades mostly run from 5.10 to 5.12 with a smaller number of 5.13s and easier lines. The Grail holds the most climbs: mostly shady, with many long single-pitch lines on vertical to slightly overhanging rock. The Sacred Trust is sunnier, while Redbud Canyon and The Back Walls farther up have slabbier grey limestone and many moderate grades. Fall and spring are the best seasons, since winter is cold and summer is hot.",
+  "review": { "sources": ["https://mountainproject.com/area/106795137/lime-kiln-canyon", "https://rockaroundtheworld.co.uk/2024/11/20/mojave-limestone-and-the-grail-a-k-a-lime-kiln-canyon/"] }
+ },
+ "co_long_s_peak": {
+  "_expect": { "name": "Long's Peak", "region": "Colorado" },
+  "blurb": "Long's Peak is a 14,000-foot mountain in the northern Front Range, inside Rocky Mountain National Park, southwest of Estes Park. Nearly all the climbing here is alpine, mostly multi-pitch routes, with a handful of trad and aid lines. Technical grades range from low fifth class up to 5.14, with most climbs between 5.9 and 5.12. The East Face is where the technical routes are, including The Diamond, a steep cliff of roughly 1,000 feet that holds the most climbs, along with Ship's Prow and Lower East Face. Chasm View Wall adds more routes. The summer season runs roughly mid-July through early September.",
+  "review": { "sources": ["https://www.mountainproject.com/area/classics/105857350/longs-peak", "https://en.wikipedia.org/wiki/Longs_Peak"] }
+ },
+ "co_palace_the_2": {
+  "_expect": { "name": "Palace, The", "region": "Colorado" },
+  "blurb": "The Palace is a granite crag in Poudre Canyon, in the Fort Collins area, set in a grotto of featured rock with some steep and overhanging sections. Most of the routes are bolted, with classics running from about 5.7 to 5.12 and the bulk of climbs between 5.10 and 5.11. Rock quality varies from wall to wall, and the walls face every direction, so sun or shade is usually available. Cirque du Poudre is a small sector with better rock than the rest of the crag and is usually shaded all day. Mineshaft Wall, Red Wall and Vatoville are among the many separate walls.",
+  "review": { "sources": ["https://www.mountainproject.com/area/105873941/the-palace", "https://mountainproject.com/area/106306407/cirque-du-poudre"] }
+ },
+ "_skipped": {
+  "id_closed_to_climbing_main_wall": "Wrapper for the Massacre Rocks Main Wall: pages say the BLM portion including the Main Wall is closed to climbing, and it duplicates id_main_wall_4.",
+  "id_main_wall_4": "Same Massacre Rocks Main Wall as the closed-to-climbing entry; Mountain Project and press say climbing on the BLM Main Wall is closed."
+ }
+}
