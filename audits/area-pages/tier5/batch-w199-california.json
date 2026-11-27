@@ -1,0 +1,80 @@
+{
+  "ca_devil_s_kitchen": {
+    "_expect": {
+      "name": "Devil's Kitchen",
+      "region": "California"
+    },
+    "blurb": "A small crag in the creek canyon of Upper Bidwell Park, near Chico, where the climbing happens in a narrow slot only a few dozen feet tall. All nine climbs are top-rope lines, starting around 5.7 and reaching into the 5.11 range, with the bulk at 5.10 and 5.11. Anchors are built from slings around trees set well back from the edge, so a static rope and a cordelette make the setup easier. A handful of easier top-rope spots and some bouldering and traverses sit close by, which makes the area workable for newer climbers as well as those after harder lines.",
+    "review": {
+      "sources": [
+        "https://www.mountainproject.com/area/110556770/devils-kitchen",
+        "https://localwiki.org/chico/Devils_Kitchen"
+      ]
+    }
+  },
+  "ca_lakeside_rock_west_face": {
+    "_expect": {
+      "name": "Lakeside Rock - West Face",
+      "region": "California"
+    },
+    "blurb": "A slab-dominated face next to Barker Dam in the central part of Joshua Tree National Park. It has nine trad routes, running from 5.5 up to the low 5.11 range, with most of them between 5.8 and 5.10. Crack climbing and face climbing share the wall about evenly. Rock quality is uneven, from fairly solid to crumbly, and at least one line carries serious run-out risk, so it suits climbers who are comfortable placing their own gear and judging holds. The walk from the dam is brief.",
+    "approach": "Walk the signed trail out to Barker Dam; the slabby wall stands just beyond the dam on its far side.",
+    "review": {
+      "sources": [
+        "https://www.mountainproject.com/area/106635872/lakeside-rock-west-face",
+        "https://www.mountainproject.com/area/105720819/lakeside-rock"
+      ]
+    }
+  },
+  "ca_grey_giant": {
+    "_expect": {
+      "name": "Grey Giant",
+      "region": "California"
+    },
+    "blurb": "A crag in the Wonderland of Rocks section of Joshua Tree National Park, among the park's most distant formations. It has nine climbs, eight of them trad and one bolted, from 5.7 up into the 5.12 range, with the largest group at 5.9. The base sits on a south-facing side, with slab lines on that face and crack lines elsewhere, and at least one climb runs to three pitches. The walk in is long and involves wash travel and scrambling between big boulders, so expect a full day rather than a quick lap.",
+    "approach": "A long desert walk up a wash, finishing with boulder hopping and tunnelling between large blocks. Allow roughly an hour to an hour and a half.",
+    "review": {
+      "sources": [
+        "https://www.mountainproject.com/v/grey-giant/105721589",
+        "https://www.mountainproject.com/area/110464728/grey-giant-area"
+      ]
+    }
+  },
+  "ca_mountain_view_wall_north": {
+    "_expect": {
+      "name": "Mountain View Wall North",
+      "region": "California"
+    },
+    "blurb": "A trad and sport wall above Mammoth Lakes in the Eastern Sierra, at roughly 8,800 feet, with views toward the Minarets. It has nine routes, six trad and three bolted, from 5.8 to 5.12, mostly in the 5.10 and 5.11 range. The wall sits on one side of a sandy gully, with its neighbouring wall on the other. Climbing here is steep and physical, the bolted lines use stainless hardware, and a single 60 metre rope handles the routes. Trad leaders should carry doubles through the mid-size cams.",
+    "approach": "Walk about 15 to 20 minutes from the parking area, then drop down the sandy gully between the two walls; this wall is on your right.",
+    "review": {
+      "sources": [
+        "https://mountainproject.com/area/122052628/mountain-view-wall-north",
+        "https://mountainproject.com/area/122052620/mountain-view-wall"
+      ]
+    }
+  },
+  "ca_dihedral_rock_west_face": {
+    "_expect": {
+      "name": "Dihedral Rock - West Face",
+      "region": "California"
+    },
+    "blurb": "The back side of Dihedral Rock in the Hidden Valley area of Joshua Tree National Park, a short drive from the town of Joshua Tree. It holds nine routes, mostly trad, with a couple of top-rope lines and one bolted slab. The grades are gentle to moderate, from scrambling-level climbs through the 5.9 and 5.10 range, on slabs and cracks. The face has a very different feel from the better-known dihedral line on the road side of the rock. It works as a short stop, and the walk from the road involves a short scramble.",
+    "parking_note": "Use the paved pullout on the south side of Quail Springs Road (Park Boulevard), the same one used for Cathouse and Playhouse Rock.",
+    "approach": "A marked climbing trail leads from the road toward the rock; the final stretch takes about 10 to 15 minutes and includes a little scrambling up to the base of the slab.",
+    "review": {
+      "sources": [
+        "https://www.mountainproject.com/area/120105121/dihedral-rock-west-face",
+        "https://www.mountainproject.com/area/105721004/dihedral-rock"
+      ]
+    }
+  },
+  "_skipped": {
+    "ca_l_snatch_zone": "Only one fetched page is about Snatch Zone itself; the Untch Rock, Rock Hound and The Ridge pages fetched do not mention it, and the parent area page could not be fetched.",
+    "ca_generation_wall": "The only page found says Williamson Rock is closed to all recreation including climbing.",
+    "ca_forgotten_boulders": "Only one fetched page covers it; the Trashcan Rock and Quail Springs Bouldering pages fetched do not name Forgotten Boulders."
+  },
+  "_conflicts": {
+    "ca_devil_s_kitchen": "Stored rock is andesite but both https://www.mountainproject.com/area/110556770/devils-kitchen and https://localwiki.org/chico/Devils_Kitchen say basalt."
+  }
+}

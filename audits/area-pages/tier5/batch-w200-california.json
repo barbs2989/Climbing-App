@@ -1,0 +1,99 @@
+{
+ "ca_grain_surgery_wall": {
+  "_expect": {
+   "name": "Grain Surgery Wall",
+   "region": "California"
+  },
+  "blurb": "Grain Surgery Wall is a west-facing trad wall in Steve Canyon, part of the Outback section of Joshua Tree National Park, at roughly 4,200 feet. The face gets sun for much of the day, and the canyon setting takes some of the wind off it. There are nine trad routes, running from easy fourth-class and low fifth-class climbing up through the 5.10s, with a single route in the 5.11 range, so the 5.10 grades make up the bulk of it. A smaller neighbouring wall sits at its side. The usual way down is a rappel from the top of the wall's namesake line.",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/area/106637625/grain-surgery-wall",
+    "https://www.mountainproject.com/area/105720765/steve-canyon-area"
+   ]
+  }
+ },
+ "ca_panther_beach": {
+  "_expect": {
+   "name": "Panther Beach",
+   "region": "California"
+  },
+  "blurb": "Panther Beach is a beachside bouldering spot on Highway 1, a few miles north of Santa Cruz and just south of Davenport. Problems start from a sand landing under a cliff about 60 feet tall, with a mix of slabs, steep overhangs and fingery vertical faces; a few lines are tall enough to feel like highballs. There are nine problems, most around V2 and V3, with one easy warm-up and one V5 at the top end. The cliff faces west and picks up afternoon sun, though fog is common through much of the year. The upper rock is soft and can break off, so test holds carefully.",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/area/105733953/panther-beach",
+    "https://www.thetopo.com/crags/panther-beach/topos"
+   ]
+  }
+ },
+ "_conflicts": {
+  "ca_panther_beach": "Stored rock is mudstone; https://www.mountainproject.com/area/105733953/panther-beach says non-sandstone lower cliff with loose sandstone above, and https://www.thetopo.com/crags/panther-beach/topos says sandstone."
+ },
+ "ca_sport_wall": {
+  "_expect": {
+   "name": "Sport Wall",
+   "region": "California"
+  },
+  "blurb": "Sport Wall is a compact collection of steep sport routes at Poway Crags Proper, on the flanks of Iron Mountain above Ramona in northern San Diego County, at about 2,300 feet. The rock is granite. All nine routes are bolted, and they fall between 5.10 and 5.11, with six in the 5.10 range and three in the 5.11s. Because the lines sit close together, it works well for a day of piling up several routes in a row.",
+  "review": {
+   "sources": [
+    "https://mountainproject.com/area/106152371/sport-wall",
+    "https://www.mountainproject.com/area/106344418/poway-crags-proper"
+   ]
+  }
+ },
+ "ca_fit_homeless_boulder": {
+  "_expect": {
+   "name": "Fit Homeless Boulder",
+   "region": "California"
+  },
+  "blurb": "Fit Homeless Boulder is a single large block in the Buttermilks Main zone near Bishop, in the Eastern Sierra at about 6,400 feet. It sits up the slope from The Cave Area. Nine problems share the boulder, and the spread is wide: four are very easy V0-level, one is V2, and the remaining four jump into V7 through V9 territory, so beginners and top-end climbers can both find something. Landings in this part of the Buttermilks are generally flat and sandy, which keeps the pad setup simple.",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/area/106060953/fit-homeless-boulder",
+    "https://www.mountainproject.com/area/106132808/buttermilks-main"
+   ]
+  }
+ },
+ "_skipped": {
+  "ca_lower_accomazzo_boulders": "own page has one line of text; blurb would rest on stats"
+ },
+ "ca_kings_mountain": {
+  "_expect": {
+   "name": "Kings Mountain",
+   "region": "California"
+  },
+  "blurb": "Kings Mountain is a small cluster of sandstone boulders in Teague Hill Open Space on the San Francisco Peninsula, close to the Skyline trail. The rock is mossy and gives technical faces, aretes, slabs and the odd small overhang. Boulders mostly stand between 6 and 20 feet and land on generally good ground, so one to three pads is enough. The forest canopy shades the blocks for much of the day. There are nine problems, easy to moderate: a few at V0 and V1, a handful at V2, and the hardest around V4. A brush helps with cleaning holds.",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/area/203279065/kings-mountain",
+    "https://www.mountainproject.com/area/124936699/south-bay-area"
+   ]
+  }
+ },
+ "ca_lonely_stones_3": {
+  "_expect": {
+   "name": "Lonely Stones 3",
+   "region": "California"
+  },
+  "blurb": "Lonely Stones 3 is one large boulder beside a horse trail in the Quail Springs bouldering zone of Joshua Tree National Park, with its problems on the northwest-facing side. There are nine of them, ranging from very easy up to about V4: two are VB, three are V0, two are V2 and two are V4. That makes it a handy stop for a mixed group that wants easy warm-ups and a couple of harder lines on a single block. It is one of several Lonely Stones boulders in the same part of the Quail Springs area.",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/area/201663822/lonely-stones-3",
+    "https://www.mountainproject.com/area/105790027/quail-springs-bouldering"
+   ]
+  }
+ },
+ "ca_marley_boulder": {
+  "_expect": {
+   "name": "Marley Boulder",
+   "region": "California"
+  },
+  "blurb": "Marley Boulder is a large block among the Jimmy Cliff boulders in the Lost Horse part of Joshua Tree National Park. It holds nine problems here, all easy to moderate: four at VB, three at V0, one at V1 and one at V3, with most of the climbing on slabby ground and the steeper lines on one side. It sits south of the base of Jimmy Cliff, out in a wide open area, and is an easy choice for beginners or for warming up before harder boulders nearby.",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/area/106632902/marley-boulder",
+    "https://www.mountainproject.com/area/106632876/jimmy-cliff-area"
+   ]
+  }
+ }
+}
