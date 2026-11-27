@@ -1,0 +1,48 @@
+{
+  "ak_valdez_2": {
+    "_expect": {
+      "name": "Valdez",
+      "region": "Alaska"
+    },
+    "blurb": "A winter ice and mixed destination at the south end of the Richardson Highway in south central Alaska, where many of the climbs sit close to the road. Water ice is nearly all of it, graded roughly WI2 to WI6 with the bulk from WI2 to WI5, plus a handful of mixed lines up to M8. The season runs from about mid-November to late April, and mild temperatures keep water flowing so ice forms in the canyons all winter. Keystone Canyon has many short routes, and some lines in the area reach about 600 feet. Mineral Creek, Thompson Pass and Sheep Creek are other sub-areas. Rain and snow are heavy here.",
+    "review": {
+      "sources": [
+        "https://www.valdezalaska.org/things-to-do/winter-activities/ice-climbing/",
+        "https://www.mountainproject.com/area/107034714/valdez"
+      ]
+    }
+  },
+  "nh_wm_albany_area": {
+    "_expect": {
+      "name": "Albany Area",
+      "region": "New Hampshire"
+    },
+    "blurb": "Cliffs and boulders around the towns of Albany and Madison, south of Conway in New Hampshire. Trad and bouldering are about equally represented, with a little sport and a few aid and top-rope lines. Boulder problems run V1 to V7, mostly V2 to V5; roped climbs range from 5.5 to 5.13, weighted toward 5.7 to 5.12. White Ledge is a south-facing, slabby trad cliff with multi-pitch routes and good sun in early spring and late fall, though the headwall can seep after heavy rain. Albany Slab Rock is a sunny south-facing slab that dries early in spring. Band M, Valkyrie Wall and Albany Slabs Area Bouldering are other sub-areas.",
+    "review": {
+      "sources": [
+        "https://www.mountainproject.com/area/110931861/wm-albany-area",
+        "https://www.mountainproject.com/area/107821454/white-ledge",
+        "https://www.mountainproject.com/area/106185864/albany-slab-rock"
+      ]
+    }
+  },
+  "qc_06_montreal_area": {
+    "_expect": {
+      "name": "Montreal Area",
+      "region": "Quebec"
+    },
+    "blurb": "Bouldering inside the city of Montreal, mostly in parks rather than on natural cliffs. Several sub-areas are urban boulder installations in city parks, including Parc des Hirondelles, Jean Martucci Park and the grounds by Olympic Stadium, and Parc Jean-Drapeau on Île Ste-Hélène has an outdoor wall for bouldering and top-roping. Nearly all of the climbing is bouldering, spread from V0 through V6 with a few harder problems, plus a handful of top-rope routes.",
+    "review": {
+      "sources": [
+        "https://mountainproject.com/area/108340859/montreal-area",
+        "https://gripped.com/indoor-climbing/climbers-invited-to-new-outdoor-montreal-granite-boulders/",
+        "https://www.mtl.org/en/experience/where-to-go-rock-climbing-and-bouldering-montreal"
+      ]
+    }
+  },
+  "_skipped": {
+    "ca_keller_peak_bouldering": "Only the Keller Peak parent page found and fetched; no second page about Keller Peak Bouldering itself.",
+    "mo_2_north_climber_s_right_of_stairs": "Only one page about this north section (its own Mountain Project page); other pages cover the parent Robinson Bluff.",
+    "on_calabogie": "Only one fetchable page (Mountain Project); theCrag and rockclimbing.com refused or failed on fetch, so no second page."
+  }
+}
