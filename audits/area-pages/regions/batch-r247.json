@@ -1,0 +1,30 @@
+{
+ "oh_bears_den_cabin": {
+  "_expect": { "name": "Bears Den Cabin", "region": "Ohio" },
+  "blurb": "Bears Den Cabin is a bouldering area in Northeast Ohio's Mill Creek MetroParks, a park district along Mill Creek, which runs from Youngstown to Boardman. The problems sit behind the cabin, around a former quarry that is now a small stream, with hiking trails, exposed faces and freestanding boulders close by. The rock is sandstone, mossy and crumbly in places and sound in others. Everything here is bouldering, from V0 up to V6, with most problems at V2 and V3 and a couple of much harder ones. Landings are decent in some spots and uneven in others, where large stones are set into the ground. Roadside Highballs, Squid Wall and Front Wall hold the most climbs.",
+  "review": { "sources": ["https://www.mountainproject.com/area/113860572/bears-den-cabin", "https://www.mountainproject.com/area/113860231/mill-creek-metroparks?print=1"] }
+ },
+ "oh_hocking_hills_state_forest": {
+  "_expect": { "name": "Hocking Hills State Forest", "region": "Ohio" },
+  "blurb": "Hocking Hills State Forest is in Southeast Ohio, and its climbing is concentrated in one area near Rockbridge. Most of the climbing is bouldering, with a smaller number of top-rope routes and a few trad lines. There are no bolts or fixed anchors. The rock is Blackhand sandstone, which ranges from poor to very solid. Boulder problems run from V0 to V7, mostly V0 to V4, and the roped routes sit mainly between 5.8 and 5.10. Rectangle Rock holds the most climbs and is normally shady with some sun, while Workout Wall, Sunshine Valley and Cascada Boulders hold further problems.",
+  "review": { "sources": ["https://www.mountainproject.com/area/105995005/hocking-hills-state-forest", "https://www.hockinghills.com/members/Hocking_State_Forest_Rock_Climbing.html"] }
+ },
+ "ut_brighton_area": {
+  "_expect": { "name": "Brighton Area", "region": "Utah" },
+  "blurb": "Brighton Area is in the Central Wasatch Range at the top of Big Cottonwood Canyon, around the Brighton ski resort at roughly 8,700 feet. The rock is high-altitude granite, with friction slabs, crack systems and north-facing walls. Bouldering dominates, with a smaller number of trad climbs, a few sport routes and some alpine lines. Boulder problems cover a wide spread from V0 to V11, and the roped routes mostly fall between 5.7 and 5.10. Late spring and early fall are the most stable seasons for rock; summer can be hot on exposed slabs with afternoon thunderstorms, and snow can linger on north-facing walls into late May. Brighton Boulders holds the most climbs, followed by the Frighton Wall.",
+  "review": { "sources": ["https://mountainproject.com/area/116688314/brighton-area", "https://app.advcollective.com/destinations/brighton-utah/climbing"] }
+ },
+ "wa_olympic_national_forest": {
+  "_expect": { "name": "Olympic National Forest", "region": "Washington" },
+  "blurb": "Olympic National Forest partly encircles Olympic National Park on its northwest, east and south sides, in Washington's Olympics. The climbing is mostly sport, with some trad and a few boulder problems, and grades run from the 5.7s up through 5.12, with the bulk between 5.8 and 5.11. Lake Cushman, beside the reservoir on the road toward Staircase, holds the most climbs: several small walls up to about 70 feet of mossy metamorphic rock, mostly bolted, with some top-rope lines and boulders. Tyler Peak Crags adds a second sport area, and Sore Thumb a small third. The forest also holds peaks such as Mount Ellinor and The Brothers.",
+  "review": { "sources": ["https://www.mountainproject.com/area/110843296/olympic-national-forest", "https://www.mountainproject.com/area/114075500/lake-cushman"] }
+ },
+ "wv_greenbrier_boulders": {
+  "_expect": { "name": "Greenbrier Boulders", "region": "West Virginia" },
+  "blurb": "Greenbrier Boulders is a bouldering area in the Furnace Road section of Coopers Rock State Forest in northern West Virginia, east of Morgantown. Nearly everything here is a boulder problem, spread across many separate blocks rather than a few big ones. Grades start at V0 and reach into the double digits, with the most problems at V0 and in the V4 to V6 range. Across Coopers Rock the cliffs and boulders are mostly sandstone, and the best conditions come in spring and fall, with the forest canopy giving summer shade, though heat, humidity and wet rock can interfere. Block Party Area, Triangle Boulders and Tractor Trailer Boulder hold the most climbs.",
+  "review": { "sources": ["https://www.mountainproject.com/area/120455951/pup-trailer", "https://wvexplorer.com/recreation/rock-climbing/coopers-rock-climbing-area/"] }
+ },
+ "_skipped": {
+  "oh_mill_creek_metroparks": "wrapper region that holds only one other input region (Bears Den Cabin), which is written"
+ }
+}
