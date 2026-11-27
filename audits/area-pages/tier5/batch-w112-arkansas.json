@@ -1,0 +1,40 @@
+{
+ "ar_johnny_the_boy_wall": {
+  "_expect": { "name": "Johnny the Boy Wall", "region": "Arkansas" },
+  "blurb": "Johnny the Boy Wall is a small wall within the Lake Lincoln crags, roughly half an hour or so west of Fayetteville in northwest Arkansas. It holds nine routes: eight sport lines and a single trad line. Grades start at an easy 5.4 and top out at 5.10a, so most of the wall suits newer leaders and climbers working through the moderate grades. The face looks east, which means it picks up sun in the morning. Expect a walk of about half an hour from the car on a trail loop, so it works best as one stop among the other Lake Lincoln walls.",
+  "review": { "sources": ["https://www.mountainproject.com/area/112261443/johnny-the-boy-wall", "https://www.mountainproject.com/area/106232604/lake-lincoln"] }
+ },
+ "ar_prohibition_wall": {
+  "_expect": { "name": "Prohibition Wall", "region": "Arkansas" },
+  "blurb": "Prohibition Wall is a hard sport crag in the Richland Creek area of north-central Arkansas, east of Richland Creek Road in Horseshoe Holler. The face overhangs at about 45 to 50 degrees from bottom to top, ranking it among the steepest walls anywhere in the state. All nine routes here are bolted. Nearly all sit in the 5.12 range, with one 5.11 and a pair of 5.13s, so this is a place for strong, pumpy climbing rather than a first lead. Lines are described as pure and the star ratings are high, and link-ups add extra options.",
+  "review": { "sources": ["https://www.mountainproject.com/area/108151880/prohibition-wall", "https://searcycountyarkansas.org/attractions/rock-climbing"] }
+ },
+ "ar_moon_wall": {
+  "_expect": { "name": "Moon Wall", "region": "Arkansas" },
+  "blurb": "Moon Wall is the left-hand wall at Ode Hollow, a small sport crag near the headwaters of Big Piney Creek in north-central Arkansas. It is the steepest part of the crag, with big huecos pocketing the sandstone. All nine routes are bolted and the difficulty is high: eight fall in the 5.12 range and one reaches 5.13. Expect a long, steep hike in that includes wading Big Piney Creek, which can turn dangerous when the water is up, so check the gauge first. The neighbouring Foxy Wall carries the easier and more technical lines.",
+  "review": { "sources": ["https://www.mountainproject.com/area/125612865/moon-wall", "https://www.mountainproject.com/area/125612845/ode-hollow"] }
+ },
+ "ar_street_fighter_wall": {
+  "_expect": { "name": "Street Fighter Wall", "region": "Arkansas" },
+  "blurb": "Street Fighter Wall is a roughly 40-foot sport wall on the West Side of Horseshoe Canyon Ranch in north-central Arkansas, sitting between The Arcade and Ren and Stimpy. It holds nine bolted routes. Two are 5.8, six are 5.10, and a single line reaches 5.12, which makes it a good stop for climbers working through the low to mid 5.10s. The West Side section it belongs to tends to stay shaded through the day,, where the climbing ranges from slab to steep.",
+  "review": { "sources": ["https://www.mountainproject.com/area/111109222/street-fighter-wall", "https://www.mountainproject.com/area/120626208/west-side"] }
+ },
+ "ar_gravity_slab_meltdown_wall": {
+  "_expect": { "name": "Gravity Slab/Meltdown Wall", "region": "Arkansas" },
+  "blurb": "Gravity Slab/Meltdown Wall is a short south-facing sandstone wall at Cave Creek, in the Sam's Throne area of north-central Arkansas, off Highway 123. It has nine routes, seven sport and two trad, running from 5.8 up through 5.12. Most fall in the 5.10 to 5.11 range. The lines are short but pumpy, and the stone is of mixed quality, with some loose rock and wet patches. Even so, the climbing is described as good overall. It is not the main draw of Cave Creek, but the downclimb into the crag lands right at its base.",
+  "approach": "From the cliff top, a short trail leads to a fourth-class chimney downclimb that drops you into a hallway between the Gravity Slab and Meltdown sections.",
+  "review": { "sources": ["https://www.mountainproject.com/area/105906524/gravity-slabmeltdown-wall", "https://www.mountainproject.com/area/105901039/cave-creek"] }
+ },
+ "ar_pirate_s_cove": {
+  "_expect": { "name": "Pirate's Cove", "region": "Arkansas" },
+  "blurb": "Pirate's Cove is a bolted wall in the Steel Creek section of the Upper Buffalo River in north-central Arkansas, just upstream of the campground. The nine routes lean hard: two sit around 5.10, six are in the 5.12 range, and there is one 5.14 open project. A few of the easier lines run two pitches, and the bluff is reached by a short, flat walk past the Fish Wall. The wall is in shade in the morning and gets sun around midday. A 70-metre rope helps on the longer lines.",
+  "review": { "sources": ["https://mountainproject.com/area/118222594/pirates-cove", "https://mountainproject.com/area/118222436/steel-creek-upper-buffalo-river"] }
+ },
+ "_skipped": {
+  "ar_eden_wall": "no fetched page about an Eden Wall at The Garden in Arkansas; searches only returned Eden Wall pages in other states and Buffalo River region page does not mention it",
+  "ar_woods_area": "only one page (the Area 74 parent page) mentions the Woods Area; no standalone page about the crag itself found"
+ },
+ "_conflicts": {
+  "ar_pirate_s_cove": "stored rock is sandstone, but two fetched pages call the Steel Creek / Buffalo River climbing limestone: https://mountainproject.com/area/118222436/steel-creek-upper-buffalo-river and https://mountainproject.com/area/118733109/buffalo-river-region"
+ }
+}

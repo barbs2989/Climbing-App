@@ -1,0 +1,27 @@
+{
+ "az_james_canyon": {
+  "_expect": { "name": "James Canyon", "region": "Arizona" },
+  "blurb": "James Canyon is a slot canyon on the Flagstaff side of Pumphouse Wash, around 7,000 feet up, with five bolted sport lines on steep, sculpted sandstone. The climbing is on edges, pockets and big holds, and the grades start in the low 5.11s and run into the 5.12s, so this is a place for strong climbers rather than a first outdoor trip. Routes sit just upstream of the canyon's permanent pools, which means you spot the bolts from the canyon floor before you reach the base. The canyon is also hiked and descended by canyoneers, so expect other people moving through the same corridor.",
+  "review": { "sources": ["https://www.mountainproject.com/area/108377509/james-canyon", "https://mountainproject.com/area/105815990/upper-pumphouse-wash"] }
+ },
+ "az_4_deep_south": {
+  "_expect": { "name": "Deep South", "region": "Arizona" },
+  "blurb": "Deep South is a small cove of five routes at the far south end of the Southern Walls, the string of short crags on the San Francisco Peaks above Flagstaff, at roughly 8,700 feet. It holds four sport lines and one trad line, with grades running from 5.9 up through the 5.11s. The belay spots are on the shady side. Of the Southern Walls sectors it is the one reached last when walking down from the end of the main wall, and the trail in leaves the main path and climbs a steep slope for a short distance before the cove opens up.",
+  "review": { "sources": ["https://www.mountainproject.com/area/110530691/deep-south", "https://www.mountainproject.com/v/110519744"] }
+ },
+ "az_half_pint_pillar": {
+  "_expect": { "name": "Half-Pint Pillar", "region": "Arizona" },
+  "blurb": "Half-Pint Pillar is a free-standing pillar on the west side of Middle Elden Canyon in the Mt Elden Crags above Flagstaff, at about 7,600 feet. It can be picked out from the canyon floor and stands about half as tall as the walls around it, which is where the name comes from. There are five routes: four sport and one trad, with most grades in the 5.10 to 5.11 range and one at the low end and one a little harder. To find it, locate the Jolly Roger boulder in the bouldering section and continue past it on a faint trail; look for the pillar before heading up through the brush, because it is hard to spot from inside.",
+  "review": { "sources": ["https://www.mountainproject.com/area/116593568/half-pint-pillar", "https://mountainproject.com/route/stats/118685563/late-capitalism"] }
+ },
+ "_skipped": {
+  "az_flat_top": "no page about this boulder itself: Mountain Project's Flat Top is a Colorado boulder, and the only Arizona mention is a sub-area line on the Cochise Trail Boulders page",
+  "az_chef_kiss": "only the parent Cochise Trail Boulders page lists it; no fetched page about the Chef Kiss boulder itself",
+  "az_sauce_wall": "only a one-line sub-area entry on the Renegade page (5 sport routes); no page about Sauce Wall itself",
+  "az_wilson_cave": "only a sub-area line on the First Bench Wilson Mountain page; the one page about the cave itself returned 404 on fetch, so only one page",
+  "az_2_thing_area": "only the Southern Walls parent page names it (few minutes past The Grotto, 5 routes); no page about Thing Area itself"
+ },
+ "_conflicts": {
+  "az_4_deep_south": "stored rock is rhyolite but the Peaks Crag page (https://www.mountainproject.com/area/110519565/peaks-crag) says the cliff band is weathered volcanic dacite; Deep South's own page gives no rock type"
+ }
+}

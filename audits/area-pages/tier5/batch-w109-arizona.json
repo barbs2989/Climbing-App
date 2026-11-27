@@ -1,0 +1,27 @@
+{
+ "az_peanut_area": {
+  "_expect": { "name": "Peanut Area", "region": "Arizona" },
+  "blurb": "Peanut Area is a small bouldering zone on the slopes of Mount Elden above Flagstaff, part of the Gloria's complex. Five problems are scattered through a dense cluster of boulders and caves on the hill above the Bill Boulder, running from about V2 up to a pair of V8s. The dacite is thin and technical, and many lines are tall, so most call for several pads, spotters and real commitment. Forest and caves keep shade easy to find in summer. Spring and fall are the best seasons, and problems outside the caves tend to dry quickly in winter.",
+  "review": { "sources": ["https://www.mountainproject.com/area/106154673/peanut-area", "https://www.mountainproject.com/area/106074654/glorias"] }
+ },
+ "az_hidden_wall_the": {
+  "_expect": { "name": "Hidden Wall, The", "region": "Arizona" },
+  "blurb": "The Hidden Wall is one of three walls in the Stone Cove, a compact bouldering spot near Lake Mary Road outside Flagstaff, at roughly 7,000 feet. It holds five problems: mostly easy warm-ups around V0 and V1, plus one harder line near V4. The wall sits high on the west side of the gully and stays out of sight until you are almost on top of it. Hike up the right side of the gully to the main cliff band, then look left. Landings across the cove are described as good, and the spot suits early-season training.",
+  "review": { "sources": ["https://www.mountainproject.com/area/107075356/the-hidden-wall", "https://www.mountainproject.com/area/107075229/the-stone-cove"] }
+ },
+ "az_blue_marble_wall": {
+  "_expect": { "name": "Blue Marble Wall", "region": "Arizona" },
+  "blurb": "Blue Marble Wall is a tall cirque of sandstone in East Kelly Canyon, a few miles south of Flagstaff, at about 6,500 feet. It has five boulder problems spanning roughly V2 to V6, with a four-star V5 as the standout. Kelly Canyon climbing is technical and slopey, with many tall problems and sloping top-outs, so pads and spotters matter. The rock is fragile when wet. The wall lies a short walk from the trailer park, and the canyon is at its best in the cool, dry days of fall.",
+  "review": { "sources": ["https://www.mountainproject.com/area/107841525/blue-marble-wall", "https://www.mountainproject.com/area/107704281/east-kelly-canyon", "https://www.mountainproject.com/area/106155112/kelly-canyon"] }
+ },
+ "_skipped": {
+  "az_kingdom_the": "only one fetched page about the crag itself; no second page naming it",
+  "az_mars_attacks_boulder": "no standalone page about this boulder; only the parent Anvil Boulders page and route pages, which do not describe it",
+  "az_super_roof_area_mountainaire": "no standalone Super Roof Area page fetched; only the parent Priest Draw pages",
+  "az_red_kelly_wall": "one page about the wall itself; the parent Kelly Canyon pages fetched do not name it",
+  "az_gym_wall": "one page about the wall itself; the parent Kelly Canyon pages fetched do not name it (only a sibling wall page does)"
+ },
+ "_conflicts": {
+  "az_super_roof_area_mountainaire": "stored rock is sandstone but the parent Priest Draw page (https://www.mountainproject.com/area/105945099/priest-draw) describes limestone bluffs"
+ }
+}

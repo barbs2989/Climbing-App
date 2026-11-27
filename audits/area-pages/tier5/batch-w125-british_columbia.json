@@ -1,0 +1,38 @@
+{
+ "bc_crescent_spire": {
+  "_expect": { "name": "Crescent Spire", "region": "British Columbia" },
+  "blurb": "Crescent Spire is a trad and alpine wall in the Bugaboos of British Columbia, standing north of the Applebee campground between Bugaboo Spire and the Crescent Towers. Nine routes are known, nearly all multi-pitch lines in the 5.10 range, plus one 5.11 and one 5.13. The approach is easy, the routes are fairly short and the rappel anchors are bolted, so it makes a handy choice for a rest day or poor weather, and one 60 m rope handles the rappels. An easy gully between the spire and the Crescent Towers also works as a walk-off.",
+  "review": { "sources": ["https://www.mountainproject.com/area/105868074/crescent-spire", "https://www.mountainproject.com/route/112840451/paddle-flake"] }
+ },
+ "bc_toxic_lichen": {
+  "_expect": { "name": "Toxic Lichen", "region": "British Columbia" },
+  "blurb": "Toxic Lichen is a steep sport wall at Chek, in Cheakamus Canyon near Squamish. Its nine bolted lines start with a single 5.10, add a couple of 5.11s, and are mostly 5.12, with two at 5.13. The face is vertical to overhanging, looks east and catches morning sun. It is the first sector you meet on a gentle walk of five to ten minutes from the campground end of the parking area. The wall stays dry in light rain but can soak through in heavy rain.",
+  "review": { "sources": ["https://outmap.pro/waypoint/toxic-lichen-i6bWY65SRHcTnv4g54vNSm", "https://sendage.com/area/chek-cheakamus-canyon-squamish-bc-canada", "https://thetopo.com/crags/cheakamus-canyon/routelist/toxic-lichen-wall"] }
+ },
+ "bc_foundation_wall": {
+  "_expect": { "name": "Foundation Wall", "region": "British Columbia" },
+  "blurb": "Foundation Wall is a small sport crag in the Chek area of Cheakamus Canyon, north of Squamish, and counts as a secondary wall next to the bigger attractions nearby. Its nine bolted routes are mostly 5.9 to 5.10, with a pair of easier lines at 5.7 and 5.8 and a single 5.11. The rock lies a little back from vertical rather than overhanging.",
+  "parking_note": "Leave the car in the upper lot at Chek. The wall sits just south of it, on your right as you follow the path south.",
+  "review": { "sources": ["https://www.mountainproject.com/area/105963907/foundation-wall", "https://www.mountainproject.com/area/105959514/chek", "https://thetopo.com/crags/cheakamus-canyon/routelist/foundation-wall"] }
+ },
+ "bc_whiskey_jack": {
+  "_expect": { "name": "Whiskey Jack", "region": "British Columbia" },
+  "blurb": "Whiskey Jack is a short sport crag in Cheakamus Canyon, one of the sectors of Chek north of Squamish. It faces east and is shaded, and moss grows over some of the lines. Its nine routes are mostly 5.10, with one 5.8, a 5.11 and a 5.12, and the angle runs from low to steep depending on the line.",
+  "review": { "sources": ["https://www.mountainproject.com/area/107246917/whiskey-jack", "https://www.mountainproject.com/area/105959514/chek", "https://thetopo.com/crags/cheakamus-canyon/routelist/whiskey-jack-wall"] }
+ },
+ "bc_wonderland": {
+  "_expect": { "name": "Wonderland", "region": "British Columbia" },
+  "blurb": "Wonderland is a large boulder in the talus west of Kokanee Lake, inside Kokanee Glacier Provincial Park near Nelson. You reach it just past the Meadow Boulder. Its nine problems range from V0 to V9, with a handful in the V3 to V6 middle and a couple of hard ones at the top. Landings are talus; they have been built up in places, but the harder problems still call for care. This is a summer objective with roughly 5 km of hiking from the car, so go before the October snows.",
+  "parking_note": "Park at the Gibson Lake trailhead where the forest service road ends, about 16 km up the road that leaves the Kokanee Creek route east of Nelson.",
+  "review": { "sources": ["https://www.mountainproject.com/area/114379537/kokanee-lake", "https://squamishclimbingmagazine.ca/topos-bouldering-guide-kokanee-lake-boulders-nelson-bc/"] }
+ },
+ "_skipped": {
+  "bc_main_crag": "no fetched page is about Main Crag itself; only the Chist Creek parent page lists it (searches found no standalone page)",
+  "bc_west_side": "no page found about a West Side crag at Fern Gully; searches and Fern Gully results only show an E Side and Left/Right split",
+  "bc_orange_wall": "only one fetched page about this Orange Wall (no second page naming it)"
+ },
+ "_conflicts": {
+  "bc_toxic_lichen": "Stored rock is quartz diorite; https://outmap.pro/waypoint/toxic-lichen-i6bWY65SRHcTnv4g54vNSm says granite, and https://sendage.com/area/chek-cheakamus-canyon-squamish-bc-canada calls Chek columnar basalt.",
+  "bc_wonderland": "Stored aspect is S; https://www.mountainproject.com/area/114379537/kokanee-lake and https://squamishclimbingmagazine.ca/topos-bouldering-guide-kokanee-lake-boulders-nelson-bc/ say the Kokanee Lake boulders face northeast."
+ }
+}

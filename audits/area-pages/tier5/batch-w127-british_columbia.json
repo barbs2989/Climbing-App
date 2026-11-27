@@ -1,0 +1,24 @@
+{
+ "bc_woodbury_bluffs": {
+  "_expect": { "name": "Woodbury Bluffs", "region": "British Columbia" },
+  "blurb": "Woodbury Bluffs is a cliff on the slope above Kootenay Lake, near Woodbury Creek north of Nelson. The wall stretches several hundred metres across and stands roughly 40 to 70 metres tall, with rock that is clean for this part of the Kootenays. Most lines are short sport climbs of about half a pitch, with a handful of two or three pitch routes and some mixed ground. Eight of the nine routes here are bolted and one is trad. Grades cluster around 5.10 and 5.11, with one 5.12 and a single 5.13 for the strong.",
+  "review": { "sources": ["https://sendage.com/area/woodbury-bluffs-bc-canada", "https://www.ronperrier.net/2024/04/13/woodbury-bluffs-climbing/"] }
+ },
+ "bc_h_the_octagon": {
+  "_expect": { "name": "The Octagon", "region": "British Columbia" },
+  "blurb": "The Octagon is a small boulder sector within the Grand Wall Boulders, at the foot of the Stawamus Chief above Squamish. It takes in the Octagon boulder itself plus the problems just to its east, nine in all. Most of them sit between V0 and V3, with one around V5 and a single V8 for strong climbers. The wider Grand Wall boulder forest is shaded and cool, though landings across it can be uneven because of rocks and roots, so a few smaller pads are useful.",
+  "approach": "Take the second Psych Ledge trail, the Superfly and Grand Wall trail that starts at a BC Parks sign, past the Superfly boulder to a junction; the Octagon boulder is just to the right.",
+  "review": { "sources": ["https://www.mountainproject.com/area/112842803/the-octagon", "https://www.mountainproject.com/area/112842712/grand-wall-boulders"] }
+ },
+ "_skipped": {
+  "bc_the_lost_world": "no fetched page describes the crag itself: thetopo page is empty (rock, approach, parking all missing) and the Mountain Project hit is a route page only",
+  "bc_crystal_hunter": "no page about the crag itself found: thetopo URL 404, Sendage North Walls page does not describe it, two searches returned only unrelated pages",
+  "bc_clearing_area": "only a sector line on a parent page (Sendage Old Hedley) with no detail, rockclimbing.com fetch refused (connection error); no standalone page",
+  "bc_smelterview": "two searches found no page naming Smelterview",
+  "bc_big_sky_boulder": "only a sub-area line on the Old Hope Bouldering parent page; no standalone page about this boulder; rockclimbing.com fetch failed",
+  "bc_cancer_tree": "only one fetched page (Mountain Project area page); Oregon Jack outmap page does not mention it; climbkamloops.com unreachable"
+ },
+ "_conflicts": {
+  "bc_woodbury_bluffs": "Stored rock is limestone but https://sendage.com/area/woodbury-bluffs-bc-canada calls it granite (the other page, https://www.ronperrier.net/2024/04/13/woodbury-bluffs-climbing/, names no rock); rock left unchanged and not named in the blurb"
+ }
+}

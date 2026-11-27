@@ -1,0 +1,31 @@
+{
+ "az_lower_east_wall": {
+  "_expect": { "name": "Lower East Wall", "region": "Arizona" },
+  "blurb": "Lower East Wall is a set of multi-pitch trad lines on the Miners Needle massif in the Superstition Mountains of central Arizona. The face looks east, sits beneath the trio of higher spires and rises out of Miners Canyon. Five routes are recorded, running from about 5.7 up to 5.10, with two of them at 5.8, so the wall suits parties comfortable placing their own gear on moderate to mid-grade ground. Two and three pitch outings are the norm here. There are no sport lines and no boulder problems, and the wall's position is only approximate on the map.",
+  "review": { "sources": ["https://www.mountainproject.com/area/110001357/lower-east-wall", "https://www.mountainproject.com/area/110001349/miners-needle"] }
+ },
+ "az_bobcat_boulder": {
+  "_expect": { "name": "Bobcat Boulder", "region": "Arizona" },
+  "blurb": "Bobcat Boulder is a small, broken granite cliff on Little Granite Mountain in Scottsdale's Granite Mountain preserve, at roughly 2,900 feet. It holds five routes, mostly trad with a single sport line, spanning about 5.6 to 5.10, with 5.7 and two 5.8s in the middle. The cliff gets morning sun and falls into shade as the afternoon goes on. It lies below and left of The Loaf, a large formation split by a wide central crack, and is reached on foot of about a mile from the big trailhead lot off 136th Street. Summer is too hot to climb here.",
+  "review": { "sources": ["https://www.mountainproject.com/area/105811038/bobcat-boulder", "https://mountainproject.com/area/classics/105787828/little-granite-mountain"] }
+ },
+ "az_big_roof_the": {
+  "_expect": { "name": "Big Roof, The", "region": "Arizona" },
+  "blurb": "The Big Roof is a bouldering spot in the Pima Canyon part of South Mountain, in the Phoenix area. It is named for a huge, easy-to-spot roof, and it sits just uphill from another boulder cluster. Reach it by following the wash and then climbing the slope behind that neighbouring cluster, or by circling around the Black Wall. Four boulder problems run from V4 to V6, with the V5 the highest rated, and there is also one hard trad line at 5.12. A large beehive sits at the centre of the roof, so take care around it.",
+  "review": { "sources": ["https://www.mountainproject.com/area/107456256/the-big-roof", "https://www.mountainproject.com/area/106671948/pima-canyon-area"] }
+ },
+ "az_petra_wall": {
+  "_expect": { "name": "Petra Wall", "region": "Arizona" },
+  "blurb": "Petra Wall is a small sport crag in Limestone Gulch, a short canyon near Clifton and Morenci in southern Arizona, at about 3,550 feet. It faces southeast and holds five routes, all sport, with a couple also usable as top ropes. Grades are friendly, running from 5.5 to 5.9 with two at 5.7, which makes it a fit for newer leaders. Coming in from the road end of the gulch, it is the first wall on the north side just beyond the gate. The canyon around it has so far seen more bouldering than roped development.",
+  "review": { "sources": ["https://www.mountainproject.com/area/125595820/petra-wall", "https://www.mountainproject.com/area/125595801/limestone-gulch"] }
+ },
+ "_skipped": {
+  "az_granite_ballroom": "no fetched page about the crag itself (MP McDowell parent page only lists it; searches found no crag page)",
+  "az_the_stones_left_side": "only the parent The Stones page was fetched; no page for the Left Side itself",
+  "az_lower_atlantis": "only the Atlantis parent page names it; no page for the crag itself",
+  "az_longboat_the": "no page found naming the crag; Pima Canyon page does not mention it"
+ },
+ "_conflicts": {
+  "az_petra_wall": "stored rock is granite, but the area is named Limestone Gulch; neither fetched page states a rock type (https://www.mountainproject.com/area/125595801/limestone-gulch)"
+ }
+}

@@ -1,0 +1,52 @@
+{
+ "bc_lower_wall": {
+  "_expect": {
+   "name": "Lower Wall",
+   "region": "British Columbia"
+  },
+  "blurb": "The lower tier of the Muscle Beach sector in the Skaha Bluffs holds nine bolted sport routes. The climbing is moderate and vertical. Grades run from 5.9 up to 5.12, and most of the routes sit in the 5.11 range, so it suits people already comfortable at that level more than first-timers. The steeper, more powerful lines are on the upper wall above, which is the sector's main draw. A rough talus path leads up to the base, and the trail can be reached from either the north or south end of the park.",
+  "review": {
+   "sources": [
+    "https://sendage.com/area/muscle-beach-skaha-bc-canada",
+    "https://www.mountainproject.com/area/111627225/muscle-beach"
+   ]
+  }
+ },
+ "bc_north_howser_tower": {
+  "_expect": {
+   "name": "North Howser Tower",
+   "region": "British Columbia"
+  },
+  "blurb": "North Howser Tower is a big alpine wall in the Howser Towers of the Bugaboos. Its west face stands roughly 3000 feet tall and holds nine trad routes, mostly 5.11 and 5.12 with one 5.9 and one 5.10, in a mix of free, aid and alpine styles. Routes are long and committing, up to dozens of pitches. Getting to the base is a serious trip: one way crosses the North Shoulder Col with steep loose gullies and glacier travel, and another comes from East Creek Basin. Expect a remote, full-commitment objective rather than a day at the crag.",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/area/105871729/north-howser-tower",
+    "https://publications.americanalpineclub.org/articles/12200621502"
+   ]
+  }
+ },
+ "bc_canoe_buttress": {
+  "_expect": {
+   "name": "Canoe Buttress",
+   "region": "British Columbia"
+  },
+  "blurb": "Canoe Buttress is a set of bluffs in a narrow canyon at the north end of the Skaha Bluffs. All nine routes are bolted sport lines: seven in the 5.10 range and two at 5.11. The walls face east and the climbing is moderate. From the north parking area the walk is very short, around a minute, though the trail through the gully has poison ivy along it. Across the wider Canoe Trail crags, the walls pick up sun in the morning and shade in the afternoon, which helps with choosing a day by temperature.",
+  "review": {
+   "sources": [
+    "https://sendage.com/area/8625-canoe-buttress",
+    "https://www.mountainproject.com/area/117851004/canoe-trail-crags",
+    "https://gripped.com/profiles/new-skaha-parking-lot-and-crags-are-a-game-changer/"
+   ]
+  }
+ },
+ "_skipped": {
+  "bc_bedrock_city": "only one fetched page about the crag (sendage); no second page found",
+  "bc_belvedere": "no fetched page describes Belvedere itself beyond route lists on a parent page",
+  "bc_candy_box": "no page about the crag itself found; only a route page and mentions on other crags' pages",
+  "bc_shangri_low_dusk_wall": "only one fetched page (second candidate, theCrag, returned 403)",
+  "bc_gravity_train": "only a thin listing page plus the parent index; no second page about the boulder area"
+ },
+ "_conflicts": {
+  "bc_bedrock_city": "stored aspect E, but https://sendage.com/area/bedrock-city-foreplay-skaha-bc-canada says the cliff faces southeast (only one page, so not written)"
+ }
+}

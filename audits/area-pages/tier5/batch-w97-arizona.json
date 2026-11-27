@@ -1,0 +1,27 @@
+{
+ "az_desert_classic_boulder": {
+  "_expect": { "name": "Desert Classic Boulder", "region": "Arizona" },
+  "blurb": "A small boulder pile in the South Mountain part of Phoenix, sitting lower than its surroundings just to the west of the Desert Classic trail. Five problems are recorded, running from about V4 up to V8, so it is a spot for stronger boulderers rather than newcomers. Take care on the way up and over: the summit of the boulder is loose and crumbly, and topping out deserves extra caution. To get there, enter from San Gabriel and follow the Desert Classic trail west. It is one of many boulder groups scattered through the Equestrian section of South Mountain Park and Preserve.",
+  "review": { "sources": ["https://www.mountainproject.com/area/119841318/desert-classic-boulder", "https://www.mountainproject.com/area/116186271/equestrian-area-closures-in-effect"] }
+ },
+ "az_coffee_enema_boulders": {
+  "_expect": { "name": "Coffee Enema Boulders", "region": "Arizona" },
+  "blurb": "A small cluster of boulders on the South Mountain side of Phoenix, reached from the Mormon Trailhead lot off Valley View Drive. Five problems are recorded: three easy lines from the very bottom of the scale to about V2, and two hard ones around V7 that call for sustained, powerful pulling on a range of holds. The walk leads from the lot along a wash and then into a ravine. Boulders along the wider Mormon Trail are described as often loose and chossy, so test holds before trusting them, especially on the harder lines.",
+  "review": { "sources": ["https://www.mountainproject.com/area/121632731/coffee-enema-boulders", "https://www.mountainproject.com/area/111442588/mormon-trail-closures-in-effect"] }
+ },
+ "az_the_labyrinth_boulders": {
+  "_expect": { "name": "The Labyrinth boulders", "region": "Arizona" },
+  "blurb": "A short stretch of boulders high up Sinclair Wash on the edge of Flagstaff, on the north side of the drainage near the community labyrinth and Sawmill Park. Five problems are recorded, all easy, from V0 to about V2, which makes it a handy stop for beginners or a warm-up. Start from the main Sawmill lot; the wall is visible from the trail and is the one that appears on your right as you walk in. Another section sits farther left, hidden by trees around a bend. The path past it gets plenty of walkers and commuters, and houses are close by.",
+  "review": { "sources": ["https://www.mountainproject.com/area/125331736/the-labyrinth-boulders", "https://www.mountainproject.com/area/124612288/sinclair-wash"] }
+ },
+ "_skipped": {
+  "az_1_west_face_lone_madrone_wall": "no fetched page about this crag; Lonesome Pine page lists no sub-areas and two searches found no Lone Madrone page",
+  "az_crown_boulder": "no page about the crag itself found; only the parent Equestrian Area page names it",
+  "az_bittersweet_boulder": "no page about the crag itself found; only the parent Equestrian Area page names it",
+  "az_warmup_crack": "no page about the crag itself found; only the parent Equestrian Area page names it",
+  "az_suicide_canyon": "no page about the crag itself found; only the Camelback parent page and route pages name it"
+ },
+ "_conflicts": {
+  "az_the_labyrinth_boulders": "stored rock is sandstone but the parent page https://www.mountainproject.com/area/124612288/sinclair-wash says basalt and limestone walls; the crag page https://www.mountainproject.com/area/125331736/the-labyrinth-boulders names no rock"
+ }
+}

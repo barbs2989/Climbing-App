@@ -1,0 +1,36 @@
+{
+ "bc_the_vandalarium": {
+  "_expect": { "name": "The Vandalarium", "region": "British Columbia" },
+  "blurb": "The Vandalarium is a small cliff inside the Smoke Bluffs at Squamish, close to McNaughton Park and a short walk from downtown. It holds nine routes, mostly sport with two trad lines, and the grades stretch from an easy 5.7 through a cluster of 5.10s up to a single 5.11. The lines are short single pitches, roughly 8 to 25 metres, so it suits a quick session or a warm-up between longer objectives. The Smoke Bluffs as a whole are known for small crags, mostly single pitch, with a mix of crack, friction slab and face climbing.",
+  "review": { "sources": ["https://outmap.pro/waypoint/the-vandalarium-8NwzPGPzxfFRbDGfSF6D6D", "https://www.mountainproject.com/area/105808584/the-smoke-bluffs"] }
+ },
+ "bc_chasing_rainbows": {
+  "_expect": { "name": "Chasing Rainbows", "region": "British Columbia" },
+  "blurb": "Chasing Rainbows is a set of nine routes on the Malamute, the granite cliff across the highway from the Chief at Squamish. The climbs start from a broad treed ledge roughly midway up the cliff, so the day begins with a walk along that terrace. Styles are split between sport and trad, and grades run from 5.7 up to 5.12, with most of the lines in the 5.10 to 5.11 range. The Malamute is west of the road and stays in shade until early afternoon, and it can be breezy enough to feel cold even on a warm day.",
+  "review": { "sources": ["https://www.mountainproject.com/area/113840423/chasing-rainbows", "https://www.mountainproject.com/area/105876726/the-malamute"] }
+ },
+ "bc_jacob_s_wall_lower": {
+  "_expect": { "name": "Jacob's Wall (Lower)", "region": "British Columbia" },
+  "blurb": "Jacob's Wall (Lower) is a slab-focused crag on the Malamute at Squamish, with nine routes. Most climbing is on polished slab served by bolts, broken up by a few horizontal cracks, and six of the routes are sport against three trad. Grades run from 5.8 to 5.11, with the bulk of the lines at 5.10. The Malamute sits on the west side of the highway, is shaded until early afternoon, and is often windy, so it can feel cool when other Squamish crags are hot.",
+  "review": { "sources": ["https://www.mountainproject.com/area/113840438/jacobs-wall-lower", "https://www.mountainproject.com/area/105876726/the-malamute"] }
+ },
+ "bc_waterfall_wall": {
+  "_expect": { "name": "Waterfall Wall", "region": "British Columbia" },
+  "blurb": "Waterfall Wall is one of the crags at Comox Lake near Cumberland on Vancouver Island. It lies to the right of the waterfall, upstream of the steeper main wall. Nine routes are here, five trad and four sport, with protection described as good. Grades run from 5.7 to 5.11, mostly around 5.10, so it works for climbers who want moderate lines before or after the harder sport on the nearby walls. The area has more than 120 developed routes in total.",
+  "review": { "sources": ["https://www.mountainproject.com/area/119064247/waterfall-wall", "https://www.mountainproject.com/area/119060052/comox-lake"] }
+ },
+ "bc_grand_central": {
+  "_expect": { "name": "Grand Central", "region": "British Columbia" },
+  "blurb": "Grand Central is a feature-rich cliff at Comox Lake near Cumberland on Vancouver Island, and one of the lake's more popular crags. It has nine routes, seven sport and two trad, combining cracks and faces. Grades start at 5.8 and climb to 5.12, with the majority sitting in the 5.10 and 5.11 range, so it leans toward intermediate and harder climbers. The wider Comox Lake area has more than 120 developed routes across a number of crags that sit only a few minutes apart.",
+  "review": { "sources": ["https://www.mountainproject.com/area/119064405/grand-central", "https://www.mountainproject.com/area/119060052/comox-lake"] }
+ },
+ "bc_raven_s_right_wing": {
+  "_expect": { "name": "Raven's Right Wing", "region": "British Columbia" },
+  "blurb": "Raven's Right Wing is a short wall of about 10 to 12 metres at Comox Lake, near Cumberland on Vancouver Island. Its nine routes are all sport, and the grades range from 5.5 to 5.11, with the greater share in the 5.6 to 5.9 range, which makes it an approachable spot for newer leaders. A trail leads around the left side to the top of the wall, where a fixed line crosses, giving easy top-rope access to every route. It is one of many crags in the Comox Lake area.",
+  "review": { "sources": ["https://www.mountainproject.com/area/119439757/ravens-right-wing", "https://www.mountainproject.com/area/119060052/comox-lake"] }
+ },
+ "_skipped": {
+  "bc_central_apron": "no fetched page about Central Apron itself (only a section of the parent Apron page); thecrag fetch refused 403",
+  "bc_the_terraces_2": "no page about a Terraces crag on the Malamute found (MP Malamute lists it with no description; the Terraces pages found are Skaha, a different place); thecrag fetch refused 403"
+ }
+}
