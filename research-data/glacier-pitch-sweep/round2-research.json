@@ -1,0 +1,345 @@
+{
+ "ice": [
+  {
+   "id": "wa_lincoln_peak_north_ridge",
+   "i": 1,
+   "label": "Ice curtain and glacier step",
+   "old_grade": "Glacial ice step",
+   "change": "to_pitch",
+   "grade": "WI3-4, vertical curtain",
+   "anchor": "ice screws",
+   "confidence": "medium-low",
+   "sources": [
+    {
+     "url": "http://publications.americanalpineclub.org/articles/13201213260/Lincoln-Peak-Northwest-Face-Wilkes-Booth",
+     "says": "Wilkes-Booth rated IV WI4; party climbed 'approximately four roped pitches on steeper ice' with snowfields to 70 deg between them. The entry's roped ice (P1 + two-pitch central flow) is three, so the curtain/glacier step is the fourth roped pitch. P1 (WI4) is called the crux, so the curtain is no harder than WI4. No source grades this curtain on its own."
+    },
+    {
+     "url": "https://www.nwhikers.net/forums/viewtopic.php?p=590746",
+     "says": "Neighbouring Shooting Gallery (same start, shared lower ground) has ice curtains of WI4+ led on screws with belays; shows curtains here are pitched. Different route, so grade not transferred."
+    }
+   ],
+   "note": "Roped status is two-source; the specific grade is bounded (<= WI4), not stated. Use plain 'WI4' only if owner prefers the route grade."
+  },
+  {
+   "id": "wa_big_four_mountain_spindrift_couloir",
+   "i": 4,
+   "label": "Crux",
+   "old_grade": "Near-vertical ice",
+   "change": "to_pitch",
+   "grade": "Near-vertical ice (route WI5)",
+   "anchor": "ice screws",
+   "confidence": "medium",
+   "sources": [
+    {
+     "url": "http://publications.americanalpineclub.org/articles/12199706000/The-Spindrift-Couloir-Scrappin-It-Up-After-Classes-in-the-Washington-Cascades",
+     "says": "1996 first ascent: third step was roped, one lead pitch; belay at base on a fluke and a screw, belay above on two ice screws; 80-95 deg ice/shale. No WI grade for this step; whole route IV+ 5.9 WI5 mixed."
+    },
+    {
+     "url": "https://www.mattsea.com/featured/BigFour/",
+     "says": "Crux about three-quarters up is a 100-foot pitch of near-vertical ice leading to steep runnelled snow."
+    }
+   ],
+   "note": "Pitch status is two-source. No source gives this step its own WI grade; the WI5 number is the route's overall grade, so the label avoids asserting WI5 for the step alone."
+  },
+  {
+   "id": "wa_mount_stuart_stuart_glacier_couloir",
+   "i": 2,
+   "label": "Second step",
+   "old_grade": "Short rock or ice step",
+   "change": "to_pitch",
+   "grade": "WI2-3, short step",
+   "anchor": "ice screws, pitons",
+   "confidence": "medium-low",
+   "sources": [
+    {
+     "url": "https://davidmoskowitz.net/blog-posts/2013/06/climbing-the-stuart-glacier-couloir-mount-stuart-north-cascades",
+     "says": "At the narrowest section are two steps: one climber led a pitch of mixed rock/ice/snow on belay, the partner then led the next step of ice. So both steps were lead pitches that year. No grades."
+    },
+    {
+     "url": "https://www.mountainproject.com/route/108794198/stuart-glacier-couloir",
+     "says": "Route WI2-3 M5-; second step is a shorter step of rock or ice above the first (80 deg) step; 'a couple of short screws are handy for the ice section'."
+    }
+   ],
+   "note": "Conditions vary: Steph Abegg's spring report (stephabegg.com) set no protection in the couloir. Pitched in lean/icy years; the entry already says 'pitch it out in lean conditions' for step 1."
+  },
+  {
+   "id": "wa_mount_stuart_stuart_glacier_couloir",
+   "i": 6,
+   "label": "Ridge 3",
+   "old_grade": "mid 5th",
+   "change": "to_pitch",
+   "grade": "mid 5th class (M3-M5 in winter)",
+   "anchor": null,
+   "confidence": "high",
+   "sources": [
+    {
+     "url": "https://www.mountainproject.com/route/108794198/stuart-glacier-couloir",
+     "says": "West Ridge is six pitches from the notch; pitch 3 traverses the north face through mid-5th terrain to a gully; pitches 5 and 6 are mid-5th cracks; overall M5- (M5 when dry-tooled in March)."
+    }
+   ],
+   "note": "The grade string 'mid 5th' has no 5.x / 'low 5th' / '5th class' token, so it draws as a leg; 'mid 5th class' fixes that. Rock, outside ice scope but a real roped pitch."
+  },
+  {
+   "id": "wa_mount_stuart_stuart_glacier_couloir",
+   "i": 7,
+   "label": "Ridge 4-6 to summit",
+   "old_grade": "mid 5th",
+   "change": "to_pitch",
+   "grade": "mid 5th class cracks",
+   "anchor": null,
+   "confidence": "medium",
+   "sources": [
+    {
+     "url": "https://www.mountainproject.com/route/108794198/stuart-glacier-couloir",
+     "says": "Pitch 4 is class 3 ledges, pitches 5 and 6 mid-5th crack systems to the summit; alternate 5-pitch version has a belay at the top of the box gully."
+    }
+   ]
+  },
+  {
+   "id": "wa_wing_peak_northwest_ridge",
+   "i": 4,
+   "label": "Snowfinger (crux)",
+   "old_grade": "~70\u00b0 snow/ice",
+   "change": "to_pitch",
+   "grade": "~70\u00b0 snow/ice",
+   "anchor": "fixed belay",
+   "confidence": "medium",
+   "sources": [
+    {
+     "url": "https://www.nwhikers.net/forums/viewtopic.php?p=1189180",
+     "says": "'a 70-degree, horribly exposed snowfinger'; 'We used fixed belays to get across the snowfinger and up the slippery Class 4 summit rock'; belayed back across it on descent."
+    },
+    {
+     "url": "https://trailcatjim.com/east-gunn-peak-gunn-point-tailgunner-peak-wing-peak/",
+     "says": "Party 'tag-teamed the final short pitches across the steep snowfinger'; rappelled off the summit and 'belayed back across the snowfinger'."
+    }
+   ],
+   "note": "Two independent reports belayed it. Neither mentions a picket on the snowfinger itself, so the stored 'picket' wording is unsourced; anchor kept generic. Season-dependent (soft snow may not need it)."
+  }
+ ],
+ "pins": [
+  {
+   "id": "wa_ultramega_ok",
+   "pin_name": "Early Winters Creek Crossing",
+   "field": "latlng",
+   "old": "48.56803,-120.629805",
+   "new": "48.5515,-120.6275",
+   "confidence": "medium-low",
+   "sources": [
+    {
+     "url": "https://epqs.nationalmap.gov/v1/json?x=-120.6275&y=48.5515&units=Feet&wkid=4326",
+     "says": "USGS EPQS: old coordinate reads 3748 ft (pin claims 4080 and sits 1.2 mi north of the pullout); new coordinate reads 4085 ft, in the valley bottom (neighbouring samples 4047-4065 ft just north, 4107 ft south, i.e. the creek line). It is 0.17 mi from the pullout pin, matching distMi 0.2."
+    },
+    {
+     "url": "https://www.summitpost.org/burgundy-col-silverstar-glacier/158024",
+     "says": "(search snippet only; page 403) log crossing is near the old cabin site on the Early Winters Creek trail, just north of the talus slope below the milepost-166 access: i.e. very near the pullout."
+    }
+   ],
+   "note": "Elevation-matched, not a surveyed crossing point; +/- ~100 ft along the creek. Still far better than the old coordinate."
+  },
+  {
+   "id": "wa_vasiliki_ridge_standard",
+   "pin_name": "Early Winters Creek log crossing",
+   "field": "latlng",
+   "old": "48.56803,-120.629805",
+   "new": "48.5515,-120.6275",
+   "confidence": "medium-low",
+   "sources": [
+    {
+     "url": "https://epqs.nationalmap.gov/v1/json?x=-120.6275&y=48.5515&units=Feet&wkid=4326",
+     "says": "Same crossing as Ultramega OK; reads 4085 ft vs the pin's 4080. Straight line from this route's pullout pin (48.549,-120.630965) is 0.23 mi, under the stored 0.3."
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_redoubt_south_face",
+   "pin_name": "Depot Creek Road washout",
+   "field": "latlng",
+   "old": "49.033,-121.4025",
+   "new": "49.0114,-121.3621",
+   "confidence": "medium",
+   "sources": [
+    {
+     "url": "https://trailcatjim.com/mt-redoubt-via-redoubt-glacier-mt-spickard-via-southwest-glacier/",
+     "says": "Washout start is at about 2,600 ft; 0.8 h walk on road/overgrown road to Monument 65."
+    },
+    {
+     "url": "https://epqs.nationalmap.gov/v1/json?x=-121.3621&y=49.0114&units=Feet&wkid=4326",
+     "says": "USGS EPQS: old pin reads 2042 ft (not 2600) and is 3.8 mi straight from Monument 65. New point reads 2580 ft."
+    },
+    {
+     "url": "https://www.openstreetmap.org/way/1308727144",
+     "says": "OSM 'Depot Forest Service Road' tracks (ways 1308727144, 1308727143, 1308727161) run from Monument 65 (49.0009,-121.3348) to this point over 1.55 mi, passing 2580 ft at the end; the old pin is not on any OSM road in this valley."
+    }
+   ],
+   "note": "Only the road geometry + 2600 ft fit independently; the exact washout spot is not published as a coordinate. Monument 65 distMi must rise (see next two items) because straight line from new pin to Monument 65 is 1.43 mi."
+  },
+  {
+   "id": "wa_southeast_mox_peak_se_rib",
+   "pin_name": "Depot Creek Road parking / trailhead",
+   "field": "latlng",
+   "old": "49.033,-121.4025",
+   "new": "49.0114,-121.3621",
+   "confidence": "medium",
+   "sources": [
+    {
+     "url": "https://trailcatjim.com/mt-redoubt-via-redoubt-glacier-mt-spickard-via-southwest-glacier/",
+     "says": "Same washout trailhead (2,600 ft); also set pin elev to 2580-2600."
+    },
+    {
+     "url": "https://www.openstreetmap.org/way/1308727144",
+     "says": "Same OSM road geometry as above."
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_redoubt_south_face",
+   "pin_name": "Monument 65 (US-Canada border)",
+   "field": "distMi",
+   "old": 1.3,
+   "new": 1.6,
+   "confidence": "medium",
+   "sources": [
+    {
+     "url": "https://www.openstreetmap.org/way/1308727144",
+     "says": "Road length washout point to Monument 65 is 1.55 mi (straight line 1.43 mi, so 1.3 was impossible once the pin moves)."
+    }
+   ]
+  },
+  {
+   "id": "wa_southeast_mox_peak_se_rib",
+   "pin_name": "Monument 65 (US-Canada border)",
+   "field": "distMi",
+   "old": 1.2,
+   "new": 1.6,
+   "confidence": "medium",
+   "sources": [
+    {
+     "url": "https://www.openstreetmap.org/way/1308727144",
+     "says": "Same: 1.55 mi along the road, 1.43 mi straight."
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_redoubt_south_face",
+   "pin_name": "Depot Creek Falls",
+   "field": "distMi",
+   "old": 3,
+   "new": 4.5,
+   "confidence": "medium",
+   "sources": [
+    {
+     "url": "https://trailcatjim.com/mt-redoubt-via-redoubt-glacier-mt-spickard-via-southwest-glacier/",
+     "says": "Depot Creek Falls is about 3 mi along the American-side route (from the border), reached 2.8 h from the car; 1.6 + 3 is about 4.6."
+    },
+    {
+     "url": "derived",
+     "says": "Falls pin (48.9773,-121.2848) is 4.2 mi straight from the corrected trailhead, so 3 is impossible; Mox route already stores 4.5."
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_carrie_se_route",
+   "pin_name": "Heart Lake",
+   "field": "distMi",
+   "old": 18.5,
+   "new": 8.1,
+   "confidence": "medium",
+   "sources": [
+    {
+     "url": "https://permitsnag.com/guides/seven-lakes",
+     "says": "ONP loop is 18.2 mi, clockwise via Deer Lake, High Divide, Heart Lake, Sol Duc Park. Park mileposts quoted elsewhere: Heart Lake 10.07, Sol Duc Park 10.83, so via the Sol Duc River trail Heart Lake is 18.2-10.83+0.76 = 8.1 mi."
+    },
+    {
+     "url": "derived",
+     "says": "Route text says falls + 1 mi to the Deer Lake junction, +7 mi to Heart Lake (about 8). 18.5 is more than the stored Boston Charlie's 12.8, so impossible."
+    }
+   ],
+   "note": "Mileposts 10.07/10.83 came from a search summary of the park permit guide; the 18.2 total was read on the fetched page."
+  },
+  {
+   "id": "wa_mount_carrie_se_route",
+   "pin_name": "Cat Basin / High Divide",
+   "field": "distMi",
+   "old": null,
+   "new": 9.3,
+   "confidence": "low",
+   "sources": [
+    {
+     "url": "derived",
+     "says": "Heart Lake 8.1 + 0.5-0.7 to the High Divide crest (route text 0.5; AllTrails 0.7) + the crest/Cat Basin trail toward the pin 1.2 mi straight from Heart Lake. 9.3 is a floor (straight-line chain), the real value is probably 9.3-10; straight line TH to pin is 6.7 mi, so it passes the constraint."
+    }
+   ],
+   "note": "No page gives the Cat Basin mileage from Sol Duc; WTA Cat Basin Primitive '5.0 mi one way' is from a different trailhead. Apply only if the owner accepts a derived floor; otherwise leave null."
+  }
+ ],
+ "leave": [
+  {
+   "id": "wa_big_four_mountain_spindrift_couloir",
+   "i": 2,
+   "item": "First step",
+   "reason": "First ascent soloed the two 75-degree pitches (protection available but not placed). AAJ 1996 is the only account; no source says this step is belayed. Stays a travel leg."
+  },
+  {
+   "id": "wa_forbidden_peak_northeast_face",
+   "i": 1,
+   "item": "Ice patch",
+   "reason": "AAJ 1961: a 300 ft, 50-degree ice patch 'ascended' with no mention of belays or screws (only pitons on the grade III rock below). Summitpost 403. Nothing says pitched; the stored 'AI3' is the entry's own. Leave as leg."
+  },
+  {
+   "id": "wa_mount_rainier_willis_wall",
+   "i": 2,
+   "item": "Upper wall and ice cliff",
+   "reason": "MP gives only M5+ X Grade V and 'pins, screws, nuts, cams'; AAJ 1971 winter account has one 60-degree ice pitch near the ice cliff and no pitch grades. No source for per-step style; also a span of terrain, not a pitch. Leave."
+  },
+  {
+   "id": "wa_mount_shuksan_hanging_glacier",
+   "i": 1,
+   "item": "Section 2",
+   "reason": "Karakoram report: 50-60 degree headwall, anchor + belay for a snow assessment only; Mountaineers/CascadeClimbers 403. No source says ice steps are belayed. Leave as glacier travel."
+  },
+  {
+   "id": "rainier_north_mowich_headwall",
+   "i": 0,
+   "item": "Hourglass entry",
+   "reason": "MP: 40-50 ft rock/ice, screws/pickets/rock gear. AAJ 1968: front-pointing and step-cutting, one ice screw; belays not mentioned. A 2018 report of a belayed hourglass is on Ptarmigan Ridge, not here. Leave."
+  },
+  {
+   "id": "rainier_north_mowich_headwall",
+   "i": 2,
+   "item": "Rock band",
+   "reason": "Grade '5th class' already matches the roped-pitch rule, so it already draws as a pitch (MP: clearing it can require 5th; AAJ: 50 ft, hard 5th)."
+  },
+  {
+   "id": "wa_mount_stuart_stuart_glacier_couloir",
+   "i": 4,
+   "item": "Ridge 1 / 2",
+   "reason": "'low 5th' already matches the pitch rule; MP lists them as rope-length ridge pitches. No change needed."
+  },
+  {
+   "id": "wa_lincoln_peak_north_ridge",
+   "i": 3,
+   "item": "Upper snowfields",
+   "reason": "AAJ: snowfields to 70 degrees lie BETWEEN the roped ice pitches; simul/pickets. Stays a leg."
+  },
+  {
+   "id": "wa_lemah_mountain_east_route",
+   "pin": "Lemah Creek crossing",
+   "item": "distMi 9.2 -> 6.5 (round 1 proposal)",
+   "reason": "Do not change. USGS EPQS reads 4926 ft at the pin (47.4944,-121.2877), so it is the 5,000 ft valley creek, not the PCT crossing (PCT ford is the 3,400 ft pin at 5.5 mi). Route text: 6 mi to the PCT crossing, then 1-2 mi off-trail to the 3,600 ft camp, then on to 5,000 ft, so about 9 mi is consistent, and the summitpost '20 mi round trip' agrees (the entry's '16 miles' disagrees with its own pins). 6.5 is barely above the 6.3 mi straight line and would be too small. Optionally rename the pin 'Upper Lemah Creek (5,000 ft)'."
+  },
+  {
+   "id": "wa_lemah_mountain_east_route",
+   "pin": "Point 3854 cairn line / Snow gully and moat transition / Southeast ridge notch",
+   "item": "latlng",
+   "reason": "No page gives coordinates for any of the three (Summitpost 403; WTA/Summitpost logs have none). Not guessing from heights. Also found: summit pin 47.4907,-121.3012 reads 7109 ft in EPQS versus stored 7519, so that coordinate is likely off by about 400 ft of height; worth a separate check."
+  },
+  {
+   "id": "wa_mount_redoubt_south_face",
+   "pin": "all later pins",
+   "item": "downstream distMi",
+   "reason": "After the trailhead move, Ouzel 6.2 (Gaia, one way from start) is still >= its 5.6 mi straight line; Redoubt Glacier snout 7 / camp 7.7 / col 8 unchanged. Recheck with check/audit scripts."
+  }
+ ]
+}

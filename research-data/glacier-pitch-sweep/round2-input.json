@@ -1,0 +1,257 @@
+{
+ "ice_low": [
+  {
+   "id": "wa_big_four_mountain_spindrift_couloir",
+   "i": 2,
+   "label": "First step",
+   "old_grade": "75° névé and water ice",
+   "change": "to_pitch",
+   "grade": "WI3, 75° névé/ice",
+   "anchor": "ice screws",
+   "confidence": "low",
+   "sources": [
+    {
+     "url": "https://publications.americanalpineclub.org/articles/12199713800",
+     "says": "AAJ 1997 summary: IV+ 5.9 95° couloir climbed in steps with 'a little ice protection'; no pitch-by-pitch text retrievable. Entry's own notes: about two pitches, protection available."
+    }
+   ]
+  },
+  {
+   "id": "wa_big_four_mountain_spindrift_couloir",
+   "i": 4,
+   "label": "Crux",
+   "old_grade": "Near-vertical ice",
+   "change": "to_pitch",
+   "grade": "WI5, near-vertical",
+   "anchor": "ice screws, knifeblade",
+   "confidence": "low",
+   "sources": [
+    {
+     "url": "https://publications.americanalpineclub.org/articles/12199713800",
+     "says": "Route is a steep gully with hardest ground in a few pitches; no WI5 rating found independently. The entry text itself calls this a near-vertical ice pitch with a belay at its base."
+    }
+   ]
+  },
+  {
+   "id": "wa_colchuck_peak_holsten_hilden",
+   "i": 7,
+   "label": "Summit pitch",
+   "old_grade": "Short steep mixed step",
+   "change": "to_pitch",
+   "grade": "Short steep mixed step",
+   "anchor": "rock gear",
+   "confidence": "low",
+   "sources": [
+    {
+     "url": "https://publications.americanalpineclub.org/articles/12201209602/North-America-United-States-Washington-Colchuck-Peak-Northeast-Face-Hilden-Holsten",
+     "says": "After the M6 notch crack, party traverses into the final couloir of the North Buttress Couloir route; the entry's own notes call it one more steep mixed pitch. Grade not stated by source."
+    }
+   ]
+  },
+  {
+   "id": "wa_forbidden_peak_northeast_face",
+   "i": 1,
+   "label": "Ice patch",
+   "old_grade": "~50° ice",
+   "change": "to_pitch",
+   "grade": "AI3, ~50° ice",
+   "anchor": "ice screws",
+   "confidence": "low",
+   "sources": [
+    {
+     "url": "https://www.summitpost.org/view_object.php?object_id=168442",
+     "says": "(search snippet only, page 403) NE Face is a technical snow/ice/rock route (Beckey-Rupley 1971) climbing an 'objective ice apron' across crevasses; entry notes say screws needed. Route ice_grade AI3."
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_rainier_willis_wall",
+   "i": 2,
+   "label": "Upper wall and ice cliff",
+   "old_grade": "Mixed, 50–60° ice",
+   "change": "to_pitch",
+   "grade": "AI3, 50-60° ice",
+   "anchor": "ice screws",
+   "confidence": "low",
+   "sources": [
+    {
+     "url": "(no page retrieved)",
+     "says": "Willis Wall is a Grade V face whose upper ice steps beneath the ice cliff are climbed belayed; route ice_grade AI3. No source page confirmed pitch style."
+    }
+   ]
+  }
+ ],
+ "ice_unsure": [
+  {
+   "id": "wa_mount_stuart_stuart_glacier_couloir",
+   "i": 2,
+   "why": "Second step 'short rock or ice'; pitons used for belays in one report, but no grade; likely pitched, left."
+  },
+  {
+   "id": "wa_mount_stuart_stuart_glacier_couloir",
+   "i": 4,
+   "why": "Ridge 1-3 and 4-6 (low/mid 5th) are roped rock, currently drawn as legs because grade text lacks 5.x token; rock, outside ice scope."
+  },
+  {
+   "id": "wa_lincoln_peak_north_ridge",
+   "i": 1,
+   "why": "Vertical ice curtain is clearly pitched (stored note: good protection) but no source gave a grade."
+  },
+  {
+   "id": "wa_lincoln_peak_north_ridge",
+   "i": 3,
+   "why": "Snow to 70 deg, pickets and screws running protection; pitched vs simul not settled."
+  },
+  {
+   "id": "wa_buckner_mountain_north_face",
+   "i": 0,
+   "why": "Roped vs simul not settled; grade AI2 vs AI3 disputed."
+  },
+  {
+   "id": "rainier_north_mowich_headwall",
+   "i": 0,
+   "why": "Hourglass entry rock/ice ~40-50 ft likely a roped step; no source."
+  },
+  {
+   "id": "rainier_north_mowich_headwall",
+   "i": 2,
+   "why": "Rock band 5th class is roped rock; grade lacks 5.x."
+  },
+  {
+   "id": "wa_mount_rainier_sunset_ridge",
+   "i": 3,
+   "why": "55-60 deg face traverse, front-pointing with screws in ice; running belay vs pitches unsettled."
+  },
+  {
+   "id": "wa_mount_shuksan_hanging_glacier",
+   "i": 1,
+   "why": "Ice to 65 deg mixes glacier travel with steps; no source found."
+  },
+  {
+   "id": "wa_summit_chief_mountain_north_face",
+   "i": 2,
+   "why": "Snowfields labelled as pitch numbers 2 and 3 on a 12-pitch route; sources do not say whether belayed."
+  },
+  {
+   "id": "wa_colfax_peak_fords_theatre",
+   "i": 0,
+   "why": "No online source found for the route; entries look right."
+  },
+  {
+   "id": "wa_dark_peak_dark_glacier_route",
+   "i": 5,
+   "why": "'Belayed' bergschrund/moat crossing; no source for grade or anchor"
+  },
+  {
+   "id": "wa_mount_adams_adams_glacier",
+   "i": 1,
+   "why": "Lower icefall 45° steps: notes say most belay, MP says most is simul-soloed"
+  },
+  {
+   "id": "wa_mount_maude_r2",
+   "i": 1,
+   "why": "Icefall short ice steps, running belay; roped or travel unclear"
+  },
+  {
+   "id": "wa_mount_rainier_ptarmigan_ridge",
+   "i": 2,
+   "why": "Hourglass 45-55° snow: pickets, belay only if rockfall"
+  },
+  {
+   "id": "wa_mount_stuart_ice_cliff_glacier",
+   "i": 4,
+   "why": "Upper couloir: snow or ice depending on year"
+  },
+  {
+   "id": "wa_mount_stuart_ice_cliff_glacier",
+   "i": 5,
+   "why": "Cornice exit"
+  },
+  {
+   "id": "wa_big_four_mountain_spindrift_couloir",
+   "i": 6,
+   "why": "Cornice exit, one anchor on a boulder"
+  },
+  {
+   "id": "wa_forbidden_peak_northeast_face",
+   "i": 0,
+   "why": "Rock lower face, no grade"
+  },
+  {
+   "id": "wa_colchuck_peak_holsten_hilden",
+   "i": 5,
+   "why": "Steep snow, rock band 8+"
+  },
+  {
+   "id": "wa_wing_peak_northwest_ridge",
+   "i": 4,
+   "why": "~70° snowfinger 'often picketed and belayed'; no source found"
+  },
+  {
+   "id": "wa_mount_shuksan_north_face",
+   "i": 2,
+   "why": "45-50° snow/ice, usually unroped"
+  }
+ ],
+ "pin_unsure": [
+  "wa_ultramega_ok / wa_vasiliki_ridge_standard: 'Early Winters Creek crossing' coordinate 48.56803,-120.629805 is ~1.2 mi north of the pullout (48.55/48.549); distMi 0.2/0.3 and elev 4080 look right, so the COORDINATE is wrong, but no source with the true crossing coordinate was found (Mountaineers/SummitPost give none). Suggest moving the pin to the creek just east of the pullout, ~48.550,-120.627 (derived, not sourced), or recompute.",
+  "wa_mount_redoubt_south_face / wa_southeast_mox_peak_se_rib: TH pin 49.033,-121.4025 is 3.8 mi straight from Monument 65 though sources put Monument 65 ~1 mi (0.8 h) from the car, and Ouzel is 6.2 mi trail but 8 mi straight from the pin. Monument 65, falls and Ouzel are mutually consistent; the TH pin is the outlier. No source gave the washout coordinate; the Mox route's Monument 65 1.2, Falls 4.5, Ouzel 6.2 are fine.",
+  "wa_mount_carrie_se_route: Boston Charlie's Camp 12.8 left alone; one Mountaineers guide says ~14 mi, route text says summit ~13 mi. Unsettled.",
+  "wa_lemah_mountain_east_route: three coordinate-less pins (Point 3854 cairn line, Snow gully and moat transition, Southeast ridge notch) - no source for coordinates found. Lemah Creek crossing 6.5 is derived/low.",
+  "wa_ragged_ridge: Mesahchie basin 4.4 left (Easy Pass 3.5 + ~1.1 = 4.6, consistent). Summit pins have no distMi; no sourced distances.",
+  "wa_lena_lake_to_mt_stone_traverse: Putvin Trail hazard is on the DESCENT (route text: exit via Putvin Trail to a different trailhead), so being stored past the summit (13.3 > 10.8) is correct; its coordinates are near the Lena TH only because the Putvin TH is nearby. No change; exact distance unsourced.",
+  "wa_hagan_mountain_south: Hidden Lake (Bacon-Hagan saddle), Hazard pins and the Hagan summit have no distMi; unsourced."
+ ],
+ "pin_low": [
+  {
+   "id": "wa_mount_carrie_se_route",
+   "pin_name": "Cat Basin / High Divide",
+   "field": "distMi",
+   "old": null,
+   "new": 9.3,
+   "confidence": "low",
+   "sources": [
+    {
+     "url": "derived",
+     "says": "Heart Lake 8.0 + 0.5 to High Divide crest (route text) + ~1 mi along crest/trail to Cat Basin (pins 1.2 mi apart straight)"
+    }
+   ]
+  },
+  {
+   "id": "wa_lemah_mountain_east_route",
+   "pin_name": "Lemah Creek crossing",
+   "field": "distMi",
+   "old": 9.2,
+   "new": 6.5,
+   "confidence": "low",
+   "sources": [
+    {
+     "url": "route approach text",
+     "says": "PCT crossing is Pete Lake 4 + 1.2 + 0.8 = 6 mi, but this pin is at 4,926 ft (the 5,000 ft glacier-remnant creek), which the text puts before the 6,500 ft snow gully (7.0); 16 mi round trip puts summit ~8 mi"
+    },
+    {
+     "url": "https://summitpost.org/lemah-glacier-via-lemah-creek/911905",
+     "says": "about 20 mi round trip via Lemah Creek (so summit ~8-10 mi)"
+    }
+   ]
+  },
+  {
+   "id": "wa_southeast_mox_peak_se_rib",
+   "pin_name": "Depot Creek Road parking / trailhead",
+   "field": "latlng",
+   "old": "49.033,-121.4025",
+   "new": "UNSURE: ~1 mile of road from Monument 65 (49.0009,-121.3348)",
+   "confidence": "low",
+   "sources": [
+    {
+     "url": "https://trailcatjim.com/mt-redoubt-via-redoubt-glacier-mt-spickard-via-southwest-glacier/",
+     "says": "washout (start) at ~2600 ft; Monument 65 is about 0.8 h walk from the car"
+    },
+    {
+     "url": "https://www.gaiagps.com/hike/297999/ouzel-lake-via-depot-creek-trail/",
+     "says": "Ouzel Lake only 6.2 mi from start, but stored pin is 8 mi straight from Ouzel"
+    }
+   ]
+  }
+ ]
+}

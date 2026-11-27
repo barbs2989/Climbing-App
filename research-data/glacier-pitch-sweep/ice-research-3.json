@@ -1,0 +1,89 @@
+{
+ "changes": [
+  {
+   "id": "wa_lincoln_peak_north_ridge",
+   "i": 1,
+   "label": "Ice curtain and glacier step",
+   "old_grade": "Glacial ice step",
+   "change": "to_pitch",
+   "grade": "WI3-4, vertical curtain",
+   "anchor": "ice screws",
+   "confidence": "medium",
+   "sources": [
+    {
+     "url": "http://publications.americanalpineclub.org/articles/13201213260/Lincoln-Peak-Northwest-Face-Wilkes-Booth",
+     "says": "Wilkes-Booth rated IV WI4; party climbed 'approximately four roped pitches on steeper ice' with snowfields to 70 deg between them. The entry's roped ice (P1 + two-pitch central flow) is three, so the curtain/glacier step is the fourth roped pitch. P1 (WI4) is called the crux, so the curtain is no harder than WI4. No source grades this curtain on its own."
+    },
+    {
+     "url": "https://www.nwhikers.net/forums/viewtopic.php?p=590746",
+     "says": "Neighbouring Shooting Gallery (same start, shared lower ground) has ice curtains of WI4+ led on screws with belays; shows curtains here are pitched. Different route, so grade not transferred."
+    }
+   ],
+   "note": "Roped status is two-source; the specific grade is bounded (<= WI4), not stated. Use plain 'WI4' only if owner prefers the route grade."
+  },
+  {
+   "id": "wa_big_four_mountain_spindrift_couloir",
+   "i": 4,
+   "label": "Crux",
+   "old_grade": "Near-vertical ice",
+   "change": "to_pitch",
+   "grade": "Near-vertical ice",
+   "anchor": "ice screws",
+   "confidence": "medium",
+   "sources": [
+    {
+     "url": "http://publications.americanalpineclub.org/articles/12199706000/The-Spindrift-Couloir-Scrappin-It-Up-After-Classes-in-the-Washington-Cascades",
+     "says": "1996 first ascent: third step was roped, one lead pitch; belay at base on a fluke and a screw, belay above on two ice screws; 80-95 deg ice/shale. No WI grade for this step; whole route IV+ 5.9 WI5 mixed."
+    },
+    {
+     "url": "https://www.mattsea.com/featured/BigFour/",
+     "says": "Crux about three-quarters up is a 100-foot pitch of near-vertical ice leading to steep runnelled snow."
+    }
+   ],
+   "note": "Pitch status is two-source. No source gives this step its own WI grade; the WI5 number is the route's overall grade, so the label avoids asserting WI5 for the step alone."
+  },
+  {
+   "id": "wa_mount_stuart_stuart_glacier_couloir",
+   "i": 2,
+   "label": "Second step",
+   "old_grade": "Short rock or ice step",
+   "change": "to_pitch",
+   "grade": "WI2-3, short step",
+   "anchor": "ice screws, pitons",
+   "confidence": "medium",
+   "sources": [
+    {
+     "url": "https://davidmoskowitz.net/blog-posts/2013/06/climbing-the-stuart-glacier-couloir-mount-stuart-north-cascades",
+     "says": "At the narrowest section are two steps: one climber led a pitch of mixed rock/ice/snow on belay, the partner then led the next step of ice. So both steps were lead pitches that year. No grades."
+    },
+    {
+     "url": "https://www.mountainproject.com/route/108794198/stuart-glacier-couloir",
+     "says": "Route WI2-3 M5-; second step is a shorter step of rock or ice above the first (80 deg) step; 'a couple of short screws are handy for the ice section'."
+    }
+   ],
+   "note": "Conditions vary: Steph Abegg's spring report (stephabegg.com) set no protection in the couloir. Pitched in lean/icy years; the entry already says 'pitch it out in lean conditions' for step 1."
+  },
+  {
+   "id": "wa_wing_peak_northwest_ridge",
+   "i": 4,
+   "label": "Snowfinger (crux)",
+   "old_grade": "~70° snow/ice",
+   "change": "to_pitch",
+   "grade": "~70° snow/ice",
+   "anchor": "fixed belay",
+   "confidence": "medium",
+   "sources": [
+    {
+     "url": "https://www.nwhikers.net/forums/viewtopic.php?p=1189180",
+     "says": "'a 70-degree, horribly exposed snowfinger'; 'We used fixed belays to get across the snowfinger and up the slippery Class 4 summit rock'; belayed back across it on descent."
+    },
+    {
+     "url": "https://trailcatjim.com/east-gunn-peak-gunn-point-tailgunner-peak-wing-peak/",
+     "says": "Party 'tag-teamed the final short pitches across the steep snowfinger'; rappelled off the summit and 'belayed back across the snowfinger'."
+    }
+   ],
+   "note": "Two independent reports belayed it. Neither mentions a picket on the snowfinger itself, so the stored 'picket' wording is unsourced; anchor kept generic. Season-dependent (soft snow may not need it)."
+  }
+ ],
+ "note": "round 2 accepted subset; Stuart Ridge 3/4-6 dropped: mid 5th already classifies as a pitch"
+}
