@@ -1,0 +1,30 @@
+{
+ "az_anchor_the": {
+  "_expect": {"name": "Anchor, The", "region": "Arizona"},
+  "blurb": "A small bouldering wall tucked into The Stone Cove, part of the Lake Mary bouldering near Flagstaff. It holds seven problems on the west side of the gully, out on the point, and the grades stay low, mostly V0 to V2. The wall stands a bit taller than its neighbours in the cove and has good holds throughout, which makes it a friendly stop for warm-ups or for newer boulderers. The cove itself is compact, with three walls and around two dozen clean lines that have good landings.",
+  "review": {"sources": ["https://www.mountainproject.com/area/107075252/the-anchor", "https://mountainproject.com/area/107075229/the-stone-cove"]}
+ },
+ "az_stovepipe": {
+  "_expect": {"name": "Stovepipe", "region": "Arizona"},
+  "blurb": "Stovepipe is a tower in the Windy Point East sector of Mount Lemmon's Catalina Highway climbing, above Tucson. It sits a short walk from the overlook parking and holds seven routes, mostly sport with a single easier trad line. The sport lines cluster around 5.11, with a few harder ones reaching into 5.12 and 5.13. The pair of 5.11 routes on its west face work as warm-ups before trying the steeper, harder lines on the neighbouring wall.",
+  "review": {"sources": ["https://www.mountainproject.com/area/107625176/stovepipe", "https://www.mountainproject.com/area/106824229/3-windy-point-east"]}
+ },
+ "az_anduriel_tower": {
+  "_expect": {"name": "Anduriel Tower", "region": "Arizona"},
+  "blurb": "Anduriel Tower is a small formation in the Windy Point East sector on Mount Lemmon's Catalina Highway, above Tucson. It stands roughly 150 feet west of the Punch and Judy cliff, reached by crossing broken rock and slabs. Seven routes are here, mostly bolted sport lines plus one trad route. Grades start around 5.9 and 5.10, run through a handful at 5.11, and top out in the 5.12 range, so it suits climbers working the 5.10s and 5.11s.",
+  "review": {"sources": ["https://mountainproject.com/area/105808555/anduriel-tower", "https://www.mountainproject.com/area/106824229/3-windy-point-east"]}
+ },
+ "az_sacred_trust_the": {
+  "_expect": {"name": "Sacred Trust, The", "region": "Arizona"},
+  "blurb": "The Sacred Trust is a sport wall in Lime Kiln Canyon, on the Arizona side of the line just east of Mesquite, Nevada. It looks across at the better-known Grail wall; the stone here is a step down but still gives enjoyable climbing. The face catches plenty of sunshine, so it suits cool days. Taller multi-pitch lines sit toward the left, while shorter single-pitch lines lie to the right. Seven bolted routes run from 5.9 into the 5.12 range, with most around 5.10 and 5.11.",
+  "approach": "About 20 minutes of walking uphill on a cairned trail from the parking area.",
+  "approach_min": 20,
+  "review": {"sources": ["https://www.mountainproject.com/area/111372542/the-sacred-trust", "https://mountainproject.com/area/106795137/lime-kiln-canyon"]}
+ },
+ "_skipped": {
+  "az_walnut_creek": "only one fetched page about the crag (MP Walnut Creek); no second page naming it (Drysdale Trail and Flagstaff Bouldering pages do not mention it)",
+  "az_unsung_wall": "no fetched page about the wall itself; only a route page (Gospel Moment) names it",
+  "az_sun_cave": "no fetched page about the Virgin River Gorge Sun Cave itself; VRG and Sun Wall pages are parent/sibling, rockclimbing.com fetch refused connection (fetch outage), MP route links led to a different Sun Cave in Colorado",
+  "az_p2_montezuma_ledge": "only the parent Montezuma Buttress page found (lists the ledge and a route count); no page about the ledge itself"
+ }
+}

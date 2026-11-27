@@ -1,0 +1,33 @@
+{
+ "az_the_aqueducts_main_wall": {
+  "_expect": { "name": "The Aqueducts- Main Wall", "region": "Arizona" },
+  "blurb": "A sport wall on the Catalina Highway side of Mount Lemmon, in the Colosseum sector at roughly 4,500 feet. Nine bolted lines run from the low 5.10s up to a single 5.13, with the bulk of them in the 5.10 to 5.12 range, so it suits climbers who already lead steady 5.10. It is the first cliff you meet on the main trail, which makes it the busiest in the sector, and the belay spots are comfortable. Easy warm-ups sit beside some harder tests, and a short upper tier offers a couple of two-pitch options. The sector as a whole gets morning sun and falls into shade by early afternoon, and rock quality varies, so wear a helmet.",
+  "review": { "sources": ["https://www.mountainproject.com/area/122310683/the-aqueducts", "https://www.mountainproject.com/area/122278239/colosseum"] }
+ },
+ "az_roadside_crag": {
+  "_expect": { "name": "Roadside Crag", "region": "Arizona" },
+  "blurb": "A small southwest-facing sport crag high on Mingus Mountain in central Arizona, around 7,000 feet above the Verde Valley. Nine bolted routes make up the wall, mostly in the 5.10 range with a couple of easier and harder lines at either end, from the high 5.8s to the low 5.11s. The face is well featured, and the cliff began life as a top-rope spot before being bolted for lead climbing. It is a short outing: you leave the car in a pullout beside the highway and walk down a wash to the base, about 10 to 15 minutes. Expect a quiet day, since this is a hidden corner of an out-of-the-way mountain.",
+  "review": { "sources": ["https://www.mountainproject.com/area/112876538/roadside-crag", "https://www.mountainproject.com/area/112876505/mingus-mountain"] }
+ },
+ "az_knob_hill_east": {
+  "_expect": { "name": "Knob Hill - East", "region": "Arizona" },
+  "blurb": "The easternmost cluster on the Knob Hill hillside in the McDowell Mountains, northeast of Scottsdale. Two small crags share the spot, one angled toward the south-southeast and visible from the trail, the other looking east. Nine routes in total, mainly trad with a few bolted lines and a top-rope or two, covering an easy-to-moderate range from about 5.3 up to the low 5.10s. The granite here is the rough desert kind, and most lines expect you to place your own gear. Reach it with a hike of roughly a mile from the Tom's Thumb trailhead. Watch for a beehive between two routes on the east-facing wall.",
+  "review": { "sources": ["https://www.mountainproject.com/area/120150910/knob-hill-east", "https://www.mountainproject.com/route/106641550/piggys-conch-shell", "https://www.mountainproject.com/v/106153712"] }
+ },
+ "az_dragon_s_den_the": {
+  "_expect": { "name": "Dragon's Den, The", "region": "Arizona" },
+  "blurb": "A compact bouldering spot on Mount Lemmon above Summerhaven, in the Gandalf's Gorge section of the Aspen Trail boulders at around 7,000 feet. Four boulders straddle a creek, holding nine problems that run from very easy to a V10, with a cluster of V6 testpieces as the draw. The wider Aspen Trail zone is treated as a good summer destination, with a stream and trees that make it possible to stay shaded through the day. From the lot it is about a quarter hour on foot.",
+  "approach": "Follow the main trail south from the lot, drop into the gully beyond the first couple of boulders, and keep to the left bank of the creek. One more boulder sits on the right bank just before you arrive.",
+  "approach_min": 15,
+  "review": { "sources": ["https://www.mountainproject.com/area/108878211/the-dragons-den", "https://www.mountainproject.com/area/106544219/aspen-trail-boulders"] }
+ },
+ "_skipped": {
+  "az_den_boulder": "no page about the boulder itself found; only the Icecapades parent page (one page), searches for the name returned nothing else",
+  "az_south_face_the": "no fetched page about The South Face itself; only the Lost Wall parent page and a classics list name it",
+  "az_big_poppa": "two searches found no page for a Big Poppa in this Arizona parent area (only a California boulder and a sport route elsewhere); Big Boulder page fetched is a Prescott boulder, different place",
+  "az_south_dome": "the South Dome page found describes a dome in North Idaho (different location); only the Upper Highway parent lists it, with no detail"
+ },
+ "_conflicts": {
+  "az_roadside_crag": "stored rock is sandstone, but the crag page (https://www.mountainproject.com/area/112876538/roadside-crag) says well featured limestone; the Mingus Mountain page (https://www.mountainproject.com/area/112876505/mingus-mountain) says limestone, tuff and basalt mix across the mountain with occasional sandstone"
+ }
+}

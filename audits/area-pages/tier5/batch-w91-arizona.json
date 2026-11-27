@@ -1,0 +1,63 @@
+{
+ "az_summit_block_rock": {
+  "_expect": {
+   "name": "Summit Block Rock",
+   "region": "Arizona"
+  },
+  "blurb": "Summit Block Rock is a small tower in West Sedona, tucked into the shadow cast by the neighboring Coffeepot Rock and hard to pick out until you are nearly beneath it. Five trad lines are on offer, running from roughly 5.8 up to the 5.10 range, with the bulk of them at 5.10. At least one is a four-pitch outing, so it suits parties wanting a multi-pitch day on moderate-to-stiff grades. Expect a ledge on the way in, in a residential neighborhood setting where you should drive gently.",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/area/105808366/summit-block-rock",
+    "https://www.mountainproject.com/area/105808339/coffeepot-rock-area"
+   ]
+  }
+ },
+ "az_turkey_dome": {
+  "_expect": {
+   "name": "Turkey Dome",
+   "region": "Arizona"
+  },
+  "blurb": "Turkey Dome, also known as Three Sisters, is a steep, pointed butte at the head of the Turkey Creek drainage in the Little Park part of southwest Sedona. A slender tower rises on its northwest side. Climbing here is a small mix of sport and trad: three bolted lines and two trad lines, spanning about 5.9 to 5.11, with most of the routes in the 5.10 range. Several are two pitches.",
+  "review": {
+   "sources": [
+    "https://openbeta.io/area/d2e2dc76-687f-5fb4-afbb-7f76a16980bd/turkey-dome",
+    "https://www.mountainproject.com/area/107439449/village-of-oak-creek"
+   ]
+  }
+ },
+ "az_the_obelisk": {
+  "_expect": {
+   "name": "The Obelisk",
+   "region": "Arizona"
+  },
+  "blurb": "The Obelisk is a pale buttress that forms the high point of the Colosseum on Mount Lemmon, above Tucson. It holds five sport routes, nearly all in the 5.11 range with one a notch easier and one at 5.12-. These are the longest lines in the Colosseum, and some of the longest single-pitch sport climbs on the mountain below the summit crags. The way in goes up a gully using bolted fixed lines, ending on a ledge at the base. Loose rock is possible around the belay area, so wear a helmet.",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/area/122309075/the-obelisk",
+    "https://www.mountainproject.com/area/122278239/colosseum"
+   ]
+  }
+ },
+ "az_south_rim_trail_boulder": {
+  "_expect": {
+   "name": "South Rim Trail Boulder",
+   "region": "Arizona"
+  },
+  "blurb": "South Rim Trail Boulder is a bouldering spot at roughly 6,800 feet on the Grand Canyon's south side, reached on foot from the village. It has five problems: a spread of easy to moderate lines from V0 to V3, plus one much harder problem around V6. A large cave marks the spot and is hard to miss once you branch off toward the canyon. It is a short, casual stop for anyone already visiting the rim, rather than a destination for a full day of climbing.",
+  "review": {
+   "sources": [
+    "https://mountainproject.com/area/121801567/south-rim-trail-boulder",
+    "https://www.mountainproject.com/area/108927431/grand-canyon-bouldering"
+   ]
+  }
+ },
+ "_skipped": {
+  "az_renaissance_tower": "no page found for this crag by name; only the Queen Creek / Atlantis parent pages turned up (2 searches, nothing naming it)",
+  "az_tempeh_wall": "only one fetched page (the crag's own) describes it; no second page names it",
+  "az_travis_walton": "no page found for this crag by name in two searches; only Mid-Mountain parent pages",
+  "az_3_north_block": "no page found for a North Block at Lonesome Pine; the only North Block page is in South Dakota, and the Lonesome Pine page does not name it"
+ },
+ "_conflicts": {
+  "az_summit_block_rock": "stored rock is limestone but https://www.mountainproject.com/area/105808366/summit-block-rock describes the formation as sandstone (one page only); stored value left unchanged"
+ }
+}

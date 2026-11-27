@@ -1,0 +1,45 @@
+{
+ "ak_windy_point_ice_and_mixed_climbs": {
+  "_expect": {"name": "Windy Point", "region": "Alaska"},
+  "blurb": "A small cluster of roadside winter climbs on the Seward Highway south of Anchorage, strung out between Sunshine Ridge and Windy Point. Eight lines are known here: five ice routes, nearly all WI3 with a single WI4, plus three mixed lines running from M5 up to M8. Ice along this highway generally builds from late November and hangs on until about the end of March, or until a warm spell takes it out. Some climbs along the corridor sit a few feet from passing traffic, so expect noise. It suits a short winter outing from town rather than a big day.",
+  "review": {"sources": ["https://www.mountainproject.com/area/125615034/windy-point-ice-and-mixed-climbs", "https://www.mountainproject.com/area/125614954/seward-highway-ice-mixed"]}
+ },
+ "ak_house_boulder_the": {
+  "_expect": {"name": "House Boulder, The", "region": "Alaska"},
+  "blurb": "A big boulder topped by a little hut, out on the tidal flats of Captain Cook State Recreation Area at the north end of the Kenai Peninsula road system. It holds eight problems, from V0 up to V6, with most of them in the V0 to V4 range. The stone can be slick and hard on skin but offers good holds and interesting features. The spot is quiet apart from the odd ATV, and the base has some buried junk, so watch your landings. Reaching it means a long beach walk, and the incoming tide can cut off or soak the walk out.",
+  "review": {"sources": ["https://www.mountainproject.com/area/108252354/the-house-boulder", "https://mountainproject.com/area/108219460/capt-cook-state-recreation-area"]}
+ },
+ "ak_frostbite_boulders_anchorage_ak": {
+  "_expect": {"name": "Frostbite Boulders- Anchorage, AK", "region": "Alaska"},
+  "blurb": "A group of boulders in the hills above Eagle River, northeast of Anchorage, centered on one large overhanging block and reached on foot along the Dew Mound Trail. The eight problems here are all bouldering, spread from V1 up to V9, with a few in the V3 to V5 middle. Some blocks are clean and solid, while others need a brushing after freeze-thaw, and tops often carry moss or lichen, so carry a brush. There is still room for new problems. The same boulders serve as a landmark on the walk toward the nearby south-facing Kiliak Wall.",
+  "review": {"sources": ["https://www.mountainproject.com/area/106436706/frostbite-boulders-anchorage-ak", "https://www.mountainproject.com/area/108339771"]}
+ },
+ "ak_lefty_area": {
+  "_expect": {"name": "Lefty Area", "region": "Alaska"},
+  "blurb": "A short forest cliff, about 80 feet tall, tucked beside the Pivot Point trail on the Seward Highway south of Anchorage. Of its eight routes, five are sport and two are trad, mostly between the high 5.7s and 5.10, with a hard 5.10 at the top end, plus one short ice or mixed top-rope line. The Pivot Point area tends to be shady and wind-free, and it can stay dry in a shower thanks to the trees. This wall is quieter than neighboring Lower and Upper Pivot Point, and one of its easier routes is recommended for learning to lead.",
+  "parking_note": "Pull off the Seward Highway at the Pivot Point trailhead, a large grassy ramp a bit over two miles past the weigh station (about mile 112.4).",
+  "approach": "Walk a few steps up the Pivot Point trail, then bear left through the trees for a few hundred feet to the base.",
+  "review": {"sources": ["https://www.mountainproject.com/v/108947062", "https://www.mountainproject.com/area/107137398/pivot-point"]}
+ },
+ "ak_dermatologist_s_dream_wall": {
+  "_expect": {"name": "Dermatologist's Dream Wall", "region": "Alaska"},
+  "blurb": "A wall of dark and light streaked stone in the Reed Lakes valley of Hatcher Pass, north of Palmer, reached from Archangel Road by the trail toward the old cabin basin where most of the climbing sits. Seven routes are known here, mostly trad with a few bolted lines, concentrated around 5.10 with a couple in the 5.11 range and one at 5.9. It is a place for climbers comfortable on moderate-to-hard crack and face climbing, since Hatcher Pass has a reputation for stiff grades and sparse protection.",
+  "review": {"sources": ["https://rakkup.com/guidebook/hatcher-pass-rock-climbing/dermatologist-dream/s22912", "https://www.mountainproject.com/area/106207110"]}
+ },
+ "ak_reed_creek_wall": {
+  "_expect": {"name": "Reed Creek Wall", "region": "Alaska"},
+  "blurb": "A granite wall in the alpine Reed Lakes valley of Hatcher Pass, north of Palmer, found beside the trail after it crosses the creek. Seven routes mix trad and sport, mostly easier to middle grades from about 5.7 to 5.10, with a single 5.11. The stone is generally solid, though some pieces are loose, and the wall is lichen-covered with older fixed gear, so it feels dated and a bit dirty. It sees little traffic, which makes it a quiet pick for moderate climbers willing to treat old protection with care.",
+  "review": {"sources": ["https://www.mountainproject.com/area/110850597/reed-creek-wall", "https://rakkup.com/guidebook/hatcher-pass-rock-climbing/reed-creek-wall/s22914"]}
+ },
+ "ak_kachemak_crack_aka_rusty_s_lagoon": {
+  "_expect": {"name": "Kachemak Crack (Aka Rusty's Lagoon)", "region": "Alaska"},
+  "blurb": "A small crag behind a beach campsite across Kachemak Bay from Homer, near the entrance to Halibut Cove, that you reach by boat from the harbor. Seven routes are known, mainly trad, with one top-rope line; most sit around 5.10, with an easier classic crack near 5.7 and one route in the low 5.12 range. The wall is about a hundred feet high and catches sun from about midday to sunset. It feels secluded and peaceful, though the camp is popular and can fill up. Some routes are only partly bolted and are often top-roped.",
+  "review": {"sources": ["https://www.mountainproject.com/area/108115064/kachemak-crack-aka-rustys-lagoon", "https://www.kachemakbaywatertrail.org/site/kachemak-crack"]}
+ },
+ "_skipped": {
+  "ak_blueberry_block": "only one fetched page is about the crag itself (MP crag page); the Valdez berry trail page names Blueberry Rock, not this crag, and the Visit Valdez page returned HTTP 500"
+ },
+ "_conflicts": {
+  "ak_frostbite_boulders_anchorage_ak": "Approach distance along Dew Mound Trail differs: MP Frostbite page says 2.5 to 3 miles (https://www.mountainproject.com/area/106436706/frostbite-boulders-anchorage-ak), Kiliak Wall page says about two miles (https://www.mountainproject.com/area/108339771). No value stored, none written."
+ }
+}

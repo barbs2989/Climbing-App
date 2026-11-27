@@ -1,0 +1,48 @@
+{
+ "az_church_wall": {
+  "_expect": {"name": "Church Wall", "region": "Arizona"},
+  "blurb": "A small trad wall in the Church Spires area near Sedona, standing just left of the Watchtower. Six trad lines run from 5.10 into the 5.11 range, and one of them stretches to three pitches. The wall catches plenty of sun. Getting there takes a committed hike of roughly 30 to 45 minutes that ends with a short fourth-class scramble, so this is a half-day outing rather than a quick lap.",
+  "parking_note": "Turn east off Highway 179 onto Chapel Road and leave the car in the pullout on the north side, short of the gate.",
+  "approach": "Walk through the chapel parking lot to the climbers' trail on its east side. After about a quarter mile it meets a wide bike trail; follow that 50 to 100 yards to a wash on the left beneath the big roof. Scramble a short fourth-class step at the top of the wash, then follow the trail to the cliff base and move up and left to the ledge under the wall.",
+  "review": {"sources": ["https://www.mountainproject.com/area/105814735/church-wall", "https://www.mountainproject.com/area/105814703"]}
+ },
+ "az_lost_canyon": {
+  "_expect": {"name": "Lost Canyon", "region": "Arizona"},
+  "blurb": "Lost Canyon is a long rocky drainage off Schnebly Hill Road near Sedona, running parallel to Damfino Canyon and ending at a cluster of bolted lines. It is mostly a hard-climbing venue: six routes, four trad and two sport, from about 5.11 up into the 5.13 range, with a few shorter sport and mixed options alongside. The hike is a little over a mile and takes around an hour and a half. The wash is choked with plants, so wear long pants.",
+  "review": {"sources": ["https://www.mountainproject.com/area/106172258/lost-canyon", "https://www.mountainproject.com/area/107439475/sedona"]}
+ },
+ "az_schnebly_hill_overlook": {
+  "_expect": {"name": "Schnebly Hill Overlook", "region": "Arizona"},
+  "blurb": "A small bouldering spot of six problems in a drainage along the Oak Creek Canyon rim, reached from Schnebly Hill Road. Most of the problems are easy, with two V1s and a V2, then the grades jump to a V7, a V8 and one very hard V12. Most of the climbing sees little sun. It is a short visit best suited to climbers who already boulder at the middle grades or higher.",
+  "review": {"sources": ["https://www.mountainproject.com/area/119902838/schnebly-hill-overlook", "https://mountainproject.com/area/110135690/flagstaff-bouldering"]}
+ },
+ "az_tiger_wall_area": {
+  "_expect": {"name": "Tiger Wall Area", "region": "Arizona"},
+  "blurb": "Six boulder problems on a wall streaked in orange and black, in the Freidlein Prairie zone of the San Francisco Peaks near Flagstaff. The trail down from the Anvil reaches it in about five minutes. The range is wide: an easy V0 and a V3 at the bottom, then a run of tough problems from V8 up through V9 and V11 to a V12 at the top. It suits strong boulderers more than newcomers, though the easier lines make a pleasant warm-up.",
+  "review": {"sources": ["https://www.mountainproject.com/area/106918089/tiger-wall-area", "https://mountainproject.com/area/106799726/freidlein-prairie"]}
+ },
+ "az_midway_boulders": {
+  "_expect": {"name": "Midway Boulders", "region": "Arizona"},
+  "blurb": "A sizable pile of boulders in the Flagstaff bouldering region with six problems that cover the whole spectrum, from an easy V0 and V2 through the middle grades to a V10 project-level line. The boulders face east, so they warm up in the morning and go into shade by early afternoon. The hike up the main trail from the lot takes about 25 to 30 minutes, and one boulder can be spotted from the trail on the way.",
+  "review": {"sources": ["https://www.mountainproject.com/area/114807230/midway", "https://www.mountainproject.com/area/classics/112866650/first-gully-boulders"]}
+ },
+ "az_solitude_canyon_2": {
+  "_expect": {"name": "Solitude Canyon Bouldering", "region": "Arizona"},
+  "blurb": "A scattering of six boulder problems in the drainage below the Solitude Wall on Mt. Elden near Flagstaff, once known as the 5 Star Circuit. The grades sit in the middle of the scale, from V2 to V7, with a couple of tall old-school lines. The trail ends at the canyon mouth, after which you bushwhack up the drainage, so it works best as a full day with a group and a good stack of pads.",
+  "parking_note": "Park in the cul-de-sac at the end of Paradise, the same spot used for Gloria's Boulders.",
+  "review": {"sources": ["https://www.mountainproject.com/area/114338659/solitude-canyon", "https://www.mountainproject.com/area/106878265/solitude-canyon"]}
+ },
+ "az_legion_boulder": {
+  "_expect": {"name": "Legion Boulder", "region": "Arizona"},
+  "blurb": "A massive boulder among the Elysian Boulders on Mt. Elden near Flagstaff, with six problems that blend powerful and technical climbing. The range runs from an easy V0 and a V3 through two V8s to a pair of V11s, and several lines are tall, so bring as many pads as you can. Grades are estimates because few ascents have been logged. The walk in is long, around 40 minutes with gear, and cairns are sparse. The boulders get sun until the mountain shades them later in the day.",
+  "review": {"sources": ["https://mountainproject.com/area/121288150/legion-boulder", "https://mountainproject.com/area/121288132/elysian-boulders"]}
+ },
+ "_skipped": {
+  "az_moon_roof": "no fetched page about the crag itself: only a route page (Hyperion) lists Moon Roof under Priest Draw; the other Moon Roof area page is in a different state"
+ },
+ "_conflicts": {
+  "az_tiger_wall_area": "Stored rock is rhyolite, but https://mountainproject.com/area/106799726/freidlein-prairie says Freidlein Prairie rock is mostly andesite and https://mountainproject.com/area/110135690/flagstaff-bouldering groups it under dacite.",
+  "az_legion_boulder": "Stored rock is limestone, but https://mountainproject.com/area/121288132/elysian-boulders says the rock at Elysian Boulders is dacite.",
+  "az_solitude_canyon_2": "Stored rock is rhyolite, but https://www.mountainproject.com/area/106878265/solitude-canyon names Lunchbox Rock in this canyon as dacite and https://mountainproject.com/area/121288132/elysian-boulders gives dacite for Mt. Elden boulders."
+ }
+}

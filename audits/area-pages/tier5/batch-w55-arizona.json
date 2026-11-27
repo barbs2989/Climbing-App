@@ -1,0 +1,39 @@
+{
+ "az_the_shooting_gallery": {
+  "_expect": { "name": "The Shooting Gallery", "region": "Arizona" },
+  "blurb": "A small bolted crag on the lower stretch of the Catalina Highway side of Mount Lemmon, near Tucson, at roughly 4,200 feet. Eight sport lines cover easy fifth class to the 5.10 range: a pair at 5.7, a pair at 5.9 and four at 5.10, so it suits climbers warming up or stepping into the 10s. The stone is compact and solid with decent features, and every line ends at lower-off anchors. A big oak at the base keeps the wall in shade or dappled light for most of the day, and the area's desert setting among saguaros is most pleasant in the cooler months. Expect a short hike in from the highway.",
+  "review": { "sources": ["https://www.mountainproject.com/area/123460455/the-shooting-gallery", "https://www.mountainproject.com/area/106822869/1-lower-highway"] }
+ },
+ "az_canyoneers_wall": {
+  "_expect": { "name": "Canyoneers Wall", "region": "Arizona" },
+  "blurb": "A colorful wall in Christopher Creek Gorge in central Arizona, at about 5,300 feet, upstream of where Spring Creek meets Christopher Creek. The left end is a deeply red, streaked section around 50 feet tall, beside a higher lichen-covered face; the wall finishes at the water with a dome that is slabby on one side and steep and water-polished toward the gorge. Eight routes mix cracks and faces, five sport and three trad, with grades from 5.8 up through the 5.10s, 5.11s and 5.12s to one 5.14-range project. The gorge's sunny side suits winter days while the shaded side is better in warm months; midsummer heat and insects are best avoided.",
+  "review": { "sources": ["https://www.mountainproject.com/area/111807931/canyoneers-wall", "https://www.discovergilacounty.com/rock-climbing-cc-gorge"] }
+ },
+ "az_stones_the": {
+  "_expect": { "name": "Stones, The", "region": "Arizona" },
+  "blurb": "A small trad crag in the Windy Ridge section of the Catalina Highway on Mount Lemmon, near Tucson, at around 6,500 feet. The walls stand right beside the road on both sides, so there is hardly any walk. It holds eight gear routes, mostly in the 5.10 range: two at 5.9, four at 5.10 and two at 5.11. The walls likely pick up sun early in the day. Windy Ridge as a whole is best in spring and fall, since summer runs hot at this elevation and winter turns cold.",
+  "review": { "sources": ["https://mountainproject.com/area/106364403/the-stones", "https://www.mountainproject.com/area/106824304/5-windy-ridge"] }
+ },
+ "az_welcome_wall_2": {
+  "_expect": { "name": "Welcome Wall", "region": "Arizona" },
+  "blurb": "The western-most sector of The Prow at the Farmhouse, a cliff band in southern Arizona at about 5,400 feet. It is the first wall you reach on the trail, with vertical to slightly overhung faces. Eight sport routes run from 5.8 through the 5.10s and 5.11s into 5.12 and one 5.13-range line, a good spread for a mid-grade climber who wants steeper, featured climbing. The Prow section is mostly shaded, and the cliff band's elevation gives it a long season, possibly all year. The lines here came out of a 2018 development weekend, so they are fairly new.",
+  "review": { "sources": ["https://www.mountainproject.com/area/116069147/welcome-wall", "https://www.mountainproject.com/area/109590816/the-farmhouse"] }
+ },
+ "az_catopia": {
+  "_expect": { "name": "Catopia", "region": "Arizona" },
+  "blurb": "A trad-only crag at the south end of The Refuge, in the Lower Devil's Canyon part of the Queen Creek area of central Arizona. All eight routes need gear: one at 5.6, one at 5.8, a couple at 5.9 and four at 5.10, with two of the harder ones carrying a PG13 rating. Rock quality in the surrounding Refuge varies, being best on the shadier faces and weaker on some sunnier ones. The Refuge has short walk-ins marked with cairns, and a quiet, wildlife-filled feel.",
+  "review": { "sources": ["https://www.mountainproject.com/v/107939118", "https://www.mountainproject.com/area/107380532/the-refuge"] }
+ },
+ "az_maze_the": {
+  "_expect": { "name": "Maze, The", "region": "Arizona" },
+  "blurb": "A bouldering sector at Oak Flat in Queen Creek Canyon, central Arizona, at about 4,000 feet. It is a tangle of boulders with the heaviest cluster of problems in The Flats, and there is no trail through, so first-timers easily lose their bearings. Of eight problems, most are easy to moderate, from V0 to V2, with one V4 and one very hard V10-range line. The walk goes down the road through sand, then up and over the far side of the canyon to a long wall with many problems. Oak Flat stone can be abrasive on skin.",
+  "review": { "sources": ["https://www.mountainproject.com/area/106959068/the-maze", "https://www.mountainproject.com/area/106959022/oak-flat"] }
+ },
+ "_skipped": {
+  "az_amphitheater_the": "no fetched page about this crag or Northern Devils Canyon found; searches (2+) returned only other states' Amphitheaters and Upper Devils Canyon, which does not mention it",
+  "az_piranha_flats_west": "no fetched page about this crag itself; only an Oak Flat listing line and approach-trail snippets mention it"
+ },
+ "_conflicts": {
+  "az_welcome_wall_2": "stored rock sandstone, but https://www.mountainproject.com/area/116069147/welcome-wall and https://www.mountainproject.com/area/109590816/the-farmhouse describe chert-rich walls and https://sendage.com/area/farmhouse-az-usa calls the Farmhouse limestone; stored value left unchanged"
+ }
+}

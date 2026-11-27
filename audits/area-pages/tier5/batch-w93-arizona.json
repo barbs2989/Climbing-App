@@ -1,0 +1,23 @@
+{
+ "az_boulder_canyon": {
+  "_expect": { "name": "Boulder Canyon", "region": "Arizona" },
+  "blurb": "Boulder Canyon is a small, trad-leaning pocket of climbing on the Camelback Mountain side of Phoenix. It holds five routes: four trad and one sport line, all easy to moderate, from fourth-class terrain up to about 5.7. To reach it, start up the Echo Canyon summit trail, bear right at the foot of the first set of steps onto Bobby's Rock Trail, and keep right past Grotto Cave and Suicide Canyon toward a 300-foot wall. The canyon sits up and to the left of that wall. Expect some runout, low-angle ground and hollow-sounding rock on at least one of the longer lines, so carry small nuts and a modest trad rack.",
+  "review": { "sources": ["https://www.mountainproject.com/v/boulder-canyon/106389009", "https://www.mountainproject.com/route/113833495/right-wall?print=1"] }
+ },
+ "az_los_viejos_crag": {
+  "_expect": { "name": "Los Viejos Crag", "region": "Arizona" },
+  "blurb": "Los Viejos Crag is a small, remote south-facing crag on the eastern slopes of the Santa Catalina Mountains, northeast of Tucson, at roughly 4,800 feet. It holds five trad routes in a moderate range, from 5.8 up to the low 5.10s. Reaching it takes real effort: a dirt road off Redington Road, about an hour of driving from Tanque Verde Road where high clearance helps, then around an hour on foot up a wash and across a side drainage to the base. Treat it as a winter objective, with climbing running from late fall into early spring.",
+  "review": { "sources": ["https://www.mountainproject.com/area/108019143/los-viejos-crag", "https://www.mountainproject.com/area/106822076/mount-lemmon-santa-catalina-mountains"] }
+ },
+ "_skipped": {
+  "az_beast_boulder": "no fetched page about Beast Boulder itself: the Mountain Project Beast Boulder URL fetched is a Virginia boulder; only the Panther Peak parent page and a blog name the Tucson one",
+  "az_meatwad": "no fetched page about Meatwad itself; only the Panther Peak parent page and a route page name it",
+  "az_eagletail_peak_eagle_feathers": "input coordinates (lng -112.07, Phoenix) do not match the Eagletail Mountains (about -113.3), so the pages describe a place in a different location",
+  "az_garland_area": "no fetched page about the Garland Area itself; only the Mine Area parent page and one route page name it",
+  "az_gollum_s": "no fetched page about Gollum's itself; the only hits are parent Gandalf's Gorge listings that name it with no detail, and unrelated pages",
+  "az_lower_mt_wilson_wall": "no fetched page about the wall itself; only a route page and the Midgley Bridge parent page name it, with no description"
+ },
+ "_conflicts": {
+  "az_boulder_canyon": "stored rock granite; the Boulder Canyon page https://www.mountainproject.com/v/boulder-canyon/106389009 says layered sandstone, while https://www.mountainproject.com/area/105787836/camelback-mountain says the east side is mostly granite and the west side sedimentary. Left unchanged, rock not named in blurb."
+ }
+}

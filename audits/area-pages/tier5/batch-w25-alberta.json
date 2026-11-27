@@ -1,0 +1,26 @@
+{
+ "ab_ninja_turtles_boulder": {
+  "_expect": { "name": "Ninja Turtles Boulder", "region": "Alberta" },
+  "blurb": "A single large limestone boulder in the House Area of Frank Slide, close to the road in the Crowsnest Pass. It holds nine problems, mostly slab lines, spanning V0 to V4. Most of them fall at V0 and V1, with just one each at V2, V3 and V4, so it suits a warm-up, a beginner session, or a quick stop between harder boulders. The back face has a flat landing below a vertical line. To get there, take the trail toward the Sofa King boulder and branch off to the right. Expect company on busy weekends, since this is a popular stop within the wider slide.",
+  "review": { "sources": ["https://www.mountainproject.com/area/114603942/ninja-turtles-boulder", "https://thetopo.com/crags/frank-slide/topos/ninja-turtles"] }
+ },
+ "ab_liquid_sky": {
+  "_expect": { "name": "Liquid Sky", "region": "Alberta" },
+  "blurb": "A small buttress on the left side of an amphitheatre at Back of the Lake, above Lake Louise in Banff National Park. Nine routes share the wall, five bolted and four on traditional gear. The grades stretch from easy fives up to one 5.12, though most of the lines sit in the 5.10 to 5.11 range, so it is better for intermediate and strong climbers than for novices. The quartzite here tends toward vertical to steep, pumpy climbing. It is a short outing for a few good lines rather than a day with plenty of variety.",
+  "approach": "Follow the lake trail to its far end, then continue beyond the big cliffs to the buttress at the end of the first cliff band.",
+  "review": { "sources": ["https://www.mountainproject.com/area/107232541/liquid-sky", "https://www.mountainproject.com/area/107231410/the-back-of-the-lake", "https://gripped.com/?p=24113"] }
+ },
+ "ab_the_narrows_2": {
+  "_expect": { "name": "The Narrows", "region": "Alberta" },
+  "blurb": "A tight section of Grotto Canyon near Canmore where the walls pinch together. The shade here is constant, which makes it a reasonable pick when other crags are baking. Nine bolted routes make up the wall, ranging from 5.6 up to 5.10, with the largest share at 5.10, so it is friendly to newer leaders and to people building toward the low double digits. Most of the lines are on the left side as you enter. Expect some polish on popular routes, and more climbing nearby in the canyon.",
+  "approach": "Walk up the canyon streambed to the T-junction at the headwall, then turn left where the walls squeeze together; most of the routes are on the left.",
+  "review": { "sources": ["https://www.mountainproject.com/area/119671938/the-narrows", "https://mountainproject.com/area/113323819/grotto-canyon"] }
+ },
+ "_skipped": {
+  "ab_2_the_step": "Only the parent Cloud Break page could be fetched (it gives The Step as a sub-area of 9 sport routes and a walk time, nothing else); no page about The Step itself found.",
+  "ab_east_boulder": "The Big Rock / Okotoks Erratic page states climbing there is now prohibited.",
+  "ab_orient_point": "fetch outage: the pages about Orient Point (SummitPost, UKClimbing) returned 403/402; only route pages were otherwise reachable.",
+  "ab_graceland_area": "Only the parent Grassi Lakes page was fetched (lists the sub-area and two routes, no sub-area detail); the crag's own page could not be fetched (thecrag 403).",
+  "ab_7_the_bowl_and_red_shirt": "fetch outage: SummitPost Red Shirt Wall page returned 403; only the parent Yamnuska page and a single route page were fetched."
+ }
+}

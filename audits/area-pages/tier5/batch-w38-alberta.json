@@ -1,0 +1,65 @@
+{
+ "ab_lower_alphabet_crag": {
+  "_expect": {
+   "name": "Lower Alphabet Crag",
+   "region": "Alberta"
+  },
+  "blurb": "A small bolted sport crag in Quaite Valley, a quiet side valley of the Bow Valley east of Heart Creek. Five short routes sit on the lower of the valley's two main walls, with most of them at an easy-to-middling level: three at 5.8, one at 5.9 and a single 5.10. It suits climbers building up to the grade, and the tiny size means it works best for one party at a time rather than a crowd. The walk in follows an old, gentle road, which makes the day pleasant even before the climbing starts. A short step off the road puts you at the base.",
+  "approach": "Walk the old gravel road past the gate, and watch for a cairn on the left just after a wide left bend. From the cairn the crag is only a short distance away.",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/area/117273906/lower-alphabet-crag",
+    "https://www.mountainproject.com/area/117273899/quaite-valley"
+   ]
+  }
+ },
+ "ab_upper_alphabet_crag": {
+  "_expect": {
+   "name": "Upper Alphabet Crag",
+   "region": "Alberta"
+  },
+  "blurb": "The higher of the two sport walls in Quaite Valley, in the Bow Valley of Alberta. It holds five bolted routes running from about 5.7 up to 5.10, so most of it sits in the moderate range. The stone here is broken and jagged, which makes the climbing feel quite different from the wall below it, and there is more room to stand and belay. You reach it a minute or so beyond the lower crag, so the two are easy to combine. The valley sees few visitors, and there is room for roughly one party per wall.",
+  "approach": "Walk the old valley road to the cairn, go to the lower crag, then keep following the trail from its right side for about a minute.",
+  "approach_min": 1,
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/area/117277814/upper-alphabet-crag",
+    "https://www.mountainproject.com/area/117273899/quaite-valley"
+   ]
+  }
+ },
+ "ab_perch_area": {
+  "_expect": {
+   "name": "Perch Area",
+   "region": "Alberta"
+  },
+  "blurb": "One of three sections of Expressions Wall, a steep limestone sport wall in the Bow Valley that stands out from the road as a patch of striped blue rock. The Perch holds five bolted routes in the 5.11 to 5.12 range, three of them at 5.12, so it is a hard-grade venue. Reaching it means going up from the Bench Area by chain and rungs onto a ledge system, and the belays are taken from a broken ledge that works but is not roomy. The rock is slightly overhanging and the quality is described as excellent. Climbers who dislike exposure should think twice.",
+  "rock": "limestone",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/area/201528268/perch-area",
+    "https://www.mountainproject.com/area/201502713/expressions-wall",
+    "https://gripped.com/?p=45631"
+   ]
+  }
+ },
+ "ab_mount_andromeda": {
+  "_expect": {
+   "name": "Mount Andromeda",
+   "region": "Alberta"
+  },
+  "blurb": "A big glaciated peak on the Columbia Icefield, visible from the Icefields Parkway and linked to neighbouring Mount Athabasca by a col. The five climbs here are alpine snow, ice and mixed lines, from easy-angled WI2 up to one demanding M6 mixed route, with the northeast face holding much of the steeper terrain. Approaches cross moraine and glaciers, where roped travel is advised. Corniced ridges and avalanche slopes mean this is serious mountain terrain, not a roadside crag, though the trailhead is close to the road.",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/area/119355727/mount-andromeda?print=1",
+    "https://en.wikipedia.org/wiki/Mount_Andromeda_(Alberta)"
+   ]
+  }
+ },
+ "_skipped": {
+  "ab_eastpost": "no fetched page about the crag itself: only a parent Porcupine Creek listing (5 climbs, no details); a Bugaboos Eastpost Spire is a different place",
+  "ab_rodent_rock": "only one fetched page about the crag (Mountain Project); the Rodent Ravine page is a different location",
+  "ab_the_ship_s_prow": "no fetched page matched the Canmore Ship's Prow: every area page fetched was a different place (West Virginia, Vermont, Massachusetts, Colorado); two news and trip pages mention it but none is an area page",
+  "ab_mount_murchison": "second source is adventure-collective (low reliability); only one usable page"
+ }
+}

@@ -1,0 +1,28 @@
+{
+ "az_five_thirteen_wall": {
+  "_expect": {"name": "Five-Thirteen Wall", "region": "Arizona"},
+  "blurb": "A small, steep wall tucked into the Hairpin Turn Area on the Mount Lemmon side of the Catalina Highway. Seven routes, mostly bolted with a single trad line, run from about 5.10 up to the low 5.12s, with most of the weight in 5.11. It catches morning sun and drops into shade around one in the afternoon, so it suits warm days when you want to climb early. The walk in follows Hairpin Canyon up toward Rivendale, and a cairn on the left marks the faint path to the base; expect close to an hour on the way in.",
+  "review": {"sources": ["https://www.mountainproject.com/area/108784190/five-thirteen-wall", "https://www.mountainproject.com/area/108587094/hairpin-turn-area"]}
+ },
+ "az_balls_wall": {
+  "_expect": {"name": "Balls Wall", "region": "Arizona"},
+  "blurb": "A small south-facing cliff high on Bill Williams Mountain above the town of Williams, at roughly 7,500 feet. It looks unremarkable from below but climbs better than expected, with mostly bolted face routes and a couple of worthwhile cracks. Seven routes here, five sport and two trad, cluster between 5.10 and 5.12, with most in the 5.11 range. You leave the car at a roadside pullout on the forest road and tackle a short, steep hillside walk of about 150 feet to reach the base.",
+  "review": {"sources": ["https://www.mountainproject.com/area/106548309/balls-wall", "https://mountainproject.com/area/106548175/bill-williams-mountain"]}
+ },
+ "az_jungle_wall_the": {
+  "_expect": {"name": "Jungle Wall, The", "region": "Arizona"},
+  "blurb": "A north-facing basalt wall at Paradise Forks, in Sycamore Canyon west of Flagstaff, directly across the canyon from the Gold Wall. It is mainly a trad wall, with six trad lines and one top-rope among its seven routes, spanning roughly 5.9 to 5.12. The stone here is rougher than elsewhere at the Forks and collects dirt washed off the rim, so it sees fewer visitors. Getting in means reaching the rim by circling around the western end of the Gold Pond canyon and rappelling down, or dropping in from the Gold Wall and scrambling across.",
+  "review": {"sources": ["https://www.mountainproject.com/area/105792346/the-jungle-wall", "https://www.mountainproject.com/area/105787813/paradise-forks"]}
+ },
+ "_skipped": {
+  "az_notorious_wall": "no fetched page about the crag itself; only the McNutt parent page",
+  "az_devil_s_rejects": "one page about the crag; second candidates (Queen Creek Canyon parent, Devils Rejects East) do not describe or name it usefully",
+  "az_alligator_jaw_boulder": "no page found for this boulder in two searches; Papago Park page does not list it",
+  "az_sharp_boulder": "parent area page flagged closed to all climbing on private property; only MP pages found",
+  "az_el_oso_rodeo": "no climbing area page found in two searches"
+ },
+ "_conflicts": {
+  "az_balls_wall": "Stored rock rhyolite; the Bill Williams Mountain page (https://mountainproject.com/area/106548175/bill-williams-mountain) says the mountain's rock is dacite or andesite.",
+  "az_five_thirteen_wall": "Wall page calls the rock decent desert rock; parent page (https://www.mountainproject.com/area/108587094/hairpin-turn-area) says rock quality is poor. Stored gneiss not confirmed."
+ }
+}

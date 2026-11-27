@@ -1,0 +1,46 @@
+{
+ "az_astoria": {
+  "_expect": { "name": "Astoria", "region": "Arizona" },
+  "blurb": "Astoria is a small, low-elevation crag on the lower Catalina Highway side of Mount Lemmon, above Tucson. It holds nine climbs, mostly top-rope lines with one trad route and one short boulder problem, and the roped climbs run from easy-moderate into the 5.10 range. The setting suits newcomers and anyone learning to clean anchors, though some moves are sidepull-heavy and it is not the place to lead hard 5.11. The wall stays shaded through summer and picks up sun in winter, and you get views over Tucson and, reportedly, phone reception. More routes are still being added.",
+  "review": { "sources": ["https://www.mountainproject.com/area/106811430/astoria", "https://www.mountainproject.com/area/106822869/1-lower-highway"] }
+ },
+ "az_cave_the": {
+  "_expect": { "name": "Cave, The", "region": "Arizona" },
+  "blurb": "The Cave is a bouldering spot in the Hairpin Boulders cluster on the Catalina Highway, in the Santa Catalina Mountains above Tucson. It holds nine problems, mostly in the easy-to-moderate V range, with a few much harder lines at the top end, including an unfinished project. The nearby Hairpin area has a short approach, mild winter temperatures and afternoon shade in the canyon. To get here, head down the wash from the roadside and look left for the obvious blank roof. Check cracks for spiders and scorpions before reaching in.",
+  "review": { "sources": ["https://www.mountainproject.com/area/106610338/the-cave", "https://www.mountainproject.com/area/106609407/hairpin-boulders"] }
+ },
+ "az_short_stack_the": {
+  "_expect": { "name": "Short Stack., The", "region": "Arizona" },
+  "blurb": "The Short Stack is a compact south-facing wall in the Crags Against Humanity group, a set of roadside cliffs low on the Catalina Highway above Tucson. Nine sport routes run from very easy up to about 5.8, with a few also usable on top rope, and the climbs are short. Large trees at the base give shade, and the gully below is a popular place to hang out. It works well for top-roping, practising leading, or giving a first-timer a few easy pitches. The roadside location means some traffic noise.",
+  "parking_note": "Use the big pullout on the left just beyond the fourth mile marker of the Catalina Highway, at the drainage where a culvert passes under the road.",
+  "review": { "sources": ["https://www.mountainproject.com/area/114153629/the-short-stack", "https://www.mountainproject.com/area/111851490/crags-against-humanity"] }
+ },
+ "az_players_club": {
+  "_expect": { "name": "Players Club", "region": "Arizona" },
+  "blurb": "Players Club is a lower-angle sport crag in the Crags Against Humanity group on the Catalina Highway, Mount Lemmon, near Tucson. It has nine bolted routes of roughly 30 to 60 feet, running from 5.8 up through the 5.10 range, with most sitting around 5.9 to 5.10. It catches sun from about eight until noon and goes into shade in the afternoon, so it suits cool mornings. Sitting farther from the road than the neighboring walls, it is quieter. From the car the walk is under ten minutes, up a gully from the High Stakes tower.",
+  "review": { "sources": ["https://www.mountainproject.com/area/116578655/players-club", "https://www.mountainproject.com/area/111851490/crags-against-humanity"] }
+ },
+ "az_south_face_of_out_of_towners_dome": {
+  "_expect": { "name": "South Face of Out of Towners Dome", "region": "Arizona" },
+  "blurb": "This is the main wall of Out-of-Towners Dome in Cochise Stronghold, in southeast Arizona. It is a multi-pitch face with nine climbs, about half sport and half trad, running from 5.8 up to 5.12. The wall faces south and gets sun all day, even in winter, which makes it a cold-season option. Quality is uneven: a few well-known lines stand out, while the face also holds many undocumented routes, some of them clip-ups or dirty cracks, so route-finding takes study. The descent is long, with bushwhacking and scrambling, and may call for two ropes if you rappel.",
+  "review": { "sources": ["https://www.mountainproject.com/area/121649155/south-face-of-out-of-towners-dome", "https://www.mountainproject.com/area/106085422/out-of-towners-dome"] }
+ },
+ "az_carnal_caves_the": {
+  "_expect": { "name": "Carnal Caves, The", "region": "Arizona" },
+  "blurb": "The Carnal Caves are a small pocket of cliff within Secret Canyon on the east side of Mount Elden, near Flagstaff. Roughly 8,000 feet up, the crag has nine routes, a mix of five sport lines and four trad lines running from 5.7 into the low 5.12s, most of them in the 5.10 to 5.11 range. The climbing is described as traditional in feel, even on the mixed lines, and the sun and shade shift across the key routes. The surrounding area is overgrown and rugged, and the walk in is faint, bushwhacky and includes some loose scrambling.",
+  "review": { "sources": ["https://www.mountainproject.com/area/108138577/the-carnal-caves", "https://www.mountainproject.com/area/107064561/secret-canyon"] }
+ },
+ "az_tower_station": {
+  "_expect": { "name": "Tower Station", "region": "Arizona" },
+  "blurb": "Tower Station sits in Upper Middle Elden Canyon on Mount Elden, north of Flagstaff, at roughly 7,900 feet. Nine routes, mostly sport with two trad lines, cover about 5.9 to 5.12, with the bulk in the 5.9 to 5.10 range. The crag is named for a thin pillar that stands apart from the wall. From the Godfather area it is around five minutes further up the canyon, and the first route you meet has red hangers. Climbing in this canyon works through much of the year thanks to its altitude, and snow melts off quickly in winter. Room remains for new lines.",
+  "review": { "sources": ["https://www.mountainproject.com/area/115688998/tower-station", "https://www.mountainproject.com/area/115688921/upper-middle-elden-canyon"] }
+ },
+ "_skipped": {
+  "az_middle_wall": "only one fetched page describes it (the Ricochet page); search found no second page naming the Middle Wall"
+ },
+ "_conflicts": {
+  "az_carnal_caves_the": "stored rock rhyolite; Mt Elden pages say dacite: https://www.mountainproject.com/area/107064561/secret-canyon and https://www.mountainproject.com/area/105817313/mt-elden-crags",
+  "az_tower_station": "stored rock rhyolite; Mt Elden page says the mountain is dacite: https://www.mountainproject.com/area/105817313/mt-elden-crags (Tower Station page names no rock)",
+  "az_players_club": "stored aspect E; crag page says mostly northeast: https://www.mountainproject.com/area/116578655/players-club"
+ }
+}

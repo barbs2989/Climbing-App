@@ -1,0 +1,40 @@
+{
+ "az_lair_the": {
+  "_expect": { "name": "Lair, The", "region": "Arizona" },
+  "blurb": "The Lair is a small sport wall high in Upper Middle Elden Canyon above Flagstaff, with seven bolted lines. It is built for strong climbers: every route is 5.12 or harder, five of them in the 5.12 range and two at 5.13. The climbing is power-oriented and very technical, on rock of consistently good quality. The upper crags are an adventurous outing, reached by a long hike on social trails, and this is the first of them you meet after passing a boulder beside the cliff trail. Not a place for beginners or for easy warm-ups.",
+  "review": { "sources": ["https://www.mountainproject.com/area/115688954/the-lair", "https://www.mountainproject.com/area/115688921/upper-middle-elden-canyon"] }
+ },
+ "az_hive_the": {
+  "_expect": { "name": "Hive, The", "region": "Arizona" },
+  "blurb": "The Hive is a compact crag in Upper Middle Elden Canyon, only a couple of minutes beyond The Lair. It was the earliest of the canyon's modern sport walls and holds seven routes: six sport and one trad. Grades run from 5.10 to the low 5.12s, with most lines at 5.11. The wall is fairly steep, with big scooped-out pockets, and the rock is better than you might expect. Like the rest of the upper cliff, it sits at the end of a long approach on social trails, roughly 45 minutes once you know the way.",
+  "review": { "sources": ["https://www.mountainproject.com/area/115688936/the-hive", "https://www.mountainproject.com/area/115688921/upper-middle-elden-canyon"] }
+ },
+ "az_warmup_slab_boulder_area": {
+  "_expect": { "name": "Warmup Slab Boulder Area", "region": "Arizona" },
+  "blurb": "A small cluster of seven easy boulder problems within the Anvil Boulders near Sedona, set well north of the main concentration of blocks. The grades are gentle, from VB up to V3, which makes it a good place to loosen up. Some problems have been around a while and others are newer. The stone is sandstone, and the setting sits at a low elevation along Oak Creek, a handy choice in the cooler shoulder seasons. To find it, continue north past a large boulder that is easy to spot from the main trail.",
+  "review": { "sources": ["https://www.mountainproject.com/area/116817264/warmup-slab-boulder-area", "https://www.mountainproject.com/area/105825188/the-anvil-boulders"] }
+ },
+ "az_anvil_area": {
+  "_expect": { "name": "Anvil Area", "region": "Arizona" },
+  "blurb": "Anvil Area is a small group of seven boulder problems in the Freidlein Prairie bouldering zone on the San Francisco Peaks. It is the first area you reach when walking in from the top end. Timber covers the site and shades it heavily, which is welcome in summer, and it is a lovely spot in fall. The grades spread widely, from V0 up to V9, with only a few problems in between: a handful of good easier lines at V0 to V2, then several serious hard ones. The wider area around it is a popular warm-up zone.",
+  "review": { "sources": ["https://www.mountainproject.com/area/119533812/anvil-area", "https://www.mountainproject.com/area/107459976/top-area"] }
+ },
+ "az_upper_skyline": {
+  "_expect": { "name": "Upper Skyline", "region": "Arizona" },
+  "blurb": "Upper Skyline is a small boulder area on the Mt. Elden side of Flagstaff, above the main Skyline Boulders. It sits a little farther up the hillside and off to the right of the Skyline boulder, past a conspicuous patch of conifers, and the way up involves some scrambling. The spot is open and exposed, with plenty of sun and views over town. Caves and corridors reward some wandering. Seven problems here run from V0 to V4, with a few at the top of that range.",
+  "review": { "sources": ["https://www.mountainproject.com/area/114807159/upper-skyline", "https://www.mountainproject.com/area/108648059/skyline-boulders"] }
+ },
+ "az_island_the": {
+  "_expect": { "name": "Island, The", "region": "Arizona" },
+  "blurb": "The Island is a single boulder on a small rise just behind the Brain Boulder, at the mouth of Howard Draw in the Priest Draw area. It carries about seven problems, most between V1 and V3, with two much harder lines at V6 and V7. One of the best-known lines in the draw is found here. Howard Draw as a whole has less stone than neighboring Priest Draw but the same mellow feel, so it suits an easygoing session.",
+  "review": { "sources": ["https://www.mountainproject.com/area/106037257/the-island", "https://www.mountainproject.com/area/107095662/howard-draw"] }
+ },
+ "_skipped": {
+  "az_log_jam_area": "no fetched page about this crag itself: the Log Jam pages found were Washington (Tumwater Canyon), Missouri, and a single route at Camp Rock; West Clear Creek's parent page only lists the area name with 7 routes",
+  "az_3_smaug": "no page about the Smaug boulder itself; it appears only as a line inside the Dragon Eggz parent page and a route page"
+ },
+ "_conflicts": {
+  "az_upper_skyline": "stored rock is rhyolite; the parent Skyline Boulders page says the boulders are dacite (https://www.mountainproject.com/area/108648059/skyline-boulders) and the Flagstaff Bouldering page lists Mt Elden as dacite (https://mountainproject.com/area/110135690/flagstaff-bouldering)",
+  "az_anvil_area": "stored rock is rhyolite; the Flagstaff Bouldering page lists Freidlein Prairie as dacite (https://mountainproject.com/area/110135690/flagstaff-bouldering)"
+ }
+}

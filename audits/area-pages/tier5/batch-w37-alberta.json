@@ -1,0 +1,32 @@
+{
+ "ab_heatwave": {
+  "_expect": { "name": "Heatwave", "region": "Alberta" },
+  "blurb": "A small bolted wall on the shady right-hand side of Cougar Canyon in the Bow Valley, set across from the Catamount crag just past the big bend of the canyon. Five sport routes, one at 5.9 and four in the 5.10 range, make it a moderate-grade stop. The limestone is a mix of white and black rock, and the wall is short rather than imposing. It stays cool, which makes it a sensible choice on hot summer days when the sunnier left side of the canyon is baking. Plan on a quick session of mid-grade sport pitches rather than a full day of climbing.",
+  "review": { "sources": ["https://www.mountainproject.com/area/110925652/heatwave", "https://www.mountainproject.com/area/107761132/cougar-canyon-creek"] }
+ },
+ "ab_grotto_slabs": {
+  "_expect": { "name": "Grotto Slabs", "region": "Alberta" },
+  "blurb": "Grotto Slabs sits at the far upstream end of Grotto Canyon in the Bow Valley, beyond the Hoodoos if you follow the dry streambed in. It holds five bolted slab routes running from 5.5 to 5.7, so it suits newer leaders, anyone seeking an easy day or a warm-up, and parties mixing abilities. The canyon's crags in general sit in shade, and many of its climbs are polished, so expect slick footholds on popular lines. Elevation is roughly 1,400 m (about 4,585 ft). There is no description of the rock beyond the slabby character.",
+  "review": { "sources": ["https://www.mountainproject.com/area/113323830/grotto-slabs", "https://www.mountainproject.com/area/113323819/grotto-canyon"] }
+ },
+ "ab_morning_side_lower_wall": {
+  "_expect": { "name": "Morning side - Lower wall", "region": "Alberta" },
+  "blurb": "A small bolted wall at the lower end of the Morning Side cliffs on Moose Mountain in Kananaskis. Five sport routes, all in the 5.10 range, make it a handy place to loosen up before heading to harder lines higher on the cliff. Reaching it takes a bike ride on the gravel access road followed by a short walk, so it sees few visitors. The crag as a whole faces east and gets early sun. Rock quality on the mountain is described as uneven, even within a single route, so look closely before committing.",
+  "rock": "limestone",
+  "review": { "sources": ["https://sendage.com/area/morning-side-moose-mountain-kananaskis-ab-canada", "https://mountainproject.com/area/122275851/moose-mountain"] }
+ },
+ "ab_mount_temple": {
+  "_expect": { "name": "Mount Temple", "region": "Alberta" },
+  "blurb": "Mount Temple is the highest peak around Lake Louise in Banff National Park, topping out near 3,544 m above the Bow Valley. The climbing is full alpine terrain: the easiest way up is a scramble along the southwest ridge, while the technical lines on the east ridge and the huge north side run from 5.7 up to 5.10 and combine rock, snow and long days. Expect a committed mountain objective that suits experienced parties, with rock that is not especially solid by Canadian standards on the lesser lines.",
+  "review": { "sources": ["https://www.mountainproject.com/area/106997567/mt-temple", "https://en.wikipedia.org/wiki/Mount_Temple_(Alberta)"] }
+ },
+ "_skipped": {
+  "ab_made_in_the_shade_right_side_near_mondo": "no fetched page about this crag itself (only parent Cougar Canyon pages; sendage/MP parent mention 5 routes)",
+  "ab_hillside": "no fetched page about the crag itself; sendage Hillside Wall page empty (climbs hidden), parent page only",
+  "ab_covert": "no fetched page about the crag itself; sendage Covert URL 404, only parent canyon pages",
+  "ab_sector_3_main_wall": "only the whole Lost Boys crag page fetched; no page about Sector 3 itself (sendage 404, searches found none)"
+ },
+ "_conflicts": {
+  "ab_mount_temple": "stored rock 'sandstone' vs pages describing quartzite/limestone/shale: https://www.mountainproject.com/area/106997567/mt-temple and https://en.wikipedia.org/wiki/Mount_Temple_(Alberta)"
+ }
+}

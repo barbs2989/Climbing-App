@@ -1,0 +1,33 @@
+{
+ "ak_crack_garden_the_2": {
+  "_expect": {"name": "Crack Garden, The", "region": "Alaska"},
+  "blurb": "A moderate trad crag on the hillside beside the Reed Lakes trail in Hatcher Pass, South Central Alaska. The nine climbs here are crack lines, dihedrals, flakes, flares and a few roofs, with most of the grades between 5.7 and 5.9, one easier line at 5.5 and a single 5.10 for those wanting a bit more. It sits well above the valley floor with good views, and being open to the sun it tends to be among the first crags in the region to be usable in spring. Expect a committed uphill approach that includes loose gully terrain and mossy scrambling before you reach the base, so it suits climbers who are comfortable placing their own gear.",
+  "review": {"sources": ["https://www.mountainproject.com/area/111999938/the-crack-garden", "https://rakkup.com/guidebook/hatcher-pass-rock-climbing/the-crack-garden/s22904"]}
+ },
+ "ak_welcome_boulder": {
+  "_expect": {"name": "Welcome Boulder", "region": "Alaska"},
+  "blurb": "A single boulder within the Tatlanika boulders, the main bouldering venue for the Fairbanks region, which lies on a hillside of granite erratics left behind by glaciers. The nine problems here run mostly from V0 to V3, with two much harder lines at V7 and V8 for strong boulderers. Climbing on this rock is generally technical rather than steep, with slopey arêtes, smears and small holds, and conditions matter a lot because the glacially smoothed surface can feel grippy or glassy. A short trail leads uphill from the end of the road to the block.",
+  "review": {"sources": ["https://www.mountainproject.com/area/106587835/welcome-boulder", "https://www.mountainproject.com/area/106587829/tatlanika"]}
+ },
+ "ak_jungle_gym_the": {
+  "_expect": {"name": "Jungle Gym, The", "region": "Alaska"},
+  "blurb": "A small crag in the Archangel Valley part of Hatcher Pass, north of Anchorage. Nine routes here, almost all of them trad with a single sport line, and the grades stay in a friendly range from 5.7 up to 5.9, so it suits climbers building up their gear skills on moderate ground. Some lines follow cracks and an arete along the crag's right wall, and a couple of the routes mix bolts with natural protection, so a rack of small cams is useful. It makes a handy short outing rather than a full-day objective.",
+  "review": {"sources": ["https://rakkup.com/guidebook/hatcher-pass-rock-climbing/the-jungle-gym/s22898", "https://www.mountainproject.com/route/108342056/new-school"]}
+ },
+ "ak_ptarmigan_peak": {
+  "_expect": {"name": "Ptarmigan Peak", "region": "Alaska"},
+  "blurb": "A winter ice and mixed venue on the front range above Anchorage, easy to spot from town. The north face holds a prominent couloir that is popular for steep alpine mixed lines. Of the nine climbs here, most are water ice from WI3 to WI6, with two hard mixed lines around M9 and one mountaineering route. Easier terrain exists in the couloir itself, while the harder lines are serious test pieces. The approach is long but not technical, done on skis or by bike depending on the snow.",
+  "parking_note": "Leave the car at the Glen Alps lot above Anchorage. The road up is steep and in winter can be hard to drive, so allow for that.",
+  "approach": "From the Glen Alps lot, ski or bike onto the Powerline Pass trail and follow it into the mountains toward the base of the couloir on the north face.",
+  "review": {"sources": ["https://mountainproject.com/area/107832112/ptarmigan-peak-ice-and-winter-alpine", "https://alaskaiceclimbing.com/ptarmigan-peak/"]}
+ },
+ "_skipped": {
+  "ak_independence_crag": "Area page carries a private-property closure notice asking climbers to stay away pending landowner conflicts",
+  "ak_mine_the": "Sits inside the Independence Mine area, whose page carries a private-property closure notice; the only other page about the crag has no text beyond a route list",
+  "ak_weird_alaska_wall": "no fetched page about the wall itself, only a one-line sub-area entry on the 17 Mile page",
+  "ak_caribou_creek": "stored coordinates (61.2134, -149.8672) fall in Anchorage; fetched pages place Caribou Creek on the Glenn Highway about two hours north, a different location"
+ },
+ "_conflicts": {
+  "ak_crack_garden_the_2": "Stored aspect W, but https://www.mountainproject.com/area/111999938/the-crack-garden says the crag faces south."
+ }
+}

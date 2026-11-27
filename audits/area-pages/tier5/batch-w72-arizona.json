@@ -1,0 +1,34 @@
+{
+ "az_primus_wall": {
+  "_expect": {"name": "Primus Wall", "region": "Arizona"},
+  "blurb": "Primus Wall is a small bolted crag on the flank of Mount Lemmon in the Santa Catalina Mountains, set right beside the Wilderness of Rocks trail at roughly 7,800 feet. Six sport routes climb about 100 feet of good granite, mostly easy to moderate with one or two harder lines near the top of the range. The upper part of the cliff lies back at a low angle, and ring anchors there let you rappel off. The leftmost lines can also be top-roped by walking around the side. It is a handy rope day for a party that otherwise comes to this area for boulders, and it suits warm weather.",
+  "approach": "From the Marshall Gulch trailhead, take the trail to the Wilderness of Rocks junction, then follow the Wilderness of Rocks trail downhill until it levels out. The cliff stands just off the trail.",
+  "review": {"sources": ["https://www.mountainproject.com/area/107400487/primus-wall", "https://www.mountainproject.com/area/106021041/wilderness-of-rocks"]}
+ },
+ "az_rattlesnake_boulders": {
+  "_expect": {"name": "Rattlesnake Boulders", "region": "Arizona"},
+  "blurb": "Rattlesnake Boulders is a modest bouldering spot in the Tucson Mountains, scattered over the hillside and wash near Rattlesnake Pass where Twin Peaks Road crosses the range. Only a handful of boulders hold the six problems, which sit at the easy end of the scale, from the lowest grade up to V2, and few of them are especially memorable. Holds can be sharp and crumbly. Approaches are very short, so it works best as a quick stop alongside the short crags up the road rather than a destination of its own.",
+  "parking_note": "Pull into the dirt shoulder on the north side of Twin Peaks Road near the top of Rattlesnake Pass.",
+  "review": {"sources": ["https://www.mountainproject.com/area/118239250/rattlesnake-boulders", "https://mountainproject.com/area/115348585/rattlesnake-pass"]}
+ },
+ "az_roadside_crag_2": {
+  "_expect": {"name": "Roadside Crag", "region": "Arizona"},
+  "blurb": "Roadside Crag is a small outcrop at Rattlesnake Pass in the Tucson Mountains, topped by a large boulder and sitting uphill from the power poles beside Twin Peaks Road. The short routes, all under about 35 feet, are on its south side. Most are top-rope or easy leads, from the lowest 5th-class grades through the mid 5.8 to 5.9 range, with a single hard 5.12 line standing out. The base is reached by a brief scramble, so it makes a convenient stop for a few quick pitches, especially for newer climbers.",
+  "review": {"sources": ["https://www.mountainproject.com/area/115351028/roadside-crag", "https://mountainproject.com/area/115348585/rattlesnake-pass"]}
+ },
+ "az_rose_hill_crag": {
+  "_expect": {"name": "Rose Hill Crag", "region": "Arizona"},
+  "blurb": "Rose Hill Crag is a quiet little wall in the Willow Canyon crags, on the mid-mountain section of Mount Lemmon near Rose Canyon Lake. Six bolted sport routes, running from about 5.8 to 5.10, climb good granite, and the wall faces southeast, which keeps it comfortable on cool days. Because there are few routes and the walk in is long, you are likely to have it to yourself. Views toward Windy Point are a bonus, making this a pleasant, mellow outing for a party after solitude rather than a big tick list.",
+  "review": {"sources": ["https://www.mountainproject.com/v/105739156", "https://www.mountainproject.com/route/105738329/chalkless-test-monkey"]}
+ },
+ "_skipped": {
+  "az_ranger_danger_wall": "no fetched page about the wall itself; Finger Rock Canyon parent page does not name it, route page was a different Oregon route",
+  "az_aspen_peak": "only one page about the crag (Aspen Peak Proper); the Dome page is a sibling and the park page does not name it",
+  "az_rick_ross": "no fetched page about the boulder itself; parent pages (Gandalf's Gorge, Aspen Trail Boulders) do not describe it",
+  "az_shooting_gallery_the": "no fetched page about this crag itself; other Shooting Gallery pages are in California, Wyoming and Mount Lemmon, and The Pit page only lists it with a route count"
+ },
+ "_conflicts": {
+  "az_rattlesnake_boulders": "stored rock basalt; Rattlesnake Pass page says short volcanic (andesite) crags, boulders page says rock similar to Gates Pass: https://mountainproject.com/area/115348585/rattlesnake-pass",
+  "az_roadside_crag_2": "stored rock basalt; Rattlesnake Pass page says volcanic (andesite) crags: https://mountainproject.com/area/115348585/rattlesnake-pass"
+ }
+}

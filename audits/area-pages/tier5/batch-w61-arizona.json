@@ -1,0 +1,35 @@
+{
+ "az_ivory_tower": {
+  "_expect": { "name": "Ivory Tower", "region": "Arizona" },
+  "blurb": "Ivory Tower is a small crag on Dromedary Peak, a double-humped hill reached by dirt road from the highway east of Phoenix. A pale rhyolite tower holds six sport routes and one trad line, running from about 5.7 up to the low 5.11s, with most of the climbing between 5.9 and 5.11. The volcanic stone has a smooth finish that is easy on the hands. The hike to the base is steep but short, around half an hour, and the last stretch of road needs a four-wheel-drive vehicle. Summers are extremely hot here, so it suits the cooler months.",
+  "parking_note": "A dirt road leaves the highway east of Phoenix and runs past several camps toward the peak; the final stretch to the parking spot needs a four-wheel-drive vehicle.",
+  "review": { "sources": ["https://mountainproject.com/area/105904784/ivory-tower", "https://www.mountainproject.com/area/105904757/dromedary-peak"] }
+ },
+ "az_pumphouse": {
+  "_expect": { "name": "Pumphouse", "region": "Arizona" },
+  "blurb": "Pumphouse is a steep sport cliff in Bear Canyon on Mount Lemmon, in the Santa Catalina Mountains near Tucson. It is a compact wall of seven bolted routes, mostly in the 5.12 range, with an easier route or two and a single 5.13 at the top end, so it is a place for strong sport climbers rather than beginners. The wall is very overhanging and stays shady nearly all day, in a canyon known for cool, shaded pine-forest climbing low on the mountain. The short walk in from the Chessmen cliffs makes it easy to pair with a warm-up there.",
+  "review": { "sources": ["https://mountainproject.com/area/105957420/pumphouse", "https://www.mountainproject.com/area/106822906/2-bear-canyon"] }
+ },
+ "az_suction_gully": {
+  "_expect": { "name": "Suction Gully", "region": "Arizona" },
+  "blurb": "Suction Gully is a steep, scree-filled gully on the Superstition Mountains side of Lost Dutchman State Park, east of Phoenix, with cliff walls on both sides. Its seven trad routes are mostly multi-pitch, ranging from about 5.6 to 5.10 with the bulk in the middle grades. Higher up the gully opens into a basin ringed with spires. This is a loose, adventurous place: the rock is poor in spots and the descent through the scree can feel worse than the climb, so it suits parties comfortable with route finding and moving carefully on shifting ground.",
+  "approach": "Follow the Siphon Draw trail from the trailhead into the canyon; the gully is the obvious one on the left. A faint climber's path follows the wash toward the gully mouth, then fades, leaving you to work up steep slope and scree.",
+  "review": { "sources": ["https://www.mountainproject.com/area/106056989/suction-gully", "https://themtsarecalling.com/totgoblin/"] }
+ },
+ "az_table_mountain": {
+  "_expect": { "name": "Table Mountain", "region": "Arizona" },
+  "blurb": "Table Mountain is a large monolith on the west side of the Santa Catalina Mountains, above Oro Valley near Tucson, rising to roughly 6,265 feet. It offers remote, backcountry multi-pitch trad climbing, with seven routes that run from about 5.7 to 5.11 and several in the 5.10 range. The main face is close to 1,000 feet tall and follows cracks, corners and slabs, with a wild setting that contrasts desert and suburbs. The walk in is rugged, around two hours or more, and the cairned route and sharp plants make it a full-day commitment rather than a quick crag visit.",
+  "review": { "sources": ["https://mountainproject.com/area/106225132/table-mountain", "https://publications.americanalpineclub.org/articles/13201216438"] }
+ },
+ "az_middlechild": {
+  "_expect": { "name": "Middlechild", "region": "Arizona" },
+  "blurb": "Middlechild is a small bouldering area on the Frontier hill of the Beardsley boulders, on the north side of Phoenix. A big main boulder sits near the middle of the hill with smaller blocks gathered around it. The seven problems run from easy V0 and V1 up through the middle grades to a couple of V5s and one V6, so there is something for most levels. Parking is in the neighborhood below the hill, followed by a hike up a gully and then the hillside. Expect a lightly worn path and a desert granite setting close to the city.",
+  "review": { "sources": ["https://www.mountainproject.com/area/124042951/middlechild", "https://www.mountainproject.com/area/123529815/frontier-bouldering-area"] }
+ },
+ "_skipped": {
+  "az_rough_rider_terrace": "no fetched page is about the Terrace itself: the Rough Rider Zone page and the Cow Town Buttress page only mention it; the zone page names no rock and the stored sandstone was not confirmed",
+  "az_celestial_seasons": "two searches (name + Deep Space Nine/Mount Lemmon, name + Tucson) returned no page naming this crag; could not fetch two pages",
+  "az_comic_cliff": "no fetched page is about Comic Cliff itself: the Watson Lake and Thor's Wall pages only mention it in passing, and two searches found no dedicated page"
+ },
+ "_conflicts": {}
+}

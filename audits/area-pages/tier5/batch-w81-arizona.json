@@ -1,0 +1,40 @@
+{
+ "az_handsome_boulder": {
+  "_expect": { "name": "Handsome Boulder", "region": "Arizona" },
+  "blurb": "Handsome Boulder is a small granite crag perched high on the Tom's Thumb Trail in the McDowell Mountains near Scottsdale. Six climbs split into mostly trad cracks and faces plus a single sport line, running from fourth-class ground up into the 5.11 range, with fair to good rock. Shade lands on different sides of the boulder at different hours of the day, which makes a summer morning workable. The walk is roughly 1.4 miles with about 900 feet of gain on a solid trail, finished by a short climbers' path down from the overlook.",
+  "review": { "sources": ["https://www.mountainproject.com/area/127412051/handsome-boulder", "https://www.mountainproject.com/v/106153712"] }
+ },
+ "az_idlewilde": {
+  "_expect": { "name": "idlewilde", "region": "Arizona" },
+  "blurb": "Idlewilde is a small, lightly developed bouldering area in the Portal area on the east side of the Chiricahua Mountains. The problems here start at V0 and top out around V3, with most of them toward the easy end. Climbing has an exploratory, runout feel, and much of the surrounding terrain is still undeveloped, so expect a quiet, adventurous outing rather than a polished circuit.",
+  "review": { "sources": ["https://www.climbing.com/news/are-climbers-allowed-to-scale-the-spires-in-the-new-chiricahua-national-park/?scope=anon", "https://www.mountainproject.com/area/118181469/chiricahua-mountains"] }
+ },
+ "az_hells_bells": {
+  "_expect": { "name": "Hells Bells", "region": "Arizona" },
+  "blurb": "Hells Bells is a cluster of sandstone domes and towers near Page in northern Arizona, just south of the Utah line. All six routes are bolted sport climbs, mostly around 5.11 with one 5.10 and one 5.12, so it suits climbers comfortable on steep, hard ground. The pale stone has bedding planes standing proud and harder brown bands that create steep face moves and mantles. A soft brush helps clear sand from holds and shoe soles.",
+  "review": { "sources": ["https://mountainproject.com/area/122845465/hells-bells", "https://www.mountainproject.com/area/107447440/northern-arizona"] }
+ },
+ "az_the_entrance_wall": {
+  "_expect": { "name": "The Entrance Wall", "region": "Arizona" },
+  "blurb": "The Entrance Wall is a small crag within Griffith Springs, a short drive from Flagstaff off Highway 89A. It holds six climbs, mostly trad with one sport line and some top-rope options, spanning easy fifth class up to the 5.10 range. Cracks run up two sides of the wall, and a bolted slab sits beside the arete. Griffith Springs as a whole is known for short, shaded moderates that make a friendly introduction to outdoor climbing. To reach the wall, leave the main trail into the descent gully and look to the right.",
+  "review": { "sources": ["https://mountainproject.com/area/124018732/the-entrance-wall", "https://mountainproject.com/area/120946887/griffith-springs"] }
+ },
+ "az_boy_scout_wall": {
+  "_expect": { "name": "Boy Scout Wall", "region": "Arizona" },
+  "blurb": "Boy Scout Wall is a short wall in Northern Devils Canyon, part of Queen Creek Canyon in central Arizona. Six established routes mix mostly bolted sport lines with one trad crack and one top-rope, and the grades stay friendly: easy ground at the bottom and nothing harder than 5.9. That spread makes it a reasonable stop for beginners or anyone after a few relaxed leads. The canyon around it is known as the home of central Arizona sport climbing and bouldering.",
+  "review": { "sources": ["https://www.mountainproject.com/v/109794585", "https://www.mountainproject.com/route/109794704/easy-rider?print=1", "https://www.mountainproject.com/area/105788089/queen-creek-canyon"] }
+ },
+ "az_turkey_flat": {
+  "_expect": { "name": "Turkey Flat", "region": "Arizona" },
+  "blurb": "Turkey Flat is a small roadside crag on Mt. Graham in the Pinaleno Mountains of southern Arizona, at about 7,200 feet. The slab routes are short and easy, mostly in the 5.5 to 5.8 range, which makes it a gentle outing for newer climbers. The altitude and views also make it a pleasant escape from heat in summer. It is a quick stop rather than a full-day destination.",
+  "review": { "sources": ["https://www.mountainproject.com/area/121378878/turkey-flat", "https://mountainproject.com/area/110406778/pinaleno-mtns-mt-graham"] }
+ },
+ "_skipped": {
+  "az_south_2": "Only page about a Crackerjack Buttress South is the Payson one (about 34.2N), but the input coordinates (33.43, -112.07) are Phoenix South Mountain; location mismatch, no second page.",
+  "az_bird_sanctuary": "No fetched page is about the Bird Sanctuary itself; the Lost Elden page only mentions it in passing and the Mt Elden Crags page does not list it."
+ },
+ "_conflicts": {
+  "az_idlewilde": "Stored rock is basalt, but pages describe the Chiricahua Mountains as rhyolite (https://www.climbing.com/news/are-climbers-allowed-to-scale-the-spires-in-the-new-chiricahua-national-park/?scope=anon, https://www.mountainproject.com/area/118181469/chiricahua-mountains). Neither names Idlewilde's own rock.",
+  "az_boy_scout_wall": "Stored rock is basalt, but the Queen Creek Canyon page says the canyon's rock is volcanic tuff (https://www.mountainproject.com/area/105788089/queen-creek-canyon)."
+ }
+}

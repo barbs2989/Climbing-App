@@ -1,0 +1,35 @@
+{
+ "az_trail_canyon": {
+  "_expect": {"name": "Trail Canyon", "region": "Arizona"},
+  "blurb": "A small limestone canyon on the Kaibab Plateau in northern Arizona, facing the Vermilion Cliffs across the way. It holds six climbs: five sport routes and one boulder problem. The sport lines run from an easy 5.7 through 5.9 and 5.10 up to a couple of 5.11s, and the boulder problem is around V2. Expect chunky holds with some loose rock, and bolts placed well apart, so it suits climbers comfortable on lightly cleaned lines rather than a polished crag day. The setting is quiet and scenic, and a pleasant campsite sits nearby.",
+  "rock": "limestone",
+  "review": {"sources": ["https://www.mountainproject.com/area/117777079/trail-canyon", "https://mountainproject.com/area/115143262/kaibab-plateau"]}
+ },
+ "az_one_wall_the": {
+  "_expect": {"name": "One Wall, The", "region": "Arizona"},
+  "blurb": "A steep dacite face about 50 feet tall, perched high on Mt. Elden above Flagstaff with views toward the east side of town. It has six routes, five sport and one trad, and the grades sit in the 5.12 to 5.13 range, so it is a stop for strong climbers rather than a place to start out. Most lines come with fixed draws and lowering anchors. Elden's crags face every direction, which lets climbers chase sun or shade through the year, and this is one of the newer sections of the mountain.",
+  "rock": "dacite",
+  "review": {"sources": ["https://www.mountainproject.com/area/106174177/the-one-wall", "https://www.mountainproject.com/area/105817313/mt-elden-crags"]}
+ },
+ "az_john_doe_wall": {
+  "_expect": {"name": "John Doe Wall", "region": "Arizona"},
+  "blurb": "A tall sandstone wall, around 300 to 350 feet, in West Clear Creek canyon on the Central Mogollon Rim, with a few long, appealing cracks. All six routes are trad: one 5.9, four in the 5.10 range and a single 5.12. Several are three-pitch lines, and one mixes free and aid climbing. The base is reached by walking upstream along the creek and then making a short, steep push up the hillside. This is a good fit for parties that like crack climbing and are happy to place their own gear.",
+  "rock": "sandstone",
+  "review": {"sources": ["https://www.mountainproject.com/area/106153493/john-doe-wall", "https://www.mountainproject.com/area/106113685/west-clear-creek"]}
+ },
+ "az_bear_mountain": {
+  "_expect": {"name": "Bear Mountain", "region": "Arizona"},
+  "blurb": "A trad-only crag on Bear Mountain in far west Sedona, with six routes graded from 5.10 to 5.11, split evenly between the two. Several of the best-known lines are multi-pitch, running three to four pitches, so plan for a full outing with a rack and a partner who is comfortable leading. The mountain is described as good for winter cragging. The trail up from the trailhead is steep but scenic.",
+  "parking_note": "Leave the highway on Dry Creek Road and follow the pavement to its end, then turn left at the T-junction in the direction of Boynton Canyon. Where the pavement curves right toward the Enchantment and Boynton Canyon area, bear left onto dirt road 152C and leave the car at the Bear Mountain trailhead.",
+  "review": {"sources": ["https://www.mountainproject.com/area/105808599/bear-mountain", "https://www.mountainproject.com/area/105808580/bear-mountain-area"]}
+ },
+ "_skipped": {
+  "az_left_wall": "no fetched page about Left Wall itself (only the Ricochet parent page, which says andesite/dacite)",
+  "az_sawyer_wall": "only page about it (OpenBeta) returned 404/empty on fetch; could not fetch a page about the crag itself",
+  "az_chute_area_the": "no fetched page about The Chute Area itself (only a route page and an Upper Middle Elden page that mentions the chute)",
+  "az_vatican": "no Sedona Vatican page found; East Twin Butte parent lists it with no description; other Vatican pages are RI, CO, CA, Mexico"
+ },
+ "_conflicts": {
+  "az_left_wall": "stored rock rhyolite vs andesite/dacite on https://mountainproject.com/area/120555573/ricochet (parent Ricochet page)"
+ }
+}

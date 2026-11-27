@@ -1,0 +1,31 @@
+{
+ "ab_abraham_slabs": {
+  "_expect": { "name": "Abraham Slabs", "region": "Alberta" },
+  "blurb": "Abraham Slabs is a southwest-facing limestone slab above Lake Abraham, beside the David Thompson Highway west of Nordegg. Its seven routes are mostly bolted lines, some running several pitches, plus a single trad line. Grades stay in a tight band between 5.8 and 5.10, so it suits climbers who are comfortable on moderate slab and want friction and footwork rather than steep pulling. The limestone is rough and hard on fingertips, and the wall catches sun through the afternoon and evening. Expect a short uphill trail to the base and a lake view from the climbing.",
+  "review": { "sources": ["https://www.mountainproject.com/area/118971060/abraham-slabs", "https://sendage.com/area/abraham-slabs-ab-canada"] }
+ },
+ "ab_wild_west_boulder": {
+  "_expect": { "name": "Wild West Boulder", "region": "Alberta" },
+  "blurb": "Wild West Boulder is a big limestone block at the edge of the trees, roughly 100 m northwest of the House Boulder in the Frank Slide boulderfield near Crowsnest Pass. Its downhill face overhangs heavily, so the harder lines are steep, powerful and cave-based, while the gentler ones sit around the flanks. Six problems cover a wide spread: a few friendly lines from V1 to V5 and two big V11 testpieces. It is a good stop for someone who has already warmed up on the nearby House Area boulders and wants one block with something for most levels.",
+  "review": { "sources": ["https://www.mountainproject.com/area/114605104/wild-west-boulder", "https://mountainproject.com/area/114603872/house-area"] }
+ },
+ "ab_rehab_wall": {
+  "_expect": { "name": "Rehab Wall", "region": "Alberta" },
+  "blurb": "Rehab Wall is a steep mixed and ice wall at the back of Evan Thomas Creek in Kananaskis Country, reached by a long walk past the better-known crags lower in the valley. All six climbs are ice or ice-and-rock lines, mostly WI4 with a single WI3 and two WI5 routes. The rock is heavily featured, with horizontal bands, small roofs and cracks, which makes for sustained, pumpy tooling that tops out on ice. It is a demanding day, best suited to leaders already comfortable on WI4 and above who do not mind the hike out afterward.",
+  "review": { "sources": ["https://www.mountainproject.com/area/112781121/rehab-wall", "https://gripped.com/news/self-medication-m7-and-why-we-named-it-rehab-wall/"] }
+ },
+ "ab_falls_area_rock": {
+  "_expect": { "name": "Falls Area Rock", "region": "Alberta" },
+  "blurb": "Falls Area Rock sits on the east face of Cascade Mountain above Banff, beside the lower tiers of the tall waterfall that makes the area famous in winter. The six routes here are bolted multi-pitch sport lines on clean limestone slabs, most running about four pitches, with grades from easy to moderate that top out around 5.8. It is a short hike from the ice-climbing parking area, which makes it a handy pick for newer multi-pitch climbers. Watch for loose rock on the ledges and upper slabs, and take care around the stream crossings.",
+  "review": { "sources": ["https://www.mountainproject.com/area/117376538/falls-area-rock", "https://mountainproject.com/area/107247301/cascade-mountain", "https://gripped.com/?p=31223"] }
+ },
+ "_skipped": {
+  "ab_2_right_side_routes": "no fetched page about the Right Side Routes section itself; only the parent Catamount wall page (covers whole wall) was readable",
+  "ab_5_pipeline": "no page about Pipeline itself found in two searches; only the Cloud Break parent page and a neighbouring crag page that names it as a landmark",
+  "ab_1_pie_wagon_sector": "fetch outage: theCrag fetches returned 403; only a parent Coliseum route list and an adventure-collective page found, no page about the crag itself",
+  "ab_upper_tier": "only one page about the crag (SummitPost Watchtower Creek, fetch returned 403 so it could not be read); other Upper Tier results were in BC and Montana"
+ },
+ "_conflicts": {
+  "ab_abraham_slabs": "approach time disagrees: https://www.mountainproject.com/area/118971060/abraham-slabs says about 5 minutes to the base; https://sendage.com/area/abraham-slabs-ab-canada says a 30 minute hike. Approach not written."
+ }
+}

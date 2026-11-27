@@ -1,0 +1,90 @@
+{
+ "ab_bench_area": {
+  "_expect": {
+   "name": "Bench Area",
+   "region": "Alberta"
+  },
+  "blurb": "Bench Area is the right-hand sector of Expressions Wall, a steep limestone cliff in the Bow Valley reached from the Canmore side. It is the first section you arrive at after a long, exposed approach that finishes on slabs and ledges. Six sport routes climb a wall of roughly 33 m that runs from vertical to slightly overhanging, giving about 20 m of climbing each. Grades are demanding: one route in the low 5.11 range and five in the 5.12 range, so this is a spot for strong climbers rather than beginners. The cliff faces roughly east and catches sun until early afternoon, and mobile reception is patchy.",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/area/201502723/bench-area",
+    "https://www.mountainproject.com/area/201502713/expressions-wall"
+   ]
+  }
+ },
+ "ab_mount_athabasca": {
+  "_expect": {
+   "name": "Mount Athabasca",
+   "region": "Alberta"
+  },
+  "blurb": "Mount Athabasca stands beside the Icefields Parkway near the Columbia Icefield and is one of the busiest peaks in the Canadian Rockies. The terrain is glacier travel, steep snow and alpine ice rather than cragging. Six climbs are recorded here: four ice routes spanning roughly WI2 to WI4, plus two mountaineering lines. Expect crevasse hazard, firm snow and ice, and some loose scrambling on the way to the glacier. Most parties start in the dark and spend nine to eleven hours round trip, and weather often rolls in from the icefield. Newer alpine climbers usually go with a guide.",
+  "review": {
+   "sources": [
+    "https://mountainproject.com/area/106980073/mount-athabasca",
+    "https://thebanffblog.com/mountaineering-course-mt-athabasca/"
+   ]
+  }
+ },
+ "ab_mt_bourgeau": {
+  "_expect": {
+   "name": "Mt. Bourgeau",
+   "region": "Alberta"
+  },
+  "blurb": "Mt. Bourgeau rises north of the Sunshine ski area, a short drive from Banff. The south side holds long routes: two ice lines in the WI4 to WI5 range and four multi-pitch sport climbs in the 5.10 to 5.11 range. Because the wall faces south, sun can change the ice quickly, and big avalanche paths sit directly above the ice climbs, so winter objectives demand serious judgement of snow conditions. The rock routes run four to six pitches and are full-day outings rather than quick cragging. Leave the car in the ski area lot.",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/area/108468274/mt-bourgeau",
+    "https://avalanche.ca/resources/ice-climbing/atlas/bourgeau-left"
+   ]
+  }
+ },
+ "ab_bear_s_hump": {
+  "_expect": {
+   "name": "Bear's Hump",
+   "region": "Alberta"
+  },
+  "blurb": "Bear's Hump is the small cliff above the Waterton townsite, topped by a viewpoint that many hikers visit. The main face is sunny and warms up early, so it can be dry in spring, and it mostly hosts mid-grade traditional lines that finish near the overlook. Six sport routes have been added on the lower tier: mostly 5.6 to 5.8, with one much harder line near 5.11. Lines are short, so this is a quick-stop crag for a few climbs rather than a full day. Rock quality is reasonable, though loose blocks can be found, and the area sees few climbers.",
+  "review": {
+   "sources": [
+    "https://parks.canada.ca/pn-np/ab/waterton/activ/experiences/escalade-climbing",
+    "https://waterton.blogspot.com/2009/06/bears-hump.html",
+    "https://www.mountainproject.com/area/111901874/waterton-lakes-national-park"
+   ]
+  }
+ },
+ "ab_kanga_creek_south": {
+  "_expect": {
+   "name": "Kanga Creek South",
+   "region": "Alberta"
+  },
+  "blurb": "Kanga Creek South sits above the upper Grassi Lakes parking area in Canmore, on the slopes between Ha Ling and East End of Rundle. The wall is visible from the car and a path leads straight to it. The six routes are mostly multi-pitch sport lines with one trad route, graded from the 5.7 range up to 5.10. Climbs wander over slabs, a roof or two and featured faces, and the limestone varies from excellent grey rock to flaky, dirty patches, so wear a helmet. Expect a short walk of about ten minutes and a good place for moderate multi-pitch days.",
+  "approach": "A well-worn path runs from the upper Grassi Lakes lot to the base of the wall, which is visible from the car.",
+  "approach_min": 10,
+  "review": {
+   "sources": [
+    "https://sendage.com/area/kanga-south-east-end-of-rundle-colisseum-echo-canyon-ab-canada",
+    "https://gripped.com/routes/hot-fuzz-and-sharknado-in-the-canadian-rockies/"
+   ]
+  }
+ },
+ "ab_storm_creek_headwall": {
+  "_expect": {
+   "name": "Storm Creek Headwall",
+   "region": "Alberta"
+  },
+  "blurb": "Storm Creek Headwall is an ice and mixed crag one valley northeast of the Stanley Headwall, reached from the Stanley Glacier parking area. It is known as one of the country's better early-season venues, with a handful of hard, high-quality lines. All five climbs here are ice routes at roughly WI5 to WI6, so this is for experienced leaders only. The face gets little winter sun, which keeps it cold, and serious avalanche terrain lies both below and above the wall, so the approach and the climbing need careful snow assessment.",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/area/109763670",
+    "https://gripped.com/routes/the-storm-creek-headwall-history-and-topo/"
+   ]
+  }
+ },
+ "_skipped": {
+  "ab_left": "only one fetched page (parent Upper Deck page on Mountain Project) mentions this sector; no second page about Left itself found",
+  "ab_shady_slab": "could not fetch two pages: only a theCrag Castleview listing (403 on fetch) names the parent; nothing found about Shady Slab"
+ },
+ "_conflicts": {
+  "ab_bear_s_hump": "Stored aspect SE; a fetched trip report (https://waterton.blogspot.com/2009/06/bears-hump.html) and Parks Canada (https://parks.canada.ca/pn-np/ab/waterton/activ/experiences/escalade-climbing) describe the climbing face as south-facing. Also Parks Canada says sport climbing is little developed there while Mountain Project lists 6 sport routes."
+ }
+}

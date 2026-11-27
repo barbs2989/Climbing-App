@@ -1,0 +1,37 @@
+{
+ "ab_couples_therapy": {
+  "_expect": { "name": "Couples Therapy", "region": "Alberta" },
+  "blurb": "A compact limestone sport wall low down in Echo Canyon, in the Bow Valley near Canmore. Six bolted lines share the face: one in the 5.11 range and five around 5.12, so it suits climbers who are already comfortable on steep, technical ground. Routes are long for a crag, roughly 25 to 35 metres, and the terrain runs from vertical to slab with a few roofs mixed in. The wall faces west and sits in shade for nearly the whole day, which makes it a pleasant choice when the weather is hot. The walk follows the main canyon trail, then a path climbs through mossy forest to the base.",
+  "review": { "sources": ["https://sendage.com/area/couples-therapy-echo-canyon-ab-canada", "https://www.mountainproject.com/area/110956733/echo-canyon"] }
+ },
+ "ab_armadillo_buttress": {
+  "_expect": { "name": "Armadillo Buttress", "region": "Alberta" },
+  "blurb": "A limestone cliff in Grotto Canyon, in Alberta's Bow Valley, set beyond the narrows and the hoodoos on the left side of the creek. It holds six bolted three-pitch sport routes: four around 5.10 and two at 5.11, so it works well for climbers stepping up into multi-pitch. The base is flat and the walk-in is gentle, about a quarter of an hour past the end of the narrows, which leaves time to link a couple of climbs in a day. The cliff catches good sun and comes into condition early in spring. Bring a 70 metre rope and around fourteen quickdraws.",
+  "review": { "sources": ["https://www.mountainproject.com/area/126160399/armadillo-buttress", "https://mountainproject.com/area/113323819/grotto-canyon"] }
+ },
+ "ab_take_it_for_granite": {
+  "_expect": { "name": "Take it for Granite", "region": "Alberta" },
+  "blurb": "A cliff area on Mt. Cory, a short drive from Banff along the Bow Valley Parkway. The six routes here mix four bolted lines with two trad climbs, running from easy 5.7 up to about 5.10, and several are long multi-pitch outings rather than single-pitch crag climbs. Cory is known for some of the best-quality limestone around Banff, with a rough, sharp-edged surface that stays grippy. The base is reached by a faint trail from a roadside pullout, and the climbs can be seen from the parking area, so it is an easy spot to scout before you commit.",
+  "parking_note": "A large roadside pullout on the Bow Valley Parkway (Highway 1A), a few kilometres west of the Highway 1 exit near Banff, which also serves as a lookout. The climbs can be seen from the lot, and the trail starts across the road.",
+  "approach": "A faint trail leads up from the pullout, across the road, to the base of the climbs.",
+  "review": { "sources": ["https://www.mountainproject.com/area/107321851/take-it-for-granite", "https://mountainproject.com/area/107321847/mt-cory"] }
+ },
+ "ab_morro_slabs": {
+  "_expect": { "name": "Morro Slabs", "region": "Alberta" },
+  "blurb": "Easy-angled limestone slabs rising straight from the Athabasca River in Jasper National Park, close to the road from Jasper toward Hinton. This is a gentle, beginner-friendly spot: six short routes, mostly bolted with one top-rope-only line, spanning roughly 5.3 to 5.6. The slabs work well for first lead attempts, teaching days and family outings. Some routes finish with a rappel down toward the river rather than a walk-off. The place is fairly dry and tends to catch some wind, so bring an extra layer. A steep path leads to the top of the slabs for anchor setup.",
+  "review": { "sources": ["https://www.mountainproject.com/area/117005734/morro-slabs", "https://mountainproject.com/area/107210004/morro"] }
+ },
+ "ab_down_under": {
+  "_expect": { "name": "Down Under", "region": "Alberta" },
+  "blurb": "A steep limestone sport cliff in the Acéphale area on Heart Mountain, Bow Valley, near Canmore. It is the lower band of rock you can see from the highway, directly beneath the upper crag. Six bolted lines, one in the 5.10 range, one in the 5.11 range and four around 5.12, so it is aimed at strong climbers. Each route begins through a poorer band of rock a few metres up, then moves onto solid, gently overhanging stone with water-worn features. The sun leaves the wall by mid-morning, leaving it cool and shaded, which suits warm days. The approach follows a faint, flagged trail with a couple of short downclimbs and two caves.",
+  "review": { "sources": ["https://www.mountainproject.com/area/124693416/down-under", "https://www.mountainproject.com/area/113505724/acephale"] }
+ },
+ "_skipped": {
+  "ab_rundlehorn_area": "no fetched page about the Rundlehorn Area itself; only the parent Mt. Rundle page (and route/ridge pages) were reachable",
+  "ab_salt_and_pepper_wall": "no fetched page about the wall itself; only the parent Barrier Bluffs page listing it (other hits were adventure-collective pages)",
+  "ab_9_the_far_east": "no fetched page about The Far East itself; only the parent Bataan page listing it as a sector (thecrag fetch refused with 403)"
+ },
+ "_conflicts": {
+  "ab_morro_slabs": "Parking differs: https://www.mountainproject.com/area/117005734/morro-slabs says the small lot just east of the second bridge over the Athabasca; https://mountainproject.com/area/107210004/morro says the start of the Overlander trail just past the first bridge. Parking left unfilled."
+ }
+}

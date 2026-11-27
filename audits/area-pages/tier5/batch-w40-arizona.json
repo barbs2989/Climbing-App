@@ -1,0 +1,44 @@
+{
+ "az_first_canyon_aka_the_boneyard": {
+  "_expect": {"name": "First Canyon aka The Boneyard", "region": "Arizona"},
+  "blurb": "A small, low-key cliff in the Granite Dells near Prescott, tucked beside the Peavine Trail corridor. The wall stands roughly 50 feet high and carries a light coat of lichen. Nine routes are split evenly between bolted sport lines, top-rope problems and gear-protected climbs, and the grades run from easy beginner terrain up to the low 5.10 range, with the bulk in the middle. Anchors on top make for a quick return to the ground, and the summit can also be reached on foot. Because it faces a northerly direction, it tends to stay comfortable through the warmer months. A good short stop for newer climbers or a casual afternoon.",
+  "review": {"sources": ["https://www.mountainproject.com/area/116492655/first-canyon-aka-the-boneyard", "https://www.mountainproject.com/area/116492613/crags-along-the-peavine-trail"]}
+ },
+ "az_ripple_wall": {
+  "_expect": {"name": "Ripple Wall", "region": "Arizona"},
+  "blurb": "Ripple Wall is a crag in Bear Canyon on Mount Lemmon, north of Tucson along the Catalina Highway. It holds nine routes, mostly traditionally protected with a couple of bolted lines, and nearly all of them sit between 5.10 and 5.12. That makes it a better pick for climbers already comfortable on harder grades than for beginners. Bear Canyon as a whole is known for shade under ponderosa pine at a surprisingly modest elevation on the mountain, which helps on warm days.",
+  "review": {"sources": ["https://www.mountainproject.com/area/105936594/ripple-wall", "https://www.mountainproject.com/area/106822906/2-bear-canyon"]}
+ },
+ "az_2_dragon_egg": {
+  "_expect": {"name": "Dragon Egg", "region": "Arizona"},
+  "blurb": "Dragon Egg is a freestanding boulder on Mount Elden above Flagstaff, and it is the first big block you meet when heading up the Main Drainage. Nine problems cover a broad range, from easy warm-ups at V0 and V1 to a few tough ones around V4 and V5. The angles are mostly vertical to slabby, so expect careful footwork, edging and technical moves, sometimes well above the ground. The surrounding Dragon Eggz area is a collection of large boulders in gullies, a change of pace from other Flagstaff bouldering, with a mix of grades for many abilities.",
+  "review": {"sources": ["https://www.mountainproject.com/area/118181794/2-dragon-egg", "https://www.mountainproject.com/area/109973847/dragon-eggz"]}
+ },
+ "az_amc_boulder": {
+  "_expect": {"name": "AMC Boulder", "region": "Arizona"},
+  "blurb": "AMC Boulder is a granite formation within Pinnacle Peak Park in northeast Scottsdale, and it is the second outcrop reached along the climbers' trail toward the main peak. Its signature feature is a big overlapping flake on the south side. Nine routes are mostly trad, with one bolted line, and the grades stay friendly: easy fives through the 5.8 range, with a few climbs reaching 5.10. The moderate difficulty suits climbers building trad skills close to the city.",
+  "review": {"sources": ["https://www.mountainproject.com/area/105792617/amc-boulder", "https://www.mountainproject.com/area/105787822/pinnacle-peak"]}
+ },
+ "az_andy_cook_wall": {
+  "_expect": {"name": "Andy Cook Wall", "region": "Arizona"},
+  "blurb": "Andy Cook Wall is a steep, reddish sport wall in Bear Canyon on Mount Lemmon near Tucson. All nine routes are bolted, and they sit in the 5.11 to 5.12 range, so this is a spot for strong sport climbers. Expect sustained edging and crimping on some lines and roofs or underclings on others. The bolting was done by different parties over time, so equipment style varies. The wall stays in shade until the afternoon through the year, and it sees few other climbers. The walk in is a steady uphill effort of about half an hour.",
+  "review": {"sources": ["https://www.mountainproject.com/area/106184209/andy-cook-wall", "https://www.mountainproject.com/area/106822906/2-bear-canyon"]}
+ },
+ "az_boulder_c": {
+  "_expect": {"name": "Boulder C", "region": "Arizona"},
+  "blurb": "Boulder C is the biggest block in a cluster of boulders beside the road near Rose Canyon on Mount Lemmon, in a pine forest north of Tucson. Problems wrap around every side, and nine lines span a wide range, from easy seam climbs near V1 up to a few very hard ones. A large overhang faces the road side and a dead tree stands on the downhill side. It is one of the first boulders you notice coming from uphill, and the short walk makes it an easy addition to a day on the mountain.",
+  "review": {"sources": ["https://www.mountainproject.com/area/106545639/boulder-c", "https://mountainproject.com/area/106545624/rose-canyon-entrance-boulders"]}
+ },
+ "az_butterfly_wall_2": {
+  "_expect": {"name": "Butterfly Wall", "region": "Arizona"},
+  "blurb": "Butterfly Wall is a remote, high-elevation crag on Mount Bigelow in the Santa Catalina Mountains above Tucson, at about 7,200 feet. Nine routes, mostly bolted with a couple of trad lines, run from 5.9 up to the low 5.12s, with most in the 5.11 range. The climbing features pockets, overhangs and long pitches, and a few lines need a 70 m rope. The wall faces west, so it takes sun from late morning through the afternoon in the busy season. It feels secluded, with trees and grass at the base, but the approach down from the ridge is long and steep.",
+  "review": {"sources": ["https://mountainproject.com/area/106577601/butterfly-wall", "https://www.mountainproject.com/area/106577082/mount-bigelow"]}
+ },
+ "_skipped": {
+  "az_iranian_wall": "no fetched page about the crag itself; only the Windy Point West parent page mentions it, and the rockclimbing.com fetch failed (connection refused)"
+ },
+ "_conflicts": {
+  "az_2_dragon_egg": "stored rock is rhyolite, but https://www.mountainproject.com/area/109973847/dragon-eggz says the boulders are dacite",
+  "az_butterfly_wall_2": "stored rock is granite, but https://mountainproject.com/area/106577601/butterfly-wall says the rock is more like bullet-hard sandstone than granite"
+ }
+}

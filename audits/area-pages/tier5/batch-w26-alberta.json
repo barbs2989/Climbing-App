@@ -1,0 +1,39 @@
+{
+ "ab_the_wave": {
+  "_expect": { "name": "The Wave", "region": "Alberta" },
+  "blurb": "A small bolted crag beside the Bow River below Tunnel Mountain, right next to the town of Banff. Nine sport routes climb steep to vertical walls of edges and small features, around 25 m high, with grades running from an easy 5.7 up to roughly 5.12. Most lines fall in the 5.10 to 5.11 range, so it suits climbers who already lead the middle grades rather than complete beginners. The wall stands in trees close to the water and only opened up for climbing in 2023, so the routes are still fresh. A short walk from the car gets you there.",
+  "approach": "Follow the Tunnel Mountain trail used for the Black Band wall down to the Bow River, then continue along the riverside path until the wall shows up among the trees.",
+  "approach_min": 10,
+  "review": { "sources": ["https://www.mountainproject.com/area/124163064/the-wave", "https://gripped.com/news/the-wave-is-a-new-crag-in-banff/"] }
+ },
+ "ab_rathaus_area": {
+  "_expect": { "name": "Rathaus Area", "region": "Alberta" },
+  "blurb": "Rathaus is one sector of Sunshine Rock, a bolted crag just west of Banff in Banff National Park. Nine sport routes share a slab, starting with a pair of very easy 5.4 lines and a 5.9, then a solid block of 5.10s and 5.11s that tops out near 5.11c. The wall gets a mix of sun and shade, and it can fill up on nice days since Sunshine Rock is one of the busier sport destinations near town. It is a handy spot for an easy warm-up followed by a few harder pitches.",
+  "review": { "sources": ["https://www.mountainproject.com/area/117616713/rathaus-area", "https://gripped.com/news/watch-james-blackhall-send-new-5-11c-sunshine-rockies/"] }
+ },
+ "ab_spider_brook": {
+  "_expect": { "name": "Spider Brook", "region": "Alberta" },
+  "blurb": "A small, shady pocket tucked into a side drainage on Moose Mountain in Kananaskis, close to the Morning Side wall. Nine sport routes on limestone run from 5.8 to the 5.11 range, mostly 5.10s, with a water-polished chute and a mossy chimney among the features. Direct sun is rare for much of the year, which makes it a cool choice in midsummer. The long bike ride in keeps the crowds away, so expect to have it to yourself. Rock quality on Moose Mountain varies, sometimes within a single route.",
+  "parking_note": "Leave the car at the Ing's Mine trailhead lot off the Canyon Creek road and ride a bike up the gravel access road toward the compressor station.",
+  "review": { "sources": ["https://sendage.com/area/spider-brook-moose-mountain-kananaskis-ab-canada", "https://mountainproject.com/area/122275851/moose-mountain"] }
+ },
+ "ab_old_goat_crag": {
+  "_expect": { "name": "Old Goat Crag", "region": "Alberta" },
+  "blurb": "A small limestone crag in the Bow Valley near Canmore with nine bolted sport routes. Grades run from 5.7 to the low 5.10s, with the bulk in the 5.9 to 5.10 range, so it works for newer leaders as well as people stepping up. Climbers describe the routes as well bolted on good rock, though the grading is a bit uneven from one line to the next. At least one of the routes has two pitches. It is a compact crag, so it suits a short day.",
+  "review": { "sources": ["https://mountainproject.com/area/114498943/old-goat-crag", "https://mountainproject.com/area/105893659/bow-valley"] }
+ },
+ "ab_unsorted_problems": {
+  "_expect": { "name": "Unsorted problems", "region": "Alberta" },
+  "blurb": "A loose collection of eight boulder problems spread across the House Area at Frank Slide in Crowsnest Pass, each group too small to earn its own sub-area. Grades start at V0 and are mostly V0 to V3, with one V6 and one V7 for stronger climbers. The House Area sits on the northwest edge of the slide and is one of its more convenient sectors, centered on the huge House Boulder, with some stones sheltered from wind on blustery Chinook days. Treat it as a mix-in for a session around the better-known blocks nearby.",
+  "review": { "sources": ["https://www.mountainproject.com/area/114605151/unsorted-problems", "https://mountainproject.com/area/114603872/house-area"] }
+ },
+ "_skipped": {
+  "ab_cinquefoil_left": "no fetched page is about the Left side itself; only a page on the whole Cinquefoil crag and a club trip report",
+  "ab_grotto_canyon_ice_climbing_routes": "could not fetch a page about the crag itself (summitpost, thecrag and rockclimbing.com pages refused or failed; the fetched page covers only one route)",
+  "ab_duckland": "no fetched page is about Duckland itself; only parent Back of the Lake pages that list it with a route count"
+ },
+ "_conflicts": {
+  "ab_the_wave": "Stored rock is limestone, but https://www.mountainproject.com/area/124163064/the-wave and https://gripped.com/news/the-wave-is-a-new-crag-in-banff/ both describe chert.",
+  "ab_spider_brook": "Stored aspect is E, but https://sendage.com/area/spider-brook-moose-mountain-kananaskis-ab-canada describes a shady, mostly north-facing recessed pocket (the neighbouring Morning Side faces east)."
+ }
+}

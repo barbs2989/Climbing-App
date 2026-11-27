@@ -1,0 +1,89 @@
+{
+ "ab_haffner_upper_aka_the_hoar_cave": {
+  "_expect": {
+   "name": "Haffner, Upper (AKA the Hoar Cave)",
+   "region": "Alberta"
+  },
+  "blurb": "Upper Haffner, also known as the Hoar Cave, is a steep mixed-climbing cave up Haffner Creek, just off the Highway 93 South corridor in Kootenay National Park. The limestone cave holds seven mixed routes spanning roughly M7 to M11, with three of them around M10, so it suits strong, experienced mixed climbers rather than beginners. It has a reputation as a home of the area's original hard mixed lines and draws a small, keen crowd. The walk in follows the creek canyon uphill and crosses a short ice step on the way. Days here can run late enough that a headlamp earns its place in the pack.",
+  "review": {
+   "sources": [
+    "https://gripped.com/?p=39531",
+    "https://kootenaymountainculture.com/world-first-climbing-every-route-of-haffner-cave/",
+    "https://www.mountainproject.com/area/118015045/radium-highway-93-south",
+    "https://www.mountainproject.com/approach-trail/116682366/approach-to-upper-haffner-aka-the-hoar-cave"
+   ]
+  }
+ },
+ "ab_meathooks_area": {
+  "_expect": {
+   "name": "Meathooks Area",
+   "region": "Alberta"
+  },
+  "blurb": "Meathooks is a wall of seven sport routes at Grassi Lakes, above Canmore in the Bow Valley. It stands at the bottom of the canyon on the west shore of the first lake and faces east. The limestone is steep and overhanging, and the grades sit at the hard end for Grassi: one route in the 5.10 range, five at 5.11 and one at 5.12, so beginners will find little to lead. Expect strenuous, pocketed climbing. The walk in is short, heading down the canyon from the upper lot to the water.",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/area/105934065/meathooks-area",
+    "https://mountainproject.com/area/105893722/grassi-lakes"
+   ]
+  }
+ },
+ "ab_poolside": {
+  "_expect": {
+   "name": "Poolside",
+   "region": "Alberta"
+  },
+  "blurb": "Poolside is a small sport wall in Cougar Canyon, near Canmore in the Bow Valley. Its seven limestone routes climb a steep, overhanging cliff and lean toward the harder end: three in the 5.10 range, two at 5.11 and two at 5.12, so it is not a spot for beginners. The base is often wet, and climbers tend to belay early in the day, before the water deepens. The wall sits several crags in along the main approach trail, beyond the Made in the Shade wall.",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/v/poolside/110392201",
+    "https://www.mountainproject.com/area/107761132/cougar-canyon-creek"
+   ]
+  }
+ },
+ "ab_back_door": {
+  "_expect": {
+   "name": "Back Door",
+   "region": "Alberta"
+  },
+  "blurb": "Back Door is a short wall at the far end of Grotto Canyon near Canmore, tucked in the trees beside the Grotto Slabs. It holds seven sport routes, one around 5.8, two in the 5.10 range and four at 5.11, so it favours climbers comfortable on harder ground. The rock is streaked with gold and blue, and the routes are short and heavily textured, a change from the polished climbing found lower in the canyon. Getting there takes a long walk up the canyon, so expect a quiet day.",
+  "review": {
+   "sources": [
+    "https://sendage.com/area/back-door-grotto-canyon-bow-valley-ab-canada",
+    "https://mountainproject.com/area/113323819/grotto-canyon"
+   ]
+  }
+ },
+ "ab_cascadia": {
+  "_expect": {
+   "name": "Cascadia",
+   "region": "Alberta"
+  },
+  "blurb": "Cascadia is a small, tucked-away sport crag on Cascade Mountain, just outside Banff in Banff National Park. Its seven bolted routes are moderate, running from 5.7 into the 5.10 range, with three at 5.9, which makes it a handy choice for newer leaders or a short outing. The lines vary in length and the limestone is of good quality. A brief walk through the trees leads to the base, and the crag sees few visitors.",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/area/122830267/cascadia",
+    "https://mountainproject.com/area/107247301/cascade-mountain"
+   ]
+  }
+ },
+ "ab_rainbow_wall": {
+  "_expect": {
+   "name": "Rainbow Wall",
+   "region": "Alberta"
+  },
+  "blurb": "Rainbow Wall is a limestone wall of about 40 m in Black Feather Canyon, Banff National Park, found past the narrow bottleneck section of the canyon. A wave-like feature crosses the whole face and gives powerful starts. Seven sport routes climb it, from about 5.10 to 5.12, with four in the 5.11 range, so it suits intermediate and strong climbers. The rock is water-sculpted, and the canyon enjoys good sun through much of the year. Expect a substantial walk to reach it.",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/area/116072055/rainbow-wall",
+    "https://www.mountainproject.com/area/116072049/black-feather-canyon"
+   ]
+  }
+ },
+ "_skipped": {
+  "ab_the_right_wing": "no fetched page about the crag itself; only the parent Grotto Canyon page lists it (7 sport routes), the Mountain Project route called Right Wing is a different BC trad route, and the Sendage guess URL returned 404",
+  "ab_first_wall": "second page is a sibling wall's page, not a parent or route page"
+ },
+ "_conflicts": {
+  "ab_haffner_upper_aka_the_hoar_cave": "stored region is Alberta, but the fetched pages place Haffner Creek / the Hoar Cave in Kootenay National Park, British Columbia (https://www.mountainproject.com/area/118015045/radium-highway-93-south, https://kootenaymountainculture.com/world-first-climbing-every-route-of-haffner-cave/); coordinates fit the Highway 93 South corridor"
+ }
+}

@@ -1,0 +1,45 @@
+{
+ "az_obsidian_wall_the": {
+  "_expect": { "name": "Obsidian Wall, The", "region": "Arizona" },
+  "blurb": "A small trad wall at the far northern end of Sycamore Canyon in Paradise Forks, the columnar basalt area in northern Arizona west of Flagstaff. The rock is much darker than the walls around it, nearly black. Six trad lines are here, mostly moderate: one at 5.7, one at 5.8, three at 5.9 and a single 5.11. A seasonal pond sits at the base, so climbers usually rappel in and should keep the rope out of the water. Paradise Forks overall is almost entirely trad, on very hard basalt with generally solid placements and some polished friction.",
+  "review": { "sources": ["https://www.mountainproject.com/area/105792003/the-obsidian-wall", "https://www.mountainproject.com/area/105787813/paradise-forks"] }
+ },
+ "az_crackrock_wall": {
+  "_expect": { "name": "Crackrock Wall", "region": "Arizona" },
+  "blurb": "A compact wall of boulder problems in the Frontier cluster on the northwest side of the Beardsley granite pile in north Phoenix. It is a tall face for this area, mostly low-angle slab with a couple of mildly overhanging bulges, and it offers many lines and variations. The fractured surface gives a good mix of hold types, though some loose rock remains, so test holds. All six problems are easy, running from VB to V1, which makes it a good place to warm up or to start bouldering. It sits on the east side of the cluster, between the Wave Crack and Harry's House boulders. Bring a pad and a spotter.",
+  "review": { "sources": ["https://www.mountainproject.com/area/123599744/crackrock-wall", "https://www.mountainproject.com/area/123529815/frontier-bouldering-area"] }
+ },
+ "az_hobo_junction": {
+  "_expect": { "name": "Hobo Junction", "region": "Arizona" },
+  "blurb": "A low ridge of smaller granite boulders in the Frontier cluster on the northwest side of Beardsley, in north Phoenix, strung between the Wave Crack and Harry's House boulders. Most are no taller than about ten feet. The six problems include two at V0, two at V1, one V4 and one V5, so an easy session and a hard project can share a visit. The boulders face west and pick up later light. The desert granite is a bit chossy and the lines are still being brushed in, so expect some dirt and loose rock. Bring a pad and a spotter.",
+  "review": { "sources": ["https://www.mountainproject.com/area/123596454/hobo-junction", "https://www.mountainproject.com/area/123529815/frontier-bouldering-area"] }
+ },
+ "az_aviary_the": {
+  "_expect": { "name": "Aviary, The", "region": "Arizona" },
+  "blurb": "A short crag in The Zoo, a group of crags in the first drainage above Molino Campground on Mount Lemmon in the Santa Catalina Mountains. Five of its six lines are bolted sport climbs with lowering anchors, and one off-width crack gives an easy trad lead that wants big cams. Grades are moderate, from 5.7 to 5.10, with three at 5.9. The rock is good and the climbing is fun, though it could stand to be taller. The belay ledges hang over a waterfall when water is running. A helmet is wise anywhere in The Zoo.",
+  "approach": "Walk up the drainage to The Watering Hole, follow the path along its base to Ectotherm Tower, then take a short slab and a path that traverses upstream beneath The Petting Zoo wall. The Aviary only shows once you are past that wall and look uphill.",
+  "approach_min": 15,
+  "review": { "sources": ["https://www.mountainproject.com/area/121930200/the-aviary", "https://www.mountainproject.com/area/121930190/the-zoo"] }
+ },
+ "az_east_face_2": {
+  "_expect": { "name": "East Face", "region": "Arizona" },
+  "blurb": "A short sport wall on the east side of The Druid, in the mid-mountain zone of Mount Lemmon in the Santa Catalina Mountains. The six bolted routes run from 25 to 65 feet, and a 40 m rope should cover them all, though the longest is close. Grades go from 5.9 up to 5.12, with three at 5.11, so it favors climbers working at the harder end. The face takes the morning sun and goes into shade later in the day, and the belays are mostly shaded among trees. Pines around The Druid keep the base cool in hot weather.",
+  "review": { "sources": ["https://www.mountainproject.com/area/121349122/east-face", "https://www.mountainproject.com/area/105738074/the-druid"] }
+ },
+ "az_oak_flat_bouldering": {
+  "_expect": { "name": "Oak Flat Bouldering", "region": "Arizona" },
+  "blurb": "A bouldering sector of Queen Creek Canyon, the volcanic canyon about an hour east of Phoenix, reached by driving through Superior and up past the big highway tunnel. The rock is abrasive volcanic stone with a wide mix of hold types. The six problems catalogued here run from V4 to V8 and cluster at V6, so this sector suits stronger boulderers. Oak Flat as a whole spreads many boulders across the canyon, from easy slabs to steep dynamic lines. A few taller problems carry old bolts for top-roping, which should be treated with caution.",
+  "review": { "sources": ["https://www.mountainproject.com/area/106959022/oak-flat", "https://www.mountainproject.com/area/105788089/queen-creek-canyon"] }
+ },
+ "az_hideout_wall": {
+  "_expect": { "name": "Hideout Wall", "region": "Arizona" },
+  "blurb": "A quiet crack-climbing wall in the West Stronghold of Cochise Stronghold, in southern Arizona. All six routes are trad: one 5.6, two 5.8, a 5.9, then a 5.11 and a 5.12, so the moderate cracks are the draw, with only two real tests above them. The wall is secluded and gets shade in the afternoon. It lies on the far side of a tree-filled drainage from Warpath Dome, and the walk in takes roughly an hour. Expect solitude, and expect a committing backcountry day rather than a roadside crag.",
+  "review": { "sources": ["https://www.mountainproject.com/area/107043905/hideout-wall", "https://mountainproject.com/area/107476315/west-stronghold"] }
+ },
+ "_skipped": {
+  "az_beef_wall": "no fetched page about Beef Wall itself; only the parent Oak Creek Spire Area page lists it as a six-climb subarea with no description, and searches found no Beef Wall page"
+ },
+ "_conflicts": {
+  "az_hideout_wall": "stored aspect is E but the crag page https://www.mountainproject.com/area/107043905/hideout-wall says it is northeast-facing with afternoon shade; the second page gives no aspect, so nothing changed and the blurb names no direction"
+ }
+}

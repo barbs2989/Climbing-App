@@ -1,0 +1,24 @@
+{
+ "ab_king_creek": {
+  "_expect": {"name": "King Creek", "region": "Alberta"},
+  "blurb": "A small ice-cragging spot in the Kananaskis Valley, a short trail walk from a pull-off beside Highway 40. Four ice lines run from gentle to moderate, around WI2 to WI3, with a handful of mixed lines and a single bolted sport route near 5.10. Flows tend to arrive later in the winter but hang on well into spring, and the forgiving grades suit newer ice climbers. Routes are short, roughly 20 to 40 metres, and none can be top-roped, so every pitch is led and a long rope helps. The path crosses avalanche terrain, so read the conditions before heading up.",
+  "parking_note": "Turn left off Highway 40 shortly before the gates to reach the small King Creek parking area, near the start of the creek-side path.",
+  "approach": "A well-worn trail follows the creek upstream to the ice.",
+  "review": {"sources": ["https://www.mountainproject.com/area/117947273/king-creek", "https://avalanche.ca/resources/ice-climbing/atlas/king-creek", "https://www.theoutbound.com/canada/rock-climbing/ice-climb-at-king-creek"]}
+ },
+ "ab_cleft_cave": {
+  "_expect": {"name": "Cleft Cave", "region": "Alberta"},
+  "blurb": "A high-elevation limestone cave crag in the Crowsnest Pass backcountry, set in the right fork of Ptolemy Valley at roughly 2,400 metres. Five bolted lines gather around the cave mouth, from 5.9 up to 5.10, with most of them at the 5.10 level. The rock is generally good, though dark streaks where water seeps can be polished and slick. It is a committed day out rather than a quick crag stop: a long valley hike comes first, and the full loop that exits through the cave windows by rappel is about 18 km. The wall catches sun through the afternoon in high season. Quickdraws and shoes cover the climbing.",
+  "approach": "Follow the main valley trail (the Trail of Seven Bridges) into Ptolemy Valley to the established campsite. The cave is the slot in the eastern cliff band; a brief, easy scramble on a goat path leads to the base.",
+  "review": {"sources": ["https://www.mountainproject.com/area/123520671/cleft-cave", "https://www.mountainproject.com/route/124701229/aint-no-phreatic-crawl", "https://app.advcollective.com/climbing/cleft-cave-albertas-multi-sport-adventure-with-climbing-caving-and-epic-views"]}
+ },
+ "_skipped": {
+  "ab_alcatraz": "no fetched page about the crag itself: theCrag pages returned 403; only an AAC report (names the dry-tooling crag, one route) and The Playground MP page (does not mention Alcatraz) were fetched",
+  "ab_cougar_rock": "only one fetched page (a Mountain Conditions re-bolting post); the SummitPost page returned 403 and no second page about Cougar Rock near Hinton found",
+  "ab_speedbird": "no page about this crag found in two searches; nothing fetchable names it",
+  "ab_second_buttress_of_rundle": "no fetched page about this crag itself; the Mountain Project Second Buttress pages fetched are in Colorado, and the Gripped article only mentions the buttress in passing"
+ },
+ "_conflicts": {
+  "ab_cleft_cave": "aspect: https://www.mountainproject.com/area/123520671/cleft-cave says routes mostly face west; https://app.advcollective.com/climbing/cleft-cave-albertas-multi-sport-adventure-with-climbing-caving-and-epic-views says south-facing. Aspect not written."
+ }
+}

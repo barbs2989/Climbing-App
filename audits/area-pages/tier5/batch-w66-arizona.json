@@ -1,0 +1,35 @@
+{
+ "az_godfather_area_the": {
+  "_expect": { "name": "Godfather Area, The", "region": "Arizona" },
+  "blurb": "The first cluster of routes you meet on the hike into Upper Middle Elden Canyon on Mt. Elden above Flagstaff, at roughly 7,850 feet. Seven routes, nearly all of them bolted, with a single trad line. Grades start around 5.10 and top out at 5.12, with most of the climbing in the 5.10 and low 5.11 range, so it suits climbers already comfortable on steeper sport pitches. The lower part is a tower with a slab beneath it, and a few more lines sit above. The wall catches direct sun only from about 1:30 in the afternoon, and the best-known line stays shaded even then, which makes it a decent pick on warm days.",
+  "review": { "sources": ["https://www.mountainproject.com/area/115689002/the-godfather-area", "https://www.mountainproject.com/area/115688921/upper-middle-elden-canyon"] }
+ },
+ "az_canary_wall": {
+  "_expect": { "name": "Canary Wall", "region": "Arizona" },
+  "blurb": "A trad-only wall on the south side of Volunteer Canyon near Flagstaff, about 6,500 feet up. Seven routes follow crack systems that stand out as splitter lines when viewed from the opposite canyon wall. The grade spread is mostly 5.8 to 5.10, with one much harder 5.12 outlier, so it suits a leader with a standard rack looking for moderate crack climbing. The columnar basalt here is typical of the canyon's south side. The wall points northwest, which keeps it in shade until early afternoon, a plus on hot days and especially in autumn. Some of the lines go back to the 1970s.",
+  "review": { "sources": ["https://www.mountainproject.com/area/107246241/canary-wall", "https://www.mountainproject.com/area/106898052/south-side"] }
+ },
+ "az_cherry_creek_boulder": {
+  "_expect": { "name": "Cherry Creek Boulder", "region": "Arizona" },
+  "blurb": "A single large boulder near Cherry Creek Road, east of Prescott, set among pines and thick brush. Seven problems go from an easy warm-up up to V9, so a few are accessible but most are for strong boulderers. The most overhung side has slopers leading to a committing top-out of about 15 feet, so bring pads and a spotter. The harder problems sit on the north face and stay shaded for much of the day. Expect a quiet, low-key spot rather than a destination with a crowd of projects.",
+  "review": { "sources": ["https://www.mountainproject.com/area/114184837/cherry-creek-boulder", "https://www.mountainproject.com/route/114263697/cherry-squeeze"] }
+ },
+ "az_across_the_creek": {
+  "_expect": { "name": "Across the Creek", "region": "Arizona" },
+  "blurb": "A set of creekside sandstone boulders in Oak Creek Canyon near Sedona, on the far bank of the stream from the first bouldering zone at Grasshopper Point. Seven problems run from the low grades through the middle range to a couple of hard testpieces near V9, and some of the blocks are large. The walk from the parking area is short, but you will usually need to wade the creek, so wear shorts or bring sandals. Fall and winter are the comfortable times here, since summer gets hot and spring snowmelt can cover some of the landings.",
+  "review": { "sources": ["https://www.mountainproject.com/area/106550553/across-the-creek", "https://www.mountainproject.com/area/106550089/grasshopper-point-boulders"] }
+ },
+ "az_rapunzel_s_tower": {
+  "_expect": { "name": "Rapunzel's Tower", "region": "Arizona" },
+  "blurb": "The middle formation at The Nursery, a small beginner-friendly crag on Mt. Lemmon outside Tucson. It is a tower with lines on three sides and a prominent diving-board roof. Seven routes mix trad, sport and top-rope, mostly moderate with a few at 5.10, and the left side is steeper and juggier than the neighbouring slabs. The bolts were replaced and the routes cleaned in winter 2025, making them leadable. It is the first formation you reach on the short trail uphill from the road, which makes it quick to get to. Top-rope setups are possible by scrambling up a gully beside the tower.",
+  "review": { "sources": ["https://www.mountainproject.com/area/106664914/rapunzels-tower", "https://www.mountainproject.com/area/106664863/the-nursery"] }
+ },
+ "_skipped": {
+  "az_north": "no fetched page about the North side itself; only the whole-buttress parent page (Crackerjack Buttress) lists it",
+  "az_rattlesnake_boulder": "no fetched page names or describes a Rattlesnake Boulder in Beardsley Bouldering; only the parent page was fetched",
+  "az_upper_crag_7_routes": "only one fetched page (Over The Hill, which covers both crags); no second page about the crag"
+ },
+ "_conflicts": {
+  "az_cherry_creek_boulder": "stored rock tonalite, but https://www.mountainproject.com/area/114184837/cherry-creek-boulder calls it a granite boulder; stored value left unchanged and rock not named in blurb"
+ }
+}

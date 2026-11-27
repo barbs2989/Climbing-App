@@ -1,0 +1,31 @@
+{
+ "az_torch_the_2": {
+  "_expect": { "name": "Torch, The", "region": "Arizona" },
+  "blurb": "A small cluster of nine routes wrapped around a prominent rock feature in the Refuge, a valley of Hackberry Creek within Queen Creek Canyon in central Arizona, at roughly 4,000 feet. Eight lines are traditional and one is bolted. Difficulty starts around 5.7 and tops out in the low 5.11s, with a handful of 5.10s forming the core, so it suits climbers comfortable placing gear on moderate to hard ground. Short, cairned trails lead to the base. Rock quality across the valley is uneven, and loose holds can linger even after cleaning, so check what you pull on.",
+  "review": { "sources": ["https://www.mountainproject.com/v/107382045", "https://www.mountainproject.com/area/107380532/the-refuge"] }
+ },
+ "az_mecca_area_northeast_face": {
+  "_expect": { "name": "Mecca Area (Northeast Face)", "region": "Arizona" },
+  "blurb": "The slim buttress end of Thumb Butte, the volcanic landmark above Prescott, holds nine traditional routes that rank among the best on the formation. Grades run from easy 5.6 up to a single 5.11, with most lines in the 5.10 range and a couple at 5.9, so there is something for confident leaders without being a beginner crag. The face tends to stay shaded. Reach it by following the climbers' trail from the shoulder around the south side until the butte bends away. Protection on the butte can be tricky or sparse, so expect to place gear thoughtfully.",
+  "review": { "sources": ["https://www.mountainproject.com/area/105967290/northeast-face", "https://mountainproject.com/area/105944337/thumb-butte"] }
+ },
+ "az_cow_town_buttress": {
+  "_expect": { "name": "Cow Town Buttress", "region": "Arizona" },
+  "blurb": "A sport sector at the Homestead, near 3,450 feet in central Arizona, tucked at the far end of the Rough Rider zone just before the cliff turns toward the North Buttress. Nine bolted routes, all between 5.10 and 5.11, with five of them in the 5.11 range. The face is less steep than its neighbors, so the climbing is sustained and technical instead of burly, and some lines are long. It catches sun sooner than the main wall, handy on cold mornings, though on warm days you will want shade. Breezes are stronger here than at nearby sectors.",
+  "review": { "sources": ["https://www.mountainproject.com/area/121150570/cow-town-buttress", "https://www.mountainproject.com/area/105952411/rough-rider-zone"] }
+ },
+ "az_gate_s_pass_climbs": {
+  "_expect": { "name": "Gate's Pass Bouldering", "region": "Arizona" },
+  "blurb": "Desert bouldering in the Tucson Mountains, about a quarter hour's drive west of downtown, among Sonoran saguaro stands with good sunset views. Nine problems are recorded here, running from V1 to V7 with a cluster of easier ones and a few much harder lines. Boulders sit on the slope beside the road and are reached on established trails heading uphill. Winter is the pleasant season, since heat shortens the useful window. Watch for jumping cholla and rattlesnakes, particularly if you bring a dog, and bring a crash pad.",
+  "review": { "sources": ["https://mountainproject.com/area/105738028/gates-pass", "https://www.mountainproject.com/area/106824861/tucson-area-bouldering"] }
+ },
+ "_skipped": {
+  "az_thor_s_chasm": "no fetched page about the chasm itself: Thor's Wall page does not mention it, the openbeta pages 404, only a route page (Black Magic) names it",
+  "az_new_outfromunder_boulders": "no fetched page about a New Outfromunder Boulder: the Upper Outfromunder and Outfrumunders pages do not mention it",
+  "az_left_side": "no fetched page about Left Side itself; only the parent Insomnia East and Insomnia Canyon pages, which list it as a sub-area",
+  "az_late_boulder": "no fetched page about Late Boulder itself; Gates Pass and Tucson area pages only list it among sub-areas"
+ },
+ "_conflicts": {
+  "az_mecca_area_northeast_face": "stored rock granodiorite, but https://mountainproject.com/area/105944337/thumb-butte describes Thumb Butte as a basalt butte (the Northeast Face page https://www.mountainproject.com/area/105967290/northeast-face gives no rock type); blurb names no rock and stored value left unchanged"
+ }
+}

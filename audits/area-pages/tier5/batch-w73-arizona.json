@@ -1,0 +1,27 @@
+{
+ "az_trundle_pinnacle": {
+  "_expect": { "name": "Trundle Pinnacle", "region": "Arizona" },
+  "blurb": "Trundle Pinnacle is a freestanding spire roughly 200 feet tall on Mount Bigelow, up in the Santa Catalina Mountains near Tucson, standing only a few yards from the Butterfly Wall. Climbing happens on the east face, whose pocketed rock gives the routes their distinctive feel. Six lines split evenly between bolted sport and trad, and they sit in a narrow band: mostly 5.10, with a couple of 5.11s. Trees shade the ground at the base and there are views, so it is a pleasant place to hang out between burns. It is small, so most parties combine it with the neighboring wall.",
+  "review": { "sources": ["https://www.mountainproject.com/area/106577611/trundle-pinnacle", "https://www.mountainproject.com/area/106577082/mount-bigelow"] }
+ },
+ "az_the_border_wall": {
+  "_expect": { "name": "The Border Wall", "region": "Arizona" },
+  "blurb": "The Border Wall is a small crag in the Oasis section of Granite Gardens, in the Granite Dells near Prescott. It holds six trad lines, two each at 5.9, in the 5.10 range and in the 5.11 range, so it offers a little something for moderate and harder leaders alike. The wall faces south, which means plenty of sun, and its top can be reached to set up top ropes. The trail in climbs in switchbacks before reaching the base.",
+  "review": { "sources": ["https://www.mountainproject.com/area/126440307/the-border-wall", "https://www.mountainproject.com/area/116496891/the-oasis"] }
+ },
+ "az_icebox": {
+  "_expect": { "name": "Icebox", "region": "Arizona" },
+  "blurb": "Icebox is a narrow slot canyon, around 140 feet deep, in the Sierra Ancha Mountains of central Arizona, about two hours from Mesa. Its walls keep the canyon in shade for nearly the whole day, which makes it a go-to when other crags are too hot. Six routes, five of them bolted sport lines and one trad, cluster mostly around 5.11 with a few easier lines at 5.9 and 5.10. Expect a short walk down a wash, then a rappel in to reach the climbing.",
+  "review": { "sources": ["https://www.mountainproject.com/area/106114193/icebox", "https://www.mountainproject.com/area/106113689/sierra-ancha-mountains"] }
+ },
+ "_skipped": {
+  "az_north_bluff": "no fetched page about North Bluff itself; searches only returned Beardsley/Frontier Ridge pages and sibling areas",
+  "az_darkside_of_the_sun": "no page found for a Darkside of the Sun near Lake Mary; only unrelated Darkside areas in Colorado",
+  "az_hand_jive_boulder": "no page found for Hand Jive Boulder at Beardsley in two searches; only parent Beardsley pages",
+  "az_shady_grove_2": "only one fetched page (Upper Highway parent list) names Shady Grove; its own page not found (a Prescott Oasis crag of the same name is a different place)",
+  "az_new_wave_nothingness": "only the Stewart Pocket parent page names it; no page about the crag itself found"
+ },
+ "_conflicts": {
+  "az_icebox": "stored rock is basalt, but both https://www.mountainproject.com/area/106114193/icebox (clean quartzite) and https://www.mountainproject.com/area/106113689/sierra-ancha-mountains (quartzite climbing) say quartzite; stored value not changed"
+ }
+}

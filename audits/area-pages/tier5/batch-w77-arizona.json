@@ -1,0 +1,28 @@
+{
+ "az_gray_wall": {
+  "_expect": {"name": "Gray Wall", "region": "Arizona"},
+  "blurb": "Gray Wall is a west-facing wall on Dromedary Peak in central Arizona, off US 60 east of Florence Junction. A dirt road leads toward it, and a two-wheel-drive vehicle can manage the drive to the start of the walk. Six routes are here: four bolted lines, one crack climb and a single top-rope line, with grades running from 5.7 up to about 5.10. The volcanic rhyolite is not as refined as the rock around the Superstitions, though it is gentler on bare hands. Expect some dirt on the routes, offset by big holds, and a few of the sport lines are longer than usual.",
+  "review": {"sources": ["https://www.mountainproject.com/area/109922322/gray-wall", "https://www.mountainproject.com/area/105904757/dromedary-peak"]}
+ },
+ "az_mordor": {
+  "_expect": {"name": "Mordor", "region": "Arizona"},
+  "blurb": "Mordor is a compact crag in Christopher Creek Gorge, a creek canyon near Payson in central Arizona, at roughly 5,200 feet. Dark spires and walls hold six routes, split evenly between sport and trad. Grades start at 5.8 and reach the 5.11 range, with most routes at 5.9 and 5.10. The setting is adventurous: the walk crosses the creek, thorny brush and cold water come with it, and the cliffs are described as unforgiving. Bring your own rope, a trad rack and dependable partners, and plan on a short outing rather than a full day of climbing.",
+  "review": {"sources": ["https://www.mountainproject.com/area/113969127/mordor", "https://www.mountainproject.com/area/110803885/christopher-creek-gorge"]}
+ },
+ "az_iceberg_the": {
+  "_expect": {"name": "The Iceberg", "region": "Arizona"},
+  "blurb": "The Iceberg is a fin of rock about 130 feet tall in the Superstition Mountains east of Phoenix, with faces, chimneys, cracks and other quirky features. Its six routes are all trad, from easy fifth-class terrain up through 5.8, so it suits climbers who want a gentle introduction to the range. The stone is described as solid, and you can fit in several routes in a day. Weekdays tend to be quiet, while weekends can get busier because hiking trails pass the base. Budget roughly 35 minutes to an hour to reach it on foot.",
+  "review": {"sources": ["https://www.mountainproject.com/area/111619031/the-iceberg", "https://www.mountainproject.com/area/105787978/superstition-mountains"]}
+ },
+ "az_cactus_flower_west": {
+  "_expect": {"name": "Cactus Flower West", "region": "Arizona"},
+  "blurb": "Cactus Flower West is a small wall in Pinnacle Peak Park in the Phoenix area, facing west. You get there by following the same climber's trail as for the neighboring Cactus Flower East wall, then walking around to the west side. Of its six routes, five are trad and one is sport. Grades begin around 5.7 and 5.8, bunch up in the 5.10 range, and top out with a single 5.11. The rock is granite, in the desert style typical of the park's formations. It works as a quick add-on to a day spent on the park's other cracks and face routes.",
+  "review": {"sources": ["https://www.mountainproject.com/area/106022108/cactus-flower-west", "https://www.mountainproject.com/area/105787822/pinnacle-peak"]}
+ },
+ "_skipped": {
+  "az_the_heel": "only one fetched page (parent High Rappel Area) lists it, with no description; no page about the crag itself",
+  "az_frontier_boulder": "no page about the boulder itself; only the parent Frontier Bouldering Area listing, which gives no crag-specific facts",
+  "az_nosepicker_pinnacles": "no fetchable page about the crag itself (hikearizona returned 403; openbeta and the parent page only list routes)",
+  "az_northwest": "only a one-route page with an approximate location that disagrees with the stored six-route count; not enough to describe the crag"
+ }
+}

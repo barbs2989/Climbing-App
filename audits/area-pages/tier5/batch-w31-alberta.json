@@ -1,0 +1,81 @@
+{
+ "ab_korova_milk_bar": {
+  "_expect": {
+   "name": "Korova Milk Bar",
+   "region": "Alberta"
+  },
+  "blurb": "Korova Milk Bar is a small limestone sport sector high on the Prairie Creek hillside in Kananaskis, west of Bragg Creek. Seven bolted lines run from a little under 5.10 up through the 5.12s, with most of the climbing clustered in the 5.11 and 5.12 range, so it suits strong climbers more than beginners. The wall sits in shade, which helps on warm days, though seepage after rain is common in this drainage. A head-high slot cave across part of the wall makes it easy to recognise, and the belay ledge is sloped. Expect a long uphill hike through the trees to reach it, further up than the lower Prairie Creek crags.",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/area/201314791/korova-milk-bar",
+    "https://mountainproject.com/area/119339858/prairie-creek"
+   ]
+  }
+ },
+ "ab_anti_moose": {
+  "_expect": {
+   "name": "Anti moose",
+   "region": "Alberta"
+  },
+  "blurb": "Anti Moose is a sport crag on Moose Mountain in Kananaskis, reached off the Ings Mine road. It carries seven bolted routes, nearly all of them in the 5.11 range with a single 5.12, so it is a place for climbers already comfortable on hard sport. The name nods to a lengthier walk than the other Moose Mountain crags, a trade-off for rock that is described as especially good. The final stretch leaves the road on a faint trail that is easy to miss, so go in with a description of the turnoff in hand. Limestone, mostly, in keeping with the rest of the mountain.",
+  "review": {
+   "sources": [
+    "https://sendage.com/area/antimoose-moose-mountain-kananaskis-ab-canada",
+    "https://mountainproject.com/area/122275851/moose-mountain"
+   ]
+  }
+ },
+ "ab_the_overhang": {
+  "_expect": {
+   "name": "The Overhang",
+   "region": "Alberta"
+  },
+  "blurb": "The Overhang is the steep wall where Little Russia's first lines went up, in the Peskett canyon near Nordegg along the David Thompson Corridor. The wall leans back at roughly thirty degrees, giving gymnastic climbing on generally good holds. Six sport lines and one short trad chimney run from an easy grade through the 5.10s and 5.12s into the 5.13s, so most of it is for strong climbers. It faces northeast, catching only a splash of morning sun and little warmth, and some holds seep early in the season or after heavy rain. Stray off the lines and the rock turns loose, so keep the belayer out of the fall line.",
+  "approach": "Follow the creek trail upstream, take the signed branch that crosses a side slope, drop back to the creek and cross it just before the canyon mouth. A trail on the far bank leads to the wall.",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/area/120181507/the-overhang",
+    "https://mountainproject.com/area/116647936/little-russia"
+   ]
+  }
+ },
+ "ab_7_the_pacific_theatre": {
+  "_expect": {
+   "name": "The Pacific Theatre",
+   "region": "Alberta"
+  },
+  "blurb": "The Pacific Theatre is a compact limestone sport wall in the Bataan zone above Canmore, in the Bow Valley. It holds seven routes, all hard: four in the 5.12s and three in the 5.13s, so it is aimed at experienced climbers who want projects. The stone is clean and compact. Expect shade until about mid-afternoon, which can make it comfortable in warm weather and chilly in cool conditions. The walk-in is long, well past an hour from the road before you even reach the first cave, and the crag is the panel next to the right-hand eye. Plan a full day.",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/area/115789093/the-pacific-theatre",
+    "https://www.mountainproject.com/area/115144708/bataan"
+   ]
+  }
+ },
+ "ab_boundary_bluffs": {
+  "_expect": {
+   "name": "Boundary Bluffs",
+   "region": "Alberta"
+  },
+  "blurb": "Boundary Bluffs is a single-pitch crag beside the David Thompson Highway, just outside the eastern edge of Banff National Park. Seven routes mix bolted sport lines with crack and face trad, spanning roughly 5.9 to 5.11, with most of them in the 5.10 and 5.11 range. The wall faces southeast, so it picks up sun in the morning and early afternoon. The rock is mostly solid, and several of the cracks take good jams. Few lines are developed, so it rarely feels crowded, and there is room for more. The walk in is short but over rough, deadfall-strewn ground.",
+  "parking_note": "Pull off on the north side of Highway 11 beside the large Parks Canada sign, about 6.6 km east of the Icefields Parkway crossing.",
+  "approach": "Walk north up the cut line along the boundary for about 15 minutes, following pink flagging and cairns through deadfall to the base of the crag.",
+  "approach_min": 15,
+  "aspect": "SE",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/area/118876559/boundary-bluffs",
+    "https://www.mountainproject.com/area/108259417/nordegg-david-thompson-corridor",
+    "https://app.advcollective.com/climbing/boundary-bluffs-limestone-climbing-on-banffs-eastern-edge"
+   ]
+  }
+ },
+ "_skipped": {
+  "ab_mello_jello": "no fetched page about the crag itself; only the White Buddha parent page lists it (7 climbs, no details); a sendage guess URL 404'd",
+  "ab_northern_shield_left_side": "no fetchable page about this crag; theCrag guide returned 403 and the Moose Mountain parent page only lists it; sendage guess URL 404'd",
+  "ab_across_the_creek": "no fetched page about the crag itself; the Porcupine Creek parent page only lists it as a sector with no details, and no area page was reachable"
+ },
+ "_conflicts": {
+  "ab_boundary_bluffs": "stored rock is dolomite but https://www.mountainproject.com/area/118876559/boundary-bluffs and https://app.advcollective.com/climbing/boundary-bluffs-limestone-climbing-on-banffs-eastern-edge both say limestone (blurb names no rock type)"
+ }
+}

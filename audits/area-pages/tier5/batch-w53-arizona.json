@@ -1,0 +1,40 @@
+{
+ "az_west_sanctuary": {
+  "_expect": { "name": "West Sanctuary", "region": "Arizona" },
+  "blurb": "West Sanctuary is a small bouldering zone in the desert outside Tucson, with eight problems spread over a handful of rhyolite lines and one hueco. The grades start at the easy end and climb steadily: a few problems around V0 to V2, a cluster in the V3 to V4 range, then a couple of very hard lines for strong boulderers. Many of the problems face north, so the boulders hold shade through the morning and often all day in winter, which makes cooler months the comfortable time to visit. The boulders sit out on a flat desert plain rather than in a canyon, and the ground around them is delicate, so tread lightly.",
+  "review": { "sources": ["https://www.mountainproject.com/area/114094571/west-sanctuary", "https://www.mountainproject.com/area/106824861/tucson-area-bouldering"] }
+ },
+ "az_whale_dome": {
+  "_expect": { "name": "Whale Dome", "region": "Arizona" },
+  "blurb": "Whale Dome is a standalone granite dome in the West Stronghold of Cochise Stronghold, in southeastern Arizona's Dragoon Mountains. Its eight listed lines are all traditional climbs, running from about 5.7 up to a single 5.11, with the bulk of them in the 5.7 to 5.10 band. The best-known line is a multi-pitch outing, and fixed rappel anchors on the west side serve for the descent. The stone is described as very good along the established lines, routefinding is fairly straightforward, and the views over the surrounding country are a big part of the draw. Getting to the base takes a real hike, so plan on a good walk from the road.",
+  "review": { "sources": ["https://www.mountainproject.com/area/105738077/whale-dome", "https://mountainproject.com/area/107476315/west-stronghold"] }
+ },
+ "az_3_palisade_west": {
+  "_expect": { "name": "Palisade West", "region": "Arizona" },
+  "blurb": "Palisade West is a little crag high on Mount Lemmon in the Santa Catalina Mountains near Tucson, a couple of hundred yards west of the main Palisade Park cliffs. It holds eight lines, mostly bolted sport with a pair of trad routes. The bulk are moderate, from about 5.6 into the 5.9 range, and a few harder ones near the top end of the 5.11 grades are short but fun. Most of the routes catch the sun for much of the day, while the two on the far left stay shaded until early afternoon. The car-to-crag walk is only a few minutes, and the cool mountain air makes it a good escape from summer heat in town.",
+  "review": { "sources": ["https://www.mountainproject.com/area/122905805/3-palisade-west", "https://www.mountainproject.com/area/121622078/palisade-park"] }
+ },
+ "az_upper_wall": {
+  "_expect": { "name": "Upper Wall", "region": "Arizona" },
+  "blurb": "The Upper Wall is a low, broad wall above the Main Wall at Hog Heaven in the McDowell Mountains, northeast of Phoenix. It has eight climbs, mostly traditional with a couple of bolted lines, and the grades lean easy to moderate: most fall between 5.5 and 5.8, with one 5.10 as the standout challenge. Hog Heaven in general is described as scenic and uncrowded, with decent rock, and this wall is a good place for easy to moderate leads. Expect a real hike with some route-finding to get there; continue along the climbers' trail beyond the Main Wall, then head up and to the left.",
+  "approach": "Follow the climbers' trail past the Main Wall, then go up and to the left to reach the Upper Wall.",
+  "review": { "sources": ["https://www.mountainproject.com/area/120312056/upper-wall", "https://mountainproject.com/area/112431274/hog-heaven"] }
+ },
+ "az_behind_sweet_rock": {
+  "_expect": { "name": "Behind Sweet Rock", "region": "Arizona" },
+  "blurb": "Behind Sweet Rock sits in the West Stronghold of Cochise Stronghold, just past the better-known Sweet Rock wall in southern Arizona. It is a mixed bag of eight lines: mostly bolted sport routes, plus one boulder problem. Difficulty ranges widely, from an easy low-angle slab suited to beginners up through mid-grade lines in the 5.8 range and a couple of much harder ones, including one around 5.12. There are also boulders to scramble over and explore, and plenty of unclimbed rock nearby. The area is said to be at its best in the evening, when the sun is lower.",
+  "review": { "sources": ["https://www.mountainproject.com/area/106728461/behind-sweet-rock-peanut-rock", "https://mountainproject.com/area/107476315/west-stronghold"] }
+ },
+ "az_studio_the": {
+  "_expect": { "name": "Studio, The", "region": "Arizona" },
+  "blurb": "The Studio is a small bouldering area on a hillside above the valley floor in Pima Canyon, part of South Mountain in Phoenix. It has eight problems and the grades are lopsided: seven are easy, between V0 and V2, while a single hard problem near V6 gives experts something to chase. Its most recognisable feature is a big boulder with a flat, streaked face. Pima Canyon is the most heavily developed bouldering zone on South Mountain, and The Studio is a quieter corner of it, reached by heading south from the amphitheater or from the Seven Samurai boulders.",
+  "review": { "sources": ["https://www.mountainproject.com/area/106680550/the-studio", "https://www.mountainproject.com/area/106671948/pima-canyon-area"] }
+ },
+ "_skipped": {
+  "az_wasteland_the": "placeholder row ('The Wasteland Routes', parent 'Wasteland, The') that only holds another crag's climbs",
+  "az_split_rock_area": "Phoenix South Mountain bouldering area flagged as restricted by the city; only one fetched page describes it and no second fetched page names it"
+ },
+ "_conflicts": {
+  "az_whale_dome": "stored aspect W, but https://www.mountainproject.com/area/105738077/whale-dome says the routes are on the south and east faces; no direction used in blurb"
+ }
+}
