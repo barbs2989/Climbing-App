@@ -1,0 +1,44 @@
+{
+ "ca_middle_tier_right_side": {
+  "_expect": { "name": "Middle Tier (Right Side)", "region": "California" },
+  "blurb": "Middle Tier (Right Side) is a bolted sport crag in the Frustration Creek canyon of the San Bernardino Mountains, among the Highway 38 crags at roughly 5,000 feet. It has eight single-pitch routes, with a large share in the 5.8 to 5.9 range, a couple of 5.10 lines and one much easier climb near 5.4. The routes run long for their grades, which suits climbers stepping up from beginner terrain. The way to the base goes up a fixed rope beside the waterfall and then right. Expect polished, dirty holds in places, and take care at the stream crossing below, which can be slick.",
+  "review": { "sources": ["https://mountainproject.com/area/114227478/middle-tier-right-side", "https://www.mountainproject.com/area/105914202/middle-tier"] }
+ },
+ "ca_otay_mesa": {
+  "_expect": { "name": "Otay Mesa", "region": "California" },
+  "blurb": "Otay Mesa is a small canyon of grass and palm trees close to the Mexican border in South San Diego County. It holds eight short, featured routes: seven sport lines and one trad line, spanning roughly 5.7 to 5.11, with most falling around 5.10. The best walls face north and the trees add shade, so the canyon stays climbable on all but the hottest days. The walk from the park is about 0.9 miles, mostly downhill. The face comes into view after around 15 minutes, and from the riverbed you turn toward the pipe that crosses the river, where the routes are.",
+  "review": { "sources": ["https://www.mountainproject.com/area/105913850/otay-mesa", "https://www.mountainproject.com/area/111860940/south-san-diego-county"] }
+ },
+ "ca_palm_nailer_wall": {
+  "_expect": { "name": "Palm Nailer Wall", "region": "California" },
+  "blurb": "Palm Nailer Wall is a sport wall on Fairview Mountain near Apple Valley, in the High Desert. It sits at the northern end of Middle Earth Valley on the western side. Eight bolted routes run from 5.9 up to 5.12a, with most of them in the 5.10 range and a single 5.11 and 5.12 at the top end. The wall faces north and its base is a deeply shaded niche, which makes it a useful choice for warmer days. A scramble leads into the base, and one line has to be climbed first to reach the start of its neighbour.",
+  "review": { "sources": ["https://www.mountainproject.com/area/111284677/palm-nailer-wall", "https://www.mountainproject.com/area/108189976/middle-earth"] }
+ },
+ "ca_black_wall_boulder": {
+  "_expect": { "name": "Black Wall Boulder", "region": "California" },
+  "blurb": "Black Wall Boulder is one of the two main boulders at The Saddles, a bouldering area above Donner Lake near Truckee along the I-80 corridor, at about 6,800 feet. It stands just left of the Saddle Boulder. There are eight problems, from V0 up to a V11 low start, with a cluster around V2, a few at V5 and V6, and the hardest well beyond the rest. The northeast side can have a wet or swampy landing in spring and summer, depending on the weather.",
+  "review": { "sources": ["https://mountainproject.com/area/113132806/black-wall-boulder", "https://www.mountainproject.com/area/113132746/the-saddles"] }
+ },
+ "ca_partington_cove": {
+  "_expect": { "name": "Partington Cove", "region": "California" },
+  "blurb": "Partington Cove is a small oceanside bouldering spot on the Big Sur coast, close to sea level. It has eight problems, all at the easiest end of the V scale. The stone is wave-polished and faulted in places, so quality ranges from excellent to doubtful, and deformation has left pockets in some faces. Reaching the boulders takes 10 to 20 minutes from the roadside pull-outs: down the dirt road, over the bridge, through the tunnel and along the hillside to a platform with a few boulders and short walls. The surf is close, so check the tides first. It suits a stop on a coast drive more than a dedicated trip.",
+  "review": { "sources": ["https://www.mountainproject.com/v/107101605", "https://www.mountainproject.com/forum/message/118178864"] }
+ },
+ "ca_penguins_the": {
+  "_expect": { "name": "Penguins, The", "region": "California" },
+  "blurb": "The Penguins is a cluster of south-facing spires in Alabama Hills South, just northeast of the Candy Store near Lone Pine. It has eight routes: six sport, one trad crack and one top-rope line. Grades run from 5.6 to the low 5.10s, with several at 5.7 and 5.9. Because the spires offer both sunny and shaded lines, the crag works well through the cooler months. The walk in from the end of the dirt road is only about five minutes, so it fits easily into a day among the other Alabama Hills formations.",
+  "review": { "sources": ["https://mountainproject.com/area/106366933/the-penguins", "https://www.mountainproject.com/route/106402667/tuxedo-junction?print=1"] }
+ },
+ "ca_ebgb_block_area": {
+  "_expect": { "name": "EBGB Block Area", "region": "California" },
+  "blurb": "The EBGB Block Area is a big square block perched on a shelf at the south end of Echo Rock Proper, in central Joshua Tree. It is reached by walking north from the Echo Tee parking area, as for the rest of Echo Rock, and the block is on your right. It has eight routes, mostly trad with one top-rope line, on steep faces. Grades start at 5.10 and climb through 5.11 into 5.12, so it suits experienced leaders rather than beginners. Getting onto the block itself can be the hardest part of some lines.",
+  "review": { "sources": ["https://www.mountainproject.com/area/105720795/ebgb-block-area", "https://www.mountainproject.com/area/105720786/echo-rock"] }
+ },
+ "_skipped": {
+  "ca_pernicious_dome": "No fetchable page about the dome itself: the SummitPost page returns 403 / Cloudflare block to WebFetch and curl, the Mountain Project area page never surfaced, and the other pages fetched were different areas (King Dome); only search snippets support it."
+ },
+ "_conflicts": {
+  "ca_otay_mesa": "Stored rock is volcanic rock; https://www.mountainproject.com/area/105913850/otay-mesa says metamorphic rock. Rock left unnamed.",
+  "ca_black_wall_boulder": "Stored rock is andesite; https://mountainproject.com/area/113132806/black-wall-boulder says granite (and https://www.mountainproject.com/area/113132746/the-saddles says granite boulders). Rock left unnamed."
+ }
+}

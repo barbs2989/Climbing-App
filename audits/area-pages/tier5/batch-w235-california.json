@@ -1,0 +1,46 @@
+{
+ "ca_pac_man_boulder_2": {
+  "_expect": { "name": "Pac Man Boulder", "region": "California" },
+  "blurb": "Pac Man Boulder is a single block on the ridge above Apple Valley, on Fairview Mountain in the High Desert. It sits where the bouldering trail tops out, so it works as the last stop on a session through the Foreplay Bouldering zone. Eight problems run from V0 to V4, with the bulk of them around V2, so there is something for people warming up and a single harder line to try after. Since the boulders here sit on a hillside, bring pads and spotters and check each landing before committing to a move.",
+  "review": { "sources": ["https://www.mountainproject.com/area/202235260/pac-man-boulder", "https://www.mountainproject.com/area/120334884/foreplay-bouldering"] }
+ },
+ "ca_boulder_with_a_view": {
+  "_expect": { "name": "Boulder with a View", "region": "California" },
+  "blurb": "Boulder with a View is a large block just beyond the main Ice Cream Boulders near June Lake, in the Eastern Sierra at roughly 7,800 feet. It has eight problems, all on the easy side: from VB up to V2, which suits beginners and anyone looking for a gentle warm-up. The northwest face is slabby, while the taller sides hold steeper lines. The way off the top is an easy descent, so topping out is not a concern. Pads are worth bringing for the slab landings.",
+  "review": { "sources": ["https://www.mountainproject.com/area/106262515/boulder-with-a-view", "https://www.mountainproject.com/area/106262383/ice-cream-boulders"] }
+ },
+ "ca_main_wall_aka_the_gorilla_head_buttress": {
+  "_expect": { "name": "Main Wall (aka The Gorilla Head Buttress)", "region": "California" },
+  "blurb": "The Gorilla Head Buttress is the main wall of Old Castle Crag in north San Diego County, and it stands a full 100 feet tall. It has eight routes: six trad, one sport and one top-rope. Grades start at 5.6, but seven of the eight are 5.10 or harder, topping out at 5.12, so this is mostly a place for climbers already comfortable leading on gear. A climbers' trail leads straight to the base, and a fixed line across the central ledge helps with the exposure on the way to the starts.",
+  "review": { "sources": ["https://www.mountainproject.com/area/108806751/main-wall-aka-the-gorilla-head-buttress", "https://www.mountainproject.com/area/108806696/old-castle"] }
+ },
+ "ca_indian_country": {
+  "_expect": { "name": "Indian Country", "region": "California" },
+  "blurb": "Indian Country sits in the upper reaches of Rattlesnake Canyon, in the Indian Cove part of Joshua Tree National Park. The cliffs are steep and the routes run roughly 80 to 120 feet. All eight routes are trad, from 5.9 to 5.12, with three at 5.9, four at 5.10 or 5.11 and one at 5.12. Many follow cracks and steep faces on dark gray patina. Large boulders at the base keep it shaded for most of the day. Expect a long, rugged hike in over boulder-strewn ground before the climbing starts.",
+  "review": { "sources": ["https://www.mountainproject.com/area/105721295/indian-country", "https://www.mountainproject.com/area/106235964/rattlesnake-canyon"] }
+ },
+ "ca_huka_lounge_jazz_wall_the": {
+  "_expect": { "name": "Huka Lounge (Jazz Wall), The", "region": "California" },
+  "blurb": "Huka Lounge, also called the Jazz Wall, is a small wall in the Western Wall Area of Alabama Hills North, near Lone Pine in the Eastern Sierra. It has eight routes: six bolted sport lines and two trad lines. Grades go from 5.6 to 5.11, with most of the sport routes between 5.8 and 5.10, so it suits climbers stepping up through the moderate range. The wall is shaded for most of the day and picks up only a short stretch of afternoon sun.",
+  "review": { "sources": ["https://www.mountainproject.com/area/109189235/the-huka-lounge-jazz-wall", "https://www.mountainproject.com/area/106126851/western-wall-area"] }
+ },
+ "ca_middle_elbow_room": {
+  "_expect": { "name": "Middle Elbow Room", "region": "California" },
+  "blurb": "Middle Elbow Room is one of three Elbow Room walls in the Upper Gorge of the Owens River Gorge, in the Bishop area. It has eight routes, five sport and three trad, nearly all between 5.9 and 5.10 with a single 5.11, so it is a good fit for moderate climbers. The wall faces northwest and keeps its sun late into the afternoon. The routes start from the base of a steep, fairly loose scree slope, and reaching the wall means crossing the river and working up through a boulder field.",
+  "review": { "sources": ["https://www.mountainproject.com/v/middle-elbow-room/112920286", "https://www.mountainproject.com/area/105843291/upper-gorge"] }
+ },
+ "ca_earth_first_rock": {
+  "_expect": { "name": "Earth First Rock", "region": "California" },
+  "blurb": "Earth First Rock is a small formation in the Jumbo Rock area of Joshua Tree National Park, a little west of the Jumbo Rocks campground entrance and just north of the road. It has eight routes: five trad, two sport and one top-rope. Most are gentle: seven of the eight are 5.9 or easier, starting from 5.1, with a single 5.11 as the outlier. That mix makes it a handy stop for newer leaders practising gear placements. A fixed anchor on top sets up top-ropes.",
+  "review": { "sources": ["https://www.mountainproject.com/area/105851206/earth-first-rock", "https://www.mountainproject.com/area/200817140/jumbo-rock-west"] }
+ },
+ "ca_paradise_boulders": {
+  "_expect": { "name": "Paradise Boulders", "region": "California" },
+  "blurb": "Paradise Boulders are two blocks on the south bank of the South Yuba River, downstream of the bridge at 49 Crossing, about seven miles north of Nevada City along Highway 49. The eight problems span a wide range: four sit at V0 or V1, three at V4 to V5, and one is a V8. The blocks stand on a sandy beach, so landings are flat. Reaching them means a scramble of around ten minutes along the river from the bridge.",
+  "review": { "sources": ["https://www.mountainproject.com/area/114156562/paradise-boulders", "https://www.mountainproject.com/area/108509986/south-yuba-river-49-crossing"] }
+ },
+ "_skipped": {},
+ "_conflicts": {
+  "ca_earth_first_rock": "Stored aspect is E, but the area page describes a southwest-facing rock: https://www.mountainproject.com/area/105851206/earth-first-rock"
+ }
+}
