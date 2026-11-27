@@ -41316,3 +41316,53 @@ Checked but inconclusive (not flagged — no source contradicts the stored data)
 0 confirmed errors fixed, 3 flagged for human review, 4 clean, 2 inconclusive (not
 flagged). WebSearch only this run; WebFetch was not attempted. Next batch continues
 id-ascending from `wa_mount_baker_coleman_deming` (pass 9).
+
+## Batch 598 (2026-11-27, pass 9)
+
+Checked `wa_mount_baker_coleman_headwall` through `wa_mount_blum_north_ridge`
+(id-ascending), 10 routes across Mount Baker (6 routes), Mount Barnes, Mount Berge,
+Mount Bigelow and Mount Blum.
+
+Confirmed error, fixed (SQL in `audits/sql/2026-11-27-batch-598.sql`):
+- `wa_mount_barnes` (`areas` table) `elevation_ft` was 5986, one foot off from this DB's
+  own `wa_mount_barnes_scramble.high_point_ft` (5987) and from Wikipedia, TopoQuest, and
+  Lists of John, which all independently agree on 5,987 ft — and whose coordinates all
+  match this DB's stored area lat/lng almost exactly. Corrected to 5987.
+
+Flagged for human review:
+- `wa_mount_berge_east_ridge` area/route `elevation_ft` 7948 — external sources split
+  7948 to 7960 ft, and one trip report specifically argues the north peak's surveyed
+  7948 ft point may be the true high point (not the commonly-cited 7951-7960 figure), so
+  this isn't a clean error in either direction.
+
+Verified clean:
+- `wa_mount_baker_north_ridge` `fa` "Fred Beckey, Ralph Widrig, Dick Widrig, August 7,
+  1948" — confirmed via an AAC first-ascent report and Beckey's own first-ascents list,
+  which both give the same date and roster.
+- `wa_mount_bigelow_tribute_to_richard` elevation + coordinates (8449 ft,
+  48.218615/-120.353895) — matches Wikipedia's elevation and TopoQuest's coordinates
+  (48.21847/-120.35370) almost to the decimal.
+- `wa_mount_barnes_scramble`'s own elevation + coordinates (5987 ft,
+  47.783995/-123.576185) — matches Wikipedia, TopoQuest, and Lists of John closely.
+- `wa_mount_blum_north_ridge` elevation (7685 ft) — the most-cited figure across sources,
+  despite a normal 7680-7687 ft spread between them.
+- Mount Baker's shared summit elevation (10781 ft), consistent across all 6 Baker routes
+  checked this batch and matching USGS.
+
+Checked but inconclusive (not flagged — no source contradicts the stored data):
+- `wa_mount_baker_coleman_headwall` `fa` "Ed Cooper, Phil Bartow, Donald Grimlund, David
+  Nicholson, August 1957" — could not reach a source this run that confirms or
+  contradicts it.
+- `wa_mount_baker_park_glacier_headwall` `fa` "Norm Bodine, Jim Friar, Tim Keliher, July
+  4-5, 1971" — an AAC note independently confirms Bodine and Friar completing a new
+  variation of the Cockscomb route on July 4-5, but doesn't name the article's author, so
+  Keliher as the third climber is unconfirmed rather than contradicted.
+- `wa_mount_blum_north_ridge` `fa` "Dave Hutchinson, Phil Leatherman, Mark Weigelt,
+  September 16, 1972" — unconfirmed; a 1972 regional AAJ note mentions Mark Weigelt among
+  active climbers that year but doesn't mention Mount Blum.
+
+1 confirmed error fixed, 1 flagged for human review, 5 clean, 3 inconclusive (not
+flagged). WebFetch could not resolve summitpost.org, publications.americanalpineclub.org,
+mountainproject.com, climberkyle.com, or en.wikipedia.org this run (blocked for this
+session); all research used WebSearch's own result summaries instead. Next batch
+continues id-ascending from `wa_mount_blum_north_ridge` (pass 9).
