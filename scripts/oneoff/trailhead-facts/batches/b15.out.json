@@ -1,0 +1,87 @@
+[
+ {
+  "key": "t450",
+  "pass": null,
+  "parking": null,
+  "facilities": null,
+  "evidence": [
+   {
+    "url": "https://www.wta.org/go-hiking/hikes/niederprum",
+    "supports": []
+   }
+  ],
+  "note": "Only WTA found (lists no pass; says park at the dead end, then cross boulders and Moose Creek bridge, about 1.25 mi walk to trailhead); single non-official source so all null."
+ },
+ {
+  "key": "t451",
+  "pass": "$5 day fee or Northwest Forest Pass",
+  "parking": "Room for about 15 cars and 4 horse trailers.",
+  "facilities": "Vault toilet; no drinking water.",
+  "evidence": [
+   {
+    "url": "https://www.fs.usda.gov/r06/colville/recreation/iron-gate-trailhead",
+    "supports": [
+     "pass",
+     "parking",
+     "facilities"
+    ]
+   }
+  ],
+  "note": "Search results showed a dated notice (Aug 2026) that Iron Gate was closed due to the Sinlahekin Fire; check current status. Washouts reported on FR 3900-500."
+ },
+ {
+  "key": "t452",
+  "pass": "Northwest Forest Pass or $5 day fee",
+  "parking": null,
+  "facilities": null,
+  "evidence": [
+   {
+    "url": "https://www.fs.usda.gov/r06/colville/recreation/trails/windy-peak-342",
+    "supports": [
+     "pass"
+    ]
+   }
+  ],
+  "note": "Pass is from the official Windy Peak trail page (Windy Peak/Long Swamp trailhead). Hipcamp mentions a vault toilet at the campground but it is a single non-official source, so facilities null."
+ },
+ {
+  "key": "t453",
+  "pass": "$5 day fee or Northwest Forest Pass",
+  "parking": null,
+  "facilities": "Vault toilet; no drinking water.",
+  "evidence": [
+   {
+    "url": "https://www.fs.usda.gov/r06/colville/recreation/chewuch-trailhead",
+    "supports": [
+     "pass",
+     "facilities"
+    ]
+   }
+  ],
+  "note": "Official page is titled Chewuch Trailhead but its directions (FR 3900-300, 3 mi past FR 39 junction) and coordinates 48.8721,-120.0035 match this trailhead exactly; it serves Cathedral Driveway Trail 510A."
+ },
+ {
+  "key": "t454",
+  "pass": "$5 day fee or Northwest Forest Pass",
+  "parking": null,
+  "facilities": "Vault toilet; no drinking water.",
+  "evidence": [
+   {
+    "url": "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/thirtymile-trailhead",
+    "supports": [
+     "pass",
+     "facilities"
+    ]
+   }
+  ],
+  "note": "Search results showed an Aug 2026 notice that Chewuch Trail 510 from Thirtymile was closed due to the Sinlahekin Fire; check current status."
+ },
+ {
+  "key": "t455",
+  "pass": null,
+  "parking": null,
+  "facilities": null,
+  "evidence": [],
+  "note": "Sinks Canyon State Park page says no day use fee and lists Bruce's Parking Lot as trail access, but does not describe the lot; left null."
+ }
+]
