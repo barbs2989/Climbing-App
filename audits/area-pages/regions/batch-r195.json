@@ -1,0 +1,73 @@
+{
+  "nj_bouldering_mid_state_nj": {
+    "_expect": {
+      "name": "bouldering mid-state NJ",
+      "region": "New Jersey"
+    },
+    "blurb": "Central New Jersey's bouldering is spread over a handful of small pockets, and it is all bouldering, with no roped climbing. Sourland Mountain Preserve holds the most climbs. It is a heavily wooded, rocky ridge in the suburban middle of the state, with large boulders along the trails and beside a brook, and its problems are described as running from beginner level to advanced. Witherspoon Woods Boulders, Watergate bouldering, Cliffwood Beach Caves and Belmar Beach each add a smaller handful. The grades are weighted toward the low end, with V0 and V1 the most common, a healthy middle through V3, and a thin tail that reaches V9.",
+    "review": {
+      "sources": [
+        "https://bigbeargearnj.com/pages/where-to-go-bouldering-in-new-jersey",
+        "https://www.mountainproject.com/area/107910373/sourland-mountain-preserve",
+        "https://en.wikipedia.org/wiki/Sourland_Mountain_Preserve"
+      ]
+    }
+  },
+  "tx_little_dome": {
+    "_expect": {
+      "name": "Little Dome",
+      "region": "Texas"
+    },
+    "blurb": "Little Dome is the smaller of the two main domes at Enchanted Rock State Natural Area, north of Fredericksburg, Texas, in a park whose main feature is a large pink granite dome. The dome face itself has little climbing. Most of what is here is scattered boulders on and around it, plus short single-pitch roped lines, mostly trad with the occasional hard bolted one. Boulder problems are the biggest share, mostly V0 to V3 with a tail reaching V10, while roped climbs run from about 5.6 to 5.13, concentrated at 5.10 through 5.12. Kingdom of Zilch, with its very large boulders, holds the most climbs, followed by Carnivore Boulders, The Burbs and Split Rocks. It sees much less traffic than the Main Dome.",
+    "review": {
+      "sources": [
+        "https://www.mountainproject.com/area/105878771/little-dome",
+        "https://www.mountainproject.com/area/105976671/kingdom-of-zilch?print=1",
+        "https://www.mountainproject.com/area/105855196/enchanted-rock-state-natural-area"
+      ]
+    }
+  },
+  "va_stones": {
+    "_expect": {
+      "name": "Stones",
+      "region": "Virginia"
+    },
+    "blurb": "The Stones is the standout boulder area on Harkening Hill, on the Blue Ridge Parkway in southwest Virginia near the Peaks of Otter. The hill's boulders are gneiss, hundreds of them roughly 5 to 30 feet tall, spread across a south and west facing slope, and the Stones are known for tall, proud lines with mostly flat landings. It is all bouldering, from V0 up to V8, with the heaviest numbers between V3 and V5 and a solid group at V6 and V7. Holds are often subtle crimps and slopers. Individual boulders such as Burlstain Boulder, The Fortress, Bastion Boulder and Hunting Boulder each carry several problems. On the hill, fall, winter and early spring are the recommended seasons; summer brings heat and thick foliage.",
+    "review": {
+      "sources": [
+        "https://www.mountainproject.com/area/107421959/stones?print=1",
+        "https://mountainproject.com/area/107421639/harkening-hill",
+        "https://theroanoker.com/boulders/"
+      ]
+    }
+  },
+  "wv_lower_new_river_gorge_bouldering": {
+    "_expect": {
+      "name": "Lower New River Gorge Bouldering",
+      "region": "West Virginia"
+    },
+    "blurb": "These are the boulders below Hawk's Nest Dam in West Virginia's New River Gorge, clustered around the dam and stretching farther downstream along the river. It is all bouldering, from V0 up into the V8 range, with most problems between V2 and V5 and a good spread of easier ones below that. Cotton Bottom holds the most climbs, followed by Hawk's Nest Proper, Lower Hawk's Nest and Casey Jones. At Cotton Bottom the boulders sit along the river bank beside the road, and they can be climbed year round, though it gets warm in summer and a few problems stay damp after heavy rain. River levels can rise quickly, which matters for any boulder near water level.",
+    "review": {
+      "sources": [
+        "https://www.mountainproject.com/area/107286081/lower-new-river-gorge-bouldering",
+        "https://thetopo.com/crags/cotton-bottom-boulders/description"
+      ]
+    }
+  },
+  "az_pinnacle_peak": {
+    "_expect": {
+      "name": "Pinnacle Peak",
+      "region": "Arizona"
+    },
+    "blurb": "Pinnacle Peak is a granite summit in north Scottsdale, Arizona, set in the Sonoran Desert inside a city park. The climbing is mainly trad, with a smaller share of sport and a few top-rope and aid lines, spread over the peak, its east and west faces and a shorter wall below the main pinnacle. Grades run from easy 5.4 scrambles to 5.12, with the most routes at 5.10 and a good spread of moderates from 5.6 to 5.9. Cracks sit alongside thin, footwork-heavy faces. Besides the peak itself, the larger zones are Cactus Flower East, Y-Crack Boulder and AMC Boulder.",
+    "review": {
+      "sources": [
+        "https://en.wikipedia.org/wiki/Pinnacle_Peak_(Arizona)",
+        "https://www.mountainproject.com/area/105793777"
+      ]
+    }
+  },
+  "_skipped": {
+    "nj_d_mid_state": "wrapper holding only nj_bouldering_mid_state_nj; same sources, so a second near-identical text adds nothing"
+  }
+}
