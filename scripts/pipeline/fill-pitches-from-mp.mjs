@@ -149,6 +149,9 @@ for (const [i, p] of batch.entries()) {
     await sleep(90000);
     if (!(await healthy())) { console.error("still slow — stopping; re-run to resume (filled rows are skipped)"); break; }
   }
+  // A held entry: researched and found to contradict the route's own pitch list (audit:prose-length,
+  // scripts/oneoff/fix-prose-length-2026-11-26.mjs). The overwrite below would clobber that count.
+  if (p.hold) { log.push({ id: p.id, held: p.hold }); continue; }
   try {
     // A stored 0 is the importer's "none given", not a count: overwrite it, naming why.
     const res = p.before.pitches === 0

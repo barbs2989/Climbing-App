@@ -32,8 +32,11 @@
 //
 // Service key (the scan must be complete to report a zero); reads every route with an `overview`.
 // `--state=wa` narrows, `--json` prints findings for a consumer, `--fixture=f.json` reads rows from
-// a file, `--selftest` needs no DB. NOT a build gate: a property of the DB, not of the checkout.
+// a file, `--selftest` needs no DB. `--snapshot` reads the nightly static catalog the live site serves
+// (`<pages>/states/index.json` + its gzipped parts) instead of the database: the whole catalog, no DB
+// slot, up to a day stale; `--snapshot=DIR` reads those files from a local copy. NOT a build gate: a property of the DB, not of the checkout.
 import { readFileSync } from "node:fs";
+import { gunzipSync } from "node:zlib";
 import { requireServiceKey, selectAll } from "./lib/supabase-env.mjs";
 
 const arg = (n, d) => { const a = process.argv.find(x => x.startsWith(`--${n}=`)); return a ? a.split("=").slice(1).join("=") : d; };
@@ -41,6 +44,7 @@ const STATE = arg("state", null);
 const FIXTURE = arg("fixture", null);
 const JSON_OUT = process.argv.includes("--json");
 const SHOW_MISSING = process.argv.includes("--missing");
+const SNAP = process.argv.includes("--snapshot") ? "https://barbs2989.github.io/Climbing-App/states" : arg("snapshot", null);
 
 const WORDS = "one|two|three|four|five|six|seven|eight|nine|ten|eleven|twelve|thirteen|fourteen|fifteen|sixteen|seventeen|eighteen|nineteen|twenty|single";
 const WNUM = Object.fromEntries(WORDS.split("|").map((w, i) => [w, i + 1])); WNUM.single = 1;
@@ -120,7 +124,33 @@ const READ = {
   "wa_magic_mountain_south_ridge:length": "1,000 ft is heather and scree gained from camp, not the scramble section",
   "wa_sharkfin_tower_southeast_ridge:pitches": "the two-pitch line is the separate Southeast Face",
   "wa_spontaneity_arete:pitches": "six pitches plus an optional seventh, as stored",
-  "wa_the_perfect_crime_with_variations:pitches": "five pitches, six counting the P2.5 link, as stored",};
+  "wa_the_perfect_crime_with_variations:pitches": "five pitches, six counting the P2.5 link, as stored",
+  // read 2026-11-26, after the MP pitch-count fill (#3998) put a count beside more descriptions
+  "ab_the_scoop_riverrun:pitches": "the two-pitch figure is an easier start to the left, not this line",
+  "ak_right_a_way_gone_wrong:length": "20 ft is the face below the roof; the bolt line continues",
+  "ca_direct_south_face:pitches": "\"one pitch beyond it\" places the bivy ledges, not a count",
+  "ca_north_buttress_2:pitches": "seven pitches with a 60 m rope, or eight or nine shorter ones: the stored nine is the shorter split",
+  "ca_that_s_a_sheer_cliff:pitches": "four of the pitches go at 5.9; the route has more",
+  "ca_austrian_arete:pitches": "\"one to two pitches short of the summit\" places the flattening, not a count",
+  "co_spear_me_the_details:length": "165 ft is two pitches linked",
+  "co_deadbeat_mom_s_club:length": "20 ft is the step to the second ledge",
+  "me_a_wexler_s_right_hand_chimney_route:length": "300 ft to the balcony plus 75 ft to the summit rim is about the stored 122 m",
+  "ut_rock_lobster:length": "50 ft is how far the route sits from the trail's end, not its length",
+  "id_scuffin_up:pitches": "one pitch only if linked; two as stored",
+  "nm_ramshackle:pitches": "one pitch only if linked; two as stored",
+  "ut_sticky_geranium:pitches": "one pitch only if linked; two as stored",
+  "wy_deep_lake_cirque_traverse:pitches": "five pitches is Haystack's North Face, one leg of the traverse",
+  "co_ozone_direct:pitches": "the four-pitch route is the line this finish leaves",
+  "co_east_face_2:length": "200 ft is the ramp across the face, one section",
+  "co_electric_kite_wall_mig_28:length": "20 m is the distance from the neighbouring problem",
+  "ak_south_pioneer_peak_pioneer_ridge:length": "6,000 ft is the elevation gained from the valley, not a climb length",
+  "co_choss_bubbles_summer_var_to_an_existing_winter_route:pitches": "three pitches is the slab wall; the 5.7R pitch above makes the stored four",
+  "co_across_enemy_lines:pitches": "the climbed first pitch; a second bolted pitch continues above, as stored",
+  "wy_arsenault_bouchard:pitches": "two pitches is the opening section; the sections sum to the stored sixteen",
+  "wy_the_candy_shop:pitches": "five pitches is the new variation; three more reach the ridge, eight as stored",
+  "or_north_side_ravine:length": "50 m is the ice pitch; the couloir above makes the stored 122 m",
+  "bc_amon_r_dh_kolibri_crack:length": "90 m is the splitter; the six pitches total about 275 m",
+  "ca_pete_s_dream:pitches":"\"one pitch was roped\" is one section of the ice",};
 
 const pdSum = r => Array.isArray(r.pitch_detail) ? r.pitch_detail.reduce((a, p) => a + (Number(p && (p.length_m ?? p.lengthM)) || 0), 0) : 0;
 // What the Overview tile shows: length_m, else the pitch breakdown summed (RouteDetail climbLenRaw).
@@ -169,7 +199,25 @@ function selftest() {
 
 if (process.argv.includes("--selftest")) selftest();
 
+async function snapshotRows(base) {
+  const get = async (f) => base.startsWith("http")
+    ? Buffer.from(await (await fetch(`${base}/${f}`)).arrayBuffer())
+    : readFileSync(`${base}/${f}`);
+  const idx = JSON.parse((await get("index.json")).toString("utf8"));
+  const out = [];
+  for (const st of Object.values(idx.states)) {
+    for (const p of st.parts) {
+      const j = JSON.parse(gunzipSync(await get(p.file)).toString("utf8"));
+      for (const r of j.routes) if (r.overview && (!STATE || r.id.startsWith(STATE + "_")))
+        out.push({ id: r.id, name: r.name, area_id: r.area_id, discipline: r.discipline, length_m: r.length_m, pitches: r.pitches, overview: r.overview, pitch_detail: r.pitch_detail });
+    }
+  }
+  console.error(`snapshot ${new Date(idx.generatedAt).toISOString()}: ${out.length} routes with a description`);
+  return out;
+}
+
 const rows = FIXTURE ? JSON.parse(readFileSync(FIXTURE, "utf8"))
+  : SNAP ? await snapshotRows(SNAP)
   : await selectAll("routes", "id,name,area_id,discipline,length_m,pitches,overview,pitch_detail",
       `overview=not.is.null${STATE ? `&id=like.${STATE}_*` : ""}`, { key: requireServiceKey(), pageSize: 500 });
 if (!rows.length) { console.error("FAIL: zero routes read — a broken scan, not a clean catalog."); process.exit(1); }
