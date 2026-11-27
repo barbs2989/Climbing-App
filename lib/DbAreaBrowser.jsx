@@ -60,7 +60,7 @@ export default function DbAreaBrowser({ areaDiscussion, jumpToFinderReq, onSignI
   const wide = useWideScreen();
   // A view handed in with a Near me request (Home's map: { lat, lng, zoom }), and whether to centre on the climber.
   const [nearLocate, setNearLocate] = useState(0);
-  const climber = useMemo(() => ({ wishlist, profile, completedIds, rankSuggested, discSlots, slotQuery: slotQuery || null, stated: statedGrades || null }), [wishlist, profile, completedIds, rankSuggested, discSlots, slotQuery, statedGrades]);
+  const climber = useMemo(() => ({ wishlist, profile, completedIds, rankSuggested, discSlots, slotQuery: slotQuery || null, stated: statedGrades || null, lists: userLists || [] }), [wishlist, profile, completedIds, rankSuggested, discSlots, slotQuery, statedGrades, userLists]);
   // The jump requests below are App props that STAY set once handled, so a remount would re-run the
   // last one (a search from an hour ago) over the position restored above. The ids already handled
   // live in lib/climbsReturn.js with the position, mutated in place as each request is handled.

@@ -338,6 +338,23 @@ export function gradeFinderFilters(sys, b, stats, disc) {
 // "always needs to be collapsed unless you click on that exact button for that area"). The choice is NOT
 // remembered: it used to be saved on the device, so opening it once opened it on every area after.
 // AreaPage is keyed by the area id, so moving to another area mounts this closed again.
+// HOW MANY OF EACH, IN NUMBERS, ABOVE THE CHART (owner note: "list in number form how many sport, trad, bouldering
+// and top rope climbs are there above that graph"). One tile per discipline the area holds, sport / trad / top rope /
+// bouldering first, from the same `by_disc` counts Climbs here by type draws as bars (every climb of that type, graded
+// or not), so the tiles and those bars always agree. A discipline with none here gets no tile, rather than a row of 0s.
+const COUNT_FIRST = ["sport", "trad", "toprope", "bouldering"];
+export function DiscCounts({ rows, C }) {
+  const by = {};
+  for (const d of rows) if (d && d.disc && Number(d.n) > 0) by[d.disc] = (by[d.disc] || 0) + Number(d.n);
+  const order = [...COUNT_FIRST, ...DISC_ORDER.filter(k => !COUNT_FIRST.includes(k)), ...Object.keys(by).filter(k => !DISC_ORDER.includes(k))].filter(k => by[k]);
+  if (!order.length) return null;
+  return <ul aria-label="Climbs here by discipline" style={{ listStyle: "none", margin: "0 0 10px", padding: 0, display: "flex", flexWrap: "wrap", gap: 6 }}>
+    {order.map(k => <li key={k} style={{ flex: "1 1 64px", minWidth: 64, maxWidth: 120, padding: "6px 8px", borderRadius: 8, background: C.surface, border: "1px solid " + C.borderLight, boxSizing: "border-box" }}>
+      <div style={{ fontSize: 15, fontWeight: 800, color: C.text, lineHeight: 1.2, fontVariantNumeric: "tabular-nums" }}>{by[k].toLocaleString()}</div>
+      <div style={{ fontSize: 11, color: C.textMuted, lineHeight: 1.3, overflowWrap: "anywhere" }}>{discName(k)}</div>
+    </li>)}
+  </ul>;
+}
 const SKELETON_BARS = [28, 52, 70, 86, 64, 52, 42, 34, 26, 18, 12, 8];
 export function GradeSpreadDisclosure({ stats, loading, error, C, discOptions, onDisc, onGrade, first }) {
   const [open, setOpen] = useState(false);
@@ -345,6 +362,7 @@ export function GradeSpreadDisclosure({ stats, loading, error, C, discOptions, o
   const typed = rows.reduce((a, d) => a + Number(d.n), 0);
   const spread = hasGradeSpread(stats);
   return <div style={areaSection(C, first)}>
+    {rows.length ? <DiscCounts rows={rows} C={C} /> : null}
     {spread ? <GradeSpread stats={stats} C={C} bare onGrade={onGrade} /> : null}
     {/* LOADING HOLDS THE LOADED SHAPE (2026-11-18): faint bars where the chart will be and "Counting…" where
         "Climbs here by type" will be, about as tall as both (145-178px measured), so every card under it does not
