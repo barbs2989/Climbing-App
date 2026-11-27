@@ -1,0 +1,54 @@
+{
+ "planFile": "/Users/nathanbarber/.claude/jobs/58cdedf7/tmp/cow.json",
+ "startedAt": "2026-11-27T05:43:34.471Z",
+ "leaves": [
+  {
+   "id": "nh_sandwich_notch_ice",
+   "name": "Sandwich Notch Ice",
+   "parent_id": "nh_sandwich_notch",
+   "path": "usa.new_hampshire.nh_lakes_region.nh_sandwich_notch.nh_sandwich_notch_ice",
+   "area_type": "crag",
+   "region": "New Hampshire",
+   "lat": 43.82906,
+   "lng": -71.49819,
+   "elevation": null,
+   "avy_zone": null,
+   "blurb": null,
+   "route_count": 1,
+   "elevation_ft": null,
+   "prominence_ft": null,
+   "parent_peak": null,
+   "dominant_discipline": "ice",
+   "coords_approx": false,
+   "name_search": "sandwich notch ice",
+   "disciplines": [
+    "ice"
+   ],
+   "approach": null,
+   "approach_min": null,
+   "rock": "schist",
+   "rock_basis": "mapped",
+   "aspect": null,
+   "parking_lat": null,
+   "parking_lng": null,
+   "parking_name": null,
+   "parking_note": null,
+   "season_months": null,
+   "walkin_gpx": null,
+   "walkin_kind": null,
+   "walkin_submission_id": null
+  }
+ ],
+ "routes": [
+  {
+   "id": "nh_sandwich_notch_ice_cow_cave_beede_falls",
+   "area_id": "nh_sandwich_notch_ice",
+   "name": "Cow cave (Beede falls)"
+  }
+ ],
+ "created": [],
+ "deleted": [
+  "nh_sandwich_notch_ice"
+ ],
+ "refused": []
+}

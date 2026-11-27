@@ -1,0 +1,60 @@
+[
+ {
+  "leaf_id": "ga_hogpen_gap",
+  "outcome": "dissolve",
+  "moves": [],
+  "note": "empty copy of Hogpen Gap filed directly under Georgia, same coordinate as the ice leaf under North East Georgia Region"
+ },
+ {
+  "leaf_id": "ga_rabun_bald",
+  "outcome": "dissolve",
+  "moves": [],
+  "note": "empty copy of Rabun Bald under Georgia, same coordinate"
+ },
+ {
+  "leaf_id": "ga_hogpen_gap_ice",
+  "outcome": "rename",
+  "new_name": "Hogpen Gap",
+  "moves": []
+ },
+ {
+  "leaf_id": "ga_rabun_bald_ice",
+  "outcome": "rename",
+  "new_name": "Rabun Bald",
+  "moves": []
+ },
+ {
+  "leaf_id": "ab_lake_louise_ice",
+  "outcome": "dissolve",
+  "moves": [
+   {
+    "route_id": "ab_lake_louise_ice_cable_gullies",
+    "to": "ab_louise_falls_area"
+   },
+   {
+    "route_id": "ab_lake_louise_ice_dark_nature",
+    "to": "ab_louise_falls_area"
+   },
+   {
+    "route_id": "ab_lake_louise_ice_louise_falls",
+    "to": "ab_louise_falls_area"
+   },
+   {
+    "route_id": "ab_lake_louise_ice_unnamed",
+    "to": "ab_louise_falls_area"
+   }
+  ],
+  "note": "Louise Falls Area (The Back of The Lake) is the cliff at Louise Falls, 80 m away"
+ },
+ {
+  "leaf_id": "nh_sandwich_notch_ice",
+  "outcome": "dissolve",
+  "moves": [
+   {
+    "route_id": "nh_sandwich_notch_ice_cow_cave_beede_falls",
+    "to": "nh_cow_cave"
+   }
+  ],
+  "note": "Cow Cave at Beede Falls already filed (empty) under Beede Falls Area"
+ }
+]

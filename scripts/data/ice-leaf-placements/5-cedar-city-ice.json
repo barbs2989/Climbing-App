@@ -1,0 +1,18 @@
+[
+ {
+  "leaf_id": "ut_cedar_canyon",
+  "op": "rename",
+  "new_name": "Highway 14 Roadside"
+ },
+ {
+  "leaf_id": "ut_cedar_canyon",
+  "op": "reparent",
+  "from": "ut_cedar_city_ice",
+  "to": "ut_cedar_canyon_2",
+  "note": "the six ice routes are in Cedar Canyon along SR-14, mile markers 8-12 (research out-07); the leaf joins the Cedar Canyon area it is in"
+ },
+ {
+  "leaf_id": "ut_cedar_city_ice",
+  "op": "delete"
+ }
+]

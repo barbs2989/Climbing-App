@@ -1,0 +1,497 @@
+{
+ "planFile": "scripts/data/ice-leaf-placements/4-held-pairs.json",
+ "startedAt": "2026-11-27T05:43:43.997Z",
+ "leaves": [
+  {
+   "id": "co_land_of_the_lost_the",
+   "name": "Land of the Lost, The",
+   "parent_id": "co_pine_river_trad",
+   "path": "usa.colorado.co_durango.co_pine_river_trad.co_land_of_the_lost_the",
+   "area_type": "region",
+   "region": "Colorado",
+   "lat": 37.4597,
+   "lng": -107.5011,
+   "elevation": null,
+   "avy_zone": null,
+   "blurb": null,
+   "route_count": 1,
+   "elevation_ft": null,
+   "prominence_ft": null,
+   "parent_peak": null,
+   "dominant_discipline": null,
+   "coords_approx": false,
+   "name_search": "land of the lost the",
+   "disciplines": [],
+   "approach": null,
+   "approach_min": null,
+   "rock": null,
+   "rock_basis": null,
+   "aspect": null,
+   "parking_lat": null,
+   "parking_lng": null,
+   "parking_name": null,
+   "parking_note": null,
+   "season_months": null,
+   "walkin_gpx": null,
+   "walkin_kind": null,
+   "walkin_submission_id": null
+  },
+  {
+   "id": "co_pope_s_nose_the",
+   "name": "Pope's Nose, The",
+   "parent_id": "co_pine_river_trad",
+   "path": "usa.colorado.co_durango.co_pine_river_trad.co_pope_s_nose_the",
+   "area_type": "crag",
+   "region": "Colorado",
+   "lat": 37.57016,
+   "lng": -107.40019,
+   "elevation": null,
+   "avy_zone": null,
+   "blurb": null,
+   "route_count": 7,
+   "elevation_ft": null,
+   "prominence_ft": null,
+   "parent_peak": null,
+   "dominant_discipline": "trad",
+   "coords_approx": false,
+   "name_search": "popes nose the",
+   "disciplines": [
+    "sport",
+    "trad"
+   ],
+   "approach": null,
+   "approach_min": null,
+   "rock": "granite",
+   "rock_basis": "mapped",
+   "aspect": null,
+   "parking_lat": null,
+   "parking_lng": null,
+   "parking_name": null,
+   "parking_note": null,
+   "season_months": null,
+   "walkin_gpx": null,
+   "walkin_kind": null,
+   "walkin_submission_id": null
+  },
+  {
+   "id": "co_rolling_stones_wall",
+   "name": "Rolling Stones Wall",
+   "parent_id": "co_pine_river_trad",
+   "path": "usa.colorado.co_durango.co_pine_river_trad.co_rolling_stones_wall",
+   "area_type": "crag",
+   "region": "Colorado",
+   "lat": 37.4631,
+   "lng": -107.4948,
+   "elevation": null,
+   "avy_zone": null,
+   "blurb": null,
+   "route_count": 2,
+   "elevation_ft": null,
+   "prominence_ft": null,
+   "parent_peak": null,
+   "dominant_discipline": "sport",
+   "coords_approx": false,
+   "name_search": "rolling stones wall",
+   "disciplines": [
+    "sport",
+    "trad"
+   ],
+   "approach": null,
+   "approach_min": null,
+   "rock": "quartzite",
+   "rock_basis": "mapped",
+   "aspect": null,
+   "parking_lat": null,
+   "parking_lng": null,
+   "parking_name": null,
+   "parking_note": null,
+   "season_months": null,
+   "walkin_gpx": null,
+   "walkin_kind": null,
+   "walkin_submission_id": null
+  },
+  {
+   "id": "co_tradistan_tower",
+   "name": "Tradistan Tower",
+   "parent_id": "co_pine_river_trad",
+   "path": "usa.colorado.co_durango.co_pine_river_trad.co_tradistan_tower",
+   "area_type": "crag",
+   "region": "Colorado",
+   "lat": 37.4638,
+   "lng": -107.4936,
+   "elevation": null,
+   "avy_zone": null,
+   "blurb": null,
+   "route_count": 6,
+   "elevation_ft": null,
+   "prominence_ft": null,
+   "parent_peak": null,
+   "dominant_discipline": "trad",
+   "coords_approx": false,
+   "name_search": "tradistan tower twr",
+   "disciplines": [
+    "trad"
+   ],
+   "approach": null,
+   "approach_min": null,
+   "rock": "quartzite",
+   "rock_basis": "mapped",
+   "aspect": null,
+   "parking_lat": null,
+   "parking_lng": null,
+   "parking_name": null,
+   "parking_note": null,
+   "season_months": null,
+   "walkin_gpx": null,
+   "walkin_kind": null,
+   "walkin_submission_id": null
+  },
+  {
+   "id": "co_pine_river_trad",
+   "name": "Pine River Trad",
+   "parent_id": "co_durango",
+   "path": "usa.colorado.co_durango.co_pine_river_trad",
+   "area_type": "region",
+   "region": "Colorado",
+   "lat": 37.48919,
+   "lng": -107.4724225,
+   "elevation": null,
+   "avy_zone": null,
+   "blurb": null,
+   "route_count": 16,
+   "elevation_ft": null,
+   "prominence_ft": null,
+   "parent_peak": null,
+   "dominant_discipline": null,
+   "coords_approx": false,
+   "name_search": "pine river trad",
+   "disciplines": [],
+   "approach": null,
+   "approach_min": null,
+   "rock": null,
+   "rock_basis": null,
+   "aspect": null,
+   "parking_lat": null,
+   "parking_lng": null,
+   "parking_name": null,
+   "parking_note": null,
+   "season_months": null,
+   "walkin_gpx": null,
+   "walkin_kind": null,
+   "walkin_submission_id": null
+  },
+  {
+   "id": "qc_tranchant_left_ice_cliff",
+   "name": "Tranchant - Left ice cliff",
+   "parent_id": "qc_montagne_du_tranchant_2",
+   "path": "canada.qc.qc_14_lanaudiere.qc_montagne_du_tranchant_2.qc_tranchant_left_ice_cliff",
+   "area_type": "crag",
+   "region": "Quebec",
+   "lat": 46.2927,
+   "lng": -73.8543,
+   "elevation": null,
+   "avy_zone": null,
+   "blurb": "The left ice cliff is the busiest ice sector on Montagne du Tranchant in Lanaudière, a cliff described as the most popular in the region. About a dozen winter lines are found here, nearly all water ice from WI2 up to a single WI5, with the bulk around WI3, plus one mixed route near M7. A footpath through the woods on the left side leads to the top of several routes, which makes building top-rope anchors straightforward and suits climbers developing their ice skills. Expect company on good days, and wear a helmet at the base.",
+   "route_count": 12,
+   "elevation_ft": null,
+   "prominence_ft": null,
+   "parent_peak": null,
+   "dominant_discipline": "ice",
+   "coords_approx": false,
+   "name_search": "tranchant left lt ice cliff",
+   "disciplines": [
+    "ice",
+    "mixed"
+   ],
+   "approach": null,
+   "approach_min": null,
+   "rock": null,
+   "rock_basis": null,
+   "aspect": null,
+   "parking_lat": 46.2901892,
+   "parking_lng": -73.8550978,
+   "parking_name": "Tranchant parking lot",
+   "parking_note": null,
+   "season_months": null,
+   "walkin_gpx": null,
+   "walkin_kind": null,
+   "walkin_submission_id": null
+  },
+  {
+   "id": "qc_tranchant_right_ice_cliff",
+   "name": "Tranchant - Right ice cliff",
+   "parent_id": "qc_montagne_du_tranchant_2",
+   "path": "canada.qc.qc_14_lanaudiere.qc_montagne_du_tranchant_2.qc_tranchant_right_ice_cliff",
+   "area_type": "crag",
+   "region": "Quebec",
+   "lat": 46.2907,
+   "lng": -73.851,
+   "elevation": null,
+   "avy_zone": null,
+   "blurb": null,
+   "route_count": 10,
+   "elevation_ft": null,
+   "prominence_ft": null,
+   "parent_peak": null,
+   "dominant_discipline": "ice",
+   "coords_approx": false,
+   "name_search": "tranchant right rt ice cliff",
+   "disciplines": [
+    "ice"
+   ],
+   "approach": null,
+   "approach_min": null,
+   "rock": null,
+   "rock_basis": null,
+   "aspect": null,
+   "parking_lat": 46.2901892,
+   "parking_lng": -73.8550978,
+   "parking_name": "Tranchant parking lot",
+   "parking_note": null,
+   "season_months": null,
+   "walkin_gpx": null,
+   "walkin_kind": null,
+   "walkin_submission_id": null
+  },
+  {
+   "id": "nh_a_link_to_ice_report_photos_2025",
+   "name": "A Link to Ice Report & Photos 2025",
+   "parent_id": "new_hampshire",
+   "path": "usa.new_hampshire.nh_a_link_to_ice_report_photos_2025",
+   "area_type": "crag",
+   "region": "New Hampshire",
+   "lat": 44.16766,
+   "lng": -71.35457,
+   "elevation": null,
+   "avy_zone": null,
+   "blurb": null,
+   "route_count": 2,
+   "elevation_ft": null,
+   "prominence_ft": null,
+   "parent_peak": null,
+   "dominant_discipline": "ice",
+   "coords_approx": false,
+   "name_search": "a link to ice report and photos 2025",
+   "disciplines": [
+    "ice"
+   ],
+   "approach": null,
+   "approach_min": null,
+   "rock": "granite",
+   "rock_basis": "mapped",
+   "aspect": "NE",
+   "parking_lat": null,
+   "parking_lng": null,
+   "parking_name": null,
+   "parking_note": null,
+   "season_months": null,
+   "walkin_gpx": null,
+   "walkin_kind": null,
+   "walkin_submission_id": null
+  }
+ ],
+ "routes": [
+  {
+   "id": "co_brain_damage",
+   "area_id": "co_pope_s_nose_the",
+   "name": "Brain Damage"
+  },
+  {
+   "id": "co_lulu_the_magical_mule",
+   "area_id": "co_pope_s_nose_the",
+   "name": "Lulu The Magical Mule"
+  },
+  {
+   "id": "co_contraceptive_cracks",
+   "area_id": "co_pope_s_nose_the",
+   "name": "Contraceptive Cracks"
+  },
+  {
+   "id": "co_central_buttress_2",
+   "area_id": "co_pope_s_nose_the",
+   "name": "Central Buttress"
+  },
+  {
+   "id": "co_arkansas_route",
+   "area_id": "co_pope_s_nose_the",
+   "name": "Arkansas Route"
+  },
+  {
+   "id": "co_chalice_wall",
+   "area_id": "co_pope_s_nose_the",
+   "name": "Chalice Wall"
+  },
+  {
+   "id": "co_thunder_road_2",
+   "area_id": "co_pope_s_nose_the",
+   "name": "Thunder Road"
+  },
+  {
+   "id": "co_no_expectations",
+   "area_id": "co_rolling_stones_wall",
+   "name": "No Expectations"
+  },
+  {
+   "id": "co_rolling_stones_wall_paint_it_black",
+   "area_id": "co_rolling_stones_wall",
+   "name": "Paint It Black"
+  },
+  {
+   "id": "co_no_cherry_for_old_men",
+   "area_id": "co_tradistan_tower",
+   "name": "No Cherry For Old Men"
+  },
+  {
+   "id": "co_nuggernaut",
+   "area_id": "co_tradistan_tower",
+   "name": "Nuggernaut"
+  },
+  {
+   "id": "co_da_cherry_on_top",
+   "area_id": "co_tradistan_tower",
+   "name": "Da Cherry on Top!"
+  },
+  {
+   "id": "co_the_pine_line",
+   "area_id": "co_tradistan_tower",
+   "name": "The Pine Line"
+  },
+  {
+   "id": "co_no_country_for_old_men",
+   "area_id": "co_tradistan_tower",
+   "name": "No Country For Old Men"
+  },
+  {
+   "id": "co_thundercats_are_go",
+   "area_id": "co_tradistan_tower",
+   "name": "Thundercats are Go!"
+  },
+  {
+   "id": "qc_tranchant_left_ice_cliff_tante_janet",
+   "area_id": "qc_tranchant_left_ice_cliff",
+   "name": "Tante Janet"
+  },
+  {
+   "id": "qc_tranchant_left_ice_cliff_mets_tes_gants",
+   "area_id": "qc_tranchant_left_ice_cliff",
+   "name": "Mets tes gants"
+  },
+  {
+   "id": "qc_tranchant_left_ice_cliff_mitaine",
+   "area_id": "qc_tranchant_left_ice_cliff",
+   "name": "Mitaine"
+  },
+  {
+   "id": "qc_tranchant_left_ice_cliff_bagdad",
+   "area_id": "qc_tranchant_left_ice_cliff",
+   "name": "Bagdad"
+  },
+  {
+   "id": "qc_tranchant_left_ice_cliff_tonton_r_cidive",
+   "area_id": "qc_tranchant_left_ice_cliff",
+   "name": "Tonton récidive"
+  },
+  {
+   "id": "qc_tranchant_left_ice_cliff_rideau_de_verre",
+   "area_id": "qc_tranchant_left_ice_cliff",
+   "name": "Rideau de verre"
+  },
+  {
+   "id": "qc_tranchant_left_ice_cliff_saddam_le_clochard",
+   "area_id": "qc_tranchant_left_ice_cliff",
+   "name": "Saddam le clochard"
+  },
+  {
+   "id": "qc_tranchant_left_ice_cliff_euphrate",
+   "area_id": "qc_tranchant_left_ice_cliff",
+   "name": "Euphrate"
+  },
+  {
+   "id": "qc_tranchant_left_ice_cliff_tigris",
+   "area_id": "qc_tranchant_left_ice_cliff",
+   "name": "Tigris"
+  },
+  {
+   "id": "qc_tranchant_left_ice_cliff_pr_dateur_volant",
+   "area_id": "qc_tranchant_left_ice_cliff",
+   "name": "Prédateur volant"
+  },
+  {
+   "id": "qc_tranchant_left_ice_cliff_la_sentinelle",
+   "area_id": "qc_tranchant_left_ice_cliff",
+   "name": "La Sentinelle"
+  },
+  {
+   "id": "qc_tranchant_left_ice_cliff_jupiter_et_saturne",
+   "area_id": "qc_tranchant_left_ice_cliff",
+   "name": "Jupiter et Saturne"
+  },
+  {
+   "id": "qc_tranchant_right_ice_cliff_cool_fr_n_sie",
+   "area_id": "qc_tranchant_right_ice_cliff",
+   "name": "Cool frénésie"
+  },
+  {
+   "id": "qc_tranchant_right_ice_cliff_yogourt_glac",
+   "area_id": "qc_tranchant_right_ice_cliff",
+   "name": "Yogourt glacé"
+  },
+  {
+   "id": "qc_tranchant_right_ice_cliff_pop_sicle",
+   "area_id": "qc_tranchant_right_ice_cliff",
+   "name": "Pop sicle"
+  },
+  {
+   "id": "qc_tranchant_right_ice_cliff_l_ombre_jaune",
+   "area_id": "qc_tranchant_right_ice_cliff",
+   "name": "L'Ombre jaune"
+  },
+  {
+   "id": "qc_tranchant_right_ice_cliff_baba_cool",
+   "area_id": "qc_tranchant_right_ice_cliff",
+   "name": "Baba cool"
+  },
+  {
+   "id": "qc_tranchant_right_ice_cliff_mister_freeze",
+   "area_id": "qc_tranchant_right_ice_cliff",
+   "name": "Mister freeze"
+  },
+  {
+   "id": "qc_tranchant_right_ice_cliff_place_aux_jeunes",
+   "area_id": "qc_tranchant_right_ice_cliff",
+   "name": "Place aux jeunes"
+  },
+  {
+   "id": "qc_tranchant_right_ice_cliff_bombe_glac_e",
+   "area_id": "qc_tranchant_right_ice_cliff",
+   "name": "Bombe glacée"
+  },
+  {
+   "id": "qc_tranchant_right_ice_cliff_sundae_royal",
+   "area_id": "qc_tranchant_right_ice_cliff",
+   "name": "Sundae royal"
+  },
+  {
+   "id": "qc_tranchant_right_ice_cliff_banane_congel_e",
+   "area_id": "qc_tranchant_right_ice_cliff",
+   "name": "Banane congelée"
+  },
+  {
+   "id": "nh_a_link_to_ice_report_photos_2025_photos_from_winter_2023_24",
+   "area_id": "nh_a_link_to_ice_report_photos_2025",
+   "name": "Photos from Winter 2023-24"
+  },
+  {
+   "id": "nh_a_link_to_ice_report_photos_2025_photos_from_dec_16_24_recalled",
+   "area_id": "nh_a_link_to_ice_report_photos_2025",
+   "name": "Photos from Dec 16 ‘24  “ Recalled”"
+  }
+ ],
+ "created": [],
+ "deleted": [
+  "co_pine_river_trad",
+  "qc_tranchant_left_ice_cliff",
+  "qc_tranchant_right_ice_cliff"
+ ],
+ "refused": []
+}
