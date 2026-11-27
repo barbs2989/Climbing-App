@@ -67,7 +67,10 @@ const problems = (field, val, src) => {
   if (val.length > CAP[field]) p.push(`over ${CAP[field]} chars (${val.length})`);
   if (shouts(val)) p.push("all caps");
   // ...and out of the source/first-person tests too: "Twist My Tea" and "Nail in my Coffin" are climbs, not a voice.
-  const unnamed = NAMES.list.reduce((t, n) => t.replace(new RegExp("\\b" + n.split(" ").map(w => w.replace(/[^a-z0-9]/g, "")).filter(Boolean).join("\\W+") + "\\b", "gi"), "zz"), val);
+  // A neighbour's name of two+ words in this field's OWN source ("I Speak Jive", "I Presume", "Trip Like I Do") is a
+  // name too, not a voice (sport fill 2026-11-26: ~12 locations refused as first person for naming the climb next door).
+  const srcNames = properNames(src).filter((n) => n.includes(" "));
+  const unnamed = [...NAMES.list, ...srcNames].reduce((t, n) => t.replace(new RegExp("\\b" + n.split(" ").map(w => w.replace(/[^a-z0-9]/g, "")).filter(Boolean).join("\\W+") + "\\b", "gi"), "zz"), val);
   // Accents stripped first: \b treats "ô" as a non-word character, so "Dôme" read as "D" + "me" (first person).
   const plain = unnamed.normalize("NFKD").replace(/[̀-ͯ]/g, "");
   if (field !== "fa") for (const [re, why] of BAD) if (re.test(plain)) p.push(why);
