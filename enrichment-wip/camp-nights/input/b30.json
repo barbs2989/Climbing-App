@@ -1,0 +1,1090 @@
+[
+ {
+  "id": "rainier_central_mowich_face",
+  "name": "Central Mowich Face",
+  "discipline": "alpine",
+  "peak": "Mount Rainier",
+  "area_id": "wa_mount_rainier",
+  "path": "usa.washington.wa_sw_tacoma.wa_southwest_cascades.wa_mount_rainier",
+  "trip_plan": {
+   "totalNote": "A three-day carry-over: hike in to a camp on lower Ptarmigan Ridge, climb the Central Mowich Face to Liberty Cap and drop down the Emmons-Winthrop to Camp Schurman, then walk out to White River (this ends at a different trailhead, so plan a car shuttle).",
+   "days": [
+    {
+     "n": 1,
+     "title": "Mowich Lake to lower Ptarmigan Ridge",
+     "objective": "Reach a camp on lower Ptarmigan Ridge",
+     "miles": 6,
+     "gainFt": 3350,
+     "note": "Take the Wonderland and Spray Park trail about 4 miles to Spray Park, then the climbers' trail up lower Ptarmigan Ridge to around 8,200-8,600 ft. Parties have camped on the ridge above Observation Rock (8,600 ft) or dropped right away to an 8,100 ft camp on the Edmunds Glacier divide. Gain is derived from the 4,955 ft …"
+    },
+    {
+     "n": 2,
+     "title": "Central Mowich Face to Liberty Cap",
+     "objective": "Climb the face and carry over to Camp Schurman",
+     "miles": 6,
+     "gainFt": 6800,
+     "note": "Drop about 1,000 ft from the ridge onto the North Mowich Glacier and cross under the ice-cliff runout early. The face runs at about 40-47 degrees, steepening to 50-60 degree ice on the harder upper variation, to the top of the face at about 13,400 ft, then onto Liberty Cap. Descend the Emmons-Winthrop to Camp Schurman …"
+    },
+    {
+     "n": 3,
+     "title": "Camp Schurman to White River",
+     "objective": "Descend the Emmons and Inter Glacier to the trailhead",
+     "miles": 5,
+     "gainFt": 0,
+     "note": "Descend from Camp Schurman by the Emmons/Inter Glacier and the Glacier Basin trail to White River. Loss is derived from about 9,500 ft to the roughly 4,400 ft trailhead; the mileage is approximate."
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Lower Ptarmigan Ridge camp",
+    "elev_ft": null,
+    "type": "bivy",
+    "role": "main",
+    "notes": "Bivy ground on lower Ptarmigan Ridge above Spray Park, from which parties drop onto the North Mowich Glacier. Mowich Lake has had no road access since the Fairfax Bridge on SR 165 closed in 2025, so check access first."
+   }
+  ],
+  "campsite_pins": []
+ },
+ {
+  "id": "wa_mount_rainier_curtis_ridge",
+  "name": "Curtis Ridge",
+  "discipline": "mountaineering",
+  "peak": "Mount Rainier",
+  "area_id": "wa_mount_rainier",
+  "path": "usa.washington.wa_sw_tacoma.wa_southwest_cascades.wa_mount_rainier",
+  "trip_plan": {
+   "totalNote": "A serious 3-day trip (~9,500 ft gain); technically harder and more route-finding-intensive than neighboring Liberty and Ptarmigan Ridges, best suited to fast, competent parties in cold conditions.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Approach to Curtis Ridge camp",
+     "objective": "Reach a camp on Curtis Ridge",
+     "miles": 6.5,
+     "gainFt": 3600,
+     "note": "Hike from White River via Glacier Basin and St. Elmo Pass, then down and across the Winthrop Glacier to a camp on Curtis Ridge."
+    },
+    {
+     "n": 2,
+     "title": "Climb the ridge",
+     "objective": "Climb the ridge and summit",
+     "miles": 5,
+     "gainFt": 5900,
+     "note": "A long, technical, route-finding-intensive day up 55° snow/ice with short rock steps, joining the upper mountain and descending the Emmons-Winthrop to Camp Schurman."
+    },
+    {
+     "n": 3,
+     "title": "Exit to White River",
+     "objective": "Hike out",
+     "miles": 5.5,
+     "note": "Descend the Inter Glacier and hike through Glacier Basin back to the White River trailhead."
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Curtis Ridge camp",
+    "elev_ft": null,
+    "type": "bivy",
+    "role": "main",
+    "notes": "Camp on Curtis Ridge above the Winthrop and Carbon glaciers, reached from Glacier Basin over St. Elmo Pass. The usual camp before the ridge itself."
+   },
+   {
+    "name": "White River Campground",
+    "elev_ft": 4400,
+    "type": "camp",
+    "role": "route",
+    "notes": "The roadhead camp for the Emmons-Winthrop, five miles up White River Road off Highway 410, and the Glacier Basin trail to Camp Schurman starts here. Being the highest of the park's drive-in campgrounds it is normally the last to open, around late June, and the first to close in September, so early-season parties often …"
+   },
+   {
+    "name": "Camp Schurman",
+    "elev_ft": 9440,
+    "type": "camp",
+    "role": "route",
+    "notes": "The high camp for the Emmons-Winthrop, the standard north-side route, approached from the White River Campground through Glacier Basin and up the Inter Glacier. There is an NPS ranger hut with an emergency radio on its exterior and toilet facilities, but the hut is staff quarters and not a shelter climbers can sleep in…"
+   }
+  ],
+  "campsite_pins": [
+   {
+    "name": "White River Campground",
+    "elev": 4400,
+    "distMi": null
+   },
+   {
+    "name": "Glacier Basin Camp",
+    "elev": 5969,
+    "distMi": 3.5
+   },
+   {
+    "name": "Camp Schurman",
+    "elev": 9440,
+    "distMi": null
+   }
+  ]
+ },
+ {
+  "id": "wa_mount_rainier_disappointment_cleaver",
+  "name": "Disappointment Cleaver",
+  "discipline": "mountaineering",
+  "peak": "Mount Rainier",
+  "area_id": "wa_mount_rainier",
+  "path": "usa.washington.wa_sw_tacoma.wa_southwest_cascades.wa_mount_rainier",
+  "trip_plan": {
+   "totalNote": "The most-climbed route: a standard 2-day trip (~9,000 ft gain, ~18 mi round trip) done independently, though most guided trips stretch it to 3-4 days with a rest/school day at Muir.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Paradise to Camp Muir",
+     "objective": "Reach Camp Muir (10,080 ft)",
+     "miles": 4.5,
+     "gainFt": 4660,
+     "note": "Hike the Muir Snowfield to Camp Muir, melt water, and rest early for an alpine start."
+    },
+    {
+     "n": 2,
+     "title": "Summit day",
+     "objective": "Climb the Cleaver and summit",
+     "miles": 13.5,
+     "gainFt": 4330,
+     "note": "Depart around 12:30 AM, reach the crater rim by 6-9 AM, tag the true summit on the SW rim, descend to Muir, pack, and continue to Paradise — a long car-to-car finish."
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Camp Muir",
+    "elev_ft": 10080,
+    "type": "camp",
+    "role": "main",
+    "notes": "The standard high camp for the Disappointment Cleaver, Ingraham Direct and Gibraltar routes, reached by the roughly 4,500 ft slog up the Muir Snowfield from Paradise. The Public Shelter is first-come and cannot be reserved, so treat it as a bonus rather than a plan and carry a tent regardless; it has been closed for ma…"
+   },
+   {
+    "name": "Ingraham Flats",
+    "elev_ft": 11100,
+    "type": "camp",
+    "role": "main",
+    "notes": "About a thousand feet above Camp Muir past Cathedral Gap, this bench shortens summit day meaningfully and is the usual overflow when the Muir quota is full. The trade is real: less acclimatisation, a colder and more exposed camp, and objective exposure to icefall off the Ingraham headwall above, which is why parties ar…"
+   }
+  ],
+  "campsite_pins": [
+   {
+    "name": "Camp Muir",
+    "elev": 10080,
+    "distMi": 4.5
+   },
+   {
+    "name": "Ingraham Flats High Camp",
+    "elev": 11200,
+    "distMi": 5.5
+   }
+  ]
+ },
+ {
+  "id": "wa_mount_rainier_emmons_glacier",
+  "name": "Emmons–Winthrop Glacier",
+  "discipline": "mountaineering",
+  "peak": "Mount Rainier",
+  "area_id": "wa_mount_rainier",
+  "path": "usa.washington.wa_sw_tacoma.wa_southwest_cascades.wa_mount_rainier",
+  "trip_plan": {
+   "totalNote": "The classic 2-day plan (~10,350 ft gain): most parties go car-to-car in two days with a very long summit day; a 3-day version adds a rest/acclimatization night at Schurman.",
+   "days": [
+    {
+     "n": 1,
+     "title": "White River to Camp Schurman",
+     "objective": "Reach Camp Schurman (9,460 ft)",
+     "miles": 6.5,
+     "gainFt": 5060,
+     "note": "Hike via Glacier Basin and up the Inter Glacier to Camp Curtis, then across to Camp Schurman on the Emmons Glacier."
+    },
+    {
+     "n": 2,
+     "title": "Summit day and exit",
+     "objective": "Summit and hike back to White River",
+     "miles": 9.5,
+     "gainFt": 4950,
+     "note": "Depart around 12:30 AM, climb the Emmons-Winthrop to the crater rim by mid-morning, tag the true summit, then descend to Schurman, pack up, and hike all the way out to White River — a very long second day."
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Camp Schurman",
+    "elev_ft": 9400,
+    "type": "camp",
+    "role": "main",
+    "notes": "Sits on the rock of Steamboat Prow where the Emmons and Winthrop glaciers part. There is a ranger hut with an emergency radio mounted on the outside that reaches dispatch when no ranger is in residence, and a single solar-dehydrating outhouse. That toilet is closed up from October through May, so off-season parties car…"
+   },
+   {
+    "name": "Emmons Flats",
+    "elev_ft": 9701,
+    "type": "camp",
+    "role": "main",
+    "notes": "A bench a tenth or two of a mile up and over the hill from Camp Schurman, five minutes' walk in good conditions. Several large crevasses lie between the two camps, bridged in early season and not always later, so move between them roped as a team rather than walking over unroped with a water bottle."
+   },
+   {
+    "name": "Glacier Basin",
+    "elev_ft": 5900,
+    "type": "camp",
+    "role": "route",
+    "notes": "The last forested camp on the route, in the valley below Mount Ruth and Burroughs Mountain, about 3.5 mi up the Glacier Basin Trail from White River Campground. There is a composting toilet a short walk from the sites and screw-top bear barrels for food. Parties who cannot get a Camp Schurman permit, or who want to bre…"
+   }
+  ],
+  "campsite_pins": [
+   {
+    "name": "Camp Schurman",
+    "elev": 9400,
+    "distMi": 7
+   }
+  ]
+ },
+ {
+  "id": "wa_mount_rainier_fuhrer_finger",
+  "name": "Fuhrer Finger",
+  "discipline": "mountaineering",
+  "peak": "Mount Rainier",
+  "area_id": "wa_mount_rainier",
+  "path": "usa.washington.wa_sw_tacoma.wa_southwest_cascades.wa_mount_rainier",
+  "trip_plan": {
+   "totalNote": "Commonly a 2-3 day trip (~9,000 ft gain); guide services cite a 10-14 hour round trip for the technical portion alone.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Paradise to high bivy",
+     "objective": "Reach a high camp on Wapowety Cleaver at the edge of the Wilson Glacier",
+     "miles": 5,
+     "gainFt": 4600,
+     "note": "Cross the Nisqually Glacier from Glacier Vista and climb onto Wapowety Cleaver to a high bivy at the edge of the Wilson Glacier, gaining most of the technical route's approach."
+    },
+    {
+     "n": 2,
+     "title": "Summit day",
+     "objective": "Climb the Finger and tag the summit",
+     "miles": 8,
+     "gainFt": 4400,
+     "note": "Alpine start up the Finger's snow/ice gully to join the standard route to the summit, then descend the Disappointment Cleaver or Ingraham Direct."
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Castle camps on Wapowety Cleaver",
+    "elev_ft": null,
+    "type": "camp",
+    "role": "main",
+    "notes": "Two camp areas on the ridge below Wapowety Cleaver at the edge of the Wilson Glacier. Lower Castle, about 9,250 ft, has a few closely spaced rock rings for small parties; Upper Castle, 9,400 to 9,500 ft, has large rock rings and is where most parties camp. Wind-exposed."
+   }
+  ],
+  "campsite_pins": []
+ },
+ {
+  "id": "wa_mount_rainier_gibraltar_ledges",
+  "name": "Gibraltar Ledges",
+  "discipline": "mountaineering",
+  "peak": "Mount Rainier",
+  "area_id": "wa_mount_rainier",
+  "path": "usa.washington.wa_sw_tacoma.wa_southwest_cascades.wa_mount_rainier",
+  "trip_plan": {
+   "totalNote": "A standard 2-day trip (~9,000 ft gain); now considered the standard winter/shoulder-season route, so an early, cold departure is essential to beat rockfall on the ledges.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Paradise to Camp Muir",
+     "objective": "Reach Camp Muir (10,080 ft)",
+     "miles": 4.5,
+     "gainFt": 4600,
+     "note": "Hike the Muir Snowfield to Camp Muir and settle in and rest for an early departure."
+    },
+    {
+     "n": 2,
+     "title": "Summit day",
+     "objective": "Traverse the ledges and summit",
+     "miles": 8,
+     "gainFt": 4400,
+     "note": "Depart very early (often before dawn, sometimes as early as 12:30 AM) to climb the Cowlitz Cleaver, then the ledges themselves before the sun hits the loose rock, reaching the crater rim and descending the DC to Paradise."
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Camp Muir",
+    "elev_ft": 10080,
+    "type": "camp",
+    "role": "main",
+    "notes": "The standard high camp for the Disappointment Cleaver, Ingraham Direct and Gibraltar routes, reached by the roughly 4,500 ft slog up the Muir Snowfield from Paradise. The Public Shelter is first-come and cannot be reserved, so treat it as a bonus rather than a plan and carry a tent regardless; it has been closed for ma…"
+   },
+   {
+    "name": "Ingraham Flats",
+    "elev_ft": 11100,
+    "type": "camp",
+    "role": "route",
+    "notes": "About a thousand feet above Camp Muir past Cathedral Gap, this bench shortens summit day meaningfully and is the usual overflow when the Muir quota is full. The trade is real: less acclimatisation, a colder and more exposed camp, and objective exposure to icefall off the Ingraham headwall above, which is why parties ar…"
+   }
+  ],
+  "campsite_pins": [
+   {
+    "name": "Camp Muir",
+    "elev": 10080,
+    "distMi": null
+   },
+   {
+    "name": "Ingraham Flats",
+    "elev": 11100,
+    "distMi": null
+   }
+  ]
+ },
+ {
+  "id": "wa_mount_rainier_ingraham_direct",
+  "name": "Ingraham Direct",
+  "discipline": "mountaineering",
+  "peak": "Mount Rainier",
+  "area_id": "wa_mount_rainier",
+  "path": "usa.washington.wa_sw_tacoma.wa_southwest_cascades.wa_mount_rainier",
+  "trip_plan": {
+   "totalNote": "A standard 2-day trip (~9,000 ft gain); a 3-day option camps at Ingraham Flats to shorten summit day.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Paradise to Camp Muir",
+     "objective": "Reach Camp Muir (10,080 ft)",
+     "miles": 4.5,
+     "gainFt": 4600,
+     "note": "Hike the Muir Snowfield to Camp Muir, settle in and rest for the summit push."
+    },
+    {
+     "n": 2,
+     "title": "Summit day",
+     "objective": "Climb the Ingraham headwall and summit",
+     "miles": 8,
+     "gainFt": 4386,
+     "note": "Depart around midnight, climb the Ingraham headwall to the crater rim by 6-9 AM, tag the true summit, then descend the Disappointment Cleaver to Muir, pack, and continue to Paradise."
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Camp Muir",
+    "elev_ft": 10080,
+    "type": null,
+    "role": "main",
+    "notes": "The planned high camp for the route, on the saddle between the snowfield and the Cowlitz Glacier, with a ranger station and toilets. It is the most sheltered option on this side of the mountain and the public hut is the fallback when a storm makes tents impractical, though the hut is cold and drafty. Rangers here give …"
+   },
+   {
+    "name": "Ingraham Flats",
+    "elev_ft": 11100,
+    "type": null,
+    "role": "main",
+    "notes": "A planned camp that takes a thousand feet off summit day, and the reason parties accept the trade-offs. It has no toilet, so all solid waste is packed out. Large crevasses ring the flat ground — stay roped any time you leave the tent platforms. It also sits directly beneath the seracs of the icefall above; that slope i…"
+   }
+  ],
+  "campsite_pins": [
+   {
+    "name": "Camp Muir",
+    "elev": 10080,
+    "distMi": 4.5
+   },
+   {
+    "name": "Ingraham Flats",
+    "elev": 11100,
+    "distMi": null
+   }
+  ]
+ },
+ {
+  "id": "wa_mount_rainier_kautz_glacier",
+  "name": "Kautz Glacier",
+  "discipline": "mountaineering",
+  "peak": "Mount Rainier",
+  "area_id": "wa_mount_rainier",
+  "path": "usa.washington.wa_sw_tacoma.wa_southwest_cascades.wa_mount_rainier",
+  "trip_plan": {
+   "totalNote": "A standard 2-day trip (~9,300 ft gain); a 3-day version adds a night to acclimatize and time the ice chute in cold, stable conditions.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Paradise to Camp Hazard",
+     "objective": "Reach Camp Hazard (~10,800 ft)",
+     "miles": 5,
+     "gainFt": 5700,
+     "note": "Hike to Glacier Vista, cross the Nisqually Glacier and climb past the Castle camps to Camp Hazard, with some crevasse navigation."
+    },
+    {
+     "n": 2,
+     "title": "Summit day",
+     "objective": "Cross the Kautz Ice Chute and summit",
+     "miles": 8,
+     "gainFt": 3300,
+     "note": "Alpine start to cross the exposed Kautz Ice Chute quickly (active icefall zone), climb the upper Kautz to the summit, then reverse the route: rappel the ice chute, climb back up the Rock Step to camp, pack up and descend to Paradise."
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Wilson Moraine",
+    "elev_ft": 8400,
+    "type": "camp",
+    "role": "route",
+    "notes": "Sites on the moraine between about 8,200 and 8,600 ft, below the Castle. Lower than most parties sleep, so a longer summit day."
+   },
+   {
+    "name": "Lower Castle",
+    "elev_ft": 9200,
+    "type": "camp",
+    "role": "route",
+    "notes": "On the ridge below Wapowety Cleaver at the edge of the Wilson Glacier, about 9,200 ft. Wind-exposed."
+   },
+   {
+    "name": "Upper Castle",
+    "elev_ft": 9480,
+    "type": "camp",
+    "role": "main",
+    "notes": "Where most parties camp, at about 9,400 to 9,500 ft, and where the Comet Falls way in joins. Wind-exposed."
+   },
+   {
+    "name": "Camp Hazard",
+    "elev_ft": 10800,
+    "type": "camp",
+    "role": "main",
+    "notes": "On the climber's left of the Turtle Snowfield at about 10,800 ft: three large rock rings below the Kautz Ice Cliff, and the highest regular camp on the route. It shortens summit day. The original Camp Hazard, nearer 11,000 ft, sits in the fall line of ice from the cliff and is not used."
+   },
+   {
+    "name": "Rock Step bivy sites",
+    "elev_ft": 11250,
+    "type": "bivy",
+    "role": "route",
+    "notes": "A few small sites by the notch above the Rock Step, right beside the morning rappel. Little room, and under the same ice cliff as Camp Hazard."
+   }
+  ],
+  "campsite_pins": [
+   {
+    "name": "Lower Castle",
+    "elev": 9200,
+    "distMi": 4.05
+   },
+   {
+    "name": "Upper Castle",
+    "elev": 9480,
+    "distMi": 4.2
+   },
+   {
+    "name": "Camp Hazard",
+    "elev": 10800,
+    "distMi": 4.7
+   }
+  ]
+ },
+ {
+  "id": "wa_mount_rainier_kautz_headwall",
+  "name": "Kautz Headwall",
+  "discipline": "alpine",
+  "peak": "Mount Rainier",
+  "area_id": "wa_mount_rainier",
+  "path": "usa.washington.wa_sw_tacoma.wa_southwest_cascades.wa_mount_rainier",
+  "trip_plan": {
+   "totalNote": "A standard 2-day trip (~9,000 ft gain) — essentially the Kautz Glacier route with 1-2 short ice pitches on the headwall itself.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Paradise to Camp Hazard",
+     "objective": "Reach Camp Hazard (~10,800 ft)",
+     "miles": 5,
+     "gainFt": 5700,
+     "note": "Hike to Glacier Vista, cross the Nisqually Glacier and climb past the Castle camps to Camp Hazard."
+    },
+    {
+     "n": 2,
+     "title": "Summit day",
+     "objective": "Climb the headwall and summit",
+     "miles": 8,
+     "gainFt": 3300,
+     "note": "Alpine start to climb the Kautz Headwall's 1-2 short ice pitches (up to ~50°) and then the upper Kautz Glacier to the summit, then descend the Disappointment Cleaver to Paradise."
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Castle camps on Wapowety Cleaver",
+    "elev_ft": null,
+    "type": "camp",
+    "role": "main",
+    "notes": "Two camp areas on the ridge below Wapowety Cleaver at the edge of the Wilson Glacier. Lower Castle, about 9,250 ft, has a few closely spaced rock rings for small parties; Upper Castle, 9,400 to 9,500 ft, has large rock rings and is where most parties camp. Wind-exposed."
+   },
+   {
+    "name": "Camp Hazard",
+    "elev_ft": 10800,
+    "type": "camp",
+    "role": "main",
+    "notes": "On the climber's left of the Turtle Snowfield at about 10,800 ft: three large rock rings below the Kautz Ice Cliff, and the highest regular camp on the route. It shortens summit day. The original Camp Hazard, nearer 11,000 ft, sits in the fall line of ice from the cliff and is not used."
+   }
+  ],
+  "campsite_pins": [
+   {
+    "name": "Camp Hazard",
+    "elev": 10800,
+    "distMi": null
+   }
+  ]
+ },
+ {
+  "id": "wa_mount_rainier_liberty_ridge",
+  "name": "Liberty Ridge",
+  "discipline": "alpine",
+  "peak": "Mount Rainier",
+  "area_id": "wa_mount_rainier",
+  "path": "usa.washington.wa_sw_tacoma.wa_southwest_cascades.wa_mount_rainier",
+  "trip_plan": {
+   "totalNote": "A 3-day trip is standard (Curtis Ridge, then Thumb Rock, then a long summit-and-descend day) totaling roughly 9,900 ft gain over ~18.8 mi; very fit parties in perfect conditions compress it to 2 days, and slower/more cautious parties add a 4th night at Camp Schurman on the way down.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Approach to Curtis Ridge camp",
+     "objective": "Reach camp on Curtis Ridge (~7,200 ft)",
+     "miles": 6,
+     "gainFt": 3000,
+     "note": "Drive to the White River trailhead, hike the Glacier Basin trail onto the Inter Glacier, cross St. Elmo Pass, then traverse the Winthrop Glacier below Curtis Ridge to a flat camp around 7,200 ft. Full expedition packs with rope, pickets, and several days of food/fuel."
+    },
+    {
+     "n": 2,
+     "title": "Carbon Glacier crossing to Thumb Rock",
+     "objective": "Reach high camp at Thumb Rock (10,800 ft)",
+     "miles": 2,
+     "gainFt": 3600,
+     "note": "A short but steep day: cross the Carbon Glacier below Willis Wall, then climb rock/snow on the west flank of the ridge to the col at Thumb Rock. Camp spots are limited and exposed to rockfall, so most parties leave Curtis Ridge early to secure a site."
+    },
+    {
+     "n": 3,
+     "title": "Summit push and full descent to trailhead",
+     "objective": "Summit Liberty Cap via the Black Pyramid and bergschrund, then descend to the car",
+     "miles": 10.8,
+     "gainFt": 3300,
+     "note": "An alpine-start summit day: climb steep snow/ice past the Black Pyramid, weave through the upper ice cliffs, and cross the summit bergschrund (usually the technical crux) to reach Liberty Cap. Most fit parties then continue straight down the standard Emmons-Winthrop route past Camp Schurman to the White River trailhead…"
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Thumb Rock",
+    "elev_ft": 10499,
+    "type": "bivy",
+    "role": "main",
+    "notes": "The one real camp on the ridge itself, in the saddle just above the rock feature, reached by 45-55 degree snow and ice. Published elevations for it disagree — reports place it anywhere from about 10,400 to 10,800 ft. It is exposed to rock and ice coming off the Thumb and off the bands higher up, and that exposure has k…"
+   },
+   {
+    "name": "Curtis Ridge",
+    "elev_ft": 7402,
+    "type": "camp",
+    "role": "main",
+    "notes": "The standard first night, on the broad snow shoulder near the gully used to drop onto the Carbon Glacier, reached over St. Elmo Pass and across the lower Winthrop. Flat ground and comparatively little rockfall exposure. It is not free of hazard: a party camped here watched a large avalanche off the Willis Wall push its…"
+   }
+  ],
+  "campsite_pins": [
+   {
+    "name": "Glacier Basin",
+    "elev": 5935,
+    "distMi": 3.5
+   },
+   {
+    "name": "Lower Curtis Ridge / Carbon Glacier camp",
+    "elev": 7400,
+    "distMi": null
+   },
+   {
+    "name": "Thumb Rock",
+    "elev": 10500,
+    "distMi": 7
+   }
+  ]
+ },
+ {
+  "id": "wa_mount_rainier_mowich_face",
+  "name": "Mowich Face",
+  "discipline": "alpine",
+  "peak": "Mount Rainier",
+  "area_id": "wa_mount_rainier",
+  "path": "usa.washington.wa_sw_tacoma.wa_southwest_cascades.wa_mount_rainier",
+  "trip_plan": {
+   "totalNote": "A committing 3-day trip (~9,500 ft gain) up sustained 40-55° ice with a technical rock band — one of the harder lines on the mountain.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Approach to base camp",
+     "objective": "Reach a base camp near the Mowich Glacier",
+     "miles": 6,
+     "gainFt": 4200,
+     "note": "From Mowich Lake (no road access since the April 2025 bridge closure), hike via the Spray Park area to a base camp near the Mowich Glacier (~9,000-9,600 ft), caching snowshoes/extra fuel if planning to return to camp."
+    },
+    {
+     "n": 2,
+     "title": "Move to high camp / rest and rack up",
+     "objective": "Stage below the face",
+     "miles": 1,
+     "gainFt": 1300,
+     "note": "Shift to a higher bivy below the face; parties bring a rock rack (small cams, offsets, tricams) for the mid-face rock band above."
+    },
+    {
+     "n": 3,
+     "title": "Summit day",
+     "objective": "Climb the face/Hourglass to the summit",
+     "miles": 6,
+     "gainFt": 4000,
+     "note": "Climb roughly 4,000 ft of sustained 40-55° ice through the Hourglass, staying right of an exposed, detached rock band, then cross the mid-face rock band to Sunset Ridge and the summit."
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Ptarmigan Ridge bivy above Observation Rock",
+    "elev_ft": 8600,
+    "type": null,
+    "role": "main",
+    "notes": "Planned camp and the most sheltered ground on this side of the mountain: old stacked rock windbreaks sit here and parties describe it as the best bivy shelter in the area. The catch is position, not comfort — from here you still have to descend loose scree onto the North Mowich Glacier, and parties who camped here have…"
+   },
+   {
+    "name": "Edmunds/North Mowich glacier divide camp",
+    "elev_ft": 8100,
+    "type": null,
+    "role": "main",
+    "notes": "Planned alternative used by parties who cross the North Mowich above Needle Rock rather than staying high on Ptarmigan Ridge. Puts you on the correct side of the glacier for the face, at the cost of more elevation to regain in the morning."
+   },
+   {
+    "name": "High camp below the North Mowich headwall",
+    "elev_ft": 10000,
+    "type": null,
+    "role": "route",
+    "notes": "Planned camp closest to the base of the face, and the most exposed of the three. Parties who have used it wore helmets in camp because of rockfall and icefall shedding off the deteriorating headwall above; there is no fully sheltered ground up here. Worth it only when conditions are cold and you intend to start on the …"
+   },
+   {
+    "name": "Liberty Cap saddle",
+    "elev_ft": null,
+    "type": null,
+    "role": "route",
+    "notes": "Emergency bivy only, on the broad saddle between Liberty Cap and the summit, used by at least one party benighted after topping out. It is more sheltered than the true summit and less wind-hammered than climbers expect, but it is an unplanned option to know about, not a camp to aim for — going there means you are spend…"
+   }
+  ],
+  "campsite_pins": []
+ },
+ {
+  "id": "wa_mount_rainier_nisqually_icefall",
+  "name": "Nisqually Icefall",
+  "discipline": "mountaineering",
+  "peak": "Mount Rainier",
+  "area_id": "wa_mount_rainier",
+  "path": "usa.washington.wa_sw_tacoma.wa_southwest_cascades.wa_mount_rainier",
+  "trip_plan": {
+   "totalNote": "A 2-day trip (~9,000 ft gain) similar in structure to the neighboring Kautz and Fuhrer routes; the icefall itself demands moving fast through an active zone.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Paradise to high camp",
+     "objective": "Reach a camp on the Nisqually Glacier below the icefall",
+     "miles": 5,
+     "gainFt": 5700,
+     "note": "Hike from Paradise to the Nisqually Moraine, drop onto the Nisqually Glacier and ascend it alongside the Wapowety Cleaver to a camp below the icefall."
+    },
+    {
+     "n": 2,
+     "title": "Summit day",
+     "objective": "Move through the icefall and summit",
+     "miles": 8,
+     "gainFt": 3300,
+     "note": "Alpine start to move quickly through the icefall's active fall zone, then continue up to join the standard route to the summit, descending the Disappointment Cleaver to Paradise."
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Nisqually Glacier camp below the icefall",
+    "elev_ft": null,
+    "type": "bivy",
+    "role": "main",
+    "notes": "Parties camp on the upper Nisqually Glacier or its moraine edge below the icefall so they can be through it before the sun hits. The site varies by year."
+   },
+   {
+    "name": "Camp Muir",
+    "elev_ft": 10080,
+    "type": "camp",
+    "role": "route",
+    "notes": "The standard high camp for the Disappointment Cleaver, Ingraham Direct and Gibraltar routes, reached by the roughly 4,500 ft slog up the Muir Snowfield from Paradise. The Public Shelter is first-come and cannot be reserved, so treat it as a bonus rather than a plan and carry a tent regardless; it has been closed for ma…"
+   },
+   {
+    "name": "Ingraham Flats",
+    "elev_ft": 11100,
+    "type": "camp",
+    "role": "route",
+    "notes": "About a thousand feet above Camp Muir past Cathedral Gap, this bench shortens summit day meaningfully and is the usual overflow when the Muir quota is full. The trade is real: less acclimatisation, a colder and more exposed camp, and objective exposure to icefall off the Ingraham headwall above, which is why parties ar…"
+   }
+  ],
+  "campsite_pins": [
+   {
+    "name": "Camp Muir",
+    "elev": 10080,
+    "distMi": null
+   },
+   {
+    "name": "Ingraham Flats",
+    "elev": 11100,
+    "distMi": null
+   }
+  ]
+ },
+ {
+  "id": "wa_mount_rainier_ptarmigan_ridge",
+  "name": "Ptarmigan Ridge",
+  "discipline": "alpine",
+  "peak": "Mount Rainier",
+  "area_id": "wa_mount_rainier",
+  "path": "usa.washington.wa_sw_tacoma.wa_southwest_cascades.wa_mount_rainier",
+  "trip_plan": {
+   "totalNote": "A 3-day trip (~9,500 ft gain): an approach day, a move to the 10,300 ft high camp, then a single summit day with about 7 hours of technical climbing.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Approach to lower camp",
+     "objective": "Cross toward the base of the ridge",
+     "miles": 6,
+     "gainFt": 3800,
+     "note": "Hike from White River via Glacier Basin and St. Elmo Pass, across the Winthrop Glacier, Curtis Ridge and the Carbon Glacier, then up the Russell Glacier toward the ridge crest, camping partway up."
+    },
+    {
+     "n": 2,
+     "title": "Move to high camp",
+     "objective": "Reach the 10,300 ft high bivy",
+     "miles": 2,
+     "gainFt": 2900,
+     "note": "Continue up the ridge to a high bivy around 10,300 ft, with time to melt water, eat, and watch avalanche activity on the surrounding faces before the push."
+    },
+    {
+     "n": 3,
+     "title": "Summit day",
+     "objective": "Climb the technical upper ridge to the summit",
+     "miles": 5,
+     "gainFt": 2800,
+     "note": "About 7 hours of technical climbing from high camp to the summit plateau, then tag the summit and descend the Emmons-Winthrop."
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Ptarmigan Ridge high camp",
+    "elev_ft": 10300,
+    "type": null,
+    "role": "main",
+    "notes": "Planned high camp and the one the route is built around. Comfortable bivy ground on the ridge crest, deliberately sited just outside the serac fall line off the Liberty Wall — that icefall is the single largest objective hazard on the climb, so the exact spot matters more than the comfort. Fully exposed to wind. Partie…"
+   },
+   {
+    "name": "Glacier Basin camp",
+    "elev_ft": 5900,
+    "type": null,
+    "role": "route",
+    "notes": "Planned camp and the last established campground on the White River approach. Composting toilet a short walk away and bear boxes on site. Melts out early and is the last dependable running water before the route goes onto snow and ice for good — most parties fill here rather than carry from the car."
+   },
+   {
+    "name": "Curtis Ridge camp",
+    "elev_ft": null,
+    "type": null,
+    "role": "route",
+    "notes": "Planned first-night option when the traverse from White River is split over two days; the park's own route notes list it as the standard intermediate camp before Ptarmigan high camp. Sits on the crest between the Winthrop and Carbon glaciers, which is the point — you hear serac collapse off Willis Wall all night but th…"
+   },
+   {
+    "name": "Camp Schurman",
+    "elev_ft": 9460,
+    "type": null,
+    "role": "route",
+    "notes": "Descent camp, not an ascent camp — most parties come off Ptarmigan Ridge down the Emmons-Winthrop and use this. Has a ranger hut and a solar toilet, but both can be buried in snow well into the season, so plan to be self-sufficient and pack out waste. Reserve early; this is one of the first camps on the mountain to fil…"
+   }
+  ],
+  "campsite_pins": [
+   {
+    "name": "Camp Schurman",
+    "elev": 9440,
+    "distMi": null
+   }
+  ]
+ },
+ {
+  "id": "wa_mount_rainier_sunset_ridge",
+  "name": "Sunset Ridge",
+  "discipline": "alpine",
+  "peak": "Mount Rainier",
+  "area_id": "wa_mount_rainier",
+  "path": "usa.washington.wa_sw_tacoma.wa_southwest_cascades.wa_mount_rainier",
+  "trip_plan": {
+   "totalNote": "A remote 4-day trip (~11,500 ft gain) on the mountain's least-visited side; plan a car shuttle since the standard descent exits far from the Westside Road start.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Long approach to St. Andrews Park",
+     "objective": "Reach a camp near St. Andrews Park",
+     "miles": 8,
+     "gainFt": 3200,
+     "note": "From the Westside Road gate, walk the road to Round Pass, then the South Puyallup River Trail and Wonderland Trail to a camp around 6,000 ft."
+    },
+    {
+     "n": 2,
+     "title": "Move to high camp",
+     "objective": "Reach a high camp below Sunset Amphitheater",
+     "miles": 3.5,
+     "gainFt": 3600,
+     "note": "Climb the Puyallup Cleaver past Tokaloo Spire, then traverse north across the Puyallup and South Mowich glaciers to a high camp on the South Mowich Glacier (~9,600 ft)."
+    },
+    {
+     "n": 3,
+     "title": "Summit day",
+     "objective": "Climb the ridge through Sunset Amphitheater to the summit",
+     "miles": 6,
+     "gainFt": 4700,
+     "note": "Climb steep gullies and snowfields through Sunset Amphitheater — in a dry year a thin choss-wall/gully transition on the ridge can need an improvised belay or stop the climb — then descend a standard route to its high camp."
+    },
+    {
+     "n": 4,
+     "title": "Exit",
+     "objective": "Hike out the far side and shuttle back to Westside Road",
+     "miles": 8,
+     "note": "From Camp Schurman or Camp Muir, depending on the descent route, hike out and arrange transport back to Westside Road since the standard descents exit on the opposite side of the mountain."
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Puyallup Cleaver high camp",
+    "elev_ft": 9000,
+    "type": null,
+    "role": "main",
+    "notes": "Planned camp and the usual high camp for the route, on the cleaver at roughly this height before it is left at about 8,500 ft for the glacier traverse. Mixed snow and rock, wind-exposed on a west-facing rib with nothing upwind of it. Site on the cleaver crest rather than in a runnel, and keep clear of the loose rock ed…"
+   },
+   {
+    "name": "Colonnade Ridge",
+    "elev_ft": null,
+    "type": null,
+    "role": "route",
+    "notes": "Planned camp, the first reasonable stopping point once you leave the Wonderland Trail and start up toward the Puyallup Cleaver. It is a snow camp, so it depends entirely on coverage — in a dry year the ground here is bare and the site is much less pleasant. Parties who stop here accept a very long summit day in exchang…"
+   },
+   {
+    "name": "Open bivouac near 9,600 ft",
+    "elev_ft": 9600,
+    "type": null,
+    "role": "route",
+    "notes": "Planned but committing — used specifically to cut the summit day down, and on record as an open bivouac rather than a sheltered site. There is nothing here but what you dig. In a dry season the transition from this height onto the face is the part that turns parties around, so the higher camp only pays off if the snow …"
+   },
+   {
+    "name": "Bergschrund camp in the Sunset Amphitheater",
+    "elev_ft": null,
+    "type": null,
+    "role": "route",
+    "notes": "Planned camp reached by leaving the cleaver near 8,500 ft, traversing the Puyallup and South Mowich glaciers and climbing a steep snow gully to a small bergschrund with good ground beside it. The caution is the amphitheater itself: the headwall above sheds ice and rock, so this only makes sense sited where the schrund …"
+   }
+  ],
+  "campsite_pins": [
+   {
+    "name": "Puyallup Cleaver high camp",
+    "elev": 9000,
+    "distMi": null
+   }
+  ]
+ },
+ {
+  "id": "wa_mount_rainier_tahoma_glacier",
+  "name": "Tahoma Glacier",
+  "discipline": "mountaineering",
+  "peak": "Mount Rainier",
+  "area_id": "wa_mount_rainier",
+  "path": "usa.washington.wa_sw_tacoma.wa_southwest_cascades.wa_mount_rainier",
+  "trip_plan": {
+   "totalNote": "A remote 4-5 day trip (~12,000 ft gain); the climbing itself from high camp is quick, but the long approach and weather buffer make this one of the longest routes on the mountain.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Approach to St. Andrews Park",
+     "objective": "Reach a camp near St. Andrews Park",
+     "miles": 8,
+     "gainFt": 3300,
+     "note": "From Westside Road, follow the South Puyallup River Trail and Wonderland Trail toward St. Andrews Park."
+    },
+    {
+     "n": 2,
+     "title": "Move to high camp at St. Andrews Rocks",
+     "objective": "Reach camp at ~9,800 ft",
+     "miles": 3,
+     "gainFt": 3700,
+     "note": "Climb the Puyallup Cleaver to St. Andrews Rock, then use a ramp to drop onto the Tahoma Glacier at 9,600 ft; ample flat camp spots sit just below the rocks."
+    },
+    {
+     "n": 3,
+     "title": "Summit day",
+     "objective": "Navigate the glacier and summit",
+     "miles": 4,
+     "gainFt": 5000,
+     "note": "Navigate crevasse crossings on the Tahoma Glacier to the summit; one party summited by 6:15 AM and was back at the tent by 9:30 AM, so the climbing itself is fast once underway."
+    },
+    {
+     "n": 4,
+     "title": "Exit",
+     "objective": "Hike back to the trailhead",
+     "miles": 11,
+     "note": "Reverse the approach back down the Puyallup Cleaver and out via the Wonderland Trail and Westside Road."
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Puyallup Cleaver camp below St. Andrews Rock",
+    "elev_ft": null,
+    "type": "bivy",
+    "role": "main",
+    "notes": "High camp on the upper Puyallup Cleaver around 9,600 ft, just below St. Andrews Rock, where the route drops onto the Tahoma Glacier. Many parties spend the first night lower, at St. Andrews Park on the Wonderland Trail."
+   }
+  ],
+  "campsite_pins": []
+ },
+ {
+  "id": "wa_mount_rainier_willis_wall",
+  "name": "Willis Wall",
+  "discipline": "alpine",
+  "peak": "Mount Rainier",
+  "area_id": "wa_mount_rainier",
+  "path": "usa.washington.wa_sw_tacoma.wa_southwest_cascades.wa_mount_rainier",
+  "trip_plan": {
+   "totalNote": "A serious 3-day trip (~9,500 ft gain); the wall is climbed in one long committing push from a Curtis Ridge camp, exposed to icefall from the seracs above the entire time.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Approach to Curtis Ridge camp",
+     "objective": "Reach a camp on Curtis Ridge below the wall",
+     "miles": 6.5,
+     "gainFt": 3500,
+     "note": "Hike from White River via Glacier Basin and St. Elmo Pass, then down and across the Winthrop Glacier to a camp on Curtis Ridge."
+    },
+    {
+     "n": 2,
+     "title": "Climb the wall",
+     "objective": "Commit to the wall and summit",
+     "miles": 5,
+     "gainFt": 6000,
+     "note": "Leave camp before midnight, cross an avalanche cone and the bergschrund, then commit to one long push up the wall's rock and ice — the most serious climbing on the mountain — before joining the upper mountain and descending the Emmons-Winthrop to Camp Schurman."
+    },
+    {
+     "n": 3,
+     "title": "Exit to White River",
+     "objective": "Hike out",
+     "miles": 5.5,
+     "note": "Descend the Inter Glacier and hike through Glacier Basin back to the White River trailhead."
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Curtis Ridge camp",
+    "elev_ft": null,
+    "type": null,
+    "role": "main",
+    "notes": "Planned high camp for the wall, on the northeast side of the ridge dividing the Carbon from the Winthrop. This is the camp the route is climbed from — parties leave here before midnight to reach the avalanche cones at the foot of the central rib while everything overhead is still frozen. **Do not camp out on the Carbon…"
+   },
+   {
+    "name": "Glacier Basin camp",
+    "elev_ft": 5900,
+    "type": null,
+    "role": "route",
+    "notes": "Planned camp on the White River approach, which is now the practical way in — the Carbon River side lost public vehicle access when the Fairfax Bridge closed. Composting toilet and bear boxes. Last dependable running water; everything above is melt snow."
+   },
+   {
+    "name": "St Elmo Pass bivy",
+    "elev_ft": 7400,
+    "type": null,
+    "role": "route",
+    "notes": "Planned staging bivy at the pass where parties change into glacier gear before stepping onto the Winthrop. A short rock wall gives some wind shelter and the site is out of any fall line. Useful when a late trailhead start makes the full traverse to Curtis Ridge too long."
+   }
+  ],
+  "campsite_pins": [
+   {
+    "name": "Glacier Basin camp",
+    "elev": 5958,
+    "distMi": 3.5
+   },
+   {
+    "name": "St Elmo Pass bivy",
+    "elev": 7400,
+    "distMi": null
+   }
+  ]
+ },
+ {
+  "id": "wa_point_success_south_side",
+  "name": "Point Success via Success Cleaver",
+  "discipline": "alpine",
+  "peak": "Point Success",
+  "area_id": "wa_point_success",
+  "path": "usa.washington.wa_sw_tacoma.wa_southwest_cascades.wa_point_success",
+  "trip_plan": {
+   "totalNote": "A 3-day trip (occasionally stretched to 4): roughly 25 miles round trip and 11,500 ft of gain, with two nights out — one at the 6,400 ft saddle below the cleaver and one at the 10,700 ft col on the cleaver crest — before a long, early summit push and exit.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Approach to high camp below the cleaver",
+     "objective": "Reach camp near the 6,400 ft saddle / Pyramid Peak",
+     "miles": 10,
+     "gainFt": 4300,
+     "note": "From Longmire, follow the Wonderland Trail over the Rampart (~1,100 ft climb) and down to Kautz Creek, then up through Indian Henry's Hunting Ground and the Mirror Lakes trail toward Pyramid Peak. Camp on rock slabs/benches near the 6,300-6,400 ft saddle at the base of Success Cleaver, where running water is usually av…"
+    },
+    {
+     "n": 2,
+     "title": "Climb the cleaver to high camp",
+     "objective": "Gain the crest of Success Cleaver to ~10,700 ft",
+     "miles": 3,
+     "gainFt": 4300,
+     "note": "Follow the broad, loose ridge of Success Cleaver up through class 3 rock (steep snow early season, unstable scree later) past benches at ~8,100-8,300 ft and ~9,400 ft to a good camp at the small col on the cleaver's crest near 10,700 ft. This is the technical crux of the approach and the pace is dictated by rockfall/sn…"
+    },
+    {
+     "n": 3,
+     "title": "Summit push and exit to Longmire",
+     "objective": "Summit Point Success (and Columbia Crest if continuing), then hike all the way out",
+     "miles": 12,
+     "gainFt": 3550,
+     "note": "An alpine start crosses the rockfall chutes and gullies onto the Kautz Cleaver around 12,200 ft, with some 45-55 degree snow/ice steps near the top before topping out on Point Success. Many strong parties break camp after summiting and descend the same route all the way back to Longmire in one long day rather than addi…"
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Point 6631 (base camp north of Pyramid Peak)",
+    "elev_ft": null,
+    "type": "camp",
+    "role": "main",
+    "notes": ""
+   },
+   {
+    "name": "Cleaver crest col",
+    "elev_ft": 10700,
+    "type": null,
+    "role": "main",
+    "notes": "Planned high camp and the best ground on the route: a broad saddle on the cleaver crest that is generally out of the rockfall lines, which very little else on this cleaver can claim. No water. Above it the crest includes a knife-edge that has to be scrambled once the snow melts off it, so leaving from here in the dark …"
+   },
+   {
+    "name": "Devil's Dream camp",
+    "elev_ft": 4930,
+    "type": null,
+    "role": "route",
+    "notes": "Planned low camp about five miles in on the Wonderland Trail, in trees below Indian Henry's. Useful mainly as a bail-out or a late-start first night — it is well below the climbing and adds a lot of gain to day two. Reliable water is the reason to stop here."
+   },
+   {
+    "name": "Dug platform on the lower-mid cleaver",
+    "elev_ft": 9400,
+    "type": null,
+    "role": "route",
+    "notes": "Planned alternative for parties who run out of daylight low on the cleaver. Reports describe digging in here specifically because the spot felt protected from the rockfall lines running down either side — the lower cleaver is loose choss with real exposure to anything a party above knocks down, so on this route the she…"
+   }
+  ],
+  "campsite_pins": [
+   {
+    "name": "Point 6631 (base camp north of Pyramid Peak)",
+    "elev": 6631,
+    "distMi": 9.5
+   },
+   {
+    "name": "6,400 ft saddle below Success Cleaver",
+    "elev": 6400,
+    "distMi": 10
+   }
+  ]
+ }
+]

@@ -1,0 +1,215 @@
+[
+ {
+  "id": "wa_der_dihedral",
+  "camps": [],
+  "new_camps": [
+   {
+    "name": "Colchuck Lake",
+    "elev_ft": 5570,
+    "type": "camp",
+    "role": "main",
+    "nights": [1, 2],
+    "why": "The standard base for the north face: camp near the lake's south end and the pre-dawn walk to the route is short, then you sleep again before hiking out.",
+    "water": "",
+    "capacity": "The Colchuck Lake permit zone allows up to 8 people on one permit.",
+    "permit": "Overnight permit required May 15 to Oct 31, issued by lottery for the Colchuck Lake zone.",
+    "notes": "Sites are on the west side and at the south end of the lake, and the south end is the usual choice for the climbs above the lake. Permits are hard to win, which is why many parties climb these routes as day trips instead."
+   }
+  ],
+  "confidence": "medium",
+  "plan_conflict": null,
+  "sources": ["https://wenatcheeoutdoors.org/2016/05/02/dragontail-peak-backbone-ridge/", "https://www.mountaineers.org/activities/routes-places/enchantments-area-review/dragontail-peak-serpentine-ridge", "https://stephabegg.com/trip-reports/washington/dragontail-serpentine-arete/"]
+ },
+ {
+  "id": "wa_dragontail_peak_r2",
+  "camps": [
+   {"name": "Colchuck Lake designated campsites", "nights": [1, 2], "role": "main", "why": "The base this plan is built on: sleeping at the lake keeps the climb to a single day from camp and cuts the pre-dawn walk-in. It needs a hard-to-win permit."},
+   {"name": "Bridge Creek and Eightmile campgrounds, Icicle Creek Road", "nights": [0], "role": "route", "why": "Fallback when no lake permit is available: sleep on the drive in and start from the trailhead in the dark, giving a much longer climbing day."},
+   {"name": "Talus and boulder bivies below Dragontail's north side", "nights": [], "role": "route", "why": "Not part of the standard plan. Moving above the lake trims the approach by about half an hour but costs a colder, windier, rockier night."}
+  ],
+  "new_camps": [],
+  "confidence": "medium",
+  "plan_conflict": "The campgrounds on Icicle Creek Road were filed as a main camp, but the plan sleeps both nights at Colchuck Lake; they are the pre-trip car camp (night 0), so their role is changed to route.",
+  "sources": ["https://wenatcheeoutdoors.org/2016/05/02/dragontail-peak-backbone-ridge/", "https://www.mountaineers.org/activities/routes-places/enchantments-area-review/dragontail-peak-serpentine-ridge", "https://www.hikingwithmybrother.com/little-annapurna-via-aasgard-pass.html"]
+ },
+ {
+  "id": "wa_dragontail_peak_r3",
+  "camps": [
+   {"name": "Colchuck Lake designated campsites", "nights": [1, 2], "role": "main", "why": "The base this plan is built on: sleeping at the lake keeps the climb to a single day from camp and cuts the pre-dawn walk-in. It needs a hard-to-win permit."},
+   {"name": "Bridge Creek and Eightmile campgrounds, Icicle Creek Road", "nights": [0], "role": "route", "why": "Fallback when no lake permit is available: sleep on the drive in and start from the trailhead in the dark, giving a much longer climbing day."},
+   {"name": "Talus and boulder bivies below Dragontail's north side", "nights": [], "role": "route", "why": "Not part of the standard plan. Moving above the lake trims the approach by about half an hour but costs a colder, windier, rockier night."}
+  ],
+  "new_camps": [],
+  "confidence": "medium",
+  "plan_conflict": "The campgrounds on Icicle Creek Road were filed as a main camp, but the plan sleeps both nights at Colchuck Lake; they are the pre-trip car camp (night 0), so their role is changed to route.",
+  "sources": ["https://wenatcheeoutdoors.org/2016/05/02/dragontail-peak-backbone-ridge/", "https://www.mountaineers.org/activities/routes-places/enchantments-area-review/colchuck-dragontail-peaks", "https://www.hikingwithmybrother.com/little-annapurna-via-aasgard-pass.html"]
+ },
+ {
+  "id": "wa_dragontail_peak_r4",
+  "camps": [
+   {"name": "Colchuck Lake designated campsites", "nights": [1], "role": "main", "why": "Where this plan sleeps: the lake is the last flat water below the north face, so summit day starts close to the route. It needs a hard-to-win permit."},
+   {"name": "Bridge Creek and Eightmile campgrounds, Icicle Creek Road", "nights": [0], "role": "route", "why": "Fallback when no lake permit is available: sleep on the drive in and start from the trailhead in the dark, making the climbing day far longer."},
+   {"name": "Talus and boulder bivies below Dragontail's north side", "nights": [], "role": "route", "why": "Not part of the standard plan. Moving above the lake trims the approach by about half an hour but costs a colder, windier, rockier night."}
+  ],
+  "new_camps": [],
+  "confidence": "medium",
+  "plan_conflict": "The campgrounds on Icicle Creek Road were filed as a main camp, but the plan sleeps its one night at Colchuck Lake; they are the pre-trip car camp (night 0), so their role is changed to route.",
+  "sources": ["https://wenatcheeoutdoors.org/2016/05/02/dragontail-peak-backbone-ridge/", "https://www.mountaineers.org/activities/routes-places/enchantments-area-review/dragontail-peak-triple-couloirs", "https://stephabegg.com/trip-reports/washington/dragontail-serpentine-arete/"]
+ },
+ {
+  "id": "wa_dragontail_peak_serpentine_arete",
+  "camps": [
+   {"name": "Colchuck Lake designated campsites", "nights": [1], "role": "main", "why": "Where this plan sleeps: the south end of the lake puts the route base about three hours from a 2-4 am start. Needs a hard-to-win permit."},
+   {"name": "Bridge Creek and Eightmile campgrounds, Icicle Creek Road", "nights": [0], "role": "route", "why": "Fallback when no lake permit is available: sleep on the drive in and start from the trailhead in the dark, making the climbing day far longer."},
+   {"name": "Talus and boulder bivies below Dragontail's north side", "nights": [], "role": "route", "why": "Not part of the standard plan. Moving above the lake trims the approach by about half an hour but costs a colder, windier, rockier night."}
+  ],
+  "new_camps": [],
+  "confidence": "medium",
+  "plan_conflict": "The campgrounds on Icicle Creek Road were filed as a main camp, but the plan sleeps its one night at Colchuck Lake; they are the pre-trip car camp (night 0), so their role is changed to route.",
+  "sources": ["https://www.mountaineers.org/activities/routes-places/enchantments-area-review/dragontail-peak-serpentine-ridge", "https://summitpost.org/serpentine-arete/524999", "https://wenatcheeoutdoors.org/2016/05/02/dragontail-peak-backbone-ridge/", "https://stephabegg.com/trip-reports/washington/dragontail-serpentine-arete/"]
+ },
+ {
+  "id": "wa_enchantment_peak_southwest_scramble",
+  "camps": [
+   {"name": "Perfection Lake and Inspiration Lake basin camps", "nights": [1, 2], "role": "main", "why": "Central to the peaks in the basin, so summit day is a short day hike from camp. Costs a Core zone permit and a heavy carry up Aasgard Pass."},
+   {"name": "Bridge Creek and Eightmile campgrounds, Icicle Creek Road", "nights": [], "role": "route", "why": "Only a car camp before the Stuart Lake trailhead start, for parties without a Core permit who add the peak to a long day trip instead."},
+   {"name": "Colchuck Lake designated campsites", "nights": [], "role": "route", "why": "Easier permit than the Core, and day use is allowed across zones, but the peak then becomes a very long day over Aasgard Pass and back."}
+  ],
+  "new_camps": [],
+  "confidence": "medium",
+  "plan_conflict": "The Icicle Creek Road campgrounds were filed as a main camp, but this plan sleeps both nights in the Core basin; they are only a possible night before the hike (night 0), so their role is changed to route.",
+  "sources": ["https://thewildoutsiders.squarespace.com/adventure-journal/enchantment-slam", "https://www.hikingwithmybrother.com/little-annapurna-via-aasgard-pass.html"]
+ },
+ {
+  "id": "wa_little_annapurna_south_slopes",
+  "camps": [
+   {"name": "Colchuck Lake designated campsites", "nights": [1], "role": "main", "why": "Where most parties sleep: it breaks the walk in half and leaves only the Aasgard Pass grind and a short walk on summit day. Needs an overnight permit."},
+   {"name": "Perfection Lake and Inspiration Lake basin camps", "nights": [], "role": "route", "why": "For a three-day trip: carry over Aasgard Pass with full packs and sleep beside the peak. Needs a Core zone permit, harder to win than the lake's."},
+   {"name": "Bridge Creek and Eightmile campgrounds, Icicle Creek Road", "nights": [0], "role": "route", "why": "Fallback with no overnight permit: sleep on the drive in and run the climb as one very long day from the trailhead."}
+  ],
+  "new_camps": [],
+  "confidence": "medium",
+  "plan_conflict": "On file the Core basin camps are main and Colchuck Lake is a route camp, but this plan and the trip reports sleep at Colchuck Lake; roles are swapped, and the Icicle Creek campgrounds moved from main to route.",
+  "sources": ["https://www.hikingwithmybrother.com/little-annapurna-via-aasgard-pass.html", "https://www.mountaineers.org/activities/trip-reports/alpine-scramble-little-annapurna-2", "https://thewildoutsiders.squarespace.com/adventure-journal/enchantment-slam"]
+ },
+ {
+  "id": "wa_mount_stuart_cascadian_couloir",
+  "camps": [
+   {"name": "Ingalls Creek basin camp, below Longs Pass", "nights": [1], "role": "main", "why": "The traditional base on the creek: reliable water, flat sites and a short morning walk to the couloir's boot path. Little other water exists on the south side."}
+  ],
+  "new_camps": [],
+  "confidence": "high",
+  "plan_conflict": null,
+  "sources": ["https://www.wta.org/go-hiking/trip-reports/trip_report-2025-08-25.074113727655", "https://www.mountaineers.org/activities/trip-reports/mount-stuart-cascadian-couloir-4", "https://www.wta.org/go-hiking/trip-reports/trip_report.2022-09-11.8749050002", "https://pages.uoregon.edu/dbelitz/db_virtual/db_climbing/peaks/mt_stuart.html"]
+ },
+ {
+  "id": "wa_mount_stuart_direct_north_ridge",
+  "camps": [],
+  "new_camps": [
+   {
+    "name": "Goat Pass bivies",
+    "elev_ft": 7650,
+    "type": "bivy",
+    "role": "main",
+    "nights": [1],
+    "why": "The usual first night from the Ingalls side: plenty of bivy ground puts the ridge's toe within an easy morning, so the climb and descent fit in one day.",
+    "water": "",
+    "capacity": "",
+    "permit": "",
+    "notes": "Reached from Ingalls Pass by way of Stuart Pass, with a drop into the north-side gully near 7,000 ft before the climb to the pass. Bring a bivy shelter; the site is open to wind."
+   },
+   {
+    "name": "North Ridge notch bivy",
+    "elev_ft": 8200,
+    "type": "bivy",
+    "role": "route",
+    "nights": [],
+    "why": "For slower parties who pitch out much of the ridge: a good bivy at the notch, but cold and exposed, with space for only a couple of people.",
+    "water": "",
+    "capacity": "",
+    "permit": "",
+    "notes": "Reached from the upper Stuart Glacier by a snow-filled gully, usually climbed on fourth-class rock beside it. Not used on the standard two-day plan."
+   }
+  ],
+  "confidence": "medium",
+  "plan_conflict": null,
+  "sources": ["https://mountaineers.org/activities/routes-places/ingalls-stuart-area-review/mt-stuart-n-ridge", "https://pages.uoregon.edu/dbelitz/db_virtual/db_climbing/peaks/mt_stuart.html", "https://stephabegg.com/?p=8737"]
+ },
+ {
+  "id": "wa_mount_stuart_girth_pillar",
+  "camps": [
+   {"name": "Mountaineer Creek basin below the Sherpa Glacier", "nights": [1], "role": "main", "why": "Flat ground and running water under the glaciers; the Ice Cliff start is a pre-dawn walk away. Reached by a climbers' path up the creek's south fork."}
+  ],
+  "new_camps": [],
+  "confidence": "medium",
+  "plan_conflict": "The plan puts the bivy in the scree between the Sherpa and Ice Cliff glaciers, slightly above the 5,400 ft basin camp listed; both are the same approach, and the basin is the camp parties name.",
+  "sources": ["https://summitpost.org/mountain/150353", "https://www.summitpost.org/route/156480/ice-cliff-glacier.html", "https://stephabegg.com/?p=8737"]
+ },
+ {
+  "id": "wa_mount_stuart_ice_cliff_glacier",
+  "camps": [
+   {"name": "Mountaineer Creek basin below the Sherpa Glacier", "nights": [1], "role": "main", "why": "Flat ground and running water below both glaciers; a pre-dawn walk reaches the Ice Cliff. Reached by a climbers' path up the creek's south fork."}
+  ],
+  "new_camps": [],
+  "confidence": "medium",
+  "plan_conflict": null,
+  "sources": ["https://www.summitpost.org/route/156480/ice-cliff-glacier.html", "https://summitpost.org/mountain/150353", "https://www.mountaineers.org/activities/trip-reports/intermediate-alpine-climb-mount-stuart-sherpa-glacier"]
+ },
+ {
+  "id": "wa_mount_stuart_north_ridge",
+  "camps": [
+   {"name": "Mountaineer Creek basin (beneath the Sherpa and Ice Cliff glaciers)", "nights": [], "role": "route", "why": "The last flat, watered ground before the ridge. Use it for a three-day version with a night before the climb; the two-day plan walks straight past it."},
+   {"name": "Goat Pass", "nights": [], "role": "route", "why": "Base for the southern approach over Longs Pass. A night here gives the lower ridge a shorter first day, at the cost of a long, dry walk in."},
+   {"name": "The 8,200 ft notch on the North Ridge", "nights": [1], "role": "main", "why": "The classic place to split the full ridge: it is below the Gendarme, so the summit morning stays short. Wind-exposed, with only two comfortable spots."}
+  ],
+  "new_camps": [],
+  "confidence": "medium",
+  "plan_conflict": "The basin and Goat Pass were filed as main camps and the notch as route, but the plan climbs the lower ridge on day 1 and sleeps at the notch, so the notch becomes main.",
+  "sources": ["https://mountaineers.org/activities/routes-places/ingalls-stuart-area-review/mt-stuart-n-ridge", "https://pages.uoregon.edu/dbelitz/db_virtual/db_climbing/peaks/mt_stuart.html", "https://summitpost.org/north-ridge/155700"]
+ },
+ {
+  "id": "wa_mount_stuart_stuart_glacier_couloir",
+  "camps": [
+   {"name": "Basin below Sherpa Glacier", "nights": [1], "role": "main", "why": "Where this plan sleeps, via Mountaineer Creek: flat ground and creek water within striking distance of the couloir, and the Cascadian descent is then the long way out."},
+   {"name": "Goat Pass bivies", "nights": [], "role": "route", "why": "Option when approaching from the Ingalls side: plentiful bivy ground and an easy morning to the entry gully, but exposed, windy and dry late in the season."}
+  ],
+  "new_camps": [],
+  "confidence": "medium",
+  "plan_conflict": "Day 1 hikes in from the Stuart Lake trail but day 2 exits over Longs Pass, so the plan needs a shuttle; Goat Pass was filed as main and is changed to route.",
+  "sources": ["https://www.summitpost.org/route/168438/stuart-glacier-couloir.html", "https://summitpost.org/mountain/150353", "https://www.turns-all-year.com/trip-reports/stuart-sherpa-n-couloirs"]
+ },
+ {
+  "id": "wa_sherpa_glacier",
+  "camps": [
+   {"name": "Mountaineer Creek basin below the Sherpa Glacier", "nights": [1], "role": "main", "why": "The standard high camp: flat sites near the creek at about 5,400 ft put the glacier within a pre-dawn start. The approach path leaves the Stuart Lake trail."}
+  ],
+  "new_camps": [],
+  "confidence": "high",
+  "plan_conflict": null,
+  "sources": ["https://www.mountaineers.org/activities/trip-reports/basic-glacier-climb-mount-stuart-sherpa-glacier", "https://www.mountaineers.org/activities/trip-reports/intermediate-alpine-climb-mount-stuart-sherpa-glacier", "https://www.turns-all-year.com/trip-reports/stuart-sherpa-n-couloirs", "https://summitpost.org/sherpa-glacier/164046"]
+ },
+ {
+  "id": "wa_south_headwall",
+  "camps": [
+   {"name": "Ingalls Creek basin camp, below Longs Pass", "nights": [1, 2], "role": "main", "why": "Water and good sites, though mice are a problem. Sleeping here both nights turns the 4,600 ft headwall day into a round trip from camp."}
+  ],
+  "new_camps": [],
+  "confidence": "medium",
+  "plan_conflict": null,
+  "sources": ["https://www.wta.org/go-hiking/trip-reports/trip_report-2025-08-24.212943911299", "https://www.wta.org/go-hiking/trip-reports/trip_report.2022-09-11.8749050002", "https://pages.uoregon.edu/dbelitz/db_virtual/db_climbing/peaks/mt_stuart.html"]
+ },
+ {
+  "id": "wa_upper_north_ridge_w_great_gendarme",
+  "camps": [
+   {"name": "Goat Pass bivies", "nights": [1], "role": "main", "why": "The usual night from the Ingalls side: plenty of ground puts the traverse under the glacier within an easy morning. Open to wind, and dry late in the season."},
+   {"name": "North Ridge notch bivy", "nights": [], "role": "route", "why": "Not slept at on the two-day plan; it is the climb's own bivy for slower parties, comfortable for a couple of people but cold and exposed."},
+   {"name": "Headlight Basin designated sites", "nights": [], "role": "route", "why": "A legal, comfortable site just past Ingalls Pass, but short of the route, which makes summit day far longer than from Goat Pass."},
+   {"name": "Upper Ingalls Creek meadows, below Stuart Pass", "nights": [], "role": "route", "why": "Suits West Ridge parties wanting a start near its base. For the North Ridge it sits off the way and below Goat Pass."},
+   {"name": "Ingalls Creek basin camp, below Longs Pass", "nights": [], "role": "route", "why": "Lies on the Cascadian descent, below the couloir. Parties too tired for the Longs Pass climb out may stay here a second night."}
+  ],
+  "new_camps": [],
+  "confidence": "medium",
+  "plan_conflict": "The notch bivy was filed as a main camp, but the plan sleeps at Goat Pass and climbs the ridge in one day, so the notch becomes a route camp.",
+  "sources": ["https://mountaineers.org/activities/routes-places/ingalls-stuart-area-review/mt-stuart-n-ridge", "https://pages.uoregon.edu/dbelitz/db_virtual/db_climbing/peaks/mt_stuart.html", "https://stephabegg.com/?p=8737"]
+ }
+]

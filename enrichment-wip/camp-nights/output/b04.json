@@ -1,0 +1,229 @@
+[
+ {
+  "id": "wa_star_peak_sawtooth_nw_ridge",
+  "camps": [],
+  "new_camps": [
+   {"name": "Star Lake", "elev_ft": 7185, "type": "camp", "role": "main", "nights": [1],
+    "why": "The usual base for Star Peak: water at the door, the ridge within reach for a full day, and a downhill carry out on day three.",
+    "water": "The lake and its outlet stream.",
+    "capacity": "Room for a few tents on the benches around the shore.",
+    "permit": "No limited-entry permit; keep tents 200 ft from the water.",
+    "notes": "About 7.5 miles and 3,500 ft from the West Fork Buttermilk trailhead; the upper trail is brushy, so the carry is slower than the mileage suggests. Camping just below Fish Creek Pass is the only other option parties mention."}
+  ],
+  "confidence": "medium",
+  "plan_conflict": null,
+  "sources": ["https://wenatcheeoutdoors.org/?p=1715", "https://www.wta.org/go-hiking/trip-reports/trip_report-2021-06-26-1152798111", "https://www.mountaineers.org/activities/trip-reports/overnight-scramble-star-and-courtney-peaks"]
+ },
+ {
+  "id": "wa_star_peak_sawtooth_scramble",
+  "camps": [
+   {"name": "Star Lake", "nights": [1, 2], "role": "main",
+    "why": "The standard basecamp: the scree bowl to the summit starts right above it, and it has water, so the summit day is a light-pack outing."}
+  ],
+  "new_camps": [],
+  "confidence": "high",
+  "plan_conflict": null,
+  "sources": ["https://wenatcheeoutdoors.org/?p=1715", "https://www.mountaineers.org/activities/trip-reports/overnight-scramble-star-and-courtney-peaks", "https://www.wta.org/go-hiking/trip-reports/trip_report-2020-07-26-0733503470"]
+ },
+ {
+  "id": "wa_switchback_mountain_scramble",
+  "camps": [
+   {"name": "Cooney Lake", "nights": [1], "role": "main",
+    "why": "The one-night camp for this route: lots of sites around the north shore, water, and the pass to the southeast ridge about a mile above. Bugs are bad in July."},
+   {"name": "Upper Eagle Lake and Horsehead Pass", "nights": [], "role": "route",
+    "why": "Reached from the Gold Creek side, not this trailhead. Used by parties linking other crest peaks; not slept at on the Foggy Dew plan."}
+  ],
+  "new_camps": [],
+  "confidence": "high",
+  "plan_conflict": null,
+  "sources": ["https://www.wta.org/news/go-hiking/hikes/cooney-lake", "https://adminonly.wta.org/go-hiking/trip-reports/trip_report.2018-10-07.1145014743", "https://www.mountaineers.org/activities/trip-reports/alpine-scramble-mount-bigelow-switchback-peak-martin-peak"]
+ },
+ {
+  "id": "wa_tupshin_peak_east_face",
+  "camps": [],
+  "new_camps": [
+   {"name": "Company Creek Trail camp near the leave-trail point", "elev_ft": 1300, "type": "camp", "role": "main", "nights": [1],
+    "why": "Day one is short after the boat, so parties stop near where the route leaves the trail and start the steep brush and slabs fresh the next morning.",
+    "water": "Company Creek.",
+    "capacity": "Informal; room for a small party.",
+    "permit": "Stehekin backcountry permit from the NPS.",
+    "notes": "Many parties instead cross to the Devore Creek trail and sleep at Bird Creek Camp, which cuts the next day's off-trail work; this plan's route goes over the Bird Lakes pass instead. Night one is the least documented of the trip."},
+   {"name": "High bivy in the Bird Lakes basin", "elev_ft": 7000, "type": "bivy", "role": "main", "nights": [2, 3],
+    "why": "Sleeping in the basin below the east face puts the climb a short walk away and keeps the summit day light; the last water is a trickle near the top larches.",
+    "water": "A small seep near the highest larches; carry water from the lakes.",
+    "capacity": "A few flat spots near the highest larch trees, about 200 ft above the creek.",
+    "permit": "Stehekin backcountry permit; bivy only, no fires.",
+    "notes": "Elevation is approximate. Reached after crossing the roughly 7,200 ft pass above Bird Lakes. Parties sleep here the night before and the night after the climb."}
+  ],
+  "confidence": "low",
+  "plan_conflict": "Plan sends parties over the Bird Lakes pass, but most reports reach Tupshin from Bird Creek Camp on the Devore Creek trail; night 1 is not confirmed.",
+  "sources": ["https://lemkeclimbs.com/?p=2842", "https://countryhighpoints.com/tupshin-peak-devore-peak-and-flora-mountain", "https://summitpost.org/mountain/154224"]
+ },
+ {
+  "id": "wa_agnes_mountain_south_ridge",
+  "camps": [],
+  "new_camps": [
+   {"name": "Swamp Creek area camp on the PCT", "elev_ft": 2800, "type": "camp", "role": "main", "nights": [1],
+    "why": "The end of an easy 8.5 miles on the PCT and the last good water and flat ground before the steep off-trail climb the next morning.",
+    "water": "Swamp Creek and Agnes Creek.",
+    "capacity": "Several sites near the creek crossing.",
+    "permit": "Stehekin backcountry permit.",
+    "notes": "Also the usual first camp for Needle Peak and Lyall. Logs across Agnes and Spruce Creeks start day two."},
+   {"name": "Upper Blue Basin camp", "elev_ft": 5000, "type": "camp", "role": "main", "nights": [2],
+    "why": "The first flat ground after a brutal brush, talus and slab climb; stopping here splits the carry before the final move to the pass.",
+    "water": "Snowmelt and small streams in the basin.",
+    "capacity": "Room for a small party.",
+    "permit": "Stehekin backcountry permit.",
+    "notes": "Off-trail, no maintained path; expect a slow day two. Reports of this basin are thin."},
+   {"name": "High camp near Icy-Spruce Pass", "elev_ft": 6760, "type": "camp", "role": "main", "nights": [3, 4],
+    "why": "The high camp for the south ridge: it makes the 8-9 hour summit push possible from camp and is the base you return to before hiking out.",
+    "water": "Snow patches or a nearby tarn; check in late season.",
+    "capacity": "Flat spots on the divide.",
+    "permit": "Stehekin backcountry permit.",
+    "notes": "Reached after about 1,760 ft of steep ground above Upper Blue Basin. Parties camp on the divide or on the col below the peak."}
+  ],
+  "confidence": "low",
+  "plan_conflict": null,
+  "sources": ["https://docs.google.com/document/d/1-jvr_zQLMipo-9Up81Vi0s80lHDAo7DhqUExjNBrAYo/export?format=pdf", "https://outthereoutdoors.com/?p=31622", "https://www.wta.org/go-hiking/hikes/west-fork-agnes-creek"]
+ },
+ {
+  "id": "wa_flora_mountain_southwest_slope",
+  "camps": [
+   {"name": "Bird Creek Camp", "nights": [1, 2], "role": "main",
+    "why": "The only designated camp on the upper Devore Creek trail, and the base parties climb Flora from; sleeping here again saves carrying the pack up the peak."},
+   {"name": "Purple Point and Harlequin — the landing camps, and the boat that decides the trip", "nights": [], "role": "route",
+    "why": "Valley camps by the landing and shuttle; not used on this plan, but the fallback if the boat or shuttle gets you in too late to start up the trail."}
+  ],
+  "new_camps": [],
+  "confidence": "high",
+  "plan_conflict": null,
+  "sources": ["https://countryhighpoints.com/tupshin-peak-devore-peak-and-flora-mountain", "https://www.mountaineers.org/activities/trip-reports/basic-alpine-climb-flora-mountain", "https://summitpost.org/mountain/155323"]
+ },
+ {
+  "id": "wa_needle_peak_south_route",
+  "camps": [
+   {"name": "Swamp Creek Camp — the base for Needle Peak, Mount Lyall and Lyall Ridge", "nights": [1, 2], "role": "main",
+    "why": "The working camp for Needle: the unmaintained trail to the north ridge leaves from here, so the long summit day starts at the door and ends back at the tent."},
+   {"name": "Purple Point and Harlequin — the landing camps, and the boat that decides the trip", "nights": [], "role": "route",
+    "why": "Landing-area camps near Stehekin, only for a missed shuttle or late boat; this plan goes straight to High Bridge and up the valley."},
+   {"name": "High Bridge Camp — the shuttle terminus and the base for McGregor Mountain", "nights": [], "role": "route",
+    "why": "Where the shuttle drops you; fine for a late arrival but it adds nine miles to the next morning, so most parties push on to Swamp Creek the same day."},
+   {"name": "Fivemile Camp, Agnes Creek", "nights": [], "role": "route",
+    "why": "Four miles short of Swamp Creek; use it if you arrive late or tire, and accept a longer approach to the north ridge the next morning."},
+   {"name": "Ridgeline camp above 5,400 ft", "nights": [], "role": "route",
+    "why": "A higher camp on the ridge shortens the summit day but costs a steep brushy carry from Swamp Creek; few parties use it."}
+  ],
+  "new_camps": [],
+  "confidence": "high",
+  "plan_conflict": null,
+  "sources": ["https://cascadeclimbers.com/forum/topic/44521-tr-bonanza-nw-ridge-via-dark-pk-iv-58", "https://summitpost.org/swamp-creek-route/165326", "https://lemkeclimbs.com/?p=2838"]
+ },
+ {
+  "id": "wa_argonaut_peak_east_ridge",
+  "camps": [
+   {"name": "Ingalls Creek valley camps below the Sherpa and Argonaut south sides", "nights": [1], "role": "main",
+    "why": "After the Fourth Creek Pass descent and ford, sites near the creek give water and the shortest bushwhack to the ridge; the long day out starts from here."},
+   {"name": "Beverly and De Roux campgrounds and the North Fork Teanaway roadside camps", "nights": [0], "role": "route",
+    "why": "Sleep beside the road the night before to start at the Beverly Turnpike trailhead early, rather than driving in the dark from town."}
+  ],
+  "new_camps": [],
+  "confidence": "medium",
+  "plan_conflict": "Plan calls it a basin bivy on the slope below the ridge, but parties on this approach sleep in the Ingalls Creek valley near the Fourth Creek junction.",
+  "sources": ["https://wenatcheeoutdoors.org/?p=2001", "https://yellowleaf.org/scramble/g/r/2007-09-22-23-argonaut.html", "https://www.mountainproject.com/area/114795615/argonaut-peak"]
+ },
+ {
+  "id": "wa_northwest_arete",
+  "camps": [
+   {"name": "Argonaut north basin bivies, below the Colchuck-Argonaut col", "nights": [1], "role": "main",
+    "why": "Flat ground in the basin puts the approach couloir within an hour of camp and cuts the summit day; boulders give some shelter."},
+   {"name": "Lower basin below Argonaut's north face", "nights": [1], "role": "route",
+    "why": "The lower part of the same basin: easier to reach after the Mountaineer Creek bushwhack and nearer water, but a longer morning to the couloir."}
+  ],
+  "new_camps": [],
+  "confidence": "high",
+  "plan_conflict": null,
+  "sources": ["https://wenatcheeoutdoors.org/?p=5853", "https://www.mountainproject.com/route/119339605/northwest-arete", "https://www.mountaineers.org/activities/routes-places/argonaut-peak-northwest-arete"]
+ },
+ {
+  "id": "wa_south_face_12",
+  "camps": [
+   {"name": "Fourth Creek / Ingalls Creek confluence camp", "nights": [1], "role": "main",
+    "why": "Where Fourth Creek meets the Ingalls trail, just before the bushwhack up to the face; the standard camp for the south side and a good spot to store gear."},
+   {"name": "Ingalls Creek valley camps below the Sherpa and Argonaut south sides", "nights": [1], "role": "route",
+    "why": "Other flat sites along Ingalls Creek; farther up or down the trail, so a longer approach or a longer hike out than the confluence."},
+   {"name": "Beverly and De Roux campgrounds and the North Fork Teanaway roadside camps", "nights": [0], "role": "route",
+    "why": "Road camps on the drive in; sleep here to start the Beverly trailhead hike at first light rather than driving in the dark."}
+  ],
+  "new_camps": [],
+  "confidence": "high",
+  "plan_conflict": "Two camps on file are both marked main for this plan; only the confluence camp is kept as main.",
+  "sources": ["https://wenatcheeoutdoors.org/?p=2001", "https://yellowleaf.org/scramble/g/r/2007-09-22-23-argonaut.html", "https://summitpost.org/argonaut-peak/152581"]
+ },
+ {
+  "id": "wa_cannon_mountain_south_slopes",
+  "camps": [
+   {"name": "Snow Lakes", "nights": [1, 2], "role": "main",
+    "why": "A permit-friendlier base than the core: about 6.5 miles in, shorter than the full core carry, with the summit day continuing above Lake Viviane."},
+   {"name": "Nada Lake", "nights": [], "role": "route",
+    "why": "A lower camp, about 1,700 ft up; for a late start or a short first day, but it makes the next day to the summit much longer."}
+  ],
+  "new_camps": [],
+  "confidence": "medium",
+  "plan_conflict": "Plan sends parties to the core near Perfection or Inspiration Lake (a Core permit); route guides and trip reports use Snow Lakes as the base.",
+  "sources": ["https://www.mountaineers.org/activities/trip-reports/cannon-mountain-via-southeast-approach-and-mcclellan-peak-scramble-overnight-trip", "https://www.wta.org/go-hiking/trip-reports/trip_report-2020-07-28-4687018876", "https://www.cleverhiker.com/backpacking/enchantment-lakes-backpacking-guide/"]
+ },
+ {
+  "id": "wa_cashmere_mountain_west_ridge",
+  "camps": [
+   {"name": "Lake Caroline and Little Caroline", "nights": [1], "role": "main",
+    "why": "Established sites by the water, about two hours below the summit ridge; camp here rather than carry cross-country to higher ground."}
+  ],
+  "new_camps": [],
+  "confidence": "high",
+  "plan_conflict": "Plan puts camp at a cross-country 7,100 ft site; parties report sleeping at the Caroline lakes (about 6,200 ft).",
+  "sources": ["https://www.wta.org/go-hiking/trip-reports/trip_report-2025-09-05.192413802308", "https://mountaineers.org/activities/trip-reports/alpine-scramble-cashmere-mountain-1", "https://www.summitpost.org/mountain/150650"]
+ },
+ {
+  "id": "wa_the_tempest",
+  "camps": [],
+  "new_camps": [
+   {"name": "Colchuck Lake campsites", "elev_ft": 5570, "type": "camp", "role": "main", "nights": [1, 2],
+    "why": "The base for the wall: 4.3 miles in, with the basin below it about an hour beyond the north end of the lake, so a slow aid day starts early.",
+    "water": "The lake.",
+    "capacity": "Established sites along the shore, most on the trail side.",
+    "permit": "Colchuck Zone overnight permit by lottery (May 15 to Oct 31); Northwest Forest Pass.",
+    "notes": "Permits are hard to get; without one the climb is a long car-to-car day, which is rarely done on aid."}
+  ],
+  "confidence": "medium",
+  "plan_conflict": null,
+  "sources": ["https://stephabegg.com/?p=8702", "https://wenatcheeoutdoors.org/2016/05/02/colchuck-balance-rock/", "https://www.wta.org/news/go-hiking/hikes/colchuck-lake"]
+ },
+ {
+  "id": "wa_colchuck_peak_northeast_couloir",
+  "camps": [
+   {"name": "Colchuck Lake designated campsites", "nights": [1], "role": "main",
+    "why": "The basecamp for the couloir: 4 miles in, and it saves the pre-dawn walk-in; an overnight permit is needed and hard to draw."},
+   {"name": "Bridge Creek and Eightmile campgrounds, Icicle Creek Road", "nights": [0], "role": "route",
+    "why": "If no lake permit, sleep on the road the night before and start the long summit day from the trailhead in the small hours."},
+   {"name": "Talus and boulder bivies below Dragontail's north side", "nights": [], "role": "route",
+    "why": "Used for the Dragontail routes, not this one; a colder, windier night above the lake that is no closer to the couloir."},
+   {"name": "Colchuck Lake", "nights": [1], "role": "route",
+    "why": "The south end of the lake is closer to the glacier and the couloir but has fewer flat sites than the trail side."}
+  ],
+  "new_camps": [],
+  "confidence": "high",
+  "plan_conflict": "Two camps on file are both marked main; only the lake campsites are kept as main, and the roadside campgrounds are the night before.",
+  "sources": ["https://wenatcheeoutdoors.org/?p=4043", "https://www.wta.org/news/go-hiking/hikes/colchuck-lake", "https://www.mountaineers.org/activities/trip-reports/intermediate-alpine-climb-colchuck-peak-north-buttress-couloir-1"]
+ },
+ {
+  "id": "wa_southwest_rib_2",
+  "camps": [
+   {"name": "Crystal Creek basin below the Southwest Rib", "nights": [1, 2], "role": "main",
+    "why": "Informal camping near the toe of the rib: running water to about 5,800 ft, no permit, and the 19-pitch climb starts from the tent."}
+  ],
+  "new_camps": [],
+  "confidence": "high",
+  "plan_conflict": null,
+  "sources": ["https://www.mountainproject.com/area/119091796/crystal-lake-tower", "https://turns-all-year.com/trip-reports/8-20-crystal-creek-drainage-enchantments", "https://summitpost.org/sw-rib-of-crystal-lake-tower/820097"]
+ }
+]

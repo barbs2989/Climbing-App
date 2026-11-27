@@ -1171,6 +1171,20 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     are many (pipeline, one-off research appliers), so the drift is caught where it lands, not at
     each writer. Not a build gate: no code change causes or fixes it. A red run is fixed by adding
     the sentence to `scripts/oneoff/rack-rewrites.json` and running `fix-rack-non-rack-items.mjs`.
+  - **The *neither* list is a backlog now, not noise (2026-11-26).** The owner's rule reads "Rack only
+    needs to be the protection", so a sentence that is neither rack nor gear ("The rock is chossy.",
+    "Rap the route.", "The landing is flat.") does not belong on the card either. **877 sentences on
+    827 routes** were each read and sorted: **464 are rack** that the regex misses (cam sizes, "Fingers
+    through hands", "Chains finish it", runout and ground-fall notes, spotting) and are listed by id +
+    exact sentence in `scripts/data/rack-entries-reviewed.json`, which the audit skips; the other 413
+    are rewrites in `scripts/oneoff/rack-rewrites-neither.json`: `toBeta` (rock, landings, pitch
+    lengths, conditions), **`toDescent`** (rappels, lowering, walk-offs, appended to `descent_text`,
+    which DESCENT on the Plan tab reads), packing-list gear, or a dropped empty fragment ("For gear,
+    note the following."). The classifier stays two regexes on purpose: the reader leaves a neither
+    sentence on the card either way, so widening the regex would only hide the backlog. The fixer
+    paces itself at one write a second past 50 rows and stops when `dbslot.mjs check` fails.
+  - **Trap: `rackFromText` splits on "Mt." and "Mr."** — "Nothing demands a rappel, though Mt." is
+    one "sentence". A rewrite keyed on the head of such a split must also handle its tail.
 
 - **`check:declination`** asserts that **the base-of-the-climb arrow turns a magnetic phone compass
   into TRUE north**. *Point the way with your compass* (`BaseCheckinPanel`, 2026-10-28) rotates an

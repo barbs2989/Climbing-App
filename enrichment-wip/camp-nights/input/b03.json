@@ -1,0 +1,956 @@
+[
+ {
+  "id": "wa_mount_berge_east_ridge",
+  "name": "East Ridge",
+  "discipline": "alpine",
+  "peak": "Mount Berge",
+  "area_id": "wa_mount_berge",
+  "path": "usa.washington.wa_centraleast.wa_chiwawa_ridge_dakobed.wa_mount_berge",
+  "trip_plan": {
+   "totalNote": null,
+   "days": [
+    {
+     "n": 1,
+     "title": "Day 1",
+     "objective": "",
+     "miles": null,
+     "gainFt": null,
+     "note": "Hike in to treeline via the Buck Creek Trail (~6 miles) and camp near the Cleator-Berge area"
+    },
+    {
+     "n": 2,
+     "title": "Day 2",
+     "objective": "",
+     "miles": null,
+     "gainFt": null,
+     "note": "Climb the East Ridge (roughly 6 hours of climbing, much of it simul-climbed) and descend the same way"
+    },
+    {
+     "n": 3,
+     "title": "Day 3",
+     "objective": "",
+     "miles": null,
+     "gainFt": null,
+     "note": "Hike out if camping overnight."
+    }
+   ]
+  },
+  "camps_on_file": [],
+  "campsite_pins": []
+ },
+ {
+  "id": "wa_mount_berge_southwest_route",
+  "name": "Southwest Route",
+  "discipline": "scrambling",
+  "peak": "Mount Berge",
+  "area_id": "wa_mount_berge",
+  "path": "usa.washington.wa_centraleast.wa_chiwawa_ridge_dakobed.wa_mount_berge",
+  "trip_plan": {
+   "totalNote": "A demanding ~24 mile round trip with roughly 9,200 ft of cumulative gain crossing two valleys — almost universally done as a 3-day backpack with a treeline camp on Berge's southwest side, not a day trip.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Approach to treeline camp",
+     "objective": "Reach a camp at treeline on Berge's southwest side",
+     "miles": 10.5,
+     "gainFt": 6200,
+     "note": "From the Little Giant Trailhead on the Chiwawa River Road, climb switchbacks (500 ft/mi, then a steep 1,500 ft/mi pitch) to Little Giant Pass, then drop into the Napeequa Valley. Follow the Napeequa trail to where Berge's southwest-draining creek comes in, then grind up a steep, intermittent boot track to a flat spot a…"
+    },
+    {
+     "n": 2,
+     "title": "Summit day via the Southwest Route",
+     "objective": "Climb Mount Berge (7,948 ft) and return to camp",
+     "miles": 3,
+     "gainFt": 1000,
+     "note": "A loose, exposed scramble: broken ramps on the west side lead to pumice slopes on the southwest face, then a traverse to the summit ridge. The true summit is the north high point (7,948 ft); the south summit (~7,914 ft) is a short side trip. Down-climbing the loose terrain is often slower than the ascent."
+    },
+    {
+     "n": 3,
+     "title": "Hike out",
+     "objective": "Return to the Little Giant Trailhead",
+     "miles": 10.5,
+     "gainFt": 2000,
+     "note": "Reverse Day 1: descend to the Napeequa River, climb back over Little Giant Pass, then drop the steep switchbacks to the trailhead."
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Buck Creek Pass and the High Pass camps",
+    "elev_ft": 5800,
+    "type": "camp",
+    "role": "main",
+    "notes": "Buck Creek Pass at about 5,800 feet is the base for three peaks in this zone that have nothing to do with Glacier Peak's own approaches. Helmet Butte sits half a mile northeast of the pass and is the shortest objective from here. Buck Mountain rises directly south across the valley and is normally taken by leaving the …"
+   }
+  ],
+  "campsite_pins": []
+ },
+ {
+  "id": "wa_north_face_of_the_mole",
+  "name": "North Face of The Mole",
+  "discipline": "alpine",
+  "peak": "Hook Creek Drainage",
+  "area_id": "wa_hook_creek_drainage",
+  "path": "usa.washington.wa_centraleast.wa_leavenworth.wa_icicle_creek.wa_hook_creek_drainage",
+  "trip_plan": {
+   "totalNote": null,
+   "days": [
+    {
+     "n": 1,
+     "title": "Day 1",
+     "objective": "",
+     "miles": null,
+     "gainFt": null,
+     "note": "Drive to Hook Creek Boulder parking area, hike to Edward Mesa or alpine camp (5,000+ ft elevation gain, 6-8 hours)."
+    },
+    {
+     "n": 2,
+     "title": "Day 2",
+     "objective": "",
+     "miles": null,
+     "gainFt": null,
+     "note": "Approach The Mole base (40 minutes), climb North Face (3-4 hours), descend."
+    },
+    {
+     "n": 3,
+     "title": "Day 3",
+     "objective": "",
+     "miles": null,
+     "gainFt": null,
+     "note": "Descend to vehicles (2-3 hours)."
+    }
+   ]
+  },
+  "camps_on_file": [],
+  "campsite_pins": []
+ },
+ {
+  "id": "wa_rock_mountain_northeast_ridge",
+  "name": "Northeast Ridge (Nason Ridge Traverse)",
+  "discipline": "mountaineering",
+  "peak": "Rock Mountain",
+  "area_id": "wa_rock_mountain",
+  "path": "usa.washington.wa_centraleast.wa_nason_ridge_chiwaukum.wa_rock_mountain",
+  "trip_plan": {
+   "totalNote": "A two-day, roughly 15-mile traverse over Mount Mastiff and Mount Howard to camp in the Upper Canaan Lake basin, then over Rock Mountain and out to US-2.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Merritt Lake over Mastiff and Howard",
+     "objective": "Camp in the Upper Canaan Lake basin",
+     "miles": null,
+     "gainFt": 6000,
+     "note": "Hike from the Old Merritt Lake Trailhead to Merritt Lake, then continue over Mount Mastiff and Mount Howard to camp in the Upper Canaan Lake basin at about 6,050 ft. This day accumulates about 6,000 ft of gain."
+    },
+    {
+     "n": 2,
+     "title": "Climb Rock Mountain and descend",
+     "objective": "Summit Rock Mountain and exit to US-2",
+     "miles": null,
+     "gainFt": null,
+     "note": "Cross the Howard-Rock col and climb Rock Mountain's northeast side. Descend the South Ridge-East Slope past Rock Lake and out the Rock Mountain Trail to the US-2 trailhead; the full traverse totals roughly 6,300 ft of loss."
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Crescent Lake",
+    "elev_ft": 5400,
+    "type": "camp",
+    "role": "main",
+    "notes": "The base camp for both Mount Howard and Mount Mastiff, and the natural halfway house on the crest traverse. It sits on the Nason Ridge trail one and three tenths miles beyond Rock Lake, reached by traversing a loose slope around the intervening ridge and dropping about three hundred feet, or from the other direction th…"
+   },
+   {
+    "name": "Merritt Lake",
+    "elev_ft": 5010,
+    "type": "camp",
+    "role": "route",
+    "notes": "The eastern gateway camp. Its own trail climbs about two thousand feet in two and a half miles from around three thousand feet at the road, which is steep but short by the standards of this ridge, and it is by a wide margin the easiest way to get a loaded pack onto the crest. From here it is three and a half miles west…"
+   },
+   {
+    "name": "Mount Howard summit-area bivouac",
+    "elev_ft": null,
+    "type": "bivy",
+    "role": "route",
+    "notes": "Strictly a contingency and a preference, not a plan. Mount Howard is a day objective from a camp at Crescent Lake and there is no practical reason to haul water and a bag two thousand feet higher except to be on the crest at sunset and dawn, or to be positioned for a full ridge traverse taking in Mastiff to the east an…"
+   },
+   {
+    "name": "Rock Lake",
+    "elev_ft": 5851,
+    "type": "camp",
+    "role": "route",
+    "notes": "The camp for Rock Mountain and the western anchor of the whole crest. The Rock Mountain trail leaves US 2 at about 2,650 feet and is relentless — roughly 3,400 feet in four miles of endless switchbacks on a hot, open, south-facing slope with no water and very little shade, which is the single most quoted complaint abou…"
+   }
+  ],
+  "campsite_pins": [
+   {
+    "name": "Merritt Lake",
+    "elev": 5010,
+    "distMi": null
+   },
+   {
+    "name": "Crescent Lake",
+    "elev": 5400,
+    "distMi": null
+   },
+   {
+    "name": "Rock Lake",
+    "elev": 5851,
+    "distMi": null
+   }
+  ]
+ },
+ {
+  "id": "wa_abernathy_peak_north_ridge",
+  "name": "North Ridge",
+  "discipline": "scrambling",
+  "peak": "Abernathy Peak",
+  "area_id": "wa_abernathy_peak",
+  "path": "usa.washington.wa_centraleast.wa_sawtooth_chelan.wa_abernathy_peak",
+  "trip_plan": {
+   "totalNote": "A remote trip, usually done with a night at Gardner Meadows: about 10 miles of trail each way, then an off-trail climb from the meadows to the summit and back.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Hike Wolf Creek to Gardner Meadows",
+     "objective": "Reach camp at Gardner Meadows",
+     "miles": 10,
+     "gainFt": 3500,
+     "note": "About 10 miles of up-and-down trail up the Wolf Creek valley, through forest burned in 2021, to the meadows at the end of the Wolf Creek Trail. The trail drops a couple of hundred feet right after the trailhead, which has to be regained at the very end of the trip."
+    },
+    {
+     "n": 2,
+     "title": "North ridge scramble, then out",
+     "objective": "Summit via the tarn, the spur ridge and the north ridge",
+     "miles": 15.2,
+     "gainFt": 3350,
+     "note": "Cross Wolf Creek from the last campsites and follow a faint path that soon fades into old burn. Keep high above Abernathy Lake and traverse up into the upper basin with the small tarn and the remains of a mining camp. Climb the spur ridge from the tarn to the main north ridge (a few exposed class 3 moves), follow a sho…"
+    }
+   ]
+  },
+  "camps_on_file": [],
+  "campsite_pins": [
+   {
+    "name": "Gardner Meadows",
+    "elev": 5740,
+    "distMi": 10
+   }
+  ]
+ },
+ {
+  "id": "wa_cardinal_peak_se_slopes",
+  "name": "Southeast Slopes",
+  "discipline": "alpine",
+  "peak": "Cardinal Peak",
+  "area_id": "wa_cardinal_peak",
+  "path": "usa.washington.wa_centraleast.wa_sawtooth_chelan.wa_cardinal_peak",
+  "trip_plan": {
+   "totalNote": "A remote 3-day trip (~2 nights at a ~7,000-7,200 ft basin camp): roughly 20-21 miles and ~4,700-5,000 ft round trip, with the summit day itself being short in distance but genuinely exposed class 3 terrain on the final ridge.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Approach to high camp",
+     "objective": "Reach the basin camp below Cardinal Peak",
+     "miles": 9,
+     "gainFt": 3300,
+     "note": "From the North Fork Entiat River Trailhead (~3,900 ft), follow the North Fork Entiat trail north through burn/blowdown and forest, crossing Grouse Creek, to an open bench/clearing near the Pyramid Creek Trail junction at roughly 7,000-7,200 ft. This is the standard base camp used for Cardinal, Emerald and Saska Peaks."
+    },
+    {
+     "n": 2,
+     "title": "Summit push",
+     "objective": "Climb Cardinal Peak's southeast slopes and return to camp",
+     "miles": 2.5,
+     "gainFt": 1600,
+     "note": "From camp, ascend the basin toward the saddle between the north and middle summits on moderately steep snow (up to ~40 degrees early season, needs crampons/axe), then a loose class 2-3 gully to the summit ridge. The final summit ridge is genuinely exposed class 3 (some parties call sections class 3-4) - solid rock and …"
+    },
+    {
+     "n": 3,
+     "title": "Hike out",
+     "objective": "Return to the trailhead",
+     "miles": 9,
+     "gainFt": 200,
+     "note": "Break camp and retrace the North Fork Entiat trail back to the trailhead, losing the ~3,300 ft gained on day 1."
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "West-side basin camp below Cardinal Peak",
+    "elev_ft": null,
+    "type": "camp",
+    "role": "main",
+    "notes": ""
+   },
+   {
+    "name": "The basin between Emerald and Saska, and Milham Pass",
+    "elev_ft": null,
+    "type": "bivy",
+    "role": "main",
+    "notes": "The high camp for the crest traverse, about a mile and a half beyond Fox Camp on the Pyramid trail, in the basin that separates Emerald Peak from Saska Peak. This is where a party stages to link Cardinal, Emerald, Saska and Pinnacle Mountain in a single push over Milham Pass at about 6,663 ft, which is the classic way …"
+   },
+   {
+    "name": "Cottonwood Camp and the Entiat River road campgrounds",
+    "elev_ft": 3140,
+    "type": "camp",
+    "role": "route",
+    "notes": "This is the road head for the whole eastern side of the Chelan Mountains crest and the standard place to sleep the night before a long walk in. The drive is the thing people underestimate — it is roughly 38 miles of valley road from the Columbia, most of it paved, and getting here from the west side of the state is the…"
+   },
+   {
+    "name": "Fox Camp, North Fork Entiat trail",
+    "elev_ft": null,
+    "type": "camp",
+    "role": "route",
+    "notes": "The workhorse camp for the Chelan Mountains crest peaks. From the North Fork Entiat trailhead at roughly 3,880 ft the trail runs about eight miles to the Pyramid trail junction, with Fox Camp a quarter mile north of it. Every one of Cardinal, Emerald, Saska and Pinnacle Mountain is reachable from here, which is what ma…"
+   }
+  ],
+  "campsite_pins": []
+ },
+ {
+  "id": "wa_courtney_peak_scramble",
+  "name": "Standard Scramble",
+  "discipline": "scrambling",
+  "peak": "Courtney Peak",
+  "area_id": "wa_courtney_peak",
+  "path": "usa.washington.wa_centraleast.wa_sawtooth_chelan.wa_courtney_peak",
+  "trip_plan": {
+   "totalNote": "A 2-day/1-night backpack: about 7.5 hours in (with the Courtney summit tagged en route) and about 4.5 hours out the next day, roughly 17 mi and 4,700 ft round trip. Strong parties can push it car-to-car in a very long single day, but most people backpack in to make it enjoyable.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Backpack in via Fish Creek Pass, tag the summit, camp at Star Lake",
+     "objective": "Reach Fish Creek Pass, scramble Courtney Peak's Southeast Ridge, then descend to camp",
+     "miles": 9,
+     "gainFt": 4700,
+     "note": "The West Fork Buttermilk Creek Trail #411 climbs at a mostly gentle grade to Fish Creek Pass, with a few steep, brushy sections and an unbridged creek crossing that can be swift in early season. From the pass the Southeast Ridge to Courtney's summit is only 45 minutes to an hour of easy Class 2 (brief Class 2-3 near th…"
+    },
+    {
+     "n": 2,
+     "title": "Hike out",
+     "objective": "Return to the trailhead",
+     "miles": 8,
+     "gainFt": 0,
+     "note": "Reverse the route: back up to Fish Creek Pass and down the West Fork Buttermilk Trail to the car. No technical terrain, just a long descending trail day."
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Star Lake",
+    "elev_ft": 7460,
+    "type": "camp",
+    "role": "main",
+    "notes": "Larch basin about half a mile past Fish Creek Pass, 7.5 miles from the West Fork Buttermilk trailhead. The usual camp for Courtney and Star. Camp at least 200 ft from the lake."
+   }
+  ],
+  "campsite_pins": [
+   {
+    "name": "Star Lake",
+    "elev": 7460,
+    "distMi": null
+   }
+  ]
+ },
+ {
+  "id": "wa_devore_peak_west_ridge",
+  "name": "Southeast Ridge",
+  "discipline": "scrambling",
+  "peak": "Devore Peak",
+  "area_id": "wa_devore_peak",
+  "path": "usa.washington.wa_centraleast.wa_sawtooth_chelan.wa_devore_peak",
+  "trip_plan": {
+   "totalNote": "A 3-day, 2-night wilderness trip car-to-car (plus ferry): roughly 25 miles and 7,600 ft of gain round trip, with one long ~11-hour summit day from Bird Creek Camp over a col on Devore's SE ridge and west to the summit.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Ferry in and approach to Bird Creek Camp",
+     "objective": "Reach Bird Creek Camp basecamp",
+     "miles": 9,
+     "gainFt": 3100,
+     "note": "Drive to Fields Point Landing on Lake Chelan and take the Lady of the Lake/Lady Express ferry to Stehekin, then a boat shuttle or road walk to Weaver Point Campground on Lake Chelan. From there follow the Devore Creek Trail roughly 4-5 miles, gaining steadily through forest, to Bird Creek Camp (~4,200 ft), the standard…"
+    },
+    {
+     "n": 2,
+     "title": "Summit push via the SE col and West Ridge/face",
+     "objective": "Climb Devore Peak (8,383 ft) and return to Bird Creek Camp",
+     "miles": 7,
+     "gainFt": 4200,
+     "note": "Leave camp pre-dawn and head up-valley along Bird Creek, cutting off-trail into the basin above ~5,400 ft, then continuing to the open lake basin near 7,000 ft. Cross Bird Creek at the northern lake, climb SE to a col (~7,500 ft) on Devore's southeast ridge, then work west across scree/talus and short Class 3-4 rock st…"
+    },
+    {
+     "n": 3,
+     "title": "Hike out and ferry home",
+     "objective": "Return to Weaver Point and catch the ferry out",
+     "miles": 9,
+     "gainFt": 300,
+     "note": "Break camp and hike back down the Devore Creek Trail to Weaver Point, then boat/walk to Stehekin in time for the return ferry to Fields Point Landing."
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Bird Creek Camp, Devore Creek trail",
+    "elev_ft": 4200,
+    "type": "camp",
+    "role": "main",
+    "notes": "This is the camp for Devore Peak and Tupshin Peak, and it is worth being clear that these two are not a Sawtooth trip. They stand west of Lake Chelan on the long ridge dividing Company Creek and Hilgard Creek from Devore Creek, and everything about them - the wilderness, the permit system, the transport - is different …"
+   }
+  ],
+  "campsite_pins": [
+   {
+    "name": "Bird Creek Camp",
+    "elev": 4170,
+    "distMi": 8
+   }
+  ]
+ },
+ {
+  "id": "wa_emerald_peak_se_ridge",
+  "name": "Southeast Ridge",
+  "discipline": "scrambling",
+  "peak": "Emerald Peak",
+  "area_id": "wa_emerald_peak_entiat",
+  "path": "usa.washington.wa_centraleast.wa_sawtooth_chelan.wa_emerald_peak_entiat",
+  "trip_plan": {
+   "totalNote": "A standard 3-day, 2-night backpack: roughly 22 miles round trip with about 5,300 ft of total gain, most of it on the long approach; parties commonly link nearby Saska Peak (and sometimes Cardinal Peak, on a 4th day) onto the same basin camp since all three summits share the same approach.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Approach to larch-basin camp",
+     "objective": "Reach the ~6,800-6,900 ft basin camp beneath Cardinal/Emerald",
+     "miles": 8.5,
+     "gainFt": 2900,
+     "note": "From the North Fork Entiat River trailhead (~3,950 ft), hike the North Fork Entiat trail through old burn/blowdown, cross the creek on a rough log/plank crossing around mile 4-5, then climb through meadows to an established camp in the larch basin near the Pyramid Creek trail junction. Most parties arrive by mid-to-lat…"
+    },
+    {
+     "n": 2,
+     "title": "Summit push: Emerald Peak, Southeast Ridge",
+     "objective": "Climb Emerald Peak and return to camp",
+     "miles": 4.5,
+     "gainFt": 1700,
+     "note": "Leave camp with a light pack, climb through the basin to the ~7,800 ft bench below Emerald's southeast slopes, then pick a way up the ridge/gully system (loose class 2-3 rock, trending climber's-right near the top) to the summit. Many parties tag nearby Saska Peak on the same outing since it shares the approach bench, …"
+    },
+    {
+     "n": 3,
+     "title": "Hike out",
+     "objective": "Return to the North Fork Entiat trailhead",
+     "miles": 9,
+     "gainFt": 200,
+     "note": "Break camp and reverse the approach trail. The return typically goes faster than day 1 since the route-finding and creek crossing are now familiar; most parties are back at the vehicle by early-to-mid afternoon."
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "The basin between Emerald and Saska, and Milham Pass",
+    "elev_ft": null,
+    "type": "bivy",
+    "role": "main",
+    "notes": "The high camp for the crest traverse, about a mile and a half beyond Fox Camp on the Pyramid trail, in the basin that separates Emerald Peak from Saska Peak. This is where a party stages to link Cardinal, Emerald, Saska and Pinnacle Mountain in a single push over Milham Pass at about 6,663 ft, which is the classic way …"
+   },
+   {
+    "name": "Cottonwood Camp and the Entiat River road campgrounds",
+    "elev_ft": 3140,
+    "type": "camp",
+    "role": "route",
+    "notes": "This is the road head for the whole eastern side of the Chelan Mountains crest and the standard place to sleep the night before a long walk in. The drive is the thing people underestimate — it is roughly 38 miles of valley road from the Columbia, most of it paved, and getting here from the west side of the state is the…"
+   },
+   {
+    "name": "Fox Camp, North Fork Entiat trail",
+    "elev_ft": null,
+    "type": "camp",
+    "role": "route",
+    "notes": "The workhorse camp for the Chelan Mountains crest peaks. From the North Fork Entiat trailhead at roughly 3,880 ft the trail runs about eight miles to the Pyramid trail junction, with Fox Camp a quarter mile north of it. Every one of Cardinal, Emerald, Saska and Pinnacle Mountain is reachable from here, which is what ma…"
+   }
+  ],
+  "campsite_pins": [
+   {
+    "name": "Fox Camp",
+    "elev": 5500,
+    "distMi": 8.55
+   },
+   {
+    "name": "Emerald-Saska basin camp",
+    "elev": 6900,
+    "distMi": 10.05
+   }
+  ]
+ },
+ {
+  "id": "wa_emerald_peak_west_route",
+  "name": "West Route",
+  "discipline": "scrambling",
+  "peak": "Emerald Peak",
+  "area_id": "wa_emerald_peak_entiat",
+  "path": "usa.washington.wa_centraleast.wa_sawtooth_chelan.wa_emerald_peak_entiat",
+  "trip_plan": {
+   "totalNote": "Three days from the North Fork Entiat trailhead: hike to a high camp in the Emerald-Saska basin, scramble Emerald's west ridge and gully (optionally adding Saska and Cardinal), and hike out.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Hike to the Emerald-Saska basin",
+     "objective": "Reach a high camp below Emerald and Cardinal",
+     "miles": 9.5,
+     "gainFt": 2860,
+     "note": "Follow the North Fork Entiat trail through old burn (hot, with blowdown) toward Saska Pass and Fox Camp, then continue into the basin below Emerald, Saska and Cardinal. Camp in a meadow at about 6,800 ft below Cardinal; expect to arrive in the late afternoon."
+    },
+    {
+     "n": 2,
+     "title": "Scramble Emerald's west side",
+     "objective": "Summit Emerald Peak and return to camp",
+     "miles": null,
+     "gainFt": 1620,
+     "note": "Cross the meadow below the peak and climb a gully to a small shoulder, then a right-trending scree gully; turn left at the cliffs onto the west ridge and follow occasional cairns up ridge and gully to the top. The rock is loose but not hard; parties often link Saska and Cardinal the same day."
+    },
+    {
+     "n": 3,
+     "title": "Hike out the North Fork Entiat",
+     "objective": "Return to the trailhead",
+     "miles": 9.5,
+     "gainFt": 0,
+     "note": "Reverse the approach trail; the walk out goes a little faster than the walk in."
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "The basin between Emerald and Saska, and Milham Pass",
+    "elev_ft": null,
+    "type": "bivy",
+    "role": "main",
+    "notes": "The high camp for the crest traverse, about a mile and a half beyond Fox Camp on the Pyramid trail, in the basin that separates Emerald Peak from Saska Peak. This is where a party stages to link Cardinal, Emerald, Saska and Pinnacle Mountain in a single push over Milham Pass at about 6,663 ft, which is the classic way …"
+   },
+   {
+    "name": "Cottonwood Camp and the Entiat River road campgrounds",
+    "elev_ft": 3140,
+    "type": "camp",
+    "role": "route",
+    "notes": "This is the road head for the whole eastern side of the Chelan Mountains crest and the standard place to sleep the night before a long walk in. The drive is the thing people underestimate — it is roughly 38 miles of valley road from the Columbia, most of it paved, and getting here from the west side of the state is the…"
+   },
+   {
+    "name": "Fox Camp, North Fork Entiat trail",
+    "elev_ft": null,
+    "type": "camp",
+    "role": "route",
+    "notes": "The workhorse camp for the Chelan Mountains crest peaks. From the North Fork Entiat trailhead at roughly 3,880 ft the trail runs about eight miles to the Pyramid trail junction, with Fox Camp a quarter mile north of it. Every one of Cardinal, Emerald, Saska and Pinnacle Mountain is reachable from here, which is what ma…"
+   }
+  ],
+  "campsite_pins": []
+ },
+ {
+  "id": "wa_fifth_of_july_mountain_scramble",
+  "name": "Standard Scramble",
+  "discipline": "mountaineering",
+  "peak": "Fifth of July Mountain",
+  "area_id": "wa_fifth_of_july_mountain",
+  "path": "usa.washington.wa_centraleast.wa_sawtooth_chelan.wa_fifth_of_july_mountain",
+  "trip_plan": {
+   "totalNote": "A 3-day, ~16-18 mile round trip with about 4,400-4,500 ft total gain; most parties backpack in to Myrtle Lake or Cow Creek Meadows and make the summit a day trip from camp, often combined with Cow Creek Pass and Larch Lakes.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Hike in to Myrtle Lake / Cow Creek Meadows",
+     "objective": "Establish camp for the summit push",
+     "miles": 4.7,
+     "gainFt": 650,
+     "note": "From the Entiat River Trailhead (~3,150 ft), follow Entiat River Trail #1400 north about 4 gentle miles along the river to the Cow Creek Meadows Trail #1404 junction and footbridge, then climb 0.4-0.9 mi to established camps on the south shore of Myrtle Lake (~3,750 ft). Most parties treat this as an easy half-day and …"
+    },
+    {
+     "n": 2,
+     "title": "Summit day: Cow Creek Meadows to Fifth of July Mountain",
+     "objective": "Reach the 7,696 ft summit and return to camp",
+     "miles": 7,
+     "gainFt": 3950,
+     "note": "Leave the maintained Trail #1404 above Cow Creek Meadows and climb open slopes/talus on the south side and south ridge to the summit — straightforward Class 1-2 scrambling with big Glacier Peak Wilderness views. Many parties tack on a visit to Cow Creek Pass and the Larch Lakes basin on the same day since the terrain i…"
+    },
+    {
+     "n": 3,
+     "title": "Hike out",
+     "objective": "Return to the trailhead",
+     "miles": 4.7,
+     "gainFt": 0,
+     "note": "Retrace Trail #1404 down to the Trail #1400 junction and follow the Entiat River Trail back to the trailhead."
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Cow Creek Meadows",
+    "elev_ft": null,
+    "type": "camp",
+    "role": "main",
+    "notes": ""
+   },
+   {
+    "name": "Larch Lakes meadow camps",
+    "elev_ft": 5730,
+    "type": "camp",
+    "role": "main",
+    "notes": "This is the base camp for Fifth of July Mountain and the only one worth using for it. From the meadow between the two lakes the summit is roughly six miles round trip with modest gain, which makes it a comfortable day out from a camp you have already carried to. The approach is the Cow Creek branch off the Entiat River…"
+   },
+   {
+    "name": "Cottonwood Camp and the Entiat River road campgrounds",
+    "elev_ft": 3140,
+    "type": "camp",
+    "role": "route",
+    "notes": "This is the road head for the whole eastern side of the Chelan Mountains crest and the standard place to sleep the night before a long walk in. The drive is the thing people underestimate — it is roughly 38 miles of valley road from the Columbia, most of it paved, and getting here from the west side of the state is the…"
+   }
+  ],
+  "campsite_pins": [
+   {
+    "name": "Myrtle Lake",
+    "elev": 3766,
+    "distMi": 4.4
+   },
+   {
+    "name": "Cow Creek Meadows",
+    "elev": 5150,
+    "distMi": 6.4
+   }
+  ]
+ },
+ {
+  "id": "wa_mount_bigelow_scramble",
+  "name": "Standard Scramble",
+  "discipline": "scrambling",
+  "peak": "Mount Bigelow",
+  "area_id": "wa_mount_bigelow",
+  "path": "usa.washington.wa_centraleast.wa_sawtooth_chelan.wa_mount_bigelow",
+  "trip_plan": {
+   "totalNote": "A 2-day trip: an easy ~6-mile backpack in to Upper Eagle Lake camp, followed by a long combined summit-day-climb-and-hike-out (Class 3 finish plus the full descent to the trailhead); fit parties can push it car-to-car in one very long day, but the standard plan splits it over two.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Backpack in to Upper Eagle Lake",
+     "objective": "Establish camp at Upper Eagle Lake (7,110 ft)",
+     "miles": 6.2,
+     "gainFt": 2500,
+     "note": "From the Crater Creek Trailhead, follow the Eagle Lakes Trail (#431) up through forest that transitions to subalpine fir and larch, reaching the Upper Eagle Lake Trail junction at ~5.7 mi and camp at the lake half a mile beyond. Upper Eagle Lake is the standard base camp for Bigelow and the rest of the Sawtooth Ridge p…"
+    },
+    {
+     "n": 2,
+     "title": "Summit day-climb, then break camp and hike out",
+     "objective": "Climb Mount Bigelow's Class 3 finish, then pack up and hike out to the trailhead",
+     "miles": 9.6,
+     "gainFt": 1400,
+     "note": "Leave camp with a light day pack and head northwest from the lake, staying right of the prominent rock wall, then zig-zag up a loose gully to a short, exposed Class 3 rock/scree finish (mantling and stemming out of a mini chimney) that tops out on a saddle; turn right and follow the Class 1 ridge to the true summit. Af…"
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Upper Eagle Lake and Horsehead Pass",
+    "elev_ft": 7110,
+    "type": "camp",
+    "role": "main",
+    "notes": "The hub of the southern Sawtooth and the practical base for Switchback Mountain, with Hoodoo and Raven Ridge also within reach along the crest. Access is the Gold Creek side, not the Twisp River: turn off the highway onto the North Fork Gold Creek road, then a signed spur for several miles to the Eagle Lakes trailhead …"
+   }
+  ],
+  "campsite_pins": [
+   {
+    "name": "Eagle Lakes Trail backcountry camp",
+    "elev": null,
+    "distMi": 3
+   }
+  ]
+ },
+ {
+  "id": "wa_mount_bigelow_tribute_to_richard",
+  "name": "Tribute to Richard",
+  "discipline": "alpine",
+  "peak": "Mount Bigelow",
+  "area_id": "wa_mount_bigelow",
+  "path": "usa.washington.wa_centraleast.wa_sawtooth_chelan.wa_mount_bigelow",
+  "trip_plan": {
+   "totalNote": "Hike 6.2 miles to Upper Eagle Lake and scope the East Face, then climb the four-pitch route, descend the standard scramble, and hike out on day two.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Hike to Upper Eagle Lake",
+     "objective": "Camp at the lake and scope the East Face",
+     "miles": 6.2,
+     "gainFt": 2400,
+     "note": "Hike the 6.2 miles of Eagle Lakes Trail #431 to Upper Eagle Lake (roughly 2 h 45 min of walking at the mapped trail estimate) and make camp among the established sites. Spend the last of the light scoping the East Face from the lakeshore; the crack systems are much easier to sort out with binoculars from the water than…"
+    },
+    {
+     "n": 2,
+     "title": "Climb Tribute to Richard and hike out",
+     "objective": "Climb the four pitches, summit, and return to the car",
+     "miles": 6.8,
+     "gainFt": 1500,
+     "note": "Leave camp at first light, scramble the 900-1,000 ft of talus and heather to the base, and climb the four pitches; budget generously, as the first-ascent party's climbing was very slow because of the cleaning required. Walk north to the summit, descend the standard scramble back to camp, then strike the tent and hike o…"
+    }
+   ]
+  },
+  "camps_on_file": [],
+  "campsite_pins": []
+ },
+ {
+  "id": "wa_north_gardner_mountain_southwest",
+  "name": "Southwest Slopes / South Ridge",
+  "discipline": "scrambling",
+  "peak": "North Gardner Mountain",
+  "area_id": "wa_north_gardner_mountain",
+  "path": "usa.washington.wa_centraleast.wa_sawtooth_chelan.wa_north_gardner_mountain",
+  "trip_plan": {
+   "totalNote": "An overnight trip: hike Wolf Creek Trail about 10 miles to Gardner Meadows and on to a high camp in Wolf Creek Basin, then climb the southwest slopes and hike out.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Hike in to Wolf Creek Basin",
+     "objective": "Reach a high camp below the peak",
+     "miles": null,
+     "gainFt": 3350,
+     "note": "Hike Wolf Creek Trail about 10 miles to Gardner Meadows, then continue off-trail to a high camp in Wolf Creek Basin at about 6,200-6,400 ft below the peak."
+    },
+    {
+     "n": 2,
+     "title": "Summit and hike out",
+     "objective": "Climb the southwest slopes and return to the car",
+     "miles": null,
+     "gainFt": 2700,
+     "note": "Climb the southwest slopes to the summit, reverse the route back to camp, and hike out."
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "High basin camp above Gardner Meadows",
+    "elev_ft": 6250,
+    "type": "bivy",
+    "role": "main",
+    "notes": "The higher option for a party that wants to shorten summit day rather than take both peaks in one long push from the meadows. Heading north out of Gardner Meadows the ground rises to a small meadow basin at about 6,200 ft, and an old boot path leaves the main trail a few hundred feet west of the small stream to reach i…"
+   },
+   {
+    "name": "Gardner Meadows, Wolf Creek trail",
+    "elev_ft": null,
+    "type": "camp",
+    "role": "main",
+    "notes": "This is the basecamp for both peaks and the way the great majority of parties climb them. The Wolf Creek trail runs roughly ten miles up the valley bottom from the trailhead near Winthrop to meadows sitting directly beneath Gardner Mountain, with North Gardner a mile further northwest along the connecting ridge. From h…"
+   }
+  ],
+  "campsite_pins": []
+ },
+ {
+  "id": "wa_oval_peak_scramble",
+  "name": "Standard Scramble",
+  "discipline": "mountaineering",
+  "peak": "Oval Peak",
+  "area_id": "wa_oval_peak",
+  "path": "usa.washington.wa_centraleast.wa_sawtooth_chelan.wa_oval_peak",
+  "trip_plan": {
+   "totalNote": "A standard weekend trip: backpack ~9.5 miles and 4,400 ft to camp at Middle Oval Lake on day 1, then summit via the South Ridge and hike all ~24 miles round trip out on day 2 (~17 total hours of travel over 2 days, ~5,800 ft total gain).",
+   "days": [
+    {
+     "n": 1,
+     "title": "Backpack in to Middle Oval Lake",
+     "objective": "Reach camp at Middle Oval Lake via Eagle Creek and Oval Creek trails",
+     "miles": 9.5,
+     "gainFt": 4400,
+     "note": "From the Eagle Creek/Oval Creek trailhead (~3,000 ft), follow Eagle Creek Trail #410 about 1.9 miles to the Oval Creek Trail #410A junction, then climb steadily through burned and forested valley to West Oval Lake (~7.4 mi) before pushing on and up a shale-covered pass to Middle Oval Lake (~9.5 mi), which sits in a mor…"
+    },
+    {
+     "n": 2,
+     "title": "Summit push and hike all the way out",
+     "objective": "Climb Oval Peak via the South Ridge, then break camp and hike out to the trailhead",
+     "miles": 14.5,
+     "gainFt": 1400,
+     "note": "Leave camp with a light pack for an early push up to the South Ridge saddle, then follow the ridge/rock field (class 2-3, loose in spots but not technical) to the 8,795-8,800 ft summit for views of Star, Courtney, and Gray Peaks. Descend the same way to camp, pack up, and hike the full ~9.5 miles back out to the trailh…"
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Oval Lakes basin - West and Middle Oval",
+    "elev_ft": null,
+    "type": "camp",
+    "role": "main",
+    "notes": "This is the base for Oval Peak and the northern approach to Courtney and Star, all three of which are walk-and-scramble summits off the Chelan Summit trail once you are on the crest. It is not a casual trip: about 20 miles round trip with close to 6,700 ft of gain, up an old moraine below Gray Peak, onto the Chelan Sum…"
+   }
+  ],
+  "campsite_pins": [
+   {
+    "name": "Middle Oval Lake outflow",
+    "elev": 6940,
+    "distMi": 9.5
+   }
+  ]
+ },
+ {
+  "id": "wa_pinnacle_mountain_entiat_scramble",
+  "name": "Standard Scramble",
+  "discipline": "scrambling",
+  "peak": "Pinnacle Mountain",
+  "area_id": "wa_pinnacle_mountain_entiat",
+  "path": "usa.washington.wa_centraleast.wa_sawtooth_chelan.wa_pinnacle_mountain_entiat",
+  "trip_plan": {
+   "totalNote": "A 3-day, roughly 27-mile round trip with about 7,700 ft of total gain: a backpack up the North Fork Entiat to a basin camp below Saska Pass, a long summit day over Saska Pass and Snow Brushy Creek, and the walk out.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Backpack in to the basin below Saska Pass",
+     "objective": "Reach a high camp in the basin below Saska Pass",
+     "miles": 9,
+     "gainFt": 3000,
+     "note": "From the North Fork Entiat Trailhead follow Trail #1437 up the valley past the Fern Lake spur to the Pyramid Mountain Trail junction, about 8 miles, then climb about a mile more to camp in the basin between Saska and Emerald peaks near 6,900 ft. Fill water at the junction crossing; the drainages above it are seasonal a…"
+    },
+    {
+     "n": 2,
+     "title": "Summit day over Saska Pass",
+     "objective": "Climb Pinnacle Mountain (8,400 ft) and return to camp",
+     "miles": 9,
+     "gainFt": 4700,
+     "note": "Climb to Saska Pass, drop about 1,500 ft into the Snow Brushy Creek burn, then climb out to the crest saddle just south of the peak (Borealis Pass, about 7,600 ft) and scramble north up talus and blocks to the summit. Reverse the route; the reclimb to Saska Pass on the way back is what makes the day long. No water past…"
+    },
+    {
+     "n": 3,
+     "title": "Hike out",
+     "objective": "",
+     "miles": 9,
+     "gainFt": 0,
+     "note": "Back down Trail #1437 to the North Fork Entiat Trailhead."
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "The basin between Emerald and Saska, and Milham Pass",
+    "elev_ft": null,
+    "type": "bivy",
+    "role": "main",
+    "notes": "The high camp for the crest traverse, about a mile and a half beyond Fox Camp on the Pyramid trail, in the basin that separates Emerald Peak from Saska Peak. This is where a party stages to link Cardinal, Emerald, Saska and Pinnacle Mountain in a single push over Milham Pass at about 6,663 ft, which is the classic way …"
+   },
+   {
+    "name": "Cottonwood Camp and the Entiat River road campgrounds",
+    "elev_ft": 3140,
+    "type": "camp",
+    "role": "route",
+    "notes": "This is the road head for the whole eastern side of the Chelan Mountains crest and the standard place to sleep the night before a long walk in. The drive is the thing people underestimate — it is roughly 38 miles of valley road from the Columbia, most of it paved, and getting here from the west side of the state is the…"
+   },
+   {
+    "name": "Fox Camp, North Fork Entiat trail",
+    "elev_ft": null,
+    "type": "camp",
+    "role": "route",
+    "notes": "The workhorse camp for the Chelan Mountains crest peaks. From the North Fork Entiat trailhead at roughly 3,880 ft the trail runs about eight miles to the Pyramid trail junction, with Fox Camp a quarter mile north of it. Every one of Cardinal, Emerald, Saska and Pinnacle Mountain is reachable from here, which is what ma…"
+   }
+  ],
+  "campsite_pins": [
+   {
+    "name": "Pyramid Mountain Trail (#1433) junction camp",
+    "elev": 4900,
+    "distMi": 8.5
+   }
+  ]
+ },
+ {
+  "id": "wa_raven_ridge_southeast_ridge_crater_lake",
+  "name": "Southeast Ridge (Crater Lake Approach)",
+  "discipline": "mountaineering",
+  "peak": "Raven Ridge",
+  "area_id": "wa_raven_ridge",
+  "path": "usa.washington.wa_centraleast.wa_sawtooth_chelan.wa_raven_ridge",
+  "trip_plan": {
+   "totalNote": "A lighter two-day trip: hike in to Crater Lake, then climb the southeast ridge and hike out.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Hike in to Crater Lake",
+     "objective": "Camp at Lower Crater Lake",
+     "miles": 3.9,
+     "gainFt": 2100,
+     "note": "Hike the maintained Crater Creek/Crater Lakes Trail about 3.9 miles to camp at Lower Crater Lake (7.8 miles round trip)."
+    },
+    {
+     "n": 2,
+     "title": "Climb the southeast ridge and hike out",
+     "objective": "Summit Raven Ridge and return to the trailhead",
+     "miles": null,
+     "gainFt": 1730,
+     "note": "Climb from the lake basin to the ~8,000 ft col and scramble the southeast ridge to the summit. Reverse the ridge to camp and hike out the Crater Creek Trail."
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Crater Lakes, Crater Creek trail",
+    "elev_ft": null,
+    "type": "camp",
+    "role": "main",
+    "notes": "Lakes at the head of the Crater Creek trail from the Crater Creek trailhead. The natural camp for the southeast ridge; many parties do the route in a day."
+   }
+  ],
+  "campsite_pins": []
+ },
+ {
+  "id": "wa_saska_peak_emerald_saska_col",
+  "name": "South Slopes via Emerald-Saska Col",
+  "discipline": "scrambling",
+  "peak": "Saska Peak",
+  "area_id": "wa_saska_peak",
+  "path": "usa.washington.wa_centraleast.wa_sawtooth_chelan.wa_saska_peak",
+  "trip_plan": {
+   "totalNote": "A 3-day backpacking trip: roughly 22 miles round trip with about 6,000 ft of gain, one full day each way for the approach/exit and a dedicated summit day via the Emerald-Saska col and Saska's south slopes.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Backpack in to basin camp",
+     "objective": "Reach camp near the Emerald-Saska basin (~6,800-7,200 ft)",
+     "miles": 10,
+     "gainFt": 4200,
+     "note": "Hike the North Fork Entiat and Pyramid Creek trails into the basin below Emerald, Saska and Cardinal. The first miles cross old burn/blowdown before climbing steadily to a meadow camp used by most parties as their base for the col and summit push."
+    },
+    {
+     "n": 2,
+     "title": "Summit push via Emerald-Saska col",
+     "objective": "Climb Saska Peak's south slopes from the col and return to camp",
+     "miles": 2,
+     "gainFt": 1600,
+     "note": "An early, light start from camp up into the basin and onto the Emerald-Saska col, then Class 2-3 scrambling up the south slopes to the 8,404 ft summit. Most parties are back at camp by early-mid afternoon with time to rest before hiking out the next day."
+    },
+    {
+     "n": 3,
+     "title": "Hike out",
+     "objective": "Break camp and hike back to the trailhead",
+     "miles": 10,
+     "gainFt": 200,
+     "note": "Reverse the approach trail back down through the basin and along the Entiat drainage to the trailhead. A straightforward but long descent day."
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "The basin between Emerald and Saska, and Milham Pass",
+    "elev_ft": null,
+    "type": "bivy",
+    "role": "main",
+    "notes": "The high camp for the crest traverse, about a mile and a half beyond Fox Camp on the Pyramid trail, in the basin that separates Emerald Peak from Saska Peak. This is where a party stages to link Cardinal, Emerald, Saska and Pinnacle Mountain in a single push over Milham Pass at about 6,663 ft, which is the classic way …"
+   },
+   {
+    "name": "Cottonwood Camp and the Entiat River road campgrounds",
+    "elev_ft": 3140,
+    "type": "camp",
+    "role": "route",
+    "notes": "This is the road head for the whole eastern side of the Chelan Mountains crest and the standard place to sleep the night before a long walk in. The drive is the thing people underestimate — it is roughly 38 miles of valley road from the Columbia, most of it paved, and getting here from the west side of the state is the…"
+   },
+   {
+    "name": "Fox Camp, North Fork Entiat trail",
+    "elev_ft": null,
+    "type": "camp",
+    "role": "route",
+    "notes": "The workhorse camp for the Chelan Mountains crest peaks. From the North Fork Entiat trailhead at roughly 3,880 ft the trail runs about eight miles to the Pyramid trail junction, with Fox Camp a quarter mile north of it. Every one of Cardinal, Emerald, Saska and Pinnacle Mountain is reachable from here, which is what ma…"
+   }
+  ],
+  "campsite_pins": [
+   {
+    "name": "Fox Camp (Pyramid Creek Trail junction)",
+    "elev": null,
+    "distMi": 8
+   },
+   {
+    "name": "Basin between Emerald and Saska",
+    "elev": 7100,
+    "distMi": 9.5
+   }
+  ]
+ }
+]

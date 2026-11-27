@@ -1,0 +1,584 @@
+[
+ {
+  "id": "wa_little_tahoma_east_shoulder",
+  "name": "East Shoulder",
+  "discipline": "mountaineering",
+  "peak": "Little Tahoma Peak",
+  "area_id": "wa_little_tahoma",
+  "path": "usa.washington.wa_sw_tacoma.wa_southwest_cascades.wa_little_tahoma",
+  "trip_plan": {
+   "totalNote": "A leaner 2-day, 1-night version of the same route: strong, acclimatized parties reach high camp on day 1, then combine the glacier/couloir summit push with the full hike-out in one very long alpine-start day (~14-15 hrs on day 2).",
+   "days": [
+    {
+     "n": 1,
+     "title": "Approach to high camp",
+     "objective": "Reach a high camp near Whitman Crest at ~7,900 ft",
+     "miles": 4,
+     "gainFt": 4000,
+     "note": "From the Fryingpan Creek Trailhead (about 3,800 ft), follow the Wonderland Trail through Summerland, then leave the trail to climb snow/scree onto the Fryingpan Glacier moraine to a rocky bivy site around 7,900 ft."
+    },
+    {
+     "n": 2,
+     "title": "Summit push and full hike-out",
+     "objective": "Climb the East Shoulder couloir to the summit and exit all the way to the trailhead same day",
+     "miles": 10.1,
+     "gainFt": 3238,
+     "note": "A 1-3 AM alpine start crosses the Fryingpan Glacier and Whitman Notch while the snow is firm, then climbs the Whitman Glacier and a picket-protected couloir to the crumbly east ridge and summit block. After a short summit stay the team descends (glissading where possible) back to camp by around noon, packs up, and cont…"
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Meany Crest",
+    "elev_ft": 7500,
+    "type": "bivy",
+    "role": "main",
+    "notes": "The standard high camp for Little Tahoma, and the one that makes the climb reasonable. It is a large flat area within the cliff band directly above Summerland, gained by the climbers' path and scrambling out of the basin, and it also serves Whitman Crest and the spires on that shoulder. From here the Fryingpan Glacier …"
+   },
+   {
+    "name": "Summerland Camp",
+    "elev_ft": 5900,
+    "type": "camp",
+    "role": "main",
+    "notes": "The subalpine meadow basin that everything on this side of the mountain stages from, a little over four miles up the Wonderland Trail from the Fryingpan Creek bridge. For Little Tahoma it is the lower of the two realistic camps and much the more comfortable one — running water, a toilet, a stone shelter to cook under i…"
+   },
+   {
+    "name": "Toe of the Fryingpan Glacier",
+    "elev_ft": null,
+    "type": "bivy",
+    "role": "route",
+    "notes": "A slightly higher and more committed alternative to Meany Crest, on the moraine and snow where the Fryingpan Glacier begins. It shaves a little more off summit morning and puts you on the ice within minutes of leaving the tent, which is worth something on a route where the Whitman Glacier softens badly through the day …"
+   },
+   {
+    "name": "Whitman Glacier notch camp",
+    "elev_ft": 8900,
+    "type": "bivy",
+    "role": "route",
+    "notes": "The highest of the three camps, in the prominent gap on the crest between the Fryingpan and Whitman glaciers, just under the base of the peak itself. It reduces summit day to a short glacier walk and the East Shoulder scramble, which is its whole justification. Everything else about it is a cost: it is cold, wind-hamme…"
+   }
+  ],
+  "campsite_pins": [
+   {
+    "name": "Summerland",
+    "elev": 5944,
+    "distMi": 4.5
+   }
+  ]
+ },
+ {
+  "id": "adams_avalanche_glacier",
+  "name": "Avalanche Glacier",
+  "discipline": "mountaineering",
+  "peak": "Mount Adams",
+  "area_id": "wa_mount_adams",
+  "path": "usa.washington.wa_sw_tacoma.wa_southwest_cascades.wa_mount_adams",
+  "trip_plan": {
+   "totalNote": null,
+   "days": [
+    {
+     "n": 1,
+     "title": "Day 1",
+     "objective": "",
+     "miles": null,
+     "gainFt": null,
+     "note": "Approach to a high camp near Mad Cat Meadow or Salt Creek."
+    },
+    {
+     "n": 2,
+     "title": "Day 2",
+     "objective": "",
+     "miles": null,
+     "gainFt": null,
+     "note": "Alpine start, climb the Avalanche/White Salmon Glaciers to the summit, descend via the South Spur to camp."
+    },
+    {
+     "n": 3,
+     "title": "Day 3",
+     "objective": "",
+     "miles": null,
+     "gainFt": null,
+     "note": "Hike out."
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Cold Springs / South Climb trailhead",
+    "elev_ft": 5600,
+    "type": "camp",
+    "role": "main",
+    "notes": "Most South Climb parties sleep here the night before, either to acclimatise a little or to get an alpine start without carrying a camp to the Lunch Counter. Facilities are primitive — a vault toilet, no piped water, no developed fee sites. Access is FR 80 to FR 8040 and then FR 8040-500, roughly eight miles of washboar…"
+   },
+   {
+    "name": "Avalanche Glacier high bivy",
+    "elev_ft": null,
+    "type": "bivy",
+    "role": "main",
+    "notes": "Reached by the Round the Mountain trail west from Cold Springs and then up the ridge beside the Avalanche Glacier. Parties usually place camp somewhere above 9,000 ft to shorten summit day."
+   },
+   {
+    "name": "Lunch Counter",
+    "elev_ft": 9300,
+    "type": "camp",
+    "role": "route",
+    "notes": "The standard high camp for the South Climb and effectively the only sheltered ground on the route, a wide rubble bench under Suksdorf Ridge about four miles and 3,700 ft above Cold Springs. It sits anywhere from roughly 9,200 to 9,400 ft because the bench is long and people camp at both ends rather than at one spot. Th…"
+   },
+   {
+    "name": "Morrison Creek Campground",
+    "elev_ft": 4675,
+    "type": "camp",
+    "role": "route",
+    "notes": "The fallback camp when the upper road defeats a vehicle or when Cold Springs is full, about three miles below the South Climb trailhead on the same road. The 2012 Cascade Creek fire burned through here, so shade is patchy and there is standing dead timber to consider when choosing a tent spot in wind. Camping here mean…"
+   }
+  ],
+  "campsite_pins": [
+   {
+    "name": "Morrison Creek Campground",
+    "elev": 4675,
+    "distMi": null
+   }
+  ]
+ },
+ {
+  "id": "adams_northwest_ridge",
+  "name": "North Face of the Northwest Ridge",
+  "discipline": "alpine",
+  "peak": "Mount Adams",
+  "area_id": "wa_mount_adams",
+  "path": "usa.washington.wa_sw_tacoma.wa_southwest_cascades.wa_mount_adams",
+  "trip_plan": {
+   "totalNote": "A 3-day north-side trip: hike to High Camp near Trail Divide or the Adams Glacier basin, climb the North Face of the Northwest Ridge to the summit and descend the North Ridge, then hike out.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Hike in to High Camp",
+     "objective": "Reach High Camp near Trail Divide or the Adams Glacier basin",
+     "miles": 4,
+     "gainFt": 2300,
+     "note": "Hike the Killen Creek Trail to the Pacific Crest Trail and continue on the High Camp Trail to a high camp near Trail Divide or the Adams Glacier basin, about four miles and 2,300 ft of gain."
+    },
+    {
+     "n": 2,
+     "title": "Climb the face to the summit",
+     "objective": "Summit via the North Face of the Northwest Ridge",
+     "miles": null,
+     "gainFt": 5376,
+     "note": "Make an alpine start and climb the face to the ridge crest and on to the summit. Descend via the North Ridge back to camp."
+    },
+    {
+     "n": 3,
+     "title": "Hike out",
+     "objective": "Return to the Killen Creek trailhead",
+     "miles": 4,
+     "gainFt": 0,
+     "note": "Pack up camp and hike out to the trailhead."
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "High Camp (Adams Creek Meadows)",
+    "elev_ft": 6900,
+    "type": "camp",
+    "role": "main",
+    "notes": "The base for the north side, reached by the Killen Creek trail from about 4,600 ft to the PCT and then a boot path up to the meadows below the Adams Glacier. Roughly four miles and 2,300 ft of gain, an easy carry compared with the Lunch Counter, and it puts you directly under the glacier's icefall. There is no shelter …"
+   },
+   {
+    "name": "Adams Glacier moraine bivy",
+    "elev_ft": 7700,
+    "type": "bivy",
+    "role": "route",
+    "notes": "Parties attacking the Adams Glacier sometimes move above High Camp onto the moraines below the icefall to shorten summit day, with usable ground reported roughly between 7,100 and 7,700 ft depending on which rib and how the moraine has changed. Exact spots shift year to year as the glacier retreats and the moraine slum…"
+   }
+  ],
+  "campsite_pins": [
+   {
+    "name": "High Camp",
+    "elev": 6866,
+    "distMi": 4.1
+   }
+  ]
+ },
+ {
+  "id": "wa_mount_adams_adams_glacier",
+  "name": "Adams Glacier",
+  "discipline": "alpine",
+  "peak": "Mount Adams",
+  "area_id": "wa_mount_adams",
+  "path": "usa.washington.wa_sw_tacoma.wa_southwest_cascades.wa_mount_adams",
+  "trip_plan": {
+   "totalNote": "A 2-day trip: ~5 hr approach to High Camp at about 6,900 ft, then a very long alpine-start summit day (~15 hr, 1:30 AM wake-up) climbing the icefall and descending all the way to the car by evening; cautious parties add a weather-buffer day.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Killen Creek to High Camp",
+     "objective": "Reach High Camp (~6,900 ft) below the Adams Glacier",
+     "miles": 4.1,
+     "gainFt": 2900,
+     "note": "Same Killen Creek approach as the North Ridge, camping near Mountaineers Camp / High Camp below the glacier's icefall."
+    },
+    {
+     "n": 2,
+     "title": "Climb the Adams Glacier icefall, descend to the car",
+     "objective": "Summit via the icefall and descend fully to the trailhead",
+     "miles": 8.9,
+     "gainFt": 4780,
+     "note": "A very early, very long summit day: climbers navigate the icefall's crevasses and bergschrunds by headlamp before dawn to beat the heat-driven serac/icefall danger, then descend the North Ridge all the way to the car."
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "High Camp (Adams Creek Meadows)",
+    "elev_ft": 6900,
+    "type": "camp",
+    "role": "main",
+    "notes": "The base for the north side, reached by the Killen Creek trail from about 4,600 ft to the PCT and then a boot path up to the meadows below the Adams Glacier. Roughly four miles and 2,300 ft of gain, an easy carry compared with the Lunch Counter, and it puts you directly under the glacier's icefall. There is no shelter …"
+   },
+   {
+    "name": "Adams Glacier moraine bivy",
+    "elev_ft": 7700,
+    "type": "bivy",
+    "role": "route",
+    "notes": "Parties attacking the Adams Glacier sometimes move above High Camp onto the moraines below the icefall to shorten summit day, with usable ground reported roughly between 7,100 and 7,700 ft depending on which rib and how the moraine has changed. Exact spots shift year to year as the glacier retreats and the moraine slum…"
+   }
+  ],
+  "campsite_pins": [
+   {
+    "name": "High Camp",
+    "elev": 7000,
+    "distMi": 4.1
+   }
+  ]
+ },
+ {
+  "id": "wa_mount_adams_lava_glacier_headwall",
+  "name": "Lava Glacier Headwall",
+  "discipline": "mountaineering",
+  "peak": "Mount Adams",
+  "area_id": "wa_mount_adams",
+  "path": "usa.washington.wa_sw_tacoma.wa_southwest_cascades.wa_mount_adams",
+  "trip_plan": {
+   "totalNote": "A 2-day trip: ~5 hr approach to High Camp, then a very early alpine-start summit day (~13 hr) on the Lava Glacier Headwall, descending via the North Ridge.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Approach to High Camp",
+     "objective": "Reach High Camp (~6,900 ft)",
+     "miles": 4.1,
+     "gainFt": 2300,
+     "note": "Approach via Killen Creek and the High Camp Trail to High Camp at Adams Creek Meadows (about 6,900 ft), from where the Lava Glacier is reached across the lava fields."
+    },
+    {
+     "n": 2,
+     "title": "Climb the headwall, descend to the trailhead",
+     "objective": "Summit via the Lava Glacier Headwall and descend fully to the car",
+     "miles": 8.4,
+     "gainFt": 5400,
+     "note": "A very early alpine start is essential — Mount Adams' headwall routes see significant rockfall and are seldom repeated, so timing matters more than on the standard routes. Climb moderate-to-steep snow/ice up the headwall to the summit, then descend the North Ridge."
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "High Camp (Adams Creek Meadows)",
+    "elev_ft": 6900,
+    "type": "camp",
+    "role": "main",
+    "notes": "The base for the north side, reached by the Killen Creek trail from about 4,600 ft to the PCT and then a boot path up to the meadows below the Adams Glacier. Roughly four miles and 2,300 ft of gain, an easy carry compared with the Lunch Counter, and it puts you directly under the glacier's icefall. There is no shelter …"
+   }
+  ],
+  "campsite_pins": []
+ },
+ {
+  "id": "wa_mount_adams_lyman_glacier",
+  "name": "Lyman Glacier",
+  "discipline": "mountaineering",
+  "peak": "Mount Adams",
+  "area_id": "wa_mount_adams",
+  "path": "usa.washington.wa_sw_tacoma.wa_southwest_cascades.wa_mount_adams",
+  "trip_plan": {
+   "totalNote": "A 3-day trip: approach to high camp, a long summit day on the Lyman Glacier with a technical crux chute near 10,000 ft, then a hike out.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Approach to High Camp",
+     "objective": "Reach a high camp positioned for the Lyman Glacier",
+     "miles": 4.1,
+     "gainFt": 2300,
+     "note": "Approach (typically via Killen Creek) to a high camp ~6,900 ft, positioned to traverse toward the Lyman Glacier the next day."
+    },
+    {
+     "n": 2,
+     "title": "Traverse to the Lyman Glacier and climb to the summit",
+     "objective": "Climb the Lyman Glacier to the summit and return to camp",
+     "miles": 6,
+     "gainFt": 5400,
+     "note": "An early start is essential. Traverse about an hour across lava fields and around the toe of Lava Ridge to the base of the Lyman Glacier at 8,000 ft, then climb moderate glacier terrain and a crux chute (45-65°, ~50 ft) around 10,000 ft, negotiating crevasses and a bergschrund to reach the summit plateau."
+    },
+    {
+     "n": 3,
+     "title": "Hike out",
+     "objective": "Return to the trailhead",
+     "miles": 4.1,
+     "gainFt": 0,
+     "note": "Break camp and hike back out to the trailhead."
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "High Camp (Adams Creek Meadows)",
+    "elev_ft": 6900,
+    "type": "camp",
+    "role": "main",
+    "notes": "The base for the north side, reached by the Killen Creek trail from about 4,600 ft to the PCT and then a boot path up to the meadows below the Adams Glacier. Roughly four miles and 2,300 ft of gain, an easy carry compared with the Lunch Counter, and it puts you directly under the glacier's icefall. There is no shelter …"
+   }
+  ],
+  "campsite_pins": []
+ },
+ {
+  "id": "wa_mount_adams_mazama_glacier_headwall",
+  "name": "Mazama Glacier Headwall",
+  "discipline": "mountaineering",
+  "peak": "Mount Adams",
+  "area_id": "wa_mount_adams",
+  "path": "usa.washington.wa_sw_tacoma.wa_southwest_cascades.wa_mount_adams",
+  "trip_plan": {
+   "totalNote": "A 2-3 day climb: hike from Bird Creek Meadows to Sunrise Camp (~8,300 ft), climb the Mazama Glacier and its headwall to the summit on an alpine start, then descend to camp and hike out (same day or the next morning).",
+   "days": [
+    {
+     "n": 1,
+     "title": "Hike in to Sunrise Camp",
+     "objective": "Reach Sunrise Camp at the edge of the Mazama Glacier",
+     "miles": 3.5,
+     "gainFt": 2600,
+     "note": "From the Bird Creek Meadows trailhead (~5,700 ft), trail then moraines and snowfields from about 6,700 ft, working across the right side of the lower Mazama Glacier to Sunrise Camp; parties report about 3.5 hours with photo stops. Gain derived from 5,700 ft to 8,314 ft."
+    },
+    {
+     "n": 2,
+     "title": "Climb the Mazama Glacier Headwall",
+     "objective": "Summit Mount Adams (12,276 ft) and return to camp",
+     "miles": 4.4,
+     "gainFt": 4000,
+     "note": "Rope up early and climb the 35-degree Mazama Glacier to the headwall near 11,300 ft, then onto the summit plateau; about 4,000 ft from camp. Descent takes about 3.5 hours back to Sunrise Camp. Gain derived from 8,314 ft camp to summit."
+    },
+    {
+     "n": 3,
+     "title": "Hike out to Bird Creek Meadows",
+     "objective": "Return to the trailhead",
+     "miles": 3.5,
+     "gainFt": 0,
+     "note": "Reverse the approach; many parties instead pack up and hike out on the afternoon of summit day, reaching the trailhead around 4 PM."
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Sunrise Camp",
+    "elev_ft": null,
+    "type": "camp",
+    "role": "main",
+    "notes": ""
+   }
+  ],
+  "campsite_pins": [
+   {
+    "name": "Sunrise Camp",
+    "elev": 8314,
+    "distMi": 3
+   }
+  ]
+ },
+ {
+  "id": "wa_mount_adams_north_ridge",
+  "name": "North Ridge",
+  "discipline": "mountaineering",
+  "peak": "Mount Adams",
+  "area_id": "wa_mount_adams",
+  "path": "usa.washington.wa_sw_tacoma.wa_southwest_cascades.wa_mount_adams",
+  "trip_plan": {
+   "totalNote": "A 3-day trip for parties without a car shuttle: ~5 hr approach to high camp, an alpine-start summit day on the North Ridge back to camp, then a hike out; with a shuttle car staged at Cold Springs, the summit-day descent can instead go straight down the South Spur, finishing in 2 days.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Killen Creek to High Camp",
+     "objective": "Reach High Camp (~6,900 ft) below the North Ridge",
+     "miles": 4.1,
+     "gainFt": 2300,
+     "note": "Hike the Killen Creek Trail through forest, meadow, and huckleberry fields, crossing East Fork Adams Creek (last reliable water) before climbing to High Camp at about 6,900 ft."
+    },
+    {
+     "n": 2,
+     "title": "Summit via the North Ridge, return to camp",
+     "objective": "Climb the North Ridge to the summit and back to High Camp",
+     "miles": 4,
+     "gainFt": 3300,
+     "note": "Alpine start up steep sections to around 40°, gaining the ridge and the summit plateau, then reversing the route back to High Camp. Parties who stage a shuttle car at Cold Springs instead descend the South Spur directly off the summit, finishing in 2 days."
+    },
+    {
+     "n": 3,
+     "title": "Hike out",
+     "objective": "Return to the Killen Creek trailhead",
+     "miles": 4.1,
+     "gainFt": 0,
+     "note": "Break camp and hike back down the Killen Creek Trail to the trailhead."
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "High Camp (Adams Creek Meadows)",
+    "elev_ft": 6900,
+    "type": "camp",
+    "role": "main",
+    "notes": "The base for the north side, reached by the Killen Creek trail from about 4,600 ft to the PCT and then a boot path up to the meadows below the Adams Glacier. Roughly four miles and 2,300 ft of gain, an easy carry compared with the Lunch Counter, and it puts you directly under the glacier's icefall. There is no shelter …"
+   }
+  ],
+  "campsite_pins": [
+   {
+    "name": "High Camp",
+    "elev": 6866,
+    "distMi": 4.1
+   }
+  ]
+ },
+ {
+  "id": "wa_mount_adams_northwest_ridge",
+  "name": "North Ridge (West Face)",
+  "discipline": "alpine",
+  "peak": "Mount Adams",
+  "area_id": "wa_mount_adams",
+  "path": "usa.washington.wa_sw_tacoma.wa_southwest_cascades.wa_mount_adams",
+  "trip_plan": {
+   "totalNote": "Two-day north-side climb: carry about 5 miles and 2,300 ft to High Camp, then a long summit day of roughly 5,400 ft up the North Ridge and all the way back to the car (about 16 miles and 7,700 ft round trip).",
+   "days": [
+    {
+     "n": 1,
+     "title": "Hike Killen Creek to High Camp",
+     "objective": "Carry camp to High Camp (Adams Creek Meadows)",
+     "miles": 5,
+     "gainFt": 2300,
+     "note": "Killen Creek Trail 113 climbs through lodgepole forest to the PCT just past 3 miles, then a rocky climbers' path with a few scrambly steps leads to the meadows at about 6,900 ft. A 2004 party took about 3 hours trailhead to High Camp; water is snowmelt and the camp is very exposed to wind."
+    },
+    {
+     "n": 2,
+     "title": "Climb the North Ridge and hike out",
+     "objective": "Summit via the North Ridge, then return to the car",
+     "miles": 11,
+     "gainFt": 5400,
+     "note": "Follow the boot track and occasional flags past the rock bivy sites and Lake 7505 onto the ridge; it is mixed snow and loose rock in the middle with broad snowfields on the top third. Gain of about 5,400 ft is derived from High Camp (6,900 ft) to the summit (12,276 ft); a 2004 party reached 9,700 ft in about 3.5 hours …"
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "High Camp (Adams Creek Meadows)",
+    "elev_ft": 6900,
+    "type": "camp",
+    "role": "main",
+    "notes": "The base for the north side, reached by the Killen Creek trail from about 4,600 ft to the PCT and then a boot path up to the meadows below the Adams Glacier. Roughly four miles and 2,300 ft of gain, an easy carry compared with the Lunch Counter, and it puts you directly under the glacier's icefall. There is no shelter …"
+   },
+   {
+    "name": "Adams Glacier moraine bivy",
+    "elev_ft": 7700,
+    "type": "bivy",
+    "role": "route",
+    "notes": "Parties attacking the Adams Glacier sometimes move above High Camp onto the moraines below the icefall to shorten summit day, with usable ground reported roughly between 7,100 and 7,700 ft depending on which rib and how the moraine has changed. Exact spots shift year to year as the glacier retreats and the moraine slum…"
+   }
+  ],
+  "campsite_pins": []
+ },
+ {
+  "id": "wa_mount_adams_south_climb",
+  "name": "South Climb (South Spur)",
+  "discipline": "mountaineering",
+  "peak": "Mount Adams",
+  "area_id": "wa_mount_adams",
+  "path": "usa.washington.wa_sw_tacoma.wa_southwest_cascades.wa_mount_adams",
+  "trip_plan": {
+   "totalNote": "Hike in and camp near Lunch Counter on day one, then make an alpine-start summit push and descend to the car on day two.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Hike in to camp near Lunch Counter",
+     "objective": "Camp near Lunch Counter (~9,000-9,400 ft)",
+     "miles": null,
+     "gainFt": 3600,
+     "note": "Hike in from the South Climb trailhead and camp near Lunch Counter at about 9,000-9,400 ft."
+    },
+    {
+     "n": 2,
+     "title": "Summit push and descend to the car",
+     "objective": "Summit Mount Adams and return to the trailhead",
+     "miles": null,
+     "gainFt": 3080,
+     "note": "Make an alpine start for the summit push, then descend all the way to the car."
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "The Lunch Counter",
+    "elev_ft": 8999,
+    "type": "camp",
+    "role": "main",
+    "notes": "The standard high camp, a broad rubble-and-snow bench up the South Spur above the Crescent Glacier; its height is given anywhere from about 9,000 to 9,400 ft depending which shelf you stop on. Wind is the defining problem — pitch inside an existing rock wall and expect to rebuild part of it. Being above treeline it is …"
+   },
+   {
+    "name": "Morrison Creek drainage",
+    "elev_ft": null,
+    "type": "camp",
+    "role": "route",
+    "notes": "Lower option below the Crescent Glacier, used by parties who would rather not sleep in the crowds and wind at the Lunch Counter. It costs you elevation on summit day. Morrison Creek Campground further down the road is also used by parties arriving late who do not want to drive the rough final miles of FR 8040 in the da…"
+   }
+  ],
+  "campsite_pins": []
+ },
+ {
+  "id": "wa_mount_adams_wilson_glacier_headwall",
+  "name": "Wilson Glacier Headwall",
+  "discipline": "mountaineering",
+  "peak": "Mount Adams",
+  "area_id": "wa_mount_adams",
+  "path": "usa.washington.wa_sw_tacoma.wa_southwest_cascades.wa_mount_adams",
+  "trip_plan": {
+   "totalNote": "A 2-day trip: a long approach round the east side to Avalanche Valley, then a serious, early alpine-start headwall climb (~13 hr) and a descent of the South Climb to the car.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Cold Springs to Avalanche Valley",
+     "objective": "Establish camp in Avalanche Valley (~6,600 ft)",
+     "miles": 9,
+     "gainFt": 3000,
+     "note": "The Round the Mountain Trail east from the South Climb trail, then the long, mostly off-trail traverse north round the eastern flank, across the Klickitat Glacier and Big Muddy Creek, to camp in Avalanche Valley below the Rusk and Wilson glaciers."
+    },
+    {
+     "n": 2,
+     "title": "Climb the headwall, descend to the trailhead",
+     "objective": "Summit via the Wilson Glacier Headwall and descend fully to the car",
+     "miles": 8.9,
+     "gainFt": 5700,
+     "note": "An early alpine start from Avalanche Valley, up the Wilson Glacier to the headwall below Roosevelt Cliff (starts around 10,800 ft) — a steep, avalanche/icefall-fed line considered one of Adams' most serious routes. Top out and descend the South Climb to Cold Springs."
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Avalanche Valley",
+    "elev_ft": 6600,
+    "type": "camp",
+    "role": "main",
+    "notes": "Meadow basin on the east side of the mountain below the Rusk and Wilson glaciers, reached from Bird Creek Meadows or by the Highline Trail. The closest established camp to the Wilson Glacier headwall."
+   },
+   {
+    "name": "Cold Springs / South Climb trailhead",
+    "elev_ft": 5600,
+    "type": "camp",
+    "role": "route",
+    "notes": "Most South Climb parties sleep here the night before, either to acclimatise a little or to get an alpine start without carrying a camp to the Lunch Counter. Facilities are primitive — a vault toilet, no piped water, no developed fee sites. Access is FR 80 to FR 8040 and then FR 8040-500, roughly eight miles of washboar…"
+   }
+  ],
+  "campsite_pins": []
+ }
+]

@@ -17,6 +17,9 @@ import { reportError } from "./errorReport.js";
 // A lazily-loaded section whose file could not be fetched gets one extra sentence. main.jsx
 // has already reloaded once for a stale deploy by the time this shows, so the likely cause is
 // the connection; the wording says so without claiming a cause it has not checked.
+// `compact` is for one CARD inside a screen (Home's dashboard cards, 2026-11-26): the card is drawn in the
+// card's own place, without the outer padding a whole-tab fallback has, and says the rest of THIS SCREEN
+// still works -- true, since each Home card has its own boundary and the tab around them keeps rendering.
 const CHUNK_ERROR = /dynamically imported module|Importing a module script failed/i;
 
 export default class SectionErrorBoundary extends Component {
@@ -38,8 +41,10 @@ export default class SectionErrorBoundary extends Component {
     // A deploy's missing file, mid-reload (lib/chunkReload.js): Try Again cannot help -- React.lazy keeps
     // the failed import -- so it says what happened and offers the reload main.jsx is already doing.
     const updated = swallowedChunk(msg);
+    const compact = !!this.props.compact;
+    const outer = compact ? { display: "flex", justifyContent: "center", boxSizing: "border-box" } : { padding: "28px 16px", display: "flex", justifyContent: "center", boxSizing: "border-box" };
     if (updated) return (
-      <div role="alert" style={{ padding: "28px 16px", display: "flex", justifyContent: "center", boxSizing: "border-box" }}>
+      <div role="alert" style={outer}>
         <div style={{ maxWidth: 420, width: "100%", boxSizing: "border-box", background: C.card, border: "1px solid " + C.border, borderRadius: 14, padding: "22px 18px", textAlign: "center" }}>
           <div style={{ fontSize: 16, fontWeight: 700, color: C.text, marginBottom: 8, lineHeight: 1.3 }}>ClimbMatch was just updated</div>
           <div style={{ fontSize: 13.5, color: C.textSub, lineHeight: 1.55 }}>This part of the app needs the new version. Reloading now; tap Reload if it doesn’t.</div>
@@ -48,12 +53,12 @@ export default class SectionErrorBoundary extends Component {
       </div>
     );
     return (
-      <div role="alert" style={{ padding: "28px 16px", display: "flex", justifyContent: "center", boxSizing: "border-box" }}>
+      <div role="alert" style={outer}>
         <div style={{ maxWidth: 420, width: "100%", boxSizing: "border-box", background: C.card, border: "1px solid " + C.border, borderRadius: 14, padding: "22px 18px", textAlign: "center" }}>
           <div style={{ fontSize: 16, fontWeight: 700, color: C.text, marginBottom: 8, lineHeight: 1.3 }}>Something went wrong loading this section</div>
           <div style={{ fontSize: 13.5, color: C.textSub, lineHeight: 1.55 }}>
             {chunk ? "This part of the app could not be downloaded, which usually means the connection dropped. " : ""}
-            Try again. Anything you were typing here may be lost. The rest of the app still works, so you can pick another tab.
+            {compact ? "Try again. The rest of this screen still works." : "Try again. Anything you were typing here may be lost. The rest of the app still works, so you can pick another tab."}
           </div>
           <button type="button" onClick={this.retry} style={{ marginTop: 16, width: "100%", boxSizing: "border-box", padding: "11px 14px", borderRadius: 10, border: "1px solid " + C.actionSolid, ...SOLID_FILL(C), color: "#fff", fontSize: 14.5, fontWeight: 700, cursor: "pointer" }}>Try Again</button>
         </div>

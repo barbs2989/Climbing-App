@@ -1,9 +1,10 @@
-import { campSites, campReportsOf } from "../../lib/camps.js";
+import { campSites, campReportsOf, campNightPlan, campPrimaryIndex } from "../../lib/camps.js";
 import { C, ROUTE_GAP, shortDate, RSL as SL } from "../../ClimbMatchCore.jsx";
 import EditIconButton from "./EditIconButton.tsx";
 import GapNote from "./GapNote.tsx";
 import OvernightPermit from "./OvernightPermit.tsx";
 import CampSite from "./CampSite.tsx";
+import NightByNight from "./NightByNight.tsx";
 import Capped from "./Capped.tsx";
 import type { CampRow } from "./CampSite.tsx";
 
@@ -32,6 +33,9 @@ export default function CampingPanel({route,onEdit,calc,activity}: CampingPanelP
   const sites=campSites(route);
   const _days=(route&&route.itinerary&&Array.isArray(route.itinerary.days))?route.itinerary.days.length:0;
   const slept=campReportsOf(sites,activity);
+  /* NIGHT BY NIGHT prints each planned camp's reason; a card whose camp is in it does not print it again. */
+  const plan=campNightPlan(sites,_days);
+  const inPlan=new Set<CampRow>();plan.forEach(function(r){if(r.main)inPlan.add(r.main);r.alts.forEach(function(a: CampRow){inPlan.add(a);});});
   /* The camps trip reports name that this list lacks: the climber's answer coming back as a gap to fill. */
   const named=slept.extra.length?<div style={{background:C.surface,border:"1px dashed "+C.amber+"66",borderRadius:12,padding:"11px 13px",marginTop:sites.length?ROUTE_GAP:0,marginBottom:sites.length?0:ROUTE_GAP}}>
     <div style={{fontSize:11.5,fontWeight:800,color:C.amber,letterSpacing:0.6}}>{"NAMED IN TRIP REPORTS · NOT LISTED YET"}</div>
@@ -48,6 +52,7 @@ export default function CampingPanel({route,onEdit,calc,activity}: CampingPanelP
   return <div style={{marginBottom:ROUTE_GAP}}>
     <SL action={onEdit?<EditIconButton onClick={onEdit} title="Edit camping and bivy sites"/>:null} wp="Campsite">{"CAMPING & BIVY · "+sites.length}</SL>
     <OvernightPermit route={route}/>
+    <NightByNight plan={plan} dayCount={_days}/>
     {/* Capped HERE, around the sites only. It used to wrap the whole panel, and the intro (since
         removed) plus the permit panel filled the 400px a capped block shows — so the first thing under "Show more"
         was every actual camp, and the section read as a permit and nothing else. */}
@@ -56,9 +61,13 @@ export default function CampingPanel({route,onEdit,calc,activity}: CampingPanelP
          that slices through it (its Notes cut off, the next camp hidden) leaves the same doubt the
          cap was moved to remove. Everything after it is capped. ONE list, in the order the walk in
          reaches the sites (campRouteOrder, applied by campSites); each says what parties use it for. */
-      const one=function(b: CampRow,i: number){return <CampSite key={i} b={b} i={i} first={i===0} calc={calc} dayCount={_days} slept={slept.by.get(i)} prev={i?sites[i-1]:null}/>;};
-      const rest=sites.slice(1).map(function(b: CampRow,k: number){return one(b,k+1);});
-      return <>{one(sites[0],0)}{rest.length?<Capped>{rest}</Capped>:null}</>;
+      /* The site that opens is the camp most parties sleep at (campPrimaryIndex, owner note 2026-11-26),
+         and every site down to it sits outside the cap, so the open camp is never behind Show more. */
+      const top=Math.max(0,campPrimaryIndex(sites,slept.by));
+      const one=function(b: CampRow,i: number){return <CampSite key={i} b={b} i={i} first={i===top} hideWhy={inPlan.has(b)} calc={calc} dayCount={_days} slept={slept.by.get(i)} prev={i?sites[i-1]:null}/>;};
+      const head=sites.slice(0,top+1).map(function(b: CampRow,k: number){return one(b,k);});
+      const rest=sites.slice(top+1).map(function(b: CampRow,k: number){return one(b,k+top+1);});
+      return <>{head}{rest.length?<Capped>{rest}</Capped>:null}</>;
     })()}
     {named}
   </div>;

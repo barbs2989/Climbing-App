@@ -1,0 +1,364 @@
+{
+ "co_west_ridge_and_hourglass_couloir": {
+  "area": "co_little_bear_peak",
+  "set": {
+   "overview": "The standard route up Little Bear Peak, a 14,041-foot summit in the Sangre de Cristo Range, rated Class 4. From Lake Como a steep, loose gully leads to a notch in the west ridge, a traverse reaches the base of the Hourglass, and a steep rock climb up it gives the summit. Among the most dangerous of the fourteeners because of rockfall and difficulty.",
+   "approach": "Start at the Lake Como road off Colorado 150 toward Great Sand Dunes. Most cars reach about 1.5 miles before it gets rough; 4WD vehicles can go to pull-offs at 8,800 feet. Hike the road to Lake Como at 11,750 feet, continue around the lake into forest, and near 11,900 feet leave the road at a cairn. Cross the stream and follow cairns over a talus pile to the base of the gully near 12,000 feet, where the climb starts and a helmet goes on.",
+   "descent_text": "Descend by reversing the line. Downclimb the Hourglass carefully (a fixed rope may be present but needs checking), work back along the ridge, keeping to its south flank, to the notch near 12,600 feet, then down the loose gully and the cairns to Lake Como and the road.",
+   "hazards": [
+    "Major rockfall in the Hourglass, worse with more climbers; helmet mandatory",
+    "Steep, loose gully below the west ridge notch",
+    "High exposure and route-finding on the Class 4 sections",
+    "Wet or icy rock in the Hourglass may force a line to the side",
+    "Fixed rope, if present, may be in poor condition"
+   ],
+   "dist_km": 11.27
+  },
+  "ledger": [
+   {
+    "field": "dist_km",
+    "value": 11.27,
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=litt6",
+      "retrieved_at": "2026-11-26",
+      "fact": "14 mi round trip from the 2WD trailhead (6,200 ft gain), so 7 mi one way"
+     }
+    ]
+   }
+  ],
+  "review": {
+   "sources": [
+    "https://www.14ers.com/route.php?route=litt6"
+   ],
+   "confidence": "medium",
+   "notes": "Distance is from the 2WD start (matches stored 6200 ft gain); single source. Season skipped."
+  }
+ },
+ "co_huron_peak_northwest_slopes": {
+  "area": "co_huron_peak",
+  "set": {
+   "overview": "Huron's standard trail is a Class 2 hike: forest switchbacks to timberline near 11,900 feet, a big grassy basin, and the saddle toward Browns Peak, then the rocky northern crest to the summit. The trail zigzags up to the north ridge crest at 13,500 feet and works onto the upper northwest face before regaining the ridge. The steepest, most eroded stretch lies between about 13,700 and 13,900 feet.",
+   "approach": "Take U.S. 24 north out of Buena Vista for about 14.5 miles to County Road 390 and turn west there, or turn right from Leadville after 20 miles south. Follow the dirt road about 12 miles to Winfield. A 2WD trailhead sits just past Winfield, while the Lake Ann trailhead, around 10,575 feet, is 2.1 miles farther on a rough 4WD road. The trail enters forest, crosses a stream, and switchbacks to treeline near 11,900 feet, then crosses a high basin to about 12,700 feet below the upper slopes.",
+   "hazards": [
+    "Eroded trail with several parallel treads on the steep section around 13,700 to 13,900 feet",
+    "Loose rock on the upper slopes",
+    "The basin below treeline can be soggy in early summer",
+    "The 4WD road to the upper Lake Ann trailhead needs good clearance"
+   ]
+  },
+  "ledger": [],
+  "review": {
+   "sources": [
+    "https://www.14ers.com/route.php?route=huro1"
+   ],
+   "confidence": "medium",
+   "notes": "Single source. Season and descent skipped: the page gives neither."
+  }
+ },
+ "ny_gothics_beaver_meadow_falls_trail_to_the_range_trail": {
+  "area": "ny_gothics",
+  "set": {
+   "approach": "Park at the Adirondack Mountain Reserve lot in St. Huberts across Route 73 from the Roaring Brook Falls trailhead; a reservation is needed from May 1 to October 31. Walk about half a mile to the reserve gate, then walk Lake Road about 2 miles until the Gothics trail branches off to the right. It crosses a bridge over the Ausable River and reaches the foot of Beaver Meadow Falls, where a ladder climbs the left side. About 2 more miles of steady climbing follow, then a very steep stretch with four short ladders down to the Range Trail junction.",
+   "descent_text": "Retrace the route from the summit: back along the Range Trail ridge to the junction, up and over the ladders, down past Beaver Meadow Falls and out Lake Road to the gate. A loop over Pyramid Peak is possible by going about 200 yards past the summit and turning left.",
+   "hazards": [
+    "Very steep ground and four ladders on the way to the Range Trail junction",
+    "Open summit ledge is exposed to strong wind",
+    "Steep rock slab along the upper ridge; turn back if weather deteriorates"
+   ],
+   "dist_km": 9.17
+  },
+  "ledger": [
+   {
+    "field": "dist_km",
+    "value": 9.17,
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://www.lakeplacid.com/hiking/gothics",
+      "retrieved_at": "2026-11-26",
+      "fact": "11.4 miles round trip from the reserve parking, halved = 5.7 mi = 9.17 km"
+     }
+    ]
+   }
+  ],
+  "review": {
+   "sources": [
+    "https://www.lakeplacid.com/hiking/gothics"
+   ],
+   "confidence": "medium",
+   "notes": "Gain skipped: the page lists 3,700 ft in the stats and 3,600 ft in its summary, and no second source was reachable. Season skipped."
+  }
+ },
+ "ny_trap_dike_summer": {
+  "area": "ny_mt_colden",
+  "set": {
+   "overview": "The Trap Dike is a steep rock gully that rises from the shore of Avalanche Lake to the slides on Mount Colden, with no official trail. The scramble is mostly third and fourth class, with loose rock throughout, and it joins the Irene Slide higher up. It is a serious, committing way up one of the High Peaks and is normally paired with a descent by trail.",
+   "approach": "Start at Adirondak Loj at the end of Loj Road. Hike about 2.3 miles to Marcy Dam, then another 0.8 miles to the beginning of Avalanche Pass. Continue about 2.1 miles through the pass, then follow the herd path around Avalanche Lake to the foot of the dike. The dike and slide together make roughly 1.3 miles of scrambling on the easiest line available.",
+   "descent_text": "The usual way down is the southern option: pass the false summit, drop to Lake Arnold, then take the trail down past Marcy Dam and out to the Loj, about 6 miles from the top. A northern option goes down the back of Colden to Avalanche Lake; it is about a mile longer and steeper, with off-camber bedrock. Descending the dike or slide itself in the dark is a bad idea.",
+   "hazards": [
+    "Loose rock throughout the dike",
+    "Several third and fourth class moves; a helmet is advisable",
+    "The change from the dike onto the slide is the trickiest section",
+    "Steep descent on the Arnold Slide side, and off-camber bedrock on the north descent"
+   ]
+  },
+  "review": {
+   "sources": [
+    "https://www.theoutbound.com/new-york/hiking/hike-mt-colden-via-the-trap-dike",
+    "https://fastestknowntime.com/route/adirondacks-mt-colden-trap-dike-ny"
+   ],
+   "confidence": "medium",
+   "notes": "Gain/distance not in fill. Season skipped: the one page only suggests summer for a sunset summit, not a window. Lake Placid page mentioned an Avalanche Lake trail closure from a slide; its date/status unconfirmed so no closure claim made. Route mileage between sources (11.4 vs 12.5 mi) differs, so no total stated."
+  }
+ },
+ "ny_big_slide_mtn_the_brothers_trail": {
+  "area": "ny_big_slide_mtn",
+  "set": {
+   "overview": "Big Slide is a High Peak near Keene Valley reached by the Brothers, three open rocky bumps that give views before the final ridge. The way is marked and steep in sections, with open rock on the First Brother and large wooden ladders near the top. Many parties do it as an out-and-back from the Garden.",
+   "approach": "Sign in at the register by the Garden lot in Keene Valley, turn right and climb past the Porter Mountain junction; the Little Porter route is closed. After a brook crossing the path climbs steeply to an overlook at 0.8 miles, then reaches the First Brother at 1.5 miles over open rock and the Second Brother at 1.7. The Third Brother comes at about 2.5 miles, then a junction at 3.2 miles where the left branch drops to Johns Brook. Turn right for a very steep section with big ladders to the summit at 3.4 miles.",
+   "descent_text": "The simplest descent is back over the three Brothers to the Garden. A longer alternative is to take the Slide Mountain Brook Trail down to Johns Brook Lodge, then the Phelps Trail out to the Garden.",
+   "hazards": [
+    "Steep open rock on the climb to the First Brother and again at the summit",
+    "Large wooden ladders on the last steep section below the summit",
+    "A junction at 3.2 miles where the wrong branch descends into Johns Brook"
+   ]
+  },
+  "review": {
+   "sources": [
+    "https://www.lakeplacid.com/hiking/big-slide",
+    "https://pureadirondacks.com/blogs/adirondack-hiking/big-slide-mountain"
+   ],
+   "confidence": "medium",
+   "notes": "The two pages differ on junction distances; the first page's numbers used. Season skipped."
+  }
+ },
+ "ny_esther_mountain_herd_path_from_marble_mountain": {
+  "area": "ny_esther_mountain",
+  "set": {
+   "approach": "Take Whiteface Mountain Road (Route 431) toward the Toll Road and go 2.4 miles to the left turn for the Atmospheric Science Research Center road. Go around its one-way loop; the parking and the trail start are on your right; the trail has no DEC sign. The path drops briefly then climbs steeply up Marble Mountain, once a ski slope, with old concrete footings still beside it. At the top keep right at the junction, push through tight evergreen forest, and reach a large cairn where the unofficial herd path leaves to the right toward Lookout Mountain and Esther.",
+   "descent_text": "Retrace the route: from the summit back over Lookout Mountain, down the herd path to the cairn, and over Marble Mountain to the Atmospheric Science Research Center trailhead. Take care on the loose rock of Marble Mountain on the way down.",
+   "hazards": [
+    "Loose rock on Marble Mountain makes footing difficult, especially when dry",
+    "A false summit lies before the true top and is easy to mistake in poor visibility",
+    "The herd path and parts of the approach are unmarked, so navigation skill is needed"
+   ]
+  },
+  "review": {
+   "sources": [
+    "https://www.lakeplacid.com/hiking/esther-mountain",
+    "https://pureadirondacks.com/blogs/adirondack-hiking/esther-mountain"
+   ],
+   "confidence": "medium",
+   "notes": "Distance skipped: one page says 6.3 mi round trip, another 9.4 mi. Season skipped."
+  }
+ },
+ "ny_street_mountain_via_indian_pass_brook": {
+  "area": "ny_street_mountain",
+  "set": {
+   "approach": "Start at Adirondak Loj; parking in the overflow lot where Meadows Lane ends adds about a mile each way. The route follows an unmaintained herd path that traces what is left of the former Nye ski trail, with a crossing of Indian Pass Brook that runs high in wet periods. Where the path forks, Nye's top is under a quarter mile away and Street's is under a mile. Carry a map and compass.",
+   "descent_text": "Return along the same herd path and Nye Ski Trail, crossing Indian Pass Brook again on the way out, then continue to the Loj parking. If you also climbed Nye, drop back to the intersection first.",
+   "hazards": [
+    "Indian Pass Brook has no bridge and can run high in wet weather",
+    "Unmaintained herd path; navigation by map and compass is required"
+   ]
+  },
+  "review": {
+   "sources": [
+    "https://pureadirondacks.com/blogs/adirondack-hiking/street-mountain"
+   ],
+   "confidence": "medium",
+   "notes": "Distance may include the Nye side trip; the page states a single round trip. Season skipped."
+  }
+ },
+ "ny_cascade_mountain_slide": {
+  "area": "ny_cascade_mountain",
+  "set": {
+   "overview": "A roughly 2,000-foot rock slide on Cascade Mountain visible from the highway. A blocky lower section leads to a waterfall over 100 feet tall that is climbed on fourth-class holds, then a few third-class steps give way to a gentler middle. The top is a steep slabby headwall that is easy fifth class if climbed, or avoidable by scrambling left, followed by glades and a thick spruce bushwhack to the summit.",
+   "approach": "Leave the car in the Cascade Lakes day-use lot on Route 73, where the slide can be seen from the road. A short path of under five minutes leads from the lot to the foot of the slide, and the climbing starts right away on the blocky lower section below the waterfall.",
+   "hazards": [
+    "Loose rock on the waterfall section",
+    "Exposure on the fourth-class waterfall and the headwall, where a fall would be serious",
+    "Steep slab headwall at the top that some parties rope up for"
+   ]
+  },
+  "review": {
+   "sources": [
+    "https://mountainproject.com/route/107717464/cascade-mountain-slide",
+    "https://www.lakeplacid.com/hiking/cascade-mountain"
+   ],
+   "confidence": "medium",
+   "notes": "Descent and season not covered on either page, skipped."
+  }
+ },
+ "ca_southeast_face_4": {
+  "area": "ca_clyde_minaret",
+  "set": {
+   "overview": "A big, imposing wall above the lake, first climbed in the early 1960s: thirteen pitches of alpine trad, about 1,500 feet, rated 5.8+. The rock is steep and smooth with squared, angular holds linking broken cracks rather than granite. The line starts up a left-hand gully, traverses right, climbs the face and a shallow dihedral, then finishes through a notch and along the summit ridge.",
+   "descent_text": "Cross class 3 rock toward the Ken-Clyde notch, then downclimb that couloir back to where the route begins. At least one rappel is needed, and parties descending the summit ridge may use two or three depending on rope length. Snow or ice in the couloir changes how it goes.",
+   "hazards": [
+    "More loose rock than is usual on the route",
+    "Route-finding is hard where several lines overlap",
+    "Snow and steep ice in the descent couloir, with snow on the approach early in the season"
+   ]
+  },
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/105809048/southeast-face?print=1"
+   ],
+   "confidence": "medium",
+   "notes": "The 'description' fill is written to the overview column because the brief allows only overview; overview here already holds old text, so this overview replaces it keeping its facts (first climbed early 1960s, squared holds). Gain and distance skipped: only a user comment gave about 8 miles from a different trailhead. Descent rappel count varied (1 to 3), stated loosely."
+  }
+ },
+ "ca_traveler_buttress": {
+  "area": "ca_main_wall_11",
+  "set": {
+   "approach": "Take the climbers' trail up and leftward to the smaller wall that sits under the main ledge, known as Tombstone Ledge. The climb begins there on a jagged crack system immediately to the right of the bolted line Boot Hill. Some parties begin on the second pitch around the corner from Corrugation Corner, though skipping the first pitch is not recommended.",
+   "hazards": [
+    "Ankle-breaking ledge just below the pitch-one crux",
+    "Pitch two offwidth is the route's crux and has a hard reputation",
+    "Exposed arete and ledge on pitch three with only two fixed pins"
+   ]
+  },
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/105812520/traveler-buttress"
+   ],
+   "confidence": "medium",
+   "notes": "A 2026 raptor closure warning exists on the page; not added as a hazard. Season skipped, none stated. The walk-off path destination ('back down to the base') is my inference of where the ridge trail goes; trim if unwanted."
+  }
+ },
+ "co_ice_mountain_northeast_ridge": {
+  "area": "co_ice_mountain",
+  "set": {
+   "overview": "A Class 3 ridge scramble that starts from North Apostle's top and runs the linking crest across to Ice Mountain. The crux is a very narrow, steep stretch of ridge near 13,800 ft, which parties usually avoid by dropping into a steep couloir on the west side, climbing back to the crest, and walking the final easy ground to the top. Expect loose rubble and talus throughout.",
+   "approach": "Start from the Clear Creek trailhead near Winfield, at about 10,880 ft. Four-wheel drive is needed to reach it; a regular car can park a short way past the Clear Creek crossing. This route is normally climbed in sequence after North Apostle, so the walk to the start of the connecting ridge is the North Apostle ascent, and the Ice Mountain climbing proper begins from that summit.",
+   "descent_text": "Come off the summit by the northeast ridge, working over rock and ledges. Avoid reversing the couloir; instead follow a rib that runs parallel to it and rejoin near the original entry point. The more conservative option is to go back to the saddle and drop into the basin beneath Ice Mountain and North Apostle.",
+   "hazards": [
+    "Very narrow, steep ridge crest near 13,800 ft with moderate exposure",
+    "Loose rubble and talus on the ridge and in the couloir, with falling-rock risk",
+    "Steep couloir that may hold snow and call for an ice axe and crampons"
+   ]
+  },
+  "review": {
+   "sources": [
+    "https://www.climb13ers.com/colorado-13ers/ice-mountain",
+    "https://www.14ers.com/peaks/10694/13er-ice-mountain"
+   ],
+   "confidence": "medium",
+   "notes": "Gain and distance skipped: every published figure (8.4 mi/3,820 ft; 9 mi/3,500 ft) is for the combined outing with North Apostle. Season skipped: nothing stated as a window."
+  }
+ },
+ "co_fletcher_mountain_southeast_ridge": {
+  "area": "co_fletcher_mountain",
+  "set": {
+   "overview": "A short Class 2 climb to the 13,943 ft summit from the Blue Lakes road: a trail beyond the dam up into the high basin that lies west of Quandary Peak, a steep gully, a climb over slabs out of the basin, then rubbly slopes along the southeast ridge. The route often holds snow into early summer, and the east side of the ridge drops away seriously.",
+   "approach": "Drive south from Breckenridge on Colorado 9, then turn west onto the Blue Lakes road and climb to the gate near 1.4 miles; if closed, park and walk the remaining stretch of about three quarters of a mile to the dam. Pass the dam, follow the lakeshore trail, then a cairned trail up the steep slope on the right and west on a larger path. Near 12,100 ft turn northwest into the basin.",
+   "hazards": [
+    "Serious drop-offs on the east side of the southeast ridge",
+    "Loose rock in the rust-stained gully near 12,500 ft and on the steeper ridge above 13,600 ft",
+    "Snow lingering on the slabs and ridge into early summer"
+   ],
+   "gain_ft": 2250,
+   "dist_km": 3.42
+  },
+  "ledger": [
+   {
+    "field": "gain_ft",
+    "value": 2250,
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=flet1",
+      "retrieved_at": "2026-11-26",
+      "fact": "2,250 ft gain from 11,700 ft trailhead"
+     }
+    ]
+   },
+   {
+    "field": "dist_km",
+    "value": 3.42,
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=flet1",
+      "retrieved_at": "2026-11-26",
+      "fact": "round trip 4.25 mi; one way 2.125 mi = 3.42 km"
+     }
+    ]
+   }
+  ],
+  "review": {
+   "sources": [
+    "https://www.14ers.com/route.php?route=flet1",
+    "https://www.climb13ers.com/colorado-13ers/fletcher-mountain"
+   ],
+   "confidence": "medium",
+   "notes": "A second page gives 5 mi/2,250 ft but for the SW ridge, so not counted as agreement. Descent and season not stated for this line; skipped."
+  }
+ },
+ "ca_the_stemwinder": {
+  "area": "ca_thor_peak",
+  "set": {
+   "overview": "The Stemwinder is a 1936 route of about six pitches and roughly 1,000 feet up the right side of Thor Peak's big south face above Whitney Portal. It is easy fifth class, rated 5.4, with a short awkward chimney near the start, steep chimneys mixed with class 3 and 4 scrambling, an exposed slab pitch, and a final traverse before talus leads to the summit. A light alpine rack is enough.",
+   "approach": "Follow the main Whitney Trail from the Portal and leave it near Bighorn Park, short of the Lone Pine Lake signs, and head cross-country uphill and rightward through forest and slabs to the base of the south face; allow about an hour and a half to two hours. A 10-foot class 3 to 4 chimney leads to the first pitch. Access to the upper parts of the Lone Pine Creek watershed is limited from May to October, so check current Whitney Zone rules.",
+   "descent_text": "The line used for the descent goes down the northeast slope into the North Fork of Lone Pine Creek, carrying all gear since the climb does not return to the base. A shorter way off the south face may exist but is not documented.",
+   "hazards": [
+    "Hard first move into the crux chimney that feels harder than the grade",
+    "Poor rock in the steep fourth-class chimney",
+    "Very exposed slab moves and an exposed traverse near the top",
+    "Little protection beyond a few fixed pitons, so a light rack and careful footwork matter"
+   ]
+  },
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/109112630/the-stemwinder",
+    "https://cpinthebackcountry.blogspot.com/2008/05/thor-peaks-stemwinder.html"
+   ],
+   "confidence": "medium",
+   "notes": "Gain and distance SKIPPED: only a trip blog states 7 mi / 4,000 ft with no clear scope. Season SKIPPED. Descent is from one report."
+  }
+ },
+ "nv_mount_rose_mount_rose_trail": {
+  "area": "nv_mount_rose",
+  "set": {
+   "overview": "Mount Rose is the high point of the range above Reno and Lake Tahoe, at 10,776 feet. The standard trail is a walk, not a scramble: it leaves the highway pass, passes the north side of Tamarack Peak and a waterfall, crosses a valley to a saddle, and makes an easy last push to the top. Volcanic rock pillars line parts of the route, and the summit looks over Lake Tahoe.",
+   "approach": "Start at the Mount Rose Summit parking area on Nevada State Route 431, the Mount Rose Highway, at about 8,900 feet. The lot is large and has restrooms; the trail begins just behind them. Take the right-hand branch, which is the most direct way to the summit, and follow it past Tamarack Peak and the waterfall to the saddle below the top.",
+   "descent_text": "Go back down the same trail to the parking area. For a slightly longer and more scenic return, take the Tahoe Rim Trail around Tamarack Peak's southern flank, which adds about half a mile.",
+   "season": "Jun-Nov"
+  },
+  "review": {
+   "sources": [
+    "https://www.trailspotting.com/2021/07/mount-rose-lake-tahoe.html"
+   ],
+   "confidence": "medium",
+   "notes": "Single page read. Hazards skipped: no page I could open stated one for this route (SummitPost returned 403). The window is early summer through November per that page."
+  }
+ },
+ "ca_mount_elwell_mt_elwell_trail": {
+  "area": "ca_mount_elwell",
+  "set": {
+   "overview": "Mount Elwell rises to 7,818 feet above the Lakes Basin in the northern Sierra and is a trail hike with a short scramble at the end. The route climbs through forest, with views of Long Lake on one approach and Maiden Lake on another, and finishes over craggy boulders to a summit with a former lookout site and a sign-in scroll. Views reach Mount Shasta, Lassen and the Sierra Buttes lookout.",
+   "approach": "Two ways in. The shorter starts from the trailhead at the end of Lakes Basin Campground: walk about three quarters of a mile, turn right on the Long Lake Connector, and join the Long Lake Trail toward the Elwell trail. The longer start is near Gray Eagle Lodge, on the Smith Lake Trail, and climbs the Elwell trail about 3 miles through sugar pine forest. Both are in the Lakes Basin Recreation Area near Clio.",
+   "descent_text": "The shorter approach is retraced the way you came. After the longer route, drop down the Long Lake Trail to return to the car as a loop. Take the final boulders slowly on the way down.",
+   "season": "Jun-Oct",
+   "hazards": [
+    "Final stretch is a scramble over craggy boulders; cairns mark the route on the south side",
+    "Hard to follow if you wander off the cairns, so go slowly and use caution"
+   ]
+  },
+  "review": {
+   "sources": [
+    "https://weekendsherpa.com/stories/hike-to-the-summit-of-mount-elwell-in-the-lakes-basin-sierra-nevada",
+    "https://visitplumas.org/get-outside/hiking/mt-elwell-and-long-lake-loop/"
+   ],
+   "confidence": "medium",
+   "notes": "Gain and distance skipped: sources give 7-8 miles round trip and nearly 2,000 ft for the longer loop only, not a single trailhead-to-summit line, and the county page contradicts itself (6.5 vs 8 mi). Season Jun-Oct is from the county page only. Second hazard line is mild; trim if reviewer prefers."
+  }
+ }
+}

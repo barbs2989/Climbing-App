@@ -1,0 +1,1134 @@
+[
+ {
+  "id": "wa_mount_shuksan_fisher_chimneys",
+  "name": "Fisher Chimneys",
+  "discipline": "mountaineering",
+  "peak": "Mount Shuksan Routes",
+  "area_id": "wa_mount_shuksan_climbs",
+  "path": "usa.washington.wa_northwest.wa_shuksan_baker_neighbors.wa_mount_shuksan.wa_mount_shuksan_climbs",
+  "trip_plan": {
+   "totalNote": "A 3-day, 2-night trip covering roughly 15-16 miles round trip and about 5,100 ft of gain to the summit; strong parties often fold days 2-3 together for a 2-day version with a single camp.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Hike in to Lake Ann",
+     "objective": "Reach Lake Ann camp",
+     "miles": 4,
+     "gainFt": 800,
+     "note": "A short, scenic hike from the Lake Ann trailhead, down and back up over the saddle to a camp near the lake (~4,800 ft), leaving a full second day for the chimneys."
+    },
+    {
+     "n": 2,
+     "title": "Move to high camp",
+     "objective": "Climb the Fisher Chimneys to high camp near Winnie's Slide",
+     "miles": 2.5,
+     "gainFt": 1900,
+     "note": "Ascend roughly 1,000 ft of class 3-4 scrambling through the chimneys (watch for rockfall from parties above), then continue up snow to a high camp at the top of the chimneys near the White Salmon Glacier, below Winnie's Slide (~6,700 ft)."
+    },
+    {
+     "n": 3,
+     "title": "Summit day and hike all the way out",
+     "objective": "Climb Winnie's Slide, the Upper Curtis Glacier and Hell's Highway to the summit, then descend to the car",
+     "miles": 9.5,
+     "gainFt": 2400,
+     "note": "An early alpine start up the 40-degree Winnie's Slide onto the Upper Curtis Glacier and across Hell's Highway to the summit pyramid, then a full reversal with rappels back through the chimneys to the trailhead - a long, full-value day."
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Lake Ann",
+    "elev_ft": 4700,
+    "type": null,
+    "role": "main",
+    "notes": "A comfortable planned camp about four miles in, reached by a short spur off the climbers' path at the saddle. It is the easy, low-commitment option and the one most parties use, but it leaves the whole talus traverse and the 4th-class chimneys for summit day, and a returning party has to re-gain roughly a thousand feet…"
+   },
+   {
+    "name": "Rock rib above Winnie's Slide",
+    "elev_ft": 7200,
+    "type": null,
+    "role": "main",
+    "notes": "The highest and best-positioned planned camp, on dry ground on a narrow spur bordering the Upper Curtis Glacier, with the summit day cut down to the glaciers and the summit pyramid. It is also the most committing: it is above the steep snow and ice of Winnie's Slide, so a party that has to bail in a storm must down-cli…"
+   },
+   {
+    "name": "Top of the Chimneys rock outcrop",
+    "elev_ft": 6700,
+    "type": null,
+    "role": "route",
+    "notes": "A planned bivy for parties splitting the route, sitting on dry ground just past the top of the chimney system near the edge of the upper glacier. Everything you sleep in has to be carried up a thousand feet of 4th-class scrambling to get here, and going down in bad weather means reversing that same braided ledge system…"
+   }
+  ],
+  "campsite_pins": [
+   {
+    "name": "Lake Ann",
+    "elev": 4700,
+    "distMi": null
+   },
+   {
+    "name": "White Salmon Glacier Lower Bivouac",
+    "elev": 6700,
+    "distMi": 5.5
+   }
+  ]
+ },
+ {
+  "id": "wa_mount_shuksan_hanging_glacier",
+  "name": "Hanging Glacier",
+  "discipline": "alpine",
+  "peak": "Mount Shuksan Routes",
+  "area_id": "wa_mount_shuksan_climbs",
+  "path": "usa.washington.wa_northwest.wa_shuksan_baker_neighbors.wa_mount_shuksan.wa_mount_shuksan_climbs",
+  "trip_plan": {
+   "totalNote": "A 3-day, 2-night trip similar in shape to the North Face - roughly 12-13 miles round trip with about 6,000 ft of total gain - but on steeper, more avalanche-exposed terrain on Shuksan's north side.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Approach to high camp",
+     "objective": "Reach high camp near Winnie's Slide / the Upper Curtis Glacier",
+     "miles": 4.5,
+     "gainFt": 3000,
+     "note": "The alternate Lake Ann / Fisher Chimneys approach, staging at a high camp near Winnie's Slide (~7,300 ft) on the White Salmon Glacier side of the mountain."
+    },
+    {
+     "n": 2,
+     "title": "Summit day - climb the Hanging Glacier",
+     "objective": "Descend into the White Salmon cirque, climb the Hanging Glacier/NW Rib to the summit, return to camp",
+     "miles": 4,
+     "gainFt": 3000,
+     "note": "Down-climb the White Salmon Glacier to the base of the NW Rib, then climb steep snow and ice steps up to about 65 degrees, and a short mixed rock band up onto the Hanging Glacier and the summit. Large avalanches off the active glacier are a real hazard - move fast through the exposed sections. Descend back to camp via …"
+    },
+    {
+     "n": 3,
+     "title": "Hike out",
+     "objective": "Break camp and hike back to the trailhead",
+     "miles": 4,
+     "gainFt": 0,
+     "note": "Reverse the Fisher Chimneys/Lake Ann approach back to the car."
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "North Face bivy, where the rib meets the face",
+    "elev_ft": 5500,
+    "type": "bivy",
+    "role": "main",
+    "notes": "North Face parties share the early approach with the White Salmon Glacier route through a brushy section before the two diverge, and the usual bivy sits near 5,500 ft where the rib abuts the face, above Price Lake. It is a working bivy chosen for position on a serious route rather than for comfort, and the point of it …"
+   },
+   {
+    "name": "Fisher Chimneys camps, White Salmon and above Winnie's Slide",
+    "elev_ft": 6800,
+    "type": "bivy",
+    "role": "route",
+    "notes": "Camping above the chimneys is what makes Fisher Chimneys a comfortable two- or three-day climb rather than a very long push, and it puts the party above the loose, route-finding-heavy section for summit day. The lower site near the top of the White Salmon is the more common choice and the more scenic; the higher one ab…"
+   }
+  ],
+  "campsite_pins": []
+ },
+ {
+  "id": "wa_mount_shuksan_north_face",
+  "name": "North Face",
+  "discipline": "alpine",
+  "peak": "Mount Shuksan Routes",
+  "area_id": "wa_mount_shuksan_climbs",
+  "path": "usa.washington.wa_northwest.wa_shuksan_baker_neighbors.wa_mount_shuksan.wa_mount_shuksan_climbs",
+  "trip_plan": {
+   "totalNote": "A 3-day, 2-night trip: roughly 13 miles round trip with about 5,000-5,500 ft of total gain, including one of the biggest sustained snow/ice faces in the Cascades. Elite parties have done it car-to-car in under 14 hours in a single push, but that is not the standard approach.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Approach to high camp",
+     "objective": "Reach the bivy at the foot of the face",
+     "miles": 5,
+     "gainFt": 2600,
+     "note": "From the old White Salmon Lodge gate, walk the old road to the clearcut, then follow the White Salmon Creek valley (or contour above it when snow is thin) up to the bivy on the shoulder at about 5,500 ft above Price Lake, at the foot of the face."
+    },
+    {
+     "n": 2,
+     "title": "Summit day - climb the North Face",
+     "objective": "Descend to the base of the face, climb it, and return to camp",
+     "miles": 4,
+     "gainFt": 2600,
+     "note": "From the bivy, cross the bergschrund at the foot of the face, then climb roughly 2,500-2,600 ft of sustained 45-50 degree snow and ice (with a short mixed step through a rock band) to the summit, descending back to camp by Hell's Highway, the Upper Curtis Glacier, Winnie's Slide and the White Salmon Glacier. A 10-12 ho…"
+    },
+    {
+     "n": 3,
+     "title": "Hike out",
+     "objective": "Break camp and hike back to the trailhead",
+     "miles": 4,
+     "gainFt": 0,
+     "note": "Reverse the White Salmon Creek approach back to the car."
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "North Face bivy, where the rib meets the face",
+    "elev_ft": 5500,
+    "type": "bivy",
+    "role": "main",
+    "notes": "North Face parties share the early approach with the White Salmon Glacier route through a brushy section before the two diverge, and the usual bivy sits near 5,500 ft where the rib abuts the face, above Price Lake. It is a working bivy chosen for position on a serious route rather than for comfort, and the point of it …"
+   },
+   {
+    "name": "Fisher Chimneys camps, White Salmon and above Winnie's Slide",
+    "elev_ft": 6800,
+    "type": "bivy",
+    "role": "route",
+    "notes": "Camping above the chimneys is what makes Fisher Chimneys a comfortable two- or three-day climb rather than a very long push, and it puts the party above the loose, route-finding-heavy section for summit day. The lower site near the top of the White Salmon is the more common choice and the more scenic; the higher one ab…"
+   }
+  ],
+  "campsite_pins": [
+   {
+    "name": "North Face Base Camp",
+    "elev": 5500,
+    "distMi": 5
+   }
+  ]
+ },
+ {
+  "id": "wa_mount_shuksan_price_glacier",
+  "name": "Price Glacier",
+  "discipline": "alpine",
+  "peak": "Mount Shuksan Routes",
+  "area_id": "wa_mount_shuksan_climbs",
+  "path": "usa.washington.wa_northwest.wa_shuksan_baker_neighbors.wa_mount_shuksan.wa_mount_shuksan_climbs",
+  "trip_plan": {
+   "totalNote": "A serious 3-day traverse: roughly 15 miles one-way with about 6,000 ft of gain, requiring a car shuttle since the standard descent (Fisher Chimneys to Lake Ann, occasionally the White Salmon Glacier) comes down a completely different trailhead than the Nooksack Cirque approach.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Approach via the Nooksack Cirque",
+     "objective": "Reach camp below the Price Glacier",
+     "miles": 5.5,
+     "gainFt": 2200,
+     "note": "Follow the Nooksack Cirque trail (a log crossing of the river, then brushy old-roadbed and riverbank travel), then climb steep heather along the ridge left of Price Lake to flat granite slabs below the glacier with running water. A long, rough approach - most parties give it most of a day."
+    },
+    {
+     "n": 2,
+     "title": "Summit day via the Price Glacier",
+     "objective": "Climb the Price Glacier to the summit, begin descent via the Fisher Chimneys side",
+     "miles": 4.5,
+     "gainFt": 3800,
+     "note": "An early start up steep snow/ice through the glacier's crevasse bands and a short mixed rock step, topping out near the summit. Descend over the top by the Fisher Chimneys route (rappels off the summit pyramid, then Hell's Highway, the Upper Curtis Glacier and Winnie's Slide) rather than reversing the Price - the stand…"
+    },
+    {
+     "n": 3,
+     "title": "Hike out via the Lake Ann trailhead",
+     "objective": "Finish the descent and exit at the shuttle car",
+     "miles": 5.5,
+     "gainFt": 0,
+     "note": "Continue down the Fisher Chimneys and the Lake Ann trail to the Lake Ann trailhead - a different trailhead from the Nooksack Cirque start, so a shuttle or second vehicle is necessary."
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Price Glacier Base Camp",
+    "elev_ft": null,
+    "type": "camp",
+    "role": "main",
+    "notes": ""
+   },
+   {
+    "name": "Fisher Chimneys camps, White Salmon and above Winnie's Slide",
+    "elev_ft": 6800,
+    "type": "bivy",
+    "role": "route",
+    "notes": "Camping above the chimneys is what makes Fisher Chimneys a comfortable two- or three-day climb rather than a very long push, and it puts the party above the loose, route-finding-heavy section for summit day. The lower site near the top of the White Salmon is the more common choice and the more scenic; the higher one ab…"
+   }
+  ],
+  "campsite_pins": [
+   {
+    "name": "Price Glacier Base Camp",
+    "elev": 6500,
+    "distMi": 4
+   }
+  ]
+ },
+ {
+  "id": "wa_mount_shuksan_sulphide_glacier",
+  "name": "Sulphide Glacier",
+  "discipline": "mountaineering",
+  "peak": "Mount Shuksan Routes",
+  "area_id": "wa_mount_shuksan_climbs",
+  "path": "usa.washington.wa_northwest.wa_shuksan_baker_neighbors.wa_mount_shuksan.wa_mount_shuksan_climbs",
+  "trip_plan": {
+   "totalNote": "A 3-day, 2-night standard trip: about 16 miles round trip and roughly 6,600 ft of total gain; fit independent parties sometimes compress it into a strong 2-day (hike-in-then-summit-and-out) trip instead.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Approach to high camp",
+     "objective": "Reach high camp on the Sulphide Glacier",
+     "miles": 5,
+     "gainFt": 3700,
+     "note": "A well-graded trail climbs through old growth and subalpine meadows onto Shannon Ridge, then across talus and heather to a flat camp near the toe of the glacier. Most parties budget 5-6 hours."
+    },
+    {
+     "n": 2,
+     "title": "Summit day",
+     "objective": "Climb the Sulphide Glacier and summit pyramid, return to camp",
+     "miles": 6,
+     "gainFt": 2900,
+     "note": "Rope up before dawn and cross the glacier's crevasses to the base of the summit pyramid, then scramble and rappel to the true summit. Reverse the whole thing back to camp - a long but non-technical day for a roped/glacier-travel party."
+    },
+    {
+     "n": 3,
+     "title": "Hike out",
+     "objective": "Break camp and hike back to the trailhead",
+     "miles": 5,
+     "gainFt": 0,
+     "note": "Retrace Shannon Ridge back down to the car; a straightforward 4-hour descent."
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Lower bivy site",
+    "elev_ft": 6201,
+    "type": "bivy",
+    "role": "main",
+    "notes": "The site most parties use, at roughly 6,100-6,200 ft where the ridge broadens toward the glacier toe. It has a composting toilet, it melts out earlier than the upper site, and it is far enough along the traverse that summit day is reasonable."
+   },
+   {
+    "name": "The Notch",
+    "elev_ft": 5499,
+    "type": "bivy",
+    "role": "route",
+    "notes": "The first place worth stopping, where the ridge crest gives out against the mountainside around 5,400-5,500 ft. It is the low-commitment choice and leaves a long summit day: everything above, including the glacier and the summit pyramid, is still ahead of you."
+   },
+   {
+    "name": "Upper bivy site",
+    "elev_ft": 6401,
+    "type": "bivy",
+    "role": "route",
+    "notes": "About a thousand feet above the col at the edge of the Sulphide Glacier, roughly 6,400 ft. It shortens summit day the most and holds snow far later, so plan on camping on snow and on a colder, windier night than the lower site."
+   }
+  ],
+  "campsite_pins": [
+   {
+    "name": "Shannon Ridge / Sulphide Glacier Camp",
+    "elev": 6193,
+    "distMi": 4
+   }
+  ]
+ },
+ {
+  "id": "wa_southeast_ridge_se_corner",
+  "name": "Southeast Ridge (SE Corner)",
+  "discipline": "alpine",
+  "peak": "Mount Shuksan Routes",
+  "area_id": "wa_mount_shuksan_climbs",
+  "path": "usa.washington.wa_northwest.wa_shuksan_baker_neighbors.wa_mount_shuksan.wa_mount_shuksan_climbs",
+  "trip_plan": {
+   "totalNote": "Two to three days: approach to a high bivy, climb the Southeast Ridge from the Pyramid notch, and descend to the trailhead.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Approach to high camp",
+     "objective": "Reach a bivy below the Sulphide Glacier",
+     "miles": null,
+     "gainFt": 3900,
+     "note": "Approach to a bivy near Winnie's Slide or at the Sulphide high camp."
+    },
+    {
+     "n": 2,
+     "title": "Climb the Southeast Ridge",
+     "objective": "Summit Mount Shuksan",
+     "miles": null,
+     "gainFt": 2730,
+     "note": "Make an alpine start, cross the glaciers to the Pyramid notch, and climb the Southeast Ridge to the summit. Rappel back to the notch and return to camp."
+    },
+    {
+     "n": 3,
+     "title": "Descend to the trailhead",
+     "objective": "Hike out to the trailhead",
+     "miles": null,
+     "gainFt": 0,
+     "note": "Descend from camp to the trailhead."
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Sulphide Glacier camp",
+    "elev_ft": 6400,
+    "type": "camp",
+    "role": "main",
+    "notes": "The standard high camp for the most straightforward route on Shuksan and the best launching point for the summit pyramid. The plateau is flat, spacious and well positioned, and a privy has been maintained on the ridgeline here in recent seasons, which is unusual at this elevation. The permit is the binding constraint o…"
+   },
+   {
+    "name": "Shannon Ridge crest camps, below the park boundary",
+    "elev_ft": 4600,
+    "type": "camp",
+    "role": "route",
+    "notes": "The fallback for parties who could not get a North Cascades backcountry permit, and honestly worse than the camp above — lower, drier, and leaving a much longer summit day. The trade is administrative rather than scenic, so decide before you drive out whether you would rather chase a walk-up permit at a ranger station.…"
+   },
+   {
+    "name": "Sulphide Glacier high camp",
+    "elev_ft": 7500,
+    "type": "bivy",
+    "role": "route",
+    "notes": "Some parties carry above the main plateau to shorten summit day to the pyramid, camping on the glacier around 7,500 ft. It is fully exposed, on snow, and above any water, so it only makes sense for a party comfortable with a glacier bivy and a settled forecast. The gain over the lower camp is modest for most people, wh…"
+   }
+  ],
+  "campsite_pins": [
+   {
+    "name": "Sulphide Glacier camp",
+    "elev": 6400,
+    "distMi": 4.75
+   }
+  ]
+ },
+ {
+  "id": "wa_mount_watson_scramble",
+  "name": "South/East Scramble",
+  "discipline": "scrambling",
+  "peak": "Mount Watson",
+  "area_id": "wa_mount_watson",
+  "path": "usa.washington.wa_northwest.wa_shuksan_baker_neighbors.wa_mount_watson",
+  "trip_plan": {
+   "totalNote": "A moderate 2-day trip: backpack roughly 4.5-5 miles to a high camp near 5,400-5,600 ft below Mount Watson, then scramble to the 6,221 ft summit via the east gully and hike all the way out the next day (~9-10 mi round trip, ~3,500-4,000 ft total gain); fit, fast parties compress the whole thing into a single long car-to-car day (~9-10 hrs).",
+   "days": [
+    {
+     "n": 1,
+     "title": "Backpack to high camp below Mount Watson",
+     "objective": "Reach a camp around 5,400-5,600 ft on the open slopes below Watson's north side",
+     "miles": 10.9,
+     "gainFt": 2900,
+     "note": "Walk or bike the closed part of Anderson-Watson Road from the washout to the Watson Lakes trailhead first. From the Anderson-Watson Lakes trailhead (~4,300 ft), Trail 611 climbs steeply (~2.5 mi to a ~4,800 ft saddle above Watson Lakes) before the route contours south past Watson/Anderson Lakes and up open heather, roc…"
+    },
+    {
+     "n": 2,
+     "title": "Summit push via the east gully, then hike out",
+     "objective": "Tag the summit and return to the trailhead same day",
+     "miles": 12.4,
+     "gainFt": 900,
+     "note": "Leave camp early for the short push to the ~5,900 ft col between Watson's East Peak and the true summit, then traverse the basin to the gully below the summit block. Parties report the west gully often holds a nasty moat/snow bridge later in the season, so most now take the more stable east gully; the final airy Class …"
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Watson Lakes designated camps",
+    "elev_ft": 4400,
+    "type": "camp",
+    "role": "main",
+    "notes": "The substance of this zone and the best camping anywhere near these three peaks. It is a genuinely short walk — about two miles from the road end, through forest to a meadow junction, over a saddle at around 4,700 ft and down to the pair of lakes at 4,400 ft — which makes it the rare alpine camp in the North Cascades t…"
+   },
+   {
+    "name": "Camp on slopes below Mount Watson (~5,400 ft)",
+    "elev_ft": null,
+    "type": "camp",
+    "role": "main",
+    "notes": ""
+   },
+   {
+    "name": "Anderson Creek road end, Watson Lakes trailhead",
+    "elev_ft": 4200,
+    "type": "camp",
+    "role": "route",
+    "notes": "This is the road rather than a campsite, because on this side of the massif the road decides what the trip is. It is a rare thing in this range — a driveable gravel road that delivers you to 4,200 ft, within two miles of an alpine lake basin — and it is why the Anderson and Watson Lakes are the substance of this zone r…"
+   },
+   {
+    "name": "Lower Anderson Lake",
+    "elev_ft": 4500,
+    "type": "camp",
+    "role": "route",
+    "notes": "Half a mile down from the second trail junction and a hundred feet above the Watson Lakes, and the more useful of the two basins for anyone climbing rather than hiking, because Bacon Peak's approach runs directly above it. From the saddle about 1.4 miles up the Watson Lakes trail a boot path climbs south onto the ridge…"
+   }
+  ],
+  "campsite_pins": [
+   {
+    "name": "Camp on slopes below Mount Watson (~5,400 ft)",
+    "elev": 5400,
+    "distMi": 3.8
+   },
+   {
+    "name": "Lower Anderson Lake",
+    "elev": 4500,
+    "distMi": 1.6
+   }
+  ]
+ },
+ {
+  "id": "wa_nooksack_tower_beckey_route",
+  "name": "North Face (Beckey-Schmidtke Route)",
+  "discipline": "alpine",
+  "peak": "Nooksack Tower",
+  "area_id": "wa_nooksack_tower",
+  "path": "usa.washington.wa_northwest.wa_shuksan_baker_neighbors.wa_nooksack_tower",
+  "trip_plan": {
+   "totalNote": "A 3-day trip: a steep, brushy approach to a 5,900 ft high camp, an extremely long (15-17 hr) round-trip summit day up the ice couloir and rock ridge with roughly ten rappels back down, then a hike out; a few very strong parties compress it into a two-day weekend but most build in the extra day of margin given how long the descent takes.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Approach to high camp",
+     "objective": "Reach the 5,900 ft bivy camp on the ridge above Price Lake",
+     "miles": 5,
+     "gainFt": 3900,
+     "note": "From the climbers' boot path off the Mt Baker Highway, hike Ruth Creek/Price Lake trail through steep forest, cross the Nooksack's North Fork on a large log, then grind up moraine above Price Lake to a ridge goat-path that leads to a flat rock bivy site (room for 2-3 bivies) overlooking the Price and East Nooksack Glac…"
+    },
+    {
+     "n": 2,
+     "title": "Summit push via the north face couloir",
+     "objective": "Climb the north-face ice couloir and the class 4-5 north arete to the summit, then rappel back to camp",
+     "miles": 2.5,
+     "gainFt": 2400,
+     "note": "This is the crux day and it is very long: an 800 ft, 50-60 degree (one 70 degree step) snow/ice couloir off the bergschrund leads into loose rock, then roughly 10 pitches of exposed class 4-5 climbing along the arete to the summit. The descent reverses the route with about ten 60m rappels plus downclimbing, often finis…"
+    },
+    {
+     "n": 3,
+     "title": "Hike out",
+     "objective": "Descend to the trailhead",
+     "miles": 5,
+     "gainFt": 0,
+     "note": "Reverse the approach: goat-path off the ridge, down the moraine past Price Lake, steep forest, and the log crossing back to the trailhead. Legs are tired and the log crossing/brush demand care on tired legs, but it's straightforward compared to the day before."
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Shoulder camp above Price Lake, between the Price and East Nooksack glaciers",
+    "elev_ft": 5900,
+    "type": "bivy",
+    "role": "main",
+    "notes": "This is the camp for Nooksack Tower and the only established position on the mountain, used by both the classic line on the north side and the much harder south face. It sits on the shoulder dividing the Price Glacier from the Nooksack Cirque, reached by leaving Price Lake, following the boot path onto the moraine as i…"
+   },
+   {
+    "name": "Nooksack Cirque river bottom, below the tower",
+    "elev_ft": 3000,
+    "type": "bivy",
+    "role": "route",
+    "notes": "Say this plainly: there is no real camping in the Nooksack Cirque, and any party heading for Nooksack Tower should expect to improvise a night on gravel or in the trees rather than arrive at a site. The way in is a genuine bushwhack. The spur road dead-ends at Ruth Creek with no bridge, so the trip begins by wading or …"
+   }
+  ],
+  "campsite_pins": [
+   {
+    "name": "Moraine bivy at ~5,900 ft",
+    "elev": 5920,
+    "distMi": null
+   }
+  ]
+ },
+ {
+  "id": "wa_ruth_icy_traverse",
+  "name": "Ruth-Icy Traverse",
+  "discipline": "mountaineering",
+  "peak": "Ruth Mountain",
+  "area_id": "wa_ruth_mountain",
+  "path": "usa.washington.wa_northwest.wa_shuksan_baker_neighbors.wa_ruth_mountain",
+  "trip_plan": {
+   "totalNote": "A 2-day, ~16.5-mile trip with roughly 8,000 cumulative ft of gain (and a matching ~8,000 ft of loss): most parties camp at the notch northwest of Ruth's summit and make one long day tagging both summits before descending fully to the trailhead.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Approach to high camp",
+     "objective": "Reach high camp at the notch northwest of Ruth's summit",
+     "miles": 7,
+     "gainFt": 3500,
+     "note": "Hike the Hannegan Pass Trail (4 miles) to the pass, then leave trail to climb open heather and snow slopes of the Ruth Arm to a high camp around 6,600 ft at the notch northwest of Ruth's summit. Mountaineers guidance is to camp on snow where possible to minimize impact."
+    },
+    {
+     "n": 2,
+     "title": "Traverse Ruth Mountain to Icy Peak and out",
+     "objective": "Climb Ruth Mountain, traverse to and summit Icy Peak, then descend fully to the trailhead",
+     "miles": 9.5,
+     "gainFt": 4500,
+     "note": "Break camp and climb the short remaining glacier slope to Ruth's summit, then follow the connecting ridge to Icy Peak, including one short pitch of low-5th/exposed scrambling near its summit block. After tagging Icy, reverse the traverse back over the col and descend all the way out to the trailhead — a long day. Very …"
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Ruth Arm ridge camps below the Ruth Glacier",
+    "elev_ft": 5900,
+    "type": "camp",
+    "role": "main",
+    "notes": "The workhorse high camp for Ruth Mountain and the launching point for the traverse on to Icy Peak, reached by leaving the trail at the pass and following a boot path east then south past a pond, working around cliff bands and along the crest until the ridge runs out at the toe of the Ruth Glacier. Getting here is usual…"
+   },
+   {
+    "name": "Ruth Mountain summit camp",
+    "elev_ft": 7100,
+    "type": "bivy",
+    "role": "main",
+    "notes": "Camping on the summit of Ruth is a genuinely popular thing to do rather than an oddity, because the top is a broad snow dome with an extraordinary outlook over Shuksan, Baker, the Pickets and the whole Chilliwack, and because it puts a party well down the traverse toward Icy Peak before the first morning. It is entirel…"
+   },
+   {
+    "name": "Hannegan trailhead, end of the Ruth Creek road",
+    "elev_ft": 3100,
+    "type": "camp",
+    "role": "route",
+    "notes": "This is where nearly every trip in the zone starts, and it is the answer for a party that drives out after work and wants a short night before an alpine start on Ruth. It is also the base for Mount Sefrit, which is normally done car-to-car from a pullout a few miles back down the road and has no camp of its own worth l…"
+   },
+   {
+    "name": "Notch bivy on the Ruth-Icy ridge",
+    "elev_ft": 6600,
+    "type": "bivy",
+    "role": "route",
+    "notes": "The natural camp for a party doing the full traverse from Ruth on to Icy Peak, sitting on snow just beyond the first notch northwest of Ruth's summit. It shortens the second day considerably, because from here the route drops the west ridge to a saddle, crosses a flat bench, descends a steep ramp beside the south ridge…"
+   }
+  ],
+  "campsite_pins": [
+   {
+    "name": "Hannegan trailhead, end of the Ruth Creek road",
+    "elev": 3100,
+    "distMi": null
+   },
+   {
+    "name": "Ruth Glacier Camp",
+    "elev": 6600,
+    "distMi": 6
+   },
+   {
+    "name": "Ruth Mountain summit camp",
+    "elev": 7100,
+    "distMi": null
+   }
+  ]
+ },
+ {
+  "id": "wa_sherman_peak_baker_route",
+  "name": "Crater Rim Scramble (from Easton Glacier)",
+  "discipline": "mountaineering",
+  "peak": "Sherman Peak",
+  "area_id": "wa_sherman_peak_baker",
+  "path": "usa.washington.wa_northwest.wa_shuksan_baker_neighbors.wa_sherman_peak_baker",
+  "trip_plan": {
+   "totalNote": "A standard 2-day, 1-night trip: roughly 14-15 miles and ~6,700 ft gain round trip from the Park Butte Trailhead, with one high camp and a long roped alpine-start summit day.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Approach to high camp",
+     "objective": "Reach a Railroad Grade / Sandy Camp high camp",
+     "miles": 4,
+     "gainFt": 2300,
+     "note": "Hike from the Park Butte Trailhead through forest and meadows, then up the crest of the Railroad Grade moraine to a high camp near the toe of the Easton Glacier. Most parties set up camp in the early-mid afternoon and rest before an early alpine start."
+    },
+    {
+     "n": 2,
+     "title": "Alpine start, summit, and full descent to the trailhead",
+     "objective": "Climb the Easton Glacier to the crater rim, tag Sherman Peak, descend to the car",
+     "miles": 10.9,
+     "gainFt": 4200,
+     "note": "A pre-dawn roped start up the Easton Glacier reaches the crater rim by mid-morning; a traverse around the crater leads onto Sherman Peak's West Ridge for the final scramble to the summit. Parties then reverse the whole route, break camp on the way down, and hike out to the trailhead the same day."
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Sandy Camp",
+    "elev_ft": null,
+    "type": "camp",
+    "role": "main",
+    "notes": ""
+   }
+  ],
+  "campsite_pins": [
+   {
+    "name": "Sandy Camp",
+    "elev": 5927,
+    "distMi": 4
+   }
+  ]
+ },
+ {
+  "id": "wa_sherman_peak_baker_squak_glacier",
+  "name": "Squak Glacier Route",
+  "discipline": "mountaineering",
+  "peak": "Sherman Peak",
+  "area_id": "wa_sherman_peak_baker",
+  "path": "usa.washington.wa_northwest.wa_shuksan_baker_neighbors.wa_sherman_peak_baker",
+  "trip_plan": {
+   "totalNote": "Two days from Schriebers Meadow: hike the Scott Paul trail to a camp near Crag View, then climb the Squak Glacier to the saddle below the Roman Wall and up to Sherman Peak before descending to the car.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Schriebers Meadow to Crag View camp",
+     "objective": "Reach camp at the edge of the Squak Glacier",
+     "miles": 3.5,
+     "gainFt": 3160,
+     "note": "Follow the Scott Paul trail to treeline and leave it for the moraine and ridge leading to the Crag View prow (about 6,500 ft), about 4 hours with a full pack. Parties camp just above or below the prow or at the glacier edge up to about 6,800 ft."
+    },
+    {
+     "n": 2,
+     "title": "Climb the Squak Glacier to Sherman Peak",
+     "objective": "Summit Sherman Peak and descend to the trailhead",
+     "miles": null,
+     "gainFt": 3630,
+     "note": "Climb the Squak Glacier north, mostly crevasse-free to about 8,700 ft, then weave through a more crevassed and icier section to the saddle below the Roman Wall. Sherman's final slope can be very icy; descend the same way, pack up camp and walk out."
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Crag View, Squak Glacier",
+    "elev_ft": 6500,
+    "type": "camp",
+    "role": "main",
+    "notes": "This is the camp for Sherman Peak's Squak Glacier route and it is the site the Mount Baker file does not cover, since everything written there is on the Easton or the Coleman. It sits about 3.5 miles and 3,300 ft above Schriebers Meadow: the Park Butte trail past Sulphur Creek and the meadows, then a climbers' path lea…"
+   },
+   {
+    "name": "Upper Squak benches, Sulphur moraine and the rock prow",
+    "elev_ft": 7000,
+    "type": "bivy",
+    "role": "main",
+    "notes": "Parties who want Sherman's summit day short move above Crag View and camp on the Sulphur moraine at the glacier's edge around 7,000 ft, or push on to the flatter ground below the rock prow closer to 7,600 ft. The gain is real, since it takes a good chunk out of the traverse to the south ridge and puts you at the base o…"
+   }
+  ],
+  "campsite_pins": [
+   {
+    "name": "Crag View, Squak Glacier",
+    "elev": 6500,
+    "distMi": null
+   }
+  ]
+ },
+ {
+  "id": "wa_amphitheater_mountain_finger_of_fatwa",
+  "name": "Finger of Fatwa",
+  "discipline": "alpine",
+  "peak": "Amphitheater Mountain",
+  "area_id": "wa_amphitheater_mountain",
+  "path": "usa.washington.wa_okanogan.wa_pasayten.wa_amphitheater_mountain",
+  "trip_plan": {
+   "totalNote": "A 3-day trip: backpack to Upper Cathedral Lake, climb Finger of Fatwa on the Middle Finger Buttress and return to camp, then hike out.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Backpack to Upper Cathedral Lake",
+     "objective": "Camp at Upper Cathedral Lake",
+     "miles": 17,
+     "gainFt": 4800,
+     "note": "Backpack from the Andrews Creek trailhead over Andrews Pass and along the Boundary Trail to Upper Cathedral Lake, roughly 17 miles with about 4,800 ft of gain."
+    },
+    {
+     "n": 2,
+     "title": "Climb Finger of Fatwa",
+     "objective": "Climb the route and descend to camp",
+     "miles": null,
+     "gainFt": null,
+     "note": "Walk around the lake and scramble about 15 minutes to the base of the Middle Finger Buttress, then climb the route. Descend to camp via the ridge crest and the 3rd-class gully on the north slope."
+    },
+    {
+     "n": 3,
+     "title": "Hike out",
+     "objective": "Return to the Andrews Creek trailhead",
+     "miles": 17,
+     "gainFt": null,
+     "note": "Pack up and hike out to the trailhead."
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Upper Cathedral Lake basin",
+    "elev_ft": 7400,
+    "type": "camp",
+    "role": "main",
+    "notes": "The working climbers' camp for both the Southeast Buttress and Amphitheater's ridges, sitting directly under the peaks with short walks to either. The basin has taken heavy use for decades and the Forest Service has posted revegetation closures on damaged ground here in the past, so treat the shoreline as off limits an…"
+   },
+   {
+    "name": "Andrews Pass",
+    "elev_ft": 6700,
+    "type": "camp",
+    "role": "route",
+    "notes": "The natural first-night stop if you leave the trailhead in the afternoon, roughly twelve miles up the drainage and about the halfway mark to the Cathedral basin. Everything below here is burn — the lower Andrews Creek drainage has been through repeated fire and the trail was closed for years after it, so expect open, h…"
+   },
+   {
+    "name": "Cathedral Pass benches and the tarn slabs",
+    "elev_ft": 7600,
+    "type": "bivy",
+    "role": "route",
+    "notes": "Useful mainly as a high, quick bivy if you arrive late or want to be moving before dawn, since it saves the drop into the lake basin and puts you already at the crest. The ground is rock and thin turf, so pick a slab and leave the vegetation alone. Wind is the real cost — the pass funnels it and there is nothing to hid…"
+   }
+  ],
+  "campsite_pins": [
+   {
+    "name": "Andrews Pass",
+    "elev": 6700,
+    "distMi": null
+   },
+   {
+    "name": "Upper Cathedral Lake basin",
+    "elev": 7400,
+    "distMi": null
+   }
+  ]
+ },
+ {
+  "id": "wa_amphitheater_mountain_middle_finger_buttress_left_side",
+  "name": "Middle Finger Buttress - Left Side",
+  "discipline": "alpine",
+  "peak": "Amphitheater Mountain",
+  "area_id": "wa_amphitheater_mountain",
+  "path": "usa.washington.wa_okanogan.wa_pasayten.wa_amphitheater_mountain",
+  "trip_plan": {
+   "totalNote": "A 3-day trip: backpack to Upper Cathedral Lake, climb the left side of the Middle Finger Buttress and return to camp, then hike out.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Backpack to Upper Cathedral Lake",
+     "objective": "Camp at Upper Cathedral Lake",
+     "miles": 17,
+     "gainFt": 4800,
+     "note": "Backpack from the Andrews Creek trailhead over Andrews Pass and along the Boundary Trail to Upper Cathedral Lake, roughly 17 miles with about 4,800 ft of gain."
+    },
+    {
+     "n": 2,
+     "title": "Climb Middle Finger Buttress, left side",
+     "objective": "Climb the route and descend to camp",
+     "miles": null,
+     "gainFt": null,
+     "note": "Walk around to the south side of the lake and scramble about 15 minutes to the base of the buttress, then climb the route. Descend to camp via the crest and the 3rd-class gully on the north slope."
+    },
+    {
+     "n": 3,
+     "title": "Hike out",
+     "objective": "Return to the Andrews Creek trailhead",
+     "miles": 17,
+     "gainFt": null,
+     "note": "Pack up and hike out to the trailhead."
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Upper Cathedral Lake basin",
+    "elev_ft": 7400,
+    "type": "camp",
+    "role": "main",
+    "notes": "The working climbers' camp for both the Southeast Buttress and Amphitheater's ridges, sitting directly under the peaks with short walks to either. The basin has taken heavy use for decades and the Forest Service has posted revegetation closures on damaged ground here in the past, so treat the shoreline as off limits an…"
+   },
+   {
+    "name": "Andrews Pass",
+    "elev_ft": 6700,
+    "type": "camp",
+    "role": "route",
+    "notes": "The natural first-night stop if you leave the trailhead in the afternoon, roughly twelve miles up the drainage and about the halfway mark to the Cathedral basin. Everything below here is burn — the lower Andrews Creek drainage has been through repeated fire and the trail was closed for years after it, so expect open, h…"
+   },
+   {
+    "name": "Cathedral Pass benches and the tarn slabs",
+    "elev_ft": 7600,
+    "type": "bivy",
+    "role": "route",
+    "notes": "Useful mainly as a high, quick bivy if you arrive late or want to be moving before dawn, since it saves the drop into the lake basin and puts you already at the crest. The ground is rock and thin turf, so pick a slab and leave the vegetation alone. Wind is the real cost — the pass funnels it and there is nothing to hid…"
+   }
+  ],
+  "campsite_pins": []
+ },
+ {
+  "id": "wa_amphitheater_mountain_middle_finger_buttress_right_side",
+  "name": "Middle Finger Buttress - Right Side",
+  "discipline": "alpine",
+  "peak": "Amphitheater Mountain",
+  "area_id": "wa_amphitheater_mountain",
+  "path": "usa.washington.wa_okanogan.wa_pasayten.wa_amphitheater_mountain",
+  "trip_plan": {
+   "totalNote": "A 3-day trip: backpack to Upper Cathedral Lake, spend a full day on the 7-pitch right side of the Middle Finger Buttress, then hike out.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Backpack to Upper Cathedral Lake",
+     "objective": "Camp at Upper Cathedral Lake",
+     "miles": 17,
+     "gainFt": 4800,
+     "note": "Backpack from the Andrews Creek trailhead over Andrews Pass and along the Boundary Trail to Upper Cathedral Lake, roughly 17 miles with about 4,800 ft of gain."
+    },
+    {
+     "n": 2,
+     "title": "Climb Middle Finger Buttress, right side",
+     "objective": "Climb the 7-pitch route and descend to camp",
+     "miles": null,
+     "gainFt": null,
+     "note": "Climb the route, which takes a full day given its 7 pitches. Descend via the ridge crest and the 3rd-class gully on the north slope back to camp."
+    },
+    {
+     "n": 3,
+     "title": "Hike out",
+     "objective": "Return to the Andrews Creek trailhead",
+     "miles": 17,
+     "gainFt": null,
+     "note": "Pack up and hike out to the trailhead."
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Upper Cathedral Lake basin",
+    "elev_ft": 7400,
+    "type": "camp",
+    "role": "main",
+    "notes": "The working climbers' camp for both the Southeast Buttress and Amphitheater's ridges, sitting directly under the peaks with short walks to either. The basin has taken heavy use for decades and the Forest Service has posted revegetation closures on damaged ground here in the past, so treat the shoreline as off limits an…"
+   },
+   {
+    "name": "Andrews Pass",
+    "elev_ft": 6700,
+    "type": "camp",
+    "role": "route",
+    "notes": "The natural first-night stop if you leave the trailhead in the afternoon, roughly twelve miles up the drainage and about the halfway mark to the Cathedral basin. Everything below here is burn — the lower Andrews Creek drainage has been through repeated fire and the trail was closed for years after it, so expect open, h…"
+   },
+   {
+    "name": "Cathedral Pass benches and the tarn slabs",
+    "elev_ft": 7600,
+    "type": "bivy",
+    "role": "route",
+    "notes": "Useful mainly as a high, quick bivy if you arrive late or want to be moving before dawn, since it saves the drop into the lake basin and puts you already at the crest. The ground is rock and thin turf, so pick a slab and leave the vegetation alone. Wind is the real cost — the pass funnels it and there is nothing to hid…"
+   }
+  ],
+  "campsite_pins": []
+ },
+ {
+  "id": "wa_amphitheater_mountain_north_ridge",
+  "name": "North Ridge",
+  "discipline": "alpine",
+  "peak": "Amphitheater Mountain",
+  "area_id": "wa_amphitheater_mountain",
+  "path": "usa.washington.wa_okanogan.wa_pasayten.wa_amphitheater_mountain",
+  "trip_plan": {
+   "totalNote": "A 3-day trip: backpack to Upper Cathedral Lake or Cathedral Pass, climb the North Ridge and return to camp, then hike out.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Backpack to Upper Cathedral Lake",
+     "objective": "Camp at Upper Cathedral Lake or near Cathedral Pass",
+     "miles": 17,
+     "gainFt": 4800,
+     "note": "Backpack from the Andrews Creek trailhead to camp at Upper Cathedral Lake or near Cathedral Pass, roughly 17 miles with about 4,800 ft of gain."
+    },
+    {
+     "n": 2,
+     "title": "Climb the North Ridge",
+     "objective": "Summit via the North Ridge and return to camp",
+     "miles": null,
+     "gainFt": 960,
+     "note": "Scramble from Cathedral Pass to the base of the North Ridge and climb it to the summit. Descend by walking southwest around the mountain or down the 3rd-class gully on the north slope, and return to camp."
+    },
+    {
+     "n": 3,
+     "title": "Hike out",
+     "objective": "Return to the Andrews Creek trailhead",
+     "miles": 17,
+     "gainFt": null,
+     "note": "Pack up and hike out to the trailhead."
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Upper Cathedral Lake basin",
+    "elev_ft": 7400,
+    "type": "camp",
+    "role": "main",
+    "notes": "The working climbers' camp for both the Southeast Buttress and Amphitheater's ridges, sitting directly under the peaks with short walks to either. The basin has taken heavy use for decades and the Forest Service has posted revegetation closures on damaged ground here in the past, so treat the shoreline as off limits an…"
+   },
+   {
+    "name": "Cathedral Pass benches and the tarn slabs",
+    "elev_ft": 7600,
+    "type": "bivy",
+    "role": "main",
+    "notes": "Useful mainly as a high, quick bivy if you arrive late or want to be moving before dawn, since it saves the drop into the lake basin and puts you already at the crest. The ground is rock and thin turf, so pick a slab and leave the vegetation alone. Wind is the real cost — the pass funnels it and there is nothing to hid…"
+   },
+   {
+    "name": "Andrews Pass",
+    "elev_ft": 6700,
+    "type": "camp",
+    "role": "route",
+    "notes": "The natural first-night stop if you leave the trailhead in the afternoon, roughly twelve miles up the drainage and about the halfway mark to the Cathedral basin. Everything below here is burn — the lower Andrews Creek drainage has been through repeated fire and the trail was closed for years after it, so expect open, h…"
+   }
+  ],
+  "campsite_pins": []
+ },
+ {
+  "id": "wa_amphitheater_mountain_pilgrimage_to_mecca",
+  "name": "Pilgrimage to Mecca",
+  "discipline": "alpine",
+  "peak": "Amphitheater Mountain",
+  "area_id": "wa_amphitheater_mountain",
+  "path": "usa.washington.wa_okanogan.wa_pasayten.wa_amphitheater_mountain",
+  "trip_plan": {
+   "totalNote": "A 3-day trip: backpack to Upper Cathedral Lake, climb the half-day Pilgrimage to Mecca (optionally adding the summit or Cathedral Peak), then hike out.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Backpack to Upper Cathedral Lake",
+     "objective": "Camp at Upper Cathedral Lake",
+     "miles": 17,
+     "gainFt": 4800,
+     "note": "Backpack in via the Andrews Creek or Chewuch River trailheads to camp at Upper Cathedral Lake; the Andrews Creek approach is roughly 17 miles with about 4,800 ft of gain."
+    },
+    {
+     "n": 2,
+     "title": "Climb Pilgrimage to Mecca",
+     "objective": "Climb the half-day route and return to camp",
+     "miles": null,
+     "gainFt": null,
+     "note": "Walk about 15 minutes around the west side of the lake and scramble to the Ka'aba Buttress, then climb Pilgrimage to Mecca, a half-day route. Descend to camp, optionally tagging the summit or Cathedral Peak."
+    },
+    {
+     "n": 3,
+     "title": "Hike out",
+     "objective": "Return to the trailhead",
+     "miles": 17,
+     "gainFt": null,
+     "note": "Pack up and hike out to the trailhead."
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Upper Cathedral Lake basin",
+    "elev_ft": 7400,
+    "type": "camp",
+    "role": "main",
+    "notes": "The working climbers' camp for both the Southeast Buttress and Amphitheater's ridges, sitting directly under the peaks with short walks to either. The basin has taken heavy use for decades and the Forest Service has posted revegetation closures on damaged ground here in the past, so treat the shoreline as off limits an…"
+   },
+   {
+    "name": "Andrews Pass",
+    "elev_ft": 6700,
+    "type": "camp",
+    "role": "route",
+    "notes": "The natural first-night stop if you leave the trailhead in the afternoon, roughly twelve miles up the drainage and about the halfway mark to the Cathedral basin. Everything below here is burn — the lower Andrews Creek drainage has been through repeated fire and the trail was closed for years after it, so expect open, h…"
+   },
+   {
+    "name": "Remmel Lake and the Spanish Camp meadows",
+    "elev_ft": 6800,
+    "type": "camp",
+    "role": "route",
+    "notes": "This sits a short way off the main line to Cathedral Pass and works well as a base if Remmel Mountain is on the list alongside Cathedral and Amphitheater. The meadow ground is soft and easily damaged, so pull back onto the timber edge rather than pitching in the open grass. There is a signed spur from near the guard st…"
+   },
+   {
+    "name": "Cathedral Pass benches and the tarn slabs",
+    "elev_ft": 7600,
+    "type": "bivy",
+    "role": "route",
+    "notes": "Useful mainly as a high, quick bivy if you arrive late or want to be moving before dawn, since it saves the drop into the lake basin and puts you already at the crest. The ground is rock and thin turf, so pick a slab and leave the vegetation alone. Wind is the real cost — the pass funnels it and there is nothing to hid…"
+   }
+  ],
+  "campsite_pins": []
+ },
+ {
+  "id": "wa_amphitheater_mountain_west_route",
+  "name": "West Route",
+  "discipline": "mountaineering",
+  "peak": "Amphitheater Mountain",
+  "area_id": "wa_amphitheater_mountain",
+  "path": "usa.washington.wa_okanogan.wa_pasayten.wa_amphitheater_mountain",
+  "trip_plan": {
+   "totalNote": "A 3-day trip: backpack 7+ hours to Upper Cathedral Lake, an alpine-start summit day on Amphitheater (optionally adding Cathedral Peak), then hike out.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Backpack to Upper Cathedral Lake",
+     "objective": "Camp at Upper Cathedral Lake",
+     "miles": 17,
+     "gainFt": 4800,
+     "note": "Drive to the Andrews Creek trailhead and backpack in over Andrews Pass and the Boundary Trail, 7+ hours, to camp at Upper Cathedral Lake."
+    },
+    {
+     "n": 2,
+     "title": "Summit Amphitheater Mountain",
+     "objective": "Summit via the West Route and return to camp",
+     "miles": null,
+     "gainFt": 960,
+     "note": "Make an alpine start and climb Amphitheater Mountain through the west basin, optionally adding Cathedral Peak. Reverse the line back to Cathedral Pass and camp."
+    },
+    {
+     "n": 3,
+     "title": "Hike out",
+     "objective": "Return to the Andrews Creek trailhead",
+     "miles": 17,
+     "gainFt": null,
+     "note": "Pack up and hike out to the trailhead."
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Upper Cathedral Lake basin",
+    "elev_ft": 7400,
+    "type": "camp",
+    "role": "main",
+    "notes": "The working climbers' camp for both the Southeast Buttress and Amphitheater's ridges, sitting directly under the peaks with short walks to either. The basin has taken heavy use for decades and the Forest Service has posted revegetation closures on damaged ground here in the past, so treat the shoreline as off limits an…"
+   },
+   {
+    "name": "Andrews Pass",
+    "elev_ft": 6700,
+    "type": "camp",
+    "role": "route",
+    "notes": "The natural first-night stop if you leave the trailhead in the afternoon, roughly twelve miles up the drainage and about the halfway mark to the Cathedral basin. Everything below here is burn — the lower Andrews Creek drainage has been through repeated fire and the trail was closed for years after it, so expect open, h…"
+   },
+   {
+    "name": "Remmel Lake and the Spanish Camp meadows",
+    "elev_ft": 6800,
+    "type": "camp",
+    "role": "route",
+    "notes": "This sits a short way off the main line to Cathedral Pass and works well as a base if Remmel Mountain is on the list alongside Cathedral and Amphitheater. The meadow ground is soft and easily damaged, so pull back onto the timber edge rather than pitching in the open grass. There is a signed spur from near the guard st…"
+   },
+   {
+    "name": "Cathedral Pass benches and the tarn slabs",
+    "elev_ft": 7600,
+    "type": "bivy",
+    "role": "route",
+    "notes": "Useful mainly as a high, quick bivy if you arrive late or want to be moving before dawn, since it saves the drop into the lake basin and puts you already at the crest. The ground is rock and thin turf, so pick a slab and leave the vegetation alone. Wind is the real cost — the pass funnels it and there is nothing to hid…"
+   },
+   {
+    "name": "Amphitheater Mountain upper basin",
+    "elev_ft": null,
+    "type": "bivy",
+    "role": "route",
+    "notes": "Reached by following the trail southeast around Amphitheater's west ridge from Upper Cathedral Lake and then a boot path up scree and grass into the basin. Worth considering only if you want to be on the ridge at first light, because the water problem is real and it gains you very little over camping at the lake. The g…"
+   }
+  ],
+  "campsite_pins": [
+   {
+    "name": "Andrews Pass",
+    "elev": 6700,
+    "distMi": null
+   },
+   {
+    "name": "Upper Cathedral Lake basin",
+    "elev": 7400,
+    "distMi": null
+   }
+  ]
+ },
+ {
+  "id": "wa_big_craggy_peak_scramble",
+  "name": "Standard Scramble",
+  "discipline": "mountaineering",
+  "peak": "Big Craggy Peak",
+  "area_id": "wa_big_craggy_peak",
+  "path": "usa.washington.wa_okanogan.wa_pasayten.wa_big_craggy_peak",
+  "trip_plan": {
+   "totalNote": "A 2-day overnight trip for most parties: ~3.3 mi / 2,800 ft up to a Copper Glance Basin camp on Day 1, then a ~7.4-hour round-trip summit push (commonly tagging West Craggy too via the connecting saddle) plus the hike out on Day 2 — roughly 11-12 mi and 5,600 ft total; strong parties instead do the whole thing car-to-car in one long day (~11-12 mi, ~5,600 ft if adding West Craggy).",
+   "days": [
+    {
+     "n": 1,
+     "title": "Approach to Copper Glance Basin camp",
+     "objective": "Reach camp on the knoll near the seasonal tarn in Copper Glance Basin",
+     "miles": 3.3,
+     "gainFt": 2800,
+     "note": "Hike the Copper Glance Trail up along Copper Glance Creek, crossing a broken bridge, to a camp at ~6,600 ft on a knoll near a seasonal tarn (some parties camp instead at Copper Glance Lake a bit further on). Trail is bare at the start with snow patches showing up higher in early season."
+    },
+    {
+     "n": 2,
+     "title": "Summit push (Big Craggy + West Craggy) and hike out",
+     "objective": "Climb Big Craggy (and typically West Craggy via the connecting saddle), then break camp and hike back to the trailhead",
+     "miles": 8.3,
+     "gainFt": 2800,
+     "note": "Leave camp early for the ridge; most parties tag West Craggy first by mid-morning, then continue to Big Craggy's summit, before retracing the route back to camp (~7.4 hr round trip). The southeast slope has loose, rubbly scree with some rockfall danger in the last 500 ft below the summit. After returning to camp, pack …"
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Copper Glance Lake",
+    "elev_ft": 6100,
+    "type": "camp",
+    "role": "main",
+    "notes": "This is the only camp that serves Big Craggy and West Craggy, and it belongs to a different drive from everything else in this zone: north from Winthrop on the West Chewuch road, then left onto the Eightmile Creek road and about twelve to thirteen miles to the trailhead at 3,800 feet. Nothing here connects to Harts Pas…"
+   }
+  ],
+  "campsite_pins": []
+ }
+]

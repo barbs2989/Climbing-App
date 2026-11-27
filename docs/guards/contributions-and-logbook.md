@@ -324,7 +324,12 @@ Part of the guard notes — see [README.md](README.md) for the full index.
   present when a recorded track (`elev_pts`/`gpx`) or the pins' `distMi` supply them, as TRIP PROFILE
   does. First run: 538 of 650 list pages thin, 1 with no route (Liberty Cap, then a Bulger). Measured
   by the seven fillable sections: 3,171 of 4,550 missing before the 2026-11-26 research pass, 2,386
-  after its first 192 routes. A page rarely reads "full" because gear and the two pins are not filled
+  after its first 192 routes, 1,887 after round 2 (88 more). Filled share by list: Bulgers 100%,
+  Cascade volcanoes 95%, Colorado 14ers 84%, ADK 46 74%, Centennials 69%, Fifty Classics 59%,
+  California 14ers 57%, Desert Towers 51%, Sierra Peaks Section 27%. The SPS remainder (worklists
+  `ctx2/ctx-12..20`, ~100 remote peaks) is SOURCE-BLOCKED, not undone: the last three SPS batches
+  yielded 1-3 usable routes in 12, because their only full descriptions are on SummitPost, which
+  refuses scripted reads. A page rarely reads "full" because gear and the two pins are not filled
   by that pass (pins need the ground checks in the waypoint skills).
   `--json out.json` feeds `scripts/oneoff/list-pages-context.mjs`, which writes the research worklists in
   `research-data/list-pages-2026-11-26/`.

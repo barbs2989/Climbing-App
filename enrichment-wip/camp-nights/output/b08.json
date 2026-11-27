@@ -1,0 +1,237 @@
+[
+ {
+  "id": "wa_chikamin_peak_glacier_lake",
+  "camps": [],
+  "new_camps": [
+   {"name": "Glacier Lake", "elev_ft": 4744, "type": "camp", "role": "main", "nights": [1],
+    "why": "Sits about 600 ft below the PCT at Chikamin Pass, which puts the summit scramble in one morning; the cost is a climb back up on the way out.",
+    "water": "", "capacity": "A couple of decent sites near the lake, none large.", "permit": "",
+    "notes": "Parties from Mineral Creek camp just below the outlet, on dirt or bare rock. It is exposed and can be cold and windy overnight."}
+  ],
+  "confidence": "high",
+  "plan_conflict": null,
+  "sources": ["https://www.wta.org/go-hiking/trip-reports/trip_report-2025-09-29.104811247708", "https://hippohamster.vercel.app/posts/snoqualmie-pass-north-traverse", "https://en.wikipedia.com/wiki/Glacier_Lake_(Washington)", "https://www.mountaineers.org/activities/routes-places/chikamin-peak"]
+ },
+ {
+  "id": "wa_chikamin_peak_southeast_slopes",
+  "camps": [
+   {"name": "Ridge Lake and Gravel Lake, PCT beyond Kendall Katwalk", "nights": [1, 2], "role": "main",
+    "why": "The first real water and tent sites on the PCT past the Katwalk, so a Snoqualmie Pass start puts you in range of the climb and out of the way of the long Mineral Creek approach."},
+   {"name": "Park Lakes basin", "nights": [], "role": "route",
+    "why": "Camp for the other approach, up Mineral Creek on the east side; from the PCT start it is a detour, but it sits right under the southeast slopes."}
+  ],
+  "new_camps": [],
+  "confidence": "medium",
+  "plan_conflict": "Park Lakes basin is on file as main, but this plan starts from the Snoqualmie Pass PCT trailhead and sleeps at Ridge Lake, so Ridge/Gravel Lake is main here.",
+  "sources": ["https://yellowleaf.org/scramble/g/r/2004-07-31--2004-08-01-Chikamin-Peak-via-Mineral-Creek.html", "https://hippohamster.vercel.app/posts/snoqualmie-pass-north-traverse", "https://www.mountainproject.com/area/120023558/chikamin-peak", "https://www.wta.org/go-hiking/hikes/kendall-katwalk"]
+ },
+ {
+  "id": "wa_chimney_rock_east_face_direct",
+  "camps": [
+   {"name": "Chimney Glacier hanging basin — the big boulder bivy", "nights": [1], "role": "main",
+    "why": "Puts the route's glacier approach about two hours away and has overhang space for a few bivy sacks; when it is taken, parties push higher to moraine spots near 5,400 ft."},
+   {"name": "Pete Lake and the Lemah Meadows camps", "nights": [], "role": "route",
+    "why": "An easy flat first night for late starters or a four-day trip, but it leaves a steep brushy climb to the bivy basin before the long summit day."}
+  ],
+  "new_camps": [],
+  "confidence": "high",
+  "plan_conflict": null,
+  "sources": ["https://sverdina.com/Chimney_Rock1.asp", "https://lemkeclimbs.com/chimney-rock-2", "https://www.summitpost.org/chimney-rock/152893", "https://www.mountainproject.com/area/112042076/chimney-rock?print=1"]
+ },
+ {
+  "id": "wa_chimney_rock_west_face",
+  "camps": [
+   {"name": "Chimney Glacier hanging basin — the big boulder bivy", "nights": [1], "role": "main",
+    "why": "The standard high camp below the glacier toe, with a sheltered overhang; it leaves a short moraine and glacier walk to the base on summit day."},
+   {"name": "Sunrise Knob", "nights": [], "role": "route",
+    "why": "Mapped at about 4,650 ft in the same basin below the glacier toe; an alternative bench when the boulder bivy is already taken by another party."},
+   {"name": "Pete Lake and the Lemah Meadows camps", "nights": [], "role": "route",
+    "why": "A flat, easy night for parties that start late, but it adds a steep brushy climb to the high camp and lengthens summit day."}
+  ],
+  "new_camps": [],
+  "confidence": "medium",
+  "plan_conflict": "Both the boulder bivy and Sunrise Knob are on file as main; only one can be main for night 1, so Sunrise Knob is changed to route.",
+  "sources": ["https://sverdina.com/Chimney_Rock1.asp", "https://lemkeclimbs.com/chimney-rock-2", "https://www.summitpost.org/chimney-rock/152893"]
+ },
+ {
+  "id": "wa_east_face_6",
+  "camps": [
+   {"name": "Chimney Glacier hanging basin — the big boulder bivy", "nights": [1], "role": "main",
+    "why": "The usual high camp below the glacier toe, with sheltered bivy space under the boulder; summit day starts a short moraine walk from your tent."},
+   {"name": "Sunrise Knob", "nights": [], "role": "route",
+    "why": "Mapped at about 4,650 ft in the same basin; an alternative when the boulder bivy is occupied, with the same short approach to the glacier."},
+   {"name": "Pete Lake and the Lemah Meadows camps", "nights": [], "role": "route",
+    "why": "An easy flat first night with plenty of space, but it leaves the steep brushy climb to the glacier basin for the morning of the summit day."}
+  ],
+  "new_camps": [],
+  "confidence": "medium",
+  "plan_conflict": "Both the boulder bivy and Sunrise Knob are on file as main; only one can be main for night 1, so Sunrise Knob is changed to route.",
+  "sources": ["https://sverdina.com/Chimney_Rock1.asp", "https://lemkeclimbs.com/chimney-rock-2", "https://www.summitpost.org/chimney-rock/152893"]
+ },
+ {
+  "id": "wa_huckleberry_mountain_east_ridge",
+  "camps": [],
+  "new_camps": [
+   {"name": "Ridge Lake and Gravel Lake, PCT beyond Kendall Katwalk", "elev_ft": 5270, "type": "camp", "role": "main", "nights": [1, 2],
+    "why": "The established camp for this approach, a mile past the Katwalk, and the only reliable water on the crest; it splits Huckleberry's long approach into two days.",
+    "water": "Ridge Lake and Gravel Lake sit beside the trail.", "capacity": "", "permit": "",
+    "notes": "Ridge Lake is about 150 ft below the PCT and Gravel Lake, the larger one, about 175 ft below it. Roughly seven miles from the Snoqualmie Pass trailhead."}
+  ],
+  "confidence": "medium",
+  "plan_conflict": null,
+  "sources": ["https://www.wta.org/go-hiking/hikes/kendall-katwalk", "https://hippohamster.vercel.app/posts/snoqualmie-pass-north-traverse", "https://www.mountainproject.com/area/120023558/chikamin-peak"]
+ },
+ {
+  "id": "wa_huckleberry_mountain_west_route",
+  "camps": [
+   {"name": "Ridge Lake and Gravel Lake, PCT beyond Kendall Katwalk", "nights": [1], "role": "main",
+    "why": "The break point most parties use: water and flat sites about seven miles in, leaving a lighter summit day and a long walk out."},
+   {"name": "Commonwealth Basin and Red Pond", "nights": [], "role": "route",
+    "why": "Sits under Lundin and Red Mountain instead, off this route's line; it is a camp for those peaks, not a night for Huckleberry."},
+   {"name": "Alaska Lake and Joe Lake, Gold Creek", "nights": [], "role": "route",
+    "why": "Reached by the unmaintained Gold Creek trail from the freeway side; it is a brushy alternative that skips the PCT miles but not the bushwhack."}
+  ],
+  "new_camps": [],
+  "confidence": "medium",
+  "plan_conflict": null,
+  "sources": ["https://www.wta.org/go-hiking/hikes/kendall-katwalk", "https://hippohamster.vercel.app/posts/snoqualmie-pass-north-traverse", "https://www.mountainproject.com/area/120023558/chikamin-peak"]
+ },
+ {
+  "id": "wa_lemah_mountain_east_route",
+  "camps": [
+   {"name": "Pete Lake and the Lemah Meadows camps", "nights": [1], "role": "main",
+    "why": "Flat trail all the way and water at every site; camping near the PCT junction or Lemah Meadow leaves the brush and the glacier for summit day."}
+  ],
+  "new_camps": [],
+  "confidence": "high",
+  "plan_conflict": null,
+  "sources": ["https://sverdina.com/Lemah1.asp", "https://www.wta.org/go-hiking/hikes/lemah-meadow", "https://www.wta.org/go-hiking/hikes/pete-lake"]
+ },
+ {
+  "id": "wa_lemah_two_goatshead_spire",
+  "camps": [
+   {"name": "Pete Lake and the Lemah Meadows camps", "nights": [1], "role": "main",
+    "why": "Easy flat miles to sites by Pete Lake or along Lemah Creek; the creek-side sites save about three miles on summit day over staying at the lake."}
+  ],
+  "new_camps": [],
+  "confidence": "medium",
+  "plan_conflict": null,
+  "sources": ["https://www.wta.org/go-hiking/hikes/lemah-meadow", "https://www.wta.org/go-hiking/hikes/pete-lake", "https://sverdina.com/Lemah1.asp"]
+ },
+ {
+  "id": "wa_little_big_chief_mountain_northeast_face",
+  "camps": [
+   {"name": "Williams Lake and the upper Middle Fork meadows below Dutch Miller Gap", "nights": [1], "role": "main",
+    "why": "The first real camp up the valley, a long day in but only a short climb from the gap and the peak; lake and meadow sites give water and space."},
+   {"name": "Hardscrabble Horse Camp, Middle Fork Snoqualmie", "nights": [], "role": "route",
+    "why": "Staging camp at the end of the closed road; sleeping here shortens day one but adds about seven trail miles to the summit day."},
+   {"name": "Waptus Lake, with Spade Lake above it", "nights": [], "role": "route",
+    "why": "The gentle eastern approach from Salmon la Sac; a pleasant first night but it adds a long climb to the gap before the peak."}
+  ],
+  "new_camps": [],
+  "confidence": "medium",
+  "plan_conflict": null,
+  "sources": ["https://climberkyle.com/2019/06/30/the-alpine-lakes-crest-traverse/", "https://www.wta.org/go-hiking/hikes/dutch-miller-gap", "https://summitpost.org/little-big-chief-mountain/421526"]
+ },
+ {
+  "id": "wa_northwest_face_4",
+  "camps": [
+   {"name": "Summit Chief Valley gravel flats", "nights": [1], "role": "main",
+    "why": "A flat gravel wash directly below the face, reached a short way off the trail; the climb and the descent both start and end at your tent."},
+   {"name": "Hardscrabble Horse Camp, Middle Fork Snoqualmie", "nights": [], "role": "route",
+    "why": "A lower option at the road end; it spares the cross-country day with a heavy pack but adds miles and gain to summit day."}
+  ],
+  "new_camps": [],
+  "confidence": "medium",
+  "plan_conflict": null,
+  "sources": ["https://cascadeclimbers.com/forum/topic/107543-tr-little-big-chief-northwest-face-falcon-route", "https://www.mountainproject.com/route/119552145/northwest-face"]
+ },
+ {
+  "id": "wa_mount_daniel_daniel_glacier",
+  "camps": [
+   {"name": "Peggys Pond", "nights": [1], "role": "main",
+    "why": "The usual base: close under the glacier route and an easy descent to the car the same day. Expect mosquitoes in July and early August."},
+   {"name": "Squaw Lake", "nights": [], "role": "route",
+    "why": "A lower stop 2.5 miles in with established sites; it melts out earlier than the pond, but it adds miles to summit day."},
+   {"name": "East summit bivouac", "nights": [], "role": "route",
+    "why": "A flat spot just under the east summit; used by parties who go past the pond to escape insects, and a cold, dry night with no water."}
+  ],
+  "new_camps": [],
+  "confidence": "high",
+  "plan_conflict": null,
+  "sources": ["https://www.wta.org/go-hiking/hikes/cathedral-rock", "https://www.wta.org/go-hiking/trip-reports/trip_report.2009-08-03.3367764992", "https://www.wta.org/go-hiking/trip-reports/trip_report.2022-08-01.5050561572"]
+ },
+ {
+  "id": "wa_mount_daniel_lynch_glacier",
+  "camps": [
+   {"name": "Peggy's Pond, below Cathedral Rock", "nights": [], "role": "route",
+    "why": "The pond is where this loop ends, not where it sleeps: you pass it on summit day on the way down to the trailhead."},
+   {"name": "Hyas Lake and Upper Hyas Lake", "nights": [], "role": "route",
+    "why": "An easy low camp close to the trailhead for a three-day trip; it adds a long climb to Deception Pass and the lakes before the glacier."}
+  ],
+  "new_camps": [],
+  "confidence": "low",
+  "plan_conflict": "Night 1 is at Jade Lake (or Pea Soup Lake outlet) in this plan, and neither is on file; I found no verified elevation for either, so no main camp is listed for night 1.",
+  "sources": ["https://turns-all-year.com/trip-reports/july-4-5-2018-mt-daniel-ski-jade-lake-paddle-loop", "https://www.mountaineers.org/activities/routes-places/mount-daniel-lynch-glacier", "https://www.10adventures.com/hikes/wenatchee-national-forest/marmot-lake-and-jade-lake-hike"]
+ },
+ {
+  "id": "wa_mount_hinman_hinman_glacier",
+  "camps": [
+   {"name": "La Bohn Lakes, La Bohn Gap and the Chain Lakes benches", "nights": [1], "role": "main",
+    "why": "Camps right under the gap, so summit day is a short scramble; the price is a longer, steeper first day with a snow slope to the gap."},
+   {"name": "Necklace Valley — Jade, Emerald and Opal Lakes", "nights": [], "role": "route",
+    "why": "Established lake sites about eight to nine miles in, lower and buggier; stopping here keeps day one easier but adds the gap climb to summit day."},
+   {"name": "Money Creek and Miller River campgrounds, Foss River roadhead", "nights": [0], "role": "route",
+    "why": "Car campgrounds for the night before an early trailhead start; useful for a Friday-night arrival, though the Foss River road has had delays."}
+  ],
+  "new_camps": [],
+  "confidence": "medium",
+  "plan_conflict": "Both La Bohn Lakes and Necklace Valley are on file as main; only one can be main for night 1, so Necklace Valley is changed to route.",
+  "sources": ["https://www.wta.org/go-hiking/hikes/necklace-valley", "https://www.wta.org/go-hiking/trip-reports/trip_report-2025-07-09.210121759056", "https://www.mountaineers.org/activities/trip-reports/basic-glacier-climb-mount-hinman-hinman-glacier"]
+ },
+ {
+  "id": "wa_mount_hinman_southeast_route",
+  "camps": [],
+  "new_camps": [
+   {"name": "Necklace Valley — Jade, Emerald and Opal Lakes", "elev_ft": 4600, "type": "camp", "role": "main", "nights": [1],
+    "why": "The established lake sites at the end of a nine-mile first day; a camp here leaves the gap climb and the ridge to summit day.",
+    "water": "", "capacity": "", "permit": "A wilderness permit is self-issued at the trailhead at no fee.",
+    "notes": "Jade Lake has established sites; Emerald and Opal are quieter. Campfires are not allowed."},
+   {"name": "La Bohn Lakes, La Bohn Gap and the Chain Lakes benches", "elev_ft": 5515, "type": "camp", "role": "route", "nights": [],
+    "why": "A higher camp below the gap that cuts summit day short; it makes day one longer and steeper and is colder.",
+    "water": "", "capacity": "", "permit": "",
+    "notes": "A party that reached the gap by the snow slope camped by the larger La Bohn lake."}
+  ],
+  "confidence": "medium",
+  "plan_conflict": null,
+  "sources": ["https://www.wta.org/go-hiking/hikes/necklace-valley", "https://www.wta.org/go-hiking/trip-reports/trip_report-2025-07-09.210121759056"]
+ },
+ {
+  "id": "wa_mount_hinman_west_ridge",
+  "camps": [],
+  "new_camps": [
+   {"name": "Necklace Valley — Jade, Emerald and Opal Lakes", "elev_ft": 4600, "type": "camp", "role": "main", "nights": [1],
+    "why": "Established lake sites at the end of the nine-mile first day; Emerald and Opal give quieter sites and a shorter push to the gap.",
+    "water": "", "capacity": "", "permit": "A wilderness permit is self-issued at the trailhead at no fee.",
+    "notes": "Jade Lake has established sites and gets buggy early. Campfires are not allowed."}
+  ],
+  "confidence": "medium",
+  "plan_conflict": null,
+  "sources": ["https://www.wta.org/go-hiking/hikes/necklace-valley", "https://www.wta.org/go-hiking/trip-reports/trip_report-2024-07-29.171542765555"]
+ },
+ {
+  "id": "wa_overcoat_peak_southeast_route",
+  "camps": [
+   {"name": "Rock benches above Overcoat Glacier", "nights": [1], "role": "main",
+    "why": "The highest camp, at the base of the summit snow; it makes summit day short but means a hard, brushy carry up from the valley."},
+   {"name": "Overcoat Lake", "nights": [], "role": "route",
+    "why": "A lower base reached after the same brush, with water; it saves some of the carry but adds climbing to summit day."},
+   {"name": "Hardscrabble Horse Camp, Middle Fork Snoqualmie", "nights": [], "role": "route",
+    "why": "The end of the bike ride and the last night before the car; it keeps the loaded carry short but makes day one a long ride and walk."}
+  ],
+  "new_camps": [],
+  "confidence": "low",
+  "plan_conflict": "Night 2 is spent near Bears Breast Tarns per the plan, which is not on file, and I could not confirm its elevation, so night 2 has no main camp; Overcoat Lake and the benches are both on file as main for night 1, so Overcoat Lake is changed to route.",
+  "sources": ["https://turns-all-year.com/trip-reports/july-10-11-2018-overcoat-finally", "https://www.mountainproject.com/area/119745979/overcoat-peak", "https://www.mountaineers.org/activities/activities/basic-alpine-climb-overcoat-peak"]
+ }
+]

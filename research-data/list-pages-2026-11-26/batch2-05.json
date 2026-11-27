@@ -1,0 +1,409 @@
+{
+ "ny_basin_mountain_shoreys_shortcut": {
+  "area": "ny_basin_mountain",
+  "set": {
+   "overview": "Basin is one of the biggest days among the Adirondack High Peaks, reached from Keene Valley by way of Johns Brook and a steep side trail called Shorey's Shortcut. The summit is open and rocky, and the final climb has a well-known ladder and bare slab. It is a long out-and-back with a lot of mud, narrow trail and a demanding drop at the end of the shortcut.",
+   "approach": "Start at the Garden trailhead on Johns Brook Lane in Keene Valley, where the small paid lot often fills early on weekends. Follow the Phelps Trail about 3.5 miles to Johns Brook Lodge, then keep straight past Bushnell Falls and Slant Rock. Just beyond Slant Rock, Shorey's Shortcut leaves to the left and climbs at once over narrow, muddy ground with blowdown. It crests a height of land and drops to a junction; turn left there for the steep climb to Basin's open summit.",
+   "descent_text": "Return the way you came: down from the summit past the ladder, back along Shorey's Shortcut and its steep final drop, then out the Phelps Trail to the Garden. A party can instead continue over Saddleback to the trail junction, which is shorter, but the Saddleback cliffs are steep and exposed.",
+   "hazards": [
+    "Steep rock slab and a tall ladder on the final climb, with an exposed open summit",
+    "Shorey's Shortcut has narrow sections, deep mud and blowdown, then a serious descent at its end",
+    "Johns Brook crossings can be dangerous at the start and end of winter",
+    "Saddleback cliffs on the over-the-top return are steep and exposed"
+   ],
+   "gain_ft": 4250,
+   "dist_km": 12.87
+  },
+  "ledger": [
+   {
+    "field": "gain_ft",
+    "value": 4250,
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://www.lakeplacid.com/hiking/basin-mountain",
+      "retrieved_at": "2026-11-26",
+      "fact": "4,250 ft gain, Garden trailhead route out and back"
+     }
+    ]
+   },
+   {
+    "field": "dist_km",
+    "value": 12.87,
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://www.lakeplacid.com/hiking/basin-mountain",
+      "retrieved_at": "2026-11-26",
+      "fact": "16 miles round trip, halved to 8 miles one way = 12.87 km"
+     }
+    ]
+   }
+  ],
+  "review": {
+   "sources": [
+    "https://www.lakeplacid.com/hiking/basin-mountain"
+   ],
+   "confidence": "medium",
+   "notes": "Only one page for this exact line (Phelps Trail + Shorey's Shortcut). Other pages found describe the Orebed Brook / Range Trail route or loops, so not used. Season skipped: no page states a window."
+  }
+ },
+ "ny_gothics_beaver_meadow_falls_trail_to_the_range_trail": {
+  "area": "ny_gothics",
+  "set": {
+   "approach": "Park at the Adirondack Mountain Reserve lot in St. Huberts across Route 73 from the Roaring Brook Falls trailhead; a reservation is needed from May 1 to October 31. Walk about half a mile to the reserve gate, then follow Lake Road for 2 miles to the Gothics trail on the right. It crosses a bridge over the Ausable River and reaches the foot of Beaver Meadow Falls, where a ladder climbs the left side. About 2 more miles of steady climbing follow, then a very steep stretch with four short ladders down to the Range Trail junction.",
+   "descent_text": "Retrace the route from the summit: back along the Range Trail ridge to the junction, up and over the ladders, down past Beaver Meadow Falls and out Lake Road to the gate. A loop over Pyramid Peak is possible by going about 200 yards past the summit and turning left.",
+   "hazards": [
+    "Very steep ground and four ladders on the way to the Range Trail junction",
+    "Open summit ledge is exposed to strong wind",
+    "Steep rock slab along the upper ridge; turn back if weather deteriorates"
+   ],
+   "dist_km": 9.17
+  },
+  "ledger": [
+   {
+    "field": "dist_km",
+    "value": 9.17,
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://www.lakeplacid.com/hiking/gothics",
+      "retrieved_at": "2026-11-26",
+      "fact": "11.4 miles round trip from the reserve parking, halved = 5.7 mi = 9.17 km"
+     }
+    ]
+   }
+  ],
+  "review": {
+   "sources": [
+    "https://www.lakeplacid.com/hiking/gothics"
+   ],
+   "confidence": "medium",
+   "notes": "Gain skipped: the page lists 3,700 ft in the stats and 3,600 ft in its summary, and no second source was reachable. Season skipped."
+  }
+ },
+ "ny_trap_dike_summer": {
+  "area": "ny_mt_colden",
+  "set": {
+   "overview": "The Trap Dike is a steep rock gully that rises from the shore of Avalanche Lake to the slides on Mount Colden, with no official trail. The scramble is mostly third and fourth class, with loose rock throughout, and it joins the Irene Slide higher up. It is a serious, committing way up one of the High Peaks and is normally paired with a descent by trail.",
+   "approach": "Start at Adirondak Loj at the end of Loj Road. Hike about 2.3 miles to Marcy Dam, then another 0.8 miles to the beginning of Avalanche Pass. Continue about 2.1 miles through the pass, then follow the herd path around Avalanche Lake to the foot of the dike. The dike and slide together make roughly 1.3 miles of scrambling on the easiest line available.",
+   "descent_text": "The usual way down is the southern option: pass the false summit, drop to Lake Arnold, then follow the trail back to Marcy Dam and the Loj, about 6 miles from the top. A northern option goes down the back of Colden to Avalanche Lake; it is about a mile longer and steeper, with off-camber bedrock. Descending the dike or slide itself in the dark is a bad idea.",
+   "hazards": [
+    "Loose rock throughout the dike",
+    "Several third and fourth class moves; a helmet is advisable",
+    "The change from the dike onto the slide is the trickiest section",
+    "Steep descent on the Arnold Slide side, and off-camber bedrock on the north descent"
+   ]
+  },
+  "review": {
+   "sources": [
+    "https://www.theoutbound.com/new-york/hiking/hike-mt-colden-via-the-trap-dike",
+    "https://fastestknowntime.com/route/adirondacks-mt-colden-trap-dike-ny"
+   ],
+   "confidence": "medium",
+   "notes": "Gain/distance not in fill. Season skipped: the one page only suggests summer for a sunset summit, not a window. Lake Placid page mentioned an Avalanche Lake trail closure from a slide; its date/status unconfirmed so no closure claim made. Route mileage between sources (11.4 vs 12.5 mi) differs, so no total stated."
+  }
+ },
+ "ny_giant_mountain_ridge_trail": {
+  "area": "ny_giant_mountain",
+  "set": {
+   "overview": "The Ridge Trail is the shortest of the main routes up Giant Mountain, climbing from Route 73 near Chapel Pond. It gains height quickly, passing a lookout over the pond, then follows a long ridge of open rock to the broad summit. A good choice for a big view with a moderate day.",
+   "approach": "Park in the lots on either side of Route 73 just past Chapel Pond, about 1.5 miles beyond the Roaring Brook lot; roadside parking is not permitted and the lots fill quickly. The trail climbs steadily to a lookout over Chapel Pond at 0.7 miles, then passes Giant's Washbowl, where the Roaring Brook Trail splits left. At about 1 mile a side path leads to Giant's Nubble and the trail turns very steep, following an open ridge with many rock sections. The Roaring Brook Trail rejoins a little over 2 miles in, and a path to Rocky Peak Ridge comes in 0.1 mile before the summit.",
+   "descent_text": "Go back down the Ridge Trail the way you came up. The Roaring Brook Trail is the other way down, but it ends at a different lot on Route 73 about 1.5 miles from this one, so it needs a second car or a plan for the road.",
+   "hazards": [
+    "Steep, exposed climbing along much of the ridge, with long sections of open rock",
+    "Several stream crossings early on the climb",
+    "Fast traffic along Route 73 where parties gear up at the roadside lots"
+   ],
+   "dist_km": 4.35
+  },
+  "ledger": [
+   {
+    "field": "dist_km",
+    "value": 4.35,
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://lakeplacid.com/hiking/giant-mountain",
+      "retrieved_at": "2026-11-26",
+      "fact": "5.4 miles round trip, halved = 2.7 mi = 4.35 km"
+     },
+     {
+      "url": "https://pureadirondacks.com/blogs/adirondack-hiking/giant-mountain",
+      "retrieved_at": "2026-11-26",
+      "fact": "summit at 3.0 miles from the trailhead (6 mi round trip)"
+     }
+    ]
+   }
+  ],
+  "review": {
+   "sources": [
+    "https://lakeplacid.com/hiking/giant-mountain",
+    "https://pureadirondacks.com/blogs/adirondack-hiking/giant-mountain"
+   ],
+   "confidence": "medium",
+   "notes": "The two figures (2.7 vs 3.0 mi one way) sit right at the 10% edge; lead may prefer to downgrade to single-source. Value uses the 5.4-mi round trip stated by the page. Season skipped."
+  }
+ },
+ "ny_mount_marshall_herbert_brook_herd_path": {
+  "area": "ny_mount_marshall",
+  "set": {
+   "overview": "Marshall is a trailless High Peak in the MacIntyre Range, reached from Upper Works by a long, level walk to Flowed Lands and then a cairned herd path up Herbert Brook. There is no maintained trail to the treed summit, so map and compass skills are needed. The distance is the main challenge, with modest climbing for the length of the day.",
+   "approach": "Start at the Upper Works parking area near the MacNaughton Cottage. The route begins on an old woods road that narrows to a foot trail beside waterways, then climbs modestly to the shore of Flowed Lands. Follow the difficult trail around the lake perimeter until a cairn appears on the left after a small stream; that marks the Herbert Brook herd path. The path stays beside the brook with several crossings, steepens once it leaves the water, and reaches a ridge viewpoint before the summit on the left.",
+   "descent_text": "Come down the same way: back along the herd path beside Herbert Brook to the cairn at the stream, then around Flowed Lands and out the woods road to Upper Works.",
+   "hazards": [
+    "Unmarked final ascent with many worn side paths near the top",
+    "Repeated crossings of Herbert Brook, which can be dangerous at high water",
+    "Cairned herd path only; no maintained trail, so navigation is required"
+   ],
+   "gain_ft": 2515,
+   "dist_km": 10.46
+  },
+  "ledger": [
+   {
+    "field": "gain_ft",
+    "value": 2515,
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://adirondackhub.com/hiking/mount-marshall",
+      "retrieved_at": "2026-11-26",
+      "fact": "2,515 ft gain from Upper Works"
+     }
+    ]
+   },
+   {
+    "field": "dist_km",
+    "value": 10.46,
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://adirondackhub.com/hiking/mount-marshall",
+      "retrieved_at": "2026-11-26",
+      "fact": "13 miles round trip, halved = 6.5 mi = 10.46 km"
+     }
+    ]
+   }
+  ],
+  "review": {
+   "sources": [
+    "https://adirondackhub.com/hiking/mount-marshall",
+    "https://pureadirondacks.com/blogs/adirondack-hiking/mount-marshall"
+   ],
+   "confidence": "medium",
+   "notes": "Other pages describe the route from Adirondak Loj (14-16 mi), a different line, so not used for numbers; one used only for the no-maintained-trail fact. Season skipped."
+  }
+ },
+ "ny_allen_mountain_allen_brook_herd_path": {
+  "area": "ny_allen_mountain",
+  "set": {
+   "approach": "Start from the trailhead on Upper Works Road (Tahawus Road) near Newcomb and follow the state trail toward Flowed Lands, crossing the Hudson River by a bridge and passing Lake Jimmy on a bypass. The route mixes foot trail, old woods roads and a gravel road, and crosses the Opalescent River. At about 5 miles an unmarked path turns right and follows Allen Brook, steepening as it goes. Higher up, a rough herd path runs beside a slide on the brook rather than over the exposed rock.",
+   "hazards": [
+    "Opalescent River crossing: the bridge was destroyed in a 2019 storm and is not being replaced, so high water can be hazardous",
+    "The turn onto the unmarked path near 5 miles is easy to miss",
+    "Steep rock slab and a slippery slide along Allen Brook",
+    "No maintained trail on the final section; map and compass needed"
+   ]
+  },
+  "review": {
+   "sources": [
+    "https://www.lakeplacid.com/hiking/allen-mountain",
+    "https://pureadirondacks.com/blogs/adirondack-hiking/allen-mountain"
+   ],
+   "confidence": "medium",
+   "notes": "Pages differ in detail (one starts at the Hudson bridge/Lake Jimmy, the other from the Hanging Spear Falls trail), so approach kept general. Season skipped."
+  }
+ },
+ "ny_big_slide_mtn_the_brothers_trail": {
+  "area": "ny_big_slide_mtn",
+  "set": {
+   "overview": "Big Slide is a High Peak near Keene Valley reached by the Brothers, three open rocky bumps that give views before the final ridge. The way is marked and steep in sections, with open rock on the First Brother and large wooden ladders near the top. Many parties do it as an out-and-back from the Garden.",
+   "approach": "Start at the trail register at the Garden parking area in Keene Valley, turn right and climb past the Porter Mountain junction; the Little Porter route is closed. After a brook crossing the path climbs steeply to an overlook at 0.8 miles, then reaches the First Brother at 1.5 miles over open rock and the Second Brother at 1.7. The Third Brother comes at about 2.5 miles, then a junction at 3.2 miles where the left branch drops to Johns Brook. Turn right for a very steep section with big ladders to the summit at 3.4 miles.",
+   "descent_text": "The simplest descent is back over the three Brothers to the Garden. A longer alternative is to take the Slide Mountain Brook Trail down to Johns Brook Lodge, then the Phelps Trail out to the Garden.",
+   "hazards": [
+    "Steep open rock on the climb to the First Brother and again at the summit",
+    "Large wooden ladders on the last steep section below the summit",
+    "A junction at 3.2 miles where the wrong branch descends into Johns Brook"
+   ]
+  },
+  "review": {
+   "sources": [
+    "https://www.lakeplacid.com/hiking/big-slide",
+    "https://pureadirondacks.com/blogs/adirondack-hiking/big-slide-mountain"
+   ],
+   "confidence": "medium",
+   "notes": "The two pages differ on junction distances; the first page's numbers used. Season skipped."
+  }
+ },
+ "ny_esther_mountain_herd_path_from_marble_mountain": {
+  "area": "ny_esther_mountain",
+  "set": {
+   "approach": "Take Whiteface Mountain Road (Route 431) toward the Toll Road and go 2.4 miles to Atmospheric Science Research Center Road on the left. Follow it round the one-way roundabout to the trail and parking on the right; the trail has no DEC sign. The path drops briefly then climbs steeply up Marble Mountain, once a ski slope, with old concrete footings still beside it. At the top keep right at the junction, push through tight evergreen forest, and reach a large cairn where the unofficial herd path leaves to the right toward Lookout Mountain and Esther.",
+   "descent_text": "Retrace the route: from the summit back over Lookout Mountain, down the herd path to the cairn, and over Marble Mountain to the Atmospheric Science Research Center trailhead. Take care on the loose rock of Marble Mountain on the way down.",
+   "hazards": [
+    "Loose rock on Marble Mountain makes footing difficult, especially when dry",
+    "A false summit lies before the true top and is easy to mistake in poor visibility",
+    "The herd path and parts of the approach are unmarked, so navigation skill is needed"
+   ]
+  },
+  "review": {
+   "sources": [
+    "https://www.lakeplacid.com/hiking/esther-mountain",
+    "https://pureadirondacks.com/blogs/adirondack-hiking/esther-mountain"
+   ],
+   "confidence": "medium",
+   "notes": "Distance skipped: one page says 6.3 mi round trip, another 9.4 mi. Season skipped."
+  }
+ },
+ "ny_upper_wolfjaw_mountain_wedge_brook_trail": {
+  "area": "ny_upper_wolfjaw_mountain",
+  "set": {
+   "approach": "Park at the St. Huberts lot across Route 73 from the Roaring Brook Falls trailhead (a reservation is needed May 1 to October 31; dogs are not allowed). Follow a dirt road to the paved road, walk about half a mile and turn left between the tennis courts to the Adirondack Mountain Reserve gate. The West River Trail starts behind the gatehouse beside the Ausable River and reaches the Wedge Brook Trail at 2 miles. From there it climbs steeply, passing a primitive campsite at 3.2 miles and the State Range Trail cutoff near 3.6 miles, then a very steep stretch to a false summit with the true top just beyond.",
+   "descent_text": "Return the way you came: back down the steep Wedge Brook Trail to the junction at the West River Trail, then out along the river to the reserve gate and the St. Huberts lot.",
+   "hazards": [
+    "Very steep climbing to the false summit, often icy on the upper part",
+    "Weather turns quickly on the exposed Great Range; turn back if it worsens",
+    "A long day on private reserve land with posted rules and a parking reservation"
+   ],
+   "dist_km": 7.24
+  },
+  "ledger": [
+   {
+    "field": "dist_km",
+    "value": 7.24,
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://www.lakeplacid.com/hiking/upper-wolfjaw-mountain",
+      "retrieved_at": "2026-11-26",
+      "fact": "9 miles round trip from St. Huberts via Wedge Brook, halved = 4.5 mi = 7.24 km"
+     }
+    ]
+   }
+  ],
+  "review": {
+   "sources": [
+    "https://www.lakeplacid.com/hiking/upper-wolfjaw-mountain"
+   ],
+   "confidence": "medium",
+   "notes": "Pure Adirondacks page covers only the Garden route, so not used. Season skipped."
+  }
+ },
+ "ny_lower_wolfjaw_wedge_brook_and_range_trail_from_st_huberts": {
+  "area": "ny_lower_wolfjaw",
+  "set": {
+   "overview": "Lower Wolfjaw is a High Peak on the Great Range, reached from St. Huberts by the West River, Wedge Brook and State Range trails. It is a steep, serious hike on private reserve land with a long flat approach and a hard climb to the col. In winter the upper section above the col is icy.",
+   "approach": "Park at St. Huberts (a parking reservation is required May 1 to October 31; dogs are prohibited) and walk to the Adirondack Mountain Reserve gate, where posted rules apply. Follow the West River Trail to the Wedge Brook Trail junction about 2 miles in. The trail then climbs to a primitive campsite at about 3.2 miles and continues up the State Range Trail cutoff to the Range Trail and the summit, 4.4 miles from the lot.",
+   "descent_text": "Go back down the same way: the Range Trail cutoff to Wedge Brook Trail, then down to the West River Trail and out along the river to the gate and the St. Huberts lot. Plan for icy footing above the col in winter.",
+   "hazards": [
+    "Steep, sustained climbing after the Wedge Brook junction to the col",
+    "Icy upper section above the col in winter",
+    "Private reserve with posted rules, mandatory parking reservation in season"
+   ],
+   "gain_ft": 3070,
+   "dist_km": 7.08
+  },
+  "ledger": [
+   {
+    "field": "gain_ft",
+    "value": 3070,
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://www.lakeplacid.com/hiking/lower-wolfjaw-mountain",
+      "retrieved_at": "2026-11-26",
+      "fact": "3,070 ft gain, St. Huberts route"
+     }
+    ]
+   },
+   {
+    "field": "dist_km",
+    "value": 7.08,
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://www.lakeplacid.com/hiking/lower-wolfjaw-mountain",
+      "retrieved_at": "2026-11-26",
+      "fact": "8.8 miles round trip, 4.4 mi one way = 7.08 km"
+     }
+    ]
+   }
+  ],
+  "review": {
+   "sources": [
+    "https://www.lakeplacid.com/hiking/lower-wolfjaw-mountain"
+   ],
+   "confidence": "medium",
+   "notes": "The row's own description gives the same 8.8 mi, about 3,000 ft, which echoes this page rather than being independent. Pure Adirondacks covers only the Garden route. Season skipped."
+  }
+ },
+ "ny_street_mountain_via_indian_pass_brook": {
+  "area": "ny_street_mountain",
+  "set": {
+   "approach": "Start at Adirondak Loj; overflow parking at the end of Meadows Lane adds about a mile each way. The route follows an unmaintained herd path along the remains of the old Nye Ski Trail and crosses Indian Pass Brook, which can run high in the rainy season. Nye's summit lies less than a quarter mile from the intersection where the path divides, and Street's summit is less than a mile from it. Carry a map and compass.",
+   "descent_text": "Return along the same herd path and Nye Ski Trail, crossing Indian Pass Brook again on the way out, then continue to the Loj parking. If you also climbed Nye, drop back to the intersection first.",
+   "hazards": [
+    "Indian Pass Brook has no bridge and can run high in wet weather",
+    "Unmaintained herd path; navigation by map and compass is required"
+   ]
+  },
+  "review": {
+   "sources": [
+    "https://pureadirondacks.com/blogs/adirondack-hiking/street-mountain"
+   ],
+   "confidence": "medium",
+   "notes": "Distance may include the Nye side trip; the page states a single round trip. Season skipped."
+  }
+ },
+ "ny_phelps_mountain_phelps_trail": {
+  "area": "ny_phelps_mountain",
+  "set": {
+   "overview": "Phelps Mountain is a marked-trail High Peak from Adirondak Loj, a modest outing that many climbers choose as their first. The path follows the busy Marcy route to Marcy Dam, then branches east for a steep climb with open ledges and big views. The true summit is a short way past the viewing rock.",
+   "approach": "Start at Adirondak Loj at Heart Lake and follow the heavily used trail to Marcy Dam. Continue on the Van Hoevenberg Trail toward Mount Marcy and turn off at the Phelps Mountain junction one mile past the dam. The trail then forks into a Y; take the left branch for the summit. The way is steep, with views opening near 4,000 feet.",
+   "descent_text": "Descend by the same trail: back down the Phelps Mountain path to the Van Hoevenberg Trail, then to Marcy Dam and out to Adirondak Loj. The viewing rock is not the true summit, which is through the trees.",
+   "hazards": [
+    "Steep pitches and open rock ledges",
+    "Exposed summit area",
+    "Several trail junctions where a wrong turn leads toward Marcy"
+   ],
+   "dist_km": 6.76
+  },
+  "ledger": [
+   {
+    "field": "dist_km",
+    "value": 6.76,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.lakeplacid.com/hiking/phelps-mountain",
+      "retrieved_at": "2026-11-26",
+      "fact": "8.4 miles round trip out and back, halved = 4.2 mi"
+     },
+     {
+      "url": "https://pureadirondacks.com/blogs/adirondack-hiking/phelps-mountain",
+      "retrieved_at": "2026-11-26",
+      "fact": "8.8 miles round trip, 4.4 mi one way"
+     }
+    ]
+   }
+  ],
+  "review": {
+   "sources": [
+    "https://www.lakeplacid.com/hiking/phelps-mountain",
+    "https://pureadirondacks.com/blogs/adirondack-hiking/phelps-mountain"
+   ],
+   "confidence": "medium",
+   "notes": "Round trip figures 8.4 and 8.8 within 5%; value taken from the first. The pages disagree on gain (2,275 vs 1,982 ft); gain not in fill. Season skipped."
+  }
+ }
+}

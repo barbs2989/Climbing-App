@@ -16,6 +16,7 @@
 // Also asserts, with no database, that DISC_RACK (the per-discipline fallback) is rack-only.
 //
 //   node scripts/audit-rack-items.mjs [--state wa] [--list 40] [--selftest]   (whole catalog by default)
+import fs from "node:fs";
 import { SUPABASE_URL, headers, anonKey, requireServiceKey } from "./lib/supabase-env.mjs";
 import { isRackEntry, isNonRackGear, rackFromText, DISC_RACK } from "../lib/rack.js";
 
@@ -55,6 +56,12 @@ async function page(table, select, filter) {
   return out;
 }
 const sel = "id,name,discipline,detailed_rack,pro_needs,rack";
+/* Sentences READ and judged to be rack (sizes, doubles, a stick clip, how a pitch protects) that the
+   two regexes do not recognise. Listed by id + exact sentence, so the "neither" list below is a real
+   backlog rather than the same reviewed rack lines every run (2026-11-26 pass, owner's note
+   "Rack only needs to be the protection"). */
+const REVIEWED = new Set(JSON.parse(fs.readFileSync(new URL("./data/rack-entries-reviewed.json", import.meta.url), "utf8")).map(x => x.id + "\u0000" + x.s));
+const JSON_OUT = arg("--json", null);
 let routes;
 if (STATE) {
   const bulk = await page("routes", sel, `id=gte.${STATE}_&id=lt.${STATE}%60`);
@@ -79,9 +86,9 @@ let withOwn = 0;
 const cls = s => isRackEntry(s) ? null : (isNonRackGear(s) ? "gear" : "neither");
 for (const r of routes) {
   const f = [], n = [];
-  if (r.detailed_rack && String(r.detailed_rack).trim()) { withOwn++; for (const s of rackFromText(r.detailed_rack)) { const c = cls(s); if (c === "gear") f.push(["detailed_rack", s]); else if (c) n.push(["detailed_rack", s]); } }
+  if (r.detailed_rack && String(r.detailed_rack).trim()) { withOwn++; for (const s of rackFromText(r.detailed_rack)) { const c = cls(s); if (c === "gear") f.push(["detailed_rack", s]); else if (c && !REVIEWED.has(r.id + "\u0000" + s)) n.push(["detailed_rack", s]); } }
   else if (r.pro_needs && String(r.pro_needs).trim()) { withOwn++; if (CARRY_NON_RACK.test(r.pro_needs)) f.push(["pro_needs", r.pro_needs]); }
-  if (Array.isArray(r.rack)) for (const e of r.rack) if (typeof e === "string" && e.trim()) { const c = cls(e); if (c === "gear") f.push(["rack", e]); else if (c) n.push(["rack", e]); }
+  if (Array.isArray(r.rack)) for (const e of r.rack) if (typeof e === "string" && e.trim()) { const c = cls(e); if (c === "gear") f.push(["rack", e]); else if (c && !REVIEWED.has(r.id + "\u0000" + e)) n.push(["rack", e]); }
   if (f.length) findings.push({ id: r.id, name: r.name, discipline: r.discipline, f });
   if (n.length) neither.push({ id: r.id, name: r.name, discipline: r.discipline, f: n });
 }
@@ -91,4 +98,5 @@ for (const x of findings.slice(0, LIST)) { console.log(`\n${x.id}  (${x.discipli
 if (findings.length > LIST) console.log(`\n… ${findings.length - LIST} more (--list N)`);
 console.log(`\n${neither.length} routes carry a rack entry that names neither rack nor gear (left on the card; fix the row):`);
 for (const x of neither.slice(0, LIST)) { console.log(`${x.id}  (${x.discipline})  ${x.name}`); for (const [c, s] of x.f) console.log(`   ${c}: ${s.length > 180 ? s.slice(0, 177) + "..." : s}`); }
+if (JSON_OUT) { fs.writeFileSync(String(JSON_OUT), JSON.stringify({ findings, neither }, null, 1)); console.log(`wrote ${JSON_OUT}`); }
 process.exit(findings.length ? 1 : 0);

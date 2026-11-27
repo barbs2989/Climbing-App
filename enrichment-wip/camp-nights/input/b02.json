@@ -1,0 +1,1037 @@
+[
+ {
+  "id": "wa_martin_peak_west_ridge",
+  "name": "West Ridge",
+  "discipline": "mountaineering",
+  "peak": "Martin Peak",
+  "area_id": "wa_martin_peak",
+  "path": "usa.washington.wa_centraleast.wa_chiwawa_entiat_region.wa_martin_peak",
+  "trip_plan": {
+   "totalNote": "A 3-day trip built around the Lady of the Lake ferry/Holden Village access: one day in to Holden Pass camp, one summit day on Martin's loose West Ridge (~16 mi and ~5,300 ft round trip overall), and one day out to catch the return ferry.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Ferry + hike-in to Holden Pass camp",
+     "objective": "Reach Holden Pass high camp",
+     "miles": 7,
+     "gainFt": 3100,
+     "note": "Catch the Lady of the Lake ferry from Field's Point to Lucerne, then the Holden Village shuttle, before hiking the Railroad Creek / Holden Pass trail up to camp at ~6,400 ft. The trail is in good shape and shared by Bonanza-bound parties, so Holden Pass is a well-established camp spot with water nearby."
+    },
+    {
+     "n": 2,
+     "title": "Summit day: Martin Peak via the West Ridge",
+     "objective": "Climb Martin Peak and return to camp",
+     "miles": 3.5,
+     "gainFt": 2200,
+     "note": "From Holden Pass, the saddle between Bonanza and Martin at the foot of the West Ridge, head east up the ridge and cut right onto the south side of the ridge into a loose scree gully. Climb the gully and exit via a short Class 3-4 rock step near its top just below an overhang, then keep linking gullies on the south side…"
+    },
+    {
+     "n": 3,
+     "title": "Hike out + return ferry",
+     "objective": "Descend to Holden Village and catch the return boat",
+     "miles": 7,
+     "gainFt": 0,
+     "note": "Reverse the approach trail back down to Holden Village, then take the shuttle and ferry back to Field's Point. Start early since the return ferry from Lucerne typically leaves in the early-to-mid afternoon and the shuttle/bus connection has to be made on time."
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Holden Pass and the slab bivies above",
+    "elev_ft": 6400,
+    "type": "bivy",
+    "role": "main",
+    "notes": "Holden Pass at about 6,400 ft is the higher option for Bonanza and cuts a serious amount off summit day compared with sleeping at the lake. Parties who want more push another five hundred feet to ledges below the waterfall slabs at roughly 6,900 ft, which is a genuine bivouac rather than a campsite and is worth scoutin…"
+   },
+   {
+    "name": "Holden Lake",
+    "elev_ft": 5278,
+    "type": "camp",
+    "role": "main",
+    "notes": "This is the standard base camp for Bonanza Peak and the natural place to sleep before the Mary Green Glacier, the Northeast Buttress or the North Ridge. The trail leaves the Railroad Creek valley at around 3,600 ft and climbs four miles of switchbacks to the lake, which puts most of the day's work behind you before the…"
+   },
+   {
+    "name": "Holden Village",
+    "elev_ft": 3200,
+    "type": "hut",
+    "role": "route",
+    "notes": "This is the base for Bonanza, Copper, Dumbell's eastern side, and the Railroad Creek walk in to Hart and Lyman Lakes. Its unusual value to a climber is that you can sleep indoors and eat three meals at 3,200 ft the night before starting up a 9,500 ft peak, which no other approach in this zone offers. The catch is that …"
+   },
+   {
+    "name": "Holden Ballpark Campground",
+    "elev_ft": 3300,
+    "type": "camp",
+    "role": "route",
+    "notes": "About a mile above the village on the way to the trailheads, this is the answer for a climbing party that wants the Holden approach without paying village rates or fitting into a meal schedule. Being an open field it is exposed and has no shelter, and with only a site or two you cannot count on it if another party arri…"
+   }
+  ],
+  "campsite_pins": [
+   {
+    "name": "Holden Ballpark Campground",
+    "elev": 3300,
+    "distMi": null
+   },
+   {
+    "name": "Holden Lake",
+    "elev": 5278,
+    "distMi": null
+   },
+   {
+    "name": "Holden Pass",
+    "elev": 6357,
+    "distMi": null
+   }
+  ]
+ },
+ {
+  "id": "wa_massie_peak_west_route",
+  "name": "West Route",
+  "discipline": "scrambling",
+  "peak": "Massie Peak",
+  "area_id": "wa_massie_peak",
+  "path": "usa.washington.wa_centraleast.wa_chiwawa_entiat_region.wa_massie_peak",
+  "trip_plan": {
+   "totalNote": "A 2-day, 1-night trip: about 6 miles and 3,100 ft up the Chiwawa River Trail and the old sheep path to camp at Massie Lake (about 5,900 ft), then the summit by the west ridge and the walk out, about 9 miles. Strong parties do the whole thing car-to-car in one long day.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Approach to Massie Lake",
+     "objective": "Reach Massie Lake (about 5,900 ft) and set up camp",
+     "miles": 11,
+     "gainFt": 3100,
+     "note": "Walk or bike the closed 5 miles of Chiwawa River Road from the Atkinson Flat closure to the Trinity trailhead first. From the Trinity Trailhead, walk the Chiwawa River Trail upstream about 4 miles to the unsigned Massie Lake junction (a large boulder on one side of the trail, an 'M' with an arrow carved in a tree on th…"
+    },
+    {
+     "n": 2,
+     "title": "Summit Massie Peak and hike out",
+     "objective": "Climb the West Route and return to the trailhead",
+     "miles": 14,
+     "gainFt": 1700,
+     "note": "From the lake, follow the faint high-route tread away from the basin, leave it and climb onto Massie Peak's broad west ridge, then follow the crest to the summit on talus and heather with a few short class 3 steps. Reverse the same line to camp, pack up, and walk back down the sheep path, across the ford and out the Ch…"
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Massie Lake basin",
+    "elev_ft": null,
+    "type": "camp",
+    "role": "main",
+    "notes": "This is the climbing camp for Massie Peak and effectively the only one, because everything above it is dry and everything below it is a long way down. From the Trinity trailhead the Buck Creek trail runs a mile and a half to the junction, the Chiwawa River trail carries on up the valley and crosses the river on a bridg…"
+   },
+   {
+    "name": "Trinity trailhead roadhead",
+    "elev_ft": 2764,
+    "type": "camp",
+    "role": "route",
+    "notes": "The staging point, and it is recorded because the drive is the part of this trip that most often goes wrong. In a normal year the Chiwawa River road runs about twenty-two miles from the Lake Wenatchee end, with the last stretch rough gravel genuinely unsuited to low clearance, and arriving at the end of it late and tir…"
+   },
+   {
+    "name": "The Chiwawa River trail camps above the bridge",
+    "elev_ft": null,
+    "type": "camp",
+    "role": "route",
+    "notes": "These are the first-night camps for a party that has driven a long way, or the last-night camps for one walking out, and on this approach both cases are common. The river bridge where the Buck Creek trail crosses is the usual spot and is the obvious place to stop, being flat, sheltered and on good water. Camping here r…"
+   },
+   {
+    "name": "The benches above Massie Lake — no established camp",
+    "elev_ft": null,
+    "type": "bivy",
+    "role": "route",
+    "notes": "Recorded honestly: Massie Peak is a day objective from the lake and there is no practical reason to sleep higher. The scramble from the basin is short enough that the only argument for going up is to be on the crest at first light, and the cost is carrying water two thousand feet and sleeping exposed with nothing to sh…"
+   }
+  ],
+  "campsite_pins": [
+   {
+    "name": "Trinity trailhead roadhead",
+    "elev": 2764,
+    "distMi": null
+   },
+   {
+    "name": "Massie Lake",
+    "elev": 5936,
+    "distMi": null
+   }
+  ]
+ },
+ {
+  "id": "wa_mount_fernow_southeast_face",
+  "name": "Southeast Face / Leroy Basin",
+  "discipline": "mountaineering",
+  "peak": "Mount Fernow",
+  "area_id": "wa_mount_fernow",
+  "path": "usa.washington.wa_centraleast.wa_chiwawa_entiat_region.wa_mount_fernow",
+  "trip_plan": {
+   "totalNote": "A 3-day, ~17.5-mile round-trip backpack with about 8,100 ft of cumulative gain, most of it on a grueling 10-12 hour summit day over loose talus and an exposed class 4 summit block; strong parties occasionally compress the whole thing into a single ~18-20 hour car-to-car day instead.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Approach to Leroy Basin camp",
+     "objective": "Reach Leroy Creek Camp",
+     "miles": 11.4,
+     "gainFt": 2700,
+     "note": "Walk or bike the closed 6 miles of Chiwawa River Road from the Atkinson Flat closure to the Phelps Creek trailhead first. Flat forested trail along Phelps Creek for about 3.5 miles, then a steep climber's path gaining roughly 2,000 ft in 1.5 miles up into Leroy Basin. Camp at the large meadow (~6,100 ft) with good wate…"
+    },
+    {
+     "n": 2,
+     "title": "Summit push and return to camp",
+     "objective": "Climb the Southeast Face to Fernow's summit and back to camp",
+     "miles": 6.9,
+     "gainFt": 5400,
+     "note": "The long day of the trip: cross Gloomy Basin and a loose moraine saddle, follow water-polished slabs then grueling loose talus toward the final wall, then tackle the exposed class 4 summit block (many parties hand-line or belay it). Round trip from camp typically runs 10-12 hours; the return leg is nearly as slow as th…"
+    },
+    {
+     "n": 3,
+     "title": "Hike out",
+     "objective": "Return to Phelps Creek trailhead",
+     "miles": 11.3,
+     "gainFt": 0,
+     "note": "Reverse the Day 1 approach: down the steep Leroy Basin climber's path and back out the flat Phelps Creek trail to the car."
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Leroy Basin",
+    "elev_ft": null,
+    "type": "camp",
+    "role": "main",
+    "notes": ""
+   }
+  ],
+  "campsite_pins": [
+   {
+    "name": "Leroy Basin",
+    "elev": 6100,
+    "distMi": 5.2
+   }
+  ]
+ },
+ {
+  "id": "wa_mount_lyall_south_route",
+  "name": "Southwest Ridge Route",
+  "discipline": "scrambling",
+  "peak": "Mount Lyall",
+  "area_id": "wa_mount_lyall",
+  "path": "usa.washington.wa_centraleast.wa_chiwawa_entiat_region.wa_mount_lyall",
+  "trip_plan": {
+   "totalNote": "A remote 3-day backcountry trip by boat, valley shuttle and the Agnes Creek trail, with an exposed Class 3-4 scramble to the 7,911 ft summit on day two; not a realistic single-day objective.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Approach to high camp",
+     "objective": "Reach a camp near Swamp Creek, below Mount Lyall's west side",
+     "miles": 8,
+     "gainFt": 2600,
+     "note": "Take the boat up the lake and the valley shuttle to the bridge at the road end, then follow the crest trail south up Agnes Creek toward Swamp Creek. Camp near Swamp Creek to shorten the summit day; expect blowdown and possible stream crossings on the way in."
+    },
+    {
+     "n": 2,
+     "title": "Summit day via the Southwest Ridge",
+     "objective": "Climb the Southwest Ridge to the summit and return to camp",
+     "miles": 5,
+     "gainFt": 2200,
+     "note": "Cross Swamp Creek and climb through brush and open basin into the broad basin west of the peak, then up talus and old snow to the 7,300 ft notch on the southwest ridge. From the notch, drop round a buttress and traverse below the white rock band to an exposed Class 3 gully and loose Class 3-4 boulders to the 7,911 ft s…"
+    },
+    {
+     "n": 3,
+     "title": "Hike out",
+     "objective": "Return to the trailhead",
+     "miles": 8,
+     "gainFt": 0,
+     "note": "Break camp and retrace the approach trail back to the trailhead."
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Swamp Creek Camp — the base for Needle Peak, Mount Lyall and Lyall Ridge",
+    "elev_ft": 2800,
+    "type": "camp",
+    "role": "main",
+    "notes": "About nine miles south of High Bridge on the Pacific Crest Trail and roughly three beyond Fivemile, this is the working base for Needle Peak, Mount Lyall at 7,892 ft and the ridge between them. The unmaintained Swamp Creek trail leaves the corridor here and climbs toward Needle Peak's north ridge; the ground above is c…"
+   },
+   {
+    "name": "Purple Point and Harlequin — the landing camps, and the boat that decides the trip",
+    "elev_ft": null,
+    "type": "camp",
+    "role": "route",
+    "notes": "Read this before any other site in the zone. Stehekin has no road to it. The only practical way in is the scheduled passenger boat up Lake Chelan from Chelan or Fields Point Landing, and the timetable, not your fitness, sets the shape of the trip. The slow boat takes roughly four hours each way and the express about tw…"
+   },
+   {
+    "name": "High Bridge Camp — the shuttle terminus and the base for McGregor Mountain",
+    "elev_ft": 1600,
+    "type": "camp",
+    "role": "route",
+    "notes": "The bus stops here and the walking starts here, so almost every trip in this zone passes through it. Its own summit is McGregor Mountain, whose trail leaves the valley road near the guard station a mile or so from the bridge and is one of the biggest sustained climbs in the state: about 7.7 miles and 6,400 ft of gain t…"
+   },
+   {
+    "name": "Fivemile Camp, Agnes Creek",
+    "elev_ft": 2200,
+    "type": "camp",
+    "role": "route",
+    "notes": "Five miles south of High Bridge on the Pacific Crest Trail through Agnes Gorge, this is the junction camp and the last comfortable night before things get serious. It is the departure point for Agnes Mountain — the West Fork Agnes Creek trail leaves here heading west, and it is the start of the standard approach to the…"
+   }
+  ],
+  "campsite_pins": []
+ },
+ {
+  "id": "wa_mount_maude_r2",
+  "name": "Entiat Ice Fall",
+  "discipline": "alpine",
+  "peak": "Mount Maude",
+  "area_id": "wa_mount_maude",
+  "path": "usa.washington.wa_centraleast.wa_chiwawa_entiat_region.wa_mount_maude",
+  "trip_plan": {
+   "totalNote": null,
+   "days": [
+    {
+     "n": 1,
+     "title": "Day 1",
+     "objective": "",
+     "miles": null,
+     "gainFt": null,
+     "note": "Approach ~4,000 ft of gain over several hours from the trailhead to a bivy site above Ice Lakes."
+    },
+    {
+     "n": 2,
+     "title": "Day 2",
+     "objective": "",
+     "miles": null,
+     "gainFt": null,
+     "note": "Descend to and cross the Entiat Glacier, climb the icefall (running belay through ice steps) then ~900 ft of 4th/low-5th class rock to the summit, descend the South Ridge back toward camp."
+    },
+    {
+     "n": 3,
+     "title": "Day 3",
+     "objective": "",
+     "miles": null,
+     "gainFt": null,
+     "note": "Hike out."
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Leroy Basin",
+    "elev_ft": 6100,
+    "type": "camp",
+    "role": "main",
+    "notes": "This is the climbers' basin for Mount Maude and Seven Fingered Jack from the west, and it is also the base most parties use for Mount Fernow. Reach it by hiking about three miles up the Phelps Creek trail, fording Leroy Creek at around 4,140 ft, then taking the steep unmaintained climbers' path up the north side of the…"
+   },
+   {
+    "name": "Phelps Creek Campground and the Chiwawa River road campgrounds",
+    "elev_ft": 2800,
+    "type": "camp",
+    "role": "route",
+    "notes": "These are staging camps, not climbing camps: the point of them is that the drive up the Chiwawa River road is around twenty-three miles from the Lake Wenatchee end, the last twelve are rough gravel and dirt genuinely unsuited to low clearance vehicles, and doing that at the end of a long drive from the west side is how…"
+   }
+  ],
+  "campsite_pins": [
+   {
+    "name": "Leroy Basin",
+    "elev": 6121,
+    "distMi": 5
+   },
+   {
+    "name": "Ice Lakes bivy",
+    "elev": 7182,
+    "distMi": 7.2
+   }
+  ]
+ },
+ {
+  "id": "wa_mount_maude_r3",
+  "name": "Nothing Couloir",
+  "discipline": "scrambling",
+  "peak": "Mount Maude",
+  "area_id": "wa_mount_maude",
+  "path": "usa.washington.wa_centraleast.wa_chiwawa_entiat_region.wa_mount_maude",
+  "trip_plan": {
+   "totalNote": "Hike 5 miles to Leroy Creek Basin, climb the Nothing Couloir and loop back down the South Shoulder on day two, and hike out on day three.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Hike in to Leroy Creek Basin",
+     "objective": "Camp in Leroy Creek Basin",
+     "miles": 5,
+     "gainFt": 2700,
+     "note": "Hike about 5 miles and 2,700 ft from the Phelps Creek Trailhead to a camp in Leroy Creek Basin."
+    },
+    {
+     "n": 2,
+     "title": "Climb the Nothing Couloir",
+     "objective": "Summit and loop back to camp",
+     "miles": null,
+     "gainFt": 2960,
+     "note": "Approach the west side of the peak and climb the Nothing Couloir (class 3-4 slabs, about 1,500 ft) to the summit ridge and summit. Descend via the South Shoulder in a loop back to camp."
+    },
+    {
+     "n": 3,
+     "title": "Hike out to Phelps Creek Trailhead",
+     "objective": "Return to the car",
+     "miles": 5,
+     "gainFt": 0,
+     "note": "Pack up and hike out to the trailhead."
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Leroy Basin",
+    "elev_ft": 6100,
+    "type": "camp",
+    "role": "main",
+    "notes": "This is the climbers' basin for Mount Maude and Seven Fingered Jack from the west, and it is also the base most parties use for Mount Fernow. Reach it by hiking about three miles up the Phelps Creek trail, fording Leroy Creek at around 4,140 ft, then taking the steep unmaintained climbers' path up the north side of the…"
+   },
+   {
+    "name": "Phelps Creek Campground and the Chiwawa River road campgrounds",
+    "elev_ft": 2800,
+    "type": "camp",
+    "role": "route",
+    "notes": "These are staging camps, not climbing camps: the point of them is that the drive up the Chiwawa River road is around twenty-three miles from the Lake Wenatchee end, the last twelve are rough gravel and dirt genuinely unsuited to low clearance vehicles, and doing that at the end of a long drive from the west side is how…"
+   }
+  ],
+  "campsite_pins": [
+   {
+    "name": "Leroy Basin",
+    "elev": 6121,
+    "distMi": 5
+   }
+  ]
+ },
+ {
+  "id": "wa_north_star_mountain_cloudy_peak_traverse",
+  "name": "Cloudy Peak Traverse (South Ridge)",
+  "discipline": "scrambling",
+  "peak": "North Star Mountain",
+  "area_id": "wa_north_star_mountain",
+  "path": "usa.washington.wa_centraleast.wa_chiwawa_entiat_region.wa_north_star_mountain",
+  "trip_plan": {
+   "totalNote": "A three-day trip: cross Spider Gap to Lyman Lakes and camp at Cloudy Pass, traverse around Cloudy Peak's south buttress to North Star the next day, and hike back over Spider Gap, about 31 miles round trip.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Over Spider Gap to Cloudy Pass",
+     "objective": "Reach a camp at Cloudy Pass or Lyman Lakes",
+     "miles": 13.5,
+     "gainFt": 4400,
+     "note": "Hike Phelps Creek trail through Spider Meadow, climb about 800 ft of snow on the Spider Glacier to Spider Gap (~7,000 ft), drop into the Lyman Lakes basin, then follow the Cloudy Pass trail past Lyman Lake to camp at the pass. Watch for the reroute at Upper Lyman Lake's outlet."
+    },
+    {
+     "n": 2,
+     "title": "Traverse around Cloudy Peak to North Star",
+     "objective": "Summit North Star and return to Cloudy Pass",
+     "miles": 4,
+     "gainFt": 1700,
+     "note": "Leave the trail at the switchback toward Cloudy Peak's south ridge, round the buttress near 6,400 ft, and make a long traverse east (staying low to skip a talus field) to a permanent snowfield near 7,000 ft. Climb the main gully to the notch between the summits and scramble the southwest ridge. One party did the round …"
+    },
+    {
+     "n": 3,
+     "title": "Hike out over Spider Gap",
+     "objective": "Return to the Phelps Creek trailhead",
+     "miles": 13.5,
+     "gainFt": 1400,
+     "note": "Descend to Lyman Lakes, climb back over Spider Gap, and descend Spider Meadow and the Phelps Creek trail to the car."
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Lyman Lakes and Cloudy Pass",
+    "elev_ft": null,
+    "type": "camp",
+    "role": "main",
+    "notes": "This basin is the reason North Star Mountain, Cloudy Peak and Chiwawa Mountain sit in the same zone as Bonanza — it is reachable from both sides and belongs to neither. From the west it is roughly two miles and 1,700 ft above Spider Meadow over Spider Gap, crossing the permanent snowfield below the gap and dropping ont…"
+   },
+   {
+    "name": "Phelps Creek Campground and the Chiwawa River road campgrounds",
+    "elev_ft": 2800,
+    "type": "camp",
+    "role": "route",
+    "notes": "These are staging camps, not climbing camps: the point of them is that the drive up the Chiwawa River road is around twenty-three miles from the Lake Wenatchee end, the last twelve are rough gravel and dirt genuinely unsuited to low clearance vehicles, and doing that at the end of a long drive from the west side is how…"
+   },
+   {
+    "name": "Spider Meadow and Phelps Basin",
+    "elev_ft": 4750,
+    "type": "camp",
+    "role": "route",
+    "notes": "About five and a half miles and 1,250 ft from the Phelps Creek trailhead at roughly 3,500 ft, this is the standard first night for almost everything on the Chiwawa side. It stages the Spider Gap crossing to Lyman Lakes and so serves North Star, Cloudy and Chiwawa; Phelps Basin half a mile above the head of the meadow i…"
+   },
+   {
+    "name": "Holden Village",
+    "elev_ft": 3200,
+    "type": "hut",
+    "role": "route",
+    "notes": "This is the base for Bonanza, Copper, Dumbell's eastern side, and the Railroad Creek walk in to Hart and Lyman Lakes. Its unusual value to a climber is that you can sleep indoors and eat three meals at 3,200 ft the night before starting up a 9,500 ft peak, which no other approach in this zone offers. The catch is that …"
+   },
+   {
+    "name": "Holden Ballpark Campground",
+    "elev_ft": 3300,
+    "type": "camp",
+    "role": "route",
+    "notes": "About a mile above the village on the way to the trailheads, this is the answer for a climbing party that wants the Holden approach without paying village rates or fitting into a meal schedule. Being an open field it is exposed and has no shelter, and with only a site or two you cannot count on it if another party arri…"
+   }
+  ],
+  "campsite_pins": [
+   {
+    "name": "Holden Ballpark Campground",
+    "elev": 3300,
+    "distMi": null
+   }
+  ]
+ },
+ {
+  "id": "wa_north_star_mountain_east_route",
+  "name": "East Route",
+  "discipline": "mountaineering",
+  "peak": "North Star Mountain",
+  "area_id": "wa_north_star_mountain",
+  "path": "usa.washington.wa_centraleast.wa_chiwawa_entiat_region.wa_north_star_mountain",
+  "trip_plan": {
+   "totalNote": "A 3-day, ~21-mile round-trip backpack requiring boat + shuttle access to Holden Village, with one full day scrambling the south-side talus to the summit from a Lyman Lakes base camp (~4,500 ft total gain).",
+   "days": [
+    {
+     "n": 1,
+     "title": "Boat/bus access + backpack to Lyman Lakes",
+     "objective": "Reach base camp at Lower Lyman Lake",
+     "miles": 8.2,
+     "gainFt": 2400,
+     "note": "Access to this remote Glacier Peak Wilderness peak starts with the Lady of the Lake passenger ferry from Chelan to Lucerne, then a shuttle bus to Holden Village. From there it's an 8+ mile trail hike up Railroad Creek to camp at Lower Lyman Lake, gaining about 2,400 ft."
+    },
+    {
+     "n": 2,
+     "title": "South-flank summit push",
+     "objective": "Climb the south flank to the 8,096 ft summit and return to camp",
+     "miles": 4.5,
+     "gainFt": 2500,
+     "note": "An early alpine start from Lyman Lakes camp beats the afternoon thunderstorms common in this basin in summer. Leave the trail, cross the open meadow and round onto the south and southeast side of the mountain, climb to the snowfield at the foot of the flank, then follow the ledge and gully above it to a notch on the cr…"
+    },
+    {
+     "n": 3,
+     "title": "Hike out + return boat/bus",
+     "objective": "Descend to Holden Village in time for the return shuttle/ferry connection",
+     "miles": 8.2,
+     "gainFt": 0,
+     "note": "Reverse the approach back down to Holden Village, timed to catch the shuttle bus to Lucerne and the afternoon Lady of the Lake departure back to Chelan. Start early with a full pack since the boat/bus connection window is tight."
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Lower Lyman Lake",
+    "elev_ft": null,
+    "type": "camp",
+    "role": "main",
+    "notes": ""
+   },
+   {
+    "name": "Lyman Lakes and Cloudy Pass",
+    "elev_ft": null,
+    "type": "camp",
+    "role": "main",
+    "notes": "This basin is the reason North Star Mountain, Cloudy Peak and Chiwawa Mountain sit in the same zone as Bonanza — it is reachable from both sides and belongs to neither. From the west it is roughly two miles and 1,700 ft above Spider Meadow over Spider Gap, crossing the permanent snowfield below the gap and dropping ont…"
+   },
+   {
+    "name": "Holden Village",
+    "elev_ft": 3200,
+    "type": "hut",
+    "role": "route",
+    "notes": "This is the base for Bonanza, Copper, Dumbell's eastern side, and the Railroad Creek walk in to Hart and Lyman Lakes. Its unusual value to a climber is that you can sleep indoors and eat three meals at 3,200 ft the night before starting up a 9,500 ft peak, which no other approach in this zone offers. The catch is that …"
+   },
+   {
+    "name": "Holden Ballpark Campground",
+    "elev_ft": 3300,
+    "type": "camp",
+    "role": "route",
+    "notes": "About a mile above the village on the way to the trailheads, this is the answer for a climbing party that wants the Holden approach without paying village rates or fitting into a meal schedule. Being an open field it is exposed and has no shelter, and with only a site or two you cannot count on it if another party arri…"
+   },
+   {
+    "name": "Phelps Creek Campground and the Chiwawa River road campgrounds",
+    "elev_ft": 2800,
+    "type": "camp",
+    "role": "route",
+    "notes": "These are staging camps, not climbing camps: the point of them is that the drive up the Chiwawa River road is around twenty-three miles from the Lake Wenatchee end, the last twelve are rough gravel and dirt genuinely unsuited to low clearance vehicles, and doing that at the end of a long drive from the west side is how…"
+   },
+   {
+    "name": "Spider Meadow and Phelps Basin",
+    "elev_ft": 4750,
+    "type": "camp",
+    "role": "route",
+    "notes": "About five and a half miles and 1,250 ft from the Phelps Creek trailhead at roughly 3,500 ft, this is the standard first night for almost everything on the Chiwawa side. It stages the Spider Gap crossing to Lyman Lakes and so serves North Star, Cloudy and Chiwawa; Phelps Basin half a mile above the head of the meadow i…"
+   }
+  ],
+  "campsite_pins": [
+   {
+    "name": "Rebel Camp",
+    "elev": 4600,
+    "distMi": 4.9
+   },
+   {
+    "name": "Lower Lyman Lake",
+    "elev": 5604,
+    "distMi": 8.1
+   }
+  ]
+ },
+ {
+  "id": "wa_seven_fingered_jack_southwest_slopes",
+  "name": "Southwest Slopes",
+  "discipline": "scrambling",
+  "peak": "Seven Fingered Jack",
+  "area_id": "wa_seven_fingered_jack",
+  "path": "usa.washington.wa_centraleast.wa_chiwawa_entiat_region.wa_seven_fingered_jack",
+  "trip_plan": {
+   "totalNote": "A 2-day, 1-night overnight trip: ~13 miles and 5,600 ft gain round trip, with the standard camp at Leroy Basin (6,100 ft) and about 3 hours basin-to-summit on loose scree and talus.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Approach to Leroy Basin camp",
+     "objective": "Establish camp at Leroy Basin (~6,100 ft)",
+     "miles": 11,
+     "gainFt": 2600,
+     "note": "Walk or bike the closed 6 miles of Chiwawa River Road from the Atkinson Flat closure to the Phelps Creek trailhead first. From the Phelps Creek Trailhead (3,500 ft), follow the Phelps Creek Trail about 3.5 miles to the Leroy Creek crossing (the third and hardest ford), then climb a steep, unmaintained climber's path no…"
+    },
+    {
+     "n": 2,
+     "title": "Summit push and hike out",
+     "objective": "Climb Seven Fingered Jack via the Southwest Slopes, then break camp and hike out",
+     "miles": 14,
+     "gainFt": 3000,
+     "note": "Leave camp early to beat afternoon thunderstorms and soften scree; ascend via either the rock gully or the gentler ridge to its right, both converging on the broad southwest slope, then trend left near the summit block to reach the true (leftmost) summit. Basin-to-summit is roughly 3 hours; after the summit, break camp…"
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Leroy Basin",
+    "elev_ft": 6100,
+    "type": "camp",
+    "role": "main",
+    "notes": "This is the climbers' basin for Mount Maude and Seven Fingered Jack from the west, and it is also the base most parties use for Mount Fernow. Reach it by hiking about three miles up the Phelps Creek trail, fording Leroy Creek at around 4,140 ft, then taking the steep unmaintained climbers' path up the north side of the…"
+   },
+   {
+    "name": "Phelps Creek Campground and the Chiwawa River road campgrounds",
+    "elev_ft": 2800,
+    "type": "camp",
+    "role": "route",
+    "notes": "These are staging camps, not climbing camps: the point of them is that the drive up the Chiwawa River road is around twenty-three miles from the Lake Wenatchee end, the last twelve are rough gravel and dirt genuinely unsuited to low clearance vehicles, and doing that at the end of a long drive from the west side is how…"
+   }
+  ],
+  "campsite_pins": [
+   {
+    "name": "Leroy Basin",
+    "elev": 6100,
+    "distMi": 5
+   }
+  ]
+ },
+ {
+  "id": "wa_spectacle_buttes_west_route",
+  "name": "West Route",
+  "discipline": "scrambling",
+  "peak": "Spectacle Buttes",
+  "area_id": "wa_spectacle_buttes",
+  "path": "usa.washington.wa_centraleast.wa_chiwawa_entiat_region.wa_spectacle_buttes",
+  "trip_plan": {
+   "totalNote": "A 3-day, ~21-mile round trip with a long class 3-4 summit day out of a Leroy Basin high camp; ~7,500 ft of cumulative gain, most of it on day 2.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Approach to high camp",
+     "objective": "Reach Leroy Basin camp",
+     "miles": 11,
+     "gainFt": 2600,
+     "note": "Walk or bike the closed 6 miles of Chiwawa River Road from the Atkinson Flat closure to the Phelps Creek trailhead first. Hike the Phelps Creek Trail then break off onto the Leroy climbers' path, which steepens sharply (around 1,200 ft/mile) into Leroy Basin. Parties report going through several liters of water on this…"
+    },
+    {
+     "n": 2,
+     "title": "Summit push via Freezer Pass and the SW ridge",
+     "objective": "Climb South Spectacle Butte (8,392 ft) and return to camp",
+     "miles": 10.6,
+     "gainFt": 4950,
+     "note": "A long day: cross Leroy Pass and Freezer Pass, drop into the Ice Lakes basin, then traverse a loose, consequential stream-bed crux before gaining the southwest ridge on a scree ramp. The scrambling above is chossy class 3 (feels like low class 4 with the exposure) with several one-at-a-time sections to avoid rockfall."
+    },
+    {
+     "n": 3,
+     "title": "Hike out",
+     "objective": "Return to trailhead",
+     "miles": 11,
+     "gainFt": 0,
+     "note": "Break camp and retrace the Leroy climbers' path and Phelps Creek Trail back to the car."
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Leroy Basin camp",
+    "elev_ft": null,
+    "type": "camp",
+    "role": "main",
+    "notes": ""
+   }
+  ],
+  "campsite_pins": [
+   {
+    "name": "Leroy Basin camp",
+    "elev": 6100,
+    "distMi": 5
+   }
+  ]
+ },
+ {
+  "id": "wa_buck_mountain_south_ridge",
+  "name": "South Ridge",
+  "discipline": "scrambling",
+  "peak": "Buck Mountain",
+  "area_id": "wa_buck_mountain",
+  "path": "usa.washington.wa_centraleast.wa_chiwawa_ridge_dakobed.wa_buck_mountain",
+  "trip_plan": {
+   "totalNote": "A 3-day backpack of roughly 30 miles round trip: a long first day over Buck Creek Pass and the High Pass high route to a camp in Louis Creek Basin, a summit day of about four hours round trip from camp, and a long walk out. Buck is remote and lightly visited; expect loose rock, route-finding and a dry ridge rather than a trail.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Backpack in to Louis Creek Basin",
+     "objective": "Reach camp in Louis Creek Basin below Buck's southwest side",
+     "miles": 18.5,
+     "gainFt": 4800,
+     "note": "Walk or bike the closed 5 miles of Chiwawa River Road from the Atkinson Flat closure to the Trinity trailhead first. From the Trinity trailhead (2,800 ft) at the end of Chiwawa River Road, hike the Buck Creek Trail (No. 1513) about 9.6 miles and 3,100 ft to Buck Creek Pass, and fill up with water there. Follow the old …"
+    },
+    {
+     "n": 2,
+     "title": "Summit Buck Mountain",
+     "objective": "Climb Buck Mountain (8,534 ft) and return to camp",
+     "miles": 3,
+     "gainFt": 1900,
+     "note": "Climb with a light pack from the basin: broad pumice, talus and low-angle snow lead up the south and southwest slopes to the crest, then loose, slabby schist with a short Class 3-4 step near a horn below the top. The crest has several bumps of nearly equal height, so walk it to find the high point. Return the same way …"
+    },
+    {
+     "n": 3,
+     "title": "Hike out",
+     "objective": "Return to Trinity trailhead",
+     "miles": 18.5,
+     "gainFt": 900,
+     "note": "Break camp and reverse the approach: back over the ridge south of Point 7839, under Mount Berge and through High Pass, around Liberty Cap to Buck Creek Pass, then down the Buck Creek Trail to Trinity. Carry enough water for the dry stretch before the pass."
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Buck Creek Pass and the High Pass camps",
+    "elev_ft": 5800,
+    "type": "camp",
+    "role": "main",
+    "notes": "Buck Creek Pass at about 5,800 feet is the base for three peaks in this zone that have nothing to do with Glacier Peak's own approaches. Helmet Butte sits half a mile northeast of the pass and is the shortest objective from here. Buck Mountain rises directly south across the valley and is normally taken by leaving the …"
+   }
+  ],
+  "campsite_pins": [
+   {
+    "name": "Buck Creek Pass",
+    "elev": 5900,
+    "distMi": 9.6
+   },
+   {
+    "name": "Louis Creek Basin camp",
+    "elev": null,
+    "distMi": 13.5
+   }
+  ]
+ },
+ {
+  "id": "wa_chalangin_peak_little_giant_pass_luahna_col",
+  "name": "Little Giant Pass – Luahna Col Route",
+  "discipline": "mountaineering",
+  "peak": "Chalangin Peak",
+  "area_id": "wa_chalangin_peak",
+  "path": "usa.washington.wa_centraleast.wa_chiwawa_ridge_dakobed.wa_chalangin_peak",
+  "trip_plan": {
+   "totalNote": "Cross Little Giant Pass into the Napeequa Valley to camp near Butterfly Butte, climb Chalangin via the north ridge and gully the next day, then hike out over the pass.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Over Little Giant Pass to Butterfly Butte",
+     "objective": "Reach camp near Butterfly Butte",
+     "miles": null,
+     "gainFt": 5800,
+     "note": "From the Little Giant Trailhead at 2,600 ft, ford the Chiwawa River and climb the Little Giant Pass Trail through steep forest and meadows to the 6,409 ft pass. Descend roughly 2,200 ft into the Napeequa Valley and follow the river, off-trail in its upper reaches, to camp near Butterfly Butte at about 6,200 ft."
+    },
+    {
+     "n": 2,
+     "title": "Scramble Chalangin from camp",
+     "objective": "Summit Chalangin and return to camp",
+     "miles": null,
+     "gainFt": 2200,
+     "note": "Traverse past the Pilz Glacier, gain the north ridge and gully, and scramble to the summit, often adding Luahna Peak and/or Clark Mountain in the same push. Reverse the route back to camp."
+    },
+    {
+     "n": 3,
+     "title": "Hike out over Little Giant Pass",
+     "objective": "Return to the Little Giant Trailhead",
+     "miles": null,
+     "gainFt": 2200,
+     "note": "Retrace the Napeequa Valley, re-climb Little Giant Pass, and drop to the trailhead."
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Butterfly Butte and the Pilz Glacier basin camps",
+    "elev_ft": 5850,
+    "type": "camp",
+    "role": "main",
+    "notes": "This is the climbing camp for Luahna Peak and Chalangin Peak and the Napeequa-side base for Clark Mountain, roughly eleven hundred feet above the Napeequa floor after the river crossing near Louis Creek. The benches around Butterfly Butte at about 5,850 feet are the comfortable choice and look straight across at Clark;…"
+   },
+   {
+    "name": "Napeequa Valley floor near Louis Creek",
+    "elev_ft": 4240,
+    "type": "camp",
+    "role": "route",
+    "notes": "This is the way into the Napeequa for Luahna Peak, Chalangin Peak, the Napeequa side of Clark, and Tenpeak's east end. From the Little Giant trailhead the very first obstacle is fording the Chiwawa itself — the old bridge is gone and its remains are in the brush by the water, so the crossing is a wade and its depth dec…"
+   }
+  ],
+  "campsite_pins": []
+ },
+ {
+  "id": "wa_chalangin_peak_southwest_face",
+  "name": "Southwest Face",
+  "discipline": "scrambling",
+  "peak": "Chalangin Peak",
+  "area_id": "wa_chalangin_peak",
+  "path": "usa.washington.wa_centraleast.wa_chiwawa_ridge_dakobed.wa_chalangin_peak",
+  "trip_plan": {
+   "totalNote": "Bushwhack up Thunder Creek to a high camp in Chalangin Basin, climb the snowy southwest face with a short 4th-class band the next day, and hike out on day three.",
+   "days": [
+    {
+     "n": 1,
+     "title": "White River to Chalangin Basin",
+     "objective": "Reach high camp in Chalangin Basin",
+     "miles": null,
+     "gainFt": 2800,
+     "note": "From the White River Trailhead at 2,300 ft, hike the White River Trail to the Thunder Creek drainage. Leave the trail and bushwhack up Thunder Creek through slide alder and burned blowdown to a high camp in Chalangin Basin at about 5,100 ft."
+    },
+    {
+     "n": 2,
+     "title": "Climb the southwest face",
+     "objective": "Summit Chalangin and return to camp",
+     "miles": null,
+     "gainFt": 3300,
+     "note": "Climb the south slope and southwest face on snow with crampons, plus a short 4th-class cliff band, to the summit. Reverse the line back down into Chalangin Basin and camp."
+    },
+    {
+     "n": 3,
+     "title": "Hike out via White River",
+     "objective": "Return to the White River Trailhead",
+     "miles": null,
+     "gainFt": 0,
+     "note": "Hike back out down Thunder Creek and the White River Trail."
+    }
+   ]
+  },
+  "camps_on_file": [],
+  "campsite_pins": []
+ },
+ {
+  "id": "wa_clark_mountain_west_ridge",
+  "name": "Walrus Glacier",
+  "discipline": "mountaineering",
+  "peak": "Clark Mountain",
+  "area_id": "wa_clark_mountain",
+  "path": "usa.washington.wa_centraleast.wa_chiwawa_ridge_dakobed.wa_clark_mountain",
+  "trip_plan": {
+   "totalNote": "A 3-day backpack trip: ~7.5 mi/~3,100 ft up to Boulder Basin camp on day 1, an ~8-mile, ~11.5-hour round-trip summit push via the Walrus Glacier on day 2, and the ~7.5-mile hike out on day 3 — roughly 23 miles and 6,500 ft gained/lost total.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Approach to Boulder Basin camp",
+     "objective": "Establish base camp in Boulder Basin",
+     "miles": 7.5,
+     "gainFt": 3100,
+     "note": "From the White River Trailhead (2,300 ft), hike the White River Trail about 4 miles, then turn up the Boulder Creek/Boulder Pass Trail, fording Boulder Creek where it braids into several shallow channels. Camp in the basin anywhere from about 4,900 to 5,300 ft with a view of Clark Mountain's south side."
+    },
+    {
+     "n": 2,
+     "title": "Summit push via Walrus Glacier",
+     "objective": "Climb Clark Mountain (8,602 ft) via the Walrus Glacier and return to camp",
+     "miles": 8,
+     "gainFt": 3400,
+     "note": "An alpine start from Boulder Basin gains Boulder Pass and the east-ridge bench before dropping onto the Walrus Glacier. Rope up and pick a line up the moderately steep chute on the glacier's left (southern) margin, watching for narrow crevasses, then finish with a Class 3 scramble and a short 45-50 degree snow traverse…"
+    },
+    {
+     "n": 3,
+     "title": "Hike out",
+     "objective": "Return to White River Trailhead",
+     "miles": 7.5,
+     "gainFt": 0,
+     "note": "Break camp and retrace the Boulder Creek/Boulder Pass Trail and White River Trail back to the car, re-fording Boulder Creek along the way."
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Boulder Basin camp",
+    "elev_ft": null,
+    "type": "camp",
+    "role": "main",
+    "notes": ""
+   },
+   {
+    "name": "Boulder Pass and Thunder Basin, White River",
+    "elev_ft": 6200,
+    "type": "camp",
+    "role": "main",
+    "notes": "This is the standard base for Clark Mountain and the reason Clark is a White River peak rather than a Little Giant one. From the trailhead at about 2,300 feet the White River trail runs flat for four miles, then the Boulder Creek trail turns east and climbs for another seven, crossing Boulder Creek at around 4,000 feet…"
+   }
+  ],
+  "campsite_pins": [
+   {
+    "name": "Boulder Basin camp",
+    "elev": 5300,
+    "distMi": 9
+   }
+  ]
+ },
+ {
+  "id": "wa_helmet_butte_standard_route",
+  "name": "Helmet Butte Standard Route",
+  "discipline": "mountaineering",
+  "peak": "Helmet Butte",
+  "area_id": "wa_helmet_butte",
+  "path": "usa.washington.wa_centraleast.wa_chiwawa_ridge_dakobed.wa_helmet_butte",
+  "trip_plan": {
+   "totalNote": "Backpack to Pass No Pass or Buck Creek Pass, scramble Helmet Butte from camp, and hike out over the following one to two days.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Backpack to Pass No Pass",
+     "objective": "Camp at Pass No Pass or Buck Creek Pass",
+     "miles": 8.8,
+     "gainFt": 3000,
+     "note": "Backpack the roughly 8.8-mile approach from the Trinity Trailhead to a camp at Pass No Pass or Buck Creek Pass, both of which have multiple established sites."
+    },
+    {
+     "n": 2,
+     "title": "Scramble Helmet Butte, start out",
+     "objective": "Summit from camp, then break camp",
+     "miles": null,
+     "gainFt": 1600,
+     "note": "Day-scramble Helmet Butte from camp, which takes 1-2 hours round trip from Pass No Pass. Break camp and hike partway or fully out."
+    },
+    {
+     "n": 3,
+     "title": "Finish the hike out",
+     "objective": "Return to the Trinity Trailhead",
+     "miles": null,
+     "gainFt": null,
+     "note": "Finish hiking out to the trailhead if you did not complete it on Day 2."
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Buck Creek Pass and the High Pass camps",
+    "elev_ft": 5800,
+    "type": "camp",
+    "role": "main",
+    "notes": "Buck Creek Pass at about 5,800 feet is the base for three peaks in this zone that have nothing to do with Glacier Peak's own approaches. Helmet Butte sits half a mile northeast of the pass and is the shortest objective from here. Buck Mountain rises directly south across the valley and is normally taken by leaving the …"
+   }
+  ],
+  "campsite_pins": []
+ },
+ {
+  "id": "wa_luahna_peak_east_slopes",
+  "name": "East Slopes",
+  "discipline": "mountaineering",
+  "peak": "Luahna Peak",
+  "area_id": "wa_luahna_peak",
+  "path": "usa.washington.wa_centraleast.wa_chiwawa_ridge_dakobed.wa_luahna_peak",
+  "trip_plan": {
+   "totalNote": "A 3-day, 2-night backpack from White River Trailhead: roughly 23.5 mi and ~6,500 ft round trip, built around one long summit day pushing from a Boulder Basin high camp over Point 7970 and across the Richardson Glacier to Luahna's East Ridge.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Backpack in to Boulder Creek camp",
+     "objective": "Camp at the Boulder Creek ford (~3,700 ft)",
+     "miles": 6,
+     "gainFt": 1420,
+     "note": "Hike the White River Trail (mostly flat) about 4 miles to the Boulder Creek Trail junction, then continue to a ford camp at roughly 3,700 ft. Most parties leave the trailhead Friday evening and finish the last stretch by headlamp."
+    },
+    {
+     "n": 2,
+     "title": "Move to high camp and push for the summit",
+     "objective": "Establish a high camp in Boulder Basin and climb the East Ridge via the Richardson Glacier",
+     "miles": 7.5,
+     "gainFt": 5100,
+     "note": "Continue up into upper Boulder Basin (~5,800 ft) and set a high camp, then rack up for the climb: traverse west under Point 7970 to a col, drop onto the Richardson Glacier, and follow the East Ridge to the summit via a class 3+ corkscrew scramble. This is the big day — real trip reports log about 4.6 hours up and 3.6 h…"
+    },
+    {
+     "n": 3,
+     "title": "Hike out",
+     "objective": "Return to White River Trailhead",
+     "miles": 10,
+     "gainFt": 0,
+     "note": "Break camp and retrace the route down through Boulder Basin, Boulder Creek, and the White River Trail. Parties typically reach the cars around midday."
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Boulder Pass and Thunder Basin, White River",
+    "elev_ft": 6200,
+    "type": "camp",
+    "role": "main",
+    "notes": "This is the standard base for Clark Mountain and the reason Clark is a White River peak rather than a Little Giant one. From the trailhead at about 2,300 feet the White River trail runs flat for four miles, then the Boulder Creek trail turns east and climbs for another seven, crossing Boulder Creek at around 4,000 feet…"
+   }
+  ],
+  "campsite_pins": [
+   {
+    "name": "Boulder Creek ford camp",
+    "elev": 3700,
+    "distMi": 5.5
+   },
+   {
+    "name": "Upper Boulder Basin high camp",
+    "elev": 5700,
+    "distMi": null
+   }
+  ]
+ },
+ {
+  "id": "wa_luahna_peak_southwest_slope_southeast_ridge",
+  "name": "Southwest Slope - Southeast Ridge",
+  "discipline": "scrambling",
+  "peak": "Luahna Peak",
+  "area_id": "wa_luahna_peak",
+  "path": "usa.washington.wa_centraleast.wa_chiwawa_ridge_dakobed.wa_luahna_peak",
+  "trip_plan": {
+   "totalNote": null,
+   "days": [
+    {
+     "n": 1,
+     "title": "Day 1",
+     "objective": "",
+     "miles": null,
+     "gainFt": null,
+     "note": "White River Trailhead to a Boulder Creek ford camp (~3,700 ft); Day 2 (AM) — Boulder Creek camp up to a high camp in upper Boulder Basin; Day 2 (PM) — high camp to the Luahna summit via Clark Basin and Luahna Basin, then back to high camp"
+    },
+    {
+     "n": 2,
+     "title": "Day 2",
+     "objective": "",
+     "miles": null,
+     "gainFt": null,
+     "note": "High camp back out to the trailhead."
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Boulder Pass and Thunder Basin, White River",
+    "elev_ft": 6200,
+    "type": "camp",
+    "role": "main",
+    "notes": "This is the standard base for Clark Mountain and the reason Clark is a White River peak rather than a Little Giant one. From the trailhead at about 2,300 feet the White River trail runs flat for four miles, then the Boulder Creek trail turns east and climbs for another seven, crossing Boulder Creek at around 4,000 feet…"
+   }
+  ],
+  "campsite_pins": []
+ }
+]

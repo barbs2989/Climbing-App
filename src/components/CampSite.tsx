@@ -13,7 +13,11 @@ export interface CampRow {
   role?: string | null;
   onTrack?: boolean | null;
   notes?: string | null;
+  /** The researched reason a party sleeps here rather than at the route's other camps. */
+  why?: string | null;
   nights?: number[] | null;
+  /** True when `nights` was researched (bivy[].nights), not read off the trip plan's wording. */
+  nightsSet?: boolean | null;
   distMi?: number | null;
   gainFt?: number | null;
   capacity?: string | null;
@@ -25,7 +29,7 @@ export interface CampSiteProps {
   b: CampRow;
   /** Index in the list; names an unnamed site "Camp N". */
   i: number;
-  /** True for the first site, which opens expanded. */
+  /** True for the site that opens expanded: the camp most parties sleep at (campPrimaryIndex), not simply the first. */
   first: boolean;
   /** The planner's fitness and pack inputs, for the walk-in time. */
   calc?: { fit?: string | null; pack?: number | null } | null;
@@ -35,6 +39,8 @@ export interface CampSiteProps {
   slept?: { n: number; last: string } | null;
   /** The site before this one in walking order. */
   prev?: CampRow | null;
+  /** True when NIGHT BY NIGHT already prints this camp's reason, so the card does not repeat it. */
+  hideWhy?: boolean;
 }
 
 /* One site, collapsed to the fields that are AUTHORED AND STRUCTURED — name, elevation, type,
@@ -49,13 +55,15 @@ export interface CampSiteProps {
    So the summary line carries only what somebody wrote into a field that holds a VALUE, and the
    prose is one tap away rather than one guess away.
    Moved verbatim from RouteDetail.jsx; only the types were added. */
-export default function CampSite({b,i,first,calc,dayCount,slept,prev}: CampSiteProps){
+export default function CampSite({b,i,first,calc,dayCount,slept,prev,hideWhy}: CampSiteProps){
   /* The FIRST site opens expanded: above it sits the overnight-permit panel, and a section that
      shows only a permit and then a column of collapsed rows does not read as naming a place to
      sleep. One full site (capacity, water, permit) proves the rest are real; the others stay one tap away. */
   const [open,setOpen]=useState(!!first);
   const detail=campDetail(b);
-  const more=detail.length>0||!!String((b&&b.notes)||"").trim();
+  /* WHY HERE leads the open card: it is the line that tells a party choosing between camps what this one gives or costs. */
+  const why=hideWhy?"":String((b&&b.why)||"").trim();
+  const more=detail.length>0||!!String((b&&b.notes)||"").trim()||!!why;
   const nm=(b&&b.name)||("Camp "+(i+1));
   /* An explicit aria-label, because the row's own text nodes are a name and an elevation in
      separate elements and this app has been bitten by "Friends2" — a count welded to a label in
@@ -76,7 +84,7 @@ export default function CampSite({b,i,first,calc,dayCount,slept,prev}: CampSiteP
      before reading a word; the three detail fields get theirs so WATER is findable at a glance in
      an open card — it is the field a party most needs and the longest one to wade through. */
   const tone=(b&&{Camp:C.blue,Bivy:C.teal,Hut:C.amber}[b.kind as "Camp"|"Bivy"|"Hut"])||C.blue;
-  const DTONE={Capacity:tone,Water:C.blue,Permit:C.amber};
+  const DTONE={"Why here":C.green,Capacity:tone,Water:C.blue,Permit:C.amber};
   const chip=function(c: string,bd: string){return {fontSize:11,fontWeight:700,color:c,background:C.surface,border:"1px solid "+bd,borderRadius:20,padding:"2px 9px"};};
   return <div style={{background:C.card,...glowCard(tone,C.card),borderRadius:12,marginBottom:ROUTE_GAP,overflow:"hidden"}}>
     <div {...(more?clickable(function(){setOpen(!open);}):{})} aria-expanded={more?open:undefined} aria-label={more?((open?"Hide":"Show")+" camping detail for "+label):undefined} style={{minHeight:44,boxSizing:"border-box",padding:"11px 13px",cursor:more?"pointer":"default"}}>
@@ -102,7 +110,7 @@ export default function CampSite({b,i,first,calc,dayCount,slept,prev}: CampSiteP
       </div>
     </div>
     {open&&more?<div style={{borderTop:"1px solid "+C.borderLight,background:C.surface,padding:"12px 13px 3px"}}>
-      {detail.concat(b.notes?[["Notes",b.notes]]:[]).map(function(r,ri){return <div key={ri} style={{display:"flex",gap:10,marginBottom:11}}><span aria-hidden="true" style={{...knotMark(DTONE[r[0] as keyof typeof DTONE]||C.borderHi),marginTop:3}}/><div style={{minWidth:0}}><div style={{fontSize:10.5,fontWeight:800,color:DTONE[r[0] as keyof typeof DTONE]||C.textMuted,letterSpacing:0.6,marginBottom:3}}>{r[0].toUpperCase()}</div><div style={{fontSize:12.5,color:C.text,lineHeight:1.6,opacity:0.88}}>{r[1]}</div></div></div>;})}
+      {(why?[["Why here",why]]:[]).concat(detail).concat(b.notes?[["Notes",b.notes]]:[]).map(function(r,ri){return <div key={ri} style={{display:"flex",gap:10,marginBottom:11}}><span aria-hidden="true" style={{...knotMark(DTONE[r[0] as keyof typeof DTONE]||C.borderHi),marginTop:3}}/><div style={{minWidth:0}}><div style={{fontSize:10.5,fontWeight:800,color:DTONE[r[0] as keyof typeof DTONE]||C.textMuted,letterSpacing:0.6,marginBottom:3}}>{r[0].toUpperCase()}</div><div style={{fontSize:12.5,color:C.text,lineHeight:1.6,opacity:0.88}}>{r[1]}</div></div></div>;})}
     </div>:null}
   </div>;
 }

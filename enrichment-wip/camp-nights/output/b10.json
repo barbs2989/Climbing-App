@@ -1,0 +1,693 @@
+[
+ {
+  "id": "wa_diamond_in_the_rough",
+  "camps": [
+   {
+    "name": "Bedal Campground, Mountain Loop Highway",
+    "nights": [
+     0
+    ],
+    "role": "route",
+    "why": "Closest road camp to the Bedal Creek trailhead. Sleep here the night before so the approach starts early, if the seasonal gate on the loop road is open."
+   },
+   {
+    "name": "Bivy at the base of Sloan's southwest face",
+    "nights": [
+     1
+    ],
+    "role": "main",
+    "why": "Sleeping under the southwest face turns summit day into a short walk to the wall; the price is carrying overnight gear up the washout and steep basin first."
+   }
+  ],
+  "new_camps": [],
+  "confidence": "low",
+  "plan_conflict": "Bedal Campground is filed main but is a night-0 trailhead camp, so the base bivy is the only main for night 1.",
+  "sources": [
+   "https://stephabegg.com/?p=8739",
+   "https://stephabegg.com/?p=8910",
+   "https://www.mountainproject.com/area/117523878/sloan-peak"
+  ]
+ },
+ {
+  "id": "wa_fire_on_the_mountain",
+  "camps": [
+   {
+    "name": "Bedal Campground, Mountain Loop Highway",
+    "nights": [
+     0
+    ],
+    "role": "route",
+    "why": "Closest road camp to the Bedal Creek trailhead. Sleep here the night before so the approach starts early, if the seasonal gate on the loop road is open."
+   },
+   {
+    "name": "Bivy at the base of Sloan's southwest face",
+    "nights": [
+     1
+    ],
+    "role": "main",
+    "why": "A bivy near running water at the foot of the wall makes the 8-pitch day an early start from camp; a single long day from the car is the alternative for fast parties."
+   }
+  ],
+  "new_camps": [],
+  "confidence": "low",
+  "plan_conflict": "Bedal Campground is filed main but is a night-0 trailhead camp, so the base bivy is the only main for night 1.",
+  "sources": [
+   "https://stephabegg.com/?p=8739",
+   "https://stephabegg.com/?p=8910",
+   "https://www.mountainproject.com/area/117523878/sloan-peak"
+  ]
+ },
+ {
+  "id": "wa_northwest_buttress",
+  "camps": [
+   {
+    "name": "Bedal Campground, Mountain Loop Highway",
+    "nights": [
+     0
+    ],
+    "role": "route",
+    "why": "Closest road camp to the Bedal Creek trailhead. Sleep here the night before so the approach starts early, if the seasonal gate on the loop road is open."
+   },
+   {
+    "name": "Bivy at the base of Sloan's southwest face",
+    "nights": [
+     1
+    ],
+    "role": "main",
+    "why": "Parties sleeping before the buttress camp in the Bedal basin near the foot of the face; it avoids a pre-dawn walk-in but costs a heavy carry up the meadows."
+   }
+  ],
+  "new_camps": [],
+  "confidence": "low",
+  "plan_conflict": "Bedal Campground is filed main but is a night-0 trailhead camp, so the base bivy is the only main for night 1.",
+  "sources": [
+   "https://stephabegg.com/?p=8739",
+   "https://stephabegg.com/?p=8910",
+   "https://www.mountainproject.com/area/117523878/sloan-peak"
+  ]
+ },
+ {
+  "id": "wa_sloan_peak_corkscrew",
+  "camps": [
+   {
+    "name": "Ridge above the Sloan Glacier",
+    "nights": [
+     1
+    ],
+    "role": "main",
+    "why": "The higher camp on the crest above the glacier, with long views and a shorter summit morning. Sites hold snow into June, and it is a longer carry than the saddle."
+   },
+   {
+    "name": "Bedal-Sloan saddle",
+    "nights": [
+     1
+    ],
+    "role": "route",
+    "why": "First flat camp on the ridge, near a small pond with room for several tents. Sites are limited, but it is about 450 feet lower and saves carrying a full pack higher."
+   },
+   {
+    "name": "Bedal Creek roadhead",
+    "nights": [
+     0
+    ],
+    "role": "route",
+    "why": "Sleep at the car and do the Corkscrew in one long day from a pre-dawn start. It is what most fit parties do, and it avoids hauling camp up the basin."
+   }
+  ],
+  "new_camps": [],
+  "confidence": "medium",
+  "plan_conflict": "The plan names the saddle or the ridge as one camp; the ridge is kept as the single main and the saddle is the alternative for the same night.",
+  "sources": [
+   "https://www.mountaineers.org/activities/routes-places/sloan-peak-corkscrew-route",
+   "https://mountaineers.org/activities/trip-reports/basic-alpine-climb-sloan-peak-corkscrew-route-2",
+   "https://stephabegg.com/?p=8910"
+  ]
+ },
+ {
+  "id": "wa_indian_head_peak_southwest_slopes",
+  "camps": [],
+  "new_camps": [
+   {
+    "name": "White Pass camp, North Fork Sauk Trail",
+    "elev_ft": 5900,
+    "type": "camp",
+    "role": "main",
+    "nights": [
+     1
+    ],
+    "why": "Sites just below the pass put Indian Head within a few hours of a day-pack scramble, and the camp is close to the trail instead of at the farther Indian Pass.",
+    "water": "",
+    "capacity": "Several sites just below the pass; busy on summer weekends.",
+    "permit": "",
+    "notes": "Camp below the pass; camping on the ridge crest itself is not allowed. About 10 miles up the North Fork Sauk Trail."
+   }
+  ],
+  "confidence": "medium",
+  "plan_conflict": "The plan says White Pass or Indian Pass; trip reports camp at White Pass, so night 1 is set there.",
+  "sources": [
+   "https://www.yellowleaf.org/scramble/g/r/2015-07-02-04-kololo.html",
+   "https://hikeoftheweek.com/2022/09/01/white-pass",
+   "https://adminonly.wta.org/go-hiking/trip-reports/trip_report.2010-08-28.8347923143",
+   "https://summitpost.org/indian-head-peak/climbers-log/693914"
+  ]
+ },
+ {
+  "id": "wa_kololo_peaks_standard",
+  "camps": [
+   {
+    "name": "White Chuck Glacier basin, under Kololo Peaks",
+    "nights": [
+     1,
+     2
+    ],
+    "role": "main",
+    "why": "The high camp: tarns and rock benches near 6,600 ft put the glacier within a morning. It is a long heavy carry and the basin fills with Glacier Peak parties."
+   },
+   {
+    "name": "Sloan Creek Campground and the North Fork Sauk road end",
+    "nights": [
+     0
+    ],
+    "role": "route",
+    "why": "Drive-in camp at the road end the night before; it lets the long approach start at first light but adds nothing to the two nights in the basin."
+   },
+   {
+    "name": "Mackinaw Shelter",
+    "nights": [],
+    "role": "route",
+    "why": "About 5.5 miles up the river trail. The plan walks past it on day one, so it only comes into play for parties that start late and split the approach in two."
+   }
+  ],
+  "new_camps": [],
+  "confidence": "medium",
+  "plan_conflict": null,
+  "sources": [
+   "https://www.yellowleaf.org/scramble/g/r/2015-07-02-04-kololo.html",
+   "https://adminonly.wta.org/go-hiking/trip-reports/tripreport-2001090111",
+   "https://www.mountaineers.org/activities/trip-reports/glacier-climb-kololo-peaks-white-chuck-glacier"
+  ]
+ },
+ {
+  "id": "wa_le_conte_mountain_northern_aspect",
+  "camps": [
+   {
+    "name": "Yang Yang Lakes",
+    "nights": [
+     1,
+     2
+    ],
+    "role": "main",
+    "why": "Established sites in a sheltered bowl with water, and Le Conte goes as a round trip from here. The cost is the long glacier day to reach it."
+   },
+   {
+    "name": "Le Conte Pass",
+    "nights": [],
+    "role": "route",
+    "why": "A higher bivy on the shoulder right under the climb. It trims the summit approach but has less shelter than the lake basin, so few parties sleep both nights here."
+   },
+   {
+    "name": "Cache Col and the Cache Glacier shoulder",
+    "nights": [],
+    "role": "route",
+    "why": "Dry, windy sites at the col with no water; used by parties that start in the afternoon or lose the light, who must haul water from Kool-Aid Lake."
+   },
+   {
+    "name": "Spider-Formidable Col",
+    "nights": [],
+    "role": "route",
+    "why": "Base camp for Spider and Formidable. A party heading for Le Conte crosses it and does not stop, apart from waiting out weather."
+   },
+   {
+    "name": "Kool-Aid Lake",
+    "nights": [],
+    "role": "route",
+    "why": "Usual first camp on the traverse. Stopping here splits the 9,000 ft first day in two, at the cost of a bigger glacier day to Yang Yang Lakes next."
+   }
+  ],
+  "new_camps": [],
+  "confidence": "medium",
+  "plan_conflict": "The plan reaches Yang Yang Lakes in one 13-mile day; many parties split it with a night at Kool-Aid Lake, which is not a night of this plan.",
+  "sources": [
+   "https://www.wta.org/go-hiking/trip-reports/trip_report-2020-07-14-9411276169",
+   "https://stephabegg.com/?p=8946",
+   "https://www.alpineinstitute.com/?p=108473"
+  ]
+ },
+ {
+  "id": "wa_lizard_mountain_south_route",
+  "camps": [
+   {
+    "name": "Kool-Aid Lake",
+    "nights": [
+     1,
+     6
+    ],
+    "role": "main",
+    "why": "Standard first camp: water from the tarn and a manageable first day over Cache Col with a full pack. It is the last easy night before the glacier and Red Ledge day."
+   },
+   {
+    "name": "Yang Yang Lakes",
+    "nights": [
+     2,
+     5
+    ],
+    "role": "main",
+    "why": "Established sites at the lakes in a sheltered bowl with water, a day of glacier travel from Kool-Aid. Reaching it breaks the traverse into two sane days."
+   },
+   {
+    "name": "White Rock Lakes",
+    "nights": [
+     3,
+     4
+    ],
+    "role": "main",
+    "why": "Scenic camp on the lake shore under Dana and Chickamin glaciers; reached after Lizard Pass, so most parties arrive with half a day left to rest or scramble."
+   },
+   {
+    "name": "Sentinel Pass and Lizard Col",
+    "nights": [],
+    "role": "route",
+    "why": "The saddles either side of Sentinel Peak; highest sleeping spots on this stretch. Used when weather or a late start stops a party short of White Rock Lakes."
+   },
+   {
+    "name": "Crest bivouacs above the South Cascade and Chickamin glaciers",
+    "nights": [],
+    "role": "route",
+    "why": "Not set sites, only wherever a party gets to along the crest; they matter for longer traverses beyond this plan, not for an out-and-back to Lizard Mountain."
+   }
+  ],
+  "new_camps": [],
+  "confidence": "high",
+  "plan_conflict": null,
+  "sources": [
+   "https://stephabegg.com/?p=8946",
+   "https://www.alpineinstitute.com/itinerary-bakw00-26r-ptarmtraverse/",
+   "https://www.alpineinstitute.com/?p=108473",
+   "https://sverdina.com/Ptarmigan_Traverse1.asp"
+  ]
+ },
+ {
+  "id": "wa_columbia_peak_scramble",
+  "camps": [
+   {
+    "name": "Twin Lakes basin, under the west face of Columbia",
+    "nights": [
+     1
+    ],
+    "role": "main",
+    "why": "Puts the West Spur at the back door, with a mellow day in and room to swim. The steep, loose drop in and out of the basin makes the summit-day return longer."
+   },
+   {
+    "name": "Monte Cristo townsite campground, four miles up the closed road",
+    "nights": [],
+    "role": "route",
+    "why": "Easy first night after biking the road, but it adds a full day's elevation to the summit push, so most parties continue over Poodle Dog Pass instead."
+   },
+   {
+    "name": "Barlow Pass roadhead",
+    "nights": [
+     0
+    ],
+    "role": "route",
+    "why": "Sleeping at the car the night before lets a party bike and hike in at first light; the last point vehicles reach before the gated road."
+   },
+   {
+    "name": "Silver Lake, below Poodle Dog Pass",
+    "nights": [],
+    "role": "route",
+    "why": "About a thousand feet lower than Twin Lakes, and it avoids the loose basin crossing; a good choice if combining Columbia with Silvertip, but the summit day is longer."
+   }
+  ],
+  "new_camps": [],
+  "confidence": "high",
+  "plan_conflict": "The Monte Cristo townsite campground is filed as a main camp, but the plan sleeps at Twin Lakes so the townsite is only an option.",
+  "sources": [
+   "https://www.mountaineers.org/activities/routes-places/monte-cristo-barlow-pass-area/columbia-peak-west-spur",
+   "https://www.mountaineers.org/activities/trip-reports/columbia-peak-west-spur",
+   "https://cascadeclimbers.com/forum/topic/62558-tr-columbia-peak-westridge-9272008",
+   "https://sverdina.com/Columbia1.asp"
+  ]
+ },
+ {
+  "id": "wa_monte_cristo_peak_scramble",
+  "camps": [
+   {
+    "name": "Glacier Basin — Ray's Knoll and Mystery Hill",
+    "nights": [
+     1
+    ],
+    "role": "main",
+    "why": "The working high camp below the North Col. Reaching it by bike and a 2.5-mile trail leaves a late start acceptable and the summit day close."
+   },
+   {
+    "name": "Monte Cristo townsite campground, four miles up the closed road",
+    "nights": [],
+    "role": "route",
+    "why": "Flat, easy first night near the road, but it leaves the steep Glacier Basin trail and the col for one long day; the plan carries on to the basin."
+   },
+   {
+    "name": "Barlow Pass roadhead",
+    "nights": [
+     0
+    ],
+    "role": "route",
+    "why": "Sleeping at the car the night before suits parties riding in at first light for a single long push or an early start to the basin."
+   }
+  ],
+  "new_camps": [],
+  "confidence": "high",
+  "plan_conflict": "Monte Cristo townsite is filed as a main camp but the plan sleeps in Glacier Basin; the townsite is demoted to an alternative.",
+  "sources": [
+   "https://www.mountaineers.org/activities/routes-places/monte-cristo-barlow-pass-area/monte-cristo-north-col",
+   "https://turns-all-year.com/trip-reports/january-19-20-2014-monte-cristo",
+   "https://mountaineers.org/activities/trip-reports/monte-cristo-north-col"
+  ]
+ },
+ {
+  "id": "wa_east_wilmans_spire",
+  "camps": [
+   {
+    "name": "Glacier Basin — Ray's Knoll and Mystery Hill",
+    "nights": [
+     1
+    ],
+    "role": "main",
+    "why": "The high camp for the northern group; the Wilmans spires are a morning from here, with the exit back to Barlow Pass the same day."
+   },
+   {
+    "name": "Monte Cristo townsite campground, four miles up the closed road",
+    "nights": [],
+    "role": "route",
+    "why": "Easier first night at the townsite, but it leaves the steep Glacier Basin trail and approach to the spires for the climbing morning."
+   },
+   {
+    "name": "Barlow Pass roadhead",
+    "nights": [
+     0
+    ],
+    "role": "route",
+    "why": "Sleeping at the car the night before lets a party bike in at dawn; it is the last point vehicles reach."
+   }
+  ],
+  "new_camps": [],
+  "confidence": "medium",
+  "plan_conflict": "Monte Cristo townsite is filed as a main camp but the plan sleeps in Glacier Basin; the townsite is demoted to an alternative.",
+  "sources": [
+   "https://turns-all-year.com/trip-reports/january-19-20-2014-monte-cristo",
+   "https://www.mountaineers.org/activities/routes-places/monte-cristo-barlow-pass-area/monte-cristo-north-col"
+  ]
+ },
+ {
+  "id": "wa_mount_saul_se_route",
+  "camps": [
+   {
+    "name": "Airplane Lake",
+    "nights": [
+     1
+    ],
+    "role": "main",
+    "why": "The only real camp for Saul: flat, bug-free spots on the north peninsula, with water and the summit a straightforward morning above. It turns a 16-mile day into two."
+   },
+   {
+    "name": "White River road end trailhead",
+    "nights": [
+     0
+    ],
+    "role": "route",
+    "why": "Drive-in staging the night before; useful because the long gravel road is the most common failure point, but it does not shorten the trip."
+   },
+   {
+    "name": "The Indian Creek valley camps and the Airplane Lake junction site",
+    "nights": [],
+    "role": "route",
+    "why": "Camping on the valley floor saves the steep climbers' path with a full pack but leaves a long 2,200 ft climb before the summit push; the turn is easy to miss."
+   },
+   {
+    "name": "The east slope above Airplane Lake — no established camp",
+    "nights": [],
+    "role": "route",
+    "why": "Nothing above the lake is worth the carry; bivouacking higher gives up water and shelter for almost no time saved on summit day."
+   }
+  ],
+  "new_camps": [],
+  "confidence": "medium",
+  "plan_conflict": null,
+  "sources": [
+   "https://summitpost.org/mountain/951354",
+   "https://adminonly.wta.org/go-hiking/trip-reports/trip_report-2021-09-26-4435244004"
+  ]
+ },
+ {
+  "id": "wa_old_guard_peak_east_side_route",
+  "camps": [
+   {
+    "name": "Kool-Aid Lake",
+    "nights": [
+     1
+    ],
+    "role": "main",
+    "why": "Standard first camp: water from the tarn and a manageable first day over Cache Col with a full pack. It is the last easy night before the glacier and Red Ledge day."
+   },
+   {
+    "name": "Yang Yang Lakes",
+    "nights": [
+     2
+    ],
+    "role": "main",
+    "why": "Established sites at the lakes in a sheltered bowl with water, a day of glacier travel from Kool-Aid. Reaching it breaks the traverse into two sane days."
+   },
+   {
+    "name": "White Rock Lakes",
+    "nights": [
+     3,
+     4
+    ],
+    "role": "main",
+    "why": "Scenic camp on the lake shore under Dana and Chickamin glaciers; reached after Lizard Pass, so most parties arrive with half a day left to rest or scramble."
+   }
+  ],
+  "new_camps": [
+   {
+    "name": "Itswoot Ridge camp",
+    "elev_ft": 6400,
+    "type": "camp",
+    "role": "main",
+    "nights": [
+     5
+    ],
+    "why": "Meadow camp on the ridge facing Dome Peak and the Dana Glacier; the usual night after White Rock Lakes, with the Bachelor Creek exit one day below.",
+    "water": "",
+    "capacity": "",
+    "permit": "",
+    "notes": "Parties camp on the ridge near 6,400 ft; Cub Lake is about an hour farther and is the alternative for the same night. Camp is also the base for a Dome Peak attempt."
+   }
+  ],
+  "confidence": "medium",
+  "plan_conflict": "Itswoot Ridge (night 5) is not on file for this route, so it is added as a new camp.",
+  "sources": [
+   "https://stephabegg.com/?p=8946",
+   "https://www.alpineinstitute.com/itinerary-bakw00-26r-ptarmtraverse/",
+   "https://www.alpineinstitute.com/?p=108473",
+   "https://sverdina.com/Ptarmigan_Traverse1.asp"
+  ]
+ },
+ {
+  "id": "wa_old_guard_peak_southwest_route",
+  "camps": [
+   {
+    "name": "Kool-Aid Lake",
+    "nights": [
+     1
+    ],
+    "role": "main",
+    "why": "Standard first camp: water from the tarn and a manageable first day over Cache Col with a full pack. It is the last easy night before the glacier and Red Ledge day."
+   },
+   {
+    "name": "Yang Yang Lakes",
+    "nights": [
+     2
+    ],
+    "role": "main",
+    "why": "Established sites at the lakes in a sheltered bowl with water, a day of glacier travel from Kool-Aid. Reaching it breaks the traverse into two sane days."
+   },
+   {
+    "name": "White Rock Lakes",
+    "nights": [
+     3
+    ],
+    "role": "main",
+    "why": "Scenic camp on the lake shore under Dana and Chickamin glaciers; reached after Lizard Pass, so most parties arrive with half a day left to rest or scramble."
+   }
+  ],
+  "new_camps": [
+   {
+    "name": "Itswoot Ridge camp",
+    "elev_ft": 6400,
+    "type": "camp",
+    "role": "main",
+    "nights": [
+     4
+    ],
+    "why": "Meadow camp on the ridge facing Dome Peak and the Dana Glacier; the usual night after White Rock Lakes, with the Bachelor Creek exit one day below.",
+    "water": "",
+    "capacity": "",
+    "permit": "",
+    "notes": "Parties camp on the ridge near 6,400 ft; Cub Lake is about an hour farther and is the alternative for the same night. Camp is also the base for a Dome Peak attempt."
+   },
+   {
+    "name": "Bachelor Creek camp, below Itswoot Ridge",
+    "elev_ft": 2450,
+    "type": "camp",
+    "role": "main",
+    "nights": [
+     5
+    ],
+    "why": "Timberline-and-below camp on the exit creek; it leaves a long final day of brush and trail, which is why the plan eases off the high ridge before it.",
+    "water": "",
+    "capacity": "",
+    "permit": "",
+    "notes": "Reached by dropping from the Itswoot Ridge saddle into Bachelor Creek; Six Mile camp at the Downey Creek junction is the next stop on the exit."
+   }
+  ],
+  "confidence": "low",
+  "plan_conflict": "The plan's night 5 camp at Bachelor Meadow could not be matched to any published camp; the Bachelor Creek camp near 2,450 ft is used instead. Night 4 plan camp near the Dana-Dome saddle is Itswoot Ridge in published itineraries.",
+  "sources": [
+   "https://stephabegg.com/?p=8946",
+   "https://www.alpineinstitute.com/itinerary-bakw00-26r-ptarmtraverse/",
+   "https://www.alpineinstitute.com/?p=108473",
+   "https://sverdina.com/Ptarmigan_Traverse1.asp"
+  ]
+ },
+ {
+  "id": "wa_rimrock_ridge_scramble",
+  "camps": [
+   {
+    "name": "Kool-Aid Lake",
+    "nights": [
+     1
+    ],
+    "role": "main",
+    "why": "Standard first camp: water from the tarn and a manageable first day over Cache Col with a full pack. It is the last easy night before the glacier and Red Ledge day."
+   },
+   {
+    "name": "Yang Yang Lakes",
+    "nights": [
+     2
+    ],
+    "role": "main",
+    "why": "Established sites at the lakes in a sheltered bowl with water, a day of glacier travel from Kool-Aid. Reaching it breaks the traverse into two sane days."
+   }
+  ],
+  "new_camps": [],
+  "confidence": "high",
+  "plan_conflict": null,
+  "sources": [
+   "https://stephabegg.com/?p=8946",
+   "https://www.alpineinstitute.com/itinerary-bakw00-26r-ptarmtraverse/",
+   "https://www.alpineinstitute.com/?p=108473",
+   "https://sverdina.com/Ptarmigan_Traverse1.asp"
+  ]
+ },
+ {
+  "id": "wa_sentinel_peak_standard",
+  "camps": [
+   {
+    "name": "Kool-Aid Lake",
+    "nights": [
+     1
+    ],
+    "role": "main",
+    "why": "Standard first camp: water from the tarn and a manageable first day over Cache Col with a full pack. It is the last easy night before the glacier and Red Ledge day."
+   },
+   {
+    "name": "Sentinel Pass and Lizard Col",
+    "nights": [
+     2
+    ],
+    "role": "main",
+    "why": "The high camp at the col directly under Sentinel's west face. It gives a short summit morning and running water nearby, but it is exposed and it means a roped glacier day to reach."
+   },
+   {
+    "name": "White Rock Lakes",
+    "nights": [],
+    "role": "route",
+    "why": "The camp at the south end of the high traverse; it is a day beyond this plan, used only by parties pushing on for Old Guard or the south ridge."
+   },
+   {
+    "name": "Cache Col and the Cache Glacier shoulder",
+    "nights": [],
+    "role": "route",
+    "why": "Dry, windy sites at the col, used by parties that run out of light; strong parties camp here and push to the col on day two. Water must be carried from Kool-Aid."
+   },
+   {
+    "name": "Spider-Formidable Col",
+    "nights": [],
+    "role": "route",
+    "why": "Base camp for Spider and Formidable, not a stop for a party going to Sentinel, who cross the col and drop to Yang Yang Lakes."
+   },
+   {
+    "name": "Le Conte Pass",
+    "nights": [],
+    "role": "route",
+    "why": "Shoulder bivy above the lakes, used for Le Conte itself; a party bound for Sentinel passes by and carries on to the col."
+   },
+   {
+    "name": "Crest bivouacs above the South Cascade and Chickamin glaciers",
+    "nights": [],
+    "role": "route",
+    "why": "Not set sites, only wherever a party gets to; they matter for longer traverses, not for a Sentinel trip."
+   }
+  ],
+  "new_camps": [
+   {
+    "name": "Yang Yang Lakes",
+    "elev_ft": 5830,
+    "type": "camp",
+    "role": "main",
+    "nights": [
+     3
+    ],
+    "why": "Lower, sheltered camp with water, where the plan moves camp after the summit; it also shortens the carry back to Cache Col the next day.",
+    "water": "",
+    "capacity": "",
+    "permit": "",
+    "notes": "Lake-side sites below Le Conte Mountain, reached from the col by the Le Conte Glacier."
+   }
+  ],
+  "confidence": "medium",
+  "plan_conflict": "The plan calls its night 2 camp the Le Conte-Sentinel Col; that is Sentinel Pass in the camps on file, and White Rock Lakes, filed as main, is not slept at on this plan.",
+  "sources": [
+   "https://www.wta.org/go-hiking/trip-reports/trip_report-2020-07-14-9411276169",
+   "https://sverdina.com/Ptarmigan_Traverse1.asp",
+   "https://stephabegg.com/?p=8946",
+   "https://www.alpineinstitute.com/?p=108473"
+  ]
+ },
+ {
+  "id": "wa_sheep_gap_mountain_scramble",
+  "camps": [
+   {
+    "name": "Foggy Lake, Gothic Basin",
+    "nights": [
+     1
+    ],
+    "role": "main",
+    "why": "The usual basin camp: many sites on the south shore and nearby ridge, close to the Weden Pass traverse. Weekend sites fill by mid-afternoon and the ground is fragile."
+   },
+   {
+    "name": "Gothic Basin tarns",
+    "nights": [],
+    "role": "route",
+    "why": "Smaller tarn-side sites lower in the basin; a shorter carry than Foggy Lake and a reasonable fallback when the lake sites are full."
+   }
+  ],
+  "new_camps": [],
+  "confidence": "medium",
+  "plan_conflict": null,
+  "sources": [
+   "https://www.theoutbound.com/washington/backpacking/backpack-at-gothic-basin",
+   "https://thedyrt.com/camping/washington/gothic-basin/reviews/14018",
+   "https://www.wta.org/go-hiking/trip-reports/trip_report-2024-10-12.191033253272"
+  ]
+ }
+]

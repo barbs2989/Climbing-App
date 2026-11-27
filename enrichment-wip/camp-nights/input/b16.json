@@ -1,0 +1,1115 @@
+[
+ {
+  "id": "wa_mount_formidable_south_face",
+  "name": "South Face / Southeast Ledges",
+  "discipline": "alpine",
+  "peak": "Mount Formidable",
+  "area_id": "wa_mount_formidable",
+  "path": "usa.washington.wa_northwest.wa_hwy20_ncnp.wa_north_cascades.wa_north_cascades_core.wa_mount_formidable",
+  "trip_plan": {
+   "totalNote": "A 3-day trip covering roughly 20-22 miles round trip with about 6,000-6,600 ft of cumulative gain; Day 2 is the long, technical crux day and can run 8-16 hours depending on routefinding. Strong parties sometimes compress this to 2 days with an even longer single summit day.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Approach to Kool-Aid Lake / Red Ledge camp",
+     "objective": "Establish camp near Kool-Aid Lake (~6,200 ft)",
+     "miles": 7,
+     "gainFt": 3200,
+     "note": "Hike the maintained Cascade Pass trail (3.7 mi) to the pass, then leave trail up Mixup Arm and across the Cache Glacier to Cache Col, dropping to camp near Kool-Aid Lake / Red Ledge on the Ptarmigan Traverse side. Real parties cover this in 4.5-6 hours depending on pace and snow conditions on the glacier traverse."
+    },
+    {
+     "n": 2,
+     "title": "Summit push via Spider-Formidable col and the south face",
+     "objective": "Climb Southeast Ledges/South Face to the 8,325 ft summit and return to camp",
+     "miles": 6,
+     "gainFt": 2400,
+     "note": "The long, complex day: cross the Middle Cascade Glacier to the Spider-Formidable col, then work south and west through a maze of ledges, gullies, and short Class 4 slabs to the summit, descending the same way (often with 1-2 short rappels off loose rock). Routefinding at the col and on the upper ledges is the crux of t…"
+    },
+    {
+     "n": 3,
+     "title": "Hike out",
+     "objective": "Return to the Cascade Pass Trailhead",
+     "miles": 7,
+     "gainFt": 600,
+     "note": "Reverse the Day 1 approach: back over Cache Col, across the Cache Glacier and Mixup Arm, and down the Cascade Pass trail to the car. Typically 6-6.5 hours at a normal pace."
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Kool-Aid Lake",
+    "elev_ft": 6100,
+    "type": null,
+    "role": "main",
+    "notes": "Planned first camp on the traverse, roughly three hours past Cascade Pass and the usual night one for a Formidable trip. Good sheltered ground and easy water. Mountain goats work the camp for salt — stow sweaty gear and pee well away from the sites. It is still a long day from here to the peak, so parties chasing a sin…"
+   },
+   {
+    "name": "Spider-Formidable Col",
+    "elev_ft": 7320,
+    "type": null,
+    "role": "main",
+    "notes": "Planned high camp and the closest ground to the north side of the peak — the col is the only non-technical crossing of the Spider-Formidable wall and it puts you directly above the Middle Cascade Glacier. Fully exposed on a notch, so expect wind and no shelter at all in weather. The slab trickle is unreliable; confirm …"
+   },
+   {
+    "name": "Ridge benches above Yang Yang Lakes",
+    "elev_ft": null,
+    "type": null,
+    "role": "route",
+    "notes": "Planned launching camp specifically noted by parties climbing Formidable, sitting on the ridge above the lakes with a much shorter summit day than camping at the lakes themselves. The trade is water: there is none up here except what you melt or carry from below. Gaining this ridgeline out of the lakes is the most cons…"
+   },
+   {
+    "name": "Yang Yang Lakes",
+    "elev_ft": 5850,
+    "type": null,
+    "role": "route",
+    "notes": "Planned camp on the south side of the col, the standard traverse night and the fallback when the col is windbound. Sheltered, easy water, and a comfortable place to sit out weather — but it is well below the peak and adds a steep, loose climb back to the ridge in the morning."
+   }
+  ],
+  "campsite_pins": [
+   {
+    "name": "Kool-Aid Lake",
+    "elev": 6320,
+    "distMi": 6.3
+   },
+   {
+    "name": "Yang Yang Lakes",
+    "elev": 5833,
+    "distMi": null
+   }
+  ]
+ },
+ {
+  "id": "wa_northeast_face_direct",
+  "name": "Northeast Face Direct",
+  "discipline": "alpine",
+  "peak": "Mount Formidable",
+  "area_id": "wa_mount_formidable",
+  "path": "usa.washington.wa_northwest.wa_hwy20_ncnp.wa_north_cascades.wa_north_cascades_core.wa_mount_formidable",
+  "trip_plan": {
+   "totalNote": "Hike over Cascade Pass and Cache Col to Kool-Aid Lake, make a long pre-dawn day across the Middle Cascade Glacier to climb the Direct Northeast Face and descend the South Route, then hike out.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Cascade Pass to Kool-Aid Lake",
+     "objective": "Reach camp at Kool-Aid Lake",
+     "miles": null,
+     "gainFt": 3400,
+     "note": "Hike from the Cascade Pass trailhead to Kool-Aid Lake via Cascade Pass, the Mixup Arm, the Cache Glacier, and Cache Col, about 5 hours, and camp."
+    },
+    {
+     "n": 2,
+     "title": "Climb the Direct Northeast Face",
+     "objective": "Climb the face and descend the South Route to camp",
+     "miles": null,
+     "gainFt": 2200,
+     "note": "Make a pre-dawn start and cross the Middle Cascade Glacier basin to the base of the face. Climb the Direct Northeast Face, roughly 8-10.5 hours from camp to summit, then descend via the South Route back to camp."
+    },
+    {
+     "n": 3,
+     "title": "Hike out",
+     "objective": "Return to the Cascade Pass trailhead",
+     "miles": null,
+     "gainFt": 850,
+     "note": "Hike out to the trailhead."
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Spider-Formidable Col",
+    "elev_ft": 7320,
+    "type": "bivy",
+    "role": "main",
+    "notes": "The working base camp for both Spider Mountain and Mount Formidable, and the reason to know about it is that a party climbing either peak stops here while a party walking the traverse does not. The twin notches of the col divide the two mountains, and it is reached by crossing the upper Middle Cascade Glacier almost du…"
+   },
+   {
+    "name": "Kool-Aid Lake",
+    "elev_ft": 6120,
+    "type": "camp",
+    "role": "main",
+    "notes": "About one mile and 700 ft below Cache Col on a boot path. The usual first camp south of Cascade Pass and the base for Spider, Formidable and the south side of Magic."
+   },
+   {
+    "name": "Cache Col and the Cache Glacier shoulder",
+    "elev_ft": 6400,
+    "type": "bivy",
+    "role": "route",
+    "notes": "The col is the gateway to everything here. From the Cascade Pass trail a boot path climbs south along the arm and onto the mellow Cache Glacier, which is corniced at the col early in the season and can need a careful step through. Parties who leave the car in the afternoon and lose the light on the climb sometimes stop…"
+   }
+  ],
+  "campsite_pins": [
+   {
+    "name": "Kool-Aid Lake",
+    "elev": 6120,
+    "distMi": null
+   }
+  ]
+ },
+ {
+  "id": "wa_goode_mountain_megalodon_ridge",
+  "name": "Megalodon Ridge",
+  "discipline": "alpine",
+  "peak": "Mount Goode",
+  "area_id": "wa_mount_goode",
+  "path": "usa.washington.wa_northwest.wa_hwy20_ncnp.wa_north_cascades.wa_north_cascades_core.wa_mount_goode",
+  "trip_plan": {
+   "totalNote": "A serious 4-day, grade IV+ 5.10 alpine outing: a brushy approach, an 11-12 hour technical ridge climb to a summit bivy, then a long multi-day descent and hike-out via the Southwest Couloir — roughly 35 mi and 7,500 ft of gain round trip.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Approach to high camp/bivy",
+     "objective": "Reach a bivy below the ridge",
+     "miles": 13,
+     "gainFt": 4700,
+     "note": "PCT south from Bridge Creek trailhead, up North Fork Bridge Creek, then a brushy, off-trail approach (the first-ascent party logged roughly 3,000 ft of bushwhacking) to a camp near the Goode Glacier below the ridge's start."
+    },
+    {
+     "n": 2,
+     "title": "Climb Megalodon Ridge to a summit bivy",
+     "objective": "Climb the full ridge to the summit",
+     "miles": 2,
+     "gainFt": 2800,
+     "note": "A long, sustained alpine rock climb along the crest with 4,000-5,000 ft of exposure on either side; simul-climbing up to 5.8 with harder pitches (up to 5.10) higher on the ridge. The first-ascent party spent about 11-12 hours climbing before bivying on the summit, the highest point in North Cascades National Park."
+    },
+    {
+     "n": 3,
+     "title": "Descend toward Park Creek",
+     "objective": "Rappel/downclimb the Southwest Couloir toward the valley",
+     "miles": 10,
+     "gainFt": 0,
+     "note": "Descend the standard Southwest Couloir descent line, then keep losing elevation into the Park Creek drainage rather than returning to the Day 1 camp. Expect several rappels and tired legs after the previous day's long climb."
+    },
+    {
+     "n": 4,
+     "title": "Hike out",
+     "objective": "Return to the Bridge Creek trailhead",
+     "miles": 10,
+     "gainFt": 0,
+     "note": "Hike out the Park Creek Trail, then walk back up Bridge Creek on the PCT to the car on Highway 20 (or meet a pre-arranged shuttle)."
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Bench bivy below Megalodon Ridge",
+    "elev_ft": null,
+    "type": "bivy",
+    "role": "main",
+    "notes": "An exposed bench after a short fifth-class step at the toe of the ridge, below the technical climbing. More bivy ledges exist after the southeast peak and on the summit."
+   },
+   {
+    "name": "Fireweed Camp, Bridge Creek / PCT",
+    "elev_ft": null,
+    "type": "camp",
+    "role": "route",
+    "notes": "A Bridge Creek corridor camp on the PCT well short of the North Fork junction, near the Twisp Pass trail area. It is only useful to a Goode party as an overflow choice when the North Fork camps are booked out, which happens in peak season because so few sites serve this valley. Camping here adds miles to an already lon…"
+   },
+   {
+    "name": "North Fork Camp, Bridge Creek / PCT junction",
+    "elev_ft": 2800,
+    "type": "camp",
+    "role": "route",
+    "notes": "This sits right at the junction where the PCT leaves Bridge Creek for the North Fork, roughly ten miles in from the SR 20 trailhead, so it is the natural first-night stop for a party that started late. It is a long way below the climb, which means a very big second day to reach the glacier bivies. Its value is logistic…"
+   },
+   {
+    "name": "Walker Park Camp",
+    "elev_ft": 3086,
+    "type": "camp",
+    "role": "route",
+    "notes": "Roughly two miles up the North Fork trail from the junction, this is the first camp that meaningfully shortens the walk to the Goode Glacier drainage. The tread to here is still ordinary maintained trail, so it is an easy target even arriving in the dark. Parties usually treat it as a place to shed weight rather than a…"
+   }
+  ],
+  "campsite_pins": [
+   {
+    "name": "Walker Park Camp",
+    "elev": 3086,
+    "distMi": null
+   }
+  ]
+ },
+ {
+  "id": "wa_goode_mountain_northeast_face",
+  "name": "Northeast Face",
+  "discipline": "alpine",
+  "peak": "Mount Goode",
+  "area_id": "wa_mount_goode",
+  "path": "usa.washington.wa_northwest.wa_hwy20_ncnp.wa_north_cascades.wa_north_cascades_core.wa_mount_goode",
+  "trip_plan": {
+   "totalNote": "A 3-day trip mirroring Goode's other northeast-side lines: long approach to a shared glacier camp, one long face-climb-and-couloir-descend day (~12 hr), then hike out; roughly 33 mi and 6,500-7,000 ft of gain round trip.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Approach to high camp",
+     "objective": "Reach camp near the Goode Glacier moraine",
+     "miles": 14,
+     "gainFt": 4600,
+     "note": "PCT south from the Bridge Creek trailhead, up North Fork Bridge Creek (ford required), then off-trail to a camp near the glacier toe/moraine (~6,700 ft), the shared staging camp for Goode's northeast-side routes."
+    },
+    {
+     "n": 2,
+     "title": "Climb the Northeast Face, descend the Southwest Couloir",
+     "objective": "Summit via the face, return to camp via the SW Couloir",
+     "miles": 5,
+     "gainFt": 2600,
+     "note": "Cross the glacier to the base of the face and climb to the summit (steep mixed snow, ice and rock), then descend the standard Southwest Couloir back down toward camp. A long, full day out and back."
+    },
+    {
+     "n": 3,
+     "title": "Hike out",
+     "objective": "Return to the Bridge Creek trailhead",
+     "miles": 14,
+     "gainFt": 0,
+     "note": "Reverse the approach back down North Fork Bridge Creek and the PCT to Highway 20."
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Goode Glacier approach bivy, timbered knoll",
+    "elev_ft": 5200,
+    "type": "bivy",
+    "role": "main",
+    "notes": "Reached by leaving the North Fork trail after Grizzly Creek, fording the creek and grinding up timber and scree beside the drainage off the Goode Glacier, this is the classic first bivy under the buttress. Reports differ on whether it is the better choice: it sits noticeably west of the line of travel, so some parties …"
+   },
+   {
+    "name": "Upper bivy in the rock bands east of the buttress toe",
+    "elev_ft": 5600,
+    "type": "bivy",
+    "role": "main",
+    "notes": "Sitting in the rock bands just east of where the Northeast Buttress meets the ground, this puts you at the base with a few hundred feet already banked for summit day, which is the argument for grinding past the lower knoll. The exact elevation is reported inconsistently — figures in the 5,400 to 5,600 ft range all refe…"
+   },
+   {
+    "name": "Fireweed Camp, Bridge Creek / PCT",
+    "elev_ft": null,
+    "type": "camp",
+    "role": "route",
+    "notes": "A Bridge Creek corridor camp on the PCT well short of the North Fork junction, near the Twisp Pass trail area. It is only useful to a Goode party as an overflow choice when the North Fork camps are booked out, which happens in peak season because so few sites serve this valley. Camping here adds miles to an already lon…"
+   },
+   {
+    "name": "North Fork Camp, Bridge Creek / PCT junction",
+    "elev_ft": 2800,
+    "type": "camp",
+    "role": "route",
+    "notes": "This sits right at the junction where the PCT leaves Bridge Creek for the North Fork, roughly ten miles in from the SR 20 trailhead, so it is the natural first-night stop for a party that started late. It is a long way below the climb, which means a very big second day to reach the glacier bivies. Its value is logistic…"
+   },
+   {
+    "name": "Walker Park Camp",
+    "elev_ft": 3086,
+    "type": "camp",
+    "role": "route",
+    "notes": "Roughly two miles up the North Fork trail from the junction, this is the first camp that meaningfully shortens the walk to the Goode Glacier drainage. The tread to here is still ordinary maintained trail, so it is an easy target even arriving in the dark. Parties usually treat it as a place to shed weight rather than a…"
+   },
+   {
+    "name": "Grizzly Creek Camp",
+    "elev_ft": 3163,
+    "type": "camp",
+    "role": "route",
+    "notes": "About four miles up the North Fork trail, this is the last designated camp before the country turns unpleasant, and the practical decision point for the whole approach. Beyond it the tread gets brushy and faint — stinging nettles are a recurring complaint and long trousers are worth carrying regardless of the heat — an…"
+   }
+  ],
+  "campsite_pins": [
+   {
+    "name": "Walker Park Camp",
+    "elev": 3086,
+    "distMi": null
+   },
+   {
+    "name": "Grizzly Creek Camp",
+    "elev": 3163,
+    "distMi": null
+   }
+  ]
+ },
+ {
+  "id": "wa_goode_mountain_southwest_couloir",
+  "name": "Southwest Couloir",
+  "discipline": "alpine",
+  "peak": "Mount Goode",
+  "area_id": "wa_mount_goode",
+  "path": "usa.washington.wa_northwest.wa_hwy20_ncnp.wa_north_cascades.wa_north_cascades_core.wa_mount_goode",
+  "trip_plan": {
+   "totalNote": "The standard 3-day trip: ~35-37 mi round trip and ~6,500 ft of gain, with one long but straightforward scramble day up and down the couloir from a moraine camp.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Approach to high camp",
+     "objective": "Reach the Goode Glacier moraine camp",
+     "miles": 15,
+     "gainFt": 4600,
+     "note": "Hike the PCT south from the Bridge Creek (Hwy 20) trailhead, then up the North Fork Bridge Creek Trail, fording the creek, before leaving trail to climb heather/scree to a camp near the Goode Glacier moraine (~6,800 ft). Long but non-technical day; the last stretch off-trail is the slow part."
+    },
+    {
+     "n": 2,
+     "title": "Summit day: Southwest Couloir",
+     "objective": "Climb the Southwest Couloir round-trip from camp",
+     "miles": 4.5,
+     "gainFt": 2400,
+     "note": "An early start up scree and ledges to the broad couloir; the 'black stairs' (a band of solid stepped rock on the left side) offer the easiest scrambling through the crux. Class 4 terrain near the top, then reverse the same line back to camp."
+    },
+    {
+     "n": 3,
+     "title": "Hike out",
+     "objective": "Return to the Bridge Creek trailhead",
+     "miles": 15,
+     "gainFt": 0,
+     "note": "Reverse the approach: descend to North Fork Bridge Creek, re-ford, and follow the PCT back north to the trailhead on Highway 20."
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "5,500 ft bivy below the slabs",
+    "elev_ft": 5500,
+    "type": null,
+    "role": "main",
+    "notes": "Planned camp and the most commonly used one on this side of the peak. Reached after the slide-alder section and a crossing of the creek, tucked just below the low-angle slabs with rock walls around it and running water on hand. Nothing above it is comfortable, and the slabs above lead straight onto the glacier in the m…"
+   },
+   {
+    "name": "Goode Glacier toe",
+    "elev_ft": 6400,
+    "type": null,
+    "role": "main",
+    "notes": "Planned camp on the moraine and rubble between roughly 6,400 and 6,800 ft. Flat ground is genuinely limited and the good spots are specific rather than general — expect to hunt for them, and expect glacier noise all night. It is the highest planned camp and the one that makes the couloir a reasonable day, but the water…"
+   },
+   {
+    "name": "5,200 ft camp to the west",
+    "elev_ft": 5200,
+    "type": null,
+    "role": "route",
+    "notes": "Planned camp, the fallback if you run out of daylight in the brush below. Perfectly serviceable, but reports consistently say the extra three hundred feet up to the higher bivy is worth carrying, because summit day from here is long enough already."
+   },
+   {
+    "name": "West Tower ledge, upper mountain",
+    "elev_ft": null,
+    "type": null,
+    "role": "route",
+    "notes": "Emergency ledge, not a camp. A narrow shelf on the north side of the crest between the West Tower and the main summit, where a solo climber spent a night wedged between rocks and still lost sleep to constant south wind. No water, no flat ground worth the name, and a serious place to be caught. It exists, and that is th…"
+   }
+  ],
+  "campsite_pins": [
+   {
+    "name": "Lateral moraine camp above Goode Glacier",
+    "elev": 6800,
+    "distMi": 15
+   }
+  ]
+ },
+ {
+  "id": "wa_mount_goode_northeast_buttress",
+  "name": "Northeast Buttress",
+  "discipline": "alpine",
+  "peak": "Mount Goode",
+  "area_id": "wa_mount_goode",
+  "path": "usa.washington.wa_northwest.wa_hwy20_ncnp.wa_north_cascades.wa_north_cascades_core.wa_mount_goode",
+  "trip_plan": {
+   "totalNote": "A standard 4-day trip (~38 mi RT, ~7,500 ft of climbing gain) for most parties, about 30 hours on the move: roughly 8.5 hours in to high camp, 9 hours from camp up the buttress to the summit, and 12.5 hours from the summit back to the car over the last two days. Very fit, fast teams sometimes cover the whole descent and walk-out in one long third day, making it a 3-day trip.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Approach to high camp",
+     "objective": "Reach camp near the toe of the Goode Glacier",
+     "miles": 15.5,
+     "gainFt": 4700,
+     "note": "PCT south from the Bridge Creek trailhead, then up North Fork Bridge Creek (ford required), finishing with brushy/alder off-trail travel to a camp near the glacier toe (~6,400-6,800 ft). Expect mosquitoes and a slow final half-mile."
+    },
+    {
+     "n": 2,
+     "title": "Climb the Northeast Buttress to a summit bivy",
+     "objective": "Summit via the buttress, bivy on top",
+     "miles": 2.5,
+     "gainFt": 2800,
+     "note": "Cross the glacier and deal with the moat/bergschrund onto the buttress, then simul-climb the lower 4th-class crest before roping up for several pitches of low 5th class (5.4-5.6) to the summit. Most parties reach the top roughly 9 hours after leaving camp and bivy there."
+    },
+    {
+     "n": 3,
+     "title": "Descend toward Bridge Creek",
+     "objective": "Down-climb/rappel the Southwest Couloir toward the valley",
+     "miles": 10,
+     "gainFt": 0,
+     "note": "Rappel and downclimb the Southwest Couloir/south side, then continue losing elevation toward the Bridge Creek drainage. A long day with multiple rappels; parties that don't move efficiently risk getting benighted on this leg."
+    },
+    {
+     "n": 4,
+     "title": "Hike out",
+     "objective": "Return to the Bridge Creek trailhead",
+     "miles": 10,
+     "gainFt": 0,
+     "note": "Finish descending to the valley floor and follow the North Fork Bridge Creek Trail and PCT back to Highway 20."
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Valley bivy below the buttress",
+    "elev_ft": 5400,
+    "type": "bivy",
+    "role": "main",
+    "notes": "The classic first night, and it is earned: parties commonly take about eight hours from the trailhead, down the PCT to the North Fork Bridge Creek trail, then up past Grizzly Creek into slabs, brush and talus. The usual log over Grizzly Creek has broken and a replacement has been found roughly 200 ft south of the trail…"
+   },
+   {
+    "name": "Goode Glacier moraine",
+    "elev_ft": null,
+    "type": "camp",
+    "role": "main",
+    "notes": "The higher option, on the lateral moraine looking across at the seracs of the Goode Glacier, variously reported between about 6,400 and 7,000 ft. It shortens the climbing day considerably over the valley bivy and puts you in wildflower meadow with a view, at the cost of carrying the load higher on approach day."
+   },
+   {
+    "name": "Summit bivy",
+    "elev_ft": null,
+    "type": "bivy",
+    "role": "route",
+    "notes": "Parties who start from the valley often finish the buttress too late to descend and sleep on the summit itself. There is also a grassy ledge reported around 8,500 ft on the upper route that one party found softer and more comfortable than the top. Both are dry, exposed perches, so they only work in settled weather."
+   }
+  ],
+  "campsite_pins": [
+   {
+    "name": "High Camp",
+    "elev": 6600,
+    "distMi": 15
+   }
+  ]
+ },
+ {
+  "id": "wa_mount_logan_fremont_glacier",
+  "name": "Fremont Glacier",
+  "discipline": "mountaineering",
+  "peak": "Mount Logan",
+  "area_id": "wa_mount_logan",
+  "path": "usa.washington.wa_northwest.wa_hwy20_ncnp.wa_north_cascades.wa_north_cascades_core.wa_mount_logan",
+  "trip_plan": {
+   "totalNote": "A long 3-day trip (~39 mi RT, ~9,600 ft gain) bookended by two grueling 18-mile trail days on the Thunder Creek Trail, with one committing glacier-and-ridge summit day in between.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Approach to moraine camp",
+     "objective": "Reach the moraine camp near Park Creek Pass",
+     "miles": 18,
+     "gainFt": 5150,
+     "note": "Hike the Thunder Creek Trail from Colonial Creek Campground, a long up-valley slog past Skagit Queen Camp to a flat, sandy moraine camp at roughly 6,350 ft just below Park Creek Pass (camping is not permitted at the pass itself). Most parties treat this day as the logistical crux of the trip."
+    },
+    {
+     "n": 2,
+     "title": "Fremont Glacier summit push",
+     "objective": "Climb the Fremont Glacier and summit ridge, return to camp",
+     "miles": 4,
+     "gainFt": 2750,
+     "note": "Traverse about 2 miles around a broad ridge to the gentle Fremont Glacier (~8,000 ft), rope up for crevasse hazard, then climb a snow finger/rock gully to a low point on the summit ridge and follow an exposed Class 3-4 ridge to the true summit before reversing the route, including a short rappel off the top."
+    },
+    {
+     "n": 3,
+     "title": "Hike out",
+     "objective": "Return to the Thunder Creek Trailhead",
+     "miles": 18,
+     "gainFt": 300,
+     "note": "Reverse the full Thunder Creek Trail back to Colonial Creek Campground — a tired-legs repeat of Day 1's mileage."
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Moraine camp above the pass",
+    "elev_ft": 6348,
+    "type": "bivy",
+    "role": "main",
+    "notes": "Roughly 6,350 ft, gained by turning east from the meadows and climbing about 500 ft into the moraine of the glacier remnant. Flat, sandy and better protected than the open meadows, and the usual high camp for the Fremont Glacier. From here the route traverses about two miles north around a broad ridge over heather and …"
+   },
+   {
+    "name": "Meadows north of Park Creek Pass",
+    "elev_ft": 6099,
+    "type": "camp",
+    "role": "main",
+    "notes": "Broad sandy meadows a short way north of Park Creek Pass, which itself sits near 6,100 ft. This is where the long valley walk finally ends and the climbing terrain starts; parties either stop here or push the last 500 ft into the moraine above."
+   },
+   {
+    "name": "Valley camps on the walk in",
+    "elev_ft": null,
+    "type": "camp",
+    "role": "route",
+    "notes": "The approach is long enough that most parties sleep at least one night in the forest before reaching climbing terrain — Thunder Basin in the upper Thunder Creek drainage from the Colonial Creek side, or Buckner Camp on Park Creek (named for the mountain, not on it) coming in from Stehekin. Park Creek has to be crossed …"
+   }
+  ],
+  "campsite_pins": [
+   {
+    "name": "Junction Camp",
+    "elev": 2900,
+    "distMi": 10
+   },
+   {
+    "name": "Point 8248 / Fremont Glacier saddle camp",
+    "elev": 8248,
+    "distMi": 20
+   }
+  ]
+ },
+ {
+  "id": "wa_mount_logan_r1",
+  "name": "Banded Glacier",
+  "discipline": "mountaineering",
+  "peak": "Mount Logan",
+  "area_id": "wa_mount_logan",
+  "path": "usa.washington.wa_northwest.wa_hwy20_ncnp.wa_north_cascades.wa_north_cascades_core.wa_mount_logan",
+  "trip_plan": {
+   "totalNote": "A strenuous 3-day, ~29-mile round trip (~12,500 ft gain) via Easy Pass; the crux is a very long (12+ hr) summit day through the loose, hard-to-find Christmas Tree Col and a roped glacier crossing. Very strong parties have linked the whole route car-to-car in a single ~13.5 hr day, but that is an outlier push, not the standard plan.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Approach to Banded Glacier basin camp",
+     "objective": "Reach the lake camp below the Banded Glacier",
+     "miles": 10,
+     "gainFt": 4600,
+     "note": "Hike the Easy Pass Trail up and over the pass (~6,600 ft), descend into the Fisher Creek drainage, then leave trail to reach a basin lake camp near the toe of the Banded Glacier — expect a sketchy log-bridge creek crossing and boggy ground near the lake."
+    },
+    {
+     "n": 2,
+     "title": "Summit via Christmas Tree Col and the Banded Glacier",
+     "objective": "Reach the true summit and return to camp",
+     "miles": 6,
+     "gainFt": 4800,
+     "note": "A long alpine day: climb loose talus and a rockfall-prone gully to the obscure, hard-to-spot Christmas Tree Col, drop into the Banded Glacier basin, rope up and stay climber's-left of the crevasses to the Banded-Douglas col, then follow a loose Class 2-3 ridge to the summit before reversing the entire route."
+    },
+    {
+     "n": 3,
+     "title": "Hike out",
+     "objective": "Return to the Easy Pass Trailhead",
+     "miles": 10,
+     "gainFt": 3100,
+     "note": "Reverse the approach over Easy Pass back to the trailhead."
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Fisher Creek lake camp below the Banded Glacier",
+    "elev_ft": 5160,
+    "type": "camp",
+    "role": "main",
+    "notes": "The standard overnight camp below the Banded Glacier, reached down the Fisher Creek Trail from Easy Pass (about ten miles in) or up it from Thunder Creek (about thirteen)."
+   }
+  ],
+  "campsite_pins": [
+   {
+    "name": "Lake camp below the Banded Glacier",
+    "elev": 5188,
+    "distMi": null
+   }
+  ]
+ },
+ {
+  "id": "wa_mount_logan_r2",
+  "name": "Douglas Glacier",
+  "discipline": "mountaineering",
+  "peak": "Mount Logan",
+  "area_id": "wa_mount_logan",
+  "path": "usa.washington.wa_northwest.wa_hwy20_ncnp.wa_north_cascades.wa_north_cascades_core.wa_mount_logan",
+  "trip_plan": {
+   "totalNote": "A 3-day, ~28-mile round trip via Easy Pass and Fisher Basin; the crux is a committing, hard-to-protect rock ramp partway up the route on a long (11+ hr) summit day. This is one of Logan's harder standard routes, and parties do turn back at the crux in bad weather or high melt-out.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Approach to Fisher Basin camp",
+     "objective": "Reach camp below the Douglas Glacier",
+     "miles": 7,
+     "gainFt": 2900,
+     "note": "Hike the Easy Pass Trail to Easy Pass (~6,600 ft), then descend the trail into Fisher Basin and down the Fisher Creek valley, cross the creek on a log and bushwhack up the east side of Douglas Creek through dense slide alder to a creekside camp (~4,700-4,800 ft) in the upper basin below the Douglas Glacier. Expect blow…"
+    },
+    {
+     "n": 2,
+     "title": "Douglas Glacier summit push",
+     "objective": "Climb the crux rock ramp and Douglas Glacier to the summit",
+     "miles": 5,
+     "gainFt": 4300,
+     "note": "Alpine start as early as 5:30 AM: crampon up the gorged cirque above camp, climb the route's crux — a steep, exposed ~300-ft rock ramp (4th to low-5th class, hard to protect) through a cliff band — to reach the low-angle lower Douglas Glacier, switchback up to ~8,200 ft, then boot-pack the final ~1,000 ft with ice axe …"
+    },
+    {
+     "n": 3,
+     "title": "Hike out",
+     "objective": "Return to the Easy Pass Trailhead",
+     "miles": 7,
+     "gainFt": 2000,
+     "note": "Climb back out of Fisher Basin over Easy Pass and descend to the trailhead."
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Fisher Basin campsites",
+    "elev_ft": null,
+    "type": "camp",
+    "role": "main",
+    "notes": "Established campsites on the Fisher Creek valley floor below Easy Pass; the standard first-night camp for the Douglas Glacier route."
+   }
+  ],
+  "campsite_pins": []
+ },
+ {
+  "id": "wa_mutchler_peak_scramble",
+  "name": "Mutchler Peak Scramble",
+  "discipline": "alpine",
+  "peak": "Mutchler Peak",
+  "area_id": "wa_mutchler_peak",
+  "path": "usa.washington.wa_northwest.wa_hwy20_ncnp.wa_north_cascades.wa_north_cascades_core.wa_mutchler_peak",
+  "trip_plan": {
+   "totalNote": "A 3-day trip for most parties (in / summit / out): roughly 15-18 miles round trip with about 6,500 ft of cumulative gain, nearly all of it off-trail; strong, experienced parties familiar with the terrain sometimes compress this to 2 days.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Approach to high camp",
+     "objective": "Reach a basecamp in the Found Lake / Cyclone Pond basin below the Snowking–Mutchler ridge",
+     "miles": 7,
+     "gainFt": 4300,
+     "note": "From the Kindy Ridge trailhead on FR 1570 off the Cascade River Road, follow the blocked/overgrown road then a steep, unmaintained way-trail up Kindy Ridge, staying east of the 5,116' knoll and continuing along Kindy-Found Ridge to a basin camp near Cyclone Pond (~5,450') or the Found Lakes. This is entirely off-trail …"
+    },
+    {
+     "n": 2,
+     "title": "Summit push to Mutchler Peak",
+     "objective": "Climb Mutchler Peak (7,150') and return to high camp",
+     "miles": 3.5,
+     "gainFt": 2000,
+     "note": "From camp, traverse south along the connecting ridge/basin terrain toward Mutchler Peak, the alpine high point of Snowking's long southeast ridge. Expect class 2-3 scrambling on the final summit block with route-finding over talus and possible snow patches through early summer; return to the same camp by the same line."
+    },
+    {
+     "n": 3,
+     "title": "Hike out",
+     "objective": "Return to the Kindy Ridge trailhead",
+     "miles": 7,
+     "gainFt": 200,
+     "note": "Break camp and reverse the day 1 route back down Kindy-Found Ridge and the way-trail to the road end. Mostly downhill but still slow, brushy off-trail travel with a full pack."
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Cyclone Lake and the lakes just north of it",
+    "elev_ft": 5442,
+    "type": "camp",
+    "role": "main",
+    "notes": "The base camp for Snowking Mountain and Mutchler Peak, and the standard end of the Kindy Ridge approach. From the lakes the route follows the Kindy and Found ridge crest south-southwest above Cyclone Lake, keeping south of a cornice that overhangs the ridge, then turns west up moderately steep snow to the summit block;…"
+   },
+   {
+    "name": "Found Lake and the Kindy Ridge saddle",
+    "elev_ft": 4000,
+    "type": "camp",
+    "role": "route",
+    "notes": "The first useful camp on the eastern approach and the one most parties reach on a late start. From where road 1570 becomes impassable you walk the blocked, overgrown roadbed for roughly three miles, crossing several creeks and two large washouts that are genuinely awkward when snowmelt is high, then take a steep climbe…"
+   },
+   {
+    "name": "Kindy Ridge crest camps",
+    "elev_ft": null,
+    "type": "bivy",
+    "role": "route",
+    "notes": "The Kindy Ridge crest, also described as the northeast ridge, is a long undulating plod rather than a climb, and the honest description of camping on it is that parties stop where the day ends. There are quite a few workable spots and no established ones. This matters most for anyone linking the peaks rather than climb…"
+   }
+  ],
+  "campsite_pins": [
+   {
+    "name": "Cyclone Lake Basin",
+    "elev": 5354,
+    "distMi": 6.3
+   }
+  ]
+ },
+ {
+  "id": "wa_east_slope",
+  "name": "East Slope",
+  "discipline": "mountaineering",
+  "peak": "Primus Peak",
+  "area_id": "wa_primus_peak",
+  "path": "usa.washington.wa_northwest.wa_hwy20_ncnp.wa_north_cascades.wa_north_cascades_core.wa_primus_peak",
+  "trip_plan": {
+   "totalNote": "A 3-day trip: ~19 miles round trip and 7,300 ft of gain, with one night at a bivy near the toe of the Borealis Glacier and a single big summit day via Lucky Pass and the East Ridge.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Approach to Borealis Glacier bivy",
+     "objective": "Reach a bivy at the toe of the Borealis Glacier (~6,000 ft)",
+     "miles": 8,
+     "gainFt": 4750,
+     "note": "Thunder Creek Trail to McAllister Camp (~6 mi, easy trail), then a faint but usable climbers' trail up the ridge through forest, slide alder, and larch to a bivy near the glacier's toe."
+    },
+    {
+     "n": 2,
+     "title": "Climb the East Ridge via Lucky Pass",
+     "objective": "Summit Primus Peak (8,508 ft)",
+     "miles": 3,
+     "gainFt": 2500,
+     "note": "Rope up and cross the Borealis Glacier's east edge to Lucky Pass, then finish the Class 2-3 East Ridge to the summit; many parties tag Tricouni Peak from the col on the same day before returning to camp."
+    },
+    {
+     "n": 3,
+     "title": "Hike out to Thunder Creek Trailhead",
+     "objective": "Return to the car",
+     "miles": 8,
+     "gainFt": 100,
+     "note": "Descend the climbers' trail back to McAllister Camp and out the Thunder Creek Trail to the trailhead."
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Borealis Glacier toe / Borealis Lake high camp",
+    "elev_ft": 6000,
+    "type": "camp",
+    "role": "main",
+    "notes": "The working base camp for both summits, on slabs and rubble near where the lower glacier has withdrawn into a lake. Ground is sloping and loose in places, so finding two flat platforms takes some hunting; camp on rock, snow or bare ground and stay well back from the water. Zone rules mean no fires, and human waste goes…"
+   },
+   {
+    "name": "Colonial Creek South Campground, Thunder Creek trailhead",
+    "elev_ft": 1257,
+    "type": "camp",
+    "role": "route",
+    "notes": "The Thunder Creek trail leaves directly from the south loop, so most parties sleep here the night before rather than driving in from the west at dawn. It is a low forested car camp on Diablo Lake and carries none of the wilderness rules that apply the moment you walk past the trailhead. Book it separately from your cli…"
+   },
+   {
+    "name": "McAllister Hiker Camp, Thunder Creek trail",
+    "elev_ft": 1900,
+    "type": "camp",
+    "role": "route",
+    "notes": "The last camp with any infrastructure — a pit toilet, a cook area and a food-hang setup — sitting at about mile 6.7 on an almost flat forest trail, so it is an easy first night rather than a real approach. Most parties treat it as the staging point, then start the steep work early the next morning. Because it is a desi…"
+   },
+   {
+    "name": "Lucky Pass bivy, Primus-Tricouni col",
+    "elev_ft": 7200,
+    "type": "bivy",
+    "role": "route",
+    "notes": "The col between the two peaks is high, exposed and windy, and it exists as an option rather than a plan — a spot to sit out weather or finish a day that ran long. Both summits are short from here, which tempts people, but hauling camp another 1,200 ft is rarely worth it against a comfortable night lower down. Whether i…"
+   }
+  ],
+  "campsite_pins": [
+   {
+    "name": "Colonial Creek South Campground, Thunder Creek trailhead",
+    "elev": 1257,
+    "distMi": null
+   },
+   {
+    "name": "McAllister Camp",
+    "elev": 1900,
+    "distMi": 6.7
+   },
+   {
+    "name": "Bivy at toe of Borealis Glacier",
+    "elev": 6000,
+    "distMi": 9.5
+   }
+  ]
+ },
+ {
+  "id": "wa_north_ridge_4",
+  "name": "North Ridge",
+  "discipline": "alpine",
+  "peak": "Primus Peak",
+  "area_id": "wa_primus_peak",
+  "path": "usa.washington.wa_northwest.wa_hwy20_ncnp.wa_north_cascades.wa_north_cascades_core.wa_primus_peak",
+  "trip_plan": {
+   "totalNote": "A 3-day trip using the same Thunder Creek/Borealis Glacier approach and camp as the East Slope route, but a much harder and longer summit day: the direct North Ridge is loose 4th-to-low-5th-class terrain that is descended via the East Ridge/Lucky Pass rather than reversed.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Approach to Borealis Glacier bivy",
+     "objective": "Reach a bivy at the toe of the Borealis Glacier (~6,000 ft)",
+     "miles": 8,
+     "gainFt": 4750,
+     "note": "Same approach as the East Slope route: Thunder Creek Trail to McAllister Camp, then the climbers' trail up the ridge to a bivy at the glacier's toe."
+    },
+    {
+     "n": 2,
+     "title": "Climb the North Ridge, descend via the East Ridge",
+     "objective": "Summit Primus Peak via the direct North Ridge",
+     "miles": 3.5,
+     "gainFt": 2700,
+     "note": "An early start up loose, brushy, cliffy ridge terrain with a crux band of exposed 4th and low-5th-class rock near the top; carry a light rack/rope for the crux. Do not try to reverse the ridge on descent - drop to Lucky Pass and down the East Ridge/Borealis Glacier back to camp instead."
+    },
+    {
+     "n": 3,
+     "title": "Hike out to Thunder Creek Trailhead",
+     "objective": "Return to the car",
+     "miles": 8,
+     "gainFt": 100,
+     "note": "Descend the climbers' trail back to McAllister Camp and out the Thunder Creek Trail to the trailhead."
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Borealis Glacier toe / Borealis Lake high camp",
+    "elev_ft": 6000,
+    "type": "camp",
+    "role": "main",
+    "notes": "The working base camp for both summits, on slabs and rubble near where the lower glacier has withdrawn into a lake. Ground is sloping and loose in places, so finding two flat platforms takes some hunting; camp on rock, snow or bare ground and stay well back from the water. Zone rules mean no fires, and human waste goes…"
+   },
+   {
+    "name": "Colonial Creek South Campground, Thunder Creek trailhead",
+    "elev_ft": 1257,
+    "type": "camp",
+    "role": "route",
+    "notes": "The Thunder Creek trail leaves directly from the south loop, so most parties sleep here the night before rather than driving in from the west at dawn. It is a low forested car camp on Diablo Lake and carries none of the wilderness rules that apply the moment you walk past the trailhead. Book it separately from your cli…"
+   },
+   {
+    "name": "McAllister Hiker Camp, Thunder Creek trail",
+    "elev_ft": 1900,
+    "type": "camp",
+    "role": "route",
+    "notes": "The last camp with any infrastructure — a pit toilet, a cook area and a food-hang setup — sitting at about mile 6.7 on an almost flat forest trail, so it is an easy first night rather than a real approach. Most parties treat it as the staging point, then start the steep work early the next morning. Because it is a desi…"
+   }
+  ],
+  "campsite_pins": [
+   {
+    "name": "Colonial Creek South Campground, Thunder Creek trailhead",
+    "elev": 1257,
+    "distMi": null
+   },
+   {
+    "name": "McAllister Hiker Camp, Thunder Creek trail",
+    "elev": 1900,
+    "distMi": null
+   }
+  ]
+ },
+ {
+  "id": "wa_primus_peak_south_ridge",
+  "name": "South Ridge / McAllister Glacier",
+  "discipline": "mountaineering",
+  "peak": "Primus Peak",
+  "area_id": "wa_primus_peak",
+  "path": "usa.washington.wa_northwest.wa_hwy20_ncnp.wa_north_cascades.wa_north_cascades_core.wa_primus_peak",
+  "trip_plan": {
+   "totalNote": "A remote 3-4 day glacier backpack from the Eldorado side: roughly 20 miles round trip with on the order of 8,000 ft of cumulative gain; most parties budget a buffer day for weather and glacier routefinding.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Approach to Eldorado high camp",
+     "objective": "Reach a treeline/high camp near or above the Eldorado Glacier",
+     "miles": 7,
+     "gainFt": 4400,
+     "note": "Standard Eldorado Trailhead approach: trail through forest then boot track up the Eldorado Glacier's lower slopes to a campsite near or above treeline, carrying full overnight glacier gear."
+    },
+    {
+     "n": 2,
+     "title": "Cross Eldorado/Inspiration Glaciers to Klawatti Col",
+     "objective": "Camp near Klawatti Col (~7,500-7,800 ft)",
+     "miles": 3.5,
+     "gainFt": 2000,
+     "note": "Rope up for glacier travel across the Eldorado and Inspiration Glaciers to Klawatti Col, weaving around crevasses; camp on rock or snow near the col."
+    },
+    {
+     "n": 3,
+     "title": "Traverse to Primus and climb the south side",
+     "objective": "Summit Primus Peak (8,508 ft) via the Class 2-4 south side",
+     "miles": 3,
+     "gainFt": 1400,
+     "note": "Drop packs or carry light gear across the North Klawatti/McAllister Glacier to the Primus massif, then pick a Class 2-4 line up the south side to the summit before returning to the col camp."
+    },
+    {
+     "n": 4,
+     "title": "Return to Eldorado Trailhead",
+     "objective": "Hike/glacier-travel out to the car",
+     "miles": 6.5,
+     "gainFt": 200,
+     "note": "Reverse the Inspiration/Eldorado Glacier crossing and descend the boot track and trail back to the Eldorado Trailhead; a long day given the elevation lost."
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Klawatti Col camp, Eldorado ice-cap traverse approach",
+    "elev_ft": 7800,
+    "type": "camp",
+    "role": "main",
+    "notes": "This is the camp for this route, reached from the Eldorado side across the ice. It is a serious undertaking: full glacier travel with crevasse rescue capability, several nights on snow, and a committing exit. Camps are on rock islands surrounded by ice, so they are windy and there is no shelter."
+   }
+  ],
+  "campsite_pins": []
+ },
+ {
+  "id": "wa_pyramid_peak_colonial_standard",
+  "name": "Standard Route / Southeast Scramble",
+  "discipline": "scrambling",
+  "peak": "Pyramid Peak",
+  "area_id": "wa_pyramid_peak_colonial",
+  "path": "usa.washington.wa_northwest.wa_hwy20_ncnp.wa_north_cascades.wa_north_cascades_core.wa_pyramid_peak_colonial",
+  "trip_plan": {
+   "totalNote": "A 2-day trip: ~4,300 ft up to a ridge camp above Pyramid Lake on day one, then a long second day over the Pinnacle-Pyramid saddle to the 7,189 ft summit and all the way back to the car (~12.4 mi, ~6,300 ft round trip total).",
+   "days": [
+    {
+     "n": 1,
+     "title": "Approach to ridge camp",
+     "objective": "Reach a ridge camp above Pyramid Lake",
+     "miles": 4.6,
+     "gainFt": 4300,
+     "note": "From the Pyramid Lake trailhead on Highway 20, climb steadily through forest to Pyramid Lake, then follow the climbers' boot path up the open ridge above it to a campsite around 5,400-5,600 ft, generally the last flat, sheltered ground before the route opens onto the upper ridge. Most parties treat this as a moderate-t…"
+    },
+    {
+     "n": 2,
+     "title": "Summit push and hike out",
+     "objective": "Summit Pyramid Peak via the Pinnacle-Pyramid saddle, then hike all the way out",
+     "miles": 8,
+     "gainFt": 1950,
+     "note": "Break camp early, traverse below Pinnacle Peak's east-side cliffs and snowfields to the Pinnacle-Pyramid saddle, then scramble straight up the ridge to the summit. Most parties tag the summit, downclimb to camp, pack up, and continue the full descent to the trailhead the same day, making for a long second day."
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Colonial Basin bench camps, below the Pyramid-Colonial col",
+    "elev_ft": 5400,
+    "type": "camp",
+    "role": "main",
+    "notes": "The standard first-night camp for Snowfield, Neve and Colonial, reached by a steep sustained climb from the Pyramid Lake trailhead with no easy water for much of it. Early in the season the ground is still under snow and flat bivy platforms are easier to find than proper tent pitches; by late summer the basin rim dries…"
+   }
+  ],
+  "campsite_pins": []
+ },
+ {
+  "id": "wa_ruby_mountain_south_ridge",
+  "name": "South Ridge Route",
+  "discipline": "mountaineering",
+  "peak": "Ruby Mountain",
+  "area_id": "wa_ruby_mountain",
+  "path": "usa.washington.wa_northwest.wa_hwy20_ncnp.wa_north_cascades.wa_north_cascades_core.wa_ruby_mountain",
+  "trip_plan": {
+   "totalNote": "Two days: hike to Fourth of July Camp, then summit Ruby Mountain and hike all the way out.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Hike in to Fourth of July Camp",
+     "objective": "Set up camp at Fourth of July Camp",
+     "miles": 4.8,
+     "gainFt": 2300,
+     "note": "Hike 4.8 miles and about 2,300 ft from the trailhead to Fourth of July Camp (about 2.75 hours) and set up camp. There is a permanent water source at camp, but none higher on the mountain by mid-summer."
+    },
+    {
+     "n": 2,
+     "title": "Summit Ruby and hike out",
+     "objective": "Climb the south ridge and return to the trailhead",
+     "miles": 12.2,
+     "gainFt": 4000,
+     "note": "Climb from camp to the summit, about 4,000 ft of gain in roughly 6 hours. Return to camp in about 3.75 hours, then hike out to the trailhead in about 1.75 hours."
+    }
+   ]
+  },
+  "camps_on_file": [],
+  "campsite_pins": []
+ },
+ {
+  "id": "wa_east_ridge_2",
+  "name": "East Ridge",
+  "discipline": "mountaineering",
+  "peak": "Snowking Mountain",
+  "area_id": "wa_snowking_mountain",
+  "path": "usa.washington.wa_northwest.wa_hwy20_ncnp.wa_north_cascades.wa_north_cascades_core.wa_snowking_mountain",
+  "trip_plan": {
+   "totalNote": "A 2-day trip is standard: ~6 mi and ~4,700 ft to a Cyclone Lake camp on day 1, then a fast, non-technical East Ridge summit push (~2 hrs, ~2,000-2,600 ft per real trip reports) plus the full hike-out on day 2; very fit parties have done the whole thing car-to-car in about 9 hours, but most treat it as an overnight.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Approach to Cyclone Lake camp",
+     "objective": "Reach camp near Cyclone Lake (~5,350 ft)",
+     "miles": 6,
+     "gainFt": 4700,
+     "note": "Same brushy FR-1570/Kindy Ridge approach as the standard route to a camp near Cyclone Lake; some parties instead push higher to a bivy at 6,300 ft on the ridge itself to shorten summit day."
+    },
+    {
+     "n": 2,
+     "title": "East Ridge summit push and hike-out",
+     "objective": "Climb the East Ridge to the 7,433 ft summit, then hike out",
+     "miles": 8,
+     "gainFt": 2600,
+     "note": "From camp, cross heather and easy slabs onto Snowking's East Ridge, staying off the glacier to the right; the final few hundred feet steepens to about 30 degrees below the summit block (easy 3rd class). Round trip to the summit runs about 2 hours per multiple trip reports; the team then breaks camp and hikes all the wa…"
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Cyclone Lake and the lakes just north of it",
+    "elev_ft": 5442,
+    "type": "camp",
+    "role": "main",
+    "notes": "The base camp for Snowking Mountain and Mutchler Peak, and the standard end of the Kindy Ridge approach. From the lakes the route follows the Kindy and Found ridge crest south-southwest above Cyclone Lake, keeping south of a cornice that overhangs the ridge, then turns west up moderately steep snow to the summit block;…"
+   },
+   {
+    "name": "Found Lake and the Kindy Ridge saddle",
+    "elev_ft": 4000,
+    "type": "camp",
+    "role": "route",
+    "notes": "The first useful camp on the eastern approach and the one most parties reach on a late start. From where road 1570 becomes impassable you walk the blocked, overgrown roadbed for roughly three miles, crossing several creeks and two large washouts that are genuinely awkward when snowmelt is high, then take a steep climbe…"
+   },
+   {
+    "name": "Kindy Ridge crest camps",
+    "elev_ft": null,
+    "type": "bivy",
+    "role": "route",
+    "notes": "The Kindy Ridge crest, also described as the northeast ridge, is a long undulating plod rather than a climb, and the honest description of camping on it is that parties stop where the day ends. There are quite a few workable spots and no established ones. This matters most for anyone linking the peaks rather than climb…"
+   }
+  ],
+  "campsite_pins": [
+   {
+    "name": "Cyclone Lake",
+    "elev": 5354,
+    "distMi": 6.5
+   }
+  ]
+ },
+ {
+  "id": "wa_snowking_mountain_standard",
+  "name": "Standard Route / Snowking Glacier",
+  "discipline": "mountaineering",
+  "peak": "Snowking Mountain",
+  "area_id": "wa_snowking_mountain",
+  "path": "usa.washington.wa_northwest.wa_hwy20_ncnp.wa_north_cascades.wa_north_cascades_core.wa_snowking_mountain",
+  "trip_plan": {
+   "totalNote": "A 2-day overnight trip is the standard: ~6.5 mi and ~4,700 ft to a Cyclone Lake camp on day 1, then a roped glacier summit push plus the full hike-out (~8.5 mi, ~2,700 ft gain / ~6,200 ft loss) on day 2; some parties split the hike-out into a third day.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Approach to Cyclone Lake camp",
+     "objective": "Reach camp in the meadows near Cyclone Lake (~5,350 ft)",
+     "miles": 6.5,
+     "gainFt": 4700,
+     "note": "From the FR-1570 washout parking, follow the old logging road and then the boot-beaten Kindy Ridge climbers' trail up through brush and subalpine terrain, topping out around Point 5,791 before dropping to camp near Cyclone Lake. Expect a rough, steep, brushy trail with little flat ground."
+    },
+    {
+     "n": 2,
+     "title": "Snowking Glacier summit push and full hike-out",
+     "objective": "Climb the Snowking Glacier to the 7,433 ft summit, then descend all the way to the car",
+     "miles": 8.5,
+     "gainFt": 2700,
+     "note": "An alpine start gets the rope team onto the Snowking Glacier while the snow is firm; climbers rope up for crevasse hazard on the ascent. After summiting, the team downclimbs to camp, breaks it down, and continues the long hike out the same day — though many parties instead camp a second night and hike out on a third da…"
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Cyclone Lake and the lakes just north of it",
+    "elev_ft": 5442,
+    "type": "camp",
+    "role": "main",
+    "notes": "The base camp for Snowking Mountain and Mutchler Peak, and the standard end of the Kindy Ridge approach. From the lakes the route follows the Kindy and Found ridge crest south-southwest above Cyclone Lake, keeping south of a cornice that overhangs the ridge, then turns west up moderately steep snow to the summit block;…"
+   },
+   {
+    "name": "Found Lake and the Kindy Ridge saddle",
+    "elev_ft": 4000,
+    "type": "camp",
+    "role": "route",
+    "notes": "The first useful camp on the eastern approach and the one most parties reach on a late start. From where road 1570 becomes impassable you walk the blocked, overgrown roadbed for roughly three miles, crossing several creeks and two large washouts that are genuinely awkward when snowmelt is high, then take a steep climbe…"
+   },
+   {
+    "name": "Kindy Ridge crest camps",
+    "elev_ft": null,
+    "type": "bivy",
+    "role": "route",
+    "notes": "The Kindy Ridge crest, also described as the northeast ridge, is a long undulating plod rather than a climb, and the honest description of camping on it is that parties stop where the day ends. There are quite a few workable spots and no established ones. This matters most for anyone linking the peaks rather than climb…"
+   }
+  ],
+  "campsite_pins": [
+   {
+    "name": "Boggy meadow low camp",
+    "elev": 4800,
+    "distMi": 4.5
+   },
+   {
+    "name": "High camp on rock/snow benches",
+    "elev": 6200,
+    "distMi": 6.5
+   }
+  ]
+ }
+]

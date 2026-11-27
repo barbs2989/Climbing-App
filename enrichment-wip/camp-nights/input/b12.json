@@ -1,0 +1,1030 @@
+[
+ {
+  "id": "wa_mount_spickard_silver_glacier",
+  "name": "Silver Glacier",
+  "discipline": "mountaineering",
+  "peak": "Mount Spickard",
+  "area_id": "wa_mount_spickard",
+  "path": "usa.washington.wa_northwest.wa_hwy20_ncnp.wa_north_cascades.wa_chilliwack_range.wa_mount_spickard",
+  "trip_plan": {
+   "totalNote": "Water-taxi and hike (or hike Depot Creek) to a Silver Lake or Ouzel Lake camp, cross the Silver Glacier to climb the summit step and return to camp, then hike out.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Hike in to Silver Lake or Ouzel Lake",
+     "objective": "Reach camp below the Silver Glacier",
+     "miles": null,
+     "gainFt": 5150,
+     "note": "Take the water taxi and hike in to camp at Silver Lake, or hike Depot Creek to Ouzel Lake."
+    },
+    {
+     "n": 2,
+     "title": "Climb the Silver Glacier",
+     "objective": "Summit via the Silver Glacier and return to camp",
+     "miles": null,
+     "gainFt": 2200,
+     "note": "From Ouzel Lake climb the gully to the Custer-Spickard saddle, or from Silver Lake cross the moraine to the glacier toe. Cross the Silver Glacier and climb the summit step (roughly 4-5 hours summit-bound from camp), then return to camp."
+    },
+    {
+     "n": 3,
+     "title": "Hike out",
+     "objective": "Return to the lake or trailhead",
+     "miles": null,
+     "gainFt": 0,
+     "note": "Hike out and catch the water taxi, or hike out via Depot Creek."
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Silver Lake camp",
+    "elev_ft": null,
+    "type": "camp",
+    "role": "main",
+    "notes": ""
+   }
+  ],
+  "campsite_pins": [
+   {
+    "name": "Ouzel Lake camp",
+    "elev": 5665,
+    "distMi": null
+   }
+  ]
+ },
+ {
+  "id": "wa_mount_spickard_southwest",
+  "name": "Southwest Route / Silver Lake",
+  "discipline": "mountaineering",
+  "peak": "Mount Spickard",
+  "area_id": "wa_mount_spickard",
+  "path": "usa.washington.wa_northwest.wa_hwy20_ncnp.wa_north_cascades.wa_chilliwack_range.wa_mount_spickard",
+  "trip_plan": {
+   "totalNote": "A 3-day, 2-night trip: roughly 20 miles and 7,000 ft round-trip, with both nights spent at Ouzel Lake and an alpine-start summit push (about 4-7 hours round trip) via the Southwest Glacier and South Ridge; strong parties sometimes compress this to 2 days.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Approach to Ouzel Lake camp",
+     "objective": "Reach Ouzel Lake basecamp",
+     "miles": 9,
+     "gainFt": 3600,
+     "note": "From the Depot Creek Road washout / Monument 65 area, follow the Depot Creek trail through old-growth forest, then talus and moraine benches up to Ouzel Lake (~5,640 ft). The tread fades in and out on talus and slide-alder slopes above the forest, so allow extra time route-finding the upper basin."
+    },
+    {
+     "n": 2,
+     "title": "Summit day: Southwest Glacier / South Ridge",
+     "objective": "Climb Mount Spickard and return to Ouzel Lake camp",
+     "miles": 3.5,
+     "gainFt": 3350,
+     "note": "An alpine start from camp gets you across the talus gully and onto the Southwest Glacier while snow is firm, roped up for crevasses, before finishing on the South Ridge's Class 2-3 shattered rock to the summit. Reports show camp-to-summit in roughly 3.5-4.5 hours with a similar or faster glissade-assisted descent back …"
+    },
+    {
+     "n": 3,
+     "title": "Hike out to trailhead",
+     "objective": "Descend Depot Creek trail to the car",
+     "miles": 9,
+     "gainFt": 200,
+     "note": "Reverse the approach back down through the talus benches and forest to the trailhead/road washout. The descent usually runs a bit faster than the way in once the tread and cairns are familiar."
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Ouzel Lake",
+    "elev_ft": 5699,
+    "type": "camp",
+    "role": "main",
+    "notes": "The standard high camp and the one that serves both Spickard and Redoubt, on flat sandy treeless benches and a gravel moraine at the head of the valley below the calving front of the Redoubt Glacier. Six to nine hours and roughly 3,300 ft from the road, and the crux of getting here is the Depot Creek Falls headwall — o…"
+   },
+   {
+    "name": "Lower Depot Creek bench",
+    "elev_ft": 4800,
+    "type": "bivy",
+    "role": "route",
+    "notes": "Where the valley flattens and opens out above the Depot Creek Falls headwall. Parties use it two ways: as a shorter first day when the falls have taken longer than expected, and on the way out to put an hour of walking behind them. From here a scramble up and left onto the big buttress is a shortcut toward the Redoubt …"
+   }
+  ],
+  "campsite_pins": [
+   {
+    "name": "Ouzel Lake basecamp",
+    "elev": 5700,
+    "distMi": 8.5
+   }
+  ]
+ },
+ {
+  "id": "wa_northwest_mox_peak_standard",
+  "name": "Standard Route / Northwest Spire",
+  "discipline": "alpine",
+  "peak": "Northwest Mox Peak",
+  "area_id": "wa_northwest_mox_peak",
+  "path": "usa.washington.wa_northwest.wa_hwy20_ncnp.wa_north_cascades.wa_chilliwack_range.wa_northwest_mox_peak",
+  "trip_plan": {
+   "totalNote": "A remote 4-day trip (strong parties compress to 3): roughly 21-24 miles round trip with ~6,000-7,000 ft of cumulative gain to the 8,407 ft summit, with two long, slow approach/exit days bracketing a hard Class 4-5 glacier-and-headwall summit day from a Redoubt Glacier saddle camp.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Approach to Lake Ouzel",
+     "objective": "Reach the Lake Ouzel bivy/camp",
+     "miles": 7.5,
+     "gainFt": 3550,
+     "note": "From the Depot Creek Road trailhead (BC side, ~2,350 ft), hike past Monument 65 and up through old-growth forest and brush to Depot Creek Falls, then continue to Lake Ouzel (~5,700 ft). This is notoriously slow, bushwhacky terrain despite the modest mileage — expect roughly 6-9 hours for this leg."
+    },
+    {
+     "n": 2,
+     "title": "Move to Redoubt Glacier saddle high camp",
+     "objective": "Establish high camp at ~7,150-7,400 ft",
+     "miles": 2,
+     "gainFt": 1550,
+     "note": "Short but steep carry above Lake Ouzel over ledgey rock onto the toe of the Redoubt Glacier, roping up for the flat, low-crevasse-hazard glacier crossing to a rock-outcrop camp on the saddle. Many parties use this as a half-day and rest/prep gear in the afternoon."
+    },
+    {
+     "n": 3,
+     "title": "Summit push: Northwest Spire (Easy Mox)",
+     "objective": "Climb the Northeast Ridge to the NW (Easy Mox) summit and return to high camp",
+     "miles": 5,
+     "gainFt": 1900,
+     "note": "A long roped traverse of the Redoubt Glacier (visibility can drop to ~50 yards in cloud) leads to the base of the NE ridge headwall, where two pitches of low 5th class rock gain the ridge crest before class 3-4 scrambling to the 8,407 ft summit. \"Easy\" is relative — this is a full, long day with real exposure and route…"
+    },
+    {
+     "n": 4,
+     "title": "Hike out",
+     "objective": "Return to the Depot Creek trailhead",
+     "miles": 9.5,
+     "gainFt": 0,
+     "note": "Break camp and reverse the full approach in one long push — down off the glacier, past Lake Ouzel, Depot Creek Falls and Monument 65 back to the road. Some parties split this into two days if the crew is tired or the crossings are running high."
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Ouzel Lake basin, head of Depot Creek",
+    "elev_ft": 5700,
+    "type": "camp",
+    "role": "main",
+    "notes": "For Redoubt and Spickard this is the standard high camp and the reason both peaks are usually done together: the sandy, largely treeless benches near the lake sit within reach of the glacier approaches to each. Getting there involves a steep, brushy climb beside a large waterfall on ground that has at times had fixed l…"
+   }
+  ],
+  "campsite_pins": [
+   {
+    "name": "Lake Ouzel",
+    "elev": 5665,
+    "distMi": null
+   }
+  ]
+ },
+ {
+  "id": "wa_southeast_mox_peak_beckey_route_west_ridge",
+  "name": "Beckey Route (West Ridge)",
+  "discipline": "alpine",
+  "peak": "Southeast Mox Peak",
+  "area_id": "wa_southeast_mox_peak",
+  "path": "usa.washington.wa_northwest.wa_hwy20_ncnp.wa_north_cascades.wa_chilliwack_range.wa_southeast_mox_peak",
+  "trip_plan": {
+   "totalNote": "Four days from the Depot Creek trailhead: walk in to Lake Ouzel, move up to a high camp near 7,200 ft at the head of the Redoubt Glacier, spend a full day on the loose three-pitch Beckey route, and walk out. Parties often fold in Redoubt, Spickard or the other Chilliwack peaks along the way.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Depot Creek trailhead to Lake Ouzel",
+     "objective": "Reach a camp at Lake Ouzel (5,700 ft)",
+     "miles": null,
+     "gainFt": null,
+     "note": "Walk and scramble up the Depot Creek valley from about 2,300 ft to Lake Ouzel at about 5,700 ft and camp there."
+    },
+    {
+     "n": 2,
+     "title": "Move camp to the head of the Redoubt Glacier",
+     "objective": "Set up a high camp near 7,200 ft",
+     "miles": null,
+     "gainFt": 1500,
+     "note": "Climb from Lake Ouzel to the divide at the head of the Redoubt Glacier and Depot Creek. The move is short, which leaves time for Redoubt or a rest."
+    },
+    {
+     "n": 3,
+     "title": "Climb Southeast Mox by the Beckey route",
+     "objective": "Summit Southeast (Hard) Mox and return to high camp",
+     "miles": null,
+     "gainFt": 4000,
+     "note": "Traverse easily to the Col of the Wild, angle south on ledges onto the Ridge of the Gendarmes, pass a short vertical step and follow third-class ground to the biggest notch. Drop east to the snow gully, take the right-hand of two gullies against the spire's western walls (missing it is the usual error), and scramble to…"
+    },
+    {
+     "n": 4,
+     "title": "Hike out to Depot Creek trailhead",
+     "objective": "Return to the car",
+     "miles": 9.1,
+     "gainFt": null,
+     "note": "Break camp and descend past Lake Ouzel and down the Depot Creek valley to the trailhead."
+    }
+   ]
+  },
+  "camps_on_file": [],
+  "campsite_pins": []
+ },
+ {
+  "id": "wa_southeast_mox_peak_se_rib",
+  "name": "West Ridge (Beckey Route)",
+  "discipline": "alpine",
+  "peak": "Southeast Mox Peak",
+  "area_id": "wa_southeast_mox_peak",
+  "path": "usa.washington.wa_northwest.wa_hwy20_ncnp.wa_north_cascades.wa_chilliwack_range.wa_southeast_mox_peak",
+  "trip_plan": {
+   "totalNote": "A 4-day trip from the Depot Creek parking in British Columbia: in to Ouzel Lake, up to a high camp on the Redoubt Glacier saddle, a long summit day on the West Ridge, and out - roughly 20 miles round trip with about 7,200 ft of gain and the same loss.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Depot Creek to Ouzel Lake",
+     "objective": "Reach the Ouzel Lake camp",
+     "miles": 6.2,
+     "gainFt": 3550,
+     "note": "Walk the old road grade to the border at Monument 65, then follow the unmarked climbers' path through old growth to Depot Creek Falls. Scramble the steep, often wet slabs beside the falls with the help of the fixed handline, cross the outwash plain above, and climb into the basin to camp at Ouzel Lake."
+    },
+    {
+     "n": 2,
+     "title": "Ouzel Lake to the Redoubt Glacier saddle",
+     "objective": "Move camp up to the saddle below Mount Redoubt",
+     "miles": 1.8,
+     "gainFt": 1550,
+     "note": "Scramble around the lake and climb onto the Redoubt Glacier, roped, to the broad saddle at about 7,150 ft, the high camp closest to the Mox peaks. A short day that leaves the afternoon to scout the traverse toward the Col of the Wild."
+    },
+    {
+     "n": 3,
+     "title": "Summit day on Southeast Mox",
+     "objective": "Climb the West Ridge and return to high camp",
+     "miles": 4.6,
+     "gainFt": 2000,
+     "note": "Traverse east on snow beneath Easy Mox and climb the loose talus to the Col of the Wild, then scramble through the notch in the Ridge of Gendarmes and find the gully to the high notch on the west ridge. Three short pitches (5.5, then easier) reach the summit tower. Descend by about three single-rope rappels to the high…"
+    },
+    {
+     "n": 4,
+     "title": "Hike out",
+     "objective": "Return to the Depot Creek parking",
+     "miles": 8,
+     "gainFt": 100,
+     "note": "Descend from the saddle across the Redoubt Glacier to Ouzel Lake, then reverse the approach down the outwash plain, back down the handline slabs beside Depot Creek Falls, and out through the forest to the car. Some parties split this with a second night at Ouzel Lake."
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Ouzel Lake camp",
+    "elev_ft": null,
+    "type": "camp",
+    "role": "main",
+    "notes": ""
+   }
+  ],
+  "campsite_pins": [
+   {
+    "name": "Ouzel Lake camp",
+    "elev": 5700,
+    "distMi": 6.2
+   }
+  ]
+ },
+ {
+  "id": "wa_the_devils_club",
+  "name": "The Devils Club",
+  "discipline": "alpine",
+  "peak": "Southeast Mox Peak",
+  "area_id": "wa_southeast_mox_peak",
+  "path": "usa.washington.wa_northwest.wa_hwy20_ncnp.wa_north_cascades.wa_chilliwack_range.wa_southeast_mox_peak",
+  "trip_plan": {
+   "totalNote": "A serious 6-day expedition: 2 days of brutal bushwhacking just to reach the wall, 2 days on the 2,500-ft East Face (including an 18-hour summit push and an all-night natural-anchor rappel descent), and 2 more days to recover and hike out.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Boat taxi + bushwhack into the approach drainage",
+     "objective": "Start the approach toward the East Face",
+     "miles": 5,
+     "gainFt": 2000,
+     "note": "Take the Ross Lake water taxi to the Little Beaver dock, then start up the brush-choked Perry Creek drainage toward the base of Southeast Mox. Devil's club and slide alder shred clothing and skin almost immediately — the first-ascent party (Layton & Wolfe, 2005) called this the worst bushwhacking of the whole route."
+    },
+    {
+     "n": 2,
+     "title": "Reach the base of the East Face",
+     "objective": "Establish camp below the wall",
+     "miles": 4,
+     "gainFt": 2400,
+     "note": "A second full day of brutal bushwhacking is needed just to reach the base of the 2,500-ft East Face — the FA party spent two full days on approach alone before touching rock."
+    },
+    {
+     "n": 3,
+     "title": "Climb the lower slabs to a bivy ledge",
+     "objective": "Reach the bivy ledge below the headwall",
+     "miles": 1,
+     "gainFt": 1000,
+     "note": "About 1,000 ft of steep slabs lead to a small bivy ledge at the base of the near-vertical, 1,500-ft upper headwall. This sets up an early start on the crux the next day."
+    },
+    {
+     "n": 4,
+     "title": "Summit push and all-night rappel descent",
+     "objective": "Climb the headwall to the summit and rappel back to camp",
+     "miles": 2,
+     "gainFt": 1500,
+     "note": "An 18-hour push forces a route through steep, loose, poorly-protected 5.9+ A2- rock to the summit. The descent is a dozen-plus rappels off natural gear anchors (the route has no fixed bolts), reaching the tent around 3:30 AM."
+    },
+    {
+     "n": 5,
+     "title": "Rest and begin the hike out",
+     "objective": "Recover and start descending the drainage",
+     "miles": 5,
+     "gainFt": 0,
+     "note": "After an all-night push, most parties take a slower recovery day retracing the bushwhack back down the drainage toward Ross Lake."
+    },
+    {
+     "n": 6,
+     "title": "Bushwhack out and boat back to the car",
+     "objective": "Return to the trailhead",
+     "miles": 5,
+     "gainFt": 0,
+     "note": "Finish the brushy descent back to Ross Lake and catch the water taxi back across the lake to the car."
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Perry Creek basin",
+    "elev_ft": null,
+    "type": "camp",
+    "role": "main",
+    "notes": ""
+   }
+  ],
+  "campsite_pins": []
+ },
+ {
+  "id": "wa_austera_peak",
+  "name": "Austera Peak",
+  "discipline": "alpine",
+  "peak": "Austera Peak",
+  "area_id": "wa_austera_peak",
+  "path": "usa.washington.wa_northwest.wa_hwy20_ncnp.wa_north_cascades.wa_north_cascades_core.wa_austera_peak",
+  "trip_plan": {
+   "totalNote": "A 3-day glacier trip: hike to the Eldorado East Ridge high camp, traverse the Inspiration and Klawatti Glaciers to Austera Peak and back, then descend to the trailhead.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Hike to Eldorado East Ridge camp",
+     "objective": "Reach the high camp at about 7,600 ft",
+     "miles": null,
+     "gainFt": 5436,
+     "note": "Hike the Eldorado Creek climbers' path and the Eldorado Glacier to the East Ridge high camp at about 7,600 ft, which takes 5-6 hours."
+    },
+    {
+     "n": 2,
+     "title": "Traverse to Austera Peak",
+     "objective": "Summit Austera Peak and return to camp",
+     "miles": null,
+     "gainFt": null,
+     "note": "Traverse the glacier system to Austera Peak and back, about 4 hours each way plus the summit climbing. Strong parties can continue on to Klawatti or Primus as part of the broader Isolation/Inspiration Traverse."
+    },
+    {
+     "n": 3,
+     "title": "Descend to the trailhead",
+     "objective": "Return to the Cascade River Road trailhead",
+     "miles": null,
+     "gainFt": 0,
+     "note": "Break camp and descend to the trailhead."
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Eldorado-Inspiration snow arm high camp",
+    "elev_ft": 7500,
+    "type": "camp",
+    "role": "main",
+    "notes": "The standard base for the East Ridge and for anything out on the Inspiration Glacier, on the broad snow arm where the Eldorado and Inspiration ice meet. Because it is a snow camp rather than a fixed site, the exact ground shifts year to year with the snowpack — early season it is uniform snow, while a thin year opens m…"
+   },
+   {
+    "name": "Klawatti Col camp",
+    "elev_ft": 7800,
+    "type": "camp",
+    "role": "main",
+    "notes": "Only parties staying out more than one night use this camp; it exists to put Klawatti, Austera and Dorado Needle within a day's reach, and it is the natural staging point for continuing east. Getting there means traversing the Inspiration Glacier from the Eldorado camp, so it is a roped, crevassed approach rather than …"
+   },
+   {
+    "name": "Marble Creek Campground, Cascade River Road",
+    "elev_ft": 1225,
+    "type": "camp",
+    "role": "main",
+    "notes": "Roughly eight miles up the gravel Cascade River Road from Marblemount, this is the practical place to spend the night before if you cannot start walking the same day. Its value is logistical: the Wilderness Information Center wants your permit activated in person the day before, or before late morning on your start day…"
+   },
+   {
+    "name": "Eldorado East Ridge rock bivies",
+    "elev_ft": null,
+    "type": "bivy",
+    "role": "route",
+    "notes": "Where the snowpack has pulled back from the base of the East Ridge, flat rock takes bivy gear directly and gives a firmer, drier platform than the glacier. The site sits anywhere from roughly 7,500 to 7,800 ft, and the range is real rather than an error — how much rock is exposed, and therefore where you end up sleepin…"
+   },
+   {
+    "name": "Eldorado Basin camp",
+    "elev_ft": 6100,
+    "type": "camp",
+    "role": "route",
+    "notes": "The usual bail-out camp for parties who leave the trailhead late or find the boulder field slower than expected, reached after the talus and the short cliff band on the climbers' trail. It sits on vegetated ground rather than snow, so it is warmer and has real water, at the cost of adding a couple of thousand feet to s…"
+   },
+   {
+    "name": "Roush Creek Basin camp",
+    "elev_ft": 6300,
+    "type": "camp",
+    "role": "route",
+    "notes": "The neighbouring basin to the east offers an alternative low camp when Eldorado Basin is occupied, with usable ground reported roughly between 6,100 and 6,400 ft. It suits parties splitting the approach into a short first day, or skiers wanting a lower base. Like the Eldorado Basin option it costs you the height you di…"
+   }
+  ],
+  "campsite_pins": [
+   {
+    "name": "Eldorado (East Ridge) camp",
+    "elev": 7600,
+    "distMi": 5.5
+   }
+  ]
+ },
+ {
+  "id": "wa_austera_peak_southwest_ridge",
+  "name": "Southwest Ridge / McAllister Glacier",
+  "discipline": "alpine",
+  "peak": "Austera Peak",
+  "area_id": "wa_austera_peak",
+  "path": "usa.washington.wa_northwest.wa_hwy20_ncnp.wa_north_cascades.wa_north_cascades_core.wa_austera_peak",
+  "trip_plan": {
+   "totalNote": "A remote 3-day glacier trek rather than a technical climb: roughly 18 miles round trip with ~7,000+ ft of cumulative gain across three glaciers and two cols, including a short rappel and a belayed 5.6 pitch to regain the Klawatti-Austera col; very fit parties have done it car-to-car in a single ~12.5-hour push, but a 2-3 night camp at the Eldorado/Inspiration Glacier is the standard way most parties do it.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Approach to Inspiration Glacier high camp",
+     "objective": "Reach high camp on the Eldorado/Inspiration Glacier (~7,500 ft)",
+     "miles": 6,
+     "gainFt": 5400,
+     "note": "From the Cascade River Road trailhead (~2,100 ft), cross the river on a log/boulder crossing and follow the climbers' path through timber into Eldorado Creek Basin, then continue up boulder fields and onto the glacier to a flat camp near the rocks at the Eldorado-Inspiration Glacier saddle. Most parties rope up once on…"
+    },
+    {
+     "n": 2,
+     "title": "Glacier traverse and summit push",
+     "objective": "Traverse Inspiration Glacier → Klawatti Col → McAllister Glacier → Klawatti-Austera col → Klawatti Glacier to the Austera summit and back to camp",
+     "miles": 6.5,
+     "gainFt": 1800,
+     "note": "A long alpine day: contour the upper Inspiration Glacier to Klawatti Col, continue along Klawatti's north ridge on the McAllister Glacier, then make a rising traverse to the Klawatti-Austera col, which requires a short rappel (~75 ft, old fixed anchor) down onto the Klawatti Glacier. Traverse high and left across the K…"
+    },
+    {
+     "n": 3,
+     "title": "Hike out",
+     "objective": "Break camp and descend to the trailhead",
+     "miles": 6,
+     "gainFt": 0,
+     "note": "Pack up and retrace the approach back down through the glacier, boulder fields, and timber to the Cascade River Road trailhead, typically arriving by early-to-mid afternoon."
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Eldorado-Inspiration snow arm high camp",
+    "elev_ft": 7500,
+    "type": "camp",
+    "role": "main",
+    "notes": "The standard base for the East Ridge and for anything out on the Inspiration Glacier, on the broad snow arm where the Eldorado and Inspiration ice meet. Because it is a snow camp rather than a fixed site, the exact ground shifts year to year with the snowpack — early season it is uniform snow, while a thin year opens m…"
+   },
+   {
+    "name": "Klawatti Col camp",
+    "elev_ft": 7800,
+    "type": "camp",
+    "role": "main",
+    "notes": "Only parties staying out more than one night use this camp; it exists to put Klawatti, Austera and Dorado Needle within a day's reach, and it is the natural staging point for continuing east. Getting there means traversing the Inspiration Glacier from the Eldorado camp, so it is a roped, crevassed approach rather than …"
+   },
+   {
+    "name": "Marble Creek Campground, Cascade River Road",
+    "elev_ft": 1225,
+    "type": "camp",
+    "role": "main",
+    "notes": "Roughly eight miles up the gravel Cascade River Road from Marblemount, this is the practical place to spend the night before if you cannot start walking the same day. Its value is logistical: the Wilderness Information Center wants your permit activated in person the day before, or before late morning on your start day…"
+   },
+   {
+    "name": "Eldorado East Ridge rock bivies",
+    "elev_ft": null,
+    "type": "bivy",
+    "role": "route",
+    "notes": "Where the snowpack has pulled back from the base of the East Ridge, flat rock takes bivy gear directly and gives a firmer, drier platform than the glacier. The site sits anywhere from roughly 7,500 to 7,800 ft, and the range is real rather than an error — how much rock is exposed, and therefore where you end up sleepin…"
+   },
+   {
+    "name": "Eldorado Basin camp",
+    "elev_ft": 6100,
+    "type": "camp",
+    "role": "route",
+    "notes": "The usual bail-out camp for parties who leave the trailhead late or find the boulder field slower than expected, reached after the talus and the short cliff band on the climbers' trail. It sits on vegetated ground rather than snow, so it is warmer and has real water, at the cost of adding a couple of thousand feet to s…"
+   },
+   {
+    "name": "Roush Creek Basin camp",
+    "elev_ft": 6300,
+    "type": "camp",
+    "role": "route",
+    "notes": "The neighbouring basin to the east offers an alternative low camp when Eldorado Basin is occupied, with usable ground reported roughly between 6,100 and 6,400 ft. It suits parties splitting the approach into a short first day, or skiers wanting a lower base. Like the Eldorado Basin option it costs you the height you di…"
+   }
+  ],
+  "campsite_pins": [
+   {
+    "name": "Marble Creek Campground, Cascade River Road",
+    "elev": 1225,
+    "distMi": null
+   },
+   {
+    "name": "Eldorado Creek Basin",
+    "elev": 5600,
+    "distMi": 3.5
+   },
+   {
+    "name": "Roush Creek Basin (Eldorado high camp)",
+    "elev": 6300,
+    "distMi": 6.5
+   }
+  ]
+ },
+ {
+  "id": "wa_booker_mountain_northwest_route",
+  "name": "Northwest Route",
+  "discipline": "scrambling",
+  "peak": "Booker Mountain",
+  "area_id": "wa_booker_mountain",
+  "path": "usa.washington.wa_northwest.wa_hwy20_ncnp.wa_north_cascades.wa_north_cascades_core.wa_booker_mountain",
+  "trip_plan": {
+   "totalNote": "Backpack up Thunder Creek to a Park Creek Pass-area camp, day-climb Booker via the Booker-Buckner col, then hike out or continue a traverse.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Backpack up Thunder Creek",
+     "objective": "Reach a camp near Park Creek Pass",
+     "miles": 17.7,
+     "gainFt": 4900,
+     "note": "Backpack in from Colonial Creek Campground on the Thunder Creek Trail to a Park Creek Pass-area camp, such as Thunder Basin Hiker Camp about 17.7 miles in. The day includes the bonus climb around Junction Camp."
+    },
+    {
+     "n": 2,
+     "title": "Scramble Booker via the col",
+     "objective": "Summit Booker and return to camp",
+     "miles": null,
+     "gainFt": 3200,
+     "note": "From camp it is a short day-trip scramble up to the Booker-Buckner col and on to the summit; Booker is often combined with Buckner. Reverse the route over the col and down to Park Creek Pass and camp."
+    },
+    {
+     "n": 3,
+     "title": "Hike out or continue the traverse",
+     "objective": "Return to Colonial Creek",
+     "miles": 17.7,
+     "gainFt": 1000,
+     "note": "Hike back out down Thunder Creek, or continue a traverse instead."
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Thunder Basin Hiker Camp",
+    "elev_ft": 5108,
+    "type": "camp",
+    "role": "main",
+    "notes": "The staging camp for Booker, Storm King and Buckner from the west, and for parties continuing over the pass toward Stehekin. It sits in meadows and small trees with roughly a thousand feet of climbing still to reach the pass, and it is reliably buggy in warm weather. Because the pass is closed to camping, groups wantin…"
+   },
+   {
+    "name": "Neve Camp",
+    "elev_ft": 1350,
+    "type": "camp",
+    "role": "route",
+    "notes": "Under two miles from the Colonial Creek trailhead on flat valley trail, this is the camp that exists to absorb a late arrival rather than to stage a climb. Parties driving over from the west side after work can sleep here and still be at Junction by early afternoon the next day. It is deep forest with no views, and the…"
+   },
+   {
+    "name": "Junction Camp",
+    "elev_ft": 3200,
+    "type": "camp",
+    "role": "route",
+    "notes": "About ten miles in, this is where the trail finally gives something back after a long forest walk, with the Boston Glacier visible through a gap in the trees. It is the natural first or second night for parties heading to Mount Logan, and the standard stopping point on the way back out from a high camp. The trail to Fi…"
+   },
+   {
+    "name": "Skagit Queen Camp",
+    "elev_ft": 3093,
+    "type": "camp",
+    "role": "route",
+    "notes": "Roughly thirteen miles up the valley, reached after a steep mile of climbing through silver fir, and the last creekside camp before the trail commits to the headwaters. Remains of early twentieth-century mining work sit just beyond the camp. The bridge over Thunder Creek in this stretch was rebuilt in recent years, but…"
+   },
+   {
+    "name": "Five Mile Camp, Park Creek trail",
+    "elev_ft": 3921,
+    "type": "camp",
+    "role": "route",
+    "notes": "The eastern counterpart to Thunder Basin: the last practical night before crossing Park Creek Pass from the Stehekin side, and the staging point for Buckner and Booker approached from the east. The trail above climbs through hanging meadows to the pass with good views of Goode, Buckner and Booker on the way. Coming in …"
+   }
+  ],
+  "campsite_pins": [
+   {
+    "name": "Neve Camp",
+    "elev": 1350,
+    "distMi": null
+   },
+   {
+    "name": "Skagit Queen Camp",
+    "elev": 3093,
+    "distMi": null
+   },
+   {
+    "name": "Junction Camp",
+    "elev": 3200,
+    "distMi": null
+   },
+   {
+    "name": "Five Mile Camp, Park Creek trail",
+    "elev": 3921,
+    "distMi": null
+   },
+   {
+    "name": "Thunder Basin Hiker Camp",
+    "elev": 5108,
+    "distMi": null
+   }
+  ]
+ },
+ {
+  "id": "wa_north_ridge_7",
+  "name": "North Ridge",
+  "discipline": "alpine",
+  "peak": "Aiguille de l'M",
+  "area_id": "wa_aiguille_de_l_m",
+  "path": "usa.washington.wa_northwest.wa_hwy20_ncnp.wa_north_cascades.wa_north_cascades_core.wa_boston_basin.wa_aiguille_de_l_m",
+  "trip_plan": {
+   "totalNote": "Hike ~3-4 mi and ~3,000 ft to Boston Basin high camp, then climb the North Ridge to the tower and back in a half day and hike out or stay a second night.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Hike to Boston Basin high camp",
+     "objective": "Reach Boston Basin high camp at ~6,400 ft",
+     "miles": 3.5,
+     "gainFt": 3200,
+     "note": "From the Boston Basin trailhead (~3,200 ft), hike about 3-4 miles and ~3,000 ft of gain to high camp at about 6,400 ft."
+    },
+    {
+     "n": 2,
+     "title": "Climb the North Ridge and hike out",
+     "objective": "Climb the tower and return, then hike out",
+     "miles": 4,
+     "gainFt": 800,
+     "note": "Make an early start from camp and climb to the col and up the North Ridge to the tower and back, typically a half-day round trip. Hike out or stay a second night."
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Boston Basin upper (high) camp",
+    "elev_ft": 6400,
+    "type": "camp",
+    "role": "main",
+    "notes": "Several hundred vertical feet above the lower camp and also served by a composting toilet, this shortens the morning to the Forbidden West Ridge couloir and to Sharkfin Tower considerably. There is a real tension in the published guidance worth knowing before you go: park zone rules describe camping on durable surfaces…"
+   },
+   {
+    "name": "Boston Basin lower camp",
+    "elev_ft": 5300,
+    "type": "camp",
+    "role": "main",
+    "notes": "The first hardened camp on the climbers' trail up from the Cascade River Road pullout near mile 21.7, with a composting toilet. It is the usual base for Forbidden Peak's West Ridge and North Ridge, Sharkfin Tower and the Torment-Forbidden traverse, and it stays snow-covered well into early summer. accounts differ on th…"
+   }
+  ],
+  "campsite_pins": [
+   {
+    "name": "Boston Basin lower camp",
+    "elev": 5300,
+    "distMi": null
+   },
+   {
+    "name": "Boston Basin upper (high) camp",
+    "elev": 6400,
+    "distMi": null
+   }
+  ]
+ },
+ {
+  "id": "wa_south_ridge_6",
+  "name": "South Ridge",
+  "discipline": "alpine",
+  "peak": "Aiguille de l'M",
+  "area_id": "wa_aiguille_de_l_m",
+  "path": "usa.washington.wa_northwest.wa_hwy20_ncnp.wa_north_cascades.wa_north_cascades_core.wa_boston_basin.wa_aiguille_de_l_m",
+  "trip_plan": {
+   "totalNote": "Two days: hike in to Boston Basin high camp, then climb the South Ridge and descend the North Ridge to camp.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Hike in to Boston Basin high camp",
+     "objective": "Reach high camp at about 6,400 ft",
+     "miles": null,
+     "gainFt": 3200,
+     "note": "Hike the Boston Basin climbers' path to high camp at about 6,400 ft."
+    },
+    {
+     "n": 2,
+     "title": "Climb the South Ridge",
+     "objective": "Summit Aiguille de l'M and return to camp",
+     "miles": null,
+     "gainFt": 800,
+     "note": "Make an early start, approach via snowfields to the base of the South Ridge, and climb the 5 pitches to the top. Descend via the North Ridge back to camp, with one short rappel from fixed slings."
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Boston Basin upper (high) camp",
+    "elev_ft": 6400,
+    "type": "camp",
+    "role": "main",
+    "notes": "Several hundred vertical feet above the lower camp and also served by a composting toilet, this shortens the morning to the Forbidden West Ridge couloir and to Sharkfin Tower considerably. There is a real tension in the published guidance worth knowing before you go: park zone rules describe camping on durable surfaces…"
+   },
+   {
+    "name": "Boston Basin lower camp",
+    "elev_ft": 5300,
+    "type": "camp",
+    "role": "main",
+    "notes": "The first hardened camp on the climbers' trail up from the Cascade River Road pullout near mile 21.7, with a composting toilet. It is the usual base for Forbidden Peak's West Ridge and North Ridge, Sharkfin Tower and the Torment-Forbidden traverse, and it stays snow-covered well into early summer. accounts differ on th…"
+   }
+  ],
+  "campsite_pins": [
+   {
+    "name": "Boston Basin lower camp",
+    "elev": 5300,
+    "distMi": null
+   },
+   {
+    "name": "Boston Basin high camp",
+    "elev": 6250,
+    "distMi": 2.6
+   }
+  ]
+ },
+ {
+  "id": "wa_boston_peak_southeast_face",
+  "name": "Southeast Face",
+  "discipline": "mountaineering",
+  "peak": "Boston Peak",
+  "area_id": "wa_boston_peak",
+  "path": "usa.washington.wa_northwest.wa_hwy20_ncnp.wa_north_cascades.wa_north_cascades_core.wa_boston_basin.wa_boston_peak",
+  "trip_plan": {
+   "totalNote": "A 3-day/2-night trip from Boston Basin: strong parties can do the whole thing car-to-car in one very long 12-14 hr day, but most split it into approach, a long technical summit day (~5,000 ft round trip gain/loss and 10-12 hrs from camp), and a hike-out to avoid a late, tired descent off loose rock.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Approach to Boston Basin camp",
+     "objective": "Reach the Boston Basin high camp (~6,400 ft)",
+     "miles": 3.2,
+     "gainFt": 3100,
+     "note": "From the Cascade River Road trailhead (~3,200 ft), a steep, boot-track-and-boulder approach climbs through forest and slide alder into Boston Basin. Most parties set up at the designated high camp (~6,400 ft) to shorten summit day, though the low camp (~5,300 ft) is an option for slower groups."
+    },
+    {
+     "n": 2,
+     "title": "Summit push via Quien Sabe Glacier",
+     "objective": "Climb the Southeast Face and return to camp",
+     "miles": 5.5,
+     "gainFt": 2500,
+     "note": "An alpine start gets you up the Quien Sabe Glacier to the Sahale-Boston col before the snow softens, then across the head of the Boston Glacier past the bergschrund to the base of the face. A short roped pitch and loose, sandy 3rd/4th-class ledges lead to a crux (offwidth or a rib move) just below the summit ridge. Des…"
+    },
+    {
+     "n": 3,
+     "title": "Hike out",
+     "objective": "Return to the trailhead",
+     "miles": 3.2,
+     "gainFt": 0,
+     "note": "Break camp and descend the same boot path back to the Cascade River Road trailhead."
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Boston Basin high camp",
+    "elev_ft": 6401,
+    "type": "camp",
+    "role": "main",
+    "notes": "The upper camp, roughly 6,400 ft, with a composting toilet. It is the practical base for Boston: from here you gain the Quien Sabe and traverse under Sharkfin toward the peak's east side. The rock on this route is notoriously rotten, so most parties climb it unroped to keep out from under each other, and having camp cl…"
+   },
+   {
+    "name": "Boston Basin low camp",
+    "elev_ft": 5299,
+    "type": "camp",
+    "role": "route",
+    "notes": "About 5,300 ft on a morainal rib with a little tree cover. Slower parties and early-season trips use it because it melts out sooner and is more sheltered; the trade is a longer summit day."
+   }
+  ],
+  "campsite_pins": [
+   {
+    "name": "Boston Basin low camp",
+    "elev": 5299,
+    "distMi": null
+   },
+   {
+    "name": "Boston Basin",
+    "elev": 5395,
+    "distMi": 3
+   },
+   {
+    "name": "Boston Basin high camp",
+    "elev": 6401,
+    "distMi": null
+   }
+  ]
+ },
+ {
+  "id": "wa_northwest_ridge_2",
+  "name": "Northwest Ridge",
+  "discipline": "alpine",
+  "peak": "Boston Peak",
+  "area_id": "wa_boston_peak",
+  "path": "usa.washington.wa_northwest.wa_hwy20_ncnp.wa_north_cascades.wa_north_cascades_core.wa_boston_basin.wa_boston_peak",
+  "trip_plan": {
+   "totalNote": "A serious 3-day trip built around one very long, technical ridge day (~13 hrs, roughly 3,200 ft of climbing along a sustained, exposed ridge); this route is rarely done in isolation — most parties who climb it are mid-traverse from Sharkfin Tower/Forbidden Peak toward Boston and Sahale.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Approach to Boston Basin camp",
+     "objective": "Reach a high camp positioned under Sharkfin/Boston",
+     "miles": 3.2,
+     "gainFt": 3100,
+     "note": "Same Cascade River Road approach as Boston's other routes: a steep trail and boot track climb from the trailhead (~3,200 ft) into Boston Basin. Camp at the high site (~6,400 ft) to shorten the long ridge day ahead."
+    },
+    {
+     "n": 2,
+     "title": "Northwest Ridge to the summit",
+     "objective": "Climb the ridge from the Sharkfin-Boston area to Boston's summit and walk off",
+     "miles": 8.5,
+     "gainFt": 3200,
+     "note": "This ridge is the connecting link used by parties traversing on from Sharkfin Tower/Forbidden Peak toward Boston and Sahale — it sees very few standalone ascents, so treat it as a serious, sustained, exposed alpine ridge with real routefinding rather than a well-beaten path. Because the first-ascent party continued onw…"
+    },
+    {
+     "n": 3,
+     "title": "Hike out",
+     "objective": "Return to the trailhead",
+     "miles": 3.2,
+     "gainFt": 0,
+     "note": "Break camp and hike back down to the Cascade River Road trailhead."
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Boston Basin upper (high) camp",
+    "elev_ft": 6400,
+    "type": "camp",
+    "role": "main",
+    "notes": "Several hundred vertical feet above the lower camp and also served by a composting toilet, this shortens the morning to the Forbidden West Ridge couloir and to Sharkfin Tower considerably. There is a real tension in the published guidance worth knowing before you go: park zone rules describe camping on durable surfaces…"
+   },
+   {
+    "name": "Boston Basin lower camp",
+    "elev_ft": 5300,
+    "type": "camp",
+    "role": "route",
+    "notes": "The first hardened camp on the climbers' trail up from the Cascade River Road pullout near mile 21.7, with a composting toilet. It is the usual base for Forbidden Peak's West Ridge and North Ridge, Sharkfin Tower and the Torment-Forbidden traverse, and it stays snow-covered well into early summer. accounts differ on th…"
+   },
+   {
+    "name": "Informal snow and rock bivouacs above the basins",
+    "elev_ft": null,
+    "type": "bivy",
+    "role": "route",
+    "notes": "Parties attempting the Torment-Forbidden traverse, a long day on Boston Peak, or a late finish on the Forbidden North Ridge sometimes end up bivouacking on snow or rock above the established camps, in the Sharkfin Col area, or in a notch on route. Treat these as unplanned or emergency shelter rather than as an itinerar…"
+   }
+  ],
+  "campsite_pins": [
+   {
+    "name": "Boston Basin lower camp",
+    "elev": 5300,
+    "distMi": 3.6
+   },
+   {
+    "name": "Lower Boston Basin Camp",
+    "elev": 5700,
+    "distMi": null
+   },
+   {
+    "name": "Boston Basin upper (high) camp",
+    "elev": 6400,
+    "distMi": 4.2
+   }
+  ]
+ },
+ {
+  "id": "wa_buckner_mountain_north_face",
+  "name": "North Face",
+  "discipline": "alpine",
+  "peak": "Buckner Mountain",
+  "area_id": "wa_buckner_mountain",
+  "path": "usa.washington.wa_northwest.wa_hwy20_ncnp.wa_north_cascades.wa_north_cascades_core.wa_boston_basin.wa_buckner_mountain",
+  "trip_plan": {
+   "totalNote": "A 3-day technical traverse (~18-19 mi point-to-point, an estimated ~6,800+ ft of total gain): approach via Boston Basin to a Boston Glacier camp, climb 8-13 pitches of 40-50 degree snow/ice up the North Face, then continue over the summit to a Horseshoe Basin/Sahale camp and exit via Cascade Pass; exceptionally fast parties have linked the whole thing in one very long day, but 3 days with 2 camps is standard.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Approach to Boston Glacier camp",
+     "objective": "Reach a camp near the base of the North Face",
+     "miles": 5.5,
+     "gainFt": 4600,
+     "note": "From the Boston Basin trailhead, hike into Boston Basin, ascend the Quien Sabe Glacier to the Boston-Sahale col, then traverse/scramble behind Boston Peak and descend (some steep snow and low-grade mixed down-climbing near Sharkfin Col) onto the Boston Glacier to camp roughly an hour from the face."
+    },
+    {
+     "n": 2,
+     "title": "Climb the North Face and traverse to a second camp",
+     "objective": "Summit via the North Face, descend SW to camp in Horseshoe Basin or at Sahale Glacier",
+     "miles": 5,
+     "gainFt": 2200,
+     "note": "Rope up and cross the Boston Glacier to the base of the face, then climb 8-13 pitches of moderate 40-50 degree snow/ice to the 9,114 ft summit. Descend the standard SW slopes into Horseshoe Basin and continue to a second camp rather than exiting same-day, carrying full overnight gear over the top."
+    },
+    {
+     "n": 3,
+     "title": "Exit via Cascade Pass",
+     "objective": "Hike out to the Cascade Pass trailhead",
+     "miles": 6,
+     "gainFt": 0,
+     "note": "Descend Sahale Arm to Cascade Pass and out to the Cascade Pass trailhead — a different trailhead than the Boston Basin start, so this route is a point-to-point traverse requiring a car shuttle or hitch between trailheads."
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Boston Basin high camp",
+    "elev_ft": 6300,
+    "type": null,
+    "role": "main",
+    "notes": "The comfortable planned camp, roughly 6,300 to 6,400 ft on a sandy flat below a permanent snowfield, about three to four hours from the road. Everything on this route beyond it is committing, because the way onto the Boston Glacier goes over Sharkfin Col and that involves a rappel or a steep downclimb on poor rock that…"
+   },
+   {
+    "name": "Boston Glacier bivy",
+    "elev_ft": 7800,
+    "type": null,
+    "role": "route",
+    "notes": "A planned but fully exposed glacier bivy used to shorten summit day, on one of the largest glaciers in the lower 48. You are camping on a crevassed surface, so probe the platform and its surroundings before dropping the rope, and mark the perimeter. There is no shelter, no running water and no ground: everything is mel…"
+   },
+   {
+    "name": "Sahale–Boston col bivy",
+    "elev_ft": null,
+    "type": null,
+    "role": "route",
+    "notes": "A tiny, spectacular perch on the col between Sahale and Boston, used by parties linking this face with other climbs in the basin or descending over Sahale Arm. It is an emergency-sized site, not a camp: there is room for one small tent, and cornices overhang the Davenport side, so probe out from the sleeping platform b…"
+   }
+  ],
+  "campsite_pins": [
+   {
+    "name": "Sahale Glacier Camp",
+    "elev": 7686,
+    "distMi": null
+   }
+  ]
+ },
+ {
+  "id": "wa_buckner_mountain_southwest_face",
+  "name": "Southwest Face / Southwest Slopes",
+  "discipline": "mountaineering",
+  "peak": "Buckner Mountain",
+  "area_id": "wa_buckner_mountain",
+  "path": "usa.washington.wa_northwest.wa_hwy20_ncnp.wa_north_cascades.wa_north_cascades_core.wa_boston_basin.wa_buckner_mountain",
+  "trip_plan": {
+   "totalNote": "A standard 3-day trip (~18-20 mi round trip, ~7,400 ft total gain): backpack in to Sahale Glacier Camp, a very long 12-14 hour summit day through Horseshoe Basin and the SW chute, then hike out; a few exceptionally fit parties have pushed it car-to-car in one very long day, but that is not the norm.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Backpack to Sahale Glacier Camp",
+     "objective": "Establish high camp below the SW approach",
+     "miles": 5.9,
+     "gainFt": 4000,
+     "note": "Hike from the Cascade Pass trailhead over Cascade Pass and up the Sahale Arm to the popular Sahale Glacier Camp (~7,600 ft), the standard base for Buckner's SW side. Trail is well-graded but the Arm's upper switchbacks and the final scramble to the designated camp are the steepest part."
+    },
+    {
+     "n": 2,
+     "title": "Summit push via Horseshoe Basin and the SW Face",
+     "objective": "Reach the 9,114 ft summit and return to camp",
+     "miles": 7,
+     "gainFt": 3000,
+     "note": "A long, mostly non-technical but exposed day: traverse south off Sahale past Doughboy into Horseshoe Basin (snow and loose talus), then climb the SW scree/snow chute to the south ridge near 8,800 ft for a short 3rd-class scramble to the top. This is regularly reported as a 12-14 hour round trip from camp; roped belays …"
+    },
+    {
+     "n": 3,
+     "title": "Hike out",
+     "objective": "Return to the Cascade Pass trailhead",
+     "miles": 5.9,
+     "gainFt": 0,
+     "note": "Break camp and reverse the Sahale Arm / Cascade Pass trail back to the car — mostly downhill and straightforward after the summit day."
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Sahale Glacier Camp",
+    "elev_ft": 7598,
+    "type": "camp",
+    "role": "main",
+    "notes": "Around 7,600 ft at the end of the Sahale Arm trail, about six miles and 4,000 ft from Cascade Pass trailhead. It is the standard base for the southwest side of Buckner: from camp you drop east onto Sahale's southeast ridge, scramble down easy ground to a snow finger, and cross into Horseshoe Basin before starting up. M…"
+   },
+   {
+    "name": "Upper Horseshoe Basin bivy",
+    "elev_ft": null,
+    "type": "bivy",
+    "role": "route",
+    "notes": "A cross-country alternative used by parties who would rather not depend on a Sahale Glacier Camp permit: descend into the upper basin and sleep on whatever ground you reach. The basin is a mix of clean granite slabs, snow patches and loose rock, and the lower basin is the awkward part to travel. It puts you at the foot…"
+   }
+  ],
+  "campsite_pins": [
+   {
+    "name": "Sahale Glacier Camp",
+    "elev": 7686,
+    "distMi": 5.9
+   }
+  ]
+ }
+]

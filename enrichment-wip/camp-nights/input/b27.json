@@ -1,0 +1,1121 @@
+[
+ {
+  "id": "wa_inner_constance_northwest_buttress",
+  "name": "Northwest Buttress",
+  "discipline": "alpine",
+  "peak": "Inner Constance",
+  "area_id": "wa_inner_constance",
+  "path": "usa.washington.wa_olympics.wa_olympic_np.wa_eastern_olympics.wa_inner_constance",
+  "trip_plan": {
+   "totalNote": "Hike to Home Lake and the boulder camp below the face, climb the Northwest Buttress, and hike out on the third day.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Hike to Home Lake",
+     "objective": "Camp at Home Lake or the boulders northwest of the summit",
+     "miles": 9.3,
+     "gainFt": 2800,
+     "note": "Hike about 9.3 miles from the Upper Dungeness Trailhead to Home Lake. If you still have daylight, push up into the Home Creek basin and camp at the boulders northwest of the summit so you can study the face in evening light."
+    },
+    {
+     "n": 2,
+     "title": "Climb the Northwest Buttress",
+     "objective": "Summit Inner Constance and return to camp",
+     "miles": null,
+     "gainFt": null,
+     "note": "Climb the buttress, descend, and return to camp."
+    },
+    {
+     "n": 3,
+     "title": "Hike out to Upper Dungeness",
+     "objective": "Return to the trailhead",
+     "miles": 9.3,
+     "gainFt": 0,
+     "note": "Hike out to the trailhead."
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Home Lake, below Constance Pass — inside the park, and reached from the north",
+    "elev_ft": 5330,
+    "type": "camp",
+    "role": "main",
+    "notes": "The high camp for both Warrior Peak and the northwest side of Inner Constance, and the natural next step up from Boulder Shelter once you want to be closer to the peaks. Reach it from the Upper Dungeness trailhead by way of Camp Handy and Boulder Shelter — the approach from the Dosewallips over Constance Pass is techni…"
+   },
+   {
+    "name": "Boulder Shelter — the last camp outside the national park",
+    "elev_ft": 4950,
+    "type": "camp",
+    "role": "route",
+    "notes": "The working base for Warrior Peak, and the cheapest night in this zone by a wide margin because nothing has to be booked. It sits at about 4,950 ft and roughly 6.3 miles from the Upper Dungeness trailhead at 2,500 ft, past Camp Handy at 3,100 ft — an easy valley walk on maintained trail, which is why this and not the D…"
+   }
+  ],
+  "campsite_pins": [
+   {
+    "name": "Boulder Shelter — the last camp outside the national park",
+    "elev": 4950,
+    "distMi": null
+   },
+   {
+    "name": "Home Lake",
+    "elev": 5325,
+    "distMi": 9.3
+   }
+  ]
+ },
+ {
+  "id": "wa_inner_constance_seans_route",
+  "name": "Sean's Route/Second Wind",
+  "discipline": "alpine",
+  "peak": "Inner Constance",
+  "area_id": "wa_inner_constance",
+  "path": "usa.washington.wa_olympics.wa_olympic_np.wa_eastern_olympics.wa_inner_constance",
+  "trip_plan": {
+   "totalNote": "Hike to a Home Lake camp, climb Sean's Route and descend Avalanche Canyon in a 12.5-hour day, then hike out.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Hike in to Home Lake",
+     "objective": "Camp at Home Lake",
+     "miles": 9.3,
+     "gainFt": 2800,
+     "note": "Hike the Upper Dungeness Trail about 9.3 miles to a camp at Home Lake."
+    },
+    {
+     "n": 2,
+     "title": "Climb Sean's Route",
+     "objective": "Climb the buttress and descend Avalanche Canyon",
+     "miles": null,
+     "gainFt": null,
+     "note": "Climb the buttress, about three technical pitches plus scrambling to the false summit, then descend via Avalanche Canyon back to Home Lake. The first-ascent party reported roughly 12.5 hours round trip."
+    },
+    {
+     "n": 3,
+     "title": "Hike out to Upper Dungeness",
+     "objective": "Return to the trailhead",
+     "miles": 9.3,
+     "gainFt": 0,
+     "note": "Hike out to the trailhead."
+    }
+   ]
+  },
+  "camps_on_file": [],
+  "campsite_pins": []
+ },
+ {
+  "id": "wa_inner_constance_standard",
+  "name": "Standard Route (Northeast summit via South Gully and East Ridge)",
+  "discipline": "alpine",
+  "peak": "Inner Constance",
+  "area_id": "wa_inner_constance",
+  "path": "usa.washington.wa_olympics.wa_olympic_np.wa_eastern_olympics.wa_inner_constance",
+  "trip_plan": {
+   "totalNote": "A 3-day trip covering roughly 16 miles round trip and about 6,000 ft of gain to the 7,672' NE summit; strong, fast parties sometimes compress the approach and hike-out into a single day for a 2-day trip, or combine it with Mount Constance or Warrior Peak from the same camp.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Approach to high camp",
+     "objective": "Reach camp at Lake Constance",
+     "miles": 6.5,
+     "gainFt": 3800,
+     "note": "From the Dosewallips Road washout, bike or walk the closed road to the unsigned Lake Constance climbers' path, then climb it steeply to camp at Lake Constance. Expect steady, unrelenting switchbacks gaining most of the day's elevation in the final 2-3 miles."
+    },
+    {
+     "n": 2,
+     "title": "Summit day: South Gully-East Ridge",
+     "objective": "Climb to the Northeast summit (7,672') and return to camp",
+     "miles": 4.5,
+     "gainFt": 2200,
+     "note": "An alpine start on firm snow up a broad couloir into a narrow, moat-lined snow defile, then a steep discontinuous snow finger gaining the East Ridge. A short Class 3-4 rock step gains the ridge, and from there it's a Class 2-3 scramble on loose-to-solid pillow basalt to the summit. Descend by reversing the same line, d…"
+    },
+    {
+     "n": 3,
+     "title": "Hike out",
+     "objective": "Descend to the Dosewallips trailhead",
+     "miles": 5,
+     "gainFt": 0,
+     "note": "Break camp and reverse the approach, dropping back down toward the Dosewallips River trail and out to the trailhead (or bike cache, given the road washout closure). Mostly downhill and straightforward after the technical day prior."
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Lake Constance",
+    "elev_ft": null,
+    "type": "camp",
+    "role": "main",
+    "notes": ""
+   }
+  ],
+  "campsite_pins": [
+   {
+    "name": "Lake Constance",
+    "elev": 4800,
+    "distMi": 7.2
+   }
+  ]
+ },
+ {
+  "id": "wa_mount_constance_north_chimney",
+  "name": "North Chimney (Standard Route)",
+  "discipline": "scrambling",
+  "peak": "Mount Constance",
+  "area_id": "wa_mount_constance",
+  "path": "usa.washington.wa_olympics.wa_olympic_np.wa_eastern_olympics.wa_mount_constance",
+  "trip_plan": {
+   "totalNote": "A 3-day, 2-night trip is standard: hike in, a long (~12 hr) summit day via the South Chute and North Chimney, hike out.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Approach to Lake Constance camp",
+     "objective": "Reach camp at Lake Constance",
+     "miles": 6.5,
+     "gainFt": 4200,
+     "note": "Bike or walk the washed-out Dosewallips road, then climb the steep 2-mile Lake Constance Trail (~3,300 ft gain) to camp on the north side of the lake."
+    },
+    {
+     "n": 2,
+     "title": "Summit via the North Chimney",
+     "objective": "Tag the summit via the standard South Chute / North Chimney line",
+     "miles": 5,
+     "gainFt": 3300,
+     "note": "Climb Avalanche Canyon and the South Chute to the notch, cross the exposed Terrible Traverse snow/scree cirque, then finish up the 3rd-class North Chimney gully that wraps around the north side of the summit block to the true summit. Reverse the whole line back to camp."
+    },
+    {
+     "n": 3,
+     "title": "Hike out",
+     "objective": "Break camp and exit to the trailhead",
+     "miles": 6.5,
+     "gainFt": 0,
+     "note": "Reverse the Lake Constance Trail and road walk/bike back to the cars."
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Lake Constance",
+    "elev_ft": 4700,
+    "type": "camp",
+    "role": "main",
+    "notes": "The only practical camp for the route and a brutal one to reach: an unmaintained climbers' path gaining roughly 3,200 ft in about 1.8 mi from the Dosewallips, steep enough that you are pulling on roots and logs, and that is after walking or biking several miles of the road washed out since 2002. Parties climb Constance…"
+   }
+  ],
+  "campsite_pins": [
+   {
+    "name": "Lake Constance",
+    "elev": 4667,
+    "distMi": null
+   }
+  ]
+ },
+ {
+  "id": "wa_mount_constance_north_chute",
+  "name": "North Chute",
+  "discipline": "scrambling",
+  "peak": "Mount Constance",
+  "area_id": "wa_mount_constance",
+  "path": "usa.washington.wa_olympics.wa_olympic_np.wa_eastern_olympics.wa_mount_constance",
+  "trip_plan": {
+   "totalNote": "Hike up to Lake Constance, make a pre-dawn climb of Avalanche Canyon, the North Chute and the Finger Traverse to the summit on day two, and hike out on day three.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Approach to Lake Constance",
+     "objective": "Camp at Lake Constance",
+     "miles": 6,
+     "gainFt": 4100,
+     "note": "Approach up the steep Lake Constance Trail to camp at Lake Constance."
+    },
+    {
+     "n": 2,
+     "title": "Climb the North Chute to the summit",
+     "objective": "Summit via the North Chute and Finger Traverse",
+     "miles": null,
+     "gainFt": 3100,
+     "note": "Make a pre-dawn ascent of Avalanche Canyon and the North Chute, cross the Finger Traverse to the summit, and descend."
+    },
+    {
+     "n": 3,
+     "title": "Hike out from Lake Constance",
+     "objective": "Return to the car",
+     "miles": 6,
+     "gainFt": 0,
+     "note": "Hike out from Lake Constance."
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Lake Constance — the standard base for the South Chute",
+    "elev_ft": 4700,
+    "type": "camp",
+    "role": "main",
+    "notes": "The base camp for essentially every ascent by the standard South Chute, reached by a savage climbers' path that gains roughly 3,300 to 3,400 ft in under two miles of hand-over-hand scrambling above the Dosewallips road. Published elevations for the lake vary between about 4,650 and 4,800 ft, a fair reflection of how im…"
+   }
+  ],
+  "campsite_pins": [
+   {
+    "name": "Lake Constance",
+    "elev": 4667,
+    "distMi": null
+   }
+  ]
+ },
+ {
+  "id": "wa_mount_constance_west_arete",
+  "name": "West Arête",
+  "discipline": "alpine",
+  "peak": "Mount Constance",
+  "area_id": "wa_mount_constance",
+  "path": "usa.washington.wa_olympics.wa_olympic_np.wa_eastern_olympics.wa_mount_constance",
+  "trip_plan": {
+   "totalNote": "A 3-day, 2-night trip: hike in, one long technical summit day (~13 hr including the complex south-side descent), hike out — matches the published two-days-hiking, one-day-climbing plan for this route.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Approach to Lake Constance camp",
+     "objective": "Reach camp at Lake Constance with a rock rack",
+     "miles": 6.5,
+     "gainFt": 4200,
+     "note": "Bike or walk the washed-out Dosewallips road, then climb the very steep 2-mile Lake Constance Trail (~3,300 ft gain) to camp at the lake. Carry the rope and rack for the next day's technical climbing."
+    },
+    {
+     "n": 2,
+     "title": "Climb the West Arête",
+     "objective": "Climb the Grade III West Arête (5.4-5.5) to the summit",
+     "miles": 6,
+     "gainFt": 3400,
+     "note": "Hike up Avalanche Canyon to Crystal Pass at the base of the arête, then pitch out (or simul-climb the lower ledges) roughly 5 pitches of mostly class 3-4 rock with a few low-5th-class steps to the summit ridge. Most parties do NOT reverse the arête to descend — instead they downclimb the standard south-side terrain (pa…"
+    },
+    {
+     "n": 3,
+     "title": "Hike out",
+     "objective": "Break camp and exit to the trailhead",
+     "miles": 6.5,
+     "gainFt": 0,
+     "note": "Descend the Lake Constance Trail and road-walk/bike back to the cars."
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Lake Constance — the standard base for the South Chute",
+    "elev_ft": 4700,
+    "type": "camp",
+    "role": "main",
+    "notes": "The base camp for essentially every ascent by the standard South Chute, reached by a savage climbers' path that gains roughly 3,300 to 3,400 ft in under two miles of hand-over-hand scrambling above the Dosewallips road. Published elevations for the lake vary between about 4,650 and 4,800 ft, a fair reflection of how im…"
+   }
+  ],
+  "campsite_pins": [
+   {
+    "name": "Lake Constance",
+    "elev": 4667,
+    "distMi": null
+   }
+  ]
+ },
+ {
+  "id": "wa_lena_lake_to_mt_stone_traverse",
+  "name": "Lena Lake to Mt Stone traverse",
+  "discipline": "scrambling",
+  "peak": "Mount Stone",
+  "area_id": "wa_mount_stone",
+  "path": "usa.washington.wa_olympics.wa_olympic_np.wa_eastern_olympics.wa_mount_stone",
+  "trip_plan": {
+   "totalNote": "A remote 3-day, ~16-mile alpine traverse with two backcountry camps (Upper Lena Lake, then Lake of the Angels) and roughly 8,400-9,000 ft of cumulative gain; very strong parties instead push the whole loop car-to-car in a single ~14-16 hour day.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Approach to Upper Lena Lake",
+     "objective": "Reach the Upper Lena Lake basin and camp",
+     "miles": 6.5,
+     "gainFt": 4000,
+     "note": "Long, steady trail approach up the Lena Creek/West Fork Lena Creek drainage — the easiest, most straightforward day of the trip, saving energy for the off-trail traverse ahead."
+    },
+    {
+     "n": 2,
+     "title": "Off-trail traverse over St. Peter's Gate, summit Mount Stone",
+     "objective": "Cross the alpine traverse to St. Peter's Gate and tag the summit",
+     "miles": 6.4,
+     "gainFt": 4400,
+     "note": "The heart of the trip: cross-country travel past Scout Pass, Scout Lake, and Ullin's Pass to St. Peter's Gate (5,950 ft, the traverse's high point), then a side-trip up Mount Stone's South Face gully to the summit before dropping to camp at Lake of the Angels. Off-trail, exposed, and long — this is the crux day."
+    },
+    {
+     "n": 3,
+     "title": "Exit via Putvin Trail",
+     "objective": "Descend to the Putvin trailhead (shuttle car or bike)",
+     "miles": 3.3,
+     "gainFt": 0,
+     "note": "Straightforward but steep descent of the Putvin Trail through Whitehorse Basin and past the Pond of the False Prophet to Hamma Hamma River Road — a different trailhead than the start, so a car shuttle or ~4-mile bike/road-walk link-up is needed."
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Upper Lena Lake",
+    "elev_ft": 4500,
+    "type": "camp",
+    "role": "main",
+    "notes": "The high camp for the northern approach to Mount Stone. Seven-odd miles and around 3,900 ft from the Lena Lake trailhead, of which the last three miles above the lower lake are steep and rooty and feel far longer than the distance suggests. From here the traverse runs southwest past Scout Lake to St. Peter's Gate, the …"
+   },
+   {
+    "name": "Hamma Hamma River road campgrounds — Lena Creek and Hamma Hamma",
+    "elev_ft": 700,
+    "type": "camp",
+    "role": "route",
+    "notes": "The drive-in staging option for everything on the Hamma Hamma side: Lena Lake and The Brothers, the Putvin trail to Lake of the Angels for Mount Skokomish and Mount Stone, and the Jefferson Creek spur for Mount Pershing. Lena Creek is the more useful of the two because it sits essentially at the Lena Lake trailhead, so…"
+   },
+   {
+    "name": "Lena Lake designated sites",
+    "elev_ft": 1800,
+    "type": "camp",
+    "role": "route",
+    "notes": "The workhorse camp of the whole Hamma Hamma side and the single most useful site in this zone. Three easy miles and about 1,300 ft of gain on a wide graded trail from the road, so a party can leave the car after work and be in camp before dark, which is exactly how most Brothers and Mount Stone trips are staged. From h…"
+   },
+   {
+    "name": "Lake of the Angels",
+    "elev_ft": 4900,
+    "type": "camp",
+    "role": "route",
+    "notes": "The base for Mount Skokomish and for the south side of Mount Stone, and one of the best-placed camps in the Olympics for a climber. About 3.5 miles and 3,400 ft from the Putvin trailhead, which understates it badly — the trail is notoriously steep, with hand-over-hand sections on rock and root where a slip has real con…"
+   }
+  ],
+  "campsite_pins": [
+   {
+    "name": "Upper Lena Lake",
+    "elev": 4550,
+    "distMi": 6.5
+   },
+   {
+    "name": "Lake of the Angels",
+    "elev": 4900,
+    "distMi": null
+   }
+  ]
+ },
+ {
+  "id": "wa_mount_stone_lake_of_angels",
+  "name": "South Route via Lake of the Angels",
+  "discipline": "scrambling",
+  "peak": "Mount Stone",
+  "area_id": "wa_mount_stone",
+  "path": "usa.washington.wa_olympics.wa_olympic_np.wa_eastern_olympics.wa_mount_stone",
+  "trip_plan": {
+   "totalNote": "A relaxed 2-day version of the same mountain: one night at Lake of the Angels, then summit and hike all the way back out on day 2 (~9.3 mi / 5,100 ft total).",
+   "days": [
+    {
+     "n": 1,
+     "title": "Backpack in to Lake of the Angels",
+     "objective": "Establish camp at Lake of the Angels",
+     "miles": 3.5,
+     "gainFt": 3300,
+     "note": "The Putvin Trail is short but brutally steep, with root/rock scrambling in the headwall section, so most parties carrying overnight gear treat this as its own half-day rather than rushing straight up to a summit push."
+    },
+    {
+     "n": 2,
+     "title": "Summit day and hike all the way out",
+     "objective": "Climb Mount Stone from camp, then break camp and exit to the trailhead",
+     "miles": 5.8,
+     "gainFt": 1800,
+     "note": "Break camp, climb the cliff-base traverse and west ridge to the summit, then descend past Lake of the Angels and all the way back down the Putvin Trail to the car — a big second day, but it avoids a third day in camp."
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Lake of the Angels",
+    "elev_ft": 4900,
+    "type": "camp",
+    "role": "main",
+    "notes": "The base for Mount Skokomish and for the south side of Mount Stone, and one of the best-placed camps in the Olympics for a climber. About 3.5 miles and 3,400 ft from the Putvin trailhead, which understates it badly — the trail is notoriously steep, with hand-over-hand sections on rock and root where a slip has real con…"
+   },
+   {
+    "name": "Hamma Hamma River road campgrounds — Lena Creek and Hamma Hamma",
+    "elev_ft": 700,
+    "type": "camp",
+    "role": "route",
+    "notes": "The drive-in staging option for everything on the Hamma Hamma side: Lena Lake and The Brothers, the Putvin trail to Lake of the Angels for Mount Skokomish and Mount Stone, and the Jefferson Creek spur for Mount Pershing. Lena Creek is the more useful of the two because it sits essentially at the Lena Lake trailhead, so…"
+   }
+  ],
+  "campsite_pins": [
+   {
+    "name": "Lake of the Angels",
+    "elev": 4900,
+    "distMi": 3.4
+   }
+  ]
+ },
+ {
+  "id": "wa_the_brothers_south_couloir",
+  "name": "South Couloir (Standard Route)",
+  "discipline": "mountaineering",
+  "peak": "The Brothers",
+  "area_id": "wa_the_brothers",
+  "path": "usa.washington.wa_olympics.wa_olympic_np.wa_eastern_olympics.wa_the_brothers",
+  "trip_plan": {
+   "totalNote": "A 2-day trip is the standard way parties do it: hike in ~6 mi to a camp in the Valley of the Silent Men (~2,900 ft gain), then a big second day climbing the South Couloir to the summit and packing all the way back out (~11 mi, ~3,200 ft up / 6,100 ft down). Very fit parties skip the camp and do the whole route car-to-car in a single ~10.5 hr day.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Hike in to high camp",
+     "objective": "Reach camp in the Valley of the Silent Men",
+     "miles": 6,
+     "gainFt": 2900,
+     "note": "From the Lena Lake trailhead (~700 ft), a mellow, well-graded trail climbs past Lena Lake and up the Valley of the Silent Men to a forested camp (Lena Forks, ~3,000 ft) at the base of the upper valley. Route-finding gets trickier through the old burn area — carry a GPS track, as the pink flagging is easy to miss."
+    },
+    {
+     "n": 2,
+     "title": "Summit push and hike out",
+     "objective": "Climb the South Couloir to the summit, then pack all the way out",
+     "miles": 11,
+     "gainFt": 3200,
+     "note": "An alpine start from camp with light packs to the base of the South Couloir (the second gully from climber's right), then a steep snow/scree climb of roughly 3,000 ft to the summit ridge with a few exposed class 3-4 moves near the top. After summiting, reverse the couloir back to camp, break camp, and hike the full ~6 …"
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Brothers base camp at Lena Forks",
+    "elev_ft": 2999,
+    "type": "camp",
+    "role": "main",
+    "notes": "The base camp for the route, at the confluence of the forks of the East Fork of Lena Creek, roughly five to six miles in and about three miles beyond the north end of Lena Lake. Deep forest with little sun, and the ground is a lumpy mess of long-decayed fallen trees rather than flat duff. The trail beyond Lena Lake is …"
+   },
+   {
+    "name": "Lower Lena Lake",
+    "elev_ft": null,
+    "type": "camp",
+    "role": "route",
+    "notes": "Three miles in, and worth knowing about mainly so you do not mistake it for the climb's camp — it is a further three miles and about a thousand feet below the ground climbers actually use. It suits a party arriving late in the day or a first night split, not a summit bid."
+   },
+   {
+    "name": "Upper camp above the forks",
+    "elev_ft": 3599,
+    "type": "camp",
+    "role": "route",
+    "notes": "A second camp area further up the basin, reached by following the cairned way trail toward the left fork until a small meadow opens. One trip record names it the East Lena Creek Basin and treats it as a separate place from the forks camp, and it is the only source for the elevation, so treat that figure as unconfirmed.…"
+   }
+  ],
+  "campsite_pins": [
+   {
+    "name": "Lena Lake",
+    "elev": 1900,
+    "distMi": 3
+   },
+   {
+    "name": "Lower Lena Lake",
+    "elev": 1773,
+    "distMi": 2.9
+   }
+  ]
+ },
+ {
+  "id": "wa_the_brothers_traverse",
+  "name": "Brothers Traverse (North Peak to South Peak)",
+  "discipline": "alpine",
+  "peak": "The Brothers",
+  "area_id": "wa_the_brothers",
+  "path": "usa.washington.wa_olympics.wa_olympic_np.wa_eastern_olympics.wa_the_brothers",
+  "trip_plan": {
+   "totalNote": "Hike to the Brothers climbers' camp on day one, then traverse North Peak to South Peak and hike out on day two.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Hike to the Brothers climbers' camp",
+     "objective": "Establish camp in the Valley of the Silent Men",
+     "miles": 6,
+     "gainFt": 2300,
+     "note": "Hike from the trailhead to the climbers' camp, about 5-6 hours, and establish the bivy."
+    },
+    {
+     "n": 2,
+     "title": "Traverse both summits and hike out",
+     "objective": "Summit North and South Peaks",
+     "miles": null,
+     "gainFt": 3740,
+     "note": "Traverse the ridge from North Peak to South Peak and descend the South Couloir to camp, which takes 10-12 hours. Then retreat to the trailhead the same day, adding 4-5 hours, or spend another night at camp."
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "The Brothers climbers camp, Valley of the Silent Men",
+    "elev_ft": 3000,
+    "type": "camp",
+    "role": "main",
+    "notes": "The standard high camp for The Brothers and the reason the traverse between the north and south peaks is a two-day trip rather than a brutal one. Reached by continuing past the north end of Lena Lake, crossing the inlet and following the East Fork up the Valley of the Silent Men through mossy old growth — call it three…"
+   },
+   {
+    "name": "Hamma Hamma River road campgrounds — Lena Creek and Hamma Hamma",
+    "elev_ft": 700,
+    "type": "camp",
+    "role": "route",
+    "notes": "The drive-in staging option for everything on the Hamma Hamma side: Lena Lake and The Brothers, the Putvin trail to Lake of the Angels for Mount Skokomish and Mount Stone, and the Jefferson Creek spur for Mount Pershing. Lena Creek is the more useful of the two because it sits essentially at the Lena Lake trailhead, so…"
+   },
+   {
+    "name": "Lena Lake designated sites",
+    "elev_ft": 1800,
+    "type": "camp",
+    "role": "route",
+    "notes": "The workhorse camp of the whole Hamma Hamma side and the single most useful site in this zone. Three easy miles and about 1,300 ft of gain on a wide graded trail from the road, so a party can leave the car after work and be in camp before dark, which is exactly how most Brothers and Mount Stone trips are staged. From h…"
+   }
+  ],
+  "campsite_pins": []
+ },
+ {
+  "id": "wa_warrior_peak_standard",
+  "name": "Southeast Peak Standard (Home Lake approach)",
+  "discipline": "alpine",
+  "peak": "Warrior Peak",
+  "area_id": "wa_warrior_peak",
+  "path": "usa.washington.wa_olympics.wa_olympic_np.wa_eastern_olympics.wa_warrior_peak",
+  "trip_plan": {
+   "totalNote": "A demanding 2-day, ~20-mile round trip: an easy-to-moderate ~9.3 mi backpack in to Home Lake on day 1, then a brutal ~16-17 hr day 2 that combines the summit push (about 5 hrs camp-to-summit) with a full hike all the way back to the car — multiple parties describe finishing well after dark. Very fit parties occasionally push it car-to-car in one very long day instead, and less aggressive parties sometimes add a 3rd day (camp a second night, hike out fresh) to avoid the marathon descent.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Backpack in to Home Lake",
+     "objective": "Reach Home Lake camp below Constance Pass",
+     "miles": 9.3,
+     "gainFt": 2800,
+     "note": "From the Upper Dungeness Trailhead (~2,500 ft), hike the Upper Dungeness Trail past Camp Handy (3.2 mi) and Boulder Shelter (6.3 mi, ~4,950 ft) to Home Lake (5,330 ft), a well-used backcountry camp tucked between Mt. Constance and Warrior Peak. Most parties treat this as a moderate half-day with full overnight packs."
+    },
+    {
+     "n": 2,
+     "title": "Summit push and full hike out",
+     "objective": "Climb the SE summit couloir/rock step, then descend all the way to the trailhead",
+     "miles": 12,
+     "gainFt": 2100,
+     "note": "An early alpine start gets the party into the Warrior/Inner Constance cirque and up the north-northeast couloir to the ~7,000 ft saddle, then a short but genuinely Class 4 to low 5th rock step (poor rock, exposed) to the 7,314 ft southeast summit — camp-to-summit typically takes about 5 hours. Rather than a second camp…"
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Home Lake, below Constance Pass — inside the park, and reached from the north",
+    "elev_ft": 5330,
+    "type": "camp",
+    "role": "main",
+    "notes": "The high camp for both Warrior Peak and the northwest side of Inner Constance, and the natural next step up from Boulder Shelter once you want to be closer to the peaks. Reach it from the Upper Dungeness trailhead by way of Camp Handy and Boulder Shelter — the approach from the Dosewallips over Constance Pass is techni…"
+   },
+   {
+    "name": "Boulder Shelter — the last camp outside the national park",
+    "elev_ft": 4950,
+    "type": "camp",
+    "role": "main",
+    "notes": "The working base for Warrior Peak, and the cheapest night in this zone by a wide margin because nothing has to be booked. It sits at about 4,950 ft and roughly 6.3 miles from the Upper Dungeness trailhead at 2,500 ft, past Camp Handy at 3,100 ft — an easy valley walk on maintained trail, which is why this and not the D…"
+   }
+  ],
+  "campsite_pins": [
+   {
+    "name": "Camp Handy",
+    "elev": 3100,
+    "distMi": 3.4
+   },
+   {
+    "name": "Boulder Shelter",
+    "elev": 4950,
+    "distMi": 6.4
+   }
+  ]
+ },
+ {
+  "id": "wa_mount_anderson_eel_glacier",
+  "name": "Eel Glacier / Flypaper Pass",
+  "discipline": "mountaineering",
+  "peak": "Mount Anderson",
+  "area_id": "wa_mount_anderson",
+  "path": "usa.washington.wa_olympics.wa_olympic_np.wa_north_central_olympics.wa_mount_anderson",
+  "trip_plan": {
+   "totalNote": "A standard 3-day trip: ~9 hrs to a high camp near Anderson Pass, a long 10-13 hr roped glacier summit push via Flypaper Pass and the upper Eel Glacier, then hike out — strong/fast parties compress this to 2 days by biking the road and pushing straight to a bivy near the summit.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Approach to high camp",
+     "objective": "Reach camp near Anderson Pass / Anderson Tarn (~5,100 ft)",
+     "miles": 17,
+     "gainFt": 4600,
+     "note": "Bike the washed-out lower Dosewallips Road, then hike the West Fork Dosewallips Trail through Honeymoon Meadows to Anderson Pass and up the climbers' path to a high camp near Anderson Tarn, or stop lower at Camp Siberia below the pass. Expect blowdown and at least one ford of the West Fork, calf- to knee-deep depending…"
+    },
+    {
+     "n": 2,
+     "title": "Summit push via Flypaper Pass and Eel Glacier",
+     "objective": "Reach East Peak summit (7,323 ft)",
+     "miles": 6,
+     "gainFt": 2700,
+     "note": "An alpine-start, roped glacier day: climb the Anderson Glacier moraine and a steep rock rib to Flypaper Pass, then traverse north across the upper Eel Glacier to a snow arete and short Class 2-3 scramble to the summit. Round trip to camp typically runs 10-13 hours."
+    },
+    {
+     "n": 3,
+     "title": "Hike out",
+     "objective": "Return to the trailhead",
+     "miles": 17,
+     "gainFt": 100,
+     "note": "Reverse the approach: descend from Anderson Pass through Honeymoon Meadows to the Dosewallips trailhead, remounting bikes for the final road-walk section."
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Tarn camp above Anderson Pass",
+    "elev_ft": 5100,
+    "type": null,
+    "role": "main",
+    "notes": "Planned high camp and the one worth reaching — open slopes above Anderson/Valkyrie Lake, roughly a mile past the pass up the climbers' path and moraine, and preferred by parties specifically to avoid sleeping in the forest at or below the pass. Budget 7-9 hours from the road closure to here. This is the last water on t…"
+   },
+   {
+    "name": "Honeymoon Meadows",
+    "elev_ft": 3527,
+    "type": null,
+    "role": "route",
+    "notes": "Planned camp and the last big established site on the West Fork, roughly eight trail-miles past the ranger station. Dry ground at the far end of the meadows once the snow goes. Getting here involves at least one calf- to knee-deep ford of the West Fork depending on melt, so arrive with time to deal with a high river ra…"
+   },
+   {
+    "name": "Camp Siberia / Anderson Pass shelter area",
+    "elev_ft": null,
+    "type": null,
+    "role": "route",
+    "notes": "Planned alternative about 0.7 mile and 700 ft above Honeymoon Meadows, below Anderson Pass. Sheltered and in trees, which is its value in weather — but parties routinely walk past it without finding it under snow, so do not commit to it as your only plan on a late arrival. It is still below the pass, so it leaves the w…"
+   }
+  ],
+  "campsite_pins": [
+   {
+    "name": "Honeymoon Meadows",
+    "elev": 3527,
+    "distMi": 14.8
+   },
+   {
+    "name": "Tarn camp above Anderson Pass",
+    "elev": 5100,
+    "distMi": 16.8
+   }
+  ]
+ },
+ {
+  "id": "wa_mount_cameron_standard",
+  "name": "Standard Route (Southeast Slopes)",
+  "discipline": "mountaineering",
+  "peak": "Mount Cameron",
+  "area_id": "wa_mount_cameron",
+  "path": "usa.washington.wa_olympics.wa_olympic_np.wa_north_central_olympics.wa_mount_cameron",
+  "trip_plan": {
+   "totalNote": "A 3-day, 2-night backpack (~25 miles round trip including the summit day): roughly 20 miles of trail hiking to and from a Cameron Basin camp, plus a class 1-2 scramble day to Mount Cameron's 7,190 ft main summit.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Backpack in to Cameron Basin",
+     "objective": "Reach the permitted camp zone below Cameron Pass",
+     "miles": 9.9,
+     "gainFt": 2400,
+     "note": "From the Obstruction Point trailhead, follow Lillian Ridge over rolling, view-packed alpine terrain to Grand Pass (~6 mi), then drop steeply off the pass to the Cameron Creek meadows and follow the creek up into upper Cameron Basin, just below Cameron Pass. Set up camp in the designated zone (bear canister required, no…"
+    },
+    {
+     "n": 2,
+     "title": "Climb Mount Cameron and return to camp",
+     "objective": "Summit the main peak (7,190 ft) via the long, gradual west ridge from Cameron Pass",
+     "miles": 5,
+     "gainFt": 1500,
+     "note": "Leave the tent up and climb light. The standard line gains the long, gradual west ridge from Cameron Pass — mostly class 1-2 hiking/scrambling to the main summit, with the harder class 3-4 terrain reserved for parties continuing the ridge to Cameron's Middle and East peaks. Return to camp by early-mid afternoon."
+    },
+    {
+     "n": 3,
+     "title": "Hike out to Obstruction Point",
+     "objective": "Return to the trailhead",
+     "miles": 9.9,
+     "gainFt": 2900,
+     "note": "Reverse Day 1: walk down out of Cameron Basin along Cameron Creek, climb steeply back up to Grand Pass, and follow Lillian Ridge back to the trailhead. Poles help on the steep, sometimes loose descent/reascent at Grand Pass."
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Cameron Basin",
+    "elev_ft": 6000,
+    "type": "camp",
+    "role": "main",
+    "notes": "This is the working base for Mount Cameron, which is climbed from Cameron Pass just above the basin, and it is the western end of this zone rather than part of the Needles group at all. Two ways in and they are very different. From Obstruction Point it is a high, scenic and long day over Grand Pass and down into the ba…"
+   }
+  ],
+  "campsite_pins": [
+   {
+    "name": "Cameron Basin camp",
+    "elev": 6000,
+    "distMi": 8.3
+   }
+  ]
+ },
+ {
+  "id": "wa_mount_clark_standard",
+  "name": "Standard Route",
+  "discipline": "scrambling",
+  "peak": "Mount Clark",
+  "area_id": "wa_mount_clark",
+  "path": "usa.washington.wa_olympics.wa_olympic_np.wa_north_central_olympics.wa_mount_clark",
+  "trip_plan": {
+   "totalNote": "A 3-day backpack trip: ~22-24 mi round trip with ~5,500-5,800 ft of cumulative gain, one night in, one night at Upper Royal Basin camp, and a long summit day with a Class 3-4 finish and a short rappel.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Backpack in to high camp",
+     "objective": "Reach Upper Royal Basin camp",
+     "miles": 8.2,
+     "gainFt": 3100,
+     "note": "Drive to the Upper Dungeness Trailhead (~2,500 ft) and backpack the Royal Basin Trail up Royal Creek to Royal Lake (5,100 ft), continuing another mile into Upper Royal Basin (~5,600 ft) near the tarns below Mount Clark. A permit for the Upper Basin zone must be booked ahead by phone with the Olympic Wilderness Informat…"
+    },
+    {
+     "n": 2,
+     "title": "Climb Mount Clark via Surprise Basin and the Corkscrew Route",
+     "objective": "Summit Mount Clark (7,528 ft) and return to camp",
+     "miles": 6,
+     "gainFt": 2400,
+     "note": "An early alpine start beats afternoon sun on the exposed Surprise Basin slopes. From camp, climb talus/scree/snow over the moraine rim and across Surprise Basin to 6,920 ft Surprise Col, the Clark-Johnson col. From there the corkscrew route works around south and east ledges before an exposed Class 3-4 finish on the no…"
+    },
+    {
+     "n": 3,
+     "title": "Hike out",
+     "objective": "Return to the Upper Dungeness Trailhead",
+     "miles": 8.2,
+     "gainFt": 0,
+     "note": "Reverse the approach down Royal Creek to the trailhead. Trip reports covering this stretch clock it around 4 hours at a steady backpacking pace."
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Upper Royal Basin",
+    "elev_ft": 5600,
+    "type": "camp",
+    "role": "main",
+    "notes": "This is the climbers' camp, three quarters of a mile to a mile above the lake on an unmaintained way trail that gains around five hundred to a thousand feet. It puts you at the foot of the west wall of the basin, which is the east side of The Needles, and it is the difference between a reasonable day and a very long on…"
+   },
+   {
+    "name": "Royal Lake",
+    "elev_ft": 5100,
+    "type": "camp",
+    "role": "main",
+    "notes": "This is the front door to the whole Needles group and the default answer for anyone climbing Deception, Clark, Johnson, Walkinshaw, The Incisor or Sundial. It sits about seven miles and two and a half thousand feet from the Upper Dungeness trailhead, up the Dungeness and then the Royal Creek fork, which is walkable wit…"
+   }
+  ],
+  "campsite_pins": [
+   {
+    "name": "Lower Royal Meadow Camp",
+    "elev": 4695,
+    "distMi": 6.2
+   },
+   {
+    "name": "Royal Lake",
+    "elev": 5100,
+    "distMi": 7.2
+   },
+   {
+    "name": "Upper Royal Basin",
+    "elev": 5600,
+    "distMi": null
+   }
+  ]
+ },
+ {
+  "id": "wa_mount_claywood_standard",
+  "name": "Standard Route",
+  "discipline": "mountaineering",
+  "peak": "Mount Claywood",
+  "area_id": "wa_mount_claywood",
+  "path": "usa.washington.wa_olympics.wa_olympic_np.wa_north_central_olympics.wa_mount_claywood",
+  "trip_plan": {
+   "totalNote": "A remote 3-day, 2-night backpack (about 28 mi round trip, over Grand Pass and Cameron Pass each way) built around one high camp in Lost Basin below Lost Pass — not a car-to-car day trip given how deep and rugged the approach and exit are.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Approach to Lost Basin high camp",
+     "objective": "Reach a rough high camp in Lost Basin below Lost Pass",
+     "miles": 12,
+     "gainFt": 4100,
+     "note": "From Obstruction Point Trailhead, follow the Grand Pass Trail along Lillian Ridge and over Grand Pass, drop into Cameron Basin and climb steeply over Cameron Pass, then descend the primitive trail into Lost Basin at the head of the Lost River. Camp is an unmaintained site in Lost Basin (~5,350 ft); the last climb to Ca…"
+    },
+    {
+     "n": 2,
+     "title": "Summit day: Mount Claywood",
+     "objective": "Climb Mount Claywood (6,836 ft) via Lost Pass and return to camp",
+     "miles": 4.5,
+     "gainFt": 1700,
+     "note": "Leave the tent at camp and climb steeply to Lost Pass (5,570 ft) between Lost Peak and Claywood, then follow class 2-3 talus and heather slopes west-southwest to the summit before retracing the route back to Lost Basin."
+    },
+    {
+     "n": 3,
+     "title": "Exit via Cameron Pass and Grand Pass",
+     "objective": "Hike out to Obstruction Point Trailhead",
+     "miles": 12,
+     "gainFt": 4800,
+     "note": "Break camp and climb back over Cameron Pass, drop into Cameron Basin, then climb back over Grand Pass before the long descending trail to Obstruction Point. This exit is strenuous in either direction — expect a long, tiring day after two days of off-trail travel."
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Upper Cameron Basin high camp",
+    "elev_ft": null,
+    "type": "camp",
+    "role": "main",
+    "notes": ""
+   },
+   {
+    "name": "Dose Meadows",
+    "elev_ft": 4472,
+    "type": "camp",
+    "role": "main",
+    "notes": "The base for Mount Claywood, and the southern base for Mount Cameron by way of Lost Pass and Cameron Pass. It sits at about four thousand four hundred and seventy feet at the head of the Dosewallips, and the single fact that dominates any plan built around it is the road. The Dosewallips road has been cut by a washout …"
+   },
+   {
+    "name": "Cameron Basin",
+    "elev_ft": 6000,
+    "type": "camp",
+    "role": "route",
+    "notes": "This is the working base for Mount Cameron, which is climbed from Cameron Pass just above the basin, and it is the western end of this zone rather than part of the Needles group at all. Two ways in and they are very different. From Obstruction Point it is a high, scenic and long day over Grand Pass and down into the ba…"
+   }
+  ],
+  "campsite_pins": [
+   {
+    "name": "Dose Meadows",
+    "elev": 4472,
+    "distMi": null
+   },
+   {
+    "name": "Lost Basin camp",
+    "elev": 5450,
+    "distMi": null
+   }
+  ]
+ },
+ {
+  "id": "wa_honeymoon_route",
+  "name": "Honeymoon Route",
+  "discipline": "alpine",
+  "peak": "Mount Deception",
+  "area_id": "wa_mount_deception",
+  "path": "usa.washington.wa_olympics.wa_olympic_np.wa_north_central_olympics.wa_mount_deception",
+  "trip_plan": {
+   "totalNote": "Hike in to Royal Basin, climb the Honeymoon couloir to Mount Deception as a day mission from camp, and hike out.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Hike in to Royal Basin",
+     "objective": "Camp at Royal Lake or Upper Royal Basin",
+     "miles": 8.2,
+     "gainFt": 3050,
+     "note": "Hike the Upper Dungeness and Royal Basin trails to a camp at Royal Lake or in Upper Royal Basin."
+    },
+    {
+     "n": 2,
+     "title": "Climb the Honeymoon couloir",
+     "objective": "Summit Mount Deception and return to camp",
+     "miles": null,
+     "gainFt": 2200,
+     "note": "Climb the couloir to the summit as a day mission from camp, then descend back to Royal Basin."
+    },
+    {
+     "n": 3,
+     "title": "Hike out from Royal Basin",
+     "objective": "Return to the Upper Dungeness Trailhead",
+     "miles": 8.2,
+     "gainFt": 0,
+     "note": "Pack up and hike out the Royal Basin trail to the trailhead."
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Upper Royal Basin",
+    "elev_ft": 5600,
+    "type": "camp",
+    "role": "main",
+    "notes": "This is the climbers' camp, three quarters of a mile to a mile above the lake on an unmaintained way trail that gains around five hundred to a thousand feet. It puts you at the foot of the west wall of the basin, which is the east side of The Needles, and it is the difference between a reasonable day and a very long on…"
+   },
+   {
+    "name": "Royal Lake",
+    "elev_ft": 5100,
+    "type": "camp",
+    "role": "main",
+    "notes": "This is the front door to the whole Needles group and the default answer for anyone climbing Deception, Clark, Johnson, Walkinshaw, The Incisor or Sundial. It sits about seven miles and two and a half thousand feet from the Upper Dungeness trailhead, up the Dungeness and then the Royal Creek fork, which is walkable wit…"
+   }
+  ],
+  "campsite_pins": [
+   {
+    "name": "Royal Lake",
+    "elev": 5100,
+    "distMi": 7.2
+   },
+   {
+    "name": "Upper Royal Basin",
+    "elev": 5600,
+    "distMi": null
+   }
+  ]
+ },
+ {
+  "id": "wa_mount_deception_standard",
+  "name": "Standard Scramble (Royal Basin)",
+  "discipline": "mountaineering",
+  "peak": "Mount Deception",
+  "area_id": "wa_mount_deception",
+  "path": "usa.washington.wa_olympics.wa_olympic_np.wa_north_central_olympics.wa_mount_deception",
+  "trip_plan": {
+   "totalNote": "A 3-day/2-night trip is the common weekend pattern (~20 mi and ~5,300 ft gain round trip): backpack in to upper Royal Basin, a long alpine-start summit day on loose NE-face terrain, then hike out. Strong or guided parties sometimes compress this into a 2-day/1-night trip by combining the summit push with the full hike-out on day 2.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Backpack in to upper Royal Basin",
+     "objective": "Establish camp near Royal Lake / upper Royal Basin",
+     "miles": 8,
+     "gainFt": 3200,
+     "note": "From the Upper Dungeness Trailhead the trail climbs steadily along Royal Creek through open forest and rhododendrons to Royal Lake in lower Royal Basin (~7 mi, ~5,100 ft), then continues past Shelter Rock about a mile farther and 500 ft higher into upper Royal Basin, which has better tarn-side campsites, fewer bugs, an…"
+    },
+    {
+     "n": 2,
+     "title": "Summit push on the NE face/glacier route",
+     "objective": "Climb Mount Deception via the NE face and Deception-Martin saddle, return to camp",
+     "miles": 4,
+     "gainFt": 2300,
+     "note": "An alpine start is standard given the loose, exposed terrain. Cross the moraine below camp and climb the steep scree/snow slope on the west edge of the NE face to the Deception-Martin saddle, drop about 100 ft onto the small glacier/snowfield, traverse west around Gilhooley Tower, then finish on class 2-3 slopes to the…"
+    },
+    {
+     "n": 3,
+     "title": "Hike out",
+     "objective": "Break camp and return to the trailhead",
+     "miles": 8,
+     "gainFt": 0,
+     "note": "Reverse the approach back down Royal Creek to the trailhead. Mostly a straightforward downhill grind; the only real routefinding is staying on the correct fork about a mile from the trailhead."
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Upper Royal Basin",
+    "elev_ft": 5600,
+    "type": "camp",
+    "role": "main",
+    "notes": "The climbers' camp, a mile and about 500 ft above Royal Lake, and the point the summit day is usually measured from. A maze of tarns, moraines, heather, snowfields and house-sized boulders; the flattest ground is on the gravel bars beside the tarn. Some ask that parties not camp right at Imperial Tarn. The basin is giv…"
+   },
+   {
+    "name": "Royal Lake",
+    "elev_ft": 5100,
+    "type": "camp",
+    "role": "main",
+    "notes": "The common base camp, about seven miles in, with a seasonal ranger camp up-valley. Reckon on roughly five hours from Shelter Rock to the summit — but note that published descriptions place Shelter Rock both above and below the lake, so work out which you are looking at before you time anything off it."
+   },
+   {
+    "name": "Royal Creek",
+    "elev_ft": 3830,
+    "type": "camp",
+    "role": "route",
+    "notes": "Forested sites low in the valley, well short of the basin. An approach camp for a party arriving late rather than a base for the climb: the summit is a long way above, past Royal Lake and the upper basin."
+   },
+   {
+    "name": "Lower Royal Meadow",
+    "elev_ft": 4695,
+    "type": "camp",
+    "role": "route",
+    "notes": "Subalpine sites beside the creek a short way below Royal Lake — a useful fallback when the lake itself is booked out, at the cost of a little height on summit day."
+   }
+  ],
+  "campsite_pins": [
+   {
+    "name": "Royal Creek",
+    "elev": 3830,
+    "distMi": 3.7
+   },
+   {
+    "name": "Lower Royal Meadow",
+    "elev": 4695,
+    "distMi": 5.9
+   },
+   {
+    "name": "Royal Lake",
+    "elev": 5091,
+    "distMi": 7.2
+   },
+   {
+    "name": "Upper Royal Basin",
+    "elev": 5727,
+    "distMi": 8
+   }
+  ]
+ },
+ {
+  "id": "wa_mount_fricaba_standard",
+  "name": "Standard Scramble (Constance Pass / Home Lake)",
+  "discipline": "mountaineering",
+  "peak": "Mount Fricaba",
+  "area_id": "wa_mount_fricaba",
+  "path": "usa.washington.wa_olympics.wa_olympic_np.wa_north_central_olympics.wa_mount_fricaba",
+  "trip_plan": {
+   "totalNote": "A 3-day, roughly 25.6-mile round trip with about 5,600 ft of cumulative gain: backpack in to Home Lake, make a long scramble day to the summit via Constance Pass and Deception Basin, then hike back out.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Backpack in to Home Lake",
+     "objective": "Establish high camp at Home Lake",
+     "miles": 9.3,
+     "gainFt": 2900,
+     "note": "Start at the Upper Dungeness trailhead and follow trail past Camp Handy and Boulder Shelter up to Home Lake, the standard backcountry camp for this side of the mountain. The trail gains steadily and gets rougher/brushier above Boulder Shelter, with one brief snow patch and a small waterfall crossing common into early s…"
+    },
+    {
+     "n": 2,
+     "title": "Summit push via Constance Pass and Deception Basin",
+     "objective": "Climb the Southwest Ridge to the summit and return to Home Lake",
+     "miles": 7,
+     "gainFt": 2600,
+     "note": "From Home Lake, climb the short pitch up to Constance Pass, then drop off-trail into upper Deception Basin before picking up the Southwest Ridge scramble to the summit. Expect loose rock/scree and sustained Class 2-3 terrain (harder moves possible near the top); reverse the same line back to camp. This is the long day …"
+    },
+    {
+     "n": 3,
+     "title": "Hike out",
+     "objective": "Return to the Upper Dungeness trailhead",
+     "miles": 9.3,
+     "gainFt": 100,
+     "note": "Straightforward downhill hike back out past Boulder Shelter and Camp Handy to the trailhead. Faster than the approach since it's mostly descending on familiar trail."
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Home Lake",
+    "elev_ft": 5308,
+    "type": "camp",
+    "role": "main",
+    "notes": "Just over nine miles from the Upper Dungeness trailhead, a little over five thousand three hundred feet, and only a few hundred feet below Constance Pass. This is the second door to Fricaba, and the reason it is in this list at all: if the Royal Basin quota is unobtainable, Fricaba can still be climbed from this side w…"
+   },
+   {
+    "name": "Camp Handy",
+    "elev_ft": 3100,
+    "type": "camp",
+    "role": "route",
+    "notes": "A low, sheltered, permit-free camp about three miles up the Upper Dungeness trail, and the most useful fallback in the whole zone. It does not serve The Needles: Royal Basin branches off well below it and Camp Handy is on the wrong fork. What it does is give you a legal, free, roofed place to sleep when the Royal Basin…"
+   },
+   {
+    "name": "Boulder Shelter",
+    "elev_ft": 4890,
+    "type": "camp",
+    "role": "route",
+    "notes": "About six miles up the Upper Dungeness trail, sitting under a huge avalanche chute where the trail junctions meet, at just under five thousand feet. This is the crossroads camp for the eastern half of the zone: from here the trail climbs to Home Lake and Constance Pass, which is the alternative and much less crowded wa…"
+   }
+  ],
+  "campsite_pins": [
+   {
+    "name": "Camp Handy",
+    "elev": 3100,
+    "distMi": 3.4
+   },
+   {
+    "name": "Boulder Shelter",
+    "elev": 4890,
+    "distMi": null
+   },
+   {
+    "name": "Home Lake",
+    "elev": 5308,
+    "distMi": 9.3
+   }
+  ]
+ }
+]
