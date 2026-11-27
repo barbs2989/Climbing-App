@@ -1,0 +1,48 @@
+{
+  "bc_animal_farm": {
+    "_expect": {
+      "name": "Animal Farm",
+      "region": "British Columbia"
+    },
+    "blurb": "Animal Farm is a small sport crag in the Gillies Creek part of Skaha Bluffs, in the Okanagan, sitting at roughly 630 m. It has five bolted single-pitch routes and nothing easier than 5.11: three fall in the 5.11 range and two in the 5.12 range. That makes it a stop for climbers who already work harder sport grades. With so few lines it is usually combined with other crags nearby.",
+    "review": {
+      "sources": [
+        "https://www.mountainproject.com/area/203123033/animal-farm",
+        "https://www.mountainproject.com/area/119135573/gillies-creek"
+      ]
+    }
+  },
+  "bc_popeye_wall": {
+    "_expect": {
+      "name": "Popeye Wall",
+      "region": "British Columbia"
+    },
+    "blurb": "Popeye Wall is one of the crags at Begbie Bluffs, Revelstoke's largest sport climbing area, reached from the highway south of town. It has five bolted routes, with one in the 5.10 range, one in the 5.11 range and three in the 5.12 range. The climbing is steep and technical on small holds, so it rewards climbers who are comfortable on harder grades; someone new to 5.10 should treat even the easiest line with respect. It is among the walls at the bluffs that get recommended for harder single-pitch sport.",
+    "review": {
+      "sources": [
+        "https://sendage.com/area/popeye-wall-begbie-bluffs-revelstoke-bc-canada",
+        "https://sendage.com/area/begbie-bluffs-revelstoke-bc-canada"
+      ]
+    }
+  },
+  "bc_sherman_boulders": {
+    "_expect": {
+      "name": "Sherman Boulders",
+      "region": "British Columbia"
+    },
+    "blurb": "Sherman Boulders is a small bouldering spot on Vancouver Island, about 3 km from Cumberland along Comox Lake Road, in an old clear-cut near the lake. It has five problems between V0 and V2, so it suits beginners and anyone after an easy session more than a hard project day. The boulders dry quickly, which makes the spring a good time to visit, and they see few visitors. Rock quality can be questionable, so check holds before committing. Sherman Rock is the first boulder you meet, with the rest scattered along the edge of the forest.",
+    "review": {
+      "sources": [
+        "https://sendage.com/area/sherman-boulders-hartland-cyberia-greater-victoria-vancouver-island-bc-canada",
+        "https://www.mountainproject.com/area/112962808/comox-lake"
+      ]
+    }
+  },
+  "_skipped": {
+    "bc_hermit_narrows": "Only one fetched page (area page) describes it; no second page could be fetched.",
+    "bc_begbie_falls_wall": "Only one fetched page (a crag page with no route data); the guide page fetched did not mention it.",
+    "bc_best_day_wall": "No fetched page about the crag itself; only a parent listing naming one route.",
+    "bc_hobbes_wall_closed": "Marked closed to climbing (BC Parks ban); skipped.",
+    "bc_the_beach": "Fetched pages are about the whole Old Hedley/Hedley Road boulders; none about The Beach itself, and counts disagree (3 vs 5)."
+  }
+}
