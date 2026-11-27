@@ -1,0 +1,44 @@
+{
+ "bc_lightning_wall": {
+  "_expect": {"name": "Lightning Wall", "region": "British Columbia"},
+  "blurb": "Lightning Wall is a small sport crag in the Fraser Valley, close to Hope and visible from the highway. It has six bolted lines, running from the low 5.10s up through 5.12. The face points northeast and is steep, with overhanging sections and in-cut edges and jugs, which is a change from the slabbier climbing found elsewhere in the valley. Because of that angle it keeps cool on hot days and tends to stay dry in light rain, although it can seep after several days of heavy wet weather. The walk from the road is very short. Twelve quickdraws and a 60 m rope cover every line. A helmet is a good idea here.",
+  "review": {"sources": ["https://www.mountainproject.com/area/120825712/lightning-wall", "https://www.mountainproject.com/area/105994950/fraser-valley"]}
+ },
+ "bc_nascar": {
+  "_expect": {"name": "Nascar", "region": "British Columbia"},
+  "blurb": "Nascar is a small bouldering area within Grohman Narrows, near Nelson. It has five problems, mostly in the easier range: one around V0, a pair at V1, then one at V3 and one at V4. That makes it a handy stop for climbers working through moderates rather than hunting for hard test pieces. It sits a short distance up from the Chainsaw boulders and within earshot of the road, so engine noise carries through the trees. The wider Grohman Narrows zone is known for fine-grained granite with lips, cracks and arêtes, slopers and committing top-outs.",
+  "review": {"sources": ["https://www.mountainproject.com/area/114802356/nascar", "https://www.mountainproject.com/area/109462111/grohman-narrows"]}
+ },
+ "bc_desire": {
+  "_expect": {"name": "Desire", "region": "British Columbia"},
+  "blurb": "Desire is a bouldering zone at Poison River in the West Kootenays, roughly 40 minutes by car from Nelson or Castlegar. It holds five problems, from V3 up to one V9, with a couple of V5 and V6 lines in between, so the mid-range is well served. The problems begin inside a cave that you enter by a ladder, and the landing slopes, so many climbers rig a rope to hold their pads in place. The surrounding forest has large cedars that cast plenty of shade, and the climbing in the wider area is steep and powerful.",
+  "review": {"sources": ["https://www.mountainproject.com/area/114532075/desire", "https://www.mountainproject.com/area/109462123/poison-river"]}
+ },
+ "bc_dark_side_of_desire": {
+  "_expect": {"name": "Dark Side of Desire", "region": "British Columbia"},
+  "blurb": "Dark Side of Desire is the back face of the Desire boulder at Poison River, in the West Kootenays. It has five problems: two around V4, two around V6 and one V8, so it suits climbers who already boulder at a solid level. The climbing is steep and technical, and the spot stays in shade all day, which helps on warm afternoons. It sits in a cedar forest near the Slocan River. To find it, take the second trail beyond the boulder, close to a tall pole that is hard to overlook.",
+  "review": {"sources": ["https://www.mountainproject.com/area/114532095/dark-side-of-desire", "https://www.mountainproject.com/area/109462123/poison-river"]}
+ },
+ "bc_fat_camp": {
+  "_expect": {"name": "Fat Camp", "region": "British Columbia"},
+  "blurb": "Fat Camp is a compact wall at Chek, the main sport area of Cheakamus Canyon on the Sea to Sky corridor north of Squamish. It has five bolted routes, all in the 5.11 and low 5.12 range, so it suits climbers who already lead hard. The wall sits just north of the parking area, on the east side of the road, which makes for a quick walk. It is one of the smaller walls at Chek, and works well as a short stop beside the neighbouring crags.",
+  "review": {"sources": ["https://www.mountainproject.com/area/114509658/fat-camp", "https://www.mountainproject.com/area/105959514/chek"]}
+ },
+ "bc_tower_of_power": {
+  "_expect": {"name": "Tower of Power", "region": "British Columbia"},
+  "blurb": "Tower of Power is a steep sport wall at Chek in Cheakamus Canyon, along the Sea to Sky corridor. It has five bolted lines between 5.11 and 5.13, with the weight toward the hard end, so it suits strong leaders. The wall faces north and sits in shade all day. The base of the wall is loose and steep. Reaching it takes a 15 to 20 minute walk from the car, finishing with a short climb up a steep dirt gully that has a handline.",
+  "review": {"sources": ["https://www.mountainproject.com/area/114509788/tower-of-power", "https://www.mountainproject.com/area/105959514/chek"]}
+ },
+ "bc_north_star_wall_ursa_minor": {
+  "_expect": {"name": "North Star Wall “Ursa Minor “", "region": "British Columbia"},
+  "blurb": "North Star Wall is a multipitch sport wall at Chek in Cheakamus Canyon, off the Sea to Sky corridor. It has five bolted lines, most of them four to six pitches long, with grades mostly between 5.8 and 5.10 and a single harder line in the 5.11 range. That makes it one of the few places at Chek where a beginner multipitch party can find fully bolted, moderate climbing. Ursa Minor, on the left side, is the busiest line. The base is roughly 15 minutes from the Chek campground.",
+  "review": {"sources": ["https://www.mountainproject.com/area/117356112/north-star-wall-ursa-minor", "https://www.mountainproject.com/area/105959514/chek"]}
+ },
+ "_skipped": {
+  "bc_megawatts": "Searches and fetched pages show Megawatts only as an 8-pitch 5.8 sport route near Castlegar; no page about a bouldering crag with this name found (Arrow Lake bouldering page has no Megawatts area), so cannot confirm two pages."
+ },
+ "_conflicts": {
+  "bc_desire": "Stored rock is quartz monzonite; the Poison River page (https://www.mountainproject.com/area/109462123/poison-river) describes gneiss. Stored value left unchanged, rock word omitted from the blurb.",
+  "bc_dark_side_of_desire": "Stored rock is quartz monzonite; the Poison River page (https://www.mountainproject.com/area/109462123/poison-river) describes gneiss. Stored value left unchanged, rock word omitted from the blurb."
+ }
+}
