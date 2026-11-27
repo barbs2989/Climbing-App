@@ -1,0 +1,39 @@
+{
+ "ca_medicine_boulder": {
+  "_expect": { "name": "Medicine Boulder", "region": "California" },
+  "blurb": "Medicine Boulder is a single large, square-cut block beside T J Lake in the Mammoth Lakes area of the Eastern Sierra, toward the south end of the lake where it is easy to pick out. Nine problems share its faces, running from V1 up to V6, with three of them at V4 and the rest spread across the middle grades plus a pair of V1s. Landings are flat, which suits a pad-and-spotter session. The usual way back down is a jump from the southeast corner. It works well as one stop among the many other boulders scattered around the lake.",
+  "review": { "sources": ["https://mountainproject.com/area/107679200/medicine-boulder", "https://www.mountainproject.com/area/107679195/t-j-lake"] }
+ },
+ "ca_narrows_west": {
+  "_expect": { "name": "Narrows West", "region": "California" },
+  "blurb": "Narrows West is a short sport wall in the Inner Gorge of the Owens River Gorge near Bishop, set in the tightest stretch of the canyon right beside the river. The wall faces east, so it catches morning sun and then drops into shade, and the vegetation around its base is unusually thick for the gorge. Nine routes, all bolted except for one trad line, fall between 5.10 and 5.12, with 5.11 the most common grade. The rock is welded tuff. It sits a few minutes beyond the Gorgeous Tower area, so the two can be combined in one outing.",
+  "review": { "sources": ["https://www.mountainproject.com/area/105845675/narrows-west", "https://www.mountainproject.com/area/105843282/inner-gorge"] }
+ },
+ "ca_muppets_wall": {
+  "_expect": { "name": "Muppets Wall", "region": "California" },
+  "blurb": "Muppets Wall is a sport crag in the Lower Gorge of the Owens River Gorge near Bishop. It was once the left half of Warning Signs Wall and became its own area when the route count outgrew it. Nine bolted lines on welded tuff cover 5.8 through 5.10, with 5.10 the most common grade, four routes, then three at 5.8 and two at 5.9. The wall faces southwest, leaning more toward west, so sun arrives in late morning and lasts until late afternoon.",
+  "review": { "sources": ["https://www.mountainproject.com/area/118007233/muppets-wall", "https://www.mountainproject.com/area/105843309/lower-gorge"] }
+ },
+ "ca_hidden_dome": {
+  "_expect": { "name": "Hidden Dome", "region": "California" },
+  "blurb": "Hidden Dome is a large granodiorite formation high on the right-hand side of the North Wonderland approach in Joshua Tree, with its climbing on the north-facing side of the dome. All nine routes are trad, from about 5.6 up to 5.10, with five of them in the 5.10 range and three at 5.8. Since the wall looks north it spends much of the day in shade. Reaching it means working up a boulder-choked gully, so it is a longer, scrambly effort compared with crags near the trailhead, and it suits parties who want a short list of solid lines.",
+  "review": { "sources": ["https://www.mountainproject.com/area/105811865/hidden-dome", "https://www.mountainproject.com/area/110464583/north-wonderland-approach"] }
+ },
+ "ca_hunk_rock_east_face": {
+  "_expect": { "name": "Hunk Rock - East Face", "region": "California" },
+  "blurb": "This is the side of Hunk Rock that looks toward the Barker Dam parking lots, a squat monzogranite formation on a small hill in Joshua Tree. Nine climbs, nearly all trad plus a single top-rope, span an easy line through to the 5.11 range, with the bulk between 5.9 and 5.10 and a couple at 5.11. The base is a short walk from either lot, and the Barker Dam lot is usually the quicker of the two.",
+  "review": { "sources": ["https://www.mountainproject.com/area/106912769/hunk-rock-east-face", "https://www.mountainproject.com/area/105721355/hunk-rock"] }
+ },
+ "ca_pin_cushion_wall_2": {
+  "_expect": { "name": "Pin Cushion Wall", "region": "California" },
+  "blurb": "Pin Cushion Wall is the first wall on the right as you enter the ledge zone of Indian Springs Canyon in Castle Crags. Although the spot has a sport reputation, a lot of the climbing is mixed protection, with several of the bolts hand-made. There are six trad and three sport lines, most of them around 5.10, with a couple at 5.8, one at 5.9 and one 5.11. The canyon is the closest climbing at Castle Crags and is reached by following the Dome Trail, then branching off to the left.",
+  "review": { "sources": ["https://www.mountainproject.com/area/110899179/pin-cushion-wall", "https://www.mountainproject.com/area/110897385/indian-springs-canyon"] }
+ },
+ "_skipped": {
+  "ca_mr_longarm": "Climbing is no longer permitted in Rancho Penasquitos Canyon per its fetched area page (closed to climbing).",
+  "ca_filipino_wall": "No standalone page about the crag found: only sector listings under Hemingway Buttress on thetopo and 27crags (crag URLs 404, MP search and Lost Horse page have no Filipino Wall page); parent Lost Horse page does not list it."
+ },
+ "_conflicts": {
+  "ca_medicine_boulder": "Stored rock is volcanic rock, but the T J Lake area page (https://www.mountainproject.com/area/107679195/t-j-lake) says the east and south sides of the lake are gneiss-like and the north and west sides are granite; the Medicine Boulder page (https://mountainproject.com/area/107679200/medicine-boulder) states no rock type. Rock left unchanged and unnamed in blurb."
+ }
+}
