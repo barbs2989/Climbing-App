@@ -1,0 +1,207 @@
+[
+ {
+  "leaf_id": "co_flatirons_2",
+  "outcome": "split",
+  "new_name": "First Flatiron East Face",
+  "sourced": true,
+  "moves": [
+   {
+    "route_id": "co_flatirons_ice_climbing_call_the_copps",
+    "to": "NEW:Second Flatiron",
+    "evidence": "MP route page: starts at the Gutter on the south side of the Second Flatiron"
+   },
+   {
+    "route_id": "co_flatirons_ice_climbing_the_copp_out",
+    "to": "NEW:Second Flatiron",
+    "evidence": "MP route page: on the Second Flatiron, just right of Call the Copps first pitch"
+   },
+   {
+    "route_id": "co_fourth_flatiron_east_face_aka_the_watercourse",
+    "to": "NEW:Fourth Flatiron East Face",
+    "evidence": "MP area page and route name: Fourth Flatiron"
+   },
+   {
+    "route_id": "co_flatirons_ice_climbing_mous_ka_tears",
+    "to": "NEW:Mickey Mouse Wall",
+    "evidence": "MP route page: north side of Mickey Mouse Wall in Eldorado Canyon, N39 55.085 W105 17.022, above Tunnel 6"
+   },
+   {
+    "route_id": "co_flatirons_ice_climbing_off_the_hook",
+    "to": "NEW:Redgarden Wall South Face",
+    "evidence": "MP route page: far right of the South face of Redgarden Wall in Eldo"
+   }
+  ],
+  "new": [
+   {
+    "name": "Second Flatiron",
+    "lat": null,
+    "lng": null,
+    "evidence": "MP Call the Copps / The Copp Out pages. May already exist under Central/North; check catalog_find_area first"
+   },
+   {
+    "name": "Fourth Flatiron East Face",
+    "lat": null,
+    "lng": null,
+    "evidence": "May already exist under Central/North; check catalog_find_area first"
+   },
+   {
+    "name": "Mickey Mouse Wall",
+    "lat": 39.91808,
+    "lng": -105.2837,
+    "evidence": "MP Mous-Ka-Tears page coords; Eldorado Canyon, likely already exists under Eldorado; use it"
+   },
+   {
+    "name": "Redgarden Wall South Face",
+    "lat": null,
+    "lng": null,
+    "evidence": "Eldorado Canyon; likely already exists under Eldorado; use it"
+   }
+  ],
+  "evidence": "MP Flatirons Ice Climbing page (mountainproject.com/area/105907527) lumps routes from several formations. Silk Road and Pink Dreams are on the First Flatiron east face (MP route pages and forum snippet); Flatirons Ice Climbing | 4835 starts at a trail switchback used for Kamikaze Overhangs (First Flatiron), formation not stated, kept with the majority. Off The Hook and Mous-Ka-Tears are Eldorado Canyon, not the Flatirons."
+ },
+ {
+  "leaf_id": "co_stanley_canyon_ice",
+  "outcome": "rename",
+  "new_name": "Stanley Canyon Trail Falls",
+  "sourced": false,
+  "moves": [],
+  "new": [],
+  "evidence": "MP (area/106996272) says only that Slip and Slide is about a mile up the Stanley Canyon trail on the Air Force Academy; no source names a more specific feature, so the name is my own description of the place. Owner may prefer to keep it unrenamed."
+ },
+ {
+  "leaf_id": "co_north_cheyenne_canyon",
+  "outcome": "split",
+  "new_name": "Silver Cascade Falls",
+  "sourced": true,
+  "moves": [
+   {
+    "route_id": "co_north_cheyenne_canyon_st_mary_s_falls",
+    "to": "NEW:St. Marys Falls",
+    "evidence": "MP lists St. Mary's Falls as a separate fall; about 2 mi up St. Mary's Trail (Springs Magazine snippet)"
+   },
+   {
+    "route_id": "co_north_cheyenne_canyon_the_phantom",
+    "to": "NEW:The Phantom",
+    "evidence": "MP: lower canyon, south side just east of the Pinnacle, parking east of Graduation Boulder; not near the falls"
+   }
+  ],
+  "new": [
+   {
+    "name": "St. Marys Falls",
+    "lat": null,
+    "lng": null,
+    "evidence": "MP North Cheyenne Canyon page; no coordinate found"
+   },
+   {
+    "name": "The Phantom",
+    "lat": 38.7913,
+    "lng": -104.8738,
+    "evidence": "approximate: just east of the Pinnacle (sibling Pinnacle 38.79136,-104.87573); MP gives only the area point 38.78571,-104.87093"
+   }
+  ],
+  "evidence": "MP area/route pages: Silver Cascade Falls reached from the Helen Hunt Falls trailhead; Helen Hunt Falls is the same trailhead so it stays. Medium Rare has no findable location and stays with the majority (unsourced)."
+ },
+ {
+  "leaf_id": "co_on_the_rocks_mixed_wall_2",
+  "outcome": "dissolve",
+  "new_name": null,
+  "sourced": true,
+  "moves": [
+   {
+    "route_id": "co_on_the_rocks_mixed_wall_he_s_at_a_10",
+    "to": "co_on_the_rocks",
+    "evidence": "MP On the Rocks (area/121816833) lists the same routes (He's at a 10!, Make Up Sex, Marriage Counselor, Still at a 10?, Ex-Bride/Unknown Sport Route) on the same small granite cliff by the stone bridge on Columbine Trail; same coords 38.7915,-104.8770"
+   },
+   {
+    "route_id": "co_on_the_rocks_mixed_wall_make_up_sex",
+    "to": "co_on_the_rocks",
+    "evidence": "MP On the Rocks (area/121816833) lists the same routes (He's at a 10!, Make Up Sex, Marriage Counselor, Still at a 10?, Ex-Bride/Unknown Sport Route) on the same small granite cliff by the stone bridge on Columbine Trail; same coords 38.7915,-104.8770"
+   },
+   {
+    "route_id": "co_on_the_rocks_mixed_wall_still_at_a_10",
+    "to": "co_on_the_rocks",
+    "evidence": "MP On the Rocks (area/121816833) lists the same routes (He's at a 10!, Make Up Sex, Marriage Counselor, Still at a 10?, Ex-Bride/Unknown Sport Route) on the same small granite cliff by the stone bridge on Columbine Trail; same coords 38.7915,-104.8770"
+   },
+   {
+    "route_id": "co_on_the_rocks_mixed_wall_the_marriage_counselor",
+    "to": "co_on_the_rocks",
+    "evidence": "MP On the Rocks (area/121816833) lists the same routes (He's at a 10!, Make Up Sex, Marriage Counselor, Still at a 10?, Ex-Bride/Unknown Sport Route) on the same small granite cliff by the stone bridge on Columbine Trail; same coords 38.7915,-104.8770"
+   },
+   {
+    "route_id": "co_unknown_sport_route_2",
+    "to": "co_on_the_rocks",
+    "evidence": "MP On the Rocks (area/121816833) lists the same routes (He's at a 10!, Make Up Sex, Marriage Counselor, Still at a 10?, Ex-Bride/Unknown Sport Route) on the same small granite cliff by the stone bridge on Columbine Trail; same coords 38.7915,-104.8770"
+   }
+  ],
+  "new": [],
+  "evidence": "MP area/121288915 and area/121816833: both describe the wall immediately right of the stone bridge on Columbine Trail; same routes under both. co_unknown_sport_route_2 duplicates 'Ex-Bride of Frankenstein (AKA Unknown Sport Route)' already in co_on_the_rocks (possible duplicate to merge)."
+ },
+ {
+  "leaf_id": "co_big_thompson_canyon_ice",
+  "outcome": "rename",
+  "new_name": "Handicapped Fishing Access",
+  "sourced": true,
+  "moves": [],
+  "new": [],
+  "evidence": "MP area/105746997: all ice is high on the south side of the canyon at the handicapped fishing access sign on US 34 (40.4172,-105.3724); all 19 routes listed there with no separate locations."
+ },
+ {
+  "leaf_id": "co_georgetown_ice",
+  "outcome": "rename",
+  "new_name": "I-70 Sickle Wall",
+  "sourced": false,
+  "moves": [],
+  "new": [],
+  "evidence": "MP area/105747041 and Sheepcicle page: drainages north of I-70; I-70 Sickle and the tier above visible from the highway, Sheepcicle on the 'upper ice wall'. No source gives one formation name, so the name is derived from the named flow. Leaf coordinate (38.99,-105.93) is wrong (about 70 km from Georgetown, near 39.71,-105.70)."
+ },
+ {
+  "leaf_id": "co_glenwood_canyon_ice",
+  "outcome": "split",
+  "new_name": "Hidden Falls",
+  "sourced": true,
+  "moves": [
+   {
+    "route_id": "co_glenwood_canyon_ice_glenwood_falls_far_right",
+    "to": "NEW:Glenwood Falls",
+    "evidence": "MP: Glenwood Falls is north of I-70 at exit 125"
+   },
+   {
+    "route_id": "co_glenwood_canyon_ice_glenwood_falls_left_right_center",
+    "to": "NEW:Glenwood Falls",
+    "evidence": "MP: Glenwood Falls north of I-70 at exit 125"
+   },
+   {
+    "route_id": "co_deep_throat",
+    "to": "NEW:Glenwood Falls",
+    "evidence": "MP search snippet: Deep Throat is high and left from Glenwood Falls"
+   }
+  ],
+  "new": [
+   {
+    "name": "Glenwood Falls",
+    "lat": null,
+    "lng": null,
+    "evidence": "MP Glenwood Canyon Ice page: north side of highway at exit 125; no coordinate"
+   }
+  ],
+  "evidence": "MP area/105747091 and Hidden Falls page: Hidden Falls on the south rim above Deadman's Creek, visible near exit 123; Hidden Falls (3 routes) and Alcatraz (also high on the south hill, reached from Shoshone) stay. Alcatraz not tied to Hidden Falls specifically."
+ },
+ {
+  "leaf_id": "co_secret_waterfall_aka_windy_saddle_ice_flow",
+  "outcome": "rename",
+  "new_name": "Secret Waterfall",
+  "sourced": true,
+  "moves": [],
+  "new": [],
+  "evidence": "MP route 107039563: a hidden flow about 1,600 ft below Windy Saddle on Lookout Mountain Road, south side of Clear Creek; Secret Waterfall is the established place name. Sibling Stumbling Block is only the viewpoint across the canyon."
+ },
+ {
+  "leaf_id": "co_lookout_mountain_dry_tooling_area",
+  "outcome": "rename",
+  "new_name": "Lookout Mountain North-Facing Crags",
+  "sourced": false,
+  "moves": [],
+  "new": [],
+  "evidence": "MP area/108446431: north-facing chossy crags at a pullout 1.8 mi up Lookout Mountain Road (left side), 39.74911,-105.24484; no named walls. Sibling Lookout Mountain Crag is a different cliff (pullout on right at 1.7 mi, 39.74899,-105.24258), so no move. Name is my own description."
+ }
+]

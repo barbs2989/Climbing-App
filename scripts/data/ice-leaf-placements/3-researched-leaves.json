@@ -1,0 +1,942 @@
+[
+ {
+  "leaf_id": "ab_cascade_mountain_ice",
+  "outcome": "rename",
+  "new_name": "Cascade Falls",
+  "moves": [],
+  "new": []
+ },
+ {
+  "leaf_id": "ab_lake_louise_ice",
+  "outcome": "rename",
+  "new_name": "Louise Falls",
+  "moves": [],
+  "new": []
+ },
+ {
+  "leaf_id": "ab_stanley_headwall_routes",
+  "outcome": "rename",
+  "new_name": "Stanley Headwall Face",
+  "moves": [],
+  "new": []
+ },
+ {
+  "leaf_id": "ab_heart_creek_ice",
+  "outcome": "rename",
+  "new_name": "Heart Creek Falls",
+  "moves": [],
+  "new": []
+ },
+ {
+  "leaf_id": "ab_unsorted_ice_routes",
+  "outcome": "keep",
+  "new_name": null,
+  "moves": [],
+  "new": []
+ },
+ {
+  "leaf_id": "bc_marble_canyon_ice",
+  "outcome": "rename",
+  "new_name": "Turquoise Lake",
+  "moves": [],
+  "new": []
+ },
+ {
+  "leaf_id": "bc_waterworld_ice",
+  "outcome": "rename",
+  "new_name": "Waterworld",
+  "moves": [],
+  "new": []
+ },
+ {
+  "leaf_id": "bc_oregon_jack_ice_climbing",
+  "outcome": "rename",
+  "new_name": "Oregon Jack Falls",
+  "moves": [],
+  "new": []
+ },
+ {
+  "leaf_id": "bc_copper_mountain_ice",
+  "outcome": "rename",
+  "new_name": "Copper Mountain",
+  "moves": [],
+  "new": []
+ },
+ {
+  "leaf_id": "bc_amo_ice_slabs",
+  "outcome": "split",
+  "new_name": "AMO Slabs",
+  "moves": [
+   {
+    "route_id": "bc_amo_ice_slabs_olsen_creek_slabs",
+    "to": "bc_olesen_creek"
+   },
+   {
+    "route_id": "bc_amo_ice_slabs_stranger_than_frictionless_ice",
+    "to": "bc_olesen_creek"
+   }
+  ],
+  "new": []
+ },
+ {
+  "leaf_id": "nb_sunnyside_ice",
+  "outcome": "dissolve",
+  "new_name": null,
+  "moves": [
+   {
+    "route_id": "nb_sunnyside_ice_la_duchesse",
+    "to": "nb_sunnyside_wall"
+   },
+   {
+    "route_id": "nb_sunnyside_ice_racine_de_fraises",
+    "to": "nb_sunnyside_wall"
+   }
+  ],
+  "new": []
+ },
+ {
+  "leaf_id": "on_searchmont_ice_wall",
+  "outcome": "keep",
+  "new_name": null,
+  "moves": [],
+  "new": []
+ },
+ {
+  "leaf_id": "on_lost_falls_ice_area",
+  "outcome": "rename",
+  "new_name": "Lost Falls",
+  "moves": [],
+  "new": []
+ },
+ {
+  "leaf_id": "on_thunder_bay_region_ice_and_mixed_5817",
+  "outcome": "rename",
+  "new_name": "Thunder Bay",
+  "moves": [],
+  "new": []
+ },
+ {
+  "leaf_id": "on_diamond_lake_ice",
+  "outcome": "rename",
+  "new_name": "Diamond Lake",
+  "moves": [],
+  "new": []
+ },
+ {
+  "leaf_id": "qc_mont_pinacle_ice",
+  "outcome": "dissolve",
+  "new_name": null,
+  "moves": [
+   {
+    "route_id": "qc_mont_pinacle_ice_le_gringalet",
+    "to": "qc_o_mur_de_zola"
+   }
+  ],
+  "new": []
+ },
+ {
+  "leaf_id": "qc_07_outaouais_ice",
+  "outcome": "rename",
+  "new_name": "Eardley Escarpment",
+  "moves": [],
+  "new": []
+ },
+ {
+  "leaf_id": "qc_mont_king_2",
+  "outcome": "keep",
+  "new_name": "Petit King",
+  "moves": [],
+  "new": []
+ },
+ {
+  "leaf_id": "qc_weir_ice",
+  "outcome": "keep",
+  "new_name": null,
+  "moves": [],
+  "new": []
+ },
+ {
+  "leaf_id": "yt_alsek_valley_ice",
+  "outcome": "rename",
+  "new_name": "Dezadeash River",
+  "moves": [],
+  "new": []
+ },
+ {
+  "leaf_id": "ak_portage_4",
+  "outcome": "rename",
+  "new_name": "Williwaw Area",
+  "moves": [],
+  "new": []
+ },
+ {
+  "leaf_id": "ak_purinton_creek_3",
+  "outcome": "rename",
+  "new_name": "Paradise Pillar",
+  "moves": [],
+  "new": []
+ },
+ {
+  "leaf_id": "ak_cracked_ice",
+  "outcome": "keep",
+  "new_name": null,
+  "moves": [],
+  "new": []
+ },
+ {
+  "leaf_id": "ak_mendenhall_towers_ice_mixed",
+  "outcome": "rename",
+  "new_name": null,
+  "moves": [
+   {
+    "route_id": "ak_mendenhall_towers_ice_mixed_great_white_conqueror",
+    "to": "ak_1st_tower_west_tower"
+   }
+  ],
+  "new": []
+ },
+ {
+  "leaf_id": "ar_lake_lincoln_ice",
+  "outcome": "keep",
+  "new_name": null,
+  "moves": [],
+  "new": []
+ },
+ {
+  "leaf_id": "ca_deep_creek_ice",
+  "outcome": "keep",
+  "new_name": null,
+  "moves": [],
+  "new": []
+ },
+ {
+  "leaf_id": "ca_carson_peak_ice",
+  "outcome": "rename",
+  "new_name": "Carson Peak Gully",
+  "moves": [],
+  "new": []
+ },
+ {
+  "leaf_id": "ca_roadside_ice_center_2",
+  "outcome": "dissolve",
+  "new_name": null,
+  "moves": [
+   {
+    "route_id": "ca_roadside_ice_center_2_center_middle",
+    "to": "ca_roadside_ice_left_side_main_flow_2"
+   }
+  ],
+  "new": []
+ },
+ {
+  "leaf_id": "ca_roadside_ice_left_side_main_flow_2",
+  "outcome": "rename",
+  "new_name": "Roadside Flow",
+  "moves": [],
+  "new": []
+ },
+ {
+  "leaf_id": "ca_lundy_canyon_ice_2",
+  "outcome": "rename",
+  "new_name": "Lundy Falls",
+  "moves": [],
+  "new": []
+ },
+ {
+  "leaf_id": "ca_tahquitz_ice_surrounding_flows",
+  "outcome": "rename",
+  "new_name": "Tahquitz Rock North Side",
+  "moves": [],
+  "new": []
+ },
+ {
+  "leaf_id": "co_flatirons_2",
+  "outcome": "split",
+  "new_name": "First Flatiron East Face",
+  "moves": [
+   {
+    "route_id": "co_flatirons_ice_climbing_call_the_copps",
+    "to": "co_second_flatiron"
+   },
+   {
+    "route_id": "co_flatirons_ice_climbing_the_copp_out",
+    "to": "co_second_flatiron"
+   },
+   {
+    "route_id": "co_fourth_flatiron_east_face_aka_the_watercourse",
+    "to": "co_fourth_flatiron"
+   },
+   {
+    "route_id": "co_flatirons_ice_climbing_mous_ka_tears",
+    "to": "co_mickey_mouse_wall"
+   }
+  ],
+  "new": []
+ },
+ {
+  "leaf_id": "co_stanley_canyon_ice",
+  "outcome": "keep",
+  "new_name": "Stanley Canyon Trail Falls",
+  "moves": [],
+  "new": []
+ },
+ {
+  "leaf_id": "co_north_cheyenne_canyon",
+  "outcome": "split",
+  "new_name": "Silver Cascade Falls",
+  "moves": [
+   {
+    "route_id": "co_north_cheyenne_canyon_st_mary_s_falls",
+    "to": "NEW:St. Marys Falls"
+   }
+  ],
+  "new": [
+   {
+    "name": "St. Marys Falls",
+    "lat": null,
+    "lng": null,
+    "evidence": "MP North Cheyenne Canyon page; no coordinate found"
+   }
+  ]
+ },
+ {
+  "leaf_id": "co_on_the_rocks_mixed_wall_2",
+  "outcome": "dissolve",
+  "new_name": null,
+  "moves": [
+   {
+    "route_id": "co_on_the_rocks_mixed_wall_he_s_at_a_10",
+    "to": "co_on_the_rocks"
+   },
+   {
+    "route_id": "co_on_the_rocks_mixed_wall_make_up_sex",
+    "to": "co_on_the_rocks"
+   },
+   {
+    "route_id": "co_on_the_rocks_mixed_wall_still_at_a_10",
+    "to": "co_on_the_rocks"
+   },
+   {
+    "route_id": "co_on_the_rocks_mixed_wall_the_marriage_counselor",
+    "to": "co_on_the_rocks"
+   },
+   {
+    "route_id": "co_unknown_sport_route_2",
+    "to": "co_on_the_rocks"
+   }
+  ],
+  "new": []
+ },
+ {
+  "leaf_id": "co_big_thompson_canyon_ice",
+  "outcome": "rename",
+  "new_name": "Handicapped Fishing Access",
+  "moves": [],
+  "new": []
+ },
+ {
+  "leaf_id": "co_georgetown_ice",
+  "outcome": "keep",
+  "new_name": "I-70 Sickle Wall",
+  "moves": [],
+  "new": []
+ },
+ {
+  "leaf_id": "co_glenwood_canyon_ice",
+  "outcome": "split",
+  "new_name": "Hidden Falls",
+  "moves": [
+   {
+    "route_id": "co_glenwood_canyon_ice_glenwood_falls_far_right",
+    "to": "NEW:Glenwood Falls"
+   },
+   {
+    "route_id": "co_glenwood_canyon_ice_glenwood_falls_left_right_center",
+    "to": "NEW:Glenwood Falls"
+   },
+   {
+    "route_id": "co_deep_throat",
+    "to": "NEW:Glenwood Falls"
+   }
+  ],
+  "new": [
+   {
+    "name": "Glenwood Falls",
+    "lat": null,
+    "lng": null,
+    "evidence": "MP Glenwood Canyon Ice page: north side of highway at exit 125; no coordinate"
+   }
+  ]
+ },
+ {
+  "leaf_id": "co_secret_waterfall_aka_windy_saddle_ice_flow",
+  "outcome": "rename",
+  "new_name": "Secret Waterfall",
+  "moves": [],
+  "new": []
+ },
+ {
+  "leaf_id": "co_lookout_mountain_dry_tooling_area",
+  "outcome": "keep",
+  "new_name": "Lookout Mountain North-Facing Crags",
+  "moves": [],
+  "new": []
+ },
+ {
+  "leaf_id": "co_colorado_national_monument_ice",
+  "outcome": "dissolve_partial",
+  "new_name": null,
+  "moves": [
+   {
+    "route_id": "co_colorado_national_monument_ice_no_thoroughfare_falls",
+    "to": "co_no_thoroughfare_canyon"
+   },
+   {
+    "route_id": "co_colorado_national_monument_ice_upper_no_thoroughfare_falls",
+    "to": "co_no_thoroughfare_canyon"
+   }
+  ],
+  "new": []
+ },
+ {
+  "leaf_id": "co_cunningham_gulch_2",
+  "outcome": "keep",
+  "new_name": "Cunningham Gulch Falls",
+  "moves": [],
+  "new": []
+ },
+ {
+  "leaf_id": "co_south_mineral_creek_2",
+  "outcome": "rename",
+  "new_name": "South Mineral Campground",
+  "moves": [],
+  "new": []
+ },
+ {
+  "leaf_id": "co_staunton_state_park_ice",
+  "outcome": "rename",
+  "new_name": "Elk Falls Overlook",
+  "moves": [],
+  "new": []
+ },
+ {
+  "leaf_id": "co_pleasure_dome_mixed_ice",
+  "outcome": "rename",
+  "new_name": "Pleasure Dome",
+  "moves": [],
+  "new": []
+ },
+ {
+  "leaf_id": "co_bear_creek_2",
+  "outcome": "rename",
+  "new_name": "Bear Creek Falls",
+  "moves": [],
+  "new": []
+ },
+ {
+  "leaf_id": "ga_hogpen_gap_ice",
+  "outcome": "rename",
+  "new_name": "Hogpen Gap",
+  "moves": [],
+  "new": []
+ },
+ {
+  "leaf_id": "ga_rabun_bald_ice",
+  "outcome": "rename",
+  "new_name": "Rabun Bald",
+  "moves": [],
+  "new": []
+ },
+ {
+  "leaf_id": "id_laclede_ice_east",
+  "outcome": "rename",
+  "new_name": "Laclede East Road Cut",
+  "moves": [],
+  "new": []
+ },
+ {
+  "leaf_id": "id_laclede_ice_west",
+  "outcome": "keep",
+  "new_name": "Laclede West Road Cut",
+  "moves": [],
+  "new": []
+ },
+ {
+  "leaf_id": "me_red_rock_mountain_ice",
+  "outcome": "rename",
+  "new_name": "Red Rock Brook Falls",
+  "moves": [],
+  "new": []
+ },
+ {
+  "leaf_id": "me_ten_degree_wall_ice",
+  "outcome": "keep",
+  "new_name": "Bemis Road Falls",
+  "moves": [],
+  "new": []
+ },
+ {
+  "leaf_id": "me_tumble_down_dick_ice",
+  "outcome": "keep",
+  "new_name": "Tumble Down Dick Drainage",
+  "moves": [],
+  "new": []
+ },
+ {
+  "leaf_id": "me_08_right_cataract_ice_bixler_s_area",
+  "outcome": "rename",
+  "new_name": "Right Cataract",
+  "moves": [],
+  "new": []
+ },
+ {
+  "leaf_id": "me_ice_cove_cliff",
+  "outcome": "keep",
+  "new_name": null,
+  "moves": [],
+  "new": []
+ },
+ {
+  "leaf_id": "me_kineo_ice_climbs",
+  "outcome": "rename",
+  "new_name": "Kineo East Face",
+  "moves": [],
+  "new": []
+ },
+ {
+  "leaf_id": "me_06_all_winter_ice_routes_chimney_pond_other_sub_areas",
+  "outcome": "rename",
+  "new_name": "Chimney Pond Basin",
+  "moves": [
+   {
+    "route_id": "me_06_all_winter_ice_routes_chimney_pond_other_sub_areas_tut_s_thumb_north_basin",
+    "to": "me_02_north_basin"
+   }
+  ],
+  "new": []
+ },
+ {
+  "leaf_id": "ma_7_crow_hill_ice_mix",
+  "outcome": "dissolve_partial",
+  "new_name": null,
+  "moves": [
+   {
+    "route_id": "ma_7_crow_hill_ice_mix_beginner_s_madness",
+    "to": "ma_1_end_crags"
+   }
+  ],
+  "new": []
+ },
+ {
+  "leaf_id": "ma_leominster_ice_quarry",
+  "outcome": "keep",
+  "new_name": null,
+  "moves": [],
+  "new": []
+ },
+ {
+  "leaf_id": "mi_dry_tool_cliff",
+  "outcome": "keep",
+  "new_name": null,
+  "moves": [],
+  "new": []
+ },
+ {
+  "leaf_id": "mi_blueberry_boulders_2",
+  "outcome": "keep",
+  "new_name": null,
+  "moves": [],
+  "new": []
+ },
+ {
+  "leaf_id": "mi_hogback",
+  "outcome": "keep",
+  "new_name": null,
+  "moves": [],
+  "new": []
+ },
+ {
+  "leaf_id": "mn_ice_other_than_casket_2",
+  "outcome": "dissolve_partial",
+  "new_name": null,
+  "moves": [
+   {
+    "route_id": "mn_ice_other_than_casket_2_twin_ponds",
+    "to": "mn_enger_park"
+   }
+  ],
+  "new": []
+ },
+ {
+  "leaf_id": "mn_stillwater_ice",
+  "outcome": "keep",
+  "new_name": null,
+  "moves": [],
+  "new": []
+ },
+ {
+  "leaf_id": "mt_east_rosebud_ice_climbing",
+  "outcome": "dissolve_partial",
+  "new_name": null,
+  "moves": [
+   {
+    "route_id": "mt_east_rosebud_ice_climbing_ice_dragons",
+    "to": "NEW:Giant's Belly"
+   }
+  ],
+  "new": [
+   {
+    "name": "Giant's Belly",
+    "lat": null,
+    "lng": null,
+    "evidence": "https://outsidebozeman.com/activities/climbing/ice-climbing/enter-the-dragon ; no coordinate from a source"
+   }
+  ]
+ },
+ {
+  "leaf_id": "mt_pine_creek_climbs",
+  "outcome": "keep",
+  "new_name": null,
+  "moves": [],
+  "new": []
+ },
+ {
+  "leaf_id": "nh_a_link_to_ice_report_photos_2025",
+  "outcome": "keep",
+  "new_name": null,
+  "moves": [],
+  "new": []
+ },
+ {
+  "leaf_id": "nh_cathedral_ledge_ice_climbs",
+  "outcome": "dissolve_partial",
+  "new_name": null,
+  "moves": [
+   {
+    "route_id": "nh_cathedral_ledge_ice_climbs_north_end_pillars",
+    "to": "nh_north_end_the"
+   },
+   {
+    "route_id": "nh_cathedral_ledge_ice_climbs_north_end_slab",
+    "to": "nh_north_end_the"
+   },
+   {
+    "route_id": "nh_cathedral_ledge_ice_climbs_thresher",
+    "to": "nh_north_end_the"
+   }
+  ],
+  "new": []
+ },
+ {
+  "leaf_id": "nh_newbury_cut_ice_mixed",
+  "outcome": "keep",
+  "new_name": null,
+  "moves": [],
+  "new": []
+ },
+ {
+  "leaf_id": "nh_sandwich_notch_ice",
+  "outcome": "rename",
+  "new_name": "Beede Falls",
+  "moves": [
+   {
+    "route_id": "nh_sandwich_notch_ice_halfway_ice",
+    "to": "nh_03_half_way_wall"
+   },
+   {
+    "route_id": "nh_sandwich_notch_ice_highlander_ice",
+    "to": "nh_04_highlander_wall"
+   }
+  ],
+  "new": []
+ },
+ {
+  "leaf_id": "nh_infinity_wall_2",
+  "outcome": "keep",
+  "new_name": null,
+  "moves": [],
+  "new": []
+ },
+ {
+  "leaf_id": "nh_triple_corners_2",
+  "outcome": "keep",
+  "new_name": null,
+  "moves": [],
+  "new": []
+ },
+ {
+  "leaf_id": "nh_lower_baker_pond_ice_arena_slander_crag",
+  "outcome": "rename",
+  "new_name": "Slander Crag",
+  "moves": [],
+  "new": []
+ },
+ {
+  "leaf_id": "nh_1_south_buttress_ice_climbs",
+  "outcome": "keep",
+  "new_name": null,
+  "moves": [],
+  "new": []
+ },
+ {
+  "leaf_id": "nh_iron_mtn",
+  "outcome": "keep",
+  "new_name": null,
+  "moves": [],
+  "new": []
+ },
+ {
+  "leaf_id": "nh_echo_crag_ice_climbs",
+  "outcome": "keep",
+  "new_name": null,
+  "moves": [],
+  "new": []
+ },
+ {
+  "leaf_id": "nh_kinsman_notch_ice_aka_luck_o_the_irish_crag",
+  "outcome": "rename",
+  "new_name": "Luck O' The Irish Crag",
+  "moves": [],
+  "new": []
+ },
+ {
+  "leaf_id": "nh_humphrey_s_ledge",
+  "outcome": "keep",
+  "new_name": null,
+  "moves": [],
+  "new": []
+ },
+ {
+  "leaf_id": "nj_x_mount_tammany_ice",
+  "outcome": "keep",
+  "new_name": null,
+  "moves": [],
+  "new": []
+ },
+ {
+  "leaf_id": "nm_los_alamos_canyon_ice_climbing",
+  "outcome": "keep",
+  "new_name": null,
+  "moves": [],
+  "new": []
+ },
+ {
+  "leaf_id": "nm_school_canyon_ice_and_mixed",
+  "outcome": "keep",
+  "new_name": null,
+  "moves": [],
+  "new": []
+ },
+ {
+  "leaf_id": "ny_starbuck_right_2",
+  "outcome": "keep",
+  "new_name": null,
+  "moves": [],
+  "new": []
+ },
+ {
+  "leaf_id": "nc_whiteside_ice",
+  "outcome": "keep",
+  "new_name": null,
+  "moves": [],
+  "new": []
+ },
+ {
+  "leaf_id": "oh_ice_climbing",
+  "outcome": "keep",
+  "new_name": null,
+  "moves": [],
+  "new": []
+ },
+ {
+  "leaf_id": "or_fall_creek_drytool_crag",
+  "outcome": "keep",
+  "new_name": null,
+  "moves": [],
+  "new": []
+ },
+ {
+  "leaf_id": "sd_roadside_ice",
+  "outcome": "keep",
+  "new_name": null,
+  "moves": [],
+  "new": []
+ },
+ {
+  "leaf_id": "sd_the_shaft_trail_4_ice_flows",
+  "outcome": "keep",
+  "new_name": null,
+  "moves": [],
+  "new": []
+ },
+ {
+  "leaf_id": "ut_huntington_canyon_ice",
+  "outcome": "keep",
+  "new_name": null,
+  "moves": [],
+  "new": []
+ },
+ {
+  "leaf_id": "ut_ice",
+  "outcome": "keep",
+  "new_name": null,
+  "moves": [],
+  "new": []
+ },
+ {
+  "leaf_id": "ut_the_box_canyon_ice_climbs",
+  "outcome": "keep",
+  "new_name": null,
+  "moves": [],
+  "new": []
+ },
+ {
+  "leaf_id": "ut_the_middle_fork_ice_climbs",
+  "outcome": "keep",
+  "new_name": null,
+  "moves": [],
+  "new": []
+ },
+ {
+  "leaf_id": "ut_parowan_canyon_ice",
+  "outcome": "keep",
+  "new_name": null,
+  "moves": [],
+  "new": []
+ },
+ {
+  "leaf_id": "ut_mineral_fork_ice",
+  "outcome": "keep",
+  "new_name": null,
+  "moves": [],
+  "new": []
+ },
+ {
+  "leaf_id": "ut_limber_pine_ice",
+  "outcome": "keep",
+  "new_name": null,
+  "moves": [],
+  "new": []
+ },
+ {
+  "leaf_id": "ut_providence_canyon_ice",
+  "outcome": "keep",
+  "new_name": null,
+  "moves": [],
+  "new": []
+ },
+ {
+  "leaf_id": "ut_santaquin_canyon_ice",
+  "outcome": "keep",
+  "new_name": null,
+  "moves": [],
+  "new": []
+ },
+ {
+  "leaf_id": "ut_cedar_canyon",
+  "outcome": "keep",
+  "new_name": null,
+  "moves": [],
+  "new": []
+ },
+ {
+  "leaf_id": "vt_butcher_s_ice_slab",
+  "outcome": "keep",
+  "new_name": null,
+  "moves": [],
+  "new": []
+ },
+ {
+  "leaf_id": "wa_banks_lake_ice_climbing",
+  "outcome": "keep",
+  "new_name": null,
+  "moves": [],
+  "new": []
+ },
+ {
+  "leaf_id": "wa_winter_ice_climbs_in_tumwater",
+  "outcome": "keep",
+  "new_name": null,
+  "moves": [],
+  "new": []
+ },
+ {
+  "leaf_id": "wa_black_ice_crag_drytooling_park",
+  "outcome": "rename",
+  "new_name": "Black Ice Crag",
+  "moves": [],
+  "new": []
+ },
+ {
+  "leaf_id": "wa_upper_black_ice_and_winter_ice_crag",
+  "outcome": "dissolve",
+  "new_name": null,
+  "moves": [
+   {
+    "route_id": "wa_upper_black_ice_and_winter_ice_crag_cya",
+    "to": "wa_black_ice_crag_drytooling_park"
+   },
+   {
+    "route_id": "wa_upper_black_ice_and_winter_ice_crag_unknown",
+    "to": "wa_black_ice_crag_drytooling_park"
+   }
+  ],
+  "new": []
+ },
+ {
+  "leaf_id": "wa_winter_spring_ice_snow_mixed_2",
+  "outcome": "split",
+  "new_name": "Snoqualmie Mountain Northwest Face",
+  "moves": [
+   {
+    "route_id": "wa_winter_spring_ice_snow_mixed_2_the_upper_west_side",
+    "to": "wa_chair_peak"
+   },
+   {
+    "route_id": "wa_guye_peak_southeast_gully",
+    "to": "wa_guye_peak"
+   }
+  ],
+  "new": []
+ },
+ {
+  "leaf_id": "wa_waterfall_ice_and_mixed_routes_in_the_sw_cascades",
+  "outcome": "rename",
+  "new_name": "Skookum Falls",
+  "moves": [],
+  "new": []
+ },
+ {
+  "leaf_id": "wv_ice_s_stonelair",
+  "outcome": "keep",
+  "new_name": null,
+  "moves": [],
+  "new": []
+ },
+ {
+  "leaf_id": "wi_the_ice_pit_closed",
+  "outcome": "keep",
+  "new_name": "The Ice Pit",
+  "moves": [],
+  "new": []
+ },
+ {
+  "leaf_id": "wi_cox_hollow",
+  "outcome": "keep",
+  "new_name": null,
+  "moves": [],
+  "new": []
+ },
+ {
+  "leaf_id": "wy_death_canyon_ice_climbs",
+  "outcome": "dissolve_partial",
+  "new_name": null,
+  "moves": [
+   {
+    "route_id": "wy_death_canyon_ice_climbs_prospector_falls",
+    "to": "wy_south_side_of_death_canyon"
+   }
+  ],
+  "new": []
+ }
+]

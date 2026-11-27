@@ -1,0 +1,976 @@
+[
+ {
+  "a": "or_concert_hall",
+  "an": "Concert Hall",
+  "ap": "Fiddlers Hell",
+  "arc": 10,
+  "b": "or_entrada",
+  "bn": "Entrada",
+  "bp": "Fiddlers Hell",
+  "brc": 4,
+  "shared": 4,
+  "share": 1,
+  "km": 0.03,
+  "sample": [
+   "route02",
+   "route03",
+   "route04",
+   "route01"
+  ]
+ },
+ {
+  "a": "ca_bridwell_boulder",
+  "an": "Bridwell Boulder",
+  "ap": "Swan Slab Boulders",
+  "arc": 11,
+  "b": "ca_trail_side_boulder_ii",
+  "bn": "Trail Side Boulder II",
+  "bp": "Olmsted Canyon Boulders",
+  "brc": 3,
+  "shared": 3,
+  "share": 1,
+  "km": 12.46,
+  "sample": [
+   "unnamed7",
+   "unnamed9",
+   "unnamed8"
+  ]
+ },
+ {
+  "a": "az_slavin_dome",
+  "an": "Slavin Dome",
+  "ap": "Slavin Gulch",
+  "arc": 3,
+  "b": "az_unknown_dome",
+  "bn": "Unknown Dome",
+  "bp": "Slavin Gulch",
+  "brc": 3,
+  "shared": 3,
+  "share": 1,
+  "km": 0,
+  "sample": [
+   "unknownwidecrack",
+   "unknownarchingcrack",
+   "unknownnorthface"
+  ]
+ },
+ {
+  "a": "ca_nameless_tower",
+  "an": "Nameless Tower",
+  "ap": "Tatooine",
+  "arc": 5,
+  "b": "ca_short_slab",
+  "bn": "Short Slab",
+  "bp": "Downtown",
+  "brc": 3,
+  "shared": 3,
+  "share": 1,
+  "km": 5.67,
+  "sample": [
+   "routeb",
+   "routea",
+   "routec"
+  ]
+ },
+ {
+  "a": "ca_black_rocks_short_face",
+  "an": "Black Rocks Short Face",
+  "ap": "Black Rocks, The",
+  "arc": 3,
+  "b": "ca_crack_crag_sw_face",
+  "bn": "Crack Crag SW Face",
+  "bp": "Crack Crag",
+  "brc": 17,
+  "shared": 3,
+  "share": 1,
+  "km": 9.15,
+  "sample": [
+   "routeb",
+   "routea",
+   "routec"
+  ]
+ },
+ {
+  "a": "ca_juglandaceae_boulder",
+  "an": "Juglandaceae Boulder",
+  "ap": "El Dorado Ranch Park",
+  "arc": 11,
+  "b": "ca_warming_boulder_south_face",
+  "bn": "Warming Boulder - South Face",
+  "bp": "Warming Boulder",
+  "brc": 3,
+  "shared": 3,
+  "share": 1,
+  "km": 18.21,
+  "sample": [
+   "southfaceleft",
+   "southfacecenter",
+   "southfaceright"
+  ]
+ },
+ {
+  "a": "ca_summit_lake_boulder_1_5",
+  "an": "Summit Lake Boulder 1.5",
+  "ap": "Summit Lake Boulders",
+  "arc": 3,
+  "b": "ca_tic_tock_boulder",
+  "bn": "Tic Tock Boulder",
+  "bp": "Split Rock Area",
+  "brc": 10,
+  "shared": 3,
+  "share": 1,
+  "km": 8.36,
+  "sample": [
+   "unnamedunknown1",
+   "unnamedunknown2",
+   "unnamedunknown3"
+  ]
+ },
+ {
+  "a": "ca_summit_lake_boulder_1_5",
+  "an": "Summit Lake Boulder 1.5",
+  "ap": "Summit Lake Boulders",
+  "arc": 3,
+  "b": "ca_unknown_boulder_2",
+  "bn": "Unknown Boulder",
+  "bp": "Roadside Boulders",
+  "brc": 6,
+  "shared": 3,
+  "share": 1,
+  "km": 0.35,
+  "sample": [
+   "unnamedunknown1",
+   "unnamedunknown2",
+   "unnamedunknown3"
+  ]
+ },
+ {
+  "a": "ca_house_of_cards",
+  "an": "House of Cards",
+  "ap": "King Dome",
+  "arc": 3,
+  "b": "ca_unnamed_formation",
+  "bn": "Unnamed Formation",
+  "bp": "King Dome",
+  "brc": 3,
+  "shared": 3,
+  "share": 1,
+  "km": 0,
+  "sample": [
+   "unnamedveasy1",
+   "unnamedveasy2",
+   "unnamedveasy3"
+  ]
+ },
+ {
+  "a": "ca_four_corners_boulder",
+  "an": "Four Corners Boulder",
+  "ap": "Cap Rock Area",
+  "arc": 4,
+  "b": "ca_gumdrop_the_2",
+  "bn": "Gumdrop, The",
+  "bp": "Echo Rock",
+  "brc": 4,
+  "shared": 3,
+  "share": 0.75,
+  "km": 4.04,
+  "sample": [
+   "westcorner",
+   "eastcorner",
+   "southcorner"
+  ]
+ },
+ {
+  "a": "or_balcony_the",
+  "an": "Balcony, The",
+  "ap": "Fiddlers Hell",
+  "arc": 4,
+  "b": "or_concert_hall",
+  "bn": "Concert Hall",
+  "bp": "Fiddlers Hell",
+  "brc": 10,
+  "shared": 3,
+  "share": 0.75,
+  "km": 0.01,
+  "sample": [
+   "route02",
+   "route03",
+   "route04"
+  ]
+ },
+ {
+  "a": "or_balcony_the",
+  "an": "Balcony, The",
+  "ap": "Fiddlers Hell",
+  "arc": 4,
+  "b": "or_entrada",
+  "bn": "Entrada",
+  "bp": "Fiddlers Hell",
+  "brc": 4,
+  "shared": 3,
+  "share": 0.75,
+  "km": 0.04,
+  "sample": [
+   "route02",
+   "route03",
+   "route04"
+  ]
+ },
+ {
+  "a": "or_center_stand",
+  "an": "Center Stand",
+  "ap": "Fiddlers Hell",
+  "arc": 4,
+  "b": "or_concert_hall",
+  "bn": "Concert Hall",
+  "bp": "Fiddlers Hell",
+  "brc": 10,
+  "shared": 3,
+  "share": 0.75,
+  "km": 0.01,
+  "sample": [
+   "route02",
+   "route04",
+   "route01"
+  ]
+ },
+ {
+  "a": "or_center_stand",
+  "an": "Center Stand",
+  "ap": "Fiddlers Hell",
+  "arc": 4,
+  "b": "or_entrada",
+  "bn": "Entrada",
+  "bp": "Fiddlers Hell",
+  "brc": 4,
+  "shared": 3,
+  "share": 0.75,
+  "km": 0.02,
+  "sample": [
+   "route02",
+   "route04",
+   "route01"
+  ]
+ },
+ {
+  "a": "wa_blockhouse",
+  "an": "Blockhouse",
+  "ap": "Falls Creek",
+  "arc": 6,
+  "b": "wa_sweet_spot_the",
+  "bn": "Sweet Spot, The",
+  "bp": "Matrix, The",
+  "brc": 18,
+  "shared": 4,
+  "share": 0.67,
+  "km": 15.97,
+  "sample": [
+   "routeb",
+   "routed",
+   "routee",
+   "routef"
+  ]
+ },
+ {
+  "a": "ca_tic_tock_boulder",
+  "an": "Tic Tock Boulder",
+  "ap": "Split Rock Area",
+  "arc": 10,
+  "b": "ca_unknown_boulder_2",
+  "bn": "Unknown Boulder",
+  "bp": "Roadside Boulders",
+  "brc": 6,
+  "shared": 4,
+  "share": 0.67,
+  "km": 8.01,
+  "sample": [
+   "unnamedunknown1",
+   "unnamedunknown2",
+   "unnamedunknown3",
+   "unnamedunknown4"
+  ]
+ },
+ {
+  "a": "ak_keystone_canyon_tunnel_wall_2",
+  "an": "Keystone Canyon Tunnel Wall",
+  "ap": "Valdez",
+  "arc": 8,
+  "b": "ak_tunnel_wall_the",
+  "bn": "Tunnel Wall, The",
+  "bp": "Valdez Area Rock",
+  "brc": 8,
+  "shared": 5,
+  "share": 0.63,
+  "km": 0.02,
+  "sample": [
+   "alliceinwonderland",
+   "mypickstruckcold",
+   "rightawaygonewrong",
+   "rottenreynoldsrunhimoutoftown",
+   "shootemup"
+  ]
+ },
+ {
+  "a": "wa_jurassic_rock",
+  "an": "Jurassic Rock",
+  "ap": "Europa",
+  "arc": 7,
+  "b": "wa_quicksilver_slabs",
+  "bn": "Quicksilver Slabs",
+  "bp": "Hairpin Crags",
+  "brc": 5,
+  "shared": 3,
+  "share": 0.6,
+  "km": 18.85,
+  "sample": [
+   "routea",
+   "routef",
+   "routeh"
+  ]
+ },
+ {
+  "a": "wa_quicksilver_slabs",
+  "an": "Quicksilver Slabs",
+  "ap": "Hairpin Crags",
+  "arc": 5,
+  "b": "wa_sweet_spot_the",
+  "bn": "Sweet Spot, The",
+  "bp": "Matrix, The",
+  "brc": 18,
+  "shared": 3,
+  "share": 0.6,
+  "km": 21.75,
+  "sample": [
+   "routea",
+   "routee",
+   "routef"
+  ]
+ },
+ {
+  "a": "tx_between",
+  "an": "Between",
+  "ap": "North Mountain",
+  "arc": 14,
+  "b": "tx_three_stack_the",
+  "bn": "Three Stack, The",
+  "bp": "North Mountain",
+  "brc": 5,
+  "shared": 3,
+  "share": 0.6,
+  "km": 0.68,
+  "sample": [
+   "buttbuddy",
+   "gayabandon",
+   "saxontactics"
+  ]
+ },
+ {
+  "a": "wa_jurassic_rock",
+  "an": "Jurassic Rock",
+  "ap": "Europa",
+  "arc": 7,
+  "b": "wa_sweet_spot_the",
+  "bn": "Sweet Spot, The",
+  "bp": "Matrix, The",
+  "brc": 18,
+  "shared": 4,
+  "share": 0.57,
+  "km": 8.47,
+  "sample": [
+   "routeb",
+   "routea",
+   "routec",
+   "routef"
+  ]
+ },
+ {
+  "a": "ca_central_sector",
+  "an": "Central Sector",
+  "ap": "Bachar Boulders",
+  "arc": 24,
+  "b": "ca_right_sector",
+  "bn": "Right Sector",
+  "bp": "Bachar Boulders",
+  "brc": 20,
+  "shared": 10,
+  "share": 0.5,
+  "km": 0.05,
+  "sample": [
+   "problemi",
+   "problemj",
+   "problemk",
+   "probleml",
+   "problemm",
+   "problemn"
+  ]
+ },
+ {
+  "a": "wa_blockhouse",
+  "an": "Blockhouse",
+  "ap": "Falls Creek",
+  "arc": 6,
+  "b": "wa_jurassic_rock",
+  "bn": "Jurassic Rock",
+  "bp": "Europa",
+  "brc": 7,
+  "shared": 3,
+  "share": 0.5,
+  "km": 21.36,
+  "sample": [
+   "routeb",
+   "routef",
+   "routeh"
+  ]
+ },
+ {
+  "a": "wa_guye_peak",
+  "an": "Guye Peak",
+  "ap": "Snoqualmie Pass Area",
+  "arc": 6,
+  "b": "wa_preacher_mountain",
+  "bn": "Preacher Mountain",
+  "bp": "Exit 34: Middle Fork & Taylor River",
+  "brc": 6,
+  "shared": 3,
+  "share": 0.5,
+  "km": 10.33,
+  "sample": [
+   "southrib",
+   "northroute",
+   "southgullysouthspur"
+  ]
+ },
+ {
+  "a": "ca_right_sector",
+  "an": "Right Sector",
+  "ap": "Bachar Boulders",
+  "arc": 20,
+  "b": "ca_sector_a",
+  "bn": "Sector A",
+  "bp": "Ravine, The",
+  "brc": 26,
+  "shared": 9,
+  "share": 0.45,
+  "km": 24.19,
+  "sample": [
+   "problemj",
+   "problemk",
+   "probleml",
+   "problemm",
+   "problemn",
+   "problemo"
+  ]
+ },
+ {
+  "a": "ca_deadman_iv",
+  "an": "Deadman IV",
+  "ap": "Deadman Summit",
+  "arc": 9,
+  "b": "ca_right_sector",
+  "bn": "Right Sector",
+  "bp": "Bachar Boulders",
+  "brc": 20,
+  "shared": 4,
+  "share": 0.44,
+  "km": 7.5,
+  "sample": [
+   "problemi",
+   "problemj",
+   "problemk",
+   "probleml"
+  ]
+ },
+ {
+  "a": "ca_central_sector",
+  "an": "Central Sector",
+  "ap": "Bachar Boulders",
+  "arc": 24,
+  "b": "ca_deadman_iv",
+  "bn": "Deadman IV",
+  "bp": "Deadman Summit",
+  "brc": 9,
+  "shared": 4,
+  "share": 0.44,
+  "km": 7.47,
+  "sample": [
+   "problemi",
+   "problemj",
+   "problemk",
+   "probleml"
+  ]
+ },
+ {
+  "a": "ca_deadman_iv",
+  "an": "Deadman IV",
+  "ap": "Deadman Summit",
+  "arc": 9,
+  "b": "ca_dog_boulder",
+  "bn": "Dog Boulder",
+  "bp": "Horseshoe Lake Area",
+  "brc": 21,
+  "shared": 4,
+  "share": 0.44,
+  "km": 17.53,
+  "sample": [
+   "problemi",
+   "problemj",
+   "problemk",
+   "probleml"
+  ]
+ },
+ {
+  "a": "co_bukowsi_boulder",
+  "an": "Bukowsi Boulder",
+  "ap": "Stone Quarry, The",
+  "arc": 7,
+  "b": "co_quarry_the_2",
+  "bn": "Quarry, The",
+  "bp": "San Luis Valley",
+  "brc": 21,
+  "shared": 3,
+  "share": 0.43,
+  "km": 0.86,
+  "sample": [
+   "masquerade",
+   "babybluesedan",
+   "bukowski"
+  ]
+ },
+ {
+  "a": "ca_boy_scout_wall",
+  "an": "Boy Scout Wall",
+  "ap": "Bowman Valley",
+  "arc": 17,
+  "b": "ca_the_forge",
+  "bn": "The Forge",
+  "bp": "The Emeralds",
+  "brc": 7,
+  "shared": 3,
+  "share": 0.43,
+  "km": 13.91,
+  "sample": [
+   "scoutshonor",
+   "meritbadge",
+   "beprepared"
+  ]
+ },
+ {
+  "a": "ca_dog_boulder",
+  "an": "Dog Boulder",
+  "ap": "Horseshoe Lake Area",
+  "arc": 21,
+  "b": "ca_right_sector",
+  "bn": "Right Sector",
+  "bp": "Bachar Boulders",
+  "brc": 20,
+  "shared": 8,
+  "share": 0.4,
+  "km": 24.23,
+  "sample": [
+   "problemi",
+   "problemj",
+   "problemk",
+   "probleml",
+   "problemm",
+   "problemn"
+  ]
+ },
+ {
+  "a": "ca_central_sector",
+  "an": "Central Sector",
+  "ap": "Bachar Boulders",
+  "arc": 24,
+  "b": "ca_sector_a",
+  "bn": "Sector A",
+  "bp": "Ravine, The",
+  "brc": 26,
+  "shared": 9,
+  "share": 0.38,
+  "km": 24.16,
+  "sample": [
+   "problemj",
+   "problemk",
+   "probleml",
+   "problemm",
+   "problemn",
+   "problemo"
+  ]
+ },
+ {
+  "a": "ca_central_sector",
+  "an": "Central Sector",
+  "ap": "Bachar Boulders",
+  "arc": 24,
+  "b": "ca_dog_boulder",
+  "bn": "Dog Boulder",
+  "bp": "Horseshoe Lake Area",
+  "brc": 21,
+  "shared": 8,
+  "share": 0.38,
+  "km": 24.19,
+  "sample": [
+   "problemi",
+   "problemj",
+   "problemk",
+   "probleml",
+   "problemm",
+   "problemn"
+  ]
+ },
+ {
+  "a": "nm_main_wall_upper_tier",
+  "an": "Main Wall- Upper Tier",
+  "ap": "Pajarito Gorge",
+  "arc": 21,
+  "b": "nm_south_side_big_enchilada",
+  "bn": "South Side, Big Enchilada",
+  "bp": "Big Enchilada, The",
+  "brc": 27,
+  "shared": 8,
+  "share": 0.38,
+  "km": 2.68,
+  "sample": [
+   "route9",
+   "route11",
+   "route12",
+   "route13",
+   "route15",
+   "route19"
+  ]
+ },
+ {
+  "a": "ca_stress_management_boulder",
+  "an": "Stress Management Boulder",
+  "ap": "Stress Management Boulders",
+  "arc": 8,
+  "b": "ca_stress_management_left",
+  "bn": "Stress Management Left",
+  "bp": "Stress Management Boulders",
+  "brc": 8,
+  "shared": 3,
+  "share": 0.38,
+  "km": 0,
+  "sample": [
+   "unknownunnamed2",
+   "unknownunnamed3",
+   "unknownunnamed4"
+  ]
+ },
+ {
+  "a": "ca_dog_boulder",
+  "an": "Dog Boulder",
+  "ap": "Horseshoe Lake Area",
+  "arc": 21,
+  "b": "ca_sector_a",
+  "bn": "Sector A",
+  "bp": "Ravine, The",
+  "brc": 26,
+  "shared": 7,
+  "share": 0.33,
+  "km": 9.31,
+  "sample": [
+   "problemj",
+   "problemk",
+   "probleml",
+   "problemm",
+   "problemn",
+   "problemo"
+  ]
+ },
+ {
+  "a": "ca_deadman_iv",
+  "an": "Deadman IV",
+  "ap": "Deadman Summit",
+  "arc": 9,
+  "b": "ca_sector_b",
+  "bn": "Sector B",
+  "bp": "Ravine, The",
+  "brc": 14,
+  "shared": 3,
+  "share": 0.33,
+  "km": 16.71,
+  "sample": [
+   "problemi",
+   "problemj",
+   "problemk"
+  ]
+ },
+ {
+  "a": "ca_deadman_iv",
+  "an": "Deadman IV",
+  "ap": "Deadman Summit",
+  "arc": 9,
+  "b": "ca_sector_a",
+  "bn": "Sector A",
+  "bp": "Ravine, The",
+  "brc": 26,
+  "shared": 3,
+  "share": 0.33,
+  "km": 16.69,
+  "sample": [
+   "problemj",
+   "problemk",
+   "probleml"
+  ]
+ },
+ {
+  "a": "az_piranha_flats_east",
+  "an": "Piranha Flats - East",
+  "ap": "Oak Flat",
+  "arc": 16,
+  "b": "az_scatterbrain_boulder",
+  "bn": "Scatterbrain Boulder",
+  "bp": "Euro Dog Valley",
+  "brc": 22,
+  "shared": 5,
+  "share": 0.31,
+  "km": 1.61,
+  "sample": [
+   "rjg253",
+   "rjg254",
+   "rjg255",
+   "rjg258",
+   "rjg269"
+  ]
+ },
+ {
+  "a": "me_main_face_linkups",
+  "an": "Main Face Linkups",
+  "ap": "Shagg Crag",
+  "arc": 15,
+  "b": "me_main_wall_linkups",
+  "bn": "Main Wall Linkups",
+  "bp": "Shagg Crag",
+  "brc": 13,
+  "shared": 4,
+  "share": 0.31,
+  "km": 0.05,
+  "sample": [
+   "cougar",
+   "fatpig",
+   "nicetooth",
+   "shortbobcat"
+  ]
+ },
+ {
+  "a": "mn_pot_holes_area",
+  "an": "Pot Holes Area",
+  "ap": "Interstate SP (Taylors Falls)",
+  "arc": 13,
+  "b": "mn_sizzlefoot_wall",
+  "bn": "Sizzlefoot Wall",
+  "bp": "Interstate State Park Bouldering",
+  "brc": 18,
+  "shared": 4,
+  "share": 0.31,
+  "km": 0.03,
+  "sample": [
+   "realthing",
+   "geneticcontrol",
+   "littlesizzler",
+   "sizzlefoot"
+  ]
+ },
+ {
+  "a": "or_concert_hall",
+  "an": "Concert Hall",
+  "ap": "Fiddlers Hell",
+  "arc": 10,
+  "b": "or_strings",
+  "bn": "Strings",
+  "bp": "Fiddlers Hell",
+  "brc": 12,
+  "shared": 3,
+  "share": 0.3,
+  "km": 0.01,
+  "sample": [
+   "route05",
+   "route01",
+   "route08"
+  ]
+ },
+ {
+  "a": "mn_pot_holes_area",
+  "an": "Pot Holes Area",
+  "ap": "Interstate SP (Taylors Falls)",
+  "arc": 13,
+  "b": "mn_slicksides_pit",
+  "bn": "Slicksides Pit",
+  "bp": "Interstate State Park Bouldering",
+  "brc": 13,
+  "shared": 3,
+  "share": 0.23,
+  "km": 0.03,
+  "sample": [
+   "lungeorplunge",
+   "wheel",
+   "slicksides"
+  ]
+ },
+ {
+  "a": "ca_right_sector",
+  "an": "Right Sector",
+  "ap": "Bachar Boulders",
+  "arc": 20,
+  "b": "ca_sector_b",
+  "bn": "Sector B",
+  "bp": "Ravine, The",
+  "brc": 14,
+  "shared": 3,
+  "share": 0.21,
+  "km": 24.21,
+  "sample": [
+   "problemi",
+   "problemj",
+   "problemk"
+  ]
+ },
+ {
+  "a": "ca_central_sector",
+  "an": "Central Sector",
+  "ap": "Bachar Boulders",
+  "arc": 24,
+  "b": "ca_sector_b",
+  "bn": "Sector B",
+  "bp": "Ravine, The",
+  "brc": 14,
+  "shared": 3,
+  "share": 0.21,
+  "km": 24.19,
+  "sample": [
+   "problemi",
+   "problemj",
+   "problemk"
+  ]
+ },
+ {
+  "a": "ca_dog_boulder",
+  "an": "Dog Boulder",
+  "ap": "Horseshoe Lake Area",
+  "arc": 21,
+  "b": "ca_sector_b",
+  "bn": "Sector B",
+  "bp": "Ravine, The",
+  "brc": 14,
+  "shared": 3,
+  "share": 0.21,
+  "km": 9.35,
+  "sample": [
+   "problemi",
+   "problemj",
+   "problemk"
+  ]
+ },
+ {
+  "a": "co_long_s_peak_mt_meeker_cirque",
+  "an": "Long's Peak/Mt. Meeker Cirque",
+  "ap": "Rocky Mountain National Park",
+  "arc": 29,
+  "b": "co_lower_east_face",
+  "bn": "Lower East Face",
+  "bp": "Long's Peak",
+  "brc": 15,
+  "shared": 3,
+  "share": 0.2,
+  "km": 0.38,
+  "sample": [
+   "northchimney",
+   "fieldschimney",
+   "alexanderschimney"
+  ]
+ },
+ {
+  "a": "nm_main_wall_upper_tier",
+  "an": "Main Wall- Upper Tier",
+  "ap": "Pajarito Gorge",
+  "arc": 21,
+  "b": "nm_old_new_place",
+  "bn": "Old New Place",
+  "bp": "White Rock",
+  "brc": 24,
+  "shared": 4,
+  "share": 0.19,
+  "km": 1.32,
+  "sample": [
+   "route10",
+   "route19",
+   "route20",
+   "route17"
+  ]
+ },
+ {
+  "a": "mi_bouldering",
+  "an": "Grand Ledge (aka Oak Park) Bouldering",
+  "ap": "Grand Ledge (aka Oak Park)",
+  "arc": 131,
+  "b": "mi_top_rope",
+  "bn": "Grand Ledge (aka Oak Park) Routes",
+  "bp": "Grand Ledge (aka Oak Park)",
+  "brc": 79,
+  "shared": 10,
+  "share": 0.13,
+  "km": 0,
+  "sample": [
+   "hollywood",
+   "walkonby",
+   "ratedx",
+   "resistance",
+   "astralprojection",
+   "pretzel"
+  ]
+ },
+ {
+  "a": "nm_old_new_place",
+  "an": "Old New Place",
+  "ap": "White Rock",
+  "arc": 24,
+  "b": "nm_playground_the",
+  "bn": "Playground, The",
+  "bp": "White Rock",
+  "brc": 46,
+  "shared": 3,
+  "share": 0.13,
+  "km": 0.39,
+  "sample": [
+   "route16",
+   "route20",
+   "route17"
+  ]
+ },
+ {
+  "a": "nm_old_new_place",
+  "an": "Old New Place",
+  "ap": "White Rock",
+  "arc": 24,
+  "b": "nm_south_side_big_enchilada",
+  "bn": "South Side, Big Enchilada",
+  "bp": "Big Enchilada, The",
+  "brc": 27,
+  "shared": 3,
+  "share": 0.13,
+  "km": 3.87,
+  "sample": [
+   "route16",
+   "route19",
+   "route17"
+  ]
+ },
+ {
+  "a": "nm_playground_the",
+  "an": "Playground, The",
+  "ap": "White Rock",
+  "arc": 46,
+  "b": "nm_south_side_big_enchilada",
+  "bn": "South Side, Big Enchilada",
+  "bp": "Big Enchilada, The",
+  "brc": 27,
+  "shared": 3,
+  "share": 0.11,
+  "km": 3.51,
+  "sample": [
+   "route16",
+   "route17",
+   "route18"
+  ]
+ }
+]

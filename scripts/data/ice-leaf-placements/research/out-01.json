@@ -1,0 +1,169 @@
+[
+ {
+  "leaf_id": "qc_mont_pinacle_ice",
+  "outcome": "dissolve",
+  "new_name": null,
+  "moves": [
+   {
+    "route_id": "qc_mont_pinacle_ice_le_gringalet",
+    "to": "qc_o_mur_de_zola",
+    "evidence": "LOW CONFIDENCE: MP calls Le Gringalet the ice line of the Mont Pinacle outcrop (east of Lac Lyster); leaf coordinate 45.02477,-71.89884 is within ~20 m of Mur de Zola 45.02497,-71.89891; no source names the wall"
+   }
+  ],
+  "new": [],
+  "evidence": "MP Mont Pinacle Ice page gives the single ice line Le Gringalet at 45.02477,-71.89884, essentially on top of the Mur de Zola pin. Placement rests on coordinates only; review."
+ },
+ {
+  "leaf_id": "qc_07_outaouais_ice",
+  "outcome": "rename",
+  "new_name": "Eardley Escarpment",
+  "moves": [],
+  "new": [],
+  "evidence": "A 2013 trip report (alavigne.net/Outdoors/ImageGallery/2013/03-29-Heffalump) puts The Heffalump on the Eardley Escarpment at the SW edge of Gatineau Park; Gripped also lists it as a west-end Ottawa-area flow. Leaf coordinate (45.957,-76.193) is far from the escarpment (~45.5N), so the pin should be reviewed."
+ },
+ {
+  "leaf_id": "qc_mont_king_2",
+  "outcome": "rename",
+  "new_name": "Petit King",
+  "moves": [],
+  "new": [],
+  "evidence": "MP lists Petit King as an ice climb on Mont-King (mountainproject.com/area/202282070/mont-king); Mini King not found online but name and grade pair with it. No wall name for the flows was found, so the leaf takes the route-derived name; LOW CONFIDENCE."
+ },
+ {
+  "leaf_id": "qc_weir_ice",
+  "outcome": "keep",
+  "new_name": null,
+  "moves": [],
+  "new": [],
+  "evidence": "UNRESOLVED: MP Weir Ice Climbs page confirms Gros bras (WI4-5) at Weir; Marionnetiste, Le Fou du Roi, Petit bras and the M8 could not be placed on any named wall. All five stay together; a human should name the cliff (current name contains a discipline word)."
+ },
+ {
+  "leaf_id": "yt_alsek_valley_ice",
+  "outcome": "rename",
+  "new_name": "Dezadeash River Cliff",
+  "moves": [],
+  "new": [],
+  "evidence": "MP Alsek Valley Ice: only one ice route established; access is the end of Alsek Valley Road, with the climb across the Dezadeash River (mountainproject.com/area/125746353). Name is descriptive, not a sourced wall name; LOW CONFIDENCE. Harmony not confirmed by name."
+ },
+ {
+  "leaf_id": "ak_portage_4",
+  "outcome": "rename",
+  "new_name": "Williwaw Area",
+  "moves": [],
+  "new": [],
+  "evidence": "MP Portage pages: Luckyman is across from Rainbow Bridge via the Williwaw parking lot, Five Fingers is by Williwaw campground, Bullwinkle/Dreams of Brown Moose sit south of the visitor center high on the mountain (mountainproject.com/area/105955086/portage). Most routes are in the Williwaw side of Portage Valley; Bullwinkle pair possibly distinct. LOW CONFIDENCE, not split. Not Byron Glacier (the Byron sibling walls are rock)."
+ },
+ {
+  "leaf_id": "ak_purinton_creek_3",
+  "outcome": "rename",
+  "new_name": "Paradise Pillar",
+  "moves": [],
+  "new": [],
+  "evidence": "MP/alaskaiceclimbing.com: Paradise Pillar (formerly Purinton Pillar) is a free-standing vertical pillar reached from the Purinton Creek bridge on the Glen Highway; no existing wall is its home. https://alaskaiceclimbing.com/paradise-pillar/"
+ },
+ {
+  "leaf_id": "ak_cracked_ice",
+  "outcome": "keep",
+  "new_name": null,
+  "moves": [],
+  "new": [],
+  "evidence": "Cracked Ice is the name of the peak (MP area 117722248 and AAC report); its West Ridge (5.7 AI2-3) and Cracked Ice route are on that peak, so the area is a real place. Unknown 5.7 alpine row stays with the majority."
+ },
+ {
+  "leaf_id": "ak_mendenhall_towers_ice_mixed",
+  "outcome": "rename",
+  "new_name": "Mendenhall Towers Main Massif",
+  "moves": [
+   {
+    "route_id": "ak_mendenhall_towers_ice_mixed_great_white_conqueror",
+    "to": "ak_1st_tower_west_tower",
+    "evidence": "MP: Great White Conqueror is on the North Face of the West Tower (mountainproject.com/route/106651087)"
+   }
+  ],
+  "new": [],
+  "evidence": "Great White Conqueror moves to the West Tower leaf. The Fall Line (M5) and West Ridge (AI1-2) could not be placed on a specific tower from sources; they stay, and the new name is descriptive only. LOW CONFIDENCE; review."
+ },
+ {
+  "leaf_id": "ar_lake_lincoln_ice",
+  "outcome": "keep",
+  "new_name": null,
+  "moves": [],
+  "new": [],
+  "evidence": "UNRESOLVED: rockclimbing.com Lake Lincoln Crags lists a 2-entry ice section but no source names the wall for Arkansas R-ice. Single route stays; a human should place or rename."
+ },
+ {
+  "leaf_id": "ca_deep_creek_ice",
+  "outcome": "keep",
+  "new_name": null,
+  "moves": [],
+  "new": [],
+  "evidence": "UNRESOLVED: no source found for Bedtime for Cleo. Single route stays in the leaf pending a placed name."
+ },
+ {
+  "leaf_id": "ca_carson_peak_ice",
+  "outcome": "rename",
+  "new_name": "Carson Peak Gully",
+  "moves": [],
+  "new": [],
+  "evidence": "MP: Carson Peak Gully is the largest drainage on climbers' right of Carson Peak, and Rob's Ravine is its bottom third / the base of Pete's Dream (mountainproject.com/route/114023521/carson-peak-gully; area 114023420). All four routes are in that drainage (Guy and Dude Looks Like a Lady unconfirmed, kept with majority). Note Robs Ravine and Carson Peak Gully may be duplicates."
+ },
+ {
+  "leaf_id": "ca_roadside_ice_center_2",
+  "outcome": "dissolve",
+  "new_name": null,
+  "moves": [
+   {
+    "route_id": "ca_roadside_ice_center_2_center_middle",
+    "to": "ca_roadside_ice_left_side_main_flow_2",
+    "evidence": "Same Roadside Ice flow beside Hwy 158; leaf coordinates match to ~10 m (MP area 107038556)"
+   }
+  ],
+  "new": [],
+  "evidence": "Center section of the same Roadside Ice flow; merged into the Left Side/Main Flow leaf (which is renamed Roadside Flow)."
+ },
+ {
+  "leaf_id": "ca_roadside_ice_left_side_main_flow_2",
+  "outcome": "rename",
+  "new_name": "Roadside Flow",
+  "moves": [],
+  "new": [],
+  "evidence": "MP area 107038556 'Roadside Ice' is one flow beside the June Lake loop road; Left Side and Center are sections of it, so a single place name is used. Receives the Center route from ca_roadside_ice_center_2."
+ },
+ {
+  "leaf_id": "ca_lundy_canyon_ice_2",
+  "outcome": "rename",
+  "new_name": "Lundy Falls",
+  "moves": [],
+  "new": [],
+  "evidence": "MP: Lundy Falls (500 ft) is the main flow of Lundy Canyon Ice, and Triple Conjunction is the highest ice on the same hill, reached via the descent gully (mountainproject.com/area/111342650; route/111377684)."
+ },
+ {
+  "leaf_id": "ca_tahquitz_ice_surrounding_flows",
+  "outcome": "rename",
+  "new_name": "Tahquitz Rock North Side",
+  "moves": [
+   {
+    "route_id": "ca_tahquitz_ice_surrounding_flows_altar_chimney_ice",
+    "to": "ca_altar_of_algoot",
+    "evidence": "Name-based: Altar Chimney is on the Altar of Algoot (sibling lists Altar Chimney 5.6)"
+   },
+   {
+    "route_id": "ca_tahquitz_ice_surrounding_flows_altar_of_algoot_ice_routes",
+    "to": "ca_altar_of_algoot",
+    "evidence": "Name-based: ice routes of the Altar of Algoot"
+   },
+   {
+    "route_id": "ca_tahquitz_ice_surrounding_flows_indian_buttress_chimney_ice",
+    "to": "ca_indian_buttress_formation_the",
+    "evidence": "Name-based: Indian Buttress chimney"
+   },
+   {
+    "route_id": "ca_tahquitz_ice_surrounding_flows_north_gully_descent_chimney",
+    "to": "ca_north_gully_wall",
+    "evidence": "Name-based: North Gully descent chimney; LOW CONFIDENCE"
+   }
+  ],
+  "new": [],
+  "evidence": "MP Tahquitz Ice & Surrounding Flows (area 116166241): The Trough and The Larks form on the rock's winter-shaded side. Four moves are by route-name match only; the rest (Trough, Larks, NE Buttress, NE Farce, El Wampo, Chandelier Megaflow, Hinterland Ice, 50 Meter Smear, NW Recess, Ice Gate) stay under a descriptive side name. LOW CONFIDENCE on the new name."
+ }
+]

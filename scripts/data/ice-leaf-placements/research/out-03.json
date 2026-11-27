@@ -1,0 +1,157 @@
+[
+ {
+  "leaf_id": "co_colorado_national_monument_ice",
+  "outcome": "split",
+  "new_name": "Ute Canyon Falls",
+  "moves": [
+   {
+    "route_id": "co_colorado_national_monument_ice_no_thoroughfare_falls",
+    "to": "co_no_thoroughfare_canyon",
+    "evidence": "MP Colorado National Monument ice page: falls are in No Thoroughfare Canyon (upper and lower falls)"
+   },
+   {
+    "route_id": "co_colorado_national_monument_ice_upper_no_thoroughfare_falls",
+    "to": "co_no_thoroughfare_canyon",
+    "evidence": "same MP page: upper falls of No Thoroughfare Canyon"
+   }
+  ],
+  "new": [],
+  "evidence": "Two No Thoroughfare falls placed in the existing No Thoroughfare Canyon leaf (mountainproject.com/area/107031852). Ute Canyon route is the one with a located trailhead (Willow Drive, Redlands); sibling Ute Canyon has subareas so cannot hold routes, hence leaf renamed Ute Canyon Falls. Columbus Canyon and Upper Devils Canyon: no source gave any location; left in the leaf, probably belong in their own canyons.",
+  "sourced": false
+ },
+ {
+  "leaf_id": "co_cunningham_gulch_2",
+  "outcome": "rename",
+  "new_name": "Cunningham Gulch Falls",
+  "moves": [],
+  "new": [],
+  "evidence": "No source found placing Green Mountain Falls, Master's Wall Falls or Royal Tiger Creek beyond the Cunningham Gulch valley (MP Silverton pages). Master's Wall Falls not moved to Master's Wall sibling because only the name matches. Name is a plain valley-falls label, not source-named.",
+  "sourced": false
+ },
+ {
+  "leaf_id": "co_south_mineral_creek_2",
+  "outcome": "rename",
+  "new_name": "South Mineral Campground",
+  "moves": [],
+  "new": [],
+  "evidence": "Campground Couloir approach is from the end of FR 585 at South Mineral Campground (summitpost.org/campground-couloir-wi3-4/923755); leaf coordinate sits at the campground. Other routes (Snowblind, Sundance, Snotty Nosed Brat, Direct North Face) are described as near it, but no source pinned each one; Big Sister/Kid Sister not found. Sibling Ice Lakes Basin has subareas.",
+  "sourced": false
+ },
+ {
+  "leaf_id": "co_staunton_state_park_ice",
+  "outcome": "rename",
+  "new_name": "Elk Falls Overlook",
+  "moves": [],
+  "new": [],
+  "evidence": "Staunton State Park: 100 ft Elk Falls is a named feature with an Elk Falls Overlook (trails.colorado.gov/routes/425); MP Staunton ice page says Elk Falls is the only consistent ice spot. Route is named Elk Falls so the area uses the overlook name.",
+  "sourced": true
+ },
+ {
+  "leaf_id": "co_pleasure_dome_mixed_ice",
+  "outcome": "rename",
+  "new_name": "Pleasure Dome",
+  "moves": [],
+  "new": [],
+  "evidence": "Leaf's routes are almost all rock (sport/trad 5.5-5.12) on the real feature Pleasure Dome; only Jay's Pleasure Cruise is ice. Name is the feature minus the discipline tag; routes not individually verified.",
+  "sourced": true
+ },
+ {
+  "leaf_id": "co_bear_creek_2",
+  "outcome": "rename",
+  "new_name": "Bear Creek Falls",
+  "moves": [],
+  "new": [],
+  "evidence": "Main and Upper Bear Creek Falls are the creek falls up the Bear Creek trail (MP routes 107418228 and 107418238; telluride.com). Bear Creek Gorge (top-rope, 50 ft) is described as Telluride's 'mini ice park' off Town Park and may be a different place; kept with the leaf, unsure.",
+  "sourced": true
+ },
+ {
+  "leaf_id": "ga_hogpen_gap_ice",
+  "outcome": "rename",
+  "new_name": "Hogpen Gap",
+  "moves": [],
+  "new": [],
+  "evidence": "MP area Hogpen Gap (mountainproject.com/area/106985289): roadcut near midpoint of Richard B. Russell Scenic Highway (GA 348); coordinates match the leaf; Tallest Ice Flow is its only climb.",
+  "sourced": true
+ },
+ {
+  "leaf_id": "ga_rabun_bald_ice",
+  "outcome": "rename",
+  "new_name": "Rabun Bald",
+  "moves": [],
+  "new": [],
+  "evidence": "MP area Rabun Bald (mountainproject.com/area/117665180) described as Georgia's premier ice cliff; leaf coordinate matches. Routes not individually checked.",
+  "sourced": true
+ },
+ {
+  "leaf_id": "id_laclede_ice_east",
+  "outcome": "rename",
+  "new_name": "Laclede East Road Cut",
+  "moves": [],
+  "new": [],
+  "evidence": "MP Laclede Ice East (mountainproject.com/area/116557950): highway road cut a few minutes east of Laclede, north side of the highway, park on eastbound pullout.",
+  "sourced": true
+ },
+ {
+  "leaf_id": "id_laclede_ice_west",
+  "outcome": "rename",
+  "new_name": "Laclede West Road Cut",
+  "moves": [],
+  "new": [],
+  "evidence": "MP page for Laclede Ice West gave no route-level text; name assumed by analogy with the east road cut and the leaf coordinate west of town. Not confirmed it is a road cut.",
+  "sourced": false
+ },
+ {
+  "leaf_id": "me_red_rock_mountain_ice",
+  "outcome": "rename",
+  "new_name": "Red Rock Brook Falls",
+  "moves": [],
+  "new": [],
+  "evidence": "MP Red Rock Mountain Ice photo caption names Red Rock Brook Falls; page names no cliff. Parent has the same name as the leaf's base, so a sub-place was chosen; Hot Lava not individually placed.",
+  "sourced": false
+ },
+ {
+  "leaf_id": "me_ten_degree_wall_ice",
+  "outcome": "rename",
+  "new_name": "Bemis Road Falls",
+  "moves": [],
+  "new": [],
+  "evidence": "Angel Falls (MP route 118191806) is a ~100 ft flow hard to spot from Bemis Road, reached by trails and stream crossings, near 44.78,-70.71. No named cliff or falls area found; name is descriptive of the road, not source-named.",
+  "sourced": false
+ },
+ {
+  "leaf_id": "me_tumble_down_dick_ice",
+  "outcome": "rename",
+  "new_name": "Tumble Down Dick Drainage",
+  "moves": [],
+  "new": [],
+  "evidence": "MP has a separate Tumble Down Dick Ice page (area/122023988) with no flow names or locations found. Single route kept; place name is a generic descriptive label, unsure.",
+  "sourced": false
+ },
+ {
+  "leaf_id": "me_08_right_cataract_ice_bixler_s_area",
+  "outcome": "rename",
+  "new_name": "Right Cataract",
+  "moves": [],
+  "new": [],
+  "evidence": "MP page Right Cataract (Ice & Bixler's Area): low-angle flows above Guides Wall in the Camden Hills; name drops the discipline text (mountainproject.com/area/112150232).",
+  "sourced": true
+ },
+ {
+  "leaf_id": "me_ice_cove_cliff",
+  "outcome": "keep",
+  "new_name": null,
+  "moves": [],
+  "new": [],
+  "evidence": "Ice Cove Cliff is a real named crag (MP area 114102228) by Mt Ararat High School park, Topsham; its one route is 5.7. Not a discipline bucket.",
+  "sourced": true
+ },
+ {
+  "leaf_id": "me_kineo_ice_climbs",
+  "outcome": "rename",
+  "new_name": "Kineo East Face",
+  "moves": [],
+  "new": [],
+  "evidence": "Mt Kineo has a sheer east face over Moosehead Lake (summitpost.org/mount-kineo/152253); routes are 300-700 ft ice (Maine Line mid-cliff, Whiteline Fever right of it). One photo caption mentions the west side, so unsure. Siblings are leaves with no matching route confirmation, so nothing moved.",
+  "sourced": false
+ }
+]

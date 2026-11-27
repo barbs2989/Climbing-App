@@ -1,0 +1,53 @@
+{
+ "qc_mont_king_2": "keep",
+ "ak_mendenhall_towers_ice_mixed": {
+  "new_name": null
+ },
+ "ca_tahquitz_ice_surrounding_flows": {
+  "moves": []
+ },
+ "yt_alsek_valley_ice": {
+  "new_name": "Dezadeash River"
+ },
+ "co_colorado_national_monument_ice": {
+  "outcome": "dissolve_partial",
+  "new_name": null
+ },
+ "co_cunningham_gulch_2": "keep",
+ "me_ten_degree_wall_ice": "keep",
+ "me_tumble_down_dick_ice": "keep",
+ "id_laclede_ice_west": "keep",
+ "co_stanley_canyon_ice": "keep",
+ "co_georgetown_ice": "keep",
+ "co_lookout_mountain_dry_tooling_area": "keep",
+ "__remap": {
+  "NEW:Fourth Flatiron East Face": "co_fourth_flatiron",
+  "NEW:Enger Tower": "mn_enger_park",
+  "NEW:Redgarden Wall South Face": null,
+  "NEW:The Phantom": null
+ },
+ "wi_the_ice_pit_closed": "keep",
+ "wy_death_canyon_ice_climbs": {
+  "outcome": "dissolve_partial",
+  "new_name": null
+ },
+ "wa_black_ice_crag_drytooling_park": {
+  "outcome": "rename",
+  "new_name": "Black Ice Crag",
+  "moves": []
+ },
+ "wa_upper_black_ice_and_winter_ice_crag": {
+  "outcome": "dissolve",
+  "new_name": null,
+  "moves": [
+   {
+    "route_id": "wa_upper_black_ice_and_winter_ice_crag_cya",
+    "to": "wa_black_ice_crag_drytooling_park"
+   },
+   {
+    "route_id": "wa_upper_black_ice_and_winter_ice_crag_unknown",
+    "to": "wa_black_ice_crag_drytooling_park"
+   }
+  ]
+ }
+}

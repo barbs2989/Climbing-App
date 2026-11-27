@@ -1,0 +1,172 @@
+[
+ {
+  "leaf_id": "ut_right_fork_indian_canyon_ice",
+  "outcome": "dissolve",
+  "moves": [
+   {
+    "route_id": "ut_right_fork_indian_canyon_ice_birdshit_cicle",
+    "to": "ut_right_fork_of_indian_canyon"
+   },
+   {
+    "route_id": "ut_right_fork_indian_canyon_ice_halley_s",
+    "to": "ut_right_fork_of_indian_canyon"
+   },
+   {
+    "route_id": "ut_right_fork_indian_canyon_ice_raven_falls",
+    "to": "ut_right_fork_of_indian_canyon"
+   },
+   {
+    "route_id": "ut_right_fork_indian_canyon_ice_roughneck",
+    "to": "ut_right_fork_of_indian_canyon"
+   },
+   {
+    "route_id": "ut_right_fork_indian_canyon_ice_the_ic_steps",
+    "to": "ut_right_fork_of_indian_canyon"
+   }
+  ]
+ },
+ {
+  "leaf_id": "ut_uinta_basin_ice_mixed",
+  "op": "delete"
+ },
+ {
+  "leaf_id": "ut_mount_agassiz_ice",
+  "outcome": "dissolve",
+  "moves": [
+   {
+    "route_id": "ut_mount_agassiz_ice_courduroy_cascade",
+    "to": "ut_mount_agassiz"
+   },
+   {
+    "route_id": "ut_mount_agassiz_ice_training_wheels",
+    "to": "ut_mount_agassiz"
+   }
+  ]
+ },
+ {
+  "leaf_id": "ut_ostler_peak_ice",
+  "outcome": "dissolve",
+  "moves": [
+   {
+    "route_id": "ut_ostler_peak_ice_siren_song",
+    "to": "ut_ostler_peak"
+   }
+  ]
+ },
+ {
+  "leaf_id": "ut_reids_peak_ice",
+  "outcome": "dissolve",
+  "moves": [
+   {
+    "route_id": "ut_reids_peak_ice_98_pounds",
+    "to": "ut_reids_peak"
+   },
+   {
+    "route_id": "ut_reids_peak_ice_bathos",
+    "to": "ut_reids_peak"
+   },
+   {
+    "route_id": "ut_reids_peak_ice_golden_spike",
+    "to": "ut_reids_peak"
+   },
+   {
+    "route_id": "ut_reids_peak_ice_higher_grounds",
+    "to": "ut_reids_peak"
+   },
+   {
+    "route_id": "ut_reids_peak_ice_marvell_route",
+    "to": "ut_reids_peak"
+   },
+   {
+    "route_id": "ut_reids_peak_ice_rainbow_frontier",
+    "to": "ut_reids_peak"
+   },
+   {
+    "route_id": "ut_reids_peak_ice_root_canal",
+    "to": "ut_reids_peak"
+   },
+   {
+    "route_id": "ut_reids_peak_ice_scum_couloir",
+    "to": "ut_reids_peak"
+   },
+   {
+    "route_id": "ut_reids_peak_ice_sub_elite_all_arounder",
+    "to": "ut_reids_peak"
+   },
+   {
+    "route_id": "ut_reids_peak_ice_sunshine_chimney",
+    "to": "ut_reids_peak"
+   },
+   {
+    "route_id": "ut_reids_peak_ice_the_one_who_knocks",
+    "to": "ut_reids_peak"
+   }
+  ]
+ },
+ {
+  "leaf_id": "ut_cataract_gorge_ice",
+  "outcome": "dissolve",
+  "moves": [
+   {
+    "route_id": "ut_cataract_gorge_ice_good_enough_for_who_it_s_for",
+    "to": "ut_cataract_gorge"
+   },
+   {
+    "route_id": "ut_cataract_gorge_ice_little_deer_creek_falls",
+    "to": "ut_cataract_gorge"
+   },
+   {
+    "route_id": "ut_cataract_gorge_ice_make_like_a_tree",
+    "to": "ut_cataract_gorge"
+   },
+   {
+    "route_id": "ut_cataract_gorge_ice_marsell_canyon_falls",
+    "to": "ut_cataract_gorge"
+   }
+  ]
+ },
+ {
+  "leaf_id": "ut_uintas_ice",
+  "op": "delete"
+ },
+ {
+  "leaf_id": "ut_i_15_flows",
+  "op": "reparent",
+  "from": "ut_cedar_city_ice",
+  "to": "ut_cedar_city"
+ },
+ {
+  "leaf_id": "ut_stairway_to_heaven",
+  "op": "reparent",
+  "from": "ut_provo_canyon_ice",
+  "to": "ut_provo_canyon"
+ },
+ {
+  "leaf_id": "ut_provo_canyon_ice",
+  "op": "delete"
+ },
+ {
+  "leaf_id": "wa_keechelus_lake_ice_climbs",
+  "op": "reparent",
+  "from": "wa_keechelus_lake_ice",
+  "to": "wa_snoqualmie_pass_area"
+ },
+ {
+  "leaf_id": "wa_keechelus_lake_ice_climbs",
+  "op": "rename",
+  "new_name": "Keechelus Lake"
+ },
+ {
+  "leaf_id": "wa_keechelus_lake_ice",
+  "op": "delete"
+ },
+ {
+  "leaf_id": "co_glacier_gorge_trailhead_ice",
+  "op": "rename",
+  "new_name": "Glacier Gorge Trailhead"
+ },
+ {
+  "leaf_id": "co_parking_lot_ice",
+  "op": "delete"
+ }
+]
