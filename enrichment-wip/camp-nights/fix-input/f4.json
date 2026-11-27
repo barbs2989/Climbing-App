@@ -1,0 +1,1894 @@
+[
+ {
+  "id": "wa_jack_mountain_east_ridge",
+  "name": "East Ridge",
+  "discipline": "alpine",
+  "peak": "Jack Mountain",
+  "area_id": "wa_jack_mountain",
+  "path": "usa.washington.wa_northwest.wa_hwy20_ncnp.wa_north_cascades.wa_north_cascades_core.wa_jack_mountain",
+  "trip_plan": {
+   "totalNote": "Approach to a camp on the east side of Jack, climb the East Ridge in a full pre-dawn-to-evening day, and return.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Approach to the east-side camp",
+     "objective": "Establish a camp on the eastern side of the mountain",
+     "miles": null,
+     "gainFt": 5300,
+     "note": "Approach and establish a camp on the eastern side of the mountain."
+    },
+    {
+     "n": 2,
+     "title": "Climb the East Ridge",
+     "objective": "Summit Jack Mountain and return to camp",
+     "miles": null,
+     "gainFt": 3500,
+     "note": "Make a pre-dawn start and plan a full day up and down. The published account records 9.5 hours from low on the glacier for the Skoogs' variation."
+    },
+    {
+     "n": 3,
+     "title": "Return to the trailhead",
+     "objective": "Recross the glacier and hike out",
+     "miles": null,
+     "gainFt": 800,
+     "note": "Return to the trailhead."
+    }
+   ]
+  },
+  "camps_on_file": [],
+  "campsite_pins": [],
+  "from_batch": "b14",
+  "refused_because": "low confidence",
+  "previous_research": {
+   "id": "wa_jack_mountain_east_ridge",
+   "camps": [],
+   "new_camps": [],
+   "confidence": "low",
+   "plan_conflict": "No camp is on file and no source found names the East Ridge nights; a recent report approached through the Jerry Lakes basin, but it was not confirmed as the camp, so nights 1 and 2 are left unassigned.",
+   "sources": [
+    "https://cascadeclimbers.com/forum/topic/52645-tr-jack-mtn-s-face-7172007/"
+   ]
+  }
+ },
+ {
+  "id": "wa_jack_mountain_north_ridge",
+  "name": "North Ridge",
+  "discipline": "scrambling",
+  "peak": "Jack Mountain",
+  "area_id": "wa_jack_mountain",
+  "path": "usa.washington.wa_northwest.wa_hwy20_ncnp.wa_north_cascades.wa_north_cascades_core.wa_jack_mountain",
+  "trip_plan": {
+   "totalNote": "Hike the East Bank Trail and climb off-trail to a camp below the ridge, climb the North Ridge and descend the East Ridge, then hike out.",
+   "days": [
+    {
+     "n": 1,
+     "title": "East Bank Trail to camp below the ridge",
+     "objective": "Camp below the North Ridge",
+     "miles": null,
+     "gainFt": null,
+     "note": "Hike the East Bank Trail, then make the off-trail climb to a camp below the ridge."
+    },
+    {
+     "n": 2,
+     "title": "Climb the North Ridge",
+     "objective": "Summit and descend the East Ridge to camp",
+     "miles": null,
+     "gainFt": null,
+     "note": "Climb the ridge to the summit and descend the East Ridge back to camp, a full day."
+    },
+    {
+     "n": 3,
+     "title": "Bushwhack down and hike out",
+     "objective": "Return to the East Bank Trailhead",
+     "miles": null,
+     "gainFt": null,
+     "note": "Descend the bushwhack and hike out the East Bank Trail."
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "May Creek Camp, Ross Lake",
+    "elev_ft": null,
+    "type": "camp",
+    "role": "main",
+    "notes": "Designated camp on the East Bank Trail about 8 miles from the East Bank trailhead, where climbers leave the trail for the north side of Jack Mountain. It can also be reached by water taxi. Used as a first night or as the camp on the way out."
+   }
+  ],
+  "campsite_pins": [
+   {
+    "name": "May Creek Camp, Ross Lake",
+    "elev": 1643,
+    "distMi": null
+   }
+  ],
+  "from_batch": "b14",
+  "refused_because": "low confidence",
+  "previous_research": {
+   "id": "wa_jack_mountain_north_ridge",
+   "camps": [
+    {
+     "name": "May Creek Camp, Ross Lake",
+     "nights": [
+      1
+     ],
+     "role": "main",
+     "why": "Designated camp eight easy miles up the East Bank Trail where the off-trail climb begins; the usual first night, reached by trail or water taxi."
+    }
+   ],
+   "new_camps": [],
+   "confidence": "low",
+   "plan_conflict": "Night 2 (the plan's camp below the ridge) is not on file and no source confirmed it; one earlier North Ridge trip went up and over via the East Ridge and out the Crater Mountain side rather than back to the East Bank Trailhead.",
+   "sources": [
+    "https://cascadeclimbers.com/forum/topic/43937-tr-jack-mountain-up-the-north-ridge-down-the-east-ridge-7222006",
+    "https://countryhighpoints.com/jack-mountain"
+   ]
+  }
+ },
+ {
+  "id": "wa_jack_mountain_northeast_glacier",
+  "name": "Northeast Glacier",
+  "discipline": "mountaineering",
+  "peak": "Jack Mountain",
+  "area_id": "wa_jack_mountain",
+  "path": "usa.washington.wa_northwest.wa_hwy20_ncnp.wa_north_cascades.wa_north_cascades_core.wa_jack_mountain",
+  "trip_plan": {
+   "totalNote": "Cross between Crater Mountain's summits and the Jerry Glacier to a camp on Jack's east side, climb the Northeast Glacier, and return.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Cross the Jerry Glacier to the east camp",
+     "objective": "Camp near 6,000 ft on the east side of Jack",
+     "miles": null,
+     "gainFt": 5100,
+     "note": "Cross the pass between Crater Mountain's summits and the Jerry Glacier to a camp near 6,000 ft on the east side of Jack."
+    },
+    {
+     "n": 2,
+     "title": "Climb the Northeast Glacier",
+     "objective": "Summit Jack Mountain and return to camp",
+     "miles": null,
+     "gainFt": 3300,
+     "note": "Spend a full summit day on the glacier and the upper mountain, then return to camp."
+    },
+    {
+     "n": 3,
+     "title": "Return over the pass",
+     "objective": "Hike out to the Canyon Creek Trailhead",
+     "miles": null,
+     "gainFt": 1000,
+     "note": "Return over the pass and the Jerry Glacier and hike out."
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Camp on the east side of Jack",
+    "elev_ft": 6000,
+    "type": "camp",
+    "role": "main",
+    "notes": "Reached over the pass between Crater Mountain's summits and down past the Jerry Glacier. Leaves the col crossing and the glacier for summit day."
+   }
+  ],
+  "campsite_pins": [],
+  "from_batch": "b14",
+  "refused_because": "low confidence",
+  "previous_research": {
+   "id": "wa_jack_mountain_northeast_glacier",
+   "camps": [
+    {
+     "name": "Camp on the east side of Jack",
+     "nights": [
+      1,
+      2
+     ],
+     "role": "main",
+     "why": "The only camp for this route, near 6,000 ft on Jack's east side past the Jerry Glacier crossing; it is also the base for the summit day and the return over the pass."
+    }
+   ],
+   "new_camps": [],
+   "confidence": "low",
+   "plan_conflict": "No trip report found for this route; the camp and nights come from the plan and the camp on file.",
+   "sources": [
+    "https://cascadeclimbers.com/forum/topic/52645-tr-jack-mtn-s-face-7172007/"
+   ]
+  }
+ },
+ {
+  "id": "wa_jack_mountain_southeast_ridge_direct",
+  "name": "Southeast Ridge (Direct)",
+  "discipline": "alpine",
+  "peak": "Jack Mountain",
+  "area_id": "wa_jack_mountain",
+  "path": "usa.washington.wa_northwest.wa_hwy20_ncnp.wa_north_cascades.wa_north_cascades_core.wa_jack_mountain",
+  "trip_plan": {
+   "totalNote": "Cross from Crater Lake over the Crater Mountain saddle and Jerry Glacier to camp, climb the Southeast Ridge, and hike out.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Crater Lake and Jerry Glacier to camp",
+     "objective": "Camp at Jerry Lakes or Crater Creek",
+     "miles": null,
+     "gainFt": 5300,
+     "note": "Hike from the trailhead to Crater Lake, then go cross-country over the Crater Mountain saddle and the Jerry Glacier to a Jerry Lakes or Crater Creek camp, about 7 hours with packs."
+    },
+    {
+     "n": 2,
+     "title": "Climb the Southeast Ridge",
+     "objective": "Summit via the ridge and descend the South Face",
+     "miles": null,
+     "gainFt": 2700,
+     "note": "Make an alpine start, gain the 7,000 ft ridge step, and climb the crest to the summit, then descend the South Face and return to camp. Budget a full day, longer than the standard route's ~10 hour round trip from camp, because the ridge is roped terrain."
+    },
+    {
+     "n": 3,
+     "title": "Recross the glacier and hike out",
+     "objective": "Return to the Canyon Creek Trailhead",
+     "miles": null,
+     "gainFt": 800,
+     "note": "Recross the glacier and saddle and hike out."
+    }
+   ]
+  },
+  "camps_on_file": [],
+  "campsite_pins": [],
+  "from_batch": "b14",
+  "refused_because": "low confidence",
+  "previous_research": {
+   "id": "wa_jack_mountain_southeast_ridge_direct",
+   "camps": [],
+   "new_camps": [],
+   "confidence": "low",
+   "plan_conflict": "No camp is on file; trip reports use Jerry Lakes basin for nearby routes but no elevation was confirmed, so no new camp was added and nights 1 and 2 are left unassigned.",
+   "sources": [
+    "https://cascadeclimbers.com/forum/topic/52645-tr-jack-mtn-s-face-7172007/",
+    "https://cascadeclimbers.com/forum/profile/17987-skjos/content/"
+   ]
+  }
+ },
+ {
+  "id": "wa_northeast_ridge_1963_route",
+  "name": "Northeast Ridge (1963 Route)",
+  "discipline": "alpine",
+  "peak": "Johannesburg Mountain",
+  "area_id": "wa_johannesburg_mountain",
+  "path": "usa.washington.wa_northwest.wa_hwy20_ncnp.wa_north_cascades.wa_north_cascades_core.wa_johannesburg_mountain",
+  "trip_plan": {
+   "totalNote": null,
+   "days": [
+    {
+     "n": 1,
+     "title": "Day 1",
+     "objective": "",
+     "miles": null,
+     "gainFt": null,
+     "note": "Approach from the Cascade Pass trailhead to a high bivy near the base of the Northeast Face/C-J couloir"
+    },
+    {
+     "n": 2,
+     "title": "Day 2",
+     "objective": "",
+     "miles": null,
+     "gainFt": null,
+     "note": "Climb the route to the summit, then descend via the East Ridge/C-J col and Doug's Direct back to the car (a long day; some parties add a 3rd day)."
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Johannesburg Camp",
+    "elev_ft": 3400,
+    "type": "camp",
+    "role": "main",
+    "notes": "A walk-in camp a short, steep and often slick few minutes above the Cascade Pass trailhead at the end of the road — not a drive-up campground, you carry everything in. It is the practical staging point for the Cascade-Johannesburg Couloir, Cascade Peak, and any pre-dawn start where you want to be at the road end the ni…"
+   }
+  ],
+  "campsite_pins": [
+   {
+    "name": "Johannesburg Camp",
+    "elev": 3400,
+    "distMi": null
+   }
+  ],
+  "from_batch": "b15",
+  "refused_because": "low confidence",
+  "previous_research": {
+   "id": "wa_northeast_ridge_1963_route",
+   "camps": [
+    {
+     "name": "Johannesburg Camp",
+     "nights": [
+      1
+     ],
+     "role": "main",
+     "why": "The only camp on file, a walk-in site near the trailhead. It gives a dawn start at the base but no higher bivy for this line; where parties sleep on the ridge itself is not documented."
+    }
+   ],
+   "new_camps": [],
+   "confidence": "low",
+   "plan_conflict": "The plan gives no day detail and a 1963-line party has been reported doing it in about 16 hours round trip; a real overnight spot on the ridge was not found, so the trailhead camp stays as the only option.",
+   "sources": [
+    "https://stephabegg.com/?p=8692",
+    "https://www.alpineinstitute.com/route-profile-ne-buttress-johannesburg-mountain-v-5-8-ai-2/",
+    "https://sverdina.com/Johannesburg1.asp",
+    "https://cascadeclimbers.com/forum/topic/62046-tr-johannesburg-mountain-cj-couloir-972008",
+    "https://publications.americanalpineclub.org/articles/13201216385"
+   ]
+  }
+ },
+ {
+  "id": "wa_mount_buckindy_scramble",
+  "name": "Buckindy Glacier/Scramble Route",
+  "discipline": "mountaineering",
+  "peak": "Mount Buckindy",
+  "area_id": "wa_mount_buckindy",
+  "path": "usa.washington.wa_northwest.wa_hwy20_ncnp.wa_north_cascades.wa_north_cascades_core.wa_mount_buckindy",
+  "trip_plan": {
+   "totalNote": "A remote multi-day trip: two or three days of mostly off-trail travel each way over Kindy Ridge and the Buckindy high country, with one roped glacier-and-Class-4 summit day from a camp below the north side.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Approach over Kindy Ridge toward the head of Kindy Creek",
+     "objective": "Reach a camp at the head of Kindy Creek below Buckindy's north side (two or three days from the car)",
+     "miles": null,
+     "gainFt": null,
+     "note": "From the FR-1570 pullout walk the brushy, washed-out roadbed almost 2 miles to its end, then climb the steep climbers' trail more than two miles through old growth onto Kindy Ridge and the saddle south of Point 5116, near 4,800 ft. From there the way to Buckindy goes south off trail through the Buckindy Range high coun…"
+    },
+    {
+     "n": 2,
+     "title": "Summit day via the Kindy/Goat Creek Glacier",
+     "objective": "Climb Buckindy's north side glacier and Class 4 summit block",
+     "miles": 3,
+     "gainFt": 2200,
+     "note": "An early roped start across the glacier to dodge crevasses in firm morning snow, then a push to the base of the summit block for Class 4 scrambling to the top. The return reverses the same line, staying roped through the crevassed sections back to camp."
+    },
+    {
+     "n": 3,
+     "title": "Hike out over Kindy Ridge",
+     "objective": "Return over Kindy Ridge to the car",
+     "miles": null,
+     "gainFt": 0,
+     "note": "Break camp and reverse the approach: back north through the high country to the Kindy Ridge saddle, then down the steep climbers' trail and the brushy roadbed to the FR-1570 pullout. Like the way in, this usually takes more than one day."
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Head of Kindy Creek and the Kindy-Buck Creek pass",
+    "elev_ft": null,
+    "type": "bivy",
+    "role": "main",
+    "notes": "The ground that puts Mount Buckindy in range. Buckindy's standard route is a class 4 scramble on the north slopes, with glaciers on the north and east flanks, and the parties who climb it are camping either in the basins at the head of Kindy Creek or at the pass between the Kindy and Buck Creek drainages. Coming in fro…"
+   },
+   {
+    "name": "Horse Lake saddle camp",
+    "elev_ft": 5360,
+    "type": "camp",
+    "role": "main",
+    "notes": "First-night camp on the Green Mountain approach, past the south shoulder of Green Mountain. Beyond it the traverse toward Misch and Buckindy is slow sidehill travel."
+   }
+  ],
+  "campsite_pins": [
+   {
+    "name": "Kindy Creek Cirque",
+    "elev": 5100,
+    "distMi": null
+   }
+  ],
+  "from_batch": "b15",
+  "refused_because": "low confidence",
+  "previous_research": {
+   "id": "wa_mount_buckindy_scramble",
+   "camps": [
+    {
+     "name": "Head of Kindy Creek and the Kindy-Buck Creek pass",
+     "nights": [
+      1,
+      2
+     ],
+     "role": "main",
+     "why": "The camps that put Buckindy in range: basins near the head of Kindy Creek or the pass beside it. Sleeping here makes the glacier summit day a round trip from the tent."
+    },
+    {
+     "name": "Horse Lake saddle camp",
+     "nights": [],
+     "role": "route",
+     "why": "The first night's camp on the Green Mountain approach, with slow sidehill travel ahead. It is a stop on the long walk in, not a base for the summit day."
+    }
+   ],
+   "new_camps": [],
+   "confidence": "low",
+   "plan_conflict": "The plan says the approach alone takes two or three days, so the real trip is longer than three days and a night at Horse Lake saddle or similar comes before the Kindy Creek camps.",
+   "sources": [
+    "https://www.summitpost.org/route/333954/approach-from-green-mountain.html",
+    "https://climberkyle.com/2026/06/19/buckindy-high-route/"
+   ]
+  }
+ },
+ {
+  "id": "wa_mount_chaval_scramble",
+  "name": "West Route",
+  "discipline": "scrambling",
+  "peak": "Mount Chaval",
+  "area_id": "wa_mount_chaval",
+  "path": "usa.washington.wa_northwest.wa_hwy20_ncnp.wa_north_cascades.wa_north_cascades_core.wa_mount_chaval",
+  "trip_plan": {
+   "totalNote": "A standard 2-day trip: ~10 miles and 4,600 ft round trip, but the pathless, brushy approach is the real crux, which is why most parties camp at ~6,100 ft rather than push it car-to-car. Very strong, route-savvy parties have compressed it into a single long day (14-16+ hrs) via the shorter western approach, but that is the exception, not the norm.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Approach to high camp",
+     "objective": "Reach camp on the heather bench below the west face (~6,100 ft)",
+     "miles": 5,
+     "gainFt": 3900,
+     "note": "Drive Highway 530 to Illabot Creek Road (FR-16) and park near the Arrow Creek switchback (~2,220 ft). The approach is notoriously pathless and arduous — old logging road, then a rough fisherman's trail through brush and forest, then steep sidehilling through gullies and heather to a bench camp below the west face/west …"
+    },
+    {
+     "n": 2,
+     "title": "Summit push and hike out",
+     "objective": "Climb the west-face/west-ridge ramp to the 7,127 ft summit, then descend all the way to the car",
+     "miles": 5.6,
+     "gainFt": 1100,
+     "note": "From camp, ascend heather benches to the west ridge ramp and follow easy but exposed Class 2-3 terrain (some solid low-angle rock and loose sections) to the summit. Reverse the route back through camp, break camp, and continue the long descent out to the trailhead the same day."
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Jug Lake",
+    "elev_ft": 3911,
+    "type": "camp",
+    "role": "main",
+    "notes": "The base for Mount Chaval, which sits immediately southwest of Snowking and has three standard approaches and one longer non-standard one, none of them simple and all of them brushy. This is the most used of them. Park at the prominent switchback where Arrow Creek meets Illabot Creek Road at about 2,220 feet, roughly 1…"
+   }
+  ],
+  "campsite_pins": [],
+  "from_batch": "b15",
+  "refused_because": "low confidence",
+  "previous_research": {
+   "id": "wa_mount_chaval_scramble",
+   "camps": [
+    {
+     "name": "Jug Lake",
+     "nights": [
+      1
+     ],
+     "role": "main",
+     "why": "The most-used base on this side, but the plan's real camp is a heather bench near 6,100 ft above it. Jug Lake is lower and brushy, so the summit day from here is much longer."
+    }
+   ],
+   "new_camps": [],
+   "confidence": "low",
+   "plan_conflict": "The plan puts night 1 at a heather bench near 6,100 ft below the west face, not at Jug Lake (3,911 ft); only camping near 6,000 ft was found for the west side, with no named site or measured elevation.",
+   "sources": [
+    "https://watrailblazers.org/history/vignettes/chaval.php",
+    "https://turns-all-year.com/trip-reports/mt-chaval-west-face-may-2-2015"
+   ]
+  }
+ },
+ {
+  "id": "wa_goode_mountain_megalodon_ridge",
+  "name": "Megalodon Ridge",
+  "discipline": "alpine",
+  "peak": "Mount Goode",
+  "area_id": "wa_mount_goode",
+  "path": "usa.washington.wa_northwest.wa_hwy20_ncnp.wa_north_cascades.wa_north_cascades_core.wa_mount_goode",
+  "trip_plan": {
+   "totalNote": "A serious 4-day, grade IV+ 5.10 alpine outing: a brushy approach, an 11-12 hour technical ridge climb to a summit bivy, then a long multi-day descent and hike-out via the Southwest Couloir — roughly 35 mi and 7,500 ft of gain round trip.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Approach to high camp/bivy",
+     "objective": "Reach a bivy below the ridge",
+     "miles": 13,
+     "gainFt": 4700,
+     "note": "PCT south from Bridge Creek trailhead, up North Fork Bridge Creek, then a brushy, off-trail approach (the first-ascent party logged roughly 3,000 ft of bushwhacking) to a camp near the Goode Glacier below the ridge's start."
+    },
+    {
+     "n": 2,
+     "title": "Climb Megalodon Ridge to a summit bivy",
+     "objective": "Climb the full ridge to the summit",
+     "miles": 2,
+     "gainFt": 2800,
+     "note": "A long, sustained alpine rock climb along the crest with 4,000-5,000 ft of exposure on either side; simul-climbing up to 5.8 with harder pitches (up to 5.10) higher on the ridge. The first-ascent party spent about 11-12 hours climbing before bivying on the summit, the highest point in North Cascades National Park."
+    },
+    {
+     "n": 3,
+     "title": "Descend toward Park Creek",
+     "objective": "Rappel/downclimb the Southwest Couloir toward the valley",
+     "miles": 10,
+     "gainFt": 0,
+     "note": "Descend the standard Southwest Couloir descent line, then keep losing elevation into the Park Creek drainage rather than returning to the Day 1 camp. Expect several rappels and tired legs after the previous day's long climb."
+    },
+    {
+     "n": 4,
+     "title": "Hike out",
+     "objective": "Return to the Bridge Creek trailhead",
+     "miles": 10,
+     "gainFt": 0,
+     "note": "Hike out the Park Creek Trail, then walk back up Bridge Creek on the PCT to the car on Highway 20 (or meet a pre-arranged shuttle)."
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Bench bivy below Megalodon Ridge",
+    "elev_ft": null,
+    "type": "bivy",
+    "role": "main",
+    "notes": "An exposed bench after a short fifth-class step at the toe of the ridge, below the technical climbing. More bivy ledges exist after the southeast peak and on the summit."
+   },
+   {
+    "name": "Fireweed Camp, Bridge Creek / PCT",
+    "elev_ft": null,
+    "type": "camp",
+    "role": "route",
+    "notes": "A Bridge Creek corridor camp on the PCT well short of the North Fork junction, near the Twisp Pass trail area. It is only useful to a Goode party as an overflow choice when the North Fork camps are booked out, which happens in peak season because so few sites serve this valley. Camping here adds miles to an already lon…"
+   },
+   {
+    "name": "North Fork Camp, Bridge Creek / PCT junction",
+    "elev_ft": 2800,
+    "type": "camp",
+    "role": "route",
+    "notes": "This sits right at the junction where the PCT leaves Bridge Creek for the North Fork, roughly ten miles in from the SR 20 trailhead, so it is the natural first-night stop for a party that started late. It is a long way below the climb, which means a very big second day to reach the glacier bivies. Its value is logistic…"
+   },
+   {
+    "name": "Walker Park Camp",
+    "elev_ft": 3086,
+    "type": "camp",
+    "role": "route",
+    "notes": "Roughly two miles up the North Fork trail from the junction, this is the first camp that meaningfully shortens the walk to the Goode Glacier drainage. The tread to here is still ordinary maintained trail, so it is an easy target even arriving in the dark. Parties usually treat it as a place to shed weight rather than a…"
+   }
+  ],
+  "campsite_pins": [
+   {
+    "name": "Walker Park Camp",
+    "elev": 3086,
+    "distMi": null
+   }
+  ],
+  "from_batch": "b16",
+  "refused_because": "night 3 has 0 main camps",
+  "previous_research": {
+   "id": "wa_goode_mountain_megalodon_ridge",
+   "camps": [
+    {
+     "name": "Bench bivy below Megalodon Ridge",
+     "nights": [
+      1
+     ],
+     "role": "main",
+     "why": "The one flat-ish shelf below the technical climbing, reached after a short fifth-class step, so the full ridge starts fresh the next morning. Exposed, with little room."
+    },
+    {
+     "name": "Fireweed Camp, Bridge Creek / PCT",
+     "nights": [],
+     "role": "route",
+     "why": "Only an overflow choice when the North Fork camps are full; it leaves a far bigger day to the ridge. Not slept at on a normal trip."
+    },
+    {
+     "name": "North Fork Camp, Bridge Creek / PCT junction",
+     "nights": [],
+     "role": "route",
+     "why": "Ten miles in and far below the ridge, so it makes the second approach day huge. A fallback for a late start, not the normal night."
+    },
+    {
+     "name": "Walker Park Camp",
+     "nights": [],
+     "role": "route",
+     "why": "The first camp that shortens the walk to the Goode Glacier drainage, but the brushy off-trail miles still lie ahead. A late-start fallback only."
+    }
+   ],
+   "new_camps": [
+    {
+     "name": "Summit bivy, Mount Goode",
+     "elev_ft": 9220,
+     "type": "bivy",
+     "role": "main",
+     "nights": [
+      2
+     ],
+     "why": "After 11 to 12 hours on the ridge, parties top out late and sleep on the summit, then descend the Southwest Couloir next day. Dry and exposed, but the climb ends here.",
+     "water": "",
+     "capacity": "",
+     "permit": "A bivy permit is required for the Goode backcountry zone, picked up within 24 hours of the climb.",
+     "notes": "The ridge party finishes at the summit and bivouacs there. Descent the next day is via Black Tooth Notch and the Southwest Couloir toward Park Creek."
+    }
+   ],
+   "confidence": "medium",
+   "plan_conflict": "The plan has four days but no camp for night 3: parties report an improvised bivy partway down toward Park Creek (or a hike straight out), and no established camp with a known elevation exists there, so night 3 has no main camp.",
+   "sources": [
+    "https://stephabegg.com/?p=8941",
+    "https://publications.americanalpineclub.org/articles/12200813101/North-America-United-States-Goode-Mountain-Megalodon-east-Ridge",
+    "https://spokalpine.com/2022/09/07/mt-goode-northeast-buttress-iv-5-5/"
+   ]
+  }
+ },
+ {
+  "id": "wa_mount_goode_northeast_buttress",
+  "name": "Northeast Buttress",
+  "discipline": "alpine",
+  "peak": "Mount Goode",
+  "area_id": "wa_mount_goode",
+  "path": "usa.washington.wa_northwest.wa_hwy20_ncnp.wa_north_cascades.wa_north_cascades_core.wa_mount_goode",
+  "trip_plan": {
+   "totalNote": "A standard 4-day trip (~38 mi RT, ~7,500 ft of climbing gain) for most parties, about 30 hours on the move: roughly 8.5 hours in to high camp, 9 hours from camp up the buttress to the summit, and 12.5 hours from the summit back to the car over the last two days. Very fit, fast teams sometimes cover the whole descent and walk-out in one long third day, making it a 3-day trip.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Approach to high camp",
+     "objective": "Reach camp near the toe of the Goode Glacier",
+     "miles": 15.5,
+     "gainFt": 4700,
+     "note": "PCT south from the Bridge Creek trailhead, then up North Fork Bridge Creek (ford required), finishing with brushy/alder off-trail travel to a camp near the glacier toe (~6,400-6,800 ft). Expect mosquitoes and a slow final half-mile."
+    },
+    {
+     "n": 2,
+     "title": "Climb the Northeast Buttress to a summit bivy",
+     "objective": "Summit via the buttress, bivy on top",
+     "miles": 2.5,
+     "gainFt": 2800,
+     "note": "Cross the glacier and deal with the moat/bergschrund onto the buttress, then simul-climb the lower 4th-class crest before roping up for several pitches of low 5th class (5.4-5.6) to the summit. Most parties reach the top roughly 9 hours after leaving camp and bivy there."
+    },
+    {
+     "n": 3,
+     "title": "Descend toward Bridge Creek",
+     "objective": "Down-climb/rappel the Southwest Couloir toward the valley",
+     "miles": 10,
+     "gainFt": 0,
+     "note": "Rappel and downclimb the Southwest Couloir/south side, then continue losing elevation toward the Bridge Creek drainage. A long day with multiple rappels; parties that don't move efficiently risk getting benighted on this leg."
+    },
+    {
+     "n": 4,
+     "title": "Hike out",
+     "objective": "Return to the Bridge Creek trailhead",
+     "miles": 10,
+     "gainFt": 0,
+     "note": "Finish descending to the valley floor and follow the North Fork Bridge Creek Trail and PCT back to Highway 20."
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Valley bivy below the buttress",
+    "elev_ft": 5400,
+    "type": "bivy",
+    "role": "main",
+    "notes": "The classic first night, and it is earned: parties commonly take about eight hours from the trailhead, down the PCT to the North Fork Bridge Creek trail, then up past Grizzly Creek into slabs, brush and talus. The usual log over Grizzly Creek has broken and a replacement has been found roughly 200 ft south of the trail…"
+   },
+   {
+    "name": "Goode Glacier moraine",
+    "elev_ft": null,
+    "type": "camp",
+    "role": "main",
+    "notes": "The higher option, on the lateral moraine looking across at the seracs of the Goode Glacier, variously reported between about 6,400 and 7,000 ft. It shortens the climbing day considerably over the valley bivy and puts you in wildflower meadow with a view, at the cost of carrying the load higher on approach day."
+   },
+   {
+    "name": "Summit bivy",
+    "elev_ft": null,
+    "type": "bivy",
+    "role": "route",
+    "notes": "Parties who start from the valley often finish the buttress too late to descend and sleep on the summit itself. There is also a grassy ledge reported around 8,500 ft on the upper route that one party found softer and more comfortable than the top. Both are dry, exposed perches, so they only work in settled weather."
+   }
+  ],
+  "campsite_pins": [
+   {
+    "name": "High Camp",
+    "elev": 6600,
+    "distMi": 15
+   }
+  ],
+  "from_batch": "b16",
+  "refused_because": "night 3 has 0 main camps",
+  "previous_research": {
+   "id": "wa_mount_goode_northeast_buttress",
+   "camps": [
+    {
+     "name": "Valley bivy below the buttress",
+     "nights": [
+      1
+     ],
+     "role": "main",
+     "why": "The classic first night, about 5,200 to 5,600 ft below the buttress after a long day in. Water is at hand and the climb begins a short walk away."
+    },
+    {
+     "name": "Goode Glacier moraine",
+     "nights": [
+      1
+     ],
+     "role": "route",
+     "why": "A higher option on the moraine that shortens the climbing day, but the carry up is rough and the ground is limited. Choose it if you want the earliest summit."
+    },
+    {
+     "name": "Summit bivy",
+     "nights": [
+      2
+     ],
+     "role": "main",
+     "why": "The buttress takes about nine hours, so most parties finish late and sleep on top, then rappel and descend the Southwest Couloir next day. Dry and exposed."
+    }
+   ],
+   "new_camps": [],
+   "confidence": "medium",
+   "plan_conflict": "The file lists the moraine as a second main for night 1 and the summit bivy as a route camp; the plan has four days but no camp for night 3, since the descent toward Park Creek usually ends in an improvised bivy or a hike straight out, so night 3 has no main camp.",
+   "sources": [
+    "https://stephabegg.com/?p=8941",
+    "https://spokalpine.com/2022/09/07/mt-goode-northeast-buttress-iv-5-5/",
+    "https://www.whereiskylemiller.com/highway-20/goode-mountain-mount-logan/"
+   ]
+  }
+ },
+ {
+  "id": "wa_primus_peak_south_ridge",
+  "name": "South Ridge / McAllister Glacier",
+  "discipline": "mountaineering",
+  "peak": "Primus Peak",
+  "area_id": "wa_primus_peak",
+  "path": "usa.washington.wa_northwest.wa_hwy20_ncnp.wa_north_cascades.wa_north_cascades_core.wa_primus_peak",
+  "trip_plan": {
+   "totalNote": "A remote 3-4 day glacier backpack from the Eldorado side: roughly 20 miles round trip with on the order of 8,000 ft of cumulative gain; most parties budget a buffer day for weather and glacier routefinding.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Approach to Eldorado high camp",
+     "objective": "Reach a treeline/high camp near or above the Eldorado Glacier",
+     "miles": 7,
+     "gainFt": 4400,
+     "note": "Standard Eldorado Trailhead approach: trail through forest then boot track up the Eldorado Glacier's lower slopes to a campsite near or above treeline, carrying full overnight glacier gear."
+    },
+    {
+     "n": 2,
+     "title": "Cross Eldorado/Inspiration Glaciers to Klawatti Col",
+     "objective": "Camp near Klawatti Col (~7,500-7,800 ft)",
+     "miles": 3.5,
+     "gainFt": 2000,
+     "note": "Rope up for glacier travel across the Eldorado and Inspiration Glaciers to Klawatti Col, weaving around crevasses; camp on rock or snow near the col."
+    },
+    {
+     "n": 3,
+     "title": "Traverse to Primus and climb the south side",
+     "objective": "Summit Primus Peak (8,508 ft) via the Class 2-4 south side",
+     "miles": 3,
+     "gainFt": 1400,
+     "note": "Drop packs or carry light gear across the North Klawatti/McAllister Glacier to the Primus massif, then pick a Class 2-4 line up the south side to the summit before returning to the col camp."
+    },
+    {
+     "n": 4,
+     "title": "Return to Eldorado Trailhead",
+     "objective": "Hike/glacier-travel out to the car",
+     "miles": 6.5,
+     "gainFt": 200,
+     "note": "Reverse the Inspiration/Eldorado Glacier crossing and descend the boot track and trail back to the Eldorado Trailhead; a long day given the elevation lost."
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Klawatti Col camp, Eldorado ice-cap traverse approach",
+    "elev_ft": 7800,
+    "type": "camp",
+    "role": "main",
+    "notes": "This is the camp for this route, reached from the Eldorado side across the ice. It is a serious undertaking: full glacier travel with crevasse rescue capability, several nights on snow, and a committing exit. Camps are on rock islands surrounded by ice, so they are windy and there is no shelter."
+   }
+  ],
+  "campsite_pins": [],
+  "from_batch": "b16",
+  "refused_because": "low confidence",
+  "previous_research": {
+   "id": "wa_primus_peak_south_ridge",
+   "camps": [
+    {
+     "name": "Klawatti Col camp, Eldorado ice-cap traverse approach",
+     "nights": [
+      2,
+      3
+     ],
+     "role": "main",
+     "why": "The camp for this route, on rock islands in the ice near 7,800 ft. Windy and shelterless, but Primus is a short ski or glacier walk away so parties base here."
+    }
+   ],
+   "new_camps": [
+    {
+     "name": "Inspiration Glacier camp near the rocks",
+     "elev_ft": 7500,
+     "type": "camp",
+     "role": "main",
+     "nights": [
+      1
+     ],
+     "why": "The flat spot on the glacier by the rocks is where parties heading for the col spend the first night, cutting the next day's glacier travel. Cold and exposed, with melt water only.",
+     "water": "",
+     "capacity": "",
+     "permit": "",
+     "notes": "Good tent sites are near the rocks on the broad flat part of the Inspiration Glacier at about 7,500 ft. Treeline camps lower on the Eldorado Glacier sit around 6,100 ft."
+    }
+   ],
+   "confidence": "low",
+   "plan_conflict": "The plan puts night 1 at an Eldorado treeline camp, but the one researched camp on the Eldorado Glacier is at about 7,500 ft, and no report confirms a night on this exact south-ridge variant; night 3 is assumed back at the col.",
+   "sources": [
+    "https://turns-all-year.com/trip-reports/june-6-8-2003-primus-peak",
+    "https://lemkeclimbs.com/?p=2682",
+    "https://turns-all-year.com/trip-reports/may-22-23-2009-forbidden-tour-eldo-and-primus"
+   ]
+  }
+ },
+ {
+  "id": "wa_storm_king_southwest_scramble",
+  "name": "Southwest Scramble",
+  "discipline": "scrambling",
+  "peak": "Storm King",
+  "area_id": "wa_storm_king",
+  "path": "usa.washington.wa_northwest.wa_hwy20_ncnp.wa_north_cascades.wa_north_cascades_core.wa_storm_king",
+  "trip_plan": {
+   "totalNote": "A 3-day, roughly 33-mile round-trip trip: two days of approach (boat/shuttle plus a strenuous climb to a ~7,400 ft high camp below Goode), a technical Class 3-4 scramble to the 8,565 ft summit, and a long descent all the way to the trailhead on day 3. Very fit, fast parties occasionally compress this to 2 days; less aggressive parties sometimes split the hike-out into a 4th day.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Boat + hike-in to Two Mile Camp",
+     "objective": "Reach Two Mile Camp on the Park Creek Pass Trail",
+     "miles": 9.5,
+     "gainFt": 1400,
+     "note": "Take the Lady of the Lake ferry (or Chelan Seaplanes) up Lake Chelan to Stehekin Landing, then the NPS shuttle bus 11 miles to High Bridge (not hiked). From High Bridge, follow the road/Old Wagon Trail bypass to Bridge Creek Camp, continue to Park Creek campground, then up the Park Creek Pass Trail to Two Mile Camp (~3…"
+    },
+    {
+     "n": 2,
+     "title": "Push to high basin camp below Storm King",
+     "objective": "Establish high camp in the basin below Goode/Storm King (~7,400-7,500 ft)",
+     "miles": 5,
+     "gainFt": 4100,
+     "note": "Continue up the Park Creek Pass Trail about 2 miles, then leave the trail around 4,100 ft at a large washout and climb diagonally climber's-left through heather, meadows and game trails. Terrain steepens and turns rocky near 6,500 ft; cairns then mark a Class 2-3 climber's trail up to the basin below Goode at 7,400 ft,…"
+    },
+    {
+     "n": 3,
+     "title": "Summit day and full descent to trailhead",
+     "objective": "Climb Storm King, then break camp and hike all the way out",
+     "miles": 19,
+     "gainFt": 1200,
+     "note": "From high camp, cross the cirque beneath the west and east towers on very loose talus, staying right of the horn-shaped-rock gully at ~8,000 ft for the correct gully. A short Class 3 scramble to a notch, a 15 ft crack (Class 4/low 5th), and a final Class 3 pitch reach the summit. Fit parties reverse the route back to c…"
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Rib camp below Storm King/Goode basin",
+    "elev_ft": null,
+    "type": "camp",
+    "role": "main",
+    "notes": "Flat, grassy camp on a small NE/SW-trending rib just south of Storm King, with a nearby water source. It is reached by a mostly level traverse from the basin below Goode."
+   },
+   {
+    "name": "Neve Camp",
+    "elev_ft": 1350,
+    "type": "camp",
+    "role": "route",
+    "notes": "Under two miles from the Colonial Creek trailhead on flat valley trail, this is the camp that exists to absorb a late arrival rather than to stage a climb. Parties driving over from the west side after work can sleep here and still be at Junction by early afternoon the next day. It is deep forest with no views, and the…"
+   },
+   {
+    "name": "Junction Camp",
+    "elev_ft": 3200,
+    "type": "camp",
+    "role": "route",
+    "notes": "About ten miles in, this is where the trail finally gives something back after a long forest walk, with the Boston Glacier visible through a gap in the trees. It is the natural first or second night for parties heading to Mount Logan, and the standard stopping point on the way back out from a high camp. The trail to Fi…"
+   },
+   {
+    "name": "Skagit Queen Camp",
+    "elev_ft": 3093,
+    "type": "camp",
+    "role": "route",
+    "notes": "Roughly thirteen miles up the valley, reached after a steep mile of climbing through silver fir, and the last creekside camp before the trail commits to the headwaters. Remains of early twentieth-century mining work sit just beyond the camp. The bridge over Thunder Creek in this stretch was rebuilt in recent years, but…"
+   },
+   {
+    "name": "Thunder Basin Hiker Camp",
+    "elev_ft": 5108,
+    "type": "camp",
+    "role": "route",
+    "notes": "The staging camp for Booker, Storm King and Buckner from the west, and for parties continuing over the pass toward Stehekin. It sits in meadows and small trees with roughly a thousand feet of climbing still to reach the pass, and it is reliably buggy in warm weather. Because the pass is closed to camping, groups wantin…"
+   },
+   {
+    "name": "Five Mile Camp, Park Creek trail",
+    "elev_ft": 3921,
+    "type": "camp",
+    "role": "route",
+    "notes": "The eastern counterpart to Thunder Basin: the last practical night before crossing Park Creek Pass from the Stehekin side, and the staging point for Buckner and Booker approached from the east. The trail above climbs through hanging meadows to the pass with good views of Goode, Buckner and Booker on the way. Coming in …"
+   }
+  ],
+  "campsite_pins": [
+   {
+    "name": "Neve Camp",
+    "elev": 1350,
+    "distMi": null
+   },
+   {
+    "name": "Skagit Queen Camp",
+    "elev": 3089,
+    "distMi": 13.8
+   },
+   {
+    "name": "Junction Camp",
+    "elev": 3200,
+    "distMi": null
+   },
+   {
+    "name": "Five Mile Camp, Park Creek trail",
+    "elev": 3921,
+    "distMi": null
+   },
+   {
+    "name": "Thunder Basin Hiker Camp",
+    "elev": 5108,
+    "distMi": null
+   }
+  ],
+  "from_batch": "b17",
+  "refused_because": "low confidence",
+  "previous_research": {
+   "id": "wa_storm_king_southwest_scramble",
+   "camps": [
+    {
+     "name": "Rib camp below Storm King/Goode basin",
+     "nights": [
+      2
+     ],
+     "role": "main",
+     "why": "Flat grassy ground near 7,400 ft with water close by. It sits right under the summit cirque, so the climb is one day from the tent before the long walk out."
+    },
+    {
+     "name": "Neve Camp",
+     "nights": [],
+     "role": "route",
+     "why": "A low forest camp at the Thunder Creek end of the valley for the west-side approach. It is not on the Stehekin approach this plan uses."
+    },
+    {
+     "name": "Junction Camp",
+     "nights": [],
+     "role": "route",
+     "why": "A trail camp on the Thunder Creek side, far from this peak's Stehekin approach. It matters only for a party coming over Park Creek Pass from the west."
+    },
+    {
+     "name": "Skagit Queen Camp",
+     "nights": [],
+     "role": "route",
+     "why": "The last creekside camp on the Thunder Creek side before the headwaters. It is used when approaching from the west, not on the Stehekin plan."
+    },
+    {
+     "name": "Thunder Basin Hiker Camp",
+     "nights": [],
+     "role": "route",
+     "why": "West-side staging camp below Park Creek Pass. A party arriving from Thunder Creek sleeps here instead of climbing from the Stehekin side."
+    },
+    {
+     "name": "Five Mile Camp, Park Creek trail",
+     "nights": [],
+     "role": "route",
+     "why": "A trail camp higher up the Park Creek valley than Two Mile Camp. A party wanting a shorter second day can push this far on day one, but it is not the usual stop."
+    }
+   ],
+   "new_camps": [
+    {
+     "name": "Two Mile Camp",
+     "elev_ft": null,
+     "type": "camp",
+     "role": "main",
+     "nights": [
+      1
+     ],
+     "why": "A small trail camp just after the Park Creek log crossing, roughly two trail miles up the valley. It is where a boat-and-bus day ends before the steep climb to high camp.",
+     "water": "",
+     "capacity": "Small; it does not hold larger groups.",
+     "permit": "A backcountry permit is required for overnight stays.",
+     "notes": "No elevation found in any source read; the pass above it is about 6,000 ft."
+    }
+   ],
+   "confidence": "low",
+   "plan_conflict": "The plan's night-1 camp, Two Mile Camp, is not among the camps on file, which listed only the night-2 rib camp and west-side camps. Night 1 could not be confirmed from a trip report.",
+   "sources": [
+    "https://stephabegg.com/?p=8941",
+    "https://www.countryhighpoints.com/mt-storm-king/",
+    "https://www.nps.gov/noca/planyourvisit/thunder-creek-trail.htm"
+   ]
+  }
+ },
+ {
+  "id": "wa_trapper_mountain_south_slopes",
+  "name": "South Slopes",
+  "discipline": "scrambling",
+  "peak": "Trapper Mountain",
+  "area_id": "wa_trapper_mountain",
+  "path": "usa.washington.wa_northwest.wa_hwy20_ncnp.wa_north_cascades.wa_north_cascades_core.wa_trapper_mountain",
+  "trip_plan": {
+   "totalNote": "A remote 3-day trip (~19 mi, ~6,500 ft round-trip gain) built around a genuine off-trail bushwhack to Trapper Lake — not a car-to-car outing.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Approach via Cascade Pass to Trapper Lake camp",
+     "objective": "Reach a basin camp near Trapper Lake",
+     "miles": 7,
+     "gainFt": 1800,
+     "note": "Start on the maintained Cascade Pass Trail, then continue past the pass toward Pelton Basin before dropping off-trail into the Trapper Lake basin. The final descent to the lake is an unmaintained fisherman's path that loses itself quickly and turns into a steep, brushy bushwhack, so budget extra time and daylight for r…"
+    },
+    {
+     "n": 2,
+     "title": "South Slopes summit push",
+     "objective": "Climb Trapper Mountain (7,530 ft) via the South Slopes and return to camp",
+     "miles": 4,
+     "gainFt": 3400,
+     "note": "From the lake camp, work up open slopes and heather/talus benches on the mountain's south side to the summit, then reverse the same line. This is the standard non-technical line up the peak (no pitches), but expect loose rock and possible lingering snow patches depending on season."
+    },
+    {
+     "n": 3,
+     "title": "Hike out",
+     "objective": "Return to the Cascade River Road trailhead",
+     "miles": 8,
+     "gainFt": 1250,
+     "note": "Reverse the bushwhack back up out of the Trapper Lake basin to the Pelton Basin area, rejoin the Cascade Pass Trail, and hike out over the pass to the trailhead."
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Trapper Lake",
+    "elev_ft": null,
+    "type": "camp",
+    "role": "main",
+    "notes": ""
+   },
+   {
+    "name": "Cottonwood Camp",
+    "elev_ft": 2776,
+    "type": "camp",
+    "role": "route",
+    "notes": "The eastern gateway to the basin, at the end of what used to be the upper Stehekin Valley road. It has a privy, fire rings, picnic table and bear boxes, though the boxes are set well back from the cooking area. Access is the thing to plan around: the road washed out for the last time in 2003 and the Stehekin shuttle no…"
+   }
+  ],
+  "campsite_pins": [
+   {
+    "name": "Cottonwood Camp",
+    "elev": 2776,
+    "distMi": null
+   },
+   {
+    "name": "Trapper Lake",
+    "elev": 4284,
+    "distMi": 7.5
+   }
+  ],
+  "from_batch": "b17",
+  "refused_because": "low confidence",
+  "previous_research": {
+   "id": "wa_trapper_mountain_south_slopes",
+   "camps": [
+    {
+     "name": "Trapper Lake",
+     "nights": [
+      1,
+      2
+     ],
+     "role": "main",
+     "why": "Lake water and the base of the south slopes make this the natural tent site. The cost is a brushy off-trail descent, so most of day one goes to reaching it."
+    },
+    {
+     "name": "Cottonwood Camp",
+     "nights": [],
+     "role": "route",
+     "why": "The camp at the end of the old upper Stehekin road, on the east side. It is for a different approach and is not slept at on the Cascade Pass plan."
+    }
+   ],
+   "new_camps": [],
+   "confidence": "low",
+   "plan_conflict": null,
+   "sources": [
+    "https://adminonly.wta.org/go-hiking/hikes/trapper-lake",
+    "https://www.wta.org/go-hiking/trip-reports/trip_report.2024-03-11.2795822533",
+    "https://turns-all-year.com/trip-reports/trapper-mountain-north-couloir"
+   ]
+  }
+ },
+ {
+  "id": "wa_davis_peak_nc_north_face",
+  "name": "Northeast Face Couloir",
+  "discipline": "alpine",
+  "peak": "Davis Peak",
+  "area_id": "wa_davis_peak_nc",
+  "path": "usa.washington.wa_northwest.wa_hwy20_ncnp.wa_north_cascades.wa_picket_range.wa_davis_peak_nc",
+  "trip_plan": {
+   "totalNote": "Day one bushwhacks from Diablo up the Stetattle Creek side to a bivy at the toe of the glacier; day two climbs the north face couloir and descends 6,000 ft down the south side to the Gorge Creek bridge.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Stetattle Creek to the glacier toe bivy",
+     "objective": "Bivouac at the toe of the glacier",
+     "miles": null,
+     "gainFt": null,
+     "note": "Leave at first light, hike the Stetattle Creek trail about 2 miles, and drop 200 ft to ford the creek opposite Davis. Bushwhack and scramble the 3rd/4th-class rib, roping up for the slabby sections, through slide alder to a bivouac on flat snow at the toe of the glacier at 4,000 ft, which has running water. Expect to a…"
+    },
+    {
+     "n": 2,
+     "title": "Climb the face and descend the south side",
+     "objective": "Climb the north face and descend to SR 20",
+     "miles": null,
+     "gainFt": 3050,
+     "note": "Go up the glacier at first light, gear up at the bergschrund, and climb the lower band, the snowfield, the crux pitches and the upper couloir to the summit ridge near 6,700 ft; tag the summit if there is time. Rappel from the top of the couloir onto the southeast ridge and commit to the full 6,000 ft south-side descent…"
+    }
+   ]
+  },
+  "camps_on_file": [],
+  "campsite_pins": [],
+  "from_batch": "b17",
+  "refused_because": "low confidence",
+  "previous_research": {
+   "id": "wa_davis_peak_nc_north_face",
+   "camps": [],
+   "new_camps": [
+    {
+     "name": "Glacier toe bivy, Davis Peak north face",
+     "elev_ft": 4000,
+     "type": "bivy",
+     "role": "main",
+     "nights": [
+      1
+     ],
+     "why": "The flat toe of the glacier under the face. Sleeping here puts the bergschrund an hour from the tent, after a long bushwhack from the Stetattle Creek ford.",
+     "water": "",
+     "capacity": "",
+     "permit": "",
+     "notes": "Elevation is the figure in the trip plan; no source read confirmed it, and no source stated water or capacity."
+    }
+   ],
+   "confidence": "low",
+   "plan_conflict": null,
+   "sources": [
+    "https://www.ademiller.com/climbing/gallery/cascades/davis_2005/index.htm",
+    "https://publications.americanalpineclub.org/articles/12198813004",
+    "https://www.summitpost.org/davis-peak/257251"
+   ]
+  }
+ },
+ {
+  "id": "wa_indian_mountain_baker_scramble",
+  "name": "Indian Mountain Scramble",
+  "discipline": "mountaineering",
+  "peak": "Indian Mountain",
+  "area_id": "wa_indian_mountain_baker",
+  "path": "usa.washington.wa_northwest.wa_hwy20_ncnp.wa_north_cascades.wa_picket_range.wa_indian_mountain_baker",
+  "trip_plan": {
+   "totalNote": "A 3-day, roughly 32-mile round-trip backpack via Hannegan Pass and the Chilliwack River/Brush Creek corridor to a high camp, followed by a steep, off-trail class 2 scramble (about 3,600 ft of gain in roughly a mile) to the 7,133 ft summit.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Approach to Graybeal Camp",
+     "objective": "Backpack in via Hannegan Pass and the Chilliwack River/Brush Creek corridor",
+     "miles": 14,
+     "gainFt": 2800,
+     "note": "Start at the Hannegan Pass Trailhead, climb to Hannegan Pass, then drop into the Chilliwack River valley on the Chilliwack River Trail. At the Brush Creek Trail junction, turn up Brush Creek to Graybeal Camp, the closest established backcountry camp to Indian Mountain's western slopes."
+    },
+    {
+     "n": 2,
+     "title": "Summit day: Indian Mountain",
+     "objective": "Climb the class 2 scramble route to the 7,133 ft summit and return to camp",
+     "miles": 4,
+     "gainFt": 3600,
+     "note": "There is no maintained trail above Graybeal Camp — parties leave the Brush Creek Trail and climb cross-country up open slopes toward Indian Mountain's northwest side. The peak rises roughly 3,600+ ft above the valley in about a mile, so the terrain is steep heather, scree, and short loose rock steps requiring careful r…"
+    },
+    {
+     "n": 3,
+     "title": "Hike out",
+     "objective": "Return to the Hannegan Pass Trailhead",
+     "miles": 14,
+     "gainFt": 2200,
+     "note": "Retrace the Brush Creek and Chilliwack River trails back up over Hannegan Pass to the trailhead. Pack is lighter with food consumed, but the climb back over Hannegan Pass at the end of a long trip makes for a full day."
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Graybeal Camp",
+    "elev_ft": null,
+    "type": "camp",
+    "role": "main",
+    "notes": ""
+   },
+   {
+    "name": "Hannegan Camp, below Hannegan Pass",
+    "elev_ft": 4663,
+    "type": "camp",
+    "role": "route",
+    "notes": "The obvious staging camp for a party that drives up Ruth Creek late and wants the pass behind them early. Because it sits on the forest side of the divide, the paperwork is entirely different from everything down the far side — parking pass only, no Marblemount errand. Road conditions on FS 32 have been unreliable in r…"
+   },
+   {
+    "name": "Boundary Camp",
+    "elev_ft": 4400,
+    "type": "camp",
+    "role": "route",
+    "notes": "Boundary sits just over Hannegan Pass at the line where Forest Service ground becomes national park, which is exactly why it trips people up: you park under a Northwest Forest Pass and then sleep under an NPS permit. With only three sites it books out on summer weekends, and a party arriving without a reservation has n…"
+   },
+   {
+    "name": "US Cabin Camp, Chilliwack River",
+    "elev_ft": 2608,
+    "type": "camp",
+    "role": "route",
+    "notes": "A deep-forest valley camp rather than a climbing bivy, and its value is positional — it is roughly where a party bound for Bear Mountain or the peaks further up the drainage stops before leaving the trail. The lack of a food locker is worth planning around, because the neighbouring camps have them and it is easy to ass…"
+   }
+  ],
+  "campsite_pins": [
+   {
+    "name": "US Cabin Camp, Chilliwack River",
+    "elev": 2608,
+    "distMi": null
+   },
+   {
+    "name": "Boundary Camp",
+    "elev": 4410,
+    "distMi": 5.2
+   },
+   {
+    "name": "Graybeal Camp",
+    "elev": 3139,
+    "distMi": 13.1
+   },
+   {
+    "name": "Hannegan Camp, below Hannegan Pass",
+    "elev": 4663,
+    "distMi": null
+   }
+  ],
+  "from_batch": "b17",
+  "refused_because": "low confidence",
+  "previous_research": {
+   "id": "wa_indian_mountain_baker_scramble",
+   "camps": [
+    {
+     "name": "Graybeal Camp",
+     "nights": [
+      1,
+      2
+     ],
+     "role": "main",
+     "why": "The closest established camp to the mountain's western slopes, up Brush Creek. The summit day starts and ends here, so one tent serves both nights."
+    },
+    {
+     "name": "Hannegan Camp, below Hannegan Pass",
+     "nights": [],
+     "role": "route",
+     "why": "A staging camp on the forest side of the pass for a party that drives up late. Sleeping here leaves a much longer second day to the Brush Creek camp."
+    },
+    {
+     "name": "Boundary Camp",
+     "nights": [],
+     "role": "route",
+     "why": "Only three sites just over the pass, and it needs a park permit. It splits the long approach in two but makes day two longer, and it books out on summer weekends."
+    },
+    {
+     "name": "US Cabin Camp, Chilliwack River",
+     "nights": [],
+     "role": "route",
+     "why": "A forest camp on the Chilliwack River before the Brush Creek turnoff, about two miles short of it. It has no food locker, so it works as a split night only."
+    }
+   ],
+   "new_camps": [],
+   "confidence": "low",
+   "plan_conflict": "No trip report for this peak was found; many parties would likely split the 14-mile approach with a night at Copper Creek, which is not a camp on file.",
+   "sources": [
+    "https://www.nps.gov/noca/planyourvisit/copper-ridge-trail.htm",
+    "https://www.hikingproject.com/trail/7015238/brush-creek-trail",
+    "https://en.wikipedia.com/wiki/Indian_Mountain_(Washington)"
+   ]
+  }
+ },
+ {
+  "id": "wa_mount_despair_east_route",
+  "name": "East Route / Standard",
+  "discipline": "alpine",
+  "peak": "Mount Despair",
+  "area_id": "wa_mount_despair",
+  "path": "usa.washington.wa_northwest.wa_hwy20_ncnp.wa_north_cascades.wa_picket_range.wa_mount_despair",
+  "trip_plan": {
+   "totalNote": "A real 3-day backpack for most parties: ~24 miles round trip with roughly 10,000-12,000 ft of cumulative gain/loss, capped by a brutal 15-18 hr camp-to-camp summit day; very fit/experienced parties have compressed it to 2 days.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Bushwhack to Thornton Pass camp",
+     "objective": "Reach a benched camp on the Thornton Ridge crest",
+     "miles": 5,
+     "gainFt": 3550,
+     "note": "An easy mile of trail to Thornton Creek gives way to a steep, brushy bushwhack through cliff bands and dense cedar thickets to a rocky shoulder at ~5,300 ft. Parties typically push on to flat benches on the Thornton Pass crest for camp, arriving in the evening after a long, hot day."
+    },
+    {
+     "n": 2,
+     "title": "Long summit push via Triumph Pass and Despair Lakes",
+     "objective": "Climb the SE Face to the summit and return to camp",
+     "miles": 14,
+     "gainFt": 8450,
+     "note": "A grueling camp-to-camp day: descend heather and brush toward Triumph Pass, drop to the Despair Lakes basin, then climb heathery ridge and talus to a cliff band below the SE Face, finishing with roped pitches to the summit. The return retraces the whole route, often finishing well after dark."
+    },
+    {
+     "n": 3,
+     "title": "Hike out",
+     "objective": "Break camp and descend to the trailhead",
+     "miles": 5,
+     "gainFt": 0,
+     "note": "Pack up camp and reverse the Thornton Ridge descent and brushy creek bushwhack back to the trailhead, often in low clouds or light rain. Many parties stop to rest at the lowest Thornton Lake on the way down."
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Thornton Pass (camp knob)",
+    "elev_ft": null,
+    "type": "camp",
+    "role": "main",
+    "notes": ""
+   },
+   {
+    "name": "Upper Despair Lake",
+    "elev_ft": 5100,
+    "type": null,
+    "role": "route",
+    "notes": "Not a documented camp — reports use it as a rest and water stop on the long traverse to the peak, and no established sites are described there. It is the last reliable water before the cliff band below the southeast face, and worth knowing about as an emergency stopping point if a party is benighted on the traverse rat…"
+   }
+  ],
+  "campsite_pins": [
+   {
+    "name": "Thornton Pass (camp knob)",
+    "elev": 6050,
+    "distMi": null
+   },
+   {
+    "name": "Upper Despair Lake",
+    "elev": 5100,
+    "distMi": null
+   }
+  ],
+  "from_batch": "b17",
+  "refused_because": "low confidence",
+  "previous_research": {
+   "id": "wa_mount_despair_east_route",
+   "camps": [
+    {
+     "name": "Thornton Pass (camp knob)",
+     "nights": [
+      1,
+      2
+     ],
+     "role": "main",
+     "why": "Benched ground on the Thornton Ridge crest at about 6,000 ft, reached after the long brushy climb. The camp-to-camp summit day starts and ends here."
+    },
+    {
+     "name": "Upper Despair Lake",
+     "nights": [],
+     "role": "route",
+     "why": "Not a documented camp. It serves as the last reliable water on the way to the face and as an emergency stop if the long day runs dark."
+    }
+   ],
+   "new_camps": [],
+   "confidence": "low",
+   "plan_conflict": "Reports found for this peak describe camps at Triumph Pass or the valley floor rather than the Thornton Pass knob; none confirmed the knob.",
+   "sources": [
+    "https://turns-all-year.com/trip-reports/mt-despair-south-face-triumph-environs",
+    "https://www.mountainproject.com/area/120293763/mt-despair",
+    "https://cascadeclimbers.com/forum/topic/104189-tr-mount-despair-southeast-faceeast-ridge-08142021"
+   ]
+  }
+ },
+ {
+  "id": "wa_mount_triumph_west_route",
+  "name": "West Route",
+  "discipline": "scrambling",
+  "peak": "Mount Triumph",
+  "area_id": "wa_mount_triumph",
+  "path": "usa.washington.wa_northwest.wa_hwy20_ncnp.wa_north_cascades.wa_picket_range.wa_mount_triumph",
+  "trip_plan": {
+   "totalNote": "Three days and about 17 miles round trip with roughly 6,300 ft of gain: camp on Thornton Ridge, an 11-hour round trip up the west face benches and the Class 5 southeast slot, then hike out.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Thornton Lakes to the Thornton Ridge camp",
+     "objective": "Hike to a high camp on Thornton Ridge",
+     "miles": null,
+     "gainFt": null,
+     "note": "Take the Thornton Lakes trail (the first two miles are old road) to the overlook, drop about 500 ft to Lower Thornton Lake, cross the outlet and follow a scratch path up to the ridge. Camp on a rocky knob at 6,100 ft just south of Thornton Pass; water is from snow patches about 100 ft below."
+    },
+    {
+     "n": 2,
+     "title": "Climb the west face route and return",
+     "objective": "Summit Mount Triumph and rappel back to camp",
+     "miles": null,
+     "gainFt": 1170,
+     "note": "Traverse past Thornton Pass under Thornton Peak's west rampart and the Great Prow, cross two stream channels to the southwest ridge, and climb heather to a talus shoulder. Angle up dicey Class 4 rock and heather benches by the Great White Slabs to a big southeast-slanting ramp, then rope up for a poorly protected Class…"
+    },
+    {
+     "n": 3,
+     "title": "Hike out to the Thornton Lakes trailhead",
+     "objective": "Return to the trailhead",
+     "miles": null,
+     "gainFt": null,
+     "note": "Descend to Lower Thornton Lake, regain the 500 ft to the overlook, and follow the trail out."
+    }
+   ]
+  },
+  "camps_on_file": [],
+  "campsite_pins": [],
+  "from_batch": "b17",
+  "refused_because": "low confidence",
+  "previous_research": {
+   "id": "wa_mount_triumph_west_route",
+   "camps": [],
+   "new_camps": [
+    {
+     "name": "Rocky knob camp south of Thornton Pass",
+     "elev_ft": 6100,
+     "type": "camp",
+     "role": "main",
+     "nights": [
+      1,
+      2
+     ],
+     "why": "A rocky knob on Thornton Ridge near 6,100 ft, a traverse away from the west face benches. The summit day starts and ends here, so it serves both nights.",
+     "water": "",
+     "capacity": "",
+     "permit": "",
+     "notes": "Elevation is the figure in the trip plan; no source read confirmed it, and none gave water or capacity for this camp."
+    }
+   ],
+   "confidence": "low",
+   "plan_conflict": null,
+   "sources": [
+    "https://www.summitpost.org/mountain/rock/151949/mount-triumph.html",
+    "https://www.summitpost.org/thornton-peak/957754",
+    "https://www.mountaineers.org/activities/routes-places/north-cascades-national-park-cross-country-zones/mount-triumph-northeast-ridge"
+   ]
+  }
+ },
+ {
+  "id": "wa_ghost_peak_south_route",
+  "name": "South Route",
+  "discipline": "mountaineering",
+  "peak": "Ghost Peak",
+  "area_id": "wa_ghost_peak",
+  "path": "usa.washington.wa_northwest.wa_hwy20_ncnp.wa_north_cascades.wa_picket_range.wa_northern_pickets.wa_ghost_peak",
+  "trip_plan": {
+   "totalNote": "A 6-day, ~44-mile round trip with roughly 12,000 ft of cumulative gain — two-plus days of trail and glacier approach each way bracketing a single technical summit day; strong parties sometimes compress this to 5 days.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Approach via Hannegan Pass to the Chilliwack River",
+     "objective": "Reach Copper Creek / Graybeal Camp",
+     "miles": 8.2,
+     "gainFt": 2200,
+     "note": "Standard access to Ghost Peak is from the Hannegan Pass trailhead; a Ross Lake alternative climbs Big Beaver Creek and Wiley Ridge instead. Day one climbs over Hannegan Pass and drops into the Chilliwack River valley on maintained trail to a forest camp."
+    },
+    {
+     "n": 2,
+     "title": "Brush Creek Trail to Whatcom Pass",
+     "objective": "Reach Whatcom Pass / Tapto Lakes camp",
+     "miles": 8,
+     "gainFt": 3000,
+     "note": "Cross the Chilliwack River (cable car) and grind up the steep, brushy Brush Creek Trail to Whatcom Pass. This is the long, sweaty day of the approach — real parties report 10+ hours of travel with full packs."
+    },
+    {
+     "n": 3,
+     "title": "Over Whatcom and Perfect Pass to high camp",
+     "objective": "Reach the Crooked Thumb Glacier moraine camp below Ghost Peak",
+     "miles": 7.5,
+     "gainFt": 3700,
+     "note": "Rope up for glacier travel across the Whatcom Glacier to 6,300 ft Perfect Pass, then continue over the Challenger Glacier and Solar Pass to a moraine camp on the Crooked Thumb Glacier, directly below Ghost Peak's south face. This is the technical crux of the approach with real crevasse hazard."
+    },
+    {
+     "n": 4,
+     "title": "Summit day: Ghost Peak South Route",
+     "objective": "Climb the south face to the south arete, then the west face, to the summit",
+     "miles": 4,
+     "gainFt": 2200,
+     "note": "A roped glacier approach to the base of the peak, then low-5th-class alpine rock up the south face and arete before finishing on the west face — the original 1970 line. Round trip from high camp; descend the same way with a mix of downclimbing and short rappels."
+    },
+    {
+     "n": 5,
+     "title": "Begin the exit: back over the passes",
+     "objective": "Return to Whatcom Pass camp",
+     "miles": 9,
+     "gainFt": 800,
+     "note": "Reverse the glacier crossings — Solar Pass, Challenger Glacier, Perfect Pass, Whatcom Glacier — back down to a camp near Whatcom Pass. Long day, mostly downhill but with the reverse crevasse navigation."
+    },
+    {
+     "n": 6,
+     "title": "Hike out to the Hannegan Pass trailhead",
+     "objective": "Return to the car",
+     "miles": 7,
+     "gainFt": 200,
+     "note": "Descend the Brush Creek Trail, re-cross the Chilliwack River, and climb back over Hannegan Pass to the trailhead — a long but straightforward trail day to close the loop."
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Luna Cirque high camp (near Lousy Lake)",
+    "elev_ft": null,
+    "type": "camp",
+    "role": "main",
+    "notes": ""
+   },
+   {
+    "name": "Whatcom Camp, Brush Creek below Whatcom Pass",
+    "elev_ft": 5286,
+    "type": "camp",
+    "role": "route",
+    "notes": "The last trail camp beneath Whatcom Pass and the one that serves the Hannegan Pass and Chilliwack River approach to Whatcom Peak and Mount Challenger. Parties coming that way typically chain Boundary, Copper Creek or US Cabin, then Graybeal on Brush Creek, then here — three or four days of walking before any climbing b…"
+   },
+   {
+    "name": "Perfect Pass, Perfect Pass cross-country zone",
+    "elev_ft": 6300,
+    "type": "bivy",
+    "role": "route",
+    "notes": "The classic high camp for Mount Challenger and for Whatcom Peak, on benches at the western edge of the Challenger Glacier. It is reached either over Whatcom Pass from the Brush Creek side or along Easy Ridge, the latter demanding a substantial descent and reclimb to get around the gap short of the pass. Reported elevat…"
+   },
+   {
+    "name": "Improvised bivouacs on the Challenger Glacier and the crest south of Challenger",
+    "elev_ft": null,
+    "type": "bivy",
+    "role": "route",
+    "notes": "Spectre Peak sits well down the crest south of Challenger and Poltergeist Pinnacle is a multi-pitch rock climb off the glacier, so parties working the far end of the chain sometimes take a night out on the ice rather than commit to a very long day from Perfect Pass or Challenger Arm. These are made rather than found — …"
+   }
+  ],
+  "campsite_pins": [
+   {
+    "name": "Whatcom Pass",
+    "elev": 5055,
+    "distMi": 16
+   },
+   {
+    "name": "Perfect Pass",
+    "elev": 6300,
+    "distMi": 18
+   },
+   {
+    "name": "Crooked Thumb Glacier high camp",
+    "elev": null,
+    "distMi": 21
+   }
+  ],
+  "from_batch": "b17",
+  "refused_because": "low confidence",
+  "previous_research": {
+   "id": "wa_ghost_peak_south_route",
+   "camps": [
+    {
+     "name": "Whatcom Camp, Brush Creek below Whatcom Pass",
+     "nights": [
+      2,
+      5
+     ],
+     "role": "main",
+     "why": "The last trail camp below the pass, with water. It is the night before the glacier crossing on the way in and the first sleep back on the way out."
+    },
+    {
+     "name": "Luna Cirque high camp (near Lousy Lake)",
+     "nights": [],
+     "role": "route",
+     "why": "A high camp on the Luna side of the range, reached from Big Beaver. It belongs to the other approach and is not on this Hannegan Pass plan."
+    },
+    {
+     "name": "Perfect Pass, Perfect Pass cross-country zone",
+     "nights": [],
+     "role": "route",
+     "why": "A classic bivy for Challenger and Whatcom. Parties break the glacier crossing here instead of pushing on to the moraine, which leaves a longer approach the next day."
+    },
+    {
+     "name": "Improvised bivouacs on the Challenger Glacier and the crest south of Challenger",
+     "nights": [],
+     "role": "route",
+     "why": "Made rather than found, used by parties working the south end of the chain who would rather sleep out than commit to a very long day."
+    }
+   ],
+   "new_camps": [
+    {
+     "name": "Copper Creek Camp, Chilliwack River Trail",
+     "elev_ft": null,
+     "type": "camp",
+     "role": "main",
+     "nights": [
+      1
+     ],
+     "why": "The forest camp on the Chilliwack River after the first trail day over Hannegan Pass. Most parties split the long approach here before the steep Brush Creek climb.",
+     "water": "",
+     "capacity": "",
+     "permit": "A backcountry permit is required for overnight stays.",
+     "notes": "No elevation found in any source read; the approach plan says Copper Creek or Graybeal."
+    },
+    {
+     "name": "Crooked Thumb Glacier high camp",
+     "elev_ft": 7200,
+     "type": "camp",
+     "role": "main",
+     "nights": [
+      3,
+      4
+     ],
+     "why": "A camp on the moraine at the edge of the Crooked Thumb Glacier. It is exposed with no shelter, but it is the closest sleep to Ghost's south face.",
+     "water": "",
+     "capacity": "",
+     "permit": "",
+     "notes": "Elevation is the figure on file for the same moraine on the Crooked Thumb route; no source read stated water or capacity."
+    }
+   ],
+   "confidence": "low",
+   "plan_conflict": "The on-file main (Luna Cirque high camp) belongs to the Big Beaver approach and is not on this plan; night 1 is Copper Creek or Graybeal depending on the day's pace.",
+   "sources": [
+    "https://stephabegg.com/?p=8948",
+    "https://alasdair-turner-wd60.squarespace.com/blog/2014/7/13/a-traverse-of-the-northern-picket-range",
+    "https://publications.americanalpineclub.org/articles/13201216005.pdf",
+    "https://www.nps.gov/noca/planyourvisit/copper-ridge-trail.htm"
+   ]
+  }
+ },
+ {
+  "id": "wa_mount_fury_east_north_buttress",
+  "name": "North Buttress",
+  "discipline": "alpine",
+  "peak": "Mount Fury (East Peak)",
+  "area_id": "wa_mount_fury_east",
+  "path": "usa.washington.wa_northwest.wa_hwy20_ncnp.wa_north_cascades.wa_picket_range.wa_northern_pickets.wa_mount_fury_east",
+  "trip_plan": {
+   "totalNote": "Five days: Big Beaver trail to Access Creek Basin, over to Luna Col, down into Luna Cirque, a pre-dawn climb of the North Buttress with a descent back to Luna Col, and the exit to a booked water taxi.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Water taxi and hike to Access Creek Basin",
+     "objective": "Camp in Access Creek Basin at 4,300 ft",
+     "miles": 11.5,
+     "gainFt": 2700,
+     "note": "From the Ross Dam trailhead, take the water taxi and hike the Big Beaver Trail and the Access Creek bushwhack to Access Creek Basin at 4,300 ft."
+    },
+    {
+     "n": 2,
+     "title": "Over Access Col to Luna Col",
+     "objective": "Camp at Luna Col",
+     "miles": null,
+     "gainFt": 2900,
+     "note": "Climb to Access Col at 6,100 ft and make the heather traverse to Luna Col at about 7,200 ft."
+    },
+    {
+     "n": 3,
+     "title": "Descend into Luna Cirque",
+     "objective": "Camp at the foot of the North Buttress",
+     "miles": null,
+     "gainFt": 0,
+     "note": "Descend about 2,400 ft into Luna Cirque, past Luna Lake at 4,800 ft, and establish a cirque camp at the foot of the buttress."
+    },
+    {
+     "n": 4,
+     "title": "Climb the North Buttress",
+     "objective": "Summit East Fury and descend to Luna Col",
+     "miles": null,
+     "gainFt": 3520,
+     "note": "Make a pre-dawn start and climb the North Buttress; about 4.5 hours of climbing gets you to the ridge crest, with the 5.9 crux and the summit snow arete above. Descend the Southeast Glacier and the northeast ridge to Luna Col, or bivouac high."
+    },
+    {
+     "n": 5,
+     "title": "Exit to the water taxi",
+     "objective": "Hike out to a booked boat",
+     "miles": null,
+     "gainFt": null,
+     "note": "Exit from Luna Col to Access Basin, reverse the bushwhack, and hike the Big Beaver Trail to a booked water taxi."
+    }
+   ]
+  },
+  "camps_on_file": [],
+  "campsite_pins": [],
+  "from_batch": "b18",
+  "refused_because": "low confidence",
+  "previous_research": {
+   "id": "wa_mount_fury_east_north_buttress",
+   "camps": [],
+   "new_camps": [
+    {
+     "name": "Access Creek Basin",
+     "elev_ft": 4300,
+     "type": "camp",
+     "role": "main",
+     "nights": [
+      1
+     ],
+     "why": "Where the Access Creek bushwhack ends; creek water here, and it leaves a bearable climb to Access Col the next morning.",
+     "water": "Creek water at the basin.",
+     "capacity": "",
+     "permit": "",
+     "notes": "Elevation as shown on the app's own map pin for this basin."
+    },
+    {
+     "name": "Luna Col (Luna Pass)",
+     "elev_ft": 7200,
+     "type": "bivy",
+     "role": "main",
+     "nights": [
+      2,
+      4
+     ],
+     "why": "Gets you over Access Col and back to a camp near the ridge after the climb. Windy, with little flat ground, but a snowfield can supply water.",
+     "water": "A small snowfield at the saddle normally runs water.",
+     "capacity": "Few flat tent spots.",
+     "permit": "",
+     "notes": "Elevation as shown on the app's own map pin. Some parties bivouac high on the mountain instead of returning on night 4."
+    },
+    {
+     "name": "Luna Cirque camp",
+     "elev_ft": 4000,
+     "type": "camp",
+     "role": "main",
+     "nights": [
+      3
+     ],
+     "why": "Puts you directly under the North Buttress for a pre-dawn start, at the cost of a 2,400 ft descent and re-climb to Luna Col.",
+     "water": "A creek about eight minutes west of the camp.",
+     "capacity": "",
+     "permit": "",
+     "notes": "Elevation is approximate, from a party that camped in the cirque below the buttress."
+    }
+   ],
+   "confidence": "low",
+   "plan_conflict": "No camps are on file for this route; night 4 at Luna Col is the plan's assumption and the plan itself allows a high bivouac, which was not confirmed by any party's report.",
+   "sources": [
+    "https://stephabegg.com/?p=8924",
+    "https://www.lemkeclimbs.com/whatcom-peak.html",
+    "https://sverdina.com/fury1.asp"
+   ]
+  }
+ },
+ {
+  "id": "wa_mount_fury_east_mongo_ridge",
+  "name": "Mongo Ridge (Southwest Buttress)",
+  "discipline": "alpine",
+  "peak": "Mount Fury (West Peak)",
+  "area_id": "wa_mount_fury_west",
+  "path": "usa.washington.wa_northwest.wa_hwy20_ncnp.wa_north_cascades.wa_picket_range.wa_northern_pickets.wa_mount_fury_west",
+  "trip_plan": {
+   "totalNote": "A serious 6-day expedition (~40-48 mi, roughly 10,000+ ft of cumulative gain each way): two days to reach the ridge, two-plus days of technical ridge climbing with a dozen-odd rappels and four major gendarmes, a summit day, and a full day to hike out.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Boat + hike to Access Basin",
+     "objective": "Reach camp at Access Basin (~4,300 ft)",
+     "miles": 13,
+     "gainFt": 2700,
+     "note": "Water taxi to Big Beaver Landing, then the Big Beaver Trail and a bushwhack up Access Creek to a base camp below Access Col. Heavy packs with rock rack, ropes, and 5-6 days of food."
+    },
+    {
+     "n": 2,
+     "title": "Over Access Col and up East Fury to a ridge-start camp",
+     "objective": "Camp high on/near East Fury, poised to drop onto Mongo Ridge",
+     "miles": 4,
+     "gainFt": 4000,
+     "note": "Climb Access Col and traverse to Luna Pass, then continue up East Fury's Southeast Glacier to a bivy near its summit — the jumping-off point for the ridge traverse to West Fury. This is the hardest approach day: steep scree, heather, and glacier travel back to back."
+    },
+    {
+     "n": 3,
+     "title": "Onto Mongo Ridge — first gendarmes",
+     "objective": "Descend from East Fury to the toe of the ridge and start the technical climb",
+     "miles": 1.5,
+     "gainFt": 1500,
+     "note": "Descend from East Fury into the upper Goodell Creek basin to the toe of the ridge and begin working through the first of the route's gendarmes, mixing 5th-class pitches with rappels. Slow, technical ground — a fraction of a mile of actual progress for a full day's effort. Bivy on the ridge."
+    },
+    {
+     "n": 4,
+     "title": "Deeper into the ridge — the Pole of Remoteness",
+     "objective": "Continue past the ridge's most remote, hardest pitches",
+     "miles": 1,
+     "gainFt": 1200,
+     "note": "More of the same: pitches up to 5.10/5.11, exposed scrambling between towers, and rappels off loose rock in one of the most remote sections of the lower 48. Rockfall is a real hazard on rappels here. Bivy again on the ridge."
+    },
+    {
+     "n": 5,
+     "title": "Summit West Fury, descend to Luna Col",
+     "objective": "Finish the ridge to West Fury's summit, then retreat toward Luna Col",
+     "miles": 3,
+     "gainFt": 600,
+     "note": "A final ~500 ft of class 4 terrain gains West Fury's summit, typically reached by mid-morning. From there it's hours of connecting-ridge scrambling back past East Fury toward a camp at Luna Col."
+    },
+    {
+     "n": 6,
+     "title": "Hike out",
+     "objective": "Return to Ross Lake and the trailhead",
+     "miles": 16,
+     "gainFt": 0,
+     "note": "Reverse the full approach from Luna Col down through Access Basin and out the Big Beaver Trail to the landing for the water taxi — a long final day after five hard ones."
+    }
+   ]
+  },
+  "camps_on_file": [
+   {
+    "name": "Access Creek headwaters basin",
+    "elev_ft": null,
+    "type": "camp",
+    "role": "main",
+    "notes": "Open basin at the top of the Access Creek bushwhack above Luna Camp. The usual first night before climbing past Luna Col to East Fury."
+   },
+   {
+    "name": "East Fury summit bivy",
+    "elev_ft": 8280,
+    "type": "bivy",
+    "role": "main",
+    "notes": "Flat rock on the summit of East Fury used as the second night. The long descent to the base of the ridge starts here, and the bivy is often left in place for the return."
+   },
+   {
+    "name": "Luna Camp, Big Beaver Trail",
+    "elev_ft": 2432,
+    "type": "camp",
+    "role": "route",
+    "notes": "The standard staging camp for the Access Creek side of the Northern Pickets — Mount Fury's west peak and the Luna Cirque generally. Most parties take the Ross Lake water taxi to the Big Beaver landing near 1,600 ft and then walk eight to ten miles of nearly flat old-growth trail, so it functions as a first night rather…"
+   },
+   {
+    "name": "Luna Col bivy, Luna cross-country zone",
+    "elev_ft": 7200,
+    "type": "bivy",
+    "role": "route",
+    "notes": "Open bivy ground on the col above the Luna Cirque, reached by leaving the Big Beaver trail near Access Creek and climbing trackless ground to Access Col. It is the working high camp for Mount Fury's west peak and for Luna Peak, with no established site — you camp on rock, heather or snow and pack everything out. The br…"
+   }
+  ],
+  "campsite_pins": [
+   {
+    "name": "Luna Camp, Big Beaver Trail",
+    "elev": 2432,
+    "distMi": null
+   }
+  ],
+  "from_batch": "b18",
+  "refused_because": "low confidence",
+  "previous_research": {
+   "id": "wa_mount_fury_east_mongo_ridge",
+   "camps": [
+    {
+     "name": "Access Creek headwaters basin",
+     "nights": [
+      1
+     ],
+     "role": "main",
+     "why": "Open basin above the bushwhack; the usual first night before Access Col, with creek water."
+    },
+    {
+     "name": "East Fury summit bivy",
+     "nights": [
+      2
+     ],
+     "role": "main",
+     "why": "Flat rock on East Fury that sits at the jumping-off point for the ridge, and where a bivy sack can be left standing for the return."
+    },
+    {
+     "name": "Luna Camp, Big Beaver Trail",
+     "nights": [],
+     "role": "route",
+     "why": "Trail camp short of the Access Creek bushwhack. Parties wanting an easier first day stop here, which adds a long day to reach East Fury."
+    },
+    {
+     "name": "Luna Col bivy, Luna cross-country zone",
+     "nights": [
+      5
+     ],
+     "role": "main",
+     "why": "The place parties sleep after the summit and the connecting ridge, before the long exit; a snowfield can supply water, but flat ground is scarce."
+    }
+   ],
+   "new_camps": [
+    {
+     "name": "Mongo Ridge open bivy",
+     "elev_ft": null,
+     "type": "bivy",
+     "role": "main",
+     "nights": [
+      3,
+      4
+     ],
+     "why": "There are no real sites on the ridge; parties sleep on the towers or in the moat of a small glacier above the Pole of Remoteness, with a sit pad and bag.",
+     "water": "",
+     "capacity": "",
+     "permit": "",
+     "notes": "Bivies have been taken on Tower 1, Tower 3 and a high bivy near False Fury. No elevation found for any of them."
+    }
+   ],
+   "confidence": "low",
+   "plan_conflict": "The plan's nights 3 and 4 are on the ridge itself; no ridge bivy has a researched elevation, and Luna Col bivy is changed from route to main for night 5.",
+   "sources": [
+    "https://alpinevagabonds.com/mount-furys-mongo-ridge-a-second-ascent/",
+    "https://publications.americanalpineclub.org/articles/12200713002/North-America-United-States-Washington-Cascade-Range-Mt-Fury-West-Peak-Mongo-Ridge",
+    "https://summitpost.org/a-rainy-week-in-the-northern-pickets-a-night-on-mongo-ridge/1070686"
+   ]
+  }
+ }
+]

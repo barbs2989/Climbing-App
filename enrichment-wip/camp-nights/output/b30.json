@@ -1,0 +1,271 @@
+[
+ {
+  "id": "rainier_central_mowich_face",
+  "camps": [
+   {"name": "Lower Ptarmigan Ridge camp", "nights": [1], "role": "main",
+    "why": "Gets the pack weight up out of Spray Park in one day and leaves a short drop onto the North Mowich Glacier; the lower Edmunds divide camp near 8,100 ft works the same way."}
+  ],
+  "new_camps": [
+   {"name": "Camp Schurman", "elev_ft": 9440, "type": "camp", "role": "main", "nights": [2],
+    "why": "Where this carry-over ends: you top out on Liberty Cap and drop the Emmons side to the first established camp, then walk out to White River in the morning.",
+    "water": "", "capacity": "", "permit": "",
+    "notes": "Ranger hut and solar toilet sit here, but the hut is not a shelter for climbers. Melt snow for water and register for the climb before you leave."}
+  ],
+  "confidence": "medium",
+  "plan_conflict": "The plan's night 2 is Camp Schurman (day 2 ends there), which is not on file; a party that skis or climbs and returns instead sleeps a second night at the 8,100 ft Edmunds divide camp.",
+  "sources": ["https://turns-all-year.com/trip-reports/july-21-23-2016-mt-rainier-central-mowich-face", "https://turns-all-year.com/trip-reports/jul-3-5-mt-rainier-edmunds-headwall-mowich-face", "https://www.alanarnette.com/climbs/rainierfaq.php"]
+ },
+ {
+  "id": "wa_mount_rainier_curtis_ridge",
+  "camps": [
+   {"name": "Curtis Ridge camp", "nights": [1], "role": "main",
+    "why": "The launch point for the ridge: flat snow ground reached over St. Elmo Pass, a short approach to the climb and out of most rockfall lines."},
+   {"name": "Camp Schurman", "nights": [2], "role": "main",
+    "why": "Day 2 ends here after the Emmons-Winthrop descent; the ranger camp is the first flat, established ground, so most tired parties sleep before the walk out."},
+   {"name": "White River Campground", "nights": [], "role": "route",
+    "why": "Drive-in campground at the trailhead; a night here the evening before gives an early start but is not part of the three-day plan."}
+  ],
+  "new_camps": [],
+  "confidence": "medium",
+  "plan_conflict": "Camp Schurman was a route camp on file but is where day 2 ends, so it is now the night 2 main; strong parties can instead continue to White River the same night.",
+  "sources": ["https://www.mountainguides.com/rainier-tr2017-liberty-ridge.shtml", "https://www.alanarnette.com/climbs/rainierfaq.php", "https://www.14ers.com/php14ers/tripreport.php?trip=13652"]
+ },
+ {
+  "id": "wa_mount_rainier_disappointment_cleaver",
+  "camps": [
+   {"name": "Camp Muir", "nights": [1], "role": "main",
+    "why": "Where nearly every party sleeps: shelter, a toilet and a ranger post, with the summit day starting right from the camp."},
+   {"name": "Ingraham Flats", "nights": [], "role": "route",
+    "why": "A thousand feet higher, it shortens summit day but is colder, less sheltered, and sits under icefall; mostly an overflow or guided-trip option."}
+  ],
+  "new_camps": [],
+  "confidence": "medium",
+  "plan_conflict": "Ingraham Flats was marked main on file; two mains for one night is wrong and parties on this route sleep at Camp Muir, so Flats is now a route camp.",
+  "sources": ["https://www.alanarnette.com/climbs/rainierfaq.php", "https://www.nps.gov/mora/planyourvisit/climbing.htm"]
+ },
+ {
+  "id": "wa_mount_rainier_emmons_glacier",
+  "camps": [
+   {"name": "Camp Schurman", "nights": [1], "role": "main",
+    "why": "The established high camp: ranger hut, toilet and the shortest summit day on the Emmons, so almost all parties sleep here."},
+   {"name": "Emmons Flats", "nights": [1], "role": "route",
+    "why": "A bench just above Schurman; quieter and a little higher, but you cross crevassed ground to reach the toilet and ranger post, so rope up between them."},
+   {"name": "Glacier Basin", "nights": [], "role": "route",
+    "why": "Forested camp 3.5 miles in, used the night before a climb or when no Schurman permit is available; it adds a long, heavy day 1 to the summit push."}
+  ],
+  "new_camps": [],
+  "confidence": "medium",
+  "plan_conflict": "Emmons Flats was marked main on file alongside Camp Schurman; Schurman is where most parties sleep, so Flats is now a route camp.",
+  "sources": ["https://www.alanarnette.com/climbs/rainierfaq.php", "https://www.nps.gov/mora/planyourvisit/climbing.htm"]
+ },
+ {
+  "id": "wa_mount_rainier_fuhrer_finger",
+  "camps": [
+   {"name": "Castle camps on Wapowety Cleaver", "nights": [1], "role": "main",
+    "why": "The only established camp on this side below the route: rock-ring sites on the cleaver put the Finger within a few hours, but expect wind and no water."}
+  ],
+  "new_camps": [],
+  "confidence": "medium",
+  "plan_conflict": null,
+  "sources": ["https://www.alpineinstitute.com/route-profile-kautz-glacier/", "https://www.mountaineers.org/activities/trip-reports/intermediate-alpine-climb-mount-rainier-fuhrer-finger", "https://mountaineers.org/activities/trip-reports/intermediate-alpine-climb-mount-rainier-kautz-glacier-2"]
+ },
+ {
+  "id": "wa_mount_rainier_gibraltar_ledges",
+  "camps": [
+   {"name": "Camp Muir", "nights": [1], "role": "main",
+    "why": "The standard base for the Ledges: sheltered ground, a toilet and a ranger post, and the route starts from the camp's own door."},
+   {"name": "Ingraham Flats", "nights": [], "role": "route",
+    "why": "Sits on the wrong side of the Cowlitz Glacier for the Ledges; it only makes sense for parties continuing on the Cleaver, so skip it here."}
+  ],
+  "new_camps": [],
+  "confidence": "medium",
+  "plan_conflict": null,
+  "sources": ["https://www.alanarnette.com/climbs/rainierfaq.php", "https://www.nps.gov/mora/planyourvisit/climbing.htm"]
+ },
+ {
+  "id": "wa_mount_rainier_ingraham_direct",
+  "camps": [
+   {"name": "Camp Muir", "nights": [1], "role": "main",
+    "why": "Where most parties sleep: the most sheltered ground on this side, with a toilet, ranger post and a hut for storms."},
+   {"name": "Ingraham Flats", "nights": [], "role": "route",
+    "why": "Takes about 1,000 ft off summit day, but it is colder, has no toilet and sits under icefall; the plan's optional three-day variation."}
+  ],
+  "new_camps": [],
+  "confidence": "medium",
+  "plan_conflict": "Ingraham Flats was marked main on file beside Camp Muir; the plan itself sleeps at Muir, so Flats is now the route option.",
+  "sources": ["https://www.alanarnette.com/climbs/rainierfaq.php", "https://www.nps.gov/mora/planyourvisit/climbing.htm"]
+ },
+ {
+  "id": "wa_mount_rainier_kautz_glacier",
+  "camps": [
+   {"name": "Upper Castle", "nights": [1], "role": "main",
+    "why": "Where most parties camp: large rock rings, water in warm weather, and a safer spot than Camp Hazard for the ice fall above it."},
+   {"name": "Camp Hazard", "nights": [1], "role": "route",
+    "why": "Highest regular camp; saves a long summit day but sits below the Kautz ice cliff, has narrow ledges, and often has no water."},
+   {"name": "Lower Castle", "nights": [1], "role": "route",
+    "why": "A few close rock rings on the same ridge; fine for a small party that arrives late, but it leaves about 300 ft more to climb in the morning."},
+   {"name": "Wilson Moraine", "nights": [], "role": "route",
+    "why": "Lower moraine sites that lengthen summit day a lot; used only by parties starting late or lacking a bigger site higher."},
+   {"name": "Rock Step bivy sites", "nights": [], "role": "route",
+    "why": "Tiny ledges by the notch above the Rock Step; a place to wait out weather, not a planned camp, and exposed to the ice cliff above."}
+  ],
+  "new_camps": [],
+  "confidence": "medium",
+  "plan_conflict": "The plan ends day 1 at Camp Hazard, but guides and ranger reports say most climbers avoid it for ice fall and sleep at Upper Castle.",
+  "sources": ["https://www.alpineinstitute.com/route-profile-kautz-glacier/", "https://www.nps.gov/mora/planyourvisit/upload/Kautz-Glacier-Routebrief.pdf", "https://mountaineers.org/activities/trip-reports/intermediate-alpine-climb-mount-rainier-kautz-glacier-2"]
+ },
+ {
+  "id": "wa_mount_rainier_kautz_headwall",
+  "camps": [
+   {"name": "Castle camps on Wapowety Cleaver", "nights": [1], "role": "main",
+    "why": "Where most parties camp: sheltered rock rings and often running water, with the headwall about five hours above."},
+   {"name": "Camp Hazard", "nights": [1], "role": "route",
+    "why": "Shortens summit day by roughly 1,300 ft, but it sits below the Kautz ice cliff, offers narrow ledges and often no water; many climbers avoid it."}
+  ],
+  "new_camps": [],
+  "confidence": "medium",
+  "plan_conflict": "The plan ends day 1 at Camp Hazard, which was marked main on file; guides say most climbers avoid it for ice fall and sleep at the Castle camps.",
+  "sources": ["https://www.alpineinstitute.com/route-profile-kautz-glacier/", "https://www.nps.gov/mora/planyourvisit/upload/Kautz-Glacier-Routebrief.pdf", "https://mountaineers.org/activities/trip-reports/intermediate-alpine-climb-mount-rainier-kautz-glacier-2"]
+ },
+ {
+  "id": "wa_mount_rainier_liberty_ridge",
+  "camps": [
+   {"name": "Curtis Ridge", "nights": [1], "role": "main",
+    "why": "Flat snow ground near the gully down to the Carbon, with little rockfall; camping here makes a short second day to Thumb Rock."},
+   {"name": "Thumb Rock", "nights": [2], "role": "main",
+    "why": "The only real camp on the ridge, with a tent platform on the saddle; it makes summit day a single push but gets rockfall and icefall."}
+  ],
+  "new_camps": [],
+  "confidence": "high",
+  "plan_conflict": null,
+  "sources": ["https://www.mountainguides.com/rainier-tr2017-liberty-ridge.shtml", "https://www.14ers.com/php14ers/tripreport.php?trip=13652", "https://cascadeclimbers.com/forum/topic/92070-tr-rainier-liberty-ridge-732013-liberty-ridge-732013"]
+ },
+ {
+  "id": "wa_mount_rainier_mowich_face",
+  "camps": [
+   {"name": "Edmunds/North Mowich glacier divide camp", "nights": [1, 2], "role": "main",
+    "why": "A camp of this kind at about 8,100 ft puts you on the correct side of the glacier and parties on the neighboring Mowich lines climb from it directly."},
+   {"name": "Ptarmigan Ridge bivy above Observation Rock", "nights": [], "role": "route",
+    "why": "Best wind shelter on this side, but you still descend scree to the North Mowich Glacier in the morning, so a longer start to the face."},
+   {"name": "High camp below the North Mowich headwall", "nights": [], "role": "route",
+    "why": "Closest to the face at about 10,000 ft, but fully exposed to ice and rock coming off the headwall; wear a helmet in camp."},
+   {"name": "Liberty Cap saddle", "nights": [], "role": "route",
+    "why": "An emergency bivy for a benighted party after topping out, not a place to plan a night."}
+  ],
+  "new_camps": [],
+  "confidence": "low",
+  "plan_conflict": "The plan moves to a higher camp on night 2, but the reports found for the neighboring Mowich-side lines stayed at the 8,100 ft divide camp for every night; no Mowich Face report was found to confirm the plan's staging.",
+  "sources": ["https://turns-all-year.com/trip-reports/july-21-23-2016-mt-rainier-central-mowich-face", "https://turns-all-year.com/trip-reports/jul-3-5-mt-rainier-edmunds-headwall-mowich-face"]
+ },
+ {
+  "id": "wa_mount_rainier_nisqually_icefall",
+  "camps": [
+   {"name": "Nisqually Glacier camp below the icefall", "nights": [1], "role": "main",
+    "why": "Camping low lets you be through the icefall before the sun hits it; the site shifts each year with the glacier and moraine."},
+   {"name": "Camp Muir", "nights": [], "role": "route",
+    "why": "Used by early ascent parties who slept at Muir and crossed over to the icefall; it adds a long traverse in the dark, so not the usual night."},
+   {"name": "Ingraham Flats", "nights": [], "role": "route",
+    "why": "Higher bench on the standard route where the Nisqually joins; only useful as the camp for a party that descends to it after the climb."}
+  ],
+  "new_camps": [],
+  "confidence": "low",
+  "plan_conflict": null,
+  "sources": ["https://publications.americanalpineclub.org/articles/12194913800/First-Ascent-of-the-Nisqually-Icefall", "https://mountaineers.org/activities/trip-reports/intermediate-alpine-climb-mount-rainier-kautz-glacier-2"]
+ },
+ {
+  "id": "wa_mount_rainier_ptarmigan_ridge",
+  "camps": [
+   {"name": "Curtis Ridge camp", "nights": [1], "role": "main",
+    "why": "The usual first night: crest ground between the Winthrop and Carbon glaciers, near the point where parties cross to the ridge the next day."},
+   {"name": "Ptarmigan Ridge high camp", "nights": [2], "role": "main",
+    "why": "The camp the route is built around: bivy ground at about 10,300 ft on the crest, just outside the serac fall line and fully exposed to wind."},
+   {"name": "Glacier Basin camp", "nights": [], "role": "route",
+    "why": "The last forested camp with bear boxes and a toilet; fine for a night before the approach but too low to be a night on the climb."},
+   {"name": "Camp Schurman", "nights": [], "role": "route",
+    "why": "Reached after the Emmons-Winthrop descent on summit day; parties who stop for the night here make it a fourth night, which this plan does not include."}
+  ],
+  "new_camps": [],
+  "confidence": "medium",
+  "plan_conflict": "Day 1 says camp partway up the Russell Glacier; trip reports and the camp on file place the first night on Curtis Ridge.",
+  "sources": ["https://mountaineers.org/activities/routes-places/mount-rainier-ptarmigan-ridge", "https://www.mountainproject.com/route/106846325/ptarmigan-ridge", "https://www.mountainguides.com/rainier-tr2017-liberty-ridge.shtml"]
+ },
+ {
+  "id": "wa_mount_rainier_sunset_ridge",
+  "camps": [
+   {"name": "Puyallup Cleaver high camp", "nights": [2], "role": "main",
+    "why": "The usual high camp: it puts the climb a day's push away and the cleaver crest stays out of runnels, but it is wind-exposed."},
+   {"name": "Colonnade Ridge", "nights": [], "role": "route",
+    "why": "A first stop above the Wonderland Trail that depends on snow cover; it makes a very long summit day, so it is rarely a plan."},
+   {"name": "Open bivouac near 9,600 ft", "nights": [], "role": "route",
+    "why": "Cuts the summit day, but there is only what you dig; worth it only with firm snow for the face above."},
+   {"name": "Bergschrund camp in the Sunset Amphitheater", "nights": [], "role": "route",
+    "why": "A small flat by the schrund; shortest summit day, but the headwall above sheds ice and rock, so pitch it with care."}
+  ],
+  "new_camps": [
+   {"name": "Klapatche Park", "elev_ft": 5515, "type": "camp", "role": "main", "nights": [1],
+    "why": "The nearest official trail camp past St. Andrews Park; sleeping at the ridge foot keeps day 2 to the cleaver, but it books up on summer weekends.",
+    "water": "", "capacity": "", "permit": "A Wonderland Trail wilderness permit is needed for the night.",
+    "notes": "Elevation from the park's trip planner. The first night is not confirmed by a Sunset Ridge report, which is why confidence is low."},
+   {"name": "Camp Muir", "elev_ft": 10080, "type": "camp", "role": "main", "nights": [3],
+    "why": "The usual descent camp when coming down the standard route; shelter and a toilet, but no sign of what parties choose after this climb.",
+    "water": "Melt snow and treat it.", "capacity": "", "permit": "Climbing registration is required.",
+    "notes": "The plan's day 3 only says descend to a high camp and day 4 names Schurman or Muir, so which camp is not confirmed by a trip report."}
+  ],
+  "confidence": "low",
+  "plan_conflict": "Night 1 (about 6,000 ft near St. Andrews Park) and night 3 (Schurman or Muir) have no camp on file and no Sunset Ridge report confirming either.",
+  "sources": ["https://www.nps.gov/mora/planyourvisit/upload/Wilderness-Trip-Planner-Aid_COMBO_v1_508.pdf", "https://publications.americanalpineclub.org/articles/12195050300/North-America-United-States-Washington-A-Westside-Traverse-of-Mt-Rainier", "https://mountaineers.org/activities/routes-places/mount-rainier-sunset-ridge"]
+ },
+ {
+  "id": "wa_mount_rainier_tahoma_glacier",
+  "camps": [
+   {"name": "Puyallup Cleaver camp below St. Andrews Rock", "nights": [2, 3], "role": "main",
+    "why": "Flat sites below the rock at the cleaver's top; the glacier is a short, quick day from here, so parties stay put for the summit night."}
+  ],
+  "new_camps": [
+   {"name": "Klapatche Park", "elev_ft": 5515, "type": "camp", "role": "main", "nights": [1],
+    "why": "The closest trail camp past St. Andrews Park; a night here splits the long approach, but it fills on summer weekends.",
+    "water": "", "capacity": "", "permit": "A Wonderland Trail wilderness permit is needed for the night.",
+    "notes": "Elevation from the park's trip planner. The camp on file only says many parties spend the first night at St. Andrews Park, so the exact spot is not confirmed."}
+  ],
+  "confidence": "low",
+  "plan_conflict": "Day 4 walks out to the car, so a night 4 does not exist; the first night's camp (St. Andrews Park area) is not on file.",
+  "sources": ["https://turns-all-year.com/trip-reports/may-22-25-laps-on-tahoma-gl-traverse-from-paradise", "https://www.nps.gov/mora/planyourvisit/upload/Wilderness-Trip-Planner-Aid_COMBO_v1_508.pdf", "https://mountaineers.org/activities/routes-places/mount-rainier-sunset-ridge"]
+ },
+ {
+  "id": "wa_mount_rainier_willis_wall",
+  "camps": [
+   {"name": "Curtis Ridge camp", "nights": [1], "role": "main",
+    "why": "The launch point for the wall: you leave before midnight to reach the avalanche cones frozen, so sleep here and not on the Carbon Glacier floor."},
+   {"name": "Glacier Basin camp", "nights": [], "role": "route",
+    "why": "Forested camp with a toilet and bear boxes; last reliable running water, but too low to be a night on this trip."},
+   {"name": "St Elmo Pass bivy", "nights": [], "role": "route",
+    "why": "A staging bivy at the pass where parties rope up; useful when a late start makes the Curtis Ridge traverse too long for one day."}
+  ],
+  "new_camps": [
+   {"name": "Camp Schurman", "elev_ft": 9440, "type": "camp", "role": "main", "nights": [2],
+    "why": "Day 2 ends here after the Emmons-Winthrop descent; it is the first established camp, though fit parties walk straight out.",
+    "water": "", "capacity": "", "permit": "",
+    "notes": "Ranger hut and solar toilet; the hut is not a shelter for climbers."}
+  ],
+  "confidence": "low",
+  "plan_conflict": "Day 3 walks out to the car, but day 2 ends at Camp Schurman and the camp is not on file, so it is added as the night 2 main.",
+  "sources": ["https://www.mountainguides.com/rainier-tr2017-liberty-ridge.shtml", "https://www.alanarnette.com/climbs/rainierfaq.php"]
+ },
+ {
+  "id": "wa_point_success_south_side",
+  "camps": [
+   {"name": "Point 6631 (base camp north of Pyramid Peak)", "nights": [1], "role": "main",
+    "why": "A flat bench at the base of the cleaver reached in one day from Longmire, with water nearby and the cleaver starting right above."},
+   {"name": "Cleaver crest col", "nights": [2], "role": "main",
+    "why": "Best ground on the route: a broad saddle on the crest out of rockfall lines, with the summit push next, though it has no water."},
+   {"name": "Devil's Dream camp", "nights": [], "role": "route",
+    "why": "Forested trail camp with reliable water that adds a night's gain to day 2; a bail-out or late start, not the usual night."},
+   {"name": "Dug platform on the lower-mid cleaver", "nights": [], "role": "route",
+    "why": "For parties caught low on the cleaver; the dug platform is protected from the rockfall lines either side but exposed above you."}
+  ],
+  "new_camps": [],
+  "confidence": "medium",
+  "plan_conflict": null,
+  "sources": ["https://www.summitpost.org/success-cleaver/climbers-log/467582", "https://www.mountaineers.org/activities/routes-places/mount-rainier-success-cleaver", "https://cascadeclimbers.com/forum/topic/26343-need-beta-on-success-cleaver/"]
+ }
+]

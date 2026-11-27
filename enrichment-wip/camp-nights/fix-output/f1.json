@@ -1,0 +1,614 @@
+[
+ {
+  "id": "wa_bulls_tooth_south_ridge",
+  "camps": [],
+  "new_camps": [
+   {
+    "name": "Middle Chain Lake camp",
+    "elev_ft": null,
+    "type": "bivy",
+    "role": "main",
+    "nights": [
+     1
+    ],
+    "why": "The usual first night: ten miles from Stevens Pass, secluded sites among trees with lake views, and a short climb to Bullseye Pass for the Bulls Tooth day.",
+    "water": "Lake water at the camp.",
+    "capacity": "",
+    "permit": "Overnight permit required in the Alpine Lakes Wilderness.",
+    "notes": "Reached by the PCT, Icicle Creek trail and then the steep Chain Lakes trail. Camps must sit at least 200 ft from the lake shore."
+   },
+   {
+    "name": "Lake Margaret and Frosty Pass junction camp",
+    "elev_ft": 5424,
+    "type": "camp",
+    "role": "main",
+    "nights": [
+     2
+    ],
+    "why": "Where the Bulls Tooth day usually ends: the shared camping area below Frosty Pass, which leaves a shorter final walk down to Whitepine.",
+    "water": "Lake Margaret beside the camp.",
+    "capacity": "",
+    "permit": "Overnight permit required in the Alpine Lakes Wilderness.",
+    "notes": "Lake Margaret sits about half a mile below Frosty Pass. Parties delayed by weather or smoke have camped on the high ground just short of the pass."
+   }
+  ],
+  "confidence": "medium",
+  "plan_conflict": "The plan says camp 'near Frosty Pass'; parties report the shared camping area at Lake Margaret just below the pass.",
+  "sources": [
+   "https://brookebeyond.com/?p=18674",
+   "https://brookebeyond.com/bullseye-traverse-day-2-chain-lakes-to-frosty-pass-via-bulls-tooth-summit",
+   "https://climberkyle.com/2020/08/29/chain-lakes-bulls-tooth/",
+   "https://wenatcheeoutdoors.org/2017/01/08/chain-doelle-margaret-lakes-circuit/"
+  ]
+ },
+ {
+  "id": "wa_bonanza_peak_cascadian_route",
+  "camps": [],
+  "new_camps": [
+   {
+    "name": "North Star-Bonanza col camp",
+    "elev_ft": 7000,
+    "type": "camp",
+    "role": "main",
+    "nights": [
+     1,
+     2
+    ],
+    "why": "Flat, parklike sites with water just south of the col; the west face is a short walk away, and you return here after the climb before walking out.",
+    "water": "Snowmelt and running water at the camp.",
+    "capacity": "Plenty of flat sites.",
+    "permit": "",
+    "notes": "Reached from Holden Village by the Railroad Creek trail to Hart Lake, then about 3,000 ft up heather and rock terraces left of the waterfalls. The same camp serves the Soviet Route."
+   }
+  ],
+  "confidence": "high",
+  "plan_conflict": "An earlier pass placed this camp at Holden Pass; the plan's own 'col camp' and the route's party reports put it south of the North Star-Bonanza col near 7,000 ft.",
+  "sources": [
+   "https://publications.americanalpineclub.org/articles/13201216753",
+   "https://stephabegg.com/?p=8709"
+  ]
+ },
+ {
+  "id": "wa_needle_peak_north_ridge",
+  "camps": [
+   {
+    "name": "Swamp Creek Camp — the base for Needle Peak, Mount Lyall and Lyall Ridge",
+    "nights": [
+     1
+    ],
+    "role": "main",
+    "why": "The closest established camp to the Swamp Creek way trail, so summit day starts at the turnoff and the walk out is shorter."
+   },
+   {
+    "name": "Fivemile Camp, Agnes Creek",
+    "nights": [],
+    "role": "route",
+    "why": "Closer to the road end, but it leaves about three more miles of trail before the Swamp Creek turnoff on climbing day. Use it if the boat or shuttle runs late."
+   },
+   {
+    "name": "Purple Point and Harlequin — the landing camps, and the boat that decides the trip",
+    "nights": [],
+    "role": "route",
+    "why": "Lake Chelan landing camps, used the night before when the boat schedule makes you miss the trailhead. Not slept at on a normal two-day plan."
+   },
+   {
+    "name": "High Bridge Camp — the shuttle terminus and the base for McGregor Mountain",
+    "nights": [],
+    "role": "route",
+    "why": "A shuttle stop near the trailhead for the night before or after. Too low and too far from Needle Peak to serve as a climbing camp."
+   }
+  ],
+  "new_camps": [],
+  "confidence": "medium",
+  "plan_conflict": null,
+  "sources": [
+   "https://cascadeclimbers.com/forum/topic/44521-tr-bonanza-nw-ridge-via-dark-pk-iv-58",
+   "https://publications.americanalpineclub.org/articles/12200713400/North-America-United-States-Washington-Cascade-Range-Bonanza-Peak-Northwest-Ridge",
+   "https://cascadeclimbers.com/forum/topic/81507-tr-asa-agnes-gunsight-and-sinister-standards-7132011"
+  ]
+ },
+ {
+  "id": "wa_soviet_route",
+  "camps": [
+   {
+    "name": "High camp near North Star-Bonanza pass (~7,100 ft)",
+    "nights": [
+     1,
+     2
+    ],
+    "role": "main",
+    "why": "Flat, parklike sites with water just south of the pass. The north face is within reach, and the same camp takes you back after the climb and traverse."
+   },
+   {
+    "name": "Holden Village",
+    "nights": [],
+    "role": "route",
+    "why": "Indoor beds and meals before the approach or after the exit; too far below the climb to sleep at between the two climbing days."
+   },
+   {
+    "name": "Holden Ballpark Campground",
+    "nights": [],
+    "role": "route",
+    "why": "A field camp a mile above the village for parties arriving the night before; low, open and far from the climb."
+   }
+  ],
+  "new_camps": [],
+  "confidence": "high",
+  "plan_conflict": null,
+  "sources": [
+   "https://stephabegg.com/?p=8709",
+   "https://publications.americanalpineclub.org/articles/13201216753",
+   "https://publications.americanalpineclub.org/articles/12197634000"
+  ]
+ },
+ {
+  "id": "wa_chiwawa_mountain_southwest",
+  "camps": [
+   {
+    "name": "Chiwawa Basin high camp benches",
+    "nights": [
+     1,
+     2
+    ],
+    "role": "main",
+    "why": "Heather benches and meadow at the head of the Chiwawa River trail, with water; the southwest snowfield is close, so summit day is short."
+   },
+   {
+    "name": "Phelps Creek Campground and the Chiwawa River road campgrounds",
+    "nights": [
+     0
+    ],
+    "role": "route",
+    "why": "A car camp for the night before, after the long rough drive up the Chiwawa River road. It gives an early start but is not a climbing camp."
+   }
+  ],
+  "new_camps": [],
+  "confidence": "medium",
+  "plan_conflict": null,
+  "sources": [
+   "https://www.countryhighpoints.com/chiwawa-mountain/",
+   "https://wenatcheeoutdoors.org/?p=2235"
+  ]
+ },
+ {
+  "id": "wa_copper_peak_south_route",
+  "camps": [
+   {
+    "name": "Copper Creek basin camp",
+    "nights": [
+     1,
+     2
+    ],
+    "role": "main",
+    "why": "The high camp in Copper Basin near 5,600 ft, about three miles above Holden. The glacier route starts close, and you sleep here again before walking out."
+   },
+   {
+    "name": "Holden Village",
+    "nights": [],
+    "role": "route",
+    "why": "Indoor beds and meals before or after the climb, at 3,200 ft. Too low to climb from, so it adds a long day if used between nights."
+   },
+   {
+    "name": "Holden Ballpark Campground",
+    "nights": [],
+    "role": "route",
+    "why": "A field camp near the village for the night before an early start. Open, with few sites, and far below the climb."
+   }
+  ],
+  "new_camps": [],
+  "confidence": "medium",
+  "plan_conflict": null,
+  "sources": [
+   "https://www.mountaineers.org/activities/trip-reports/basic-alpine-climb-copper-peak-mount-fernow",
+   "https://www.mountaineers.org/activities/routes-places/copper-peak-southeast-glacier"
+  ]
+ },
+ {
+  "id": "wa_dumbell_mountain_west",
+  "camps": [
+   {
+    "name": "Lower Phelps Basin Bivy",
+    "nights": [
+     1,
+     2
+    ],
+    "role": "main",
+    "why": "Sits in the basin below the climb near 5,700 ft, so summit day is short. Flat spots are few and water is the creek, so arrive early."
+   },
+   {
+    "name": "Spider Meadow and Phelps Basin",
+    "nights": [
+     1,
+     2
+    ],
+    "role": "route",
+    "why": "Plenty of flat, protected sites with water about five miles in, and a longer summit day. Choose it for comfort or a bigger group."
+   },
+   {
+    "name": "Phelps Creek Campground and the Chiwawa River road campgrounds",
+    "nights": [
+     0
+    ],
+    "role": "route",
+    "why": "A trailhead car camp for the night before, after the rough gravel drive. It gives a morning start but is not a climbing camp."
+   }
+  ],
+  "new_camps": [],
+  "confidence": "medium",
+  "plan_conflict": "Lower Phelps Basin Bivy and Spider Meadow were both filed as main; parties camp in Phelps Basin for this climb, so Spider Meadow is now the alternative.",
+  "sources": [
+   "https://cloche-dor.blogspot.com/2021/07/2021724-25-dumbell-greenwood-from.html",
+   "https://countryhighpoints.com/dumbell-and-greenwood-mountains"
+  ]
+ },
+ {
+  "id": "wa_fortress_mountain_east_ridge",
+  "camps": [
+   {
+    "name": "Chiwawa Basin bench",
+    "nights": [
+     1,
+     2
+    ],
+    "role": "main",
+    "why": "A flat heather bench near 6,300 ft with small streams and room for a couple of tents; the east ridge is a short day from here."
+   },
+   {
+    "name": "Phelps Creek Campground and the Chiwawa River road campgrounds",
+    "nights": [
+     0
+    ],
+    "role": "route",
+    "why": "A car camp for the night before after the long gravel drive; it gives an earlier start but is far from the ridge."
+   }
+  ],
+  "new_camps": [],
+  "confidence": "medium",
+  "plan_conflict": "The plan names the 7,200 ft col or the 7,100 ft plateau as camp; the camp on file is the 6,300 ft bench below, and reports describe both.",
+  "sources": [
+   "https://wenatcheeoutdoors.org/?p=2235",
+   "https://www.countryhighpoints.com/chiwawa-mountain/"
+  ]
+ },
+ {
+  "id": "wa_greenwood_mountain_west_ridge",
+  "camps": [],
+  "new_camps": [
+   {
+    "name": "Upper Phelps Basin camp",
+    "elev_ft": 5800,
+    "type": "camp",
+    "role": "main",
+    "nights": [
+     1,
+     2
+    ],
+    "why": "A level spot at the top of the basin, close to the Dumbell col, so summit day is short; flat ground is scarce, so sites are few.",
+    "water": "A stream runs beside the camp.",
+    "capacity": "A few small sites.",
+    "permit": "",
+    "notes": "At the last patch of trees at the head of Phelps Basin, near 5,800 ft. Some parties stay lower in the basin or at Spider Meadow, where there is more room."
+   }
+  ],
+  "confidence": "medium",
+  "plan_conflict": null,
+  "sources": [
+   "https://countryhighpoints.com/dumbell-and-greenwood-mountains",
+   "https://cloche-dor.blogspot.com/2021/07/2021724-25-dumbell-greenwood-from.html"
+  ]
+ },
+ {
+  "id": "wa_mount_lyall_south_route",
+  "camps": [
+   {
+    "name": "Swamp Creek Camp — the base for Needle Peak, Mount Lyall and Lyall Ridge",
+    "nights": [
+     1,
+     2
+    ],
+    "role": "main",
+    "why": "The working base for Lyall on the Crest trail corridor; sleeping here shortens summit day, and the unmaintained trail beyond has no better site."
+   },
+   {
+    "name": "Purple Point and Harlequin — the landing camps, and the boat that decides the trip",
+    "nights": [],
+    "role": "route",
+    "why": "The night before the walk if the boat times badly; far down the valley, so it is not slept at on a normal plan."
+   },
+   {
+    "name": "High Bridge Camp — the shuttle terminus and the base for McGregor Mountain",
+    "nights": [],
+    "role": "route",
+    "why": "The first camp past the shuttle stop; good for a late arrival, but it is farther down the valley and makes day one longer."
+   },
+   {
+    "name": "Fivemile Camp, Agnes Creek",
+    "nights": [],
+    "role": "route",
+    "why": "A halfway camp on the trail; stopping here splits the approach but leaves about three more miles to Swamp Creek the next morning."
+   }
+  ],
+  "new_camps": [],
+  "confidence": "low",
+  "plan_conflict": null,
+  "sources": [
+   "https://www.mountaineers.org/activities/trip-reports/intermediate-alpine-climb-sinister-peak-west-ridge",
+   "https://cascadeclimbers.com/forum/topic/81507-tr-asa-agnes-gunsight-and-sinister-standards-7132011"
+  ]
+ },
+ {
+  "id": "wa_spectacle_buttes_west_route",
+  "camps": [
+   {
+    "name": "Leroy Basin camp",
+    "nights": [
+     1,
+     2
+    ],
+    "role": "main",
+    "why": "Meadow sites with water near 6,100 ft after a steep climbers' path. Summit day is long from here, over Leroy and Freezer passes, and you return to sleep."
+   }
+  ],
+  "new_camps": [],
+  "confidence": "medium",
+  "plan_conflict": null,
+  "sources": [
+   "https://wenatcheeoutdoors.org/2017/10/19/leroy-carne-loop-on-ice/",
+   "https://summitpost.org/ice-box/956006",
+   "https://www.wta.org/go-hiking/trip-reports/trip_report-2024-10-06.223025268778"
+  ]
+ },
+ {
+  "id": "wa_chalangin_peak_little_giant_pass_luahna_col",
+  "camps": [
+   {
+    "name": "Butterfly Butte and the Pilz Glacier basin camps",
+    "nights": [
+     1,
+     2
+    ],
+    "role": "main",
+    "why": "The climbing camp for Chalangin and Luahna: benches near Butterfly Butte with water, close to the Pilz Glacier approach."
+   },
+   {
+    "name": "Napeequa Valley floor near Louis Creek",
+    "nights": [],
+    "role": "route",
+    "why": "A lower camp by the river, well below the Butterfly Butte benches. It spares the last steep haul on day one but leaves that climb for summit morning."
+   }
+  ],
+  "new_camps": [],
+  "confidence": "medium",
+  "plan_conflict": "The plan puts camp at about 6,200 ft while the camp on file sits near 5,850 ft; the exact bench was not confirmed.",
+  "sources": [
+   "https://www.mountaineers.org/activities/activities/basic-glacier-climb-luahna-peak-pilz-glacier-5",
+   "https://www.summitpost.org/luahna-peak/833751"
+  ]
+ },
+ {
+  "id": "wa_chalangin_peak_southwest_face",
+  "camps": [],
+  "new_camps": [
+   {
+    "name": "Chalangin Basin high camp",
+    "elev_ft": 5000,
+    "type": "camp",
+    "role": "main",
+    "nights": [
+     1,
+     2
+    ],
+    "why": "The basin below the Luahna-Chalangin col is the only high camp on the Thunder Creek approach; the snow face starts right above it.",
+    "water": "",
+    "capacity": "",
+    "permit": "",
+    "notes": "Reached by leaving the White River trail at Thunder Creek and bushwhacking through slide alder and blowdown. Camp location comes from a party that slept in the 5,000 ft basin on this approach."
+   }
+  ],
+  "confidence": "medium",
+  "plan_conflict": null,
+  "sources": [
+   "https://apps.yellowleaf.org/scramble/g/r/2013-08-31--09-01-luahna-clark.html",
+   "https://countryhighpoints.com/chalangin-peak-attempt"
+  ]
+ },
+ {
+  "id": "wa_luahna_peak_southwest_slope_southeast_ridge",
+  "camps": [
+   {
+    "name": "Boulder Pass and Thunder Basin, White River",
+    "nights": [],
+    "role": "route",
+    "why": "A higher camp near the pass, much farther in; parties on this overnight plan stop in the lower basin instead."
+   }
+  ],
+  "new_camps": [
+   {
+    "name": "Basin camp on Luahna's south slopes",
+    "elev_ft": 5000,
+    "type": "camp",
+    "role": "main",
+    "nights": [
+     1
+    ],
+    "why": "The one night on this plan: a basin near 5,000 ft below Luahna, close enough that Luahna and Clark are one long day before the walk out.",
+    "water": "",
+    "capacity": "",
+    "permit": "",
+    "notes": "Reached by the White River trail and the Thunder Creek and Luahna boot paths, both easy to miss. Climbers go up the basin's northeast slopes to Luahna."
+   }
+  ],
+  "confidence": "medium",
+  "plan_conflict": "The plan fits a ford camp, a high camp and the summit into one night and two days; reported trips sleep once in the basin below Luahna and walk out the second day.",
+  "sources": [
+   "https://apps.yellowleaf.org/scramble/g/r/2013-08-31--09-01-luahna-clark.html"
+  ]
+ },
+ {
+  "id": "wa_mount_berge_southwest_route",
+  "camps": [
+   {
+    "name": "Buck Creek Pass and the High Pass camps",
+    "nights": [],
+    "role": "route",
+    "why": "Serves the Buck Creek side of the peak, not the Napeequa approach this plan uses; sleep here only if you switch to the east-side approach."
+   }
+  ],
+  "new_camps": [
+   {
+    "name": "Treeline camp on Berge's southwest side",
+    "elev_ft": null,
+    "type": "bivy",
+    "role": "main",
+    "nights": [
+     1,
+     2
+    ],
+    "why": "Flat ground at treeline where Berge's southwest creek meets the Napeequa trail; it puts the scramble right above you, and you return to sleep.",
+    "water": "A creek drains Berge's southwest side beside the camp.",
+    "capacity": "",
+    "permit": "",
+    "notes": "Reached after Little Giant Pass and the Napeequa Valley by a steep, intermittent boot track beside the creek. There are no good camps between the valley floor and the pass."
+   }
+  ],
+  "confidence": "low",
+  "plan_conflict": "The camp on file serves the Buck Creek approach; this plan sleeps at a treeline camp on the southwest side, so it is not slept at here.",
+  "sources": [
+   "https://summitpost.org/mount-berge/664777",
+   "https://www.wta.org/go-hiking/trip-reports/trip_report-2024-09-18.120716288585"
+  ]
+ },
+ {
+  "id": "wa_north_face_of_the_mole",
+  "camps": [],
+  "new_camps": [
+   {
+    "name": "Upper Hook Creek basin camp below The Mole",
+    "elev_ft": null,
+    "type": "bivy",
+    "role": "main",
+    "nights": [
+     1,
+     2
+    ],
+    "why": "About 40 minutes from the base of the north face, so summit day is short and you sleep here again before the walk down.",
+    "water": "Fresh water nearby once the snow has melted back.",
+    "capacity": "Few flat sites; early in the season finding one can take over an hour.",
+    "permit": "",
+    "notes": "Reached by leaving the Icicle road trail below Yellow Jacket Tower and traversing into Hook Creek, about 4.5 hours to the upper basin. Ticks have been found at the sites in early summer."
+   }
+  ],
+  "confidence": "medium",
+  "plan_conflict": null,
+  "sources": [
+   "https://cascadeclimbers.com/forum/topic/74289-tr-the-mole-north-face-652010",
+   "https://www.mountainproject.com/route/107618236/north-face-of-the-mole"
+  ]
+ },
+ {
+  "id": "wa_rock_mountain_northeast_ridge",
+  "camps": [
+   {
+    "name": "Crescent Lake",
+    "nights": [
+     1
+    ],
+    "role": "main",
+    "why": "The natural halfway camp once Mastiff and Howard are behind you: lake water, and a short morning to the Howard-Rock col and Rock Mountain."
+   },
+   {
+    "name": "Merritt Lake",
+    "nights": [],
+    "role": "route",
+    "why": "The easy eastern camp with a big site and a privy; sleep here only if you start late. Water is scarce east of it."
+   },
+   {
+    "name": "Mount Howard summit-area bivouac",
+    "nights": [],
+    "role": "route",
+    "why": "A dry crest bivy for sunset and dawn views; you haul water and gear well above Crescent Lake, so it is a choice rather than a plan."
+   },
+   {
+    "name": "Rock Lake",
+    "nights": [],
+    "role": "route",
+    "why": "Pleasant sites 1.3 miles west of Crescent Lake and close under Rock Mountain; used by parties who push past Crescent on day one."
+   }
+  ],
+  "new_camps": [],
+  "confidence": "low",
+  "plan_conflict": "The plan puts night 1 in the Upper Canaan Lake basin (about 6,050 ft); no camp by that name is on file and parties are described camping at Crescent Lake, so the plan's camp could not be confirmed.",
+  "sources": [
+   "https://www.wta.org/go-hiking/hikes/nason-ridge",
+   "https://stevensong.com/usa/washington/mount-mastiff-mount-howard-and-rock-mountain/"
+  ]
+ },
+ {
+  "id": "wa_fifth_of_july_mountain_scramble",
+  "camps": [
+   {
+    "name": "Larch Lakes meadow camps",
+    "nights": [
+     1,
+     2
+    ],
+    "role": "main",
+    "why": "The usual base for Fifth of July: meadow camps near 5,700 ft put the summit about six miles round trip away. Day one is longer than a Myrtle Lake stop."
+   },
+   {
+    "name": "Cow Creek Meadows",
+    "nights": [],
+    "role": "route",
+    "why": "Established sites in trees before the meadow, in a cold, shady bowl with few larches; the summit day from here is longer than from Larch Lakes."
+   },
+   {
+    "name": "Cottonwood Camp and the Entiat River road campgrounds",
+    "nights": [
+     0
+    ],
+    "role": "route",
+    "why": "Car campgrounds near the trailhead; handy the night before an early start on the gentle river walk."
+   },
+   {
+    "name": "Myrtle Lake",
+    "nights": [],
+    "role": "route",
+    "why": "The easy half-day camp on the south shore: a short pack in, but it leaves the full summit gain for the final day."
+   }
+  ],
+  "new_camps": [],
+  "confidence": "medium",
+  "plan_conflict": "The plan's day 1 ends at Myrtle Lake or Cow Creek Meadows, but parties climbing Fifth of July base at the Larch Lakes meadows, so Larch Lakes is now main and Cow Creek Meadows an alternative.",
+  "sources": [
+   "https://mountaineers.org/activities/routes-places/entiat-river-meadows-high-country",
+   "https://www.wta.org/news/go-hiking/hikes/cow-creek-meadows"
+  ]
+ },
+ {
+  "id": "wa_north_gardner_mountain_southwest",
+  "camps": [
+   {
+    "name": "Gardner Meadows, Wolf Creek trail",
+    "nights": [
+     1
+    ],
+    "role": "main",
+    "why": "End of the trail with water and many comfortable flat sites, about ten miles in. This is the base most parties use for both peaks."
+   },
+   {
+    "name": "High basin camp above Gardner Meadows",
+    "nights": [],
+    "role": "route",
+    "why": "A small meadow basin near 6,250 ft that cuts summit-day gain, at the cost of a steep off-trail carry and less certain water."
+   }
+  ],
+  "new_camps": [],
+  "confidence": "high",
+  "plan_conflict": "Both camps were filed as main; parties camp at Gardner Meadows, so the high basin is now the alternative. The plan's 'Wolf Creek Basin' is read as the meadows.",
+  "sources": [
+   "https://lemkeclimbs.com/gardner-peaks",
+   "https://wenatcheeoutdoors.org/2017/01/22/gardner-mountain/",
+   "https://www.mountaineers.org/activities/activities/alpine-scramble-gardner-mountain-north-gardner-mountain-18"
+  ]
+ }
+]

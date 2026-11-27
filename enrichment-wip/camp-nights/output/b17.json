@@ -1,0 +1,273 @@
+[
+ {
+  "id": "wa_spider_mountain_north_face",
+  "camps": [
+   {"name": "Cache Col and the Cache Glacier shoulder", "nights": [1], "role": "main",
+    "why": "A hollow on the gentle glacier shoulder just below the col. It puts the north face one pre-dawn crossing away, so a ski trip back to the car needs only this one night."},
+   {"name": "Kool-Aid Lake", "nights": [], "role": "route",
+    "why": "Lies on the far side of the col, so camping here adds a descent and a re-climb. It is the summer base for the south side, not the camp for a one-night north face trip."},
+   {"name": "Spider-Formidable Col", "nights": [], "role": "route",
+    "why": "The working base for the southeast side of Spider. It is a long way round from the north face and is not slept at on this two-day plan."}
+  ],
+  "new_camps": [],
+  "confidence": "medium",
+  "plan_conflict": "The on-file main was Kool-Aid Lake, but this plan sleeps on the Cache Glacier shoulder below the col and crosses the col in the dark on day 2, so that shoulder camp is now the main.",
+  "sources": ["https://turns-all-year.com/trip-reports/dec-3-4-spider-mtn-north-face-tag", "https://turns-all-year.com/trip-reports/spider-mountain-north-face-magic-s-loop", "https://skisickness.com/2006/02/08"]
+ },
+ {
+  "id": "wa_spider_mountain_north_ridge",
+  "camps": [
+   {"name": "Kool-Aid Lake", "nights": [1, 2], "role": "main",
+    "why": "The usual base for Spider and Formidable, with lake water and an easy walk to the Spider-Formidable col. The summit day returns here, so the same tent serves both nights."},
+   {"name": "Spider-Formidable Col", "nights": [1, 2], "role": "route",
+    "why": "Sits closer to the climb and shortens the summit day, but it is reached over the upper glacier and is more exposed than the lake, so fewer parties carry up to it."},
+   {"name": "Cache Col and the Cache Glacier shoulder", "nights": [], "role": "route",
+    "why": "A fallback for a party that loses the light on day one. Most continue over the col and down to Kool-Aid Lake rather than sleep on the glacier shoulder."}
+  ],
+  "new_camps": [],
+  "confidence": "medium",
+  "plan_conflict": "Two mains were on file (Kool-Aid Lake and Spider-Formidable Col); Kool-Aid Lake is the one repeatedly reported as the camp, so the col is demoted to route.",
+  "sources": ["https://cascadeclimbers.com/forum/topic/67770-tr-spider-and-magic-south-face-sort-of-742009", "https://turns-all-year.com/trip-reports/extended-s-loop-formidable-n-ramp-spider-glacier-spider-se-face-pelton-se-face", "https://www.summitpost.org/mount-formidable-direct-ne-face-5-6-iii-second-ascent/857617"]
+ },
+ {
+  "id": "wa_storm_king_southwest_scramble",
+  "camps": [
+   {"name": "Rib camp below Storm King/Goode basin", "nights": [2], "role": "main",
+    "why": "Flat grassy ground near 7,400 ft with water close by. It sits right under the summit cirque, so the climb is one day from the tent before the long walk out."},
+   {"name": "Neve Camp", "nights": [], "role": "route",
+    "why": "A low forest camp at the Thunder Creek end of the valley for the west-side approach. It is not on the Stehekin approach this plan uses."},
+   {"name": "Junction Camp", "nights": [], "role": "route",
+    "why": "A trail camp on the Thunder Creek side, far from this peak's Stehekin approach. It matters only for a party coming over Park Creek Pass from the west."},
+   {"name": "Skagit Queen Camp", "nights": [], "role": "route",
+    "why": "The last creekside camp on the Thunder Creek side before the headwaters. It is used when approaching from the west, not on the Stehekin plan."},
+   {"name": "Thunder Basin Hiker Camp", "nights": [], "role": "route",
+    "why": "West-side staging camp below Park Creek Pass. A party arriving from Thunder Creek sleeps here instead of climbing from the Stehekin side."},
+   {"name": "Five Mile Camp, Park Creek trail", "nights": [], "role": "route",
+    "why": "A trail camp higher up the Park Creek valley than Two Mile Camp. A party wanting a shorter second day can push this far on day one, but it is not the usual stop."}
+  ],
+  "new_camps": [
+   {"name": "Two Mile Camp", "elev_ft": null, "type": "camp", "role": "main", "nights": [1],
+    "why": "A small trail camp just after the Park Creek log crossing, roughly two trail miles up the valley. It is where a boat-and-bus day ends before the steep climb to high camp.",
+    "water": "", "capacity": "Small; it does not hold larger groups.", "permit": "A backcountry permit is required for overnight stays.",
+    "notes": "No elevation found in any source read; the pass above it is about 6,000 ft."}
+  ],
+  "confidence": "low",
+  "plan_conflict": "The plan's night-1 camp, Two Mile Camp, is not among the camps on file, which listed only the night-2 rib camp and west-side camps. Night 1 could not be confirmed from a trip report.",
+  "sources": ["https://stephabegg.com/?p=8941", "https://www.countryhighpoints.com/mt-storm-king/", "https://www.nps.gov/noca/planyourvisit/thunder-creek-trail.htm"]
+ },
+ {
+  "id": "wa_the_needle_neve_glacier",
+  "camps": [
+   {"name": "Colonial Glacier moraine-lake camp", "nights": [1], "role": "main",
+    "why": "The flat bench at the toe of the Colonial Glacier, about 6,000 ft, is the last place to sleep before roping up. It makes the next day a pre-dawn glacier start."}
+  ],
+  "new_camps": [],
+  "confidence": "medium",
+  "plan_conflict": null,
+  "sources": ["https://www.nps.gov/noca/blogs/colonial-cross-country-zone.htm", "https://stephabegg.com/?p=8944"]
+ },
+ {
+  "id": "wa_trapper_mountain_south_slopes",
+  "camps": [
+   {"name": "Trapper Lake", "nights": [1, 2], "role": "main",
+    "why": "Lake water and the base of the south slopes make this the natural tent site. The cost is a brushy off-trail descent, so most of day one goes to reaching it."},
+   {"name": "Cottonwood Camp", "nights": [], "role": "route",
+    "why": "The camp at the end of the old upper Stehekin road, on the east side. It is for a different approach and is not slept at on the Cascade Pass plan."}
+  ],
+  "new_camps": [],
+  "confidence": "low",
+  "plan_conflict": null,
+  "sources": ["https://adminonly.wta.org/go-hiking/hikes/trapper-lake", "https://www.wta.org/go-hiking/trip-reports/trip_report.2024-03-11.2795822533", "https://turns-all-year.com/trip-reports/trapper-mountain-north-couloir"]
+ },
+ {
+  "id": "wa_tricouni_peak_southwest_slopes",
+  "camps": [
+   {"name": "Borealis Glacier toe / Borealis Lake high camp", "nights": [1, 2], "role": "main",
+    "why": "The base for both summits, with meltwater from the lake and rock bivy sites above it. It is windy, but the roped glacier day starts right from the tent."},
+   {"name": "Colonial Creek South Campground, Thunder Creek trailhead", "nights": [0], "role": "route",
+    "why": "A car camp with the trail leaving from it. Sleeping here the night before avoids driving in from the west at dawn before a very long first day."},
+   {"name": "McAllister Hiker Camp, Thunder Creek trail", "nights": [], "role": "route",
+    "why": "An easy first night with a toilet and food hang, about 6.5 miles in. It splits the approach but makes day two a steep, heavy carry to the high camp."},
+   {"name": "Lucky Pass bivy, Primus-Tricouni col", "nights": [], "role": "route",
+    "why": "A high exposed col for riding out weather or a day that ran long. Hauling camp up here from the lake is rarely worth the wind."}
+  ],
+  "new_camps": [],
+  "confidence": "medium",
+  "plan_conflict": null,
+  "sources": ["https://turns-all-year.com/trip-reports/june-13-14-2011-primus-peak-via-thunder-creek", "https://www.summitpost.org/east-ridge-of-primus-peak-via-thunder-creek-and-lucky-ridge/1021975", "https://www.countryhighpoints.com/tricouni-peak/"]
+ },
+ {
+  "id": "wa_berdeen_peak_scramble",
+  "camps": [
+   {"name": "High camp above Berdeen Lake", "nights": [1], "role": "main",
+    "why": "About 800 ft above the lake, below the east ridge, so the summit is short from the tent. It is a steep, trackless day to reach, but the only camp near the peak."},
+   {"name": "Berdeen Lake benches", "nights": [], "role": "route",
+    "why": "Flat benches at the lake, about 800 ft lower, with water at hand. They lengthen the summit day, so most parties push on up to the higher camp."},
+   {"name": "Bacon Creek road end and Porkbelly Ridge", "nights": [], "role": "route",
+    "why": "No real camping on the brushy ridge; the road end is only a start point. An emergency bivy if the ridge takes longer than a day."}
+  ],
+  "new_camps": [],
+  "confidence": "medium",
+  "plan_conflict": "Two mains were on file (high camp and lake benches); reports put the camp about 800 ft above the lake, so the benches are demoted to route.",
+  "sources": ["https://stephabegg.com/?p=8924", "https://stephabegg.com/trip-reports/washington/pickets/mystery-ridge-enchainment/", "https://cascadeclimbers.com/forum/topic/61628-tr-mystery-ridge-traverse-of-ridge-8142008"]
+ },
+ {
+  "id": "wa_davis_peak_nc_north_face",
+  "camps": [],
+  "new_camps": [
+   {"name": "Glacier toe bivy, Davis Peak north face", "elev_ft": 4000, "type": "bivy", "role": "main", "nights": [1],
+    "why": "The flat toe of the glacier under the face. Sleeping here puts the bergschrund an hour from the tent, after a long bushwhack from the Stetattle Creek ford.",
+    "water": "", "capacity": "", "permit": "",
+    "notes": "Elevation is the figure in the trip plan; no source read confirmed it, and no source stated water or capacity."}
+  ],
+  "confidence": "low",
+  "plan_conflict": null,
+  "sources": ["https://www.ademiller.com/climbing/gallery/cascades/davis_2005/index.htm", "https://publications.americanalpineclub.org/articles/12198813004", "https://www.summitpost.org/davis-peak/257251"]
+ },
+ {
+  "id": "wa_elephant_butte_standard_route",
+  "camps": [
+   {"name": "Stetattle Ridge tarn camps", "nights": [1], "role": "main",
+    "why": "Open heather crest with tarns for water in early summer, drying out by late summer. Sleeping on the ridge turns the butte into a day-two walk along the crest."},
+   {"name": "Sourdough Camp, Sourdough Creek", "nights": [], "role": "route",
+    "why": "The only designated camp on the lower trail, about four miles up. A good place to break the steep climb, but it leaves a long ridge day to reach the butte."},
+   {"name": "Sourdough Mountain summit ground", "nights": [], "role": "route",
+    "why": "A bare 6,140 ft summit used by parties moving over snow in winter or spring. Exposed, and it is a first night on the way along the ridge, not a base for the butte."},
+   {"name": "Improvised camp on the shoulder of Elephant Butte", "nights": [], "role": "route",
+    "why": "Flat ground near the peak that parties use when continuing deeper into the Pickets. It is not a camp for a round trip to the summit."}
+  ],
+  "new_camps": [],
+  "confidence": "medium",
+  "plan_conflict": "Sourdough Camp was the main on file, but reports camp on the Stetattle Ridge crest; also the plan's two days is short, since heavy-pack parties budget two to three days from Diablo to the butte.",
+  "sources": ["https://stephabegg.com/?p=8908", "https://climberkyle.com/2024/07/04/pickets-high-route/", "https://summitpost.org/stetattle-ridge/comments/695049", "https://www.summitpost.org/elephant-butte/153837"]
+ },
+ {
+  "id": "wa_indian_mountain_baker_scramble",
+  "camps": [
+   {"name": "Graybeal Camp", "nights": [1, 2], "role": "main",
+    "why": "The closest established camp to the mountain's western slopes, up Brush Creek. The summit day starts and ends here, so one tent serves both nights."},
+   {"name": "Hannegan Camp, below Hannegan Pass", "nights": [], "role": "route",
+    "why": "A staging camp on the forest side of the pass for a party that drives up late. Sleeping here leaves a much longer second day to the Brush Creek camp."},
+   {"name": "Boundary Camp", "nights": [], "role": "route",
+    "why": "Only three sites just over the pass, and it needs a park permit. It splits the long approach in two but makes day two longer, and it books out on summer weekends."},
+   {"name": "US Cabin Camp, Chilliwack River", "nights": [], "role": "route",
+    "why": "A forest camp on the Chilliwack River before the Brush Creek turnoff, about two miles short of it. It has no food locker, so it works as a split night only."}
+  ],
+  "new_camps": [],
+  "confidence": "low",
+  "plan_conflict": "No trip report for this peak was found; many parties would likely split the 14-mile approach with a night at Copper Creek, which is not a camp on file.",
+  "sources": ["https://www.nps.gov/noca/planyourvisit/copper-ridge-trail.htm", "https://www.hikingproject.com/trail/7015238/brush-creek-trail", "https://en.wikipedia.com/wiki/Indian_Mountain_(Washington)"]
+ },
+ {
+  "id": "wa_mount_despair_east_route",
+  "camps": [
+   {"name": "Thornton Pass (camp knob)", "nights": [1, 2], "role": "main",
+    "why": "Benched ground on the Thornton Ridge crest at about 6,000 ft, reached after the long brushy climb. The camp-to-camp summit day starts and ends here."},
+   {"name": "Upper Despair Lake", "nights": [], "role": "route",
+    "why": "Not a documented camp. It serves as the last reliable water on the way to the face and as an emergency stop if the long day runs dark."}
+  ],
+  "new_camps": [],
+  "confidence": "low",
+  "plan_conflict": "Reports found for this peak describe camps at Triumph Pass or the valley floor rather than the Thornton Pass knob; none confirmed the knob.",
+  "sources": ["https://turns-all-year.com/trip-reports/mt-despair-south-face-triumph-environs", "https://www.mountainproject.com/area/120293763/mt-despair", "https://cascadeclimbers.com/forum/topic/104189-tr-mount-despair-southeast-faceeast-ridge-08142021"]
+ },
+ {
+  "id": "wa_mount_prophet_east",
+  "camps": [
+   {"name": "Saddle camp below Point 6690, South Ridge", "nights": [1, 2], "role": "main",
+    "why": "A saddle camp near 6,600 ft on the south ridge crest, after a steep climb out of the valley. It puts the summit within a half-day and the descent back to camp."},
+   {"name": "Thirtynine Mile Creek Camp", "nights": [], "role": "route",
+    "why": "The legal trail camp at the foot of the climb in old forest, with water. Sleeping here makes the first day easy but the ridge day very long."}
+  ],
+  "new_camps": [],
+  "confidence": "medium",
+  "plan_conflict": "Thirtynine Mile Creek Camp was the main on file, but this plan climbs straight to the south-ridge saddle on day one, so the saddle camp is now the main.",
+  "sources": ["https://mountaineers.org/activities/routes-places/mount-prophet", "https://plaigar.blogspot.com/2017", "https://summitpost.org/mountain/980076", "https://www.adventuresnw.com/?p=18954"]
+ },
+ {
+  "id": "wa_mount_triumph_northeast_ridge",
+  "camps": [
+   {"name": "The Triumph col", "nights": [1, 2], "role": "main",
+    "why": "The standard high camp, with flat ground, water nearby and room for only a few tents. Wind blows through it, but it is the closest sleep to the ridge."},
+   {"name": "Thornton Lakes camp", "nights": [], "role": "route",
+    "why": "The legal trail-end camp at the lake outlet. It is the fallback if the col is full or you arrive late, but it adds over a thousand feet of steep climbing to summit day."},
+   {"name": "On-ridge bivy above the notch", "nights": [], "role": "route",
+    "why": "Small sites a pitch or two up the crest that shorten the climbing day, at the cost of carrying all your water up. Most parties pass through rather than sleep."}
+  ],
+  "new_camps": [],
+  "confidence": "high",
+  "plan_conflict": null,
+  "sources": ["https://sverdina.com/triumph1.asp", "https://stephabegg.com/?p=8735", "https://www.nps.gov/noca/blogs/mt-triumph-ne-ridge-7-24-16.htm"]
+ },
+ {
+  "id": "wa_mount_triumph_west_route",
+  "camps": [],
+  "new_camps": [
+   {"name": "Rocky knob camp south of Thornton Pass", "elev_ft": 6100, "type": "camp", "role": "main", "nights": [1, 2],
+    "why": "A rocky knob on Thornton Ridge near 6,100 ft, a traverse away from the west face benches. The summit day starts and ends here, so it serves both nights.",
+    "water": "", "capacity": "", "permit": "",
+    "notes": "Elevation is the figure in the trip plan; no source read confirmed it, and none gave water or capacity for this camp."}
+  ],
+  "confidence": "low",
+  "plan_conflict": null,
+  "sources": ["https://www.summitpost.org/mountain/rock/151949/mount-triumph.html", "https://www.summitpost.org/thornton-peak/957754", "https://www.mountaineers.org/activities/routes-places/north-cascades-national-park-cross-country-zones/mount-triumph-northeast-ridge"]
+ },
+ {
+  "id": "wa_crooked_thumb_peak_south_route",
+  "camps": [
+   {"name": "Whatcom Camp", "nights": [1, 5], "role": "main",
+    "why": "Flat dry ground by the pass where the trail ends, with water close. It is the last comfortable night before the glacier crossing and the first one back."},
+   {"name": "Crooked Thumb Glacier lateral moraine", "nights": [2, 3, 4], "role": "main",
+    "why": "The base for the climb, on the south edge of the glacier. It is exposed and loose, but it is the only camp within a day of the summit and the rest day."},
+   {"name": "Perfect Pass", "nights": [], "role": "route",
+    "why": "Granite slabs, running water and the glacier at the door, widely used as a camp for the traverse. Parties without the full crossing in them stop here, one day short of the moraine."},
+   {"name": "Ledge at 7,800 ft on the peak's ridge", "nights": [], "role": "route",
+    "why": "An emergency ledge, not a camp. A party benighted on the long summit day may sit out the night here, cold and exposed with no water."},
+   {"name": "Copper Creek / Boundary Camp", "nights": [], "role": "route",
+    "why": "The plan's first card spans two trail days, and the night before the pass is spent at a Chilliwack River camp like this one. The same applies on the walk out."}
+  ],
+  "new_camps": [],
+  "confidence": "medium",
+  "plan_conflict": "Day 1 and day 6 each cover two trail days, so a real trip sleeps one extra night at a Chilliwack River camp on the way in and one on the way out; the plan's night numbers count only the camps shown.",
+  "sources": ["https://alasdair-turner-wd60.squarespace.com/blog/2014/7/13/a-traverse-of-the-northern-picket-range", "https://stephabegg.com/?p=8948", "https://www.nps.gov/noca/planyourvisit/copper-ridge-trail.htm", "https://publications.americanalpineclub.org/articles/13201216005.pdf"]
+ },
+ {
+  "id": "wa_ghost_peak_south_route",
+  "camps": [
+   {"name": "Whatcom Camp, Brush Creek below Whatcom Pass", "nights": [2, 5], "role": "main",
+    "why": "The last trail camp below the pass, with water. It is the night before the glacier crossing on the way in and the first sleep back on the way out."},
+   {"name": "Luna Cirque high camp (near Lousy Lake)", "nights": [], "role": "route",
+    "why": "A high camp on the Luna side of the range, reached from Big Beaver. It belongs to the other approach and is not on this Hannegan Pass plan."},
+   {"name": "Perfect Pass, Perfect Pass cross-country zone", "nights": [], "role": "route",
+    "why": "A classic bivy for Challenger and Whatcom. Parties break the glacier crossing here instead of pushing on to the moraine, which leaves a longer approach the next day."},
+   {"name": "Improvised bivouacs on the Challenger Glacier and the crest south of Challenger", "nights": [], "role": "route",
+    "why": "Made rather than found, used by parties working the south end of the chain who would rather sleep out than commit to a very long day."}
+  ],
+  "new_camps": [
+   {"name": "Copper Creek Camp, Chilliwack River Trail", "elev_ft": null, "type": "camp", "role": "main", "nights": [1],
+    "why": "The forest camp on the Chilliwack River after the first trail day over Hannegan Pass. Most parties split the long approach here before the steep Brush Creek climb.",
+    "water": "", "capacity": "", "permit": "A backcountry permit is required for overnight stays.",
+    "notes": "No elevation found in any source read; the approach plan says Copper Creek or Graybeal."},
+   {"name": "Crooked Thumb Glacier high camp", "elev_ft": 7200, "type": "camp", "role": "main", "nights": [3, 4],
+    "why": "A camp on the moraine at the edge of the Crooked Thumb Glacier. It is exposed with no shelter, but it is the closest sleep to Ghost's south face.",
+    "water": "", "capacity": "", "permit": "",
+    "notes": "Elevation is the figure on file for the same moraine on the Crooked Thumb route; no source read stated water or capacity."}
+  ],
+  "confidence": "low",
+  "plan_conflict": "The on-file main (Luna Cirque high camp) belongs to the Big Beaver approach and is not on this plan; night 1 is Copper Creek or Graybeal depending on the day's pace.",
+  "sources": ["https://stephabegg.com/?p=8948", "https://alasdair-turner-wd60.squarespace.com/blog/2014/7/13/a-traverse-of-the-northern-picket-range", "https://publications.americanalpineclub.org/articles/13201216005.pdf", "https://www.nps.gov/noca/planyourvisit/copper-ridge-trail.htm"]
+ },
+ {
+  "id": "wa_luna_peak_southwest_ridge",
+  "camps": [
+   {"name": "Access Creek headwaters basin", "nights": [1, 2], "role": "main",
+    "why": "The open basin about 4,400 ft up Access Creek, the standard base for the peak. A hard bushwhack gets you here, but the summit is then one day and the tent stays put."},
+   {"name": "Luna Camp (Big Beaver Trail)", "nights": [], "role": "route",
+    "why": "A signed trail camp in old cedar, about ten miles up. Parties running late off the water taxi sleep here and break the trip into four days."}
+  ],
+  "new_camps": [],
+  "confidence": "medium",
+  "plan_conflict": "Two mains were on file; this three-day plan reaches the Access Creek basin on day one, so Luna Camp is demoted to route, though many parties split the trip there.",
+  "sources": ["https://stephabegg.com/?p=8951", "https://www.oregonhikers.org/forum/viewtopic.php?p=122959", "https://sverdina.com/luna1.asp"]
+ }
+]

@@ -1,0 +1,602 @@
+[
+ {
+  "id": "wa_blackcap_mountain_scramble",
+  "camps": [
+   {
+    "name": "Shellrock Pass, Shellrock Basin and the Eureka Creek meadows",
+    "nights": [
+     1,
+     2
+    ],
+    "role": "main",
+    "why": "Flat ground and a small tarn near 6,800 ft below the pass keep Blackcap's ridge within a half-day, so most parties sleep here both nights."
+   },
+   {
+    "name": "Doris Lake and Freds Lake basins",
+    "nights": [],
+    "role": "route",
+    "why": "A lake camp on the near side of the pass that splits the 14-mile pack-in, but it leaves a long push to the Shellrock side before the summit day."
+   },
+   {
+    "name": "Harts Pass and Meadows campgrounds",
+    "nights": [],
+    "role": "route",
+    "why": "A drive-up campground at the end of the long gravel road. Sleep here the night before for an early start; it is not a night on the trail itself."
+   }
+  ],
+  "new_camps": [],
+  "confidence": "high",
+  "plan_conflict": "The Doris and Freds basin camp is filed as a main, but parties climbing Blackcap sleep in Shellrock Basin, as the plan does, so the main role moved there.",
+  "sources": [
+   "https://countryhighpoints.com/pasayten-peakbagging",
+   "https://cloche-dor.blogspot.com/2023/07/202371-4-shellrock-slam.html",
+   "https://lemkeclimbs.com/pasayten-mini-slam"
+  ]
+ },
+ {
+  "id": "wa_blizzard_peak_standard",
+  "camps": [
+   {
+    "name": "Upper Frosty Basin Camp",
+    "nights": [
+     2,
+     3
+    ],
+    "role": "main",
+    "why": "Grassy flats near 6,100 ft below the peak. The summit is a light-pack day from here, and Mount Winthrop is also in reach on the same stay."
+   },
+   {
+    "name": "Hopkins Lake and Castle Pass",
+    "nights": [],
+    "role": "route",
+    "why": "Reliable lake water and room for about a dozen tents near Hopkins Pass, plus a roomy camp at Castle Pass; a stop for parties who want to split the long second day."
+   },
+   {
+    "name": "Windy Pass and the crest camps north of Harts Pass",
+    "nights": [],
+    "role": "route",
+    "why": "Only about two miles from the trailhead at roughly 6,260 ft, so it suits a late-afternoon start but leaves a very long day to Holman Pass."
+   },
+   {
+    "name": "Harts Pass and Meadows campgrounds",
+    "nights": [],
+    "role": "route",
+    "why": "A drive-up campground at the end of the long gravel road. Sleep here the night before for an early start; it is not a night on the trail itself."
+   }
+  ],
+  "new_camps": [
+   {
+    "name": "Holman Pass camp",
+    "elev_ft": 5100,
+    "type": "camp",
+    "role": "main",
+    "nights": [
+     1,
+     4
+    ],
+    "why": "Where the fourteen-mile first day ends and the return stops, with several rustic sites at the pass and an easy start up toward Woody Pass the next morning.",
+    "water": "",
+    "capacity": "A handful of rustic campsites at the pass.",
+    "permit": "A free wilderness permit is self-issued at the trailhead.",
+    "notes": "Sits at about 5,100 ft after the descent from the Devils Backbone traverse. A spring and campsite lie a couple of miles further along the trail."
+   }
+  ],
+  "confidence": "low",
+  "plan_conflict": "The camp the plan uses on nights 1 and 4 near Holman Pass was not on file; no Blizzard Peak trip account was found, so all four nights follow the plan's own stopping points.",
+  "sources": [
+   "https://www.komoot.com/guide/3950317/mountain-passes-in-pasayten-wilderness",
+   "https://www.komoot.com/highlight/5955063",
+   "https://www.wta.org/go-hiking/hikes/castle-pass"
+  ]
+ },
+ {
+  "id": "wa_castle_peak_pasayten_scramble",
+  "camps": [
+   {
+    "name": "Freezeout Creek Cabin",
+    "nights": [
+     1
+    ],
+    "role": "main",
+    "why": "Cabin ground at 3,600 ft just past a creek crossing, with bunks and a stove inside; it ends the first day before the maintained trail runs out."
+   }
+  ],
+  "new_camps": [
+   {
+    "name": "High camp below the Castle Peak southwest ridge",
+    "elev_ft": 5400,
+    "type": "camp",
+    "role": "main",
+    "nights": [
+     2,
+     3
+    ],
+    "why": "Moving up the Freezeout drainage to about 5,400 ft makes the 3,300-ft summit day shorter; you sleep here after the move and again after the climb.",
+    "water": "",
+    "capacity": "",
+    "permit": "Past Turner Bridge the trail is inside the Pasayten Wilderness, where ordinary wilderness rules apply.",
+    "notes": "Roughly 15 trail miles from the Ross Lake trailhead and 7.5 miles beyond Turner Bridge. Water and flat ground decide the exact site."
+   }
+  ],
+  "confidence": "medium",
+  "plan_conflict": null,
+  "sources": [
+   "https://www.summitpost.org/castle-peak/295595",
+   "https://lemkeclimbs.com/?p=2830",
+   "https://www.summitpost.org/route/295596/freezeout-creek-route.html"
+  ]
+ },
+ {
+  "id": "wa_cathedral_peak_last_rites",
+  "camps": [],
+  "new_camps": [
+   {
+    "name": "Upper Cathedral Lake basin",
+    "elev_ft": 7400,
+    "type": "camp",
+    "role": "main",
+    "nights": [
+     1,
+     2,
+     3
+    ],
+    "why": "The base for the face and the walk-off descent: the start is a short walk away, and a rest day to scout the face is spent here too.",
+    "water": "",
+    "capacity": "",
+    "permit": "A free wilderness permit is self-issued at the trailhead kiosk.",
+    "notes": "The base camp for the peak's south side and its walk-off descent, about 18 miles in. The basin has seen heavy use, so keep tents off damaged shoreline ground."
+   }
+  ],
+  "confidence": "high",
+  "plan_conflict": null,
+  "sources": [
+   "https://stephabegg.com/trip-reports/washington/pasayten-2016/",
+   "https://wenatcheeoutdoors.org/2017/04/04/cathedral-lakes-pilgrimage/",
+   "https://www.countryhighpoints.com/cathedral-peak-and-amphitheater-mountain/"
+  ]
+ },
+ {
+  "id": "wa_cathedral_peak_pasayten_se_buttress",
+  "camps": [
+   {
+    "name": "Upper Cathedral Lake basin",
+    "nights": [
+     1,
+     2,
+     3
+    ],
+    "role": "main",
+    "why": "The base for the whole climb: the route is a short walk away, and after the long walk-in there is no reason to move camp on the nights that follow."
+   },
+   {
+    "name": "Andrews Pass",
+    "nights": [],
+    "role": "route",
+    "why": "Roughly halfway in; a split approach stops short of the lake in the Andrews Creek valley or here, but it adds a second long carry before the climb."
+   },
+   {
+    "name": "Cathedral Pass benches and the tarn slabs",
+    "nights": [],
+    "role": "route",
+    "why": "A high, windy bivy on rock and thin turf at 7,600 ft. It saves the drop to the lake but has no shelter, so it suits only a late arrival or a dawn start."
+   }
+  ],
+  "new_camps": [],
+  "confidence": "high",
+  "plan_conflict": "The Andrews Pass notes call it the natural first night, but the plan and trip accounts reach the lake on day one.",
+  "sources": [
+   "https://stephabegg.com/trip-reports/washington/pasayten-2016/",
+   "https://packgoatcentral.com/forums/printthread.php?tid=3537",
+   "https://wenatcheeoutdoors.org/2017/04/04/cathedral-lakes-pilgrimage/"
+  ]
+ },
+ {
+  "id": "wa_cathedral_peak_southwest_route",
+  "camps": [],
+  "new_camps": [
+   {
+    "name": "Upper Cathedral Lake basin",
+    "elev_ft": 7400,
+    "type": "camp",
+    "role": "main",
+    "nights": [
+     1,
+     2
+    ],
+    "why": "The base for the half-day climb: the route starts a short walk from the lake, and the nights before and after the climb are both spent here.",
+    "water": "",
+    "capacity": "",
+    "permit": "A free wilderness permit is self-issued at the trailhead kiosk.",
+    "notes": "The base camp for the peak's south side and its walk-off descent, about 18 miles in. The basin has seen heavy use, so keep tents off damaged shoreline ground."
+   }
+  ],
+  "confidence": "high",
+  "plan_conflict": null,
+  "sources": [
+   "https://stephabegg.com/trip-reports/washington/pasayten-2016/",
+   "https://wenatcheeoutdoors.org/2017/04/04/cathedral-lakes-pilgrimage/",
+   "https://www.countryhighpoints.com/cathedral-peak-and-amphitheater-mountain/"
+  ]
+ },
+ {
+  "id": "wa_ne_ridge",
+  "camps": [
+   {
+    "name": "Andrews Pass",
+    "nights": [
+     1,
+     4
+    ],
+    "role": "main",
+    "why": "About twelve miles in, it splits the 18-mile walk into two days and gives a shorter exit; the burned valley below offers open but less sheltered ground."
+   },
+   {
+    "name": "Upper Cathedral Lake basin",
+    "nights": [
+     2,
+     3
+    ],
+    "role": "main",
+    "why": "The base for the whole climb: the route is a short walk away, and after the long walk-in there is no reason to move camp on the nights that follow."
+   },
+   {
+    "name": "Cathedral Pass benches and the tarn slabs",
+    "nights": [],
+    "role": "route",
+    "why": "A high, windy bivy on rock and thin turf at 7,600 ft. It saves the drop to the lake but has no shelter, so it suits only a late arrival or a dawn start."
+   }
+  ],
+  "new_camps": [],
+  "confidence": "medium",
+  "plan_conflict": "Trip accounts put first-night camps between four and eight miles up Andrews Creek, short of Andrews Pass, so the plan's twelve-mile first stop is the long version of that split.",
+  "sources": [
+   "https://packgoatcentral.com/forums/printthread.php?tid=3537",
+   "https://stephabegg.com/trip-reports/washington/pasayten-2016/",
+   "https://www.wta.org/go-hiking/trip-reports/trip_report.2018-10-30.3370442660"
+  ]
+ },
+ {
+  "id": "wa_south_face_10",
+  "camps": [
+   {
+    "name": "Upper Cathedral Lake basin",
+    "nights": [
+     1,
+     2,
+     3
+    ],
+    "role": "main",
+    "why": "The base for the whole climb: the route is a short walk away, and after the long walk-in there is no reason to move camp on the nights that follow."
+   },
+   {
+    "name": "Andrews Pass",
+    "nights": [],
+    "role": "route",
+    "why": "Roughly halfway in, with the next morning's carry to the lake still ahead; parties who split the approach sleep here or lower in the Andrews Creek valley."
+   },
+   {
+    "name": "Cathedral Pass benches and the tarn slabs",
+    "nights": [],
+    "role": "route",
+    "why": "A high, windy bivy on rock and thin turf at 7,600 ft. It saves the drop to the lake but has no shelter, so it suits only a late arrival or a dawn start."
+   }
+  ],
+  "new_camps": [],
+  "confidence": "medium",
+  "plan_conflict": "Day 1 only says hike in toward the lake and day 2 reaches basecamp if needed, so night 1 may be spent short of the lake; parties able to do 18 miles sleep at the lake.",
+  "sources": [
+   "https://stephabegg.com/trip-reports/washington/pasayten-2016/",
+   "https://packgoatcentral.com/forums/printthread.php?tid=3537",
+   "https://wenatcheeoutdoors.org/2017/04/04/cathedral-lakes-pilgrimage/"
+  ]
+ },
+ {
+  "id": "wa_dot_mountain_scramble",
+  "camps": [
+   {
+    "name": "Doris Lake and Freds Lake basins",
+    "nights": [
+     1
+    ],
+    "role": "main",
+    "why": "The usual first night after Slate Pass: lake water, flat ground, and a short climb next morning over the pass toward Shellrock."
+   },
+   {
+    "name": "Shellrock Pass, Shellrock Basin and the Eureka Creek meadows",
+    "nights": [
+     2,
+     3
+    ],
+    "role": "main",
+    "why": "The camp that makes Dot Mountain and Ptarmigan day trips: flat ground with a creek and tarn, and the ridge to both peaks starts nearby."
+   },
+   {
+    "name": "7,400 ft Tarn Camp, Mount Lago north side",
+    "nights": [],
+    "role": "route",
+    "why": "A higher pocket under Lago's north slopes that trims the Dot ridge a little, but it sits well beyond the Shellrock camp that parties actually use."
+   },
+   {
+    "name": "Harts Pass and Meadows campgrounds",
+    "nights": [],
+    "role": "route",
+    "why": "A drive-up campground at the end of the long gravel road. Sleep here the night before for an early start; it is not a night on the trail itself."
+   }
+  ],
+  "new_camps": [],
+  "confidence": "medium",
+  "plan_conflict": "The plan sleeps at Berk Creek and a 7,400 ft tarn, but accounts of Dot Mountain trips sleep at the Fred's or Doris lake basins first and then at Shellrock; the tarn camp was filed as a main.",
+  "sources": [
+   "https://cloche-dor.blogspot.com/2023/07/202371-4-shellrock-slam.html",
+   "https://countryhighpoints.com/pasayten-peakbagging",
+   "https://lemkeclimbs.com/pasayten-mini-slam"
+  ]
+ },
+ {
+  "id": "wa_lake_mountain_pasayten_scramble",
+  "camps": [
+   {
+    "name": "Lake of the Woods and the Eureka Falls camp",
+    "nights": [
+     1,
+     2
+    ],
+    "role": "main",
+    "why": "Tarn-side camp near 6,500 to 6,600 ft just below Pistol Pass; the east ridge starts at the door and the long walk in is done on day one."
+   }
+  ],
+  "new_camps": [],
+  "confidence": "high",
+  "plan_conflict": null,
+  "sources": [
+   "https://lemkeclimbs.com/monument-peak-group",
+   "https://www.countryhighpoints.com/lake-mountain/",
+   "https://mountaineers.org/activities/trip-reports/alpine-scramble-monument-peak-lake-mountain"
+  ]
+ },
+ {
+  "id": "wa_lost_peak_pasayten_scramble",
+  "camps": [
+   {
+    "name": "The Berk Creek junction and the Middle Fork Pasayten river camps",
+    "nights": [
+     1
+    ],
+    "role": "main",
+    "why": "Easy first-day mileage on good trail; flat ground by the river sits before the climb to Shellrock Pass, so day two starts fresh."
+   },
+   {
+    "name": "The high bench southwest of Shellrock Pass",
+    "nights": [
+     2
+    ],
+    "role": "main",
+    "why": "Puts the Shellrock group's summits and the Butte Pass traverse within a day, and sits about 700 ft above the basin camps below the pass."
+   },
+   {
+    "name": "Dot Lake and the Butte Pass basins — the far end of the traverse for Lost Peak",
+    "nights": [],
+    "role": "route",
+    "why": "Closer to Lost Peak itself, but the way there is a strenuous burned-basin traverse; some parties overnight at Dot Lake to shorten the summit day."
+   }
+  ],
+  "new_camps": [
+   {
+    "name": "Lake of the Woods",
+    "elev_ft": 6620,
+    "type": "camp",
+    "role": "main",
+    "nights": [
+     3,
+     4
+    ],
+    "why": "Basin camp with tarn water, reached after the summit day and used again to cross Pistol Pass at an easy hour; Lost Peak and Lake Mountain are both done from here.",
+    "water": "",
+    "capacity": "",
+    "permit": "",
+    "notes": "The same camp used for Monument Peak and Lake Mountain. The trail past the lake is faint, and the walk from here to the trailhead is about 12 miles."
+   }
+  ],
+  "confidence": "low",
+  "plan_conflict": "The plan's night 4 at Eureka Falls found no supporting camp or elevation, so night 4 is placed at Lake of the Woods; the plan's night 2 pond below Shellrock Pass also has no camp on file.",
+  "sources": [
+   "https://adminonly.wta.org/go-hiking/trip-reports/trip_report-2025-10-09.143019513121",
+   "https://cloche-dor.blogspot.com/2023/07/202371-4-shellrock-slam.html",
+   "https://countryhighpoints.com/pasayten-peakbagging"
+  ]
+ },
+ {
+  "id": "wa_monument_peak_pasayten_scramble",
+  "camps": [
+   {
+    "name": "Lake of the Woods and the Eureka Falls camp",
+    "nights": [
+     1,
+     2
+    ],
+    "role": "main",
+    "why": "Tarn-side camp near 6,500 ft just below Pistol Pass; the south-ridge route starts from here and the same camp serves both days of the two-peak trip."
+   }
+  ],
+  "new_camps": [],
+  "confidence": "high",
+  "plan_conflict": null,
+  "sources": [
+   "https://lemkeclimbs.com/monument-peak-group",
+   "https://www.countryhighpoints.com/lake-mountain/",
+   "https://mountaineers.org/activities/trip-reports/alpine-scramble-monument-peak-lake-mountain"
+  ]
+ },
+ {
+  "id": "wa_mount_ballard_south",
+  "camps": [
+   {
+    "name": "Azurite Mine",
+    "nights": [
+     1,
+     2
+    ],
+    "role": "main",
+    "why": "Reached by the Canyon Creek and Mill Creek trails, the old mine ground sits right under the mountain, so the climb is one day from the tent, and its buildings give shelter."
+   },
+   {
+    "name": "Azurite–Ballard basin",
+    "nights": [],
+    "role": "route",
+    "why": "Higher, near 6,600 ft, which shortens the summit day, but it is another steep and brushy stretch on a day that is already slow."
+   },
+   {
+    "name": "Canyon Creek trailhead, SR 20",
+    "nights": [],
+    "role": "route",
+    "why": "Low and warm; a car camp for the night before the approach, not a night on the route."
+   }
+  ],
+  "new_camps": [],
+  "confidence": "medium",
+  "plan_conflict": "Two camps were both filed as main, but accounts of Ballard trips sleep at the mine, which is where the plan also stops.",
+  "sources": [
+   "https://cascadeclimbers.com/forum/topic/103624-tr-mount-ballard-west-face-08082020",
+   "https://cascadeclimbers.com/forum/topic/22110-azurite-peak-and-mount-ballard-beta-requested",
+   "https://www.turns-all-year.com/trip-reports/may-26-29-2012-ballard-and-azurite-via-swamp-creek"
+  ]
+ },
+ {
+  "id": "wa_mount_carru_scramble",
+  "camps": [
+   {
+    "name": "The Berk Creek junction and the Middle Fork Pasayten river camps",
+    "nights": [
+     1
+    ],
+    "role": "main",
+    "why": "The first-night stop for most parties bound for Carru and Lago: river flats and creek water, with the climb to the Fred's Lake pass still ahead."
+   },
+   {
+    "name": "Shellrock Basin",
+    "nights": [
+     2,
+     3
+    ],
+    "role": "main",
+    "why": "Camp at about 6,800 ft below the Carru-Lago cirque; creek water and flat ground, and the summit is a half-day round trip from the tent."
+   },
+   {
+    "name": "The high bench southwest of Shellrock Pass",
+    "nights": [],
+    "role": "route",
+    "why": "About 700 ft higher at 7,500 ft, shortening the summit approach, but it is exposed and works best as a staging bivy for longer peak runs."
+   }
+  ],
+  "new_camps": [],
+  "confidence": "medium",
+  "plan_conflict": "The plan ends day 1 at Fred's Lake; accounts of this trip stop there too, but the Berk Creek junction is where most first nights fall.",
+  "sources": [
+   "https://lemkeclimbs.com/pasayten-mini-slam",
+   "https://yellowleaf.org/scramble/g/r/2012-09-22-25-osceola-carru-rollo.html",
+   "https://countryhighpoints.com/pasayten-peakbagging"
+  ]
+ },
+ {
+  "id": "wa_mount_lago_south_slope_south_face",
+  "camps": [
+   {
+    "name": "Shellrock Basin camp area",
+    "nights": [
+     1,
+     2
+    ],
+    "role": "main",
+    "why": "Basin camp with creek water and flat ground at the foot of the Lago-Carru cirque; the climb is a roughly seven-hour round trip from the tent."
+   },
+   {
+    "name": "The high bench southwest of Shellrock Pass",
+    "nights": [],
+    "role": "route",
+    "why": "About 700 ft above the basin at 7,500 ft, so the summit is closer, but it is exposed; a staging bivy for multi-peak days."
+   },
+   {
+    "name": "The Berk Creek junction and the Middle Fork Pasayten river camps",
+    "nights": [],
+    "role": "route",
+    "why": "Stops a tired party partway on the long walk in; it splits the approach but leaves the climb to the next day's push from the river valley."
+   }
+  ],
+  "new_camps": [],
+  "confidence": "medium",
+  "plan_conflict": "The plan's day 1 names Fred's Lake or Shellrock Basin, so night 1 could fall at either; most parties this size push straight to the basin.",
+  "sources": [
+   "https://countryhighpoints.com/pasayten-peakbagging",
+   "https://cloche-dor.blogspot.com/2023/07/202371-4-shellrock-slam.html",
+   "https://lemkeclimbs.com/pasayten-mini-slam"
+  ]
+ },
+ {
+  "id": "wa_osceola_peak_scramble",
+  "camps": [
+   {
+    "name": "Doris Lake and Freds Lake basins",
+    "nights": [
+     1,
+     2
+    ],
+    "role": "main",
+    "why": "Lake water and flat ground put Osceola's broad talus slope a short walk away, so the same camp serves the night in and the night after the climb."
+   },
+   {
+    "name": "Harts Pass and Meadows campgrounds",
+    "nights": [],
+    "role": "route",
+    "why": "A drive-up campground at the end of the long gravel road. Sleep here the night before for an early start; it is not a night on the trail itself."
+   }
+  ],
+  "new_camps": [],
+  "confidence": "high",
+  "plan_conflict": null,
+  "sources": [
+   "https://cloche-dor.blogspot.com/2023/07/202371-4-shellrock-slam.html",
+   "https://yellowleaf.org/scramble/g/r/2012-09-22-25-osceola-carru-rollo.html",
+   "https://turns-all-year.com/trip-reports/may-2-6-2018-the-spell-of-the-pasayten"
+  ]
+ },
+ {
+  "id": "wa_ptarmigan_peak_pasayten_scramble",
+  "camps": [
+   {
+    "name": "Shellrock Pass, Shellrock Basin and the Eureka Creek meadows",
+    "nights": [
+     1,
+     2
+    ],
+    "role": "main",
+    "why": "Flat sites near 6,800 ft with creek and tarn water; the Ptarmigan ridge starts a short way up, and it is the camp used for Dot Mountain too."
+   },
+   {
+    "name": "Shellrock Pass bench",
+    "nights": [],
+    "role": "route",
+    "why": "A higher bench near 7,500 ft just above the pass: a shorter day to the ridge, but more exposed than the meadow camps."
+   },
+   {
+    "name": "Doris Lake and Freds Lake basins",
+    "nights": [],
+    "role": "route",
+    "why": "A shorter first day and lake water, but it leaves the pass crossing to Shellrock before the summit day, so most parties stay on to Shellrock."
+   },
+   {
+    "name": "Harts Pass and Meadows campgrounds",
+    "nights": [],
+    "role": "route",
+    "why": "A drive-up campground at the end of the long gravel road. Sleep here the night before for an early start; it is not a night on the trail itself."
+   }
+  ],
+  "new_camps": [],
+  "confidence": "high",
+  "plan_conflict": "The Shellrock Pass bench is filed as the main, but trip accounts sleep at the lower Shellrock meadows and basin, so the main role moved there.",
+  "sources": [
+   "https://cloche-dor.blogspot.com/2023/07/202371-4-shellrock-slam.html",
+   "https://countryhighpoints.com/pasayten-peakbagging",
+   "https://lemkeclimbs.com/pasayten-mini-slam"
+  ]
+ }
+]

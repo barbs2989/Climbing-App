@@ -1,0 +1,617 @@
+[
+ {
+  "id": "wa_mount_formidable_south_face",
+  "camps": [
+   {
+    "name": "Kool-Aid Lake",
+    "nights": [
+     1,
+     2
+    ],
+    "role": "main",
+    "why": "The usual base for Formidable: water and sheltered ground about three hours past Cascade Pass, with the summit day done as a round trip from here. Easier than hauling gear to the col."
+   },
+   {
+    "name": "Spider-Formidable Col",
+    "nights": [
+     1,
+     2
+    ],
+    "role": "route",
+    "why": "Puts you right above the Middle Cascade Glacier and shortens summit day, but it is a bare notch with no shelter from wind. Only worth the carry in settled weather."
+   },
+   {
+    "name": "Ridge benches above Yang Yang Lakes",
+    "nights": [],
+    "role": "route",
+    "why": "A launching camp on the far side of the traverse with a shorter summit day, but no water. Not slept at on a standard in-and-out trip from Cascade Pass."
+   },
+   {
+    "name": "Yang Yang Lakes",
+    "nights": [],
+    "role": "route",
+    "why": "Sheltered with plentiful water, but well below the peak and over the col from it. It suits a traverse night or a windbound fallback, not a standard Formidable trip."
+   }
+  ],
+  "new_camps": [],
+  "confidence": "high",
+  "plan_conflict": "The file lists the col as a second main camp; parties on this trip sleep at Kool-Aid Lake both nights, so the col is now an option only.",
+  "sources": [
+   "https://stephabegg.com/?p=8859",
+   "https://turns-all-year.com/trip-reports/6-30-7-1-06-mount-formidable-ptarm-trav-start",
+   "https://turns-all-year.com/trip-reports/extended-s-loop-formidable-n-ramp-spider-glacier-spider-se-face-pelton-se-face"
+  ]
+ },
+ {
+  "id": "wa_northeast_face_direct",
+  "camps": [
+   {
+    "name": "Kool-Aid Lake",
+    "nights": [
+     1,
+     2
+    ],
+    "role": "main",
+    "why": "The usual first camp south of Cascade Pass, with easy water. Parties sleep here and cross the Middle Cascade Glacier before dawn for the face, returning to the same tent."
+   },
+   {
+    "name": "Spider-Formidable Col",
+    "nights": [
+     1,
+     2
+    ],
+    "role": "route",
+    "why": "A closer base for the face that cuts the pre-dawn approach, at the cost of a windy, shelterless notch. Parties who want the shortest summit day carry up to it."
+   },
+   {
+    "name": "Cache Col and the Cache Glacier shoulder",
+    "nights": [],
+    "role": "route",
+    "why": "A bivy at the gateway to the traverse, useful when a late start from Cascade Pass leaves no time to reach Kool-Aid Lake. Not a planned night for this trip."
+   }
+  ],
+  "new_camps": [],
+  "confidence": "medium",
+  "plan_conflict": "The file lists the col as a second main camp; parties on this trip sleep at Kool-Aid Lake both nights, as the plan says, so the col is now an option only.",
+  "sources": [
+   "https://stephabegg.com/?p=8859",
+   "https://turns-all-year.com/trip-reports/6-30-7-1-06-mount-formidable-ptarm-trav-start",
+   "https://turns-all-year.com/trip-reports/extended-s-loop-formidable-n-ramp-spider-glacier-spider-se-face-pelton-se-face"
+  ]
+ },
+ {
+  "id": "wa_goode_mountain_megalodon_ridge",
+  "camps": [
+   {
+    "name": "Bench bivy below Megalodon Ridge",
+    "nights": [
+     1
+    ],
+    "role": "main",
+    "why": "The one flat-ish shelf below the technical climbing, reached after a short fifth-class step, so the full ridge starts fresh the next morning. Exposed, with little room."
+   },
+   {
+    "name": "Fireweed Camp, Bridge Creek / PCT",
+    "nights": [],
+    "role": "route",
+    "why": "Only an overflow choice when the North Fork camps are full; it leaves a far bigger day to the ridge. Not slept at on a normal trip."
+   },
+   {
+    "name": "North Fork Camp, Bridge Creek / PCT junction",
+    "nights": [],
+    "role": "route",
+    "why": "Ten miles in and far below the ridge, so it makes the second approach day huge. A fallback for a late start, not the normal night."
+   },
+   {
+    "name": "Walker Park Camp",
+    "nights": [],
+    "role": "route",
+    "why": "The first camp that shortens the walk to the Goode Glacier drainage, but the brushy off-trail miles still lie ahead. A late-start fallback only."
+   }
+  ],
+  "new_camps": [
+   {
+    "name": "Summit bivy, Mount Goode",
+    "elev_ft": 9220,
+    "type": "bivy",
+    "role": "main",
+    "nights": [
+     2
+    ],
+    "why": "After 11 to 12 hours on the ridge, parties top out late and sleep on the summit, then descend the Southwest Couloir next day. Dry and exposed, but the climb ends here.",
+    "water": "",
+    "capacity": "",
+    "permit": "A bivy permit is required for the Goode backcountry zone, picked up within 24 hours of the climb.",
+    "notes": "The ridge party finishes at the summit and bivouacs there. Descent the next day is via Black Tooth Notch and the Southwest Couloir toward Park Creek."
+   }
+  ],
+  "confidence": "medium",
+  "plan_conflict": "The plan has four days but no camp for night 3: parties report an improvised bivy partway down toward Park Creek (or a hike straight out), and no established camp with a known elevation exists there, so night 3 has no main camp.",
+  "sources": [
+   "https://stephabegg.com/?p=8941",
+   "https://publications.americanalpineclub.org/articles/12200813101/North-America-United-States-Goode-Mountain-Megalodon-east-Ridge",
+   "https://spokalpine.com/2022/09/07/mt-goode-northeast-buttress-iv-5-5/"
+  ]
+ },
+ {
+  "id": "wa_goode_mountain_northeast_face",
+  "camps": [
+   {
+    "name": "Goode Glacier approach bivy, timbered knoll",
+    "nights": [
+     1,
+     2
+    ],
+    "role": "main",
+    "why": "The classic first bivy under the buttress, near 5,200 ft, reached by fording Grizzly Creek and climbing timber and scree. Water is close and the face is a short approach the next day."
+   },
+   {
+    "name": "Upper bivy in the rock bands east of the buttress toe",
+    "nights": [
+     1,
+     2
+    ],
+    "role": "route",
+    "why": "Sits right at the base, so summit day starts a few hundred feet higher than from the knoll. The ground is tighter and the camp is harder to find."
+   },
+   {
+    "name": "Fireweed Camp, Bridge Creek / PCT",
+    "nights": [],
+    "role": "route",
+    "why": "Overflow only when North Fork camps are booked; it adds miles to an already long approach. Not slept at on a standard trip."
+   },
+   {
+    "name": "North Fork Camp, Bridge Creek / PCT junction",
+    "nights": [],
+    "role": "route",
+    "why": "A late-start stop at the PCT junction, far below the face and leaving a huge second day. Not the normal night for this trip."
+   },
+   {
+    "name": "Walker Park Camp",
+    "nights": [],
+    "role": "route",
+    "why": "Shortens the approach a little for parties arriving after dark, but you still face brush and a ford to the glacier drainage. Fallback only."
+   },
+   {
+    "name": "Grizzly Creek Camp",
+    "nights": [],
+    "role": "route",
+    "why": "The last established camp before the tread turns brushy and faint; a decision point if daylight is gone. Not where most parties sleep."
+   }
+  ],
+  "new_camps": [],
+  "confidence": "medium",
+  "plan_conflict": "The file lists two main camps and the plan's high camp is a moraine near 6,700 ft; documented parties sleep at bivies of about 5,200 to 5,600 ft below the buttress, so the knoll is now the single main.",
+  "sources": [
+   "https://stephabegg.com/?p=8941",
+   "https://spokalpine.com/2022/09/07/mt-goode-northeast-buttress-iv-5-5/",
+   "https://www.whereiskylemiller.com/highway-20/goode-mountain-mount-logan/"
+  ]
+ },
+ {
+  "id": "wa_goode_mountain_southwest_couloir",
+  "camps": [
+   {
+    "name": "5,500 ft bivy below the slabs",
+    "nights": [
+     1,
+     2
+    ],
+    "role": "main",
+    "why": "The most used camp on this side: sheltered under rock walls with running water, just below the slabs, so summit day starts close to the couloir."
+   },
+   {
+    "name": "Goode Glacier toe",
+    "nights": [
+     1,
+     2
+    ],
+    "role": "route",
+    "why": "The highest camp, on moraine near 6,400 to 6,800 ft. Gives a shorter summit day but flat ground is scarce and the glacier is noisy. Worth it only if you will carry up."
+   },
+   {
+    "name": "5,200 ft camp to the west",
+    "nights": [],
+    "role": "route",
+    "why": "A fallback when the brush slows you before dark. Serviceable, but summit day from here is longer than from the higher bivy."
+   },
+   {
+    "name": "West Tower ledge, upper mountain",
+    "nights": [],
+    "role": "route",
+    "why": "An emergency ledge, not a camp: no water, no flat ground, and constant wind. Used only by a climber caught high on the mountain."
+   }
+  ],
+  "new_camps": [],
+  "confidence": "medium",
+  "plan_conflict": "The file lists two main camps and the plan puts camp on a moraine near 6,800 ft; documented parties on this side sleep at bivies of about 5,200 to 5,600 ft, so the 5,500 ft bivy is now the single main.",
+  "sources": [
+   "https://stephabegg.com/?p=8941",
+   "https://spokalpine.com/2022/09/07/mt-goode-northeast-buttress-iv-5-5/",
+   "https://www.whereiskylemiller.com/highway-20/goode-mountain-mount-logan/"
+  ]
+ },
+ {
+  "id": "wa_mount_goode_northeast_buttress",
+  "camps": [
+   {
+    "name": "Valley bivy below the buttress",
+    "nights": [
+     1
+    ],
+    "role": "main",
+    "why": "The classic first night, about 5,200 to 5,600 ft below the buttress after a long day in. Water is at hand and the climb begins a short walk away."
+   },
+   {
+    "name": "Goode Glacier moraine",
+    "nights": [
+     1
+    ],
+    "role": "route",
+    "why": "A higher option on the moraine that shortens the climbing day, but the carry up is rough and the ground is limited. Choose it if you want the earliest summit."
+   },
+   {
+    "name": "Summit bivy",
+    "nights": [
+     2
+    ],
+    "role": "main",
+    "why": "The buttress takes about nine hours, so most parties finish late and sleep on top, then rappel and descend the Southwest Couloir next day. Dry and exposed."
+   }
+  ],
+  "new_camps": [],
+  "confidence": "medium",
+  "plan_conflict": "The file lists the moraine as a second main for night 1 and the summit bivy as a route camp; the plan has four days but no camp for night 3, since the descent toward Park Creek usually ends in an improvised bivy or a hike straight out, so night 3 has no main camp.",
+  "sources": [
+   "https://stephabegg.com/?p=8941",
+   "https://spokalpine.com/2022/09/07/mt-goode-northeast-buttress-iv-5-5/",
+   "https://www.whereiskylemiller.com/highway-20/goode-mountain-mount-logan/"
+  ]
+ },
+ {
+  "id": "wa_mount_logan_fremont_glacier",
+  "camps": [
+   {
+    "name": "Moraine camp above the pass",
+    "nights": [
+     1,
+     2
+    ],
+    "role": "main",
+    "why": "Flat, sandy and sheltered about 500 ft above the pass, with the glacier two miles on. No camping is allowed at the pass itself, so this is where parties sleep."
+   },
+   {
+    "name": "Meadows north of Park Creek Pass",
+    "nights": [],
+    "role": "route",
+    "why": "Broad meadows just short of the moraine; a stop if you cannot face the last 500 ft. The park asks climbers to camp below the pass, not on it."
+   },
+   {
+    "name": "Valley camps on the walk in",
+    "nights": [],
+    "role": "route",
+    "why": "Thunder Basin or Junction Camp split the 18-mile approach for parties that do not want one huge first day. Not slept at on this three-day plan."
+   }
+  ],
+  "new_camps": [],
+  "confidence": "medium",
+  "plan_conflict": "Some parties split the 18-mile approach with a night in the valley (Thunder Basin or Junction Camp) and add a day, rather than reaching the moraine camp on day 1 as the plan says.",
+  "sources": [
+   "https://stephabegg.com/?p=8941",
+   "https://www.nps.gov/noca/planyourvisit/thunder-creek-trail.htm"
+  ]
+ },
+ {
+  "id": "wa_mount_logan_r1",
+  "camps": [
+   {
+    "name": "Fisher Creek lake camp below the Banded Glacier",
+    "nights": [
+     1,
+     2
+    ],
+    "role": "main",
+    "why": "The overnight camp below the glacier, on rocks at the lake's southeast end near 5,160 ft. It shortens the very long summit day, though the bushwhack to reach it is harder than it looks."
+   }
+  ],
+  "new_camps": [],
+  "confidence": "medium",
+  "plan_conflict": "One party could not pass the lake and skipped it, camping lower on the Fisher Creek trail, so the lake camp is the standard but not universal choice.",
+  "sources": [
+   "https://www.mountaineers.org/activities/trip-reports/basic-alpine-climb-mount-logan-banded-glacier-2",
+   "https://stephabegg.com/?p=8941"
+  ]
+ },
+ {
+  "id": "wa_mount_logan_r2",
+  "camps": [
+   {
+    "name": "Fisher Basin campsites",
+    "nights": [
+     1,
+     2
+    ],
+    "role": "main",
+    "why": "Established sites on the Fisher Creek valley floor, the usual base for the Douglas Glacier. Water is close; you still bushwhack up Douglas Creek to the climb."
+   }
+  ],
+  "new_camps": [],
+  "confidence": "medium",
+  "plan_conflict": "Ski parties camp higher up the Douglas drainage near 7,100 to 7,200 ft, and the plan's creekside camp (about 4,750 ft) is higher than the Fisher Basin sites; summer parties can use either.",
+  "sources": [
+   "https://turns-all-year.com/trip-reports/may-15-16-2009-mt-logan-via-douglas-glacier",
+   "https://turns-all-year.com/trip-reports/may-4-5-2013-mt-logan-slushfest-de-mayo"
+  ]
+ },
+ {
+  "id": "wa_east_ridge_2",
+  "camps": [
+   {
+    "name": "Cyclone Lake and the lakes just north of it",
+    "nights": [
+     1
+    ],
+    "role": "main",
+    "why": "The base for Snowking and Mutchler: water is close and the climb starts from the lakes. The steep, brushy Kindy Ridge haul to reach it is the price."
+   },
+   {
+    "name": "Found Lake and the Kindy Ridge saddle",
+    "nights": [
+     1
+    ],
+    "role": "route",
+    "why": "The first useful camp on the approach; a good fallback for a late start. It leaves a longer, bigger summit day than camping at Cyclone Lake."
+   },
+   {
+    "name": "Kindy Ridge crest camps",
+    "nights": [
+     1
+    ],
+    "role": "route",
+    "why": "Dry, informal flat spots along the ridge where parties stop when the day runs out. They save distance but give no water and no established sites."
+   }
+  ],
+  "new_camps": [],
+  "confidence": "high",
+  "plan_conflict": null,
+  "sources": [
+   "https://www.mountainproject.com/area/115160036/snowking-mountain",
+   "https://sverdina.com/Snowking1.asp",
+   "https://turns-all-year.com/trip-reports/july-3-2010-snowking-wetter-and-whiter"
+  ]
+ },
+ {
+  "id": "wa_snowking_mountain_standard",
+  "camps": [
+   {
+    "name": "Cyclone Lake and the lakes just north of it",
+    "nights": [
+     1
+    ],
+    "role": "main",
+    "why": "The base for Snowking and Mutchler: water is close and the climb starts from the lakes. The steep, brushy Kindy Ridge haul to reach it is the price."
+   },
+   {
+    "name": "Found Lake and the Kindy Ridge saddle",
+    "nights": [
+     1
+    ],
+    "role": "route",
+    "why": "The first useful camp on the approach; a good fallback for a late start. It leaves a longer, bigger summit day than camping at Cyclone Lake."
+   },
+   {
+    "name": "Kindy Ridge crest camps",
+    "nights": [
+     1
+    ],
+    "role": "route",
+    "why": "Dry, informal flat spots along the ridge where parties stop when the day runs out. They save distance but give no water and no established sites."
+   }
+  ],
+  "new_camps": [],
+  "confidence": "high",
+  "plan_conflict": null,
+  "sources": [
+   "https://www.mountainproject.com/area/115160036/snowking-mountain",
+   "https://sverdina.com/Snowking1.asp",
+   "https://turns-all-year.com/trip-reports/july-3-2010-snowking-wetter-and-whiter"
+  ]
+ },
+ {
+  "id": "wa_mutchler_peak_scramble",
+  "camps": [
+   {
+    "name": "Cyclone Lake and the lakes just north of it",
+    "nights": [
+     1,
+     2
+    ],
+    "role": "main",
+    "why": "The base for Mutchler and Snowking: water close, with the summit day done as a round trip from the lakes. The steep Kindy Ridge haul in is the price."
+   },
+   {
+    "name": "Found Lake and the Kindy Ridge saddle",
+    "nights": [],
+    "role": "route",
+    "why": "A first stop for parties that start late, but it adds a longer day to Mutchler. Not where most parties sleep on a three-day trip."
+   },
+   {
+    "name": "Kindy Ridge crest camps",
+    "nights": [],
+    "role": "route",
+    "why": "Informal dry flat spots on the crest, used when the day runs out. Useful for linking peaks; no water and no established sites."
+   }
+  ],
+  "new_camps": [],
+  "confidence": "medium",
+  "plan_conflict": "Cyclone Lake is documented as the base for both peaks, but no report found describes a Mutchler-specific camp, so both nights are assumed to be at the lake.",
+  "sources": [
+   "https://www.mountainproject.com/area/115160036/snowking-mountain",
+   "https://sverdina.com/Snowking1.asp",
+   "https://turns-all-year.com/trip-reports/july-3-2010-snowking-wetter-and-whiter"
+  ]
+ },
+ {
+  "id": "wa_east_slope",
+  "camps": [
+   {
+    "name": "Borealis Glacier toe / Borealis Lake high camp",
+    "nights": [
+     1,
+     2
+    ],
+    "role": "main",
+    "why": "The working base camp on slabs and rubble by the lake, with water close. Parties sleep here both nights so summit day starts at the glacier's edge."
+   },
+   {
+    "name": "Colonial Creek South Campground, Thunder Creek trailhead",
+    "nights": [
+     0
+    ],
+    "role": "route",
+    "why": "A forested car camp the night before, right at the trailhead, for an early start. It needs its own campground booking, separate from the wilderness permit."
+   },
+   {
+    "name": "McAllister Hiker Camp, Thunder Creek trail",
+    "nights": [],
+    "role": "route",
+    "why": "An easy flat camp about 6.7 miles in with a toilet and food hang. Parties who stop here face a much bigger day to the glacier, so it is a staging or fallback camp."
+   },
+   {
+    "name": "Lucky Pass bivy, Primus-Tricouni col",
+    "nights": [],
+    "role": "route",
+    "why": "A high, windy col used only to sit out weather or finish a long day. Hauling camp up here is rarely worth it."
+   }
+  ],
+  "new_camps": [],
+  "confidence": "high",
+  "plan_conflict": null,
+  "sources": [
+   "https://lemkeclimbs.com/?p=2606",
+   "https://turns-all-year.com/trip-reports/june-13-14-2011-primus-peak-via-thunder-creek",
+   "https://www.nps.gov/noca/planyourvisit/thunder-creek-trail.htm"
+  ]
+ },
+ {
+  "id": "wa_north_ridge_4",
+  "camps": [
+   {
+    "name": "Borealis Glacier toe / Borealis Lake high camp",
+    "nights": [
+     1,
+     2
+    ],
+    "role": "main",
+    "why": "The working base camp on slabs and rubble by the lake, with water close. Parties sleep here both nights so summit day starts at the glacier's edge."
+   },
+   {
+    "name": "Colonial Creek South Campground, Thunder Creek trailhead",
+    "nights": [
+     0
+    ],
+    "role": "route",
+    "why": "A forested car camp the night before, right at the trailhead, for an early start. It needs its own campground booking, separate from the wilderness permit."
+   },
+   {
+    "name": "McAllister Hiker Camp, Thunder Creek trail",
+    "nights": [],
+    "role": "route",
+    "why": "An easy flat camp about 6.7 miles in with a toilet and food hang. Parties who stop here face a much bigger day to the glacier, so it is a staging or fallback camp."
+   }
+  ],
+  "new_camps": [],
+  "confidence": "high",
+  "plan_conflict": null,
+  "sources": [
+   "https://lemkeclimbs.com/?p=2606",
+   "https://turns-all-year.com/trip-reports/june-13-14-2011-primus-peak-via-thunder-creek",
+   "https://www.nps.gov/noca/planyourvisit/thunder-creek-trail.htm"
+  ]
+ },
+ {
+  "id": "wa_primus_peak_south_ridge",
+  "camps": [
+   {
+    "name": "Klawatti Col camp, Eldorado ice-cap traverse approach",
+    "nights": [
+     2,
+     3
+    ],
+    "role": "main",
+    "why": "The camp for this route, on rock islands in the ice near 7,800 ft. Windy and shelterless, but Primus is a short ski or glacier walk away so parties base here."
+   }
+  ],
+  "new_camps": [
+   {
+    "name": "Inspiration Glacier camp near the rocks",
+    "elev_ft": 7500,
+    "type": "camp",
+    "role": "main",
+    "nights": [
+     1
+    ],
+    "why": "The flat spot on the glacier by the rocks is where parties heading for the col spend the first night, cutting the next day's glacier travel. Cold and exposed, with melt water only.",
+    "water": "",
+    "capacity": "",
+    "permit": "",
+    "notes": "Good tent sites are near the rocks on the broad flat part of the Inspiration Glacier at about 7,500 ft. Treeline camps lower on the Eldorado Glacier sit around 6,100 ft."
+   }
+  ],
+  "confidence": "low",
+  "plan_conflict": "The plan puts night 1 at an Eldorado treeline camp, but the one researched camp on the Eldorado Glacier is at about 7,500 ft, and no report confirms a night on this exact south-ridge variant; night 3 is assumed back at the col.",
+  "sources": [
+   "https://turns-all-year.com/trip-reports/june-6-8-2003-primus-peak",
+   "https://lemkeclimbs.com/?p=2682",
+   "https://turns-all-year.com/trip-reports/may-22-23-2009-forbidden-tour-eldo-and-primus"
+  ]
+ },
+ {
+  "id": "wa_pyramid_peak_colonial_standard",
+  "camps": [
+   {
+    "name": "Colonial Basin bench camps, below the Pyramid-Colonial col",
+    "nights": [
+     1
+    ],
+    "role": "main",
+    "why": "Flat benches just above Pyramid Lake's ridge, the usual overnight for Pyramid and Colonial. Early season brings snow cover, so a bivy platform is easier than a tent pitch."
+   }
+  ],
+  "new_camps": [],
+  "confidence": "medium",
+  "plan_conflict": "The park bars camping within half a mile past Pyramid Lake and along the trail, so a party must carry beyond it to the ridge; there is no camp before that point.",
+  "sources": [
+   "https://www.nps.gov/noca/planyourvisit/pyramid-lake-trail.htm",
+   "https://stephabegg.com/?p=8944",
+   "https://yellowleaf.org/scramble/g/r/2013-06-28-30-snowfield.html"
+  ]
+ },
+ {
+  "id": "wa_ruby_mountain_south_ridge",
+  "camps": [],
+  "new_camps": [
+   {
+    "name": "Fourth of July Camp",
+    "elev_ft": 3600,
+    "type": "camp",
+    "role": "main",
+    "nights": [
+     1
+    ],
+    "why": "The cliff-side camp west of Fourth of July Pass, about 4.8 miles in. It has water, but none higher on the mountain by midsummer, so you carry up from here.",
+    "water": "A permanent water source at camp; none higher by mid-summer.",
+    "capacity": "",
+    "permit": "Every overnight stay needs a park backcountry permit, and their number is capped.",
+    "notes": "Elevation is the pass at 3,600 ft; the camp sits just west of it. No campfires are allowed here, so bring a stove. A high camp on the Ruby ridge exists but has no water."
+   }
+  ],
+  "confidence": "medium",
+  "plan_conflict": null,
+  "sources": [
+   "https://www.nps.gov/noca/planyourvisit/fourth-of-july-panther-creek-trail.htm",
+   "https://www.10adventures.com/hikes/north-cascades-national-park/ruby-mountain-summit",
+   "https://www.theoutbound.com/washington/backpacking/backpack-to-high-camp-on-ruby-mountain"
+  ]
+ }
+]

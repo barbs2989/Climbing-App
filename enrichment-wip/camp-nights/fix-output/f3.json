@@ -1,0 +1,612 @@
+[
+ {
+  "id": "wa_three_queens_west_peak",
+  "camps": [
+   {
+    "name": "Spectacle Point high camp",
+    "nights": [
+     1
+    ],
+    "role": "main",
+    "why": "Ridge camp on the plan's route that puts the towers close for summit day. It is dry, so carry water up from the lakes below; no climber account of sleeping on the point itself was found."
+   },
+   {
+    "name": "Park Lakes Basin",
+    "nights": [],
+    "role": "route",
+    "why": "Lake water and flat ground at the head of the Mineral Creek trail, the camp most visitors to this ridge actually use; it makes summit day longer than sleeping up on the ridge."
+   }
+  ],
+  "new_camps": [],
+  "confidence": "low",
+  "plan_conflict": "No account found of anyone sleeping at Spectacle Point itself; reports of this area describe camps at the Park Lakes, Spectacle Lake and Three Queens Lake, so night 1 here is unconfirmed.",
+  "sources": [
+   "https://www.summitpost.org/three-queens/151982",
+   "https://www.wta.org/go-hiking/trip-reports/trip_report.2018-09-03.6963206389",
+   "https://adminonly.wta.org/go-hiking/trip-reports/trip_report.2022-08-04.6217201264"
+  ]
+ },
+ {
+  "id": "wa_concerto_in_c_for_drill_and_hammer",
+  "camps": [
+   {
+    "name": "Squire Creek Park & Campground, Snohomish County",
+    "nights": [
+     0
+    ],
+    "role": "route",
+    "why": "Developed county campground on the way in, handy for a night before the walk to the wall; it is several miles from the climb, so it is not where parties sleep on the route."
+   },
+   {
+    "name": "Squire Creek road end / trailhead bivouac",
+    "nights": [
+     0
+    ],
+    "role": "route",
+    "why": "Free sleeping at the road end for a pre-dawn start; it adds the whole approach to day 1, whereas a camp at the grassy saddle puts you at the wall."
+   },
+   {
+    "name": "Squire Creek Wall on-route ledges",
+    "nights": [],
+    "role": "route",
+    "why": "Ledges on the wall itself are only an emergency option if the climb runs long; most parties rappel to the saddle and sleep there instead."
+   }
+  ],
+  "new_camps": [],
+  "confidence": "low",
+  "plan_conflict": "Reports of this wall sleep at a grassy saddle below it, which is not on file and has no researched elevation, so night 1 has no listed camp; both trailhead camps were marked main and are changed to route.",
+  "sources": [
+   "https://cascadeclimbers.com/forum/topic/108260-tr-squire-creek-wall-south-face-natures-way-09052025",
+   "https://cascadeclimbers.com/forum/topic/107897-tr-squire-creek-wall-6p-58-fa-miracle-ramps-08292024"
+  ]
+ },
+ {
+  "id": "wa_glacier_peak_frostbite_ridge",
+  "camps": [
+   {
+    "name": "Kennedy Ridge high camp",
+    "nights": [],
+    "role": "route",
+    "why": "Open pumice crest at the PCT end of Kennedy Peak's west ridge; no cover and poor tent holds, but it shortens the way to the glacier. Some parties bivy here on snow."
+   },
+   {
+    "name": "Vista-Kennedy saddle",
+    "nights": [
+     2
+    ],
+    "role": "main",
+    "why": "Col between the Vista and Kennedy glaciers; the closest sleeping spot to the foot of Frostbite Ridge, with snow for water but a cold, exposed night."
+   },
+   {
+    "name": "8,800 ft saddle at the foot of Frostbite Ridge",
+    "nights": [],
+    "role": "route",
+    "why": "Highest camp before the ridge; saves hours on summit day but is very exposed and a long way from water other than snow."
+   },
+   {
+    "name": "Ledge near 9,900 ft below the ridge crux",
+    "nights": [],
+    "role": "route",
+    "why": "A bivy ledge partway up the ridge for parties splitting the climb; cramped, with no flat ground for tents."
+   }
+  ],
+  "new_camps": [],
+  "confidence": "low",
+  "plan_conflict": "Plan nights 1 and 3 could not be tied to a named camp: reports of this ridge sleep at Red Pass, a Glacier Ridge camp near 6,400 ft or Glacier Gap, none on file here.",
+  "sources": [
+   "https://sverdina.com/Glacier3.asp",
+   "https://www.mountaineers.org/activities/trip-reports/intermediate-alpine-climb-glacier-peak-frostbite-ridge",
+   "https://cascadeclimbers.com/forum/topic/97905-tr-glacier-peak-frostbite-ridge-822015"
+  ]
+ },
+ {
+  "id": "wa_glacier_peak_sitkum_glacier",
+  "camps": [
+   {
+    "name": "Boulder Basin",
+    "nights": [
+     2,
+     3
+    ],
+    "role": "main",
+    "why": "Meadow basin below the glacier with running water and tent sites; summit day is a round trip from here, so parties sleep in the same spot both nights."
+   },
+   {
+    "name": "Kennedy Guard Station area",
+    "nights": [],
+    "role": "route",
+    "why": "Low valley camp on a different approach by way of Kennedy Hot Springs; it makes the first day shorter but lengthens the climb to Boulder Basin."
+   },
+   {
+    "name": "Sitkum Creek / PCT junction camp",
+    "nights": [],
+    "role": "route",
+    "why": "Forest camp on the PCT beside Sitkum Creek, at the base of the climb to Boulder Basin; a short extra day if you left the road late."
+   }
+  ],
+  "new_camps": [
+   {
+    "name": "Red Pass camp, Pacific Crest Trail",
+    "elev_ft": 6500,
+    "type": "camp",
+    "role": "main",
+    "nights": [
+     1
+    ],
+    "why": "Reached after a long first day from the North Fork Sauk trail, it breaks the walk before the descent to Sitkum Creek; snow patches provide water in early summer.",
+    "water": "Snow patches in early summer.",
+    "capacity": "",
+    "permit": "",
+    "notes": "On the PCT just beyond the North Fork Sauk junction, about 7 miles from the road. Parties go on over the pass to Boulder Basin the next day."
+   }
+  ],
+  "confidence": "medium",
+  "plan_conflict": null,
+  "sources": [
+   "https://sverdina.com/Glacier3.asp",
+   "https://sverdina.com/glacier2.asp",
+   "https://turns-all-year.com/trip-reports/july-20-2003-glacier-peak-s-snowfields-sitkum"
+  ]
+ },
+ {
+  "id": "wa_gunsight_peak_standard",
+  "camps": [
+   {
+    "name": "Chikamin-Dome col",
+    "nights": [
+     2,
+     3
+    ],
+    "role": "main",
+    "why": "High camp on the glacier side with snow for water; both Gunsight and Sinister are close, but it is exposed and a long carry over Itswoot Ridge."
+   },
+   {
+    "name": "Itswoot Ridge camp",
+    "nights": [],
+    "role": "route",
+    "why": "Ridge-top camp between the forest and the col; use it to split the long carry on day 2 if you start late."
+   },
+   {
+    "name": "Bachelor Flats / Bachelor Meadows",
+    "nights": [
+     1
+    ],
+    "role": "main",
+    "why": "Forest clearing at the end of the maintained trail: sheltered and low, so day 2 is a big climb, but it is the practical first night."
+   },
+   {
+    "name": "Cub Lake meadows",
+    "nights": [
+     4
+    ],
+    "role": "main",
+    "why": "Meadow camp with lake water on the way out; a gentler night after Sinister and it shortens the exit."
+   },
+   {
+    "name": "Chikamin Glacier bench below the west face",
+    "nights": [],
+    "role": "route",
+    "why": "Bench on the glacier itself right below the faces; fastest start but cold and crevassed, so most parties camp at the col."
+   }
+  ],
+  "new_camps": [],
+  "confidence": "low",
+  "plan_conflict": "Night 5 (after exiting from Cub Lake) has no camp on file and could not be confirmed; a report of this trip slept in the Downey Creek valley below the Bachelor junction.",
+  "sources": [
+   "https://wenatcheeoutdoors.org/2020/09/23/gunsight-peak-sinister-peak/",
+   "https://sverdina.com/Ptarmigan_Traverse1.asp"
+  ]
+ },
+ {
+  "id": "wa_sw_ridge",
+  "camps": [
+   {
+    "name": "High camp above the Blue Glacier",
+    "nights": [
+     2,
+     3
+    ],
+    "role": "main",
+    "why": "Exposed rock ridge with snowmelt only, directly under the Gunsight peaks, so summit day starts from the door and you return to the same tent."
+   }
+  ],
+  "new_camps": [],
+  "confidence": "low",
+  "plan_conflict": "Night 1 (a streamside camp along the Agnes Creek trail, about six miles in) has no camp on file and no researched elevation, so it is not listed.",
+  "sources": [
+   "https://wildsnow.com/20610/washingtons-gunsight-range-backcountry-climbing/",
+   "https://cascadeclimbers.com/forum/topic/74323-tr-gunsight-peak-s-face-6172010"
+  ]
+ },
+ {
+  "id": "wa_diamond_in_the_rough",
+  "camps": [
+   {
+    "name": "Bedal Campground, Mountain Loop Highway",
+    "nights": [
+     0
+    ],
+    "role": "route",
+    "why": "Closest road camp to the Bedal Creek trailhead; sleep here so the washed-out trail and brush are done early, when the loop road gate is open."
+   },
+   {
+    "name": "Bivy at the base of Sloan's southwest face",
+    "nights": [
+     1
+    ],
+    "role": "main",
+    "why": "Flat bivy in the basin below the wall that cuts the morning approach; many parties instead climb car to car and skip it."
+   }
+  ],
+  "new_camps": [],
+  "confidence": "low",
+  "plan_conflict": "Parties often do this wall as a single car-to-car day, so the base bivy is not confirmed as the usual night 1.",
+  "sources": [
+   "https://stephabegg.com/?p=8739",
+   "https://cascadeclimbers.com/forum/topic/107591-tr-sloan-peak-fire-on-the-mountain-8-pitches-510-10072023"
+  ]
+ },
+ {
+  "id": "wa_fire_on_the_mountain",
+  "camps": [
+   {
+    "name": "Bedal Campground, Mountain Loop Highway",
+    "nights": [
+     0
+    ],
+    "role": "route",
+    "why": "Closest road camp to the Bedal Creek trailhead; sleep here so the washed-out trail and brush are done early, when the loop road gate is open."
+   },
+   {
+    "name": "Bivy at the base of Sloan's southwest face",
+    "nights": [
+     1
+    ],
+    "role": "main",
+    "why": "Flat bivy in the basin below the wall that cuts the morning approach; many parties instead climb car to car and skip it."
+   }
+  ],
+  "new_camps": [],
+  "confidence": "low",
+  "plan_conflict": "Parties often do this wall as a single car-to-car day, so the base bivy is not confirmed as the usual night 1.",
+  "sources": [
+   "https://stephabegg.com/?p=8739",
+   "https://cascadeclimbers.com/forum/topic/107591-tr-sloan-peak-fire-on-the-mountain-8-pitches-510-10072023"
+  ]
+ },
+ {
+  "id": "wa_northwest_buttress",
+  "camps": [
+   {
+    "name": "Bedal Campground, Mountain Loop Highway",
+    "nights": [
+     0
+    ],
+    "role": "route",
+    "why": "Closest road camp to the Bedal Creek trailhead; sleep here so the washed-out trail and brush are done early, when the loop road gate is open."
+   },
+   {
+    "name": "Bivy at the base of Sloan's southwest face",
+    "nights": [
+     1
+    ],
+    "role": "main",
+    "why": "Flat bivy in the basin below the wall that cuts the morning approach; many parties instead climb car to car and skip it."
+   }
+  ],
+  "new_camps": [],
+  "confidence": "low",
+  "plan_conflict": "Parties often do this wall as a single car-to-car day, so the base bivy is not confirmed as the usual night 1.",
+  "sources": [
+   "https://stephabegg.com/?p=8739",
+   "https://cascadeclimbers.com/forum/topic/107591-tr-sloan-peak-fire-on-the-mountain-8-pitches-510-10072023"
+  ]
+ },
+ {
+  "id": "wa_old_guard_peak_southwest_route",
+  "camps": [
+   {
+    "name": "Kool-Aid Lake",
+    "nights": [
+     1
+    ],
+    "role": "main",
+    "why": "First night of the traverse: tarn water and a manageable day over Cache Col with a full pack, before the glacier and Red Ledge day."
+   },
+   {
+    "name": "Yang Yang Lakes",
+    "nights": [
+     2
+    ],
+    "role": "main",
+    "why": "Bowl of lakes in the middle of the traverse after the glacier crossing; the usual second night and the base for Old Guard."
+   },
+   {
+    "name": "White Rock Lakes",
+    "nights": [
+     3
+    ],
+    "role": "main",
+    "why": "Lake-shore camp reached after Sentinel Pass and Old Guard; a pleasant third night with time left to rest."
+   }
+  ],
+  "new_camps": [],
+  "confidence": "low",
+  "plan_conflict": "Plan nights 4 and 5 (Dana-Dome saddle and Bachelor Meadow) are not on file: other parties sleep on Itswoot Ridge, and no camp or elevation for them could be confirmed.",
+  "sources": [
+   "https://sverdina.com/Ptarmigan_Traverse1.asp",
+   "https://stephabegg.com/?p=8946",
+   "https://wenatcheeoutdoors.org/2020/09/23/gunsight-peak-sinister-peak/"
+  ]
+ },
+ {
+  "id": "wa_hozomeen_mountain_northeast_buttress",
+  "camps": [],
+  "new_camps": [
+   {
+    "name": "Hozomeen north col camp",
+    "elev_ft": 6300,
+    "type": "bivy",
+    "role": "main",
+    "nights": [
+     1
+    ],
+    "why": "Sleeping at the col or in the basin just west of the divide puts the buttress a short walk away for a dawn start; the long hike in is done on day 1.",
+    "water": "",
+    "capacity": "",
+    "permit": "",
+    "notes": "Up the drainage north of the peak, roughly 3,000 ft of climbing to the 6,300 ft col. Tents go on the col itself or in the basin just west of the divide."
+   }
+  ],
+  "confidence": "medium",
+  "plan_conflict": "The plan names a Monument 74 camp for night 1; the route guide places camp at the 6,300 ft col or the basin just west of the divide.",
+  "sources": [
+   "https://www.mountaineers.org/activities/routes-places/north-cascades-national-park-cross-country-zones/hozomeen-mountain-north-peak-norhteast-buttress",
+   "https://skisickness.com/post/vt505-31-aug-1-sep-2013-hozomeen-mtn-zorro-face"
+  ]
+ },
+ {
+  "id": "wa_hozomeen_mountain_south_peak_southwest_route",
+  "camps": [],
+  "new_camps": [],
+  "confidence": "low",
+  "plan_conflict": "The plan's night 1 bivy in the west gully above Hozomeen Lake and night 2 on the mountain could not be tied to any account or researched elevation, so no camp is listed.",
+  "sources": [
+   "https://cascadeclimbers.com/forum/topic/66987-tr-south-hozomeen-sw-route-5312009",
+   "https://summitpost.org/hozomeen-mountain-north-peak/climbers-log/153772"
+  ]
+ },
+ {
+  "id": "wa_hozomeen_mountain_west_face",
+  "camps": [],
+  "new_camps": [
+   {
+    "name": "Hozomeen north col camp",
+    "elev_ft": 6300,
+    "type": "bivy",
+    "role": "main",
+    "nights": [
+     1,
+     3
+    ],
+    "why": "Reached after the hike in with wall loads; the face is entered from here and the descent returns to the same place.",
+    "water": "",
+    "capacity": "",
+    "permit": "",
+    "notes": "Col near 6,300 ft north of the peak or the basin west of the divide."
+   },
+   {
+    "name": "Bivy on the West Face",
+    "elev_ft": null,
+    "type": "bivy",
+    "role": "main",
+    "nights": [
+     2
+    ],
+    "why": "Night on the wall: the first-ascent party reached the top of pitch 10 and bivouacked before finishing the face next day.",
+    "water": "",
+    "capacity": "",
+    "permit": "",
+    "notes": "A ledge on the face, not a camp; location varies with how far the party climbs on day 2."
+   }
+  ],
+  "confidence": "low",
+  "plan_conflict": "Night 2 is inferred from the plan's day structure; no account of a second ascent describing where parties sleep was found.",
+  "sources": [
+   "https://www.mountaineers.org/activities/routes-places/north-cascades-national-park-cross-country-zones/hozomeen-mountain-north-peak-norhteast-buttress",
+   "https://skisickness.com/post/vt505-31-aug-1-sep-2013-hozomeen-mtn-zorro-face"
+  ]
+ },
+ {
+  "id": "wa_ragged_ridge",
+  "camps": [
+   {
+    "name": "Mesahchie basin, below the col",
+    "nights": [
+     1
+    ],
+    "role": "main",
+    "why": "Basin below Mesahchie Col with snowmelt water and bivy flats; the usual first night, with the climb starting from the doorstep."
+   },
+   {
+    "name": "Ragged Ridge crest bivy, south of Mesahchie Col",
+    "nights": [],
+    "role": "route",
+    "why": "Higher, windier bivy right on the crest; it saves height on day 2 but has less water and less shelter than the basin."
+   },
+   {
+    "name": "Fisher Camp, Fisher Creek basin",
+    "nights": [],
+    "role": "route",
+    "why": "Forest camp well below Easy Pass for a split approach or a Kimtah-first plan; comfortable, but it costs a lot of elevation to regain."
+   }
+  ],
+  "new_camps": [],
+  "confidence": "medium",
+  "plan_conflict": "The crest bivy was also marked main for night 1, and a two-day plan is tight: many parties take a third day and sleep a second night on the ridge.",
+  "sources": [
+   "https://summitpost.org/mesahchie-pk-icefall-and-southeast-gullies/168551",
+   "https://cascadeclimbers.com/forum/topic/102994-tr-ragged-ridge-mesahchie-katsuk-kimtah-cosho-standards-07272019",
+   "https://turns-all-year.com/trip-reports/partial-ragged-ridge-traverse-cosho-via-mesahchie-glacier"
+  ]
+ },
+ {
+  "id": "wa_bear_mountain_chilliwack_north_buttress",
+  "camps": [
+   {
+    "name": "Meadow basin below the northwest-ridge saddle",
+    "nights": [
+     2,
+     3
+    ],
+    "role": "main",
+    "why": "Heather meadow with snowmelt below the saddle: the only practical high camp, and the climb starts and ends there."
+   }
+  ],
+  "new_camps": [],
+  "confidence": "low",
+  "plan_conflict": "Plan nights 1 and 4 (Brush Creek junction) have no camp on file and no researched elevation; accounts of this peak approach from the Canadian side, not Hannegan.",
+  "sources": [
+   "https://stephabegg.com/?p=8710",
+   "https://www.mountainproject.com/area/112828230/bear-mountain"
+  ]
+ },
+ {
+  "id": "wa_direct_north_buttress",
+  "camps": [
+   {
+    "name": "Basin below the Bear Mountain saddle",
+    "nights": [
+     2,
+     4
+    ],
+    "role": "main",
+    "why": "Meadow basin with snowmelt below the saddle: launching camp for the north side, and the place to come back to after the buttress."
+   },
+   {
+    "name": "Hannegan Camp, below Hannegan Pass",
+    "nights": [],
+    "role": "route",
+    "why": "Short first night for a late start from the trailhead; it puts the pass behind you in the morning."
+   },
+   {
+    "name": "Boundary Camp",
+    "nights": [],
+    "role": "route",
+    "why": "Three sites just over Hannegan Pass; an option for a shortened first or last day, booked up on summer weekends."
+   },
+   {
+    "name": "US Cabin Camp, Chilliwack River",
+    "nights": [],
+    "role": "route",
+    "why": "Deep forest valley camp that shortens the haul to the saddle but is not the plan's Brush Creek stop."
+   }
+  ],
+  "new_camps": [],
+  "confidence": "low",
+  "plan_conflict": "Night 3 is a bivouac on the 21-pitch buttress and nights 1 and 5 near Brush Creek could not be tied to a confirmed camp.",
+  "sources": [
+   "https://stephabegg.com/?p=8710",
+   "https://www.mountainproject.com/area/112828230/bear-mountain"
+  ]
+ },
+ {
+  "id": "wa_the_devils_club",
+  "camps": [
+   {
+    "name": "Perry Creek basin",
+    "nights": [
+     1,
+     2
+    ],
+    "role": "main",
+    "why": "Dispersed bivy sites beside the creek are the only flat ground after the bushwhack; you will sleep wherever you reach by dusk."
+   }
+  ],
+  "new_camps": [
+   {
+    "name": "Ledge at the base of the East Face headwall",
+    "elev_ft": null,
+    "type": "bivy",
+    "role": "main",
+    "nights": [
+     3
+    ],
+    "why": "Small ledge above the lower slabs that sets up the headwall for the next morning.",
+    "water": "",
+    "capacity": "",
+    "permit": "",
+    "notes": "Reached on day 3; no flat ground. The plan's night 4 return to the tent is assumed to be Perry Creek basin."
+   }
+  ],
+  "confidence": "low",
+  "plan_conflict": "Night 4 (return from the all-night descent) and night 5 are assumed at the Perry Creek basin; no account of this route confirms them.",
+  "sources": [
+   "https://www.countryhighpoints.com/hard-mox-via-perry-creek/",
+   "https://stephabegg.com/?p=8926"
+  ]
+ },
+ {
+  "id": "wa_buckner_mountain_north_face",
+  "camps": [
+   {
+    "name": "Boston Basin high camp",
+    "nights": [],
+    "role": "route",
+    "why": "Lower camp in the basin at 6,300 ft with water and tent sites; adds a long haul over the glacier the next morning."
+   },
+   {
+    "name": "Boston Glacier bivy",
+    "nights": [
+     1
+    ],
+    "role": "main",
+    "why": "Glacier-edge bivy near Boston Peak, a short walk from the face; no shelter and no flat ground off the ice."
+   },
+   {
+    "name": "Sahale–Boston col bivy",
+    "nights": [
+     2
+    ],
+    "role": "main",
+    "why": "Col bivy on the way back to Cascade Pass; a common second night when the exit is split over two days."
+   }
+  ],
+  "new_camps": [],
+  "confidence": "low",
+  "plan_conflict": "Plan night 2 (the second camp) is the col in some accounts, but none confirmed where parties sleep after the face.",
+  "sources": [
+   "https://stephabegg.com/?p=8819",
+   "https://turns-all-year.com/trip-reports/buckner-s-nf-2-july-2014"
+  ]
+ },
+ {
+  "id": "wa_cascade_peak_east_ridge",
+  "camps": [
+   {
+    "name": "Cascade-Johannesburg Col bivy",
+    "nights": [
+     1
+    ],
+    "role": "main",
+    "why": "Flat sites at the top of the CJ couloir put the chimney within reach for an early start; the couloir below is exposed to rockfall, so climb it early."
+   },
+   {
+    "name": "Johannesburg Camp",
+    "nights": [
+     0
+    ],
+    "role": "route",
+    "why": "Walk-in camp just above the Cascade Pass trailhead; use it the night before so the couloir climb starts on day 1."
+   }
+  ],
+  "new_camps": [],
+  "confidence": "low",
+  "plan_conflict": null,
+  "sources": [
+   "https://cascadeclimbers.com/forum/topic/43314-tr-johannesberg-east-ridge-6222006",
+   "https://cascadeclimbers.com/forum/topic/92425-tr-johannesburger-and-fried-c-j-couloir-to-east-buttress-852013",
+   "https://cascadeclimbers.com/forum/topic/61806-tr-joahnnesburg-east-route-8152008"
+  ]
+ }
+]

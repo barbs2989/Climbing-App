@@ -1,0 +1,660 @@
+[
+ {
+  "id": "wa_luna_glacier",
+  "camps": [
+   {
+    "name": "Luna Camp, Big Beaver Trail",
+    "nights": [
+     1,
+     5
+    ],
+    "role": "main",
+    "why": "Flat old-growth camp on the Big Beaver trail, the first night after the boat and the easy last night before the walk out; it spares a long bushwhack day at each end."
+   },
+   {
+    "name": "Luna Cirque floor",
+    "nights": [
+     2,
+     3,
+     4
+    ],
+    "role": "main",
+    "why": "The bowl under the glacier: running water, shelter on three sides and the shortest way to the climb. Parties that stay put sleep here through the summit days."
+   }
+  ],
+  "new_camps": [],
+  "confidence": "low",
+  "plan_conflict": "The plan adds a separate advance camp below the icefall on nights 3 and 4, but no site is on file and no party was found using one; nights 3-5 follow the plan's shape, only nights 1-2 are backed by a party that slept at Luna Camp then at the head of Access Creek.",
+  "sources": [
+   "https://sverdina.com/Luna1.asp",
+   "https://stephabegg.com/?p=8951"
+  ]
+ },
+ {
+  "id": "wa_phantom_peak_south_route",
+  "camps": [
+   {
+    "name": "Whatcom Camp, Brush Creek below Whatcom Pass",
+    "nights": [
+     1,
+     4
+    ],
+    "role": "main",
+    "why": "Last trail camp below the pass, in trees beside Brush Creek; it makes the glacier crossing the whole of day 2. Check that it is open, since fire damage has closed sites here."
+   },
+   {
+    "name": "Crooked Thumb Glacier moraine high camp",
+    "nights": [
+     2,
+     3
+    ],
+    "role": "main",
+    "why": "The camp nearest Phantom: the summit day is a round trip from the moraine. Water is meltwater, and two glacier crossings stand between it and the pass."
+   },
+   {
+    "name": "Perfect Pass, Perfect Pass cross-country zone",
+    "nights": [],
+    "role": "route",
+    "why": "Benches on the way past the Challenger Glacier; stop here instead of at the pass camp to shorten day 2, though day 1 grows by several miles."
+   },
+   {
+    "name": "Luna Cirque floor",
+    "nights": [],
+    "role": "route",
+    "why": "Belongs to the Ross Lake side of the Pickets; a party coming over Whatcom Pass does not sleep here."
+   },
+   {
+    "name": "Luna Camp, Big Beaver Trail",
+    "nights": [],
+    "role": "route",
+    "why": "Trail camp on Big Beaver, on the Ross Lake approach; it is not on the Hannegan Pass plan."
+   }
+  ],
+  "new_camps": [],
+  "confidence": "low",
+  "plan_conflict": "Camps on file list Luna Cirque floor as a main camp, but the Hannegan Pass plan never sleeps there; Whatcom Camp is used for nights 1 and 4 by plan shape, and the plan itself says it may be closed.",
+  "sources": [
+   "https://www.lemkeclimbs.com/whatcom-peak.html",
+   "https://stephabegg.com/?p=8948",
+   "https://cascadeclimbers.com/forum/topic/97920-tr-northern-pickets-phantom-peak-challenger-125-and-quotthe-bat-wingquot-7302015"
+  ]
+ },
+ {
+  "id": "wa_swiss_peak_standard_route",
+  "camps": [
+   {
+    "name": "Luna Camp, Big Beaver Trail",
+    "nights": [
+     1
+    ],
+    "role": "main",
+    "why": "First night of the Ross Lake approach: flat, forested and close to the start of the Access Creek bushwhack, so day 2 starts fresh."
+   },
+   {
+    "name": "Luna Col bivy, Luna cross-country zone",
+    "nights": [
+     2
+    ],
+    "role": "main",
+    "why": "High bivy above the cirque on rock, heather or snow; no built sites, but snow for water and the Fury traverse begins right from it."
+   },
+   {
+    "name": "Luna Cirque floor",
+    "nights": [],
+    "role": "route",
+    "why": "Lower option on the traverse that skips the col; it adds a descent and a climb back up, so most parties push on to the col."
+   }
+  ],
+  "new_camps": [
+   {
+    "name": "Glacier col bivy past West Fury",
+    "elev_ft": null,
+    "type": "bivy",
+    "role": "main",
+    "nights": [
+     3
+    ],
+    "why": "Where the Fury traverse ends: a wind-scoured snow hollow in the col before Swiss. No real site, but it saves carrying on in the dark after the rappels.",
+    "water": "",
+    "capacity": "",
+    "permit": "",
+    "notes": "A bivy on the climb itself, found on snow; no tent platforms, no ground water. It is a bivy on the route so no elevation is given."
+   }
+  ],
+  "confidence": "low",
+  "plan_conflict": "The plan gives no camps for days 3 and 4; night 3 comes from a single traverse party, and day 1 names both Luna Camp and Access Creek.",
+  "sources": [
+   "https://sverdina.com/Luna1.asp",
+   "https://publications.americanalpineclub.org/articles/12200615400"
+  ]
+ },
+ {
+  "id": "wa_castle_in_the_sky",
+  "camps": [],
+  "new_camps": [
+   {
+    "name": "Easy Peak bivy",
+    "elev_ft": 6623,
+    "type": "bivy",
+    "role": "main",
+    "nights": [
+     1
+    ],
+    "why": "Where day 1 ends on the crest; a tarn sits close by, and it leaves the Impasse and Perfect Pass for the next morning.",
+    "water": "A tarn near the summit.",
+    "capacity": "",
+    "permit": "",
+    "notes": "Elevation is the app's own pin. Other parties have slept on the ridge lower down."
+   },
+   {
+    "name": "Perfect Pass",
+    "elev_ft": 6300,
+    "type": "bivy",
+    "role": "main",
+    "nights": [
+     2
+    ],
+    "why": "The nearest camp to the south buttress, about 45 minutes from its base; sleep here after the climb rather than walk out the same evening.",
+    "water": "",
+    "capacity": "",
+    "permit": "",
+    "notes": "Elevation reported between about 6,240 and 6,300 ft. Windy, and snow-covered early in the season."
+   }
+  ],
+  "confidence": "low",
+  "plan_conflict": "The plan hikes all the way out on day 3, so night 2 at Perfect Pass is an assumption; no account of a party's nights on this route was found.",
+  "sources": [
+   "https://yellowleaf.org/scramble/g/r/2006-07-13-16-challenger.html",
+   "https://stephabegg.com/?p=8948"
+  ]
+ },
+ {
+  "id": "wa_south_spur",
+  "camps": [
+   {
+    "name": "Easy Ridge bivouac ground below Easy Peak",
+    "nights": [
+     1
+    ],
+    "role": "main",
+    "why": "Ends day 1 high on the crest with tarn water near the top of the climbers' path, before the Impasse bypass the next morning."
+   },
+   {
+    "name": "Perfect Pass, Perfect Pass cross-country zone",
+    "nights": [
+     2
+    ],
+    "role": "main",
+    "why": "Benches below the south face; the plan reaches them before the climb and leaves them after, so it is the night spot for the summit day."
+   },
+   {
+    "name": "Whatcom Camp, Brush Creek below Whatcom Pass",
+    "nights": [],
+    "role": "route",
+    "why": "Sits on the walk out; tired parties may stop here after the summit rather than continue down toward the Chilliwack River."
+   }
+  ],
+  "new_camps": [],
+  "confidence": "low",
+  "plan_conflict": "The plan sleeps night 3 at US Cabin Camp, which is not on file and for which no elevation could be found, so night 3 has no main camp here; no party following this plan was found.",
+  "sources": [
+   "https://yellowleaf.org/scramble/g/r/2006-07-13-16-challenger.html",
+   "https://www.lemkeclimbs.com/whatcom-peak.html"
+  ]
+ },
+ {
+  "id": "wa_east_mcmillan_spire_west_ridge",
+  "camps": [
+   {
+    "name": "Terror Basin camp",
+    "nights": [
+     1,
+     2
+    ],
+    "role": "main",
+    "why": "The one mountain camp for the spire: flat, with running water nearby, and the summit day starts and ends here. It fills up on busy weekends, and a permit is needed."
+   },
+   {
+    "name": "Goodell Creek Campground, roadhead staging",
+    "nights": [
+     0
+    ],
+    "role": "route",
+    "why": "Car camping the night before for a first-light start up the steep approach; it adds nothing to the mountain days."
+   },
+   {
+    "name": "Old Goodell Creek roadbed near the Terror Creek crossing",
+    "nights": [],
+    "role": "route",
+    "why": "A flat spot on the way in if you stop early; the climb to the basin is steep and long, so most parties push through to the basin."
+   }
+  ],
+  "new_camps": [],
+  "confidence": "medium",
+  "plan_conflict": null,
+  "sources": [
+   "https://home.nps.gov/noca/blogs/terror-basin-8-15-17.htm",
+   "https://publications.americanalpineclub.org/articles/12197717003"
+  ]
+ },
+ {
+  "id": "wa_north_ridge_west_side",
+  "camps": [
+   {
+    "name": "Cutthroat Lake basin, outside the quarter-mile closure",
+    "nights": [
+     1
+    ],
+    "role": "main",
+    "why": "Closest legal camp below the peak, but low on the approach and limited by closure rules; expect a longer climbing day than from a camp in the upper basin."
+   },
+   {
+    "name": "Cutthroat Creek trailhead",
+    "nights": [],
+    "role": "route",
+    "why": "A night at the car before the walk in; it adds no height, and the approach is the same length the next morning."
+   }
+  ],
+  "new_camps": [],
+  "confidence": "low",
+  "plan_conflict": "Camps on file list the trailhead as main, but the plan's night is spent at the end of the approach; no party's sleeping place on this route was found.",
+  "sources": [
+   "https://www.mountaineers.org/activities/routes-places/cutthroat-peak-north-ridge"
+  ]
+ },
+ {
+  "id": "wa_bacon_peak_diobsud",
+  "camps": [
+   {
+    "name": "Upper Diobsud Lakes",
+    "nights": [
+     1,
+     2
+    ],
+    "role": "main",
+    "why": "The plan's traverse ends here: lake water and flat benches, and the summit is a round trip from camp the next day."
+   },
+   {
+    "name": "Anderson Creek road end, Watson Lakes trailhead",
+    "nights": [],
+    "role": "route",
+    "why": "The road end only; sleep here for an early start, not as a camp for the trip."
+   },
+   {
+    "name": "Lower Anderson Lake",
+    "nights": [],
+    "role": "route",
+    "why": "Sits right under the climbers' ridge path, so it suits a late start; the plan walks past it on day 1."
+   },
+   {
+    "name": "Watson Lakes designated camps",
+    "nights": [],
+    "role": "route",
+    "why": "A short walk from the road with lake water and the best sites nearby; stop here if starting late, then do the traverse next morning."
+   },
+   {
+    "name": "Northeast Bacon camp, above the glacier",
+    "nights": [],
+    "role": "route",
+    "why": "A higher camp near the summit for a quicker push or carrying over after the climb; it can be dry late in summer."
+   }
+  ],
+  "new_camps": [],
+  "confidence": "low",
+  "plan_conflict": "Other accounts of Bacon use a high camp near the summit or a Watson Lakes base, so the plan's two nights at Diobsud Lakes could not be confirmed.",
+  "sources": [
+   "https://stephabegg.com/?p=8825",
+   "https://turns-all-year.com/trip-reports/june-18-20-2004-bacon-peak"
+  ]
+ },
+ {
+  "id": "wa_hagan_mountain_south",
+  "camps": [
+   {
+    "name": "South Hagan bench",
+    "nights": [
+     1,
+     2
+    ],
+    "role": "main",
+    "why": "Open benches on Hagan's south side, the closest sleep to the climb; the carry to reach it is long, and it sits above the lake water."
+   },
+   {
+    "name": "Hidden Lake, below the Blum-Hagan divide",
+    "nights": [],
+    "role": "route",
+    "why": "Reliable water in the saddle country between Hagan and Bacon; it sits well below the bench and adds climbing to reach the south slopes."
+   },
+   {
+    "name": "Sulphide Camp, end of the Baker River trail",
+    "nights": [],
+    "role": "route",
+    "why": "Built sites and a toilet at trail's end, but off the climbers' route; it suits a trail trip and adds a long bushwhack to Hagan."
+   }
+  ],
+  "new_camps": [],
+  "confidence": "low",
+  "plan_conflict": "The plan camps on benches above Diobsud Lakes, which is not a camp on file; South Hagan bench is the nearest listed camp but the match is unconfirmed.",
+  "sources": [
+   "https://climberkyle.com/2020/09/05/watson-blum-high-route/",
+   "https://turns-all-year.com/trip-reports/watson-bacon-hagan-blum-traverse-solo"
+  ]
+ },
+ {
+  "id": "wa_mount_baker_cockscomb_ridge",
+  "camps": [
+   {
+    "name": "Hogsback Camp",
+    "nights": [
+     1
+    ],
+    "role": "main",
+    "why": "The moraine camp beside the Coleman Glacier, about 6,000 ft: running water in season, no trees, and the shortest start to the ridge from the Heliotrope trail."
+   },
+   {
+    "name": "Park Glacier camp near the Portals",
+    "nights": [],
+    "role": "route",
+    "why": "The camp for parties arriving along Ptarmigan Ridge from Artist Point; it is a long way from the Heliotrope trailhead."
+   },
+   {
+    "name": "Camp Kiser, Ptarmigan Ridge",
+    "nights": [],
+    "role": "route",
+    "why": "A camp on the Ptarmigan Ridge traverse; it belongs to the Artist Point approach, not the Heliotrope Ridge trail in the plan."
+   }
+  ],
+  "new_camps": [],
+  "confidence": "low",
+  "plan_conflict": "Camps on file list the Park Glacier camp as main, but the plan walks in from Heliotrope Ridge and sleeps at Hogsback; no account of a Cockscomb party's camp was found.",
+  "sources": [
+   "https://www.alpineinstitute.com/?p=100309",
+   "https://www.mountainproject.com/route/120834763/park-glacier"
+  ]
+ },
+ {
+  "id": "wa_mount_baker_coleman_headwall",
+  "camps": [
+   {
+    "name": "Hogsback Camp, Heliotrope Ridge",
+    "nights": [
+     1
+    ],
+    "role": "main",
+    "why": "The usual camp for the Coleman Glacier, with the headwall in view; running water in season, but it sits lower, so the glacier approach to the base is longer."
+   },
+   {
+    "name": "North Ridge glacier bivy, upper Coleman",
+    "nights": [],
+    "role": "route",
+    "why": "A snow camp near 6,800 ft that shortens the walk to the headwall base; fully exposed, and sited by crevasse conditions."
+   },
+   {
+    "name": "Kulshan Cabin site and Harrison Camp",
+    "nights": [],
+    "role": "route",
+    "why": "Lower, sheltered ground on the Heliotrope side; it adds distance to the headwall and is rarely chosen."
+   },
+   {
+    "name": "Upper Coleman Glacier snow camps, below the Black Buttes",
+    "nights": [],
+    "role": "route",
+    "why": "A high snow camp near 7,000 ft that cuts the summit approach, but exposed and without running water."
+   },
+   {
+    "name": "Colfax-Grant saddle bivy",
+    "nights": [],
+    "role": "route",
+    "why": "A high saddle bivy near 9,000 ft; very exposed and carries a heavy pack up, so it only suits a very late start from above."
+   }
+  ],
+  "new_camps": [],
+  "confidence": "low",
+  "plan_conflict": "Camps on file list two mains for one night; Hogsback is the established camp but no account was found of where Headwall parties sleep, so the role of the North Ridge bivy was lowered.",
+  "sources": [
+   "https://www.alpineinstitute.com/route-profile-mt-baker-coleman-headwall/",
+   "https://www.wta.org/go-hiking/trip-reports/trip_report-2020-05-24-4929189286"
+  ]
+ },
+ {
+  "id": "wa_mount_shuksan_hanging_glacier",
+  "camps": [
+   {
+    "name": "Fisher Chimneys camps, White Salmon and above Winnie's Slide",
+    "nights": [
+     1,
+     2
+    ],
+    "role": "main",
+    "why": "Dry bivies above the chimneys with water nearby and the upper glacier at your door; summit day starts and ends here. Sites run short on busy weekends."
+   },
+   {
+    "name": "North Face bivy, where the rib meets the face",
+    "nights": [],
+    "role": "route",
+    "why": "A bivy on the face itself for parties committing to a longer climb; far from water and cramped, so it is not a base."
+   }
+  ],
+  "new_camps": [],
+  "confidence": "medium",
+  "plan_conflict": "Reports were of the Fisher Chimneys approach, which this route's plan shares; none described a Hanging Glacier party specifically.",
+  "sources": [
+   "https://www.nps.gov/noca/blogs/mt-shuksan-fisher-chimneys.htm"
+  ]
+ },
+ {
+  "id": "wa_mount_shuksan_price_glacier",
+  "camps": [
+   {
+    "name": "Price Glacier Base Camp",
+    "nights": [
+     1
+    ],
+    "role": "main",
+    "why": "Granite slabs below the glacier with running water, reached after a long brushy approach; it leaves the climb overhead for summit day."
+   },
+   {
+    "name": "Fisher Chimneys camps, White Salmon and above Winnie's Slide",
+    "nights": [
+     2
+    ],
+    "role": "main",
+    "why": "Where the traverse stops after the summit: dry bivies with water above the chimneys, a shorter hike out the next day than from the summit."
+   }
+  ],
+  "new_camps": [],
+  "confidence": "low",
+  "plan_conflict": "The plan has a single night in and none described in an account of the Price Glacier; night 2 follows the descent line, and reports say the trip takes about three days.",
+  "sources": [
+   "https://www.summitpost.org/price-glacier-mt-shuksan/542872"
+  ]
+ },
+ {
+  "id": "wa_blizzard_peak_standard",
+  "camps": [
+   {
+    "name": "Upper Frosty Basin Camp",
+    "nights": [
+     2,
+     3
+    ],
+    "role": "main",
+    "why": "Grassy flats near 6,100 ft below the peak; summit is a light-pack day from here, and Mount Winthrop is also in reach."
+   },
+   {
+    "name": "Harts Pass and Meadows campgrounds",
+    "nights": [
+     0
+    ],
+    "role": "route",
+    "why": "Car camping before the walk in, with the trailhead a few minutes away; it adds no distance toward the peak."
+   },
+   {
+    "name": "Windy Pass and the crest camps north of Harts Pass",
+    "nights": [],
+    "role": "route",
+    "why": "Dry crest camps on the way in; stop here to shorten day 2, but carry water."
+   },
+   {
+    "name": "Hopkins Lake and Castle Pass",
+    "nights": [],
+    "role": "route",
+    "why": "Lake water and room for a dozen tents near the pass, but a long way past the peak, so it only suits a longer trip."
+   }
+  ],
+  "new_camps": [],
+  "confidence": "low",
+  "plan_conflict": "The plan does not name a camp for nights 1 and 4, and no account was found of where parties sleep.",
+  "sources": [
+   "https://www.wta.org/go-hiking/trip-reports/trip_report.2009-09-28.0076503289"
+  ]
+ },
+ {
+  "id": "wa_lost_peak_pasayten_scramble",
+  "camps": [
+   {
+    "name": "The Berk Creek junction and the Middle Fork Pasayten river camps",
+    "nights": [
+     1
+    ],
+    "role": "main",
+    "why": "Easy first-day mileage on good trail; flat ground by the river sits before the climb to Shellrock Pass, so day 2 starts fresh."
+   },
+   {
+    "name": "The high bench southwest of Shellrock Pass",
+    "nights": [
+     2
+    ],
+    "role": "main",
+    "why": "Puts the Shellrock group within reach and gives views, but it is dry and exposed, and the wind can find a tent."
+   },
+   {
+    "name": "Dot Lake and the Butte Pass basins — the far end of the traverse for Lost Peak",
+    "nights": [
+     3
+    ],
+    "role": "main",
+    "why": "The basins nearest Lost Peak, with lake water; the summit is a round trip from here. It is a long day to reach them from Shellrock Pass."
+   }
+  ],
+  "new_camps": [],
+  "confidence": "low",
+  "plan_conflict": "The plan has five days but only three nights are given a camp; no account was found of where parties sleep on night 4.",
+  "sources": [
+   "https://mountaineers.org/activities/routes-places/osceola-carru-lago-blackcap-lost-traverse"
+  ]
+ },
+ {
+  "id": "wa_chimney_peak_standard",
+  "camps": [
+   {
+    "name": "Pyrites Creek — where the Chimney Peak approach leaves the trail",
+    "nights": [
+     1,
+     2
+    ],
+    "role": "main",
+    "why": "Bear wires and several tent sites about eight miles in, where the off-trail climb begins. It spares the extra miles each way to the chalet and has no toilet."
+   }
+  ],
+  "new_camps": [],
+  "confidence": "low",
+  "plan_conflict": "The plan sleeps both nights at the Enchanted Valley chalet, but the off-trail approach leaves from Pyrites Creek; no account of a party's nights on this route was found.",
+  "sources": [
+   "https://cascadeclimbers.com/forum/topic/95459-tr-burke-range-chimney-bi-c-watterson-crystal-east-fork-quinault-772014"
+  ]
+ },
+ {
+  "id": "wa_chimney_peak_the_chimney",
+  "camps": [
+   {
+    "name": "Enchanted Valley Chalet (emergency shelter and camp area beneath the peak)",
+    "nights": [
+     1,
+     2
+    ],
+    "role": "main",
+    "why": "A permitted camp area on the valley floor beneath the south wall; summit day starts here, and the price is a long walk in from the road."
+   }
+  ],
+  "new_camps": [],
+  "confidence": "low",
+  "plan_conflict": null,
+  "sources": [
+   "https://www.mountaineers.org/activities/trip-reports/backpack-enchanted-valley-2"
+  ]
+ },
+ {
+  "id": "wa_mount_la_crosse_scramble",
+  "camps": [
+   {
+    "name": "Ten Mile Camp",
+    "nights": [
+     1,
+     4
+    ],
+    "role": "main",
+    "why": "Roomy riverside camp under big trees about ten miles in: a comfortable first night and an easy last one before the walk out."
+   },
+   {
+    "name": "Lake LaCrosse and Hart Lake — the base for Mount La Crosse and White Mountain",
+    "nights": [
+     2,
+     3
+    ],
+    "role": "main",
+    "why": "Lake camps above the valley for the summit day, with water and views; bears visit, so use a canister or hang food."
+   },
+   {
+    "name": "Five Mile Camp",
+    "nights": [],
+    "role": "route",
+    "why": "Closer to the trailhead; sleeping here shortens day 1 but lengthens day 2 and the climb into the basin."
+   }
+  ],
+  "new_camps": [],
+  "confidence": "low",
+  "plan_conflict": "Accounts show parties basing at Lake LaCrosse for two nights, but none matched the plan's use of Ten Mile Camp on nights 1 and 4.",
+  "sources": [
+   "https://www.wta.org/go-hiking/trip-reports/tripreport-2005080306"
+  ]
+ },
+ {
+  "id": "wa_mount_carrie_se_route",
+  "camps": [
+   {
+    "name": "Heart Lake",
+    "nights": [
+     1,
+     2
+    ],
+    "role": "main",
+    "why": "The last camp on maintained trail with easy water, just under eight miles in; the summit day from here is very long but saves a cross-country carry."
+   },
+   {
+    "name": "Cat Basin",
+    "nights": [],
+    "role": "route",
+    "why": "Sleeping here or at Cat Peak puts the Catwalk and Carrie closer and shortens the summit day, but camps are scarcer and water is farther."
+   },
+   {
+    "name": "Sol Duc Hot Springs Resort campground",
+    "nights": [],
+    "role": "route",
+    "why": "Car-accessible and with showers, but eight miles below Heart Lake; use it for the night before, not as a mountain camp."
+   },
+   {
+    "name": "Boston Charlie's Camp",
+    "nights": [],
+    "role": "route",
+    "why": "Past the Catwalk and nearer the summit, but dry and exposed, so most parties pass through rather than sleep."
+   }
+  ],
+  "new_camps": [],
+  "confidence": "low",
+  "plan_conflict": "The plan sleeps at Heart Lake, but a party that climbed Carrie camped near Cat Peak and below the summit instead.",
+  "sources": [
+   "https://turns-all-year.com/trip-reports/august-4-8-2011-onp-mt-carrie-mt-ruth"
+  ]
+ }
+]
